@@ -14,12 +14,13 @@ export function getAppUrlSync(): string {
     if (
       origin.startsWith('https://') &&
       !origin.includes('localhost') &&
-      !origin.includes('127.0.0.1')
+      !origin.includes('127.0.0.1') &&
+      !origin.includes('ais-dev-')
     ) {
       return origin;
     }
   }
-  return cachedAppUrl || SHARED_APP_URL;
+  return SHARED_APP_URL;
 }
 
 /**
