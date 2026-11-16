@@ -280,19 +280,39 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
               </div>
             </div>
           ) : (
-            <div className="space-y-2.5">
-              <div className="p-3 rounded-xl border border-amber-500/30 bg-amber-500/10 text-xs font-serif space-y-1">
+            <div className="space-y-3">
+              <div className="p-3 rounded-xl border border-amber-500/30 bg-amber-500/10 text-xs font-serif space-y-1.5">
                 <p className="font-bold flex items-center gap-1.5" style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}>
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <span>
                     {releaseInfo?.status === 'repo-not-found'
-                      ? (language === 'en' ? 'Repository not accessible (check name or set to Public)' : 'रिपॉजिटरी नहीं मिली (नाम जांचें या रिपॉजिटरी Public रखें)')
+                      ? (language === 'en' ? 'Repository not found or private (make repository Public)' : 'रिपॉजिटरी नहीं मिली या Private है (कृपया GitHub पर रिपॉजिटरी को Public करें)')
                       : releaseInfo?.status === 'offline'
                       ? (language === 'en' ? 'Offline right now — connect to internet to fetch APK' : 'फ़िलहाल इंटरनेट बंद है — APK डाउनलोड के लिए ऑनलाइन आएं')
-                      : (language === 'en' ? 'First APK build is pending or still running in GitHub Actions (~3-5 min)' : 'पहली APK अभी GitHub Actions में बन रही है या पुश की प्रतीक्षा में है (~3-5 मिनट)')}
+                      : (language === 'en' ? 'First APK build is pending or publishing in GitHub Actions (~3-5 min)' : 'पहली APK अभी GitHub Actions में बन रही है या Release अभी प्रकाशित नहीं हुआ है (~3-5 मिनट)')}
                   </span>
                 </p>
+                <p className="text-[0.6875rem] leading-relaxed opacity-85" style={{ color: theme.textSecondary }}>
+                  {language === 'en'
+                    ? 'If you just pushed your code, check the Actions tab on GitHub to watch the APK build complete.'
+                    : 'यदि आपने अभी कोड पुश किया है, तो GitHub पर "Actions" टैब में जाकर बिल्ड की प्रगति देख सकते हैं या सीधा Releases पेज खोल सकते हैं।'}
+                </p>
               </div>
+
+              {/* Direct fallback action buttons to avoid any 404 dead-end */}
+              <a
+                href={getGitHubReleasesPageUrl(repo)}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  backgroundColor: isDark ? '#D97706' : theme.sacredMaroon,
+                  color: isDark ? '#000000' : '#FFFFFF',
+                }}
+                className="w-full min-h-[44px] py-3 px-4 rounded-xl font-bold font-serif text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition cursor-pointer no-underline whitespace-nowrap"
+              >
+                <ExternalLink className="w-4 h-4 shrink-0" />
+                <span>{language === 'en' ? 'Open GitHub Releases Page' : 'GitHub Releases पेज खोलें'}</span>
+              </a>
 
               <div className="grid grid-cols-2 gap-2">
                 <a
@@ -303,7 +323,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}
                 >
                   <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                  <span className="truncate">{language === 'en' ? 'GitHub Actions' : 'बिल्ड स्थिति देखें'}</span>
+                  <span className="truncate">{language === 'en' ? 'GitHub Actions' : 'बिल्ड स्थिति (Actions)'}</span>
                 </a>
                 <button
                   type="button"
