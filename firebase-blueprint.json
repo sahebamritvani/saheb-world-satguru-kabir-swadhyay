@@ -1,0 +1,96 @@
+{
+  "entities": {
+    "sakhi": {
+      "title": "Sakhi",
+      "description": "A spiritual couplet or story from Satguru Kabir Saheb teachings.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "content": { "type": "string", "maxLength": 50000 },
+        "category": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["title", "content"]
+    },
+    "quizQuestion": {
+      "title": "Quiz Question",
+      "description": "A spiritual quiz question.",
+      "type": "object",
+      "properties": {
+        "question": { "type": "string", "maxLength": 1000 },
+        "options": { "type": "array" },
+        "correctAnswer": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["question", "options", "correctAnswer"]
+    },
+    "userSettings": {
+      "title": "User Settings",
+      "description": "Private settings for a seeker, including Nitya Vani reminder preferences.",
+      "type": "object",
+      "properties": {
+        "morningEnabled": { "type": "boolean" },
+        "morningTime": { "type": "string", "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$", "maxLength": 10 },
+        "eveningEnabled": { "type": "boolean" },
+        "eveningTime": { "type": "string", "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$", "maxLength": 10 },
+        "chintanEnabled": { "type": "boolean" },
+        "chintanTime": { "type": "string", "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$", "maxLength": 10 },
+        "mantraEnabled": { "type": "boolean" },
+        "mantraTime": { "type": "string", "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$", "maxLength": 10 },
+        "nityaVaniEnabled": { "type": "boolean" },
+        "nityaVaniTime": { "type": "string", "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$", "maxLength": 10 },
+        "language": { "type": "string", "enum": ["hi", "pb", "en"] },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["nityaVaniEnabled", "nityaVaniTime", "language"]
+    },
+    "searchHistory": {
+      "title": "Search History",
+      "description": "User search queries history.",
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["query", "timestamp"]
+    },
+    "leaderboardEntry": {
+      "title": "Ulatvasi Leaderboard Entry",
+      "description": "Authenticated seeker quiz score and streak record.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "score": { "type": "integer" },
+        "solvedCount": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "accuracy": { "type": "integer" },
+        "title": { "type": "string", "maxLength": 100 },
+        "badge": { "type": "string", "maxLength": 16 },
+        "lastSolvedParadox": { "type": "string", "maxLength": 128 },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["ownerId", "name", "score", "solvedCount", "streak", "accuracy", "title", "badge", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/sakhis/{sakhiId}": {
+      "schema": { "$ref": "#/entities/sakhi" },
+      "description": "Collection of spiritual stories and sakhis."
+    },
+    "/quizQuestions/{questionId}": {
+      "schema": { "$ref": "#/entities/quizQuestion" },
+      "description": "Collection of spiritual quiz questions."
+    },
+    "/ulatvasi_leaderboard/{entryId}": {
+      "schema": { "$ref": "#/entities/leaderboardEntry" },
+      "description": "Leaderboard scores for Ulatvasi quiz."
+    },
+    "/users/{userId}/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/userSettings" },
+      "description": "Private user preferences."
+    },
+    "/users/{userId}/searchHistory/{searchId}": {
+      "schema": { "$ref": "#/entities/searchHistory" },
+      "description": "Individual search query entries."
+    }
+  }
+}

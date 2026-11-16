@@ -1,0 +1,143 @@
+name: Build & Publish Saheb World Android APK
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-apk:
+    name: Build & Release Android APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Compute Version Metadata
+        id: meta
+        run: |
+          VERSION_CODE="${{ github.run_number }}"
+          VERSION_NAME="1.0.${{ github.run_number }}"
+          echo "version_code=${VERSION_CODE}" >> "$GITHUB_OUTPUT"
+          echo "version_name=${VERSION_NAME}" >> "$GITHUB_OUTPUT"
+          echo "APP_VERSION_NAME=${VERSION_NAME}" >> "$GITHUB_ENV"
+          echo "APK_VERSION_CODE=${VERSION_CODE}" >> "$GITHUB_ENV"
+          echo "APK_VERSION_NAME=${VERSION_NAME}" >> "$GITHUB_ENV"
+
+      - name: Build Offline Web Bundle
+        env:
+          VITE_APP_VERSION: ${{ steps.meta.outputs.version_name }}
+          VITE_APP_VERSION_CODE: ${{ steps.meta.outputs.version_code }}
+          VITE_GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run build
+
+      - name: Initialize & Sync Capacitor Android Project
+        run: |
+          if [ ! -d "android" ]; then
+            npx cap add android
+          fi
+          npx cap sync android
+
+      - name: Prepare Release Keystore (Persistent Secret or Auto Fallback)
+        id: keystore
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          KEYSTORE_FILE="${{ runner.temp }}/saheb-world-release.jks"
+          if [ -n "$KEYSTORE_B64" ]; then
+            printf '%s' "$KEYSTORE_B64" | tr -d '\n\r ' | base64 -d > "$KEYSTORE_FILE"
+            echo "ANDROID_KEYSTORE_PATH=$KEYSTORE_FILE" >> "$GITHUB_ENV"
+            echo "ANDROID_KEYSTORE_PASSWORD=$KEYSTORE_PASS" >> "$GITHUB_ENV"
+            echo "ANDROID_KEY_ALIAS=$KEY_ALIAS" >> "$GITHUB_ENV"
+            echo "ANDROID_KEY_PASSWORD=$KEY_PASS" >> "$GITHUB_ENV"
+            echo "mode=persistent" >> "$GITHUB_OUTPUT"
+          else
+            keytool -genkey -v \
+              -keystore "$KEYSTORE_FILE" \
+              -alias "sahebworld" \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -storepass "sahebworld108" \
+              -keypass "sahebworld108" \
+              -dname "CN=Saheb World, OU=Satguru Kabir Swadhyay, O=Saheb World, L=Varanasi, S=UP, C=IN"
+            echo "ANDROID_KEYSTORE_PATH=$KEYSTORE_FILE" >> "$GITHUB_ENV"
+            echo "ANDROID_KEYSTORE_PASSWORD=sahebworld108" >> "$GITHUB_ENV"
+            echo "ANDROID_KEY_ALIAS=sahebworld" >> "$GITHUB_ENV"
+            echo "ANDROID_KEY_PASSWORD=sahebworld108" >> "$GITHUB_ENV"
+            echo "mode=ephemeral" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Inject Golden Chakra Icons, Splash & Versioning
+        run: node scripts/prepare-android-apk.mjs
+
+      - name: Build Signed Release APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+      - name: Collect Release APK Files
+        id: collect
+        run: |
+          mkdir -p apk-output
+          APK_SOURCE=$(find android/app/build/outputs/apk/release -name "*.apk" | head -n 1)
+          if [ -z "$APK_SOURCE" ]; then
+            echo "No release APK found!"
+            exit 1
+          fi
+          cp "$APK_SOURCE" "apk-output/Saheb-World.apk"
+          cp "$APK_SOURCE" "apk-output/Saheb-World-v${{ steps.meta.outputs.version_name }}.apk"
+          ls -lh apk-output/
+
+      - name: Upload APK Workflow Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Saheb-World-APK-v${{ steps.meta.outputs.version_name }}
+          path: apk-output/Saheb-World.apk
+          retention-days: 90
+
+      - name: Publish to GitHub Releases (Auto-Updating Latest Link)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.meta.outputs.version_name }}
+          name: "Saheb World v${{ steps.meta.outputs.version_name }} (Android APK)"
+          make_latest: true
+          generate_release_notes: true
+          body: |
+            ## ।।साहेब बंदगी साहेब।। — Saheb World Android App v${{ steps.meta.outputs.version_name }}
+
+            - **Direct Latest APK**: Download `Saheb-World.apk` below to install on Android.
+            - **App Icon**: Satguru Kabir Saheb & Satyanaam Golden Chakra (Adaptive Launcher Icon).
+            - **Offline Mode**: All Granths, Nitnem Gutka, Sakhis, Satyanaam Dhun & Ulatvasi work 100% offline.
+            - **Signing Mode**: `${{ steps.keystore.outputs.mode }}` *(Tip: Add `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` in Repository Secrets once so every future APK update installs right over the previous version without uninstalling).*
+          files: |
+            apk-output/Saheb-World.apk
+            apk-output/Saheb-World-v${{ steps.meta.outputs.version_name }}.apk

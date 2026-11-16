@@ -1,0 +1,8 @@
+{
+  "name": "Saheb World-Satguru Kabir Swadhyay ",
+  "description": "Sacred Swadhyay Progressive Web App dedicated to Satguru Kabir Saheb\u0027s teachings, Sakhi Sangrah, Kabir Sagar, and Bijak with 10-step study, gamified quiz, and rose petal blessings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
