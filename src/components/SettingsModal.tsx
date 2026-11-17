@@ -24,16 +24,30 @@ import {
   KeyRound,
   Lock,
   Mic,
-  Volume2 as SpeechVolumeIcon
+  Volume2 as SpeechVolumeIcon,
+  Upload,
+  RotateCcw,
+  Cloud
 } from 'lucide-react';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
-import { auth, handleFirestoreError, OperationType } from '../lib/firebase';
+import { auth, signInWithGoogle } from '../lib/firebase';
 import { NityaVaniSettings } from './NityaVaniSettings';
 import { Language, ThemeMode, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { satyanaamAudio, speechReciter } from '../services/audioDhun';
+import {
+  DarshanObjectFit,
+  DarshanPortraitState,
+  compressDarshanImage,
+  getCustomDarshanState,
+  isFirebaseAdminSessionActive,
+  publishAdminDarshanPortrait,
+  resetAdminDarshanPortrait,
+  subscribeToCustomPortraitState,
+  updateAdminDarshanObjectFit,
+} from '../services/customPortraitStore';
 import { isAdminAuthenticated, verifyAdminPin, setAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
 import { PWAInstallButton } from './PWAInstallButton';
 
@@ -97,14 +111,25 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const [isVoiceTesting, setIsVoiceTesting] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
+  const [isFirebaseAdmin, setIsFirebaseAdmin] = useState<boolean>(() => isFirebaseAdminSessionActive());
+  const [portraitState, setPortraitState] = useState<DarshanPortraitState>(() => getCustomDarshanState());
+  const [isUploadingPortrait, setIsUploadingPortrait] = useState<boolean>(false);
+  const darshanInputRef = React.useRef<HTMLInputElement>(null);
   const [adminPinInput, setAdminPinInput] = useState<string>('');
   const [showAdminPasskeyDialog, setShowAdminPasskeyDialog] = useState<boolean>(false);
   const [adminNotice, setAdminNotice] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleAuthChange = () => setIsAdmin(isAdminAuthenticated());
+    const handleAuthChange = () => {
+      setIsAdmin(isAdminAuthenticated());
+      setIsFirebaseAdmin(isFirebaseAdminSessionActive());
+    };
     window.addEventListener('sahebworld:admin-auth-change', handleAuthChange);
-    return () => window.removeEventListener('sahebworld:admin-auth-change', handleAuthChange);
+    const unsubPortrait = subscribeToCustomPortraitState((next) => setPortraitState(next));
+    return () => {
+      window.removeEventListener('sahebworld:admin-auth-change', handleAuthChange);
+      unsubPortrait();
+    };
   }, []);
 
   const handleAdminLogin = () => {
@@ -120,12 +145,79 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     }
   };
 
-  const handleAdminLogout = () => {
+  const handleAdminLogout = async () => {
     setAdminAuthenticated(false);
     setIsAdmin(false);
+    setIsFirebaseAdmin(false);
     setShowAdminPasskeyDialog(false);
+    if (auth?.currentUser?.email && isAuthorizedAdminEmail(auth.currentUser.email)) {
+      try {
+        await signOut(auth);
+      } catch {}
+    }
     setAdminNotice(language === 'hi' ? '✓ एडमिन लॉग-आउट हो गया (पब्लिक रीड-ओनली मोड सक्रिय)' : '✓ Admin logged out');
     setTimeout(() => setAdminNotice(null), 3500);
+  };
+
+  const handleAdminPortraitUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isAdmin) return;
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    setIsUploadingPortrait(true);
+    try {
+      const dataUrl = await compressDarshanImage(file);
+      const res = await publishAdminDarshanPortrait(dataUrl, portraitState.objectFit);
+      if (res.syncedToCloud) {
+        setAdminNotice(language === 'hi' ? '✓ पावन स्वरूप अपडेट व ग्लोबल क्लाउड सिंक सफल!' : '✓ Portrait updated & synced globally!');
+      } else if (res.needsGoogleAdminSignIn) {
+        setAdminNotice(language === 'hi' ? '✓ डिवाइस पर सेव — सभी भक्तों तक पहुँचाने हेतु Google एडमिन साइन-इन करें।' : '✓ Saved locally — Sign in with Admin Google to sync globally.');
+      } else {
+        setAdminNotice(res.error || '✓ Portrait updated');
+      }
+    } catch (err: any) {
+      setAdminNotice(err?.message || (language === 'hi' ? 'छवि संसाधन में त्रुटि' : 'Image upload error'));
+    } finally {
+      setIsUploadingPortrait(false);
+      setTimeout(() => setAdminNotice(null), 4500);
+    }
+  };
+
+  const handleAdminGoogleConnect = async () => {
+    try {
+      const u = await signInWithGoogle();
+      setIsFirebaseAdmin(isFirebaseAdminSessionActive());
+      if (u?.email && isAuthorizedAdminEmail(u.email)) {
+        setAdminAuthenticated(true);
+        setIsAdmin(true);
+        setShowAdminPasskeyDialog(false);
+        if (portraitState.imageData) {
+          await publishAdminDarshanPortrait(portraitState.imageData, portraitState.objectFit);
+        }
+        setAdminNotice(language === 'hi' ? '✓ Google एडमिन प्रमाणीकरण व क्लाउड सिंक सक्रिय!' : '✓ Admin Google verified & Cloud Sync active!');
+      } else {
+        setAdminAuthenticated(false);
+        setIsAdmin(false);
+        setAdminNotice(language === 'hi' ? '✗ केवल अधिकृत एडमिन ईमेल (smongia76@gmail.com) ही मान्य है।' : '✗ Only authorized admin email (smongia76@gmail.com) is allowed.');
+      }
+    } catch {
+      setAdminNotice(language === 'hi' ? 'Google साइन-इन पॉपअप रद्द या अवरुद्ध हुआ। नीचे पासकी से या नए टैब में खोलकर प्रयास करें।' : 'Google Sign-In cancelled or blocked in preview.');
+    }
+    setTimeout(() => setAdminNotice(null), 4500);
+  };
+
+  const handleAdminObjectFit = async (fit: DarshanObjectFit) => {
+    if (!isAdmin) return;
+    await updateAdminDarshanObjectFit(fit);
+    setAdminNotice(fit === 'contain' ? '✓ पूर्ण चित्र (Contain)' : '✓ फ़्रेम फ़िट (Cover)');
+    setTimeout(() => setAdminNotice(null), 2500);
+  };
+
+  const handleAdminResetPortrait = async () => {
+    if (!isAdmin) return;
+    await resetAdminDarshanPortrait();
+    setAdminNotice(language === 'hi' ? '✓ पावन दर्शन स्वरूप रीसेट हो गया' : '✓ Portrait reset to sacred emblem');
+    setTimeout(() => setAdminNotice(null), 3000);
   };
 
   useEffect(() => {
@@ -1114,12 +1206,101 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             )}
 
             {isAdmin ? (
-              <div className="space-y-2.5">
+              <div className="space-y-3">
                 <p className="text-xs font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
                   {language === 'hi' 
                     ? 'आप अधिकृत एडमिन के रूप में प्रमाणित हैं। पावन स्वरूप, पवित्र ऑडियो एवं संपूर्ण सामग्री प्रबंधन आपके लिए सक्रिय है।' 
                     : 'You are authenticated as Authorized Admin. Sacred image and media management are fully unlocked.'}
                 </p>
+
+                {/* Admin-Only Darshan Swaroop Manager */}
+                <div className="p-3 rounded-xl border border-emerald-500/30 bg-white/70 dark:bg-zinc-900/70 space-y-2.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs font-black font-serif text-emerald-900 dark:text-emerald-300">
+                      🖼️ पावन दर्शन स्वरूप प्रबंधन (Darshan Settings)
+                    </span>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isFirebaseAdmin ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300' : 'bg-amber-500/20 text-amber-800 dark:text-amber-300'}`}>
+                      {isFirebaseAdmin ? '☁️ वैश्विक सिंक सक्रिय' : '📱 लोकल एडमिन'}
+                    </span>
+                  </div>
+
+                  {portraitState.imageData && (
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={portraitState.imageData}
+                        alt="Current Darshan Portrait"
+                        className={`w-14 h-16 rounded-lg border border-amber-500/40 bg-stone-900 ${portraitState.objectFit === 'cover' ? 'object-cover' : 'object-contain'}`}
+                      />
+                      <div className="flex-1 flex flex-wrap gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => handleAdminObjectFit('contain')}
+                          className={`px-2.5 py-1 rounded-lg text-[11px] font-bold border cursor-pointer transition ${
+                            portraitState.objectFit === 'contain'
+                              ? 'bg-emerald-600 text-white border-emerald-600'
+                              : 'border-stone-300 dark:border-zinc-700'
+                          }`}
+                        >
+                          पूर्ण चित्र (Contain)
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleAdminObjectFit('cover')}
+                          className={`px-2.5 py-1 rounded-lg text-[11px] font-bold border cursor-pointer transition ${
+                            portraitState.objectFit === 'cover'
+                              ? 'bg-emerald-600 text-white border-emerald-600'
+                              : 'border-stone-300 dark:border-zinc-700'
+                          }`}
+                        >
+                          फ़्रेम भरें (Cover)
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  <input
+                    ref={darshanInputRef}
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/*"
+                    onChange={handleAdminPortraitUpload}
+                    className="hidden"
+                  />
+
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      disabled={isUploadingPortrait}
+                      onClick={() => darshanInputRef.current?.click()}
+                      className="flex-1 min-h-[40px] py-2 px-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1.5 disabled:opacity-60"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>{isUploadingPortrait ? 'अपलोड...' : portraitState.imageData ? 'पावन चित्र बदलें' : 'पावन चित्र अपलोड करें'}</span>
+                    </button>
+
+                    {portraitState.imageData && (
+                      <button
+                        type="button"
+                        onClick={handleAdminResetPortrait}
+                        className="min-h-[40px] py-2 px-3 rounded-xl border border-stone-300 dark:border-zinc-700 text-xs font-bold font-serif hover:bg-black/5 transition cursor-pointer flex items-center gap-1"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5" />
+                        <span>रीसेट</span>
+                      </button>
+                    )}
+                  </div>
+
+                  {!isFirebaseAdmin && (
+                    <button
+                      type="button"
+                      onClick={handleAdminGoogleConnect}
+                      className="w-full min-h-[40px] py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1.5"
+                    >
+                      <Cloud className="w-3.5 h-3.5" />
+                      <span>Google एडमिन साइन-इन (सभी भक्तों एवं APK हेतु सिंक)</span>
+                    </button>
+                  )}
+                </div>
+
                 <button
                   type="button"
                   onClick={handleAdminLogout}
@@ -1150,10 +1331,20 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     </button>
                   </div>
                 ) : (
-                  <div className="pt-2 space-y-2 border-t border-amber-500/20">
-                    <p className="text-[0.6875rem] font-bold text-amber-900 dark:text-amber-300 font-serif">
-                      अधिकृत एडमिन गुप्त पासकी दर्ज करें:
-                    </p>
+                  <div className="pt-2.5 space-y-2.5 border-t border-amber-500/20">
+                    <button
+                      type="button"
+                      onClick={handleAdminGoogleConnect}
+                      className="w-full min-h-[40px] py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-serif transition cursor-pointer shadow-xs flex items-center justify-center gap-1.5"
+                    >
+                      <Cloud className="w-4 h-4" />
+                      <span>Google से एडमिन लॉग-इन करें (smongia76@gmail.com)</span>
+                    </button>
+
+                    <div className="text-center text-[10px] opacity-60 font-serif">
+                      — या गुप्त एडमिन पासकी दर्ज करें —
+                    </div>
+
                     <div className="flex items-center gap-2">
                       <div className="relative flex-1">
                         <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-600 opacity-60" />

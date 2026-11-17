@@ -31,8 +31,8 @@ if (typeof window !== 'undefined') {
   });
 }
 
-// Initialize persistent PWA Service Worker cleanly (top-level / standalone / permitted frames)
-if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+// Initialize persistent PWA Service Worker cleanly in production (top-level / standalone / permitted frames)
+if (typeof window !== 'undefined' && import.meta.env.PROD && 'serviceWorker' in navigator) {
   try {
     const updateSW = registerSW({
       immediate: true,
@@ -48,8 +48,8 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
           updateSW(true).catch(() => {});
         } catch {}
       },
-      onRegisterError(err) {
-        console.warn('Service Worker registration notice:', err);
+      onRegisterError() {
+        // Ignore restricted sandbox frame error gracefully
       },
     });
   } catch {

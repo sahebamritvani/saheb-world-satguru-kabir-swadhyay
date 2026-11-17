@@ -85,10 +85,26 @@ service cloud.firestore {
              data.timestamp is int;
     }
 
+    function isValidSacredPortrait(data) {
+      return data.keys().hasAll(['imageData', 'objectFit', 'updatedAt', 'updatedBy']) &&
+             data.keys().hasOnly(['imageData', 'objectFit', 'updatedAt', 'updatedBy']) &&
+             data.imageData is string && data.imageData.size() >= 10 && data.imageData.size() <= 750000 &&
+             data.imageData.matches('^data:image/(jpeg|jpg|png|webp);base64,[A-Za-z0-9+/=]+$') &&
+             data.objectFit in ['contain', 'cover'] &&
+             data.updatedAt is timestamp && data.updatedAt == request.time &&
+             data.updatedBy is string && data.updatedBy == request.auth.token.email && data.updatedBy.size() <= 128;
+    }
+
     // --- Collection Matches ---
 
     match /test/{docId} {
       allow get: if isValidId(docId);
+    }
+
+    match /sacred_config/{configId} {
+      allow get: if isValidId(configId) && configId == 'darshan_portrait';
+      allow create, update: if isAdmin() && isValidId(configId) && configId == 'darshan_portrait' && isValidSacredPortrait(incoming());
+      allow delete: if isAdmin() && isValidId(configId) && configId == 'darshan_portrait';
     }
 
     match /sakhis/{sakhiId} {

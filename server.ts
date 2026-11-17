@@ -266,17 +266,16 @@ Please return a valid JSON object ONLY (without markdown enclosing codeblocks or
   if (isProd && distExists) {
     app.use(express.static(distPath, {
       setHeaders: (res, filePath) => {
-        if (filePath.endsWith('.html')) {
-          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-          res.setHeader('Pragma', 'no-cache');
-          res.setHeader('Expires', '0');
+        if (filePath.endsWith('sw.js')) {
+          res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+          res.setHeader('Service-Worker-Allowed', '/');
+        } else if (filePath.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'no-cache, must-revalidate');
         }
       }
     }));
     app.get('*', (req, res) => {
-      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-      res.setHeader('Pragma', 'no-cache');
-      res.setHeader('Expires', '0');
+      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
       res.sendFile(distIndexPath);
     });
   } else {
@@ -294,9 +293,7 @@ Please return a valid JSON object ONLY (without markdown enclosing codeblocks or
           template = await vite.transformIndexHtml(url, template);
           res.status(200).set({ 
             'Content-Type': 'text/html',
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'Pragma': 'no-cache',
-            'Expires': '0'
+            'Cache-Control': 'no-cache, must-revalidate',
           }).end(template);
         } else {
           res.status(404).send('index.html not found');

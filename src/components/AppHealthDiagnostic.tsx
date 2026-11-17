@@ -109,9 +109,10 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
           '/manifest.webmanifest',
           '/pwa-192x192.png',
           '/pwa-512x512.png',
+          '/pwa-maskable-192x192.png',
           '/pwa-maskable-512x512.png',
           '/apple-touch-icon.png',
-          '/assets/aistudio/image_e5882811.png'
+          '/Saheb_World_icon.jpg'
         ];
         await Promise.allSettled(urlsToCache.map((u) => cache.add(u)));
         await checkPwaStatus();

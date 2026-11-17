@@ -55,22 +55,20 @@ export const signInWithGoogle = async () => {
   }
 };
 
-// Test connection safely on boot only when online
-export async function testFirebaseConnection() {
+// Safe connection check helper (invoked explicitly by diagnostics when online)
+export async function testFirebaseConnection(): Promise<boolean> {
   if (typeof navigator !== 'undefined' && !navigator.onLine) {
-    return;
+    return false;
   }
   try {
-    await getDocFromServer(doc(db, 'test', 'connection'));
+    await getDocFromServer(doc(db, 'sacred_config', 'darshan_portrait'));
+    return true;
   } catch (error) {
     if (error instanceof Error && error.message.includes('the client is offline')) {
       console.warn('Firestore offline notice: using local IndexedDB cache.');
     }
+    return false;
   }
-}
-
-if (typeof window !== 'undefined') {
-  testFirebaseConnection().catch(() => {});
 }
 
 export enum OperationType {

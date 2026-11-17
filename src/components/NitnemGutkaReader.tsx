@@ -1944,16 +1944,28 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           : 'rounded-3xl p-3 sm:p-6 pb-28'
       }`}
     >
-      {/* Floating Exit Button for Zen Mode */}
+      {/* Top Return Bar for Zen Mode */}
       {isZenMode && (
         <button
           type="button"
-          onClick={() => setIsZenMode(false)}
-          className="fixed top-4 right-4 z-[100] px-3.5 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/30"
-          title={language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन एकाग्रता बंद करें'}
+          onClick={() => {
+            setIsZenMode(false);
+            if (typeof document !== 'undefined' && document.fullscreenElement) {
+              document.exitFullscreen().catch(() => {});
+            }
+            window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
+          }}
+          className="fixed top-3 right-3 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-amber-700 hover:bg-amber-800 text-white text-xs sm:text-sm font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/40 whitespace-nowrap"
+          title={language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : language === 'en' ? 'Normal Screen (Return)' : 'सामान्य स्क्रीन (वापस आएं)'}
         >
-          <EyeOff size={15} />
-          <span>{language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन मोड बंद करें (Exit Zen)'}</span>
+          <Minimize2 size={16} />
+          <span>
+            {language === 'pb'
+              ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)'
+              : language === 'en'
+              ? 'Normal Screen (Return)'
+              : 'सामान्य स्क्रीन (वापस आएं)'}
+          </span>
         </button>
       )}
       {/* Sikhworld Style Orange Header */}
@@ -2061,9 +2073,9 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             aria-label="Toggle Full-Screen"
           >
             {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
-            <span className="hidden lg:inline">
+            <span className={isFullscreen ? 'inline' : 'hidden lg:inline'}>
               {isFullscreen
-                ? (language === 'pb' ? 'ਆਮ ਸਕਰੀਨ' : language === 'en' ? 'Exit Full' : 'सामान्य स्क्रीन')
+                ? (language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : language === 'en' ? 'Normal Screen (Return)' : 'सामान्य स्क्रीन (वापस आएं)')
                 : (language === 'pb' ? 'ਪੂਰੀ ਸਕਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूर्ण स्क्रीन')
               }
             </span>

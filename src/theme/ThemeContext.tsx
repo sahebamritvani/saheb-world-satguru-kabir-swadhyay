@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { ThemeMode } from '../types';
+import banyanGhatWallpaper from '../assets/images/clean_banyan_ghat_nature_1794393850217.jpg';
+import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794393850589.jpg';
 
 export interface SpiritualTheme {
   mode: ThemeMode;
@@ -574,11 +576,11 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
 
     const wallpapers: Record<string, { backgroundImage: string; overlay: string }> = {
       banyan_ghat: {
-        backgroundImage: 'url("/src/assets/images/clean_banyan_ghat_nature_1794393850217.jpg")',
+        backgroundImage: `url("${banyanGhatWallpaper}")`,
         overlay: overlays.medium
       },
       maghar_dham: {
-        backgroundImage: 'url("/src/assets/images/clean_maghar_dham_nature_1794393850589.jpg")',
+        backgroundImage: `url("${magharDhamWallpaper}")`,
         overlay: overlays.medium
       },
       dawn_mountain: {

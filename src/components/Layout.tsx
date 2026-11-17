@@ -144,8 +144,20 @@ export const Layout: React.FC<LayoutProps> = ({
 
   const toggleAppFullscreen = () => {
     if (!document.fullscreenElement) {
+      setIsFullscreen(true);
+      window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: true } }));
       document.documentElement.requestFullscreen().catch(() => {});
     } else {
+      setIsFullscreen(false);
+      window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
+      document.exitFullscreen().catch(() => {});
+    }
+  };
+
+  const exitAppFullscreen = () => {
+    setIsFullscreen(false);
+    window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
       document.exitFullscreen().catch(() => {});
     }
   };
@@ -176,7 +188,7 @@ export const Layout: React.FC<LayoutProps> = ({
       };
 
       rec.onerror = (e: any) => {
-        console.error('Speech recognition error:', e);
+        console.warn('Speech recognition notice:', e?.error || e);
         setIsListeningVoice(false);
       };
 
@@ -1129,6 +1141,44 @@ export const Layout: React.FC<LayoutProps> = ({
 
   return (
     <StyledAppContainer theme={theme}>
+      {/* Fullscreen Compact Top Return Bar - Always accessible on mobile & desktop */}
+      {isFullscreen && (
+        <div
+          id="fullscreen-top-return-bar"
+          style={{
+            backgroundColor: theme.stepActiveBg,
+            borderColor: theme.accentGold,
+          }}
+          className="sticky top-0 z-40 border-b px-3 py-1.5 flex items-center justify-between gap-2 min-h-[48px] shadow-md select-none"
+        >
+          <span
+            style={{ color: theme.sacredMaroon }}
+            className="text-xs sm:text-sm font-black font-serif tracking-wide truncate"
+          >
+            {exactTop}
+          </span>
+          <button
+            type="button"
+            onClick={exitAppFullscreen}
+            style={{
+              backgroundColor: theme.sacredMaroon,
+              color: '#FFFFFF',
+            }}
+            className="min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-xl font-bold font-serif text-xs sm:text-sm flex items-center gap-1.5 shadow-sm hover:opacity-95 active:scale-95 transition cursor-pointer whitespace-nowrap shrink-0"
+            aria-label="Exit Full Screen and Return"
+          >
+            <Minimize2 className="w-4 h-4 shrink-0" />
+            <span>
+              {language === 'pb'
+                ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)'
+                : language === 'en'
+                ? 'Normal Screen (Return)'
+                : 'सामान्य स्क्रीन (वापस आएं)'}
+            </span>
+          </button>
+        </div>
+      )}
+
       {/* Sacred Top Header - Hidden in Full-Screen Reading Mode to maximize reading space */}
       {!isFullscreen && (
         <SacredHeaderContainer theme={theme}>
@@ -1655,20 +1705,23 @@ export const Layout: React.FC<LayoutProps> = ({
             </button>
 
             {/* Offline Readiness Status Indicator */}
-            <div
+            <button
+              type="button"
+              id="header-network-status-btn"
+              onClick={() => onSelectView('health-diagnostic')}
               title={
                 isOnline
                   ? (isOfflineReady
-                      ? (language === 'pb' ? 'ਆਨਲਾਈਨ · ਔਫਲਾਈਨ ਕੈਸ਼ੇ ਤਿਆਰ' : language === 'en' ? 'Online · Offline Cache Ready' : 'ऑनलाइन · ऑफ़लाइन कैशे तैयार')
-                      : (language === 'pb' ? 'ਆਨਲਾਈਨ' : language === 'en' ? 'Online' : 'ऑनलाइन'))
-                  : (language === 'pb' ? 'ਔਫਲਾਈਨ ਮੋਡ ਚਾਲੂ (ਕੈਸ਼ੇ ਤੋਂ ਪੜ੍ਹੋ)' : language === 'en' ? 'Offline Mode Active' : 'ऑफ़लाइन मोड सक्रिय')
+                      ? (language === 'pb' ? 'ਆਨਲਾਈਨ · ਔਫਲਾਈਨ ਕੈਸ਼ੇ ਤਿਆਰ (ਜਾਂਚਣ ਲਈ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? 'Online · Offline Cache Ready (Click to test)' : 'ऑनलाइन · ऑफ़लाइन कैशे तैयार (जांचने के लिए क्लिक करें)')
+                      : (language === 'pb' ? 'ਆਨਲਾਈਨ (ਡਾਇਗਨੋਸਟਿਕ ਖੋਲ੍ਹੋ)' : language === 'en' ? 'Online (Open Diagnostic)' : 'ऑनलाइन (डायग्नोस्टिक खोलें)'))
+                  : (language === 'pb' ? 'ਔਫਲਾਈਨ ਮੋਡ ਚਾਲੂ (ਜਾਂਚ ਲਈ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? 'Offline Mode Active (Click to inspect)' : 'ऑफ़लाइन मोड सक्रिय (जांचने के लिए क्लिक करें)')
               }
               style={{
                 borderColor: isOnline ? theme.accentGold : '#16A34A',
                 backgroundColor: isOnline ? theme.cardBg : 'rgba(22, 163, 74, 0.12)',
                 color: isOnline ? theme.sacredMaroon : '#166534',
               }}
-              className="h-6 sm:h-6.5 px-2 rounded-md border flex items-center justify-center gap-1 transition shadow-2xs shrink-0 font-serif text-[0.625rem] font-bold"
+              className="h-6 sm:h-6.5 px-2 rounded-md border flex items-center justify-center gap-1 transition shadow-2xs shrink-0 font-serif text-[0.625rem] font-bold cursor-pointer hover:scale-105 active:scale-95"
             >
               {isOnline ? (
                 <>
@@ -1681,7 +1734,7 @@ export const Layout: React.FC<LayoutProps> = ({
                   <span>{language === 'pb' ? 'ਔਫਲਾਈਨ' : language === 'en' ? 'Offline' : 'ऑफ़लाइन'}</span>
                 </>
               )}
-            </div>
+            </button>
 
             {/* Settings Button */}
             <button
@@ -2887,26 +2940,7 @@ export const Layout: React.FC<LayoutProps> = ({
         </div>
       )}
 
-      {/* ↙️↗️ Floating Exit Fullscreen Button (Visible whenever app is in Fullscreen) */}
-      {isFullscreen && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          type="button"
-          onClick={toggleAppFullscreen}
-          style={{
-            backgroundColor: theme.sacredMaroon,
-            color: '#FFFFFF',
-            borderColor: theme.accentGold,
-          }}
-          className="fixed bottom-24 right-5 z-[200] px-4 py-3 rounded-full border-2 shadow-2xl flex items-center gap-2 font-serif font-bold text-xs sm:text-sm hover:scale-110 active:scale-95 transition cursor-pointer"
-          title={language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ ਤੋਂ ਬਾਹਰ ਆਓ (Exit Fullscreen)' : 'सामान्य स्क्रीन (वापस आएं)'}
-        >
-          <Minimize2 className="w-4 h-4 text-amber-300 animate-pulse" />
-          <span>{language === 'pb' ? 'ਬਾਹਰ ਆਓ' : language === 'en' ? 'Exit Full Screen' : 'सामान्य स्क्रीन (वापस आएं)'}</span>
-        </motion.button>
-      )}
+
       {/* Compact Bottom-Centered Android Chrome WebAPK Auto-Install Bar (Top-level, Non-standalone only) */}
       {!pwaInIframe &&
         !pwaStandalone &&

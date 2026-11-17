@@ -14,7 +14,11 @@ import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { RosePetalIcon } from './RosePetalIcon';
 import { satyanaamAudio, speechReciter } from '../services/audioDhun';
-import { getCustomDarshanImage, subscribeToCustomPortrait } from '../services/customPortraitStore';
+import {
+  DarshanPortraitState,
+  getCustomDarshanState,
+  subscribeToCustomPortraitState,
+} from '../services/customPortraitStore';
 import { sacredHaptics } from '../services/haptics';
 
 interface RosePetalShowerProps {
@@ -52,11 +56,11 @@ export const RosePetalShower: React.FC<RosePetalShowerProps> = ({
   const animationFrameRef = useRef<number | null>(null);
   const petalsRef = useRef<Petal[]>([]);
   const [flowerCount, setFlowerCount] = useState<number>(1);
-  const [customImage, setCustomImage] = useState<string | null>(() => getCustomDarshanImage());
+  const [portraitState, setPortraitState] = useState<DarshanPortraitState>(() => getCustomDarshanState());
 
   useEffect(() => {
-    const unsubscribe = subscribeToCustomPortrait((img) => {
-      setCustomImage(img);
+    const unsubscribe = subscribeToCustomPortraitState((state) => {
+      setPortraitState(state);
     });
     return () => unsubscribe();
   }, []);
@@ -297,19 +301,28 @@ export const RosePetalShower: React.FC<RosePetalShowerProps> = ({
                 className="absolute -inset-1 rounded-full border-2 border-dashed animate-spin-slow opacity-60 transition-opacity"
               />
 
-              {/* Ornate Circular Emblem - Official Saheb World App Icon */}
+              {/* Ornate Circular Emblem - Admin Satguru Swaroop or Sacred Lotus Medallion */}
               <div
                 style={{
                   backgroundColor: theme.stepActiveBg,
                   borderColor: theme.accentGold,
                 }}
-                className="relative w-full h-full rounded-full border-4 overflow-hidden shadow-2xl ring-4 ring-amber-400/30 flex items-center justify-center bg-white"
+                className="relative w-full h-full rounded-full border-4 overflow-hidden shadow-2xl ring-4 ring-amber-400/30 flex items-center justify-center bg-gradient-to-b from-amber-50 to-amber-100 dark:from-zinc-900 dark:to-zinc-950"
               >
-                <img
-                  src={customImage || '/Saheb_World_icon.jpg'}
-                  alt="Saheb World"
-                  className="w-full h-full object-cover select-none"
-                />
+                {portraitState.imageData ? (
+                  <img
+                    src={portraitState.imageData}
+                    alt="Satguru Kabir Saheb"
+                    className={`w-full h-full ${portraitState.objectFit === 'cover' ? 'object-cover' : 'object-contain'} select-none`}
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-amber-700 dark:text-amber-300 p-3">
+                    <Sparkles className="w-10 h-10 mb-1 animate-pulse" />
+                    <span className="font-serif font-black text-sm tracking-wide" style={{ color: theme.sacredMaroon }}>
+                      {language === 'pb' ? 'ਸਤਯਨਾਮ' : language === 'en' ? 'Satyanaam' : 'सत्यनाम'}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
 

@@ -69,6 +69,18 @@
         "timestamp": { "type": "integer" }
       },
       "required": ["ownerId", "name", "score", "solvedCount", "streak", "accuracy", "title", "badge", "timestamp"]
+    },
+    "sacredPortrait": {
+      "title": "Sacred Darshan Portrait",
+      "description": "Official Admin-published Satguru Kabir Saheb Swaroop image configuration for Divya Pawan Darshan (Public Read-Only, Admin Write-Only).",
+      "type": "object",
+      "properties": {
+        "imageData": { "type": "string", "minLength": 10, "maxLength": 750000 },
+        "objectFit": { "type": "string", "enum": ["contain", "cover"] },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "updatedBy": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["imageData", "objectFit", "updatedAt", "updatedBy"]
     }
   },
   "firestore": {
@@ -83,6 +95,10 @@
     "/ulatvasi_leaderboard/{entryId}": {
       "schema": { "$ref": "#/entities/leaderboardEntry" },
       "description": "Leaderboard scores for Ulatvasi quiz."
+    },
+    "/sacred_config/{configId}": {
+      "schema": { "$ref": "#/entities/sacredPortrait" },
+      "description": "Official Admin-managed sacred configuration (e.g., darshan_portrait). Public read-only; strictly Admin write/delete."
     },
     "/users/{userId}/settings/{settingId}": {
       "schema": { "$ref": "#/entities/userSettings" },

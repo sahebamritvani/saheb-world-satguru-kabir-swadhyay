@@ -57,8 +57,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLang
     return 'hi';
   });
 
-  const [lastAccessedKey, setLastAccessedKey] = useState<string>('appName');
-  const [fallbackCount, setFallbackCount] = useState<number>(0);
+  const lastAccessedKeyRef = React.useRef<string>('appName');
+  const fallbackCountRef = React.useRef<number>(0);
   const [isInspectKeyOverlayActive, setIsInspectKeyOverlayActive] = useState<boolean>(false);
 
   // Synchronize document.documentElement attributes ('dir' and 'lang')
@@ -157,22 +157,20 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLang
     });
   };
 
-  // Create monitored translations proxy to track accessed keys and fallback status
+  // Create monitored translations proxy without mutating React state during render
   const t = useMemo(() => {
     const targetTranslations = translations[language] || translations.hi;
     const hindiTranslations = translations.hi;
 
     return new Proxy(targetTranslations, {
-      get(target, prop: string) {
+      get(target, prop: string | symbol) {
         if (typeof prop === 'string' && prop in target) {
-          // Record accessed key for live diagnostics
-          setLastAccessedKey(prop);
+          lastAccessedKeyRef.current = prop;
           const val = (target as any)[prop];
           if (val !== undefined && val !== null && val !== '') {
             return val;
           }
-          // If empty or missing, count fallback and return Hindi value
-          setFallbackCount((prev) => prev + 1);
+          fallbackCountRef.current += 1;
           return (hindiTranslations as any)[prop];
         }
         return (target as any)[prop];
@@ -181,13 +179,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLang
   }, [language]);
 
   const getKey = (key: keyof AppTranslations, fallback?: string): string => {
-    setLastAccessedKey(String(key));
+    lastAccessedKeyRef.current = String(key);
     const target = translations[language] || translations.hi;
     const value = (target as any)[key];
     if (value !== undefined && value !== null && value !== '') {
       return String(value);
     }
-    setFallbackCount((prev) => prev + 1);
+    fallbackCountRef.current += 1;
     const hiValue = (translations.hi as any)[key];
     return hiValue !== undefined ? String(hiValue) : (fallback || String(key));
   };
@@ -230,12 +228,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLang
       htmlLang: language === 'pb' ? 'pa' : language,
       totalKeys,
       untranslatedKeysCount,
-      lastAccessedKey,
-      fallbackCount,
+      lastAccessedKey: lastAccessedKeyRef.current,
+      fallbackCount: fallbackCountRef.current,
       isInspectKeyOverlayActive,
       localeVerification
     };
-  }, [language, lastAccessedKey, fallbackCount, isInspectKeyOverlayActive]);
+  }, [language, isInspectKeyOverlayActive]);
 
   return (
     <LanguageContext.Provider 

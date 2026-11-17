@@ -718,10 +718,11 @@ export const NitnemPothi: React.FC<{
           {onClose && (
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-[#8B4513]/10 text-[#8B4513] hover:bg-[#8B4513]/20 transition cursor-pointer"
-              title={currentLang === 'pb' ? 'ਬੰਦ ਕਰੋ' : currentLang === 'en' ? 'Close' : 'बंद करें'}
+              className="min-h-[40px] px-3 py-1.5 rounded-xl bg-[#8B4513] text-white hover:opacity-90 transition cursor-pointer flex items-center gap-1.5 text-xs font-bold font-serif whitespace-nowrap"
+              title={currentLang === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : currentLang === 'en' ? 'Return' : 'सामान्य स्क्रीन (वापस आएं)'}
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 shrink-0" />
+              <span>{currentLang === 'pb' ? 'ਵਾਪਸ ਆਓ' : currentLang === 'en' ? 'Return' : 'वापस आएं'}</span>
             </button>
           )}
         </div>

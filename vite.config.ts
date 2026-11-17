@@ -17,91 +17,16 @@ export default defineConfig(() => {
       VitePWA({
         registerType: 'autoUpdate',
         useCredentials: true,
-        includeAssets: [
-          'favicon.ico',
-          'favicon-16x16.png',
-          'favicon-32x32.png',
-          'apple-touch-icon.png',
-          'icon.png',
-          'pwa-192x192.png',
-          'pwa-512x512.png',
-          'pwa-maskable-192x192.png',
-          'pwa-maskable-512x512.png',
-          'Saheb_World_icon.jpg',
-          'assets/**/*',
-        ],
-        manifest: {
-          id: '/',
-          name: 'Satguru Kabir Saheb Swadhyay - Saheb World',
-          short_name: 'Saheb World',
-          description: 'सृष्टि रचना से कलियुग तक, पूर्ण परब्रह्म सतगुरु कबीर साहेब के चरणों में सादर नमन।',
-          start_url: '/',
-          scope: '/',
-          display: 'standalone',
-          background_color: '#FFFDD0',
-          theme_color: '#8B4513',
-          orientation: 'portrait',
-          prefer_related_applications: false,
-          launch_handler: {
-            client_mode: 'navigate-existing',
-          },
-          icons: [
-            {
-              src: '/pwa-48x48.png',
-              sizes: '48x48',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/pwa-72x72.png',
-              sizes: '72x72',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/pwa-96x96.png',
-              sizes: '96x96',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/pwa-144x144.png',
-              sizes: '144x144',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/pwa-192x192.png',
-              sizes: '192x192',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/pwa-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/pwa-maskable-192x192.png',
-              sizes: '192x192',
-              type: 'image/png',
-              purpose: 'maskable',
-            },
-            {
-              src: '/pwa-maskable-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'maskable',
-            },
-          ],
-        },
+        manifest: false,
+        includeAssets: [],
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,json,woff,woff2}'],
+          globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,json,woff,woff2,webmanifest}'],
+          globIgnores: ['**/assets/aistudio/**', '**/standalone-codesandbox.html'],
           maximumFileSizeToCacheInBytes: 35 * 1024 * 1024,
           cleanupOutdatedCaches: true,
           clientsClaim: true,
           skipWaiting: true,
+          ignoreURLParametersMatching: [/.*/],
           navigateFallback: 'index.html',
           navigateFallbackDenylist: [/^\/api/, /^\/__/],
           runtimeCaching: [
@@ -154,13 +79,10 @@ export default defineConfig(() => {
             {
               urlPattern: ({ sameOrigin, request }) =>
                 sameOrigin &&
-                (request.destination === 'script' ||
-                  request.destination === 'style' ||
-                  request.destination === 'document'),
-              handler: 'NetworkFirst',
+                (request.destination === 'script' || request.destination === 'style'),
+              handler: 'StaleWhileRevalidate',
               options: {
                 cacheName: 'sahebworld-app-shell',
-                networkTimeoutSeconds: 2,
                 expiration: {
                   maxEntries: 150,
                   maxAgeSeconds: 60 * 60 * 24 * 14,
@@ -188,9 +110,7 @@ export default defineConfig(() => {
           ],
         },
         devOptions: {
-          enabled: true,
-          type: 'module',
-          navigateFallback: 'index.html',
+          enabled: false,
         },
       }),
     ],
@@ -213,6 +133,18 @@ export default defineConfig(() => {
             }
             if (id.includes('node_modules/lucide-react/')) {
               return 'vendor-icons';
+            }
+            if (id.includes('node_modules/firebase/') || id.includes('node_modules/@firebase/')) {
+              return 'vendor-firebase';
+            }
+            if (id.includes('node_modules/echarts/') || id.includes('node_modules/recharts/') || id.includes('node_modules/d3-')) {
+              return 'vendor-charts';
+            }
+            if (id.includes('node_modules/jspdf/') || id.includes('node_modules/html2canvas/')) {
+              return 'vendor-pdf';
+            }
+            if (id.includes('/src/data/granths/') || id.includes('/src/data/nitnem') || id.includes('/src/data/sakhis')) {
+              return 'data-granths';
             }
           },
         },

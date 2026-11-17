@@ -672,12 +672,17 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
   useEffect(() => {
     if (!isZenMode) return;
-        const handleKeyDown = (e: KeyboardEvent) => {
-          if (e.key === 'Escape') {
-            setIsZenMode(false);
-            setSelectedGlossaryKey(null);
-          }
-        };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsZenMode(false);
+        setCurrentReadingMode('swadhyay');
+        setSelectedGlossaryKey(null);
+        if (typeof document !== 'undefined' && document.fullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+        window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
+      }
+    };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isZenMode]);
@@ -921,9 +926,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   };
 
   useAutoScroll({
-    containerRef: isZenMode ? zenContainerRef : { current: null },
+    containerRef: isZenMode ? zenContainerRef : null,
     isActive: isAkhandScrollActive,
-    speedMultiplier: speedMultiplierMap[scrollSpeed] || 1.0,
+    speedMultiplier: typeof globalAutoScrollSpeed === 'number' && globalAutoScrollSpeed > 0 ? globalAutoScrollSpeed : (speedMultiplierMap[scrollSpeed] || 1.0),
     isPageFlipMode: isPageFlipMode,
     onPageFlipNext: () => {
       setPageFlipIndex((prev) => {
@@ -1126,12 +1131,25 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       setIsVisraamHighlightEnabled(!isVisraamHighlightEnabled);
     };
 
+    const handleAutoScrollToggled = (e: any) => {
+      if (e.detail?.active !== undefined) {
+        setIsAkhandScrollActive(e.detail.active);
+      } else {
+        setIsAkhandScrollActive(!isAkhandScrollActive);
+      }
+      if (e.detail?.speed) {
+        setAutoScrollSpeed(e.detail.speed);
+      }
+    };
+
+    window.addEventListener('sahebworld_autoscroll_toggled', handleAutoScrollToggled);
     window.addEventListener('sahebworld_toggle_tts', handleToggleTtsEvent);
     window.addEventListener('sahebworld_highlighter_changed', handleHighlighterEvent);
     window.addEventListener('sahebworld_reader_theme_changed', handleThemeEvent);
     window.addEventListener('sahebworld_framework_changed', handleFrameworkEvent as EventListener);
     
     return () => {
+      window.removeEventListener('sahebworld_autoscroll_toggled', handleAutoScrollToggled);
       window.removeEventListener('sahebworld_toggle_tts', handleToggleTtsEvent);
       window.removeEventListener('sahebworld_highlighter_changed', handleHighlighterEvent);
       window.removeEventListener('sahebworld_reader_theme_changed', handleThemeEvent);
@@ -1985,7 +2003,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       font: 'फ़ॉन्ट',
       marker: 'पंक्ति गाइड',
       bgDhun: 'पृष्ठभूमि धुन',
-      exitZen: 'जेन मोड से बाहर',
+      exitZen: 'सामान्य स्क्रीन (वापस आएं)',
       glossaryHeader: '।। पावन शब्दार्थ रहस्य ।।',
       close: 'बंद करें',
       zenModeBtn: 'जेन एकाग्रता',
@@ -2007,7 +2025,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       font: 'ਫੌਂਟ',
       marker: 'ਪੰਕਤੀ ਗਾਈਡ',
       bgDhun: 'ਪਿਛੋਕੜ ਧੁਨ',
-      exitZen: 'ZEN ਮੋਡ ਬੰਦ ਕਰੋ',
+      exitZen: 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)',
       glossaryHeader: '।। ਪਾਵਨ ਸ਼ਬਦਾਰਥ ਰਹੱਸ ।।',
       close: 'ਬੰਦ ਕਰੋ',
       zenModeBtn: 'ZEN ਇਕਾਗਰਤਾ',
@@ -2029,7 +2047,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       font: 'Font',
       marker: 'Eye Guide',
       bgDhun: 'Ambient',
-      exitZen: 'Exit Zen Mode',
+      exitZen: 'Normal Screen (Return)',
       glossaryHeader: '|| Sacred Word Glossary ||',
       close: 'Close',
       zenModeBtn: 'Zen Focus',
@@ -4039,25 +4057,24 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           style={{ backgroundColor: rc.bg }}
           className="fixed inset-0 z-[100] overflow-y-auto flex flex-col justify-between p-4 sm:p-8 select-none transition-all duration-500 animate-fadeIn"
         >
-          {/* Distraction-Free Header Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3" style={{ borderColor: rc.border }}>
-            <div className="flex items-center gap-2">
+          {/* Distraction-Free Header Bar - Compact sticky top bar with prominent Return CTA */}
+          <div className="sticky top-0 z-30 flex items-center justify-between gap-2 border-b py-2 px-1 backdrop-blur-md min-h-[52px]" style={{ borderColor: rc.border, backgroundColor: rc.bg }}>
+            <div className="flex items-center gap-2 min-w-0">
               <span
                 style={{ backgroundColor: rc.accentLight, color: rc.maroon, borderColor: rc.accent }}
-                className="px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border shadow-xs flex items-center gap-1.5"
+                className="px-2.5 py-1 rounded-full text-[11px] font-black tracking-wide border shadow-xs flex items-center gap-1 truncate"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
-                <span>{language === 'pb' ? '🌹 ਨਿਰਵਿਕਲਪ ਇਕਾਗਰਤਾ ਸਵਾਧਿਆਏ 🌹' : language === 'en' ? '🌹 Focus Swadhyay Mode 🌹' : '🌹 निर्विकल्प एकाग्रता स्वाध्याय Mode 🌹'}</span>
+                <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                <span className="truncate">{language === 'pb' ? 'ਨਿਰਵਿਕਲਪ ਸਵਾਧਿਆਏ' : language === 'en' ? 'Zen Focus Mode' : 'जेन एकाग्रता स्वाध्याय'}</span>
               </span>
-              <span className="text-xs font-bold opacity-75 hidden sm:inline" style={{ color: rc.textSecondary }}>
-                {getLocalizedGranthaName(sakhi.grantha, language)} • साखी #{sakhi.number}
+              <span className="text-xs font-bold opacity-75 hidden md:inline whitespace-nowrap" style={{ color: rc.textSecondary }}>
+                {getLocalizedGranthaName(sakhi.grantha, language)} • #{sakhi.number}
               </span>
             </div>
 
-            {/* Embedded Font Toggles & Theme Controls Bar */}
-            <div className="flex items-center gap-2 flex-wrap">
-              {/* Font Size Toggles */}
-              <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
+            {/* Embedded Compact Toggles + Always-Visible Top Return Button */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              <div className="hidden sm:flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
                 <Type className="w-3.5 h-3.5 mr-1 ml-1 text-amber-700 shrink-0" />
                 {['small', 'medium', 'large', 'xl', 'elderly'].map((size) => (
                   <button
@@ -4068,16 +4085,15 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       backgroundColor: localFontSize === size ? rc.accent : 'transparent',
                       color: localFontSize === size ? '#FFFFFF' : rc.textSecondary,
                     }}
-                    className="px-2.5 py-1 rounded-lg font-black text-xs uppercase transition cursor-pointer"
+                    className="px-2 py-1 rounded-lg font-black text-xs uppercase transition cursor-pointer"
                     title={`Font Size: ${size}`}
                   >
-                    {size === 'small' ? 'A-' : size === 'medium' ? 'A' : size === 'large' ? 'A+' : size === 'xl' ? 'A++' : '👵 A+++ (बुजुर्ग)'}
+                    {size === 'small' ? 'A-' : size === 'medium' ? 'A' : size === 'large' ? 'A+' : size === 'xl' ? 'A++' : 'A+++'}
                   </button>
                 ))}
               </div>
 
-              {/* Reading Theme Toggles */}
-              <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
+              <div className="hidden lg:flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
                 {[
                   { id: 'default', label: fl.themeMool },
                   { id: 'flow_state', label: fl.themeFlow },
@@ -4100,23 +4116,27 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 ))}
               </div>
 
-              {/* Exit Focus Mode Button */}
+              {/* Exit Focus Mode Button — Guaranteed Top-Visible & 44px Touch Target */}
               <button
                 type="button"
                 onClick={() => {
                   setIsZenMode(false);
                   setCurrentReadingMode('swadhyay');
                   setSelectedGlossaryKey(null);
+                  if (typeof document !== 'undefined' && document.fullscreenElement) {
+                    document.exitFullscreen().catch(() => {});
+                  }
+                  window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
                 }}
                 style={{
                   backgroundColor: rc.maroon,
                   color: '#FFFFFF',
                 }}
-                className="px-4 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md cursor-pointer hover:opacity-90 active:scale-95 transition"
+                className="min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md cursor-pointer hover:opacity-90 active:scale-95 transition whitespace-nowrap shrink-0"
                 title="Exit Focus Mode (Esc)"
               >
-                <Minimize2 className="w-3.5 h-3.5" />
-                <span>{fl.exitZen} (Esc)</span>
+                <Minimize2 className="w-4 h-4 shrink-0" />
+                <span>{fl.exitZen}</span>
               </button>
             </div>
           </div>
@@ -4384,7 +4404,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   title="Auto-Scroll"
                 >
                   {isAkhandScrollActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                  <span className="hidden xs:inline">{isAkhandScrollActive ? (language === 'pb' ? 'ਰੋਕੋ' : 'Pause') : (language === 'pb' ? 'ਸਵੈ-ਸਕਰੋਲ' : 'Auto-Scroll')}</span>
+                  <span className="hidden xs:inline">{isAkhandScrollActive ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Pause' : 'रोकें') : (language === 'pb' ? 'ਸਵੈ-ਸਕਰੋਲ' : language === 'en' ? 'Auto-Scroll' : 'स्वतः स्क्रॉल')}</span>
                 </button>
 
                 {isAkhandScrollActive && (
@@ -4429,6 +4449,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               type="button"
               onClick={() => {
                 setIsZenMode(false);
+                setCurrentReadingMode('swadhyay');
                 setSelectedGlossaryKey(null);
                 if (typeof document !== 'undefined' && document.fullscreenElement) {
                   document.exitFullscreen().catch(() => {});

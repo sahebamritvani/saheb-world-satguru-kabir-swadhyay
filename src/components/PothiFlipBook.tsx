@@ -599,10 +599,17 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
 
         <button 
           onClick={toggleFullscreen}
-          className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition active:scale-90"
-          style={{ color: theme.textSecondary }}
+          className={`min-h-[40px] px-2.5 py-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition active:scale-90 flex items-center gap-1 text-xs font-bold whitespace-nowrap ${
+            isFullscreen ? 'bg-amber-600 text-white hover:bg-amber-700' : ''
+          }`}
+          style={isFullscreen ? undefined : { color: theme.textSecondary }}
         >
-          {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
+          {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={20} />}
+          {isFullscreen && (
+            <span>
+              {language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : language === 'en' ? 'Return' : 'वापस आएं'}
+            </span>
+          )}
         </button>
         
         <button 

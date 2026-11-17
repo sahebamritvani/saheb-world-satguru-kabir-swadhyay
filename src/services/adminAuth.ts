@@ -26,6 +26,23 @@ export function isAdminAuthenticated(): boolean {
   }
 }
 
+export function isFirebaseAdminVerified(): boolean {
+  try {
+    const user = auth?.currentUser;
+    return !!(user?.email && user.emailVerified && isAuthorizedAdminEmail(user.email));
+  } catch {
+    return false;
+  }
+}
+
+if (typeof window !== 'undefined' && auth) {
+  auth.onAuthStateChanged(() => {
+    window.dispatchEvent(new CustomEvent('sahebworld:admin-auth-change', {
+      detail: { isAuthenticated: isAdminAuthenticated() },
+    }));
+  });
+}
+
 export function setAdminAuthenticated(authStatus: boolean): void {
   if (typeof window === 'undefined') return;
   try {
