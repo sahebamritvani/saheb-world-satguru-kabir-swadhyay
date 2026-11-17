@@ -173,9 +173,9 @@ const GlobalSpiritualStyles = createGlobalStyle<{ theme: SpiritualTheme }>`
     &.font-size-xlarge { --reader-font-size: 28px; }
     &.font-size-xl { --reader-font-size: 32px; }
     &.font-size-elderly { 
-      --reader-font-size: 44px;
-      font-weight: 800;
-      line-height: 1.6;
+      --reader-font-size: 28px;
+      font-weight: 700;
+      line-height: 1.5;
     }
   }
 
