@@ -115,7 +115,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   handleSelectSakhiByNumber,
   isCustomSakhiActive = false
 }) => {
-  const { theme, fontSize, isSahajMode, setIsSahajMode } = useAppTheme();
+  const { theme, isDarkMode, fontSize, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const lang = language || contextLang;
   const t = translations[lang] || contextT;
@@ -761,15 +761,22 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       <div
         id="daily-pawan-sakhi-container"
         style={{
-          backgroundColor: theme.cardBg,
+          backgroundColor: globalWallpaper
+            ? (isDarkMode ? 'rgba(18, 16, 14, 0.84)' : 'rgba(255, 253, 249, 0.88)')
+            : theme.cardBg,
           borderColor: theme.cardBorder,
           color: theme.textPrimary,
         }}
-        className="rounded-3xl border shadow-xl overflow-hidden flex flex-col transition-all relative max-w-full"
+        className={`rounded-3xl border shadow-xl overflow-hidden flex flex-col transition-all relative max-w-full ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
       >
         {/* Sacred Header Banner */}
         <div
-          style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
+          style={{
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(38, 30, 22, 0.72)' : 'rgba(245, 228, 196, 0.78)')
+              : theme.stepActiveBg,
+            borderColor: theme.cardBorder,
+          }}
           className="border-b py-2 px-3 text-center select-none"
         >
           <span

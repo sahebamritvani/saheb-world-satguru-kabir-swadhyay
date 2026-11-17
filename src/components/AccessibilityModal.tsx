@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Volume2, Play, Square, VolumeX, Sliders, Type, CheckCircle } from 'lucide-react';
 import { Language } from '../types';
-import { useAppTheme } from '../theme/ThemeContext';
+import { useAppTheme, GLOBAL_NATURE_PRESETS } from '../theme/ThemeContext';
 
 interface AccessibilityModalProps {
   isOpen: boolean;
@@ -160,35 +160,76 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({ isOpen, 
           </div>
         </div>
 
-        {/* Nature Wallpaper Global Toggle */}
-        <div className="bg-emerald-500/10 dark:bg-emerald-500/5 p-4 rounded-2xl border border-emerald-500/20 space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sliders className="w-4 h-4 text-emerald-600" />
-              <span className="text-xs font-bold font-serif text-emerald-900 dark:text-emerald-200">
-                {language === 'pb' ? 'ਕੁਦਰਤੀ ਥੀਮ (Nature Theme)' : language === 'en' ? 'Global Nature Theme' : 'कुदरती थीम (Global Nature)'}
+        {/* Nature Wallpaper Global Toggle & Preset Selector */}
+        <div className="bg-emerald-500/10 dark:bg-emerald-500/10 p-4 rounded-2xl border border-emerald-500/25 space-y-3">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 flex-wrap min-w-0">
+              <Sliders className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <span className="text-xs font-bold font-serif text-emerald-950 dark:text-emerald-100">
+                {language === 'pb' ? 'ਕੁਦਰਤੀ ਥੀਮ (Global Nature)' : language === 'en' ? 'Global Nature Theme' : 'कुदरती थीम (Global Nature)'}
               </span>
+              {globalWallpaper && (
+                <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-black">
+                  {language === 'pb' ? '✓ ਚਾਲੂ' : language === 'en' ? '✓ Active' : '✓ सक्रिय'}
+                </span>
+              )}
             </div>
             <button
+              type="button"
+              role="switch"
+              aria-checked={!!globalWallpaper}
+              aria-label="Toggle Global Nature Theme"
               onClick={() => setGlobalWallpaper(globalWallpaper ? null : 'banyan_ghat')}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none ${
+              className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus:outline-none cursor-pointer ${
                 globalWallpaper ? 'bg-emerald-600' : 'bg-zinc-300 dark:bg-zinc-700'
               }`}
             >
               <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm ${
                   globalWallpaper ? 'translate-x-6' : 'translate-x-1'
                 }`}
               />
             </button>
           </div>
-          <p className="text-[10px] text-emerald-800/70 dark:text-emerald-200/50 leading-tight">
+          <p className="text-[11px] text-emerald-900/80 dark:text-emerald-200/80 leading-snug">
             {language === 'pb' 
               ? 'ਇਸ ਨੂੰ ਚਾਲੂ ਕਰਨ ਨਾਲ ਪੂਰੇ ਐਪ ਵਿੱਚ ਕੁਦਰਤੀ ਬੈਕਗ੍ਰਾਊਂਡ ਲਾਗੂ ਹੋ ਜਾਵੇਗਾ।' 
               : language === 'en' 
               ? 'Enabling this applies a scenic nature backdrop across the entire application.' 
               : 'इसे चालू करने पर पूरे ऐप में कुदरती बैकग्राउंड लागू हो जाएगा।'}
           </p>
+
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            {GLOBAL_NATURE_PRESETS.map((preset) => {
+              const isSelected = globalWallpaper === preset.id;
+              return (
+                <button
+                  key={preset.id}
+                  type="button"
+                  onClick={() => setGlobalWallpaper(isSelected ? null : preset.id)}
+                  className={`p-2 rounded-xl border text-left transition cursor-pointer flex items-center gap-2 ${
+                    isSelected
+                      ? 'border-emerald-500 bg-emerald-600/20 ring-1 ring-emerald-500 shadow-sm'
+                      : 'border-emerald-500/20 bg-white/70 dark:bg-zinc-800/70 hover:border-emerald-500/50'
+                  }`}
+                >
+                  <span
+                    className="w-7 h-7 rounded-lg shrink-0 border border-white/40 shadow-xs"
+                    style={{
+                      backgroundImage: preset.previewBg,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[11px] font-bold font-serif truncate text-emerald-950 dark:text-emerald-100">
+                      {preset.name[language] || preset.name.hi}
+                    </span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         </div>

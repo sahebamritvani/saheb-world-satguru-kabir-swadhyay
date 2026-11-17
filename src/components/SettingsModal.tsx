@@ -34,7 +34,7 @@ import { auth, signInWithGoogle } from '../lib/firebase';
 import { NityaVaniSettings } from './NityaVaniSettings';
 import { Language, ThemeMode, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
-import { useAppTheme } from '../theme/ThemeContext';
+import { useAppTheme, GLOBAL_NATURE_PRESETS } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { satyanaamAudio, speechReciter } from '../services/audioDhun';
 import {
@@ -99,7 +99,9 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     autoScrollSpeed,
     setAutoScrollSpeed,
     readingFramework,
-    setReadingFramework
+    setReadingFramework,
+    globalWallpaper,
+    setGlobalWallpaper
   } = useAppTheme();
   const { language: contextLang, setLanguage: setContextLang, t: contextT } = useLanguage();
   const activeLang = language || contextLang;
@@ -526,6 +528,110 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       <div className="text-xs font-bold font-serif line-clamp-1">{thm.name[language] || thm.name.hi}</div>
                       <div className="text-[10px] opacity-75 line-clamp-1 font-sans mt-0.5">{thm.desc[language] || thm.desc.hi}</div>
                     </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section: Global Nature Background Theme (कुदरती थीम) */}
+          <div
+            id="global-nature-theme-setting-card"
+            style={{
+              backgroundColor: globalWallpaper
+                ? (isDarkMode ? 'rgba(6, 78, 59, 0.25)' : 'rgba(16, 185, 129, 0.1)')
+                : theme.bgSecondary,
+              borderColor: globalWallpaper ? '#10B981' : theme.borderOrnament,
+            }}
+            className="p-4 sm:p-5 rounded-2xl border-2 transition-all duration-300 space-y-3.5 relative shadow-xs"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="space-y-1 text-left font-serif min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 style={{ color: isDarkMode ? '#6EE7B7' : '#065F46' }} className="text-sm sm:text-base font-bold">
+                    {language === 'pb'
+                      ? 'ਕੁਦਰਤੀ ਥੀਮ (Global Nature)'
+                      : language === 'en'
+                      ? 'Global Nature Theme'
+                      : 'कुदरती थीम (Global Nature)'}
+                  </h3>
+                  {globalWallpaper && (
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider">
+                      {language === 'pb' ? '✓ ਚਾਲੂ' : language === 'en' ? '✓ Active' : '✓ सक्रिय'}
+                    </span>
+                  )}
+                </div>
+                <p style={{ color: theme.textSecondary }} className="text-xs leading-relaxed font-sans">
+                  {language === 'pb'
+                    ? 'ਇਸ ਨੂੰ ਚਾਲੂ ਕਰਨ ‘ਤੇ ਪੂਰੇ ਐਪ ਵਿੱਚ ਕੁਦਰਤੀ ਬੈਕਗ੍ਰਾਊਂਡ ਲਾਗੂ ਹੋ ਜਾਵੇਗਾ।'
+                    : language === 'en'
+                    ? 'Applies a scenic nature background across the entire application.'
+                    : 'इसे चालू करने पर पूरे ऐप में कुदरती बैकग्राउंड लागू हो जाएगा।'}
+                </p>
+              </div>
+
+              <button
+                type="button"
+                id="settings-toggle-global-nature-switch"
+                role="switch"
+                aria-checked={!!globalWallpaper}
+                aria-label="Toggle Global Nature Theme"
+                onClick={() => setGlobalWallpaper(globalWallpaper ? null : 'banyan_ghat')}
+                style={{
+                  backgroundColor: globalWallpaper ? '#059669' : '#D1D5DB',
+                }}
+                className="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 mt-0.5"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                    globalWallpaper ? 'translate-x-5' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+            </div>
+
+            {/* 7 Nature Scene Presets */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {GLOBAL_NATURE_PRESETS.map((preset) => {
+                const isSelected = globalWallpaper === preset.id;
+                return (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    onClick={() => setGlobalWallpaper(isSelected ? null : preset.id)}
+                    style={{
+                      borderColor: isSelected ? '#10B981' : theme.cardBorder,
+                      backgroundColor: isSelected
+                        ? (isDarkMode ? 'rgba(16, 185, 129, 0.22)' : 'rgba(16, 185, 129, 0.14)')
+                        : theme.cardBg,
+                    }}
+                    className={`p-2 rounded-xl border text-left transition cursor-pointer flex items-center gap-2 ${
+                      isSelected ? 'ring-2 ring-emerald-500 shadow-sm font-bold' : 'hover:opacity-95'
+                    }`}
+                  >
+                    <span
+                      className="w-8 h-8 rounded-lg shrink-0 border border-white/40 shadow-xs"
+                      style={{
+                        backgroundImage: preset.previewBg,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    />
+                    <span className="min-w-0 flex-1">
+                      <span
+                        className="block text-[11px] font-serif font-bold truncate"
+                        style={{ color: theme.textPrimary }}
+                      >
+                        {preset.name[language] || preset.name.hi}
+                      </span>
+                      <span
+                        className="block text-[9px] truncate opacity-75"
+                        style={{ color: theme.textSecondary }}
+                      >
+                        {preset.sub[language] || preset.sub.hi}
+                      </span>
+                    </span>
                   </button>
                 );
               })}

@@ -25,6 +25,8 @@ import { downloadOrShareImage, triggerBlobDownload, GeneratedCardResult } from '
 import { autoCorrectSacredText, formatCoupletString, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
+import banyanGhatWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
+import magharDhamWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
 
 interface NatureWallpaperEngineProps {
   language: Language;
@@ -92,14 +94,14 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
       id: 'banyan_ghat',
       title: t.themeBanyanGhat,
       sub: 'पावन सूर्योदय व बरगद तट',
-      imgSrc: '/src/assets/images/clean_banyan_ghat_nature_1794393850217.jpg',
+      imgSrc: banyanGhatWallpaper,
       accent: '#FACC15',
     },
     {
       id: 'maghar_dham',
       title: t.themeMagharDham,
       sub: 'सतगुरु की निर्वाण भूमि',
-      imgSrc: '/src/assets/images/clean_maghar_dham_nature_1794393850589.jpg',
+      imgSrc: magharDhamWallpaper,
       accent: '#F59E0B',
     },
     {
@@ -876,7 +878,17 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
             <div className="space-y-2 pt-1">
               <button
                 type="button"
-                onClick={() => setGlobalWallpaper(selectedPreset === globalWallpaper ? null : selectedPreset)}
+                onClick={() => {
+                  const isRemoving = selectedPreset === globalWallpaper;
+                  setGlobalWallpaper(isRemoving ? null : selectedPreset);
+                  sacredHaptics.lightTap();
+                  setToastMessage(
+                    isRemoving
+                      ? (language === 'pb' ? 'ਕੁਦਰਤੀ ਬੈਕਗ੍ਰਾਊਂਡ ਹਟਾਇਆ ਗਿਆ' : language === 'en' ? 'Global Nature Theme removed' : 'कुदरती थीम हटाई गई')
+                      : (language === 'pb' ? '✓ ਪੂਰੇ ਐਪ ਵਿੱਚ ਕੁਦਰਤੀ ਥੀਮ ਲਾਗੂ ਹੋ ਗਈ!' : language === 'en' ? '✓ Global Nature Theme applied across app!' : '✓ पूरे ऐप पर कुदरती थीम लागू हो गई!')
+                  );
+                  setTimeout(() => setToastMessage(null), 3000);
+                }}
                 className={`w-full py-3.5 px-4 rounded-2xl font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center gap-2 cursor-pointer ${
                   selectedPreset === globalWallpaper 
                     ? 'bg-red-600 hover:bg-red-700 text-white' 

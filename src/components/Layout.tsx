@@ -116,7 +116,7 @@ export const Layout: React.FC<LayoutProps> = ({
   onToggleDhun,
   children,
 }) => {
-  const { theme, isSahajMode, setIsSahajMode } = useAppTheme();
+  const { theme, isDarkMode, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
   const t = translations[language] || translations.hi;
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -1140,7 +1140,7 @@ export const Layout: React.FC<LayoutProps> = ({
   };
 
   return (
-    <StyledAppContainer theme={theme}>
+    <StyledAppContainer theme={theme} $transparentBg={!!globalWallpaper}>
       {/* Fullscreen Compact Top Return Bar - Always accessible on mobile & desktop */}
       {isFullscreen && (
         <div
@@ -1181,15 +1181,17 @@ export const Layout: React.FC<LayoutProps> = ({
 
       {/* Sacred Top Header - Hidden in Full-Screen Reading Mode to maximize reading space */}
       {!isFullscreen && (
-        <SacredHeaderContainer theme={theme}>
+        <SacredHeaderContainer theme={theme} $translucent={!!globalWallpaper}>
         {/* ================= BAR 1: TOP BAR (CENTRE: SATYANAAM) ================= */}
         <div
           id="sacred-bar-1-top"
           style={{
-            backgroundColor: theme.stepActiveBg,
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(24, 19, 14, 0.72)' : 'rgba(245, 228, 196, 0.78)')
+              : theme.stepActiveBg,
             borderColor: theme.cardBorder,
           }}
-          className="border-b py-1 sm:py-1.5 px-1.5 xs:px-2.5 sm:px-5 relative flex items-center justify-between gap-1 sm:gap-2 select-none min-h-[38px] sm:min-h-[42px] overflow-hidden"
+          className={`border-b py-1 sm:py-1.5 px-1.5 xs:px-2.5 sm:px-5 relative flex items-center justify-between gap-1 sm:gap-2 select-none min-h-[38px] sm:min-h-[42px] overflow-hidden ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
           {/* Left: Sidebar Toggle & App Brand */}
           <div className="z-10 flex items-center gap-1.5 sm:gap-2 shrink-0">
@@ -1316,10 +1318,12 @@ export const Layout: React.FC<LayoutProps> = ({
 
         {/* ================= BAR 2: AKHAND SATYANAAM & PLAY DHUN (MOVEABLE) ================= */}
         <div 
-          className="relative group/bar2 select-none border-b z-30" 
+          className={`relative group/bar2 select-none border-b z-30 ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
           style={{ 
             borderColor: theme.accentGold, 
-            backgroundColor: theme.stepActiveBg 
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(24, 19, 14, 0.70)' : 'rgba(245, 228, 196, 0.76)')
+              : theme.stepActiveBg 
           }}
         >
           {/* Left Move Arrow Button */}
@@ -1578,10 +1582,12 @@ export const Layout: React.FC<LayoutProps> = ({
         <div
           id="sacred-bar-3-tools"
           style={{
-            backgroundColor: theme.cardBg,
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(18, 16, 14, 0.74)' : 'rgba(255, 253, 249, 0.80)')
+              : theme.cardBg,
             borderColor: theme.cardBorder,
           }}
-          className="border-b py-0.5 sm:py-1 px-2 sm:px-5 relative select-none flex items-center justify-between gap-1.5 sm:gap-2.5 overflow-x-auto scrollbar-none min-h-[32px] sm:min-h-[34px]"
+          className={`border-b py-0.5 sm:py-1 px-2 sm:px-5 relative select-none flex items-center justify-between gap-1.5 sm:gap-2.5 overflow-x-auto scrollbar-none min-h-[32px] sm:min-h-[34px] ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
           {/* Left: Quick Access Sacred Shortcuts */}
           <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
@@ -2332,10 +2338,12 @@ export const Layout: React.FC<LayoutProps> = ({
         <footer
           id="sacred-foot-bar"
           style={{
-            backgroundColor: theme.cardBg,
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(18, 16, 14, 0.78)' : 'rgba(255, 253, 249, 0.84)')
+              : theme.cardBg,
             borderColor: theme.accentGold,
           }}
-          className="w-full border-t select-none print:hidden mt-auto"
+          className={`w-full border-t select-none print:hidden mt-auto ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
           <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 flex items-center justify-between gap-2">
             {/* Left: Quick Dhun Audio & Divine Darshan */}

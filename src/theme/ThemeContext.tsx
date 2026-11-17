@@ -1,8 +1,68 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { ThemeMode } from '../types';
-import banyanGhatWallpaper from '../assets/images/clean_banyan_ghat_nature_1794393850217.jpg';
-import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794393850589.jpg';
+import banyanGhatWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
+import magharDhamWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
+
+export interface GlobalNaturePreset {
+  id: 'banyan_ghat' | 'maghar_dham' | 'dawn_mountain' | 'emerald_forest' | 'sunset_sky' | 'sacred_river' | 'golden_autumn';
+  name: { hi: string; pb: string; en: string };
+  sub: { hi: string; pb: string; en: string };
+  accent: string;
+  previewBg: string;
+}
+
+export const GLOBAL_NATURE_PRESETS: GlobalNaturePreset[] = [
+  {
+    id: 'banyan_ghat',
+    name: { hi: 'पावन बरगद घाट', pb: 'ਪਾਵਨ ਬਰਗਦ ਘਾਟ', en: 'Sacred Banyan Ghat' },
+    sub: { hi: 'सूर्योदय व बरगद तट', pb: 'ਸੂਰਜ ਚੜ੍ਹਨ ਤੇ ਬਰਗਦ ਤੱਟ', en: 'Golden dawn & banyan bank' },
+    accent: '#FACC15',
+    previewBg: `url("${banyanGhatWallpaper}")`,
+  },
+  {
+    id: 'maghar_dham',
+    name: { hi: 'मगहर धाम', pb: 'ਮਗਹਰ ਧਾਮ', en: 'Maghar Dham' },
+    sub: { hi: 'सतगुरु निर्वाण भूमि', pb: 'ਸਤਿਗੁਰੂ ਨਿਰਵਾਣ ਭੂਮੀ', en: 'Satguru sanctuary dawn' },
+    accent: '#F59E0B',
+    previewBg: `url("${magharDhamWallpaper}")`,
+  },
+  {
+    id: 'dawn_mountain',
+    name: { hi: 'स्वर्णिम अरुणोदय', pb: 'ਸੁਨਹਿਰੀ ਅਰੁਣੋਦਯ', en: 'Dawn Mountain' },
+    sub: { hi: 'अरुणोदय पर्वत शिखर', pb: 'ਪਰਬਤ ਸਿਖਰ ਸਵੇਰ', en: 'Warm sunrise peaks' },
+    accent: '#FAD074',
+    previewBg: 'linear-gradient(135deg, #1A0F03 0%, #4A280B 50%, #9E5B1A 100%)',
+  },
+  {
+    id: 'emerald_forest',
+    name: { hi: 'शांत हरित वन', pb: 'ਸ਼ਾਂਤ ਹਰਿਆਵਲ ਵਣ', en: 'Emerald Forest' },
+    sub: { hi: 'शांत वन व प्रकाश किरणें', pb: 'ਸ਼ਾਂਤ ਵਣ ਤੇ ਦਿਵਯ ਰੋਸ਼ਨੀ', en: 'Peaceful forest grove' },
+    accent: '#6EE7B7',
+    previewBg: 'linear-gradient(135deg, #04120C 0%, #0B2D1F 50%, #2B7051 100%)',
+  },
+  {
+    id: 'sunset_sky',
+    name: { hi: 'संध्या कमल गगन', pb: 'ਸੰਧਿਆ ਕਮਲ ਗਗਨ', en: 'Sunset Lotus Sky' },
+    sub: { hi: 'संध्या गगन व सरसी आभा', pb: 'ਸੰਧਿਆ ਅਕਾਸ਼ ਤੇ ਸ਼ਾਂਤੀ', en: 'Evening twilight glow' },
+    accent: '#FFD166',
+    previewBg: 'linear-gradient(135deg, #1E0517 0%, #4A0E2E 50%, #8C1F38 100%, #F4A261 100%)',
+  },
+  {
+    id: 'sacred_river',
+    name: { hi: 'पावन सरिता तट', pb: 'ਪਾਵਨ ਸਰਿਤਾ ਤੱਟ', en: 'Sacred River' },
+    sub: { hi: 'नील सरिता व प्रज्वलित दीप', pb: 'ਨੀਲੀ ਨਦੀ ਤੇ ਸ਼ਾਂਤ ਲਹਿਰਾਂ', en: 'Calm flowing sacred river' },
+    accent: '#67E8F9',
+    previewBg: 'linear-gradient(135deg, #02101C 0%, #0B2D46 50%, #228BE6 100%)',
+  },
+  {
+    id: 'golden_autumn',
+    name: { hi: 'स्वर्ण वट पल्लव', pb: 'ਸੁਨਹਿਰੀ ਪੱਤਝੜ', en: 'Golden Autumn' },
+    sub: { hi: 'स्वर्ण आभा व अनहद शांति', pb: 'ਸੁਨਹਿਰੀ ਆਭਾ ਤੇ ਸ਼ਾਂਤੀ', en: 'Warm golden canopy' },
+    accent: '#FFE082',
+    previewBg: 'linear-gradient(135deg, #190E02 0%, #422406 50%, #B87319 100%)',
+  },
+];
 
 export interface SpiritualTheme {
   mode: ThemeMode;
@@ -129,7 +189,7 @@ export const themes: Record<ThemeMode, SpiritualTheme> = {
   },
 };
 
-const GlobalSpiritualStyles = createGlobalStyle<{ theme: SpiritualTheme }>`
+const GlobalSpiritualStyles = createGlobalStyle<{ theme: SpiritualTheme; $hasWallpaper?: boolean }>`
   :root {
     --bg-primary: ${({ theme }) => theme.bg};
     --card-bg: ${({ theme }) => theme.cardBg};
@@ -148,6 +208,7 @@ const GlobalSpiritualStyles = createGlobalStyle<{ theme: SpiritualTheme }>`
   }
 
   html {
+    background-color: ${({ theme, $hasWallpaper }) => ($hasWallpaper ? 'transparent' : theme.bg)};
     /* Global Font Scaling - Affects everything using rem */
     &.font-size-small { font-size: 14px; }
     &.font-size-normal { font-size: 16px; }
@@ -159,7 +220,7 @@ const GlobalSpiritualStyles = createGlobalStyle<{ theme: SpiritualTheme }>`
   }
 
   body {
-    background-color: ${({ theme }) => theme.bg};
+    background-color: ${({ theme, $hasWallpaper }) => ($hasWallpaper ? 'transparent' : theme.bg)} !important;
     color: ${({ theme }) => theme.textPrimary};
     font-family: ${({ theme }) => theme.fontBody};
     transition: background-color 0.35s ease, color 0.35s ease;
@@ -195,30 +256,27 @@ const GlobalSpiritualStyles = createGlobalStyle<{ theme: SpiritualTheme }>`
   }
 `;
 
-export const StyledAppContainer = styled.div<{ theme: SpiritualTheme; $wallpaper?: any }>`
+export const StyledAppContainer = styled.div<{ theme: SpiritualTheme; $wallpaper?: any; $transparentBg?: boolean }>`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme, $transparentBg }) => ($transparentBg ? 'transparent' : theme.bg)};
   color: ${({ theme }) => theme.textPrimary};
-  transition: all 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
   position: relative;
+  z-index: 1;
   overflow-x: clip;
 
-  ${({ $wallpaper }) => $wallpaper && `
+  ${({ $wallpaper, $transparentBg }) => $wallpaper && !$transparentBg && `
     background-image: ${$wallpaper.backgroundImage};
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       background: ${$wallpaper.overlay};
       z-index: 0;
       pointer-events: none;
@@ -231,8 +289,14 @@ export const StyledAppContainer = styled.div<{ theme: SpiritualTheme; $wallpaper
   `}
 `;
 
-export const SacredHeaderContainer = styled.header<{ theme: SpiritualTheme }>`
-  background-color: ${({ theme }) => theme.cardBg};
+export const SacredHeaderContainer = styled.header<{ theme: SpiritualTheme; $translucent?: boolean }>`
+  background-color: ${({ theme, $translucent }) =>
+    $translucent
+      ? theme.mode === 'amrit_neel' || theme.mode === 'mystic_dark' || theme.mode === 'flow_state'
+        ? 'rgba(18, 16, 14, 0.78)'
+        : 'rgba(255, 250, 240, 0.84)'
+      : theme.cardBg};
+  backdrop-filter: ${({ $translucent }) => ($translucent ? 'blur(12px)' : 'none')};
   border-bottom: 1.5px solid ${({ theme }) => theme.cardBorder};
   box-shadow: ${({ theme }) => theme.cardShadow};
   position: sticky;
@@ -762,11 +826,37 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     globalWallpaper
   ]);
 
+  const activeWallpaperCss = useMemo(() => getWallpaperCss(globalWallpaper), [globalWallpaper]);
+
   return (
     <ThemeContext.Provider value={contextValue}>
       <ThemeProvider theme={activeTheme}>
-        <GlobalSpiritualStyles theme={activeTheme} />
-        <StyledAppContainer theme={activeTheme} $wallpaper={getWallpaperCss(globalWallpaper)}>
+        <GlobalSpiritualStyles theme={activeTheme} $hasWallpaper={!!activeWallpaperCss} />
+        {activeWallpaperCss && (
+          <div
+            id="sahebworld-global-nature-backdrop"
+            aria-hidden="true"
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 0,
+              pointerEvents: 'none',
+              backgroundImage: activeWallpaperCss.backgroundImage,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: activeWallpaperCss.overlay,
+              }}
+            />
+          </div>
+        )}
+        <StyledAppContainer theme={activeTheme} $transparentBg={!!activeWallpaperCss}>
           {children}
         </StyledAppContainer>
       </ThemeProvider>
