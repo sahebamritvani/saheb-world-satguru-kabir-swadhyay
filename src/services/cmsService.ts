@@ -1,5 +1,6 @@
-import { db } from '../lib/firebase';
-import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { db, handleFirestoreError, OperationType } from '../lib/firebase';
+import { collection, getDocs, addDoc, doc, deleteDoc } from 'firebase/firestore';
+import { isFirebaseAdminVerified } from './adminAuth';
 
 export interface Sakhi {
   id?: string;
@@ -15,22 +16,72 @@ export interface QuizQuestion {
   correctAnswer: string;
 }
 
-// Sakhi Services
+// Sakhi Services (Public Read-Only, Admin Write)
 export const getSakhis = async (): Promise<Sakhi[]> => {
-  const querySnapshot = await getDocs(collection(db, 'sakhis'));
-  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Sakhi));
+  try {
+    const querySnapshot = await getDocs(collection(db, 'sakhis'));
+    return querySnapshot.docs.map((d) => ({ id: d.id, ...d.data() } as Sakhi));
+  } catch (error) {
+    handleFirestoreError(error, OperationType.LIST, 'sakhis');
+    return [];
+  }
 };
 
 export const addSakhi = async (sakhi: Sakhi) => {
-  return await addDoc(collection(db, 'sakhis'), sakhi);
+  if (!isFirebaseAdminVerified()) {
+    throw new Error('केवल अधिकृत एडमिन (smongia76@gmail.com) ही नई साखी जोड़ सकते हैं।');
+  }
+  try {
+    const payload: Record<string, string> = {
+      title: String(sakhi.title || '').trim().slice(0, 200),
+      content: String(sakhi.content || '').trim().slice(0, 50000),
+    };
+    if (sakhi.category?.trim()) {
+      payload.category = sakhi.category.trim().slice(0, 100);
+    }
+    return await addDoc(collection(db, 'sakhis'), payload);
+  } catch (error) {
+    handleFirestoreError(error, OperationType.CREATE, 'sakhis');
+    throw error;
+  }
 };
 
-// Quiz Services
+export const deleteSakhi = async (sakhiId: string) => {
+  if (!isFirebaseAdminVerified()) {
+    throw new Error('केवल अधिकृत एडमिन (smongia76@gmail.com) ही साखी हटा सकते हैं।');
+  }
+  try {
+    await deleteDoc(doc(db, 'sakhis', sakhiId));
+  } catch (error) {
+    handleFirestoreError(error, OperationType.DELETE, `sakhis/${sakhiId}`);
+    throw error;
+  }
+};
+
+// Quiz Services (Public Read-Only, Admin Write)
 export const getQuizQuestions = async (): Promise<QuizQuestion[]> => {
-  const querySnapshot = await getDocs(collection(db, 'quizQuestions'));
-  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as QuizQuestion));
+  try {
+    const querySnapshot = await getDocs(collection(db, 'quizQuestions'));
+    return querySnapshot.docs.map((d) => ({ id: d.id, ...d.data() } as QuizQuestion));
+  } catch (error) {
+    handleFirestoreError(error, OperationType.LIST, 'quizQuestions');
+    return [];
+  }
 };
 
 export const addQuizQuestion = async (question: QuizQuestion) => {
-  return await addDoc(collection(db, 'quizQuestions'), question);
+  if (!isFirebaseAdminVerified()) {
+    throw new Error('केवल अधिकृत एडमिन (smongia76@gmail.com) ही प्रश्नोत्तरी जोड़ सकते हैं।');
+  }
+  try {
+    const payload = {
+      question: String(question.question || '').trim().slice(0, 1000),
+      options: (question.options || []).slice(0, 10).map((o) => String(o).trim().slice(0, 300)),
+      correctAnswer: String(question.correctAnswer || '').trim().slice(0, 500),
+    };
+    return await addDoc(collection(db, 'quizQuestions'), payload);
+  } catch (error) {
+    handleFirestoreError(error, OperationType.CREATE, 'quizQuestions');
+    throw error;
+  }
 };

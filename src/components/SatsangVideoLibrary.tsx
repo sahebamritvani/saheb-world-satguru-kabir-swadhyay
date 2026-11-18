@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Play, 
-  Tv, 
-  Bookmark, 
-  BookmarkCheck, 
-  ArrowLeft, 
+import React, { useState, useEffect, useMemo } from 'react';
+import { motion } from 'motion/react';
+import {
+  Play,
+  Tv,
+  Bookmark,
+  BookmarkCheck,
+  ArrowLeft,
   X,
-  Share2, 
-  Sparkles, 
-  Eye, 
-  Clock, 
+  Share2,
   Search,
   Video,
-  Check
+  Check,
+  Lock,
+  Plus,
+  Upload,
+  Trash2,
+  Link2,
+  ShieldCheck,
+  Cloud,
 } from 'lucide-react';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { useOnlineStatus } from '../hooks/usePWAInstall';
+import { isAdminAuthenticated, isFirebaseAdminVerified } from '../services/adminAuth';
+import {
+  subscribeToSacredMedia,
+  publishAdminSacredMedia,
+  deleteAdminSacredMedia,
+  SacredMediaItem,
+} from '../services/sacredMediaService';
 
 interface SatsangVideoLibraryProps {
   language: Language;
@@ -27,7 +38,8 @@ interface SatsangVideoLibraryProps {
 
 export interface SatsangVideo {
   id: string;
-  youtubeId: string;
+  youtubeId?: string;
+  mediaUrl: string;
   title: Record<Language, string>;
   category: 'bijak' | 'anurag' | 'leela' | 'amritvani' | 'yoga';
   speaker: string;
@@ -36,20 +48,71 @@ export interface SatsangVideo {
   thumbnailUrl?: string;
 }
 
-const SATSANG_VIDEOS: SatsangVideo[] = [];
-
 export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ language, onClose }) => {
   const { theme } = useAppTheme();
   const isHi = language === 'hi';
   const isPb = language === 'pb';
   const isOnline = useOnlineStatus();
 
+  const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
+  const [cloudItems, setCloudItems] = useState<SacredMediaItem[]>([]);
+
+  // Admin Video Publish Form state
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [videoTitle, setVideoTitle] = useState('');
+  const [videoCategory, setVideoCategory] = useState<'anurag' | 'bijak' | 'amritvani' | 'yoga' | 'leela'>('anurag');
+  const [videoSpeaker, setVideoSpeaker] = useState('सतगुरु कबीर साहेब आश्रम');
+  const [videoDuration, setVideoDuration] = useState('12:00');
+  const [videoUrlOrYt, setVideoUrlOrYt] = useState('');
+  const [videoDescription, setVideoDescription] = useState('');
+  const [videoFile, setVideoFile] = useState<File | null>(null);
+  const [isPublishing, setIsPublishing] = useState(false);
+  const [adminStatusMsg, setAdminStatusMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleAuth = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener('sahebworld:admin-auth-change', handleAuth);
+    const unsubMedia = subscribeToSacredMedia((items) => {
+      setCloudItems(items.filter((it) => it.mediaType === 'video'));
+    });
+    return () => {
+      window.removeEventListener('sahebworld:admin-auth-change', handleAuth);
+      unsubMedia();
+    };
+  }, []);
+
+  const videosList: SatsangVideo[] = useMemo(() => {
+    return cloudItems.map((it) => {
+      const cat: SatsangVideo['category'] =
+        it.category === 'bijak' ||
+        it.category === 'anurag' ||
+        it.category === 'leela' ||
+        it.category === 'amritvani' ||
+        it.category === 'yoga'
+          ? it.category
+          : 'anurag';
+      return {
+        id: it.id,
+        youtubeId: it.youtubeId || undefined,
+        mediaUrl: it.mediaUrl,
+        title: { hi: it.title, pb: it.title, en: it.title },
+        category: cat,
+        speaker: it.speakerOrArtist || 'सतगुरु कबीर साहेब आश्रम',
+        duration: it.duration || 'सत्संग',
+        description: {
+          hi: it.description || 'एडमिन द्वारा प्रकाशित पावन सत्संग वीडियो दर्शन',
+          pb: it.description || 'ਐਡਮਿਨ ਵੱਲੋਂ ਪ੍ਰਕਾਸ਼ਿਤ ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ',
+          en: it.description || 'Sacred Satsang video discourse published by Admin',
+        },
+      };
+    });
+  }, [cloudItems]);
+
   const [activeVideo, setActiveVideo] = useState<SatsangVideo | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'bijak' | 'anurag' | 'amritvani' | 'yoga' | 'leela' | 'bookmarks'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  // Video bookmarks stored in localStorage
   const [bookmarkedVideoIds, setBookmarkedVideoIds] = useState<string[]>(() => {
     try {
       if (typeof window !== 'undefined') {
@@ -63,8 +126,8 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
   const toggleBookmark = (id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     sacredHaptics.lightTap();
-    setBookmarkedVideoIds(prev => {
-      const next = prev.includes(id) ? prev.filter(v => v !== id) : [...prev, id];
+    setBookmarkedVideoIds((prev) => {
+      const next = prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id];
       try {
         localStorage.setItem('sahebworld_video_bookmarks', JSON.stringify(next));
       } catch {}
@@ -74,13 +137,56 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
 
   const handleCopyShare = (video: SatsangVideo, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    const text = `।। सत्यनाम ।।\nसत्संग वीडियो: ${video.title[language] || video.title.hi}\nhttps://www.youtube.com/watch?v=${video.youtubeId}\n\nसाहेब वर्ल्ड - सतगुरु कबीर साहेब स्वाध्याय`;
+    const shareUrl = video.youtubeId ? `https://www.youtube.com/watch?v=${video.youtubeId}` : video.mediaUrl;
+    const text = `।। सत्यनाम ।।\nसत्संग वीडियो: ${video.title[language] || video.title.hi}\n${shareUrl}\n\nसाहेब वर्ल्ड - सतगुरु कबीर साहेब स्वाध्याय`;
     navigator.clipboard.writeText(text);
     setCopiedId(video.id);
     setTimeout(() => setCopiedId(null), 2500);
   };
 
-  const filteredVideos = SATSANG_VIDEOS.filter(v => {
+  const handleAdminPublishVideo = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isAdmin) return;
+    setIsPublishing(true);
+    setAdminStatusMsg(null);
+    const res = await publishAdminSacredMedia({
+      mediaType: 'video',
+      title: videoTitle,
+      category: videoCategory,
+      speakerOrArtist: videoSpeaker,
+      duration: videoDuration,
+      description: videoDescription,
+      mediaUrl: videoUrlOrYt,
+      file: videoFile,
+    });
+    setIsPublishing(false);
+    if (res.success) {
+      setAdminStatusMsg('✓ पावन सत्संग वीडियो सफलतापूर्वक प्रकाशित हो गया!');
+      setVideoTitle('');
+      setVideoUrlOrYt('');
+      setVideoDescription('');
+      setVideoFile(null);
+      setShowAddForm(false);
+      setTimeout(() => setAdminStatusMsg(null), 4000);
+    } else {
+      setAdminStatusMsg(`✗ ${res.error}`);
+    }
+  };
+
+  const handleAdminDeleteVideo = async (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    if (!isAdmin) return;
+    const res = await deleteAdminSacredMedia(id);
+    if (res.success) {
+      if (activeVideo?.id === id) setActiveVideo(null);
+      setAdminStatusMsg('✓ वीडियो हटाया गया।');
+      setTimeout(() => setAdminStatusMsg(null), 3000);
+    } else {
+      setAdminStatusMsg(`✗ ${res.error}`);
+    }
+  };
+
+  const filteredVideos = videosList.filter((v) => {
     if (selectedCategory === 'bookmarks') {
       if (!bookmarkedVideoIds.includes(v.id)) return false;
     } else if (selectedCategory !== 'all' && v.category !== selectedCategory) {
@@ -113,7 +219,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
       </div>
 
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="text-2xl font-black font-serif flex items-center gap-2" style={{ color: theme.sacredMaroon }}>
             <Tv className="w-6 h-6 text-amber-600" />
@@ -124,22 +230,155 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
           </p>
         </div>
 
-        {onClose && (
-          <button
-            type="button"
-            onClick={onClose}
-            style={{
-              backgroundColor: theme.accentGoldLight,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-xs"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>{isHi ? 'वापस जाएं' : isPb ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}</span>
-          </button>
-        )}
+        <div className="flex items-center gap-2 flex-wrap">
+          {isAdmin ? (
+            <button
+              type="button"
+              onClick={() => setShowAddForm((p) => !p)}
+              className="min-h-[40px] px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm cursor-pointer transition"
+            >
+              <Plus className="w-4 h-4" />
+              <span>{isHi ? 'नया वीडियो जोड़ें (Admin)' : isPb ? 'ਨਵਾਂ ਵੀਡੀਓ ਜੋੜੋ' : 'Add Video'}</span>
+            </button>
+          ) : (
+            <div className="px-3 py-1.5 rounded-xl bg-stone-500/10 border border-stone-500/20 text-[11px] font-bold flex items-center gap-1.5" style={{ color: theme.textSecondary }}>
+              <Lock className="w-3.5 h-3.5 text-amber-600" />
+              <span>{isHi ? 'पब्लिक रीड-ओनली' : isPb ? 'ਪਬਲਿਕ ਰੀਡ-ਓਨਲੀ' : 'Read-Only'}</span>
+            </div>
+          )}
+
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              style={{
+                backgroundColor: theme.accentGoldLight,
+                borderColor: theme.accentGold,
+                color: theme.sacredMaroon,
+              }}
+              className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-xs"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>{isHi ? 'वापस जाएं' : isPb ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}</span>
+            </button>
+          )}
+        </div>
       </div>
+
+      {adminStatusMsg && (
+        <div className="p-3 rounded-2xl border border-amber-500/40 bg-amber-500/10 text-xs font-bold text-center" style={{ color: theme.textPrimary }}>
+          {adminStatusMsg}
+        </div>
+      )}
+
+      {/* Admin-Only Video Upload Drawer */}
+      {isAdmin && showAddForm && (
+        <form
+          onSubmit={handleAdminPublishVideo}
+          className="p-5 rounded-3xl border-2 border-emerald-500/40 space-y-3.5 shadow-lg"
+          style={{ backgroundColor: theme.cardBg }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <h3 className="text-sm font-black font-serif" style={{ color: theme.sacredMaroon }}>
+                नया सत्संग वीडियो जोड़ें / अपलोड करें (Admin Only)
+              </h3>
+            </div>
+            <button type="button" onClick={() => setShowAddForm(false)} className="p-1.5 rounded-lg hover:bg-black/10 cursor-pointer">
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {!isFirebaseAdminVerified() && (
+            <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-[11px] font-bold text-amber-900 dark:text-amber-200">
+              ⚠️ क्लाउड वीडियो प्रकाशन हेतु कृपया सेटिंग्स ⚙️ → एडमिन प्रमाणीकरण में Google (smongia76@gmail.com) से साइन-इन करें।
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input
+              type="text"
+              required
+              value={videoTitle}
+              onChange={(e) => setVideoTitle(e.target.value)}
+              placeholder="सत्संग वीडियो का शीर्षक"
+              className="w-full px-3 py-2 rounded-xl border text-xs font-bold outline-none"
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+            />
+            <select
+              value={videoCategory}
+              onChange={(e) => setVideoCategory(e.target.value as SatsangVideo['category'])}
+              className="w-full px-3 py-2 rounded-xl border text-xs font-bold outline-none"
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+            >
+              <option value="anurag">अनुराग सागर (Anurag Sagar)</option>
+              <option value="bijak">बीजक विचार (Bijak)</option>
+              <option value="amritvani">अमृतवाणी (Amritvani)</option>
+              <option value="yoga">सूरत-शब्द योग (Surat Shabad)</option>
+              <option value="leela">जीवन लीला (Divine Leela)</option>
+            </select>
+            <input
+              type="text"
+              value={videoSpeaker}
+              onChange={(e) => setVideoSpeaker(e.target.value)}
+              placeholder="वक्ता / आश्रम नाम"
+              className="w-full px-3 py-2 rounded-xl border text-xs outline-none"
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+            />
+            <input
+              type="text"
+              value={videoDuration}
+              onChange={(e) => setVideoDuration(e.target.value)}
+              placeholder="अवधि (जैसे 15:20)"
+              className="w-full px-3 py-2 rounded-xl border text-xs font-mono outline-none"
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+            />
+          </div>
+
+          <textarea
+            rows={2}
+            value={videoDescription}
+            onChange={(e) => setVideoDescription(e.target.value)}
+            placeholder="सत्संग का संक्षिप्त विवरण (वैकल्पिक)"
+            className="w-full px-3 py-2 rounded-xl border text-xs outline-none"
+            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+            <div className="flex items-center gap-2">
+              <Link2 className="w-4 h-4 text-amber-600 shrink-0" />
+              <input
+                type="text"
+                value={videoUrlOrYt}
+                onChange={(e) => setVideoUrlOrYt(e.target.value)}
+                placeholder="YouTube लिंक / ID या HTTPS MP4 URL"
+                className="w-full px-3 py-2 rounded-xl border text-xs outline-none"
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+              />
+            </div>
+
+            <label className="flex items-center gap-2 px-3 py-2 rounded-xl border border-dashed border-amber-500/50 cursor-pointer text-xs font-bold hover:bg-amber-500/10">
+              <Upload className="w-4 h-4 text-amber-600 shrink-0" />
+              <span className="truncate">{videoFile ? videoFile.name : 'या MP4/WebM वीडियो फ़ाइल चुनें'}</span>
+              <input
+                type="file"
+                accept="video/mp4,video/webm,video/*"
+                className="hidden"
+                onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
+              />
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isPublishing || (!videoFile && !videoUrlOrYt.trim())}
+            className="w-full min-h-[44px] py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md disabled:opacity-50 cursor-pointer transition"
+          >
+            {isPublishing ? 'अपलोड हो रहा है...' : '☁️ सभी भक्तों के लिए वीडियो प्रकाशित करें'}
+          </button>
+        </form>
+      )}
 
       {/* Search & Categories */}
       <div className="space-y-3">
@@ -165,7 +404,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
             { id: 'amritvani', label: isHi ? 'अमृतवाणी' : 'Amritvani' },
             { id: 'yoga', label: isHi ? 'सूरत-शब्द योग' : 'Surat Shabad' },
             { id: 'leela', label: isHi ? 'जीवन लीला' : 'Divine Leelas' },
-          ].map(cat => {
+          ].map((cat) => {
             const isSelected = selectedCategory === cat.id;
             return (
               <button
@@ -189,7 +428,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
       {/* Embedded Theater Player Modal */}
       {activeVideo && (
         <div className="fixed inset-0 z-[120] bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
-          <div 
+          <div
             className="w-full max-w-3xl rounded-3xl overflow-hidden border shadow-2xl space-y-4"
             style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
           >
@@ -210,7 +449,15 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
             </div>
 
             <div className="relative aspect-video w-full bg-black">
-              {isOnline ? (
+              {!activeVideo.youtubeId ? (
+                <video
+                  src={activeVideo.mediaUrl}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full h-full object-contain bg-black"
+                />
+              ) : isOnline ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1&rel=0`}
                   title={activeVideo.title[language] || activeVideo.title.hi}
@@ -280,7 +527,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
 
       {/* Videos Grid / Empty State */}
       {filteredVideos.length === 0 ? (
-        <div 
+        <div
           style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
           className="p-10 sm:p-14 text-center rounded-3xl border-2 space-y-3 shadow-xs"
         >
@@ -291,17 +538,24 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
             {isHi ? 'पावन सत्संग वीडियो दर्शन' : isPb ? 'ਸਤਿਸੰਗ ਵੀਡੀਓ ਦਰਸ਼ਨ' : 'Satsang Video Discourses'}
           </h3>
           <p className="text-xs sm:text-sm max-w-md mx-auto" style={{ color: theme.textSecondary }}>
-            {isHi 
-              ? 'वर्तमान में कोई वीडियो उपलब्ध नहीं है। शांत एवं पावन रिक्त स्थान।' 
-              : isPb 
-              ? 'ਇਸ ਸਮੇਂ ਕੋਈ ਵੀਡੀਓ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।' 
-              : 'No video discourses available at this time.'}
+            {isAdmin
+              ? (isHi
+                  ? 'अभी कोई वीडियो नहीं जोड़ा गया है। ऊपर "+ नया वीडियो जोड़ें (Admin)" दबाकर सत्संग वीडियो प्रकाशित करें।'
+                  : 'No videos yet. Click "+ Add Video" above to publish a Satsang video.')
+              : (isHi
+                  ? 'वर्तमान में कोई वीडियो उपलब्ध नहीं है। केवल अधिकृत एडमिन ही सत्संग वीडियो प्रकाशित कर सकते हैं।'
+                  : isPb
+                  ? 'ਇਸ ਸਮੇਂ ਕੋਈ ਵੀਡੀਓ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਸਿਰਫ਼ ਐਡਮਿਨ ਹੀ ਵੀਡੀਓ ਜੋੜ ਸਕਦੇ ਹਨ।'
+                  : 'No video discourses available at this time (Admin-only publishing).')}
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {filteredVideos.map(video => {
+          {filteredVideos.map((video) => {
             const isBookmarked = bookmarkedVideoIds.includes(video.id);
+            const thumb = video.youtubeId
+              ? `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`
+              : undefined;
             return (
               <motion.div
                 key={video.id}
@@ -313,13 +567,17 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
                 <div className="space-y-2.5">
                   {/* Video Preview Banner */}
                   <div className="aspect-video w-full rounded-2xl bg-amber-950/80 relative overflow-hidden flex items-center justify-center group shadow-inner">
-                    <div className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"
-                      style={{
-                        backgroundImage: `url('https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg')`
-                      }}
-                    />
-                    <div className="w-12 h-12 rounded-full bg-amber-500/90 text-stone-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    {thumb && (
+                      <div
+                        className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"
+                        style={{ backgroundImage: `url('${thumb}')` }}
+                      />
+                    )}
+                    <div className="w-12 h-12 rounded-full bg-amber-500/90 text-stone-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative z-10">
                       <Play className="w-6 h-6 ml-0.5" />
+                    </div>
+                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-emerald-700/85 text-white text-[10px] font-bold flex items-center gap-1">
+                      <Cloud className="w-3 h-3" /> {video.youtubeId ? 'YouTube' : 'MP4'}
                     </div>
                     <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/75 text-white font-mono text-[10px] font-bold">
                       {video.duration}
@@ -338,7 +596,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
 
                 <div className="flex items-center justify-between pt-2 border-t text-[11px]" style={{ borderColor: theme.cardBorder }}>
                   <span className="opacity-60 font-medium">{video.speaker}</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
                     <button
                       type="button"
                       onClick={(e) => toggleBookmark(video.id, e)}
@@ -355,6 +613,16 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
                     >
                       <Share2 className="w-3.5 h-3.5 opacity-50" />
                     </button>
+                    {isAdmin && (
+                      <button
+                        type="button"
+                        onClick={(e) => handleAdminDeleteVideo(e, video.id)}
+                        className="p-1.5 rounded-lg border border-red-500/20 text-red-600 hover:bg-red-500/10 cursor-pointer"
+                        title="एडमिन: वीडियो हटाएं"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>

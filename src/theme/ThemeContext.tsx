@@ -1,11 +1,15 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { ThemeMode } from '../types';
-import banyanGhatWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
-import magharDhamWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
+import banyanGhatWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
+import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
+import sahebEmblemWallpaper from '../assets/images/saheb_world_emblem_wallpaper_1794954938340.jpg';
+import magharAuthenticWallpaper from '../assets/images/maghar_authentic_shrine_wallpaper_1794955828484.jpg';
+import lightFloralWallpaper from '../assets/images/light_floral_geometric_wallpaper_1794955840163.jpg';
+import lightLotusWallpaper from '../assets/images/light_lotus_blossom_wallpaper_1794956964295.jpg';
 
 export interface GlobalNaturePreset {
-  id: 'banyan_ghat' | 'maghar_dham' | 'dawn_mountain' | 'emerald_forest' | 'sunset_sky' | 'sacred_river' | 'golden_autumn';
+  id: 'banyan_ghat' | 'maghar_dham' | 'saheb_icon_emblem' | 'maghar_authentic' | 'light_floral_geometric' | 'light_lotus' | 'dawn_mountain' | 'emerald_forest' | 'sunset_sky' | 'sacred_river' | 'golden_autumn';
   name: { hi: string; pb: string; en: string };
   sub: { hi: string; pb: string; en: string };
   accent: string;
@@ -26,6 +30,34 @@ export const GLOBAL_NATURE_PRESETS: GlobalNaturePreset[] = [
     sub: { hi: 'सतगुरु निर्वाण भूमि', pb: 'ਸਤਿਗੁਰੂ ਨਿਰਵਾਣ ਭੂਮੀ', en: 'Satguru sanctuary dawn' },
     accent: '#F59E0B',
     previewBg: `url("${magharDhamWallpaper}")`,
+  },
+  {
+    id: 'maghar_authentic',
+    name: { hi: 'मगहर प्रामाणिक धाम', pb: 'ਮਗਹਰ ਪ੍ਰਮਾਣਿਕ ਧਾਮ', en: 'Maghar Authentic Shrine' },
+    sub: { hi: 'ऐतिहासिक श्वेत गुंबद व प्रांगण', pb: 'ਇਤਿਹਾਸਕ ਗੁੰਬਦ ਤੇ ਵਿਹੜਾ', en: 'Historic shrine & courtyard' },
+    accent: '#F59E0B',
+    previewBg: `url("${magharAuthenticWallpaper}")`,
+  },
+  {
+    id: 'light_floral_geometric',
+    name: { hi: 'पुष्पीय ज्यामितीय (Light)', pb: 'ਫੁੱਲ ਤੇ ਜ్యాਮਿਤਿਕ ਰੋਸ਼ਨੀ', en: 'Light Floral & Geometric' },
+    sub: { hi: 'गुलाब फूल 🌹 व ज्यामितीय चक्र', pb: 'ਗੁਲਾਬ ਫੁੱल 🌹 ਅਤੇ ਜ్యాਮਿਤਿਕ ਆਕృతి', en: 'Roses 🌹 & sacred geometry' },
+    accent: '#E11D48',
+    previewBg: `url("${lightFloralWallpaper}")`,
+  },
+  {
+    id: 'light_lotus',
+    name: { hi: 'पावन श्वेत-स्वर्ण कमल', pb: 'ਪਾਵਨ ਚਿੱਟਾ ਕਮਲ', en: 'Sacred Light Lotus' },
+    sub: { hi: 'निर्मल संगमरमर व दिव्य कमल 🪷', pb: 'ਸੰਗਮਰਮਰ ਤੇ ਦਿਵਯ ਕਮਲ 🪷', en: 'Pearl marble & holy lotus 🪷' },
+    accent: '#D97706',
+    previewBg: `url("${lightLotusWallpaper}")`,
+  },
+  {
+    id: 'saheb_icon_emblem',
+    name: { hi: 'साहेब वर्ल्ड प्रतीक', pb: 'ਸਾਹੇਬ ਵਰਲਡ ਪ੍ਰਤੀਕ', en: 'Saheb World Emblem' },
+    sub: { hi: 'गोल्डन चक्र व कमल', pb: 'ਸੁਨਹਿਰੀ ਚੱਕਰ ਤੇ ਕਮಲ', en: 'Golden chakra & lotus' },
+    accent: '#FBBF24',
+    previewBg: `url("${sahebEmblemWallpaper}")`,
   },
   {
     id: 'dawn_mountain',
@@ -645,6 +677,22 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       },
       maghar_dham: {
         backgroundImage: `url("${magharDhamWallpaper}")`,
+        overlay: overlays.medium
+      },
+      maghar_authentic: {
+        backgroundImage: `url("${magharAuthenticWallpaper}")`,
+        overlay: overlays.light
+      },
+      light_floral_geometric: {
+        backgroundImage: `url("${lightFloralWallpaper}")`,
+        overlay: overlays.light
+      },
+      light_lotus: {
+        backgroundImage: `url("${lightLotusWallpaper}")`,
+        overlay: overlays.light
+      },
+      saheb_icon_emblem: {
+        backgroundImage: `url("${sahebEmblemWallpaper}")`,
         overlay: overlays.medium
       },
       dawn_mountain: {

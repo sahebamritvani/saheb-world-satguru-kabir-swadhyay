@@ -57,6 +57,7 @@ import { AcharyaParampara } from './components/AcharyaParampara';
 import { DivineDarshanModule } from './components/DivineDarshanModule';
 import { SggsKabirBaniEngine } from './components/SggsKabirBaniEngine';
 import { NatureWallpaperEngine } from './components/NatureWallpaperEngine';
+import { DailyHukamnamaView } from './components/DailyHukamnamaView';
 import { ChetawaniSaarang } from './components/ChetawaniSaarang';
 import { DohaMemoryTrainer } from './components/DohaMemoryTrainer';
 import { sakhisDatabase, getDailyPawanSakhi } from './data/sakhis';
@@ -130,7 +131,9 @@ function MainApp() {
       'doha-memory': 'doha-memory',
       'satya-naam': 'satya-naam',
       'aatma-bhushan': 'aatma-bhushan',
-      'gyan-chakra': 'gyan-chakra'
+      'gyan-chakra': 'gyan-chakra',
+      'nature-wallpaper': 'nature-wallpaper',
+      'hukamnama': 'hukamnama'
     };
     
     if (rawHash && !viewMap[rawHash]) {
@@ -194,7 +197,14 @@ function MainApp() {
 
   // Active sakhi for dedicated Swadhyay or Quiz
   const [activeSakhi, setActiveSakhi] = useState<Sakhi>(() => getDailyPawanSakhi());
-  const [showSplash, setShowSplash] = useState<boolean>(false);
+  const [showSplash, setShowSplash] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    try {
+      return localStorage.getItem('sahebworld_splash_on_launch') !== 'false';
+    } catch {
+      return true;
+    }
+  });
 
   const handleFinishSplash = () => {
     setShowSplash(false);
@@ -205,8 +215,9 @@ function MainApp() {
   const [isAccessibilityOpen, setIsAccessibilityOpen] = useState(false);
   const [isMaryadaOpen, setIsMaryadaOpen] = useState<boolean>(false);
 
-  // Open Sacred Maryada Modal automatically on startup if not dismissed today
+  // Open Sacred Maryada Modal automatically on startup after Splash Screen finishes, if not dismissed today
   useEffect(() => {
+    if (showSplash) return;
     if (typeof window !== 'undefined') {
       try {
         const todayStr = new Date().toISOString().split('T')[0];
@@ -218,7 +229,7 @@ function MainApp() {
         console.warn('Error reading Maryada storage:', e);
       }
     }
-  }, []);
+  }, [showSplash]);
   const [isDhunPlaying, setIsDhunPlaying] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [autoCorrectInitialText, setAutoCorrectInitialText] = useState('');
@@ -1117,6 +1128,22 @@ function MainApp() {
         />
       )}
 
+      {/* View: Sri Guru Granth Sahib Kabir Daily Hukamnama */}
+      {currentView === 'hukamnama' && (
+        <DailyHukamnamaView
+          language={language}
+          onLanguageChange={setLanguage}
+          onBack={() => {
+            setCurrentView('daily');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenWallpaperEngine={() => {
+            setCurrentView('nature-wallpaper');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
       {/* Guaranteed Permanent Safety Fallback: Never Blank */}
       {![
         'daily', 'swadhyay', 'das-sutra', 'dainik-chintan', 'nitnem-gutka', 'quiz',
@@ -1127,7 +1154,7 @@ function MainApp() {
         'sacred-leelas', 'aarti-sanctuary', 'shabd-kosha', 'satsang-video', 'sadhana-goals',
         'growth-dashboard', 'bhajan-repository', 'damakheda-index', 'acharya-parampara',
         'divine-darshan', 'chetavani-saarang', 'sggs-kabir-bani', 'satya-naam', 'aatma-bhushan',
-        'gyan-chakra', 'nature-wallpaper'
+        'gyan-chakra', 'nature-wallpaper', 'hukamnama'
       ].includes(currentView) && (
         <DailyPawanSakhi
           sakhi={currentDailySakhi}

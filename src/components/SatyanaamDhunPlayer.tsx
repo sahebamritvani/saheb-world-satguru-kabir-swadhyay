@@ -24,7 +24,14 @@ import {
   ArrowUp,
   ArrowDown,
   Repeat,
-  Shuffle
+  Shuffle,
+  Lock,
+  ShieldCheck,
+  Cloud,
+  Pin,
+  Download,
+  CheckCircle2,
+  Loader2,
 } from 'lucide-react';
 import { useAppTheme } from '../theme/ThemeContext';
 import { getDailyAffirmation } from '../data/dailyAffirmations';
@@ -48,6 +55,20 @@ import {
   subscribeToCustomDhunChanges 
 } from '../services/customAudioStore';
 import { sacredHaptics } from '../services/haptics';
+import { isAdminAuthenticated, isFirebaseAdminVerified } from '../services/adminAuth';
+import {
+  subscribeToSacredMedia,
+  publishAdminSacredMedia,
+  deleteAdminSacredMedia,
+} from '../services/sacredMediaService';
+import {
+  OfflineAudioMeta,
+  pinAudioForOffline,
+  unpinOfflineAudio,
+  getOfflinePlayableUrl,
+  subscribeToPinnedAudio,
+  formatAudioSize,
+} from '../services/offlineAudioCache';
 
 interface SatyanaamDhunPlayerProps {
   language: Language;
@@ -66,6 +87,12 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   const [vocalEnabled, setVocalEnabled] = useState<boolean>(satyanaamAudio.getVocalChantEnabled());
   const [soundMix, setSoundMix] = useState<DhunSoundMix>(satyanaamAudio.getSoundMix());
   const [showMixer, setShowMixer] = useState<boolean>(false);
+
+  // Admin & Offline Pinning state
+  const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
+  const [cloudTracks, setCloudTracks] = useState<(DhunTrack & { isCloud?: boolean })[]>([]);
+  const [pinnedMap, setPinnedMap] = useState<Record<string, OfflineAudioMeta>>({});
+  const [pinProgress, setPinProgress] = useState<Record<string, number>>({});
 
   // Custom audio tracks state
   const [customTracks, setCustomTracks] = useState<DhunTrack[]>([]);
@@ -100,14 +127,45 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const timerIntervalRef = useRef<number | null>(null);
 
-  // Load custom tracks and playlists on mount
+  const allDhunTracks: (DhunTrack & { isCloud?: boolean })[] = [
+    ...cloudTracks,
+    ...customTracks,
+  ];
+
+  // Load custom tracks, cloud audio tracks, admin state, and playlists on mount
   useEffect(() => {
+    const handleAuth = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener('sahebworld:admin-auth-change', handleAuth);
+
     loadTracksAndPlaylists();
     const unsubscribe = subscribeToCustomDhunChanges(() => {
       loadTracksAndPlaylists();
     });
+    const unsubMedia = subscribeToSacredMedia((items) => {
+      const mapped: (DhunTrack & { isCloud?: boolean })[] = items
+        .filter((it) => it.mediaType === 'audio')
+        .map((it) => ({
+          id: it.id,
+          title: it.title,
+          isCustom: false,
+          dateAdded: Date.parse(it.createdAt) || Date.now(),
+          dataUrl: it.mediaUrl,
+          size: 0,
+          type: 'audio/mpeg',
+          isCloud: true,
+        }));
+      setCloudTracks(mapped);
+    });
+
+    const unsubPinned = subscribeToPinnedAudio((map) => {
+      setPinnedMap(map);
+    });
+
     return () => {
+      window.removeEventListener('sahebworld:admin-auth-change', handleAuth);
       unsubscribe();
+      unsubMedia();
+      unsubPinned();
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
   }, []);
@@ -125,11 +183,17 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     }
   };
 
+  useEffect(() => {
+    if (!selectedTrack && allDhunTracks.length > 0) {
+      setSelectedTrack(allDhunTracks[0]);
+    }
+  }, [cloudTracks, customTracks]);
+
   const activePlaylist = playlists.find((p) => p.id === activePlaylistId) || null;
 
   // Resolve playlist tracks
   const activePlaylistTracks = (activePlaylist?.trackIds || [])
-    .map((tid) => customTracks.find((tr) => tr.id === tid))
+    .map((tid) => allDhunTracks.find((tr) => tr.id === tid))
     .filter(Boolean) as DhunTrack[];
 
   // Sync Audio Element
@@ -167,10 +231,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
         const nextTrack = activePlaylistTracks[nextIndex];
         if (nextTrack) {
           setSelectedTrack(nextTrack);
-          audio.src = nextTrack.dataUrl || '';
-          const gain = nextTrack.customGain !== undefined ? nextTrack.customGain : 1;
-          audio.volume = customVolume * gain;
-          audio.play().catch(() => {});
+          getOfflinePlayableUrl(nextTrack.id, nextTrack.dataUrl).then((resolved) => {
+            if (!audioRef.current) return;
+            audioRef.current.src = resolved || nextTrack.dataUrl || '';
+            const gain = nextTrack.customGain !== undefined ? nextTrack.customGain : 1;
+            audioRef.current.volume = customVolume * gain;
+            audioRef.current.play().catch(() => {});
+          });
         }
       } else if (isLooping) {
         audio.currentTime = 0;
@@ -191,19 +258,26 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     };
   }, [isLooping, activeMode, activePlaylistTracks, playlistTrackIndex, isRepeatAll, isShuffle, customVolume]);
 
-  // Update Custom Track Source when selectedTrack changes
+  // Update Custom Track Source when selectedTrack changes (resolving offline cached Blob first)
   useEffect(() => {
+    let cancelled = false;
     if (audioRef.current && selectedTrack?.dataUrl) {
       const wasPlaying = isCustomPlaying;
-      audioRef.current.src = selectedTrack.dataUrl;
-      const gain = selectedTrack.customGain !== undefined ? selectedTrack.customGain : 1;
-      audioRef.current.volume = customVolume * gain;
-      audioRef.current.loop = activeMode === 'playlist' ? false : isLooping;
+      getOfflinePlayableUrl(selectedTrack.id, selectedTrack.dataUrl).then((resolved) => {
+        if (cancelled || !audioRef.current) return;
+        audioRef.current.src = resolved || selectedTrack.dataUrl || '';
+        const gain = selectedTrack.customGain !== undefined ? selectedTrack.customGain : 1;
+        audioRef.current.volume = customVolume * gain;
+        audioRef.current.loop = activeMode === 'playlist' ? false : isLooping;
 
-      if (wasPlaying && (activeMode === 'custom' || activeMode === 'playlist')) {
-        audioRef.current.play().catch(() => {});
-      }
+        if (wasPlaying && (activeMode === 'custom' || activeMode === 'playlist')) {
+          audioRef.current.play().catch(() => {});
+        }
+      });
     }
+    return () => {
+      cancelled = true;
+    };
   }, [selectedTrack]);
 
   // Update volume
@@ -436,8 +510,12 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   const handleToggleCustom = () => {
     sacredHaptics.lightTap();
     if (!selectedTrack || !audioRef.current) {
-      if (customTracks.length === 0) {
-        fileInputRef.current?.click();
+      if (allDhunTracks.length === 0) {
+        if (isAdmin) {
+          fileInputRef.current?.click();
+        } else {
+          showToast(language === 'hi' ? 'केवल एडमिन ही नई ऑडियो धुन अपलोड कर सकते हैं।' : 'Admin-only upload.');
+        }
         return;
       }
     }
@@ -463,13 +541,15 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   };
 
   // Playlist track playback trigger
-  const handlePlayPlaylistTrack = (index: number) => {
+  const handlePlayPlaylistTrack = async (index: number) => {
     sacredHaptics.lightTap();
     if (!activePlaylistTracks[index] || !audioRef.current) return;
     setPlaylistTrackIndex(index);
     const tr = activePlaylistTracks[index];
     setSelectedTrack(tr);
-    audioRef.current.src = tr.dataUrl || '';
+    const resolved = await getOfflinePlayableUrl(tr.id, tr.dataUrl);
+    if (!audioRef.current) return;
+    audioRef.current.src = resolved || tr.dataUrl || '';
     const gain = tr.customGain !== undefined ? tr.customGain : 1;
     audioRef.current.volume = customVolume * gain;
 
@@ -483,6 +563,44 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     }).catch(() => {
       showToast(t.errorToast);
     });
+  };
+
+  // Pin Cloud Audio Track for Offline Playback
+  const handleTogglePinOffline = async (e: React.MouseEvent, tr: DhunTrack & { isCloud?: boolean }) => {
+    e.stopPropagation();
+    sacredHaptics.lightTap();
+    if (!tr.dataUrl) return;
+
+    if (pinnedMap[tr.id]) {
+      await unpinOfflineAudio(tr.id);
+      showToast(language === 'hi' ? `✓ "${tr.title}" ऑफ़लाइन कैश से हटाया गया` : `Removed "${tr.title}" from offline cache`);
+      return;
+    }
+
+    setPinProgress((prev) => ({ ...prev, [tr.id]: 5 }));
+    const res = await pinAudioForOffline(
+      {
+        id: tr.id,
+        title: tr.title,
+        mediaUrl: tr.dataUrl,
+      },
+      (pct) => {
+        setPinProgress((prev) => ({ ...prev, [tr.id]: pct }));
+      }
+    );
+
+    setPinProgress((prev) => {
+      const next = { ...prev };
+      delete next[tr.id];
+      return next;
+    });
+
+    if (res.success) {
+      sacredHaptics.successVibration();
+      showToast(language === 'hi' ? `✓ "${tr.title}" बिना इंटरनेट सुनने हेतु सेव हो गया!` : `Pinned "${tr.title}" for offline playback!`);
+    } else {
+      showToast(res.error || t.saveFailedToast);
+    }
   };
 
   // Handle Sound Mix Slider
@@ -502,8 +620,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     }
   };
 
-  // Handle File Upload
+  // Handle File Upload (Admin-Only)
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isAdmin) {
+      e.target.value = '';
+      showToast(language === 'hi' ? 'केवल अधिकृत एडमिन ही ऑडियो अपलोड कर सकते हैं।' : 'Only Admin can upload audio.');
+      return;
+    }
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -517,7 +640,25 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       const track = await saveCustomDhunTrack(file);
       setSelectedTrack(track);
       setActiveMode('custom');
-      showToast(t.addedToast);
+
+      // Also sync to global Cloud sacred_media if Firebase Admin is active
+      if (isFirebaseAdminVerified()) {
+        const cleanTitle = file.name.replace(/\.[^/.]+$/, '');
+        const res = await publishAdminSacredMedia({
+          mediaType: 'audio',
+          title: cleanTitle,
+          category: 'satsang',
+          speakerOrArtist: 'Satguru Kabir Saheb Ashram',
+          file,
+        });
+        if (res.success) {
+          showToast(language === 'hi' ? '✓ सत्यनाम धुन क्लाउड व डिवाइस में अपलोड हो गई!' : t.addedToast);
+        } else {
+          showToast(t.addedToast);
+        }
+      } else {
+        showToast(t.addedToast);
+      }
 
       // Also add to active playlist if open in playlist mode
       if (activePlaylistId && activePlaylist) {
@@ -545,24 +686,32 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
   const handleDeleteTrack = async (e: React.MouseEvent, trackId: string) => {
     e.stopPropagation();
+    if (!isAdmin) return;
     sacredHaptics.lightTap();
     if (selectedTrack?.id === trackId) {
       if (audioRef.current) audioRef.current.pause();
       setIsCustomPlaying(false);
       setSelectedTrack(null);
     }
-    await deleteCustomDhunTrack(trackId);
+    const isCloudItem = cloudTracks.some((c) => c.id === trackId);
+    if (isCloudItem) {
+      await deleteAdminSacredMedia(trackId);
+    } else {
+      await deleteCustomDhunTrack(trackId);
+    }
     showToast(t.removedToast);
   };
 
   const handleStartRename = (e: React.MouseEvent, tr: DhunTrack) => {
     e.stopPropagation();
+    if (!isAdmin) return;
     setEditingTrackId(tr.id);
     setEditingTitle(tr.title);
   };
 
   const handleSaveRename = async (e: React.MouseEvent, trackId: string) => {
     e.stopPropagation();
+    if (!isAdmin) return;
     if (editingTitle.trim()) {
       await updateCustomDhunTrackTitle(trackId, editingTitle.trim());
       if (selectedTrack?.id === trackId) {
@@ -573,9 +722,9 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     setEditingTrackId(null);
   };
 
-  // Playlist Management Handlers
+  // Playlist Management Handlers (Admin-Only mutations)
   const handleCreatePlaylist = () => {
-    if (!newPlaylistName.trim()) return;
+    if (!isAdmin || !newPlaylistName.trim()) return;
     sacredHaptics.lightTap();
     const newPl: DhunPlaylist = {
       id: `pl_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
@@ -597,6 +746,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
   const handleDeletePlaylist = (e: React.MouseEvent, plId: string) => {
     e.stopPropagation();
+    if (!isAdmin) return;
     sacredHaptics.lightTap();
     const updated = deleteDhunPlaylist(plId);
     setPlaylists(updated);
@@ -607,6 +757,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   };
 
   const handleAddTrackToPlaylist = (plId: string, trackId: string) => {
+    if (!isAdmin) return;
     sacredHaptics.lightTap();
     const pl = playlists.find((p) => p.id === plId);
     if (!pl) return;
@@ -620,6 +771,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   };
 
   const handleRemoveTrackFromPlaylist = (plId: string, trackId: string) => {
+    if (!isAdmin) return;
     sacredHaptics.lightTap();
     const pl = playlists.find((p) => p.id === plId);
     if (!pl) return;
@@ -631,6 +783,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   };
 
   const handleMoveTrackOrder = (plId: string, fromIndex: number, toIndex: number) => {
+    if (!isAdmin) return;
     sacredHaptics.lightTap();
     const pl = playlists.find((p) => p.id === plId);
     if (!pl || toIndex < 0 || toIndex >= pl.trackIds.length) return;
@@ -679,13 +832,15 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       }}
       className="rounded-3xl border-2 shadow-2xl p-4 sm:p-7 relative overflow-hidden transition-all duration-300"
     >
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.webm"
-        className="hidden"
-        onChange={handleFileUpload}
-      />
+      {isAdmin && (
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.webm"
+          className="hidden"
+          onChange={handleFileUpload}
+        />
+      )}
 
       {/* Radiant Glow in Background during Playback */}
       {isAnyPlaying && (
@@ -721,21 +876,28 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
           </p>
         </div>
 
-        {/* Header Actions (Upload & Close) */}
+        {/* Header Actions (Admin-Only Upload & Close) */}
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => fileInputRef.current?.click()}
-            disabled={isUploading}
-            style={{
-              backgroundColor: theme.buttonPrimaryBg,
-              color: theme.buttonPrimaryText,
-            }}
-            className="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-md flex items-center gap-2 hover:opacity-90 active:scale-95 transition cursor-pointer"
-          >
-            <Upload className={`w-4 h-4 ${isUploading ? 'animate-spin' : ''}`} />
-            <span>{isUploading ? t.uploading : t.uploadBtn}</span>
-          </button>
+          {isAdmin ? (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={isUploading}
+              style={{
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
+              }}
+              className="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-md flex items-center gap-2 hover:opacity-90 active:scale-95 transition cursor-pointer"
+            >
+              <Upload className={`w-4 h-4 ${isUploading ? 'animate-spin' : ''}`} />
+              <span>{isUploading ? t.uploading : t.uploadBtn}</span>
+            </button>
+          ) : (
+            <div className="px-3 py-1.5 rounded-xl bg-stone-500/10 border border-stone-500/20 text-[11px] font-bold flex items-center gap-1.5" style={{ color: theme.textSecondary }}>
+              <Lock className="w-3.5 h-3.5 text-amber-600" />
+              <span>{language === 'pb' ? 'ਕੇਵਲ ਐਡਮਿਨ ਅੱਪਲੋਡ' : language === 'en' ? 'Admin-Only Upload' : 'केवल एडमिन अपलोड'}</span>
+            </div>
+          )}
 
           {onClose && (
             <button
@@ -789,9 +951,9 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
         >
           <Music className="w-4 h-4 shrink-0" />
           <span className="truncate">{t.customTab}</span>
-          {customTracks.length > 0 && (
+          {allDhunTracks.length > 0 && (
             <span className="px-1.5 py-0.2 text-[10px] bg-stone-950 text-amber-200 rounded-full font-black shrink-0">
-              {customTracks.length}
+              {allDhunTracks.length}
             </span>
           )}
         </button>
@@ -1038,30 +1200,38 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       {/* MODE 2: Custom Tracks Library */}
       {activeMode === 'custom' && (
         <div className="space-y-6 py-2">
-          {customTracks.length === 0 ? (
-            /* Empty state for custom uploads */
+          {allDhunTracks.length === 0 ? (
+            /* Empty state for custom uploads (Admin-Only upload trigger) */
             <div 
-              onClick={() => fileInputRef.current?.click()}
-              className="text-center p-8 rounded-2xl border-2 border-dashed border-amber-400/40 bg-black/5 dark:bg-white/5 cursor-pointer hover:border-amber-500 transition space-y-3"
+              onClick={isAdmin ? () => fileInputRef.current?.click() : undefined}
+              className={`text-center p-8 rounded-2xl border-2 border-dashed border-amber-400/40 bg-black/5 dark:bg-white/5 transition space-y-3 ${isAdmin ? 'cursor-pointer hover:border-amber-500' : ''}`}
             >
               <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto text-amber-600">
-                <Disc className="w-8 h-8 animate-spin duration-3000" />
+                {isAdmin ? <Disc className="w-8 h-8 animate-spin duration-3000" /> : <Lock className="w-8 h-8" />}
               </div>
               <div className="space-y-1">
                 <h3 className="text-base font-bold font-serif" style={{ color: theme.sacredMaroon }}>
                   {t.noCustomTitle}
                 </h3>
                 <p className="text-xs max-w-sm mx-auto" style={{ color: theme.textSecondary }}>
-                  {t.noCustomSubtitle}
+                  {isAdmin
+                    ? t.noCustomSubtitle
+                    : (language === 'pb'
+                        ? 'ਇਹ ਸੂਚੀ ਪਬਲਿਕ ਰੀਡ-ਓਨਲੀ ਹੈ। ਸਿਰਫ਼ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਹੀ ਨਵੀਆਂ ਧੁਨਾਂ ਜੋੜ ਸਕਦੇ ਹਨ।'
+                        : language === 'en'
+                        ? 'Public read-only library. Only the Authorized Admin can upload audio tracks.'
+                        : 'यह सूची पब्लिक रीड-ओनली है। केवल अधिकृत एडमिन (smongia76@gmail.com) ही नई ऑडियो धुन जोड़ सकते हैं।')}
                 </p>
               </div>
-              <button
-                type="button"
-                className="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-stone-950 shadow-md inline-flex items-center gap-2"
-              >
-                <Upload className="w-4 h-4" />
-                <span>{t.uploadBtn}</span>
-              </button>
+              {isAdmin && (
+                <button
+                  type="button"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-stone-950 shadow-md inline-flex items-center gap-2 cursor-pointer"
+                >
+                  <Upload className="w-4 h-4" />
+                  <span>{t.uploadBtn}</span>
+                </button>
+              )}
             </div>
           ) : (
             /* Active Custom Track Player UI */
@@ -1073,8 +1243,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                     <Music className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest">
-                      {t.selectedDhun}
+                    <div className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest flex items-center justify-center sm:justify-start gap-2">
+                      <span>{t.selectedDhun}</span>
+                      {selectedTrack && pinnedMap[selectedTrack.id] && (
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-bold normal-case tracking-normal inline-flex items-center gap-1">
+                          <CheckCircle2 className="w-3 h-3" /> ऑफ़लाइन उपलब्ध ({formatAudioSize(pinnedMap[selectedTrack.id].sizeBytes)})
+                        </span>
+                      )}
                     </div>
                     <div className="text-base font-bold font-serif line-clamp-1" style={{ color: theme.sacredMaroon }}>
                       {selectedTrack?.title || t.selectedDhun}
@@ -1082,22 +1257,54 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                   </div>
                 </div>
 
-                {/* Main Play/Pause Button */}
-                <button
-                  type="button"
-                  onClick={handleToggleCustom}
-                  style={{
-                    backgroundColor: theme.buttonPrimaryBg,
-                    color: theme.buttonPrimaryText,
-                  }}
-                  className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition cursor-pointer flex-shrink-0"
-                >
-                  {isCustomPlaying ? (
-                    <Pause className="w-7 h-7" />
-                  ) : (
-                    <Play className="w-7 h-7 translate-x-0.5" />
+                <div className="flex items-center gap-2.5 flex-shrink-0">
+                  {selectedTrack && (selectedTrack as DhunTrack & { isCloud?: boolean }).isCloud && selectedTrack.dataUrl && (
+                    <button
+                      type="button"
+                      onClick={(e) => handleTogglePinOffline(e, selectedTrack)}
+                      disabled={pinProgress[selectedTrack.id] !== undefined}
+                      className={`min-h-[44px] px-3 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
+                        pinnedMap[selectedTrack.id]
+                          ? 'bg-emerald-600 text-white border-emerald-600'
+                          : 'bg-amber-500/10 border-amber-500/40 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20'
+                      }`}
+                    >
+                      {pinProgress[selectedTrack.id] !== undefined ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>{pinProgress[selectedTrack.id]}%</span>
+                        </>
+                      ) : pinnedMap[selectedTrack.id] ? (
+                        <>
+                          <Pin className="w-4 h-4" />
+                          <span>ऑफ़लाइन सेव</span>
+                        </>
+                      ) : (
+                        <>
+                          <Download className="w-4 h-4" />
+                          <span>ऑफ़लाइन डाउनलोड</span>
+                        </>
+                      )}
+                    </button>
                   )}
-                </button>
+
+                  {/* Main Play/Pause Button */}
+                  <button
+                    type="button"
+                    onClick={handleToggleCustom}
+                    style={{
+                      backgroundColor: theme.buttonPrimaryBg,
+                      color: theme.buttonPrimaryText,
+                    }}
+                    className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition cursor-pointer flex-shrink-0"
+                  >
+                    {isCustomPlaying ? (
+                      <Pause className="w-7 h-7" />
+                    ) : (
+                      <Play className="w-7 h-7 translate-x-0.5" />
+                    )}
+                  </button>
+                </div>
               </div>
 
               {/* Progress Seeker Bar */}
@@ -1151,11 +1358,11 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
               {/* Custom Track List with Track-level gain slider */}
               <div className="space-y-2">
                 <div className="text-xs font-bold uppercase tracking-wider px-1 flex items-center justify-between" style={{ color: theme.textMuted }}>
-                  <span>{t.savedList} ({customTracks.length})</span>
+                  <span>{t.savedList} ({allDhunTracks.length})</span>
                   <span>{t.trackGain}</span>
                 </div>
                 <div className="space-y-1.5 max-h-56 overflow-y-auto pr-1">
-                  {customTracks.map((tr) => {
+                  {allDhunTracks.map((tr) => {
                     const isSelected = selectedTrack?.id === tr.id;
                     const gainVal = tr.customGain !== undefined ? tr.customGain : 1;
                     return (
@@ -1172,9 +1379,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                         }`}
                       >
                         <div className="flex items-center gap-2.5 min-w-0 flex-1">
-                          <Music className={`w-4 h-4 flex-shrink-0 ${isSelected ? 'text-amber-600' : 'text-stone-400'}`} />
+                          {tr.isCloud ? (
+                            <Cloud className={`w-4 h-4 flex-shrink-0 ${isSelected ? 'text-emerald-600' : 'text-emerald-500/70'}`} />
+                          ) : (
+                            <Music className={`w-4 h-4 flex-shrink-0 ${isSelected ? 'text-amber-600' : 'text-stone-400'}`} />
+                          )}
                           
-                          {editingTrackId === tr.id ? (
+                          {isAdmin && editingTrackId === tr.id && !tr.isCloud ? (
                             <div className="flex items-center gap-1.5 flex-1" onClick={(e) => e.stopPropagation()}>
                               <input
                                 type="text"
@@ -1214,7 +1425,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                           )}
                         </div>
 
-                        {/* Individual Track Gain Slider & Actions */}
+                        {/* Individual Track Gain Slider & Admin-Only Actions */}
                         <div className="flex items-center gap-2 flex-shrink-0 self-end sm:self-auto" onClick={(e) => e.stopPropagation()}>
                           <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 px-2 py-0.5 rounded-lg border border-amber-500/20">
                             <span className="text-[10px] font-mono text-amber-600">Vol:</span>
@@ -1233,27 +1444,61 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
                           {editingTrackId !== tr.id && (
                             <div className="flex items-center gap-1 flex-shrink-0">
+                              {tr.isCloud && tr.dataUrl && (
+                                <button
+                                  type="button"
+                                  onClick={(e) => handleTogglePinOffline(e, tr)}
+                                  disabled={pinProgress[tr.id] !== undefined}
+                                  className={`px-2 py-1 rounded-lg text-[10px] font-bold flex items-center gap-1 border transition cursor-pointer ${
+                                    pinnedMap[tr.id]
+                                      ? 'bg-emerald-600 text-white border-emerald-600'
+                                      : 'border-amber-500/30 bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20'
+                                  }`}
+                                  title={pinnedMap[tr.id] ? 'ऑफ़लाइन कैश हटाएँ' : 'बिना इंटरनेट सुनने हेतु डाउनलोड करें'}
+                                >
+                                  {pinProgress[tr.id] !== undefined ? (
+                                    <>
+                                      <Loader2 className="w-3 h-3 animate-spin" />
+                                      <span>{pinProgress[tr.id]}%</span>
+                                    </>
+                                  ) : pinnedMap[tr.id] ? (
+                                    <>
+                                      <Pin className="w-3 h-3" />
+                                      <span>✓ ऑफ़लाइन</span>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <Download className="w-3 h-3" />
+                                      <span>सेव</span>
+                                    </>
+                                  )}
+                                </button>
+                              )}
                               {isSelected && isCustomPlaying && (
                                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-stone-950 animate-pulse">
                                   {t.playingText}
                                 </span>
                               )}
-                              <button
-                                type="button"
-                                onClick={(e) => handleStartRename(e, tr)}
-                                className="p-1 rounded-lg hover:text-amber-600 text-stone-400 transition"
-                                title="नाम बदलें (Rename)"
-                              >
-                                <Edit2 className="w-3.5 h-3.5" />
-                              </button>
-                              <button
-                                type="button"
-                                onClick={(e) => handleDeleteTrack(e, tr.id)}
-                                className="p-1 rounded-lg hover:text-red-600 text-stone-400 transition"
-                                title={t.deleteTitle}
-                              >
-                                <Trash2 className="w-3.5 h-3.5" />
-                              </button>
+                              {isAdmin && !tr.isCloud && (
+                                <button
+                                  type="button"
+                                  onClick={(e) => handleStartRename(e, tr)}
+                                  className="p-1 rounded-lg hover:text-amber-600 text-stone-400 transition cursor-pointer"
+                                  title="नाम बदलें (Rename)"
+                                >
+                                  <Edit2 className="w-3.5 h-3.5" />
+                                </button>
+                              )}
+                              {isAdmin && (
+                                <button
+                                  type="button"
+                                  onClick={(e) => handleDeleteTrack(e, tr.id)}
+                                  className="p-1 rounded-lg hover:text-red-600 text-stone-400 transition cursor-pointer"
+                                  title={t.deleteTitle}
+                                >
+                                  <Trash2 className="w-3.5 h-3.5" />
+                                </button>
+                              )}
                             </div>
                           )}
                         </div>
@@ -1284,31 +1529,33 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
               </p>
             </div>
 
-            <div className="flex items-center gap-2 flex-wrap">
-              <button
-                type="button"
-                onClick={() => setIsCreatingPlaylist(!isCreatingPlaylist)}
-                className="px-3 py-1.5 rounded-xl bg-amber-600 text-white hover:bg-amber-700 text-xs font-bold flex items-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
-              >
-                <Plus className="w-3.5 h-3.5" />
-                <span>{t.createPlaylist}</span>
-              </button>
-
-              {activePlaylist && (
+            {isAdmin && (
+              <div className="flex items-center gap-2 flex-wrap">
                 <button
                   type="button"
-                  onClick={(e) => handleDeletePlaylist(e, activePlaylist.id)}
-                  className="px-2.5 py-1.5 rounded-xl bg-red-500/10 text-red-600 hover:bg-red-500/20 text-xs font-bold border border-red-500/20 cursor-pointer"
-                  title="Delete Playlist"
+                  onClick={() => setIsCreatingPlaylist(!isCreatingPlaylist)}
+                  className="px-3 py-1.5 rounded-xl bg-amber-600 text-white hover:bg-amber-700 text-xs font-bold flex items-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
                 >
-                  <Trash2 className="w-3.5 h-3.5" />
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>{t.createPlaylist}</span>
                 </button>
-              )}
-            </div>
+
+                {activePlaylist && (
+                  <button
+                    type="button"
+                    onClick={(e) => handleDeletePlaylist(e, activePlaylist.id)}
+                    className="px-2.5 py-1.5 rounded-xl bg-red-500/10 text-red-600 hover:bg-red-500/20 text-xs font-bold border border-red-500/20 cursor-pointer"
+                    title="Delete Playlist"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+            )}
           </div>
 
-          {/* New Playlist Form Modal / Drawer */}
-          {isCreatingPlaylist && (
+          {/* New Playlist Form Modal / Drawer (Admin-Only) */}
+          {isAdmin && isCreatingPlaylist && (
             <div className="p-4 rounded-2xl border-2 border-amber-500/40 bg-black/5 dark:bg-white/5 space-y-3 animate-fadeIn">
               <h4 className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                 {t.createPlaylist}
@@ -1490,37 +1737,39 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                               />
                             </div>
 
-                            {/* Move Up */}
-                            <button
-                              type="button"
-                              disabled={idx === 0}
-                              onClick={() => handleMoveTrackOrder(activePlaylist.id, idx, idx - 1)}
-                              className="p-1 rounded hover:bg-amber-500/20 text-stone-400 disabled:opacity-30"
-                              title="Move Up"
-                            >
-                              <ArrowUp className="w-3.5 h-3.5" />
-                            </button>
+                            {/* Move Up, Move Down, Remove (Admin-Only) */}
+                            {isAdmin && (
+                              <>
+                                <button
+                                  type="button"
+                                  disabled={idx === 0}
+                                  onClick={() => handleMoveTrackOrder(activePlaylist.id, idx, idx - 1)}
+                                  className="p-1 rounded hover:bg-amber-500/20 text-stone-400 disabled:opacity-30 cursor-pointer"
+                                  title="Move Up"
+                                >
+                                  <ArrowUp className="w-3.5 h-3.5" />
+                                </button>
 
-                            {/* Move Down */}
-                            <button
-                              type="button"
-                              disabled={idx === activePlaylistTracks.length - 1}
-                              onClick={() => handleMoveTrackOrder(activePlaylist.id, idx, idx + 1)}
-                              className="p-1 rounded hover:bg-amber-500/20 text-stone-400 disabled:opacity-30"
-                              title="Move Down"
-                            >
-                              <ArrowDown className="w-3.5 h-3.5" />
-                            </button>
+                                <button
+                                  type="button"
+                                  disabled={idx === activePlaylistTracks.length - 1}
+                                  onClick={() => handleMoveTrackOrder(activePlaylist.id, idx, idx + 1)}
+                                  className="p-1 rounded hover:bg-amber-500/20 text-stone-400 disabled:opacity-30 cursor-pointer"
+                                  title="Move Down"
+                                >
+                                  <ArrowDown className="w-3.5 h-3.5" />
+                                </button>
 
-                            {/* Remove from playlist */}
-                            <button
-                              type="button"
-                              onClick={() => handleRemoveTrackFromPlaylist(activePlaylist.id, tr.id)}
-                              className="p-1 rounded hover:text-red-600 text-stone-400"
-                              title="Remove"
-                            >
-                              <X className="w-3.5 h-3.5" />
-                            </button>
+                                <button
+                                  type="button"
+                                  onClick={() => handleRemoveTrackFromPlaylist(activePlaylist.id, tr.id)}
+                                  className="p-1 rounded hover:text-red-600 text-stone-400 cursor-pointer"
+                                  title="Remove"
+                                >
+                                  <X className="w-3.5 h-3.5" />
+                                </button>
+                              </>
+                            )}
                           </div>
                         </div>
                       );
@@ -1529,48 +1778,58 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                 )}
               </div>
 
-              {/* Add Tracks into Active Playlist from Library */}
-              <div className="mt-4 pt-3 border-t border-amber-500/20 space-y-2">
-                <div className="text-xs font-bold uppercase tracking-wider px-1 text-stone-500">
-                  + {language === 'hi' ? 'लाइब्रेरी से ट्रैक जोड़ें' : language === 'pb' ? 'ਲਾਇਬ੍ਰੇਰੀ ਤੋਂ ਟਰੈਕ ਜੋੜੋ' : 'Add Available Tracks to Playlist'}
+              {/* Add Tracks into Active Playlist from Library (Admin-Only) */}
+              {isAdmin && (
+                <div className="mt-4 pt-3 border-t border-amber-500/20 space-y-2">
+                  <div className="text-xs font-bold uppercase tracking-wider px-1 text-stone-500">
+                    + {language === 'hi' ? 'लाइब्रेरी से ट्रैक जोड़ें' : language === 'pb' ? 'ਲਾਇਬ੍ਰੇਰੀ ਤੋਂ ਟਰੈਕ ਜੋੜੋ' : 'Add Available Tracks to Playlist'}
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto">
+                    {allDhunTracks.map((tr) => {
+                      const isAlreadyIn = activePlaylist.trackIds.includes(tr.id);
+                      return (
+                        <button
+                          key={`avail_${tr.id}`}
+                          type="button"
+                          disabled={isAlreadyIn}
+                          onClick={() => handleAddTrackToPlaylist(activePlaylist.id, tr.id)}
+                          className={`px-2.5 py-1 rounded-xl text-xs font-bold border transition flex items-center gap-1.5 ${
+                            isAlreadyIn
+                              ? 'bg-amber-500/10 text-stone-400 border-transparent opacity-60'
+                              : 'bg-black/5 dark:bg-white/5 border-amber-500/30 text-stone-800 dark:text-stone-200 hover:bg-amber-500 hover:text-stone-950 cursor-pointer'
+                          }`}
+                        >
+                          <Plus className="w-3 h-3" />
+                          <span className="truncate max-w-[150px]">{tr.title}</span>
+                          {isAlreadyIn && <Check className="w-3 h-3 text-amber-600" />}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto">
-                  {customTracks.map((tr) => {
-                    const isAlreadyIn = activePlaylist.trackIds.includes(tr.id);
-                    return (
-                      <button
-                        key={`avail_${tr.id}`}
-                        type="button"
-                        disabled={isAlreadyIn}
-                        onClick={() => handleAddTrackToPlaylist(activePlaylist.id, tr.id)}
-                        className={`px-2.5 py-1 rounded-xl text-xs font-bold border transition flex items-center gap-1.5 ${
-                          isAlreadyIn
-                            ? 'bg-amber-500/10 text-stone-400 border-transparent opacity-60'
-                            : 'bg-black/5 dark:bg-white/5 border-amber-500/30 text-stone-800 dark:text-stone-200 hover:bg-amber-500 hover:text-stone-950 cursor-pointer'
-                        }`}
-                      >
-                        <Plus className="w-3 h-3" />
-                        <span className="truncate max-w-[150px]">{tr.title}</span>
-                        {isAlreadyIn && <Check className="w-3 h-3 text-amber-600" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+              )}
             </div>
           )}
 
           {playlists.length === 0 && (
             <div className="p-6 rounded-2xl border-2 border-dashed border-amber-400/40 text-center space-y-3">
               <ListMusic className="w-8 h-8 mx-auto text-amber-600" />
-              <p className="text-xs text-stone-500">{t.noPlaylistsMsg}</p>
-              <button
-                type="button"
-                onClick={() => setIsCreatingPlaylist(true)}
-                className="px-4 py-2 rounded-xl bg-amber-500 text-stone-950 font-bold text-xs shadow-md"
-              >
-                {t.createPlaylist}
-              </button>
+              <p className="text-xs text-stone-500">
+                {isAdmin
+                  ? t.noPlaylistsMsg
+                  : (language === 'hi'
+                      ? 'अभी कोई सार्वजनिक प्लेलिस्ट नहीं है। केवल अधिकृत एडमिन ही प्लेलिस्ट बना सकते हैं।'
+                      : t.noPlaylistsMsg)}
+              </p>
+              {isAdmin && (
+                <button
+                  type="button"
+                  onClick={() => setIsCreatingPlaylist(true)}
+                  className="px-4 py-2 rounded-xl bg-amber-500 text-stone-950 font-bold text-xs shadow-md cursor-pointer"
+                >
+                  {t.createPlaylist}
+                </button>
+              )}
             </div>
           )}
         </div>

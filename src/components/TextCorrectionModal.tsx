@@ -107,12 +107,18 @@ export const TextCorrectionModal: React.FC<TextCorrectionModalProps> = ({
                   />
                 </div>
 
+                <div className="text-xs font-serif p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200 leading-relaxed">
+                  🔒 {language === 'pb'
+                    ? 'ਮੂਲ ਪਾਵਨ ਬਾਣੀ ਵਿੱਚ ਬਦਲਾਅ ਸਿਰਫ਼ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਹੀ ਕਰ ਸਕਦੇ ਹਨ। ਆਪ ਜੀ ਦਾ ਸੁਝਾਅ ਨੋਟ ਵਜੋਂ ਦਰਜ ਹੋਵੇਗਾ।'
+                    : 'मूल पावन वाणी में संशोधन केवल अधिकृत एडमिन (smongia76@gmail.com) द्वारा ही संभव है। आपका सुझाव समीक्षा हेतु नोट किया जाएगा।'}
+                </div>
+
                 <button
                   type="submit"
                   className="w-full py-3 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send size={16} />
-                  <span>{language === 'pb' ? 'ਸੁਝਾਅ ਭੇਜੋ' : 'सुझाव भेजें (Report Mistake)'}</span>
+                  <span>{language === 'pb' ? 'ਸੁਝਾਅ ਦਰਜ ਕਰੋ' : 'सुझाव नोट सहेजें (Submit Note)'}</span>
                 </button>
               </form>
             )}

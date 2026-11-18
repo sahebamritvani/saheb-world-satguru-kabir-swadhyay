@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { Language } from '../types';
 import { getCustomDarshanImage, subscribeToCustomPortrait } from '../services/customPortraitStore';
@@ -93,12 +93,14 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
     : '॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ॥ सत्यनाम ॥ ';
 
   return (
-    <AnimatePresence>
-      {!isFadingOut && (
-        <motion.div
-          onClick={onFinish}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between py-10 px-4 bg-gradient-to-b from-[#FFFDF9] via-[#FAF4E8] to-[#F3EAD8] text-stone-900 select-none cursor-pointer transition-opacity duration-500 ease-in-out overflow-y-auto"
-        >
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isFadingOut ? 0 : 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.35 }}
+      onClick={handleManualEnter}
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-between py-10 px-4 bg-gradient-to-b from-[#FFFDF9] via-[#FAF4E8] to-[#F3EAD8] text-stone-900 select-none cursor-pointer overflow-y-auto"
+    >
           {/* Top Language-Sensitive Header - Balanced */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -216,8 +218,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
               <ArrowRight className="w-4 h-4 text-amber-300" />
             </button>
           </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </motion.div>
   );
 };

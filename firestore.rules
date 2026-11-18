@@ -95,6 +95,23 @@ service cloud.firestore {
              data.updatedBy is string && data.updatedBy == request.auth.token.email && data.updatedBy.size() <= 128;
     }
 
+    function isValidSacredMedia(data) {
+      return data.keys().hasAll(['mediaType', 'title', 'mediaUrl', 'createdAt', 'updatedAt', 'updatedBy']) &&
+             data.keys().hasOnly(['mediaType', 'title', 'description', 'category', 'speakerOrArtist', 'duration', 'mediaUrl', 'youtubeId', 'createdAt', 'updatedAt', 'updatedBy']) &&
+             data.mediaType in ['audio', 'video', 'image'] &&
+             data.title is string && data.title.size() >= 1 && data.title.size() <= 200 &&
+             data.mediaUrl is string && data.mediaUrl.size() >= 5 && data.mediaUrl.size() <= 750000 &&
+             data.mediaUrl.matches('^(https://|data:(image|audio|video)/)') &&
+             (!('description' in data) || (data.description is string && data.description.size() <= 2000)) &&
+             (!('category' in data) || (data.category is string && data.category.size() <= 100)) &&
+             (!('speakerOrArtist' in data) || (data.speakerOrArtist is string && data.speakerOrArtist.size() <= 120)) &&
+             (!('duration' in data) || (data.duration is string && data.duration.size() <= 32)) &&
+             (!('youtubeId' in data) || (data.youtubeId is string && data.youtubeId.size() <= 32)) &&
+             data.createdAt is timestamp &&
+             data.updatedAt is timestamp && data.updatedAt == request.time &&
+             data.updatedBy is string && data.updatedBy == request.auth.token.email && data.updatedBy.size() <= 128;
+    }
+
     // --- Collection Matches ---
 
     match /test/{docId} {
@@ -105,6 +122,14 @@ service cloud.firestore {
       allow get: if isValidId(configId) && configId == 'darshan_portrait';
       allow create, update: if isAdmin() && isValidId(configId) && configId == 'darshan_portrait' && isValidSacredPortrait(incoming());
       allow delete: if isAdmin() && isValidId(configId) && configId == 'darshan_portrait';
+    }
+
+    match /sacred_media/{mediaId} {
+      allow get: if isValidId(mediaId);
+      allow list: if true;
+      allow create: if isAdmin() && isValidId(mediaId) && isValidSacredMedia(incoming()) && incoming().createdAt == request.time;
+      allow update: if isAdmin() && isValidId(mediaId) && isValidSacredMedia(incoming()) && incoming().createdAt == existing().createdAt;
+      allow delete: if isAdmin() && isValidId(mediaId);
     }
 
     match /sakhis/{sakhiId} {

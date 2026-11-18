@@ -22,7 +22,9 @@ import {
   ChevronDown,
   ChevronUp,
   SlidersHorizontal,
-  BookOpen
+  BookOpen,
+  Lock,
+  ShieldCheck
 } from 'lucide-react';
 import { useAppTheme } from '../theme/ThemeContext';
 import { translations } from '../data/translations';
@@ -36,6 +38,7 @@ import {
   MatchSnippet 
 } from '../services/sakhiBulkManager';
 import { purifyAndAnalyzeVaniOffline } from '../services/offlineVaniEngine';
+import { isAdminAuthenticated } from '../services/adminAuth';
 
 interface AutoCorrectToolProps {
   language: Language;
@@ -132,6 +135,15 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
     STANDARD_HARMONIZATION_RULES.map(r => r.id)
   );
 
+  // Admin Lock State
+  const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
+
+  useEffect(() => {
+    const handleAuthChange = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener('sahebworld:admin-auth-change', handleAuthChange);
+    return () => window.removeEventListener('sahebworld:admin-auth-change', handleAuthChange);
+  }, []);
+
   // Database Stats
   const [dbStats, setDbStats] = useState(() => sakhiBulkManager.getStats());
   const [showHistory, setShowHistory] = useState(false);
@@ -207,6 +219,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
   };
 
   const handleExecuteBulk = () => {
+    if (!isAdmin) return;
     if (!searchTerm.trim()) return;
     const result = sakhiBulkManager.executeBulkReplace({
       search: searchTerm.trim(),
@@ -222,6 +235,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
   };
 
   const handleApplyHarmonization = () => {
+    if (!isAdmin) return;
     const summary = sakhiBulkManager.executeHarmonization(activeRuleIds);
     setHarmonizationSummary(summary);
     setExecutionNotice(`✓ अखंड पाठ एवं साखी डेटाबेस मानकीकरण संपन्न: ${summary.totalSakhisAffected} साखियों में ${summary.totalCorrections} वर्तनी सुधार सफलतापूर्वक लागू किए गए।`);
@@ -229,6 +243,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
   };
 
   const handleUndo = () => {
+    if (!isAdmin) return;
     const success = sakhiBulkManager.undoLastOperation();
     if (success) {
       setExecutionNotice('✓ पूर्ववत (Undo) सफल: अंतिम सामूहिक प्रतिस्थापन को सफलतापूर्वक वापस ले लिया गया।');
@@ -240,6 +255,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
   };
 
   const handleResetDefaults = () => {
+    if (!isAdmin) return;
     if (window.confirm('क्या आप अखंड पाठ व साखी डेटाबेस को पुनः मूल प्रामाणिक रूप (Factory Defaults) में पुनर्स्थापित करना चाहते हैं?')) {
       sakhiBulkManager.resetToFactoryDefaults();
       setExecutionNotice('✓ संपूर्ण डेटाबेस को प्रामाणिक मूल स्वरूप में पुनर्स्थापित कर दिया गया है।');
@@ -457,7 +473,28 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
       {/* ======================================================== */}
       {/* TAB 2: BULK REPLACE & AKHAND PATH HARMONIZATION */}
       {/* ======================================================== */}
-      {activeTab === 'bulk' && (
+      {activeTab === 'bulk' && !isAdmin && (
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+          className="p-8 sm:p-10 rounded-3xl border-2 text-center space-y-4 shadow-md"
+        >
+          <div className="w-16 h-16 mx-auto rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-700 dark:text-amber-300">
+            <Lock className="w-8 h-8" />
+          </div>
+          <h3 className="font-serif font-black text-lg text-amber-950 dark:text-amber-100">
+            🔒 पब्लिक रीड-ओनली सुरक्षा (Admin-Only Access)
+          </h3>
+          <p className="text-xs sm:text-sm font-serif max-w-lg mx-auto leading-relaxed" style={{ color: theme.textSecondary }}>
+            अखंड पाठ डेटाबेस में सामूहिक बदलाव, मानकीकरण या रीसेट केवल अधिकृत एडमिन (<strong>smongia76@gmail.com</strong>) द्वारा ही किए जा सकते हैं। सार्वजनिक उपयोगकर्ताओं के लिए सभी पावन ग्रंथ पूर्णतः रीड-ओनली और सुरक्षित हैं।
+          </p>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[11px] font-bold text-amber-800 dark:text-amber-200">
+            <ShieldCheck className="w-4 h-4" />
+            <span>एडमिन लॉग-इन: ऊपर सेटिंग्स ⚙️ → एडमिन प्रमाणीकरण</span>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'bulk' && isAdmin && (
         <div className="space-y-6">
           {/* Quick Actions & Status Strip */}
           <div 

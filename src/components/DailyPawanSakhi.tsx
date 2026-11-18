@@ -63,6 +63,7 @@ import { SacredWisdomWidget } from './SacredWisdomWidget';
 import { DailyAffirmationsWidget } from './DailyAffirmationsWidget';
 import { analytics } from '../services/analytics';
 import { ChetawaniSaarang } from './ChetawaniSaarang';
+import { DailyHukamnamaCard } from './DailyHukamnamaCard';
 import { sacredHaptics } from '../services/haptics';
 import { getHaziriState, markTodayHaziri, subscribeToHaziri, HaziriState } from '../services/haziriStore';
 
@@ -116,7 +117,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   isCustomSakhiActive = false
 }) => {
   const { theme, isDarkMode, fontSize, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
-  const { language: contextLang, t: contextT } = useLanguage();
+  const { language: contextLang, setLanguage, t: contextT } = useLanguage();
   const lang = language || contextLang;
   const t = translations[lang] || contextT;
 
@@ -1205,8 +1206,17 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                           { num: 37, text: 'माली आवत देखि के, कलियां करें पुकार। फूली फूली चुनि लई, काल हमारी बार।।' },
                           { num: 41, text: 'काल हमारे संग है, कस जीवन की आस। दस दिन नाम संभार ले, जब लग पिंजर सांस।।' },
                           { num: 42, text: 'टालै टूलै दिन गयो, ब्याज बढ़न्ता जाय। ना हरि भजा न खत कटा, काल पहुंचा आय।।' },
+                          { num: 43, text: 'कबीर सूता क्या करे, जागो न जपो मुरार। एक दिन है सोवना, लंबे पांव पसार।।' },
+                          { num: 44, text: 'कबीर सूता क्या करे, उठि न रोवै दुख। जिसका बासा गोर में, सो क्यों सोवै सुख।।' },
+                          { num: 45, text: 'आज कहै मैं काल भजूँगा, काल कहै फिर काल। आज काल के करत ही, औसर जासी चाल।।' },
                           { num: 46, text: 'काची काया मन अथिर, थिर थिर करम करन्त। ज्यौं ज्यौं नर निधड़क फिरै, त्यौं त्यौं काल हसन्त।।' },
+                          { num: 47, text: 'झीना पिंजर सांस का, मन का पंछी उड़ जाय। राखै तो कोऊ ना रहै, जो जुगती करे उपाय।।' },
+                          { num: 48, text: 'पानी केरा बुदबुदा, अस मानुस की जात। देखत ही छिप जाएगा, ज्यों तारा परभात।।' },
+                          { num: 49, text: 'कबीर नौबत आपनी, दिन दस लेहु बजाय। यह पुर पटन यह गली, बहुरि न देखै आय।।' },
+                          { num: 50, text: 'कबीर मंदिर लाख का, जड़्या जवाहिर लाल। दिवस चारि का पेखना, बिनसि जायगा काल।।' },
+                          { num: 51, text: 'झूठे सुख को सुख कहै, मानत है मन मोद। खलक सब काल का, कछू मुख में कछू गोद।।' },
                           { num: 52, text: 'बढ़ही आवत देखि के, तरुवर रुदन कराय। मैं अपंग संसै नहीं, पच्छी बसते आय।।' },
+                          { num: 53, text: 'कबीर जंगल रुखड़ा, सब काहू की प्यास। पाहन काटा काल ने, क्या उम्मीद क्या आस।।' },
                         ].map((anchor, idx) => (
                           <button
                             key={anchor.num}
@@ -1362,6 +1372,18 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
         </div>
       </div>
+
+      {/* Daily Hukamnama Card (Automatic 12:00 AM change without repetition) — Positioned after Darshan, Gutka & Daily Sakhi Cards */}
+      <DailyHukamnamaCard
+        language={lang}
+        onLanguageChange={setLanguage}
+        onOpenFullView={() => {
+          if (onNavigateView) {
+            onNavigateView('hukamnama');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}
+      />
 
       {/* ========================================================================= */}
       {/* SPIRITUAL PROGRESS BAR & MILESTONES & SATSANG NOTIFICATIONS PANEL */}

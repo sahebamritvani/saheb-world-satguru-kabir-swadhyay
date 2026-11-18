@@ -27,7 +27,14 @@ import {
   Volume2 as SpeechVolumeIcon,
   Upload,
   RotateCcw,
-  Cloud
+  Cloud,
+  Music,
+  Video,
+  Image as ImageIcon,
+  Trash2,
+  Link2,
+  RefreshCw,
+  Pin,
 } from 'lucide-react';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
 import { auth, signInWithGoogle } from '../lib/firebase';
@@ -49,6 +56,19 @@ import {
   updateAdminDarshanObjectFit,
 } from '../services/customPortraitStore';
 import { isAdminAuthenticated, verifyAdminPin, setAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
+import {
+  subscribeToSacredMedia,
+  publishAdminSacredMedia,
+  deleteAdminSacredMedia,
+  SacredMediaItem,
+  SacredMediaType,
+} from '../services/sacredMediaService';
+import {
+  subscribeToPinnedAudio,
+  getTotalPinnedAudioStats,
+  clearAllPinnedAudio,
+  formatAudioSize,
+} from '../services/offlineAudioCache';
 import { PWAInstallButton } from './PWAInstallButton';
 
 interface SettingsModalProps {
@@ -121,6 +141,57 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const [showAdminPasskeyDialog, setShowAdminPasskeyDialog] = useState<boolean>(false);
   const [adminNotice, setAdminNotice] = useState<string | null>(null);
 
+  // Unified Admin Media Studio state
+  const [studioTab, setStudioTab] = useState<SacredMediaType>('image');
+  const [studioItems, setStudioItems] = useState<SacredMediaItem[]>([]);
+  const [studioTitle, setStudioTitle] = useState<string>('');
+  const [studioUrl, setStudioUrl] = useState<string>('');
+  const [studioFile, setStudioFile] = useState<File | null>(null);
+  const [isStudioPublishing, setIsStudioPublishing] = useState<boolean>(false);
+
+  // Persistent Splash-on-Launch preference (default ON)
+  const [splashOnLaunch, setSplashOnLaunch] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    try {
+      return localStorage.getItem('sahebworld_splash_on_launch') !== 'false';
+    } catch {
+      return true;
+    }
+  });
+
+  // Offline Pinned Audio stats & Clean Reload state
+  const [pinnedStats, setPinnedStats] = useState<{ count: number; totalBytes: number }>(() =>
+    getTotalPinnedAudioStats()
+  );
+  const [isReloadingApp, setIsReloadingApp] = useState<boolean>(false);
+
+  const handleToggleSplashOnLaunch = () => {
+    const next = !splashOnLaunch;
+    setSplashOnLaunch(next);
+    try {
+      localStorage.setItem('sahebworld_splash_on_launch', next ? 'true' : 'false');
+    } catch {}
+  };
+
+  const handleCleanAppReload = async () => {
+    setIsReloadingApp(true);
+    try {
+      if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations().catch(() => []);
+        await Promise.all(regs.map((r) => r.unregister().catch(() => false)));
+      }
+      if (typeof window !== 'undefined' && 'caches' in window) {
+        const keys = await caches.keys().catch(() => []);
+        await Promise.all(
+          keys
+            .filter((k) => k.includes('workbox') || k.includes('sahebworld-app-shell'))
+            .map((k) => caches.delete(k).catch(() => false))
+        );
+      }
+    } catch {}
+    window.location.reload();
+  };
+
   useEffect(() => {
     const handleAuthChange = () => {
       setIsAdmin(isAdminAuthenticated());
@@ -128,9 +199,15 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     };
     window.addEventListener('sahebworld:admin-auth-change', handleAuthChange);
     const unsubPortrait = subscribeToCustomPortraitState((next) => setPortraitState(next));
+    const unsubMedia = subscribeToSacredMedia((items) => setStudioItems(items));
+    const unsubPinned = subscribeToPinnedAudio(() => {
+      setPinnedStats(getTotalPinnedAudioStats());
+    });
     return () => {
       window.removeEventListener('sahebworld:admin-auth-change', handleAuthChange);
       unsubPortrait();
+      unsubMedia();
+      unsubPinned();
     };
   }, []);
 
@@ -220,6 +297,47 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     await resetAdminDarshanPortrait();
     setAdminNotice(language === 'hi' ? '✓ पावन दर्शन स्वरूप रीसेट हो गया' : '✓ Portrait reset to sacred emblem');
     setTimeout(() => setAdminNotice(null), 3000);
+  };
+
+  const handleStudioPublish = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isAdmin) return;
+    setIsStudioPublishing(true);
+    const res = await publishAdminSacredMedia({
+      mediaType: studioTab,
+      title: studioTitle,
+      mediaUrl: studioUrl,
+      file: studioFile,
+      category: studioTab === 'video' ? 'anurag' : studioTab === 'audio' ? 'satsang' : 'darshan',
+      speakerOrArtist: 'सतगुरु कबीर साहेब आश्रम',
+    });
+    setIsStudioPublishing(false);
+    if (res.success) {
+      setStudioTitle('');
+      setStudioUrl('');
+      setStudioFile(null);
+      setAdminNotice(
+        studioTab === 'image'
+          ? '✓ पावन छवि दर्शन गैलरी में प्रकाशित हो गई!'
+          : studioTab === 'audio'
+          ? '✓ ऑडियो वाणी क्लाउड लाइब्रेरी में प्रकाशित हो गई!'
+          : '✓ सत्संग वीडियो दर्शन में प्रकाशित हो गया!'
+      );
+    } else {
+      setAdminNotice(`✗ ${res.error}`);
+    }
+    setTimeout(() => setAdminNotice(null), 4500);
+  };
+
+  const handleStudioDelete = async (mediaId: string) => {
+    if (!isAdmin) return;
+    const res = await deleteAdminSacredMedia(mediaId);
+    if (res.success) {
+      setAdminNotice('✓ सामग्री क्लाउड से हटाई गई');
+      setTimeout(() => setAdminNotice(null), 3000);
+    } else {
+      setAdminNotice(`✗ ${res.error}`);
+    }
   };
 
   useEffect(() => {
@@ -1283,6 +1401,30 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <span>ServiceWorker: Active</span>
               <span>Cache: 100% Synced</span>
             </div>
+
+            {/* Pinned Offline Audio Summary */}
+            <div className="pt-2 border-t border-dashed flex items-center justify-between gap-2 text-xs" style={{ borderColor: theme.cardBorder }}>
+              <div className="flex items-center gap-1.5 font-bold" style={{ color: theme.textPrimary }}>
+                <Pin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>
+                  {language === 'pb'
+                    ? `ਆਫ਼ਲਾਈਨ ਸੇਵ ਭਜਨ/ਧੁਨ: ${pinnedStats.count}`
+                    : language === 'en'
+                    ? `Pinned Offline Audio: ${pinnedStats.count} track(s)`
+                    : `ऑफ़लाइन पिन किए गए भजन/धुन: ${pinnedStats.count}`}
+                  {pinnedStats.count > 0 && ` (${formatAudioSize(pinnedStats.totalBytes)})`}
+                </span>
+              </div>
+              {pinnedStats.count > 0 && (
+                <button
+                  type="button"
+                  onClick={() => clearAllPinnedAudio()}
+                  className="px-2.5 py-1 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-600 text-[11px] font-bold transition cursor-pointer shrink-0"
+                >
+                  {language === 'hi' ? 'साफ़ करें' : 'Clear'}
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Admin & Tamper-Proof Protection Section */}
@@ -1404,6 +1546,131 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       <Cloud className="w-3.5 h-3.5" />
                       <span>Google एडमिन साइन-इन (सभी भक्तों एवं APK हेतु सिंक)</span>
                     </button>
+                  )}
+                </div>
+
+                {/* Unified Admin Media Studio (Images, Audio & Video) */}
+                <div className="p-3 rounded-xl border border-emerald-500/30 bg-white/70 dark:bg-zinc-900/70 space-y-2.5">
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <span className="text-xs font-black font-serif text-emerald-900 dark:text-emerald-300">
+                      📡 पावन मीडिया अपलोड स्टूडियो (Admin-Only)
+                    </span>
+                    <span className="text-[10px] font-mono opacity-75">
+                      🖼️ {studioItems.filter((i) => i.mediaType === 'image').length} • 🎵 {studioItems.filter((i) => i.mediaType === 'audio').length} • 🎬 {studioItems.filter((i) => i.mediaType === 'video').length}
+                    </span>
+                  </div>
+
+                  {/* Studio Type Tabs */}
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {[
+                      { id: 'image' as SacredMediaType, label: '🖼️ छवि (Image)', icon: ImageIcon },
+                      { id: 'audio' as SacredMediaType, label: '🎵 ऑडियो', icon: Music },
+                      { id: 'video' as SacredMediaType, label: '🎬 वीडियो', icon: Video },
+                    ].map((tab) => (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => {
+                          setStudioTab(tab.id);
+                          setStudioFile(null);
+                          setStudioUrl('');
+                        }}
+                        className={`py-1.5 px-2 rounded-lg text-[11px] font-bold border transition cursor-pointer ${
+                          studioTab === tab.id
+                            ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                            : 'border-stone-300 dark:border-zinc-700 hover:bg-black/5'
+                        }`}
+                      >
+                        {tab.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  <form onSubmit={handleStudioPublish} className="space-y-2">
+                    <input
+                      type="text"
+                      required
+                      value={studioTitle}
+                      onChange={(e) => setStudioTitle(e.target.value)}
+                      placeholder={
+                        studioTab === 'image'
+                          ? 'छवि का शीर्षक (उदा. मगहर पावन धाम)'
+                          : studioTab === 'audio'
+                          ? 'ऑडियो का शीर्षक (उदा. संध्या आरती)'
+                          : 'वीडियो का शीर्षक (उदा. कबीर वाणी सत्संग)'
+                      }
+                      className="w-full px-2.5 py-1.5 rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-xs font-bold outline-none"
+                      style={{ color: theme.textPrimary }}
+                    />
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <label className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-dashed border-emerald-600/50 text-[11px] font-bold cursor-pointer hover:bg-emerald-500/10 truncate">
+                        <Upload className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span className="truncate">
+                          {studioFile
+                            ? studioFile.name
+                            : studioTab === 'image'
+                            ? 'छवि चुनें'
+                            : studioTab === 'audio'
+                            ? 'MP3 चुनें'
+                            : 'MP4 चुनें'}
+                        </span>
+                        <input
+                          type="file"
+                          accept={
+                            studioTab === 'image'
+                              ? 'image/jpeg,image/png,image/webp,image/*'
+                              : studioTab === 'audio'
+                              ? 'audio/*,.mp3,.wav,.m4a'
+                              : 'video/mp4,video/webm,video/*'
+                          }
+                          onChange={(e) => setStudioFile(e.target.files?.[0] || null)}
+                          className="hidden"
+                        />
+                      </label>
+
+                      <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950">
+                        <Link2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                        <input
+                          type="text"
+                          value={studioUrl}
+                          onChange={(e) => setStudioUrl(e.target.value)}
+                          placeholder={studioTab === 'video' ? 'YouTube लिंक / URL' : 'या HTTPS लिंक...'}
+                          className="w-full text-[11px] bg-transparent outline-none"
+                          style={{ color: theme.textPrimary }}
+                        />
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isStudioPublishing || (!studioFile && !studioUrl.trim())}
+                      className="w-full min-h-[38px] py-1.5 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition cursor-pointer disabled:opacity-50"
+                    >
+                      {isStudioPublishing ? 'प्रकाशित हो रहा है...' : '☁️ वैश्विक क्लाउड में प्रकाशित करें'}
+                    </button>
+                  </form>
+
+                  {/* Compact list of published items for active tab */}
+                  {studioItems.filter((it) => it.mediaType === studioTab).length > 0 && (
+                    <div className="space-y-1 max-h-28 overflow-y-auto pt-1 border-t border-emerald-500/20">
+                      {studioItems
+                        .filter((it) => it.mediaType === studioTab)
+                        .slice(0, 6)
+                        .map((item) => (
+                          <div key={item.id} className="flex items-center justify-between gap-2 text-[11px] px-2 py-1 rounded-md bg-black/5 dark:bg-white/5">
+                            <span className="truncate font-semibold">{item.title}</span>
+                            <button
+                              type="button"
+                              onClick={() => handleStudioDelete(item.id)}
+                              className="p-1 text-red-600 hover:bg-red-500/15 rounded cursor-pointer shrink-0"
+                              title="हटाएं"
+                            >
+                              <Trash2 className="w-3 h-3" />
+                            </button>
+                          </div>
+                        ))}
+                    </div>
                   )}
                 </div>
 
@@ -1541,6 +1808,54 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   <span>{language === 'pb' ? 'ਪਾਵਨ ਪ੍ਰਤੀਕ ਤੇ ਸਪਲੈਸ਼ ਦਰਸ਼ਨ' : language === 'en' ? 'Preview Emblem & Splash' : 'दिव्य प्रतीक व स्प्लैश दर्शन'}</span>
                 </button>
               )}
+
+              <button
+                type="button"
+                disabled={isReloadingApp}
+                onClick={handleCleanAppReload}
+                className="min-h-[44px] py-1.5 px-3.5 rounded-xl border border-emerald-600/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap disabled:opacity-60"
+                title="ऐप कैश रिफ्रेश कर स्वच्छ रीलोड करें"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 shrink-0 ${isReloadingApp ? 'animate-spin' : ''}`} />
+                <span>
+                  {isReloadingApp
+                    ? 'रीलोड हो रहा है...'
+                    : language === 'pb'
+                    ? 'ਐਪ ਰੀਲੋਡ ਤੇ ਕੈਸ਼ ਰਿਫ੍ਰੈਸ਼'
+                    : language === 'en'
+                    ? 'Clean Reload App'
+                    : 'ऐप रीलोड व कैश रिफ्रेश'}
+                </span>
+              </button>
+            </div>
+
+            {/* Persistent Auto Splash Screen Toggle on App Open */}
+            <div className="pt-2 border-t border-dashed flex items-center justify-between gap-3 text-left" style={{ borderColor: theme.borderOrnament }}>
+              <div>
+                <div className="text-xs font-bold font-serif" style={{ color: theme.textPrimary }}>
+                  {language === 'pb'
+                    ? 'ਐਪ ਖੋਲ੍ਹਣ ਤੇ ਦਿਵਯ ਸਪਲੈਸ਼ ਸਕ੍ਰੀਨ ਦਿਖਾਓ'
+                    : language === 'en'
+                    ? 'Show Sacred Splash Screen on App Launch'
+                    : 'ऐप खोलने पर दिव्य स्प्लैश स्क्रीन दिखाएँ'}
+                </div>
+                <div className="text-[10px]" style={{ color: theme.textMuted }}>
+                  {language === 'hi'
+                    ? 'हर बार ऐप खुलने पर सत्यनाम चक्र व पावन प्रतीक दर्शन स्वतः प्रारंभ होगा'
+                    : 'Auto-display Satyanaam emblem splash when launching the app'}
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={handleToggleSplashOnLaunch}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer shrink-0 ${
+                  splashOnLaunch
+                    ? 'bg-emerald-600 text-white shadow-xs'
+                    : 'bg-stone-300 dark:bg-stone-700 text-stone-700 dark:text-stone-300'
+                }`}
+              >
+                {splashOnLaunch ? (language === 'hi' ? 'चालू (ON)' : 'ON') : (language === 'hi' ? 'बंद (OFF)' : 'OFF')}
+              </button>
             </div>
           </div>
 

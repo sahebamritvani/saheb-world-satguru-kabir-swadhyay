@@ -821,6 +821,16 @@ export const Layout: React.FC<LayoutProps> = ({
           badge: { hi: 'SGGS वाणी', pb: 'ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ', en: 'SGGS' },
         },
         {
+          view: 'hukamnama' as AppView,
+          label: {
+            hi: 'पावन दैनिक हुकमनामा (12 AM स्वतः परिवर्तन)',
+            pb: 'ਪਾਵਨ ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ (ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ)',
+            en: 'Daily Hukamnama (Guru Granth Sahib)',
+          },
+          icon: Scroll,
+          badge: { hi: 'हुकमनामा', pb: 'ਹੁਕਮਨਾਮਾ', en: 'Hukamnama' },
+        },
+        {
           view: 'nature-wallpaper' as AppView,
           label: {
             hi: 'कुदरत वॉलपेपर जनरेटर (Nature Wallpaper Engine)',

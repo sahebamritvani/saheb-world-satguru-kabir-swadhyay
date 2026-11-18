@@ -81,6 +81,25 @@
         "updatedBy": { "type": "string", "maxLength": 128 }
       },
       "required": ["imageData", "objectFit", "updatedAt", "updatedBy"]
+    },
+    "sacredMedia": {
+      "title": "Sacred Media Item",
+      "description": "Admin-uploaded audio, video, or image media for Saheb World (Public Read-Only, strictly Admin Write/Delete).",
+      "type": "object",
+      "properties": {
+        "mediaType": { "type": "string", "enum": ["audio", "video", "image"] },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "category": { "type": "string", "maxLength": 100 },
+        "speakerOrArtist": { "type": "string", "maxLength": 120 },
+        "duration": { "type": "string", "maxLength": 32 },
+        "mediaUrl": { "type": "string", "minLength": 5, "maxLength": 750000 },
+        "youtubeId": { "type": "string", "maxLength": 32 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "updatedBy": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["mediaType", "title", "mediaUrl", "createdAt", "updatedAt", "updatedBy"]
     }
   },
   "firestore": {
@@ -99,6 +118,10 @@
     "/sacred_config/{configId}": {
       "schema": { "$ref": "#/entities/sacredPortrait" },
       "description": "Official Admin-managed sacred configuration (e.g., darshan_portrait). Public read-only; strictly Admin write/delete."
+    },
+    "/sacred_media/{mediaId}": {
+      "schema": { "$ref": "#/entities/sacredMedia" },
+      "description": "Official Admin-uploaded audio, video, and image library items. Public read-only; strictly Admin write/delete."
     },
     "/users/{userId}/settings/{settingId}": {
       "schema": { "$ref": "#/entities/userSettings" },

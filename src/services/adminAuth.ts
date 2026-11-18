@@ -16,10 +16,10 @@ export function isAdminAuthenticated(): boolean {
   try {
     // 1. Direct check with authenticated Google User
     const currentEmail = auth?.currentUser?.email;
-    if (isAuthorizedAdminEmail(currentEmail)) {
-      return true;
+    if (currentEmail) {
+      return isAuthorizedAdminEmail(currentEmail);
     }
-    // 2. Local verified session key
+    // 2. Local verified admin session key (only when no non-admin account is active)
     return localStorage.getItem(ADMIN_AUTH_KEY) === 'true';
   } catch {
     return false;

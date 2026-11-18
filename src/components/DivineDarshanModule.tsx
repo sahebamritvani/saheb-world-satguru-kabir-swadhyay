@@ -1,15 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowLeft, 
   Volume2, 
+  VolumeX,
   Flower2, 
   ShieldCheck,
   Upload,
   RotateCcw,
   Cloud,
   Maximize2,
-  Minimize2
+  Minimize2,
+  Eye,
+  EyeOff,
+  Sparkles,
+  BookOpen,
+  Copy,
+  Check,
+  Image as ImageIcon,
+  Trash2,
+  Lock
 } from 'lucide-react';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -26,9 +36,33 @@ import {
   updateAdminDarshanObjectFit,
 } from '../services/customPortraitStore';
 import { isAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
+import {
+  SacredMediaItem,
+  subscribeToSacredMedia,
+  publishAdminSacredMedia,
+  deleteAdminSacredMedia,
+} from '../services/sacredMediaService';
 import { signInWithGoogle } from '../lib/firebase';
 import { speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
+
+const SHLOKA_DHYANAM_TEXT = `ध्यायतं सद्‌गुरु श्वेतरूप मंगलम् श्वेताम्बरं शोभितम् ।
+कर्णेल कुण्डलं श्वेत शुभ्र मुकुटं हिरामणि मण्डितम् ।।
+नाना माल मुक्तादि शोभित गला प‌द्मासने सुस्थितम् ।
+दयाब्धि धीर सुप्रसन्न वदनं सद्‌गुरु तन्नमामि ।।
+द्वै पदम् द्वै भुजम् प्रसन्न वदनं द्वै नेत्रम् दयालम् ।
+सेलीकंठ भाल ऊर्ध्व तिलकम् श्वेताम्बरी मेखला ॥
+चक्रांकित शिर टोप रत्न लसितम् तेजोमयी विग्रहम् ।
+बन्दों सतगुरु योग दण्ड सहितं कब्बीर करुणामयम् ॥
+ध्यान मूलम् गुरु मूर्ति, पूजा मूलम् गुरु पदम् ।
+मन्त्र मूलम् गुरु वाक्यं, मोक्ष मूलम् गुरु कृपा ॥`;
+
+const VINTI_TEXT = `सत्य कबीर गुरु बालापीर, लड़के बच्चे होय फकीर।
+सूखी नदी बहावे नीर, भूखे को खिलावे खीर ॥
+नंगे को पहिरावे चीर, इतना बांटे सत्य कबीर ।
+सत्य कबीर का बालका, पानी पीवे पताल का ॥
+निशाना मारे काल को, भजो सत्यनाम को ।
+पावो सुखधाम को, मेटो जम जाल को ।।`;
 
 interface DivineDarshanModuleProps {
   language: Language;
@@ -60,6 +94,19 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [portraitState, setPortraitState] = useState<DarshanPortraitState>(() => getCustomDarshanState());
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const galleryInputRef = useRef<HTMLInputElement>(null);
+
+  // Shloka Dhyanam & Vinti Visibility + Deep Meaning Toggles
+  const [showDhyanShloka, setShowDhyanShloka] = useState<boolean>(true);
+  const [showDhyanMeaning, setShowDhyanMeaning] = useState<boolean>(false);
+  const [showVinti, setShowVinti] = useState<boolean>(true);
+  const [showVintiMeaning, setShowVintiMeaning] = useState<boolean>(false);
+  const [speakingSection, setSpeakingSection] = useState<'dhyan' | 'vinti' | null>(null);
+  const [copiedSection, setCopiedSection] = useState<'dhyan' | 'vinti' | null>(null);
+
+  // Admin-Published Sacred Darshan Gallery Images
+  const [galleryImages, setGalleryImages] = useState<SacredMediaItem[]>([]);
+  const [isUploadingGallery, setIsUploadingGallery] = useState<boolean>(false);
 
   useEffect(() => {
     const handleAuthChange = () => {
@@ -70,9 +117,14 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
     const unsubscribe = subscribeToCustomPortraitState((next) => {
       setPortraitState(next);
     });
+    const unsubscribeMedia = subscribeToSacredMedia((items) => {
+      setGalleryImages(items.filter((it) => it.mediaType === 'image'));
+    });
     return () => {
       window.removeEventListener('sahebworld:admin-auth-change', handleAuthChange);
       unsubscribe();
+      unsubscribeMedia();
+      speechReciter.stop();
     };
   }, []);
 
@@ -227,6 +279,72 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
         ? 'Saheb Bandgi Saheb. Victory to Bandichhor Satguru Kabir Saheb.'
         : 'साहेब बंदगी साहेब। बंदीछोड़ सतगुरु कबीर साहेब की जय।';
     speechReciter.speak(textToSpeak, language);
+  };
+
+  const handleToggleRecite = (section: 'dhyan' | 'vinti', text: string) => {
+    sacredHaptics.lightTap();
+    if (speakingSection === section) {
+      speechReciter.stop();
+      setSpeakingSection(null);
+      return;
+    }
+    setSpeakingSection(section);
+    speechReciter.speak(
+      text,
+      'hi',
+      () => setSpeakingSection(null),
+      () => setSpeakingSection(null)
+    );
+  };
+
+  const handleCopySacredText = async (section: 'dhyan' | 'vinti', title: string, text: string) => {
+    sacredHaptics.lightTap();
+    const formatted = `।। सत्यनाम ।।\n\n${title}\n\n${text}\n\n।। साहेब बंदगी साहेब ।।`;
+    try {
+      await navigator.clipboard.writeText(formatted);
+      setCopiedSection(section);
+      sacredHaptics.successVibration();
+      setTimeout(() => setCopiedSection(null), 2200);
+    } catch {
+      showToast('कॉपी करने में त्रुटि हुई');
+    }
+  };
+
+  const handleUploadGalleryImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isAdmin) return;
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    setIsUploadingGallery(true);
+    try {
+      const cleanName = file.name.replace(/\.[^/.]+$/, '').replace(/[_-]+/g, ' ').trim() || 'पावन दर्शन चित्र';
+      const res = await publishAdminSacredMedia({
+        mediaType: 'image',
+        title: cleanName,
+        category: 'पावन दर्शन गैलरी',
+        description: 'अधिकृत एडमिन द्वारा प्रकाशित सतगुरु कबीर साहेब पावन दर्शन चित्र',
+        file,
+      });
+      if (res.success) {
+        showToast('✓ पावन चित्र गैलरी में सुरक्षित व सार्वजनिक रूप से प्रकाशित हो गया!');
+      } else {
+        showToast(res.error || 'चित्र अपलोड विफल रहा');
+      }
+    } catch (err: any) {
+      showToast(err?.message || 'चित्र अपलोड करने में त्रुटि');
+    } finally {
+      setIsUploadingGallery(false);
+    }
+  };
+
+  const handleDeleteGalleryImage = async (mediaId: string) => {
+    if (!isAdmin) return;
+    const res = await deleteAdminSacredMedia(mediaId);
+    if (res.success) {
+      showToast('✓ चित्र गैलरी से हटाया गया');
+    } else {
+      showToast(res.error || 'चित्र हटाने में त्रुटि');
+    }
   };
 
   return (
@@ -611,6 +729,502 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
           </div>
         </div>
       </div>
+
+      {/* ===================================================================== */}
+      {/* SACRED SHLOKA DHYANAM (श्लोक ध्यानं) WITH SHOW/HIDE & DEEP MEANING    */}
+      {/* ===================================================================== */}
+      <div
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold, color: theme.textPrimary }}
+        className="rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-4"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
+          <div className="flex items-center gap-3">
+            <div
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
+              className="w-10 h-10 rounded-2xl border flex items-center justify-center text-amber-700 shrink-0"
+            >
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 style={{ color: theme.sacredMaroon }} className="text-lg sm:text-xl font-black font-serif">
+                {language === 'pb'
+                  ? '🙏 ਸ਼ਲੋਕ ਧਿਆਨੰ (ਸਤਿਗੁਰੂ ਸਰੂਪ ਧਿਆਨ)'
+                  : language === 'en'
+                  ? '🙏 Shloka Dhyanam (Sacred Form Contemplation)'
+                  : '🙏 श्लोक ध्यानं (सतगुरु स्वरूप ध्यान स्तुति)'}
+              </h2>
+              <p className="text-xs font-serif opacity-75" style={{ color: theme.textSecondary }}>
+                {language === 'pb'
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸ਼ਵੇਤ-ਮੰਗਲ ਸਰੂਪ ਦਾ ਪਾਵਨ ਧਿਆਨ'
+                  : language === 'en'
+                  ? 'Meditative invocation of Satguru Kabir Saheb’s pure luminous white form'
+                  : 'सतगुरु कबीर साहेब के श्वेत-मंगल, करुणामय दिव्य स्वरूप का पावन ध्यान'}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              type="button"
+              onClick={() => handleToggleRecite('dhyan', SHLOKA_DHYANAM_TEXT)}
+              style={{
+                backgroundColor: speakingSection === 'dhyan' ? theme.sacredMaroon : theme.bgSecondary,
+                borderColor: speakingSection === 'dhyan' ? theme.sacredMaroon : theme.cardBorder,
+                color: speakingSection === 'dhyan' ? '#FFFFFF' : theme.textPrimary,
+              }}
+              className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
+            >
+              {speakingSection === 'dhyan' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
+              <span>{speakingSection === 'dhyan' ? 'रोकें' : 'सुनें'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleCopySacredText('dhyan', 'श्लोक ध्यानं', SHLOKA_DHYANAM_TEXT)}
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+              className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
+            >
+              {copiedSection === 'dhyan' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-amber-600" />}
+              <span>{copiedSection === 'dhyan' ? 'कॉपी हुआ' : 'कॉपी'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                sacredHaptics.lightTap();
+                setShowDhyanShloka(!showDhyanShloka);
+              }}
+              style={{
+                backgroundColor: theme.accentGoldLight,
+                borderColor: theme.accentGold,
+                color: theme.sacredMaroon,
+              }}
+              className="min-h-[40px] px-3.5 py-1.5 rounded-xl border text-xs font-black font-serif flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-xs"
+            >
+              {showDhyanShloka ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              <span>
+                {showDhyanShloka
+                  ? language === 'pb'
+                    ? 'ਲੁਕਾਓ (Hide)'
+                    : language === 'en'
+                    ? 'Hide Shloka'
+                    : 'छुपाओ (Hide)'
+                  : language === 'pb'
+                  ? 'ਦਿਖਾਓ (Show)'
+                  : language === 'en'
+                  ? 'Show Shloka'
+                  : 'दिखाओ (Show)'}
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <AnimatePresence>
+          {showDhyanShloka && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="space-y-4 overflow-hidden"
+            >
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 sm:p-6 rounded-2xl border text-center space-y-3"
+              >
+                <p
+                  style={{ color: theme.sacredMaroon }}
+                  className="font-serif font-bold text-sm sm:text-lg leading-loose whitespace-pre-line tracking-wide"
+                >
+                  {SHLOKA_DHYANAM_TEXT}
+                </p>
+
+                <div className="pt-2 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      setShowDhyanMeaning(!showDhyanMeaning);
+                    }}
+                    className="min-h-[40px] px-4 py-2 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs sm:text-sm font-serif font-bold flex items-center gap-2 transition cursor-pointer"
+                  >
+                    <BookOpen className="w-4 h-4 text-amber-600" />
+                    <span>
+                      {showDhyanMeaning
+                        ? language === 'pb'
+                          ? 'ਗਹਿਰਾ ਭਾਵਾਰਥ ਲੁਕਾਓ (छुपाओ)'
+                          : language === 'en'
+                          ? 'Hide Deep Spiritual Meaning'
+                          : 'गहन आध्यात्मिक भावार्थ छुपाओ'
+                        : language === 'pb'
+                        ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਦਿਖਾਓ (दिखाओ)'
+                        : language === 'en'
+                        ? 'Show Deep Spiritual Meaning'
+                        : 'गहन आध्यात्मिक भावार्थ दिखाओ'}
+                    </span>
+                    {showDhyanMeaning ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
+              </div>
+
+              <AnimatePresence>
+                {showDhyanMeaning && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
+                    className="p-4 sm:p-5 rounded-2xl border space-y-3 text-left font-serif text-xs sm:text-sm leading-relaxed"
+                  >
+                    <h4 style={{ color: theme.sacredMaroon }} className="font-black text-sm sm:text-base flex items-center gap-2">
+                      <span>🪔</span>
+                      <span>
+                        {language === 'pb'
+                          ? 'ਸ਼ਲੋਕ ਧਿਆਨੰ ਦਾ ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ:'
+                          : language === 'en'
+                          ? 'Deep Spiritual Meaning of Shloka Dhyanam:'
+                          : 'श्लोक ध्यानं का गहन आध्यात्मिक भावार्थ एवं ध्यान-रहस्य:'}
+                      </span>
+                    </h4>
+                    {language === 'en' ? (
+                      <div className="space-y-2" style={{ color: theme.textSecondary }}>
+                        <p>
+                          <strong>1. Shwetaroop & Shwetambar (Luminous Purity):</strong> White represents the pristine, unstained soul consciousness (<em>Satvik Jyoti</em>) beyond the three gunas and delusion. Contemplating the white-clad Satguru stills restless thoughts and awakens inner clarity.
+                        </p>
+                        <p>
+                          <strong>2. Padmasana, Kundan-Mukut & Tejomaya Vigraha:</strong> Seated stably in lotus posture with radiant crown, garlands of spiritual virtues, and the sacred vertical Tilak (<em>Urdhva Pundra</em> symbolizing upward-rising <em>Surat</em>/awareness), Satguru holds the <em>Yoga-Danda</em> (staff of disciplined restraint).
+                        </p>
+                        <p>
+                          <strong>3. Dhyan Moolam Guru Murti (Essence of Liberation):</strong> True meditation begins by anchoring the mind in Guru’s serene image; worship culminates in surrendering at Guru’s sacred feet; the true mantra is living the Satguru’s spoken truth; and ultimate liberation (<em>Moksha</em>) dawns purely through Guru’s boundless grace.
+                        </p>
+                      </div>
+                    ) : language === 'pb' ? (
+                      <div className="space-y-2" style={{ color: theme.textSecondary }}>
+                        <p>
+                          <strong>੧. ਸ਼ਵੇਤ ਰੂਪ ਅਤੇ ਸ਼ਵੇਤਾਂਬਰ (ਪਰਮ ਪਵਿੱਤਰਤਾ):</strong> ਚਿੱਟਾ ਰੰਗ ਮਾਇਆ ਦੇ ਤਿੰਨਾਂ ਗੁਣਾਂ ਤੋਂ ਪਰੇ ਨਿਰਮਲ, ਅਕਲੰਕ ਆਤਮ-ਜੋਤ ਦਾ ਪ੍ਰਤੀਕ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਸ਼ਵੇਤ ਸ਼ੁਭ੍ਰ ਮੁਕੁਟ, ਪਦਮਾਸਨ ਅਤੇ ਦਇਆ ਦੇ ਸਾਗਰ ਪ੍ਰਸੰਨ ਮੁਖ ਦਾ ਧਿਆਨ ਕਰਨ ਨਾਲ ਮਨ ਦੀ ਚੰਚਲਤਾ ਸ਼ਾਂਤ ਹੁੰਦੀ ਹੈ।
+                        </p>
+                        <p>
+                          <strong>੨. ਸੇਲੀਕੰਠ, ਊਰਧਵ ਤਿਲਕ ਅਤੇ ਯੋਗ-ਦੰਡ:</strong> ਮੱਥੇ ਤੇ ਉੱਪਰ ਵੱਲ ਜਾਂਦਾ ਸ਼ਵੇਤ ਤਿਲਕ ਸਾਡੀ ਸੁਰਤ ਨੂੰ ਸੰਸਾਰ ਤੋਂ ਚੁੱਕ ਕੇ ਦਸਮ ਦੁਆਰ ਵੱਲ ਲੈ ਜਾਣ ਦਾ ਸੰਕੇਤ ਹੈ, ਅਤੇ ਹੱਥ ਵਿੱਚ ਯੋਗ-ਦੰਡ ਇੰਦਰੀਆਂ ਦੇ ਸੰਯਮ ਦਾ ਪ੍ਰਤੀਕ ਹੈ।
+                        </p>
+                        <p>
+                          <strong>੩. ਧਿਆਨ ਮੂਲੰ ਗੁਰੂ ਮੂਰਤਿ:</strong> ਸਾਧਨਾ ਦਾ ਮੂਲ ਸਤਿਗੁਰੂ ਦੇ ਸਰੂਪ ਦਾ ਧਿਆਨ ਹੈ, ਸੱਚੀ ਪੂਜਾ ਗੁਰੂ-ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਣ ਹੈ, ਸੱਚਾ ਮੰਤਰ ਸਤਿਗੁਰੂ ਦੇ ਉਪਦੇਸ਼ ਤੇ ਚੱਲਣਾ ਹੈ ਅਤੇ ਅੰਤਮ ਮੋਕਸ਼ ਸਤਿਗੁਰੂ ਦੀ ਕ੍ਰਿਪਾ ਨਾਲ ਹੀ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ।
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="space-y-2" style={{ color: theme.textSecondary }}>
+                        <p>
+                          <strong>१. श्वेतरूप एवं श्वेताम्बर (परम निर्मलता का प्रतीक):</strong> 'श्वेत' वर्ण तीनों गुणों (रज, तम, सत) से परे निर्मल, निष्कलंक आत्म-ज्योति का द्योतक है। श्वेत वस्त्रों, हीरा-मोती मण्डित मुकुट और करुणा के सागर प्रसन्न मुखमण्डल का ध्यान करने से मन के समस्त मलिन विकार धुल जाते हैं और भीतर सात्विक शांति जाग्रत होती है।
+                        </p>
+                        <p>
+                          <strong>२. पद्मासन, भाल ऊर्ध्व तिलक एवं योग-दण्ड:</strong> पद्मासन में स्थिर विराजमान सद्गुरु हमें सिखाते हैं कि साधक की बुद्धि और चित्त भी संसार के द्वंद्वों में अडिग रहे। मस्तक पर ऊपर की ओर सुशोभित <strong>ऊर्ध्व तिलक</strong> हमारी <em>सुरति (चेतना)</em> को अधोगति (विषयों) से उठाकर ऊर्ध्वगति (ब्रह्मरंध्र / सत्यनाम) की ओर ले जाने का संकेत है, और हाथों में <strong>योग-दण्ड</strong> संयम व विवेक की शक्ति का प्रतीक है।
+                        </p>
+                        <p>
+                          <strong>३. ध्यान मूलम् गुरु मूर्ति (साधना का चतुःसूत्री सार):</strong> अंत में यह महावाक्य स्पष्ट करता है कि भटकते मन को एकाग्र करने का आधार <em>गुरु की ध्यान-मूर्ति</em> है; सच्ची पूजा <em>गुरु-चरणों की सेवा व नम्रता</em> है; जीवन बदलने वाला सिद्ध मंत्र <em>गुरु का सत्य वचन</em> है; और काल-माया के बंधनों से परम मोक्ष केवल <em>सद्गुरु की अपार करुणा व कृपा</em> से ही प्राप्त होता है।
+                        </p>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* ===================================================================== */}
+      {/* SACRED VINTI (विनती) WITH SHOW/HIDE & DEEP SPIRITUAL MEANING         */}
+      {/* ===================================================================== */}
+      <div
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold, color: theme.textPrimary }}
+        className="rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-4"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
+          <div className="flex items-center gap-3">
+            <div
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
+              className="w-10 h-10 rounded-2xl border flex items-center justify-center text-amber-700 shrink-0"
+            >
+              <Flower2 className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 style={{ color: theme.sacredMaroon }} className="text-lg sm:text-xl font-black font-serif">
+                {language === 'pb'
+                  ? '🪷 ਪਾਵਨ ਵਿਨਤੀ (ਸਤਿਗੁਰੂ ਸ਼ਰਣਾਗਤੀ ਪ੍ਰਾਰਥਨਾ)'
+                  : language === 'en'
+                  ? '🪷 Sacred Vinti (Prayer of Refuge & Grace)'
+                  : '🪷 पावन विनती (सतगुरु करुणा एवं शरणागति प्रार्थना)'}
+              </h2>
+              <p className="text-xs font-serif opacity-75" style={{ color: theme.textSecondary }}>
+                {language === 'pb'
+                  ? 'ਸਤਯਨਾਮ ਦੀ ਓਟ, ਕਾਲ-ਜਾਲ ਤੋਂ ਮੁਕਤੀ ਅਤੇ ਸੁਖਧਾਮ ਪ੍ਰਾਪਤੀ ਦੀ ਅਰਦਾਸ'
+                  : language === 'en'
+                  ? 'Devotional prayer invoking Satyanaam protection and release from illusion'
+                  : 'सत्य कबीर गुरु की अपार दया, सत्यनाम के आश्रय एवं जम-जाल से मुक्ति की प्रार्थना'}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              type="button"
+              onClick={() => handleToggleRecite('vinti', VINTI_TEXT)}
+              style={{
+                backgroundColor: speakingSection === 'vinti' ? theme.sacredMaroon : theme.bgSecondary,
+                borderColor: speakingSection === 'vinti' ? theme.sacredMaroon : theme.cardBorder,
+                color: speakingSection === 'vinti' ? '#FFFFFF' : theme.textPrimary,
+              }}
+              className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
+            >
+              {speakingSection === 'vinti' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
+              <span>{speakingSection === 'vinti' ? 'रोकें' : 'सुनें'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleCopySacredText('vinti', 'पावन विनती', VINTI_TEXT)}
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+              className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
+            >
+              {copiedSection === 'vinti' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-amber-600" />}
+              <span>{copiedSection === 'vinti' ? 'कॉपी हुआ' : 'कॉपी'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                sacredHaptics.lightTap();
+                setShowVinti(!showVinti);
+              }}
+              style={{
+                backgroundColor: theme.accentGoldLight,
+                borderColor: theme.accentGold,
+                color: theme.sacredMaroon,
+              }}
+              className="min-h-[40px] px-3.5 py-1.5 rounded-xl border text-xs font-black font-serif flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-xs"
+            >
+              {showVinti ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              <span>
+                {showVinti
+                  ? language === 'pb'
+                    ? 'ਲੁਕਾਓ (Hide)'
+                    : language === 'en'
+                    ? 'Hide Vinti'
+                    : 'छुपाओ (Hide)'
+                  : language === 'pb'
+                  ? 'ਦਿਖਾਓ (Show)'
+                  : language === 'en'
+                  ? 'Show Vinti'
+                  : 'दिखाओ (Show)'}
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <AnimatePresence>
+          {showVinti && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="space-y-4 overflow-hidden"
+            >
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 sm:p-6 rounded-2xl border text-center space-y-3"
+              >
+                <p
+                  style={{ color: theme.sacredMaroon }}
+                  className="font-serif font-bold text-sm sm:text-lg leading-loose whitespace-pre-line tracking-wide"
+                >
+                  {VINTI_TEXT}
+                </p>
+
+                <div className="pt-2 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      setShowVintiMeaning(!showVintiMeaning);
+                    }}
+                    className="min-h-[40px] px-4 py-2 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs sm:text-sm font-serif font-bold flex items-center gap-2 transition cursor-pointer"
+                  >
+                    <BookOpen className="w-4 h-4 text-amber-600" />
+                    <span>
+                      {showVintiMeaning
+                        ? language === 'pb'
+                          ? 'ਗਹਿਰਾ ਭਾਵਾਰਥ ਲੁਕਾਓ (छुपाओ)'
+                          : language === 'en'
+                          ? 'Hide Deep Spiritual Meaning'
+                          : 'गहन आध्यात्मिक भावार्थ छुपाओ'
+                        : language === 'pb'
+                        ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਦਿਖਾਓ (दिखाओ)'
+                        : language === 'en'
+                        ? 'Show Deep Spiritual Meaning'
+                        : 'गहन आध्यात्मिक भावार्थ दिखाओ'}
+                    </span>
+                    {showVintiMeaning ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
+              </div>
+
+              <AnimatePresence>
+                {showVintiMeaning && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
+                    className="p-4 sm:p-5 rounded-2xl border space-y-3 text-left font-serif text-xs sm:text-sm leading-relaxed"
+                  >
+                    <h4 style={{ color: theme.sacredMaroon }} className="font-black text-sm sm:text-base flex items-center gap-2">
+                      <span>✨</span>
+                      <span>
+                        {language === 'pb'
+                          ? 'ਪਾਵਨ ਵਿਨਤੀ ਦਾ ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ:'
+                          : language === 'en'
+                          ? 'Deep Spiritual Meaning of Sacred Vinti:'
+                          : 'पावन विनती का गहन आध्यात्मिक भावार्थ:'}
+                      </span>
+                    </h4>
+                    {language === 'en' ? (
+                      <div className="space-y-2" style={{ color: theme.textSecondary }}>
+                        <p>
+                          <strong>1. Balapeer & Innocent Spiritual Child (फकीरी भाव):</strong> True seekers approach Satguru like innocent children—free from arrogance and cunning. In that humble state, the entire family is blessed with inner detachment and spiritual grace.
+                        </p>
+                        <p>
+                          <strong>2. Dry River, Hunger & Nakedness (Inner Renewal):</strong> Spiritually, the "dry river" symbolizes a heart parched by worldly stress and doubt—which Satguru revives with the nectar-stream of <em>Bhakti</em>. Feeding spiritual "kheer" (sweet wisdom) and clothing the soul in virtues removes inner poverty and fear.
+                        </p>
+                        <p>
+                          <strong>3. Drinking Subterranean Water & Defeating Kal (सत्यनाम बाण):</strong> A genuine disciple of Satguru draws inner nourishment directly from deep meditative stillness ("paatal ka paani" — deep spiritual source). By chanting <em>Satyanaam</em>, the arrow of truth pierces fear of death (<em>Kal</em>), shatters the net of illusion (<em>Jam-Jaal</em>), and grants entry to the eternal abode of bliss (<em>Sukh-Dham / Satlok</em>).
+                        </p>
+                      </div>
+                    ) : language === 'pb' ? (
+                      <div className="space-y-2" style={{ color: theme.textSecondary }}>
+                        <p>
+                          <strong>੧. ਬਾਲਾਪੀਰ ਤੇ ਫ਼ਕੀਰੀ ਦਾ ਭਾਵ:</strong> ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਜਿਹੇ ਸਮਰੱਥ 'ਬਾਲਾਪੀਰ' ਹਨ ਜਿਨ੍ਹਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆ ਕੇ ਪਰਿਵਾਰ ਦੇ ਬੱਚੇ-ਵੱਡੇ ਸਭ ਹਉਮੈ ਛੱਡ ਕੇ ਨਿਰਛਲ ਫ਼ਕੀਰੀ ਤੇ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰਦੇ ਹਨ।
+                        </p>
+                        <p>
+                          <strong>੨. ਸੁੱਕੀ ਨਦੀ, ਭੁੱਖ ਤੇ ਵਸਤਰ (ਆਤਮਿਕ ਪ੍ਰਤੀਕ):</strong> ਮਨੁੱਖ ਦਾ ਖੁਸ਼ਕ ਤੇ ਚਿੰਤਿਤ ਹਿਰਦਾ 'ਸੁੱਕੀ ਨਦੀ' ਵਾਂਗ ਹੈ, ਜਿਸ ਵਿੱਚ ਸਤਿਗੁਰੂ ਭਗਤੀ ਦਾ ਨੀਰ ਵਹਾ ਦਿੰਦੇ ਹਨ। ਗਿਆਨ-ਭਗਤੀ ਦੀ 'ਖੀਰ' ਨਾਲ ਆਤਮਿਕ ਭੁੱਖ ਮਿਟਾਉਂਦੇ ਹਨ ਅਤੇ ਸਦਗੁਣਾਂ ਦਾ 'ਚੀਰ' (ਵਸਤਰ) ਪਹਿਨਾ ਕੇ ਆਤਮਾ ਦੀ ਇੱਜ਼ਤ ਰੱਖਦੇ ਹਨ।
+                        </p>
+                        <p>
+                          <strong>੩. ਪਾਤਾਲ ਦਾ ਪਾਣੀ ਤੇ ਕਾਲ ਤੇ ਨਿਸ਼ਾਨਾ:</strong> ਸੱਚੇ ਕਬੀਰ-ਬਾਲਕ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਗਹਿਰੀ ਸਮਾਧੀ (ਅੰਦਰੂਨੀ ਅਥਾਹ ਸਰੋਤ) ਤੋਂ ਤ੍ਰਿਪਤ ਕਰਦੇ ਹਨ। 'ਸਤਯਨਾਮ' ਦੇ ਸਿਮਰਨ ਨਾਲ ਉਹ ਕਾਲ ਦੇ ਭੈਅ ਤੇ ਜਮ ਦੇ ਜਾਲ ਨੂੰ ਕੱਟ ਕੇ ਸਦਾ ਰਹਿਣ ਵਾਲੇ ਸੁਖਧਾਮ (ਸਤਿਲੋਕ) ਨੂੰ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਨ।
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="space-y-2" style={{ color: theme.textSecondary }}>
+                        <p>
+                          <strong>१. बालापीर एवं निष्कपट फकीरी:</strong> कबीर साहेब बाल-सुलभ सरलता और परम समर्थता के स्वामी हैं। उनकी कृपा से संपूर्ण परिवार में अहंकार व मोह मिटकर संतोष, सेवा और सहज 'फकीरी' (आंतरिक वैराग्य व निर्भयता) का उदय होता है।
+                        </p>
+                        <p>
+                          <strong>२. सूखी नदी, क्षुधा और वस्त्र (गहन आध्यात्मिक प्रतीक):</strong> संसार की चिंता और संशय से सूख चुके हृदय रूपी <em>'सूखी नदी'</em> में सतगुरु भक्ति व प्रेम का अमृत-जल प्रवाहित कर देते हैं। ज्ञान-विवेक रूपी मधुर <em>'खीर'</em> से आत्मा की जन्मों की प्यास बुझाते हैं और सद्गुणों व शील रूपी <em>'चीर'</em> (वस्त्र) पहनाकर जीव की लाज बचाते हैं।
+                        </p>
+                        <p>
+                          <strong>३. पाताल का जल एवं सत्यनाम का अमोघ बाण:</strong> 'सत्य कबीर का बालका, पानी पीवे पताल का' का तात्पर्य है कि सतगुरु का शिष्य उथले दिखावों से नहीं, अपितु गहरी अंतःसाधना के अथाह स्रोत से आत्म-तृप्ति पाता है। <em>'सत्यनाम'</em> के निरंतर भजन से काल (भय/मृत्यु) और माया-मोह का जाल नष्ट हो जाता है तथा साधक सदा आनंदमय <strong>सुखधाम (सतलोक)</strong> का अधिकारी बन जाता है।
+                        </p>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* ===================================================================== */}
+      {/* ADMIN-MANAGED SACRED DARSHAN GALLERY (PUBLIC READ-ONLY, ADMIN WRITE)  */}
+      {/* ===================================================================== */}
+      {(galleryImages.length > 0 || isAdmin) && (
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="rounded-3xl border p-5 sm:p-7 shadow-xl space-y-4"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3" style={{ borderColor: theme.cardBorder }}>
+            <div className="flex items-center gap-2.5">
+              <ImageIcon className="w-5 h-5 text-amber-600" />
+              <div>
+                <h3 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-lg">
+                  {language === 'pb'
+                    ? '🖼️ ਪਾਵਨ ਦਰਸ਼ਨ ਚਿੱਤਰ ਸੰਗ੍ਰਹਿ (ਗੈਲਰੀ)'
+                    : language === 'en'
+                    ? '🖼️ Sacred Darshan Image Gallery'
+                    : '🖼️ पावन दर्शन चित्र संग्रह (गैलरी)'}
+                </h3>
+                <p className="text-[11px] font-serif opacity-75" style={{ color: theme.textSecondary }}>
+                  {isAdmin
+                    ? '👑 एडमिन मोड सक्रिय: आप नए पावन चित्र जोड़ या हटा सकते हैं।'
+                    : '🔒 सार्वजनिक रीड-ओनली: केवल अधिकृत एडमिन द्वारा प्रकाशित पावन चित्र।'}
+                </p>
+              </div>
+            </div>
+
+            {isAdmin ? (
+              <div>
+                <input
+                  ref={galleryInputRef}
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,image/*"
+                  onChange={handleUploadGalleryImage}
+                  className="hidden"
+                />
+                <button
+                  type="button"
+                  disabled={isUploadingGallery}
+                  onClick={() => galleryInputRef.current?.click()}
+                  style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+                  className="min-h-[40px] px-4 py-2 rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 shadow-sm hover:opacity-95 transition cursor-pointer disabled:opacity-60"
+                >
+                  <Upload className="w-3.5 h-3.5" />
+                  <span>{isUploadingGallery ? 'अपलोड हो रहा है...' : '+ नया चित्र अपलोड (Admin)'}</span>
+                </button>
+              </div>
+            ) : (
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-stone-500/10 border border-stone-500/20 flex items-center gap-1 opacity-75">
+                <Lock className="w-3 h-3" /> Read-Only
+              </span>
+            )}
+          </div>
+
+          {galleryImages.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {galleryImages.map((imgItem) => (
+                <div
+                  key={imgItem.id}
+                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+                  className="rounded-2xl border overflow-hidden shadow-xs flex flex-col"
+                >
+                  <div className="aspect-[4/3] bg-stone-900 overflow-hidden relative">
+                    <img
+                      src={imgItem.mediaUrl}
+                      alt={imgItem.title}
+                      className="w-full h-full object-cover"
+                    />
+                    {isAdmin && (
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteGalleryImage(imgItem.id)}
+                        className="absolute top-2 right-2 p-1.5 rounded-lg bg-red-600/90 hover:bg-red-700 text-white shadow-md cursor-pointer"
+                        title="चित्र हटाएं (Admin Only)"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    )}
+                  </div>
+                  <div className="p-3 space-y-1">
+                    <h4 className="font-serif font-bold text-xs sm:text-sm truncate" style={{ color: theme.sacredMaroon }}>
+                      {imgItem.title}
+                    </h4>
+                    {imgItem.description && (
+                      <p className="text-[11px] opacity-75 line-clamp-2" style={{ color: theme.textSecondary }}>
+                        {imgItem.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

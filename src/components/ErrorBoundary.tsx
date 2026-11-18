@@ -25,8 +25,22 @@ export class ErrorBoundary extends Component<Props, State> {
     console.warn('[Saheb World ErrorBoundary] Gracefully handled render issue:', error, errorInfo);
   }
 
-  private handleReset = () => {
+  private handleReset = async () => {
     this.setState({ hasError: false, error: null });
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map((r) => r.unregister()));
+      }
+      if ('caches' in window) {
+        const keys = await caches.keys();
+        await Promise.all(
+          keys
+            .filter((k) => k.includes('workbox') || k.includes('sahebworld-app-shell'))
+            .map((k) => caches.delete(k))
+        );
+      }
+    } catch {}
     window.location.reload();
   };
 

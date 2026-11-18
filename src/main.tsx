@@ -29,9 +29,42 @@ if (typeof window !== 'undefined') {
       event.preventDefault();
     }
   });
+
+  // Clean recovery if a dynamic Vite chunk fails to load after a new deployment
+  window.addEventListener('vite:preloadError', () => {
+    try {
+      const key = 'sahebworld_preload_reloaded';
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, '1');
+        window.location.reload();
+      }
+    } catch {
+      window.location.reload();
+    }
+  });
 }
 
-// Initialize persistent PWA Service Worker cleanly in production (top-level / standalone / permitted frames)
+// In DEV mode, unregister any leftover Service Workers so preview reload is always fresh & never stuck
+if (typeof window !== 'undefined' && !import.meta.env.PROD && 'serviceWorker' in navigator) {
+  try {
+    navigator.serviceWorker.getRegistrations().then((regs) => {
+      regs.forEach((reg) => {
+        reg.unregister().catch(() => {});
+      });
+    }).catch(() => {});
+    if ('caches' in window) {
+      caches.keys().then((keys) => {
+        keys.forEach((key) => {
+          if (key.includes('workbox') || key.includes('sahebworld-app-shell')) {
+            caches.delete(key).catch(() => {});
+          }
+        });
+      }).catch(() => {});
+    }
+  } catch {}
+}
+
+// Initialize persistent PWA Service Worker cleanly in production
 if (typeof window !== 'undefined' && import.meta.env.PROD && 'serviceWorker' in navigator) {
   try {
     const updateSW = registerSW({

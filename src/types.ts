@@ -5,6 +5,8 @@
 
 export type Language = 'hi' | 'pb' | 'en';
 
+export type { SggsKabirVerse } from './data/sggsKabirBaniData';
+
 export type ThemeMode = 'bhojpatra' | 'amrit_neel' | 'mystic_dark' | 'flow_state' | 'high_readability_light';
 
 export type GranthaName = 
@@ -208,7 +210,8 @@ export type AppView =
   | 'satya-naam'
   | 'aatma-bhushan'
   | 'gyan-chakra'
-  | 'nature-wallpaper';
+  | 'nature-wallpaper'
+  | 'hukamnama';
 
 export type ReaderCustomTheme = 'mool' | 'pothi' | 'black' | 'netra' | 'dark' | 'light' | 'sepia' | 'classic' | 'comfort' | 'deep_sepia' | 'midnight';
 export type ReaderFontSize = 'small' | 'normal' | 'medium' | 'large' | 'xlarge' | 'elderly' | 'xl'; // A-, A, A+, A++, A+++ (Elderly Senior Citizen 8XL)
