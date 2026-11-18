@@ -1,4 +1,4 @@
-import { Sakhi, Language } from '../types';
+import { Sakhi, Language, WordMeaning } from '../types';
 import {
   SGGS_CROSS_REF_VAULT,
   BIJAK_CROSS_REF_VAULT,
@@ -26,6 +26,15 @@ export interface ElevenStepAudioStage {
   stageNumber: number;
   title: string;
   instruction: string;
+}
+
+export interface SwadhyayCertificatePayload {
+  topHeader: string;
+  certificationStatement: string;
+  highlightMoolSakhi: string;
+  oneLineBlessing: string;
+  footerBrand: string;
+  bottomFooter: string;
 }
 
 export interface ElevenStepSwadhyayData {
@@ -67,41 +76,85 @@ export interface ElevenStepSwadhyayData {
     blessingVerse: string;
     guruVachan: string;
     samarpanSankalp: string;
+    oneLineBlessing: string;
     certificateActionLabel: string;
   };
+  certificateData?: SwadhyayCertificatePayload;
+  isAiGenerated?: boolean;
 }
 
-// Vault of authentic biographical parables and seeker trials from Satguru Kabir Saheb's life, Bijak, and Anurag Sagar
-const BIOGRAPHICAL_PARABLES = [
-  {
-    titleHi: 'काशी का वस्त्र बुनने की लीला व निश्छल दान प्रसंग',
-    titlePb: 'ਕਾਸ਼ੀ ਦੀ ਬੁਣਾਈ ਲੀਲਾ ਤੇ ਨಿಸ್ਕਾਮ ਦਾਨ ਪ੍ਰਸੰਗ',
-    titleEn: 'The Kashi Weaver Leela & Selfless Giving',
-    storyHi: 'एक बार जब सतगुरु कबीर साहेब काशी में जुलाहे का कार्य कर रहे थे, अपनी पूरे सप्ताह की निष्ठा से बुनी हुई उत्तम चादर को आपने एक दीन याचक को आधा फाड़कर ओढ़ा दिया। याचक के दोबारा मांगने पर शेष आधा भी सहर्ष अर्पित कर दिया। इस प्रसंग से सतगुरु कबीर साहेब यह सिखाते हैं कि संसारी मनुष्य क्षणिक भौतिक धन को ही सब कुछ मानता है, जबकि संत हृदय परोपकार और प्रेम को ही अपनी सर्वोच्च संपत्ति मानता है।',
-    storyPb: 'ਇੱਕ ਵਾਰ ਜਦੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਕਾਸ਼ੀ ਵਿੱਚ ਜੁਲਾਹੇ ਦਾ ਕੰਮ ਕਰ ਰਹੇ ਸਨ, ਤਾਂ ਆਪਣੀ ਮਿਹਨਤ ਨਾਲ ਬੁਣੀ ਚਾਦਰ ਇੱਕ ਲੋੜਵੰਦ ਨੂੰ ਦੇ ਦਿੱਤੀ। ਇਸ ਪ੍ਰਸੰਗ ਰਾਹੀਂ ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਸਿਖਾਇਆ ਕਿ ਸੰਸਾਰੀ ਮਨੁੱਖ ਪਦਾਰਥਕ ਮੋਹ ਵਿੱਚ ਫੱਸਿਆ ਰਹਿੰਦਾ ਹੈ, ਪਰ ਸੱਚਾ ਭਗਤ ਨಿಸ್ਕਾਮ ਸੇਵਾ ਕਰਦਾ ਹੈ।'
-  },
-  {
-    titleHi: 'धर्मदास जी को पूर्ण सत्यनाम उपदेश और अमर लोक का भेद',
-    titlePb: 'ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਪੂਰਨ ਸਤਨਾਮ ਉਪਦੇਸ਼ ਤੇ ਅਮਰ ਲੋਕ ਦਾ ਭੇਦ',
-    titleEn: 'The Illumination of Dharmdas & The Immortal Abode',
-    storyHi: 'जब धनी धर्मदास जी काशी में सतगुरु कबीर साहेब के संपर्क में आए, तो उन्होंने अपनी समस्त स्वर्ण संपदा और पांडित्य का अभिमान चरणों में रख दिया। सतगुरु कबीर साहेब ने उन्हें समझाया कि संसारी माया और शास्त्रार्थ का अहंकार मनुष्य को काल के चक्र में बांधता है। केवल श्वास-श्वास में सत्यनाम की कमाई और निरहंकारिता ही जीव को अमर लोक तक पहुंचाती है।',
-    storyPb: 'ਜਦੋਂ ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਏ, ਤਾਂ ਉਨ੍ਹਾਂ ਆਪਣਾ ਸਾਰਾ ਹਉਮੈ ਤਿਆਗ ਦਿੱਤਾ। ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਸਮਝਾਇਆ ਕਿ ਕੇਵਲ ਸਤਯਨਾਮ ਸਿਮਰਨ ਅਤੇ ਨਿਮਰਤਾ ਹੀ ਜੀਵ ਨੂੰ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ಮುಕ್ತ ਕਰਦੀ ਹੈ।'
-  },
-  {
-    titleHi: 'मगहर की अंतिम लीला और अंधविश्वास का खंडन',
-    titlePb: 'ਮਗਹਰ ਦੀ ਅੰਤਿਮ ਲੀਲਾ ਤੇ ਅੰਧਵਿਸ਼ਵਾਸ ਦਾ ਖੰਡਨ',
-    titleEn: 'The Maghar Leela & Shattering of Superstition',
-    storyHi: 'अपने अंतिम समय में सतगुरु कबीर साहेब काशी छोड़कर मगहर चले गए, जहां लोगों में यह अंधविश्वास फैला था कि मगहर में मरने वाला नरक जाता है और काशी में मरने वाला स्वर्ग। सतगुरु कबीर साहेब ने इस मिथक को जड़ से उखाड़ फेंकने के लिए मगहर में शरीर त्याग कर यह सिद्ध किया कि परमात्मा प्राप्ति का संबंध किसी भौगोलिक स्थान से नहीं, बल्कि निर्मल हृदय और सत्य आचरण से है।',
-    storyPb: 'ਆਪਣੇ ਅੰਤਿਮ ਸਮੇਂ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਮਗਹਰ ਗਏ ਜਿੱਥੇ ਲੋਕਾਂ ਵਿੱਚ ਭਰਮ ਸੀ ਕਿ ਮਗਹਰ ਮਰਨ ਵਾਲਾ ਨਰਕ ਜਾਂਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਉੱਥੇ ਜਾ ਕੇ ਇਸ ਅੰਧਵਿਸ਼ਵਾਸ ਨੂੰ ਹਮੇਸ਼ਾ ਲਈ ਖ਼त्म ਕਰ ਦਿੱਤਾ।'
-  },
-  {
-    titleHi: 'सिकंदर लोदी के दरबार में सत्य की विजय',
-    titlePb: 'ਸਿਕੰਦਰ ਲੋਦੀ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਸੱਚ ਦੀ ਜਿੱਤ',
-    titleEn: 'The Triumph of Truth Before Sultan Sikandar Lodi',
-    storyHi: 'जब ईर्ष्यालु दरबारीपियों के बहकावे में आकर सुल्तान सिकंदर लोदी ने सतगुरु कबीर साहेब को बंदी बनाने का प्रयास किया, तो दिव्य प्रभाव से हथकड़ियां स्वयं खुल गईं और राजा नतमस्तक हो गया। सतगुरु कबीर साहेब ने स्पष्ट किया कि सत्य पर चलने वाले को किसी ज़मीनी ताकत का भय नहीं होता, क्योंकि उसकी रक्षा साक्षात निर्गुण ब्रह्म करता है।',
-    storyPb: 'ਜਦੋਂ ਸੁਲਤਾਨ ਸਿਕੰਦਰ ਲੋਦੀ ਨੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਨੂੰ ਕੈਦ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ, ਤਾਂ ਦੈਵੀ ਪ੍ਰਭਾਵ ਨਾਲ ਸੱਚ ਦੀ ਜਿੱਤ ਹੋਈ। ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਦੱਸਿਆ ਕਿ ਸੱਚੇ ਇਨਸਾਨ ਨੂੰ ਕਿਸੇ ਦਾ ਡਰ ਨਹੀਂ ਹੁੰਦਾ।'
+export interface SwadhyayAiWordEntry {
+  wordHi: string;
+  meaningHi: string;
+  wordPb: string;
+  meaningPb: string;
+  wordEn: string;
+  meaningEn: string;
+}
+
+export interface SwadhyayAiResponsePayload {
+  step2_context: {
+    relevanceText: string;
+    spiritualSignificance: string;
+  };
+  step3_wordMeanings: SwadhyayAiWordEntry[];
+  step4_bhavarth: {
+    bhavarth: string;
+    deepSatsangGyan: string;
+    mindMayaAnalysis: string;
+  };
+  step5_quiz: ElevenStepQuizQuestion[];
+  step6_spiritualInsight: {
+    mysticalCoding: string;
+  };
+  step7_keyLearning: string[];
+  step8_crossReferences: ElevenStepCrossReference[];
+  step9_contemplation: string[];
+  step10_audioIntegration: {
+    sadhanaMethodName: string;
+    stages: ElevenStepAudioStage[];
+  };
+  step11_blessingCertificate: {
+    blessingVerse: string;
+    guruVachan: string;
+    samarpanSankalp: string;
+    oneLineBlessing: string;
+  };
+  certificateData: SwadhyayCertificatePayload;
+}
+
+function fisherYatesShuffle<T>(arr: T[]): T[] {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
   }
-];
+  return copy;
+}
+
+/**
+ * Shuffles BOTH the order of quiz questions AND option positions (A, B, C, D) on every attempt.
+ */
+export function shuffleElevenStepQuiz(questions: ElevenStepQuizQuestion[]): ElevenStepQuizQuestion[] {
+  if (!Array.isArray(questions) || questions.length === 0) return [];
+  const shuffledOrder = fisherYatesShuffle(questions);
+  return shuffledOrder.map((q) => {
+    const rawOpts = Array.isArray(q.options) ? q.options.slice(0, 4) : [];
+    while (rawOpts.length < 4) {
+      rawOpts.push(`विकल्प ${rawOpts.length + 1}`);
+    }
+    const origCorrectIdx =
+      typeof q.correctIndex === 'number' && q.correctIndex >= 0 && q.correctIndex < rawOpts.length
+        ? q.correctIndex
+        : 0;
+    const perm = fisherYatesShuffle([0, 1, 2, 3]);
+    return {
+      ...q,
+      options: perm.map((p) => rawOpts[p]),
+      correctIndex: Math.max(0, perm.indexOf(origCorrectIdx)),
+    };
+  });
+}
 
 /**
  * Normalizes a couplet line for self-duplication checks between Mool Sakhi and cross-references
@@ -114,18 +167,22 @@ function normalizeCoupletSignature(text: string): string {
     .trim();
 }
 
-/**
- * Checks whether a candidate verse essentially duplicates the active Mool Sakhi or another selected verse
- */
 function isDuplicateCouplet(candidateText: string, comparisonText: string): boolean {
   const sigA = normalizeCoupletSignature(candidateText);
   const sigB = normalizeCoupletSignature(comparisonText);
   if (!sigA || !sigB) return false;
   if (sigA === sigB) return true;
 
-  // Stem-prefix check (first 3 chars of significant words) catches Braj/Gurmukhi/Hindi dialect variants like कहे/कहै, कुम्हार/कुमहार, रूँदूंगी/रूँदउगी
-  const stemsA = sigA.split(' ').filter((w) => w.length >= 3).map((w) => w.slice(0, 3));
-  const stemsB = new Set(sigB.split(' ').filter((w) => w.length >= 3).map((w) => w.slice(0, 3)));
+  const stemsA = sigA
+    .split(' ')
+    .filter((w) => w.length >= 3)
+    .map((w) => w.slice(0, 3));
+  const stemsB = new Set(
+    sigB
+      .split(' ')
+      .filter((w) => w.length >= 3)
+      .map((w) => w.slice(0, 3))
+  );
   if (stemsA.length === 0 || stemsB.size === 0) return false;
 
   let overlap = 0;
@@ -135,10 +192,6 @@ function isDuplicateCouplet(candidateText: string, comparisonText: string): bool
   return overlap >= 4 || overlap / Math.min(stemsA.length, stemsB.size) >= 0.55;
 }
 
-/**
- * Scores and selects an authentic cross-reference verse matched to the Mool Sakhi's meaning,
- * rotating deterministically across top resonant matches so every Sakhi gets tailored verses.
- */
 function pickMeaningMatchedEntry(
   vault: CuratedCrossRefEntry[],
   sakhi: Sakhi,
@@ -149,7 +202,7 @@ function pickMeaningMatchedEntry(
   seedOffset: number,
   excludeVerseHi?: string
 ): CuratedCrossRefEntry {
-  const activeVerseHi = sakhi.text?.hi || (sakhi as any).verse || '';
+  const activeVerseHi = sakhi.text?.hi || '';
   const primarySet = new Set(primaryThemes);
   const verseThemeSet = new Set(verseThemes);
 
@@ -179,24 +232,22 @@ function pickMeaningMatchedEntry(
   }
 
   const maxScore = scored[0].score;
-  // Tightly select among genuine highest-scoring matches (within 4 points of top score, up to 3 candidates)
   const topResonant = scored.filter((item) => item.score >= Math.max(1, maxScore - 4)).slice(0, 3);
   const candidatePool = topResonant.length >= 2 ? topResonant : scored.slice(0, Math.min(3, scored.length));
 
-  const sakhiSeed = (Number(sakhi.number) || 1) * 7 + stableStringHash(`${sakhi.id || ''}-${activeVerseHi.slice(0, 24)}`) + seedOffset;
+  const sakhiSeed =
+    (Number(sakhi.number) || 1) * 7 +
+    stableStringHash(`${sakhi.id || ''}-${activeVerseHi.slice(0, 24)}`) +
+    seedOffset;
   const chosenIndex = Math.abs(sakhiSeed) % candidatePool.length;
   return candidatePool[chosenIndex].entry;
 }
 
-/**
- * Dynamically resolves 2 unique, meaning-matched parallel cross-references:
- * 1) Authentic Sri Guru Granth Saheb Ji (Salok / Raag Bhagat Kabir Ji) with verified Ang citation
- * 2) Authentic Kabir Bijak (Sakhi / Ramaini / Shabad Ang)
- * Both rendered in the active language with a direct connection note to today's Mool Sakhi.
- */
 function resolveScripturalCrossReferences(sakhi: Sakhi, language: Language): ElevenStepCrossReference[] {
-  const sakhiVerseHi = sakhi.text?.hi || (sakhi as any).verse || '';
-  const sakhiVerseActive = (language === 'pb' ? sakhi.text?.pb : language === 'en' ? sakhi.text?.en : sakhi.text?.hi) || sakhiVerseHi;
+  const sakhiVerseHi = sakhi.text?.hi || '';
+  const sakhiVerseActive =
+    (language === 'pb' ? sakhi.text?.pb : language === 'en' ? sakhi.text?.en : sakhi.text?.hi) ||
+    sakhiVerseHi;
   const firstLine = sakhiVerseActive.split('\n')[0] || sakhiVerseActive;
 
   const verseBlob = [sakhi.text?.hi, sakhi.text?.pb, sakhi.text?.en, sakhi.categoryTitle?.hi]
@@ -251,258 +302,630 @@ function resolveScripturalCrossReferences(sakhi: Sakhi, language: Language): Ele
 }
 
 /**
- * Builds the comprehensive 11-step Swadhyay data object uniquely tailored to the active Sakhi
+ * Generates a concise 1-line theme-based blessing strictly tailored to the completed Sakhi.
+ */
+export function buildThemeOneLineBlessing(sakhi: Sakhi, language: Language): string {
+  const category = sakhi.categoryTitle[language] || sakhi.categoryTitle.hi || '';
+  const prayer = sakhi.samarpanPrayer?.[language] || sakhi.samarpanPrayer?.hi || '';
+  const firstPrayerSentence = prayer
+    .replace(/साहेब बंदगी साहेब!?/gi, '')
+    .replace(/Saheb Bandagi Saheb!?/gi, '')
+    .split(/[।.!?\n]/)[0]
+    ?.trim();
+
+  if (firstPrayerSentence && firstPrayerSentence.length >= 16 && firstPrayerSentence.length <= 135) {
+    return language === 'hi' && !firstPrayerSentence.endsWith('।')
+      ? `${firstPrayerSentence}।`
+      : firstPrayerSentence;
+  }
+
+  if (language === 'pb') {
+    return `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਕਿਰਪਾ ਨਾਲ '${category}' ਦਾ ਇਹ ਪਾਵਨ ਬੋਧ ਤੁਹਾਡੇ ਜੀਵਨ ਨੂੰ ਸਤਯਨਾਮ ਦੇ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਕਰੇ।`;
+  }
+  if (language === 'en') {
+    return `May Satguru Kabir Saheb’s grace illuminate your daily life with the wisdom of '${category}'.`;
+  }
+  return `सतगुरु कबीर साहेब की कृपा से '${category}' (साखी #${sakhi.number}) का यह पावन बोध आपके जीवन को सत्यनाम से आलोकित करे।`;
+}
+
+/**
+ * Builds 5 Sakhi-specific Quiz questions strictly from this Sakhi's own quiz entries,
+ * wordMeanings, couplet lines, bhavarth, and practicalApplication — zero generic filler.
+ */
+function buildSakhiSpecificQuiz(sakhi: Sakhi, language: Language): ElevenStepQuizQuestion[] {
+  const items: ElevenStepQuizQuestion[] = [];
+  const activeVerse = sakhi.text?.[language] || sakhi.text?.hi || '';
+  const firstLine = activeVerse.split('\n')[0]?.trim() || activeVerse;
+  const bhavarth = sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi || '';
+  const category = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
+  const action = sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || '';
+  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+
+  // 1. Include any curated MCQs attached to the Sakhi itself
+  if (Array.isArray(sakhi.quiz) && sakhi.quiz.length > 0) {
+    for (const q of sakhi.quiz) {
+      const opts = q.options?.[language] || q.options?.hi || [];
+      if (opts.length >= 2) {
+        items.push({
+          question: q.question?.[language] || q.question?.hi || '',
+          options: opts.slice(0, 4),
+          correctIndex: q.correctIndex ?? 0,
+          explanation: q.explanation?.[language] || q.explanation?.hi || bhavarth,
+        });
+      }
+    }
+  }
+
+  // 2. Generate dynamic Vocabulary Meaning MCQs from this Sakhi's wordMeanings
+  words.forEach((entry, idx) => {
+    if (items.length >= 5) return;
+    const otherMeanings = words
+      .filter((_, oIdx) => oIdx !== idx)
+      .map((w) => w.meaning)
+      .filter(Boolean);
+    const distractors = [...otherMeanings];
+    const fallbackDistractors =
+      language === 'pb'
+        ? ['ਕੇਵਲ ਬਾਹਰੀ ਦਿਖਾਵਾ', 'ਅਸਥਾਈ ਪਦਾਰਥਕ ਭੋਗ', 'ਬੇਅਰਥ ਵਾਦ-ਵਿਵਾਦ']
+        : language === 'en'
+        ? ['Temporary sensory indulgence', 'Mere outward ritualism', 'Vain intellectual pride']
+        : ['केवल बाहरी दिखावा और भ्रम', 'क्षणिक भौतिक सुख-भोग', 'अहंकारपूर्ण वाद-विवाद'];
+    for (const fb of fallbackDistractors) {
+      if (distractors.length < 3 && !distractors.includes(fb)) {
+        distractors.push(fb);
+      }
+    }
+
+    items.push({
+      question:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਵਿੱਚ ਆਏ ਸ਼ਬਦ "${entry.word}" ਦਾ ਸਹੀ ਅਰਥ ਕੀ ਹੈ?`
+          : language === 'en'
+          ? `In Sakhi #${sakhi.number} ("${firstLine}"), what is the accurate meaning of the term "${entry.word}"?`
+          : `साखी #${sakhi.number} ("${firstLine}") में प्रयुक्त शब्द "${entry.word}" का सटीक अर्थ क्या है?`,
+      options: [entry.meaning, distractors[0], distractors[1], distractors[2]],
+      correctIndex: 0,
+      explanation:
+        language === 'pb'
+          ? `ਇਸ ਸਾਖੀ ਵਿੱਚ "${entry.word}" ਦਾ ਭਾਵ "${entry.meaning}" ਹੈ।`
+          : language === 'en'
+          ? `Within this verse, "${entry.word}" signifies: ${entry.meaning}.`
+          : `इस पावन साखी के संदर्भ में "${entry.word}" का अर्थ "${entry.meaning}" है।`,
+    });
+  });
+
+  // 3. Practical application & Ang/Moral question grounded in this Sakhi
+  if (items.length < 5 && action) {
+    items.push({
+      question:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} (${category}) ਸਾਨੂੰ ਵਿਵਹਾਰਕ ਜੀਵਨ ਵਿੱਚ ਕੀ ਅਪਣਾਉਣ ਦੀ ਪ੍ਰੇਰਣਾ ਦਿੰਦੀ ਹੈ?`
+          : language === 'en'
+          ? `How does Sakhi #${sakhi.number} (${category}) instruct the seeker to act in daily life?`
+          : `साखी #${sakhi.number} (${category}) साधक को दैनिक आचरण में क्या अपनाने की प्रेरणा देती है?`,
+      options: [
+        action,
+        language === 'pb' ? 'ਦੂਜਿਆਂ ਵਿੱਚ ਔਗੁਣ ਲੱਭਣਾ' : language === 'en' ? 'Comparing oneself vainly with others' : 'दूसरों की निंदा व अहंकार में समय गँवाना',
+        language === 'pb' ? 'ਬਿਨਾਂ ਸੋਚੇ ਦਿਖਾਵਾ ਕਰਨਾ' : language === 'en' ? 'Seeking superficial praise' : 'बिना विवेक के बाहरी प्रदर्शन करना',
+        language === 'pb' ? 'ਆਤਮ-ਚਿੰਤਨ ਤੋਂ ਭੱਜਣਾ' : language === 'en' ? 'Avoiding quiet self-reflection' : 'अंतर्मुखी आत्म-चिंतन से मुख मोड़ना',
+      ],
+      correctIndex: 0,
+      explanation: bhavarth,
+    });
+  }
+
+  // 4. Core couplet theme synthesis if still below 5
+  while (items.length < 5) {
+    const idx = items.length;
+    const summarySentence = bhavarth.split(/[।.]/).filter((s) => s.trim().length > 10)[idx % 2] || bhavarth;
+    items.push({
+      question:
+        language === 'pb'
+          ? `"${firstLine}" — ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਇਸ ਪੰਕਤੀ ਦਾ ਮੁੱਖ ਸੰਦੇਸ਼ ਕੀ ਹੈ?`
+          : language === 'en'
+          ? `What is the central teaching conveyed in "${firstLine}" (Sakhi #${sakhi.number})?`
+          : `"${firstLine}" — साखी #${sakhi.number} की इस पंक्ति का मुख्य मर्म क्या है?`,
+      options: [
+        summarySentence.trim(),
+        language === 'pb' ? 'ਸੰਸਾਰਿਕ ਵਿਖਾਵੇ ਨੂੰ ਵਧਾਉਣਾ' : language === 'en' ? 'Increasing outward pride and rivalry' : 'बाहरी दिखावे और अभिमान को बढ़ाना',
+        language === 'pb' ? 'ਮਨ ਦੀਆਂ ਚਲਾਕੀਆਂ ਵਿੱਚ ਉਲਝਣਾ' : language === 'en' ? 'Suppressing inner awareness' : 'मन की चंचल वृत्तियों का पोषण करना',
+        language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦੀ ਸਿੱਖਿਆ ਨੂੰ ਭੁੱਲਣਾ' : language === 'en' ? 'Ignoring ethical contemplation' : 'विवेक और आत्म-चिंतन की उपेक्षा करना',
+      ],
+      correctIndex: 0,
+      explanation: bhavarth,
+    });
+  }
+
+  return shuffleElevenStepQuiz(items.slice(0, 5));
+}
+
+/**
+ * Builds instantaneous, 100% Sakhi-specific 11-step Swadhyay data without any generic charity/wealth/caste templates.
  */
 export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): ElevenStepSwadhyayData {
-  const sakhiVerse = (language === 'pb' ? sakhi.text?.pb : language === 'en' ? sakhi.text?.en : sakhi.text?.hi) || sakhi.text?.hi || 'धर्म किये धन ना घटै, नदी न घट्टै नीर ।\nअपनी आंखों देखि ले, यों कथि कहहिं कबीर।।';
-  const sakhiBhavarth = (language === 'pb' ? sakhi.bhavarth?.pb : language === 'en' ? sakhi.bhavarth?.en : sakhi.bhavarth?.hi) || sakhi.bhavarth?.hi || 'सतगुरु कबीर साहेब फरमाते हैं कि सत्पात्र में धर्म और परोपकार करने से आंतरिक समृद्धि बढ़ती है।';
+  const sakhiVerse =
+    (language === 'pb' ? sakhi.text?.pb : language === 'en' ? sakhi.text?.en : sakhi.text?.hi) ||
+    sakhi.text?.hi ||
+    '';
+  const sakhiBhavarth =
+    (language === 'pb' ? sakhi.bhavarth?.pb : language === 'en' ? sakhi.bhavarth?.en : sakhi.bhavarth?.hi) ||
+    sakhi.bhavarth?.hi ||
+    '';
+  const categoryTitle = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
+  const contextNote = sakhi.contextNote?.[language] || sakhi.contextNote?.hi || '';
+  const practical = sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || '';
+  const contemplationPrompt = sakhi.contemplation?.[language] || sakhi.contemplation?.hi || '';
+  const samarpanPrayer = sakhi.samarpanPrayer?.[language] || sakhi.samarpanPrayer?.hi || '';
+  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+  const firstLine = sakhiVerse.split('\n')[0]?.trim() || sakhiVerse;
 
-  // Select a biographical parable rotating based on sakhi number hash
-  const parableIndex = (sakhi.number || 1) % BIOGRAPHICAL_PARABLES.length;
-  const activeParable = BIOGRAPHICAL_PARABLES[parableIndex];
-  const parableTitle = language === 'pb' ? activeParable.titlePb : language === 'en' ? activeParable.titleEn : activeParable.titleHi;
-  const parableStory = activeParable.storyHi; // Accessible in Hindi/Punjabi/English contextual rendering
+  // Step 6: Symbol-grounded Mystical Insight strictly for THIS Sakhi (zero biographical charity/caste filler)
+  const wordSymbolSummary = words
+    .slice(0, 4)
+    .map((w) => `• ${w.word} — ${w.meaning}`)
+    .join('\n');
 
-  // Step 6: Guhya Mystical Meaning (रहस्य) with biographical parable integration
-  // CRITICAL REQUIREMENT:
-  // - "संसारी" (NOT "संहारी")
-  // - "सतगुरु कबीर साहेब" (NOT "कबीर जी")
-  const mysticalInsightHi = `📜 मूल साखी पाठ:
-"${sakhiVerse}"
+  const step6MysticalText =
+    language === 'pb'
+      ? `📜 ਮੂਲ ਸਾਖੀ (#${sakhi.number} · ${categoryTitle}):\n"${sakhiVerse}"\n\n🔑 ਪ੍ਰਤੀਕ ਤੇ ਗੂੜ੍ਹ ਰਹੱਸ:\n${sakhiBhavarth}${wordSymbolSummary ? `\n\n🧩 ਪਾਵਨ ਸ਼ਬਦ-ਸੰਕੇਤ:\n${wordSymbolSummary}` : ''}${contextNote ? `\n\n✨ ਆਤਮਿਕ ਮਰਮ:\n${contextNote}` : ''}`
+      : language === 'en'
+      ? `📜 Mool Sakhi (#${sakhi.number} · ${categoryTitle}):\n"${sakhiVerse}"\n\n🔑 Mystical Decoding of Exact Symbols:\n${sakhiBhavarth}${wordSymbolSummary ? `\n\n🧩 Sacred Term Keys:\n${wordSymbolSummary}` : ''}${contextNote ? `\n\n✨ Inner Realization:\n${contextNote}` : ''}`
+      : `📜 मूल साखी (#${sakhi.number} · ${categoryTitle}):\n"${sakhiVerse}"\n\n🔑 प्रतीकों का गूढ़ आध्यात्मिक रहस्य:\n${sakhiBhavarth}${wordSymbolSummary ? `\n\n🧩 पावन शब्द-प्रतीक विश्लेषण:\n${wordSymbolSummary}` : ''}${contextNote ? `\n\n✨ अंतरंग बोध संकेत:\n${contextNote}` : ''}`;
 
-🔍 रहस्य व प्रेरणादायक प्रसंग (${parableTitle}):
-इस पावन साखी का आंतरिक आध्यात्मिक रहस्य यह है कि आत्मा का कोई भौतिक कुल, जाति या नश्वर शरीर से संबंध नहीं होता। संसारी जीव हमेशा 'शारीरिक स्तर' पर जीते हैं, इसलिए वे केवल बाह्य धन, मान-प्रतिष्ठा और परिवार को ही सर्वस्व मानते हैं।
+  // Step 7: 4 practical takeaways derived strictly from THIS Sakhi
+  const sentenceParts = sakhiBhavarth
+    .split(/[।.]/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 12);
 
-जीवन की इस सच्चाई को चरितार्थ करते हुए ${parableStory}
+  const keyPoint1 =
+    sentenceParts[0] ||
+    (language === 'pb'
+      ? `"${firstLine}" ਦੇ ਭਾਵ ਨੂੰ ਆਪਣੇ ਨਿੱਤ ਦੇ ਆਚਰਣ ਵਿੱਚ ਉਤਾਰੋ।`
+      : language === 'en'
+      ? `Internalize the central truth of "${firstLine}" in daily thought and speech.`
+      : `"${firstLine}" के मूल सत्य को अपने दैनिक विचार और व्यवहार का आधार बनाएं।`);
 
-सतगुरु कबीर साहेब यह दिव्य भेद खोलते हैं कि जब साधक माया के मोह को त्यागकर अंतःकरण से सत्यनाम की कमाई और निष्काम सेवा अपनाता है, तब उसका जीवन संसारी बंधनों से मुक्त होकर अमरता को प्राप्त होता है।`;
+  const keyPoint2 =
+    practical ||
+    sentenceParts[1] ||
+    (language === 'pb'
+      ? `'${categoryTitle}' ਅਨੁਸਾਰ ਮਨ ਦੀ ਪਰਖ ਕਰਦਿਆਂ ਸੱਚਾ ਵਿਵੇਕ ਧਾਰਨ ਕਰੋ।`
+      : language === 'en'
+      ? `Practice mindful awareness aligned with '${categoryTitle}' in everyday choices.`
+      : `'${categoryTitle}' की इस वाणी के अनुरूप प्रत्येक परिस्थिति में विवेकपूर्ण आचरण करें।`);
 
-  const mysticalInsightPb = `📜 ਮੂਲ ਸਾਖੀ ਪਾਠ:
-"${sakhiVerse}"
+  const keyPoint3 = words[0]
+    ? language === 'pb'
+      ? `"${words[0].word}" (${words[0].meaning}) ਦੇ ਮਰਮ ਨੂੰ ਸਮਝ ਕੇ ਅੰਦਰੂਨੀ ਸ਼ੁੱਧੀ ਵਧਾਓ।`
+      : language === 'en'
+      ? `Reflect deeply on "${words[0].word}" (${words[0].meaning}) to transform habitual reactions.`
+      : `साखी के प्रमुख शब्द "${words[0].word}" (${words[0].meaning}) के मर्म को व्यवहार में उतारें।`
+    : sentenceParts[2] ||
+      (language === 'pb'
+        ? `ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।`
+        : language === 'en'
+        ? `Pause periodically during the day to recall the lesson of Sakhi #${sakhi.number}.`
+        : `दिन में कुछ क्षण मौन होकर साखी #${sakhi.number} के संदेश का मनन करें।`);
 
-🔍 ਰਹੱਸ ਤੇ ਪ੍ਰੇਰਣਾਦਾਇਕ ਪ੍ਰਸੰਗ (${parableTitle}):
-ਇਸ ਸਾਖੀ ਦਾ ਅਧਿਆਤਮਕ ਰਹੱਸ ਇਹ ਹੈ ਕਿ ਆਤਮਾ ਦਾ ਕੋਈ ਸੰਸਾਰਿਕ ਕੁਲ ਜਾਂ ਸੀਮਤ ਜਾਤ ਨਹੀਂ ਹੁੰਦੀ। ਸੰਸਾਰੀ ਜੀਵ ਹਮੇਸ਼ਾ 'ਸਰੀਰਕ ਪੱਧਰ' \'ਤੇ ਜਿਊਂਦੇ ਹਨ, ਇਸ ਲਈ ਉਹ ਬਾਹਰੀ ਪਦਾਰਥਾਂ ਨੂੰ ਹੀ ਸਭ ਕੁਝ ਮੰਨਦੇ ਹਨ।
+  const keyPoint4 =
+    contextNote ||
+    (language === 'pb'
+      ? `ਇਸ ਸਾਖੀ ਦੀ ਸਿੱਖਿਆ ਅਨੁਸਾਰ ਹਉਮੈ ਛੱਡ ਕੇ ਨਿਮਰਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦਾ ਪੱਲਾ ਫੜੋ।`
+      : language === 'en'
+      ? `Anchor the core insight of Sakhi #${sakhi.number} through steady humility and Satyanaam awareness.`
+      : `साखी #${sakhi.number} की शिक्षा को स्मरण रखते हुए अहंकार से बचें और सत्य मार्ग पर अडिग रहें।`);
 
-${activeParable.storyPb}
+  const bulletPoints =
+    language === 'pb'
+      ? [`੧. ${keyPoint1}`, `੨. ${keyPoint2}`, `੩. ${keyPoint3}`, `੪. ${keyPoint4}`]
+      : language === 'en'
+      ? [`1. ${keyPoint1}`, `2. ${keyPoint2}`, `3. ${keyPoint3}`, `4. ${keyPoint4}`]
+      : [`१. ${keyPoint1}`, `२. ${keyPoint2}`, `३. ${keyPoint3}`, `४. ${keyPoint4}`];
 
-ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਜੀਵ ਹਉਮੈ ਤਿਆਗ ਕੇ ਸਤਿਗੁਰੂ ਦੇ ਦੱਸੇ ਮਾਰਗ \'ਤੇ ਚੱਲਦਾ ਹੈ, ਤਾਂ ਉਸਦਾ ਅੰਦਰਲਾ ਜੀਵਨ ਅੰਮ੍ਰਿਤਮਈ ਹੋ ਜਾਂਦਾ ਹੈ।`;
-
-  const mysticalInsightEn = `📜 Original Sacred Verse:
-"${sakhiVerse}"
-
-🔍 Esoteric Insight & Biographical Lesson (${activeParable.titleEn}):
-The profound mystical meaning of this sacred verse is that the eternal Soul possesses no physical caste, lineage, or material limitation. Worldly beings invariably dwell upon the bodily plane, evaluating reality through perishable possessions.
-
-Reflecting this eternal wisdom: ${activeParable.storyHi}
-
-Satguru Kabir Saheb reveals that when a seeker transcends worldly attachment and dedicates their breath to Satya Naam and selfless service, their soul is liberated from illusion into eternal grace.`;
-
-  const step6MysticalText = language === 'pb' ? mysticalInsightPb : language === 'en' ? mysticalInsightEn : mysticalInsightHi;
-
-  // Step 8: Scriptural Cross References from Sri Guru Granth Sahib & Bijak
+  // Step 8: Authentic Scriptural Cross-References
   const crossRefs = resolveScripturalCrossReferences(sakhi, language);
 
-  // Step 5: Unique Quiz Questions tailored to the Sakhi
-  const questions: ElevenStepQuizQuestion[] = [
-    {
-      question: language === 'pb' 
-        ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਅਨੁਸਾਰ ਜੀਵ ਦਾ ਅਸਲੀ ਅਧਿਆਤਮਕ ਧਨ ਕੀ ਹੈ?'
-        : language === 'en'
-        ? 'According to Satguru Kabir Saheb, what constitutes the true spiritual wealth of the soul?'
-        : 'सतगुरु कबीर साहेब के अनुसार जीव की वास्तविक आध्यात्मिक संपदा क्या है?',
-      options: language === 'pb'
-        ? ['ਸਤਯਨਾਮ ਸਿਮਰਨ ਅਤੇ ਨਿਮਰਤਾ', 'ਸੰਸਾਰਿਕ ਐਸ਼ੋ-ਆਰਾਮ', 'ਬਾਹਰੀ ਪ੍ਰਸਿੱਧੀ', 'ਅਸਥਾਈ ਜਾਇਦਾਦ']
-        : language === 'en'
-        ? ['Satya Naam remembrance and humility', 'Worldly luxury', 'Outward reputation', 'Transient property']
-        : ['सत्यनाम सुमिरन और निष्कपट विनम्रता', 'सांसारिक विलासिता', 'बाहरी प्रतिष्ठा', 'अस्थायी धन-संपत्ति'],
-      correctIndex: 0,
-      explanation: language === 'pb'
-        ? 'ਸਤਿਗੁਰੂ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਯਨਾਮ ਦੀ ਕਮਾਈ ਹੀ ਅਟੁੱਟ ਖਜ਼ਾਨਾ ਹੈ।'
-        : language === 'en'
-        ? 'Satguru Kabir Saheb teaches that the wealth of Satya Naam is inexhaustible and eternal.'
-        : 'सतगुरु कबीर साहेब समझाते हैं कि सत्यनाम की कमाई ही एकमात्र शाश्वत और कभी न घटने वाली संपदा है।'
-    },
-    {
-      question: language === 'pb'
-        ? 'ਸੰਸਾਰੀ ਜੀਵਾਂ ਦੀ ਮੁੱਖ ਭੁੱਲ ਕੀ ਦੱਸੀ ਗਈ ਹੈ?'
-        : language === 'en'
-        ? 'What is identified as the fundamental error of worldly beings?'
-        : 'संसारी जीवों की मूल भूल क्या बताई गई है?',
-      options: language === 'pb'
-        ? ['ਕੇਵਲ ਸਰੀਰਕ ਅਤੇ ਨਸ਼ਵਰ ਪੱਧਰ \'ਤੇ ਜਿਊਣਾ', 'ਰੋਜ਼ਾਨਾ ਪ੍ਰਾਰਥਨਾ ਕਰਨਾ', 'ਸਤਿਗੁਰੂ ਦੀ ਆਗਿਆ ਮੰਨਣਾ', 'ਸੇਵਾ ਕਰਨਾ']
-        : language === 'en'
-        ? ['Living exclusively on the mortal bodily plane', 'Daily prayer', 'Obeying the Satguru', 'Serving others']
-        : ['केवल नश्वर शरीर और बाह्य स्तर पर जीवन व्यतीत करना', 'नित्य प्रार्थना करना', 'सतगुरु की आज्ञा में रहना', 'सेवा करना'],
-      correctIndex: 0,
-      explanation: language === 'pb'
-        ? 'ਸੰਸਾਰੀ ਜੀਵ ਸਰੀਰ ਨੂੰ ਸਭ ਕੁਝ ਮੰਨਦੇ ਹਨ, ਜਦਕਿ ਆਤਮਾ ਅਮਰ ਹੈ।'
-        : language === 'en'
-        ? 'Worldly beings mistake the perishable body for reality, forgetting the immortal soul.'
-        : 'संसारी जीव नश्वर शरीर को ही सब कुछ मान लेते हैं और शाश्वत आत्मा को भुला देते हैं।'
-    },
-    {
-      question: language === 'pb'
-        ? 'ਇਸ ਪਾਵਨ ਸਾਹੀ ਦਾ ਮੁੱਖ ਸਿੱਖਿਆ ਸੂਤਰ ਕੀ ਹੈ?'
-        : language === 'en'
-        ? 'What is the primary core lesson of this sacred sakhi?'
-        : 'इस पावन साखी का प्रमुख शिक्षा सूत्र क्या है?',
-      options: language === 'pb'
-        ? ['ਸੱਚ ਤੇ ਧਰਮ ਦੇ ਮਾਰਗ \'ਤੇ ਅਡिग ਰਹਿਣਾ', 'ਦੂਜਿਆਂ ਨਾਲ ਝਗੜਾ ਕਰਨਾ', 'ਮੋਹ-ਮਾਇਆ ਵਿੱਚ ਫੱਸਣਾ', 'ਗੱਲਾਂ ਨਾਲ ਸਮਾਂ ਬਿਤਾਉਣਾ']
-        : language === 'en'
-        ? ['Remaining steadfast on the path of truth and righteousness', 'Quarreling with others', 'Entanglement in illusion', 'Wasting time in empty talk']
-        : ['सत्य और धर्म के मार्ग पर अडिग रहना', 'दूसरों से विवाद करना', 'मोह-माया में उलझना', 'कोरी बातों में समय गँवाना'],
-      correctIndex: 0,
-      explanation: language === 'pb'
-        ? 'ਸੱਚ ਅਤੇ ਧਰਮ ਹੀ ਜੀਵ ਨੂੰ ਮੁਕਤ ਕਰਾਉਂਦੇ ਹਨ।'
-        : language === 'en'
-        ? 'Truth and righteousness alone liberate the soul.'
-        : 'सत्य और आचरण की दृढ़ता ही जीव को भवसागर से पार लगाती है।'
-    },
-    {
-      question: language === 'pb'
-        ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਕਿਸ ਆਧਾਰ \'ਤੇ ਰਚੀ ਗਈ ਹੈ?'
-        : language === 'en'
-        ? 'On what foundation is the poetry of Satguru Kabir Saheb anchored?'
-        : 'सतगुरु कबीर साहेब की वाणी किस शाश्वत आधार पर रची गई है?',
-      options: language === 'pb'
-        ? ['ਅਨੁਭਵੀ ਸੱਚ ਅਤੇ ਆਤਮਿਕ ਗਿਆਨ', 'ਕਲਪਨਾਤਮਕ ਕਹਾਣੀਆਂ', 'ਸੰਸਾਰਿਕ ਨਿਯਮ', 'ਰਾਜਨੀਤਕ ਵਿਚਾਰ']
-        : language === 'en'
-        ? ['Direct experiential truth and inner realization', 'Imaginary tales', 'Worldly bylaws', 'Political doctrines']
-        : ['प्रत्यक्ष आनुभविक सत्य और आत्म-साक्षात्कार', 'काल्पनिक कथाएँ', 'लौकिक नियम', 'राजनीतिक सिद्धांत'],
-      correctIndex: 0,
-      explanation: language === 'pb'
-        ? 'ਸਤਿਗੁਰੂ ਜੀ ਦਾ ਗਿਆਨ ਸਿੱਧਾ ਅਨੁਭਵ ਅਤੇ ਪਰਮ ਸੱਚ ਉੱਤੇ ਆਧਾਰਿਤ ਹੈ।'
-        : language === 'en'
-        ? 'Satguru Kabir Saheb’s wisdom arises directly from direct realization of Supreme Reality.'
-        : 'सतगुरु कबीर साहेब का संपूर्ण उपदेश प्रत्यक्ष अनुभव और परम सत्य पर आधारित है।'
-    },
-    {
-      question: language === 'pb'
-        ? 'ਸਾਧਕ ਨੂੰ ਆਪਣਾ ਜੀਵਨ ਕਿਵੇਂ ਸਫਲ ਬਣਾਉਣਾ ਚਾਹੀਦਾ ਹੈ?'
-        : language === 'en'
-        ? 'How should a sincere seeker fulfill the purpose of human birth?'
-        : 'साधक को अपना मनुष्य जन्म किस प्रकार सार्थक करना चाहिए?',
-      options: language === 'pb'
-        ? ['ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਜੁੜ ਕੇ ਨਾਮ ਕਮਾਈ ਕਰਨਾ', 'ਸੰਸਾਰਿਕ ਭੱਜ-ਦੌੜ ਵਿੱਚ ਉਲਝਣਾ', 'ਅਭਿਮਾਨ ਰੱਖਣਾ', 'ਆਲਸ ਵਿੱਚ ਰਹਿਣਾ']
-        : language === 'en'
-        ? ['By merging in devotion at the Satguru’s feet and earning Naam', 'By chasing worldly desires', 'By harboring ego', 'By remaining idle']
-        : ['सतगुरु के चरणों में समर्पित होकर नाम की कमाई करना', 'सांसारिक भागदौड़ में उलझना', 'अभिमान रखना', 'आलस्य में रहना'],
-      correctIndex: 0,
-      explanation: language === 'pb'
-        ? 'ਨਾਮ ਸਿਮਰਨ ਅਤੇ ਸੇਵਾ ਹੀ ਮਨੁੱਖਾ ਜਨਮ ਦਾ ਅਸਲੀ ਮਕਸਦ ਹੈ।'
-        : language === 'en'
-        ? 'Simran and humble service are the true purpose of human life.'
-        : 'नाम सिमरन और निष्काम सेवा ही दुर्लभ मनुष्य जन्म का एकमात्र लक्ष्य है।'
-    }
-  ];
+  // Step 9: 3 Self-Reflection questions based directly on THIS Sakhi's moral
+  const reflectionQuestions =
+    language === 'pb'
+      ? [
+          contemplationPrompt || `"${firstLine}" ਦਾ ਸਿਧਾਂਤ ਮੇਰੇ ਅੱਜ ਦੇ ਵਿਹਾਰ ਵਿੱਚ ਕਿੱਥੇ ਪ੍ਰਗਟ ਹੋ ਰਿਹਾ ਹੈ?`,
+          `ਸਾਖੀ #${sakhi.number} ਦੇ ਅਨੁਸਾਰ '${categoryTitle}' ਦੇ ਰਾਹ ਵਿੱਚ ਮੇਰੇ ਮਨ ਦੀ ਸਭ ਤੋਂ ਵੱਡੀ ਰੁਕਾਵਟ ਕੀ ਹੈ?`,
+          practical
+            ? `ਮੈਂ ਅੱਜ "${practical}" ਨੂੰ ਬਿਨਾਂ ਕਿਸੇ ਟਾਲ-ਮਟੋਲ ਦੇ ਕਿਸ ਸਮੇਂ ਲਾਗੂ ਕਰਾਂਗਾ?`
+            : `ਇਸ ਸਾਖੀ ਦੇ ਭਾਵਾਰਥ ਅਨੁਸਾਰ ਮੈਂ ਅੱਜ ਆਪਣੇ ਕਿਹੜੇ ਸੁਭਾਅ ਵਿੱਚ ਸੁਧਾਰ ਲਿਆ ਸਕਦਾ ਹਾਂ?`,
+        ]
+      : language === 'en'
+      ? [
+          contemplationPrompt || `Where is the truth of "${firstLine}" calling for honest change in my conduct today?`,
+          `What inner habit currently resists the teaching of Sakhi #${sakhi.number} (${categoryTitle})?`,
+          practical
+            ? `How can I immediately practice "${practical}" in my next real-life interaction?`
+            : `What concrete adjustment in thought or speech does this Sakhi ask of me right now?`,
+        ]
+      : [
+          contemplationPrompt || `साखी #${sakhi.number} ("${firstLine}") का संदेश मेरे आज के आचरण की किस कमी को दर्शाता है?`,
+          `'${categoryTitle}' के इस पावन सिद्धांत को अपनाने में मेरे मन की कौन-सी वृत्ति सबसे बड़ी बाधा बनती है?`,
+          practical
+            ? `आज मैं "${practical}" — इस सूत्र को अपने जीवन की किस परिस्थिति में तत्काल लागू करूँगा?`
+            : `इस साखी के भावार्थ को जीवन में उतारने के लिए मैं आज कौन-सा ठोस सुधार करूँगा?`,
+        ];
+
+  const oneLineBlessing = buildThemeOneLineBlessing(sakhi, language);
+  const questions = buildSakhiSpecificQuiz(sakhi, language);
 
   return {
     step5_quiz: {
-      title: language === 'pb' ? '੫. ਬੋਧ ਪਰਖ (Quiz & Reflection)' : language === 'en' ? '5. Spiritual Understanding Quiz' : '५. बोध परख (स्वाध्याय प्रश्नोत्तरी)',
-      subtitle: language === 'pb' ? 'ਇਸ ਪਾਵਨ ਸਾਖੀ ਦੇ ਮੂਲ ਮਰਮ \'ਤੇ ਆਧਾਰਿਤ ਪ੍ਰਸ਼ਨ' : language === 'en' ? 'Questions based on the core essence of this sakhi' : 'इस पावन साखी के मूल मर्म और संदेश पर आधारित ५ आत्म-चिंतन प्रश्न',
-      questions
+      title:
+        language === 'pb'
+          ? '੫. ਬੋਧ ਪਰਖ (Quiz & Reflection)'
+          : language === 'en'
+          ? '5. Sakhi Understanding Quiz'
+          : '५. बोध परख (साखी-विशेष प्रश्नोत्तरी)',
+      subtitle:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਸ਼ਬਦਾਂ ਤੇ ਮਰਮ 'ਤੇ ਆਧਾਰਿਤ ੫ ਪ੍ਰਸ਼ਨ (ਹਰ ਵਾਰ ਨਵਾਂ ਕ੍ਰਮ)`
+          : language === 'en'
+          ? `5 randomized MCQs testing the exact words and teaching of Sakhi #${sakhi.number}`
+          : `साखी #${sakhi.number} के शब्दों, प्रतीकों व संदेश पर आधारित ५ प्रश्न (प्रत्येक प्रयास में क्रम परिवर्तित)`,
+      questions,
     },
     step6_spiritualInsight: {
-      title: language === 'pb' ? '੬. ਗੁਹਜ ਰਹੱਸ ਤੇ ਪ੍ਰੇਰਣਾ (Deep Mystical Meaning & Parable)' : language === 'en' ? '6. Esoteric Mystical Insight & Parable' : '६. आध्यात्मिक रहस्य व पावन प्रसंग (Deep Inside / Mystical Meaning)',
-      subtitle: language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੇ ਜੀਵਨ ਪ੍ਰਸੰਗ ਨਾਲ ਜੁੜਿਆ ਅੰਦਰਲਾ ਭੇਦ' : language === 'en' ? 'Inner esoteric secrets connected with Satguru Kabir Saheb’s life' : 'सतगुरु कबीर साहेब के जीवन प्रसंग से जुड़ा अंतरंग आध्यात्मिक रहस्य',
-      unlockLabel: language === 'pb' ? 'ਰਹੱਸ ਤੇ ਪ੍ਰਸੰਗ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Unlock Insight & Parable' : 'रहस्य व प्रसंग खोलें',
-      mysticalCoding: step6MysticalText
+      title:
+        language === 'pb'
+          ? '੬. ਗੂੜ੍ਹ ਆਤਮਿਕ ਰਹੱਸ (Mystical Symbolism)'
+          : language === 'en'
+          ? '6. Mystical Meaning of Sakhi Symbols'
+          : '६. आध्यात्मिक रहस्य (मूल साखी के प्रतीकों का मर्म)',
+      subtitle:
+        language === 'pb'
+          ? `'${categoryTitle}' ਸਾਖੀ #${sakhi.number} ਦੇ ਪ੍ਰਤੀਕਾਂ ਦੀ ਅੰਦਰੂਨੀ ਵਿਆਖਿਆ`
+          : language === 'en'
+          ? `Inner decoding of the symbols in Sakhi #${sakhi.number} (${categoryTitle})`
+          : `'${categoryTitle}' — साखी #${sakhi.number} के प्रतीकों की सूक्ष्म अंतर्दृष्टि`,
+      unlockLabel:
+        language === 'pb' ? 'ਰਹੱਸ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Unlock Mystical Insight' : 'रहस्य खोलें',
+      mysticalCoding: step6MysticalText,
     },
     step7_keyLearning: {
-      title: language === 'pb' ? '੭. ਮੁੱਖ ਜੀਵਨ ਸਿੱਖਿਆਵਾਂ (Key Teachings)' : language === 'en' ? '7. Essential Spiritual Lessons' : '७. मुख्य जीवन शिक्षाएं (Key Learnings)',
-      subtitle: language === 'pb' ? 'ਦੈਨਿਕ ਜੀਵਨ ਵਿੱਚ ਅਪਣਾਉਣ ਯੋਗ ਅੰਮ੍ਰਿਤ ਸੂਤਰ' : language === 'en' ? 'Actionable tenets for daily spiritual living' : 'दैनिक जीवन में उतारने योग्य पावन सूत्र',
-      bulletPoints: language === 'pb' ? [
-        '੧. ਸੰਸਾਰੀ ਮੋਹ ਅਤੇ ਸਰੀਰਕ ਹਉਮੈ ਦਾ ਤਿਆਗ ਕਰੋ; ਸੱਚਾ ਧਨ ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਵਿੱਚ ਹੈ।',
-        '੨. ਸੇਵਾ ਅਤੇ ਪਰोपकार ਨਾਲ ਜੀਵ ਦਾ ਕਲਿਆਣ ਹੁੰਦਾ ਹੈ, ਆਤਮਿਕ ਖਜ਼ਾਨਾ ਕਦੇ ਨਹੀਂ ਘਟਦਾ।',
-        '੩. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਦੱਸੀ ਵਿਧੀ ਨਾਲ ਸਵਾਸ-ਸਵਾਸ ਸਿਮਰਨ ਦਾ ਅਭਿਆਸ ਕਰੋ।',
-        '੪. ਹਰ ਜੀਵ ਵਿੱਚ ਇੱਕੋ ਦੈਵੀ ਜੋਤ ਦੇਖੋ ਅਤੇ ਨਿਰਭਉ ਹੋ ਕੇ ਸੱਚ ਦੇ ਮਾਰਗ \'ਤੇ ਚੱਲੋ।'
-      ] : language === 'en' ? [
-        '1. Transcend bodily attachment; true wealth is divine love and equanimity.',
-        '2. Selfless charity and compassion never impoverish the giver; they enrich eternity.',
-        '3. Anchor your breath in Satya Naam remembrance under the Satguru’s guidance.',
-        '4. Recognize the same divine spark in all living beings and walk fearlessly in truth.'
-      ] : [
-        '१. देहाभिमान और संसारी संकीर्णता का परित्याग करें; आत्मा का सच्चा धन गुरुभक्ति और शांति है।',
-        '२. परोपकार, सत्पात्र दान और दीन-सेवा से आंतरिक समृद्धि का स्रोत निरंतर प्रवाहमान रहता है।',
-        '३. बंदीछोड़ सतगुरु कबीर साहेब के उपदेशानुसार स्वांस-उस्वास में सत्यनाम का अजपा जाप करें।',
-        '४. सर्वत्र समभाव रखते हुए निष्कपट भाव से सत्य के पथ पर अडिग रहें।'
-      ]
+      title:
+        language === 'pb'
+          ? '੭. ਮੁੱਖ ਵਿਵਹਾਰਕ ਸਿੱਖਿਆਵਾਂ (Key Learnings)'
+          : language === 'en'
+          ? '7. Four Practical Life Takeaways'
+          : '७. मुख्य जीवन शिक्षाएं (साखी से प्राप्त ४ व्यावहारिक सूत्र)',
+      subtitle:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} ਤੋਂ ਪ੍ਰਾਪਤ ੪ ਅਮਲੀ ਸੂਤਰ`
+          : language === 'en'
+          ? `4 daily-life takeaways derived strictly from Sakhi #${sakhi.number}`
+          : `साखी #${sakhi.number} पर आधारित दैनिक आचरण के ४ सटीक सूत्र`,
+      bulletPoints,
     },
     step8_crossReferences: {
-      title: language === 'pb' ? '੮. ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਤੇ ਕਬੀਰ ਬੀਜਕ ਸਮਾਨੰਤਰ ਬਾਣੀ' : language === 'en' ? '8. Sri Guru Granth Saheb & Kabir Bijak Parallel Vani' : '८. श्री गुरु ग्रंथ साहेब व कबीर बीजक समानांतर वाणी',
-      subtitle: language === 'pb' ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ ਤੇ ਕਬੀਰ ਬੀਜਕ ਤੋਂ ਮੂਲ ਸਾਖੀ ਅਨੁਸਾਰ ਸਟੀਕ ਸਮਾਨੰਤਰ ਬਾਣੀਆਂ ਅਤੇ ਭਾਵਾਰਥ' : language === 'en' ? 'Meaning-matched sacred verses from Sri Guru Granth Saheb Ji & Kabir Bijak with explanations' : 'श्री गुरु ग्रंथ साहेब जी व कबीर बीजक से मूल साखी के अनुरूप सटीक समानांतर पावन साखियाँ एवं भावार्थ',
-      references: crossRefs
+      title:
+        language === 'pb'
+          ? '੮. ਸਮਾਨੰਤਰ ਗ੍ਰੰਥ ਪ੍ਰਮਾਣ (Parallel Vanis)'
+          : language === 'en'
+          ? '8. Authentic Parallel Scripture Cross-References'
+          : '८. प्रामाणिक ग्रंथ समानांतर वाणियाँ (Step 8)',
+      subtitle:
+        language === 'pb'
+          ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ, ਕਬੀਰ ਬੀਜਕ, ਗ੍ਰੰਥਾਵਲੀ ਤੇ ਕਬੀਰ ਸਾਗਰ ਤੋਂ ਸਮਾਨ-ਭਾਵੀ ਬਾਣੀ'
+          : language === 'en'
+          ? 'Parallel Vanis from Sri Guru Granth Sahib Ji, Kabir Bijak, Granthavali & Kabir Sagar'
+          : 'श्री गुरु ग्रंथ साहिब जी, कबीर बीजक, कबीर ग्रंथावली व कबीर सागर से समभाव वाणी',
+      references: crossRefs,
     },
     step9_contemplation: {
-      title: language === 'pb' ? '੯. ਆਤਮ-ਚਿੰਤਨ ਪ੍ਰਸ਼ਨ (Contemplation Journal)' : language === 'en' ? '9. Self-Inquiry & Reflection' : '९. आत्म-निरीक्षण व चिंतन प्रश्न (Contemplation)',
-      subtitle: language === 'pb' ? 'ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਆਪਣੇ ਮਨ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ' : language === 'en' ? 'Turn inward and examine the workings of the mind' : 'अंतर्मुखी होकर अपने अंतःकरण का अवलोकन करें',
-      questions: language === 'pb' ? [
-        'ਕੀ ਮੈਂ ਕਦੇ ਸੰਸਾਰਿਕ ਧਨ ਦੇ ਮੋਹ ਵਿੱਚ ਆ ਕੇ ਕਿਸੇ ਲੋੜਵੰਦ ਦੀ ਸੇਵਾ ਕਰਨ ਤੋਂ ਪਿੱਛੇ ਹਟਿਆ ਹਾਂ?',
-        'ਮੇਰਾ ਮਨ ਦਿਨ ਭਰ ਸਰੀਰਕ ਚਿੰਤਾਵਾਂ ਵਿੱਚ ਉਲਝਿਆ ਰਹਿੰਦਾ ਹੈ ਜਾਂ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਵਿੱਚ?',
-        'ਮੈਂ ਅੱਜ ਦੇ ਦਿਨ ਸਤਿਗੁਰੂ ਕबीर ਸਾਹਿਬ ਦੇ ਇਸ ਬਚਨ ਨੂੰ ਆਪਣੇ ਕਰਮ ਵਿੱਚ ਕਿਵੇਂ ਉਤਾਰਾਂਗਾ?'
-      ] : language === 'en' ? [
-        'Have I ever withheld compassion or assistance due to fear of losing material possessions?',
-        'Does my mind spend more time worrying over transient bodily concerns or resting in the Divine Word?',
-        'Which specific teaching of Satguru Kabir Saheb will I translate into pure action today?'
-      ] : [
-        'क्या मैंने कभी सांसारिक धन या समय की कमी के भय से किसी दीन-दुखी की सेवा से संकोच किया है?',
-        'मेरा मन दिन भर संसारी चिंताओं में भटकता है या सतगुरु के सत्यनाम में विश्राम पाता है?',
-        'आज के दिन मैं सतगुरु कबीर साहेब के इस पावन उपदेश को अपने आचरण में किस रूप में ढालूँगा?'
-      ]
+      title:
+        language === 'pb'
+          ? '੯. ਆਤਮ-ਚਿੰਤਨ ਪ੍ਰਸ਼ਨ (Contemplation)'
+          : language === 'en'
+          ? '9. Self-Reflection Questions'
+          : '९. आत्म-निरीक्षण व चिंतन प्रश्न (Contemplation)',
+      subtitle:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਮਰਮ 'ਤੇ ਆਧਾਰਿਤ ੩ ਸਵਾਲ`
+          : language === 'en'
+          ? `3 self-inquiry questions rooted in the moral of Sakhi #${sakhi.number}`
+          : `साखी #${sakhi.number} के नैतिक मर्म पर आधारित ३ चिंतन प्रश्न`,
+      questions: reflectionQuestions,
     },
     step10_audioIntegration: {
-      title: language === 'pb' ? '੧੦. ਸੁਰਤ-ਸ਼ਬਦ ਸਾਧਨਾ (Surat-Shabad Yoga)' : language === 'en' ? '10. Surat-Shabad Yoga & Breath Harmonization' : '१०. श्रवण साधना व सूरत-शब्द योग (Surat-Shabad Yoga)',
-      subtitle: language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ੩-ਪੜਾਵੀ ਸੁਆਸ ਸਾਧਨਾ ਵਿਧੀ' : language === 'en' ? 'Three-stage breath and sound alignment practice' : 'सतगुरु कबीर साहेब की ३-चरणीय स्वांस-सुरत साधना पद्धति',
-      sadhanaMethodName: language === 'pb' ? 'ਸੁਆਸ-ਉਸਵਾਸ ਅਜਪਾ ਜਾਪ ਤੇ ਸੁਰਤ ਏਕਾਗਰਤਾ' : language === 'en' ? 'Breath-Borne Ajapa Jaap & Consciousness Stillness' : 'स्वांस-उस्वास अजपा जाप एवं सूरत-शब्द एकाग्रता',
+      title:
+        language === 'pb'
+          ? '੧੦. ਸੁਰਤ-ਸ਼ਬਦ ਧਿਆਨ ਯੋਗ (Meditation)'
+          : language === 'en'
+          ? '10. Guided Meditation & Surat-Shabad Yoga'
+          : '१०. ध्यान एवं सूरत-शब्द योग (Guided Meditation)',
+      subtitle:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} (${categoryTitle}) ਅਨੁਸਾਰ ੩-ਪੜਾਵੀ ਧਿਆਨ ਅਭਿਆਸ`
+          : language === 'en'
+          ? `3-stage contemplation visualization aligned with Sakhi #${sakhi.number}`
+          : `साखी #${sakhi.number} के केंद्रीय भाव के अनुरूप ३-चरणीय ध्यान-साधना`,
+      sadhanaMethodName:
+        language === 'pb'
+          ? `${categoryTitle} ਅਨੁਭੂਤੀ ਤੇ ਸਵਾਸ ਸਿਮਰਨ`
+          : language === 'en'
+          ? `${categoryTitle} Witness Awareness & Breath Simran`
+          : `'${categoryTitle}' अंतर्दर्शन व स्वांस-सूरत ध्यान`,
       stages: [
         {
           stageNumber: 1,
-          title: language === 'pb' ? 'ਪੜਾਅ ੧: ਸੁਆਸ ਨਿਰੀਖਣ (Breath Awareness)' : language === 'en' ? 'Stage 1: Breath Observation' : 'प्रथम चरण: स्वांस-अवलोकन एवं देह-शिथिलीकरण',
-          instruction: language === 'pb' 
-            ? 'ਸੁਖਾਸਨ ਵਿੱਚ ਬੈਠ ਕੇ ਅੱਖਾਂ ਬੰਦ ਕਰੋ। ਆਉਂਦੇ ਅਤੇ ਜਾਂਦੇ ਸੁਆਸ ਨੂੰ ਬਿਨਾਂ ਦਬਾਅ ਦੇ ਨਿਰਪੱਖ ਹੋ ਕੇ ਦੇਖੋ।'
-            : language === 'en'
-            ? 'Sit comfortably with eyes gently closed. Observe each incoming and outgoing breath naturally without control.'
-            : 'सुखासन में बैठकर रीढ़ सीधी रखें। आती और जाती प्रत्येक सांस को साक्षी भाव से देखें और शरीर को तनावमुक्त करें।'
+          title:
+            language === 'pb'
+              ? 'ਪੜਾਅ ੧: ਸਾਖੀ ਪਾਠ ਤੇ ਸਥਿਰਤਾ'
+              : language === 'en'
+              ? 'Stage 1: Anchoring the Verse'
+              : 'प्रथम चरण: मूल साखी स्मरण व स्थिर आसन',
+          instruction:
+            language === 'pb'
+              ? `ਅੱਖਾਂ ਬੰਦ ਕਰਕੇ "${firstLine}" ਨੂੰ ਮਨ ਵਿੱਚ ਸ਼ਾਂਤੀ ਨਾਲ ਦੁਹਰਾਓ ਅਤੇ ਸਰੀਰ ਨੂੰ ਢਿੱਲਾ ਛੱਡੋ।`
+              : language === 'en'
+              ? `Close your eyes gently, recall "${firstLine}", and let the physical body relax in stillness.`
+              : `नेत्र बंद कर सुखासन में स्थिर हों और "${firstLine}" का मौन स्मरण करते हुए देह को शिथिल करें।`,
         },
         {
           stageNumber: 2,
-          title: language === 'pb' ? 'ਪੜਾਅ ੨: ਸ਼ਬਦ ਜੋੜ (Surat-Naam Alignment)' : language === 'en' ? 'Stage 2: Sound-Breath Merging' : 'द्वितीय चरण: स्वांस के साथ सत्यनाम का संयोजन',
-          instruction: language === 'pb' 
-            ? 'ਹਰ ਸੁਆਸ ਨਾਲ ਮਨ ਹੀ ਮਨ \'ਸਤਿ\' ਅਤੇ ਬਾਹਰ ਜਾਂਦੇ ਸੁਆਸ ਨਾਲ \'ਨਾਮ\' ਦਾ ਅਹਿਸਾਸ ਜੋੜੋ।'
-            : language === 'en'
-            ? 'Mentally attune the incoming breath with "Sat" and outgoing breath with "Naam" silently at the third eye.'
-            : 'आती हुई सांस के साथ "सत्य" और जाती हुई सांस के साथ "नाम" का मौन अजपा सुमिरन तीसरे तिल पर एकाग्र करें।'
+          title:
+            language === 'pb'
+              ? 'ਪੜਾਅ ੨: ਭਾਵ-ਧਿਆਨ ਤੇ ਸੁਆਸ ਸਿਮਰਨ'
+              : language === 'en'
+              ? 'Stage 2: Theme Contemplation with Breath'
+              : 'द्वितीय चरण: प्रतीक-चिंतन व स्वांस सत्यनाम',
+          instruction:
+            language === 'pb'
+              ? `ਹਰ ਆਉਂਦੇ-ਜਾਂਦੇ ਸੁਆਸ ਨਾਲ "${words[0]?.meaning || categoryTitle}" ਦੇ ਗੂੜ੍ਹ ਅਰਥ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਉਤਾਰੋ।`
+              : language === 'en'
+              ? `With each calm breath, visualize "${practical || categoryTitle}" illuminating your heart center.`
+              : `प्रत्येक श्वास में सत्यनाम का अनुभव करते हुए साखी के इस मर्म — "${practical || categoryTitle}" — को अंतःकरण में धारण करें।`,
         },
         {
           stageNumber: 3,
-          title: language === 'pb' ? 'ਪੜਾਅ ੩: ਸਹਿਜ ਸਮਾਧੀ (Inner Stillness)' : language === 'en' ? 'Stage 3: Effortless Stillness' : 'तृतीय चरण: शून्य समाधि व अंतर्नाद श्रवण',
-          instruction: language === 'pb' 
-            ? 'ਸਭ ਵਿਚਾਰਾਂ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਅੰਤਰਮੁਖੀ ਅਨਾਹਤ ਧੁਨ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਓ। ਇਹੀ ਸਹਿਜ ਸਮਾਧੀ ਹੈ।'
-            : language === 'en'
-            ? 'Dissolve all mental ripples and abide in the unstruck inner resonance of pristine silence.'
-            : 'सकल विचारों को शांत करके हृदय में सतगुरु के तेज और अंतर्मन की अनहद शांति में स्थित हो जाएं।'
-        }
-      ]
+          title:
+            language === 'pb'
+              ? 'ਪੜਾਅ ੩: ਨਿਰਵਿਕਲਪ ਸ਼ਾਂਤੀ ਤੇ ਸਮਰਪਣ'
+              : language === 'en'
+              ? 'Stage 3: Silent Inner Realization'
+              : 'तृतीय चरण: मौन अनुभूति व सतगुरु समर्पण',
+          instruction:
+            language === 'pb'
+              ? `ਸਭ ਸੰਦੇਹਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰਕੇ ਨਿਰਮਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਓ।`
+              : language === 'en'
+              ? `Release all mental chatter at the feet of Satguru Kabir Saheb and abide in luminous stillness.`
+              : `समस्त विकार व संशय सतगुरु कबीर साहेब के चरणों में अर्पित कर साखी के पावन प्रकाश में विश्राम करें।`,
+        },
+      ],
     },
     step11_blessingCertificate: {
-      title: language === 'pb' ? '੧੧. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦਾ ਪਾਵਨ ਅਸੀਸ' : language === 'en' ? '11. Satguru Kabir Saheb Sacred Blessing' : '११. सतगुरु कबीर साहेब का दिव्य आशीर्वाद एवं पावन प्रमाण-पत्र',
-      subtitle: language === 'pb' ? 'ਸੰਪੂਰਨ ਸਵਾਧਿਆਇ ਦਾ ਫਲ ਅਤੇ ਸਮਰਪਣ ਸੰਕਲਪ' : language === 'en' ? 'Culmination of sacred study and lifelong dedication' : 'एकादश सोपान संपूर्ण स्वाध्याय का पावन फल एवं समर्पण',
-      blessingVerse: language === 'pb'
-        ? 'ਸਾਹਿਬ ਮੇਰਾ ਏਕ ਹੈ, ਦੂਜਾ ਕਹੈ ਸੋ ਦੋਇ।\nਸਾਹਿਬ ਸੋਈ ਸਤਿਗੁਰੂ, ਜਾਤੇ ਸਭ ਕਿਛੁ ਹੋਇ।।'
-        : language === 'en'
-        ? 'Saheb mera ek hai, dooja kahe so doy,\nSaheb soee Satguru, jaate sab kichhu hoy.'
-        : 'साहेब मेरा एक है, दूजा कहै सो दोय।\nसाहेब सोई सतगुरु, जाके शरन सब होय।।\n\nसतगुरु कबीर साहेब की पावन छत्रछाया आपके अंतःकरण को सदैव सत्य, दया और भक्ति से आलोकित रखे।',
-      guruVachan: language === 'pb'
-        ? 'ਹੇ ਪਿਆਰੇ ਜੀਵ! ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਨੂੰ ਸੁਆਸਾਂ ਦੀ ਮਾਲਾ \'ਤੇ ਜਪੋ, ਤੁਹਾਡੇ ਸਭ ਕਲੇਸ਼ ਦੂਰ ਹੋਣਗੇ।'
-        : language === 'en'
-        ? 'O beloved soul! Thread the True Name onto the breath of life; all worldly illusions and grief shall dissolve.'
-        : 'हे प्रिय जीव! सतगुरु कबीर साहेब के वचनों को केवल कंठ में नहीं, अपितु जीवन के प्रत्येक कर्म में धारण करो। सत्यनाम ही तुम्हारा शाश्वत सहारा है।',
-      samarpanSankalp: language === 'pb'
-        ? 'ਸੰਕਲਪ: ਮੈਂ ਸਦਾ ਸੱਚ ਦੇ ਮਾਰਗ \'ਤੇ ਚੱਲਾਂਗਾ ਅਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਅਨੁਸਾਰ ਜੀਵਨ ਬਤੀਤ ਕਰਾਂਗਾ।'
-        : language === 'en'
-        ? 'Dedication: I commit to walking the path of Truth and serving with humility under the guidance of Satguru Kabir Saheb.'
-        : 'पावन संकल्प: "मैं बंदीछोड़ सतगुरु कबीर साहेब के श्रीचरणों में अपना अहंकार समर्पित कर सत्य, प्रेम और दया के मार्ग पर निष्ठापूर्वक चलूँगा।"',
-      certificateActionLabel: language === 'pb' ? 'ਸਵਾਧਿਆਇ ਪ੍ਰਮਾਣ-ਪੱਤਰ ਪ੍ਰਾਪਤ ਕਰੋ' : language === 'en' ? 'Receive Blessing Certificate' : 'पावन स्वाध्याय प्रमाण-पत्र प्राप्त करें'
+      title:
+        language === 'pb'
+          ? '੧੧. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦਾ ਪਾਵਨ ਅਸੀਸ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
+          : language === 'en'
+          ? '11. Satguru Kabir Saheb Blessing & Completion Certificate'
+          : '११. सतगुरु कबीर साहेब का पावन आशीर्वाद एवं प्रमाण-पत्र',
+      subtitle:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} (${categoryTitle}) ਸਵਾਧਿਆਇ ਸੰਪੂਰਨਤਾ`
+          : language === 'en'
+          ? `Completion of 11-Step Study for Sakhi #${sakhi.number} (${categoryTitle})`
+          : `साखी #${sakhi.number} (${categoryTitle}) एकादश-सोपान स्वाध्याय संपूर्णता`,
+      blessingVerse: sakhiVerse,
+      guruVachan: samarpanPrayer || oneLineBlessing,
+      samarpanSankalp:
+        practical
+          ? language === 'pb'
+            ? `ਸੰਕਲਪ: ${practical}`
+            : language === 'en'
+            ? `Sacred Commitment: ${practical}`
+            : `पावन संकल्प: ${practical}`
+          : language === 'pb'
+          ? `ਸੰਕਲਪ: ਮੈਂ '${categoryTitle}' ਦੀ ਇਸ ਸਿੱਖਿਆ ਨੂੰ ਆਪਣੇ ਜੀਵਨ ਵਿੱਚ ਧਾਰਨ ਕਰਾਂਗਾ।`
+          : language === 'en'
+          ? `Sacred Commitment: I will embody this teaching of '${categoryTitle}' with humility.`
+          : `पावन संकल्प: मैं '${categoryTitle}' से प्राप्त इस शिक्षा को नित्य आचरण में उतारूँगा।`,
+      oneLineBlessing,
+      certificateActionLabel:
+        language === 'pb'
+          ? 'ਸਵਾਧਿਆਇ ਪ੍ਰਮਾਣ-ਪੱਤਰ ਪ੍ਰਾਪਤ ਕਰੋ'
+          : language === 'en'
+          ? 'View & Download Certificate'
+          : 'पावन स्वाध्याय प्रमाण-पत्र प्राप्त करें',
+    },
+    certificateData: {
+      topHeader: '🌹।।सत्यनाम।।🌹',
+      certificationStatement:
+        language === 'pb'
+          ? `ਇਹ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ [User Name] ਨੇ ਸਾਖੀ #${sakhi.number} ਦਾ ੧੧-ਚਰਣੀ ਸਵਾਧਿਆਇ ਸਫਲਤਾਪੂਰਵਕ ਸੰਪੰਨ ਕੀਤਾ।`
+          : language === 'en'
+          ? `This certifies that [User Name] has successfully completed the 11-Step Swadhyay of Sakhi #${sakhi.number}.`
+          : `यह प्रमाणित किया जाता है कि [User Name] ने साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।`,
+      highlightMoolSakhi: sakhiVerse,
+      oneLineBlessing,
+      footerBrand: 'Saheb World App • पावन स्वाध्याय मंच',
+      bottomFooter: '।।साहेब बंदगी साहेब।।🙏',
+    },
+    isAiGenerated: false,
+  };
+}
+
+const aiSwadhyayCache = new Map<string, SwadhyayAiResponsePayload>();
+
+export async function fetchAiElevenStepSwadhyay(params: {
+  sakhi: Sakhi;
+  language: Language;
+  seekerName?: string;
+  isDailySakhi?: boolean;
+  attempt?: number;
+  forceRefresh?: boolean;
+}): Promise<{ payload: SwadhyayAiResponsePayload; fromCache: boolean }> {
+  const { sakhi, language, seekerName = 'श्रद्धालु साधक', isDailySakhi = false, attempt = 1, forceRefresh = false } =
+    params;
+  const cacheKey = `${sakhi.id || sakhi.number}::${language}::${isDailySakhi ? 'daily' : 'std'}`;
+
+  if (!forceRefresh && aiSwadhyayCache.has(cacheKey)) {
+    const cached = aiSwadhyayCache.get(cacheKey)!;
+    // Always re-shuffle quiz on every attempt via backend or local shuffler
+    const reshuffledQuiz = await shuffleQuizViaBackend(cached.step5_quiz);
+    return {
+      payload: {
+        ...cached,
+        step5_quiz: reshuffledQuiz,
+      },
+      fromCache: true,
+    };
+  }
+
+  const verse = sakhi.text?.[language] || sakhi.text?.hi || '';
+  const bhavarth = sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi || '';
+  const categoryTitle = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
+
+  const response = await fetch('/api/swadhyay-eleven-steps', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      sakhiNumber: sakhi.number,
+      grantha: sakhi.grantha,
+      categoryTitle,
+      verse,
+      bhavarth,
+      wordMeanings: sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [],
+      contemplation: sakhi.contemplation?.[language] || sakhi.contemplation?.hi || '',
+      contextNote: sakhi.contextNote?.[language] || sakhi.contextNote?.hi || '',
+      practicalApplication: sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || '',
+      language,
+      seekerName,
+      isDailySakhi,
+      attempt,
+    }),
+  });
+
+  if (!response.ok) {
+    const errBody = await response.json().catch(() => ({}));
+    throw new Error(errBody?.error || `HTTP ${response.status}`);
+  }
+
+  const json = await response.json();
+  if (!json?.data) {
+    throw new Error('Invalid response structure from AI Swadhyay endpoint.');
+  }
+
+  const payload = json.data as SwadhyayAiResponsePayload;
+  aiSwadhyayCache.set(cacheKey, payload);
+  return { payload, fromCache: false };
+}
+
+export async function shuffleQuizViaBackend(
+  questions: ElevenStepQuizQuestion[]
+): Promise<ElevenStepQuizQuestion[]> {
+  try {
+    const res = await fetch('/api/swadhyay-quiz-shuffle', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ questions }),
+    });
+    if (res.ok) {
+      const json = await res.json();
+      if (Array.isArray(json?.questions) && json.questions.length > 0) {
+        return json.questions;
+      }
     }
+  } catch {
+    // Offline fallback still shuffles questions and A/B/C/D options randomly
+  }
+  return shuffleElevenStepQuiz(questions);
+}
+
+export function extractMultilingualWordsFromAi(
+  entries: SwadhyayAiWordEntry[] | undefined
+): Record<Language, WordMeaning[]> | null {
+  if (!Array.isArray(entries) || entries.length === 0) return null;
+  return {
+    hi: entries.map((e) => ({ word: e.wordHi, meaning: e.meaningHi })),
+    pb: entries.map((e) => ({ word: e.wordPb, meaning: e.meaningPb })),
+    en: entries.map((e) => ({ word: e.wordEn, meaning: e.meaningEn })),
+  };
+}
+
+export function mergeAiIntoElevenStepData(
+  base: ElevenStepSwadhyayData,
+  ai: SwadhyayAiResponsePayload,
+  language: Language
+): ElevenStepSwadhyayData {
+  const validCrossRefs =
+    Array.isArray(ai.step8_crossReferences) && ai.step8_crossReferences.length >= 2
+      ? ai.step8_crossReferences.slice(0, 3)
+      : base.step8_crossReferences.references;
+
+  const validQuestions =
+    Array.isArray(ai.step5_quiz) && ai.step5_quiz.length >= 5
+      ? ai.step5_quiz.slice(0, 5)
+      : base.step5_quiz.questions;
+
+  const validBullets =
+    Array.isArray(ai.step7_keyLearning) && ai.step7_keyLearning.length >= 4
+      ? ai.step7_keyLearning.slice(0, 4).map((pt, i) => {
+          const clean = pt.replace(/^\s*[\d१२३४੧੨੩੪]+[.)]?\s*/, '');
+          const prefix = language === 'pb' ? ['੧.', '੨.', '੩.', '੪.'][i] : language === 'en' ? `${i + 1}.` : ['१.', '२.', '३.', '४.'][i];
+          return `${prefix} ${clean}`;
+        })
+      : base.step7_keyLearning.bulletPoints;
+
+  const validContemplation =
+    Array.isArray(ai.step9_contemplation) && ai.step9_contemplation.length >= 3
+      ? ai.step9_contemplation.slice(0, 3)
+      : base.step9_contemplation.questions;
+
+  const validStages =
+    Array.isArray(ai.step10_audioIntegration?.stages) && ai.step10_audioIntegration.stages.length >= 3
+      ? ai.step10_audioIntegration.stages.slice(0, 3).map((s, idx) => ({
+          stageNumber: s.stageNumber || idx + 1,
+          title: s.title,
+          instruction: s.instruction,
+        }))
+      : base.step10_audioIntegration.stages;
+
+  return {
+    ...base,
+    step5_quiz: {
+      ...base.step5_quiz,
+      questions: validQuestions,
+    },
+    step6_spiritualInsight: {
+      ...base.step6_spiritualInsight,
+      mysticalCoding: ai.step6_spiritualInsight?.mysticalCoding || base.step6_spiritualInsight.mysticalCoding,
+    },
+    step7_keyLearning: {
+      ...base.step7_keyLearning,
+      bulletPoints: validBullets,
+    },
+    step8_crossReferences: {
+      ...base.step8_crossReferences,
+      references: validCrossRefs,
+    },
+    step9_contemplation: {
+      ...base.step9_contemplation,
+      questions: validContemplation,
+    },
+    step10_audioIntegration: {
+      ...base.step10_audioIntegration,
+      sadhanaMethodName: ai.step10_audioIntegration?.sadhanaMethodName || base.step10_audioIntegration.sadhanaMethodName,
+      stages: validStages,
+    },
+    step11_blessingCertificate: {
+      ...base.step11_blessingCertificate,
+      blessingVerse: ai.step11_blessingCertificate?.blessingVerse || base.step11_blessingCertificate.blessingVerse,
+      guruVachan: ai.step11_blessingCertificate?.guruVachan || base.step11_blessingCertificate.guruVachan,
+      samarpanSankalp: ai.step11_blessingCertificate?.samarpanSankalp || base.step11_blessingCertificate.samarpanSankalp,
+      oneLineBlessing:
+        ai.step11_blessingCertificate?.oneLineBlessing ||
+        ai.certificateData?.oneLineBlessing ||
+        base.step11_blessingCertificate.oneLineBlessing,
+    },
+    certificateData: ai.certificateData || base.certificateData,
+    isAiGenerated: true,
   };
 }

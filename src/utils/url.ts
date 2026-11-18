@@ -44,67 +44,126 @@ export function getAndroidChromeIntentUrl(customUrl?: string): string {
 }
 
 /**
- * Returns the exact WhatsApp/Social share text package formatted with the active live deployment link.
+ * Resolves the public live share URL (`window.location.href` on public domains, or `SHARED_APP_URL`
+ * with current path/query when running in dev/localhost preview) so shared links are always publicly accessible.
  */
-export function getSharePayloadText(language: string = 'hi', customUrl?: string): string {
-  const currentUrl = customUrl || getAppUrlSync();
-
-  if (language === 'pb') {
-    return `🙏 ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ! 🙏
-
-ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀਆਂ ਪਾਵਨ ਬਾਣੀਆਂ, ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ ਅਤੇ ਧਰਮ-ਗ੍ਰੰਥਾਂ ਦੇ ਸ਼ੁੱਧ ਪਾਠ ਲਈ ਡਾਊਨਲੋਡ ਕਰੋ 'ਸਾਹੇਬ ਵਰਲਡ' (Saheb World) ਐਪ।
-
-ਇਸ ਨੂੰ ਆਪਣੇ ਮੋਬਾਈਲ 'ਤੇ ਤੁਰੰਤ ਇੰਸਟਾਲ ਕਰਨ ਅਤੇ ਹੋਮ ਸਕ੍ਰੀਨ 'ਤੇ ਜੋੜਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਲਾਈਵ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ:
-${currentUrl}
-
-(ਇਸ ਲਿੰਕ ਨੂੰ ਕ੍ਰੋਮ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੋਲ੍ਹ ਕੇ 'Add to Home Screen' ਕਰੋ ਅਤੇ ਸਾਰੇ ਭਗਤਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ।)`;
+export function getLiveShareUrl(): string {
+  if (typeof window !== 'undefined' && window.location?.href) {
+    const origin = window.location.origin;
+    if (
+      origin.includes('ais-dev-') ||
+      origin.includes('localhost') ||
+      origin.includes('127.0.0.1')
+    ) {
+      const publicBase = (
+        cachedAppUrl && !cachedAppUrl.includes('ais-dev-') ? cachedAppUrl : SHARED_APP_URL
+      ).replace(/\/+$/, '');
+      const pathAndQuery = `${window.location.pathname || ''}${window.location.search || ''}${window.location.hash || ''}`;
+      return pathAndQuery && pathAndQuery !== '/' ? `${publicBase}${pathAndQuery}` : publicBase;
+    }
+    return window.location.href;
   }
-
-  if (language === 'en') {
-    return (
-      '🙏 Saheb Bandagi Saheb! 🙏\n\n' +
-      'Download \'Saheb World\' App for sacred banis, Nitnem Gutka Saheb, and holy scriptures of Satguru Kabir Saheb.\n\n' +
-      'To instantly install on your mobile and add to Home Screen, click the live link below:\n' +
-      currentUrl + '\n\n' +
-      '(Open this link in Chrome browser, tap \'Add to Home Screen\' and share with all devotees.)'
-    );
-  }
-
-  // Exact Hindi Payload requested
-  return (
-    '🙏 साहेब बंदगी साहेब! 🙏\n\n' +
-    'सतगुरु कबीर साहेब की पावन वाणियों, नितनेम गुटका साहेब और धर्मग्रंथों के शुद्ध पाठ के लिए डाउनलोड करें \'साहेब वर्ल्ड\' (Saheb World) ऐप।\n\n' +
-    'इसे अपने मोबाइल पर तुरंत इंस्टॉल करने और होम स्क्रीन पर जोड़ने के लिए नीचे दिए गए लाइव लिंक पर क्लिक करें:\n' +
-    currentUrl + '\n\n' +
-    '(इस लिंक को क्रोम ब्राउज़र में खोलकर \'Add to Home Screen\' करें और सभी भक्तों के साथ साझा करें।)'
-  );
+  return getAppUrlSync();
 }
 
 /**
- * Bulletproof Web Share API execution with strict try-catch and multi-level fallbacks.
+ * Returns the exact WhatsApp/Social share text package formatted with the active live URL.
  */
-export async function shareAppUniversally(language: string = 'hi'): Promise<{ success: boolean; method: 'native' | 'clipboard' }> {
-  const currentUrl = getAppUrlSync();
-  const shareText = getSharePayloadText(language, currentUrl);
-  const shareTitle = language === 'pb'
-    ? 'ਸਾਹੇਬ ਵਰਲਡ (Saheb World) - ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਐਪ'
-    : language === 'en'
-    ? 'Saheb World - Satguru Kabir Saheb App'
-    : 'साहेब वर्ल्ड (Saheb World) - सतगुरु कबीर साहेब पावन ऐप';
+export function getSharePayloadText(language: string = 'hi', customUrl?: string): string {
+  const currentUrl = customUrl || getLiveShareUrl();
 
-  // Level 1: Web Share API (Mobile Native Sheet) - Clean pure text share without image preview fetch
+  if (language === 'pb') {
+    return `🌹 ।। ਸਤਯਨਾਮ ।। 🌹
+ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ਜੀ। 🙏
+
+ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪਾਵਨ ਬਾਣੀ ਅਤੇ ਸਾਖੀਆਂ ਦੇ ਗਹਿਰੇ ਸਵਾਧਿਆਏ ਲਈ 'Saheb World' ਐਪ ਨਾਲ ਜੁੜੋ।
+
+✨ ਮੁੱਖ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ:
+• ਮੂਲ ਪਾਵਨ ਬਾਣੀ ਤੇ ਸਰਲ ਅਰਥ (हिन्दी, ਪੰਜਾਬੀ, English)
+• ਆਡੀਓ ਪਾਠ, ਆਧਿਆਤਮਕ ਰਹੱਸ ਤੇ ਸਮਾਨੰਤਰ ਬਾਣੀਆਂ
+• ਬੋਧ ਪ੍ਰਸ਼ਨਾਵਲੀ (Quiz) ਤੇ ਧਿਆਨ-ਯੋਗ
+• ੧੧ ਪੜਾਅ ਪੂਰੇ ਕਰਨ 'ਤੇ ਆਪਣੇ ਨਾਮ ਦਾ ਡਿਜੀਟਲ ਸਿੱਧੀ ਪ੍ਰਮਾਣ-ਪੱਤਰ!
+
+👉 ਅੱਜ ਹੀ ਆਪਣਾ ਦੈਨਿਕ ਸਵਾਧਿਆਏ ਸ਼ੁਰੂ ਕਰੋ: ${currentUrl}
+
+।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏`;
+  }
+
+  if (language === 'en') {
+    return `🌹 || Satyanaam || 🌹
+Saheb Bandagi Saheb Ji. 🙏
+
+Join the 'Saheb World' app for deep Swadhyay (self-study) of Satguru Kabir Saheb Ji's sacred Vani and Sakhis.
+
+✨ Key Features:
+• Sacred Mool Vani & clear meanings (हिन्दी, ਪੰਜਾਬੀ, English)
+• Audio narration, mystical insights & parallel scripture Vanis
+• Self-assessment Quiz & guided meditation yoga
+• Personalized Digital Completion Certificate upon completing all 11 steps!
+
+👉 Start your daily Swadhyay today: ${currentUrl}
+
+|| Saheb Bandagi Saheb || 🙏`;
+  }
+
+  // Exact Hindi Devotional Invitation Payload
+  return `🌹 ।। सत्यनाम ।। 🌹
+साहेब बंदगी साहेब जी। 🙏
+
+सतगुरु कबीर साहेब जी की पावन वाणी और साखियों के गहन स्वाध्याय के लिए 'Saheb World' ऐप से जुड़ें।
+
+✨ मुख्य विशेषताएं:
+• मूल पावन वाणी व सरल अर्थ (हिन्दी, ਪੰਜਾਬੀ, English)
+• ऑडियो पाठ, आध्यात्मिक रहस्य व समानांतर वाणियाँ
+• बोध प्रश्नोत्तरी (Quiz) व ध्यान-योग
+• ११ चरण पूर्ण करने पर अपने नाम का डिजिटल सिद्धि प्रमाण-पत्र!
+
+👉 आज ही अपना दैनिक स्वाध्याय प्रारंभ करें: ${currentUrl}
+
+।। साहेब बंदगी साहेब ।। 🙏`;
+}
+
+export function getWhatsAppShareUrl(language: string = 'hi', customUrl?: string): string {
+  const text = getSharePayloadText(language, customUrl);
+  return `https://wa.me/?text=${encodeURIComponent(text)}`;
+}
+
+/**
+ * Bulletproof Web Share API execution with strict try-catch, Clipboard copy, and WhatsApp share URL fallback.
+ */
+export async function shareAppUniversally(
+  language: string = 'hi'
+): Promise<{
+  success: boolean;
+  method: 'native' | 'clipboard';
+  shareText: string;
+  whatsappUrl: string;
+  liveUrl: string;
+}> {
+  const liveUrl = getLiveShareUrl();
+  const shareText = getSharePayloadText(language, liveUrl);
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  const shareTitle =
+    language === 'pb'
+      ? 'ਸਾਹੇਬ ਵਰਲਡ (Saheb World) - ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਐਪ'
+      : language === 'en'
+      ? 'Saheb World - Satguru Kabir Saheb App'
+      : 'साहेब वर्ल्ड (Saheb World) - सतगुरु कबीर साहेब पावन ऐप';
+
+  // Level 1: Web Share API (Mobile Native Sheet)
   if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
     try {
       const shareData: ShareData = {
         title: shareTitle,
         text: shareText,
+        url: liveUrl,
       };
 
       await navigator.share(shareData);
-      return { success: true, method: 'native' };
+      return { success: true, method: 'native', shareText, whatsappUrl, liveUrl };
     } catch (err: any) {
       if (err?.name === 'AbortError') {
-        return { success: true, method: 'native' };
+        return { success: true, method: 'native', shareText, whatsappUrl, liveUrl };
       }
       console.warn('Web Share API invocation notice, falling back to clipboard:', err);
     }
@@ -114,7 +173,7 @@ export async function shareAppUniversally(language: string = 'hi'): Promise<{ su
   try {
     if (typeof navigator !== 'undefined' && navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
       await navigator.clipboard.writeText(shareText);
-      return { success: true, method: 'clipboard' };
+      return { success: true, method: 'clipboard', shareText, whatsappUrl, liveUrl };
     }
   } catch (clipErr) {
     console.warn('Clipboard write notice:', clipErr);
@@ -133,13 +192,13 @@ export async function shareAppUniversally(language: string = 'hi'): Promise<{ su
       textarea.select();
       document.execCommand('copy');
       document.body.removeChild(textarea);
-      return { success: true, method: 'clipboard' };
+      return { success: true, method: 'clipboard', shareText, whatsappUrl, liveUrl };
     }
   } catch (legacyErr) {
     console.warn('Legacy copy error:', legacyErr);
   }
 
-  return { success: true, method: 'clipboard' };
+  return { success: true, method: 'clipboard', shareText, whatsappUrl, liveUrl };
 }
 
 /**

@@ -58,8 +58,16 @@ import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { sakhisDatabase } from '../data/sakhis';
 import { formatCoupletString, ensureSatguruKabirSaheb, enrichBhavarthWithNihAkshar, matchCoupletWordToGlossary } from '../utils/textSanitizer';
 import { QuoteCardModal } from './QuoteCardModal';
-import { getEightStepSwadhyayData } from '../services/swadhyayEightSteps';
-import { getElevenStepSwadhyayData, ElevenStepSwadhyayData } from '../services/swadhyayElevenSteps';
+import { getEightStepSwadhyayData, mergeAiIntoEightStepData } from '../services/swadhyayEightSteps';
+import {
+  getElevenStepSwadhyayData,
+  ElevenStepSwadhyayData,
+  SwadhyayAiResponsePayload,
+  fetchAiElevenStepSwadhyay,
+  mergeAiIntoElevenStepData,
+  shuffleQuizViaBackend,
+  ElevenStepQuizQuestion,
+} from '../services/swadhyayElevenSteps';
 import { SwadhyayCertificateModal } from './SwadhyayCertificateModal';
 import { DiscourseEngine } from './DiscourseEngine';
 import { sacredHaptics } from '../services/haptics';
@@ -75,6 +83,7 @@ import { SmartGlossaryText } from './SmartGlossaryText';
 import { SandhukkariGlossaryModal } from './SandhukkariGlossaryModal';
 import { SmartGlossingToolModal } from './SmartGlossingToolModal';
 import { AccessibilityModal } from './AccessibilityModal';
+import { ZenElevenStepsViewer } from './ZenElevenStepsViewer';
 
 interface SwadhyayReaderProps {
   sakhi: Sakhi;
@@ -227,6 +236,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const [quickReflection, setQuickReflection] = useState('');
   const [reflectionSavedToast, setReflectionSavedToast] = useState(false);
   const [showCertificateModal, setShowCertificateModal] = useState(false);
+  const [zenViewTab, setZenViewTab] = useState<'moolvani' | 'elevensteps'>('moolvani');
 
   // --- TEXT SELECTION, SIDDHANT NOTES & LINE HIGHLIGHTING STATES ---
   const [selectedPhrase, setSelectedPhrase] = useState<string>('');
@@ -476,6 +486,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const [quizCurrentIdx, setQuizCurrentIdx] = useState<number>(0);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState<Record<number, boolean>>({});
+  const [quizAttempt, setQuizAttempt] = useState<number>(1);
+  const [aiSwadhyayPayload, setAiSwadhyayPayload] = useState<SwadhyayAiResponsePayload | null>(null);
+  const [isAiEnriching, setIsAiEnriching] = useState<boolean>(false);
+  const [aiQuizOverride, setAiQuizOverride] = useState<ElevenStepQuizQuestion[] | null>(null);
 
   // Memoized pages for 3D Pothi Flip Book Mode
   const pothiPages: PothiPageData[] = React.useMemo(() => {
@@ -849,15 +863,82 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     touchStartYRef.current = null;
   };
 
-  // Compute authentic 8-step data for current sakhi and language
-  const eightStepData = React.useMemo(() => {
-    return getEightStepSwadhyayData(sakhi, language);
-  }, [sakhi, language]);
+  // Background AI 11-Step Dynamic Swadhyay Enrichment per Sakhi & Language
+  useEffect(() => {
+    let cancelled = false;
+    setQuizCurrentIdx(0);
+    setQuizAnswers({});
+    setQuizSubmitted({});
+    setAiQuizOverride(null);
+    setAiSwadhyayPayload(null);
 
-  // Compute authentic 11-step engine data for current sakhi and language
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      return;
+    }
+
+    setIsAiEnriching(true);
+    const savedSeekerName =
+      typeof window !== 'undefined' ? localStorage.getItem('sahebworld_seeker_name') || undefined : undefined;
+
+    fetchAiElevenStepSwadhyay({
+      sakhi,
+      language,
+      seekerName: savedSeekerName,
+      attempt: quizAttempt,
+    })
+      .then(({ payload }) => {
+        if (!cancelled) {
+          setAiSwadhyayPayload(payload);
+        }
+      })
+      .catch(() => {
+        // Offline / unconfigured key falls back gracefully to deterministic Sakhi-grounded data
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsAiEnriching(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [sakhi.id, sakhi.number, language]);
+
+  // Compute authentic 8-step + 11-step data for current sakhi and language (with AI merge)
+  const mergedEight = React.useMemo(() => {
+    const base = getEightStepSwadhyayData(sakhi, language);
+    return mergeAiIntoEightStepData(base, aiSwadhyayPayload, language);
+  }, [sakhi, language, aiSwadhyayPayload]);
+
+  const eightStepData = mergedEight.data;
+  const aiWordsMultilingual = mergedEight.multilingualWords;
+
   const elevenStepData = React.useMemo(() => {
-    return getElevenStepSwadhyayData(sakhi, language);
-  }, [sakhi, language]);
+    const base = getElevenStepSwadhyayData(sakhi, language);
+    const merged = aiSwadhyayPayload ? mergeAiIntoElevenStepData(base, aiSwadhyayPayload, language) : base;
+    if (aiQuizOverride && aiQuizOverride.length > 0) {
+      return {
+        ...merged,
+        step5_quiz: {
+          ...merged.step5_quiz,
+          questions: aiQuizOverride,
+        },
+      };
+    }
+    return merged;
+  }, [sakhi, language, aiSwadhyayPayload, aiQuizOverride, quizAttempt]);
+
+  const handleReshuffleQuizAttempt = async () => {
+    sacredHaptics.lightTap();
+    setQuizAnswers({});
+    setQuizSubmitted({});
+    setQuizCurrentIdx(0);
+    const currentQuestions = elevenStepData.step5_quiz.questions.slice(0, 5);
+    const reshuffled = await shuffleQuizViaBackend(currentQuestions);
+    setAiQuizOverride(reshuffled);
+    setQuizAttempt((prev) => prev + 1);
+  };
 
   // Synchronize local states with global context settings
   useEffect(() => {
@@ -2833,7 +2914,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         )}
 
         {/* Dynamic Mode Content Rendering */}
-        <div className="space-y-6 animate-fadeIn">
+            <div className="space-y-6 animate-fadeIn">
             {/* STEP 1: मूल पावन वाणी (Original Text) */}
             <div
               id="eightstep-card-1"
@@ -3282,31 +3363,31 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         </p>
                         {/* Word-to-word cross-lingual correspondence tags */}
                         <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[0.625rem] border-t border-amber-500/10">
-                          {language !== 'pb' && sakhi.wordMeanings.pb?.[idx] && (
+                          {language !== 'pb' && (aiWordsMultilingual?.pb?.[idx] || sakhi.wordMeanings.pb?.[idx]) && (
                             <span 
                               onClick={() => onChangeLanguage && onChangeLanguage('pb')}
                               className="px-1.5 py-0.5 rounded bg-amber-500/5 hover:bg-amber-500/15 cursor-pointer font-serif border border-amber-500/10"
                               title="ਪੰਜਾਬੀ ਵਿੱਚ ਦੇਖੋ"
                             >
-                              ਪੰਜਾਬੀ: <strong className="font-bold">{sakhi.wordMeanings.pb[idx].word}</strong>
+                              ਪੰਜਾਬੀ: <strong className="font-bold">{(aiWordsMultilingual?.pb?.[idx] || sakhi.wordMeanings.pb[idx]).word}</strong>
                             </span>
                           )}
-                          {language !== 'en' && sakhi.wordMeanings.en?.[idx] && (
+                          {language !== 'en' && (aiWordsMultilingual?.en?.[idx] || sakhi.wordMeanings.en?.[idx]) && (
                             <span 
                               onClick={() => onChangeLanguage && onChangeLanguage('en')}
                               className="px-1.5 py-0.5 rounded bg-amber-500/5 hover:bg-amber-500/15 cursor-pointer font-sans border border-amber-500/10"
                               title="View in English"
                             >
-                              EN: <strong className="font-bold">{sakhi.wordMeanings.en[idx].word}</strong>
+                              EN: <strong className="font-bold">{(aiWordsMultilingual?.en?.[idx] || sakhi.wordMeanings.en[idx]).word} — {(aiWordsMultilingual?.en?.[idx] || sakhi.wordMeanings.en[idx]).meaning}</strong>
                             </span>
                           )}
-                          {language !== 'hi' && sakhi.wordMeanings.hi?.[idx] && (
+                          {language !== 'hi' && (aiWordsMultilingual?.hi?.[idx] || sakhi.wordMeanings.hi?.[idx]) && (
                             <span 
                               onClick={() => onChangeLanguage && onChangeLanguage('hi')}
                               className="px-1.5 py-0.5 rounded bg-amber-500/5 hover:bg-amber-500/15 cursor-pointer font-serif border border-amber-500/10"
                               title="हिन्दी में देखें"
                             >
-                              हिन्दी: <strong className="font-bold">{sakhi.wordMeanings.hi[idx].word}</strong>
+                              हिन्दी: <strong className="font-bold">{(aiWordsMultilingual?.hi?.[idx] || sakhi.wordMeanings.hi[idx]).word}</strong>
                             </span>
                           )}
                         </div>
@@ -3490,11 +3571,28 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 className="p-6 rounded-3xl border-2 space-y-5 shadow-xl animate-fadeIn"
               >
                 <div className="text-center space-y-1">
-                  <h3 style={{ color: rc.maroon }} className="text-lg sm:text-xl font-black font-serif flex items-center justify-center gap-2">
-                    <Lightbulb className="w-6 h-6 text-amber-600" />
-                    <span>{elevenStepData.step5_quiz.title}</span>
-                  </h3>
+                  <div className="flex flex-wrap items-center justify-center gap-2">
+                    <h3 style={{ color: rc.maroon }} className="text-lg sm:text-xl font-black font-serif flex items-center justify-center gap-2">
+                      <Lightbulb className="w-6 h-6 text-amber-600" />
+                      <span>{elevenStepData.step5_quiz.title}</span>
+                    </h3>
+                    <button
+                      type="button"
+                      onClick={handleReshuffleQuizAttempt}
+                      className="px-2.5 py-1 rounded-lg border border-amber-500/35 bg-amber-500/10 hover:bg-amber-500/20 text-[0.6875rem] font-serif font-bold flex items-center gap-1 cursor-pointer transition"
+                      style={{ color: rc.maroon }}
+                      title={language === 'pb' ? 'ਪ੍ਰਸ਼ਨ ਅਤੇ ਵਿਕਲਪ ਮੁੜ-ਕ੍ਰਮਬੱਧ ਕਰੋ' : language === 'en' ? 'Shuffle question & option order' : 'प्रश्न एवं विकल्पों का क्रम बदलें'}
+                    >
+                      <RotateCw className="w-3 h-3" />
+                      <span>{language === 'pb' ? 'ਨਵਾਂ ਕ੍ਰਮ' : language === 'en' ? 'Shuffle Quiz' : 'क्रम बदलें'}</span>
+                    </button>
+                  </div>
                   <p style={{ color: rc.textSecondary }} className="text-xs italic">{elevenStepData.step5_quiz.subtitle}</p>
+                  {isAiEnriching && (
+                    <p className="text-[0.6875rem] font-serif text-amber-700 dark:text-amber-300 animate-pulse">
+                      ✨ {language === 'pb' ? 'ਸਾਖੀ ਅਨੁਸਾਰ AI ਸਵਾਧਿਆਇ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ...' : language === 'en' ? 'Generating bespoke Sakhi insights...' : 'साखी के अनुरूप दिव्य AI स्वाध्याय तैयार हो रहा है...'}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-4 pt-1">
@@ -4181,26 +4279,77 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 transition={{ duration: 0.3, ease: 'easeOut' }}
                 className="text-center space-y-4 pt-8"
               >
-                <div className="flex items-center justify-center gap-2">
+                {/* Zen Mode View Mode Switcher Tabs */}
+                <div className="flex items-center justify-center gap-2 py-2 mb-2">
                   <button
                     type="button"
-                    onClick={handleToggleMoolvani}
+                    onClick={() => setZenViewTab('moolvani')}
                     style={{
-                      backgroundColor: showMoolvani ? rc.accentLight : rc.cardBg,
+                      backgroundColor: zenViewTab === 'moolvani' ? rc.accent : rc.cardBg,
+                      color: zenViewTab === 'moolvani' ? '#FFFFFF' : rc.maroon,
                       borderColor: rc.accent,
-                      color: rc.maroon,
                     }}
-                    className="px-3.5 py-1 rounded-full text-xs font-serif font-black border flex items-center gap-1.5 shadow-2xs hover:opacity-90 cursor-pointer transition"
-                    title={showMoolvani ? 'मूलवाणी छिपाएं' : 'मूलवाणी दिखाएं'}
+                    className="px-4 py-2 rounded-2xl border text-xs font-serif font-black shadow-sm transition cursor-pointer flex items-center gap-1.5"
                   >
-                    <Scroll className="w-3.5 h-3.5 text-amber-600" />
-                    <span>
-                      {showMoolvani
-                        ? (language === 'pb' ? '📜 ਮੂਲ ਬਾਣੀ (ਪਵਿੱਤਰ ਪਾਠ)' : language === 'en' ? '📜 Original Moolvani' : '📜 मूलवाणी (पावन गुरु-पाठ)')
-                        : (language === 'pb' ? '📜 ਮੂਲ ਬਾਣੀ ਦਿਖਾਓ' : language === 'en' ? '📜 Show Moolvani' : '📜 मूलवाणी दिखाएं')}
-                    </span>
+                    <Scroll className="w-4 h-4" />
+                    <span>{language === 'pb' ? '📜 ਮੂਲ ਬਾਣੀ ਤੇ ਬੋਧ' : language === 'en' ? '📜 Mool Vani & Insight' : '📜 मूलवाणी व बोध'}</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setZenViewTab('elevensteps')}
+                    style={{
+                      backgroundColor: zenViewTab === 'elevensteps' ? rc.accent : rc.cardBg,
+                      color: zenViewTab === 'elevensteps' ? '#FFFFFF' : rc.maroon,
+                      borderColor: rc.accent,
+                    }}
+                    className="px-4 py-2 rounded-2xl border text-xs font-serif font-black shadow-sm transition cursor-pointer flex items-center gap-1.5"
+                  >
+                    <Compass className="w-4 h-4" />
+                    <span>{language === 'pb' ? '🧭 ੧੧-ਚਰਣੀ ਸਵਾਧਿਆਏ' : language === 'en' ? '🧭 All 11 Swadhyay Steps' : '🧭 सम्पूर्ण ११-चरणीय स्वाध्याय'}</span>
                   </button>
                 </div>
+
+                {zenViewTab === 'elevensteps' ? (
+                  <div className="text-left py-2 max-w-5xl mx-auto w-full">
+                    <div className="p-4 mb-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-center text-xs font-serif font-bold text-amber-900 dark:text-amber-200">
+                      {language === 'pb' ? '✨ ਨਿਰਵਿਕਲਪ ਧਿਆਨ ਵਿੱਚ ਸਾਰੇ ੧੧ ਚਰਣ' : language === 'en' ? '✨ All 11 Swadhyay Steps in Zen Focus Mode' : '✨ जेन एकाग्रता मोड में सभी ११ स्वाध्याय सोपान'}
+                    </div>
+                    <ZenElevenStepsViewer
+                      sakhi={sakhi}
+                      language={language}
+                      eightStepData={eightStepData}
+                      elevenStepData={elevenStepData}
+                      rc={rc}
+                      readingTheme={readingTheme}
+                      onSaveToDiary={onSaveToDiary}
+                      onOpenCertificate={() => setShowCertificateModal(true)}
+                      handlePlayStanza={handlePlayStanza}
+                      activePlayingStanzaKey={activePlayingStanzaKey}
+                      onExitZen={() => setIsZenMode(false)}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={handleToggleMoolvani}
+                        style={{
+                          backgroundColor: showMoolvani ? rc.accentLight : rc.cardBg,
+                          borderColor: rc.accent,
+                          color: rc.maroon,
+                        }}
+                        className="px-3.5 py-1 rounded-full text-xs font-serif font-black border flex items-center gap-1.5 shadow-2xs hover:opacity-90 cursor-pointer transition"
+                        title={showMoolvani ? 'मूलवाणी छिपाएं' : 'मूलवाणी दिखाएं'}
+                      >
+                        <Scroll className="w-3.5 h-3.5 text-amber-600" />
+                        <span>
+                          {showMoolvani
+                            ? (language === 'pb' ? '📜 ਮੂਲ ਬਾਣੀ (ਪਵਿੱਤਰ ਪਾਠ)' : language === 'en' ? '📜 Original Moolvani' : '📜 मूलवाणी (पावन गुरु-पाठ)')
+                            : (language === 'pb' ? '📜 ਮੂਲ ਬਾਣੀ ਦਿਖਾਓ' : language === 'en' ? '📜 Show Moolvani' : '📜 मूलवाणी दिखाएं')}
+                        </span>
+                      </button>
+                    </div>
 
               {/* Primary Doha / Couplet Box with Parchment Styling & motion.div Fade-in */}
               <AnimatePresence mode="wait">
@@ -4356,6 +4505,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 </blockquote>
               </div>
             </div>
+          </>
+          )}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -4592,6 +4743,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         onClose={() => setShowCertificateModal(false)}
         sakhi={sakhi}
         language={language}
+        themeBlessing={elevenStepData.step11_blessingCertificate.oneLineBlessing}
       />
     </div>
   );

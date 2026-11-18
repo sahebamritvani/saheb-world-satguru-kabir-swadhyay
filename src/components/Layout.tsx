@@ -67,7 +67,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { QRCodeSVG } from 'qrcode.react';
 import { Language, AppView, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
-import { AboutDisclaimerModal } from './AboutDisclaimerModal';
+import { AboutDisclaimerModal, AboutDisclaimerSection } from './AboutDisclaimerModal';
 import { KarNainonDeedarModal } from './KarNainonDeedarModal';
 import { SantoShabdaiShabdModal } from './SantoShabdaiShabdModal';
 import { AdvancedReadingSuiteModal } from './AdvancedReadingSuiteModal';
@@ -87,6 +87,7 @@ import {
   getAndroidChromeIntentUrl,
   shareAppUniversally,
   getSharePayloadText,
+  getWhatsAppShareUrl,
 } from '../utils/url';
 import { usePWAInstall, useOnlineStatus } from '../hooks/usePWAInstall';
 import { PWAInstallButton } from './PWAInstallButton';
@@ -313,7 +314,20 @@ export const Layout: React.FC<LayoutProps> = ({
   // PWA Install Prompt State
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstallModal, setShowInstallModal] = useState(false);
-  const [showAboutModal, setShowAboutModal] = useState(false);
+  const [aboutModalSection, setAboutModalSection] = useState<AboutDisclaimerSection | null>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      if (path === '/privacy-policy' || hash.includes('privacy') || params.get('privacy') === '1') {
+        return 'privacy';
+      }
+      if (path === '/guide' || hash.includes('guide') || params.get('guide') === '1') {
+        return 'guide';
+      }
+    }
+    return null;
+  });
   const [showKarNainonDeedarModal, setShowKarNainonDeedarModal] = useState(false);
   const [showSantoShabdaiShabdModal, setShowSantoShabdaiShabdModal] = useState(false);
   const [showReadingSuiteModal, setShowReadingSuiteModal] = useState(false);
@@ -349,17 +363,25 @@ export const Layout: React.FC<LayoutProps> = ({
     return () => window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenSuite);
   }, []);
 
+  const [shareFallbackBanner, setShareFallbackBanner] = useState<{ whatsappUrl: string } | null>(null);
+
   const handleShareApp = async () => {
+    sacredHaptics.lightTap();
     try {
       const res = await shareAppUniversally(language);
-      if (res.method === 'clipboard' || res.success) {
+      if (res.method === 'clipboard') {
         setIsAppCopied(true);
-        setTimeout(() => setIsAppCopied(false), 2500);
+        setShareFallbackBanner({ whatsappUrl: res.whatsappUrl });
+        setTimeout(() => setIsAppCopied(false), 3000);
+        setTimeout(() => setShareFallbackBanner(null), 8000);
       }
     } catch (err) {
       console.warn('Share app notice:', err);
+      const fallbackWa = getWhatsAppShareUrl(language);
       setIsAppCopied(true);
-      setTimeout(() => setIsAppCopied(false), 2500);
+      setShareFallbackBanner({ whatsappUrl: fallbackWa });
+      setTimeout(() => setIsAppCopied(false), 3000);
+      setTimeout(() => setShareFallbackBanner(null), 8000);
     }
   };
 
@@ -510,8 +532,8 @@ export const Layout: React.FC<LayoutProps> = ({
         setShowInstallModal(false);
         return true;
       }
-      if (showAboutModal) {
-        setShowAboutModal(false);
+      if (aboutModalSection) {
+        setAboutModalSection(null);
         return true;
       }
       if (showKarNainonDeedarModal) {
@@ -546,7 +568,7 @@ export const Layout: React.FC<LayoutProps> = ({
     });
   }, [
     showInstallModal,
-    showAboutModal,
+    aboutModalSection,
     showKarNainonDeedarModal,
     showSantoShabdaiShabdModal,
     showReadingSuiteModal,
@@ -1273,26 +1295,26 @@ export const Layout: React.FC<LayoutProps> = ({
               id="header-share-app-btn"
               onClick={handleShareApp}
               style={{
-                color: isAppCopied ? '#166534' : theme.sacredMaroon,
-                borderColor: isAppCopied ? '#22C55E' : theme.accentGold,
-                backgroundColor: isAppCopied ? 'rgba(34, 197, 94, 0.12)' : theme.cardBg,
+                color: isAppCopied ? '#166534' : '#FFFFFF',
+                borderColor: isAppCopied ? '#22C55E' : '#B45309',
+                backgroundColor: isAppCopied ? '#DCFCE7' : '#B45309',
               }}
-              className="h-7 sm:h-7.5 px-2 sm:px-2.5 rounded-lg border flex items-center gap-1.5 hover:opacity-95 transition-all cursor-pointer shadow-2xs hover:scale-105 active:scale-95"
-              title={language === 'pb' ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ (Share App)' : language === 'en' ? 'Share App' : 'ऐप शेयर करें (Share App)'}
+              className="h-7 sm:h-8 px-2.5 sm:px-3 rounded-lg border flex items-center gap-1.5 hover:opacity-95 transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95 shrink-0 whitespace-nowrap"
+              title={language === 'pb' ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ (Share App)' : language === 'en' ? 'Share App' : '📤 ऐप शेयर करें (Share App)'}
               aria-label="Share App"
             >
               {isAppCopied ? (
                 <>
-                  <Check className="w-3 h-3 text-green-600 shrink-0" />
-                  <span className="text-[0.6875rem] font-black font-serif text-green-700 dark:text-green-400 whitespace-nowrap">
+                  <Check className="w-3.5 h-3.5 text-green-700 shrink-0" />
+                  <span className="text-[0.6875rem] font-black font-serif text-green-800 whitespace-nowrap">
                     {language === 'pb' ? 'ਕਾਪੀ ਹੋਇਆ! ✓' : language === 'en' ? 'Copied! ✓' : 'कॉपी हुआ! ✓'}
                   </span>
                 </>
               ) : (
                 <>
-                  <Share2 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
-                  <span className="text-[0.6875rem] font-bold font-serif whitespace-nowrap hidden sm:inline">
-                    {language === 'pb' ? 'ਸ਼ੇਅਰ ਐਪ' : language === 'en' ? 'Share App' : 'ऐप शेयर करें'}
+                  <span aria-hidden="true" className="text-xs leading-none">📤</span>
+                  <span className="text-[0.6875rem] font-bold font-serif whitespace-nowrap">
+                    {language === 'pb' ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ' : language === 'en' ? 'Share App' : 'ऐप शेयर करें'}
                   </span>
                 </>
               )}
@@ -1951,6 +1973,40 @@ export const Layout: React.FC<LayoutProps> = ({
                   </div>
                 </div>
 
+                {/* Prominent Side Menu Share App Action Card */}
+                <div className="mb-2 flex items-stretch gap-2">
+                  <button
+                    id="sidebar-share-app-btn"
+                    type="button"
+                    onClick={() => {
+                      handleShareApp();
+                      setIsSidebarOpen(false);
+                    }}
+                    className="flex-1 min-h-[44px] px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-800 hover:to-amber-700 text-white font-serif font-bold text-xs sm:text-sm shadow-sm flex items-center justify-center gap-2 cursor-pointer transition active:scale-95"
+                  >
+                    <span aria-hidden="true">📤</span>
+                    <span>
+                      {language === 'pb'
+                        ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ (Share App)'
+                        : language === 'en'
+                        ? 'Share Saheb World App'
+                        : 'ऐप शेयर करें (Share App)'}
+                    </span>
+                  </button>
+                  <a
+                    href={getWhatsAppShareUrl(language)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsSidebarOpen(false)}
+                    className="min-h-[44px] px-3 py-2.5 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-serif font-bold text-xs shadow-sm flex items-center justify-center gap-1 transition active:scale-95 shrink-0"
+                    title="WhatsApp पर सीधा शेयर करें"
+                    aria-label="Share on WhatsApp"
+                  >
+                    <Share2 className="w-4 h-4" />
+                    <span>WA</span>
+                  </a>
+                </div>
+
                 {/* Saheb World Primary Sanctuary Tab in Menu */}
                 <button
                   id="sidebar-item-saheb-world-home"
@@ -2270,26 +2326,57 @@ export const Layout: React.FC<LayoutProps> = ({
                 <div className="pt-4 border-t border-dashed border-amber-500/20 mt-4 space-y-1">
 
                   <button
+                    id="sidebar-user-guide-btn"
+                    type="button"
                     onClick={() => {
                       setIsSidebarOpen(false);
-                      setShowAboutModal(true);
+                      setAboutModalSection('guide');
+                    }}
+                    style={{ color: theme.textSecondary }}
+                    className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
+                  >
+                    <BookOpen className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
+                    <span>{language === 'pb' ? 'ਉਪਭੋਗਤਾ ਮਾਰਗਦਰਸ਼ਿਕਾ (User Guide)' : language === 'en' ? 'User Guide' : 'उपयोगकर्ता मार्गदर्शिका (User Guide)'}</span>
+                  </button>
+
+                  <button
+                    id="sidebar-about-us-btn"
+                    type="button"
+                    onClick={() => {
+                      setIsSidebarOpen(false);
+                      setAboutModalSection('about');
                     }}
                     style={{ color: theme.textSecondary }}
                     className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
                   >
                     <Info className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ' : language === 'en' ? 'About Us' : 'हमारे बारे में'}</span>
+                    <span>{language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ (About Us)' : language === 'en' ? 'About Us' : 'हमारे बारे में (About Us)'}</span>
                   </button>
                   <button
+                    id="sidebar-disclaimer-btn"
+                    type="button"
                     onClick={() => {
                       setIsSidebarOpen(false);
-                      setShowAboutModal(true);
+                      setAboutModalSection('disclaimer');
                     }}
                     style={{ color: theme.textSecondary }}
                     className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
                   >
                     <ShieldCheck className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण'}</span>
+                    <span>{language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ (Disclaimer)' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण (Disclaimer)'}</span>
+                  </button>
+                  <button
+                    id="sidebar-privacy-policy-btn"
+                    type="button"
+                    onClick={() => {
+                      setIsSidebarOpen(false);
+                      setAboutModalSection('privacy');
+                    }}
+                    style={{ color: theme.textSecondary }}
+                    className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
+                  >
+                    <Lock className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
+                    <span>{language === 'pb' ? 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ (Privacy Policy)' : language === 'en' ? 'Privacy Policy' : 'गोपनीयता नीति (Privacy Policy)'}</span>
                   </button>
                 </div>
 
@@ -2341,6 +2428,40 @@ export const Layout: React.FC<LayoutProps> = ({
         {children}
       </main>
 
+      {/* Non-intrusive Clipboard + Direct WhatsApp Fallback Banner after Share App click */}
+      {shareFallbackBanner && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[120] w-[calc(100%-2rem)] max-w-md bg-[#FFFDF9] dark:bg-stone-900 border-2 border-amber-600 shadow-2xl rounded-2xl p-3.5 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+            <p className="text-xs sm:text-sm font-serif font-bold text-stone-900 dark:text-amber-100 leading-snug">
+              {language === 'pb'
+                ? 'ਸੱਦਾ ਸੁਨੇਹਾ ਤੇ ਲਿੰਕ ਕਾਪੀ ਹੋ ਗਿਆ!'
+                : language === 'en'
+                ? 'App link & message copied!'
+                : 'पावन निमंत्रण संदेश व लाइव लिंक कॉपी हो गया!'}
+            </p>
+          </div>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <a
+              href={shareFallbackBanner.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-serif font-bold whitespace-nowrap transition"
+            >
+              WhatsApp पर भेजें
+            </a>
+            <button
+              type="button"
+              onClick={() => setShareFallbackBanner(null)}
+              className="p-1.5 rounded-lg text-stone-500 hover:bg-black/5 cursor-pointer"
+              aria-label="Close notification"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
 
 
       {/* Natural Bottom Sacred Footer - Hidden in Full-Screen Reading Mode & Nitnem Gutka View */}
@@ -2385,32 +2506,8 @@ export const Layout: React.FC<LayoutProps> = ({
             </span>
           </div>
 
-          {/* Right: Quick Tools */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <button
-              id="footbar-scroll-up-btn"
-              type="button"
-              onClick={scrollToTop}
-              className="p-1.5 rounded-md text-xs font-bold border border-amber-500/20 hover:bg-black/5 cursor-pointer transition-colors"
-              style={{ color: theme.sacredMaroon }}
-              title="एक साथ सबसे ऊपर जाएं (Top)"
-              aria-label={language === 'hi' ? 'ऊपर जाएं' : 'Scroll to Top'}
-            >
-              <ChevronsUp size={14} />
-            </button>
-
-            <button
-              id="footbar-scroll-down-btn"
-              type="button"
-              onClick={scrollToBottom}
-              className="p-1.5 rounded-md text-xs font-bold border border-amber-500/20 hover:bg-black/5 cursor-pointer transition-colors"
-              style={{ color: theme.sacredMaroon }}
-              title="एक साथ सबसे नीचे जाएं (Bottom)"
-              aria-label={language === 'hi' ? 'नीचे जाएं' : 'Scroll to Bottom'}
-            >
-              <ChevronsDown size={14} />
-            </button>
-          </div>
+          {/* Right: Balance Spacer */}
+          <div className="flex items-center gap-1.5 sm:gap-2 w-[75px] justify-end" />
         </div>
 
         {/* Footbar Branding Details in Page Flow */}
@@ -2436,9 +2533,79 @@ export const Layout: React.FC<LayoutProps> = ({
             >
               {t.themeLanguageSettings}
             </button>
+            <span className="opacity-40 select-none">•</span>
+            <button
+              id="footer-user-guide-btn"
+              type="button"
+              onClick={() => setAboutModalSection('guide')}
+              className="cursor-pointer hover:underline font-bold text-amber-900 dark:text-amber-400 text-[0.5625rem] font-sans"
+            >
+              {language === 'pb' ? 'ਮਾਰਗਦਰਸ਼ਿਕਾ (User Guide)' : language === 'en' ? 'User Guide' : 'उपयोगकर्ता मार्गदर्शिका (User Guide)'}
+            </button>
+            <span className="opacity-40 select-none">•</span>
+            <button
+              id="footer-about-us-btn"
+              type="button"
+              onClick={() => setAboutModalSection('about')}
+              className="cursor-pointer hover:underline font-bold text-amber-900 dark:text-amber-400 text-[0.5625rem] font-sans"
+            >
+              {language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ (About Us)' : language === 'en' ? 'About Us' : 'हमारे बारे में (About Us)'}
+            </button>
+            <span className="opacity-40 select-none">•</span>
+            <button
+              id="footer-disclaimer-btn"
+              type="button"
+              onClick={() => setAboutModalSection('disclaimer')}
+              className="cursor-pointer hover:underline font-bold text-amber-900 dark:text-amber-400 text-[0.5625rem] font-sans"
+            >
+              {language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ (Disclaimer)' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण (Disclaimer)'}
+            </button>
+            <span className="opacity-40 select-none">•</span>
+            <button
+              id="footer-privacy-policy-btn"
+              type="button"
+              onClick={() => setAboutModalSection('privacy')}
+              className="cursor-pointer hover:underline font-bold text-amber-900 dark:text-amber-400 text-[0.5625rem] font-sans"
+            >
+              {language === 'pb' ? 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ (Privacy Policy)' : language === 'en' ? 'Privacy Policy' : 'गोपनीयता नीति (Privacy Policy)'}
+            </button>
           </div>
         </div>
       </footer>
+      )}
+
+      {/* 🧭 Floating Quick Scroll Navigation Pill (Comfortable Mobile & Desktop Thumb Zone) */}
+      {showScrollControls && currentView !== 'nitnem-gutka' && (
+        <aside
+          id="floating-quick-scroll-pill"
+          aria-label="Scroll Navigation"
+          className="fixed right-3.5 sm:right-6 bottom-20 sm:bottom-24 z-40 flex flex-col items-center gap-1.5 p-1.5 rounded-full bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-2 border-amber-500/40 shadow-2xl transition-all duration-300 animate-fadeIn select-none ring-1 ring-amber-400/20"
+        >
+          {/* Scroll To Top Button */}
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="w-10 h-10 rounded-full flex flex-col items-center justify-center bg-amber-500/15 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 active:scale-95 transition-all cursor-pointer shadow-xs group"
+            title={language === 'pb' ? 'ਸਭ ਤੋਂ ਉੱਪਰ ਜਾਓ (Top)' : language === 'en' ? 'Scroll to Top' : 'सबसे ऊपर जाएं (Top)'}
+            aria-label="Scroll to Top"
+          >
+            <ChevronsUp size={18} className="shrink-0 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
+
+          {/* Divider Dot */}
+          <div className="w-1.5 h-1.5 rounded-full bg-amber-500/40" />
+
+          {/* Scroll To Bottom Button */}
+          <button
+            type="button"
+            onClick={scrollToBottom}
+            className="w-10 h-10 rounded-full flex flex-col items-center justify-center bg-amber-500/15 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 active:scale-95 transition-all cursor-pointer shadow-xs group"
+            title={language === 'pb' ? 'ਸਭ ਤੋਂ ਹੇਠਾਂ ਜਾਓ (Bottom)' : language === 'en' ? 'Scroll to Bottom' : 'सबसे नीचे जाएं (Bottom)'}
+            aria-label="Scroll to Bottom"
+          >
+            <ChevronsDown size={18} className="shrink-0 group-hover:translate-y-0.5 transition-transform" />
+          </button>
+        </aside>
       )}
 
       {/* PWA App Install Guidance Modal */}
@@ -2854,12 +3021,13 @@ export const Layout: React.FC<LayoutProps> = ({
         )}
       </AnimatePresence>
 
-      {/* About Us & Disclaimer Modal */}
+      {/* Separate About Us or Disclaimer Modal */}
       <AboutDisclaimerModal
-        isOpen={showAboutModal}
-        onClose={() => setShowAboutModal(false)}
+        isOpen={aboutModalSection !== null}
+        onClose={() => setAboutModalSection(null)}
         language={language}
         onSelectLanguage={onSelectLanguage}
+        section={aboutModalSection || 'about'}
       />
 
       {/* Kar Nainon Deedar 32 Verses Interactive Modal */}

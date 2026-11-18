@@ -2,8 +2,42 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, Type } from '@google/genai';
 import dotenv from 'dotenv';
+
+function shuffleArray<T>(items: T[]): T[] {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function shuffleQuizQuestionsAndOptions<
+  T extends { question: string; options: string[]; correctIndex: number; explanation: string }
+>(questions: T[]): T[] {
+  if (!Array.isArray(questions) || questions.length === 0) return [];
+  const shuffledQuestions = shuffleArray(questions);
+  return shuffledQuestions.map((q) => {
+    const rawOpts = Array.isArray(q.options) ? q.options.slice(0, 4) : [];
+    while (rawOpts.length < 4) {
+      rawOpts.push(`विकल्प ${rawOpts.length + 1}`);
+    }
+    const origCorrectIdx =
+      typeof q.correctIndex === 'number' && q.correctIndex >= 0 && q.correctIndex < rawOpts.length
+        ? q.correctIndex
+        : 0;
+    const perm = shuffleArray([0, 1, 2, 3]);
+    const newOptions = perm.map((origPos) => rawOpts[origPos]);
+    const newCorrectIndex = perm.indexOf(origCorrectIdx);
+    return {
+      ...q,
+      options: newOptions,
+      correctIndex: newCorrectIndex >= 0 ? newCorrectIndex : 0,
+    };
+  });
+}
 // Self-contained fallback helpers (zero frontend import dependencies for native Node ESM compatibility)
 function purifyAndAnalyzeVaniFallback(text: string, options: { language?: string; mode?: string }) {
   let cleaned = text.trim();
@@ -256,6 +290,310 @@ Please return a valid JSON object ONLY (without markdown enclosing codeblocks or
       analysis: fallbackAnalysis,
       source: 'synthesized-spiritual-engine'
     });
+  });
+
+  // Dynamic 11-Step Swadhyay + Certificate Data Endpoint (Gemini 4 Hydrogen)
+  const SWADHYAY_EXPERT_SYSTEM_INSTRUCTION = `You are an expert spiritual scholar and content generator for the 'Saheb World' app, specializing in Satguru Kabir Saheb's Sakhis. Your task is to generate an accurate, deeply insightful 11-step Swadhyay (self-study) module and completion certificate data for any given Sakhi, including the Daily Sakhi.
+
+CRITICAL STRICTNESS RULES (MUST FOLLOW):
+
+1. DYNAMIC & SAKHI-SPECIFIC CONTENT (NO STATIC TEMPLATES):
+   - Whether generating for the 'Daily Sakhi' or any numbered Sakhi, EVERY dynamic step (Steps 2 to 11) MUST be freshly generated and 100% tailored to the EXACT central theme, metaphor, and moral of that specific Sakhi.
+   - ZERO GENERIC FILLER: Do NOT reuse generic spiritual templates (like charity, wealth, caste, or unrelated stories) unless the specific Sakhi explicitly discusses them.
+
+2. AUTHENTIC MULTI-SCRIPTURE CROSS-REFERENCES (Step 8):
+   - Provide 2 to 3 parallel Sakhis/Vanis that share the EXACT SAME spiritual theme as the main Sakhi.
+   - Draw authentic references strictly from:
+     * Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji)
+     * Kabir Bijak
+     * Kabir Granthavali
+     * Kabir Sagar (Anurag Sagar, etc.)
+   - Clearly mention the scripture name and section/Ang. Ensure the Bhavarth accurately translates THAT specific parallel Vani and explains its connection to the main Sakhi.
+   - Do NOT repeat or duplicate the main Sakhi itself as a cross-reference.
+
+3. COMPLETE WORD MEANINGS (Step 3):
+   - Extract 4 to 6 key archaic/difficult words directly from the given Sakhi.
+   - Provide accurate meanings in Hindi, Punjabi (Gurmukhi), and English. The English (EN) tab MUST contain the actual English meaning (e.g., "Forest / Trees"), NOT just Roman transliteration.
+
+4. RANDOMIZED 5-QUESTION QUIZ (Step 5):
+   - Generate 5 distinct MCQs testing the exact metaphors, word meanings, and teachings of the current Sakhi.
+   - Vary correctIndex across questions and ensure each question has 4 plausible, distinct options.
+
+5. MYSTICAL MEANING, KEY LEARNINGS, CONTEMPLATION & YOGA (Steps 6, 7, 9, 10, 11):
+   - Step 6 (Rahasya): Explain the inner mystical meaning of the exact symbols used in the current Sakhi.
+   - Step 7 (Key Learnings): Provide exactly 4 practical daily-life takeaways derived strictly from the current Sakhi.
+   - Step 9 (Contemplation): Frame exactly 3 self-reflection questions based directly on the moral of the current Sakhi.
+   - Step 10 (Meditation/Yoga) & Step 11 (Blessing): Tailor the guided meditation visualization (3 sequential stages) and the final guru blessing specifically to the theme of the current Sakhi.
+
+6. COMPLETION CERTIFICATE DATA & FORMATTING (Upon Step 11 Completion):
+   - Top Centre Header MUST strictly be: "🌹।।सत्यनाम।।🌹"
+   - Display the User's Name prominently (e.g., "यह प्रमाणित किया जाता है कि [User Name] ने...").
+   - Inside the main highlight box, display ONLY the exact Mool Sakhi that was completed (do NOT insert a second unrelated Doha).
+   - Include a 1-line theme-based blessing below the Sakhi and brand the footer line as "Saheb World App • पावन स्वाध्याय मंच".
+   - Bottom Centre Footer MUST strictly be: "।।साहेब बंदगी साहेब।।🙏"
+
+TONE & STYLE:
+- Keep the tone devotional, respectful ("Satguru Kabir Saheb", "Pawan Vani"), simple, and grammatically pure.
+- Always spell "साहेब" (not "साहिब") in Hindi/Punjabi text unless quoting the canonical scripture title "Sri Guru Granth Sahib Ji".`;
+
+  app.post('/api/swadhyay-eleven-steps', async (req, res) => {
+    const {
+      sakhiNumber,
+      grantha,
+      categoryTitle,
+      verse,
+      bhavarth,
+      wordMeanings,
+      contemplation,
+      contextNote,
+      practicalApplication,
+      language = 'hi',
+      seekerName = 'श्रद्धालु साधक',
+      isDailySakhi = false,
+      attempt = 1,
+    } = req.body || {};
+
+    if (!verse || typeof verse !== 'string' || !verse.trim()) {
+      return res.status(400).json({ error: 'Sakhi verse is required to generate 11-step Swadhyay.' });
+    }
+
+    if (!process.env.GEMINI_API_KEY) {
+      return res.status(503).json({
+        error: 'GEMINI_API_KEY is not configured on the server.',
+      });
+    }
+
+    const langLabel =
+      language === 'pb'
+        ? 'Punjabi (Gurmukhi script)'
+        : language === 'en'
+        ? 'English'
+        : 'Hindi (Devanagari script)';
+
+    const userPrompt = `Generate the complete dynamic 11-step Swadhyay and Certificate metadata for the following Sakhi in ${langLabel}.
+Notice Rule 3: For step3_wordMeanings, ALWAYS provide accurate hi (Hindi), pb (Punjabi Gurmukhi), and en (real English translation, NOT transliteration) for EVERY extracted word regardless of the active display language.
+Notice Rule 2: Provide 2 to 3 parallel Sakhis/Vanis in step8_crossReferences strictly from Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji), Kabir Bijak, Kabir Granthavali, or Kabir Sagar, explaining THAT parallel Vani's Bhavarth and its direct connection to THIS main Sakhi.
+Notice Rule 4: Generate 5 distinct, specific MCQs in step5_quiz.questions testing exact words, metaphors, and teachings of THIS Sakhi.
+Notice Rule 6: Populate certificateData strictly per formatting rules with topHeader="🌹।।सत्यनाम।।🌹", bottomFooter="।।साहेब बंदगी साहेब।।🙏", footerBrand="Saheb World App • पावन स्वाध्याय मंच", highlightMoolSakhi="${verse.replace(/"/g, '\\"')}", seekerName="${String(seekerName || 'श्रद्धालु साधक').replace(/"/g, '\\"')}", and a concise 1-line theme-based blessing in the active language.
+
+SAKHI INPUT:
+- Mode: ${isDailySakhi ? 'Daily Sakhi' : `Sakhi #${sakhiNumber || 1}`}
+- Grantha: ${grantha || 'Sakhi Sangrah'}
+- Ang / Category: ${categoryTitle || ''}
+- Exact Mool Sakhi Verse:
+${verse}
+- Known Reference Meaning: ${bhavarth || ''}
+- Context Note: ${contextNote || ''}
+- Practical Hint: ${practicalApplication || ''}
+- Existing Contemplation Seed: ${contemplation || ''}
+- Known Vocabulary Seed: ${JSON.stringify(wordMeanings || []).slice(0, 1200)}
+- Attempt Seed: #${attempt}`;
+
+    try {
+      const ai = new GoogleGenAI({
+        apiKey: process.env.GEMINI_API_KEY,
+        httpOptions: {
+          headers: {
+            'User-Agent': 'aistudio-build',
+          },
+        },
+      });
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-4-hydrogen',
+        contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+        config: {
+          systemInstruction: SWADHYAY_EXPERT_SYSTEM_INSTRUCTION,
+          responseMimeType: 'application/json',
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              step2_context: {
+                type: Type.OBJECT,
+                properties: {
+                  relevanceText: { type: Type.STRING },
+                  spiritualSignificance: { type: Type.STRING },
+                },
+                required: ['relevanceText', 'spiritualSignificance'],
+              },
+              step3_wordMeanings: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    wordHi: { type: Type.STRING },
+                    meaningHi: { type: Type.STRING },
+                    wordPb: { type: Type.STRING },
+                    meaningPb: { type: Type.STRING },
+                    wordEn: { type: Type.STRING },
+                    meaningEn: { type: Type.STRING },
+                  },
+                  required: ['wordHi', 'meaningHi', 'wordPb', 'meaningPb', 'wordEn', 'meaningEn'],
+                },
+              },
+              step4_bhavarth: {
+                type: Type.OBJECT,
+                properties: {
+                  bhavarth: { type: Type.STRING },
+                  deepSatsangGyan: { type: Type.STRING },
+                  mindMayaAnalysis: { type: Type.STRING },
+                },
+                required: ['bhavarth', 'deepSatsangGyan', 'mindMayaAnalysis'],
+              },
+              step5_quiz: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    question: { type: Type.STRING },
+                    options: {
+                      type: Type.ARRAY,
+                      items: { type: Type.STRING },
+                    },
+                    correctIndex: { type: Type.INTEGER },
+                    explanation: { type: Type.STRING },
+                  },
+                  required: ['question', 'options', 'correctIndex', 'explanation'],
+                },
+              },
+              step6_spiritualInsight: {
+                type: Type.OBJECT,
+                properties: {
+                  mysticalCoding: { type: Type.STRING },
+                },
+                required: ['mysticalCoding'],
+              },
+              step7_keyLearning: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              step8_crossReferences: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    source: { type: Type.STRING },
+                    verse: { type: Type.STRING },
+                    context: { type: Type.STRING },
+                    connection: { type: Type.STRING },
+                  },
+                  required: ['source', 'verse', 'context', 'connection'],
+                },
+              },
+              step9_contemplation: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              step10_audioIntegration: {
+                type: Type.OBJECT,
+                properties: {
+                  sadhanaMethodName: { type: Type.STRING },
+                  stages: {
+                    type: Type.ARRAY,
+                    items: {
+                      type: Type.OBJECT,
+                      properties: {
+                        stageNumber: { type: Type.INTEGER },
+                        title: { type: Type.STRING },
+                        instruction: { type: Type.STRING },
+                      },
+                      required: ['stageNumber', 'title', 'instruction'],
+                    },
+                  },
+                },
+                required: ['sadhanaMethodName', 'stages'],
+              },
+              step11_blessingCertificate: {
+                type: Type.OBJECT,
+                properties: {
+                  blessingVerse: { type: Type.STRING },
+                  guruVachan: { type: Type.STRING },
+                  samarpanSankalp: { type: Type.STRING },
+                  oneLineBlessing: { type: Type.STRING },
+                },
+                required: ['blessingVerse', 'guruVachan', 'samarpanSankalp', 'oneLineBlessing'],
+              },
+              certificateData: {
+                type: Type.OBJECT,
+                properties: {
+                  topHeader: { type: Type.STRING },
+                  certificationStatement: { type: Type.STRING },
+                  highlightMoolSakhi: { type: Type.STRING },
+                  oneLineBlessing: { type: Type.STRING },
+                  footerBrand: { type: Type.STRING },
+                  bottomFooter: { type: Type.STRING },
+                },
+                required: [
+                  'topHeader',
+                  'certificationStatement',
+                  'highlightMoolSakhi',
+                  'oneLineBlessing',
+                  'footerBrand',
+                  'bottomFooter',
+                ],
+              },
+            },
+            required: [
+              'step2_context',
+              'step3_wordMeanings',
+              'step4_bhavarth',
+              'step5_quiz',
+              'step6_spiritualInsight',
+              'step7_keyLearning',
+              'step8_crossReferences',
+              'step9_contemplation',
+              'step10_audioIntegration',
+              'step11_blessingCertificate',
+              'certificateData',
+            ],
+          },
+        },
+      });
+
+      const rawText = response.text;
+      if (!rawText || !rawText.trim()) {
+        return res.status(502).json({ error: 'Empty response received from Gemini model.' });
+      }
+
+      const parsed = JSON.parse(rawText.trim());
+
+      // Enforce Rule 4: Shuffle BOTH question order and A/B/C/D options on the backend every request
+      const rawQuestions = Array.isArray(parsed.step5_quiz) ? parsed.step5_quiz.slice(0, 5) : [];
+      const shuffledQuiz = shuffleQuizQuestionsAndOptions(rawQuestions);
+
+      // Enforce Rule 6 sacred formatting constants
+      const normalizedPayload = {
+        ...parsed,
+        step5_quiz: shuffledQuiz,
+        certificateData: {
+          ...(parsed.certificateData || {}),
+          topHeader: '🌹।।सत्यनाम।।🌹',
+          highlightMoolSakhi: verse.trim(),
+          footerBrand: 'Saheb World App • पावन स्वाध्याय मंच',
+          bottomFooter: '।।साहेब बंदगी साहेब।।🙏',
+        },
+      };
+
+      return res.json({
+        data: normalizedPayload,
+        source: 'gemini-4-hydrogen',
+      });
+    } catch (err: any) {
+      console.error('[Swadhyay 11-Step Gemini Error]', err?.message || err);
+      return res.status(502).json({
+        error: err?.message || 'Failed to generate dynamic Swadhyay content via Gemini.',
+      });
+    }
+  });
+
+  // Backend Quiz Shuffler Endpoint (re-randomizes question order & A/B/C/D options on every attempt)
+  app.post('/api/swadhyay-quiz-shuffle', (req, res) => {
+    const { questions } = req.body || {};
+    if (!Array.isArray(questions) || questions.length === 0) {
+      return res.status(400).json({ error: 'Questions array is required.' });
+    }
+    const shuffled = shuffleQuizQuestionsAndOptions(questions.slice(0, 5));
+    return res.json({ questions: shuffled });
   });
 
   // Vite Middleware / Static Files

@@ -1944,7 +1944,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           : 'rounded-3xl p-3 sm:p-6 pb-28'
       }`}
     >
-      {/* Top Return Bar for Zen Mode */}
+      {/* Top Return Bar for Zen Mode - Centered so it never covers the Settings icon */}
       {isZenMode && (
         <button
           type="button"
@@ -1955,7 +1955,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             }
             window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
           }}
-          className="fixed top-3 right-3 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-amber-700 hover:bg-amber-800 text-white text-xs sm:text-sm font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/40 whitespace-nowrap"
+          className="fixed top-3 left-1/2 -translate-x-1/2 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-amber-700 hover:bg-amber-800 text-white text-xs sm:text-sm font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/40 whitespace-nowrap"
           title={language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : language === 'en' ? 'Normal Screen (Return)' : 'सामान्य स्क्रीन (वापस आएं)'}
         >
           <Minimize2 size={16} />
@@ -1969,8 +1969,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         </button>
       )}
       {/* Sikhworld Style Orange Header */}
-      <div className="bg-amber-600 text-white px-3 py-2.5 sm:px-4 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 shadow-md sticky top-0 z-30">
-        <div className="flex items-center gap-2 min-w-0 flex-1">
+      <div className="bg-amber-600 text-white px-2.5 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3 shadow-md sticky top-0 z-30 flex-nowrap overflow-hidden">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1 overflow-hidden">
           {viewMode === 'reading' ? (
             <button
               type="button"
@@ -1983,10 +1983,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 setViewMode('selection');
                 setIsAutoPlaying(false);
               }}
-              className="min-h-[44px] sm:min-h-[40px] px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center gap-1 shrink-0 whitespace-nowrap"
+              className="min-h-[40px] px-2 sm:px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center gap-1 shrink-0 whitespace-nowrap"
+              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
+              title={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
             >
-              <ArrowLeft size={16} className={language === 'pb' ? 'rotate-180' : ''} />
-              <span className="hidden xs:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
+              <ArrowLeft size={16} className="shrink-0" />
+              <span className="hidden sm:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
             </button>
           ) : onClose ? (
             <button
@@ -1999,24 +2001,26 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 }
                 onClose();
               }}
-              className="min-h-[44px] sm:min-h-[40px] px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center gap-1 shrink-0 whitespace-nowrap"
+              className="min-h-[40px] px-2 sm:px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center gap-1 shrink-0 whitespace-nowrap"
+              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
+              title={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
             >
-              <ArrowLeft size={16} className={language === 'pb' ? 'rotate-180' : ''} />
-              <span className="hidden xs:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
+              <ArrowLeft size={16} className="shrink-0" />
+              <span className="hidden sm:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
             </button>
           ) : null}
           <div 
             onClick={viewMode === 'reading' ? scrollToContainerTop : undefined}
-            className={`min-w-0 flex-1 ${viewMode === 'reading' ? 'cursor-pointer select-none' : ''}`}
+            className={`min-w-0 flex-1 overflow-hidden ${viewMode === 'reading' ? 'cursor-pointer select-none' : ''}`}
           >
-            <h1 className="text-sm sm:text-xl font-bold font-serif leading-tight truncate">
+            <h1 className="text-xs sm:text-base md:text-xl font-bold font-serif leading-tight truncate">
               {viewMode === 'reading' 
                 ? (currentSection.title[language] || currentSection.title.hi) 
                 : getLocalizedBookTitle(language)
               }
             </h1>
             {viewMode === 'selection' && (
-              <p className="hidden sm:block text-[0.6875rem] opacity-90 font-serif mt-0.5 truncate">
+              <p className="hidden md:block text-[0.6875rem] opacity-90 font-serif mt-0.5 truncate">
                 {language === 'pb' 
                   ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
                   : language === 'en' 
@@ -2032,7 +2036,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={handleTogglePureVaniMode}
-            className={`min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
+            className={`min-h-[40px] px-2 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
               isPureVaniMode
                 ? 'bg-white text-amber-800 shadow-md ring-2 ring-white/70'
                 : 'bg-white/18 hover:bg-white/28 text-white border border-white/25'
@@ -2046,7 +2050,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             }
             aria-pressed={isPureVaniMode}
           >
-            <Volume2 size={16} />
+            <Volume2 size={16} className="shrink-0" />
             <span>
               {language === 'pb'
                 ? (isPureVaniMode ? 'ਸਿਰਫ਼ ਬਾਣੀ ✓' : 'ਸਿਰਫ਼ ਬਾਣੀ')
@@ -2056,11 +2060,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             </span>
           </button>
 
-          {/* Full-Screen Toggle Button (Triggers browser Full-Screen API & Dynamically Hides App Headers/Footers) */}
+          {/* Full-Screen Toggle Button (Compact on mobile so Settings button is never pushed off-screen) */}
           <button
             type="button"
             onClick={toggleFullscreen}
-            className={`min-h-[44px] sm:min-h-[40px] px-2 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
+            className={`min-h-[38px] px-2 sm:px-2.5 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
               isFullscreen
                 ? 'bg-white text-amber-800 shadow-md ring-2 ring-white/60'
                 : 'bg-white/15 hover:bg-white/25 text-white border border-white/20'
@@ -2072,10 +2076,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             }
             aria-label="Toggle Full-Screen"
           >
-            {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
-            <span className={isFullscreen ? 'inline' : 'hidden lg:inline'}>
+            {isFullscreen ? <Minimize2 size={16} className="shrink-0" /> : <Maximize2 size={16} className="shrink-0" />}
+            <span className="hidden lg:inline">
               {isFullscreen
-                ? (language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : language === 'en' ? 'Normal Screen (Return)' : 'सामान्य स्क्रीन (वापस आएं)')
+                ? (language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Exit Full' : 'सामान्य स्क्रीन')
                 : (language === 'pb' ? 'ਪੂਰੀ ਸਕਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूर्ण स्क्रीन')
               }
             </span>
@@ -2085,7 +2089,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={() => handleToggleBackgroundDhun()}
-            className={`min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-full transition cursor-pointer ${isBackgroundDhunPlaying ? 'bg-white text-amber-700' : 'hover:bg-white/20 text-white'}`}
+            className={`min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl transition cursor-pointer shrink-0 ${isBackgroundDhunPlaying ? 'bg-white text-amber-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
             title={rt.bgDhun}
             aria-label="Toggle Background Dhun"
           >
@@ -2097,21 +2101,23 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             <button
               type="button"
               onClick={() => setShowAllGlossaryModal(true)}
-              className="hidden sm:flex min-w-[40px] min-h-[40px] rounded-full transition cursor-pointer hover:bg-white/20 text-white items-center justify-center"
+              className="hidden sm:flex min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] rounded-xl transition cursor-pointer hover:bg-white/20 text-white items-center justify-center shrink-0"
               title={language === 'pb' ? 'ਸਮਾਰਟ ਸ਼ਬਦਾਵਲੀ ਟੂਲ (Smart Glossing Tool)' : language === 'en' ? 'Smart Glossing Tool' : 'स्मार्ट शब्दावली टूल (Smart Glossing Tool)'}
             >
               <Sparkles size={18} className="text-amber-200" />
             </button>
           )}
           
+          {/* Settings & Tools Button — Always Prominent and Guaranteed Visible on Mobile */}
           <button
             type="button"
             onClick={() => setIsSettingsExpanded(true)}
-            className="min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer text-white"
-            title="Settings & Tools"
+            className="min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] p-2 bg-white/25 hover:bg-white/35 rounded-xl transition-all cursor-pointer text-white flex items-center justify-center shrink-0 shadow-xs z-30 ring-1 ring-white/30"
+            title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼ ਅਤੇ ਟੂਲਸ' : language === 'en' ? 'Settings & Tools' : 'सेटिंग्स व टूल्स'}
             aria-label="Reading Settings"
           >
-            <Settings size={20} />
+            <Settings size={18} className="shrink-0" />
+            <span className="sr-only">Settings</span>
           </button>
         </div>
       </div>
@@ -3422,6 +3428,33 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         {/* View Transition Padding */}
         <div className="h-16" />
       </div>
+
+      {/* 🧭 Floating Scroll Navigation Pill for Comfortable Thumb-Reach */}
+      {viewMode === 'reading' && !isPureVaniMode && (
+        <aside
+          aria-label="Scroll Navigation"
+          className="fixed right-3 sm:right-6 bottom-20 sm:bottom-24 z-30 flex flex-col items-center gap-1.5 p-1 rounded-full bg-amber-600/90 dark:bg-stone-900/90 text-white backdrop-blur-md border border-white/30 shadow-xl select-none"
+        >
+          <button
+            type="button"
+            onClick={scrollToContainerTop}
+            className="w-9 h-9 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/35 active:scale-95 transition cursor-pointer"
+            title={language === 'pb' ? 'ਸਭ ਤੋਂ ਉੱਪਰ ਜਾਓ (Top)' : language === 'en' ? 'Scroll to Top' : 'सबसे ऊपर जाएं (Top)'}
+            aria-label="Scroll to Top"
+          >
+            <ChevronsUp size={16} />
+          </button>
+          <button
+            type="button"
+            onClick={scrollToContainerBottom}
+            className="w-9 h-9 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/35 active:scale-95 transition cursor-pointer"
+            title={language === 'pb' ? 'ਸਭ ਤੋਂ ਹੇਠਾਂ ਜਾਓ (Bottom)' : language === 'en' ? 'Scroll to Bottom' : 'सबसे नीचे जाएं (Bottom)'}
+            aria-label="Scroll to Bottom"
+          >
+            <ChevronsDown size={16} />
+          </button>
+        </aside>
+      )}
 
       {/* FIXED FOOTER NAVIGATION PANEL ("पिछला पाठ / अगला पाठ") - Hidden in Pure Vani Audio Mode to keep mobile sticky footprint <= 15% */}
       {viewMode === 'reading' && !isPureVaniMode && (

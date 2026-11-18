@@ -140,12 +140,12 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     });
   }, [sakhi.number, lang]);
 
-  // --- DAINIK CHINTAN (THE CONCEPT OF KAL & DAILY TASKS) STATE ---
+  // --- DAINIK CHINTAN (SAKHI-ALIGNED DAILY REFLECTION) STATE ---
   const [showKalChintan, setShowKalChintan] = useState(false);
   const [kalReflectionText, setKalReflectionText] = useState('');
   const [kalSavedToast, setKalSavedToast] = useState(false);
   const [showPastKalNotes, setShowPastKalNotes] = useState(false);
-  const [pastKalNotes, setPastKalNotes] = useState<Array<{ id: string; date: string; text: string }>>(() => {
+  const [pastKalNotes, setPastKalNotes] = useState<Array<{ id: string; date: string; text: string; sakhiNumber?: number; themeTitle?: string }>>(() => {
     if (typeof window !== 'undefined') {
       try {
         const stored = localStorage.getItem('sahebworld_kal_chintan_reflections');
@@ -155,19 +155,94 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     return [];
   });
 
+  useEffect(() => {
+    setKalSavedToast(false);
+  }, [sakhi.number]);
+
+  const activeThemeTitle =
+    sakhi.categoryTitle?.[language] ||
+    sakhi.categoryTitle?.hi ||
+    (language === 'pb' ? 'ਪਾਵਨ ਸਵਾਧਿਆਏ' : language === 'en' ? 'Sacred Contemplation' : 'पावन स्वाध्याय');
+
+  const activeContemplationPrompt =
+    sakhi.contemplation?.[language] ||
+    sakhi.contemplation?.hi ||
+    (language === 'pb'
+      ? `ਸਾਖੀ #${sakhi.number} (${activeThemeTitle}) ਦੀ ਸਿੱਖਿਆ ਅੱਜ ਮੇਰੇ ਵਿਚਾਰਾਂ, ਬੋਲ-ਬਾਣੀ ਅਤੇ ਰੋਜ਼ਾਨਾ ਵਿਵਹਾਰ ਨੂੰ ਕਿਵੇਂ ਨਿਖਾਰ ਸਕਦੀ ਹੈ?`
+      : language === 'en'
+      ? `How can the core teaching of Sakhi #${sakhi.number} (${activeThemeTitle}) shape my thoughts, speech, and actions today?`
+      : `साखी #${sakhi.number} (${activeThemeTitle}) का पावन संदेश आज मेरे विचारों, वाणी और दैनिक आचरण को किस प्रकार नई दिशा दे सकता है?`);
+
+  const activePracticalStep =
+    sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || '';
+
+  const activeSakhiPrayer =
+    sakhi.samarpanPrayer?.[language] || sakhi.samarpanPrayer?.hi || '';
+
+  const activeWordMeaningsList =
+    sakhi.wordMeanings?.[language]?.length
+      ? sakhi.wordMeanings[language]
+      : sakhi.wordMeanings?.hi || [];
+
+  const dynamicThoughtStarters = [
+    ...activeWordMeaningsList.slice(0, 2).map((wm) => ({
+      label: `${wm.word} (${wm.meaning})`,
+      insert:
+        language === 'pb'
+          ? `'${wm.word}' (${wm.meaning}) ਦਾ ਮਰਮ: `
+          : language === 'en'
+          ? `Meaning of '${wm.word}' (${wm.meaning}): `
+          : `'${wm.word}' (${wm.meaning}) का मर्म: `,
+    })),
+    ...(activePracticalStep
+      ? [
+          {
+            label:
+              language === 'pb'
+                ? 'ਅੱਜ ਦਾ ਵਿਵਹਾਰਕ ਅਭਿਆਸ'
+                : language === 'en'
+                ? 'Practical Application'
+                : 'आज का व्यावहारिक अभ्यास',
+            insert:
+              language === 'pb'
+                ? `ਅੱਜ ਦਾ ਸੰਕਲਪ (${activePracticalStep}): `
+                : language === 'en'
+                ? `Today's practice (${activePracticalStep}): `
+                : `आज का संकल्प (${activePracticalStep}): `,
+          },
+        ]
+      : []),
+    {
+      label:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} ਤੋਂ ਮੇਰਾ ਮਨਨ`
+          : language === 'en'
+          ? `Sakhi #${sakhi.number} Life Insight`
+          : `साखी #${sakhi.number} से जीवन-सीख`,
+      insert:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} (${activeThemeTitle}) ਤੋਂ ਮੇਰੀ ਸਿੱਖਿਆ: `
+          : language === 'en'
+          ? `My takeaway from Sakhi #${sakhi.number} (${activeThemeTitle}): `
+          : `साखी #${sakhi.number} (${activeThemeTitle}) से आज की सीख: `,
+    },
+  ];
+
   const handleSaveKalReflection = () => {
     if (!kalReflectionText.trim()) return;
     const clean = kalReflectionText.trim();
-    onSaveToDiary(`[दैनिक चिंतन · काल-बोध व कर्म] ${clean}`);
+    onSaveToDiary(`[दैनिक चिंतन · साखी #${sakhi.number} · ${activeThemeTitle}] ${clean}`);
 
     const newEntry = {
-      id: `kal-chintan-${Date.now()}`,
+      id: `chintan-${Date.now()}`,
       date: new Date().toLocaleDateString(language === 'pb' ? 'pa-IN' : language === 'hi' ? 'hi-IN' : 'en-US', {
         day: 'numeric',
         month: 'short',
         year: 'numeric'
       }),
-      text: clean
+      text: clean,
+      sakhiNumber: sakhi.number,
+      themeTitle: activeThemeTitle,
     };
 
     const updated = [newEntry, ...pastKalNotes];
@@ -990,7 +1065,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 className="px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 hover:opacity-90 transition shadow-xs border border-amber-300 dark:border-amber-700 cursor-pointer"
               >
                 <Feather className="w-3 h-3 text-indigo-600" />
-                <span>{language === 'hi' ? 'दैनिक काल-चिंतन' : language === 'pb' ? 'ਦੈਨਿਕ ਕਾਲ-ਚਿੰਤਨ' : 'Dainik Chintan'}</span>
+                <span>{language === 'hi' ? 'दैनिक चिंतन' : language === 'pb' ? 'ਦੈਨਿਕ ਚਿੰਤਨ' : 'Daily Reflection'}</span>
               </button>
             </div>
           </div>
@@ -1107,7 +1182,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           )}
 
           {/* ========================================================================= */}
-          {/* DAINIK CHINTAN TRIGGER: THE CONCEPT OF 'KAL' (TIME/DEATH) & DAILY TASKS   */}
+          {/* DAINIK CHINTAN CARD: DYNAMICALLY ALIGNED TO ACTIVE DAILY SAKHI THEME      */}
           {/* ========================================================================= */}
           <div 
             id="dainik-chintan-kal-trigger-section"
@@ -1124,12 +1199,12 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   <Feather className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="px-2 py-0.5 rounded-full text-[0.625rem] font-black uppercase font-serif tracking-wider bg-indigo-500/20 text-indigo-900 dark:text-indigo-200 border border-indigo-500/40">
-                      {language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਚਿੰਤਨ' : language === 'en' ? 'Daily Contemplation' : 'दैनिक चिंतन'}
+                      {language === 'pb' ? 'ਦੈਨਿਕ ਚਿੰਤਨ' : language === 'en' ? 'Daily Reflection' : 'दैनिक चिंतन'}
                     </span>
                     <span className="text-[0.625rem] font-serif font-bold text-amber-700 dark:text-amber-300">
-                      {language === 'pb' ? 'ਕਾਲ ਤੇ ਰੋਜ਼ਾਨਾ ਕਰਮ' : language === 'en' ? 'Concept of Kal in Daily Life' : 'काल-बोध व दैनिक कर्म'}
+                      {activeThemeTitle} • #{sakhi.number}
                     </span>
                   </div>
                   <h4 
@@ -1137,10 +1212,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     className="text-base sm:text-lg font-black font-serif tracking-tight mt-0.5"
                   >
                     {language === 'pb' 
-                      ? 'ਦੈਨਿਕ ਚਿੰਤਨ: \'ਕਾਲ\' ਦਾ ਬੋਧ ਅਤੇ ਰੋਜ਼ਾਨਾ ਦੇ ਕੰਮਾਂ ਵਿੱਚ ਬਦਲਾਅ' 
+                      ? `ਦੈਨਿਕ ਚਿੰਤਨ: '${activeThemeTitle}' ਅਤੇ ਅੱਜ ਦਾ ਆਚਰਣ` 
                       : language === 'en' 
-                      ? 'Dainik Chintan: How Kal (Time/Death) Reshapes Daily Action' 
-                      : 'दैनिक चिंतन: \'काल\' (समय / मृत्यु) का बोध और दैनिक कर्म'}
+                      ? `Daily Reflection: '${activeThemeTitle}' & Mindful Living` 
+                      : `दैनिक चिंतन: '${activeThemeTitle}' व आज का आचरण`}
                   </h4>
                 </div>
               </div>
@@ -1161,22 +1236,29 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 <Edit3 className="w-3.5 h-3.5" />
                 <span>
                   {showKalChintan
-                    ? (language === 'pb' ? 'ਚਿੰਤਨ ਸਮੇਟੋ' : language === 'en' ? 'Collapse Chintan' : 'चिंतन समेटें')
+                    ? (language === 'pb' ? 'ਚਿੰਤਨ ਸਮੇਟੋ' : language === 'en' ? 'Collapse Reflection' : 'चिंतन समेटें')
                     : (language === 'pb' ? 'ਚਿੰਤਨ ਲਿਖੋ (Start Reflection)' : language === 'en' ? 'Write Reflection' : 'चिंतन लिखें (Start Reflection)')}
                 </span>
                 {showKalChintan ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
               </button>
             </div>
 
-            {/* Prompt Banner */}
-            <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-700 dark:text-stone-300">
-              <p>
-                {language === 'pb'
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੇ \'ਕਾਲ\' (ਸਮਾਂ, ਅਨਿੱਤਤਾ, ਨਾਸ਼ਵਾਨਤਾ ਅਤੇ ਕਾਲ-ਅਹੇਰੀ) ਦਾ ਸੱਚਾ ਬੋਧ ਤੁਹਾਡੇ ਰੋਜ਼ਾਨਾ ਦੇ ਕੰਮਾਂ, ਫੈਸਲਿਆਂ ਅਤੇ ਪ੍ਰਾਥਮਿਕਤਾਵਾਂ ਨੂੰ ਕਿਵੇਂ ਬਦਲਦਾ ਹੈ? ਕੀ ਇਹ ਵਿਅਰਥ ਚਿੰਤਾਵਾਂ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਹਰ ਸਾਹ ਵਿੱਚ ਸਹਿਜ ਸਿਮਰਨ ਤੇ ਜਾਗਰੂਕਤਾ ਲਿਆਉਂਦਾ ਹੈ?'
-                  : language === 'en'
-                  ? 'How does Satguru Kabir Saheb\'s profound concept of \'Kal\' (inevitable Time, Mortality, and Impermanence) transform your daily tasks, priorities, and mindset? How does it free you from petty strife into mindful, selfless living?'
-                  : 'सतगुरु कबीर साहेब के \'काल\' (अनित्यता, क्षणभंगुरता, मृत्यु और काल अहेरी) का सच्चा बोध आपके आज के दैनिक कार्यों, प्राथमिकताओं, और जीवन-दृष्टिकोण को कैसे बदलता है? क्या यह आपको व्यर्थ की चिंताओं और अहंकार से मुक्त कर कर्म में सच्ची सजगता देता है?'}
+            {/* Dynamic Sakhi-Aligned Prompt Banner */}
+            <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-700 dark:text-stone-300 space-y-2">
+              <p className="font-semibold text-stone-800 dark:text-stone-100">
+                {activeContemplationPrompt}
               </p>
+              {activePracticalStep && (
+                <p className="text-xs sm:text-[0.8125rem] text-amber-900 dark:text-amber-300 flex items-start gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="font-bold">
+                      {language === 'pb' ? 'ਵਿਵਹਾਰਕ ਅਭਿਆਸ:' : language === 'en' ? 'Daily Practice:' : 'व्यावहारिक अभ्यास:'}
+                    </strong>{' '}
+                    {activePracticalStep}
+                  </span>
+                </p>
+              )}
             </div>
 
             {/* Expandable Reflection Box */}
@@ -1189,79 +1271,61 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   transition={{ duration: 0.25 }}
                   className="space-y-3.5 pt-2"
                 >
-                  {/* Sacred Couplet Reference with Selector */}
+                  {/* Active Daily Sakhi Source Anchor */}
                   <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-2">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
                       <div className="flex items-center gap-1.5">
                         <Quote className="w-4 h-4 text-amber-600 shrink-0" />
                         <span className="font-bold text-amber-800 dark:text-amber-300 text-[0.625rem] uppercase font-mono tracking-wider">
-                          {language === 'pb' ? 'ਕਾਲ ਕੋ ਅੰਗ ਪ੍ਰੇਰਣਾ ਵਾਣੀ:' : language === 'en' ? 'Kaal Ko Ang Source Anchor:' : 'काल को अंग प्रेरणा वाणी:'}
+                          {language === 'pb'
+                            ? `ਪਾਵਨ ਮੂਲ ਵਾਣੀ · ਸਾਖੀ #${sakhi.number} (${activeThemeTitle})`
+                            : language === 'en'
+                            ? `Sacred Source Couplet · Sakhi #${sakhi.number} (${activeThemeTitle})`
+                            : `पावन मूल वाणी · साखी #${sakhi.number} (${activeThemeTitle})`}
                         </span>
                       </div>
 
-                      {/* Anchor Verse Switcher */}
-                      <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5">
-                        {[
-                          { num: 2, text: 'जरा कुत्ता जोबन ससा, काल अहेरी नित्त। दो बैरी बिच झोंपड़ा, कुशल कहां सो मित्त।।' },
-                          { num: 37, text: 'माली आवत देखि के, कलियां करें पुकार। फूली फूली चुनि लई, काल हमारी बार।।' },
-                          { num: 41, text: 'काल हमारे संग है, कस जीवन की आस। दस दिन नाम संभार ले, जब लग पिंजर सांस।।' },
-                          { num: 42, text: 'टालै टूलै दिन गयो, ब्याज बढ़न्ता जाय। ना हरि भजा न खत कटा, काल पहुंचा आय।।' },
-                          { num: 43, text: 'कबीर सूता क्या करे, जागो न जपो मुरार। एक दिन है सोवना, लंबे पांव पसार।।' },
-                          { num: 44, text: 'कबीर सूता क्या करे, उठि न रोवै दुख। जिसका बासा गोर में, सो क्यों सोवै सुख।।' },
-                          { num: 45, text: 'आज कहै मैं काल भजूँगा, काल कहै फिर काल। आज काल के करत ही, औसर जासी चाल।।' },
-                          { num: 46, text: 'काची काया मन अथिर, थिर थिर करम करन्त। ज्यौं ज्यौं नर निधड़क फिरै, त्यौं त्यौं काल हसन्त।।' },
-                          { num: 47, text: 'झीना पिंजर सांस का, मन का पंछी उड़ जाय। राखै तो कोऊ ना रहै, जो जुगती करे उपाय।।' },
-                          { num: 48, text: 'पानी केरा बुदबुदा, अस मानुस की जात। देखत ही छिप जाएगा, ज्यों तारा परभात।।' },
-                          { num: 49, text: 'कबीर नौबत आपनी, दिन दस लेहु बजाय। यह पुर पटन यह गली, बहुरि न देखै आय।।' },
-                          { num: 50, text: 'कबीर मंदिर लाख का, जड़्या जवाहिर लाल। दिवस चारि का पेखना, बिनसि जायगा काल।।' },
-                          { num: 51, text: 'झूठे सुख को सुख कहै, मानत है मन मोद। खलक सब काल का, कछू मुख में कछू गोद।।' },
-                          { num: 52, text: 'बढ़ही आवत देखि के, तरुवर रुदन कराय। मैं अपंग संसै नहीं, पच्छी बसते आय।।' },
-                          { num: 53, text: 'कबीर जंगल रुखड़ा, सब काहू की प्यास। पाहन काटा काल ने, क्या उम्मीद क्या आस।।' },
-                        ].map((anchor, idx) => (
-                          <button
-                            key={anchor.num}
-                            type="button"
-                            onClick={() => {
-                              sacredHaptics.lightTap();
-                              const prefix = kalReflectionText ? `${kalReflectionText}\n\n` : '';
-                              setKalReflectionText(`${prefix}[साखी #${anchor.num}]: `);
-                            }}
-                            className="px-2 py-0.5 rounded-lg text-[0.625rem] font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 transition cursor-pointer shrink-0"
-                            title={anchor.text}
-                          >
-                            #{anchor.num}
-                          </button>
-                        ))}
-                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          sacredHaptics.lightTap();
+                          const prefix = kalReflectionText ? `${kalReflectionText}\n\n` : '';
+                          setKalReflectionText(`${prefix}[साखी #${sakhi.number} · ${activeThemeTitle}]: `);
+                        }}
+                        className="px-2.5 py-0.5 rounded-lg text-[0.625rem] font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 transition cursor-pointer shrink-0"
+                      >
+                        {language === 'pb' ? `+ ਸਾਖੀ #${sakhi.number} ਹਵਾਲਾ` : language === 'en' ? `+ Cite Sakhi #${sakhi.number}` : `+ साखी #${sakhi.number} सन्दर्भ जोड़ें`}
+                      </button>
                     </div>
 
-                    <div className="text-xs sm:text-sm font-serif italic font-bold text-amber-950 dark:text-amber-100 pl-5">
-                      "जरा कुत्ता जोबन ससा, काल अहेरी नित्त । दो बैरी बिच झोंपड़ा, कुशल कहां सो मित्त ॥"
+                    <div className="text-xs sm:text-sm font-serif italic font-bold text-amber-950 dark:text-amber-100 pl-5 whitespace-pre-line">
+                      "{sakhi.text?.[language] || sakhi.text?.hi}"
                     </div>
+
+                    {(sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi) && (
+                      <p className="text-[0.6875rem] sm:text-xs font-serif text-stone-600 dark:text-stone-300 pl-5 leading-relaxed">
+                        {sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Thought Starters Chips */}
+                  {/* Dynamic Sakhi Thought Starters Chips */}
                   <div className="flex flex-wrap items-center gap-1.5 text-[0.6875rem] font-serif">
                     <span className="text-stone-500 font-bold mr-1">
                       {language === 'pb' ? 'ਮਨਨ ਸੰਕੇਤ:' : language === 'en' ? 'Thought Starters:' : 'चिंतन सूत्र:'}
                     </span>
-                    {[
-                      { hi: 'अनमोल श्वासों की कद्र', pb: 'ਅਣਮੋਲ ਸਾਹਾਂ ਦੀ ਕਦਰ', en: 'Valuing Every Breath' },
-                      { hi: 'टालमटोल व आलस्य का त्याग', pb: 'ਆਲਸ ਤੇ ਦੇਰੀ ਦਾ ਤਿਆਗ', en: 'Overcoming Procrastination' },
-                      { hi: 'अहंकार व विवादों का विसर्जन', pb: 'ਹਉਮੈ ਤੇ ਕਲੇਸ਼ ਦਾ ਵਿਸਰਜਨ', en: 'Relinquishing Ego & Strife' },
-                      { hi: 'वर्तमान में निष्काम कर्म', pb: 'ਵਰਤਮਾਨ ਵਿੱਚ ਨਿਸ਼ਕਾਮ ਸੇਵਾ', en: 'Mindful Present Action' },
-                    ].map((chip, i) => (
+                    {dynamicThoughtStarters.map((chip, i) => (
                       <button
                         key={i}
                         type="button"
                         onClick={() => {
                           sacredHaptics.lightTap();
                           const prefix = kalReflectionText ? `${kalReflectionText} • ` : '';
-                          setKalReflectionText(`${prefix}${chip[language]}: `);
+                          setKalReflectionText(`${prefix}${chip.insert}`);
                         }}
                         className="px-2.5 py-1 rounded-xl bg-white/80 dark:bg-stone-800 border border-amber-200/60 dark:border-stone-700 text-stone-700 dark:text-stone-200 hover:bg-amber-100/70 transition cursor-pointer shadow-xs"
                       >
-                        + {chip[language]}
+                        + {chip.label}
                       </button>
                     ))}
                   </div>
@@ -1273,10 +1337,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                       onChange={(e) => setKalReflectionText(e.target.value)}
                       placeholder={
                         language === 'pb'
-                          ? 'ਕਾਲ ਦੇ ਬੋਧ ਨਾਲ ਅੱਜ ਮੇਰੇ ਰੋਜ਼ਾਨਾ ਦੇ ਕੰਮਾਂ ਵਿੱਚ ਇਹ ਜਾਗਰੂਕਤਾ ਅਤੇ ਤਬਦੀਲੀ ਆਈ ਹੈ ਕਿ...'
+                          ? `ਸਾਖੀ #${sakhi.number} (${activeThemeTitle}) ਦੇ ਚਿੰਤਨ ਨਾਲ ਅੱਜ ਮੇਰੇ ਵਿਚਾਰਾਂ ਅਤੇ ਰੋਜ਼ਾਨਾ ਵਿਵਹਾਰ ਵਿੱਚ ਇਹ ਸਕਾਰਾਤਮਕ ਤਬਦੀਲੀ ਆਈ ਹੈ ਕਿ...`
                           : language === 'en'
-                          ? 'Reflecting on Kal (Time/Death), my perspective on daily tasks and mindful action today is that...'
-                          : 'कबीर साहेब के काल-बोध से आज मेरे दैनिक कार्यों, प्राथमिकताओं और मानसिक स्थिति में यह परिवर्तन आया है कि...'
+                          ? `Reflecting on Sakhi #${sakhi.number} (${activeThemeTitle}), today I want to bring this insight into my thoughts and daily conduct...`
+                          : `साखी #${sakhi.number} ('${activeThemeTitle}') के चिंतन से आज मेरे विचार, व्यवहार और दैनिक आचरण में यह पावन बोध जाग्रत हुआ है कि...`
                       }
                       style={{
                         backgroundColor: theme.cardBg,
@@ -1317,7 +1381,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                           className="px-3 py-2 rounded-xl text-xs font-serif font-semibold text-stone-600 dark:text-stone-300 hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer flex items-center gap-1.5"
                         >
                           <BookOpen className="w-3.5 h-3.5 text-amber-700" />
-                          <span>{language === 'pb' ? `ਪਿਛਲੇ ਚਿੰਤਨ (${pastKalNotes.length})` : language === 'en' ? `Previous (${pastKalNotes.length})` : `पूर्व काल-चिंतन (${pastKalNotes.length})`}</span>
+                          <span>{language === 'pb' ? `ਪਿਛਲੇ ਚਿੰਤਨ (${pastKalNotes.length})` : language === 'en' ? `Previous (${pastKalNotes.length})` : `पूर्व चिंतन (${pastKalNotes.length})`}</span>
                         </button>
                       )}
                     </div>
@@ -1341,10 +1405,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                       <span>
                         {language === 'pb'
-                          ? '✨ ਤੁਹਾਡਾ ਦੈਨਿਕ ਕਾਲ-ਚਿੰਤਨ ਡਾਇਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਹੋਇਆ! "ਮਰਨਾ ਪਹਿਲੇ ਜੋ ਮਰੈ, ਅਜਰ ਅਮਰ ਸੋ ਹੋਇ।।"'
+                          ? `✨ ਤੁਹਾਡਾ ਦੈਨਿਕ ਚਿੰਤਨ (ਸਾਖੀ #${sakhi.number} · ${activeThemeTitle}) ਡਾਇਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਹੋਇਆ! ${activeSakhiPrayer || 'ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।'}`
                           : language === 'en'
-                          ? '✨ Daily Kal Reflection saved to your seeker journal! May time-awareness illuminate your daily duties.'
-                          : '✨ आपका दैनिक काल-चिंतन डायरी में सुरक्षित हुआ! "मरना पहिले जो मरै, अजर अमर सो होय।।" कर्म में सजगता बनी रहे।'}
+                          ? `✨ Your Daily Reflection (Sakhi #${sakhi.number} · ${activeThemeTitle}) has been saved to your journal! ${activeSakhiPrayer || 'Saheb Bandagi Saheb.'}`
+                          : `✨ आपका दैनिक चिंतन (साखी #${sakhi.number} · ${activeThemeTitle}) डायरी में सुरक्षित हुआ! ${activeSakhiPrayer || 'साहेब बंदगी साहेब।'}`}
                       </span>
                     </motion.div>
                   )}
@@ -1353,12 +1417,19 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   {showPastKalNotes && pastKalNotes.length > 0 && (
                     <div className="mt-3 p-3.5 rounded-2xl bg-white/70 dark:bg-stone-900/60 border border-amber-200/50 space-y-2 text-left">
                       <h5 className="text-xs font-serif font-black text-amber-900 dark:text-amber-200 uppercase tracking-wider">
-                        {language === 'pb' ? 'ਪਿਛਲੇ ਕਾਲ-ਚਿੰਤਨ ਨੋਟਸ:' : language === 'en' ? 'Previous Kal Contemplation Entries:' : 'पूर्व काल-चिंतन प्रविष्टियाँ:'}
+                        {language === 'pb' ? 'ਪਿਛਲੇ ਦੈਨਿਕ ਚਿੰਤਨ:' : language === 'en' ? 'Previous Daily Reflection Entries:' : 'पूर्व दैनिक चिंतन प्रविष्टियाँ:'}
                       </h5>
                       <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                         {pastKalNotes.map((note) => (
                           <div key={note.id} className="p-2.5 rounded-xl bg-amber-50/60 dark:bg-stone-800/60 border border-stone-200/50 text-xs font-serif">
-                            <div className="text-[0.625rem] font-mono text-stone-400 mb-1">{note.date}</div>
+                            <div className="text-[0.625rem] font-mono text-stone-400 mb-1 flex items-center justify-between gap-2">
+                              <span>{note.date}</span>
+                              {note.sakhiNumber && (
+                                <span className="text-amber-700 dark:text-amber-300 font-bold">
+                                  #{note.sakhiNumber}{note.themeTitle ? ` · ${note.themeTitle}` : ''}
+                                </span>
+                              )}
+                            </div>
                             <p className="text-stone-800 dark:text-stone-200 leading-relaxed italic">"{note.text}"</p>
                           </div>
                         ))}
@@ -1729,10 +1800,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                         </h5>
                         <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
                           {language === 'pb'
-                            ? 'ਪਾਵਨ ਅਸ਼ਟ-ਚਰਨ ਸੰਪੂਰਨ ਸਵਾਧਿਆਏ (ਮੂਲ ਪਾਠ, ਸ਼ਬਦਾਰਥ, ਅਧਿਆਤਮਿਕ ਰਹੱਸ, ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ ਸਾਧਨਾ ਤੇ ਸੰਕਲਪ ਸੂਤਰ)।'
+                            ? 'ਪਾਵਨ ੧੧-ਚਰਣੀ ਸੰਪੂਰਨ ਸਵਾਧਿਆਏ (ਮੂਲ ਪਾਠ, ਸ਼ਬਦਾਰਥ, ਵਿਸਤ੍ਰਿਤ ਭਾਵਾਰਥ, ਬੋਧ ਪ੍ਰਸ਼ਨਾਵਲੀ, ਰਹੱਸ, ਸਾਧਨਾ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ).'
                             : language === 'en'
-                            ? 'Sacred 8-Step Complete Swadhyay (Original Text, Vocabulary, Spiritual Insight, Surat-Shabad Yoga, and Sadhana Pledge).'
-                            : 'पावन अष्ट-चरण सम्पूर्ण स्वाध्याय (मूल पाठ, शब्दार्थ, आध्यात्मिक रहस्य, सूरत-योग साधना व संकल्प सूत्र)।'}
+                            ? 'Sacred 11-Step Complete Swadhyay (Original Text, Vocabulary, Bhavarth, Quiz, Mystical Insights, and Certificate).'
+                            : 'पावन ११-चरणीय सम्पूर्ण स्वाध्याय (मूल पाठ, शब्दार्थ, भावार्थ, प्रश्नोत्तरी, रहस्य, साधना व सिद्धि प्रमाण-पत्र)।'}
                         </p>
                       </div>
                     </div>

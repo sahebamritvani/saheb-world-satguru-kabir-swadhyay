@@ -1,4 +1,5 @@
 import { Sakhi, Language, WordMeaning, QuizQuestion } from '../types';
+import type { SwadhyayAiResponsePayload } from './swadhyayElevenSteps';
 
 export interface EightStepCrossReference {
   granth: string;
@@ -179,43 +180,58 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
       : `Scripture: ${sakhi.grantha} | Section: ${categoryTitle} | Sakhi #${sakhi.number}`,
   };
 
-  // 3. STEP 3: शब्दार्थ (Vocabulary - Richly populated)
+  // 3. STEP 3: शब्दार्थ (Vocabulary - Strictly grounded in THIS Sakhi's words)
   let wordsList = sakhi.wordMeanings[language] || sakhi.wordMeanings.hi || [];
   if (wordsList.length < 2) {
-    wordsList = [
-      { word: 'साँच / सत्य', meaning: isHi ? 'शाश्वत यथार्थ व सनातन धर्म' : 'Eternal reality and divine righteousness' },
-      { word: 'सुमिरन', meaning: isHi ? 'श्वास-श्वास सत्यनाम का स्मरण' : 'Continuous breath-borne remembrance of Satyanaam' },
-      { word: 'सतगुरु', meaning: isHi ? 'पूर्ण मोक्षदाता सतगुरु कबीर साहेब' : 'The Supreme Liberator Satguru Kabir Saheb' }
-    ];
+    const tokens = originalCouplet
+      .replace(/[।॥,.;:'"?!\n\r]/g, ' ')
+      .split(/\s+/)
+      .filter((t) => t.length >= 2)
+      .slice(0, 5);
+    wordsList = tokens.map((tok) => ({
+      word: tok,
+      meaning: isHi
+        ? `साखी #${sakhi.number} ('${categoryTitle}') में प्रयुक्त पावन पद`
+        : isPb
+        ? `ਸਾਖੀ #${sakhi.number} ('${categoryTitle}') ਵਿੱਚ ਆਇਆ ਪਾਵਨ ਸ਼ਬਦ`
+        : `Key term appearing in Sakhi #${sakhi.number} (${categoryTitle})`,
+    }));
   }
   const step3Vocab = {
     title: isHi ? '३. शब्दार्थ' : isPb ? '੩. ਸ਼ਬਦਾਰਥ' : '3. Word Meanings & Glossary',
-    subtitle: isHi ? 'साखी के कठिन शब्दों का सरल एवं आध्यात्मिक अर्थ' : isPb ? 'ਸਾਖੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਦਾ ਸਰਲ ਅਧਿਆਤਮਿਕ ਅਰਥ' : 'Literal and Esoteric Breakdown of Terms',
+    subtitle: isHi ? 'साखी के कठिन शब्दों का सरल एवं आध्यात्मिक अर्थ' : isPb ? 'ਸਾਖੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਦਾ ਸਰਲ ਅਧਿਆਤਮਿਕ ਅਰਥ' : 'Accurate Literal and Spiritual Meanings',
     words: wordsList,
     toggleLabelShow: isHi ? 'शब्दार्थ दिखाएं' : isPb ? 'ਸ਼ਬਦਾਰਥ ਦਿਖਾਓ' : 'Show Vocabulary',
     toggleLabelHide: isHi ? 'शब्दार्थ छिपाएं' : isPb ? 'ਸ਼ਬਦਾਰਥ ਛੁਪਾਓ' : 'Hide Vocabulary',
   };
 
-  // 4. STEP 4: सरल भावार्थ / गहरा अध्ययन (सत्संग - Dynamically Tailored per Sakhi)
+  // 4. STEP 4: सरल भावार्थ / गहरा अध्ययन (सत्संग - Strictly tailored to THIS Sakhi)
+  const keyTermHighlights = wordsList
+    .slice(0, 3)
+    .map((w) => `${w.word} (${w.meaning})`)
+    .join(' · ');
+
   const dynamicSatsangGyan = isHi
-    ? `सतगुरु कबीर साहेब की इस अमूल्य साखी का केंद्रीय भाव यह है कि ${originalBhavarth}\n\n` +
-      `🌸 इस पावन वाणी का गहरा आध्यात्मिक विश्लेषण:\n` +
-      `• जीवन का यथार्थ बोध: संसारी मनुष्य भौतिक उपलब्धियों और क्षणिक संबंधों में सुख तलाशता है, किंतु सतगुरु कबीर साहेब हमें चेताते हैं कि जब तक चेतना सत्यनाम से नहीं जुड़ती, तब तक तृप्ति असंभव है।\n` +
-      `• आचरण और निष्ठा: ${originalAction || 'साधक को अपने दैनिक कर्मों में सत्य, दया और नम्रता को प्राथमिकता देनी चाहिए।'}\n` +
-      `• अंतर्मुखी साधना: बाहरी आडंबरों को छोड़कर जब हम अपने भीतर झाँकते हैं, तो हमें सतगुरु की अहैतुकी कृपा का अनुभव होता है।`
+    ? `सतगुरु कबीर साहेब की साखी #${sakhi.number} (${categoryTitle}) का केंद्रीय बोध यह है:\n${originalBhavarth}\n\n` +
+      `🌸 इस विशिष्ट साखी का अंतर्मन विश्लेषण:\n` +
+      `• मुख्य मर्म: "${originalCouplet.split('\n')[0]}" के द्वारा सतगुरु कबीर साहेब सीधे इसी विषय (${categoryTitle}) पर ध्यान केंद्रित करते हैं।\n` +
+      (keyTermHighlights ? `• शब्दावली संकेत: ${keyTermHighlights}।\n` : '') +
+      `• व्यावहारिक आचरण: ${originalAction || originalContemplation}`
     : isPb
-    ? `ਇਸ ਪਾਵਨ ਸਾਖੀ ਦਾ ਮੁੱਖ ਭਾਵ ਹੈ ਕਿ ${originalBhavarth}\n\nਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਦੇ ਪ੍ਰਭਾਵ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਹੀ ਜੀਵ ਅਮਰ ਪਦ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦਾ ਹੈ।`
-    : `This sacred teaching explains that ${originalBhavarth} By reflecting deeply on this verse, the seeker cuts through mental illusions and anchors in pure awareness.`;
+    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਸਾਖੀ #${sakhi.number} (${categoryTitle}) ਦਾ ਮੁੱਖ ਭਾਵ:\n${originalBhavarth}\n\n` +
+      `• ਅਮਲੀ ਸਿੱਖਿਆ: ${originalAction || originalContemplation}`
+    : `Central Teaching of Sakhi #${sakhi.number} (${categoryTitle}):\n${originalBhavarth}\n\n` +
+      `• Practical Integration: ${originalAction || originalContemplation}`;
 
   const dynamicMindMaya = isHi
-    ? `इस साखी (${sakhi.number}) के पावन संदेश के अनुसार, मन की चंचलता और माया के भ्रम तभी विनष्ट होते हैं जब साधक सतगुरु के वचनों को अपने जीवन की ढाल बनाता है।`
+    ? `साखी #${sakhi.number} के संदर्भ (${originalContext || categoryTitle}) के अनुसार: ${originalContemplation}`
     : isPb
-    ? `ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਮਨ ਦੀ ਚੰਚਲਤਾ ਅਤੇ ਮਾਇਆ ਦੇ ਭਰਮ ਤਦ ਹੀ ਨਸ਼ਟ ਹੁੰਦੇ ਹਨ ਜਦੋਂ ਜੀਵ ਸਤਿਗੁਰੂ ਦੇ ਬਚਨਾਂ ਨੂੰ ਧਾਰਨ ਕਰਦਾ ਹੈ।`
-    : `According to this sakhi, mental restlessness and worldly illusions dissolve when one translates Satguru's living word into virtuous daily action.`;
+    ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਸੰਦਰਭ ਅਨੁਸਾਰ: ${originalContemplation}`
+    : `Reflective insight for Sakhi #${sakhi.number}: ${originalContemplation}`;
 
   const step4Satsang = {
-    title: isHi ? '४. सरल भावार्थ एवं गहरा अध्ययन (सत्संग)' : isPb ? '੪. ਸਰਲ ਭਾਵਾਰਥ ਅਤੇ ਗਹਿਰਾ ਅਧਿਐਨ (ਸਤਿਸੰਗ)' : '4. In-Depth Exegesis & Satsang Discourse',
-    subtitle: isHi ? 'साखी की विस्तृत व्याख्या जो मन और माया के पार का बोध दे' : isPb ? 'ਸਾਖੀ ਦੀ ਵਿਸਥਾਰਪੂਰਵਕ ਵਿਆਖਿਆ ਜੋ ਮਨ ਅਤੇ ਮਾਇਆ ਤੋਂ ਪਰੇ ਦਾ ਬੋਧ ਕਰਵਾਏ' : 'Spiritual Discourse transcending Mind and Illusion',
+    title: isHi ? '४. सरल भावार्थ एवं गहरा अध्ययन (सत्संग)' : isPb ? '੪. ਸਰਲ ਭਾਵਾਰਥ ਅਤੇ ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਅਧਿਐਨ (ਸਤਿਸੰਗ)' : '4. In-Depth Exegesis & Satsang Discourse',
+    subtitle: isHi ? `साखी #${sakhi.number} ('${categoryTitle}') के केंद्रीय मर्म का गहन विवेचन` : isPb ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਮੂਲ ਮਰਮ ਦੀ ਵਿਆਖਿਆ` : `Deep Spiritual Discourse on Sakhi #${sakhi.number}`,
     bhavarth: originalBhavarth,
     deepSatsangGyan: dynamicSatsangGyan,
     mindMayaAnalysis: dynamicMindMaya,
@@ -228,12 +244,11 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
     subtitle: isHi ? 'मूल साखी की वाणी के अनुसार गुप्त ब्रह्म-विधान' : isPb ? 'ਮੂਲ ਬਾਣੀ ਅਨੁਸਾਰ ਗੂੜ੍ਹ ਰੂਹਾਨੀ ਭੇਦ' : 'Esoteric Decoding of Mool Vani',
     secretWisdom: isHi
       ? `📜 मूल वाणी: "${originalCouplet}"\n\n` +
-        `🔑 आध्यात्मिक रहस्य: ${categoryTitle} के अंतर्गत यह साखी जीवात्मा को उसके निज स्वरूप का बोध कराती है। जब आप इस वाणी का मनन करते हैं, तो घट के भीतर सोया हुआ विवेक जागृत होता है।\n\n` +
-        `✨ साधना संकेत: सतगुरु कबीर साहेब के वचनों को जीवन में उतारना ही सबसे बड़ी तपस्या है।`
-      : `Mool Vani ("${originalCouplet}") Esoteric Secret: Releasing inner ego elevates consciousness into eternal Satyanaam awareness.`,
+        `🔑 आध्यात्मिक रहस्य (${categoryTitle}): ${originalBhavarth}`
+      : `Mool Vani ("${originalCouplet}") — ${originalBhavarth}`,
     anuragSagarEssence: isHi
-      ? `कबीर सागर (अनुराग सागर) का प्रमाण: "शब्द हमारे जीव का, शब्द हमारे प्राण। शब्द ही निज रूप है, शब्दहिं श्री भगवान्।"`
-      : `Anurag Sagar Citation: "The Word is our life breath; the Word is our true form."`,
+      ? `ग्रंथ-संदर्भ: ${sakhi.grantha} · ${categoryTitle} (साखी #${sakhi.number})`
+      : `Scriptural Context: ${sakhi.grantha} · ${categoryTitle} (Sakhi #${sakhi.number})`,
     unlockLabel: isHi ? 'आध्यात्मिक रहस्य अनलॉक करें' : isPb ? 'ਅਧਿਆਤਮਿਕ ਰਹੱਸ ਅਨਲੌਕ ਕਰੋ' : 'Unlock Mystical Insight',
   };
 
@@ -242,7 +257,7 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
     title: isHi ? '६. सत्यनाम गूँज और सूरत-योग साधना' : isPb ? '੬. ਸਤਯਨਾਮ ਗੂੰਜ ਅਤੇ ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ ਸਾਧਨਾ' : '6. Surat-Shabad Yoga & Satyanaam Resonance',
     subtitle: isHi ? `साखी #${sakhi.number} के भाव के अनुरूप सूरत और शब्द का संधान` : isPb ? `ਸਾਖੀ #${sakhi.number} ਅਨੁਸਾਰ ਸੁਰਤ ਅਤੇ ਸ਼ਬਦ ਦਾ ਅਭਿਆਸ` : `Contemplative Breath & Sound Alignment for Sakhi #${sakhi.number}`,
     suratFocusPrinciple: isHi
-      ? `साखी #${sakhi.number} ("${originalCouplet.split('\n')[0]}") के इस पावन संदेश को ध्यान में रखते हुए अपनी सूरत को समस्त बाहरी विक્ષेपों से मुक्त कर अंतर्मुखी करें।`
+      ? `साखी #${sakhi.number} ("${originalCouplet.split('\n')[0]}") के इस पावन संदेश को ध्यान में रखते हुए अपनी सूरत को समस्त बाहरी विक्षेपों से मुक्त कर अंतर्मुखी करें।`
       : isPb
       ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਇਸ ਪਾਵਨ ਸੰਦੇਸ਼ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖਦਿਆਂ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਅੰਦਰੂਨੀ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਜੋੜੋ।`
       : `Reflecting upon Sakhi #${sakhi.number}, gather your attention inward and rest in the silent grace of Satyanaam.`,
@@ -333,5 +348,48 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
     step8_sadhanaSutra: step8SadhanaSutra,
     step9_quiz: step9Quiz,
     step10_blessing: step10Blessing,
+  };
+}
+
+export function mergeAiIntoEightStepData(
+  base: EightStepSwadhyayData,
+  ai: SwadhyayAiResponsePayload | null,
+  language: Language
+): { data: EightStepSwadhyayData; multilingualWords: Record<Language, WordMeaning[]> | null } {
+  if (!ai) {
+    return { data: base, multilingualWords: null };
+  }
+
+  const multilingualWords: Record<Language, WordMeaning[]> | null =
+    Array.isArray(ai.step3_wordMeanings) && ai.step3_wordMeanings.length > 0
+      ? {
+          hi: ai.step3_wordMeanings.map((w) => ({ word: w.wordHi, meaning: w.meaningHi })),
+          pb: ai.step3_wordMeanings.map((w) => ({ word: w.wordPb, meaning: w.meaningPb })),
+          en: ai.step3_wordMeanings.map((w) => ({ word: w.wordEn, meaning: w.meaningEn })),
+        }
+      : null;
+
+  const activeWords = multilingualWords?.[language] || base.step3_vocabulary.words;
+
+  return {
+    data: {
+      ...base,
+      step2_context: {
+        ...base.step2_context,
+        relevanceText: ai.step2_context?.relevanceText || base.step2_context.relevanceText,
+        spiritualSignificance: ai.step2_context?.spiritualSignificance || base.step2_context.spiritualSignificance,
+      },
+      step3_vocabulary: {
+        ...base.step3_vocabulary,
+        words: activeWords,
+      },
+      step4_bhavarthSatsang: {
+        ...base.step4_bhavarthSatsang,
+        bhavarth: ai.step4_bhavarth?.bhavarth || base.step4_bhavarthSatsang.bhavarth,
+        deepSatsangGyan: ai.step4_bhavarth?.deepSatsangGyan || base.step4_bhavarthSatsang.deepSatsangGyan,
+        mindMayaAnalysis: ai.step4_bhavarth?.mindMayaAnalysis || base.step4_bhavarthSatsang.mindMayaAnalysis,
+      },
+    },
+    multilingualWords,
   };
 }
