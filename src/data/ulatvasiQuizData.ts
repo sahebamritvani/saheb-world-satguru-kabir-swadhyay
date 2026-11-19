@@ -1,105 +1,9 @@
-import { Language } from '../types';
-import { ULATVASI_BATCH_4_TO_30 } from './ulatvasiBatch4To30';
-import { ULATVASI_BATCH_31_TO_45 } from './ulatvasiBatch31To45';
-import { ULATVASI_BATCH_46_TO_60 } from './ulatvasiBatch46To60';
-import { ULATVASI_BATCH_61_TO_70 } from './ulatvasiBatch61To70';
-import { ULATVASI_BATCH_71_TO_80 } from './ulatvasiBatch71To80';
-import { ULATVASI_BATCH_81_TO_90 } from './ulatvasiBatch81To90';
-import { ULATVASI_BATCH_91_TO_100 } from './ulatvasiBatch91To100';
-import { ULATVASI_BATCH_101_TO_110 } from './ulatvasiBatch101To110';
-import { ULATVASI_BATCH_111_TO_120 } from './ulatvasiBatch111To120';
-import { ULATVASI_BATCH_121_TO_130 } from './ulatvasiBatch121To130';
-import { ULATVASI_BATCH_131_TO_140 } from './ulatvasiBatch131To140';
-import { ULATVASI_BATCH_141_TO_150 } from './ulatvasiBatch141To150';
-import { ULATVASI_BATCH_151_TO_160 } from './ulatvasiBatch151To160';
-import { ULATVASI_BATCH_161_TO_170 } from './ulatvasiBatch161To170';
-import { ULATVASI_BATCH_171_TO_180 } from './ulatvasiBatch171To180';
-import { ULATVASI_BATCH_181_TO_190 } from './ulatvasiBatch181To190';
-import { ULATVASI_BATCH_191_TO_200 } from './ulatvasiBatch191To200';
-import { ULATVASI_BATCH_201_TO_210 } from './ulatvasiBatch201To210';
-import { ULATVASI_BATCH_211_TO_220 } from './ulatvasiBatch211To220';
-import { ULATVASI_BATCH_221_TO_230 } from './ulatvasiBatch221To230';
-import { ULATVASI_BATCH_231_TO_240 } from './ulatvasiBatch231To240';
-import { ULATVASI_BATCH_241_TO_250 } from './ulatvasiBatch241To250';
+import { UlatvasiQuestion } from './ulatvasiMetadata';
+import { offlineScriptureCache } from '../services/offlineScriptureCache';
 
-export type UlatvasiRealm = 'kautuhal' | 'antaryog' | 'shunya-samadhi';
+export * from './ulatvasiMetadata';
 
-export interface UlatvasiSymbol {
-  symbol: string;
-  meaning: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-}
-
-export interface UlatvasiQuestion {
-  id: string;
-  number: number;
-  realm: UlatvasiRealm;
-  realmTitle: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  title: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  verse: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  literalParadox: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  clueHint: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  symbols: UlatvasiSymbol[];
-  question: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  options: {
-    hi: string[];
-    pb: string[];
-    en: string[];
-  };
-  correctIndex: number;
-  mysticalUnveiling: {
-    headline: {
-      hi: string;
-      pb: string;
-      en: string;
-    };
-    deepMeaning: {
-      hi: string;
-      pb: string;
-      en: string;
-    };
-    kabirPhilosophy: {
-      hi: string;
-      pb: string;
-      en: string;
-    };
-    parakhiInsight: {
-      hi: string;
-      pb: string;
-      en: string;
-    };
-  };
-  wisdomPoints: number;
-}
-
-export const ULATVASI_DATABASE: UlatvasiQuestion[] = [
+export const ULATVASI_CORE_QUESTIONS: UlatvasiQuestion[] = [
   {
     id: 'ub-1',
     number: 1,
@@ -109,264 +13,269 @@ export const ULATVASI_DATABASE: UlatvasiQuestion[] = [
     verse: {
       hi: '"एक अचम्भा देखा रे भाई, थारा सिंह चरावै गाई। पहले पूत पीछे भई माई, चेला के गुरु लागै पाई। जल की मछली तरुवर ब्याई, कुतवा को ले गई बिलाई। तले बलद ऊपर है गाड़ी, धरनी उलटि अकासै जाई। बरसै कम्बल भींजै पानी, कहै कबीर सोई संत ग्यानी॥"',
       pb: '"ਇਕ ਅਚੰਭਾ ਦੇਖਿਆ ਰੇ ਭਾਈ, ਥਾਰਾ ਸਿੰਘ ਚਰਾਵੈ ਗਾਈ। ਪਹਿਲੇ ਪੂਤ ਪਿੱਛੇ ਭਈ ਮਾਈ, ਚੇਲਾ ਕੇ ਗੁਰੂ ਲਾਗੈ ਪਾਈ।..."',
-      en: '"An amazing wonder seen, oh brother: lion grazes the cow. Son born before mother, disciple touching guru\'s feet..."'
+      en: '"An amazing wonder seen, oh brother: lion grazes the cow. Son born before mother, disciple touching guru\'s feet..."',
     },
     literalParadox: {
       hi: 'सिंह गाय चरा रहा है, बेटा पहले पैदा हुआ और माँ बाद में, मछली पेड़ पर बच्चे दे रही है, कंबल बरस रहा है जिससे पानी भीग रहा है।',
       pb: 'ਸਿੰਘ ਗਾਂ ਚਰਾ ਰਿਹਾ ਹੈ, ਪੁੱਤਰ ਪਹਿਲਾਂ ਅਤੇ ਮਾਂ ਬਾਅਦ ਵਿੱਚ ਪੈਦਾ ਹੋਈ, ਕੰਬਲ ਬਰਸ ਰਿਹਾ ਹੈ ਅਤੇ ਪਾਣੀ ਭਿੱਜ ਰਿਹਾ ਹੈ।',
-      en: 'Lion grazes cow, son born before mother, blanket rains and water gets wet.'
+      en: 'Lion grazes cow, son born before mother, blanket rains and water gets wet.',
     },
     clueHint: {
       hi: 'सिंह ज्ञान का प्रतीक है और गाय इंद्रियों की। कंबल परमात्मा की कृपा है।',
-      pb: 'ਸਿੰਘ ਗਿਆਨ ਦਾ ਪ੍ਰਤੀਕ ਹੈ ਅਤੇ ਗਾਂ ਇੰਦਰੀਆਂ ਦੀ। ਕੰਬਲ ਪ੍ਰਮਾਤਮਾ ਦੀ ਕਿਰਪਾ ਹੈ।',
-      en: 'Lion symbolizes wisdom and cow represents senses. Blanket symbolizes divine grace.'
+      pb: 'ਸਿੰਘ ਗਿਆਨ ਦਾ ਪ੍ਰਤੀਕ ਹੈ ਅਤੇ ਗਾਂ ਇੰਦਰੀਆਂ ਦੀ। ਕੰਬਲ ਪਰਮਾਤਮਾ ਦੀ ਕਿਰਪਾ ਹੈ।',
+      en: 'Lion is Supreme Knowledge and Cow represents the senses. Blanket represents Divine Grace.',
     },
     symbols: [
-      { symbol: 'सिंह (Lion)', meaning: { hi: 'ज्ञान / विवेक', pb: 'ਗਿਆਨ / ਬਿਬੇਕ', en: 'Wisdom / Discrimination' } },
-      { symbol: 'गाई (Cow)', meaning: { hi: 'इंद्रियाँ', pb: 'ਇੰਦਰੀਆਂ', en: 'Senses' } },
-      { symbol: 'कंबल (Blanket)', meaning: { hi: 'परमात्मा की कृपा / वाणी', pb: 'ਪ੍ਰਮਾਤਮਾ ਦੀ ਕਿਰਪਾ', en: 'Divine Grace / Vani' } }
+      { symbol: 'सिंह (Lion)', meaning: { hi: 'आत्मज्ञान / साक्षी चेतना', pb: 'ਆਤਮ ਗਿਆਨ', en: 'Self-Knowledge / Witness' } },
+      { symbol: 'गाय (Cow)', meaning: { hi: 'इंद्रियाँ / चंचल मन', pb: 'ਇੰਦਰੀਆਂ / ਮਨ', en: 'Senses / Restless Mind' } },
+      { symbol: 'पूत / माई (Son / Mother)', meaning: { hi: 'आत्मा (सदा सनातन) और माया (जगत)', pb: 'ਆਤਮਾ ਅਤੇ ਮਾਇਆ', en: 'Soul and Illusion (Maya)' } },
+      { symbol: 'कंबल / पानी (Blanket / Water)', meaning: { hi: 'प्रभु कृपा और शांत मन/बुद्धि', pb: 'ਕਿਰਪਾ ਅਤੇ ਮਨ', en: 'Divine Grace and Calm Mind' } },
     ],
     question: {
-      hi: 'इस उलटबांसी में "सिंह" और "गाई" किसका प्रतीक हैं?',
-      pb: 'ਇਸ ਉਲਟਬਾਂਸੀ ਵਿੱਚ "ਸਿੰਘ" ਅਤੇ "ਗਾਈ" ਕਿਸ ਦਾ ਪ੍ਰਤੀਕ ਹਨ?',
-      en: 'In this paradox, what do the "Lion" and "Cow" symbolize?'
+      hi: 'कबीर साहेब के अनुसार "बरसे कंबल भींजे पानी" का वास्तविक आध्यात्मिक अर्थ क्या है?',
+      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਅਨੁਸਾਰ "ਬਰਸੇ ਕੰਬਲ ਭੀਂਜੇ ਪਾਣੀ" ਦਾ ਅਸਲ ਅਧਿਆਤਮਕ ਅਰਥ ਕੀ ਹੈ?',
+      en: 'According to Satguru Kabir, what is the true spiritual meaning of "The blanket rains and water gets wet"?',
     },
     options: {
-      hi: ['ज्ञान और इंद्रियाँ', 'राजा और प्रजा', 'आकाश और पाताल', 'गुरु और शिष्य'],
-      pb: ['ਗਿਆਨ ਅਤੇ ਇੰਦਰੀਆਂ', 'ਰਾਜਾ ਅਤੇ ਪ੍ਰਜਾ', 'ਆਕਾਸ਼ ਅਤੇ ਪਾਤਾਲ', 'ਗੁਰੂ ਅਤੇ ਸਿੱਖ'],
-      en: ['Wisdom and Senses', 'King and Subjects', 'Sky and Netherworld', 'Guru and Disciple']
+      hi: [
+        'परमात्मा की कृपा-वर्षा (कंबल) से जीव का मन रूपी जल आनंद से भीग जाता है',
+        'ऊनी कंबल से बरसात का पानी रोकने का उपाय',
+        'जंगल में बारिश होने से नदियों में बाढ़ आ जाना',
+        'मछलियों का आकाश में उड़कर तैरना',
+      ],
+      pb: [
+        'ਪਰਮਾਤਮਾ ਦੀ ਕਿਰਪਾ (ਕੰਬਲ) ਨਾਲ ਜੀਵ ਦਾ ਮਨ ਰੂਪੀ ਜਲ ਆਨੰਦ ਨਾਲ ਭਿੱਜ ਜਾਂਦਾ ਹੈ',
+        'ਮੀਂਹ ਰੋਕਣ ਲਈ ਕੰਬਲ ਦੀ ਵਰਤੋਂ',
+        'ਜੰਗਲ ਵਿੱਚ ਮੀਂਹ ਕਾਰਨ ਹੜ੍ਹ ਆਉਣਾ',
+        'ਮੱਛੀਆਂ ਦਾ ਆਕਾਸ਼ ਵਿੱਚ ਉੱਡਣਾ',
+      ],
+      en: [
+        'By the rain of Divine Grace (blanket), the soul-mind (water) is soaked in spiritual bliss',
+        'Using woollen blankets to block heavy rain',
+        'Flooding of rivers inside a dense forest',
+        'Fishes learning to fly in the clouds',
+      ],
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सिंह और गाय का योग', pb: 'ਸਿੰਘ ਅਤੇ ਗਾਂ ਦਾ ਯੋਗ', en: 'Union of Lion and Cow' },
+      headline: { hi: 'ब्रह्मज्ञान द्वारा इंद्रिय-विजय का महात्म्य', pb: 'ਬ੍ਰਹਮਗਿਆਨ ਦੁਆਰਾ ਇੰਦਰੀਆਂ ਤੇ ਜਿੱਤ', en: 'Mastery over Senses via Self-Knowledge' },
       deepMeaning: {
-        hi: 'सिंह ज्ञान/विवेक का प्रतीक है और गाय हमारी इंद्रियों की। जब ज्ञान जाग्रत होता है, तो वह चंचल इंद्रियों को अपने वश में कर लेता है।',
-        pb: 'ਸਿੰਘ ਗਿਆਨ ਦਾ ਅਤੇ ਗਾਂ ਇੰਦਰੀਆਂ ਦਾ ਪ੍ਰਤੀਕ ਹੈ। ਗਿਆਨ ਜਾਗਰੂਕ ਹੋਣ ਤੇ ਇੰਦਰੀਆਂ ਵਸ਼ ਵਿੱਚ ਹੋ ਜਾਂਦੀਆਂ ਹਨ।',
-        en: 'Lion symbolizes wisdom and cow the senses. When wisdom awakens, it subjugates the fickle senses.'
+        hi: 'यहाँ "पूत" आत्मा है जो माया ("माई") से पहले से विद्यमान है। जब ज्ञान रूपी सिंह मन रूपी गाय को वश में कर लेता है, तब परमात्मा की कृपा रूपी कंबल की वर्षा से जीव रूपी जल भीगकर तर हो जाता है।',
+        pb: 'ਇੱਥੇ "ਪੂਤ" ਆਤਮਾ ਹੈ ਜੋ ਮਾਇਆ ("ਮਾਈ") ਤੋਂ ਪਹਿਲਾਂ ਮੌਜੂਦ ਹੈ। ਜਦੋਂ ਗਿਆਨ ਦਾ ਸਿੰਘ ਮਨ ਰੂਪੀ ਗਾਂ ਨੂੰ ਵੱਸ ਕਰਦਾ ਹੈ, ਤਦ ਕਿਰਪਾ ਨਾਲ ਮਨ ਭਿੱਜ ਜਾਂਦਾ ਹੈ।',
+        en: 'Here "Son" is the eternal Soul existing before Maya ("Mother"). When Knowledge (Lion) subdues the senses (Cow), Divine Grace (Blanket) drenches the heart in bliss.',
       },
       kabirPhilosophy: {
-        hi: 'गुरु की कृपा (कंबल) बरसने पर संसारी जीव ज्ञान के रंग में भीग जाता है।',
-        pb: 'ਗੁਰੂ ਦੀ ਕਿਰਪਾ (ਕੰਬਲ) ਬਰਸਣ ਤੇ ਸੰਸਾਰੀ ਜੀਵ ਗਿਆਨ ਦੇ ਰੰਗ ਵਿੱਚ ਭਿੱਜ ਜਾਂਦਾ ਹੈ।',
-        en: 'When guru\'s grace rains, the worldly soul is drenched in the colors of divine wisdom.'
+        hi: 'संत वही ज्ञानी है जो संसार के उल्टे प्रवाह (माया मोह) से हटकर अंतर्मुखी सत्य में स्थित हो जाता है।',
+        pb: 'ਸੰਤ ਉਹੀ ਗਿਆਨੀ ਹੈ ਜੋ ਸੰਸਾਰ ਦੇ ਉਲਟੇ ਵਹਾਅ ਤੋਂ ਹਟ ਕੇ ਅੰਤਰਮੁਖੀ ਸੱਚ ਵਿੱਚ ਸਥਿਰ ਹੋ ਜਾਂਦਾ ਹੈ।',
+        en: 'The true mystic is one who reverses worldly outward flows into inner stillness.',
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: {
+        hi: 'कबीर उलटबांसी के प्रथम और सर्वाधिक प्रसिद्ध पद के रूप में यह अज्ञान से ज्ञान की ओर उलटने की घोषणा करता है।',
+        pb: 'ਉਲਟਬਾਂਸੀ ਦਾ ਇਹ ਸਭ ਤੋਂ ਪ੍ਰਸਿੱਧ ਪਦ ਅਗਿਆਨ ਤੋਂ ਗਿਆਨ ਵੱਲ ਮੁੜਨ ਦਾ ਐਲਾਨ ਹੈ।',
+        en: 'As the quintessential Ulatvasi verse, it announces the reversal from ignorance to illumination.',
+      },
     },
-    wisdomPoints: 15
+    wisdomPoints: 100,
   },
   {
     id: 'ub-2',
     number: 2,
-    realm: 'antaryog',
-    realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Yogic' },
-    title: { hi: '2. चींटी के मुख में हाथी', pb: '2. ਚੀਂਟੀ ਦੇ ਮੁੱਖ ਵਿੱਚ ਹਾਥੀ', en: '2. Elephant in Ant\'s Mouth' },
+    realm: 'kautuhal',
+    realmTitle: { hi: 'कौतूहल (Curiosity)', pb: 'ਕੌਤਕ (Curiosity)', en: 'Curiosity' },
+    title: { hi: '2. नदिया डूबी लोटा, मछली चढ़ी खजूर', pb: '2. ਨਦੀਆ ਡੂਬੀ ਲੋਟਾ, ਮੱਛੀ ਚੜ੍ਹੀ ਖਜੂਰ', en: '2. River Drowns in Pot, Fish Climbs Palm' },
     verse: {
-      hi: '"धरती उलटि अकासै जाय, चिउंटी के मुख हस्ति समाय। बिना पवन सो पर्वत उड़े, जीव जन्तु सब वृक्षा चढ़े॥"',
-      pb: '"ਧਰਤੀ ਉਲਟਿ ਅਕਾਸੈ ਜਾਇ, ਚਿਉਂਟੀ ਕੇ ਮੁੱਖ ਹਸਤੀ ਸਮਾਇ।..."',
-      en: '"Earth turns upward to the sky, elephant fits in ant\'s mouth. Mountains fly without wind, all creatures climb trees."'
+      hi: '"एक अचम्भा देखा रे भाई, मरे बैल कूं धरी उठाई। पानी के बीच अगनि जलाई, बिन बादर झड़ लागी भाई। नदिया डूबी लोटा माहीं, मछली चढ़ी खजूरा। कहे कबीर सुनो रे संतो, बिन जल भरिया पूरा॥"',
+      pb: '"ਇਕ ਅਚੰਭਾ ਦੇਖਿਆ ਰੇ ਭਾਈ, ਮਰੇ ਬੈਲ ਕੂੰ ਧਰੀ ਉਠਾਈ। ਪਾਣੀ ਕੇ ਬੀਚ ਅਗਨਿ ਜਲਾਈ... ਨਦੀਆ ਡੂਬੀ ਲੋਟਾ ਮਾਹੀਂ, ਮੱਛੀ ਚੜ੍ਹੀ ਖਜੂਰਾ॥"',
+      en: '"Saw a wonder, oh brother: dead ox lifted earth, fire lit inside water, river drowned inside a tiny pot, fish climbed palm tree..."',
     },
     literalParadox: {
-      hi: 'धरती उलटकर आकाश में जा रही है और चींटी के मुंह में हाथी समा रहा है।',
-      pb: 'ਧਰਤੀ ਉਲਟ ਕੇ ਆਕਾਸ਼ ਵਿੱਚ ਜਾ ਰਹੀ ਹੈ ਅਤੇ ਚੀਂਟੀ ਦੇ ਮੁੱਖ ਵਿੱਚ ਹਾਥੀ ਸਮਾ ਰਿਹਾ ਹੈ।',
-      en: 'Earth turns upside down into the sky and an elephant fits inside an ant\'s mouth.'
+      hi: 'एक छोटे से लोटे में पूरी विशाल नदी डूब गई, और जल की मछली ऊँचे खजूर के पेड़ पर चढ़ गई।',
+      pb: 'ਇੱਕ ਛੋਟੇ ਜਿਹੇ ਲੋਟੇ ਵਿੱਚ ਪੂਰੀ ਨਦੀ ਡੁੱਬ ਗਈ ਅਤੇ ਮੱਛੀ ਖਜੂਰ ਦੇ ਦਰੱਖਤ ਉੱਤੇ ਚੜ੍ਹ ਗਈ।',
+      en: 'An entire river drowned inside a small pot, and a fish climbed up a date palm tree.',
     },
     clueHint: {
-      hi: 'चींटी सूक्ष्म आत्मा या विनम्रता है, और हाथी विशाल अहंकार है।',
-      pb: 'ਚੀਂਟੀ ਸੂਖਮ ਆਤਮਾ ਜਾਂ ਨਿਮਰਤਾ ਹੈ, ਅਤੇ ਹਾਥੀ ਵਿਸ਼ਾਲ ਹੰਕਾਰ ਹੈ।',
-      en: 'Ant is the subtle soul or humility, while elephant is colossal ego.'
+      hi: 'लोटा मनुष्य का सीमित शरीर (घट) है और नदी अनंत मन की कामनाएं। खजूर ऊँचा शिखर (सुषुम्ना/सहस्रार) है।',
+      pb: 'ਲੋਟਾ ਮਨੁੱਖ ਦਾ ਸਰੀਰ ਹੈ ਅਤੇ ਨਦੀ ਮਨ ਦੀਆਂ ਲਹਿਰਾਂ। ਖਜੂਰ ਉੱਚਾ ਅਧਿਆਤਮਕ ਸਿਖਰ ਹੈ।',
+      en: 'Pot is the finite human body, River is infinite mind desires, and Palm tree is the highest spiritual summit.',
     },
     symbols: [
-      { symbol: 'चींटी (Ant)', meaning: { hi: 'सूक्ष्म आत्मा / विनम्रता', pb: 'ਸੂਖਮ ਆਤਮਾ', en: 'Subtle Soul / Humility' } },
-      { symbol: 'हाथी (Elephant)', meaning: { hi: 'विशाल अहंकार', pb: 'ਵਿਸ਼ਾਲ ਹੰਕਾਰ', en: 'Colossal Ego' } },
-      { symbol: 'धरती (Earth)', meaning: { hi: 'मूलाधार चक्र', pb: 'ਮੂਲਾਧਾਰ ਚੱਕਰ', en: 'Muladhar Chakra' } }
+      { symbol: 'लोटा (Small Pot)', meaning: { hi: 'सीमित मानवीय काया (पिंड/शरीर)', pb: 'ਮਨੁੱਖੀ ਸਰੀਰ / ਹਿਰਦਾ ਘਟ', en: 'Human Body / Heart Vessel' } },
+      { symbol: 'नदिया (River)', meaning: { hi: 'संसार सागर व अथाह विचार-प्रवाह', pb: 'ਸੰਸਾਰ ਸਾਗਰ / ਮਨ ਦੀਆਂ ਲਹਿਰਾਂ', en: 'Ocean of Thoughts & World' } },
+      { symbol: 'मछली (Fish)', meaning: { hi: 'प्राण वायु / सुरति (चेतना)', pb: 'ਪ੍ਰਾਣ ਵਾਯੂ / ਸੁਰਤਿ', en: 'Vital Life Force / Consciousness' } },
+      { symbol: 'खजूर (Palm Tree)', meaning: { hi: 'गगन मंडल / ब्रह्मरंध्र का ऊँचा शिखर', pb: 'ਗਗਨ ਮੰਡਲ / ਦਸਮ ਦੁਆਰ', en: 'Crown Center / Tenth Gate' } },
     ],
     question: {
-      hi: 'चींटी और हाथी के इस प्रतीक का आध्यात्मिक अर्थ क्या है?',
-      pb: 'ਚੀਂਟੀ ਅਤੇ ਹਾਥੀ ਦੇ ਇਸ ਪ੍ਰਤੀਕ ਦਾ ਆਧਿਆਤਮਿਕ ਅਰਥ ਕੀ ਹੈ?',
-      en: 'What is the spiritual meaning of the ant and elephant symbol?'
+      hi: '"मछली चढ़ी खजूरा" में खजूर के पेड़ पर चढ़ने वाली मछली किस आध्यात्मिक अनुभव का प्रतीक है?',
+      pb: '"ਮੱਛੀ ਚੜ੍ਹੀ ਖਜੂਰਾ" ਵਿੱਚ ਮੱਛੀ ਕਿਸ ਅਧਿਆਤਮਕ ਅਨੁਭਵ ਦਾ ਪ੍ਰਤੀਕ ਹੈ?',
+      en: 'In "Fish climbs the palm tree", what spiritual experience does the fish signify?',
     },
     options: {
-      hi: ['आत्मा द्वारा अहंकार का नाश', 'जानवरों की दौड़', 'भौतिक भूगोल', 'मौसम परिवर्तन'],
-      pb: ['ਆਤਮਾ ਦੁਆਰਾ ਹੰਕਾਰ ਦਾ ਨਾਸ਼', 'ਜਾਨਵਰਾਂ ਦੀ ਦੌੜ', 'ਭੌਤਿਕ ਭੂਗੋਲ', 'ਮੌਸਮ ਪਰਿਵर्तन'],
-      en: ['Soul overcoming ego', 'Animal race', 'Physical geography', 'Weather change']
+      hi: [
+        'साधक की चेतना (सुरति) का इंद्रियों के प्रवाह से ऊपर उठकर ब्रह्मरंध्र (सहस्रार) में स्थिर होना',
+        'मछली का प्यास लगने पर पेड़ से फल तोड़ना',
+        'समुद्र में बहुत ऊँची सुनामी लहर आना',
+        'मिट्टी के बर्तन में पानी उबालना',
+      ],
+      pb: [
+        'ਸਾਧਕ ਦੀ ਸੁਰਤਿ ਦਾ ਇੰਦਰੀਆਂ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਸਥਿਰ ਹੋਣਾ',
+        'ਮੱਛੀ ਦਾ ਦਰੱਖਤ ਤੋਂ ਫਲ ਤੋੜਨਾ',
+        'ਸਮੁੰਦਰ ਵਿੱਚ ਉੱਚੀ ਲਹਿਰ ਆਉਣਾ',
+        'ਮਿੱਟੀ ਦੇ ਭਾਂਡੇ ਵਿੱਚ ਪਾਣੀ ਗਰਮ ਕਰਨਾ',
+      ],
+      en: [
+        'Ascent of consciousness (Surati) rising above senses to stabilize in the Tenth Gate (Sahasrara)',
+        'A fish climbing up to eat date fruits',
+        'A massive tsunami wave in the ocean',
+        'Boiling river water in a clay vessel',
+      ],
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'अहंकार का विसर्जन', pb: 'ਹੰਕਾਰ ਦਾ ਵਿਸਰਜਨ', en: 'Dissolution of Ego' },
+      headline: { hi: 'पिंड में ब्रह्मांड और प्राण-योग', pb: 'ਸਰੀਰ ਵਿੱਚ ਬ੍ਰਹਿਮੰਡ ਅਤੇ ਪ੍ਰਾਣ ਯੋਗ', en: 'Cosmos within Body & Ascent of Consciousness' },
       deepMeaning: {
-        hi: 'जब आत्मा जाग्रत होती है, तो वह विनम्रता (चींटी) के बल पर बड़े से बड़े अहंकार (हाथी) को निगल जाती है।',
-        pb: 'ਜਦੋਂ ਆਤਮਾ ਜਾਗਰੂਕ ਹੁੰਦੀ ਹੈ, ਤਾਂ ਉਹ ਨਿਮਰਤਾ ਨਾਲ ਵੱਡੇ ਤੋਂ ਵੱਡੇ ਹੰਕਾਰ ਨੂੰ ਨਿਗਲ ਜਾਂਦੀ ਹੈ।',
-        en: 'When soul awakens, through humility (ant) it devours colossal ego (elephant).'
+        hi: 'मन की विराट नदी जब आत्म-संयम के छोटे घट (लोटे) में समाहित हो जाती है, तब साधक की सुरति रूपी मछली अधोगामी इंद्रियों से ऊपर उठकर मेरुदंड के शिखर (खजूर) पर पहुँच जाती है।',
+        pb: 'ਜਦੋਂ ਮਨ ਦੀ ਵਿਸ਼ਾਲ ਨਦੀ ਸਰੀਰ ਰੂਪੀ ਛੋਟੇ ਘਟ ਵਿੱਚ ਸਿਮਟ ਜਾਂਦੀ ਹੈ, ਤਦ ਸੁਰਤਿ ਰੂਪੀ ਮੱਛੀ ਉੱਚੇ ਦਸਮ ਦੁਆਰ (ਖਜੂਰ) ਤੇ ਜਾ ਟਿਕਦੀ ਹੈ।',
+        en: 'When the vast river of thoughts dissolves into the quiet inner heart (pot), consciousness ascends the spinal axis to the highest crown summit (palm tree).',
       },
       kabirPhilosophy: {
-        hi: 'ध्यान मूलाधार से सहस्रार की ओर मुड़ता है।',
-        pb: 'ਧਿਆਨ ਮੂਲਾਧਾਰ ਤੋਂ ਸਹਸ੍ਰਾਰ ਵੱਲ ਮੁੜਦਾ ਹੈ।',
-        en: 'Meditation turns from Muladhar to Sahasrara chakra.'
+        hi: 'सारे ब्रह्मांड का रहस्य मनुष्य के इसी घट के भीतर निहित है; इसे बाहर खोजने की आवश्यकता नहीं।',
+        pb: 'ਸਾਰੇ ਬ੍ਰਹਿਮੰਡ ਦਾ ਭੇਦ ਇਸੇ ਸਰੀਰ ਅੰਦਰ ਹੈ; ਬਾਹਰ ਭਟਕਣ ਦੀ ਲੋੜ ਨਹੀਂ।',
+        en: 'The mystery of the entire cosmos resides inside this very human body.',
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: {
+        hi: 'यह पद कुंडलिनी, सुरति-शब्द योग और आंतरिक नाद के गूढ़ अनुभवों की ओर संकेत करता है।',
+        pb: 'ਇਹ ਪਦ ਸੁਰਤਿ-ਸ਼ਬਦ ਯੋਗ ਅਤੇ ਅੰਦਰੂਨੀ ਨਾਦ ਦੇ ਗੂੜ੍ਹ ਅਨੁਭਵਾਂ ਦਾ ਸੰਕੇਤ ਹੈ।',
+        en: 'This verse points directly to the inner yoga of consciousness ascending beyond sensory gravity.',
+      },
     },
-    wisdomPoints: 15
+    wisdomPoints: 100,
   },
   {
     id: 'ub-3',
     number: 3,
-    realm: 'shunya-samadhi',
-    realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
-    title: { hi: '3. सूखे सरोवर में हिलोरें', pb: '3. ਸੁੱਕੇ ਸਰਵਰ ਵਿੱਚ ਹਿਲੋਰੇ', en: '3. Waves in Dry Lake' },
+    realm: 'kautuhal',
+    realmTitle: { hi: 'कौतूहल (Curiosity)', pb: 'ਕੌਤਕ (Curiosity)', en: 'Curiosity' },
+    title: { hi: '3. बिन पग चले, बिन कर नाचे', pb: '3. ਬਿਨ ਪਗ ਚਲੇ, ਬਿਨ ਕਰ ਨਾਚੇ', en: '3. Walks Without Feet, Dances Without Hands' },
     verse: {
-      hi: '"सूखे सरवर उठे हिलोरा, बिनु जल तक वा करत किलोरा। बैठा पंडित पढ़े कुरान, बिन देखे का करत बखान॥"',
-      pb: '"ਸੁੱਕੇ ਸਰਵਰ ਉੱਠੇ ਹਿਲੋਰਾ, ਬਿਨੁ ਜਲ ਤਕ ਵਾ ਕਰਤ ਕਿਲੋਰਾ।..."',
-      en: '"Waves rise in a dry lake, playing without water. Scholar sits reading scripture, explaining without seeing."'
+      hi: '"बिन पग चलै, सुनै बिन काना। कर बिनु करम करै बिधि नाना॥ आनन रहित सकल रस भोगी। बिनु बाणी बकता बड़ जोगी॥"',
+      pb: '"ਬਿਨ ਪਗ ਚਲੈ, ਸੁਨੈ ਬਿਨ ਕਾਨਾ। ਕਰ ਬਿਨੁ ਕਰਮ ਕਰੈ ਬਿਧਿ ਨਾਨਾ॥"',
+      en: '"Walks without feet, hears without ears, performs countless deeds without hands..."',
     },
     literalParadox: {
-      hi: 'सूखे तालाब में पानी की लहरें उठ रही हैं और बिना जल के जीव आनंद ले रहे हैं।',
-      pb: 'ਸੁੱਕੇ ਤਾਲਾਬ ਵਿੱਚ ਪਾਣੀ ਦੀਆਂ ਲਹਿਰਾਂ ਉੱਠ ਰਹੀਆਂ ਹਨ।',
-      en: 'Water waves arise in a dry pond and beings enjoy without water.'
+      hi: 'पैरों के बिना चलता है, कानों के बिना सुनता है, बिना हाथों के कार्य करता है और बिना मुँह के श्रेष्ठ वक्ता है।',
+      pb: 'ਪੈਰਾਂ ਤੋਂ ਬਿਨਾਂ ਤੁਰਦਾ ਹੈ, ਕੰਨਾਂ ਤੋਂ ਬਿਨਾਂ ਸੁਣਦਾ ਹੈ ਅਤੇ ਹੱਥਾਂ ਤੋਂ ਬਿਨਾਂ ਕੰਮ ਕਰਦਾ ਹੈ।',
+      en: 'Moves without feet, hears without ears, works without hands and speaks without mouth.',
     },
     clueHint: {
-      hi: 'सूखा सरोवर संसार से विरक्त मन का प्रतीक है।',
-      pb: 'ਸੁੱਕਾ ਸਰਵਰ ਸੰਸਾਰ ਤੋਂ ਵਿਰਕਤ ਮਨ ਦਾ ਪ੍ਰਤੀਕ ਹੈ।',
-      en: 'Dry lake symbolizes a mind detached from worldly desires.'
+      hi: 'यह निराकार परम सत्ता (सत्यपुरुष/सतनाम) का वर्णन है जो बिना भौतिक इंद्रियों के सर्वव्यापी है।',
+      pb: 'ਇਹ ਨਿਰਾਕਾਰ ਪਰਮ ਸੱਤਾ (ਸਤਪੁਰਸ਼) ਦਾ ਵਰਣਨ ਹੈ ਜੋ ਬਿਨਾਂ ਸਰੀਰਕ ਅੰਗਾਂ ਦੇ ਸਰਬ-ਵਿਆਪਕ ਹੈ।',
+      en: 'Describes the Formless Supreme Being who is omnipresent beyond physical organs.',
     },
     symbols: [
-      { symbol: 'सूखा सरवर (Dry Lake)', meaning: { hi: 'विरक्त मन', pb: 'ਵਿਰਕਤ ਮਨ', en: 'Detached Mind' } },
-      { symbol: 'हिलोरें (Waves)', meaning: { hi: 'भक्ति और आत्मानंद', pb: 'ਭਗਤੀ ਅਤੇ ਆਤਮਾਨੰਦ', en: 'Waves of Devotional Bliss' } }
+      { symbol: 'बिन पग / बिन काना (Without Feet / Ears)', meaning: { hi: 'निराकार, सर्वव्यापी परमात्मा', pb: 'ਨਿਰਾਕਾਰ ਪਰਮਾਤਮਾ', en: 'Formless Omnipresent God' } },
+      { symbol: 'बिनु बाणी बकता (Speaker without Voice)', meaning: { hi: 'अनाहत नाद / मौन अंतर्ज्ञान', pb: 'ਅਨਹਦ ਨਾਦ / ਅੰਤਰ-ਗਿਆਨ', en: 'Unstruck Sound / Silent Wisdom' } },
     ],
     question: {
-      hi: '"सूखा सरोवर" किसे कहा गया है?',
-      pb: '"ਸੁੱਕਾ ਸਰਵਰ" ਕਿਸ ਨੂੰ ਕਿਹਾ ਗਿਆ ਹੈ?',
-      en: 'What is referred to as the "Dry Lake"?'
+      hi: '"बिन पग चलै, सुनै बिन काना" पद किस परम सत्ता की ओर संकेत करता है?',
+      pb: '"ਬਿਨ ਪਗ ਚਲੈ, ਸੁਨੈ ਬਿਨ ਕਾਨਾ" ਪਦ ਕਿਸ ਪਰਮ ਸੱਤਾ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ?',
+      en: 'To which Supreme Reality does "Walks without feet, hears without ears" refer?',
     },
     options: {
-      hi: ['वैरागी एवं विरक्त मन', 'रेगिस्तान', 'खाली बर्तन', 'बंद कमरा'],
-      pb: ['ਵਿਰਕਤ ਮਨ', 'ਰੇਗਿਸਤਾਨ', 'ਖਾਲੀ ਭਾਂਡਾ', 'ਬੰਦ ਕਮਰਾ'],
-      en: ['Detached mind', 'Desert', 'Empty pot', 'Closed room']
+      hi: [
+        'निराकार, इंद्रियातीत परम सत्य (सत्यपुरुष / निर्गुण राम)',
+        'कोई अदृश्य जादुई व्यक्ति',
+        'यांत्रिक रोबोट या मशीन',
+        'स्वप्न में दिखाई देने वाली छाया',
+      ],
+      pb: [
+        'ਨਿਰਾਕਾਰ, ਇੰਦਰੀਆਂ ਤੋਂ ਪਰੇ ਪਰਮ ਸੱਚ (ਸਤਪੁਰਸ਼ / ਨਿਰਗੁਣ ਰਾਮ)',
+        'ਕੋਈ ਅਦਿੱਖ ਜਾਦੂਗਰ',
+        'ਮਸ਼ੀਨੀ ਰੋਬੋਟ',
+        'ਸੁਪਨੇ ਦਾ ਪਰਛਾਵਾਂ',
+      ],
+      en: [
+        'The Formless, Transcendent Absolute Truth (Nirguna Satpurush)',
+        'An invisible magician',
+        'A mechanical machine',
+        'A shadow seen in dreams',
+      ],
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'वैराग्य का आनंद', pb: 'ਵੈਰਾਗ ਦਾ ਆਨੰਦ', en: 'Bliss of Detachment' },
+      headline: { hi: 'निराकार सत्ता का सर्वव्यापी स्वरूप', pb: 'ਨਿਰਾਕਾਰ ਸੱਤਾ ਦਾ ਸਰਬ-ਵਿਆਪਕ ਸਰੂਪ', en: 'Omnipresence of the Formless Absolute' },
       deepMeaning: {
-        hi: 'जब मन बाहरी इच्छाओं से सूख जाता है (वैराग्य), तब उसके भीतर भक्ति और आत्मानंद की अद्भुत हिलोरें उठने लगती हैं।',
-        pb: 'ਜਦੋਂ ਮਨ ਬਾਹਰੀ ਇੱਛਾਵਾਂ ਤੋਂ ਸੁੱਕ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਭਗਤੀ ਅਤੇ ਆਨੰਦ ਦੀਆਂ ਲਹਿਰਾਂ ਉੱਠਦੀਆਂ ਹਨ।',
-        en: 'When mind dries of outer desires, wonderful waves of divine bliss arise within.'
+        hi: 'इंद्रियाँ सीमित हैं और भौतिक शरीर नश्वर है, किंतु परमात्मा निराकार होते हुए भी प्रत्येक कण में गतिशील और चैतन्य है। उसे आँखों से नहीं, केवल आत्मिक बोध से जाना जाता है।',
+        pb: 'ਇੰਦਰੀਆਂ ਸੀਮਤ ਹਨ ਪਰ ਪਰਮਾਤਮਾ ਨਿਰਾਕਾਰ ਹੁੰਦਿਆਂ ਵੀ ਹਰ ਕਣ ਵਿੱਚ ਮੌਜੂਦ ਅਤੇ ਚੇਤੰਨ ਹੈ।',
+        en: 'Senses are finite, whereas the Supreme Spirit transcends physical limitation while remaining fully aware in every atom.',
       },
       kabirPhilosophy: {
-        hi: 'किताबी ज्ञान केवल ढोंग है, वास्तविक अनुभव अंतर्मुखी साधना से होता है।',
-        pb: 'ਕਿਤਾਬੀ ਗਿਆਨ ਕੇਵਲ ਦਿਖਾਵਾ ਹੈ।',
-        en: 'Bookish scholarship without inner realization is mere hypocrisy.'
+        hi: 'जहाँ शब्द, मन और इंद्रियाँ थक जाती हैं, वहाँ से सत्यनाम का निराकार अनुभव आरंभ होता है।',
+        pb: 'ਜਿੱਥੇ ਸ਼ਬਦ ਅਤੇ ਇੰਦਰੀਆਂ ਰੁਕ ਜਾਂਦੀਆਂ ਹਨ, ਉੱਥੋਂ ਸਤਿਨਾਮ ਦਾ ਨਿਰਾਕਾਰ ਅਨੁਭਵ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ।',
+        en: 'Where speech and senses stop, the formless experience of Satyanaam begins.',
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: {
+        hi: 'यह पद निर्गुण भक्ति और अद्वैत दर्शन का सुंदर उदाहरण है।',
+        pb: 'ਇਹ ਪਦ ਨਿਰਗੁਣ ਭਗਤੀ ਅਤੇ ਅਦ੍ਵੈਤ ਦਰਸ਼ਨ ਦੀ ਸੁੰਦਰ ਮਿਸਾਲ ਹੈ।',
+        en: 'This verse exemplifies Nirguna Bhakti and non-dual realization.',
+      },
     },
-    wisdomPoints: 15
+    wisdomPoints: 100,
   },
-  ...ULATVASI_BATCH_4_TO_30,
-  ...ULATVASI_BATCH_31_TO_45,
-  ...ULATVASI_BATCH_46_TO_60,
-  ...ULATVASI_BATCH_61_TO_70,
-  ...ULATVASI_BATCH_71_TO_80,
-  ...ULATVASI_BATCH_81_TO_90,
-  ...ULATVASI_BATCH_91_TO_100,
-  ...ULATVASI_BATCH_101_TO_110,
-  ...ULATVASI_BATCH_111_TO_120,
-  ...ULATVASI_BATCH_121_TO_130,
-  ...ULATVASI_BATCH_131_TO_140,
-  ...ULATVASI_BATCH_141_TO_150,
-  ...ULATVASI_BATCH_151_TO_160,
-  ...ULATVASI_BATCH_161_TO_170,
-  ...ULATVASI_BATCH_171_TO_180,
-  ...ULATVASI_BATCH_181_TO_190,
-  ...ULATVASI_BATCH_191_TO_200,
-  ...ULATVASI_BATCH_201_TO_210,
-  ...ULATVASI_BATCH_211_TO_220,
-  ...ULATVASI_BATCH_221_TO_230,
-  ...ULATVASI_BATCH_231_TO_240,
-  ...ULATVASI_BATCH_241_TO_250
 ];
 
+type BatchLoader = () => Promise<UlatvasiQuestion[]>;
 
-export interface LeaderboardEntry {
-  id: string;
-  name: string;
-  score: number;
-  solvedCount: number;
-  streak: number;
-  accuracy: number;
-  title: string;
-  badge: string;
-  timestamp: number;
-  isCurrentUser?: boolean;
+const BATCH_LOADERS: BatchLoader[] = [
+  () => import('./ulatvasiBatch4To30').then((m) => m.ULATVASI_BATCH_4_TO_30),
+  () => import('./ulatvasiBatch31To45').then((m) => m.ULATVASI_BATCH_31_TO_45),
+  () => import('./ulatvasiBatch46To60').then((m) => m.ULATVASI_BATCH_46_TO_60),
+  () => import('./ulatvasiBatch61To70').then((m) => m.ULATVASI_BATCH_61_TO_70),
+  () => import('./ulatvasiBatch71To80').then((m) => m.ULATVASI_BATCH_71_TO_80),
+  () => import('./ulatvasiBatch81To90').then((m) => m.ULATVASI_BATCH_81_TO_90),
+  () => import('./ulatvasiBatch91To100').then((m) => m.ULATVASI_BATCH_91_TO_100),
+  () => import('./ulatvasiBatch101To110').then((m) => m.ULATVASI_BATCH_101_TO_110),
+  () => import('./ulatvasiBatch111To120').then((m) => m.ULATVASI_BATCH_111_TO_120),
+  () => import('./ulatvasiBatch121To130').then((m) => m.ULATVASI_BATCH_121_TO_130),
+  () => import('./ulatvasiBatch131To140').then((m) => m.ULATVASI_BATCH_131_TO_140),
+  () => import('./ulatvasiBatch141To150').then((m) => m.ULATVASI_BATCH_141_TO_150),
+  () => import('./ulatvasiBatch151To160').then((m) => m.ULATVASI_BATCH_151_TO_160),
+  () => import('./ulatvasiBatch161To170').then((m) => m.ULATVASI_BATCH_161_TO_170),
+  () => import('./ulatvasiBatch171To180').then((m) => m.ULATVASI_BATCH_171_TO_180),
+  () => import('./ulatvasiBatch181To190').then((m) => m.ULATVASI_BATCH_181_TO_190),
+  () => import('./ulatvasiBatch191To200').then((m) => m.ULATVASI_BATCH_191_TO_200),
+  () => import('./ulatvasiBatch201To210').then((m) => m.ULATVASI_BATCH_201_TO_210),
+  () => import('./ulatvasiBatch211To220').then((m) => m.ULATVASI_BATCH_211_TO_220),
+  () => import('./ulatvasiBatch221To230').then((m) => m.ULATVASI_BATCH_221_TO_230),
+  () => import('./ulatvasiBatch231To240').then((m) => m.ULATVASI_BATCH_231_TO_240),
+  () => import('./ulatvasiBatch241To250').then((m) => m.ULATVASI_BATCH_241_TO_250),
+];
+
+const loadedBatchesMap = new Map<number, UlatvasiQuestion[]>();
+let allUlatvasiPromise: Promise<UlatvasiQuestion[]> | null = null;
+
+export async function loadUlatvasiBatch(batchIndex: number): Promise<UlatvasiQuestion[]> {
+  if (loadedBatchesMap.has(batchIndex)) {
+    return loadedBatchesMap.get(batchIndex)!;
+  }
+  const loader = BATCH_LOADERS[batchIndex];
+  if (!loader) return [];
+  const data = await loader();
+  loadedBatchesMap.set(batchIndex, data);
+  return data;
 }
 
-export const INITIAL_SEEKERS_LEADERBOARD: LeaderboardEntry[] = [
-  {
-    id: 'seeker-1',
-    name: 'परम हंस साधक (Param Hans)',
-    score: 1850,
-    solvedCount: 10,
-    streak: 10,
-    accuracy: 98,
-    title: 'परम तत्वदर्शी (Supreme Mystic)',
-    badge: '👑',
-    timestamp: Date.now() - 3600000 * 2,
+export async function loadAllUlatvasiDatabase(): Promise<UlatvasiQuestion[]> {
+  if (!allUlatvasiPromise) {
+    allUlatvasiPromise = (async () => {
+      const batches = await Promise.all(BATCH_LOADERS.map((_, i) => loadUlatvasiBatch(i)));
+      const full = [...ULATVASI_CORE_QUESTIONS, ...batches.flat()];
+      offlineScriptureCache
+        .cacheOpenedChapter('ulatvasi:core-batch-0', batches[0] || [], 'Ulatvasi Initial Batch')
+        .catch(() => {});
+      return full;
+    })();
   }
-];
+  return allUlatvasiPromise;
+}
 
-export const getUlatvasiRank = (score: number, language: Language = 'hi') => {
-  if (score >= 1500) {
-    return {
-      title: { hi: 'परम तत्वदर्शी', pb: 'ਪਰਮ ਤੱਤਦਰਸ਼ੀ', en: 'Supreme Mystic Master' },
-      badge: '👑',
-      auraColor: '#F59E0B',
-      description: {
-        hi: 'कबीर साहेब की समस्त उलटबांसियों का गूढ़ आध्यात्मिक भेद आपको हृदयंगम हो चुका है। आप सच्चे पारखी हंस हैं।',
-        pb: 'ਤੁਸੀਂ ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਦਾ ਗੂੜ੍ਹ ਭੇਦ ਸਮਝ ਲਿਆ ਹੈ। ਤੁਸੀਂ ਸੱਚੇ ਪਾਰਖੀ ਹੰਸ ਹੋ।',
-        en: 'You have decoded the highest esoteric paradoxes of Satguru Kabir. You stand as a true Illumined Soul.'
-      }
-    };
-  }
-  if (score >= 1000) {
-    return {
-      title: { hi: 'साहेब कृपा पात्र', pb: 'ਸਾਹਿਬ ਕਿਰਪਾ ਪਾਤਰ', en: 'Beloved Disciple' },
-      badge: '🪷',
-      auraColor: '#EC4899',
-      description: {
-        hi: 'आपकी सुरति आंतरिक योग और अनहद रहस्यों को भेदने में सक्षम हो चुकी है। साहेब की कृपा आप पर बरस रही है।',
-        pb: 'ਤੁਹਾਡੀ ਸੁਰਤਿ ਅੰਦਰੂਨੀ ਨਾਦ ਅਤੇ ਭੇਦਾਂ ਨੂੰ ਸਮਝਣ ਦੇ ਯੋਗ ਹੋ ਚੁੱਕੀ ਹੈ।',
-        en: 'Your consciousness has pierced the veil of inner yoga and unstruck sound. Divine grace shines upon you.'
-      }
-    };
-  }
-  if (score >= 600) {
-    return {
-      title: { hi: 'उलटबांसी पारखी', pb: 'ਉਲਟਬਾਂਸੀ ਪਾਰਖੀ', en: 'Paradox Master' },
-      badge: '💎',
-      auraColor: '#8B5CF6',
-      description: {
-        hi: 'माया और आत्मा के द्वंद्व को समझकर आपने अधिकांश पहेलियों के आध्यात्मिक अर्थ खोल लिए हैं।',
-        pb: 'ਮਾਇਆ ਅਤੇ ਆਤਮਾ ਦੇ ਭੇਦ ਨੂੰ ਸਮਝ ਕੇ ਤੁਸੀਂ ਕਈ ਬੁਝਾਰਤਾਂ ਹੱਲ ਕਰ ਲਈਆਂ ਹਨ।',
-        en: 'Discerning spirit from illusion, you have unlocked the esoteric keys of many mystical paradoxes.'
-      }
-    };
-  }
-  if (score >= 300) {
-    return {
-      title: { hi: 'गूढ़ भेदिया', pb: 'ਗੂੜ੍ਹ ਭੇਦੀਆ', en: 'Mystery Decoder' },
-      badge: '🔮',
-      auraColor: '#3B82F6',
-      description: {
-        hi: 'कबीर साहेब की रूपक शैली और प्रतीक विद्या में आपकी गहरी गति बन रही है।',
-        pb: 'ਕਬੀਰ ਸਾਹਿਬ ਦੇ ਰਹੱਸਮਈ ਪ੍ਰਤੀਕਾਂ ਵਿੱਚ ਤੁਹਾਡੀ ਸਮਝ ਵਧ ਰਹੀ ਹੈ।',
-        en: 'Your spiritual intellect is blossoming into the symbolic mysteries and divine allegories of Kabir.'
-      }
-    };
-  }
-  return {
-    title: { hi: 'कौतूहल खोजी', pb: 'ਕੌਤਕ ਖੋਜੀ', en: 'Curious Seeker' },
-    badge: '🌟',
-    auraColor: '#10B981',
-    description: {
-      hi: 'उलटबांसी यात्रा का आरंभ हो चुका है। प्रत्येक पहेली को मन से नहीं, आत्मा के विवेक से परखें।',
-      pb: 'ਸਵਾਧਿਆਏ ਦੀ ਸ਼ੁਰੂਆਤ ਹੋਈ ਹੈ। ਹਰ ਬੁਝਾਰਤ ਨੂੰ ਆਤਮਕ ਵਿਵੇਕ ਨਾਲ ਸਮਝੋ।',
-      en: 'The mystic journey has begun. Decipher each paradox with spiritual intellect rather than logical intellect.'
-    }
-  };
-};
+export const ULATVASI_DATABASE: UlatvasiQuestion[] = ULATVASI_CORE_QUESTIONS;

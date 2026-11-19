@@ -4,66 +4,68 @@
  * (Sakhi Sangrah, Kabir Sagar, Bijak)
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, Suspense, lazy } from 'react';
 import { SpiritualThemeProvider, useAppTheme } from './theme/ThemeContext';
 import { LanguageProvider, useLanguage, getScriptDirection } from './context/LanguageContext';
 import { Layout } from './components/Layout';
 import { DailyPawanSakhi } from './components/DailyPawanSakhi';
-import { SwadhyayReader } from './components/SwadhyayReader';
-import { AkhandPath } from './components/AkhandPath';
-import { MasterGranthLibrary } from './components/MasterGranthLibrary';
+import { SacredLoader } from './components/SacredLoader';
 import { CoreModulesDashboard } from './components/CoreModulesDashboard';
-import { NitnemGutkaReader } from './components/NitnemGutkaReader';
-import { SpiritualDiary } from './components/SpiritualDiary';
-import { SpiritualCalendar } from './components/SpiritualCalendar';
-import { MantraTracker } from './components/MantraTracker';
-import { AudioLibrary } from './components/AudioLibrary';
-import { UniverseMap } from './components/UniverseMap';
-import { AatmaBhushanModule } from './components/AatmaBhushanModule';
-import { KabirParichayFourYugas } from './components/KabirParichayFourYugas';
-import { DeepSearch } from './components/DeepSearch';
-import { MeditationTimer } from './components/MeditationTimer';
-import { CommunityBoard } from './components/CommunityBoard';
-import { AppHealthDiagnostic } from './components/AppHealthDiagnostic';
 import { NityaVaniSettings } from './components/NityaVaniSettings';
-import { SatyanaamDhunPlayer } from './components/SatyanaamDhunPlayer';
-import { SatyaNaamMahaMargdarshika } from './components/SatyaNaamMahaMargdarshika';
-import { SacredAshrams } from './components/SacredAshrams';
-import { AutoCorrectTool } from './components/AutoCorrectTool';
-import { UlatvasiQuiz } from './components/UlatvasiQuiz';
-import { UlatvasiLibrary } from './components/UlatvasiLibrary';
-import { DainikChintan } from './components/DainikChintan';
-import { GuruJiDasSutraView } from './components/GuruJiDasSutraView';
-import { DiscourseEngine } from './components/DiscourseEngine';
 import { RosePetalShower } from './components/RosePetalShower';
 import { SettingsModal } from './components/SettingsModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
 import { SplashScreen } from './components/SplashScreen';
-
 import { NetworkStatusIndicator } from './components/NetworkStatusIndicator';
-
 import { SacredMaryadaModal } from './components/SacredMaryadaModal';
-import { DivineGuidance } from './components/DivineGuidance';
-import { SpiritualDiscipline } from './components/SpiritualDiscipline';
-import { SacredLeelas } from './components/SacredLeelas';
-import { AartiSanctuary } from './components/AartiSanctuary';
-import { ShabdKosha } from './components/ShabdKosha';
-import { SatsangVideoLibrary } from './components/SatsangVideoLibrary';
-import { DailySadhanaGoal } from './components/DailySadhanaGoal';
-import { SpiritualGrowthDashboard } from './components/SpiritualGrowthDashboard';
-import { BhajanRepository } from './components/BhajanRepository';
-import { DamakhedaGranthIndexView } from './components/DamakhedaGranthIndexView';
-import { AcharyaParampara } from './components/AcharyaParampara';
-import { DivineDarshanModule } from './components/DivineDarshanModule';
-import { SggsKabirBaniEngine } from './components/SggsKabirBaniEngine';
-import { NatureWallpaperEngine } from './components/NatureWallpaperEngine';
-import { DailyHukamnamaView } from './components/DailyHukamnamaView';
-import { ChetawaniSaarang } from './components/ChetawaniSaarang';
-import { DohaMemoryTrainer } from './components/DohaMemoryTrainer';
-import { sakhisDatabase, getDailyPawanSakhi } from './data/sakhis';
+import { ErrorBoundary } from './components/ErrorBoundary';
+
+const SwadhyayReader = lazy(() => import('./components/SwadhyayReader').then(m => ({ default: m.SwadhyayReader })));
+const AkhandPath = lazy(() => import('./components/AkhandPath').then(m => ({ default: m.AkhandPath })));
+const MasterGranthLibrary = lazy(() => import('./components/MasterGranthLibrary').then(m => ({ default: m.MasterGranthLibrary })));
+const NitnemGutkaReader = lazy(() => import('./components/NitnemGutkaReader').then(m => ({ default: m.NitnemGutkaReader })));
+const SpiritualDiary = lazy(() => import('./components/SpiritualDiary').then(m => ({ default: m.SpiritualDiary })));
+const SpiritualCalendar = lazy(() => import('./components/SpiritualCalendar').then(m => ({ default: m.SpiritualCalendar })));
+const MantraTracker = lazy(() => import('./components/MantraTracker').then(m => ({ default: m.MantraTracker })));
+const AudioLibrary = lazy(() => import('./components/AudioLibrary').then(m => ({ default: m.AudioLibrary })));
+const UniverseMap = lazy(() => import('./components/UniverseMap').then(m => ({ default: m.UniverseMap })));
+const AatmaBhushanModule = lazy(() => import('./components/AatmaBhushanModule').then(m => ({ default: m.AatmaBhushanModule })));
+const KabirParichayFourYugas = lazy(() => import('./components/KabirParichayFourYugas').then(m => ({ default: m.KabirParichayFourYugas })));
+const DeepSearch = lazy(() => import('./components/DeepSearch').then(m => ({ default: m.DeepSearch })));
+const MeditationTimer = lazy(() => import('./components/MeditationTimer').then(m => ({ default: m.MeditationTimer })));
+const CommunityBoard = lazy(() => import('./components/CommunityBoard').then(m => ({ default: m.CommunityBoard })));
+const AppHealthDiagnostic = lazy(() => import('./components/AppHealthDiagnostic').then(m => ({ default: m.AppHealthDiagnostic })));
+const SatyanaamDhunPlayer = lazy(() => import('./components/SatyanaamDhunPlayer').then(m => ({ default: m.SatyanaamDhunPlayer })));
+const SatyaNaamMahaMargdarshika = lazy(() => import('./components/SatyaNaamMahaMargdarshika').then(m => ({ default: m.SatyaNaamMahaMargdarshika })));
+const SacredAshrams = lazy(() => import('./components/SacredAshrams').then(m => ({ default: m.SacredAshrams })));
+const AutoCorrectTool = lazy(() => import('./components/AutoCorrectTool').then(m => ({ default: m.AutoCorrectTool })));
+const UlatvasiQuiz = lazy(() => import('./components/UlatvasiQuiz').then(m => ({ default: m.UlatvasiQuiz })));
+const UlatvasiLibrary = lazy(() => import('./components/UlatvasiLibrary').then(m => ({ default: m.UlatvasiLibrary })));
+const DainikChintan = lazy(() => import('./components/DainikChintan').then(m => ({ default: m.DainikChintan })));
+const GuruJiDasSutraView = lazy(() => import('./components/GuruJiDasSutraView').then(m => ({ default: m.GuruJiDasSutraView })));
+const DiscourseEngine = lazy(() => import('./components/DiscourseEngine').then(m => ({ default: m.DiscourseEngine })));
+const DivineGuidance = lazy(() => import('./components/DivineGuidance').then(m => ({ default: m.DivineGuidance })));
+const SpiritualDiscipline = lazy(() => import('./components/SpiritualDiscipline').then(m => ({ default: m.SpiritualDiscipline })));
+const SacredLeelas = lazy(() => import('./components/SacredLeelas').then(m => ({ default: m.SacredLeelas })));
+const AartiSanctuary = lazy(() => import('./components/AartiSanctuary').then(m => ({ default: m.AartiSanctuary })));
+const ShabdKosha = lazy(() => import('./components/ShabdKosha').then(m => ({ default: m.ShabdKosha })));
+const SatsangVideoLibrary = lazy(() => import('./components/SatsangVideoLibrary').then(m => ({ default: m.SatsangVideoLibrary })));
+const DailySadhanaGoal = lazy(() => import('./components/DailySadhanaGoal').then(m => ({ default: m.DailySadhanaGoal })));
+const SpiritualGrowthDashboard = lazy(() => import('./components/SpiritualGrowthDashboard').then(m => ({ default: m.SpiritualGrowthDashboard })));
+const BhajanRepository = lazy(() => import('./components/BhajanRepository').then(m => ({ default: m.BhajanRepository })));
+const DamakhedaGranthIndexView = lazy(() => import('./components/DamakhedaGranthIndexView').then(m => ({ default: m.DamakhedaGranthIndexView })));
+const AcharyaParampara = lazy(() => import('./components/AcharyaParampara').then(m => ({ default: m.AcharyaParampara })));
+const DivineDarshanModule = lazy(() => import('./components/DivineDarshanModule').then(m => ({ default: m.DivineDarshanModule })));
+const SggsKabirBaniEngine = lazy(() => import('./components/SggsKabirBaniEngine').then(m => ({ default: m.SggsKabirBaniEngine })));
+const NatureWallpaperEngine = lazy(() => import('./components/NatureWallpaperEngine').then(m => ({ default: m.NatureWallpaperEngine })));
+const DailyHukamnamaView = lazy(() => import('./components/DailyHukamnamaView').then(m => ({ default: m.DailyHukamnamaView })));
+const ChetawaniSaarang = lazy(() => import('./components/ChetawaniSaarang').then(m => ({ default: m.ChetawaniSaarang })));
+const DohaMemoryTrainer = lazy(() => import('./components/DohaMemoryTrainer').then(m => ({ default: m.DohaMemoryTrainer })));
+import { getStarterDailySakhi, loadFullSakhisModule } from './data/sakhiStarterData';
 import { Language, AppView, Sakhi, DiaryEntry } from './types';
 import { translations } from './data/translations';
-import { satyanaamAudio } from './services/audioDhun';
+import { satyanaamAudio, stopTransientSacredAudio } from './services/audioDhun';
+import { ambientAudio } from './services/ambientAudioService';
 import { analytics } from './services/analytics';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -145,9 +147,20 @@ function MainApp() {
   };
 
   const [currentView, setCurrentView] = useState<AppView>(getValidViewFromUrl);
+  const [errorRetryKey, setErrorRetryKey] = useState(0);
+  const [fullSakhisMod, setFullSakhisMod] = useState<typeof import('./data/sakhis') | null>(null);
+
+  // Stop any transient recitation or ambient sound when switching between screens
+  useEffect(() => {
+    stopTransientSacredAudio();
+    ambientAudio.stop();
+    setIsDhunPlaying(satyanaamAudio.getIsPlaying());
+  }, [currentView]);
 
   const handleSelectView = (view: AppView, shouldPushHistory = true) => {
     console.log(`[Navigation] Navigating to view: ${view}`);
+    stopTransientSacredAudio();
+    ambientAudio.stop();
     // If user explicitly selects any other feature, disable Sahaj mode so it opens cleanly
     if (isSahajMode && view !== 'daily' && view !== 'meditation-timer') {
       setIsSahajMode(false);
@@ -190,13 +203,31 @@ function MainApp() {
   // Selected date for daily sakhi (defaults to today, automatically advances at midnight)
   const [dailyDate, setDailyDate] = useState<Date>(() => new Date());
 
+  // Lazily hydrate full Sakhis database after initial mount
+  useEffect(() => {
+    let active = true;
+    loadFullSakhisModule()
+      .then((mod) => {
+        if (!active) return;
+        setFullSakhisMod(mod);
+        setActiveSakhi((prev) => (prev.id === 'sakhi-1' ? mod.getDailyPawanSakhi(dailyDate) : prev));
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
+
   // Deterministically computed Daily Pawan Sakhi for dailyDate (rotates daily at 12:00 AM)
-  const dailySakhi = useMemo(() => getDailyPawanSakhi(dailyDate), [dailyDate]);
+  const dailySakhi = useMemo(
+    () => (fullSakhisMod ? fullSakhisMod.getDailyPawanSakhi(dailyDate) : getStarterDailySakhi()),
+    [dailyDate, fullSakhisMod]
+  );
   const [customDailySakhi, setCustomDailySakhi] = useState<Sakhi | null>(null);
   const currentDailySakhi = customDailySakhi || dailySakhi;
 
   // Active sakhi for dedicated Swadhyay or Quiz
-  const [activeSakhi, setActiveSakhi] = useState<Sakhi>(() => getDailyPawanSakhi());
+  const [activeSakhi, setActiveSakhi] = useState<Sakhi>(() => getStarterDailySakhi());
   const [showSplash, setShowSplash] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true;
     try {
@@ -257,6 +288,8 @@ function MainApp() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
+        stopTransientSacredAudio();
+        ambientAudio.stop();
         setIsSettingsOpen(false);
         setIsAccessibilityOpen(false);
         setIsMaryadaOpen(false);
@@ -269,6 +302,10 @@ function MainApp() {
     };
 
     const handleEmergencyReset = () => {
+      stopTransientSacredAudio();
+      ambientAudio.stop();
+      satyanaamAudio.stopDhun();
+      setIsDhunPlaying(false);
       setIsSettingsOpen(false);
       setIsAccessibilityOpen(false);
       setIsMaryadaOpen(false);
@@ -440,8 +477,9 @@ function MainApp() {
     }
   };
 
-  const handleSelectSakhiByNumber = (num: number) => {
-    const found = sakhisDatabase.find((s) => s.number === num);
+  const handleSelectSakhiByNumber = async (num: number) => {
+    const mod = fullSakhisMod || (await loadFullSakhisModule());
+    const found = mod.sakhisDatabase.find((s) => s.number === num);
     if (found) {
       setActiveSakhi(found);
       setCurrentView('swadhyay');
@@ -485,6 +523,14 @@ function MainApp() {
           transition={{ duration: 0.2, ease: "easeInOut" }}
           className="w-full min-h-screen"
         >
+          <ErrorBoundary
+            compact
+            language={language}
+            key={`view-eb-${currentView}-${errorRetryKey}`}
+            onRetry={() => setErrorRetryKey((k) => k + 1)}
+            onGoHome={() => handleSelectView('daily')}
+          >
+            <Suspense fallback={<SacredLoader language={language} />}>
           {/* View 1: Daily Pawan Sakhi Swadhyay */}
       {currentView === 'daily' && (
         <DailyPawanSakhi
@@ -519,8 +565,10 @@ function MainApp() {
             setCustomDailySakhi(s);
             setActiveSakhi(s);
           }}
-          onRefreshSakhi={() => {
-            const rand = sakhisDatabase[Math.floor(Math.random() * sakhisDatabase.length)];
+          onRefreshSakhi={async () => {
+            const mod = fullSakhisMod || (await loadFullSakhisModule());
+            const list = mod.sakhisDatabase;
+            const rand = list[Math.floor(Math.random() * list.length)] || list[0];
             setCustomDailySakhi(rand);
             setActiveSakhi(rand);
           }}
@@ -661,8 +709,8 @@ function MainApp() {
       {/* View 4: Akhand Path Continuous Scrolling & Auto-advance */}
       {currentView === 'akhand-path' && (
         <AkhandPath
-          key={`akhand-path-${sakhiUpdateVersion}`}
-          sakhis={[...sakhisDatabase]}
+          key={`akhand-path-${sakhiUpdateVersion}-${fullSakhisMod ? 'full' : 'init'}`}
+          sakhis={[...(fullSakhisMod?.sakhisDatabase || [currentDailySakhi])]}
           language={language}
           onSelectSakhi={(sakhi) => handleStartSwadhyay(sakhi)}
           onOpenBlessing={() =>
@@ -1188,8 +1236,10 @@ function MainApp() {
             setCustomDailySakhi(s);
             setActiveSakhi(s);
           }}
-          onRefreshSakhi={() => {
-            const rand = sakhisDatabase[Math.floor(Math.random() * sakhisDatabase.length)];
+          onRefreshSakhi={async () => {
+            const mod = fullSakhisMod || (await loadFullSakhisModule());
+            const list = mod.sakhisDatabase;
+            const rand = list[Math.floor(Math.random() * list.length)] || list[0];
             setCustomDailySakhi(rand);
             setActiveSakhi(rand);
           }}
@@ -1207,38 +1257,52 @@ function MainApp() {
           onOpenDiaryWithVerse={handleOpenDiaryWithVerse}
         />
       )}
+            </Suspense>
+          </ErrorBoundary>
         </motion.div>
       </AnimatePresence>
 
       {/* Global Rose Petal Shower & Divine Blessing Modal */}
-      <RosePetalShower
-        isOpen={isBlessingOpen}
-        onClose={() => setIsBlessingOpen(false)}
-        language={language}
-        title={blessingInfo.title}
-        message={blessingInfo.message}
-      />
+      <ErrorBoundary compact language={language} onGoHome={() => setIsBlessingOpen(false)}>
+        <RosePetalShower
+          isOpen={isBlessingOpen}
+          onClose={() => {
+            stopTransientSacredAudio();
+            setIsBlessingOpen(false);
+          }}
+          language={language}
+          title={blessingInfo.title}
+          message={blessingInfo.message}
+        />
+      </ErrorBoundary>
 
       {/* Global Settings Modal (Theming, Language, Audio, Notifications) */}
-      <SettingsModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        language={language}
-        onSelectLanguage={setLanguage}
-        isDhunPlaying={isDhunPlaying}
-        onToggleDhun={handleToggleDhun}
-        onPreviewSplash={() => {
-          setShowSplash(true);
-          setIsSettingsOpen(false);
-        }}
-      />
+      <ErrorBoundary compact language={language} onGoHome={() => setIsSettingsOpen(false)}>
+        <SettingsModal
+          isOpen={isSettingsOpen}
+          onClose={() => {
+            stopTransientSacredAudio();
+            setIsSettingsOpen(false);
+          }}
+          language={language}
+          onSelectLanguage={setLanguage}
+          isDhunPlaying={isDhunPlaying}
+          onToggleDhun={handleToggleDhun}
+          onPreviewSplash={() => {
+            setShowSplash(true);
+            setIsSettingsOpen(false);
+          }}
+        />
+      </ErrorBoundary>
 
       {/* Accessibility & Font Scaling Modal for Elderly Support */}
-      <AccessibilityModal
-        isOpen={isAccessibilityOpen}
-        onClose={() => setIsAccessibilityOpen(false)}
-        language={language}
-      />
+      <ErrorBoundary compact language={language} onGoHome={() => setIsAccessibilityOpen(false)}>
+        <AccessibilityModal
+          isOpen={isAccessibilityOpen}
+          onClose={() => setIsAccessibilityOpen(false)}
+          language={language}
+        />
+      </ErrorBoundary>
 
       {/* Three-Language Rotating Chakra Splash Screen */}
       <AnimatePresence>
@@ -1252,11 +1316,16 @@ function MainApp() {
       </AnimatePresence>
 
       {/* Respectful Sacred Maryada & Protocol Modal on App Startup */}
-      <SacredMaryadaModal
-        isOpen={isMaryadaOpen}
-        onClose={() => setIsMaryadaOpen(false)}
-        language={language}
-      />
+      <ErrorBoundary compact language={language} onGoHome={() => setIsMaryadaOpen(false)}>
+        <SacredMaryadaModal
+          isOpen={isMaryadaOpen}
+          onClose={() => {
+            stopTransientSacredAudio();
+            setIsMaryadaOpen(false);
+          }}
+          language={language}
+        />
+      </ErrorBoundary>
 
       {/* Network Status & Offline Toast Indicator */}
       <NetworkStatusIndicator />

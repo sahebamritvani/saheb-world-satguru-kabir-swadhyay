@@ -13,7 +13,12 @@ import {
   Calendar
 } from 'lucide-react';
 import { Language, SggsKabirVerse } from '../types';
-import { getDailyHukamnama, setupMidnightHukamnamaListener, getDailyLifeDiscipline } from '../services/dailyHukamnamaService';
+import {
+  getDailyHukamnama,
+  getDailyHukamnamaAsync,
+  setupMidnightHukamnamaListener,
+  getDailyLifeDiscipline,
+} from '../services/dailyHukamnamaService';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 
@@ -34,12 +39,30 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [showRoman, setShowRoman] = useState(false);
 
-  // Auto-update at midnight 12:00 AM
+  // Hydrate today's Hukamnama asynchronously & auto-update at midnight 12:00 AM
   useEffect(() => {
+    let cancelled = false;
+    getDailyHukamnamaAsync(new Date())
+      .then((v) => {
+        if (!cancelled) setVerse(v);
+      })
+      .catch(() => {});
+
     const cleanup = setupMidnightHukamnamaListener(() => {
-      setVerse(getDailyHukamnama(new Date()));
+      const today = new Date();
+      setVerse(getDailyHukamnama(today));
+      getDailyHukamnamaAsync(today)
+        .then((v) => {
+          if (!cancelled) setVerse(v);
+        })
+        .catch(() => {});
     });
-    return cleanup;
+
+    return () => {
+      cancelled = true;
+      cleanup();
+      speechReciter.stop();
+    };
   }, []);
 
   const discipline = getDailyLifeDiscipline(verse, language);

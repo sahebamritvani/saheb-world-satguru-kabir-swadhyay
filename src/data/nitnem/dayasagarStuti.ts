@@ -8,20 +8,20 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
     pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
     en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
   },
-  subGroup: "दया सागर स्तुति एवं अधिक महिमा",
+  subGroup: "दया सागर स्तुति",
   title: {
-    hi: "दया सागर स्तुति एवं अधिक महिमा",
-    pb: "ਦਯਾ ਸਾਗਰ ਸ੍ਤੁਤਿ ਅਤੇ ਅਧਿਕ ਮਹਿਮਾ",
-    en: "Daya Sagar Stuti & Adhik Mahima"
+    hi: "दया सागर स्तुति",
+    pb: "ਦਯਾ ਸਾਗਰ ਸ੍ਤੁਤਿ",
+    en: "Daya Sagar Stuti"
   },
   subtitle: {
-    hi: "करुणा सागर सतगुरु की असीम महिमा एवं पञ्चामृत कुण्ड पाठ",
+    hi: "करुणा सागर सतगुरु की असीम महिमा एवं स्तुति पाठ",
     pb: "ਰਹਿਮਤਾਂ ਦੇ ਸਾਗਰ ਸਤਿਗੁਰੂ ਦੀ ਅਪਾਰ ਮਹਿਮਾ",
-    en: "Eulogy to the Ocean of Divine Compassion & Glory of Sacred Pools"
+    en: "Eulogy to the Ocean of Divine Compassion"
   },
   iconName: "Sparkles",
-  estimatedMinutes: 6,
-  totalVerses: 18,
+  estimatedMinutes: 5,
+  totalVerses: 9,
   verses: [
     {
       id: "ds-1",
@@ -229,9 +229,35 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
         pb: "ਸੁਆਮੀ ਧਰਮਦਾਸ ਜੀ ਹੱਥ ਜੋੜ ਕੇ ਬੇਨਤੀ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਗੁਰੂਦੇਵ! ਦਇਆ ਕਰੋ ਤਾਂ ਜੋ ਮਨ ਵਸ ਵਿੱਚ ਹੋ ਜਾਵੇ, ਅਤੇ ਮੈਂ ਦਿਨ-ਰਾਤ ਆਪ ਜੀ ਦੀ ਭਗਤੀ-ਸਿਮਰਨ ਕਰਦਾ ਰਹਾਂ।",
         en: "Swami Dharmadas folds his hands in prayer: O Divine Master, shower your grace to subjugate my mind, that I may unconditionally serve you and meditate day and night."
       }
-    },
+    }
+  ]
+};
+
+export const ADHIK_MAHIMA_SECTION: NitnemSection = {
+  id: "sandhya-adhik-mahima",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "अधिक महिमा",
+  title: {
+    hi: "अधिक महिमा",
+    pb: "ਅਧਿਕ ਮਹਿਮਾ",
+    en: "Adhik Mahima"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। सतगुरु व साधु-संतों की असीम महिमा एवं पञ्चामृत कुण्ड पाठ",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਅਤੇ ਸਾਧੂ-ਸੰਤਾਂ ਦੀ ਅਪਾਰ ਮਹਿਮਾ ਅਤੇ ਪੰਚਾਮ੍ਰਿਤ ਕੁੰਡ ਪਾਠ",
+    en: "Glory of Satguru and Holy Saints & The Five Holy Pools"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 5,
+  totalVerses: 9,
+  verses: [
     {
-      id: "ds-10",
+      id: "am-1",
       type: "stuti",
       lines: {
         hi: [
@@ -254,7 +280,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-11",
+      id: "am-2",
       type: "stuti",
       lines: {
         hi: [
@@ -277,7 +303,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-12",
+      id: "am-3",
       type: "stuti",
       lines: {
         hi: [
@@ -300,7 +326,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-13",
+      id: "am-4",
       type: "stuti",
       lines: {
         hi: [
@@ -323,7 +349,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-14",
+      id: "am-5",
       type: "stuti",
       lines: {
         hi: [
@@ -346,7 +372,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-15",
+      id: "am-6",
       type: "stuti",
       lines: {
         hi: [
@@ -369,7 +395,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-16",
+      id: "am-7",
       type: "stuti",
       lines: {
         hi: [
@@ -392,7 +418,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-17",
+      id: "am-8",
       type: "stuti",
       lines: {
         hi: [
@@ -415,7 +441,7 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
       }
     },
     {
-      id: "ds-18",
+      id: "am-9",
       type: "doha",
       lines: {
         hi: [

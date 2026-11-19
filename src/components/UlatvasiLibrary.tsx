@@ -35,7 +35,9 @@ import { UlatvasiQuiz } from './UlatvasiQuiz';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { ULATVASI_DATABASE, UlatvasiQuestion } from '../data/ulatvasiQuizData';
+import { ULATVASI_CORE_QUESTIONS, loadAllUlatvasiDatabase, UlatvasiQuestion } from '../data/ulatvasiQuizData';
+import { SacredLoader } from './SacredLoader';
+import { PaginationControls } from './PaginationControls';
 import { 
   SACRED_ULATBAANSI_DESCRIPTIONS, 
   devanagariToGurmukhi, 
@@ -97,8 +99,35 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
     });
   };
 
+  const ITEMS_PER_PAGE = 24;
+  const [ulatvasiList, setUlatvasiList] = useState<UlatvasiQuestion[]>(ULATVASI_CORE_QUESTIONS);
+  const [isLoadingUlatvasis, setIsLoadingUlatvasis] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  useEffect(() => {
+    let cancelled = false;
+    setIsLoadingUlatvasis(true);
+    loadAllUlatvasiDatabase()
+      .then((all) => {
+        if (!cancelled && all.length > 0) {
+          setUlatvasiList(all);
+        }
+      })
+      .catch((err) => {
+        console.error('Error loading ulatvasi batches:', err);
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsLoadingUlatvasis(false);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const filteredItems = useMemo(() => {
-    return ULATVASI_DATABASE.filter(item => {
+    return ulatvasiList.filter(item => {
       const titleText = item.title[currentLang] || item.title.hi || '';
       const verseText = item.verse[currentLang] || item.verse.hi || '';
       const matchesSearch = 
@@ -110,7 +139,23 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       
       return matchesSearch && matchesRealm && matchesBookmark;
     });
-  }, [searchQuery, selectedRealm, currentLang, showOnlyBookmarks, bookmarkedIds]);
+  }, [ulatvasiList, searchQuery, selectedRealm, currentLang, showOnlyBookmarks, bookmarkedIds]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedRealm, showOnlyBookmarks]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredItems.length / ITEMS_PER_PAGE));
+
+  const paginatedItems = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredItems.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredItems, currentPage]);
+
+  const handleUlatvasiPageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+  };
 
   const realms = [
     { 
@@ -481,38 +526,63 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       </div>
 
       {/* Paradox Verses List */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {filteredItems.map((item, idx) => (
-          <UlatvasiAccordionItem 
-            key={item.id} 
-            item={item} 
-            language={currentLang} 
-            theme={theme} 
-            idx={idx} 
-            onSelectUlatvasi={onSelectUlatvasi}
-            onSelectLanguage={handleLanguageChange}
-            globalSpiritualEssence={globalSpiritualEssence}
-            globalAutoExpandMeaning={globalAutoExpandMeaning}
-            isBookmarked={bookmarkedIds.includes(item.id)}
-            onToggleBookmark={toggleBookmark}
+      {isLoadingUlatvasis && ulatvasiList.length <= 3 ? (
+        <SacredLoader language={currentLang} compact />
+      ) : (
+        <div className="space-y-4">
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredItems.length}
+            pageSize={ITEMS_PER_PAGE}
+            onPageChange={handleUlatvasiPageChange}
+            language={currentLang}
+            itemLabel={{ hi: 'पद', pb: 'ਪਦ', en: 'Paradoxes' }}
           />
-        ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {paginatedItems.map((item, idx) => (
+              <UlatvasiAccordionItem 
+                key={item.id} 
+                item={item} 
+                allItems={ulatvasiList}
+                language={currentLang} 
+                theme={theme} 
+                idx={(currentPage - 1) * ITEMS_PER_PAGE + idx} 
+                onSelectUlatvasi={onSelectUlatvasi}
+                onSelectLanguage={handleLanguageChange}
+                globalSpiritualEssence={globalSpiritualEssence}
+                globalAutoExpandMeaning={globalAutoExpandMeaning}
+                isBookmarked={bookmarkedIds.includes(item.id)}
+                onToggleBookmark={toggleBookmark}
+              />
+            ))}
 
-        {filteredItems.length === 0 && (
-          <div 
-            style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-            className="p-12 text-center rounded-3xl border space-y-3"
-          >
-            <BookOpen className="w-12 h-12 mx-auto text-amber-500 opacity-30 animate-pulse" />
-            <p className="text-base font-bold font-serif" style={{ color: theme.sacredMaroon }}>
-              {currentLang === 'hi' ? 'कोई उलटबांसी नहीं मिली' : currentLang === 'pb' ? 'ਕੋਈ ਉਲਟਬਾਂਸੀ ਨਹੀਂ ਮਿਲੀ' : 'No Ulatbaasi found'}
-            </p>
-            <p className="text-xs opacity-70" style={{ color: theme.textSecondary }}>
-              {currentLang === 'hi' ? 'कृपया अन्य शब्द से खोजें।' : currentLang === 'pb' ? 'ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਸ਼ਬਦ ਖੋਜੋ।' : 'Please try searching with another keyword.'}
-            </p>
+            {filteredItems.length === 0 && (
+              <div 
+                style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+                className="sm:col-span-2 p-12 text-center rounded-3xl border space-y-3"
+              >
+                <BookOpen className="w-12 h-12 mx-auto text-amber-500 opacity-30 animate-pulse" />
+                <p className="text-base font-bold font-serif" style={{ color: theme.sacredMaroon }}>
+                  {currentLang === 'hi' ? 'कोई उलटबांसी नहीं मिली' : currentLang === 'pb' ? 'ਕੋਈ ਉਲਟਬਾਂਸੀ ਨਹੀਂ ਮਿਲੀ' : 'No Ulatbaasi found'}
+                </p>
+                <p className="text-xs opacity-70" style={{ color: theme.textSecondary }}>
+                  {currentLang === 'hi' ? 'कृपया अन्य शब्द से खोजें।' : currentLang === 'pb' ? 'ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਸ਼ਬਦ ਖੋਜੋ।' : 'Please try searching with another keyword.'}
+                </p>
+              </div>
+            )}
           </div>
-        )}
-      </div>
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredItems.length}
+            pageSize={ITEMS_PER_PAGE}
+            onPageChange={handleUlatvasiPageChange}
+            language={currentLang}
+            itemLabel={{ hi: 'पद', pb: 'ਪਦ', en: 'Paradoxes' }}
+          />
+        </div>
+      )}
       </>
       )}
     </div>
@@ -529,6 +599,7 @@ interface SpiritualAnalysisResult {
 
 interface UlatvasiAccordionItemProps {
   item: UlatvasiQuestion;
+  allItems: UlatvasiQuestion[];
   language: Language;
   theme: any;
   idx: number;
@@ -542,6 +613,7 @@ interface UlatvasiAccordionItemProps {
 
 const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({ 
   item, 
+  allItems,
   language, 
   theme, 
   idx, 
@@ -1245,7 +1317,7 @@ const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({
 
               {/* Deep Connection: Thematically Similar Pads */}
               {(() => {
-                const similarPads = ULATVASI_DATABASE
+                const similarPads = allItems
                   .filter(p => p.realm === item.realm && p.id !== item.id)
                   .slice(0, 3);
 

@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { ShieldAlert, ArrowRight, Scroll, Sparkles } from 'lucide-react';
-import { SAKHI_SANGRAH_ANG_15_VERSES } from '../data/granths/sakhiSangrahAng15';
+import type { GranthVerse } from '../data/granths/granthTypes';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { devanagariToGurmukhi } from '../services/transliteration';
+import { SacredLoader } from './SacredLoader';
 
 interface ChetawaniSaarangProps {
   language: Language;
@@ -14,11 +15,27 @@ interface ChetawaniSaarangProps {
 
 export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, onOpenSwadhyay, onClose }) => {
   const { theme } = useAppTheme();
+  const [ang15Verses, setAng15Verses] = useState<GranthVerse[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    import('../data/granths/sakhiSangrahAng15')
+      .then((mod) => {
+        if (!cancelled) setAng15Verses(mod.SAKHI_SANGRAH_ANG_15_VERSES);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Top 10 impactful verses selected from the 105
   // Verses: 4, 11, 17, 26, 44, 55, 71, 74, 91, 104
   const topVersesIndices = [3, 10, 16, 25, 43, 54, 70, 73, 90, 103];
-  const sarangVerses = useMemo(() => topVersesIndices.map(idx => SAKHI_SANGRAH_ANG_15_VERSES[idx]), []);
+  const sarangVerses = useMemo(
+    () => (ang15Verses.length === 0 ? [] : topVersesIndices.map(idx => ang15Verses[idx]).filter(Boolean)),
+    [ang15Verses]
+  );
 
   return (
     <div className="space-y-6 animate-fadeIn pb-10">
@@ -44,6 +61,9 @@ export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, on
       </div>
 
       {/* Scrollable Cards Container */}
+      {sarangVerses.length === 0 ? (
+        <SacredLoader language={language} compact />
+      ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sarangVerses.map((verse, idx) => (
           <motion.div
@@ -108,6 +128,7 @@ export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, on
           </motion.div>
         ))}
       </div>
+      )}
 
       {onClose && (
         <div className="flex justify-center pt-4">

@@ -39,6 +39,9 @@ export const DailyAffirmationsWidget: React.FC<DailyAffirmationsWidgetProps> = (
   useEffect(() => {
     speechReciter.stop();
     setIsPlayingAudio(false);
+    return () => {
+      speechReciter.stop();
+    };
   }, [language]);
 
   const handleShuffle = () => {

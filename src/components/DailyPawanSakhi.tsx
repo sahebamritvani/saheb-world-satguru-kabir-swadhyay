@@ -55,7 +55,7 @@ import { translations, formatSakhiShareText } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
-import { sakhisDatabase } from '../data/sakhis';
+import { STARTER_SAKHIS, loadFullSakhisModule } from '../data/sakhiStarterData';
 import { QuoteCardModal } from './QuoteCardModal';
 import { HaziriModal } from './HaziriModal';
 import { DailySadhanaQuizModal } from './DailySadhanaQuizModal';
@@ -129,6 +129,22 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   const [showCardModal, setShowCardModal] = useState(false);
   const [showBhavarth, setShowBhavarth] = useState(false);
   const [showContemplation, setShowContemplation] = useState(false);
+  const [sakhisList, setSakhisList] = useState<Sakhi[]>(STARTER_SAKHIS);
+
+  useEffect(() => {
+    let active = true;
+    loadFullSakhisModule()
+      .then((mod) => {
+        if (active && mod.sakhisDatabase?.length) {
+          setSakhisList(mod.sakhisDatabase);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+      speechReciter.stop();
+    };
+  }, []);
 
   // Telemetry: Log Sakhi Read
   useEffect(() => {
@@ -395,7 +411,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       return;
     }
 
-    const found = sakhisDatabase.find((s) => s.number === num);
+    const found = sakhisList.find((s) => s.number === num);
     if (found) {
       sacredHaptics.divineBlessing();
       setSakhiJumpError(null);
@@ -414,10 +430,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     } else {
       setSakhiJumpError(
         language === 'pb' 
-          ? `ਸਾਖੀ #${num} ਨਹੀਂ ਮਿਲੀ (ਕੁੱਲ ਉਪਲਬਧ ਸਾਖੀਆਂ: ੧ ਤੋਂ ${sakhisDatabase.length})` 
+          ? `ਸਾਖੀ #${num} ਨਹੀਂ ਮਿਲੀ (ਕੁੱਲ ਉਪਲਬਧ ਸਾਖੀਆਂ: ੧ ਤੋਂ ${sakhisList.length})` 
           : language === 'en'
-          ? `Sakhi #${num} not found (Range: 1 to ${sakhisDatabase.length})`
-          : `साखी #${num} नहीं मिली (उपलब्ध सीमा: १ से ${sakhisDatabase.length})`
+          ? `Sakhi #${num} not found (Range: 1 to ${sakhisList.length})`
+          : `साखी #${num} नहीं मिली (उपलब्ध सीमा: १ से ${sakhisList.length})`
       );
       setTimeout(() => setSakhiJumpError(null), 3500);
     }
@@ -483,7 +499,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   // Compute all available sakhi categories with counts
   const allCategories = useMemo(() => {
     const catMap = new Map<string, { id: string; title: string; count: number }>();
-    sakhisDatabase.forEach((s) => {
+    sakhisList.forEach((s) => {
       const id = s.category || 'other';
       const title = s.categoryTitle[language] || s.categoryTitle.hi || id;
       if (!catMap.has(id)) {
@@ -493,7 +509,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       }
     });
     return Array.from(catMap.values()).sort((a, b) => b.count - a.count);
-  }, [language]);
+  }, [language, sakhisList]);
 
   const activeDate = selectedDate || new Date();
   const isToday = useMemo(() => {
@@ -555,7 +571,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       onRefreshSakhi();
     } else if (onSelectSakhi) {
       // Pick an inspiring random sakhi from the database
-      const randomSakhi = sakhisDatabase[Math.floor(Math.random() * sakhisDatabase.length)];
+      const randomSakhi = sakhisList[Math.floor(Math.random() * sakhisList.length)] || sakhisList[0];
       onSelectSakhi(randomSakhi);
     } else if (onSelectDate && !isToday) {
       onSelectDate(new Date());
@@ -662,9 +678,9 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
   // Filtered sakhis for the category selector modal
   const categorySakhis = useMemo(() => {
-    if (selectedCategoryFilter === 'all') return sakhisDatabase.slice(0, 30);
-    return sakhisDatabase.filter((s) => s.category === selectedCategoryFilter);
-  }, [selectedCategoryFilter]);
+    if (selectedCategoryFilter === 'all') return sakhisList.slice(0, 30);
+    return sakhisList.filter((s) => s.category === selectedCategoryFilter);
+  }, [selectedCategoryFilter, sakhisList]);
 
   return (
     <div className="space-y-4 sm:space-y-6 max-w-5xl mx-auto w-full px-2 sm:px-4 overflow-hidden break-words">
@@ -715,10 +731,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             <input
               type="number"
               min="1"
-              max={sakhisDatabase.length}
+              max={sakhisList.length}
               value={sakhiJumpNumber}
               onChange={(e) => setSakhiJumpNumber(e.target.value)}
-              placeholder={`1-${sakhisDatabase.length}`}
+              placeholder={`1-${sakhisList.length}`}
               className="w-18 sm:w-20 px-2 py-1.5 rounded-lg border border-amber-500/30 bg-white dark:bg-zinc-800 text-xs font-bold font-mono focus:ring-2 focus:ring-amber-500 text-center"
               style={{ color: theme.textPrimary }}
             />
@@ -2621,7 +2637,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 }}
                 className="px-3 py-1 rounded-full border font-bold text-xs whitespace-nowrap cursor-pointer transition"
               >
-                {language === 'hi' ? 'सभी अंग' : language === 'pb' ? 'ਸਾਰੇ ਅੰਗ' : 'All Categories'} ({sakhisDatabase.length})
+                {language === 'hi' ? 'सभी अंग' : language === 'pb' ? 'ਸਾਰੇ ਅੰਗ' : 'All Categories'} ({sakhisList.length})
               </button>
               {allCategories.map((cat) => (
                 <button

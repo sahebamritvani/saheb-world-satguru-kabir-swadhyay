@@ -27,6 +27,7 @@ import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { formatCoupletString, ensureSatguruKabirSaheb, matchCoupletWordToGlossary } from '../utils/textSanitizer';
+import { PaginationControls } from './PaginationControls';
 
 interface AkhandPathProps {
   sakhis: Sakhi[];
@@ -70,9 +71,35 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
     return sakhis.filter((s) => s.category === selectedCategory);
   }, [sakhis, selectedCategory]);
 
+  const SAKHIS_PER_PAGE = 25;
   const [activeIndex, setActiveIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
   const [autoScroll, setAutoScroll] = useState(true);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    const targetPage = Math.floor(activeIndex / SAKHIS_PER_PAGE) + 1;
+    setCurrentPage((prev) => (prev === targetPage ? prev : targetPage));
+  }, [activeIndex]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredSakhis.length / SAKHIS_PER_PAGE));
+
+  const paginatedSakhis = useMemo(() => {
+    const start = (currentPage - 1) * SAKHIS_PER_PAGE;
+    return filteredSakhis.slice(start, start + SAKHIS_PER_PAGE);
+  }, [filteredSakhis, currentPage]);
+
+  const handleAkhandPageChange = (page: number) => {
+    sacredHaptics.lightTap();
+    setCurrentPage(page);
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   // --- CONTINUOUS AUTO-SCROLL STATES ---
   const [continuousScroll, setContinuousScroll] = useState(false);
@@ -1253,15 +1280,26 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
             </button>
           </div>
         ) : (
-          filteredSakhis.map((sakhi, idx) => {
-            const isActive = activeIndex === idx;
+          <>
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredSakhis.length}
+            pageSize={SAKHIS_PER_PAGE}
+            onPageChange={handleAkhandPageChange}
+            language={language}
+            itemLabel={{ hi: 'साखी', pb: 'ਸਾਖੀ', en: 'Sakhis' }}
+          />
+          {paginatedSakhis.map((sakhi, idx) => {
+            const globalIdx = (currentPage - 1) * SAKHIS_PER_PAGE + idx;
+            const isActive = activeIndex === globalIdx;
 
             return (
               <div
                 key={sakhi.id}
                 ref={isActive ? activeCardRef : null}
-                id={`akhand-sakhi-${idx}`}
-                onClick={() => setActiveIndex(idx)}
+                id={`akhand-sakhi-${globalIdx}`}
+                onClick={() => setActiveIndex(globalIdx)}
                 style={{
                   backgroundColor: isActive ? rc.stepActive : 'transparent',
                   borderColor: isActive ? rc.accent : 'transparent',
@@ -1353,7 +1391,7 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
                     {/* Individual Sakhi Voice Play / Stop button */}
                     <button
                       type="button"
-                      onClick={() => handlePlaySingleSakhi(idx)}
+                      onClick={() => handlePlaySingleSakhi(globalIdx)}
                       title={isActive && isPlaying ? (language === 'hi' ? 'आवाज़ रोकें' : 'Stop voice') : (language === 'hi' ? 'यह साखी और भावार्थ सुनें' : 'Listen to this sakhi')}
                       style={{
                         backgroundColor: isActive && isPlaying ? '#EF4444' : rc.cardBg,
@@ -1378,7 +1416,7 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
                     <button
                       type="button"
                       onClick={() => {
-                        setActiveIndex(idx);
+                        setActiveIndex(globalIdx);
                         setShowExportModal(true);
                         setExportScope('current');
                       }}
@@ -1402,7 +1440,17 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
                 </div>
               </div>
             );
-          })
+          })}
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredSakhis.length}
+            pageSize={SAKHIS_PER_PAGE}
+            onPageChange={handleAkhandPageChange}
+            language={language}
+            itemLabel={{ hi: 'साखी', pb: 'ਸਾਖੀ', en: 'Sakhis' }}
+          />
+          </>
         )}
       </motion.div>
 

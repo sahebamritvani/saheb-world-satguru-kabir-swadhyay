@@ -49,7 +49,15 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Language, SACRED_BRANDING, ReaderCustomTheme, ReaderFontSize, ReaderTarget, NitnemSection, NitnemVersePair } from '../types';
-import { NITNEM_SECTIONS, MAJOR_GRANTH_CATEGORIES, MajorGranthCategory } from '../data/nitnemData';
+import {
+  NITNEM_SECTION_STUBS,
+  MAJOR_GRANTH_CATEGORIES,
+  MajorGranthCategory,
+  loadNitnemCategorySections,
+  loadAllNitnemSections,
+  loadNitnemSectionById,
+} from '../data/nitnemData';
+import { SacredLoader } from './SacredLoader';
 import { 
   MASTER_NITNEM_INDEX, 
   getLocalizedBookTitle, 
@@ -359,22 +367,123 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   onClose,
   onOpenSettings
 }) => {
-  const { theme, fontSize, setFontSize, lineHeight, setLineHeight, widthMode, setWidthMode } = useAppTheme();
+  const { theme, themeMode, setThemeMode, fontSize, setFontSize, lineHeight, setLineHeight, widthMode, setWidthMode, fontFamily, setFontFamily } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const language = propLanguage || contextLang;
   const lang = language;
   const t = translations[lang] || contextT;
   const rt = READER_LOCAL_T[lang] || READER_LOCAL_T.hi;
 
-  // Selected Category filter & Selected Section / Paath
+  // Selected Category filter & Selected Section / Paath (Lazy-loaded on demand)
+  const [nitnemSections, setNitnemSections] = useState<NitnemSection[]>(NITNEM_SECTION_STUBS);
+  const [isLoadingCategoryData, setIsLoadingCategoryData] = useState<boolean>(false);
   const [selectedGranthCategory, setSelectedGranthCategory] = useState<string>('all');
-  const [selectedSectionId, setSelectedSectionId] = useState<string>(NITNEM_SECTIONS[0]?.id || 'prabhat-mangalacharan');
+  const [selectedSectionId, setSelectedSectionId] = useState<string>(NITNEM_SECTION_STUBS[0]?.id || 'prabhat-mangalacharan');
 
-  // Reader Settings
-  const [readerTheme, setReaderTheme] = useState<ReaderCustomTheme>('mool');
-  const [fontSizeLevel, setFontSizeLevel] = useState<ReaderFontSize>('normal');
+  // Helper to merge newly loaded sections into state without losing previously loaded categories
+  const mergeResolvedSections = useCallback((loaded: NitnemSection[]) => {
+    setNitnemSections((prev) => {
+      const byId = new Map(loaded.map((s) => [s.id, s]));
+      return prev.map((existing) => {
+        const resolved = byId.get(existing.id);
+        if (resolved && !String(resolved.verses?.[0]?.id ?? '').includes('-placeholder-')) {
+          return resolved;
+        }
+        return existing;
+      });
+    });
+  }, []);
+
+  // Load selected category / section dynamically on mount or switch
+  useEffect(() => {
+    let cancelled = false;
+    const currentStub = nitnemSections.find((s) => s.id === selectedSectionId);
+    const needsSectionLoad = !currentStub || String(currentStub.verses?.[0]?.id ?? '').includes('-placeholder-');
+
+    const loadRequired = async () => {
+      if (needsSectionLoad) {
+        setIsLoadingCategoryData(true);
+      }
+      try {
+        if (selectedSectionId) {
+          const sec = await loadNitnemSectionById(selectedSectionId);
+          if (!cancelled && sec) {
+            mergeResolvedSections([sec]);
+          }
+        }
+        if (selectedGranthCategory && selectedGranthCategory !== 'all') {
+          const catLoaded = await loadNitnemCategorySections(selectedGranthCategory);
+          if (!cancelled) {
+            mergeResolvedSections(catLoaded);
+          }
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLoadingCategoryData(false);
+        }
+      }
+    };
+
+    loadRequired();
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedGranthCategory, selectedSectionId, mergeResolvedSections]);
+
+  // Deferred idle hydration of remaining Nitnem categories for smooth Next/Prev & TOC audio preview
+  useEffect(() => {
+    let cancelled = false;
+    const timer = window.setTimeout(() => {
+      loadAllNitnemSections()
+        .then((allLoaded) => {
+          if (!cancelled) {
+            mergeResolvedSections(allLoaded);
+          }
+        })
+        .catch(() => {});
+    }, 800);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [mergeResolvedSections]);
+
+  // Reader Settings (Persisted in localStorage + synced with ThemeContext)
+  const [readerTheme, setReaderTheme] = useState<ReaderCustomTheme>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_reader_theme') as ReaderCustomTheme | null;
+      if (saved) return saved === ('comfort' as any) ? ('netra' as ReaderCustomTheme) : saved;
+    } catch {}
+    if (themeMode === 'mystic_dark' || themeMode === 'amrit_neel' || themeMode === 'flow_state') {
+      return 'black';
+    }
+    return 'mool';
+  });
+  const [fontSizeLevel, setFontSizeLevel] = useState<ReaderFontSize>(fontSize);
   const [isSettingsExpanded, setIsSettingsExpanded] = useState<boolean>(false);
   const [settingsTab, setSettingsTab] = useState<'all' | 'framework' | 'autoscroll' | 'themes' | 'audio' | 'targets'>('all');
+
+  const changeReaderTheme = (thm: ReaderCustomTheme) => {
+    const normalized = (thm as string) === 'comfort' ? ('netra' as ReaderCustomTheme) : thm;
+    setReaderTheme(normalized);
+    const thmStr = String(normalized);
+    const isDarkTheme = thmStr === 'black' || thmStr === 'dark' || thmStr === 'netra' || thmStr === 'midnight' || thmStr === 'deep_sepia';
+    try {
+      localStorage.setItem('sahebworld_reader_theme', thmStr);
+      localStorage.setItem('sahebworld_night_mode', String(isDarkTheme));
+      window.dispatchEvent(new CustomEvent('sahebworld_reader_theme_changed', { detail: { theme: thmStr } }));
+    } catch {}
+    setThemeMode(isDarkTheme ? 'mystic_dark' : 'bhojpatra');
+  };
+
+  useEffect(() => {
+    if (!isSettingsExpanded) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsSettingsExpanded(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isSettingsExpanded]);
 
   // Reading Modes: Continuous vs Page Flip
   const [isPageFlipMode, setIsPageFlipMode] = useState<boolean>(false);
@@ -674,6 +783,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
       if (wakeLock) {
         wakeLock.release().catch(() => {});
       }
+      speechReciter.stop();
+      ambientReaderAudio.stop();
     };
   }, []);
 
@@ -775,7 +886,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   // Save last read position automatically whenever active verse or section changes
   useEffect(() => {
     if (viewMode === 'reading' && selectedSectionId) {
-      const currentSec = NITNEM_SECTIONS.find(s => s.id === selectedSectionId);
+      const currentSec = nitnemSections.find(s => s.id === selectedSectionId);
       if (currentSec) {
         const pos = {
           sectionId: selectedSectionId,
@@ -789,7 +900,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         } catch {}
       }
     }
-  }, [selectedSectionId, activeVerseIndex, viewMode, lang]);
+  }, [selectedSectionId, activeVerseIndex, viewMode, lang, nitnemSections]);
 
   // Save bookmarks
   const toggleBookmark = (verse: NitnemVersePair) => {
@@ -909,10 +1020,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   // Filtered sections by Granth category
   const filteredSections = useMemo(() => {
     if (selectedGranthCategory === 'all') {
-      return NITNEM_SECTIONS;
+      return nitnemSections;
     }
-    return NITNEM_SECTIONS.filter(s => s.majorCategoryId === selectedGranthCategory);
-  }, [selectedGranthCategory]);
+    return nitnemSections.filter(s => s.majorCategoryId === selectedGranthCategory);
+  }, [selectedGranthCategory, nitnemSections]);
 
   // Filtered Granth Suchi based on verified multilingual master dataset
   const filteredGranthSuchi = useMemo(() => {
@@ -924,10 +1035,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
   // Active section data with alias normalizer (e.g., gyan-gudri / gyan-guddi / gyan-gudadi)
   const currentSection = useMemo(() => {
-    let found = NITNEM_SECTIONS.find(s => s.id === selectedSectionId);
+    let found = nitnemSections.find(s => s.id === selectedSectionId);
     if (!found && selectedSectionId) {
       const normalized = selectedSectionId.toLowerCase().replace(/[-_]/g, '');
-      found = NITNEM_SECTIONS.find(s => {
+      found = nitnemSections.find(s => {
         const sNorm = s.id.toLowerCase().replace(/[-_]/g, '');
         return sNorm === normalized ||
           (normalized.includes('gud') && sNorm.includes('gud')) ||
@@ -936,8 +1047,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           s.id.replace('gudadi', 'guddi') === selectedSectionId.replace('gudadi', 'guddi');
       });
     }
-    return found || NITNEM_SECTIONS[0];
-  }, [selectedSectionId]);
+    return found || nitnemSections[0];
+  }, [selectedSectionId, nitnemSections]);
 
   const versesList = useMemo(() => {
     if (currentSection.verses && currentSection.verses.length > 0) {
@@ -973,8 +1084,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
   // Category-scoped ordered Granth sub-chapter sequence (e.g., 19 Prabhat chapters, 32 Sandhya chapters)
   const getGranthPlaylistContext = (sectionId: string) => {
-    const sec = NITNEM_SECTIONS.find(s => s.id === sectionId) || NITNEM_SECTIONS[0];
-    const granthSections = NITNEM_SECTIONS.filter(s => s.majorCategoryId === sec.majorCategoryId);
+    const sec = nitnemSections.find(s => s.id === sectionId) || nitnemSections[0];
+    const granthSections = nitnemSections.filter(s => s.majorCategoryId === sec.majorCategoryId);
     const idx = granthSections.findIndex(s => s.id === sec.id);
     const safeIdx = idx >= 0 ? idx : 0;
     const nextSec = safeIdx < granthSections.length - 1 ? granthSections[safeIdx + 1] : null;
@@ -988,7 +1099,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
   const granthContext = useMemo(() => {
     return getGranthPlaylistContext(currentSection.id);
-  }, [currentSection.id]);
+  }, [currentSection.id, nitnemSections]);
 
   // Live refs so async audio playback & speed changes always access fresh data
   const versesListRef = useRef<NitnemVersePair[]>(versesList);
@@ -1112,10 +1223,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [activeVerseIndex, versesList.length]);
 
-  // Current section index in overall NITNEM_SECTIONS
+  // Current section index in overall nitnemSections
   const currentOverallIndex = useMemo(() => {
-    return NITNEM_SECTIONS.findIndex(s => s.id === currentSection.id);
-  }, [currentSection]);
+    return nitnemSections.findIndex(s => s.id === currentSection.id);
+  }, [currentSection.id, nitnemSections]);
 
   // Handle section switch & auto-scroll to top smoothly
   useEffect(() => {
@@ -1274,15 +1385,15 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   };
 
   const handleNextSection = () => {
-    if (currentOverallIndex < NITNEM_SECTIONS.length - 1) {
-      const nextSec = NITNEM_SECTIONS[currentOverallIndex + 1];
+    if (currentOverallIndex < nitnemSections.length - 1) {
+      const nextSec = nitnemSections[currentOverallIndex + 1];
       handleSelectSection(nextSec.id);
     }
   };
 
   const handlePrevSection = () => {
     if (currentOverallIndex > 0) {
-      const prevSec = NITNEM_SECTIONS[currentOverallIndex - 1];
+      const prevSec = nitnemSections[currentOverallIndex - 1];
       handleSelectSection(prevSec.id);
     }
   };
@@ -1335,26 +1446,26 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isPageFlipMode, versesList.length]);
 
-  // Font size resolver (in px)
+  // Font size resolver (Devanagari/Gurmukhi mobile-safe scale)
   const getFontSizeClass = (level: ReaderFontSize) => {
     switch (level) {
       case 'small': return 'text-lg sm:text-xl';
       case 'normal': return 'text-xl sm:text-2xl';
       case 'medium': return 'text-2xl sm:text-3xl';
-      case 'large': return 'text-3xl sm:text-4xl';
-      case 'xlarge': return 'text-4xl sm:text-5xl';
-      case 'xl': return 'text-5xl sm:text-6xl';
-      case 'elderly': return 'text-6xl sm:text-7xl font-black leading-relaxed';
+      case 'large': return 'text-[1.65rem] sm:text-4xl';
+      case 'xlarge': return 'text-3xl sm:text-5xl';
+      case 'xl': return 'text-3xl sm:text-5xl md:text-6xl';
+      case 'elderly': return 'text-3xl xs:text-4xl sm:text-6xl font-black';
       default: return 'text-xl sm:text-2xl';
     }
   };
 
   const getLineHeightClass = (lh: 'small' | 'medium' | 'large') => {
     switch (lh) {
-      case 'small': return 'leading-normal';
-      case 'medium': return 'leading-relaxed';
-      case 'large': return 'leading-loose';
-      default: return 'leading-relaxed';
+      case 'small': return 'leading-[1.75]';
+      case 'medium': return 'leading-[1.95]';
+      case 'large': return 'leading-[2.2]';
+      default: return 'leading-[1.95]';
     }
   };
 
@@ -1388,21 +1499,22 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           selectBg: 'bg-[#fffef9] dark:bg-[#231e19] text-[#332211] dark:text-[#f2e6d0] border-[#e6dcbe] dark:border-[#3d3326]'
         };
       case 'pothi':
+      case 'sepia':
         return {
-          wrapperBg: 'bg-[#fbf4de] dark:bg-[#20180e]',
-          cardBg: 'bg-[#fff8e7] dark:bg-[#2c2012]',
-          cardBorder: 'border-[#d4af37]/50 dark:border-[#b8860b]/40',
-          textColor: 'text-[#422006] dark:text-[#fef08a]',
-          accentText: 'text-[#b45309] dark:text-[#fbbf24]',
-          subText: 'text-[#78350f] dark:text-[#d4af37]',
-          highlightBg: 'bg-[#fef9c3] dark:bg-[#713f12]/40',
-          badgeBg: 'bg-[#fef08a]/40 dark:bg-[#451a03] text-[#78350f] dark:text-[#fef08a]',
-          lineGuideColor: 'bg-[rgba(241,196,15,0.15)] border-y-2 border-amber-500/30',
-          toolbarBg: 'bg-[#fff8e7]/95 dark:bg-[#2c2012]/95 border-[#d4af37]/50 dark:border-[#b8860b]/40',
-          controlGroupBg: 'bg-[#fbf4de]/90 dark:bg-[#20180e]/90 border-[#d4af37]/30 dark:border-[#b8860b]/20',
-          btnActive: 'bg-[#b45309] text-white shadow-sm',
-          btnInactive: 'text-[#78350f] dark:text-[#d4af37]/90 hover:bg-[#fff1c2] dark:hover:bg-[#451a03]/50',
-          selectBg: 'bg-[#fff8e7] dark:bg-[#2c2012] text-[#422006] dark:text-[#fef08a] border-[#d4af37]/40 dark:border-[#b8860b]/30'
+          wrapperBg: 'bg-[#f4ead1] dark:bg-[#20180e]',
+          cardBg: 'bg-[#fbf4e1] dark:bg-[#2c2012]',
+          cardBorder: 'border-[#d6be8a]/65 dark:border-[#b8860b]/40',
+          textColor: 'text-[#3a220c] dark:text-[#fef08a]',
+          accentText: 'text-[#9a4208] dark:text-[#fbbf24]',
+          subText: 'text-[#6e461f] dark:text-[#d4af37]',
+          highlightBg: 'bg-[#f7e7bf] dark:bg-[#713f12]/40',
+          badgeBg: 'bg-[#efe0b9] dark:bg-[#451a03] text-[#703c0a] dark:text-[#fef08a]',
+          lineGuideColor: 'bg-[rgba(217,119,6,0.12)] border-y-2 border-amber-600/35',
+          toolbarBg: 'bg-[#fbf4e1]/95 dark:bg-[#2c2012]/95 border-[#d6be8a]/65 dark:border-[#b8860b]/40',
+          controlGroupBg: 'bg-[#f4ead1]/90 dark:bg-[#20180e]/90 border-[#d6be8a]/40 dark:border-[#b8860b]/20',
+          btnActive: 'bg-[#9a4208] text-white shadow-sm',
+          btnInactive: 'text-[#6e461f] dark:text-[#d4af37]/90 hover:bg-[#f2e2b8] dark:hover:bg-[#451a03]/50',
+          selectBg: 'bg-[#fbf4e1] dark:bg-[#2c2012] text-[#3a220c] dark:text-[#fef08a] border-[#d6be8a]/60 dark:border-[#b8860b]/30'
         };
       case 'black':
       case 'dark':
@@ -1423,22 +1535,22 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           selectBg: 'bg-[#18181b] text-[#f4f4f5] border-[#27272a]'
         };
       case 'netra':
-      case 'sepia':
+      case 'comfort':
         return {
-          wrapperBg: 'bg-[#14231b]',
-          cardBg: 'bg-[#1a2e24]',
+          wrapperBg: 'bg-[#101f17]',
+          cardBg: 'bg-[#172a20]',
           cardBorder: 'border-[#294a3a]',
-          textColor: 'text-[#d1fae5]',
+          textColor: 'text-[#d7f7e6]',
           accentText: 'text-[#34d399]',
           subText: 'text-[#a7f3d0]/80',
           highlightBg: 'bg-[#064e3b]/50',
           badgeBg: 'bg-[#064e3b] text-[#6ee7b7] border border-[#059669]',
           lineGuideColor: 'bg-emerald-400/20 border-y-2 border-emerald-400 shadow-[0_0_20px_rgba(52,211,153,0.3)]',
-          toolbarBg: 'bg-[#1a2e24]/95 border-[#294a3a] shadow-inner',
-          controlGroupBg: 'bg-[#14231b] border-[#294a3a]',
-          btnActive: 'bg-[#34d399] text-[#14231b] shadow-sm',
-          btnInactive: 'text-[#a7f3d0]/80 hover:bg-[#294a3a] hover:text-[#d1fae5]',
-          selectBg: 'bg-[#14231b] text-[#d1fae5] border-[#294a3a]'
+          toolbarBg: 'bg-[#172a20]/95 border-[#294a3a] shadow-inner',
+          controlGroupBg: 'bg-[#101f17] border-[#294a3a]',
+          btnActive: 'bg-[#34d399] text-[#101f17] shadow-sm',
+          btnInactive: 'text-[#a7f3d0]/80 hover:bg-[#294a3a] hover:text-[#d7f7e6]',
+          selectBg: 'bg-[#101f17] text-[#d7f7e6] border-[#294a3a]'
         };
       case 'light':
       default:
@@ -1467,8 +1579,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
     
     // Automatically select the first section of the new category
     const categorySections = categoryId === 'all' 
-      ? NITNEM_SECTIONS 
-      : NITNEM_SECTIONS.filter(s => s.majorCategoryId === categoryId);
+      ? nitnemSections 
+      : nitnemSections.filter(s => s.majorCategoryId === categoryId);
     
     if (categorySections.length > 0) {
       handleSelectSection(categorySections[0].id);
@@ -1983,11 +2095,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 setViewMode('selection');
                 setIsAutoPlaying(false);
               }}
-              className="min-h-[40px] px-2 sm:px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center gap-1 shrink-0 whitespace-nowrap"
+              className="min-h-[44px] min-w-[44px] sm:min-h-[40px] px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center justify-center gap-1 shrink-0 whitespace-nowrap"
               aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
               title={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
             >
-              <ArrowLeft size={16} className="shrink-0" />
+              <ArrowLeft size={18} className="shrink-0" />
               <span className="hidden sm:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
             </button>
           ) : onClose ? (
@@ -2001,11 +2113,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 }
                 onClose();
               }}
-              className="min-h-[40px] px-2 sm:px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center gap-1 shrink-0 whitespace-nowrap"
+              className="min-h-[44px] min-w-[44px] sm:min-h-[40px] px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center justify-center gap-1 shrink-0 whitespace-nowrap"
               aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
               title={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
             >
-              <ArrowLeft size={16} className="shrink-0" />
+              <ArrowLeft size={18} className="shrink-0" />
               <span className="hidden sm:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
             </button>
           ) : null}
@@ -2036,7 +2148,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={handleTogglePureVaniMode}
-            className={`min-h-[40px] px-2 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
+            className={`min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
               isPureVaniMode
                 ? 'bg-white text-amber-800 shadow-md ring-2 ring-white/70'
                 : 'bg-white/18 hover:bg-white/28 text-white border border-white/25'
@@ -2064,7 +2176,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={toggleFullscreen}
-            className={`min-h-[38px] px-2 sm:px-2.5 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
+            className={`min-h-[44px] min-w-[44px] sm:min-h-[40px] sm:min-w-0 px-2.5 py-1.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
               isFullscreen
                 ? 'bg-white text-amber-800 shadow-md ring-2 ring-white/60'
                 : 'bg-white/15 hover:bg-white/25 text-white border border-white/20'
@@ -2089,7 +2201,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={() => handleToggleBackgroundDhun()}
-            className={`min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl transition cursor-pointer shrink-0 ${isBackgroundDhunPlaying ? 'bg-white text-amber-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+            className={`min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl transition cursor-pointer shrink-0 ${isBackgroundDhunPlaying ? 'bg-white text-amber-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
             title={rt.bgDhun}
             aria-label="Toggle Background Dhun"
           >
@@ -2101,7 +2213,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             <button
               type="button"
               onClick={() => setShowAllGlossaryModal(true)}
-              className="hidden sm:flex min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] rounded-xl transition cursor-pointer hover:bg-white/20 text-white items-center justify-center shrink-0"
+              className="hidden sm:flex min-w-[40px] min-h-[40px] rounded-xl transition cursor-pointer hover:bg-white/20 text-white items-center justify-center shrink-0"
               title={language === 'pb' ? 'ਸਮਾਰਟ ਸ਼ਬਦਾਵਲੀ ਟੂਲ (Smart Glossing Tool)' : language === 'en' ? 'Smart Glossing Tool' : 'स्मार्ट शब्दावली टूल (Smart Glossing Tool)'}
             >
               <Sparkles size={18} className="text-amber-200" />
@@ -2112,7 +2224,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={() => setIsSettingsExpanded(true)}
-            className="min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] p-2 bg-white/25 hover:bg-white/35 rounded-xl transition-all cursor-pointer text-white flex items-center justify-center shrink-0 shadow-xs z-30 ring-1 ring-white/30"
+            className="min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px] p-2 bg-white/25 hover:bg-white/35 rounded-xl transition-all cursor-pointer text-white flex items-center justify-center shrink-0 shadow-xs z-30 ring-1 ring-white/30"
             title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼ ਅਤੇ ਟੂਲਸ' : language === 'en' ? 'Settings & Tools' : 'सेटिंग्स व टूल्स'}
             aria-label="Reading Settings"
           >
@@ -2282,7 +2394,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             {section.sub_chapters.map((sub: SubChapterIndexItem) => {
                               const subTitle = getLocalizedSubChapterTitle(sub, language);
                               const targetSectionId = resolveNitnemSectionId(sub, section);
-                              const matchingSection = NITNEM_SECTIONS.find(s => s.id === targetSectionId) || currentSection;
+                              const matchingSection = nitnemSections.find(s => s.id === targetSectionId) || currentSection;
 
                               return (
                                 <div
@@ -2304,12 +2416,15 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
                                   <div className="flex items-center gap-1 shrink-0">
                                     <button
-                                      onClick={(e) => {
+                                      onClick={async (e) => {
                                         e.stopPropagation();
                                         handleSelectSection(targetSectionId);
                                         setViewMode('reading');
-                                        if (matchingSection.verses && matchingSection.verses.length > 0) {
-                                          setTimeout(() => handlePlayVoice(matchingSection.verses[0]), 300);
+                                        const loadedSec = String(matchingSection.verses?.[0]?.id ?? '').includes('-placeholder-')
+                                          ? await loadNitnemSectionById(targetSectionId)
+                                          : matchingSection;
+                                        if (loadedSec?.verses && loadedSec.verses.length > 0) {
+                                          setTimeout(() => handlePlayVoice(loadedSec.verses[0]), 300);
                                         }
                                       }}
                                       className="w-7 h-7 rounded-full bg-amber-500/20 hover:bg-amber-600 hover:text-white text-amber-800 dark:text-amber-300 flex items-center justify-center transition cursor-pointer"
@@ -2388,7 +2503,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 ) : (
                   <div
                     onClick={() => {
-                      handleSelectSection(NITNEM_SECTIONS[0].id);
+                      handleSelectSection(nitnemSections[0].id);
                       setViewMode('reading');
                     }}
                     className="bg-amber-50/60 dark:bg-amber-950/20 border-2 border-amber-300/40 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-amber-500 transition shadow-xs"
@@ -2402,7 +2517,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           {language === 'pb' ? 'ਅੰਮ੍ਰਿਤਵੇਲਾ ਨਿਤਨੇਮ' : language === 'en' ? 'Daily Nitnem' : 'अमृतवेला नितनेम'}
                         </span>
                         <h4 className="font-serif font-black text-sm text-gray-800 dark:text-gray-100">
-                          {NITNEM_SECTIONS[0]?.title[language] || NITNEM_SECTIONS[0]?.title.hi}
+                          {nitnemSections[0]?.title[language] || nitnemSections[0]?.title.hi}
                         </h4>
                       </div>
                     </div>
@@ -2666,7 +2781,9 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       </span>
                     </div>
 
-                    {versesList.map((verse, vIdx) => {
+                    {(isLoadingCategoryData || String(versesList[0]?.id ?? '').includes('-placeholder-')) ? (
+                      <SacredLoader language={language} compact />
+                    ) : versesList.map((verse, vIdx) => {
                       const isCurrentActive = activeVerseIndex === vIdx;
                       const isRead = readVersesSet.has(verse.id);
                       const isPlayingAudio = playingVoiceVerseId === verse.id;
@@ -2786,7 +2903,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               direction: 'ltr',
                               textAlign: 'center',
                             }}
-                            className={`font-serif font-black [word-break:keep-all] [overflow-wrap:break-word] max-w-full w-full ${getFontSizeClass(fontSizeLevel)} ${isPureVaniMode ? 'leading-[1.8]' : 'leading-[1.6]'} ${currentThemeStyle.textColor}`}
+                            className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] max-w-full w-full ${getFontSizeClass(fontSizeLevel)} ${isPureVaniMode ? 'leading-[2]' : getLineHeightClass(lineHeight)} ${currentThemeStyle.textColor}`}
                           >
                             {lines.map((line, lIdx) => {
                               const lineId = `${verse.id}-${langCode}-${lIdx}`;
@@ -2809,7 +2926,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                       }
                                     }}
-                                    className={`group/line relative my-2 tracking-wide px-3 sm:px-4 py-2 rounded-xl transition-all duration-200 [word-break:keep-all] [overflow-wrap:break-word] max-w-full w-full cursor-pointer nitnem-selectable-line select-text ${
+                                    className={`group/line relative my-2 px-3 sm:px-4 py-2 rounded-xl transition-all duration-200 [word-break:keep-all] [overflow-wrap:break-word] max-w-full w-full cursor-pointer nitnem-selectable-line select-text ${
                                       isKaraokeSpeakingThisLine
                                         ? 'bg-amber-400/25 dark:bg-amber-500/25 ring-1 ring-amber-500/60 shadow-sm text-amber-950 dark:text-amber-50 font-black'
                                         : isLineActive 
@@ -2854,7 +2971,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
                                     if (isTargetPrayer && isTwoLineInterval && verse.bhavarth) {
                                       return (
-                                        <div className="my-3.5 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 dark:from-amber-950/40 dark:to-orange-950/30 border border-amber-400/40 dark:border-amber-700/50 shadow-xs text-xs sm:text-sm leading-relaxed text-left not-italic font-normal">
+                                        <div className="my-3.5 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 dark:from-amber-950/40 dark:to-orange-950/30 border border-amber-400/40 dark:border-amber-700/50 shadow-xs text-xs sm:text-sm text-left not-italic font-normal">
                                           <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-amber-400/25 text-amber-900 dark:text-amber-300 font-bold">
                                             <span className="flex items-center gap-1.5 font-serif font-black text-xs sm:text-sm">
                                               <span>✨</span>
@@ -2866,7 +2983,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                               {language === 'pb' ? `ਪਦ ${vIdx + 1}` : language === 'en' ? `Couplet ${vIdx + 1}` : `चरण ${vIdx + 1}`}
                                             </span>
                                           </div>
-                                          <div className="font-serif leading-relaxed text-xs sm:text-sm text-stone-900 dark:text-amber-100">
+                                          <div className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)} text-sm sm:text-base ${currentThemeStyle.textColor}`}>
                                             <SmartGlossaryText 
                                               text={verse.bhavarth[language] || verse.bhavarth.hi}
                                               language={language}
@@ -3429,43 +3546,43 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         <div className="h-16" />
       </div>
 
-      {/* 🧭 Floating Scroll Navigation Pill for Comfortable Thumb-Reach */}
+      {/* 🧭 Compact Floating Scroll Navigation Pill (Lower Bottom-Right Corner) */}
       {viewMode === 'reading' && !isPureVaniMode && (
         <aside
           aria-label="Scroll Navigation"
-          className="fixed right-3 sm:right-6 bottom-20 sm:bottom-24 z-30 flex flex-col items-center gap-1.5 p-1 rounded-full bg-amber-600/90 dark:bg-stone-900/90 text-white backdrop-blur-md border border-white/30 shadow-xl select-none"
+          className="fixed right-2 sm:right-4 bottom-16 sm:bottom-[4.25rem] z-30 flex flex-col items-center gap-1 p-0.5 sm:p-1 rounded-full bg-amber-600/85 dark:bg-stone-900/85 text-white backdrop-blur-md border border-white/25 shadow-lg select-none"
         >
           <button
             type="button"
             onClick={scrollToContainerTop}
-            className="w-9 h-9 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/35 active:scale-95 transition cursor-pointer"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 active:scale-95 transition cursor-pointer"
             title={language === 'pb' ? 'ਸਭ ਤੋਂ ਉੱਪਰ ਜਾਓ (Top)' : language === 'en' ? 'Scroll to Top' : 'सबसे ऊपर जाएं (Top)'}
             aria-label="Scroll to Top"
           >
-            <ChevronsUp size={16} />
+            <ChevronsUp size={14} />
           </button>
           <button
             type="button"
             onClick={scrollToContainerBottom}
-            className="w-9 h-9 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/35 active:scale-95 transition cursor-pointer"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 active:scale-95 transition cursor-pointer"
             title={language === 'pb' ? 'ਸਭ ਤੋਂ ਹੇਠਾਂ ਜਾਓ (Bottom)' : language === 'en' ? 'Scroll to Bottom' : 'सबसे नीचे जाएं (Bottom)'}
             aria-label="Scroll to Bottom"
           >
-            <ChevronsDown size={16} />
+            <ChevronsDown size={14} />
           </button>
         </aside>
       )}
 
       {/* FIXED FOOTER NAVIGATION PANEL ("पिछला पाठ / अगला पाठ") - Hidden in Pure Vani Audio Mode to keep mobile sticky footprint <= 15% */}
       {viewMode === 'reading' && !isPureVaniMode && (
-        <footer className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-amber-300/40 dark:border-amber-800/40 shadow-lg px-4 py-2.5 print:hidden">
-          <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-3">
+        <footer className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-amber-300/40 dark:border-amber-800/40 shadow-lg px-3 sm:px-4 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] print:hidden">
+          <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
             {/* Previous Paath */}
             <button
               type="button"
               onClick={handlePrevSection}
               disabled={currentOverallIndex === 0}
-              className={`flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`min-h-[44px] flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer shrink-0 ${
                 currentOverallIndex === 0
                   ? 'opacity-30 cursor-not-allowed bg-gray-100 dark:bg-zinc-800 text-gray-400'
                   : 'bg-amber-500/15 dark:bg-amber-950/40 border border-amber-300/60 dark:border-amber-800/60 text-amber-900 dark:text-amber-200 hover:bg-amber-500/25 active:scale-95 shadow-xs'
@@ -3478,7 +3595,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             {/* Center Paath Progress / Title */}
             <div className="text-center px-1 flex-1 min-w-0">
               <span className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 block truncate">
-                {rt?.textSwaroop || 'पाठ'} {currentOverallIndex + 1} / {NITNEM_SECTIONS.length}
+                {rt?.textSwaroop || 'पाठ'} {currentOverallIndex + 1} / {nitnemSections.length}
               </span>
               <p className="text-xs sm:text-sm font-serif font-black text-gray-800 dark:text-gray-100 truncate mt-0.5">
                 {currentSection?.title?.[language] || currentSection?.title?.hi || ''}
@@ -3489,9 +3606,9 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             <button
               type="button"
               onClick={handleNextSection}
-              disabled={currentOverallIndex === NITNEM_SECTIONS.length - 1}
-              className={`flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                currentOverallIndex === NITNEM_SECTIONS.length - 1
+              disabled={currentOverallIndex === nitnemSections.length - 1}
+              className={`min-h-[44px] flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer shrink-0 ${
+                currentOverallIndex === nitnemSections.length - 1
                   ? 'opacity-30 cursor-not-allowed bg-gray-100 dark:bg-zinc-800 text-gray-400'
                   : 'bg-amber-600 hover:bg-amber-700 text-white shadow-md active:scale-95'
               }`}
@@ -3948,24 +4065,28 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-                            className="fixed bottom-0 left-0 right-0 z-[130] bg-white dark:bg-zinc-950 rounded-t-3xl shadow-2xl p-4 sm:p-6 border-t-2 border-amber-500 max-h-[85vh] overflow-y-auto"
+                            className="fixed bottom-0 left-0 right-0 z-[130] bg-white dark:bg-zinc-950 rounded-t-3xl shadow-2xl p-4 sm:p-6 pb-safe border-t-2 border-amber-500 max-h-[86dvh] overflow-y-auto overscroll-contain"
                           >
-                            <div className="w-12 h-1.5 bg-gray-300 dark:bg-zinc-700 rounded-full mx-auto mb-3" />
+                            <div
+                              onClick={() => setIsSettingsExpanded(false)}
+                              className="w-12 h-1.5 bg-gray-300 dark:bg-zinc-700 rounded-full mx-auto mb-3 cursor-pointer"
+                              aria-hidden="true"
+                            />
                             <div className="w-full flex flex-col gap-4">
                               {/* Header with Title & Quick Close button */}
-                              <div className="flex items-center justify-between border-b pb-3 border-amber-200/50 dark:border-zinc-800">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-xl">⚙️</span>
-                                  <div>
-                                    <h3 className="font-serif font-black text-base text-gray-800 dark:text-gray-100 leading-tight">
+                              <div className="flex items-center justify-between border-b pb-3 border-amber-200/50 dark:border-zinc-800 gap-2">
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <span className="text-xl shrink-0">⚙️</span>
+                                  <div className="min-w-0">
+                                    <h3 className="font-serif font-black text-base text-gray-800 dark:text-gray-100 leading-tight truncate">
                                       {language === 'pb' ? 'ਉੱਨਤ ਪਾਠ ਸੁਵਿਧਾਵਾਂ (Advanced Reading Suite)' : language === 'en' ? 'Advanced Reading Suite & Controls' : 'उन्नत पठन साधन (Advanced Reading Suite)'}
                                     </h3>
-                                    <p className="text-[0.625rem] font-serif text-amber-700 dark:text-amber-400">
+                                    <p className="text-[0.625rem] font-serif text-amber-700 dark:text-amber-400 truncate">
                                       {language === 'pb' ? '੫ ਵਿਸ਼ੇਸ਼ ਸਮੂਹ: ਪ੍ਰਾਰੂਪ, ਸਕ੍ਰੌਲ, ਥੀਮ, ਧਿਆਨ ਸਾਧਨਾ ਤੇ ਜਾਪ ਟੀਚਾ' : '५ विशेष समूह: प्रारूप, स्क्रॉल, थीम, ध्यान साधना एवं जाप लक्ष्य'}
                                     </p>
                                   </div>
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 shrink-0">
                                   {onOpenSettings && (
                                     <button
                                       type="button"
@@ -3973,20 +4094,20 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         setIsSettingsExpanded(false);
                                         onOpenSettings();
                                       }}
-                                      className="px-2.5 py-1.5 rounded-xl border border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 text-xs font-bold font-serif hover:bg-amber-100 transition cursor-pointer flex items-center gap-1 shadow-2xs"
+                                      className="min-h-[44px] sm:min-h-[38px] px-3 py-1.5 rounded-xl border border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 text-xs font-bold font-serif hover:bg-amber-100 transition cursor-pointer flex items-center gap-1 shadow-2xs"
                                       title="समग्र ऐप सेटिंग्स"
                                     >
-                                      <Settings size={14} />
+                                      <Settings size={15} />
                                       <span className="hidden sm:inline">{language === 'pb' ? 'ਐਪ ਸੈਟਿੰਗਜ਼' : 'ऐप सेटिंग्स'}</span>
                                     </button>
                                   )}
                                   <button
                                     type='button'
                                     onClick={() => setIsSettingsExpanded(false)}
-                                    className='px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/40 shadow-sm text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 shrink-0'
+                                    className='min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/40 shadow-sm text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 shrink-0'
                                     title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}
                                   >
-                                    <ArrowLeft size={15} />
+                                    <ArrowLeft size={16} />
                                     <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}</span>
                                   </button>
                                 </div>
@@ -4006,7 +4127,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     key={tab.id}
                                     type="button"
                                     onClick={() => setSettingsTab(tab.id as any)}
-                                    className={`px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition-all whitespace-nowrap border cursor-pointer ${
+                                    className={`min-h-[42px] sm:min-h-[36px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition-all whitespace-nowrap border cursor-pointer ${
                                       settingsTab === tab.id
                                         ? 'bg-amber-600 text-white border-amber-600 shadow-sm scale-[1.02]'
                                         : 'bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-zinc-700 hover:bg-amber-50'
@@ -4041,7 +4162,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     language={language}
                                   />
 
-                                  {/* Script Lipi & Font Sub-Controls */}
+                                  {/* Script Lipi, Font Size, Line Height & Font Face Controls */}
                                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-amber-500/10">
                                     {/* Script selector */}
                                     <div className="space-y-1.5">
@@ -4066,7 +4187,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                                 onSelectLanguage(scr.id as Language);
                                               }
                                             }}
-                                            className={`px-2.5 py-1 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
+                                            className={`min-h-[40px] sm:min-h-[34px] px-2.5 py-1 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
                                               globalScriptMode === scr.id
                                                 ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
                                                 : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-gray-300 hover:bg-amber-50'
@@ -4084,18 +4205,77 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         🔤 {language === 'pb' ? 'ਅੱਖਰ ਅਕਾਰ (Font Size):' : 'अक्षर आकार (Font Size):'}
                                       </span>
                                       <div className="flex items-center gap-1">
-                                        {(['small', 'normal', 'large', 'xlarge'] as const).map(fs => (
+                                        {(['small', 'normal', 'large', 'xlarge', 'elderly'] as const).map(fs => (
                                           <button
                                             key={fs}
                                             type="button"
                                             onClick={() => handleSetLocalFontSizeLevel(fs)}
-                                            className={`flex-1 py-1 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
-                                              fontSizeLevel === fs 
+                                            className={`min-h-[40px] sm:min-h-[34px] flex-1 py-1 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
+                                              fontSizeLevel === fs || (fs === 'normal' && fontSizeLevel === 'medium') || (fs === 'xlarge' && fontSizeLevel === 'xl')
                                                 ? 'bg-amber-600 text-white border-amber-600 shadow-xs' 
                                                 : 'bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-zinc-700 hover:bg-amber-50'
                                             }`}
                                           >
-                                            {fs === 'small' ? 'A-' : fs === 'normal' ? 'Aa' : fs === 'large' ? 'A+' : 'A++'}
+                                            {fs === 'small' ? 'A-' : fs === 'normal' ? 'Aa' : fs === 'large' ? 'A+' : fs === 'xlarge' ? 'A++' : '👵'}
+                                          </button>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    {/* Line Spacing controls */}
+                                    <div className="space-y-1.5">
+                                      <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
+                                        ↕️ {language === 'pb' ? 'ਲਾਈਨ ਅੰਤਰਾਲ (Line Spacing):' : 'पंक्ति अंतराल (Line Height):'}
+                                      </span>
+                                      <div className="flex items-center gap-1">
+                                        {([
+                                          { id: 'small' as const, label: language === 'pb' ? 'ਘੱਟ' : language === 'en' ? 'Compact' : 'कॉम्पैक्ट' },
+                                          { id: 'medium' as const, label: language === 'pb' ? 'ਸੰਤੁਲਿਤ' : language === 'en' ? 'Balanced' : 'संतुलित' },
+                                          { id: 'large' as const, label: language === 'pb' ? 'ਖੁੱਲ੍ਹਾ' : language === 'en' ? 'Spacious' : 'विस्तृत' },
+                                        ]).map(lh => (
+                                          <button
+                                            key={lh.id}
+                                            type="button"
+                                            onClick={() => {
+                                              sacredHaptics.lightTap();
+                                              setLineHeight(lh.id);
+                                            }}
+                                            className={`min-h-[40px] sm:min-h-[34px] flex-1 py-1 px-2 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
+                                              lineHeight === lh.id
+                                                ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                                                : 'bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-zinc-700 hover:bg-amber-50'
+                                            }`}
+                                          >
+                                            {lh.label}
+                                          </button>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    {/* Font Style (Serif vs Sans) */}
+                                    <div className="space-y-1.5">
+                                      <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
+                                        ✒️ {language === 'pb' ? 'ਅੱਖਰ ਸ਼ੈਲੀ (Script Face):' : 'लिपि शैली (Font Style):'}
+                                      </span>
+                                      <div className="flex items-center gap-1">
+                                        {([
+                                          { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ (Serif)' : '📜 ग्रंथ (Serif)' },
+                                          { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ (Sans)' : '🔤 सरल (Sans)' },
+                                        ]).map(ff => (
+                                          <button
+                                            key={ff.id}
+                                            type="button"
+                                            onClick={() => {
+                                              sacredHaptics.lightTap();
+                                              setFontFamily(ff.id);
+                                            }}
+                                            className={`min-h-[40px] sm:min-h-[34px] flex-1 py-1 px-2 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
+                                              fontFamily === ff.id
+                                                ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                                                : 'bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-zinc-700 hover:bg-amber-50'
+                                            }`}
+                                          >
+                                            {ff.label}
                                           </button>
                                         ))}
                                       </div>
@@ -4173,11 +4353,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       </h4>
                                     </div>
                                     <span className="text-[0.625rem] font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">
-                                      {readerTheme === 'mool' ? 'मूल (Cream)' : readerTheme === 'pothi' ? 'पोथी (Saffron)' : readerTheme === 'black' ? 'ब्लैक (Dark)' : 'नेत्र (Eye-Care)'}
+                                      {readerTheme === 'mool' ? 'मूल (Cream)' : (readerTheme === 'pothi' || readerTheme === 'sepia') ? 'पोथी (Sepia)' : (readerTheme === 'black' || readerTheme === 'dark') ? 'ब्लैक (Dark)' : 'नेत्र (Eye-Care)'}
                                     </span>
                                   </div>
 
-                                  {/* 4 Themes: मूल, पोथी, ब्लैक, नेत्र */}
+                                  {/* 4 Themes: मूल, पोथी (Sepia), ब्लैक, नेत्र */}
                                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                                     {[
                                       {
@@ -4190,36 +4370,42 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       },
                                       {
                                         id: 'pothi' as const,
-                                        label: language === 'pb' ? 'ਪੋਥੀ' : 'पोथी',
-                                        sub: language === 'pb' ? 'ਕੇਸਰੀ ਪੀਲਾ' : 'Saffron Yellow',
-                                        bgClass: 'bg-[#fef9e7] border-[#f4d06f] text-[#3d2706]',
-                                        previewColor: '#fef9e7',
-                                        borderAccent: '#d97706'
+                                        label: language === 'pb' ? 'ਪੋਥੀ (ਸੇਪੀਆ)' : 'पोथी (सेपिया)',
+                                        sub: language === 'pb' ? 'ਪੁਰਾਤਨ ਪੱਤਰਾ' : 'Sepia Parchment',
+                                        bgClass: 'bg-[#fbf4e1] border-[#d6be8a] text-[#3a220c]',
+                                        previewColor: '#fbf4e1',
+                                        borderAccent: '#9a4208'
                                       },
                                       {
                                         id: 'black' as const,
                                         label: language === 'pb' ? 'ਬਲੈਕ' : 'ब्लैक',
                                         sub: language === 'pb' ? 'ਓਲੇਡ ਡਾਰਕ' : 'Pure Dark',
-                                        bgClass: 'bg-[#000000] border-[#3f3f46] text-[#fafafa]',
-                                        previewColor: '#000000',
+                                        bgClass: 'bg-[#09090b] border-[#3f3f46] text-[#fafafa]',
+                                        previewColor: '#09090b',
                                         borderAccent: '#a1a1aa'
                                       },
                                       {
-                                        id: 'comfort' as const,
+                                        id: 'netra' as const,
                                         label: language === 'pb' ? 'ਨੇਤ੍ਰ' : 'नेत्र',
                                         sub: language === 'pb' ? 'ਕੋਮਲ ਹਰਾ' : 'Soft Green',
-                                        bgClass: 'bg-[#062319] border-[#047857] text-[#d1fae5]',
-                                        previewColor: '#062319',
+                                        bgClass: 'bg-[#101f17] border-[#047857] text-[#d7f7e6]',
+                                        previewColor: '#101f17',
                                         borderAccent: '#10b981'
                                       },
                                     ].map((th) => {
-                                      const isSelected = readerTheme === th.id;
+                                      const isSelected =
+                                        readerTheme === th.id ||
+                                        (th.id === 'netra' && (readerTheme as string) === 'comfort') ||
+                                        (th.id === 'pothi' && (readerTheme as string) === 'sepia');
                                       return (
                                         <button
                                           key={th.id}
                                           type="button"
-                                          onClick={() => setReaderTheme(th.id)}
-                                          className={`p-3 rounded-2xl border-2 text-left transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden ${
+                                          onClick={() => {
+                                            sacredHaptics.lightTap();
+                                            changeReaderTheme(th.id);
+                                          }}
+                                          className={`min-h-[64px] p-3 rounded-2xl border-2 text-left transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden ${
                                             isSelected
                                               ? 'border-amber-600 ring-2 ring-amber-500 shadow-md scale-[1.02]'
                                               : 'border-gray-200 dark:border-zinc-700 hover:border-amber-400'

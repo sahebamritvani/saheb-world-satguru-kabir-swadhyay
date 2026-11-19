@@ -4,9 +4,10 @@ import { ThemeMode } from '../types';
 import banyanGhatWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
 import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
 import sahebEmblemWallpaper from '../assets/images/saheb_world_emblem_wallpaper_1794954938340.jpg';
-import magharAuthenticWallpaper from '../assets/images/maghar_authentic_shrine_wallpaper_1794955828484.jpg';
 import lightFloralWallpaper from '../assets/images/light_floral_geometric_wallpaper_1794955840163.jpg';
 import lightLotusWallpaper from '../assets/images/light_lotus_blossom_wallpaper_1794956964295.jpg';
+
+const magharAuthenticWallpaper = '/assets/aistudio/clean_maghar_dham_nature_1794955298410_2cef22f0.jpg';
 
 export interface GlobalNaturePreset {
   id: 'banyan_ghat' | 'maghar_dham' | 'saheb_icon_emblem' | 'maghar_authentic' | 'light_floral_geometric' | 'light_lotus' | 'dawn_mountain' | 'emerald_forest' | 'sunset_sky' | 'sacred_river' | 'golden_autumn';
@@ -681,7 +682,7 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       },
       maghar_authentic: {
         backgroundImage: `url("${magharAuthenticWallpaper}")`,
-        overlay: overlays.light
+        overlay: overlays.medium
       },
       light_floral_geometric: {
         backgroundImage: `url("${lightFloralWallpaper}")`,

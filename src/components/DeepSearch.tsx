@@ -17,7 +17,7 @@ import { Language, Sakhi } from '../types';
 import { translations, getLocalizedGranthaName } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sakhisDatabase } from '../data/sakhis';
-import { ULATVASI_DATABASE } from '../data/ulatvasiQuizData';
+import { ULATVASI_CORE_QUESTIONS, loadAllUlatvasiDatabase, UlatvasiQuestion } from '../data/ulatvasiQuizData';
 import { useVoiceInput } from '../services/speechRecognition';
 import { db, auth } from '../lib/firebase';
 import { collection, addDoc, query, getDocs, orderBy, limit, serverTimestamp, doc } from 'firebase/firestore';
@@ -45,6 +45,19 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [selectedTheme, setSelectedTheme] = useState<string>('all');
   const [selectedGranth, setSelectedGranth] = useState<string>('all');
+  const [ulatvasiItems, setUlatvasiItems] = useState<UlatvasiQuestion[]>(ULATVASI_CORE_QUESTIONS);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadAllUlatvasiDatabase()
+      .then((all) => {
+        if (!cancelled && all.length > 0) setUlatvasiItems(all);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const [searchHistory, setSearchHistory] = useState<string[]>(() => {
     try {
@@ -168,7 +181,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
     if (!hasQuery && !hasFilter) {
       return { 
         sakhis: sakhisDatabase.slice(0, 15), 
-        ulatvasis: ULATVASI_DATABASE.slice(0, 5),
+        ulatvasis: ulatvasiItems.slice(0, 5),
         isDefaultList: true 
       };
     }
@@ -225,7 +238,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
       return true;
     });
 
-    const matchedUlatvasis = (selectedGranth === 'all' || selectedGranth === 'Bijak') ? ULATVASI_DATABASE.filter(u => {
+    const matchedUlatvasis = (selectedGranth === 'all' || selectedGranth === 'Bijak') ? ulatvasiItems.filter(u => {
       if (!hasQuery) return selectedTheme === 'all' || selectedTheme === 'maya-kaya' || selectedTheme === 'chetavani';
       return (
         u.title[language].toLowerCase().includes(lowQuery) ||
@@ -236,7 +249,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
     }) : [];
 
     return { sakhis: matchedSakhis, ulatvasis: matchedUlatvasis, isDefaultList: false };
-  }, [searchQuery, selectedTheme, selectedGranth, language]);
+  }, [searchQuery, selectedTheme, selectedGranth, language, ulatvasiItems]);
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();

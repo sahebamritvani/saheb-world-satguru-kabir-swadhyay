@@ -210,3 +210,148 @@ export const AARTI_PATH_SECTION: NitnemSection = {
     }
   ]
 };
+
+export const SANDHYA_AARTI_1_SECTION: NitnemSection = {
+  id: "sandhya-aarti-1",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "आरती",
+  title: {
+    hi: "आरती - १",
+    pb: "ਆਰਤੀ - ੧",
+    en: "Aarti - 1"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। सतगुरु कबीर साहेब की पावन संध्या आरती (जय जय सत्य कबीर)",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪਵਿੱਤਰ ਸੰਧਿਆ ਆਰਤੀ",
+    en: "Sacred Evening Aarti of Satguru Kabir Saheb"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sa1-v1",
+      type: "aarti",
+      lines: {
+        hi: [...AARTI_PATH_SECTION.verses[0].lines.hi],
+        pb: [...AARTI_PATH_SECTION.verses[0].lines.pb],
+        en: [...AARTI_PATH_SECTION.verses[0].lines.en]
+      },
+      bhavarth: { ...AARTI_PATH_SECTION.verses[0].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_AARTI_2_SECTION: NitnemSection = {
+  id: "sandhya-aarti-2",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "आरती",
+  title: {
+    hi: "आरती - २",
+    pb: "ਆਰਤੀ - ੨",
+    en: "Aarti - 2"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। आरती गरीब निवाज एवं दीन दयाल साहेब",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਆਰਤੀ ਗਰੀਬ ਨਿਵਾਜ ਅਤੇ ਦੀਨ ਦਯਾਲ ਸਾਹੇਬ",
+    en: "Sacred Aarti of the Protector of the Meek"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sa2-v1",
+      type: "aarti",
+      lines: {
+        hi: [...AARTI_PATH_SECTION.verses[1].lines.hi],
+        pb: [...AARTI_PATH_SECTION.verses[1].lines.pb],
+        en: [...AARTI_PATH_SECTION.verses[1].lines.en]
+      },
+      bhavarth: { ...AARTI_PATH_SECTION.verses[1].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_AARTI_3_SECTION: NitnemSection = {
+  id: "sandhya-aarti-3",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "आरती",
+  title: {
+    hi: "आरती - ३",
+    pb: "ਆਰਤੀ - ੩",
+    en: "Aarti - 3"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। पारख रूप कृपालम् श्री गुरुदेव संध्या आरती",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਪਾਰਖ ਰੂਪ ਕ੍ਰਿਪਾਲਮ ਸ਼੍ਰੀ ਗੁਰੂਦੇਵ ਸੰਧਿਆ ਆਰਤੀ",
+    en: "Sacred Aarti of the Discerning Merciful Master"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sa3-v1",
+      type: "aarti",
+      lines: {
+        hi: [...AARTI_PATH_SECTION.verses[2].lines.hi],
+        pb: [...AARTI_PATH_SECTION.verses[2].lines.pb],
+        en: [...AARTI_PATH_SECTION.verses[2].lines.en]
+      },
+      bhavarth: { ...AARTI_PATH_SECTION.verses[2].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_AARTI_4_SECTION: NitnemSection = {
+  id: "sandhya-aarti-4",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "आरती",
+  title: {
+    hi: "आरती - ४",
+    pb: "ਆਰਤੀ - ੪",
+    en: "Aarti - 4"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। आरति सत्यनाम की कीजै - पावन संध्या आरती",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਆਰਤਿ ਸਤਯਨਾਮ ਕੀ ਕੀਜੈ - ਪਵਿੱਤਰ ਸੰਧਿਆ ਆਰਤੀ",
+    en: "Sacred Aarti of the True Name (Satyanam)"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sa4-v1",
+      type: "aarti",
+      lines: {
+        hi: [...AARTI_PATH_SECTION.verses[3].lines.hi],
+        pb: [...AARTI_PATH_SECTION.verses[3].lines.pb],
+        en: [...AARTI_PATH_SECTION.verses[3].lines.en]
+      },
+      bhavarth: { ...AARTI_PATH_SECTION.verses[3].bhavarth }
+    }
+  ]
+};
+

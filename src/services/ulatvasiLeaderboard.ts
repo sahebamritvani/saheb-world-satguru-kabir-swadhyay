@@ -1,6 +1,6 @@
 import { db } from '../lib/firebase';
 import { collection, doc, setDoc, getDocs, query, orderBy, limit } from 'firebase/firestore';
-import { LeaderboardEntry, INITIAL_SEEKERS_LEADERBOARD } from '../data/ulatvasiQuizData';
+import { LeaderboardEntry, INITIAL_SEEKERS_LEADERBOARD } from '../data/ulatvasiMetadata';
 
 const LOCAL_STORAGE_KEY = 'sahebworld_ulatvasi_leaderboard';
 const USER_PROFILE_KEY = 'sahebworld_sadhak_profile';

@@ -16,9 +16,9 @@ import {
 } from 'lucide-react';
 import { Language, SACRED_BRANDING } from '../types';
 import { TEN_SATYA_VACHAN_SUTRAS, DAS_SUTRAS_METADATA, SatyaVachanSutra } from '../data/dasSutraData';
-import { SAKHI_SANGRAH_ANG_3_VERSES } from '../data/granths/sakhiSangrahAng3';
 import { GranthVerse } from '../data/granths/granthTypes';
 import { useAppTheme } from '../theme/ThemeContext';
+import { SacredLoader } from './SacredLoader';
 
 interface GuruJiDasSutraViewProps {
   language: Language;
@@ -61,6 +61,20 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
   const [currentlyPlayingIndex, setCurrentlyPlayingIndex] = useState<number | null>(null);
   const [currentlyPlayingVerseId, setCurrentlyPlayingVerseId] = useState<string | number | null>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
+  const [ang3Verses, setAng3Verses] = useState<GranthVerse[]>([]);
+
+  useEffect(() => {
+    if (activeTab !== 'guru-parakh' || ang3Verses.length > 0) return;
+    let cancelled = false;
+    import('../data/granths/sakhiSangrahAng3')
+      .then((mod) => {
+        if (!cancelled) setAng3Verses(mod.SAKHI_SANGRAH_ANG_3_VERSES);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [activeTab, ang3Verses.length]);
 
   // Sync prop changes
   useEffect(() => {
@@ -215,13 +229,13 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
     let currentIndex = 0;
 
     const speakNext = () => {
-      if (currentIndex >= SAKHI_SANGRAH_ANG_3_VERSES.length) {
+      if (currentIndex >= ang3Verses.length) {
         setIsPlayingAll(false);
         setCurrentlyPlayingVerseId(null);
         return;
       }
 
-      const verse = SAKHI_SANGRAH_ANG_3_VERSES[currentIndex];
+      const verse = ang3Verses[currentIndex];
       setCurrentlyPlayingVerseId(verse.id);
 
       const linesText = (verse.lines[targetLang] || verse.lines.hi || []).join(' ');
@@ -258,7 +272,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
         'गुरु पारख को अंग - २२ पावन साखियाँ (सतगुरु कबीर वाणी)',
         '====================================================',
         '',
-        ...SAKHI_SANGRAH_ANG_3_VERSES.map((v, i) => {
+        ...ang3Verses.map((v, i) => {
           const lines = (v.lines[activeLang] || v.lines.hi || []).join('\n');
           const bhavarth = getBhavarthText(v, activeLang);
           return `【 साखी ${i + 1} 】\n${lines}\nभावार्थ: ${bhavarth}\n`;
@@ -349,7 +363,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
         '🌹 ।। सत्यनाम ।। 🌹',
         'गुरु पारख को अंग (सतगुरु कबीर साहेब)',
         '',
-        ...SAKHI_SANGRAH_ANG_3_VERSES.slice(0, 5).map((v, i) => `${i + 1}. ${(v.lines[activeLang] || v.lines.hi || [])[0]}`),
+        ...ang3Verses.slice(0, 5).map((v, i) => `${i + 1}. ${(v.lines[activeLang] || v.lines.hi || [])[0]}`),
         '... सम्पूर्ण २२ साखियाँ ऐप में उपलब्ध हैं।',
         '',
         '।। साहेब बंदगी साहेब ।। 🙏',
@@ -874,9 +888,11 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
               </motion.div>
             );
           })
+        ) : ang3Verses.length === 0 ? (
+          <SacredLoader language={activeLang} compact />
         ) : (
           /* GURU PARAKH KO ANG - 22 VERSES WITH ANIMATION, AUDIO & SHARE */
-          SAKHI_SANGRAH_ANG_3_VERSES.map((verse, index) => {
+          ang3Verses.map((verse, index) => {
             const isAudioActive = currentlyPlayingVerseId === verse.id;
             const verseLines = verse.lines[activeLang] || verse.lines.hi || [];
             const meaning = getBhavarthText(verse, activeLang);

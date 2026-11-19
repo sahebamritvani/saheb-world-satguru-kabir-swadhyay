@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   BookOpen,
   Volume2,
@@ -27,11 +27,12 @@ import { useAppTheme } from '../theme/ThemeContext';
 import {
   SGGS_KABIR_STATS,
   SGGS_KABIR_RAAGS,
-  SGGS_KABIR_VERSES_COLLECTION,
   SggsKabirVerse
-} from '../data/sggsKabirBaniData';
+} from '../data/sggsKabirMetadata';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter } from '../services/audioDhun';
+import { SacredLoader } from './SacredLoader';
+import { PaginationControls } from './PaginationControls';
 
 interface SggsKabirBaniEngineProps {
   onBack?: () => void;
@@ -66,6 +67,34 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
   const [shlokJumpNumber, setShlokJumpNumber] = useState<string>('');
   const [shlokJumpError, setShlokJumpError] = useState<string | null>(null);
 
+  const PAGE_SIZE = 25;
+  const [versesCollection, setVersesCollection] = useState<SggsKabirVerse[]>([]);
+  const [isLoadingSggs, setIsLoadingSggs] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  useEffect(() => {
+    let cancelled = false;
+    setIsLoadingSggs(true);
+    import('../data/sggsKabirBaniData')
+      .then((mod) => {
+        if (!cancelled) {
+          setVersesCollection(mod.SGGS_KABIR_VERSES_COLLECTION);
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to lazy load SGGS Kabir Bani data:', err);
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsLoadingSggs(false);
+        }
+      });
+    return () => {
+      cancelled = true;
+      speechReciter.stop();
+    };
+  }, []);
+
   const handleShlokJump = (e: React.FormEvent) => {
     e.preventDefault();
     if (!shlokJumpNumber.trim()) return;
@@ -77,19 +106,26 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
     }
 
     const targetId = `sggs-salok-${num}`;
-    const found = SGGS_KABIR_VERSES_COLLECTION.find(v => v.id === targetId || v.id.endsWith(`-${num}`));
+    const salokList = versesCollection.filter(v => v.category === 'salok');
+    const salokIdx = salokList.findIndex(v => v.id === targetId || v.id.endsWith(`-${num}`));
+    const found = salokIdx >= 0 ? salokList[salokIdx] : versesCollection.find(v => v.id === targetId || v.id.endsWith(`-${num}`));
     if (found) {
       sacredHaptics.lightTap();
       setShlokJumpError(null);
       setShlokJumpNumber('');
       setActiveTab('salok');
+      setSelectedRaag('all');
+      setSearchQuery('');
+      if (salokIdx >= 0) {
+        setCurrentPage(Math.floor(salokIdx / PAGE_SIZE) + 1);
+      }
       setExpandedVerseId(found.id);
       setTimeout(() => {
         const el = document.getElementById(found.id);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 100);
+      }, 150);
     } else {
       setShlokJumpError(
         language === 'pb'
@@ -141,7 +177,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
   };
 
   const filteredVerses = useMemo(() => {
-    return SGGS_KABIR_VERSES_COLLECTION.filter(v => {
+    return versesCollection.filter(v => {
       // Tab filter
       if (activeTab !== 'all' && activeTab !== 'raags' && activeTab !== 'history') {
         if (v.category !== activeTab) return false;
@@ -164,7 +200,24 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
         v.ang.toString().includes(q)
       );
     });
+  }, [versesCollection, activeTab, selectedRaag, searchQuery]);
+
+  useEffect(() => {
+    setCurrentPage(1);
   }, [activeTab, selectedRaag, searchQuery]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredVerses.length / PAGE_SIZE));
+
+  const paginatedVerses = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filteredVerses.slice(start, start + PAGE_SIZE);
+  }, [filteredVerses, currentPage]);
+
+  const handleSggsPageChange = (page: number) => {
+    sacredHaptics.lightTap();
+    setCurrentPage(page);
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+  };
 
   return (
     <div className="space-y-6 sm:space-y-8 max-w-7xl mx-auto w-full pb-24">
@@ -743,7 +796,9 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             )}
           </div>
 
-          {filteredVerses.length === 0 ? (
+          {isLoadingSggs ? (
+            <SacredLoader language={language} />
+          ) : filteredVerses.length === 0 ? (
             <div
               style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
               className="rounded-3xl p-10 text-center space-y-4 border-2 border-dashed bg-gradient-to-br from-amber-500/5 to-amber-600/10"
@@ -765,7 +820,17 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               </div>
             </div>
           ) : (
-            filteredVerses.map((verse) => {
+            <>
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              totalItems={filteredVerses.length}
+              pageSize={PAGE_SIZE}
+              onPageChange={handleSggsPageChange}
+              language={language}
+              itemLabel={{ hi: 'वाणी', pb: 'ਬਾਣੀ', en: 'Verses' }}
+            />
+            {paginatedVerses.map((verse) => {
               const isExpanded = expandedVerseId === verse.id;
               const currentStep = activeStepTab[verse.id] || 0;
               const isBookmarked = savedBookmarks.includes(verse.id);
@@ -773,6 +838,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               return (
                 <div
                   key={verse.id}
+                  id={verse.id}
                   style={{ backgroundColor: theme.cardBg }}
                   className="rounded-3xl p-5 sm:p-7 shadow-sm transition-all space-y-4 border border-amber-500/10"
                 >
@@ -1020,7 +1086,17 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   )}
                 </div>
               );
-            })
+            })}
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              totalItems={filteredVerses.length}
+              pageSize={PAGE_SIZE}
+              onPageChange={handleSggsPageChange}
+              language={language}
+              itemLabel={{ hi: 'वाणी', pb: 'ਬਾਣੀ', en: 'Verses' }}
+            />
+            </>
           )}
         </div>
       )}

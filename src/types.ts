@@ -5,7 +5,7 @@
 
 export type Language = 'hi' | 'pb' | 'en';
 
-export type { SggsKabirVerse } from './data/sggsKabirBaniData';
+export type { SggsKabirVerse } from './data/sggsKabirMetadata';
 
 export type ThemeMode = 'bhojpatra' | 'amrit_neel' | 'mystic_dark' | 'flow_state' | 'high_readability_light';
 

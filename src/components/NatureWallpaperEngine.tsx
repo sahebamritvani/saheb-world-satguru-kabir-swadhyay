@@ -20,7 +20,7 @@ import {
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { sakhisDatabase } from '../data/sakhis';
-import { SGGS_KABIR_VERSES_COLLECTION } from '../data/sggsKabirBaniData';
+import { SggsKabirVerse, FALLBACK_HUKAMNAMA_VERSE } from '../data/sggsKabirMetadata';
 import { satyanaamAudio } from '../services/audioDhun';
 import { downloadOrShareImage, triggerBlobDownload, GeneratedCardResult } from '../services/quoteCardGenerator';
 import { autoCorrectSacredText, formatCoupletString, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
@@ -30,9 +30,10 @@ import { sacredHaptics } from '../services/haptics';
 import banyanGhatWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
 import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
 import sahebEmblemWallpaper from '../assets/images/saheb_world_emblem_wallpaper_1794954938340.jpg';
-import magharAuthenticWallpaper from '../assets/images/maghar_authentic_shrine_wallpaper_1794955828484.jpg';
 import lightFloralWallpaper from '../assets/images/light_floral_geometric_wallpaper_1794955840163.jpg';
 import lightLotusWallpaper from '../assets/images/light_lotus_blossom_wallpaper_1794956964295.jpg';
+
+const magharAuthenticWallpaper = '/assets/aistudio/clean_maghar_dham_nature_1794955298410_2cef22f0.jpg';
 
 interface NatureWallpaperEngineProps {
   language: Language;
@@ -98,8 +99,25 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
   const [previewResult, setPreviewResult] = useState<GeneratedCardResult | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
+  const [sggsVerses, setSggsVerses] = useState<SggsKabirVerse[]>([FALLBACK_HUKAMNAMA_VERSE]);
+
+  useEffect(() => {
+    if (textMode !== 'sggs' || sggsVerses.length > 1) return;
+    let cancelled = false;
+    import('../data/sggsKabirBaniData')
+      .then((mod) => {
+        if (!cancelled && mod.SGGS_KABIR_VERSES_COLLECTION.length > 0) {
+          setSggsVerses(mod.SGGS_KABIR_VERSES_COLLECTION);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [textMode, sggsVerses.length]);
+
   const currentSakhi: Sakhi = sakhisDatabase.find((s: Sakhi) => s.id === selectedSakhiId) || sakhisDatabase[0];
-  const currentSalok = SGGS_KABIR_VERSES_COLLECTION.find((v) => v.id === selectedSalokId) || SGGS_KABIR_VERSES_COLLECTION[0];
+  const currentSalok = sggsVerses.find((v) => v.id === selectedSalokId) || sggsVerses[0] || FALLBACK_HUKAMNAMA_VERSE;
   const t = translations[activeLang] || translations.hi;
 
   const presetsList: PresetItem[] = [
@@ -472,6 +490,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
     verseFontSize,
     bhavarthFontSize,
     activeLang,
+    sggsVerses,
   ]);
 
   const handleResetSettings = () => {
@@ -760,7 +779,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   onChange={(e) => setSelectedSalokId(e.target.value)}
                   className="w-full p-2.5 rounded-xl border border-black/15 dark:border-white/15 bg-white dark:bg-zinc-900 text-amber-950 dark:text-amber-100 font-serif text-xs"
                 >
-                  {SGGS_KABIR_VERSES_COLLECTION.filter((v) => v.category === 'salok').map((s) => (
+                  {sggsVerses.filter((v) => v.category === 'salok').map((s) => (
                     <option key={s.id} value={s.id}>
                       {(s.title[activeLang] || s.title.pb)} (Ang {s.ang})
                     </option>

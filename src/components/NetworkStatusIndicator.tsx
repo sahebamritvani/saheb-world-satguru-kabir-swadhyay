@@ -41,9 +41,9 @@ export const NetworkStatusIndicator: React.FC<NetworkStatusIndicatorProps> = ({ 
 
   const localizedMessages = {
     offlineTitle: {
-      hi: 'ऑफ़लाइन मोड सक्रिय',
-      pb: 'ਔਫਲਾਈਨ ਮੋਡ ਚਾਲੂ',
-      en: 'Offline Mode Active'
+      hi: 'ऑफलाइन स्वाध्याय मोड सक्रिय',
+      pb: 'ਔਫਲਾਈਨ ਸੁਆਧਿਆਏ ਮੋਡ ਚਾਲੂ',
+      en: 'Offline Swadhyay Mode Active'
     },
     offlineDesc: {
       hi: 'नितनेम गुटका, सत्यनाम धुन, साखियाँ व सभी ग्रंथ बिना इंटरनेट पूर्णतः उपलब्ध हैं।',

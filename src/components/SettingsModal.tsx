@@ -35,6 +35,8 @@ import {
   Link2,
   RefreshCw,
   Pin,
+  Activity,
+  SpellCheck,
 } from 'lucide-react';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
 import { auth, signInWithGoogle } from '../lib/firebase';
@@ -1855,6 +1857,41 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 }`}
               >
                 {splashOnLaunch ? (language === 'hi' ? 'चालू (ON)' : 'ON') : (language === 'hi' ? 'बंद (OFF)' : 'OFF')}
+              </button>
+            </div>
+          </div>
+
+          {/* Section: Advanced & Admin Tools */}
+          <div className="space-y-3 pt-4 border-t border-amber-500/20">
+            <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4" />
+              <span>
+                {language === 'pb' ? 'ਉੱਨਤ ਤੇ ਐਡਮਿನ್ ਟੂਲਸ' : language === 'en' ? 'Advanced & Admin Tools' : 'उन्नत एवं एडमिन टूल्स'}
+              </span>
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  window.dispatchEvent(new CustomEvent('sahebworld:navigate', { detail: 'health-diagnostic' }));
+                }}
+                className="py-2.5 px-3 rounded-xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs font-bold font-serif transition flex items-center gap-2 cursor-pointer"
+              >
+                <Activity className="w-4 h-4 text-amber-600 shrink-0" />
+                <span>{language === 'pb' ? 'ਐਪ ਸਿਹਤ ਤੇ ਡਾਇਗਨੋਸਟਿਕ' : language === 'en' ? 'App Health Diagnostic' : 'ऐप सेहत एवं डायग्नोस्टिक'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  window.dispatchEvent(new CustomEvent('sahebworld:navigate', { detail: 'auto-correct' }));
+                }}
+                className="py-2.5 px-3 rounded-xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs font-bold font-serif transition flex items-center gap-2 cursor-pointer"
+              >
+                <SpellCheck className="w-4 h-4 text-amber-600 shrink-0" />
+                <span>{language === 'pb' ? 'ਬਾਣੀ ਸੋਧ ਤੇ ਮਾਨਕੀਕਰਨ' : language === 'en' ? 'Vani Auto-Correct & Harmonization' : 'वाणी वर्तनी शोधन एवं मानकीकरण'}</span>
               </button>
             </div>
           </div>

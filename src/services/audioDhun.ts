@@ -47,6 +47,8 @@ class SatyanaamAudioEngine {
   private fluteTimer: number | null = null;
   private vocalTimer: number | null = null;
   private bellTimer: number | null = null;
+  private stopFadeTimer: number | null = null;
+  private vocalSessionToken = 0;
   private ambientNodes: { stop: () => void; disconnect: () => void }[] = [];
 
   constructor() {
@@ -209,6 +211,19 @@ class SatyanaamAudioEngine {
       this.soundMix = { ...this.soundMix, ...customMix };
     }
 
+    if (this.stopFadeTimer !== null) {
+      clearTimeout(this.stopFadeTimer);
+      this.stopFadeTimer = null;
+    }
+
+    // Ensure any previous timers/nodes are cleared cleanly before starting
+    this.clearPlaybackTimers();
+    this.ambientNodes.forEach((node) => {
+      node.stop();
+      node.disconnect();
+    });
+    this.ambientNodes = [];
+
     this.isPlaying = true;
     const now = this.ctx.currentTime;
 
@@ -314,6 +329,14 @@ class SatyanaamAudioEngine {
       osc.start(t);
       vibrato.stop(t + 4.3);
       osc.stop(t + 4.3);
+      osc.onended = () => {
+        try {
+          vibrato.disconnect();
+          vibratoGain.disconnect();
+          osc.disconnect();
+          noteGain.disconnect();
+        } catch {}
+      };
     };
 
     playFluteNote();
@@ -431,6 +454,13 @@ class SatyanaamAudioEngine {
 
       osc.start(noteTime);
       osc.stop(noteTime + 1.85);
+      osc.onended = () => {
+        try {
+          osc.disconnect();
+          filter.disconnect();
+          noteGain.disconnect();
+        } catch {}
+      };
     });
   }
 
@@ -468,6 +498,12 @@ class SatyanaamAudioEngine {
 
       osc.start(noteTime);
       osc.stop(noteTime + duration + 0.05);
+      osc.onended = () => {
+        try {
+          osc.disconnect();
+          g.disconnect();
+        } catch {}
+      };
     });
   }
 
@@ -545,9 +581,10 @@ class SatyanaamAudioEngine {
    */
   private startVocalChantingLoop() {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+    const sessionToken = ++this.vocalSessionToken;
 
     const chantOnce = () => {
-      if (!this.isPlaying || !this.vocalChantEnabled) return;
+      if (sessionToken !== this.vocalSessionToken || !this.isPlaying || !this.vocalChantEnabled) return;
 
       let chantPhrase = 'सत्यनाम... सत्यनाम';
       let lang = 'hi-IN';
@@ -574,7 +611,7 @@ class SatyanaamAudioEngine {
 
       utterance.onend = () => {
         // Wait 4.5 seconds of tranquil Swarmandal music before chanting again
-        if (this.isPlaying && this.vocalChantEnabled) {
+        if (sessionToken === this.vocalSessionToken && this.isPlaying && this.vocalChantEnabled) {
           this.vocalTimer = window.setTimeout(() => {
             chantOnce();
           }, 4500);
@@ -582,7 +619,7 @@ class SatyanaamAudioEngine {
       };
 
       utterance.onerror = () => {
-        if (this.isPlaying && this.vocalChantEnabled) {
+        if (sessionToken === this.vocalSessionToken && this.isPlaying && this.vocalChantEnabled) {
           this.vocalTimer = window.setTimeout(() => {
             chantOnce();
           }, 6000);
@@ -598,43 +635,74 @@ class SatyanaamAudioEngine {
     }, 1500);
   }
 
-  /**
-   * Gracefully stops the dhun, Swarmandal, and vocal chanting loop
-   */
-  public stopDhun() {
-    if (!this.isPlaying) return;
-
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-    }
-
-    if (this.swarmandalTimer) {
+  private clearPlaybackTimers() {
+    if (this.swarmandalTimer !== null) {
       clearInterval(this.swarmandalTimer);
       this.swarmandalTimer = null;
     }
-    if (this.vocalTimer) {
+    if (this.fluteTimer !== null) {
+      clearInterval(this.fluteTimer);
+      this.fluteTimer = null;
+    }
+    if (this.vocalTimer !== null) {
       clearTimeout(this.vocalTimer);
       this.vocalTimer = null;
     }
-    if (this.bellTimer) {
+    if (this.bellTimer !== null) {
       clearInterval(this.bellTimer);
       this.bellTimer = null;
     }
+  }
 
-    if (this.masterGain && this.ctx) {
-      const now = this.ctx.currentTime;
-      this.masterGain.gain.setValueAtTime(this.masterGain.gain.value, now);
-      this.masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.8);
+  /**
+   * Gracefully stops the dhun, Swarmandal, flute, and vocal chanting loop
+   */
+  public stopDhun() {
+    this.vocalSessionToken++;
+    this.clearPlaybackTimers();
+
+    if (!this.isPlaying) return;
+    this.isPlaying = false;
+
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {}
     }
 
-    setTimeout(() => {
-      this.ambientNodes.forEach(node => {
+    const fadingMaster = this.masterGain;
+    this.masterGain = null;
+    this.swarmandalGainNode = null;
+    this.veenaGainNode = null;
+    this.chimeGainNode = null;
+    this.fluteGainNode = null;
+    this.natureGainNode = null;
+
+    if (fadingMaster && this.ctx) {
+      const now = this.ctx.currentTime;
+      try {
+        fadingMaster.gain.cancelScheduledValues(now);
+        fadingMaster.gain.setValueAtTime(fadingMaster.gain.value, now);
+        fadingMaster.gain.linearRampToValueAtTime(0.0001, now + 0.35);
+      } catch {}
+    }
+
+    const nodesToStop = [...this.ambientNodes];
+    this.ambientNodes = [];
+
+    if (this.stopFadeTimer !== null) {
+      clearTimeout(this.stopFadeTimer);
+    }
+    this.stopFadeTimer = window.setTimeout(() => {
+      this.stopFadeTimer = null;
+      nodesToStop.forEach(node => {
         node.stop();
         node.disconnect();
       });
-      this.ambientNodes = [];
-      this.isPlaying = false;
-    }, 850);
+      try {
+        fadingMaster?.disconnect();
+      } catch {}
+    }, 400);
   }
 
   public toggleDhun(): boolean {
@@ -666,6 +734,7 @@ class SpeechRecitationEngine {
   private onCompleteCallback?: () => void;
   private onErrorCallback?: (err?: any) => void;
   private sessionToken = 0;
+  private nextChunkTimer: number | null = null;
 
   constructor() {
     if (typeof window !== 'undefined') {
@@ -862,7 +931,11 @@ class SpeechRecitationEngine {
         if (token === this.sessionToken && this.isReciting) {
           this.queueIndex++;
           // Small micro-pause between phrases
-          window.setTimeout(() => {
+          if (this.nextChunkTimer !== null) {
+            clearTimeout(this.nextChunkTimer);
+          }
+          this.nextChunkTimer = window.setTimeout(() => {
+            this.nextChunkTimer = null;
             this.playCurrentQueueChunk(token);
           }, 60);
         }
@@ -939,6 +1012,19 @@ class SpeechRecitationEngine {
     this.queueIndex = 0;
     this.onCompleteCallback = undefined;
     this.onErrorCallback = undefined;
+
+    if (this.nextChunkTimer !== null) {
+      clearTimeout(this.nextChunkTimer);
+      this.nextChunkTimer = null;
+    }
+
+    if (this.utterance) {
+      try {
+        this.utterance.onend = null;
+        this.utterance.onerror = null;
+      } catch {}
+      this.utterance = null;
+    }
     
     if (typeof window !== 'undefined') {
       (window as any).__saheb_active_utterance = null;
@@ -972,6 +1058,7 @@ class AmbientReaderDhunEngine {
   private volume = 0.45;
   private isMuted = false;
   private loopInterval: number | null = null;
+  private stopFadeTimer: number | null = null;
   private activeNodes: { stop: () => void; disconnect: () => void }[] = [];
 
   private init() {
@@ -1083,6 +1170,13 @@ class AmbientReaderDhunEngine {
 
       osc.start(t);
       osc.stop(t + 3.6);
+      osc.onended = () => {
+        try {
+          osc.disconnect();
+          filter.disconnect();
+          gain.disconnect();
+        } catch {}
+      };
     };
 
     pluck();
@@ -1125,6 +1219,14 @@ class AmbientReaderDhunEngine {
       osc.start(t);
       vibrato.stop(t + 4.6);
       osc.stop(t + 4.6);
+      osc.onended = () => {
+        try {
+          vibrato.disconnect();
+          vibratoGain.disconnect();
+          osc.disconnect();
+          noteGain.disconnect();
+        } catch {}
+      };
     };
 
     playFluteNote();
@@ -1191,6 +1293,13 @@ class AmbientReaderDhunEngine {
 
         osc.start(noteTime);
         osc.stop(noteTime + 2.05);
+        osc.onended = () => {
+          try {
+            osc.disconnect();
+            filter.disconnect();
+            noteGain.disconnect();
+          } catch {}
+        };
       });
     };
 
@@ -1251,6 +1360,11 @@ class AmbientReaderDhunEngine {
     });
     this.activeNodes = [];
 
+    if (this.stopFadeTimer !== null) {
+      clearTimeout(this.stopFadeTimer);
+      this.stopFadeTimer = null;
+    }
+
     if (this.masterGain && this.ctx) {
       const fadingGain = this.masterGain;
       this.masterGain = null;
@@ -1260,7 +1374,8 @@ class AmbientReaderDhunEngine {
         fadingGain.gain.setValueAtTime(fadingGain.gain.value, now);
         fadingGain.gain.linearRampToValueAtTime(0, now + 0.25);
       } catch {}
-      setTimeout(() => {
+      this.stopFadeTimer = window.setTimeout(() => {
+        this.stopFadeTimer = null;
         try {
           fadingGain.disconnect();
         } catch {}
@@ -1281,4 +1396,12 @@ class AmbientReaderDhunEngine {
 }
 
 export const ambientReaderAudio = new AmbientReaderDhunEngine();
+
+/**
+ * Stops transient speech and reader-specific background audio when switching screens or closing modals.
+ */
+export function stopTransientSacredAudio() {
+  speechReciter.stop();
+  ambientReaderAudio.stop();
+}
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Sparkles, 
@@ -494,6 +494,12 @@ export const KabirParichayFourYugas: React.FC<KabirParichayFourYugasProps> = ({
   const [isSpeaking, setIsSpeaking] = useState(false);
 
   const currentYuga = FOUR_YUGAS_DATA.find((y) => y.key === selectedYugaKey) || FOUR_YUGAS_DATA[3];
+
+  useEffect(() => {
+    return () => {
+      speechReciter.stop();
+    };
+  }, []);
 
   const handleYugaChange = (key: YugaKey) => {
     sacredHaptics.lightTap();

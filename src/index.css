@@ -158,19 +158,70 @@
   }
 }
 
-/* Punjabi / Gurmukhi Typography & Font Feature Settings for High Legibility */
+/* Devanagari / Hindi & Gurmukhi Sacred Typography for Long-Form Reading Comfort */
+[lang="hi"],
+[data-lang="hi"],
 [lang="pa"],
 [data-lang="pb"],
 .font-gurmukhi {
-  font-feature-settings: "liga" 1, "dlig" 1, "mset" 1, "kern" 1;
+  font-feature-settings: "akhn" 1, "rphf" 1, "blwf" 1, "half" 1, "pres" 1, "abvs" 1, "blws" 1, "liga" 1, "dlig" 1, "mset" 1, "kern" 1;
   font-variant-ligatures: common-ligatures contextual;
-  line-height: 1.65;
-  letter-spacing: -0.01em;
-  word-spacing: -0.02em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis-weight: none;
   direction: ltr !important;
   text-align: left;
+}
+
+[lang="pa"],
+[data-lang="pb"],
+.font-gurmukhi {
+  line-height: 1.8;
+  letter-spacing: 0em;
+  word-spacing: 0.04em;
+}
+
+@layer components {
+  .sacred-verse-typography {
+    font-feature-settings: "akhn" 1, "rphf" 1, "blwf" 1, "half" 1, "pres" 1, "abvs" 1, "blws" 1, "liga" 1, "kern" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis-weight: none;
+    letter-spacing: 0.004em;
+    word-spacing: 0.07em;
+    text-wrap: pretty;
+  }
+
+  .sacred-meaning-typography {
+    font-feature-settings: "akhn" 1, "rphf" 1, "blwf" 1, "half" 1, "pres" 1, "abvs" 1, "blws" 1, "liga" 1, "kern" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.003em;
+    word-spacing: 0.04em;
+    line-height: 1.82;
+  }
+
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Dark mode optical refinement: prevent harsh halation on glowing cream/white glyphs */
+.dark .sacred-verse-typography,
+.dark .sacred-meaning-typography {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nitnem-smooth-scroll-viewport {
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Bi-directional Text Support for Gurmukhi/Devanagari/English and RTL flow */

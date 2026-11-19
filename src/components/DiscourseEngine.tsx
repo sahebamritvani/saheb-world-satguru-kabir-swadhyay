@@ -75,6 +75,14 @@ export const DiscourseEngine: React.FC<DiscourseEngineProps> = ({
     return parseSakhiInto5StepDiscourse(selectedSakhi, language);
   }, [selectedSakhi, pastedSakhiText, isCustomMode, language]);
 
+  // Clean up audio engines on screen unmount
+  useEffect(() => {
+    return () => {
+      speechReciter.stop();
+      ambientReaderAudio.stop();
+    };
+  }, []);
+
   // Handle Speech Recitation
   const handleToggleSpeech = () => {
     if (isSpeaking) {

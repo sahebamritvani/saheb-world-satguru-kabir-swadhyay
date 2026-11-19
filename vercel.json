@@ -22,11 +22,19 @@
         { "key": "Content-Type", "value": "application/manifest+json; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|sw\\.js|workbox-.*\\.js|manifest\\.webmanifest|favicon.*|pwa-.*|apple-touch-icon\\.png|icon\\.png|Saheb_World_icon\\.jpg).*)",
+      "source": "/((?!api/|assets/|\\.well-known/|sw\\.js|workbox-.*\\.js|manifest\\.webmanifest|favicon.*|pwa-.*|apple-touch-icon\\.png|icon\\.png|Saheb_World_icon\\.jpg).*)",
       "destination": "/index.html"
     }
   ]

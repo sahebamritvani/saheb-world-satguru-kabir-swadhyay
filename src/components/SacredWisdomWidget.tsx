@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
-import { sakhisDatabase } from '../data/sakhis';
+import { STARTER_SAKHIS, loadFullSakhisModule } from '../data/sakhiStarterData';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter } from '../services/audioDhun';
 
@@ -256,11 +256,9 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
   const [sourceMode, setSourceMode] = useState<'sutra' | 'sakhi'>('sutra');
   const [sutraIdx, setSutraIdx] = useState<number>(() => Math.floor(Math.random() * CURATED_AMRIT_SUTRAS.length));
 
+  const [sakhisList, setSakhisList] = useState<Sakhi[]>(STARTER_SAKHIS);
   // Random Sakhi state
-  const [currentSakhi, setCurrentSakhi] = useState<Sakhi>(() => {
-    const randomIndex = Math.floor(Math.random() * sakhisDatabase.length);
-    return sakhisDatabase[randomIndex] || sakhisDatabase[0];
-  });
+  const [currentSakhi, setCurrentSakhi] = useState<Sakhi>(() => STARTER_SAKHIS[0]);
 
   const [isCopied, setIsCopied] = useState(false);
   const [shareToast, setShareToast] = useState<string | null>(null);
@@ -268,9 +266,30 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
   const [isShuffling, setIsShuffling] = useState(false);
 
   useEffect(() => {
+    let active = true;
+    loadFullSakhisModule()
+      .then((mod) => {
+        if (!active || !mod.sakhisDatabase?.length) return;
+        setSakhisList(mod.sakhisDatabase);
+        const randomIndex = Math.floor(Math.random() * mod.sakhisDatabase.length);
+        setCurrentSakhi(mod.sakhisDatabase[randomIndex] || mod.sakhisDatabase[0]);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
     speechReciter.stop();
     setIsPlayingAudio(false);
   }, [language]);
+
+  useEffect(() => {
+    return () => {
+      speechReciter.stop();
+    };
+  }, []);
 
   const activeEntry = useMemo(() => {
     if (sourceMode === 'sutra') {
@@ -310,11 +329,11 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
       if (sourceMode === 'sutra') {
         setSutraIdx((prev) => (prev + 1) % CURATED_AMRIT_SUTRAS.length);
       } else {
-        let randomIndex = Math.floor(Math.random() * sakhisDatabase.length);
-        if (sakhisDatabase[randomIndex]?.id === currentSakhi.id && sakhisDatabase.length > 1) {
-          randomIndex = (randomIndex + 1) % sakhisDatabase.length;
+        let randomIndex = Math.floor(Math.random() * sakhisList.length);
+        if (sakhisList[randomIndex]?.id === currentSakhi.id && sakhisList.length > 1) {
+          randomIndex = (randomIndex + 1) % sakhisList.length;
         }
-        setCurrentSakhi(sakhisDatabase[randomIndex] || sakhisDatabase[0]);
+        setCurrentSakhi(sakhisList[randomIndex] || sakhisList[0]);
       }
       setIsShuffling(false);
     }, 180);
@@ -570,7 +589,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
               sourceMode === 'sakhi' ? 'bg-amber-600 text-white shadow-xs' : 'opacity-75 hover:opacity-100'
             }`}
           >
-            {language === 'pb' ? `📜 ਸਾਖੀ ਬਿਬੇਕ (${sakhisDatabase.length}+)` : language === 'en' ? `📜 Sakhi Wisdom (${sakhisDatabase.length}+)` : `📜 साखी विवेक (${sakhisDatabase.length}+)`}
+            {language === 'pb' ? `📜 ਸਾਖੀ ਬਿਬੇਕ (${sakhisList.length}+)` : language === 'en' ? `📜 Sakhi Wisdom (${sakhisList.length}+)` : `📜 साखी विवेक (${sakhisList.length}+)`}
           </button>
         </div>
 

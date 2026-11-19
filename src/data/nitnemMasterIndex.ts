@@ -72,9 +72,6 @@ export function resolveNitnemSectionId(subChapter: SubChapterIndexItem, parentSe
     if (sid.includes('gyan-gudri') || sid.includes('gyan-guddi')) {
       return sid.replace('gyan-gudri', 'gyan-gudadi').replace('gyan-guddi', 'gyan-gudadi');
     }
-    if (sid === 'sandhya-arjinama-2') {
-      return 'sandhya-arjinama';
-    }
     return sid;
   }
   // Check if title mentions Gyan Guddi/Gudri

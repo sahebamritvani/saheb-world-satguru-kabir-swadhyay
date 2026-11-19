@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Sparkles, Sun, Moon, Calendar, Repeat, BookOpen, ChevronRight, Play, ZoomIn, Volume2, Shield } from 'lucide-react';
 import { Language } from '../types';
-import { NITNEM_SECTIONS } from '../data/nitnemData';
+import { NITNEM_SECTION_STUBS } from '../data/nitnemData';
 import { speechReciter } from '../services/audioDhun';
 
 interface DamakhedaGranthIndexViewProps {
@@ -203,12 +203,12 @@ export const DamakhedaGranthIndexView: React.FC<DamakhedaGranthIndexViewProps> =
             </h3>
           </div>
           <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300">
-            {NITNEM_SECTIONS.length} {language === 'pb' ? 'ਪਾਵਨ ਭਾਗ' : language === 'en' ? 'Sacred Sections' : 'पावन भाग'}
+            {NITNEM_SECTION_STUBS.length} {language === 'pb' ? 'ਪਾਵਨ ਭਾਗ' : language === 'en' ? 'Sacred Sections' : 'पावन भाग'}
           </span>
         </div>
 
         <div className="space-y-2.5 max-h-[60vh] overflow-y-auto pr-1">
-          {NITNEM_SECTIONS.map((sec, idx) => (
+          {NITNEM_SECTION_STUBS.map((sec, idx) => (
             <motion.div
               key={sec.id}
               whileHover={{ scale: 1.005 }}

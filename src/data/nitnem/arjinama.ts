@@ -1104,4 +1104,45 @@ export const ARJINAMA_SANDHYA_SECTION: NitnemSection = {
   ]
 };
 
+export const SANDHYA_ARJINAMA_1_SECTION: NitnemSection = ARJINAMA_SANDHYA_SECTION;
+
+export const SANDHYA_ARJINAMA_2_SECTION: NitnemSection = {
+  id: "sandhya-arjinama-2",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "अर्जीनामा",
+  title: {
+    hi: "अर्जीनामा",
+    pb: "ਅਰਜ਼ੀਨਾਮਾ",
+    en: "Arjinama (Evening Reprise)"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। संध्या वेला विरह अर्जीनामा एवं सतगुरु शरणागति (पुनरावृत्ति)",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸੰਧਿਆ ਵੇਲੇ ਦੀ ਵਿਰਹ ਅਰਜੀਨਾਮਾ ਅਤੇ ਸਤਿਗੁਰੂ ਸ਼ਰਣਾਗਤੀ",
+    en: "Evening Reprise of the Sacred Petition and Surrender at Master's Feet"
+  },
+  iconName: "HeartHandshake",
+  estimatedMinutes: 6,
+  totalVerses: 12,
+  verses: ARJINAMA_SANDHYA_SECTION.verses.map((v) => ({
+    id: `sandhya2-${v.id}`,
+    type: v.type,
+    lines: {
+      hi: [...v.lines.hi],
+      pb: [...v.lines.pb],
+      en: [...v.lines.en]
+    },
+    bhavarth: {
+      hi: v.bhavarth.hi,
+      pb: v.bhavarth.pb,
+      en: v.bhavarth.en
+    }
+  }))
+};
+
+
 

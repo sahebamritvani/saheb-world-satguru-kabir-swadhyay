@@ -33,6 +33,7 @@ import {
   ChevronsDown,
   Feather,
   RefreshCw,
+  RotateCcw,
   Smartphone,
   Download,
   ExternalLink,
@@ -855,8 +856,8 @@ export const Layout: React.FC<LayoutProps> = ({
         {
           view: 'nature-wallpaper' as AppView,
           label: {
-            hi: 'कुदरत वॉलपेपर जनरेटर (Nature Wallpaper Engine)',
-            pb: 'ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਜਨਰੇਟਰ (Nature Wallpaper Engine)',
+            hi: 'कुदरत वॉलपेपर जनरेटर',
+            pb: 'ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਜਨਰੇਟਰ',
             en: 'Nature Wallpaper Engine',
           },
           icon: ImageIcon,
@@ -878,7 +879,7 @@ export const Layout: React.FC<LayoutProps> = ({
             pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ੧੦ ਪਾਵਨ ਸੂਤਰ',
             en: 'Satguru Kabir Saheb 10 Sacred Sutras',
           },
-          icon: Sparkles,
+          icon: Scroll,
           badge: { hi: '१० सूत्र', pb: '੧੦ ਸੂਤਰ', en: '10 Sutras' },
         },
         {
@@ -907,9 +908,9 @@ export const Layout: React.FC<LayoutProps> = ({
         {
           view: 'dhun',
           label: {
-            hi: 'सत्यनाम पावन धुन (अखंड नाद)',
-            pb: 'ਸਤਯਨਾਮ ਪਾਵਨ ਧੁਨ (ਅਖੰਡ ਨਾਦ)',
-            en: 'Satyanaam Sacred Dhun (Live Resonance)',
+            hi: 'सत्यनाम पावन धुन',
+            pb: 'ਸਤਯਨਾਮ ਪਾਵਨ ਧੁਨ',
+            en: 'Satyanaam Sacred Dhun',
           },
           icon: Volume2,
           isDhunSpecial: true,
@@ -922,7 +923,7 @@ export const Layout: React.FC<LayoutProps> = ({
             pb: 'ਨਾਮ-ਸਿਮਰਨ (ਮਾਲਾ ਜਾਪ ਕਾਊਂਟਰ)',
             en: 'Simran & Jaap Counter',
           },
-          icon: Target,
+          icon: RotateCcw,
         },
         {
           view: 'meditation-timer',
@@ -955,8 +956,8 @@ export const Layout: React.FC<LayoutProps> = ({
         {
           view: 'sadhana-goals',
           label: {
-            hi: 'दैनिक साधना लक्ष्य एवं संकल्प (Daily Goals)',
-            pb: 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ (Daily Goals)',
+            hi: 'दैनिक साधना लक्ष्य एवं संकल्प',
+            pb: 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ',
             en: 'Daily Sadhana Goals Tracker',
           },
           icon: Target,
@@ -982,14 +983,14 @@ export const Layout: React.FC<LayoutProps> = ({
       ],
     },
 
-    // ३. ज्ञान, बोध, जीवन चरित्र एवं प्रश्नोत्तरी
+    // ३. ज्ञान, बोध एवं जीवन चरित्र
     {
       id: 'section-gyan-bodh-charitra-quiz',
       numberPrefix: '३.',
       title: {
-        hi: 'ज्ञान, बोध, जीवन चरित्र एवं प्रश्नोत्तरी',
-        pb: 'ਗਿਆਨ, ਬੋਧ, ਜੀਵਨ ਚਰਿੱਤਰ ਤੇ ਪ੍ਰਸ਼ਨਾਵਲੀ',
-        en: 'Wisdom, Leelas & Quizzes',
+        hi: '३. ज्ञान, बोध एवं जीवन चरित्र',
+        pb: '੩. ਗਿਆਨ, ਬੋਧ ਤੇ ਜੀਵਨ ਚਰਿੱਤਰ',
+        en: '3. Wisdom & Life Journey',
       },
       icon: Trophy,
       items: [
@@ -1027,7 +1028,7 @@ export const Layout: React.FC<LayoutProps> = ({
             pb: 'ਦੋਹਾ ਮੈਮੋਰੀ ਟ੍ਰੇਨਰ',
             en: 'Doha Memory Trainer',
           },
-          icon: Sparkles,
+          icon: Bookmark,
           badge: { hi: 'स्मृति अभ्यास', pb: 'ਯਾਦਦਾਸ਼ਤ', en: 'Trainer' },
         },
         {
@@ -1037,13 +1038,13 @@ export const Layout: React.FC<LayoutProps> = ({
             pb: 'ਆਚਾਰਯ ਪਰੰਪਰਾ ਇਤਿਹਾਸ',
             en: 'Acharya Parampara History',
           },
-          icon: History,
+          icon: ShieldCheck,
         },
         {
           view: 'satsang-video',
           label: {
-            hi: 'पावन सत्संग वीडियो (Satsang Videos)',
-            pb: 'ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ (Satsang Videos)',
+            hi: 'पावन सत्संग वीडियो',
+            pb: 'ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ',
             en: 'Satsang Video Discourses',
           },
           icon: Play,
@@ -1051,14 +1052,14 @@ export const Layout: React.FC<LayoutProps> = ({
       ],
     },
 
-    // ४. आध्यात्मिक अन्वेषण, जंत्री एवं साधन
+    // ४. आध्यात्मिक अन्वेषण एवं जंत्री
     {
       id: 'section-exploration-jantri-tools',
       numberPrefix: '४.',
       title: {
-        hi: 'आध्यात्मिक अन्वेषण, जंत्री एवं साधन',
-        pb: 'ਰੂਹਾਨੀ ਖੋਜ, ਜੰਤਰੀ ਤੇ ਸਾਧਨ',
-        en: 'Spiritual Exploration, Calendar & Tools',
+        hi: '४. आध्यात्मिक अन्वेषण एवं जंत्री',
+        pb: '੪. ਰੂਹਾਨੀ ਖੋਜ ਤੇ ਜੰਤਰੀ',
+        en: '4. Exploration & Calendar',
       },
       icon: Compass,
       items: [
@@ -1087,7 +1088,7 @@ export const Layout: React.FC<LayoutProps> = ({
             pb: 'ਬ੍ਰਹਮੰਡ ਦਰਸ਼ਨ (ਸ੍ਰਿਸ਼ਟੀ ਤੇ ਲੋਕ ਰਚਨਾ)',
             en: 'Universe Map (Brahmand Darshan)',
           },
-          icon: Compass,
+          icon: Atom,
         },
         {
           view: 'deep-search',
@@ -1113,26 +1114,8 @@ export const Layout: React.FC<LayoutProps> = ({
             hi: 'पावन ऑडियो लाइब्रेरी (भजनामृत)',
             pb: 'ਪਾਵਨ ਆਡੀਓ ਲਾਇਬ੍ਰੇਰੀ (ਭਜਨਾਮ੍ਰਿਤ)',
             en: 'Sacred Audio Library',
-          },
+            },
           icon: Music2,
-        },
-        {
-          view: 'auto-correct',
-          label: {
-            hi: 'वाणी वर्तनी शोधन एवं सामूहिक मानकीकरण',
-            pb: 'ਬਾਣੀ ਸੋਧ ਤੇ ਸਮੂਹਿਕ ਮਾਨਕੀਕਰਨ',
-            en: 'Auto-Correct & Harmonization',
-          },
-          icon: SpellCheck,
-        },
-        {
-          view: 'health-diagnostic',
-          label: {
-            hi: 'ऐप सेहत एवं डायग्नोस्टिक',
-            pb: 'ਐਪ ਸਿਹਤ ਤੇ ਡਾਇਗਨੋਸਟਿਕ',
-            en: 'App Health Diagnostic',
-          },
-          icon: Activity,
         },
       ],
     },
@@ -1320,31 +1303,33 @@ export const Layout: React.FC<LayoutProps> = ({
               )}
             </button>
 
-            {/* Majestic Fullscreen Toggle Button */}
-            <button
-              type="button"
-              onClick={toggleAppFullscreen}
-              style={{
-                color: theme.sacredMaroon,
-                borderColor: theme.accentGold,
-                backgroundColor: theme.cardBg,
-              }}
-              className="h-7 sm:h-7.5 px-2 sm:px-2.5 rounded-lg border flex items-center gap-1.5 hover:opacity-95 transition-all cursor-pointer shadow-2xs hover:scale-105 active:scale-95 shrink-0"
-              title={isFullscreen ? (language === 'pb' ? 'ਛੋਟੀ ਸਕ੍ਰੀਨ' : 'सामान्य स्क्रीन') : (language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ' : 'पूरी स्क्रीन')}
-              aria-label={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
-            >
-              {isFullscreen ? (
-                <Minimize2 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
-              ) : (
-                <Maximize2 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
-              )}
-              <span className="text-[0.6875rem] font-bold font-serif whitespace-nowrap hidden sm:inline">
-                {isFullscreen 
-                  ? (language === 'pb' ? 'ਛੋਟੀ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Normal Screen' : 'सामान्य स्क्रीन') 
-                  : (language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूरी स्क्रीन')
-                }
-              </span>
-            </button>
+            {/* Majestic Fullscreen Toggle Button - Hidden in standalone / installed PWA / Android TWA / Capacitor mode */}
+            {!pwaStandalone && !isCapacitorAndroid() && (
+              <button
+                type="button"
+                onClick={toggleAppFullscreen}
+                style={{
+                  color: theme.sacredMaroon,
+                  borderColor: theme.accentGold,
+                  backgroundColor: theme.cardBg,
+                }}
+                className="h-7 sm:h-7.5 px-2 sm:px-2.5 rounded-lg border flex items-center gap-1.5 hover:opacity-95 transition-all cursor-pointer shadow-2xs hover:scale-105 active:scale-95 shrink-0"
+                title={isFullscreen ? (language === 'pb' ? 'ਛੋਟੀ ਸਕ੍ਰੀਨ' : 'सामान्य स्क्रीन') : (language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ' : 'पूरी स्क्रीन')}
+                aria-label={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+              >
+                {isFullscreen ? (
+                  <Minimize2 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                ) : (
+                  <Maximize2 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                )}
+                <span className="text-[0.6875rem] font-bold font-serif whitespace-nowrap hidden sm:inline">
+                  {isFullscreen 
+                    ? (language === 'pb' ? 'ਛੋਟੀ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Normal Screen' : 'सामान्य स्क्रीन') 
+                    : (language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूरी स्क्रीन')
+                  }
+                </span>
+              </button>
+            )}
           </div>
         </div>
 
@@ -2324,7 +2309,6 @@ export const Layout: React.FC<LayoutProps> = ({
                 </div>
 
                 <div className="pt-4 border-t border-dashed border-amber-500/20 mt-4 space-y-1">
-
                   <button
                     id="sidebar-user-guide-btn"
                     type="button"
@@ -2333,10 +2317,10 @@ export const Layout: React.FC<LayoutProps> = ({
                       setAboutModalSection('guide');
                     }}
                     style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
+                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
                   >
                     <BookOpen className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਉਪਭੋਗਤਾ ਮਾਰਗਦਰਸ਼ਿਕਾ (User Guide)' : language === 'en' ? 'User Guide' : 'उपयोगकर्ता मार्गदर्शिका (User Guide)'}</span>
+                    <span>{language === 'pb' ? 'ਉਪਭੋਗਤਾ ਮਾਰਗਦਰਸ਼ਿਕਾ' : language === 'en' ? 'User Guide' : 'उपयोगकर्ता मार्गदर्शिका'}</span>
                   </button>
 
                   <button
@@ -2347,10 +2331,10 @@ export const Layout: React.FC<LayoutProps> = ({
                       setAboutModalSection('about');
                     }}
                     style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
+                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
                   >
                     <Info className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ (About Us)' : language === 'en' ? 'About Us' : 'हमारे बारे में (About Us)'}</span>
+                    <span>{language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ' : language === 'en' ? 'About Us' : 'हमारे बारे में'}</span>
                   </button>
                   <button
                     id="sidebar-disclaimer-btn"
@@ -2360,10 +2344,10 @@ export const Layout: React.FC<LayoutProps> = ({
                       setAboutModalSection('disclaimer');
                     }}
                     style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
+                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
                   >
                     <ShieldCheck className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ (Disclaimer)' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण (Disclaimer)'}</span>
+                    <span>{language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण'}</span>
                   </button>
                   <button
                     id="sidebar-privacy-policy-btn"
@@ -2373,10 +2357,10 @@ export const Layout: React.FC<LayoutProps> = ({
                       setAboutModalSection('privacy');
                     }}
                     style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium cursor-pointer"
+                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
                   >
                     <Lock className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ (Privacy Policy)' : language === 'en' ? 'Privacy Policy' : 'गोपनीयता नीति (Privacy Policy)'}</span>
+                    <span>{language === 'pb' ? 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ' : language === 'en' ? 'Privacy Policy' : 'गोपनीयता नीति'}</span>
                   </button>
                 </div>
 
@@ -2574,36 +2558,36 @@ export const Layout: React.FC<LayoutProps> = ({
       </footer>
       )}
 
-      {/* 🧭 Floating Quick Scroll Navigation Pill (Comfortable Mobile & Desktop Thumb Zone) */}
+      {/* 🧭 Compact Floating Quick Scroll Navigation Pill (Lower Bottom-Right Corner) */}
       {showScrollControls && currentView !== 'nitnem-gutka' && (
         <aside
           id="floating-quick-scroll-pill"
           aria-label="Scroll Navigation"
-          className="fixed right-3.5 sm:right-6 bottom-20 sm:bottom-24 z-40 flex flex-col items-center gap-1.5 p-1.5 rounded-full bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-2 border-amber-500/40 shadow-2xl transition-all duration-300 animate-fadeIn select-none ring-1 ring-amber-400/20"
+          className="fixed right-2 sm:right-4 bottom-5 sm:bottom-6 z-40 flex flex-col items-center gap-1 p-1 rounded-full bg-white/85 dark:bg-stone-900/85 backdrop-blur-md border border-amber-500/35 shadow-lg transition-all duration-300 animate-fadeIn select-none"
         >
           {/* Scroll To Top Button */}
           <button
             type="button"
             onClick={scrollToTop}
-            className="w-10 h-10 rounded-full flex flex-col items-center justify-center bg-amber-500/15 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 active:scale-95 transition-all cursor-pointer shadow-xs group"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-amber-500/15 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/25 active:scale-95 transition-all cursor-pointer group"
             title={language === 'pb' ? 'ਸਭ ਤੋਂ ਉੱਪਰ ਜਾਓ (Top)' : language === 'en' ? 'Scroll to Top' : 'सबसे ऊपर जाएं (Top)'}
             aria-label="Scroll to Top"
           >
-            <ChevronsUp size={18} className="shrink-0 group-hover:-translate-y-0.5 transition-transform" />
+            <ChevronsUp size={14} className="shrink-0 group-hover:-translate-y-0.5 transition-transform" />
           </button>
 
-          {/* Divider Dot */}
-          <div className="w-1.5 h-1.5 rounded-full bg-amber-500/40" />
+          {/* Subtle Divider Dot */}
+          <div className="w-1 h-1 rounded-full bg-amber-500/40" />
 
           {/* Scroll To Bottom Button */}
           <button
             type="button"
             onClick={scrollToBottom}
-            className="w-10 h-10 rounded-full flex flex-col items-center justify-center bg-amber-500/15 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 active:scale-95 transition-all cursor-pointer shadow-xs group"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-amber-500/15 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/25 active:scale-95 transition-all cursor-pointer group"
             title={language === 'pb' ? 'ਸਭ ਤੋਂ ਹੇਠਾਂ ਜਾਓ (Bottom)' : language === 'en' ? 'Scroll to Bottom' : 'सबसे नीचे जाएं (Bottom)'}
             aria-label="Scroll to Bottom"
           >
-            <ChevronsDown size={18} className="shrink-0 group-hover:translate-y-0.5 transition-transform" />
+            <ChevronsDown size={14} className="shrink-0 group-hover:translate-y-0.5 transition-transform" />
           </button>
         </aside>
       )}

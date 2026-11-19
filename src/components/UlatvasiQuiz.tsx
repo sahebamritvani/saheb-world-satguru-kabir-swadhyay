@@ -28,14 +28,14 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { SAKHI_SANGRAH_ANG_14_VERSES } from '../data/granths/sakhiSangrahAng14';
-import { SAKHI_SANGRAH_ANG_15_VERSES } from '../data/granths/sakhiSangrahAng15';
+import type { GranthVerse } from '../data/granths/granthTypes';
 import { SAKHIS_KAAL_KO_ANG } from '../data/sakhisKaalKoAng';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { Language, SACRED_BRANDING } from '../types';
 import { sakhisDatabase } from '../data/sakhis';
 import { 
-  ULATVASI_DATABASE, 
+  ULATVASI_CORE_QUESTIONS,
+  loadAllUlatvasiDatabase,
   UlatvasiQuestion, 
   UlatvasiRealm, 
   getUlatvasiRank,
@@ -526,6 +526,23 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
     setActiveTab(initialTab);
   }, [initialTab]);
 
+  // Lazy-loaded Question Pool & Memory Recall Verse Pools
+  const [ulatvasiPool, setUlatvasiPool] = useState<UlatvasiQuestion[]>(ULATVASI_CORE_QUESTIONS);
+  const [ang14Verses, setAng14Verses] = useState<GranthVerse[]>([]);
+  const [ang15Verses, setAng15Verses] = useState<GranthVerse[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadAllUlatvasiDatabase()
+      .then((all) => {
+        if (!cancelled && all.length > 0) setUlatvasiPool(all);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   // Question & Realm Navigation
   const [selectedRealm, setSelectedRealm] = useState<UlatvasiRealm | 'all'>('all');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -536,7 +553,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
   const [librarySelectedRealm, setLibrarySelectedRealm] = useState<string>('all');
 
   const filteredLibraryItems = React.useMemo(() => {
-    return ULATVASI_DATABASE.filter(item => {
+    return ulatvasiPool.filter(item => {
       const matchesSearch = 
         item.title[language].toLowerCase().includes(librarySearchQuery.toLowerCase()) ||
         item.verse[language].toLowerCase().includes(librarySearchQuery.toLowerCase());
@@ -545,15 +562,15 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
       
       return matchesSearch && matchesRealm;
     });
-  }, [librarySearchQuery, librarySelectedRealm, language]);
+  }, [librarySearchQuery, librarySelectedRealm, language, ulatvasiPool]);
 
   // Filtered Questions by Realm
   const filteredQuestions = React.useMemo(() => {
-    if (selectedRealm === 'all') return ULATVASI_DATABASE;
-    return ULATVASI_DATABASE.filter((q) => q.realm === selectedRealm);
-  }, [selectedRealm]);
+    if (selectedRealm === 'all') return ulatvasiPool;
+    return ulatvasiPool.filter((q) => q.realm === selectedRealm);
+  }, [selectedRealm, ulatvasiPool]);
 
-  const rawQ: UlatvasiQuestion = filteredQuestions[currentIndex] || ULATVASI_DATABASE[0];
+  const rawQ: UlatvasiQuestion = filteredQuestions[currentIndex] || ulatvasiPool[0];
 
   // Shuffle quiz options (A, B, C, D) and randomize the position of the correct answer
   const currentQ = React.useMemo(() => {
@@ -630,12 +647,25 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
     speechReciter.speak(text, language);
   };
 
-  const initMemoryRecall = () => {
+  const initMemoryRecall = async () => {
+    let pool14 = ang14Verses;
+    let pool15 = ang15Verses;
+    if (pool14.length === 0 || pool15.length === 0) {
+      const [m14, m15] = await Promise.all([
+        import('../data/granths/sakhiSangrahAng14'),
+        import('../data/granths/sakhiSangrahAng15'),
+      ]);
+      pool14 = m14.SAKHI_SANGRAH_ANG_14_VERSES;
+      pool15 = m15.SAKHI_SANGRAH_ANG_15_VERSES;
+      setAng14Verses(pool14);
+      setAng15Verses(pool15);
+    }
     const isChetavani = Math.random() > 0.5;
-    const pool = isChetavani ? SAKHI_SANGRAH_ANG_15_VERSES : SAKHI_SANGRAH_ANG_14_VERSES;
+    const pool = isChetavani ? pool15 : pool14;
+    if (pool.length === 0) return;
     const rand = pool[Math.floor(Math.random() * pool.length)];
     setMemoryRecallVerse({
-      text: rand.lines[language][0] + " " + rand.lines[language][1],
+      text: (rand.lines[language]?.[0] || rand.lines.hi[0]) + " " + (rand.lines[language]?.[1] || rand.lines.hi[1] || ''),
       angId: isChetavani ? 'ang-15' : 'ang-14'
     });
     setMemoryAnswerState('idle');
@@ -788,9 +818,9 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
     const dd = String(today.getDate()).padStart(2, '0');
     const hashStr = `${yyyy}${mm}${dd}`;
     const hashNum = parseInt(hashStr, 10);
-    const index = hashNum % ULATVASI_DATABASE.length;
-    return ULATVASI_DATABASE[index];
-  }, []);
+    const index = hashNum % Math.max(1, ulatvasiPool.length);
+    return ulatvasiPool[index] || ulatvasiPool[0];
+  }, [ulatvasiPool]);
 
   const updateSadhanaStreak = () => {
     try {
@@ -2299,7 +2329,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
           {/* Grid List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filteredLibraryItems.map((item) => {
-              const dbIndex = ULATVASI_DATABASE.findIndex(q => q.id === item.id);
+              const dbIndex = ulatvasiPool.findIndex(q => q.id === item.id);
               
               return (
                 <div
@@ -2387,7 +2417,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                 badge: language === 'hi' ? '🌟 स्तर १' : language === 'pb' ? '🌟 ਪੱਧਰ ੧' : '🌟 Level 1',
                 title: language === 'hi' ? 'कौतूहल भेद मंडल' : language === 'pb' ? 'ਕੌਤਕ ਭੇਦ ਮੰਡਲ' : 'Curiosity Realm',
                 countLabel: language === 'hi' ? 'पहेलियाँ' : language === 'pb' ? 'ਬੁਝਾਰਤਾਂ' : 'Paradoxes',
-                count: ULATVASI_DATABASE.filter((q) => q.realm === 'kautuhal').length,
+                count: ulatvasiPool.filter((q) => q.realm === 'kautuhal').length,
                 desc: language === 'hi' 
                   ? 'संसार एवं मन की उलटी चाल का बोध, सिंह द्वारा गाय चराना एवं पानी में प्यासी मछली का रहस्य।'
                   : language === 'pb' 
@@ -2400,7 +2430,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                 badge: language === 'hi' ? '💎 स्तर २' : language === 'pb' ? '💎 ਪੱਧਰ ੨' : '💎 Level 2',
                 title: language === 'hi' ? 'अंतर्योग व सुरति मंडल' : language === 'pb' ? 'ਅੰਤਰਯੋਗ ਤੇ ਸੁਰਤ ਮੰਡਲ' : 'Inner Yogic Realm',
                 countLabel: language === 'hi' ? 'पहेलियाँ' : language === 'pb' ? 'ਬੁਝਾਰਤਾਂ' : 'Paradoxes',
-                count: ULATVASI_DATABASE.filter((q) => q.realm === 'antaryog').length,
+                count: ulatvasiPool.filter((q) => q.realm === 'antaryog').length,
                 desc: language === 'hi'
                   ? 'चींटी के पग में घुंघरू, सूक्ष्म अनाहत नाद श्रवण और नैया डूबने पर तिरिया के पार होने का भेद।'
                   : language === 'pb'
@@ -2413,7 +2443,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                 badge: language === 'hi' ? '👑 स्तर ३' : language === 'pb' ? '👑 ਪੱਧਰ ੩' : '👑 Level 3',
                 title: language === 'hi' ? 'शून्य समाधि व परम तत्व' : language === 'pb' ? 'ਸੁੰਨ ਸਮਾਧੀ ਤੇ ਪਰਮ ਤੱਤ' : 'Supreme Void Realm',
                 countLabel: language === 'hi' ? 'पहेलियाँ' : language === 'pb' ? 'ਬੁਝਾਰਤਾਂ' : 'Paradoxes',
-                count: ULATVASI_DATABASE.filter((q) => q.realm === 'shunya-samadhi').length,
+                count: ulatvasiPool.filter((q) => q.realm === 'shunya-samadhi').length,
                 desc: language === 'hi'
                   ? 'गगन मंडल का अमृत कुआं, उल्टा तरुवर और निर्लेप साक्षी आत्मा का कैवल्य साक्षात्कार।'
                   : language === 'pb'

@@ -672,16 +672,46 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
   ]
 };
 
-export const GYAAN_GUDADI_SANDHYA_SECTION: NitnemSection = {
-  ...GYAAN_GUDADI_SECTION,
+export const SANDHYA_GYAN_GUDADI_SECTION: NitnemSection = {
   id: "sandhya-gyan-gudadi",
   majorCategoryId: "sandhya-path",
   majorCategoryTitle: {
     hi: "२. मूल संध्या पाठ",
     pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
     en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
-  }
+  },
+  subGroup: "ज्ञान गुदड़ी",
+  title: {
+    hi: "ज्ञान गुदड़ी",
+    pb: "ਗਿਆਨ ਗੁਦੜੀ",
+    en: "Gyaan Gudadi"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। संध्या वेला धर्मदास-कबीर संवाद, काया-गुदड़ी का आध्यात्मिक रहस्य एवं आत्म-बोध",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸੰਧਿਆ ਵੇਲੇ ਧਰਮਦਾਸ-ਕਬੀਰ ਸੰਵਾਦ, ਕਾਇਆ-ਗੁਦੜੀ ਦਾ ਅਧਿਆਤਮਕ ਰਹੱਸ ਅਤੇ ਆਤਮ-ਬੋਧ",
+    en: "Evening Divine Dialogue of Dharmadas & Kabir Saheb on the Mystic Garment of Consciousness"
+  },
+  iconName: "Feather",
+  estimatedMinutes: 12,
+  totalVerses: 28,
+  verses: GYAAN_GUDADI_SECTION.verses.map((v) => ({
+    id: `sandhya-${v.id}`,
+    type: v.type,
+    lines: {
+      hi: [...v.lines.hi],
+      pb: [...v.lines.pb],
+      en: [...v.lines.en]
+    },
+    bhavarth: {
+      hi: v.bhavarth.hi,
+      pb: v.bhavarth.pb,
+      en: v.bhavarth.en
+    }
+  }))
 };
+
+export const GYAAN_GUDADI_SANDHYA_SECTION: NitnemSection = SANDHYA_GYAN_GUDADI_SECTION;
+
 
 
 

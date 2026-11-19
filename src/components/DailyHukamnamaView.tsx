@@ -22,7 +22,12 @@ import {
   Sun
 } from 'lucide-react';
 import { Language, SggsKabirVerse } from '../types';
-import { getDailyHukamnama, setupMidnightHukamnamaListener, getDailyLifeDiscipline } from '../services/dailyHukamnamaService';
+import {
+  getDailyHukamnama,
+  getDailyHukamnamaAsync,
+  setupMidnightHukamnamaListener,
+  getDailyLifeDiscipline,
+} from '../services/dailyHukamnamaService';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 
@@ -45,9 +50,18 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
   const [copiedScript, setCopiedScript] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'vani' | 'shabdarth' | 'bhavarth' | 'anushasan'>('vani');
 
-  // Update verse when date changes
+  // Update verse when date changes (lazy-loading full SGGS index on demand)
   useEffect(() => {
+    let cancelled = false;
     setVerse(getDailyHukamnama(currentDate));
+    getDailyHukamnamaAsync(currentDate)
+      .then((v) => {
+        if (!cancelled) setVerse(v);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
   }, [currentDate]);
 
   // Midnight 12:00 AM listener
@@ -56,6 +70,9 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
       const today = new Date();
       setCurrentDate(today);
       setVerse(getDailyHukamnama(today));
+      getDailyHukamnamaAsync(today)
+        .then((v) => setVerse(v))
+        .catch(() => {});
     });
     return cleanup;
   }, []);

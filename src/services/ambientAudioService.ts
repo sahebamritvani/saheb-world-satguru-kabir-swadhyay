@@ -124,6 +124,8 @@ class AmbientAudioEngine {
   private activeTimers: number[] = [];
   private activeNodes: { stop?: () => void; disconnect: () => void }[] = [];
   private listeners: ((sound: AmbientSoundType, isPlaying: boolean, volume: number) => void)[] = [];
+  private stopFadeTimer: number | null = null;
+  private cachedBansuriNoiseBuffer: AudioBuffer | null = null;
 
   constructor() {
     if (typeof window !== 'undefined') {
@@ -259,10 +261,26 @@ class AmbientAudioEngine {
     });
     this.activeNodes = [];
 
+    if (this.stopFadeTimer !== null) {
+      clearTimeout(this.stopFadeTimer);
+      this.stopFadeTimer = null;
+    }
+
     if (this.masterGain && this.ctx) {
+      const fadingGain = this.masterGain;
+      this.masterGain = null;
+      const now = this.ctx.currentTime;
       try {
-        this.masterGain.gain.linearRampToValueAtTime(0.0001, this.ctx.currentTime + 0.3);
+        fadingGain.gain.cancelScheduledValues(now);
+        fadingGain.gain.setValueAtTime(fadingGain.gain.value, now);
+        fadingGain.gain.linearRampToValueAtTime(0.0001, now + 0.3);
       } catch {}
+      this.stopFadeTimer = window.setTimeout(() => {
+        this.stopFadeTimer = null;
+        try {
+          fadingGain.disconnect();
+        } catch {}
+      }, 340);
     }
   }
 
@@ -303,6 +321,9 @@ class AmbientAudioEngine {
 
         osc.start(now);
         osc.stop(now + h.decay + 0.1);
+        osc.onended = () => {
+          try { osc.disconnect(); g.disconnect(); } catch {}
+        };
       });
 
       // Subtle high-pitch manjira shimmer after 0.4s
@@ -324,6 +345,9 @@ class AmbientAudioEngine {
 
         mOsc.start(manjiraTime);
         mOsc.stop(manjiraTime + 2.1);
+        mOsc.onended = () => {
+          try { mOsc.disconnect(); mGain.disconnect(); } catch {}
+        };
       });
     };
 
@@ -369,16 +393,19 @@ class AmbientAudioEngine {
       vibrato.start(now);
       vibrato.stop(now + duration);
 
-      // 3. Breath Air Noise (filtered white noise)
-      const bufferSize = this.ctx.sampleRate * 2;
-      const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
-      const output = noiseBuffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) {
-        output[i] = Math.random() * 2 - 1;
+      // 3. Breath Air Noise (reuse single cached white-noise buffer)
+      if (!this.cachedBansuriNoiseBuffer || this.cachedBansuriNoiseBuffer.sampleRate !== this.ctx.sampleRate) {
+        const bufferSize = this.ctx.sampleRate * 2;
+        const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+        const output = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          output[i] = Math.random() * 2 - 1;
+        }
+        this.cachedBansuriNoiseBuffer = noiseBuffer;
       }
 
       const noise = this.ctx.createBufferSource();
-      noise.buffer = noiseBuffer;
+      noise.buffer = this.cachedBansuriNoiseBuffer;
       noise.loop = true;
 
       const noiseFilter = this.ctx.createBiquadFilter();
@@ -409,6 +436,17 @@ class AmbientAudioEngine {
 
       osc.start(now);
       osc.stop(now + duration + 0.1);
+      osc.onended = () => {
+        try {
+          vibrato.disconnect();
+          vibratoGain.disconnect();
+          noise.disconnect();
+          noiseFilter.disconnect();
+          noiseGain.disconnect();
+          osc.disconnect();
+          toneGain.disconnect();
+        } catch {}
+      };
     };
 
     playFluteTone();
@@ -485,6 +523,9 @@ class AmbientAudioEngine {
 
       chanter.start(cNow);
       chanter.stop(cNow + 3.5);
+      chanter.onended = () => {
+        try { chanter.disconnect(); chanterFilter.disconnect(); chanterGain.disconnect(); } catch {}
+      };
     };
 
     playBeenNote();
@@ -534,6 +575,9 @@ class AmbientAudioEngine {
 
       osc.start(now);
       osc.stop(now + 4.9);
+      osc.onended = () => {
+        try { osc.disconnect(); filter.disconnect(); gain.disconnect(); } catch {}
+      };
     };
 
     const cycleTanpura = () => {
@@ -612,6 +656,9 @@ class AmbientAudioEngine {
 
         osc.start(noteTime);
         osc.stop(noteTime + 1.85);
+        osc.onended = () => {
+          try { osc.disconnect(); filter.disconnect(); noteGain.disconnect(); } catch {}
+        };
       });
     };
 

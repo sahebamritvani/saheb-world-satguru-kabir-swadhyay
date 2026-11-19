@@ -180,6 +180,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     setLineHeight, 
     widthMode, 
     setWidthMode,
+    fontFamily,
+    setFontFamily,
     zenModeActive: isZenMode,
     setZenModeActive: setIsZenMode,
     larivaarModeActive: isLarivaarMode,
@@ -275,6 +277,12 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     setSelectedPhrase('');
     setIsPlayingVerseOnly(false);
   }, [sakhi.number]);
+
+  useEffect(() => {
+    return () => {
+      speechReciter.stop();
+    };
+  }, []);
 
   // --- ACCESSIBILITY & SPEECH SYNTHESIS SETTINGS STATE ---
   const [accessibilityConfig, setAccessibilityConfig] = useState<AccessibilitySettings>(() => {
@@ -642,7 +650,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       setThemeMode('bhojpatra');
     }
   };
-  const [localFontSize, setLocalFontSize] = useState<ReaderFontSize>('normal');
+  const [localFontSize, setLocalFontSize] = useState<ReaderFontSize>(fontSize);
 
   const prevSakhi = React.useMemo(() => {
     if (!sakhisDatabase) return null;
@@ -952,10 +960,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
   const getLineHeightClass = (lh: 'small' | 'medium' | 'large') => {
     switch (lh) {
-      case 'small': return 'leading-normal';
-      case 'medium': return 'leading-relaxed';
-      case 'large': return 'leading-loose';
-      default: return 'leading-relaxed';
+      case 'small': return 'leading-[1.7]';
+      case 'medium': return 'leading-[1.95]';
+      case 'large': return 'leading-[2.2]';
+      default: return 'leading-[1.95]';
     }
   };
 
@@ -1489,13 +1497,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
   // Font size classes resolver
   const fontSizes: Record<string, string> = {
-    small: 'text-lg sm:text-xl [word-break:keep-all] [overflow-wrap:break-word] break-words',
-    normal: 'text-xl sm:text-2xl [word-break:keep-all] [overflow-wrap:break-word] break-words',
-    medium: 'text-2xl sm:text-3xl [word-break:keep-all] [overflow-wrap:break-word] break-words',
-    large: 'text-2.5xl sm:text-4xl [word-break:keep-all] [overflow-wrap:break-word] break-words',
-    xlarge: 'text-3xl sm:text-5xl font-bold [word-break:keep-all] [overflow-wrap:break-word] break-words',
-    xl: 'text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-extrabold [word-break:keep-all] [overflow-wrap:break-word] break-words',
-    elderly: 'text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black leading-snug sm:leading-relaxed text-amber-950 dark:text-amber-100 [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    small: 'text-lg sm:text-xl sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    normal: 'text-xl sm:text-2xl sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    medium: 'text-2xl sm:text-3xl sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    large: 'text-[1.65rem] sm:text-4xl sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    xlarge: 'text-3xl sm:text-5xl font-bold sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    xl: 'text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-extrabold sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
+    elderly: 'text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black leading-[1.85] sm:leading-[2] sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] break-words',
   };
 
   // Strictly enforce Night Mode theme variables (background colors, text contrast, and gold accents)
@@ -2281,9 +2289,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   }
                 }}
                 disabled={!isUnlocked}
-                className={`px-2.5 py-1 rounded-lg text-[0.625rem] font-bold font-serif whitespace-nowrap transition cursor-pointer flex items-center gap-1 ${
+                className={`min-h-[40px] sm:min-h-[30px] px-3 sm:px-2.5 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-[0.6875rem] sm:text-[0.625rem] font-bold font-serif whitespace-nowrap transition cursor-pointer flex items-center gap-1 ${
                   isCurrent
-                    ? 'bg-amber-600 text-white shadow-xs scale-105'
+                    ? 'bg-amber-600 text-white shadow-xs scale-[1.03]'
                     : isUnlocked
                     ? 'bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20'
                     : 'bg-stone-200/50 dark:bg-stone-800/50 text-stone-400 cursor-not-allowed opacity-50'
@@ -2313,14 +2321,14 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         }}
         className="px-4 py-2.5 border-b flex flex-wrap items-center justify-between gap-3 text-xs"
       >
-        {/* Left Side: Theme & Font Controls */}
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-1.5">
+        {/* Left Side: Theme, Font Size, Line Spacing, Font Face & Width Controls */}
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
               <Eye className="w-3.5 h-3.5" />
               <span>{fl.theme}:</span>
             </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-lg p-0.5 border border-amber-400/10">
+            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15 flex-wrap gap-0.5">
               {[
                 { id: 'default', label: fl.themeMool },
                 { id: 'flow_state', label: fl.themeFlow },
@@ -2336,7 +2344,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     backgroundColor: readingTheme === tObj.id ? rc.accent : 'transparent',
                     color: readingTheme === tObj.id ? '#FFFFFF' : rc.textSecondary,
                   }}
-                  className="px-2 py-0.5 rounded-md font-bold text-[0.625rem] transition cursor-pointer"
+                  className="min-h-[38px] sm:min-h-[28px] px-2.5 sm:px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
                 >
                   {tObj.label}
                 </button>
@@ -2344,27 +2352,82 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
               <Type className="w-3.5 h-3.5" />
               <span>{fl.font}:</span>
             </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-lg p-0.5 border border-amber-400/10">
+            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15 gap-0.5">
               {['small', 'medium', 'large', 'xl', 'elderly'].map(size => (
                 <button
                   key={size}
                   type="button"
                   onClick={() => handleSetLocalFontSize(size as any)}
                   style={{
-                    backgroundColor: localFontSize === size ? rc.accent : 'transparent',
-                    color: localFontSize === size ? '#FFFFFF' : rc.textSecondary,
+                    backgroundColor: localFontSize === size || (size === 'medium' && localFontSize === 'normal') ? rc.accent : 'transparent',
+                    color: localFontSize === size || (size === 'medium' && localFontSize === 'normal') ? '#FFFFFF' : rc.textSecondary,
                   }}
-                  className="px-2 py-0.5 rounded-md font-black text-[0.625rem] uppercase transition cursor-pointer"
+                  className="min-h-[38px] sm:min-h-[28px] px-2.5 sm:px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-black text-[0.6875rem] sm:text-[0.625rem] uppercase transition cursor-pointer"
                 >
                   {size === 'small' ? 'A-' : size === 'medium' ? 'A' : size === 'large' ? 'A+' : size === 'xl' ? 'A++' : '👵 A+++'}
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Line Spacing (पंक्ति अंतराल) Controls */}
+          <div className="flex items-center gap-1.5">
+            <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
+              <span>{language === 'pb' ? 'ਲਾਈਨ:' : language === 'en' ? 'Spacing:' : 'अंतराल:'}</span>
+            </span>
+            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15 gap-0.5">
+              {[
+                { id: 'small' as const, label: language === 'pb' ? 'ਘੱਟ' : language === 'en' ? 'Tight' : 'कम' },
+                { id: 'medium' as const, label: language === 'pb' ? 'ਸੰਤੁਲਿਤ' : language === 'en' ? 'Balanced' : 'संतुलित' },
+                { id: 'large' as const, label: language === 'pb' ? 'ਖੁੱਲ੍ਹਾ' : language === 'en' ? 'Airy' : 'खुला' },
+              ].map(lhObj => (
+                <button
+                  key={lhObj.id}
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setLineHeight(lhObj.id);
+                  }}
+                  style={{
+                    backgroundColor: lineHeight === lhObj.id ? rc.accent : 'transparent',
+                    color: lineHeight === lhObj.id ? '#FFFFFF' : rc.textSecondary,
+                  }}
+                  className="min-h-[38px] sm:min-h-[28px] px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
+                >
+                  {lhObj.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Devanagari / Gurmukhi Font Style (Serif vs Sans) */}
+          <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15">
+            {[
+              { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Serif' : 'ग्रंथ' },
+              { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Sans' : 'सरल' },
+            ].map(ff => (
+              <button
+                key={ff.id}
+                type="button"
+                onClick={() => {
+                  sacredHaptics.lightTap();
+                  setFontFamily(ff.id);
+                }}
+                style={{
+                  backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
+                  color: fontFamily === ff.id ? '#FFFFFF' : rc.textSecondary,
+                }}
+                className="min-h-[38px] sm:min-h-[28px] px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
+                title={ff.id === 'serif' ? 'Noto Serif Devanagari / Traditional' : 'Mukta / Noto Sans Clean'}
+              >
+                {ff.label}
+              </button>
+            ))}
           </div>
 
           {/* Spacious Granth Width Controls */}
@@ -2373,7 +2436,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               <Columns className="w-3.5 h-3.5" />
               <span>{language === 'pb' ? 'ਵਿਸਤਾਰ:' : language === 'en' ? 'Canvas:' : 'विस्तार:'}</span>
             </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-lg p-0.5 border border-amber-400/10">
+            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15">
               {[
                 { id: 'wide', label: language === 'pb' ? 'ਵਿਸ਼ਾਲ (7XL)' : language === 'en' ? 'Spacious 7XL' : 'विशाल (7XL)' },
                 { id: 'medium', label: language === 'pb' ? 'ਮੱਧਮ' : language === 'en' ? 'Medium' : 'मध्यम' },
@@ -2386,7 +2449,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     backgroundColor: widthMode === wObj.id ? rc.accent : 'transparent',
                     color: widthMode === wObj.id ? '#FFFFFF' : rc.textSecondary,
                   }}
-                  className="px-2 py-0.5 rounded-md font-bold text-[0.625rem] transition cursor-pointer"
+                  className="min-h-[38px] sm:min-h-[28px] px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
                 >
                   {wObj.label}
                 </button>
@@ -2666,10 +2729,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 borderColor: rc.borderOrnament,
                 color: rc.maroon,
               }}
-              className="px-2.5 py-1 rounded-lg border font-bold text-xs flex items-center gap-1.5 cursor-pointer hover:border-amber-500 transition shadow-2xs"
+              className="min-h-[44px] sm:min-h-[34px] px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg border font-bold text-xs flex items-center gap-1.5 cursor-pointer hover:border-amber-500 transition shadow-2xs"
               title={language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}
             >
-              <ArrowLeft className="w-3.5 h-3.5 text-amber-600" />
+              <ArrowLeft className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-amber-600" />
               <span>{language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Back'}</span>
             </button>
           )}
@@ -3032,10 +3095,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
                     {/* Refined Parchment Typography Block */}
                     <div 
-                      className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} font-serif font-black text-center drop-shadow-2xs select-none max-w-full [word-break:keep-all] [overflow-wrap:break-word] break-words`}
+                      className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black text-center drop-shadow-2xs select-none max-w-full`}
                       style={{
-                        color: fontSize === 'elderly' ? '#000000' : '#38200b',
-                        textShadow: fontSize === 'elderly' ? '0 1px 1px rgba(255,255,255,0.8)' : 'none'
+                        color: (isNightTheme || isFlowTheme)
+                          ? (fontSize === 'elderly' ? '#FFFFFF' : '#FFFDF5')
+                          : (fontSize === 'elderly' ? '#1A0E04' : '#38200b'),
                       }}
                     >
                       {renderInteractiveCouplet(sakhi.text[language] || sakhi.text.hi)}
@@ -3103,12 +3167,12 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 {/* Translation Display Box with Distinct Background and Border */}
                 <div 
                   style={{
-                    backgroundColor: readingTheme === 'oled' ? '#141E17' : '#F0FDF4',
-                    borderColor: '#10B981'
+                    backgroundColor: (isNightTheme || isFlowTheme) ? '#112218' : readingTheme === 'sepia' ? '#F3F8F1' : '#F0FDF4',
+                    borderColor: (isNightTheme || isFlowTheme) ? '#059669' : '#10B981'
                   }}
                   className="p-4 sm:p-5 rounded-2xl border text-left shadow-xs space-y-2 relative"
                 >
-                  <p className="text-sm sm:text-base leading-relaxed font-serif text-stone-800 dark:text-stone-100 font-medium select-text">
+                  <p className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} text-stone-800 dark:text-stone-100 font-medium select-text`}>
                     <span className="font-bold text-emerald-800 dark:text-emerald-300 block mb-1">
                       {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Core Meaning:' : 'सरल अर्थ:'}
                     </span>
@@ -3256,7 +3320,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     </span>
                   </div>
                 </div>
-                <p style={{ color: rc.text }} className="text-sm sm:text-base leading-relaxed font-serif">
+                <p style={{ color: rc.text }} className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'}`}>
                   {eightStepData.step2_context.relevanceText}
                 </p>
                 <p style={{ color: rc.textSecondary }} className="text-xs italic bg-amber-500/10 p-3 rounded-xl border border-amber-500/20">
@@ -3358,7 +3422,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                             #{idx + 1}
                           </span>
                         </div>
-                        <p style={{ color: rc.text }} className="text-xs leading-relaxed font-serif">
+                        <p style={{ color: rc.text }} className={`text-xs sm:text-sm ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'}`}>
                           {item.meaning}
                         </p>
                         {/* Word-to-word cross-lingual correspondence tags */}
@@ -4360,7 +4424,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.98 }}
                     transition={{ duration: 0.35, ease: 'easeOut' }}
-                    className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} p-3.5 xs:p-5 sm:p-10 rounded-3xl border-2 border-[#d6ba8d]/80 dark:border-[#735732]/80 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] text-[#38200b] dark:text-[#f7e7ce] shadow-2xl relative transition-all duration-300 font-serif font-black ring-1 ring-inset ring-[#e8d2a7]/40 dark:ring-[#4a3a24]/40 max-w-full overflow-hidden [word-break:keep-all] [overflow-wrap:break-word] break-words`}
+                    className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} p-3.5 xs:p-5 sm:p-10 rounded-3xl border-2 border-[#d6ba8d]/80 dark:border-[#735732]/80 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] text-[#38200b] dark:text-[#fffdf5] shadow-2xl relative transition-all duration-300 font-bold sm:font-black ring-1 ring-inset ring-[#e8d2a7]/40 dark:ring-[#4a3a24]/40 max-w-full overflow-hidden`}
                   >
                     {/* Antique Corner Flourishes */}
                     <div className="absolute top-3 left-4 text-amber-700/30 text-sm font-serif select-none">✦</div>
@@ -4487,7 +4551,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   <Lightbulb className="w-4 h-4 text-amber-600" />
                   <span>{fl.bhavarthHeading}:</span>
                 </div>
-                <div style={{ color: rc.text }} className="text-sm sm:text-base font-serif leading-relaxed">
+                <div style={{ color: rc.text }} className={`text-sm sm:text-base ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)}`}>
                   <SmartGlossaryText text={enrichBhavarthWithNihAkshar(sakhi.bhavarth[language], language)} language={language} />
                 </div>
               </div>
@@ -4500,7 +4564,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   <Compass className="w-4 h-4 text-amber-600" />
                   <span>{language === 'pb' ? 'ਚਿੰਤਨ-ਸੂਤਰ' : 'चिंतन सूत्र'}:</span>
                 </div>
-                <blockquote style={{ color: rc.text, borderColor: rc.accent }} className="text-sm sm:text-base font-serif italic leading-relaxed border-l-3 pl-3">
+                <blockquote style={{ color: rc.text, borderColor: rc.accent }} className={`text-sm sm:text-base ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)} italic border-l-3 pl-3`}>
                   "{sakhi.contemplation[language]}"
                 </blockquote>
               </div>

@@ -1,15 +1,29 @@
 import { NitnemSection } from '../../types';
-import { AARTI_PATH_SECTION } from './aartiPath';
-import { VINATI_PRAVANCHI_SECTION } from './vinatiPravanchi';
+import {
+  AARTI_PATH_SECTION,
+  SANDHYA_AARTI_1_SECTION,
+  SANDHYA_AARTI_2_SECTION,
+  SANDHYA_AARTI_3_SECTION,
+  SANDHYA_AARTI_4_SECTION,
+} from './aartiPath';
+import {
+  VINATI_PRAVANCHI_SECTION,
+  SANDHYA_VINATI_1_SECTION,
+  SANDHYA_VINATI_2_SECTION,
+  SANDHYA_SUMIRAN_AARTI_SECTION,
+  SANDHYA_SHLOK_DHYANAM_SECTION,
+  SANDHYA_ANTIM_VINATI_SECTION,
+} from './vinatiPravanchi';
 import { SUMIRAN_SANDHYA_SAKHI_SECTION } from './sumiranSandhyaSakhi';
-import { PRABHAT_SANDHYA_SAKHI_SANDHYA_SECTION } from './prabhatSandhyaSakhi';
+import { SANDHYA_PRABHAT_SANDHYA_SAKHI_SECTION } from './prabhatSandhyaSakhi';
 import { GYAN_STOTRA_SECTION } from './gyanStotra';
 import { VIGYAN_STOTRA_SECTION } from './vigyanStotra';
-import { DAYASAGAR_STUTI_SECTION } from './dayasagarStuti';
+import { DAYASAGAR_STUTI_SECTION, ADHIK_MAHIMA_SECTION } from './dayasagarStuti';
 import { CHETAVANI_SAKHI_SECTION } from './chetavaniSakhi';
 import { SAT_KA_SHABAD_SECTION } from './satKaShabad';
 import { GYAAN_GUDADI_SANDHYA_SECTION } from './gyaanGudadi';
-import { ARJINAMA_SANDHYA_SECTION } from './arjinama';
+import { ARJINAMA_SANDHYA_SECTION, SANDHYA_ARJINAMA_2_SECTION } from './arjinama';
+import { SANDHYA_DHANAKSHARI_SECTION } from './dhanakshari';
 import { SANDHYA_SAMAPAN_VANDANA_SECTION } from './samapanVandana';
 
 export const SANDHYA_AARAMBH_VANDANA_SECTION: NitnemSection = {
@@ -1139,11 +1153,12 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
       }
     ]
   },
-  PRABHAT_SANDHYA_SAKHI_SANDHYA_SECTION,
+  SANDHYA_PRABHAT_SANDHYA_SAKHI_SECTION,
   SUMIRAN_SANDHYA_SAKHI_SECTION,
   GYAN_STOTRA_SECTION,
   VIGYAN_STOTRA_SECTION,
   DAYASAGAR_STUTI_SECTION,
+  ADHIK_MAHIMA_SECTION,
   CHETAVANI_SAKHI_SECTION,
   SAT_KA_SHABAD_SECTION,
   GYAAN_GUDADI_SANDHYA_SECTION,
@@ -1450,7 +1465,7 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
     ]
   },
   {
-    "id": "sandhya-ashtak-2-tribhangi",
+    "id": "sandhya-ashtak-2",
     "majorCategoryId": "sandhya-path",
     "majorCategoryTitle": {
       "hi": "२. मूल संध्या पाठ",
@@ -2051,7 +2066,16 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
       }
     ]
   },
-  VINATI_PRAVANCHI_SECTION,
-  AARTI_PATH_SECTION,
+  SANDHYA_DHANAKSHARI_SECTION,
+  SANDHYA_ARJINAMA_2_SECTION,
+  SANDHYA_AARTI_1_SECTION,
+  SANDHYA_AARTI_2_SECTION,
+  SANDHYA_AARTI_3_SECTION,
+  SANDHYA_AARTI_4_SECTION,
+  SANDHYA_VINATI_1_SECTION,
+  SANDHYA_VINATI_2_SECTION,
+  SANDHYA_SUMIRAN_AARTI_SECTION,
+  SANDHYA_SHLOK_DHYANAM_SECTION,
+  SANDHYA_ANTIM_VINATI_SECTION,
   SANDHYA_SAMAPAN_VANDANA_SECTION
 ];

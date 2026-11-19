@@ -65,6 +65,15 @@ export const RosePetalShower: React.FC<RosePetalShowerProps> = ({
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) {
+      speechReciter.stop();
+    }
+    return () => {
+      speechReciter.stop();
+    };
+  }, [isOpen]);
+
   const petalColors = [
     '#9E1A2A', // Deep Velvet Red
     '#C02638', // Crimson Rose

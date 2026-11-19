@@ -980,15 +980,45 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
   ]
 };
 
-export const PRABHAT_SANDHYA_SAKHI_SANDHYA_SECTION: NitnemSection = {
-  ...PRABHAT_SANDHYA_SAKHI_SECTION,
+export const SANDHYA_PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
   id: "sandhya-prabhat-sandhya-sakhi",
   majorCategoryId: "sandhya-path",
   majorCategoryTitle: {
     hi: "२. मूल संध्या पाठ",
     pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
     en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
-  }
+  },
+  subGroup: "साखी संग्रह",
+  title: {
+    hi: "प्रभात-सन्ध्या साखी",
+    pb: "ਪ੍ਰਭਾਤ-ਸੰਧਿਆ ਸਾਖੀ",
+    en: "Prabhat Sandhya Sakhi"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। संध्या वेला वंदनीय परम पावन तीस साखियाँ",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸੰਧਿਆ ਵੰਦਨਾ ਹਿਤ ਪਾਵਨ ਤੀਹ ਸਾਖੀਆਂ",
+    en: "Thirty Sacred Sakhis for Evening Contemplation and Refuge"
+  },
+  iconName: "SunMedium",
+  estimatedMinutes: 12,
+  totalVerses: 41,
+  verses: PRABHAT_SANDHYA_SAKHI_SECTION.verses.map((v) => ({
+    id: `sandhya-${v.id}`,
+    type: v.type,
+    lines: {
+      hi: [...v.lines.hi],
+      pb: [...v.lines.pb],
+      en: [...v.lines.en]
+    },
+    bhavarth: {
+      hi: v.bhavarth.hi,
+      pb: v.bhavarth.pb,
+      en: v.bhavarth.en
+    }
+  }))
 };
+
+export const PRABHAT_SANDHYA_SAKHI_SANDHYA_SECTION: NitnemSection = SANDHYA_PRABHAT_SANDHYA_SAKHI_SECTION;
+
 
 

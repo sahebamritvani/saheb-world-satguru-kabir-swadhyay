@@ -260,3 +260,184 @@ export const VINATI_PRAVANCHI_SECTION: NitnemSection = {
     }
   ]
 };
+
+export const SANDHYA_VINATI_1_SECTION: NitnemSection = {
+  id: "sandhya-vinati-1",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "विनती",
+  title: {
+    hi: "विनती - १",
+    pb: "ਵਿਨਤੀ - ੧",
+    en: "Vinati - 1"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। गुरु दर्शन हेतु विरह भरी करुण संध्या पुकार",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਗੁਰੂ ਦਰਸ਼ਨ ਲਈ ਕਰੁਣਾ ਭਰੀ ਸੰਧਿਆ ਪੁਕਾਰ",
+    en: "Evening Devotional Petition for Vision of the Master"
+  },
+  iconName: "Heart",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sandhya-vinati1-v1",
+      type: "chaupai",
+      lines: {
+        hi: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.hi],
+        pb: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.pb],
+        en: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.en]
+      },
+      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[0].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_VINATI_2_SECTION: NitnemSection = {
+  id: "sandhya-vinati-2",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "विनती",
+  title: {
+    hi: "विनती - २",
+    pb: "ਵਿਨਤੀ - ੨",
+    en: "Vinati - 2"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। नमो नमो निज नाम तुम - संध्या शरणागति विनती",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਨਮੋ ਨਮੋ ਨਿਜ ਨਾਮ ਤੁਮ - ਸੰਧਿਆ ਸ਼ਰਣਾਗਤੀ ਬੇਨਤੀ",
+    en: "Evening Petition of Surrender and Essential Name"
+  },
+  iconName: "Heart",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sandhya-vinati2-v1",
+      type: "chaupai",
+      lines: {
+        hi: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.hi],
+        pb: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.pb],
+        en: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.en]
+      },
+      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[1].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_SUMIRAN_AARTI_SECTION: NitnemSection = {
+  id: "sandhya-sandhya-sumiran-aarti",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "संध्या सुमिरन आरती",
+  title: {
+    hi: "संध्या सुमिरन आरती",
+    pb: "ਸੰਧਿਆ ਸੁਮਿਰਨ ਆਰਤੀ",
+    en: "Sandhya Sumiran Aarti"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। सुरति निरति एक तार संध्या सुमिरन आरती",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸੁਰਤਿ ਨਿਰਤਿ ਏਕ ਤਾਰ ਸੰਧਿਆ ਸਿਮਰਨ ਆਰਤੀ",
+    en: "Contemplative Evening Remembrance Aarti"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sandhya-ssa-v1",
+      type: "chaupai",
+      lines: {
+        hi: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.hi],
+        pb: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.pb],
+        en: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.en]
+      },
+      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[2].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_SHLOK_DHYANAM_SECTION: NitnemSection = {
+  id: "sandhya-shlok-dhyanam",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "श्लोक ध्यानं",
+  title: {
+    hi: "श्लोक ध्यानं",
+    pb: "ਸ਼ਲੋਕ ਧਿਆਨੰ",
+    en: "Shlok Dhyanam"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। ध्यायतं सद्गुरु श्वेतरूप मंगलम् - संध्या ध्यान श्लोक",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸ਼੍ਰੀ ਸਤਿਗੁਰੂ ਸ਼ਵੇਤਰੂਪ ਧਿਆਨ ਸ਼ਲੋਕ",
+    en: "Evening Meditative Shlokas on the Luminous Master"
+  },
+  iconName: "Sparkles",
+  estimatedMinutes: 3,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sandhya-sd-v1",
+      type: "stuti",
+      lines: {
+        hi: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.hi],
+        pb: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.pb],
+        en: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.en]
+      },
+      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[3].bhavarth }
+    }
+  ]
+};
+
+export const SANDHYA_ANTIM_VINATI_SECTION: NitnemSection = {
+  id: "sandhya-vinati",
+  majorCategoryId: "sandhya-path",
+  majorCategoryTitle: {
+    hi: "२. मूल संध्या पाठ",
+    pb: "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+    en: "2. Evening Sacred Recitation (Mool Sandhya Path)"
+  },
+  subGroup: "विनती",
+  title: {
+    hi: "विनती",
+    pb: "ਵਿਨਤੀ",
+    en: "Vinati"
+  },
+  subtitle: {
+    hi: "।। सत्यनाम ।। सत्य कबीर गुरु बालापीर - अंतिम संध्या विनती",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਾਲਾਪੀਰ - ਅੰਤਿਮ ਸੰਧਿਆ ਬੇਨਤੀ",
+    en: "Closing Evening Devotional Petition"
+  },
+  iconName: "Heart",
+  estimatedMinutes: 4,
+  totalVerses: 1,
+  verses: [
+    {
+      id: "sandhya-av-v1",
+      type: "chaupai",
+      lines: {
+        hi: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.hi],
+        pb: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.pb],
+        en: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.en]
+      },
+      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[4].bhavarth }
+    }
+  ]
+};
+

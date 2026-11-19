@@ -1,6 +1,10 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { EChartsUniverseVisualizer } from './EChartsUniverseVisualizer';
+import React, { useState, useRef, useMemo, Suspense, lazy } from 'react';
 import { AnhadNaadVisualizer } from './AnhadNaadVisualizer';
+import { SacredLoader } from './SacredLoader';
+
+const EChartsUniverseVisualizer = lazy(() =>
+  import('./EChartsUniverseVisualizer').then((m) => ({ default: m.EChartsUniverseVisualizer }))
+);
 import { 
   Compass, 
   ChevronRight, 
@@ -698,18 +702,20 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
             style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
             className="p-3 sm:p-5 rounded-3xl border-2 space-y-4 shadow-sm"
           >
-            <EChartsUniverseVisualizer
-              externalSearchQuery={searchFilter}
-              onSelectNode={(node) => {
-                const match = SACRED_UNIVERSE_STAGES.find(s => 
-                  node.title.toLowerCase().includes(s.title.hi.toLowerCase()) ||
-                  s.title.hi.toLowerCase().includes(node.title.toLowerCase())
-                );
-                if (match) {
-                  setSelectedStageId(match.id);
-                }
-              }}
-            />
+            <Suspense fallback={<SacredLoader language={language} compact />}>
+              <EChartsUniverseVisualizer
+                externalSearchQuery={searchFilter}
+                onSelectNode={(node) => {
+                  const match = SACRED_UNIVERSE_STAGES.find(s => 
+                    node.title.toLowerCase().includes(s.title.hi.toLowerCase()) ||
+                    s.title.hi.toLowerCase().includes(node.title.toLowerCase())
+                  );
+                  if (match) {
+                    setSelectedStageId(match.id);
+                  }
+                }}
+              />
+            </Suspense>
 
             <AnhadNaadVisualizer isActive={true} />
           </div>

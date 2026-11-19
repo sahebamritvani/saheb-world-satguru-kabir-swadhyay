@@ -21,7 +21,7 @@ export default defineConfig(() => {
         includeAssets: [],
         workbox: {
           globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,json,woff,woff2,webmanifest}'],
-          globIgnores: ['**/assets/aistudio/**', '**/standalone-codesandbox.html'],
+          globIgnores: ['**/.aistudio/**', '**/assets/aistudio/**', '**/standalone-codesandbox.html'],
           maximumFileSizeToCacheInBytes: 35 * 1024 * 1024,
           cleanupOutdatedCaches: true,
           clientsClaim: true,
@@ -113,6 +113,15 @@ export default defineConfig(() => {
           enabled: false,
         },
       }),
+      {
+        name: 'exclude-aistudio-artifacts',
+        resolveId(source) {
+          if (source.includes('.aistudio/') || source.includes('.aistudio\\')) {
+            return { id: source, external: true };
+          }
+          return null;
+        },
+      },
     ],
     resolve: {
       alias: {
@@ -143,8 +152,20 @@ export default defineConfig(() => {
             if (id.includes('node_modules/jspdf/') || id.includes('node_modules/html2canvas/')) {
               return 'vendor-pdf';
             }
-            if (id.includes('/src/data/granths/') || id.includes('/src/data/nitnem') || id.includes('/src/data/sakhis')) {
-              return 'data-granths';
+            const batchMatch = id.match(/\/src\/data\/sakhisBatch(\d+)/);
+            if (batchMatch) {
+              const num = parseInt(batchMatch[1], 10);
+              return num <= 20 ? 'sakhis-batches-1' : 'sakhis-batches-2';
+            }
+            if (
+              id.includes('/src/data/sakhis') &&
+              (id.includes('KoAng') ||
+                id.includes('GyanGudri') ||
+                id.includes('PrabhatSandhya') ||
+                id.includes('Arjinama') ||
+                id.includes('Aarti'))
+            ) {
+              return 'sakhis-angs';
             }
           },
         },
@@ -152,7 +173,7 @@ export default defineConfig(() => {
     },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
-      watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      watch: process.env.DISABLE_HMR === 'true' ? null : { ignored: ['**/.aistudio/**'] },
     },
   };
 });

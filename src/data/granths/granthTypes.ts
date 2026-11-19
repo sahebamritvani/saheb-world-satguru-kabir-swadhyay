@@ -1,8 +1,38 @@
 import { Language } from '../../types';
 
+export type LocalizedText = {
+  hi: string;
+  pb: string;
+  en: string;
+};
+
+export interface GranthDialog {
+  speaker: LocalizedText;
+  text: LocalizedText;
+}
+
 export interface GranthVerse {
   id: number | string;
   type: 'doha' | 'chaupai' | 'pada' | 'ramaini' | 'shabad' | 'salok' | 'ulatbaasi' | 'sakhi' | 'chhand' | 'katha' | 'mangal' | 'aarti' | 'stuti' | 'vandana' | 'sortha';
+  category?: 'Mulvani' | 'Ramaini' | 'Sabad' | 'Sakhi' | 'Prasang';
+  mulvani?: {
+    hi: string[];
+    pb: string[];
+    en: string[];
+  };
+  dialogues?: GranthDialog[];
+  wordMeanings?: {
+    hi?: { word: string; meaning: string }[];
+    pb?: { word: string; meaning: string }[];
+    en?: { word: string; meaning: string }[];
+  };
+  saralBhavarth?: LocalizedText;
+  deepInsight?: LocalizedText;
+  dailyDiscipline?: {
+    title: LocalizedText;
+    actionStep: LocalizedText;
+  };
+  reflectionQuestion?: LocalizedText;
   lines: {
     hi: string[];
     pb: string[];
@@ -13,51 +43,19 @@ export interface GranthVerse {
     pb?: { word: string; meaning: string }[];
     en?: { word: string; meaning: string }[];
   };
-  bhavarth?: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  contemplation?: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  practicalApplication?: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  samarpanPrayer?: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  spiritualEssence?: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
+  bhavarth?: LocalizedText;
+  contemplation?: LocalizedText;
+  practicalApplication?: LocalizedText;
+  samarpanPrayer?: LocalizedText;
+  spiritualEssence?: LocalizedText;
 }
 
 export interface GranthChapter {
   id: string;
   chapterNumber: number;
-  title: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  subtitle: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
-  description: {
-    hi: string;
-    pb: string;
-    en: string;
-  };
+  title: LocalizedText;
+  subtitle: LocalizedText;
+  description: LocalizedText;
   verses: GranthVerse[];
 }
 

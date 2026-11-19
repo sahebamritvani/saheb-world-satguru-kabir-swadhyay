@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Bell, ArrowRight } from 'lucide-react';
-import { SAKHI_SANGRAH_ANG_15_VERSES } from '../data/granths/sakhiSangrahAng15';
+import type { GranthVerse } from '../data/granths/granthTypes';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 
@@ -12,38 +12,45 @@ interface DivineReminderProps {
 
 export const DivineReminder: React.FC<DivineReminderProps> = ({ language, onOpenSwadhyay }) => {
   const { theme } = useAppTheme();
-  const [currentVerseIndex, setCurrentVerseIndex] = useState<number | null>(null);
+  const [currentVerse, setCurrentVerse] = useState<GranthVerse | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show reminder every 45 seconds for 8 seconds
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * SAKHI_SANGRAH_ANG_15_VERSES.length);
-      setCurrentVerseIndex(randomIndex);
-      setIsVisible(true);
-      
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 8000);
-    }, 45000);
+    let cancelled = false;
+    let versesCache: GranthVerse[] | null = null;
+    let hideTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    // Also show one initial reminder after 5 seconds
-    const initialTimeout = setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * SAKHI_SANGRAH_ANG_15_VERSES.length);
-      setCurrentVerseIndex(randomIndex);
-      setIsVisible(true);
-      setTimeout(() => setIsVisible(false), 8000);
-    }, 5000);
+    const triggerReminder = async () => {
+      try {
+        if (!versesCache) {
+          const mod = await import('../data/granths/sakhiSangrahAng15');
+          versesCache = mod.SAKHI_SANGRAH_ANG_15_VERSES;
+        }
+        if (cancelled || !versesCache || versesCache.length === 0) return;
+        const randomIndex = Math.floor(Math.random() * versesCache.length);
+        setCurrentVerse(versesCache[randomIndex]);
+        setIsVisible(true);
+        if (hideTimeout) clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(() => {
+          if (!cancelled) setIsVisible(false);
+        }, 8000);
+      } catch {}
+    };
+
+    const interval = setInterval(triggerReminder, 45000);
+    const initialTimeout = setTimeout(triggerReminder, 5000);
 
     return () => {
+      cancelled = true;
       clearInterval(interval);
       clearTimeout(initialTimeout);
+      if (hideTimeout) clearTimeout(hideTimeout);
     };
   }, []);
 
-  if (currentVerseIndex === null) return null;
+  if (!currentVerse) return null;
 
-  const verse = SAKHI_SANGRAH_ANG_15_VERSES[currentVerseIndex];
+  const verse = currentVerse;
 
   return (
     <AnimatePresence>

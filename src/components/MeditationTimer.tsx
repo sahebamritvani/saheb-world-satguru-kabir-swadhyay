@@ -69,22 +69,38 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
   
   const audioCtxRef = useRef<AudioContext | null>(null);
   const masterGainRef = useRef<GainNode | null>(null);
-  const currentSourceRef = useRef<OscillatorNode | AudioBufferSourceNode | null>(null);
+  const activeAudioNodesRef = useRef<{ stop?: () => void; disconnect?: () => void }[]>([]);
 
   const stopAudio = () => {
-    if (currentSourceRef.current) {
-      try {
-        currentSourceRef.current.stop();
-      } catch {}
-      currentSourceRef.current = null;
-    }
+    activeAudioNodesRef.current.forEach((n) => {
+      try { n.stop?.(); } catch {}
+      try { n.disconnect?.(); } catch {}
+    });
+    activeAudioNodesRef.current = [];
   };
+
+  useEffect(() => {
+    return () => {
+      stopAudio();
+      if (audioCtxRef.current) {
+        try {
+          audioCtxRef.current.close().catch(() => {});
+        } catch {}
+        audioCtxRef.current = null;
+      }
+      masterGainRef.current = null;
+    };
+  }, []);
 
   const startAudio = () => {
     if (!audioCtxRef.current) {
-      audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      audioCtxRef.current = new AudioContextClass();
       masterGainRef.current = audioCtxRef.current.createGain();
       masterGainRef.current.connect(audioCtxRef.current.destination);
+    }
+    if (audioCtxRef.current.state === 'suspended') {
+      audioCtxRef.current.resume().catch(() => {});
     }
     
     const ctx = audioCtxRef.current;
@@ -114,7 +130,7 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
       noise.connect(filter);
       filter.connect(gain);
       noise.start();
-      currentSourceRef.current = noise;
+      activeAudioNodesRef.current.push(noise, filter);
     } else if (selectedSound === 'flute') {
       const osc = ctx.createOscillator();
       osc.type = 'sine';
@@ -131,7 +147,7 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
       osc.connect(gain);
       lfo.start();
       osc.start();
-      currentSourceRef.current = osc;
+      activeAudioNodesRef.current.push(osc, lfo, lfoGain);
     } else if (selectedSound === 'been') {
       const osc = ctx.createOscillator();
       osc.type = 'sawtooth';
@@ -144,14 +160,14 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
       osc.connect(filter);
       filter.connect(gain);
       osc.start();
-      currentSourceRef.current = osc;
+      activeAudioNodesRef.current.push(osc, filter);
     } else if (selectedSound === 'satyanaam') {
       const osc = ctx.createOscillator();
       osc.type = 'sine';
       osc.frequency.setValueAtTime(144, ctx.currentTime);
       osc.connect(gain);
       osc.start();
-      currentSourceRef.current = osc;
+      activeAudioNodesRef.current.push(osc);
     }
   };
 

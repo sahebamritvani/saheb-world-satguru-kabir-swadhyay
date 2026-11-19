@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef, Suspense, lazy } from 'react';
 import { 
   BookOpen, 
   Scroll, 
@@ -50,13 +50,20 @@ import { translations, getVerseTypeLabel } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { hindiToPunjabiWordConverter } from '../services/transliteration';
-import { ALL_MASTER_GRANTHS } from '../data/granths/masterGranthIndex';
+import { MASTER_GRANTH_CATALOG, loadMasterGranth, loadMasterGranthChapter } from '../data/granths/masterGranthIndex';
 import { MasterGranth, GranthChapter, GranthVerse } from '../data/granths/granthTypes';
+import { SacredLoader } from './SacredLoader';
+import { PaginationControls } from './PaginationControls';
 import { generateUniqueUlatvasiAnalysis } from '../services/ulatvasiEssenceEngine';
 import { ambientReaderAudio, DhunSoundType, speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
-import { NitnemGutkaReader } from './NitnemGutkaReader';
 import { backgroundSync } from '../services/backgroundSync';
+import { FlowerBloomAnimation } from './FlowerBloomAnimation';
+import confetti from 'canvas-confetti';
+
+const NitnemGutkaReader = lazy(() =>
+  import('./NitnemGutkaReader').then((m) => ({ default: m.NitnemGutkaReader }))
+);
 import { 
   userHighlightService, 
   HighlightColor, 
@@ -120,19 +127,31 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
     setThemeMode,
     fontSize: globalFontSize, 
     setFontSize: setGlobalFontSize, 
-    lineHeight, 
+    lineHeight,
+    setLineHeight,
     widthMode,
-    setWidthMode
+    setWidthMode,
+    fontFamily,
+    setFontFamily
   } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const lang = language || contextLang;
   const t = translations[lang] || contextT;
 
-  // Granth and Chapter Selection
+  // Granth and Chapter Selection (Lazy-loaded on demand)
+  const VERSES_PER_PAGE = 30;
+  const [loadedGranthsMap, setLoadedGranthsMap] = useState<Record<string, MasterGranth>>(() =>
+    Object.fromEntries(MASTER_GRANTH_CATALOG.map((g) => [g.slug, g]))
+  );
+  const [isGranthLoading, setIsGranthLoading] = useState<boolean>(false);
+  const [isChapterLoading, setIsChapterLoading] = useState<boolean>(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedGranthSlug, setSelectedGranthSlug] = useState<string>(initialGranthId || '');
   const [selectedChapterId, setSelectedChapterId] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('all');
+  const [acceptedSankalps, setAcceptedSankalps] = useState<Record<string | number, boolean>>({});
+  const [showCompletionModal, setShowCompletionModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (initialGranthId) {
@@ -175,7 +194,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
       return 'mool';
     }
   });
-  const [fontSize, setFontSize] = useState<ReaderFontSize>('normal');
+  const [fontSize, setFontSize] = useState<ReaderFontSize>(globalFontSize);
 
   // Synchronize local states with global context settings
   useEffect(() => {
@@ -189,10 +208,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
   const getLineHeightClass = (lh: 'small' | 'medium' | 'large') => {
     switch (lh) {
-      case 'small': return 'leading-normal';
-      case 'medium': return 'leading-relaxed';
-      case 'large': return 'leading-loose';
-      default: return 'leading-relaxed';
+      case 'small': return 'leading-[1.75]';
+      case 'medium': return 'leading-[1.95]';
+      case 'large': return 'leading-[2.2]';
+      default: return 'leading-[1.95]';
     }
   };
 
@@ -395,10 +414,87 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
   const exactTop = SACRED_BRANDING.header[language];
   const exactBottom = SACRED_BRANDING.footer[language];
 
-  // Current Granth Object
+  // Current Granth Object (resolved from lazy-loaded state or lightweight catalog)
   const currentGranth = useMemo(() => {
-    return ALL_MASTER_GRANTHS.find((g) => g.slug === selectedGranthSlug) || ALL_MASTER_GRANTHS[0];
+    return (
+      loadedGranthsMap[selectedGranthSlug] ||
+      MASTER_GRANTH_CATALOG.find((g) => g.slug === selectedGranthSlug) ||
+      MASTER_GRANTH_CATALOG[0]
+    );
+  }, [loadedGranthsMap, selectedGranthSlug]);
+
+  // Dynamically load selected Granth bundle only when opened
+  useEffect(() => {
+    if (!selectedGranthSlug) return;
+    let cancelled = false;
+
+    const existing = loadedGranthsMap[selectedGranthSlug];
+    const needsGranthLoad = !existing || existing.chapters.length === 0;
+
+    if (needsGranthLoad) {
+      setIsGranthLoading(true);
+    }
+
+    loadMasterGranth(selectedGranthSlug)
+      .then((loaded) => {
+        if (cancelled) return;
+        setLoadedGranthsMap((prev) => ({
+          ...prev,
+          [selectedGranthSlug]: loaded,
+        }));
+      })
+      .catch((err) => {
+        console.error('Error lazy loading granth:', err);
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsGranthLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [selectedGranthSlug]);
+
+  // Dynamically load specific chapter verses (essential for Sakhi Sangrah's 37 lazy Angs)
+  useEffect(() => {
+    if (!selectedGranthSlug || !selectedChapterId) return;
+    const granth = loadedGranthsMap[selectedGranthSlug];
+    const ch = granth?.chapters.find((c) => c.id === selectedChapterId);
+    if (ch && ch.verses && ch.verses.length > 0) return;
+
+    let cancelled = false;
+    setIsChapterLoading(true);
+
+    loadMasterGranthChapter(selectedGranthSlug, selectedChapterId)
+      .then((loadedChapter) => {
+        if (cancelled || !loadedChapter) return;
+        setLoadedGranthsMap((prev) => {
+          const target = prev[selectedGranthSlug];
+          if (!target) return prev;
+          return {
+            ...prev,
+            [selectedGranthSlug]: {
+              ...target,
+              chapters: target.chapters.map((c) => (c.id === loadedChapter.id ? loadedChapter : c)),
+            },
+          };
+        });
+      })
+      .catch((err) => {
+        console.error('Error lazy loading granth chapter:', err);
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsChapterLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedGranthSlug, selectedChapterId]);
 
   // Filtered Chapters by Category (Mainly for Bijak)
   const filteredChapters = useMemo(() => {
@@ -424,9 +520,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
     return filteredChapters[0] || currentGranth.chapters[0] || null;
   }, [currentGranth, selectedChapterId, filteredChapters]);
 
-  // Restore saved chapter and scroll position when granth changes
+  // Restore saved chapter and scroll position when granth changes or finishes loading
   useEffect(() => {
     if (selectedGranthSlug && currentGranth.chapters.length > 0) {
+      const alreadyValid = selectedChapterId && currentGranth.chapters.some(c => c.id === selectedChapterId);
+      if (alreadyValid) return;
+
       const saved = backgroundSync.getBookProgress(selectedGranthSlug);
       if (saved && saved.chapterId && currentGranth.chapters.some(c => c.id === saved.chapterId)) {
         setSelectedChapterId(saved.chapterId);
@@ -442,10 +541,16 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
       }
       setActiveCategoryFilter('all');
     }
+  }, [selectedGranthSlug, currentGranth.chapters.length]);
+
+  useEffect(() => {
+    setSelectedChapterId('');
+    setCurrentPage(1);
   }, [selectedGranthSlug]);
 
   useEffect(() => {
     setActiveVerseIndex(0);
+    setCurrentPage(1);
   }, [selectedChapterId]);
 
   // Save book scroll position & progress persistently
@@ -525,6 +630,23 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
       return textMatches || bhavarthMatches;
     });
   }, [currentChapter, searchQuery, language]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredVerses.length / VERSES_PER_PAGE));
+
+  const paginatedVerses = useMemo(() => {
+    const start = (currentPage - 1) * VERSES_PER_PAGE;
+    return filteredVerses.slice(start, start + VERSES_PER_PAGE);
+  }, [filteredVerses, currentPage]);
+
+  const handleGranthPageChange = (page: number) => {
+    sacredHaptics.lightTap();
+    setCurrentPage(page);
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+  };
 
   // Calculate words in current chapter/Sakhi segment
   const totalWordsInCurrentChapter = useMemo(() => {
@@ -644,14 +766,14 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
   const getFontSizeStyle = () => {
     const lhClass = getLineHeightClass(lineHeight);
     switch (fontSize) {
-      case 'small': return { verse: `text-lg sm:text-xl font-medium ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-sm sm:text-base' };
-      case 'normal': return { verse: `text-xl sm:text-2xl font-semibold ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-base sm:text-lg' };
-      case 'medium': return { verse: `text-2xl sm:text-3xl font-bold ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-lg sm:text-xl' };
-      case 'large': return { verse: `text-2.5xl sm:text-4xl font-extrabold ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-xl sm:text-2xl' };
-      case 'xlarge': return { verse: `text-3xl sm:text-5xl font-black ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-2xl sm:text-3xl' };
-      case 'xl': return { verse: `text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-xl xs:text-2xl sm:text-4xl font-black [word-break:keep-all] [overflow-wrap:break-word] break-words' };
-      case 'elderly': return { verse: `text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black ${lhClass} leading-snug sm:leading-relaxed [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-xl xs:text-2xl sm:text-4xl font-black [word-break:keep-all] [overflow-wrap:break-word] break-words' };
-      default: return { verse: `text-xl sm:text-2xl font-semibold ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: 'text-base sm:text-lg' };
+      case 'small': return { verse: `text-lg sm:text-xl font-medium sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-sm sm:text-base sacred-meaning-typography ${lhClass}` };
+      case 'normal': return { verse: `text-xl sm:text-2xl font-semibold sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-base sm:text-lg sacred-meaning-typography ${lhClass}` };
+      case 'medium': return { verse: `text-2xl sm:text-3xl font-bold sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-lg sm:text-xl sacred-meaning-typography ${lhClass}` };
+      case 'large': return { verse: `text-[1.65rem] sm:text-4xl font-extrabold sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-xl sm:text-2xl sacred-meaning-typography ${lhClass}` };
+      case 'xlarge': return { verse: `text-3xl sm:text-5xl font-black sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-2xl sm:text-3xl sacred-meaning-typography ${lhClass}` };
+      case 'xl': return { verse: `text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-xl xs:text-2xl sm:text-4xl font-black sacred-meaning-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words` };
+      case 'elderly': return { verse: `text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black sacred-verse-typography leading-[1.85] sm:leading-[2] [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-xl xs:text-2xl sm:text-4xl font-black sacred-meaning-typography leading-[1.85] sm:leading-[2] [word-break:keep-all] [overflow-wrap:break-word] break-words` };
+      default: return { verse: `text-xl sm:text-2xl font-semibold sacred-verse-typography ${lhClass} [word-break:keep-all] [overflow-wrap:break-word] break-words`, text: `text-base sm:text-lg sacred-meaning-typography ${lhClass}` };
     }
   };
 
@@ -797,6 +919,9 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
       setSelectedChapterId(currentGranth.chapters[currentIndex + 1].id);
       setActiveVerseIndex(0);
       scrollLibraryIntoView();
+    } else {
+      setShowCompletionModal(true);
+      confetti({ particleCount: 75, spread: 90, origin: { y: 0.6 } });
     }
   };
 
@@ -855,14 +980,18 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
   return (
     <div
       id="master-granth-library"
-      className="w-full max-w-full p-0 pb-16 transition-all duration-300 bg-[#faf7ee] dark:bg-[#1a1612] text-[#332211] dark:text-[#f2e6d0]"
+      style={{
+        backgroundColor: themeStyle.bg,
+        color: themeStyle.text,
+      }}
+      className="w-full max-w-full min-h-screen p-0 pb-16 transition-colors duration-300"
     >
       {/* Floating Exit Button for Zen Mode */}
       {zenMode && (
         <button
           type="button"
           onClick={() => setZenMode(false)}
-          className="fixed top-4 right-4 z-[100] px-3.5 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/30"
+          className="fixed top-4 right-4 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/30"
           title={language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन एकाग्रता बंद करें'}
         >
           <EyeOff size={15} />
@@ -870,8 +999,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
         </button>
       )}
       {/* Sikhworld Style Orange Header */}
-      <div className="bg-amber-600 text-white p-3 sm:p-4 flex items-center justify-between shadow-md sticky top-0 z-30">
-        <div className="flex items-center gap-3">
+      <div className="bg-amber-600 text-white px-3 py-2.5 sm:p-4 flex items-center justify-between shadow-md sticky top-0 z-30">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           {selectedGranthSlug ? (
             <button
               type="button"
@@ -879,17 +1008,19 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 setSelectedGranthSlug('');
                 sacredHaptics.lightTap();
               }}
-              className="p-1.5 hover:bg-white/20 rounded-full transition cursor-pointer"
+              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer shrink-0"
             >
-              <ArrowLeft size={24} />
+              <ArrowLeft size={22} />
             </button>
           ) : onClose ? (
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 hover:bg-white/20 rounded-full transition cursor-pointer"
+              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer shrink-0"
             >
-              <ArrowLeft size={24} />
+              <ArrowLeft size={22} />
             </button>
           ) : null}
           <div>
@@ -963,7 +1094,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           </div>
           <div className="flex items-center gap-2 shrink-0">
             <span className="text-xs font-bold font-serif px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/40 shadow-2xs">
-              {ALL_MASTER_GRANTHS.length} पवित्र ग्रन्थ • ६ मुख्य साधना द्वार
+              {MASTER_GRANTH_CATALOG.length} पवित्र ग्रन्थ • ६ मुख्य साधना द्वार
             </span>
           </div>
         </div>
@@ -987,13 +1118,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               </p>
             </div>
             <div className="text-xs font-bold font-mono px-3 py-1 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 shrink-0 self-start sm:self-auto">
-              ५ मुख्य ग्रन्थ • {ALL_MASTER_GRANTHS.reduce((acc, g) => acc + g.chapters.length, 0)}+ अंग/अध्याय
+              ५ मुख्य ग्रन्थ • {MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ अंग/अध्याय
             </div>
           </div>
 
           {/* Granth Grid Containers: Kabir Sagar, Beejak, Ulatvasi, Shabdawali, Granthavali */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {ALL_MASTER_GRANTHS.map((granth) => {
+            {MASTER_GRANTH_CATALOG.map((granth) => {
               const isSelected = granth.slug === selectedGranthSlug;
               
               const getGranthTag = () => {
@@ -1507,11 +1638,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
       )}
 
       {selectedGranthSlug === 'nitnem-gutka' ? (
-        <NitnemGutkaReader 
-          language={language} 
-          onSelectLanguage={onSelectLanguage} 
-          onClose={() => setSelectedGranthSlug('')}
-        />
+        <Suspense fallback={<SacredLoader language={language} />}>
+          <NitnemGutkaReader 
+            language={language} 
+            onSelectLanguage={onSelectLanguage} 
+            onClose={() => setSelectedGranthSlug('')}
+          />
+        </Suspense>
       ) : (
         selectedGranthSlug && (
           <>
@@ -1768,7 +1901,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             >
               <span className="font-serif font-black text-amber-600">A</span>
               <span className="text-[0.6875rem] font-mono">
-                {fontSize === 'small' ? 'A-' : fontSize === 'normal' ? 'A' : fontSize === 'large' ? 'A+' : 'A++'} • {widthMode === 'wide' ? '7XL' : '5XL'}
+                {fontSize === 'small' ? 'A-' : fontSize === 'normal' || fontSize === 'medium' ? 'A' : fontSize === 'large' ? 'A+' : fontSize === 'elderly' ? '👵 A+++' : 'A++'} • {widthMode === 'wide' ? '7XL' : '5XL'}
               </span>
             </button>
 
@@ -2020,13 +2153,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               </div>
             )}
 
-            {/* Font Size & Canvas Width Panel */}
+            {/* Font Size, Line Height, Script Face & Canvas Width Panel */}
             {activeQuickPanel === 'font' && (
-              <div className="flex flex-wrap items-center justify-between gap-3 w-full">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-3 w-full">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="font-bold text-amber-700 mr-1 flex items-center gap-1">
                     <Sliders size={14} />
-                    <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਸਲਾਈਡਰ:' : 'फ़ॉन्ट आकार स्लाइडर:'}</span>
+                    <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ:' : 'फ़ॉन्ट आकार:'}</span>
                   </span>
                   <input
                     type="range"
@@ -2044,11 +2177,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   {(['small', 'normal', 'large', 'xlarge', 'elderly'] as ReaderFontSize[]).map((fs) => (
                     <button
                       key={fs}
+                      type="button"
                       onClick={() => {
                         sacredHaptics.lightTap();
                         handleSetLocalFontSize(fs);
                       }}
-                      className={`px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
+                      className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
                         fontSize === fs || (fs === 'normal' && fontSize === 'medium') || (fs === 'xlarge' && fontSize === 'xl')
                           ? 'bg-amber-600 text-white shadow-xs'
                           : 'bg-black/5 hover:bg-black/10'
@@ -2063,25 +2197,76 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਕੈਨਵਸ ਵਿਸਤਾਰ:' : 'कैनवास विस्तार:'}</span>
-                  {[
-                    { id: 'wide', label: language === 'pb' ? 'ਵਿਸ਼ਾਲ 7XL' : 'विशाल 7XL' },
-                    { id: 'medium', label: language === 'pb' ? 'ਮੱਧਮ 5XL' : 'मध्यम 5XL' },
-                  ].map((wObj) => (
-                    <button
-                      key={wObj.id}
-                      onClick={() => {
-                        sacredHaptics.lightTap();
-                        setWidthMode(wObj.id as any);
-                      }}
-                      className={`px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
-                        widthMode === wObj.id ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
-                      }`}
-                    >
-                      {wObj.label}
-                    </button>
-                  ))}
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-black/10 dark:border-white/10">
+                  {/* Line Spacing Controls */}
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਲਾਈਨ ਅੰਤਰਾਲ:' : 'पंक्ति अंतराल:'}</span>
+                    {[
+                      { id: 'small' as const, label: language === 'pb' ? 'ਘੱਟ' : 'कॉम्पैक्ट' },
+                      { id: 'medium' as const, label: language === 'pb' ? 'ਸੰਤੁਲਿਤ' : 'संतुलित' },
+                      { id: 'large' as const, label: language === 'pb' ? 'ਖੁੱਲ੍ਹਾ' : 'विस्तृत' },
+                    ].map((lh) => (
+                      <button
+                        key={lh.id}
+                        type="button"
+                        onClick={() => {
+                          sacredHaptics.lightTap();
+                          setLineHeight(lh.id);
+                        }}
+                        className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
+                          lineHeight === lh.id ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                        }`}
+                      >
+                        {lh.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Script Face & Canvas Width */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 p-0.5 rounded-lg">
+                      {[
+                        { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ' : '📜 ग्रंथ (Serif)' },
+                        { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ' : '🔤 सरल (Sans)' },
+                      ].map((ff) => (
+                        <button
+                          key={ff.id}
+                          type="button"
+                          onClick={() => {
+                            sacredHaptics.lightTap();
+                            setFontFamily(ff.id);
+                          }}
+                          className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-md font-bold text-xs transition cursor-pointer ${
+                            fontFamily === ff.id ? 'bg-amber-600 text-white shadow-xs' : 'hover:bg-black/10'
+                          }`}
+                        >
+                          {ff.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-bold text-amber-700">{language === 'pb' ? 'ਕੈਨਵਸ:' : 'विस्तार:'}</span>
+                      {[
+                        { id: 'wide', label: language === 'pb' ? 'ਵਿਸ਼ਾਲ 7XL' : '7XL' },
+                        { id: 'medium', label: language === 'pb' ? 'ਮੱਧਮ 5XL' : '5XL' },
+                      ].map((wObj) => (
+                        <button
+                          key={wObj.id}
+                          type="button"
+                          onClick={() => {
+                            sacredHaptics.lightTap();
+                            setWidthMode(wObj.id as any);
+                          }}
+                          className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
+                            widthMode === wObj.id ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                          }`}
+                        >
+                          {wObj.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -2214,23 +2399,32 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
         )}
       </div>
 
-      {/* Advanced Reading Suite Modal (उन्नत पठन साधन) */}
+      {/* Advanced Reading Suite Modal / Mobile Bottom Sheet (उन्नत पठन साधन) */}
       {showAdvancedSuiteModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 animate-fadeIn">
+        <div
+          onClick={() => setShowAdvancedSuiteModal(false)}
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fadeIn"
+        >
           <div
-            style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border }}
-            className="rounded-3xl border-2 shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-5 sm:p-7 space-y-6"
+            onClick={(e) => e.stopPropagation()}
+            style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border, color: themeStyle.text }}
+            className="rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 shadow-2xl max-w-xl w-full max-h-[88dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain p-4 sm:p-7 pb-safe space-y-6"
           >
-            <div className="flex items-center justify-between border-b pb-3" style={{ borderColor: themeStyle.border }}>
-              <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-600">
+            <div
+              onClick={() => setShowAdvancedSuiteModal(false)}
+              className="sm:hidden w-12 h-1.5 bg-amber-500/40 rounded-full mx-auto -mt-1 mb-1 cursor-pointer"
+              aria-hidden="true"
+            />
+            <div className="flex items-center justify-between border-b pb-3 gap-2" style={{ borderColor: themeStyle.border }}>
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="w-9 h-9 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-600 shrink-0">
                   <Settings size={20} />
                 </div>
-                <div>
-                  <h3 className="font-serif font-black text-base sm:text-lg text-amber-900 dark:text-amber-200">
+                <div className="min-w-0">
+                  <h3 className="font-serif font-black text-base sm:text-lg text-amber-900 dark:text-amber-200 truncate">
                     {language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ (Advanced Reading Suite)' : 'उन्नत पठन साधन (Advanced Reading Suite)'}
                   </h3>
-                  <p className="text-[0.6875rem] opacity-75 font-serif">
+                  <p className="text-[0.6875rem] opacity-75 font-serif truncate">
                     {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
                   </p>
                 </div>
@@ -2238,7 +2432,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               <button
                 type="button"
                 onClick={() => setShowAdvancedSuiteModal(false)}
-                className="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer"
+                className="min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0"
               >
                 <ArrowLeft size={16} />
                 <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'वापस जाएं'}</span>
@@ -3486,7 +3680,9 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             </span>
           </div>
 
-          {filteredVerses.length === 0 ? (
+          {(isGranthLoading || isChapterLoading) && filteredVerses.length === 0 ? (
+            <SacredLoader language={language} compact />
+          ) : filteredVerses.length === 0 ? (
             <div
               style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border }}
               className="p-8 text-center rounded-2xl border space-y-2"
@@ -3497,53 +3693,63 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               </p>
             </div>
           ) : (
-            filteredVerses.map((verse, idx) => {
-              const isGuideActive = showLineGuide && activeVerseIndex === idx;
-              const isThisSpeaking = speakingVerseId === verse.id;
-              const highlight = userHighlights[`${selectedGranthSlug}:${verse.id}`]?.color;
+            <>
+              <PaginationControls
+                currentPage={currentPage}
+                totalPages={totalPages}
+                totalItems={filteredVerses.length}
+                pageSize={VERSES_PER_PAGE}
+                onPageChange={handleGranthPageChange}
+                language={language}
+              />
+              {paginatedVerses.map((verse, idx) => {
+                const globalIdx = (currentPage - 1) * VERSES_PER_PAGE + idx;
+                const isGuideActive = showLineGuide && activeVerseIndex === globalIdx;
+                const isThisSpeaking = speakingVerseId === verse.id;
+                const highlight = userHighlights[`${selectedGranthSlug}:${verse.id}`]?.color;
 
-              const highlightStyle = highlight === 'saffron'
-                ? { backgroundColor: 'rgba(245, 158, 11, 0.15)', borderColor: '#F59E0B' }
-                : highlight === 'green'
-                ? { backgroundColor: 'rgba(16, 185, 129, 0.15)', borderColor: '#10B981' }
-                : highlight === 'yellow'
-                ? { backgroundColor: 'rgba(253, 224, 71, 0.22)', borderColor: '#FACC15' }
-                : undefined;
+                const highlightStyle = highlight === 'saffron'
+                  ? { backgroundColor: 'rgba(245, 158, 11, 0.15)', borderColor: '#F59E0B' }
+                  : highlight === 'green'
+                  ? { backgroundColor: 'rgba(16, 185, 129, 0.15)', borderColor: '#10B981' }
+                  : highlight === 'yellow'
+                  ? { backgroundColor: 'rgba(253, 224, 71, 0.22)', borderColor: '#FACC15' }
+                  : undefined;
 
-              return (
-                <div
-                  key={`parallel-${verse.id}`}
-                  id={`verse-card-${verse.id}`}
-                  onClick={() => {
-                    setActiveVerseIndex(idx);
-                    if (activeHighlightColor) {
-                      handleToggleHighlight(verse.id, activeHighlightColor);
-                    }
-                  }}
-                  style={{
-                    backgroundColor: highlightStyle?.backgroundColor || (isGuideActive ? themeStyle.highlight : themeStyle.card),
-                    borderColor: highlightStyle?.borderColor || (isGuideActive ? themeStyle.accent : themeStyle.border),
-                  }}
-                  className={`rounded-3xl border-2 shadow-sm transition-all duration-200 cursor-pointer overflow-hidden ${
-                    isGuideActive ? 'ring-2 ring-amber-500/50 shadow-md' : 'hover:border-amber-500/40'
-                  }`}
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-amber-500/20 items-stretch">
-                    {/* LEFT COLUMN: Sacred Original Verses */}
-                    <div className="p-5 sm:p-7 flex flex-col justify-between space-y-4 relative">
-                      {/* Active Beam Indicator */}
-                      {isGuideActive && (
-                        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-amber-500 to-orange-600" />
-                      )}
+                return (
+                  <div
+                    key={`parallel-${verse.id}`}
+                    id={`verse-card-${verse.id}`}
+                    onClick={() => {
+                      setActiveVerseIndex(globalIdx);
+                      if (activeHighlightColor) {
+                        handleToggleHighlight(verse.id, activeHighlightColor);
+                      }
+                    }}
+                    style={{
+                      backgroundColor: highlightStyle?.backgroundColor || (isGuideActive ? themeStyle.highlight : themeStyle.card),
+                      borderColor: highlightStyle?.borderColor || (isGuideActive ? themeStyle.accent : themeStyle.border),
+                    }}
+                    className={`rounded-3xl border-2 shadow-sm transition-all duration-200 cursor-pointer overflow-hidden ${
+                      isGuideActive ? 'ring-2 ring-amber-500/50 shadow-md' : 'hover:border-amber-500/40'
+                    }`}
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-amber-500/20 items-stretch">
+                      {/* LEFT COLUMN: Sacred Original Verses */}
+                      <div className="p-5 sm:p-7 flex flex-col justify-between space-y-4 relative">
+                        {/* Active Beam Indicator */}
+                        {isGuideActive && (
+                          <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-amber-500 to-orange-600" />
+                        )}
 
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between border-b pb-2.5" style={{ borderColor: themeStyle.border }}>
-                          <span
-                            style={{ backgroundColor: themeStyle.badgeBg }}
-                            className="px-2.5 py-0.5 rounded-md text-xs font-black font-serif text-amber-800 dark:text-amber-200"
-                          >
-                            {getVerseTypeLabel(verse.type, verse.id, language)} #{idx + 1}
-                          </span>
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between border-b pb-2.5" style={{ borderColor: themeStyle.border }}>
+                            <span
+                              style={{ backgroundColor: themeStyle.badgeBg }}
+                              className="px-2.5 py-0.5 rounded-md text-xs font-black font-serif text-amber-800 dark:text-amber-200"
+                            >
+                              {getVerseTypeLabel(verse.type, verse.id, language)} #{globalIdx + 1}
+                            </span>
 
                           <div className="flex items-center gap-1">
                             {/* Speech Recitation */}
@@ -3595,7 +3801,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           {verse.lines[language]?.map((line, lIdx) => (
                             <p
                               key={lIdx}
-                              className={`font-serif font-black tracking-wide text-amber-950 dark:text-amber-100 ${fontStyle.verse}`}
+                              style={{ color: themeStyle.text }}
+                              className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black ${fontStyle.verse}`}
                             >
                               {renderInteractiveLine(line)}
                             </p>
@@ -3791,13 +3998,24 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   </div>
                 </div>
               );
-            })
+            })}
+              <PaginationControls
+                currentPage={currentPage}
+                totalPages={totalPages}
+                totalItems={filteredVerses.length}
+                pageSize={VERSES_PER_PAGE}
+                onPageChange={handleGranthPageChange}
+                language={language}
+              />
+            </>
           )}
         </div>
       ) : (
         /* CONTINUOUS SCROLL VIEW */
         <div className={`mx-auto w-full transition-all duration-300 ${getWidthClass(widthMode)} space-y-6 sm:space-y-8`}>
-        {filteredVerses.length === 0 ? (
+        {(isGranthLoading || isChapterLoading) && filteredVerses.length === 0 ? (
+          <SacredLoader language={language} compact />
+        ) : filteredVerses.length === 0 ? (
           <div
             style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border }}
             className="p-8 text-center rounded-2xl border space-y-2"
@@ -3810,8 +4028,18 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             </p>
           </div>
         ) : (
-          filteredVerses.map((verse, idx) => {
-            const isGuideActive = showLineGuide && activeVerseIndex === idx;
+          <>
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredVerses.length}
+            pageSize={VERSES_PER_PAGE}
+            onPageChange={handleGranthPageChange}
+            language={language}
+          />
+          {paginatedVerses.map((verse, idx) => {
+            const globalIdx = (currentPage - 1) * VERSES_PER_PAGE + idx;
+            const isGuideActive = showLineGuide && activeVerseIndex === globalIdx;
             const isThisSpeaking = speakingVerseId === verse.id;
             const highlight = userHighlights[`${selectedGranthSlug}:${verse.id}`]?.color;
 
@@ -3828,7 +4056,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 key={verse.id}
                 id={`verse-card-${verse.id}`}
                 onClick={() => {
-                  setActiveVerseIndex(idx);
+                  setActiveVerseIndex(globalIdx);
                   if (activeHighlightColor) {
                     handleToggleHighlight(verse.id, activeHighlightColor);
                   }
@@ -3853,7 +4081,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       style={{ backgroundColor: themeStyle.badgeBg }}
                       className="px-2.5 py-0.5 rounded-md text-xs font-black font-serif"
                     >
-                      {getVerseTypeLabel(verse.type, verse.id, language)} #{idx + 1}
+                      {getVerseTypeLabel(verse.type, verse.id, language)} #{globalIdx + 1}
                     </span>
 
                     {/* Quick Highlight Tag */}
@@ -3967,12 +4195,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         interlLines.push(
                           <div key={i} className="mb-4 pb-2 border-b border-black/5 dark:border-white/5 last:border-0">
                             {pb[i] && (
-                              <div className={`font-serif font-black mb-1 ${fontStyle.verse}`} style={{ color: themeStyle.text }}>
+                              <div className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black mb-1 ${fontStyle.verse}`} style={{ color: themeStyle.text }}>
                                 {renderInteractiveLine(pb[i])}
                               </div>
                             )}
                             {hi[i] && (
-                              <div className={`font-serif font-black mb-1 opacity-90 ${fontStyle.verse}`} style={{ color: themeStyle.accent }}>
+                              <div className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black mb-1 opacity-90 ${fontStyle.verse}`} style={{ color: themeStyle.accent }}>
                                 {renderInteractiveLine(hi[i])}
                               </div>
                             )}
@@ -3990,7 +4218,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     verse.lines[language]?.map((line, lIdx) => (
                       <p
                         key={lIdx}
-                        className={`font-serif font-bold tracking-wide text-amber-900 dark:text-amber-100 ${fontStyle.verse}`}
+                        style={{ color: themeStyle.text }}
+                        className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold ${fontStyle.verse}`}
                       >
                         {renderInteractiveLine(line)}
                       </p>
@@ -4033,10 +4262,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     {/* Step 2: Bhavarth */}
                     {verse.bhavarth && (verse.bhavarth[language] || verse.bhavarth.hi) && (
                       <div className="pt-2 border-t space-y-1" style={{ borderColor: themeStyle.border }}>
-                        <span className="text-[0.6875rem] font-bold text-amber-700 font-serif block">
+                        <span className="text-[0.6875rem] font-bold text-amber-700 dark:text-amber-300 font-serif block">
                           📖 {language === 'pb' ? 'ਪੜਾਅ ੨: ਭਾਵਾਰਥ' : language === 'en' ? 'Step 2: Meaning' : 'चरण २: शब्दार्थ एवं भावार्थ'}
                         </span>
-                        <p className={`font-serif leading-relaxed opacity-95 ${fontStyle.text}`}>
+                        <p className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} opacity-95 ${fontStyle.text}`}>
                           {language === 'pb'
                             ? hindiToPunjabiWordConverter(verse.bhavarth.pb || verse.bhavarth.hi)
                             : (verse.bhavarth[language] || verse.bhavarth.hi)}
@@ -4104,7 +4333,16 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 )}
               </div>
             );
-          })
+          })}
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredVerses.length}
+            pageSize={VERSES_PER_PAGE}
+            onPageChange={handleGranthPageChange}
+            language={language}
+          />
+          </>
         )}
         </div>
       )}
@@ -4119,13 +4357,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             id="prev-chapter-btn"
             onClick={handlePrevChapter}
             style={{ borderColor: themeStyle.border }}
-            className="flex items-center gap-1 px-4 py-2 rounded-xl border hover:bg-black/5 text-xs sm:text-sm font-serif font-bold transition-all"
+            className="min-h-[44px] flex items-center gap-1 px-4 py-2 rounded-xl border hover:bg-black/5 text-xs sm:text-sm font-serif font-bold transition-all cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>{t.prevChapterLabel}</span>
           </button>
 
-          <span className="text-xs sm:text-sm font-serif font-semibold opacity-80">
+          <span className="text-xs sm:text-sm font-serif font-semibold opacity-80 text-center">
             {currentChapter?.chapterNumber} / {currentGranth.chapters.length} {t.chaptersCountLabel}
           </span>
 
@@ -4133,7 +4371,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             id="next-chapter-btn"
             onClick={handleNextChapter}
             style={{ borderColor: themeStyle.border }}
-            className="flex items-center gap-1 px-4 py-2 rounded-xl border bg-amber-600 text-white text-xs sm:text-sm font-serif font-bold hover:bg-amber-700 transition-all shadow-sm"
+            className="min-h-[44px] flex items-center gap-1 px-4 py-2 rounded-xl border bg-amber-600 text-white text-xs sm:text-sm font-serif font-bold hover:bg-amber-700 transition-all shadow-sm cursor-pointer"
           >
             <span>{t.nextChapterLabel}</span>
             <ChevronRight className="w-4 h-4" />
@@ -4164,6 +4402,23 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
         term={selectedGlossaryTerm}
         onClose={() => setSelectedGlossaryTerm(null)}
         language={language}
+      />
+
+      {/* Chapter Completion Celebration Modal with Flower Bloom Animation */}
+      <FlowerBloomAnimation
+        isOpen={showCompletionModal}
+        onClose={() => setShowCompletionModal(false)}
+        language={language}
+        title={
+          language === 'pb' ? 'ਅਧਿਆਏ ਸੁਆਧਿਆਏ ਪੂਰਾ ਹੋਇਆ' :
+          language === 'en' ? 'Chapter Study Completed' :
+          'अध्याय स्वाध्याय पूर्ण'
+        }
+        message={
+          language === 'pb' ? 'ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ! ਅੱਜ ਤੁਸੀਂ ਜੀਵਨ ਦੇ ਇੱਕ ਨਵੇਂ ਸੱਤਿਆ ਦਾ ਸੁਆਧਿਆਏ ਪੂਰਾ ਕੀਤਾ। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ 🙏' :
+          language === 'en' ? 'Saheb Bandgi Saheb! Today you have completed the study of a new truth of life. Saheb Bandgi Saheb 🙏' :
+          'साहेब बंदगी साहेब! आज आपने जीवन के एक नए सत्य का स्वाध्याय पूरा किया। साहेब बंदगी साहेब 🙏'
+        }
       />
     </div>
   );

@@ -182,6 +182,14 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
       window.removeEventListener('sahebworld:admin-auth-change', handleAuth);
       unsubMedia();
       unsubPinned();
+      if (htmlAudioRef.current) {
+        try {
+          htmlAudioRef.current.pause();
+          htmlAudioRef.current.removeAttribute('src');
+          htmlAudioRef.current.load();
+        } catch {}
+      }
+      satyanaamAudio.pause();
     };
   }, []);
 

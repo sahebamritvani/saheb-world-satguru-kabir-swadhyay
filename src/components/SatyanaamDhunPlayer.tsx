@@ -126,6 +126,18 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const timerIntervalRef = useRef<number | null>(null);
+  const toastTimerRef = useRef<number | null>(null);
+  const uploadPlayTimerRef = useRef<number | null>(null);
+  const isMountedRef = useRef<boolean>(true);
+  const playbackConfigRef = useRef({
+    isLooping: true,
+    activeMode: 'synth' as 'synth' | 'custom' | 'playlist',
+    activePlaylistTracks: [] as DhunTrack[],
+    playlistTrackIndex: 0,
+    isRepeatAll: true,
+    isShuffle: false,
+    customVolume: 0.8,
+  });
 
   const allDhunTracks: (DhunTrack & { isCloud?: boolean })[] = [
     ...cloudTracks,
@@ -162,11 +174,22 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     });
 
     return () => {
+      isMountedRef.current = false;
       window.removeEventListener('sahebworld:admin-auth-change', handleAuth);
       unsubscribe();
       unsubMedia();
       unsubPinned();
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+      if (uploadPlayTimerRef.current) clearTimeout(uploadPlayTimerRef.current);
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+          audioRef.current.removeAttribute('src');
+          audioRef.current.load();
+        } catch {}
+        audioRef.current = null;
+      }
     };
   }, []);
 
@@ -196,7 +219,20 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     .map((tid) => allDhunTracks.find((tr) => tr.id === tid))
     .filter(Boolean) as DhunTrack[];
 
-  // Sync Audio Element
+  // Keep latest playlist/playback config in ref so Audio event listeners bind cleanly once
+  useEffect(() => {
+    playbackConfigRef.current = {
+      isLooping,
+      activeMode,
+      activePlaylistTracks,
+      playlistTrackIndex,
+      isRepeatAll,
+      isShuffle,
+      customVolume,
+    };
+  }, [isLooping, activeMode, activePlaylistTracks, playlistTrackIndex, isRepeatAll, isShuffle, customVolume]);
+
+  // Sync Audio Element (attach listeners once)
   useEffect(() => {
     if (!audioRef.current) {
       audioRef.current = new Audio();
@@ -205,41 +241,41 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
     const audio = audioRef.current;
 
     const handleLoadedMetadata = () => {
-      setCustomDuration(audio.duration || 0);
+      if (isMountedRef.current) setCustomDuration(audio.duration || 0);
     };
 
     const handleTimeUpdate = () => {
-      setCustomCurrentTime(audio.currentTime || 0);
+      if (isMountedRef.current) setCustomCurrentTime(audio.currentTime || 0);
     };
 
     const handleEnded = () => {
-      if (activeMode === 'playlist' && activePlaylistTracks.length > 0) {
-        // Auto Advance in Playlist
-        let nextIndex = playlistTrackIndex + 1;
-        if (nextIndex >= activePlaylistTracks.length) {
-          if (isRepeatAll) {
+      const cfg = playbackConfigRef.current;
+      if (cfg.activeMode === 'playlist' && cfg.activePlaylistTracks.length > 0) {
+        let nextIndex = cfg.playlistTrackIndex + 1;
+        if (nextIndex >= cfg.activePlaylistTracks.length) {
+          if (cfg.isRepeatAll) {
             nextIndex = 0;
           } else {
             setIsCustomPlaying(false);
             return;
           }
         }
-        if (isShuffle && activePlaylistTracks.length > 1) {
-          nextIndex = Math.floor(Math.random() * activePlaylistTracks.length);
+        if (cfg.isShuffle && cfg.activePlaylistTracks.length > 1) {
+          nextIndex = Math.floor(Math.random() * cfg.activePlaylistTracks.length);
         }
         setPlaylistTrackIndex(nextIndex);
-        const nextTrack = activePlaylistTracks[nextIndex];
+        const nextTrack = cfg.activePlaylistTracks[nextIndex];
         if (nextTrack) {
           setSelectedTrack(nextTrack);
           getOfflinePlayableUrl(nextTrack.id, nextTrack.dataUrl).then((resolved) => {
-            if (!audioRef.current) return;
+            if (!isMountedRef.current || !audioRef.current) return;
             audioRef.current.src = resolved || nextTrack.dataUrl || '';
             const gain = nextTrack.customGain !== undefined ? nextTrack.customGain : 1;
-            audioRef.current.volume = customVolume * gain;
+            audioRef.current.volume = playbackConfigRef.current.customVolume * gain;
             audioRef.current.play().catch(() => {});
           });
         }
-      } else if (isLooping) {
+      } else if (cfg.isLooping) {
         audio.currentTime = 0;
         audio.play().catch(() => {});
       } else {
@@ -256,7 +292,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [isLooping, activeMode, activePlaylistTracks, playlistTrackIndex, isRepeatAll, isShuffle, customVolume]);
+  }, []);
 
   // Update Custom Track Source when selectedTrack changes (resolving offline cached Blob first)
   useEffect(() => {
@@ -476,7 +512,11 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
-    setTimeout(() => setToastMessage(null), 3500);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = window.setTimeout(() => {
+      toastTimerRef.current = null;
+      if (isMountedRef.current) setToastMessage(null);
+    }, 3500);
   };
 
   const stopAllAudio = () => {
@@ -487,6 +527,11 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       audioRef.current.pause();
     }
     setIsCustomPlaying(false);
+  };
+
+  const handleClosePlayer = () => {
+    stopAllAudio();
+    onClose?.();
   };
 
   // Synth Play/Pause Toggle
@@ -667,11 +712,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       }
       
       // Auto play uploaded track
-      setTimeout(() => {
-        if (audioRef.current) {
+      if (uploadPlayTimerRef.current) clearTimeout(uploadPlayTimerRef.current);
+      uploadPlayTimerRef.current = window.setTimeout(() => {
+        uploadPlayTimerRef.current = null;
+        if (isMountedRef.current && audioRef.current) {
           audioRef.current.src = track.dataUrl || '';
           audioRef.current.play().then(() => {
-            setIsCustomPlaying(true);
+            if (isMountedRef.current) setIsCustomPlaying(true);
           }).catch(() => {});
         }
       }, 300);
@@ -903,7 +950,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
             <button
               id="close-dhun-player-btn"
               type="button"
-              onClick={onClose}
+              onClick={handleClosePlayer}
               style={{
                 backgroundColor: theme.accentGoldLight,
                 borderColor: theme.accentGold,
@@ -1898,7 +1945,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
             <button
               id="footer-close-dhun-player-btn"
               type="button"
-              onClick={onClose}
+              onClick={handleClosePlayer}
               style={{
                 backgroundColor: theme.accentGoldLight,
                 borderColor: theme.accentGold,
