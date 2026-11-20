@@ -6,8 +6,31 @@
     {
       "source": "/sw.js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" },
         { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" }
+      ]
+    },
+    {
+      "source": "/version.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" }
       ]
     },
     {
@@ -34,7 +57,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|\\.well-known/|sw\\.js|workbox-.*\\.js|manifest\\.webmanifest|favicon.*|pwa-.*|apple-touch-icon\\.png|icon\\.png|Saheb_World_icon\\.jpg).*)",
+      "source": "/((?!api/|assets/|\\.well-known/|sw\\.js|workbox-.*\\.js|manifest\\.webmanifest|version\\.json|favicon.*|pwa-.*|apple-touch-icon\\.png|icon\\.png|Saheb_World_icon\\.jpg).*)",
       "destination": "/index.html"
     }
   ]

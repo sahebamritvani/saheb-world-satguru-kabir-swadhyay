@@ -4,32 +4,86 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
+  const appVersion = process.env.VITE_APP_VERSION || '1.0.0';
+  const appVersionCode = Number(process.env.VITE_APP_VERSION_CODE || 1);
+  const buildId =
+    command === 'build'
+      ? `${appVersion}-${process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 8) || Date.now()}`
+      : 'dev';
+
   return {
     define: {
-      __APP_VERSION__: JSON.stringify(process.env.VITE_APP_VERSION || '1.0.0'),
-      __APP_VERSION_CODE__: Number(process.env.VITE_APP_VERSION_CODE || 1),
+      __APP_VERSION__: JSON.stringify(appVersion),
+      __APP_VERSION_CODE__: appVersionCode,
       __GITHUB_REPO__: JSON.stringify(process.env.VITE_GITHUB_REPOSITORY || ''),
+      __BUILD_ID__: JSON.stringify(buildId),
     },
     plugins: [
       react(),
       tailwindcss(),
+      {
+        name: 'emit-version-manifest',
+        apply: 'build',
+        generateBundle() {
+          this.emitFile({
+            type: 'asset',
+            fileName: 'version.json',
+            source: JSON.stringify(
+              {
+                version: appVersion,
+                versionCode: appVersionCode,
+                buildId,
+                builtAt: new Date().toISOString(),
+              },
+              null,
+              2
+            ),
+          });
+        },
+      },
       VitePWA({
         registerType: 'autoUpdate',
         useCredentials: true,
         manifest: false,
         includeAssets: [],
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,json,woff,woff2,webmanifest}'],
-          globIgnores: ['**/.aistudio/**', '**/assets/aistudio/**', '**/standalone-codesandbox.html'],
+          globPatterns: ['**/*.{js,css,ico,png,jpg,jpeg,svg,webp,json,woff,woff2,webmanifest}'],
+          globIgnores: ['**/.aistudio/**', '**/assets/aistudio/**', '**/standalone-codesandbox.html', '**/index.html', '**/version.json'],
           maximumFileSizeToCacheInBytes: 35 * 1024 * 1024,
           cleanupOutdatedCaches: true,
           clientsClaim: true,
           skipWaiting: true,
           ignoreURLParametersMatching: [/.*/],
-          navigateFallback: 'index.html',
-          navigateFallbackDenylist: [/^\/api/, /^\/__/],
+          navigateFallback: undefined,
           runtimeCaching: [
+            {
+              urlPattern: ({ sameOrigin, url }) => sameOrigin && url.pathname === '/version.json',
+              handler: 'NetworkOnly',
+            },
+            {
+              urlPattern: ({ sameOrigin, request, url }) =>
+                sameOrigin &&
+                (request.mode === 'navigate' ||
+                  request.destination === 'document' ||
+                  url.pathname === '/' ||
+                  url.pathname === '/index.html'),
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'sahebworld-html-shell',
+                networkTimeoutSeconds: 3,
+                matchOptions: {
+                  ignoreSearch: true,
+                },
+                expiration: {
+                  maxEntries: 10,
+                  maxAgeSeconds: 60 * 60 * 24 * 7,
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
               handler: 'CacheFirst',
@@ -80,9 +134,10 @@ export default defineConfig(() => {
               urlPattern: ({ sameOrigin, request }) =>
                 sameOrigin &&
                 (request.destination === 'script' || request.destination === 'style'),
-              handler: 'StaleWhileRevalidate',
+              handler: 'NetworkFirst',
               options: {
                 cacheName: 'sahebworld-app-shell',
+                networkTimeoutSeconds: 3,
                 expiration: {
                   maxEntries: 150,
                   maxAgeSeconds: 60 * 60 * 24 * 14,

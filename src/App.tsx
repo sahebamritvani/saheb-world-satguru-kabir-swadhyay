@@ -67,6 +67,7 @@ import { translations } from './data/translations';
 import { satyanaamAudio, stopTransientSacredAudio } from './services/audioDhun';
 import { ambientAudio } from './services/ambientAudioService';
 import { analytics } from './services/analytics';
+import { initAutoUpdateListeners } from './utils/appUpdateManager';
 import { motion, AnimatePresence } from 'motion/react';
 
 function MainApp() {
@@ -82,6 +83,11 @@ function MainApp() {
         version: '1.2.0' 
       } 
     });
+  }, []);
+
+  // Silent automatic version check & reload listener for new Vercel deployments
+  useEffect(() => {
+    return initAutoUpdateListeners();
   }, []);
 
   // URL Routing Sync

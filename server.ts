@@ -605,18 +605,26 @@ ${verse}
     app.use(express.static(distPath, {
       setHeaders: (res, filePath) => {
         if (filePath.endsWith('sw.js')) {
-          res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+          res.setHeader('Pragma', 'no-cache');
           res.setHeader('Service-Worker-Allowed', '/');
-        } else if (filePath.endsWith('.html')) {
-          res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+        } else if (filePath.endsWith('.html') || filePath.endsWith('version.json')) {
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+          res.setHeader('Pragma', 'no-cache');
         }
       }
     }));
     app.get('*', (req, res) => {
-      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
       res.sendFile(distIndexPath);
     });
   } else {
+    app.get('/version.json', (_req, res) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.json({ version: 'dev', buildId: 'dev' });
+    });
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
@@ -631,7 +639,8 @@ ${verse}
           template = await vite.transformIndexHtml(url, template);
           res.status(200).set({ 
             'Content-Type': 'text/html',
-            'Cache-Control': 'no-cache, must-revalidate',
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
           }).end(template);
         } else {
           res.status(404).send('index.html not found');

@@ -160,15 +160,25 @@ function mapIndexGroupSections(rawCollection: NitnemSection[]): NitnemSection[] 
       let actualSection = rawCollection.find(
         (s) =>
           s.id === sectionId ||
+          s.id.replace('aadi', 'adi') === sectionId.replace('aadi', 'adi') ||
           s.id.replace('gyaan', 'gyan') === sectionId.replace('gyaan', 'gyan') ||
           s.id.replace(/-/g, '_') === sectionId.replace(/-/g, '_') ||
           s.id.replace('sandhya-sakhi', 'sakhi') === sectionId.replace('sandhya-sakhi', 'sakhi') ||
           (s.title?.hi && sub.hindi && s.title.hi.trim() === sub.hindi.trim())
       );
       if (actualSection) {
+        let finalVerses = actualSection.verses;
+        if (sectionId === 'gayatri-madhyahan') {
+          const extraMadhyan = rawCollection.find((s) => s.id === 'gayatri-madhyan-2');
+          if (extraMadhyan && extraMadhyan.verses.length > 0) {
+            finalVerses = [...actualSection.verses, ...extraMadhyan.verses];
+          }
+        }
         const resolved: NitnemSection = {
           ...actualSection,
           id: sectionId,
+          verses: finalVerses,
+          totalVerses: finalVerses.length,
           majorCategoryId: group.major_category_id as any,
           majorCategoryTitle: {
             hi: group.hindi_title,

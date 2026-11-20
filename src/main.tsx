@@ -5,6 +5,14 @@ import App from './App.tsx';
 import './index.css';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { offlineScriptureCache } from './services/offlineScriptureCache';
+import {
+  SW_RELOAD_GUARD_KEY,
+  clearStaleStaticCaches,
+  getCurrentBuildId,
+  performGuardedReload,
+  setActiveSwRegistration,
+  warmAppShellOfflineFallback,
+} from './utils/appUpdateManager';
 
 // Global safety catchers registered BEFORE any SW/audio initialization
 if (typeof window !== 'undefined') {
@@ -32,15 +40,11 @@ if (typeof window !== 'undefined') {
 
   // Clean recovery if a dynamic Vite chunk fails to load after a new deployment
   window.addEventListener('vite:preloadError', () => {
-    try {
-      const key = 'sahebworld_preload_reloaded';
-      if (!sessionStorage.getItem(key)) {
-        sessionStorage.setItem(key, '1');
-        window.location.reload();
-      }
-    } catch {
-      window.location.reload();
-    }
+    clearStaleStaticCaches({ includeScriptureCache: false })
+      .catch(() => {})
+      .finally(() => {
+        performGuardedReload('sahebworld_preload_reloaded', getCurrentBuildId());
+      });
   });
 }
 
@@ -52,23 +56,34 @@ if (typeof window !== 'undefined' && !import.meta.env.PROD && 'serviceWorker' in
         reg.unregister().catch(() => {});
       });
     }).catch(() => {});
-    if ('caches' in window) {
-      caches.keys().then((keys) => {
-        keys.forEach((key) => {
-          if (key.includes('workbox') || key.includes('sahebworld-app-shell')) {
-            caches.delete(key).catch(() => {});
-          }
-        });
-      }).catch(() => {});
-    }
+    clearStaleStaticCaches({ includeScriptureCache: false }).catch(() => {});
   } catch {}
 }
 
-// Initialize persistent PWA Service Worker cleanly in production
+// Initialize persistent PWA Service Worker cleanly in production with automatic silent update reload
 if (typeof window !== 'undefined' && import.meta.env.PROD && 'serviceWorker' in navigator) {
   try {
+    let hadController = Boolean(navigator.serviceWorker.controller);
+
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      // Ignore the initial controller claim on a brand-new first visit
+      if (!hadController) {
+        hadController = true;
+        return;
+      }
+      // A newer Service Worker activated via skipWaiting + clientsClaim: reload cleanly once
+      performGuardedReload(SW_RELOAD_GUARD_KEY, getCurrentBuildId());
+    });
+
     const updateSW = registerSW({
       immediate: true,
+      onRegisteredSW(_swUrl, registration) {
+        setActiveSwRegistration(registration);
+        warmAppShellOfflineFallback().catch(() => {});
+        if (registration && navigator.onLine) {
+          registration.update().catch(() => {});
+        }
+      },
       onOfflineReady() {
         try {
           localStorage.setItem('sahebworld_sw_offline_ready', '1');

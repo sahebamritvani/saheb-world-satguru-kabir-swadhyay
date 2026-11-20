@@ -72,6 +72,7 @@ import {
   formatAudioSize,
 } from '../services/offlineAudioCache';
 import { PWAInstallButton } from './PWAInstallButton';
+import { manualCheckAndReloadUpdates } from '../utils/appUpdateManager';
 
 interface SettingsModalProps {
   isOpen: boolean;
@@ -161,11 +162,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     }
   });
 
-  // Offline Pinned Audio stats & Clean Reload state
+  // Offline Pinned Audio stats & Check for Updates state
   const [pinnedStats, setPinnedStats] = useState<{ count: number; totalBytes: number }>(() =>
     getTotalPinnedAudioStats()
   );
   const [isReloadingApp, setIsReloadingApp] = useState<boolean>(false);
+  const [updateCheckNotice, setUpdateCheckNotice] = useState<string | null>(null);
 
   const handleToggleSplashOnLaunch = () => {
     const next = !splashOnLaunch;
@@ -175,23 +177,21 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     } catch {}
   };
 
-  const handleCleanAppReload = async () => {
+  const handleCheckForUpdates = async () => {
     setIsReloadingApp(true);
-    try {
-      if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-        const regs = await navigator.serviceWorker.getRegistrations().catch(() => []);
-        await Promise.all(regs.map((r) => r.unregister().catch(() => false)));
-      }
-      if (typeof window !== 'undefined' && 'caches' in window) {
-        const keys = await caches.keys().catch(() => []);
-        await Promise.all(
-          keys
-            .filter((k) => k.includes('workbox') || k.includes('sahebworld-app-shell'))
-            .map((k) => caches.delete(k).catch(() => false))
-        );
-      }
-    } catch {}
-    window.location.reload();
+    setUpdateCheckNotice(null);
+    const result = await manualCheckAndReloadUpdates();
+    if (result === 'offline') {
+      setIsReloadingApp(false);
+      setUpdateCheckNotice(
+        language === 'pb'
+          ? 'ਇੰਟਰਨੈੱਟ ਉਪਲਬਧ ਨਹੀਂ ਹੈ — ਤੁਹਾਡਾ ਆਫਲਾਈਨ ਸਵਾਧਿਆਇ ਅਤੇ ਹਾਜ਼ਰੀ ਡੇਟਾ ਸੁਰੱਖਿਅਤ ਹੈ।'
+          : language === 'en'
+          ? 'You are offline — cached scriptures, diary & Haziri records remain safely preserved.'
+          : 'इंटरनेट उपलब्ध नहीं है — आपका ऑफलाइन स्वाध्याय, डायरी व हाज़िरी डेटा सुरक्षित है।'
+      );
+      window.setTimeout(() => setUpdateCheckNotice(null), 4500);
+    }
   };
 
   useEffect(() => {
@@ -1813,23 +1813,40 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
               <button
                 type="button"
+                id="settings-check-for-updates-btn"
                 disabled={isReloadingApp}
-                onClick={handleCleanAppReload}
+                onClick={handleCheckForUpdates}
                 className="min-h-[44px] py-1.5 px-3.5 rounded-xl border border-emerald-600/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap disabled:opacity-60"
-                title="ऐप कैश रिफ्रेश कर स्वच्छ रीलोड करें"
+                title={
+                  language === 'pb'
+                    ? 'ਪੁਰਾਣਾ ਕੈਸ਼ ਸਾਫ਼ ਕਰਕੇ ਨਵੀਂ ਬਾਣੀ ਅੱਪਡੇਟ ਲੋਡ ਕਰੋ (ਡਾਇਰੀ ਤੇ ਹਾਜ਼ਰੀ ਸੁਰੱਖਿਅਤ ਰਹਿਣਗੇ)'
+                    : language === 'en'
+                    ? 'Clear stale static caches and load the latest scriptures while preserving your diary & Haziri'
+                    : 'स्टैटिक कैश साफ कर सर्वर से नवीनतम वाणी लोड करें (आपकी डायरी व हाज़िरी सुरक्षित रहेंगी)'
+                }
               >
                 <RefreshCw className={`w-3.5 h-3.5 shrink-0 ${isReloadingApp ? 'animate-spin' : ''}`} />
                 <span>
                   {isReloadingApp
-                    ? 'रीलोड हो रहा है...'
+                    ? language === 'pb'
+                      ? 'ਅੱਪਡੇਟ ਜਾਂਚਿਆ ਜਾ ਰਿਹਾ ਹੈ...'
+                      : language === 'en'
+                      ? 'Updating...'
+                      : 'नवीनतम वाणी लोड हो रही है...'
                     : language === 'pb'
-                    ? 'ਐਪ ਰੀਲੋਡ ਤੇ ਕੈਸ਼ ਰਿਫ੍ਰੈਸ਼'
+                    ? 'ਨਵਾਂ ਗਿਆਨ ਅਪਡੇਟ ਜਾਂਚੋ'
                     : language === 'en'
-                    ? 'Clean Reload App'
-                    : 'ऐप रीलोड व कैश रिफ्रेश'}
+                    ? 'Check for Updates'
+                    : 'नया ज्ञान अपडेट जांचें'}
                 </span>
               </button>
             </div>
+
+            {updateCheckNotice && (
+              <p className="text-[11px] font-serif text-amber-800 dark:text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-lg px-2.5 py-1.5">
+                {updateCheckNotice}
+              </p>
+            )}
 
             {/* Persistent Auto Splash Screen Toggle on App Open */}
             <div className="pt-2 border-t border-dashed flex items-center justify-between gap-3 text-left" style={{ borderColor: theme.borderOrnament }}>

@@ -45,7 +45,8 @@ import {
   Highlighter,
   Languages,
   Type,
-  Pin
+  Pin,
+  Flower2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Language, SACRED_BRANDING, ReaderCustomTheme, ReaderFontSize, ReaderTarget, NitnemSection, NitnemVersePair } from '../types';
@@ -60,6 +61,10 @@ import {
 import { SacredLoader } from './SacredLoader';
 import { 
   MASTER_NITNEM_INDEX, 
+  TRADITIONAL_GUTKA_OUTLINES,
+  NitnemOutlineChapter,
+  getSmartNitnemRecommendation,
+  SmartNitnemRecommendation,
   getLocalizedBookTitle, 
   getLocalizedChapterTitle, 
   getLocalizedSubChapterTitle, 
@@ -67,6 +72,14 @@ import {
   GranthSuchiSection,
   SubChapterIndexItem
 } from '../data/nitnemMasterIndex';
+import { triggerSacredFlowerShower } from '../services/flowerShower';
+import {
+  getHaziriState,
+  isTodayNitnemDone,
+  markNitnemSadhanaDone,
+  subscribeToHaziri,
+  SADHANA_GOAL_EVENT,
+} from '../services/haziriStore';
 import { translations, getVerseTypeLabel } from '../data/translations';
 import { sacredHaptics } from '../services/haptics';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -768,21 +781,87 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
     }));
   };
 
-  // --- KEEP SCREEN AWAKE (WAKE LOCK API) ---
+  // --- SMART TIME & PURNIMA SUGGESTION + DAILY HAZIRI STATE ---
+  const [smartRecommendation, setSmartRecommendation] = useState<SmartNitnemRecommendation>(() =>
+    getSmartNitnemRecommendation()
+  );
+  const [haziriMarkedToday, setHaziriMarkedToday] = useState<boolean>(() => isTodayNitnemDone());
+  const [haziriStreak, setHaziriStreak] = useState<number>(() => getHaziriState().currentStreak);
+  const [justCompletedHaziriPath, setJustCompletedHaziriPath] = useState<boolean>(false);
+  const celebratedEndSectionsRef = useRef<Set<string>>(new Set());
+
+  useEffect(() => {
+    const syncSmart = () => setSmartRecommendation(getSmartNitnemRecommendation());
+    const interval = window.setInterval(syncSmart, 60000);
+    const syncHaziri = () => {
+      setHaziriMarkedToday(isTodayNitnemDone());
+      setHaziriStreak(getHaziriState().currentStreak);
+    };
+    const unsub = subscribeToHaziri(syncHaziri);
+    window.addEventListener(SADHANA_GOAL_EVENT, syncHaziri);
+    return () => {
+      window.clearInterval(interval);
+      unsub();
+      window.removeEventListener(SADHANA_GOAL_EVENT, syncHaziri);
+    };
+  }, []);
+
+  // --- KEEP SCREEN AWAKE (WAKE LOCK API WITH TOGGLE & VISIBILITY RE-ACQUISITION) ---
+  const [keepScreenAwake, setKeepScreenAwake] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_nitnem_wakelock');
+      return saved === null ? true : saved === 'true';
+    } catch {
+      return true;
+    }
+  });
+
+  const toggleKeepScreenAwake = () => {
+    sacredHaptics.lightTap();
+    setKeepScreenAwake((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('sahebworld_nitnem_wakelock', String(next));
+      } catch {}
+      return next;
+    });
+  };
+
   useEffect(() => {
     let wakeLock: any = null;
+    let isDisposed = false;
+
     const requestWakeLock = async () => {
+      if (!keepScreenAwake || isDisposed) return;
       try {
-        if ('wakeLock' in navigator) {
+        if ('wakeLock' in navigator && document.visibilityState === 'visible') {
           wakeLock = await (navigator as any).wakeLock.request('screen');
         }
       } catch {}
     };
-    requestWakeLock();
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && keepScreenAwake) {
+        requestWakeLock();
+      }
+    };
+
+    if (keepScreenAwake) {
+      requestWakeLock();
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+    }
+
     return () => {
+      isDisposed = true;
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (wakeLock) {
         wakeLock.release().catch(() => {});
       }
+    };
+  }, [keepScreenAwake]);
+
+  useEffect(() => {
+    return () => {
       speechReciter.stop();
       ambientReaderAudio.stop();
     };
@@ -819,26 +898,6 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   const isVerseBhavarthVisible = (verseId: string | number): boolean => {
     if (isPureVaniMode) {
       return false;
-    }
-
-    // Target sections (Prabhat-Sandhya Sakhi, Gyan Guddi, Aarti prayers) display Bhavarth after every 2 lines
-    const sid = (selectedSectionId || currentSection?.id || '').toLowerCase();
-    const isTargetSection =
-      sid.includes('sandhya-sakhi') ||
-      sid.includes('gudadi') ||
-      sid.includes('gudri') ||
-      sid.includes('guddi') ||
-      sid.includes('aarti') ||
-      sid.includes('vinati') ||
-      (currentSection?.title?.hi || '').includes('साखी') ||
-      (currentSection?.title?.hi || '').includes('गुदड़ी') ||
-      (currentSection?.title?.hi || '').includes('आरती');
-
-    if (isTargetSection) {
-      if (verseBhavarthOverrides[verseId] !== undefined) {
-        return verseBhavarthOverrides[verseId];
-      }
-      return true;
     }
 
     if (verseBhavarthOverrides[verseId] !== undefined) {
@@ -1100,6 +1159,44 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   const granthContext = useMemo(() => {
     return getGranthPlaylistContext(currentSection.id);
   }, [currentSection.id, nitnemSections]);
+
+  // Peaceful gentle flower shower upon arriving at the final chapter of a major Nitnem path
+  useEffect(() => {
+    if (
+      viewMode === 'reading' &&
+      !granthContext.nextSection &&
+      currentSection?.id &&
+      !celebratedEndSectionsRef.current.has(currentSection.id)
+    ) {
+      celebratedEndSectionsRef.current.add(currentSection.id);
+      const timer = window.setTimeout(() => {
+        triggerSacredFlowerShower();
+      }, 450);
+      return () => window.clearTimeout(timer);
+    }
+  }, [viewMode, granthContext.nextSection, currentSection?.id]);
+
+  const handleMarkNitnemPathHaziri = () => {
+    const pathName =
+      MAJOR_GRANTH_CATEGORIES.find((c) => c.id === currentSection.majorCategoryId)?.title[language] ||
+      currentSection.title[language] ||
+      currentSection.title.hi;
+    const nextState = markNitnemSadhanaDone(pathName);
+    setHaziriMarkedToday(true);
+    setHaziriStreak(nextState.currentStreak);
+    setJustCompletedHaziriPath(true);
+    triggerSacredFlowerShower();
+    sacredHaptics.lightTap();
+  };
+
+  const cycleQuickFontSize = (direction: 1 | -1) => {
+    const order: ReaderFontSize[] = ['small', 'normal', 'medium', 'large', 'xlarge'];
+    const currentIdx = order.indexOf(fontSizeLevel);
+    const safeIdx = currentIdx === -1 ? 1 : currentIdx;
+    const nextIdx = Math.max(0, Math.min(order.length - 1, safeIdx + direction));
+    handleSetLocalFontSizeLevel(order[nextIdx]);
+    sacredHaptics.lightTap();
+  };
 
   // Live refs so async audio playback & speed changes always access fresh data
   const versesListRef = useRef<NitnemVersePair[]>(versesList);
@@ -2242,7 +2339,107 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           /* ========================================================================= */
           <div className="w-full mx-auto space-y-6">
 
-            {/* 1. MASTER INDEX HEADER BAR (पावन अनुक्रमणिका व सूची) WITH V-SHAPE TOGGLE */}
+            {/* 1. SMART TIME & PURNIMA RECOMMENDATION + DAILY HAZIRI STATUS */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+              <div className="lg:col-span-2 bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-amber-500/5 dark:from-amber-950/50 dark:to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1.5 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-600 text-white text-[0.6875rem] font-bold font-serif whitespace-nowrap shadow-2xs">
+                      <Sparkles size={12} />
+                      {smartRecommendation.badge[language] || smartRecommendation.badge.hi}
+                    </span>
+                    {haziriMarkedToday && (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-600/15 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 text-[0.6875rem] font-bold font-serif whitespace-nowrap">
+                        <CheckCircle2 size={12} />
+                        {language === 'pb'
+                          ? `ਅੱਜ ਦੀ ਹਾਜ਼ਰੀ ਪੂਰੀ (${haziriStreak} ਦਿਨ)`
+                          : language === 'en'
+                          ? `Today's Haziri Done (${haziriStreak}d Streak)`
+                          : `आज की हाज़िरी पूर्ण (${haziriStreak} दिन)`}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-serif font-black text-base sm:text-xl text-amber-950 dark:text-amber-200 leading-snug">
+                    {smartRecommendation.title[language] || smartRecommendation.title.hi}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-serif text-amber-900/85 dark:text-amber-200/80 leading-relaxed">
+                    {smartRecommendation.subtitle[language] || smartRecommendation.subtitle.hi}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setSelectedGranthCategory(smartRecommendation.primaryCategoryId);
+                    handleSelectSection(smartRecommendation.primarySectionId);
+                    setViewMode('reading');
+                  }}
+                  className="min-h-[44px] px-4 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
+                >
+                  <BookOpen size={16} />
+                  <span>
+                    {language === 'pb' ? 'ਹੁਣੇ ਪਾਠ ਕਰੋ' : language === 'en' ? 'Start Suggested Path' : 'अभी पाठ आरंभ करें'}
+                  </span>
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+
+              {smartRecommendation.isPurnimaToday ? (
+                <div className="bg-gradient-to-br from-indigo-950 via-amber-950/90 to-amber-900 text-amber-50 border-2 border-amber-400/70 rounded-3xl p-4 sm:p-5 shadow-md flex flex-col justify-between gap-3">
+                  <div className="space-y-1">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400 text-amber-950 text-[0.6875rem] font-black font-serif whitespace-nowrap">
+                      🌕 {language === 'pb' ? 'ਪੂਰਨਮਾਸ਼ੀ ਵਿਸ਼ੇਸ਼' : language === 'en' ? 'Purnima Special' : 'पूर्णिमा विशेष'}
+                    </span>
+                    <h4 className="font-serif font-black text-base text-amber-100">
+                      {language === 'pb' ? '੪. ਪੂਨੋ ਮਹਾਤਮਯ ਪਾਠ' : language === 'en' ? '4. Poono Mahatmya Path' : '४. पूनो महात्म्य पाठ'}
+                    </h4>
+                    <p className="text-xs font-serif text-amber-100/85">
+                      {smartRecommendation.purnimaTitle?.[language] || smartRecommendation.purnimaTitle?.hi}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      setSelectedGranthCategory('poonam-mahatmya');
+                      handleSelectSection('poonam-vandana');
+                      setViewMode('reading');
+                    }}
+                    className="min-h-[44px] w-full px-4 py-2 rounded-2xl bg-amber-400 hover:bg-amber-300 text-amber-950 font-serif font-black text-xs flex items-center justify-center gap-1.5 shadow-sm transition cursor-pointer whitespace-nowrap"
+                  >
+                    <span>{language === 'pb' ? 'ਪੂਨੋ ਪਾਠ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open Poono Mahatmya' : 'पूनो महात्म्य खोलें'}</span>
+                    <ChevronRight size={15} />
+                  </button>
+                </div>
+              ) : (
+                <div className="bg-white dark:bg-zinc-800/90 border-2 border-amber-500/20 dark:border-zinc-700 rounded-3xl p-4 sm:p-5 shadow-xs flex flex-col justify-between gap-3">
+                  <div className="space-y-1">
+                    <span className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਨਿਤਨੇਮ ਗੁਟਕਾ' : language === 'en' ? 'Complete 7-Section Gutka' : 'सम्पूर्ण ७ खंड गुटका साहेब'}
+                    </span>
+                    <h4 className="font-serif font-black text-sm sm:text-base text-amber-950 dark:text-amber-100">
+                      {haziriMarkedToday
+                        ? (language === 'pb' ? 'ਅੱਜ ਦਾ ਨਿਤਨੇਮ ਸੰਪੰਨ' : language === 'en' ? 'Daily Swadhyay Marked' : 'आज का नित्य नियम पूर्ण')
+                        : (language === 'pb' ? 'ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਬਾਕੀ' : language === 'en' ? 'Daily Nitnem Pending' : 'नितनेम हाज़िरी संकल्प')}
+                    </h4>
+                    <p className="text-xs font-serif text-gray-600 dark:text-gray-300">
+                      {language === 'pb'
+                        ? 'ਪਾਠ ਦੇ ਅੰਤ ਵਿਚ ਆਪਣੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ।'
+                        : language === 'en'
+                        ? 'Complete any path to record your daily Haziri & petal blessing.'
+                        : 'किसी भी प्रमुख पाठ की समाप्ति पर पावन हाज़िरी दर्ज करें।'}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between text-xs font-serif font-bold text-amber-800 dark:text-amber-300 pt-1 border-t border-black/5 dark:border-white/5">
+                    <span>🔥 {haziriStreak} {language === 'pb' ? 'ਦਿਨ ਲੜੀ' : language === 'en' ? 'Day Streak' : 'दिन निरंतर'}</span>
+                    <span>{haziriMarkedToday ? '🙏 ✓' : '🕊️'}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 2. MASTER INDEX HEADER BAR (पावन अनुक्रमणिका व सूची) WITH V-SHAPE TOGGLE */}
             <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-orange-600 text-white rounded-3xl p-4 sm:p-5 shadow-lg space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
@@ -2254,7 +2451,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਅਨੁਕ੍ਰਮਣਿਕਾ ਤੇ ਸੂਚੀ' : language === 'en' ? 'Sacred Nitnem Index & Chapters' : 'पावन नितनेम अनुक्रमणिका व सूची'}
                     </h2>
                     <p className="text-xs text-amber-100/90 font-serif">
-                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਗ੍ਰੰਥਾਵਲੀ ਤੇ ਨਿੱਤ ਪਾਠ' : language === 'en' ? 'Satguru Kabir Saheb Scriptures & Daily Paths' : 'सतगुरु कबीर साहेब पावन ग्रन्थावली एवं नित्य पाठ'}
+                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
                     </p>
                   </div>
                 </div>
@@ -2265,7 +2462,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     <button
                       type="button"
                       onClick={toggleAllIndexSections}
-                      className="px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white border border-white/30 text-xs font-bold font-serif transition cursor-pointer shadow-2xs flex items-center gap-1.5"
+                      className="min-h-[44px] px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white border border-white/30 text-xs font-bold font-serif transition cursor-pointer shadow-2xs flex items-center gap-1.5 whitespace-nowrap"
                       title={language === 'pb' ? 'ਸਾਰੇ ਅਧਿਆਇ ਖੋਲ੍ਹੋ/ਸਮੇਟੋ' : language === 'en' ? 'Toggle All Chapters' : 'सभी अध्याय खोलें/समेटें'}
                     >
                       <span>
@@ -2283,7 +2480,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       sacredHaptics.lightTap();
                       setIsIndexSectionCollapsed(!isIndexSectionCollapsed);
                     }}
-                    className="px-3.5 py-1.5 rounded-xl bg-white text-amber-900 border border-white font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer"
+                    className="min-h-[44px] px-3.5 py-1.5 rounded-xl bg-white text-amber-900 border border-white font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap"
                     title={isIndexSectionCollapsed ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਖੋਲ੍ਹੋ (Open Index)' : 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ (Close Index)'}
                   >
                     {isIndexSectionCollapsed ? (
@@ -2304,79 +2501,117 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
               {/* Category Tabs in Selection View (Visible when Index is open) */}
               {!isIndexSectionCollapsed && (
                 <div className="flex items-center gap-1.5 overflow-x-auto pt-2 pb-1 scrollbar-hide border-t border-white/20">
-                  {MAJOR_GRANTH_CATEGORIES.map((cat) => (
-                    <button
-                      key={cat.id}
-                      onClick={() => handleSelectCategory(cat.id)}
-                      className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border cursor-pointer ${
-                        selectedGranthCategory === cat.id
-                          ? 'bg-white text-amber-900 font-black shadow-md border-white'
-                          : 'bg-white/15 hover:bg-white/25 text-white border-white/20'
-                      }`}
-                    >
-                      {cat.title[language] || cat.title.hi}
-                    </button>
-                  ))}
+                  {MAJOR_GRANTH_CATEGORIES.map((cat) => {
+                    const isSmartSuggestedCat =
+                      cat.id === smartRecommendation.primaryCategoryId ||
+                      (smartRecommendation.isPurnimaToday && cat.id === 'poonam-mahatmya');
+                    return (
+                      <button
+                        key={cat.id}
+                        type="button"
+                        onClick={() => handleSelectCategory(cat.id)}
+                        className={`min-h-[40px] px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border cursor-pointer flex items-center gap-1.5 ${
+                          selectedGranthCategory === cat.id
+                            ? 'bg-white text-amber-900 font-black shadow-md border-white'
+                            : isSmartSuggestedCat
+                            ? 'bg-amber-300/25 hover:bg-amber-300/35 text-amber-50 border-amber-200/70'
+                            : 'bg-white/15 hover:bg-white/25 text-white border-white/20'
+                        }`}
+                      >
+                        {isSmartSuggestedCat && <span>{cat.id === 'poonam-mahatmya' ? '🌕' : '✨'}</span>}
+                        <span>{cat.title[language] || cat.title.hi}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
 
-            {/* 2. VERIFIED MULTILINGUAL MASTER GRANTH SUCHI INDEX WITH INDIVIDUAL V-SHAPE CHEVRONS */}
+            {/* 3. EXACT 7-SECTION TRADITIONAL GUTKA INDEX WITH NESTED SUB-CHAPTERS */}
             {!isIndexSectionCollapsed && (
               <div className="space-y-4">
                 {filteredGranthSuchi.map((section: GranthSuchiSection) => {
                   const sectionTitle = getLocalizedChapterTitle(section, language);
-                  const hasSubChapters = section.sub_chapters && section.sub_chapters.length > 0;
+                  const traditionalOutline: NitnemOutlineChapter[] =
+                    TRADITIONAL_GUTKA_OUTLINES[section.major_category_id] || [];
+                  const hasOutlineChapters = traditionalOutline.length > 0;
                   const isSecCollapsed = !!collapsedIndexSections[section.section_id];
+                  const isRecommendedSec = section.major_category_id === smartRecommendation.primaryCategoryId;
+                  const isPurnimaSec = smartRecommendation.isPurnimaToday && section.major_category_id === 'poonam-mahatmya';
 
                   return (
                     <div
                       key={section.section_id}
-                      className="bg-white dark:bg-zinc-800/90 rounded-3xl border-2 border-amber-500/20 dark:border-zinc-700/80 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all space-y-3"
+                      className={`bg-white dark:bg-zinc-800/90 rounded-3xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all space-y-3 border-2 ${
+                        isPurnimaSec
+                          ? 'border-indigo-400/70 dark:border-amber-400/70 ring-2 ring-amber-400/25'
+                          : isRecommendedSec
+                          ? 'border-amber-500/70 dark:border-amber-500/60 ring-2 ring-amber-500/20'
+                          : 'border-amber-500/20 dark:border-zinc-700/80'
+                      }`}
                     >
                       {/* Section Main Header with V-Shape Chevron Toggle */}
-                      <div className="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2.5">
-                        <div 
+                      <div className="flex items-center justify-between gap-2 border-b border-black/5 dark:border-white/5 pb-2.5">
+                        <div
                           onClick={() => toggleSingleIndexSection(section.section_id)}
                           className="flex items-center gap-3 cursor-pointer group min-w-0 flex-1 pr-2"
                         >
-                          <div className="w-9 h-9 rounded-2xl bg-amber-600 text-white flex items-center justify-center font-serif font-black text-sm shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                          <div className="w-10 h-10 rounded-2xl bg-amber-600 text-white flex items-center justify-center font-serif font-black text-sm shadow-xs shrink-0 group-hover:scale-105 transition-transform">
                             {section.section_id}
                           </div>
                           <div className="min-w-0 flex-1">
-                            <h3 className="font-serif font-black text-base sm:text-lg text-amber-950 dark:text-amber-300 leading-tight group-hover:text-amber-700 transition-colors truncate">
-                              {sectionTitle}
-                            </h3>
-                            <span className="text-[0.65rem] font-mono text-gray-500 dark:text-gray-400 block truncate">
-                              {hasSubChapters
-                                ? (language === 'pb' ? `${section.sub_chapters.length} ਉਪ-ਅਧਿਆਇ (ਪਾਠ)` : language === 'en' ? `${section.sub_chapters.length} Sub-Chapters` : `${section.sub_chapters.length} उप-अध्याय (पाठन)`)
-                                : (language === 'pb' ? 'ਸੰਪੂਰਨ ਪਾਠ' : language === 'en' ? 'Complete Recitation' : 'सम्पूर्ण पाठ')
-                              }
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h3 className="font-serif font-black text-base sm:text-lg text-amber-950 dark:text-amber-300 leading-tight group-hover:text-amber-700 transition-colors truncate">
+                                {sectionTitle}
+                              </h3>
+                              {isRecommendedSec && (
+                                <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/40 text-[0.625rem] font-bold font-serif whitespace-nowrap">
+                                  ✨ {language === 'pb' ? 'ਸੁਝਾਇਆ ਪਾਠ' : language === 'en' ? 'Recommended Now' : 'अभी सुझायित'}
+                                </span>
+                              )}
+                              {isPurnimaSec && (
+                                <span className="px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-900 dark:text-amber-200 border border-indigo-400/40 text-[0.625rem] font-bold font-serif whitespace-nowrap">
+                                  🌕 {language === 'pb' ? 'ਪੂਰਨਮਾਸ਼ੀ' : language === 'en' ? 'Purnima Today' : 'पूर्णिमा विशेष'}
+                                </span>
+                              )}
+                            </div>
+                            <span className="text-[0.6875rem] font-mono text-gray-500 dark:text-gray-400 block truncate">
+                              {hasOutlineChapters && (traditionalOutline.length > 1 || (traditionalOutline[0]?.children?.length ?? 0) > 0)
+                                ? (language === 'pb'
+                                    ? `${traditionalOutline.length} ਮੁੱਖ ਅਧਿਆਇ (${section.sub_chapters.length} ਪਾਠ)`
+                                    : language === 'en'
+                                    ? `${traditionalOutline.length} Chapters (${section.sub_chapters.length} Parts)`
+                                    : `${traditionalOutline.length} मुख्य अध्याय (${section.sub_chapters.length} पाठ)`)
+                                : (language === 'pb' ? 'ਸੰਪੂਰਨ ਪਾਠ' : language === 'en' ? 'Complete Recitation' : 'सम्पूर्ण पाठ')}
                             </span>
                           </div>
                         </div>
 
                         <div className="flex items-center gap-2 shrink-0">
-                          {!hasSubChapters && (
-                            <button
-                              onClick={() => {
-                                const targetId = resolveNitnemSectionId({ id: `${section.section_id}_1`, hindi: '', punjabi: '' }, section);
-                                handleSelectSection(targetId);
-                                setViewMode('reading');
-                              }}
-                              className="px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-bold text-xs flex items-center gap-1 shadow-sm transition cursor-pointer"
-                            >
-                              <BookOpen size={13} />
-                              <span className="hidden sm:inline">{language === 'pb' ? 'ਪਾਠ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Start Recitation' : 'पाठ आरंभ'}</span>
-                            </button>
-                          )}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const firstTarget =
+                                traditionalOutline[0]?.sectionId ||
+                                resolveNitnemSectionId({ id: `${section.section_id}_1`, hindi: '', punjabi: '' }, section);
+                              handleSelectSection(firstTarget);
+                              setViewMode('reading');
+                            }}
+                            className="min-h-[44px] px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition cursor-pointer whitespace-nowrap"
+                          >
+                            <BookOpen size={14} />
+                            <span className="hidden sm:inline">
+                              {language === 'pb' ? 'ਪਾਠ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Start Path' : 'पाठ आरंभ'}
+                            </span>
+                          </button>
 
                           {/* V-Shape Individual Section Collapse Button */}
                           <button
                             type="button"
                             onClick={() => toggleSingleIndexSection(section.section_id)}
-                            className="p-1.5 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition cursor-pointer"
+                            className="min-w-[44px] min-h-[44px] p-2 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition cursor-pointer flex items-center justify-center"
                             title={isSecCollapsed ? 'ਖੋਲ੍ਹੋ (Expand)' : 'ਸਮੇਟੋ (Collapse)'}
+                            aria-label="Toggle Section"
                           >
                             {isSecCollapsed ? (
                               <ChevronDown size={18} className="text-amber-700 dark:text-amber-300" />
@@ -2387,35 +2622,50 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         </div>
                       </div>
 
-                      {/* Sub-Chapters List / Grid (Visible when section is expanded) */}
+                      {/* Chapters & Sub-Chapters List (Visible when section is expanded) */}
                       {!isSecCollapsed && (
-                        hasSubChapters ? (
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
-                            {section.sub_chapters.map((sub: SubChapterIndexItem) => {
-                              const subTitle = getLocalizedSubChapterTitle(sub, language);
-                              const targetSectionId = resolveNitnemSectionId(sub, section);
-                              const matchingSection = nitnemSections.find(s => s.id === targetSectionId) || currentSection;
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
+                          {traditionalOutline.map((chapter) => {
+                            const chapterTitle =
+                              language === 'pb'
+                                ? chapter.punjabi
+                                : language === 'en'
+                                ? chapter.english
+                                : chapter.hindi;
+                            const targetSectionId =
+                              chapter.sectionId ||
+                              chapter.children?.[0]?.section_id ||
+                              resolveNitnemSectionId({ id: `${section.section_id}_1`, hindi: '', punjabi: '' }, section);
+                            const matchingSection = nitnemSections.find(s => s.id === targetSectionId) || currentSection;
+                            const isMadhyahnHighlighted =
+                              smartRecommendation.prahar === 'noon' && targetSectionId === 'gayatri-madhyahan';
 
-                              return (
-                                <div
-                                  key={sub.id}
-                                  onClick={() => {
-                                    handleSelectSection(targetSectionId);
-                                    setViewMode('reading');
-                                  }}
-                                  className="bg-amber-50/40 dark:bg-zinc-900/60 hover:bg-amber-100/70 dark:hover:bg-zinc-700/60 border border-amber-200/60 dark:border-zinc-700/60 rounded-2xl p-3 flex items-center justify-between transition-all group cursor-pointer shadow-2xs hover:shadow-xs active:scale-[0.99]"
-                                >
-                                  <div className="flex items-center gap-2.5 min-w-0 pr-2">
-                                    <span className="text-[0.625rem] font-mono font-bold px-2 py-0.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/20 shrink-0">
-                                      {sub.id}
+                            return (
+                              <div
+                                key={`${section.section_id}-${chapter.number}-${targetSectionId}`}
+                                onClick={() => {
+                                  handleSelectSection(targetSectionId);
+                                  setViewMode('reading');
+                                }}
+                                className={`rounded-2xl p-3 flex flex-col justify-between gap-2.5 transition-all group cursor-pointer border ${
+                                  isMadhyahnHighlighted
+                                    ? 'bg-amber-500/15 dark:bg-amber-900/30 border-amber-500/60 shadow-xs'
+                                    : 'bg-amber-50/40 dark:bg-zinc-900/60 hover:bg-amber-100/70 dark:hover:bg-zinc-700/60 border-amber-200/60 dark:border-zinc-700/60 shadow-2xs hover:shadow-xs'
+                                }`}
+                              >
+                                <div className="flex items-center justify-between gap-2">
+                                  <div className="flex items-center gap-2.5 min-w-0 pr-1">
+                                    <span className="text-[0.6875rem] font-mono font-bold px-2 py-0.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/20 shrink-0">
+                                      {chapter.number}
                                     </span>
                                     <h4 className="font-serif font-bold text-xs sm:text-sm text-gray-800 dark:text-gray-200 group-hover:text-amber-900 dark:group-hover:text-amber-200 truncate">
-                                      {subTitle}
+                                      {chapterTitle}
                                     </h4>
                                   </div>
 
                                   <div className="flex items-center gap-1 shrink-0">
                                     <button
+                                      type="button"
                                       onClick={async (e) => {
                                         e.stopPropagation();
                                         handleSelectSection(targetSectionId);
@@ -2427,40 +2677,43 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           setTimeout(() => handlePlayVoice(loadedSec.verses[0]), 300);
                                         }
                                       }}
-                                      className="w-7 h-7 rounded-full bg-amber-500/20 hover:bg-amber-600 hover:text-white text-amber-800 dark:text-amber-300 flex items-center justify-center transition cursor-pointer"
+                                      className="w-9 h-9 rounded-full bg-amber-500/20 hover:bg-amber-600 hover:text-white text-amber-800 dark:text-amber-300 flex items-center justify-center transition cursor-pointer"
                                       title={language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'श्रवण'}
+                                      aria-label={`Play ${chapterTitle}`}
                                     >
-                                      <Play size={12} className="ml-0.5" />
+                                      <Play size={13} className="ml-0.5" />
                                     </button>
                                     <ChevronRight size={15} className="text-amber-500/70 group-hover:translate-x-0.5 transition-transform" />
                                   </div>
                                 </div>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <div
-                            onClick={() => {
-                              const targetId = resolveNitnemSectionId({ id: `${section.section_id}_1`, hindi: '', punjabi: '' }, section);
-                              handleSelectSection(targetId);
-                              setViewMode('reading');
-                            }}
-                            className="p-4 rounded-2xl bg-amber-50/50 dark:bg-zinc-900/50 border border-amber-300/40 flex items-center justify-between cursor-pointer hover:bg-amber-100/60 transition group"
-                          >
-                            <div className="flex items-center gap-3">
-                              <Scroll size={20} className="text-amber-600 group-hover:scale-110 transition-transform" />
-                              <div>
-                                <h4 className="font-serif font-black text-sm sm:text-base text-gray-800 dark:text-gray-100">
-                                  {sectionTitle}
-                                </h4>
-                                <p className="text-xs text-gray-500 font-serif">
-                                  {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਬਾਣੀ' : language === 'en' ? 'Satguru Kabir Saheb Sacred Wisdom' : 'सतगुरु कबीर साहेब पावन वाणी'}
-                                </p>
+
+                                {/* Nested Sub-Items (e.g., गुरु महिमा १/२/शतक सार, गौड़ी १..५, अष्टक १..३, आरती १..४, विनती १..२) */}
+                                {chapter.children && chapter.children.length > 0 && (
+                                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-amber-500/15">
+                                    {chapter.children.map((child) => {
+                                      const childTitle = getLocalizedSubChapterTitle(child, language);
+                                      const childSecId = resolveNitnemSectionId(child, section);
+                                      return (
+                                        <button
+                                          key={child.id}
+                                          type="button"
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleSelectSection(childSecId);
+                                            setViewMode('reading');
+                                          }}
+                                          className="min-h-[36px] px-2.5 py-1 rounded-xl bg-white/85 dark:bg-zinc-800 hover:bg-amber-600 hover:text-white text-amber-950 dark:text-amber-200 border border-amber-400/35 text-[0.6875rem] font-serif font-bold transition cursor-pointer"
+                                        >
+                                          {childTitle}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                )}
                               </div>
-                            </div>
-                            <ChevronRight size={18} className="text-amber-600 group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        )
+                            );
+                          })}
+                        </div>
                       )}
                     </div>
                   );
@@ -2708,34 +2961,146 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           </p>
                         )}
 
-                        {/* Quick Global Reading Toolbar: Bhavarth Toggle & Focus Mode */}
-                        <div className="flex items-center justify-between flex-wrap gap-2 pt-2.5 border-t border-amber-500/20">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              const next = !showBhavarthGlobal;
-                              setShowBhavarthGlobal(next);
-                              setVerseBhavarthOverrides({});
-                              sacredHaptics.lightTap();
-                            }}
-                            className={`px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border ${
-                              showBhavarthGlobal
-                                ? 'bg-amber-600 text-white border-amber-700 shadow-xs'
-                                : 'bg-white/80 dark:bg-zinc-800 text-amber-900 dark:text-amber-200 border-amber-400/40 hover:bg-amber-500/20'
-                            }`}
-                          >
-                            {showBhavarthGlobal ? <Eye size={14} /> : <EyeOff size={14} />}
-                            <span>
-                              {language === 'pb' 
-                                ? (showBhavarthGlobal ? 'ਸਾਰੇ ਭਾਵਾਰਥ: ਖੁੱਲ੍ਹੇ ਹਨ' : 'ਸਾਰੇ ਭਾਵਾਰਥ: ਛੁਪਾਓ') 
-                                : language === 'en' 
-                                ? (showBhavarthGlobal ? 'All Meanings: ON' : 'All Meanings: OFF')
-                                : (showBhavarthGlobal ? 'समस्त भावार्थ: दृश्य (ON)' : 'समस्त भावार्थ: छुपे (OFF)')}
-                            </span>
-                          </button>
+                        {/* Distraction-Free Gutka Mode Quick Comfort Bar: Meaning Toggle, Font Size, Parchment Paper, Wake Lock, Auto-Scroll */}
+                        <div className="flex items-center justify-center sm:justify-between flex-wrap gap-2 pt-3 border-t border-amber-500/20">
+                          <div className="flex items-center flex-wrap justify-center gap-2">
+                            {/* 1. Meaning Toggle: अर्थ दिखाएं / अर्थ छुपाएं */}
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const next = !showBhavarthGlobal;
+                                setShowBhavarthGlobal(next);
+                                setVerseBhavarthOverrides({});
+                                sacredHaptics.lightTap();
+                              }}
+                              className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border whitespace-nowrap ${
+                                showBhavarthGlobal
+                                  ? 'bg-amber-600 text-white border-amber-700 shadow-xs'
+                                  : 'bg-white/85 dark:bg-zinc-800 text-amber-900 dark:text-amber-200 border-amber-400/40 hover:bg-amber-500/20'
+                              }`}
+                            >
+                              {showBhavarthGlobal ? <Eye size={14} /> : <EyeOff size={14} />}
+                              <span>
+                                {language === 'pb'
+                                  ? (showBhavarthGlobal ? 'ਅਰਥ ਛੁਪਾਓ' : 'ਅਰਥ ਦਿਖਾਓ')
+                                  : language === 'en'
+                                  ? (showBhavarthGlobal ? 'Hide Meaning' : 'Show Meaning')
+                                  : (showBhavarthGlobal ? 'अर्थ छुपाएं' : 'अर्थ दिखाएं')}
+                              </span>
+                            </button>
 
-                          <span className="text-[0.6875rem] font-mono text-gray-600 dark:text-gray-400">
-                            {versesList.length} {language === 'pb' ? 'ਪਦ / ਛੰਦ' : language === 'en' ? 'Verses' : 'पद / छंद'}
+                            {/* 2. One-Tap Font Size Adjuster */}
+                            <div className="flex items-center rounded-xl border border-amber-400/40 bg-white/80 dark:bg-zinc-800 overflow-hidden">
+                              <button
+                                type="button"
+                                onClick={() => cycleQuickFontSize(-1)}
+                                className="min-h-[44px] min-w-[40px] px-2.5 text-xs font-black text-amber-900 dark:text-amber-200 hover:bg-amber-500/15 transition cursor-pointer whitespace-nowrap"
+                                title={language === 'pb' ? 'ਅੱਖਰ ਛੋਟੇ ਕਰੋ' : language === 'en' ? 'Decrease Font Size' : 'अक्षर छोटे करें'}
+                                aria-label="Decrease Font Size"
+                              >
+                                A-
+                              </button>
+                              <span className="px-1.5 text-[0.6875rem] font-mono font-bold text-amber-800 dark:text-amber-300 border-x border-amber-400/25 whitespace-nowrap">
+                                <Type size={12} className="inline mr-1" />
+                                {fontSizeLevel.toUpperCase()}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => cycleQuickFontSize(1)}
+                                className="min-h-[44px] min-w-[40px] px-2.5 text-xs font-black text-amber-900 dark:text-amber-200 hover:bg-amber-500/15 transition cursor-pointer whitespace-nowrap"
+                                title={language === 'pb' ? 'ਅੱਖਰ ਵੱਡੇ ਕਰੋ' : language === 'en' ? 'Increase Font Size' : 'अक्षर बड़े करें'}
+                                aria-label="Increase Font Size"
+                              >
+                                A+
+                              </button>
+                            </div>
+
+                            {/* 3. Traditional Parchment / Cream Paper Mode Toggle */}
+                            <button
+                              type="button"
+                              onClick={() => {
+                                sacredHaptics.lightTap();
+                                const nextTheme: ReaderCustomTheme =
+                                  readerTheme === 'pothi' ? 'black' : readerTheme === 'black' ? 'mool' : 'pothi';
+                                changeReaderTheme(nextTheme);
+                              }}
+                              className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border whitespace-nowrap ${
+                                readerTheme === 'pothi' || readerTheme === 'sepia'
+                                  ? 'bg-[#8b4513] text-amber-50 border-[#6e350d] shadow-xs'
+                                  : readerTheme === 'black' || readerTheme === 'dark'
+                                  ? 'bg-zinc-900 text-amber-300 border-zinc-700'
+                                  : 'bg-white/85 dark:bg-zinc-800 text-amber-900 dark:text-amber-200 border-amber-400/40 hover:bg-amber-500/20'
+                              }`}
+                              title={language === 'pb' ? 'ਪੋਥੀ ਕਾਗਜ਼ / ਰਾਤ ਮੋਡ ਬਦਲੋ' : language === 'en' ? 'Toggle Parchment / Cream Paper / Night Mode' : 'पोथी कागज़ (Cream) / रात्रि मोड बदलें'}
+                            >
+                              {readerTheme === 'black' || readerTheme === 'dark' ? <Moon size={14} /> : <Scroll size={14} />}
+                              <span>
+                                {readerTheme === 'pothi' || readerTheme === 'sepia'
+                                  ? (language === 'pb' ? 'ਪੋਥੀ ਕਾਗਜ਼ ✓' : language === 'en' ? 'Parchment ✓' : 'पोथी कागज़ ✓')
+                                  : readerTheme === 'black' || readerTheme === 'dark'
+                                  ? (language === 'pb' ? 'ਰਾਤ ਮੋਡ' : language === 'en' ? 'Night Paper' : 'रात्रि मोड')
+                                  : (language === 'pb' ? 'ਕਰੀਮ ਕਾਗਜ਼' : language === 'en' ? 'Cream Paper' : 'क्रीम कागज़')}
+                              </span>
+                            </button>
+
+                            {/* 4. Keep Screen Awake (Wake Lock API) Toggle */}
+                            <button
+                              type="button"
+                              onClick={toggleKeepScreenAwake}
+                              className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border whitespace-nowrap ${
+                                keepScreenAwake
+                                  ? 'bg-emerald-600/15 text-emerald-900 dark:text-emerald-200 border-emerald-500/45'
+                                  : 'bg-white/80 dark:bg-zinc-800 text-gray-600 dark:text-gray-300 border-gray-300/60'
+                              }`}
+                              title={language === 'pb' ? 'ਪਾਠ ਦੌਰਾਨ ਸਕਰੀਨ ਚਾਲੂ ਰੱਖੋ' : language === 'en' ? 'Keep Screen Awake (Wake Lock)' : 'पाठ के समय स्क्रीन जागृत रखें'}
+                            >
+                              <Sun size={14} />
+                              <span>
+                                {language === 'pb'
+                                  ? (keepScreenAwake ? 'ਸਕਰੀਨ ਜਾਗ੍ਰਿਤ' : 'ਸਕਰੀਨ ਆਮ')
+                                  : language === 'en'
+                                  ? (keepScreenAwake ? 'Awake On' : 'Awake Off')
+                                  : (keepScreenAwake ? 'स्क्रीन जागृत' : 'स्क्रीन सामान्य')}
+                              </span>
+                            </button>
+
+                            {/* 5. Auto-Scroll Speed Control */}
+                            <div className="flex items-center rounded-xl border border-amber-400/40 bg-white/80 dark:bg-zinc-800 overflow-hidden">
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  sacredHaptics.lightTap();
+                                  setIsAutoPlaying((p) => !p);
+                                }}
+                                className={`min-h-[44px] px-3 py-1.5 text-xs font-serif font-bold flex items-center gap-1.5 transition cursor-pointer whitespace-nowrap ${
+                                  isAutoPlaying
+                                    ? 'bg-amber-600 text-white'
+                                    : 'text-amber-900 dark:text-amber-200 hover:bg-amber-500/15'
+                                }`}
+                              >
+                                {isAutoPlaying ? <Pause size={13} /> : <Play size={13} />}
+                                <span>
+                                  {language === 'pb' ? 'ਆਟੋ-ਸਕ੍ਰੌਲ' : language === 'en' ? 'Auto-Scroll' : 'ऑटो-स्क्रॉल'}
+                                </span>
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  sacredHaptics.lightTap();
+                                  const speeds: Array<0.5 | 1 | 1.5 | 2> = [0.5, 1, 1.5, 2];
+                                  const idx = speeds.indexOf(autoScrollSpeed as any);
+                                  setAutoScrollSpeed(speeds[(idx + 1) % speeds.length]);
+                                }}
+                                className="min-h-[44px] px-2.5 text-[0.6875rem] font-mono font-bold text-amber-800 dark:text-amber-300 border-l border-amber-400/25 hover:bg-amber-500/15 transition cursor-pointer whitespace-nowrap"
+                                title={language === 'pb' ? 'ਗਤੀ ਬਦਲੋ' : language === 'en' ? 'Cycle Auto-Scroll Speed' : 'स्क्रॉल गति बदलें'}
+                              >
+                                {autoScrollSpeed}x
+                              </button>
+                            </div>
+                          </div>
+
+                          <span className="text-[0.6875rem] font-mono text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                            {granthContext.currentIndex + 1}/{granthContext.totalCount} · {versesList.length} {language === 'pb' ? 'ਪਦ / ਛੰਦ' : language === 'en' ? 'Verses' : 'पद / छंद'}
                           </span>
                         </div>
                       </div>
@@ -3440,60 +3805,111 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       );
                     })}
 
-                    {/* Sacred Continuity Bridge from Prabhat-Sandhya Sakhi to Gyan Guddi */}
-                    {!isPureVaniMode && (currentSection.id.includes('sandhya-sakhi') || currentSection.title?.hi?.includes('सन्ध्या साखी') || currentSection.title?.hi?.includes('संध्या साखी')) && (
-                      <div className="my-6 p-4 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-600/15 via-orange-500/20 to-amber-600/15 border-2 border-amber-500/50 shadow-md text-center space-y-3">
-                        <span className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300 block">
-                          {language === 'pb' ? 'ਅਗਲਾ ਪਾਵਨ ਪਾਠ' : language === 'en' ? 'Next Sacred Chapter' : 'अगला पावन पाठ'}
-                        </span>
-                        <h3 className="text-base sm:text-xl font-serif font-black text-amber-950 dark:text-amber-100">
-                          {language === 'pb' ? 'ਗਿਆਨ ਗੁਦੜੀ (Gyan Guddi)' : language === 'en' ? 'Gyan Guddi (Mystic Garment of Consciousness)' : 'ज्ञान गुदड़ी (Gyan Guddi)'}
-                        </h3>
-                        <p className="text-xs sm:text-sm font-serif text-amber-900/90 dark:text-amber-200/90 max-w-xl mx-auto leading-relaxed">
-                          {language === 'pb' 
-                            ? '।।ਸਤ੍ਯਨਾਮ।। ਧਰਮਦਾਸ-ਕਬੀਰ ਸੰਵਾਦ, ਕਾਇਆ-ਗੁਦੜੀ ਦਾ ਅਧਿਆਤਮਕ ਰਹੱਸ ਅਤੇ ਆਤਮ-ਬੋਧ' 
-                            : '।।सत्यनाम।। धर्मदास-कबीर संवाद, काया-गुदड़ी का आध्यात्मिक रहस्य एवं आत्म-बोध'}
-                        </p>
-                        <div>
-                          <button
-                            type="button"
-                            onClick={() => handleSelectSection(currentSection.id.startsWith('sandhya') ? 'sandhya-gyan-gudadi' : 'prabhat-gyan-gudadi')}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-black text-xs sm:text-sm shadow-md transition-all active:scale-95 cursor-pointer"
-                          >
-                            <span>{language === 'pb' ? 'ਗਿਆਨ ਗੁਦੜੀ ਪਾਠ ਆਰੰਭ ਕਰੋ' : language === 'en' ? 'Begin Gyan Guddi Recitation' : 'ज्ञान गुदड़ी पाठ आरंभ करें'}</span>
-                            <ChevronRight size={16} />
-                          </button>
+                    {/* Seamless Flow Next Sub-Chapter Card OR Peaceful End-of-Path Flower Blessing & Daily Haziri */}
+                    {!isPureVaniMode && (
+                      granthContext.nextSection ? (
+                        <div className="my-6 p-4 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-600/15 via-orange-500/20 to-amber-600/15 border-2 border-amber-500/50 shadow-md text-center space-y-3">
+                          <span className="text-[0.6875rem] font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300 block">
+                            {language === 'pb'
+                              ? `ਅਗਲਾ ਉਪ-ਅਧਿਆਇ (${granthContext.currentIndex + 2}/${granthContext.totalCount})`
+                              : language === 'en'
+                              ? `Next Sub-Chapter (${granthContext.currentIndex + 2}/${granthContext.totalCount})`
+                              : `अगला उप-अध्याय (${granthContext.currentIndex + 2}/${granthContext.totalCount})`}
+                          </span>
+                          <h3 className="text-base sm:text-xl font-serif font-black text-amber-950 dark:text-amber-100">
+                            {granthContext.nextSection.title[language] || granthContext.nextSection.title.hi}
+                          </h3>
+                          {granthContext.nextSection.subtitle && (
+                            <p className="text-xs sm:text-sm font-serif text-amber-900/90 dark:text-amber-200/90 max-w-xl mx-auto leading-relaxed">
+                              {granthContext.nextSection.subtitle[language] || granthContext.nextSection.subtitle.hi}
+                            </p>
+                          )}
+                          <div>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                sacredHaptics.lightTap();
+                                handleSelectSection(granthContext.nextSection!.id);
+                              }}
+                              className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-black text-xs sm:text-sm shadow-md transition-all active:scale-95 cursor-pointer whitespace-nowrap"
+                            >
+                              <span>
+                                {language === 'pb'
+                                  ? `ਅਗਲਾ ਉਪ-ਅਧਿਆਇ: ${granthContext.nextSection.title.pb || granthContext.nextSection.title.hi}`
+                                  : language === 'en'
+                                  ? `Next Sub-Chapter: ${granthContext.nextSection.title.en || granthContext.nextSection.title.hi}`
+                                  : `अगला उप-अध्याय: ${granthContext.nextSection.title.hi}`}
+                              </span>
+                              <ChevronRight size={16} />
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      ) : (
+                        <div className="my-6 p-5 sm:p-7 rounded-3xl bg-gradient-to-br from-amber-500/20 via-orange-500/15 to-emerald-500/15 dark:from-amber-950/60 dark:via-zinc-900 dark:to-emerald-950/40 border-2 border-amber-400/70 shadow-lg text-center space-y-4">
+                          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/40 text-xs font-bold font-serif">
+                            <Flower2 size={15} className="text-amber-700 dark:text-amber-300" />
+                            <span>
+                              {language === 'pb'
+                                ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਪਾਠ ਸੰਪੰਨ'
+                                : language === 'en'
+                                ? 'Sacred Nitnem Section Completed'
+                                : 'पावन नितनेम पाठ सम्पन्न'}
+                            </span>
+                          </div>
 
-                    {/* Sacred Continuity Bridge after Gyan Guddi to Subsequent Sections */}
-                    {!isPureVaniMode && (currentSection.id.includes('gudadi') || currentSection.id.includes('gudri') || currentSection.id.includes('guddi') || currentSection.title?.hi?.includes('गुदड़ी')) && (
-                      <div className="my-6 p-4 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-600/15 via-orange-500/20 to-amber-600/15 border-2 border-amber-500/50 shadow-md text-center space-y-3">
-                        <span className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300 block">
-                          {language === 'pb' ? 'ਅਗਲਾ ਪਾਵਨ ਪਾਠ' : language === 'en' ? 'Next Sacred Chapter' : 'अगला पावन पाठ'}
-                        </span>
-                        <h3 className="text-base sm:text-xl font-serif font-black text-amber-950 dark:text-amber-100">
-                          {currentSection.id.startsWith('sandhya') 
-                            ? (language === 'pb' ? 'ਅਰਜ਼ੀਨਾਮਾ (Arjinama)' : 'अर्जीनामा (Arjinama)')
-                            : (language === 'pb' ? 'ਧਨਾਕਸ਼ਰੀ ਛੰਦ, ਅਰਜ਼ੀਨਾਮਾ ਤੇ ਆਰਤੀ' : 'धनाक्षरी छन्द, अर्जीनामा एवं आरती पाठ')}
-                        </h3>
-                        <p className="text-xs sm:text-sm font-serif text-amber-900/90 dark:text-amber-200/90 max-w-xl mx-auto leading-relaxed">
-                          {language === 'pb'
-                            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪਾਵਨ ਅਸਤੁਤੀ, ਵਿਰਹ ਅਰਜ਼ੀ ਤੇ ਆਰਤੀ ਪਾਠ'
-                            : 'सतगुरु कबीर साहेब जी की पावन स्तुति, विरह अर्जी एवं आरती संग्रह पाठ'}
-                        </p>
-                        <div>
-                          <button
-                            type="button"
-                            onClick={handleNextSection}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-black text-xs sm:text-sm shadow-md transition-all active:scale-95 cursor-pointer"
-                          >
-                            <span>{language === 'pb' ? 'ਅਗਲਾ ਪਾਠ ਜਾਰੀ ਰੱਖੋ' : language === 'en' ? 'Continue to Next Chapter' : 'अगला पाठ जारी रखें'}</span>
-                            <ChevronRight size={16} />
-                          </button>
+                          <p className="text-base sm:text-xl font-serif font-black text-amber-950 dark:text-amber-100 max-w-2xl mx-auto leading-relaxed">
+                            {language === 'pb'
+                              ? 'ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ! ਅੱਜ ਤੁਸੀਂ ਜੀਵਨ ਦੇ ਇੱਕ ਨਵੇਂ ਸੱਤ ਦਾ ਸਵਾਧਿਆਇ ਪੂਰਾ ਕੀਤਾ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ 🙏'
+                              : language === 'en'
+                              ? 'Saheb Bandagi Saheb! Today you have completed the sacred Swadhyay of a new truth of life. Saheb Bandagi Saheb 🙏'
+                              : 'साहेब बंदगी साहेब! आज आपने जीवन के एक नए सत्य का स्वाध्याय पूरा किया। साहेब बंदगी साहेब 🙏'}
+                          </p>
+
+                          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+                            <button
+                              type="button"
+                              onClick={handleMarkNitnemPathHaziri}
+                              className={`min-h-[48px] inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-serif font-black text-sm shadow-md transition-all active:scale-95 cursor-pointer whitespace-nowrap ${
+                                haziriMarkedToday
+                                  ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                                  : 'bg-amber-600 hover:bg-amber-700 text-white'
+                              }`}
+                            >
+                              {haziriMarkedToday ? <CheckCircle2 size={18} /> : <Flower2 size={18} />}
+                              <span>
+                                {haziriMarkedToday
+                                  ? (language === 'pb'
+                                      ? (justCompletedHaziriPath ? 'ਅੱਜ ਦੀ ਨਿਤनेम ਹਾਜ਼ਰੀ ਦਰਜ ਹੋ ਗਈ ✓' : 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਹੈ ✓')
+                                      : language === 'en'
+                                      ? "Today's Nitnem Haziri Marked ✓"
+                                      : 'आज की नितनेम हाज़िरी दर्ज है ✓')
+                                  : (language === 'pb'
+                                      ? 'ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ'
+                                      : language === 'en'
+                                      ? "Mark Today's Nitnem Haziri"
+                                      : 'नितनेम हाज़िरी दर्ज करें')}
+                              </span>
+                            </button>
+
+                            {currentOverallIndex < nitnemSections.length - 1 && (
+                              <button
+                                type="button"
+                                onClick={handleNextSection}
+                                className="min-h-[44px] inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-white/85 dark:bg-zinc-800 hover:bg-amber-50 dark:hover:bg-zinc-700 text-amber-950 dark:text-amber-200 border border-amber-400/50 font-serif font-bold text-xs sm:text-sm transition cursor-pointer whitespace-nowrap"
+                              >
+                                <span>
+                                  {language === 'pb'
+                                    ? 'ਅਗਲਾ ਗ੍ਰੰਥ ਭਾਗ ਖੋਲ੍ਹੋ'
+                                    : language === 'en'
+                                    ? 'Continue to Next Granth'
+                                    : 'अगला ग्रन्थ खंड आरंभ करें'}
+                                </span>
+                                <ChevronRight size={15} />
+                              </button>
+                            )}
+                          </div>
                         </div>
-                      </div>
+                      )
                     )}
 
                     {/* Global Sacred Concluding Salutation: Every prayer ends with '।।साहेब बन्दगी साहेब।।' */}

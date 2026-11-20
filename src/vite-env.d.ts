@@ -4,6 +4,7 @@
 declare const __APP_VERSION__: string;
 declare const __APP_VERSION_CODE__: number;
 declare const __GITHUB_REPO__: string;
+declare const __BUILD_ID__: string;
 
 interface ImportMetaEnv {
   readonly VITE_GITHUB_REPOSITORY?: string;

@@ -126,3 +126,64 @@ export const subscribeToHaziri = (callback: (state: HaziriState) => void) => {
     window.removeEventListener('storage', handler);
   };
 };
+
+export const SADHANA_GOAL_EVENT = 'sahebworld_sadhana_goal_updated';
+
+export const isTodayNitnemDone = (): boolean => {
+  const localKey = getTodayDateKey();
+  const isoKey = new Date().toISOString().slice(0, 10);
+  const haziri = getHaziriState();
+
+  try {
+    const rawLocal = localStorage.getItem(`sahebworld_sadhana_progress_${localKey}`);
+    if (rawLocal) {
+      const parsed = JSON.parse(rawLocal);
+      if (parsed?.nitnemDone) return true;
+    }
+    if (isoKey !== localKey) {
+      const rawIso = localStorage.getItem(`sahebworld_sadhana_progress_${isoKey}`);
+      if (rawIso) {
+        const parsed = JSON.parse(rawIso);
+        if (parsed?.nitnemDone) return true;
+      }
+    }
+    const completedFlag = localStorage.getItem(`sahebworld_nitnem_haziri_done_${localKey}`);
+    if (completedFlag === 'true') return true;
+  } catch {}
+
+  return haziri.isTodayMarked;
+};
+
+export const markNitnemSadhanaDone = (completedPathTitle?: string): HaziriState => {
+  const nextHaziri = markTodayHaziri();
+  const localKey = getTodayDateKey();
+  const isoKey = new Date().toISOString().slice(0, 10);
+  const keys = localKey === isoKey ? [localKey] : [localKey, isoKey];
+
+  keys.forEach((dateKey) => {
+    try {
+      const storageKey = `sahebworld_sadhana_progress_${dateKey}`;
+      const existingRaw = localStorage.getItem(storageKey);
+      const existing = existingRaw
+        ? JSON.parse(existingRaw)
+        : { sakhisDone: 1, dhyanMinutesDone: 10, mantraDone: 108, nitnemDone: false };
+      existing.nitnemDone = true;
+      localStorage.setItem(storageKey, JSON.stringify(existing));
+    } catch {}
+  });
+
+  try {
+    localStorage.setItem(`sahebworld_nitnem_haziri_done_${localKey}`, 'true');
+    if (completedPathTitle) {
+      localStorage.setItem(`sahebworld_nitnem_last_completed_${localKey}`, completedPathTitle);
+    }
+  } catch {}
+
+  window.dispatchEvent(
+    new CustomEvent(SADHANA_GOAL_EVENT, {
+      detail: { nitnemDone: true, haziri: nextHaziri, completedPathTitle },
+    })
+  );
+
+  return nextHaziri;
+};

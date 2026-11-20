@@ -5,18 +5,42 @@ import { TEESA_YANTRA_VERSES } from './teesaYantraVerses';
 
 export const CHALISA_BARAHMASI_TEESA_SECTIONS: NitnemSection[] = [
   {
-    "id": "kabir-chalisa-path",
+    "id": "chalisa-vandana",
     "majorCategoryId": "chalisa",
     "majorCategoryTitle": {
       "hi": "५. सतगुरु कबीर चालीसा पाठ",
       "pb": "੫. ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ ਪਾਠ",
-      "en": "5. Satguru Kabir Chalisa"
+      "en": "5. Satguru Kabir Chalisa Path"
     },
     "subGroup": "चालीसा पाठ",
     "title": {
-      "hi": "सतगुरु कबीर चालीसा",
-      "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ",
-      "en": "Satguru Kabir Chalisa"
+      "hi": "वंदना",
+      "pb": "ਵੰਦਨਾ",
+      "en": "Vandana"
+    },
+    "subtitle": {
+      "hi": "सद्गुरु पद वंदना एवं धर्मदास-उग्रनाम आचार्य स्मरण",
+      "pb": "ਸਤਿਗੁਰੂ ਪਦ ਵੰਦਨਾ ਅਤੇ ਧਰਮਦਾਸ-ਉਗ੍ਰਨਾਮ ਆਚਾਰਯ ਸਿਮਰਨ",
+      "en": "Opening Salutation to Satguru Kabir & Dharmadas Ji"
+    },
+    "iconName": "Sparkles",
+    "estimatedMinutes": 2,
+    "totalVerses": 1,
+    "verses": [KABIR_CHALISA_VERSES[0]]
+  },
+  {
+    "id": "chalisa-path",
+    "majorCategoryId": "chalisa",
+    "majorCategoryTitle": {
+      "hi": "५. सतगुरु कबीर चालीसा पाठ",
+      "pb": "੫. ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ ਪਾਠ",
+      "en": "5. Satguru Kabir Chalisa Path"
+    },
+    "subGroup": "चालीसा पाठ",
+    "title": {
+      "hi": "सतगुरु कबीर चालीसा पाठ",
+      "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ ਪਾਠ",
+      "en": "Satguru Kabir Chalisa Path"
     },
     "subtitle": {
       "hi": "४० चौपाइयों में सतगुरु कबीर साहेब की संपूर्ण स्तुति एवं संकट हरण",
@@ -25,10 +49,8 @@ export const CHALISA_BARAHMASI_TEESA_SECTIONS: NitnemSection[] = [
     },
     "iconName": "Sparkles",
     "estimatedMinutes": 15,
-    "totalVerses": 43,
-    "verses": [
-      ...KABIR_CHALISA_VERSES
-    ]
+    "totalVerses": KABIR_CHALISA_VERSES.length - 1,
+    "verses": KABIR_CHALISA_VERSES.slice(1)
   },
   {
     "id": "barahmasi-path",

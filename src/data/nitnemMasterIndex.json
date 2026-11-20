@@ -79,11 +79,10 @@
       "punjabi_title": "੩. ਗਾਇਤਰੀ",
       "english_title": "3. Gayatri Path",
       "sub_chapters": [
-        {"id": "3_1", "section_id": "gayatri-adi", "hindi": "आदि गायत्री", "punjabi": "ਆਦਿ ਗਾਇਤਰੀ", "english": "Adi Gayatri"},
+        {"id": "3_1", "section_id": "gayatri-adi", "hindi": "आदि गायत्री", "punjabi": "ਆਦਿ ਗਾਇਤਰੀ", "english": "Aadi Gayatri"},
         {"id": "3_2", "section_id": "gayatri-prabhat", "hindi": "प्रभात गायत्री", "punjabi": "ਪ੍ਰਭਾਤ ਗਾਇਤਰੀ", "english": "Prabhat Gayatri"},
-        {"id": "3_3", "section_id": "gayatri-madhyahan", "hindi": "मध्याह्न गायत्री", "punjabi": "ਮਧਿਆਹਨ ਗਾਇਤਰੀ", "english": "Madhyahan Gayatri"},
-        {"id": "3_4", "section_id": "gayatri-sandhya", "hindi": "संध्या गायत्री", "punjabi": "ਸੰਧਿਆ ਗਾਇਤ੍ਰੀ", "english": "Sandhya Gayatri"},
-        {"id": "3_5", "section_id": "gayatri-madhyan-2", "hindi": "मध्यान गायत्री", "punjabi": "ਮਧ੍ਯਾਨ ਗਾਇਤ੍ਰੀ", "english": "Madhyan Gayatri"}
+        {"id": "3_3", "section_id": "gayatri-madhyahan", "hindi": "मध्याह्न गायत्री", "punjabi": "ਮਧਿਆਹਨ ਗਾਇਤਰੀ", "english": "Madhyahn Gayatri"},
+        {"id": "3_4", "section_id": "gayatri-sandhya", "hindi": "संध्या गायत्री", "punjabi": "ਸੰਧਿਆ ਗਾਇਤ੍ਰੀ", "english": "Sandhya Gayatri"}
       ]
     },
     {

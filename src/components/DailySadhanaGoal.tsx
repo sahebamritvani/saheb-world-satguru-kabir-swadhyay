@@ -20,6 +20,7 @@ import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
+import { getTodayDateKey, SADHANA_GOAL_EVENT, subscribeToHaziri } from '../services/haziriStore';
 
 interface DailySadhanaGoalProps {
   language: Language;
@@ -54,7 +55,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
   const isHi = language === 'hi';
   const isPb = language === 'pb';
 
-  const todayKey = new Date().toISOString().slice(0, 10);
+  const todayKey = getTodayDateKey();
 
   // User configured daily targets
   const [goals, setGoals] = useState<SadhanaGoalsConfig>(() => {
@@ -100,6 +101,34 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
   });
 
   const [hasCelebratedToday, setHasCelebratedToday] = useState(false);
+
+  useEffect(() => {
+    const syncFromExternal = () => {
+      try {
+        const saved = localStorage.getItem(`sahebworld_sadhana_progress_${todayKey}`);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          setProgress((prev) => ({
+            ...prev,
+            ...parsed,
+          }));
+        }
+      } catch {}
+    };
+
+    window.addEventListener(SADHANA_GOAL_EVENT, syncFromExternal);
+    window.addEventListener('storage', syncFromExternal);
+    const unsubHaziri = subscribeToHaziri((hz) => {
+      if (hz.isTodayMarked) {
+        syncFromExternal();
+      }
+    });
+    return () => {
+      window.removeEventListener(SADHANA_GOAL_EVENT, syncFromExternal);
+      window.removeEventListener('storage', syncFromExternal);
+      unsubHaziri();
+    };
+  }, [todayKey]);
 
   useEffect(() => {
     try {
