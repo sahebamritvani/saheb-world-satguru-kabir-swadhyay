@@ -2412,7 +2412,7 @@ export const Layout: React.FC<LayoutProps> = ({
         {children}
       </main>
 
-      {/* Non-intrusive Clipboard + Direct WhatsApp Fallback Banner after Share App click */}
+      {/* Non-intrusive Clipboard Confirmation Banner after Share App click */}
       {shareFallbackBanner && (
         <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[120] w-[calc(100%-2rem)] max-w-md bg-[#FFFDF9] dark:bg-stone-900 border-2 border-amber-600 shadow-2xl rounded-2xl p-3.5 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5 min-w-0">
@@ -2426,14 +2426,6 @@ export const Layout: React.FC<LayoutProps> = ({
             </p>
           </div>
           <div className="flex items-center gap-1.5 shrink-0">
-            <a
-              href={shareFallbackBanner.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-serif font-bold whitespace-nowrap transition"
-            >
-              WhatsApp पर भेजें
-            </a>
             <button
               type="button"
               onClick={() => setShareFallbackBanner(null)}

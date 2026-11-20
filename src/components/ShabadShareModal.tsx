@@ -28,13 +28,28 @@ export const ShabadShareModal: React.FC<ShabadShareModalProps> = ({
   const lines = verse.lines[language] || verse.lines.hi || [];
   const bhavarth = verse.bhavarth ? (verse.bhavarth[language] || verse.bhavarth.hi) : '';
 
-  const handleCopyCard = () => {
+  const handleCopyCard = async () => {
     const text = `🪷 ${sectionTitle} 🪷\n\n${lines.join('\n')}\n\n${bhavarth ? `भावार्थ:\n${bhavarth}\n\n` : ''}।। साहेब बंदगी साहेब ।।\n(SahebWorld - Satguru Kabir Saheb App)`;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text);
+    try {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        await navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+        return;
+      }
+    } catch {}
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
-    }
+    } catch {}
   };
 
   const handleWebShare = async () => {

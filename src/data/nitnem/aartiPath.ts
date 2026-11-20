@@ -239,10 +239,10 @@ export const SANDHYA_AARTI_1_SECTION: NitnemSection = {
       type: "aarti",
       lines: {
         hi: [...AARTI_PATH_SECTION.verses[0].lines.hi],
-        pb: [...AARTI_PATH_SECTION.verses[0].lines.pb],
-        en: [...AARTI_PATH_SECTION.verses[0].lines.en]
+        ...(AARTI_PATH_SECTION.verses[0].lines.pb ? { pb: [...AARTI_PATH_SECTION.verses[0].lines.pb] } : {}),
+        ...(AARTI_PATH_SECTION.verses[0].lines.en ? { en: [...AARTI_PATH_SECTION.verses[0].lines.en] } : {})
       },
-      bhavarth: { ...AARTI_PATH_SECTION.verses[0].bhavarth }
+      ...(AARTI_PATH_SECTION.verses[0].bhavarth ? { bhavarth: { ...AARTI_PATH_SECTION.verses[0].bhavarth } } : {})
     }
   ]
 };
@@ -275,10 +275,10 @@ export const SANDHYA_AARTI_2_SECTION: NitnemSection = {
       type: "aarti",
       lines: {
         hi: [...AARTI_PATH_SECTION.verses[1].lines.hi],
-        pb: [...AARTI_PATH_SECTION.verses[1].lines.pb],
-        en: [...AARTI_PATH_SECTION.verses[1].lines.en]
+        ...(AARTI_PATH_SECTION.verses[1].lines.pb ? { pb: [...AARTI_PATH_SECTION.verses[1].lines.pb] } : {}),
+        ...(AARTI_PATH_SECTION.verses[1].lines.en ? { en: [...AARTI_PATH_SECTION.verses[1].lines.en] } : {})
       },
-      bhavarth: { ...AARTI_PATH_SECTION.verses[1].bhavarth }
+      ...(AARTI_PATH_SECTION.verses[1].bhavarth ? { bhavarth: { ...AARTI_PATH_SECTION.verses[1].bhavarth } } : {})
     }
   ]
 };
@@ -311,10 +311,10 @@ export const SANDHYA_AARTI_3_SECTION: NitnemSection = {
       type: "aarti",
       lines: {
         hi: [...AARTI_PATH_SECTION.verses[2].lines.hi],
-        pb: [...AARTI_PATH_SECTION.verses[2].lines.pb],
-        en: [...AARTI_PATH_SECTION.verses[2].lines.en]
+        ...(AARTI_PATH_SECTION.verses[2].lines.pb ? { pb: [...AARTI_PATH_SECTION.verses[2].lines.pb] } : {}),
+        ...(AARTI_PATH_SECTION.verses[2].lines.en ? { en: [...AARTI_PATH_SECTION.verses[2].lines.en] } : {})
       },
-      bhavarth: { ...AARTI_PATH_SECTION.verses[2].bhavarth }
+      ...(AARTI_PATH_SECTION.verses[2].bhavarth ? { bhavarth: { ...AARTI_PATH_SECTION.verses[2].bhavarth } } : {})
     }
   ]
 };
@@ -347,10 +347,10 @@ export const SANDHYA_AARTI_4_SECTION: NitnemSection = {
       type: "aarti",
       lines: {
         hi: [...AARTI_PATH_SECTION.verses[3].lines.hi],
-        pb: [...AARTI_PATH_SECTION.verses[3].lines.pb],
-        en: [...AARTI_PATH_SECTION.verses[3].lines.en]
+        ...(AARTI_PATH_SECTION.verses[3].lines.pb ? { pb: [...AARTI_PATH_SECTION.verses[3].lines.pb] } : {}),
+        ...(AARTI_PATH_SECTION.verses[3].lines.en ? { en: [...AARTI_PATH_SECTION.verses[3].lines.en] } : {})
       },
-      bhavarth: { ...AARTI_PATH_SECTION.verses[3].bhavarth }
+      ...(AARTI_PATH_SECTION.verses[3].bhavarth ? { bhavarth: { ...AARTI_PATH_SECTION.verses[3].bhavarth } } : {})
     }
   ]
 };

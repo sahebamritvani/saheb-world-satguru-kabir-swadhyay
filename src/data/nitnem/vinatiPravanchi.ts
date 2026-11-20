@@ -289,10 +289,10 @@ export const SANDHYA_VINATI_1_SECTION: NitnemSection = {
       type: "chaupai",
       lines: {
         hi: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.hi],
-        pb: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.pb],
-        en: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.en]
+        ...(VINATI_PRAVANCHI_SECTION.verses[0].lines.pb ? { pb: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.pb] } : {}),
+        ...(VINATI_PRAVANCHI_SECTION.verses[0].lines.en ? { en: [...VINATI_PRAVANCHI_SECTION.verses[0].lines.en] } : {})
       },
-      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[0].bhavarth }
+      ...(VINATI_PRAVANCHI_SECTION.verses[0].bhavarth ? { bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[0].bhavarth } } : {})
     }
   ]
 };
@@ -325,10 +325,10 @@ export const SANDHYA_VINATI_2_SECTION: NitnemSection = {
       type: "chaupai",
       lines: {
         hi: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.hi],
-        pb: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.pb],
-        en: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.en]
+        ...(VINATI_PRAVANCHI_SECTION.verses[1].lines.pb ? { pb: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.pb] } : {}),
+        ...(VINATI_PRAVANCHI_SECTION.verses[1].lines.en ? { en: [...VINATI_PRAVANCHI_SECTION.verses[1].lines.en] } : {})
       },
-      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[1].bhavarth }
+      ...(VINATI_PRAVANCHI_SECTION.verses[1].bhavarth ? { bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[1].bhavarth } } : {})
     }
   ]
 };
@@ -361,10 +361,10 @@ export const SANDHYA_SUMIRAN_AARTI_SECTION: NitnemSection = {
       type: "chaupai",
       lines: {
         hi: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.hi],
-        pb: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.pb],
-        en: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.en]
+        ...(VINATI_PRAVANCHI_SECTION.verses[2].lines.pb ? { pb: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.pb] } : {}),
+        ...(VINATI_PRAVANCHI_SECTION.verses[2].lines.en ? { en: [...VINATI_PRAVANCHI_SECTION.verses[2].lines.en] } : {})
       },
-      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[2].bhavarth }
+      ...(VINATI_PRAVANCHI_SECTION.verses[2].bhavarth ? { bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[2].bhavarth } } : {})
     }
   ]
 };
@@ -397,10 +397,10 @@ export const SANDHYA_SHLOK_DHYANAM_SECTION: NitnemSection = {
       type: "stuti",
       lines: {
         hi: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.hi],
-        pb: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.pb],
-        en: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.en]
+        ...(VINATI_PRAVANCHI_SECTION.verses[3].lines.pb ? { pb: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.pb] } : {}),
+        ...(VINATI_PRAVANCHI_SECTION.verses[3].lines.en ? { en: [...VINATI_PRAVANCHI_SECTION.verses[3].lines.en] } : {})
       },
-      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[3].bhavarth }
+      ...(VINATI_PRAVANCHI_SECTION.verses[3].bhavarth ? { bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[3].bhavarth } } : {})
     }
   ]
 };
@@ -433,10 +433,10 @@ export const SANDHYA_ANTIM_VINATI_SECTION: NitnemSection = {
       type: "chaupai",
       lines: {
         hi: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.hi],
-        pb: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.pb],
-        en: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.en]
+        ...(VINATI_PRAVANCHI_SECTION.verses[4].lines.pb ? { pb: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.pb] } : {}),
+        ...(VINATI_PRAVANCHI_SECTION.verses[4].lines.en ? { en: [...VINATI_PRAVANCHI_SECTION.verses[4].lines.en] } : {})
       },
-      bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[4].bhavarth }
+      ...(VINATI_PRAVANCHI_SECTION.verses[4].bhavarth ? { bhavarth: { ...VINATI_PRAVANCHI_SECTION.verses[4].bhavarth } } : {})
     }
   ]
 };

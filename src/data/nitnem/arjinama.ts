@@ -1133,14 +1133,10 @@ export const SANDHYA_ARJINAMA_2_SECTION: NitnemSection = {
     type: v.type,
     lines: {
       hi: [...v.lines.hi],
-      pb: [...v.lines.pb],
-      en: [...v.lines.en]
+      ...(v.lines.pb ? { pb: [...v.lines.pb] } : {}),
+      ...(v.lines.en ? { en: [...v.lines.en] } : {})
     },
-    bhavarth: {
-      hi: v.bhavarth.hi,
-      pb: v.bhavarth.pb,
-      en: v.bhavarth.en
-    }
+    ...(v.bhavarth ? { bhavarth: { ...v.bhavarth } } : {})
   }))
 };
 

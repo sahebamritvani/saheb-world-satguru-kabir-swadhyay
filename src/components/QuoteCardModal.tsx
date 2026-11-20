@@ -190,10 +190,8 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
     handleCopyText();
   };
 
-  const handleShareWhatsApp = () => {
-    const encodedText = encodeURIComponent(shareTextContent);
-    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  const handleShareWhatsApp = async () => {
+    await handleShareNativeText();
   };
 
   return (
