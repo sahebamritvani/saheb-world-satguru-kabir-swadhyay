@@ -208,7 +208,24 @@ export const DamakhedaGranthIndexView: React.FC<DamakhedaGranthIndexViewProps> =
         </div>
 
         <div className="space-y-2.5 max-h-[60vh] overflow-y-auto pr-1">
-          {NITNEM_SECTION_STUBS.map((sec, idx) => (
+          {NITNEM_SECTION_STUBS.length === 0 ? (
+            <div className="p-8 rounded-2xl border-2 border-dashed border-amber-400/40 text-center space-y-2">
+              <p className="font-serif font-black text-base text-gray-900 dark:text-gray-100">
+                {language === 'pb'
+                  ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ — ਖਾਲੀ ਥਾਂ'
+                  : language === 'en'
+                  ? 'Nitnem Gutka Saheb — Empty Space'
+                  : 'नितनेम गुटका साहेब — रिक्त स्थान'}
+              </p>
+              <p className="text-xs sm:text-sm font-serif text-gray-600 dark:text-gray-300">
+                {language === 'pb'
+                  ? 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਜੋੜੇ ਜਾਣ ਲਈ ਇਹ ਥਾਂ ਤਿਆਰ ਹੈ।'
+                  : language === 'en'
+                  ? 'This space has been cleared and is ready for the new sacred Path.'
+                  : 'यह स्थान नए पावन पाठ के लिए पूर्णतः रिक्त एवं तैयार है।'}
+              </p>
+            </div>
+          ) : NITNEM_SECTION_STUBS.map((sec, idx) => (
             <motion.div
               key={sec.id}
               whileHover={{ scale: 1.005 }}

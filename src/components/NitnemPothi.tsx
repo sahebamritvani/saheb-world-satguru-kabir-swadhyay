@@ -69,184 +69,9 @@ export interface NitnemAngData {
 }
 
 // ----------------------------------------------------------------------------
-// Authentic Starter / Fallback Angs of Nitnem Gutka Saheb: मंगलाचरण एवं प्रभात पाठ
+// Empty starter array — Nitnem Gutka Saheb is cleared and ready for new Paths
 // ----------------------------------------------------------------------------
-export const NITNEM_PRABHAT_ANGS: NitnemAngData[] = [
-  {
-    angNumber: 1,
-    chapterTitle: {
-      hi: 'मंगलाचरण एवं साहेब वंदना',
-      pb: 'ਮੰਗਲਾਚਰਣ ਤੇ ਸਾਹੇਬ ਵੰਦਨਾ',
-      en: 'Mangalacharan & Satguru Invocation'
-    },
-    verseType: 'मंगलाचरण (Invocation)',
-    originalLines: {
-      hi: [
-        '।। सत्यनाम ।।',
-        'प्रथम वंदों सतगुरु चरना, जेहि प्रसादे भवजल तरना।',
-        'साधु संत सबन को बन्दन, काटहिं भव के कठिन फन्दन।।'
-      ],
-      pb: [
-        '।। ਸਤਯਨਾਮ ।।',
-        'ਪ੍ਰਥਮ ਵੰਦੋਂ ਸਤਿਗੁਰੂ ਚਰਨਾ, ਜੇਹਿ ਪ੍ਰਸਾਦੇ ਭਵਜਲ ਤਰਨਾ।',
-        'ਸਾਧੂ ਸੰਤ ਸਬਨ ਕੋ ਬੰਦਨ, ਕਾਟਹਿਂ ਭਵ ਕੇ ਕਠਿਨ ਫੰਦਨ।।'
-      ],
-      en: [
-        '|| Satyanaam ||',
-        'Pratham vandon Satguru charna, Jehi prasaade bhavjal tarna.',
-        'Saadhoo sant saban ko bandan, Kaatahin bhav ke kathin phandan..'
-      ]
-    },
-    shabdarth: {
-      hi: [
-        { word: 'प्रथम', meaning: 'सर्वप्रथम' },
-        { word: 'भवजल', meaning: 'संसार रूपी सागर' },
-        { word: 'फन्दन', meaning: 'बंधन / पाश' }
-      ],
-      pb: [
-        { word: 'ਪ੍ਰਥਮ', meaning: 'ਸਭ ਤੋਂ ਪਹਿਲਾਂ' },
-        { word: 'ਭਵਜਲ', meaning: 'ਸੰਸਾਰ ਸਾਗਰ' },
-        { word: 'ਫੰਦਨ', meaning: 'ਬੰਧਨ / ਫਾਹੇ' }
-      ],
-      en: [
-        { word: 'Pratham', meaning: 'Foremost' },
-        { word: 'Bhavjal', meaning: 'Ocean of transmigration' },
-        { word: 'Phandan', meaning: 'Karmic fetters' }
-      ]
-    },
-    bhavarth: {
-      hi: '।। सत्यनाम ।। सर्वप्रथम पूर्ण परब्रह्म सतगुरु कबीर साहेब के पावन चरणों में सादर नमन करता हूँ, जिनकी असीम कृपा से संसार-सागर पार किया जा सकता है। सभी साधु-संतों को साहेब बंदगी साहेब, जो आवागमन के कठिन बंधनों को काट देते हैं।',
-      pb: '।। ਸਤ੍ਯਨਾਮ ।। ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਪੂਰਨ ਪਰਬ੍ਰਹਮ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਾਵਨ ਚਰਨਾਂ ਵਿਚ ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ਕਰਦਾ ਹਾਂ, ਜਿਨ੍ਹਾਂ ਦੀ ਕ੍ਰਿਪਾ ਨਾਲ ਭਵਸਾਗਰ ਤਰਿਆ ਜਾਂਦਾ ਹੈ। ਸਮੂਹ ਸਾਧੂਆਂ ਸੰਤਾਂ ਨੂੰ ਵੰਦਨਾ ਹੈ ਜੋ ਕਾਲ ਦੇ ਕਠਿਨ ਬੰਧਨ ਕੱਟਦੇ ਹਨ।',
-      en: '|| Satyanaam || First and foremost, I bow in profound surrender at the lotus feet of Satguru Kabir Saheb, by whose grace the turbulent ocean of worldly illusions is crossed. Saheb Bandagi Saheb to all enlightened saints who shatter the shackles of worldly bondage.'
-    }
-  },
-  {
-    angNumber: 2,
-    chapterTitle: {
-      hi: 'सतगुरु महिमा साखी',
-      pb: 'ਸਤਿਗੁਰੂ ਮਹਿਮਾ ਸਾਖੀ',
-      en: 'Glory of Satguru'
-    },
-    verseType: 'साखी (Witness Testimony)',
-    originalLines: {
-      hi: [
-        'सतगुरु की महिमा अनन्त, अनन्त किया उपगार।',
-        'लोचन अनन्त उघाड़िया, अनन्त दिखावणहार।।'
-      ],
-      pb: [
-        'ਸਤਿਗੁਰੂ ਕੀ ਮਹਿਮਾ ਅਨੰਤ, ਅਨੰਤ ਕੀਆ ਉਪਗਾਰ।',
-        'ਲੋਚਨ ਅਨੰਤ ਉਘਾੜਿਆ, ਅਨੰਤ ਦਿਖਾਵਣਹਾਰ।।'
-      ],
-      en: [
-        'Satguru kee mahima anant, Anant keeya upgaar.',
-        'Lochan anant ughaariya, Anant dikhaavanhaar..'
-      ]
-    },
-    shabdarth: {
-      hi: [
-        { word: 'लोचन', meaning: 'आंतरिक दिव्य चक्षु' },
-        { word: 'उघाड़िया', meaning: 'खोल दिया / जागृत किया' }
-      ],
-      pb: [
-        { word: 'ਲੋਚਨ', meaning: 'ਅੰਦਰੂਨੀ ਅੱਖਾਂ' },
-        { word: 'ਉਘਾੜਿਆ', meaning: 'ਖੋਲ੍ਹ ਦਿੱਤਾ' }
-      ],
-      en: [
-        { word: 'Lochan', meaning: 'Inner Spiritual Eye' },
-        { word: 'Ughaariya', meaning: 'Illuminated / Opened' }
-      ]
-    },
-    bhavarth: {
-      hi: '।। सत्यनाम ।। सतगुरु कबीर साहेब की महिमा अपार है। उन्होंने अंतःकरण के दिव्य नेत्रों को खोलकर उस असीम, अविनाशी सत्यनाम स्वरूप के दर्शन कराए हैं।',
-      pb: '।। ਸਤ੍ਯਨਾਮ ।। ਸਤਿਗੁਰੂ ਦੀ ਮਹਿਮਾ ਬੇਅੰਤ ਹੈ। ਉਨ੍ਹਾਂ ਨੇ ਜੀਵ ਦੀ ਅੰਦਰੂਨੀ ਦਿਬ ਦ੍ਰਿਸ਼ਟੀ ਖੋਲ੍ਹ ਕੇ ਅਨੰਤ ਸੱਚੇ ਨਾਮ ਦੇ ਦਰਸ਼ਨ ਕਰਵਾਏ ਹਨ।',
-      en: '|| Satyanaam || Boundless is the glory of Satguru Kabir Saheb. He has opened the inner eye of divine consciousness, revealing the infinite, imperishable Supreme Truth.'
-    }
-  },
-  {
-    angNumber: 3,
-    chapterTitle: {
-      hi: 'प्रभात अमृत सुमिरन',
-      pb: 'ਪ੍ਰਭਾਤ ਅੰਮ੍ਰਿਤ ਸਿਮਰਨ',
-      en: 'Morning Nectar Remembrance'
-    },
-    verseType: 'सबद (Melodic Verse)',
-    originalLines: {
-      hi: [
-        'उठि प्रभात सुमिरो सत्यनाम, मेटो भव के सब संताप।',
-        'कबीर कहे सोई जन धन्य, जाके हिरदै गुरु को जाप।।'
-      ],
-      pb: [
-        'ਉਠਿ ਪ੍ਰਭਾਤ ਸੁਮਿਰੋ ਸਤ੍ਯਨਾਮ, ਮੇਟੋ ਭਵ ਕੇ ਸਬ ਸੰਤਾਪ।',
-        'ਕਬੀਰ ਕਹੇ ਸੋਈ ਜਨ ਧੰਨ, ਜਾਕੇ ਹਿਰਦੈ ਗੁਰੂ ਕੋ ਜਾਪ।।'
-      ],
-      en: [
-        'Uthi prabhaat sumiro Satyanaam, Meto bhav ke sab santaap.',
-        'Kabeer kahe soee jan dhanya, Jaake hirdai guru ko jaap..'
-      ]
-    },
-    shabdarth: {
-      hi: [
-        { word: 'सुमिरो', meaning: 'स्मरण करो / ध्यान लगाओ' },
-        { word: 'हिरदै', meaning: 'हृदय में' }
-      ],
-      pb: [
-        { word: 'ਸੁਮਿਰੋ', meaning: 'ਸਿਮਰਨ ਕਰੋ' },
-        { word: 'ਹਿਰਦੈ', meaning: 'ਹਿਰਦੇ ਵਿਚ' }
-      ],
-      en: [
-        { word: 'Sumiro', meaning: 'Meditate upon' },
-        { word: 'Hirdai', meaning: 'Inner heart' }
-      ]
-    },
-    bhavarth: {
-      hi: '।। सत्यनाम ।। प्रभात वेला में उठकर पावन सत्यनाम का सुमिरन करें जिससे जीवन के समस्त संताप दूर हो जाएं। कबीर साहेब कहते हैं कि वही साधक धन्य है जिसके हृदय में निरंतर सतगुरु का जाप चलता है।',
-      pb: '।। ਸਤ੍ਯਨਾਮ ।। ਅੰਮ੍ਰਿਤ ਵੇਲੇ ਉੱਠ ਕੇ ਸਤ੍ਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰੋ ਤਾਂ ਜੋ ਸਾਰੇ ਦੁੱਖ-ਕਲੇਸ਼ ਮਿਟ ਜਾਣ। ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹ ਜੀਵ ਧੰਨ ਹੈ ਜਿਸਦੇ ਹਿਰਦੇ ਵਿਚ ਸਤਿਗੁਰੂ ਦਾ ਨਾਮ ਵਸਦਾ ਹੈ।',
-      en: '|| Satyanaam || Arise in the auspicious dawn and meditate upon the holy Satyanaam to dissolve all worldly sorrows. Satguru Kabir declares blessed is the devotee whose heart resonates perpetually with the Guru’s divine remembrance.'
-    }
-  },
-  {
-    angNumber: 4,
-    chapterTitle: {
-      hi: 'सतगुरु गायत्री व आरती',
-      pb: 'ਸਤਿਗੁਰੂ ਗਾਇਤ੍ਰੀ ਤੇ ਆਰਤੀ',
-      en: 'Satguru Gayatri & Aarti'
-    },
-    verseType: 'आरती (Cosmic Adoration)',
-    originalLines: {
-      hi: [
-        'तन मन धन सब अर्पण कीजै, सतगुरु चरणन चित्त धरीजै।',
-        'आरती करूँ संत शिरोमणि, भवसागर से पार करीजै।।'
-      ],
-      pb: [
-        'ਤਨ ਮਨ ਧਨ ਸਬ ਅਰਪਣ ਕੀਜੈ, ਸਤਿਗੁਰੂ ਚਰਣਨ ਚਿੱਤ ਧਰੀਜੈ।',
-        'ਆਰਤੀ ਕਰੂੰ ਸੰਤ ਸ਼ਿਰੋਮਣੀ, ਭਵਸਾਗਰ ਸੇ ਪਾਰ ਕਰੀਜੈ।।'
-      ],
-      en: [
-        'Tan man dhan sab arpan keejai, Satguru charnan chitt dhareejai.',
-        'Aarti karoon sant shiromani, Bhavsaagar se paar kareejai..'
-      ]
-    },
-    shabdarth: {
-      hi: [
-        { word: 'अर्पण', meaning: 'समर्पण करना' },
-        { word: 'संत शिरोमणि', meaning: 'परम पूज्य सतगुरु' }
-      ],
-      pb: [
-        { word: 'ਅਰਪਣ', meaning: 'ਭੇਟ ਕਰਨਾ' },
-        { word: 'ਸ਼ਿਰੋਮਣੀ', meaning: 'ਸਭ ਤੋਂ ਉੱਚੇ' }
-      ],
-      en: [
-        { word: 'Arpan', meaning: 'To surrender with love' },
-        { word: 'Sant Shiromani', meaning: 'Crown Jewel of Saints' }
-      ]
-    },
-    bhavarth: {
-      hi: '।। सत्यनाम ।। तन, मन और अहंकार सब सतगुरु के पावन चरणों में समर्पित करके उनकी आंतरिक आरती उतारें, जो हमें संसार के आवागमन चक्र से मुक्त कर देते हैं। ।। साहेब बंदगी साहेब ।।',
-      pb: '।। ਸਤ੍ਯਨਾਮ ।। ਤਨ, ਮਨ ਤੇ ਸਭ ਕੁਝ ਸਤਿਗੁਰੂ ਦੇ ਪਾਵਨ ਚਰਨਾਂ ਵਿਚ ਸਮਰਪਿਤ ਕਰਕੇ ਆਤਮਿਕ ਆਰਤੀ ਕਰੋ, ਜੋ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਉਤਾਰਦੇ ਹਨ। ।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।',
-      en: '|| Satyanaam || Surrender body, mind, and ego at the lotus feet of Satguru Kabir, illuminating the inner temple of heart in divine adoration. || Saheb Bandagi Saheb ||'
-    }
-  }
-];
+export const NITNEM_PRABHAT_ANGS: NitnemAngData[] = [];
 
 function sectionToAngs(section: NitnemSection): NitnemAngData[] {
   if (!section?.verses || section.verses.length === 0) {
@@ -960,6 +785,47 @@ export const NitnemPothi: React.FC<{
       : currentLang === 'en'
       ? 'Saheb Bandagi Saheb! Today you completed the self-study of a new truth of life. Saheb Bandagi Saheb 🙏'
       : 'साहेब बंदगी साहेब! आज आपने जीवन के एक नए सत्य का स्वाध्याय पूरा किया। साहेब बंदगी साहेब 🙏';
+
+  if (activeAngs.length === 0) {
+    return (
+      <div
+        ref={containerRef}
+        className="nitnem-pothi-wrapper w-full flex flex-col items-center justify-center rounded-3xl transition-all duration-300 relative space-y-4 my-4"
+      >
+        <div
+          className="w-full max-w-2xl rounded-3xl border-2 border-dashed p-8 sm:p-12 text-center space-y-4 shadow-md"
+          style={{ backgroundColor: barColors.bg, borderColor: barColors.border, color: barColors.text }}
+        >
+          <div className="w-14 h-14 mx-auto rounded-2xl bg-[#8B4513]/10 flex items-center justify-center">
+            <BookOpen className="w-7 h-7" style={{ color: barColors.text }} />
+          </div>
+          <h3 className="font-serif font-black text-lg sm:text-xl">
+            {currentLang === 'pb'
+              ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ — ਖਾਲੀ ਥਾਂ'
+              : currentLang === 'en'
+              ? 'Nitnem Gutka Saheb — Empty Space'
+              : 'नितनेम गुटका साहेब — रिक्त स्थान'}
+          </h3>
+          <p className="text-sm font-serif opacity-80 max-w-md mx-auto">
+            {currentLang === 'pb'
+              ? 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਜੋੜੇ ਜਾਣ ਲਈ ਇਹ ਥਾਂ ਤਿਆਰ ਹੈ।'
+              : currentLang === 'en'
+              ? 'This space is cleared and ready for the new sacred Path.'
+              : 'यह स्थान नए पावन पाठ के लिए पूर्णतः रिक्त एवं तैयार है।'}
+          </p>
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              className="min-h-[44px] px-5 py-2 rounded-xl bg-[#8B4513] text-white font-serif font-bold text-xs cursor-pointer"
+            >
+              {currentLang === 'pb' ? 'ਵਾਪਸ ਆਓ' : currentLang === 'en' ? 'Return' : 'वापस आएं'}
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

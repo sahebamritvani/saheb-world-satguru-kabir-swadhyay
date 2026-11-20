@@ -46,7 +46,8 @@ import { signInWithGoogle } from '../lib/firebase';
 import { speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 
-const SHLOKA_DHYANAM_TEXT = `ध्यायतं सद्‌गुरु श्वेतरूप मंगलम् श्वेताम्बरं शोभितम् ।
+const SHLOKA_DHYANAM_TEXT: Record<Language, string> = {
+  hi: `ध्यायतं सद्‌गुरु श्वेतरूप मंगलम् श्वेताम्बरं शोभितम् ।
 कर्णेल कुण्डलं श्वेत शुभ्र मुकुटं हिरामणि मण्डितम् ।।
 नाना माल मुक्तादि शोभित गला प‌द्मासने सुस्थितम् ।
 दयाब्धि धीर सुप्रसन्न वदनं सद्‌गुरु तन्नमामि ।।
@@ -55,14 +56,49 @@ const SHLOKA_DHYANAM_TEXT = `ध्यायतं सद्‌गुरु श�
 चक्रांकित शिर टोप रत्न लसितम् तेजोमयी विग्रहम् ।
 बन्दों सतगुरु योग दण्ड सहितं कब्बीर करुणामयम् ॥
 ध्यान मूलम् गुरु मूर्ति, पूजा मूलम् गुरु पदम् ।
-मन्त्र मूलम् गुरु वाक्यं, मोक्ष मूलम् गुरु कृपा ॥`;
+मन्त्र मूलम् गुरु वाक्यं, मोक्ष मूलम् गुरु कृपा ॥`,
+  pb: `ਧਿਆਯਤੰ ਸਦਗੁਰੂ ਸ਼ਵੇਤਰੂਪ ਮੰਗਲਮ ਸ਼ਵੇਤਾਮ੍ਬਰੰ ਸ਼ੋਭਿਤਮ ।
+ਕਰਣੇਲ ਕੁੰਡਲੰ ਸ਼ਵੇਤ ਸ਼ੁਭ੍ਰ ਮੁਕੁਟੰ ਹੀਰਾਮਣੀ ਮੰਡਿਤਮ ॥
+ਨਾਨਾ ਮਾਲ ਮੁਕ੍ਤਾਦਿ ਸ਼ੋਭਿਤ ਗਲਾ ਪਦਮਾਸਨੇ ਸੁਸਥਿਤਮ ।
+ਦਯਾਬਧਿ ਧੀਰ ਸੁਪ੍ਰਸੰਨ ਵਦਨੰ ਸਦਗੁਰੂ ਤੰਨਮਾਮਿ ॥
+ਦ੍ਵੈ ਪਦਮ ਦ੍ਵੈ ਭੁਜਮ ਪ੍ਰਸੰਨ ਵਦਨੰ ਦ੍ਵੈ ਨੇਤ੍ਰਮ ਦਯਾਲਮ ।
+ਸੇਲੀਕੰਠ ਭਾਲ ਊਰਧਵ ਤਿਲਕਮ ਸ਼ਵੇਤਾਮ੍ਬਰੀ ਮੇਖਲਾ ॥
+ਚਕ੍ਰਾਂਕਿਤ ਸ਼ਿਰ ਟੋਪ ਰਤਨ ਲਸਿਤਮ ਤੇਜੋਮਯੀ ਵਿਗ੍ਰਹਮ ।
+ਬੰਦੋਂ ਸਤਿਗੁਰੂ ਯੋਗ ਦੰਡ ਸਹਿਤੰ ਕਬੀਰ ਕਰੁਣਾਮਯਮ ॥
+ਧਿਆਨ ਮੂਲਮ ਗੁਰੂ ਮੂਰਤਿ, ਪੂਜਾ ਮੂਲਮ ਗੁਰੂ ਪਦਮ ।
+ਮੰਤ੍ਰ ਮੂਲਮ ਗੁਰੂ ਵਾਕਯੰ, ਮੋਕਸ਼ ਮੂਲਮ ਗੁਰੂ ਕ੍ਰਿਪਾ ॥`,
+  en: `Dhyayatam Sadguru Shwetaroop Mangalam Shwetambaram Shobhitam |
+Karnel Kundalam Shwet Shubhra Mukutam Hiramani Manditam ||
+Naana Maal Muktaadi Shobhit Galaa Padmaasane Susthitam |
+Dayaabdhi Dheer Suprasanna Vadanam Sadguru Tannamaami ||
+Dwai Padam Dwai Bhujam Prasanna Vadanam Dwai Netram Dayalam |
+Selikanth Bhaal Oordhva Tilakam Shwetambari Mekhalaa ||
+Chakraankit Shir Top Ratna Lasitam Tejomayi Vigraham |
+Bandon Satguru Yog Dand Sahitam Kabbeer Karunaamayam ||
+Dhyaan Moolam Guru Moorti, Poojaa Moolam Guru Padam |
+Mantra Moolam Guru Vaakyam, Moksha Moolam Guru Kripaa ||`,
+};
 
-const VINTI_TEXT = `सत्य कबीर गुरु बालापीर, लड़के बच्चे होय फकीर।
+const VINTI_TEXT: Record<Language, string> = {
+  hi: `सत्य कबीर गुरु बालापीर, लड़के बच्चे होय फकीर।
 सूखी नदी बहावे नीर, भूखे को खिलावे खीर ॥
 नंगे को पहिरावे चीर, इतना बांटे सत्य कबीर ।
 सत्य कबीर का बालका, पानी पीवे पताल का ॥
 निशाना मारे काल को, भजो सत्यनाम को ।
-पावो सुखधाम को, मेटो जम जाल को ।।`;
+पावो सुखधाम को, मेटो जम जाल को ।।`,
+  pb: `ਸਤਯ ਕਬੀਰ ਗੁਰੂ ਬਾਲਾਪੀਰ, ਲੜਕੇ ਬੱਚੇ ਹੋਇ ਫ਼ਕੀਰ।
+ਸੁੱਕੀ ਨਦੀ ਬਹਾਵੇ ਨੀਰ, ਭੁੱਖੇ ਕੋ ਖਿਲਾਵੇ ਖੀਰ ॥
+ਨੰਗੇ ਕੋ ਪਹਿਰਾਵੇ ਚੀਰ, ਇਤਨਾ ਬਾਂਟੇ ਸਤਯ ਕਬੀਰ ।
+ਸਤਯ ਕਬੀਰ ਕਾ ਬਾਲਕਾ, ਪਾਣੀ ਪੀਵੇ ਪਤਾਲ ਕਾ ॥
+ਨਿਸ਼ਾਨਾ ਮਾਰੇ ਕਾਲ ਕੋ, ਭਜੋ ਸਤਯਨਾਮ ਕੋ ।
+ਪਾਵੋ ਸੁਖਧਾਮ ਕੋ, ਮੇਟੋ ਜਮ ਜਾਲ ਕੋ ॥`,
+  en: `Satya Kabir Guru Balapeer, ladke bachche hoye fakeer.
+Sookhi nadi bahaave neer, bhookhe ko khilaave kheer ||
+Nange ko pahiraave cheer, itnaa baante Satya Kabir.
+Satya Kabir kaa baalkaa, paani peeve pataal kaa ||
+Nishaanaa maare Kaal ko, bhajo Satyanaam ko.
+Paavo sukhdhaam ko, meto Jam jaal ko ||`,
+};
 
 interface DivineDarshanModuleProps {
   language: Language;
@@ -72,12 +108,13 @@ interface DivineDarshanModuleProps {
 }
 
 export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
-  language,
+  language: propLanguage,
   onClose,
   onOpenBlessing,
 }) => {
   const { theme } = useAppTheme();
-  const { setLanguage } = useLanguage();
+  const { language: contextLanguage, setLanguage } = useLanguage();
+  const language: Language = contextLanguage || propLanguage || 'hi';
 
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
   const [isFirebaseAdmin, setIsFirebaseAdmin] = useState<boolean>(() => isFirebaseAdminSessionActive());
@@ -127,6 +164,11 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
       speechReciter.stop();
     };
   }, []);
+
+  useEffect(() => {
+    speechReciter.stop();
+    setSpeakingSection(null);
+  }, [language]);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -291,7 +333,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
     setSpeakingSection(section);
     speechReciter.speak(
       text,
-      'hi',
+      language,
       () => setSpeakingSection(null),
       () => setSpeakingSection(null)
     );
@@ -299,14 +341,28 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
 
   const handleCopySacredText = async (section: 'dhyan' | 'vinti', title: string, text: string) => {
     sacredHaptics.lightTap();
-    const formatted = `।। सत्यनाम ।।\n\n${title}\n\n${text}\n\n।। साहेब बंदगी साहेब ।।`;
+    const opening =
+      language === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : language === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।';
+    const closing =
+      language === 'pb'
+        ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।'
+        : language === 'en'
+        ? '|| Saheb Bandagi Saheb ||'
+        : '।। साहेब बंदगी साहेब ।।';
+    const formatted = `${opening}\n\n${title}\n\n${text}\n\n${closing}`;
     try {
       await navigator.clipboard.writeText(formatted);
       setCopiedSection(section);
       sacredHaptics.successVibration();
       setTimeout(() => setCopiedSection(null), 2200);
     } catch {
-      showToast('कॉपी करने में त्रुटि हुई');
+      showToast(
+        language === 'pb'
+          ? 'ਕਾਪੀ ਕਰਨ ਵਿੱਚ ਗਲਤੀ ਹੋਈ'
+          : language === 'en'
+          ? 'Unable to copy text'
+          : 'कॉपी करने में त्रुटि हुई'
+      );
     }
   };
 
@@ -766,7 +822,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
           <div className="flex items-center gap-2 flex-wrap">
             <button
               type="button"
-              onClick={() => handleToggleRecite('dhyan', SHLOKA_DHYANAM_TEXT)}
+              onClick={() => handleToggleRecite('dhyan', SHLOKA_DHYANAM_TEXT[language])}
               style={{
                 backgroundColor: speakingSection === 'dhyan' ? theme.sacredMaroon : theme.bgSecondary,
                 borderColor: speakingSection === 'dhyan' ? theme.sacredMaroon : theme.cardBorder,
@@ -775,17 +831,47 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
               className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
             >
               {speakingSection === 'dhyan' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
-              <span>{speakingSection === 'dhyan' ? 'रोकें' : 'सुनें'}</span>
+              <span>
+                {speakingSection === 'dhyan'
+                  ? language === 'pb'
+                    ? 'ਰੋਕੋ'
+                    : language === 'en'
+                    ? 'Stop'
+                    : 'रोकें'
+                  : language === 'pb'
+                  ? 'ਸੁਣੋ'
+                  : language === 'en'
+                  ? 'Listen'
+                  : 'सुनें'}
+              </span>
             </button>
 
             <button
               type="button"
-              onClick={() => handleCopySacredText('dhyan', 'श्लोक ध्यानं', SHLOKA_DHYANAM_TEXT)}
+              onClick={() =>
+                handleCopySacredText(
+                  'dhyan',
+                  language === 'pb' ? 'ਸ਼ਲੋਕ ਧਿਆਨੰ' : language === 'en' ? 'Shloka Dhyanam' : 'श्लोक ध्यानं',
+                  SHLOKA_DHYANAM_TEXT[language]
+                )
+              }
               style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
               className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
             >
               {copiedSection === 'dhyan' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-amber-600" />}
-              <span>{copiedSection === 'dhyan' ? 'कॉपी हुआ' : 'कॉपी'}</span>
+              <span>
+                {copiedSection === 'dhyan'
+                  ? language === 'pb'
+                    ? 'ਕਾਪੀ ਹੋਇਆ'
+                    : language === 'en'
+                    ? 'Copied'
+                    : 'कॉपी हुआ'
+                  : language === 'pb'
+                  ? 'ਕਾਪੀ'
+                  : language === 'en'
+                  ? 'Copy'
+                  : 'कॉपी'}
+              </span>
             </button>
 
             <button
@@ -805,12 +891,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
               <span>
                 {showDhyanShloka
                   ? language === 'pb'
-                    ? 'ਲੁਕਾਓ (Hide)'
+                    ? 'ਲੁਕਾਓ'
                     : language === 'en'
                     ? 'Hide Shloka'
                     : 'छुपाओ (Hide)'
                   : language === 'pb'
-                  ? 'ਦਿਖਾਓ (Show)'
+                  ? 'ਦਿਖਾਓ'
                   : language === 'en'
                   ? 'Show Shloka'
                   : 'दिखाओ (Show)'}
@@ -835,7 +921,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   style={{ color: theme.sacredMaroon }}
                   className="font-serif font-bold text-sm sm:text-lg leading-loose whitespace-pre-line tracking-wide"
                 >
-                  {SHLOKA_DHYANAM_TEXT}
+                  {SHLOKA_DHYANAM_TEXT[language]}
                 </p>
 
                 <div className="pt-2 flex justify-center">
@@ -851,12 +937,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                     <span>
                       {showDhyanMeaning
                         ? language === 'pb'
-                          ? 'ਗਹਿਰਾ ਭਾਵਾਰਥ ਲੁਕਾਓ (छुपाओ)'
+                          ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਲੁਕਾਓ'
                           : language === 'en'
                           ? 'Hide Deep Spiritual Meaning'
                           : 'गहन आध्यात्मिक भावार्थ छुपाओ'
                         : language === 'pb'
-                        ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਦਿਖਾਓ (दिखाओ)'
+                        ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਦਿਖਾਓ'
                         : language === 'en'
                         ? 'Show Deep Spiritual Meaning'
                         : 'गहन आध्यात्मिक भावार्थ दिखाओ'}
@@ -966,7 +1052,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
           <div className="flex items-center gap-2 flex-wrap">
             <button
               type="button"
-              onClick={() => handleToggleRecite('vinti', VINTI_TEXT)}
+              onClick={() => handleToggleRecite('vinti', VINTI_TEXT[language])}
               style={{
                 backgroundColor: speakingSection === 'vinti' ? theme.sacredMaroon : theme.bgSecondary,
                 borderColor: speakingSection === 'vinti' ? theme.sacredMaroon : theme.cardBorder,
@@ -975,17 +1061,47 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
               className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
             >
               {speakingSection === 'vinti' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
-              <span>{speakingSection === 'vinti' ? 'रोकें' : 'सुनें'}</span>
+              <span>
+                {speakingSection === 'vinti'
+                  ? language === 'pb'
+                    ? 'ਰੋਕੋ'
+                    : language === 'en'
+                    ? 'Stop'
+                    : 'रोकें'
+                  : language === 'pb'
+                  ? 'ਸੁਣੋ'
+                  : language === 'en'
+                  ? 'Listen'
+                  : 'सुनें'}
+              </span>
             </button>
 
             <button
               type="button"
-              onClick={() => handleCopySacredText('vinti', 'पावन विनती', VINTI_TEXT)}
+              onClick={() =>
+                handleCopySacredText(
+                  'vinti',
+                  language === 'pb' ? 'ਪਾਵਨ ਵਿਨਤੀ' : language === 'en' ? 'Sacred Vinti' : 'पावन विनती',
+                  VINTI_TEXT[language]
+                )
+              }
               style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
               className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
             >
               {copiedSection === 'vinti' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-amber-600" />}
-              <span>{copiedSection === 'vinti' ? 'कॉपी हुआ' : 'कॉपी'}</span>
+              <span>
+                {copiedSection === 'vinti'
+                  ? language === 'pb'
+                    ? 'ਕਾਪੀ ਹੋਇਆ'
+                    : language === 'en'
+                    ? 'Copied'
+                    : 'कॉपी हुआ'
+                  : language === 'pb'
+                  ? 'ਕਾਪੀ'
+                  : language === 'en'
+                  ? 'Copy'
+                  : 'कॉपी'}
+              </span>
             </button>
 
             <button
@@ -1005,12 +1121,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
               <span>
                 {showVinti
                   ? language === 'pb'
-                    ? 'ਲੁਕਾਓ (Hide)'
+                    ? 'ਲੁਕਾਓ'
                     : language === 'en'
                     ? 'Hide Vinti'
                     : 'छुपाओ (Hide)'
                   : language === 'pb'
-                  ? 'ਦਿਖਾਓ (Show)'
+                  ? 'ਦਿਖਾਓ'
                   : language === 'en'
                   ? 'Show Vinti'
                   : 'दिखाओ (Show)'}
@@ -1035,7 +1151,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   style={{ color: theme.sacredMaroon }}
                   className="font-serif font-bold text-sm sm:text-lg leading-loose whitespace-pre-line tracking-wide"
                 >
-                  {VINTI_TEXT}
+                  {VINTI_TEXT[language]}
                 </p>
 
                 <div className="pt-2 flex justify-center">
@@ -1051,12 +1167,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                     <span>
                       {showVintiMeaning
                         ? language === 'pb'
-                          ? 'ਗਹਿਰਾ ਭਾਵਾਰਥ ਲੁਕਾਓ (छुपाओ)'
+                          ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਲੁਕਾਓ'
                           : language === 'en'
                           ? 'Hide Deep Spiritual Meaning'
                           : 'गहन आध्यात्मिक भावार्थ छुपाओ'
                         : language === 'pb'
-                        ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਦਿਖਾਓ (दिखाओ)'
+                        ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਦਿਖਾਓ'
                         : language === 'en'
                         ? 'Show Deep Spiritual Meaning'
                         : 'गहन आध्यात्मिक भावार्थ दिखाओ'}

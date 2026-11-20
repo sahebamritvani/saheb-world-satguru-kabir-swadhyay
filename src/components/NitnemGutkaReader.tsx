@@ -1868,7 +1868,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
       const list = versesListRef.current;
       if (vIdx < 0 || vIdx >= list.length) {
         const liveSection = currentSectionRef.current;
-        const { nextSection, currentIndex, totalCount } = getGranthPlaylistContext(liveSection.id);
+        const { nextSection, currentIndex, totalCount } = getGranthPlaylistContext(liveSection?.id);
 
         if (pathContinuityModeRef.current === 'full-path' && nextSection) {
           setIsAudioPaused(false);
@@ -2670,9 +2670,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         e.stopPropagation();
                                         handleSelectSection(targetSectionId);
                                         setViewMode('reading');
-                                        const loadedSec = String(matchingSection.verses?.[0]?.id ?? '').includes('-placeholder-')
-                                          ? await loadNitnemSectionById(targetSectionId)
-                                          : matchingSection;
+                                        const loadedSec =
+                                          !matchingSection || String(matchingSection.verses?.[0]?.id ?? '').includes('-placeholder-')
+                                            ? await loadNitnemSectionById(targetSectionId)
+                                            : matchingSection;
                                         if (loadedSec?.verses && loadedSec.verses.length > 0) {
                                           setTimeout(() => handlePlayVoice(loadedSec.verses[0]), 300);
                                         }
@@ -3334,7 +3335,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
                                     const isTwoLineInterval = (lIdx % 2 === 1) || (lIdx === lines.length - 1 && lines.length === 1);
 
-                                    if (isTargetPrayer && isTwoLineInterval && verse.bhavarth) {
+                                    if (isTargetPrayer && isTwoLineInterval && verse.bhavarth && isVerseBhavarthVisible(verse.id)) {
                                       return (
                                         <div className="my-3.5 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 dark:from-amber-950/40 dark:to-orange-950/30 border border-amber-400/40 dark:border-amber-700/50 shadow-xs text-xs sm:text-sm text-left not-italic font-normal">
                                           <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-amber-400/25 text-amber-900 dark:text-amber-300 font-bold">
@@ -3879,7 +3880,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               <span>
                                 {haziriMarkedToday
                                   ? (language === 'pb'
-                                      ? (justCompletedHaziriPath ? 'ਅੱਜ ਦੀ ਨਿਤनेम ਹਾਜ਼ਰੀ ਦਰਜ ਹੋ ਗਈ ✓' : 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਹੈ ✓')
+                                      ? (justCompletedHaziriPath ? 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਹੋ ਗਈ ✓' : 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਹੈ ✓')
                                       : language === 'en'
                                       ? "Today's Nitnem Haziri Marked ✓"
                                       : 'आज की नितनेम हाज़िरी दर्ज है ✓')

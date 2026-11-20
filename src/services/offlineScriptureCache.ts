@@ -101,7 +101,7 @@ export class OfflineScriptureCacheService {
       const status: ScriptureCacheStatus = {
         isCached: true,
         totalVersesCached: 2500,
-        nitnemSectionsCount: 65,
+        nitnemSectionsCount: 0,
         granthsCount: 5,
         sakhisCount: 1009,
         cachedChaptersCount: this.lruEntries.length,
@@ -270,7 +270,7 @@ export class OfflineScriptureCacheService {
     return {
       isCached: true,
       totalVersesCached: 2500,
-      nitnemSectionsCount: 65,
+      nitnemSectionsCount: 0,
       granthsCount: 5,
       sakhisCount: 1009,
       cachedChaptersCount: this.lruEntries.length,
