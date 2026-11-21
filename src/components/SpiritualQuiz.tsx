@@ -7,6 +7,7 @@ import { useAppTheme } from '../theme/ThemeContext';
 import { satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 import { UlatvasiQuiz } from './UlatvasiQuiz';
+import { buildFiveDimensionQuiz } from '../services/quizGenerator';
 
 interface SpiritualQuizProps {
   sakhi: Sakhi;
@@ -43,6 +44,29 @@ export const SpiritualQuiz: React.FC<SpiritualQuizProps> = ({
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState<ShuffledQuestion[]>([]);
+
+  const resetQuiz = () => {
+    const generated = buildFiveDimensionQuiz(sakhi, language);
+    const prepared: ShuffledQuestion[] = generated.map((q) => ({
+      id: q.id,
+      questionText: q.question,
+      options: q.options,
+      correctAnswerText: q.options[q.correctIndex] ?? q.options[0],
+      explanation: q.explanation,
+    }));
+
+    setShuffledQuestions(prepared);
+    setCurrentIndex(0);
+    setSelectedOption(null);
+    setIsAnswerChecked(false);
+    setScore(0);
+    setIsFinished(false);
+  };
+
+  // Prepare & shuffle questions whenever sakhi or language changes
+  useEffect(() => {
+    resetQuiz();
+  }, [sakhi, language]);
 
   // If in Ulatvasi Mode, render the full 3D Ulatvasi Gaming Quiz with Leaderboard!
   if (activeQuizMode === 'ulatvasi') {
@@ -86,42 +110,6 @@ export const SpiritualQuiz: React.FC<SpiritualQuizProps> = ({
     );
   }
 
-  // Prepare & shuffle questions whenever sakhi or language changes
-  useEffect(() => {
-    resetQuiz();
-  }, [sakhi, language]);
-
-  const resetQuiz = () => {
-    const quizItems = sakhi.quiz || [];
-    const prepared: ShuffledQuestion[] = quizItems.map((q) => {
-      const qText = q.question[language];
-      const originalOptions = q.options[language];
-      const correctOriginal = originalOptions[q.correctIndex];
-
-      // Fisher-Yates shuffle options randomly
-      const shuffled = [...originalOptions];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-
-      return {
-        id: q.id,
-        questionText: qText,
-        options: shuffled,
-        correctAnswerText: correctOriginal,
-        explanation: q.explanation[language],
-      };
-    });
-
-    setShuffledQuestions(prepared);
-    setCurrentIndex(0);
-    setSelectedOption(null);
-    setIsAnswerChecked(false);
-    setScore(0);
-    setIsFinished(false);
-  };
-
   const handleSelectOption = (index: number) => {
     if (isAnswerChecked) return;
     sacredHaptics.lightTap();
@@ -157,7 +145,7 @@ export const SpiritualQuiz: React.FC<SpiritualQuizProps> = ({
       setIsAnswerChecked(false);
     } else {
       setIsFinished(true);
-      const finalScore = score + (selectedOption !== null && shuffledQuestions[currentIndex].options[selectedOption] === shuffledQuestions[currentIndex].correctAnswerText ? 1 : 0);
+      const finalScore = score;
       onCompleteQuiz(finalScore);
       // If score is high (>= 3), trigger triumphant vibration & offer divine blessing
       if (finalScore >= 3) {

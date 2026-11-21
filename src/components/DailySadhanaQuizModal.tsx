@@ -17,6 +17,7 @@ import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { satyanaamAudio } from '../services/audioDhun';
+import { buildFiveDimensionQuiz } from '../services/quizGenerator';
 
 interface DailySadhanaQuizModalProps {
   isOpen: boolean;
@@ -28,11 +29,11 @@ interface DailySadhanaQuizModalProps {
 }
 
 interface QuestionItem {
-  id: number;
-  question: { hi: string; pb: string; en: string };
-  options: Array<{ id: number; text: { hi: string; pb: string; en: string } }>;
+  id: string;
+  question: string;
+  options: Array<{ id: number; text: string }>;
   correctOptionId: number;
-  explanation: { hi: string; pb: string; en: string };
+  explanation: string;
 }
 
 export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
@@ -80,140 +81,23 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [isQuizCompleted, setIsQuizCompleted] = useState<boolean>(false);
   const [savedToDiary, setSavedToDiary] = useState<boolean>(false);
+  const [shuffleSeed, setShuffleSeed] = useState<number>(0);
 
-  // Generate 3 contextual Sadhana questions tailored to the active Daily Sakhi
+  // Generate 5 randomized, verse-specific Sadhana questions tailored to the active Sakhi
   const quizQuestions: QuestionItem[] = useMemo(() => {
-    const textHi = sakhi.text.hi;
-    const bhavarthHi = sakhi.bhavarth.hi;
-    const category = sakhi.category || 'ज्ञान';
-
-    return [
-      {
-        id: 1,
-        question: {
-          hi: `आज की पावन साखी #${sakhi.number} का मूल आध्यात्मिक संदेश क्या है?`,
-          pb: `ਅੱਜ ਦੀ ਪਾਵਨ ਸਾਖੀ #${sakhi.number} ਦਾ ਮੂਲ ਅਧਿਆਤਮਕ ਸੰਦੇਸ਼ ਕੀ ਹੈ?`,
-          en: `What is the primary spiritual essence of today's Sacred Sakhi #${sakhi.number}?`
-        },
-        options: [
-          {
-            id: 1,
-            text: {
-              hi: sakhi.bhavarth.hi.length > 80 ? sakhi.bhavarth.hi.slice(0, 80) + '...' : sakhi.bhavarth.hi,
-              pb: sakhi.bhavarth.pb.length > 80 ? sakhi.bhavarth.pb.slice(0, 80) + '...' : sakhi.bhavarth.pb,
-              en: sakhi.bhavarth.en.length > 80 ? sakhi.bhavarth.en.slice(0, 80) + '...' : sakhi.bhavarth.en,
-            }
-          },
-          {
-            id: 2,
-            text: {
-              hi: 'केवल बाह्य आडंबर, कर्मकांड और सांसारिक दिखावा ही धर्म का मूल लक्ष्य है।',
-              pb: 'ਸਿਰਫ਼ ਬਾਹਰੀ ਕਰਮਕਾਂਡ ਅਤੇ ਦਿਖਾਵਾ ਹੀ ਧਰਮ ਦਾ ਮੁੱਖ ਟੀਚਾ ਹੈ।',
-              en: 'Merely external rituals and worldly pretensions are the true spiritual path.'
-            }
-          },
-          {
-            id: 3,
-            text: {
-              hi: 'संसार में संचय और अहंकार बढ़ाना ही जीव की मुक्ति का एकमात्र साधन है।',
-              pb: 'ਸੰਸਾਰ ਵਿੱਚ ਹਉਮੈ ਅਤੇ ਧਨ ਜੋੜਨਾ ਹੀ ਜੀਵ ਦੀ ਮੁਕਤੀ ਦਾ ਇਕੋ-ਇਕ ਸਾਧਨ ਹੈ।',
-              en: 'Accumulating worldly ego and wealth is the sole means of liberation.'
-            }
-          }
-        ],
-        correctOptionId: 1,
-        explanation: {
-          hi: `सद्गुरु कबीर साहेब स्पष्ट करते हैं: "${bhavarthHi}"।`,
-          pb: `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: "${sakhi.bhavarth.pb}"।`,
-          en: `Satguru Kabir Saheb illuminates: "${sakhi.bhavarth.en}".`
-        }
-      },
-      {
-        id: 2,
-        question: {
-          hi: `साखी में निहित आध्यात्मिक श्रेणी "${category}" का साधक के जीवन में क्या महत्व है?`,
-          pb: `ਸਾਖੀ ਵਿੱਚ ਦਰਜ ਅਧਿਆਤਮਕ ਸ਼੍ਰੇਣੀ "${category}" ਦਾ ਸਾਧਕ ਦੇ ਜੀਵਨ ਵਿੱਚ ਕੀ ਮਹੱਤਵ ਹੈ?`,
-          en: `What is the spiritual significance of the realm "${category}" in a seeker's daily life?`
-        },
-        options: [
-          {
-            id: 1,
-            text: {
-              hi: 'यह मन के विकारों को बढ़ाकर आत्मा को भ्रम में डालती है।',
-              pb: 'ਇਹ ਮਨ ਦੇ ਵਿਕਾਰਾਂ ਨੂੰ ਵਧਾ ਕੇ ਆਤਮਾ ਨੂੰ ਭਰਮ ਵਿੱਚ ਪਾਉਂਦੀ ਹੈ।',
-              en: 'It increases worldly distractions and creates spiritual illusions.'
-            }
-          },
-          {
-            id: 2,
-            text: {
-              hi: 'यह अंतर्मुखी चेतना, सत्यनाम स्मरण एवं सद्गुरु कृपा का प्रत्यक्ष द्वार खोलती है।',
-              pb: 'ਇਹ ਅੰਤਰਮੁਖੀ ਚੇਤਨਾ, ਸਤਯਨਾਮ ਸਿਮਰਨ ਅਤੇ ਸਤਿਗੁਰੂ ਕ੍ਰਿਪਾ ਦਾ ਦੁਆਰ ਖੋਲ੍ਹਦੀ ਹੈ।',
-              en: 'It awakens inner awareness, Satyanaam remembrance, and Satguru grace.'
-            }
-          },
-          {
-            id: 3,
-            text: {
-              hi: 'इसका किसी भी प्रकार के आत्म-कल्याण से कोई संबंध नहीं है।',
-              pb: 'ਇਸਦਾ ਆਤਮ-ਕਲਿਆਣ ਨਾਲ ਕੋਈ ਸੰਬੰਧ ਨਹੀਂ ਹੈ।',
-              en: 'It holds no practical relevance to spiritual self-realization.'
-            }
-          }
-        ],
-        correctOptionId: 2,
-        explanation: {
-          hi: 'कबीर साहेब की वाणी साधक को बाहर से हटाकर हृदय मंदिर में स्थिर करती है।',
-          pb: 'ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਸਾਧਕ ਨੂੰ ਬਾਹਰੋਂ ਮੋੜ ਕੇ ਹਿਰਦੇ ਵਿੱਚ ਸਥਿਰ ਕਰਦੀ ਹੈ।',
-          en: 'Kabir Saheb’s divine verse guides the seeker inward toward the soul sanctuary.'
-        }
-      },
-      {
-        id: 3,
-        question: {
-          hi: 'आज के दिन इस पावन साखी को व्यावहारिक साधना में कैसे आत्मसात करें?',
-          pb: 'ਅੱਜ ਦੇ ਦਿਨ ਇਸ ਪਾਵਨ ਸਾਖੀ ਨੂੰ ਰੋਜ਼ਾਨਾ ਅਭਿਆਸ ਵਿੱਚ ਕਿਵੇਂ ਲਾਗੂ ਕਰੀਏ?',
-          en: 'How should one apply the contemplation of this Sacred Sakhi in practical daily life today?'
-        },
-        options: [
-          {
-            id: 1,
-            text: {
-              hi: 'क्रोध और अभिमान में दूसरों की निंदा करके समय बिताना।',
-              pb: 'ਗੁੱਸੇ ਅਤੇ ਹੰਕਾਰ ਵਿੱਚ ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਾ ਕਰਨਾ।',
-              en: 'Engaging in anger, ego, and criticism of others.'
-            }
-          },
-          {
-            id: 2,
-            text: {
-              hi: 'सांसारिक मोह-माया में लिप्त होकर स्मरण को भूल जाना।',
-              pb: 'ਮੋਹ-ਮਾਇਆ ਵਿੱਚ ਲਿਪਤ ਹੋ ਕੇ ਸਿਮਰਨ ਨੂੰ ਵਿਸਾਰ ਦੇਣਾ।',
-              en: 'Becoming engrossed in worldly attachments and forgetting remembrance.'
-            }
-          },
-          {
-            id: 3,
-            text: {
-              hi: 'शांत मन से श्वास-श्वास में "सत्यनाम" का जाप एवं नम्रता, दया व सेवा का आचरण करना।',
-              pb: 'ਸ਼ਾਂਤ ਮਨ ਨਾਲ ਸਾਸ-ਸਾਸ "ਸਤਯਨਾਮ" ਜਪਣਾ ਅਤੇ ਨਿਮਰਤਾ, ਦਇਆ ਤੇ ਸੇਵਾ ਅਪਣਾਉਣਾ।',
-              en: 'Quietly contemplating "Satyanaam" in every breath with humility, compassion & selfless service.'
-            }
-          }
-        ],
-        correctOptionId: 3,
-        explanation: {
-          hi: 'सद्गुरु की सीख है: "साधु भूखा भाव का, धन का भूखा नाहिं"। सत्यनाम और दया ही सच्चा धर्म है।',
-          pb: 'ਸਤਿਗੁਰੂ ਦੀ ਸਿੱਖਿਆ ਹੈ: "ਸਾਧੂ ਭੂਖਾ ਭਾਵ ਕਾ, ਧਨ ਕਾ ਭੂਖਾ ਨਾਹਿਂ"। ਸਤਯਨਾਮ ਅਤੇ ਦਇਆ ਹੀ ਸੱਚਾ ਧਰਮ ਹੈ।',
-          en: 'The Master teaches: Pure devotion, truthful living, and inner compassion constitute true Sadhana.'
-        }
-      }
-    ];
-  }, [sakhi]);
+    const generated = buildFiveDimensionQuiz(sakhi, language);
+    return generated.map((q) => ({
+      id: q.id,
+      question: q.question,
+      options: q.options.map((optText, idx) => ({ id: idx + 1, text: optText })),
+      correctOptionId: q.correctIndex + 1,
+      explanation: q.explanation,
+    }));
+  }, [sakhi, language, shuffleSeed]);
 
   if (!isOpen) return null;
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
+  const currentQuestion = quizQuestions[currentQuestionIndex] || quizQuestions[0];
   const selectedAnswerId = selectedAnswers[currentQuestionIndex];
   const isCurrentAnswered = selectedAnswerId !== undefined;
 
@@ -253,12 +137,18 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
     setCurrentQuestionIndex(0);
     setIsQuizCompleted(false);
     setSavedToDiary(false);
+    setShuffleSeed((s) => s + 1);
   };
 
   const handleSaveQuizResultToDiary = () => {
     if (onSaveToDiary && !savedToDiary) {
       sacredHaptics.lightTap();
-      const reflection = `[दैनिक साधना प्रश्नोत्तरी पूर्ण] साखी #${sakhi.number} मनन। ३ में से ३ प्रश्न सफल। सत्यनाम साहेब।`;
+      const reflection =
+        language === 'pb'
+          ? `[ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਪ੍ਰਸ਼ਨੋਤਰੀ ਪੂਰਨ] ਸਾਖੀ #${sakhi.number} ਮਨਨ। ${quizQuestions.length} ਵਿੱਚੋਂ ${score} ਪ੍ਰਸ਼ਨ ਸਫਲ। ਸਤਯਨਾਮ ਸਾਹੇਬ।`
+          : language === 'en'
+          ? `[Daily Sadhana Quiz Completed] Sakhi #${sakhi.number} reflection. Scored ${score} of ${quizQuestions.length}. Satyanaam Saheb.`
+          : `[दैनिक साधना प्रश्नोत्तरी पूर्ण] साखी #${sakhi.number} मनन। ${quizQuestions.length} में से ${score} प्रश्न सफल। सत्यनाम साहेब।`;
       onSaveToDiary(reflection);
       setSavedToDiary(true);
     }
@@ -309,7 +199,11 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
               style={{ color: isDarkMode ? '#FDE68A' : theme.sacredMaroon }}
               className="font-serif font-black text-xs sm:text-sm tracking-wide"
             >
-              {language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਕੁਇਜ਼' : language === 'en' ? 'Daily Sadhana Quiz' : 'दैनिक साधना प्रश्नोत्तरी (3 प्रश्न)'}
+              {language === 'pb'
+                ? `ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਕੁਇਜ਼ (${quizQuestions.length} ਪ੍ਰਸ਼ਨ)`
+                : language === 'en'
+                ? `Daily Sadhana Quiz (${quizQuestions.length} Questions)`
+                : `दैनिक साधना प्रश्नोत्तरी (${quizQuestions.length} प्रश्न)`}
             </span>
           </div>
 
@@ -341,9 +235,9 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
                   </span>
                   <p 
                     style={{ color: isDarkMode ? '#FFFDF7' : theme.textPrimary }}
-                    className="font-serif font-bold text-xs sm:text-sm leading-snug italic"
+                    className="font-serif font-bold text-xs sm:text-sm leading-snug italic whitespace-pre-line"
                   >
-                    "{sakhi.text[language]}"
+                    "{sakhi.text[language] || sakhi.text.hi}"
                   </p>
                 </div>
               </div>
@@ -351,10 +245,14 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
               {/* Progress & Step Bar */}
               <div className="flex items-center justify-between text-xs font-mono font-bold text-amber-700 dark:text-amber-300 pt-1">
                 <span>
-                  {language === 'pb' ? `ਪ੍ਰਸ਼ਨ ${currentQuestionIndex + 1} / 3` : language === 'en' ? `Question ${currentQuestionIndex + 1} of 3` : `प्रश्न ${currentQuestionIndex + 1} / 3`}
+                  {language === 'pb'
+                    ? `ਪ੍ਰਸ਼ਨ ${currentQuestionIndex + 1} / ${quizQuestions.length}`
+                    : language === 'en'
+                    ? `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`
+                    : `प्रश्न ${currentQuestionIndex + 1} / ${quizQuestions.length}`}
                 </span>
                 <div className="flex items-center gap-1">
-                  {[0, 1, 2].map((idx) => (
+                  {quizQuestions.map((_, idx) => (
                     <div
                       key={idx}
                       className={`h-2 rounded-full transition-all ${
@@ -374,7 +272,7 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
                 style={{ color: isDarkMode ? '#FFFDF7' : theme.textPrimary }}
                 className={`font-serif font-black leading-snug pt-1 ${questionFontSizes[fontSize] || questionFontSizes.medium}`}
               >
-                {currentQuestion.question[language]}
+                {currentQuestion.question}
               </h3>
 
               {/* Options Matrix */}
@@ -423,7 +321,7 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
                           String.fromCharCode(65 + opt.id - 1)
                         )}
                       </div>
-                      <span className="flex-1 leading-snug">{opt.text[language]}</span>
+                      <span className="flex-1 leading-snug">{opt.text}</span>
                     </button>
                   );
                 })}
@@ -442,13 +340,13 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
                 >
                   <div className="flex items-center gap-1.5 font-black text-amber-700 dark:text-amber-300">
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>{language === 'pb' ? 'ਅਧਿਆਤਮਕ ਭੇਦ / ਵਿਆਖਿਆ' : language === 'en' ? 'Spiritual Insight' : 'आध्यात्मिक रहस्य एवं व्याख्या'}</span>
+                    <span>{language === 'pb' ? 'ਸਹੀ ਉੱਤਰ ਦੀ ਵਿਆਖਿਆ' : language === 'en' ? 'Answer Explanation' : 'सही उत्तर की व्याख्या'}</span>
                   </div>
                   <p 
                     style={{ color: isDarkMode ? '#FFFDF7' : '#78350F' }}
                     className={explanationFontSizes[fontSize] || explanationFontSizes.medium}
                   >
-                    {currentQuestion.explanation[language]}
+                    {currentQuestion.explanation}
                   </p>
                 </motion.div>
               )}
@@ -490,16 +388,16 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
                   style={{ color: isDarkMode ? '#FFFDF7' : theme.sacredMaroon }}
                   className="font-serif font-black text-xl sm:text-2xl"
                 >
-                  {score === 3 
+                  {score >= quizQuestions.length
                     ? (language === 'pb' ? '🌹 ਪੂਰਨ ਸਾਧਕ ਪਾਵਨ ਸਿੱਧੀ' : language === 'en' ? '🌹 Perfect Sadhaka Insight' : '🌹 पूर्ण साधक पावन सिद्धि')
                     : (language === 'pb' ? '✨ ਸਾਧਨਾ ਅਭਿਆਸ ਸਫਲ' : language === 'en' ? '✨ Divine Practice Accomplished' : '✨ साधना अभ्यास सफल')}
                 </h3>
                 <p style={{ color: isDarkMode ? '#FDE68A' : theme.textSecondary }} className="text-xs sm:text-sm font-serif">
                   {language === 'pb'
-                    ? `ਤੁਸੀਂ ੩ ਵਿੱਚੋਂ ${score} ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਉੱਤਰ ਸਫਲਤਾਪੂਰਵਕ ਦਿੱਤੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਸਦਾ ਬਣੀ ਰਹੇ।`
+                    ? `ਤੁਸੀਂ ${quizQuestions.length} ਵਿੱਚੋਂ ${score} ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਉੱਤਰ ਸਫਲਤਾਪੂਰਵਕ ਦਿੱਤੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਸਦਾ ਬਣੀ ਰਹੇ।`
                     : language === 'en'
-                    ? `You scored ${score} out of 3. May the divine wisdom of Satguru Kabir Saheb shine in your life.`
-                    : `आपने ३ में से ${score} प्रश्नों का सटीक उत्तर दिया। सद्गुरु कबीर साहेब की पावन कृपा सदैव बनी रहे।`}
+                    ? `You scored ${score} out of ${quizQuestions.length}. May the divine wisdom of Satguru Kabir Saheb shine in your life.`
+                    : `आपने ${quizQuestions.length} में से ${score} प्रश्नों का सटीक उत्तर दिया। सतगुरु कबीर साहेब की पावन कृपा सदैव बनी रहे।`}
                 </p>
               </div>
 

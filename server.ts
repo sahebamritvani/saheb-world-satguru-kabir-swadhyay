@@ -297,31 +297,38 @@ Please return a valid JSON object ONLY (without markdown enclosing codeblocks or
 
 CRITICAL STRICTNESS RULES (MUST FOLLOW):
 
-1. DYNAMIC & SAKHI-SPECIFIC CONTENT (NO STATIC TEMPLATES):
-   - Whether generating for the 'Daily Sakhi' or any numbered Sakhi, EVERY dynamic step (Steps 2 to 11) MUST be freshly generated and 100% tailored to the EXACT central theme, metaphor, and moral of that specific Sakhi.
-   - ZERO GENERIC FILLER: Do NOT reuse generic spiritual templates (like charity, wealth, caste, or unrelated stories) unless the specific Sakhi explicitly discusses them.
+1. ZERO REPETITION ACROSS STEPS (Step 1 vs Step 4 vs Step 6):
+   - NEVER use boilerplate wrappers like "इस विशिष्ट साखी का अंतर्मन विश्लेषण..." and NEVER repeat the literal translation across Step 4 or Step 6.
+   - Step 4 (bhavarth / deepSatsangGyan / mindMayaAnalysis):
+     * 'bhavarth': Explain WHY Satguru Kabir Saheb gave this teaching (psychological/spiritual root).
+     * 'deepSatsangGyan': Provide a relatable everyday life example (दैनिक जीवन का दृष्टांत) illustrating the teaching in modern daily conduct.
+     * 'mindMayaAnalysis': Analyze how ego/mind/Maya operates in this specific couplet.
+   - Step 6 (mysticalCoding): Decode the inner esoteric/yogic symbolism of the exact words and metaphors in THIS Sakhi (e.g., 'प्रीतम' = inner Satpurush/Satguru in the Ghat; 'दुसमन' = inner ego/mind/Kaal; 'शीतल शब्द' = Sar-Shabd calming the 5 Vikars).
 
-2. AUTHENTIC MULTI-SCRIPTURE CROSS-REFERENCES (Step 8):
-   - Provide 2 to 3 parallel Sakhis/Vanis that share the EXACT SAME spiritual theme as the main Sakhi.
-   - Draw authentic references strictly from:
-     * Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji)
-     * Kabir Bijak
-     * Kabir Granthavali
-     * Kabir Sagar (Anurag Sagar, etc.)
-   - Clearly mention the scripture name and section/Ang. Ensure the Bhavarth accurately translates THAT specific parallel Vani and explains its connection to the main Sakhi.
+2. AUTHENTIC 4-GRANTH CROSS-REFERENCES (Step 8):
+   - Provide EXACTLY 4 parallel Sakhis/Vanis that share the EXACT SAME spiritual theme as the main Sakhi—one from EACH of these 4 authentic scriptures:
+     1. Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji)
+     2. Kabir Bijak
+     3. Kabir Granthavali
+     4. Kabir Sagar (Anurag Sagar, etc.)
+   - Clearly mention the scripture name and section/Ang. Explain that parallel Vani's meaning and its direct spiritual link to the main Sakhi.
    - Do NOT repeat or duplicate the main Sakhi itself as a cross-reference.
 
 3. COMPLETE WORD MEANINGS (Step 3):
    - Extract 4 to 6 key archaic/difficult words directly from the given Sakhi.
-   - Provide accurate meanings in Hindi, Punjabi (Gurmukhi), and English. The English (EN) tab MUST contain the actual English meaning (e.g., "Forest / Trees"), NOT just Roman transliteration.
+   - Provide accurate meanings in Hindi, Punjabi (Gurmukhi), and English. The English (EN) field MUST contain the real English translation (e.g., "Forest / Trees"), NOT just Roman transliteration.
 
-4. RANDOMIZED 5-QUESTION QUIZ (Step 5):
-   - Generate 5 distinct MCQs testing the exact metaphors, word meanings, and teachings of the current Sakhi.
-   - Vary correctIndex across questions and ensure each question has 4 plausible, distinct options.
+4. 5-DIMENSION RANDOMIZED QUIZ (Step 5):
+   - Generate 5 deeply thoughtful, verse-specific MCQs covering these 5 dimensions:
+     1. Core Practical Message (केंद्रीय जीवन संदेश)
+     2. Symbolic / Inner Meaning of key verse words (आध्यात्मिक एवं प्रतीकात्मक अर्थ)
+     3. Real-Life Application Scenario (दैनिक व्यवहार एवं अनुशासन)
+     4. Cause & Spiritual Effect (कारण और परिणाम)
+     5. Deeper Kabir Panth Tattva Gyan Philosophy (तत्व ज्ञान एवं आत्म-बोध)
+   - Each question MUST have 4 realistic, grammatically parallel, unique options (NEVER generic filler like "केवल बाहरी दिखावा और भ्रम" or "क्षणिक भौतिक सुख-भोग"), plus a clear 'explanation' ("सही उत्तर की व्याख्या").
 
-5. MYSTICAL MEANING, KEY LEARNINGS, CONTEMPLATION & YOGA (Steps 6, 7, 9, 10, 11):
-   - Step 6 (Rahasya): Explain the inner mystical meaning of the exact symbols used in the current Sakhi.
-   - Step 7 (Key Learnings): Provide exactly 4 practical daily-life takeaways derived strictly from the current Sakhi.
+5. KEY LEARNINGS, CONTEMPLATION & YOGA (Steps 7, 9, 10, 11):
+   - Step 7 (Key Learnings): Provide exactly 4 practical daily-life takeaways derived strictly from the current Sakhi (without repeating the literal translation verbatim).
    - Step 9 (Contemplation): Frame exactly 3 self-reflection questions based directly on the moral of the current Sakhi.
    - Step 10 (Meditation/Yoga) & Step 11 (Blessing): Tailor the guided meditation visualization (3 sequential stages) and the final guru blessing specifically to the theme of the current Sakhi.
 
@@ -334,7 +341,7 @@ CRITICAL STRICTNESS RULES (MUST FOLLOW):
 
 TONE & STYLE:
 - Keep the tone devotional, respectful ("Satguru Kabir Saheb", "Pawan Vani"), simple, and grammatically pure.
-- Always spell "साहेब" (not "साहिब") in Hindi/Punjabi text unless quoting the canonical scripture title "Sri Guru Granth Sahib Ji".`;
+- Always spell "साहेब" (not "साहिब") in Hindi/Punjabi text unless quoting the canonical scripture title "Sri Guru Granth Sahib Ji" / "श्री गुरु ग्रंथ साहिब जी" / "ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ".`;
 
   app.post('/api/swadhyay-eleven-steps', async (req, res) => {
     const {
@@ -371,9 +378,10 @@ TONE & STYLE:
         : 'Hindi (Devanagari script)';
 
     const userPrompt = `Generate the complete dynamic 11-step Swadhyay and Certificate metadata for the following Sakhi in ${langLabel}.
+Notice Rule 1: Make Step 4 (Why Kabir Saheb gave this teaching + everyday Drishtant example + mind insight) and Step 6 (inner yogic symbolism of exact verse terms) completely distinct from Step 1's literal meaning.
 Notice Rule 3: For step3_wordMeanings, ALWAYS provide accurate hi (Hindi), pb (Punjabi Gurmukhi), and en (real English translation, NOT transliteration) for EVERY extracted word regardless of the active display language.
-Notice Rule 2: Provide 2 to 3 parallel Sakhis/Vanis in step8_crossReferences strictly from Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji), Kabir Bijak, Kabir Granthavali, or Kabir Sagar, explaining THAT parallel Vani's Bhavarth and its direct connection to THIS main Sakhi.
-Notice Rule 4: Generate 5 distinct, specific MCQs in step5_quiz.questions testing exact words, metaphors, and teachings of THIS Sakhi.
+Notice Rule 2: Provide EXACTLY 4 parallel Sakhis/Vanis in step8_crossReferences—one each from Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji), Kabir Bijak, Kabir Granthavali, and Kabir Sagar, explaining THAT parallel Vani's meaning and its direct connection to THIS main Sakhi.
+Notice Rule 4: Generate 5 distinct, specific MCQs in step5_quiz covering Core Message, Symbolic Meaning, Real-Life Scenario, Cause & Effect, and Tattva Gyan, with 4 realistic unique options each.
 Notice Rule 6: Populate certificateData strictly per formatting rules with topHeader="🌹।।सत्यनाम।।🌹", bottomFooter="।।साहेब बंदगी साहेब।।🙏", footerBrand="Saheb World App • पावन स्वाध्याय मंच", highlightMoolSakhi="${verse.replace(/"/g, '\\"')}", seekerName="${String(seekerName || 'श्रद्धालु साधक').replace(/"/g, '\\"')}", and a concise 1-line theme-based blessing in the active language.
 
 SAKHI INPUT:

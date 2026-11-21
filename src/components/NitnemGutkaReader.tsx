@@ -391,15 +391,16 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   const [nitnemSections, setNitnemSections] = useState<NitnemSection[]>(NITNEM_SECTION_STUBS);
   const [isLoadingCategoryData, setIsLoadingCategoryData] = useState<boolean>(false);
   const [selectedGranthCategory, setSelectedGranthCategory] = useState<string>('all');
-  const [selectedSectionId, setSelectedSectionId] = useState<string>(NITNEM_SECTION_STUBS[0]?.id || 'prabhat-mangalacharan');
+  const [selectedSectionId, setSelectedSectionId] = useState<string>(NITNEM_SECTION_STUBS[0]?.id || 'prabhat-aarambh-vandana');
 
   // Helper to merge newly loaded sections into state without losing previously loaded categories
   const mergeResolvedSections = useCallback((loaded: NitnemSection[]) => {
+    if (!loaded || loaded.length === 0) return;
     setNitnemSections((prev) => {
       const byId = new Map(loaded.map((s) => [s.id, s]));
       return prev.map((existing) => {
         const resolved = byId.get(existing.id);
-        if (resolved && !String(resolved.verses?.[0]?.id ?? '').includes('-placeholder-')) {
+        if (resolved && resolved.verses && resolved.verses.length > 0 && !String(resolved.verses[0]?.id ?? '').includes('-placeholder-')) {
           return resolved;
         }
         return existing;
@@ -411,10 +412,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   useEffect(() => {
     let cancelled = false;
     const currentStub = nitnemSections.find((s) => s.id === selectedSectionId);
-    const needsSectionLoad = !currentStub || String(currentStub.verses?.[0]?.id ?? '').includes('-placeholder-');
+    const needsAsyncHydration = Boolean(currentStub && String(currentStub.verses?.[0]?.id ?? '').includes('-placeholder-'));
 
     const loadRequired = async () => {
-      if (needsSectionLoad) {
+      if (needsAsyncHydration) {
         setIsLoadingCategoryData(true);
       }
       try {
@@ -1092,8 +1093,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
     return MASTER_NITNEM_INDEX.granth_suchi.filter(s => s.major_category_id === selectedGranthCategory);
   }, [selectedGranthCategory]);
 
-  // Active section data with alias normalizer (e.g., gyan-gudri / gyan-guddi / gyan-gudadi)
-  const currentSection = useMemo(() => {
+  // Active section data with alias normalizer & guaranteed non-null fallback
+  const currentSection = useMemo<NitnemSection>(() => {
     let found = nitnemSections.find(s => s.id === selectedSectionId);
     if (!found && selectedSectionId) {
       const normalized = selectedSectionId.toLowerCase().replace(/[-_]/g, '');
@@ -1106,44 +1107,42 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           s.id.replace('gudadi', 'guddi') === selectedSectionId.replace('gudadi', 'guddi');
       });
     }
-    return found || nitnemSections[0];
+    return found || nitnemSections[0] || {
+      id: selectedSectionId || 'prabhat-aarambh-vandana',
+      majorCategoryId: 'prabhat-path',
+      title: {
+        hi: 'नितनेम गुटका साहेब',
+        pb: 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ',
+        en: 'Nitnem Gutka Saheb',
+      },
+      subtitle: {
+        hi: 'नए पावन पाठ हेतु आरक्षित रिक्त स्थान',
+        pb: 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਲਈ ਰਾਖਵੀਂ ਖਾਲੀ ਥਾਂ',
+        en: 'Clean space reserved for upcoming sacred Path text',
+      },
+      totalVerses: 0,
+      verses: [],
+    };
   }, [selectedSectionId, nitnemSections]);
 
-  const versesList = useMemo(() => {
-    if (currentSection.verses && currentSection.verses.length > 0) {
+  const versesList = useMemo<NitnemVersePair[]>(() => {
+    if (currentSection?.verses && currentSection.verses.length > 0) {
       return currentSection.verses;
     }
-    return [
-      {
-        id: 'fallback-1',
-        type: 'doha' as const,
-        lines: {
-          hi: [
-            currentSection.title.hi,
-            'सतगुरु कबीर साहेब की पावन अमृत वाणी एवं नित्य पाठ।',
-            'स्मरण करो नित नाम, कटे यम फंद तमाम ॥'
-          ],
-          pb: [
-            currentSection.title.pb,
-            'सतगुरु कबीर साहेब की पावन अमृत वाणी एवं नित्य पाठ।'
-          ],
-          en: [
-            currentSection.title.en,
-            'Sacred recitation and daily devotional guide of Satguru Kabir Saheb.'
-          ]
-        },
-        bhavarth: {
-          hi: currentSection.subtitle?.hi || 'यह पावन नितनेम पाठ आत्मा को परमात्मा से जोड़ने का अमर मार्ग है। सतगुरु के चरणों में ध्यान लगाने से समस्त संकटों का नाश होता है।',
-          pb: currentSection.subtitle?.pb || 'ਇਹ ਪਾਵਨ ਨਿਤਨੇਮ ਪਾਠ ਆਤਮਾ ਨੂੰ ਪਰਮਾਤਮਾ ਨਾਲ ਜੋੜਦਾ ਹੈ।',
-          en: currentSection.subtitle?.en || 'This sacred Nitnem recitation awakens the soul and grants divine refuge at the Master\'s feet.'
-        }
-      }
-    ];
+    return [];
   }, [currentSection]);
 
-  // Category-scoped ordered Granth sub-chapter sequence (e.g., 19 Prabhat chapters, 32 Sandhya chapters)
+  // Category-scoped ordered Granth sub-chapter sequence
   const getGranthPlaylistContext = (sectionId: string) => {
     const sec = nitnemSections.find(s => s.id === sectionId) || nitnemSections[0];
+    if (!sec) {
+      return {
+        granthSections: [] as NitnemSection[],
+        currentIndex: 0,
+        totalCount: 0,
+        nextSection: null as NitnemSection | null,
+      };
+    }
     const granthSections = nitnemSections.filter(s => s.majorCategoryId === sec.majorCategoryId);
     const idx = granthSections.findIndex(s => s.id === sec.id);
     const safeIdx = idx >= 0 ? idx : 0;
@@ -1160,10 +1159,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
     return getGranthPlaylistContext(currentSection.id);
   }, [currentSection.id, nitnemSections]);
 
-  // Peaceful gentle flower shower upon arriving at the final chapter of a major Nitnem path
+  // Peaceful gentle flower shower only when arriving at a populated final chapter of a major Nitnem path
   useEffect(() => {
     if (
       viewMode === 'reading' &&
+      versesList.length > 0 &&
       !granthContext.nextSection &&
       currentSection?.id &&
       !celebratedEndSectionsRef.current.has(currentSection.id)
@@ -1174,7 +1174,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
       }, 450);
       return () => window.clearTimeout(timer);
     }
-  }, [viewMode, granthContext.nextSection, currentSection?.id]);
+  }, [viewMode, versesList.length, granthContext.nextSection, currentSection?.id]);
 
   const handleMarkNitnemPathHaziri = () => {
     const pathName =
@@ -1866,11 +1866,20 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
       if (playbackSessionRef.current !== sessionToken) return;
 
       const list = versesListRef.current;
+      if (!list || list.length === 0) {
+        setIsFullBaniAudioPlaying(false);
+        setIsAudioPaused(false);
+        setActiveRecitingVerseIdx(null);
+        setActiveRecitingLineIdx(null);
+        setCompletedNextSectionInfo(null);
+        return;
+      }
+
       if (vIdx < 0 || vIdx >= list.length) {
         const liveSection = currentSectionRef.current;
         const { nextSection, currentIndex, totalCount } = getGranthPlaylistContext(liveSection?.id);
 
-        if (pathContinuityModeRef.current === 'full-path' && nextSection) {
+        if (pathContinuityModeRef.current === 'full-path' && nextSection && (nextSection.verses?.length ?? 0) > 0) {
           setIsAudioPaused(false);
           setActiveRecitingVerseIdx(null);
           setActiveRecitingLineIdx(null);
@@ -2757,8 +2766,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 ) : (
                   <div
                     onClick={() => {
-                      handleSelectSection(nitnemSections[0].id);
-                      setViewMode('reading');
+                      if (nitnemSections[0]?.id) {
+                        handleSelectSection(nitnemSections[0].id);
+                        setViewMode('reading');
+                      }
                     }}
                     className="bg-amber-50/60 dark:bg-amber-950/20 border-2 border-amber-300/40 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-amber-500 transition shadow-xs"
                   >
@@ -2771,7 +2782,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           {language === 'pb' ? 'ਅੰਮ੍ਰਿਤਵੇਲਾ ਨਿਤਨੇਮ' : language === 'en' ? 'Daily Nitnem' : 'अमृतवेला नितनेम'}
                         </span>
                         <h4 className="font-serif font-black text-sm text-gray-800 dark:text-gray-100">
-                          {nitnemSections[0]?.title[language] || nitnemSections[0]?.title.hi}
+                          {nitnemSections[0]?.title[language] || nitnemSections[0]?.title.hi || getLocalizedBookTitle(language)}
                         </h4>
                       </div>
                     </div>
@@ -3149,6 +3160,83 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
                     {(isLoadingCategoryData || String(versesList[0]?.id ?? '').includes('-placeholder-')) ? (
                       <SacredLoader language={language} compact />
+                    ) : versesList.length === 0 ? (
+                      <section
+                        aria-label={language === 'pb' ? 'ਖਾਲੀ ਪਾਠ ਸਥਾਨ' : language === 'en' ? 'Empty Path Space' : 'रिक्त पाठ स्थान'}
+                        className="max-w-2xl mx-auto my-6 rounded-2xl border border-stone-200 dark:border-amber-900/40 bg-[#FBF9F5] dark:bg-[#1C1713] px-6 py-10 sm:px-10 sm:py-14 text-center space-y-5 shadow-xs"
+                      >
+                        <p className="text-xs uppercase tracking-widest font-sans text-stone-500 dark:text-amber-300/75">
+                          <span>
+                            {MAJOR_GRANTH_CATEGORIES.find((c) => c.id === currentSection.majorCategoryId)?.title[language] ||
+                              MAJOR_GRANTH_CATEGORIES.find((c) => c.id === currentSection.majorCategoryId)?.title.hi ||
+                              getLocalizedBookTitle(language)}
+                          </span>
+                          <span aria-hidden="true"> · </span>
+                          <span className="tabular-nums">
+                            {language === 'pb'
+                              ? `ਅਧਿਆਇ ${granthContext.currentIndex + 1}/${Math.max(1, granthContext.totalCount)}`
+                              : language === 'en'
+                              ? `Chapter ${granthContext.currentIndex + 1}/${Math.max(1, granthContext.totalCount)}`
+                              : `अध्याय ${granthContext.currentIndex + 1}/${Math.max(1, granthContext.totalCount)}`}
+                          </span>
+                        </p>
+
+                        <div className="border-t border-b border-stone-200/90 dark:border-amber-900/35 py-6 space-y-3">
+                          <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-stone-900 dark:text-amber-100 leading-snug">
+                            {currentSection.title[language] || currentSection.title.hi}
+                          </h3>
+                          <p className="max-w-prose mx-auto text-sm sm:text-base font-serif text-stone-600 dark:text-stone-300 leading-relaxed">
+                            {language === 'pb'
+                              ? 'ਇਸ ਅਧਿਆਇ ਦਾ ਪਾਵਨ ਪਾਠ ਜੋੜੇ ਜਾਣ ਲਈ ਇਹ ਸਥਾਨ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਾਫ਼ ਅਤੇ ਤਿਆਰ ਹੈ।'
+                              : language === 'en'
+                              ? 'This chapter space is clean and ready for the upcoming authentic Path text.'
+                              : 'इस अध्याय का पावन पाठ संकलित किए जाने हेतु यह स्थान पूर्णतः रिक्त एवं तैयार है।'}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              sacredHaptics.lightTap();
+                              if (isPureVaniMode) {
+                                exitPureVaniMode(true);
+                              }
+                              setViewMode('selection');
+                            }}
+                            className="min-h-[44px] px-5 py-2.5 rounded-xl border border-stone-300 dark:border-amber-800/60 bg-white dark:bg-zinc-900 text-stone-800 dark:text-amber-200 hover:bg-stone-100 dark:hover:bg-zinc-800 font-serif font-bold text-xs sm:text-sm transition cursor-pointer inline-flex items-center gap-2"
+                          >
+                            <ArrowLeft size={16} />
+                            <span>
+                              {language === 'pb'
+                                ? '੭-ਭਾਗ ਸੂਚੀ ਤੇ ਵਾਪਸ ਜਾਓ'
+                                : language === 'en'
+                                ? 'Back to 7-Section Index'
+                                : '७-खंड अनुक्रमणिका पर लौटें'}
+                            </span>
+                          </button>
+
+                          {granthContext.nextSection && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                sacredHaptics.lightTap();
+                                handleSelectSection(granthContext.nextSection!.id);
+                              }}
+                              className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#8B4513] hover:bg-[#72380f] text-white font-serif font-bold text-xs sm:text-sm transition cursor-pointer inline-flex items-center gap-1.5"
+                            >
+                              <span>
+                                {language === 'pb'
+                                  ? `ਅਗਲਾ: ${granthContext.nextSection.title.pb || granthContext.nextSection.title.hi}`
+                                  : language === 'en'
+                                  ? `Next: ${granthContext.nextSection.title.en || granthContext.nextSection.title.hi}`
+                                  : `अगला: ${granthContext.nextSection.title.hi}`}
+                              </span>
+                              <ChevronRight size={16} />
+                            </button>
+                          )}
+                        </div>
+                      </section>
                     ) : versesList.map((verse, vIdx) => {
                       const isCurrentActive = activeVerseIndex === vIdx;
                       const isRead = readVersesSet.has(verse.id);
@@ -3806,8 +3894,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       );
                     })}
 
-                    {/* Seamless Flow Next Sub-Chapter Card OR Peaceful End-of-Path Flower Blessing & Daily Haziri */}
-                    {!isPureVaniMode && (
+                    {/* Seamless Flow Next Sub-Chapter Card OR Peaceful End-of-Path Flower Blessing & Daily Haziri (only when verses exist) */}
+                    {!isPureVaniMode && versesList.length > 0 && (
                       granthContext.nextSection ? (
                         <div className="my-6 p-4 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-600/15 via-orange-500/20 to-amber-600/15 border-2 border-amber-500/50 shadow-md text-center space-y-3">
                           <span className="text-[0.6875rem] font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300 block">
@@ -4085,7 +4173,9 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     </span>
                     <span aria-hidden="true">·</span>
                     <span className="font-mono tabular-nums text-amber-200">
-                      {activeRecitingVerseIdx !== null
+                      {versesList.length === 0
+                        ? '0/0'
+                        : activeRecitingVerseIdx !== null
                         ? `${activeRecitingVerseIdx + 1}/${versesList.length}`
                         : `${activeVerseIndex + 1}/${versesList.length}`}
                     </span>

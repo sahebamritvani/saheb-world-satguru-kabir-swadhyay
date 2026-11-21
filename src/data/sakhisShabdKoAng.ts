@@ -111,7 +111,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     id: 'shabd-3',
     number: 1103,
     grantha: 'Sakhi Sangrah',
-    category: 'chetavani',
+    category: 'vani-sanyam',
     categoryTitle: {
       hi: 'शब्द को अंग - ३',
       pb: 'ਸ਼ਬਦ ਕੋ ਅੰਗ - ੩',
@@ -122,7 +122,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
       pb: devanagariToGurmukhi('कुटिल वचन सबतें बुरा, जारि करै सब छार। साधु वचन जल रूप है, बरसै अमृत धार।।'),
       en: 'Kutil vachan sabten bura, jari karai sab chhar. Sadhu vachan jal rup hai, barsai amrit dhar..'
     },
-    transliteration: 'Kutil vachan sabten bura, jari karai sab chhar. Sadhu वचन jal rup hai, barsai amrit dhar.',
+    transliteration: 'Kutil vachan sabten bura, jari karai sab chhar. Sadhu vachan jal rup hai, barsai amrit dhar.',
     bhavarth: {
       hi: 'दुष्ट लोगों के कड़वे व तीखे वचन सबसे बुरे होते हैं। वे शरीर को जलाकर राख कर देते हैं, अर्थात उनसे सबके हृदय अशांत तथा भाव दग्ध हो जाते हैं, परंतु साधु-संतों के वचन शीतल जल के समान होते हैं, जो अमृत की धारा बनकर बरसते हैं।',
       pb: devanagariToGurmukhi('ਕੁਟਿਲ ਬਚਨ ਸਭ ਤੋਂ ਮਾੜੇ ਹਨ ਜੋ ਸਾੜ ਕੇ ਸੁਆਹ ਕਰ ਦਿੰਦੇ ਹਨ। ਸੰਤਾਂ ਦੇ ਬਚਨ ਅੰਮ੍ਰਿਤ ਦੀ ਧਾਰਾ ਵਾਂਗ ਸ਼ੀਤਲ ਹੁੰਦੇ ਹਨ।'),
@@ -163,7 +163,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     id: 'shabd-4',
     number: 1104,
     grantha: 'Sakhi Sangrah',
-    category: 'chetavani',
+    category: 'vani-sanyam',
     categoryTitle: {
       hi: 'शब्द को अंग - ४',
       pb: 'ਸ਼ਬਦ ਕੋ ਅੰਗ - ੪',
@@ -215,7 +215,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     id: 'shabd-5',
     number: 1105,
     grantha: 'Sakhi Sangrah',
-    category: 'chetavani',
+    category: 'vani-sanyam',
     categoryTitle: {
       hi: 'शब्द को अंग - ५',
       pb: 'ਸ਼ਬਦ ਕੋ ਅੰਗ - ੫',
@@ -267,7 +267,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     id: 'shabd-6',
     number: 1106,
     grantha: 'Sakhi Sangrah',
-    category: 'chetavani',
+    category: 'vani-sanyam',
     categoryTitle: {
       hi: 'शब्द को अंग - ६',
       pb: 'ਸ਼ਬਦ ਕੋ ਅੰਗ - ੬',
@@ -280,40 +280,220 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Shital shabd uchariye, aham aniye nahi. Tera pritam tujhahi mein, dusman bhi tujh mahin.',
     bhavarth: {
-      hi: 'अपने मुख से सदा शीतल व विनम्र शब्द का उच्चारण करना चाहिए। अहंकार कभी मत लाओ। तुम्हारा प्रियवर (मित्र) और तुम्हारा महान शत्रु (अहंकार व कटुता) दोनों तुम्हारे भीतर ही हैं।',
-      pb: devanagariToGurmukhi('ਸਮਾਂ ਸ਼ੀਤਲ ਬਚਨ ਬੋਲੋ, ਹੰਕਾਰ ਨਾ ਕਰੋ। ਪ੍ਰੀਤਮ (ਪ੍ਰਮਾਤਮਾ) ਅਤੇ ਦੁਸ਼ਮਣ (ਹੰਕਾਰ) ਦੋਵੇਂ ਤੁਹਾਡੇ ਆਪਣੇ ਅੰਦਰ ਹੀ ਹਨ।'),
-      en: 'Speak cooling and humble words; let no pride enter your mind. Your true Friend and your worst enemy both reside within your own heart.'
+      hi: 'अपने मुख से सदा शीतल व विनम्र वचन बोलने चाहिए तथा मन में कभी अहंकार नहीं लाना चाहिए। सतगुरु कबीर साहेब समझाते हैं कि तुम्हारा सच्चा प्रीतम (परमात्मा) भी तुम्हारे भीतर ही बसता है और तुम्हारा सबसे बड़ा शत्रु (अहंकार और कटुता) भी तुम्हारे अपने ही अंतःकरण में रहता है।',
+      pb: 'ਆਪਣੇ ਮੁੱਖ ਤੋਂ ਸਦਾ ਸ਼ੀਤਲ, ਮਿੱਠੇ ਅਤੇ ਨਿਮਰ ਬਚਨ ਬੋਲਣੇ ਚਾਹੀਦੇ ਹਨ ਅਤੇ ਮਨ ਵਿੱਚ ਕਦੇ ਹੰਕਾਰ ਨਹੀਂ ਲਿਆਉਣਾ ਚਾਹੀਦਾ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਤੁਹਾਡਾ ਸੱਚਾ ਪ੍ਰੀਤਮ (ਪਰਮਾਤਮਾ) ਵੀ ਤੁਹਾਡੇ ਅੰਦਰ ਹੀ ਵਸਦਾ ਹੈ ਅਤੇ ਤੁਹਾਡਾ ਸਭ ਤੋਂ ਵੱਡਾ ਦੁਸ਼ਮਣ (ਹੰਕਾਰ ਤੇ ਕੌੜਾਪਣ) ਵੀ ਤੁਹਾਡੇ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਹੀ ਰਹਿੰਦਾ ਹੈ।',
+      en: 'Always speak cooling, gentle, and humble words, and let no ego enter your heart. Your Beloved Divine Friend and your greatest inner enemy (arrogance and bitterness) both reside within your own self.'
     },
     wordMeanings: {
       hi: [
-        { word: 'अहं (Aham)', meaning: 'अहंकार / घमंड' },
-        { word: 'प्रीतम (Pritam)', meaning: 'प्रियतम / परमात्मा' }
+        { word: 'शीतल शब्द (Shital shabd)', meaning: 'मधुर, शांत और अहंकार-रहित वाणी (तथा अनहद सार-शब्द)' },
+        { word: 'अहं (Aham)', meaning: 'अहंकार / मैं-पन व घमंड' },
+        { word: 'प्रीतम (Pritam)', meaning: 'परम प्रियतम परमात्मा / घट में बसे सतगुरु' },
+        { word: 'दुसमन (Dusman)', meaning: 'अंतःकरण का शत्रु — अहंकार, क्रोध एवं चंचल मन' },
+        { word: 'तुझ माहिं (Tujh mahin)', meaning: 'तुम्हारे अपने ही घट (अंतःकरण) के भीतर' }
       ],
       pb: [
-        { word: 'ਅਹੰ (Aham)', meaning: 'ਹੰਕਾਰ' },
-        { word: 'ਪ੍ਰੀਤਮ (Pritam)', meaning: 'ਪ੍ਰਭੂ / ਮਿੱਤਰ' }
+        { word: 'ਸ਼ੀਤਲ ਸ਼ਬਦ (Shital shabd)', meaning: 'ਮਿੱਠੀ, ਸ਼ਾਂਤ ਅਤੇ ਹੰਕਾਰ-ਰਹਿਤ ਬੋਲੀ (ਅਤੇ ਅਨਹਦ ਸਾਰ-ਸ਼ਬਦ)' },
+        { word: 'ਅਹੰ (Aham)', meaning: 'ਹੰਕਾਰ / ਮੈਂ-ਪੁਣਾ ਤੇ ਘਮੰਡ' },
+        { word: 'ਪ੍ਰੀਤਮ (Pritam)', meaning: 'ਪਰਮ ਪ੍ਰੀਤਮ ਪ੍ਰਮਾਤਮਾ / ਘਟ ਵਿੱਚ ਵਸਦਾ ਮਿੱਤਰ' },
+        { word: 'ਦੁਸਮਨ (Dusman)', meaning: 'ਅੰਦਰਲਾ ਦੁਸ਼ਮਣ — ਹੰਕਾਰ, ਗੁੱਸਾ ਤੇ ਚੰਚਲ ਮਨ' },
+        { word: 'ਤੁਝ ਮਾਹਿਂ (Tujh mahin)', meaning: 'ਤੁਹਾਡੇ ਆਪਣੇ ਹੀ ਹਿਰਦੇ (ਘਟ) ਦੇ ਅੰਦਰ' }
       ],
       en: [
-        { word: 'Aham', meaning: 'Ego / pride' },
-        { word: 'Pritam', meaning: 'Beloved / Lord' }
+        { word: 'Shital shabd', meaning: 'Cooling, gentle speech & inner soothing Word' },
+        { word: 'Aham', meaning: 'Ego / arrogance / "I-ness"' },
+        { word: 'Pritam', meaning: 'The Indwelling Beloved / Satpurush within' },
+        { word: 'Dusman', meaning: 'Inner adversary — pride, anger & restless mind' },
+        { word: 'Tujh mahin', meaning: 'Within your own heart (Ghat)' }
       ]
     },
     contemplation: {
-      hi: 'क्या मैं अपने भीतर छुपे अहंकार को पहचानकर उसे मिटा रहा हूँ?',
-      pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਆਪਣੇ ਅੰਦਰਲੇ ਹੰਕਾਰ ਨੂੰ ਮਿਟਾ ਰਿਹਾ ਹਾਂ?'),
-      en: 'Am I recognizing and dissolving the ego hidden within my heart?'
+      hi: 'क्या मैं अपने भीतर छुपे अहंकार रूपी शत्रु को पहचानकर वाणी में शीतलता ला रहा हूँ?',
+      pb: 'ਕੀ ਮੈਂ ਆਪਣੇ ਅੰਦਰ ਲੁਕੇ ਹੰਕਾਰ ਰੂਪੀ ਦੁਸ਼ਮਣ ਨੂੰ ਪਛਾਣ ਕੇ ਬੋਲੀ ਵਿੱਚ ਸ਼ੀਤਲਤਾ ਲਿਆ ਰਿਹਾ ਹਾਂ?',
+      en: 'Am I recognizing the inner enemy of ego and bringing gentleness into my words today?'
     },
     practicalApplication: {
-      hi: 'अहंकार का त्याग करें और सबके साथ प्रेम से बोलें।',
-      pb: devanagariToGurmukhi('ਹੰਕਾਰ ਤਿਆਗ ਕੇ ਸਭ ਨਾਲ ਪਿਆਰ ਕਰੋ।'),
-      en: 'Shed pride and converse with everyone in humility.'
+      hi: 'आज संवाद में अहं का त्याग करें और तनाव की स्थिति में भी शीतल, विनम्र शब्दों का प्रयोग करें।',
+      pb: 'ਅੱਜ ਗੱਲਬਾਤ ਵਿੱਚ ਹੰਕਾਰ ਛੱਡ ਕੇ ਤਣਾਅ ਵੇਲੇ ਵੀ ਸ਼ੀਤਲ ਤੇ ਨਿਮਰ ਬੋਲ ਬੋਲੋ।',
+      en: 'Drop ego in conversations today and choose calm, respectful words even under pressure.'
     },
     samarpanPrayer: {
-      hi: 'हे सतगुरु! मेरे भीतर केवल प्रेम और शीतलता बसे। साहेब बंदगी साहेब!',
-      pb: devanagariToGurmukhi('ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਅੰਦਰ ਪ੍ਰੇਮ ਵਸੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!'),
-      en: 'O Satguru! Let only love and humility dwell within me.'
+      hi: 'हे सतगुरु कबीर साहेब! मेरे घट से अहं रूपी शत्रु को मिटाकर केवल प्रेम और शीतल शब्द बसाएं। साहेब बंदगी साहेब!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੇਰੇ ਹਿਰਦੇ ਵਿੱਚੋਂ ਹੰਕਾਰ ਰੂਪੀ ਦੁਸ਼ਮਣ ਮਿਟਾ ਕੇ ਕੇਵਲ ਪ੍ਰੇਮ ਤੇ ਸ਼ੀਤਲ ਸ਼ਬਦ ਵਸਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      en: 'O Satguru Kabir Saheb! Dissolve the inner enemy of ego and fill my heart with love and cooling speech.'
     },
-    quiz: []
+    quiz: [
+      {
+        id: 'q-1106-1',
+        question: {
+          hi: 'साखी #११०६ ("शीतल शब्द उचारिये, अहं आनिये नाहिं") का केंद्रीय जीवन संदेश क्या है?',
+          pb: 'ਸਾਖੀ #੧੧੦੬ ("ਸ਼ੀਤਲ ਸ਼ਬਦ ਉਚਾਰੀਏ, ਅਹੰ ਆਨੀਏ ਨਾਹਿਂ") ਦਾ ਮੁੱਖ ਜੀਵਨ ਸੰਦੇਸ਼ ਕੀ ਹੈ?',
+          en: 'What is the core practical life message of Sakhi #1106?'
+        },
+        options: {
+          hi: [
+            'सदा विनम्र और शीतल वाणी बोलना तथा मन में अहंकार का प्रवेश न होने देना',
+            'केवल एकांत में मौन व्रत धारण कर दूसरों से संवाद पूरी तरह बंद कर देना',
+            'अपने सम्मान की रक्षा के लिए विरोधियों को कठोर शब्दों से उत्तर देना',
+            'केवल बाहरी ग्रंथों के कठिन शब्दों को कंठस्थ करके शास्त्रार्थ करना'
+          ],
+          pb: [
+            'ਸਦਾ ਨਿਮਰ ਤੇ ਸ਼ੀਤਲ ਬੋਲੀ ਬੋਲਣੀ ਅਤੇ ਮਨ ਵਿੱਚ ਹੰਕਾਰ ਨਾ ਆਉਣ ਦੇਣਾ',
+            'ਕੇਵਲ ਇਕਾਂਤ ਵਿੱਚ ਮੌਨ ਵਰਤ ਰੱਖ ਕੇ ਸਭ ਨਾਲ ਗੱਲਬਾਤ ਬੰਦ ਕਰ ਦੇਣੀ',
+            'ਆਪਣੀ ਸ਼ਾਨ ਬਚਾਉਣ ਲਈ ਵਿਰੋਧੀਆਂ ਨੂੰ ਤਿੱਖੇ ਬੋਲਾਂ ਵਿੱਚ ਜਵਾਬ ਦੇਣਾ',
+            'ਬਾਹਰੀ ਪੁਸਤਕਾਂ ਦੇ ਔਖੇ ਸ਼ਬਦ ਯਾਦ ਕਰਕੇ ਬਹਿਸਾਂ ਵਿੱਚ ਜਿੱਤ ਪ੍ਰਾਪਤ ਕਰਨੀ'
+          ],
+          en: [
+            'Speak calmly and humbly at all times while keeping arrogance out of the heart',
+            'Stop speaking to others altogether by taking a vow of total silence in isolation',
+            'Respond firmly with sharp words whenever someone challenges your dignity',
+            'Memorize complex verses merely to win philosophical debates'
+          ]
+        },
+        correctIndex: 0,
+        explanation: {
+          hi: 'सतगुरु कबीर साहेब स्पष्ट करते हैं कि मीठी, शीतल वाणी और निरहंकार भाव ही मनुष्य के अंतःकरण को शांति और प्रीतम की अनुभूति के योग्य बनाते हैं।',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਿੱਠੀ, ਸ਼ੀਤਲ ਬੋਲੀ ਅਤੇ ਨਿਮਰਤਾ ਹੀ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਪ੍ਰਭੂ-ਮਿਲਾਪ ਦੇ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ।',
+          en: 'Satguru Kabir Saheb teaches that cooling speech paired with freedom from ego prepares the heart for inner peace.'
+        }
+      },
+      {
+        id: 'q-1106-2',
+        question: {
+          hi: 'सतगुरु कबीर साहेब के अनुसार मनुष्य का सबसे बड़ा शत्रु ("दुसमन") और सबसे प्यारा मित्र ("प्रीतम") कहाँ निवास करते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਦੁਸ਼ਮਣ ਅਤੇ ਸਭ ਤੋਂ ਪਿਆਰਾ ਮਿੱਤਰ ("ਪ੍ਰੀਤਮ") ਕਿੱਥੇ ਵਸਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, where do one’s greatest enemy ("Dusman") and dearest Beloved ("Pritam") reside?'
+        },
+        options: {
+          hi: [
+            'बाहर के समाज और मित्रों के बीच',
+            'स्वयं मनुष्य के अपने ही अंतःकरण (घट) के भीतर',
+            'केवल तीर्थ स्थलों और ग्रंथों के पन्नों में',
+            'भाग्य और ग्रहों की चाल में'
+          ],
+          pb: [
+            'ਬਾਹਰਲੇ ਸਮਾਜ ਅਤੇ ਦੋਸਤਾਂ-ਮਿੱਤਰਾਂ ਦੇ ਵਿਚਕਾਰ',
+            'ਮਨੁੱਖ ਦੇ ਆਪਣੇ ਹੀ ਅੰਦਰਲੇ ਹਿਰਦੇ (ਘਟ) ਦੇ ਅੰਦਰ',
+            'ਕੇਵਲ ਤੀਰਥ ਅਸਥਾਨਾਂ ਅਤੇ ਗ੍ਰੰਥਾਂ ਦੇ ਪੰਨਿਆਂ ਵਿੱਚ',
+            'ਕਿਸਮਤ ਅਤੇ ਗ੍ਰਹਿਆਂ ਦੀ ਚਾਲ ਦੇ ਅੰਦਰ'
+          ],
+          en: [
+            'Outwardly among society, neighbors, and social circles',
+            'Within one’s very own inner heart and consciousness (Ghat)',
+            'Solely inside distant pilgrimage shrines and sacred pages',
+            'In external destiny and the movement of planets'
+          ]
+        },
+        correctIndex: 1,
+        explanation: {
+          hi: '"तेरा प्रीतम तुझहि में, दुसमन भी तुझ माहिं" — सतगुरु समझाते हैं कि परमात्मा रूपी प्रीतम और अहंकार/कटुता रूपी शत्रु, दोनों हमारे अपने ही भीतर विद्यमान हैं।',
+          pb: '"ਤੇਰਾ ਪ੍ਰੀਤਮ ਤੁਝਹਿ ਮੇਂ, ਦੁਸਮਨ ਭੀ ਤੁਝ ਮਾਹਿਂ" — ਸਤਿਗੁਰੂ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰੀਤਮ (ਪਰਮਾਤਮਾ) ਅਤੇ ਦੁਸ਼ਮਣ (ਹੰਕਾਰ) ਦੋਵੇਂ ਸਾਡੇ ਅੰਦਰ ਹੀ ਹਨ।',
+          en: 'Both the Divine Beloved and the inner enemy of ego reside right inside one’s own heart.'
+        }
+      },
+      {
+        id: 'q-1106-3',
+        question: {
+          hi: 'दैनिक व्यवहार: यदि कोई सहकर्मी या परिजन बिना कारण क्रोध में कड़वी बात कह दे, तो इस साखी के अनुसार साधक को कैसा आचरण करना चाहिए?',
+          pb: 'ਰੋਜ਼ਾਨਾ ਵਿਹਾਰ: ਜੇ ਕੋਈ ਸਾਥੀ ਜਾਂ ਪਰਿਵਾਰਕ ਮੈਂਬਰ ਗੁੱਸੇ ਵਿੱਚ ਕੌੜੀ ਗੱਲ ਕਹਿ ਦੇਵੇ, ਤਾਂ ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਸਾਧਕ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'Daily Scenario: If a colleague or relative speaks harshly in anger, how should a seeker respond according to this Sakhi?'
+        },
+        options: {
+          hi: [
+            'तुरंत उतनी ही कठोर भाषा में प्रतिउत्तर देकर अपना पक्ष साबित करना चाहिए',
+            'मन के आवेश और अहं को रोककर शांत व शीतल वाणी से संवाद संभालना चाहिए',
+            'उस व्यक्ति से आजीवन के लिए मन में वैर और बदला रखने का निश्चय करना चाहिए',
+            'सबके सामने उस व्यक्ति की पिछली गलतियाँ गिनाकर उसे लज्जित करना चाहिए'
+          ],
+          pb: [
+            'ਤੁਰੰਤ ਉਹੀ ਕੌੜੀ ਬੋਲੀ ਵਿੱਚ ਜਵਾਬ ਦੇ ਕੇ ਆਪਣਾ ਪੱਖ ਸਹੀ ਸਾਬਤ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ',
+            'ਮਨ ਦੇ ਜੋਸ਼ ਤੇ ਹੰਕਾਰ ਨੂੰ ਰੋਕ ਕੇ ਸ਼ਾਂਤ ਅਤੇ ਸ਼ੀਤਲ ਬੋਲਾਂ ਨਾਲ ਗੱਲ ਸੰਭਾਲਣੀ ਚਾਹੀਦੀ ਹੈ',
+            'ਉਸ ਵਿਅਕਤੀ ਨਾਲ ਸਾਰੀ ਉਮਰ ਲਈ ਮਨ ਵਿੱਚ ਵੈਰ ਅਤੇ ਬਦਲਾ ਰੱਖ ਲੈਣਾ ਚਾਹੀਦਾ ਹੈ',
+            'ਸਭ ਦੇ ਸਾਹਮਣੇ ਉਸ ਦੀਆਂ ਪੁਰਾਣੀਆਂ ਗਲਤੀਆਂ ਗਿਣਾ ਕੇ ਉਸ ਨੂੰ ਸ਼ਰਮਿੰਦਾ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ'
+          ],
+          en: [
+            'Immediately fire back in equally sharp words to prove superiority',
+            'Restrain inner ego and reply with calm, cooling words that defuse tension',
+            'Hold silent resentment forever while planning subtle retaliation later',
+            'Publicly list all their past mistakes so everyone sees they are wrong'
+          ]
+        },
+        correctIndex: 1,
+        explanation: {
+          hi: 'कटुता का उत्तर कटुता से देने पर भीतर का शत्रु (अहंकार) जीत जाता है; शीतल शब्द बोलने से विवाद शांत होता है।',
+          pb: 'ਕੌੜੇ ਬੋਲ ਦਾ ਜਵਾਬ ਕੌੜੇ ਬੋਲ ਨਾਲ ਦੇਣ ਤੇ ਅੰਦਰਲਾ ਦੁਸ਼ਮਣ (ਹੰਕਾਰ) ਜਿੱਤ ਜਾਂਦਾ ਹੈ; ਸ਼ੀਤਲ ਬੋਲ ਵਿਵਾਦ ਨੂੰ ਸ਼ਾਂਤ ਕਰਦੇ ਹਨ।',
+          en: 'Answering bitterness with bitterness lets ego win; cooling speech calms conflict.'
+        }
+      },
+      {
+        id: 'q-1106-4',
+        question: {
+          hi: 'कारण और परिणाम: वाणी में कटुता और हृदय में "अहं" (अहंकार) को पोषित करने का आध्यात्मिक परिणाम क्या होता है?',
+          pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਬੋਲੀ ਵਿੱਚ ਕੜਵਾਹਟ ਅਤੇ ਹਿਰਦੇ ਵਿੱਚ "ਅਹੰ" (ਹੰਕਾਰ) ਪਾਲਣ ਦਾ ਅਧਿਆਤਮਕ ਨਤੀਜਾ ਕੀ ਹੁੰਦਾ ਹੈ?',
+          en: 'Cause & Effect: What is the spiritual consequence of nourishing harsh speech and inner ego?'
+        },
+        options: {
+          hi: [
+            'बाहरी समाज में व्यक्ति सदैव बहुत लोकप्रिय और सम्माननीय बन जाता है',
+            'भीतर विराजमान प्रीतम (परमात्मा) से दूरी बढ़ती है और अंतर्मन अशांत हो जाता है',
+            'आत्म-चिंतन और ध्यान की गहराई अपने आप तीव्र हो जाती है',
+            'मनुष्य को किसी भी सत्संग या आत्म-निरीक्षण की आवश्यकता नहीं रहती'
+          ],
+          pb: [
+            'ਬਾਹਰਲੇ ਸਮਾਜ ਵਿੱਚ ਮਨੁੱਖ ਹਮੇਸ਼ਾ ਹਰਮਨਪਿਆਰਾ ਅਤੇ ਸਨਮਾਨਿਤ ਬਣ ਜਾਂਦਾ ਹੈ',
+            'ਅੰਦਰ ਵਸਦੇ ਪ੍ਰੀਤਮ (ਪਰਮਾਤਮਾ) ਨਾਲੋਂ ਦੂਰੀ ਵਧਦੀ ਹੈ ਤੇ ਮਨ ਅਸ਼ਾਂਤ ਹੁੰਦਾ ਹੈ',
+            'ਆਤਮ-ਚਿੰਤਨ ਅਤੇ ਧਿਆਨ ਦੀ ਡੂੰਘਾਈ ਆਪਣੇ ਆਪ ਤੇਜ਼ ਹੋ ਜਾਂਦੀ ਹੈ',
+            'ਮਨੁੱਖ ਨੂੰ ਕਿਸੇ ਸਤਿਸੰਗ ਜਾਂ ਆਤਮ-ਪੜਚੋਲ ਦੀ ਲੋੜ ਨਹੀਂ ਰਹਿੰਦੀ'
+          ],
+          en: [
+            'One automatically earns deep trust and lasting harmony with everyone',
+            'It creates inner restlessness and veils awareness of the Indwelling Beloved',
+            'Concentration in meditation effortlessly deepens on its own',
+            'The seeker no longer needs Satsang or self-discipline'
+          ]
+        },
+        correctIndex: 1,
+        explanation: {
+          hi: 'जहाँ अहंकार और कड़वाहट पनपती है, वहाँ हृदय संकीर्ण हो जाता है; अहं ही घट में बसे साहेब की अनुभूति को रोकता है।',
+          pb: 'ਜਿੱਥੇ ਹੰਕਾਰ ਤੇ ਕੜਵਾਹਟ ਵਧਦੇ ਹਨ, ਉੱਥੇ ਦਿਲ ਤੰਗ ਹੋ ਜਾਂਦਾ ਹੈ; ਹੰਕਾਰ ਹੀ ਅੰਦਰ ਵਸਦੇ ਸਾਹੇਬ ਦੇ ਦਰਸ਼ਨ ਰੋਕਦਾ ਹੈ।',
+          en: 'Where pride and bitterness grow, ego acts as the veil hiding awareness of the Divine inside.'
+        }
+      },
+      {
+        id: 'q-1106-5',
+        question: {
+          hi: '"शब्द को अंग" के तत्व ज्ञान के अनुसार "शीतल शब्द" की साधना घट-मंदिर में किस प्रकार आत्म-बोध कराती है?',
+          pb: '"ਸ਼ਬਦ ਕੋ ਅੰਗ" ਦੇ ਤੱਤ-ਗਿਆਨ ਅਨੁਸਾਰ "ਸ਼ੀਤਲ ਸ਼ਬਦ" ਦੀ ਸਾਧਨਾ ਘਟ-ਮੰਦਿਰ ਵਿੱਚ ਕਿਸ ਤਰ੍ਹਾਂ ਆਤਮ-ਬੋਧ ਕਰਵਾਉਂਦੀ ਹੈ?',
+          en: 'In "Shabd Ko Ang" philosophy, how does practicing "Shital Shabd" awaken realization within the Ghat-Mandir?'
+        },
+        options: {
+          hi: [
+            'यह बाहरी मंत्रों की संख्या गिनकर स्वर्ग में स्थान आरक्षित कराती है',
+            'यह पंचाग्नि (काम, क्रोध आदि) को शांत कर सुरति को अहंकार-मुक्त करके प्रीतम से मिलाती है',
+            'यह केवल सांसारिक वाद-विवाद में तर्क जीतने की कला सिखाती है',
+            'यह दूसरों के दोष खोजकर उनकी आलोचना करने की प्रेरणा देती है'
+          ],
+          pb: [
+            'ਇਹ ਬਾਹਰੀ ਗਿਣਤੀ ਦੇ ਜਾਪ ਨਾਲ ਸਵਰਗ ਵਿੱਚ ਥਾਂ ਪੱਕੀ ਕਰਵਾਉਂਦੀ ਹੈ',
+            'ਇਹ ਪੰਜ ਵਿਕਾਰਾਂ ਦੀ ਅੱਗ ਨੂੰ ਠੰਢਾ ਕਰਕੇ ਸੁਰਤ ਨੂੰ ਹੰਕਾਰ-ਮੁਕਤ ਕਰਕੇ ਪ੍ਰੀਤਮ ਨਾਲ ਮਿਲਾਉਂਦੀ ਹੈ',
+            'ਇਹ ਕੇਵਲ ਦੁਨਿਆਵੀ ਬਹਿਸ ਵਿੱਚ ਤਰਕ ਜਿੱਤਣ ਦੀ ਕਲਾ ਸਿਖਾਉਂਦੀ ਹੈ',
+            'ਇਹ ਦੂਜਿਆਂ ਦੇ ਔਗੁਣ ਲੱਭ ਕੇ ਉਨ੍ਹਾਂ ਦੀ ਆਲੋਚਨਾ ਕਰਨ ਦੀ ਪ੍ਰੇਰਨਾ ਦਿੰਦੀ ਹੈ'
+          ],
+          en: [
+            'By accumulating counted external chants to reserve a place in heaven',
+            'By cooling the five inner passions and freeing Surat from ego to meet the Beloved within',
+            'By sharpening clever arguments to prevail in intellectual debates',
+            'By training the eye to point out flaws in others’ practice'
+          ]
+        },
+        correctIndex: 1,
+        explanation: {
+          hi: 'कबीर पंथ में "शीतल शब्द" वाणी के संयम से आरंभ होकर अनहद सार-शब्द में सुरति के लीन होने तक जाता है।',
+          pb: 'ਕਬੀਰ ਪੰਥ ਵਿੱਚ "ਸ਼ੀਤਲ ਸ਼ਬਦ" ਬੋਲੀ ਦੇ ਸੰਜਮ ਤੋਂ ਸ਼ੁਰੂ ਹੋ ਕੇ ਅਨਹਦ ਸਾਰ-ਸ਼ਬਦ ਵਿੱਚ ਸੁਰਤ ਦੇ ਸਮਾਉਣ ਤੱਕ ਜਾਂਦਾ ਹੈ।',
+          en: 'In Kabir Panth philosophy, "Shital Shabd" cools inner turmoil and unites Surat with the Beloved within.'
+        }
+      }
+    ]
   },
   {
     id: 'shabd-7',

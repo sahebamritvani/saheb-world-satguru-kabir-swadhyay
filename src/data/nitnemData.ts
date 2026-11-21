@@ -1,4 +1,5 @@
 import { NitnemSection } from '../types';
+import { MASTER_NITNEM_INDEX } from './nitnemMasterIndex';
 
 export interface MajorGranthCategory {
   id: string;
@@ -76,23 +77,61 @@ export const MAJOR_GRANTH_CATEGORIES: MajorGranthCategory[] = [
   },
 ];
 
-/**
- * Empty state for Nitnem Gutka Saheb — ready for new authentic paths to be added.
- */
-export const NITNEM_SECTION_STUBS: NitnemSection[] = [];
+const MAJOR_CAT_MAP = new Map(MAJOR_GRANTH_CATEGORIES.map((c) => [c.id, c]));
 
-export async function loadNitnemCategorySections(_categoryId: string): Promise<NitnemSection[]> {
-  return [];
+/**
+ * Complete 7-section Nitnem Gutka Saheb chapter skeleton initialized with
+ * empty verse slots (`verses: []`), ready for upcoming authentic Path text.
+ */
+export const NITNEM_SECTION_STUBS: NitnemSection[] = MASTER_NITNEM_INDEX.granth_suchi.flatMap((granth) => {
+  const catMeta = MAJOR_CAT_MAP.get(granth.major_category_id);
+  const majorCategoryTitle = catMeta?.title || {
+    hi: granth.hindi_title,
+    pb: granth.punjabi_title,
+    en: granth.english_title || granth.hindi_title,
+  };
+
+  return granth.sub_chapters.map((sub) => ({
+    id: sub.section_id || sub.id,
+    majorCategoryId: granth.major_category_id,
+    majorCategoryTitle,
+    subGroup: granth.hindi_title,
+    title: {
+      hi: sub.hindi,
+      pb: sub.punjabi,
+      en: sub.english || sub.hindi,
+    },
+    subtitle: {
+      hi: 'नए पावन पाठ हेतु आरक्षित रिक्त स्थान',
+      pb: 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਲਈ ਰਾਖਵੀਂ ਖਾਲੀ ਥਾਂ',
+      en: 'Clean space reserved for upcoming sacred Path text',
+    },
+    iconName: catMeta?.iconName || 'BookOpen',
+    estimatedMinutes: 0,
+    totalVerses: 0,
+    verses: [],
+  }));
+});
+
+export async function loadNitnemCategorySections(categoryId: string): Promise<NitnemSection[]> {
+  if (!categoryId || categoryId === 'all') {
+    return NITNEM_SECTION_STUBS;
+  }
+  return NITNEM_SECTION_STUBS.filter((s) => s.majorCategoryId === categoryId);
 }
 
 export async function loadAllNitnemSections(): Promise<NitnemSection[]> {
-  return [];
+  return NITNEM_SECTION_STUBS;
 }
 
-export async function loadNitnemSectionById(_id: string): Promise<NitnemSection | undefined> {
-  return undefined;
+export async function loadNitnemSectionById(id: string): Promise<NitnemSection | undefined> {
+  return getNitnemSectionById(id);
 }
 
-export function getNitnemSectionById(_id: string): NitnemSection | undefined {
-  return undefined;
+export function getNitnemSectionById(id: string): NitnemSection | undefined {
+  if (!id) return NITNEM_SECTION_STUBS[0];
+  const exact = NITNEM_SECTION_STUBS.find((s) => s.id === id);
+  if (exact) return exact;
+  const normalized = id.toLowerCase().replace(/[-_]/g, '');
+  return NITNEM_SECTION_STUBS.find((s) => s.id.toLowerCase().replace(/[-_]/g, '') === normalized);
 }

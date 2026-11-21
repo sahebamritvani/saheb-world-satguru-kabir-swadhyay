@@ -68,6 +68,7 @@ import {
   shuffleQuizViaBackend,
   ElevenStepQuizQuestion,
 } from '../services/swadhyayElevenSteps';
+import { getStep1ConciseMeaning } from '../services/swadhyayContentEngine';
 import { SwadhyayCertificateModal } from './SwadhyayCertificateModal';
 import { DiscourseEngine } from './DiscourseEngine';
 import { sacredHaptics } from '../services/haptics';
@@ -495,6 +496,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState<Record<number, boolean>>({});
   const [quizAttempt, setQuizAttempt] = useState<number>(1);
+  const [showRomanTransliteration, setShowRomanTransliteration] = useState<boolean>(false);
   const [aiSwadhyayPayload, setAiSwadhyayPayload] = useState<SwadhyayAiResponsePayload | null>(null);
   const [isAiEnriching, setIsAiEnriching] = useState<boolean>(false);
   const [aiQuizOverride, setAiQuizOverride] = useState<ElevenStepQuizQuestion[] | null>(null);
@@ -2262,14 +2264,14 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         {/* 11-Step Stepper Navigation Chips */}
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-2 pt-2.5">
           {[
-            { num: 1, label: language === 'pb' ? '੧. ਸੰਦਰਭ' : language === 'en' ? '1. Context' : '१. संदर्भ' },
-            { num: 2, label: language === 'pb' ? '੨. ਮੂਲ ਪਾਠ' : language === 'en' ? '2. Original' : '२. मूल पाठ' },
+            { num: 1, label: language === 'pb' ? '੧. ਬਾਣੀ ਤੇ ਸਰਲ ਅਰਥ' : language === 'en' ? '1. Verse & Meaning' : '१. वाणी व सरल अर्थ' },
+            { num: 2, label: language === 'pb' ? '੨. ਸੰਦਰਭ' : language === 'en' ? '2. Context' : '२. संदर्भ' },
             { num: 3, label: language === 'pb' ? '੩. ਸ਼ਬਦਾਰਥ' : language === 'en' ? '3. Vocab' : '३. शब्दार्थ' },
-            { num: 4, label: language === 'pb' ? '੪. ਭਾਵਾਰਥ' : language === 'en' ? '4. Satsang' : '४. भावार्थ' },
+            { num: 4, label: language === 'pb' ? '੪. ਗਹਿਰਾ ਸਤਿਸੰਗ' : language === 'en' ? '4. Deep Satsang' : '४. गहरा सत्संग' },
             { num: 5, label: language === 'pb' ? '੫. ਕਵਿਜ਼' : language === 'en' ? '5. Quiz' : '५. बोध प्रश्न' },
-            { num: 6, label: language === 'pb' ? '੬. ਰਹੱਸ' : language === 'en' ? '6. Insight' : '६. रहस्य' },
+            { num: 6, label: language === 'pb' ? '੬. ਤੱਤ-ਰਹੱਸ' : language === 'en' ? '6. Esoteric' : '६. रहस्य व तत्व' },
             { num: 7, label: language === 'pb' ? '੭. ਸਿੱਖਿਆ' : language === 'en' ? '7. Learning' : '७. मुख्य शिक्षा' },
-            { num: 8, label: language === 'pb' ? '੮. ਵਾਣੀਆਂ' : language === 'en' ? '8. Reference' : '८. वाणियाँ' },
+            { num: 8, label: language === 'pb' ? '੮. ੪ ਗ੍ਰੰਥ ਪ੍ਰਮਾਣ' : language === 'en' ? '8. 4 Granths' : '८. ४ ग्रंथ प्रमाण' },
             { num: 9, label: language === 'pb' ? '੯. ਚਿੰਤਨ' : language === 'en' ? '9. Inquiry' : '९. चिंतन' },
             { num: 10, label: language === 'pb' ? '੧੦. ਯੋਗ' : language === 'en' ? '10. Yoga' : '१०. श्रवण/योग' },
             { num: 11, label: language === 'pb' ? '੧੧. ਆਸ਼ੀਰਵਾਦ' : language === 'en' ? '11. Blessing' : '११. आशीर्वाद' },
@@ -3105,10 +3107,23 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       {renderInteractiveCouplet(sakhi.text[language] || sakhi.text.hi)}
                     </div>
 
-                    {/* Roman Transliteration for English Mode */}
-                    {sakhi.transliteration && (
+                    {/* Roman Transliteration: automatically shown in English mode, toggled in Hindi/Punjabi */}
+                    {sakhi.transliteration && (language === 'en' || showRomanTransliteration) && (
                       <div className="pt-2.5 border-t border-amber-700/20 dark:border-amber-500/20 text-xs sm:text-sm font-sans italic text-stone-700 dark:text-stone-300 text-center select-text">
                         "{sakhi.transliteration}"
+                      </div>
+                    )}
+                    {sakhi.transliteration && language !== 'en' && (
+                      <div className="pt-1 flex justify-center">
+                        <button
+                          type="button"
+                          onClick={() => setShowRomanTransliteration((prev) => !prev)}
+                          className="px-2.5 py-0.5 rounded-full text-[0.6875rem] font-serif font-semibold border border-amber-700/25 bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20 transition cursor-pointer"
+                        >
+                          {showRomanTransliteration
+                            ? (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਛੁਪਾਓ' : 'Roman उच्चारण छिपाएं')
+                            : (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਦਿਖਾਓ' : 'Roman उच्चारण देखें')}
+                        </button>
                       </div>
                     )}
                   </motion.div>
@@ -3174,9 +3189,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 >
                   <p className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} text-stone-800 dark:text-stone-100 font-medium select-text`}>
                     <span className="font-bold text-emerald-800 dark:text-emerald-300 block mb-1">
-                      {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Core Meaning:' : 'सरल अर्थ:'}
+                      {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Simple Translation:' : 'सरल अर्थ:'}
                     </span>
-                    {sakhi.bhavarth[language] || sakhi.bhavarth.hi}
+                    {getStep1ConciseMeaning(sakhi, language)}
                   </p>
                 </div>
               </div>
@@ -3277,11 +3292,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 </div>
               )}
 
-              {sakhi.transliteration && (
-                <p style={{ color: rc.textSecondary }} className="text-xs sm:text-sm italic font-sans max-w-xl mx-auto">
-                  "{sakhi.transliteration}"
-                </p>
-              )}
               {renderUnlockNextButton(1)}
             </div>
 
@@ -3489,7 +3499,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       title="Play Bhavarth Stanza"
                     >
                       {activePlayingStanzaKey === 'step-4' ? <VolumeX size={13} className="animate-spin text-amber-300" /> : <Volume2 size={13} className="text-amber-600" />}
-                      <span>{activePlayingStanzaKey === 'step-4' ? (language === 'pb' ? 'ਰੋਕੋ' : 'रोकें') : (language === 'pb' ? 'ਭਾਵਾਰਥ ਸੁਣੋ' : 'भावार्थ सुनें')}</span>
+                      <span>
+                        {activePlayingStanzaKey === 'step-4'
+                          ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Stop' : 'रोकें')
+                          : (language === 'pb' ? 'ਸਤਿਸੰਗ ਸੁਣੋ' : language === 'en' ? 'Listen Satsang' : 'सत्संग सुनें')}
+                      </span>
                     </button>
 
                     {/* Moolvani Visibility Toggle Switch */}
@@ -3511,7 +3525,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       </span>
                     </button>
 
-                    {/* Bhavarth Visibility Toggle */}
+                    {/* Satsang Visibility Toggle */}
                     <button
                       type="button"
                       onClick={() => setShowBhavarth(!showBhavarth)}
@@ -3521,8 +3535,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       {showBhavarth ? <Eye className="w-3 h-3 text-amber-600" /> : <EyeOff className="w-3 h-3 text-stone-400" />}
                       <span>
                         {showBhavarth
-                          ? (language === 'pb' ? 'ਭਾਵਾਰਥ ਛੁਪਾਓ' : language === 'en' ? 'Hide Meaning' : 'भावार्थ छिपाएं')
-                          : (language === 'pb' ? 'ਭਾਵਾਰਥ ਦਿਖਾਓ' : language === 'en' ? 'Show Meaning' : 'भावार्थ दिखाएं')}
+                          ? (language === 'pb' ? 'ਵਿਆਖਿਆ ਛੁਪਾਓ' : language === 'en' ? 'Hide Discourse' : 'व्याख्या छिपाएं')
+                          : (language === 'pb' ? 'ਵਿਆਖਿਆ ਦਿਖਾਓ' : language === 'en' ? 'Show Discourse' : 'व्याख्या दिखाएं')}
                       </span>
                     </button>
 
@@ -3589,10 +3603,14 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           <div className="flex items-center gap-2 border-b border-amber-500/20 pb-1.5">
                             <BookOpen className="w-4 h-4 text-amber-700" />
                             <span className="text-xs font-serif font-black uppercase tracking-wider text-amber-900 dark:text-amber-300">
-                              {language === 'pb' ? 'ਵਿਆਖਿਆ ਤੇ ਸਰਲ ਭਾਵਾਰਥ:' : language === 'en' ? 'Verse Explanation & Meaning:' : 'व्याख्या व सरल भावार्थ:'}
+                              {language === 'pb'
+                                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਹ ਉਪਦੇਸ਼ ਕਿਉਂ ਦਿੱਤਾ:'
+                                : language === 'en'
+                                ? 'Why Satguru Kabir Saheb Gave This Teaching:'
+                                : 'सतगुरु कबीर साहेब ने यह उपदेश क्यों दिया:'}
                             </span>
                           </div>
-                          <div style={{ color: rc.text }} className="text-base sm:text-lg leading-relaxed font-serif font-bold pt-1">
+                          <div style={{ color: rc.text }} className="text-sm sm:text-base leading-relaxed font-serif font-semibold pt-1">
                             <SmartGlossaryText text={eightStepData.step4_bhavarthSatsang.bhavarth} language={language} />
                           </div>
                         </motion.div>
@@ -3605,19 +3623,23 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           transition={{ duration: 0.35, ease: 'easeOut' }}
                           className="py-3 px-3 text-center text-xs text-stone-500 italic border border-dashed border-amber-500/20 rounded-xl bg-amber-500/5 font-serif"
                         >
-                          {language === 'pb' ? '।। ਭਾਵਾਰਥ ਛੁਪਿਆ ਹੋਇਆ ਹੈ ।।' : language === 'en' ? '|| Meaning is Hidden ||' : '।। व्याख्या व सरल भावार्थ छिपा हुआ है ।।'}
+                          {language === 'pb' ? '।। ਸਤਿਸੰਗ ਵਿਆਖਿਆ ਛੁਪੀ ਹੋਈ ਹੈ ।।' : language === 'en' ? '|| Satsang Discourse is Hidden ||' : '।। सत्संग व्याख्या छिपी हुई है ।।'}
                         </motion.div>
                       )}
                     </AnimatePresence>
 
-                    <div style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }} className="p-4 rounded-xl border space-y-2">
+                    <div style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }} className="p-4 rounded-xl border space-y-2.5">
                       <h4 style={{ color: rc.accent }} className="text-xs font-black uppercase tracking-wider">
-                        {language === 'pb' ? '।। ਗਹਿਰਾ ਸਤਿਸੰਗ ਵਿਚਾਰ ।।' : language === 'en' ? '|| Deep Satsang Discourse ||' : '।। गहरा सत्संग विचार ।।'}
+                        {language === 'pb'
+                          ? '।। ਜੀਵਨ ਉਦਾਹਰਨ ਤੇ ਵਿਵਹਾਰਕ ਸਤਿਸੰਗ ।।'
+                          : language === 'en'
+                          ? '|| Everyday Illustration & Satsang Reflection ||'
+                          : '।। दैनिक जीवन दृष्टांत एवं व्यवहारिक सत्संग ।।'}
                       </h4>
-                      <div style={{ color: rc.textSecondary }} className="text-sm leading-relaxed font-serif">
+                      <div style={{ color: rc.textSecondary }} className="text-sm leading-relaxed font-serif whitespace-pre-line">
                         <SmartGlossaryText text={eightStepData.step4_bhavarthSatsang.deepSatsangGyan} language={language} />
                       </div>
-                      <p style={{ color: rc.textMuted }} className="text-xs italic pt-1 border-t border-dashed border-stone-300">
+                      <p style={{ color: rc.textMuted }} className="text-xs italic pt-2 border-t border-dashed border-stone-300">
                         {eightStepData.step4_bhavarthSatsang.mindMayaAnalysis}
                       </p>
                     </div>
@@ -3735,7 +3757,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                               : 'bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200'
                           }`}>
                             <p className="font-bold flex items-center gap-1">
-                              {selectedOptIdx === q.correctIndex ? '✓ सही उत्तर (Correct Answer!)' : '💡 स्पष्टीकरण (Explanation):'}
+                              {selectedOptIdx === q.correctIndex
+                                ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ (Correct!)' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
+                                : (language === 'pb' ? '💡 ਸਹੀ ਉੱਤਰ ਦੀ ਵਿਆਖਿਆ:' : language === 'en' ? '💡 Answer Explanation:' : '💡 सही उत्तर की व्याख्या:')}
                             </p>
                             <p className="italic leading-relaxed">{q.explanation}</p>
                           </div>
@@ -3753,7 +3777,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           </button>
                           
                           <span className="text-[0.6875rem] font-bold" style={{ color: rc.textSecondary }}>
-                            {language === 'pb' ? `ਸਵਾਲ ${quizCurrentIdx + 1} / 5` : `Q ${quizCurrentIdx + 1} of 5`}
+                            {language === 'pb'
+                              ? `ਸਵਾਲ ${quizCurrentIdx + 1} / 5`
+                              : language === 'en'
+                              ? `Q ${quizCurrentIdx + 1} of 5`
+                              : `प्रश्न ${quizCurrentIdx + 1} / 5`}
                           </span>
 
                           <button
@@ -3882,8 +3910,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
                       className="p-4 sm:p-5 rounded-2xl border space-y-3 text-left"
                     >
-                      <div style={{ color: rc.accent }} className="text-xs sm:text-sm font-bold font-serif tracking-wide [word-break:keep-all] [overflow-wrap:break-word]">
-                        📜 {ref.source}
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <div style={{ color: rc.accent }} className="text-xs sm:text-sm font-bold font-serif tracking-wide [word-break:keep-all] [overflow-wrap:break-word]">
+                          📜 {ref.source}
+                        </div>
+                        <span className="text-[0.625rem] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/20 shrink-0">
+                          {rIdx + 1} / {elevenStepData.step8_crossReferences.references.length}
+                        </span>
                       </div>
                       <p style={{ color: rc.maroon }} className="text-sm sm:text-base font-serif font-bold italic whitespace-pre-line leading-relaxed [word-break:keep-all] [overflow-wrap:break-word]">
                         {ref.verse}
@@ -4034,7 +4067,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               >
                 <div className="space-y-1">
                   <span className="text-xs font-serif font-black tracking-widest uppercase text-amber-600 block">
-                    ।।सत्यनाम।। • ११वाँ अन्तिम पावन सोपान
+                    {language === 'pb'
+                      ? '।।ਸਤਯਨਾਮ।। • ੧੧ਵਾਂ ਅੰਤਿਮ ਪਾਵਨ ਸੋਪਾਨ'
+                      : language === 'en'
+                      ? '|| Satyanaam || • 11th Final Sacred Step'
+                      : '।।सत्यनाम।। • ११वाँ अन्तिम पावन सोपान'}
                   </span>
                   <h3 style={{ color: rc.maroon }} className="text-xl sm:text-2xl md:text-3xl font-black font-serif flex items-center justify-center gap-2">
                     <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-amber-600 animate-spin" style={{ animationDuration: '8s' }} />
@@ -4390,6 +4427,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       handlePlayStanza={handlePlayStanza}
                       activePlayingStanzaKey={activePlayingStanzaKey}
                       onExitZen={() => setIsZenMode(false)}
+                      onReshuffleQuiz={handleReshuffleQuizAttempt}
                     />
                   </div>
                 ) : (
@@ -4552,7 +4590,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   <span>{fl.bhavarthHeading}:</span>
                 </div>
                 <div style={{ color: rc.text }} className={`text-sm sm:text-base ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)}`}>
-                  <SmartGlossaryText text={enrichBhavarthWithNihAkshar(sakhi.bhavarth[language], language)} language={language} />
+                  <SmartGlossaryText text={enrichBhavarthWithNihAkshar(getStep1ConciseMeaning(sakhi, language), language)} language={language} />
                 </div>
               </div>
 

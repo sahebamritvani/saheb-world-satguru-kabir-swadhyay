@@ -534,9 +534,49 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
   };
 
   if (!pages || pages.length === 0) {
+    const isDarkFolio = themeMode === 'black' || themeMode === 'dark' || themeMode === 'netra';
     return (
-      <div className="text-center p-8 font-serif opacity-70">
-        कोई वाणी पृष्ठ उपलब्ध नहीं है।
+      <div className="w-full max-w-2xl mx-auto px-3 py-6">
+        <div
+          className={`rounded-3xl border px-6 py-10 sm:px-10 sm:py-14 text-center space-y-5 shadow-lg ${
+            isDarkFolio
+              ? 'bg-[#1C1713] border-amber-900/50 text-[#F5EBE0]'
+              : 'bg-[#FBF9F5] border-stone-200 text-[#2D1B0F]'
+          }`}
+        >
+          <p className="text-xs uppercase tracking-widest font-serif opacity-75">
+            {language === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : language === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।'}
+          </p>
+          <div className="border-t border-b border-current/15 py-6 space-y-2.5">
+            <h3 className="text-xl sm:text-2xl font-serif font-bold">
+              {granthName || (language === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Nitnem Gutka Saheb' : 'नितनेम गुटका साहेब')}
+            </h3>
+            <p className="text-sm font-serif opacity-80 max-w-md mx-auto leading-relaxed">
+              {language === 'pb'
+                ? 'ਇਸ ਪੋਥੀ ਅਧਿਆਇ ਦਾ ਪਾਵਨ ਪਾਠ ਜੋੜੇ ਜਾਣ ਲਈ ਇਹ ਪੰਨਾ ਖਾਲੀ ਤੇ ਤਿਆਰ ਹੈ।'
+                : language === 'en'
+                ? 'This 3D Pothi folio is clean and ready for the upcoming authentic Path text.'
+                : 'इस ३D पोथी पन्ने पर पावन पाठ संकलित किए जाने हेतु यह स्थान पूर्णतः रिक्त एवं तैयार है।'}
+            </p>
+          </div>
+          <p className="text-xs font-serif font-semibold opacity-75">
+            {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
+          </p>
+          {onClose && (
+            <div className="pt-1">
+              <button
+                type="button"
+                onClick={onClose}
+                className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#8B4513] hover:bg-[#72380f] text-white font-serif font-bold text-xs sm:text-sm transition cursor-pointer inline-flex items-center gap-2"
+              >
+                <ArrowLeft size={16} />
+                <span>
+                  {language === 'pb' ? 'ਪਠਨ ਤੇ ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back to Reader' : 'पठन पर वापस जाएं'}
+                </span>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

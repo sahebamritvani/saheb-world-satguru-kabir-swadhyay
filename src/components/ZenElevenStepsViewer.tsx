@@ -23,9 +23,11 @@ import {
   RotateCcw,
   Scroll,
   Layers,
+  Shuffle,
 } from 'lucide-react';
 import { SmartGlossaryText } from './SmartGlossaryText';
 import { sacredHaptics } from '../services/haptics';
+import { getStep1ConciseMeaning } from '../services/swadhyayContentEngine';
 
 interface ZenElevenStepsViewerProps {
   sakhi: Sakhi;
@@ -39,6 +41,7 @@ interface ZenElevenStepsViewerProps {
   handlePlayStanza?: (text: string, key: string) => void;
   activePlayingStanzaKey?: string | null;
   onExitZen?: () => void;
+  onReshuffleQuiz?: () => void;
 }
 
 export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
@@ -53,6 +56,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
   handlePlayStanza,
   activePlayingStanzaKey,
   onExitZen,
+  onReshuffleQuiz,
 }) => {
   // Local states for interactivity within Zen mode
   const [activeZenStep, setActiveZenStep] = useState<number>(1);
@@ -82,7 +86,9 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
     sacredHaptics.celebration();
     onSaveToDiary?.(reflectionText);
     setIsSavedToast(true);
-    markStepDone(7);
+    if (!completedZenSteps.includes(9)) {
+      setCompletedZenSteps((prev) => [...prev, 9]);
+    }
     setTimeout(() => setIsSavedToast(false), 3000);
   };
 
@@ -167,17 +173,35 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:opacity-90 cursor-pointer transition shadow-2xs"
                 >
                   {activePlayingStanzaKey === 'zen-step-1' ? <VolumeX className="w-4 h-4 text-amber-700 animate-pulse" /> : <Volume2 className="w-4 h-4 text-amber-700" />}
-                  <span>{activePlayingStanzaKey === 'zen-step-1' ? 'विराम' : 'श्रवण करें'}</span>
+                  <span>
+                    {activePlayingStanzaKey === 'zen-step-1'
+                      ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Pause' : 'विराम')
+                      : (language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'श्रवण करें')}
+                  </span>
                 </button>
               )}
             </div>
 
             <div className="p-6 sm:p-10 rounded-3xl border-2 border-[#d6ba8d]/80 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] text-[#38200b] dark:text-[#f7e7ce] shadow-inner text-center space-y-4">
-              <div className="text-xl sm:text-2xl font-black leading-relaxed">
+              <div className="text-xl sm:text-2xl font-black leading-relaxed whitespace-pre-line">
                 {sakhi.text[language] || sakhi.text.hi}
               </div>
               <div className="text-xs text-amber-800 dark:text-amber-300 font-bold uppercase tracking-widest pt-2">
-                🌹 ।। साहेब बंदगी साहेब ।। 🌹
+                {language === 'pb'
+                  ? '🌹 ।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🌹'
+                  : language === 'en'
+                  ? '🌹 ।। Saheb Bandgi Saheb ।। 🌹'
+                  : '🌹 ।। साहेब बंदगी साहेब ।। 🌹'}
+              </div>
+            </div>
+
+            {/* Step 1 Crisp Translation (सरल अर्थ) */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-1.5">
+              <div className="text-xs font-bold text-amber-900 dark:text-amber-200">
+                {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Literal Meaning:' : 'सरल अर्थ:'}
+              </div>
+              <div className="text-sm sm:text-base leading-relaxed text-stone-800 dark:text-stone-200">
+                <SmartGlossaryText text={getStep1ConciseMeaning(sakhi, language)} language={language} />
               </div>
             </div>
 
@@ -213,7 +237,11 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:opacity-90 cursor-pointer transition shadow-2xs"
                 >
                   {activePlayingStanzaKey === 'zen-step-2' ? <VolumeX className="w-4 h-4 text-amber-700" /> : <Volume2 className="w-4 h-4 text-amber-700" />}
-                  <span>{activePlayingStanzaKey === 'zen-step-2' ? 'विराम' : 'श्रवण'}</span>
+                  <span>
+                    {activePlayingStanzaKey === 'zen-step-2'
+                      ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Pause' : 'विराम')
+                      : (language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'श्रवण')}
+                  </span>
                 </button>
               )}
             </div>
@@ -237,7 +265,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -245,7 +273,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: शब्दार्थ</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਸ਼ਬਦਾਰਥ' : language === 'en' ? 'Next: Glossary' : 'अगला: शब्दार्थ'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -267,7 +295,9 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 onClick={() => setShowVocab(!showVocab)}
                 className="text-xs font-bold text-amber-700 dark:text-amber-300 hover:underline cursor-pointer"
               >
-                {showVocab ? 'संक्षिप्त करें' : 'विस्तार करें'}
+                {showVocab
+                  ? (language === 'pb' ? 'ਸੰਖੇਪ ਕਰੋ' : language === 'en' ? 'Collapse' : 'संक्षिप्त करें')
+                  : (language === 'pb' ? 'ਵਿਸਥਾਰ ਕਰੋ' : language === 'en' ? 'Expand' : 'विस्तार करें')}
               </button>
             </div>
 
@@ -297,7 +327,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -305,7 +335,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: सत्संग भावार्थ</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਸਤਿਸੰਗ ਭਾਵਾਰਥ' : language === 'en' ? 'Next: Satsang & Example' : 'अगला: सत्संग भावार्थ'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -330,21 +360,43 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:opacity-90 cursor-pointer transition shadow-2xs"
                 >
                   {activePlayingStanzaKey === 'zen-step-4' ? <VolumeX className="w-4 h-4 text-amber-700" /> : <Volume2 className="w-4 h-4 text-amber-700" />}
-                  <span>{activePlayingStanzaKey === 'zen-step-4' ? 'विराम' : 'श्रवण'}</span>
+                  <span>
+                    {activePlayingStanzaKey === 'zen-step-4'
+                      ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Pause' : 'विराम')
+                      : (language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'श्रवण')}
+                  </span>
                 </button>
               )}
             </div>
 
             <div className="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-4">
-              <div className="text-sm sm:text-base leading-relaxed text-stone-800 dark:text-stone-200">
-                <SmartGlossaryText text={eightStepData.step4_bhavarthSatsang.bhavarth} language={language} />
+              <div className="space-y-1.5">
+                <div className="text-xs font-bold text-amber-900 dark:text-amber-200">
+                  {language === 'pb'
+                    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਹ ਉਪਦੇਸ਼ ਕਿਉਂ ਦਿੱਤਾ:'
+                    : language === 'en'
+                    ? 'Why Satguru Kabir Saheb Gave This Teaching:'
+                    : 'सतगुरु कबीर साहेब ने यह उपदेश क्यों दिया:'}
+                </div>
+                <div className="text-sm sm:text-base leading-relaxed text-stone-800 dark:text-stone-200 whitespace-pre-line">
+                  <SmartGlossaryText text={eightStepData.step4_bhavarthSatsang.bhavarth} language={language} />
+                </div>
               </div>
               {eightStepData.step4_bhavarthSatsang.deepSatsangGyan && (
-                <div className="p-4 rounded-xl bg-amber-500/10 border-l-4 border-amber-600 text-xs sm:text-sm text-stone-700 dark:text-stone-300 space-y-1">
+                <div className="p-4 rounded-xl bg-amber-500/10 border-l-4 border-amber-600 text-xs sm:text-sm text-stone-700 dark:text-stone-300 space-y-1.5">
                   <div className="font-bold text-amber-900 dark:text-amber-200">
-                    {language === 'pb' ? 'ਗੂੜ੍ਹ ਸਤਿਸੰਗ ਵਿਚਾਰ:' : 'गूढ़ सत्संग विचार:'}
+                    {language === 'pb'
+                      ? '।। ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਉਦਾਹਰਨ ਤੇ ਵਿਵਹਾਰਕ ਸਤਿਸੰਗ ।।'
+                      : language === 'en'
+                      ? '।। Everyday Life Example & Practical Satsang ।।'
+                      : '।। दैनिक जीवन दृष्टांत एवं व्यवहारिक सत्संग ।।'}
                   </div>
-                  <p>{eightStepData.step4_bhavarthSatsang.deepSatsangGyan}</p>
+                  <p className="whitespace-pre-line leading-relaxed">{eightStepData.step4_bhavarthSatsang.deepSatsangGyan}</p>
+                </div>
+              )}
+              {eightStepData.step4_bhavarthSatsang.mindMayaAnalysis && (
+                <div className="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 border border-amber-500/20 text-xs text-stone-700 dark:text-stone-300 whitespace-pre-line leading-relaxed">
+                  {eightStepData.step4_bhavarthSatsang.mindMayaAnalysis}
                 </div>
               )}
             </div>
@@ -356,7 +408,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -364,7 +416,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: बोध प्रश्नोत्तरी</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਬੋਧ ਪ੍ਰਸ਼ਨੋਤਰੀ' : language === 'en' ? 'Next: Quiz' : 'अगला: बोध प्रश्नोत्तरी'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -374,16 +426,34 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
         {/* STEP 5: बोध प्रश्नोत्तरी */}
         {activeZenStep === 5 && (
           <div className="space-y-6">
-            <div className="flex items-center justify-between border-b pb-3" style={{ borderColor: rc.borderOrnament }}>
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style={{ borderColor: rc.borderOrnament }}>
               <div className="flex items-center gap-2" style={{ color: rc.accent }}>
                 <HelpCircle className="w-5 h-5 text-amber-600" />
                 <h3 className="text-base sm:text-lg font-black tracking-wide">
                   {elevenStepData.step5_quiz.title}
                 </h3>
               </div>
-              <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-300">
-                प्रश्न {quizIdx + 1} / {currentQuestions.length}
-              </span>
+              <div className="flex items-center gap-2">
+                {onReshuffleQuiz && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      setQuizIdx(0);
+                      setQuizSelected({});
+                      onReshuffleQuiz();
+                    }}
+                    style={{ borderColor: rc.accent, color: rc.maroon, backgroundColor: rc.accentLight }}
+                    className="px-2.5 py-1 rounded-xl border text-[11px] font-bold flex items-center gap-1 cursor-pointer hover:opacity-90 transition"
+                  >
+                    <Shuffle className="w-3 h-3" />
+                    <span>{language === 'pb' ? 'ਕ੍ਰਮ ਬਦਲੋ' : language === 'en' ? 'Shuffle' : 'क्रम बदलें'}</span>
+                  </button>
+                )}
+                <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-300">
+                  {language === 'pb' ? 'ਪ੍ਰਸ਼ਨ' : language === 'en' ? 'Q' : 'प्रश्न'} {quizIdx + 1} / {currentQuestions.length}
+                </span>
+              </div>
             </div>
 
             <div className="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-4">
@@ -404,7 +474,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                         sacredHaptics.lightTap();
                         setQuizSelected((prev) => ({ ...prev, [quizIdx]: oIdx }));
                       }}
-                      className={`w-full p-3 rounded-xl border text-left text-xs sm:text-sm font-medium transition cursor-pointer flex items-center justify-between ${
+                      className={`w-full p-3 rounded-xl border text-left text-xs sm:text-sm font-medium transition cursor-pointer flex items-center justify-between gap-2 ${
                         showResult
                           ? isCorrect
                             ? 'bg-emerald-500/20 border-emerald-500 text-emerald-900 dark:text-emerald-200'
@@ -416,7 +486,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                           : 'bg-black/5 dark:bg-white/5 border-stone-200 dark:border-stone-700 hover:border-amber-400'
                       }`}
                     >
-                      <span>{opt}</span>
+                      <span>{String.fromCharCode(65 + oIdx)}. {opt}</span>
                       {showResult && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />}
                     </button>
                   );
@@ -424,8 +494,14 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
               </div>
 
               {selectedAnswer !== undefined && currentQ.explanation && (
-                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-stone-700 dark:text-stone-300">
-                  <span className="font-bold text-amber-900 dark:text-amber-200">बोध रहस्य: </span>
+                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
+                  <span className="font-bold text-amber-900 dark:text-amber-200">
+                    {language === 'pb'
+                      ? 'ਸਹੀ ਉੱਤਰ ਦੀ ਵਿਆਖਿਆ: '
+                      : language === 'en'
+                      ? 'Answer Explanation: '
+                      : 'सही उत्तर की व्याख्या: '}
+                  </span>
                   {currentQ.explanation}
                 </div>
               )}
@@ -437,7 +513,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   onClick={() => setQuizIdx((i) => Math.max(0, i - 1))}
                   className="px-3 py-1.5 rounded-xl border text-xs font-bold disabled:opacity-30 cursor-pointer"
                 >
-                  पिछला प्रश्न
+                  {language === 'pb' ? 'ਪਿਛਲਾ ਪ੍ਰਸ਼ਨ' : language === 'en' ? 'Prev Question' : 'पिछला प्रश्न'}
                 </button>
                 {quizIdx < currentQuestions.length - 1 ? (
                   <button
@@ -445,11 +521,11 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                     onClick={() => setQuizIdx((i) => i + 1)}
                     className="px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold cursor-pointer"
                   >
-                    अगला प्रश्न
+                    {language === 'pb' ? 'ਅਗਲਾ ਪ੍ਰਸ਼ਨ' : language === 'en' ? 'Next Question' : 'अगला प्रश्न'}
                   </button>
                 ) : (
                   <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold">
-                    ✓ सभी प्रश्न पूर्ण!
+                    {language === 'pb' ? '✓ ਸਾਰੇ ਪ੍ਰਸ਼ਨ ਪੂਰਨ!' : language === 'en' ? '✓ All Questions Reviewed!' : '✓ सभी प्रश्न पूर्ण!'}
                   </span>
                 )}
               </div>
@@ -462,7 +538,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -470,7 +546,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: गूढ़ रहस्य</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਗੂੜ੍ਹ ਰਹੱਸ' : language === 'en' ? 'Next: Esoteric Mystery' : 'अगला: गूढ़ रहस्य'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -490,7 +566,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
             </div>
 
             <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm leading-relaxed space-y-3">
-              <p className="font-serif italic text-stone-800 dark:text-stone-200">
+              <p className="font-serif text-stone-800 dark:text-stone-200 whitespace-pre-line">
                 {elevenStepData.step6_spiritualInsight.mysticalCoding}
               </p>
               <div className="text-xs font-bold text-amber-800 dark:text-amber-300">
@@ -505,7 +581,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -513,7 +589,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: मुख्य शिक्षाएं</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਮੁੱਖ ਸਿੱਖਿਆਵਾਂ' : language === 'en' ? 'Next: Key Teachings' : 'अगला: मुख्य शिक्षाएं'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -554,7 +630,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -562,7 +638,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: समानांतर वाणियाँ</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਸਮਾਨਾਂਤਰ ਬਾਣੀ' : language === 'en' ? 'Next: Parallel Vanis' : 'अगला: समानांतर वाणियाँ'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -588,15 +664,26 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   style={{ backgroundColor: rc.bg, borderColor: rc.border }}
                   className="p-4 rounded-2xl border space-y-2 shadow-2xs"
                 >
-                  <div className="flex items-center justify-between text-xs font-bold text-amber-800 dark:text-amber-300">
-                    <span>📖 {ref.source}</span>
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-amber-800 dark:text-amber-300">
+                    <span className="flex items-center gap-1.5">
+                      <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-[10px] font-mono">
+                        {idx + 1} / {elevenStepData.step8_crossReferences.references.length}
+                      </span>
+                      <span>📖 {ref.source}</span>
+                    </span>
                     <span className="opacity-70">{ref.context}</span>
                   </div>
-                  <blockquote className="p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-600 text-xs sm:text-sm font-serif italic text-stone-800 dark:text-stone-200">
+                  <blockquote className="p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-600 text-xs sm:text-sm font-serif italic text-stone-800 dark:text-stone-200 whitespace-pre-line">
                     "{ref.verse}"
                   </blockquote>
-                  <p className="text-xs text-stone-600 dark:text-stone-400">
-                    <strong className="text-amber-900 dark:text-amber-200">आध्यात्मिक सामंजस्य: </strong>
+                  <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                    <strong className="text-amber-900 dark:text-amber-200">
+                      {language === 'pb'
+                        ? 'ਰੂਹਾਨੀ ਸਾਂਝ: '
+                        : language === 'en'
+                        ? 'Spiritual Connection: '
+                        : 'आध्यात्मिक सामंजस्य: '}
+                    </strong>
                     {ref.connection}
                   </p>
                 </div>
@@ -610,7 +697,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -618,7 +705,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: चिंतन सूत्र</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਚਿੰਤਨ ਸੂਤਰ' : language === 'en' ? 'Next: Contemplation' : 'अगला: चिंतन सूत्र'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -647,7 +734,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
               <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-2">
                 <div className="text-xs font-bold text-amber-900 dark:text-amber-200">
-                  {language === 'pb' ? 'ਆਤਮ-ਨਿਰੀਖਣ ਪ੍ਰਸ਼ਨ:' : 'आत्म-निरीक्षण प्रश्न:'}
+                  {language === 'pb' ? 'ਆਤਮ-ਨਿਰੀਖਣ ਪ੍ਰਸ਼ਨ:' : language === 'en' ? 'Self-Inquiry Questions:' : 'आत्म-निरीक्षण प्रश्न:'}
                 </div>
                 <ul className="list-disc list-inside text-xs text-stone-700 dark:text-stone-300 space-y-1">
                   {elevenStepData.step9_contemplation.questions.map((q, idx) => (
@@ -659,12 +746,18 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
               {/* Reflection note input */}
               <div className="space-y-2">
                 <label className="text-xs font-bold text-amber-800 dark:text-amber-300 block">
-                  {language === 'pb' ? 'ਆਪਣਾ ਅਨੁਭਵ / ਡਾਇਰੀ ਨੋਟ ਲਿਖੋ:' : 'अपना अनुभव / डायरी नोट लिखें:'}
+                  {language === 'pb' ? 'ਆਪਣਾ ਅਨੁਭਵ / ਡਾਇਰੀ ਨੋਟ ਲਿਖੋ:' : language === 'en' ? 'Write Your Reflection / Diary Note:' : 'अपना अनुभव / डायरी नोट लिखें:'}
                 </label>
                 <textarea
                   value={reflectionText}
                   onChange={(e) => setReflectionText(e.target.value)}
-                  placeholder="सतगुरु की इस साखी से मेरे जीवन में क्या बोध प्रकट हुआ..."
+                  placeholder={
+                    language === 'pb'
+                      ? 'ਸਤਿਗੁਰੂ ਦੀ ਇਸ ਸਾਖੀ ਤੋਂ ਮੇਰੇ ਜੀਵਨ ਵਿੱਚ ਕੀ ਬੋਧ ਪ੍ਰਗਟ ਹੋਇਆ...'
+                      : language === 'en'
+                      ? 'What insight did this sacred Sakhi awaken in my life today...'
+                      : 'सतगुरु की इस साखी से मेरे जीवन में क्या बोध प्रकट हुआ...'
+                  }
                   rows={3}
                   className="w-full p-3 rounded-2xl border border-amber-500/30 bg-black/5 dark:bg-white/5 text-xs sm:text-sm font-serif focus:outline-none focus:ring-2 focus:ring-amber-500/50"
                 />
@@ -675,11 +768,15 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   className="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:opacity-90 cursor-pointer"
                 >
                   <Save className="w-3.5 h-3.5" />
-                  <span>डायरी में सहेजें</span>
+                  <span>{language === 'pb' ? 'ਡਾਇਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਕਰੋ' : language === 'en' ? 'Save to Diary' : 'डायरी में सहेजें'}</span>
                 </button>
                 {isSavedToast && (
                   <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold block">
-                    ✓ आपका चिंतन डायरी में सुरक्षित हो गया है!
+                    {language === 'pb'
+                      ? '✓ ਤੁਹਾਡਾ ਚਿੰਤਨ ਡਾਇਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਹੋ ਗਿਆ ਹੈ!'
+                      : language === 'en'
+                      ? '✓ Your reflection has been saved to your Diary!'
+                      : '✓ आपका चिंतन डायरी में सुरक्षित हो गया है!'}
                   </span>
                 )}
               </div>
@@ -692,7 +789,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -700,7 +797,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: ध्यान साधना</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਧਿਆਨ ਸਾਧਨਾ' : language === 'en' ? 'Next: Meditation' : 'अगला: ध्यान साधना'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -737,7 +834,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                     className="p-3 rounded-xl bg-black/5 dark:bg-white/5 border border-amber-500/20 text-xs space-y-0.5"
                   >
                     <span className="font-bold text-amber-800 dark:text-amber-300">
-                      चरण {stg.stageNumber}: {stg.title}
+                      {language === 'pb' ? 'ਚਰਣ' : language === 'en' ? 'Stage' : 'चरण'} {stg.stageNumber}: {stg.title}
                     </span>
                     <p className="text-stone-600 dark:text-stone-400">{stg.instruction}</p>
                   </div>
@@ -752,7 +849,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-black/5"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>पिछला</span>
+                <span>{language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}</span>
               </button>
               <button
                 type="button"
@@ -760,7 +857,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
                 className="px-6 py-2.5 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 shadow-md hover:opacity-90 cursor-pointer transition"
               >
-                <span>अगला: सिद्धि प्रमाण-पत्र</span>
+                <span>{language === 'pb' ? 'ਅਗਲਾ: ਪ੍ਰਮਾਣ-ਪੱਤਰ' : language === 'en' ? 'Next: Certificate' : 'अगला: सिद्धि प्रमाण-पत्र'}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -776,7 +873,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
             <div className="space-y-2">
               <span className="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300">
-                🌹 ।। सत्यनाम ।। 🌹
+                {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-amber-900 dark:text-amber-100">
                 {elevenStepData.step11_blessingCertificate.title}
@@ -811,7 +908,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   onClick={onExitZen}
                   className="w-full sm:w-auto px-5 py-3 rounded-2xl border border-stone-300 dark:border-stone-700 text-xs font-bold hover:bg-black/5 transition cursor-pointer"
                 >
-                  सामान्य स्क्रीन पर लौटें
+                  {language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ ਤੇ ਪਰਤੋ' : language === 'en' ? 'Exit Zen Mode' : 'सामान्य स्क्रीन पर लौटें'}
                 </button>
               )}
             </div>

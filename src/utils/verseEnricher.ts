@@ -1,5 +1,10 @@
 import { GranthVerse } from '../data/granths/granthTypes';
+import { Sakhi } from '../types';
 import { hindiToPunjabiWordConverter } from '../services/transliteration';
+import {
+  buildStep4SatsangContent,
+  deriveDistinctSpiritualEssence,
+} from '../services/swadhyayContentEngine';
 
 export function enrichVerseWith5Steps(verse: GranthVerse, angTitleHi: string = 'पावन वाणी'): GranthVerse {
   const hiLines = verse.lines?.hi || [];
@@ -8,6 +13,19 @@ export function enrichVerseWith5Steps(verse: GranthVerse, angTitleHi: string = '
   const enBhavarth = typeof verse.bhavarth === 'object' && verse.bhavarth?.en ? verse.bhavarth.en : hiBhavarth;
 
   const firstLine = hiLines[0] || hiBhavarth.substring(0, 30);
+
+  const pseudoSakhi = {
+    number: 0,
+    text: {
+      hi: hiLines.join('\n'),
+      pb: verse.lines?.pb?.join('\n') || '',
+      en: verse.lines?.en?.join('\n') || '',
+    },
+    bhavarth: { hi: hiBhavarth, pb: pbBhavarth, en: enBhavarth },
+    categoryTitle: { hi: angTitleHi, pb: '', en: '' },
+    category: angTitleHi,
+    wordMeanings: { hi: [], pb: [], en: [] },
+  } as unknown as Sakhi;
 
   // 1. Shabdarth / Word Meanings
   const rawWordMeanings = (verse as any).wordMeanings;
@@ -40,13 +58,13 @@ export function enrichVerseWith5Steps(verse: GranthVerse, angTitleHi: string = '
         en: `Do I contemplate and embody the holy wisdom of "${firstLine}" in my everyday life?`
       };
 
-  // 4. Step 4: Practical Application (व्यावहारिक आचरण)
+  // 4. Step 4: Practical Application (व्यावहारिक आचरण - theme-aware, zero static boilerplate)
   const practicalApplication = verse.practicalApplication && verse.practicalApplication.hi
     ? verse.practicalApplication
     : {
-        hi: `आज सतगुरु कबीर साहेब की इस साखी के अनुसार विवेक, नम्रता एवं सत्य आचरण का पालन करें और मन के विकारों का त्याग करें।`,
-        pb: hindiToPunjabiWordConverter(`आज सतगुरु कबीर साहेब की इस साखी के अनुसार विवेक, नम्रता एवं सत्य आचरण का पालन करें और मन के विकारों का त्याग करें।`),
-        en: `In accordance with this sacred couplet, practice truth, humility, and spiritual discernment today.`
+        hi: buildStep4SatsangContent(pseudoSakhi, 'hi').satsangWithDrishtant,
+        pb: buildStep4SatsangContent(pseudoSakhi, 'pb').satsangWithDrishtant,
+        en: buildStep4SatsangContent(pseudoSakhi, 'en').satsangWithDrishtant,
       };
 
   // 5. Step 5: Samarpan Prayer (समर्पण एवं पावन प्रार्थना)
@@ -58,14 +76,16 @@ export function enrichVerseWith5Steps(verse: GranthVerse, angTitleHi: string = '
         en: `O Satguru! By Your infinite grace, may pure spiritual wisdom awaken within me. My humble salutations at Your lotus feet.`
       };
 
-  // 6. Spiritual Essence (आध्यात्मिक सार)
-  const spiritualEssence = verse.spiritualEssence && verse.spiritualEssence.hi
-    ? verse.spiritualEssence
-    : {
-        hi: hiBhavarth,
-        pb: pbBhavarth,
-        en: enBhavarth
-      };
+  // 6. Spiritual Essence (आध्यात्मिक सार — never identical to bhavarth)
+  const existingEssenceHi = verse.spiritualEssence?.hi;
+  const existingEssencePb = verse.spiritualEssence?.pb;
+  const existingEssenceEn = verse.spiritualEssence?.en;
+
+  const spiritualEssence = {
+    hi: deriveDistinctSpiritualEssence(hiLines.join(' '), hiBhavarth, existingEssenceHi, 'hi'),
+    pb: deriveDistinctSpiritualEssence(hiLines.join(' '), hiBhavarth, existingEssencePb, 'pb'),
+    en: deriveDistinctSpiritualEssence(hiLines.join(' '), hiBhavarth, existingEssenceEn, 'en'),
+  };
 
   return {
     ...verse,

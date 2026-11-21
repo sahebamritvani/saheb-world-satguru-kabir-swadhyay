@@ -2,11 +2,15 @@ import { Sakhi, Language, WordMeaning } from '../types';
 import {
   SGGS_CROSS_REF_VAULT,
   BIJAK_CROSS_REF_VAULT,
+  GRANTHAVALI_CROSS_REF_VAULT,
+  KABIR_SAGAR_CROSS_REF_VAULT,
   CuratedCrossRefEntry,
   mapCategoryToThemes,
   stableStringHash,
   buildMoolSakhiConnection,
 } from '../data/step8CrossReferenceVault';
+import { buildFiveDimensionQuiz, shuffleGeneratedQuiz } from './quizGenerator';
+import { buildStep6EsotericContent } from './swadhyayContentEngine';
 
 export interface ElevenStepQuizQuestion {
   question: string;
@@ -136,24 +140,7 @@ function fisherYatesShuffle<T>(arr: T[]): T[] {
  * Shuffles BOTH the order of quiz questions AND option positions (A, B, C, D) on every attempt.
  */
 export function shuffleElevenStepQuiz(questions: ElevenStepQuizQuestion[]): ElevenStepQuizQuestion[] {
-  if (!Array.isArray(questions) || questions.length === 0) return [];
-  const shuffledOrder = fisherYatesShuffle(questions);
-  return shuffledOrder.map((q) => {
-    const rawOpts = Array.isArray(q.options) ? q.options.slice(0, 4) : [];
-    while (rawOpts.length < 4) {
-      rawOpts.push(`विकल्प ${rawOpts.length + 1}`);
-    }
-    const origCorrectIdx =
-      typeof q.correctIndex === 'number' && q.correctIndex >= 0 && q.correctIndex < rawOpts.length
-        ? q.correctIndex
-        : 0;
-    const perm = fisherYatesShuffle([0, 1, 2, 3]);
-    return {
-      ...q,
-      options: perm.map((p) => rawOpts[p]),
-      correctIndex: Math.max(0, perm.indexOf(origCorrectIdx)),
-    };
-  });
+  return shuffleGeneratedQuiz(questions);
 }
 
 /**
@@ -200,7 +187,7 @@ function pickMeaningMatchedEntry(
   verseBlob: string,
   meaningBlob: string,
   seedOffset: number,
-  excludeVerseHi?: string
+  excludeVersesHi: string[] = []
 ): CuratedCrossRefEntry {
   const activeVerseHi = sakhi.text?.hi || '';
   const primarySet = new Set(primaryThemes);
@@ -209,19 +196,21 @@ function pickMeaningMatchedEntry(
   const scored = vault
     .filter((entry) => {
       if (isDuplicateCouplet(entry.verse.hi, activeVerseHi)) return false;
-      if (excludeVerseHi && isDuplicateCouplet(entry.verse.hi, excludeVerseHi)) return false;
+      for (const excluded of excludeVersesHi) {
+        if (excluded && isDuplicateCouplet(entry.verse.hi, excluded)) return false;
+      }
       return true;
     })
     .map((entry) => {
       let score = 0;
-      for (const theme of entry.themes) {
-        if (primarySet.has(theme)) score += 26;
-        if (verseThemeSet.has(theme)) score += 16;
-      }
       for (const kw of entry.keywords) {
         const kwLower = kw.toLowerCase();
-        if (verseBlob.includes(kwLower)) score += 12;
-        else if (meaningBlob.includes(kwLower)) score += 2;
+        if (verseBlob.includes(kwLower)) score += 35;
+        else if (meaningBlob.includes(kwLower)) score += 4;
+      }
+      for (const theme of entry.themes) {
+        if (verseThemeSet.has(theme)) score += 30;
+        if (primarySet.has(theme)) score += 14;
       }
       return { entry, score };
     })
@@ -232,8 +221,8 @@ function pickMeaningMatchedEntry(
   }
 
   const maxScore = scored[0].score;
-  const topResonant = scored.filter((item) => item.score >= Math.max(1, maxScore - 4)).slice(0, 3);
-  const candidatePool = topResonant.length >= 2 ? topResonant : scored.slice(0, Math.min(3, scored.length));
+  const topResonant = scored.filter((item) => item.score >= Math.max(1, maxScore - 6)).slice(0, 2);
+  const candidatePool = topResonant.length >= 1 ? topResonant : scored.slice(0, Math.min(2, scored.length));
 
   const sakhiSeed =
     (Number(sakhi.number) || 1) * 7 +
@@ -284,7 +273,29 @@ function resolveScripturalCrossReferences(sakhi: Sakhi, language: Language): Ele
     verseBlob,
     meaningBlob,
     3,
-    selectedSggs.verse.hi
+    [selectedSggs.verse.hi]
+  );
+
+  const selectedGranthavali = pickMeaningMatchedEntry(
+    GRANTHAVALI_CROSS_REF_VAULT,
+    sakhi,
+    primaryThemes,
+    verseThemes,
+    verseBlob,
+    meaningBlob,
+    5,
+    [selectedSggs.verse.hi, selectedBijak.verse.hi]
+  );
+
+  const selectedKabirSagar = pickMeaningMatchedEntry(
+    KABIR_SAGAR_CROSS_REF_VAULT,
+    sakhi,
+    primaryThemes,
+    verseThemes,
+    verseBlob,
+    meaningBlob,
+    7,
+    [selectedSggs.verse.hi, selectedBijak.verse.hi, selectedGranthavali.verse.hi]
   );
 
   const formatEntry = (entry: CuratedCrossRefEntry): ElevenStepCrossReference => {
@@ -298,7 +309,12 @@ function resolveScripturalCrossReferences(sakhi: Sakhi, language: Language): Ele
     };
   };
 
-  return [formatEntry(selectedSggs), formatEntry(selectedBijak)];
+  return [
+    formatEntry(selectedSggs),
+    formatEntry(selectedBijak),
+    formatEntry(selectedGranthavali),
+    formatEntry(selectedKabirSagar),
+  ];
 }
 
 /**
@@ -333,123 +349,21 @@ export function buildThemeOneLineBlessing(sakhi: Sakhi, language: Language): str
  * wordMeanings, couplet lines, bhavarth, and practicalApplication — zero generic filler.
  */
 function buildSakhiSpecificQuiz(sakhi: Sakhi, language: Language): ElevenStepQuizQuestion[] {
-  const items: ElevenStepQuizQuestion[] = [];
-  const activeVerse = sakhi.text?.[language] || sakhi.text?.hi || '';
-  const firstLine = activeVerse.split('\n')[0]?.trim() || activeVerse;
-  const bhavarth = sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi || '';
-  const category = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
-  const action = sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || '';
-  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
-
-  // 1. Include any curated MCQs attached to the Sakhi itself
-  if (Array.isArray(sakhi.quiz) && sakhi.quiz.length > 0) {
-    for (const q of sakhi.quiz) {
-      const opts = q.options?.[language] || q.options?.hi || [];
-      if (opts.length >= 2) {
-        items.push({
-          question: q.question?.[language] || q.question?.hi || '',
-          options: opts.slice(0, 4),
-          correctIndex: q.correctIndex ?? 0,
-          explanation: q.explanation?.[language] || q.explanation?.hi || bhavarth,
-        });
-      }
-    }
-  }
-
-  // 2. Generate dynamic Vocabulary Meaning MCQs from this Sakhi's wordMeanings
-  words.forEach((entry, idx) => {
-    if (items.length >= 5) return;
-    const otherMeanings = words
-      .filter((_, oIdx) => oIdx !== idx)
-      .map((w) => w.meaning)
-      .filter(Boolean);
-    const distractors = [...otherMeanings];
-    const fallbackDistractors =
-      language === 'pb'
-        ? ['ਕੇਵਲ ਬਾਹਰੀ ਦਿਖਾਵਾ', 'ਅਸਥਾਈ ਪਦਾਰਥਕ ਭੋਗ', 'ਬੇਅਰਥ ਵਾਦ-ਵਿਵਾਦ']
-        : language === 'en'
-        ? ['Temporary sensory indulgence', 'Mere outward ritualism', 'Vain intellectual pride']
-        : ['केवल बाहरी दिखावा और भ्रम', 'क्षणिक भौतिक सुख-भोग', 'अहंकारपूर्ण वाद-विवाद'];
-    for (const fb of fallbackDistractors) {
-      if (distractors.length < 3 && !distractors.includes(fb)) {
-        distractors.push(fb);
-      }
-    }
-
-    items.push({
-      question:
-        language === 'pb'
-          ? `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਵਿੱਚ ਆਏ ਸ਼ਬਦ "${entry.word}" ਦਾ ਸਹੀ ਅਰਥ ਕੀ ਹੈ?`
-          : language === 'en'
-          ? `In Sakhi #${sakhi.number} ("${firstLine}"), what is the accurate meaning of the term "${entry.word}"?`
-          : `साखी #${sakhi.number} ("${firstLine}") में प्रयुक्त शब्द "${entry.word}" का सटीक अर्थ क्या है?`,
-      options: [entry.meaning, distractors[0], distractors[1], distractors[2]],
-      correctIndex: 0,
-      explanation:
-        language === 'pb'
-          ? `ਇਸ ਸਾਖੀ ਵਿੱਚ "${entry.word}" ਦਾ ਭਾਵ "${entry.meaning}" ਹੈ।`
-          : language === 'en'
-          ? `Within this verse, "${entry.word}" signifies: ${entry.meaning}.`
-          : `इस पावन साखी के संदर्भ में "${entry.word}" का अर्थ "${entry.meaning}" है।`,
-    });
-  });
-
-  // 3. Practical application & Ang/Moral question grounded in this Sakhi
-  if (items.length < 5 && action) {
-    items.push({
-      question:
-        language === 'pb'
-          ? `ਸਾਖੀ #${sakhi.number} (${category}) ਸਾਨੂੰ ਵਿਵਹਾਰਕ ਜੀਵਨ ਵਿੱਚ ਕੀ ਅਪਣਾਉਣ ਦੀ ਪ੍ਰੇਰਣਾ ਦਿੰਦੀ ਹੈ?`
-          : language === 'en'
-          ? `How does Sakhi #${sakhi.number} (${category}) instruct the seeker to act in daily life?`
-          : `साखी #${sakhi.number} (${category}) साधक को दैनिक आचरण में क्या अपनाने की प्रेरणा देती है?`,
-      options: [
-        action,
-        language === 'pb' ? 'ਦੂਜਿਆਂ ਵਿੱਚ ਔਗੁਣ ਲੱਭਣਾ' : language === 'en' ? 'Comparing oneself vainly with others' : 'दूसरों की निंदा व अहंकार में समय गँवाना',
-        language === 'pb' ? 'ਬਿਨਾਂ ਸੋਚੇ ਦਿਖਾਵਾ ਕਰਨਾ' : language === 'en' ? 'Seeking superficial praise' : 'बिना विवेक के बाहरी प्रदर्शन करना',
-        language === 'pb' ? 'ਆਤਮ-ਚਿੰਤਨ ਤੋਂ ਭੱਜਣਾ' : language === 'en' ? 'Avoiding quiet self-reflection' : 'अंतर्मुखी आत्म-चिंतन से मुख मोड़ना',
-      ],
-      correctIndex: 0,
-      explanation: bhavarth,
-    });
-  }
-
-  // 4. Core couplet theme synthesis if still below 5
-  while (items.length < 5) {
-    const idx = items.length;
-    const summarySentence = bhavarth.split(/[।.]/).filter((s) => s.trim().length > 10)[idx % 2] || bhavarth;
-    items.push({
-      question:
-        language === 'pb'
-          ? `"${firstLine}" — ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਇਸ ਪੰਕਤੀ ਦਾ ਮੁੱਖ ਸੰਦੇਸ਼ ਕੀ ਹੈ?`
-          : language === 'en'
-          ? `What is the central teaching conveyed in "${firstLine}" (Sakhi #${sakhi.number})?`
-          : `"${firstLine}" — साखी #${sakhi.number} की इस पंक्ति का मुख्य मर्म क्या है?`,
-      options: [
-        summarySentence.trim(),
-        language === 'pb' ? 'ਸੰਸਾਰਿਕ ਵਿਖਾਵੇ ਨੂੰ ਵਧਾਉਣਾ' : language === 'en' ? 'Increasing outward pride and rivalry' : 'बाहरी दिखावे और अभिमान को बढ़ाना',
-        language === 'pb' ? 'ਮਨ ਦੀਆਂ ਚਲਾਕੀਆਂ ਵਿੱਚ ਉਲਝਣਾ' : language === 'en' ? 'Suppressing inner awareness' : 'मन की चंचल वृत्तियों का पोषण करना',
-        language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦੀ ਸਿੱਖਿਆ ਨੂੰ ਭੁੱਲਣਾ' : language === 'en' ? 'Ignoring ethical contemplation' : 'विवेक और आत्म-चिंतन की उपेक्षा करना',
-      ],
-      correctIndex: 0,
-      explanation: bhavarth,
-    });
-  }
-
-  return shuffleElevenStepQuiz(items.slice(0, 5));
+  return buildFiveDimensionQuiz(sakhi, language).map((q) => ({
+    question: q.question,
+    options: q.options,
+    correctIndex: q.correctIndex,
+    explanation: q.explanation,
+  }));
 }
 
 /**
- * Builds instantaneous, 100% Sakhi-specific 11-step Swadhyay data without any generic charity/wealth/caste templates.
+ * Builds instantaneous, 100% Sakhi-specific 11-step Swadhyay data with distinct steps (no Step 1/4/6 copy-paste).
  */
 export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): ElevenStepSwadhyayData {
   const sakhiVerse =
     (language === 'pb' ? sakhi.text?.pb : language === 'en' ? sakhi.text?.en : sakhi.text?.hi) ||
     sakhi.text?.hi ||
-    '';
-  const sakhiBhavarth =
-    (language === 'pb' ? sakhi.bhavarth?.pb : language === 'en' ? sakhi.bhavarth?.en : sakhi.bhavarth?.hi) ||
-    sakhi.bhavarth?.hi ||
     '';
   const categoryTitle = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
   const contextNote = sakhi.contextNote?.[language] || sakhi.contextNote?.hi || '';
@@ -459,62 +373,50 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
   const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
   const firstLine = sakhiVerse.split('\n')[0]?.trim() || sakhiVerse;
 
-  // Step 6: Symbol-grounded Mystical Insight strictly for THIS Sakhi (zero biographical charity/caste filler)
-  const wordSymbolSummary = words
-    .slice(0, 4)
-    .map((w) => `• ${w.word} — ${w.meaning}`)
-    .join('\n');
+  // Step 6: Esoteric & yogic decoding of symbols strictly for THIS Sakhi (zero repetition of Step 1)
+  const step6MysticalText = buildStep6EsotericContent(sakhi, language);
 
-  const step6MysticalText =
-    language === 'pb'
-      ? `📜 ਮੂਲ ਸਾਖੀ (#${sakhi.number} · ${categoryTitle}):\n"${sakhiVerse}"\n\n🔑 ਪ੍ਰਤੀਕ ਤੇ ਗੂੜ੍ਹ ਰਹੱਸ:\n${sakhiBhavarth}${wordSymbolSummary ? `\n\n🧩 ਪਾਵਨ ਸ਼ਬਦ-ਸੰਕੇਤ:\n${wordSymbolSummary}` : ''}${contextNote ? `\n\n✨ ਆਤਮਿਕ ਮਰਮ:\n${contextNote}` : ''}`
-      : language === 'en'
-      ? `📜 Mool Sakhi (#${sakhi.number} · ${categoryTitle}):\n"${sakhiVerse}"\n\n🔑 Mystical Decoding of Exact Symbols:\n${sakhiBhavarth}${wordSymbolSummary ? `\n\n🧩 Sacred Term Keys:\n${wordSymbolSummary}` : ''}${contextNote ? `\n\n✨ Inner Realization:\n${contextNote}` : ''}`
-      : `📜 मूल साखी (#${sakhi.number} · ${categoryTitle}):\n"${sakhiVerse}"\n\n🔑 प्रतीकों का गूढ़ आध्यात्मिक रहस्य:\n${sakhiBhavarth}${wordSymbolSummary ? `\n\n🧩 पावन शब्द-प्रतीक विश्लेषण:\n${wordSymbolSummary}` : ''}${contextNote ? `\n\n✨ अंतरंग बोध संकेत:\n${contextNote}` : ''}`;
-
-  // Step 7: 4 practical takeaways derived strictly from THIS Sakhi
-  const sentenceParts = sakhiBhavarth
-    .split(/[।.]/)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 12);
-
+  // Step 7: 4 practical daily-life takeaways grounded in THIS Sakhi's wisdom
   const keyPoint1 =
-    sentenceParts[0] ||
-    (language === 'pb'
-      ? `"${firstLine}" ਦੇ ਭਾਵ ਨੂੰ ਆਪਣੇ ਨਿੱਤ ਦੇ ਆਚਰਣ ਵਿੱਚ ਉਤਾਰੋ।`
-      : language === 'en'
-      ? `Internalize the central truth of "${firstLine}" in daily thought and speech.`
-      : `"${firstLine}" के मूल सत्य को अपने दैनिक विचार और व्यवहार का आधार बनाएं।`);
-
-  const keyPoint2 =
     practical ||
-    sentenceParts[1] ||
     (language === 'pb'
-      ? `'${categoryTitle}' ਅਨੁਸਾਰ ਮਨ ਦੀ ਪਰਖ ਕਰਦਿਆਂ ਸੱਚਾ ਵਿਵੇਕ ਧਾਰਨ ਕਰੋ।`
+      ? `"${firstLine}" ਦੇ ਭਾਵ ਨੂੰ ਆਪਣੀ ਰੋਜ਼ਾਨਾ ਬੋਲਚਾਲ ਤੇ ਸੋਚ ਵਿੱਚ ਉਤਾਰੋ।`
       : language === 'en'
-      ? `Practice mindful awareness aligned with '${categoryTitle}' in everyday choices.`
-      : `'${categoryTitle}' की इस वाणी के अनुरूप प्रत्येक परिस्थिति में विवेकपूर्ण आचरण करें।`);
+      ? `Apply the core wisdom of "${firstLine}" deliberately in your next conversation or decision.`
+      : `"${firstLine}" के मूल सत्य को आज अपनी बातचीत, व्यवहार और निर्णयों में उतारें।`);
 
-  const keyPoint3 = words[0]
+  const keyPoint2 = words[0]
     ? language === 'pb'
-      ? `"${words[0].word}" (${words[0].meaning}) ਦੇ ਮਰਮ ਨੂੰ ਸਮਝ ਕੇ ਅੰਦਰੂਨੀ ਸ਼ੁੱਧੀ ਵਧਾਓ।`
+      ? `ਪ੍ਰਤੀਕ "${words[0].word}" (${words[0].meaning}) ਨੂੰ ਯਾਦ ਰੱਖ ਕੇ ਮਨ ਦੇ ਵਿਕਾਰਾਂ ਨੂੰ ਸ਼ਾਂਤ ਕਰੋ।`
       : language === 'en'
-      ? `Reflect deeply on "${words[0].word}" (${words[0].meaning}) to transform habitual reactions.`
-      : `साखी के प्रमुख शब्द "${words[0].word}" (${words[0].meaning}) के मर्म को व्यवहार में उतारें।`
-    : sentenceParts[2] ||
+      ? `Hold the symbol "${words[0].word}" (${words[0].meaning}) in awareness whenever inner restlessness rises.`
+      : `प्रतीक "${words[0].word}" (${words[0].meaning}) का स्मरण रखकर प्रत्येक उत्तेजना के समय मन को स्थिर करें।`
+    : language === 'pb'
+    ? `'${categoryTitle}' ਅਨੁਸਾਰ ਮਨ ਦੀ ਪਰਖ ਕਰਦਿਆਂ ਸੱਚਾ ਵਿਵੇਕ ਧਾਰਨ ਕਰੋ।`
+    : language === 'en'
+    ? `Practice quiet inner vigilance aligned with '${categoryTitle}' throughout everyday challenges.`
+    : `'${categoryTitle}' की इस वाणी के अनुरूप प्रतिकूल परिस्थिति में भी विवेक बनाए रखें।`;
+
+  const keyPoint3 = words[1]
+    ? language === 'pb'
+      ? `"${words[1].word}" (${words[1].meaning}) ਦੇ ਮਰਮ ਨੂੰ ਪਛਾਣ ਕੇ ਅੰਦਰੂਨੀ ਸ਼ੁੱਧੀ ਵਧਾਓ।`
+      : language === 'en'
+      ? `Recognize the deeper insight behind "${words[1].word}" (${words[1].meaning}) in daily self-observation.`
+      : `साखी के प्रमुख संकेत "${words[1].word}" (${words[1].meaning}) को अंतरंग साधना में धारण करें।`
+    : contextNote ||
       (language === 'pb'
         ? `ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।`
         : language === 'en'
-        ? `Pause periodically during the day to recall the lesson of Sakhi #${sakhi.number}.`
-        : `दिन में कुछ क्षण मौन होकर साखी #${sakhi.number} के संदेश का मनन करें।`);
+        ? `Pause periodically during the day to contemplate the inner meaning of Sakhi #${sakhi.number}.`
+        : `दिन में कुछ क्षण मौन होकर साखी #${sakhi.number} के मर्म का अंतर्मन में चिंतन करें।`);
 
   const keyPoint4 =
-    contextNote ||
+    contemplationPrompt ||
     (language === 'pb'
       ? `ਇਸ ਸਾਖੀ ਦੀ ਸਿੱਖਿਆ ਅਨੁਸਾਰ ਹਉਮੈ ਛੱਡ ਕੇ ਨਿਮਰਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦਾ ਪੱਲਾ ਫੜੋ।`
       : language === 'en'
-      ? `Anchor the core insight of Sakhi #${sakhi.number} through steady humility and Satyanaam awareness.`
-      : `साखी #${sakhi.number} की शिक्षा को स्मरण रखते हुए अहंकार से बचें और सत्य मार्ग पर अडिग रहें।`);
+      ? `Anchor Sakhi #${sakhi.number} through steady humility, calm words, and inner Satyanaam remembrance.`
+      : `साखी #${sakhi.number} की शिक्षा को जीवन का अंग बनाकर अहंकार से बचें और सत्यनाम स्मरण में स्थित रहें।`);
 
   const bulletPoints =
     language === 'pb'
@@ -523,7 +425,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
       ? [`1. ${keyPoint1}`, `2. ${keyPoint2}`, `3. ${keyPoint3}`, `4. ${keyPoint4}`]
       : [`१. ${keyPoint1}`, `२. ${keyPoint2}`, `३. ${keyPoint3}`, `४. ${keyPoint4}`];
 
-  // Step 8: Authentic Scriptural Cross-References
+  // Step 8: Authentic Scriptural Cross-References from 4 Granths
   const crossRefs = resolveScripturalCrossReferences(sakhi, language);
 
   // Step 9: 3 Self-Reflection questions based directly on THIS Sakhi's moral
@@ -549,7 +451,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
           `'${categoryTitle}' के इस पावन सिद्धांत को अपनाने में मेरे मन की कौन-सी वृत्ति सबसे बड़ी बाधा बनती है?`,
           practical
             ? `आज मैं "${practical}" — इस सूत्र को अपने जीवन की किस परिस्थिति में तत्काल लागू करूँगा?`
-            : `इस साखी के भावार्थ को जीवन में उतारने के लिए मैं आज कौन-सा ठोस सुधार करूँगा?`,
+            : `इस साखी के संदेश को जीवन में उतारने के लिए मैं आज कौन-सा ठोस सुधार करूँगा?`,
         ];
 
   const oneLineBlessing = buildThemeOneLineBlessing(sakhi, language);
@@ -857,7 +759,7 @@ export function mergeAiIntoElevenStepData(
 ): ElevenStepSwadhyayData {
   const validCrossRefs =
     Array.isArray(ai.step8_crossReferences) && ai.step8_crossReferences.length >= 2
-      ? ai.step8_crossReferences.slice(0, 3)
+      ? ai.step8_crossReferences.slice(0, 4)
       : base.step8_crossReferences.references;
 
   const validQuestions =

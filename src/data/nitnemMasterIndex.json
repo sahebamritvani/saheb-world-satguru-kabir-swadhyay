@@ -2,5 +2,136 @@
   "book_title_hindi": "सतगुरु कबीर साहेब नितनेम गुटका साहेब",
   "book_title_punjabi": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ",
   "book_title_english": "Satguru Kabir Saheb Nitnem Gutka Saheb",
-  "granth_suchi": []
+  "granth_suchi": [
+    {
+      "section_id": "१",
+      "major_category_id": "prabhat-path",
+      "hindi_title": "१. प्रभात (प्रातः) पाठ",
+      "punjabi_title": "੧. ਪ੍ਰਭਾਤ (ਪ੍ਰਾਤਹ) ਪਾਠ",
+      "english_title": "1. Prabhat (Morning) Path",
+      "sub_chapters": [
+        { "id": "prabhat_1", "section_id": "prabhat-aarambh-vandana", "hindi": "आरंभ वंदना", "punjabi": "ਆਰੰਭ ਵੰਦਨਾ", "english": "Aarambh Vandana" },
+        { "id": "prabhat_2", "section_id": "prabhat-mangalacharan", "hindi": "मंगलाचरण", "punjabi": "ਮੰਗਲਾਚਰਣ", "english": "Mangalacharan" },
+        { "id": "prabhat_3a", "section_id": "prabhat-guru-mahima-1", "hindi": "अथ श्री गुरु महिमा - १", "punjabi": "ਅਥ ਸ਼੍ਰੀ ਗੁਰੂ ਮਹਿਮਾ - ੧", "english": "Shri Guru Mahima - 1" },
+        { "id": "prabhat_3b", "section_id": "prabhat-guru-mahima-2", "hindi": "अथ श्री गुरु महिमा - २", "punjabi": "ਅਥ ਸ਼੍ਰੀ ਗੁਰੂ ਮਹਿਮਾ - ੨", "english": "Shri Guru Mahima - 2" },
+        { "id": "prabhat_3c", "section_id": "prabhat-guru-shatak-saar", "hindi": "अथ श्री गुरु शतक सार", "punjabi": "ਅਥ ਸ਼੍ਰੀ ਗੁਰੂ ਸ਼ਤਕ ਸਾਰ", "english": "Shri Guru Shatak Saar" },
+        { "id": "prabhat_4", "section_id": "prabhat-sandhya-sakhi", "hindi": "प्रभात संध्या साखी", "punjabi": "ਪ੍ਰਭਾਤ ਸੰਧਿਆ ਸਾਖੀ", "english": "Prabhat Sandhya Sakhi" },
+        { "id": "prabhat_5", "section_id": "prabhat-gyan-gudadi", "hindi": "ज्ञान गुदड़ी", "punjabi": "ਗਿਆਨ ਗੁਦੜੀ", "english": "Gyan Gudadi" },
+        { "id": "prabhat_6", "section_id": "prabhat-dhanakshari", "hindi": "धनाक्षरी छन्द", "punjabi": "ਧਨਾਕਸ਼ਰੀ ਛੰਦ", "english": "Dhanakshari Chhand" },
+        { "id": "prabhat_7", "section_id": "prabhat-arjinama", "hindi": "अर्जीनामा", "punjabi": "ਅਰਜ਼ੀਨਾਮਾ", "english": "Arjinama" },
+        { "id": "prabhat_8a", "section_id": "prabhat-aarti-1", "hindi": "आरती - १", "punjabi": "ਆਰਤੀ - ੧", "english": "Aarti - 1" },
+        { "id": "prabhat_8b", "section_id": "prabhat-aarti-2", "hindi": "आरती - २", "punjabi": "ਆਰਤੀ - ੨", "english": "Aarti - 2" },
+        { "id": "prabhat_8c", "section_id": "prabhat-aarti-3", "hindi": "आरती - ३", "punjabi": "ਆਰਤੀ - ੩", "english": "Aarti - 3" },
+        { "id": "prabhat_8d", "section_id": "prabhat-aarti-4", "hindi": "आरती - ४", "punjabi": "ਆਰਤੀ - ੪", "english": "Aarti - 4" },
+        { "id": "prabhat_9a", "section_id": "prabhat-vinati-1", "hindi": "विनती - १", "punjabi": "ਬੇਨਤੀ - ੧", "english": "Vinati - 1" },
+        { "id": "prabhat_9b", "section_id": "prabhat-vinati-2", "hindi": "विनती - २", "punjabi": "ਬੇਨਤੀ - ੨", "english": "Vinati - 2" },
+        { "id": "prabhat_10", "section_id": "prabhat-pratah-sumiran-aarti", "hindi": "प्रातः सुमिरन आरती", "punjabi": "ਪ੍ਰਾਤਹ ਸੁਮਿਰਨ ਆਰਤੀ", "english": "Pratah Sumiran Aarti" },
+        { "id": "prabhat_11", "section_id": "prabhat-shlok-dhyanam", "hindi": "श्लोक ध्यानं", "punjabi": "ਸ਼ਲੋਕ ਧਿਆਨੰ", "english": "Shlok Dhyanam" },
+        { "id": "prabhat_12", "section_id": "prabhat-vinati", "hindi": "विनती", "punjabi": "ਬੇਨਤੀ", "english": "Vinati" },
+        { "id": "prabhat_13", "section_id": "prabhat-samapan-vandana", "hindi": "समापन वंदना", "punjabi": "ਸਮਾਪਨ ਵੰਦਨਾ", "english": "Samapan Vandana" }
+      ]
+    },
+    {
+      "section_id": "२",
+      "major_category_id": "sandhya-path",
+      "hindi_title": "२. मूल संध्या पाठ",
+      "punjabi_title": "੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ",
+      "english_title": "2. Mool Sandhya (Evening) Path",
+      "sub_chapters": [
+        { "id": "sandhya_1", "section_id": "sandhya-aarambh-vandana", "hindi": "आरंभ वंदना", "punjabi": "ਆਰੰਭ ਵੰਦਨਾ", "english": "Aarambh Vandana" },
+        { "id": "sandhya_2", "section_id": "sandhya-mangalacharan", "hindi": "मंगलाचरण", "punjabi": "ਮੰਗਲਾਚਰਣ", "english": "Mangalacharan" },
+        { "id": "sandhya_3a", "section_id": "sandhya-gauri-1", "hindi": "गौड़ी - १", "punjabi": "ਗੌੜੀ - ੧", "english": "Gaudi - 1" },
+        { "id": "sandhya_3b", "section_id": "sandhya-gauri-2", "hindi": "गौड़ी - २", "punjabi": "ਗੌੜੀ - ੨", "english": "Gaudi - 2" },
+        { "id": "sandhya_3c", "section_id": "sandhya-gauri-3", "hindi": "गौड़ी - ३", "punjabi": "ਗੌੜੀ - ੩", "english": "Gaudi - 3" },
+        { "id": "sandhya_3d", "section_id": "sandhya-gauri-4", "hindi": "गौड़ी - ४", "punjabi": "ਗੌੜੀ - ੪", "english": "Gaudi - 4" },
+        { "id": "sandhya_3e", "section_id": "sandhya-gauri-5", "hindi": "गौड़ी - ५", "punjabi": "ਗੌੜੀ - ੫", "english": "Gaudi - 5" },
+        { "id": "sandhya_4", "section_id": "sandhya-prabhat-sandhya-sakhi", "hindi": "प्रभात संध्या साखी", "punjabi": "ਪ੍ਰਭਾਤ ਸੰਧਿਆ ਸਾਖੀ", "english": "Prabhat Sandhya Sakhi" },
+        { "id": "sandhya_5", "section_id": "sandhya-sumiran-sandhya-sakhi", "hindi": "सुमिरन संध्या साखी", "punjabi": "ਸੁਮਿਰਨ ਸੰਧਿਆ ਸਾਖੀ", "english": "Sumiran Sandhya Sakhi" },
+        { "id": "sandhya_6", "section_id": "sandhya-gyan-stotra", "hindi": "ज्ञान स्तोत्र", "punjabi": "ਗਿਆਨ ਸਤੋਤ੍ਰ", "english": "Gyan Stotra" },
+        { "id": "sandhya_7", "section_id": "sandhya-vigyan-stotra", "hindi": "विज्ञान स्त्रोत", "punjabi": "ਵਿਗਿਆਨ ਸਤੋਤ੍ਰ", "english": "Vigyan Stotra" },
+        { "id": "sandhya_8", "section_id": "sandhya-dayasagar-stuti", "hindi": "दया सागर स्तुति", "punjabi": "ਦਇਆ ਸਾਗਰ ਸਤੁਤੀ", "english": "Dayasagar Stuti" },
+        { "id": "sandhya_9", "section_id": "sandhya-adhik-mahima", "hindi": "अधिक महिमा", "punjabi": "ਅਧਿਕ ਮਹਿਮਾ", "english": "Adhik Mahima" },
+        { "id": "sandhya_10", "section_id": "sandhya-chetavani-sakhi", "hindi": "चेतावनी साखी", "punjabi": "ਚੇਤਾਵਨੀ ਸਾਖੀ", "english": "Chetawani Sakhi" },
+        { "id": "sandhya_11", "section_id": "sandhya-sat-ka-shabad", "hindi": "सत का शब्द", "punjabi": "ਸਤ ਕਾ ਸ਼ਬਦ", "english": "Sat Ka Shabad" },
+        { "id": "sandhya_12", "section_id": "sandhya-gyan-gudadi", "hindi": "ज्ञान गुदड़ी", "punjabi": "ਗਿਆਨ ਗੁਦੜੀ", "english": "Gyan Gudadi" },
+        { "id": "sandhya_13", "section_id": "sandhya-arjinama", "hindi": "अर्जीनामा", "punjabi": "ਅਰਜ਼ੀਨਾਮਾ", "english": "Arjinama" },
+        { "id": "sandhya_14a", "section_id": "sandhya-ashtak-1", "hindi": "अष्टक - १", "punjabi": "ਅਸ਼ਟਕ - ੧", "english": "Ashtak - 1" },
+        { "id": "sandhya_14b", "section_id": "sandhya-ashtak-2", "hindi": "अष्टक - २ (त्रिभंगी छन्द)", "punjabi": "ਅਸ਼ਟਕ - ੨ (ਤ੍ਰਿਭੰਗੀ ਛੰਦ)", "english": "Ashtak - 2 (Tribhangi Chhand)" },
+        { "id": "sandhya_14c", "section_id": "sandhya-ashtak-3", "hindi": "अष्टक - ३", "punjabi": "ਅਸ਼ਟਕ - ੩", "english": "Ashtak - 3" },
+        { "id": "sandhya_15", "section_id": "sandhya-dhanakshari", "hindi": "धनाक्षरी छन्द", "punjabi": "ਧਨਾਕਸ਼ਰੀ ਛੰਦ", "english": "Dhanakshari Chhand" },
+        { "id": "sandhya_16", "section_id": "sandhya-arjinama-2", "hindi": "अर्जीनामा - २", "punjabi": "ਅਰਜ਼ੀਨਾਮਾ - ੨", "english": "Arjinama - 2" },
+        { "id": "sandhya_17a", "section_id": "sandhya-aarti-1", "hindi": "आरती - १", "punjabi": "ਆਰਤੀ - ੧", "english": "Aarti - 1" },
+        { "id": "sandhya_17b", "section_id": "sandhya-aarti-2", "hindi": "आरती - २", "punjabi": "ਆਰਤੀ - ੨", "english": "Aarti - 2" },
+        { "id": "sandhya_17c", "section_id": "sandhya-aarti-3", "hindi": "आरती - ३", "punjabi": "ਆਰਤੀ - ੩", "english": "Aarti - 3" },
+        { "id": "sandhya_17d", "section_id": "sandhya-aarti-4", "hindi": "आरती - ४", "punjabi": "ਆਰਤੀ - ੪", "english": "Aarti - 4" },
+        { "id": "sandhya_18a", "section_id": "sandhya-vinati-1", "hindi": "विनती - १", "punjabi": "ਬੇਨਤੀ - ੧", "english": "Vinati - 1" },
+        { "id": "sandhya_18b", "section_id": "sandhya-vinati-2", "hindi": "विनती - २", "punjabi": "ਬੇਨਤੀ - ੨", "english": "Vinati - 2" },
+        { "id": "sandhya_19", "section_id": "sandhya-sandhya-sumiran-aarti", "hindi": "संध्या सुमिरन आरती", "punjabi": "ਸੰਧਿਆ ਸੁਮਿਰਨ ਆਰਤੀ", "english": "Sandhya Sumiran Aarti" },
+        { "id": "sandhya_20", "section_id": "sandhya-shlok-dhyanam", "hindi": "श्लोक ध्यानं", "punjabi": "ਸ਼ਲੋਕ ਧਿਆਨੰ", "english": "Shlok Dhyanam" },
+        { "id": "sandhya_21", "section_id": "sandhya-vinati", "hindi": "विनती", "punjabi": "ਬੇਨਤੀ", "english": "Vinati" },
+        { "id": "sandhya_22", "section_id": "sandhya-samapan-vandana", "hindi": "समापन वंदना", "punjabi": "ਸਮਾਪਨ ਵੰਦਨਾ", "english": "Samapan Vandana" }
+      ]
+    },
+    {
+      "section_id": "३",
+      "major_category_id": "gayatri",
+      "hindi_title": "३. गायत्री",
+      "punjabi_title": "੩. ਗਾਇਤਰੀ",
+      "english_title": "3. Gayatri Path",
+      "sub_chapters": [
+        { "id": "gayatri_1", "section_id": "gayatri-aadi", "hindi": "आदि गायत्री", "punjabi": "ਆਦਿ ਗਾਇਤਰੀ", "english": "Adi Gayatri" },
+        { "id": "gayatri_2", "section_id": "gayatri-prabhat", "hindi": "प्रभात गायत्री", "punjabi": "ਪ੍ਰਭਾਤ ਗਾਇਤਰੀ", "english": "Prabhat Gayatri" },
+        { "id": "gayatri_3", "section_id": "gayatri-madhyahan", "hindi": "मध्याह्न गायत्री", "punjabi": "ਮਧਿਆਹਨ ਗਾਇਤਰੀ", "english": "Madhyahn Gayatri" },
+        { "id": "gayatri_4", "section_id": "gayatri-sandhya", "hindi": "संध्या गायत्री", "punjabi": "ਸੰਧਿਆ ਗਾਇਤਰੀ", "english": "Sandhya Gayatri" },
+        { "id": "gayatri_5", "section_id": "gayatri-madhyan-2", "hindi": "परोक्ष ब्रह्म गायत्री", "punjabi": "ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਗਾਇਤਰੀ", "english": "Paroksh Brahma Gayatri" }
+      ]
+    },
+    {
+      "section_id": "४",
+      "major_category_id": "poonam-mahatmya",
+      "hindi_title": "४. पूनो महात्म्य पाठ",
+      "punjabi_title": "੪. ਪੂਨੋ ਮਹਾਤਮਯ ਪਾਠ",
+      "english_title": "4. Poono Mahatmya Path",
+      "sub_chapters": [
+        { "id": "poonam_1", "section_id": "poonam-vandana", "hindi": "वंदना", "punjabi": "ਵੰਦਨਾ", "english": "Vandana" },
+        { "id": "poonam_2", "section_id": "poonam-vrihat-mahatmya", "hindi": "अथ वृहत्त पूनो महात्म्य", "punjabi": "ਅਥ ਵ੍ਰਿਹਤ ਪੂਨੋ ਮਹਾਤਮਯ", "english": "Vrihat Poono Mahatmya" },
+        { "id": "poonam_3", "section_id": "poonam-kahra", "hindi": "कहरा", "punjabi": "ਕਹਰਾ", "english": "Kahra" },
+        { "id": "poonam_4", "section_id": "poonam-mangal", "hindi": "मंगल", "punjabi": "ਮੰਗਲ", "english": "Mangal" },
+        { "id": "poonam_5", "section_id": "poonam-laghu-mahatmya", "hindi": "अथ लघु पूनो महात्म्य", "punjabi": "ਅਥ ਲਘੂ ਪੂਨੋ ਮਹਾਤਮਯ", "english": "Laghu Poono Mahatmya" },
+        { "id": "poonam_6", "section_id": "poonam-sadhan-sumiran", "hindi": "अथ पूनम साधन का सुमिरण", "punjabi": "ਅਥ ਪੂਨਮ ਸਾਧਨ ਕਾ ਸੁਮਿਰਨ", "english": "Poonam Sadhan Ka Sumiran" },
+        { "id": "poonam_7", "section_id": "poonam-barsait-mahatmya", "hindi": "अथ बरसाइत महात्म्य", "punjabi": "ਅਥ ਬਰਸਾਇਤ ਮਹਾਤਮਯ", "english": "Barsait Mahatmya" }
+      ]
+    },
+    {
+      "section_id": "५",
+      "major_category_id": "chalisa",
+      "hindi_title": "५. सतगुरु कबीर चालीसा पाठ",
+      "punjabi_title": "੫. ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ ਪਾਠ",
+      "english_title": "5. Satguru Kabir Chalisa Path",
+      "sub_chapters": [
+        { "id": "chalisa_1", "section_id": "chalisa-vandana", "hindi": "वंदना", "punjabi": "ਵੰਦਨਾ", "english": "Vandana" },
+        { "id": "chalisa_2", "section_id": "chalisa-path", "hindi": "सतगुरु कबीर चालीसा पाठ", "punjabi": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ ਪਾਠ", "english": "Satguru Kabir Chalisa Path" }
+      ]
+    },
+    {
+      "section_id": "६",
+      "major_category_id": "barahmasi",
+      "hindi_title": "६. बारहमासी पाठ",
+      "punjabi_title": "੬. ਬਾਰਹਮਾਸੀ ਪਾਠ",
+      "english_title": "6. Barahmasi Path",
+      "sub_chapters": [
+        { "id": "barahmasi_1", "section_id": "barahmasi-path", "hindi": "बारहमासी पाठ (असाड़ ते जेठ)", "punjabi": "ਬਾਰਹਮਾਸੀ ਪਾਠ (ਅਸਾੜ ਤੋਂ ਜੇਠ)", "english": "Barahmasi Path (Asaad to Jeth)" }
+      ]
+    },
+    {
+      "section_id": "७",
+      "major_category_id": "teesa-yantra",
+      "hindi_title": "७. तीसा यंत्र",
+      "punjabi_title": "੭. ਤੀਸਾ ਯੰਤਰ",
+      "english_title": "7. Teesa Yantra",
+      "sub_chapters": [
+        { "id": "teesa_1", "section_id": "teesa-yantra-path", "hindi": "तीसा यंत्र (अथ श्री तीसा यंत्र पाठ)", "punjabi": "ਤੀਸਾ ਯੰਤਰ (ਅਥ ਸ਼੍ਰੀ ਤੀਸਾ ਯੰਤਰ ਪਾਠ)", "english": "Teesa Yantra Path" }
+      ]
+    }
+  ]
 }

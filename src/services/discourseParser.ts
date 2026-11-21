@@ -6,6 +6,7 @@
 import { Sakhi, Language } from '../types';
 import { sakhisDatabase } from '../data/sakhis';
 import { formatCoupletString, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
+import { buildStep4SatsangContent } from './swadhyayContentEngine';
 
 export interface Discourse5StepData {
   title: string;
@@ -57,7 +58,7 @@ export interface Discourse5StepData {
 
 // Sant Bhasha Vocabulary Dictionary
 const SANT_BHASHA_DICT: Record<string, { hi: string; pb: string; en: string }> = {
-  'कबीर': { hi: 'सतगुरु कबीर साहेब जी (परम चेतना)', pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ', en: 'Satguru Kabir Saheb (Supreme Consciousness)' },
+  'कबीर': { hi: 'सतगुरु कबीर साहेब जी (परम चेतना)', pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ', en: 'Satguru Kabir Saheb (Supreme Consciousness)' },
   'साहिब': { hi: 'परमेश्वर, सर्वोपरि स्वामी', pb: 'ਪਰਮੇਸ਼ਵਰ, ਮਾਲਕ', en: 'The Supreme Master' },
   'सत्यनाम': { hi: 'सतगुरु का अमर एवं अनादि निज नाम', pb: 'ਸਤਿਗੁਰੂ ਦਾ ਅਮਰ ਨਿਜ ਨਾਮ', en: 'The Eternal Uncreated True Name' },
   'सतनाम': { hi: 'अविनाशी निज नाम शबद', pb: 'ਅਵਿਨਾਸ਼ੀ ਨਾਮ', en: 'The Imperishable True Vibration' },
@@ -237,16 +238,24 @@ export function parseSakhiInto5StepDiscourse(
     foundationNote: sakhiNum ? `साखी संख्या: ${sakhiNum} • ${granthName}` : `पावन वाणी • ${granthName}`,
   };
 
-  // Derive Deep Bhavarth
+  // Derive Deep Bhavarth (Why Taught + Practical Life Example + Mind Insight via Content Engine)
+  const targetSakhiForDepth =
+    sakhiObj ||
+    ({
+      number: sakhiNum || 0,
+      text: { hi: rawText, pb: rawText, en: rawText },
+      bhavarth: { hi: '', pb: '', en: '' },
+      categoryTitle: { hi: categoryName, pb: categoryName, en: categoryName },
+      category: categoryName,
+      wordMeanings: { hi: [], pb: [], en: [] },
+    } as unknown as Sakhi);
+  const satsangDepth = buildStep4SatsangContent(targetSakhiForDepth, lang);
+
   const deepBhavarthData = {
     title: titles.step4,
-    bhavarthSummary: ensureSatguruKabirSaheb(sakhiObj?.bhavarth?.[lang] || sakhiObj?.bhavarth?.hi || (
-      lang === 'pb'
-        ? 'ਇਸ ਸਾਖੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬਾਹਰੀ ਰੀਤੀ-ਰਿਵਾਜਾਂ ਨੂੰ ਛੱਡ ਕੇ ਅੰਦਰੂਨੀ ਸਤਯਨਾਮ ਨਿਜ ਨਾਮ ਦੇ ਸਿਮਰਨ ਨਾਲ ਹੀ ਨਿਰਵਾਣ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ।'
-        : lang === 'en'
-        ? 'In this verse, Satguru Kabir Saheb reveals that ultimate liberation is achieved not through external rituals, but by merging internal consciousness into the uncreated Satyanaam vibration.'
-        : 'इस साखी में सतगुरु कबीर साहेब स्पष्ट करते हैं कि बाह्य आडंबरों को त्यागकर अंतर्मुखी होकर सत्यनाम के अनहद शबद में सुरति को लीन करने से ही परम मोक्ष की प्राप्ति संभव है।'
-    )),
+    bhavarthSummary: ensureSatguruKabirSaheb(
+      `${satsangDepth.whyTaught}\n\n${satsangDepth.satsangWithDrishtant}`
+    ),
     suratShabadYogaGuidance: {
       suratFocus:
         lang === 'pb'

@@ -55,6 +55,7 @@ import { MasterGranth, GranthChapter, GranthVerse } from '../data/granths/granth
 import { SacredLoader } from './SacredLoader';
 import { PaginationControls } from './PaginationControls';
 import { generateUniqueUlatvasiAnalysis } from '../services/ulatvasiEssenceEngine';
+import { deriveDistinctSpiritualEssence } from '../services/swadhyayContentEngine';
 import { ambientReaderAudio, DhunSoundType, speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 import { backgroundSync } from '../services/backgroundSync';
@@ -3964,7 +3965,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                                 {t.spiritualEssenceLabel}
                               </span>
                               <p className="italic opacity-90 leading-relaxed">
-                                {verse.spiritualEssence[language] || verse.spiritualEssence.hi}
+                                {deriveDistinctSpiritualEssence(
+                                  verse.lines?.hi?.join(' ') || '',
+                                  verse.bhavarth?.hi || '',
+                                  verse.spiritualEssence[language] || verse.spiritualEssence.hi,
+                                  language
+                                )}
                               </p>
                             </div>
                           </div>
@@ -4324,7 +4330,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             {t.spiritualEssenceLabel}
                           </span>
                           <p className="text-xs font-serif leading-relaxed italic opacity-90">
-                            {verse.spiritualEssence[language] || verse.spiritualEssence.hi}
+                            {deriveDistinctSpiritualEssence(
+                              verse.lines?.hi?.join(' ') || '',
+                              verse.bhavarth?.hi || '',
+                              verse.spiritualEssence[language] || verse.spiritualEssence.hi,
+                              language
+                            )}
                           </p>
                         </div>
                       </div>

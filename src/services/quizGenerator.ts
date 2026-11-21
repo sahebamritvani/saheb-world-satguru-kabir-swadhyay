@@ -1,0 +1,1677 @@
+import { Sakhi, Language, QuizQuestion } from '../types';
+import { ensureSatguruKabirSaheb } from '../utils/textSanitizer';
+
+export interface GeneratedQuizQuestion {
+  id: string;
+  dimension:
+    | 'core-message'
+    | 'symbolic-meaning'
+    | 'real-life-scenario'
+    | 'cause-effect'
+    | 'tattva-gyan';
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+function fisherYatesShuffle<T>(arr: T[]): T[] {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+/**
+ * Shuffles BOTH the order of questions AND the order of A/B/C/D options cleanly,
+ * keeping correctIndex aligned with the true answer.
+ */
+export function shuffleGeneratedQuiz<T extends { options: string[]; correctIndex: number }>(
+  questions: T[]
+): T[] {
+  if (!Array.isArray(questions) || questions.length === 0) return [];
+  const reorderedQuestions = fisherYatesShuffle(questions);
+  return reorderedQuestions.map((q) => {
+    const rawOpts = Array.isArray(q.options) ? q.options.slice(0, 4) : [];
+    const safeCorrectIdx =
+      typeof q.correctIndex === 'number' && q.correctIndex >= 0 && q.correctIndex < rawOpts.length
+        ? q.correctIndex
+        : 0;
+    const indices = rawOpts.map((_, idx) => idx);
+    const perm = fisherYatesShuffle(indices);
+    return {
+      ...q,
+      options: perm.map((p) => rawOpts[p]),
+      correctIndex: Math.max(0, perm.indexOf(safeCorrectIdx)),
+    };
+  });
+}
+
+/**
+ * Curated, benchmark-quality 5-question trilingual quizzes for signature Sakhis
+ * (featuring Sakhi #1106 exact benchmark question + 4 other authentic dimensions).
+ */
+export const CURATED_SAKHI_QUIZZES: Record<number, QuizQuestion[]> = {
+  1106: [
+    {
+      id: 'q-1106-1-core',
+      question: {
+        hi: 'साखी #११०६ ("शीतल शब्द उचारिये, अहं आनिये नाहिं") का केंद्रीय जीवन संदेश क्या है?',
+        pb: 'ਸਾਖੀ #੧੧੦੬ ("ਸ਼ੀਤਲ ਸ਼ਬਦ ਉਚਾਰੀਏ, ਅਹੰ ਆਨੀਏ ਨਾਹਿਂ") ਦਾ ਮੁੱਖ ਜੀਵਨ ਸੰਦੇਸ਼ ਕੀ ਹੈ?',
+        en: 'What is the core practical life message of Sakhi #1106 ("Shital shabd uchariye, aham aniye nahi")?',
+      },
+      options: {
+        hi: [
+          'सदा विनम्र और शीतल वाणी बोलना तथा मन में अहंकार का प्रवेश न होने देना',
+          'केवल एकांत में मौन व्रत धारण कर दूसरों से संवाद पूरी तरह बंद कर देना',
+          'अपने सम्मान की रक्षा के लिए विरोधियों को कठोर शब्दों से उत्तर देना',
+          'केवल बाहरी ग्रंथों के कठिन शब्दों को कंठस्थ करके शास्त्रार्थ करना',
+        ],
+        pb: [
+          'ਸਦਾ ਨਿਮਰ ਤੇ ਸ਼ੀਤਲ ਬੋਲੀ ਬੋਲਣੀ ਅਤੇ ਮਨ ਵਿੱਚ ਹੰਕਾਰ ਨਾ ਆਉਣ ਦੇਣਾ',
+          'ਕੇਵਲ ਇਕਾਂਤ ਵਿੱਚ ਮੌਨ ਵਰਤ ਰੱਖ ਕੇ ਸਭ ਨਾਲ ਗੱਲਬਾਤ ਬੰਦ ਕਰ ਦੇਣੀ',
+          'ਆਪਣੀ ਸ਼ਾਨ ਬਚਾਉਣ ਲਈ ਵਿਰੋਧੀਆਂ ਨੂੰ ਤਿੱਖੇ ਬੋਲਾਂ ਵਿੱਚ ਜਵਾਬ ਦੇਣਾ',
+          'ਬਾਹਰੀ ਪੁਸਤਕਾਂ ਦੇ ਔਖੇ ਸ਼ਬਦ ਯਾਦ ਕਰਕੇ ਬਹਿਸਾਂ ਵਿੱਚ ਜਿੱਤ ਪ੍ਰਾਪਤ ਕਰਨੀ',
+        ],
+        en: [
+          'Speak calmly and humbly at all times while keeping arrogance out of the heart',
+          'Stop speaking to others altogether by taking a vow of total silence in isolation',
+          'Respond firmly with sharp words whenever someone challenges your dignity',
+          'Memorize complex verses merely to win philosophical debates with others',
+        ],
+      },
+      correctIndex: 0,
+      explanation: {
+        hi: 'सतगुरु कबीर साहेब स्पष्ट करते हैं कि मीठी, शीतल वाणी और निरहंकार भाव ही मनुष्य के अंतःकरण को शांति और प्रीतम की अनुभूति के योग्य बनाते हैं।',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਿੱਠੀ, ਸ਼ੀਤਲ ਬੋਲੀ ਅਤੇ ਨਿਮਰਤਾ ਹੀ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਪ੍ਰਭੂ-ਮਿਲਾਪ ਦੇ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ।',
+        en: 'Satguru Kabir Saheb teaches that cooling, gentle speech paired with freedom from ego prepares the heart for inner peace and Divine realization.',
+      },
+    },
+    {
+      id: 'q-1106-2-symbolic',
+      question: {
+        hi: 'सतगुरु कबीर साहेब के अनुसार मनुष्य का सबसे बड़ा शत्रु ("दुसमन") और सबसे प्यारा मित्र ("प्रीतम") कहाँ निवास करते हैं?',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਦੁਸ਼ਮਣ ਅਤੇ ਸਭ ਤੋਂ ਪਿਆਰਾ ਮਿੱਤਰ ("ਪ੍ਰੀਤਮ") ਕਿੱਥੇ ਵਸਦੇ ਹਨ?',
+        en: 'According to Satguru Kabir Saheb, where do one’s greatest enemy ("Dusman") and dearest Beloved ("Pritam") reside?',
+      },
+      options: {
+        hi: [
+          'बाहर के समाज और मित्रों के बीच',
+          'स्वयं मनुष्य के अपने ही अंतःकरण (घट) के भीतर',
+          'केवल तीर्थ स्थलों और ग्रंथों के पन्नों में',
+          'भाग्य और ग्रहों की चाल में',
+        ],
+        pb: [
+          'ਬਾਹਰਲੇ ਸਮਾਜ ਅਤੇ ਦੋਸਤਾਂ-ਮਿੱਤਰਾਂ ਦੇ ਵਿਚਕਾਰ',
+          'ਮਨੁੱਖ ਦੇ ਆਪਣੇ ਹੀ ਅੰਦਰਲੇ ਹਿਰਦੇ (ਘਟ) ਦੇ ਅੰਦਰ',
+          'ਕੇਵਲ ਤੀਰਥ ਅਸਥਾਨਾਂ ਅਤੇ ਗ੍ਰੰਥਾਂ ਦੇ ਪੰਨਿਆਂ ਵਿੱਚ',
+          'ਕਿਸਮਤ ਅਤੇ ਗ੍ਰਹਿਆਂ ਦੀ ਚਾਲ ਦੇ ਅੰਦਰ',
+        ],
+        en: [
+          'Outwardly among society, neighbors, and social circles',
+          'Within one’s very own inner heart and consciousness (Ghat)',
+          'Solely inside distant pilgrimage shrines and sacred pages',
+          'In external destiny and the movement of planets',
+        ],
+      },
+      correctIndex: 1,
+      explanation: {
+        hi: '"तेरा प्रीतम तुझहि में, दुसमन भी तुझ माहिं" — सतगुरु समझाते हैं कि परमात्मा रूपी प्रीतम और अहंकार/कटुता रूपी शत्रु, दोनों बाहर नहीं बल्कि हमारे अपने भीतर विद्यमान हैं।',
+        pb: '"ਤੇਰਾ ਪ੍ਰੀਤਮ ਤੁਝਹਿ ਮੇਂ, ਦੁਸਮਨ ਭੀ ਤੁਝ ਮਾਹਿਂ" — ਸਤਿਗੁਰੂ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰੀਤਮ (ਪਰਮਾਤਮਾ) ਅਤੇ ਦੁਸ਼ਮਣ (ਹੰਕਾਰ/ਕੌੜਾ ਮਨ) ਦੋਵੇਂ ਸਾਡੇ ਆਪਣੇ ਅੰਦਰ ਹੀ ਹਨ।',
+        en: '"Your Beloved is within you, and your enemy too is inside you"—both the Divine Friend and destructive ego live within our own consciousness.',
+      },
+    },
+    {
+      id: 'q-1106-3-scenario',
+      question: {
+        hi: 'दैनिक व्यवहार: यदि कोई सहकर्मी या परिजन बिना कारण क्रोध में कड़वी बात कह दे, तो इस साखी के अनुसार साधक को कैसा आचरण करना चाहिए?',
+        pb: 'ਰੋਜ਼ਾਨਾ ਵਿਹਾਰ: ਜੇ ਕੋਈ ਸਾਥੀ ਜਾਂ ਪਰਿਵਾਰਕ ਮੈਂਬਰ ਗੁੱਸੇ ਵਿੱਚ ਕੌੜੀ ਗੱਲ ਕਹਿ ਦੇਵੇ, ਤਾਂ ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਸਾਧਕ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+        en: 'Daily Scenario: If a colleague or relative speaks angrily and harshly without reason, how should a seeker respond according to this Sakhi?',
+      },
+      options: {
+        hi: [
+          'तुरंत उतनी ही कठोर भाषा में प्रतिउत्तर देकर अपना पक्ष साबित करना चाहिए',
+          'मन के आवेश और अहं को रोककर शांत व शीतल वाणी से संवाद संभालना चाहिए',
+          'उस व्यक्ति से आजीवन के लिए मन में वैर और बदला रखने का निश्चय करना चाहिए',
+          'सबके सामने उस व्यक्ति की पिछली गलतियाँ गिनाकर उसे लज्जित करना चाहिए',
+        ],
+        pb: [
+          'ਤੁਰੰਤ ਉਹੀ ਕੌੜੀ ਬੋਲੀ ਵਿੱਚ ਜਵਾਬ ਦੇ ਕੇ ਆਪਣਾ ਪੱਖ ਸਹੀ ਸਾਬਤ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ',
+          'ਮਨ ਦੇ ਜੋਸ਼ ਤੇ ਹੰਕਾਰ ਨੂੰ ਰੋਕ ਕੇ ਸ਼ਾਂਤ ਅਤੇ ਸ਼ੀਤਲ ਬੋਲਾਂ ਨਾਲ ਗੱਲ ਸੰਭਾਲਣੀ ਚਾਹੀਦੀ ਹੈ',
+          'ਉਸ ਵਿਅਕਤੀ ਨਾਲ ਸਾਰੀ ਉਮਰ ਲਈ ਮਨ ਵਿੱਚ ਵੈਰ ਅਤੇ ਬਦਲਾ ਰੱਖ ਲੈਣਾ ਚਾਹੀਦਾ ਹੈ',
+          'ਸਭ ਦੇ ਸਾਹਮਣੇ ਉਸ ਦੀਆਂ ਪੁਰਾਣੀਆਂ ਗਲਤੀਆਂ ਗਿਣਾ ਕੇ ਉਸ ਨੂੰ ਸ਼ਰਮਿੰਦਾ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ',
+        ],
+        en: [
+          'Immediately fire back in equally sharp words to prove your superiority',
+          'Restrain inner ego and reply with calm, cooling words that defuse tension',
+          'Hold silent resentment forever while planning subtle retaliation later',
+          'Publicly list all of their past mistakes so everyone sees they are wrong',
+        ],
+      },
+      correctIndex: 1,
+      explanation: {
+        hi: 'कटुता का उत्तर कटुता से देने पर भीतर का शत्रु (अहंकार) जीत जाता है; शीतल शब्द बोलने से विवाद शांत होता है और साधक की आध्यात्मिक गरिमा सुरक्षित रहती है।',
+        pb: 'ਕੌੜੇ ਬੋਲ ਦਾ ਜਵਾਬ ਕੌੜੇ ਬੋਲ ਨਾਲ ਦੇਣ ਤੇ ਅੰਦਰਲਾ ਦੁਸ਼ਮਣ (ਹੰਕਾਰ) ਜਿੱਤ ਜਾਂਦਾ ਹੈ; ਸ਼ੀਤਲ ਬੋਲ ਵਿਵਾਦ ਨੂੰ ਸ਼ਾਂਤ ਕਰਦੇ ਹਨ।',
+        en: 'Answering bitterness with bitterness lets inner ego win; cooling speech calms conflict and preserves inner stillness.',
+      },
+    },
+    {
+      id: 'q-1106-4-cause-effect',
+      question: {
+        hi: 'कारण और परिणाम: वाणी में कटुता और हृदय में "अहं" (अहंकार) को पोषित करने का आध्यात्मिक परिणाम क्या होता है?',
+        pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਬੋਲੀ ਵਿੱਚ ਕੜਵਾਹਟ ਅਤੇ ਹਿਰਦੇ ਵਿੱਚ "ਅਹੰ" (ਹੰਕਾਰ) ਪਾਲਣ ਦਾ ਅਧਿਆਤਮਕ ਨਤੀਜਾ ਕੀ ਹੁੰਦਾ ਹੈ?',
+        en: 'Cause & Effect: What is the spiritual consequence of nourishing harsh speech and inner ego ("Aham")?',
+      },
+      options: {
+        hi: [
+          'बाहरी समाज में व्यक्ति सदैव बहुत लोकप्रिय और सम्माननीय बन जाता है',
+          'भीतर विराजमान प्रीतम (परमात्मा) से दूरी बढ़ती है और अंतर्मन अशांत हो जाता है',
+          'आत्म-चिंतन और ध्यान की गहराई अपने आप तीव्र हो जाती है',
+          'मनुष्य को किसी भी सत्संग या आत्म-निरीक्षण की आवश्यकता नहीं रहती',
+        ],
+        pb: [
+          'ਬਾਹਰਲੇ ਸਮਾਜ ਵਿੱਚ ਮਨੁੱਖ ਹਮੇਸ਼ਾ ਹਰਮਨਪਿਆਰਾ ਅਤੇ ਸਨਮਾਨਿਤ ਬਣ ਜਾਂਦਾ ਹੈ',
+          'ਅੰਦਰ ਵਸਦੇ ਪ੍ਰੀਤਮ (ਪਰਮਾਤਮਾ) ਨਾਲੋਂ ਦੂਰੀ ਵਧਦੀ ਹੈ ਤੇ ਮਨ ਅਸ਼ਾਂਤ ਹੁੰਦਾ ਹੈ',
+          'ਆਤਮ-ਚਿੰਤਨ ਅਤੇ ਧਿਆਨ ਦੀ ਡੂੰਘਾਈ ਆਪਣੇ ਆਪ ਤੇਜ਼ ਹੋ ਜਾਂਦੀ ਹੈ',
+          'ਮਨੁੱਖ ਨੂੰ ਕਿਸੇ ਸਤਿਸੰਗ ਜਾਂ ਆਤਮ-ਪੜਚੋਲ ਦੀ ਲੋੜ ਨਹੀਂ ਰਹਿੰਦੀ',
+        ],
+        en: [
+          'One automatically earns deep trust and lasting harmony with everyone',
+          'It creates inner restlessness and veils awareness of the Indwelling Beloved',
+          'Concentration in meditation effortlessly deepens on its own',
+          'The seeker no longer needs Satsang or self-discipline',
+        ],
+      },
+      correctIndex: 1,
+      explanation: {
+        hi: 'जहाँ अहंकार और कड़वाहट पनपती है, वहाँ हृदय का द्वार संकीर्ण हो जाता है; अहं ही वह आवरण है जो घट में बसे साहेब की अनुभूति को रोक देता है।',
+        pb: 'ਜਿੱਥੇ ਹੰਕਾਰ ਤੇ ਕੜਵਾਹਟ ਵਧਦੇ ਹਨ, ਉੱਥੇ ਦਿਲ ਤੰਗ ਹੋ ਜਾਂਦਾ ਹੈ; ਹੰਕਾਰ ਹੀ ਉਹ ਪਰਦਾ ਹੈ ਜੋ ਅੰਦਰ ਵਸਦੇ ਸਾਹੇਬ ਦੇ ਦਰਸ਼ਨ ਰੋਕਦਾ ਹੈ।',
+        en: 'Where pride and bitterness grow, the heart narrows; ego acts as the very veil blocking awareness of the Divine inside.',
+      },
+    },
+    {
+      id: 'q-1106-5-tattva',
+      question: {
+        hi: '"शब्द को अंग" के तत्व ज्ञान के अनुसार "शीतल शब्द" की साधना घट-मंदिर में किस प्रकार आत्म-बोध कराती है?',
+        pb: '"ਸ਼ਬਦ ਕੋ ਅੰਗ" ਦੇ ਤੱਤ-ਗਿਆਨ ਅਨੁਸਾਰ "ਸ਼ੀਤਲ ਸ਼ਬਦ" ਦੀ ਸਾਧਨਾ ਘਟ-ਮੰਦਿਰ ਵਿੱਚ ਕਿਸ ਤਰ੍ਹਾਂ ਆਤਮ-ਬੋਧ ਕਰਵਾਉਂਦੀ ਹੈ?',
+        en: 'In the deeper philosophy of "Shabd Ko Ang," how does practicing "Shital Shabd" awaken realization inside the Ghat-Mandir?',
+      },
+      options: {
+        hi: [
+          'यह बाहरी मंत्रों की संख्या गिनकर स्वर्ग में स्थान आरक्षित कराती है',
+          'यह पंचाग्नि (काम, क्रोध आदि) को शांत कर सुरति को अहंकार-मुक्त करके प्रीतम से मिलाती है',
+          'यह केवल सांसारिक वाद-विवाद में तर्क जीतने की कला सिखाती है',
+          'यह दूसरों के दोष खोजकर उनकी आलोचना करने की प्रेरणा देती है',
+        ],
+        pb: [
+          'ਇਹ ਬਾਹਰੀ ਗਿਣਤੀ ਦੇ ਜਾਪ ਨਾਲ ਸਵਰਗ ਵਿੱਚ ਥਾਂ ਪੱਕੀ ਕਰਵਾਉਂਦੀ ਹੈ',
+          'ਇਹ ਪੰਜ ਵਿਕਾਰਾਂ ਦੀ ਅੱਗ ਨੂੰ ਠੰਢਾ ਕਰਕੇ ਸੁਰਤ ਨੂੰ ਹੰਕਾਰ-ਮੁਕਤ ਕਰਕੇ ਪ੍ਰੀਤਮ ਨਾਲ ਮਿਲਾਉਂਦੀ ਹੈ',
+          'ਇਹ ਕੇਵਲ ਦੁਨਿਆਵੀ ਬਹਿਸ ਵਿੱਚ ਤਰਕ ਜਿੱਤਣ ਦੀ ਕਲਾ ਸਿਖਾਉਂਦੀ ਹੈ',
+          'ਇਹ ਦੂਜਿਆਂ ਦੇ ਔਗੁਣ ਲੱਭ ਕੇ ਉਨ੍ਹਾਂ ਦੀ ਆਲੋਚਨਾ ਕਰਨ ਦੀ ਪ੍ਰੇਰਨਾ ਦਿੰਦੀ ਹੈ',
+        ],
+        en: [
+          'By accumulating counted external chants to reserve a place in heaven',
+          'By cooling the five inner passions and freeing Surat from ego to meet the Beloved within',
+          'By sharpening clever arguments to prevail in intellectual debates',
+          'By training the eye to point out flaws in others’ spiritual practice',
+        ],
+      },
+      correctIndex: 1,
+      explanation: {
+        hi: 'कबीर पंथ में "शीतल शब्द" वाणी के संयम से आरंभ होकर अनहद सार-शब्द में सुरति के लीन होने तक जाता है—जिससे भीतर का शत्रु (अहं) मिटता है और घट में प्रीतम प्रकट होता है।',
+        pb: 'ਕਬੀਰ ਪੰਥ ਵਿੱਚ "ਸ਼ੀਤਲ ਸ਼ਬਦ" ਬੋਲੀ ਦੇ ਸੰਜਮ ਤੋਂ ਸ਼ੁਰੂ ਹੋ ਕੇ ਅਨਹਦ ਸਾਰ-ਸ਼ਬਦ ਵਿੱਚ ਸੁਰਤ ਦੇ ਸਮਾਉਣ ਤੱਕ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਹੰਕਾਰ ਮਿਟਦਾ ਹੈ।',
+        en: 'In Kabir Panth philosophy, "Shital Shabd" begins with gentle speech and culminates in Surat merging into the cooling inner Word, dissolving ego to reveal the Beloved.',
+      },
+    },
+  ],
+};
+
+type ArchetypeKey =
+  | 'speech'
+  | 'ego'
+  | 'guru'
+  | 'naam'
+  | 'maya'
+  | 'chetavani'
+  | 'satya'
+  | 'satsang'
+  | 'prem'
+  | 'compassion'
+  | 'yoga'
+  | 'mind';
+
+function classifySakhiArchetype(sakhi: Sakhi): ArchetypeKey {
+  const blob = [
+    sakhi.text?.hi || '',
+    sakhi.bhavarth?.hi || '',
+    sakhi.categoryTitle?.hi || '',
+    sakhi.category || '',
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  if (/शीतल|कुटिल|बचन|वचन|वाणी|बानी|रसना|मीठा|मधुर/.test(blob)) return 'speech';
+  if (/प्रीतम तुझहि|दुसमन|अहं|अहंकार|आपा|अभिमान|रोड़ा|बुरा जो/.test(blob)) return 'ego';
+  if (/सतगुरु|सतिगुर|गुरु|गोविन्द|गोविंद|चेला|निगुरा|चुम्बक/.test(blob)) return 'guru';
+  if (/सुमिरन|सिमरन|सत्यनाम|सार शब्द|नाम|श्वास|स्वांस|अजपा/.test(blob)) return 'naam';
+  if (/कस्तूरी|मृग|घट|सुरति|अनहद|दसम|मानसरोवर|हंस|गगन/.test(blob)) return 'yoga';
+  if (/माया|तृष्णा|लोभ|लालच|कंचन|दाम|ठगिनी|मोह/.test(blob)) return 'maya';
+  if (/माटी|कुम्हार|काया|हाड़|हड्डी|काल|मरण|मरना|बुलबुला|मानुस/.test(blob)) return 'chetavani';
+  if (/साँच|सांच|सत्य|झूठ|पाखंड|पोथी|तीरथ|कथनी|करनी/.test(blob)) return 'satya';
+  if (/साधु|संत|सत्संग|संगति|कुसंग|चंदन|सूप/.test(blob)) return 'satsang';
+  if (/प्रेम|प्रीत|विरह|बिरह|भक्ति|सूरा|शीश|ढाई/.test(blob)) return 'prem';
+  if (/दया|करुणा|अहिंसा|परोपकार|तरुवर|सरवर|जीव/.test(blob)) return 'compassion';
+  return 'mind';
+}
+
+interface ArchetypeQuestionPack {
+  coreCorrect: { hi: string; pb: string; en: string };
+  coreDistractors: { hi: [string, string, string]; pb: [string, string, string]; en: [string, string, string] };
+  scenarioQuestion: { hi: string; pb: string; en: string };
+  scenarioOptions: { hi: [string, string, string, string]; pb: [string, string, string, string]; en: [string, string, string, string] };
+  causeQuestion: { hi: string; pb: string; en: string };
+  causeOptions: { hi: [string, string, string, string]; pb: [string, string, string, string]; en: [string, string, string, string] };
+  tattvaQuestion: { hi: string; pb: string; en: string };
+  tattvaOptions: { hi: [string, string, string, string]; pb: [string, string, string, string]; en: [string, string, string, string] };
+}
+
+const ARCHETYPE_PACKS: Record<ArchetypeKey, ArchetypeQuestionPack> = {
+  speech: {
+    coreCorrect: {
+      hi: 'कठोर और अहंकारपूर्ण वचनों को त्यागकर शीतल, विनम्र एवं हितकारी वाणी का अभ्यास करना',
+      pb: 'ਕੌੜੇ ਅਤੇ ਹੰਕਾਰ ਭਰੇ ਬੋਲ ਛੱਡ ਕੇ ਸ਼ੀਤਲ, ਨਿਮਰ ਤੇ ਭਲਾਈ ਵਾਲੀ ਬੋਲੀ ਅਪਣਾਉਣਾ',
+      en: 'Abandoning harsh, ego-driven words in favor of calm, humble, healing speech',
+    },
+    coreDistractors: {
+      hi: [
+        'विवाद से बचने के लिए जीवनभर किसी से कोई बात ही न करना',
+        'दूसरों पर प्रभाव जमाने के लिए ऊँचे और तीखे स्वर में बोलना',
+        'केवल बाहर से मधुर बोलना भले ही मन में द्वेष और ईर्ष्या बनी रहे',
+      ],
+      pb: [
+        'ਝਗੜੇ ਤੋਂ ਬਚਣ ਲਈ ਸਾਰੀ ਉਮਰ ਕਿਸੇ ਨਾਲ ਕੋਈ ਗੱਲ ਹੀ ਨਾ ਕਰਨੀ',
+        'ਦੂਜਿਆਂ ਤੇ ਰੋਹਬ ਪਾਉਣ ਲਈ ਉੱਚੀ ਅਤੇ ਤਿੱਖੀ ਆਵਾਜ਼ ਵਿੱਚ ਬੋਲਣਾ',
+        'ਕੇਵਲ ਬਾਹਰੋਂ ਮਿੱਠਾ ਬੋਲਣਾ ਭਾਵੇਂ ਮਨ ਵਿੱਚ ਈਰਖਾ ਅਤੇ ਵੈਰ ਭਰਿਆ ਰਹੇ',
+      ],
+      en: [
+        'Refusing to speak to anyone at all in order to avoid disagreements',
+        'Speaking loudly and forcefully so others feel intimidated into agreeing',
+        'Using polite surface flattery while secretly harboring resentment inside',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: यदि कोई व्यक्ति क्रोध में आपकी आलोचना कर दे, तो इस साखी की शिक्षा के अनुसार सर्वोत्तम प्रतिक्रिया क्या होगी?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜੇ ਕੋਈ ਗੁੱਸੇ ਵਿੱਚ ਤੁਹਾਡੀ ਨਿੰਦਾ ਕਰ ਦੇਵੇ, ਤਾਂ ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਸਭ ਤੋਂ ਸਹੀ ਪ੍ਰਤੀਕਿਰਿਆ ਕੀ ਹੋਵੇਗੀ?',
+      en: 'Real-Life Scenario: If someone criticizes you harshly in anger, what is the wisest response based on this Sakhi?',
+    },
+    scenarioOptions: {
+      hi: [
+        'क्षणभर शांत रहकर धैर्य और शीतल वाणी से उत्तर देना या मौन धारण करना',
+        'तुरंत उसकी पुरानी कमियाँ गिनाकर उससे बड़ा कड़वा जवाब लौटाना',
+        'अन्य लोगों के सामने जाकर उसकी निंदा करना ताकि आपका पक्ष भारी रहे',
+        'तत्काल संबंध तोड़कर मन में सदा के लिए क्रोध गाँठ बाँध लेना',
+      ],
+      pb: [
+        'ਪਲ ਭਰ ਰੁਕ ਕੇ ਧੀਰਜ ਅਤੇ ਸ਼ੀਤਲ ਬੋਲਾਂ ਨਾਲ ਜਵਾਬ ਦੇਣਾ ਜਾਂ ਸ਼ਾਂਤ ਰਹਿਣਾ',
+        'ਤੁਰੰਤ ਉਸ ਦੀਆਂ ਪੁਰਾਣੀਆਂ ਕਮੀਆਂ ਗਿਣਾ ਕੇ ਹੋਰ ਕੌੜਾ ਜਵਾਬ ਦੇਣਾ',
+        'ਬਾਕੀ ਲੋਕਾਂ ਸਾਹਮਣੇ ਉਸ ਦੀ ਬੁਰਾਈ ਕਰਕੇ ਆਪਣਾ ਪੱਖ ਉੱਚਾ ਦਿਖਾਉਣਾ',
+        'ਉਸੇ ਵੇਲੇ ਰਿਸ਼ਤਾ ਤੋੜ ਕੇ ਮਨ ਵਿੱਚ ਸਦਾ ਲਈ ਗੁੱਸਾ ਪਾਲ ਲੈਣਾ',
+      ],
+      en: [
+        'Pause calmly and reply with gentle restraint or composed silence',
+        'Immediately counterattack by listing their past mistakes even more sharply',
+        'Complain about them behind their back to win sympathy from others',
+        'Cut off all communication while nursing lingering resentment inside',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: साधक के निरंतर कटु एवं कर्कश बोलने से उसके अंतःकरण पर क्या प्रभाव पड़ता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਲਗਾਤਾਰ ਕੌੜੇ ਤੇ ਕਠੋਰ ਬੋਲ ਬੋਲਣ ਨਾਲ ਸਾਧਕ ਦੇ ਮਨ ਉੱਤੇ ਕੀ ਪ੍ਰਭਾਵ ਪੈਂਦਾ ਹੈ?',
+      en: 'Cause & Effect: What inward effect does habitual harsh, cutting speech have on a seeker?',
+    },
+    causeOptions: {
+      hi: [
+        'चित्त की शांति नष्ट होती है, वैर बढ़ता है और भीतर का आध्यात्मिक रस सूख जाता है',
+        'दूसरे लोग डरकर सहज ही आत्म-ज्ञान प्राप्त कर लेते हैं',
+        'मनुष्य की स्मरण शक्ति और ध्यान में तुरंत स्थिरता आ जाती है',
+        'बिना किसी प्रयास के सभी पारिवारिक विवाद सुलझ जाते हैं',
+      ],
+      pb: [
+        'ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਭੰਗ ਹੁੰਦੀ ਹੈ, ਵੈਰ ਵਧਦਾ ਹੈ ਅਤੇ ਅੰਦਰਲਾ ਰੂਹਾਨੀ ਰਸ ਸੁੱਕ ਜਾਂਦਾ ਹੈ',
+        'ਦੂਜੇ ਲੋਕ ਡਰ ਦੇ ਮਾਰੇ ਆਪਣੇ ਆਪ ਆਤਮ-ਗਿਆਨ ਪ੍ਰਾਪਤ ਕਰ ਲੈਂਦੇ ਹਨ',
+        'ਮਨੁੱਖ ਦੇ ਧਿਆਨ ਅਤੇ ਸਿਮਰਨ ਵਿੱਚ ਤੁਰੰਤ ਸਥਿਰਤਾ ਆ ਜਾਂਦੀ ਹੈ',
+        'ਬਿਨਾਂ ਕਿਸੇ ਕੋਸ਼ਿਸ਼ ਦੇ ਸਾਰੇ ਪਰਿਵਾਰਕ ਮਸਲੇ ਆਪੇ ਹੱਲ ਹੋ ਜਾਂਦੇ ਹਨ',
+      ],
+      en: [
+        'Inner peace dissolves, hostility deepens, and spiritual sensitivity dries up',
+        'Others become frightened into instantly awakening spiritually',
+        'Meditation and concentration become deeper without any effort',
+        'Relationships automatically grow stronger through blunt dominance',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: वाणी की मधुरता और "शब्द" की साधना के बीच गहरा संबंध क्या है?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: ਬੋਲੀ ਦੀ ਮਿਠਾਸ ਅਤੇ "ਸ਼ਬਦ" ਦੀ ਸਾਧਨਾ ਵਿਚਕਾਰ ਕੀ ਡੂੰਘਾ ਸਬੰਧ ਹੈ?',
+      en: 'Kabir Panth Philosophy: What is the deeper connection between gentle speech and Shabd-Sadhana?',
+    },
+    tattvaOptions: {
+      hi: [
+        'संयमित और शीतल वाणी मन के विकारों को शांत कर घट में सार-शब्द की अनुभूति के लिए भूमि तैयार करती है',
+        'कबीर पंथ में केवल संस्कृत श्लोकों का शुद्ध उच्चारण ही शब्द साधना कहलाता है',
+        'वाणी का अंतःकरण से कोई संबंध नहीं, केवल बाहरी दान ही पर्याप्त है',
+        'कठोर उपदेश देना ही गुरु-शिष्य परंपरा का एकमात्र लक्षण है',
+      ],
+      pb: [
+        'ਸੰਜਮ ਅਤੇ ਸ਼ੀਤਲ ਬੋਲੀ ਮਨ ਦੇ ਵਿਕਾਰਾਂ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਹਿਰਦੇ ਵਿੱਚ ਸਾਰ-ਸ਼ਬਦ ਦੇ ਅਨੁਭਵ ਲਈ ਰਾਹ ਤਿਆਰ ਕਰਦੀ ਹੈ',
+        'ਕਬੀਰ ਪੰਥ ਵਿੱਚ ਕੇਵਲ ਔਖੇ ਸਲੋਕ ਪੜ੍ਹਨਾ ਹੀ ਸ਼ਬਦ ਸਾਧਨਾ ਅਖਵਾਉਂਦਾ ਹੈ',
+        'ਬੋਲੀ ਦਾ ਅੰਦਰਲੇ ਮਨ ਨਾਲ ਕੋਈ ਸਬੰਧ ਨਹੀਂ, ਕੇਵਲ ਬਾਹਰੀ ਦਾਨ ਹੀ ਕਾਫ਼ੀ ਹੈ',
+        'ਸਖ਼ਤ ਬੋਲ ਬੋਲਣਾ ਹੀ ਅਧਿਆਤਮਕ ਅਨੁਸ਼ਾਸਨ ਦੀ ਇਕਲੌਤੀ ਨਿਸ਼ਾਨੀ ਹੈ',
+      ],
+      en: [
+        'Disciplined, cooling speech quiets inner agitation, preparing the heart to perceive the subtle Sar-Shabd',
+        'Shabd-Sadhana consists strictly of chanting complex verses aloud in public',
+        'Speech has no link to inner consciousness as long as rituals are performed',
+        'Using severe language is the primary hallmark of spiritual authority',
+      ],
+    },
+  },
+  ego: {
+    coreCorrect: {
+      hi: 'बाहरी दोष खोजने की बजाय अपने भीतर छिपे "मैं-पन" और अहंकार का विसर्जन करना',
+      pb: 'ਬਾਹਰਲੇ ਦੋਸ਼ ਲੱਭਣ ਦੀ ਥਾਂ ਆਪਣੇ ਅੰਦਰ ਲੁਕੇ "ਮੈਂ-ਪੁਣੇ" ਅਤੇ ਹੰਕਾਰ ਨੂੰ ਮਿਟਾਉਣਾ',
+      en: 'Dissolving hidden inner pride and self-centeredness instead of judging others',
+    },
+    coreDistractors: {
+      hi: [
+        'अपने ज्ञान और तप का प्रदर्शन करके समाज में श्रेष्ठ पद प्राप्त करना',
+        'दूसरों की त्रुटियों की सूची बनाकर उन्हें बार-बार सुधारने का प्रयास करना',
+        'आत्मविश्वास को पूरी तरह त्यागकर स्वयं को निराश और असहाय मान लेना',
+      ],
+      pb: [
+        'ਆਪਣੇ ਗਿਆਨ ਅਤੇ ਤਪ ਦਾ ਵਿਖਾਵਾ ਕਰਕੇ ਸਮਾਜ ਵਿੱਚ ਵੱਡਾ ਰੁਤਬਾ ਹਾਸਲ ਕਰਨਾ',
+        'ਦੂਜਿਆਂ ਦੀਆਂ ਗਲਤੀਆਂ ਦੀ ਸੂਚੀ ਬਣਾ ਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਟੋਕਦੇ ਰਹਿਣਾ',
+        'ਆਤਮ-ਵਿਸ਼ਵਾਸ ਛੱਡ ਕੇ ਆਪਣੇ ਆਪ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਕਮਜ਼ੋਰ ਤੇ ਨਿਰਾਸ਼ ਸਮਝਣਾ',
+      ],
+      en: [
+        'Displaying your spiritual discipline publicly to earn status and praise',
+        'Keeping a careful record of other people’s faults so you can correct them',
+        'Abandoning healthy self-respect and sinking into passive helplessness',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक व्यवहार: यदि कार्यस्थल या परिवार में किसी सफलता का श्रेय आपको न मिले, तो निरहंकारी साधक कैसे कार्य करेगा?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਵਿਹਾਰ: ਜੇ ਘਰ ਜਾਂ ਕੰਮਕਾਜ ਵਿੱਚ ਕਿਸੇ ਚੰਗੇ ਕੰਮ ਦਾ ਸਿਹਰਾ ਤੁਹਾਨੂੰ ਨਾ ਮਿਲੇ, ਤਾਂ ਨਿਮਰ ਸਾਧਕ ਕਿਵੇਂ ਵਿਹਾਰ ਕਰੇਗਾ?',
+      en: 'Real-Life Scenario: When your honest effort at home or work goes uncredited, how does an egoless seeker respond?',
+    },
+    scenarioOptions: {
+      hi: [
+        'सहज भाव से कार्य की सार्थकता पर प्रसन्न रहेगा और प्रशंसा की लालसा नहीं पालेगा',
+        'सबके सामने बार-बार अपना योगदान गिनाकर प्रशंसा वसूल करेगा',
+        'मन में अपमान मानकर भविष्य में सहयोग करना बंद कर देगा',
+        'दूसरों के काम में कमियाँ निकालकर उन्हें नीचा दिखाने का अवसर खोजेगा',
+      ],
+      pb: [
+        'ਸਹਿਜ ਭਾਵ ਨਾਲ ਕੰਮ ਸਫਲ ਹੋਣ ਤੇ ਖੁਸ਼ ਰਹੇਗਾ ਅਤੇ ਵਾਹ-ਵਾਹ ਦੀ ਭੁੱਖ ਨਹੀਂ ਰੱਖੇਗਾ',
+        'ਸਭ ਦੇ ਸਾਹਮਣੇ ਵਾਰ-ਵਾਰ ਆਪਣਾ ਯੋਗਦਾਨ ਗਿਣਾ ਕੇ ਤਾਰੀਫ਼ ਦੀ ਮੰਗ ਕਰੇਗਾ',
+        'ਅਪਮਾਨ ਮਹਿਸੂਸ ਕਰਕੇ ਅੱਗੇ ਤੋਂ ਸਹਿਯੋਗ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ',
+        'ਦੂਜਿਆਂ ਦੇ ਕੰਮ ਵਿੱਚ ਨੁਕਸ ਕੱਢ ਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਨੀਵਾਂ ਦਿਖਾਉਣ ਦਾ ਮੌਕਾ ਲੱਭੇਗਾ',
+      ],
+      en: [
+        'Rejoice quietly that the good work succeeded, free from craving applause',
+        'Repeatedly remind everyone of your contribution until they praise you',
+        'Feel insulted and refuse to help the team in the future',
+        'Look for flaws in others’ work to prove your own importance',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: हृदय में सूक्ष्म "अहं" (अभिमान) के बने रहने का सीधा परिणाम क्या होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਹਿਰਦੇ ਵਿੱਚ ਸੂਖਮ "ਹੰਕਾਰ" ਬਣੇ ਰਹਿਣ ਦਾ ਸਿੱਧਾ ਨਤੀਜਾ ਕੀ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What is the direct consequence when subtle ego remains rooted in the heart?',
+    },
+    causeOptions: {
+      hi: [
+        'सत्य और प्रीतम के लिए हृदय का द्वार बंद रहता है तथा मन छोटी बातों से आहत होता रहता है',
+        'साधक को स्वतः ही सभी शास्त्रों का अखंड बोध प्राप्त हो जाता है',
+        'व्यक्ति को निंदकों के साथ और भी गहरा प्रेम उत्पन्न हो जाता है',
+        'सारी सांसारिक जिम्मेदारियाँ बिना प्रयास के समाप्त हो जाती हैं',
+      ],
+      pb: [
+        'ਸੱਚ ਅਤੇ ਪ੍ਰੀਤਮ ਲਈ ਦਿਲ ਦਾ ਦਰਵਾਜ਼ਾ ਬੰਦ ਰਹਿੰਦਾ ਹੈ ਤੇ ਮਨ ਨਿੱਕੀ ਗੱਲ ਤੇ ਦੁਖੀ ਹੁੰਦਾ ਹੈ',
+        'ਸਾਧਕ ਨੂੰ ਆਪਣੇ ਆਪ ਹੀ ਸਾਰੇ ਗ੍ਰੰਥਾਂ ਦਾ ਗਿਆਨ ਪ੍ਰਾਪਤ ਹੋ ਜਾਂਦਾ ਹੈ',
+        'ਮਨੁੱਖ ਨੂੰ ਨਿੰਦਕਾਂ ਨਾਲ ਆਪਣੇ ਆਪ ਗਹਿਰਾ ਪ੍ਰੇਮ ਹੋ ਜਾਂਦਾ ਹੈ',
+        'ਸਾਰੀਆਂ ਦੁਨਿਆਵੀ ਜ਼ਿੰਮੇਵਾਰੀਆਂ ਬਿਨਾਂ ਕੋਸ਼ਿਸ਼ ਮੁੱਕ ਜਾਂਦੀਆਂ ਹਨ',
+      ],
+      en: [
+        'The heart stays closed to Truth and remains easily bruised by petty slights',
+        'Scriptural wisdom awakens effortlessly without self-examination',
+        'One naturally develops deep affection for critics',
+        'Worldly anxieties disappear automatically without inner work',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'तत्व ज्ञान: कबीर साहेब के अनुसार "मैं" और "हरि/प्रीतम" एक साथ क्यों नहीं समा सकते?',
+      pb: 'ਤੱਤ-ਗਿਆਨ: ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਮੈਂ" (ਹੰਕਾਰ) ਅਤੇ "ਪ੍ਰੀਤਮ" ਇੱਕੋ ਥਾਂ ਇਕੱਠੇ ਕਿਉਂ ਨਹੀਂ ਸਮਾ ਸਕਦੇ?',
+      en: 'Tattva Gyan: Why do Satguru Kabir Saheb’s teachings state that "I-ness" (ego) and the Beloved cannot occupy the same heart?',
+    },
+    tattvaOptions: {
+      hi: [
+        'क्योंकि "अहं" द्वैत और अलगाव पैदा करता है, जबकि परमात्मा केवल विनम्र, समर्पित और निर्मल घट में प्रकट होते हैं',
+        'क्योंकि परमात्मा केवल जंगल की गुफाओं में रहने वाले तपस्वियों के पास रहते हैं',
+        'क्योंकि अहंकार रखने से बाहरी पूजा-पाठ के नियम भंग हो जाते हैं',
+        'क्योंकि केवल पठन-पाठन करने से ही अद्वैत ज्ञान सिद्ध हो जाता है',
+      ],
+      pb: [
+        'ਕਿਉਂਕਿ ਹੰਕਾਰ ਦਵੈਤ ਤੇ ਦੂਰੀ ਪੈਦਾ ਕਰਦਾ ਹੈ, ਜਦਕਿ ਪ੍ਰਮਾਤਮਾ ਨਿਮਰ ਅਤੇ ਨਿਰਮਲ ਹਿਰਦੇ ਵਿੱਚ ਹੀ ਪ੍ਰਗਟ ਹੁੰਦੇ ਹਨ',
+        'ਕਿਉਂਕਿ ਪ੍ਰਮਾਤਮਾ ਕੇਵਲ ਜੰਗਲਾਂ ਦੀਆਂ ਗੁਫ਼ਾਵਾਂ ਵਿੱਚ ਰਹਿਣ ਵਾਲਿਆਂ ਨੂੰ ਹੀ ਮਿਲਦੇ ਹਨ',
+        'ਕਿਉਂਕਿ ਹੰਕਾਰ ਕਰਨ ਨਾਲ ਬਾਹਰੀ ਪੂਜਾ-ਪਾਠ ਦੀ ਵਿਧੀ ਟੁੱਟ ਜਾਂਦੀ ਹੈ',
+        'ਕਿਉਂਕਿ ਕੇਵਲ ਕਿਤਾਬਾਂ ਪੜ੍ਹਨ ਨਾਲ ਹੀ ਅਦਵੈਤ ਗਿਆਨ ਮਿਲ ਜਾਂਦਾ ਹੈ',
+      ],
+      en: [
+        'Because ego creates separation and duality, while the Divine shines only in a humble, transparent heart',
+        'Because the Divine dwells strictly in forest caves away from human society',
+        'Because pride breaks outward ritual sequences during formal ceremonies',
+        'Because reading books alone accomplishes non-dual realization',
+      ],
+    },
+  },
+  guru: {
+    coreCorrect: {
+      hi: 'अहंकार त्यागकर सच्चे, तत्वदर्शी सतगुरु की शरण एवं उनके सत्य वचनों को जीवन में धारण करना',
+      pb: 'ਹੰਕਾਰ ਛੱਡ ਕੇ ਸੱਚੇ ਤੱਤ-ਦਰਸ਼ੀ ਸਤਿਗੁਰੂ ਦੀ ਸ਼ਰਨ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਸੱਚੇ ਬਚਨਾਂ ਨੂੰ ਜੀਵਨ ਵਿੱਚ ਧਾਰਨ ਕਰਨਾ',
+      en: 'Setting aside pride to recognize an authentic Satguru and live by His liberating counsel',
+    },
+    coreDistractors: {
+      hi: [
+        'चमत्कार और बाहरी वैभव दिखाने वाले किसी भी गुरु का बिना परखे अनुसरण करना',
+        'केवल गुरु का चित्र लगाकर उनके वचनों के विपरीत आचरण करते रहना',
+        'स्वयं को इतना ज्ञानी मान लेना कि किसी मार्गदर्शन की आवश्यकता ही न समझना',
+      ],
+      pb: [
+        'ਚਮਤਕਾਰ ਤੇ ਬਾਹਰੀ ਠਾਠ-ਬਾਠ ਦਿਖਾਉਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗੁਰੂ ਦੇ ਪਿੱਛੇ ਬਿਨਾਂ ਪਰਖੇ ਲੱਗ ਤੁਰਨਾ',
+        'ਕੇਵਲ ਗੁਰੂ ਦੀ ਤਸਵੀਰ ਸਜਾ ਕੇ ਉਨ੍ਹਾਂ ਦੇ ਉਪਦੇਸ਼ ਦੇ ਉਲਟ ਚੱਲਦੇ ਰਹਿਣਾ',
+        'ਆਪਣੇ ਆਪ ਨੂੰ ਇੰਨਾ ਗਿਆਨੀ ਸਮਝ ਲੈਣਾ ਕਿ ਕਿਸੇ ਮਾਰਗਦਰਸ਼ਨ ਦੀ ਲੋੜ ਹੀ ਨਾ ਮੰਨਣੀ',
+      ],
+      en: [
+        'Blindly following anyone who displays miracles or worldly grandeur without discernment',
+        'Honoring a teacher’s portrait externally while ignoring their ethical guidance',
+        'Assuming you already know everything and need zero inner mentorship',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक व्यवहार: यदि कोई धर्मोपदेशक धन या दिखावे का लोभ दिखाकर शॉर्टकट मुक्ति का दावा करे, तो साधक को क्या करना चाहिए?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਵਿਹਾਰ: ਜੇ ਕੋਈ ਉਪਦੇਸ਼ਕ ਧਨ ਜਾਂ ਦਿਖਾਵੇ ਦਾ ਲਾਲਚ ਦੇ ਕੇ ਸੌਖੀ ਮੁਕਤੀ ਦਾ ਦਾਅਵਾ ਕਰੇ, ਤਾਂ ਸਾਧਕ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+      en: 'Real-Life Scenario: If a self-proclaimed teacher promises instant liberation in exchange for wealth or spectacle, how should a seeker act?',
+    },
+    scenarioOptions: {
+      hi: [
+        'विवेक की कसौटी पर उनके आचरण को परखना और केवल सादा, सत्य व निर्लोभी मार्ग अपनाना',
+        'भीड़ का अनुसरण करते हुए बिना विचार किए उनकी हर बात मान लेना',
+        'केवल ऊँचे मंच और आकर्षक वाणी से प्रभावित होकर समर्पण कर देना',
+        'सभी सच्चे संतों पर भी संदेह करके आध्यात्मिक जीवन ही छोड़ देना',
+      ],
+      pb: [
+        'ਵਿਵੇਕ ਦੀ ਕਸੌਟੀ ਤੇ ਉਨ੍ਹਾਂ ਦੇ ਆਚਰਨ ਨੂੰ ਪਰਖਣਾ ਅਤੇ ਕੇਵਲ ਸੱਚਾ ਤੇ ਨਿਰਲੋਭ ਮਾਰਗ ਅਪਣਾਉਣਾ',
+        'ਭੀੜ ਦੇ ਮਗਰ ਲੱਗ ਕੇ ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਉਨ੍ਹਾਂ ਦੀ ਹਰ ਗੱਲ ਮੰਨ ਲੈਣੀ',
+        'ਕੇਵਲ ਵੱਡੇ ਮੰਚ ਅਤੇ ਲੱਛੇਦਾਰ ਭਾਸ਼ਣ ਤੋਂ ਪ੍ਰਭਾਵਿਤ ਹੋ ਕੇ ਵਿਸ਼ਵਾਸ ਕਰ ਲੈਣਾ',
+        'ਸਾਰੇ ਸੱਚੇ ਸੰਤਾਂ ਤੇ ਵੀ ਸ਼ੱਕ ਕਰਕੇ ਅਧਿਆਤਮਕ ਮਾਰਗ ਹੀ ਛੱਡ ਦੇਣਾ',
+      ],
+      en: [
+        'Test their conduct with discernment and hold strictly to humble, selfless truth',
+        'Follow the crowd and accept every claim without questioning',
+        'Judge credibility purely by stage size and charismatic speech',
+        'Reject all spirituality out of cynicism toward one fraudulent teacher',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: गुरु-ज्ञान की अनुपस्थिति में केवल अपनी मनमुख बुद्धि से साधना करने पर क्या जोखिम रहता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਸਤਿਗੁਰੂ ਦੇ ਮਾਰਗਦਰਸ਼ਨ ਤੋਂ ਬਿਨਾਂ ਕੇਵਲ ਆਪਣੀ ਮਨਮੁਖ ਬੁੱਧੀ ਨਾਲ ਸਾਧਨਾ ਕਰਨ ਦਾ ਕੀ ਖ਼ਤਰਾ ਰਹਿੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What happens when a seeker follows unguided whims ("Manmukh") instead of authentic Satguru wisdom?',
+    },
+    causeOptions: {
+      hi: [
+        'साधक माया के सूक्ष्म भ्रमों को ही सिद्धि मानकर मूल लक्ष्य से भटक सकता है',
+        'व्यक्ति बिना किसी गलती के सीधे अमरलोक की यात्रा पूरी कर लेता है',
+        'मन की चंचलता स्वतः ही शांत होकर अकर्ता भाव में बदल जाती है',
+        'अहंकार नष्ट होकर दूसरों के प्रति पूर्ण समभाव आ जाता है',
+      ],
+      pb: [
+        'ਸਾਧਕ ਮਾਇਆ ਦੇ ਸੂਖਮ ਭਰਮਾਂ ਨੂੰ ਹੀ ਸਿੱਧੀ ਸਮਝ ਕੇ ਅਸਲੀ ਮੰਜ਼ਿਲ ਤੋਂ ਭਟਕ ਸਕਦਾ ਹੈ',
+        'ਮਨੁੱਖ ਬਿਨਾਂ ਕਿਸੇ ਗਲਤੀ ਦੇ ਸਿੱਧਾ ਅਮਰਲੋਕ ਪਹੁੰਚ ਜਾਂਦਾ ਹੈ',
+        'ਮਨ ਦੀ ਭਟਕਣਾ ਆਪੇ ਸ਼ਾਂਤ ਹੋ ਕੇ ਸਥਿਰ ਹੋ ਜਾਂਦੀ ਹੈ',
+        'ਹੰਕਾਰ ਮਿਟ ਕੇ ਸਭ ਪ੍ਰਤੀ ਸਮਭਾਵ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ',
+      ],
+      en: [
+        'The seeker easily mistakes subtle mental illusions for realization and loses the path',
+        'Liberation is reached effortlessly without ever encountering blind spots',
+        'Restless desires dissolve spontaneously without guidance',
+        'Pride vanishes automatically the moment one avoids teachers',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: सतगुरु कबीर साहेब गुरु को गोविंद से भी पहले वंदनीय क्यों बताते हैं?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗੁਰੂ ਨੂੰ ਗੋਬਿੰਦ ਤੋਂ ਵੀ ਪਹਿਲਾਂ ਵੰਦਨੀਕ ਕਿਉਂ ਦੱਸਦੇ ਹਨ?',
+      en: 'Kabir Panth Philosophy: Why does Satguru Kabir Saheb honor the Satguru even before bowing to Govind?',
+    },
+    tattvaOptions: {
+      hi: [
+        'क्योंकि सतगुरु ही अज्ञान का पर्दा हटाकर घट के भीतर स्थित परमात्मा की प्रत्यक्ष पहचान कराते हैं',
+        'क्योंकि गुरु मनुष्य के भौतिक व्यापार और धन-संपत्ति को बढ़ाते हैं',
+        'क्योंकि बाहरी प्रथा के अनुसार बड़े व्यक्ति का सम्मान पहले किया जाता है',
+        'क्योंकि केवल गुरु-मंत्र रटने से ही समस्त कर्म समाप्त हो जाते हैं',
+      ],
+      pb: [
+        'ਕਿਉਂਕਿ ਸਤਿਗੁਰੂ ਹੀ ਅਗਿਆਨ ਦਾ ਪਰਦਾ ਹਟਾ ਕੇ ਅੰਦਰ ਵਸਦੇ ਪਰਮਾਤਮਾ ਦੀ ਪਛਾਣ ਕਰਵਾਉਂਦੇ ਹਨ',
+        'ਕਿਉਂਕਿ ਗੁਰੂ ਮਨੁੱਖ ਦੇ ਦੁਨਿਆਵੀ ਕਾਰੋਬਾਰ ਅਤੇ ਧਨ ਨੂੰ ਵਧਾਉਂਦੇ ਹਨ',
+        'ਕਿਉਂਕਿ ਸਮਾਜਿਕ ਰੀਤ ਅਨੁਸਾਰ ਵੱਡਿਆਂ ਦਾ ਆਦਰ ਪਹਿਲਾਂ ਕੀਤਾ ਜਾਂਦਾ ਹੈ',
+        'ਕਿਉਂਕਿ ਕੇਵਲ ਬਾਹਰੀ ਮੰਤਰ ਰਟਣ ਨਾਲ ਹੀ ਸਾਰੇ ਕਰਮ ਮੁੱਕ ਜਾਂਦੇ ਹਨ',
+      ],
+      en: [
+        'Because the Satguru removes the veil of ignorance and reveals the Indwelling Divine within the heart',
+        'Because the Guru guarantees worldly wealth and business prosperity',
+        'Purely as an outward social custom of greeting elders before deities',
+        'Because repeating a name mechanically erases ethical responsibility',
+      ],
+    },
+  },
+  naam: {
+    coreCorrect: {
+      hi: 'प्रत्येक श्वास के साथ सत्यनाम का शांत, निरंतर आंतरिक सुमिरन बनाए रखना',
+      pb: 'ਹਰ ਸੁਆਸ ਦੇ ਨਾਲ ਸਤਯਨਾਮ ਦਾ ਸ਼ਾਂਤ ਅਤੇ ਨਿਰੰਤਰ ਅੰਦਰੂਨੀ ਸਿਮਰਨ ਬਣਾਈ ਰੱਖਣਾ',
+      en: 'Maintaining quiet, steady inner remembrance of Satyanaam woven into every breath',
+    },
+    coreDistractors: {
+      hi: [
+        'माला के दाने गिनते हुए मन को संसार की चिंताओं में भटकने देना',
+        'साल में एक बार किसी बड़े उत्सव पर जोर-जोर से नाम का उच्चारण कर लेना',
+        'संसार के अपने कर्तव्यों को छोड़कर केवल निष्क्रिय बैठे रहना',
+      ],
+      pb: [
+        'ਮਾਲਾ ਦੇ ਮਣਕੇ ਫੇਰਦਿਆਂ ਹੋਇਆਂ ਮਨ ਨੂੰ ਦੁਨਿਆਵੀ ਚਿੰਤਾਵਾਂ ਵਿੱਚ ਭਟਕਣ ਦੇਣਾ',
+        'ਸਾਲ ਵਿੱਚ ਇੱਕ ਵਾਰ ਕਿਸੇ ਵੱਡੇ ਸਮਾਗਮ ਵਿੱਚ ਉੱਚੀ-ਉੱਚੀ ਨਾਮ ਬੋਲ ਲੈਣਾ',
+        'ਆਪਣੇ ਸਾਰੇ ਜ਼ਿੰਮੇਵਾਰ ਕਰਤੱਵਾਂ ਨੂੰ ਛੱਡ ਕੇ ਵਿਹਲੇ ਬੈਠੇ ਰਹਿਣਾ',
+      ],
+      en: [
+        'Spinning prayer beads mechanically while the mind worries about worldly gossip',
+        'Chanting loudly only once a year during a major public festival',
+        'Abandoning family and work duties in order to sit idly',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: अत्यधिक व्यस्त दिनचर्या और कामकाज के बीच एक गृहस्थ साधक इस साखी के सुमिरन को कैसे निभाए?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਬਹੁਤ ਰੁੱਝੇ ਹੋਏ ਦਿਨ ਅਤੇ ਕੰਮਕਾਜ ਦੌਰਾਨ ਇੱਕ ਗ੍ਰਹਿਸਥੀ ਸਾਧਕ ਇਸ ਸਿਮਰਨ ਨੂੰ ਕਿਵੇਂ ਨਿਭਾਏ?',
+      en: 'Real-Life Scenario: Amid a busy workday and family responsibilities, how can a householder practice this teaching?',
+    },
+    scenarioOptions: {
+      hi: [
+        'ईमानदारी से कर्म करते हुए श्वासों की लय में शांत मानसिक सुमिरन और साक्षी भाव जोड़े रखे',
+        'काम छोड़कर केवल एकांत जंगल में जाने की प्रतीक्षा करता रहे',
+        'पूजा के समय तेज संगीत बजाकर बाहरी आडंबर को बढ़ाए',
+        'सेवानिवृत्ति या बुढ़ापे तक भक्ति व सुमिरन को टाल दे',
+      ],
+      pb: [
+        'ਇਮਾਨਦਾਰੀ ਨਾਲ ਕੰਮ ਕਰਦਿਆਂ ਸੁਆਸਾਂ ਦੀ ਲਹਿਰ ਵਿੱਚ ਸ਼ਾਂਤ ਮਾਨਸਿਕ ਸਿਮਰਨ ਜੋੜੀ ਰੱਖੇ',
+        'ਕੰਮਕਾਜ ਛੱਡ ਕੇ ਕੇਵਲ ਜੰਗਲ ਜਾਣ ਦੀ ਉਡੀਕ ਕਰਦਾ ਰਹੇ',
+        'ਭਗਤੀ ਦੇ ਨਾਂ ਤੇ ਉੱਚਾ ਸ਼ੋਰ ਤੇ ਬਾਹਰੀ ਦਿਖਾਵਾ ਵਧਾਵੇ',
+        'ਬੁਢਾਪੇ ਤੱਕ ਨਾਮ ਸਿਮਰਨ ਅਤੇ ਧਿਆਨ ਨੂੰ ਟਾਲਦਾ ਰਹੇ',
+      ],
+      en: [
+        'Perform duties honestly while keeping quiet breath-anchored awareness within',
+        'Postpone all practice until retiring to a solitary forest retreat',
+        'Focus solely on noisy external rituals during weekends',
+        'Delay inner remembrance until old age arrives',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: यदि मुख केवल नाम रटता रहे और मन लोभ-क्रोध में डूबा रहे, तो उसका क्या परिणाम होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਜੇਕਰ ਜ਼ੁਬਾਨ ਤਾਂ ਨਾਮ ਰਟਦੀ ਰਹੇ ਪਰ ਮਨ ਲੋਭ-ਕ੍ਰੋਧ ਵਿੱਚ ਡੁੱਬਿਆ ਰਹੇ, ਤਾਂ ਉਸ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What happens when the tongue repeats sacred names while the mind remains steeped in greed and anger?',
+    },
+    causeOptions: {
+      hi: [
+        'सुमिरन केवल यांत्रिक अभ्यास बनकर रह जाता है और हृदय की मैल नहीं धुलती',
+        'केवल जिह्वा के उच्चारण से ही तुरंत अनहद नाद प्रकट हो जाता है',
+        'मन बिना आत्म-संयम के ही पूरी तरह शुद्ध हो जाता है',
+        'दूसरे लोग साधक के बाहरी जप से स्वतः ही मोक्ष पा लेते हैं',
+      ],
+      pb: [
+        'ਸਿਮਰਨ ਕੇਵਲ ਰਟਣ-ਅਭਿਆਸ ਬਣ ਕੇ ਰਹਿ ਜਾਂਦਾ ਹੈ ਤੇ ਮਨ ਦੀ ਮੈਲ ਨਹੀਂ ਧੁਲਦੀ',
+        'ਕੇਵਲ ਜ਼ੁਬਾਨ ਨਾਲ ਬੋਲਣ ਨਾਲ ਹੀ ਤੁਰੰਤ ਅਨਹਦ ਨਾਦ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ',
+        'ਬਿਨਾਂ ਆਤਮ-ਸੰਜਮ ਦੇ ਹੀ ਮਨ ਪੂਰੀ ਤਰ੍ਹਾਂ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ',
+        'ਦੂਜੇ ਲੋਕ ਸਾਧਕ ਦੇ ਬਾਹਰੀ ਜਾਪ ਨਾਲ ਆਪਣੇ ਆਪ ਮੁਕਤ ਹੋ ਜਾਂਦੇ ਹਨ',
+      ],
+      en: [
+        'Remembrance remains mechanical lip-service that fails to cleanse inner vices',
+        'Vocal repetition alone instantly awakens deep Unstruck Sound',
+        'The mind purifies automatically without any change in character',
+        'Spectators gain liberation merely by hearing the sound',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'तत्व ज्ञान: कबीर साहेब किस "सार-शब्द" या "सत्यनाम" को सच्चा मुक्तिदाता मानते हैं?',
+      pb: 'ਤੱਤ-ਗਿਆਨ: ਕਬੀਰ ਸਾਹੇਬ ਕਿਸ "ਸਾਰ-ਸ਼ਬਦ" ਜਾਂ "ਸਤਯਨਾਮ" ਨੂੰ ਸੱਚਾ ਮੁਕਤੀਦਾਤਾ ਮੰਨਦੇ ਹਨ?',
+      en: 'Tattva Gyan: Which "Sar-Shabd" or "Satyanaam" does Satguru Kabir Saheb declare truly liberating?',
+    },
+    tattvaOptions: {
+      hi: [
+        'वह अजपा, निह-अक्षर चेतन ध्वनि जो सुरति को काल-माया के पार ले जाकर घट में स्थिर करती है',
+        'कागज पर स्याही से लिखा कोई साधारण ऐतिहासिक मंत्र',
+        'किसी एक संप्रदाय की वेशभूषा और बाहरी तिलक-मुद्रा',
+        'अनेक देवी-देवताओं के अलग-अलग कर्मकांडी अनुष्ठान',
+      ],
+      pb: [
+        'ਉਹ ਅਜਪਾ, ਨਿਹ-ਅੱਖਰ ਚੇਤਨ ਧੁਨ ਜੋ ਸੁਰਤ ਨੂੰ ਕਾਲ-ਮਾਇਆ ਤੋਂ ਪਾਰ ਲਿਜਾ ਕੇ ਘਟ ਵਿੱਚ ਟਿਕਾਉਂਦੀ ਹੈ',
+        'ਕਾਗਜ਼ ਉੱਤੇ ਸਿਆਹੀ ਨਾਲ ਲਿਖਿਆ ਕੋਈ ਆਮ ਅੱਖਰੀ ਮੰਤਰ',
+        'ਕਿਸੇ ਖ਼ਾਸ ਫ਼ਿਰਕੇ ਦਾ ਪਹਿਰਾਵਾ ਅਤੇ ਬਾਹਰੀ ਚਿੰਨ੍ਹ',
+        'ਅਨੇਕਾਂ ਕਰਮਕਾਂਡੀ ਪੂਜਾ-ਪਾਠ ਦੀਆਂ ਵਿਧੀਆਂ',
+      ],
+      en: [
+        'The unspoken, imperishable (Nih-Akshar) resonance that lifts Surat beyond illusion into stillness',
+        'A conventional formula memorized strictly from ink and paper',
+        'Sectarian emblems, robes, or external badges of piety',
+        'Complex seasonal rituals seeking material favors',
+      ],
+    },
+  },
+  maya: {
+    coreCorrect: {
+      hi: 'तृष्णा और आसक्ति का विवेक द्वारा त्याग कर संतोषपूर्ण व जागृत जीवन जीना',
+      pb: 'ਤ੍ਰਿਸ਼ਨਾ ਅਤੇ ਮੋਹ ਦਾ ਵਿਵੇਕ ਨਾਲ ਤਿਆਗ ਕਰਕੇ ਸੰਤੋਖ ਭਰਿਆ ਜਾਗ੍ਰਿਤ ਜੀਵਨ ਜਿਊਣਾ',
+      en: 'Overcoming restless greed and attachment through discernment and inner contentment',
+    },
+    coreDistractors: {
+      hi: [
+        'धन कमाने से डरकर समाज में बिल्कुल दरिद्र और आलसी हो जाना',
+        'भौतिक वैभव के संग्रह को ही भगवान की कृपा का एकमात्र प्रमाण मानना',
+        'मोह मिटाने के लिए परिवार के प्रति अपने कर्तव्यों की उपेक्षा करना',
+      ],
+      pb: [
+        'ਕਿਰਤ ਕਰਨ ਤੋਂ ਡਰ ਕੇ ਸਮਾਜ ਵਿੱਚ ਬਿਲਕੁਲ ਆਲਸੀ ਤੇ ਬੇਕਾਰ ਹੋ ਜਾਣਾ',
+        'ਦੁਨਿਆਵੀ ਦੌਲਤ ਇਕੱਠੀ ਕਰਨ ਨੂੰ ਹੀ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਦਾ ਇਕਲੌਤਾ ਸਬੂਤ ਮੰਨਣਾ',
+        'ਮੋਹ ਮਿਟਾਉਣ ਦੇ ਨਾਂ ਤੇ ਪਰਿਵਾਰ ਪ੍ਰਤੀ ਆਪਣੀਆਂ ਜ਼ਿੰਮੇਵਾਰੀਆਂ ਛੱਡ ਦੇਣੀਆਂ',
+      ],
+      en: [
+        'Fleeing honest labor out of fear of money and falling into laziness',
+        'Measuring divine grace strictly by the size of one’s bank balance',
+        'Neglecting family duties under the excuse of spiritual detachment',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: लगातार दूसरों की सुख-सुविधा देख मन में "और अधिक पाने" की ईर्ष्या व बेचैनी उठे, तो साधक क्या करे?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਦੂਜਿਆਂ ਦੀ ਦੌਲਤ ਦੇਖ ਕੇ ਮਨ ਵਿੱਚ "ਹੋਰ ਚਾਹੀਦਾ" ਦੀ ਬੇਚੈਨੀ ਉੱਠੇ, ਤਾਂ ਸਾਧਕ ਕੀ ਕਰੇ?',
+      en: 'Real-Life Scenario: When comparing yourself with wealthier peers stirs envy and restless craving, what should a seeker practice?',
+    },
+    scenarioOptions: {
+      hi: [
+        'संतोष रूपी धन को स्मरण कर ईमानदारी की कमाई के प्रति कृतज्ञता (शुकराना) भाव अपनाए',
+        'दिखावे की होड़ में कर्ज लेकर भी बड़ा प्रदर्शन करे',
+        'धनी व्यक्तियों की आलोचना कर अपनी तुलना को सही ठहराए',
+        'रातोरात अमीर बनने के लिए अनैतिक उपायों का सहारा ले',
+      ],
+      pb: [
+        'ਸੰਤੋਖ ਰੂਪੀ ਧਨ ਨੂੰ ਯਾਦ ਕਰਕੇ ਆਪਣੀ ਇਮਾਨਦਾਰ ਕਿਰਤ ਲਈ ਸ਼ੁਕਰਾਨਾ ਕਰੇ',
+        'ਦਿਖਾਵੇ ਦੀ ਦੌੜ ਵਿੱਚ ਕਰਜ਼ਾ ਚੁੱਕ ਕੇ ਵੀ ਵੱਡਾ ਵਿਖਾਵਾ ਕਰੇ',
+        'ਅਮੀਰ ਲੋਕਾਂ ਦੀ ਨਿੰਦਾ ਕਰਕੇ ਆਪਣੀ ਤੁਲਨਾ ਨੂੰ ਸਹੀ ਠਹਿਰਾਏ',
+        'ਰਾਤੋ-ਰਾਤ ਅਮੀਰ ਬਣਨ ਲਈ ਗਲਤ ਰਸਤੇ ਅਪਣਾ ਲਵੇ',
+      ],
+      en: [
+        'Cultivate gratitude for honest sufficiency and remember the wealth of contentment',
+        'Borrow recklessly just to match external appearances',
+        'Criticize others bitterly to soothe your own jealousy',
+        'Compromise ethical integrity for faster material gain',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: असीमित तृष्णा और भौतिक मोह में मन के बँधे रहने का क्या परिणाम होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਬੇਅੰਤ ਤ੍ਰਿਸ਼ਨਾ ਤੇ ਮੋਹ ਵਿੱਚ ਮਨ ਦੇ ਬੱਝੇ ਰਹਿਣ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What results when consciousness remains bound to endless craving ("Trishna")?',
+    },
+    causeOptions: {
+      hi: [
+        'जीवन भर असंतोष, चिंता और आंतरिक दरिद्रता बनी रहती है तथा आत्मा सत्य से विमुख रहती है',
+        'संसार की सारी वस्तुएँ प्राप्त होते ही मन सदा के लिए तृप्त हो जाता है',
+        'अहंकार अपने आप कम होकर विनम्रता में बदल जाता है',
+        'अंतिम समय में सारा संचित वैभव आत्मा के साथ सतलोक जाता है',
+      ],
+      pb: [
+        'ਸਾਰੀ ਉਮਰ ਬੇਚੈਨੀ, ਚਿੰਤਾ ਤੇ ਅੰਦਰੂਨੀ ਗਰੀਬੀ ਬਣੀ ਰਹਿੰਦੀ ਹੈ ਅਤੇ ਸੁਰਤ ਸੱਚ ਤੋਂ ਦੂਰ ਰਹਿੰਦੀ ਹੈ',
+        'ਦੁਨੀਆ ਦੀਆਂ ਚੀਜ਼ਾਂ ਮਿਲਦੇ ਹੀ ਮਨ ਸਦਾ ਲਈ ਰੱਜ ਜਾਂਦਾ ਹੈ',
+        'ਹੰਕਾਰ ਆਪਣੇ ਆਪ ਘਟ ਕੇ ਨਿਮਰਤਾ ਵਿੱਚ ਬਦਲ ਜਾਂਦਾ ਹੈ',
+        'ਅੰਤ ਸਮੇਂ ਸਾਰੀ ਇਕੱਠੀ ਕੀਤੀ ਦੌਲਤ ਆਤਮਾ ਦੇ ਨਾਲ ਜਾਂਦੀ ਹੈ',
+      ],
+      en: [
+        'Perpetual anxiety and inner poverty persist while awareness stays veiled from Truth',
+        'Acquiring a few more possessions satisfies craving forever',
+        'Ego naturally shrinks as possessions multiply',
+        'Accumulated wealth accompanies the soul after bodily death',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: कबीर साहेब के अनुसार "माया" का वास्तविक निवास कहाँ है?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਮਾਇਆ" ਦਾ ਅਸਲੀ ਟਿਕਾਣਾ ਕਿੱਥੇ ਹੈ?',
+      en: 'Kabir Panth Philosophy: According to Satguru Kabir Saheb, where does "Maya" actually reside?',
+    },
+    tattvaOptions: {
+      hi: [
+        'धन या वस्तुओं में नहीं, बल्कि हमारे अपने मन की आसक्ति, मान-बड़ाई और वासना में',
+        'केवल बड़े नगरों, बाजारों और सोने-चाँदी की खदानों में',
+        'केवल पारिवारिक जीवन और गृहस्थ आश्रम के भीतर',
+        'अन्य धर्मों की पुस्तकों और बाहरी वस्तुओं में',
+      ],
+      pb: [
+        'ਧਨ ਜਾਂ ਚੀਜ਼ਾਂ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਸਾਡੇ ਆਪਣੇ ਮਨ ਦੇ ਮੋਹ, ਮਾਣ-ਵਡਿਆਈ ਅਤੇ ਵਾਸਨਾ ਵਿੱਚ',
+        'ਕੇਵਲ ਵੱਡੇ ਸ਼ਹਿਰਾਂ, ਬਾਜ਼ਾਰਾਂ ਅਤੇ ਸੋਨੇ-ਚਾਂਦੀ ਦੀਆਂ ਖਾਣਾਂ ਵਿੱਚ',
+        'ਕੇਵਲ ਪਰਿਵਾਰਕ ਜੀਵਨ ਅਤੇ ਗ੍ਰਹਿਸਥ ਦੇ ਅੰਦਰ',
+        'ਕੇਵਲ ਬਾਹਰੀ ਵਸਤਾਂ ਅਤੇ ਇਮਾਰਤਾਂ ਦੇ ਅੰਦਰ',
+      ],
+      en: [
+        'Not in physical wealth itself, but in inner clinging, craving, and desire for prestige',
+        'Exclusively inside bustling cities, marketplaces, and gold mines',
+        'Solely within married family life as opposed to renunciation',
+        'Only inside material objects rather than mental attachment',
+      ],
+    },
+  },
+  chetavani: {
+    coreCorrect: {
+      hi: 'शरीर व समय की क्षणभंगुरता समझकर आज ही सत्य, भक्ति और विनम्रता का सदुपयोग करना',
+      pb: 'ਸਰੀਰ ਤੇ ਸਮੇਂ ਦੀ ਨਾਸ਼ਵਾਨਤਾ ਸਮਝ ਕੇ ਅੱਜ ਹੀ ਸੱਚ, ਭਗਤੀ ਅਤੇ ਨਿਮਰਤਾ ਦਾ ਸਦਉਪਯੋਗ ਕਰਨਾ',
+      en: 'Recognizing the fleeting nature of body and time so we awaken into truth and devotion today',
+    },
+    coreDistractors: {
+      hi: [
+        'मृत्यु के भय से घबराकर जीवन के सभी शुभ कार्यों से निराश हो जाना',
+        'अस्थायी यौवन व बल पर घमंड करते हुए आत्म-सुधार को बुढ़ापे तक टालना',
+        'क्षणिक संसार मानकर दूसरों की पीड़ा के प्रति उदासीन हो जाना',
+      ],
+      pb: [
+        'ਮੌਤ ਦੇ ਡਰ ਤੋਂ ਘਬਰਾ ਕੇ ਜੀਵਨ ਦੇ ਸਾਰੇ ਚੰਗੇ ਕੰਮਾਂ ਤੋਂ ਨਿਰਾਸ਼ ਹੋ ਜਾਣਾ',
+        'ਅਸਥਾਈ ਜਵਾਨੀ ਤੇ ਤਾਕਤ ਤੇ ਹੰਕਾਰ ਕਰਦਿਆਂ ਸੁਧਾਰ ਨੂੰ ਬੁਢਾਪੇ ਤੱਕ ਟਾਲਣਾ',
+        'ਦੁਨੀਆ ਨੂੰ ਨਾਸ਼ਵਾਨ ਕਹਿ ਕੇ ਦੂਜਿਆਂ ਦੇ ਦੁੱਖ ਪ੍ਰਤੀ ਬੇਪਰਵਾਹ ਹੋ ਜਾਣਾ',
+      ],
+      en: [
+        'Becoming paralyzed by fear of death and abandoning meaningful effort',
+        'Taking pride in youth and postponing inner reflection until old age',
+        'Using impermanence as an excuse for indifference toward others’ suffering',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: जब मन कहे "अभी उम्र बहुत पड़ी है, भक्ति व क्रोध सुधारने का काम कल करेंगे", तब साधक क्या निर्णय ले?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜਦੋਂ ਮਨ ਕਹੇ "ਅਜੇ ਉਮਰ ਪਈ ਹੈ, ਭਗਤੀ ਤੇ ਸੁਭਾਅ ਸੁਧਾਰਨ ਦਾ ਕੰਮ ਕੱਲ੍ਹ ਕਰਾਂਗੇ", ਤਦ ਸਾਧਕ ਕੀ ਫ਼ੈਸਲਾ ਲਵੇ?',
+      en: 'Real-Life Scenario: When your mind whispers, "There is plenty of time—start meditating and fixing your temper next year," what should you do?',
+    },
+    scenarioOptions: {
+      hi: [
+        'इसी श्वास को अनमोल अवसर जानकर आज ही क्षमा, सुमिरन और सद्कर्म आरंभ करे',
+        'मन की बात मानकर बुढ़ापे में सेवानिवृत्ति का इंतजार करे',
+        'केवल जन्मदिन या किसी विशेष पर्व पर ही एक दिन साधना करे',
+        'जीवन की योजनाएँ केवल भौतिक संचय पर केंद्रित रखे',
+      ],
+      pb: [
+        'ਇਸੇ ਸੁਆਸ ਨੂੰ ਅਨਮੋਲ ਮੌਕਾ ਸਮਝ ਕੇ ਅੱਜ ਹੀ ਖਿਮਾ, ਸਿਮਰਨ ਤੇ ਸੇਵਾ ਸ਼ੁਰੂ ਕਰੇ',
+        'ਮਨ ਦੀ ਗੱਲ ਮੰਨ ਕੇ ਬੁਢਾਪੇ ਤੱਕ ਉਡੀਕ ਕਰਦਾ ਰਹੇ',
+        'ਕੇਵਲ ਸਾਲ ਵਿੱਚ ਇੱਕ-ਦੋ ਖ਼ਾਸ ਦਿਨਾਂ ਤੇ ਹੀ ਪਾਠ-ਪੂਜਾ ਕਰੇ',
+        'ਜੀਵਨ ਦਾ ਸਾਰਾ ਧਿਆਨ ਕੇਵਲ ਧਨ ਜੋੜਨ ਤੇ ਰੱਖੇ',
+      ],
+      en: [
+        'Treat the present breath as priceless and begin Simran, forgiveness, and right action right now',
+        'Agree with the mind and postpone spiritual practice until retirement',
+        'Observe spiritual habits strictly on annual holidays',
+        'Focus exclusively on material expansion while ignoring inner growth',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: नश्वर शरीर और क्षणिक वैभव पर अभिमान करते हुए समय गँवाने का परिणाम क्या होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਨਾਸ਼ਵਾਨ ਸਰੀਰ ਤੇ ਅਸਥਾਈ ਦੌਲਤ ਤੇ ਹੰਕਾਰ ਕਰਦਿਆਂ ਸਮਾਂ ਗੁਆਉਣ ਦਾ ਨਤੀਜਾ ਕੀ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What is the outcome of wasting life in pride over a transient body and temporary wealth?',
+    },
+    causeOptions: {
+      hi: [
+        'अमूल्य मनुष्य जन्म बिना आत्म-बोध के बीत जाता है और अंत में केवल पश्चाताप शेष रहता है',
+        'शरीर की आयु अपने आप बढ़ती जाती है और मृत्यु कभी निकट नहीं आती',
+        'संसारिक मान-सम्मान मृत्यु के बाद भी आत्मा की रक्षा करता है',
+        'काल और माया साधक की देह को अमर बना देते हैं',
+      ],
+      pb: [
+        'ਅਨਮੋਲ ਮਨੁੱਖਾ ਜਨਮ ਆਤਮ-ਬੋਧ ਤੋਂ ਬਿਨਾਂ ਬੀਤ ਜਾਂਦਾ ਹੈ ਤੇ ਅੰਤ ਵਿੱਚ ਪਛਤਾਵਾ ਰਹਿ ਜਾਂਦਾ ਹੈ',
+        'ਸਰੀਰ ਦੀ ਉਮਰ ਆਪਣੇ ਆਪ ਵਧਦੀ ਜਾਂਦੀ ਹੈ ਤੇ ਮੌਤ ਨੇੜੇ ਨਹੀਂ ਆਉਂਦੀ',
+        'ਦੁਨਿਆਵੀ ਮਾਣ-ਸਨਮਾਨ ਮੌਤ ਤੋਂ ਬਾਅਦ ਵੀ ਆਤਮਾ ਦੀ ਰੱਖਿਆ ਕਰਦਾ ਹੈ',
+        'ਕਾਲ ਤੇ ਮਾਇਆ ਸਾਧਕ ਦੀ ਦੇਹ ਨੂੰ ਅਮਰ ਕਰ ਦਿੰਦੇ ਹਨ',
+      ],
+      en: [
+        'Precious human birth slips away without awakening, leaving deep regret at the end',
+        'Physical youth extends indefinitely and mortality never arrives',
+        'Worldly titles defend the soul after death',
+        'Body and wealth transform automatically into immortal spirit',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: चेतावनी की साखियों में देह की नश्वरता के बीच "अविनाशी" क्या बताया गया है?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: ਚੇਤਾਵਨੀ ਦੀਆਂ ਸਾਖੀਆਂ ਵਿੱਚ ਦੇਹ ਦੀ ਨਾਸ਼ਵਾਨਤਾ ਵਿਚਕਾਰ "ਅਵਿਨਾਸ਼ੀ" ਕੀ ਦੱਸਿਆ ਗਿਆ ਹੈ?',
+      en: 'Kabir Panth Philosophy: Amid warnings about bodily impermanence, what alone is declared Imperishable?',
+    },
+    tattvaOptions: {
+      hi: [
+        'सत्यनाम के शबद में जागी हुई आत्मा (सुरति) और निस्वार्थ सत्य-भक्ति',
+        'बनाए गए विशाल महल और संतानों के लिए जोड़ी गई संपत्ति',
+        'विद्वानों द्वारा लिखे गए वाद-विवाद के ग्रंथ',
+        'तीर्थों पर स्थापित किए गए पत्थर के स्मारक',
+      ],
+      pb: [
+        'ਸਤਯਨਾਮ ਦੇ ਸ਼ਬਦ ਵਿੱਚ ਜਾਗੀ ਹੋਈ ਆਤਮਾ (ਸੁਰਤ) ਅਤੇ ਨਿਸ਼ਕਾਮ ਭਗਤੀ',
+        'ਬਣਾਏ ਗਏ ਵੱਡੇ ਮਹਿਲ ਅਤੇ ਜੋੜੀ ਹੋਈ ਦੌਲਤ',
+        'ਬਹਿਸਬਾਜ਼ੀ ਲਈ ਲਿਖੇ ਗਏ ਕਿਤਾਬੀ ਤਰਕ',
+        'ਤੀਰਥਾਂ ਤੇ ਬਣਾਏ ਗਏ ਪੱਥਰ ਦੇ ਸਮਾਰਕ',
+      ],
+      en: [
+        'The soul (Surat) awakened in the True Name (Satyanaam) and selfless devotion',
+        'Grand monuments and inherited fortunes left behind',
+        'Intellectual arguments recorded in books of debate',
+        'External shrines built from brick and stone',
+      ],
+    },
+  },
+  satya: {
+    coreCorrect: {
+      hi: 'बाह्य पाखंड व खोखले दिखावे को त्यागकर कथनी और करनी में एकरूप सत्य आचरण अपनाना',
+      pb: 'ਬਾਹਰੀ ਪਾਖੰਡ ਤੇ ਖੋਖਲਾ ਵਿਖਾਵਾ ਛੱਡ ਕੇ ਕਹਿਣੀ ਅਤੇ ਕਰਨੀ ਵਿੱਚ ਇੱਕੋ ਜਿਹਾ ਸੱਚਾ ਆਚਰਨ ਅਪਣਾਉਣਾ',
+      en: 'Rejecting hollow hypocrisy so outward speech and inner conduct align with lived Truth',
+    },
+    coreDistractors: {
+      hi: [
+        'शास्त्रों के उद्धरण सुनाकर दूसरों को अपनी विद्वत्ता से प्रभावित करना',
+        'समाज की परंपरा मानकर बिना भाव के समस्त रीतियाँ निभाते रहना',
+        'स्वयं की सुविधा के अनुसार सत्य और असत्य की परिभाषा बदलते रहना',
+      ],
+      pb: [
+        'ਗ੍ਰੰਥਾਂ ਦੇ ਹਵਾਲੇ ਸੁਣਾ ਕੇ ਦੂਜਿਆਂ ਨੂੰ ਆਪਣੀ ਵਿਦਵਤਾ ਨਾਲ ਪ੍ਰਭਾਵਿਤ ਕਰਨਾ',
+        'ਸਮਾਜਿਕ ਰੀਤ ਸਮਝ ਕੇ ਬਿਨਾਂ ਭਾਵਨਾ ਦੇ ਸਾਰੀਆਂ ਰਸਮਾਂ ਨਿਭਾਉਂਦੇ ਰਹਿਣਾ',
+        'ਆਪਣੀ ਸਹੂਲਤ ਅਨੁਸਾਰ ਸੱਚ ਤੇ ਝੂਠ ਦੀ ਪਰਿਭਾਸ਼ਾ ਬਦਲਦੇ ਰਹਿਣਾ',
+      ],
+      en: [
+        'Quoting verses impressively to earn a reputation for scholarship',
+        'Performing mechanical customs out of social habit without sincerity',
+        'Adjusting your definition of honesty whenever convenience demands it',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: यदि कोई कार्य झूठ बोलने पर तुरंत लाभ देता हो और सत्य बोलने पर थोड़ी कठिनाई हो, तो साधक क्या चुने?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜੇ ਕਿਸੇ ਕੰਮ ਵਿੱਚ ਝੂਠ ਬੋਲਣ ਨਾਲ ਤੁਰੰਤ ਫ਼ਾਇਦਾ ਦਿਸੇ ਤੇ ਸੱਚ ਬੋਲਣ ਵਿੱਚ ਥੋੜ੍ਹੀ ਮੁਸ਼ਕਲ ਹੋਵੇ, ਤਾਂ ਸਾਧਕ ਕੀ ਚੁਣੇ?',
+      en: 'Real-Life Scenario: When a small lie offers quick profit while honesty involves temporary inconvenience, what choice aligns with this Sakhi?',
+    },
+    scenarioOptions: {
+      hi: [
+        'क्षणिक लाभ की परवाह किए बिना सत्य व ईमानदारी का मार्ग चुने',
+        'मन में ईश्वर का नाम लेकर अपना काम निकालने हेतु झूठ बोल दे',
+        'बाद में कुछ दान-पुण्य करके असत्य की भरपाई करने की सोचे',
+        'दूसरों के व्यवहार का बहाना बनाकर स्वयं भी छल अपना ले',
+      ],
+      pb: [
+        'ਥੋੜ੍ਹ-ਚਿਰੇ ਫ਼ਾਇਦੇ ਦੀ ਪ੍ਰਵਾਹ ਕੀਤੇ ਬਿਨਾਂ ਸੱਚ ਅਤੇ ਇਮਾਨਦਾਰੀ ਦਾ ਰਾਹ ਚੁਣੇ',
+        'ਮਨ ਵਿੱਚ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਲੈ ਕੇ ਆਪਣਾ ਮਤਲਬ ਕੱਢਣ ਲਈ ਝੂਠ ਬੋਲ ਦੇਵੇ',
+        'ਬਾਅਦ ਵਿੱਚ ਥੋੜ੍ਹਾ ਦਾਨ-ਪੁੰਨ ਕਰਕੇ ਝੂਠ ਦਾ ਬਦਲਾ ਚੁਕਾਉਣ ਦੀ ਸੋਚੇ',
+        'ਦੂਜਿਆਂ ਦੀ ਮਿਸਾਲ ਦੇ ਕੇ ਆਪ ਵੀ ਛਲ-ਕਪਟ ਕਰ ਲਵੇ',
+      ],
+      en: [
+        'Stand firmly by honesty and integrity regardless of temporary inconvenience',
+        'Speak the lie while silently asking forgiveness afterward',
+        'Rationalize dishonesty by planning to donate a portion later',
+        'Imitate dishonest competitors so as not to fall behind',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: कथनी (अच्छे उपदेश) और करनी (दैनिक आचरण) में अंतर होने का क्या परिणाम होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਕਹਿਣੀ (ਚੰਗੀਆਂ ਗੱਲਾਂ) ਅਤੇ ਕਰਨੀ (ਅਸਲੀ ਵਿਹਾਰ) ਵਿੱਚ ਫ਼ਰਕ ਹੋਣ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What is the consequence when someone’s pious words ("Kathani") contradict their daily deeds ("Karani")?',
+    },
+    causeOptions: {
+      hi: [
+        'भक्ति केवल बाहरी आडंबर रह जाती है और अंतःकरण में साहेब का सच्चा प्रकाश नहीं ठहरता',
+        'दूसरों को उपदेश देने मात्र से साधक का अपना कल्याण स्वतः सिद्ध हो जाता है',
+        'दुनिया को धोखा देने से परमात्मा भी प्रसन्न हो जाते हैं',
+        'विद्वत्ता बढ़ने से हृदय के सभी विकार अपने आप मिट जाते हैं',
+      ],
+      pb: [
+        'ਭਗਤੀ ਕੇਵਲ ਬਾਹਰੀ ਦਿਖਾਵਾ ਰਹਿ ਜਾਂਦੀ ਹੈ ਤੇ ਹਿਰਦੇ ਵਿੱਚ ਸੱਚਾ ਪ੍ਰਕਾਸ਼ ਨਹੀਂ ਟਿਕਦਾ',
+        'ਦੂਜਿਆਂ ਨੂੰ ਉਪਦੇਸ਼ ਦੇਣ ਨਾਲ ਹੀ ਸਾਧਕ ਦਾ ਆਪਣਾ ਕਲਿਆਣ ਹੋ ਜਾਂਦਾ ਹੈ',
+        'ਦੁਨੀਆ ਨੂੰ ਧੋਖਾ ਦੇਣ ਨਾਲ ਪ੍ਰਮਾਤਮਾ ਵੀ ਖੁਸ਼ ਹੋ ਜਾਂਦੇ ਹਨ',
+        'ਗਿਆਨ ਦੇ ਸ਼ਬਦ ਰਟਣ ਨਾਲ ਹੀ ਸਾਰੇ ਵਿਕਾਰ ਮੁੱਕ ਜਾਂਦੇ ਹਨ',
+      ],
+      en: [
+        'Devotion collapses into empty show, preventing genuine inner illumination',
+        'Lecturing others is sufficient to achieve personal liberation',
+        'Clever outward appearances conceal inner deceit from conscience',
+        'Memorizing doctrine automatically purifies daily behavior',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'तत्व ज्ञान: कबीर साहेब "साँच बराबर तप नहीं" कहकर किस सत्य की ओर संकेत करते हैं?',
+      pb: 'ਤੱਤ-ਗਿਆਨ: ਕਬੀਰ ਸਾਹੇਬ "ਸੱਚ ਬਰਾਬਰ ਤਪ ਨਹੀਂ" ਕਹਿ ਕੇ ਕਿਸ ਸੱਚ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦੇ ਹਨ?',
+      en: 'Tattva Gyan: When Satguru Kabir Saheb declares "No austerity equals Truth," what Truth is meant?',
+    },
+    tattvaOptions: {
+      hi: [
+        'विचार, वाणी और कर्म की निष्कपट पारदर्शिता तथा अविनाशी सत्यनाम से एकरूपता',
+        'केवल सामाजिक नियमों के अनुसार कठोर उपवास और मौन व्रत रखना',
+        'किसी एक पुस्तक के शब्दों को बिना समझे दोहराते रहना',
+        'संसार के प्रत्येक व्यक्ति के सामने अपने निजी विचार उजागर कर देना',
+      ],
+      pb: [
+        'ਵਿਚਾਰ, ਬੋਲੀ ਤੇ ਕਰਮ ਦੀ ਨਿਰਛਲ ਸੱਚਾਈ ਅਤੇ ਅਵਿਨਾਸ਼ੀ ਸਤਯਨਾਮ ਨਾਲ ਇਕਸੁਰਤਾ',
+        'ਕੇਵਲ ਬਾਹਰੀ ਰਸਮਾਂ ਵਜੋਂ ਵਰਤ ਅਤੇ ਤਪੱਸਿਆ ਕਰਨੀ',
+        'ਕਿਸੇ ਪੁਸਤਕ ਦੇ ਸ਼ਬਦਾਂ ਨੂੰ ਬਿਨਾਂ ਸਮਝੇ ਦੁਹਰਾਉਂਦੇ ਰਹਿਣਾ',
+        'ਬਿਨਾਂ ਵਿਵੇਕ ਦੇ ਹਰ ਕਿਸੇ ਅੱਗੇ ਆਪਣੇ ਭੇਦ ਖੋਲ੍ਹ ਦੇਣੇ',
+      ],
+      en: [
+        'Undivided integrity of thought, word, and action aligned with Eternal Truth',
+        'Severe physical fasting performed purely for social recognition',
+        'Repeating inherited formulas without testing them in daily life',
+        'Sharing private affairs indiscriminately without discernment',
+      ],
+    },
+  },
+  satsang: {
+    coreCorrect: {
+      hi: 'कुसंग का त्याग कर सज्जनों, संतों और आत्म-विवेक की संगति को जीवन में प्राथमिकता देना',
+      pb: 'ਕੁਸੰਗਤ ਛੱਡ ਕੇ ਸੱਜਣਾਂ, ਸੰਤਾਂ ਅਤੇ ਆਤਮ-ਵਿਵੇਕ ਦੀ ਸੰਗਤ ਨੂੰ ਜੀਵਨ ਵਿੱਚ ਪਹਿਲ ਦੇਣੀ',
+      en: 'Avoiding harmful associations and cultivating saintly company and discerning reflection',
+    },
+    coreDistractors: {
+      hi: [
+        'संसार के सभी लोगों को हीन समझकर किसी से मित्रता न रखना',
+        'केवल बड़े समारोहों में भीड़ बढ़ाने के लिए उपस्थित होना',
+        'सबकी हाँ में हाँ मिलाकर लोकप्रिय बने रहना चाहे आचरण कुछ भी हो',
+      ],
+      pb: [
+        'ਦੁਨੀਆ ਦੇ ਸਾਰੇ ਲੋਕਾਂ ਨੂੰ ਮਾੜਾ ਸਮਝ ਕੇ ਕਿਸੇ ਨਾਲ ਮਿੱਤਰਤਾ ਨਾ ਰੱਖਣੀ',
+        'ਕੇਵਲ ਵੱਡੇ ਇਕੱਠਾਂ ਵਿੱਚ ਗਿਣਤੀ ਵਧਾਉਣ ਲਈ ਸ਼ਾਮਲ ਹੋਣਾ',
+        'ਸਭ ਦੀ ਹਾਂ ਵਿੱਚ ਹਾਂ ਮਿਲਾ ਕੇ ਲੋਕਪ੍ਰਿਯ ਬਣੇ ਰਹਿਣਾ ਭਾਵੇਂ ਆਚਰਨ ਕਿਹੋ ਜਿਹਾ ਵੀ ਹੋਵੇ',
+      ],
+      en: [
+        'Looking down on everyone in society and rejecting all human friendship',
+        'Attending crowded gatherings solely for socializing or status',
+        'Agreeing with unwholesome habits just to stay popular in a group',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: यदि मित्रों की मंडली में दूसरों की निंदा, ईर्ष्या या व्यसन की चर्चा होने लगे, तो साधक क्या करे?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜੇ ਦੋਸਤਾਂ ਦੀ ਮਹਿਫ਼ਿਲ ਵਿੱਚ ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਾ ਜਾਂ ਨਸ਼ਿਆਂ-ਵਿਕਾਰਾਂ ਦੀ ਗੱਲ ਚੱਲ ਪਵੇ, ਤਾਂ ਸਾਧਕ ਕੀ ਕਰੇ?',
+      en: 'Real-Life Scenario: When a social circle turns toward backbiting, cynicism, or harmful habits, what should a seeker do?',
+    },
+    scenarioOptions: {
+      hi: [
+        'विनम्रता से विषय को सार्थक दिशा दे या शांतिपूर्वक उस कुसंग से स्वयं को अलग कर ले',
+        'मित्रता बचाने के लिए स्वयं भी निंदा और हास्य-व्यंग्य में शामिल हो जाए',
+        'क्रोध में सबको फटकार लगाकर वहाँ झगड़ा खड़ा कर दे',
+        'मन में निंदा का आनंद लेते हुए बाहर से चुपचाप बैठा रहे',
+      ],
+      pb: [
+        'ਨਿਮਰਤਾ ਨਾਲ ਗੱਲ ਨੂੰ ਸਹੀ ਪਾਸੇ ਮੋੜੇ ਜਾਂ ਸ਼ਾਂਤੀ ਨਾਲ ਉਸ ਕੁਸੰਗਤ ਤੋਂ ਦੂਰ ਹੋ ਜਾਵੇ',
+        'ਦੋਸਤੀ ਨਿਭਾਉਣ ਲਈ ਆਪ ਵੀ ਨਿੰਦਾ-ਚੁਗਲੀ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋ ਜਾਵੇ',
+        'ਗੁੱਸੇ ਵਿੱਚ ਸਭ ਨੂੰ ਝਿੜਕ ਕੇ ਉੱਥੇ ਲੜਾਈ ਖੜ੍ਹੀ ਕਰ ਦੇਵੇ',
+        'ਅੰਦਰੋਂ ਨਿੰਦਾ ਦਾ ਸੁਆਦ ਲੈਂਦਿਆਂ ਬਾਹਰੋਂ ਚੁੱਪ ਬੈਠਾ ਰਹੇ',
+      ],
+      en: [
+        'Gently steer the conversation toward something wholesome or quietly step away',
+        'Join in the gossip so your friends do not think you are aloof',
+        'Lecture everyone harshly and pick an angry quarrel on the spot',
+        'Sit silently while secretly enjoying the malicious rumors',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: संतों के सत्संग तथा सूप-वृत्ति (सार ग्रहण करने) का साधक के जीवन पर क्या प्रभाव पड़ता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਸੰਤਾਂ ਦੇ ਸਤਿਸੰਗ ਅਤੇ ਛੱਜ-ਬਿਰਤੀ (ਸਾਰ ਗ੍ਰਹਿਣ ਕਰਨ) ਦਾ ਸਾਧਕ ਦੇ ਜੀਵਨ ਤੇ ਕੀ ਅਸਰ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What happens when a seeker keeps Satsang and practices discerning "winnowing-fan" wisdom?',
+    },
+    causeOptions: {
+      hi: [
+        'व्यर्थ विकार व संदेह उड़ जाते हैं तथा हृदय में केवल सार-तत्त्व और शांति शेष रहती है',
+        'मनुष्य को दुनिया की सारी आलोचनाएँ करने का अधिकार मिल जाता है',
+        'संसार के सारे कष्ट चमत्कारिक रूप से तुरंत गायब हो जाते हैं',
+        'व्यक्ति केवल बाहरी नियमों पर दूसरों को परखने लगता है',
+      ],
+      pb: [
+        'ਬੇਅਰਥ ਵਿਕਾਰ ਤੇ ਸ਼ੱਕ ਦੂਰ ਹੋ ਜਾਂਦੇ ਹਨ ਅਤੇ ਹਿਰਦੇ ਵਿੱਚ ਕੇਵਲ ਸਾਰ-ਤੱਤ ਤੇ ਸ਼ਾਂਤੀ ਬਚਦੀ ਹੈ',
+        'ਮਨੁੱਖ ਨੂੰ ਸਭ ਦੀਆਂ ਕਮੀਆਂ ਕੱਢਣ ਦਾ ਹੱਕ ਮਿਲ ਜਾਂਦਾ ਹੈ',
+        'ਦੁਨੀਆ ਦੇ ਸਾਰੇ ਦੁੱਖ ਚਮਤਕਾਰ ਨਾਲ ਤੁਰੰਤ ਗਾਇਬ ਹੋ ਜਾਂਦੇ ਹਨ',
+        'ਮਨੁੱਖ ਕੇਵਲ ਬਾਹਰੀ ਰੀਤਾਂ ਨਾਲ ਦੂਜਿਆਂ ਨੂੰ ਤੋਲਣ ਲੱਗਦਾ ਹੈ',
+      ],
+      en: [
+        'Empty chaff of doubt and vice blows away, leaving nourishing Truth and calm',
+        'One gains license to judge outsiders harshly',
+        'All external challenges magically vanish overnight',
+        'One focuses exclusively on policing others’ minor habits',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'तत्व ज्ञान: कबीर साहेब ने सच्चे "साधु" की पहचान वेश से नहीं बल्कि किस आंतरिक गुण से बताई है?',
+      pb: 'ਤੱਤ-ਗਿਆਨ: ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਸੱਚੇ "ਸਾਧੂ" ਦੀ ਪਛਾਣ ਭੇਖ ਤੋਂ ਨਹੀਂ ਸਗੋਂ ਕਿਸ ਅੰਦਰੂਨੀ ਗੁਣ ਤੋਂ ਦੱਸੀ ਹੈ?',
+      en: 'Tattva Gyan: Not by robes, but by which inner quality does Satguru Kabir Saheb identify a true "Sadhu"?',
+    },
+    tattvaOptions: {
+      hi: [
+        'विवेकशील स्वभाव जो सार (सत्य) को धारण करे और निंदा-क्रोध में भी अपनी शीतलता न छोड़े',
+        'विशेष रंग के वस्त्र, जटाएँ और मठ-मंदिरों का विशाल स्वामित्व',
+        'तीव्र शास्त्रार्थ में किसी भी प्रतिद्वंद्वी को पराजित करने की क्षमता',
+        'समाज से दूर रहकर किसी की कोई सहायता न करना',
+      ],
+      pb: [
+        'ਵਿਵੇਕਸ਼ੀਲ ਸੁਭਾਅ ਜੋ ਸਾਰ (ਸੱਚ) ਨੂੰ ਗ੍ਰਹਿਣ ਕਰੇ ਤੇ ਵਿਰੋਧ ਵਿੱਚ ਵੀ ਸ਼ੀਤਲਤਾ ਨਾ ਛੱਡੇ',
+        'ਖ਼ਾਸ ਰੰਗ ਦੇ ਕੱਪੜੇ ਅਤੇ ਵੱਡੇ ਡੇਰਿਆਂ ਦੀ ਮਾਲਕੀ',
+        'ਬਹਿਸਬਾਜ਼ੀ ਵਿੱਚ ਹਰ ਕਿਸੇ ਨੂੰ ਹਰਾਉਣ ਦੀ ਤਾਕਤ',
+        'ਸਮਾਜ ਤੋਂ ਕੱਟ ਕੇ ਕਿਸੇ ਦੇ ਕੰਮ ਨਾ ਆਉਣਾ',
+      ],
+      en: [
+        'Discerning wisdom that retains Truth while keeping cool equanimity amid hostility',
+        'Wearing distinctive robes or owning grand monastic estates',
+        'Defeating rivals in public theological debates',
+        'Withdrawing so completely as to avoid helping anyone in need',
+      ],
+    },
+  },
+  prem: {
+    coreCorrect: {
+      hi: 'अहंकार और स्वार्थ का समर्पण कर निश्छल, एकनिष्ठ प्रेम-भक्ति को हृदय में बसाना',
+      pb: 'ਹੰਕਾਰ ਤੇ ਸਵਾਰਥ ਨੂੰ ਸਮਰਪਿਤ ਕਰਕੇ ਨਿਰਛਲ, ਅਨੰਨ ਪ੍ਰੇਮ-ਭਗਤੀ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਣਾ',
+      en: 'Surrendering ego and self-interest to cultivate sincere, wholehearted love and devotion',
+    },
+    coreDistractors: {
+      hi: [
+        'भौतिक इच्छाएँ पूरी कराने के लिए ईश्वर से सौदेबाजी की प्रार्थना करना',
+        'केवल भावुकता में बहकर जीवन के कर्तव्यों की उपेक्षा करना',
+        'बड़ी-बड़ी धार्मिक पुस्तकें पढ़कर केवल बौद्धिक बहस करना',
+      ],
+      pb: [
+        'ਦੁਨਿਆਵੀ ਇੱਛਾਵਾਂ ਪੂਰੀਆਂ ਕਰਵਾਉਣ ਲਈ ਪ੍ਰਭੂ ਨਾਲ ਸੌਦੇਬਾਜ਼ੀ ਕਰਨੀ',
+        'ਕੇਵਲ ਭਾਵੁਕਤਾ ਵਿੱਚ ਵਹਿ ਕੇ ਜੀਵਨ ਦੇ ਕਰਤੱਵਾਂ ਨੂੰ ਭੁੱਲ ਜਾਣਾ',
+        'ਵੱਡੀਆਂ ਧਾਰਮਿਕ ਕਿਤਾਬਾਂ ਪੜ੍ਹ ਕੇ ਕੇਵਲ ਦਿਮਾਗੀ ਬਹਿਸ ਕਰਨੀ',
+      ],
+      en: [
+        'Bargaining in prayer purely to fulfill material ambitions',
+        'Getting swept into sentimentality while neglecting daily duties',
+        'Reducing devotion to abstract academic reading and debate',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: कोई व्यक्ति यदि भक्ति करता हो पर घर के सदस्यों से रूखा व स्वार्थी व्यवहार रखे, तो इस साखी की रोशनी में क्या कमी है?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜੇ ਕੋਈ ਪਾਠ-ਪੂਜਾ ਤਾਂ ਕਰੇ ਪਰ ਪਰਿਵਾਰ ਨਾਲ ਰੁੱਖਾ ਤੇ ਸਵਾਰਥੀ ਵਿਹਾਰ ਰੱਖੇ, ਤਾਂ ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਕੀ ਕਮੀ ਹੈ?',
+      en: 'Real-Life Scenario: If someone observes daily prayers yet treats household members coldly and selfishly, what is missing according to this Sakhi?',
+    },
+    scenarioOptions: {
+      hi: [
+        'उसकी साधना में "प्रेम के ढाई आखर" और अहं-त्याग की वास्तविक जीवंतता का अभाव है',
+        'उसने संभवतः किसी बड़े तीर्थ की यात्रा अभी तक नहीं की है',
+        'उसकी पूजा में सामग्री और घंटा-नाद की संख्या कम पड़ रही है',
+        'उसे और अधिक कठिन भाषा की पुस्तकें पढ़ने की आवश्यकता है',
+      ],
+      pb: [
+        'ਉਸ ਦੀ ਸਾਧਨਾ ਵਿੱਚ "ਪ੍ਰੇਮ ਦੇ ਢਾਈ ਅੱਖਰ" ਅਤੇ ਹੰਕਾਰ-ਤਿਆਗ ਦੀ ਅਸਲੀ ਸੱਚਾਈ ਦੀ ਕਮੀ ਹੈ',
+        'ਉਸ ਨੇ ਸ਼ਾਇਦ ਅਜੇ ਤੱਕ ਕਿਸੇ ਵੱਡੇ ਤੀਰਥ ਦੀ ਯਾਤਰਾ ਨਹੀਂ ਕੀਤੀ',
+        'ਉਸ ਦੀ ਪੂਜਾ ਵਿੱਚ ਰਸਮੀ ਸਮੱਗਰੀ ਦੀ ਗਿਣਤੀ ਘੱਟ ਹੈ',
+        'ਉਸ ਨੂੰ ਹੋਰ ਔਖੀਆਂ ਕਿਤਾਬਾਂ ਪੜ੍ਹਨ ਦੀ ਲੋੜ ਹੈ',
+      ],
+      en: [
+        'Their practice lacks the living essence of selfless love and humility',
+        'They simply have not completed enough distant pilgrimages yet',
+        'Their formal ritual lacked enough lamps or chanting volume',
+        'They need to memorize more philosophical commentaries',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: सच्ची विरह-भक्ति और अहंकार के समर्पण का साधक पर क्या परिणाम होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਸੱਚੀ ਬਿਰਹਾ-ਭਗਤੀ ਅਤੇ ਹੰਕਾਰ ਦੇ ਸਮਰਪਣ ਦਾ ਸਾਧਕ ਉੱਤੇ ਕੀ ਅਸਰ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What transforms inside a seeker when sincere longing and surrender replace ego?',
+    },
+    causeOptions: {
+      hi: [
+        'द्वैत और भय मिटते हैं तथा मन स्वाभाविक रूप से सबके प्रति प्रेममय व शांत हो जाता है',
+        'व्यक्ति संसार के लोगों से स्वयं को श्रेष्ठ मानकर अलग रहने लगता है',
+        'बुद्धि तर्क करने में और भी अधिक कुशल व विवादप्रिय हो जाती है',
+        'साधक को केवल बाहरी प्रशंसा और यश की प्राप्ति होती है',
+      ],
+      pb: [
+        'ਦਵੈਤ ਤੇ ਡਰ ਮਿਟਦੇ ਹਨ ਅਤੇ ਮਨ ਸੁਭਾਵਿਕ ਤੌਰ ਤੇ ਸਭ ਪ੍ਰਤੀ ਪ੍ਰੇਮਮਈ ਤੇ ਸ਼ਾਂਤ ਹੋ ਜਾਂਦਾ ਹੈ',
+        'ਮਨੁੱਖ ਆਪਣੇ ਆਪ ਨੂੰ ਬਾਕੀਆਂ ਤੋਂ ਵੱਡਾ ਮੰਨ ਕੇ ਵੱਖਰਾ ਰਹਿਣ ਲੱਗਦਾ ਹੈ',
+        'ਬੁੱਧੀ ਬਹਿਸ ਕਰਨ ਵਿੱਚ ਹੋਰ ਜ਼ਿਆਦਾ ਤੇਜ਼ ਹੋ ਜਾਂਦੀ ਹੈ',
+        'ਸਾਧਕ ਨੂੰ ਕੇਵਲ ਬਾਹਰੀ ਵਾਹ-ਵਾਹ ਦੀ ਪ੍ਰਾਪਤੀ ਹੁੰਦੀ ਹੈ',
+      ],
+      en: [
+        'Fear and separation dissolve, leaving spontaneous peace and compassion for all',
+        'One feels superior to ordinary people and withdraws judgmentally',
+        'The intellect grows sharper at winning arguments',
+        'One earns greater social fame and public recognition',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: सतगुरु कबीर साहेब ने "सीस उतारे भुईं धरै" या प्रेम की संकरी गली से क्या तात्पर्य बताया है?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ "ਸੀਸ ਉਤਾਰੇ ਭੁਇੰ ਧਰੈ" ਜਾਂ ਪ੍ਰੇਮ ਦੀ ਭੀੜੀ ਗਲੀ ਤੋਂ ਕੀ ਭਾਵ ਦੱਸਿਆ ਹੈ?',
+      en: 'Kabir Panth Philosophy: What does Satguru Kabir Saheb symbolize by "laying down one’s head on the ground" on the narrow path of Love?',
+    },
+    tattvaOptions: {
+      hi: [
+        'अपने अहंकार, अभिमान और स्वार्थपूर्ण "मैं-पन" को पूर्णतः त्यागकर समर्पण करना',
+        'शरीर को किसी प्रकार का शारीरिक कष्ट या हिंसा पहुँचाना',
+        'समाज के हर अन्याय को बिना कुछ कहे स्वीकार करते रहना',
+        'बुद्धि और विवेक का प्रयोग पूरी तरह बंद कर देना',
+      ],
+      pb: [
+        'ਆਪਣੇ ਹੰਕਾਰ, ਅਭਿਮਾਨ ਅਤੇ ਸਵਾਰਥੀ "ਮੈਂ-ਪੁਣੇ" ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਤਿਆਗ ਕੇ ਸਮਰਪਣ ਕਰਨਾ',
+        'ਸਰੀਰ ਨੂੰ ਕਿਸੇ ਤਰ੍ਹਾਂ ਦਾ ਸਰੀਰਕ ਕਸ਼ਟ ਦੇਣਾ',
+        'ਸਮਾਜ ਦੇ ਹਰ ਅਨਿਆਂ ਅੱਗੇ ਝੁਕ ਕੇ ਬੇਵੱਸ ਹੋ ਜਾਣਾ',
+        'ਬੁੱਧੀ ਅਤੇ ਵਿਵੇਕ ਦੀ ਵਰਤੋਂ ਬਿਲਕੁਲ ਬੰਦ ਕਰ ਦੇਣੀ',
+      ],
+      en: [
+        'Totally surrendering personal pride, stubborn ego, and selfish "I-ness"',
+        'Inflicting literal physical harm or extreme bodily mortification',
+        'Passively tolerating injustice out of timidity',
+        'Switching off rational discernment and ethical judgment',
+      ],
+    },
+  },
+  compassion: {
+    coreCorrect: {
+      hi: 'समस्त जीवों के प्रति दया, अहिंसा, समभाव और निस्वार्थ परोपकार को धर्म का मूल मानना',
+      pb: 'ਸਾਰੇ ਜੀਵਾਂ ਪ੍ਰਤੀ ਦਇਆ, ਅਹਿੰਸਾ, ਸਮਭਾਵ ਅਤੇ ਨਿਸ਼ਕਾਮ ਪਰਉਪਕਾਰ ਨੂੰ ਧਰਮ ਦੀ ਜੜ੍ਹ ਮੰਨਣਾ',
+      en: 'Practicing universal compassion, non-violence, equality, and selfless service as the root of dharma',
+    },
+    coreDistractors: {
+      hi: [
+        'केवल अपने परिवार और संप्रदाय के लोगों के प्रति ही भलाई का भाव रखना',
+        'परोपकार के बदले सदा समाज से सम्मान और धन्यवाद की अपेक्षा रखना',
+        'केवल मंदिरों में दान देकर गरीब व असहाय जीवों की अनदेखी करना',
+      ],
+      pb: [
+        'ਕੇਵਲ ਆਪਣੇ ਪਰਿਵਾਰ ਤੇ ਆਪਣੇ ਹੀ ਫ਼ਿਰਕੇ ਦੇ ਲੋਕਾਂ ਪ੍ਰਤੀ ਭਲਾਈ ਰੱਖਣੀ',
+        'ਪਰਉਪਕਾਰ ਦੇ ਬਦਲੇ ਹਮੇਸ਼ਾ ਸਮਾਜ ਤੋਂ ਵਾਹ-ਵਾਹ ਤੇ ਸਨਮਾਨ ਦੀ ਉਮੀਦ ਰੱਖਣੀ',
+        'ਕੇਵਲ ਬਾਹਰੀ ਥਾਵਾਂ ਤੇ ਦਾਨ ਕਰਕੇ ਗਰੀਬ ਤੇ ਬੇਸਹਾਰਾ ਜੀਵਾਂ ਨੂੰ ਅਣਦੇਖਿਆ ਕਰਨਾ',
+      ],
+      en: [
+        'Restricting kindness solely to members of your own family or sect',
+        'Helping others only when public recognition and gratitude are assured',
+        'Giving ceremonial offerings while ignoring struggling neighbors',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: यदि कोई असहाय या कठिन समय से गुजरता व्यक्ति आपसे सहायता की अपेक्षा रखे और आपके पास सामर्थ्य हो, तो साधक क्या करे?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜੇ ਕੋਈ ਬੇਸਹਾਰਾ ਜਾਂ ਔਖੇ ਸਮੇਂ ਵਿੱਚੋਂ ਲੰਘ ਰਿਹਾ ਵਿਅਕਤੀ ਤੁਹਾਡੇ ਤੋਂ ਮਦਦ ਦੀ ਆਸ ਰੱਖੇ, ਤਾਂ ਸਾਧਕ ਕੀ ਕਰੇ?',
+      en: 'Real-Life Scenario: When someone in genuine distress seeks help within your capacity, what does this Sakhi guide you to do?',
+    },
+    scenarioOptions: {
+      hi: [
+        'बिना अभिमान और बिना भेदभाव के यथासंभव सेवा, सहानुभूति और सहयोग प्रदान करे',
+        'उसके कर्मों का फल बताकर मदद करने से हाथ खींच ले',
+        'पहले फोटो खींचकर या प्रचार सुनिश्चित करके ही सहायता आगे बढ़ाए',
+        'सलाह दे दे कि धार्मिक ग्रंथ पढ़ने से सब ठीक हो जाएगा, और कोई कर्म न करे',
+      ],
+      pb: [
+        'ਬਿਨਾਂ ਕਿਸੇ ਹੰਕਾਰ ਅਤੇ ਭੇਦਭਾਵ ਦੇ ਆਪਣੇ ਸਮਰੱਥ ਅਨੁਸਾਰ ਸੇਵਾ ਤੇ ਸਹਿਯੋਗ ਦੇਵੇ',
+        'ਉਸ ਦੇ ਪਿਛਲੇ ਕਰਮਾਂ ਦਾ ਫ਼ਲ ਦੱਸ ਕੇ ਮਦਦ ਕਰਨ ਤੋਂ ਨਾਂਹ ਕਰ ਦੇਵੇ',
+        'ਪਹਿਲਾਂ ਦਿਖਾਵੇ ਤੇ ਪ੍ਰਚਾਰ ਦਾ ਪ੍ਰਬੰਧ ਕਰਕੇ ਹੀ ਸਹਾਇਤਾ ਕਰੇ',
+        'ਕੇਵਲ ਜ਼ੁਬਾਨੀ ਉਪਦੇਸ਼ ਦੇ ਕੇ ਅਮਲੀ ਮਦਦ ਤੋਂ ਪਿੱਛੇ ਹਟ ਜਾਵੇ',
+      ],
+      en: [
+        'Offer practical support and kindness humbly without expectation or bias',
+        'Dismiss their hardship as past karma and walk away',
+        'Help only if publicity and praise are guaranteed',
+        'Offer empty advice while refusing tangible assistance',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: जहाँ जीव-दया, अहिंसा और समभाव का अभाव हो, वहाँ समस्त बाहरी धर्म-कर्म का क्या परिणाम होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਜਿੱਥੇ ਜੀਵ-ਦਇਆ, ਅਹਿੰਸਾ ਅਤੇ ਸਮਭਾਵ ਦੀ ਕਮੀ ਹੋਵੇ, ਉੱਥੇ ਬਾਹਰੀ ਧਰਮ-ਕਰਮ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What becomes of outward religious observance when compassion and non-violence are absent?',
+    },
+    causeOptions: {
+      hi: [
+        'कठोर हृदय में किया गया हर जप-तप निष्फल और पाखंड मात्र रह जाता है',
+        'नियमित अनुष्ठान करने से कठोरता अपने आप पुण्य में बदल जाती है',
+        'हिंसा करने पर भी बाहरी नियमों से मोक्ष की प्राप्ति निश्चित हो जाती है',
+        'समाज में भय पैदा कर के अधिक धर्म का प्रचार होता है',
+      ],
+      pb: [
+        'ਕਠੋਰ ਹਿਰਦੇ ਨਾਲ ਕੀਤਾ ਹਰ ਜਪ-ਤਪ ਬੇਅਰਥ ਤੇ ਦਿਖਾਵਾ ਮਾਤਰ ਰਹਿ ਜਾਂਦਾ ਹੈ',
+        'ਨਿਯਮਿਤ ਰਸਮਾਂ ਕਰਨ ਨਾਲ ਕਠੋਰਤਾ ਆਪਣੇ ਆਪ ਪੁੰਨ ਵਿੱਚ ਬਦਲ ਜਾਂਦੀ ਹੈ',
+        'ਹਿੰਸਾ ਕਰਨ ਤੇ ਵੀ ਬਾਹਰੀ ਨਿਯਮਾਂ ਨਾਲ ਮੁਕਤੀ ਪੱਕੀ ਹੋ ਜਾਂਦੀ ਹੈ',
+        'ਡਰ ਪੈਦਾ ਕਰਕੇ ਧਰਮ ਦਾ ਪ੍ਰਚਾਰ ਹੋਰ ਵਧਦਾ ਹੈ',
+      ],
+      en: [
+        'Rituals performed with an unfeeling heart remain hollow and fruitless',
+        'Strict ceremony automatically turns cruelty into merit',
+        'Outer orthodoxy guarantees grace regardless of harm to living beings',
+        'Fear and harshness help establish spiritual harmony',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: "एक नूर ते सब जग उपजा" की दृष्टि से जीव-दया केवल नैतिकता नहीं बल्कि क्या है?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: "ਏਕ ਨੂਰ ਤੇ ਸਭ ਜਗ ਉਪਜਿਆ" ਦੀ ਦ੍ਰਿਸ਼ਟੀ ਤੋਂ ਜੀਵ-ਦਇਆ ਕੇਵਲ ਨੈਤਿਕਤਾ ਨਹੀਂ ਸਗੋਂ ਕੀ ਹੈ?',
+      en: 'Kabir Panth Philosophy: From the vision "From One Light the whole universe arose," what is universal compassion really?',
+    },
+    tattvaOptions: {
+      hi: [
+        'प्रत्येक प्राणी में विराजमान एक ही परमात्मा साहेब की प्रत्यक्ष आराधना',
+        'केवल सामाजिक प्रतिष्ठा बढ़ाने का एक अच्छा व्यावहारिक उपाय',
+        'स्वर्ग में भौतिक सुख पाने के लिए किया गया लेन-देन',
+        'अपने मन की कमजोरी और भावुकता का प्रदर्शन',
+      ],
+      pb: [
+        'ਹਰ ਜੀਵ ਵਿੱਚ ਵਸਦੇ ਇੱਕੋ ਪਰਮਾਤਮਾ ਸਾਹੇਬ ਦੀ ਪ੍ਰਤੱਖ ਅਰਾਧਨਾ',
+        'ਕੇਵਲ ਸਮਾਜ ਵਿੱਚ ਇੱਜ਼ਤ ਵਧਾਉਣ ਦਾ ਇੱਕ ਤਰੀਕਾ',
+        'ਸਵਰਗ ਦੇ ਸੁੱਖ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਕੀਤਾ ਗਿਆ ਲੈਣ-ਦੇਣ',
+        'ਆਪਣੇ ਮਨ ਦੀ ਕਮਜ਼ੋਰੀ ਦਾ ਪ੍ਰਦਰਸ਼ਨ',
+      ],
+      en: [
+        'Direct worship of the One Indwelling Divine present inside every being',
+        'Merely a polite civic habit for improving public image',
+        'A transaction aimed at buying future heavenly comforts',
+        'A sign of emotional weakness rather than spiritual strength',
+      ],
+    },
+  },
+  yoga: {
+    coreCorrect: {
+      hi: 'बाहर भटकना बंद कर अंतर्मुखी होकर अपने ही घट के भीतर सत्य और अनहद शबद की खोज करना',
+      pb: 'ਬਾਹਰ ਭਟਕਣਾ ਬੰਦ ਕਰਕੇ ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਆਪਣੇ ਹੀ ਘਟ ਦੇ ਅੰਦਰ ਸੱਚ ਅਤੇ ਅਨਹਦ ਸ਼ਬਦ ਦੀ ਖੋਜ ਕਰਨੀ',
+      en: 'Turning away from external wandering to discover Truth and the Unstruck Word within one’s own heart',
+    },
+    coreDistractors: {
+      hi: [
+        'केवल पहाड़ों, जंगलों और दूरस्थ स्मारकों की यात्रा करते रहने से ही बोध मान लेना',
+        'सांसारिक भोगों को बढ़ाकर इंद्रियों की संतुष्टि को योग समझना',
+        'बाह्य चमत्कारों और सिद्धियों के प्रदर्शन से लोगों को चकित करना',
+      ],
+      pb: [
+        'ਕੇਵਲ ਪਹਾੜਾਂ, ਜੰਗਲਾਂ ਤੇ ਦੂਰ ਦੀਆਂ ਯਾਤਰਾਵਾਂ ਕਰਨ ਨੂੰ ਹੀ ਅਧਿਆਤਮਕ ਬੋਧ ਸਮਝ ਲੈਣਾ',
+        'ਇੰਦਰੀਆਂ ਦੇ ਭੋਗਾਂ ਨੂੰ ਵਧਾ ਕੇ ਸਰੀਰਕ ਸੁੱਖ ਨੂੰ ਹੀ ਯੋਗ ਮੰਨ ਲੈਣਾ',
+        'ਬਾਹਰੀ ਕਰਾਮਾਤਾਂ ਦਿਖਾ ਕੇ ਲੋਕਾਂ ਨੂੰ ਹੈਰਾਨ ਕਰਨਾ',
+      ],
+      en: [
+        'Assuming enlightenment comes strictly from touring distant mountains and shrines',
+        'Confusing sensory indulgence with effortless spiritual bliss',
+        'Seeking occult powers solely to astonish spectators',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: मन जब बाहरी शोर, मोबाइल या चिंता से अत्यधिक बिखरा महसूस हो, तो इस साखी के अनुसार शांत होने का सही अभ्यास क्या है?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਜਦੋਂ ਮਨ ਬਾਹਰਲੇ ਸ਼ੋਰ ਤੇ ਚਿੰਤਾਵਾਂ ਵਿੱਚ ਬਹੁਤ ਖਿੰਡਿਆ ਮਹਿਸੂਸ ਹੋਵੇ, ਤਾਂ ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਸ਼ਾਂਤ ਹੋਣ ਦਾ ਸਹੀ ਤਰੀਕਾ ਕੀ ਹੈ?',
+      en: 'Real-Life Scenario: When your attention feels scattered across outer noise, screens, and worry, what practice applies this Sakhi?',
+    },
+    scenarioOptions: {
+      hi: [
+        'कुछ मिनट नेत्र बंद कर श्वास व ध्यान को अंतर्मुखी कर भीतर की निश्चल शांति में टिकना',
+        'और अधिक उत्तेजक मनोरंजन देखकर मन का ध्यान दूसरी ओर मोड़ना',
+        'किसी तीर्थ यात्रा की प्रतीक्षा करते हुए वर्तमान बेचैनी को बढ़ने देना',
+        'केवल दर्शनशास्त्र की मोटी पुस्तकें पढ़कर बुद्धि को और व्यस्त करना',
+      ],
+      pb: [
+        'ਕੁਝ ਮਿੰਟ ਅੱਖਾਂ ਬੰਦ ਕਰਕੇ ਸੁਆਸ ਤੇ ਸੁਰਤ ਨੂੰ ਅੰਦਰੂਨੀ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕਾਉਣਾ',
+        'ਹੋਰ ਜ਼ਿਆਦਾ ਮਨੋਰੰਜਨ ਤੇ ਸ਼ੋਰ ਵਿੱਚ ਮਨ ਨੂੰ ਉਲਝਾ ਲੈਣਾ',
+        'ਕਿਸੇ ਲੰਬੀ ਯਾਤਰਾ ਦੀ ਉਡੀਕ ਕਰਦਿਆਂ ਬੇਚੈਨੀ ਵਧਣ ਦੇਣਾ',
+        'ਕੇਵਲ ਤਰਕ-ਵਿਤਕਰ ਦੀਆਂ ਕਿਤਾਬਾਂ ਪੜ੍ਹ ਕੇ ਦਿਮਾਗ਼ ਹੋਰ ਭਾਰੀ ਕਰਨਾ',
+      ],
+      en: [
+        'Sit quietly for a few minutes, gather breath and Surat inward, and rest in inner stillness',
+        'Seek louder entertainment and distractions to drown out the anxiety',
+        'Wait passively for a future holiday before caring about inner peace',
+        'Overload the intellect with complex debates until exhausted',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: मृग के कस्तूरी को बाहर जंगल में खोजने की तरह मनुष्य जब ईश्वर को केवल बाहर ढूँढता है, तो क्या होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਕਸਤੂਰੀ ਨੂੰ ਬਾਹਰ ਜੰਗਲ ਵਿੱਚ ਲੱਭਦੇ ਹਿਰਨ ਵਾਂਗ ਜਦੋਂ ਮਨੁੱਖ ਪ੍ਰਭੂ ਨੂੰ ਕੇਵਲ ਬਾਹਰ ਲੱਭਦਾ ਹੈ, ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: Like the musk-deer searching the forest outwardly, what happens when seekers look for Truth only externally?',
+    },
+    causeOptions: {
+      hi: [
+        'जीवन भर थकान और भटकाव बना रहता है जबकि अनमोल खजाना अपने ही घट में अनदेखा रह जाता है',
+        'बाहरी स्थानों की गिनती पूरी होते ही स्वतः ही मोक्ष प्राप्त हो जाता है',
+        'अंतःकरण की जाँच किए बिना ही मन सहज समाधि में चला जाता है',
+        'इंद्रियों के बहिर्मुखी होने से सुरति अपने आप मजबूत हो जाती है',
+      ],
+      pb: [
+        'ਸਾਰੀ ਉਮਰ ਥਕਾਵਟ ਤੇ ਭਟਕਣਾ ਬਣੀ ਰਹਿੰਦੀ ਹੈ ਜਦਕਿ ਅਨਮੋਲ ਖ਼ਜ਼ਾਨਾ ਆਪਣੇ ਅੰਦਰ ਹੀ ਅਣਦੇਖਿਆ ਰਹਿੰਦਾ ਹੈ',
+        'ਬਾਹਰੀ ਥਾਵਾਂ ਦੀ ਗਿਣਤੀ ਪੂਰੀ ਹੁੰਦਿਆਂ ਹੀ ਮੁਕਤੀ ਮਿਲ ਜਾਂਦੀ ਹੈ',
+        'ਅੰਦਰੂਨੀ ਪੜਚੋਲ ਤੋਂ ਬਿਨਾਂ ਹੀ ਸਹਿਜ ਸਮਾਧੀ ਲੱਗ ਜਾਂਦੀ ਹੈ',
+        'ਬਾਹਰ ਭਟਕਣ ਨਾਲ ਸੁਰਤ ਆਪਣੇ ਆਪ ਮਜ਼ਬੂਤ ਹੋ ਜਾਂਦੀ ਹੈ',
+      ],
+      en: [
+        'Endless exhaustion and wandering continue while the real treasure inside remains unseen',
+        'Visiting a fixed number of places guarantees awakening automatically',
+        'Meditation deepens effortlessly without turning inward',
+        'Outward distraction strengthens spiritual focus on its own',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: "सुरति-शब्द योग" में "हंस" या "मानसरोवर" किन आंतरिक वास्तविकताओं के प्रतीक हैं?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: "ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ" ਵਿੱਚ "ਹੰਸ" ਜਾਂ "ਮਾਨਸਰੋਵਰ" ਕਿਹੜੀਆਂ ਅੰਦਰੂਨੀ ਸੱਚਾਈਆਂ ਦੇ ਪ੍ਰਤੀਕ ਹਨ?',
+      en: 'Kabir Panth Philosophy: In Surat-Shabad Yoga, what inner realities do "Hans" (swan) and "Mansarovar" represent?',
+    },
+    tattvaOptions: {
+      hi: [
+        'विवेकी जीवात्मा (हंस) जो नीर-क्षीर विवेक से घट के दसवें द्वार स्थित अमृत-सरोवर में शब्द-मोती चुगती है',
+        'हिमालय पर्वत पर स्थित एक भौतिक झील और वहाँ के पक्षी मात्र',
+        'केवल श्वास रोकने के कठिन शारीरिक व्यायाम की मुद्राएँ',
+        'समाज से दूर बने हुए धार्मिक आश्रमों के भवन',
+      ],
+      pb: [
+        'ਵਿਵੇਕੀ ਜੀਵਾਤਮਾ (ਹੰਸ) ਜੋ ਸੱਚ-ਝੂਠ ਦੇ ਵਿਵੇਕ ਨਾਲ ਅੰਦਰੂਨੀ ਦਸਵੇਂ ਦੁਆਰ ਦੇ ਅੰਮ੍ਰਿਤ-ਸਰੋਵਰ ਵਿੱਚ ਸ਼ਬਦ-ਮੋਤੀ ਚੁਗਦੀ ਹੈ',
+        'ਕੇਵਲ ਪਹਾੜਾਂ ਵਿੱਚ ਸਥਿਤ ਕੋਈ ਭੌਤਿਕ ਝੀਲ ਅਤੇ ਪੰਛੀ',
+        'ਕੇਵਲ ਸਰੀਰਕ ਕਸਰਤ ਅਤੇ ਪ੍ਰਾਣਾਯਾਮ ਦੇ ਆਸਣ',
+        'ਬਾਹਰੀ ਆਸ਼ਰਮਾਂ ਦੀਆਂ ਇਮਾਰਤਾਂ',
+      ],
+      en: [
+        'The discerning soul (Hans) nourished by inner Truth-nectar within the Tenth Door',
+        'Strictly a geographical lake and literal migratory birds in the mountains',
+        'Competitive breath-holding postures aimed at physical stamina',
+        'External retreat buildings constructed far from towns',
+      ],
+    },
+  },
+  mind: {
+    coreCorrect: {
+      hi: 'चंचल और विकारी मन को साक्षी-भाव एवं विवेक से अनुशासित कर आंतरिक स्थिरता साधना',
+      pb: 'ਚੰਚਲ ਤੇ ਵਿਕਾਰੀ ਮਨ ਨੂੰ ਸਾਖੀ-ਭਾਵ ਤੇ ਵਿਵੇਕ ਨਾਲ ਅਨੁਸ਼ਾਸਿਤ ਕਰਕੇ ਅੰਦਰੂਨੀ ਸਥਿਰਤਾ ਪ੍ਰਾਪਤ ਕਰਨੀ',
+      en: 'Observing and disciplining the restless mind with discernment to establish inner steadiness',
+    },
+    coreDistractors: {
+      hi: [
+        'मन की हर चंचल इच्छा को बिना विचार किए तुरंत पूरा करते रहना',
+        'मन पर नियंत्रण के लिए स्वयं को कठोर दंड और क्रोध से दबाना',
+        'विवेक का त्याग कर केवल भाग्य भरोसे निष्क्रिय बैठे रहना',
+      ],
+      pb: [
+        'ਮਨ ਦੀ ਹਰ ਚੰਚਲ ਇੱਛਾ ਨੂੰ ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਪੂਰਾ ਕਰਦੇ ਰਹਿਣਾ',
+        'ਮਨ ਨੂੰ ਕਾਬੂ ਕਰਨ ਲਈ ਆਪਣੇ ਆਪ ਨੂੰ ਗੁੱਸੇ ਤੇ ਸਜ਼ਾ ਨਾਲ ਦਬਾਉਣਾ',
+        'ਵਿਵੇਕ ਛੱਡ ਕੇ ਕੇਵਲ ਕਿਸਮਤ ਦੇ ਭਰੋਸੇ ਬੈਠੇ ਰਹਿਣਾ',
+      ],
+      en: [
+        'Indulging every restless impulse of the mind without discernment',
+        'Repressing every thought harshly through anger and self-punishment',
+        'Giving up self-effort and blaming fate for mental habits',
+      ],
+    },
+    scenarioQuestion: {
+      hi: 'दैनिक परिस्थिति: किसी प्रतिकूल घटना पर मन में अचानक भय, ईर्ष्या या आवेश उठे, तो साधक को तुरंत क्या करना चाहिए?',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਥਿਤੀ: ਕਿਸੇ ਉਲਟ ਹਾਲਾਤ ਵਿੱਚ ਮਨ ਅੰਦਰ ਅਚਾਨਕ ਡਰ, ਈਰਖਾ ਜਾਂ ਗੁੱਸਾ ਉੱਠੇ, ਤਾਂ ਸਾਧਕ ਨੂੰ ਤੁਰੰਤ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+      en: 'Real-Life Scenario: When an unexpected setback sparks sudden anxiety, jealousy, or anger in the mind, what should the seeker do first?',
+    },
+    scenarioOptions: {
+      hi: [
+        'तत्काल प्रतिक्रिया देने से रुककर साक्षी भाव से उठती हुई वृत्ति को देखें और श्वास शांत करें',
+        'आवेश के साथ उसी क्षण कठोर निर्णय लेकर बात को आगे बढ़ा दें',
+        'अपनी गलती मानने के बजाय सारी दोषारोपण दूसरों पर मढ़ दें',
+        'मन को बहलाने के लिए अनियंत्रित भोग या व्यर्थ विवाद में उलझ जाएँ',
+      ],
+      pb: [
+        'ਤੁਰੰਤ ਪ੍ਰਤੀਕਿਰਿਆ ਦੇਣ ਤੋਂ ਰੁਕ ਕੇ ਸਾਖੀ-ਭਾਵ ਨਾਲ ਮਨ ਦੀ ਲਹਿਰ ਨੂੰ ਵੇਖੇ ਤੇ ਸੁਆਸ ਸ਼ਾਂਤ ਕਰੇ',
+        'ਗੁੱਸੇ ਵਿੱਚ ਉਸੇ ਵੇਲੇ ਸਖ਼ਤ ਫ਼ੈਸਲਾ ਸੁਣਾ ਕੇ ਗੱਲ ਵਧਾ ਦੇਵੇ',
+        'ਆਪਣੀ ਭੁੱਲ ਦੇਖਣ ਦੀ ਥਾਂ ਸਾਰਾ ਦੋਸ਼ ਦੂਜਿਆਂ ਤੇ ਮੜ੍ਹ ਦੇਵੇ',
+        'ਮਨ ਬਹਿਲਾਉਣ ਲਈ ਗਲਤ ਆਦਤਾਂ ਜਾਂ ਬੇਅਰਥ ਬਹਿਸ ਵਿੱਚ ਪੈ ਜਾਵੇ',
+      ],
+      en: [
+        'Pause before reacting, witness the mental wave calmly, and steady the breath',
+        'Act immediately on impulse before the feeling passes',
+        'Blame everyone around you rather than examining your own reaction',
+        'Seek unhealthy distractions or arguments to mask the discomfort',
+      ],
+    },
+    causeQuestion: {
+      hi: 'कारण और परिणाम: अनियंत्रित मन को सुधारने के बजाय केवल बाहरी वेश व नियम बदलने का क्या परिणाम होता है?',
+      pb: 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ: ਬੇਲਗਾਮ ਮਨ ਨੂੰ ਸੁਧਾਰਨ ਦੀ ਥਾਂ ਕੇਵਲ ਬਾਹਰੀ ਪਹਿਰਾਵਾ ਤੇ ਨਿਯਮ ਬਦਲਣ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
+      en: 'Cause & Effect: What happens when someone changes outer robes or routines while leaving the restless mind untrained?',
+    },
+    causeOptions: {
+      hi: [
+        'मन भीतर से उन्हीं पुराने राग-द्वेष में फँसा रहता है और वास्तविक शांति नहीं मिलती',
+        'केवल वस्त्र बदलने मात्र से मन के समस्त विकार समाप्त हो जाते हैं',
+        'संसार की सारी चुनौतियाँ अपने आप अनुकूल हो जाती हैं',
+        'दूसरों पर शासन करने की शक्ति प्राप्त हो जाती है',
+      ],
+      pb: [
+        'ਮਨ ਅੰਦਰੋਂ ਉਨ੍ਹਾਂ ਹੀ ਪੁਰਾਣੇ ਰਾਗ-ਦਵੈਸ਼ ਵਿੱਚ ਫਸਿਆ ਰਹਿੰਦਾ ਹੈ ਤੇ ਸੱਚੀ ਸ਼ਾਂਤੀ ਨਹੀਂ ਮਿਲਦੀ',
+        'ਕੇਵਲ ਕੱਪੜੇ ਬਦਲਣ ਨਾਲ ਹੀ ਮਨ ਦੇ ਸਾਰੇ ਵਿਕਾਰ ਮੁੱਕ ਜਾਂਦੇ ਹਨ',
+        'ਸੰਸਾਰ ਦੀਆਂ ਸਾਰੀਆਂ ਮੁਸ਼ਕਲਾਂ ਆਪਣੇ ਆਪ ਦੂਰ ਹੋ ਜਾਂਦੀਆਂ ਹਨ',
+        'ਦੂਜਿਆਂ ਉੱਤੇ ਰੋਹਬ ਜਮਾਉਣ ਦੀ ਸ਼ਕਤੀ ਮਿਲ ਜਾਂਦੀ ਹੈ',
+      ],
+      en: [
+        'Inner habits of craving and resentment stay intact, blocking genuine peace',
+        'Changing external attire automatically eliminates mental turbulence',
+        'All life difficulties become effortless immediately',
+        'One gains spiritual authority over other people automatically',
+      ],
+    },
+    tattvaQuestion: {
+      hi: 'कबीर पंथ तत्व ज्ञान: कबीर साहेब ने "मन के मते न चालिये" कहकर किस आंतरिक रूपांतरण का मार्ग बताया है?',
+      pb: 'ਕਬੀਰ ਪੰਥ ਤੱਤ-ਗਿਆਨ: ਕਬੀਰ ਸਾਹੇਬ ਨੇ "ਮਨ ਕੇ ਮਤੇ ਨ ਚਾਲੀਏ" ਕਹਿ ਕੇ ਕਿਸ ਅੰਦਰੂਨੀ ਬਦਲਾਅ ਦਾ ਮਾਰਗ ਦੱਸਿਆ ਹੈ?',
+      en: 'Kabir Panth Philosophy: By warning "Do not follow the whims of the mind," what inner transformation does Satguru Kabir Saheb teach?',
+    },
+    tattvaOptions: {
+      hi: [
+        'मन की चंचलता को पार कर विवेकपूर्ण सूरत (सद्गुरु के शब्द-प्रकाश) के मार्गदर्शन में चलना',
+        'जीवन के किसी भी निर्णय में सोच-विचार करना पूरी तरह बंद कर देना',
+        'केवल शारीरिक परिश्रम करके बौद्धिक चिंतन से दूर भागना',
+        'इच्छाओं को दबाते हुए समाज से शत्रुता कर लेना',
+      ],
+      pb: [
+        'ਮਨ ਦੀ ਚੰਚਲਤਾ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਵਿਵੇਕ ਅਤੇ ਸਤਿਗੁਰੂ ਦੇ ਸ਼ਬਦ-ਪ੍ਰਕਾਸ਼ ਅਨੁਸਾਰ ਚੱਲਣਾ',
+        'ਜੀਵਨ ਦੇ ਕਿਸੇ ਵੀ ਫ਼ੈਸਲੇ ਵਿੱਚ ਸੋਚਣਾ-ਸਮਝਣਾ ਬਿਲਕੁਲ ਬੰਦ ਕਰ ਦੇਣਾ',
+        'ਕੇਵਲ ਸਰੀਰਕ ਮਿਹਨਤ ਕਰਕੇ ਆਤਮ-ਚਿੰਤਨ ਤੋਂ ਭੱਜਣਾ',
+        'ਇੱਛਾਵਾਂ ਨੂੰ ਦਬਾ ਕੇ ਸਮਾਜ ਨਾਲ ਨਫ਼ਰਤ ਕਰ ਲੈਣੀ',
+      ],
+      en: [
+        'Rising above impulsive mental conditioning to walk by awakened discernment and the Satguru’s Word',
+        'Stopping all thoughtful reflection when making life decisions',
+        'Avoiding mental inquiry altogether in favor of mechanical routine',
+        'Developing bitterness toward society while suppressing feelings',
+      ],
+    },
+  },
+};
+
+function cleanSentence(raw: string): string {
+  return (raw || '')
+    .replace(/\s+/g, ' ')
+    .replace(/[।.]\s*$/, '')
+    .trim();
+}
+
+/**
+ * Builds 5 distinct, thoughtful, verse-specific MCQs covering all 5 dimensions:
+ * 1. केंद्रीय जीवन संदेश (Core Practical Message)
+ * 2. आध्यात्मिक एवं प्रतीकात्मक अर्थ (Symbolic / Inner Meaning)
+ * 3. दैनिक व्यवहार एवं अनुशासन (Real-Life Application Scenario)
+ * 4. कारण और परिणाम (Cause & Spiritual Effect)
+ * 5. तत्व ज्ञान एवं आत्म-बोध (Deeper Kabir Panth Philosophy connected to the Anga)
+ */
+export function buildFiveDimensionQuiz(sakhi: Sakhi, language: Language): GeneratedQuizQuestion[] {
+  const curated = CURATED_SAKHI_QUIZZES[sakhi.number];
+  if (curated && curated.length >= 5) {
+    const mapped: GeneratedQuizQuestion[] = curated.slice(0, 5).map((q, idx) => {
+      const dims: GeneratedQuizQuestion['dimension'][] = [
+        'core-message',
+        'symbolic-meaning',
+        'real-life-scenario',
+        'cause-effect',
+        'tattva-gyan',
+      ];
+      return {
+        id: q.id,
+        dimension: dims[idx] || 'core-message',
+        question: q.question[language] || q.question.hi,
+        options: q.options[language] || q.options.hi,
+        correctIndex: q.correctIndex ?? 0,
+        explanation: ensureSatguruKabirSaheb(q.explanation[language] || q.explanation.hi),
+      };
+    });
+    return shuffleGeneratedQuiz(mapped);
+  }
+
+  const archetype = classifySakhiArchetype(sakhi);
+  const pack = ARCHETYPE_PACKS[archetype];
+  const verse = sakhi.text?.[language] || sakhi.text?.hi || '';
+  const firstLine = verse.split('\n')[0]?.trim() || verse;
+  const bhavarth = ensureSatguruKabirSaheb(sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi || '');
+  const category = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
+  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+
+  // Dimension 1: Core Practical Message (केंद्रीय जीवन संदेश)
+  const coreOpt0 = pack.coreCorrect[language] || pack.coreCorrect.hi;
+  const coreDistractors = pack.coreDistractors[language] || pack.coreDistractors.hi;
+  const q1: GeneratedQuizQuestion = {
+    id: `q-${sakhi.id || sakhi.number}-core`,
+    dimension: 'core-message',
+    question:
+      language === 'pb'
+        ? `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਦਾ ਮੁੱਖ ਵਿਵਹਾਰਕ ਜੀਵਨ ਸੰਦੇਸ਼ ਕੀ ਹੈ?`
+        : language === 'en'
+        ? `What is the central practical life message of Sakhi #${sakhi.number} ("${firstLine}")?`
+        : `साखी #${sakhi.number} ("${firstLine}") का केंद्रीय जीवन संदेश क्या है?`,
+    options: [coreOpt0, coreDistractors[0], coreDistractors[1], coreDistractors[2]],
+    correctIndex: 0,
+    explanation: bhavarth || coreOpt0,
+  };
+
+  // Dimension 2: Symbolic / Inner Meaning (आध्यात्मिक एवं प्रतीकात्मक अर्थ)
+  let q2: GeneratedQuizQuestion;
+  const primaryWord = words[0];
+  if (primaryWord && primaryWord.word && primaryWord.meaning) {
+    const siblingMeanings = words
+      .slice(1)
+      .map((w) => cleanSentence(w.meaning))
+      .filter((m) => m && m !== cleanSentence(primaryWord.meaning));
+
+    const symbolicDistractorPool =
+      language === 'pb'
+        ? [
+            'ਕੇਵਲ ਬਾਹਰੀ ਦਿਖਾਵੇ ਦੀ ਰਸਮ ਜੋ ਅਸਲ ਅਰਥ ਤੋਂ ਸੱਖਣੀ ਹੋਵੇ',
+            'ਸੰਸਾਰਿਕ ਸੁੱਖ-ਸਹੂਲਤਾਂ ਅਤੇ ਪਦਾਰਥ ਇਕੱਠੇ ਕਰਨ ਦੀ ਲਾਲਸਾ',
+            'ਅਨੁਭਵ ਤੋਂ ਬਿਨਾਂ ਕੀਤੀ ਗਈ ਸੁੱਕੀ ਕਿਤਾਬੀ ਬਹਿਸਬਾਜ਼ੀ',
+          ]
+        : language === 'en'
+        ? [
+            'A purely outward ceremony devoid of inner contemplation',
+            'Worldly ambition focused on status and possessions',
+            'Dry intellectual debate lacking lived humility',
+          ]
+        : [
+            'केवल बाहरी रस्म जो अंतर्मन की जागृति से रहित हो',
+            'संसारिक मान-प्रतिष्ठा एवं भौतिक संग्रह की लालसा',
+            'स्व-अनुभव से हीन केवल कोरी किताबी बहस',
+          ];
+
+    const opts2 = [cleanSentence(primaryWord.meaning)];
+    for (const sm of siblingMeanings) {
+      if (opts2.length < 4 && !opts2.includes(sm)) opts2.push(sm);
+    }
+    for (const d of symbolicDistractorPool) {
+      if (opts2.length < 4 && !opts2.includes(d)) opts2.push(d);
+    }
+
+    q2 = {
+      id: `q-${sakhi.id || sakhi.number}-symbolic`,
+      dimension: 'symbolic-meaning',
+      question:
+        language === 'pb'
+          ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਪ੍ਰਸੰਗ ਵਿੱਚ "${primaryWord.word}" ਦਾ ਆਤਮਿਕ ਤੇ ਸਟੀਕ ਭਾਵ ਕੀ ਹੈ?`
+          : language === 'en'
+          ? `Within the spiritual context of Sakhi #${sakhi.number}, what does "${primaryWord.word}" signify?`
+          : `साखी #${sakhi.number} के आध्यात्मिक संदर्भ में "${primaryWord.word}" का सटीक एवं प्रतीकात्मक अर्थ क्या है?`,
+      options: opts2.slice(0, 4),
+      correctIndex: 0,
+      explanation:
+        language === 'pb'
+          ? `ਇਸ ਪਾਵਨ ਸਾਖੀ ਵਿੱਚ "${primaryWord.word}" ਦਾ ਭਾਵ "${primaryWord.meaning}" ਹੈ। ${bhavarth}`
+          : language === 'en'
+          ? `In this verse, "${primaryWord.word}" signifies "${primaryWord.meaning}". ${bhavarth}`
+          : `इस साखी में "${primaryWord.word}" से तात्पर्य "${primaryWord.meaning}" है। ${bhavarth}`,
+    };
+  } else {
+    const contextHint = cleanSentence(sakhi.contextNote?.[language] || sakhi.contextNote?.hi || '');
+    const rightSymbolic =
+      contextHint && contextHint.length >= 24 && contextHint !== cleanSentence(coreOpt0)
+        ? contextHint
+        : cleanSentence(bhavarth) || cleanSentence(pack.causeOptions[language][0]);
+    const symDistractors =
+      language === 'pb'
+        ? [
+            'ਕੇਵਲ ਬਾਹਰਲੇ ਤੀਰਥਾਂ ਜਾਂ ਰਸਮਾਂ ਰਾਹੀਂ ਮਨ ਨੂੰ ਪਰਚਾਉਣਾ',
+            'ਸੰਸਾਰਿਕ ਵਿਖਾਵੇ ਲਈ ਕਠੋਰ ਤੇ ਤਿੱਖੇ ਬੋਲ ਵਰਤਣੇ',
+            'ਆਪਣੇ ਅੰਦਰ ਝਾਕਣ ਦੀ ਥਾਂ ਦੂਜਿਆਂ ਵਿੱਚ ਕਮੀਆਂ ਲੱਭਣੀਆਂ',
+          ]
+        : language === 'en'
+        ? [
+            'Pacifying the restless mind solely through outer ceremonies',
+            'Asserting superiority over others through harsh speech',
+            'Searching externally for faults while neglecting inner stillness',
+          ]
+        : [
+            'केवल बाहरी कर्मकांडों से मन को क्षणिक संतुष्टि देना',
+            'दूसरों पर अधिकार जताने हेतु कठोर वाणी का प्रयोग करना',
+            'अपने अंतर्मन को सुधारने की बजाय बाहर दोष खोजते रहना',
+          ];
+
+    q2 = {
+      id: `q-${sakhi.id || sakhi.number}-symbolic`,
+      dimension: 'symbolic-meaning',
+      question:
+        language === 'pb'
+          ? `"${firstLine}" — ਇਸ ਪੰਕਤੀ ਦੇ ਪ੍ਰਤੀਕਾਂ ਦਾ ਅੰਦਰੂਨੀ ਭੇਦ ਕੀ ਦਰਸਾਉਂਦਾ ਹੈ?`
+          : language === 'en'
+          ? `What inner symbolic meaning is revealed through "${firstLine}"?`
+          : `"${firstLine}" — इस पंक्ति के प्रतीकों का आंतरिक रहस्य क्या दर्शाता है?`,
+      options: [rightSymbolic, symDistractors[0], symDistractors[1], symDistractors[2]],
+      correctIndex: 0,
+      explanation: bhavarth || rightSymbolic,
+    };
+  }
+
+  // Dimension 3: Real-Life Application Scenario (दैनिक व्यवहार एवं अनुशासन)
+  const scOpts = pack.scenarioOptions[language] || pack.scenarioOptions.hi;
+  const q3: GeneratedQuizQuestion = {
+    id: `q-${sakhi.id || sakhi.number}-scenario`,
+    dimension: 'real-life-scenario',
+    question: pack.scenarioQuestion[language] || pack.scenarioQuestion.hi,
+    options: [scOpts[0], scOpts[1], scOpts[2], scOpts[3]],
+    correctIndex: 0,
+    explanation:
+      sakhi.practicalApplication?.[language] ||
+      sakhi.practicalApplication?.hi ||
+      bhavarth ||
+      scOpts[0],
+  };
+
+  // Dimension 4: Cause & Spiritual Effect (कारण और परिणाम)
+  const ceOpts = pack.causeOptions[language] || pack.causeOptions.hi;
+  const q4: GeneratedQuizQuestion = {
+    id: `q-${sakhi.id || sakhi.number}-cause`,
+    dimension: 'cause-effect',
+    question: pack.causeQuestion[language] || pack.causeQuestion.hi,
+    options: [ceOpts[0], ceOpts[1], ceOpts[2], ceOpts[3]],
+    correctIndex: 0,
+    explanation: bhavarth || ceOpts[0],
+  };
+
+  // Dimension 5: Deeper Kabir Panth Philosophy connected to Anga (तत्व ज्ञान एवं आत्म-बोध)
+  const tvOpts = pack.tattvaOptions[language] || pack.tattvaOptions.hi;
+  const q5: GeneratedQuizQuestion = {
+    id: `q-${sakhi.id || sakhi.number}-tattva`,
+    dimension: 'tattva-gyan',
+    question:
+      category
+        ? language === 'pb'
+          ? `'${category}' ਦੇ ਤੱਤ-ਗਿਆਨ ਅਨੁਸਾਰ: ${pack.tattvaQuestion.pb}`
+          : language === 'en'
+          ? `Connected to '${category}': ${pack.tattvaQuestion.en}`
+          : `'${category}' के तत्व-ज्ञान के संदर्भ में: ${pack.tattvaQuestion.hi}`
+        : pack.tattvaQuestion[language] || pack.tattvaQuestion.hi,
+    options: [tvOpts[0], tvOpts[1], tvOpts[2], tvOpts[3]],
+    correctIndex: 0,
+    explanation:
+      sakhi.contemplation?.[language] ||
+      sakhi.contemplation?.hi ||
+      bhavarth ||
+      tvOpts[0],
+  };
+
+  return shuffleGeneratedQuiz([q1, q2, q3, q4, q5]);
+}

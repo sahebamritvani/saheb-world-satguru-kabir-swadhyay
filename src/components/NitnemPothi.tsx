@@ -597,14 +597,14 @@ export const NitnemPothi: React.FC<{
     return NITNEM_PRABHAT_ANGS;
   }, [activeSection]);
 
-  const isOnFinalAng = currentAngIdx >= activeAngs.length - 1;
+  const isOnFinalAng = activeAngs.length > 0 && currentAngIdx >= activeAngs.length - 1;
   const isFinalSubChapterOfMajorPath =
     activeCategorySections.length > 0 &&
     activeSectionIndex === activeCategorySections.length - 1;
 
   // Real Auto-Turn Timer with Speed Control
   useEffect(() => {
-    if (!isAutoTurn) return;
+    if (!isAutoTurn || activeAngs.length <= 1) return;
     const intervalMs = Math.max(3500, Math.round(10000 / autoTurnSpeed));
     const timer = window.setInterval(() => {
       setCurrentAngIdx((prev) => {
@@ -625,10 +625,11 @@ export const NitnemPothi: React.FC<{
     return () => window.clearInterval(timer);
   }, [isAutoTurn, autoTurnSpeed, activeAngs.length]);
 
-  // Peaceful Flower-Petal Blessing when completing a major Nitnem path
+  // Peaceful Flower-Petal Blessing only when completing a populated major Nitnem path
   useEffect(() => {
     if (
       activeSection &&
+      activeAngs.length > 0 &&
       isOnFinalAng &&
       isFinalSubChapterOfMajorPath &&
       blessingCelebratedForSection !== activeSection.id
@@ -636,7 +637,7 @@ export const NitnemPothi: React.FC<{
       setBlessingCelebratedForSection(activeSection.id);
       triggerSacredFlowerShower();
     }
-  }, [activeSection, isOnFinalAng, isFinalSubChapterOfMajorPath, blessingCelebratedForSection]);
+  }, [activeSection, activeAngs.length, isOnFinalAng, isFinalSubChapterOfMajorPath, blessingCelebratedForSection]);
 
   const handleLangSwitch = (newLang: Language) => {
     setCurrentLang(newLang);
@@ -786,46 +787,7 @@ export const NitnemPothi: React.FC<{
       ? 'Saheb Bandagi Saheb! Today you completed the self-study of a new truth of life. Saheb Bandagi Saheb 🙏'
       : 'साहेब बंदगी साहेब! आज आपने जीवन के एक नए सत्य का स्वाध्याय पूरा किया। साहेब बंदगी साहेब 🙏';
 
-  if (activeAngs.length === 0) {
-    return (
-      <div
-        ref={containerRef}
-        className="nitnem-pothi-wrapper w-full flex flex-col items-center justify-center rounded-3xl transition-all duration-300 relative space-y-4 my-4"
-      >
-        <div
-          className="w-full max-w-2xl rounded-3xl border-2 border-dashed p-8 sm:p-12 text-center space-y-4 shadow-md"
-          style={{ backgroundColor: barColors.bg, borderColor: barColors.border, color: barColors.text }}
-        >
-          <div className="w-14 h-14 mx-auto rounded-2xl bg-[#8B4513]/10 flex items-center justify-center">
-            <BookOpen className="w-7 h-7" style={{ color: barColors.text }} />
-          </div>
-          <h3 className="font-serif font-black text-lg sm:text-xl">
-            {currentLang === 'pb'
-              ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ — ਖਾਲੀ ਥਾਂ'
-              : currentLang === 'en'
-              ? 'Nitnem Gutka Saheb — Empty Space'
-              : 'नितनेम गुटका साहेब — रिक्त स्थान'}
-          </h3>
-          <p className="text-sm font-serif opacity-80 max-w-md mx-auto">
-            {currentLang === 'pb'
-              ? 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਜੋੜੇ ਜਾਣ ਲਈ ਇਹ ਥਾਂ ਤਿਆਰ ਹੈ।'
-              : currentLang === 'en'
-              ? 'This space is cleared and ready for the new sacred Path.'
-              : 'यह स्थान नए पावन पाठ के लिए पूर्णतः रिक्त एवं तैयार है।'}
-          </p>
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              className="min-h-[44px] px-5 py-2 rounded-xl bg-[#8B4513] text-white font-serif font-bold text-xs cursor-pointer"
-            >
-              {currentLang === 'pb' ? 'ਵਾਪਸ ਆਓ' : currentLang === 'en' ? 'Return' : 'वापस आएं'}
-            </button>
-          )}
-        </div>
-      </div>
-    );
-  }
+  const hasEmptySlotOnly = activeAngs.length === 0;
 
   return (
     <div
@@ -886,9 +848,15 @@ export const NitnemPothi: React.FC<{
                 {activeSection?.title?.[currentLang] || activeSection?.title?.hi || (currentLang === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ • 3D ਪੋਥੀ' : currentLang === 'en' ? 'Nitnem Gutka Saheb • 3D Pothi' : 'नितनेम गुटका साहेब • पोथी पठन')}
               </h3>
               <p className="text-xs font-serif truncate" style={{ color: barColors.muted }}>
-                {currentLang === 'pb' ? 'ਅੰਗ' : currentLang === 'en' ? 'Ang' : 'अंग'} {currentAngIdx + 1} / {activeAngs.length}
+                {hasEmptySlotOnly
+                  ? currentLang === 'pb'
+                    ? 'ਖਾਲੀ ਪੋਥੀ ਪੰਨਾ · ਪਾਠ ਪ੍ਰਤੀਕਸ਼ਾਰਤ'
+                    : currentLang === 'en'
+                    ? 'Empty Folio · Ready for Path Text'
+                    : 'रिक्त पोथी पन्ना · पाठ प्रतीक्षारत'
+                  : `${currentLang === 'pb' ? 'ਅੰਗ' : currentLang === 'en' ? 'Ang' : 'अंग'} ${currentAngIdx + 1} / ${activeAngs.length}`}
                 {activeCategorySections.length > 1 && activeSectionIndex >= 0
-                  ? ` • ${currentLang === 'pb' ? 'ਭਾਗ' : currentLang === 'en' ? 'Ch' : 'अध्याय'} ${activeSectionIndex + 1}/${activeCategorySections.length}`
+                  ? ` · ${currentLang === 'pb' ? 'ਅਧਿਆਇ' : currentLang === 'en' ? 'Ch' : 'अध्याय'} ${activeSectionIndex + 1}/${activeCategorySections.length}`
                   : ''}
               </p>
             </div>
@@ -1025,199 +993,257 @@ export const NitnemPothi: React.FC<{
         </div>
       </div>
 
-      {/* 3D Pothi Book Stage */}
-      <div
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        className="w-full flex items-center justify-center my-2 sm:my-4 relative min-h-[540px] sm:min-h-[600px]"
-      >
-        <button
-          type="button"
-          onClick={flipPrev}
-          disabled={currentAngIdx === 0}
-          className={`min-w-[44px] min-h-[44px] absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-2xl border transition-all cursor-pointer flex items-center justify-center ${
-            currentAngIdx === 0
-              ? 'opacity-30 cursor-not-allowed bg-black/20 text-gray-400'
-              : 'bg-[#8B4513] text-white hover:scale-110 active:scale-95'
-          }`}
-          title={currentLang === 'pb' ? 'ਪਿਛਲਾ ਪੰਨਾ' : currentLang === 'en' ? 'Previous Page' : 'पिछला पन्ना'}
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-
-        <NitnemErrorBoundary fallback={FallbackView}>
-          <div className="pothi-flipbook-container shadow-2xl rounded-2xl overflow-hidden flex items-center justify-center w-full max-w-3xl">
-            {FlipBookComponent ? (
-              <FlipBookComponent
-                key={`nitnem-flip-${activeSection?.id || 'default'}-${currentLang}-${paperTheme}-${activeAngs.length}`}
-                ref={bookRef}
-                width={420}
-                height={580}
-                size="stretch"
-                minWidth={280}
-                maxWidth={580}
-                minHeight={500}
-                maxHeight={740}
-                maxShadowOpacity={0.65}
-                showCover={false}
-                mobileScrollSupport={true}
-                onFlip={(e: any) => {
-                  if (typeof e.data === 'number') setCurrentAngIdx(e.data);
-                }}
-                className="pothi-book-canvas"
-                style={{ margin: '0 auto' }}
-                startPage={currentAngIdx}
-                drawShadow={true}
-                flippingTime={850}
-                usePortrait={true}
-                autoSize={true}
-                clickEventForward={true}
-                useMouseEvents={true}
-                swipeDistance={30}
-              >
-                {activeAngs.map((angItem, idx) => (
-                  <NitnemAngItem
-                    key={`${activeSection?.id || 'default'}-${idx}`}
-                    ang={angItem}
-                    totalAngs={activeAngs.length}
-                    language={currentLang}
-                    paperTheme={paperTheme}
-                    readerFontSize={localFontSize}
-                    globalShowMeaning={showMeaningGlobal}
-                    onToggleGlobalMeaning={() => setShowMeaningGlobal((v) => !v)}
-                    onSpeak={handleSpeak}
-                    isSpeaking={isSpeaking}
-                    onCopy={handleCopy}
-                    isCopied={copiedAng === angItem.angNumber}
-                    onBookmark={handleBookmark}
-                    isBookmarked={bookmarkedAng === angItem.angNumber}
-                  />
-                ))}
-              </FlipBookComponent>
-            ) : (
-              FallbackView
-            )}
-          </div>
-        </NitnemErrorBoundary>
-
-        <button
-          type="button"
-          onClick={flipNext}
-          disabled={currentAngIdx >= activeAngs.length - 1}
-          className={`min-w-[44px] min-h-[44px] absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-2xl border transition-all cursor-pointer flex items-center justify-center ${
-            currentAngIdx >= activeAngs.length - 1
-              ? 'opacity-30 cursor-not-allowed bg-black/20 text-gray-400'
-              : 'bg-[#8B4513] text-white hover:scale-110 active:scale-95'
-          }`}
-          title={currentLang === 'pb' ? 'ਅਗਲਾ ਪੰਨਾ' : currentLang === 'en' ? 'Next Page' : 'अगला पन्ना'}
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-      </div>
-
-      {/* Seamless Next Sub-Chapter Flow OR Major Path Haziri Completion */}
-      {isOnFinalAng && (nextSubChapter || isFinalSubChapterOfMajorPath) && (
+      {/* 3D Pothi Book Stage OR Serene Empty-Folio Stage */}
+      {hasEmptySlotOnly ? (
         <div
-          className="w-full p-5 rounded-3xl border-2 text-center space-y-3 shadow-md"
-          style={{ backgroundColor: '#FAF4E8', borderColor: '#C59A3F' }}
+          className="w-full max-w-2xl mx-auto my-4 rounded-3xl border px-6 py-10 sm:px-10 sm:py-14 text-center space-y-5 shadow-lg"
+          style={{ backgroundColor: barColors.bg, borderColor: `${barColors.border}55`, color: barColors.text }}
         >
-          {nextSubChapter ? (
-            <>
-              <p className="text-xs font-serif font-bold text-[#8B4513]">
-                {currentLang === 'pb' ? 'ਅਗਲਾ ਉਪ-ਅਧਿਆਇ' : currentLang === 'en' ? 'Next Sub-Chapter' : 'अगला उप-अध्याय'}
-              </p>
-              <h4 className="font-serif font-black text-base text-[#3D2817]">
-                {nextSubChapter.title[currentLang] || nextSubChapter.title.hi}
-              </h4>
-              <button
-                type="button"
-                onClick={() => handleSelectSubChapter(nextSubChapter.id)}
-                className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#8B4513] text-white font-serif font-bold text-xs sm:text-sm shadow-md hover:opacity-95 cursor-pointer whitespace-nowrap"
+          <p className="text-xs uppercase tracking-widest font-serif opacity-75">
+            {currentLang === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : currentLang === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।'}
+          </p>
+          <div className="border-t border-b py-6 space-y-2.5" style={{ borderColor: `${barColors.border}28` }}>
+            <h4 className="font-serif font-bold text-xl sm:text-2xl">
+              {activeSection?.title?.[currentLang] || activeSection?.title?.hi || (currentLang === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : currentLang === 'en' ? 'Nitnem Gutka Saheb' : 'नितनेम गुटका साहेब')}
+            </h4>
+            <p className="text-sm font-serif opacity-85 max-w-md mx-auto leading-relaxed">
+              {currentLang === 'pb'
+                ? 'ਇਸ ਪੋਥੀ ਅਧਿਆਇ ਵਿੱਚ ਨਵਾਂ ਪਾਵਨ ਪਾਠ ਜੋੜੇ ਜਾਣ ਲਈ ਇਹ ਥਾਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਾਫ਼ ਅਤੇ ਤਿਆਰ ਹੈ।'
+                : currentLang === 'en'
+                ? 'This 3D Pothi chapter space is cleared and ready for the upcoming authentic Path.'
+                : 'इस ३D पोथी अध्याय में नया पावन पाठ संकलित किए जाने हेतु यह स्थान पूर्णतः रिक्त एवं तैयार है।'}
+            </p>
+          </div>
+          <p className="text-xs font-serif font-semibold opacity-75">
+            {currentLang === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : currentLang === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
+          </p>
+
+          {activeCategorySections.length > 0 && (
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5">
+              <select
+                value={activeSection?.id || ''}
+                onChange={(e) => handleSelectSubChapter(e.target.value)}
+                className="min-h-[44px] max-w-xs px-3 py-2 rounded-xl border text-xs font-bold font-serif outline-none bg-white text-[#8B4513] border-[#8B4513]/40 cursor-pointer"
+                aria-label={currentLang === 'pb' ? 'ਅਧਿਆਇ ਚੁਣੋ' : currentLang === 'en' ? 'Select Chapter' : 'अध्याय चुनें'}
               >
-                <span>
-                  {currentLang === 'pb' ? 'ਅਗਲਾ ਉਪ-ਅਧਿਆਇ ਪੜ੍ਹੋ' : currentLang === 'en' ? 'Next Sub-Chapter' : 'अगला उप-अध्याय पढ़ें'}
-                </span>
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </>
-          ) : (
-            <>
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-[#8B4513]">
-                <Flower2 className="w-6 h-6" />
-              </div>
-              <p className="text-sm sm:text-base font-serif font-black text-[#3D2817] max-w-lg mx-auto leading-relaxed">
-                {completionBlessingText}
-              </p>
-              <button
-                type="button"
-                onClick={handleMarkNitnemHaziri}
-                className={`min-h-[44px] inline-flex items-center gap-2 px-6 py-2.5 rounded-2xl font-serif font-bold text-xs sm:text-sm shadow-md cursor-pointer whitespace-nowrap transition ${
-                  haziriMarkedToday
-                    ? 'bg-emerald-700 text-white'
-                    : 'bg-[#8B4513] hover:opacity-95 text-white'
-                }`}
-              >
-                <CheckCircle2 className="w-4 h-4" />
-                <span>
-                  {haziriMarkedToday
-                    ? currentLang === 'pb'
-                      ? `ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਹੈ (${haziriStreak} ਦਿਨ)`
-                      : currentLang === 'en'
-                      ? `Today's Nitnem Haziri Marked (${haziriStreak}d Streak)`
-                      : `आज की नितनेम हाज़िरी दर्ज है (${haziriStreak} दिन)`
-                    : currentLang === 'pb'
-                    ? 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ'
-                    : currentLang === 'en'
-                    ? "Mark Today's Nitnem Haziri"
-                    : 'नितनेम हाज़िरी दर्ज करें'}
-                </span>
-              </button>
-            </>
+                {activeCategorySections.map((sec, idx) => (
+                  <option key={sec.id} value={sec.id}>
+                    {idx + 1}. {sec.title[currentLang] || sec.title.hi}
+                  </option>
+                ))}
+              </select>
+
+              {nextSubChapter && (
+                <button
+                  type="button"
+                  onClick={() => handleSelectSubChapter(nextSubChapter.id)}
+                  className="min-h-[44px] inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#8B4513] text-white font-serif font-bold text-xs shadow-sm hover:opacity-95 cursor-pointer whitespace-nowrap"
+                >
+                  <span>
+                    {currentLang === 'pb' ? 'ਅਗਲਾ ਅਧਿਆਇ' : currentLang === 'en' ? 'Next Chapter' : 'अगला अध्याय'}
+                  </span>
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              )}
+            </div>
           )}
         </div>
+      ) : (
+        <>
+          <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            className="w-full flex items-center justify-center my-2 sm:my-4 relative min-h-[540px] sm:min-h-[600px]"
+          >
+            <button
+              type="button"
+              onClick={flipPrev}
+              disabled={currentAngIdx === 0}
+              className={`min-w-[44px] min-h-[44px] absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-2xl border transition-all cursor-pointer flex items-center justify-center ${
+                currentAngIdx === 0
+                  ? 'opacity-30 cursor-not-allowed bg-black/20 text-gray-400'
+                  : 'bg-[#8B4513] text-white hover:scale-110 active:scale-95'
+              }`}
+              title={currentLang === 'pb' ? 'ਪਿਛਲਾ ਪੰਨਾ' : currentLang === 'en' ? 'Previous Page' : 'पिछला पन्ना'}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <NitnemErrorBoundary fallback={FallbackView}>
+              <div className="pothi-flipbook-container shadow-2xl rounded-2xl overflow-hidden flex items-center justify-center w-full max-w-3xl">
+                {FlipBookComponent ? (
+                  <FlipBookComponent
+                    key={`nitnem-flip-${activeSection?.id || 'default'}-${currentLang}-${paperTheme}-${activeAngs.length}`}
+                    ref={bookRef}
+                    width={420}
+                    height={580}
+                    size="stretch"
+                    minWidth={280}
+                    maxWidth={580}
+                    minHeight={500}
+                    maxHeight={740}
+                    maxShadowOpacity={0.65}
+                    showCover={false}
+                    mobileScrollSupport={true}
+                    onFlip={(e: any) => {
+                      if (typeof e.data === 'number') setCurrentAngIdx(e.data);
+                    }}
+                    className="pothi-book-canvas"
+                    style={{ margin: '0 auto' }}
+                    startPage={currentAngIdx}
+                    drawShadow={true}
+                    flippingTime={850}
+                    usePortrait={true}
+                    autoSize={true}
+                    clickEventForward={true}
+                    useMouseEvents={true}
+                    swipeDistance={30}
+                  >
+                    {activeAngs.map((angItem, idx) => (
+                      <NitnemAngItem
+                        key={`${activeSection?.id || 'default'}-${idx}`}
+                        ang={angItem}
+                        totalAngs={activeAngs.length}
+                        language={currentLang}
+                        paperTheme={paperTheme}
+                        readerFontSize={localFontSize}
+                        globalShowMeaning={showMeaningGlobal}
+                        onToggleGlobalMeaning={() => setShowMeaningGlobal((v) => !v)}
+                        onSpeak={handleSpeak}
+                        isSpeaking={isSpeaking}
+                        onCopy={handleCopy}
+                        isCopied={copiedAng === angItem.angNumber}
+                        onBookmark={handleBookmark}
+                        isBookmarked={bookmarkedAng === angItem.angNumber}
+                      />
+                    ))}
+                  </FlipBookComponent>
+                ) : (
+                  FallbackView
+                )}
+              </div>
+            </NitnemErrorBoundary>
+
+            <button
+              type="button"
+              onClick={flipNext}
+              disabled={currentAngIdx >= activeAngs.length - 1}
+              className={`min-w-[44px] min-h-[44px] absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-2xl border transition-all cursor-pointer flex items-center justify-center ${
+                currentAngIdx >= activeAngs.length - 1
+                  ? 'opacity-30 cursor-not-allowed bg-black/20 text-gray-400'
+                  : 'bg-[#8B4513] text-white hover:scale-110 active:scale-95'
+              }`}
+              title={currentLang === 'pb' ? 'ਅਗਲਾ ਪੰਨਾ' : currentLang === 'en' ? 'Next Page' : 'अगला पन्ना'}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Seamless Next Sub-Chapter Flow OR Major Path Haziri Completion */}
+          {isOnFinalAng && (nextSubChapter || isFinalSubChapterOfMajorPath) && (
+            <div
+              className="w-full p-5 rounded-3xl border-2 text-center space-y-3 shadow-md"
+              style={{ backgroundColor: '#FAF4E8', borderColor: '#C59A3F' }}
+            >
+              {nextSubChapter ? (
+                <>
+                  <p className="text-xs font-serif font-bold text-[#8B4513]">
+                    {currentLang === 'pb' ? 'ਅਗਲਾ ਉਪ-ਅਧਿਆਇ' : currentLang === 'en' ? 'Next Sub-Chapter' : 'अगला उप-अध्याय'}
+                  </p>
+                  <h4 className="font-serif font-black text-base text-[#3D2817]">
+                    {nextSubChapter.title[currentLang] || nextSubChapter.title.hi}
+                  </h4>
+                  <button
+                    type="button"
+                    onClick={() => handleSelectSubChapter(nextSubChapter.id)}
+                    className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#8B4513] text-white font-serif font-bold text-xs sm:text-sm shadow-md hover:opacity-95 cursor-pointer whitespace-nowrap"
+                  >
+                    <span>
+                      {currentLang === 'pb' ? 'ਅਗਲਾ ਉਪ-ਅਧਿਆਇ ਪੜ੍ਹੋ' : currentLang === 'en' ? 'Next Sub-Chapter' : 'अगला उप-अध्याय पढ़ें'}
+                    </span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </>
+              ) : (
+                <>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-[#8B4513]">
+                    <Flower2 className="w-6 h-6" />
+                  </div>
+                  <p className="text-sm sm:text-base font-serif font-black text-[#3D2817] max-w-lg mx-auto leading-relaxed">
+                    {completionBlessingText}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={handleMarkNitnemHaziri}
+                    className={`min-h-[44px] inline-flex items-center gap-2 px-6 py-2.5 rounded-2xl font-serif font-bold text-xs sm:text-sm shadow-md cursor-pointer whitespace-nowrap transition ${
+                      haziriMarkedToday
+                        ? 'bg-emerald-700 text-white'
+                        : 'bg-[#8B4513] hover:opacity-95 text-white'
+                    }`}
+                  >
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>
+                      {haziriMarkedToday
+                        ? currentLang === 'pb'
+                          ? `ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਹੈ (${haziriStreak} ਦਿਨ)`
+                          : currentLang === 'en'
+                          ? `Today's Nitnem Haziri Marked (${haziriStreak}d Streak)`
+                          : `आज की नितनेम हाज़िरी दर्ज है (${haziriStreak} दिन)`
+                        : currentLang === 'pb'
+                        ? 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ'
+                        : currentLang === 'en'
+                        ? "Mark Today's Nitnem Haziri"
+                        : 'नितनेम हाज़िरी दर्ज करें'}
+                    </span>
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+
+          {/* Bottom Ang & Sub-Chapter Selector Bar */}
+          <div
+            className="w-full p-3 rounded-2xl border shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs"
+            style={{ backgroundColor: barColors.bg, borderColor: barColors.border }}
+          >
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-serif font-bold" style={{ color: barColors.text }}>
+                {currentLang === 'pb' ? 'ਅੰਗ ਚੁਣੋ:' : currentLang === 'en' ? 'Select Ang:' : 'अंग चुनें:'}
+              </span>
+              <select
+                value={currentAngIdx}
+                onChange={(e) => jumpToAng(Number(e.target.value))}
+                className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold font-serif outline-none bg-white text-[#8B4513] border-[#8B4513]/40 cursor-pointer"
+              >
+                {activeAngs.map((ang, idx) => (
+                  <option key={idx} value={idx}>
+                    {currentLang === 'pb' ? 'ਅੰਗ' : currentLang === 'en' ? 'Ang' : 'अंग'} {ang.angNumber}: {ang.chapterTitle[currentLang] || ang.chapterTitle.hi}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => jumpToAng(0)}
+                className="min-h-[40px] px-3 py-1 rounded-lg border bg-[#8B4513]/10 font-bold hover:bg-[#8B4513]/20 transition cursor-pointer whitespace-nowrap"
+                style={{ color: barColors.text, borderColor: `${barColors.border}50` }}
+              >
+                {currentLang === 'pb' ? 'ਪਹਿਲਾ ਅੰਗ' : currentLang === 'en' ? 'First Ang' : 'प्रथम अंग'}
+              </button>
+              <button
+                type="button"
+                onClick={() => jumpToAng(activeAngs.length - 1)}
+                className="min-h-[40px] px-3 py-1 rounded-lg border bg-[#8B4513]/10 font-bold hover:bg-[#8B4513]/20 transition cursor-pointer whitespace-nowrap"
+                style={{ color: barColors.text, borderColor: `${barColors.border}50` }}
+              >
+                {currentLang === 'pb' ? 'ਆਖ਼ਰੀ ਅੰਗ' : currentLang === 'en' ? 'Last Ang' : 'अंतिम अंग'}
+              </button>
+            </div>
+          </div>
+        </>
       )}
-
-      {/* Bottom Ang & Sub-Chapter Selector Bar */}
-      <div
-        className="w-full p-3 rounded-2xl border shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs"
-        style={{ backgroundColor: barColors.bg, borderColor: barColors.border }}
-      >
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="font-serif font-bold" style={{ color: barColors.text }}>
-            {currentLang === 'pb' ? 'ਅੰਗ ਚੁਣੋ:' : currentLang === 'en' ? 'Select Ang:' : 'अंग चुनें:'}
-          </span>
-          <select
-            value={currentAngIdx}
-            onChange={(e) => jumpToAng(Number(e.target.value))}
-            className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold font-serif outline-none bg-white text-[#8B4513] border-[#8B4513]/40 cursor-pointer"
-          >
-            {activeAngs.map((ang, idx) => (
-              <option key={idx} value={idx}>
-                {currentLang === 'pb' ? 'ਅੰਗ' : currentLang === 'en' ? 'Ang' : 'अंग'} {ang.angNumber}: {ang.chapterTitle[currentLang] || ang.chapterTitle.hi}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => jumpToAng(0)}
-            className="min-h-[40px] px-3 py-1 rounded-lg border bg-[#8B4513]/10 font-bold hover:bg-[#8B4513]/20 transition cursor-pointer whitespace-nowrap"
-            style={{ color: barColors.text, borderColor: `${barColors.border}50` }}
-          >
-            {currentLang === 'pb' ? 'ਪਹਿਲਾ ਅੰਗ' : currentLang === 'en' ? 'First Ang' : 'प्रथम अंग'}
-          </button>
-          <button
-            type="button"
-            onClick={() => jumpToAng(activeAngs.length - 1)}
-            className="min-h-[40px] px-3 py-1 rounded-lg border bg-[#8B4513]/10 font-bold hover:bg-[#8B4513]/20 transition cursor-pointer whitespace-nowrap"
-            style={{ color: barColors.text, borderColor: `${barColors.border}50` }}
-          >
-            {currentLang === 'pb' ? 'ਆਖ਼ਰੀ ਅੰਗ' : currentLang === 'en' ? 'Last Ang' : 'अंतिम अंग'}
-          </button>
-        </div>
-      </div>
     </div>
   );
 };

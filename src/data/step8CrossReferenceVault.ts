@@ -2,7 +2,7 @@ import { Language } from '../types';
 
 export interface CuratedCrossRefEntry {
   id: string;
-  tradition: 'sggs' | 'bijak';
+  tradition: 'sggs' | 'bijak' | 'granthavali' | 'kabir_sagar';
   angOrSection: {
     hi: string;
     pb: string;
@@ -28,8 +28,8 @@ export interface CuratedCrossRefEntry {
 }
 
 /**
- * Authentic Sri Guru Granth Saheb Ji (Salok Bhagat Kabir Ji & Bani Bhagat Kabir Ji) parallel catalog
- * Strictly adheres to "श्री गुरु ग्रंथ साहेब जी" / "ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ" / "Sri Guru Granth Saheb Ji" for Step 8.
+ * Authentic Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji & Bani Bhagat Kabir Ji) parallel catalog
+ * Uses canonical "श्री गुरु ग्रंथ साहिब जी" / "ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ" / "Sri Guru Granth Sahib Ji" for Step 8.
  */
 export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
   // --- 1. GURU MAHIMA & SATGURU ---
@@ -37,9 +37,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-guru-1364',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६४)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1364)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६४)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1364)'
     },
     themes: ['guru'],
     keywords: ['गुरु', 'सतगुरु', 'बान', 'तीर', 'शबद', 'शब्द', 'चोट', 'गुरुदेव', 'guru', 'satguru', 'arrow', 'word'],
@@ -63,9 +63,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-guru-1372',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७२)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੨)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1372)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७२)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੨)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1372)'
     },
     themes: ['guru', 'satya-hypocrisy'],
     keywords: ['गुरु', 'अंधा', 'चेला', 'शिष्य', 'निगुरा', 'कूप', 'गुर', 'परख', 'blind', 'disciple', 'false'],
@@ -89,9 +89,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-guru-1373',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७३)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੩)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1373)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७३)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੩)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1373)'
     },
     themes: ['guru', 'naam'],
     keywords: ['गुरु', 'समुंद', 'लहरि', 'हीरा', 'रतन', 'किरपा', 'कृपा', 'निगुरा', 'mercy', 'ocean', 'jewel'],
@@ -117,9 +117,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-naam-1365',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६५)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1365)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६५)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1365)'
     },
     themes: ['naam', 'mind-speech'],
     keywords: ['निर्मल', 'निरमल', 'गंगा', 'नीर', 'मन', 'नाम', 'सुमिरन', 'सिमरन', 'pure', 'water', 'remembrance'],
@@ -143,9 +143,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-naam-1364',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६४)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1364)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६४)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1364)'
     },
     themes: ['naam', 'chetavani'],
     keywords: ['नाम', 'राम', 'सत्यनाम', 'दुख', 'सुख', 'जंजाल', 'सुमिरन', 'सिमरन', 'naam', 'simran', 'suffering'],
@@ -169,9 +169,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-naam-1373',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७३)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੩)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1373)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७३)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੩)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1373)'
     },
     themes: ['naam', 'yoga-realization'],
     keywords: ['नाम', 'निज', 'श्वास', 'स्वांस', 'रतन', 'खजाना', 'धन', 'अमूल्य', 'breath', 'treasure'],
@@ -197,9 +197,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-chetavani-1364',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६४)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1364)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६४)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1364)'
     },
     themes: ['chetavani', 'ego-humility'],
     keywords: ['माटी', 'कुम्हार', 'रूँदे', 'काया', 'तन', 'मिट्टी', 'देह', 'देही', 'clay', 'potter', 'body'],
@@ -223,9 +223,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-chetavani-1366',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६६)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੬)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1366)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६६)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੬)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1366)'
     },
     themes: ['chetavani', 'ego-humility'],
     keywords: ['गर्व', 'गरब', 'देही', 'कांचुली', 'केचुली', 'भूअंग', 'सर्प', 'सुरंग', 'skin', 'serpent', 'beauty'],
@@ -249,9 +249,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-chetavani-1367',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६७)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੭)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1367)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६७)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੭)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1367)'
     },
     themes: ['chetavani'],
     keywords: ['नौबत', 'नउबति', 'दिन', 'दस', 'नगर', 'समय', 'काल', 'अवसर', 'मनुष्य', 'drums', 'days', 'time'],
@@ -275,9 +275,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-chetavani-1365',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६५)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1365)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६५)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1365)'
     },
     themes: ['chetavani'],
     keywords: ['हाड', 'हाड़', 'लाकड़ी', 'केस', 'घास', 'जले', 'आग', 'कंचन', 'खोह', 'bones', 'wood', 'fire'],
@@ -303,9 +303,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-maya-1365',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६५)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1365)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६५)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1365)'
     },
     themes: ['maya'],
     keywords: ['माया', 'ठगिनी', 'काम', 'क्रोध', 'लोभ', 'मोह', 'तृष्णा', 'रस', 'इंद्री', 'maya', 'greed', 'desire'],
@@ -329,9 +329,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-maya-1366',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६६)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੬)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1366)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६६)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੬)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1366)'
     },
     themes: ['maya', 'chetavani'],
     keywords: ['काया', 'माया', 'हाथ', 'हीरा', 'कंचन', 'धन', 'दौलत', 'संग्रह', 'खजाना', 'wealth', 'gold', 'illusion'],
@@ -355,9 +355,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-maya-1375',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७५)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੫)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1375)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७५)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੫)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1375)'
     },
     themes: ['maya', 'naam'],
     keywords: ['माया', 'राम', 'पावउ', 'दुख', 'लागी', 'आग', 'कंचन', 'कमल', 'lotus', 'entanglement'],
@@ -383,9 +383,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-ego-1371',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७१)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੧)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1371)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७१)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੧)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1371)'
     },
     themes: ['ego-humility', 'compassion-service'],
     keywords: ['क्षमा', 'छमा', 'दया', 'शील', 'संयम', 'नम्रता', 'दीनता', 'गरीबी', 'forgiveness', 'humility', 'wealth'],
@@ -409,9 +409,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-ego-1364',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६४)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1364)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६४)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੪)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1364)'
     },
     themes: ['ego-humility'],
     keywords: ['रोड़ा', 'बाट', 'मिट्टी', 'तिनका', 'दीन', 'नम्रता', 'अहंकार', 'गरब', 'pebble', 'grass', 'humble'],
@@ -435,9 +435,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-ego-1377',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७७)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੭)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1377)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७७)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੭)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1377)'
     },
     themes: ['ego-humility', 'mind-speech'],
     keywords: ['निंदक', 'निंदा', 'बैर', 'आलोचना', 'नियरे', 'धोवै', 'साफ', 'slanderer', 'critic', 'patience'],
@@ -463,9 +463,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-satya-1369',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६९)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੯)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1369)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६९)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੯)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1369)'
     },
     themes: ['satya-hypocrisy'],
     keywords: ['साँच', 'सांच', 'सत्य', 'झूठ', 'अमृत', 'करनी', 'कथनी', 'आचरण', 'truth', 'nectar', 'conduct'],
@@ -489,9 +489,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-satya-1367',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६७)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੭)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1367)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६७)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੭)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1367)'
     },
     themes: ['satya-hypocrisy', 'mind-speech'],
     keywords: ['कथनी', 'करनी', 'पाखंड', 'आडंबर', 'दिखावा', 'भेद', 'पोथी', 'पढ़ि', 'hypocrisy', 'books', 'pretense'],
@@ -515,9 +515,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-satya-1370',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७०)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੦)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1370)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७०)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੦)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1370)'
     },
     themes: ['satya-hypocrisy', 'yoga-realization'],
     keywords: ['तीरथ', 'तीर्थ', 'मस्जिद', 'मंदिर', 'काशी', 'मगहर', 'हृदय', 'भीतर', 'pilgrimage', 'temple', 'inner'],
@@ -543,9 +543,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-sadhu-1369',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६९)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੯)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1369)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६९)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੯)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1369)'
     },
     themes: ['satsang-sadhu'],
     keywords: ['साधु', 'संत', 'संगति', 'सतसंग', 'सत्संग', 'कुसंग', 'कुसंगति', 'चंदन', 'बांस', 'saint', 'company', 'satsang'],
@@ -569,9 +569,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-sadhu-1368',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६८)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੮)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1368)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६८)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੮)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1368)'
     },
     themes: ['satsang-sadhu', 'ego-humility'],
     keywords: ['साध', 'संत', 'दरशन', 'दर्शन', 'हरि', 'रतन', 'कंगाल', 'संग', 'company', 'vision', 'devotee'],
@@ -595,9 +595,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-sadhu-1370',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७०)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੦)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1370)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७०)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੦)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1370)'
     },
     themes: ['satsang-sadhu'],
     keywords: ['साध', 'चंदन', 'भुअंग', 'विष', 'असर', 'संगति', 'संत', 'स्वभाव', 'sandalwood', 'virtue', 'steadfast'],
@@ -623,9 +623,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-prem-1365',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६५)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1365)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६५)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੫)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1365)'
     },
     themes: ['prem-bhakti'],
     keywords: ['प्रेम', 'प्रीति', 'बिरह', 'विरह', 'भक्ति', 'शूरवीर', 'सूरा', 'शीश', 'सती', 'love', 'devotion', 'warrior'],
@@ -649,9 +649,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-prem-1367',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३६७)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੭)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1367)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३६७)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੬੭)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1367)'
     },
     themes: ['prem-bhakti', 'ego-humility'],
     keywords: ['प्रेम', 'समर्पण', 'तेरा', 'मेरा', 'कुछ नहीं', 'तुझको', 'विनती', 'प्रार्थना', 'surrender', 'prayer', 'devotion'],
@@ -675,9 +675,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-prem-1375',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७५)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੫)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1375)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७५)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੫)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1375)'
     },
     themes: ['prem-bhakti'],
     keywords: ['विरह', 'बिरह', 'भूअंग', 'प्यार', 'लगन', 'दीवाना', 'प्रेम', 'longing', 'separation', 'yearning'],
@@ -703,9 +703,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-mind-1371',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७१)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੧)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1371)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७१)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੧)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1371)'
     },
     themes: ['mind-speech', 'maya'],
     keywords: ['मन', 'सायर', 'सागर', 'मछली', 'मिरग', 'कस्तूरी', 'चंचल', 'निग्रह', 'शुद्धि', 'mind', 'speech', 'tongue'],
@@ -729,9 +729,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-mind-1372',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७२)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੨)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1372)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७२)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੨)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1372)'
     },
     themes: ['mind-speech', 'satya-hypocrisy'],
     keywords: ['रसना', 'बानी', 'वाणी', 'बोल', 'मीठी', 'मधुर', 'कटु', 'संयम', 'संतोष', 'words', 'sweet', 'speech'],
@@ -755,9 +755,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-mind-1373',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७३)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੩)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1373)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७३)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੩)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1373)'
     },
     themes: ['mind-speech', 'maya'],
     keywords: ['संतोष', 'संतोख', 'तृप्ति', 'लालच', 'आशा', 'अल्प', 'शीतल', 'धैर्य', 'contentment', 'peace', 'patience'],
@@ -783,9 +783,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-daya-1374',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७४)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੪)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1374)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७४)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੪)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1374)'
     },
     themes: ['compassion-service'],
     keywords: ['दया', 'करुणा', 'जीव', 'हिंसा', 'अहिंसा', 'परोपकार', 'दान', 'सेवा', 'भला', 'compassion', 'mercy', 'charity'],
@@ -809,9 +809,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-daya-1349',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • राग प्रभाती भगत कबीर जी (अंग १३४९)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਰਾਗ ਪ੍ਰਭਾਤੀ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੪੯)',
-      en: 'Sri Guru Granth Saheb Ji • Raag Prabhati Bhagat Kabir Ji (Ang 1349)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • राग प्रभाती भगत कबीर जी (अंग १३४९)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਰਾਗ ਪ੍ਰਭਾਤੀ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੪੯)',
+      en: 'Sri Guru Granth Sahib Ji • Raag Prabhati Bhagat Kabir Ji (Ang 1349)'
     },
     themes: ['compassion-service', 'yoga-realization'],
     keywords: ['नूर', 'एक', 'सब', 'मानव', 'जाति', 'समभाव', 'समान', 'एकता', 'कुदरत', 'light', 'equal', 'one'],
@@ -835,9 +835,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-daya-1377',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • सलोक भगत कबीर जी (अंग १३७७)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੭)',
-      en: 'Sri Guru Granth Saheb Ji • Salok Bhagat Kabir Ji (Ang 1377)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • सलोक भगत कबीर जी (अंग १३७७)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੭)',
+      en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1377)'
     },
     themes: ['compassion-service', 'naam'],
     keywords: ['सेवा', 'दान', 'परोपकार', 'दीन', 'गरीब', 'भलाई', 'परमारथ', 'service', 'giving', 'welfare'],
@@ -863,9 +863,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-yoga-1123',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • राग भैरउ भगत कबीर जी (अंग ११२३)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਰਾਗ ਭੈਰਉ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੧੨੩)',
-      en: 'Sri Guru Granth Saheb Ji • Raag Bhairao Bhagat Kabir Ji (Ang 1123)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • राग भैरउ भगत कबीर जी (अंग ११२३)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਰਾਗ ਭੈਰਉ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੧੨੩)',
+      en: 'Sri Guru Granth Sahib Ji • Raag Bhairao Bhagat Kabir Ji (Ang 1123)'
     },
     themes: ['yoga-realization', 'naam'],
     keywords: ['कस्तूरी', 'मृग', 'हिरन', 'घट', 'भीतर', 'सुरति', 'शबद', 'अनहद', 'समाधि', 'आत्मा', 'deer', 'musk', 'within'],
@@ -889,9 +889,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-yoga-327',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • राग गउड़ी भगत कबीर जी (अंग ३२७)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਰਾਗ ਗਉੜੀ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੩੨੭)',
-      en: 'Sri Guru Granth Saheb Ji • Raag Gauri Bhagat Kabir Ji (Ang 327)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • राग गउड़ी भगत कबीर जी (अंग ३२७)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਰਾਗ ਗਉੜੀ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੩੨੭)',
+      en: 'Sri Guru Granth Sahib Ji • Raag Gauri Bhagat Kabir Ji (Ang 327)'
     },
     themes: ['yoga-realization', 'chetavani'],
     keywords: ['मरण', 'मरना', 'अमर', 'अमरलोक', 'आत्मा', 'जीव', 'मुक्ति', 'मोक्ष', 'अमृत', 'immortal', 'death', 'liberation'],
@@ -915,9 +915,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     id: 'sggs-yoga-969',
     tradition: 'sggs',
     angOrSection: {
-      hi: 'श्री गुरु ग्रंथ साहेब जी • राग रामकली भगत कबीर जी (अंग ९६९)',
-      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ • ਰਾਗ ਰਾਮਕਲੀ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੯੬੯)',
-      en: 'Sri Guru Granth Saheb Ji • Raag Ramkali Bhagat Kabir Ji (Ang 969)'
+      hi: 'श्री गुरु ग्रंथ साहिब जी • राग रामकली भगत कबीर जी (अंग ९६९)',
+      pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਰਾਗ ਰਾਮਕਲੀ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੯੬੯)',
+      en: 'Sri Guru Granth Sahib Ji • Raag Ramkali Bhagat Kabir Ji (Ang 969)'
     },
     themes: ['yoga-realization', 'naam'],
     keywords: ['अनहद', 'सुरति', 'निरति', 'गगन', 'सहज', 'समाधि', 'धुन', 'हंस', 'शून्य', 'unstruck', 'sahaj', 'stillness'],
@@ -1825,6 +1825,564 @@ export const BIJAK_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
 ];
 
 /**
+ * Authentic Kabir Granthavali (कबीर ग्रंथावली — अंग एवं साखी संग्रह) parallel catalog
+ */
+export const GRANTHAVALI_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
+  {
+    id: 'grantha-mind-speech-1',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • बचन-विवेक व मधुर वाणी अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਬਚਨ-ਵਿਵੇਕ ਤੇ ਮਧੁਰ ਬਾਣੀ ਅੰਗ',
+      en: 'Kabir Granthavali • Vachan-Vivek & Sweet Speech Ang'
+    },
+    themes: ['mind-speech', 'ego-humility'],
+    keywords: ['मधुर', 'बचन', 'वचन', 'शब्द', 'शीतल', 'अहं', 'कटुक', 'रसना', 'बोल', 'sweet', 'speech', 'words'],
+    verse: {
+      hi: 'मधुर बचन है औषधी, कटुक बचन है तीर।\nश्रवन द्वार ह्वै संचरै, सालै सकल सरीर॥',
+      pb: 'ਮਧੁਰ ਬਚਨ ਹੈ ਔਸ਼ਧੀ, ਕਟੁਕ ਬਚਨ ਹੈ ਤੀਰ।\nਸ੍ਰਵਣ ਦੁਆਰ ਹੁਐ ਸੰਚਰੈ, ਸਾਲੈ ਸਕਲ ਸਰੀਰ॥',
+      en: 'Gentle words act as healing medicine, whereas harsh words pierce like sharp arrows;\nEntering through the doorway of the ears, bitter speech wounds the entire being.'
+    },
+    bhavarth: {
+      hi: 'शीतल और मधुर वचन टूटे हृदयों को जोड़ने की औषधि हैं, जबकि अहंकार से निकले कटु वचन बाण के समान भीतर तक पीड़ा पहुँचाते हैं। अतः साधक को अपनी वाणी सदा संयत व मधुर रखनी चाहिए।',
+      pb: 'ਸ਼ੀਤਲ ਤੇ ਮਿੱਠੇ ਬੋਲ ਟੁੱਟੇ ਦਿਲਾਂ ਨੂੰ ਜੋੜਨ ਦੀ ਦਵਾਈ ਹਨ, ਜਦੋਂ ਕਿ ਹੰਕਾਰ ਭਰੇ ਕੌੜੇ ਬੋਲ ਤੀਰ ਵਾਂਗ ਅੰਦਰ ਤੱਕ ਜ਼ਖ਼ਮੀ ਕਰਦੇ ਹਨ।',
+      en: 'Calm, compassionate words heal relationships like medicine, while proud, harsh speech inflicts lasting inner wounds.'
+    },
+    themeEssence: {
+      hi: 'औषधि समान मधुर-शीतल वचन और कटु अहंकारी वाणी के त्याग',
+      pb: 'ਦਵਾਈ ਸਮਾਨ ਮਿੱਠੇ-ਸ਼ੀਤਲ ਬਚਨਾਂ ਅਤੇ ਕੌੜੀ ਹੰਕਾਰੀ ਬੋਲੀ ਦੇ ਤਿਆਗ',
+      en: 'healing gentle speech versus arrow-like arrogant words'
+    }
+  },
+  {
+    id: 'grantha-ego-inner-2',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • विरह व अहं-विसर्जन अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਬਿਰਹਾ ਤੇ ਹੰਕਾਰ-ਤਿਆਗ ਅੰਗ',
+      en: 'Kabir Granthavali • Ego-Dissolution & Inner Abode Ang'
+    },
+    themes: ['ego-humility', 'mind-speech', 'yoga-realization'],
+    keywords: ['मैं', 'हरि', 'अहं', 'अहंकार', 'प्रीतम', 'दुसमन', 'माहिं', 'भीतर', 'गली', 'समाहिं', 'ego', 'within', 'beloved'],
+    verse: {
+      hi: 'जब मैं था तब हरि नहीं, अब हरि हैं मैं नाहिं।\nप्रेम गली अति सांकरी, ता में दो न समाहिं॥',
+      pb: 'ਜਬ ਮੈਂ ਥਾ ਤਬ ਹਰਿ ਨਹੀਂ, ਅਬ ਹਰਿ ਹੈਂ ਮੈਂ ਨਾਹਿਂ।\nਪ੍ਰੇਮ ਗਲੀ ਅਤਿ ਸਾਂਕਰੀ, ਤਾ ਮੇਂ ਦੋ ਨ ਸਮਾਹਿਂ॥',
+      en: 'When "I" (ego) was present, the Beloved Hari was not seen; now Hari shines and "I" am gone.\nThe lane of divine love is exceedingly narrow—it cannot hold both ego and Truth together.'
+    },
+    bhavarth: {
+      hi: 'जीव के अपने ही घट में परमात्मा भी हैं और अहंकार रूपी शत्रु भी; किंतु दोनों एक साथ नहीं रह सकते। जब ‘मैं’ और अभिमान मिटता है, तभी भीतर बसे प्रीतम का साक्षात्कार होता है।',
+      pb: 'ਜੀਵ ਦੇ ਆਪਣੇ ਹੀ ਘਟ ਵਿੱਚ ਪਰਮਾਤਮਾ ਵੀ ਹਨ ਅਤੇ ਹੰਕਾਰ ਰੂਪੀ ਦੁਸ਼ਮਣ ਵੀ; ਪਰ ਦੋਵੇਂ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ। ਜਦੋਂ "ਮੈਂ" ਮਿਟਦੀ ਹੈ, ਤਦ ਹੀ ਅੰਦਰਲੇ ਪ੍ਰੀਤਮ ਦਾ ਮਿਲਾਪ ਹੁੰਦਾ ਹੈ।',
+      en: 'Both ego and the Beloved cannot reign inside the heart simultaneously; dissolving pride unveils the Divine Friend already within.'
+    },
+    themeEssence: {
+      hi: 'भीतर के ‘मैं’ (अहं-शत्रु) के मिटने पर अंतर्यामी प्रीतम के प्रकट होने',
+      pb: 'ਅੰਦਰਲੇ ‘ਮੈਂ’ (ਹੰਕਾਰ-ਦੁਸ਼ਮਣ) ਦੇ ਮਿਟਣ ਨਾਲ ਅੰਤਰਜਾਮੀ ਪ੍ਰੀਤਮ ਦੇ ਪ੍ਰਗਟ ਹੋਣ',
+      en: 'dissolving the inner enemy of ego so the Beloved shines within'
+    }
+  },
+  {
+    id: 'grantha-guru-3',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • गुरुदेव को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਗੁਰੂਦੇਵ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Gurudev Ko Ang'
+    },
+    themes: ['guru'],
+    keywords: ['गुरु', 'सतगुरु', 'बीन', 'शब्द', 'बाण', 'दीया', 'चाँदना', 'अँधेरा', 'guru', 'light', 'darkness'],
+    verse: {
+      hi: 'सतगुरु की महिमा अनंत, अनंत किया उपगार।\nलोचन अनंत उघाड़िया, अनंत दिखावणहार॥',
+      pb: 'ਸਤਿਗੁਰੂ ਕੀ ਮਹਿਮਾ ਅਨੰਤ, ਅਨੰਤ ਕੀਆ ਉਪਗਾਰ।\nਲੋਚਨ ਅਨੰਤ ਉਘਾੜਿਆ, ਅਨੰਤ ਦਿਖਾਵਣਹਾਰ॥',
+      en: 'Infinite is the glory of the True Guru, infinite His selfless compassion;\nHe opens the infinite inner eye of wisdom and reveals the Limitless Truth.'
+    },
+    bhavarth: {
+      hi: 'पूर्ण सतगुरु की कृपा की कोई सीमा नहीं है; वे शिष्य की बंद अंतर्दृष्टि खोलकर उसे घट के भीतर अनंत परमात्म-तत्त्व का प्रत्यक्ष दर्शन करा देते हैं।',
+      pb: 'ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਬੇਅੰਤ ਹੈ; ਉਹ ਸਾਧਕ ਦੀ ਅੰਦਰੂਨੀ ਦ੍ਰਿਸ਼ਟੀ ਖੋਲ੍ਹ ਕੇ ਅਨੰਤ ਸੱਚ ਦੇ ਦਰਸ਼ਨ ਕਰਵਾ ਦਿੰਦੇ ਹਨ।',
+      en: 'The True Guru awakens boundless inner vision, unveiling eternal Reality directly inside the seeker.'
+    },
+    themeEssence: {
+      hi: 'सतगुरु के अनंत उपकार और दिव्य ज्ञान-चक्षु खुलने',
+      pb: 'ਸਤਿਗੁਰੂ ਦੇ ਅਨੰਤ ਉਪਕਾਰ ਅਤੇ ਗਿਆਨ-ਨੇਤਰ ਖੁੱਲ੍ਹਣ',
+      en: 'the Satguru opening infinite spiritual sight within'
+    }
+  },
+  {
+    id: 'grantha-naam-4',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • सुमिरन को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਸਿਮਰਨ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Sumiran Ko Ang'
+    },
+    themes: ['naam', 'yoga-realization'],
+    keywords: ['सुमिरन', 'नाम', 'भक्ति', 'सूरति', 'तार', 'अजपा', 'स्वास', 'बंसी', 'simran', 'naam', 'remembrance'],
+    verse: {
+      hi: 'सुमिरन मारग सहज का, सतगुरु दिया बताय।\nस्वांस-स्वांस जो सुमिरता, एक दिन मिलसी आय॥',
+      pb: 'ਸਿਮਰਨ ਮਾਰਗ ਸਹਿਜ ਕਾ, ਸਤਿਗੁਰੂ ਦੀਆ ਬਤਾਇ।\nਸੁਆਸ-ਸੁਆਸ ਜੋ ਸਿਮਰਤਾ, ਇਕ ਦਿਨ ਮਿਲਸੀ ਆਇ॥',
+      en: 'The Satguru has revealed the natural, effortless path of Naam remembrance;\nWhoever remembers with every breath inevitably meets the Beloved Truth.'
+    },
+    bhavarth: {
+      hi: 'सत्यनाम सुमिरन कोई कठिन बाह्य कष्ट नहीं, बल्कि हर आती-जाती श्वास में सतगुरु के पावन नाम का सहज स्मरण है जो जीव को परमात्मा से मिला देता है।',
+      pb: 'ਸਤਯਨਾਮ ਸਿਮਰਨ ਕੋਈ ਔਖਾ ਬਾਹਰੀ ਕਸ਼ਟ ਨਹੀਂ, ਸਗੋਂ ਹਰ ਸੁਆਸ ਵਿੱਚ ਸਹਿਜ ਸਿਮਰਨ ਹੈ ਜੋ ਜੀਵ ਨੂੰ ਪ੍ਰਭੂ ਨਾਲ ਮਿਲਾ ਦਿੰਦਾ ਹੈ।',
+      en: 'Breath-borne Simran is the effortless bridge uniting daily consciousness with the Supreme.'
+    },
+    themeEssence: {
+      hi: 'हर श्वास में सहज सत्यनाम सुमिरन की अविरल धारा',
+      pb: 'ਹਰ ਸੁਆਸ ਵਿੱਚ ਸਹਿਜ ਸਤਯਨਾਮ ਸਿਮਰਨ ਦੀ ਨਿਰੰਤਰ ਧਾਰਾ',
+      en: 'effortless breath-by-breath remembrance of Satyanaam'
+    }
+  },
+  {
+    id: 'grantha-chetavani-5',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • चेतावनी को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਚੇਤਾਵਨੀ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Chetavani Ko Ang'
+    },
+    themes: ['chetavani', 'maya'],
+    keywords: ['काल', 'आज', 'कल', 'अवसर', 'मरना', 'माटी', 'देह', 'चिता', 'समय', 'death', 'time', 'tomorrow'],
+    verse: {
+      hi: 'काल्ह करै सो आज कर, आज करै सो अब।\nपल में परलै होयगी, बहुरि करैगो कब॥',
+      pb: 'ਕਾਲ੍ਹ ਕਰੈ ਸੋ ਆਜ ਕਰ, ਆਜ ਕਰੈ ਸੋ ਅਬ।\nਪਲ ਮੇਂ ਪਰਲੈ ਹੋਇਗੀ, ਬਹੁਰਿ ਕਰੈਗੋ ਕਬ॥',
+      en: 'What you plan for tomorrow, do today; what you intend today, accomplish right now;\nIn a single fleeting moment the world transforms—when else will you awaken?'
+    },
+    bhavarth: {
+      hi: 'सत्यनाम भक्ति और शुभ कर्म को कभी कल पर नहीं टालना चाहिए; जीवन का क्षण अनिश्चित है, अतः इसी पल से जागरूक होकर साधना आरंभ करनी चाहिए।',
+      pb: 'ਨਾਮ ਸਿਮਰਨ ਅਤੇ ਭਲਾਈ ਦੇ ਕੰਮ ਨੂੰ ਕਦੇ ਕੱਲ੍ਹ ਉੱਤੇ ਨਹੀਂ ਟਾਲਣਾ ਚਾਹੀਦਾ; ਜੀਵਨ ਦਾ ਭਰੋਸਾ ਨਹੀਂ, ਇਸ ਲਈ ਇਸੇ ਪਲ ਜਾਗ੍ਰਿਤ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ।',
+      en: 'Spiritual awakening cannot be postponed until tomorrow; cherish the present breath for Truth.'
+    },
+    themeEssence: {
+      hi: 'समय के अमूल्य मूल्य और तत्काल आत्म-जागरण',
+      pb: 'ਸਮੇਂ ਦੀ ਅਨਮੋਲ ਕਦਰ ਅਤੇ ਤੁਰੰਤ ਆਤਮ-ਜਾਗ੍ਰਿਤੀ',
+      en: 'urgency of awakening in the present moment without delay'
+    }
+  },
+  {
+    id: 'grantha-maya-6',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • माया को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਮਾਇਆ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Maya Ko Ang'
+    },
+    themes: ['maya'],
+    keywords: ['माया', 'तृष्णा', 'धन', 'कंचन', 'मोह', 'पाप', 'लोभ', 'चाह', 'greed', 'desire', 'illusion'],
+    verse: {
+      hi: 'माया छाया एक सी, बिरला जाने कोय।\nभगता के पीछे फिरै, सनमुख भागे सोय॥',
+      pb: 'ਮਾਇਆ ਛਾਇਆ ਏਕ ਸੀ, ਬਿਰਲਾ ਜਾਨੈ ਕੋਇ।\nਭਗਤਾ ਕੇ ਪੀਛੇ ਫਿਰੈ, ਸਨਮੁਖ ਭਾਗੈ ਸੋਇ॥',
+      en: 'Worldly illusion behaves just like one’s own shadow—few understand its secret;\nChase it headlong and it flees ahead of you; walk toward Truth and it follows silently behind.'
+    },
+    bhavarth: {
+      hi: 'जिस प्रकार छाया को पकड़ने दौड़ने पर वह दूर भागती है, उसी प्रकार तृष्णा के पीछे भागने से शांति नहीं मिलती; जो परमात्मा की ओर चलता है, माया स्वतः उसकी दासी बन जाती है।',
+      pb: 'ਜਿਵੇਂ ਪਰਛਾਵੇਂ ਨੂੰ ਫੜਨ ਦੌੜਨ ਤੇ ਉਹ ਅੱਗੇ ਭੱਜਦਾ ਹੈ, ਤਿਵੇਂ ਮਾਇਆ ਪਿੱਛੇ ਭੱਜਣ ਨਾਲ ਸ਼ਾਂਤੀ ਨਹੀਂ ਮਿਲਦੀ; ਜੋ ਪ੍ਰਭੂ ਵੱਲ ਤੁਰਦਾ ਹੈ, ਸੰਸਾਰਿਕ ਪ੍ਰਬੰਧ ਆਪ ਸਹੀ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Like chasing a shadow, pursuing greed endlessly brings fatigue; turning toward Truth puts worldly needs in harmony.'
+    },
+    themeEssence: {
+      hi: 'माया रूपी छाया से निर्लिप्त होकर सत्य की ओर बढ़ने',
+      pb: 'ਮਾਇਆ ਰੂਪੀ ਪਰਛਾਵੇਂ ਤੋਂ ਨਿਰਲੇਪ ਹੋ ਕੇ ਸੱਚ ਵੱਲ ਵਧਣ',
+      en: 'seeing Maya as a fleeting shadow and walking toward Truth'
+    }
+  },
+  {
+    id: 'grantha-satya-7',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • सांच को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਸਾਂਚ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Sanch Ko Ang (Truthfulness)'
+    },
+    themes: ['satya-hypocrisy'],
+    keywords: ['साँच', 'सांच', 'सत्य', 'झूठ', 'तप', 'हृदय', 'पाखंड', 'truth', 'honesty', 'hypocrisy'],
+    verse: {
+      hi: 'साँच बराबर तप नहीं, झूठ बराबर पाप।\nजाके हिरदै साँच है, ताके हिरदै आप॥',
+      pb: 'ਸਾਂਚ ਬਰਾਬਰ ਤਪ ਨਹੀਂ, ਝੂਠ ਬਰਾਬਰ ਪਾਪ।\nਜਾਕੇ ਹਿਰਦੈ ਸਾਂਚ ਹੈ, ਤਾਕੇ ਹਿਰਦੈ ਆਪ॥',
+      en: 'No austerity equals living Truth; no darkness equals deceit.\nIn whose heart Truth abides purely, there dwells the Supreme Master Himself.'
+    },
+    bhavarth: {
+      hi: 'बाहरी कष्टदायक तपस्याओं की अपेक्षा मन, वचन और कर्म की सच्चाई ही सबसे बड़ा तप है; निष्कपट सच्चे हृदय में परमात्मा स्वयं निवास करते हैं।',
+      pb: 'ਬਾਹਰੀ ਤਪੱਸਿਆਵਾਂ ਨਾਲੋਂ ਮਨ, ਬਚਨ ਤੇ ਕਰਮ ਦੀ ਸੱਚਾਈ ਹੀ ਸਭ ਤੋਂ ਵੱਡਾ ਤਪ ਹੈ; ਨਿਰਛਲ ਸੱਚੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਆਪ ਵਸਦੇ ਹਨ।',
+      en: 'Integrity of heart surpasses every outer penance; Truth opens the inner temple to Divine Presence.'
+    },
+    themeEssence: {
+      hi: 'सर्वोच्च तप रूपी सत्य और अंतःकरण की निश्छलता',
+      pb: 'ਸਰਵਉੱਚ ਤਪ ਰੂਪੀ ਸੱਚਾਈ ਅਤੇ ਹਿਰਦੇ ਦੀ ਨਿਰਛਲਤਾ',
+      en: 'honesty and inner truth as the highest spiritual discipline'
+    }
+  },
+  {
+    id: 'grantha-satsang-8',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • साधु को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਸਾਧੂ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Sadhu Ko Ang (Saintly Virtue)'
+    },
+    themes: ['satsang-sadhu', 'mind-speech'],
+    keywords: ['साधु', 'संत', 'सूप', 'सार', 'थोंथा', 'संगति', 'सत्संग', 'saint', 'virtue', 'satsang'],
+    verse: {
+      hi: 'साधू ऐसा चाहिए, जैसा सूप सुभाय।\nसार-सार को गहि रहै, थोथा देई उड़ाय॥',
+      pb: 'ਸਾਧੂ ਐਸਾ ਚਾਹੀਐ, ਜੈਸਾ ਸੂਪ ਸੁਭਾਇ।\nਸਾਰ-ਸਾਰ ਕਉ ਗਹਿ ਰਹੈ, ਥੋਥਾ ਦੇਈ ਉਡਾਇ॥',
+      en: 'A true seeker should possess the serene nature of a winnowing basket:\nRetaining the nourishing grain of wisdom and gently letting empty chaff blow away.'
+    },
+    bhavarth: {
+      hi: 'विवेकशील साधक सूप की तरह दूसरों के सद्गुण और सत्य के सार को ग्रहण करता है तथा निंदा-ईर्ष्या रूपी व्यर्थ भूसे को मन से बाहर उड़ा देता है।',
+      pb: 'ਵਿਵੇਕਸ਼ੀਲ ਸਾਧਕ ਛੱਜ ਵਾਂਗ ਸੱਚ ਦੇ ਸਾਰ ਅਤੇ ਗੁਣਾਂ ਨੂੰ ਸੰਭਾਲ ਲੈਂਦਾ ਹੈ ਅਤੇ ਬੇਅਰਥ ਨਿੰਦਾ-ਬੁਰਾਈ ਨੂੰ ਉਡਾ ਦਿੰਦਾ ਹੈ।',
+      en: 'True discernment retains spiritual substance and lets trivial gossip and negativity drift away.'
+    },
+    themeEssence: {
+      hi: 'सूप समान सारग्राही विवेक और संत-स्वभाव',
+      pb: 'ਛੱਜ ਸਮਾਨ ਸਾਰਗ੍ਰਾਹੀ ਵਿਵੇਕ ਅਤੇ ਸੰਤ-ਸੁਭਾਅ',
+      en: 'discerning wisdom that keeps spiritual essence and drops trivia'
+    }
+  },
+  {
+    id: 'grantha-prem-9',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • प्रेम-भक्ति अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਪ੍ਰੇਮ-ਭਗਤੀ ਅੰਗ',
+      en: 'Kabir Granthavali • Prem-Bhakti Ang'
+    },
+    themes: ['prem-bhakti', 'satya-hypocrisy'],
+    keywords: ['पोथी', 'पढ़ि', 'ढाई', 'आखर', 'प्रेम', 'पंडित', 'ज्ञान', 'love', 'books', 'scholar'],
+    verse: {
+      hi: 'पोथी पढ़ि पढ़ि जग मुआ, पंडित भया न कोय।\nढाई आखर प्रेम का, पढ़े सो पंडित होय॥',
+      pb: 'ਪੋਥੀ ਪੜ੍ਹਿ ਪੜ੍ਹਿ ਜਗ ਮੁਆ, ਪੰਡਿਤ ਭਇਆ ਨ ਕੋਇ।\nਢਾਈ ਆਖਰ ਪ੍ਰੇਮ ਕਾ, ਪੜ੍ਹੇ ਸੋ ਪੰਡਿਤ ਹੋਇ॥',
+      en: 'The world exhausts itself reading endless volumes yet finds no true wisdom;\nWhoever masters the brief two-and-a-half letters of pure Love becomes genuinely wise.'
+    },
+    bhavarth: {
+      hi: 'अहंकार बढ़ाने वाले कोरे किताबी ज्ञान से आत्म-साक्षात्कार नहीं होता; सब प्राणियों और सतगुरु से निश्छल प्रेम व करुणा का अनुभव ही वास्तविक ज्ञान है।',
+      pb: 'ਹੰਕਾਰ ਵਧਾਉਣ ਵਾਲੇ ਕੋਰੇ ਕਿਤਾਬੀ ਗਿਆਨ ਨਾਲ ਆਤਮ-ਬੋਧ ਨਹੀਂ ਹੁੰਦਾ; ਸਗੋਂ ਸੱਚੇ ਪ੍ਰੇਮ ਤੇ ਦਇਆ ਦਾ ਅਨੁਭਵ ਹੀ ਅਸਲੀ ਗਿਆਨ ਹੈ।',
+      en: 'Real wisdom is lived love and compassion, never dry bookish pride.'
+    },
+    themeEssence: {
+      hi: 'कोरे पांडित्य से परे निष्कपट प्रेम-भक्ति की श्रेष्ठता',
+      pb: 'ਕੋਰੀ ਵਿਦਵਤਾ ਤੋਂ ਪਰੇ ਨਿਰਛਲ ਪ੍ਰੇਮ-ਭਗਤੀ ਦੀ ਸ਼੍ਰੇਸ਼ਠਤਾ',
+      en: 'living love surpassing dry scholarly accumulation'
+    }
+  },
+  {
+    id: 'grantha-daya-10',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • दया व समदृष्टि अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਦਇਆ ਤੇ ਸਮਦ੍ਰਿਸ਼ਟੀ ਅੰਗ',
+      en: 'Kabir Granthavali • Daya & Samadrishti Ang'
+    },
+    themes: ['compassion-service'],
+    keywords: ['रहे', 'बुरा', 'भला', 'नदियाँ', 'वृक्ष', 'दया', 'क्षमा', 'सेवा', 'परोपकार', 'mercy', 'tree', 'good'],
+    verse: {
+      hi: 'रूखा सूखा खाय के, ठंडा पानी पीव।\nदेखि पराई चूपड़ी, मत ललचावै जीव॥',
+      pb: 'ਰੂਖਾ ਸੂਖਾ ਖਾਇ ਕੇ, ਠੰਢਾ ਪਾਨੀ ਪੀਵ।\nਦੇਖਿ ਪਰਾਈ ਚੂਪੜੀ, ਮਤ ਲਲਚਾਵੈ ਜੀਵ॥',
+      en: 'Eat your simple, honest bread peacefully and drink cool water with gratitude;\nBeholding another’s buttered feast, never let envy or greed stir your soul.'
+    },
+    bhavarth: {
+      hi: 'संतोष, ईमानदारी की सादा जीविका और दूसरों के सुख को देखकर ईर्ष्या न करना—यही समता, करुणा और मानसिक शांति का सच्चा आधार है।',
+      pb: 'ਸੰਤੋਖ, ਹੱਕ-ਹਲਾਲ ਦੀ ਸਾਦੀ ਕਮਾਈ ਅਤੇ ਦੂਜਿਆਂ ਦਾ ਸੁੱਖ ਦੇਖ ਕੇ ਈਰਖਾ ਨਾ ਕਰਨਾ ਹੀ ਸ਼ਾਂਤੀ ਤੇ ਦਇਆ ਦਾ ਆਧਾਰ ਹੈ।',
+      en: 'Grateful simplicity and freedom from envy nourish peace and compassionate goodwill.'
+    },
+    themeEssence: {
+      hi: 'सादा ईमानदार जीवन, संतोष और ईर्ष्या-रहित समभाव',
+      pb: 'ਸਾਦਾ ਇਮਾਨਦਾਰ ਜੀਵਨ, ਸੰਤੋਖ ਅਤੇ ਈਰਖਾ-ਰਹਿਤ ਸਮਭਾਵ',
+      en: 'contentment with honest simplicity and freedom from envy'
+    }
+  },
+  {
+    id: 'grantha-yoga-11',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • परचै को अंग (घट-अंतर दर्शन)',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਪਰਚੈ ਕੋ ਅੰਗ (ਘਟ-ਅੰਤਰ ਦਰਸ਼ਨ)',
+      en: 'Kabir Granthavali • Parchai Ko Ang (Inner Realization)'
+    },
+    themes: ['yoga-realization', 'ego-humility'],
+    keywords: ['नैनन', 'अंतर', 'आव', 'प्रीतम', 'घट', 'भीतर', 'सुरति', 'दर्पण', 'अनहद', 'eyes', 'within', 'mirror'],
+    verse: {
+      hi: 'नैनन की करि कोठरी, पुतली पलंग बिछाय।\nपलकों की चिक डारि के, पिय को लियौ रिझाय॥',
+      pb: 'ਨੈਨਨ ਕੀ ਕਰਿ ਕੋਠਰੀ, ਪੁਤਲੀ ਪਲੰਗ ਬਛਾਇ।\nਪਲਕਾਂ ਕੀ ਚਿਕ ਡਾਰਿ ਕੇ, ਪਿਯ ਕਉ ਲੀਓ ਰਿਝਾਇ॥',
+      en: 'Making the inner eyes a quiet sanctuary and spreading focus as the seat,\nDrawing the veil of stillness over the eyelids, the soul delights the Beloved within.'
+    },
+    bhavarth: {
+      hi: 'बाहर भटकती दृष्टियों को भीतर मोड़कर जब साधक अपनी सुरति को शांत अंतर्मन में एकाग्र करता है, तब भीतर विराजमान प्रीतम साहेब स्वतः प्रसन्न होकर प्रकट होते हैं।',
+      pb: 'ਬਾਹਰ ਭਟਕਦੀਆਂ ਨਜ਼ਰਾਂ ਨੂੰ ਅੰਦਰ ਮੋੜ ਕੇ ਜਦੋਂ ਸਾਧਕ ਸੁਰਤ ਨੂੰ ਸ਼ਾਂਤ ਹਿਰਦੇ ਵਿੱਚ ਟਿਕਾਉਂਦਾ ਹੈ, ਤਾਂ ਅੰਦਰ ਵਸਦੇ ਪ੍ਰੀਤਮ ਆਪ ਪ੍ਰਗਟ ਹੁੰਦੇ ਹਨ।',
+      en: 'Turning the senses inward in silent meditation turns the heart into a sanctuary where the Beloved reveals Himself.'
+    },
+    themeEssence: {
+      hi: 'अंतर्मुखी ध्यान द्वारा घट के भीतर प्रीतम-मिलन',
+      pb: 'ਅੰਤਰਮੁਖੀ ਧਿਆਨ ਰਾਹੀਂ ਘਟ ਦੇ ਅੰਦਰ ਪ੍ਰੀਤਮ-ਮਿਲਾਪ',
+      en: 'turning attention inward to commune with the Beloved in silence'
+    }
+  }
+];
+
+/**
+ * Authentic Kabir Sagar / Anurag Sagar / Bodh Sagar (कबीर सागर) parallel catalog
+ */
+export const KABIR_SAGAR_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
+  {
+    id: 'sagar-speech-ego-1',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर (बोध सागर) • अमृत वाणी व निरहंकार संवाद',
+      pb: 'ਕਬੀਰ ਸਾਗਰ (ਬੋਧ ਸਾਗਰ) • ਅੰਮ੍ਰਿਤ ਬਾਣੀ ਤੇ ਨਿਰਹੰਕਾਰ ਸੰਵਾਦ',
+      en: 'Kabir Sagar (Bodh Sagar) • Discourse on Cooling Speech & Inner Beloved'
+    },
+    themes: ['mind-speech', 'ego-humility', 'yoga-realization'],
+    keywords: ['शीतल', 'शब्द', 'अहं', 'बचन', 'वचन', 'बानी', 'वाणी', 'प्रीतम', 'दुसमन', 'माहिं', 'घट', 'speech', 'ego', 'enemy', 'within'],
+    verse: {
+      hi: 'बचन संभालि के बोलिये, तजि अभिमान विकार।\nघट ही भीतर पीव हैं, घट ही काल दुवार॥',
+      pb: 'ਬਚਨ ਸੰਭਾਲਿ ਕੇ ਬੋਲੀਐ, ਤਜਿ ਅਭਿਮਾਨ ਵਿਕਾਰ।\nਘਟ ਹੀ ਭੀਤਰ ਪੀਵ ਹੈਂ, ਘਟ ਹੀ ਕਾਲ ਦੁਆਰ॥',
+      en: 'Guard every spoken word with care, shedding the blemish of arrogance;\nInside this very body-vessel abides the Beloved—and inside it too lurks the gate of egoic illusion.'
+    },
+    bhavarth: {
+      hi: 'कबीर सागर में सतगुरु स्पष्ट करते हैं कि अमृत समान प्रियतम (सतपुरुष) भी जीव के घट में विराजमान हैं और अहंकार व क्रोध रूपी काल-शत्रु भी भीतर ही घात लगाए बैठा है; संयमित शीतल वाणी से ही भीतर शांति सधती है।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ ਵਿੱਚ ਸਤਿਗੁਰੂ ਸਪੱਸ਼ਟ ਕਰਦੇ ਹਨ ਕਿ ਅੰਮ੍ਰਿਤ ਰੂਪ ਪ੍ਰੀਤਮ ਵੀ ਘਟ ਦੇ ਅੰਦਰ ਹਨ ਅਤੇ ਹੰਕਾਰ ਤੇ ਕ੍ਰੋਧ ਰੂਪੀ ਦੁਸ਼ਮਣ ਵੀ ਅੰਦਰ ਹੀ ਬੈਠਾ ਹੈ; ਸੰਜਮ ਭਰੀ ਸ਼ੀਤਲ ਬਾਣੀ ਨਾਲ ਹੀ ਅੰਦਰ ਸ਼ਾਂਤੀ ਵਸਦੀ ਹੈ।',
+      en: 'Kabir Sagar illuminates the inner battlefield: both the Beloved Satpurush and ego’s deluding pull live inside the same human vessel, governed by humble, disciplined speech.'
+    },
+    themeEssence: {
+      hi: 'संयमित-शीतल वचन और घट के भीतर ही प्रीतम व शत्रु के निवास',
+      pb: 'ਸੰਜਮ ਭਰੇ ਸ਼ੀਤਲ ਬਚਨ ਅਤੇ ਘਟ ਦੇ ਅੰਦਰ ਹੀ ਪ੍ਰੀਤਮ ਤੇ ਦੁਸ਼ਮਣ ਦੇ ਨਿਵਾਸ',
+      en: 'mindful gentle speech and recognizing both enemy and Beloved within'
+    }
+  },
+  {
+    id: 'sagar-guru-2',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर (अनुराग सागर) • धर्मदास संवाद व गुरु महिमा',
+      pb: 'ਕਬੀਰ ਸਾਗਰ (ਅਨੁਰਾਗ ਸਾਗਰ) • ਧਰਮਦਾਸ ਸੰਵਾਦ ਤੇ ਗੁਰੂ ਮਹਿਮਾ',
+      en: 'Kabir Sagar (Anurag Sagar) • Kabir–Dharmdas Dialogue on Satguru'
+    },
+    themes: ['guru', 'naam'],
+    keywords: ['गुरु', 'सतगुरु', 'धर्मदास', 'हंस', 'परवाना', 'सारशब्द', 'भ्रम', 'guru', 'satguru', 'grace'],
+    verse: {
+      hi: 'सतगुरु सम कोइ नहिं हितकारी, काटैं भ्रम भव-फंद अपारी।\nसोहं पार गहै जो बांही, हंस उबारि अमरपुर जांही॥',
+      pb: 'ਸਤਿਗੁਰੂ ਸਮ ਕੋਇ ਨਹਿਂ ਹਿਤਕਾਰੀ, ਕਾਟੈਂ ਭ੍ਰਮ ਭਵ-ਫੰਦ ਅਪਾਰੀ।\nਸੋਹੰ ਪਾਰ ਗਹੈ ਜੋ ਬਾਂਹੀ, ਹੰਸ ਉਬਾਰਿ ਅਮਰਪੁਰ ਜਾਂਹੀ॥',
+      en: 'None in creation is a greater well-wisher than the True Guru, who severs countless snares of illusion;\nHolding the soul gently by the arm beyond all realms, He carries the awakened Hans to Amarlok.'
+    },
+    bhavarth: {
+      hi: 'धनी धर्मदास जी से संवाद में कबीर साहेब बताते हैं कि जीव के अनंत जन्मों का भ्रम केवल पूर्ण सतगुरु के सार-शब्द और कृपा से ही कटता है।',
+      pb: 'ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨਾਲ ਸੰਵਾਦ ਵਿੱਚ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੀਵ ਦੇ ਭਰਮ ਕੇਵਲ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਸਾਰ-ਸ਼ਬਦ ਨਾਲ ਹੀ ਕੱਟੇ ਜਾਂਦੇ ਹਨ।',
+      en: 'Only the Satguru’s living Sar-Shabd severs age-old delusion and escorts the soul homeward.'
+    },
+    themeEssence: {
+      hi: 'धर्मदास संवाद में पूर्ण सतगुरु के जीवोद्धारक स्वरूप',
+      pb: 'ਧਰਮਦਾਸ ਸੰਵਾਦ ਵਿੱਚ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਉਧਾਰਕ ਸਰੂਪ',
+      en: 'the Satguru’s compassionate grace severing delusion for the soul'
+    }
+  },
+  {
+    id: 'sagar-naam-3',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर (ज्ञान प्रकाश बोध) • सार शब्द एवं सत्यनाम महिमा',
+      pb: 'ਕਬੀਰ ਸਾਗਰ (ਗਿਆਨ ਪ੍ਰਕਾਸ਼ ਬੋਧ) • ਸਾਰ ਸ਼ਬਦ ਤੇ ਸਤਯਨਾਮ ਮਹਿਮਾ',
+      en: 'Kabir Sagar • Glory of Sar-Shabd & Satyanaam'
+    },
+    themes: ['naam', 'yoga-realization'],
+    keywords: ['सार', 'शब्द', 'सत्यनाम', 'निज', 'नाम', 'सुमिरन', 'सिमरन', 'काल', 'sar', 'shabd', 'naam'],
+    verse: {
+      hi: 'सार शब्द निज नाम अपारा, ता बिन जीव न उतरै पारा।\nअजर अमर सत्यनाम अधारा, सो सुमिरै उतरे भव-पारा॥',
+      pb: 'ਸਾਰ ਸ਼ਬਦ ਨਿਜ ਨਾਮ ਅਪਾਰਾ, ਤਾ ਬਿਨ ਜੀਵ ਨ ਉਤਰੈ ਪਾਰਾ।\nਅਜਰ ਅਮਰ ਸਤਯਨਾਮ ਅਧਾਰਾ, ਸੋ ਸਿਮਰੈ ਉਤਰੇ ਭਵ-ਪਾਰਾ॥',
+      en: 'Boundless is the True Essence-Word (Sar-Shabd); without it no soul crosses the ocean of rebirth.\nTaking shelter in the ageless, immortal Satyanaam, one crosses safely beyond illusion.'
+    },
+    bhavarth: {
+      hi: 'कबीर सागर के अनुसार बाहरी जपों से भिन्न अविनाशी सत्यनाम और सार-शब्द का अंतर्मुखी सुमिरन ही जीवात्मा को भवसागर से पार लगाने वाला एकमात्र आधार है।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ ਅਨੁਸਾਰ ਅਵਿਨਾਸ਼ੀ ਸਤਯਨਾਮ ਅਤੇ ਸਾਰ-ਸ਼ਬਦ ਦਾ ਅੰਦਰੂਨੀ ਸਿਮਰਨ ਹੀ ਜੀਵਾਤਮਾ ਨੂੰ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਲਾਉਣ ਦਾ ਆਧਾਰ ਹੈ।',
+      en: 'Among all practices, inward remembrance of the imperishable Satyanaam (Sar-Shabd) is the sole anchor of liberation.'
+    },
+    themeEssence: {
+      hi: 'सार-शब्द व सत्यनाम की अद्वितीय मोक्षदायिनी शक्ति',
+      pb: 'ਸਾਰ-ਸ਼ਬਦ ਤੇ ਸਤਯਨਾਮ ਦੀ ਅਦੁੱਤੀ ਮੁਕਤੀ-ਸ਼ਕਤੀ',
+      en: 'the liberating strength of inward Sar-Shabd and Satyanaam'
+    }
+  },
+  {
+    id: 'sagar-chetavani-4',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर • जीव चेतावनी व काया नश्वरता प्रकरण',
+      pb: 'ਕਬੀਰ ਸਾਗਰ • ਜੀਵ ਚੇਤਾਵਨੀ ਤੇ ਕਾਇਆ ਨਾਸ਼ਵਾਨਤਾ ਪ੍ਰਕਰਣ',
+      en: 'Kabir Sagar • Jeev Chetavani & Awakening from Slumber'
+    },
+    themes: ['chetavani'],
+    keywords: ['मानुस', 'देह', 'काल', 'अवसर', 'नींद', 'जाग', 'चेत', 'काया', 'human', 'awake', 'mortal'],
+    verse: {
+      hi: 'चेत अचेत गँवार मति, बीता जात अकाज।\nमानुस देही दुर्लभा, भजु साहेब सुरताज॥',
+      pb: 'ਚੇਤ ਅਚੇਤ ਗੰਵਾਰ ਮਤਿ, ਬੀਤਾ ਜਾਤ ਅਕਾਜ।\nਮਾਨੁਸ ਦੇਹੀ ਦੁਰਲਭਾ, ਭਜੁ ਸਾਹੇਬ ਸੁਰਤਾਜ॥',
+      en: 'Awaken from heedless slumber—this precious opportunity is slipping swiftly away;\nRare beyond measure is this human birth: turn inward and worship the Sovereign Saheb.'
+    },
+    bhavarth: {
+      hi: 'अनमोल मानव देह बार-बार नहीं मिलती; व्यर्थ प्रपंचों में इसे गँवाने के बजाय समय रहते सत्यनाम और सत्कर्म में लगाना ही सच्ची बुद्धिमत्ता है।',
+      pb: 'ਅਨਮੋਲ ਮਨੁੱਖੀ ਸਰੀਰ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਦਾ; ਬੇਅਰਥ ਉਲਝਣਾਂ ਵਿੱਚ ਸਮਾਂ ਗੁਆਉਣ ਦੀ ਬਜਾਏ ਸਤਯਨਾਮ ਨਾਲ ਜੁੜਨਾ ਹੀ ਸਿਆਣਪ ਹੈ।',
+      en: 'Human birth is rare and fleeting; use every breath purposefully for inner awakening rather than careless distraction.'
+    },
+    themeEssence: {
+      hi: 'दुर्लभ मानव देह की सार्थकता और आलस्य से जागने',
+      pb: 'ਦੁਰਲੱਭ ਮਨੁੱਖੀ ਜਨਮ ਦੀ ਸਾਰਥਕਤਾ ਅਤੇ ਅਲਸ ਤੋਂ ਜਾਗਣ',
+      en: 'waking from spiritual heedlessness during this rare human life'
+    }
+  },
+  {
+    id: 'sagar-maya-5',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर (अनुराग सागर) • माया-विवेक व त्रिगुण परख',
+      pb: 'ਕਬੀਰ ਸਾਗਰ (ਅਨੁਰਾਗ ਸਾਗਰ) • ਮਾਇਆ-ਵਿਵੇਕ ਤੇ ਤ੍ਰਿਗੁਣ ਪਰਖ',
+      en: 'Kabir Sagar (Anurag Sagar) • Discernment Beyond Maya'
+    },
+    themes: ['maya', 'ego-humility'],
+    keywords: ['माया', 'काल', 'फंद', 'तृष्णा', 'मोह', 'काम', 'क्रोध', 'लोभ', 'illusion', 'trap', 'greed'],
+    verse: {
+      hi: 'काम क्रोध मद लोभ सब, काल फंद के जाल।\nजो साधे गुरु-ज्ञान से, सो छूटे तत्काल॥',
+      pb: 'ਕਾਮ ਕ੍ਰੋਧ ਮਦ ਲੋਭ ਸਭ, ਕਾਲ ਫੰਦ ਕੇ ਜਾਲ।\nਜੋ ਸਾਧੇ ਗੁਰੂ-ਗਿਆਨ ਸੇ, ਸੋ ਛੂਟੇ ਤਤਕਾਲ॥',
+      en: 'Lust, anger, arrogance, and greed are all woven nets of deluding illusion;\nWhoever anchors attention in the Guru’s discerning wisdom steps free at once.'
+    },
+    bhavarth: {
+      hi: 'बाहरी संसार से अधिक भीतर बैठे काम, क्रोध, अहंकार और लोभ ही जीव को बंधन में डालते हैं; विवेक और सत्यनाम से ही इन मानसिक विकारों से मुक्ति मिलती है।',
+      pb: 'ਬਾਹਰੀ ਸੰਸਾਰ ਨਾਲੋਂ ਵੱਧ ਅੰਦਰ ਬੈਠੇ ਕਾਮ, ਕ੍ਰੋਧ, ਹੰਕਾਰ ਤੇ ਲੋਭ ਹੀ ਜੀਵ ਨੂੰ ਬੰਨ੍ਹਦੇ ਹਨ; ਗੁਰੂ-ਗਿਆਨ ਨਾਲ ਇਨ੍ਹਾਂ ਤੋਂ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ।',
+      en: 'Desire, anger, arrogance, and greed bind consciousness from within; Satguru-wisdom breaks their hold immediately.'
+    },
+    themeEssence: {
+      hi: 'काम, क्रोध, मद, लोभ रूपी आंतरिक बंधनों से विवेकपूर्ण मुक्ति',
+      pb: 'ਕਾਮ, ਕ੍ਰੋਧ, ਹੰਕਾਰ ਤੇ ਲੋਭ ਰੂਪੀ ਅੰਦਰੂਨੀ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤੀ',
+      en: 'breaking free from inner nets of anger, pride, and greed'
+    }
+  },
+  {
+    id: 'sagar-satya-6',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर • करणी व पाखंड खंडन प्रकरण',
+      pb: 'ਕਬੀਰ ਸਾਗਰ • ਕਰਨੀ ਤੇ ਪਾਖੰਡ ਖੰਡਨ ਪ੍ਰਕਰਣ',
+      en: 'Kabir Sagar • Authentic Practice Over Outer Pretense'
+    },
+    themes: ['satya-hypocrisy'],
+    keywords: ['करनी', 'कथनी', 'पाखंड', 'सांच', 'सत्य', 'दिखावा', 'भेष', 'conduct', 'hypocrisy', 'truth'],
+    verse: {
+      hi: 'कथनी कथै तो क्या भया, करनी बिनु नहिं सार।\nसाँचे मन जो आचरै, सो पावै दीदार॥',
+      pb: 'ਕਥਨੀ ਕਥੈ ਤੋ ਕਿਆ ਭਇਆ, ਕਰਨੀ ਬਿਨੁ ਨਹਿਂ ਸਾਰ।\nਸਾਂਚੇ ਮਨ ਜੋ ਆਚਰੈ, ਸੋ ਪਾਵੈ ਦੀਦਾਰ॥',
+      en: 'What value lies in eloquent preaching if noble conduct is absent?\nOnly one who lives with a truthful, upright heart beholds inner realization.'
+    },
+    bhavarth: {
+      hi: 'केवल बड़ी-बड़ी बातें बोलने या धार्मिक वेश बनाने से कुछ नहीं होता; जब कथनी और करनी एक हो जाती है तभी अंतःकरण में सत्य का दर्शन होता है।',
+      pb: 'ਕੇਵਲ ਵੱਡੀਆਂ ਗੱਲਾਂ ਕਰਨ ਜਾਂ ਭੇਖ ਬਣਾਉਣ ਨਾਲ ਕੁਝ ਨਹੀਂ ਬਣਦਾ; ਜਦੋਂ ਕਥਨੀ ਤੇ ਕਰਨੀ ਇੱਕ ਹੁੰਦੀ ਹੈ ਤਦ ਹੀ ਸੱਚ ਦਾ ਦਰਸ਼ਨ ਹੁੰਦਾ ਹੈ।',
+      en: 'Eloquent words without lived integrity hold no essence; pure conduct opens inner realization.'
+    },
+    themeEssence: {
+      hi: 'कोरी कथनी के स्थान पर सत्य करनी व निश्छल आचरण',
+      pb: 'ਕੋਰੀ ਕਥਨੀ ਦੀ ਥਾਂ ਸੱਚੀ ਕਰਨੀ ਤੇ ਨਿਰਛਲ ਆਚਰਨ',
+      en: 'aligning honest daily conduct with spoken spiritual ideals'
+    }
+  },
+  {
+    id: 'sagar-satsang-7',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर • सतसंग एवं साधु लक्षण संवाद',
+      pb: 'ਕਬੀਰ ਸਾਗਰ • ਸਤਿਸੰਗ ਤੇ ਸਾਧੂ ਲੱਛਣ ਸੰਵਾਦ',
+      en: 'Kabir Sagar • Marks of Satsang & Noble Saints'
+    },
+    themes: ['satsang-sadhu', 'compassion-service'],
+    keywords: ['साधु', 'संत', 'सत्संग', 'संगति', 'क्षमा', 'दया', 'शीतल', 'शील', 'saint', 'satsang', 'humble'],
+    verse: {
+      hi: 'साधु लच्छन जानि ले, शील क्षमा संतोष।\nनिर्मल हिरदै सबन सों, मिटै क्रोध मद रोष॥',
+      pb: 'ਸਾਧੂ ਲੱਛਣ ਜਾਨਿ ਲੇ, ਸ਼ੀਲ ਖਿਮਾ ਸੰਤੋਖ।\nਨਿਰਮਲ ਹਿਰਦੈ ਸਭਨ ਸੋਂ, ਮਿਟੈ ਕ੍ਰੋਧ ਮਦ ਰੋਖ॥',
+      en: 'Recognize the marks of a true Saint: gentle courtesy, forgiveness, and deep contentment;\nKeeping a pure heart toward everyone, all anger, pride, and bitterness dissolve.'
+    },
+    bhavarth: {
+      hi: 'कबीर सागर बताता है कि सच्चा संत बाहरी पहचान से नहीं, बल्कि शील, क्षमा, संतोष, मीठे व्यवहार और क्रोध-रहित निर्मल हृदय से पहचाना जाता है।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ ਦੱਸਦਾ ਹੈ ਕਿ ਸੱਚਾ ਸੰਤ ਬਾਹਰੀ ਭੇਖ ਨਾਲ ਨਹੀਂ, ਸਗੋਂ ਸ਼ੀਲ, ਖਿਮਾ, ਸੰਤੋਖ ਅਤੇ ਨਿਰਮਲ ਹਿਰਦੇ ਨਾਲ ਪਛਾਣਿਆ ਜਾਂਦਾ ਹੈ।',
+      en: 'Genuine saintliness shines through humility, forgiveness, contentment, and an anger-free heart.'
+    },
+    themeEssence: {
+      hi: 'शील, क्षमा, संतोष और क्रोध-रहित संत-स्वभाव',
+      pb: 'ਸ਼ੀਲ, ਖਿਮਾ, ਸੰਤੋਖ ਅਤੇ ਕ੍ਰੋਧ-ਰਹਿਤ ਸੰਤ-ਸੁਭਾਅ',
+      en: 'saintly qualities of gentleness, forgiveness, and serenity'
+    }
+  },
+  {
+    id: 'sagar-prem-8',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर • अनन्य प्रेमाभक्ति व समर्पण प्रकरण',
+      pb: 'ਕਬੀਰ ਸਾਗਰ • ਅਨੰਨ ਪ੍ਰੇਮਾਭਗਤੀ ਤੇ ਸਮਰਪਣ ਪ੍ਰਕਰਣ',
+      en: 'Kabir Sagar • Wholehearted Devotion & Surrender'
+    },
+    themes: ['prem-bhakti'],
+    keywords: ['प्रेम', 'प्रीति', 'भक्ति', 'समर्पण', 'विनती', 'चरण', 'लगन', 'devotion', 'love', 'surrender'],
+    verse: {
+      hi: 'निष्कपट प्रेम हिये धरो, तजि चतुराई मान।\nदीन भाव सुमिरन करो, मिलै अमर निज थान॥',
+      pb: 'ਨਿਸ਼ਕਪਟ ਪ੍ਰੇਮ ਹਿਯੇ ਧਰੋ, ਤਜਿ ਚਤੁਰਾਈ ਮਾਨ।\nਦੀਨ ਭਾਵ ਸਿਮਰਨ ਕਰੋ, ਮਿਲੈ ਅਮਰ ਨਿਜ ਥਾਨ॥',
+      en: 'Cherish guileless love within your heart, letting go of clever pride and calculation;\nRemember the Lord in tender humility, and discover the eternal inner sanctuary.'
+    },
+    bhavarth: {
+      hi: 'चतुराई और अभिमान के साथ भक्ति नहीं फलती; निष्कपट प्रेम और विनम्र समर्पण ही साधक को सतगुरु के अमर धाम तक पहुँचाता है।',
+      pb: 'ਚਤੁਰਾਈ ਅਤੇ ਹੰਕਾਰ ਨਾਲ ਭਗਤੀ ਨਹੀਂ ਫਲਦੀ; ਨਿਰਛਲ ਪ੍ਰੇਮ ਤੇ ਨਿਮਰ ਸਮਰਪਣ ਹੀ ਸਾਧਕ ਨੂੰ ਅਮਰ ਧਾਮ ਤੱਕ ਪਹੁੰਚਾਉਂਦਾ ਹੈ।',
+      en: 'Clever pride blocks grace; guileless love and humility carry the seeker to eternal peace.'
+    },
+    themeEssence: {
+      hi: 'चतुराई व मान त्यागकर निष्कपट प्रेमाभक्ति अपनाने',
+      pb: 'ਚਤੁਰਾਈ ਤੇ ਹੰਕਾਰ ਛੱਡ ਕੇ ਨਿਰਛਲ ਪ੍ਰੇਮਾਭਗਤੀ ਅਪਣਾਉਣ',
+      en: 'guileless humility and wholehearted devotion free from ego'
+    }
+  },
+  {
+    id: 'sagar-daya-9',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर • जीव दया एवं अहिंसा महाधर्म',
+      pb: 'ਕਬੀਰ ਸਾਗਰ • ਜੀਵ ਦਇਆ ਤੇ ਅਹਿੰਸਾ ਮਹਾਂਧਰਮ',
+      en: 'Kabir Sagar • Universal Compassion & Non-Violence'
+    },
+    themes: ['compassion-service'],
+    keywords: ['दया', 'जीव', 'अहिंसा', 'करुणा', 'सेवा', 'समता', 'परोपकार', 'compassion', 'ahimsa', 'service'],
+    verse: {
+      hi: 'जीव दया हिरदै बसै, समता राखै नित्य।\nसोई जन साहेब को प्यारा, निश्चय पावै सत्य॥',
+      pb: 'ਜੀਵ ਦਇਆ ਹਿਰਦੈ ਬਸੈ, ਸਮਤਾ ਰਾਖੈ ਨਿੱਤ।\nਸੋਈ ਜਨ ਸਾਹੇਬ ਕਉ ਪਿਆਰਾ, ਨਿਸ਼ਚੈ ਪਾਵੈ ਸੱਤ॥',
+      en: 'When compassion for all living beings dwells within and fairness guides every day,\nThat seeker becomes deeply dear to Saheb and surely realizes living Truth.'
+    },
+    bhavarth: {
+      hi: 'हर प्राणी के प्रति दया, अहिंसा और समभाव रखना ही कबीर साहेब को सर्वाधिक प्रिय आचरण है; बिना करुणा के कोई भी साधना पूर्ण नहीं होती।',
+      pb: 'ਹਰ ਜੀਵ ਪ੍ਰਤੀ ਦਇਆ, ਅਹਿੰਸਾ ਅਤੇ ਸਮਭਾਵ ਰੱਖਣਾ ਹੀ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਸਭ ਤੋਂ ਪਿਆਰਾ ਆਚਰਨ ਹੈ।',
+      en: 'Active compassion and non-violence toward all beings form the heartbeat of authentic Kabir Panth practice.'
+    },
+    themeEssence: {
+      hi: 'सर्वभूत दया, अहिंसा और समदृष्टि के पावन धर्म',
+      pb: 'ਸਰਬ ਜੀਵ ਦਇਆ, ਅਹਿੰਸਾ ਅਤੇ ਸਮਦ੍ਰਿਸ਼ਟੀ ਦੇ ਪਾਵਨ ਧਰਮ',
+      en: 'compassion, non-violence, and equal goodwill toward all beings'
+    }
+  },
+  {
+    id: 'sagar-yoga-10',
+    tradition: 'kabir_sagar',
+    angOrSection: {
+      hi: 'कबीर सागर (स्वासं गुंजार बोध) • घट-मंदिर व सूरत-शब्द योग',
+      pb: 'ਕਬੀਰ ਸਾਗਰ (ਸੁਆਸਾਂ ਗੁੰਜਾਰ ਬੋਧ) • ਘਟ-ਮੰਦਿਰ ਤੇ ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ',
+      en: 'Kabir Sagar • Ghat-Mandir & Surat-Shabd Yoga'
+    },
+    themes: ['yoga-realization', 'naam'],
+    keywords: ['घट', 'सुरति', 'निरति', 'अनहद', 'अंतर', 'दसवें', 'ज्योति', 'प्रीतम', 'भीतर', 'surat', 'inner', 'temple'],
+    verse: {
+      hi: 'काया भीतर कोठड़ी, बाहर ढूँढै काय।\nदसम द्वार उघारि के, घट में लेहु लखाय॥',
+      pb: 'ਕਾਇਆ ਭੀਤਰ ਕੋਠੜੀ, ਬਾਹਰ ਢੂੰਢੈ ਕਾਇ।\nਦਸਮ ਦੁਆਰ ਉਘਾਰਿ ਕੇ, ਘਟ ਮੇਂ ਲੇਹੁ ਲਖਾਇ॥',
+      en: 'Within the chamber of this body shines the treasure—why wander seeking outside?\nOpening the inner Tenth Door of awareness, behold the Beloved inside your own heart.'
+    },
+    bhavarth: {
+      hi: 'बाहरी स्थलों पर भटकने के बजाय अपनी सुरति को दशम द्वार की ओर मोड़ने पर साधक को अपने ही घट-मंदिर में अविनाशी ज्योति और अनहद शब्द का साक्षात्कार होता है।',
+      pb: 'ਬਾਹਰ ਭਟਕਣ ਦੀ ਥਾਂ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਦਸਵੇਂ ਦੁਆਰ ਵੱਲ ਮੋੜਨ ਨਾਲ ਸਾਧਕ ਨੂੰ ਆਪਣੇ ਹੀ ਘਟ-ਮੰਦਿਰ ਵਿੱਚ ਅਨਹਦ ਸ਼ਬਦ ਦਾ ਦਰਸ਼ਨ ਹੁੰਦਾ ਹੈ।',
+      en: 'Redirecting Surat inward toward the Tenth Door unveils the eternal inner sanctuary already present inside.'
+    },
+    themeEssence: {
+      hi: 'बाहर की खोज छोड़कर घट-मंदिर में सूरत-शब्द साक्षात्कार',
+      pb: 'ਬਾਹਰ ਦੀ ਭਾਲ ਛੱਡ ਕੇ ਘਟ-ਮੰਦਿਰ ਵਿੱਚ ਸੁਰਤ-ਸ਼ਬਦ ਦਰਸ਼ਨ',
+      en: 'redirecting awareness into the inner temple via Surat-Shabd Yoga'
+    }
+  }
+];
+
+/**
  * Normalizes a Sakhi's category slug and verse text into primary + secondary theme buckets
  */
 export function mapCategoryToThemes(
@@ -1853,13 +2411,19 @@ export function mapCategoryToThemes(
   if (/सुमिरन|सिमरन|सुमिर|सिमरि|सत्यनाम|निज नाम|श्वास|स्वांस|simran|naam/.test(verse)) vThemes.add('naam');
   if (/माटी|कुम्हार|काया|देही|हाड़|हड्डी|चिता|काल\b|मरण|मृत्यु|रैन|नींद|बुलबुला|मानुस|जनम|जन्म|clay|mortal|bones/.test(verse)) vThemes.add('chetavani');
   if (/माया|ठगिनी|तृष्णा|लालच|लोभ|काम\b|क्रोध|मोह|विषय|इंद्री|कंचन|दाम\b|maya|greed|lust/.test(verse)) vThemes.add('maya');
-  if (/अहंकार|अभिमान|गरब|गर्व|घमंड|मैंपन|आपा|निंदक|निंदा|दीन|रोड़ा|क्षमा|छमा|बुरा जो|ego|humble|critic/.test(verse)) vThemes.add('ego-humility');
+  if (/अहं|अहंकार|अभिमान|गरब|गर्व|घमंड|मैंपन|आपा|निंदक|निंदा|दीन|रोड़ा|क्षमा|छमा|बुरा जो|दुसमन|ego|humble|critic|enemy/.test(verse)) vThemes.add('ego-humility');
   if (/साँच|सांच|सत्य\b|झूठ|पाखंड|दिखावा|पोथी|कागद|तीरथ|तीर्थ|कथनी|करनी|आडंबर|truth|books|hypocrisy/.test(verse)) vThemes.add('satya-hypocrisy');
   if (/साधु|साध\b|संत\b|सत्संग|संगति|संगत\b|कुसंग|चंदन|सूप|saint|satsang|company/.test(verse)) vThemes.add('satsang-sadhu');
-  if (/प्रेम|प्रीत|विरह|बिरह|भक्ति|शूरवीर|सूरा|शीश|सीस|समर्पण|साँई|साईं|विनती|love|devotion|surrender/.test(verse)) vThemes.add('prem-bhakti');
-  if (/मन\b|चित्त|वाणी|बानी|रसना|संतोष|संतोख|धैर्य|धीरे|माली|संयम|विवेक|mind|speech|patience|contentment/.test(verse)) vThemes.add('mind-speech');
+  if (/प्रेम|प्रीत|प्रीतम|विरह|बिरह|भक्ति|शूरवीर|सूरा|शीश|सीस|समर्पण|साँई|साईं|विनती|love|devotion|surrender|beloved/.test(verse)) vThemes.add('prem-bhakti');
+  if (/मन\b|चित्त|वाणी|बानी|शीतल|मधुर|बचन|वचन|कुटिल|रसना|संतोष|संतोख|धैर्य|धीरे|माली|संयम|विवेक|mind|speech|sweet|cooling|words|tongue|patience|contentment/.test(verse)) vThemes.add('mind-speech');
   if (/दया|करुणा|अहिंसा|हिंसा|परोपकार|परमारथ|दान|सेवा|तरुवर|सरवर|जीव\b|समभाव|compassion|charity|service/.test(verse)) vThemes.add('compassion-service');
-  if (/सूरत|सुरति|शबद|शब्द|अनहद|घट\b|कस्तूरी|मृग|हंस|अमरलोक|मुक्ति|मोक्ष|आत्मा|मरिहै|soul|unstruck|liberation/.test(verse)) vThemes.add('yoga-realization');
+  if (/सूरत|सुरति|शबद|शब्द|अनहद|घट\b|माहिं|तुझहि|कस्तूरी|मृग|हंस|अमरलोक|मुक्ति|मोक्ष|आत्मा|मरिहै|soul|unstruck|liberation|within/.test(verse)) vThemes.add('yoga-realization');
+
+  // If the dataset tagged a broad umbrella 'chetavani' category but the couplet itself has specific themes (e.g., speech/ego/guru) and no mortality keywords, let verse themes lead
+  if (primary.has('chetavani') && !vThemes.has('chetavani') && vThemes.size > 0) {
+    primary.delete('chetavani');
+    vThemes.forEach((t) => primary.add(t));
+  }
 
   if (primary.size === 0 && vThemes.size === 0) {
     primary.add('satya-hypocrisy');
@@ -1894,19 +2458,25 @@ export function buildMoolSakhiConnection(
   sakhiFirstLine: string,
   language: Language
 ): string {
-  const snippet = sakhiFirstLine.replace(/[।॥\n]+/g, ' ').trim().slice(0, 72);
-  const traditionName =
-    entry.tradition === 'sggs'
-      ? language === 'pb'
-        ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ'
+  const snippet = sakhiFirstLine.replace(/[।॥,.;:'"\n\r]+/g, ' ').trim().slice(0, 72);
+  let traditionName = '';
+  if (entry.tradition === 'sggs') {
+    traditionName =
+      language === 'pb'
+        ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ'
         : language === 'en'
-        ? 'Sri Guru Granth Saheb Ji'
-        : 'श्री गुरु ग्रंथ साहेब जी'
-      : language === 'pb'
-      ? 'ਕਬੀਰ ਬੀਜਕ'
-      : language === 'en'
-      ? 'Kabir Bijak'
-      : 'कबीर बीजक';
+        ? 'Sri Guru Granth Sahib Ji'
+        : 'श्री गुरु ग्रंथ साहिब जी';
+  } else if (entry.tradition === 'bijak') {
+    traditionName =
+      language === 'pb' ? 'ਕਬੀਰ ਬੀਜਕ' : language === 'en' ? 'Kabir Bijak' : 'कबीर बीजक';
+  } else if (entry.tradition === 'granthavali') {
+    traditionName =
+      language === 'pb' ? 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ' : language === 'en' ? 'Kabir Granthavali' : 'कबीर ग्रंथावली';
+  } else {
+    traditionName =
+      language === 'pb' ? 'ਕਬੀਰ ਸਾਗਰ' : language === 'en' ? 'Kabir Sagar' : 'कबीर सागर';
+  }
 
   if (language === 'pb') {
     return `ਮੂਲ ਸਾਖੀ #${sakhiNumber} ਨਾਲ ਸਬੰਧ: "${snippet}..." ਦੇ ਮੁੱਖ ਭਾਵ ਵਾਂਗ ਹੀ ${traditionName} ਦੀ ਇਹ ਬਾਣੀ ਵੀ ${entry.themeEssence.pb} ਉੱਤੇ ਜ਼ੋਰ ਦਿੰਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਅੱਜ ਦੇ ਸਵਾਧਿਆਇ ਦਾ ਮੂਲ ਸੱਚ ਹੋਰ ਸਪੱਸ਼ਟ ਹੁੰਦਾ ਹੈ।`;
