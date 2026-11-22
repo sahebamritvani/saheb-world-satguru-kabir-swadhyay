@@ -12,11 +12,20 @@ import {
 import { buildFiveDimensionQuiz, shuffleGeneratedQuiz } from './quizGenerator';
 import { buildStep6EsotericContent } from './swadhyayContentEngine';
 
+export interface QuizOption {
+  text: string;
+  isCorrect: boolean;
+  feedback: string;
+}
+
 export interface ElevenStepQuizQuestion {
-  question: string;
-  options: string[];
-  correctIndex: number;
-  explanation: string;
+  id: string;
+  angle: string;
+  questionText: string;
+  question?: string;
+  options: QuizOption[];
+  correctIndex?: number;
+  explanation?: string;
 }
 
 export interface ElevenStepCrossReference {
@@ -192,6 +201,20 @@ function pickMeaningMatchedEntry(
   const activeVerseHi = sakhi.text?.hi || '';
   const primarySet = new Set(primaryThemes);
   const verseThemeSet = new Set(verseThemes);
+  const sakhiTags = new Set(sakhi.themeTags || []);
+
+  const isSakhiShabdOrTruth =
+    sakhiTags.has('satya-khoj') ||
+    sakhiTags.has('saar-shabd') ||
+    sakhiTags.has('shabd-sadhan') ||
+    sakhi.category === 'shabd-ko-ang' ||
+    /खोजी|सार शब्द|सत्य शब्द|गहि शब्द/.test(verseBlob);
+
+  const isSakhiSpeech =
+    !isSakhiShabdOrTruth &&
+    (sakhiTags.has('sheetal-vani') ||
+      sakhi.category === 'sweet-speech' ||
+      /शीतल शब्द|कुटिल बचन|मधुर वाणी/.test(verseBlob));
 
   const scored = vault
     .filter((entry) => {
@@ -203,15 +226,40 @@ function pickMeaningMatchedEntry(
     })
     .map((entry) => {
       let score = 0;
+
+      // 1. Tag Intersection (Highest Priority: +120 per matching themeTag)
+      const entryTags = entry.themeTags || [];
+      for (const tag of entryTags) {
+        if (sakhiTags.has(tag)) {
+          score += 120;
+        }
+      }
+
+      // 2. Prevent cross-contamination between Shabd/Truth verses and sweet-speech verses
+      const isEntrySpeech =
+        (entry.themeTags && entry.themeTags.includes('sheetal-vani')) ||
+        ((entry.id.includes('speech') || entry.themes.includes('mind-speech')) &&
+          !entry.keywords.some((k) => /खोजी|सार शब्द|गहि|सबद/.test(k)));
+
+      if (isSakhiShabdOrTruth && isEntrySpeech) {
+        score -= 250; // Heavily penalize sweet speech when the Sakhi is about Shabd / Truth
+      } else if (isSakhiSpeech && !isEntrySpeech && !entry.themes.includes('mind-speech')) {
+        score -= 100;
+      }
+
+      // 3. Keyword matches
       for (const kw of entry.keywords) {
         const kwLower = kw.toLowerCase();
         if (verseBlob.includes(kwLower)) score += 35;
         else if (meaningBlob.includes(kwLower)) score += 4;
       }
+
+      // 4. Broad Theme matches
       for (const theme of entry.themes) {
         if (verseThemeSet.has(theme)) score += 30;
         if (primarySet.has(theme)) score += 14;
       }
+
       return { entry, score };
     })
     .sort((a, b) => b.score - a.score);
@@ -350,10 +398,10 @@ export function buildThemeOneLineBlessing(sakhi: Sakhi, language: Language): str
  */
 function buildSakhiSpecificQuiz(sakhi: Sakhi, language: Language): ElevenStepQuizQuestion[] {
   return buildFiveDimensionQuiz(sakhi, language).map((q) => ({
-    question: q.question,
+    id: q.id,
+    angle: q.angle,
+    questionText: q.question,
     options: q.options,
-    correctIndex: q.correctIndex,
-    explanation: q.explanation,
   }));
 }
 
@@ -385,12 +433,41 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
       ? `Apply the core wisdom of "${firstLine}" deliberately in your next conversation or decision.`
       : `"${firstLine}" के मूल सत्य को आज अपनी बातचीत, व्यवहार और निर्णयों में उतारें।`);
 
+  const formatWordTakeaway = (
+    w: { word: string; meaning: string },
+    isSecondary: boolean
+  ): string => {
+    const isCautionary = /बिगोय|नष्ट|काल|भटकाव|अज्ञान|दोष|पाखंड|शत्रु|दुसमन|अहं|क्रोध|लोभ|विकार|मोह|झूठ|ruin|waste|perish|enemy|delusion|ignorance|pride/.test(
+      `${w.word} ${w.meaning}`.toLowerCase()
+    );
+
+    if (isCautionary) {
+      if (language === 'pb') {
+        return `"${w.word}" (${w.meaning}) ਦੀ ਚੇਤਾਵਨੀ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖ ਕੇ ਵਿਅਰਥ ਭਟਕਣ ਅਤੇ ਆਤਮਿਕ ਨੁਕਸਾਨ ਤੋਂ ਸਦਾ ਬਚੋ।`;
+      }
+      if (language === 'en') {
+        return `Heed the warning of "${w.word}" (${w.meaning}) to steer clear of spiritual delusion and wasted life.`;
+      }
+      return `"${w.word}" (${w.meaning}) की चेतावनी को ध्यान में रखकर व्यर्थ भटकाव और आध्यात्मिक पतन से अपनी रक्षा करें।`;
+    }
+
+    if (language === 'pb') {
+      return isSecondary
+        ? `"${w.word}" (${w.meaning}) ਦੇ ਮਰਮ ਨੂੰ ਪਛਾਣ ਕੇ ਅੰਦਰੂਨੀ ਵਿਵੇਕ ਅਤੇ ਸ਼ੁੱਧੀ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰੋ।`
+        : `ਪਾਵਨ ਸੰਕੇਤ "${w.word}" (${w.meaning}) ਨੂੰ ਜੀਵਨ ਵਿੱਚ ਅਪਣਾ ਕੇ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਤੇ ਇਕਾਗਰ ਰੱਖੋ।`;
+    }
+    if (language === 'en') {
+      return isSecondary
+        ? `Recognize the deeper significance of "${w.word}" (${w.meaning}) in daily self-observation.`
+        : `Embody "${w.word}" (${w.meaning}) whenever restlessness or doubt arises.`;
+    }
+    return isSecondary
+      ? `साखी के प्रमुख संकेत "${w.word}" (${w.meaning}) को आचरण में उतारकर अंतःकरण को निर्मल रखें।`
+      : `साखी के पावन सूत्र "${w.word}" (${w.meaning}) का स्मरण रखकर हर परिस्थिति में विवेक को स्थिर करें।`;
+  };
+
   const keyPoint2 = words[0]
-    ? language === 'pb'
-      ? `ਪ੍ਰਤੀਕ "${words[0].word}" (${words[0].meaning}) ਨੂੰ ਯਾਦ ਰੱਖ ਕੇ ਮਨ ਦੇ ਵਿਕਾਰਾਂ ਨੂੰ ਸ਼ਾਂਤ ਕਰੋ।`
-      : language === 'en'
-      ? `Hold the symbol "${words[0].word}" (${words[0].meaning}) in awareness whenever inner restlessness rises.`
-      : `प्रतीक "${words[0].word}" (${words[0].meaning}) का स्मरण रखकर प्रत्येक उत्तेजना के समय मन को स्थिर करें।`
+    ? formatWordTakeaway(words[0], false)
     : language === 'pb'
     ? `'${categoryTitle}' ਅਨੁਸਾਰ ਮਨ ਦੀ ਪਰਖ ਕਰਦਿਆਂ ਸੱਚਾ ਵਿਵੇਕ ਧਾਰਨ ਕਰੋ।`
     : language === 'en'
@@ -398,11 +475,9 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
     : `'${categoryTitle}' की इस वाणी के अनुरूप प्रतिकूल परिस्थिति में भी विवेक बनाए रखें।`;
 
   const keyPoint3 = words[1]
-    ? language === 'pb'
-      ? `"${words[1].word}" (${words[1].meaning}) ਦੇ ਮਰਮ ਨੂੰ ਪਛਾਣ ਕੇ ਅੰਦਰੂਨੀ ਸ਼ੁੱਧੀ ਵਧਾਓ।`
-      : language === 'en'
-      ? `Recognize the deeper insight behind "${words[1].word}" (${words[1].meaning}) in daily self-observation.`
-      : `साखी के प्रमुख संकेत "${words[1].word}" (${words[1].meaning}) को अंतरंग साधना में धारण करें।`
+    ? formatWordTakeaway(words[1], true)
+    : words[2]
+    ? formatWordTakeaway(words[2], true)
     : contextNote ||
       (language === 'pb'
         ? `ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।`

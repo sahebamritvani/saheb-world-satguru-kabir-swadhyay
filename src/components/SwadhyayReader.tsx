@@ -3709,7 +3709,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     return (
                       <div className="space-y-4 bg-white/70 dark:bg-zinc-800/70 p-5 rounded-2xl border border-amber-500/20 shadow-xs">
                         <p className="text-sm font-bold font-serif leading-relaxed" style={{ color: rc.text }}>
-                          {quizCurrentIdx + 1}. {q.question}
+                          {quizCurrentIdx + 1}. {q.questionText || (q as any).question}
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -3717,7 +3717,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                             let btnStyle = { borderColor: rc.border, backgroundColor: rc.bg };
                             let labelColor = rc.maroon;
                             if (isSubmitted) {
-                              if (oIdx === q.correctIndex) {
+                              if (opt.isCorrect) {
                                 btnStyle = { borderColor: '#16a34a', backgroundColor: 'rgba(22, 163, 74, 0.1)' };
                                 labelColor = '#16a34a';
                               } else if (selectedOptIdx === oIdx) {
@@ -3744,26 +3744,31 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                                 <span className="font-bold px-1.5 py-0.5 rounded text-[0.625rem] bg-amber-100 dark:bg-amber-900/50" style={{ color: labelColor }}>
                                   ({optionLabels[oIdx]})
                                 </span>
-                                <span className="flex-1 font-serif leading-snug" style={{ color: rc.text }}>{opt}</span>
+                                <span className="flex-1 font-serif leading-snug" style={{ color: rc.text }}>{opt.text}</span>
                               </button>
                             );
                           })}
                         </div>
 
-                        {isSubmitted && (
-                          <div className={`p-3 rounded-xl text-xs font-serif space-y-1 animate-fadeIn ${
-                            selectedOptIdx === q.correctIndex 
-                              ? 'bg-green-500/10 border border-green-500/30 text-green-900 dark:text-green-200' 
-                              : 'bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200'
-                          }`}>
-                            <p className="font-bold flex items-center gap-1">
-                              {selectedOptIdx === q.correctIndex
-                                ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ (Correct!)' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
-                                : (language === 'pb' ? '💡 ਸਹੀ ਉੱਤਰ ਦੀ ਵਿਆਖਿਆ:' : language === 'en' ? '💡 Answer Explanation:' : '💡 सही उत्तर की व्याख्या:')}
-                            </p>
-                            <p className="italic leading-relaxed">{q.explanation}</p>
-                          </div>
-                        )}
+                        {isSubmitted && (() => {
+                          const selectedOpt = optionsList[selectedOptIdx];
+                          const rawFeedback = selectedOpt?.feedback || '';
+                          const cleanFeedback = rawFeedback.replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '').trim() || rawFeedback;
+                          return (
+                            <div className={`p-3.5 rounded-xl text-xs font-serif space-y-1 animate-fadeIn ${
+                              selectedOpt?.isCorrect 
+                                ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200' 
+                                : 'bg-rose-500/10 border border-rose-500/30 text-rose-900 dark:text-rose-200'
+                            }`}>
+                              <p className="font-bold flex items-center gap-1.5 text-xs sm:text-sm">
+                                {selectedOpt?.isCorrect
+                                  ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ!' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
+                                  : (language === 'pb' ? '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ' : language === 'en' ? '✗ Incorrect Option' : '✗ यह विकल्प सही नहीं है')}
+                              </p>
+                              <p className="leading-relaxed opacity-95">{cleanFeedback}</p>
+                            </div>
+                          );
+                        })()}
 
                         <div className="flex items-center justify-between pt-2">
                           <button

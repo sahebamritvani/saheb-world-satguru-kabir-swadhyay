@@ -318,15 +318,15 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
         en: qEn.question,
       },
       options: {
-        hi: isHi ? qActive.options : qHi.options,
-        pb: isPb ? qActive.options : qPb.options,
-        en: !isHi && !isPb ? qActive.options : qEn.options,
+        hi: (isHi ? qActive.options : qHi.options).map((o) => o.text),
+        pb: (isPb ? qActive.options : qPb.options).map((o) => o.text),
+        en: (!isHi && !isPb ? qActive.options : qEn.options).map((o) => o.text),
       },
-      correctIndex: qActive.correctIndex,
+      correctIndex: qActive.options.findIndex((o) => o.isCorrect) >= 0 ? qActive.options.findIndex((o) => o.isCorrect) : (qActive.correctIndex ?? 0),
       explanation: {
-        hi: qHi.explanation,
-        pb: qPb.explanation,
-        en: qEn.explanation,
+        hi: qHi.options.find((o) => o.isCorrect)?.feedback || qHi.explanation,
+        pb: qPb.options.find((o) => o.isCorrect)?.feedback || qPb.explanation,
+        en: qEn.options.find((o) => o.isCorrect)?.feedback || qEn.explanation,
       },
     };
   });

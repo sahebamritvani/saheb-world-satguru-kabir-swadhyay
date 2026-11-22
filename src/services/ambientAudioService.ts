@@ -141,12 +141,37 @@ class AmbientAudioEngine {
   }
 
   private initContext() {
-    if (!this.ctx && typeof window !== 'undefined') {
-      const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      this.ctx = new AudioContextClass();
+    if (typeof window === 'undefined') return;
+
+    if (this.ctx && this.ctx.state === 'closed') {
+      this.ctx = null;
+      this.masterGain = null;
+      this.cachedBansuriNoiseBuffer = null;
     }
-    if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume().catch(() => {});
+
+    if (!this.ctx) {
+      const AudioContextClass =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      if (AudioContextClass) {
+        this.ctx = new AudioContextClass();
+      }
+    }
+
+    if (this.ctx) {
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume().catch(() => {});
+      }
+      // Mobile Safari / Chrome gesture unlock via zero-amplitude 1-sample buffer
+      try {
+        const silentBuf = this.ctx.createBuffer(1, 1, this.ctx.sampleRate);
+        const silentSrc = this.ctx.createBufferSource();
+        silentSrc.buffer = silentBuf;
+        silentSrc.connect(this.ctx.destination);
+        silentSrc.start(0);
+      } catch {
+        // Ignore if unlock fails
+      }
     }
   }
 

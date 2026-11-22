@@ -62,8 +62,11 @@ import {
   Flower2,
   Star,
   Maximize2,
-  Minimize2
+  Minimize2,
+  Database
 } from 'lucide-react';
+import { OPEN_ADMIN_INJECTOR_EVENT } from '../services/adminSlotInjectorStore';
+import { isAdminAuthenticated } from '../services/adminAuth';
 import { motion, AnimatePresence } from 'motion/react';
 import { QRCodeSVG } from 'qrcode.react';
 import { Language, AppView, SACRED_BRANDING } from '../types';
@@ -122,6 +125,17 @@ export const Layout: React.FC<LayoutProps> = ({
   const t = translations[language] || translations.hi;
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
+
+  useEffect(() => {
+    const syncAdmin = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener('sahebworld:admin-auth-change', syncAdmin);
+    window.addEventListener('storage', syncAdmin);
+    return () => {
+      window.removeEventListener('sahebworld:admin-auth-change', syncAdmin);
+      window.removeEventListener('storage', syncAdmin);
+    };
+  }, []);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -362,6 +376,26 @@ export const Layout: React.FC<LayoutProps> = ({
     const handleOpenSuite = () => setShowReadingSuiteModal(true);
     window.addEventListener('sahebworld_open_advanced_reading_suite', handleOpenSuite);
     return () => window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenSuite);
+  }, []);
+
+  useEffect(() => {
+    const handleOpenAboutSection = (e: Event) => {
+      const detail = (e as CustomEvent<{ section?: AboutDisclaimerSection }>).detail;
+      if (detail?.section) {
+        setAboutModalSection(detail.section);
+      }
+    };
+    const handleOpenKarNainon = () => setShowKarNainonDeedarModal(true);
+    const handleOpenSantoShabdai = () => setShowSantoShabdaiShabdModal(true);
+
+    window.addEventListener('sahebworld_open_about_modal', handleOpenAboutSection);
+    window.addEventListener('sahebworld_open_kar_nainon_deedar', handleOpenKarNainon);
+    window.addEventListener('sahebworld_open_santo_shabdai_shabd', handleOpenSantoShabdai);
+    return () => {
+      window.removeEventListener('sahebworld_open_about_modal', handleOpenAboutSection);
+      window.removeEventListener('sahebworld_open_kar_nainon_deedar', handleOpenKarNainon);
+      window.removeEventListener('sahebworld_open_santo_shabdai_shabd', handleOpenSantoShabdai);
+    };
   }, []);
 
   const [shareFallbackBanner, setShareFallbackBanner] = useState<{ whatsappUrl: string } | null>(null);
@@ -1775,6 +1809,28 @@ export const Layout: React.FC<LayoutProps> = ({
               <Settings className="w-3.5 h-3.5 text-amber-800 shrink-0" />
             </button>
 
+            {/* Admin-Only Tool Trigger (प्रशासक टूल) */}
+            {isAdmin && (
+              <button
+                type="button"
+                id="header-open-admin-injector-btn"
+                onClick={() => {
+                  sacredHaptics.lightTap();
+                  window.dispatchEvent(new CustomEvent(OPEN_ADMIN_INJECTOR_EVENT));
+                }}
+                title="प्रशासक टूल (Admin Data Layer Injector)"
+                style={{
+                  borderColor: theme.cardBorder,
+                  backgroundColor: theme.cardBg,
+                  color: theme.textSecondary,
+                }}
+                className="h-6 sm:h-6.5 px-1.5 rounded-md border flex items-center justify-center transition cursor-pointer opacity-75 hover:opacity-100 shrink-0"
+                aria-label="प्रशासक टूल"
+              >
+                <Database className="w-3 h-3 text-amber-800 dark:text-amber-300 shrink-0" />
+              </button>
+            )}
+
             {/* Language Diagnostics / Tri-Lingual Status & Audit Trigger */}
             <button
               id="header-open-language-diagnostics-btn"
@@ -2140,11 +2196,10 @@ export const Layout: React.FC<LayoutProps> = ({
                   </div>
                 )}
 
-                {/* ================= 4 ORDERED & HARMONIZED SECTIONS ================= */}
+                {/* ================= 5 ORDERED & HARMONIZED SECTIONS ================= */}
                 <div className="space-y-4 pt-1">
                   {sidebarSections.map((section) => {
                     const isCollapsed = collapsedSections[section.id];
-                    const SectionIcon = section.icon;
 
                     return (
                       <div 
@@ -2306,62 +2361,135 @@ export const Layout: React.FC<LayoutProps> = ({
                       </div>
                     );
                   })}
-                </div>
 
-                <div className="pt-4 border-t border-dashed border-amber-500/20 mt-4 space-y-1">
-                  <button
-                    id="sidebar-user-guide-btn"
-                    type="button"
-                    onClick={() => {
-                      setIsSidebarOpen(false);
-                      setAboutModalSection('guide');
-                    }}
-                    style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
-                  >
-                    <BookOpen className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਉਪਭੋਗਤਾ ਮਾਰਗਦਰਸ਼ਿਕਾ' : language === 'en' ? 'User Guide' : 'उपयोगकर्ता मार्गदर्शिका'}</span>
-                  </button>
+                  {/* ५. उपयोगकर्ता मार्गदर्शिका एवं ऐप नीतियां (Collapsible Drawer Category) */}
+                  {(() => {
+                    const infoSectionId = 'section-guide-about-policies';
+                    const isInfoCollapsed = collapsedSections[infoSectionId];
+                    const infoItems: Array<{
+                      id: string;
+                      section: AboutDisclaimerSection;
+                      icon: React.ComponentType<{ className?: string }>;
+                      label: { hi: string; pb: string; en: string };
+                    }> = [
+                      {
+                        id: 'sidebar-user-guide-btn',
+                        section: 'guide',
+                        icon: BookOpen,
+                        label: {
+                          hi: 'उपयोगकर्ता मार्गदर्शिका',
+                          pb: 'ਉਪਭੋਗਤਾ ਮਾਰਗਦਰਸ਼ਿਕਾ',
+                          en: 'User Guide',
+                        },
+                      },
+                      {
+                        id: 'sidebar-about-us-btn',
+                        section: 'about',
+                        icon: Info,
+                        label: {
+                          hi: 'हमारे बारे में',
+                          pb: 'ਸਾਡੇ ਬਾਰੇ',
+                          en: 'About Us',
+                        },
+                      },
+                      {
+                        id: 'sidebar-disclaimer-btn',
+                        section: 'disclaimer',
+                        icon: ShieldCheck,
+                        label: {
+                          hi: 'अस्वीकरण',
+                          pb: 'ਅਸਵੀਕਾਰਤਾ',
+                          en: 'Disclaimer',
+                        },
+                      },
+                      {
+                        id: 'sidebar-privacy-policy-btn',
+                        section: 'privacy',
+                        icon: Lock,
+                        label: {
+                          hi: 'गोपनीयता नीति',
+                          pb: 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ',
+                          en: 'Privacy Policy',
+                        },
+                      },
+                    ];
 
-                  <button
-                    id="sidebar-about-us-btn"
-                    type="button"
-                    onClick={() => {
-                      setIsSidebarOpen(false);
-                      setAboutModalSection('about');
-                    }}
-                    style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
-                  >
-                    <Info className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ' : language === 'en' ? 'About Us' : 'हमारे बारे में'}</span>
-                  </button>
-                  <button
-                    id="sidebar-disclaimer-btn"
-                    type="button"
-                    onClick={() => {
-                      setIsSidebarOpen(false);
-                      setAboutModalSection('disclaimer');
-                    }}
-                    style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
-                  >
-                    <ShieldCheck className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण'}</span>
-                  </button>
-                  <button
-                    id="sidebar-privacy-policy-btn"
-                    type="button"
-                    onClick={() => {
-                      setIsSidebarOpen(false);
-                      setAboutModalSection('privacy');
-                    }}
-                    style={{ color: theme.textSecondary }}
-                    className="w-full px-4 py-2 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-xl transition text-sm font-medium text-left cursor-pointer"
-                  >
-                    <Lock className="w-4 h-4 opacity-70 text-amber-600 shrink-0" />
-                    <span>{language === 'pb' ? 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ' : language === 'en' ? 'Privacy Policy' : 'गोपनीयता नीति'}</span>
-                  </button>
+                    return (
+                      <div
+                        className="rounded-2xl border p-2 shadow-2xs transition-all space-y-1.5"
+                        style={{
+                          backgroundColor: 'rgba(0,0,0,0.015)',
+                          borderColor: theme.cardBorder,
+                        }}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => {
+                            sacredHaptics.lightTap();
+                            toggleSectionCollapse(infoSectionId);
+                          }}
+                          style={{
+                            backgroundColor: theme.stepActiveBg,
+                            borderColor: theme.accentGold,
+                            color: theme.sacredMaroon,
+                          }}
+                          className="w-full px-3 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group"
+                        >
+                          <div className="flex items-center gap-2 text-left min-w-0">
+                            <span className="font-serif font-black text-amber-800 dark:text-amber-300 text-xs shrink-0">
+                              {language === 'pb' ? '੫.' : language === 'en' ? '5.' : '५.'}
+                            </span>
+                            <span className="font-serif font-black text-xs sm:text-[0.8125rem] leading-tight truncate">
+                              {language === 'pb'
+                                ? 'ਮਾਰਗਦਰਸ਼ਿਕਾ, ਜਾਣ-ਪਛਾਣ ਤੇ ਨੀਤੀਆਂ'
+                                : language === 'en'
+                                ? 'User Guide, About & Policies'
+                                : 'मार्गदर्शिका, परिचय एवं नीतियां'}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className="text-[0.625rem] px-1.5 py-0.5 rounded-md font-bold bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200">
+                              {infoItems.length}
+                            </span>
+                            {isInfoCollapsed ? (
+                              <ChevronDown className="w-3.5 h-3.5 text-amber-700 transition-transform group-hover:scale-110" />
+                            ) : (
+                              <ChevronUp className="w-3.5 h-3.5 text-amber-700 transition-transform group-hover:scale-110" />
+                            )}
+                          </div>
+                        </button>
+
+                        {!isInfoCollapsed && (
+                          <div className="space-y-1 pt-1">
+                            {infoItems.map((item) => {
+                              const Icon = item.icon;
+                              return (
+                                <button
+                                  key={item.id}
+                                  id={item.id}
+                                  type="button"
+                                  onClick={() => {
+                                    sacredHaptics.lightTap();
+                                    setIsSidebarOpen(false);
+                                    setAboutModalSection(item.section);
+                                  }}
+                                  style={{ color: theme.textPrimary }}
+                                  className="w-full px-3 py-2 rounded-xl flex items-center gap-2.5 transition-all border border-transparent text-left cursor-pointer group hover:bg-black/5 dark:hover:bg-white/5"
+                                >
+                                  <div className="p-1.5 rounded-lg shrink-0 transition-transform group-hover:scale-105 bg-black/5 dark:bg-white/5">
+                                    <Icon className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
+                                  </div>
+                                  <span className="text-xs sm:text-[12.5px] font-serif leading-tight flex-1">
+                                    {item.label[language] || item.label.hi}
+                                  </span>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
                 </div>
 
                 {/* Sahaj Mode Indicator in Sidebar */}
@@ -2401,6 +2529,21 @@ export const Layout: React.FC<LayoutProps> = ({
                 >
                   {exactBottom}
                 </div>
+                {isAdmin && (
+                  <button
+                    type="button"
+                    id="sidebar-open-admin-injector-btn"
+                    onClick={() => {
+                      setIsSidebarOpen(false);
+                      window.dispatchEvent(new CustomEvent(OPEN_ADMIN_INJECTOR_EVENT));
+                    }}
+                    style={{ color: theme.textMuted }}
+                    className="inline-flex items-center justify-center gap-1 text-[10px] font-serif opacity-75 hover:opacity-100 transition cursor-pointer"
+                  >
+                    <Database className="w-3 h-3" />
+                    <span>प्रशासक टूल</span>
+                  </button>
+                )}
               </div>
             </motion.div>
           </>

@@ -408,6 +408,8 @@ body.i18n-inspect-keys-active [data-i18n-key]::after {
   }
 }
 
-
-
-
+/* Global Frosted Glass Surface Blur when Nature Wallpaper is Active */
+[data-has-wallpaper="true"] :is(div, section, article, aside):is(.rounded-2xl, .rounded-3xl)[style*="background-color"] {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

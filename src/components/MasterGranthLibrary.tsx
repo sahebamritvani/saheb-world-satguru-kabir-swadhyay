@@ -50,8 +50,9 @@ import { translations, getVerseTypeLabel } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { hindiToPunjabiWordConverter } from '../services/transliteration';
-import { MASTER_GRANTH_CATALOG, loadMasterGranth, loadMasterGranthChapter } from '../data/granths/masterGranthIndex';
+import { MASTER_GRANTH_CATALOG, loadMasterGranth, loadMasterGranthChapter, clearMasterGranthCaches } from '../data/granths/masterGranthIndex';
 import { MasterGranth, GranthChapter, GranthVerse } from '../data/granths/granthTypes';
+import { ADMIN_SLOTS_UPDATED_EVENT } from '../services/adminSlotInjectorStore';
 import { SacredLoader } from './SacredLoader';
 import { PaginationControls } from './PaginationControls';
 import { generateUniqueUlatvasiAnalysis } from '../services/ulatvasiEssenceEngine';
@@ -149,6 +150,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedGranthSlug, setSelectedGranthSlug] = useState<string>(initialGranthId || '');
   const [selectedChapterId, setSelectedChapterId] = useState<string>('');
+  const [adminSlotsVersion, setAdminSlotsVersion] = useState<number>(0);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('all');
   const [acceptedSankalps, setAcceptedSankalps] = useState<Record<string | number, boolean>>({});
@@ -164,9 +166,18 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
     const handleOpenAdvancedSuite = () => {
       setShowAdvancedSuiteModal(true);
     };
+    const handleAdminSlotsUpdated = () => {
+      clearMasterGranthCaches();
+      setLoadedGranthsMap(Object.fromEntries(MASTER_GRANTH_CATALOG.map((g) => [g.slug, g])));
+      setSelectedChapterId('');
+      setCurrentPage(1);
+      setAdminSlotsVersion((v) => v + 1);
+    };
     window.addEventListener('sahebworld_open_advanced_reading_suite', handleOpenAdvancedSuite);
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
     return () => {
       window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenAdvancedSuite);
+      window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
     };
   }, []);
 
@@ -456,7 +467,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
     return () => {
       cancelled = true;
     };
-  }, [selectedGranthSlug]);
+  }, [selectedGranthSlug, adminSlotsVersion]);
 
   // Dynamically load specific chapter verses (essential for Sakhi Sangrah's 37 lazy Angs)
   useEffect(() => {

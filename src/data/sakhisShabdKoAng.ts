@@ -551,7 +551,8 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     id: 'shabd-8',
     number: 1108,
     grantha: 'Sakhi Sangrah',
-    category: 'chetavani',
+    category: 'shabd-ko-ang',
+    themeTags: ['satya-khoj', 'saar-shabd', 'shabd-sadhan'],
     categoryTitle: {
       hi: 'शब्द को अंग - ८',
       pb: 'ਸ਼ਬਦ ਕੋ ਅੰਗ - ੮',
@@ -559,43 +560,46 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     text: {
       hi: 'खोजी हुआ शब्द का, धन्य सन्त जन सोय।\nकहैं कबीर गहि शब्द को, कबहु न जाय बिगोय।।',
-      pb: devanagariToGurmukhi('खोजी हुआ शब्द का, धन्य सन्त जन सोय। कहैं कबीर गहि शब्द को, कबहु न जाय बिगोय।।'),
-      en: 'Khoji hua shabd ka, dhanya sant jan soy. Kahein Kabir gahi shabd ko, kabahu na jay bigoy..'
+      pb: 'ਖੋਜੀ ਹੂਆ ਸ਼ਬਦ ਕਾ, ਧੰਨ ਸੰਤ ਜਨ ਸੋਇ।\nਕਹੈਂ ਕਬੀਰ ਗਹਿ ਸ਼ਬਦ ਕੋ, ਕਬਹੂ ਨ ਜਾਇ ਬਿਗੋਇ॥',
+      en: 'Khoji hua shabd ka, dhanya sant jan soy.\nKahein Kabir gahi shabd ko, kabahu na jay bigoy..'
     },
-    transliteration: 'Khoji hua shabd का, dhanya sant jan soy. Kahein Kabir gahi shabd ko, kabahu na jay bigoy.',
+    transliteration: 'Khoji hua shabd ka, dhanya sant jan soy. Kahein Kabir gahi shabd ko, kabahu na jay bigoy.',
     bhavarth: {
-      hi: 'जो सत्य-ज्ञान के निर्णय-वचनों की खोज करने वाला है, वह संत-जन धन्य है। कबीरजी कहते हैं कि जो परम सत्य के ठोस शब्द-ज्ञान को धारण करता है, वह कभी भी भूल नहीं करता और उसका जीवन नष्ट नहीं होता।',
-      pb: devanagariToGurmukhi('ਜਿਹੜਾ ਮਨੁੱਖ ਸੱਚੇ ਸ਼ਬਦ ਦਾ ਖੋਜੀ ਹੈ, ਉਹ ਸੰਤ ਧੰਨ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸ਼ਬਦ ਨੂੰ ਗ੍ਰਹਿਣ ਕਰਨ ਵਾਲਾ ਕਦੇ ਵਿਗੜਦਾ ਨਹੀਂ।'),
-      en: 'Blessed are the saintly souls who earnestly seek the true Word. Kabir says: One who grasps and lives by the Word never goes astray.'
+      hi: 'जो साधक परम सत्य (सार-शब्द) का सच्चा अन्वेषक बनकर उसे अंतःकरण में धारण करता है, वह संत जन धन्य है। सतगुरु कबीर साहेब कहते हैं कि जो सत्य-शब्द को मजबूती से पकड़ लेता है, उसका अमूल्य जीवन कभी व्यर्थ नष्ट नहीं होता और वह भ्रम में नहीं भटकता।',
+      pb: 'ਜਿਹੜਾ ਸਾਧਕ ਪਰਮ ਸਤਿ (ਸਾਰ-ਸ਼ਬਦ) ਦਾ ਸੱਚਾ ਖੋਜੀ ਬਣ ਕੇ ਉਸ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹ ਸੰਤ ਧੰਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਤਯ-ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਅਮੋਲਕ ਜੀਵਨ ਕਦੇ ਭਟਕ ਕੇ ਵਿਅਰਥ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Blessed is that saintly seeker who investigates the Ultimate Truth (Saar-Shabd) and anchors it within. Satguru Kabir Saheb affirms that whoever firmly holds onto the living Word never goes astray nor is their precious human life wasted.'
     },
     wordMeanings: {
       hi: [
-        { word: 'खोजी (Khoji)', meaning: 'अन्वेषक / तलाश करने वाला' },
-        { word: 'बिगोय (Bigoy)', meaning: 'नष्ट होना / भटकना' }
+        { word: 'खोजी (Khoji)', meaning: 'सत्य का अन्वेषक / शोधक' },
+        { word: 'गहि (Gahi)', meaning: 'दृढ़ता से पकड़ना / अंतःकरण में धारण करना' },
+        { word: 'बिगोय (Bigoy)', meaning: 'नष्ट होना / अज्ञान में व्यर्थ भटकना' }
       ],
       pb: [
-        { word: 'ਖੋਜੀ (Khoji)', meaning: 'ਭਾਲ ਕਰਨ ਵਾਲਾ' },
-        { word: 'ਬਿਗੋਯ (Bigoy)', meaning: 'ਨਸ਼ਟ ਹੋਣਾ' }
+        { word: 'ਖੋਜੀ (Khoji)', meaning: 'ਸੱਚ ਦਾ ਖੋਜੀ / ਅਨਵੇਸ਼ਕ' },
+        { word: 'ਗਹਿ (Gahi)', meaning: 'ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜਨਾ / ਧਾਰਨ ਕਰਨਾ' },
+        { word: 'ਬਿਗੋਇ (Bigoy)', meaning: 'ਨਸ਼ਟ ਹੋਣਾ / ਭਟਕਣਾ' }
       ],
       en: [
-        { word: 'Khoji', meaning: 'Seeker / investigator' },
-        { word: 'Bigoy', meaning: 'Ruined / lost' }
+        { word: 'Khoji', meaning: 'Truth-seeker / spiritual investigator' },
+        { word: 'Gahi', meaning: 'To grasp firmly / to embody deeply' },
+        { word: 'Bigoy', meaning: 'To be ruined / to go astray in delusion' }
       ]
     },
     contemplation: {
-      hi: 'क्या मैं सत्य शब्द का सच्चा खोजी बनकर जीवन जी रहा हूँ?',
-      pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਸੱਚੇ ਸ਼ਬਦ ਦਾ ਖੋਜੀ ਹਾਂ?'),
-      en: 'Am I a dedicated seeker of the eternal Truth?'
+      hi: 'क्या मैं बाहरी दिखावे छोड़कर अपने अंतर्मन में अविनाशी सार-शब्द का सच्चा खोजी बन पाया हूँ?',
+      pb: 'ਕੀ ਮੈਂ ਬਾਹਰੀ ਵਿਖਾਵੇ ਛੱਡ ਕੇ ਆਪਣੇ ਅੰਦਰ ਸਾਰ-ਸ਼ਬਦ ਦਾ ਸੱਚਾ ਖੋਜੀ ਬਣ ਸਕਿਆ ਹਾਂ?',
+      en: 'Am I moving beyond outer rituals to become a genuine inner seeker of the eternal Word?'
     },
     practicalApplication: {
-      hi: 'प्रतिदिन संतों की वाणी का मनन और शोध करें।',
-      pb: devanagariToGurmukhi('ਰੋਜ਼ਾਨਾ ਸੰਤਾਂ ਦੀ ਬਾਣੀ ਦਾ ਚਿੰਤਨ ਕਰੋ।'),
-      en: 'Contemplate sacred scriptures daily with sincere curiosity.'
+      hi: 'प्रतिदिन संतों की वाणी का मनन करना और हर विचार को सत्य व विवेक की कसौटी पर परखना।',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸੰਤਾਂ ਦੀ ਬਾਣੀ ਦਾ ਚਿੰਤਨ ਕਰਨਾ ਅਤੇ ਹਰ ਵਿਚਾਰ ਨੂੰ ਸੱਚ ਤੇ ਵਿਵੇਕ ਦੀ ਕਸੌਟੀ ਤੇ ਪਰਖਣਾ।',
+      en: 'Contemplate the saints’ wisdom daily, testing every thought and action against truth and discernment.'
     },
     samarpanPrayer: {
-      hi: 'हे सतगुरु! मेरी जिज्ञासा को सदा जाग्रत रखें। साहेब बंदगी साहेब!',
-      pb: devanagariToGurmukhi('ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੀ ਜਿਗਿਆਸਾ ਜਾਗਰਤ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!'),
-      en: 'O Satguru! Keep my longing for Truth ever alive.'
+      hi: 'हे सतगुरु कबीर साहेब! मुझे सार-शब्द को दृढ़ता से धारण करने का विवेक और निष्ठा प्रदान करें। साहेब बंदगी साहेब!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਸਾਰ-ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਧਾਰਨ ਕਰਨ ਦਾ ਵਿਵੇਕ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      en: 'O Satguru Kabir Saheb! Bless me with the steadfast discernment to hold firmly to the sacred Word. Saheb Bandagi Saheb!'
     },
     quiz: []
   },

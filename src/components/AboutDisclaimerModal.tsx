@@ -5,8 +5,21 @@ import { Language, SACRED_BRANDING } from '../types';
 import { AUTHORIZED_ADMIN_EMAIL } from '../services/adminAuth';
 import { UserGuideView } from './UserGuideView';
 import { sacredHaptics } from '../services/haptics';
+import {
+  ADMIN_SLOTS_UPDATED_EVENT,
+  AdminGranthSlotId,
+  getInjectedGranthChapters,
+  getSlotStatus,
+} from '../services/adminSlotInjectorStore';
 
 export type AboutDisclaimerSection = 'about' | 'disclaimer' | 'privacy' | 'guide';
+
+const SECTION_SLOT_MAP: Record<AboutDisclaimerSection, AdminGranthSlotId> = {
+  guide: 'slot-51-user-guide',
+  about: 'slot-52-about-us',
+  disclaimer: 'slot-53-disclaimer',
+  privacy: 'slot-54-privacy-policy',
+};
 
 interface AboutDisclaimerModalProps {
   isOpen: boolean;
@@ -172,12 +185,23 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
 }) => {
   const { theme } = useAppTheme();
   const [currentTab, setCurrentTab] = useState<AboutDisclaimerSection>(section);
+  const [slotRefreshTick, setSlotRefreshTick] = useState(0);
 
   useEffect(() => {
     setCurrentTab(section);
   }, [section]);
 
+  useEffect(() => {
+    const onUpdated = () => setSlotRefreshTick((t) => t + 1);
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, onUpdated);
+    return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, onUpdated);
+  }, []);
+
   if (!isOpen) return null;
+
+  const activeSlotId = SECTION_SLOT_MAP[currentTab];
+  const activeSlotLoaded = slotRefreshTick >= 0 && getSlotStatus(activeSlotId).loaded;
+  const activeSlotChapters = activeSlotLoaded ? getInjectedGranthChapters(activeSlotId) : null;
 
   const exactTop = SACRED_BRANDING.header[language];
   const exactBottom = SACRED_BRANDING.footer[language];
@@ -390,6 +414,46 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
                     <span>📧 {content.privacyEmailLabel} {AUTHORIZED_ADMIN_EMAIL}</span>
                   </a>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {activeSlotChapters && activeSlotChapters.length > 0 && (
+            <div
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
+              className="p-4 rounded-2xl border space-y-3"
+            >
+              <h3 className="text-sm font-black font-serif" style={{ color: theme.sacredMaroon }}>
+                {language === 'pb'
+                  ? 'ਪ੍ਰਸ਼ਾਸਕ ਦੁਆਰਾ ਜੋੜੀ ਗਈ ਅਤਿਰਿਕਤ ਜਾਣਕਾਰੀ'
+                  : language === 'en'
+                  ? 'Additional Notes (Admin Loaded)'
+                  : 'अतिरिक्त अद्यतन जानकारी (प्रशासक द्वारा लोडेड)'}
+              </h3>
+              <div className="space-y-2.5">
+                {activeSlotChapters.map((ch) => (
+                  <div
+                    key={ch.id}
+                    style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+                    className="p-3 rounded-xl border space-y-1.5"
+                  >
+                    <p className="text-xs sm:text-sm font-bold font-serif" style={{ color: theme.sacredMaroon }}>
+                      {ch.title[language] || ch.title.hi}
+                    </p>
+                    {ch.verses.map((v) => (
+                      <div key={String(v.id)} className="text-xs sm:text-sm font-serif space-y-1">
+                        {(v.lines[language] || v.lines.hi).map((line, lIdx) => (
+                          <p key={lIdx}>{line}</p>
+                        ))}
+                        {v.bhavarth && (
+                          <p className="text-xs opacity-80" style={{ color: theme.textSecondary }}>
+                            {v.bhavarth[language] || v.bhavarth.hi}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           )}

@@ -25,7 +25,8 @@ import {
   Search,
   History as HistoryIcon,
   Scroll,
-  ShieldCheck
+  ShieldCheck,
+  ArrowLeft
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import type { GranthVerse } from '../data/granths/granthTypes';
@@ -492,6 +493,7 @@ interface UlatvasiQuizProps {
   onClose?: () => void;
   onOpenBlessing?: () => void;
   initialTab?: QuizTabMode;
+  initialUlatvasiId?: string | null;
 }
 
 type QuizTabMode = 'sakhi-5q-quiz' | 'paradox-quest' | 'library' | 'leaderboard' | 'realms' | 'memory-recall';
@@ -502,6 +504,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
   onClose,
   onOpenBlessing,
   initialTab = 'paradox-quest',
+  initialUlatvasiId = null,
 }) => {
   const { theme } = useAppTheme();
   const [localLanguage, setLocalLanguage] = useState<Language>(initialLanguage);
@@ -982,6 +985,39 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
     setIsRevealing(false);
   }, [currentIndex, selectedRealm, shuffleSeed]);
 
+  // Jump directly to a specific Ulatvasi pad when launched via "3D दर्शन एवं गेम"
+  const lastAppliedUlatvasiIdRef = useRef<string | null>(null);
+  const lastPoolSizeRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (!initialUlatvasiId) {
+      lastAppliedUlatvasiIdRef.current = null;
+      return;
+    }
+    const poolChanged = ulatvasiPool.length !== lastPoolSizeRef.current;
+    const idChanged = initialUlatvasiId !== lastAppliedUlatvasiIdRef.current;
+    if (!idChanged && !poolChanged) return;
+
+    const matchedIndex = ulatvasiPool.findIndex((q) => q.id === initialUlatvasiId);
+    if (matchedIndex !== -1) {
+      lastAppliedUlatvasiIdRef.current = initialUlatvasiId;
+      lastPoolSizeRef.current = ulatvasiPool.length;
+      setSelectedRealm('all');
+      setActiveTab('paradox-quest');
+      setCurrentIndex(matchedIndex);
+      setIsFlipped(false);
+      setSelectedOption(null);
+      setIsAnswerChecked(false);
+      setShowClue(false);
+      setTimeout(() => {
+        const el = document.getElementById('ulatvasi-3d-quest-card');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+    }
+  }, [initialUlatvasiId, ulatvasiPool]);
+
   // Timed mode tick
   useEffect(() => {
     if (!isTimedMode || isAnswerChecked) return;
@@ -1071,7 +1107,8 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
 
   // Trilingual UI strings
   const tr = {
-    title: language === 'hi' ? 'उलटबांसी स्वाध्याय' : language === 'pb' ? 'ਉਲਟਬਾਂਸੀ ਸਵਾਧਾਯਾਏ' : 'Ulatvasi Swadhyay',
+    title: language === 'hi' ? 'उलटबांसी स्वाध्याय' : language === 'pb' ? 'ਉਲਟਬਾਂਸੀ ਸਵਾਧਿਆਏ' : 'Ulatvasi Swadhyay',
+    backBtn: language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Back',
     subtitle: language === 'hi' ? 'कबीर साहेब की गुप्त पहेलियों का 3D ज्ञान उद्घाटन' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਗੂੜ੍ਹ ਬੁਝਾਰਤਾਂ ਦਾ ਰਹੱਸ ਉਦਘਾਟਨ' : '3D Unveiling of Kabir’s Esoteric Paradoxes',
     tabSakhi5Q: language === 'hi' ? '🎯 ५-प्रश्न साखी क्विज' : language === 'pb' ? '🎯 ੫-ਪ੍ਰਸ਼ਨ ਸਾਖੀ ਕੁਇਜ਼' : '🎯 5-Question Sakhi Quiz',
     tabQuest: language === 'hi' ? 'रहस्य यात्रा' : language === 'pb' ? 'ਰਹੱਸ ਯਾਤਰਾ' : 'Paradox Quest',
@@ -1128,7 +1165,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-base font-bold tracking-widest font-serif block"
+          className="text-sm sm:text-base font-bold tracking-normal font-serif block"
         >
           {exactTop}
         </span>
@@ -1136,6 +1173,27 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
 
       {/* Main Header & Tab Controls */}
       <div className="p-4 sm:p-6 border-b space-y-4" style={{ borderColor: theme.cardBorder }}>
+        {/* Dedicated Back Navigation Row */}
+        {onClose && (
+          <div className="flex items-center justify-between gap-2">
+            <button
+              id="ulatvasi-back-btn"
+              type="button"
+              onClick={onClose}
+              style={{
+                backgroundColor: theme.bgSecondary,
+                borderColor: theme.cardBorder,
+                color: theme.sacredMaroon,
+              }}
+              className="px-3.5 py-2 min-h-[40px] rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 hover:opacity-90 transition cursor-pointer shadow-xs active:scale-95 font-serif"
+              title={tr.backBtn}
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>{tr.backBtn}</span>
+            </button>
+          </div>
+        )}
+
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div
@@ -1148,13 +1206,14 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
               <Sparkles className="w-6 h-6 text-amber-500 animate-pulse" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span
-                  style={{ backgroundColor: theme.accentGoldLight, color: theme.sacredMaroon }}
-                  className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider border border-amber-400/30"
+                  style={{ color: theme.accentGold }}
+                  className="text-xs font-extrabold font-serif"
                 >
-                  ⚡ ULATVASI 3D GAMING
+                  {language === 'hi' ? '3D दर्शन एवं गेम' : language === 'pb' ? '3D ਦਰਸ਼ਨ ਤੇ ਗੇਮ' : '3D Paradox Quest'}
                 </span>
+                <span aria-hidden="true" style={{ color: theme.textSecondary }}>·</span>
                 <span className="text-xs font-semibold" style={{ color: theme.textSecondary }}>
                   {currentQ.realmTitle[language]}
                 </span>
@@ -1638,9 +1697,9 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
           </div>
 
           {/* 3D PERSPECTIVE FLIP CARD CONTAINER */}
-          <div className="perspective-1200 w-full min-h-[520px]">
+          <div id="ulatvasi-3d-quest-card" className="perspective-1200 w-full">
             <div
-              className={`w-full relative transition-transform duration-700 ease-in-out transform-style-3d ${
+              className={`grid w-full transition-transform duration-700 ease-in-out transform-style-3d ${
                 isFlipped ? 'rotate-y-180' : ''
               } ${isRevealing ? 'animate-pulse scale-[0.98]' : ''}`}
             >
@@ -1652,7 +1711,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                   backgroundColor: theme.bgSecondary,
                   borderColor: isAnswerChecked ? (selectedOption === currentQ.correctIndex ? '#22C55E' : '#EF4444') : theme.borderOrnament,
                 }}
-                className={`w-full rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-5 backface-hidden relative overflow-hidden ${
+                className={`col-start-1 row-start-1 w-full rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-5 backface-hidden relative overflow-hidden ${
                   isFlipped ? 'pointer-events-none' : ''
                 }`}
               >
@@ -1926,7 +1985,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                   backgroundColor: theme.cardBg,
                   borderColor: theme.accentGold,
                 }}
-                className={`w-full absolute top-0 left-0 rounded-3xl border-2 p-5 sm:p-7 shadow-2xl space-y-5 backface-hidden rotate-y-180 animate-mystic-glow ${
+                className={`col-start-1 row-start-1 w-full rounded-3xl border-2 p-5 sm:p-7 shadow-2xl space-y-5 backface-hidden rotate-y-180 animate-mystic-glow overflow-hidden ${
                   !isFlipped ? 'pointer-events-none' : ''
                 }`}
               >
@@ -2336,6 +2395,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                   key={item.id}
                   onClick={() => {
                     if (dbIndex !== -1) {
+                      setSelectedRealm('all');
                       setCurrentIndex(dbIndex);
                       setActiveTab('paradox-quest');
                       window.scrollTo({ top: 0, behavior: 'smooth' });

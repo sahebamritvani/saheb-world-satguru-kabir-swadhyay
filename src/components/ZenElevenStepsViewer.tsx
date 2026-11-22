@@ -458,13 +458,13 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
             <div className="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-4">
               <h4 className="text-sm sm:text-base font-bold text-stone-900 dark:text-stone-100">
-                {quizIdx + 1}. {currentQ.question}
+                {quizIdx + 1}. {currentQ.questionText || (currentQ as any).question}
               </h4>
 
               <div className="space-y-2">
                 {currentQ.options.map((opt, oIdx) => {
                   const isChosen = selectedAnswer === oIdx;
-                  const isCorrect = oIdx === currentQ.correctIndex;
+                  const isCorrect = opt.isCorrect;
                   const showResult = selectedAnswer !== undefined;
                   return (
                     <button
@@ -486,25 +486,32 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                           : 'bg-black/5 dark:bg-white/5 border-stone-200 dark:border-stone-700 hover:border-amber-400'
                       }`}
                     >
-                      <span>{String.fromCharCode(65 + oIdx)}. {opt}</span>
+                      <span>{String.fromCharCode(65 + oIdx)}. {opt.text}</span>
                       {showResult && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />}
                     </button>
                   );
                 })}
               </div>
 
-              {selectedAnswer !== undefined && currentQ.explanation && (
-                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-                  <span className="font-bold text-amber-900 dark:text-amber-200">
-                    {language === 'pb'
-                      ? 'ਸਹੀ ਉੱਤਰ ਦੀ ਵਿਆਖਿਆ: '
-                      : language === 'en'
-                      ? 'Answer Explanation: '
-                      : 'सही उत्तर की व्याख्या: '}
-                  </span>
-                  {currentQ.explanation}
-                </div>
-              )}
+              {selectedAnswer !== undefined && (() => {
+                const chosenOpt = currentQ.options[selectedAnswer];
+                const rawFeedback = chosenOpt?.feedback || '';
+                const cleanFeedback = rawFeedback.replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '').trim() || rawFeedback;
+                return (
+                  <div className={`p-3.5 rounded-xl border text-xs leading-relaxed space-y-1 ${
+                    chosenOpt?.isCorrect
+                      ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
+                      : 'bg-rose-500/10 border-rose-500/30 text-rose-900 dark:text-rose-200'
+                  }`}>
+                    <p className="font-bold flex items-center gap-1.5 text-xs sm:text-sm">
+                      {chosenOpt?.isCorrect
+                        ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ!' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
+                        : (language === 'pb' ? '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ' : language === 'en' ? '✗ Incorrect Option' : '✗ यह विकल्प सही नहीं है')}
+                    </p>
+                    <p className="opacity-95 leading-relaxed">{cleanFeedback}</p>
+                  </div>
+                );
+              })()}
 
               <div className="flex items-center justify-between pt-2">
                 <button

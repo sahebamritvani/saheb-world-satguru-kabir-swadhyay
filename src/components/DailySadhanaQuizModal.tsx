@@ -86,13 +86,17 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
   // Generate 5 randomized, verse-specific Sadhana questions tailored to the active Sakhi
   const quizQuestions: QuestionItem[] = useMemo(() => {
     const generated = buildFiveDimensionQuiz(sakhi, language);
-    return generated.map((q) => ({
-      id: q.id,
-      question: q.question,
-      options: q.options.map((optText, idx) => ({ id: idx + 1, text: optText })),
-      correctOptionId: q.correctIndex + 1,
-      explanation: q.explanation,
-    }));
+    return generated.map((q) => {
+      const correctIdx = q.options.findIndex((o) => o.isCorrect);
+      const correctOpt = q.options.find((o) => o.isCorrect) || q.options[0];
+      return {
+        id: q.id,
+        question: q.question,
+        options: q.options.map((opt, idx) => ({ id: idx + 1, text: opt.text })),
+        correctOptionId: (correctIdx >= 0 ? correctIdx : q.correctIndex) + 1,
+        explanation: correctOpt.feedback || q.explanation,
+      };
+    });
   }, [sakhi, language, shuffleSeed]);
 
   if (!isOpen) return null;

@@ -428,7 +428,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
           borderColor: theme.cardBorder,
           color: theme.textPrimary,
         }}
-        className="rounded-3xl border-2 p-4 sm:p-7 shadow-2xl space-y-6 relative overflow-hidden"
+        className="rounded-3xl border-2 p-4 sm:p-7 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-md"
       >
         {/* Top Header Bar */}
         <div
@@ -440,8 +440,8 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
             <div
               className="flex items-center gap-1 z-10 p-0.5 rounded-md border"
               style={{
-                backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.stepActiveBg,
-                borderColor: theme.mode === 'mystic_dark' ? 'rgba(253, 230, 138, 0.3)' : theme.cardBorder,
+                backgroundColor: theme.bgSecondary,
+                borderColor: theme.cardBorder,
               }}
             >
               {(['hi', 'pb', 'en'] as Language[]).map((lang) => {
@@ -451,18 +451,8 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                     key={lang}
                     onClick={() => setLanguage(lang)}
                     style={{
-                      backgroundColor: isSelected
-                        ? theme.mode === 'mystic_dark'
-                          ? '#D97706'
-                          : theme.sacredMaroon
-                        : 'transparent',
-                      color: isSelected
-                        ? theme.mode === 'mystic_dark'
-                          ? '#000000'
-                          : '#FFFFFF'
-                        : theme.mode === 'mystic_dark'
-                        ? '#FFFDF7'
-                        : theme.textPrimary,
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                     }}
                     className={`px-2 py-0.5 rounded text-[10px] font-bold transition cursor-pointer ${
                       isSelected ? 'font-black shadow-xs' : 'hover:opacity-90'
@@ -486,7 +476,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                 title={language === 'pb' ? 'ਨਮਨ ਵਾਣੀ' : language === 'en' ? 'Salutation Chant' : 'नमन वाणी'}
               >
                 <span className="hidden sm:inline">{language === 'pb' ? 'ਨਮਨ' : language === 'en' ? 'Salutation' : 'नमन'}</span>
-                <Volume2 className="w-4 h-4 text-amber-700" />
+                <Volume2 className="w-4 h-4" />
               </button>
 
               <button
@@ -512,11 +502,11 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
           <div className="flex items-center justify-center">
             <div
               style={{ color: theme.sacredMaroon }}
-              className="flex flex-row items-center justify-center gap-3 sm:gap-5 text-lg sm:text-xl md:text-2xl font-black tracking-widest font-serif drop-shadow-xs"
+              className="flex flex-row items-center justify-center gap-3 sm:gap-5 text-lg sm:text-xl md:text-2xl font-black tracking-normal font-serif drop-shadow-xs"
             >
               <span className="shrink-0 text-xl sm:text-2xl select-none" aria-hidden="true">🌹</span>
               <span className="whitespace-nowrap">
-                ।।{language === 'pb' ? 'ਸਤਯਨਾਮ' : language === 'en' ? 'Satyanaam' : 'सत्यनाम'}।।
+                {language === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : language === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।'}
               </span>
               <span className="shrink-0 text-xl sm:text-2xl select-none" aria-hidden="true">🌹</span>
             </div>
@@ -529,7 +519,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="p-3 rounded-2xl bg-amber-500/15 border border-amber-500/40 text-center font-bold text-xs sm:text-sm text-amber-900 dark:text-amber-200 shadow-sm"
+            style={{
+              backgroundColor: theme.accentGoldLight,
+              borderColor: theme.accentGold,
+              color: theme.sacredMaroon,
+            }}
+            className="p-3 rounded-2xl border text-center font-bold text-xs sm:text-sm shadow-sm"
           >
             {toastMessage}
           </motion.div>
@@ -599,8 +594,8 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
 
           {/* Sanctum Sacred Card — Zero App Icon Fallback */}
           <div
-            style={{ borderColor: theme.accentGold, backgroundColor: theme.cardBg }}
-            className="relative w-full max-w-md aspect-[4/5] sm:aspect-[3/4] rounded-3xl border-2 shadow-xl overflow-hidden flex flex-col items-center justify-center p-3 group bg-gradient-to-b from-amber-500/10 via-stone-500/5 to-amber-500/15 dark:from-zinc-900 dark:via-zinc-800/80 dark:to-zinc-900"
+            style={{ borderColor: theme.accentGold, backgroundColor: theme.bgSecondary }}
+            className="relative w-full max-w-md aspect-[4/5] sm:aspect-[3/4] rounded-3xl border-2 shadow-xl overflow-hidden flex flex-col items-center justify-center p-3 group backdrop-blur-md"
           >
             {portraitState.imageData ? (
               <div className="relative w-full h-full rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#2A180B] via-[#3A2210] to-[#1F1208] shadow-inner border border-amber-500/40">
@@ -768,12 +763,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
             <button
               onClick={handleOfferFlowers}
               style={{
-                backgroundColor: theme.sacredMaroon,
-                color: '#FFFFFF',
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
               }}
               className="px-6 py-3 rounded-2xl font-bold font-serif text-sm sm:text-base flex items-center gap-2.5 shadow-lg hover:scale-105 active:scale-95 transition cursor-pointer"
             >
-              <Flower2 className="w-5 h-5 text-amber-300 animate-pulse" />
+              <Flower2 className="w-5 h-5 animate-pulse" />
               <span>
                 {language === 'pb'
                   ? `ਪੁਸ਼ਪ ਅਰਪਣ ਕਰੋ (${flowerCount})`
@@ -791,13 +786,13 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
       {/* ===================================================================== */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold, color: theme.textPrimary }}
-        className="rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-4"
+        className="rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-4 backdrop-blur-md"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
           <div className="flex items-center gap-3">
             <div
-              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
-              className="w-10 h-10 rounded-2xl border flex items-center justify-center text-amber-700 shrink-0"
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold, color: theme.sacredMaroon }}
+              className="w-10 h-10 rounded-2xl border flex items-center justify-center shrink-0"
             >
               <Sparkles className="w-5 h-5" />
             </div>
@@ -809,7 +804,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   ? '🙏 Shloka Dhyanam (Sacred Form Contemplation)'
                   : '🙏 श्लोक ध्यानं (सतगुरु स्वरूप ध्यान स्तुति)'}
               </h2>
-              <p className="text-xs font-serif opacity-75" style={{ color: theme.textSecondary }}>
+              <p className="text-xs font-serif opacity-90" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
                   ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸ਼ਵੇਤ-ਮੰਗਲ ਸਰੂਪ ਦਾ ਪਾਵਨ ਧਿਆਨ'
                   : language === 'en'
@@ -824,13 +819,13 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
               type="button"
               onClick={() => handleToggleRecite('dhyan', SHLOKA_DHYANAM_TEXT[language])}
               style={{
-                backgroundColor: speakingSection === 'dhyan' ? theme.sacredMaroon : theme.bgSecondary,
-                borderColor: speakingSection === 'dhyan' ? theme.sacredMaroon : theme.cardBorder,
-                color: speakingSection === 'dhyan' ? '#FFFFFF' : theme.textPrimary,
+                backgroundColor: speakingSection === 'dhyan' ? theme.buttonPrimaryBg : theme.bgSecondary,
+                borderColor: speakingSection === 'dhyan' ? theme.buttonPrimaryBg : theme.cardBorder,
+                color: speakingSection === 'dhyan' ? theme.buttonPrimaryText : theme.textPrimary,
               }}
               className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
             >
-              {speakingSection === 'dhyan' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
+              {speakingSection === 'dhyan' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" style={{ color: theme.accentGold }} />}
               <span>
                 {speakingSection === 'dhyan'
                   ? language === 'pb'
@@ -931,9 +926,14 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                       sacredHaptics.lightTap();
                       setShowDhyanMeaning(!showDhyanMeaning);
                     }}
-                    className="min-h-[40px] px-4 py-2 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs sm:text-sm font-serif font-bold flex items-center gap-2 transition cursor-pointer"
+                    style={{
+                      backgroundColor: theme.accentGoldLight,
+                      borderColor: theme.accentGold,
+                      color: theme.sacredMaroon,
+                    }}
+                    className="min-h-[40px] px-4 py-2 rounded-xl border text-xs sm:text-sm font-serif font-bold flex items-center gap-2 hover:scale-105 transition cursor-pointer"
                   >
-                    <BookOpen className="w-4 h-4 text-amber-600" />
+                    <BookOpen className="w-4 h-4" />
                     <span>
                       {showDhyanMeaning
                         ? language === 'pb'
@@ -1021,13 +1021,13 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
       {/* ===================================================================== */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold, color: theme.textPrimary }}
-        className="rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-4"
+        className="rounded-3xl border-2 p-5 sm:p-7 shadow-xl space-y-4 backdrop-blur-md"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
           <div className="flex items-center gap-3">
             <div
-              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
-              className="w-10 h-10 rounded-2xl border flex items-center justify-center text-amber-700 shrink-0"
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold, color: theme.sacredMaroon }}
+              className="w-10 h-10 rounded-2xl border flex items-center justify-center shrink-0"
             >
               <Flower2 className="w-5 h-5" />
             </div>
@@ -1039,7 +1039,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   ? '🪷 Sacred Vinti (Prayer of Refuge & Grace)'
                   : '🪷 पावन विनती (सतगुरु करुणा एवं शरणागति प्रार्थना)'}
               </h2>
-              <p className="text-xs font-serif opacity-75" style={{ color: theme.textSecondary }}>
+              <p className="text-xs font-serif opacity-90" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
                   ? 'ਸਤਯਨਾਮ ਦੀ ਓਟ, ਕਾਲ-ਜਾਲ ਤੋਂ ਮੁਕਤੀ ਅਤੇ ਸੁਖਧਾਮ ਪ੍ਰਾਪਤੀ ਦੀ ਅਰਦਾਸ'
                   : language === 'en'
@@ -1054,13 +1054,13 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
               type="button"
               onClick={() => handleToggleRecite('vinti', VINTI_TEXT[language])}
               style={{
-                backgroundColor: speakingSection === 'vinti' ? theme.sacredMaroon : theme.bgSecondary,
-                borderColor: speakingSection === 'vinti' ? theme.sacredMaroon : theme.cardBorder,
-                color: speakingSection === 'vinti' ? '#FFFFFF' : theme.textPrimary,
+                backgroundColor: speakingSection === 'vinti' ? theme.buttonPrimaryBg : theme.bgSecondary,
+                borderColor: speakingSection === 'vinti' ? theme.buttonPrimaryBg : theme.cardBorder,
+                color: speakingSection === 'vinti' ? theme.buttonPrimaryText : theme.textPrimary,
               }}
               className="min-h-[40px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer"
             >
-              {speakingSection === 'vinti' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
+              {speakingSection === 'vinti' ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" style={{ color: theme.accentGold }} />}
               <span>
                 {speakingSection === 'vinti'
                   ? language === 'pb'
@@ -1161,9 +1161,14 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                       sacredHaptics.lightTap();
                       setShowVintiMeaning(!showVintiMeaning);
                     }}
-                    className="min-h-[40px] px-4 py-2 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs sm:text-sm font-serif font-bold flex items-center gap-2 transition cursor-pointer"
+                    style={{
+                      backgroundColor: theme.accentGoldLight,
+                      borderColor: theme.accentGold,
+                      color: theme.sacredMaroon,
+                    }}
+                    className="min-h-[40px] px-4 py-2 rounded-xl border text-xs sm:text-sm font-serif font-bold flex items-center gap-2 hover:scale-105 transition cursor-pointer"
                   >
-                    <BookOpen className="w-4 h-4 text-amber-600" />
+                    <BookOpen className="w-4 h-4" />
                     <span>
                       {showVintiMeaning
                         ? language === 'pb'
@@ -1252,11 +1257,11 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
       {(galleryImages.length > 0 || isAdmin) && (
         <div
           style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
-          className="rounded-3xl border p-5 sm:p-7 shadow-xl space-y-4"
+          className="rounded-3xl border p-5 sm:p-7 shadow-xl space-y-4 backdrop-blur-md"
         >
           <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3" style={{ borderColor: theme.cardBorder }}>
             <div className="flex items-center gap-2.5">
-              <ImageIcon className="w-5 h-5 text-amber-600" />
+              <ImageIcon className="w-5 h-5" style={{ color: theme.accentGold }} />
               <div>
                 <h3 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-lg">
                   {language === 'pb'
@@ -1265,7 +1270,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                     ? '🖼️ Sacred Darshan Image Gallery'
                     : '🖼️ पावन दर्शन चित्र संग्रह (गैलरी)'}
                 </h3>
-                <p className="text-[11px] font-serif opacity-75" style={{ color: theme.textSecondary }}>
+                <p className="text-[11px] font-serif opacity-90" style={{ color: theme.textSecondary }}>
                   {isAdmin
                     ? '👑 एडमिन मोड सक्रिय: आप नए पावन चित्र जोड़ या हटा सकते हैं।'
                     : '🔒 सार्वजनिक रीड-ओनली: केवल अधिकृत एडमिन द्वारा प्रकाशित पावन चित्र।'}
@@ -1286,7 +1291,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   type="button"
                   disabled={isUploadingGallery}
                   onClick={() => galleryInputRef.current?.click()}
-                  style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+                  style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                   className="min-h-[40px] px-4 py-2 rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 shadow-sm hover:opacity-95 transition cursor-pointer disabled:opacity-60"
                 >
                   <Upload className="w-3.5 h-3.5" />

@@ -33,6 +33,7 @@ import { sacredHaptics } from '../services/haptics';
 import { speechReciter } from '../services/audioDhun';
 import { SacredLoader } from './SacredLoader';
 import { PaginationControls } from './PaginationControls';
+import { ADMIN_SLOTS_UPDATED_EVENT, getInjectedSggsVerses } from '../services/adminSlotInjectorStore';
 
 interface SggsKabirBaniEngineProps {
   onBack?: () => void;
@@ -68,6 +69,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
   const [shlokJumpError, setShlokJumpError] = useState<string | null>(null);
 
   const PAGE_SIZE = 25;
+  const [baseVerses, setBaseVerses] = useState<SggsKabirVerse[]>([]);
   const [versesCollection, setVersesCollection] = useState<SggsKabirVerse[]>([]);
   const [isLoadingSggs, setIsLoadingSggs] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -78,7 +80,8 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
     import('../data/sggsKabirBaniData')
       .then((mod) => {
         if (!cancelled) {
-          setVersesCollection(mod.SGGS_KABIR_VERSES_COLLECTION);
+          setBaseVerses(mod.SGGS_KABIR_VERSES_COLLECTION);
+          setVersesCollection([...getInjectedSggsVerses(), ...mod.SGGS_KABIR_VERSES_COLLECTION]);
         }
       })
       .catch((err) => {
@@ -94,6 +97,14 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
       speechReciter.stop();
     };
   }, []);
+
+  useEffect(() => {
+    const handleSlotsUpdated = () => {
+      setVersesCollection([...getInjectedSggsVerses(), ...baseVerses]);
+    };
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSlotsUpdated);
+    return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSlotsUpdated);
+  }, [baseVerses]);
 
   const handleShlokJump = (e: React.FormEvent) => {
     e.preventDefault();

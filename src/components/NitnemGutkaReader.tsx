@@ -58,6 +58,7 @@ import {
   loadAllNitnemSections,
   loadNitnemSectionById,
 } from '../data/nitnemData';
+import { ADMIN_SLOTS_UPDATED_EVENT } from '../services/adminSlotInjectorStore';
 import { SacredLoader } from './SacredLoader';
 import { 
   MASTER_NITNEM_INDEX, 
@@ -380,7 +381,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   onClose,
   onOpenSettings
 }) => {
-  const { theme, themeMode, setThemeMode, fontSize, setFontSize, lineHeight, setLineHeight, widthMode, setWidthMode, fontFamily, setFontFamily } = useAppTheme();
+  const { theme, themeMode, setThemeMode, isDarkMode, globalWallpaper, fontSize, setFontSize, lineHeight, setLineHeight, widthMode, setWidthMode, fontFamily, setFontFamily } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const language = propLanguage || contextLang;
   const lang = language;
@@ -461,6 +462,19 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
       window.clearTimeout(timer);
     };
   }, [mergeResolvedSections]);
+
+  // Live refresh when Admin Data Injector injects or purges Slot #1 without page reload
+  useEffect(() => {
+    const handleAdminSlotsUpdated = () => {
+      loadAllNitnemSections()
+        .then((allLoaded) => {
+          setNitnemSections(allLoaded);
+        })
+        .catch(() => {});
+    };
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
+    return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
+  }, []);
 
   // Reader Settings (Persisted in localStorage + synced with ThemeContext)
   const [readerTheme, setReaderTheme] = useState<ReaderCustomTheme>(() => {
@@ -1577,95 +1591,91 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
   // Theme styling resolver
   const getThemeStyles = (themeName: ReaderCustomTheme) => {
+    const hasWp = Boolean(globalWallpaper);
     switch (themeName) {
       case 'mool':
+      case 'light':
         return {
-          wrapperBg: 'bg-[#faf7ee] dark:bg-[#1a1612]',
-          cardBg: 'bg-[#fffef9] dark:bg-[#231e19]',
-          cardBorder: 'border-[#e6dcbe] dark:border-[#3d3326]',
-          textColor: 'text-[#332211] dark:text-[#f2e6d0]',
-          accentText: 'text-[#8b2500] dark:text-[#f59e0b]',
-          subText: 'text-[#6b5844] dark:text-[#b8a287]',
-          highlightBg: 'bg-[#fef3c7]/60 dark:bg-[#78350f]/30',
-          badgeBg: 'bg-[#f5ebd2] dark:bg-[#382c1e] text-[#8b2500] dark:text-[#fcd34d]',
+          wrapperBg: hasWp ? 'bg-transparent' : (isDarkMode ? 'bg-[#12100E]' : 'bg-[#faf7ee]'),
+          cardBg: hasWp
+            ? (isDarkMode ? 'bg-zinc-900/78 backdrop-blur-md' : 'bg-[#fffdf9]/84 backdrop-blur-md')
+            : (isDarkMode ? 'bg-[#1e1a16]' : 'bg-[#fffef9]'),
+          cardBorder: isDarkMode ? 'border-amber-500/25' : 'border-[#d6be8a]/70',
+          textColor: isDarkMode ? 'text-[#f8fafc]' : 'text-[#26180a]',
+          accentText: isDarkMode ? 'text-[#fbbf24]' : 'text-[#8b2500]',
+          subText: isDarkMode ? 'text-[#e2d9c8]' : 'text-[#5c4328]',
+          highlightBg: isDarkMode ? 'bg-[#78350f]/35' : 'bg-[#fef3c7]/70',
+          badgeBg: isDarkMode ? 'bg-[#382c1e] text-[#fcd34d]' : 'bg-[#f5ebd2] text-[#8b2500]',
           lineGuideColor: 'bg-amber-500/20 border-y-2 border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)]',
-          toolbarBg: 'bg-[#fffef9]/95 dark:bg-[#231e19]/95 border-[#e6dcbe] dark:border-[#3d3326]',
-          controlGroupBg: 'bg-[#faf7ee]/90 dark:bg-[#1a1612]/90 border-[#e6dcbe]/60 dark:border-[#3d3326]/60',
-          btnActive: 'bg-amber-600 text-white shadow-sm',
-          btnInactive: 'text-[#6b5844] dark:text-[#b8a287] hover:bg-amber-100/60 dark:hover:bg-zinc-700/40',
-          selectBg: 'bg-[#fffef9] dark:bg-[#231e19] text-[#332211] dark:text-[#f2e6d0] border-[#e6dcbe] dark:border-[#3d3326]'
+          toolbarBg: hasWp
+            ? (isDarkMode ? 'bg-zinc-900/86 border-amber-500/25 backdrop-blur-md' : 'bg-[#fffdf9]/88 border-[#d6be8a]/70 backdrop-blur-md')
+            : (isDarkMode ? 'bg-[#1e1a16]/95 border-[#3d3326]' : 'bg-[#fffef9]/95 border-[#e6dcbe]'),
+          controlGroupBg: hasWp
+            ? (isDarkMode ? 'bg-zinc-950/75 border-amber-500/20' : 'bg-[#faf7ee]/82 border-[#d6be8a]/60')
+            : (isDarkMode ? 'bg-[#1a1612]/90 border-[#3d3326]/60' : 'bg-[#faf7ee]/90 border-[#e6dcbe]/60'),
+          btnActive: isDarkMode ? 'bg-[#f59e0b] text-[#09090b] shadow-sm font-black' : 'bg-[#8B2500] text-white shadow-sm',
+          btnInactive: isDarkMode ? 'text-[#e2d9c8] hover:bg-zinc-700/50' : 'text-[#5c4328] hover:bg-amber-100/70',
+          selectBg: isDarkMode ? 'bg-zinc-900/90 text-[#f8fafc] border-amber-500/25' : 'bg-[#fffdf9]/90 text-[#26180a] border-[#d6be8a]/70'
         };
       case 'pothi':
       case 'sepia':
         return {
-          wrapperBg: 'bg-[#f4ead1] dark:bg-[#20180e]',
-          cardBg: 'bg-[#fbf4e1] dark:bg-[#2c2012]',
-          cardBorder: 'border-[#d6be8a]/65 dark:border-[#b8860b]/40',
-          textColor: 'text-[#3a220c] dark:text-[#fef08a]',
-          accentText: 'text-[#9a4208] dark:text-[#fbbf24]',
-          subText: 'text-[#6e461f] dark:text-[#d4af37]',
-          highlightBg: 'bg-[#f7e7bf] dark:bg-[#713f12]/40',
-          badgeBg: 'bg-[#efe0b9] dark:bg-[#451a03] text-[#703c0a] dark:text-[#fef08a]',
+          wrapperBg: hasWp ? 'bg-transparent' : (isDarkMode ? 'bg-[#1c140b]' : 'bg-[#f4ead1]'),
+          cardBg: hasWp
+            ? (isDarkMode ? 'bg-[#261b0e]/82 backdrop-blur-md' : 'bg-[#fbf4e1]/84 backdrop-blur-md')
+            : (isDarkMode ? 'bg-[#2c2012]' : 'bg-[#fbf4e1]'),
+          cardBorder: isDarkMode ? 'border-[#b8860b]/45' : 'border-[#c4a668]/75',
+          textColor: isDarkMode ? 'text-[#fef3c7]' : 'text-[#2e1a07]',
+          accentText: isDarkMode ? 'text-[#fbbf24]' : 'text-[#8b2500]',
+          subText: isDarkMode ? 'text-[#fde68a]' : 'text-[#5c3a18]',
+          highlightBg: isDarkMode ? 'bg-[#713f12]/45' : 'bg-[#f7e7bf]',
+          badgeBg: isDarkMode ? 'bg-[#451a03] text-[#fef08a]' : 'bg-[#efe0b9] text-[#703c0a]',
           lineGuideColor: 'bg-[rgba(217,119,6,0.12)] border-y-2 border-amber-600/35',
-          toolbarBg: 'bg-[#fbf4e1]/95 dark:bg-[#2c2012]/95 border-[#d6be8a]/65 dark:border-[#b8860b]/40',
-          controlGroupBg: 'bg-[#f4ead1]/90 dark:bg-[#20180e]/90 border-[#d6be8a]/40 dark:border-[#b8860b]/20',
-          btnActive: 'bg-[#9a4208] text-white shadow-sm',
-          btnInactive: 'text-[#6e461f] dark:text-[#d4af37]/90 hover:bg-[#f2e2b8] dark:hover:bg-[#451a03]/50',
-          selectBg: 'bg-[#fbf4e1] dark:bg-[#2c2012] text-[#3a220c] dark:text-[#fef08a] border-[#d6be8a]/60 dark:border-[#b8860b]/30'
+          toolbarBg: hasWp
+            ? (isDarkMode ? 'bg-[#261b0e]/88 border-[#b8860b]/45 backdrop-blur-md' : 'bg-[#fbf4e1]/90 border-[#c4a668]/75 backdrop-blur-md')
+            : (isDarkMode ? 'bg-[#2c2012]/95 border-[#b8860b]/40' : 'bg-[#fbf4e1]/95 border-[#d6be8a]/65'),
+          controlGroupBg: hasWp
+            ? (isDarkMode ? 'bg-[#1c140b]/80 border-[#b8860b]/30' : 'bg-[#f4ead1]/84 border-[#c4a668]/50')
+            : (isDarkMode ? 'bg-[#20180e]/90 border-[#b8860b]/20' : 'bg-[#f4ead1]/90 border-[#d6be8a]/40'),
+          btnActive: isDarkMode ? 'bg-[#fbbf24] text-[#261b0e] shadow-sm font-black' : 'bg-[#8B2500] text-white shadow-sm',
+          btnInactive: isDarkMode ? 'text-[#fde68a] hover:bg-[#451a03]/50' : 'text-[#5c3a18] hover:bg-[#f2e2b8]',
+          selectBg: isDarkMode ? 'bg-[#261b0e]/90 text-[#fef3c7] border-[#b8860b]/40' : 'bg-[#fbf4e1]/90 text-[#2e1a07] border-[#c4a668]/60'
         };
       case 'black':
       case 'dark':
         return {
-          wrapperBg: 'bg-[#09090b]',
-          cardBg: 'bg-[#121215]',
-          cardBorder: 'border-[#27272a]',
-          textColor: 'text-[#f4f4f5]',
-          accentText: 'text-[#f59e0b]',
-          subText: 'text-[#a1a1aa]',
-          highlightBg: 'bg-[#27272a]',
-          badgeBg: 'bg-[#18181b] text-[#f59e0b] border border-[#3f3f46]',
+          wrapperBg: hasWp ? 'bg-transparent' : 'bg-[#09090b]',
+          cardBg: hasWp ? 'bg-[#0c0c10]/80 backdrop-blur-md' : 'bg-[#121215]',
+          cardBorder: 'border-amber-400/25',
+          textColor: 'text-[#f8fafc]',
+          accentText: 'text-[#fbbf24]',
+          subText: 'text-[#d4d4d8]',
+          highlightBg: 'bg-[#27272a]/85',
+          badgeBg: 'bg-[#18181b] text-[#fbbf24] border border-[#3f3f46]',
           lineGuideColor: 'bg-amber-500/15 border-y-2 border-amber-400 shadow-[0_0_20px_rgba(251,191,36,0.25)]',
-          toolbarBg: 'bg-[#121215]/95 border-[#27272a] shadow-inner',
-          controlGroupBg: 'bg-[#18181b] border-[#27272a]',
-          btnActive: 'bg-[#f59e0b] text-[#09090b] shadow-sm',
-          btnInactive: 'text-[#a1a1aa] hover:bg-[#27272a] hover:text-[#f4f4f5]',
-          selectBg: 'bg-[#18181b] text-[#f4f4f5] border-[#27272a]'
+          toolbarBg: hasWp ? 'bg-[#0c0c10]/88 border-amber-400/25 backdrop-blur-md shadow-inner' : 'bg-[#121215]/95 border-[#27272a] shadow-inner',
+          controlGroupBg: hasWp ? 'bg-[#18181b]/80 border-[#3f3f46]' : 'bg-[#18181b] border-[#27272a]',
+          btnActive: 'bg-[#f59e0b] text-[#09090b] shadow-sm font-black',
+          btnInactive: 'text-[#d4d4d8] hover:bg-[#27272a] hover:text-[#f8fafc]',
+          selectBg: 'bg-[#18181b]/90 text-[#f8fafc] border-[#3f3f46]'
         };
       case 'netra':
       case 'comfort':
         return {
-          wrapperBg: 'bg-[#101f17]',
-          cardBg: 'bg-[#172a20]',
-          cardBorder: 'border-[#294a3a]',
-          textColor: 'text-[#d7f7e6]',
-          accentText: 'text-[#34d399]',
-          subText: 'text-[#a7f3d0]/80',
-          highlightBg: 'bg-[#064e3b]/50',
+          wrapperBg: hasWp ? 'bg-transparent' : 'bg-[#101f17]',
+          cardBg: hasWp ? 'bg-[#12261c]/82 backdrop-blur-md' : 'bg-[#172a20]',
+          cardBorder: 'border-[#34d399]/35',
+          textColor: 'text-[#ecfdf5]',
+          accentText: 'text-[#6ee7b7]',
+          subText: 'text-[#a7f3d0]',
+          highlightBg: 'bg-[#064e3b]/60',
           badgeBg: 'bg-[#064e3b] text-[#6ee7b7] border border-[#059669]',
           lineGuideColor: 'bg-emerald-400/20 border-y-2 border-emerald-400 shadow-[0_0_20px_rgba(52,211,153,0.3)]',
-          toolbarBg: 'bg-[#172a20]/95 border-[#294a3a] shadow-inner',
-          controlGroupBg: 'bg-[#101f17] border-[#294a3a]',
-          btnActive: 'bg-[#34d399] text-[#101f17] shadow-sm',
-          btnInactive: 'text-[#a7f3d0]/80 hover:bg-[#294a3a] hover:text-[#d7f7e6]',
-          selectBg: 'bg-[#101f17] text-[#d7f7e6] border-[#294a3a]'
-        };
-      case 'light':
-      default:
-        return {
-          wrapperBg: 'bg-[#faf7ee] dark:bg-[#1a1612]',
-          cardBg: 'bg-[#fffef9] dark:bg-[#231e19]',
-          cardBorder: 'border-[#e6dcbe] dark:border-[#3d3326]',
-          textColor: 'text-[#332211] dark:text-[#f2e6d0]',
-          accentText: 'text-[#8b2500] dark:text-[#f59e0b]',
-          subText: 'text-[#6b5844] dark:text-[#b8a287]',
-          highlightBg: 'bg-[#fef3c7]/60 dark:bg-[#78350f]/30',
-          badgeBg: 'bg-[#f5ebd2] dark:bg-[#382c1e] text-[#8b2500] dark:text-[#fcd34d]',
-          lineGuideColor: 'bg-amber-500/20 border-y-2 border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)]',
-          toolbarBg: 'bg-[#fffef9]/95 dark:bg-[#231e19]/95 border-[#e6dcbe] dark:border-[#3d3326]',
-          controlGroupBg: 'bg-[#faf7ee]/90 dark:bg-[#1a1612]/90 border-[#e6dcbe]/60 dark:border-[#3d3326]/60',
-          btnActive: 'bg-amber-600 text-white shadow-sm',
-          btnInactive: 'text-[#6b5844] dark:text-[#b8a287] hover:bg-amber-100/60 dark:hover:bg-zinc-700/40',
-          selectBg: 'bg-[#fffef9] dark:bg-[#231e19] text-[#332211] dark:text-[#f2e6d0] border-[#e6dcbe] dark:border-[#3d3326]'
+          toolbarBg: hasWp ? 'bg-[#12261c]/88 border-[#34d399]/35 backdrop-blur-md shadow-inner' : 'bg-[#172a20]/95 border-[#294a3a] shadow-inner',
+          controlGroupBg: hasWp ? 'bg-[#0e1d15]/80 border-[#294a3a]' : 'bg-[#101f17] border-[#294a3a]',
+          btnActive: 'bg-[#34d399] text-[#0b1912] shadow-sm font-black',
+          btnInactive: 'text-[#a7f3d0] hover:bg-[#294a3a] hover:text-[#ecfdf5]',
+          selectBg: 'bg-[#101f17]/90 text-[#ecfdf5] border-[#294a3a]'
         };
     }
   };
@@ -2173,7 +2183,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             }
             window.dispatchEvent(new CustomEvent('sahebworld:fullscreen-change', { detail: { isFullscreen: false } }));
           }}
-          className="fixed top-3 left-1/2 -translate-x-1/2 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-amber-700 hover:bg-amber-800 text-white text-xs sm:text-sm font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/40 whitespace-nowrap"
+          className="fixed top-3 left-1/2 -translate-x-1/2 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-[#8B2500] hover:bg-[#701D00] text-white text-xs sm:text-sm font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/40 whitespace-nowrap"
           title={language === 'pb' ? 'ਆਮ ਸਕ੍ਰੀਨ (ਵਾਪਸ ਆਓ)' : language === 'en' ? 'Normal Screen (Return)' : 'सामान्य स्क्रीन (वापस आएं)'}
         >
           <Minimize2 size={16} />
@@ -2186,8 +2196,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           </span>
         </button>
       )}
-      {/* Sikhworld Style Orange Header */}
-      <div className="bg-amber-600 text-white px-2.5 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3 shadow-md sticky top-0 z-30 flex-nowrap overflow-hidden">
+      {/* High-Contrast Sacred Header */}
+      <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-2.5 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3 shadow-md sticky top-0 z-30 flex-nowrap overflow-hidden border-b border-amber-300/25">
         <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1 overflow-hidden">
           {viewMode === 'reading' ? (
             <button
@@ -2350,15 +2360,28 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
             {/* 1. SMART TIME & PURNIMA RECOMMENDATION + DAILY HAZIRI STATUS */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-              <div className="lg:col-span-2 bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-amber-500/5 dark:from-amber-950/50 dark:to-zinc-900 border-2 border-amber-500/40 rounded-3xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div
+                style={{
+                  backgroundColor: theme.cardBg,
+                  borderColor: theme.accentGold,
+                  color: theme.textPrimary,
+                }}
+                className="lg:col-span-2 border-2 rounded-3xl p-4 sm:p-5 shadow-md backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              >
                 <div className="space-y-1.5 min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-600 text-white text-[0.6875rem] font-bold font-serif whitespace-nowrap shadow-2xs">
+                    <span
+                      style={{
+                        backgroundColor: theme.buttonPrimaryBg,
+                        color: theme.buttonPrimaryText,
+                      }}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.6875rem] font-bold font-serif whitespace-nowrap shadow-2xs"
+                    >
                       <Sparkles size={12} />
                       {smartRecommendation.badge[language] || smartRecommendation.badge.hi}
                     </span>
                     {haziriMarkedToday && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-600/15 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 text-[0.6875rem] font-bold font-serif whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-600/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/35 text-[0.6875rem] font-bold font-serif whitespace-nowrap">
                         <CheckCircle2 size={12} />
                         {language === 'pb'
                           ? `ਅੱਜ ਦੀ ਹਾਜ਼ਰੀ ਪੂਰੀ (${haziriStreak} ਦਿਨ)`
@@ -2368,10 +2391,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       </span>
                     )}
                   </div>
-                  <h3 className="font-serif font-black text-base sm:text-xl text-amber-950 dark:text-amber-200 leading-snug">
+                  <h3 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-xl leading-snug">
                     {smartRecommendation.title[language] || smartRecommendation.title.hi}
                   </h3>
-                  <p className="text-xs sm:text-sm font-serif text-amber-900/85 dark:text-amber-200/80 leading-relaxed">
+                  <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif leading-relaxed">
                     {smartRecommendation.subtitle[language] || smartRecommendation.subtitle.hi}
                   </p>
                 </div>
@@ -2384,7 +2407,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     handleSelectSection(smartRecommendation.primarySectionId);
                     setViewMode('reading');
                   }}
-                  className="min-h-[44px] px-4 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
+                  style={{
+                    backgroundColor: theme.buttonPrimaryBg,
+                    color: theme.buttonPrimaryText,
+                  }}
+                  className="min-h-[44px] px-4 py-2.5 rounded-2xl font-serif font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md hover:opacity-95 transition active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
                 >
                   <BookOpen size={16} />
                   <span>
@@ -2395,7 +2422,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
               </div>
 
               {smartRecommendation.isPurnimaToday ? (
-                <div className="bg-gradient-to-br from-indigo-950 via-amber-950/90 to-amber-900 text-amber-50 border-2 border-amber-400/70 rounded-3xl p-4 sm:p-5 shadow-md flex flex-col justify-between gap-3">
+                <div className="bg-gradient-to-br from-indigo-950/92 via-amber-950/90 to-amber-900/90 backdrop-blur-md text-amber-50 border-2 border-amber-400/70 rounded-3xl p-4 sm:p-5 shadow-md flex flex-col justify-between gap-3">
                   <div className="space-y-1">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400 text-amber-950 text-[0.6875rem] font-black font-serif whitespace-nowrap">
                       🌕 {language === 'pb' ? 'ਪੂਰਨਮਾਸ਼ੀ ਵਿਸ਼ੇਸ਼' : language === 'en' ? 'Purnima Special' : 'पूर्णिमा विशेष'}
@@ -2403,7 +2430,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     <h4 className="font-serif font-black text-base text-amber-100">
                       {language === 'pb' ? '੪. ਪੂਨੋ ਮਹਾਤਮਯ ਪਾਠ' : language === 'en' ? '4. Poono Mahatmya Path' : '४. पूनो महात्म्य पाठ'}
                     </h4>
-                    <p className="text-xs font-serif text-amber-100/85">
+                    <p className="text-xs font-serif text-amber-100/90">
                       {smartRecommendation.purnimaTitle?.[language] || smartRecommendation.purnimaTitle?.hi}
                     </p>
                   </div>
@@ -2422,17 +2449,24 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                   </button>
                 </div>
               ) : (
-                <div className="bg-white dark:bg-zinc-800/90 border-2 border-amber-500/20 dark:border-zinc-700 rounded-3xl p-4 sm:p-5 shadow-xs flex flex-col justify-between gap-3">
+                <div
+                  style={{
+                    backgroundColor: theme.cardBg,
+                    borderColor: theme.cardBorder,
+                    color: theme.textPrimary,
+                  }}
+                  className="border-2 rounded-3xl p-4 sm:p-5 shadow-sm backdrop-blur-md flex flex-col justify-between gap-3"
+                >
                   <div className="space-y-1">
-                    <span className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                    <span style={{ color: theme.accentGold }} className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider block">
                       {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਨਿਤਨੇਮ ਗੁਟਕਾ' : language === 'en' ? 'Complete 7-Section Gutka' : 'सम्पूर्ण ७ खंड गुटका साहेब'}
                     </span>
-                    <h4 className="font-serif font-black text-sm sm:text-base text-amber-950 dark:text-amber-100">
+                    <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm sm:text-base">
                       {haziriMarkedToday
                         ? (language === 'pb' ? 'ਅੱਜ ਦਾ ਨਿਤਨੇਮ ਸੰਪੰਨ' : language === 'en' ? 'Daily Swadhyay Marked' : 'आज का नित्य नियम पूर्ण')
                         : (language === 'pb' ? 'ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਬਾਕੀ' : language === 'en' ? 'Daily Nitnem Pending' : 'नितनेम हाज़िरी संकल्प')}
                     </h4>
-                    <p className="text-xs font-serif text-gray-600 dark:text-gray-300">
+                    <p style={{ color: theme.textSecondary }} className="text-xs font-serif leading-relaxed">
                       {language === 'pb'
                         ? 'ਪਾਠ ਦੇ ਅੰਤ ਵਿਚ ਆਪਣੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ।'
                         : language === 'en'
@@ -2440,7 +2474,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         : 'किसी भी प्रमुख पाठ की समाप्ति पर पावन हाज़िरी दर्ज करें।'}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between text-xs font-serif font-bold text-amber-800 dark:text-amber-300 pt-1 border-t border-black/5 dark:border-white/5">
+                  <div style={{ color: theme.accentGold, borderColor: theme.cardBorder }} className="flex items-center justify-between text-xs font-serif font-bold pt-2 border-t">
                     <span>🔥 {haziriStreak} {language === 'pb' ? 'ਦਿਨ ਲੜੀ' : language === 'en' ? 'Day Streak' : 'दिन निरंतर'}</span>
                     <span>{haziriMarkedToday ? '🙏 ✓' : '🕊️'}</span>
                   </div>
@@ -2449,7 +2483,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             </div>
 
             {/* 2. MASTER INDEX HEADER BAR (पावन अनुक्रमणिका व सूची) WITH V-SHAPE TOGGLE */}
-            <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-orange-600 text-white rounded-3xl p-4 sm:p-5 shadow-lg space-y-3">
+            <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white rounded-3xl p-4 sm:p-5 shadow-lg space-y-3 border border-amber-300/25">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center font-serif font-black text-lg text-amber-100 shadow-inner">
@@ -2459,7 +2493,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     <h2 className="font-serif font-black text-lg sm:text-2xl text-white leading-tight">
                       {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਅਨੁਕ੍ਰਮਣਿਕਾ ਤੇ ਸੂਚੀ' : language === 'en' ? 'Sacred Nitnem Index & Chapters' : 'पावन नितनेम अनुक्रमणिका व सूची'}
                     </h2>
-                    <p className="text-xs text-amber-100/90 font-serif">
+                    <p className="text-xs text-amber-100 font-serif">
                       {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
                     </p>
                   </div>
@@ -2489,17 +2523,17 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       sacredHaptics.lightTap();
                       setIsIndexSectionCollapsed(!isIndexSectionCollapsed);
                     }}
-                    className="min-h-[44px] px-3.5 py-1.5 rounded-xl bg-white text-amber-900 border border-white font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap"
+                    className="min-h-[44px] px-3.5 py-1.5 rounded-xl bg-white text-[#7C1D00] border border-white font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap"
                     title={isIndexSectionCollapsed ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਖੋਲ੍ਹੋ (Open Index)' : 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ (Close Index)'}
                   >
                     {isIndexSectionCollapsed ? (
                       <>
-                        <ChevronDown className="w-4 h-4 text-amber-600 animate-bounce" />
+                        <ChevronDown className="w-4 h-4 text-[#8B2500] animate-bounce" />
                         <span>{language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Show Index' : 'अनुक्रमणिका खोलें'}</span>
                       </>
                     ) : (
                       <>
-                        <ChevronUp className="w-4 h-4 text-amber-600" />
+                        <ChevronUp className="w-4 h-4 text-[#8B2500]" />
                         <span>{language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close Index' : 'अनुक्रमणिका बंद करें'}</span>
                       </>
                     )}
@@ -2521,7 +2555,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         onClick={() => handleSelectCategory(cat.id)}
                         className={`min-h-[40px] px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap border cursor-pointer flex items-center gap-1.5 ${
                           selectedGranthCategory === cat.id
-                            ? 'bg-white text-amber-900 font-black shadow-md border-white'
+                            ? 'bg-white text-[#7C1D00] font-black shadow-md border-white'
                             : isSmartSuggestedCat
                             ? 'bg-amber-300/25 hover:bg-amber-300/35 text-amber-50 border-amber-200/70'
                             : 'bg-white/15 hover:bg-white/25 text-white border-white/20'
@@ -2551,40 +2585,53 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                   return (
                     <div
                       key={section.section_id}
-                      className={`bg-white dark:bg-zinc-800/90 rounded-3xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all space-y-3 border-2 ${
-                        isPurnimaSec
-                          ? 'border-indigo-400/70 dark:border-amber-400/70 ring-2 ring-amber-400/25'
-                          : isRecommendedSec
-                          ? 'border-amber-500/70 dark:border-amber-500/60 ring-2 ring-amber-500/20'
-                          : 'border-amber-500/20 dark:border-zinc-700/80'
+                      style={{
+                        backgroundColor: theme.cardBg,
+                        borderColor: (isPurnimaSec || isRecommendedSec) ? theme.accentGold : theme.cardBorder,
+                        color: theme.textPrimary,
+                      }}
+                      className={`rounded-3xl p-4 sm:p-5 shadow-md hover:shadow-lg backdrop-blur-md transition-all space-y-3 border-2 ${
+                        (isPurnimaSec || isRecommendedSec) ? 'ring-2 ring-amber-500/25' : ''
                       }`}
                     >
                       {/* Section Main Header with V-Shape Chevron Toggle */}
-                      <div className="flex items-center justify-between gap-2 border-b border-black/5 dark:border-white/5 pb-2.5">
+                      <div style={{ borderColor: theme.cardBorder }} className="flex items-center justify-between gap-2 border-b pb-2.5">
                         <div
                           onClick={() => toggleSingleIndexSection(section.section_id)}
                           className="flex items-center gap-3 cursor-pointer group min-w-0 flex-1 pr-2"
                         >
-                          <div className="w-10 h-10 rounded-2xl bg-amber-600 text-white flex items-center justify-center font-serif font-black text-sm shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                          <div
+                            style={{
+                              backgroundColor: theme.buttonPrimaryBg,
+                              color: theme.buttonPrimaryText,
+                            }}
+                            className="w-10 h-10 rounded-2xl flex items-center justify-center font-serif font-black text-sm shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                          >
                             {section.section_id}
                           </div>
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-2 flex-wrap">
-                              <h3 className="font-serif font-black text-base sm:text-lg text-amber-950 dark:text-amber-300 leading-tight group-hover:text-amber-700 transition-colors truncate">
+                              <h3 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-lg leading-tight transition-colors truncate">
                                 {sectionTitle}
                               </h3>
                               {isRecommendedSec && (
-                                <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/40 text-[0.625rem] font-bold font-serif whitespace-nowrap">
+                                <span
+                                  style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon, borderColor: theme.accentGold }}
+                                  className="px-2 py-0.5 rounded-full border text-[0.625rem] font-bold font-serif whitespace-nowrap"
+                                >
                                   ✨ {language === 'pb' ? 'ਸੁਝਾਇਆ ਪਾਠ' : language === 'en' ? 'Recommended Now' : 'अभी सुझायित'}
                                 </span>
                               )}
                               {isPurnimaSec && (
-                                <span className="px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-900 dark:text-amber-200 border border-indigo-400/40 text-[0.625rem] font-bold font-serif whitespace-nowrap">
+                                <span
+                                  style={{ backgroundColor: theme.accentGoldLight, color: theme.sacredMaroon, borderColor: theme.accentGold }}
+                                  className="px-2 py-0.5 rounded-full border text-[0.625rem] font-bold font-serif whitespace-nowrap"
+                                >
                                   🌕 {language === 'pb' ? 'ਪੂਰਨਮਾਸ਼ੀ' : language === 'en' ? 'Purnima Today' : 'पूर्णिमा विशेष'}
                                 </span>
                               )}
                             </div>
-                            <span className="text-[0.6875rem] font-mono text-gray-500 dark:text-gray-400 block truncate">
+                            <span style={{ color: theme.textSecondary }} className="text-[0.6875rem] font-mono block truncate">
                               {hasOutlineChapters && (traditionalOutline.length > 1 || (traditionalOutline[0]?.children?.length ?? 0) > 0)
                                 ? (language === 'pb'
                                     ? `${traditionalOutline.length} ਮੁੱਖ ਅਧਿਆਇ (${section.sub_chapters.length} ਪਾਠ)`
@@ -2606,7 +2653,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               handleSelectSection(firstTarget);
                               setViewMode('reading');
                             }}
-                            className="min-h-[44px] px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition cursor-pointer whitespace-nowrap"
+                            style={{
+                              backgroundColor: theme.buttonPrimaryBg,
+                              color: theme.buttonPrimaryText,
+                            }}
+                            className="min-h-[44px] px-3 py-1.5 rounded-xl font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm hover:opacity-95 transition cursor-pointer whitespace-nowrap"
                           >
                             <BookOpen size={14} />
                             <span className="hidden sm:inline">
@@ -2618,14 +2669,19 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           <button
                             type="button"
                             onClick={() => toggleSingleIndexSection(section.section_id)}
-                            className="min-w-[44px] min-h-[44px] p-2 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition cursor-pointer flex items-center justify-center"
+                            style={{
+                              backgroundColor: theme.stepActiveBg,
+                              color: theme.sacredMaroon,
+                              borderColor: theme.accentGold,
+                            }}
+                            className="min-w-[44px] min-h-[44px] p-2 rounded-xl border hover:opacity-90 transition cursor-pointer flex items-center justify-center"
                             title={isSecCollapsed ? 'ਖੋਲ੍ਹੋ (Expand)' : 'ਸਮੇਟੋ (Collapse)'}
                             aria-label="Toggle Section"
                           >
                             {isSecCollapsed ? (
-                              <ChevronDown size={18} className="text-amber-700 dark:text-amber-300" />
+                              <ChevronDown size={18} />
                             ) : (
-                              <ChevronUp size={18} className="text-amber-700 dark:text-amber-300" />
+                              <ChevronUp size={18} />
                             )}
                           </button>
                         </div>
@@ -2656,18 +2712,26 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                   handleSelectSection(targetSectionId);
                                   setViewMode('reading');
                                 }}
-                                className={`rounded-2xl p-3 flex flex-col justify-between gap-2.5 transition-all group cursor-pointer border ${
-                                  isMadhyahnHighlighted
-                                    ? 'bg-amber-500/15 dark:bg-amber-900/30 border-amber-500/60 shadow-xs'
-                                    : 'bg-amber-50/40 dark:bg-zinc-900/60 hover:bg-amber-100/70 dark:hover:bg-zinc-700/60 border-amber-200/60 dark:border-zinc-700/60 shadow-2xs hover:shadow-xs'
-                                }`}
+                                style={{
+                                  backgroundColor: isMadhyahnHighlighted ? theme.stepActiveBg : theme.bgSecondary,
+                                  borderColor: isMadhyahnHighlighted ? theme.accentGold : theme.cardBorder,
+                                  color: theme.textPrimary,
+                                }}
+                                className="rounded-2xl p-3 flex flex-col justify-between gap-2.5 transition-all group cursor-pointer border backdrop-blur-sm shadow-2xs hover:shadow-sm"
                               >
                                 <div className="flex items-center justify-between gap-2">
                                   <div className="flex items-center gap-2.5 min-w-0 pr-1">
-                                    <span className="text-[0.6875rem] font-mono font-bold px-2 py-0.5 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/20 shrink-0">
+                                    <span
+                                      style={{
+                                        backgroundColor: theme.stepActiveBg,
+                                        color: theme.sacredMaroon,
+                                        borderColor: theme.cardBorder,
+                                      }}
+                                      className="text-[0.6875rem] font-mono font-bold px-2 py-0.5 rounded-lg border shrink-0"
+                                    >
                                       {chapter.number}
                                     </span>
-                                    <h4 className="font-serif font-bold text-xs sm:text-sm text-gray-800 dark:text-gray-200 group-hover:text-amber-900 dark:group-hover:text-amber-200 truncate">
+                                    <h4 style={{ color: theme.textPrimary }} className="font-serif font-bold text-xs sm:text-sm truncate">
                                       {chapterTitle}
                                     </h4>
                                   </div>
@@ -2687,19 +2751,23 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           setTimeout(() => handlePlayVoice(loadedSec.verses[0]), 300);
                                         }
                                       }}
-                                      className="w-9 h-9 rounded-full bg-amber-500/20 hover:bg-amber-600 hover:text-white text-amber-800 dark:text-amber-300 flex items-center justify-center transition cursor-pointer"
+                                      style={{
+                                        backgroundColor: theme.buttonPrimaryBg,
+                                        color: theme.buttonPrimaryText,
+                                      }}
+                                      className="w-9 h-9 rounded-full flex items-center justify-center hover:scale-105 transition cursor-pointer shadow-2xs"
                                       title={language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'श्रवण'}
                                       aria-label={`Play ${chapterTitle}`}
                                     >
                                       <Play size={13} className="ml-0.5" />
                                     </button>
-                                    <ChevronRight size={15} className="text-amber-500/70 group-hover:translate-x-0.5 transition-transform" />
+                                    <ChevronRight size={15} style={{ color: theme.accentGold }} className="group-hover:translate-x-0.5 transition-transform" />
                                   </div>
                                 </div>
 
                                 {/* Nested Sub-Items (e.g., गुरु महिमा १/२/शतक सार, गौड़ी १..५, अष्टक १..३, आरती १..४, विनती १..२) */}
                                 {chapter.children && chapter.children.length > 0 && (
-                                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-amber-500/15">
+                                  <div style={{ borderColor: theme.cardBorder }} className="flex flex-wrap gap-1.5 pt-2 border-t">
                                     {chapter.children.map((child) => {
                                       const childTitle = getLocalizedSubChapterTitle(child, language);
                                       const childSecId = resolveNitnemSectionId(child, section);
@@ -2712,7 +2780,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                             handleSelectSection(childSecId);
                                             setViewMode('reading');
                                           }}
-                                          className="min-h-[36px] px-2.5 py-1 rounded-xl bg-white/85 dark:bg-zinc-800 hover:bg-amber-600 hover:text-white text-amber-950 dark:text-amber-200 border border-amber-400/35 text-[0.6875rem] font-serif font-bold transition cursor-pointer"
+                                          style={{
+                                            backgroundColor: theme.cardBg,
+                                            color: theme.sacredMaroon,
+                                            borderColor: theme.cardBorder,
+                                          }}
+                                          className="min-h-[36px] px-2.5 py-1 rounded-xl border text-[0.6875rem] font-serif font-bold hover:brightness-95 transition cursor-pointer"
                                         >
                                           {childTitle}
                                         </button>
@@ -2732,10 +2805,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             )}
 
             {/* 3. QUICK SADHANA & SPECIAL PANTHIC VAULTS (PLACED BELOW INDEX) */}
-            <div className="pt-2 border-t border-amber-500/20 space-y-4">
+            <div style={{ borderColor: theme.cardBorder }} className="pt-3 border-t space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="font-serif font-bold text-sm text-amber-900 dark:text-amber-300 flex items-center gap-1.5">
-                  <Sparkles size={16} className="text-amber-600" />
+                <h3 style={{ color: theme.sacredMaroon }} className="font-serif font-bold text-sm flex items-center gap-1.5">
+                  <Sparkles size={16} style={{ color: theme.accentGold }} />
                   <span>{language === 'pb' ? 'ਤਵਰਿਤ ਸਾਧਨਾ ਤੇ ਪੰਥਕ ਸੇਵਾਵਾਂ' : language === 'en' ? 'Quick Sadhana & Panthic Vaults' : 'त्वरित साधना एवं पंथिक सेवाएं'}</span>
                 </h3>
               </div>
@@ -2746,22 +2819,33 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 {lastReadPosition ? (
                   <div
                     onClick={handleResumeLastRead}
-                    className="bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent dark:from-amber-950/40 dark:to-transparent border-2 border-amber-400/50 dark:border-amber-800/60 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-amber-500 transition shadow-xs group"
+                    style={{
+                      backgroundColor: theme.cardBg,
+                      borderColor: theme.accentGold,
+                      color: theme.textPrimary,
+                    }}
+                    className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:shadow-md backdrop-blur-md transition shadow-xs group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-amber-500 text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                      <div
+                        style={{
+                          backgroundColor: theme.buttonPrimaryBg,
+                          color: theme.buttonPrimaryText,
+                        }}
+                        className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform"
+                      >
                         <BookmarkCheck size={20} />
                       </div>
                       <div>
-                        <span className="text-[0.625rem] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block">
+                        <span style={{ color: theme.accentGold }} className="text-[0.625rem] font-bold uppercase tracking-wider block">
                           {language === 'pb' ? 'ਪਿਛਲਾ ਪਾਠ ਜਾਰੀ ਰੱਖੋ' : language === 'en' ? 'Resume Last Read' : 'पिछला पाठ जारी रखें'}
                         </span>
-                        <h4 className="font-serif font-black text-sm text-gray-800 dark:text-gray-100 line-clamp-1">
+                        <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm line-clamp-1">
                           {lastReadPosition.title} • {language === 'pb' ? `ਪੰਨਾ ${lastReadPosition.verseIndex + 1}` : language === 'en' ? `Page ${lastReadPosition.verseIndex + 1}` : `पृष्ठ ${lastReadPosition.verseIndex + 1}`}
                         </h4>
                       </div>
                     </div>
-                    <ChevronRight size={18} className="text-amber-600 dark:text-amber-400 group-hover:translate-x-1 transition-transform shrink-0" />
+                    <ChevronRight size={18} style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform shrink-0" />
                   </div>
                 ) : (
                   <div
@@ -2771,44 +2855,60 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         setViewMode('reading');
                       }
                     }}
-                    className="bg-amber-50/60 dark:bg-amber-950/20 border-2 border-amber-300/40 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-amber-500 transition shadow-xs"
+                    style={{
+                      backgroundColor: theme.cardBg,
+                      borderColor: theme.accentGold,
+                      color: theme.textPrimary,
+                    }}
+                    className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:shadow-md backdrop-blur-md transition shadow-xs"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-amber-600 text-white flex items-center justify-center">
+                      <div
+                        style={{
+                          backgroundColor: theme.buttonPrimaryBg,
+                          color: theme.buttonPrimaryText,
+                        }}
+                        className="w-10 h-10 rounded-2xl flex items-center justify-center"
+                      >
                         <BookOpen size={20} />
                       </div>
                       <div>
-                        <span className="text-[0.625rem] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block">
+                        <span style={{ color: theme.accentGold }} className="text-[0.625rem] font-bold uppercase tracking-wider block">
                           {language === 'pb' ? 'ਅੰਮ੍ਰਿਤਵੇਲਾ ਨਿਤਨੇਮ' : language === 'en' ? 'Daily Nitnem' : 'अमृतवेला नितनेम'}
                         </span>
-                        <h4 className="font-serif font-black text-sm text-gray-800 dark:text-gray-100">
+                        <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm">
                           {nitnemSections[0]?.title[language] || nitnemSections[0]?.title.hi || getLocalizedBookTitle(language)}
                         </h4>
                       </div>
                     </div>
-                    <ChevronRight size={18} className="text-amber-600 shrink-0" />
+                    <ChevronRight size={18} style={{ color: theme.sacredMaroon }} className="shrink-0" />
                   </div>
                 )}
 
                 {/* Digital Jaap Mala Quick Button */}
                 <div
                   onClick={() => setShowMalaModal(true)}
-                  className="bg-gradient-to-r from-emerald-500/15 via-emerald-500/10 to-transparent dark:from-emerald-950/40 dark:to-transparent border-2 border-emerald-400/50 dark:border-emerald-800/60 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-emerald-500 transition shadow-xs group"
+                  style={{
+                    backgroundColor: theme.cardBg,
+                    borderColor: theme.cardBorder,
+                    color: theme.textPrimary,
+                  }}
+                  className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-emerald-500 backdrop-blur-md transition shadow-xs group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 rounded-2xl bg-emerald-700 text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                       <span className="text-xl">📿</span>
                     </div>
                     <div>
-                      <span className="text-[0.625rem] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block">
+                      <span className="text-[0.625rem] font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wider block">
                         {language === 'pb' ? 'ਸਿਮਰਨ ਸਾਧਨਾ' : language === 'en' ? 'Simran Sadhana' : 'सिमरन साधना'}
                       </span>
-                      <h4 className="font-serif font-black text-sm text-gray-800 dark:text-gray-100">
+                      <h4 style={{ color: theme.textPrimary }} className="font-serif font-black text-sm">
                         {language === 'pb' ? 'ਜਾਪ ਮਾਲਾ ਕਾਊਂਟਰ (੧੦੮ ਮਣਕੇ)' : language === 'en' ? 'Jaap Mala Counter (108 Beads)' : 'जाप माला काउंटर (१०८ मनके)'}
                       </h4>
                     </div>
                   </div>
-                  <ChevronRight size={18} className="text-emerald-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0" />
+                  <ChevronRight size={18} className="text-emerald-700 dark:text-emerald-300 group-hover:translate-x-1 transition-transform shrink-0" />
                 </div>
               </div>
 
@@ -2817,43 +2917,65 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 {/* Acharya Parampara Itihas Card */}
                 <div
                   onClick={() => setShowAcharyaModal(true)}
-                  className="bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-transparent dark:from-amber-950/40 border-2 border-amber-400/50 dark:border-amber-800/60 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-amber-500 transition shadow-xs group"
+                  style={{
+                    backgroundColor: theme.cardBg,
+                    borderColor: theme.cardBorder,
+                    color: theme.textPrimary,
+                  }}
+                  className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:shadow-md backdrop-blur-md transition shadow-xs group"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-2xl bg-amber-600 text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                    <div
+                      style={{
+                        backgroundColor: theme.buttonPrimaryBg,
+                        color: theme.buttonPrimaryText,
+                      }}
+                      className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0"
+                    >
                       <span className="text-lg">👑</span>
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-serif font-black text-sm text-gray-900 dark:text-gray-100 truncate">
+                      <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm truncate">
                         {language === 'pb' ? 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ' : language === 'en' ? 'Acharya Parampara Itihas' : 'आचार्य परंपरा इतिहास'}
                       </h4>
-                      <p className="text-xs text-amber-800 dark:text-amber-300 font-serif font-semibold truncate">
+                      <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-semibold truncate">
                         Lineage of Damakheda Gaddi Acharyas
                       </p>
                     </div>
                   </div>
-                  <ChevronRight size={18} className="text-amber-600 dark:text-amber-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
+                  <ChevronRight size={18} style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
                 </div>
 
                 {/* Prashnottari (Sawal-Jawab) Card */}
                 <div
                   onClick={() => setShowChoukaVidhiModal(true)}
-                  className="bg-gradient-to-r from-orange-500/15 via-amber-500/10 to-transparent dark:from-orange-950/40 border-2 border-orange-400/50 dark:border-orange-800/60 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:border-orange-500 transition shadow-xs group"
+                  style={{
+                    backgroundColor: theme.cardBg,
+                    borderColor: theme.cardBorder,
+                    color: theme.textPrimary,
+                  }}
+                  className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:shadow-md backdrop-blur-md transition shadow-xs group"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-2xl bg-orange-600 text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                    <div
+                      style={{
+                        backgroundColor: theme.buttonPrimaryBg,
+                        color: theme.buttonPrimaryText,
+                      }}
+                      className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0"
+                    >
                       <span className="text-lg">❓</span>
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-serif font-black text-sm text-gray-900 dark:text-gray-100 truncate">
+                      <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm truncate">
                         {language === 'pb' ? 'ਪ੍ਰਸ਼ਨੋਤਰੀ (ਸਵਾਲ-ਜਵਾਬ)' : language === 'en' ? 'Prashnottari (Sawal-Jawab)' : 'प्रश्नोत्तरी (Sawal-Jawab)'}
                       </h4>
-                      <p className="text-xs text-orange-800 dark:text-orange-300 font-serif font-semibold truncate">
+                      <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-semibold truncate">
                         Panthic Q&A regarding rituals and Chouka Vidhi
                       </p>
                     </div>
                   </div>
-                  <ChevronRight size={18} className="text-orange-600 dark:text-orange-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
+                  <ChevronRight size={18} style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
                 </div>
               </div>
             </div>
@@ -2958,17 +3080,22 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     ) : (
                       <div 
                         id="nitnem-reading-top-header"
-                        style={{ scrollSnapAlign: 'start' }}
-                        className="nitnem-verse-snap-item snap-start p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-orange-500/15 dark:from-amber-950/40 dark:to-orange-950/30 border-2 border-amber-500/30 text-center space-y-2 shadow-xs"
+                        style={{
+                          scrollSnapAlign: 'start',
+                          backgroundColor: theme.cardBg,
+                          borderColor: theme.accentGold,
+                          color: theme.textPrimary,
+                        }}
+                        className="nitnem-verse-snap-item snap-start p-4 sm:p-5 rounded-2xl border-2 backdrop-blur-md text-center space-y-2 shadow-sm"
                       >
-                        <span className="text-[0.625rem] sm:text-xs font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300">
+                        <span style={{ color: theme.accentGold }} className="text-[0.625rem] sm:text-xs font-mono font-bold uppercase tracking-wider">
                           {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? 'Sacred Nitnem Recitation' : 'पावन नितनेम पाठ'}
                         </span>
-                        <h2 className="text-lg sm:text-2xl font-black font-serif text-amber-950 dark:text-amber-200">
+                        <h2 style={{ color: theme.sacredMaroon }} className="text-lg sm:text-2xl font-black font-serif">
                           {currentSection.title[language] || currentSection.title.hi}
                         </h2>
                         {currentSection.subtitle && (
-                          <p className="text-xs sm:text-sm font-serif text-amber-900/80 dark:text-amber-300/80 max-w-xl mx-auto">
+                          <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif max-w-xl mx-auto">
                             {currentSection.subtitle[language] || currentSection.subtitle.hi}
                           </p>
                         )}
@@ -3151,10 +3278,17 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       </div>
                     )}
 
-                    {/* Global Sacred Invocation: Every prayer begins with '।।सत्यनाम।।' */}
+                    {/* Global Sacred Invocation: Every prayer begins with '।। सत्यनाम ।।' */}
                     <div className="text-center py-2.5 my-2">
-                      <span className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-amber-500/20 via-orange-500/25 to-amber-500/20 dark:from-amber-950/60 dark:to-orange-950/40 text-amber-950 dark:text-amber-200 border-2 border-amber-400/50 font-serif font-black text-sm sm:text-base tracking-widest shadow-xs">
-                        {language === 'pb' ? '।।ਸਤ੍ਯਨਾਮ।।' : language === 'en' ? '|| Satyanam ||' : '।।सत्यनाम।।'}
+                      <span
+                        style={{
+                          backgroundColor: theme.cardBg,
+                          borderColor: theme.accentGold,
+                          color: theme.sacredMaroon,
+                        }}
+                        className="inline-block px-6 py-2 rounded-full border-2 font-serif font-black text-sm sm:text-base tracking-normal backdrop-blur-md shadow-xs"
+                      >
+                        {language === 'pb' ? '।। ਸਤ੍ਯਨਾਮ ।।' : language === 'en' ? '|| Satyanam ||' : '।। सत्यनाम ।।'}
                       </span>
                     </div>
 
@@ -3163,7 +3297,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     ) : versesList.length === 0 ? (
                       <section
                         aria-label={language === 'pb' ? 'ਖਾਲੀ ਪਾਠ ਸਥਾਨ' : language === 'en' ? 'Empty Path Space' : 'रिक्त पाठ स्थान'}
-                        className="max-w-2xl mx-auto my-6 rounded-2xl border border-stone-200 dark:border-amber-900/40 bg-[#FBF9F5] dark:bg-[#1C1713] px-6 py-10 sm:px-10 sm:py-14 text-center space-y-5 shadow-xs"
+                        style={{
+                          backgroundColor: theme.cardBg,
+                          borderColor: theme.cardBorder,
+                          color: theme.textPrimary,
+                        }}
+                        className="max-w-2xl mx-auto my-6 rounded-2xl border backdrop-blur-md px-6 py-10 sm:px-10 sm:py-14 text-center space-y-5 shadow-sm"
                       >
                         <p className="text-xs uppercase tracking-widest font-sans text-stone-500 dark:text-amber-300/75">
                           <span>
@@ -3488,11 +3627,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     ? 'opacity-85 hover:opacity-100'
                                     : ''
                                 }`
-                              : `rounded-none border-0 p-5 sm:p-7 ${currentThemeStyle.cardBg} ${
+                              : `${globalWallpaper ? 'rounded-2xl border backdrop-blur-md shadow-sm' : 'rounded-none border-0'} p-5 sm:p-7 ${currentThemeStyle.cardBg} ${currentThemeStyle.cardBorder} ${
                                   isFullBaniAudioPlaying && activeRecitingVerseIdx === vIdx
-                                    ? 'bg-amber-100 dark:bg-amber-900/20 shadow-inner'
+                                    ? 'ring-2 ring-amber-500/60 shadow-inner'
                                     : isCurrentActive 
-                                    ? 'bg-amber-50 dark:bg-amber-950/20' 
+                                    ? 'ring-1 ring-amber-500/35' 
                                     : ''
                                 }`
                           }`}
@@ -3897,19 +4036,26 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     {/* Seamless Flow Next Sub-Chapter Card OR Peaceful End-of-Path Flower Blessing & Daily Haziri (only when verses exist) */}
                     {!isPureVaniMode && versesList.length > 0 && (
                       granthContext.nextSection ? (
-                        <div className="my-6 p-4 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-600/15 via-orange-500/20 to-amber-600/15 border-2 border-amber-500/50 shadow-md text-center space-y-3">
-                          <span className="text-[0.6875rem] font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300 block">
+                        <div
+                          style={{
+                            backgroundColor: theme.cardBg,
+                            borderColor: theme.accentGold,
+                            color: theme.textPrimary,
+                          }}
+                          className="my-6 p-4 sm:p-6 rounded-3xl border-2 backdrop-blur-md shadow-md text-center space-y-3"
+                        >
+                          <span style={{ color: theme.accentGold }} className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider block">
                             {language === 'pb'
                               ? `ਅਗਲਾ ਉਪ-ਅਧਿਆਇ (${granthContext.currentIndex + 2}/${granthContext.totalCount})`
                               : language === 'en'
                               ? `Next Sub-Chapter (${granthContext.currentIndex + 2}/${granthContext.totalCount})`
                               : `अगला उप-अध्याय (${granthContext.currentIndex + 2}/${granthContext.totalCount})`}
                           </span>
-                          <h3 className="text-base sm:text-xl font-serif font-black text-amber-950 dark:text-amber-100">
+                          <h3 style={{ color: theme.sacredMaroon }} className="text-base sm:text-xl font-serif font-black">
                             {granthContext.nextSection.title[language] || granthContext.nextSection.title.hi}
                           </h3>
                           {granthContext.nextSection.subtitle && (
-                            <p className="text-xs sm:text-sm font-serif text-amber-900/90 dark:text-amber-200/90 max-w-xl mx-auto leading-relaxed">
+                            <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif max-w-xl mx-auto leading-relaxed">
                               {granthContext.nextSection.subtitle[language] || granthContext.nextSection.subtitle.hi}
                             </p>
                           )}
@@ -3920,7 +4066,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                 sacredHaptics.lightTap();
                                 handleSelectSection(granthContext.nextSection!.id);
                               }}
-                              className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-black text-xs sm:text-sm shadow-md transition-all active:scale-95 cursor-pointer whitespace-nowrap"
+                              style={{
+                                backgroundColor: theme.buttonPrimaryBg,
+                                color: theme.buttonPrimaryText,
+                              }}
+                              className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-serif font-black text-xs sm:text-sm shadow-md transition-all hover:opacity-95 active:scale-95 cursor-pointer whitespace-nowrap"
                             >
                               <span>
                                 {language === 'pb'
@@ -3934,9 +4084,19 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           </div>
                         </div>
                       ) : (
-                        <div className="my-6 p-5 sm:p-7 rounded-3xl bg-gradient-to-br from-amber-500/20 via-orange-500/15 to-emerald-500/15 dark:from-amber-950/60 dark:via-zinc-900 dark:to-emerald-950/40 border-2 border-amber-400/70 shadow-lg text-center space-y-4">
-                          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/40 text-xs font-bold font-serif">
-                            <Flower2 size={15} className="text-amber-700 dark:text-amber-300" />
+                        <div
+                          style={{
+                            backgroundColor: theme.cardBg,
+                            borderColor: theme.accentGold,
+                            color: theme.textPrimary,
+                          }}
+                          className="my-6 p-5 sm:p-7 rounded-3xl border-2 backdrop-blur-md shadow-lg text-center space-y-4"
+                        >
+                          <div
+                            style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon, borderColor: theme.accentGold }}
+                            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-bold font-serif"
+                          >
+                            <Flower2 size={15} />
                             <span>
                               {language === 'pb'
                                 ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਪਾਠ ਸੰਪੰਨ'
@@ -3946,7 +4106,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             </span>
                           </div>
 
-                          <p className="text-base sm:text-xl font-serif font-black text-amber-950 dark:text-amber-100 max-w-2xl mx-auto leading-relaxed">
+                          <p style={{ color: theme.textPrimary }} className="text-base sm:text-xl font-serif font-black max-w-2xl mx-auto leading-relaxed">
                             {language === 'pb'
                               ? 'ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ! ਅੱਜ ਤੁਸੀਂ ਜੀਵਨ ਦੇ ਇੱਕ ਨਵੇਂ ਸੱਤ ਦਾ ਸਵਾਧਿਆਇ ਪੂਰਾ ਕੀਤਾ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ 🙏'
                               : language === 'en'
@@ -3958,10 +4118,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             <button
                               type="button"
                               onClick={handleMarkNitnemPathHaziri}
+                              style={!haziriMarkedToday ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText } : undefined}
                               className={`min-h-[48px] inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-serif font-black text-sm shadow-md transition-all active:scale-95 cursor-pointer whitespace-nowrap ${
                                 haziriMarkedToday
-                                  ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                                  : 'bg-amber-600 hover:bg-amber-700 text-white'
+                                  ? 'bg-emerald-700 hover:bg-emerald-800 text-white'
+                                  : 'hover:opacity-95'
                               }`}
                             >
                               {haziriMarkedToday ? <CheckCircle2 size={18} /> : <Flower2 size={18} />}
@@ -3984,7 +4145,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               <button
                                 type="button"
                                 onClick={handleNextSection}
-                                className="min-h-[44px] inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-white/85 dark:bg-zinc-800 hover:bg-amber-50 dark:hover:bg-zinc-700 text-amber-950 dark:text-amber-200 border border-amber-400/50 font-serif font-bold text-xs sm:text-sm transition cursor-pointer whitespace-nowrap"
+                                style={{
+                                  backgroundColor: theme.bgSecondary,
+                                  color: theme.sacredMaroon,
+                                  borderColor: theme.accentGold,
+                                }}
+                                className="min-h-[44px] inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl border font-serif font-bold text-xs sm:text-sm hover:opacity-90 transition cursor-pointer whitespace-nowrap"
                               >
                                 <span>
                                   {language === 'pb'
@@ -4001,14 +4167,21 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       )
                     )}
 
-                    {/* Global Sacred Concluding Salutation: Every prayer ends with '।।साहेब बन्दगी साहेब।।' */}
+                    {/* Global Sacred Concluding Salutation: Every prayer ends with '।। साहेब बन्दगी साहेब ।।' */}
                     <div className="text-center py-6 my-4 border-t-2 border-amber-500/25">
-                      <div className="inline-flex flex-col items-center gap-1.5 px-6 sm:px-8 py-3.5 rounded-3xl bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 dark:from-amber-950/50 dark:to-orange-950/40 border-2 border-amber-400/60 shadow-md">
-                        <span className="text-[0.6875rem] font-mono font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300">
+                      <div
+                        style={{
+                          backgroundColor: theme.cardBg,
+                          borderColor: theme.accentGold,
+                          color: theme.sacredMaroon,
+                        }}
+                        className="inline-flex flex-col items-center gap-1.5 px-6 sm:px-8 py-3.5 rounded-3xl border-2 backdrop-blur-md shadow-md"
+                      >
+                        <span style={{ color: theme.accentGold }} className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider">
                           {language === 'pb' ? '॥ ਸੰਪੂਰਨ ਸਮਾਪਤੀ ਵੰਦਨਾ ॥' : language === 'en' ? '|| Sacred Concluding Prostration ||' : '।। सम्पूर्ण समाप्ति वंदना ।।'}
                         </span>
-                        <span className="font-serif font-black text-base sm:text-lg text-amber-950 dark:text-amber-100 tracking-wider">
-                          {language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।।साहेब बन्दगी साहेब।।'}
+                        <span className="font-serif font-black text-base sm:text-lg tracking-normal">
+                          {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बन्दगी साहेब ।।'}
                         </span>
                       </div>
                     </div>
@@ -4055,7 +4228,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
       {viewMode === 'reading' && !isPureVaniMode && (
         <aside
           aria-label="Scroll Navigation"
-          className="fixed right-2 sm:right-4 bottom-16 sm:bottom-[4.25rem] z-30 flex flex-col items-center gap-1 p-0.5 sm:p-1 rounded-full bg-amber-600/85 dark:bg-stone-900/85 text-white backdrop-blur-md border border-white/25 shadow-lg select-none"
+          className="fixed right-2 sm:right-4 bottom-16 sm:bottom-[4.25rem] z-30 flex flex-col items-center gap-1 p-0.5 sm:p-1 rounded-full bg-[#8B2500]/90 dark:bg-stone-900/90 text-white backdrop-blur-md border border-white/25 shadow-lg select-none"
         >
           <button
             type="button"
@@ -4080,17 +4253,29 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
       {/* FIXED FOOTER NAVIGATION PANEL ("पिछला पाठ / अगला पाठ") - Hidden in Pure Vani Audio Mode to keep mobile sticky footprint <= 15% */}
       {viewMode === 'reading' && !isPureVaniMode && (
-        <footer className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-amber-300/40 dark:border-amber-800/40 shadow-lg px-3 sm:px-4 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] print:hidden">
+        <footer
+          style={{
+            backgroundColor: theme.cardBg,
+            borderColor: theme.cardBorder,
+            color: theme.textPrimary,
+          }}
+          className="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-md border-t shadow-lg px-3 sm:px-4 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] print:hidden"
+        >
           <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
             {/* Previous Paath */}
             <button
               type="button"
               onClick={handlePrevSection}
               disabled={currentOverallIndex === 0}
+              style={currentOverallIndex !== 0 ? {
+                backgroundColor: theme.bgSecondary,
+                borderColor: theme.accentGold,
+                color: theme.sacredMaroon,
+              } : undefined}
               className={`min-h-[44px] flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer shrink-0 ${
                 currentOverallIndex === 0
                   ? 'opacity-30 cursor-not-allowed bg-gray-100 dark:bg-zinc-800 text-gray-400'
-                  : 'bg-amber-500/15 dark:bg-amber-950/40 border border-amber-300/60 dark:border-amber-800/60 text-amber-900 dark:text-amber-200 hover:bg-amber-500/25 active:scale-95 shadow-xs'
+                  : 'border hover:opacity-90 active:scale-95 shadow-xs'
               }`}
             >
               <ChevronLeft size={16} />
@@ -4099,10 +4284,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
             {/* Center Paath Progress / Title */}
             <div className="text-center px-1 flex-1 min-w-0">
-              <span className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 block truncate">
+              <span style={{ color: theme.accentGold }} className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-black uppercase tracking-wider block truncate">
                 {rt?.textSwaroop || 'पाठ'} {currentOverallIndex + 1} / {nitnemSections.length}
               </span>
-              <p className="text-xs sm:text-sm font-serif font-black text-gray-800 dark:text-gray-100 truncate mt-0.5">
+              <p style={{ color: theme.textPrimary }} className="text-xs sm:text-sm font-serif font-black truncate mt-0.5">
                 {currentSection?.title?.[language] || currentSection?.title?.hi || ''}
               </p>
             </div>
@@ -4112,10 +4297,14 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
               type="button"
               onClick={handleNextSection}
               disabled={currentOverallIndex === nitnemSections.length - 1}
+              style={currentOverallIndex !== nitnemSections.length - 1 ? {
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
+              } : undefined}
               className={`min-h-[44px] flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer shrink-0 ${
                 currentOverallIndex === nitnemSections.length - 1
                   ? 'opacity-30 cursor-not-allowed bg-gray-100 dark:bg-zinc-800 text-gray-400'
-                  : 'bg-amber-600 hover:bg-amber-700 text-white shadow-md active:scale-95'
+                  : 'hover:opacity-95 shadow-md active:scale-95'
               }`}
             >
               <span>{rt?.nextPath || 'अगला पाठ'}</span>
@@ -4572,7 +4761,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-                            className="fixed bottom-0 left-0 right-0 z-[130] bg-white dark:bg-zinc-950 rounded-t-3xl shadow-2xl p-4 sm:p-6 pb-safe border-t-2 border-amber-500 max-h-[86dvh] overflow-y-auto overscroll-contain"
+                            style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold, color: theme.textPrimary }}
+                            className="fixed bottom-0 left-0 right-0 z-[130] backdrop-blur-xl rounded-t-3xl shadow-2xl p-4 sm:p-6 pb-safe border-t-2 max-h-[86dvh] overflow-y-auto overscroll-contain"
                           >
                             <div
                               onClick={() => setIsSettingsExpanded(false)}

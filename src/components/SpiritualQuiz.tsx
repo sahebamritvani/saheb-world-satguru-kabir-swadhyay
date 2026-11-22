@@ -47,13 +47,16 @@ export const SpiritualQuiz: React.FC<SpiritualQuizProps> = ({
 
   const resetQuiz = () => {
     const generated = buildFiveDimensionQuiz(sakhi, language);
-    const prepared: ShuffledQuestion[] = generated.map((q) => ({
-      id: q.id,
-      questionText: q.question,
-      options: q.options,
-      correctAnswerText: q.options[q.correctIndex] ?? q.options[0],
-      explanation: q.explanation,
-    }));
+    const prepared: ShuffledQuestion[] = generated.map((q) => {
+      const correctOpt = q.options.find((o) => o.isCorrect) || q.options[0];
+      return {
+        id: q.id,
+        questionText: q.question,
+        options: q.options.map((o) => o.text),
+        correctAnswerText: correctOpt.text,
+        explanation: correctOpt.feedback || q.explanation,
+      };
+    });
 
     setShuffledQuestions(prepared);
     setCurrentIndex(0);

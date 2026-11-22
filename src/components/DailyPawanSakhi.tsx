@@ -47,7 +47,14 @@ import {
   Quote,
   Save,
   CheckCircle2,
-  ShieldAlert
+  ShieldAlert,
+  Info,
+  ShieldCheck,
+  Lock,
+  Atom,
+  BookMarked,
+  TrendingUp,
+  Image as ImageIcon
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sakhi, Language, SACRED_BRANDING, AppView } from '../types';
@@ -66,6 +73,19 @@ import { ChetawaniSaarang } from './ChetawaniSaarang';
 import { DailyHukamnamaCard } from './DailyHukamnamaCard';
 import { sacredHaptics } from '../services/haptics';
 import { getHaziriState, markTodayHaziri, subscribeToHaziri, HaziriState } from '../services/haziriStore';
+import {
+  ALL_54_DASHBOARD_CARDS,
+  DASHBOARD_CATEGORIES,
+  DashboardCardIconKey,
+  DashboardCategoryNumber,
+  DashboardFeatureCard,
+} from '../data/dashboardCardsCatalog';
+import {
+  ADMIN_SLOTS_UPDATED_EVENT,
+  AdminGranthSlotId,
+  SlotStatusInfo,
+  getAllSlotStatuses,
+} from '../services/adminSlotInjectorStore';
 
 interface DailyPawanSakhiProps {
   sakhi: Sakhi;
@@ -481,12 +501,131 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
   const handleToggleAllCategories = () => {
     sacredHaptics.lightTap();
-    const allCollapsed = [1, 2, 3, 4].every(id => collapsedCategories[id]);
-    const nextState = { 1: !allCollapsed, 2: !allCollapsed, 3: !allCollapsed, 4: !allCollapsed };
+    const allCollapsed = [1, 2, 3, 4, 5].every(id => collapsedCategories[id]);
+    const nextState = { 1: !allCollapsed, 2: !allCollapsed, 3: !allCollapsed, 4: !allCollapsed, 5: !allCollapsed };
     setCollapsedCategories(nextState);
     try {
       localStorage.setItem('saheb_features_categories_collapsed', JSON.stringify(nextState));
     } catch {}
+  };
+
+  // All 54 Dashboard Cards Directory State (Search, Filter & Live Admin Slot Indicators)
+  const [dashboardCardSearch, setDashboardCardSearch] = useState<string>('');
+  const [dashboardCategoryFilter, setDashboardCategoryFilter] = useState<'all' | DashboardCategoryNumber>('all');
+  const [adminSlotStatuses, setAdminSlotStatuses] = useState<Record<AdminGranthSlotId, SlotStatusInfo>>(() =>
+    getAllSlotStatuses()
+  );
+
+  useEffect(() => {
+    const syncStatuses = () => setAdminSlotStatuses(getAllSlotStatuses());
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, syncStatuses);
+    return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, syncStatuses);
+  }, []);
+
+  const filteredDashboardCards = useMemo(() => {
+    const q = dashboardCardSearch.trim().toLowerCase();
+    return ALL_54_DASHBOARD_CARDS.filter((card) => {
+      if (dashboardCategoryFilter !== 'all' && card.categoryId !== dashboardCategoryFilter) {
+        return false;
+      }
+      if (!q) return true;
+      const haystack = [
+        String(card.slotNumber),
+        `#${card.slotNumber}`,
+        card.title.hi,
+        card.title.pb,
+        card.title.en,
+        card.description.hi,
+        card.description.pb,
+        card.description.en,
+        card.kicker.hi,
+        card.kicker.pb,
+        card.kicker.en,
+      ]
+        .join(' ')
+        .toLowerCase();
+      return haystack.includes(q);
+    });
+  }, [dashboardCardSearch, dashboardCategoryFilter]);
+
+  const handleLaunchDashboardCard = (card: DashboardFeatureCard) => {
+    sacredHaptics.lightTap();
+    const action = card.action;
+
+    if (action.kind === 'about-modal') {
+      window.dispatchEvent(
+        new CustomEvent('sahebworld_open_about_modal', { detail: { section: action.section } })
+      );
+      return;
+    }
+
+    if (action.kind === 'modal') {
+      window.dispatchEvent(new CustomEvent(action.eventName));
+      return;
+    }
+
+    if (action.kind === 'daily-anchor') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (isSahajMode) setIsSahajMode(false);
+
+    if (action.kind === 'view') {
+      if (onNavigateView) onNavigateView(action.view);
+    } else if (action.kind === 'granth') {
+      window.dispatchEvent(
+        new CustomEvent('sahebworld_open_granth', { detail: { granthSlug: action.slug } })
+      );
+    } else if (action.kind === 'swadhyay') {
+      onStartSwadhyay();
+    } else if (action.kind === 'akhand-path') {
+      if (onOpenAkhandPath) onOpenAkhandPath();
+      else if (onNavigateView) onNavigateView('akhand-path');
+    } else if (action.kind === 'meditation-timer') {
+      if (onOpenMeditationTimer) onOpenMeditationTimer();
+      else if (onNavigateView) onNavigateView('meditation-timer');
+    } else if (action.kind === 'dhun') {
+      if (onOpenDhunTab) onOpenDhunTab();
+      else if (onNavigateView) onNavigateView('dhun');
+    }
+  };
+
+  const renderDashboardCardIcon = (iconKey: DashboardCardIconKey, className: string) => {
+    switch (iconKey) {
+      case 'book': return <BookOpen className={className} />;
+      case 'library': return <Library className={className} />;
+      case 'scroll': return <Scroll className={className} />;
+      case 'sparkles': return <Sparkles className={className} />;
+      case 'flame': return <Flame className={className} />;
+      case 'atom': return <Atom className={className} />;
+      case 'sun': return <Sun className={className} />;
+      case 'compass': return <Compass className={className} />;
+      case 'music': return <Music className={className} />;
+      case 'music2': return <Music2 className={className} />;
+      case 'target': return <Target className={className} />;
+      case 'timer': return <Timer className={className} />;
+      case 'shieldCheck': return <ShieldCheck className={className} />;
+      case 'trendingUp': return <TrendingUp className={className} />;
+      case 'messageSquare': return <MessageSquare className={className} />;
+      case 'play': return <Play className={className} />;
+      case 'feather': return <Feather className={className} />;
+      case 'bookmark': return <Bookmark className={className} />;
+      case 'shieldAlert': return <ShieldAlert className={className} />;
+      case 'bookMarked': return <BookMarked className={className} />;
+      case 'crown': return <Crown className={className} />;
+      case 'history': return <History className={className} />;
+      case 'calendarDays': return <CalendarDays className={className} />;
+      case 'mapPin': return <MapPin className={className} />;
+      case 'search': return <Search className={className} />;
+      case 'image': return <ImageIcon className={className} />;
+      case 'spellCheck': return <SpellCheck className={className} />;
+      case 'activity': return <Activity className={className} />;
+      case 'info': return <Info className={className} />;
+      case 'lock': return <Lock className={className} />;
+      case 'helpCircle': return <HelpCircle className={className} />;
+      default: return <BookOpen className={className} />;
+    }
   };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -765,22 +904,44 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             sacredHaptics.lightTap();
             if (onNavigateView) onNavigateView('divine-darshan');
           }}
-          className="bg-gradient-to-r from-amber-500/20 via-orange-500/10 to-amber-600/15 dark:from-amber-950/60 dark:to-zinc-900 border-2 border-amber-500/40 hover:border-amber-600 rounded-2xl p-3 sm:p-4 flex items-center justify-between cursor-pointer transition-all shadow-xs hover:shadow-md group active:scale-[0.99] overflow-hidden"
+          style={{
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(26, 20, 15, 0.78)' : 'rgba(255, 250, 240, 0.86)')
+              : theme.cardBg,
+            borderColor: theme.accentGold,
+            color: theme.textPrimary,
+          }}
+          className={`border-2 rounded-2xl p-3.5 sm:p-4 flex items-center justify-between cursor-pointer transition-all shadow-md hover:shadow-lg hover:scale-[1.01] group active:scale-[0.99] overflow-hidden ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
           <div className="flex items-center gap-3 min-w-0 flex-1">
-            <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform shrink-0">
-              <span className="text-xl">👑</span>
+            <div
+              style={{
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
+              }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0"
+            >
+              <span className="text-xl" aria-hidden="true">👑</span>
             </div>
             <div className="min-w-0 flex-1">
-              <span className="text-[0.625rem] font-bold text-amber-800 dark:text-amber-300 uppercase tracking-widest block truncate">
+              <span
+                style={{ color: theme.accentGold }}
+                className="text-[0.6875rem] font-extrabold uppercase tracking-wide block truncate"
+              >
                 {language === 'pb' ? 'ਦਿਵਯ ਪਾਵਨ ਦਰਸ਼ਨ' : language === 'en' ? 'Divine Sacred Darshan' : 'दिव्य पावन दर्शन'}
               </span>
-              <h3 className="font-serif font-black text-xs sm:text-sm text-gray-900 dark:text-gray-100 group-hover:text-amber-800 transition-colors truncate">
+              <h3
+                style={{ color: theme.sacredMaroon }}
+                className="font-serif font-black text-sm sm:text-base transition-colors truncate"
+              >
                 {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਿਵਯ ਦਰਸ਼ਨ' : language === 'en' ? 'Satguru Kabir Saheb Darshan' : 'सतगुरु कबीर साहेब दिव्य दर्शन'}
               </h3>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-amber-700 group-hover:translate-x-1 transition-transform shrink-0" />
+          <ChevronRight
+            style={{ color: theme.sacredMaroon }}
+            className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0"
+          />
         </div>
 
         {/* Nitnem Gutka Card */}
@@ -789,22 +950,44 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             sacredHaptics.lightTap();
             if (onNavigateView) onNavigateView('nitnem-gutka');
           }}
-          className="bg-gradient-to-r from-orange-500/20 via-amber-500/10 to-orange-600/15 dark:from-orange-950/60 dark:to-zinc-900 border-2 border-orange-500/40 hover:border-orange-600 rounded-2xl p-3 sm:p-4 flex items-center justify-between cursor-pointer transition-all shadow-xs hover:shadow-md group active:scale-[0.99] overflow-hidden"
+          style={{
+            backgroundColor: globalWallpaper
+              ? (isDarkMode ? 'rgba(26, 20, 15, 0.78)' : 'rgba(255, 250, 240, 0.86)')
+              : theme.cardBg,
+            borderColor: theme.accentGold,
+            color: theme.textPrimary,
+          }}
+          className={`border-2 rounded-2xl p-3.5 sm:p-4 flex items-center justify-between cursor-pointer transition-all shadow-md hover:shadow-lg hover:scale-[1.01] group active:scale-[0.99] overflow-hidden ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
           <div className="flex items-center gap-3 min-w-0 flex-1">
-            <div className="w-10 h-10 rounded-xl bg-orange-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform shrink-0">
-              <span className="text-xl">🌹</span>
+            <div
+              style={{
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
+              }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0"
+            >
+              <span className="text-xl" aria-hidden="true">🌹</span>
             </div>
             <div className="min-w-0 flex-1">
-              <span className="text-[0.625rem] font-bold text-orange-800 dark:text-orange-300 uppercase tracking-widest block truncate">
+              <span
+                style={{ color: theme.accentGold }}
+                className="text-[0.6875rem] font-extrabold uppercase tracking-wide block truncate"
+              >
                 {language === 'pb' ? 'ਨਿਤਨੇਮ ਪਾਠ ਤੇ ਸੰਗ੍ਰਹਿ' : language === 'en' ? 'Daily Path & Collection' : 'नित्य पाठ एवं संग्रह'}
               </span>
-              <h3 className="font-serif font-black text-xs sm:text-sm text-gray-900 dark:text-gray-100 group-hover:text-orange-800 transition-colors truncate">
+              <h3
+                style={{ color: theme.sacredMaroon }}
+                className="font-serif font-black text-sm sm:text-base transition-colors truncate"
+              >
                 {language === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Nitnem Gutka Saheb' : 'नितनेम गुटका साहेब'}
               </h3>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-orange-700 group-hover:translate-x-1 transition-transform shrink-0" />
+          <ChevronRight
+            style={{ color: theme.sacredMaroon }}
+            className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0"
+          />
         </div>
       </div>
 
@@ -817,18 +1000,21 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             borderColor: theme.accentGold,
             color: theme.sacredMaroon,
           }}
-          className="p-3 sm:p-4 rounded-2xl border shadow-xs flex flex-col sm:flex-row items-center justify-between gap-2.5 animate-fadeIn"
+          className={`p-3 sm:p-4 rounded-2xl border shadow-xs flex flex-col sm:flex-row items-center justify-between gap-2.5 animate-fadeIn ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
           <div className="flex items-center gap-2.5 text-center sm:text-left min-w-0 flex-1">
-            <Sparkles className="w-5 h-5 text-amber-700 animate-pulse shrink-0" />
+            <Sparkles className="w-5 h-5 animate-pulse shrink-0" style={{ color: theme.accentGold }} />
             <div className="min-w-0">
               <h4 className="font-serif font-bold text-xs sm:text-sm flex items-center justify-center sm:justify-start gap-1.5 flex-wrap">
                 <span>{language === 'pb' ? 'ਸਹਿਜ ਧਿਆਨ ਮੋਡ ਚਾਲੂ ਹੈ' : language === 'en' ? 'Sahaj Mode is Active' : 'सहज ध्यान मोड सक्रिय है'}</span>
-                <span className="px-1.5 py-0.2 rounded-full text-[0.5625rem] bg-amber-600 text-white font-sans">
+                <span
+                  style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                  className="px-1.5 py-0.2 rounded-full text-[0.5625rem] font-sans font-bold"
+                >
                   {language === 'pb' ? 'ਸੀਮਤ ਝਲਕ' : language === 'en' ? 'Minimal' : 'सीमित झलक'}
                 </span>
               </h4>
-              <p className="text-[0.6875rem] opacity-90 mt-0.5 truncate">
+              <p className="text-[0.6875rem] opacity-90 mt-0.5 truncate" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
                   ? 'ਅਜੇ ਕੇਵਲ ਦੈਨਿਕ ਸਾਖੀ ਤੇ ਸੁਮਿਰਨ ਵਿਖਾਈ ਦੇ ਰਹੇ ਹਨ।'
                   : language === 'en'
@@ -840,10 +1026,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           <button
             type="button"
             onClick={() => setIsSahajMode(false)}
-            style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
             className="px-3.5 py-1.5 rounded-xl font-bold text-xs shadow-xs hover:opacity-95 transition cursor-pointer shrink-0 flex items-center gap-1.5"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <Sparkles className="w-3.5 h-3.5" />
             <span>{language === 'pb' ? 'ਸਾਰੇ ਫੀਚਰਸ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open All Features' : 'सभी फीचर्स खोलें'}</span>
           </button>
         </div>
@@ -1004,7 +1190,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
           {copiedToast && (
             <div
-              style={{ backgroundColor: theme.accentGold, color: '#FFFFFF' }}
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               className="p-2 rounded-xl text-center text-xs font-semibold shadow-md animate-fadeIn"
             >
               {t.shareCopiedToast}
@@ -1013,7 +1199,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
           {bookmarkedToast && (
             <div
-              style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               className="p-2 rounded-xl text-center text-xs font-semibold shadow-md animate-fadeIn"
             >
               {t.savedToBookmarks}
@@ -1583,7 +1769,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       </div>
 
       {/* ========================================================================= */}
-      {/* SAHEB WORLD SACRED FEATURES & MASTER GRANTHALAYA DIRECTORY */}
+      {/* SAHEB WORLD SACRED FEATURES & MASTER GRANTHALAYA DIRECTORY (ALL 54 CARDS) */}
       {/* ========================================================================= */}
       <section 
         id="saheb-world-features-directory"
@@ -1592,35 +1778,33 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           borderColor: theme.cardBorder,
           color: theme.textPrimary,
         }}
-        className="rounded-3xl border shadow-xl p-5 sm:p-7 space-y-6 animate-fadeIn transition-all"
+        className="rounded-3xl border shadow-xl p-4 sm:p-7 space-y-5 animate-fadeIn transition-all"
       >
         {/* Header with Sacred Branding & Collapse Controls */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b pb-4" style={{ borderColor: theme.cardBorder }}>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 min-w-0">
             <div 
-              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }} 
-              className="w-11 h-11 rounded-2xl border flex items-center justify-center shadow-xs text-amber-700 shrink-0"
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold, color: theme.sacredMaroon }} 
+              className="w-11 h-11 rounded-2xl border flex items-center justify-center shadow-xs shrink-0"
             >
               <Library className="w-6 h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
                 <h3 className="text-lg sm:text-xl font-black font-serif tracking-tight" style={{ color: theme.sacredMaroon }}>
                   {language === 'pb' ? 'ਸਾਹੇਬ ਵਰਲਡ ਸਮੁੱਚੇ ਪਾਵਨ ਫੀਚਰਸ ਤੇ ਗ੍ਰੰਥਾਵਲੀ' : language === 'en' ? 'Saheb World Sacred Granths & Features' : 'साहेब वर्ल्ड समग्र ग्रन्थालय एवं समस्त फीचर्स'}
                 </h3>
-                <span 
-                  style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
-                  className="px-2 py-0.5 rounded-full text-[0.625rem] font-black uppercase tracking-wider hidden sm:inline"
-                >
-                  20+ FEATURES
+                <span className="text-xs font-bold font-serif tabular-nums opacity-80" style={{ color: theme.sacredMaroon }}>
+                  · {ALL_54_DASHBOARD_CARDS.length}{' '}
+                  {language === 'pb' ? 'ਕਾਰਡ' : language === 'en' ? 'Cards' : 'कार्ड्स'}
                 </span>
               </div>
-              <p className="text-xs mt-0.5" style={{ color: theme.textSecondary }}>
+              <p className="text-xs mt-0.5 leading-relaxed" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪਾਵਨ ਗ੍ਰੰਥ, ਉਲਟਬਾਂਸੀਆਂ, ਨਿਤਨੇਮ, ਧੁਨ, ਕੁਇਜ਼ ਅਤੇ ਸਾਧਨਾ ਦੇ ਸਮੁੱਚੇ ਸਾਧਨ'
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸਮੁੱਚੇ ੫੪ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਧੁਨ, ਕੁਇਜ਼ ਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾ'
                   : language === 'en'
-                  ? 'Satguru Kabir Saheb Holy Granths, Paradoxes, Nitnem Gutka, Dhun, Quizzes, and Spiritual Tools'
-                  : 'सतगुरु कबीर साहेब के पावन ग्रन्थ, उलटबांसियां, नितनेम गुटका, धुन, क्विज एवं साधना के समस्त साधन'}
+                  ? 'All 54 Satguru Kabir Saheb Holy Granths, Nitnem Gutka, Sadhana, Quizzes & App Guides'
+                  : 'सतगुरु कबीर साहेब के समस्त ५४ पावन ग्रन्थ, नितनेम, साधना, धुन, क्विज व मार्गदर्शिका'}
               </p>
             </div>
           </div>
@@ -1630,10 +1814,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               <button
                 type="button"
                 onClick={() => setIsSahajMode(false)}
-                style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
-                className="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:scale-105 transition cursor-pointer shrink-0"
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="min-h-[40px] px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:scale-105 transition cursor-pointer shrink-0 whitespace-nowrap"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                <Sparkles className="w-3.5 h-3.5" />
                 <span>{language === 'pb' ? 'ਪੂਰਨ ਦਰਸ਼ਨ ਚਾਲੂ ਕਰੋ' : language === 'en' ? 'Enable Full View' : 'पूर्ण दर्शन चालू करें'}</span>
               </button>
             )}
@@ -1647,11 +1831,11 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   borderColor: theme.cardBorder,
                   color: theme.sacredMaroon,
                 }}
-                className="px-3 py-1.5 rounded-xl border text-xs font-bold hover:brightness-95 transition cursor-pointer shadow-2xs flex items-center gap-1.5"
+                className="min-h-[40px] px-3.5 py-1.5 rounded-xl border text-xs font-bold hover:brightness-95 transition cursor-pointer shadow-2xs flex items-center gap-1.5 whitespace-nowrap shrink-0"
                 title={language === 'pb' ? 'ਸਾਰੀਆਂ ਸ਼੍ਰੇਣੀਆਂ ਖੋਲ੍ਹੋ/ਸਮੇਟੋ' : language === 'en' ? 'Toggle All Categories' : 'सभी श्रेणियां खोलें/समेटें'}
               >
                 <span>
-                  {[1, 2, 3, 4].every(id => collapsedCategories[id])
+                  {[1, 2, 3, 4, 5].every(id => collapsedCategories[id])
                     ? (language === 'pb' ? 'ਸਾਰੇ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Expand All' : 'सभी खोलें')
                     : (language === 'pb' ? 'ਸਾਰੇ ਸਮੇਟੋ' : language === 'en' ? 'Collapse All' : 'सभी समेटें')}
                 </span>
@@ -1663,21 +1847,21 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               type="button"
               onClick={toggleFeaturesSection}
               style={{
-                backgroundColor: isFeaturesSectionCollapsed ? theme.sacredMaroon : theme.stepActiveBg,
+                backgroundColor: isFeaturesSectionCollapsed ? theme.buttonPrimaryBg : theme.stepActiveBg,
                 borderColor: theme.accentGold,
-                color: isFeaturesSectionCollapsed ? '#FFFFFF' : theme.sacredMaroon,
+                color: isFeaturesSectionCollapsed ? theme.buttonPrimaryText : theme.sacredMaroon,
               }}
-              className="px-3.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 shadow-2xs hover:scale-105 active:scale-95 transition cursor-pointer"
+              className="min-h-[40px] px-3.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 shadow-2xs hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap shrink-0"
               title={isFeaturesSectionCollapsed ? 'ਫੀਚਰਸ ਖੋਲ੍ਹੋ (Open Features)' : 'ਫੀਚਰਸ ਬੰਦ ਕਰੋ (Close Features)'}
             >
               {isFeaturesSectionCollapsed ? (
                 <>
-                  <ChevronDown className="w-4 h-4 text-amber-300 animate-bounce" />
+                  <ChevronDown className="w-4 h-4 animate-bounce" />
                   <span>{language === 'pb' ? 'ਫੀਚਰਸ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Show Features' : 'फीचर्स खोलें'}</span>
                 </>
               ) : (
                 <>
-                  <ChevronUp className="w-4 h-4 text-amber-700" />
+                  <ChevronUp className="w-4 h-4" />
                   <span>{language === 'pb' ? 'ਫੀਚਰਸ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Hide Features' : 'फीचर्स बंद करें'}</span>
                 </>
               )}
@@ -1691,903 +1875,294 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
             className="p-4 sm:p-5 rounded-2xl border text-center space-y-3 animate-fadeIn"
           >
-            <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-bold" style={{ color: theme.sacredMaroon }}>
-              <span className="px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30">
-                {language === 'pb' ? '੧. ਪਾਵਨ ਗ੍ਰੰਥਾਵਲੀ (5)' : language === 'en' ? '1. Scriptures (5)' : '१. पावन ग्रन्थालय (५)'}
-              </span>
-              <span className="px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/30">
-                {language === 'pb' ? '੨. ਸਾਧਨਾ ਤੇ ਸਿਮਰਨ (4)' : language === 'en' ? '2. Meditation (4)' : '२. साधना व सिमरन (४)'}
-              </span>
-              <span className="px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30">
-                {language === 'pb' ? '੩. ਗਿਆਨ ਤੇ ਕੁਇਜ਼ (4)' : language === 'en' ? '3. Quizzes & Wisdom (4)' : '३. ज्ञान व प्रश्नोत्तरी (४)'}
-              </span>
-              <span className="px-2.5 py-1 rounded-lg bg-cyan-500/15 border border-cyan-500/30">
-                {language === 'pb' ? '੪. ਆਤਮਿਕ ਸਾਧਨ (8)' : language === 'en' ? '4. Spiritual Tools (8)' : '४. आध्यात्मिक साधन (८)'}
-              </span>
+            <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs font-bold font-serif tabular-nums" style={{ color: theme.sacredMaroon }}>
+              {DASHBOARD_CATEGORIES.map((cat, idx) => {
+                const count = ALL_54_DASHBOARD_CARDS.filter((c) => c.categoryId === cat.id).length;
+                return (
+                  <React.Fragment key={cat.id}>
+                    {idx > 0 && <span aria-hidden="true" className="opacity-40">·</span>}
+                    <span>
+                      {cat.shortTitle[language] || cat.shortTitle.hi} ({count})
+                    </span>
+                  </React.Fragment>
+                );
+              })}
             </div>
             <p className="text-xs max-w-md mx-auto" style={{ color: theme.textSecondary }}>
               {language === 'pb'
-                ? 'ਫੀਚਰਸ ਸੈਕਸ਼ਨ ਸਮੇਟਿਆ ਹੋਇਆ ਹੈ। ਸਮੁੱਚੀ ਗ੍ਰੰਥਾਵਲੀ, ਨਿਤਨੇਮ, ਧੁਨ ਤੇ ਕੁਇਜ਼ ਦੇਖਣ ਲਈ ਬਟਨ ਦਬਾਓ।'
+                ? 'ਫੀਚਰਸ ਸੈਕਸ਼ਨ ਸਮੇਟਿਆ ਹੋਇਆ ਹੈ। ਸਮੁੱਚੇ ੫੪ ਕਾਰਡ, ਗ੍ਰੰਥਾਵਲੀ, ਨਿਤਨੇਮ, ਧੁਨ ਤੇ ਸਾਧਨਾ ਸਾਧਨ ਦੇਖਣ ਲਈ ਬਟਨ ਦਬਾਓ।'
                 : language === 'en'
-                ? 'Features section is minimized. Tap below to browse all scriptures, tools, and quizzes.'
-                : 'फीचर्स सेक्शन अभी समेटा गया है। समग्र ग्रन्थालय, नित्य पाठ, धुन एवं टूल्स देखने हेतु नीचे क्लिक करें।'}
+                ? 'Features section is minimized. Tap below to browse all 54 scriptures, sadhana tools, and guides.'
+                : 'फीचर्स सेक्शन अभी समेटा गया है। समस्त ५४ कार्ड्स, ग्रन्थालय, नित्य पाठ व साधना टूल्स देखने हेतु नीचे क्लिक करें।'}
             </p>
             <button
               type="button"
               onClick={toggleFeaturesSection}
-              style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
-              className="px-5 py-2 rounded-xl text-xs font-bold font-serif hover:scale-105 active:scale-95 transition cursor-pointer shadow-md inline-flex items-center gap-2"
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+              className="min-h-[44px] px-5 py-2 rounded-xl text-xs font-bold font-serif hover:scale-105 active:scale-95 transition cursor-pointer shadow-md inline-flex items-center gap-2 tabular-nums"
             >
-              <ChevronDown className="w-4 h-4 text-amber-300" />
-              <span>{language === 'pb' ? 'ਸਮੁੱਚੇ ੨੦+ ਫੀਚਰਸ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open All 20+ Features' : 'समस्त २०+ फीचर्स खोलें'}</span>
+              <ChevronDown className="w-4 h-4" />
+              <span>
+                {language === 'pb'
+                  ? `ਸਮੁੱਚੇ ${ALL_54_DASHBOARD_CARDS.length} ਕਾਰਡ ਖੋਲ੍ਹੋ`
+                  : language === 'en'
+                  ? `Open All ${ALL_54_DASHBOARD_CARDS.length} Cards`
+                  : `समस्त ${ALL_54_DASHBOARD_CARDS.length} कार्ड्स खोलें`}
+              </span>
             </button>
           </div>
         ) : (
-          /* Feature Categories */
-          <div className="space-y-6">
-            {/* CATEGORY 1: Holy Granths & Path Recitation */}
+          <div className="space-y-5">
+            {/* Search & Category Filter Toolbar across All 54 Cards */}
             <div className="space-y-3">
-              <button
-                type="button"
-                onClick={() => toggleCategoryCollapse(1)}
-                style={{
-                  backgroundColor: theme.stepActiveBg,
-                  borderColor: theme.cardBorder,
-                  color: theme.sacredMaroon,
-                }}
-                className="w-full px-3.5 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group text-left"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-600 shrink-0" />
-                  <h4 className="text-xs sm:text-sm uppercase tracking-wider font-black font-serif">
-                    {language === 'pb' ? '੧. ਪਾਵਨ ਗ੍ਰੰਥਾਵਲੀ ਤੇ ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? '1. Holy Scriptures & Daily Paths' : '१. पावन ग्रन्थालय एवं नित्य पाठ'}
-                  </h4>
-                </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <span className="text-[0.625rem] px-2 py-0.5 rounded-full font-bold bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200">
-                    4 {language === 'pb' ? 'ਫੀਚਰਸ' : language === 'en' ? 'Features' : 'फीचर्स'}
-                  </span>
-                  {collapsedCategories[1] ? (
-                    <ChevronDown className="w-4 h-4 text-amber-700 transition-transform group-hover:scale-110" />
-                  ) : (
-                    <ChevronUp className="w-4 h-4 text-amber-700 transition-transform group-hover:scale-110" />
+              <div className="flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center justify-between">
+                <div className="relative flex-1">
+                  <Search
+                    className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 opacity-60 pointer-events-none"
+                    style={{ color: theme.textSecondary }}
+                  />
+                  <input
+                    id="dashboard-cards-search-input"
+                    type="text"
+                    value={dashboardCardSearch}
+                    onChange={(e) => setDashboardCardSearch(e.target.value)}
+                    placeholder={
+                      language === 'pb'
+                        ? '੫੪ ਕਾਰਡਾਂ ਵਿੱਚੋਂ ਖੋਜੋ (ਜਿਵੇਂ: ਬੀਜਕ, ਆਰਤੀ, ਜੰਤਰੀ, #18)...'
+                        : language === 'en'
+                        ? 'Search all 54 cards (e.g., Bijak, Aarti, Jantri, #18)...'
+                        : 'समस्त ५४ कार्ड्स में खोजें (जैसे: बीजक, आरती, जंत्री, #18)...'
+                    }
+                    style={{
+                      backgroundColor: theme.bgSecondary,
+                      borderColor: theme.cardBorder,
+                      color: theme.textPrimary,
+                    }}
+                    className="w-full min-h-[44px] pl-10 pr-10 py-2 rounded-xl border text-xs sm:text-sm font-serif outline-none focus:ring-2 focus:ring-amber-500/40"
+                  />
+                  {dashboardCardSearch && (
+                    <button
+                      type="button"
+                      onClick={() => setDashboardCardSearch('')}
+                      aria-label={language === 'en' ? 'Clear search' : 'खोज साफ़ करें'}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
                   )}
                 </div>
-              </button>
 
-              {!collapsedCategories[1] && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 animate-fadeIn">
-                  {/* Card 1: Master Granthalaya */}
-                  <div
-                    onClick={() => {
-                      sacredHaptics.lightTap();
-                      if (isSahajMode) setIsSahajMode(false);
-                      if (onNavigateView) onNavigateView('grantha');
-                    }}
-                    style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                    className="p-4 sm:p-5 rounded-2xl border hover:border-amber-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                  >
-                    <div className="space-y-2.5">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-amber-500/20 text-amber-800 dark:text-amber-300 border-amber-500/40">
-                          {language === 'pb' ? 'ਮੁੱਖ ਗ੍ਰੰਥ' : language === 'en' ? 'Core Texts' : 'मुख्य ग्रन्थ'}
-                        </span>
-                        <Library className="w-5 h-5 text-amber-600 group-hover:scale-110 transition-transform" />
-                      </div>
-                      <div>
-                        <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-amber-700 transition" style={{ color: theme.sacredMaroon }}>
-                          {language === 'pb' ? 'ਸਮੁੱਚੀ ਗ੍ਰੰਥਾਵਲੀ (ਮਾਸਟਰ ਲਾਇਬ੍ਰੇਰੀ)' : language === 'en' ? 'Master Granth Library' : 'समग्र ग्रन्थालय (मास्टर लाइब्रेरी)'}
-                        </h5>
-                        <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                          {language === 'pb'
-                            ? 'ਕਬੀਰ ਸਾਖੀ ਸੰਗ੍ਰਹਿ, ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਅਨੁਰਾਗ ਸਾਗਰ, ਬ੍ਰਹਮ ਨਿਰੂਪਣ ਤੇ ਉਲਟਬਾਂਸੀ ਗ੍ਰੰਥ।'
-                            : language === 'en'
-                            ? 'Sakhi Sangrah, Kabir Sagar, Bijak, Anurag Sagar, Brahm Nirupan, and Ulatbaasi Granth.'
-                            : 'कबीर साखी संग्रह, कबीर सागर, बीजक, अनुराग सागर, ब्रह्म निरूपण एवं उलटबाँसी ग्रन्थ।'}
-                        </p>
-                      </div>
-                    </div>
-                    <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                      <span className="text-amber-700 font-serif">{language === 'pb' ? 'ਗ੍ਰੰਥ ਪੜ੍ਹੋ' : language === 'en' ? 'Explore Granths' : 'ग्रन्थ पढ़ें'}</span>
-                      <ChevronRight size={14} className="text-amber-700 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-
-                  {/* Card 2: Satguru Sakhi Swadhyay Paddhati (Master Unified Card) */}
-                  <div
-                    onClick={() => {
-                      sacredHaptics.lightTap();
-                      if (isSahajMode) setIsSahajMode(false);
-                      onStartSwadhyay();
-                    }}
-                    style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                    className="p-4 sm:p-5 rounded-2xl border hover:border-amber-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                  >
-                    <div className="space-y-2.5">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-amber-600/20 text-amber-900 dark:text-amber-200 border-amber-600/40">
-                          {language === 'pb' ? 'ਸਵਾਧਿਆਏ ਵਿਧੀ' : language === 'en' ? 'Swadhyay' : 'स्वाध्याय पद्धति'}
-                        </span>
-                        <BookOpen className="w-5 h-5 text-amber-700 group-hover:scale-110 transition-transform" />
-                      </div>
-                      <div>
-                        <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-amber-700 transition" style={{ color: theme.sacredMaroon }}>
-                          {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਸਾਖੀ ਸਵਾਧਿਆਏ ਵਿਧੀ' : language === 'en' ? 'Satguru Sakhi Swadhyay Paddhati' : 'सतगुरु साखी स्वाध्याय पद्धति'}
-                        </h5>
-                        <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                          {language === 'pb'
-                            ? 'ਪਾਵਨ ੧੧-ਚਰਣੀ ਸੰਪੂਰਨ ਸਵਾਧਿਆਏ (ਮੂਲ ਪਾਠ, ਸ਼ਬਦਾਰਥ, ਵਿਸਤ੍ਰਿਤ ਭਾਵਾਰਥ, ਬੋਧ ਪ੍ਰਸ਼ਨਾਵਲੀ, ਰਹੱਸ, ਸਾਧਨਾ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ).'
-                            : language === 'en'
-                            ? 'Sacred 11-Step Complete Swadhyay (Original Text, Vocabulary, Bhavarth, Quiz, Mystical Insights, and Certificate).'
-                            : 'पावन ११-चरणीय सम्पूर्ण स्वाध्याय (मूल पाठ, शब्दार्थ, भावार्थ, प्रश्नोत्तरी, रहस्य, साधना व सिद्धि प्रमाण-पत्र)।'}
-                        </p>
-                      </div>
-                    </div>
-                    <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                      <span className="text-amber-700 font-serif">{language === 'pb' ? 'ਸਵਾਧਿਆਏ ਸ਼ੁਰੂ' : language === 'en' ? 'Begin Swadhyay' : 'स्वाध्याय शुरू करें'}</span>
-                      <ChevronRight size={14} className="text-amber-700 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-
-                  {/* Card 3: Akhand Path */}
-                  <div
-                    onClick={() => {
-                      sacredHaptics.lightTap();
-                      if (isSahajMode) setIsSahajMode(false);
-                      if (onOpenAkhandPath) onOpenAkhandPath();
-                      else if (onNavigateView) onNavigateView('akhand-path');
-                    }}
-                    style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                    className="p-4 sm:p-5 rounded-2xl border hover:border-amber-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                  >
-                    <div className="space-y-2.5">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-orange-500/20 text-orange-900 dark:text-orange-200 border-orange-500/40">
-                          {language === 'pb' ? 'ਅਖੰਡ ਪਾਠ' : language === 'en' ? 'Akhand Path' : 'अखंड पाठ'}
-                        </span>
-                        <Scroll className="w-5 h-5 text-amber-700 group-hover:scale-110 transition-transform" />
-                      </div>
-                      <div>
-                        <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-amber-700 transition" style={{ color: theme.sacredMaroon }}>
-                          {language === 'pb' ? 'ਅਖੰਡ ਸਾਖੀ ਪਾਠ' : language === 'en' ? 'Akhand Sakhi Path' : 'अखंड साखी पाठ'}
-                        </h5>
-                        <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                          {language === 'pb'
-                            ? 'ਸੈਂਕੜੇ ਸਾਖੀਆਂ ਦਾ ਅਵਿਰਲ ਨਿਰਵਿਘਨ ਪਾਠ, ਆਡੀਓ ਰਿਸਾਈਟਲ ਤੇ ਪ੍ਰਗਤੀ ਟਰੈਕਰ।'
-                            : language === 'en'
-                            ? 'Continuous recitation of hundreds of sacred sakhis with auto-audio.'
-                            : 'सैकड़ों साखियों का अविरल पाठ, स्वतः वाचन व आध्यात्मिक प्रगति।'}
-                        </p>
-                      </div>
-                    </div>
-                    <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                      <span className="text-amber-700 font-serif">{language === 'pb' ? 'ਅਖੰਡ ਪਾਠ ਸ਼ੁਰੂ' : language === 'en' ? 'Start Path' : 'अखंड पाठ खोलें'}</span>
-                      <ChevronRight size={14} className="text-amber-700 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-
-                  {/* Card 4: Sri Guru Granth Sahib & Satguru Kabir Bani Engine */}
-                  <div
-                    onClick={() => {
-                      sacredHaptics.lightTap();
-                      if (isSahajMode) setIsSahajMode(false);
-                      if (onNavigateView) onNavigateView('sggs-kabir-bani');
-                    }}
-                    style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                    className="p-4 sm:p-5 rounded-2xl border hover:border-amber-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                  >
-                    <div className="space-y-2.5">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-amber-500/20 text-amber-900 dark:text-amber-200 border-amber-500/40">
-                          {language === 'pb' ? 'ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਬਾਣੀ' : language === 'en' ? 'Guru Granth Sahib' : 'गुरु ग्रंथ साहिब वाणी'}
-                        </span>
-                        <Sparkles className="w-5 h-5 text-amber-600 group-hover:scale-110 transition-transform" />
-                      </div>
-                      <div>
-                        <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-amber-700 transition" style={{ color: theme.sacredMaroon }}>
-                          {language === 'pb' ? 'ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਤੇ ਕਬੀਰ ਬਾਣੀ' : language === 'en' ? 'Guru Granth Sahib & Kabir Bani' : 'गुरु ग्रंथ साहिब एवं कबीर वाणी'}
-                        </h5>
-                        <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                          {language === 'pb'
-                            ? '੧੭ ਰਾਗਾਂ ਵਿੱਚ ੨੨੭ ਸ਼ਬਦ, ੨੪੩ ਸਲੋਕ, ਬਾਵਨ ਅੱਖਰੀ ਤੇ ਗੁਰੂ ਸਾਹਿਬਾਨ ਸੰਵਾਦ ਦਾ ਪਾਵਨ ਇੰਜਣ।'
-                            : language === 'en'
-                            ? 'Concordance engine of 227 Shabaads (17 Raags), 243 Saloks & Bavan Akhari in SGGS.'
-                            : '१७ रागों में २२७ शब्द, २४३ सलोक, बावन अखरी एवं पावन गुरु संवाद का दिव्य ज्ञान-इंजन।'}
-                        </p>
-                      </div>
-                    </div>
-                    <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                      <span className="text-amber-700 font-serif">{language === 'pb' ? 'ਇੰਜਣ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Explore Engine' : 'इंजन खोलें'}</span>
-                      <ChevronRight size={14} className="text-amber-700 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
+                <div
+                  className="text-xs font-semibold font-serif tabular-nums whitespace-nowrap shrink-0 self-end sm:self-center px-1"
+                  style={{ color: theme.textSecondary }}
+                >
+                  {language === 'pb'
+                    ? `ਦਿੱਖ ਰਹੇ ਕਾਰਡ: ${filteredDashboardCards.length} / ${ALL_54_DASHBOARD_CARDS.length}`
+                    : language === 'en'
+                    ? `Showing ${filteredDashboardCards.length} / ${ALL_54_DASHBOARD_CARDS.length} cards`
+                    : `प्रदर्शित कार्ड्स: ${filteredDashboardCards.length} / ${ALL_54_DASHBOARD_CARDS.length}`}
                 </div>
-              )}
-          </div>
-
-          {/* CATEGORY 2: Spiritual Practice & Audio Tools */}
-          <div className="space-y-3">
-            <button
-              type="button"
-              onClick={() => toggleCategoryCollapse(2)}
-              style={{
-                backgroundColor: theme.stepActiveBg,
-                borderColor: theme.cardBorder,
-                color: theme.sacredMaroon,
-              }}
-              className="w-full px-3.5 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group text-left"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0" />
-                <h4 className="text-xs sm:text-sm uppercase tracking-wider font-black font-serif">
-                  {language === 'pb' ? '੨. ਸਾਧਨਾ, ਸਿਮਰਨ ਤੇ ਪਾਵਨ ਧੁਨ' : language === 'en' ? '2. Meditation, Simran & Chants' : '२. साधना, सिमरन एवं पावन धुन'}
-                </h4>
               </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <span className="text-[0.625rem] px-2 py-0.5 rounded-full font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200">
-                  4 {language === 'pb' ? 'ਫੀਚਰਸ' : language === 'en' ? 'Features' : 'फीचर्स'}
-                </span>
-                {collapsedCategories[2] ? (
-                  <ChevronDown className="w-4 h-4 text-emerald-700 transition-transform group-hover:scale-110" />
-                ) : (
-                  <ChevronUp className="w-4 h-4 text-emerald-700 transition-transform group-hover:scale-110" />
-                )}
+
+              {/* Interactive Category Segmented Filter Tabs */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+                <button
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setDashboardCategoryFilter('all');
+                  }}
+                  style={{
+                    backgroundColor: dashboardCategoryFilter === 'all' ? theme.buttonPrimaryBg : theme.bgSecondary,
+                    color: dashboardCategoryFilter === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
+                    borderColor: dashboardCategoryFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBorder,
+                  }}
+                  className="min-h-[38px] px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
+                >
+                  {language === 'pb'
+                    ? `ਸਾਰੇ (${ALL_54_DASHBOARD_CARDS.length})`
+                    : language === 'en'
+                    ? `All (${ALL_54_DASHBOARD_CARDS.length})`
+                    : `सभी (${ALL_54_DASHBOARD_CARDS.length})`}
+                </button>
+                {DASHBOARD_CATEGORIES.map((cat) => {
+                  const catCount = ALL_54_DASHBOARD_CARDS.filter((c) => c.categoryId === cat.id).length;
+                  const active = dashboardCategoryFilter === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => {
+                        sacredHaptics.lightTap();
+                        setDashboardCategoryFilter(cat.id);
+                      }}
+                      style={{
+                        backgroundColor: active ? theme.buttonPrimaryBg : theme.bgSecondary,
+                        color: active ? theme.buttonPrimaryText : theme.textPrimary,
+                        borderColor: active ? theme.buttonPrimaryBg : theme.cardBorder,
+                      }}
+                      className="min-h-[38px] px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
+                    >
+                      {cat.shortTitle[language] || cat.shortTitle.hi} ({catCount})
+                    </button>
+                  );
+                })}
               </div>
-            </button>
+            </div>
 
-            {!collapsedCategories[2] && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 animate-fadeIn">
-                {/* 1. Mantra Tracker */}
-                <div
+            {/* Empty Filter State */}
+            {filteredDashboardCards.length === 0 ? (
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+                className="p-8 rounded-2xl border text-center space-y-3"
+              >
+                <p className="text-sm font-bold font-serif" style={{ color: theme.sacredMaroon }}>
+                  {language === 'pb'
+                    ? 'ਤੁਹਾਡੀ ਖੋਜ ਅਨੁਸਾਰ ਕੋਈ ਕਾਰਡ ਨਹੀਂ ਮਿਲਿਆ।'
+                    : language === 'en'
+                    ? 'No cards matched your current search or filter.'
+                    : 'आपकी खोज के अनुसार कोई कार्ड नहीं मिला।'}
+                </p>
+                <button
+                  type="button"
                   onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('mantra-tracker');
+                    setDashboardCardSearch('');
+                    setDashboardCategoryFilter('all');
                   }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-emerald-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
+                  style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                  className="min-h-[40px] px-4 py-2 rounded-xl text-xs font-bold font-serif cursor-pointer hover:opacity-90 transition"
                 >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 border-emerald-500/40">
-                        {language === 'pb' ? '੧੦੮ ਮਣਕੇ' : language === 'en' ? '108 Beads' : '१०८ मनके'}
-                      </span>
-                      <Target className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-emerald-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਨਾਮ-ਸਿਮਰਨ ਆਵਰਤਨ (ਮਾਲਾ)' : language === 'en' ? 'Simran Mala Counter' : 'सत्यनाम नाम-सिमरन आवर्तन'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? '108 ਮਣਕੇ ਡਿਜੀਟਲ ਮਾਲਾ, ਸ਼ਵਾਸ-ਸਿਮਰਨ ਤੇ ਰੋਜ਼ਾਨਾ ਟੀਚਾ।' : language === 'en' ? '108 beads digital rosary, breath-simran, and daily spiritual goals.' : '१०८ मनके डिजिटल जप माला, श्वास-सिमरन व लक्ष्य।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-emerald-700 font-serif">{language === 'pb' ? 'ਜਪ ਕਰੋ' : language === 'en' ? 'Chant Now' : 'जप माला शुरू'}</span>
-                    <ChevronRight size={14} className="text-emerald-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+                  {language === 'pb' ? 'ਫਿਲਟਰ ਰੀਸੈਟ ਕਰੋ' : language === 'en' ? 'Reset Filters' : 'फ़िल्टर रीसेट करें'}
+                </button>
+              </div>
+            ) : (
+              /* 5 Collapsible Category Drawers */
+              <div className="space-y-6">
+                {DASHBOARD_CATEGORIES.map((category) => {
+                  if (dashboardCategoryFilter !== 'all' && dashboardCategoryFilter !== category.id) {
+                    return null;
+                  }
+                  const categoryCards = filteredDashboardCards.filter((c) => c.categoryId === category.id);
+                  if (categoryCards.length === 0) return null;
 
-                {/* 2. Meditation Timer */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (onOpenMeditationTimer) onOpenMeditationTimer();
-                    else if (onNavigateView) onNavigateView('meditation-timer');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-teal-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-teal-500/20 text-teal-900 dark:text-teal-200 border-teal-500/40">
-                        {language === 'pb' ? 'ਆਤਮ-ਧਿਆਨ' : language === 'en' ? 'Meditation' : 'आत्म-ध्यान'}
-                      </span>
-                      <Timer className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-teal-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਸੁਮਿਰਨ ਧਿਆਨ ਟਾਈਮਰ' : language === 'en' ? 'Sumiran Meditation Timer' : 'सुमिरन ध्यान टाइमर'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਧਿਆਨ ਅੰਤਰਾਲ, ਅਨਹਦ ਨਾਦ ਤੇ ਸਾਤਵਿਕ ਘੰਟੀ।' : language === 'en' ? 'Meditation intervals, Anhad Naad, and peaceful temple bell.' : 'आंतरिक ध्यान, अनहद नाद व सात्विक घंटी।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-teal-700 font-serif">{language === 'pb' ? 'ਧਿਆਨ ਸ਼ੁਰੂ' : language === 'en' ? 'Start Timer' : 'ध्यान शुरू करें'}</span>
-                    <ChevronRight size={14} className="text-teal-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+                  const isFiltering = dashboardCardSearch.trim().length > 0 || dashboardCategoryFilter !== 'all';
+                  const isCollapsed = isFiltering ? false : Boolean(collapsedCategories[category.id]);
 
-                {/* 3. Satyanaam Dhun */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onOpenDhunTab) onOpenDhunTab();
-                    else if (onNavigateView) onNavigateView('dhun');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-rose-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-rose-500/20 text-rose-900 dark:text-rose-200 border-rose-500/40">
-                        {language === 'pb' ? 'ਅਖੰਡ ਨਾਦ' : language === 'en' ? 'Sacred Dhun' : 'अखंड नाद'}
-                      </span>
-                      <Music className="w-5 h-5 text-rose-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-rose-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਸਤਯਨਾਮ ਪਾਵਨ ਧੁਨ' : language === 'en' ? 'Satyanaam Sacred Dhun' : 'सत्यनाम पावन धुन'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਇਕਤਾਰਾ, ਸਾਰੰਗੀ, ਬੰਸਰੀ ਤੇ ਪਾਵਨ ਜਾਪ ਸੰਗੀਤ।' : language === 'en' ? 'Ektara, Sarangi, Flute, and divine chanting audio.' : 'एकतारा, सारंगी, बांसुरी व मंत्रमुग्ध धुन।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-rose-700 font-serif">{language === 'pb' ? 'ਧੁਨ ਸੁਣੋ' : language === 'en' ? 'Listen Dhun' : 'धुन सुनें'}</span>
-                    <ChevronRight size={14} className="text-rose-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+                  return (
+                    <div key={category.id} className="space-y-3">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (!isFiltering) toggleCategoryCollapse(category.id);
+                        }}
+                        style={{
+                          backgroundColor: theme.stepActiveBg,
+                          borderColor: theme.cardBorder,
+                          color: theme.sacredMaroon,
+                        }}
+                        className="w-full min-h-[44px] px-4 py-2.5 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group text-left"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${category.dotColorClass}`} />
+                          <h4 className="text-xs sm:text-sm tracking-wide font-black font-serif truncate">
+                            {category.title[language] || category.title.hi}
+                          </h4>
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className={`text-xs font-bold font-serif tabular-nums ${category.accentTextClass}`}>
+                            {categoryCards.length}{' '}
+                            {language === 'pb' ? 'ਕਾਰਡ' : language === 'en' ? 'Cards' : 'कार्ड्स'}
+                          </span>
+                          {!isFiltering &&
+                            (isCollapsed ? (
+                              <ChevronDown className="w-4 h-4 opacity-75 transition-transform group-hover:scale-110" />
+                            ) : (
+                              <ChevronUp className="w-4 h-4 opacity-75 transition-transform group-hover:scale-110" />
+                            ))}
+                        </div>
+                      </button>
 
-                {/* 4. Sadhana Manch */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('community-board');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-purple-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-purple-500/20 text-purple-900 dark:text-purple-200 border-purple-500/40">
-                        {language === 'pb' ? 'ਸੰਤ-ਮਿਲਣੀ' : language === 'en' ? 'Satsang' : 'संत-मिलनी'}
-                      </span>
-                      <MessageSquare className="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform" />
+                      {!isCollapsed && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 animate-fadeIn">
+                          {categoryCards.map((card) => {
+                            const slotStatus = adminSlotStatuses[card.slotId];
+                            const isLoaded = Boolean(slotStatus?.loaded);
+                            const paddedNum = String(card.slotNumber).padStart(2, '0');
+
+                            return (
+                              <button
+                                key={card.slotId}
+                                id={`dashboard-card-${card.slotId}`}
+                                type="button"
+                                onClick={() => handleLaunchDashboardCard(card)}
+                                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+                                className={`p-4 sm:p-5 rounded-2xl border ${card.hoverBorderClass} transition-all duration-200 hover:scale-[1.015] active:scale-[0.985] cursor-pointer flex flex-col justify-between h-full group text-left shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500`}
+                              >
+                                <div className="space-y-2.5 w-full">
+                                  {/* Unboxed Typographic Metadata Header + Icon (Zero-Pill Discipline) */}
+                                  <div className="flex items-center justify-between gap-2">
+                                    <div className="flex items-center gap-1.5 text-[11px] font-bold font-serif min-w-0 truncate">
+                                      <span className="font-mono tabular-nums opacity-70" style={{ color: theme.textSecondary }}>
+                                        {paddedNum}
+                                      </span>
+                                      <span aria-hidden="true" className="opacity-40">·</span>
+                                      <span className={`truncate ${card.accentClass}`}>
+                                        {card.kicker[language] || card.kicker.hi}
+                                      </span>
+                                      {isLoaded && (
+                                        <>
+                                          <span aria-hidden="true" className="opacity-40">·</span>
+                                          <span className="text-emerald-700 dark:text-emerald-300 tabular-nums shrink-0">
+                                            ✓ {slotStatus.itemCount}
+                                          </span>
+                                        </>
+                                      )}
+                                    </div>
+                                    {renderDashboardCardIcon(
+                                      card.icon,
+                                      `w-5 h-5 shrink-0 transition-transform group-hover:scale-110 ${card.accentClass}`
+                                    )}
+                                  </div>
+
+                                  <div>
+                                    <h5
+                                      className="font-serif font-black text-base sm:text-[17px] leading-snug tracking-tight transition"
+                                      style={{ color: theme.sacredMaroon }}
+                                    >
+                                      {card.title[language] || card.title.hi}
+                                    </h5>
+                                    <p
+                                      className="text-xs opacity-85 mt-1 line-clamp-2 font-serif leading-relaxed"
+                                      style={{ color: theme.textSecondary }}
+                                    >
+                                      {card.description[language] || card.description.hi}
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div
+                                  style={{ borderColor: theme.cardBorder }}
+                                  className="mt-3.5 pt-2.5 border-t w-full flex items-center justify-between text-[11.5px] font-bold"
+                                >
+                                  <span className={`font-serif ${card.accentClass}`}>
+                                    {card.actionLabel[language] || card.actionLabel.hi}
+                                  </span>
+                                  <ChevronRight
+                                    size={14}
+                                    className={`${card.accentClass} group-hover:translate-x-1 transition-transform shrink-0`}
+                                  />
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-purple-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਸਾਧਨਾ ਮੰਚ (ਸੰਤ-ਮਿਲਣੀ)' : language === 'en' ? 'Sadhana Community' : 'साधना मंच (सत्संग संवाद)'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਸਾਧਕ ਅਨੁਭਵ, ਸੰਵਾਦ ਤੇ ਆਤਮ-ਚਿੰਤਨ।' : language === 'en' ? 'Seeker experiences, reflections, and spiritual discussions.' : 'साधक विचार, अनुभव व आध्यात्मिक संवाद।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-purple-700 font-serif">{language === 'pb' ? 'ਮੰਚ ਵੇਖੋ' : language === 'en' ? 'View Board' : 'मंच देखें'}</span>
-                    <ChevronRight size={14} className="text-purple-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             )}
           </div>
-
-          {/* CATEGORY 3: Quizzes, Biography & Daily Wisdom */}
-          <div className="space-y-3">
-            <button
-              type="button"
-              onClick={() => toggleCategoryCollapse(3)}
-              style={{
-                backgroundColor: theme.stepActiveBg,
-                borderColor: theme.cardBorder,
-                color: theme.sacredMaroon,
-              }}
-              className="w-full px-3.5 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group text-left"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0" />
-                <h4 className="text-xs sm:text-sm uppercase tracking-wider font-black font-serif">
-                  {language === 'pb' ? '੩. ਗਿਆਨ, ਬੋਧ, ਜੀਵਨ ਚਰਿੱਤਰ ਤੇ ਕੁਇਜ਼' : language === 'en' ? '3. Wisdom, Quizzes & Biography' : '३. ज्ञान, बोध, जीवन चरित्र एवं प्रश्नोत्तरी'}
-                </h4>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <span className="text-[0.625rem] px-2 py-0.5 rounded-full font-bold bg-indigo-500/15 border border-indigo-500/30 text-indigo-900 dark:text-indigo-200">
-                  4 {language === 'pb' ? 'ਫੀਚਰਸ' : language === 'en' ? 'Features' : 'फीचर्स'}
-                </span>
-                {collapsedCategories[3] ? (
-                  <ChevronDown className="w-4 h-4 text-indigo-700 transition-transform group-hover:scale-110" />
-                ) : (
-                  <ChevronUp className="w-4 h-4 text-indigo-700 transition-transform group-hover:scale-110" />
-                )}
-              </div>
-            </button>
-
-            {!collapsedCategories[3] && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 animate-fadeIn">
-                {/* 1. Ulatvasi 3D Quest */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onOpenUlatvasiQuiz) onOpenUlatvasiQuiz();
-                    else if (onNavigateView) onNavigateView('ulatvasi-library');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-amber-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-amber-500/20 text-amber-900 dark:text-amber-200 border-amber-500/40">
-                        {language === 'pb' ? '੩D ਰਹੱਸ' : language === 'en' ? '3D Quest' : '३D रहस्य'}
-                      </span>
-                      <Sparkles className="w-5 h-5 text-amber-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-amber-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਉਲਟਬਾਂਸੀ 3D ਬੁਝਾਰਤ ਕੁਇਜ਼' : language === 'en' ? 'Ulatbaasi 3D Quest' : 'उलटबांसी 3D प्रश्नोत्तरी'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? '3D ਕਾਰਡ-ਫਲਿੱਪ, ਲੀਡਰਬੋਰਡ ਤੇ ਰਹੱਸ ਉਦਘਾਟਨ।' : language === 'en' ? '3D card-flip, seeker leaderboard, and mystical revelations.' : '3D कार्ड-फ्लिप व पारखी साधक अंक।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-amber-700 font-serif">{language === 'pb' ? 'ਖੇਡੋ' : language === 'en' ? 'Play 3D Quiz' : '3D क्विज खेलें'}</span>
-                    <ChevronRight size={14} className="text-amber-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 2. Dainik Chintan */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('dainik-chintan');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-indigo-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-indigo-500/20 text-indigo-900 dark:text-indigo-200 border-indigo-500/40">
-                        {language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਬੋਧ' : language === 'en' ? 'Daily Wisdom' : 'दैनिक बोध'}
-                      </span>
-                      <Feather className="w-5 h-5 text-indigo-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-indigo-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਦੈਨਿਕ ਆਤਮ-ਚਿੰਤਨ' : language === 'en' ? 'Daily Contemplation' : 'दैनिक आत्म-चिंतन'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਆਤਮ-ਅਵਲੋਕਨ ਤੇ ਗਿਆਨ ਮਨਨ।' : language === 'en' ? 'Daily inner reflection, contemplation, and wisdom seeds.' : 'प्रतिदिन का अंतर्मुखी विचार व आत्म-दर्शन।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-indigo-700 font-serif">{language === 'pb' ? 'ਚਿੰਤਨ ਕਰੋ' : language === 'en' ? 'Contemplate' : 'चिंतन करें'}</span>
-                    <ChevronRight size={14} className="text-indigo-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 4. Sacred Leelas & Four Yugas */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('sacred-leelas');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-teal-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-teal-500/20 text-teal-900 dark:text-teal-200 border-teal-500/40">
-                        {language === 'pb' ? 'ਚਾਰੇ ਜੁੱਗ' : language === 'en' ? 'Four Yugas' : 'चारों युग'}
-                      </span>
-                      <Crown className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-teal-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਅਮਰ ਲੀਲ੍ਹਾ ਤੇ ਚਾਰੇ ਜੁੱਗ' : language === 'en' ? 'Sacred Leelas & Four Yugas' : 'सतगुरु अमर लीलाएं एवं चारों युग'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਸਤਿਜੁਗ, ਤ੍ਰੇਤਾ, ਦੁਆਪਰ ਤੇ ਕਲਜੁਗ ਵਿਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਅਵਤਾਰ ਇਤਿਹਾਸ।' : language === 'en' ? 'Satguru Kabir’s eternal manifestations across Satyug, Treta, Dwapar, and Kalyug.' : 'सत्ययुग, त्रेता, द्वापर एवं कलयुग में साहेब के अमर अवतार व लीलाएं।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-teal-700 font-serif">{language === 'pb' ? 'ਲੀਲ੍ਹਾ ਵੇਖੋ' : language === 'en' ? 'Explore Leelas' : 'लीਲਾएं देखें'}</span>
-                    <ChevronRight size={14} className="text-teal-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 5. Chetawani Saarang (New Feature) */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('chetavani-saarang');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-red-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-red-500/20 text-red-900 dark:text-red-200 border-red-500/40">
-                        {language === 'pb' ? 'ਸਾਰੰਗ' : language === 'en' ? 'Summary' : 'सारंग'}
-                      </span>
-                      <ShieldAlert className="w-5 h-5 text-red-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-red-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਚੇਤਾਵਨੀ ਸਾਰੰਗ (੧੦ ਪ੍ਰਮੁੱਖ ਦੋਹੇ)' : language === 'en' ? 'Chetawani Saarang' : 'चेतावनी सारंग (१० प्रमुख दोहे)'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਕਾਲ ਦੇ ਚੱਕਰ ਤੋਂ ਸੁਚੇਤ ਕਰਨ ਵਾਲੇ ੧੦ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਦੋਹੇ।' : language === 'en' ? '10 impactful verses warning against worldly illusions.' : 'काल के चक्र से सावधान करने वाले १० अति प्रभावशाली दोहे।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-red-700 font-serif">{language === 'pb' ? 'ਸਾਰੰਗ ਵੇਖੋ' : language === 'en' ? 'View Essence' : 'सारंग देखें'}</span>
-                    <ChevronRight size={14} className="text-red-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* CATEGORY 4: Exploration, Calendar & Utilities */}
-          <div className="space-y-3">
-            <button
-              type="button"
-              onClick={() => toggleCategoryCollapse(4)}
-              style={{
-                backgroundColor: theme.stepActiveBg,
-                borderColor: theme.cardBorder,
-                color: theme.sacredMaroon,
-              }}
-              className="w-full px-3.5 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group text-left"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-cyan-600 shrink-0" />
-                <h4 className="text-xs sm:text-sm uppercase tracking-wider font-black font-serif">
-                  {language === 'pb' ? '੪. ਆਤਮਿਕ ਸਾਧਨ, ਜੰਤਰੀ ਤੇ ਖੋਜ' : language === 'en' ? '4. Spiritual Tools, Calendar & Search' : '४. आध्यात्मिक अन्वेषण, जंत्री एवं साधन'}
-                </h4>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <span className="text-[0.625rem] px-2 py-0.5 rounded-full font-bold bg-cyan-500/15 border border-cyan-500/30 text-cyan-900 dark:text-cyan-200">
-                  10 {language === 'pb' ? 'ਫੀਚਰਸ' : language === 'en' ? 'Features' : 'फीचर्स'}
-                </span>
-                {collapsedCategories[4] ? (
-                  <ChevronDown className="w-4 h-4 text-cyan-700 transition-transform group-hover:scale-110" />
-                ) : (
-                  <ChevronUp className="w-4 h-4 text-cyan-700 transition-transform group-hover:scale-110" />
-                )}
-              </div>
-            </button>
-
-            {!collapsedCategories[4] && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 animate-fadeIn">
-                {/* 1. Saheb Jantri */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('jantri');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-cyan-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-cyan-500/20 text-cyan-900 dark:text-cyan-200 border-cyan-500/40">
-                        {language === 'pb' ? 'ਪਾਵਨ ਜੰਤਰੀ' : language === 'en' ? 'Calendar' : 'पावन जंत्री'}
-                      </span>
-                      <CalendarDays className="w-5 h-5 text-cyan-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-cyan-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {t.jantriTitle}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਪੂਰਨਮਾਸ਼ੀ, ਪੁਰਬ ਤੇ ਪਾਵਨ ਤਿਥੀਆਂ।' : language === 'en' ? 'Full moon days, sacred festivals, and lunar dates.' : 'पूर्णिमा, पर्व व पावन तिथियां।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-cyan-700 font-serif">{language === 'pb' ? 'ਕੈਲੰਡਰ ਖੋਲ੍ਹੋ' : language === 'en' ? 'View Calendar' : 'कैलेंडर देखें'}</span>
-                    <ChevronRight size={14} className="text-cyan-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 2. Universe Map */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('universe-map');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-indigo-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-indigo-500/20 text-indigo-900 dark:text-indigo-200 border-indigo-500/40">
-                        {language === 'pb' ? 'ਪਿੰਡ-ਬ੍ਰਹਮੰਡ' : language === 'en' ? 'Cosmic Map' : 'पिंड-ब्रह्मांड'}
-                      </span>
-                      <Compass className="w-5 h-5 text-indigo-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-indigo-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਬ੍ਰਹਮੰਡ ਦਰਸ਼ਨ (ਕਾਇਆ ਨਕਸ਼ਾ)' : language === 'en' ? 'Universe Map' : 'ब्रह्मांड दर्शन (काया नक्शा)'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਪਿੰਡ-ਬ੍ਰਹਮੰਡ, ਚੱਕਰ ਤੇ ਅਮਰ ਲੋਕ ਧਾਮ ਨਕਸ਼ਾ।' : language === 'en' ? 'Macrocosm, microcosm, chakras, and spiritual realms.' : 'पिंड-ब्रह्मांड, षट्चक्र व अमर लोक धाम।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-indigo-700 font-serif">{language === 'pb' ? 'ਦਰਸ਼ਨ ਕਰੋ' : language === 'en' ? 'Explore Map' : 'नक्शा देखें'}</span>
-                    <ChevronRight size={14} className="text-indigo-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 3. Deep Search */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('deep-search');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-slate-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-slate-500/20 text-slate-900 dark:text-slate-200 border-slate-500/40">
-                        {language === 'pb' ? 'ਗਹਿਨ ਖੋਜ' : language === 'en' ? 'Deep Search' : 'गहन खोज'}
-                      </span>
-                      <Search className="w-5 h-5 text-slate-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-slate-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਗਹਿਨ ਸ਼ਬਦ-ਖੋਜ' : language === 'en' ? 'Deep Scripture Search' : 'गहन शब्द-खोज'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਸਮੁੱਚੇ ਗ੍ਰੰਥਾਂ ਤੇ ਸਾਖੀਆਂ ਵਿੱਚ ਸ਼ਬਦ ਖੋਜ।' : language === 'en' ? 'Search words and verses across complete scriptures.' : 'समग्र ग्रन्थों एवं साखियों में शब्द खोज।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-slate-700 font-serif">{language === 'pb' ? 'ਖੋਜੋ' : language === 'en' ? 'Search Now' : 'खोजें'}</span>
-                    <ChevronRight size={14} className="text-slate-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 4. Audio Library */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('audio-library');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-violet-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-violet-500/20 text-violet-900 dark:text-violet-200 border-violet-500/40">
-                        {language === 'pb' ? 'ਆਡੀਓ ਬਾਣੀ' : language === 'en' ? 'Audio Vault' : 'ऑडियो वाणी'}
-                      </span>
-                      <Music2 className="w-5 h-5 text-violet-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-violet-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਅਮਰ ਬਾਣੀ ਆਡੀਓ ਲਾਇਬ੍ਰੇਰੀ' : language === 'en' ? 'Audio Library' : 'अमर वाणी ऑडियो लाइब्रेरी'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਕਬੀਰ ਬਾਣੀ ਤੇ ਪਾਵਨ ਭਜਨ ਸੰਗੀਤ ਸੰਗ੍ਰਹਿ।' : language === 'en' ? 'Kabir Vani devotional singing and audio library.' : 'कबीर वाणी गायन व भजन संगीत संकलन।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-violet-700 font-serif">{language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen Audio' : 'ऑडियो सुनें'}</span>
-                    <ChevronRight size={14} className="text-violet-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 5. Spiritual Diary */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('diary');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-stone-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-stone-500/20 text-stone-900 dark:text-stone-200 border-stone-500/40">
-                        {language === 'pb' ? 'ਨਿੱਜੀ ਡਾਇਰੀ' : language === 'en' ? 'Diary' : 'निजी डायरी'}
-                      </span>
-                      <Bookmark className="w-5 h-5 text-stone-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-stone-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਆਤਮ-ਚਿੰਤਨ ਡਾਇਰੀ' : language === 'en' ? 'Spiritual Diary' : 'आत्म-चिंतन डायरी'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਨਿੱਜੀ ਸਵਾਧਿਆਏ ਨੋਟਸ, ਅਨੁਭਵ ਤੇ ਯਾਦਾਂ।' : language === 'en' ? 'Personal spiritual notes and realizations.' : 'व्यक्तिगत स्वाध्याय नोट्स व आत्म-बोध।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-stone-700 font-serif">{language === 'pb' ? 'ਡਾਇਰੀ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open Diary' : 'डायरी खोलें'}</span>
-                    <ChevronRight size={14} className="text-stone-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 6. Auto-Correct Sacred Text Tool */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('auto-correct');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-orange-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-orange-500/20 text-orange-900 dark:text-orange-200 border-orange-500/40">
-                        {language === 'pb' ? 'ਸ਼ੁੱਧੀਕਰਨ' : language === 'en' ? 'Corrector' : 'शुद्धीकरण'}
-                      </span>
-                      <SpellCheck className="w-5 h-5 text-orange-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-orange-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਪਾਵਨ ਬਾਣੀ ਆਟੋ-ਕਰੈਕਟ' : language === 'en' ? 'Sacred Auto-Correct' : 'पावन वाणी ऑटो-करेक्ट'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਪਾਵਨ ਬਾਣੀ ਦੇ ਸ਼ਬਦ ਜੋੜ ਸ਼ੁੱਧ ਕਰੋ।' : language === 'en' ? 'Sacred verse spelling correction and standardization.' : 'पावन साखी वर्तनी शुद्धीकरण उपकरण।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-orange-700 font-serif">{language === 'pb' ? 'ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open Tool' : 'उपकरण खोलें'}</span>
-                    <ChevronRight size={14} className="text-orange-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 7. App Health Diagnostic */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('health-diagnostic');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-emerald-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 border-emerald-500/40">
-                        {language === 'pb' ? 'ਸਿਸਟਮ ਸਿਹਤ' : language === 'en' ? 'Health' : 'सिस्टम सेहत'}
-                      </span>
-                      <Activity className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-emerald-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਐਪ ਸਿਹਤ ਤੇ ਆਫ਼ਲਾਈਨ' : language === 'en' ? 'App Health' : 'ऐप सेहत व ऑफ़लाइन'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਆਫ਼ਲਾਈਨ ਡਾਟਾ, ਸਟੋਰੇਜ ਅਤੇ ਸਿਸਟਮ।' : language === 'en' ? 'Offline cache, storage health, and diagnostics.' : 'ऑफ़लाइन कैश, संग्रहण एवं प्रदर्शन स्थिति।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-emerald-700 font-serif">{language === 'pb' ? 'ਜਾਂਚ ਕਰੋ' : language === 'en' ? 'Check Health' : 'सेहत जांचें'}</span>
-                    <ChevronRight size={14} className="text-emerald-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 8. Sacred Ashrams Card */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('sacred-ashrams');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-rose-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-rose-500/20 text-rose-900 dark:text-rose-200 border-rose-500/40">
-                        {language === 'pb' ? 'ਪਾਵਨ ਧਾਮ' : language === 'en' ? 'Ashrams' : 'पावन धाम'}
-                      </span>
-                      <MapPin className="w-5 h-5 text-rose-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-rose-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਥਾਨ ਤੇ ਪਾਵਨ ਧਾਮ' : language === 'en' ? 'Sacred Ashrams' : 'सतगुरु स्थान व पावन धाम'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਲਹਿਰਤਾਰਾ, ਕਬੀਰ ਚੌਰਾ ਤੇ ਮਗਹਰ ਧਾਮ।' : language === 'en' ? 'Lahartara, Kabir Chaura, and Maghar Dham guides.' : 'लहरतारा, कबीर चौरा, मगहर व दामाखेड़ा धाम।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-rose-700 font-serif">{language === 'pb' ? 'ਦਰਸ਼ਨ' : language === 'en' ? 'View Details' : 'विवरण देखें'}</span>
-                    <ChevronRight size={14} className="text-rose-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 9. Satsang Video Discourses */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('satsang-video');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-red-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-red-500/20 text-red-900 dark:text-red-200 border-red-500/40">
-                        {language === 'pb' ? 'ਪ੍ਰਵਚਨ ਵੀਡੀਓ' : language === 'en' ? 'Discourses' : 'सत्संग वीडियो'}
-                      </span>
-                      <Play className="w-5 h-5 text-red-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-red-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ' : language === 'en' ? 'Satsang Video Library' : 'पावन सत्संग वीडियो'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਅਨੁਰਾਗ ਸਾਗਰ, ਬੀਜਕ ਤੇ ਲੀਲ੍ਹਾ ਵੀਡੀਓ।' : language === 'en' ? 'Anurag Sagar, Bijak and Leela video discourses.' : 'अनुराग सागर, बीजक एवं अमर लीलाओं के प्रवचन।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-red-700 font-serif">{language === 'pb' ? 'ਵੇਖੋ' : language === 'en' ? 'Watch Now' : 'सत्संग देखें'}</span>
-                    <ChevronRight size={14} className="text-red-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* 10. Daily Sadhana Goals */}
-                <div
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    if (isSahajMode) setIsSahajMode(false);
-                    if (onNavigateView) onNavigateView('sadhana-goals');
-                  }}
-                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-                  className="p-4 sm:p-5 rounded-2xl border hover:border-amber-600 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex flex-col justify-between h-full group relative overflow-hidden shadow-sm hover:shadow-md"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-amber-500/20 text-amber-900 dark:text-amber-200 border-amber-500/40">
-                        {language === 'pb' ? 'ਸਾਧਨਾ ਟੀਚੇ' : language === 'en' ? 'Goals' : 'साधना लक्ष्य'}
-                      </span>
-                      <Target className="w-5 h-5 text-amber-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h5 className="font-serif font-black text-base sm:text-lg tracking-wide group-hover:text-amber-700 transition" style={{ color: theme.sacredMaroon }}>
-                        {language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ' : language === 'en' ? 'Daily Sadhana Goals' : 'दैनिक साधना लक्ष्य'}
-                      </h5>
-                      <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                        {language === 'pb' ? 'ਸਾਖੀ, ਧਿਆਨ, ਮਾਲਾ ਜਾਪ ਟੀਚੇ ਤੇ ਸਟ੍ਰੀਕ।' : language === 'en' ? 'Daily Sakhi, meditation, mantra targets and streak.' : 'साखी स्वाध्याय, सिमरन, जप माला लक्ष्य व दैनिक स्ट्रीक।'}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ borderColor: theme.cardBorder }} className="mt-3.5 pt-2.5 border-t flex items-center justify-between text-[0.6875rem] font-bold">
-                    <span className="text-amber-700 font-serif">{language === 'pb' ? 'ਟੀਚੇ' : language === 'en' ? 'My Goals' : 'लक्ष्य देखें'}</span>
-                    <ChevronRight size={14} className="text-amber-700 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
         )}
       </section>
 
@@ -2631,9 +2206,9 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 type="button"
                 onClick={() => setSelectedCategoryFilter('all')}
                 style={{
-                  backgroundColor: selectedCategoryFilter === 'all' ? theme.sacredMaroon : theme.bgSecondary,
-                  color: selectedCategoryFilter === 'all' ? '#FFFFFF' : theme.textPrimary,
-                  borderColor: selectedCategoryFilter === 'all' ? theme.sacredMaroon : theme.cardBorder,
+                  backgroundColor: selectedCategoryFilter === 'all' ? theme.buttonPrimaryBg : theme.bgSecondary,
+                  color: selectedCategoryFilter === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
+                  borderColor: selectedCategoryFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBorder,
                 }}
                 className="px-3 py-1 rounded-full border font-bold text-xs whitespace-nowrap cursor-pointer transition"
               >
@@ -2645,9 +2220,9 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   type="button"
                   onClick={() => setSelectedCategoryFilter(cat.id)}
                   style={{
-                    backgroundColor: selectedCategoryFilter === cat.id ? theme.accentGold : theme.bgSecondary,
-                    color: selectedCategoryFilter === cat.id ? '#FFFFFF' : theme.textPrimary,
-                    borderColor: selectedCategoryFilter === cat.id ? theme.accentGold : theme.cardBorder,
+                    backgroundColor: selectedCategoryFilter === cat.id ? theme.buttonPrimaryBg : theme.bgSecondary,
+                    color: selectedCategoryFilter === cat.id ? theme.buttonPrimaryText : theme.textPrimary,
+                    borderColor: selectedCategoryFilter === cat.id ? theme.buttonPrimaryBg : theme.cardBorder,
                   }}
                   className="px-3 py-1 rounded-full border text-xs whitespace-nowrap cursor-pointer transition flex items-center gap-1 font-medium"
                 >
@@ -2689,7 +2264,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                       }
                       setShowCategorySelector(false);
                     }}
-                    style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+                    style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                     className="px-3 py-1.5 rounded-lg text-xs font-bold hover:opacity-90 shrink-0 cursor-pointer shadow-xs"
                   >
                     {language === 'hi' ? 'चुनें' : language === 'pb' ? 'ਚੁਣੋ' : 'Select'}

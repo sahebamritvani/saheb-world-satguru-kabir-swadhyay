@@ -19,6 +19,16 @@ import { SplashScreen } from './components/SplashScreen';
 import { NetworkStatusIndicator } from './components/NetworkStatusIndicator';
 import { SacredMaryadaModal } from './components/SacredMaryadaModal';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { AdminDataInjector } from './components/AdminDataInjector';
+import { AdminInjectedContentBanner } from './components/AdminInjectedContentBanner';
+import {
+  ADMIN_SLOTS_UPDATED_EVENT,
+  AdminGranthSlotId,
+  OPEN_ADMIN_INJECTOR_EVENT,
+  getInjectedSakhis,
+  hydrateAdminSlotsFromIndexedDB,
+} from './services/adminSlotInjectorStore';
+import { isAdminAuthenticated } from './services/adminAuth';
 
 const SwadhyayReader = lazy(() => import('./components/SwadhyayReader').then(m => ({ default: m.SwadhyayReader })));
 const AkhandPath = lazy(() => import('./components/AkhandPath').then(m => ({ default: m.AkhandPath })));
@@ -251,6 +261,10 @@ function MainApp() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isAccessibilityOpen, setIsAccessibilityOpen] = useState(false);
   const [isMaryadaOpen, setIsMaryadaOpen] = useState<boolean>(false);
+  const [isAdminInjectorOpen, setIsAdminInjectorOpen] = useState<boolean>(false);
+  const [adminInjectorInitialSlotId, setAdminInjectorInitialSlotId] = useState<AdminGranthSlotId | null>(null);
+  const [selectedUlatvasiId, setSelectedUlatvasiId] = useState<string | null>(null);
+  const [initialGranthId, setInitialGranthId] = useState<string | undefined>(undefined);
 
   // Open Sacred Maryada Modal automatically on startup after Splash Screen finishes, if not dismissed today
   useEffect(() => {
@@ -281,13 +295,57 @@ function MainApp() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Re-render when bulk replacements or database harmonizations are applied
+  // Re-render when bulk replacements or admin slot updates are applied
   useEffect(() => {
+    hydrateAdminSlotsFromIndexedDB().catch(() => {});
     const handleSakhisUpdated = () => {
       setSakhiUpdateVersion((prev) => prev + 1);
     };
+    const handleOpenAdminInjector = (e: Event) => {
+      if (!isAdminAuthenticated()) {
+        setIsAdminInjectorOpen(false);
+        return;
+      }
+      const customEvent = e as CustomEvent<{ slotId?: AdminGranthSlotId }>;
+      setAdminInjectorInitialSlotId(customEvent.detail?.slotId ?? null);
+      setIsAdminInjectorOpen(true);
+    };
+    const handleAdminAuthChange = () => {
+      if (!isAdminAuthenticated()) {
+        setIsAdminInjectorOpen(false);
+        setAdminInjectorInitialSlotId(null);
+      }
+    };
+    const handleShortcut = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') {
+        if (!isAdminAuthenticated()) return;
+        e.preventDefault();
+        setAdminInjectorInitialSlotId(null);
+        setIsAdminInjectorOpen((prev) => !prev);
+      }
+    };
+    const handleOpenGranthDirect = (e: Event) => {
+      const customEvent = e as CustomEvent<{ granthSlug?: string }>;
+      setInitialGranthId(customEvent.detail?.granthSlug);
+      setCurrentView('grantha');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     window.addEventListener('sahebworld:sakhis-updated', handleSakhisUpdated);
-    return () => window.removeEventListener('sahebworld:sakhis-updated', handleSakhisUpdated);
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSakhisUpdated);
+    window.addEventListener(OPEN_ADMIN_INJECTOR_EVENT, handleOpenAdminInjector);
+    window.addEventListener('sahebworld:admin-auth-change', handleAdminAuthChange);
+    window.addEventListener('storage', handleAdminAuthChange);
+    window.addEventListener('sahebworld_open_granth', handleOpenGranthDirect);
+    window.addEventListener('keydown', handleShortcut);
+    return () => {
+      window.removeEventListener('sahebworld:sakhis-updated', handleSakhisUpdated);
+      window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSakhisUpdated);
+      window.removeEventListener(OPEN_ADMIN_INJECTOR_EVENT, handleOpenAdminInjector);
+      window.removeEventListener('sahebworld:admin-auth-change', handleAdminAuthChange);
+      window.removeEventListener('storage', handleAdminAuthChange);
+      window.removeEventListener('sahebworld_open_granth', handleOpenGranthDirect);
+      window.removeEventListener('keydown', handleShortcut);
+    };
   }, []);
 
   // Global Emergency Escape & Key Listener to ensure 'daily' landing view is always reachable
@@ -300,6 +358,7 @@ function MainApp() {
         setIsAccessibilityOpen(false);
         setIsMaryadaOpen(false);
         setIsBlessingOpen(false);
+        setIsAdminInjectorOpen(false);
         setCurrentView('daily');
         if (typeof window !== 'undefined') {
           window.history.pushState(null, '', '#/daily');
@@ -316,6 +375,7 @@ function MainApp() {
       setIsAccessibilityOpen(false);
       setIsMaryadaOpen(false);
       setIsBlessingOpen(false);
+      setIsAdminInjectorOpen(false);
       setCurrentView('daily');
       if (typeof window !== 'undefined') {
         window.history.pushState(null, '', '#/daily');
@@ -536,6 +596,11 @@ function MainApp() {
             onRetry={() => setErrorRetryKey((k) => k + 1)}
             onGoHome={() => handleSelectView('daily')}
           >
+            <AdminInjectedContentBanner
+              view={currentView}
+              language={language}
+              updateVersion={sakhiUpdateVersion}
+            />
             <Suspense fallback={<SacredLoader language={language} />}>
           {/* View 1: Daily Pawan Sakhi Swadhyay */}
       {currentView === 'daily' && (
@@ -662,10 +727,18 @@ function MainApp() {
         <UlatvasiLibrary
           language={language}
           onSelectLanguage={setLanguage}
+          initialSelectedUlatvasiId={selectedUlatvasiId}
           onSelectUlatvasi={(id) => {
-            // Stay in library view as it now contains both collection and quiz
+            setSelectedUlatvasiId(id);
           }}
+          onOpenBlessing={() =>
+            handleOpenBlessing(
+              translations[language].quizBlessingTitle,
+              translations[language].quizBlessingMsg
+            )
+          }
           onClose={() => {
+            setSelectedUlatvasiId(null);
             setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
@@ -716,7 +789,7 @@ function MainApp() {
       {currentView === 'akhand-path' && (
         <AkhandPath
           key={`akhand-path-${sakhiUpdateVersion}-${fullSakhisMod ? 'full' : 'init'}`}
-          sakhis={[...(fullSakhisMod?.sakhisDatabase || [currentDailySakhi])]}
+          sakhis={[...getInjectedSakhis(), ...(fullSakhisMod?.sakhisDatabase || [currentDailySakhi])]}
           language={language}
           onSelectSakhi={(sakhi) => handleStartSwadhyay(sakhi)}
           onOpenBlessing={() =>
@@ -748,14 +821,21 @@ function MainApp() {
       {/* CORE MODULES & GRANTH VAULTS: Direct Views */}
       {currentView === 'grantha' && (
         <MasterGranthLibrary
+          key={initialGranthId || 'library-root'}
           language={language}
           onSelectLanguage={setLanguage}
+          initialGranthId={initialGranthId}
           onSelectView={(view) => {
+            setInitialGranthId(undefined);
             setCurrentView(view);
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          onOpenDiary={() => setCurrentView('diary')}
+          onOpenDiary={() => {
+            setInitialGranthId(undefined);
+            setCurrentView('diary');
+          }}
           onOpenSwadhyay={(text) => {
+            setInitialGranthId(undefined);
             if (text) {
               setSearchQuery(text);
               setCurrentView('swadhyay');
@@ -765,6 +845,7 @@ function MainApp() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           onClose={() => {
+            setInitialGranthId(undefined);
             setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
@@ -852,7 +933,7 @@ function MainApp() {
           initialQuery={searchQuery}
           onSelectSakhi={(sakhi) => handleStartSwadhyay(sakhi)}
           onSelectUlatvasi={(id) => {
-            // Future: Scroll to specific Ulatvasi in library or open detail
+            setSelectedUlatvasiId(id);
             setCurrentView('ulatvasi-library');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
@@ -1306,6 +1387,19 @@ function MainApp() {
         <AccessibilityModal
           isOpen={isAccessibilityOpen}
           onClose={() => setIsAccessibilityOpen(false)}
+          language={language}
+        />
+      </ErrorBoundary>
+
+      {/* Admin All-Card Slot Data Injector Modal */}
+      <ErrorBoundary compact language={language} onGoHome={() => setIsAdminInjectorOpen(false)}>
+        <AdminDataInjector
+          isOpen={isAdminInjectorOpen}
+          initialSlotId={adminInjectorInitialSlotId}
+          onClose={() => {
+            setIsAdminInjectorOpen(false);
+            setAdminInjectorInitialSlotId(null);
+          }}
           language={language}
         />
       </ErrorBoundary>

@@ -50,14 +50,18 @@ import { getAppUrlSync } from '../utils/url';
 interface UlatvasiLibraryProps {
   language: Language;
   onSelectLanguage?: (lang: Language) => void;
+  initialSelectedUlatvasiId?: string | null;
   onSelectUlatvasi: (id: string) => void;
+  onOpenBlessing?: () => void;
   onClose: () => void;
 }
 
 export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
   language: initialLanguage,
   onSelectLanguage,
+  initialSelectedUlatvasiId = null,
   onSelectUlatvasi,
+  onOpenBlessing,
   onClose,
 }) => {
   const { theme } = useAppTheme();
@@ -72,7 +76,24 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
   };
 
   const t = translations[currentLang] || contextT;
-  const [activeSubTab, setActiveSubTab] = useState<'collection' | 'quiz'>('collection');
+  const [selected3DUlatvasiId, setSelected3DUlatvasiId] = useState<string | null>(initialSelectedUlatvasiId);
+  const [activeSubTab, setActiveSubTab] = useState<'collection' | 'quiz'>(
+    initialSelectedUlatvasiId ? 'quiz' : 'collection'
+  );
+
+  useEffect(() => {
+    if (initialSelectedUlatvasiId) {
+      setSelected3DUlatvasiId(initialSelectedUlatvasiId);
+      setActiveSubTab('quiz');
+    }
+  }, [initialSelectedUlatvasiId]);
+
+  const handleOpen3DForUlatvasi = (id: string) => {
+    setSelected3DUlatvasiId(id);
+    setActiveSubTab('quiz');
+    onSelectUlatvasi(id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRealm, setSelectedRealm] = useState<string>('all');
   const [showIntroDescription, setShowIntroDescription] = useState(true);
@@ -185,9 +206,9 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-sm sm:text-lg font-black tracking-normal font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
         >
-          {currentLang === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : currentLang === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {currentLang === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : currentLang === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
         </span>
       </div>
 
@@ -226,11 +247,14 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       {activeSubTab === 'quiz' ? (
         <UlatvasiQuiz
           language={currentLang}
+          initialTab="paradox-quest"
+          initialUlatvasiId={selected3DUlatvasiId}
           onClose={() => {
+            setSelected3DUlatvasiId(null);
             setActiveSubTab('collection');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          onOpenBlessing={() => {}}
+          onOpenBlessing={onOpenBlessing || (() => {})}
         />
       ) : (
         <>
@@ -304,19 +328,20 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
               <Sparkles className="w-6 h-6 text-amber-500 animate-pulse" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span
-                  style={{ backgroundColor: theme.accentGoldLight, color: theme.sacredMaroon }}
-                  className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border border-amber-400/30"
+                  style={{ color: theme.accentGold }}
+                  className="text-xs sm:text-sm font-black font-serif tracking-normal"
                 >
-                  ।। सत्यनाम ।।
+                  {currentLang === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : currentLang === 'en' ? '।। Satyanaam ।।' : '।। सत्यनाम ।।'}
                 </span>
-                <span className="text-xs font-bold text-amber-600 dark:text-amber-400">
+                <span aria-hidden="true" style={{ color: theme.textSecondary }}>·</span>
+                <span className="text-xs font-bold font-serif" style={{ color: theme.textSecondary }}>
                   {currentLang === 'hi' ? 'उलटबांसी संग्रह' : currentLang === 'pb' ? 'ਉਲਟਬਾਂਸੀ ਸੰਗ੍ਰਹਿ' : 'Sacred Paradoxes'}
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black font-serif tracking-tight mt-1" style={{ color: theme.sacredMaroon }}>
-                {currentLang === 'hi' ? 'सद्गुरु कबीर साहेब की उलटबांसियां' : currentLang === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ' : "Satguru Kabir Saheb's Ulatbansian"}
+                {currentLang === 'hi' ? 'सतगुरु कबीर साहेब की उलटबांसियां' : currentLang === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ' : "Satguru Kabir Saheb's Ulatbansian"}
               </h2>
             </div>
           </div>
@@ -548,7 +573,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                 language={currentLang} 
                 theme={theme} 
                 idx={(currentPage - 1) * ITEMS_PER_PAGE + idx} 
-                onSelectUlatvasi={onSelectUlatvasi}
+                onSelectUlatvasi={handleOpen3DForUlatvasi}
                 onSelectLanguage={handleLanguageChange}
                 globalSpiritualEssence={globalSpiritualEssence}
                 globalAutoExpandMeaning={globalAutoExpandMeaning}
@@ -650,7 +675,7 @@ const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({
       grantha: 'Bijak',
       category: 'chetavni-jagriti',
       categoryTitle: {
-        hi: item.title.hi || 'सद्गुरु कबीर साहेब की उलटबांसियां',
+        hi: item.title.hi || 'सतगुरु कबीर साहेब की उलटबांसियां',
         pb: item.title.pb || 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ',
         en: item.title.en || 'Satguru Kabir Saheb - Sacred Ulatbaasi',
       },
@@ -680,7 +705,7 @@ const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({
         en: 'Relinquish outer sensory illusion and experience the unstruck light within.',
       },
       samarpanPrayer: {
-        hi: 'हे सद्गुरु कबीर साहेब! आपकी गूढ़ वाणी का अलौकिक प्रकाश मेरे घट में जाग्रत हो।',
+        hi: 'हे सतगुरु कबीर साहेब! आपकी गूढ़ वाणी का अलौकिक प्रकाश मेरे घट में जाग्रत हो।',
         pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਤੁਹਾਡੀ ਪਾਵਨ ਬਾਣੀ ਦਾ ਚਾਨਣ ਮੇਰੇ ਹਿਰਦੇ ਵਿੱਚ ਹੋਵੇ।',
         en: 'O Satguru Kabir Saheb! May the sublime light of your Word shine within my being.',
       },
@@ -1128,7 +1153,7 @@ const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({
                   <RefreshCw className="w-8 h-8 mx-auto text-amber-500 animate-spin" />
                   <p className="text-xs font-serif font-bold text-amber-700 dark:text-amber-300">
                     {language === 'hi' 
-                      ? 'सद्गुरु कबीर वाणी का गूढ़ आध्यात्मिक रहस्य विश्लेषित किया जा रहा है...' 
+                      ? 'सतगुरु कबीर वाणी का गूढ़ आध्यात्मिक रहस्य विश्लेषित किया जा रहा है...' 
                       : language === 'pb' 
                       ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਾਣੀ ਦਾ ਗੂੜ੍ਹ ਅਧਿਆਤਮਕ ਰਹੱਸ ਵਿਸ਼ਲੇਸ਼ਿਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...' 
                       : 'Decoding mystical reversal essence...'}

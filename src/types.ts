@@ -118,6 +118,7 @@ export interface Sakhi {
     pb: string;
     en: string;
   };
+  themeTags?: string[];
   quiz?: QuizQuestion[];
 }
 
@@ -295,8 +296,8 @@ export interface SpiritualRank {
 
 export const SACRED_BRANDING = {
   header: {
-    hi: '🌹 ।।सत्यनाम।। 🌹',
-    pb: '🌹 ।।ਸਤ੍ਯਨਾਮ।। 🌹',
+    hi: '🌹 ।। सत्यनाम ।। 🌹',
+    pb: '🌹 ।। ਸਤਯਨਾਮ ।। 🌹',
     en: '🌹 || Satyanaam || 🌹',
   },
   footer: {

@@ -62,6 +62,38 @@ const CURATED_SAKHI_DEPTH: Record<number, CuratedStepDepth> = {
       en: 'Tattva Gyan Core: Where "I" (ego) stands, the Beloved remains veiled; the instant Surat dissolves ego into the cooling Shabd, the inner foe vanishes and the Beloved shines within.',
     },
   },
+  1108: {
+    step1Concise: {
+      hi: 'जो साधक अंतरंग में परम सत्य (सार-शब्द) का सच्चा अन्वेषक बनता है, वह संत जन धन्य है। सतगुरु कबीर साहेब कहते हैं कि जो सत्य-शब्द को अपने हृदय में दृढ़ता से धारण कर लेता है, उसका अमूल्य मानव जीवन कभी व्यर्थ नष्ट नहीं होता और न वह भवसागर में भटकता है।',
+      pb: 'ਜਿਹੜਾ ਸਾਧਕ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਪਰਮ ਸਤਿ (ਸਾਰ-ਸ਼ਬਦ) ਦਾ ਸੱਚਾ ਖੋਜੀ ਬਣਦਾ ਹੈ, ਉਹ ਸੰਤ ਧੰਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਤਯ-ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਧਾਰਨ ਕਰ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਅਮੋਲਕ ਜੀਵਨ ਕਦੇ ਭਟਕ ਕੇ ਵਿਅਰਥ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Blessed is that noble seeker who becomes an earnest seeker of the Ultimate Living Word (Saar-Shabd). Satguru Kabir Saheb affirms that whoever firmly anchors the sacred Word within consciousness never wanders in vain nor is their precious human life squandered.',
+    },
+    step4WhyTaught: {
+      hi: 'सतगुरु कबीर साहेब ने यह उपदेश इसलिए दिया क्योंकि अधिकांश लोग केवल बाहरी ग्रंथों, मंत्रों और कर्मकांडों के संग्रह में उलझे रहते हैं और भीतर गूँज रहे जीवित सत्य-शब्द (सार-शब्द) की खोज नहीं करते। साहेब चेतावनी देते हैं कि जब तक सुरति शब्द को दृढ़ता से नहीं पकड़ती, तब तक संसार के प्रपंचों और भ्रमों में अमूल्य जीवन व्यर्थ नष्ट (बिगोय) हो जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਹ ਉਪਦੇਸ਼ ਇਸ ਲਈ ਦਿੱਤਾ ਕਿਉਂਕਿ ਬਹੁਤੇ ਲੋਕ ਬਾਹਰੀ ਪੁਸਤਕਾਂ ਅਤੇ ਕਰਮਕਾਂਡਾਂ ਦੇ ਭਰਮ ਵਿੱਚ ਉਲਝੇ ਰਹਿੰਦੇ ਹਨ ਅਤੇ ਅੰਦਰ ਗੂੰਜਦੇ ਸੱਚੇ ਸਾਰ-ਸ਼ਬਦ ਦੀ ਖੋਜ ਨਹੀਂ ਕਰਦੇ। ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜਦੋਂ ਤੱਕ ਸੁਰਤ ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਨਹੀਂ ਫੜਦੀ, ਜੀਵਨ ਵਿਅਰਥ ਭਟਕਣਾ ਵਿੱਚ ਨਸ਼ਟ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb imparted this teaching because most people get lost collecting outer scriptures, dogmas, and ceremonies rather than investigating the living Saar-Shabd resonating within. He warns that unless inner awareness firmly grasps the Word, precious life dissolves into delusion and ruin.',
+    },
+    step4Drishtant: {
+      hi: 'दैनिक जीवन का दृष्टांत: जैसे गहरे समुद्र में गोता लगाने वाला अनुभवी खोजी ही तलहटी से सच्चा मोती निकाल पाता है, जबकि किनारे पर कंकड़-पत्थर बटोरने वाले केवल खाली हाथ रहते हैं—उसी प्रकार जो साधक सतगुरु की वाणी और सत्यनाम को जीवन में गहराई से उतारता है, वह जीवन के किसी भी झंझावात या प्रलोभन में नहीं बहकता। जैसे किसी विशाल बाढ़ में किनारे की मजबूत रस्सी पकड़ने वाला सुरक्षित पार उतर जाता है, वैसे ही "गहि शब्द" करने वाला साधक काल और माया के थपेड़ों से सुरक्षित रहता है।',
+      pb: 'ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦੀ ਉਦਾਹਰਨ: ਜਿਵੇਂ ਡੂੰਘੇ ਸਮੁੰਦਰ ਵਿੱਚ ਗੋਤਾ ਲਾਉਣ ਵਾਲਾ ਸੱਚਾ ਖੋਜੀ ਹੀ ਹੇਠੋਂ ਮੋਤੀ ਕੱਢ ਕੇ ਲਿਆਉਂਦਾ ਹੈ, ਜਦਕਿ ਕੰਢੇ ਤੇ ਬੈਠਣ ਵਾਲੇ ਹੱਥ ਮਲਦੇ ਰਹਿ ਜਾਂਦੇ ਹਨ—ਤਿਵੇਂ ਹੀ ਜੋ ਸਾਧਕ ਸਤਿਗੁਰੂ ਦੀ ਬਾਣੀ ਅਤੇ ਸਤਯਨਾਮ ਨੂੰ ਅੰਦਰ ਵਸਾਉਂਦਾ ਹੈ, ਉਹ ਕਦੇ ਭਟਕਦਾ ਨਹੀਂ। ਜਿਵੇਂ ਹੜ੍ਹ ਵਿੱਚ ਮਜ਼ਬੂਤ ਰੱਸਾ ਫੜਨ ਵਾਲਾ ਪਾਰ ਲੰਘ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਸ਼ਬਦ ਨੂੰ ਫੜਨ ਵਾਲਾ ਮਾਇਆ ਦੇ ਝੱਖੜਾਂ ਤੋਂ ਬਚ ਜਾਂਦਾ ਹੈ।',
+      en: 'Everyday Example: Just as a committed deep-sea diver plunges beneath the waves to retrieve precious pearls while casual onlookers collect worthless pebbles on the shore, the seeker who dives deep into the Satguru’s Word anchors life in unwavering truth. Like holding tightly to a sturdy lifeline amidst a raging flash flood, holding onto the Saar-Shabd keeps the soul anchored against worldly storms.',
+    },
+    step4MindAnalysis: {
+      hi: 'मन एवं विवेक का विश्लेषण: मन स्वभाव से उथली बातों, विवादों और क्षणिक इच्छाओं में दौड़ता है। जब तक विवेक जागृत होकर मन को "खोजी" (शोधक) नहीं बनाता, तब तक ऊर्जा व्यर्थ बहती है। सत्य-शब्द का अनुसंधान मन की चंचलता को समाप्त कर सुरति को अंतर्मुख करता है।',
+      pb: 'ਮਨ ਤੇ ਵਿਵੇਕ ਦੀ ਪਰਖ: ਮਨ ਸੁਭਾਅ ਤੋਂ ਹੀ ਬਾਹਰੀ ਬਹਿਸਾਂ ਤੇ ਇੱਛਾਵਾਂ ਪਿੱਛੇ ਦੌੜਦਾ ਹੈ। ਜਦੋਂ ਤੱਕ ਵਿਵੇਕ ਜਾਗ ਕੇ ਮਨ ਨੂੰ ਸੱਚਾ ਖੋਜੀ ਨਹੀਂ ਬਣਾਉਂਦਾ, ਊਰਜਾ ਵਿਅਰਥ ਜਾਂਦੀ ਹੈ। ਸਤਯ-ਸ਼ਬਦ ਦੀ ਖੋਜ ਮਨ ਦੀ ਭਟਕਣਾ ਮਿਟਾ ਕੇ ਸੁਰਤ ਨੂੰ ਅੰਤਰਮੁਖੀ ਕਰਦੀ ਹੈ।',
+      en: 'Mind & Discernment Analysis: The untrained mind chases superficial gossip and worldly novelties. Until conscious discernment turns the mind into an earnest investigator ("Khoji"), spiritual energy dissipates. Investigating the living Word reins in restlessness and centers awareness inward.',
+    },
+    step6EsotericSymbols: {
+      hi: '• "खोजी": कबीर पंथ सुरति-शब्द योग में "खोजी" केवल बौद्धिक चिंतक नहीं, बल्कि वह अंतर्मुखी अभ्यासी है जो श्वास-श्वास में सार-शब्द की पहचान करता है।\n• "शब्द" (सार-शब्द): यह वर्णनात्मक या अक्षरात्मक ध्वनि नहीं, बल्कि दसवें द्वार में गूँजने वाला अनादि, अक्रिय और अमर "निह-अक्षर" सत्य-तत्व है।\n• "गहि शब्द" (शब्द को पकड़ना): सुरति का मन और पंचेन्द्रियों के विकारों से सिमटकर त्रिकुटी-दसम द्वार के अंतरंग नाद में एकाग्र व तल्लीन हो जाना ही "शब्द गहिना" है।\n• "बिगोय न जाय": इसका अर्थ है कि काल, कर्म और माया के चक्रव्यूह से मुक्त होकर अमर लोक (सत्यलोक) में स्थायी प्रतिष्ठा प्राप्त करना—जहाँ जन्म-मरण का नाश हो जाता है।',
+      pb: '• "ਖੋਜੀ": ਕਬੀਰ ਪੰਥ ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ ਵਿੱਚ "ਖੋਜੀ" ਕੇਵਲ ਬੌਧਿਕ ਵਿਚਾਰਕ ਨਹੀਂ, ਸਗੋਂ ਉਹ ਅੰਤਰਮੁਖੀ ਸਾਧਕ ਹੈ ਜੋ ਸੁਆਸ-ਸੁਆਸ ਵਿੱਚ ਸਾਰ-ਸ਼ਬਦ ਦੀ ਪਛਾਣ ਕਰਦਾ ਹੈ।\n• "ਸ਼ਬਦ" (ਸਾਰ-ਸ਼ਬਦ): ਇਹ ਕੇਵਲ ਅੱਖਰੀ ਬੋਲ ਨਹੀਂ, ਸਗੋਂ ਦਸਵੇਂ ਦੁਆਰ ਵਿੱਚ ਗੂੰਜਦਾ ਅਨਾਦੀ, ਅਵਿਨਾਸ਼ੀ "ਨਿਹ-ਅੱਖਰ" ਸਤਯ-ਤੱਤ ਹੈ।\n• "ਗਹਿ ਸ਼ਬਦ": ਸੁਰਤ ਦਾ ਬਾਹਰੀ ਵਿਕਾਰਾਂ ਤੋਂ ਸਿਮਟ ਕੇ ਅੰਦਰੂਨੀ ਨਾਦ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਣਾ ਹੀ "ਸ਼ਬਦ ਗਹਿਣਾ" ਹੈ।\n• "ਬਿਗੋਇ ਨ ਜਾਇ": ਇਸਦਾ ਭਾਵ ਹੈ ਕਿ ਕਾਲ ਅਤੇ ਮਾਇਆ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਅਮਰਲੋਕ ਵਿੱਚ ਸਥਾਈ ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਕਰਨੀ।',
+      en: '• "Khoji" (Inner Investigator): In Surat-Shabd Yoga, the "Khoji" is not an armchair scholar, but an earnest meditator who recognizes the living pulse of truth within each breath.\n• "Shabd" (Saar-Shabd): Not ordinary spoken letters, but the uncreated, primordial "Nih-Akshar" resonance vibrantly alive at the Tenth Door.\n• "Gahi Shabd" (Grasping the Word): Withdrawing consciousness from outer senses to merge Surat fully into the inner divine sound current.\n• "Bigoy Na Jaay" (Never Ruined): Freedom from the cycles of time, karma, and rebirth—attaining permanent sanctuary in the eternal realm of Satlok.',
+    },
+    step6TattvaGyan: {
+      hi: 'तत्व ज्ञान सूत्र: "सबद सबद बहु अंतरा, सार सबद चित लाय।" बाहरी शब्द केवल दिशा दिखाते हैं, किंतु अंतरंग सार-शब्द ही जीव को काल-जाल से मुक्त कराता है। जो शब्द को पकड़ता है, उसका जीवन कभी व्यर्थ नहीं जाता।',
+      pb: 'ਤੱਤ-ਗਿਆਨ ਸੂਤਰ: "ਸਬਦ ਸਬਦ ਬਹੁ ਅੰਤਰਾ, ਸਾਰ ਸਬਦ ਚਿਤ ਲਾਇ।" ਬਾਹਰੀ ਸ਼ਬਦ ਕੇਵਲ ਰਾਹ ਦੱਸਦੇ ਹਨ, ਪਰ ਅੰਦਰੂਨੀ ਸਾਰ-ਸ਼ਬਦ ਹੀ ਜੀਵ ਨੂੰ ਕਾਲ ਤੋਂ ਮੁਕਤ ਕਰਦਾ ਹੈ। ਜੋ ਸ਼ਬਦ ਨੂੰ ਧਾਰਦਾ ਹੈ, ਉਸਦਾ ਜੀਵਨ ਅਮੋਲਕ ਬਣ ਜਾਂਦਾ ਹੈ।',
+      en: 'Tattva Gyan Essence: "There are myriad outer words, but fix your consciousness upon the Essential Word (Saar Shabd)." Spoken words merely point the way; the inward living Word cuts the cords of Kaal and guarantees eternal spiritual fulfillment.',
+    },
+  },
 };
 
 function detectThemeAndSymbols(sakhi: Sakhi): {
@@ -81,7 +113,9 @@ function detectThemeAndSymbols(sakhi: Sakhi): {
 
   let primaryTheme: ThemeKey = 'mind-control';
 
-  if (/शीतल शब्द|कुटिल|बचन|वचन|वाणी|बानी|रसना|बोल|मीठा|मधुर/.test(blob)) {
+  if (/खोजी|सार शब्द|सत्य शब्द|शब्द को अंग|गहि शब्द|शबद\b/.test(blob)) {
+    primaryTheme = 'naam';
+  } else if (/शीतल शब्द|कुटिल|बचन|वचन|वाणी|बानी|रसना|बोल|मीठा|मधुर/.test(blob)) {
     primaryTheme = 'sweet-speech';
   } else if (/प्रीतम तुझहि|दुसमन भी तुझ|अहं|अहंकार|आपा|अभिमान|मैं|रोड़ा|बुरा जो देखन/.test(blob)) {
     primaryTheme = 'ego-inner';

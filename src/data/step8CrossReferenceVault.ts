@@ -25,6 +25,7 @@ export interface CuratedCrossRefEntry {
     pb: string;
     en: string;
   };
+  themeTags?: string[];
 }
 
 /**
@@ -67,8 +68,9 @@ export const SGGS_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
       pb: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀ (ਅੰਗ ੧੩੭੨)',
       en: 'Sri Guru Granth Sahib Ji • Salok Bhagat Kabir Ji (Ang 1372)'
     },
-    themes: ['guru', 'satya-hypocrisy'],
-    keywords: ['गुरु', 'अंधा', 'चेला', 'शिष्य', 'निगुरा', 'कूप', 'गुर', 'परख', 'blind', 'disciple', 'false'],
+    themes: ['guru', 'satya-hypocrisy', 'yoga-realization', 'naam'],
+    themeTags: ['satya-khoj', 'saar-shabd', 'shabd-sadhan'],
+    keywords: ['गुरु', 'खोज', 'खोजते', 'ठउर', 'शबद', 'शब्द', 'परख', 'सत्य', 'seeker', 'search', 'inner'],
     verse: {
       hi: 'कबीर जा को खोजते, पायो सोई ठउरु।\nसोई फिरि कै तूँ भया, जा को कहता अउरु॥',
       pb: 'ਕਬੀਰ ਜਾ ਕਉ ਖੋਜਤੇ ਪਾਇਓ ਸੋਈ ਠਉਰੁ।\nਸੋਈ ਫਿਰਿ ਕੈ ਤੂ ਭਇਆ ਜਾ ਕਉ ਕਹਤਾ ਅਉਰੁ॥',
@@ -1032,8 +1034,9 @@ export const BIJAK_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
       pb: 'ਕਬੀਰ ਬੀਜਕ • ਸਿਮਰਨ ਕੋ ਅੰਗ',
       en: 'Kabir Bijak • Sumiran Ko Ang (Sacred Remembrance)'
     },
-    themes: ['naam'],
-    keywords: ['सुमिरन', 'सिमरन', 'सार', 'जंजाल', 'काल', 'नाम', 'सत्यनाम', 'remembrance', 'snare', 'essence'],
+    themes: ['naam', 'yoga-realization'],
+    themeTags: ['satya-khoj', 'saar-shabd', 'shabd-sadhan'],
+    keywords: ['सुमिरन', 'सिमरन', 'सार', 'शब्द', 'खोजी', 'जंजाल', 'काल', 'नाम', 'सत्यनाम', 'remembrance', 'snare', 'essence'],
     verse: {
       hi: 'कबीर सुमिरन सार है, और सकल जंजाल।\nआदि अंत सब सोधिया, दूजा देख्या काल॥',
       pb: 'ਕਬੀਰ ਸਿਮਰਨ ਸਾਰ ਹੈ, ਔਰ ਸਕਲ ਜੰਜਾਲ।\nਆਦਿ ਅੰਤ ਸਭ ਸੋਧਿਆ, ਦੂਜਾ ਦੇਖਿਆ ਕਾਲ॥',
@@ -1829,6 +1832,33 @@ export const BIJAK_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
  */
 export const GRANTHAVALI_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
   {
+    id: 'grantha-shabd-ko-ang-1108',
+    tradition: 'granthavali',
+    angOrSection: {
+      hi: 'कबीर ग्रंथावली • शब्द को अंग',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ • ਸ਼ਬਦ ਕੋ ਅੰਗ',
+      en: 'Kabir Granthavali • Shabd Ko Ang'
+    },
+    themes: ['yoga-realization', 'naam', 'satya-hypocrisy'],
+    themeTags: ['satya-khoj', 'saar-shabd', 'shabd-sadhan', 'shabd-ko-ang'],
+    keywords: ['खोजी', 'सार शब्द', 'गहि', 'शब्द', 'सबद', 'बिगोय', 'काल', 'सत्य', 'अन्वेषक', 'truth', 'word', 'seeker', 'saar-shabd'],
+    verse: {
+      hi: 'सबद सबद बहु अंतरा, सार सबद चित लाय।\nकहैं कबीर जहाँ सार सबद, तहाँ काल न खाय॥',
+      pb: 'ਸਬਦ ਸਬਦ ਬਹੁ ਅੰਤਰਾ, ਸਾਰ ਸਬਦ ਚਿਤ ਲਾਇ।\nਕਹੈਂ ਕਬੀਰ ਜਹਾਂ ਸਾਰ ਸਬਦ, ਤਹਾਂ ਕਾਲ ਨ ਖਾਇ॥',
+      en: 'There are countless words in this world, yet anchor your consciousness in the Essential Word (Saar-Shabd);\nKabir proclaims: where the Saar-Shabd abides, Kaal (death and time) can never devour the soul.'
+    },
+    bhavarth: {
+      hi: 'संसार में अनेक प्रकार के शब्द और ग्रंथ हैं, किंतु साधक को अपने चित्त को केवल सतगुरु प्रदत्त अविनाशी सार-शब्द में लीन करना चाहिए; क्योंकि जहाँ सार-शब्द का वास होता है, वहाँ काल और माया का प्रभाव समाप्त हो जाता है।',
+      pb: 'ਸੰਸਾਰ ਵਿੱਚ ਅਨੇਕਾਂ ਸ਼ਬਦ ਤੇ ਪੁਸਤਕਾਂ ਹਨ, ਪਰ ਸਾਧਕ ਨੂੰ ਆਪਣਾ ਚਿੱਤ ਕੇਵਲ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਸਾਰ-ਸ਼ਬਦ ਵਿੱਚ ਟਿਕਾਉਣਾ ਚਾਹੀਦਾ ਹੈ; ਜਿੱਥੇ ਸਾਰ-ਸ਼ਬਦ ਦਾ ਵਾਸ ਹੈ, ਉੱਥੇ ਕਾਲ ਤੇ ਮਾਇਆ ਦਾ ਕੋਈ ਜ਼ੋਰ ਨਹੀਂ ਚੱਲਦਾ।',
+      en: 'Amid myriad external words and doctrines, anchor awareness exclusively in the Satguru’s living Saar-Shabd; where the Essential Word reigns, the destructive power of Kaal and illusion cannot touch the soul.'
+    },
+    themeEssence: {
+      hi: 'सार-शब्द की पहचान और अंतरंग में शब्द को दृढ़ता से धारण करने',
+      pb: 'ਸਾਰ-ਸ਼ਬਦ ਦੀ ਪਛਾਣ ਅਤੇ ਅੰਦਰੂਨੀ ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਧਾਰਨ ਕਰਨ',
+      en: 'discerning and anchoring consciousness in the essential Saar-Shabd'
+    }
+  },
+  {
     id: 'grantha-mind-speech-1',
     tradition: 'granthavali',
     angOrSection: {
@@ -1837,7 +1867,8 @@ export const GRANTHAVALI_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
       en: 'Kabir Granthavali • Vachan-Vivek & Sweet Speech Ang'
     },
     themes: ['mind-speech', 'ego-humility'],
-    keywords: ['मधुर', 'बचन', 'वचन', 'शब्द', 'शीतल', 'अहं', 'कटुक', 'रसना', 'बोल', 'sweet', 'speech', 'words'],
+    themeTags: ['sheetal-vani', 'madhur-vachan'],
+    keywords: ['मधुर', 'बचन', 'वचन', 'शीतल', 'अहं', 'कटुक', 'रसना', 'बोल', 'sweet', 'speech', 'words'],
     verse: {
       hi: 'मधुर बचन है औषधी, कटुक बचन है तीर।\nश्रवन द्वार ह्वै संचरै, सालै सकल सरीर॥',
       pb: 'ਮਧੁਰ ਬਚਨ ਹੈ ਔਸ਼ਧੀ, ਕਟੁਕ ਬਚਨ ਹੈ ਤੀਰ।\nਸ੍ਰਵਣ ਦੁਆਰ ਹੁਐ ਸੰਚਰੈ, ਸਾਲੈ ਸਕਲ ਸਰੀਰ॥',
@@ -2180,8 +2211,9 @@ export const KABIR_SAGAR_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
       pb: 'ਕਬੀਰ ਸਾਗਰ (ਗਿਆਨ ਪ੍ਰਕਾਸ਼ ਬੋਧ) • ਸਾਰ ਸ਼ਬਦ ਤੇ ਸਤਯਨਾਮ ਮਹਿਮਾ',
       en: 'Kabir Sagar • Glory of Sar-Shabd & Satyanaam'
     },
-    themes: ['naam', 'yoga-realization'],
-    keywords: ['सार', 'शब्द', 'सत्यनाम', 'निज', 'नाम', 'सुमिरन', 'सिमरन', 'काल', 'sar', 'shabd', 'naam'],
+    themes: ['naam', 'yoga-realization', 'satya-hypocrisy'],
+    themeTags: ['satya-khoj', 'saar-shabd', 'shabd-sadhan'],
+    keywords: ['सार', 'शब्द', 'खोजी', 'सत्यनाम', 'निज', 'नाम', 'सुमिरन', 'सिमरन', 'काल', 'गहि', 'sar', 'shabd', 'naam'],
     verse: {
       hi: 'सार शब्द निज नाम अपारा, ता बिन जीव न उतरै पारा।\nअजर अमर सत्यनाम अधारा, सो सुमिरै उतरे भव-पारा॥',
       pb: 'ਸਾਰ ਸ਼ਬਦ ਨਿਜ ਨਾਮ ਅਪਾਰਾ, ਤਾ ਬਿਨ ਜੀਵ ਨ ਉਤਰੈ ਪਾਰਾ।\nਅਜਰ ਅਮਰ ਸਤਯਨਾਮ ਅਧਾਰਾ, ਸੋ ਸਿਮਰੈ ਉਤਰੇ ਭਵ-ਪਾਰਾ॥',

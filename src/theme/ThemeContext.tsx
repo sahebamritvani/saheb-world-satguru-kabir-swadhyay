@@ -129,8 +129,8 @@ export const themes: Record<ThemeMode, SpiritualTheme> = {
     cardShadow: '0 4px 20px -2px rgba(90, 60, 20, 0.1)',
     textPrimary: '#1A1A1A', // Deep Sepia/Charcoal Black
     textSecondary: '#5D4037',
-    textMuted: '#7A5E44',
-    accentGold: '#D35400', // Spiritual Orange
+    textMuted: '#6B5038',
+    accentGold: '#B45309', // High-Contrast Spiritual Saffron
     accentGoldLight: '#FBE8C8',
     sacredMaroon: '#8B0000', // Deep Maroon
     buttonPrimaryBg: '#8B0000',
@@ -145,11 +145,11 @@ export const themes: Record<ThemeMode, SpiritualTheme> = {
     bg: '#121212', // Jet Black
     bgSecondary: '#1A1A1A', // Deep Charcoal
     cardBg: '#1A1A1A',
-    cardBorder: 'rgba(255, 255, 255, 0.1)',
+    cardBorder: 'rgba(255, 255, 255, 0.14)',
     cardShadow: '0 6px 30px -4px rgba(0, 0, 0, 0.9)',
     textPrimary: '#F5F5F5', // Creamy White
-    textSecondary: '#B3B3B3', // Light Gray
-    textMuted: '#808080',
+    textSecondary: '#D4D4D8', // Crisp Light Gray
+    textMuted: '#A1A1AA',
     accentGold: '#FFD700', // Bright Gold
     accentGoldLight: '#262626',
     sacredMaroon: '#FFD700',
@@ -158,18 +158,18 @@ export const themes: Record<ThemeMode, SpiritualTheme> = {
     stepActiveBg: '#333333',
     fontDisplay: "'Rozha One', 'Cinzel', serif",
     fontBody: "'Mukta', 'Noto Serif Devanagari', sans-serif",
-    borderOrnament: 'rgba(255, 255, 255, 0.15)',
+    borderOrnament: 'rgba(255, 255, 255, 0.18)',
   },
   mystic_dark: {
     mode: 'mystic_dark',
     bg: '#121212',
     bgSecondary: '#1A1A1A',
     cardBg: '#1A1A1A',
-    cardBorder: 'rgba(255, 255, 255, 0.1)',
+    cardBorder: 'rgba(255, 255, 255, 0.14)',
     cardShadow: '0 6px 30px -4px rgba(0, 0, 0, 0.9)',
     textPrimary: '#F5F5F5',
-    textSecondary: '#B3B3B3',
-    textMuted: '#808080',
+    textSecondary: '#D4D4D8',
+    textMuted: '#A1A1AA',
     accentGold: '#FFD700',
     accentGoldLight: '#262626',
     sacredMaroon: '#FFD700',
@@ -178,18 +178,18 @@ export const themes: Record<ThemeMode, SpiritualTheme> = {
     stepActiveBg: '#333333',
     fontDisplay: "'Rozha One', 'Cinzel', serif",
     fontBody: "'Mukta', 'Noto Serif Devanagari', sans-serif",
-    borderOrnament: 'rgba(255, 255, 255, 0.15)',
+    borderOrnament: 'rgba(255, 255, 255, 0.18)',
   },
   high_readability_light: {
     mode: 'high_readability_light',
     bg: '#F8F9FA',
     bgSecondary: '#E9ECEF',
     cardBg: '#FFFFFF',
-    cardBorder: 'rgba(0, 0, 0, 0.15)',
+    cardBorder: 'rgba(0, 0, 0, 0.18)',
     cardShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
     textPrimary: '#000000',
-    textSecondary: '#495057',
-    textMuted: '#6C757D',
+    textSecondary: '#343A40',
+    textMuted: '#495057',
     accentGold: '#8C2818',
     accentGoldLight: '#F8D7DA',
     sacredMaroon: '#8C2818',
@@ -198,17 +198,17 @@ export const themes: Record<ThemeMode, SpiritualTheme> = {
     stepActiveBg: '#E9ECEF',
     fontDisplay: "'Rozha One', 'Cinzel', serif",
     fontBody: "system-ui, -apple-system, sans-serif",
-    borderOrnament: 'rgba(0, 0, 0, 0.1)',
+    borderOrnament: 'rgba(0, 0, 0, 0.14)',
   },
   flow_state: {
     mode: 'flow_state',
     bg: '#080E1E',
     bgSecondary: '#0F172A',
     cardBg: '#131E36',
-    cardBorder: 'rgba(251, 191, 36, 0.3)',
+    cardBorder: 'rgba(251, 191, 36, 0.34)',
     cardShadow: '0 8px 32px -4px rgba(8, 14, 30, 0.9)',
     textPrimary: '#FFFFFF', // White text
-    textSecondary: '#FFD700', // Bright yellow
+    textSecondary: '#FDE047', // Crisp High-Contrast Gold
     textMuted: '#CBD5E1',
     accentGold: '#FBBF24',
     accentGoldLight: '#1E293B',
@@ -325,11 +325,16 @@ export const StyledAppContainer = styled.div<{ theme: SpiritualTheme; $wallpaper
 export const SacredHeaderContainer = styled.header<{ theme: SpiritualTheme; $translucent?: boolean }>`
   background-color: ${({ theme, $translucent }) =>
     $translucent
-      ? theme.mode === 'amrit_neel' || theme.mode === 'mystic_dark' || theme.mode === 'flow_state'
+      ? theme.mode === 'flow_state'
+        ? 'rgba(15, 23, 42, 0.80)'
+        : theme.mode === 'amrit_neel' || theme.mode === 'mystic_dark'
         ? 'rgba(18, 16, 14, 0.78)'
+        : theme.mode === 'high_readability_light'
+        ? 'rgba(255, 255, 255, 0.86)'
         : 'rgba(255, 250, 240, 0.84)'
       : theme.cardBg};
-  backdrop-filter: ${({ $translucent }) => ($translucent ? 'blur(12px)' : 'none')};
+  backdrop-filter: ${({ $translucent }) => ($translucent ? 'blur(14px)' : 'none')};
+  -webkit-backdrop-filter: ${({ $translucent }) => ($translucent ? 'blur(14px)' : 'none')};
   border-bottom: 1.5px solid ${({ theme }) => theme.cardBorder};
   box-shadow: ${({ theme }) => theme.cardShadow};
   position: sticky;
@@ -340,6 +345,8 @@ export const SacredHeaderContainer = styled.header<{ theme: SpiritualTheme; $tra
 
 export const SacredFooterContainer = styled.footer<{ theme: SpiritualTheme }>`
   background-color: ${({ theme }) => theme.cardBg};
+  backdrop-filter: ${({ theme }) => (theme.isNatureWallpaper ? 'blur(14px)' : 'none')};
+  -webkit-backdrop-filter: ${({ theme }) => (theme.isNatureWallpaper ? 'blur(14px)' : 'none')};
   border-top: 1.5px solid ${({ theme }) => theme.cardBorder};
   transition: all 0.3s ease;
   margin-top: auto;
@@ -347,6 +354,8 @@ export const SacredFooterContainer = styled.footer<{ theme: SpiritualTheme }>`
 
 export const StyledCard = styled.div<{ theme: SpiritualTheme; $highlight?: boolean }>`
   background-color: ${({ theme }) => theme.cardBg};
+  backdrop-filter: ${({ theme }) => (theme.isNatureWallpaper ? 'blur(12px)' : 'none')};
+  -webkit-backdrop-filter: ${({ theme }) => (theme.isNatureWallpaper ? 'blur(12px)' : 'none')};
   border: 1px solid ${({ theme, $highlight }) => ($highlight ? theme.accentGold : theme.cardBorder)};
   border-radius: 16px;
   box-shadow: ${({ theme }) => theme.cardShadow};
@@ -746,8 +755,78 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     return () => clearInterval(interval);
   }, [isAutoNightMode, themeMode]);
 
+  const activeWallpaperCss = useMemo(() => getWallpaperCss(globalWallpaper), [globalWallpaper]);
   const isDarkMode = themeMode === 'amrit_neel' || themeMode === 'mystic_dark' || themeMode === 'flow_state';
-  const activeTheme = themes[themeMode] || themes.bhojpatra;
+
+  const activeTheme = useMemo<SpiritualTheme>(() => {
+    const base = themes[themeMode] || themes.bhojpatra;
+    if (!activeWallpaperCss) return base;
+
+    if (themeMode === 'high_readability_light') {
+      return {
+        ...base,
+        cardBg: 'rgba(255, 255, 255, 0.84)',
+        bgSecondary: 'rgba(241, 245, 249, 0.76)',
+        stepActiveBg: 'rgba(229, 233, 238, 0.82)',
+        accentGoldLight: 'rgba(248, 215, 218, 0.82)',
+        cardBorder: 'rgba(15, 23, 42, 0.22)',
+        borderOrnament: 'rgba(15, 23, 42, 0.18)',
+        textPrimary: '#000000',
+        textSecondary: '#1E293B',
+        textMuted: '#334155',
+        isNatureWallpaper: true,
+      };
+    }
+
+    if (themeMode === 'flow_state') {
+      return {
+        ...base,
+        cardBg: 'rgba(15, 23, 42, 0.78)',
+        bgSecondary: 'rgba(20, 32, 60, 0.70)',
+        stepActiveBg: 'rgba(28, 43, 78, 0.80)',
+        accentGoldLight: 'rgba(30, 41, 59, 0.80)',
+        cardBorder: 'rgba(251, 191, 36, 0.36)',
+        borderOrnament: 'rgba(251, 191, 36, 0.34)',
+        textPrimary: '#FFFFFF',
+        textSecondary: '#FDE047',
+        textMuted: '#CBD5E1',
+        isNatureWallpaper: true,
+      };
+    }
+
+    if (themeMode === 'amrit_neel' || themeMode === 'mystic_dark') {
+      return {
+        ...base,
+        cardBg: 'rgba(18, 18, 22, 0.76)',
+        bgSecondary: 'rgba(28, 28, 34, 0.68)',
+        stepActiveBg: 'rgba(42, 34, 24, 0.78)',
+        accentGoldLight: 'rgba(48, 38, 24, 0.80)',
+        cardBorder: 'rgba(251, 191, 36, 0.26)',
+        borderOrnament: 'rgba(251, 191, 36, 0.28)',
+        textPrimary: '#F8FAFC',
+        textSecondary: '#E2E8F0',
+        textMuted: '#CBD5E1',
+        isNatureWallpaper: true,
+      };
+    }
+
+    // bhojpatra default light frosted parchment glass
+    return {
+      ...base,
+      cardBg: 'rgba(255, 253, 249, 0.80)',
+      bgSecondary: 'rgba(244, 236, 216, 0.72)',
+      stepActiveBg: 'rgba(245, 228, 196, 0.78)',
+      accentGoldLight: 'rgba(251, 232, 200, 0.82)',
+      cardBorder: 'rgba(180, 128, 65, 0.42)',
+      borderOrnament: 'rgba(180, 128, 65, 0.36)',
+      textPrimary: '#1A1410',
+      textSecondary: '#432E23',
+      textMuted: '#5C4332',
+      sacredMaroon: '#7F0000',
+      accentGold: '#9A3412',
+      isNatureWallpaper: true,
+    };
+  }, [themeMode, activeWallpaperCss]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -763,6 +842,7 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       }
 
       root.setAttribute('data-theme', themeMode);
+      root.setAttribute('data-has-wallpaper', activeWallpaperCss ? 'true' : 'false');
 
       // Strictly enforce CSS custom properties on :root for instant reactivity
       root.style.setProperty('--bg-primary', activeTheme.bg);
@@ -787,7 +867,7 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
 
       window.dispatchEvent(new CustomEvent('sahebworld_theme_changed', { detail: themeMode }));
     }
-  }, [themeMode, activeTheme, fontSize]);
+  }, [themeMode, activeTheme, fontSize, activeWallpaperCss]);
 
   // Cross-component theme sync listener
   useEffect(() => {
@@ -874,8 +954,6 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     visraamModeActive,
     globalWallpaper
   ]);
-
-  const activeWallpaperCss = useMemo(() => getWallpaperCss(globalWallpaper), [globalWallpaper]);
 
   return (
     <ThemeContext.Provider value={contextValue}>

@@ -29,6 +29,7 @@ import {
   MAJOR_GRANTH_CATEGORIES,
   loadNitnemCategorySections,
 } from '../data/nitnemData';
+import { ADMIN_SLOTS_UPDATED_EVENT } from '../services/adminSlotInjectorStore';
 import { getSmartNitnemRecommendation } from '../data/nitnemMasterIndex';
 import { triggerSacredFlowerShower } from '../services/flowerShower';
 import {
@@ -474,6 +475,13 @@ export const NitnemPothi: React.FC<{
   const [loadedSections, setLoadedSections] = useState<NitnemSection[]>(propSections || []);
   const [activeSectionId, setActiveSectionId] = useState<string>(initialSectionId || '');
   const [currentAngIdx, setCurrentAngIdx] = useState<number>(0);
+  const [slotRefreshTick, setSlotRefreshTick] = useState<number>(0);
+
+  useEffect(() => {
+    const handleSlotUpdate = () => setSlotRefreshTick((t) => t + 1);
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSlotUpdate);
+    return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSlotUpdate);
+  }, []);
 
   // Gutka Comfort Tools State
   const [showMeaningGlobal, setShowMeaningGlobal] = useState<boolean>(true);
@@ -530,7 +538,7 @@ export const NitnemPothi: React.FC<{
     return () => {
       cancelled = true;
     };
-  }, [propSections, selectedCategoryId, initialSectionId]);
+  }, [propSections, selectedCategoryId, initialSectionId, slotRefreshTick]);
 
   useEffect(() => {
     const unsub = subscribeToHaziri((state) => {

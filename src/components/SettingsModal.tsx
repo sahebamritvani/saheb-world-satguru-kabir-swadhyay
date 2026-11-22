@@ -37,7 +37,9 @@ import {
   Pin,
   Activity,
   SpellCheck,
+  Database,
 } from 'lucide-react';
+import { ADMIN_GRANTH_SLOTS, OPEN_ADMIN_INJECTOR_EVENT } from '../services/adminSlotInjectorStore';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
 import { auth, signInWithGoogle } from '../lib/firebase';
 import { NityaVaniSettings } from './NityaVaniSettings';
@@ -1675,6 +1677,25 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     </div>
                   )}
                 </div>
+
+                <button
+                  type="button"
+                  id="settings-admin-panel-injector-btn"
+                  onClick={() => {
+                    onClose();
+                    window.dispatchEvent(new CustomEvent(OPEN_ADMIN_INJECTOR_EVENT));
+                  }}
+                  className="w-full min-h-[40px] py-2 px-3 rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 text-amber-950 dark:text-amber-200 text-xs font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <Database className="w-3.5 h-3.5 text-amber-700 dark:text-amber-300" />
+                  <span>
+                    {language === 'pb'
+                      ? `ਪ੍ਰਸ਼ਾਸਕ ਡੇਟਾ ਲੇਅਰ ਇੰਜੈਕਟਰ (${ADMIN_GRANTH_SLOTS.length} ਕਾਰਡ ਸਲੌਟ)`
+                      : language === 'en'
+                      ? `Admin Data Layer Injector (${ADMIN_GRANTH_SLOTS.length} Card Slots)`
+                      : `प्रशासक डेटा लेयर इंजेक्टर (${ADMIN_GRANTH_SLOTS.length} कार्ड स्लॉट्स)`}
+                  </span>
+                </button>
 
                 <button
                   type="button"

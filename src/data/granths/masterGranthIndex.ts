@@ -3,6 +3,11 @@ import { Sakhi } from '../../types';
 import { enrichVerseWith5Steps } from '../../utils/verseEnricher';
 import { devanagariToGurmukhi } from '../../services/transliteration';
 import { offlineScriptureCache } from '../../services/offlineScriptureCache';
+import {
+  ADMIN_SLOTS_UPDATED_EVENT,
+  getInjectedGranthChapters,
+  getSlotIdForGranthSlug,
+} from '../../services/adminSlotInjectorStore';
 
 function sakhiToGranthVerse(s: Sakhi): GranthVerse {
   return {
@@ -264,11 +269,49 @@ export const MASTER_GRANTH_CATALOG: MasterGranth[] = [
     },
     chapters: [],
   },
+  {
+    id: 'kabir-granthavali-granth',
+    slug: 'granthavali',
+    title: {
+      hi: 'कबीर ग्रंथावली (प्रामाणिक संकलन)',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ (ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ)',
+      en: 'Kabir Granthavali (Canonical Collection)',
+    },
+    shortTitle: { hi: 'कबीर ग्रंथावली', pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ', en: 'Kabir Granthavali' },
+    subtitle: {
+      hi: 'साखी, पद एवं रमैनी प्रकरण (स्लॉट #4)',
+      pb: 'ਸਾਖੀ, ਪਦ ਤੇ ਰਮੈਣੀ ਪ੍ਰਕਰਣ (ਸਲੌਟ #4)',
+      en: 'Sakhis, Padas & Ramaini Sections (Slot #4)',
+    },
+    category: 'mool-granth',
+    iconName: 'Scroll',
+    bannerColor: 'from-amber-700 to-stone-800',
+    accentColor: 'text-amber-700',
+    totalChapters: 0,
+    estimatedHours: { hi: 'स्लॉट आधारित', pb: 'ਸਲੌਟ ਆਧਾਰਿਤ', en: 'Slot-Ready' },
+    description: {
+      hi: 'कबीर ग्रंथावली हेतु आरक्षित ग्रन्थ स्लॉट — प्रशासक डेटा इंजेक्टर द्वारा स्थानीय JSON लोड करें।',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ ਲਈ ਰਾਖਵਾਂ ਗ੍ਰੰਥ ਸਲੌਟ — ਐਡਮਿਨ ਇੰਜੈਕਟਰ ਰਾਹੀਂ ਡੇਟਾ ਲੋਡ ਕਰੋ।',
+      en: 'Dedicated Granth vault for Kabir Granthavali — load local JSON via Admin Data Injector.',
+    },
+    chapters: [],
+  },
   SAKHI_SANGRAH_READER_MASTER_GRANTH_STUB,
 ];
 
 const granthMemoryCache = new Map<string, MasterGranth>();
 const angVersesMemoryCache = new Map<string, GranthVerse[]>();
+
+export function clearMasterGranthCaches(): void {
+  granthMemoryCache.clear();
+  angVersesMemoryCache.clear();
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, () => {
+    clearMasterGranthCaches();
+  });
+}
 
 async function loadRawAngVerses(angId: string): Promise<GranthVerse[]> {
   if (angVersesMemoryCache.has(angId)) {
@@ -357,6 +400,11 @@ export async function loadMasterGranth(slug: string): Promise<MasterGranth> {
     case 'shabdawali':
       granth = (await import('./shabdawali')).SHABDAWALI_GRANTH;
       break;
+    case 'granthavali':
+      granth =
+        MASTER_GRANTH_CATALOG.find((g) => g.slug === 'granthavali') ||
+        SAKHI_SANGRAH_READER_MASTER_GRANTH_STUB;
+      break;
     case 'sakhi-sangrah':
     default: {
       // Load first Ang automatically so default view is immediately populated
@@ -368,6 +416,22 @@ export async function loadMasterGranth(slug: string): Promise<MasterGranth> {
         ),
       };
       break;
+    }
+  }
+
+  // Overlay / prepend admin-injected chapters for this Granth slot if present
+  const slotId = getSlotIdForGranthSlug(slug);
+  if (slotId) {
+    const injectedChapters = getInjectedGranthChapters(slotId);
+    if (injectedChapters && injectedChapters.length > 0) {
+      const injectedIds = new Set(injectedChapters.map((c) => c.id));
+      const remainingBase = granth.chapters.filter((c) => !injectedIds.has(c.id));
+      const mergedChapters = [...injectedChapters, ...remainingBase];
+      granth = {
+        ...granth,
+        totalChapters: mergedChapters.length,
+        chapters: mergedChapters,
+      };
     }
   }
 

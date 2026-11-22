@@ -532,8 +532,8 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
       </div>
 
       {/* Specialized Panthic Vaults: Acharya Parampara & Prashnottari (Sawal-Jawab) */}
-      <div className="pt-6 border-t border-amber-200/40 space-y-4">
-        <h3 className="text-lg font-serif font-black text-amber-900 dark:text-amber-300 flex items-center gap-2">
+      <div className="pt-6 border-t space-y-4" style={{ borderColor: theme.cardBorder }}>
+        <h3 style={{ color: theme.sacredMaroon }} className="text-lg font-serif font-black flex items-center gap-2">
           <Crown className="w-5 h-5" />
           {language === 'pb' ? 'ਪੰਥਕ ਗਿਆਨ ਭੰਡਾਰ' : language === 'en' ? 'Panthic Wisdom Vaults' : 'पंथिक ज्ञान भंडार'}
         </h3>
@@ -541,43 +541,59 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
           {/* Acharya Parampara Itihas Card */}
           <div
             onClick={() => setShowAcharyaModal(true)}
-            className="bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent border-2 border-amber-200/60 dark:border-amber-900/40 rounded-3xl p-5 flex items-center justify-between cursor-pointer hover:border-amber-400 transition shadow-sm group"
+            style={{
+              backgroundColor: theme.cardBg,
+              borderColor: theme.accentGold,
+              color: theme.textPrimary,
+            }}
+            className="border-2 rounded-3xl p-5 flex items-center justify-between cursor-pointer hover:scale-[1.01] transition shadow-md group backdrop-blur-md"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+              <div
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+              >
                 <Crown className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-serif font-black text-base text-gray-900 dark:text-gray-100">
+                <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base">
                   {language === 'pb' ? 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ' : language === 'en' ? 'Acharya Parampara Itihas' : 'आचार्य परंपरा इतिहास'}
                 </h4>
-                <p className="text-xs text-amber-800 dark:text-amber-400 font-serif font-medium mt-0.5">
+                <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-medium mt-0.5">
                   Lineage of Damakheda Gaddi Acharyas
                 </p>
               </div>
             </div>
-            <ChevronRight className="text-amber-600 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform" />
           </div>
 
           {/* Prashnottari (Sawal-Jawab) Card */}
           <div
             onClick={() => setShowQAtaModal(true)}
-            className="bg-gradient-to-r from-orange-500/10 via-amber-500/5 to-transparent border-2 border-orange-200/60 dark:border-orange-900/40 rounded-3xl p-5 flex items-center justify-between cursor-pointer hover:border-orange-400 transition shadow-sm group"
+            style={{
+              backgroundColor: theme.cardBg,
+              borderColor: theme.accentGold,
+              color: theme.textPrimary,
+            }}
+            className="border-2 rounded-3xl p-5 flex items-center justify-between cursor-pointer hover:scale-[1.01] transition shadow-md group backdrop-blur-md"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-orange-600 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+              <div
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+              >
                 <Heart className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-serif font-black text-base text-gray-900 dark:text-gray-100">
+                <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base">
                   {language === 'pb' ? 'ਪ੍ਰਸ਼ਨੋਤਰੀ (ਸਵਾਲ-ਜਵਾਬ)' : language === 'en' ? 'Prashnottari (Sawal-Jawab)' : 'प्रश्नोत्तरी (Sawal-Jawab)'}
                 </h4>
-                <p className="text-xs text-orange-800 dark:text-orange-400 font-serif font-medium mt-0.5">
+                <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-medium mt-0.5">
                   Panthic Q&A regarding rituals and Chouka Vidhi
                 </p>
               </div>
             </div>
-            <ChevronRight className="text-orange-600 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
       </div>

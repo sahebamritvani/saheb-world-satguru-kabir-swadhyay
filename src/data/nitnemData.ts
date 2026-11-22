@@ -1,5 +1,6 @@
 import { NitnemSection } from '../types';
 import { MASTER_NITNEM_INDEX } from './nitnemMasterIndex';
+import { getInjectedNitnemSections } from '../services/adminSlotInjectorStore';
 
 export interface MajorGranthCategory {
   id: string;
@@ -114,14 +115,15 @@ export const NITNEM_SECTION_STUBS: NitnemSection[] = MASTER_NITNEM_INDEX.granth_
 });
 
 export async function loadNitnemCategorySections(categoryId: string): Promise<NitnemSection[]> {
+  const resolved = getInjectedNitnemSections(NITNEM_SECTION_STUBS);
   if (!categoryId || categoryId === 'all') {
-    return NITNEM_SECTION_STUBS;
+    return resolved;
   }
-  return NITNEM_SECTION_STUBS.filter((s) => s.majorCategoryId === categoryId);
+  return resolved.filter((s) => s.majorCategoryId === categoryId);
 }
 
 export async function loadAllNitnemSections(): Promise<NitnemSection[]> {
-  return NITNEM_SECTION_STUBS;
+  return getInjectedNitnemSections(NITNEM_SECTION_STUBS);
 }
 
 export async function loadNitnemSectionById(id: string): Promise<NitnemSection | undefined> {
@@ -129,9 +131,10 @@ export async function loadNitnemSectionById(id: string): Promise<NitnemSection |
 }
 
 export function getNitnemSectionById(id: string): NitnemSection | undefined {
-  if (!id) return NITNEM_SECTION_STUBS[0];
-  const exact = NITNEM_SECTION_STUBS.find((s) => s.id === id);
+  const resolved = getInjectedNitnemSections(NITNEM_SECTION_STUBS);
+  if (!id) return resolved[0];
+  const exact = resolved.find((s) => s.id === id);
   if (exact) return exact;
   const normalized = id.toLowerCase().replace(/[-_]/g, '');
-  return NITNEM_SECTION_STUBS.find((s) => s.id.toLowerCase().replace(/[-_]/g, '') === normalized);
+  return resolved.find((s) => s.id.toLowerCase().replace(/[-_]/g, '') === normalized);
 }
