@@ -195,9 +195,9 @@ export const SmartGlossingToolModal: React.FC<SmartGlossingToolModalProps> = ({
                       setSelectedCategory(cat.id);
                     }}
                     style={{
-                      backgroundColor: isSelected ? theme.accentGold : 'transparent',
-                      color: isSelected ? '#FFFFFF' : theme.textPrimary,
-                      borderColor: isSelected ? theme.accentGold : 'rgba(217, 119, 6, 0.25)',
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                      borderColor: isSelected ? theme.buttonPrimaryBg : 'rgba(217, 119, 6, 0.25)',
                     }}
                     className="px-3 py-1 rounded-full text-xs font-bold border whitespace-nowrap transition cursor-pointer"
                   >
@@ -376,8 +376,8 @@ export const SmartGlossingToolModal: React.FC<SmartGlossingToolModalProps> = ({
               type="button"
               onClick={onClose}
               style={{
-                backgroundColor: theme.accentGold,
-                color: '#FFFFFF',
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
               }}
               className="px-4 py-1.5 rounded-xl font-bold shadow-md hover:opacity-90 transition cursor-pointer"
             >

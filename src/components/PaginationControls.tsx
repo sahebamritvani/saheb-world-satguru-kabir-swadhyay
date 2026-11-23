@@ -82,7 +82,7 @@ export const PaginationControls: React.FC<PaginationControlsProps> = ({
             onClick={() => onPageChange(page)}
             className={`w-7 h-7 rounded-lg text-xs font-mono font-bold border transition cursor-pointer ${
               page === currentPage
-                ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
                 : 'border-amber-500/20 bg-white/70 dark:bg-zinc-800/70 text-amber-900 dark:text-amber-200 hover:bg-amber-500/15'
             }`}
           >

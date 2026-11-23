@@ -1642,7 +1642,7 @@ export const ShabdKosha: React.FC<ShabdKoshaProps> = ({
                               <button
                                 type="button"
                                 onClick={() => onOpenSwadhyay(entry.term.hi)}
-                                className="w-full py-1.5 px-3 rounded-xl text-[11px] font-bold bg-amber-600 text-white hover:bg-amber-700 transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
+                                className="w-full py-1.5 px-3 rounded-xl text-[11px] font-bold bg-[#8B2500] text-white hover:bg-[#7C1D00] transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
                               >
                                 <ExternalLink className="w-3.5 h-3.5" />
                                 <span>{language === 'pb' ? 'ਇਸ ਸਾਖੀ ਦਾ ਸਵਾਧਿਆਏ ਕਰੋ' : language === 'en' ? 'Contemplate in Swadhyay' : 'इस साखी का स्वाध्याय करें'}</span>

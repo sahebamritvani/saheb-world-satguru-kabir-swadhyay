@@ -993,7 +993,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
         {/* Section Navigation Switcher: [📝 आत्म-चिंतन] vs [🌸 त्रिविध कृतज्ञता] vs [✨ सिद्धांत विचार] */}
         <div 
           style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-          className="p-1.5 rounded-2xl border flex items-center gap-1.5 max-w-xl shadow-xs flex-wrap sm:flex-nowrap"
+          className="p-1.5 rounded-2xl border flex items-center gap-1.5 max-w-xl shadow-xs flex-wrap sm:flex-nowrap backdrop-blur-md"
         >
           <button
             type="button"
@@ -1002,8 +1002,8 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
               setActiveSection('journal');
             }}
             style={{
-              backgroundColor: activeSection === 'journal' ? theme.sacredMaroon : 'transparent',
-              color: activeSection === 'journal' ? '#FFFFFF' : theme.textPrimary,
+              backgroundColor: activeSection === 'journal' ? theme.buttonPrimaryBg : 'transparent',
+              color: activeSection === 'journal' ? theme.buttonPrimaryText : theme.textPrimary,
             }}
             className="flex-1 py-2 px-2.5 rounded-xl text-xs font-bold font-serif flex items-center justify-center gap-1.5 transition cursor-pointer shadow-2xs whitespace-nowrap"
           >
@@ -1018,8 +1018,8 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
               setActiveSection('gratitude_log');
             }}
             style={{
-              backgroundColor: activeSection === 'gratitude_log' ? theme.sacredMaroon : 'transparent',
-              color: activeSection === 'gratitude_log' ? '#FFFFFF' : theme.textPrimary,
+              backgroundColor: activeSection === 'gratitude_log' ? theme.buttonPrimaryBg : 'transparent',
+              color: activeSection === 'gratitude_log' ? theme.buttonPrimaryText : theme.textPrimary,
             }}
             className="flex-1 py-2 px-2.5 rounded-xl text-xs font-bold font-serif flex items-center justify-center gap-1.5 transition cursor-pointer shadow-2xs relative whitespace-nowrap"
           >
@@ -1034,8 +1034,8 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
               setActiveSection('siddhant_notes');
             }}
             style={{
-              backgroundColor: activeSection === 'siddhant_notes' ? theme.sacredMaroon : 'transparent',
-              color: activeSection === 'siddhant_notes' ? '#FFFFFF' : theme.textPrimary,
+              backgroundColor: activeSection === 'siddhant_notes' ? theme.buttonPrimaryBg : 'transparent',
+              color: activeSection === 'siddhant_notes' ? theme.buttonPrimaryText : theme.textPrimary,
             }}
             className="flex-1 py-2 px-2.5 rounded-xl text-xs font-bold font-serif flex items-center justify-center gap-1.5 transition cursor-pointer shadow-2xs relative whitespace-nowrap"
           >
@@ -1488,11 +1488,11 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                           setSelectedTag(tag);
                         }}
                         style={{
-                          backgroundColor: selectedTag === tag ? theme.accentGold : theme.cardBg,
-                          color: selectedTag === tag ? '#FFFFFF' : theme.textPrimary,
-                          borderColor: theme.cardBorder,
+                          backgroundColor: selectedTag === tag ? theme.buttonPrimaryBg : theme.cardBg,
+                          color: selectedTag === tag ? theme.buttonPrimaryText : theme.textPrimary,
+                          borderColor: selectedTag === tag ? theme.buttonPrimaryBg : theme.cardBorder,
                         }}
-                        className="px-3 py-1.5 rounded-xl border text-xs font-semibold cursor-pointer transition shadow-2xs"
+                        className="px-3 py-1.5 rounded-xl border text-xs font-semibold cursor-pointer transition shadow-2xs backdrop-blur-md"
                       >
                         {tag}
                       </button>
@@ -1694,8 +1694,8 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       type="button"
                       onClick={() => setViewMode('gallery')}
                       style={{
-                        backgroundColor: viewMode === 'gallery' ? theme.sacredMaroon : 'transparent',
-                        color: viewMode === 'gallery' ? '#FFFFFF' : theme.textSecondary,
+                        backgroundColor: viewMode === 'gallery' ? theme.buttonPrimaryBg : 'transparent',
+                        color: viewMode === 'gallery' ? theme.buttonPrimaryText : theme.textSecondary,
                       }}
                       className="px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition"
                     >
@@ -1706,8 +1706,8 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       type="button"
                       onClick={() => setViewMode('list')}
                       style={{
-                        backgroundColor: viewMode === 'list' ? theme.sacredMaroon : 'transparent',
-                        color: viewMode === 'list' ? '#FFFFFF' : theme.textSecondary,
+                        backgroundColor: viewMode === 'list' ? theme.buttonPrimaryBg : 'transparent',
+                        color: viewMode === 'list' ? theme.buttonPrimaryText : theme.textSecondary,
                       }}
                       className="px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition"
                     >
@@ -1726,11 +1726,11 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       setActiveMoodFilter('all');
                     }}
                     style={{
-                      backgroundColor: activeFilterTag === 'all' && activeMoodFilter === 'all' ? theme.accentGold : theme.cardBg,
-                      color: activeFilterTag === 'all' && activeMoodFilter === 'all' ? '#FFFFFF' : theme.textPrimary,
+                      backgroundColor: activeFilterTag === 'all' && activeMoodFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBg,
+                      color: activeFilterTag === 'all' && activeMoodFilter === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
                       borderColor: theme.cardBorder,
                     }}
-                    className="px-3 py-1 rounded-xl border text-xs font-bold shrink-0 transition cursor-pointer shadow-2xs"
+                    className="px-3 py-1 rounded-xl border text-xs font-bold shrink-0 transition cursor-pointer shadow-2xs backdrop-blur-md"
                   >
                     {language === 'hi' ? 'समस्त प्रविष्टियां' : language === 'pb' ? 'ਸਾਰੇ ਨੋਟਸ' : 'All Entries'} ({entries.length})
                   </button>
@@ -2216,8 +2216,8 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                             type="button"
                             onClick={() => handlePlaySiddhantQuote(note)}
                             style={{
-                              backgroundColor: playingSiddhantId === note.id ? theme.sacredMaroon : theme.cardBg,
-                              color: playingSiddhantId === note.id ? '#FFFFFF' : theme.textPrimary,
+                              backgroundColor: playingSiddhantId === note.id ? theme.buttonPrimaryBg : theme.cardBg,
+                              color: playingSiddhantId === note.id ? theme.buttonPrimaryText : theme.textPrimary,
                               borderColor: theme.accentGold,
                             }}
                             className="px-2.5 py-1 rounded-lg border text-[11px] font-bold font-serif flex items-center gap-1 transition cursor-pointer shadow-2xs hover:scale-105 active:scale-95"

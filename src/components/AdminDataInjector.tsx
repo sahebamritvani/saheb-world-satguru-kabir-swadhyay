@@ -522,9 +522,9 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
                   type="button"
                   onClick={() => setSelectedCategory('all')}
                   style={{
-                    backgroundColor: selectedCategory === 'all' ? theme.sacredMaroon : 'transparent',
-                    color: selectedCategory === 'all' ? '#FFFFFF' : theme.textPrimary,
-                    borderColor: selectedCategory === 'all' ? theme.sacredMaroon : theme.cardBorder,
+                    backgroundColor: selectedCategory === 'all' ? theme.buttonPrimaryBg : 'transparent',
+                    color: selectedCategory === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
+                    borderColor: selectedCategory === 'all' ? theme.buttonPrimaryBg : theme.cardBorder,
                   }}
                   className="min-h-[34px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
                 >
@@ -538,9 +538,9 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
                       type="button"
                       onClick={() => setSelectedCategory(cat.id)}
                       style={{
-                        backgroundColor: active ? theme.sacredMaroon : 'transparent',
-                        color: active ? '#FFFFFF' : theme.textPrimary,
-                        borderColor: active ? theme.sacredMaroon : theme.cardBorder,
+                        backgroundColor: active ? theme.buttonPrimaryBg : 'transparent',
+                        color: active ? theme.buttonPrimaryText : theme.textPrimary,
+                        borderColor: active ? theme.buttonPrimaryBg : theme.cardBorder,
                       }}
                       className="min-h-[34px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
                     >
@@ -802,8 +802,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
             disabled={isSaving || !validation.valid}
             onClick={handleInject}
             style={{
-              backgroundColor: validation.valid ? theme.sacredMaroon : undefined,
-              color: '#FFFFFF',
+              backgroundColor: validation.valid ? theme.buttonPrimaryBg : undefined,
+              color: validation.valid ? theme.buttonPrimaryText : '#FFFFFF',
             }}
             className={`min-h-[44px] px-5 py-2 rounded-xl text-xs sm:text-sm font-bold font-serif flex items-center justify-center gap-2 shadow-sm transition whitespace-nowrap shrink-0 ${
               validation.valid

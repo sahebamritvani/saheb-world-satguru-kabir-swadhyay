@@ -244,8 +244,8 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                 rel="noopener noreferrer"
                 download={releaseInfo.apkFileName || 'Saheb-World.apk'}
                 style={{
-                  backgroundColor: isDark ? '#D97706' : theme.sacredMaroon,
-                  color: isDark ? '#000000' : '#FFFFFF',
+                  backgroundColor: theme.buttonPrimaryBg,
+                  color: theme.buttonPrimaryText,
                 }}
                 className="w-full min-h-[44px] py-3 px-4 rounded-xl font-bold font-serif text-sm sm:text-base flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition cursor-pointer no-underline whitespace-nowrap"
               >
@@ -305,8 +305,8 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  backgroundColor: isDark ? '#D97706' : theme.sacredMaroon,
-                  color: isDark ? '#000000' : '#FFFFFF',
+                  backgroundColor: theme.buttonPrimaryBg,
+                  color: theme.buttonPrimaryText,
                 }}
                 className="w-full min-h-[44px] py-3 px-4 rounded-xl font-bold font-serif text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition cursor-pointer no-underline whitespace-nowrap"
               >

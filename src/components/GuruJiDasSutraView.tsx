@@ -525,7 +525,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
             }}
             className={`flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-black font-serif transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 ${
               activeTab === 'sutras'
-                ? 'bg-amber-600 text-white shadow-md scale-[1.02]'
+                ? 'bg-[#8B2500] text-white shadow-md scale-[1.02]'
                 : 'text-stone-600 dark:text-stone-300 hover:bg-black/5 dark:hover:bg-white/5'
             }`}
           >
@@ -541,7 +541,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
             }}
             className={`flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-black font-serif transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 ${
               activeTab === 'guru-parakh'
-                ? 'bg-amber-600 text-white shadow-md scale-[1.02]'
+                ? 'bg-[#8B2500] text-white shadow-md scale-[1.02]'
                 : 'text-stone-600 dark:text-stone-300 hover:bg-black/5 dark:hover:bg-white/5'
             }`}
           >
@@ -597,7 +597,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
                   onClick={() => setDisplayMode('single')}
                   className={`px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1 cursor-pointer ${
                     displayMode === 'single'
-                      ? 'bg-amber-600 text-white shadow-xs'
+                      ? 'bg-[#8B2500] text-white shadow-xs'
                       : 'text-stone-600 dark:text-stone-300 hover:text-amber-600'
                   }`}
                 >
@@ -609,7 +609,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
                   onClick={() => setDisplayMode('trilingual')}
                   className={`px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1 cursor-pointer ${
                     displayMode === 'trilingual'
-                      ? 'bg-amber-600 text-white shadow-xs'
+                      ? 'bg-[#8B2500] text-white shadow-xs'
                       : 'text-stone-600 dark:text-stone-300 hover:text-amber-600'
                   }`}
                 >

@@ -205,7 +205,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
           onClick={() => { setActiveTab('physical'); sacredHaptics.lightTap(); }}
           className={`flex-1 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 ${
             activeTab === 'physical' 
-              ? 'bg-amber-600 text-white shadow-lg' 
+              ? 'bg-[#8B2500] text-white shadow-lg' 
               : 'text-gray-600 hover:bg-white/50'
           }`}
         >
@@ -216,7 +216,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
           onClick={() => { setActiveTab('inner'); sacredHaptics.lightTap(); }}
           className={`flex-1 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 ${
             activeTab === 'inner' 
-              ? 'bg-amber-600 text-white shadow-lg' 
+              ? 'bg-[#8B2500] text-white shadow-lg' 
               : 'text-gray-600 hover:bg-white/50'
           }`}
         >
@@ -243,7 +243,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl border-2 focus:border-amber-500 outline-none transition shadow-sm font-serif"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl border-2 backdrop-blur-md focus:border-amber-500 outline-none transition shadow-sm font-serif"
               />
             </div>
 
@@ -253,7 +253,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
                 <div
                   key={ashram.id}
                   style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-                  className="rounded-2xl border-2 overflow-hidden shadow-md group hover:border-amber-500/50 transition-colors flex flex-col"
+                  className="rounded-2xl border-2 backdrop-blur-md overflow-hidden shadow-md group hover:border-amber-500/50 transition-colors flex flex-col"
                 >
                   <div className="p-5 flex-1 space-y-4">
                     <div className="flex items-start justify-between gap-2">
@@ -296,7 +296,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => sacredHaptics.lightTap()}
-                      className="flex-1 py-2 px-3 rounded-lg bg-amber-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-amber-700 transition"
+                      className="flex-1 py-2 px-3 rounded-lg bg-[#8B2500] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-[#7C1D00] transition"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>{t.getDirections}</span>
@@ -330,7 +330,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
           >
             <div 
               style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
-              className="rounded-3xl border-2 p-6 sm:p-8 space-y-8 shadow-xl relative overflow-hidden"
+              className="rounded-3xl border-2 backdrop-blur-md p-6 sm:p-8 space-y-8 shadow-xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5">
                 <Sun className="w-48 h-48 animate-spin-slow" />
@@ -361,7 +361,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
                     {t.innerAmarlokDesc}
                   </p>
                 </div>
-                <div className="p-5 rounded-2xl bg-amber-600 text-white shadow-lg space-y-3">
+                <div className="p-5 rounded-2xl bg-[#8B2500] text-white shadow-lg space-y-3">
                   <h3 className="font-bold flex items-center gap-2">
                     <Sun className="w-4 h-4" />
                     {t.saadhnaSutra}

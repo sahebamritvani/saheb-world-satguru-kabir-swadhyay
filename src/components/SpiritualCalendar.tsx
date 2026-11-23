@@ -303,11 +303,11 @@ export const SpiritualCalendar: React.FC<SpiritualCalendarProps> = ({
                 setActiveFilter(chip.id);
               }}
               style={{
-                backgroundColor: activeFilter === chip.id ? theme.sacredMaroon : theme.cardBg,
-                color: activeFilter === chip.id ? '#FFFFFF' : theme.textPrimary,
-                borderColor: activeFilter === chip.id ? theme.sacredMaroon : theme.cardBorder,
+                backgroundColor: activeFilter === chip.id ? theme.buttonPrimaryBg : theme.cardBg,
+                color: activeFilter === chip.id ? theme.buttonPrimaryText : theme.textPrimary,
+                borderColor: activeFilter === chip.id ? theme.buttonPrimaryBg : theme.cardBorder,
               }}
-              className="px-3 py-1 rounded-xl border text-xs font-bold transition-all hover:scale-105 cursor-pointer shadow-2xs"
+              className="px-3 py-1 rounded-xl border text-xs font-bold transition-all hover:scale-105 cursor-pointer shadow-2xs backdrop-blur-md"
             >
               {chip.label}
             </button>
@@ -317,7 +317,7 @@ export const SpiritualCalendar: React.FC<SpiritualCalendarProps> = ({
 
       {/* Main Calendar Month View */}
       <div 
-        className="rounded-3xl shadow-xl overflow-hidden border"
+        className="rounded-3xl shadow-xl overflow-hidden border backdrop-blur-md"
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
       >
         {/* Month Selector Bar */}
@@ -398,7 +398,7 @@ export const SpiritualCalendar: React.FC<SpiritualCalendarProps> = ({
               >
                 <div className="flex items-center justify-between">
                   <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${
-                    isToday ? 'bg-amber-600 text-white shadow-xs' : 'opacity-70'
+                    isToday ? 'bg-[#8B2500] text-white shadow-xs' : 'opacity-70'
                   }`}>
                     {day}
                   </span>
@@ -430,8 +430,8 @@ export const SpiritualCalendar: React.FC<SpiritualCalendarProps> = ({
 
       {/* Annual 12-Month Matrix Layout */}
       <div 
-        className="bg-white dark:bg-zinc-900 rounded-3xl shadow-xl overflow-hidden border"
-        style={{ borderColor: theme.cardBorder }}
+        className="rounded-3xl shadow-xl overflow-hidden border backdrop-blur-md"
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
       >
         <div className="p-5 border-b" style={{ borderColor: theme.cardBorder, backgroundColor: theme.stepActiveBg }}>
           <h3 className="text-center text-lg font-black font-serif" style={{ color: theme.sacredMaroon }}>

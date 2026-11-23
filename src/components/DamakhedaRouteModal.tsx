@@ -18,12 +18,12 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
           initial={{ opacity: 0, scale: 0.9, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 15 }}
-          className="relative w-full max-w-lg rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white dark:bg-zinc-900 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+          className="relative w-full max-w-lg rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
         >
           {/* Header */}
-          <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-amber-50 dark:bg-zinc-950 flex items-center justify-between">
+          <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-amber-50/90 dark:bg-zinc-950/90 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-xl shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-[#8B2500] text-white flex items-center justify-center text-xl shadow-sm">
                 🚩
               </div>
               <div>

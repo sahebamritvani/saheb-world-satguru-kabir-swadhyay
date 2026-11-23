@@ -1175,8 +1175,8 @@ export const SacredLeelas: React.FC<SacredLeelasProps> = ({
                       }
                     }}
                     style={{
-                      backgroundColor: isSelected ? theme.sacredMaroon : 'transparent',
-                      color: isSelected ? '#FFFFFF' : theme.textSecondary,
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textSecondary,
                     }}
                     className="px-2.5 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer hover:opacity-90"
                     title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}

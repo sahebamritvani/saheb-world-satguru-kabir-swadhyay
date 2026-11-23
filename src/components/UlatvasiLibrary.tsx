@@ -221,7 +221,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
           }}
           className={`flex-1 py-2.5 rounded-xl text-sm font-black font-serif transition-all flex items-center justify-center gap-2 cursor-pointer ${
             activeSubTab === 'collection'
-              ? 'bg-amber-600 text-white shadow-md'
+              ? 'bg-[#8B2500] text-white shadow-md'
               : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/10'
           }`}
         >
@@ -235,7 +235,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
           }}
           className={`flex-1 py-2.5 rounded-xl text-sm font-black font-serif transition-all flex items-center justify-center gap-2 cursor-pointer ${
             activeSubTab === 'quiz'
-              ? 'bg-amber-600 text-white shadow-md'
+              ? 'bg-[#8B2500] text-white shadow-md'
               : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/10'
           }`}
         >
@@ -288,12 +288,8 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                     key={lng}
                     onClick={() => handleLanguageChange(lng)}
                     style={{
-                      backgroundColor: isSelected
-                        ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon)
-                        : 'transparent',
-                      color: isSelected
-                        ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF')
-                        : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textPrimary),
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                     }}
                     className={`px-2 py-0.5 rounded text-xs font-serif transition-all cursor-pointer ${
                       isSelected ? 'font-black shadow-xs' : 'font-bold hover:opacity-90'
@@ -314,7 +310,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
           backgroundColor: theme.cardBg,
           borderColor: theme.accentGold,
         }}
-        className="p-5 sm:p-7 rounded-3xl border-2 shadow-xl space-y-4 relative overflow-hidden"
+        className="p-5 sm:p-7 rounded-3xl border-2 backdrop-blur-md shadow-xl space-y-4 relative overflow-hidden"
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
@@ -333,7 +329,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                   style={{ color: theme.accentGold }}
                   className="text-xs sm:text-sm font-black font-serif tracking-normal"
                 >
-                  {currentLang === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : currentLang === 'en' ? '।। Satyanaam ।।' : '।। सत्यनाम ।।'}
+                  {currentLang === 'pb' ? '।। ਸਤ੍ਯਨਾਮ ।।' : currentLang === 'en' ? '।। Satyanaam ।।' : '।। सत्यनाम ।।'}
                 </span>
                 <span aria-hidden="true" style={{ color: theme.textSecondary }}>·</span>
                 <span className="text-xs font-bold font-serif" style={{ color: theme.textSecondary }}>
@@ -415,12 +411,8 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                           key={l}
                           onClick={() => handleLanguageChange(l)}
                           style={{
-                            backgroundColor: isSelected
-                              ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon)
-                              : (theme.mode === 'mystic_dark' ? '#2A2016' : 'rgba(0,0,0,0.05)'),
-                            color: isSelected
-                              ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF')
-                              : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textPrimary),
+                            backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.bgSecondary,
+                            color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                             borderColor: theme.cardBorder,
                           }}
                           className={`px-2 py-0.5 rounded-md text-[10px] border transition cursor-pointer ${
@@ -472,15 +464,9 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                 key={realm.id}
                 onClick={() => setSelectedRealm(realm.id)}
                 style={{
-                  backgroundColor: isSelected 
-                    ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon) 
-                    : (theme.mode === 'mystic_dark' ? '#18130E' : theme.bgSecondary),
-                  color: isSelected 
-                    ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF') 
-                    : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textPrimary),
-                  borderColor: isSelected 
-                    ? (theme.mode === 'mystic_dark' ? '#F59E0B' : theme.sacredMaroon) 
-                    : (theme.mode === 'mystic_dark' ? 'rgba(253, 230, 138, 0.3)' : theme.cardBorder)
+                  backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.bgSecondary,
+                  color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                  borderColor: isSelected ? theme.accentGold : theme.cardBorder,
                 }}
                 className={`px-4 py-2 rounded-full border text-xs font-bold whitespace-nowrap transition cursor-pointer hover:scale-102 active:scale-98 shadow-xs ${
                   isSelected ? 'font-black ring-1 ring-amber-400/50' : 'hover:opacity-90'
@@ -516,7 +502,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
             onClick={() => setGlobalAutoExpandMeaning(!globalAutoExpandMeaning)}
             className={`px-3 py-1.5 rounded-xl border text-[11px] font-black flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs ${
               globalAutoExpandMeaning
-                ? 'bg-amber-600 text-white border-amber-700'
+                ? 'bg-[#8B2500] text-white border-amber-700'
                 : 'bg-black/5 dark:bg-white/10 text-stone-700 dark:text-stone-300 border-black/10 hover:bg-black/10'
             }`}
           >
@@ -534,7 +520,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
             onClick={() => setShowOnlyBookmarks(!showOnlyBookmarks)}
             className={`px-3 py-1.5 rounded-xl border text-[11px] font-black flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs ${
               showOnlyBookmarks
-                ? 'bg-amber-600 text-white border-amber-700'
+                ? 'bg-[#8B2500] text-white border-amber-700'
                 : 'bg-black/5 dark:bg-white/10 text-stone-700 dark:text-stone-300 border-black/10 hover:bg-black/10'
             }`}
           >

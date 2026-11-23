@@ -849,8 +849,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="flex items-start gap-3 text-left font-serif">
                 <div 
                   style={{
-                    backgroundColor: isDarkMode ? theme.sacredMaroon : theme.cardBg,
-                    color: isDarkMode ? '#FFFFFF' : theme.accentGold,
+                    backgroundColor: isDarkMode ? theme.buttonPrimaryBg : theme.cardBg,
+                    color: isDarkMode ? theme.buttonPrimaryText : theme.accentGold,
                     borderColor: theme.accentGold,
                   }}
                   className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 shadow-xs transition-colors"
@@ -867,7 +867,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     </h3>
                     {isDarkMode && (
                       <span 
-                        style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+                        style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                         className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider animate-pulse"
                       >
                         {language === 'pb' ? 'ਚਾਲੂ' : language === 'en' ? 'Active' : 'सक्रिय'}
@@ -890,7 +890,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 id="toggle-global-night-mode-switch"
                 onClick={toggleDarkMode}
                 style={{
-                  backgroundColor: isDarkMode ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon) : '#D1D5DB',
+                  backgroundColor: isDarkMode ? theme.buttonPrimaryBg : '#D1D5DB',
                 }}
                 className="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 mt-0.5"
                 role="switch"
@@ -920,8 +920,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="flex items-start gap-3 text-left font-serif">
                 <div 
                   style={{
-                    backgroundColor: isAutoNightMode ? (isDarkMode ? '#D97706' : theme.sacredMaroon) : theme.cardBg,
-                    color: isAutoNightMode ? (isDarkMode ? '#000000' : '#FFFFFF') : theme.accentGold,
+                    backgroundColor: isAutoNightMode ? theme.buttonPrimaryBg : theme.cardBg,
+                    color: isAutoNightMode ? theme.buttonPrimaryText : theme.accentGold,
                     borderColor: theme.accentGold,
                   }}
                   className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 shadow-xs transition-colors"
@@ -931,21 +931,21 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <h3 
-                      style={{ color: isDarkMode ? '#FFFDF7' : theme.sacredMaroon }} 
+                      style={{ color: theme.sacredMaroon }} 
                       className="text-sm sm:text-base font-bold"
                     >
                       {language === 'pb' ? 'ਸੂਰਜ-ਅਧਾਰਿਤ ਆਟੋ ਰਾਤਰੀ ਮੋਡ (Sun-Aware)' : language === 'en' ? 'Sun-Aware Auto-Night Mode' : 'सूर्य-अनुसार स्वतः रात्रि मोड (Auto-Night Mode)'}
                     </h3>
                     {isAutoNightMode && (
                       <span 
-                        style={{ backgroundColor: isDarkMode ? '#D97706' : theme.sacredMaroon, color: isDarkMode ? '#000000' : '#FFFFFF' }}
+                        style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                         className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider animate-pulse"
                       >
                         {language === 'pb' ? 'ਸੂਰਜ ਸਿੰਕ' : language === 'en' ? 'Sun-Sync Active' : 'सूर्य-सिंक सक्रिय'}
                       </span>
                     )}
                   </div>
-                  <p style={{ color: isDarkMode ? '#FDE68A' : theme.textSecondary }} className="text-xs leading-relaxed font-sans">
+                  <p style={{ color: theme.textSecondary }} className="text-xs leading-relaxed font-sans">
                     {language === 'pb' 
                       ? 'ਸਥਾਨਕ ਸੂਰਜ ਛਿਪਣ (~੬:੩੦ ਸ਼ਾਮ) ਅਤੇ ਸੂਰਜ ਚੜ੍ਹਨ (~੬:੦੦ ਸਵੇਰ) ਅਨੁਸਾਰ ਡੇਅ ਅਤੇ ਨਾਈਟ ਮੋਡ ਆਪੇ ਬਦਲੋ।' 
                       : language === 'en' 
@@ -961,7 +961,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 id="toggle-sun-aware-night-mode-switch"
                 onClick={() => setIsAutoNightMode(!isAutoNightMode)}
                 style={{
-                  backgroundColor: isAutoNightMode ? (isDarkMode ? '#D97706' : theme.sacredMaroon) : '#D1D5DB',
+                  backgroundColor: isAutoNightMode ? theme.buttonPrimaryBg : '#D1D5DB',
                 }}
                 className="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 mt-0.5"
                 role="switch"
@@ -991,8 +991,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <div className="flex items-start gap-3">
                 <div 
                   style={{
-                    backgroundColor: isSahajMode ? theme.sacredMaroon : theme.cardBg,
-                    color: isSahajMode ? '#FFFFFF' : theme.accentGold,
+                    backgroundColor: isSahajMode ? theme.buttonPrimaryBg : theme.cardBg,
+                    color: isSahajMode ? theme.buttonPrimaryText : theme.accentGold,
                     borderColor: theme.accentGold,
                   }}
                   className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 shadow-xs transition-colors"
@@ -1009,7 +1009,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     </h3>
                     {isSahajMode && (
                       <span 
-                        style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+                        style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                         className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider animate-pulse"
                       >
                         {t.sahajModeActive}
@@ -1028,7 +1028,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 id="toggle-sahaj-mode-switch"
                 onClick={() => setIsSahajMode(!isSahajMode)}
                 style={{
-                  backgroundColor: isSahajMode ? theme.sacredMaroon : '#D1D5DB',
+                  backgroundColor: isSahajMode ? theme.buttonPrimaryBg : '#D1D5DB',
                 }}
                 className="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 mt-0.5"
                 role="switch"
@@ -1165,8 +1165,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     key={f.size}
                     onClick={() => setFontSize(f.size)}
                     style={{
-                      backgroundColor: isSelected ? theme.sacredMaroon : 'transparent',
-                      color: isSelected ? '#FFFFFF' : theme.textPrimary,
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                     }}
                     className={`flex-1 flex flex-col items-center justify-center py-2 rounded-xl transition-all duration-200 cursor-pointer ${
                       isSelected ? 'shadow-md scale-105 font-bold' : 'hover:bg-black/5 dark:hover:bg-white/5'
@@ -1242,9 +1242,9 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 type="button"
                 onClick={handleToggleVocalChant}
                 style={{
-                  backgroundColor: vocalChantEnabled ? theme.accentGold : theme.bg,
-                  borderColor: theme.borderOrnament,
-                  color: vocalChantEnabled ? '#ffffff' : theme.textMuted,
+                  backgroundColor: vocalChantEnabled ? theme.buttonPrimaryBg : theme.bg,
+                  borderColor: vocalChantEnabled ? theme.buttonPrimaryBg : theme.borderOrnament,
+                  color: vocalChantEnabled ? theme.buttonPrimaryText : theme.textMuted,
                 }}
                 className="px-2.5 py-1 rounded-md text-xs font-semibold border transition cursor-pointer"
               >
@@ -1827,7 +1827,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }}
                   className="min-h-[44px] py-1.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
                 >
-                  <span className="w-4 h-4 rounded-full bg-amber-600 text-white font-serif font-black text-[9px] flex items-center justify-center shrink-0">स</span>
+                  <span className="w-4 h-4 rounded-full bg-[#8B2500] text-white font-serif font-black text-[9px] flex items-center justify-center shrink-0">स</span>
                   <span>{language === 'pb' ? 'ਪਾਵਨ ਪ੍ਰਤੀਕ ਤੇ ਸਪਲੈਸ਼ ਦਰਸ਼ਨ' : language === 'en' ? 'Preview Emblem & Splash' : 'दिव्य प्रतीक व स्प्लैश दर्शन'}</span>
                 </button>
               )}
@@ -1938,8 +1938,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <button
             onClick={onClose}
             style={{
-              backgroundColor: theme.sacredMaroon,
-              color: '#FFFFFF'
+              backgroundColor: theme.buttonPrimaryBg,
+              color: theme.buttonPrimaryText
             }}
             className="w-full py-2.5 rounded-xl font-bold font-serif text-sm shadow-md hover:opacity-90 transition active:scale-98 cursor-pointer flex items-center justify-center gap-1.5"
           >

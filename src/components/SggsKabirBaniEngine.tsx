@@ -393,7 +393,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 onClick={() => setScriptMode(scr.id)}
                 className={`px-2.5 py-1 rounded-xl text-xs font-serif font-bold transition-all cursor-pointer ${
                   scriptMode === scr.id
-                    ? 'bg-amber-600 text-white shadow-xs'
+                    ? 'bg-[#8B2500] text-white shadow-xs'
                     : 'bg-black/5 dark:bg-white/5 text-gray-700 dark:text-gray-300 hover:bg-amber-500/10'
                 }`}
               >
@@ -426,7 +426,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-3 py-1.5 rounded-xl text-xs font-serif font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeTab === tab.id
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 text-gray-700 dark:text-gray-300 hover:bg-amber-500/10'
               }`}
             >
@@ -441,7 +441,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
         <div className="space-y-4">
           <div
             style={{ backgroundColor: theme.cardBg }}
-            className="rounded-3xl p-5 sm:p-6 shadow-sm space-y-4"
+            className="rounded-3xl p-5 sm:p-6 shadow-sm space-y-4 backdrop-blur-md"
           >
             <div className="flex items-center justify-between border-b pb-3 border-amber-500/20">
               <div className="flex items-center gap-2">
@@ -467,7 +467,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   className="p-3.5 rounded-2xl border border-amber-500/15 hover:border-amber-500 bg-amber-500/5 hover:bg-amber-500/10 transition-all cursor-pointer flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-xl bg-amber-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-xl bg-[#8B2500] text-white font-mono font-bold text-xs flex items-center justify-center">
                       {idx + 1}
                     </span>
                     <div>
@@ -493,7 +493,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
       {activeTab === 'history' && (
         <div
           style={{ backgroundColor: theme.cardBg }}
-          className="rounded-3xl p-6 sm:p-8 shadow-sm space-y-6 font-serif leading-relaxed border border-amber-500/10"
+          className="rounded-3xl p-6 sm:p-8 shadow-sm space-y-6 font-serif leading-relaxed border border-amber-500/10 backdrop-blur-md"
         >
           {/* Main Title Section */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4 border-amber-500/20">
@@ -718,7 +718,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 {/* Raag & Ang Details Table Grid */}
                 <div className="border border-amber-500/25 rounded-2xl overflow-hidden shadow-inner">
                   {/* Table Header */}
-                  <div className="grid grid-cols-12 bg-amber-600 text-white p-3 text-xs sm:text-sm font-black font-serif text-center">
+                  <div className="grid grid-cols-12 bg-[#8B2500] text-white p-3 text-xs sm:text-sm font-black font-serif text-center">
                     <div className="col-span-2">#</div>
                     <div className="col-span-5 text-left pl-3">{language === 'pb' ? 'ਰਾਗ ਦਾ ਨਾਮ' : 'राग का नाम'}</div>
                     <div className="col-span-5">{language === 'pb' ? 'ਪਾਵਨ ਅੰਗ ਸੀਮਾ' : 'पावन अंग सीमा'}</div>
@@ -851,7 +851,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   key={verse.id}
                   id={verse.id}
                   style={{ backgroundColor: theme.cardBg }}
-                  className="rounded-3xl p-5 sm:p-7 shadow-sm transition-all space-y-4 border border-amber-500/10"
+                  className="rounded-3xl p-5 sm:p-7 shadow-sm transition-all space-y-4 border border-amber-500/10 backdrop-blur-md"
                 >
                   {/* Card Header: Category Badge, Ang Number & Action buttons */}
                   <div className="flex items-center justify-between gap-2 flex-wrap border-b pb-3 border-amber-500/10">
@@ -876,7 +876,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                         onClick={() => handleTogglePlayVerse(verse)}
                         className={`p-2 rounded-xl transition cursor-pointer flex items-center gap-1 text-xs font-serif font-bold ${
                           isPlayingAudio && currentPlayingId === verse.id
-                            ? 'bg-amber-600 text-white shadow-xs animate-pulse'
+                            ? 'bg-[#8B2500] text-white shadow-xs animate-pulse'
                             : 'hover:bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20'
                         }`}
                         title={isPlayingAudio && currentPlayingId === verse.id ? 'ਰੋਕੋ (Stop Voice)' : 'ਸੁਣੋ (Listen Voice)'}
@@ -1015,7 +1015,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                             }
                             className={`px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition-all cursor-pointer whitespace-nowrap ${
                               currentStep === sTab.id
-                                ? 'bg-amber-600 text-white shadow-xs'
+                                ? 'bg-[#8B2500] text-white shadow-xs'
                                 : 'bg-black/5 dark:bg-white/5 text-gray-700 dark:text-gray-300 hover:bg-amber-500/10'
                             }`}
                           >

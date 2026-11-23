@@ -421,8 +421,8 @@ export const SpiritualQuiz: React.FC<SpiritualQuizProps> = ({
                     <div className="flex items-center gap-3">
                       <span
                         style={{
-                          backgroundColor: isSelected ? theme.accentGold : theme.bgSecondary,
-                          color: isSelected ? '#FFFFFF' : theme.textSecondary,
+                          backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.bgSecondary,
+                          color: isSelected ? theme.buttonPrimaryText : theme.textSecondary,
                         }}
                         className="w-7 h-7 rounded-lg text-xs font-bold flex items-center justify-center shrink-0 border"
                       >

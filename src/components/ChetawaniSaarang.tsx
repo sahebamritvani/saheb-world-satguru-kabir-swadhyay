@@ -41,8 +41,8 @@ export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, on
     <div className="space-y-6 animate-fadeIn pb-10">
       {/* Header */}
       <div 
-        style={{ backgroundColor: theme.sacredMaroon }}
-        className="p-6 rounded-3xl text-white space-y-2 relative overflow-hidden shadow-lg"
+        style={{ background: 'linear-gradient(135deg, #6B1800 0%, #8B2500 60%, #9A3412 100%)' }}
+        className="p-6 rounded-3xl text-white space-y-2 relative overflow-hidden shadow-lg border border-amber-400/25 backdrop-blur-md"
       >
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-3xl" />
         <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, on
               backgroundColor: theme.cardBg,
               borderColor: theme.accentGold,
             }}
-            className="group relative rounded-2xl border-2 p-5 space-y-4 hover:shadow-xl transition-all duration-300 overflow-hidden"
+            className="group relative rounded-2xl border-2 p-5 space-y-4 hover:shadow-xl transition-all duration-300 overflow-hidden backdrop-blur-md"
           >
             {/* Index Badge */}
             <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -134,8 +134,8 @@ export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, on
         <div className="flex justify-center pt-4">
           <button
             onClick={onClose}
-            style={{ backgroundColor: theme.sacredMaroon }}
-            className="px-8 py-3 rounded-2xl text-white font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition cursor-pointer flex items-center gap-2"
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+            className="px-8 py-3 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition cursor-pointer flex items-center gap-2"
           >
             <ArrowRight className="w-4 h-4 rotate-180" />
             <span>{language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}</span>

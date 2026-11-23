@@ -204,16 +204,16 @@ export const DailyAffirmationsWidget: React.FC<DailyAffirmationsWidgetProps> = (
             type="button"
             onClick={handleToggleAudio}
             style={{
-              backgroundColor: isPlayingAudio ? theme.sacredMaroon : theme.bgSecondary,
-              borderColor: isPlayingAudio ? theme.sacredMaroon : theme.cardBorder,
-              color: isPlayingAudio ? '#FFFFFF' : theme.textPrimary,
+              backgroundColor: isPlayingAudio ? theme.buttonPrimaryBg : theme.bgSecondary,
+              borderColor: isPlayingAudio ? theme.accentGold : theme.cardBorder,
+              color: isPlayingAudio ? theme.buttonPrimaryText : theme.textPrimary,
             }}
             className="p-2 sm:px-2.5 sm:py-2 rounded-xl border text-xs font-bold transition hover:scale-105 active:scale-95 cursor-pointer shadow-2xs flex items-center gap-1.5"
             title={isPlayingAudio ? 'Stop Audio' : 'Listen Affirmation'}
           >
             {isPlayingAudio ? (
               <>
-                <VolumeX className="w-4 h-4 text-white animate-pulse" />
+                <VolumeX className="w-4 h-4 animate-pulse" />
                 <span className="text-[11px] hidden sm:inline">{language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Stop' : 'रोकें'}</span>
               </>
             ) : (

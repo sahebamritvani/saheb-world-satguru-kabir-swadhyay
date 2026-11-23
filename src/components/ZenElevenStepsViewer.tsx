@@ -526,7 +526,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                   <button
                     type="button"
                     onClick={() => setQuizIdx((i) => i + 1)}
-                    className="px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold cursor-pointer"
+                    className="px-3 py-1.5 rounded-xl bg-[#8B2500] text-white text-xs font-bold cursor-pointer"
                   >
                     {language === 'pb' ? 'ਅਗਲਾ ਪ੍ਰਸ਼ਨ' : language === 'en' ? 'Next Question' : 'अगला प्रश्न'}
                   </button>

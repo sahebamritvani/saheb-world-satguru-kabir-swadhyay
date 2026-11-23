@@ -427,7 +427,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           </div>
         </div>
 
-        <div style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1 text-center shadow-xs">
+        <div style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1 text-center shadow-xs backdrop-blur-md">
           <div className="text-rose-600 text-2xl font-black font-mono">{journalEntries.length}</div>
           <div className="text-[11px] font-serif font-bold opacity-70" style={{ color: theme.textSecondary }}>
             {language === 'hi' ? 'साधना जर्नल प्रविष्टियां' : 'Journal Reflections'}
@@ -440,11 +440,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
         <button
           onClick={() => setActiveTab('progress')}
           style={{
-            backgroundColor: activeTab === 'progress' ? theme.sacredMaroon : theme.cardBg,
-            color: activeTab === 'progress' ? '#FFFFFF' : theme.textPrimary,
-            borderColor: theme.cardBorder,
+            backgroundColor: activeTab === 'progress' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: activeTab === 'progress' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: activeTab === 'progress' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0"
+          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <TrendingUp className="w-4 h-4 text-amber-400" />
           <span>{language === 'hi' ? '१०-चरणीय प्रगति (Swadhyay Steps)' : '10-Step Progress'}</span>
@@ -453,11 +453,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
         <button
           onClick={() => setActiveTab('journal')}
           style={{
-            backgroundColor: activeTab === 'journal' ? theme.sacredMaroon : theme.cardBg,
-            color: activeTab === 'journal' ? '#FFFFFF' : theme.textPrimary,
-            borderColor: theme.cardBorder,
+            backgroundColor: activeTab === 'journal' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: activeTab === 'journal' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: activeTab === 'journal' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0"
+          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <FileText className="w-4 h-4 text-amber-400" />
           <span>{language === 'hi' ? 'दैनिक साधना जर्नल' : 'Daily Sadhana Journal'}</span>
@@ -469,11 +469,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             setActiveTab('karma');
           }}
           style={{
-            backgroundColor: activeTab === 'karma' ? theme.sacredMaroon : theme.cardBg,
-            color: activeTab === 'karma' ? '#FFFFFF' : theme.textPrimary,
-            borderColor: theme.cardBorder,
+            backgroundColor: activeTab === 'karma' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: activeTab === 'karma' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: activeTab === 'karma' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0"
+          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Scale className="w-4 h-4 text-amber-400" />
           <span>{language === 'hi' ? 'कर्म व भक्ति साधना (Karma & Bhakti)' : 'Karma & Bhakti Sadhana'}</span>
@@ -485,11 +485,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             setActiveTab('bhushan');
           }}
           style={{
-            backgroundColor: activeTab === 'bhushan' ? theme.sacredMaroon : theme.cardBg,
-            color: activeTab === 'bhushan' ? '#FFFFFF' : theme.textPrimary,
-            borderColor: theme.cardBorder,
+            backgroundColor: activeTab === 'bhushan' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: activeTab === 'bhushan' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: activeTab === 'bhushan' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0"
+          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
           <span>{language === 'hi' ? 'आत्मा के 16 भूषण' : '16 Ornaments of the Soul'}</span>
@@ -498,11 +498,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
         <button
           onClick={() => setActiveTab('milestones')}
           style={{
-            backgroundColor: activeTab === 'milestones' ? theme.sacredMaroon : theme.cardBg,
-            color: activeTab === 'milestones' ? '#FFFFFF' : theme.textPrimary,
-            borderColor: theme.cardBorder,
+            backgroundColor: activeTab === 'milestones' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: activeTab === 'milestones' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: activeTab === 'milestones' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0"
+          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Award className="w-4 h-4 text-amber-400" />
           <span>{language === 'hi' ? 'उपलब्धि एवं मील के पत्थर' : 'Spiritual Milestones'}</span>
@@ -511,11 +511,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
         <button
           onClick={() => setActiveTab('storage')}
           style={{
-            backgroundColor: activeTab === 'storage' ? theme.sacredMaroon : theme.cardBg,
-            color: activeTab === 'storage' ? '#FFFFFF' : theme.textPrimary,
-            borderColor: theme.cardBorder,
+            backgroundColor: activeTab === 'storage' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: activeTab === 'storage' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: activeTab === 'storage' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0"
+          className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Database className="w-4 h-4 text-amber-400" />
           <span>{language === 'hi' ? 'भंडारण एवं संचय रिपोर्ट (Storage)' : 'Storage & Capacity Report'}</span>
@@ -528,7 +528,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           {/* Main Overall Progress Bar */}
           <div 
             style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
-            className="p-5 sm:p-6 rounded-3xl border-2 space-y-4 shadow-md"
+            className="p-5 sm:p-6 rounded-3xl border-2 space-y-4 shadow-md backdrop-blur-md"
           >
             <div className="flex items-center justify-between">
               <div>
@@ -542,8 +542,8 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
 
               <button
                 onClick={() => onNavigateToSwadhyay && onNavigateToSwadhyay(stats.lastReadSakhi, stats.maxUnlockedStep)}
-                className="px-4 py-2 rounded-xl text-white font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer"
-                style={{ backgroundColor: theme.sacredMaroon }}
+                className="px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer"
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               >
                 <span>{language === 'hi' ? 'स्वाध्याय जारी रखें' : 'Resume Swadhyay'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -806,8 +806,8 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                     type="button"
                     onClick={() => setSelectedTag(tag)}
                     style={{
-                      backgroundColor: selectedTag === tag ? theme.accentGold : theme.stepActiveBg,
-                      color: selectedTag === tag ? '#FFFFFF' : theme.textPrimary,
+                      backgroundColor: selectedTag === tag ? theme.buttonPrimaryBg : theme.stepActiveBg,
+                      color: selectedTag === tag ? theme.buttonPrimaryText : theme.textPrimary,
                     }}
                     className="px-3 py-1 rounded-xl text-xs font-bold transition cursor-pointer"
                   >
@@ -819,8 +819,8 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
               <button
                 onClick={handleAddJournal}
                 disabled={!newJournalText.trim()}
-                className="px-6 py-2.5 rounded-2xl text-white font-bold text-xs shadow-md disabled:opacity-40 transition cursor-pointer hover:scale-105 active:scale-95"
-                style={{ backgroundColor: theme.sacredMaroon }}
+                className="px-6 py-2.5 rounded-2xl font-bold text-xs shadow-md disabled:opacity-40 transition cursor-pointer hover:scale-105 active:scale-95"
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               >
                 {language === 'hi' ? 'जर्नल में सहेजें' : 'Save Entry'}
               </button>
@@ -1359,8 +1359,8 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   <button
                     type="button"
                     onClick={handleRecordKarma}
-                    style={{ backgroundColor: theme.sacredMaroon }}
-                    className="w-full sm:w-auto px-5 py-2.5 rounded-2xl text-white font-black text-xs transition shadow-md hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+                    style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                    className="w-full sm:w-auto px-5 py-2.5 rounded-2xl font-black text-xs transition shadow-md hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
                   >
                     <span>🌸 {language === 'hi' ? 'कर्मा लेखा-जोखा सहेजें' : 'Save Daily Assessment'}</span>
                   </button>

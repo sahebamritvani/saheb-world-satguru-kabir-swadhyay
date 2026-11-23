@@ -650,7 +650,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end flex-wrap">
           {/* View Mode Switcher */}
           <div 
-            className="flex items-center p-1 rounded-2xl border"
+            className="flex items-center p-1 rounded-2xl border backdrop-blur-md"
             style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
           >
             <button
@@ -660,8 +660,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 viewLayout === 'chakra' ? 'shadow-xs scale-102' : 'opacity-70 hover:opacity-100'
               }`}
               style={{
-                backgroundColor: viewLayout === 'chakra' ? theme.accentGold : 'transparent',
-                color: viewLayout === 'chakra' ? '#FFFFFF' : theme.textPrimary
+                backgroundColor: viewLayout === 'chakra' ? theme.buttonPrimaryBg : 'transparent',
+                color: viewLayout === 'chakra' ? theme.buttonPrimaryText : theme.textPrimary
               }}
             >
               <CircleDot className="w-4 h-4" />
@@ -674,8 +674,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 viewLayout === 'cards' ? 'shadow-xs scale-102' : 'opacity-70 hover:opacity-100'
               }`}
               style={{
-                backgroundColor: viewLayout === 'cards' ? theme.accentGold : 'transparent',
-                color: viewLayout === 'cards' ? '#FFFFFF' : theme.textPrimary
+                backgroundColor: viewLayout === 'cards' ? theme.buttonPrimaryBg : 'transparent',
+                color: viewLayout === 'cards' ? theme.buttonPrimaryText : theme.textPrimary
               }}
             >
               <Grid className="w-4 h-4" />
@@ -688,8 +688,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 viewLayout === 'journey' ? 'shadow-xs scale-102' : 'opacity-70 hover:opacity-100'
               }`}
               style={{
-                backgroundColor: viewLayout === 'journey' ? theme.accentGold : 'transparent',
-                color: viewLayout === 'journey' ? '#FFFFFF' : theme.textPrimary
+                backgroundColor: viewLayout === 'journey' ? theme.buttonPrimaryBg : 'transparent',
+                color: viewLayout === 'journey' ? theme.buttonPrimaryText : theme.textPrimary
               }}
             >
               <Compass className="w-4 h-4" />
@@ -706,9 +706,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
             }}
             className="px-3.5 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shadow-xs hover:scale-105 active:scale-95"
             style={{
-              backgroundColor: isAutoSpinning ? theme.accentGold : theme.cardBg,
-              borderColor: isAutoSpinning ? theme.accentGold : theme.borderOrnament,
-              color: isAutoSpinning ? '#FFFFFF' : theme.sacredMaroon
+              backgroundColor: isAutoSpinning ? theme.buttonPrimaryBg : theme.cardBg,
+              borderColor: isAutoSpinning ? theme.buttonPrimaryBg : theme.borderOrnament,
+              color: isAutoSpinning ? theme.buttonPrimaryText : theme.sacredMaroon
             }}
             title={isAutoSpinning ? 'Pause Auto Tour' : 'Start Auto Tour'}
           >
@@ -727,13 +727,13 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
         <button
           type="button"
           onClick={() => { sacredHaptics.lightTap(); setSelectedPillarFilter('all'); }}
-          className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border cursor-pointer ${
+          className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border cursor-pointer backdrop-blur-md ${
             selectedPillarFilter === 'all' ? 'shadow-xs ring-2 ring-amber-400' : 'opacity-75 hover:opacity-100'
           }`}
           style={{
-            backgroundColor: selectedPillarFilter === 'all' ? theme.sacredMaroon : theme.cardBg,
-            borderColor: theme.borderOrnament,
-            color: selectedPillarFilter === 'all' ? '#FFFFFF' : theme.textPrimary
+            backgroundColor: selectedPillarFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBg,
+            borderColor: selectedPillarFilter === 'all' ? theme.buttonPrimaryBg : theme.borderOrnament,
+            color: selectedPillarFilter === 'all' ? theme.buttonPrimaryText : theme.textPrimary
           }}
         >
           {language === 'pb' ? 'ਸਾਰੇ ੧੬ ਭੂਸ਼ਣ (੧੬/੧੬)' : language === 'en' ? 'All 16 Jewels (16/16)' : 'समग्र 16 भूषण (16/16)'}
@@ -766,7 +766,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left / Center Column: Interactive Circular Chakra Canvas */}
           <div 
-            className="lg:col-span-6 xl:col-span-6 rounded-3xl border p-4 sm:p-6 shadow-sm flex flex-col items-center justify-center relative overflow-hidden"
+            className="lg:col-span-6 xl:col-span-6 rounded-3xl border p-4 sm:p-6 shadow-sm flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-md"
             style={{ 
               backgroundColor: theme.cardBg, 
               borderColor: theme.borderOrnament,
@@ -1018,7 +1018,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
 
           {/* Right Column: Detailed Explanation & Relationship Panel */}
           <div 
-            className="lg:col-span-6 xl:col-span-6 rounded-3xl border p-5 sm:p-7 shadow-sm space-y-5 relative"
+            className="lg:col-span-6 xl:col-span-6 rounded-3xl border p-5 sm:p-7 shadow-sm space-y-5 relative backdrop-blur-md"
             style={{ 
               backgroundColor: theme.cardBg, 
               borderColor: theme.borderOrnament,
@@ -1070,9 +1070,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                   onClick={handleToggleSpeech}
                   className="p-2 rounded-xl border transition-all cursor-pointer hover:scale-105 active:scale-95"
                   style={{
-                    backgroundColor: isSpeaking ? theme.accentGold : theme.stepActiveBg,
-                    borderColor: isSpeaking ? theme.accentGold : theme.cardBorder,
-                    color: isSpeaking ? '#FFFFFF' : theme.sacredMaroon
+                    backgroundColor: isSpeaking ? theme.buttonPrimaryBg : theme.stepActiveBg,
+                    borderColor: isSpeaking ? theme.buttonPrimaryBg : theme.cardBorder,
+                    color: isSpeaking ? theme.buttonPrimaryText : theme.sacredMaroon
                   }}
                   title={isSpeaking ? 'Stop Speech' : 'Listen with Web Speech API'}
                 >

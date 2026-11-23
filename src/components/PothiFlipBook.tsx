@@ -640,7 +640,7 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
         <button 
           onClick={toggleFullscreen}
           className={`min-h-[40px] px-2.5 py-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition active:scale-90 flex items-center gap-1 text-xs font-bold whitespace-nowrap ${
-            isFullscreen ? 'bg-amber-600 text-white hover:bg-amber-700' : ''
+            isFullscreen ? 'bg-[#8B2500] text-white hover:bg-amber-700' : ''
           }`}
           style={isFullscreen ? undefined : { color: theme.textSecondary }}
         >
@@ -675,7 +675,7 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
                 <span>Font Size</span>
                 <div className="flex gap-2">
                   {(['small', 'normal', 'large', 'xlarge'] as ReaderFontSize[]).map(size => (
-                    <button key={size} onClick={() => onFontSizeChange && onFontSizeChange(size)} className={`px-3 py-1 rounded ${fontSize === size ? 'bg-amber-600 text-white' : 'bg-gray-200'}`}>{size}</button>
+                    <button key={size} onClick={() => onFontSizeChange && onFontSizeChange(size)} className={`px-3 py-1 rounded ${fontSize === size ? 'bg-[#8B2500] text-white' : 'bg-gray-200'}`}>{size}</button>
                   ))}
                 </div>
               </div>
@@ -700,9 +700,9 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
               {/* Language Selection */}
               <div className="border-t pt-4">
                 <div className="flex gap-2 mb-2">
-                  <button onClick={() => onLanguageChange && onLanguageChange('hi')} className={`flex-1 py-2 rounded ${language === 'hi' ? 'bg-amber-600 text-white' : 'bg-gray-200'}`}>Hindi</button>
-                  <button onClick={() => onLanguageChange && onLanguageChange('pb')} className={`flex-1 py-2 rounded ${language === 'pb' ? 'bg-amber-600 text-white' : 'bg-gray-200'}`}>Punjabi</button>
-                  <button onClick={() => onLanguageChange && onLanguageChange('en')} className={`flex-1 py-2 rounded ${language === 'en' ? 'bg-amber-600 text-white' : 'bg-gray-200'}`}>English</button>
+                  <button onClick={() => onLanguageChange && onLanguageChange('hi')} className={`flex-1 py-2 rounded ${language === 'hi' ? 'bg-[#8B2500] text-white' : 'bg-gray-200'}`}>Hindi</button>
+                  <button onClick={() => onLanguageChange && onLanguageChange('pb')} className={`flex-1 py-2 rounded ${language === 'pb' ? 'bg-[#8B2500] text-white' : 'bg-gray-200'}`}>Punjabi</button>
+                  <button onClick={() => onLanguageChange && onLanguageChange('en')} className={`flex-1 py-2 rounded ${language === 'en' ? 'bg-[#8B2500] text-white' : 'bg-gray-200'}`}>English</button>
                 </div>
                 {/* Script indicator */}
                 <div className="text-xs text-gray-500 text-center">
@@ -749,7 +749,7 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
                 className={`px-4 py-2 rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 transition cursor-pointer ${
                   currentPage === 0
                     ? 'opacity-30 cursor-not-allowed bg-gray-100 dark:bg-zinc-800 text-gray-400'
-                    : 'bg-amber-600 text-white shadow-md hover:bg-amber-700 active:scale-95'
+                    : 'bg-[#8B2500] text-white shadow-md hover:bg-amber-700 active:scale-95'
                 }`}
               >
                 <ChevronLeft size={16} />
@@ -772,7 +772,7 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
                 className={`px-4 py-2 rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 transition cursor-pointer ${
                   currentPage >= pages.length - 1
                     ? 'opacity-30 cursor-not-allowed bg-gray-100 dark:bg-zinc-800 text-gray-400'
-                    : 'bg-amber-600 text-white shadow-md hover:bg-amber-700 active:scale-95'
+                    : 'bg-[#8B2500] text-white shadow-md hover:bg-amber-700 active:scale-95'
                 }`}
               >
                 <span>{language === 'pb' ? 'ਅਗਲਾ ਪੰਨਾ' : language === 'en' ? 'Next Page' : 'अगला पन्ना'}</span>

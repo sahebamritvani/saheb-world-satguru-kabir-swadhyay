@@ -70,10 +70,10 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
       {/* Sacred Header Banner */}
       <div 
         style={{ 
-          background: `linear-gradient(135deg, ${theme.sacredMaroon}, ${theme.accentGold})`,
+          background: 'linear-gradient(135deg, #6B1800 0%, #8B2500 55%, #9A3412 100%)',
           borderColor: theme.accentGold 
         }}
-        className="rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border-2"
+        className="rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border-2 backdrop-blur-md"
       >
         <div className="absolute -right-8 -bottom-8 text-9xl opacity-10 pointer-events-none select-none">
           ੴ
@@ -144,8 +144,8 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
                 setActiveTab(tab.id);
               }}
               style={{
-                backgroundColor: isActive ? theme.accentGold : 'transparent',
-                color: isActive ? '#FFFFFF' : theme.textPrimary,
+                backgroundColor: isActive ? theme.buttonPrimaryBg : 'transparent',
+                color: isActive ? theme.buttonPrimaryText : theme.textPrimary,
               }}
               className={`flex-1 py-2.5 px-3 rounded-xl font-serif font-bold text-xs sm:text-sm flex items-center justify-center gap-2 whitespace-nowrap transition cursor-pointer ${
                 isActive ? 'shadow-md' : 'hover:bg-amber-500/10'

@@ -69,7 +69,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
   isBellEnabled = true,
   onClose
 }) => {
-  const { globalWallpaper, setGlobalWallpaper } = useAppTheme();
+  const { theme, globalWallpaper, setGlobalWallpaper } = useAppTheme();
   const { language: contextLang, setLanguage } = useLanguage();
   const activeLang: Language = language || contextLang;
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -630,7 +630,10 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
       {/* Main Studio Grid: Left Studio Controls vs Right Canvas Preview */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* LEFT COLUMN: CONTROLS (7 Cols) */}
-        <div className="lg:col-span-7 space-y-5 bg-white dark:bg-[#1C1712] p-5 sm:p-6 rounded-3xl border border-amber-500/20 shadow-lg text-xs">
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="lg:col-span-7 space-y-5 p-5 sm:p-6 rounded-3xl border backdrop-blur-md shadow-lg text-xs"
+        >
           {/* SECTION 1: PRESET BACKGROUND SELECTOR */}
           <div className="space-y-2">
             <label className="font-bold text-sm font-serif text-amber-950 dark:text-amber-200 flex items-center gap-2">
@@ -662,7 +665,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                     </span>
                   </div>
                   {selectedPreset === preset.id && (
-                    <span className="absolute top-2 right-2 p-0.5 rounded-full bg-amber-600 text-white">
+                    <span className="absolute top-2 right-2 p-0.5 rounded-full bg-[#8B2500] text-white">
                       <Check className="w-3 h-3" />
                     </span>
                   )}
@@ -690,7 +693,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   onClick={() => setAspectRatio(rObj.id as any)}
                   className={`p-2.5 rounded-2xl border text-center transition cursor-pointer ${
                     aspectRatio === rObj.id
-                      ? 'bg-amber-600 text-white border-amber-600 shadow-md font-bold'
+                      ? 'bg-[#8B2500] text-white border-[#8B2500] shadow-md font-bold'
                       : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300'
                   }`}
                 >
@@ -714,7 +717,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 type="button"
                 onClick={() => setTextMode('sakhi')}
                 className={`flex-1 py-2 px-2 rounded-xl font-bold text-xs transition cursor-pointer ${
-                  textMode === 'sakhi' ? 'bg-amber-600 text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
+                  textMode === 'sakhi' ? 'bg-[#8B2500] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
                 📜 साखी संग्रह
@@ -724,7 +727,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 type="button"
                 onClick={() => setTextMode('sggs')}
                 className={`flex-1 py-2 px-2 rounded-xl font-bold text-xs transition cursor-pointer ${
-                  textMode === 'sggs' ? 'bg-amber-600 text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
+                  textMode === 'sggs' ? 'bg-[#8B2500] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
                 ☬ SGGS सलोक
@@ -734,7 +737,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 type="button"
                 onClick={() => setTextMode('custom')}
                 className={`flex-1 py-2 px-2 rounded-xl font-bold text-xs transition cursor-pointer ${
-                  textMode === 'custom' ? 'bg-amber-600 text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
+                  textMode === 'custom' ? 'bg-[#8B2500] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
                 ✏️ स्वयं का पाठ
@@ -949,7 +952,10 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
         {/* RIGHT COLUMN: LIVE CANVAS PREVIEW & DOWNLOAD (5 Cols) */}
         <div className="lg:col-span-5 space-y-4 sticky top-6">
-          <div className="bg-white dark:bg-[#1C1712] p-4 sm:p-5 rounded-3xl border border-amber-500/30 shadow-xl space-y-4 text-center">
+          <div
+            style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+            className="p-4 sm:p-5 rounded-3xl border backdrop-blur-md shadow-xl space-y-4 text-center"
+          >
             <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-3">
               <span className="font-serif font-bold text-sm text-amber-950 dark:text-amber-100 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-600" />

@@ -266,9 +266,10 @@ export const SacredMaryadaModal: React.FC<SacredMaryadaModalProps> = ({
               type="button"
               onClick={handleAcknowledge}
               style={{
-                backgroundColor: theme.sacredMaroon,
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
               }}
-              className="w-full sm:w-auto px-6 py-2.5 rounded-2xl text-white font-bold text-xs sm:text-sm shadow-md hover:scale-105 transition-all cursor-pointer flex items-center justify-center gap-1.5"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-2xl font-bold text-xs sm:text-sm shadow-md hover:scale-105 transition-all cursor-pointer flex items-center justify-center gap-1.5"
             >
               <Check size={16} />
               <span>{language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ (ਮਰਯਾਦਾ ਸਵੀਕਾਰ ਹੈ) ।।' : language === 'en' ? '।। Saheb Bandagi Saheb (Acknowledge) ।।' : '।। साहेब बंदगी साहेब (मर्यादा स्वीकार है) ।।'}</span>

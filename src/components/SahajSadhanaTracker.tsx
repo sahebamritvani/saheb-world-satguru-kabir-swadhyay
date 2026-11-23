@@ -65,7 +65,7 @@ export const SahajSadhanaTracker: React.FC<SahajSadhanaTrackerProps> = ({ langua
         <button 
           onClick={markCompleted}
           className="w-full py-3 rounded-2xl font-black font-serif cursor-pointer transition hover:scale-[1.02] active:scale-[0.98]"
-          style={{ backgroundColor: theme.sacredMaroon, color: '#ffffff' }}
+          style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
         >
           {language === 'hi' ? 'आज का अमृतवेला ध्यान पूर्ण करें' : 'Mark Amritvela Meditation Complete'}
         </button>

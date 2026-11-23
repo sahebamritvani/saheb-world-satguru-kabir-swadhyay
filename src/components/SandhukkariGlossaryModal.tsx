@@ -214,9 +214,10 @@ export const SandhukkariGlossaryModal: React.FC<SandhukkariGlossaryModalProps> =
               type="button"
               onClick={onClose}
               style={{
-                backgroundColor: theme.sacredMaroon,
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
               }}
-              className="px-5 py-1.5 rounded-xl text-white font-bold text-xs shadow-md hover:scale-105 transition-all cursor-pointer"
+              className="px-5 py-1.5 rounded-xl font-bold text-xs shadow-md hover:scale-105 transition-all cursor-pointer"
             >
               {language === 'pb' ? 'ਸਮਝ ਗਏ (ਬੰਦ ਕਰੋ)' : language === 'en' ? 'Understood' : 'समझ गए (बंद करें)'}
             </button>

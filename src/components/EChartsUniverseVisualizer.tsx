@@ -884,7 +884,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                 sacredHaptics.lightTap();
                 setIsFullscreen(!isFullscreen);
               }}
-              className="px-2 sm:px-2.5 py-1 rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition cursor-pointer flex items-center gap-1 text-xs font-bold shadow-xs active:scale-95 shrink-0"
+              className="px-2 sm:px-2.5 py-1 rounded-lg bg-[#8B2500] text-white hover:bg-[#7C1D00] transition cursor-pointer flex items-center gap-1 text-xs font-bold shadow-xs active:scale-95 shrink-0"
               title={isFullscreen ? 'Exit Fullscreen' : 'Full Page View'}
             >
               {isFullscreen ? (
@@ -916,7 +916,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                 }}
                 className={`px-2 py-0.5 rounded-lg text-[9px] sm:text-[10px] font-bold transition whitespace-nowrap cursor-pointer border ${
                   searchQuery.toLowerCase() === tag.query.toLowerCase()
-                    ? 'bg-amber-600 text-white border-amber-700 shadow-xs'
+                    ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
                     : 'bg-black/5 dark:bg-white/5 text-stone-700 dark:text-stone-300 border-amber-500/20 hover:bg-amber-500/10'
                 }`}
               >
@@ -934,7 +934,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               }}
               className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition flex items-center gap-1 cursor-pointer ${
                 chartMode === 'sunburst'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-stone-700 dark:text-stone-300 hover:bg-amber-500/10'
               }`}
             >
@@ -950,7 +950,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               }}
               className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition flex items-center gap-1 cursor-pointer ${
                 chartMode === 'network'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-stone-700 dark:text-stone-300 hover:bg-amber-500/10'
               }`}
             >
@@ -966,7 +966,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               }}
               className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition flex items-center gap-1 cursor-pointer ${
                 chartMode === 'tree'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-stone-700 dark:text-stone-300 hover:bg-amber-500/10'
               }`}
             >
@@ -980,7 +980,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
       {/* Main Visualizer Area */}
       <div 
         style={{ backgroundColor: isFullscreen ? '#0c0a09' : theme.cardBg }}
-        className={`relative overflow-hidden transition-all duration-300 ${
+        className={`relative overflow-hidden transition-all duration-300 backdrop-blur-md ${
           isFullscreen 
             ? 'flex-1 w-full h-full min-h-0 flex items-center justify-center p-1 sm:p-2' 
             : 'rounded-3xl p-2 sm:p-4 border-2 shadow-sm'

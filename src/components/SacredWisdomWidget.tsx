@@ -487,21 +487,21 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
             type="button"
             onClick={handleToggleAudio}
             style={{
-              backgroundColor: isPlayingAudio ? theme.sacredMaroon : theme.bgSecondary,
-              borderColor: isPlayingAudio ? theme.sacredMaroon : theme.cardBorder,
-              color: isPlayingAudio ? '#FFFFFF' : theme.textPrimary,
+              backgroundColor: isPlayingAudio ? theme.buttonPrimaryBg : theme.bgSecondary,
+              borderColor: isPlayingAudio ? theme.accentGold : theme.cardBorder,
+              color: isPlayingAudio ? theme.buttonPrimaryText : theme.textPrimary,
             }}
             className="p-2 sm:px-2.5 sm:py-2 rounded-xl border text-xs font-bold transition hover:scale-105 active:scale-95 cursor-pointer shadow-2xs flex items-center gap-1.5"
             title={isPlayingAudio ? 'Stop Audio' : 'Listen Verse'}
           >
             {isPlayingAudio ? (
               <>
-                <VolumeX className="w-4 h-4 text-white animate-pulse" />
+                <VolumeX className="w-4 h-4 animate-pulse" />
                 <span className="text-[11px] hidden sm:inline">{language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Stop' : 'रोकें'}</span>
               </>
             ) : (
               <>
-                <Volume2 className="w-4 h-4 text-amber-600" />
+                <Volume2 className="w-4 h-4" style={{ color: theme.accentGold }} />
                 <span className="text-[11px] hidden sm:inline">{language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'सुनें'}</span>
               </>
             )}
@@ -574,7 +574,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
               setSourceMode('sutra');
             }}
             className={`px-2.5 py-1 rounded-lg transition cursor-pointer ${
-              sourceMode === 'sutra' ? 'bg-amber-600 text-white shadow-xs' : 'opacity-75 hover:opacity-100'
+              sourceMode === 'sutra' ? 'bg-[#8B2500] text-white shadow-xs' : 'opacity-80 hover:opacity-100'
             }`}
           >
             {language === 'pb' ? '✨ ਅਮਰ ਸੂਤਰ (10)' : language === 'en' ? '✨ Amrit Sutras (10)' : '✨ अमर सूत्र संग्रह (10)'}
@@ -586,7 +586,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
               setSourceMode('sakhi');
             }}
             className={`px-2.5 py-1 rounded-lg transition cursor-pointer ${
-              sourceMode === 'sakhi' ? 'bg-amber-600 text-white shadow-xs' : 'opacity-75 hover:opacity-100'
+              sourceMode === 'sakhi' ? 'bg-[#8B2500] text-white shadow-xs' : 'opacity-80 hover:opacity-100'
             }`}
           >
             {language === 'pb' ? `📜 ਸਾਖੀ ਬਿਬੇਕ (${sakhisList.length}+)` : language === 'en' ? `📜 Sakhi Wisdom (${sakhisList.length}+)` : `📜 साखी विवेक (${sakhisList.length}+)`}
@@ -605,7 +605,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
                 }}
                 className={`w-6 h-6 rounded-lg text-[10px] font-bold transition cursor-pointer shrink-0 border ${
                   sutraIdx % CURATED_AMRIT_SUTRAS.length === idx
-                    ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                    ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
                     : 'bg-amber-500/10 text-amber-900 dark:text-amber-200 border-amber-500/20 hover:bg-amber-500/20'
                 }`}
                 title={s.categoryTitle[language] || s.categoryTitle.hi}

@@ -366,7 +366,7 @@ export const SmartGlossaryTooltip: React.FC<SmartGlossaryTooltipProps> = ({
                         onClose();
                         onSelectSakhi(verseContext.matchedSakhi!);
                       }}
-                      className="w-full py-1 px-2.5 rounded-xl text-[10px] font-bold bg-amber-600 text-white hover:bg-amber-700 transition flex items-center justify-center gap-1 shadow-xs cursor-pointer"
+                      className="w-full py-1 px-2.5 rounded-xl text-[10px] font-bold bg-[#8B2500] text-white hover:bg-[#7C1D00] transition flex items-center justify-center gap-1 shadow-xs cursor-pointer"
                     >
                       <ExternalLink className="w-3 h-3" />
                       <span>{language === 'pb' ? 'ਇਸ ਸਾਖੀ ਦਾ ਪੂਰਨ ਸਵਾਧਿਆਇ ਕਰੋ' : language === 'en' ? 'Study This Sakhi in Swadhyay' : 'इस साखी का पूर्ण स्वाध्याय करें'}</span>

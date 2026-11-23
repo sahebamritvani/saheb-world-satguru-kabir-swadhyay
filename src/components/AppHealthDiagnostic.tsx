@@ -287,8 +287,8 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
         <button
           onClick={handleRefresh}
           disabled={isRefreshing}
-          style={{ backgroundColor: theme.sacredMaroon }}
-          className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-bold text-sm shadow-md hover:opacity-90 active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
+          style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+          className="inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold text-sm shadow-md hover:opacity-90 active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
         >
           <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
           {isRefreshing ? `${language === 'hi' ? 'जाँच हो रही है...' : language === 'pb' ? 'ਜਾਂਚ ਹੋ ਰਹੀ ਹੈ...' : 'Checking...'}` : t.refreshBtn}
@@ -304,7 +304,7 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-3xl border-2 space-y-4 shadow-sm hover:shadow-md transition-all group"
+              className="p-6 rounded-3xl border-2 space-y-4 shadow-sm hover:shadow-md transition-all group backdrop-blur-md"
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
             >
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${stat.bg} ${stat.color} transition-transform group-hover:scale-110 duration-300`}>
@@ -343,9 +343,9 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
               {t.localEnvDesc}
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-1 text-xs font-bold">
-              <span className="px-3 py-1 bg-white rounded-full border shadow-2xs">{t.platformLabel}: {typeof navigator !== 'undefined' ? navigator.platform : 'Web'}</span>
-              <span className="px-3 py-1 bg-white rounded-full border shadow-2xs">{t.themeLabel}: {theme.mode.toUpperCase()}</span>
-              <span className="px-3 py-1 bg-white rounded-full border shadow-2xs">{t.languageLabel}: {language.toUpperCase()}</span>
+              <span style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }} className="px-3 py-1 rounded-full border shadow-2xs backdrop-blur-md">{t.platformLabel}: {typeof navigator !== 'undefined' ? navigator.platform : 'Web'}</span>
+              <span style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }} className="px-3 py-1 rounded-full border shadow-2xs backdrop-blur-md">{t.themeLabel}: {theme.mode.toUpperCase()}</span>
+              <span style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }} className="px-3 py-1 rounded-full border shadow-2xs backdrop-blur-md">{t.languageLabel}: {language.toUpperCase()}</span>
             </div>
           </div>
         </div>
@@ -353,8 +353,8 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
         <button
           onClick={cacheOfflineContent}
           disabled={isCaching}
-          style={{ backgroundColor: theme.accentGold }}
-          className="px-5 py-3 rounded-2xl text-white font-bold text-xs sm:text-sm flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all disabled:opacity-50 shrink-0 cursor-pointer"
+          style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+          className="px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 transition-all disabled:opacity-50 shrink-0 cursor-pointer"
         >
           {isCaching ? (
             <RefreshCw className="w-4 h-4 animate-spin" />

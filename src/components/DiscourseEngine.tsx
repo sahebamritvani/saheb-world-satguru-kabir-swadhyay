@@ -239,7 +239,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
               onClick={() => setIsCustomMode(false)}
               className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition cursor-pointer ${
                 !isCustomMode
-                  ? 'bg-amber-600 text-white shadow-md'
+                  ? 'bg-[#8B2500] text-white shadow-md'
                   : 'bg-black/5 dark:bg-white/5 border border-amber-500/20 text-amber-900 dark:text-amber-200'
               }`}
             >
@@ -251,7 +251,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
               onClick={() => setIsCustomMode(true)}
               className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition cursor-pointer ${
                 isCustomMode
-                  ? 'bg-amber-600 text-white shadow-md'
+                  ? 'bg-[#8B2500] text-white shadow-md'
                   : 'bg-black/5 dark:bg-white/5 border border-amber-500/20 text-amber-900 dark:text-amber-200'
               }`}
             >
@@ -274,7 +274,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
       {isCustomMode ? (
         <div
           style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-          className="p-5 rounded-3xl border-2 space-y-3 shadow-md animate-fadeIn"
+          className="p-5 rounded-3xl border-2 backdrop-blur-md space-y-3 shadow-md animate-fadeIn"
         >
           <label className="text-xs font-bold font-serif flex items-center gap-2 text-amber-900 dark:text-amber-200">
             <Edit3 className="w-4 h-4 text-amber-600" />
@@ -303,7 +303,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
       ) : (
         <div
           style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-          className="p-5 rounded-3xl border-2 space-y-3 shadow-md animate-fadeIn"
+          className="p-5 rounded-3xl border-2 backdrop-blur-md space-y-3 shadow-md animate-fadeIn"
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -329,7 +329,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
                 onClick={() => setSelectedSakhi(s)}
                 className={`p-2.5 rounded-xl border text-left text-xs font-serif transition cursor-pointer flex flex-col justify-between gap-1 ${
                   selectedSakhi.number === s.number
-                    ? 'bg-amber-600 text-white font-bold shadow-sm border-amber-500'
+                    ? 'bg-[#8B2500] text-white font-bold shadow-sm border-amber-500'
                     : 'bg-black/5 dark:bg-white/5 hover:bg-amber-500/10 border-amber-500/10'
                 }`}
               >
@@ -348,7 +348,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
           ========================================================================= */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-        className="p-6 rounded-3xl border-2 space-y-3 shadow-md relative"
+        className="p-6 rounded-3xl border-2 backdrop-blur-md space-y-3 shadow-md relative"
       >
         <div className="flex flex-wrap items-center justify-between border-b pb-3 border-amber-500/20 gap-2">
           <h2 className="text-lg sm:text-xl font-serif font-black flex items-center gap-2.5 text-amber-900 dark:text-amber-200">
@@ -374,7 +374,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
           ========================================================================= */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-        className="p-6 sm:p-8 rounded-3xl border-2 text-center relative overflow-hidden shadow-xl space-y-5"
+        className="p-6 sm:p-8 rounded-3xl border-2 backdrop-blur-md text-center relative overflow-hidden shadow-xl space-y-5"
       >
         <div className="flex flex-wrap items-center justify-between border-b pb-3 border-amber-500/20 gap-2">
           <span className="text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-300">
@@ -387,7 +387,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
               onClick={handleToggleSpeech}
               className={`px-3.5 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition cursor-pointer shadow-xs ${
                 isSpeaking
-                  ? 'bg-amber-600 text-white border-amber-500 animate-pulse'
+                  ? 'bg-[#8B2500] text-white border-amber-500 animate-pulse'
                   : 'bg-amber-500/10 text-amber-900 dark:text-amber-200 border-amber-500/20 hover:bg-amber-500/20'
               }`}
             >
@@ -400,7 +400,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
               onClick={() => setShowDroneMixer(!showDroneMixer)}
               className={`p-1.5 rounded-xl border text-xs font-bold transition cursor-pointer ${
                 isDronePlaying || showDroneMixer
-                  ? 'bg-amber-600 text-white border-amber-500'
+                  ? 'bg-[#8B2500] text-white border-amber-500'
                   : 'bg-amber-500/10 text-amber-900 dark:text-amber-200 border-amber-500/20'
               }`}
               title="Anahad Tanpura/Drone Mixer Controls"
@@ -428,7 +428,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
                 <button
                   onClick={handleToggleDrone}
                   className={`px-3 py-1 rounded-xl text-xs font-bold cursor-pointer ${
-                    isDronePlaying ? 'bg-amber-600 text-white' : 'bg-amber-200 text-amber-950'
+                    isDronePlaying ? 'bg-[#8B2500] text-white' : 'bg-amber-200 text-amber-950'
                   }`}
                 >
                   {isDronePlaying ? 'ड्रोन बंद करें' : '▶ चालू करें'}
@@ -447,7 +447,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
                     onClick={() => handleChangeDroneSound(snd.id as DhunSoundType)}
                     className={`py-1.5 px-2 rounded-xl text-xs font-bold border transition cursor-pointer ${
                       droneSoundType === snd.id
-                        ? 'bg-amber-600 text-white border-amber-500 shadow-xs'
+                        ? 'bg-[#8B2500] text-white border-amber-500 shadow-xs'
                         : 'bg-white dark:bg-zinc-800 text-amber-900 dark:text-amber-200 border-amber-200'
                     }`}
                   >
@@ -476,7 +476,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
                   <button
                     onClick={() => setSacredFreq('432')}
                     className={`px-2 py-0.5 rounded-lg border ${
-                      sacredFreq === '432' ? 'bg-amber-600 text-white' : 'bg-black/5'
+                      sacredFreq === '432' ? 'bg-[#8B2500] text-white' : 'bg-black/5'
                     }`}
                   >
                     432Hz
@@ -484,7 +484,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
                   <button
                     onClick={() => setSacredFreq('440')}
                     className={`px-2 py-0.5 rounded-lg border ${
-                      sacredFreq === '440' ? 'bg-amber-600 text-white' : 'bg-black/5'
+                      sacredFreq === '440' ? 'bg-[#8B2500] text-white' : 'bg-black/5'
                     }`}
                   >
                     440Hz
@@ -519,7 +519,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
           ========================================================================= */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-        className="p-6 rounded-3xl border-2 space-y-3 shadow-md"
+        className="p-6 rounded-3xl border-2 backdrop-blur-md space-y-3 shadow-md"
       >
         <div className="flex items-center justify-between">
           <h2 className="text-lg sm:text-xl font-serif font-black flex items-center gap-2.5 text-amber-900 dark:text-amber-200">
@@ -567,7 +567,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
           ========================================================================= */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-        className="p-6 rounded-3xl border-2 space-y-4 shadow-md"
+        className="p-6 rounded-3xl border-2 backdrop-blur-md space-y-4 shadow-md"
       >
         <div className="flex items-center justify-between border-b pb-3 border-amber-500/20">
           <h2 className="text-lg sm:text-xl font-serif font-black flex items-center gap-2.5 text-amber-900 dark:text-amber-200">
@@ -577,7 +577,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
 
           <button
             onClick={() => setUnlockDeepBhavarth(!unlockDeepBhavarth)}
-            className="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 bg-amber-600 text-white shadow-sm hover:scale-105 active:scale-95 transition cursor-pointer"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 bg-[#8B2500] text-white shadow-sm hover:scale-105 active:scale-95 transition cursor-pointer"
           >
             {unlockDeepBhavarth ? <Unlock className="w-4 h-4 text-amber-200" /> : <Lock className="w-4 h-4" />}
             <span>{unlockDeepBhavarth ? 'सुरति शब्द योग खोलें' : 'भावार्थ खोलें'}</span>
@@ -639,7 +639,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
           ========================================================================= */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-        className="p-6 rounded-3xl border-2 space-y-4 shadow-md"
+        className="p-6 rounded-3xl border-2 backdrop-blur-md space-y-4 shadow-md"
       >
         <div className="flex items-center justify-between border-b pb-3 border-amber-500/20">
           <h2 className="text-lg sm:text-xl font-serif font-black flex items-center gap-2.5 text-amber-900 dark:text-amber-200">
@@ -678,7 +678,7 @@ ${discourseData.dainikChintan.questions.join('\n')}
             <button
               onClick={handleSaveJournal}
               disabled={!journalInput.trim()}
-              className="px-5 py-2.5 rounded-xl bg-amber-600 text-white text-xs font-bold font-serif shadow-md hover:scale-105 active:scale-95 transition disabled:opacity-40 cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2.5 rounded-xl bg-[#8B2500] text-white text-xs font-bold font-serif shadow-md hover:scale-105 active:scale-95 transition disabled:opacity-40 cursor-pointer flex items-center gap-1.5"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>{language === 'pb' ? 'ਸੰਕਲਪ ਸੁਰੱਖਿਅਤ ਕਰੋ' : language === 'en' ? 'Save Reflection' : 'साधना संकल्प सुरक्षित करें'}</span>

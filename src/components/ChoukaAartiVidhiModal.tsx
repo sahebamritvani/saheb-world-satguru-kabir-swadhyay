@@ -108,10 +108,10 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
           initial={{ opacity: 0, scale: 0.9, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 15 }}
-          className="relative w-full max-w-2xl rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white dark:bg-zinc-900 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+          className="relative w-full max-w-2xl rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
         >
           {/* Header */}
-          <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-gradient-to-r from-amber-600 via-amber-700 to-orange-700 text-white flex items-center justify-between">
+          <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-gradient-to-r from-[#7C1D00] via-[#8B2500] to-[#9A3412] text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center text-xl shadow-sm">
                 🪷
@@ -141,7 +141,7 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
               onClick={() => setActiveTab('qna')}
               className={`flex-1 py-2 px-3 rounded-xl font-bold font-serif text-xs transition cursor-pointer flex items-center justify-center gap-1.5 ${
                 activeTab === 'qna'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-amber-100 dark:hover:bg-zinc-800'
               }`}
             >
@@ -154,7 +154,7 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
               onClick={() => setActiveTab('vidhi')}
               className={`flex-1 py-2 px-3 rounded-xl font-bold font-serif text-xs transition cursor-pointer flex items-center justify-center gap-1.5 ${
                 activeTab === 'vidhi'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-amber-100 dark:hover:bg-zinc-800'
               }`}
             >

@@ -498,7 +498,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
             <History className="w-3.5 h-3.5" />
             <span>{isHi ? '📜 पठन इतिहास (Last 10)' : isPb ? '📜 ਪਠਨ ਇਤਿਹਾਸ' : '📜 Reading History'}</span>
             {historyItems.length > 0 && (
-              <span className="w-4 h-4 rounded-full bg-amber-600 text-white text-[9px] font-mono flex items-center justify-center font-bold">
+              <span className="w-4 h-4 rounded-full bg-[#8B2500] text-white text-[9px] font-mono flex items-center justify-center font-bold">
                 {historyItems.length}
               </span>
             )}
@@ -507,7 +507,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
 
         {/* Success Toast Notice */}
         {savedSuccessNotice && (
-          <div className="bg-amber-600 text-white px-3 py-1.5 text-xs font-bold font-serif text-center flex items-center justify-center gap-1.5 animate-fadeIn shrink-0">
+          <div className="bg-[#8B2500] text-white px-3 py-1.5 text-xs font-bold font-serif text-center flex items-center justify-center gap-1.5 animate-fadeIn shrink-0">
             <Check className="w-3.5 h-3.5" />
             <span>{savedSuccessNotice}</span>
           </div>
@@ -531,7 +531,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                     </p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold font-mono">
+                <span className="px-2 py-0.5 rounded-full bg-[#8B2500] text-white text-[10px] font-bold font-mono">
                   9 MODES
                 </span>
               </div>
@@ -638,7 +638,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                     }}
                     className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex items-start gap-2.5 ${
                       mode.active
-                        ? 'bg-amber-600 text-white border-amber-600 shadow-md ring-2 ring-amber-400/40'
+                        ? 'bg-[#8B2500] text-white border-amber-600 shadow-md ring-2 ring-amber-400/40'
                         : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-800 dark:text-gray-200 hover:border-amber-400'
                     }`}
                   >
@@ -664,7 +664,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                 onClick={() => handleSelectReadingMode('scroll')}
                 className={`p-3 rounded-2xl border text-center transition flex flex-col items-center justify-center gap-1.5 cursor-pointer font-serif ${
                   readingFramework === 'scroll' 
-                    ? 'bg-amber-600 text-white border-amber-600 font-bold shadow-md' 
+                    ? 'bg-[#8B2500] text-white border-[#7C1D00] font-bold shadow-md' 
                     : 'bg-black/5 dark:bg-white/5 text-stone-800 dark:text-stone-200 border-stone-200 dark:border-zinc-800'
                 }`}
               >
@@ -677,7 +677,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                 onClick={() => handleSelectReadingMode('parallel')}
                 className={`p-3 rounded-2xl border text-center transition flex flex-col items-center justify-center gap-1.5 cursor-pointer font-serif ${
                   readingFramework === 'parallel' 
-                    ? 'bg-amber-600 text-white border-amber-600 font-bold shadow-md' 
+                    ? 'bg-[#8B2500] text-white border-[#7C1D00] font-bold shadow-md' 
                     : 'bg-black/5 dark:bg-white/5 text-stone-800 dark:text-stone-200 border-stone-200 dark:border-zinc-800'
                 }`}
               >
@@ -690,7 +690,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                 onClick={() => handleSelectReadingMode('flip')}
                 className={`p-3 rounded-2xl border text-center transition flex flex-col items-center justify-center gap-1.5 cursor-pointer font-serif ${
                   readingFramework === 'flip' 
-                    ? 'bg-amber-600 text-white border-amber-600 font-bold shadow-md' 
+                    ? 'bg-[#8B2500] text-white border-[#7C1D00] font-bold shadow-md' 
                     : 'bg-black/5 dark:bg-white/5 text-stone-800 dark:text-stone-200 border-stone-200 dark:border-zinc-800'
                 }`}
               >
@@ -704,7 +704,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                 onClick={() => handleThemeChange('mool')}
                 className={`p-3 rounded-2xl border text-center transition flex flex-col items-center justify-center gap-1.5 cursor-pointer font-serif ${
                   activeTheme === 'mool' 
-                    ? 'bg-amber-600 text-white border-amber-600 font-bold shadow-md' 
+                    ? 'bg-[#8B2500] text-white border-[#7C1D00] font-bold shadow-md' 
                     : 'bg-black/5 dark:bg-white/5 text-stone-800 dark:text-stone-200 border-stone-200 dark:border-zinc-800'
                 }`}
               >
@@ -741,7 +741,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                   <span className="w-1 h-1 rounded-full bg-amber-600" />
                   <button
                     onClick={() => setWidthMode(widthMode === 'wide' ? 'medium' : 'wide')}
-                    className="text-[10px] font-black bg-amber-600 text-white px-2 py-0.5 rounded-md"
+                    className="text-[10px] font-black bg-[#8B2500] text-white px-2 py-0.5 rounded-md"
                   >
                     {widthMode === 'wide' ? '7XL' : '5XL'}
                   </button>
@@ -804,7 +804,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                   sacredHaptics.lightTap();
                   onClose();
                 }}
-                className="p-3 rounded-2xl border bg-amber-600 text-white border-amber-600 text-center transition flex flex-col items-center justify-center gap-1.5 cursor-pointer font-serif font-bold shadow-md hover:scale-105 active:scale-95"
+                className="p-3 rounded-2xl border bg-[#8B2500] text-white border-[#7C1D00] text-center transition flex flex-col items-center justify-center gap-1.5 cursor-pointer font-serif font-bold shadow-md hover:scale-105 active:scale-95"
               >
                 <Sparkles className="w-5 h-5" />
                 <span className="text-[11px] leading-tight uppercase tracking-tighter font-black">{isPb ? 'ਉੱਨਤ ਸਾਧਨ' : 'उन्नत साधन'}</span>
@@ -826,7 +826,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                       onClick={() => handleSpeedChange(spd)}
                       className={`py-2 px-1 rounded-xl text-xs font-mono font-black border transition-all cursor-pointer ${
                         autoScrollSpeed === spd
-                          ? 'bg-amber-600 text-white border-amber-600 shadow-md ring-2 ring-amber-400/40 scale-105'
+                          ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-md ring-2 ring-amber-400/40 scale-105'
                           : 'bg-white dark:bg-zinc-800 text-stone-700 dark:text-stone-300 border-stone-200 dark:border-zinc-700 hover:border-amber-400'
                       }`}
                     >
@@ -855,7 +855,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
                       onClick={() => handleThemeChange(nt.id as any)}
                       className={`px-3 py-2 rounded-xl text-[11px] font-serif font-bold transition cursor-pointer border ${
                         activeTheme === nt.id
-                          ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                          ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
                           : 'bg-black/5 border-transparent hover:bg-black/10'
                       }`}
                     >
@@ -957,7 +957,7 @@ export const AdvancedReadingSuiteModal: React.FC<AdvancedReadingSuiteModalProps>
 
                     <button
                       type="button"
-                      className="px-3 py-1.5 rounded-xl bg-amber-600 text-white font-serif font-bold text-xs flex items-center gap-1 shrink-0 shadow-xs group-hover:scale-105 transition"
+                      className="px-3 py-1.5 rounded-xl bg-[#8B2500] text-white font-serif font-bold text-xs flex items-center gap-1 shrink-0 shadow-xs group-hover:scale-105 transition"
                     >
                       <RotateCcw className="w-3 h-3" />
                       <span>{isHi ? 'पुनः पढ़ें' : isPb ? 'ਦੁਬਾਰਾ ਪੜ੍ਹੋ' : 'Resume'}</span>

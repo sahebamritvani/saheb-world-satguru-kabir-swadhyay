@@ -192,7 +192,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     autoScrollActive: isAkhandScrollActive,
     setAutoScrollActive: setIsAkhandScrollActive,
     autoScrollSpeed: globalAutoScrollSpeed,
-    setAutoScrollSpeed
+    setAutoScrollSpeed,
+    globalWallpaper
   } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const lang = language || contextLang;
@@ -1513,18 +1514,43 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const isFlowTheme = themeMode === 'flow_state' || readingTheme === 'flow_state';
 
   // Theme configuration computed for specific reading modes
+  const hasWp = !!globalWallpaper;
   const rc = {
-    bg: isFlowTheme ? '#0F172A' : readingTheme === 'sepia' ? '#FAF4E8' : isNightTheme ? '#0A0806' : readingTheme === 'contrast' ? '#ECEFF1' : theme.bg,
-    cardBg: isFlowTheme ? '#1E2238' : readingTheme === 'sepia' ? '#FFFDF9' : isNightTheme ? '#18130E' : readingTheme === 'contrast' ? '#FFFFFF' : theme.cardBg,
+    bg: isFlowTheme
+      ? (hasWp ? 'rgba(15, 23, 42, 0.72)' : '#0F172A')
+      : readingTheme === 'sepia'
+      ? (hasWp ? 'rgba(250, 244, 232, 0.80)' : '#FAF4E8')
+      : isNightTheme
+      ? (hasWp ? 'rgba(10, 8, 6, 0.72)' : '#0A0806')
+      : readingTheme === 'contrast'
+      ? (hasWp ? 'rgba(236, 239, 241, 0.84)' : '#ECEFF1')
+      : theme.bg,
+    cardBg: isFlowTheme
+      ? (hasWp ? 'rgba(30, 34, 56, 0.76)' : '#1E2238')
+      : readingTheme === 'sepia'
+      ? (hasWp ? 'rgba(255, 253, 249, 0.86)' : '#FFFDF9')
+      : isNightTheme
+      ? (hasWp ? 'rgba(24, 19, 14, 0.76)' : '#18130E')
+      : readingTheme === 'contrast'
+      ? (hasWp ? 'rgba(255, 255, 255, 0.88)' : '#FFFFFF')
+      : theme.cardBg,
     text: isFlowTheme ? '#FEF3C7' : readingTheme === 'sepia' ? '#2E1C0C' : isNightTheme ? '#FFFDF7' : readingTheme === 'contrast' ? '#1C2833' : theme.textPrimary,
     textSecondary: isFlowTheme ? '#FDE68A' : readingTheme === 'sepia' ? '#6B4C2C' : isNightTheme ? '#FDE68A' : readingTheme === 'contrast' ? '#566573' : theme.textSecondary,
-    textMuted: isFlowTheme ? '#CBD5E1' : readingTheme === 'sepia' ? '#967654' : isNightTheme ? '#E2D9C8' : readingTheme === 'contrast' ? '#7F8C8D' : theme.textMuted,
+    textMuted: isFlowTheme ? '#CBD5E1' : readingTheme === 'sepia' ? '#7D5E3C' : isNightTheme ? '#E2D9C8' : readingTheme === 'contrast' ? '#5D6D7E' : theme.textMuted,
     accent: isFlowTheme ? '#FBBF24' : readingTheme === 'sepia' ? '#B87828' : isNightTheme ? '#F59E0B' : readingTheme === 'contrast' ? '#117A65' : theme.accentGold,
-    accentLight: isFlowTheme ? '#312E81' : readingTheme === 'sepia' ? '#FBE8C8' : isNightTheme ? '#2D2012' : readingTheme === 'contrast' ? '#E8F8F5' : theme.accentGoldLight,
+    accentLight: isFlowTheme ? 'rgba(49, 46, 129, 0.75)' : readingTheme === 'sepia' ? 'rgba(251, 232, 200, 0.80)' : isNightTheme ? 'rgba(45, 32, 18, 0.80)' : readingTheme === 'contrast' ? '#E8F8F5' : theme.accentGoldLight,
     maroon: isFlowTheme ? '#FDE68A' : readingTheme === 'sepia' ? '#8C2818' : isNightTheme ? '#FEF3C7' : readingTheme === 'contrast' ? '#922B21' : theme.sacredMaroon,
-    border: isFlowTheme ? 'rgba(251, 191, 36, 0.3)' : readingTheme === 'sepia' ? '#E4D5BE' : isNightTheme ? 'rgba(253, 230, 138, 0.22)' : readingTheme === 'contrast' ? '#BDC3C7' : theme.cardBorder,
-    borderOrnament: isFlowTheme ? 'rgba(251, 191, 36, 0.4)' : readingTheme === 'sepia' ? '#D9C19E' : isNightTheme ? 'rgba(253, 230, 138, 0.35)' : readingTheme === 'contrast' ? '#BDC3C7' : theme.borderOrnament,
-    stepActive: isFlowTheme ? '#282559' : readingTheme === 'sepia' ? '#F5E4C4' : isNightTheme ? '#2A2016' : readingTheme === 'contrast' ? '#D5F5E3' : theme.stepActiveBg,
+    border: isFlowTheme ? 'rgba(251, 191, 36, 0.35)' : readingTheme === 'sepia' ? '#E4D5BE' : isNightTheme ? 'rgba(253, 230, 138, 0.25)' : readingTheme === 'contrast' ? '#BDC3C7' : theme.cardBorder,
+    borderOrnament: isFlowTheme ? 'rgba(251, 191, 36, 0.45)' : readingTheme === 'sepia' ? '#D9C19E' : isNightTheme ? 'rgba(253, 230, 138, 0.35)' : readingTheme === 'contrast' ? '#BDC3C7' : theme.borderOrnament,
+    stepActive: isFlowTheme
+      ? (hasWp ? 'rgba(40, 37, 89, 0.78)' : '#282559')
+      : readingTheme === 'sepia'
+      ? (hasWp ? 'rgba(245, 228, 196, 0.82)' : '#F5E4C4')
+      : isNightTheme
+      ? (hasWp ? 'rgba(42, 32, 22, 0.78)' : '#2A2016')
+      : readingTheme === 'contrast'
+      ? '#D5F5E3'
+      : theme.stepActiveBg,
   };
 
   const handleToggleSpeech = (customText?: string) => {
@@ -1616,7 +1642,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           <button
             type="button"
             onClick={() => handleUnlockNextEightStep(stepNum)}
-            style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
             className="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer shadow-md hover:scale-102 active:scale-95 transition"
           >
             <span>
@@ -1626,7 +1652,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 ? `Complete Step ${stepNum} (Unlock Step ${stepNum + 1})`
                 : `चरण ${stepNum} पूरा करें (अगला चरण अनलॉक करें)`}
             </span>
-            <FastForward className="w-3.5 h-3.5 text-white" />
+            <FastForward className="w-3.5 h-3.5" />
           </button>
         </div>
       );
@@ -1641,7 +1667,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           <button
             type="button"
             onClick={handleUnlockNextStep}
-            style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
             className="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer shadow-md hover:scale-102 active:scale-95 transition"
           >
             <span>
@@ -1651,7 +1677,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 ? `Complete Step ${stepNum} (Unlock Step ${stepNum + 1})`
                 : `चरण ${stepNum} पूरा करें (अगला चरण अनलॉक करें)`}
             </span>
-            <FastForward className="w-3.5 h-3.5 text-white" />
+            <FastForward className="w-3.5 h-3.5" />
           </button>
         </div>
       );
@@ -1752,8 +1778,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               type="button"
               onClick={handlePlayVerseOnly}
               style={{
-                backgroundColor: isPlayingVerseOnly ? '#B45309' : rc.accent,
-                color: '#FFFFFF',
+                backgroundColor: isPlayingVerseOnly ? '#8B2500' : theme.buttonPrimaryBg,
+                color: isPlayingVerseOnly ? '#FFFFFF' : theme.buttonPrimaryText,
               }}
               className="px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-sm hover:opacity-90 active:scale-95 transition cursor-pointer"
               title={
@@ -1815,7 +1841,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               <button
                 type="button"
                 onClick={() => handleSaveSiddhantNote()}
-                className="px-3.5 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 shadow-sm hover:scale-102 active:scale-95 transition cursor-pointer"
+                className="px-3.5 py-1.5 bg-[#8B2500] hover:bg-[#7C1D00] text-white rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 shadow-sm hover:scale-102 active:scale-95 transition cursor-pointer"
               >
                 <Bookmark className="w-3.5 h-3.5" />
                 <span>
@@ -2193,13 +2219,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           borderColor: rc.border,
           color: rc.text,
         }}
-        className={`rounded-2xl border shadow-lg overflow-x-hidden flex flex-col transition-all duration-300 mx-auto w-full relative ${getWidthClass(widthMode)}`}
+        className={`rounded-2xl border backdrop-blur-md shadow-lg overflow-x-hidden flex flex-col transition-all duration-300 mx-auto w-full relative ${getWidthClass(widthMode)}`}
       >
       {/* 👈 👉 Swipe Gestures Floating Feedback */}
       {swipeToast && (
         <div 
           style={{ backgroundColor: rc.stepActive, borderColor: rc.accent, color: rc.maroon }}
-          className="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl border-2 shadow-2xl flex items-center gap-2 text-xs font-bold font-serif animate-bounce"
+          className="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl border-2 backdrop-blur-md shadow-2xl flex items-center gap-2 text-xs font-bold font-serif animate-bounce"
         >
           {swipeToast.direction === 'left' ? (
             <>
@@ -2226,9 +2252,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           <span className="text-base sm:text-lg select-none shrink-0" aria-hidden="true">🌹</span>
           <span
             style={{ color: rc.maroon }}
-            className="text-sm sm:text-base font-bold tracking-widest font-serif whitespace-nowrap"
+            className="text-sm sm:text-base font-bold tracking-normal font-serif whitespace-nowrap"
           >
-            {language === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : language === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।'}
+            {language === 'pb' ? '।। ਸਤ੍ਯਨਾਮ ।।' : language === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।'}
           </span>
           <span className="text-base sm:text-lg select-none shrink-0" aria-hidden="true">🌹</span>
         </div>
@@ -2293,7 +2319,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 disabled={!isUnlocked}
                 className={`min-h-[40px] sm:min-h-[30px] px-3 sm:px-2.5 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-[0.6875rem] sm:text-[0.625rem] font-bold font-serif whitespace-nowrap transition cursor-pointer flex items-center gap-1 ${
                   isCurrent
-                    ? 'bg-amber-600 text-white shadow-xs scale-[1.03]'
+                    ? 'bg-[#8B2500] text-white shadow-xs scale-[1.03]'
                     : isUnlocked
                     ? 'bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20'
                     : 'bg-stone-200/50 dark:bg-stone-800/50 text-stone-400 cursor-not-allowed opacity-50'
@@ -4048,7 +4074,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       className="p-4 rounded-2xl border space-y-1.5"
                     >
                       <h5 style={{ color: rc.maroon }} className="font-bold text-xs sm:text-sm font-serif flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[0.625rem] font-mono">
+                        <span className="w-5 h-5 rounded-full bg-[#8B2500] text-white flex items-center justify-center text-[0.625rem] font-mono">
                           {stg.stageNumber}
                         </span>
                         <span>{stg.title}</span>

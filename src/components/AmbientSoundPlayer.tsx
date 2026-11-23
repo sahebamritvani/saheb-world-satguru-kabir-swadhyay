@@ -264,7 +264,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
                             <div
                               className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
                                 isSelected
-                                  ? 'bg-amber-600 text-white shadow-xs'
+                                  ? 'bg-[#8B2500] text-white shadow-xs'
                                   : 'bg-black/5 dark:bg-white/5 text-amber-700 dark:text-amber-300'
                               }`}
                             >
@@ -309,7 +309,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
                     left: `${popoverCoords.left}px`,
                     width: `${popoverCoords.width}px`,
                   }}
-                  className="fixed z-[121] rounded-2xl border shadow-2xl p-3 space-y-2.5 animate-fadeIn"
+                  className="fixed z-[121] rounded-2xl border shadow-2xl p-3 space-y-2.5 animate-fadeIn backdrop-blur-xl"
                 >
                   <div
                     style={{ borderColor: theme.cardBorder }}
@@ -350,7 +350,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
                             <div
                               className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
                                 isSelected
-                                  ? 'bg-amber-600 text-white'
+                                  ? 'bg-[#8B2500] text-white'
                                   : 'bg-black/5 dark:bg-white/5 text-amber-600 dark:text-amber-300'
                               }`}
                             >
@@ -467,7 +467,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
                 <div
                   className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shrink-0 ${
                     isSelected
-                      ? 'bg-amber-600 text-white shadow-xs'
+                      ? 'bg-[#8B2500] text-white shadow-xs'
                       : 'bg-black/5 dark:bg-white/5 text-amber-700 dark:text-amber-300'
                   }`}
                 >

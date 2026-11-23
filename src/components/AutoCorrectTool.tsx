@@ -729,7 +729,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
                       onClick={() => toggleField(f.id as TargetField)}
                       className={`px-3 py-1.5 rounded-xl border text-xs font-serif cursor-pointer transition select-none flex items-center gap-1.5 ${
                         isChecked 
-                          ? 'bg-amber-600 text-white font-bold border-amber-600' 
+                          ? 'bg-[#8B2500] text-white font-bold border-[#7C1D00]' 
                           : 'bg-black/5 dark:bg-white/5 border-transparent opacity-70'
                       }`}
                     >

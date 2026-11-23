@@ -28,6 +28,7 @@ import {
   setupMidnightHukamnamaListener,
   getDailyLifeDiscipline,
 } from '../services/dailyHukamnamaService';
+import { useAppTheme } from '../theme/ThemeContext';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 
@@ -44,6 +45,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
   onBack,
   onOpenWallpaperEngine
 }) => {
+  const { theme, isDarkMode } = useAppTheme();
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [verse, setVerse] = useState<SggsKabirVerse>(() => getDailyHukamnama(new Date()));
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
@@ -80,12 +82,6 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
   const discipline = getDailyLifeDiscipline(verse, language);
   const isPb = language === 'pb';
   const isEn = language === 'en';
-
-  const moolLines = isPb 
-    ? verse.moolGurmukhi 
-    : isEn && verse.moolRoman?.length 
-    ? verse.moolRoman 
-    : verse.moolDevanagari;
 
   const bhavarthText = isPb 
     ? verse.bhavarth?.pb 
@@ -147,7 +143,8 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(shareText);
-      alert('हुकमनामा कॉपी हो गया!');
+      setCopiedScript('share');
+      setTimeout(() => setCopiedScript(null), 2500);
     }
   };
 
@@ -161,7 +158,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
   const isToday = currentDate.toDateString() === new Date().toDateString();
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 pb-28 px-4 sm:px-6">
+    <div className="max-w-5xl mx-auto space-y-6 pb-28 px-4 sm:px-6" style={{ color: theme.textPrimary }}>
       {/* TOP NAVIGATION BAR */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-4">
         <button
@@ -170,54 +167,68 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
             sacredHaptics.lightTap();
             onBack();
           }}
-          className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-white dark:bg-zinc-900 border border-amber-500/25 text-amber-950 dark:text-amber-100 font-bold text-xs shadow-xs hover:bg-amber-500/10 transition cursor-pointer"
+          style={{
+            backgroundColor: theme.cardBg,
+            borderColor: theme.cardBorder,
+            color: theme.textPrimary,
+          }}
+          className="flex items-center gap-2 px-4 py-2 rounded-2xl border backdrop-blur-md font-bold text-xs shadow-xs hover:opacity-90 transition cursor-pointer"
         >
-          <ArrowLeft className="w-4 h-4 text-amber-600" />
+          <ArrowLeft className="w-4 h-4" style={{ color: theme.accentGold }} />
           <span>{isPb ? 'ਵਾਪਸ ਮੁੱਖ ਪੰਨੇ ਤੇ' : isEn ? 'Back to Daily View' : 'वापस दैनिक स्वाध्याय'}</span>
         </button>
 
         {/* Global Language Switcher */}
-        <div className="flex items-center gap-1.5 p-1 bg-white dark:bg-zinc-900 rounded-2xl border border-amber-500/25 shadow-xs">
-          <Languages className="w-4 h-4 text-amber-600 ml-2 mr-1" />
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+          className="flex items-center gap-1.5 p-1 rounded-2xl border backdrop-blur-md shadow-xs"
+        >
+          <Languages className="w-4 h-4 ml-2 mr-1" style={{ color: theme.accentGold }} />
           {[
             { code: 'hi', label: 'हिंदी' },
             { code: 'pb', label: 'ਪੰਜਾਬੀ' },
             { code: 'en', label: 'English' }
-          ].map((l) => (
-            <button
-              key={l.code}
-              type="button"
-              onClick={() => {
-                sacredHaptics.lightTap();
-                onLanguageChange(l.code as Language);
-              }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${
-                language === l.code
-                  ? 'bg-amber-600 text-white shadow-xs'
-                  : 'text-amber-950 dark:text-amber-100 hover:bg-amber-500/15'
-              }`}
-            >
-              {l.label}
-            </button>
-          ))}
+          ].map((l) => {
+            const isSel = language === l.code;
+            return (
+              <button
+                key={l.code}
+                type="button"
+                onClick={() => {
+                  sacredHaptics.lightTap();
+                  onLanguageChange(l.code as Language);
+                }}
+                style={
+                  isSel
+                    ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }
+                    : { color: theme.textPrimary }
+                }
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${
+                  isSel ? 'shadow-xs' : 'hover:bg-amber-500/15'
+                }`}
+              >
+                {l.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
       {/* HEADER BANNER */}
-      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-amber-900 via-amber-800 to-orange-950 text-white p-6 sm:p-8 shadow-xl">
+      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#6B1800]/95 via-[#8B2500]/95 to-[#7C2D12]/95 backdrop-blur-md text-white p-6 sm:p-8 shadow-xl border border-amber-400/30">
         <div className="relative z-10 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-200 text-xs font-bold font-serif">
-              <Scroll className="w-3.5 h-3.5 text-amber-400" />
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/25 border border-amber-300/35 text-amber-100 text-xs font-bold font-serif">
+              <Scroll className="w-3.5 h-3.5 text-amber-300" />
               <span>ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ</span>
             </span>
 
             {/* Date Navigator */}
-            <div className="flex items-center gap-2 bg-black/30 rounded-2xl p-1 border border-white/10 text-xs">
+            <div className="flex items-center gap-2 bg-black/35 rounded-2xl p-1 border border-white/15 text-xs">
               <button
                 type="button"
                 onClick={() => handleDateShift(-1)}
-                className="p-1 rounded-lg hover:bg-white/10 transition cursor-pointer"
+                className="p-1 rounded-lg hover:bg-white/15 transition cursor-pointer"
                 title="पिछला दिन"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -234,7 +245,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
               <button
                 type="button"
                 onClick={() => handleDateShift(1)}
-                className="p-1 rounded-lg hover:bg-white/10 transition cursor-pointer"
+                className="p-1 rounded-lg hover:bg-white/15 transition cursor-pointer"
                 title="अगला दिन"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -244,7 +255,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setCurrentDate(new Date())}
-                  className="px-2 py-0.5 rounded-md bg-amber-500 text-black text-[10px] font-bold"
+                  className="px-2 py-0.5 rounded-md bg-amber-400 text-black text-[10px] font-bold cursor-pointer"
                 >
                   आज
                 </button>
@@ -252,11 +263,11 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
             </div>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-serif font-black tracking-wide text-amber-100">
+          <h1 className="text-2xl sm:text-4xl font-serif font-black tracking-wide text-amber-50">
             {isPb ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਪਾਵਨ ਬਾਣੀ ਹੁਕਮਨਾਮਾ' : isEn ? 'Satguru Kabir Saheb Sacred Vani Hukamnama' : 'सतगुरु कबीर साहेब पावन वाणी हुकमनामा'}
           </h1>
 
-          <p className="text-xs sm:text-sm text-amber-100/80 font-serif max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-amber-100/90 font-serif max-w-2xl leading-relaxed">
             {isPb 
               ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦਾ ਪਾਵਨ ਫ਼ੁਰਮਾਨ, ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਰਹੱਸ ਅਤੇ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਅਨੁਸ਼ਾਸਨ।'
               : isEn 
@@ -267,16 +278,22 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
       </div>
 
       {/* SCRIPTURAL CITATION BAR */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-amber-50 dark:bg-[#1E1610] border border-amber-500/20 text-xs font-serif font-bold text-amber-900 dark:text-amber-200">
+      <div
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+        className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl border backdrop-blur-md text-xs font-serif font-bold shadow-sm"
+      >
         <div className="flex items-center gap-3">
-          <BookOpen className="w-4 h-4 text-amber-600" />
+          <BookOpen className="w-4 h-4" style={{ color: theme.accentGold }} />
           <span>
             {isPb ? 'ਅੰਗ' : isEn ? 'Ang' : 'अंग'} {verse.ang} • {verse.raag ? `ਰਾਗ ${verse.raag}` : 'ਸਲੋਕ ਕਬੀਰ ਜੀਉ ਕੇ'}
           </span>
         </div>
 
-        <div className="flex items-center gap-2">
-          <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span
+            style={{ color: isDarkMode ? '#6EE7B7' : '#065F46' }}
+            className="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/35"
+          >
             ✓ 12:00 AM स्वतः परिवर्तन (अनावृत्ति / No Repetition)
           </span>
 
@@ -284,7 +301,8 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
             <button
               type="button"
               onClick={onOpenWallpaperEngine}
-              className="px-2.5 py-1 rounded-xl bg-amber-600 text-white text-[11px] hover:bg-amber-700 transition cursor-pointer"
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+              className="px-3 py-1 rounded-xl text-[11px] font-bold hover:opacity-90 transition cursor-pointer"
             >
               वॉलपेपर बनाएं
             </button>
@@ -293,43 +311,59 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
       </div>
 
       {/* CONTENT TABS */}
-      <div className="flex gap-2 p-1.5 rounded-2xl bg-amber-900/5 dark:bg-black/30 border border-amber-500/20">
+      <div
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+        className="flex gap-2 p-1.5 rounded-2xl border backdrop-blur-md"
+      >
         {[
           { id: 'vani', label: '📜 पावन मूल वाणी' },
           { id: 'bhavarth', label: '✨ गहन भावार्थ' },
           { id: 'anushasan', label: '🛡️ दैनिक अनुशासन' },
           { id: 'shabdarth', label: '📖 शब्दार्थ' }
-        ].map((tab) => (
-          <button
-            key={tab.id}
-            type="button"
-            onClick={() => {
-              sacredHaptics.lightTap();
-              setActiveTab(tab.id as any);
-            }}
-            className={`flex-1 py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold font-serif transition cursor-pointer ${
-              activeTab === tab.id
-                ? 'bg-amber-600 text-white shadow-md'
-                : 'text-amber-950 dark:text-amber-100 hover:bg-amber-500/10'
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+        ].map((tab) => {
+          const isAct = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => {
+                sacredHaptics.lightTap();
+                setActiveTab(tab.id as any);
+              }}
+              style={
+                isAct
+                  ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }
+                  : { color: theme.textPrimary }
+              }
+              className={`flex-1 py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold font-serif transition cursor-pointer ${
+                isAct ? 'shadow-md' : 'hover:bg-amber-500/15'
+              }`}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
       </div>
 
       {/* TAB CONTENT 1: MOOL VANI */}
       {activeTab === 'vani' && (
-        <div className="space-y-5 bg-white dark:bg-[#1A140E] p-6 sm:p-8 rounded-3xl border border-amber-500/25 shadow-lg">
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="space-y-5 p-6 sm:p-8 rounded-3xl border backdrop-blur-md shadow-lg"
+        >
           {/* Gurmukhi Script */}
-          <div className="p-5 rounded-2xl bg-amber-50/50 dark:bg-black/40 border border-amber-500/15 space-y-2 text-center">
-            <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400 block tracking-wider uppercase">
+          <div
+            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+            className="p-5 rounded-2xl border space-y-2 text-center"
+          >
+            <span style={{ color: theme.accentGold }} className="text-[10px] font-bold block tracking-wider uppercase">
               ਮੂਲ ਗੁਰਮੁਖੀ ਪਾਠ
             </span>
             {verse.moolGurmukhi.map((line: string, idx: number) => (
               <p
                 key={idx}
-                className="font-serif font-black text-lg sm:text-2xl text-amber-950 dark:text-amber-100 leading-relaxed"
+                style={{ color: theme.sacredMaroon }}
+                className="font-serif font-black text-lg sm:text-2xl leading-relaxed"
               >
                 {line}
               </p>
@@ -337,14 +371,18 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
           </div>
 
           {/* Devanagari Script */}
-          <div className="p-5 rounded-2xl bg-amber-50/50 dark:bg-black/40 border border-amber-500/15 space-y-2 text-center">
-            <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400 block tracking-wider uppercase">
+          <div
+            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+            className="p-5 rounded-2xl border space-y-2 text-center"
+          >
+            <span style={{ color: theme.accentGold }} className="text-[10px] font-bold block tracking-wider uppercase">
               मूल देवनागरी पाठ
             </span>
             {verse.moolDevanagari.map((line: string, idx: number) => (
               <p
                 key={idx}
-                className="font-serif font-black text-lg sm:text-2xl text-amber-950 dark:text-amber-100 leading-relaxed"
+                style={{ color: theme.sacredMaroon }}
+                className="font-serif font-black text-lg sm:text-2xl leading-relaxed"
               >
                 {line}
               </p>
@@ -353,12 +391,15 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
 
           {/* Roman Transliteration if available */}
           {verse.moolRoman && verse.moolRoman.length > 0 && (
-            <div className="p-4 rounded-xl bg-black/5 dark:bg-white/5 space-y-1 text-center">
-              <span className="text-[10px] text-gray-500 block uppercase font-mono">
+            <div
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+              className="p-4 rounded-xl border space-y-1 text-center"
+            >
+              <span style={{ color: theme.textMuted }} className="text-[10px] block uppercase font-mono font-bold">
                 English Transliteration
               </span>
               {verse.moolRoman.map((line: string, idx: number) => (
-                <p key={idx} className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-serif italic">
+                <p key={idx} style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif italic">
                   {line}
                 </p>
               ))}
@@ -366,15 +407,18 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
           )}
 
           {/* Controls below verse */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-amber-500/15">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t" style={{ borderColor: theme.cardBorder }}>
+            <div className="flex items-center gap-2 flex-wrap">
               <button
                 type="button"
                 onClick={handleToggleAudio}
-                className={`py-2 px-3.5 rounded-xl border text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${
+                style={
                   isPlayingAudio
-                    ? 'bg-amber-600 text-white border-amber-600 animate-pulse'
-                    : 'bg-amber-500/10 text-amber-900 dark:text-amber-200 border-amber-500/20 hover:bg-amber-500/20'
+                    ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText, borderColor: theme.accentGold }
+                    : { backgroundColor: theme.stepActiveBg, color: theme.textPrimary, borderColor: theme.cardBorder }
+                }
+                className={`py-2 px-3.5 rounded-xl border text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${
+                  isPlayingAudio ? 'animate-pulse' : 'hover:opacity-90'
                 }`}
               >
                 {isPlayingAudio ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
@@ -384,9 +428,10 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
               <button
                 type="button"
                 onClick={() => handleCopyText('mool')}
-                className="py-2 px-3 rounded-xl bg-black/5 dark:bg-white/5 text-amber-900 dark:text-amber-200 border border-black/10 dark:border-white/10 hover:bg-black/10 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+                className="py-2 px-3 rounded-xl border hover:opacity-90 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
               >
-                {copiedScript === 'mool' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                {copiedScript === 'mool' ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 <span>{copiedScript === 'mool' ? 'कॉपी हुआ' : 'मूल दोहा कॉपी'}</span>
               </button>
             </div>
@@ -394,10 +439,11 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
             <button
               type="button"
               onClick={handleShare}
-              className="py-2 px-4 rounded-xl bg-amber-600 text-white font-bold text-xs shadow-sm hover:bg-amber-700 transition flex items-center gap-1.5 cursor-pointer"
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+              className="py-2 px-4 rounded-xl font-bold text-xs shadow-sm hover:opacity-90 transition flex items-center gap-1.5 cursor-pointer"
             >
-              <Share2 className="w-4 h-4" />
-              <span>हुकमनामा साझा करें</span>
+              {copiedScript === 'share' ? <Check className="w-4 h-4" /> : <Share2 className="w-4 h-4" />}
+              <span>{copiedScript === 'share' ? 'हुकमनामा कॉपी हुआ!' : 'हुकमनामा साझा करें'}</span>
             </button>
           </div>
         </div>
@@ -405,25 +451,31 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
 
       {/* TAB CONTENT 2: BHAVARTH (DEEP SPIRITUAL ESSENCE) */}
       {activeTab === 'bhavarth' && (
-        <div className="bg-white dark:bg-[#1A140E] p-6 sm:p-8 rounded-3xl border border-amber-500/25 shadow-lg space-y-5">
-          <div className="flex items-center gap-2 pb-3 border-b border-amber-500/15">
-            <Sparkles className="w-5 h-5 text-amber-600" />
-            <h2 className="font-serif font-black text-base sm:text-xl text-amber-950 dark:text-amber-100">
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="p-6 sm:p-8 rounded-3xl border backdrop-blur-md shadow-lg space-y-5"
+        >
+          <div className="flex items-center gap-2 pb-3 border-b" style={{ borderColor: theme.cardBorder }}>
+            <Sparkles className="w-5 h-5" style={{ color: theme.accentGold }} />
+            <h2 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-xl">
               {isPb ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ ਤੇ ਤੱਤ ਗਿਆਨ' : isEn ? 'Deep Spiritual Meaning & Mystical Essence' : 'गहन आध्यात्मिक भावार्थ एवं तत्त्व ज्ञान'}
             </h2>
           </div>
 
-          <div className="p-5 rounded-2xl bg-amber-50/70 dark:bg-black/40 border border-amber-500/20 leading-relaxed font-serif text-sm sm:text-base text-gray-800 dark:text-gray-200 whitespace-pre-line">
+          <div
+            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
+            className="p-5 rounded-2xl border leading-relaxed font-serif text-sm sm:text-base whitespace-pre-line"
+          >
             {bhavarthText}
           </div>
 
           {/* Secondary Language Bhavarth */}
           {language !== 'hi' && verse.bhavarth?.hi && (
-            <div className="p-4 rounded-2xl bg-black/5 dark:bg-white/5 space-y-1">
-              <span className="text-[11px] font-bold text-amber-800 dark:text-amber-300 block">
+            <div style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1">
+              <span style={{ color: theme.accentGold }} className="text-[11px] font-bold block">
                 हिंदी भावार्थ:
               </span>
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-serif leading-relaxed">
+              <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif leading-relaxed">
                 {verse.bhavarth.hi}
               </p>
             </div>
@@ -433,57 +485,60 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
 
       {/* TAB CONTENT 3: DAINIK JEEVAN ANUSHASAN */}
       {activeTab === 'anushasan' && (
-        <div className="bg-white dark:bg-[#1A140E] p-6 sm:p-8 rounded-3xl border border-amber-500/25 shadow-lg space-y-6">
-          <div className="space-y-1 pb-3 border-b border-amber-500/15">
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="p-6 sm:p-8 rounded-3xl border backdrop-blur-md shadow-lg space-y-6"
+        >
+          <div className="space-y-1 pb-3 border-b" style={{ borderColor: theme.cardBorder }}>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-              <h2 className="font-serif font-black text-base sm:text-xl text-amber-950 dark:text-amber-100">
+              <h2 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-xl">
                 {discipline.title}
               </h2>
             </div>
-            <p className="text-xs text-amber-900/70 dark:text-amber-300/70 font-serif">
+            <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
               {discipline.subtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Step 1: Chintan */}
-            <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-2">
-              <div className="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-bold text-sm">
-                <Sun className="w-4 h-4 text-amber-600" />
+            <div style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }} className="p-5 rounded-2xl border space-y-2">
+              <div style={{ color: theme.sacredMaroon }} className="flex items-center gap-2 font-bold text-sm">
+                <Sun className="w-4 h-4" style={{ color: theme.accentGold }} />
                 <span>१. मन एवं विचार संयम</span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-800 dark:text-gray-200 font-serif leading-relaxed">
+              <p style={{ color: theme.textPrimary }} className="text-xs sm:text-sm font-serif leading-relaxed">
                 {discipline.vicharPoint}
               </p>
             </div>
 
             {/* Step 2: Acharan */}
-            <div className="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2">
-              <div className="flex items-center gap-2 text-emerald-900 dark:text-emerald-200 font-bold text-sm">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <div style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }} className="p-5 rounded-2xl border space-y-2">
+              <div style={{ color: isDarkMode ? '#6EE7B7' : '#065F46' }} className="flex items-center gap-2 font-bold text-sm">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 <span>२. वाणी एवं सत्य आचरण</span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-800 dark:text-gray-200 font-serif leading-relaxed">
+              <p style={{ color: theme.textPrimary }} className="text-xs sm:text-sm font-serif leading-relaxed">
                 {discipline.aacharanPoint}
               </p>
             </div>
 
             {/* Step 3: Samkalp */}
-            <div className="p-5 rounded-2xl bg-orange-500/10 border border-orange-500/20 space-y-2">
-              <div className="flex items-center gap-2 text-orange-900 dark:text-orange-200 font-bold text-sm">
-                <Flame className="w-4 h-4 text-orange-600" />
+            <div style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }} className="p-5 rounded-2xl border space-y-2">
+              <div style={{ color: theme.accentGold }} className="flex items-center gap-2 font-bold text-sm">
+                <Flame className="w-4 h-4 text-orange-500" />
                 <span>३. आज का पावन संकल्प</span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-800 dark:text-gray-200 font-serif leading-relaxed">
+              <p style={{ color: theme.textPrimary }} className="text-xs sm:text-sm font-serif leading-relaxed">
                 {discipline.samkalpPoint}
               </p>
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-amber-600/10 border border-amber-500/25 flex items-start gap-3">
-            <HeartHandshake className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <p className="text-xs text-amber-950 dark:text-amber-200 leading-relaxed font-serif">
+          <div style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border flex items-start gap-3">
+            <HeartHandshake className="w-5 h-5 shrink-0 mt-0.5" style={{ color: theme.accentGold }} />
+            <p style={{ color: theme.textPrimary }} className="text-xs leading-relaxed font-serif">
               <strong>साधक आचार संहिता:</strong> जब हम सतगुरु कबीर साहेब के वचनों को केवल पढ़ते नहीं, अपितु अपने दैनिक आचरण में ढालते हैं, तब जीवन के समस्त ताप और भ्रम समाप्त हो जाते हैं।
             </p>
           </div>
@@ -492,10 +547,13 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
 
       {/* TAB CONTENT 4: SHABDARTH */}
       {activeTab === 'shabdarth' && (
-        <div className="bg-white dark:bg-[#1A140E] p-6 sm:p-8 rounded-3xl border border-amber-500/25 shadow-lg space-y-5">
-          <div className="flex items-center gap-2 pb-3 border-b border-amber-500/15">
-            <BookOpen className="w-5 h-5 text-amber-600" />
-            <h2 className="font-serif font-black text-base sm:text-xl text-amber-950 dark:text-amber-100">
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="p-6 sm:p-8 rounded-3xl border backdrop-blur-md shadow-lg space-y-5"
+        >
+          <div className="flex items-center gap-2 pb-3 border-b" style={{ borderColor: theme.cardBorder }}>
+            <BookOpen className="w-5 h-5" style={{ color: theme.accentGold }} />
+            <h2 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base sm:text-xl">
               {isPb ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਪਾਵਨ ਸ਼ਬਦਾਰਥ' : isEn ? 'Sacred Vocabulary & Meanings (Shabdarth)' : 'श्री गुरु ग्रंथ साहिब जी के पावन शब्दार्थ'}
             </h2>
           </div>
@@ -505,19 +563,20 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
               {verse.shabdarth.map((item: any, idx: number) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-2xl bg-amber-50/50 dark:bg-black/30 border border-amber-500/15 flex items-start justify-between gap-3 text-xs"
+                  style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+                  className="p-3.5 rounded-2xl border flex items-start justify-between gap-3 text-xs"
                 >
-                  <strong className="text-amber-900 dark:text-amber-300 font-serif text-sm">
+                  <strong style={{ color: theme.sacredMaroon }} className="font-serif text-sm">
                     {item.word}
                   </strong>
-                  <span className="text-gray-700 dark:text-gray-300 font-serif text-right">
+                  <span style={{ color: theme.textSecondary }} className="font-serif text-right">
                     {isPb ? item.meaning?.pb : isEn ? item.meaning?.en : item.meaning?.hi}
                   </span>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-xs text-gray-500 font-serif text-center py-6">
+            <p style={{ color: theme.textMuted }} className="text-xs font-serif text-center py-6">
               इस पद के सभी शब्द सामान्य व सरल भावार्थ में स्पष्ट हैं।
             </p>
           )}

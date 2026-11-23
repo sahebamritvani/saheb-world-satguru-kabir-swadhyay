@@ -371,8 +371,8 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
 
             <button
               type="submit"
-              className="px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-2xl text-white font-bold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-md cursor-pointer shrink-0"
-              style={{ backgroundColor: theme.sacredMaroon }}
+              className="px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-md cursor-pointer shrink-0"
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
             >
               {t.searchBtn}
             </button>
@@ -431,7 +431,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
                 <button
                   key={i}
                   onClick={() => setSearchQuery(h)}
-                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl border text-xs font-medium hover:bg-amber-500/10 transition shadow-2xs active:scale-95 cursor-pointer"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl border text-xs font-medium hover:bg-amber-500/10 transition shadow-2xs active:scale-95 cursor-pointer backdrop-blur-md"
                   style={{ borderColor: theme.cardBorder, color: theme.textPrimary, backgroundColor: theme.cardBg }}
                 >
                   <History className="w-3 h-3 opacity-60" style={{ color: theme.sacredMaroon }} />
@@ -444,7 +444,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
       </div>
 
       {/* Category / Theme Filter Pills */}
-      <div className="space-y-3 p-4 rounded-3xl border shadow-sm" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
+      <div className="space-y-3 p-4 rounded-3xl border shadow-sm backdrop-blur-md" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
         <div className="flex items-center justify-between px-1">
           <span className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 opacity-80" style={{ color: theme.textPrimary }}>
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
@@ -470,9 +470,9 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
                 type="button"
                 onClick={() => setSelectedTheme(tf.id)}
                 style={{
-                  backgroundColor: isSelected ? theme.sacredMaroon : theme.cardBg,
-                  color: isSelected ? '#FFFFFF' : theme.textPrimary,
-                  borderColor: isSelected ? theme.sacredMaroon : theme.cardBorder,
+                  backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.cardBg,
+                  color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                  borderColor: isSelected ? theme.buttonPrimaryBg : theme.cardBorder,
                 }}
                 className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer hover:scale-105 active:scale-95 shrink-0"
               >
@@ -585,12 +585,12 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ delay: idx * 0.05 }}
                       onClick={() => onSelectUlatvasi?.(u.id)}
-                      className="p-6 rounded-3xl border-2 border-dashed space-y-4 hover:shadow-md transition-all cursor-pointer group relative overflow-hidden"
+                      className="p-6 rounded-3xl border-2 border-dashed backdrop-blur-md space-y-4 hover:shadow-md transition-all cursor-pointer group relative overflow-hidden"
                       style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold shadow-md">
+                          <div className="w-10 h-10 rounded-xl bg-[#8B2500] text-white flex items-center justify-center font-bold shadow-md">
                             {u.number}
                           </div>
                           <div>

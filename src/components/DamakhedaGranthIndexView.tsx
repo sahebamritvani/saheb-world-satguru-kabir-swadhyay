@@ -233,10 +233,10 @@ export const DamakhedaGranthIndexView: React.FC<DamakhedaGranthIndexViewProps> =
                 onSelectSection(sec.id);
                 onClose();
               }}
-              className="p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-800/50 hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:border-amber-400 transition cursor-pointer flex items-center justify-between gap-3"
+              className="p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 bg-gray-50/85 dark:bg-zinc-800/65 backdrop-blur-sm hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:border-amber-400 transition cursor-pointer flex items-center justify-between gap-3"
             >
               <div className="flex items-center gap-3 overflow-hidden">
-                <span className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 shadow-sm">
+                <span className="w-8 h-8 rounded-xl bg-[#8B2500] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 shadow-sm">
                   {idx + 1}
                 </span>
                 <div className="truncate">

@@ -1091,8 +1091,8 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
             <button
               onClick={toggleDevotionalAudio}
               style={{ 
-                backgroundColor: isPlayingAudio ? theme.sacredMaroon : theme.cardBg, 
-                color: isPlayingAudio ? '#FFFFFF' : theme.sacredMaroon,
+                backgroundColor: isPlayingAudio ? theme.buttonPrimaryBg : theme.cardBg, 
+                color: isPlayingAudio ? theme.buttonPrimaryText : theme.sacredMaroon,
                 borderColor: theme.accentGold
               }}
               className="px-3.5 py-2.5 rounded-2xl font-bold font-serif text-xs shadow-md hover:scale-105 active:scale-95 transition flex items-center gap-2 border cursor-pointer"
@@ -1139,11 +1139,11 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
             {/* Temple Bell */}
             <button
               onClick={playSacredBell}
-              style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               className="px-3 py-2.5 rounded-2xl font-bold font-serif text-xs shadow-md hover:scale-105 active:scale-95 transition flex items-center gap-1.5 cursor-pointer"
               title="Ring Temple Bell"
             >
-              <Bell className="w-4 h-4 text-amber-300 animate-bounce" />
+              <Bell className="w-4 h-4 animate-bounce" />
               <span>{language === 'pb' ? 'ਘੰਟੀ' : language === 'en' ? 'Bell' : 'घंटी'}</span>
             </button>
 
@@ -1161,7 +1161,10 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
       </div>
 
       {/* Section Selector Tabs (6 Sacred Tabs: Aarti 1, 2, 3, 4, Prabhat, Bhog) */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 p-1.5 bg-amber-50/70 dark:bg-stone-900/40 rounded-2xl border border-amber-200/60 dark:border-stone-800">
+      <div
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 p-1.5 rounded-2xl border backdrop-blur-md"
+      >
         {(['aarti1', 'aarti2', 'aarti3', 'aarti4', 'prabhat', 'bhog'] as AartiSection[]).map((sectionKey) => {
           const isSelected = activeSection === sectionKey;
           return (
@@ -1172,10 +1175,13 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                 setActiveSection(sectionKey);
                 setIsEditing(false);
               }}
-              className={`py-2.5 px-2 rounded-xl text-xs sm:text-xs font-bold font-serif transition-all flex items-center justify-center text-center gap-1.5 cursor-pointer ${
+              style={
                 isSelected
-                  ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-700 dark:text-stone-300 hover:bg-amber-100/60'
+                  ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }
+                  : { color: theme.textPrimary }
+              }
+              className={`py-2.5 px-2 rounded-xl text-xs sm:text-xs font-bold font-serif transition-all flex items-center justify-center text-center gap-1.5 cursor-pointer ${
+                isSelected ? 'shadow-xs' : 'hover:bg-amber-500/10'
               }`}
             >
               {sectionKey.startsWith('aarti') && <Flame className="w-3.5 h-3.5 shrink-0" />}
@@ -1189,7 +1195,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
 
       {/* Main Altar Card */}
       <div 
-        className="p-6 sm:p-10 rounded-3xl border shadow-lg space-y-6 relative overflow-hidden"
+        className="p-6 sm:p-10 rounded-3xl border backdrop-blur-md shadow-lg space-y-6 relative overflow-hidden"
         style={{ 
           backgroundColor: theme.cardBg, 
           borderColor: theme.accentGold 
@@ -1257,8 +1263,8 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                     }
                   }}
                   style={{
-                    backgroundColor: language === lng ? theme.sacredMaroon : 'transparent',
-                    color: language === lng ? '#FFFFFF' : theme.textSecondary,
+                    backgroundColor: language === lng ? theme.buttonPrimaryBg : 'transparent',
+                    color: language === lng ? theme.buttonPrimaryText : theme.textSecondary,
                   }}
                   className="px-2 py-0.5 rounded-lg text-xs font-bold transition cursor-pointer"
                   title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
@@ -1276,9 +1282,14 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                   sacredHaptics.lightTap();
                   setViewWithBhavarth(!viewWithBhavarth);
                 }}
+                style={
+                  viewWithBhavarth
+                    ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText, borderColor: theme.accentGold }
+                    : undefined
+                }
                 className={`px-2.5 py-1 rounded-xl border text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   viewWithBhavarth
-                    ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                    ? 'shadow-xs'
                     : 'border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-amber-50 dark:hover:bg-zinc-800'
                 }`}
                 title={viewWithBhavarth ? 'केवल मूल पाठ देखें' : 'दोहे व चौपाई का भावार्थ देखें'}
@@ -1324,8 +1335,8 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
             <button
               onClick={isEditing ? handleSaveEdit : handleStartEdit}
               style={{ 
-                backgroundColor: isEditing ? theme.sacredMaroon : theme.stepActiveBg,
-                color: isEditing ? '#FFFFFF' : theme.sacredMaroon
+                backgroundColor: isEditing ? theme.buttonPrimaryBg : theme.stepActiveBg,
+                color: isEditing ? theme.buttonPrimaryText : theme.sacredMaroon
               }}
               className="px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-bold font-serif transition flex items-center gap-1.5 cursor-pointer"
             >
@@ -1381,7 +1392,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                 </button>
                 <button
                   onClick={handleSaveEdit}
-                  style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+                  style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                   className="px-5 py-2 rounded-xl text-xs font-bold font-serif hover:scale-105 transition cursor-pointer"
                 >
                   {language === 'pb' ? 'ਆਰਤੀ ਸੁਰੱਖਿਅਤ ਕਰੋ' : language === 'en' ? 'Save Aarti' : 'आरती सुरक्षित करें'}
@@ -1395,8 +1406,8 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
             <div className="space-y-5">
               {/* Top Sacred Invocation */}
               <div className="text-center py-1.5">
-                <span className="inline-block px-5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-orange-500/25 to-amber-500/20 text-amber-950 dark:text-amber-200 border border-amber-400/50 text-xs sm:text-sm font-black font-serif shadow-xs tracking-widest">
-                  {language === 'pb' ? '🌹 ।।ਸਤ੍ਯਨਾਮ।। 🌹' : language === 'en' ? '🌹 || Satyanam || 🌹' : '🌹 ।।सत्यनाम।। 🌹'}
+                <span className="inline-block px-5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-orange-500/25 to-amber-500/20 text-amber-950 dark:text-amber-200 border border-amber-400/50 text-xs sm:text-sm font-black font-serif shadow-xs tracking-normal">
+                  {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 || Satyanaam || 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
                 </span>
               </div>
 
@@ -1493,10 +1504,10 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
 
             <button
               onClick={handleStartEdit}
-              style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               className="px-5 py-2.5 rounded-2xl text-xs font-bold font-serif shadow-md hover:scale-105 active:scale-95 transition flex items-center gap-2 mx-auto cursor-pointer"
             >
-              <PlusCircle className="w-4 h-4 text-amber-300" />
+              <PlusCircle className="w-4 h-4" />
               <span>
                 {language === 'pb' ? 'ਆਰਤੀ ਦੇ ਬੋਲ ਦਰਜ ਕਰੋ' : language === 'en' ? 'Add Aarti Text' : 'आरती के बोल दर्ज करें'}
               </span>

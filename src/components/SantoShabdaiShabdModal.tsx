@@ -151,7 +151,7 @@ export const SantoShabdaiShabdModal: React.FC<SantoShabdaiShabdModalProps> = ({
               onClick={() => setActiveTab('verses')}
               className={`px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-bold transition flex items-center gap-1 cursor-pointer whitespace-nowrap ${
                 activeTab === 'verses'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'opacity-70 hover:opacity-100'
               }`}
             >
@@ -163,7 +163,7 @@ export const SantoShabdaiShabdModal: React.FC<SantoShabdaiShabdModalProps> = ({
               onClick={() => setActiveTab('matrix')}
               className={`px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-bold transition flex items-center gap-1 cursor-pointer whitespace-nowrap ${
                 activeTab === 'matrix'
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'opacity-70 hover:opacity-100'
               }`}
             >

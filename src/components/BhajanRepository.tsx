@@ -168,7 +168,7 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
                   onClick={() => handlePlayBhajan(bhajan)}
                   className={`px-4 py-2 rounded-2xl text-xs font-bold font-serif flex items-center gap-2 transition cursor-pointer ${
                     isThisPlaying
-                      ? 'bg-amber-600 text-white shadow-md animate-pulse'
+                      ? 'bg-[#8B2500] text-white shadow-md animate-pulse'
                       : 'bg-amber-500/10 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 hover:bg-amber-500/25'
                   }`}
                 >

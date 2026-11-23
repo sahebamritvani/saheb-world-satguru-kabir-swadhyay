@@ -249,10 +249,13 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
           <div className="flex items-center justify-between gap-3 pt-1">
             <button
               onClick={toggleRhythmAudio}
-              className={`px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
-                isRhythmPlaying
-                  ? 'bg-amber-600 text-white border-amber-500 shadow-md'
-                  : 'bg-white dark:bg-zinc-800 text-amber-900 dark:text-amber-200 border-amber-200'
+              style={{
+                backgroundColor: isRhythmPlaying ? theme.buttonPrimaryBg : theme.cardBg,
+                color: isRhythmPlaying ? theme.buttonPrimaryText : theme.textPrimary,
+                borderColor: isRhythmPlaying ? theme.buttonPrimaryBg : theme.cardBorder,
+              }}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer backdrop-blur-md ${
+                isRhythmPlaying ? 'shadow-md' : ''
               }`}
             >
               {isRhythmPlaying ? <Volume2 className="w-3.5 h-3.5 animate-bounce" /> : <VolumeX className="w-3.5 h-3.5" />}
@@ -266,8 +269,8 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
 
             <button
               onClick={handleIncrementBead}
-              style={{ backgroundColor: theme.sacredMaroon }}
-              className="px-4 py-1.5 rounded-xl text-white text-xs font-bold font-serif flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer"
+              style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+              className="px-4 py-1.5 rounded-xl text-xs font-bold font-serif flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-300" />
               <span>
@@ -281,8 +284,8 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
         <div className="flex justify-center pt-2">
           <button
             onClick={handleLogFullMala}
-            style={{ backgroundColor: theme.accentGold, color: '#FFF' }}
-            className="w-32 h-32 rounded-full shadow-lg flex flex-col items-center justify-center gap-2 hover:scale-105 active:scale-95 transition cursor-pointer"
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+            className="w-32 h-32 rounded-full shadow-lg flex flex-col items-center justify-center gap-2 hover:scale-105 active:scale-95 transition cursor-pointer border-2 border-amber-400/50"
           >
             <Plus className="w-8 h-8" />
             <span className="text-xs font-bold uppercase tracking-wider">{t.logMalaBtn}</span>
@@ -305,7 +308,7 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
 
       {/* History */}
       <div 
-        className="p-6 rounded-3xl shadow-md border space-y-4"
+        className="p-6 rounded-3xl shadow-md border space-y-4 backdrop-blur-md"
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
       >
         <div className="flex items-center justify-between">
@@ -343,26 +346,26 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
 
       {/* Spiritual Preferences & Daily Reminders Shortcut */}
       <div 
-        className="p-5 rounded-3xl border border-amber-200 bg-amber-50/50 flex items-center justify-between gap-4"
-        style={{ borderColor: theme.cardBorder }}
+        className="p-5 rounded-3xl border flex items-center justify-between gap-4 backdrop-blur-md shadow-xs"
+        style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-amber-600 shadow-sm">
+          <div style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon }} className="w-10 h-10 rounded-full flex items-center justify-center shadow-sm">
             <Bell className="w-5 h-5" />
           </div>
           <div>
             <h4 className="text-sm font-black font-serif">
               {activeLang === 'pb' ? 'ਆਧਿਆਤਮਿਕ ਪ੍ਰਾਥਮਿਕਤਾਵਾਂ ਤੇ ਨਿਤਨੇਮ ਸਮਾਂ' : activeLang === 'en' ? 'Spiritual Preferences & Nitya Vani Time' : 'आध्यात्मिक प्राथमिकताएं एवं अमृतवेला समय'}
             </h4>
-            <p className="text-[10px] opacity-60">
+            <p className="text-[10px] opacity-75" style={{ color: theme.textSecondary }}>
               {activeLang === 'pb' ? 'ਅੰਮ੍ਰਿਤਵੇਲਾ ਸਿਮਰਨ ਤੇ ਨਿਤਨੇਮ ਲਈ ਨੋਟੀਫਿਕੇਸ਼ਨ ਸੈਟਿੰਗਜ਼' : activeLang === 'en' ? 'Configure Amritvela simran & daily Vani notification timing' : 'अमृतवेला नाम-सिमरन व नित्य वाणी हेतु प्राथमिकताएं'}
             </p>
           </div>
         </div>
         <button 
           onClick={() => setShowSpiritualPrefsModal(true)}
-          style={{ backgroundColor: theme.sacredMaroon }}
-          className="px-3.5 py-2 rounded-xl text-white text-[11px] font-bold font-serif flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer shrink-0"
+          style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+          className="px-3.5 py-2 rounded-xl text-[11px] font-bold font-serif flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer shrink-0"
         >
           <Sliders className="w-3.5 h-3.5" />
           <span>
@@ -407,8 +410,8 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
               <div className="pt-2 text-center">
                 <button
                   onClick={() => setShowSpiritualPrefsModal(false)}
-                  style={{ backgroundColor: theme.accentGold }}
-                  className="px-6 py-2 rounded-xl text-white text-xs font-bold font-serif cursor-pointer shadow-md"
+                  style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                  className="px-6 py-2 rounded-xl text-xs font-bold font-serif cursor-pointer shadow-md"
                 >
                   {activeLang === 'pb' ? 'ਸੰਪੂਰਨ' : activeLang === 'en' ? 'Done' : 'पूर्ण'}
                 </button>

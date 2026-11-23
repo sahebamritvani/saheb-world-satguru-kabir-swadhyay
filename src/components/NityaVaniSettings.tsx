@@ -448,7 +448,7 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
           <button
             type="button"
             onClick={requestPermission}
-            className="px-2.5 py-1 rounded-lg bg-amber-600 text-white font-bold text-[11px] hover:bg-amber-700 transition cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#8B2500] text-white font-bold text-[11px] hover:bg-[#7C1D00] transition cursor-pointer"
           >
             {isHi ? 'अनुमति दें' : 'Grant'}
           </button>

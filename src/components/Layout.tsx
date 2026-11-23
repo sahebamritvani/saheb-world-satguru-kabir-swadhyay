@@ -1210,8 +1210,8 @@ export const Layout: React.FC<LayoutProps> = ({
             type="button"
             onClick={exitAppFullscreen}
             style={{
-              backgroundColor: theme.sacredMaroon,
-              color: '#FFFFFF',
+              backgroundColor: theme.buttonPrimaryBg,
+              color: theme.buttonPrimaryText,
             }}
             className="min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-xl font-bold font-serif text-xs sm:text-sm flex items-center gap-1.5 shadow-sm hover:opacity-95 active:scale-95 transition cursor-pointer whitespace-nowrap shrink-0"
             aria-label="Exit Full Screen and Return"
@@ -1977,10 +1977,10 @@ export const Layout: React.FC<LayoutProps> = ({
                     </span>
                   </div>
                   <div 
-                    className="grid grid-cols-3 gap-1 p-0.5 rounded-xl border" 
+                    className="grid grid-cols-3 gap-1 p-0.5 rounded-xl border backdrop-blur-md" 
                     style={{ 
                       borderColor: theme.mode === 'mystic_dark' ? '#F59E0B' : theme.accentGold,
-                      backgroundColor: theme.mode === 'mystic_dark' ? '#18130E' : '#FFFFFF'
+                      backgroundColor: theme.cardBg
                     }}
                   >
                     {[
@@ -1995,12 +1995,8 @@ export const Layout: React.FC<LayoutProps> = ({
                           id={`sidebar-lang-btn-${langItem.id}`}
                           onClick={() => onSelectLanguage(langItem.id)}
                           style={{
-                            backgroundColor: isSelected 
-                              ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon) 
-                              : 'transparent',
-                            color: isSelected 
-                              ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF') 
-                              : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textPrimary),
+                            backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                            color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                           }}
                           className={`py-1.5 px-1 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1 cursor-pointer ${
                             isSelected ? 'shadow-xs font-black' : 'hover:bg-amber-50 dark:hover:bg-zinc-800'
@@ -2602,12 +2598,12 @@ export const Layout: React.FC<LayoutProps> = ({
                 id="footbar-dhun-toggle"
                 type="button"
                 onClick={onToggleDhun}
-                className={`px-2 py-1 rounded-md text-xs font-bold font-serif flex items-center gap-1.5 transition-all cursor-pointer border shadow-sm ${
+                className="px-2 py-1 rounded-md text-xs font-bold font-serif flex items-center gap-1.5 transition-all cursor-pointer border shadow-sm"
+                style={
                   isDhunPlaying
-                    ? 'bg-amber-600 text-white border-amber-600'
-                    : 'bg-black/5 dark:bg-white/5 border-amber-500/20 hover:bg-black/10'
-                }`}
-                style={{ color: isDhunPlaying ? '#ffffff' : theme.sacredMaroon }}
+                    ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText, borderColor: theme.accentGold }
+                    : { backgroundColor: theme.bgSecondary, color: theme.sacredMaroon, borderColor: theme.cardBorder }
+                }
                 aria-label={isDhunPlaying ? (language === 'hi' ? 'धुन बंद करें' : 'Pause Dhun') : (language === 'hi' ? 'धुन बजाएं' : 'Play Dhun')}
               >
                 {isDhunPlaying ? <Volume2 size={12} /> : <VolumeX size={12} />}
@@ -2744,9 +2740,9 @@ export const Layout: React.FC<LayoutProps> = ({
               {/* Modal Header */}
               <div
                 style={{
-                  backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.sacredMaroon,
-                  color: theme.mode === 'mystic_dark' ? '#FFFDF7' : '#FFFFFF',
-                  borderColor: theme.mode === 'mystic_dark' ? 'rgba(253, 230, 138, 0.3)' : 'rgba(245, 158, 11, 0.3)',
+                  backgroundColor: theme.buttonPrimaryBg,
+                  color: theme.buttonPrimaryText,
+                  borderColor: theme.accentGold,
                 }}
                 className="p-4 sm:p-5 flex items-center justify-between gap-3 border-b shrink-0"
               >
@@ -2766,13 +2762,13 @@ export const Layout: React.FC<LayoutProps> = ({
                   <div>
                     <h3 
                       className="text-base sm:text-lg font-black font-serif tracking-wide leading-tight"
-                      style={{ color: theme.mode === 'mystic_dark' ? '#FFFDF7' : '#FFFFFF' }}
+                      style={{ color: theme.buttonPrimaryText }}
                     >
                       {language === 'pb' ? 'ਸਾਹੇਬ ਵਰਲਡ ਐਪ ਇੰਸਟਾਲ ਕਰੋ' : language === 'en' ? 'Install Saheb World App' : 'साहेब वर्ल्ड ऐप फोन में इनस्टॉल करें'}
                     </h3>
                     <p 
-                      className="text-[0.6875rem] sm:text-xs font-medium"
-                      style={{ color: theme.mode === 'mystic_dark' ? '#FDE68A' : 'rgba(254, 243, 199, 0.95)' }}
+                      className="text-[0.6875rem] sm:text-xs font-medium opacity-90"
+                      style={{ color: theme.buttonPrimaryText }}
                     >
                       {language === 'pb' ? 'ਬਿਨਾਂ ਇੰਟਰਨੈੱਟ ਸਹਿਜ ਸਵਾਧਿਆਏ ਲਈ' : language === 'en' ? 'For uninterrupted offline spiritual reading' : 'बिना इंटरनेट सहज स्वाध्याय हेतु 1-क्लिक गाइड'}
                     </p>
@@ -2780,9 +2776,9 @@ export const Layout: React.FC<LayoutProps> = ({
                 </div>
                 <button
                   onClick={() => setShowInstallModal(false)}
-                  className="p-2 rounded-full hover:bg-white/20 transition cursor-pointer shrink-0"
+                  className="p-2 rounded-full hover:bg-black/15 transition cursor-pointer shrink-0"
                 >
-                  <X className="w-5 h-5" style={{ color: theme.mode === 'mystic_dark' ? '#FDE68A' : '#FFFFFF' }} />
+                  <X className="w-5 h-5" style={{ color: theme.buttonPrimaryText }} />
                 </button>
               </div>
 
@@ -2906,8 +2902,8 @@ export const Layout: React.FC<LayoutProps> = ({
                         type="button"
                         onClick={handleInstallClick}
                         style={{ 
-                          backgroundColor: theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon, 
-                          color: theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF' 
+                          backgroundColor: theme.buttonPrimaryBg, 
+                          color: theme.buttonPrimaryText 
                         }}
                         className="w-full min-h-[44px] py-3.5 px-4 rounded-xl font-bold font-serif text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition cursor-pointer whitespace-nowrap"
                       >
@@ -2930,8 +2926,8 @@ export const Layout: React.FC<LayoutProps> = ({
                           );
                         }}
                         style={{ 
-                          backgroundColor: theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon, 
-                          color: theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF' 
+                          backgroundColor: theme.buttonPrimaryBg, 
+                          color: theme.buttonPrimaryText 
                         }}
                         className="w-full min-h-[44px] py-3.5 px-4 rounded-xl font-bold font-serif text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition cursor-pointer text-center no-underline whitespace-nowrap"
                       >
@@ -3239,7 +3235,7 @@ export const Layout: React.FC<LayoutProps> = ({
 
       {/* 🎙️ Voice Command Response Toast */}
       {voiceToast && (
-        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-[150] bg-amber-600 text-white px-5 py-2.5 rounded-2xl shadow-2xl font-serif font-bold text-xs sm:text-sm animate-bounce flex items-center gap-2">
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-[150] bg-[#8B2500] text-white px-5 py-2.5 rounded-2xl shadow-2xl border border-amber-400/35 backdrop-blur-md font-serif font-bold text-xs sm:text-sm animate-bounce flex items-center gap-2">
           <Mic className="w-4 h-4 text-white animate-pulse" />
           <span>{voiceToast}</span>
         </div>

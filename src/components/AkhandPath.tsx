@@ -775,7 +775,7 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
                   }}
                   className={`px-2 py-0.5 rounded text-xs font-bold font-serif transition-all ${
                     language === lng
-                      ? 'bg-amber-600 text-white shadow-xs'
+                      ? 'bg-[#8B2500] text-white shadow-xs'
                       : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/10'
                   }`}
                 >
@@ -1274,7 +1274,7 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
             </p>
             <button
               onClick={() => handleSelectCategory('all')}
-              className="px-4 py-2 rounded-xl font-bold text-xs bg-amber-600 text-white cursor-pointer"
+              className="px-4 py-2 rounded-xl font-bold text-xs bg-[#8B2500] text-white cursor-pointer"
             >
               {fl.allCategories}
             </button>

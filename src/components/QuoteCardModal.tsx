@@ -236,7 +236,7 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
             onClick={() => setActiveTab('image')}
             className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition cursor-pointer ${
               activeTab === 'image'
-                ? 'bg-amber-600 text-white shadow-md'
+                ? 'bg-[#8B2500] text-white shadow-md'
                 : 'bg-transparent text-neutral-700 dark:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5'
             }`}
           >
@@ -249,7 +249,7 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
             onClick={() => setActiveTab('text')}
             className={`flex-1 py-2 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition cursor-pointer ${
               activeTab === 'text'
-                ? 'bg-amber-600 text-white shadow-md'
+                ? 'bg-[#8B2500] text-white shadow-md'
                 : 'bg-transparent text-neutral-700 dark:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5'
             }`}
           >
@@ -281,7 +281,7 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                   }}
                   className={`flex-1 py-1.5 px-1 rounded-xl border text-center font-bold text-[10px] transition cursor-pointer ${
                     cardLanguage === lObj.code
-                      ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
+                      ? 'bg-[#8B2500] text-white border-amber-600 shadow-sm'
                       : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300 hover:bg-black/10'
                   }`}
                 >
@@ -350,7 +350,7 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                         }}
                         className={`flex-1 py-1 px-1.5 rounded-xl border text-center transition cursor-pointer ${
                           cardRatio === rObj.id
-                            ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
+                            ? 'bg-[#8B2500] text-white border-amber-600 shadow-sm'
                             : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300'
                         }`}
                       >

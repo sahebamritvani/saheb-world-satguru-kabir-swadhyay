@@ -85,7 +85,7 @@ export const RtlTestView: React.FC<RtlTestViewProps> = ({ onClose }) => {
               onClick={() => setTestAlign(opt.id as any)}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 testAlign === opt.id
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
             >

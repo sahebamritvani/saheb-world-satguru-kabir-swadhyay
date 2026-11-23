@@ -265,8 +265,8 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
                   onClick={() => onSelectLanguage(lng)}
                   className="text-xs font-bold px-3 py-1.5 rounded-lg transition-all cursor-pointer whitespace-nowrap"
                   style={{
-                    backgroundColor: isSelected ? theme.sacredMaroon : 'transparent',
-                    color: isSelected ? '#FFFFFF' : theme.textSecondary,
+                    backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                    color: isSelected ? theme.buttonPrimaryText : theme.textSecondary,
                   }}
                 >
                   {label}
@@ -296,10 +296,14 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
                   sacredHaptics.lightTap();
                   setCurrentTab(tab.id);
                 }}
+                style={{
+                  backgroundColor: isCur ? theme.buttonPrimaryBg : undefined,
+                  color: isCur ? theme.buttonPrimaryText : theme.textPrimary,
+                }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   isCur
-                    ? 'bg-amber-600 text-white shadow-xs'
-                    : 'bg-black/5 dark:bg-white/5 text-stone-700 dark:text-stone-300 hover:bg-black/10'
+                    ? 'shadow-xs'
+                    : 'bg-black/5 dark:bg-white/5 hover:bg-black/10'
                 }`}
               >
                 {tab.label}

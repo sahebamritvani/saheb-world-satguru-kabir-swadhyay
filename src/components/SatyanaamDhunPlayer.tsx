@@ -1581,7 +1581,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                 <button
                   type="button"
                   onClick={() => setIsCreatingPlaylist(!isCreatingPlaylist)}
-                  className="px-3 py-1.5 rounded-xl bg-amber-600 text-white hover:bg-amber-700 text-xs font-bold flex items-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
+                  className="px-3 py-1.5 rounded-xl bg-[#8B2500] text-white hover:bg-amber-700 text-xs font-bold flex items-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>{t.createPlaylist}</span>
@@ -1678,7 +1678,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                         handlePlayPlaylistTrack(playlistTrackIndex);
                       }
                     }}
-                    className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+                    className="w-10 h-10 rounded-xl bg-[#8B2500] text-white flex items-center justify-center hover:scale-105 active:scale-95 shadow-md cursor-pointer"
                   >
                     {isCustomPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 translate-x-0.5" />}
                   </button>

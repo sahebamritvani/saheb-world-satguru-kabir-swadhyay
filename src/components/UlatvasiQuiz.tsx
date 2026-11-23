@@ -1238,7 +1238,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                   onClick={() => handleLanguageChange(l)}
                   className={`px-2 py-1 rounded-lg font-serif text-[11px] font-bold transition cursor-pointer ${
                     language === l
-                      ? 'bg-amber-600 text-white shadow-xs'
+                      ? 'bg-[#8B2500] text-white shadow-xs'
                       : 'opacity-70 hover:opacity-100 hover:bg-black/5'
                   }`}
                 >
@@ -2763,8 +2763,8 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                   <button
                     type="button"
                     onClick={handleNextKaalChallenge}
-                    style={{ backgroundColor: theme.sacredMaroon }}
-                    className="px-8 py-3 rounded-2xl text-white font-serif font-black shadow-lg hover:scale-105 transition cursor-pointer flex items-center gap-2 mx-auto"
+                    style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                    className="px-8 py-3 rounded-2xl font-serif font-black shadow-lg hover:scale-105 transition cursor-pointer flex items-center gap-2 mx-auto"
                   >
                     <RotateCw className="w-4 h-4" />
                     <span>{language === 'pb' ? 'ਅਗਲੀ ਸਾਖੀ ਦਾ ਸਿਮਰਨ ਕਰੋ' : language === 'en' ? 'Next Kaal Verse Challenge' : 'अगली साखी का स्मरण करें'}</span>
@@ -2843,8 +2843,8 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                   <button
                     type="button"
                     onClick={initMemoryRecall}
-                    style={{ backgroundColor: theme.sacredMaroon }}
-                    className="px-8 py-3 rounded-2xl text-white font-black shadow-lg hover:scale-105 transition cursor-pointer flex items-center gap-2 mx-auto"
+                    style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                    className="px-8 py-3 rounded-2xl font-black shadow-lg hover:scale-105 transition cursor-pointer flex items-center gap-2 mx-auto"
                   >
                     <RotateCw className="w-5 h-5" />
                     <span>{language === 'hi' ? 'अगली साखी पहचानें' : 'Next Verse'}</span>

@@ -134,7 +134,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
     widthMode,
     setWidthMode,
     fontFamily,
-    setFontFamily
+    setFontFamily,
+    globalWallpaper
   } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const lang = language || contextLang;
@@ -791,70 +792,71 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
   // Reader Theme Classes
   const getThemeStyles = () => {
+    const hasWp = !!globalWallpaper;
     switch (readerTheme) {
       case 'deep_sepia':
         return {
-          bg: '#120D0A',
-          card: '#1D1510',
-          border: 'rgba(253, 230, 138, 0.25)',
-          text: '#FFFDF7', // High contrast cream
-          accent: '#FDE68A', // Warm golden cream
-          highlight: '#2E2219',
-          badgeBg: '#2E2219',
+          bg: hasWp ? 'transparent' : '#120D0A',
+          card: hasWp ? 'rgba(29, 21, 16, 0.78)' : '#1D1510',
+          border: 'rgba(253, 230, 138, 0.28)',
+          text: '#FFFDF7',
+          accent: '#FDE68A',
+          highlight: hasWp ? 'rgba(46, 34, 25, 0.85)' : '#2E2219',
+          badgeBg: hasWp ? 'rgba(46, 34, 25, 0.85)' : '#2E2219',
         };
       case 'midnight':
         return {
-          bg: '#060B14',
-          card: '#0D1527',
-          border: 'rgba(253, 230, 138, 0.25)',
-          text: '#FFFDF7', // High contrast cream
-          accent: '#FDE68A', // Warm golden cream
-          highlight: '#16233B',
-          badgeBg: '#1E2D4A',
+          bg: hasWp ? 'transparent' : '#060B14',
+          card: hasWp ? 'rgba(13, 21, 39, 0.78)' : '#0D1527',
+          border: 'rgba(253, 230, 138, 0.28)',
+          text: '#FFFDF7',
+          accent: '#FDE68A',
+          highlight: hasWp ? 'rgba(22, 35, 59, 0.85)' : '#16233B',
+          badgeBg: hasWp ? 'rgba(30, 45, 74, 0.85)' : '#1E2D4A',
         };
       case 'pothi':
         return {
-          bg: '#fbf4df',
-          card: '#fffdf4',
+          bg: hasWp ? 'transparent' : '#fbf4df',
+          card: hasWp ? 'rgba(255, 253, 244, 0.86)' : '#fffdf4',
           border: '#e4cf99',
           text: '#42280d',
-          accent: '#b45309',
-          highlight: '#faedd0',
-          badgeBg: '#f0dfb2',
+          accent: '#9a4208',
+          highlight: hasWp ? 'rgba(250, 237, 208, 0.85)' : '#faedd0',
+          badgeBg: hasWp ? 'rgba(240, 223, 178, 0.85)' : '#f0dfb2',
         };
       case 'comfort':
         return {
-          bg: '#F2EBDC',
-          card: '#FAF4E6',
+          bg: hasWp ? 'transparent' : '#F2EBDC',
+          card: hasWp ? 'rgba(250, 244, 230, 0.86)' : '#FAF4E6',
           border: '#D9CDB8',
           text: '#2C241E',
           accent: '#8C3D28',
-          highlight: '#EBDCC8',
-          badgeBg: '#E0D4C0',
+          highlight: hasWp ? 'rgba(235, 220, 200, 0.85)' : '#EBDCC8',
+          badgeBg: hasWp ? 'rgba(224, 212, 192, 0.85)' : '#E0D4C0',
         };
       case 'black':
         return {
-          bg: '#0A0806',
-          card: '#16120E',
-          border: 'rgba(253, 230, 138, 0.25)',
-          text: '#FFFDF7', // High contrast cream
-          accent: '#FDE68A', // Warm golden cream
-          highlight: '#261F18',
-          badgeBg: '#261F18',
+          bg: hasWp ? 'transparent' : '#0A0806',
+          card: hasWp ? 'rgba(22, 18, 14, 0.78)' : '#16120E',
+          border: 'rgba(253, 230, 138, 0.28)',
+          text: '#FFFDF7',
+          accent: '#FDE68A',
+          highlight: hasWp ? 'rgba(38, 31, 24, 0.85)' : '#261F18',
+          badgeBg: hasWp ? 'rgba(38, 31, 24, 0.85)' : '#261F18',
         };
       case 'netra':
         return {
-          bg: '#f0f5f1',
-          card: '#ffffff',
+          bg: hasWp ? 'transparent' : '#f0f5f1',
+          card: hasWp ? 'rgba(255, 255, 255, 0.86)' : '#ffffff',
           border: '#cde0d2',
           text: '#1b3b27',
           accent: '#15803d',
-          highlight: '#e3eee6',
-          badgeBg: '#d8e8dc',
+          highlight: hasWp ? 'rgba(227, 238, 230, 0.85)' : '#e3eee6',
+          badgeBg: hasWp ? 'rgba(216, 232, 220, 0.85)' : '#d8e8dc',
         };
       default: // mool
         return {
-          bg: theme.cardBg,
+          bg: hasWp ? 'transparent' : theme.cardBg,
           card: theme.cardBg,
           border: theme.cardBorder,
           text: theme.textPrimary,
@@ -1003,15 +1005,15 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
         <button
           type="button"
           onClick={() => setZenMode(false)}
-          className="fixed top-4 right-4 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/30"
+          className="fixed top-4 right-4 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-[#8B2500] hover:bg-[#7C1D00] text-white text-xs font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/30"
           title={language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन एकाग्रता बंद करें'}
         >
           <EyeOff size={15} />
           <span>{language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन मोड बंद करें (Exit Zen)'}</span>
         </button>
       )}
-      {/* Sikhworld Style Orange Header */}
-      <div className="bg-amber-600 text-white px-3 py-2.5 sm:p-4 flex items-center justify-between shadow-md sticky top-0 z-30">
+      {/* Sacred Granth Library Header */}
+      <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-3 py-2.5 sm:p-4 flex items-center justify-between shadow-md sticky top-0 z-30 border-b border-amber-400/25">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           {selectedGranthSlug ? (
             <button
@@ -1781,9 +1783,9 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     if (firstInCat) setSelectedChapterId(firstInCat.id);
                   }}
                   style={{
-                    backgroundColor: activeCategoryFilter === cat.id ? theme.accentGold : themeStyle.highlight,
-                    color: activeCategoryFilter === cat.id ? '#ffffff' : themeStyle.text,
-                    borderColor: themeStyle.border
+                    backgroundColor: activeCategoryFilter === cat.id ? theme.buttonPrimaryBg : themeStyle.highlight,
+                    color: activeCategoryFilter === cat.id ? theme.buttonPrimaryText : themeStyle.text,
+                    borderColor: activeCategoryFilter === cat.id ? theme.buttonPrimaryBg : themeStyle.border
                   }}
                   className={`px-3 py-1 rounded-full text-[0.625rem] sm:text-xs font-bold border transition-all hover:scale-105 active:scale-95 cursor-pointer`}
                 >
@@ -1817,7 +1819,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2 py-1.5 sm:px-3 sm:py-1 rounded-lg font-bold flex items-center justify-center gap-1 text-[0.6875rem] sm:text-xs transition-all cursor-pointer ${
                 !isPageFlipMode && !isParallelView && !isInterlinearView
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-black/5'
               }`}
               title={language === 'pb' ? 'ਨਿਰੰਤਰ ਪਾਠ (Scroll)' : language === 'en' ? 'Continuous Scroll' : 'निरंतर पाठ (Scroll)'}
@@ -1838,7 +1840,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2 py-1.5 sm:px-3 sm:py-1 rounded-lg font-bold flex items-center justify-center gap-1 text-[0.6875rem] sm:text-xs transition-all cursor-pointer ${
                 isParallelView
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-black/5'
               }`}
               title={language === 'pb' ? 'ਸਮਾਨਾਂਤਰ ਟੀਕਾ (Parallel)' : language === 'en' ? 'Parallel View' : 'समानांतर टीका (Parallel)'}
@@ -1859,7 +1861,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2 py-1.5 sm:px-3 sm:py-1 rounded-lg font-bold flex items-center justify-center gap-1 text-[0.6875rem] sm:text-xs transition-all cursor-pointer ${
                 isPageFlipMode
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-black/5'
               }`}
               title={language === 'pb' ? '੩D ਪੋਥੀ (3D Flip)' : language === 'en' ? '3D Pothi Flip' : '३D पोथी (3D Flip)'}
@@ -1882,7 +1884,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 activeQuickPanel === 'theme'
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="थीम चुनें (Themes)"
@@ -1906,7 +1908,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 activeQuickPanel === 'font'
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="फ़ॉन्ट व विस्तार (Font & Width)"
@@ -1926,7 +1928,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 activeQuickPanel === 'highlighter' || activeHighlightColor
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="हाइलाइटर (Highlighter)"
@@ -1954,7 +1956,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 isAutoPlaying || activeQuickPanel === 'autoscroll'
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="स्वतः स्क्रॉल (Auto-Advance)"
@@ -1972,7 +1974,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 activeQuickPanel === 'target'
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="दैनिक लक्ष्य (Target Pace)"
@@ -1992,7 +1994,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 isInterlinearView
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="इंटरलीनियर ३-भाषा दर्शन"
@@ -2011,7 +2013,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 showMeaning
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10 opacity-70'
               }`}
               title={showMeaning ? "व्याख्या छिपाएं" : "व्याख्या देखें"}
@@ -2047,7 +2049,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 bgDhun !== 'off' || activeQuickPanel === 'dhun'
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="पृष्ठभूमि धुन (Tanpura / Flute / Satyanaam)"
@@ -2070,7 +2072,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 zenMode
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
               title="जेन एकाग्रता मोड (Zen Mode)"
@@ -2152,7 +2154,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       changeReaderTheme(thm);
                     }}
                     className={`px-3 py-1.5 rounded-lg font-serif font-bold text-xs transition cursor-pointer ${
-                      readerTheme === thm ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                      readerTheme === thm ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                     }`}
                   >
                     {thm === 'mool' && (language === 'pb' ? 'ਮੂਲ' : 'मूल')}
@@ -2196,7 +2198,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       }}
                       className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
                         fontSize === fs || (fs === 'normal' && fontSize === 'medium') || (fs === 'xlarge' && fontSize === 'xl')
-                          ? 'bg-amber-600 text-white shadow-xs'
+                          ? 'bg-[#8B2500] text-white shadow-xs'
                           : 'bg-black/5 hover:bg-black/10'
                       }`}
                     >
@@ -2226,7 +2228,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           setLineHeight(lh.id);
                         }}
                         className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
-                          lineHeight === lh.id ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                          lineHeight === lh.id ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                         }`}
                       >
                         {lh.label}
@@ -2249,7 +2251,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             setFontFamily(ff.id);
                           }}
                           className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-md font-bold text-xs transition cursor-pointer ${
-                            fontFamily === ff.id ? 'bg-amber-600 text-white shadow-xs' : 'hover:bg-black/10'
+                            fontFamily === ff.id ? 'bg-[#8B2500] text-white shadow-xs' : 'hover:bg-black/10'
                           }`}
                         >
                           {ff.label}
@@ -2271,7 +2273,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             setWidthMode(wObj.id as any);
                           }}
                           className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
-                            widthMode === wObj.id ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                            widthMode === wObj.id ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                           }`}
                         >
                           {wObj.label}
@@ -2332,7 +2334,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       setIsAutoPlaying(!isAutoPlaying);
                     }}
                     className={`px-3.5 py-1.5 rounded-lg font-bold text-xs flex items-center gap-1.5 transition cursor-pointer ${
-                      isAutoPlaying ? 'bg-amber-600 text-white animate-pulse' : 'bg-black/10 hover:bg-black/20'
+                      isAutoPlaying ? 'bg-[#8B2500] text-white animate-pulse' : 'bg-black/10 hover:bg-black/20'
                     }`}
                   >
                     {isAutoPlaying ? <Pause size={14} /> : <Play size={14} />}
@@ -2350,7 +2352,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         setAutoScrollSpeed(spd);
                       }}
                       className={`px-2 py-1 rounded-md font-bold text-xs transition cursor-pointer ${
-                        autoScrollSpeed === spd ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                        autoScrollSpeed === spd ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                       }`}
                     >
                       {spd}x
@@ -2372,7 +2374,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       setTargetPace(tgt);
                     }}
                     className={`px-3 py-1 rounded-lg font-bold text-xs transition cursor-pointer ${
-                      targetPace === tgt ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                      targetPace === tgt ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                     }`}
                   >
                     {tgt} {language === 'pb' ? 'ਪਦ' : 'पद्य'}
@@ -2396,7 +2398,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       handleSelectDhun(snd);
                     }}
                     className={`px-3 py-1.5 rounded-lg font-bold text-xs transition cursor-pointer ${
-                      bgDhun === snd ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                      bgDhun === snd ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                     }`}
                   >
                     {snd === 'off' && (language === 'pb' ? '🔇 ਮਿਊਟ' : '🔇 म्यूट')}
@@ -2420,7 +2422,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           <div
             onClick={(e) => e.stopPropagation()}
             style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border, color: themeStyle.text }}
-            className="rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 shadow-2xl max-w-xl w-full max-h-[88dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain p-4 sm:p-7 pb-safe space-y-6"
+            className="rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 shadow-2xl backdrop-blur-xl max-w-xl w-full max-h-[88dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain p-4 sm:p-7 pb-safe space-y-6"
           >
             <div
               onClick={() => setShowAdvancedSuiteModal(false)}
@@ -2461,7 +2463,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 }}
                 className={`flex-1 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition cursor-pointer ${
                   suiteActiveTab === 'controls'
-                    ? 'bg-amber-600 text-white shadow-sm'
+                    ? 'bg-[#8B2500] text-white shadow-sm'
                     : 'hover:bg-black/5 text-amber-900 dark:text-amber-200'
                 }`}
               >
@@ -2477,7 +2479,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 }}
                 className={`flex-1 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition cursor-pointer relative ${
                   suiteActiveTab === 'history'
-                    ? 'bg-amber-600 text-white shadow-sm'
+                    ? 'bg-[#8B2500] text-white shadow-sm'
                     : 'hover:bg-black/5 text-amber-900 dark:text-amber-200'
                 }`}
               >
@@ -2485,7 +2487,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <span>{language === 'pb' ? 'ਪਠਨ ਇਤਿਹਾਸ' : 'पठन इतिहास (History)'}</span>
                 {readingHistory.length > 0 && (
                   <span className={`px-1.5 py-0.5 text-[0.625rem] rounded-full font-bold ${
-                    suiteActiveTab === 'history' ? 'bg-white text-amber-900' : 'bg-amber-600 text-white'
+                    suiteActiveTab === 'history' ? 'bg-white text-amber-900' : 'bg-[#8B2500] text-white'
                   }`}>
                     {readingHistory.length}
                   </span>
@@ -2506,7 +2508,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         {language === 'pb' ? '੮ ਪਾਵਨ ਪਾਠ ਮੋਡ (8 Reading Modes)' : '८ प्रकार के पावन पाठ मोड (8 Reading Modes)'}
                       </h4>
                     </div>
-                    <span className="px-2 py-0.5 rounded-full bg-amber-600 text-white text-[0.625rem] font-bold font-mono">
+                    <span className="px-2 py-0.5 rounded-full bg-[#8B2500] text-white text-[0.625rem] font-bold font-mono">
                       8 MODES
                     </span>
                   </div>
@@ -2602,8 +2604,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         }}
                         className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center gap-2 ${
                           mode.active
-                            ? 'bg-amber-600 text-white border-amber-600 font-bold shadow-xs'
-                            : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-800 dark:text-gray-200 hover:border-amber-400'
+                            ? 'bg-[#8B2500] text-white border-[#7C1D00] font-bold shadow-xs'
+                            : 'bg-white/80 dark:bg-zinc-800/80 border-gray-200 dark:border-zinc-700 text-gray-800 dark:text-gray-200 hover:border-amber-400'
                         }`}
                       >
                         <span className="text-xl shrink-0">{mode.icon}</span>
@@ -2619,7 +2621,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl border space-y-3" style={{ backgroundColor: themeStyle.highlight, borderColor: themeStyle.border }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+                      <div className="w-8 h-8 rounded-xl bg-[#8B2500] text-white flex items-center justify-center shadow-xs">
                         <Moon className="w-4 h-4" />
                       </div>
                       <div>
@@ -2637,7 +2639,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       onClick={() => handleToggleNightMode()}
                       className={`px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shadow-sm ${
                         isNightMode || readerTheme === 'deep_sepia' || readerTheme === 'midnight'
-                          ? 'bg-amber-600 text-white'
+                          ? 'bg-[#8B2500] text-white'
                           : 'bg-black/10 hover:bg-black/20 text-stone-800 dark:text-stone-200'
                       }`}
                     >
@@ -2668,7 +2670,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           changeReaderTheme(nt.id as any);
                         }}
                         className={`px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition cursor-pointer ${
-                          readerTheme === nt.id ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                          readerTheme === nt.id ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                         }`}
                       >
                         {nt.label}
@@ -2680,7 +2682,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl border space-y-3" style={{ backgroundColor: themeStyle.highlight, borderColor: themeStyle.border }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+                      <div className="w-8 h-8 rounded-xl bg-[#8B2500] text-white flex items-center justify-center shadow-xs">
                         <Timer className="w-4 h-4" />
                       </div>
                       <div>
@@ -2693,7 +2695,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       </div>
                     </div>
 
-                    <span className="px-3 py-1 rounded-xl bg-amber-600 text-white font-black text-xs shadow-xs font-mono">
+                    <span className="px-3 py-1 rounded-xl bg-[#8B2500] text-white font-black text-xs shadow-xs font-mono">
                       ~{estimatedReadingMinsRemaining} {language === 'pb' ? 'ਮਿੰਟ ਬਾਕੀ' : 'मिनट शेष'}
                     </span>
                   </div>
@@ -2736,7 +2738,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             }
                           }}
                           className={`px-2 py-0.5 rounded-lg text-[0.6875rem] font-bold transition cursor-pointer ${
-                            readingWpm === s.wpm ? 'bg-amber-600 text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
+                            readingWpm === s.wpm ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                           }`}
                         >
                           {s.label}
@@ -2750,7 +2752,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl border space-y-3" style={{ backgroundColor: themeStyle.highlight, borderColor: themeStyle.border }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+                      <div className="w-8 h-8 rounded-xl bg-[#8B2500] text-white flex items-center justify-center shadow-xs">
                         <Volume2 className="w-4 h-4" />
                       </div>
                       <div>
@@ -2768,8 +2770,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       onClick={handleToggleFullRecitation}
                       className={`px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shadow-sm ${
                         isSpeaking || isFullRecitationActive
-                          ? 'bg-amber-600 text-white animate-pulse'
-                          : 'bg-amber-600 text-white hover:bg-amber-700'
+                          ? 'bg-[#8B2500] text-white animate-pulse'
+                          : 'bg-[#8B2500] text-white hover:bg-amber-700'
                       }`}
                     >
                       {isSpeaking || isFullRecitationActive ? <VolumeX size={15} /> : <Volume2 size={15} />}
@@ -2797,7 +2799,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl border space-y-3" style={{ backgroundColor: themeStyle.highlight, borderColor: themeStyle.border }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+                      <div className="w-8 h-8 rounded-xl bg-[#8B2500] text-white flex items-center justify-center shadow-xs">
                         <Highlighter className="w-4 h-4" />
                       </div>
                       <div>
@@ -2866,7 +2868,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 </div>
 
                 {/* Fast Jump to Nitnem Gutka Saheb Banner */}
-                <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-600 to-orange-700 text-white space-y-2 shadow-md">
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#7C1D00] via-[#8B2500] to-[#9A3412] text-white space-y-2 shadow-md">
                   <div className="flex items-center gap-2 font-serif font-black text-sm sm:text-base">
                     <span>🌹</span>
                     <span>{language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
@@ -2899,7 +2901,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       <Sliders size={15} />
                       <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਸਲਾਈਡਰ (Font Size):' : 'फ़ॉन्ट आकार स्लाइडर (Font Size Slider):'}</span>
                     </label>
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-amber-600 text-white">
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#8B2500] text-white">
                       {fontSize === 'small' && (language === 'pb' ? 'A- (ਛੋਟਾ 14px)' : 'A- (छोटा 14px)')}
                       {fontSize === 'normal' && (language === 'pb' ? 'A (ਮੱਧਮ 16px)' : 'A (मध्यम 16px)')}
                       {fontSize === 'large' && (language === 'pb' ? 'A+ (ਵੱਡਾ 18px)' : 'A+ (बड़ा 18px)')}
@@ -2967,7 +2969,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           (m.id === 'scroll' && !isPageFlipMode && !isParallelView) ||
                           (m.id === 'parallel' && isParallelView) ||
                           (m.id === 'flip' && isPageFlipMode)
-                            ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                            ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                             : 'bg-black/5 hover:bg-black/10'
                         }`}
                       >
@@ -2989,7 +2991,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           key={thm}
                           onClick={() => changeReaderTheme(thm)}
                           className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
-                            readerTheme === thm ? 'bg-amber-600 text-white' : 'bg-black/5 hover:bg-black/10'
+                            readerTheme === thm ? 'bg-[#8B2500] text-white' : 'bg-black/5 hover:bg-black/10'
                           }`}
                         >
                           {thm}
@@ -3007,7 +3009,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         type="button"
                         onClick={() => setWidthMode('wide')}
                         className={`flex-1 py-1.5 rounded-lg text-xs font-bold border transition cursor-pointer ${
-                          widthMode === 'wide' ? 'bg-amber-600 text-white border-amber-600' : 'bg-black/5'
+                          widthMode === 'wide' ? 'bg-[#8B2500] text-white border-amber-600' : 'bg-black/5'
                         }`}
                       >
                         विशाल 7XL
@@ -3016,7 +3018,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         type="button"
                         onClick={() => setWidthMode('medium')}
                         className={`flex-1 py-1.5 rounded-lg text-xs font-bold border transition cursor-pointer ${
-                          widthMode === 'medium' ? 'bg-amber-600 text-white border-amber-600' : 'bg-black/5'
+                          widthMode === 'medium' ? 'bg-[#8B2500] text-white border-amber-600' : 'bg-black/5'
                         }`}
                       >
                         मध्यम 5XL
@@ -3098,7 +3100,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         >
                           <div className="space-y-1 min-w-0 flex-1">
                             <div className="flex items-center gap-2">
-                              <span className="px-2 py-0.5 rounded text-[0.625rem] font-black bg-amber-600 text-white shrink-0">
+                              <span className="px-2 py-0.5 rounded text-[0.625rem] font-black bg-[#8B2500] text-white shrink-0">
                                 #{idx + 1}
                               </span>
                               <span className="text-xs font-serif font-black text-amber-700 dark:text-amber-300 truncate">
@@ -3139,7 +3141,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               <button
                 type="button"
                 onClick={() => setShowAdvancedSuiteModal(false)}
-                className="px-5 py-2 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 transition cursor-pointer shadow flex items-center gap-1.5"
+                className="px-5 py-2 rounded-xl bg-[#8B2500] text-white font-bold text-xs hover:bg-amber-700 transition cursor-pointer shadow flex items-center gap-1.5"
               >
                 <ArrowLeft size={16} />
                 <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'वापस जाएं'}</span>
@@ -3277,7 +3279,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               className={`px-3.5 py-2 rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 transition cursor-pointer ${
                 pageFlipIndex === 0
                   ? 'opacity-40 cursor-not-allowed'
-                  : 'bg-amber-600 text-white border-amber-500 hover:scale-105 active:scale-95 shadow-sm'
+                  : 'bg-[#8B2500] text-white border-amber-500 hover:scale-105 active:scale-95 shadow-sm'
               }`}
             >
               <ChevronLeft size={16} />
@@ -3303,7 +3305,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               className={`px-3.5 py-2 rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 transition cursor-pointer ${
                 pageFlipIndex >= filteredVerses.length - 1
                   ? 'opacity-40 cursor-not-allowed'
-                  : 'bg-amber-600 text-white border-amber-500 hover:scale-105 active:scale-95 shadow-sm'
+                  : 'bg-[#8B2500] text-white border-amber-500 hover:scale-105 active:scale-95 shadow-sm'
               }`}
             >
               <span>{language === 'pb' ? 'ਅਗਲਾ ਪੰਨਾ' : language === 'en' ? 'Next Page' : 'अगला पन्ना'}</span>
@@ -3434,7 +3436,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             type="button"
                             onClick={() => handleSpeakVerse(verse)}
                             className={`p-2 rounded-xl transition cursor-pointer ${
-                              isThisSpeaking ? 'bg-amber-600 text-white animate-pulse' : 'hover:bg-black/5 text-gray-700 dark:text-gray-200'
+                              isThisSpeaking ? 'bg-[#8B2500] text-white animate-pulse' : 'hover:bg-black/5 text-gray-700 dark:text-gray-200'
                             }`}
                             title="वाणी पाठ ऑडियो (Audio Recite)"
                           >
@@ -3641,7 +3643,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               className={`px-4 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
                 pageFlipIndex === 0
                   ? 'opacity-40 cursor-not-allowed'
-                  : 'bg-amber-600 text-white border-amber-500 hover:scale-105 active:scale-95 shadow-xs'
+                  : 'bg-[#8B2500] text-white border-amber-500 hover:scale-105 active:scale-95 shadow-xs'
               }`}
             >
               <ChevronLeft size={16} />
@@ -3662,7 +3664,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               className={`px-4 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
                 pageFlipIndex >= filteredVerses.length - 1
                   ? 'opacity-40 cursor-not-allowed'
-                  : 'bg-amber-600 text-white border-amber-500 hover:scale-105 active:scale-95 shadow-xs'
+                  : 'bg-[#8B2500] text-white border-amber-500 hover:scale-105 active:scale-95 shadow-xs'
               }`}
             >
               <span>{language === 'pb' ? 'ਅਗਲਾ ਪੰਨਾ' : language === 'en' ? 'Next' : 'अगला पन्ना'}</span>
@@ -3772,7 +3774,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                                 handleSpeakVerse(verse);
                               }}
                               className={`p-1.5 rounded-lg border transition-all ${
-                                isThisSpeaking ? 'bg-amber-600 text-white' : 'hover:bg-black/5'
+                                isThisSpeaking ? 'bg-[#8B2500] text-white' : 'hover:bg-black/5'
                               }`}
                               style={{ borderColor: themeStyle.border }}
                               title="वाणी श्रवण करें"
@@ -4139,7 +4141,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         handleSpeakVerse(verse);
                       }}
                       className={`p-1.5 rounded-lg border transition-all ${
-                        isThisSpeaking ? 'bg-amber-600 text-white' : 'hover:bg-black/5'
+                        isThisSpeaking ? 'bg-[#8B2500] text-white' : 'hover:bg-black/5'
                       }`}
                       style={{ borderColor: themeStyle.border }}
                       title="वाणी श्रवण करें"
@@ -4393,7 +4395,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             id="next-chapter-btn"
             onClick={handleNextChapter}
             style={{ borderColor: themeStyle.border }}
-            className="min-h-[44px] flex items-center gap-1 px-4 py-2 rounded-xl border bg-amber-600 text-white text-xs sm:text-sm font-serif font-bold hover:bg-amber-700 transition-all shadow-sm cursor-pointer"
+            className="min-h-[44px] flex items-center gap-1 px-4 py-2 rounded-xl border bg-[#8B2500] text-white text-xs sm:text-sm font-serif font-bold hover:bg-amber-700 transition-all shadow-sm cursor-pointer"
           >
             <span>{t.nextChapterLabel}</span>
             <ChevronRight className="w-4 h-4" />

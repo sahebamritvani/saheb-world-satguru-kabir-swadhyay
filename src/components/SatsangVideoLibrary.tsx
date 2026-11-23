@@ -412,11 +412,11 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
                 type="button"
                 onClick={() => setSelectedCategory(cat.id as any)}
                 style={{
-                  backgroundColor: isSelected ? theme.sacredMaroon : theme.cardBg,
-                  color: isSelected ? '#FFFFFF' : theme.textPrimary,
-                  borderColor: isSelected ? theme.sacredMaroon : theme.cardBorder,
+                  backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.cardBg,
+                  color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                  borderColor: isSelected ? theme.buttonPrimaryBg : theme.cardBorder,
                 }}
-                className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs"
+                className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs backdrop-blur-md"
               >
                 {cat.label}
               </button>
@@ -429,7 +429,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
       {activeVideo && (
         <div className="fixed inset-0 z-[120] bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
           <div
-            className="w-full max-w-3xl rounded-3xl overflow-hidden border shadow-2xl space-y-4"
+            className="w-full max-w-3xl rounded-3xl overflow-hidden border shadow-2xl space-y-4 backdrop-blur-xl"
             style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
           >
             <div className="flex items-center justify-between px-5 py-3 border-b" style={{ borderColor: theme.cardBorder }}>

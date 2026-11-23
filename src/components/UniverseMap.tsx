@@ -536,7 +536,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-xs sm:text-base font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-xs sm:text-base font-black tracking-normal font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
         >
           {language === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
         </span>
@@ -545,10 +545,10 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
       {/* Top Banner */}
       <div 
         style={{ 
-          background: `linear-gradient(135deg, ${theme.sacredMaroon}, ${theme.accentGold})`,
+          background: 'linear-gradient(135deg, #6B1800 0%, #8B2500 55%, #9A3412 100%)',
           borderColor: theme.accentGold 
         }}
-        className="rounded-3xl p-4 sm:p-6 text-white shadow-xl relative overflow-hidden border-2 mb-4"
+        className="rounded-3xl p-4 sm:p-6 text-white shadow-xl relative overflow-hidden border-2 mb-4 backdrop-blur-md"
       >
         <div className="absolute -right-10 -bottom-10 text-9xl opacity-10 pointer-events-none">✨</div>
         
@@ -642,7 +642,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
         <div className="pt-1 flex justify-center w-full overflow-x-auto pb-1">
           <div 
             style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
-            className="p-1 rounded-2xl border-2 shadow-sm inline-flex gap-1 max-w-full flex-wrap sm:flex-nowrap justify-center"
+            className="p-1 rounded-2xl border-2 shadow-sm inline-flex gap-1 max-w-full flex-wrap sm:flex-nowrap justify-center backdrop-blur-md"
           >
             <button
               type="button"
@@ -651,8 +651,8 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                 setActiveViewTab('visualizer');
               }}
               style={{
-                backgroundColor: activeViewTab === 'visualizer' ? theme.sacredMaroon : 'transparent',
-                color: activeViewTab === 'visualizer' ? '#FFFFFF' : theme.textPrimary,
+                backgroundColor: activeViewTab === 'visualizer' ? theme.buttonPrimaryBg : 'transparent',
+                color: activeViewTab === 'visualizer' ? theme.buttonPrimaryText : theme.textPrimary,
               }}
               className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold font-serif transition-all cursor-pointer flex items-center gap-1.5"
             >
@@ -667,8 +667,8 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                 setActiveViewTab('stages-list');
               }}
               style={{
-                backgroundColor: activeViewTab === 'stages-list' ? theme.sacredMaroon : 'transparent',
-                color: activeViewTab === 'stages-list' ? '#FFFFFF' : theme.textPrimary,
+                backgroundColor: activeViewTab === 'stages-list' ? theme.buttonPrimaryBg : 'transparent',
+                color: activeViewTab === 'stages-list' ? theme.buttonPrimaryText : theme.textPrimary,
               }}
               className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold font-serif transition-all cursor-pointer flex items-center gap-1.5"
             >
@@ -683,8 +683,8 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                 setActiveViewTab('subtle-levels');
               }}
               style={{
-                backgroundColor: activeViewTab === 'subtle-levels' ? theme.sacredMaroon : 'transparent',
-                color: activeViewTab === 'subtle-levels' ? '#FFFFFF' : theme.textPrimary,
+                backgroundColor: activeViewTab === 'subtle-levels' ? theme.buttonPrimaryBg : 'transparent',
+                color: activeViewTab === 'subtle-levels' ? theme.buttonPrimaryText : theme.textPrimary,
               }}
               className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold font-serif transition-all cursor-pointer flex items-center gap-1.5"
             >
@@ -700,7 +700,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
         <div className="space-y-4 sm:space-y-6">
           <div 
             style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
-            className="p-3 sm:p-5 rounded-3xl border-2 space-y-4 shadow-sm"
+            className="p-3 sm:p-5 rounded-3xl border-2 space-y-4 shadow-sm backdrop-blur-md"
           >
             <Suspense fallback={<SacredLoader language={language} compact />}>
               <EChartsUniverseVisualizer
@@ -824,7 +824,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                     backgroundColor: theme.cardBg,
                     borderColor: currentStage.realmType === 'anamilok' ? '#dc2626' : theme.accentGold,
                   }}
-                  className="rounded-3xl border-2 shadow-xl p-4 sm:p-6 space-y-3.5 overflow-hidden break-words"
+                  className="rounded-3xl border-2 shadow-xl p-4 sm:p-6 space-y-3.5 overflow-hidden break-words backdrop-blur-md"
                 >
                   <div className="border-b pb-2.5 space-y-1" style={{ borderColor: theme.cardBorder }}>
                     <div className="flex items-center justify-between gap-2 flex-wrap text-xs">
@@ -917,11 +917,11 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
             <button
               onClick={startJourney}
               style={{ 
-                backgroundColor: journeyActive ? theme.accentGold : theme.bgSecondary,
-                borderColor: theme.accentGold,
-                color: journeyActive ? '#FFFFFF' : theme.sacredMaroon
+                backgroundColor: journeyActive ? theme.buttonPrimaryBg : theme.bgSecondary,
+                borderColor: journeyActive ? theme.buttonPrimaryBg : theme.accentGold,
+                color: journeyActive ? theme.buttonPrimaryText : theme.sacredMaroon
               }}
-              className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full border-2 text-xs font-bold flex items-center gap-2 transition-all hover:shadow-md active:scale-95 shadow-sm cursor-pointer"
+              className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full border-2 text-xs font-bold flex items-center gap-2 transition-all hover:shadow-md active:scale-95 shadow-sm cursor-pointer backdrop-blur-md"
             >
               {journeyActive ? <VolumeX className="w-4 h-4 animate-pulse" /> : <Sparkles className="w-4 h-4" />}
               <span>{journeyActive ? t.stopJourneyBtn : t.startJourneyBtn}</span>

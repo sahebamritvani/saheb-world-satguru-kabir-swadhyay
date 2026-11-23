@@ -114,12 +114,8 @@ export const GranthaSangrah: React.FC<GranthaSangrahProps> = ({
                     key={lng}
                     onClick={() => onSelectLanguage(lng)}
                     style={{
-                      backgroundColor: isSelected
-                        ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon)
-                        : 'transparent',
-                      color: isSelected
-                        ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF')
-                        : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textPrimary),
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                     }}
                     className={`px-2 py-0.5 rounded text-xs font-serif transition-all cursor-pointer ${
                       isSelected ? 'font-black shadow-xs' : 'font-bold hover:opacity-90'
@@ -189,11 +185,11 @@ export const GranthaSangrah: React.FC<GranthaSangrahProps> = ({
           <button
             onClick={() => setSelectedCategory('all')}
             style={{
-              backgroundColor: selectedCategory === 'all' ? theme.accentGold : theme.bgSecondary,
-              color: selectedCategory === 'all' ? '#FFFFFF' : theme.textPrimary,
-              borderColor: theme.borderOrnament,
+              backgroundColor: selectedCategory === 'all' ? theme.buttonPrimaryBg : theme.bgSecondary,
+              color: selectedCategory === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
+              borderColor: selectedCategory === 'all' ? theme.buttonPrimaryBg : theme.borderOrnament,
             }}
-            className="px-3 py-1.5 rounded-lg border font-semibold whitespace-nowrap cursor-pointer transition"
+            className="px-3 py-1.5 rounded-lg border font-semibold whitespace-nowrap cursor-pointer transition backdrop-blur-md"
           >
             सभी अंग ({sakhis.length})
           </button>
@@ -202,11 +198,11 @@ export const GranthaSangrah: React.FC<GranthaSangrahProps> = ({
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               style={{
-                backgroundColor: selectedCategory === cat ? theme.accentGold : theme.bgSecondary,
-                color: selectedCategory === cat ? '#FFFFFF' : theme.textPrimary,
-                borderColor: theme.borderOrnament,
+                backgroundColor: selectedCategory === cat ? theme.buttonPrimaryBg : theme.bgSecondary,
+                color: selectedCategory === cat ? theme.buttonPrimaryText : theme.textPrimary,
+                borderColor: selectedCategory === cat ? theme.buttonPrimaryBg : theme.borderOrnament,
               }}
-              className="px-3 py-1.5 rounded-lg border font-medium whitespace-nowrap cursor-pointer transition"
+              className="px-3 py-1.5 rounded-lg border font-medium whitespace-nowrap cursor-pointer transition backdrop-blur-md"
             >
               {cat}
             </button>

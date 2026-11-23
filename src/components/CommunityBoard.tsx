@@ -335,11 +335,11 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
               setActiveCategory(cat.id as any);
             }}
             style={{
-              backgroundColor: activeCategory === cat.id ? theme.sacredMaroon : theme.cardBg,
-              color: activeCategory === cat.id ? '#FFFFFF' : theme.textPrimary,
-              borderColor: activeCategory === cat.id ? theme.sacredMaroon : theme.cardBorder,
+              backgroundColor: activeCategory === cat.id ? theme.buttonPrimaryBg : theme.cardBg,
+              color: activeCategory === cat.id ? theme.buttonPrimaryText : theme.textPrimary,
+              borderColor: activeCategory === cat.id ? theme.buttonPrimaryBg : theme.cardBorder,
             }}
-            className="px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif whitespace-nowrap shadow-2xs transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            className="px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif whitespace-nowrap shadow-2xs transition-all hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-md"
           >
             {cat.label}
           </button>
@@ -362,7 +362,7 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ delay: idx * 0.05 }}
                 style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-                className="p-5 sm:p-6 rounded-3xl border-2 space-y-4 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
+                className="p-5 sm:p-6 rounded-3xl border-2 space-y-4 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden backdrop-blur-md"
               >
                 {/* Background Watermark Quote */}
                 <div 

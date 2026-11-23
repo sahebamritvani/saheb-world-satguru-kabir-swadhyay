@@ -204,10 +204,10 @@ export const ReadingModeSelector: React.FC<ReadingModeSelectorProps> = ({
                 sacredHaptics.lightTap();
                 onModeSelect(mode.id);
               }}
-              className={`p-3 rounded-2xl border-2 text-left transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden h-full group ${
+              className={`p-3 rounded-2xl border-2 text-left transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden h-full group backdrop-blur-md ${
                 active
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-md ring-2 ring-amber-400/40 scale-[1.01]'
-                  : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-800 dark:text-gray-200 hover:border-amber-400 hover:scale-[1.01]'
+                  ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-md ring-2 ring-amber-400/40 scale-[1.01]'
+                  : 'bg-white/80 dark:bg-zinc-800/80 border-gray-200 dark:border-zinc-700 text-gray-800 dark:text-gray-200 hover:border-amber-400 hover:scale-[1.01]'
               }`}
             >
               <div className="flex items-start gap-2.5 w-full">

@@ -131,8 +131,8 @@ export const FlowerBloomAnimation: React.FC<FlowerBloomAnimationProps> = ({
           <button
             onClick={onClose}
             style={{
-              backgroundColor: theme.sacredMaroon,
-              color: '#FFFFFF',
+              backgroundColor: theme.buttonPrimaryBg,
+              color: theme.buttonPrimaryText,
             }}
             className="mt-5 w-full py-2.5 px-4 rounded-xl font-bold font-serif text-xs sm:text-sm shadow-md hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer"
           >

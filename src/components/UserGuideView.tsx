@@ -575,35 +575,37 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
   });
 
   return (
-    <div className="w-full space-y-6 font-serif">
+    <div className="w-full space-y-6 font-serif" style={{ color: theme.textPrimary }}>
       {/* Sacred Top Banner */}
-      <div className="text-center space-y-1 pb-2 border-b border-amber-500/20">
-        <span className="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300">
+      <div className="text-center space-y-1 pb-2 border-b" style={{ borderColor: theme.cardBorder }}>
+        <span style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-normal">
           {t.satgurHeading}
         </span>
-        <h2 className="text-xl sm:text-2xl font-black text-amber-900 dark:text-amber-100">
+        <h2 style={{ color: theme.sacredMaroon }} className="text-xl sm:text-2xl font-black">
           {t.title}
         </h2>
-        <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 max-w-xl mx-auto leading-relaxed">
+        <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
           {t.subtitle}
         </p>
       </div>
 
       {/* Quick Search Bar */}
       <div className="relative max-w-md mx-auto">
-        <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-700/60 dark:text-amber-300/60" />
+        <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2" style={{ color: theme.accentGold }} />
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder={t.searchPlaceholder}
-          className="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-amber-500/30 bg-black/5 dark:bg-white/5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition"
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder, color: theme.textPrimary }}
+          className="w-full pl-10 pr-4 py-2.5 rounded-2xl border backdrop-blur-md text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition"
         />
         {searchQuery && (
           <button
             type="button"
             onClick={() => setSearchQuery('')}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-stone-400 hover:text-stone-700"
+            style={{ color: theme.textMuted }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold hover:opacity-80 cursor-pointer"
           >
             ✕
           </button>
@@ -623,13 +625,16 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
                 sacredHaptics.lightTap();
                 setActiveTopicId(tp.id);
               }}
-              className={`px-3 py-1.5 rounded-2xl border text-xs font-bold flex items-center gap-1.5 transition cursor-pointer whitespace-nowrap shrink-0 ${
+              style={
                 isAct
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-md scale-105'
-                  : 'bg-black/5 dark:bg-white/5 border-amber-500/20 text-stone-700 dark:text-stone-300 hover:border-amber-400'
+                  ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText, borderColor: theme.accentGold }
+                  : { backgroundColor: theme.cardBg, color: theme.textPrimary, borderColor: theme.cardBorder }
+              }
+              className={`px-3 py-1.5 rounded-2xl border backdrop-blur-md text-xs font-bold flex items-center gap-1.5 transition cursor-pointer whitespace-nowrap shrink-0 ${
+                isAct ? 'shadow-md scale-105' : 'hover:border-amber-400'
               }`}
             >
-              <Icon size={14} className={isAct ? 'text-white' : 'text-amber-600'} />
+              <Icon size={14} style={{ color: isAct ? theme.buttonPrimaryText : theme.accentGold }} />
               <span>{tp.badge}</span>
             </button>
           );
@@ -647,10 +652,13 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
             <div
               key={topic.id}
               id={`guide-card-${topic.id}`}
-              className={`rounded-3xl border-2 transition-all duration-300 overflow-hidden shadow-sm ${
-                isSelected
-                  ? 'border-amber-600 bg-amber-500/5 dark:bg-amber-950/20 shadow-md ring-1 ring-amber-500/30'
-                  : 'border-amber-500/20 bg-black/5 dark:bg-white/5 hover:border-amber-500/40'
+              style={{
+                backgroundColor: theme.cardBg,
+                borderColor: isSelected ? theme.accentGold : theme.cardBorder,
+                color: theme.textPrimary,
+              }}
+              className={`rounded-3xl border-2 backdrop-blur-md transition-all duration-300 overflow-hidden shadow-sm ${
+                isSelected ? 'shadow-md ring-1 ring-amber-500/30' : 'hover:border-amber-500/40'
               }`}
             >
               {/* Header Accordion Bar */}
@@ -663,45 +671,55 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
                 className="w-full p-4 sm:p-5 flex items-center justify-between gap-3 text-left cursor-pointer transition"
               >
                 <div className="flex items-start sm:items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-2xl bg-amber-600/15 text-amber-800 dark:text-amber-300 flex items-center justify-center shrink-0 border border-amber-500/30 shadow-2xs">
+                  <div
+                    style={{ backgroundColor: theme.stepActiveBg, color: theme.accentGold, borderColor: theme.cardBorder }}
+                    className="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 border shadow-2xs"
+                  >
                     <Icon size={20} />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-sm sm:text-base font-black text-amber-900 dark:text-amber-100">
+                    <h3 style={{ color: theme.sacredMaroon }} className="text-sm sm:text-base font-black">
                       {topic.title[language] || topic.title.hi}
                     </h3>
-                    <p className="text-xs text-stone-600 dark:text-stone-300 truncate mt-0.5">
+                    <p style={{ color: theme.textSecondary }} className="text-xs truncate mt-0.5">
                       {topic.summary[language] || topic.summary.hi}
                     </p>
                   </div>
                 </div>
 
-                <div className="w-7 h-7 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center shrink-0 text-amber-700">
+                <div
+                  style={{ backgroundColor: theme.bgSecondary, color: theme.accentGold }}
+                  className="w-7 h-7 rounded-full flex items-center justify-center shrink-0"
+                >
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-300 ${isSelected ? 'rotate-180 text-amber-600' : ''}`}
+                    className={`transition-transform duration-300 ${isSelected ? 'rotate-180' : ''}`}
                   />
                 </div>
               </button>
 
               {/* Expanded Walkthrough Details */}
               {isSelected && (
-                <div className="px-4 sm:px-6 pb-6 pt-1 space-y-3.5 border-t border-amber-500/20 animate-fadeIn">
+                <div className="px-4 sm:px-6 pb-6 pt-1 space-y-3.5 border-t animate-fadeIn" style={{ borderColor: theme.cardBorder }}>
                   <div className="grid grid-cols-1 gap-3 pt-2">
                     {contentList.map((step, sIdx) => (
                       <div
                         key={sIdx}
-                        className="p-3.5 sm:p-4 rounded-2xl bg-white/70 dark:bg-stone-900/70 border border-amber-500/20 shadow-2xs space-y-1.5"
+                        style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+                        className="p-3.5 sm:p-4 rounded-2xl border backdrop-blur-sm shadow-2xs space-y-1.5"
                       >
                         <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 rounded-lg bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">
+                          <span
+                            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                            className="px-2 py-0.5 rounded-lg text-[10px] font-bold uppercase tracking-wider"
+                          >
                             {step.stepNum}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-black text-amber-900 dark:text-amber-100">
+                          <h4 style={{ color: theme.sacredMaroon }} className="text-xs sm:text-sm font-black">
                             {step.heading}
                           </h4>
                         </div>
-                        <p className="text-xs leading-relaxed text-stone-700 dark:text-stone-300 whitespace-pre-line pl-1">
+                        <p style={{ color: theme.textPrimary }} className="text-xs leading-relaxed whitespace-pre-line pl-1">
                           {step.desc}
                         </p>
                       </div>
@@ -715,8 +733,8 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
       </div>
 
       {/* Devotional Salutation Footer */}
-      <div className="pt-4 text-center border-t border-amber-500/20">
-        <span className="text-xs sm:text-sm font-bold text-amber-800 dark:text-amber-300 tracking-wider">
+      <div className="pt-4 text-center border-t" style={{ borderColor: theme.cardBorder }}>
+        <span style={{ color: theme.sacredMaroon }} className="text-xs sm:text-sm font-bold tracking-normal">
           {t.salutation}
         </span>
       </div>

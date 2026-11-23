@@ -123,7 +123,7 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({ isOpen, 
               <Type className="w-4 h-4 text-amber-600" />
               {language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ (Font Size):' : language === 'en' ? 'Font Size:' : 'अक्षर आकार (Font Size):'}
             </span>
-            <span className="text-xs font-black px-2 py-0.5 rounded bg-amber-600 text-white">
+            <span className="text-xs font-black px-2 py-0.5 rounded bg-[#8B2500] text-white">
               {fontSize === 'small' && 'A-'}
               {fontSize === 'normal' && 'A'}
               {fontSize === 'medium' && 'A+'}

@@ -186,9 +186,9 @@ export const JaapMalaCounter: React.FC<JaapMalaCounterProps> = ({
                 setTarget(tVal);
                 if (count >= tVal) setCount(0);
               }}
-              className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition ${
+              className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition cursor-pointer ${
                 target === tVal
-                  ? 'bg-amber-600 text-white shadow-xs'
+                  ? 'bg-[#8B2500] text-white shadow-xs'
                   : 'text-gray-600 dark:text-gray-400 hover:text-amber-600'
               }`}
             >

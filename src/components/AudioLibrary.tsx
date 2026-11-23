@@ -812,7 +812,7 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <button
                       onClick={() => togglePlay(activeTrack)}
-                      style={{ backgroundColor: theme.sacredMaroon, color: '#FFF' }}
+                      style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                       className="w-12 h-12 rounded-full shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition cursor-pointer"
                       title={isPlaying ? 'विराम (Pause)' : 'श्रवण करें (Play)'}
                     >
@@ -920,7 +920,7 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
                       type="text"
                       id="audio-custom-label-input"
                       placeholder={isHi ? 'प्रसंग का शीर्षक (उदा. आदि सत्कथा का मर्म)' : 'Title for this segment (e.g. key revelation)'}
-                      className="w-full px-3.5 py-2 rounded-xl border text-xs bg-white dark:bg-stone-900 focus:ring-1 focus:ring-amber-500 font-semibold focus:outline-hidden"
+                      className="w-full px-3.5 py-2 rounded-xl border text-xs bg-white/80 dark:bg-stone-900/80 focus:ring-1 focus:ring-amber-500 font-semibold focus:outline-hidden"
                       style={{ borderColor: theme.cardBorder, color: theme.textPrimary }}
                     />
                   </div>
@@ -985,11 +985,11 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
         <button
           onClick={() => setSelectedFilter('all')}
           style={{
-            backgroundColor: selectedFilter === 'all' ? theme.sacredMaroon : theme.cardBg,
-            color: selectedFilter === 'all' ? '#FFF' : theme.textPrimary,
-            borderColor: selectedFilter === 'all' ? theme.sacredMaroon : theme.cardBorder,
+            backgroundColor: selectedFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: selectedFilter === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: selectedFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs"
+          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs backdrop-blur-md"
         >
           {isHi ? 'सभी ऑडियो' : isPb ? 'ਸਾਰੇ ਆਡੀਓ' : 'All Audio'} ({allTracks.length})
         </button>
@@ -1001,7 +1001,7 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
             color: selectedFilter === 'offline' ? '#FFF' : theme.textPrimary,
             borderColor: selectedFilter === 'offline' ? '#059669' : theme.cardBorder,
           }}
-          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap flex items-center gap-1.5 cursor-pointer transition shadow-2xs"
+          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap flex items-center gap-1.5 cursor-pointer transition shadow-2xs backdrop-blur-md"
         >
           <Pin className="w-3.5 h-3.5" />
           <span>{isHi ? 'ऑफ़लाइन सहेजे गए' : isPb ? 'ਆਫ਼ਲਾਈਨ ਸੇਵ' : 'Offline Pinned'} ({pinnedOfflineCount})</span>
@@ -1010,11 +1010,11 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
         <button
           onClick={() => setSelectedFilter('bookmarks')}
           style={{
-            backgroundColor: selectedFilter === 'bookmarks' ? '#D97706' : theme.cardBg,
-            color: selectedFilter === 'bookmarks' ? '#FFF' : theme.textPrimary,
-            borderColor: selectedFilter === 'bookmarks' ? '#D97706' : theme.cardBorder,
+            backgroundColor: selectedFilter === 'bookmarks' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: selectedFilter === 'bookmarks' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: selectedFilter === 'bookmarks' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap flex items-center gap-1.5 cursor-pointer transition shadow-2xs"
+          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap flex items-center gap-1.5 cursor-pointer transition shadow-2xs backdrop-blur-md"
         >
           <BookmarkCheck className="w-3.5 h-3.5" />
           <span>{isHi ? 'बुकमार्क किए गए ऑडियो' : isPb ? 'ਬੁੱਕਮਾਰਕ ਆਡੀਓ' : 'Bookmarked Audio'} ({bookmarkedTrackIds.length})</span>
@@ -1023,11 +1023,11 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
         <button
           onClick={() => setSelectedFilter('satsang')}
           style={{
-            backgroundColor: selectedFilter === 'satsang' ? theme.sacredMaroon : theme.cardBg,
-            color: selectedFilter === 'satsang' ? '#FFF' : theme.textPrimary,
-            borderColor: selectedFilter === 'satsang' ? theme.sacredMaroon : theme.cardBorder,
+            backgroundColor: selectedFilter === 'satsang' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: selectedFilter === 'satsang' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: selectedFilter === 'satsang' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs"
+          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs backdrop-blur-md"
         >
           {t.playSatsangBtn}
         </button>
@@ -1035,11 +1035,11 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
         <button
           onClick={() => setSelectedFilter('granth')}
           style={{
-            backgroundColor: selectedFilter === 'granth' ? theme.sacredMaroon : theme.cardBg,
-            color: selectedFilter === 'granth' ? '#FFF' : theme.textPrimary,
-            borderColor: selectedFilter === 'granth' ? theme.sacredMaroon : theme.cardBorder,
+            backgroundColor: selectedFilter === 'granth' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: selectedFilter === 'granth' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: selectedFilter === 'granth' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs"
+          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs backdrop-blur-md"
         >
           {t.granthAudioLabel}
         </button>
@@ -1047,11 +1047,11 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
         <button
           onClick={() => setSelectedFilter('bhajan')}
           style={{
-            backgroundColor: selectedFilter === 'bhajan' ? theme.sacredMaroon : theme.cardBg,
-            color: selectedFilter === 'bhajan' ? '#FFF' : theme.textPrimary,
-            borderColor: selectedFilter === 'bhajan' ? theme.sacredMaroon : theme.cardBorder,
+            backgroundColor: selectedFilter === 'bhajan' ? theme.buttonPrimaryBg : theme.cardBg,
+            color: selectedFilter === 'bhajan' ? theme.buttonPrimaryText : theme.textPrimary,
+            borderColor: selectedFilter === 'bhajan' ? theme.buttonPrimaryBg : theme.cardBorder,
           }}
-          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs"
+          className="px-3.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap cursor-pointer transition shadow-2xs backdrop-blur-md"
         >
           {t.bhajanAudioLabel}
         </button>
@@ -1060,7 +1060,7 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
       {/* Tracks List */}
       <div className="space-y-3">
         {filteredTracks.length === 0 ? (
-          <div className="p-8 rounded-3xl border text-center space-y-2" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
+          <div className="p-8 rounded-3xl border text-center space-y-2 backdrop-blur-md" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
             {selectedFilter === 'offline' ? (
               <WifiOff className="w-8 h-8 opacity-30 mx-auto" />
             ) : (
@@ -1088,17 +1088,17 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
               <div
                 key={track.id}
                 onClick={() => togglePlay(track)}
-                className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center gap-3 sm:gap-4 hover:shadow-md ${
+                className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center gap-3 sm:gap-4 hover:shadow-md backdrop-blur-md ${
                   isActive ? 'bg-amber-500/10 border-amber-500/40' : ''
                 }`}
                 style={{
-                  backgroundColor: isActive ? 'rgba(245, 158, 11, 0.1)' : theme.cardBg,
+                  backgroundColor: isActive ? 'rgba(245, 158, 11, 0.14)' : theme.cardBg,
                   borderColor: isActive ? theme.accentGold : theme.cardBorder,
                 }}
               >
                 <div
                   className={`w-11 h-11 rounded-xl flex items-center justify-center transition-colors shrink-0 ${
-                    isActive && isPlaying ? 'bg-amber-600 text-white shadow-md' : 'bg-black/5 dark:bg-white/10 group-hover:bg-amber-100'
+                    isActive && isPlaying ? 'bg-[#8B2500] text-white shadow-md' : 'bg-black/5 dark:bg-white/10 group-hover:bg-amber-100'
                   }`}
                 >
                   {isActive && isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5 text-amber-700" />}

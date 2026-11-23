@@ -461,8 +461,8 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
                       }
                     }}
                     style={{
-                      backgroundColor: isSelected ? theme.sacredMaroon : 'transparent',
-                      color: isSelected ? '#FFFFFF' : theme.textSecondary,
+                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
+                      color: isSelected ? theme.buttonPrimaryText : theme.textSecondary,
                     }}
                     className="px-2.5 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer hover:opacity-90"
                     title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
@@ -474,15 +474,15 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
             </div>
 
             {/* Streak Indicator */}
-            <div className="flex items-center gap-3 p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-stone-900 border border-amber-300 shadow-xs shrink-0">
+            <div style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }} className="flex items-center gap-3 p-2.5 sm:p-3 rounded-2xl border shadow-xs shrink-0 backdrop-blur-md">
               <div className="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-600">
                 <Flame className="w-5 h-5 animate-pulse fill-amber-500" />
               </div>
               <div>
-                <div className="text-[11px] text-stone-500 font-bold uppercase tracking-wider">
+                <div className="text-[11px] font-bold uppercase tracking-wider" style={{ color: theme.textSecondary }}>
                   {language === 'pb' ? 'ਸਾਧਨਾ ਸਟ੍ਰੀਕ' : language === 'en' ? 'Streak' : 'साधना स्ट्रीक'}
                 </div>
-                <div className="text-sm sm:text-base font-black text-amber-900 dark:text-amber-300 font-serif">
+                <div className="text-sm sm:text-base font-black font-serif" style={{ color: theme.textPrimary }}>
                   {streakDays} {language === 'pb' ? 'ਦਿਨ ਨਿਰੰਤਰ' : language === 'en' ? 'Days' : 'दिन निरंतर'}
                 </div>
               </div>
@@ -494,7 +494,7 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
 
       {/* Date Navigator & Completion Bar */}
       <div 
-        className="p-4 sm:p-5 rounded-2xl border shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4"
+        className="p-4 sm:p-5 rounded-2xl border shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4 backdrop-blur-md"
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
       >
         <div className="flex items-center gap-2">
@@ -559,18 +559,18 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.04 }}
               onClick={() => handleToggleItem(item.id)}
-              className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer flex items-start gap-3.5 select-none ${
-                isChecked
-                  ? 'bg-amber-50/90 dark:bg-stone-900/60 border-amber-400/80 shadow-xs'
-                  : 'bg-white dark:bg-stone-900 border-stone-200 dark:border-stone-800 hover:border-amber-300'
-              }`}
+              style={{
+                backgroundColor: isChecked ? theme.stepActiveBg : theme.cardBg,
+                borderColor: isChecked ? theme.accentGold : theme.cardBorder,
+              }}
+              className="p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer flex items-start gap-3.5 select-none backdrop-blur-md hover:border-amber-400 shadow-2xs"
             >
               <button 
                 type="button"
                 className="mt-0.5 shrink-0 transition-transform active:scale-90"
               >
                 {isChecked ? (
-                  <CheckCircle2 className="w-5 h-5 text-amber-700 dark:text-amber-500 fill-amber-100 dark:fill-amber-950" />
+                  <CheckCircle2 className="w-5 h-5 text-amber-700 dark:text-amber-400 fill-amber-500/15" />
                 ) : (
                   <Circle className="w-5 h-5 text-stone-400 hover:text-amber-600" />
                 )}
@@ -587,13 +587,13 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
                     {item.title[language]}
                   </h3>
                   {item.category === 'core' && (
-                    <span className="text-[10px] text-amber-800 dark:text-amber-400 font-bold uppercase tracking-wider">
+                    <span style={{ color: theme.sacredMaroon }} className="text-[10px] font-bold uppercase tracking-wider">
                       {language === 'pb' ? 'ਮੂਲ ਪੰਚਾਮ੍ਰਿਤ' : language === 'en' ? 'Core Niyam' : 'मूल पंचामृत'}
                     </span>
                   )}
                 </div>
 
-                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed font-medium">
+                <p style={{ color: theme.textSecondary }} className="text-xs leading-relaxed font-medium">
                   {item.subtitle[language]}
                 </p>
 
@@ -610,7 +610,7 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
 
       {/* Daily Sankalp Box */}
       <div 
-        className="p-5 rounded-3xl border text-center space-y-3 shadow-xs"
+        className="p-5 rounded-3xl border text-center space-y-3 shadow-xs backdrop-blur-md"
         style={{ 
           backgroundColor: theme.stepActiveBg, 
           borderColor: theme.accentGold 
@@ -640,7 +640,7 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
                 );
               }
             }}
-            style={{ backgroundColor: theme.sacredMaroon, color: '#FFFFFF' }}
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
             className="px-5 py-2.5 rounded-xl text-xs font-bold font-serif hover:scale-105 active:scale-95 transition shadow-sm cursor-pointer"
           >
             {language === 'pb' ? 'ਸੰਕਲਪ ਦੁਹਰਾਓ ਤੇ ਅਰਪਿਤ ਕਰੋ' : language === 'en' ? 'Reaffirm Sacred Vow' : 'संकल्प दोहराएं एवं समर्पित करें'}
