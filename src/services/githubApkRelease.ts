@@ -70,7 +70,7 @@ export function getConfiguredGitHubRepo(): string {
     // ignore storage restriction
   }
   const builtIn = parseGitHubRepoSlug(BUILTIN_GITHUB_REPO);
-  return builtIn || '';
+  return builtIn || 'sahebamritvani/saheb-world-satguru-kabir-swadhyay';
 }
 
 export function saveConfiguredGitHubRepo(rawInput: string): string | null {

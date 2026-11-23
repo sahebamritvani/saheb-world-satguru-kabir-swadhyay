@@ -179,7 +179,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
               type="text"
               value={repoInput}
               onChange={(e) => setRepoInput(e.target.value)}
-              placeholder="username/saheb-world"
+              placeholder="sahebamritvani/saheb-world-satguru-kabir-swadhyay"
               className="flex-1 min-h-[44px] px-3 py-2 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-amber-500"
               style={{ color: theme.textPrimary }}
             />

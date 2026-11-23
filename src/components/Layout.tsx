@@ -2115,31 +2115,33 @@ export const Layout: React.FC<LayoutProps> = ({
                         setShowInstallModal(true);
                       }}
                     />
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setIsSidebarOpen(false);
-                        setShowInstallModal(true);
-                      }}
-                      style={{
-                        borderColor: theme.accentGold,
-                        color: theme.mode === 'mystic_dark' ? '#FDE68A' : theme.sacredMaroon,
-                      }}
-                      className="w-full min-h-[44px] px-3 py-2 rounded-xl border text-xs font-serif font-bold flex items-center justify-center gap-1.5 hover:bg-amber-500/10 transition cursor-pointer whitespace-nowrap"
-                    >
-                      <Download className="w-3.5 h-3.5 shrink-0" />
-                      <span>
-                        {language === 'pb'
-                          ? 'GitHub Android APK / ਅਪਡੇਟ'
-                          : language === 'en'
-                          ? 'GitHub Android APK & Updates'
-                          : 'GitHub Android APK डाउनलोड / अपडेट'}
-                      </span>
-                    </button>
+                    {isAdmin && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsSidebarOpen(false);
+                          setShowInstallModal(true);
+                        }}
+                        style={{
+                          borderColor: theme.accentGold,
+                          color: theme.mode === 'mystic_dark' ? '#FDE68A' : theme.sacredMaroon,
+                        }}
+                        className="w-full min-h-[44px] px-3 py-2 rounded-xl border text-xs font-serif font-bold flex items-center justify-center gap-1.5 hover:bg-amber-500/10 transition cursor-pointer whitespace-nowrap"
+                      >
+                        <Download className="w-3.5 h-3.5 shrink-0" />
+                        <span>
+                          {language === 'pb'
+                            ? 'GitHub Android APK / ਅਪਡੇਟ'
+                            : language === 'en'
+                            ? 'GitHub Android APK & Updates'
+                            : 'GitHub Android APK डाउनलोड / अपडेट'}
+                        </span>
+                      </button>
+                    )}
                   </div>
                 )}
 
-                {(pwaStandalone || isCapacitorAndroid()) && (
+                {(pwaStandalone || isCapacitorAndroid()) && isAdmin && (
                   <button
                     type="button"
                     onClick={() => {
@@ -3001,8 +3003,8 @@ export const Layout: React.FC<LayoutProps> = ({
                   </div>
                 </div>
 
-                {/* 1B. GitHub Releases Auto-Updated Android APK Download & Update Card */}
-                <GitHubApkCard language={language} />
+                {/* 1B. GitHub Releases Auto-Updated Android APK Download & Update Card (Admin Only) */}
+                {isAdmin && <GitHubApkCard language={language} />}
 
                 {/* 100% Read-Only Public Lockdown Assurance Banner */}
                 <div 
