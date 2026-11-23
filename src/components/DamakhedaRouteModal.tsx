@@ -1,14 +1,25 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Navigation, Train, Bus, BedDouble, Info } from 'lucide-react';
+import { X, Train, Bus, BedDouble } from 'lucide-react';
 import { Language } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface DamakhedaRouteModalProps {
   isOpen: boolean;
   onClose: () => void;
+  language?: Language;
 }
 
-export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen, onClose }) => {
+export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
+  isOpen,
+  onClose,
+  language,
+}) => {
+  const { language: contextLang } = useLanguage();
+  const activeLang: Language = language || contextLang;
+  const isPb = activeLang === 'pb';
+  const isEn = activeLang === 'en';
+
   if (!isOpen) return null;
 
   return (
@@ -28,10 +39,18 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-black font-serif text-amber-950 dark:text-amber-200">
-                  दमाखेड़ा आश्रम मार्ग व ठहरने की व्यवस्था (Route & Stay Guide)
+                  {isPb
+                    ? 'ਦਮਾਖੇੜਾ ਆਸ਼ਰਮ ਮਾਰਗ ਤੇ ਠਹਿਰਣ ਦਾ ਪ੍ਰਬੰਧ'
+                    : isEn
+                    ? 'Damakheda Ashram Route & Stay Guide'
+                    : 'दमाखेड़ा आश्रम मार्ग व ठहरने की व्यवस्था'}
                 </h3>
                 <p className="text-[11px] font-serif text-amber-800 dark:text-amber-400">
-                  कबीर धर्मनगर दमाखेड़ा (जिला बलौदाबाजार, छत्तीसगढ़)
+                  {isPb
+                    ? 'ਕਬੀਰ ਧਰਮਨਗਰ ਦਮਾਖੇੜਾ (ਜ਼ਿਲ੍ਹਾ ਬਲੌਦਾਬਾਜ਼ਾਰ, ਛੱਤੀਸਗੜ੍ਹ)'
+                    : isEn
+                    ? 'Kabir Dharmanagar Damakheda (Dist. Baloda Bazar, Chhattisgarh)'
+                    : 'कबीर धर्मनगर दमाखेड़ा (जिला बलौदाबाजार, छत्तीसगढ़)'}
                 </p>
               </div>
             </div>
@@ -49,12 +68,34 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-zinc-800/60 border border-gray-100 dark:border-zinc-800 space-y-2">
               <h4 className="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1.5 text-sm">
                 <Train size={16} className="text-amber-600" />
-                <span>रेलवे स्टेशन व निकटतम एयरपोर्ट:</span>
+                <span>
+                  {isPb
+                    ? 'ਰੇਲਵੇ ਸਟੇਸ਼ਨ ਤੇ ਨਜ਼ਦੀਕੀ ਹਵਾਈ ਅੱਡਾ:'
+                    : isEn
+                    ? 'Railway Stations & Nearest Airport:'
+                    : 'रेलवे स्टेशन व निकटतम एयरपोर्ट:'}
+                </span>
               </h4>
               <p className="opacity-80 leading-relaxed">
-                • <strong>निकटतम मुख्य रेलवे स्टेशन:</strong> रायपुर जंक्शन (Raipur Jn) - लगभग 45 किमी।<br />
-                • <strong>भाटापारा रेलवे स्टेशन:</strong> भाटापारा से दमाखेड़ा लगभग 25 किमी।<br />
-                • <strong>निकटतम एयरपोर्ट:</strong> स्वामी विवेकानंद एयरपोर्ट, रायपुर।
+                {isPb ? (
+                  <>
+                    • <strong>ਨਜ਼ਦੀਕੀ ਮੁੱਖ ਰੇਲਵੇ ਸਟੇਸ਼ਨ:</strong> ਰਾਏਪੁਰ ਜੰਕਸ਼ਨ (Raipur Jn) - ਲਗਭਗ 45 ਕਿਮੀ।<br />
+                    • <strong>ਭਾਟਾਪਾਰਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ:</strong> ਭਾਟਾਪਾਰਾ ਤੋਂ ਦਮਾਖੇੜਾ ਲਗਭਗ 25 ਕਿਮੀ।<br />
+                    • <strong>ਨਜ਼ਦੀਕੀ ਹਵਾਈ ਅੱਡਾ:</strong> ਸਵਾਮੀ ਵਿਵੇਕਾਨੰਦ ਹਵਾਈ ਅੱਡਾ, ਰਾਏਪੁਰ।
+                  </>
+                ) : isEn ? (
+                  <>
+                    • <strong>Nearest Major Railway Station:</strong> Raipur Junction (approx. 45 km).<br />
+                    • <strong>Bhatapara Railway Station:</strong> Approx. 25 km from Damakheda.<br />
+                    • <strong>Nearest Airport:</strong> Swami Vivekananda Airport, Raipur.
+                  </>
+                ) : (
+                  <>
+                    • <strong>निकटतम मुख्य रेलवे स्टेशन:</strong> रायपुर जंक्शन (Raipur Jn) - लगभग 45 किमी।<br />
+                    • <strong>भाटापारा रेलवे स्टेशन:</strong> भाटापारा से दमाखेड़ा लगभग 25 किमी।<br />
+                    • <strong>निकटतम एयरपोर्ट:</strong> स्वामी विवेकानंद एयरपोर्ट, रायपुर।
+                  </>
+                )}
               </p>
             </div>
 
@@ -62,10 +103,16 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-zinc-800/60 border border-gray-100 dark:border-zinc-800 space-y-2">
               <h4 className="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1.5 text-sm">
                 <Bus size={16} className="text-amber-600" />
-                <span>सड़क मार्ग व बस सेवा:</span>
+                <span>
+                  {isPb ? 'ਸੜਕ ਮਾਰਗ ਤੇ ਬੱਸ ਸੇਵਾ:' : isEn ? 'Road & Bus Connectivity:' : 'सड़क मार्ग व बस सेवा:'}
+                </span>
               </h4>
               <p className="opacity-80 leading-relaxed">
-                रायपुर बस स्टैंड (पंडरी / भाठागांव) से बलौदाबाजार / बिलासपुर मार्ग पर चलने वाली बसें सीधे दमाखेड़ा आश्रम गेट पर उतरती हैं। टैक्सी व ऑटो भी निरंतर उपलब्ध रहते हैं।
+                {isPb
+                  ? 'ਰਾਏਪੁਰ ਬੱਸ ਸਟੈਂਡ (ਪੰਡਰੀ / ਭਾਠਾਗਾਂਵ) ਤੋਂ ਬਲੌਦਾਬਾਜ਼ਾਰ / ਬਿਲਾਸਪੁਰ ਮਾਰਗ ਦੀਆਂ ਬੱਸਾਂ ਸਿੱਧੇ ਦਮਾਖੇੜਾ ਆਸ਼ਰਮ ਗੇਟ \'ਤੇ ਉਤਾਰਦੀਆਂ ਹਨ। ਟੈਕਸੀ ਤੇ ਆਟੋ ਵੀ ਲਗਾਤਾਰ ਉਪਲਬਧ ਹਨ।'
+                  : isEn
+                  ? 'Regular buses from Raipur Bus Stand (Pandri / Bhatagaon) via Baloda Bazar or Bilaspur highway stop right at the Damakheda Ashram Gate. Taxis and autos are readily available.'
+                  : 'रायपुर बस स्टैंड (पंडरी / भाठागांव) से बलौदाबाजार / बिलासपुर मार्ग पर चलने वाली बसें सीधे दमाखेड़ा आश्रम गेट पर उतरती हैं। टैक्सी व ऑटो भी निरंतर उपलब्ध रहते हैं।'}
               </p>
             </div>
 
@@ -73,12 +120,34 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
             <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-2 text-amber-950 dark:text-amber-200">
               <h4 className="font-bold flex items-center gap-1.5 text-sm">
                 <BedDouble size={16} className="text-amber-600" />
-                <span>आश्रम में रुकने के नियम व व्यवस्था:</span>
+                <span>
+                  {isPb
+                    ? 'ਆਸ਼ਰਮ ਵਿੱਚ ਠਹਿਰਣ ਦੇ ਨਿਯਮ ਤੇ ਪ੍ਰਬੰਧ:'
+                    : isEn
+                    ? 'Ashram Stay Guidelines & Arrangements:'
+                    : 'आश्रम में रुकने के नियम व व्यवस्था:'}
+                </span>
               </h4>
               <p className="opacity-90 leading-relaxed">
-                • आश्रम में सर्व-सुविधायुक्त धर्मशालाएं उपलब्ध हैं।<br />
-                • माघ पूर्णिमा मेला एवं उत्सव के समय पूर्व सूचना के साथ आना उचित रहता है।<br />
-                • आश्रम परिसर में पूर्ण शाकाहार, सात्विकता व पावन मर्यादा का पालन अनिवार्य है।
+                {isPb ? (
+                  <>
+                    • ਆਸ਼ਰਮ ਵਿੱਚ ਸਾਰੀਆਂ ਸਹੂਲਤਾਂ ਵਾਲੀਆਂ ਧਰਮਸ਼ਾਲਾਵਾਂ ਉਪਲਬਧ ਹਨ।<br />
+                    • ਮਾਘ ਪੂਰਨਿਮਾ ਮੇਲੇ ਅਤੇ ਉਤਸਵ ਸਮੇਂ ਪਹਿਲਾਂ ਸੂਚਨਾ ਦੇ ਕੇ ਆਉਣਾ ਉਚਿਤ ਰਹਿੰਦਾ ਹੈ।<br />
+                    • ਆਸ਼ਰਮ ਪਰਿਸਰ ਵਿੱਚ ਪੂਰਨ ਸ਼ਾਕਾਹਾਰ, ਸਾਤਵਿਕਤਾ ਅਤੇ ਪਾਵਨ ਮਰਿਆਦਾ ਦਾ ਪਾਲਣ ਲਾਜ਼ਮੀ ਹੈ।
+                  </>
+                ) : isEn ? (
+                  <>
+                    • Well-equipped Dharmashalas (guest accommodations) are available inside the Ashram.<br />
+                    • Advance intimation is advisable during Magh Purnima Mela and major festivals.<br />
+                    • Pure vegetarian Satvik conduct and sacred Ashram discipline are strictly observed.
+                  </>
+                ) : (
+                  <>
+                    • आश्रम में सर्व-सुविधायुक्त धर्मशालाएं उपलब्ध हैं।<br />
+                    • माघ पूर्णिमा मेला एवं उत्सव के समय पूर्व सूचना के साथ आना उचित रहता है।<br />
+                    • आश्रम परिसर में पूर्ण शाकाहार, सात्विकता व पावन मर्यादा का पालन अनिवार्य है।
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -89,7 +158,7 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
               onClick={onClose}
               className="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs cursor-pointer"
             >
-              साहेब बंदगी साहेब
+              {isPb ? 'ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ' : isEn ? 'Saheb Bandagi Saheb' : 'साहेब बंदगी साहेब'}
             </button>
           </div>
         </motion.div>
@@ -97,3 +166,4 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({ isOpen
     </AnimatePresence>
   );
 };
+

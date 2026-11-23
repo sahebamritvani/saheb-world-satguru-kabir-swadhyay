@@ -166,7 +166,7 @@ export const SpiritualCalendar: React.FC<SpiritualCalendarProps> = ({
           style={{ color: theme.sacredMaroon }}
           className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {language === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
         </span>
       </div>
 
@@ -182,7 +182,7 @@ export const SpiritualCalendar: React.FC<SpiritualCalendarProps> = ({
                 {language === 'pb' ? '।। ਸਾਹੇਬ ਜੰਤਰੀ ੨੦੨੬ ।।' : language === 'en' ? '।। Saheb Jantri 2026 ।।' : '।। साहेब जंत्री २०२६ ।।'}
               </span>
               <span className="text-xs font-bold text-gray-500 font-mono">
-                संवत् २०८२-८३
+                {language === 'pb' ? 'ਸੰਮਤ ੨੦੮੨-੮੩' : language === 'en' ? 'Samvat 2082-83' : 'संवत् २०८२-८३'}
               </span>
             </div>
             <h1 

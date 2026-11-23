@@ -50,7 +50,11 @@ export const TextCorrectionModal: React.FC<TextCorrectionModalProps> = ({
                 <MessageSquareWarning size={18} />
               </div>
               <h3 className="text-base font-black font-serif text-amber-950 dark:text-amber-200">
-                {language === 'pb' ? 'ਸ਼ੁੱਧਤਾ ਸੁਧਾਰ ਸੁਝਾਅ (Text Correction)' : 'पावन वाणी शुद्धि रिपोर्ट (Text Correction)'}
+                {language === 'pb'
+                  ? 'ਸ਼ੁੱਧਤਾ ਸੁਧਾਰ ਸੁਝਾਅ'
+                  : language === 'en'
+                  ? 'Scripture Text Correction'
+                  : 'पावन वाणी शुद्धि रिपोर्ट'}
               </h3>
             </div>
             <button
@@ -67,10 +71,18 @@ export const TextCorrectionModal: React.FC<TextCorrectionModalProps> = ({
               <div className="py-8 text-center space-y-3 animate-in fade-in">
                 <CheckCircle2 size={48} className="mx-auto text-green-600 dark:text-green-400" />
                 <h4 className="text-lg font-bold font-serif text-gray-900 dark:text-gray-100">
-                  {language === 'pb' ? 'ਸੁਝਾਅ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ ਹੈ!' : 'आपका सुझाव प्राप्त हो गया है!'}
+                  {language === 'pb'
+                    ? 'ਸੁਝਾਅ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ ਹੈ!'
+                    : language === 'en'
+                    ? 'Feedback Received!'
+                    : 'आपका सुझाव प्राप्त हो गया है!'}
                 </h4>
                 <p className="text-xs font-serif opacity-75 max-w-xs mx-auto">
-                  {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਸ਼ੁੱਧਤਾ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ। ਅਗਲੇ ਅਪਡੇਟ ਵਿੱਚ ਇਸਨੂੰ ਦਰੁਸਤ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।' : 'सतगुरु कबीर साहेब की वाणी की शुद्धता एवं पवित्रता बनाए रखने में सहयोग हेतु धन्यवाद। अगले अपडेट में इसे जांचकर तुरंत ठीक कर दिया जाएगा।'}
+                  {language === 'pb'
+                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਸ਼ੁੱਧਤਾ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ। ਅਗਲੇ ਅਪਡੇਟ ਵਿੱਚ ਇਸਨੂੰ ਦਰੁਸਤ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।'
+                    : language === 'en'
+                    ? 'Thank you for helping preserve the purity of Satguru Kabir Saheb\'s verses. This will be reviewed and corrected.'
+                    : 'सतगुरु कबीर साहेब की वाणी की शुद्धता एवं पवित्रता बनाए रखने में सहयोग हेतु धन्यवाद। अगले अपडेट में इसे जांचकर तुरंत ठीक कर दिया जाएगा।'}
                 </p>
               </div>
             ) : (
@@ -81,36 +93,58 @@ export const TextCorrectionModal: React.FC<TextCorrectionModalProps> = ({
 
                 <div>
                   <label className="block text-xs font-serif font-bold mb-1 opacity-80">
-                    {language === 'pb' ? 'ਮੌਜੂਦਾ / ਸੁਧਾਰੀ ਜਾਣ ਵਾਲੀ ਪੰਕਤੀ:' : 'सुधार की आवश्यकता वाली पंक्ति या शब्द:'}
+                    {language === 'pb'
+                      ? 'ਮੌਜੂਦਾ / ਸੁਧਾਰੀ ਜਾਣ ਵਾਲੀ ਪੰਕਤੀ:'
+                      : language === 'en'
+                      ? 'Verse line or word needing correction:'
+                      : 'सुधार की आवश्यकता वाली पंक्ति या शब्द:'}
                   </label>
                   <textarea
                     rows={3}
                     value={correctedText}
                     onChange={(e) => setCorrectedText(e.target.value)}
                     className="w-full p-3 rounded-2xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-xs sm:text-sm font-serif focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    placeholder="यहाँ पंक्ति लिखें..."
+                    placeholder={
+                      language === 'pb'
+                        ? 'ਇੱਥੇ ਪੰਕਤੀ ਲਿਖੋ...'
+                        : language === 'en'
+                        ? 'Enter the verse line here...'
+                        : 'यहाँ पंक्ति लिखें...'
+                    }
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-serif font-bold mb-1 opacity-80">
-                    {language === 'pb' ? 'ਗਲਤੀ ਦਾ ਵੇਰਵਾ (Remarks):' : 'त्रुटि का विवरण या सही शब्द क्या होना चाहिए:'}
+                    {language === 'pb'
+                      ? 'ਗਲਤੀ ਦਾ ਵੇਰਵਾ:'
+                      : language === 'en'
+                      ? 'Error details or suggested spelling:'
+                      : 'त्रुटि का विवरण या सही शब्द क्या होना चाहिए:'}
                   </label>
                   <input
                     type="text"
                     value={remarks}
                     onChange={(e) => setRemarks(e.target.value)}
                     className="w-full p-3 rounded-2xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-xs font-serif focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    placeholder="उदा. वर्तनी (Spelling) की अशुद्धि..."
+                    placeholder={
+                      language === 'pb'
+                        ? 'ਜਿਵੇਂ: ਸ਼ਬਦ ਜੋੜ ਦੀ ਗਲਤੀ...'
+                        : language === 'en'
+                        ? 'e.g., spelling or wording correction...'
+                        : 'उदा. वर्तनी (Spelling) की अशुद्धि...'
+                    }
                     required
                   />
                 </div>
 
                 <div className="text-xs font-serif p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200 leading-relaxed">
-                  🔒 {language === 'pb'
-                    ? 'ਮੂਲ ਪਾਵਨ ਬਾਣੀ ਵਿੱਚ ਬਦਲਾਅ ਸਿਰਫ਼ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਹੀ ਕਰ ਸਕਦੇ ਹਨ। ਆਪ ਜੀ ਦਾ ਸੁਝਾਅ ਨੋਟ ਵਜੋਂ ਦਰਜ ਹੋਵੇਗਾ।'
-                    : 'मूल पावन वाणी में संशोधन केवल अधिकृत एडमिन (smongia76@gmail.com) द्वारा ही संभव है। आपका सुझाव समीक्षा हेतु नोट किया जाएगा।'}
+                  {language === 'pb'
+                    ? 'ਆਪ ਜੀ ਦਾ ਸੁਝਾਅ ਸਮੀਖਿਆ ਲਈ ਸੁਰੱਖਿਅਤ ਰੂਪ ਵਿੱਚ ਦਰਜ ਕੀਤਾ ਜਾਵੇਗਾ।'
+                    : language === 'en'
+                    ? 'Your suggestion will be saved safely for review.'
+                    : 'आपका सुझाव समीक्षा हेतु सुरक्षित रूप से नोट किया जाएगा।'}
                 </div>
 
                 <button
@@ -118,7 +152,13 @@ export const TextCorrectionModal: React.FC<TextCorrectionModalProps> = ({
                   className="w-full py-3 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send size={16} />
-                  <span>{language === 'pb' ? 'ਸੁਝਾਅ ਦਰਜ ਕਰੋ' : 'सुझाव नोट सहेजें (Submit Note)'}</span>
+                  <span>
+                    {language === 'pb'
+                      ? 'ਸੁਝਾਅ ਦਰਜ ਕਰੋ'
+                      : language === 'en'
+                      ? 'Submit Correction'
+                      : 'सुझाव नोट सहेजें'}
+                  </span>
                 </button>
               </form>
             )}

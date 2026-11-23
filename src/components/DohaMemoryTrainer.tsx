@@ -283,7 +283,13 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
               <span>
                 {language === 'pb' ? `ਪ੍ਰਸ਼ਨ ${currentIndex + 1} / ${trainerVerses.length}` : language === 'en' ? `Question ${currentIndex + 1} of ${trainerVerses.length}` : `प्रश्न ${currentIndex + 1} / ${trainerVerses.length}`}
               </span>
-              <span>स्कोर: {score}</span>
+              <span>
+                {language === 'pb'
+                  ? `ਸਕੋਰ: ${score}`
+                  : language === 'en'
+                  ? `Score: ${score}`
+                  : `स्कोर: ${score}`}
+              </span>
             </div>
 
             {/* Display First Line */}
@@ -293,12 +299,16 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
             >
               <div className="flex items-center justify-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
-                  {language === 'pb' ? 'ਪਹਿਲੀ ਪੰਕਤੀ (प्रथम पंक्ति):' : language === 'en' ? 'First Line (Prompt):' : 'प्रथम पंक्ति (स्मरण करें):'}
+                  {language === 'pb'
+                    ? 'ਪਹਿਲੀ ਪੰਕਤੀ (ਸਿਮਰਨ ਕਰੋ):'
+                    : language === 'en'
+                    ? 'First Line (Prompt):'
+                    : 'प्रथम पंक्ति (स्मरण करें):'}
                 </span>
                 <button
                   onClick={() => handlePlayVoice(currentTrainer.firstLine[language] || currentTrainer.firstLine.hi)}
                   className="p-1 rounded hover:bg-amber-500/25 transition text-amber-800 dark:text-amber-200 cursor-pointer"
-                  title="श्रवण करें"
+                  title={language === 'pb' ? 'ਬਾਣੀ ਸੁਣੋ' : language === 'en' ? 'Listen Audio' : 'श्रवण करें'}
                 >
                   <Volume2 className="w-4 h-4" />
                 </button>
@@ -393,7 +403,19 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
                     style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                     className="w-full py-3 rounded-xl font-bold text-xs sm:text-sm shadow-lg hover:scale-[1.01] active:scale-[0.99] transition cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <span>{currentIndex < trainerVerses.length - 1 ? (language === 'pb' ? 'अगला दोहा' : 'अगला प्रश्न ➔') : 'प्रशिक्षण पूर्ण करें 🌹'}</span>
+                    <span>
+                      {currentIndex < trainerVerses.length - 1
+                        ? language === 'pb'
+                          ? 'ਅਗਲਾ ਦੋਹਾ ➔'
+                          : language === 'en'
+                          ? 'Next Couplet ➔'
+                          : 'अगला दोहा ➔'
+                        : language === 'pb'
+                        ? 'ਅਭਿਆਸ ਪੂਰਾ ਕਰੋ 🌹'
+                        : language === 'en'
+                        ? 'Complete Practice 🌹'
+                        : 'प्रशिक्षण पूर्ण करें 🌹'}
+                    </span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -409,15 +431,31 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
 
             <div className="space-y-1.5">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 block">
-                {language === 'pb' ? 'ਮੈਮੋਰੀ ਟ੍ਰੇਨਰ ਸਫ਼ਲ' : 'Memory Trainer Completed'}
+                {language === 'pb'
+                  ? 'ਮੈਮੋਰੀ ਟ੍ਰੇਨਰ ਸਫ਼ਲ'
+                  : language === 'en'
+                  ? 'Memory Trainer Completed'
+                  : 'स्मृति अभ्यास संपन्न'}
               </span>
               <h3 className="font-serif font-black text-xl sm:text-2xl text-amber-900 dark:text-amber-100">
-                {score === trainerVerses.length 
-                  ? '🌹 पूर्ण स्मृति सिद्धि (Perfect Recall)' 
+                {score === trainerVerses.length
+                  ? language === 'pb'
+                    ? '🌹 ਪੂਰਨ ਸਿਮਰਤੀ ਸਿੱਧੀ (Perfect Recall)'
+                    : language === 'en'
+                    ? '🌹 Perfect Sacred Recall'
+                    : '🌹 पूर्ण स्मृति सिद्धि (Perfect Recall)'
+                  : language === 'pb'
+                  ? '✨ ਪਾਵਨ ਅਭਿਆਸ ਸੰਪੰਨ'
+                  : language === 'en'
+                  ? '✨ Sacred Practice Completed'
                   : '✨ पावन अभ्यास संपन्न'}
               </h3>
               <p className="text-xs sm:text-sm font-serif opacity-80">
-                आपने {trainerVerses.length} में से {score} दोहे अपनी स्मृति से पूर्ण किए। सतगुरु कबीर साहेब की वाणी आपके हृदय में सदा अमर रहे।
+                {language === 'pb'
+                  ? `ਤੁਸੀਂ ${trainerVerses.length} ਵਿੱਚੋਂ ${score} ਦੋਹੇ ਆਪਣੀ ਯਾਦਦਾਸ਼ਤ ਨਾਲ ਪੂਰੇ ਕੀਤੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚ ਸਦਾ ਅਮਰ ਰਹੇ।`
+                  : language === 'en'
+                  ? `You recalled ${score} out of ${trainerVerses.length} sacred couplets from memory. May Satguru Kabir Saheb's eternal Vani shine within your heart.`
+                  : `आपने ${trainerVerses.length} में से ${score} दोहे अपनी स्मृति से पूर्ण किए। सतगुरु कबीर साहेब की वाणी आपके हृदय में सदा अमर रहे।`}
               </p>
             </div>
 
@@ -429,7 +467,13 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
                 className="w-full py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md hover:scale-105 transition cursor-pointer flex items-center justify-center gap-2"
               >
                 <RotateCcw className="w-4 h-4" />
-                <span>{language === 'pb' ? 'ਦੁਬਾਰਾ ਅਭਿਆਸ ਕਰੋ' : 'पुनः अभ्यास करें (Restart Trainer)'}</span>
+                <span>
+                  {language === 'pb'
+                    ? 'ਦੁਬਾਰਾ ਅਭਿਆਸ ਕਰੋ'
+                    : language === 'en'
+                    ? 'Restart Practice'
+                    : 'पुनः अभ्यास करें (Restart)'}
+                </span>
               </button>
             </div>
           </div>

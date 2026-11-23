@@ -394,7 +394,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
                   : (language === 'pb'
                   ? 'ਆਪਣੀ ਆਵਾਜ਼ ਵਿੱਚ ਬੋਲੋ (ਉਦਾਹਰਣ: ਕਬੀਰ, ਮਾਇਆ, ਸਤਯਨਾਮ)...'
                   : language === 'en'
-                  ? 'Speak now (e.g., "Kabir", "Satnam", "Maya")...'
+                  ? 'Speak now (e.g., "Kabir", "Satyanaam", "Maya")...'
                   : 'अपनी वाणी में बोलें (उदा: कबीर, माया, सत्यनाम)...')}
               </span>
             </div>

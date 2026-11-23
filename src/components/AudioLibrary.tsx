@@ -10,7 +10,6 @@ import {
   BookmarkCheck,
   Disc,
   X,
-  Lock,
   Upload,
   Trash2,
   Plus,
@@ -105,7 +104,7 @@ const TRACKS_DATABASE: AudioTrack[] = [
     description: {
       hi: 'मनुष्य जन्म का परम लक्ष्य और सत्यनाम सुमिरन की गुप्त कुंजी',
       pb: 'ਮਨੁੱਖਾ ਜਨਮ ਦਾ ਪਰਮ ਲਕਸ਼ ਤੇ ਸਤਯਨਾਮ ਸਿਮਰਨ ਦੀ ਗੁਪਤ ਕੁੰਜੀ',
-      en: 'The ultimate purpose of human life and the key of Satnam meditation',
+      en: 'The ultimate purpose of human life and the key of Satyanaam meditation',
     },
   },
   {
@@ -601,7 +600,7 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
           </p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
-          {isAdmin ? (
+          {isAdmin && (
             <button
               type="button"
               onClick={() => setShowUploadForm((prev) => !prev)}
@@ -610,11 +609,6 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
               <Plus className="w-4 h-4" />
               <span>{isHi ? 'नया ऑडियो अपलोड (Admin)' : isPb ? 'ਨਵਾਂ ਆਡੀਓ ਅੱਪਲੋਡ' : 'Upload Audio'}</span>
             </button>
-          ) : (
-            <div className="px-3 py-1.5 rounded-xl bg-stone-500/10 border border-stone-500/20 text-[11px] font-bold flex items-center gap-1.5" style={{ color: theme.textSecondary }}>
-              <Lock className="w-3.5 h-3.5 text-amber-600" />
-              <span>{isHi ? 'पब्लिक रीड-ओनली' : isPb ? 'ਪਬਲਿਕ ਰੀਡ-ਓਨਲੀ' : 'Read-Only'}</span>
-            </div>
           )}
 
           <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 shadow-sm shrink-0">
@@ -669,7 +663,7 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
 
           {!isFirebaseAdminVerified() && (
             <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-[11px] font-bold text-amber-900 dark:text-amber-200">
-              ⚠️ वैश्विक क्लाउड अपलोड के लिए कृपया सेटिंग्स ⚙️ → एडमिन प्रमाणीकरण में Google (smongia76@gmail.com) से साइन-इन अवश्य करें।
+              ⚠️ वैश्विक क्लाउड अपलोड के लिए कृपया Google एडमिन खाते से साइन-इन अवश्य करें।
             </div>
           )}
 

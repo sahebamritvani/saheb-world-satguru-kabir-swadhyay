@@ -1639,7 +1639,7 @@ function cleanSentence(raw: string): string {
     .trim();
 }
 
-function generateDistractorFeedback(text: string, language: Language): string {
+export function generateDistractorFeedback(text: string, language: Language): string {
   const t = text.toLowerCase();
   if (/तीर्थ|तीरथ|मंदिर|कर्मकांड|यज्ञ|रस्म|पूजा|विधी|pilgrimage|ritual|temple|ceremon/.test(t)) {
     if (language === 'pb') return '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਕਰਮਕਾਂਡਾਂ ਦੀ ਥਾਂ ਅੰਦਰੂਨੀ ਪਵਿੱਤਰਤਾ ਅਤੇ ਸਤਯ-ਸ਼ਬਦ ਦੀ ਸਾਧਨਾ ਉੱਤੇ ਜ਼ੋਰ ਦਿੰਦੇ ਹਨ।';

@@ -57,12 +57,13 @@ import {
   Image as ImageIcon
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sakhi, Language, SACRED_BRANDING, AppView } from '../types';
+import { Sakhi, Language, SACRED_BRANDING, AppView, SggsKabirVerse } from '../types';
 import { translations, formatSakhiShareText } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { STARTER_SAKHIS, loadFullSakhisModule } from '../data/sakhiStarterData';
+import { sakhisDatabase } from '../data/sakhis';
 import { QuoteCardModal } from './QuoteCardModal';
 import { HaziriModal } from './HaziriModal';
 import { DailySadhanaQuizModal } from './DailySadhanaQuizModal';
@@ -74,7 +75,7 @@ import { DailyHukamnamaCard } from './DailyHukamnamaCard';
 import { sacredHaptics } from '../services/haptics';
 import { getHaziriState, markTodayHaziri, subscribeToHaziri, HaziriState } from '../services/haziriStore';
 import {
-  ALL_54_DASHBOARD_CARDS,
+  ALL_DASHBOARD_CARDS,
   DASHBOARD_CATEGORIES,
   DashboardCardIconKey,
   DashboardCategoryNumber,
@@ -109,6 +110,7 @@ interface DailyPawanSakhiProps {
   onOpenAutoCorrect?: (text: string) => void;
   onOpenDiaryWithVerse?: (verseText: string, sakhiNumber?: number) => void;
   handleSelectSakhiByNumber?: (num: number) => void;
+  onOpenWallpaperWithHukamnama?: (hukamnamaVerse: SggsKabirVerse) => void;
   isCustomSakhiActive?: boolean;
 }
 
@@ -134,6 +136,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   onOpenAutoCorrect,
   onOpenDiaryWithVerse,
   handleSelectSakhiByNumber,
+  onOpenWallpaperWithHukamnama,
   isCustomSakhiActive = false
 }) => {
   const { theme, isDarkMode, fontSize, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
@@ -149,7 +152,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   const [showCardModal, setShowCardModal] = useState(false);
   const [showBhavarth, setShowBhavarth] = useState(false);
   const [showContemplation, setShowContemplation] = useState(false);
-  const [sakhisList, setSakhisList] = useState<Sakhi[]>(STARTER_SAKHIS);
+  const [sakhisList, setSakhisList] = useState<Sakhi[]>(sakhisDatabase);
 
   useEffect(() => {
     let active = true;
@@ -431,13 +434,15 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       return;
     }
 
-    const found = sakhisList.find((s) => s.number === num);
+    const found =
+      sakhisList.find((s) => s.number === num) ||
+      (num >= 1 && num <= sakhisList.length ? sakhisList[num - 1] : undefined);
     if (found) {
       sacredHaptics.divineBlessing();
       setSakhiJumpError(null);
       setSakhiJumpNumber('');
       if (handleSelectSakhiByNumber) {
-        handleSelectSakhiByNumber(num);
+        handleSelectSakhiByNumber(found.number);
       } else {
         if (onSelectSakhi) {
           onSelectSakhi(found);
@@ -509,7 +514,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     } catch {}
   };
 
-  // All 54 Dashboard Cards Directory State (Search, Filter & Live Admin Slot Indicators)
+  // All 58 Dashboard Cards Directory State (54 Original + 4 New Features)
   const [dashboardCardSearch, setDashboardCardSearch] = useState<string>('');
   const [dashboardCategoryFilter, setDashboardCategoryFilter] = useState<'all' | DashboardCategoryNumber>('all');
   const [adminSlotStatuses, setAdminSlotStatuses] = useState<Record<AdminGranthSlotId, SlotStatusInfo>>(() =>
@@ -522,9 +527,31 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, syncStatuses);
   }, []);
 
+  const matchesMoolSiddhantSearch = useMemo(() => {
+    if (dashboardCategoryFilter !== 'all' && dashboardCategoryFilter !== 1) return false;
+    const q = dashboardCardSearch.trim().toLowerCase();
+    if (!q) return true;
+    return [
+      'मूल सिद्धांत',
+      'सत्यनाम',
+      'मूक',
+      'मूर्त',
+      'mool siddhant',
+      'core principle',
+      'satyanaam',
+      'ਮੂਲ ਸਿਧਾਂਤ',
+      'ਸਤਯਨਾਮ',
+      'ਪਿੰਨ',
+      'pinned',
+    ]
+      .join(' ')
+      .toLowerCase()
+      .includes(q);
+  }, [dashboardCardSearch, dashboardCategoryFilter]);
+
   const filteredDashboardCards = useMemo(() => {
     const q = dashboardCardSearch.trim().toLowerCase();
-    return ALL_54_DASHBOARD_CARDS.filter((card) => {
+    return ALL_DASHBOARD_CARDS.filter((card) => {
       if (dashboardCategoryFilter !== 'all' && card.categoryId !== dashboardCategoryFilter) {
         return false;
       }
@@ -624,6 +651,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       case 'info': return <Info className={className} />;
       case 'lock': return <Lock className={className} />;
       case 'helpCircle': return <HelpCircle className={className} />;
+      case 'trophy': return <Trophy className={className} />;
       default: return <BookOpen className={className} />;
     }
   };
@@ -870,7 +898,6 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             <input
               type="number"
               min="1"
-              max={sakhisList.length}
               value={sakhiJumpNumber}
               onChange={(e) => setSakhiJumpNumber(e.target.value)}
               placeholder={`1-${sakhisList.length}`}
@@ -894,6 +921,85 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             {sakhiJumpError}
           </div>
         )}
+      </div>
+
+      {/* Prominent Core Principle Banner Card (मूल सिद्धांत: एक सत्यनाम से सब सधै) */}
+      <div
+        onClick={() => {
+          sacredHaptics.mediumTap();
+          if (onNavigateView) onNavigateView('mool-siddhant');
+        }}
+        style={{
+          backgroundColor: globalWallpaper
+            ? (isDarkMode ? 'rgba(26, 20, 15, 0.88)' : 'rgba(255, 250, 240, 0.94)')
+            : (isDarkMode ? '#231812' : '#FFFDF8'),
+          borderColor: '#D97706',
+          color: theme.textPrimary,
+        }}
+        className={`border-2 rounded-2xl p-4 sm:p-5 cursor-pointer transition-all shadow-md hover:shadow-xl hover:scale-[1.01] group active:scale-[0.99] relative overflow-hidden ${
+          globalWallpaper ? 'backdrop-blur-md' : ''
+        }`}
+      >
+        <div className="absolute top-0 right-0 w-40 h-40 bg-amber-400/10 rounded-full blur-2xl pointer-events-none group-hover:bg-amber-400/20 transition-all" />
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 relative z-10">
+          <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
+            <div
+              style={{
+                backgroundColor: theme.buttonPrimaryBg,
+                color: theme.buttonPrimaryText,
+              }}
+              className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 group-hover:rotate-6 transition-transform shrink-0 border border-amber-400/40"
+            >
+              <Sparkles className="w-6 h-6 text-amber-300 animate-pulse" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2 flex-wrap mb-1">
+                <span
+                  style={{ color: '#D97706' }}
+                  className="text-[0.6875rem] font-serif font-black uppercase tracking-wider block"
+                >
+                  {language === 'pb' ? 'ਕੇਂਦਰੀ ਮੂਲ ਸਿਧਾਂਤ' : language === 'en' ? 'Central Core Principle' : 'केन्द्रीय मूल सिद्धांत'}
+                </span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/25">
+                  100% Offline
+                </span>
+              </div>
+              <h3
+                style={{ color: theme.sacredMaroon }}
+                className="font-serif font-black text-base sm:text-lg md:text-xl transition-colors leading-tight"
+              >
+                {language === 'pb'
+                  ? 'ਮੂਲ ਸਿਧਾਂਤ: ਇੱਕ ਸਤਯਨਾਮ ਤੋਂ ਸਭ ਸਧੈ (Core Principle)'
+                  : language === 'en'
+                  ? 'Core Principle: Master the One Satyanaam'
+                  : 'मूल सिद्धांत: एक सत्यनाम से सब सधै (Core Principle)'}
+              </h3>
+              <p
+                style={{ color: theme.textSecondary }}
+                className="text-xs sm:text-sm font-serif font-bold mt-1 leading-relaxed opacity-90"
+              >
+                {language === 'pb'
+                  ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ। ਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥ (ਊਰਧਵ ਮੂਲ ਰੁੱਖ, ਚਾਰੇ ਯੁਗ ਤੇ ੯ ਪ੍ਰਮਾਣਿਕ ਦੋਹੇ)'
+                  : language === 'en'
+                  ? 'Master the One Satyanaam, and everything in life falls into place; Kabir says, without this One Root, the entire life goes in vain. (Inverted Tree, 4 Yugas & 9 Dohas)'
+                  : 'सत्यनाम को साध ले, सब कुछ सधता जाय। कहैं कबीर इस मूल बिन, सारा जीवन जाय॥ (ऊर्ध्व मूल वृक्ष, चारों युग एवं ९ प्रमाणिक दोहे)'}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
+            <span
+              style={{ color: '#D97706' }}
+              className="text-xs font-serif font-bold group-hover:underline"
+            >
+              {language === 'pb' ? 'ਦਰਸ਼ਨ ਕਰੋ' : language === 'en' ? 'Explore' : 'दर्शन करें'}
+            </span>
+            <div className="w-8 h-8 rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-700 dark:text-amber-300 group-hover:translate-x-1 group-hover:bg-amber-500/25 transition-all">
+              <ChevronRight className="w-4 h-4" />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Prominent Sacred Quick Access: Divine Darshan & Nitnem Gutka */}
@@ -1656,6 +1762,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         }}
+        onOpenWallpaperEngine={onOpenWallpaperWithHukamnama}
       />
 
       {/* ========================================================================= */}
@@ -1769,6 +1876,154 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       </div>
 
       {/* ========================================================================= */}
+      {/* INTERACTIVE SADHANA & PANTH STUDIO (4 INTERACTIVE MODULES)                */}
+      {/* ========================================================================= */}
+      <section
+        id="interactive-sadhana-studio"
+        style={{
+          backgroundColor: theme.cardBg,
+          borderColor: theme.cardBorder,
+          color: theme.textPrimary,
+        }}
+        className="rounded-3xl border shadow-xl p-4 sm:p-6 space-y-4 animate-fadeIn transition-all"
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
+          <div className="flex items-center gap-3">
+            <div
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold, color: theme.sacredMaroon }}
+              className="w-10 h-10 rounded-2xl border flex items-center justify-center shadow-2xs shrink-0"
+            >
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-black font-serif tracking-tight" style={{ color: theme.sacredMaroon }}>
+                {language === 'pb'
+                  ? 'ਨਵੀਨ ਸਾਧਨਾ ਤੇ ਕਬੀਰ ਗਿਆਨ ਸਟੂਡੀਓ'
+                  : language === 'en'
+                  ? 'Interactive Sadhana & Panth Studio'
+                  : 'नवीन साधना एवं कबीर ज्ञान केंद्र'}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: theme.textSecondary }}>
+                {language === 'pb'
+                  ? 'ਕਾਰਡ ਮੇਕਰ, ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ, ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ ਅਤੇ ਵੰਸ਼ ਬਿਆਲੀਸ ਮਹਿਮਾ'
+                  : language === 'en'
+                  ? 'Greeting Card Maker, Satvik Sankalp Tracker, Kabir Gyan Quiz & Vansh Bayalis Guide'
+                  : 'कबीर वाणी कार्ड मेकर, सात्विक संकल्प ट्रैकर, कबीर ज्ञान प्रश्नोत्तरी व वंश बयालीस महिमा'}
+              </p>
+            </div>
+          </div>
+          <span
+            className="text-xs font-bold font-serif tabular-nums self-start sm:self-center opacity-80"
+            style={{ color: theme.sacredMaroon }}
+          >
+            {language === 'pb' ? '੪ ਇੰਟਰਐਕਟਿਵ ਮਾਡਿਊਲ' : language === 'en' ? '4 Interactive Modules' : '४ इंटरैक्टिव केंद्र'}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          {[
+            {
+              view: 'vani-card-maker' as AppView,
+              kicker: { hi: 'कार्ड स्टूडियो', pb: 'ਕਾਰਡ ਸਟੂਡੀਓ', en: 'Card Studio' },
+              title: { hi: 'कबीर वाणी कार्ड मेकर', pb: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ', en: 'Kabir Vani Card Maker' },
+              desc: {
+                hi: 'सुंदर आध्यात्मिक थीम व अपने नाम के साथ पावन संदेश कार्ड डाउनलोड एवं शेयर करें।',
+                pb: 'ਸੁੰਦਰ ਰੂਹਾਨੀ ਥੀਮ ਤੇ ਆਪਣੇ ਨਾਮ ਨਾਲ ਪਾਵਨ ਸੰਦੇਸ਼ ਕਾਰਡ ਡਾਊਨਲੋਡ ਅਤੇ ਸਾਂਝਾ ਕਰੋ।',
+                en: 'Design & export spiritual greeting cards with themes and your courtesy name.',
+              },
+              action: { hi: 'कार्ड बनाएं', pb: 'ਕਾਰਡ ਬਣਾਓ', en: 'Create Card' },
+              accentClass: 'text-amber-700 dark:text-amber-300',
+              hoverBorderClass: 'hover:border-amber-500/70',
+              icon: <ImageIcon className="w-5 h-5 shrink-0 text-amber-600 dark:text-amber-400" />,
+            },
+            {
+              view: 'satvik-sankalp' as AppView,
+              kicker: { hi: 'साधना संकल्प', pb: 'ਸਾਧਨਾ ਸੰਕਲਪ', en: 'Satvik Vows' },
+              title: { hi: 'नशामुक्ति व सात्विक संकल्प', pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ', en: 'De-addiction & Sankalp' },
+              desc: {
+                hi: 'दैनिक हाज़िरी, दिन गणना, मील के पत्थर बैज व प्रेरक साखियों से संकल्प निभाएं।',
+                pb: 'ਰੋਜ਼ਾਨਾ ਹਾਜ਼ਰੀ, ਦਿਨਾਂ ਦੀ ਗਿਣਤੀ, ਮੀਲ ਪੱਥਰ ਬੈਜ ਤੇ ਪ੍ਰੇਰਕ ਸਾਖੀਆਂ ਨਾਲ ਸੰਕਲਪ ਨਿਭਾਓ।',
+                en: 'Track clean living streaks, daily check-ins, and unlock milestone badges offline.',
+              },
+              action: { hi: 'संकल्प ट्रैकर', pb: 'ਸੰਕਲਪ ਟਰੈਕਰ', en: 'Open Tracker' },
+              accentClass: 'text-emerald-700 dark:text-emerald-300',
+              hoverBorderClass: 'hover:border-emerald-500/70',
+              icon: <ShieldCheck className="w-5 h-5 shrink-0 text-emerald-600 dark:text-emerald-400" />,
+            },
+            {
+              view: 'kabir-gyan-quiz' as AppView,
+              kicker: { hi: 'ज्ञान परीक्षा', pb: 'ਗਿਆਨ ਪ੍ਰੀਖਿਆ', en: 'Spiritual Quiz' },
+              title: { hi: 'कबीर ज्ञान प्रश्नोत्तरी', pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ', en: 'Kabir Gyan Quiz' },
+              desc: {
+                hi: 'कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व अपना प्रमाण-पत्र पाएं।',
+                pb: 'ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਦਿਓ ਤੇ ਸਰਟੀਫਿਕੇਟ ਪਾਓ।',
+                en: 'Test your knowledge across 6 questions and download your appreciation certificate.',
+              },
+              action: { hi: 'प्रश्नोत्तरी खेलें', pb: 'ਪ੍ਰਸ਼ਨੋਤਰੀ ਖੇਡੋ', en: 'Start Quiz' },
+              accentClass: 'text-rose-700 dark:text-rose-300',
+              hoverBorderClass: 'hover:border-rose-500/70',
+              icon: <Trophy className="w-5 h-5 shrink-0 text-rose-600 dark:text-rose-400" />,
+            },
+            {
+              view: 'vansh-bayalis' as AppView,
+              kicker: { hi: '४२ पीढ़ियाँ', pb: '੪੨ ਪੀੜ੍ਹੀਆਂ', en: '42 Generations' },
+              title: { hi: 'वंश बयालीस की पावन महिमा', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ', en: 'Glory of Vansh Bayalis' },
+              desc: {
+                hi: 'सद्गुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
+                pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਵਰਦਾਨ, ਧਨੀ ਧਰਮਦਾਸ ਤੇ ਅਟੱਲ ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦਾ ਰਹੱਸ।',
+                en: 'Explore the 4-part guide on the eternal 42-generation lineage and divine promise.',
+              },
+              action: { hi: 'महिमा पढ़ें', pb: 'ਮਹਿਮਾ ਪੜ੍ਹੋ', en: 'Read Guide' },
+              accentClass: 'text-orange-700 dark:text-orange-300',
+              hoverBorderClass: 'hover:border-orange-500/70',
+              icon: <Crown className="w-5 h-5 shrink-0 text-orange-600 dark:text-orange-400" />,
+            },
+          ].map((mod, idx) => (
+            <button
+              key={mod.view}
+              id={`studio-card-${mod.view}`}
+              type="button"
+              onClick={() => {
+                sacredHaptics.mediumTap();
+                if (onNavigateView) onNavigateView(mod.view);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+              className={`min-h-[44px] p-4 rounded-2xl border ${mod.hoverBorderClass} transition-all duration-200 hover:scale-[1.015] active:scale-[0.985] cursor-pointer flex flex-col justify-between h-full group text-left shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500`}
+            >
+              <div className="space-y-2 w-full">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold font-serif min-w-0 truncate">
+                    <span className="font-mono tabular-nums opacity-70" style={{ color: theme.textSecondary }}>
+                      0{idx + 1}
+                    </span>
+                    <span aria-hidden="true" className="opacity-40">·</span>
+                    <span className={`truncate ${mod.accentClass}`}>{mod.kicker[language] || mod.kicker.hi}</span>
+                  </div>
+                  <div className="transition-transform group-hover:scale-110">{mod.icon}</div>
+                </div>
+                <div>
+                  <h4 className="font-serif font-black text-base leading-snug tracking-tight" style={{ color: theme.sacredMaroon }}>
+                    {mod.title[language] || mod.title.hi}
+                  </h4>
+                  <p className="text-xs opacity-85 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
+                    {mod.desc[language] || mod.desc.hi}
+                  </p>
+                </div>
+              </div>
+              <div
+                style={{ borderColor: theme.cardBorder }}
+                className="mt-3 pt-2.5 border-t w-full flex items-center justify-between text-[11.5px] font-bold"
+              >
+                <span className={`font-serif ${mod.accentClass}`}>{mod.action[language] || mod.action.hi}</span>
+                <ChevronRight size={14} className={`${mod.accentClass} group-hover:translate-x-1 transition-transform shrink-0`} />
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
       {/* SAHEB WORLD SACRED FEATURES & MASTER GRANTHALAYA DIRECTORY (ALL 54 CARDS) */}
       {/* ========================================================================= */}
       <section 
@@ -1795,16 +2050,20 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   {language === 'pb' ? 'ਸਾਹੇਬ ਵਰਲਡ ਸਮੁੱਚੇ ਪਾਵਨ ਫੀਚਰਸ ਤੇ ਗ੍ਰੰਥਾਵਲੀ' : language === 'en' ? 'Saheb World Sacred Granths & Features' : 'साहेब वर्ल्ड समग्र ग्रन्थालय एवं समस्त फीचर्स'}
                 </h3>
                 <span className="text-xs font-bold font-serif tabular-nums opacity-80" style={{ color: theme.sacredMaroon }}>
-                  · {ALL_54_DASHBOARD_CARDS.length}{' '}
-                  {language === 'pb' ? 'ਕਾਰਡ' : language === 'en' ? 'Cards' : 'कार्ड्स'}
+                  · {ALL_DASHBOARD_CARDS.length}{' '}
+                  {language === 'pb'
+                    ? 'ਕਾਰਡ (੫੪ + ੪ ਨਵੇਂ)'
+                    : language === 'en'
+                    ? 'Cards (54 + 4 New)'
+                    : 'कार्ड्स (५४ + ४ नए)'}
                 </span>
               </div>
               <p className="text-xs mt-0.5 leading-relaxed" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸਮੁੱਚੇ ੫੪ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਧੁਨ, ਕੁਇਜ਼ ਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾ'
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸਮੁੱਚੇ ੫੮ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, ਕੁਇਜ਼ ਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾ'
                   : language === 'en'
-                  ? 'All 54 Satguru Kabir Saheb Holy Granths, Nitnem Gutka, Sadhana, Quizzes & App Guides'
-                  : 'सतगुरु कबीर साहेब के समस्त ५४ पावन ग्रन्थ, नितनेम, साधना, धुन, क्विज व मार्गदर्शिका'}
+                  ? 'All 58 Satguru Kabir Saheb Holy Granths, Nitnem, Sadhana, Card Maker, Sankalp Tracker, Quiz & Guides'
+                  : 'सतगुरु कबीर साहेब के समस्त ५८ पावन ग्रन्थ, नितनेम, साधना, कार्ड मेकर, संकल्प, क्विज़ व मार्गदर्शिका'}
               </p>
             </div>
           </div>
@@ -1852,7 +2111,19 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 color: isFeaturesSectionCollapsed ? theme.buttonPrimaryText : theme.sacredMaroon,
               }}
               className="min-h-[40px] px-3.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 shadow-2xs hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap shrink-0"
-              title={isFeaturesSectionCollapsed ? 'ਫੀਚਰਸ ਖੋਲ੍ਹੋ (Open Features)' : 'ਫੀਚਰਸ ਬੰਦ ਕਰੋ (Close Features)'}
+              title={
+                isFeaturesSectionCollapsed
+                  ? language === 'pb'
+                    ? 'ਫੀਚਰਸ ਖੋਲ੍ਹੋ'
+                    : language === 'en'
+                    ? 'Show Features'
+                    : 'फीचर्स खोलें'
+                  : language === 'pb'
+                  ? 'ਫੀਚਰਸ ਬੰਦ ਕਰੋ'
+                  : language === 'en'
+                  ? 'Hide Features'
+                  : 'फीचर्स बंद करें'
+              }
             >
               {isFeaturesSectionCollapsed ? (
                 <>
@@ -1877,12 +2148,12 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           >
             <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs font-bold font-serif tabular-nums" style={{ color: theme.sacredMaroon }}>
               {DASHBOARD_CATEGORIES.map((cat, idx) => {
-                const count = ALL_54_DASHBOARD_CARDS.filter((c) => c.categoryId === cat.id).length;
+                const count = ALL_DASHBOARD_CARDS.filter((c) => c.categoryId === cat.id).length;
                 return (
                   <React.Fragment key={cat.id}>
                     {idx > 0 && <span aria-hidden="true" className="opacity-40">·</span>}
                     <span>
-                      {cat.shortTitle[language] || cat.shortTitle.hi} ({count})
+                      {cat.shortTitle[language] || cat.shortTitle.hi} ({count}{cat.id === 1 ? '+1' : ''})
                     </span>
                   </React.Fragment>
                 );
@@ -1890,10 +2161,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             </div>
             <p className="text-xs max-w-md mx-auto" style={{ color: theme.textSecondary }}>
               {language === 'pb'
-                ? 'ਫੀਚਰਸ ਸੈਕਸ਼ਨ ਸਮੇਟਿਆ ਹੋਇਆ ਹੈ। ਸਮੁੱਚੇ ੫੪ ਕਾਰਡ, ਗ੍ਰੰਥਾਵਲੀ, ਨਿਤਨੇਮ, ਧੁਨ ਤੇ ਸਾਧਨਾ ਸਾਧਨ ਦੇਖਣ ਲਈ ਬਟਨ ਦਬਾਓ।'
+                ? 'ਫੀਚਰਸ ਸੈਕਸ਼ਨ ਸਮੇਟਿਆ ਹੋਇਆ ਹੈ। ਸਮੁੱਚੇ ੫੮ ਕਾਰਡ (੫੪ + ੪ ਨਵੇਂ), ਗ੍ਰੰਥਾਵਲੀ, ਨਿਤਨੇਮ ਤੇ ਸਾਧਨਾ ਸਾਧਨ ਦੇਖਣ ਲਈ ਬਟਨ ਦਬਾਓ।'
                 : language === 'en'
-                ? 'Features section is minimized. Tap below to browse all 54 scriptures, sadhana tools, and guides.'
-                : 'फीचर्स सेक्शन अभी समेटा गया है। समस्त ५४ कार्ड्स, ग्रन्थालय, नित्य पाठ व साधना टूल्स देखने हेतु नीचे क्लिक करें।'}
+                ? 'Features section is minimized. Tap below to browse all 58 scriptures, sadhana tools, new modules & guides.'
+                : 'फीचर्स सेक्शन अभी समेटा गया है। समस्त ५८ कार्ड्स (५४ + ४ नए), ग्रन्थालय, नित्य पाठ व साधना टूल्स देखने हेतु नीचे क्लिक करें।'}
             </p>
             <button
               type="button"
@@ -1904,16 +2175,16 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               <ChevronDown className="w-4 h-4" />
               <span>
                 {language === 'pb'
-                  ? `ਸਮੁੱਚੇ ${ALL_54_DASHBOARD_CARDS.length} ਕਾਰਡ ਖੋਲ੍ਹੋ`
+                  ? `ਸਮੁੱਚੇ ${ALL_DASHBOARD_CARDS.length} ਕਾਰਡ ਖੋਲ੍ਹੋ`
                   : language === 'en'
-                  ? `Open All ${ALL_54_DASHBOARD_CARDS.length} Cards`
-                  : `समस्त ${ALL_54_DASHBOARD_CARDS.length} कार्ड्स खोलें`}
+                  ? `Open All ${ALL_DASHBOARD_CARDS.length} Cards`
+                  : `समस्त ${ALL_DASHBOARD_CARDS.length} कार्ड्स खोलें`}
               </span>
             </button>
           </div>
         ) : (
           <div className="space-y-5">
-            {/* Search & Category Filter Toolbar across All 54 Cards */}
+            {/* Search & Category Filter Toolbar across All 58 Cards */}
             <div className="space-y-3">
               <div className="flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center justify-between">
                 <div className="relative flex-1">
@@ -1928,10 +2199,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     onChange={(e) => setDashboardCardSearch(e.target.value)}
                     placeholder={
                       language === 'pb'
-                        ? '੫੪ ਕਾਰਡਾਂ ਵਿੱਚੋਂ ਖੋਜੋ (ਜਿਵੇਂ: ਬੀਜਕ, ਆਰਤੀ, ਜੰਤਰੀ, #18)...'
+                        ? '੫੮ ਕਾਰਡਾਂ ਵਿੱਚੋਂ ਖੋਜੋ (ਜਿਵੇਂ: ਬੀਜਕ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, #55)...'
                         : language === 'en'
-                        ? 'Search all 54 cards (e.g., Bijak, Aarti, Jantri, #18)...'
-                        : 'समस्त ५४ कार्ड्स में खोजें (जैसे: बीजक, आरती, जंत्री, #18)...'
+                        ? 'Search all 58 cards (e.g., Bijak, Card Maker, Sankalp, #55)...'
+                        : 'समस्त ५८ कार्ड्स में खोजें (जैसे: बीजक, कार्ड मेकर, संकल्प, #55)...'
                     }
                     style={{
                       backgroundColor: theme.bgSecondary,
@@ -1944,7 +2215,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     <button
                       type="button"
                       onClick={() => setDashboardCardSearch('')}
-                      aria-label={language === 'en' ? 'Clear search' : 'खोज साफ़ करें'}
+                      aria-label={language === 'pb' ? 'ਖੋਜ ਸਾਫ਼ ਕਰੋ' : language === 'en' ? 'Clear search' : 'खोज साफ़ करें'}
                       className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer"
                     >
                       <X className="w-3.5 h-3.5" />
@@ -1957,10 +2228,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   style={{ color: theme.textSecondary }}
                 >
                   {language === 'pb'
-                    ? `ਦਿੱਖ ਰਹੇ ਕਾਰਡ: ${filteredDashboardCards.length} / ${ALL_54_DASHBOARD_CARDS.length}`
+                    ? `ਦਿੱਖ ਰਹੇ ਕਾਰਡ: ${filteredDashboardCards.length} / ${ALL_DASHBOARD_CARDS.length}`
                     : language === 'en'
-                    ? `Showing ${filteredDashboardCards.length} / ${ALL_54_DASHBOARD_CARDS.length} cards`
-                    : `प्रदर्शित कार्ड्स: ${filteredDashboardCards.length} / ${ALL_54_DASHBOARD_CARDS.length}`}
+                    ? `Showing ${filteredDashboardCards.length} / ${ALL_DASHBOARD_CARDS.length} cards`
+                    : `प्रदर्शित कार्ड्स: ${filteredDashboardCards.length} / ${ALL_DASHBOARD_CARDS.length}`}
                 </div>
               </div>
 
@@ -1980,13 +2251,13 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   className="min-h-[38px] px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
                 >
                   {language === 'pb'
-                    ? `ਸਾਰੇ (${ALL_54_DASHBOARD_CARDS.length})`
+                    ? `ਸਾਰੇ (${ALL_DASHBOARD_CARDS.length})`
                     : language === 'en'
-                    ? `All (${ALL_54_DASHBOARD_CARDS.length})`
-                    : `सभी (${ALL_54_DASHBOARD_CARDS.length})`}
+                    ? `All (${ALL_DASHBOARD_CARDS.length})`
+                    : `सभी (${ALL_DASHBOARD_CARDS.length})`}
                 </button>
                 {DASHBOARD_CATEGORIES.map((cat) => {
-                  const catCount = ALL_54_DASHBOARD_CARDS.filter((c) => c.categoryId === cat.id).length;
+                  const catCount = ALL_DASHBOARD_CARDS.filter((c) => c.categoryId === cat.id).length;
                   const active = dashboardCategoryFilter === cat.id;
                   return (
                     <button
@@ -2011,7 +2282,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             </div>
 
             {/* Empty Filter State */}
-            {filteredDashboardCards.length === 0 ? (
+            {filteredDashboardCards.length === 0 && !matchesMoolSiddhantSearch ? (
               <div
                 style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
                 className="p-8 rounded-2xl border text-center space-y-3"
@@ -2043,7 +2314,8 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     return null;
                   }
                   const categoryCards = filteredDashboardCards.filter((c) => c.categoryId === category.id);
-                  if (categoryCards.length === 0) return null;
+                  const showPinnedMoolCard = category.id === 1 && matchesMoolSiddhantSearch;
+                  if (categoryCards.length === 0 && !showPinnedMoolCard) return null;
 
                   const isFiltering = dashboardCardSearch.trim().length > 0 || dashboardCategoryFilter !== 'all';
                   const isCollapsed = isFiltering ? false : Boolean(collapsedCategories[category.id]);
@@ -2070,7 +2342,14 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
                           <span className={`text-xs font-bold font-serif tabular-nums ${category.accentTextClass}`}>
-                            {categoryCards.length}{' '}
+                            {categoryCards.length}
+                            {showPinnedMoolCard
+                              ? language === 'pb'
+                                ? ' (+1 ਪਿੰਨ)'
+                                : language === 'en'
+                                ? ' (+1 Pinned)'
+                                : ' (+1 पिन)'
+                              : ''}{' '}
                             {language === 'pb' ? 'ਕਾਰਡ' : language === 'en' ? 'Cards' : 'कार्ड्स'}
                           </span>
                           {!isFiltering &&
@@ -2084,6 +2363,66 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
                       {!isCollapsed && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 animate-fadeIn">
+                          {/* Pinned Item 1 in Category 1: मूल सिद्धांत (Core Principle) */}
+                          {showPinnedMoolCard && (
+                            <button
+                              id="dashboard-card-mool-siddhant"
+                              type="button"
+                              onClick={() => {
+                                sacredHaptics.mediumTap();
+                                if (onNavigateView) onNavigateView('mool-siddhant');
+                              }}
+                              style={{ 
+                                backgroundColor: isDarkMode ? '#231812' : '#FFFDF8', 
+                                borderColor: '#D97706' 
+                              }}
+                              className="p-4 sm:p-5 rounded-2xl border-2 border-amber-500 hover:border-amber-600 transition-all duration-200 hover:scale-[1.015] active:scale-[0.985] cursor-pointer flex flex-col justify-between h-full group text-left shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 relative overflow-hidden"
+                            >
+                              <div className="space-y-2.5 w-full">
+                                <div className="flex items-center justify-between gap-2">
+                                  <div className="flex items-center gap-1.5 text-[11px] font-bold font-serif min-w-0 truncate">
+                                    <span className="text-amber-700 dark:text-amber-300 font-black flex items-center gap-1">
+                                      <span>📌</span>
+                                      <span>{language === 'pb' ? 'ਪਿੰਨ ਕੀਤਾ ਮੁੱਖ ਸਿਧਾਂਤ' : language === 'en' ? 'Pinned Core Principle' : 'पिन किया गया मूल सिद्धांत'}</span>
+                                    </span>
+                                    <span aria-hidden="true" className="opacity-40">·</span>
+                                    <span className="text-emerald-700 dark:text-emerald-300 tabular-nums shrink-0">
+                                      {language === 'pb' ? 'ਅਟੱਲ ਮੂਲ' : language === 'en' ? 'Eternal Root' : 'अटल मूल'}
+                                    </span>
+                                  </div>
+                                  <Sparkles className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 transition-transform group-hover:scale-110" />
+                                </div>
+
+                                <div>
+                                  <h5
+                                    className="font-serif font-black text-base sm:text-[17px] leading-snug tracking-tight transition"
+                                    style={{ color: theme.sacredMaroon }}
+                                  >
+                                    {language === 'pb'
+                                      ? 'ਮੂਲ ਸਿਧਾਂਤ: ਇੱਕ ਸਤਯਨਾਮ ਤੋਂ ਸਭ ਸਧੈ'
+                                      : language === 'en'
+                                      ? 'Core Principle: Master the One Satyanaam'
+                                      : 'मूल सिद्धांत: एक सत्यनाम से सब सधै'}
+                                  </h5>
+                                  <p
+                                    className="text-xs opacity-85 mt-1 line-clamp-2 font-serif leading-relaxed"
+                                    style={{ color: theme.textSecondary }}
+                                  >
+                                    {language === 'pb'
+                                      ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ। ਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥ ਊਰਧਵ ਮੂਲ ਰੁੱਖ ਤੇ ਚਾਰੇ ਯੁਗ।'
+                                      : language === 'en'
+                                      ? 'Master the One Satyanaam, and everything falls into place. Inverted Cosmic Tree & 4 Yugas timeless wisdom.'
+                                      : 'सत्यनाम को साध ले, सब कुछ सधता जाय। कहैं कबीर इस मूल बिन, सारा जीवन जाय॥ ऊर्ध्व मूल वृक्ष व चारों युग।'}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="pt-3 mt-3 border-t border-amber-500/20 flex items-center justify-between text-xs font-serif font-bold text-amber-700 dark:text-amber-300 group-hover:text-amber-600">
+                                <span>{language === 'pb' ? 'ਮੂਲ ਸਿਧਾਂਤ ਦਰਸ਼ਨ' : language === 'en' ? 'Explore Core Principle' : 'मूल सिद्धांत दर्शन'}</span>
+                                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </button>
+                          )}
                           {categoryCards.map((card) => {
                             const slotStatus = adminSlotStatuses[card.slotId];
                             const isLoaded = Boolean(slotStatus?.loaded);
@@ -2298,7 +2637,11 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     {language === 'hi' ? 'साखी पाठ निर्यात व शेयर' : language === 'pb' ? 'ਸਾਖੀ ਪਾਠ ਨਿਰਯਾਤ ਅਤੇ ਸ਼ੇਅਰ' : 'Export & Share Sacred Text'}
                   </h3>
                   <p className="text-xs" style={{ color: theme.textSecondary }}>
-                    {language === 'hi' ? `साखी #${sakhi.number} - ${sakhi.categoryTitle[language]}` : `Sakhi #${sakhi.number}`}
+                    {language === 'hi'
+                      ? `साखी #${sakhi.number} - ${sakhi.categoryTitle.hi}`
+                      : language === 'pb'
+                      ? `ਸਾਖੀ #${sakhi.number} - ${sakhi.categoryTitle.pb || sakhi.categoryTitle.hi}`
+                      : `Sakhi #${sakhi.number} - ${sakhi.categoryTitle.en || sakhi.categoryTitle.hi}`}
                   </p>
                 </div>
               </div>
@@ -2328,7 +2671,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               {exportCopied && (
                 <span className="text-green-600 font-bold flex items-center gap-1 animate-fadeIn">
                   <Check className="w-3.5 h-3.5" />
-                  <span>{language === 'hi' ? 'कॉपी हो गया!' : 'Copied!'}</span>
+                  <span>{language === 'hi' ? 'कॉपी हो गया!' : language === 'pb' ? 'ਕਾਪੀ ਹੋ ਗਿਆ!' : 'Copied!'}</span>
                 </span>
               )}
             </div>
@@ -2357,7 +2700,19 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 className="p-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition cursor-pointer active:scale-95"
               >
                 {exportCopied ? <Check className="w-4 h-4 text-green-300" /> : <Copy className="w-4 h-4" />}
-                <span>{exportCopied ? (language === 'hi' ? 'कॉपी हुआ' : 'Copied') : (language === 'hi' ? 'टेक्स्ट कॉपी करें' : 'Copy Text')}</span>
+                <span>
+                  {exportCopied
+                    ? language === 'hi'
+                      ? 'कॉपी हुआ'
+                      : language === 'pb'
+                      ? 'ਕਾਪੀ ਹੋਇਆ'
+                      : 'Copied'
+                    : language === 'hi'
+                    ? 'टेक्स्ट कॉपी करें'
+                    : language === 'pb'
+                    ? 'ਟੈਕਸਟ ਕਾਪੀ ਕਰੋ'
+                    : 'Copy Text'}
+                </span>
               </button>
 
               <button
@@ -2385,7 +2740,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 className="p-3 rounded-xl border font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition cursor-pointer active:scale-95"
               >
                 <Download className="w-4 h-4 text-amber-600" />
-                <span>{language === 'hi' ? 'फ़ाइल डाउनलोड (.txt)' : 'Download .txt'}</span>
+                <span>{language === 'hi' ? 'फ़ाइल डाउनलोड (.txt)' : language === 'pb' ? 'ਫ਼ਾਈਲ ਡਾਊਨਲੋਡ (.txt)' : 'Download .txt'}</span>
               </button>
             </div>
           </div>

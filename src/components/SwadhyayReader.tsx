@@ -66,6 +66,7 @@ import {
   fetchAiElevenStepSwadhyay,
   mergeAiIntoElevenStepData,
   shuffleQuizViaBackend,
+  normalizeElevenStepQuizQuestion,
   ElevenStepQuizQuestion,
 } from '../services/swadhyayElevenSteps';
 import { getStep1ConciseMeaning } from '../services/swadhyayContentEngine';
@@ -198,6 +199,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const { language: contextLang, t: contextT } = useLanguage();
   const lang = language || contextLang;
   const t = translations[lang] || contextT;
+  const activeFontClass = fontFamily === 'sans' ? 'font-sans' : 'font-serif';
+  const activeFontStyle: React.CSSProperties = {
+    fontFamily:
+      fontFamily === 'sans'
+        ? '"Noto Sans Devanagari", "Noto Sans Gurmukhi", "Mukta", ui-sans-serif, system-ui, sans-serif'
+        : '"Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, Cambria, serif',
+  };
 
   // 2 Reference Sakhis (संदर्भ साखियाँ) rotating daily for comparative deep study
   const referenceSakhis = React.useMemo(() => {
@@ -946,7 +954,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     setQuizSubmitted({});
     setQuizCurrentIdx(0);
     const currentQuestions = elevenStepData.step5_quiz.questions.slice(0, 5);
-    const reshuffled = await shuffleQuizViaBackend(currentQuestions);
+    const reshuffled = await shuffleQuizViaBackend(currentQuestions, language);
     setAiQuizOverride(reshuffled);
     setQuizAttempt((prev) => prev + 1);
   };
@@ -2059,10 +2067,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           }
                         }}
                         style={{
+                          ...activeFontStyle,
                           borderColor: rc.accent,
                           color: activeStyle ? undefined : rc.maroon,
                         }}
-                        className={`cursor-pointer font-serif font-bold border-b-2 border-dotted hover:bg-amber-500/15 transition px-0.5 rounded inline-block whitespace-nowrap align-baseline focus:outline-none focus:ring-1 focus:ring-amber-400 select-text ${
+                        className={`cursor-pointer ${activeFontClass} font-bold border-b-2 border-dotted hover:bg-amber-500/15 transition px-0.5 rounded inline-block whitespace-nowrap align-baseline focus:outline-none focus:ring-1 focus:ring-amber-400 select-text ${
                           isSiddhantHighlighted ? 'bg-amber-300/80 dark:bg-amber-700/70 text-amber-950 dark:text-amber-50 ring-1 ring-amber-500/60 rounded px-1' : ''
                         } ${visraamStyle} ${activeStyle ? activeStyle.text : ''}`}
                         title={
@@ -2083,8 +2092,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   return (
                     <span 
                       key={wIdx} 
-                      style={{ color: activeStyle ? undefined : rc.maroon }} 
-                      className={`font-serif font-bold inline-block select-text ${
+                      style={{ ...activeFontStyle, color: activeStyle ? undefined : rc.maroon }} 
+                      className={`${activeFontClass} font-bold inline-block select-text ${
                         isSiddhantHighlighted ? 'bg-amber-300/80 dark:bg-amber-700/70 text-amber-950 dark:text-amber-50 ring-1 ring-amber-500/60 rounded px-1' : ''
                       } ${visraamStyle} ${activeStyle ? activeStyle.text : ''}`}
                       title={
@@ -3075,7 +3084,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       className="px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
                     >
                       {isSpeaking ? <VolumeX className="w-3.5 h-3.5 text-red-200 animate-pulse" /> : <Volume2 className="w-3.5 h-3.5 text-amber-600" />}
-                      <span>{isSpeaking ? (language === 'hi' ? 'विश्राम' : 'Pause') : (language === 'hi' ? 'ऑडियो पाठ' : 'Audio Narration')}</span>
+                      <span>
+                        {isSpeaking
+                          ? language === 'hi'
+                            ? 'विश्राम'
+                            : language === 'pb'
+                            ? 'ਰੋਕੋ'
+                            : 'Pause'
+                          : language === 'hi'
+                          ? 'ऑडियो पाठ'
+                          : language === 'pb'
+                          ? 'ਆਡੀਓ ਪਾਠ'
+                          : 'Audio Narration'}
+                      </span>
                     </button>
 
                     <select
@@ -3083,11 +3104,17 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       onChange={(e) => setNarrationMode(e.target.value as any)}
                       style={{ color: rc.text }}
                       className="text-[0.625rem] font-bold px-1.5 py-1 cursor-pointer focus:outline-none border-l border-amber-500/20 bg-transparent"
-                      title="Audio Narration Scope"
+                      title={language === 'pb' ? 'ਆਡੀਓ ਵਿਸਤਾਰ' : language === 'en' ? 'Audio Narration Scope' : 'ऑडियो पाठ विस्तार'}
                     >
-                      <option value="couplet" className="bg-white text-black">केवल साखी</option>
-                      <option value="couplet_bhavarth" className="bg-white text-black">साखी + भावार्थ</option>
-                      <option value="full" className="bg-white text-black">संपूर्ण पाठ</option>
+                      <option value="couplet" className="bg-white text-black">
+                        {language === 'pb' ? 'ਕੇਵਲ ਸਾਖੀ' : language === 'en' ? 'Couplet Only' : 'केवल साखी'}
+                      </option>
+                      <option value="couplet_bhavarth" className="bg-white text-black">
+                        {language === 'pb' ? 'ਸਾਖੀ + ਭਾਵਾਰਥ' : language === 'en' ? 'Couplet + Meaning' : 'साखी + भावार्थ'}
+                      </option>
+                      <option value="full" className="bg-white text-black">
+                        {language === 'pb' ? 'ਸੰਪੂਰਨ ਪਾਠ' : language === 'en' ? 'Full Study' : 'संपूर्ण पाठ'}
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -3123,8 +3150,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
                     {/* Refined Parchment Typography Block */}
                     <div 
-                      className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black text-center drop-shadow-2xs select-none max-w-full`}
+                      className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${activeFontClass} font-bold sm:font-black text-center drop-shadow-2xs select-none max-w-full`}
                       style={{
+                        ...activeFontStyle,
                         color: (isNightTheme || isFlowTheme)
                           ? (fontSize === 'elderly' ? '#FFFFFF' : '#FFFDF5')
                           : (fontSize === 'elderly' ? '#1A0E04' : '#38200b'),
@@ -3213,7 +3241,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   }}
                   className="p-4 sm:p-5 rounded-2xl border text-left shadow-xs space-y-2 relative"
                 >
-                  <p className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} text-stone-800 dark:text-stone-100 font-medium select-text`}>
+                  <p style={activeFontStyle} className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${activeFontClass} text-stone-800 dark:text-stone-100 font-medium select-text`}>
                     <span className="font-bold text-emerald-800 dark:text-emerald-300 block mb-1">
                       {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Simple Translation:' : 'सरल अर्थ:'}
                     </span>
@@ -3269,11 +3297,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     </div>
                   </div>
 
-                  <div className="font-serif font-black text-xl" style={{ color: rc.maroon }}>
+                  <div className={`${activeFontClass} font-black text-xl`} style={{ ...activeFontStyle, color: rc.maroon }}>
                     {activeGlossaryItem.word}
                   </div>
 
-                  <p className="text-sm leading-relaxed font-serif" style={{ color: rc.text }}>
+                  <p className={`text-sm leading-relaxed ${activeFontClass}`} style={{ ...activeFontStyle, color: rc.text }}>
                     {activeGlossaryItem.meaning}
                   </p>
 
@@ -3356,10 +3384,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     </span>
                   </div>
                 </div>
-                <p style={{ color: rc.text }} className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'}`}>
+                <p style={{ ...activeFontStyle, color: rc.text }} className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${activeFontClass}`}>
                   {eightStepData.step2_context.relevanceText}
                 </p>
-                <p style={{ color: rc.textSecondary }} className="text-xs italic bg-amber-500/10 p-3 rounded-xl border border-amber-500/20">
+                <p style={{ ...activeFontStyle, color: rc.textSecondary }} className={`text-xs italic bg-amber-500/10 p-3 rounded-xl border border-amber-500/20 ${activeFontClass}`}>
                   ✨ {eightStepData.step2_context.spiritualSignificance}
                 </p>
                 {renderUnlockNextButton(2)}
@@ -3451,14 +3479,14 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         className="p-3.5 rounded-xl border flex flex-col text-xs space-y-1.5 transition hover:shadow-sm"
                       >
                         <div className="flex items-start justify-between gap-2">
-                          <span style={{ color: rc.maroon }} className="font-serif font-black text-sm sm:text-base">
+                          <span style={{ ...activeFontStyle, color: rc.maroon }} className={`${activeFontClass} font-black text-sm sm:text-base`}>
                             {item.word}
                           </span>
                           <span className="text-[0.625rem] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-800 dark:text-amber-300 font-bold">
                             #{idx + 1}
                           </span>
                         </div>
-                        <p style={{ color: rc.text }} className={`text-xs sm:text-sm ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'}`}>
+                        <p style={{ ...activeFontStyle, color: rc.text }} className={`text-xs sm:text-sm ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${activeFontClass}`}>
                           {item.meaning}
                         </p>
                         {/* Word-to-word cross-lingual correspondence tags */}
@@ -3597,7 +3625,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                               <span>{language === 'pb' ? 'ਮੂਲ ਬਾਣੀ (ਪਵਿੱਤਰ ਪਾਠ)' : language === 'en' ? 'Original Moolvani' : 'मूलवाणी (पावन गुरु-पाठ)'}</span>
                             </span>
                           </div>
-                          <div className="font-serif font-black text-lg sm:text-xl text-[#38200b] dark:text-[#f7e7ce] leading-relaxed">
+                          <div style={activeFontStyle} className={`${activeFontClass} font-black text-lg sm:text-xl text-[#38200b] dark:text-[#f7e7ce] leading-relaxed`}>
                             {renderInteractiveCouplet(sakhi.text[language] || sakhi.text.hi)}
                           </div>
                         </motion.div>
@@ -3636,7 +3664,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                                 : 'सतगुरु कबीर साहेब ने यह उपदेश क्यों दिया:'}
                             </span>
                           </div>
-                          <div style={{ color: rc.text }} className="text-sm sm:text-base leading-relaxed font-serif font-semibold pt-1">
+                          <div style={{ ...activeFontStyle, color: rc.text }} className={`text-sm sm:text-base leading-relaxed ${activeFontClass} font-semibold pt-1`}>
                             <SmartGlossaryText text={eightStepData.step4_bhavarthSatsang.bhavarth} language={language} />
                           </div>
                         </motion.div>
@@ -3662,10 +3690,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           ? '|| Everyday Illustration & Satsang Reflection ||'
                           : '।। दैनिक जीवन दृष्टांत एवं व्यवहारिक सत्संग ।।'}
                       </h4>
-                      <div style={{ color: rc.textSecondary }} className="text-sm leading-relaxed font-serif whitespace-pre-line">
+                      <div style={{ ...activeFontStyle, color: rc.textSecondary }} className={`text-sm leading-relaxed ${activeFontClass} whitespace-pre-line`}>
                         <SmartGlossaryText text={eightStepData.step4_bhavarthSatsang.deepSatsangGyan} language={language} />
                       </div>
-                      <p style={{ color: rc.textMuted }} className="text-xs italic pt-2 border-t border-dashed border-stone-300">
+                      <p style={{ ...activeFontStyle, color: rc.textMuted }} className={`text-xs italic pt-2 border-t border-dashed border-stone-300 ${activeFontClass}`}>
                         {eightStepData.step4_bhavarthSatsang.mindMayaAnalysis}
                       </p>
                     </div>
@@ -3726,16 +3754,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
                   {(() => {
                     const qList = elevenStepData.step5_quiz.questions.slice(0, 5);
-                    const q = qList[quizCurrentIdx] || qList[0];
+                    const rawQ = qList[quizCurrentIdx] || qList[0];
+                    const q = normalizeElevenStepQuizQuestion(rawQ, language, quizCurrentIdx);
                     const selectedOptIdx = quizAnswers[quizCurrentIdx];
                     const isSubmitted = quizSubmitted[quizCurrentIdx];
                     const optionsList = q.options;
                     const optionLabels = ['A', 'B', 'C', 'D'];
+                    const correctIdx = optionsList.findIndex((o) => o.isCorrect);
+                    const correctOpt = correctIdx >= 0 ? optionsList[correctIdx] : optionsList[0];
 
                     return (
                       <div className="space-y-4 bg-white/70 dark:bg-zinc-800/70 p-5 rounded-2xl border border-amber-500/20 shadow-xs">
-                        <p className="text-sm font-bold font-serif leading-relaxed" style={{ color: rc.text }}>
-                          {quizCurrentIdx + 1}. {q.questionText || (q as any).question}
+                        <p className={`text-sm font-bold ${activeFontClass} leading-relaxed`} style={{ ...activeFontStyle, color: rc.text }}>
+                          {quizCurrentIdx + 1}. {q.questionText || q.question}
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -3770,7 +3801,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                                 <span className="font-bold px-1.5 py-0.5 rounded text-[0.625rem] bg-amber-100 dark:bg-amber-900/50" style={{ color: labelColor }}>
                                   ({optionLabels[oIdx]})
                                 </span>
-                                <span className="flex-1 font-serif leading-snug" style={{ color: rc.text }}>{opt.text}</span>
+                                <span className={`flex-1 ${activeFontClass} leading-snug`} style={{ ...activeFontStyle, color: rc.text }}>{opt.text}</span>
                               </button>
                             );
                           })}
@@ -3779,19 +3810,60 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         {isSubmitted && (() => {
                           const selectedOpt = optionsList[selectedOptIdx];
                           const rawFeedback = selectedOpt?.feedback || '';
-                          const cleanFeedback = rawFeedback.replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '').trim() || rawFeedback;
+                          const cleanSelectedFeedback =
+                            rawFeedback.replace(/^[✓✗✔✕❌]\s*[^!|।:]+[!|।:]\s*/, '').trim() || rawFeedback;
+                          const rawCorrectExplanation =
+                            q.explanation || correctOpt?.feedback || cleanSelectedFeedback;
+                          const cleanCorrectExplanation =
+                            rawCorrectExplanation.replace(/^[✓✗✔✕❌]\s*[^!|।:]+[!|।:]\s*/, '').trim() || rawCorrectExplanation;
+
                           return (
-                            <div className={`p-3.5 rounded-xl text-xs font-serif space-y-1 animate-fadeIn ${
-                              selectedOpt?.isCorrect 
-                                ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200' 
-                                : 'bg-rose-500/10 border border-rose-500/30 text-rose-900 dark:text-rose-200'
-                            }`}>
+                            <div
+                              style={activeFontStyle}
+                              className={`p-3.5 rounded-xl text-xs ${activeFontClass} space-y-2 animate-fadeIn ${
+                                selectedOpt?.isCorrect
+                                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
+                                  : 'bg-rose-500/10 border border-rose-500/30 text-rose-900 dark:text-rose-200'
+                              }`}
+                            >
                               <p className="font-bold flex items-center gap-1.5 text-xs sm:text-sm">
                                 {selectedOpt?.isCorrect
                                   ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ!' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
                                   : (language === 'pb' ? '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ' : language === 'en' ? '✗ Incorrect Option' : '✗ यह विकल्प सही नहीं है')}
                               </p>
-                              <p className="leading-relaxed opacity-95">{cleanFeedback}</p>
+
+                              {selectedOpt?.isCorrect ? (
+                                <p className="leading-relaxed opacity-95">
+                                  <strong className="font-black">
+                                    {language === 'pb' ? 'ਸਹੀ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Correct Answer Analysis: ' : 'सही उत्तर का विश्लेषण: '}
+                                  </strong>
+                                  {cleanSelectedFeedback}
+                                </p>
+                              ) : (
+                                <div className="space-y-2">
+                                  <p className="leading-relaxed opacity-95">
+                                    <strong className="font-black">
+                                      {language === 'pb' ? 'ਗ਼ਲਤ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Why This Option Is Incorrect: ' : 'गलत उत्तर का विश्लेषण: '}
+                                    </strong>
+                                    {cleanSelectedFeedback}
+                                  </p>
+                                  {correctOpt && (
+                                    <div className="p-2.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-950 dark:text-emerald-100 space-y-1">
+                                      <p className="font-black">
+                                        ✓ {language === 'pb' ? 'ਸਹੀ ਉੱਤਰ' : language === 'en' ? 'Correct Answer' : 'सही उत्तर'} ({optionLabels[correctIdx >= 0 ? correctIdx : 0]}): {correctOpt.text}
+                                      </p>
+                                      {cleanCorrectExplanation && cleanCorrectExplanation !== cleanSelectedFeedback && (
+                                        <p className="opacity-95 leading-relaxed">
+                                          <strong className="font-bold">
+                                            {language === 'pb' ? 'ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Explanation: ' : 'विश्लेषण: '}
+                                          </strong>
+                                          {cleanCorrectExplanation}
+                                        </p>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              )}
                             </div>
                           );
                         })()}
@@ -3876,7 +3948,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
                 {unlockedInsight && (
                   <div className="space-y-3 pt-1 animate-fadeIn">
-                    <p style={{ color: rc.text }} className="text-sm sm:text-base leading-relaxed font-serif whitespace-pre-line">
+                    <p style={{ ...activeFontStyle, color: rc.text }} className={`text-sm sm:text-base leading-relaxed ${activeFontClass} whitespace-pre-line`}>
                       {elevenStepData.step6_spiritualInsight.mysticalCoding}
                     </p>
                   </div>
@@ -3906,8 +3978,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   {elevenStepData.step7_keyLearning.bulletPoints.map((pt, ptIdx) => (
                     <div
                       key={ptIdx}
-                      style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
-                      className="p-3.5 rounded-xl border text-xs sm:text-sm font-serif font-bold text-amber-950 dark:text-amber-100 leading-relaxed"
+                      style={{ ...activeFontStyle, backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
+                      className={`p-3.5 rounded-xl border text-xs sm:text-sm ${activeFontClass} font-bold text-amber-950 dark:text-amber-100 leading-relaxed`}
                     >
                       {pt}
                     </div>
@@ -3949,16 +4021,16 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           {rIdx + 1} / {elevenStepData.step8_crossReferences.references.length}
                         </span>
                       </div>
-                      <p style={{ color: rc.maroon }} className="text-sm sm:text-base font-serif font-bold italic whitespace-pre-line leading-relaxed [word-break:keep-all] [overflow-wrap:break-word]">
+                      <p style={{ ...activeFontStyle, color: rc.maroon }} className={`text-sm sm:text-base ${activeFontClass} font-bold italic whitespace-pre-line leading-relaxed [word-break:keep-all] [overflow-wrap:break-word]`}>
                         {ref.verse}
                       </p>
-                      <p style={{ color: rc.text }} className="text-xs sm:text-sm font-serif leading-relaxed [word-break:keep-all] [overflow-wrap:break-word]">
+                      <p style={{ ...activeFontStyle, color: rc.text }} className={`text-xs sm:text-sm ${activeFontClass} leading-relaxed [word-break:keep-all] [overflow-wrap:break-word]`}>
                         {ref.context}
                       </p>
                       {ref.connection && (
                         <p
-                          style={{ color: rc.textSecondary, borderColor: rc.border }}
-                          className="text-xs sm:text-sm font-serif leading-relaxed pt-2.5 border-t [word-break:keep-all] [overflow-wrap:break-word]"
+                          style={{ ...activeFontStyle, color: rc.textSecondary, borderColor: rc.border }}
+                          className={`text-xs sm:text-sm ${activeFontClass} leading-relaxed pt-2.5 border-t [word-break:keep-all] [overflow-wrap:break-word]`}
                         >
                           {ref.connection}
                         </p>
@@ -4003,8 +4075,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       {elevenStepData.step9_contemplation.questions.map((q, qIdx) => (
                         <div
                           key={qIdx}
-                          style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
-                          className="p-3 rounded-xl border text-xs sm:text-sm font-serif font-bold text-amber-950 dark:text-amber-100"
+                          style={{ ...activeFontStyle, backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
+                          className={`p-3 rounded-xl border text-xs sm:text-sm ${activeFontClass} font-bold text-amber-950 dark:text-amber-100`}
                         >
                           ❓ {q}
                         </div>
@@ -4019,8 +4091,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         value={quickReflection}
                         onChange={(e) => setQuickReflection(e.target.value)}
                         placeholder={fl.reflectionPlaceholder}
-                        style={{ backgroundColor: rc.cardBg, borderColor: rc.border, color: rc.text }}
-                        className="w-full p-3 rounded-xl border text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 h-20 resize-none font-serif"
+                        style={{ ...activeFontStyle, backgroundColor: rc.cardBg, borderColor: rc.border, color: rc.text }}
+                        className={`w-full p-3 rounded-xl border text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 h-20 resize-none ${activeFontClass}`}
                       />
                       <button
                         id="save-eightstep-reflection-btn"
@@ -4061,7 +4133,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-center">
-                  <h4 style={{ color: rc.maroon }} className="text-sm font-bold font-serif">
+                  <h4 style={{ ...activeFontStyle, color: rc.maroon }} className={`text-sm font-bold ${activeFontClass}`}>
                     🌸 {elevenStepData.step10_audioIntegration.sadhanaMethodName}
                   </h4>
                 </div>
@@ -4073,13 +4145,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
                       className="p-4 rounded-2xl border space-y-1.5"
                     >
-                      <h5 style={{ color: rc.maroon }} className="font-bold text-xs sm:text-sm font-serif flex items-center gap-2">
+                      <h5 style={{ ...activeFontStyle, color: rc.maroon }} className={`font-bold text-xs sm:text-sm ${activeFontClass} flex items-center gap-2`}>
                         <span className="w-5 h-5 rounded-full bg-[#8B2500] text-white flex items-center justify-center text-[0.625rem] font-mono">
                           {stg.stageNumber}
                         </span>
                         <span>{stg.title}</span>
                       </h5>
-                      <p style={{ color: rc.text }} className="text-xs sm:text-sm font-serif leading-relaxed pl-7">
+                      <p style={{ ...activeFontStyle, color: rc.text }} className={`text-xs sm:text-sm ${activeFontClass} leading-relaxed pl-7`}>
                         {stg.instruction}
                       </p>
                     </div>
@@ -4115,13 +4187,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
                 {/* Blessing Verse Box */}
                 <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-500/30 shadow-inner">
-                  <p style={{ color: rc.maroon }} className="text-base sm:text-xl font-serif font-black italic whitespace-pre-line leading-relaxed">
+                  <p style={{ ...activeFontStyle, color: rc.maroon }} className={`text-base sm:text-xl ${activeFontClass} font-black italic whitespace-pre-line leading-relaxed`}>
                     {elevenStepData.step11_blessingCertificate.blessingVerse}
                   </p>
                 </div>
 
                 {/* Guru Vachan */}
-                <div style={{ backgroundColor: rc.cardBg, borderColor: rc.border }} className="p-4 rounded-2xl border text-xs sm:text-sm font-serif space-y-2 text-left sm:text-center leading-relaxed">
+                <div style={{ ...activeFontStyle, backgroundColor: rc.cardBg, borderColor: rc.border }} className={`p-4 rounded-2xl border text-xs sm:text-sm ${activeFontClass} space-y-2 text-left sm:text-center leading-relaxed`}>
                   <p style={{ color: rc.text }} className="font-bold">
                     {elevenStepData.step11_blessingCertificate.guruVachan}
                   </p>
@@ -4346,6 +4418,31 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 ))}
               </div>
 
+              {/* Serif vs Sans Font Style Toggle in Zen Mode */}
+              <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
+                {[
+                  { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Serif' : 'ग्रंथ' },
+                  { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Sans' : 'सरल' },
+                ].map((ff) => (
+                  <button
+                    key={ff.id}
+                    type="button"
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      setFontFamily(ff.id);
+                    }}
+                    style={{
+                      backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
+                      color: fontFamily === ff.id ? '#FFFFFF' : rc.textSecondary,
+                    }}
+                    className="px-2 py-1 rounded-lg text-xs font-bold transition cursor-pointer"
+                    title={ff.id === 'serif' ? 'Noto Serif / Traditional' : 'Mukta / Noto Sans Clean'}
+                  >
+                    {ff.label}
+                  </button>
+                ))}
+              </div>
+
               {/* Exit Focus Mode Button — Guaranteed Top-Visible & 44px Touch Target */}
               <button
                 type="button"
@@ -4381,10 +4478,12 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   onClick={() => onSelectSakhi?.(prevSakhi)}
                   style={{ backgroundColor: rc.cardBg, borderColor: rc.accent, color: rc.maroon }}
                   className="pointer-events-auto p-2 sm:px-3 sm:py-1.5 rounded-2xl border shadow-lg flex items-center gap-1 text-xs font-bold hover:scale-105 transition cursor-pointer"
-                  title="पिछली साखी"
+                  title={language === 'pb' ? 'ਪਿਛਲੀ ਸਾਖੀ' : language === 'en' ? 'Previous Sakhi' : 'पिछली साखी'}
                 >
                   <ChevronLeft className="w-4 h-4" />
-                  <span className="hidden sm:inline">साखी #{prevSakhi.number}</span>
+                  <span className="hidden sm:inline">
+                    {language === 'pb' ? `ਸਾਖੀ #${prevSakhi.number}` : language === 'en' ? `Sakhi #${prevSakhi.number}` : `साखी #${prevSakhi.number}`}
+                  </span>
                 </button>
               ) : <div />}
 
@@ -4394,9 +4493,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   onClick={() => onSelectSakhi?.(nextSakhi)}
                   style={{ backgroundColor: rc.cardBg, borderColor: rc.accent, color: rc.maroon }}
                   className="pointer-events-auto p-2 sm:px-3 sm:py-1.5 rounded-2xl border shadow-lg flex items-center gap-1 text-xs font-bold hover:scale-105 transition cursor-pointer"
-                  title="अगली साखी"
+                  title={language === 'pb' ? 'ਅਗਲੀ ਸਾਖੀ' : language === 'en' ? 'Next Sakhi' : 'अगली साखी'}
                 >
-                  <span className="hidden sm:inline">साखी #{nextSakhi.number}</span>
+                  <span className="hidden sm:inline">
+                    {language === 'pb' ? `ਸਾਖੀ #${nextSakhi.number}` : language === 'en' ? `Sakhi #${nextSakhi.number}` : `साखी #${nextSakhi.number}`}
+                  </span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
               ) : <div />}
@@ -4493,7 +4594,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.98 }}
                     transition={{ duration: 0.35, ease: 'easeOut' }}
-                    className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} p-3.5 xs:p-5 sm:p-10 rounded-3xl border-2 border-[#d6ba8d]/80 dark:border-[#735732]/80 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] text-[#38200b] dark:text-[#fffdf5] shadow-2xl relative transition-all duration-300 font-bold sm:font-black ring-1 ring-inset ring-[#e8d2a7]/40 dark:ring-[#4a3a24]/40 max-w-full overflow-hidden`}
+                    style={activeFontStyle}
+                    className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${activeFontClass} p-3.5 xs:p-5 sm:p-10 rounded-3xl border-2 border-[#d6ba8d]/80 dark:border-[#735732]/80 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] text-[#38200b] dark:text-[#fffdf5] shadow-2xl relative transition-all duration-300 font-bold sm:font-black ring-1 ring-inset ring-[#e8d2a7]/40 dark:ring-[#4a3a24]/40 max-w-full overflow-hidden`}
                   >
                     {/* Antique Corner Flourishes */}
                     <div className="absolute top-3 left-4 text-amber-700/30 text-sm font-serif select-none">✦</div>
@@ -4568,10 +4670,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     </div>
                   </div>
 
-                  <div className="font-serif font-black text-xl" style={{ color: rc.maroon }}>
+                  <div className={`${activeFontClass} font-black text-xl`} style={{ ...activeFontStyle, color: rc.maroon }}>
                     {activeGlossaryItem.word}
                   </div>
-                  <p className="text-sm leading-relaxed font-serif" style={{ color: rc.text }}>
+                  <p className={`text-sm leading-relaxed ${activeFontClass}`} style={{ ...activeFontStyle, color: rc.text }}>
                     {activeGlossaryItem.meaning}
                   </p>
 
@@ -4620,7 +4722,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   <Lightbulb className="w-4 h-4 text-amber-600" />
                   <span>{fl.bhavarthHeading}:</span>
                 </div>
-                <div style={{ color: rc.text }} className={`text-sm sm:text-base ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)}`}>
+                <div style={{ ...activeFontStyle, color: rc.text }} className={`text-sm sm:text-base ${activeFontClass} sacred-meaning-typography ${getLineHeightClass(lineHeight)}`}>
                   <SmartGlossaryText text={enrichBhavarthWithNihAkshar(getStep1ConciseMeaning(sakhi, language), language)} language={language} />
                 </div>
               </div>
@@ -4633,7 +4735,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   <Compass className="w-4 h-4 text-amber-600" />
                   <span>{language === 'pb' ? 'ਚਿੰਤਨ-ਸੂਤਰ' : 'चिंतन सूत्र'}:</span>
                 </div>
-                <blockquote style={{ color: rc.text, borderColor: rc.accent }} className={`text-sm sm:text-base ${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)} italic border-l-3 pl-3`}>
+                <blockquote style={{ ...activeFontStyle, color: rc.text, borderColor: rc.accent }} className={`text-sm sm:text-base ${activeFontClass} sacred-meaning-typography ${getLineHeightClass(lineHeight)} italic border-l-3 pl-3`}>
                   "{sakhi.contemplation[language]}"
                 </blockquote>
               </div>

@@ -192,7 +192,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
           style={{ color: theme.sacredMaroon }}
           className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
         >
-          {isPb ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {isPb ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
         </span>
       </div>
 
@@ -201,10 +201,14 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
         <div>
           <h2 className="text-2xl font-black font-serif flex items-center gap-2" style={{ color: theme.sacredMaroon }}>
             <Target className="w-6 h-6 text-amber-600" />
-            <span>{isHi ? 'दैनिक साधना लक्ष्य (Daily Sadhana Goals)' : isPb ? 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ' : 'Daily Sadhana Goals'}</span>
+            <span>{isHi ? 'दैनिक साधना लक्ष्य' : isPb ? 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ' : 'Daily Sadhana Goals'}</span>
           </h2>
           <p className="text-xs opacity-75" style={{ color: theme.textSecondary }}>
-            {isHi ? 'स्वाध्याय, ध्यान, सुमिरन व नित्यम का दैनिक संकल्प एवं प्रगति' : 'Track your daily devotional commitment and spiritual discipline'}
+            {isHi
+              ? 'स्वाध्याय, ध्यान, सुमिरन व नित्यम का दैनिक संकल्प एवं प्रगति'
+              : isPb
+              ? 'ਸਵਾਧਿਆਏ, ਧਿਆਨ, ਸਿਮਰਨ ਤੇ ਨਿਤਨੇਮ ਦਾ ਰੋਜ਼ਾਨਾ ਸੰਕਲਪ ਅਤੇ ਪ੍ਰਗਤੀ'
+              : 'Track your daily devotional commitment and spiritual discipline'}
           </p>
         </div>
 
@@ -213,7 +217,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
           <div className="px-3.5 py-1.5 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center gap-1.5 shadow-xs">
             <Flame className="w-4 h-4 text-orange-600 animate-bounce" />
             <span className="font-bold text-xs text-amber-900 dark:text-amber-200">
-              {streakDays} {isHi ? 'दिन निरंतर साधना' : 'Days Streak'}
+              {streakDays} {isHi ? 'दिन निरंतर साधना' : isPb ? 'ਦਿਨ ਨਿਰੰਤਰ ਸਾਧਨਾ' : 'Days Streak'}
             </span>
           </div>
 
@@ -224,7 +228,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
               className="px-3 py-1.5 rounded-xl border border-amber-600/20 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 cursor-pointer text-xs font-bold flex items-center gap-1"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'वापस जाएं'}</span>
+              <span>{isPb ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}</span>
             </button>
           )}
         </div>
@@ -238,10 +242,10 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <span className="text-[11px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300">
-              {isHi ? 'आज की साधना पूर्णता' : 'Today’s Sadhana Progress'}
+              {isHi ? 'आज की साधना पूर्णता' : isPb ? 'ਅੱਜ ਦੀ ਸਾਧਨਾ ਸੰਪੂਰਨਤਾ' : 'Today’s Sadhana Progress'}
             </span>
             <div className="text-3xl font-black font-serif" style={{ color: theme.sacredMaroon }}>
-              {totalPercent}% {totalPercent >= 100 ? '👑 पूर्णम्!' : isHi ? 'संपन्न' : 'Complete'}
+              {totalPercent}% {totalPercent >= 100 ? (isHi ? '👑 पूर्णम्!' : isPb ? '👑 ਸੰਪੂਰਨ!' : '👑 Complete!') : isHi ? 'संपन्न' : isPb ? 'ਸੰਪੰਨ' : 'Complete'}
             </div>
           </div>
 
@@ -264,7 +268,13 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
         {totalPercent >= 100 && (
           <div className="p-2.5 rounded-xl bg-green-500/15 border border-green-500/30 text-green-900 dark:text-green-200 text-xs font-bold text-center flex items-center justify-center gap-1.5 animate-fadeIn">
             <Award className="w-4 h-4 text-green-600" />
-            <span>{isHi ? 'सतगुरु आशीर्वाद: आज का पावन साधना संकल्प पूर्ण हुआ!' : 'Satguru Blessings: Daily Sadhana goals fully achieved!'}</span>
+            <span>
+              {isHi
+                ? 'सतगुरु आशीर्वाद: आज का पावन साधना संकल्प पूर्ण हुआ!'
+                : isPb
+                ? 'ਸਤਿਗੁਰੂ ਅਸ਼ੀਰਵਾਦ: ਅੱਜ ਦਾ ਪਾਵਨ ਸਾਧਨਾ ਸੰਕਲਪ ਪੂਰਾ ਹੋਇਆ!'
+                : 'Satguru Blessings: Daily Sadhana goals fully achieved!'}
+            </span>
           </div>
         )}
       </div>
@@ -283,10 +293,10 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
               </div>
               <div>
                 <h4 className="font-bold text-sm font-serif" style={{ color: theme.textPrimary }}>
-                  {isHi ? 'पावन साखी स्वाध्याय' : 'Sakhi Swadhyay'}
+                  {isHi ? 'पावन साखी स्वाध्याय' : isPb ? 'ਪਾਵਨ ਸਾਖੀ ਸਵਾਧਿਆਏ' : 'Sakhi Swadhyay'}
                 </h4>
                 <span className="text-[11px] opacity-70">
-                  {progress.sakhisDone} / {goals.sakhisTarget} {isHi ? 'साखियाँ' : 'Sakhis'}
+                  {progress.sakhisDone} / {goals.sakhisTarget} {isHi ? 'साखियाँ' : isPb ? 'ਸਾਖੀਆਂ' : 'Sakhis'}
                 </span>
               </div>
             </div>
@@ -317,7 +327,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
                 onClick={onNavigateToSwadhyay}
                 className="px-3 py-1.5 rounded-lg border border-amber-500/40 text-xs font-bold text-amber-800 dark:text-amber-200 hover:bg-amber-500/10 cursor-pointer"
               >
-                {isHi ? 'स्वाध्याय करें' : 'Study'}
+                {isHi ? 'स्वाध्याय करें' : isPb ? 'ਸਵਾਧਿਆਏ ਕਰੋ' : 'Study'}
               </button>
             )}
           </div>
@@ -335,10 +345,10 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
               </div>
               <div>
                 <h4 className="font-bold text-sm font-serif" style={{ color: theme.textPrimary }}>
-                  {isHi ? 'अमृतवेला ध्यान व मौन' : 'Meditation & Dhyan'}
+                  {isHi ? 'अमृतवेला ध्यान व मौन' : isPb ? 'ਅੰਮ੍ਰਿਤਵੇਲਾ ਧਿਆਨ ਤੇ ਮੌਨ' : 'Meditation & Dhyan'}
                 </h4>
                 <span className="text-[11px] opacity-70">
-                  {progress.dhyanMinutesDone} / {goals.dhyanMinutesTarget} {isHi ? 'मिनट' : 'Mins'}
+                  {progress.dhyanMinutesDone} / {goals.dhyanMinutesTarget} {isHi ? 'मिनट' : isPb ? 'ਮਿੰਟ' : 'Mins'}
                 </span>
               </div>
             </div>
@@ -369,7 +379,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
                 onClick={onNavigateToTimer}
                 className="px-3 py-1.5 rounded-lg border border-orange-500/40 text-xs font-bold text-orange-800 dark:text-orange-200 hover:bg-orange-500/10 cursor-pointer"
               >
-                {isHi ? 'टाइमर खोलें' : 'Timer'}
+                {isHi ? 'टाइमर खोलें' : isPb ? 'ਟਾਈਮਰ ਖੋਲ੍ਹੋ' : 'Timer'}
               </button>
             )}
           </div>
@@ -387,10 +397,10 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
               </div>
               <div>
                 <h4 className="font-bold text-sm font-serif" style={{ color: theme.textPrimary }}>
-                  {isHi ? 'सत्यनाम जप व सुमिरन' : 'Satyanaam Mantra Japa'}
+                  {isHi ? 'सत्यनाम जप व सुमिरन' : isPb ? 'ਸਤਯਨਾਮ ਜਪ ਤੇ ਸਿਮਰਨ' : 'Satyanaam Mantra Japa'}
                 </h4>
                 <span className="text-[11px] opacity-70">
-                  {progress.mantraDone} / {goals.mantraTarget} {isHi ? 'बार' : 'Reps'}
+                  {progress.mantraDone} / {goals.mantraTarget} {isHi ? 'बार' : isPb ? 'ਵਾਰ' : 'Reps'}
                 </span>
               </div>
             </div>
@@ -421,7 +431,7 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
                 onClick={onNavigateToMantra}
                 className="px-3 py-1.5 rounded-lg border border-rose-500/40 text-xs font-bold text-rose-800 dark:text-rose-200 hover:bg-rose-500/10 cursor-pointer"
               >
-                {isHi ? 'जाप माला' : 'Counter'}
+                {isHi ? 'जाप माला' : isPb ? 'ਜਾਪ ਮਾਲਾ' : 'Counter'}
               </button>
             )}
           </div>
@@ -440,10 +450,12 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
               </div>
               <div>
                 <h4 className="font-bold text-sm font-serif" style={{ color: theme.textPrimary }}>
-                  {isHi ? 'नित्यम गुटका व आरती पाठ' : 'Daily Nitnem & Aarti'}
+                  {isHi ? 'नित्यम गुटका व आरती पाठ' : isPb ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਤੇ ਆਰਤੀ ਪਾਠ' : 'Daily Nitnem & Aarti'}
                 </h4>
                 <span className="text-[11px] opacity-70">
-                  {progress.nitnemDone ? (isHi ? 'सम्पन्न ✓' : 'Completed') : (isHi ? 'लंबित' : 'Pending')}
+                  {progress.nitnemDone
+                    ? (isHi ? 'सम्पन्न ✓' : isPb ? 'ਸੰਪੰਨ ✓' : 'Completed')
+                    : (isHi ? 'लंबित' : isPb ? 'ਬਾਕੀ' : 'Pending')}
                 </span>
               </div>
             </div>
@@ -451,7 +463,11 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
           </div>
 
           <div className="pt-2 text-xs font-bold text-emerald-700 flex items-center gap-1.5">
-            <span>{progress.nitnemDone ? (isHi ? '✓ आज का पाठ सम्पन्न' : 'Marked as read') : (isHi ? 'क्लिक करके पूर्ण चिह्नित करें' : 'Click to complete')}</span>
+            <span>
+              {progress.nitnemDone
+                ? (isHi ? '✓ आज का पाठ सम्पन्न' : isPb ? '✓ ਅੱਜ ਦਾ ਪਾਠ ਸੰਪੰਨ' : 'Marked as read')
+                : (isHi ? 'क्लिक करके पूर्ण चिह्नित करें' : isPb ? 'ਪੂਰਾ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ' : 'Click to complete')}
+            </span>
           </div>
         </div>
       </div>

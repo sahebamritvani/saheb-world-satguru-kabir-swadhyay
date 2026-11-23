@@ -25,7 +25,6 @@ import {
   ArrowDown,
   Repeat,
   Shuffle,
-  Lock,
   ShieldCheck,
   Cloud,
   Pin,
@@ -925,7 +924,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
         {/* Header Actions (Admin-Only Upload & Close) */}
         <div className="flex items-center gap-2">
-          {isAdmin ? (
+          {isAdmin && (
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
@@ -939,11 +938,6 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
               <Upload className={`w-4 h-4 ${isUploading ? 'animate-spin' : ''}`} />
               <span>{isUploading ? t.uploading : t.uploadBtn}</span>
             </button>
-          ) : (
-            <div className="px-3 py-1.5 rounded-xl bg-stone-500/10 border border-stone-500/20 text-[11px] font-bold flex items-center gap-1.5" style={{ color: theme.textSecondary }}>
-              <Lock className="w-3.5 h-3.5 text-amber-600" />
-              <span>{language === 'pb' ? 'ਕੇਵਲ ਐਡਮਿਨ ਅੱਪਲੋਡ' : language === 'en' ? 'Admin-Only Upload' : 'केवल एडमिन अपलोड'}</span>
-            </div>
           )}
 
           {onClose && (
@@ -1254,7 +1248,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
               className={`text-center p-8 rounded-2xl border-2 border-dashed border-amber-400/40 bg-black/5 dark:bg-white/5 transition space-y-3 ${isAdmin ? 'cursor-pointer hover:border-amber-500' : ''}`}
             >
               <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto text-amber-600">
-                {isAdmin ? <Disc className="w-8 h-8 animate-spin duration-3000" /> : <Lock className="w-8 h-8" />}
+                <Disc className={`w-8 h-8 ${isAdmin ? 'animate-spin duration-3000' : ''}`} />
               </div>
               <div className="space-y-1">
                 <h3 className="text-base font-bold font-serif" style={{ color: theme.sacredMaroon }}>
@@ -1264,10 +1258,10 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
                   {isAdmin
                     ? t.noCustomSubtitle
                     : (language === 'pb'
-                        ? 'ਇਹ ਸੂਚੀ ਪਬਲਿਕ ਰੀਡ-ਓਨਲੀ ਹੈ। ਸਿਰਫ਼ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਹੀ ਨਵੀਆਂ ਧੁਨਾਂ ਜੋੜ ਸਕਦੇ ਹਨ।'
+                        ? 'ਇੱਥੇ ਪਾਵਨ ਸਤਯਨਾਮ ਧੁਨ ਤੇ ਭਜਨ ਸੰਗ੍ਰਹਿ ਉਪਲਬਧ ਹੋਵੇਗਾ।'
                         : language === 'en'
-                        ? 'Public read-only library. Only the Authorized Admin can upload audio tracks.'
-                        : 'यह सूची पब्लिक रीड-ओनली है। केवल अधिकृत एडमिन (smongia76@gmail.com) ही नई ऑडियो धुन जोड़ सकते हैं।')}
+                        ? 'Sacred Satyanaam Dhun tracks will appear here.'
+                        : 'यहाँ पावन सत्यनाम धुन संग्रह उपलब्ध होगा। मुख्य धुन प्लेयर से आनंद लें।')}
                 </p>
               </div>
               {isAdmin && (
@@ -1862,11 +1856,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
             <div className="p-6 rounded-2xl border-2 border-dashed border-amber-400/40 text-center space-y-3">
               <ListMusic className="w-8 h-8 mx-auto text-amber-600" />
               <p className="text-xs text-stone-500">
-                {isAdmin
-                  ? t.noPlaylistsMsg
-                  : (language === 'hi'
-                      ? 'अभी कोई सार्वजनिक प्लेलिस्ट नहीं है। केवल अधिकृत एडमिन ही प्लेलिस्ट बना सकते हैं।'
-                      : t.noPlaylistsMsg)}
+                {t.noPlaylistsMsg}
               </p>
               {isAdmin && (
                 <button

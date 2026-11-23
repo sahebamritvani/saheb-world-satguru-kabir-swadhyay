@@ -236,7 +236,7 @@ export const NitnemAngItem = forwardRef<HTMLDivElement, {
               className="text-[10px] font-black px-2 py-0.5 rounded text-white tracking-wider shrink-0"
               style={{ backgroundColor: paperTheme === 'night' ? '#92400E' : pothiColors.maroon }}
             >
-              {language === 'pb' ? '।।ਸਤ੍ਯਨਾਮ।।' : language === 'en' ? '|| Satyanaam ||' : '।।सत्यनाम।।'}
+              {language === 'pb' ? '।।ਸਤਯਨਾਮ।।' : language === 'en' ? '|| Satyanaam ||' : '।।सत्यनाम।।'}
             </span>
             <span className="text-xs font-bold truncate" style={{ color: pothiColors.maroon }}>
               {title}

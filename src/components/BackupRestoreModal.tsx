@@ -57,7 +57,13 @@ export const BackupRestoreModal: React.FC<BackupRestoreModalProps> = ({ isOpen, 
         if (json.lastRead) localStorage.setItem('sahebworld_last_read_nitnem', json.lastRead);
         if (json.settings) localStorage.setItem('sahebworld_settings', json.settings);
 
-        setSuccessMsg(language === 'pb' ? 'ਬੈਕਅੱਪ ਸਫਲਤਾਪੂਰਵਕ ਰੀਸੋਰਟ ਹੋ ਗਿਆ! ਪੰਨਾ ਰਿਫ੍ਰੈਸ਼ ਹੋ ਰਿहा है।' : 'बैकअप सफलतापूर्वक पुनर्स्थापित (Restore) हो गया! पृष्ठ रीफ्रेश हो रहा है।');
+        setSuccessMsg(
+          language === 'pb'
+            ? 'ਬੈਕਅੱਪ ਸਫਲਤਾਪੂਰਵਕ ਰੀਸਟੋਰ ਹੋ ਗਿਆ! ਪੰਨਾ ਰਿਫ੍ਰੈਸ਼ ਹੋ ਰਿਹਾ ਹੈ।'
+            : language === 'en'
+            ? 'Backup restored successfully! Refreshing page...'
+            : 'बैकअप सफलतापूर्वक पुनर्स्थापित (Restore) हो गया! पृष्ठ रीफ्रेश हो रहा है।'
+        );
         setTimeout(() => {
           window.location.reload();
         }, 2000);
@@ -84,7 +90,11 @@ export const BackupRestoreModal: React.FC<BackupRestoreModalProps> = ({ isOpen, 
                 <Database size={18} />
               </div>
               <h3 className="text-base font-black font-serif text-amber-950 dark:text-amber-200">
-                {language === 'pb' ? 'ਸਥਾਨਕ ਬੈਕਅੱਪ ਤੇ ਰੀਸੋਰਟ' : 'लोकल क्लाउड बैकअप व रिस्टोर'}
+                {language === 'pb'
+                  ? 'ਸਥਾਨਕ ਬੈਕਅੱਪ ਤੇ ਰੀਸਟੋਰ'
+                  : language === 'en'
+                  ? 'Local Backup & Restore'
+                  : 'लोकल बैकअप व रिस्टोर'}
               </h3>
             </div>
             <button
@@ -101,7 +111,9 @@ export const BackupRestoreModal: React.FC<BackupRestoreModalProps> = ({ isOpen, 
               <ShieldCheck size={20} className="shrink-0 text-amber-600 dark:text-amber-400 mt-0.5" />
               <p>
                 {language === 'pb'
-                  ? 'ਆਪਣੇ ਬੁੱਕਮਾਰਕ, ਡਾਇਰੀ ਨੋਟਸ ਅਤੇ ਜਾਪ ਕਾਊਂਟਰ ਦਾ ਬੈਕਅੱਪ ਸੁਰੱਖਿਅਤ ਕਰੋ ਤਾਂ ਜੋ ਫੋਨ ਬਦਲਣ ਉੱਤੇ ਵੀ ਤੁਹਾਡਾ ਡਾਟਾ ਸੁਰੱਖਿਅਤ ਰਹੇ।'
+                  ? 'ਆਪਣੇ ਬੁੱਕਮਾਰਕ, ਡਾਇਰੀ ਨੋਟਸ ਅਤੇ ਜਾਪ ਕਾਊਂਟਰ ਦਾ ਬੈਕਅੱਪ ਸੁਰੱਖਿਅਤ ਕਰੋ ਤਾਂ ਜੋ ਫ਼ੋਨ ਬਦਲਣ ਉੱਤੇ ਵੀ ਤੁਹਾਡਾ ਡਾਟਾ ਸੁਰੱਖਿਅਤ ਰਹੇ।'
+                  : language === 'en'
+                  ? 'Download a safe backup of all your bookmarks, Swadhyay diary notes, and Mala counts so your spiritual progress remains safe across devices.'
                   : 'अपने सभी बुकमार्क, स्वाध्याय डायरी नोट्स, और जाप काउंटर का सुरक्षित बैकअप डाउनलोड करें ताकि फोन बदलने पर भी आपका डेटा सुरक्षित रहे।'}
               </p>
             </div>
@@ -120,12 +132,24 @@ export const BackupRestoreModal: React.FC<BackupRestoreModalProps> = ({ isOpen, 
                 className="w-full py-3 px-4 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <Download size={18} />
-                <span>{language === 'pb' ? 'ਬੈਕਅੱਪ ਫਾਈਲ ਡਾਊनਲੋਡ ਕਰੋ (Export)' : 'बैकअप फाइल डाउनलोड करें (Export Backup)'}</span>
+                <span>
+                  {language === 'pb'
+                    ? 'ਬੈਕਅੱਪ ਫ਼ਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ (Export)'
+                    : language === 'en'
+                    ? 'Download Backup File (Export)'
+                    : 'बैकअप फाइल डाउनलोड करें (Export Backup)'}
+                </span>
               </button>
 
               <label className="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2.5 cursor-pointer">
                 <Upload size={18} />
-                <span>{language === 'pb' ? 'ਬੈਕਅੱਪ ਰੀਸੋਰਟ ਕਰੋ (Restore)' : 'बैकअप फाइल से डेटा रिस्टोर करें'}</span>
+                <span>
+                  {language === 'pb'
+                    ? 'ਬੈਕਅੱਪ ਰੀਸਟੋਰ ਕਰੋ (Restore)'
+                    : language === 'en'
+                    ? 'Restore Data from Backup'
+                    : 'बैकअप फाइल से डेटा रिस्टोर करें'}
+                </span>
                 <input
                   type="file"
                   accept=".json"

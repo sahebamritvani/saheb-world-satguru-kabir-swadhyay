@@ -51,7 +51,8 @@ export type DashboardCardIconKey =
   | 'activity'
   | 'info'
   | 'lock'
-  | 'helpCircle';
+  | 'helpCircle'
+  | 'trophy';
 
 export interface DashboardCategoryMeta {
   id: DashboardCategoryNumber;
@@ -153,9 +154,9 @@ export const DASHBOARD_CATEGORIES: DashboardCategoryMeta[] = [
   },
 ];
 
-export const ALL_54_DASHBOARD_CARDS: DashboardFeatureCard[] = [
+export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
   // =========================================================================
-  // CATEGORY 1: Holy Scriptures, Paths & Darshan (22 Cards: #1 – #22)
+  // CATEGORY 1: Holy Scriptures, Paths & Darshan (22 Cards: #1 – #22, +1 Pinned)
   // =========================================================================
   {
     slotId: 'slot-1-nitnem',
@@ -705,9 +706,26 @@ export const ALL_54_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     hoverBorderClass: 'hover:border-red-600',
     action: { kind: 'view', view: 'satsang-video' },
   },
+  {
+    slotId: 'slot-56-satvik-sankalp',
+    slotNumber: 56,
+    categoryId: 2,
+    kicker: { hi: 'साधना संकल्प', pb: 'ਸਾਧਨਾ ਸੰਕਲਪ', en: 'Satvik Vows' },
+    title: { hi: 'नशामुक्ति व सात्विक संकल्प', pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ', en: 'De-addiction & Sankalp' },
+    description: {
+      hi: 'दैनिक हाज़िरी, दिन गणना, मील के पत्थर बैज व प्रेरक साखियों से संकल्प निभाएं।',
+      pb: 'ਰੋਜ਼ਾਨਾ ਹਾਜ਼ਰੀ, ਦਿਨਾਂ ਦੀ ਗਿਣਤੀ, ਮੀਲ ਪੱਥਰ ਬੈਜ ਤੇ ਪ੍ਰੇਰਕ ਸਾਖੀਆਂ ਨਾਲ ਸੰਕਲਪ ਨਿਭਾਓ।',
+      en: 'Track clean living streaks, daily check-ins & unlock milestone badges offline.',
+    },
+    actionLabel: { hi: 'संकल्प ट्रैकर', pb: 'ਸੰਕਲਪ ਟਰੈਕਰ', en: 'Open Tracker' },
+    icon: 'shieldCheck',
+    accentClass: 'text-emerald-700 dark:text-emerald-300',
+    hoverBorderClass: 'hover:border-emerald-600',
+    action: { kind: 'view', view: 'satvik-sankalp' },
+  },
 
   // =========================================================================
-  // CATEGORY 3: Wisdom, Lineage & Quizzes (10 Cards: #33 – #42)
+  // CATEGORY 3: Wisdom, Lineage & Quizzes (12 Cards: #33 – #42, #57 – #58)
   // =========================================================================
   {
     slotId: 'slot-33-swadhyay',
@@ -879,9 +897,43 @@ export const ALL_54_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     hoverBorderClass: 'hover:border-emerald-600',
     action: { kind: 'view', view: 'nitnem-gutka' },
   },
+  {
+    slotId: 'slot-57-kabir-gyan-quiz',
+    slotNumber: 57,
+    categoryId: 3,
+    kicker: { hi: 'ज्ञान परीक्षा', pb: 'ਗਿਆਨ ਪ੍ਰੀਖਿਆ', en: 'Spiritual Quiz' },
+    title: { hi: 'कबीर ज्ञान प्रश्नोत्तरी', pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ', en: 'Kabir Gyan Quiz' },
+    description: {
+      hi: 'सद्गुरु कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व प्रमाण-पत्र पाएं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਦਿਓ ਤੇ ਸਰਟੀਫਿਕੇਟ ਪਾਓ।',
+      en: 'Test your knowledge across 6 questions and download your certificate.',
+    },
+    actionLabel: { hi: 'प्रश्नोत्तरी खेलें', pb: 'ਪ੍ਰਸ਼ਨੋਤਰੀ ਖੇਡੋ', en: 'Start Quiz' },
+    icon: 'trophy',
+    accentClass: 'text-rose-700 dark:text-rose-300',
+    hoverBorderClass: 'hover:border-rose-600',
+    action: { kind: 'view', view: 'kabir-gyan-quiz' },
+  },
+  {
+    slotId: 'slot-58-vansh-bayalis',
+    slotNumber: 58,
+    categoryId: 3,
+    kicker: { hi: '४२ पीढ़ियाँ', pb: '੪੨ ਪੀੜ੍ਹੀਆਂ', en: '42 Generations' },
+    title: { hi: 'वंश बयालीस की पावन महिमा', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ', en: 'Glory of Vansh Bayalis' },
+    description: {
+      hi: 'सद्गुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਵਰਦਾਨ, ਧਨੀ ਧਰਮਦਾਸ ਤੇ ਅਟੱਲ ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦਾ ਰਹੱਸ।',
+      en: 'Explore the 4-part guide on the eternal 42-generation lineage and divine promise.',
+    },
+    actionLabel: { hi: 'महिमा पढ़ें', pb: 'ਮਹਿਮਾ ਪੜ੍ਹੋ', en: 'Read Guide' },
+    icon: 'crown',
+    accentClass: 'text-orange-700 dark:text-orange-300',
+    hoverBorderClass: 'hover:border-orange-600',
+    action: { kind: 'view', view: 'vansh-bayalis' },
+  },
 
   // =========================================================================
-  // CATEGORY 4: Exploration, Calendar & Tools (8 Cards: #43 – #50)
+  // CATEGORY 4: Exploration, Calendar & Tools (9 Cards: #43 – #50, #55)
   // =========================================================================
   {
     slotId: 'slot-43-jantri',
@@ -1019,6 +1071,23 @@ export const ALL_54_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     hoverBorderClass: 'hover:border-emerald-600',
     action: { kind: 'view', view: 'health-diagnostic' },
   },
+  {
+    slotId: 'slot-55-vani-card-maker',
+    slotNumber: 55,
+    categoryId: 4,
+    kicker: { hi: 'कार्ड स्टूडियो', pb: 'ਕਾਰਡ ਸਟੂਡੀਓ', en: 'Card Studio' },
+    title: { hi: 'कबीर वाणी कार्ड मेकर', pb: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ', en: 'Kabir Vani Card Maker' },
+    description: {
+      hi: 'सुंदर आध्यात्मिक थीम व अपने नाम के साथ पावन संदेश कार्ड डाउनलोड एवं शेयर करें।',
+      pb: 'ਸੁੰਦਰ ਰੂਹਾਨੀ ਥੀਮ ਤੇ ਆਪਣੇ ਨਾਮ ਨਾਲ ਪਾਵਨ ਸੰਦੇਸ਼ ਕਾਰਡ ਡਾਊਨਲੋਡ ਅਤੇ ਸਾਂਝਾ ਕਰੋ।',
+      en: 'Design & export spiritual greeting cards with themes and your courtesy name.',
+    },
+    actionLabel: { hi: 'कार्ड बनाएं', pb: 'ਕਾਰਡ ਬਣਾਓ', en: 'Create Card' },
+    icon: 'image',
+    accentClass: 'text-amber-700 dark:text-amber-300',
+    hoverBorderClass: 'hover:border-amber-600',
+    action: { kind: 'view', view: 'vani-card-maker' },
+  },
 
   // =========================================================================
   // CATEGORY 5: User Guide, About Us & App Policies (4 Cards: #51 – #54)
@@ -1092,3 +1161,6 @@ export const ALL_54_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     action: { kind: 'about-modal', section: 'privacy' },
   },
 ];
+
+// Backward-compatible alias for any callers importing the previous constant name (now 58 cards = 54 + 4 new modules)
+export const ALL_54_DASHBOARD_CARDS = ALL_DASHBOARD_CARDS;

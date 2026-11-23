@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Sakhi, Language } from '../types';
 import { EightStepSwadhyayData } from '../services/swadhyayEightSteps';
-import { ElevenStepSwadhyayData } from '../services/swadhyayElevenSteps';
+import { ElevenStepSwadhyayData, normalizeElevenStepQuizQuestion } from '../services/swadhyayElevenSteps';
+import { useAppTheme } from '../theme/ThemeContext';
 import {
   BookOpen,
   Volume2,
@@ -70,6 +71,15 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
   const [dhyanTimerSeconds, setDhyanTimerSeconds] = useState<number>(180);
   const [isDhyanActive, setIsDhyanActive] = useState(false);
 
+  const { fontFamily, setFontFamily } = useAppTheme();
+  const activeFontClass = fontFamily === 'sans' ? 'font-sans' : 'font-serif';
+  const activeFontStyle: React.CSSProperties = {
+    fontFamily:
+      fontFamily === 'sans'
+        ? '"Noto Sans Devanagari", "Noto Sans Gurmukhi", "Mukta", ui-sans-serif, system-ui, sans-serif'
+        : '"Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, Cambria, serif',
+  };
+
   // Mark step complete and advance
   const markStepDone = (stepNum: number) => {
     sacredHaptics.lightTap();
@@ -92,7 +102,9 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
     setTimeout(() => setIsSavedToast(false), 3000);
   };
 
-  const currentQuestions = elevenStepData.step5_quiz.questions.slice(0, 5);
+  const currentQuestions = elevenStepData.step5_quiz.questions
+    .slice(0, 5)
+    .map((q, idx) => normalizeElevenStepQuizQuestion(q, language, idx));
   const currentQ = currentQuestions[quizIdx] || currentQuestions[0];
   const selectedAnswer = quizSelected[quizIdx];
 
@@ -112,48 +124,76 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6 text-left py-2">
-      {/* Zen Mode 11-Step Progress Pills Bar */}
+      {/* Zen Mode 11-Step Progress Pills Bar + Font Switcher */}
       <div
         style={{ backgroundColor: rc.cardBg, borderColor: rc.border }}
-        className="p-3 sm:p-4 rounded-3xl border shadow-sm sticky top-14 z-20 backdrop-blur-md overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]"
+        className="p-3 sm:p-4 rounded-3xl border shadow-sm sticky top-14 z-20 backdrop-blur-md space-y-2"
       >
-        <div className="flex items-center gap-1.5 sm:gap-2 min-w-max">
-          {stepsList.map((st) => {
-            const Icon = st.icon;
-            const isCur = activeZenStep === st.num;
-            const isDone = completedZenSteps.includes(st.num);
-            return (
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <span className={`text-[11px] font-bold opacity-75 ${activeFontClass}`} style={{ color: rc.maroon }}>
+            {language === 'pb' ? '੧੧-ਚਰਣੀ ਸਵਾਧਿਆਇ' : language === 'en' ? '11-Step Study' : '११-चरणीय स्वाध्याय'}
+          </span>
+          <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/20">
+            {[
+              { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Serif' : 'ग्रंथ' },
+              { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Sans' : 'सरल' },
+            ].map((ff) => (
               <button
-                key={st.num}
+                key={ff.id}
                 type="button"
                 onClick={() => {
                   sacredHaptics.lightTap();
-                  setActiveZenStep(st.num);
+                  setFontFamily(ff.id);
                 }}
                 style={{
-                  backgroundColor: isCur ? rc.accent : isDone ? rc.accentLight : 'transparent',
-                  color: isCur ? '#FFFFFF' : rc.maroon,
-                  borderColor: isCur ? rc.accent : rc.borderOrnament,
+                  backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
+                  color: fontFamily === ff.id ? '#FFFFFF' : rc.maroon,
                 }}
-                className={`px-3 py-1.5 rounded-2xl border text-xs font-serif font-black flex items-center gap-1.5 transition cursor-pointer ${
-                  isCur ? 'shadow-md scale-105' : 'hover:opacity-80'
-                }`}
+                className="min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold transition cursor-pointer"
               >
-                <span className="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-mono border" style={{ borderColor: isCur ? '#FFFFFF' : rc.accent }}>
-                  {st.num}
-                </span>
-                <span className="whitespace-nowrap">{st.title}</span>
-                {isDone && <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />}
+                {ff.label}
               </button>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+        <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">
+          <div className="flex items-center gap-1.5 sm:gap-2 min-w-max">
+            {stepsList.map((st) => {
+              const isCur = activeZenStep === st.num;
+              const isDone = completedZenSteps.includes(st.num);
+              return (
+                <button
+                  key={st.num}
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setActiveZenStep(st.num);
+                  }}
+                  style={{
+                    backgroundColor: isCur ? rc.accent : isDone ? rc.accentLight : 'transparent',
+                    color: isCur ? '#FFFFFF' : rc.maroon,
+                    borderColor: isCur ? rc.accent : rc.borderOrnament,
+                  }}
+                  className={`px-3 py-1.5 rounded-2xl border text-xs ${activeFontClass} font-black flex items-center gap-1.5 transition cursor-pointer ${
+                    isCur ? 'shadow-md scale-105' : 'hover:opacity-80'
+                  }`}
+                >
+                  <span className="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-mono border" style={{ borderColor: isCur ? '#FFFFFF' : rc.accent }}>
+                    {st.num}
+                  </span>
+                  <span className="whitespace-nowrap">{st.title}</span>
+                  {isDone && <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
       {/* STEP CONTENT CONTAINER */}
       <div
-        style={{ backgroundColor: rc.cardBg, borderColor: rc.accent }}
-        className="p-5 sm:p-8 rounded-3xl border-2 shadow-xl space-y-6 animate-fadeIn font-serif"
+        style={{ backgroundColor: rc.cardBg, borderColor: rc.accent, ...activeFontStyle }}
+        className={`p-5 sm:p-8 rounded-3xl border-2 shadow-xl space-y-6 animate-fadeIn ${activeFontClass}`}
       >
         {/* STEP 1: मूल पावन वाणी */}
         {activeZenStep === 1 && (
@@ -495,20 +535,55 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
               {selectedAnswer !== undefined && (() => {
                 const chosenOpt = currentQ.options[selectedAnswer];
-                const rawFeedback = chosenOpt?.feedback || '';
-                const cleanFeedback = rawFeedback.replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '').trim() || rawFeedback;
+                const correctIdx = currentQ.options.findIndex((o) => o.isCorrect);
+                const correctOpt = correctIdx >= 0 ? currentQ.options[correctIdx] : undefined;
+                const cleanSelectedFeedback =
+                  (chosenOpt?.feedback || '').replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '').trim() ||
+                  chosenOpt?.feedback ||
+                  '';
+                const cleanCorrectFeedback =
+                  (correctOpt?.feedback || currentQ.explanation || '')
+                    .replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '')
+                    .trim() ||
+                  correctOpt?.feedback ||
+                  currentQ.explanation ||
+                  '';
                 return (
-                  <div className={`p-3.5 rounded-xl border text-xs leading-relaxed space-y-1 ${
-                    chosenOpt?.isCorrect
-                      ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
-                      : 'bg-rose-500/10 border-rose-500/30 text-rose-900 dark:text-rose-200'
-                  }`}>
+                  <div
+                    style={activeFontStyle}
+                    className={`p-3.5 rounded-xl border text-xs ${activeFontClass} leading-relaxed space-y-2 ${
+                      chosenOpt?.isCorrect
+                        ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
+                        : 'bg-rose-500/10 border-rose-500/30 text-rose-900 dark:text-rose-200'
+                    }`}
+                  >
                     <p className="font-bold flex items-center gap-1.5 text-xs sm:text-sm">
                       {chosenOpt?.isCorrect
                         ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ!' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
                         : (language === 'pb' ? '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ' : language === 'en' ? '✗ Incorrect Option' : '✗ यह विकल्प सही नहीं है')}
                     </p>
-                    <p className="opacity-95 leading-relaxed">{cleanFeedback}</p>
+                    <p className="opacity-95 leading-relaxed">
+                      <strong>
+                        {chosenOpt?.isCorrect
+                          ? (language === 'pb' ? 'ਸਹੀ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Why this is correct: ' : 'सही उत्तर का विश्लेषण: ')
+                          : (language === 'pb' ? 'ਗਲਤ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Why this choice is incorrect: ' : 'गलत उत्तर का विश्लेषण: ')}
+                      </strong>
+                      {cleanSelectedFeedback}
+                    </p>
+                    {!chosenOpt?.isCorrect && correctOpt && (
+                      <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200 space-y-1">
+                        <p className="font-bold">
+                          ✓ {language === 'pb' ? 'ਸਹੀ ਉੱਤਰ' : language === 'en' ? 'Correct Answer' : 'सही उत्तर'}{' '}
+                          ({String.fromCharCode(65 + correctIdx)}): {correctOpt.text}
+                        </p>
+                        {cleanCorrectFeedback && (
+                          <p className="opacity-95 leading-relaxed">
+                            <strong>{language === 'pb' ? 'ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Explanation: ' : 'विश्लेषण: '}</strong>
+                            {cleanCorrectFeedback}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </div>
                 );
               })()}
@@ -573,7 +648,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
             </div>
 
             <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm leading-relaxed space-y-3">
-              <p className="font-serif text-stone-800 dark:text-stone-200 whitespace-pre-line">
+              <p className={`${activeFontClass} text-stone-800 dark:text-stone-200 whitespace-pre-line`} style={activeFontStyle}>
                 {elevenStepData.step6_spiritualInsight.mysticalCoding}
               </p>
               <div className="text-xs font-bold text-amber-800 dark:text-amber-300">
@@ -680,7 +755,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                     </span>
                     <span className="opacity-70">{ref.context}</span>
                   </div>
-                  <blockquote className="p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-600 text-xs sm:text-sm font-serif italic text-stone-800 dark:text-stone-200 whitespace-pre-line">
+                  <blockquote className={`p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-600 text-xs sm:text-sm ${activeFontClass} italic text-stone-800 dark:text-stone-200 whitespace-pre-line`} style={activeFontStyle}>
                     "{ref.verse}"
                   </blockquote>
                   <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
@@ -733,8 +808,8 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
             <div className="space-y-3">
               <blockquote
-                style={{ borderColor: rc.accent }}
-                className="p-4 rounded-2xl bg-amber-500/10 border-l-4 text-sm sm:text-base font-serif italic text-stone-800 dark:text-stone-200"
+                style={{ borderColor: rc.accent, ...activeFontStyle }}
+                className={`p-4 rounded-2xl bg-amber-500/10 border-l-4 text-sm sm:text-base ${activeFontClass} italic text-stone-800 dark:text-stone-200`}
               >
                 "{sakhi.contemplation[language]}"
               </blockquote>
@@ -766,7 +841,8 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                       : 'सतगुरु की इस साखी से मेरे जीवन में क्या बोध प्रकट हुआ...'
                   }
                   rows={3}
-                  className="w-full p-3 rounded-2xl border border-amber-500/30 bg-black/5 dark:bg-white/5 text-xs sm:text-sm font-serif focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                  style={activeFontStyle}
+                  className={`w-full p-3 rounded-2xl border border-amber-500/30 bg-black/5 dark:bg-white/5 text-xs sm:text-sm ${activeFontClass} focus:outline-none focus:ring-2 focus:ring-amber-500/50`}
                 />
                 <button
                   type="button"
@@ -890,7 +966,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm italic font-serif text-amber-900 dark:text-amber-200">
+            <div style={activeFontStyle} className={`p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm italic ${activeFontClass} text-amber-900 dark:text-amber-200`}>
               "{elevenStepData.step11_blessingCertificate.oneLineBlessing}"
             </div>
 

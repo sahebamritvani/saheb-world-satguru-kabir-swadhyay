@@ -4723,6 +4723,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         <DamakhedaRouteModal
           isOpen={showRouteModal}
           onClose={() => setShowRouteModal(false)}
+          language={language}
         />
       )}
 
@@ -5263,13 +5264,17 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     </div>
 
                                     <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                      {language === 'pb' ? 'ਪਿਛੋਕੜ ਧੁਨੀ ਅਨੁਨਾਦ (Background Dhun):' : 'पृष्ठभूमि धुन अनुनाद (Background Dhun):'}
+                                      {language === 'pb'
+                                        ? 'ਪਿਛੋਕੜ ਧੁਨੀ ਅਨੁਨਾਦ (Background Dhun):'
+                                        : language === 'en'
+                                        ? 'Background Sacred Dhun:'
+                                        : 'पृष्ठभूमि धुन अनुनाद (Background Dhun):'}
                                     </span>
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                       {[
                                         {
                                           id: 'mute',
-                                          label: language === 'pb' ? 'ਮਿਊਟ (बंद)' : 'म्यूट (बंद)',
+                                          label: language === 'pb' ? 'ਮਿਊਟ (ਬੰਦ)' : language === 'en' ? 'Mute' : 'म्यूट (बंद)',
                                           active: !isBackgroundDhunPlaying,
                                           action: () => {
                                             ambientReaderAudio.stop();
@@ -5279,7 +5284,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         },
                                         {
                                           id: 'satyanaam',
-                                          label: language === 'pb' ? 'ਸਤਯਨਾਮ ਧੁਨ' : 'सत्यनाम धुन',
+                                          label: language === 'pb' ? 'ਸਤਯਨਾਮ ਧੁਨ' : language === 'en' ? 'Satyanaam Dhun' : 'सत्यनाम धुन',
                                           active: isBackgroundDhunPlaying && dhunSound === 'satyanaam',
                                           action: () => {
                                             handleChangeDhunSound('satyanaam');
@@ -5288,7 +5293,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         },
                                         {
                                           id: 'tanpura',
-                                          label: language === 'pb' ? 'ਤਾਨਪੁਰਾ' : 'तानपुरा',
+                                          label: language === 'pb' ? 'ਤਾਨਪੁਰਾ' : language === 'en' ? 'Tanpura' : 'तानपुरा',
                                           active: isBackgroundDhunPlaying && dhunSound === 'tanpura',
                                           action: () => {
                                             handleChangeDhunSound('tanpura');

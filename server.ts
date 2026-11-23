@@ -15,26 +15,49 @@ function shuffleArray<T>(items: T[]): T[] {
 }
 
 function shuffleQuizQuestionsAndOptions<
-  T extends { question: string; options: string[]; correctIndex: number; explanation: string }
+  T extends {
+    question?: string;
+    questionText?: string;
+    options: Array<string | { text: string; isCorrect?: boolean; feedback?: string }>;
+    correctIndex?: number;
+    explanation?: string;
+  }
 >(questions: T[]): T[] {
   if (!Array.isArray(questions) || questions.length === 0) return [];
   const shuffledQuestions = shuffleArray(questions);
   return shuffledQuestions.map((q) => {
     const rawOpts = Array.isArray(q.options) ? q.options.slice(0, 4) : [];
-    while (rawOpts.length < 4) {
-      rawOpts.push(`विकल्प ${rawOpts.length + 1}`);
-    }
+    const optCount = rawOpts.length;
+    if (optCount === 0) return q;
+
+    const objCorrectIdx = rawOpts.findIndex(
+      (opt) => typeof opt === 'object' && opt !== null && opt.isCorrect === true
+    );
     const origCorrectIdx =
-      typeof q.correctIndex === 'number' && q.correctIndex >= 0 && q.correctIndex < rawOpts.length
+      objCorrectIdx >= 0
+        ? objCorrectIdx
+        : typeof q.correctIndex === 'number' && q.correctIndex >= 0 && q.correctIndex < optCount
         ? q.correctIndex
         : 0;
-    const perm = shuffleArray([0, 1, 2, 3]);
-    const newOptions = perm.map((origPos) => rawOpts[origPos]);
-    const newCorrectIndex = perm.indexOf(origCorrectIdx);
+
+    const indices = Array.from({ length: optCount }, (_, i) => i);
+    const perm = shuffleArray(indices);
+    const newCorrectIndex = Math.max(0, perm.indexOf(origCorrectIdx));
+    const newOptions = perm.map((origPos, newIdx) => {
+      const item = rawOpts[origPos];
+      if (typeof item === 'object' && item !== null) {
+        return {
+          ...item,
+          isCorrect: newIdx === newCorrectIndex,
+        };
+      }
+      return item;
+    });
+
     return {
       ...q,
       options: newOptions,
-      correctIndex: newCorrectIndex >= 0 ? newCorrectIndex : 0,
+      correctIndex: newCorrectIndex,
     };
   });
 }

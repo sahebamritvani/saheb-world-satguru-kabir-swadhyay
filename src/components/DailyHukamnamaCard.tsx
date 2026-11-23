@@ -10,7 +10,8 @@ import {
   CheckCircle2, 
   Languages, 
   Scroll,
-  Calendar
+  Calendar,
+  Image as ImageIcon
 } from 'lucide-react';
 import { Language, SggsKabirVerse } from '../types';
 import {
@@ -28,13 +29,15 @@ interface DailyHukamnamaCardProps {
   onLanguageChange: (lang: Language) => void;
   onOpenFullView: () => void;
   onOpenShare?: (text: string) => void;
+  onOpenWallpaperEngine?: (hukamnamaVerse: SggsKabirVerse) => void;
 }
 
 export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
   language,
   onLanguageChange,
   onOpenFullView,
-  onOpenShare
+  onOpenShare,
+  onOpenWallpaperEngine
 }) => {
   const { theme } = useAppTheme();
   const [verse, setVerse] = useState<SggsKabirVerse>(() => getDailyHukamnama(new Date()));
@@ -93,10 +96,10 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
       try {
         satyanaamAudio.ringSacredBell();
       } catch {}
-      const textToSpeak = verse.moolDevanagari.join(' । ') + ' । ' + (verse.bhavarth?.hi || '');
+      const textToSpeak = moolLines.join(' । ') + ' । ' + (bhavarthText || '');
       speechReciter.speak(
-        textToSpeak, 
-        'hi', 
+        textToSpeak,
+        language,
         () => setIsPlayingAudio(false),
         () => setIsPlayingAudio(false)
       );
@@ -106,21 +109,49 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
 
   const handleShareClick = () => {
     sacredHaptics.lightTap();
-    const shareText = `☬ पावन दैनिक हुकमनामा • Sri Guru Granth Sahib Ji\n` +
-      `सतगुरु कबीर साहेब वाणी (अंग ${verse.ang})\n\n` +
+    const header = isPb
+      ? '☬ ਪਾਵਨ ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ • ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ'
+      : isEn
+      ? '☬ Sacred Daily Hukamnama • Sri Guru Granth Sahib Ji'
+      : '☬ पावन दैनिक हुकमनामा • श्री गुरु ग्रंथ साहिब जी';
+    const sub = isPb
+      ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਣੀ (ਅੰਗ ${verse.ang})`
+      : isEn
+      ? `Satguru Kabir Saheb Vani (Ang ${verse.ang})`
+      : `सतगुरु कबीर साहेब वाणी (अंग ${verse.ang})`;
+    const bhavarthLabel = isPb ? 'ਭਾਵਾਰਥ:' : isEn ? 'Spiritual Essence:' : 'भावार्थ:';
+    const discLabel = isPb
+      ? `ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਅਨੁਸ਼ਾਸਨ:\n• ${discipline.vicharPoint}\n• ${discipline.aacharanPoint}`
+      : isEn
+      ? `Daily Life Discipline:\n• ${discipline.vicharPoint}\n• ${discipline.aacharanPoint}`
+      : `दैनिक जीवन में अनुशासन:\n• ${discipline.vicharPoint}\n• ${discipline.aacharanPoint}`;
+    const footer = isPb
+      ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।'
+      : isEn
+      ? '|| Saheb Bandagi Saheb ||'
+      : '।। साहेब बंदगी साहेब ।।';
+
+    const shareText =
+      `${header}\n${sub}\n\n` +
       `${verse.moolGurmukhi.join('\n')}\n\n` +
       `${verse.moolDevanagari.join('\n')}\n\n` +
-      `भावार्थ:\n${bhavarthText}\n\n` +
-      `दैनिक जीवन में अनुशासन:\n• ${discipline.vicharPoint}\n• ${discipline.aacharanPoint}\n\n` +
-      `।। साहेब बन्दगी साहेब ।।\nSaheb World Swadhyay App`;
+      `${bhavarthLabel}\n${bhavarthText}\n\n` +
+      `${discLabel}\n\n` +
+      `${footer}\nSaheb World`;
 
     if (onOpenShare) {
       onOpenShare(shareText);
     } else if (navigator.share) {
-      navigator.share({
-        title: 'पावन दैनिक हुकमनामा • Saheb World',
-        text: shareText
-      }).catch(() => {});
+      navigator
+        .share({
+          title: isPb
+            ? 'ਪਾਵਨ ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ • Saheb World'
+            : isEn
+            ? 'Daily Hukamnama • Saheb World'
+            : 'पावन दैनिक हुकमनामा • Saheb World',
+          text: shareText,
+        })
+        .catch(() => {});
     } else {
       navigator.clipboard.writeText(shareText);
       setShareCopied(true);
@@ -159,11 +190,12 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
                 style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon, borderColor: theme.cardBorder }}
                 className="text-[10px] px-2 py-0.5 rounded-full font-bold border"
               >
-                12:00 AM स्वतः परिवर्तन
+                {isPb ? '12:00 AM ਸਵੈ-ਪਰਿਵਰਤਨ' : isEn ? 'Auto-updates 12:00 AM' : '12:00 AM स्वतः परिवर्तन'}
               </span>
             </div>
             <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
-              ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ • {isPb ? 'ਅੰਗ' : isEn ? 'Ang' : 'अंग'} {verse.ang} {verse.raag ? `(${verse.raag})` : ''}
+              {isPb ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ' : isEn ? 'Sri Guru Granth Sahib Ji' : 'श्री गुरु ग्रंथ साहिब जी'} •{' '}
+              {isPb ? 'ਅੰਗ' : isEn ? 'Ang' : 'अंग'} {verse.ang} {verse.raag ? `(${verse.raag})` : ''}
             </p>
           </div>
         </div>
@@ -257,7 +289,7 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
               <span>{discipline.title}</span>
             </span>
             <span style={{ color: theme.accentGold }} className="text-[10px] font-bold">
-              आज का पावन संकल्प
+              {isPb ? 'ਅੱਜ ਦਾ ਪਾਵਨ ਸੰਕਲਪ' : isEn ? "Today's Sacred Resolve" : 'आज का पावन संकल्प'}
             </span>
           </div>
 
@@ -282,10 +314,22 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
             className={`p-2.5 rounded-xl border transition cursor-pointer flex items-center gap-1.5 text-xs font-bold ${
               isPlayingAudio ? 'shadow-md animate-pulse' : 'hover:opacity-90'
             }`}
-            title="पावन वाणी श्रवण करें"
+            title={isPb ? 'ਪਾਵਨ ਬਾਣੀ ਸੁਣੋ' : isEn ? 'Listen to Sacred Vani' : 'पावन वाणी श्रवण करें'}
           >
             {isPlayingAudio ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-            <span className="hidden sm:inline">{isPlayingAudio ? 'रोकें' : 'श्रवण'}</span>
+            <span className="hidden sm:inline">
+              {isPlayingAudio
+                ? isPb
+                  ? 'ਰੋਕੋ'
+                  : isEn
+                  ? 'Stop'
+                  : 'रोकें'
+                : isPb
+                ? 'ਸੁਣੋ'
+                : isEn
+                ? 'Listen'
+                : 'श्रवण'}
+            </span>
           </button>
 
           {/* Share Button */}
@@ -294,11 +338,29 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
             onClick={handleShareClick}
             style={{ backgroundColor: theme.bgSecondary, color: theme.textPrimary, borderColor: theme.cardBorder }}
             className="p-2.5 rounded-xl border hover:opacity-90 transition cursor-pointer flex items-center gap-1 text-xs font-bold"
-            title="हुकमनामा साझा करें"
+            title={isPb ? 'ਹੁਕਮਨਾਮਾ ਸਾਂਝਾ ਕਰੋ' : isEn ? 'Share Hukamnama' : 'हुकमनामा साझा करें'}
           >
             <Share2 className="w-4 h-4" />
-            {shareCopied && <span>✓ कॉपी</span>}
+            {shareCopied && (
+              <span>{isPb ? '✓ ਕਾਪੀ' : isEn ? '✓ Copied' : '✓ कॉपी'}</span>
+            )}
           </button>
+
+          {onOpenWallpaperEngine && (
+            <button
+              type="button"
+              onClick={() => {
+                sacredHaptics.lightTap();
+                onOpenWallpaperEngine(verse);
+              }}
+              style={{ backgroundColor: theme.bgSecondary, color: theme.textPrimary, borderColor: theme.cardBorder }}
+              className="p-2.5 rounded-xl border hover:opacity-90 transition cursor-pointer flex items-center gap-1.5 text-xs font-bold"
+              title={isPb ? 'ਹੁਕਮਨਾਮਾ ਵਾਲਪੇਪਰ ਬਣਾਓ' : isEn ? 'Create Hukamnama Wallpaper' : 'हुकमनामा वॉलपेपर बनाएं'}
+            >
+              <ImageIcon className="w-4 h-4" style={{ color: theme.accentGold }} />
+              <span className="hidden sm:inline">{isPb ? 'ਵਾਲਪੇਪਰ' : isEn ? 'Wallpaper' : 'वॉलपेपर'}</span>
+            </button>
+          )}
         </div>
 
         {/* Full View Button */}

@@ -335,23 +335,25 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
             <span>एकल वाणी शोधन (Single Verse)</span>
           </button>
 
-          <button
-            onClick={() => setActiveTab('bulk')}
-            style={{
-              backgroundColor: activeTab === 'bulk' ? '#8B4513' : 'transparent',
-              color: activeTab === 'bulk' ? '#FFFFFF' : undefined,
-              borderColor: theme.borderOrnament
-            }}
-            className="px-4 py-2 rounded-xl border text-xs sm:text-sm font-serif font-bold flex items-center gap-2 cursor-pointer transition shadow-xs"
-          >
-            <Database className="w-4 h-4" />
-            <span>अखंड पाठ एवं साखी सामूहिक प्रतिस्थापन (Bulk Replace)</span>
-            {dbStats.customizedCount > 0 && (
-              <span className="px-2 py-0.5 text-[10px] rounded-full bg-amber-500 text-amber-950 font-black">
-                {dbStats.customizedCount} संशोधित
-              </span>
-            )}
-          </button>
+          {isAdmin && (
+            <button
+              onClick={() => setActiveTab('bulk')}
+              style={{
+                backgroundColor: activeTab === 'bulk' ? '#8B4513' : 'transparent',
+                color: activeTab === 'bulk' ? '#FFFFFF' : undefined,
+                borderColor: theme.borderOrnament
+              }}
+              className="px-4 py-2 rounded-xl border text-xs sm:text-sm font-serif font-bold flex items-center gap-2 cursor-pointer transition shadow-xs"
+            >
+              <Database className="w-4 h-4" />
+              <span>अखंड पाठ एवं साखी सामूहिक प्रतिस्थापन (Bulk Replace)</span>
+              {dbStats.customizedCount > 0 && (
+                <span className="px-2 py-0.5 text-[10px] rounded-full bg-amber-500 text-amber-950 font-black">
+                  {dbStats.customizedCount} संशोधित
+                </span>
+              )}
+            </button>
+          )}
         </div>
       </div>
 
@@ -470,29 +472,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
         </div>
       )}
 
-      {/* ======================================================== */}
-      {/* TAB 2: BULK REPLACE & AKHAND PATH HARMONIZATION */}
-      {/* ======================================================== */}
-      {activeTab === 'bulk' && !isAdmin && (
-        <div
-          style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-          className="p-8 sm:p-10 rounded-3xl border-2 text-center space-y-4 shadow-md"
-        >
-          <div className="w-16 h-16 mx-auto rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-700 dark:text-amber-300">
-            <Lock className="w-8 h-8" />
-          </div>
-          <h3 className="font-serif font-black text-lg text-amber-950 dark:text-amber-100">
-            🔒 पब्लिक रीड-ओनली सुरक्षा (Admin-Only Access)
-          </h3>
-          <p className="text-xs sm:text-sm font-serif max-w-lg mx-auto leading-relaxed" style={{ color: theme.textSecondary }}>
-            अखंड पाठ डेटाबेस में सामूहिक बदलाव, मानकीकरण या रीसेट केवल अधिकृत एडमिन (<strong>smongia76@gmail.com</strong>) द्वारा ही किए जा सकते हैं। सार्वजनिक उपयोगकर्ताओं के लिए सभी पावन ग्रंथ पूर्णतः रीड-ओनली और सुरक्षित हैं।
-          </p>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[11px] font-bold text-amber-800 dark:text-amber-200">
-            <ShieldCheck className="w-4 h-4" />
-            <span>एडमिन लॉग-इन: ऊपर सेटिंग्स ⚙️ → एडमिन प्रमाणीकरण</span>
-          </div>
-        </div>
-      )}
+      {/* TAB 2: BULK REPLACE & AKHAND PATH HARMONIZATION (Admin Only) */}
 
       {activeTab === 'bulk' && isAdmin && (
         <div className="space-y-6">

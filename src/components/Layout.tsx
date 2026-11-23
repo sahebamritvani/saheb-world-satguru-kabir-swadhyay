@@ -76,6 +76,7 @@ import { KarNainonDeedarModal } from './KarNainonDeedarModal';
 import { SantoShabdaiShabdModal } from './SantoShabdaiShabdModal';
 import { AdvancedReadingSuiteModal } from './AdvancedReadingSuiteModal';
 import { LanguageDiagnostics } from './LanguageDiagnostics';
+import { AdminLoginModal } from './AdminLoginModal';
 
 import { sacredHaptics } from '../services/haptics';
 import { 
@@ -126,6 +127,24 @@ export const Layout: React.FC<LayoutProps> = ({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
+  const [showAdminLoginModal, setShowAdminLoginModal] = useState(false);
+  const brandTapTimestampsRef = useRef<number[]>([]);
+
+  const handleHeaderBrandTap = () => {
+    const now = Date.now();
+    const recentTaps = brandTapTimestampsRef.current.filter((ts) => now - ts <= 3000);
+    recentTaps.push(now);
+    brandTapTimestampsRef.current = recentTaps;
+
+    if (recentTaps.length >= 5) {
+      brandTapTimestampsRef.current = [];
+      sacredHaptics.mediumTap();
+      setShowAdminLoginModal(true);
+      return;
+    }
+
+    onSelectView('daily');
+  };
 
   useEffect(() => {
     const syncAdmin = () => setIsAdmin(isAdminAuthenticated());
@@ -799,6 +818,16 @@ export const Layout: React.FC<LayoutProps> = ({
       icon: BookOpen,
       items: [
         {
+          view: 'mool-siddhant' as AppView,
+          label: {
+            hi: 'मूल सिद्धांत (एक सत्यनाम से सब सधै)',
+            pb: 'ਮੂਲ ਸਿਧਾਂਤ (ਇੱਕ ਸਤਯਨਾਮ ਤੋਂ ਸਭ ਸਧੈ)',
+            en: 'Core Principle (Master the One Satyanaam)',
+          },
+          icon: Sparkles,
+          badge: { hi: 'अटल मूल', pb: 'ਅਟੱਲ ਮੂਲ', en: 'Core' },
+        },
+        {
           view: 'divine-darshan' as AppView,
           label: {
             hi: 'सतगुरु कबीर साहेब दिव्य पावन दर्शन',
@@ -898,6 +927,16 @@ export const Layout: React.FC<LayoutProps> = ({
           badge: { hi: 'वॉलपेपर', pb: 'ਵਾਲਪੇਪਰ', en: 'HD' },
         },
         {
+          view: 'vani-card-maker' as AppView,
+          label: {
+            hi: 'कबीर वाणी कार्ड मेकर',
+            pb: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ',
+            en: 'Kabir Vani Card Maker',
+          },
+          icon: Sparkles,
+          badge: { hi: 'कार्ड स्टूडियो', pb: 'ਕਾਰਡ ਸਟੂਡੀਓ', en: 'Studio' },
+        },
+        {
           view: 'daily',
           label: {
             hi: 'दैनिक पावन साखी (आज का अमृत वचन)',
@@ -976,6 +1015,16 @@ export const Layout: React.FC<LayoutProps> = ({
             en: 'Panchamrit Vows Tracker',
           },
           icon: ShieldCheck,
+        },
+        {
+          view: 'satvik-sankalp' as AppView,
+          label: {
+            hi: 'नशामुक्ति एवं सात्विक संकल्प ट्रैकर',
+            pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ',
+            en: 'De-addiction & Satvik Sankalp',
+          },
+          icon: ShieldCheck,
+          badge: { hi: 'संकल्प', pb: 'ਸੰਕਲਪ', en: 'Vows' },
         },
         {
           view: 'growth-dashboard',
@@ -1073,6 +1122,25 @@ export const Layout: React.FC<LayoutProps> = ({
             en: 'Acharya Parampara History',
           },
           icon: ShieldCheck,
+        },
+        {
+          view: 'vansh-bayalis' as AppView,
+          label: {
+            hi: 'वंश बयालीस की पावन महिमा',
+            pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ',
+            en: 'Glory of Vansh Bayalis (42 Lineages)',
+          },
+          icon: Crown,
+        },
+        {
+          view: 'kabir-gyan-quiz' as AppView,
+          label: {
+            hi: 'कबीर ज्ञान प्रश्नोत्तरी (प्रमाण-पत्र)',
+            pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ',
+            en: 'Kabir Gyan Spiritual Quiz',
+          },
+          icon: Trophy,
+          badge: { hi: 'क्विज़', pb: 'ਕੁਇਜ਼', en: 'Quiz' },
         },
         {
           view: 'satsang-video',
@@ -1261,8 +1329,8 @@ export const Layout: React.FC<LayoutProps> = ({
             <div
               id="header-brand-link"
               className="flex items-center gap-1.5 cursor-pointer select-none group shrink-0"
-              title="Saheb World Home"
-              onClick={() => onSelectView('daily')}
+              title="Saheb World"
+              onClick={handleHeaderBrandTap}
             >
               <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full overflow-hidden shrink-0 shadow-2xs border border-amber-600/30">
                 <img src="/Saheb_World_icon.jpg" alt="Saheb World" className="w-full h-full object-cover" />
@@ -2539,7 +2607,7 @@ export const Layout: React.FC<LayoutProps> = ({
                     className="inline-flex items-center justify-center gap-1 text-[10px] font-serif opacity-75 hover:opacity-100 transition cursor-pointer"
                   >
                     <Database className="w-3 h-3" />
-                    <span>प्रशासक टूल</span>
+                    <span>{language === 'pb' ? 'ਪ੍ਰਸ਼ਾਸਕ ਟੂਲ' : language === 'en' ? 'Admin Tools' : 'प्रशासक टूल'}</span>
                   </button>
                 )}
               </div>
@@ -3006,30 +3074,6 @@ export const Layout: React.FC<LayoutProps> = ({
                 {/* 1B. GitHub Releases Auto-Updated Android APK Download & Update Card (Admin Only) */}
                 {isAdmin && <GitHubApkCard language={language} />}
 
-                {/* 100% Read-Only Public Lockdown Assurance Banner */}
-                <div 
-                  style={{
-                    backgroundColor: theme.mode === 'mystic_dark' ? '#1E1812' : '#FEF3C7',
-                    borderColor: theme.mode === 'mystic_dark' ? '#D97706' : '#F59E0B',
-                  }}
-                  className="p-3.5 sm:p-4 rounded-2xl border-2 shadow-xs space-y-1.5"
-                >
-                  <div className="flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-amber-700 dark:text-amber-300 shrink-0" />
-                    <h5 className="text-xs sm:text-sm font-black font-serif text-amber-950 dark:text-amber-200 flex items-center gap-1.5">
-                      <span>{language === 'pb' ? '੧੦੦% ਸੁਰੱਖਿਅਤ ਤੇ ਅਪਰਿਵਰਤਨੀਯ (Read-Only Mode)' : language === 'en' ? '100% Secure & Read-Only Sanctuary' : '१००% सुरक्षित एवं अपरिवर्तनीय (Read-Only Mode)'}</span>
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    </h5>
-                  </div>
-                  <p className="text-[0.6875rem] sm:text-xs text-amber-900/85 dark:text-amber-300/85 font-serif leading-relaxed">
-                    {language === 'pb'
-                      ? 'ਇੰਸਟਾਲੇਸ਼ਨ ਤੋਂ ਬਾਅਦ ਇਹ ਐਪ ਪੂਰਨ ਤੌਰ \'ਤੇ ਅਪਰਿਵਰਤਨੀਯ ਹੈ। ਨਾ ਤਾਂ ਕੋਈ ਪਬਲਿਕ ਯੂਜ਼ਰ ਅਤੇ ਨਾ ਹੀ ਕੋਈ ਬਾਹਰੀ ਵਿਅਕਤੀ ਇਸ ਵਿੱਚ ਕੋਈ ਬਦਲਾਅ ਕਰ ਸਕਦਾ ਹੈ।'
-                      : language === 'en'
-                      ? 'This app is strictly read-only and tamper-proof. Post-installation, no public or unauthorized user can inject or alter content.'
-                      : 'इंस्टॉलेशन के बाद यह ऐप पूर्णतः सुरक्षित और अपरिवर्तनीय है। न तो कोई पब्लिक यूजर और न ही कोई अन्य इसमें कोई छेड़छाड़ या बदलाव कर सकता है।'}
-                  </p>
-                </div>
-
                 {/* 2. Step-by-Step Instructions (Android Chrome WebAPK focus) */}
                 <div className="space-y-3 pt-1">
                   <h5 className="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-800 dark:text-amber-400">
@@ -3307,6 +3351,13 @@ export const Layout: React.FC<LayoutProps> = ({
             </div>
           </div>
         )}
+
+      <AdminLoginModal
+        isOpen={showAdminLoginModal}
+        onClose={() => setShowAdminLoginModal(false)}
+        language={language}
+        onOpenSettings={onOpenSettings}
+      />
     </StyledAppContainer>
   );
 };

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, BookOpen, ShieldCheck, Sparkles, Languages, Lock, Mail, HelpCircle } from 'lucide-react';
+import { X, BookOpen, ShieldCheck, Sparkles, Languages, Lock, HelpCircle } from 'lucide-react';
 import { useAppTheme } from '../theme/ThemeContext';
 import { Language, SACRED_BRANDING } from '../types';
-import { AUTHORIZED_ADMIN_EMAIL } from '../services/adminAuth';
 import { UserGuideView } from './UserGuideView';
 import { sacredHaptics } from '../services/haptics';
 import {
@@ -410,13 +409,6 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
                   <p className="text-xs sm:text-sm leading-relaxed opacity-95 font-serif">
                     {content.privacyContactText}
                   </p>
-                  <a
-                    href={`mailto:${AUTHORIZED_ADMIN_EMAIL}`}
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-800 dark:text-amber-300 hover:underline break-all"
-                  >
-                    <Mail className="w-4 h-4 shrink-0" />
-                    <span>📧 {content.privacyEmailLabel} {AUTHORIZED_ADMIN_EMAIL}</span>
-                  </a>
                 </div>
               </div>
             </div>
@@ -429,10 +421,10 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
             >
               <h3 className="text-sm font-black font-serif" style={{ color: theme.sacredMaroon }}>
                 {language === 'pb'
-                  ? 'ਪ੍ਰਸ਼ਾਸਕ ਦੁਆਰਾ ਜੋੜੀ ਗਈ ਅਤਿਰਿਕਤ ਜਾਣਕਾਰੀ'
+                  ? 'ਅਤਿਰਿਕਤ ਜਾਣਕਾਰੀ'
                   : language === 'en'
-                  ? 'Additional Notes (Admin Loaded)'
-                  : 'अतिरिक्त अद्यतन जानकारी (प्रशासक द्वारा लोडेड)'}
+                  ? 'Additional Notes'
+                  : 'अतिरिक्त अद्यतन जानकारी'}
               </h3>
               <div className="space-y-2.5">
                 {activeSlotChapters.map((ch) => (

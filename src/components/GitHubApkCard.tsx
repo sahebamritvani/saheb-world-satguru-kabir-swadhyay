@@ -134,7 +134,9 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
             </span>
           </h4>
           <p className="text-[0.6875rem] font-serif tabular-nums" style={{ color: theme.textSecondary }}>
-            {language === 'en'
+            {language === 'pb'
+              ? `ਮੌਜੂਦਾ ਬਿਲਡ: v${CURRENT_APP_VERSION}${runningInApk ? ' · Android APK' : ' · ਵੈੱਬ ਐਪ'}`
+              : language === 'en'
               ? `Current App Build: v${CURRENT_APP_VERSION}${runningInApk ? ' · Android APK' : ' · Web PWA'}`
               : `वर्तमान बिल्ड: v${CURRENT_APP_VERSION}${runningInApk ? ' · Android APK' : ' · वेब ऐप'}`}
             {repo ? ` · ${repo}` : ''}
@@ -151,10 +153,10 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
             }}
             className="min-h-[44px] min-w-[44px] px-2.5 rounded-xl border border-amber-600/30 flex items-center justify-center gap-1 text-xs font-serif font-bold hover:bg-amber-500/10 transition cursor-pointer shrink-0 whitespace-nowrap"
             style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}
-            title={language === 'en' ? 'Change GitHub Repo' : 'GitHub रिपॉजिटरी बदलें'}
+            title={language === 'pb' ? 'GitHub ਰਿਪੋਜ਼ਿਟਰੀ ਬਦਲੋ' : language === 'en' ? 'Change GitHub Repo' : 'GitHub रिपॉजिटरी बदलें'}
           >
             <Edit3 className="w-3.5 h-3.5 shrink-0" />
-            <span className="hidden xs:inline">{language === 'en' ? 'Edit' : 'बदलें'}</span>
+            <span className="hidden xs:inline">{language === 'pb' ? 'ਬਦਲੋ' : language === 'en' ? 'Edit' : 'बदलें'}</span>
           </button>
         )}
       </div>
@@ -187,7 +189,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
               type="submit"
               className="min-h-[44px] px-4 py-2 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs sm:text-sm font-serif font-bold whitespace-nowrap shrink-0 transition cursor-pointer"
             >
-              {language === 'en' ? 'Save & Check' : 'जोड़ें व जांचें'}
+              {language === 'pb' ? 'ਸੰਭਾਲੋ ਤੇ ਜਾਂਚੋ' : language === 'en' ? 'Save & Check' : 'जोड़ें व जांचें'}
             </button>
           </div>
           {repoError && (
@@ -198,12 +200,30 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
           )}
           <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 text-[0.6875rem] sm:text-xs font-serif space-y-1 leading-relaxed" style={{ color: theme.textSecondary }}>
             <p className="font-bold" style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}>
-              {language === 'en' ? 'How auto-updating APK works:' : 'AI Studio से स्वतः APK अपडेट कैसे बनेगी:'}
+              {language === 'pb' ? 'ਆਟੋ-ਅਪਡੇਟ APK ਕਿਵੇਂ ਬਣਦੀ ਹੈ:' : language === 'en' ? 'How auto-updating APK works:' : 'AI Studio से स्वतः APK अपडेट कैसे बनेगी:'}
             </p>
             <ol className="list-decimal list-inside space-y-1">
-              <li>{language === 'en' ? 'Export / push this project to your public GitHub repository from Google AI Studio.' : 'Google AI Studio में ऊपर दिए GitHub (Save to GitHub) से इस कोड को अपनी रिपॉजिटरी में भेजें।'}</li>
-              <li>{language === 'en' ? 'GitHub Actions automatically builds a fresh signed Saheb-World.apk on every push.' : 'कोड पहुंचते ही GitHub Actions स्वतः गोल्डन चक्र आइकन वाली Saheb-World.apk बना देगा।'}</li>
-              <li>{language === 'en' ? 'Enter owner/repo above to download and receive update alerts right inside this app.' : 'रिपॉजिटरी का नाम यहाँ जोड़ते ही सीधे ऐप के अंदर डाउनलोड व अपडेट बटन सक्रिय हो जाएगा।'}</li>
+              <li>
+                {language === 'pb'
+                  ? 'ਇਸ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਆਪਣੀ ਪਬਲਿਕ GitHub ਰਿਪੋਜ਼ਿਟਰੀ ਵਿੱਚ ਪੁਸ਼ ਕਰੋ।'
+                  : language === 'en'
+                  ? 'Export / push this project to your public GitHub repository from Google AI Studio.'
+                  : 'कोड को अपनी रिपॉजिटरी में भेजें (Save to GitHub)।'}
+              </li>
+              <li>
+                {language === 'pb'
+                  ? 'GitHub Actions ਹਰ ਪੁਸ਼ ਤੇ ਆਪਣੇ-ਆਪ Saheb-World.apk ਤਿਆਰ ਕਰੇਗਾ।'
+                  : language === 'en'
+                  ? 'GitHub Actions automatically builds a fresh signed Saheb-World.apk on every push.'
+                  : 'कोड पहुंचते ही GitHub Actions स्वतः गोल्डन चक्र आइकन वाली Saheb-World.apk बना देगा।'}
+              </li>
+              <li>
+                {language === 'pb'
+                  ? 'ਉੱਪਰ owner/repo ਦਰਜ ਕਰਕੇ ਐਪ ਦੇ ਅੰਦਰ ਹੀ APK ਡਾਊਨਲੋਡ ਅਤੇ ਅਪਡੇਟ ਪ੍ਰਾਪਤ ਕਰੋ।'
+                  : language === 'en'
+                  ? 'Enter owner/repo above to download and receive update alerts right inside this app.'
+                  : 'रिपॉजिटरी का नाम यहाँ जोड़ते ही सीधे ऐप के अंदर डाउनलोड व अपडेट बटन सक्रिय हो जाएगा।'}
+              </li>
             </ol>
           </div>
         </form>
@@ -215,7 +235,13 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
           {isLoading ? (
             <div className="p-3.5 rounded-xl border border-amber-500/25 bg-black/5 dark:bg-white/5 flex items-center gap-2.5 text-xs font-serif" style={{ color: theme.textSecondary }}>
               <RefreshCw className="w-4 h-4 animate-spin text-amber-600 shrink-0" />
-              <span>{language === 'en' ? 'Checking latest GitHub APK release...' : 'GitHub Releases से नवीनतम APK जांची जा रही है...'}</span>
+              <span>
+                {language === 'pb'
+                  ? 'GitHub Releases ਤੋਂ ਨਵੀਨਤਮ APK ਜਾਂਚੀ ਜਾ ਰਹੀ ਹੈ...'
+                  : language === 'en'
+                  ? 'Checking latest GitHub APK release...'
+                  : 'GitHub Releases से नवीनतम APK जांची जा रही है...'}
+              </span>
             </div>
           ) : releaseInfo?.status === 'ready' && releaseInfo.apkDownloadUrl ? (
             <div className="space-y-2.5">
@@ -225,8 +251,8 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                     <CheckCircle2 className="w-4 h-4 shrink-0" />
                     <span>
                       {releaseInfo.hasNewerVersion
-                        ? (language === 'en' ? `New APK Update Ready (${releaseInfo.tagName})` : `नया APK अपडेट उपलब्ध है (${releaseInfo.tagName})`)
-                        : (language === 'en' ? `Latest APK Ready (${releaseInfo.tagName})` : `नवीनतम Android APK तैयार है (${releaseInfo.tagName})`)}
+                        ? (language === 'pb' ? `ਨਵਾਂ APK ਅਪਡੇਟ ਤਿਆਰ ਹੈ (${releaseInfo.tagName})` : language === 'en' ? `New APK Update Ready (${releaseInfo.tagName})` : `नया APK अपडेट उपलब्ध है (${releaseInfo.tagName})`)
+                        : (language === 'pb' ? `ਨਵੀਨਤਮ Android APK ਤਿਆਰ ਹੈ (${releaseInfo.tagName})` : language === 'en' ? `Latest APK Ready (${releaseInfo.tagName})` : `नवीनतम Android APK तैयार है (${releaseInfo.tagName})`)}
                     </span>
                   </span>
                 </div>
@@ -234,7 +260,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   {releaseInfo.apkFileName || 'Saheb-World.apk'}
                   {sizeLabel ? ` · ${sizeLabel}` : ''}
                   {formattedDate ? ` · ${formattedDate}` : ''}
-                  {releaseInfo.fromCache ? (language === 'en' ? ' · Cached' : ' · कैश्ड') : ''}
+                  {releaseInfo.fromCache ? (language === 'pb' ? ' · ਕੈਸ਼ਡ' : language === 'en' ? ' · Cached' : ' · कैश्ड') : ''}
                 </p>
               </div>
 
@@ -252,8 +278,8 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                 <Download className="w-4 h-4 shrink-0" />
                 <span>
                   {releaseInfo.hasNewerVersion
-                    ? (language === 'en' ? `Download Update (${releaseInfo.tagName})` : `नया APK अपडेट डाउनलोड करें (${releaseInfo.tagName})`)
-                    : (language === 'en' ? 'Download Android APK (.apk)' : 'Android APK डाउनलोड करें (.apk)')}
+                    ? (language === 'pb' ? `ਨਵਾਂ APK ਅਪਡੇਟ ਡਾਊਨਲੋਡ ਕਰੋ (${releaseInfo.tagName})` : language === 'en' ? `Download Update (${releaseInfo.tagName})` : `नया APK अपडेट डाउनलोड करें (${releaseInfo.tagName})`)
+                    : (language === 'pb' ? 'Android APK ਡਾਊਨਲੋਡ ਕਰੋ (.apk)' : language === 'en' ? 'Download Android APK (.apk)' : 'Android APK डाउनलोड करें (.apk)')}
                 </span>
               </a>
 
@@ -266,7 +292,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}
                 >
                   <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                  <span className="truncate">{language === 'en' ? 'Releases Page' : 'Releases पेज'}</span>
+                  <span className="truncate">{language === 'pb' ? 'Releases ਪੰਨਾ' : language === 'en' ? 'Releases Page' : 'Releases पेज'}</span>
                 </a>
                 <button
                   type="button"
@@ -275,7 +301,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}
                 >
                   <RefreshCw className="w-3.5 h-3.5 shrink-0" />
-                  <span className="truncate">{language === 'en' ? 'Check Updates' : 'अपडेट जांचें'}</span>
+                  <span className="truncate">{language === 'pb' ? 'ਅਪਡੇਟ ਜਾਂਚੋ' : language === 'en' ? 'Check Updates' : 'अपडेट जांचें'}</span>
                 </button>
               </div>
             </div>
@@ -286,14 +312,16 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <span>
                     {releaseInfo?.status === 'repo-not-found'
-                      ? (language === 'en' ? 'Repository not found or private (make repository Public)' : 'रिपॉजिटरी नहीं मिली या Private है (कृपया GitHub पर रिपॉजिटरी को Public करें)')
+                      ? (language === 'pb' ? 'ਰਿਪੋਜ਼ਿਟਰੀ ਨਹੀਂ ਮਿਲੀ ਜਾਂ Private ਹੈ (ਕਿਰਪਾ ਕਰਕੇ Public ਕਰੋ)' : language === 'en' ? 'Repository not found or private (make repository Public)' : 'रिपॉजिटरी नहीं मिली या Private है (कृपया GitHub पर रिपॉजिटरी को Public करें)')
                       : releaseInfo?.status === 'offline'
-                      ? (language === 'en' ? 'Offline right now — connect to internet to fetch APK' : 'फ़िलहाल इंटरनेट बंद है — APK डाउनलोड के लिए ऑनलाइन आएं')
-                      : (language === 'en' ? 'First APK build is pending or publishing in GitHub Actions (~3-5 min)' : 'पहली APK अभी GitHub Actions में बन रही है या Release अभी प्रकाशित नहीं हुआ है (~3-5 मिनट)')}
+                      ? (language === 'pb' ? 'ਇਸ ਵੇਲੇ ਆਫ਼ਲਾਈਨ ਹੈ — APK ਡਾਊਨਲੋਡ ਲਈ ਇੰਟਰਨੈੱਟ ਚਲਾਓ' : language === 'en' ? 'Offline right now — connect to internet to fetch APK' : 'फ़िलहाल इंटरनेट बंद है — APK डाउनलोड के लिए ऑनलाइन आएं')
+                      : (language === 'pb' ? 'ਪਹਿਲਾ APK ਬਿਲਡ GitHub Actions ਵਿੱਚ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ (~3-5 ਮਿੰਟ)' : language === 'en' ? 'First APK build is pending or publishing in GitHub Actions (~3-5 min)' : 'पहली APK अभी GitHub Actions में बन रही है या Release अभी प्रकाशित नहीं हुआ है (~3-5 मिनट)')}
                   </span>
                 </p>
                 <p className="text-[0.6875rem] leading-relaxed opacity-85" style={{ color: theme.textSecondary }}>
-                  {language === 'en'
+                  {language === 'pb'
+                    ? 'ਜੇਕਰ ਤੁਸੀਂ ਹੁਣੇ ਕੋਡ ਪੁਸ਼ ਕੀਤਾ ਹੈ, ਤਾਂ GitHub ਤੇ "Actions" ਟੈਬ ਵਿੱਚ ਬਿਲਡ ਪ੍ਰਗਤੀ ਵੇਖੋ।'
+                    : language === 'en'
                     ? 'If you just pushed your code, check the Actions tab on GitHub to watch the APK build complete.'
                     : 'यदि आपने अभी कोड पुश किया है, तो GitHub पर "Actions" टैब में जाकर बिल्ड की प्रगति देख सकते हैं या सीधा Releases पेज खोल सकते हैं।'}
                 </p>
@@ -311,7 +339,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                 className="w-full min-h-[44px] py-3 px-4 rounded-xl font-bold font-serif text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition cursor-pointer no-underline whitespace-nowrap"
               >
                 <ExternalLink className="w-4 h-4 shrink-0" />
-                <span>{language === 'en' ? 'Open GitHub Releases Page' : 'GitHub Releases पेज खोलें'}</span>
+                <span>{language === 'pb' ? 'GitHub Releases ਪੰਨਾ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open GitHub Releases Page' : 'GitHub Releases पेज खोलें'}</span>
               </a>
 
               <div className="grid grid-cols-2 gap-2">
@@ -323,7 +351,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}
                 >
                   <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                  <span className="truncate">{language === 'en' ? 'GitHub Actions' : 'बिल्ड स्थिति (Actions)'}</span>
+                  <span className="truncate">{language === 'pb' ? 'ਬਿਲਡ ਸਥਿਤੀ (Actions)' : language === 'en' ? 'GitHub Actions' : 'बिल्ड स्थिति (Actions)'}</span>
                 </a>
                 <button
                   type="button"
@@ -332,7 +360,7 @@ export const GitHubApkCard: React.FC<GitHubApkCardProps> = ({
                   style={{ color: isDark ? '#FDE68A' : theme.sacredMaroon }}
                 >
                   <RefreshCw className="w-3.5 h-3.5 shrink-0" />
-                  <span className="truncate">{language === 'en' ? 'Recheck Now' : 'पुनः जांचें'}</span>
+                  <span className="truncate">{language === 'pb' ? 'ਮੁੜ ਜਾਂਚੋ' : language === 'en' ? 'Recheck Now' : 'पुनः जांचें'}</span>
                 </button>
               </div>
             </div>

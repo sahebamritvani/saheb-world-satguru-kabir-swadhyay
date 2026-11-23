@@ -92,6 +92,7 @@ export const ADMIN_SLOT_CATEGORIES: AdminSlotCategoryMeta[] = [
 ];
 
 export type AdminGranthSlotId =
+  | 'slot-mool-siddhant'
   | 'slot-1-nitnem'
   | 'slot-2-sakhi'
   | 'slot-3-bijak'
@@ -145,7 +146,11 @@ export type AdminGranthSlotId =
   | 'slot-51-user-guide'
   | 'slot-52-about-us'
   | 'slot-53-disclaimer'
-  | 'slot-54-privacy-policy';
+  | 'slot-54-privacy-policy'
+  | 'slot-55-vani-card-maker'
+  | 'slot-56-satvik-sankalp'
+  | 'slot-57-kabir-gyan-quiz'
+  | 'slot-58-vansh-bayalis';
 
 export interface AdminGranthSlotDefinition {
   id: AdminGranthSlotId;
@@ -753,6 +758,24 @@ export const ADMIN_GRANTH_SLOTS: AdminGranthSlotDefinition[] = [
       en: 'Satsang video discourses, summaries & speaker notes',
     },
   },
+  {
+    id: 'slot-56-satvik-sankalp',
+    slotNumber: 56,
+    category: 'sadhana-dhun',
+    label: '#56: नशामुक्ति व सात्विक संकल्प ट्रैकर',
+    title: {
+      hi: '#56: नशामुक्ति व सात्विक संकल्प ट्रैकर',
+      pb: '#56: ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ',
+      en: '#56: De-addiction & Satvik Sankalp Tracker',
+    },
+    targetSlug: 'satvik-sankalp',
+    targetViews: ['satvik-sankalp'],
+    description: {
+      hi: 'दैनिक सात्विक संकल्प, नशामुक्ति दिन गणना, मील के पत्थर बैज एवं प्रेरक वाणियाँ',
+      pb: 'ਰੋਜ਼ਾਨਾ ਸਾਤਵਿਕ ਸੰਕਲਪ, ਨਸ਼ਾਮੁਕਤੀ ਦਿਨ ਗਿਣਤੀ ਅਤੇ ਪ੍ਰੇਰਕ ਬਾਣੀ',
+      en: 'Clean living daily streaks, milestone badges & vows tracker',
+    },
+  },
 
   // =========================================================================
   // CATEGORY 3: Wisdom, Lineage & Quizzes (#33 – #42)
@@ -937,6 +960,42 @@ export const ADMIN_GRANTH_SLOTS: AdminGranthSlotDefinition[] = [
       en: 'Panthic Q&A on Chouka Aarti rituals & core beliefs',
     },
   },
+  {
+    id: 'slot-57-kabir-gyan-quiz',
+    slotNumber: 57,
+    category: 'wisdom-quizzes',
+    label: '#57: कबीर ज्ञान प्रश्नोत्तरी एवं प्रमाण-पत्र',
+    title: {
+      hi: '#57: कबीर ज्ञान प्रश्नोत्तरी एवं प्रमाण-पत्र',
+      pb: '#57: ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ',
+      en: '#57: Kabir Gyan Quiz & Certificate',
+    },
+    targetSlug: 'kabir-gyan-quiz',
+    targetViews: ['kabir-gyan-quiz'],
+    description: {
+      hi: 'सतगुरु कबीर साहेब एवं वंश परंपरा आधारित ६ प्रश्नों की परीक्षा व डिजिटल प्रमाण-पत्र',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ',
+      en: 'Interactive 6-question Kabir philosophy quiz with digital certificate',
+    },
+  },
+  {
+    id: 'slot-58-vansh-bayalis',
+    slotNumber: 58,
+    category: 'wisdom-quizzes',
+    label: '#58: वंश बयालीस की पावन महिमा',
+    title: {
+      hi: '#58: वंश बयालीस की पावन महिमा',
+      pb: '#58: ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ',
+      en: '#58: Glory of Vansh Bayalis',
+    },
+    targetSlug: 'vansh-bayalis',
+    targetViews: ['vansh-bayalis'],
+    description: {
+      hi: 'धनी धर्मदास साहेब जी के प्रति सतगुरु कबीर साहेब का वरदान व ४२ वंशों की अटल महिमा',
+      pb: 'ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਪ੍ਰਤੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਵਰਦਾਨ ਤੇ ੪੨ ਵੰਸ਼ਾਂ ਦੀ ਮਹਿਮਾ',
+      en: 'Complete 4-part guide on Vansh Bayalis sacred lineage & divine promise',
+    },
+  },
 
   // =========================================================================
   // CATEGORY 4: Exploration, Calendar & Tools (#43 – #50)
@@ -1083,6 +1142,24 @@ export const ADMIN_GRANTH_SLOTS: AdminGranthSlotDefinition[] = [
       hi: 'ऑफ़लाइन डेटा स्थिति, वर्ज़न नोट्स एवं सिस्टम सत्यापन जानकारी',
       pb: 'ਆਫ਼ਲਾਈਨ ਡੇਟਾ ਸਥਿਤੀ ਅਤੇ ਸਿਸਟਮ ਪ੍ਰਮਾਣਿਕਤਾ ਜਾਣਕਾਰੀ',
       en: 'Offline cache notes, release verification & system guidance',
+    },
+  },
+  {
+    id: 'slot-55-vani-card-maker',
+    slotNumber: 55,
+    category: 'exploration-tools',
+    label: '#55: कबीर वाणी कार्ड मेकर (Greeting Studio)',
+    title: {
+      hi: '#55: कबीर वाणी कार्ड मेकर',
+      pb: '#55: ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ',
+      en: '#55: Kabir Vani Greeting Card Maker',
+    },
+    targetSlug: 'vani-card-maker',
+    targetViews: ['vani-card-maker'],
+    description: {
+      hi: 'सुंदर आध्यात्मिक थीम व सौजन्य नाम के साथ पावन संदेश कार्ड डाउनलोड और साझा करें',
+      pb: 'ਸੁੰਦਰ ਰੂਹਾਨੀ ਥੀਮ ਤੇ ਆਪਣੇ ਨਾਮ ਨਾਲ ਪਾਵਨ ਸੰਦੇਸ਼ ਕਾਰਡ ਬਣਾਓ ਤੇ ਸਾਂਝਾ ਕਰੋ',
+      en: 'Design, download and share spiritual greeting cards with themes and courtesy name',
     },
   },
 

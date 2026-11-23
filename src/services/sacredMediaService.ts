@@ -185,7 +185,7 @@ export async function publishAdminSacredMedia(input: MediaPublishInput): Promise
   if (!isAdminAuthenticated() || !isFirebaseAdminReady()) {
     return {
       success: false,
-      error: 'केवल अधिकृत एडमिन (smongia76@gmail.com से Google साइन-इन) ही ऑडियो, वीडियो या चित्र अपलोड कर सकते हैं।',
+      error: 'केवल अधिकृत एडमिन ही ऑडियो, वीडियो या चित्र अपलोड कर सकते हैं।',
     };
   }
 
@@ -295,7 +295,7 @@ export async function deleteAdminSacredMedia(mediaId: string): Promise<{ success
   if (!isAdminAuthenticated() || !isFirebaseAdminReady()) {
     return {
       success: false,
-      error: 'केवल अधिकृत एडमिन (smongia76@gmail.com) ही सामग्री हटा सकते हैं।',
+      error: 'केवल अधिकृत एडमिन ही सामग्री हटा सकते हैं।',
     };
   }
   if (!/^[a-zA-Z0-9_-]{1,128}$/.test(mediaId)) {

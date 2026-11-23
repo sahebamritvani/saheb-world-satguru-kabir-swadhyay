@@ -15,6 +15,7 @@ import {
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { STARTER_SAKHIS, loadFullSakhisModule } from '../data/sakhiStarterData';
+import { sakhisDatabase } from '../data/sakhis';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter } from '../services/audioDhun';
 
@@ -256,9 +257,9 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
   const [sourceMode, setSourceMode] = useState<'sutra' | 'sakhi'>('sutra');
   const [sutraIdx, setSutraIdx] = useState<number>(() => Math.floor(Math.random() * CURATED_AMRIT_SUTRAS.length));
 
-  const [sakhisList, setSakhisList] = useState<Sakhi[]>(STARTER_SAKHIS);
+  const [sakhisList, setSakhisList] = useState<Sakhi[]>(() => sakhisDatabase?.length ? sakhisDatabase : STARTER_SAKHIS);
   // Random Sakhi state
-  const [currentSakhi, setCurrentSakhi] = useState<Sakhi>(() => STARTER_SAKHIS[0]);
+  const [currentSakhi, setCurrentSakhi] = useState<Sakhi>(() => (sakhisDatabase?.length ? sakhisDatabase[0] : STARTER_SAKHIS[0]));
 
   const [isCopied, setIsCopied] = useState(false);
   const [shareToast, setShareToast] = useState<string | null>(null);

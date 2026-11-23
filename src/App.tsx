@@ -71,8 +71,13 @@ const NatureWallpaperEngine = lazy(() => import('./components/NatureWallpaperEng
 const DailyHukamnamaView = lazy(() => import('./components/DailyHukamnamaView').then(m => ({ default: m.DailyHukamnamaView })));
 const ChetawaniSaarang = lazy(() => import('./components/ChetawaniSaarang').then(m => ({ default: m.ChetawaniSaarang })));
 const DohaMemoryTrainer = lazy(() => import('./components/DohaMemoryTrainer').then(m => ({ default: m.DohaMemoryTrainer })));
+const MoolSiddhantModule = lazy(() => import('./components/MoolSiddhantModule').then(m => ({ default: m.MoolSiddhantModule })));
+const KabirVaniCardMaker = lazy(() => import('./components/KabirVaniCardMaker').then(m => ({ default: m.KabirVaniCardMaker })));
+const SatvikSankalpTracker = lazy(() => import('./components/SatvikSankalpTracker').then(m => ({ default: m.SatvikSankalpTracker })));
+const KabirGyanQuiz = lazy(() => import('./components/KabirGyanQuiz').then(m => ({ default: m.KabirGyanQuiz })));
+const VanshBayalisModule = lazy(() => import('./components/VanshBayalisModule').then(m => ({ default: m.VanshBayalisModule })));
 import { getStarterDailySakhi, loadFullSakhisModule } from './data/sakhiStarterData';
-import { Language, AppView, Sakhi, DiaryEntry } from './types';
+import { Language, AppView, Sakhi, DiaryEntry, SggsKabirVerse } from './types';
 import { translations } from './data/translations';
 import { satyanaamAudio, stopTransientSacredAudio } from './services/audioDhun';
 import { ambientAudio } from './services/ambientAudioService';
@@ -151,7 +156,12 @@ function MainApp() {
       'aatma-bhushan': 'aatma-bhushan',
       'gyan-chakra': 'gyan-chakra',
       'nature-wallpaper': 'nature-wallpaper',
-      'hukamnama': 'hukamnama'
+      'mool-siddhant': 'mool-siddhant',
+      'hukamnama': 'hukamnama',
+      'vani-card-maker': 'vani-card-maker',
+      'satvik-sankalp': 'satvik-sankalp',
+      'kabir-gyan-quiz': 'kabir-gyan-quiz',
+      'vansh-bayalis': 'vansh-bayalis'
     };
     
     if (rawHash && !viewMap[rawHash]) {
@@ -165,6 +175,10 @@ function MainApp() {
   const [currentView, setCurrentView] = useState<AppView>(getValidViewFromUrl);
   const [errorRetryKey, setErrorRetryKey] = useState(0);
   const [fullSakhisMod, setFullSakhisMod] = useState<typeof import('./data/sakhis') | null>(null);
+  const [wallpaperInitialHukamnama, setWallpaperInitialHukamnama] = useState<{
+    verse: SggsKabirVerse;
+    triggerKey: number;
+  } | null>(null);
 
   // Stop any transient recitation or ambient sound when switching between screens
   useEffect(() => {
@@ -545,7 +559,9 @@ function MainApp() {
 
   const handleSelectSakhiByNumber = async (num: number) => {
     const mod = fullSakhisMod || (await loadFullSakhisModule());
-    const found = mod.sakhisDatabase.find((s) => s.number === num);
+    const found =
+      mod.sakhisDatabase.find((s) => s.number === num) ||
+      (num >= 1 && num <= mod.sakhisDatabase.length ? mod.sakhisDatabase[num - 1] : undefined);
     if (found) {
       setActiveSakhi(found);
       setCurrentView('swadhyay');
@@ -656,6 +672,11 @@ function MainApp() {
           }}
           onOpenDiaryWithVerse={handleOpenDiaryWithVerse}
           handleSelectSakhiByNumber={handleSelectSakhiByNumber}
+          onOpenWallpaperWithHukamnama={(hukamnamaVerse) => {
+            setWallpaperInitialHukamnama({ verse: hukamnamaVerse, triggerKey: Date.now() });
+            setCurrentView('nature-wallpaper');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         />
       )}
 
@@ -1256,7 +1277,9 @@ function MainApp() {
         <NatureWallpaperEngine
           language={language}
           onLanguageChange={setLanguage}
+          initialHukamnama={wallpaperInitialHukamnama}
           onClose={() => {
+            setWallpaperInitialHukamnama(null);
             setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
@@ -1272,8 +1295,74 @@ function MainApp() {
             setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          onOpenWallpaperEngine={() => {
+          onOpenWallpaperEngine={(hukamnamaVerse) => {
+            setWallpaperInitialHukamnama({ verse: hukamnamaVerse, triggerKey: Date.now() });
             setCurrentView('nature-wallpaper');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
+      {/* View: Central Core Principle (मूल सिद्धांत: एक सत्यनाम से सब सधै) */}
+      {currentView === 'mool-siddhant' && (
+        <MoolSiddhantModule
+          language={language}
+          onClose={() => {
+            setCurrentView('daily');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onNavigateView={handleSelectView}
+          onSelectLanguage={setLanguage}
+        />
+      )}
+
+      {/* View: Module 1 — Kabir Vani Greeting Card Maker */}
+      {currentView === 'vani-card-maker' && (
+        <KabirVaniCardMaker
+          language={language}
+          onSelectLanguage={setLanguage}
+          onNavigateView={handleSelectView}
+          onClose={() => {
+            setCurrentView('daily');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
+      {/* View: Module 2 — De-addiction & Satvik Sankalp Tracker */}
+      {currentView === 'satvik-sankalp' && (
+        <SatvikSankalpTracker
+          language={language}
+          onSelectLanguage={setLanguage}
+          onNavigateView={handleSelectView}
+          onClose={() => {
+            setCurrentView('daily');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
+      {/* View: Module 3 — Kabir Gyan Spiritual Quiz */}
+      {currentView === 'kabir-gyan-quiz' && (
+        <KabirGyanQuiz
+          language={language}
+          onSelectLanguage={setLanguage}
+          onNavigateView={handleSelectView}
+          onClose={() => {
+            setCurrentView('daily');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
+      {/* View: Module 4 — Vansh Bayalis Mystery & Glory */}
+      {currentView === 'vansh-bayalis' && (
+        <VanshBayalisModule
+          language={language}
+          onSelectLanguage={setLanguage}
+          onNavigateView={handleSelectView}
+          onClose={() => {
+            setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         />
@@ -1289,7 +1378,8 @@ function MainApp() {
         'sacred-leelas', 'aarti-sanctuary', 'shabd-kosha', 'satsang-video', 'sadhana-goals',
         'growth-dashboard', 'bhajan-repository', 'damakheda-index', 'acharya-parampara',
         'divine-darshan', 'chetavani-saarang', 'sggs-kabir-bani', 'satya-naam', 'aatma-bhushan',
-        'gyan-chakra', 'nature-wallpaper', 'hukamnama'
+        'gyan-chakra', 'nature-wallpaper', 'mool-siddhant', 'hukamnama',
+        'vani-card-maker', 'satvik-sankalp', 'kabir-gyan-quiz', 'vansh-bayalis'
       ].includes(currentView) && (
         <DailyPawanSakhi
           sakhi={currentDailySakhi}
@@ -1342,6 +1432,11 @@ function MainApp() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           onOpenDiaryWithVerse={handleOpenDiaryWithVerse}
+          onOpenWallpaperWithHukamnama={(hukamnamaVerse) => {
+            setWallpaperInitialHukamnama({ verse: hukamnamaVerse, triggerKey: Date.now() });
+            setCurrentView('nature-wallpaper');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         />
       )}
             </Suspense>

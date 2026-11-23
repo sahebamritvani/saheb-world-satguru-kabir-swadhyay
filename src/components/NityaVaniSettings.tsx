@@ -164,17 +164,23 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
       satyanaamAudio.ringSatyanaamTripleChime();
     } catch {}
 
-    const title = 
-      type === 'morning' ? (isHi ? '।।सत्यनाम।। प्रातः अमृतवेला नित्यम व ध्यान' : 'Satyanaam - Morning Nitnem') :
-      type === 'evening' ? (isHi ? '।।सत्यनाम।। सायं संध्या आरती व नाम सुमिरन' : 'Satyanaam - Evening Aarti') :
-      type === 'chintan' ? (isHi ? '।।सत्यनाम।। पावन दैनिक चिंतन समय' : 'Satyanaam - Daily Chintan Time') :
-      (isHi ? '।।सत्यनाम।। नाम-सिमरन (मंत्र) ट्रैकर स्मरण' : 'Satyanaam - Mantra Tracker Reminder');
+    const title =
+      type === 'morning'
+        ? (isHi ? '।।सत्यनाम।। प्रातः अमृतवेला नित्यम व ध्यान' : isPb ? '।।ਸਤਯਨਾਮ।। ਸਵੇਰ ਅੰਮ੍ਰਿਤਵੇਲਾ ਨਿਤਨੇਮ ਤੇ ਧਿਆਨ' : 'Satyanaam - Morning Nitnem & Dhyan')
+        : type === 'evening'
+        ? (isHi ? '।।सत्यनाम।। सायं संध्या आरती व नाम सुमिरन' : isPb ? '।।ਸਤਯਨਾਮ।। ਸ਼ਾਮ ਸੰਧਿਆ ਆਰਤੀ ਤੇ ਨਾਮ ਸਿਮਰਨ' : 'Satyanaam - Evening Aarti & Simran')
+        : type === 'chintan'
+        ? (isHi ? '।।सत्यनाम।। पावन दैनिक चिंतन समय' : isPb ? '।।ਸਤਯਨਾਮ।। ਪਾਵਨ ਰੋਜ਼ਾਨਾ ਚਿੰਤਨ ਸਮਾਂ' : 'Satyanaam - Daily Chintan Time')
+        : (isHi ? '।।सत्यनाम।। नाम-सिमरन (मंत्र) ट्रैकर स्मरण' : isPb ? '।।ਸਤਯਨਾਮ।। ਨਾਮ-ਸਿਮਰਨ (ਮੰਤਰ) ਯਾਦ-ਦਹਾਨੀ' : 'Satyanaam - Mantra Tracker Reminder');
 
-    const body = 
-      type === 'morning' ? (isHi ? 'उठ जाग मुसाफिर भोर भई, अब रैन कहाँ जो सोवत है।' : 'Awaken to the sacred dawn.') :
-      type === 'evening' ? (isHi ? 'सांझ भई दिन बीता, घट में जोत जगाओ।' : 'Evening falls. Kindle the flame of devotion.') :
-      type === 'chintan' ? (isHi ? 'आज का पावन दैनिक चिंतन एवं साखी स्वाध्याय पूर्ण करें।' : 'Time for your daily contemplation and sacred study.') :
-      (isHi ? 'अपने आज के नाम-सिमरन (माला) का लक्ष्य पूर्ण करें।' : 'Keep up with your daily mantra chanting goals.');
+    const body =
+      type === 'morning'
+        ? (isHi ? 'उठ जाग मुसाफिर भोर भई, अब रैन कहाँ जो सोवत है।' : isPb ? 'ਉੱਠ ਜਾਗ ਮੁਸਾਫਿਰ ਭੋਰ ਭਈ, ਅਬ ਰੈਣ ਕਹਾਂ ਜੋ ਸੋਵਤ ਹੈ।' : 'Awaken to the sacred dawn.')
+        : type === 'evening'
+        ? (isHi ? 'सांझ भई दिन बीता, घट में जोत जगाओ।' : isPb ? 'ਸਾਂਝ ਭਈ ਦਿਨ ਬੀਤਾ, ਘਟ ਮੇਂ ਜੋਤ ਜਗਾਓ।' : 'Evening falls. Kindle the flame of devotion.')
+        : type === 'chintan'
+        ? (isHi ? 'आज का पावन दैनिक चिंतन एवं साखी स्वाध्याय पूर्ण करें।' : isPb ? 'ਅੱਜ ਦਾ ਪਾਵਨ ਰੋਜ਼ਾਨਾ ਚਿੰਤਨ ਅਤੇ ਸਾਖੀ ਸਵਾਧਿਆਏ ਪੂਰਾ ਕਰੋ।' : 'Time for your daily contemplation and sacred study.')
+        : (isHi ? 'अपने आज के नाम-सिमरन (माला) का लक्ष्य पूर्ण करें।' : isPb ? 'ਆਪਣੇ ਅੱਜ ਦੇ ਨਾਮ-ਸਿਮਰਨ (ਮਾਲਾ) ਦਾ ਟੀਚਾ ਪੂਰਾ ਕਰੋ।' : 'Keep up with your daily mantra chanting goals.');
 
     setActiveScheduledNotice(body);
     setTimeout(() => setActiveScheduledNotice(null), 8000);
@@ -268,17 +274,23 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
       satyanaamAudio.ringSatyanaamTripleChime();
     } catch {}
 
-    const title = 
-      type === 'morning' ? (isHi ? 'प्रातः स्मरण (Test)' : 'Morning Reminder') :
-      type === 'evening' ? (isHi ? 'सायं स्मरण (Test)' : 'Evening Reminder') :
-      type === 'chintan' ? (isHi ? 'दैनिक चिंतन (Test)' : 'Daily Chintan Reminder') :
-      (isHi ? 'मंत्र ट्रैकर (Test)' : 'Mantra Tracker Reminder');
+    const title =
+      type === 'morning'
+        ? (isHi ? 'प्रातः स्मरण (परीक्षण)' : isPb ? 'ਸਵੇਰ ਦਾ ਸਿਮਰਨ (ਟੈਸਟ)' : 'Morning Reminder (Test)')
+        : type === 'evening'
+        ? (isHi ? 'सायं स्मरण (परीक्षण)' : isPb ? 'ਸ਼ਾਮ ਦਾ ਸਿਮਰਨ (ਟੈਸਟ)' : 'Evening Reminder (Test)')
+        : type === 'chintan'
+        ? (isHi ? 'दैनिक चिंतन (परीक्षण)' : isPb ? 'ਰੋਜ਼ਾਨਾ ਚਿੰਤਨ (ਟੈਸਟ)' : 'Daily Chintan Reminder')
+        : (isHi ? 'मंत्र ट्रैकर (परीक्षण)' : isPb ? 'ਮੰਤਰ ਟ੍ਰੈਕਰ (ਟੈਸਟ)' : 'Mantra Tracker Reminder');
 
-    const body = 
-      type === 'morning' ? (isHi ? 'प्रातः कालीन नित्यम स्वाध्याय करें।' : 'Morning Nitnem study.') :
-      type === 'evening' ? (isHi ? 'सायं कालीन आरती व सुमिरन करें।' : 'Evening Aarti and Simran.') :
-      type === 'chintan' ? (isHi ? 'आज का पावन चिंतन पूर्ण करें।' : 'Complete your daily contemplation.') :
-      (isHi ? 'नाम-सिमरन का लक्ष्य पूर्ण करें।' : 'Complete your chanting goals.');
+    const body =
+      type === 'morning'
+        ? (isHi ? 'प्रातः कालीन नित्यम स्वाध्याय करें।' : isPb ? 'ਸਵੇਰ ਦਾ ਨਿਤਨੇਮ ਸਵਾਧਿਆਏ ਕਰੋ।' : 'Morning Nitnem study.')
+        : type === 'evening'
+        ? (isHi ? 'सायं कालीन आरती व सुमिरन करें।' : isPb ? 'ਸ਼ਾਮ ਦੀ ਆਰਤੀ ਤੇ ਸਿਮਰਨ ਕਰੋ।' : 'Evening Aarti and Simran.')
+        : type === 'chintan'
+        ? (isHi ? 'आज का पावन चिंतन पूर्ण करें।' : isPb ? 'ਅੱਜ ਦਾ ਪਾਵਨ ਚਿੰਤਨ ਪੂਰਾ ਕਰੋ।' : 'Complete your daily contemplation.')
+        : (isHi ? 'नाम-सिमरन का लक्ष्य पूर्ण करें।' : isPb ? 'ਨਾਮ-ਸਿਮਰਨ ਦਾ ਟੀਚਾ ਪੂਰਾ ਕਰੋ।' : 'Complete your chanting goals.');
 
     if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
       try {
@@ -289,7 +301,11 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
       } catch {}
     }
 
-    setTestAlertToast(type === 'morning' ? (isHi ? 'प्रातः स्मरण परीक्षण सफल (घंटी बजी)' : 'Morning reminder tested') : (isHi ? 'सायं स्मरण परीक्षण सफल (घंटी बजी)' : 'Evening reminder tested'));
+    setTestAlertToast(
+      type === 'morning'
+        ? (isHi ? 'प्रातः स्मरण परीक्षण सफल (घंटी बजी)' : isPb ? 'ਸਵੇਰ ਸਿਮਰਨ ਟੈਸਟ ਸਫਲ (ਘੰਟੀ ਵੱਜੀ)' : 'Morning reminder tested')
+        : (isHi ? 'सायं स्मरण परीक्षण सफल (घंटी बजी)' : isPb ? 'ਸ਼ਾਮ ਸਿਮਰਨ ਟੈਸਟ ਸਫਲ (ਘੰਟੀ ਵੱਜੀ)' : 'Evening reminder tested')
+    );
     setTimeout(() => setTestAlertToast(null), 3500);
   };
 
@@ -450,7 +466,7 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
             onClick={requestPermission}
             className="px-2.5 py-1 rounded-lg bg-[#8B2500] text-white font-bold text-[11px] hover:bg-[#7C1D00] transition cursor-pointer"
           >
-            {isHi ? 'अनुमति दें' : 'Grant'}
+            {isHi ? 'अनुमति दें' : isPb ? 'ਇਜਾਜ਼ਤ ਦਿਓ' : 'Grant'}
           </button>
         )}
       </div>
@@ -490,7 +506,9 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
                 {isHi ? '१. प्रातः स्मरण: अमृतवेला नित्यम व ध्यान' : isPb ? '੧. ਸਵੇਰ ਦਾ ਸਿਮਰਨ: ਅੰਮ੍ਰਿਤ ਵੇਲਾ ਨਿਤਨੇਮ' : '1. Morning: Amritvela Nitnem & Dhyan'}
               </span>
               <span className="text-[11px] opacity-70" style={{ color: theme.textSecondary }}>
-                {morningEnabled ? (isHi ? 'सक्रिय • ब्रह्म मुहूर्त अनुशंसित' : 'Active • Dawn recommended') : (isHi ? 'निष्क्रिय' : 'Off')}
+                {morningEnabled
+                  ? (isHi ? 'सक्रिय • ब्रह्म मुहूर्त अनुशंसित' : isPb ? 'ਸਰਗਰਮ • ਅੰਮ੍ਰਿਤ ਵੇਲਾ ਸਿਫ਼ਾਰਿਸ਼ਤ' : 'Active • Dawn recommended')
+                  : (isHi ? 'निष्क्रिय' : isPb ? 'ਬੰਦ' : 'Off')}
               </span>
             </div>
           </div>
@@ -530,10 +548,10 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
               onClick={() => handleTestAlert('morning')}
               className="mt-4 px-3 py-2 rounded-lg border text-xs font-bold flex items-center gap-1 hover:bg-amber-500/10 cursor-pointer"
               style={{ borderColor: theme.accentGold, color: theme.sacredMaroon }}
-              title="Test morning alert"
+              title={isHi ? 'प्रातः स्मरण परीक्षण' : isPb ? 'ਸਵੇਰ ਸਿਮਰਨ ਟੈਸਟ' : 'Test morning alert'}
             >
               <Volume2 className="w-3.5 h-3.5" />
-              <span>{isHi ? 'परीक्षण' : 'Test'}</span>
+              <span>{isHi ? 'परीक्षण' : isPb ? 'ਟੈਸਟ' : 'Test'}</span>
             </button>
           </div>
         )}
@@ -554,7 +572,9 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
                 {isHi ? '२. सायं स्मरण: संध्या आरती व नाम सुमिरन' : isPb ? '੨. ਸ਼ਾਮ ਦਾ ਸਿਮਰਨ: ਸੰਧਿਆ ਆਰਤੀ' : '2. Evening: Sandhya Aarti & Simran'}
               </span>
               <span className="text-[11px] opacity-70" style={{ color: theme.textSecondary }}>
-                {eveningEnabled ? (isHi ? 'सक्रिय • गोधूलि वेला अनुशंसित' : 'Active • Twilight recommended') : (isHi ? 'निष्क्रिय' : 'Off')}
+                {eveningEnabled
+                  ? (isHi ? 'सक्रिय • गोधूलि वेला अनुशंसित' : isPb ? 'ਸਰਗਰਮ • ਸ਼ਾਮ ਸਮਾਂ ਸਿਫ਼ਾਰਿਸ਼ਤ' : 'Active • Twilight recommended')
+                  : (isHi ? 'निष्क्रिय' : isPb ? 'ਬੰਦ' : 'Off')}
               </span>
             </div>
           </div>
@@ -594,10 +614,10 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
               onClick={() => handleTestAlert('evening')}
               className="mt-4 px-3 py-2 rounded-lg border text-xs font-bold flex items-center gap-1 hover:bg-amber-500/10 cursor-pointer"
               style={{ borderColor: theme.accentGold, color: theme.sacredMaroon }}
-              title="Test evening alert"
+              title={isHi ? 'सायं स्मरण परीक्षण' : isPb ? 'ਸ਼ਾਮ ਸਿਮਰਨ ਟੈਸਟ' : 'Test evening alert'}
             >
               <Volume2 className="w-3.5 h-3.5" />
-              <span>{isHi ? 'परीक्षण' : 'Test'}</span>
+              <span>{isHi ? 'परीक्षण' : isPb ? 'ਟੈਸਟ' : 'Test'}</span>
             </button>
           </div>
         )}

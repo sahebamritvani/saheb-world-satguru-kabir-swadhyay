@@ -194,7 +194,13 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
       return next;
     });
     incrementBhaktiStreak();
-    setToastMessage(language === 'hi' ? '✓ आज की कर्मा साधना का दिव्य लेखा-जोखा अंकित हुआ!' : '✓ Daily Karma assessment recorded successfully!');
+    setToastMessage(
+      language === 'pb'
+        ? '✓ ਅੱਜ ਦੀ ਕਰਮਾ ਸਾਧਨਾ ਦਾ ਲੇਖਾ-ਜੋਖਾ ਦਰਜ ਹੋ ਗਿਆ!'
+        : language === 'en'
+        ? '✓ Daily Karma assessment recorded successfully!'
+        : '✓ आज की कर्मा साधना का दिव्य लेखा-जोखा अंकित हुआ!'
+    );
     setTimeout(() => setToastMessage(null), 3500);
   };
 
@@ -265,16 +271,16 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
 
   // 10 Steps Metadata
   const tenStepsMeta = [
-    { step: 1, title: language === 'hi' ? 'पावन मंगलाचरण' : language === 'pb' ? 'ਪਾਵਨ ਮੰਗਲਾਚਰਣ' : 'Invocations', icon: '🙏', desc: 'सतगुरु वंदना व मंगलाचरण ध्यान' },
-    { step: 2, title: language === 'hi' ? 'मूल साखी पाठ' : language === 'pb' ? 'ਮੂਲ ਸਾਖੀ ਪਾਠ' : 'Couplet Recitation', icon: '📜', desc: 'प्रामाणिक वाणी का सस्वर पाठ' },
-    { step: 3, title: language === 'hi' ? 'पद-छेद व शब्दार्थ' : language === 'pb' ? 'ਪਦ-ਛੇਦ ਤੇ ਸ਼ਬਦਾਰਥ' : 'Glossary Breakdown', icon: '🔍', desc: 'कठिन शब्दों का संधिविच्छेद व अर्थ' },
-    { step: 4, title: language === 'hi' ? 'विस्तृत भावार्थ' : language === 'pb' ? 'ਵਿਸਤ੍ਰਿਤ ਭਾਵਾਰਥ' : 'Spiritual Meaning', icon: '💡', desc: 'गूढ़ दार्शनिक एवं आध्यात्मिक व्याख्या' },
-    { step: 5, title: language === 'hi' ? 'बीजक व ग्रंथ सिद्धांत' : language === 'pb' ? 'ਬੀਜਕ ਤੇ ਗ੍ਰੰਥ ਸਿਧਾਂਤ' : 'Bijak Core Philosophy', icon: '💎', desc: 'कबीर बीजक व सत्यनाम सिद्धांत' },
-    { step: 6, title: language === 'hi' ? 'निह-अक्षर महिमा' : language === 'pb' ? 'ਨਿਹ-ਅੱਖਰ ਮਹਿਮਾ' : 'Nih-Akshar Divine Resonance', icon: '✨', desc: 'अविनाशी निह-अक्षर परमपद बोध' },
-    { step: 7, title: language === 'hi' ? 'सुरति-शब्द योग साधना' : language === 'pb' ? 'ਸੁਰਤਿ-ਸ਼ਬਦ ਯੋਗ ਸਾਧਨਾ' : 'Surat-Shabad Meditation', icon: '🧘', desc: 'आंतरिक अनहद ध्यान साधना' },
-    { step: 8, title: language === 'hi' ? 'व्यवहारिक जीवन आचरण' : language === 'pb' ? 'ਵਿਵਹਾਰਕ ਆਚਰਣ' : 'Practical Conduct', icon: '🌿', desc: 'दैनिक जीवन में कबीर उपदेश' },
-    { step: 9, title: language === 'hi' ? 'आत्म-निरीक्षण प्रश्नोत्तरी' : language === 'pb' ? 'ਆਤਮ-ਨਿਰੀਖਣ' : 'Self-Introspection', icon: '🧭', desc: 'विवेक परीक्षण व आत्म-समीक्षा' },
-    { step: 10, title: language === 'hi' ? 'सतगुरु आशीर्वाद व संकल्प' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਆਸ਼ੀਰਵਾਦ' : 'Blessings & Pledge', icon: '🌸', desc: 'पावन संकल्प ग्रहण व गुरु-कृपा' },
+    { step: 1, title: language === 'hi' ? 'पावन मंगलाचरण' : language === 'pb' ? 'ਪਾਵਨ ਮੰਗਲਾਚਰਣ' : 'Invocations', icon: '🙏', desc: language === 'pb' ? 'ਸਤਿਗੁਰੂ ਵੰਦਨਾ ਤੇ ਮੰਗਲਾਚਰਣ ਧਿਆਨ' : language === 'en' ? 'Satguru invocation & opening reverence' : 'सतगुरु वंदना व मंगलाचरण ध्यान' },
+    { step: 2, title: language === 'hi' ? 'मूल साखी पाठ' : language === 'pb' ? 'ਮੂਲ ਸਾਖੀ ਪਾਠ' : 'Couplet Recitation', icon: '📜', desc: language === 'pb' ? 'ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ ਦਾ ਸਸਵਰ ਪਾਠ' : language === 'en' ? 'Authentic recitation of original couplet' : 'प्रामाणिक वाणी का सस्वर पाठ' },
+    { step: 3, title: language === 'hi' ? 'पद-छेद व शब्दार्थ' : language === 'pb' ? 'ਪਦ-ਛੇਦ ਤੇ ਸ਼ਬਦਾਰਥ' : 'Glossary Breakdown', icon: '🔍', desc: language === 'pb' ? 'ਔਖੇ ਸ਼ਬਦਾਂ ਦਾ ਸੰਧੀ-ਵਿਛੇਦ ਤੇ ਅਰਥ' : language === 'en' ? 'Word-by-word Sandhukkari glossary' : 'कठिन शब्दों का संधिविच्छेद व अर्थ' },
+    { step: 4, title: language === 'hi' ? 'विस्तृत भावार्थ' : language === 'pb' ? 'ਵਿਸਤ੍ਰਿਤ ਭਾਵਾਰਥ' : 'Spiritual Meaning', icon: '💡', desc: language === 'pb' ? 'ਡੂੰਘੀ ਦਾਰਸ਼ਨਿਕ ਤੇ ਆਤਮਿਕ ਵਿਆਖਿਆ' : language === 'en' ? 'Deep philosophical & spiritual meaning' : 'गूढ़ दार्शनिक एवं आध्यात्मिक व्याख्या' },
+    { step: 5, title: language === 'hi' ? 'बीजक व ग्रंथ सिद्धांत' : language === 'pb' ? 'ਬੀਜਕ ਤੇ ਗ੍ਰੰਥ ਸਿਧਾਂਤ' : 'Bijak Core Philosophy', icon: '💎', desc: language === 'pb' ? 'ਕਬੀਰ ਬੀਜਕ ਤੇ ਸਤਯਨਾਮ ਸਿਧਾਂਤ' : language === 'en' ? 'Kabir Bijak & Satyanaam doctrine' : 'कबीर बीजक व सत्यनाम सिद्धांत' },
+    { step: 6, title: language === 'hi' ? 'निह-अक्षर महिमा' : language === 'pb' ? 'ਨਿਹ-ਅੱਖਰ ਮਹਿਮਾ' : 'Nih-Akshar Divine Resonance', icon: '✨', desc: language === 'pb' ? 'ਅਵਿਨਾਸ਼ੀ ਨਿਹ-ਅੱਖਰ ਪਰਮਪਦ ਬੋਧ' : language === 'en' ? 'Imperishable Nih-Akshar awareness' : 'अविनाशी निह-अक्षर परमपद बोध' },
+    { step: 7, title: language === 'hi' ? 'सुरति-शब्द योग साधना' : language === 'pb' ? 'ਸੁਰਤਿ-ਸ਼ਬਦ ਯੋਗ ਸਾਧਨਾ' : 'Surat-Shabad Meditation', icon: '🧘', desc: language === 'pb' ? 'ਅੰਦਰੂਨੀ ਅਨਹਦ ਧਿਆਨ ਸਾਧਨਾ' : language === 'en' ? 'Inner Anhad Surat-Shabad meditation' : 'आंतरिक अनहद ध्यान साधना' },
+    { step: 8, title: language === 'hi' ? 'व्यवहारिक जीवन आचरण' : language === 'pb' ? 'ਵਿਵਹਾਰਕ ਆਚਰਣ' : 'Practical Conduct', icon: '🌿', desc: language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਕਬੀਰ ਉਪਦੇਸ਼' : language === 'en' ? 'Practical daily conduct & application' : 'दैनिक जीवन में कबीर उपदेश' },
+    { step: 9, title: language === 'hi' ? 'आत्म-निरीक्षण प्रश्नोत्तरी' : language === 'pb' ? 'ਆਤਮ-ਨਿਰੀਖਣ' : 'Self-Introspection', icon: '🧭', desc: language === 'pb' ? 'ਵਿਵੇਕ ਪਰਖ ਤੇ ਆਤਮ-ਸਮੀਖਿਆ' : language === 'en' ? 'Self-introspection & knowledge quiz' : 'विवेक परीक्षण व आत्म-समीक्षा' },
+    { step: 10, title: language === 'hi' ? 'सतगुरु आशीर्वाद व संकल्प' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਆਸ਼ੀਰਵਾਦ' : 'Blessings & Pledge', icon: '🌸', desc: language === 'pb' ? 'ਪਾਵਨ ਸੰਕਲਪ ਅਤੇ ਗੁਰੂ-ਕ੍ਰਿਪਾ' : language === 'en' ? 'Sacred resolve & Satguru blessings' : 'पावन संकल्प ग्रहण व गुरु-कृपा' },
   ];
 
   // --- DAILY SADHANA JOURNAL STATE ---
@@ -331,7 +337,13 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
 
     setJournalEntries([newEntry, ...journalEntries]);
     setNewJournalText('');
-    setToastMessage(language === 'hi' ? '✓ दैनिक साधना जर्नल प्रविष्टि दर्ज हुई' : '✓ Journal entry saved');
+    setToastMessage(
+      language === 'pb'
+        ? '✓ ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਜਰਨਲ ਨੋਟ ਦਰਜ ਹੋਇਆ'
+        : language === 'en'
+        ? '✓ Journal entry saved'
+        : '✓ दैनिक साधना जर्नल प्रविष्टि दर्ज हुई'
+    );
     setTimeout(() => setToastMessage(null), 3000);
   };
 
@@ -345,7 +357,13 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
     )) return;
 
     setJournalEntries(prev => prev.filter(item => item.id !== id));
-    setToastMessage(language === 'hi' ? '✓ प्रविष्टि सफलतापूर्वक हटा दी गई' : '✓ Entry deleted');
+    setToastMessage(
+      language === 'pb'
+        ? '✓ ਨੋਟ ਸਫਲਤਾਪੂਰਵਕ ਹਟਾ ਦਿੱਤਾ ਗਿਆ'
+        : language === 'en'
+        ? '✓ Entry deleted'
+        : '✓ प्रविष्टि सफलतापूर्वक हटा दी गई'
+    );
     setTimeout(() => setToastMessage(null), 3000);
   };
 
@@ -409,28 +427,28 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
         <div style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1 text-center shadow-xs">
           <div className="text-amber-600 text-2xl font-black font-mono">{overallPercentage}%</div>
           <div className="text-[11px] font-serif font-bold opacity-70" style={{ color: theme.textSecondary }}>
-            {language === 'hi' ? 'कुल स्वाध्याय पूर्णता' : 'Total Swadhyay Progress'}
+            {language === 'hi' ? 'कुल स्वाध्याय पूर्णता' : language === 'pb' ? 'ਕੁੱਲ ਸਵਾਧਿਆਏ ਪ੍ਰਗਤੀ' : 'Total Swadhyay Progress'}
           </div>
         </div>
 
         <div style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1 text-center shadow-xs">
           <div className="text-emerald-600 text-2xl font-black font-mono">{stats.totalSakhisRead}</div>
           <div className="text-[11px] font-serif font-bold opacity-70" style={{ color: theme.textSecondary }}>
-            {language === 'hi' ? 'पठित साखियां' : 'Sakhis Contemplated'}
+            {language === 'hi' ? 'पठित साखियां' : language === 'pb' ? 'ਪੜ੍ਹੀਆਂ ਸਾਖੀਆਂ' : 'Sakhis Contemplated'}
           </div>
         </div>
 
         <div style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1 text-center shadow-xs">
           <div className="text-purple-600 text-2xl font-black font-mono">{stats.maxUnlockedStep}/10</div>
           <div className="text-[11px] font-serif font-bold opacity-70" style={{ color: theme.textSecondary }}>
-            {language === 'hi' ? 'उच्चतम अनलॉक चरण' : 'Highest Unlocked Step'}
+            {language === 'hi' ? 'उच्चतम अनलॉक चरण' : language === 'pb' ? 'ਸਭ ਤੋਂ ਉੱਚਾ ਅਨਲੌਕ ਪੜਾਅ' : 'Highest Unlocked Step'}
           </div>
         </div>
 
         <div style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }} className="p-4 rounded-2xl border space-y-1 text-center shadow-xs backdrop-blur-md">
           <div className="text-rose-600 text-2xl font-black font-mono">{journalEntries.length}</div>
           <div className="text-[11px] font-serif font-bold opacity-70" style={{ color: theme.textSecondary }}>
-            {language === 'hi' ? 'साधना जर्नल प्रविष्टियां' : 'Journal Reflections'}
+            {language === 'hi' ? 'साधना जर्नल प्रविष्टियां' : language === 'pb' ? 'ਸਾਧਨਾ ਜਰਨਲ ਨੋਟ' : 'Journal Reflections'}
           </div>
         </div>
       </div>
@@ -447,7 +465,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <TrendingUp className="w-4 h-4 text-amber-400" />
-          <span>{language === 'hi' ? '१०-चरणीय प्रगति (Swadhyay Steps)' : '10-Step Progress'}</span>
+          <span>{language === 'hi' ? '१०-चरणीय प्रगति' : language === 'pb' ? '੧੦-ਪੜਾਅ ਪ੍ਰਗਤੀ' : '10-Step Progress'}</span>
         </button>
 
         <button
@@ -460,7 +478,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <FileText className="w-4 h-4 text-amber-400" />
-          <span>{language === 'hi' ? 'दैनिक साधना जर्नल' : 'Daily Sadhana Journal'}</span>
+          <span>{language === 'hi' ? 'दैनिक साधना जर्नल' : language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਜਰਨਲ' : 'Daily Sadhana Journal'}</span>
         </button>
 
         <button
@@ -476,7 +494,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Scale className="w-4 h-4 text-amber-400" />
-          <span>{language === 'hi' ? 'कर्म व भक्ति साधना (Karma & Bhakti)' : 'Karma & Bhakti Sadhana'}</span>
+          <span>{language === 'hi' ? 'कर्म व भक्ति साधना' : language === 'pb' ? 'ਕਰਮ ਤੇ ਭਗਤੀ ਸਾਧਨਾ' : 'Karma & Bhakti Sadhana'}</span>
         </button>
 
         <button
@@ -492,7 +510,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
-          <span>{language === 'hi' ? 'आत्मा के 16 भूषण' : '16 Ornaments of the Soul'}</span>
+          <span>{language === 'hi' ? 'आत्मा के 16 भूषण' : language === 'pb' ? 'ਆਤਮਾ ਦੇ ੧੬ ਗਹਿਣੇ' : '16 Ornaments of the Soul'}</span>
         </button>
 
         <button
@@ -505,7 +523,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Award className="w-4 h-4 text-amber-400" />
-          <span>{language === 'hi' ? 'उपलब्धि एवं मील के पत्थर' : 'Spiritual Milestones'}</span>
+          <span>{language === 'hi' ? 'उपलब्धि एवं मील के पत्थर' : language === 'pb' ? 'ਪ੍ਰਾਪਤੀਆਂ ਤੇ ਮੀਲ-ਪੱਥਰ' : 'Spiritual Milestones'}</span>
         </button>
 
         <button
@@ -518,7 +536,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           className="px-4 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 cursor-pointer transition shadow-2xs shrink-0 backdrop-blur-md"
         >
           <Database className="w-4 h-4 text-amber-400" />
-          <span>{language === 'hi' ? 'भंडारण एवं संचय रिपोर्ट (Storage)' : 'Storage & Capacity Report'}</span>
+          <span>{language === 'hi' ? 'भंडारण एवं संचय रिपोर्ट' : language === 'pb' ? 'ਭੰਡਾਰਨ ਤੇ ਸਮਰੱਥਾ ਰਿਪੋਰਟ' : 'Storage & Capacity Report'}</span>
         </button>
       </div>
 
@@ -533,10 +551,10 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-base sm:text-lg font-serif font-black" style={{ color: theme.sacredMaroon }}>
-                  {language === 'hi' ? 'पावन १०-चरणीय स्वाध्याय प्रगति (Overall Progress)' : '10-Step Swadhyay Growth'}
+                  {language === 'hi' ? 'पावन १०-चरणीय स्वाध्याय प्रगति' : language === 'pb' ? 'ਪਾਵਨ ੧੦-ਪੜਾਅ ਸਵਾਧਿਆਏ ਪ੍ਰਗਤੀ' : '10-Step Swadhyay Growth'}
                 </h3>
                 <p className="text-xs opacity-70 font-serif" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' ? 'कबीर साहेब की वाणी के १० पावन सोपानों का गहन पठन एवं आत्मसात' : 'Deep contemplation across 10 sacred steps'}
+                  {language === 'hi' ? 'कबीर साहेब की वाणी के १० पावन सोपानों का गहन पठन एवं आत्मसात' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੇ ੧੦ ਪਾਵਨ ਪੜਾਵਾਂ ਦਾ ਡੂੰਘਾ ਅਧਿਐਨ' : 'Deep contemplation across 10 sacred steps'}
                 </p>
               </div>
 
@@ -545,7 +563,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 className="px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer"
                 style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               >
-                <span>{language === 'hi' ? 'स्वाध्याय जारी रखें' : 'Resume Swadhyay'}</span>
+                <span>{language === 'hi' ? 'स्वाध्याय जारी रखें' : language === 'pb' ? 'ਸਵਾਧਿਆਏ ਜਾਰੀ ਰੱਖੋ' : 'Resume Swadhyay'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -553,7 +571,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             {/* Progress Bar Component */}
             <div className="space-y-1.5">
               <div className="flex justify-between text-xs font-bold font-mono">
-                <span style={{ color: theme.sacredMaroon }}>{stats.totalTenStepsCompleted} / {totalPossibleSteps} {language === 'hi' ? 'चरण पूर्ण' : 'Steps'}</span>
+                <span style={{ color: theme.sacredMaroon }}>{stats.totalTenStepsCompleted} / {totalPossibleSteps} {language === 'hi' ? 'चरण पूर्ण' : language === 'pb' ? 'ਪੜਾਅ ਪੂਰੇ' : 'Steps'}</span>
                 <span className="text-amber-600 font-black">{overallPercentage}%</span>
               </div>
               <div className="w-full h-3.5 rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden p-0.5 border" style={{ borderColor: theme.cardBorder }}>
@@ -574,10 +592,10 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             >
               <div>
                 <h4 className="text-sm font-black font-serif uppercase tracking-wider" style={{ color: theme.sacredMaroon }}>
-                  {language === 'hi' ? '१०-चरणीय साधना पथ पूर्णता (Contemplation Path)' : '10-Step Path Completion'}
+                  {language === 'hi' ? '१०-चरणीय साधना पथ पूर्णता' : language === 'pb' ? '੧੦-ਪੜਾਅ ਸਾਧਨਾ ਮਾਰਗ ਪ੍ਰਗਤੀ' : '10-Step Path Completion'}
                 </h4>
                 <p className="text-[11px] opacity-70 font-serif" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' ? 'प्रत्येक सोपान में अब तक पूर्ण की गई साखियों की संख्या' : 'Number of sakhis completed per learning step'}
+                  {language === 'hi' ? 'प्रत्येक सोपान में अब तक पूर्ण की गई साखियों की संख्या' : language === 'pb' ? 'ਹਰੇਕ ਪੜਾਅ ਵਿੱਚ ਪੂਰੀਆਂ ਹੋਈਆਂ ਸਾਖੀਆਂ ਦੀ ਗਿਣਤੀ' : 'Number of sakhis completed per learning step'}
                 </p>
               </div>
 
@@ -585,7 +603,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={tenStepsMeta.map((st, idx) => ({
-                      name: language === 'hi' ? `चरण ${st.step}` : `Step ${st.step}`,
+                      name: language === 'hi' ? `चरण ${st.step}` : language === 'pb' ? `ਪੜਾਅ ${st.step}` : `Step ${st.step}`,
                       sakhis: stats.completedStepCounts[idx] || 0,
                     }))}
                     margin={{ top: 10, right: 10, left: -20, bottom: 5 }}
@@ -607,7 +625,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                       dataKey="sakhis" 
                       fill="#D97706" 
                       radius={[4, 4, 0, 0]} 
-                      name={language === 'hi' ? 'पूर्ण साखियाँ' : 'Sakhis Completed'}
+                      name={language === 'hi' ? 'पूर्ण साखियाँ' : language === 'pb' ? 'ਪੂਰੀਆਂ ਸਾਖੀਆਂ' : 'Sakhis Completed'}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -621,10 +639,10 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             >
               <div>
                 <h4 className="text-sm font-black font-serif uppercase tracking-wider" style={{ color: theme.sacredMaroon }}>
-                  {language === 'hi' ? '३०-दिवसीय स्वाध्याय निरंतरता व गति (Consistency Flow)' : '30-Day Swadhyay Consistency'}
+                  {language === 'hi' ? '३०-दिवसीय स्वाध्याय निरंतरता व गति' : language === 'pb' ? '੩੦-ਦਿਨਾ ਸਵਾਧਿਆਏ ਨਿਰੰਤਰਤਾ' : '30-Day Swadhyay Consistency'}
                 </h4>
                 <p className="text-[11px] opacity-70 font-serif" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' ? 'पिछले ३० दिनों की निरंतर साधना और संचित प्रगति रेखा' : 'Incremental study actions registered over the past 30 days'}
+                  {language === 'hi' ? 'पिछले ३० दिनों की निरंतर साधना और संचित प्रगति रेखा' : language === 'pb' ? 'ਪਿਛਲੇ ੩੦ ਦਿਨਾਂ ਦੀ ਨਿਰੰਤਰ ਸਾਧਨਾ ਅਤੇ ਪ੍ਰਗਤੀ ਰੇਖਾ' : 'Incremental study actions registered over the past 30 days'}
                 </p>
               </div>
 
@@ -632,19 +650,14 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={(() => {
-                      // Generate last 30 days metrics
                       const days = [];
                       for (let i = 29; i >= 0; i--) {
                         const date = new Date();
                         date.setDate(date.getDate() - i);
                         const dateStr = date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-                        
-                        // Count journals or progress on that day or scale incrementally
                         const rawCompletedVal = stats.totalTenStepsCompleted;
-                        // Build a beautiful smooth curve over 30 days
                         const seedOffset = Math.sin(i * 0.8) * 6;
                         const smoothVal = Math.max(1, Math.round(rawCompletedVal - (i * 1.5) + seedOffset));
-                        
                         days.push({
                           day: dateStr,
                           progress: smoothVal,
@@ -673,7 +686,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                       stroke="#10B981" 
                       strokeWidth={2.5}
                       dot={false}
-                      name={language === 'hi' ? 'साधना संचय' : 'Contemplation Score'}
+                      name={language === 'hi' ? 'साधना संचय' : language === 'pb' ? 'ਸਾਧਨਾ ਸੰਗ੍ਰਹਿ' : 'Contemplation Score'}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -684,7 +697,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           {/* 10 Individual Step Progress Cards */}
           <div className="space-y-3">
             <h4 className="text-sm font-black font-serif uppercase tracking-wider" style={{ color: theme.sacredMaroon }}>
-              {language === 'hi' ? '१० पावन सोपान प्रगति विवरण (Step-by-Step Breakdown)' : '10 Sacred Steps Breakdown'}
+              {language === 'hi' ? '१० पावन सोपान प्रगति विवरण' : language === 'pb' ? '੧੦ ਪਾਵਨ ਪੜਾਵਾਂ ਦਾ ਵੇਰਵਾ' : '10 Sacred Steps Breakdown'}
             </h4>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -723,7 +736,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                             : 'bg-stone-200 text-stone-600 dark:bg-stone-800 dark:text-stone-400'
                         }`}
                       >
-                        {isUnlocked ? (language === 'hi' ? 'अनलॉक' : 'Unlocked') : (language === 'hi' ? 'प्रतीक्षारत' : 'Locked')}
+                        {isUnlocked ? (language === 'hi' ? 'अनलॉक' : language === 'pb' ? 'ਅਨਲੌਕ' : 'Unlocked') : (language === 'hi' ? 'प्रतीक्षारत' : language === 'pb' ? 'ਬਾਕੀ' : 'Locked')}
                       </span>
                     </div>
 
@@ -733,14 +746,14 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
 
                     <div className="pt-2 flex items-center justify-between border-t text-[10px] font-mono" style={{ borderColor: theme.cardBorder }}>
                       <span className="font-bold opacity-60">
-                        {completedCount} {language === 'hi' ? 'साखियों में पढ़ा' : 'sakhis read'}
+                        {completedCount} {language === 'hi' ? 'साखियों में पढ़ा' : language === 'pb' ? 'ਸਾਖੀਆਂ ਵਿੱਚ ਪੜ੍ਹਿਆ' : 'sakhis read'}
                       </span>
 
                       <button
                         onClick={() => onNavigateToSwadhyay && onNavigateToSwadhyay(stats.lastReadSakhi, st.step)}
                         className="text-amber-600 hover:text-amber-700 font-bold flex items-center gap-1 cursor-pointer"
                       >
-                        <span>{language === 'hi' ? 'चरण देखें' : 'View Step'}</span>
+                        <span>{language === 'hi' ? 'चरण देखें' : language === 'pb' ? 'ਪੜਾਅ ਵੇਖੋ' : 'View Step'}</span>
                         <ChevronRight className="w-3 h-3" />
                       </button>
                     </div>
@@ -763,7 +776,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             <div className="flex items-center justify-between">
               <h3 className="text-base font-serif font-black flex items-center gap-2" style={{ color: theme.sacredMaroon }}>
                 <FileText className="w-5 h-5 text-amber-600" />
-                <span>{language === 'hi' ? 'आज का साधना चिंतन दर्ज करें (Daily Reflection)' : 'New Journal Reflection'}</span>
+                <span>{language === 'hi' ? 'आज का साधना चिंतन दर्ज करें' : language === 'pb' ? 'ਅੱਜ ਦਾ ਸਾਧਨਾ ਚਿੰਤਨ ਦਰਜ ਕਰੋ' : 'New Journal Reflection'}</span>
               </h3>
 
               <button
@@ -774,19 +787,31 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 }`}
               >
                 <Mic className="w-3.5 h-3.5" />
-                <span>{isListening ? (language === 'hi' ? 'सुन रहे हैं...' : 'Listening...') : (language === 'hi' ? 'बोलकर लिखें' : 'Voice Typing')}</span>
+                <span>
+                  {isListening
+                    ? (language === 'hi' ? 'सुन रहे हैं...' : language === 'pb' ? 'ਸੁਣ ਰਹੇ ਹਾਂ...' : 'Listening...')
+                    : (language === 'hi' ? 'बोलकर लिखें' : language === 'pb' ? 'ਬੋਲ ਕੇ ਲਿਖੋ' : 'Voice Typing')}
+                </span>
               </button>
             </div>
 
             {/* Prompt Suggestion */}
             <p className="text-xs italic font-serif text-amber-800 dark:text-amber-300 bg-amber-500/10 p-2.5 rounded-xl border border-amber-500/20">
-              💡 {language === 'hi' ? 'आज कबीर साहेब की किस साखी अथवा स्वाध्याय पद ने आपके हृदय को स्पर्श किया? अपने संकल्प दर्ज करें।' : 'What spiritual lesson touched your heart during today\'s Swadhyay?'}
+              💡 {language === 'hi'
+                ? 'आज कबीर साहेब की किस साखी अथवा स्वाध्याय पद ने आपके हृदय को स्पर्श किया? अपने संकल्प दर्ज करें।'
+                : language === 'pb'
+                ? 'ਅੱਜ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਸ ਸਾਖੀ ਜਾਂ ਸਵਾਧਿਆਏ ਨੇ ਤੁਹਾਡੇ ਹਿਰਦੇ ਨੂੰ ਛੂਹਿਆ? ਆਪਣੇ ਸੰਕਲਪ ਦਰਜ ਕਰੋ।'
+                : 'What spiritual lesson touched your heart during today\'s Swadhyay?'}
             </p>
 
             <textarea
               value={newJournalText}
               onChange={(e) => setNewJournalText(e.target.value)}
-              placeholder={isListening ? (language === 'hi' ? 'बोलें... आपके शब्द दर्ज हो रहे हैं...' : 'Speak now...') : (language === 'hi' ? 'अपने आत्म-चिंतन व पावन विचार यहाँ लिखें...' : 'Write your daily reflection notes...')}
+              placeholder={
+                isListening
+                  ? (language === 'hi' ? 'बोलें... आपके शब्द दर्ज हो रहे हैं...' : language === 'pb' ? 'ਬੋਲੋ... ਤੁਹਾਡੇ ਸ਼ਬਦ ਲਿਖੇ ਜਾ ਰਹੇ ਹਨ...' : 'Speak now...')
+                  : (language === 'hi' ? 'अपने आत्म-चिंतन व पावन विचार यहाँ लिखें...' : language === 'pb' ? 'ਆਪਣੇ ਆਤਮ-ਚਿੰਤਨ ਅਤੇ ਪਾਵਨ ਵਿਚਾਰ ਇੱਥੇ ਲਿਖੋ...' : 'Write your daily reflection notes...')
+              }
               style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
               className="w-full p-3.5 rounded-2xl border text-sm font-serif min-h-[100px] focus:outline-none focus:ring-1 focus:ring-amber-500"
             />
@@ -800,7 +825,12 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             {/* Category Tags Selector */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
               <div className="flex items-center gap-1.5 overflow-x-auto">
-                {['साधना', 'समर्पण', 'आत्म-निरीक्षण', 'गुरु-वचन', 'सत्संग विचार'].map((tag) => (
+                {(language === 'pb'
+                  ? ['ਸਾਧਨਾ', 'ਸਮਰਪਣ', 'ਆਤਮ-ਨਿਰੀਖਣ', 'ਗੁਰੂ-ਬਚਨ', 'ਸਤਿਸੰਗ ਵਿਚਾਰ']
+                  : language === 'en'
+                  ? ['Sadhana', 'Surrender', 'Introspection', 'Guru Word', 'Satsang']
+                  : ['साधना', 'समर्पण', 'आत्म-निरीक्षण', 'गुरु-वचन', 'सत्संग विचार']
+                ).map((tag) => (
                   <button
                     key={tag}
                     type="button"
@@ -822,7 +852,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 className="px-6 py-2.5 rounded-2xl font-bold text-xs shadow-md disabled:opacity-40 transition cursor-pointer hover:scale-105 active:scale-95"
                 style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
               >
-                {language === 'hi' ? 'जर्नल में सहेजें' : 'Save Entry'}
+                {language === 'hi' ? 'जर्नल में सहेजें' : language === 'pb' ? 'ਜਰਨਲ ਵਿੱਚ ਸੰਭਾਲੋ' : 'Save Entry'}
               </button>
             </div>
           </div>
@@ -831,7 +861,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           <div className="space-y-3">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <h4 className="text-sm font-black font-serif uppercase tracking-wider" style={{ color: theme.sacredMaroon }}>
-                {language === 'hi' ? 'साधना जर्नल इतिहास' : 'Journal Entries'} ({journalEntries.length})
+                {language === 'hi' ? 'साधना जर्नल इतिहास' : language === 'pb' ? 'ਸਾਧਨਾ ਜਰਨਲ ਇਤਿਹਾਸ' : 'Journal Entries'} ({journalEntries.length})
               </h4>
 
               {/* Search Bar */}
@@ -844,7 +874,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={language === 'hi' ? 'जर्नल में खोजें...' : 'Search journal...'}
+                  placeholder={language === 'hi' ? 'जर्नल में खोजें...' : language === 'pb' ? 'ਜਰਨਲ ਵਿੱਚ ਖੋਜੋ...' : 'Search journal...'}
                   style={{ color: theme.textPrimary }}
                   className="bg-transparent text-xs focus:outline-none w-full font-serif"
                 />
@@ -855,7 +885,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
               <div className="p-8 text-center border-2 border-dashed rounded-3xl" style={{ borderColor: theme.cardBorder }}>
                 <FileText className="w-8 h-8 text-stone-400 mx-auto opacity-40 mb-2" />
                 <p className="text-xs font-serif opacity-70" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' ? 'कोई प्रविष्टि नहीं मिली।' : 'No journal entries found.'}
+                  {language === 'hi' ? 'कोई प्रविष्टि नहीं मिली।' : language === 'pb' ? 'ਕੋਈ ਨੋਟ ਨਹੀਂ ਮਿਲਿਆ।' : 'No journal entries found.'}
                 </p>
               </div>
             ) : (
@@ -869,11 +899,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                     <div className="flex items-center justify-between gap-2 text-xs">
                       <div className="flex items-center gap-2">
                         <span className="px-2.5 py-0.5 rounded-full font-bold text-[10px] bg-amber-500/15 text-amber-900 dark:text-amber-300 border border-amber-400/30">
-                          {item.categoryTag || 'साधना'}
+                          {item.categoryTag || (language === 'pb' ? 'ਸਾਧਨਾ' : language === 'en' ? 'Sadhana' : 'साधना')}
                         </span>
                         {item.sakhiNumber && (
                           <span className="font-bold text-amber-600 text-[11px]">
-                            📜 साखी #{item.sakhiNumber}
+                            📜 {language === 'pb' ? 'ਸਾਖੀ' : language === 'en' ? 'Sakhi' : 'साखी'} #{item.sakhiNumber}
                           </span>
                         )}
                         <span className="text-[10px] opacity-60 font-mono flex items-center gap-1" style={{ color: theme.textMuted }}>
@@ -886,10 +916,10 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                       <button
                         onClick={() => handleDeleteJournal(item.id)}
                         className="px-2 py-1 rounded-lg text-red-500 hover:text-red-700 hover:bg-red-500/10 border border-red-200 dark:border-red-900/40 transition cursor-pointer flex items-center gap-1 text-[11px] font-bold"
-                        title={language === 'hi' ? 'प्रविष्टि हटाएं' : 'Delete Entry'}
+                        title={language === 'hi' ? 'प्रविष्टि हटाएं' : language === 'pb' ? 'ਨੋਟ ਹਟਾਓ' : 'Delete Entry'}
                       >
                         <Trash2 className="w-3.5 h-3.5" />
-                        <span>{language === 'hi' ? 'हटाएं' : 'Delete'}</span>
+                        <span>{language === 'hi' ? 'हटाएं' : language === 'pb' ? 'ਹਟਾਓ' : 'Delete'}</span>
                       </button>
                     </div>
 
@@ -924,16 +954,16 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
               </div>
               <div>
                 <span className="text-[10px] font-mono font-bold text-amber-600 uppercase tracking-widest block">
-                  {language === 'hi' ? 'भक्ति निरंतरता' : 'Bhakti Streak'}
+                  {language === 'hi' ? 'भक्ति निरंतरता' : language === 'pb' ? 'ਭਗਤੀ ਨਿਰੰਤਰਤਾ' : 'Bhakti Streak'}
                 </span>
                 <h4 className="text-xl font-black font-serif text-stone-900 dark:text-amber-100 flex items-baseline gap-1.5 leading-tight">
                   <span>{bhaktiStreak}</span>
                   <span className="text-xs opacity-75 font-serif font-bold">
-                    {language === 'hi' ? 'दिन का अटूट नियम' : 'Days Streak'}
+                    {language === 'hi' ? 'दिन का अटूट नियम' : language === 'pb' ? 'ਦਿਨਾਂ ਦਾ ਅਟੁੱਟ ਨਿਯਮ' : 'Days Streak'}
                   </span>
                 </h4>
                 <p className="text-[10px] opacity-65 leading-tight mt-1">
-                  {language === 'hi' ? `सर्वोच्च कीर्तिमान: ${maxBhaktiStreak} दिन` : `All-time best: ${maxBhaktiStreak} days`}
+                  {language === 'hi' ? `सर्वोच्च कीर्तिमान: ${maxBhaktiStreak} दिन` : language === 'pb' ? `ਸਭ ਤੋਂ ਵਧੀਆ: ${maxBhaktiStreak} ਦਿਨ` : `All-time best: ${maxBhaktiStreak} days`}
                 </p>
               </div>
             </div>
@@ -948,22 +978,22 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
               </div>
               <div>
                 <span className="text-[10px] font-mono font-bold text-emerald-600 uppercase tracking-widest block">
-                  {language === 'hi' ? 'संचित अंतःकरण स्तर' : 'Net Soul Balance'}
+                  {language === 'hi' ? 'संचित अंतःकरण स्तर' : language === 'pb' ? 'ਅੰਤਹਕਰਣ ਸੰਤੁਲਨ' : 'Net Soul Balance'}
                 </span>
                 <h4 className={`text-xl font-black font-serif flex items-baseline gap-1.5 leading-tight ${
                   netKarmaScore >= 12 ? 'text-emerald-600' : netKarmaScore >= 0 ? 'text-amber-600' : 'text-purple-600'
                 }`}>
                   <span>{netKarmaScore > 0 ? `+${netKarmaScore}` : netKarmaScore}</span>
                   <span className="text-xs font-serif font-bold opacity-85">
-                    {language === 'hi' ? 'कर्म बिंदु' : 'Karma Pts'}
+                    {language === 'hi' ? 'कर्म बिंदु' : language === 'pb' ? 'ਕਰਮ ਅੰਕ' : 'Karma Pts'}
                   </span>
                 </h4>
                 <p className="text-[10px] opacity-65 leading-tight mt-1">
                   {netKarmaScore >= 12 
-                    ? (language === 'hi' ? 'निर्मल हंस चेतना' : 'Pure Hans Consciousness') 
+                    ? (language === 'hi' ? 'निर्मल हंस चेतना' : language === 'pb' ? 'ਨਿਰਮਲ ਹੰਸ ਚੇਤਨਾ' : 'Pure Hans Consciousness') 
                     : netKarmaScore >= 0 
-                    ? (language === 'hi' ? 'साधक चेतना स्तर' : 'Seeker State') 
-                    : (language === 'hi' ? 'चंचल मन (सुधार की आवश्यकता)' : 'Agitated Mind - Focus!')}
+                    ? (language === 'hi' ? 'साधक चेतना स्तर' : language === 'pb' ? 'ਸਾਧਕ ਅਵਸਥਾ' : 'Seeker State') 
+                    : (language === 'hi' ? 'चंचल मन (सुधार की आवश्यकता)' : language === 'pb' ? 'ਚੰਚਲ ਮਨ (ਧਿਆਨ ਦੀ ਲੋੜ)' : 'Agitated Mind - Focus!')}
                 </p>
               </div>
             </div>
@@ -974,11 +1004,13 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
               className="p-5 rounded-3xl border flex flex-col justify-center text-xs italic shadow-2xs"
             >
               <p style={{ color: theme.sacredMaroon }} className="font-bold mb-1">
-                💬 {language === 'hi' ? 'संत कबीर कर्मा उपदेश' : 'Guru Teachings on Karma'}
+                💬 {language === 'hi' ? 'संत कबीर कर्मा उपदेश' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਕਰਮ ਉਪਦੇਸ਼' : 'Guru Teachings on Karma'}
               </p>
               <p className="opacity-80 leading-snug">
                 {language === 'hi' 
                   ? 'जैसा बोया वैसा काटेगा, मन की वासना को तजकर सत्य सुमिरन और दया भाव धारण कर।'
+                  : language === 'pb'
+                  ? 'ਜਿਹਾ ਬੀਜੇਂਗਾ ਤਿਹਾ ਹੀ ਵੱਢੇਂਗਾ, ਮਨ ਦੀਆਂ ਵਾਸ਼ਨਾਵਾਂ ਤਿਆਗ ਕੇ ਸੱਚਾ ਸਿਮਰਨ ਤੇ ਦਇਆ ਧਾਰਨ ਕਰ।'
                   : 'As you sow, so shall you reap. Relinquish the vices of the mind and embrace Truth, Compassion, and Chant.'}
               </p>
             </div>
@@ -996,9 +1028,9 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 className="p-5 rounded-3xl border shadow-md flex flex-col items-center justify-center text-center space-y-5 overflow-hidden relative"
               >
                 <h4 className="text-xs font-black uppercase tracking-widest text-stone-500 w-full text-left flex items-center justify-between border-b pb-2" style={{ borderColor: theme.cardBorder }}>
-                  <span>🔮 {language === 'hi' ? 'अंतःकरण हंस प्रतिबिंब' : 'Soul Reflection Monitor'}</span>
+                  <span>🔮 {language === 'hi' ? 'अंतःकरण हंस प्रतिबिंब' : language === 'pb' ? 'ਅੰਤਹਕਰਣ ਹੰਸ ਪ੍ਰਤੀਬਿੰਬ' : 'Soul Reflection Monitor'}</span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/5 dark:bg-white/5">
-                    {language === 'hi' ? 'वास्तविक समय' : 'Real-time'}
+                    {language === 'hi' ? 'वास्तविक समय' : language === 'pb' ? 'ਲਾਈਵ ਸਥਿਤੀ' : 'Real-time'}
                   </span>
                 </h4>
 
@@ -1103,17 +1135,17 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 <div className="space-y-1">
                   <h5 className="text-sm font-serif font-black" style={{ color: theme.sacredMaroon }}>
                     {netKarmaScore >= 12 
-                      ? (language === 'hi' ? 'परम हंस ज्योतिर्मय चेतना' : 'Param Hans Splendid Light') 
+                      ? (language === 'hi' ? 'परम हंस ज्योतिर्मय चेतना' : language === 'pb' ? 'ਪਰਮ ਹੰਸ ਜੋਤੀਮਈ ਚੇਤਨਾ' : 'Param Hans Splendid Light') 
                       : netKarmaScore >= 0 
-                      ? (language === 'hi' ? 'शुद्ध साधक चित्त प्रतिबिंब' : 'Shuddha Sadhak reflection') 
-                      : (language === 'hi' ? 'मलीन अंतःकरण (माया-ग्रसित)' : 'Maya-veiled state')}
+                      ? (language === 'hi' ? 'शुद्ध साधक चित्त प्रतिबिंब' : language === 'pb' ? 'ਸ਼ੁੱਧ ਸਾਧਕ ਚਿੱਤ ਪ੍ਰਤੀਬਿੰਬ' : 'Shuddha Sadhak reflection') 
+                      : (language === 'hi' ? 'मलीन अंतःकरण (माया-ग्रसित)' : language === 'pb' ? 'ਮਾਇਆ-ਗ੍ਰਸਤ ਚਿੱਤ' : 'Maya-veiled state')}
                   </h5>
                   <p className="text-[11px] opacity-70 px-4 max-w-sm font-serif">
                     {netKarmaScore >= 12 
-                      ? (language === 'hi' ? 'आपका मन कबीर साहेब के ज्ञान प्रकाश से पूर्ण प्रकाशित है। वासनाएं पराजित हुई हैं।' : 'Your mind is lit by Kabir Saheb\'s divine guidance. Desires are conquered.') 
+                      ? (language === 'hi' ? 'आपका मन कबीर साहेब के ज्ञान प्रकाश से पूर्ण प्रकाशित है। वासनाएं पराजित हुई हैं।' : language === 'pb' ? 'ਤੁਹਾਡਾ ਮਨ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਗਿਆਨ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਹੈ।' : 'Your mind is lit by Kabir Saheb\'s divine guidance. Desires are conquered.') 
                       : netKarmaScore >= 0 
-                      ? (language === 'hi' ? 'संतुलित मार्ग। सत्संग मनन व सुमिरन द्वारा चित्त को और निर्मल करें।' : 'A balanced path. Contemplation and chants will purify the consciousness further.') 
-                      : (language === 'hi' ? 'क्रोध, मोह अथवा अहंकार विकार उग्र हैं। कबीर उपदेश श्रवण कर चित्त शांत करें।' : 'Vices are slightly elevated. Contemplate on couplets to soothe the mind.')}
+                      ? (language === 'hi' ? 'संतुलित मार्ग। सत्संग मनन व सुमिरन द्वारा चित्त को और निर्मल करें।' : language === 'pb' ? 'ਸੰਤੁਲਿਤ ਮਾਰਗ। ਸਤਿਸੰਗ ਤੇ ਸਿਮਰਨ ਨਾਲ ਮਨ ਨੂੰ ਹੋਰ ਨਿਰਮਲ ਕਰੋ।' : 'A balanced path. Contemplation and chants will purify the consciousness further.') 
+                      : (language === 'hi' ? 'क्रोध, मोह अथवा अहंकार विकार उग्र हैं। कबीर उपदेश श्रवण कर चित्त शांत करें।' : language === 'pb' ? 'ਕ੍ਰੋਧ, ਮੋਹ ਜਾਂ ਹੰਕਾਰ ਵਧੇ ਹੋਏ ਹਨ। ਬਾਣੀ ਸਿਮਰਨ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਕਰੋ।' : 'Vices are slightly elevated. Contemplate on couplets to soothe the mind.')}
                   </p>
                 </div>
               </div>
@@ -1126,7 +1158,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 <div className="flex items-center gap-2 border-b pb-1.5" style={{ borderColor: theme.cardBorder }}>
                   <Sun className="w-4 h-4 text-amber-500" />
                   <span className="font-extrabold uppercase tracking-wider text-amber-600">
-                    {language === 'hi' ? 'विवेक वाणी आत्म-दर्शन' : 'Introspection Couplet'}
+                    {language === 'hi' ? 'विवेक वाणी आत्म-दर्शन' : language === 'pb' ? 'ਵਿਵੇਕ ਬਾਣੀ ਆਤਮ-ਦਰਸ਼ਨ' : 'Introspection Couplet'}
                   </span>
                 </div>
                 
@@ -1138,8 +1170,8 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   </p>
                   <p className="text-[10px] opacity-75 font-serif leading-normal px-2">
                     {netKarmaScore >= 12 
-                      ? (language === 'hi' ? 'जब मन गंगा के पवित्र जल की भांति निर्मल हो जाता है, तब प्रभु स्वयं भक्त के पीछे चलते हैं।' : 'When the mind becomes pure like Ganges water, the Divine walks behind the seeker.') 
-                      : (language === 'hi' ? 'मन तो एक ही है, इसे चाहे तो गुरु की भक्ति में लगाओ या फिर सांसारिक विषयों के संचय में।' : 'The mind is but one; invest it in the service of the Guru or spend it in worldly illusions.')}
+                      ? (language === 'hi' ? 'जब मन गंगा के पवित्र जल की भांति निर्मल हो जाता है, तब प्रभु स्वयं भक्त के पीछे चलते हैं।' : language === 'pb' ? 'ਜਦੋਂ ਮਨ ਗੰਗਾ ਜਲ ਵਾਂਗ ਨਿਰਮਲ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਪ੍ਰਭੂ ਆਪ ਭਗਤ ਦੇ ਪਿੱਛੇ ਚਲਦੇ ਹਨ।' : 'When the mind becomes pure like Ganges water, the Divine walks behind the seeker.') 
+                      : (language === 'hi' ? 'मन तो एक ही है, इसे चाहे तो गुरु की भक्ति में लगाओ या फिर सांसारिक विषयों के संचय में।' : language === 'pb' ? 'ਮਨ ਤਾਂ ਇੱਕ ਹੀ ਹੈ, ਚਾਹੇ ਇਸ ਨੂੰ ਗੁਰੂ ਦੀ ਭਗਤੀ ਵਿੱਚ ਲਗਾਓ ਜਾਂ ਸੰਸਾਰਕ ਵਿਸ਼ਿਆਂ ਵਿੱਚ।' : 'The mind is but one; invest it in the service of the Guru or spend it in worldly illusions.')}
                   </p>
                 </div>
 
@@ -1147,31 +1179,35 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 {(() => {
                   const maxViceVal = Math.max(kaalKrodh, kaalLobh, kaalMoha, kaalMaan, kaalNinda);
                   if (maxViceVal >= 3) {
-                    let recommendedAng = { hi: 'भ्रम-विध्वंस को अंग', en: 'Bhram Vidhwans Ko Ang' };
-                    let viceLabel = { hi: 'विकार', en: 'Vice' };
+                    let recommendedAng = { hi: 'भ्रम-विध्वंस को अंग', pb: 'ਭਰਮ-ਵਿਧਵੰਸ ਕੋ ਅੰਗ', en: 'Bhram Vidhwans Ko Ang' };
+                    let viceLabel = { hi: 'विकार', pb: 'ਵਿਕਾਰ', en: 'Vice' };
                     if (kaalKrodh === maxViceVal) {
-                      recommendedAng = { hi: 'क्रोध को अंग', en: 'Krodh Ko Ang' };
-                      viceLabel = { hi: 'क्रोध (Anger)', en: 'Krodh/Anger' };
+                      recommendedAng = { hi: 'क्रोध को अंग', pb: 'ਕ੍ਰੋਧ ਕੋ ਅੰਗ', en: 'Krodh Ko Ang' };
+                      viceLabel = { hi: 'क्रोध', pb: 'ਕ੍ਰੋਧ', en: 'Krodh/Anger' };
                     } else if (kaalLobh === maxViceVal) {
-                      recommendedAng = { hi: 'लोभ को अंग', en: 'Lobh Ko Ang' };
-                      viceLabel = { hi: 'लोभ (Greed)', en: 'Lobh/Greed' };
+                      recommendedAng = { hi: 'लोभ को अंग', pb: 'ਲੋਭ ਕੋ ਅੰਗ', en: 'Lobh Ko Ang' };
+                      viceLabel = { hi: 'लोभ', pb: 'ਲੋਭ', en: 'Lobh/Greed' };
                     } else if (kaalMaan === maxViceVal) {
-                      recommendedAng = { hi: 'मान को अंग', en: 'Maan Ko Ang' };
-                      viceLabel = { hi: 'मान-अभिमान (Pride)', en: 'Maan/Pride' };
+                      recommendedAng = { hi: 'मान को अंग', pb: 'ਮਾਨ ਕੋ ਅੰਗ', en: 'Maan Ko Ang' };
+                      viceLabel = { hi: 'मान-अभिमान', pb: 'ਹੰਕਾਰ', en: 'Maan/Pride' };
                     } else if (kaalNinda === maxViceVal) {
-                      recommendedAng = { hi: 'निन्दा को अंग', en: 'Ninda Ko Ang' };
-                      viceLabel = { hi: 'पर-निंदा (Gossip)', en: 'Ninda/Criticism' };
+                      recommendedAng = { hi: 'निन्दा को अंग', pb: 'ਨਿੰਦਾ ਕੋ ਅੰਗ', en: 'Ninda Ko Ang' };
+                      viceLabel = { hi: 'पर-निंदा', pb: 'ਨਿੰਦਿਆ', en: 'Ninda/Criticism' };
                     }
                     return (
                       <div className="bg-red-500/10 p-3 rounded-2xl border border-red-500/20 text-[11px] leading-relaxed">
-                        <span className="font-black text-red-700 dark:text-red-400">⚠️ {language === 'hi' ? 'विकार चेतावनी' : 'Vice Warning'}: </span>
+                        <span className="font-black text-red-700 dark:text-red-400">
+                          ⚠️ {language === 'hi' ? 'विकार चेतावनी' : language === 'pb' ? 'ਵਿਕਾਰ ਚੇਤਾਵਨੀ' : 'Vice Warning'}:{' '}
+                        </span>
                         {language === 'hi' 
-                          ? `आपका ${viceLabel.hi} स्तर उन्नत है। मन को वश में करने हेतु कृपया ` 
+                          ? `आपका ${viceLabel.hi} स्तर उन्नत है। मन को वश में करने हेतु कृपया `
+                          : language === 'pb'
+                          ? `ਤੁਹਾਡਾ ${viceLabel.pb} ਪੱਧਰ ਵਧਿਆ ਹੋਇਆ ਹੈ। ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਨ ਲਈ ਕਿਰਪਾ ਕਰਕੇ `
                           : `Your ${viceLabel.en} levels are slightly elevated. To calm the mind, please `}
                         <strong className="text-amber-700 dark:text-amber-400 underline cursor-pointer">
-                          {language === 'hi' ? recommendedAng.hi : recommendedAng.en}
+                          {recommendedAng[language] || recommendedAng.hi}
                         </strong> 
-                        {language === 'hi' ? ' का स्वाध्याय पाठ करें।' : ' couplets.'}
+                        {language === 'hi' ? ' का स्वाध्याय पाठ करें।' : language === 'pb' ? ' ਦਾ ਸਵਾਧਿਆਏ ਪਾਠ ਕਰੋ।' : ' couplets.'}
                       </div>
                     );
                   }
@@ -1191,10 +1227,10 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 <div className="flex items-center justify-between border-b pb-3" style={{ borderColor: theme.cardBorder }}>
                   <div>
                     <h4 className="text-sm font-black font-serif uppercase tracking-wider" style={{ color: theme.sacredMaroon }}>
-                      {language === 'hi' ? 'दैनिक कर्मा प्रभाव गणक' : 'Karma Impact Calculator'}
+                      {language === 'hi' ? 'दैनिक कर्मा प्रभाव गणक' : language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਕਰਮ ਪ੍ਰਭਾਵ ਗਣਨਾ' : 'Karma Impact Calculator'}
                     </h4>
                     <p className="text-[10px] opacity-70 font-serif" style={{ color: theme.textSecondary }}>
-                      {language === 'hi' ? 'आज के आचरण व मानसिक स्थिति की सत्यता से समीक्षा करें' : 'Mindfully grade your conduct across virtues and vices'}
+                      {language === 'hi' ? 'आज के आचरण व मानसिक स्थिति की सत्यता से समीक्षा करें' : language === 'pb' ? 'ਅੱਜ ਦੇ ਆਚਰਣ ਤੇ ਮਾਨਸਿਕ ਸਥਿਤੀ ਦੀ ਸੱਚਾਈ ਨਾਲ ਸਮੀਖਿਆ ਕਰੋ' : 'Mindfully grade your conduct across virtues and vices'}
                     </p>
                   </div>
                   <Scale className="w-5 h-5 text-amber-600 animate-pulse" />
@@ -1206,72 +1242,47 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   <div className="space-y-4">
                     <h5 className="text-[11px] font-black uppercase tracking-widest text-emerald-600 border-b pb-1 flex items-center gap-1">
                       <Heart className="w-3.5 h-3.5 fill-emerald-500/20 text-emerald-600" />
-                      <span>{language === 'hi' ? 'सत्-गुण (Sukrit Virtues)' : 'Sukrit Virtues'}</span>
+                      <span>{language === 'hi' ? 'सत्-गुण (सुकृत गुण)' : language === 'pb' ? 'ਸਤ-ਗੁਣ (ਸੁਕਰਿਤ ਗੁਣ)' : 'Sukrit Virtues'}</span>
                     </h5>
                     
-                    {/* Virtue Dayalubhav Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'दयाभाव / परोपकार' : 'Compassion/Kindness'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'दयाभाव / परोपकार' : language === 'pb' ? 'ਦਇਆ / ਪਰਉਪਕਾਰ' : 'Compassion/Kindness'}</span>
                         <span className="font-mono text-emerald-600 font-bold">{sukritDaya}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={sukritDaya}
-                        onChange={(e) => setSukritDaya(Number(e.target.value))}
-                        className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={sukritDaya} onChange={(e) => setSukritDaya(Number(e.target.value))} className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Virtue Satya Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'सत्य निष्ठा / वाणी सत्य' : 'Truth/Integrity'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'सत्य निष्ठा / वाणी सत्य' : language === 'pb' ? 'ਸੱਚੀ ਬਾਣੀ / ਸਤਿ' : 'Truth/Integrity'}</span>
                         <span className="font-mono text-emerald-600 font-bold">{sukritSatya}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={sukritSatya}
-                        onChange={(e) => setSukritSatya(Number(e.target.value))}
-                        className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={sukritSatya} onChange={(e) => setSukritSatya(Number(e.target.value))} className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Virtue Seva Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'निस्वार्थ सेवा (Seva)' : 'Selfless Service'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'निस्वार्थ सेवा' : language === 'pb' ? 'ਨਿਸਵਾਰਥ ਸੇਵਾ' : 'Selfless Service'}</span>
                         <span className="font-mono text-emerald-600 font-bold">{sukritSeva}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={sukritSeva}
-                        onChange={(e) => setSukritSeva(Number(e.target.value))}
-                        className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={sukritSeva} onChange={(e) => setSukritSeva(Number(e.target.value))} className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Virtue Sumiran Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'सत्यनाम सुमिरन / ध्यान' : 'Sumiran/Chanting'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'सत्यनाम सुमिरन / ध्यान' : language === 'pb' ? 'ਸਤਯਨਾਮ ਸਿਮਰਨ / ਧਿਆਨ' : 'Sumiran/Chanting'}</span>
                         <span className="font-mono text-emerald-600 font-bold">{sukritSumiran}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={sukritSumiran}
-                        onChange={(e) => setSukritSumiran(Number(e.target.value))}
-                        className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={sukritSumiran} onChange={(e) => setSukritSumiran(Number(e.target.value))} className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Virtue Swadhyay Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'स्वाध्याय / सत्संग पाठ' : 'Swadhyay/Contemplation'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'स्वाध्याय / सत्संग पाठ' : language === 'pb' ? 'ਸਵਾਧਿਆਏ / ਸਤਿਸੰਗ' : 'Swadhyay/Contemplation'}</span>
                         <span className="font-mono text-emerald-600 font-bold">{sukritSwadhyay}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={sukritSwadhyay}
-                        onChange={(e) => setSukritSwadhyay(Number(e.target.value))}
-                        className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={sukritSwadhyay} onChange={(e) => setSukritSwadhyay(Number(e.target.value))} className="w-full accent-emerald-600 bg-emerald-500/10 rounded-lg h-2" />
                     </div>
                   </div>
 
@@ -1279,72 +1290,47 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   <div className="space-y-4">
                     <h5 className="text-[11px] font-black uppercase tracking-widest text-purple-600 border-b pb-1 flex items-center gap-1">
                       <Brain className="w-3.5 h-3.5 text-purple-600" />
-                      <span>{language === 'hi' ? 'पंच विकार (Kaal Vices)' : 'Kaal Vices'}</span>
+                      <span>{language === 'hi' ? 'पंच विकार' : language === 'pb' ? 'ਪੰਜ ਵਿਕਾਰ' : 'Kaal Vices'}</span>
                     </h5>
 
-                    {/* Vice Anger Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'क्रोध / आवेश (Krodh)' : 'Anger/Hostility'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'क्रोध / आवेश' : language === 'pb' ? 'ਕ੍ਰੋਧ / ਗੁੱਸਾ' : 'Anger/Hostility'}</span>
                         <span className="font-mono text-purple-600 font-bold">{kaalKrodh}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={kaalKrodh}
-                        onChange={(e) => setKaalKrodh(Number(e.target.value))}
-                        className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={kaalKrodh} onChange={(e) => setKaalKrodh(Number(e.target.value))} className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Vice Greed Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'लोभ / लालच (Lobh)' : 'Greed/Possessiveness'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'लोभ / लालच' : language === 'pb' ? 'ਲੋਭ / ਲਾਲਚ' : 'Greed/Possessiveness'}</span>
                         <span className="font-mono text-purple-600 font-bold">{kaalLobh}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={kaalLobh}
-                        onChange={(e) => setKaalLobh(Number(e.target.value))}
-                        className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={kaalLobh} onChange={(e) => setKaalLobh(Number(e.target.value))} className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Vice Attachment Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'मोह / आसक्ति (Moha)' : 'Attachment/Delusion'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'मोह / आसक्ति' : language === 'pb' ? 'ਮੋਹ / ਆਸਕਤੀ' : 'Attachment/Delusion'}</span>
                         <span className="font-mono text-purple-600 font-bold">{kaalMoha}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={kaalMoha}
-                        onChange={(e) => setKaalMoha(Number(e.target.value))}
-                        className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={kaalMoha} onChange={(e) => setKaalMoha(Number(e.target.value))} className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Vice Pride Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'मान / अहंकार (Maan)' : 'Ego/Arrogance'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'मान / अहंकार' : language === 'pb' ? 'ਹੰਕਾਰ / ਅਭਿਮਾਨ' : 'Ego/Arrogance'}</span>
                         <span className="font-mono text-purple-600 font-bold">{kaalMaan}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={kaalMaan}
-                        onChange={(e) => setKaalMaan(Number(e.target.value))}
-                        className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={kaalMaan} onChange={(e) => setKaalMaan(Number(e.target.value))} className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2" />
                     </div>
 
-                    {/* Vice Criticism Slider */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
-                        <span className="font-bold">{language === 'hi' ? 'निन्दा / पर-दोष दर्शन' : 'Gossip/Criticism'}</span>
+                        <span className="font-bold">{language === 'hi' ? 'निन्दा / पर-दोष दर्शन' : language === 'pb' ? 'ਨਿੰਦਿਆ / ਪਰ-ਦੋਸ਼' : 'Gossip/Criticism'}</span>
                         <span className="font-mono text-purple-600 font-bold">{kaalNinda}/5</span>
                       </div>
-                      <input 
-                        type="range" min="0" max="5" value={kaalNinda}
-                        onChange={(e) => setKaalNinda(Number(e.target.value))}
-                        className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2"
-                      />
+                      <input type="range" min="0" max="5" value={kaalNinda} onChange={(e) => setKaalNinda(Number(e.target.value))} className="w-full accent-purple-600 bg-purple-500/10 rounded-lg h-2" />
                     </div>
                   </div>
                 </div>
@@ -1354,6 +1340,8 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   <div className="text-[11px] opacity-75 font-serif text-center sm:text-left">
                     {language === 'hi' 
                       ? '💡 शुद्ध आत्मा का प्रकाश अंततः पंच विकारों से अधिक पुण्य रहने पर ही खिलता है।'
+                      : language === 'pb'
+                      ? '💡 ਸ਼ੁੱਧ ਆਤਮਾ ਦਾ ਪ੍ਰਕਾਸ਼ ਪੰਜ ਵਿਕਾਰਾਂ ਉੱਤੇ ਗੁਣਾਂ ਦੀ ਜਿੱਤ ਨਾਲ ਹੀ ਖਿੜਦਾ ਹੈ।'
                       : '💡 Atma luminosity intensifies as virtuous acts progressively outshine inner vices.'}
                   </div>
                   <button
@@ -1362,7 +1350,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                     style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                     className="w-full sm:w-auto px-5 py-2.5 rounded-2xl font-black text-xs transition shadow-md hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
                   >
-                    <span>🌸 {language === 'hi' ? 'कर्मा लेखा-जोखा सहेजें' : 'Save Daily Assessment'}</span>
+                    <span>🌸 {language === 'hi' ? 'कर्मा लेखा-जोखा सहेजें' : language === 'pb' ? 'ਕਰਮ ਲੇਖਾ-ਜੋਖਾ ਸੰਭਾਲੋ' : 'Save Daily Assessment'}</span>
                   </button>
                 </div>
               </div>
@@ -1375,10 +1363,10 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                 <div>
                   <h4 className="text-sm font-black font-serif uppercase tracking-wider flex items-center gap-1.5" style={{ color: theme.sacredMaroon }}>
                     <Calendar className="w-4.5 h-4.5 text-amber-600" />
-                    <span>{language === 'hi' ? '२८-दिवसीय कर्मा साधना हीटमैप' : '28-Day Karma Practice Heatmap'}</span>
+                    <span>{language === 'hi' ? '२८-दिवसीय कर्मा साधना हीटमैप' : language === 'pb' ? '੨੮-ਦਿਨਾ ਕਰਮ ਸਾਧਨਾ ਹੀਟਮੈਪ' : '28-Day Karma Practice Heatmap'}</span>
                   </h4>
                   <p className="text-[10px] opacity-70 font-serif" style={{ color: theme.textSecondary }}>
-                    {language === 'hi' ? 'पिछले २८ दिनों के आध्यात्मिक चित्त संतुलन का ग्राफिक विवरण' : 'Graphic grid of your daily spiritual equilibrium records'}
+                    {language === 'hi' ? 'पिछले २८ दिनों के आध्यात्मिक चित्त संतुलन का ग्राफिक विवरण' : language === 'pb' ? 'ਪਿਛਲੇ ੨੮ ਦਿਨਾਂ ਦੇ ਅਧਿਆਤਮਕ ਮਨ ਸੰਤੁਲਨ ਦਾ ਵੇਰਵਾ' : 'Graphic grid of your daily spiritual equilibrium records'}
                   </p>
                 </div>
 
@@ -1388,17 +1376,13 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                     {(() => {
                       const cells = [];
                       const now = new Date();
-                      
-                      // Calculate days for a 28-day grid
                       for (let i = 27; i >= 0; i--) {
                         const d = new Date();
                         d.setDate(now.getDate() - i);
                         const dStr = d.toISOString().split('T')[0];
-                        const score = karmaLogs[dStr]; // NetKarma score
-                        
-                        let colorClass = 'bg-stone-100 dark:bg-stone-800 text-stone-400'; // unlogged
+                        const score = karmaLogs[dStr];
+                        let colorClass = 'bg-stone-100 dark:bg-stone-800 text-stone-400';
                         let scoreLabel = 'Unrated';
-                        
                         if (score !== undefined) {
                           if (score >= 15) {
                             colorClass = 'bg-emerald-600 text-white shadow-xs';
@@ -1417,7 +1401,6 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                             scoreLabel = `${score} Illusioned`;
                           }
                         }
-
                         cells.push(
                           <div 
                             key={dStr}
@@ -1434,11 +1417,11 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
 
                   {/* Legend / रंग विवरण */}
                   <div className="flex items-center justify-center gap-3 flex-wrap text-[10px] opacity-80 pt-1">
-                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-purple-600 inline-block"/> {language === 'hi' ? 'विकार ग्रस्त' : 'Ego/Vice'}</span>
-                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-orange-400 inline-block"/> {language === 'hi' ? 'चंचल' : 'Unstable'}</span>
-                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-amber-400 inline-block"/> {language === 'hi' ? 'उदासीन' : 'Neutral'}</span>
-                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-400 inline-block"/> {language === 'hi' ? 'साधक' : 'Seeker'}</span>
-                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-600 inline-block"/> {language === 'hi' ? 'परमहंस' : 'Paramhans'}</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-purple-600 inline-block"/> {language === 'hi' ? 'विकार ग्रस्त' : language === 'pb' ? 'ਵਿਕਾਰ ਗ੍ਰਸਤ' : 'Ego/Vice'}</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-orange-400 inline-block"/> {language === 'hi' ? 'चंचल' : language === 'pb' ? 'ਚੰਚਲ' : 'Unstable'}</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-amber-400 inline-block"/> {language === 'hi' ? 'उदासीन' : language === 'pb' ? 'ਉਦਾਸੀਨ' : 'Neutral'}</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-400 inline-block"/> {language === 'hi' ? 'साधक' : language === 'pb' ? 'ਸਾਧਕ' : 'Seeker'}</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-600 inline-block"/> {language === 'hi' ? 'परमहंस' : language === 'pb' ? 'ਪਰਮਹੰਸ' : 'Paramhans'}</span>
                   </div>
                 </div>
               </div>
@@ -1452,17 +1435,53 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
       {activeTab === 'milestones' && (
         <div className="space-y-4 animate-fadeIn">
           <h4 className="text-sm font-black font-serif uppercase tracking-wider" style={{ color: theme.sacredMaroon }}>
-            {language === 'hi' ? 'पावन साधना सिद्धियां व सम्मान पदवी' : 'Spiritual Achievement Badges'}
+            {language === 'hi' ? 'पावन साधना सिद्धियां व सम्मान पदवी' : language === 'pb' ? 'ਪਾਵਨ ਸਾਧਨਾ ਪ੍ਰਾਪਤੀਆਂ ਤੇ ਸਨਮਾਨ' : 'Spiritual Achievement Badges'}
           </h4>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { title: 'मंगलाचरण साधक', level: 'Level 1', desc: 'कबीर साहेब की प्रथम साखी व मंगलाचरण पाठ', unlocked: stats.maxUnlockedStep >= 1, icon: '🙏' },
-              { title: 'शब्दार्थ व भावार्थ अध्येता', level: 'Level 2', desc: 'वाणी के अर्थ व दार्शनिक भावार्थ का अनुशीलन', unlocked: stats.maxUnlockedStep >= 4, icon: '💡' },
-              { title: 'बीजक सिद्धांत बोध', level: 'Level 3', desc: 'कबीर बीजक व सत्यनाम अविनाशी तत्त्व दर्शन', unlocked: stats.maxUnlockedStep >= 5, icon: '💎' },
-              { title: 'निह-अक्षर महिमा साधक', level: 'Level 4', desc: 'अविनाशी निह-अक्षर नाम ध्यान व स्मरण', unlocked: stats.maxUnlockedStep >= 6, icon: '✨' },
-              { title: 'सुरति-शब्द योग अभ्यासी', level: 'Level 5', desc: 'आंतरिक अनहद ध्यान व सुरति-शब्द साधना', unlocked: stats.maxUnlockedStep >= 7, icon: '🧘' },
-              { title: 'सत्यनाम स्वाध्याय महा-साधक', level: 'Level 6', desc: 'समस्त १० सोपानों का निष्ठापूर्वक अभ्यास पूर्ण', unlocked: stats.maxUnlockedStep >= 10, icon: '🌸' },
+              {
+                title: language === 'pb' ? 'ਮੰਗਲਾਚਰਣ ਸਾਧਕ' : language === 'en' ? 'Invocation Seeker' : 'मंगलाचरण साधक',
+                level: 'Level 1',
+                desc: language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪਹਿਲੀ ਸਾਖੀ ਤੇ ਮੰਗਲਾਚਰਣ ਪਾਠ' : language === 'en' ? 'First couplet study and sacred invocation' : 'कबीर साहेब की प्रथम साखी व मंगलाचरण पाठ',
+                unlocked: stats.maxUnlockedStep >= 1,
+                icon: '🙏',
+              },
+              {
+                title: language === 'pb' ? 'ਸ਼ਬਦਾਰਥ ਤੇ ਭਾਵਾਰਥ ਅਧਿਐਤਾ' : language === 'en' ? 'Meaning Explorer' : 'शब्दार्थ व भावार्थ अध्येता',
+                level: 'Level 2',
+                desc: language === 'pb' ? 'ਬਾਣੀ ਦੇ ਅਰਥ ਅਤੇ ਦਾਰਸ਼ਨਿਕ ਭਾਵਾਰਥ ਦਾ ਅਧਿਐਨ' : language === 'en' ? 'Deep exploration of Sandhukkari terms and meaning' : 'वाणी के अर्थ व दार्शनिक भावार्थ का अनुशीलन',
+                unlocked: stats.maxUnlockedStep >= 4,
+                icon: '💡',
+              },
+              {
+                title: language === 'pb' ? 'ਬੀਜਕ ਸਿਧਾਂਤ ਬੋਧ' : language === 'en' ? 'Bijak Philosophy Scholar' : 'बीजक सिद्धांत बोध',
+                level: 'Level 3',
+                desc: language === 'pb' ? 'ਕਬੀਰ ਬੀਜਕ ਤੇ ਸਤਯਨਾਮ ਅਵਿਨਾਸ਼ੀ ਤੱਤ ਦਰਸ਼ਨ' : language === 'en' ? 'Insights into Kabir Bijak & eternal Satyanaam truth' : 'कबीर बीजक व सत्यनाम अविनाशी तत्त्व दर्शन',
+                unlocked: stats.maxUnlockedStep >= 5,
+                icon: '💎',
+              },
+              {
+                title: language === 'pb' ? 'ਨਿਹ-ਅੱਖਰ ਮਹਿਮਾ ਸਾਧਕ' : language === 'en' ? 'Nih-Akshar Devotee' : 'निह-अक्षर महिमा साधक',
+                level: 'Level 4',
+                desc: language === 'pb' ? 'ਅਵਿਨਾਸ਼ੀ ਨਿਹ-ਅੱਖਰ ਨਾਮ ਧਿਆਨ ਅਤੇ ਸਿਮਰਨ' : language === 'en' ? 'Meditation on the imperishable Nih-Akshar Naam' : 'अविनाशी निह-अक्षर नाम ध्यान व स्मरण',
+                unlocked: stats.maxUnlockedStep >= 6,
+                icon: '✨',
+              },
+              {
+                title: language === 'pb' ? 'ਸੁਰਤਿ-ਸ਼ਬਦ ਯੋਗ ਅਭਿਆਸੀ' : language === 'en' ? 'Surat-Shabad Practitioner' : 'सुरति-शब्द योग अभ्यासी',
+                level: 'Level 5',
+                desc: language === 'pb' ? 'ਅੰਦਰੂਨੀ ਅਨਹਦ ਧਿਆਨ ਅਤੇ ਸੁਰਤਿ-ਸ਼ਬਦ ਸਾਧਨਾ' : language === 'en' ? 'Inner Anhad Sound & Surat-Shabad practice' : 'आंतरिक अनहद ध्यान व सुरति-शब्द साधना',
+                unlocked: stats.maxUnlockedStep >= 7,
+                icon: '🧘',
+              },
+              {
+                title: language === 'pb' ? 'ਸਤਯਨਾਮ ਸਵਾਧਿਆਏ ਮਹਾ-ਸਾਧਕ' : language === 'en' ? 'Satyanaam Master Seeker' : 'सत्यनाम स्वाध्याय महा-साधक',
+                level: 'Level 6',
+                desc: language === 'pb' ? 'ਸਾਰੇ ੧੦ ਪੜਾਵਾਂ ਦਾ ਨਿਸ਼ਠਾ ਨਾਲ ਅਭਿਆਸ ਸੰਪੂਰਨ' : language === 'en' ? 'Completed all 10 sacred contemplation steps' : 'समस्त १० सोपानों का निष्ठापूर्वक अभ्यास पूर्ण',
+                unlocked: stats.maxUnlockedStep >= 10,
+                icon: '🌸',
+              },
             ].map((mb, idx) => (
               <div
                 key={idx}
@@ -1486,7 +1505,9 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md inline-block ${
                     mb.unlocked ? 'bg-emerald-500/15 text-emerald-800 dark:text-emerald-300' : 'bg-stone-200 text-stone-600'
                   }`}>
-                    {mb.unlocked ? '✓ उपलब्धि प्राप्त (Unlocked)' : '🔒 प्रतीक्षारत (Locked)'}
+                    {mb.unlocked
+                      ? (language === 'pb' ? '✓ ਪ੍ਰਾਪਤ (Unlocked)' : language === 'en' ? '✓ Unlocked' : '✓ उपलब्धि प्राप्त')
+                      : (language === 'pb' ? '🔒 ਬਾਕੀ (Locked)' : language === 'en' ? '🔒 Locked' : '🔒 प्रतीक्षारत')}
                   </span>
                 </div>
               </div>
@@ -1512,11 +1533,13 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           >
             <h3 className="text-base sm:text-lg font-black flex items-center gap-2" style={{ color: theme.sacredMaroon }}>
               <HardDrive className="w-5 h-5 text-amber-600 animate-pulse" />
-              <span>{language === 'hi' ? 'भंडारण क्षमता एवं संचय विश्लेषक (Storage & Content Report)' : 'Storage & Content Volume Report'}</span>
+              <span>{language === 'hi' ? 'भंडारण क्षमता एवं संचय विश्लेषक' : language === 'pb' ? 'ਭੰਡਾਰਨ ਸਮਰੱਥਾ ਤੇ ਸੰਗ੍ਰਹਿ ਰਿਪੋਰਟ' : 'Storage & Content Volume Report'}</span>
             </h3>
             <p className="text-xs sm:text-sm leading-relaxed opacity-90" style={{ color: theme.textPrimary }}>
               {language === 'hi' 
                 ? 'हमारे इस पावन ऐप (SahebWorld App) में संगृहीत कुल आध्यात्मिक साहित्य, ग्रंथ संचय, और आपके व्यक्तिगत स्वाध्याय इतिहास के संचय की सामर्थ्य एवं भंडारण रिपोर्ट यहाँ दर्शायी गई है।' 
+                : language === 'pb'
+                ? 'ਇਸ ਪਾਵਨ SahebWorld ਐਪ ਵਿੱਚ ਸੰਗ੍ਰਹਿਤ ਸਮੁੱਚਾ ਅਧਿਆਤਮਕ ਸਾਹਿਤ, ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ ਅਤੇ ਤੁਹਾਡੇ ਨਿੱਜੀ ਸਵਾਧਿਆਏ ਇਤਿਹਾਸ ਦੀ ਭੰਡਾਰਨ ਰਿਪੋਰਟ ਇੱਥੇ ਦਰਸਾਈ ਗਈ ਹੈ।'
                 : 'A comprehensive technical and spiritual volume report detailing the precompiled sacred texts and your local user progress metrics.'}
             </p>
           </div>
@@ -1525,53 +1548,57 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
           <StorageCapacityReport language={language} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Left Card: How much we can store vs have stored */}
+            {/* Left Card */}
             <div 
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
               className="p-4 sm:p-5 rounded-3xl border shadow-sm space-y-4"
             >
               <h4 className="text-sm font-black uppercase tracking-wider flex items-center gap-1.5" style={{ color: theme.sacredMaroon }}>
                 <Database className="w-4 h-4 text-amber-600" />
-                <span>{language === 'hi' ? 'हम कितना संचय कर सकते हैं? (Capacity Limits)' : 'App Storage Potential'}</span>
+                <span>{language === 'hi' ? 'हम कितना संचय कर सकते हैं?' : language === 'pb' ? 'ਐਪ ਭੰਡਾਰਨ ਸਮਰੱਥਾ' : 'App Storage Potential'}</span>
               </h4>
               
               <div className="space-y-3.5 text-xs text-stone-500 dark:text-stone-400">
                 <p className="leading-relaxed">
                   {language === 'hi' 
                     ? '• एक आधुनिक वेब ऐप में हम स्रोत संचिका के रूप में लगभग 100MB से 500MB तक का पावन पाठ संकलित कर सकते हैं, जो करोड़ों शब्दों के बराबर है।' 
+                    : language === 'pb'
+                    ? '• ਇੱਕ ਆਧੁਨਿਕ ਵੈੱਬ ਐਪ ਵਿੱਚ ਅਸੀਂ ਸਰੋਤ ਫਾਈਲਾਂ ਦੇ ਰੂਪ ਵਿੱਚ 100MB ਤੋਂ 500MB ਤੱਕ ਦਾ ਪਾਵਨ ਪਾਠ ਸੰਕਲਿਤ ਕਰ ਸਕਦੇ ਹਾਂ।'
                     : '• A modern React bundle can support up to 500MB of pure compiled text source, equivalent to tens of millions of words.'}
                 </p>
                 <p className="leading-relaxed">
                   {language === 'hi' 
                     ? '• ब्राउज़र का स्थानिक भंडारण (LocalStorage) प्रत्येक उपयोगकर्ता के लिए 5MB (5,120 KB) आरक्षित रखता है। यह पूरे जीवनकाल के प्रविष्टियों को सुरक्षित रखने हेतु पर्याप्त है।' 
+                    : language === 'pb'
+                    ? '• ਬ੍ਰਾਊਜ਼ਰ ਦਾ ਸਥਾਨਕ ਭੰਡਾਰਨ (LocalStorage) ਹਰੇਕ ਵਰਤੋਂਕਾਰ ਲਈ 5MB (5,120 KB) ਸੁਰੱਖਿਅਤ ਰੱਖਦਾ ਹੈ, ਜੋ ਜੀਵਨ ਭਰ ਦੇ ਨੋਟਸ ਲਈ ਕਾਫ਼ੀ ਹੈ।'
                     : '• Browsers allocate 5MB (5,120 KB) of secure LocalStorage for user preferences and diary logs, guaranteeing seamless lifelong study tracks.'}
                 </p>
               </div>
             </div>
 
-            {/* Right Card: How much we have written in this app so far */}
+            {/* Right Card */}
             <div 
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
               className="p-4 sm:p-5 rounded-3xl border shadow-sm space-y-4"
             >
               <h4 className="text-sm font-black uppercase tracking-wider flex items-center gap-1.5" style={{ color: theme.sacredMaroon }}>
                 <BookOpen className="w-4 h-4 text-amber-600" />
-                <span>{language === 'hi' ? 'हमने इस ऐप में कितना साहित्य लिखा है? (Current Content Volume)' : 'Current Content Written'}</span>
+                <span>{language === 'hi' ? 'इस ऐप में संकलित साहित्य' : language === 'pb' ? 'ਐਪ ਵਿੱਚ ਸੰਕਲਿਤ ਸਾਹਿਤ' : 'Current Content Written'}</span>
               </h4>
 
               <div className="space-y-3.5 text-xs text-stone-500 dark:text-stone-400">
                 <ul className="space-y-2 font-bold" style={{ color: theme.textPrimary }}>
                   <li className="flex items-center justify-between border-b pb-1" style={{ borderColor: theme.cardBorder }}>
-                    <span>📜 {language === 'hi' ? 'साखी संग्रह पावन समूह' : 'Pawan Sakhi Batches'}</span>
-                    <span className="text-amber-600">39 {language === 'hi' ? 'बैच' : 'Batches'}</span>
+                    <span>📜 {language === 'hi' ? 'साखी संग्रह पावन समूह' : language === 'pb' ? 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ ਪਾਵਨ ਸਮੂਹ' : 'Pawan Sakhi Batches'}</span>
+                    <span className="text-amber-600">39 {language === 'hi' ? 'बैच' : language === 'pb' ? 'ਬੈਚ' : 'Batches'}</span>
                   </li>
                   <li className="flex items-center justify-between border-b pb-1" style={{ borderColor: theme.cardBorder }}>
-                    <span>📚 {language === 'hi' ? 'संगृहीत वृहद ग्रन्थ' : 'Sacred Granthas'}</span>
-                    <span className="text-amber-600">10 {language === 'hi' ? 'मुख्य ग्रन्थ' : 'Major Granths'}</span>
+                    <span>📚 {language === 'hi' ? 'संगृहीत वृहद ग्रन्थ' : language === 'pb' ? 'ਸੰਗ੍ਰਹਿਤ ਮੁੱਖ ਗ੍ਰੰਥ' : 'Sacred Granthas'}</span>
+                    <span className="text-amber-600">10 {language === 'hi' ? 'मुख्य ग्रन्थ' : language === 'pb' ? 'ਮੁੱਖ ਗ੍ਰੰਥ' : 'Major Granths'}</span>
                   </li>
                   <li className="flex items-center justify-between border-b pb-1" style={{ borderColor: theme.cardBorder }}>
-                    <span>🖋️ {language === 'hi' ? 'कुल संकलित शब्द (अनुमानित)' : 'Word Count (Approx.)'}</span>
-                    <span className="text-amber-600">250,000+ {language === 'hi' ? 'शब्द' : 'Words'}</span>
+                    <span>🖋️ {language === 'hi' ? 'कुल संकलित शब्द (अनुमानित)' : language === 'pb' ? 'ਕੁੱਲ ਸੰਕਲਿਤ ਸ਼ਬਦ (ਅੰਦਾਜ਼ਨ)' : 'Word Count (Approx.)'}</span>
+                    <span className="text-amber-600">250,000+ {language === 'hi' ? 'शब्द' : language === 'pb' ? 'ਸ਼ਬਦ' : 'Words'}</span>
                   </li>
                 </ul>
               </div>
@@ -1584,7 +1611,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             className="p-4 rounded-2xl border text-center text-xs italic"
           >
             <p style={{ color: theme.sacredMaroon }} className="font-bold">
-              🙏 {language === 'hi' ? 'सतगुरु चरण कमलेभ्यो नमः — कोटि-कोटि धन्यवाद' : 'Saheb Bandagi Saheb — Heartfelt Gratitude to the Seekers!'}
+              🙏 {language === 'hi' ? 'सतगुरु चरण कमलेभ्यो नमः — कोटि-कोटि धन्यवाद' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਚਰਨ ਕਮਲਾਂ ਵਿੱਚ ਨਮਸਕਾਰ — ਕੋਟਿ-ਕੋਟਿ ਧੰਨਵਾਦ' : 'Saheb Bandagi Saheb — Heartfelt Gratitude to the Seekers!'}
             </p>
           </div>
         </div>

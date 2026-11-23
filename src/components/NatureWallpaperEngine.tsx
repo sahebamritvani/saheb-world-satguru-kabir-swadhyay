@@ -40,6 +40,7 @@ interface NatureWallpaperEngineProps {
   onLanguageChange?: (lang: Language) => void;
   isBellEnabled?: boolean;
   onClose?: () => void;
+  initialHukamnama?: { verse: SggsKabirVerse; triggerKey: number } | null;
 }
 
 export type WallpaperPreset = 
@@ -67,7 +68,8 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
   language,
   onLanguageChange,
   isBellEnabled = true,
-  onClose
+  onClose,
+  initialHukamnama = null,
 }) => {
   const { theme, globalWallpaper, setGlobalWallpaper } = useAppTheme();
   const { language: contextLang, setLanguage } = useLanguage();
@@ -77,9 +79,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
   // States
   const [selectedPreset, setSelectedPreset] = useState<WallpaperPreset>('banyan_ghat');
   const [aspectRatio, setAspectRatio] = useState<'1:1' | '9:16' | '16:9'>('9:16');
-  const [textMode, setTextMode] = useState<'sakhi' | 'sggs' | 'custom'>('sakhi');
+  const [textMode, setTextMode] = useState<'sakhi' | 'sggs' | 'custom'>(
+    initialHukamnama?.verse ? 'sggs' : 'sakhi'
+  );
   const [selectedSakhiId, setSelectedSakhiId] = useState<string>(sakhisDatabase[0]?.id || 'sakhi-1');
-  const [selectedSalokId, setSelectedSalokId] = useState<string>('sggs-salok-1');
+  const [selectedSalokId, setSelectedSalokId] = useState<string>(
+    initialHukamnama?.verse?.id || 'sggs-salok-1'
+  );
   const [customTitle, setCustomTitle] = useState<string>('।। सत्यनाम ।।');
   const [customText, setCustomText] = useState<string>(
     'कबीर मेरी सिमरनी रसना ऊपरि रामु ॥\nआदि जुगादी सगल भगत ता को सुखु बिस्रामु ॥'
@@ -99,22 +105,62 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
   const [previewResult, setPreviewResult] = useState<GeneratedCardResult | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  const [sggsVerses, setSggsVerses] = useState<SggsKabirVerse[]>([FALLBACK_HUKAMNAMA_VERSE]);
+  const [sggsVerses, setSggsVerses] = useState<SggsKabirVerse[]>(() =>
+    initialHukamnama?.verse && initialHukamnama.verse.id !== FALLBACK_HUKAMNAMA_VERSE.id
+      ? [initialHukamnama.verse, FALLBACK_HUKAMNAMA_VERSE]
+      : [FALLBACK_HUKAMNAMA_VERSE]
+  );
+
+  // Sync whenever Daily Hukamnama launches the wallpaper engine
+  useEffect(() => {
+    if (!initialHukamnama?.verse) return;
+    const incoming = initialHukamnama.verse;
+    setSggsVerses((prev) =>
+      prev.some((v) => v.id === incoming.id) ? prev : [incoming, ...prev]
+    );
+    setTextMode('sggs');
+    setSelectedSalokId(incoming.id);
+    const incomingLines =
+      activeLang === 'pb'
+        ? incoming.moolGurmukhi
+        : activeLang === 'en' && incoming.moolRoman?.length
+        ? incoming.moolRoman
+        : incoming.moolDevanagari;
+    setCustomTitle(
+      `${incoming.title?.[activeLang] || incoming.title?.hi || 'दैनिक हुकमनामा'} (${
+        activeLang === 'pb' ? 'ਅੰਗ' : activeLang === 'en' ? 'Ang' : 'अंग'
+      } ${incoming.ang})`
+    );
+    setCustomText(incomingLines.join('\n'));
+    setCustomBhavarth(incoming.bhavarth?.[activeLang] || incoming.bhavarth?.hi || '');
+  }, [initialHukamnama, activeLang]);
 
   useEffect(() => {
-    if (textMode !== 'sggs' || sggsVerses.length > 1) return;
+    if (textMode !== 'sggs') return;
     let cancelled = false;
     import('../data/sggsKabirBaniData')
       .then((mod) => {
         if (!cancelled && mod.SGGS_KABIR_VERSES_COLLECTION.length > 0) {
-          setSggsVerses(mod.SGGS_KABIR_VERSES_COLLECTION);
+          setSggsVerses((prev) => {
+            const incoming = initialHukamnama?.verse;
+            if (
+              incoming &&
+              !mod.SGGS_KABIR_VERSES_COLLECTION.some((v) => v.id === incoming.id)
+            ) {
+              return [incoming, ...mod.SGGS_KABIR_VERSES_COLLECTION];
+            }
+            if (prev.length > mod.SGGS_KABIR_VERSES_COLLECTION.length) {
+              return prev;
+            }
+            return mod.SGGS_KABIR_VERSES_COLLECTION;
+          });
         }
       })
       .catch(() => {});
     return () => {
       cancelled = true;
     };
-  }, [textMode, sggsVerses.length]);
+  }, [textMode, initialHukamnama]);
 
   const currentSakhi: Sakhi = sakhisDatabase.find((s: Sakhi) => s.id === selectedSakhiId) || sakhisDatabase[0];
   const currentSalok = sggsVerses.find((v) => v.id === selectedSalokId) || sggsVerses[0] || FALLBACK_HUKAMNAMA_VERSE;
@@ -124,73 +170,148 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
     {
       id: 'banyan_ghat',
       title: t.themeBanyanGhat,
-      sub: 'पावन सूर्योदय व बरगद तट',
+      sub:
+        activeLang === 'pb'
+          ? 'ਪਾਵਨ ਸੂਰਜ-ਉਦੇ ਤੇ ਬਰਗਦ ਤੱਟ'
+          : activeLang === 'en'
+          ? 'Sacred Sunrise & Banyan Ghat'
+          : 'पावन सूर्योदय व बरगद तट',
       imgSrc: banyanGhatWallpaper,
       accent: '#FACC15',
     },
     {
       id: 'maghar_dham',
       title: t.themeMagharDham,
-      sub: 'सतगुरु की निर्वाण भूमि',
+      sub:
+        activeLang === 'pb'
+          ? 'ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਨਿਰਵਾਣ ਭੂਮੀ'
+          : activeLang === 'en'
+          ? 'Sacred Nirvana Abode of Satguru'
+          : 'सतगुरु की निर्वाण भूमि',
       imgSrc: magharDhamWallpaper,
       accent: '#F59E0B',
     },
     {
       id: 'maghar_authentic',
-      title: 'मगहर प्रामाणिक धाम',
-      sub: 'ऐतिहासिक श्वेत गुंबद व प्रांगण',
+      title:
+        activeLang === 'pb'
+          ? 'ਮਗਹਰ ਪ੍ਰਮਾਣਿਕ ਧਾਮ'
+          : activeLang === 'en'
+          ? 'Maghar Authentic Dham'
+          : 'मगहर प्रामाणिक धाम',
+      sub:
+        activeLang === 'pb'
+          ? 'ਇਤਿਹਾਸਕ ਸ਼ਵੇਤ ਗੁੰਬਦ ਤੇ ਵਿਹੜਾ'
+          : activeLang === 'en'
+          ? 'Historic White Dome & Courtyard'
+          : 'ऐतिहासिक श्वेत गुंबद व प्रांगण',
       imgSrc: magharAuthenticWallpaper,
       accent: '#F59E0B',
     },
     {
       id: 'light_floral_geometric',
-      title: 'पुष्पीय ज्यामितीय (Light)',
-      sub: 'गुलाब फूल 🌹 व ज्यामितीय चक्र',
+      title:
+        activeLang === 'pb'
+          ? 'ਪੁਸ਼ਪ ਜਿਆਮਿਤੀ (Light)'
+          : activeLang === 'en'
+          ? 'Floral Geometric (Light)'
+          : 'पुष्पीय ज्यामितीय (Light)',
+      sub:
+        activeLang === 'pb'
+          ? 'ਗੁਲਾਬ ਫੁੱਲ 🌹 ਤੇ ਪਵਿੱਤਰ ਚੱਕਰ'
+          : activeLang === 'en'
+          ? 'Rose Petals 🌹 & Sacred Mandala'
+          : 'गुलाब फूल 🌹 व ज्यामितीय चक्र',
       imgSrc: lightFloralWallpaper,
       accent: '#E11D48',
     },
     {
       id: 'light_lotus',
-      title: 'पावन श्वेत-स्वर्ण कमल',
-      sub: 'निर्मल संगमरमर व दिव्य कमल 🪷',
+      title:
+        activeLang === 'pb'
+          ? 'ਪਾਵਨ ਸ਼ਵੇਤ-ਸਵਰਨ ਕਮਲ'
+          : activeLang === 'en'
+          ? 'Pure White & Gold Lotus'
+          : 'पावन श्वेत-स्वर्ण कमल',
+      sub:
+        activeLang === 'pb'
+          ? 'ਨਿਰਮਲ ਸੰਗਮਰਮਰ ਤੇ ਦਿਵਯ ਕਮਲ 🪷'
+          : activeLang === 'en'
+          ? 'Serene Marble & Divine Lotus 🪷'
+          : 'निर्मल संगमरमर व दिव्य कमल 🪷',
       imgSrc: lightLotusWallpaper,
       accent: '#D97706',
     },
     {
       id: 'saheb_icon_emblem',
-      title: 'साहेब वर्ल्ड प्रतीक (App Emblem)',
-      sub: 'गोल्डन चक्र व कमल',
+      title:
+        activeLang === 'pb'
+          ? 'ਸਾਹੇਬ ਵਰਲਡ ਪ੍ਰਤੀਕ (Emblem)'
+          : activeLang === 'en'
+          ? 'Saheb World Emblem'
+          : 'साहेब वर्ल्ड प्रतीक (App Emblem)',
+      sub:
+        activeLang === 'pb'
+          ? 'ਸੁਨਹਿਰੀ ਚੱਕਰ ਤੇ ਕਮਲ'
+          : activeLang === 'en'
+          ? 'Golden Chakra & Lotus'
+          : 'गोल्डन चक्र व कमल',
       imgSrc: sahebEmblemWallpaper,
       accent: '#FBBF24',
     },
     {
       id: 'dawn_mountain',
       title: t.themeDawn,
-      sub: 'अरुणोदय व पर्वत शिखर',
+      sub:
+        activeLang === 'pb'
+          ? 'ਪ੍ਰਭਾਤ ਵੇਲਾ ਤੇ ਪਰਬਤ ਸ਼ਿਖਰ'
+          : activeLang === 'en'
+          ? 'Golden Dawn & Mountain Peaks'
+          : 'अरुणोदय व पर्वत शिखर',
       accent: '#FAD074',
     },
     {
       id: 'emerald_forest',
       title: t.themeForest,
-      sub: 'शांत वन व दिव्य प्रकाश किरणें',
+      sub:
+        activeLang === 'pb'
+          ? 'ਸ਼ਾਂਤ ਵਣ ਤੇ ਦਿਵਯ ਕਿਰਨਾਂ'
+          : activeLang === 'en'
+          ? 'Serene Forest & Divine Rays'
+          : 'शांत वन व दिव्य प्रकाश किरणें',
       accent: '#6EE7B7',
     },
     {
       id: 'sunset_sky',
       title: t.themeSunset,
-      sub: 'संध्या गगन व सरसी कमल',
+      sub:
+        activeLang === 'pb'
+          ? 'ਸੰਧਿਆ ਆਕਾਸ਼ ਤੇ ਸਰੋਵਰ ਕਮਲ'
+          : activeLang === 'en'
+          ? 'Twilight Sky & Lotus Pond'
+          : 'संध्या गगन व सरसी कमल',
       accent: '#FFD166',
     },
     {
       id: 'sacred_river',
       title: t.themeRiver,
-      sub: 'गंगा तट व प्रज्वलित दीप',
+      sub:
+        activeLang === 'pb'
+          ? 'ਪਾਵਨ ਨਦੀ ਤੱਟ ਤੇ ਜਗਮਗ ਦੀਪ'
+          : activeLang === 'en'
+          ? 'Sacred Riverbank & Glowing Lamps'
+          : 'गंगा तट व प्रज्वलित दीप',
       accent: '#67E8F9',
     },
     {
       id: 'golden_autumn',
       title: t.themeAutumn,
-      sub: 'स्वर्ण वट पत्र व अनहद आभा',
+      sub:
+        activeLang === 'pb'
+          ? 'ਸੁਨਹਿਰੀ ਪੱਤੇ ਤੇ ਅਨਹਦ ਆਭਾ'
+          : activeLang === 'en'
+          ? 'Golden Banyan Leaves & Radiance'
+          : 'स्वर्ण वट पत्र व अनहद आभा',
       accent: '#FFE082',
     },
   ];
@@ -339,7 +460,15 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
     ctx.font = 'bold 26px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif';
     ctx.fillStyle = accentColor;
-    ctx.fillText('बंदीछोड़ सतगुरु कबीर साहेब', width / 2, height * 0.125);
+    ctx.fillText(
+      activeLang === 'pb'
+        ? 'ਬੰਦੀਛੋੜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ'
+        : activeLang === 'en'
+        ? 'Bandichhod Satguru Kabir Saheb'
+        : 'बंदीछोड़ सतगुरु कबीर साहेब',
+      width / 2,
+      height * 0.125
+    );
 
     ctx.strokeStyle = accentColor;
     ctx.lineWidth = 2;
@@ -356,34 +485,73 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
     if (textMode === 'sakhi') {
       verseText = formatCoupletString(autoCorrectSacredText(currentSakhi.text[activeLang] || currentSakhi.text.hi));
       bhavarthText = ensureSatguruKabirSaheb(currentSakhi.bhavarth[activeLang] || currentSakhi.bhavarth.hi);
-      categoryBadge = `साखी #${currentSakhi.number} • ${currentSakhi.grantha}`;
+      const sakhiLabel = activeLang === 'pb' ? 'ਸਾਖੀ' : activeLang === 'en' ? 'Sakhi' : 'साखी';
+      categoryBadge = `${sakhiLabel} #${currentSakhi.number} • ${currentSakhi.grantha}`;
     } else if (textMode === 'sggs') {
-      const lines = activeLang === 'pb' ? currentSalok.moolGurmukhi : currentSalok.moolDevanagari;
+      const lines =
+        activeLang === 'pb'
+          ? currentSalok.moolGurmukhi
+          : activeLang === 'en' && currentSalok.moolRoman?.length
+          ? currentSalok.moolRoman
+          : currentSalok.moolDevanagari;
       verseText = lines.join('\n');
       bhavarthText = currentSalok.bhavarth[activeLang] || currentSalok.bhavarth.hi;
-      categoryBadge = `${currentSalok.title[activeLang] || currentSalok.title.hi} • ਅੰਗ ${currentSalok.ang}`;
+      const angLabel = activeLang === 'pb' ? 'ਅੰਗ' : activeLang === 'en' ? 'Ang' : 'अंग';
+      categoryBadge = `${currentSalok.title[activeLang] || currentSalok.title.hi} • ${angLabel} ${currentSalok.ang}`;
     } else {
       verseText = customText.trim();
       bhavarthText = customBhavarth.trim();
-      categoryBadge = customTitle.trim() || 'पावन कबीर वाणी';
+      categoryBadge =
+        customTitle.trim() ||
+        (activeLang === 'pb' ? 'ਪਾਵਨ ਕਬੀਰ ਬਾਣੀ' : activeLang === 'en' ? 'Sacred Kabir Vani' : 'पावन कबीर वाणी');
     }
 
     // Badge Title
     ctx.fillStyle = accentColor;
-    ctx.font = 'bold 24px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif';
+    ctx.font = 'bold 24px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif';
     ctx.fillText(categoryBadge, width / 2, height * 0.20);
 
-    // 6. MAIN VERSE TEXT (CENTER)
-    let currentY = height * 0.28;
+    // 6. MAIN VERSE TEXT (CENTER) with horizontal wrapping and dynamic line scaling for multi-line Shabads
+    const rawLines = verseText
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean);
+    const isLongPassage = rawLines.length > 4;
+    const effectiveVerseFontSize = isLongPassage
+      ? Math.max(24, Math.min(verseFontSize, 32))
+      : verseFontSize;
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = `bold italic ${verseFontSize}px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif`;
+    ctx.font = `bold italic ${effectiveVerseFontSize}px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif`;
     ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
     ctx.shadowBlur = 12;
 
-    const vLines = verseText.split('\n');
-    const lineHeight = verseFontSize * 1.5;
-    vLines.forEach((ln) => {
-      ctx.fillText(ln.trim(), width / 2, currentY);
+    const maxVerseWidth = width - 130;
+    const wrappedVerseLines: string[] = [];
+    rawLines.forEach((rawLine) => {
+      if (ctx.measureText(rawLine).width <= maxVerseWidth) {
+        wrappedVerseLines.push(rawLine);
+      } else {
+        const words = rawLine.split(/\s+/);
+        let cur = '';
+        words.forEach((w) => {
+          const test = cur ? `${cur} ${w}` : w;
+          if (ctx.measureText(test).width > maxVerseWidth && cur) {
+            wrappedVerseLines.push(cur);
+            cur = w;
+          } else {
+            cur = test;
+          }
+        });
+        if (cur) wrappedVerseLines.push(cur);
+      }
+    });
+
+    const maxVerseDisplayLines = aspectRatio === '9:16' ? 8 : 5;
+    const visibleVerseLines = wrappedVerseLines.slice(0, maxVerseDisplayLines);
+    const lineHeight = effectiveVerseFontSize * (visibleVerseLines.length > 4 ? 1.32 : 1.48);
+    let currentY = isLongPassage ? height * 0.255 : height * 0.28;
+    visibleVerseLines.forEach((ln) => {
+      ctx.fillText(ln, width / 2, currentY);
       currentY += lineHeight;
     });
 
@@ -391,9 +559,10 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
     // 7. GLASSMORPHIC BHAVARTH CARD BOX (LOWER HALF)
     if (bhavarthText) {
-      currentY += 40;
-      const boxY = Math.max(height * 0.54, currentY);
-      const boxH = aspectRatio === '1:1' ? 240 : aspectRatio === '16:9' ? 220 : 420;
+      currentY += 28;
+      const boxH = aspectRatio === '1:1' ? 230 : aspectRatio === '16:9' ? 210 : 410;
+      const maxBoxY = height * 0.85 - boxH;
+      const boxY = Math.min(maxBoxY, Math.max(height * 0.54, currentY));
       const boxW = width - 160;
       const boxX = 80;
 
@@ -415,8 +584,16 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
       // Bhavarth Label
       ctx.fillStyle = accentColor;
-      ctx.font = 'bold 24px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif';
-      ctx.fillText('भावार्थ (Essence):', width / 2, boxY + 44);
+      ctx.font = 'bold 24px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif';
+      ctx.fillText(
+        activeLang === 'pb'
+          ? 'ਭਾਵਾਰਥ (Essence):'
+          : activeLang === 'en'
+          ? 'Spiritual Essence:'
+          : 'भावार्थ (Essence):',
+        width / 2,
+        boxY + 44
+      );
 
       // Bhavarth Lines Word Wrap
       ctx.fillStyle = '#FEF08A';
@@ -537,12 +714,34 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
         const status = await downloadOrShareImage(
           previewResult,
           'Saheb World Nature Wallpaper',
-          '।। साहेब बंदगी साहेब ।।\n' + customTitle
+          (activeLang === 'pb'
+            ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।\n'
+            : activeLang === 'en'
+            ? '|| Saheb Bandagi Saheb ||\n'
+            : '।। साहेब बंदगी साहेब ।।\n') + customTitle
         );
-        setToastMessage(status === 'shared' ? 'ਵਾਲਪੇਪਰ ਗੈਲਰੀ / ਸ਼ੇਅਰ ਹੋ ਗਿਆ!' : 'ਡਾਊਨਲੋਡ ਸ਼ੁਰੂ ਹੋ ਗਿਆ!');
+        setToastMessage(
+          status === 'shared'
+            ? activeLang === 'pb'
+              ? 'ਵਾਲਪੇਪਰ ਸਾਂਝਾ / ਗੈਲਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਹੋ ਗਿਆ!'
+              : activeLang === 'en'
+              ? 'Wallpaper shared / saved to gallery!'
+              : 'वॉलपेपर गैलरी / शेयर हो गया!'
+            : activeLang === 'pb'
+            ? 'ਡਾਊਨਲੋਡ ਸ਼ੁਰੂ ਹੋ ਗਿਆ!'
+            : activeLang === 'en'
+            ? 'Download started!'
+            : 'डाउनलोड प्रारंभ हो गया!'
+        );
       } else {
         triggerBlobDownload(previewResult.objectUrl, previewResult.fileName);
-        setToastMessage('HD ਵਾਲਪੇਪਰ ਡਾਊਨਲੋਡ ਹੋ ਗਿਆ!');
+        setToastMessage(
+          activeLang === 'pb'
+            ? 'HD ਵਾਲਪੇਪਰ ਡਾਊਨਲੋਡ ਹੋ ਗਿਆ!'
+            : activeLang === 'en'
+            ? 'HD Wallpaper downloaded!'
+            : 'HD वॉलपेपर डाउनलोड हो गया!'
+        );
       }
     } catch (err) {
       console.error(err);
@@ -566,7 +765,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-200 text-xs font-serif font-bold">
               <Sun className="w-4 h-4 text-amber-400" />
-              <span>ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਇੰਜਣ • Nature Wallpaper Engine</span>
+              <span>
+                {activeLang === 'pb'
+                  ? 'ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਇੰਜਣ'
+                  : activeLang === 'en'
+                  ? 'Nature Wallpaper Engine'
+                  : 'कुदरत वॉलपेपर इंजन'}
+              </span>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -638,7 +843,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           <div className="space-y-2">
             <label className="font-bold text-sm font-serif text-amber-950 dark:text-amber-200 flex items-center gap-2">
               <ImageIcon className="w-4 h-4 text-amber-600" />
-              <span>१. प्राकृतिक वॉलपेपर थीम चुनें (Select Background):</span>
+              <span>
+                {activeLang === 'pb'
+                  ? '੧. ਕੁਦਰਤੀ ਵਾਲਪੇਪਰ ਥੀਮ ਚੁਣੋ:'
+                  : activeLang === 'en'
+                  ? '1. Select Nature Wallpaper Theme:'
+                  : '१. प्राकृतिक वॉलपेपर थीम चुनें:'}
+              </span>
             </label>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -678,14 +889,47 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           <div className="space-y-2 pt-2 border-t border-black/10 dark:border-white/10">
             <label className="font-bold text-sm font-serif text-amber-950 dark:text-amber-200 flex items-center gap-2">
               <Maximize2 className="w-4 h-4 text-amber-600" />
-              <span>२. चित्र आकार (Aspect Ratio):</span>
+              <span>
+                {activeLang === 'pb'
+                  ? '੨. ਚਿੱਤਰ ਆਕਾਰ (Aspect Ratio):'
+                  : activeLang === 'en'
+                  ? '2. Canvas Aspect Ratio:'
+                  : '२. चित्र आकार (Aspect Ratio):'}
+              </span>
             </label>
 
             <div className="grid grid-cols-3 gap-2">
               {[
-                { id: '9:16', label: '📱 9:16', desc: 'मोबाइल लॉक-स्क्रीन / स्टोरी' },
-                { id: '1:1', label: '🖼️ 1:1', desc: 'प्रोफ़ाइल DP / व्हाट्सएप' },
-                { id: '16:9', label: '💻 16:9', desc: 'डेस्कटॉप / लैपटॉप' },
+                {
+                  id: '9:16',
+                  label: '📱 9:16',
+                  desc:
+                    activeLang === 'pb'
+                      ? 'ਮੋਬਾਈਲ ਲੌਕ-ਸਕ੍ਰੀਨ / ਸਟੋਰੀ'
+                      : activeLang === 'en'
+                      ? 'Mobile Lockscreen / Story'
+                      : 'मोबाइल लॉक-स्क्रीन / स्टोरी',
+                },
+                {
+                  id: '1:1',
+                  label: '🖼️ 1:1',
+                  desc:
+                    activeLang === 'pb'
+                      ? 'ਪ੍ਰੋਫਾਈਲ DP / WhatsApp'
+                      : activeLang === 'en'
+                      ? 'Profile DP / Square Post'
+                      : 'प्रोफ़ाइल DP / व्हाट्सएप',
+                },
+                {
+                  id: '16:9',
+                  label: '💻 16:9',
+                  desc:
+                    activeLang === 'pb'
+                      ? 'ਡੈਸਕਟਾਪ / ਲੈਪਟਾਪ'
+                      : activeLang === 'en'
+                      ? 'Desktop / Widescreen'
+                      : 'डेस्कटॉप / लैपटॉप',
+                },
               ].map((rObj) => (
                 <button
                   key={rObj.id}
@@ -708,7 +952,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           <div className="space-y-3 pt-2 border-t border-black/10 dark:border-white/10">
             <label className="font-bold text-sm font-serif text-amber-950 dark:text-amber-200 flex items-center gap-2">
               <Type className="w-4 h-4 text-amber-600" />
-              <span>३. पावन वाणी एवं पाठ चुनें (Text Content Source):</span>
+              <span>
+                {activeLang === 'pb'
+                  ? '੩. ਪਾਵਨ ਬਾਣੀ ਤੇ ਪਾਠ ਚੁਣੋ:'
+                  : activeLang === 'en'
+                  ? '3. Choose Sacred Vani & Text:'
+                  : '३. पावन वाणी एवं पाठ चुनें:'}
+              </span>
             </label>
 
             {/* Sub-tabs for text source */}
@@ -720,7 +970,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   textMode === 'sakhi' ? 'bg-[#8B2500] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
-                📜 साखी संग्रह
+                {activeLang === 'pb' ? '📜 ਸਾਖੀ ਸੰਗ੍ਰਹਿ' : activeLang === 'en' ? '📜 Sakhi Archive' : '📜 साखी संग्रह'}
               </button>
 
               <button
@@ -730,7 +980,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   textMode === 'sggs' ? 'bg-[#8B2500] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
-                ☬ SGGS सलोक
+                {activeLang === 'pb' ? '☬ SGGS ਸਲੋਕ' : activeLang === 'en' ? '☬ SGGS Salok' : '☬ SGGS सलोक'}
               </button>
 
               <button
@@ -740,7 +990,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   textMode === 'custom' ? 'bg-[#8B2500] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
-                ✏️ स्वयं का पाठ
+                {activeLang === 'pb' ? '✏️ ਖੁਦ ਦਾ ਪਾਠ' : activeLang === 'en' ? '✏️ Custom Text' : '✏️ स्वयं का पाठ'}
               </button>
             </div>
 
@@ -772,19 +1022,19 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
               <div className="space-y-1">
                 <label className="block text-[11px] font-bold text-amber-900 dark:text-amber-300">
                   {activeLang === 'pb'
-                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਸਲੋਕ (ਅੰਗ 1364 - 1377):'
+                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਕਬੀਰ ਬਾਣੀ / ਹੁਕਮਨਾਮਾ:'
                     : activeLang === 'en'
-                    ? 'Sri Guru Granth Sahib Saloks (Ang 1364 - 1377):'
-                    : 'श्री गुरु ग्रंथ साहिब सलोक (अंग 1364 - 1377):'}
+                    ? 'Sri Guru Granth Sahib Ji Kabir Vani / Hukamnama:'
+                    : 'श्री गुरु ग्रंथ साहिब जी कबीर वाणी / हुकमनामा:'}
                 </label>
                 <select
                   value={selectedSalokId}
                   onChange={(e) => setSelectedSalokId(e.target.value)}
                   className="w-full p-2.5 rounded-xl border border-black/15 dark:border-white/15 bg-white dark:bg-zinc-900 text-amber-950 dark:text-amber-100 font-serif text-xs"
                 >
-                  {sggsVerses.filter((v) => v.category === 'salok').map((s) => (
+                  {sggsVerses.map((s) => (
                     <option key={s.id} value={s.id}>
-                      {(s.title[activeLang] || s.title.pb)} (Ang {s.ang})
+                      {(s.title[activeLang] || s.title.pb)} ({activeLang === 'pb' ? 'ਅੰਗ' : activeLang === 'en' ? 'Ang' : 'अंग'} {s.ang})
                     </option>
                   ))}
                 </select>
@@ -795,7 +1045,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
               <div className="space-y-2">
                 <div>
                   <label className="block text-[11px] font-bold text-amber-900 dark:text-amber-300 mb-1">
-                    शीर्षक (Header Label):
+                    {activeLang === 'pb' ? 'ਸਿਰਲੇਖ (Header Label):' : activeLang === 'en' ? 'Header Label:' : 'शीर्षक (Header Label):'}
                   </label>
                   <input
                     type="text"
@@ -807,7 +1057,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
                 <div>
                   <label className="block text-[11px] font-bold text-amber-900 dark:text-amber-300 mb-1">
-                    मूल साखी / दोहा (2 lines):
+                    {activeLang === 'pb' ? 'ਮੂਲ ਸਾਖੀ / ਦੋਹਾ (2 ਸਤਰਾਂ):' : activeLang === 'en' ? 'Original Sakhi / Couplet (2 lines):' : 'मूल साखी / दोहा (2 पंक्तियाँ):'}
                   </label>
                   <textarea
                     rows={2}
@@ -819,7 +1069,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
                 <div>
                   <label className="block text-[11px] font-bold text-amber-900 dark:text-amber-300 mb-1">
-                    भावार्थ (Bhavarth Essence):
+                    {activeLang === 'pb' ? 'ਭਾਵਾਰਥ (Spiritual Essence):' : activeLang === 'en' ? 'Spiritual Essence:' : 'भावार्थ (Spiritual Essence):'}
                   </label>
                   <textarea
                     rows={2}
@@ -836,13 +1086,19 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           <div className="space-y-3 pt-2 border-t border-black/10 dark:border-white/10">
             <label className="font-bold text-sm font-serif text-amber-950 dark:text-amber-200 flex items-center gap-2">
               <Sliders className="w-4 h-4 text-amber-600" />
-              <span>४. प्रकाश व पारदर्शिता नियंत्रण (Fine Tuning):</span>
+              <span>
+                {activeLang === 'pb'
+                  ? '੪. ਰੋਸ਼ਨੀ ਤੇ ਪਾਰਦਰਸ਼ਤਾ ਕੰਟਰੋਲ:'
+                  : activeLang === 'en'
+                  ? '4. Lighting & Typography Controls:'
+                  : '४. प्रकाश व पारदर्शिता नियंत्रण:'}
+              </span>
             </label>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <div className="flex justify-between text-[11px] font-bold mb-1">
-                  <span>डार्क विग्नेट छाया:</span>
+                  <span>{activeLang === 'pb' ? 'ਡਾਰਕ ਵਿਗਨੇਟ ਛਾਂ:' : activeLang === 'en' ? 'Dark Vignette Shade:' : 'डार्क विग्नेट छाया:'}</span>
                   <span>{Math.round(overlayOpacity * 100)}%</span>
                 </div>
                 <input
@@ -858,7 +1114,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
               <div>
                 <div className="flex justify-between text-[11px] font-bold mb-1">
-                  <span>भावार्थ कार्ड पारदर्शिता:</span>
+                  <span>{activeLang === 'pb' ? 'ਭਾਵਾਰਥ ਕਾਰਡ ਪਾਰਦਰਸ਼ਤਾ:' : activeLang === 'en' ? 'Meaning Card Opacity:' : 'भावार्थ कार्ड पारदर्शिता:'}</span>
                   <span>{Math.round(glassCardOpacity * 100)}%</span>
                 </div>
                 <input
@@ -874,7 +1130,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
               <div>
                 <div className="flex justify-between text-[11px] font-bold mb-1">
-                  <span>मुख्य बाणी अक्षर आकार (Verse Font):</span>
+                  <span>{activeLang === 'pb' ? 'ਮੁੱਖ ਬਾਣੀ ਅੱਖਰ ਆਕਾਰ:' : activeLang === 'en' ? 'Main Verse Font Size:' : 'मुख्य बाणी अक्षर आकार:'}</span>
                   <span>{verseFontSize}px</span>
                 </div>
                 <input
@@ -890,7 +1146,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
               <div>
                 <div className="flex justify-between text-[11px] font-bold mb-1">
-                  <span>भावार्थ अक्षर आकार (Bhavarth Font):</span>
+                  <span>{activeLang === 'pb' ? 'ਭਾਵਾਰਥ ਅੱਖਰ ਆਕਾਰ:' : activeLang === 'en' ? 'Meaning Font Size:' : 'भावार्थ अक्षर आकार:'}</span>
                   <span>{bhavarthFontSize}px</span>
                 </div>
                 <input
@@ -913,10 +1169,12 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-800 dark:text-amber-200 font-bold hover:bg-amber-500/20 transition cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>रीसेट (Reset All)</span>
+                <span>{activeLang === 'pb' ? 'ਰੀਸੈੱਟ ਕਰੋ' : activeLang === 'en' ? 'Reset All' : 'रीसेट करें'}</span>
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-[11px] text-amber-950 dark:text-amber-200">अक्षर वर्ण:</span>
+                <span className="font-bold text-[11px] text-amber-950 dark:text-amber-200">
+                  {activeLang === 'pb' ? 'ਅੱਖਰ ਰੰਗ:' : activeLang === 'en' ? 'Accent Color:' : 'अक्षर वर्ण:'}
+                </span>
                 {[
                   { name: 'Gold', hex: '#FACC15' },
                   { name: 'Saffron', hex: '#F97316' },
@@ -944,7 +1202,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   onChange={(e) => setShowCornerOrnaments(e.target.checked)}
                   className="rounded text-amber-600 focus:ring-amber-500 w-4 h-4 cursor-pointer"
                 />
-                <span>स्वर्ण बॉर्डर व कोना आभूषण</span>
+                <span>
+                  {activeLang === 'pb'
+                    ? 'ਸੁਨਹਿਰੀ ਬਾਰਡਰ ਤੇ ਕੋਨੇ ਦੀ ਸਜਾਵਟ'
+                    : activeLang === 'en'
+                    ? 'Golden Border & Corner Ornaments'
+                    : 'स्वर्ण बॉर्डर व कोना आभूषण'}
+                </span>
               </label>
             </div>
           </div>
@@ -959,14 +1223,20 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
             <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-3">
               <span className="font-serif font-bold text-sm text-amber-950 dark:text-amber-100 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-600" />
-                <span>लाइव वॉलपेपर पूर्वावलोकन ({aspectRatio})</span>
+                <span>
+                  {activeLang === 'pb'
+                    ? `ਲਾਈਵ ਵਾਲਪੇਪਰ ਪ੍ਰੀਵਿਊ (${aspectRatio})`
+                    : activeLang === 'en'
+                    ? `Live Wallpaper Preview (${aspectRatio})`
+                    : `लाइव वॉलपेपर पूर्वावलोकन (${aspectRatio})`}
+                </span>
               </span>
 
               <button
                 type="button"
                 onClick={handleResetSettings}
                 className="p-1.5 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 text-amber-700 dark:text-amber-300 transition cursor-pointer"
-                title="रीसेट करें (Reset Preview)"
+                title={activeLang === 'pb' ? 'ਰੀਸੈੱਟ ਕਰੋ' : activeLang === 'en' ? 'Reset Preview' : 'रीसेट करें'}
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
@@ -985,7 +1255,11 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 />
               ) : (
                 <div className="p-8 text-white/60 font-serif text-xs animate-pulse">
-                  वॉलपेपर तैयार हो रहा है...
+                  {activeLang === 'pb'
+                    ? 'ਵਾਲਪੇਪਰ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ...'
+                    : activeLang === 'en'
+                    ? 'Rendering wallpaper...'
+                    : 'वॉलपेपर तैयार हो रहा है...'}
                 </div>
               )}
             </div>
@@ -1021,8 +1295,16 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
               >
                 {selectedPreset === globalWallpaper ? <X size={18} /> : <Sparkles size={18} />}
                 <span>
-                  {selectedPreset === globalWallpaper 
-                    ? 'वॉलपेपर हटाएं (Remove Global)' 
+                  {selectedPreset === globalWallpaper
+                    ? activeLang === 'pb'
+                      ? 'ਵਾਲਪੇਪਰ ਹਟਾਓ (Remove Global)'
+                      : activeLang === 'en'
+                      ? 'Remove Global Wallpaper'
+                      : 'वॉलपेपर हटाएं (Remove Global)'
+                    : activeLang === 'pb'
+                    ? 'ਪੂਰੇ ਐਪ ਤੇ ਲਗਾਓ (Apply Globally)'
+                    : activeLang === 'en'
+                    ? 'Apply Across Entire App'
                     : 'पूरे ऐप पर लगाएं (Apply Globally)'}
                 </span>
               </button>
@@ -1034,7 +1316,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 <Download className="w-4.5 h-4.5" />
-                <span>HD वॉलपेपर डाउनलोड करें (Download HD PNG)</span>
+                <span>
+                  {activeLang === 'pb'
+                    ? 'HD ਵਾਲਪੇਪਰ ਡਾਊਨਲੋਡ ਕਰੋ (PNG)'
+                    : activeLang === 'en'
+                    ? 'Download HD Wallpaper (PNG)'
+                    : 'HD वॉलपेपर डाउनलोड करें (PNG)'}
+                </span>
               </button>
 
               <button
@@ -1044,7 +1332,13 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 className="w-full py-3 px-4 rounded-2xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-amber-950 dark:text-amber-100 font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer border border-black/10 dark:border-white/10"
               >
                 <Share2 className="w-4 h-4 text-amber-600" />
-                <span>📱 गैलरी में सहेजें / मोबाइल शेयर</span>
+                <span>
+                  {activeLang === 'pb'
+                    ? '📱 ਗੈਲਰੀ ਵਿੱਚ ਸੇਵ ਕਰੋ / ਸਾਂਝਾ ਕਰੋ'
+                    : activeLang === 'en'
+                    ? '📱 Save to Gallery / Share'
+                    : '📱 गैलरी में सहेजें / मोबाइल शेयर'}
+                </span>
               </button>
             </div>
 
@@ -1052,7 +1346,19 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
             <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-950 dark:text-amber-200 text-[11px] text-left flex items-start gap-2">
               <Smartphone className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                <strong>मोबाइल लॉक-स्क्रीन टिप:</strong> डाउनलोड किए गए चित्र को अपने फ़ोन की Gallery में खोलें और "Set as Wallpaper" (वॉलपेपर बनाएं) चुनें।
+                {activeLang === 'pb' ? (
+                  <>
+                    <strong>ਮੋਬਾਈਲ ਲੌਕ-ਸਕ੍ਰੀਨ ਸੁਝਾਅ:</strong> ਡਾਊਨਲੋਡ ਕੀਤੇ ਚਿੱਤਰ ਨੂੰ ਆਪਣੇ ਫ਼ੋਨ ਦੀ ਗੈਲਰੀ ਵਿੱਚ ਖੋਲ੍ਹੋ ਅਤੇ "Set as Wallpaper" ਚੁਣੋ।
+                  </>
+                ) : activeLang === 'en' ? (
+                  <>
+                    <strong>Lockscreen Tip:</strong> Open the downloaded HD PNG in your phone Gallery and choose "Set as Wallpaper".
+                  </>
+                ) : (
+                  <>
+                    <strong>मोबाइल लॉक-स्क्रीन टिप:</strong> डाउनलोड किए गए चित्र को अपने फ़ोन की Gallery में खोलें और "Set as Wallpaper" चुनें।
+                  </>
+                )}
               </p>
             </div>
           </div>

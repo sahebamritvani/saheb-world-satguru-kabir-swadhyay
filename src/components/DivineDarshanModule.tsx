@@ -18,8 +18,7 @@ import {
   Copy,
   Check,
   Image as ImageIcon,
-  Trash2,
-  Lock
+  Trash2
 } from 'lucide-react';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -240,8 +239,8 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
       } else {
         showToast(
           language === 'hi'
-            ? 'कृपया अधिकृत एडमिन ईमेल (smongia76@gmail.com) से साइन-इन करें।'
-            : 'Please sign in with the authorized admin email (smongia76@gmail.com).'
+            ? 'कृपया अधिकृत एडमिन खाते से साइन-इन करें।'
+            : 'Please sign in with the authorized admin account.'
         );
       }
     } catch {
@@ -666,10 +665,10 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   className="text-xs sm:text-sm font-serif mt-2 max-w-xs leading-relaxed opacity-85"
                 >
                   {language === 'pb'
-                    ? 'ਦਿਵਯ ਪਾਵਨ ਧਿਆਨ ਸਰੂਪ — ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਵੱਲੋਂ ਪਾਵਨ ਚਿੱਤਰ ਪ੍ਰਕਾਸ਼ਿਤ ਹੋਣ ਦੀ ਉਡੀਕ ਵਿੱਚ।'
+                    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਪਾਵਨ ਧਿਆਨ ਤੇ ਦਰਸ਼ਨ ਸਥਲ।'
                     : language === 'en'
-                    ? 'Sacred contemplation sanctuary — awaiting authorized Admin publication of Satguru Kabir Saheb portrait.'
-                    : 'पावन ध्यान एवं दर्शन स्थल — अधिकृत एडमिन द्वारा सतगुरु कबीर साहेब का पावन स्वरूप स्थापित किए जाने हेतु सुरक्षित।'}
+                    ? 'Satguru Kabir Saheb Sacred Contemplation & Darshan Sanctuary.'
+                    : 'सतगुरु कबीर साहेब पावन ध्यान एवं दर्शन स्थल।'}
                 </p>
               </div>
             )}
@@ -678,7 +677,7 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
           </div>
 
           {/* STRICTLY ADMIN-ONLY Upload, Fit & Reset Controls */}
-          {isAdmin ? (
+          {isAdmin && (
             <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
               <button
                 type="button"
@@ -748,14 +747,6 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                 </>
               )}
             </div>
-          ) : (
-            <p className="text-xs font-serif opacity-75 italic max-w-md px-2">
-              {language === 'pb'
-                ? '🔒 ਇਹ ਪਾਵਨ ਦਰਸ਼ਨ ਸਥਾਨ ਸਰਵਜਨਕ ਤੌਰ ਤੇ ਸੁਰੱਖਿਅਤ (Read-Only) ਹੈ। ਕੇਵਲ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਹੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਸਰੂਪ ਸਥਾਪਿਤ ਜਾਂ ਬਦਲ ਸਕਦੇ ਹਨ।'
-                : language === 'en'
-                ? '🔒 This sacred darshan frame is read-only for visitors. Only the Authorized Admin can set or change Satguru Kabir Saheb’s portrait.'
-                : '🔒 यह पावन दर्शन स्थल सभी साधकों हेतु सुरक्षित (Read-Only) है। केवल अधिकृत एडमिन ही सतगुरु कबीर साहेब का पावन स्वरूप स्थापित या परिवर्तित कर सकते हैं।'}
-            </p>
           )}
 
           {/* Sacred Mantra & Offer Flowers Actions */}
@@ -1273,12 +1264,16 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                 <p className="text-[11px] font-serif opacity-90" style={{ color: theme.textSecondary }}>
                   {isAdmin
                     ? '👑 एडमिन मोड सक्रिय: आप नए पावन चित्र जोड़ या हटा सकते हैं।'
-                    : '🔒 सार्वजनिक रीड-ओनली: केवल अधिकृत एडमिन द्वारा प्रकाशित पावन चित्र।'}
+                    : (language === 'pb'
+                        ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਪਾਵਨ ਧਾਮ ਦਰਸ਼ਨ ਸੰਗ੍ਰਹਿ'
+                        : language === 'en'
+                        ? 'Satguru Kabir Saheb Sacred Darshan Collection'
+                        : 'सतगुरु कबीर साहेब पावन दर्शन चित्र संग्रह')}
                 </p>
               </div>
             </div>
 
-            {isAdmin ? (
+            {isAdmin && (
               <div>
                 <input
                   ref={galleryInputRef}
@@ -1298,10 +1293,6 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   <span>{isUploadingGallery ? 'अपलोड हो रहा है...' : '+ नया चित्र अपलोड (Admin)'}</span>
                 </button>
               </div>
-            ) : (
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-stone-500/10 border border-stone-500/20 flex items-center gap-1 opacity-75">
-                <Lock className="w-3 h-3" /> Read-Only
-              </span>
             )}
           </div>
 

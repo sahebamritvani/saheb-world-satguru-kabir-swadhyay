@@ -7,7 +7,6 @@ import {
   Share2,
   Sparkles,
   ShieldCheck,
-  Lock,
   ArrowLeft,
   CheckCircle2,
   BookmarkCheck,
@@ -291,34 +290,6 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
         </p>
       </div>
 
-      {/* 🔒 100% Read-Only Public Lockdown Assurance Banner */}
-      <div 
-        style={{
-          backgroundColor: theme.mode === 'mystic_dark' ? '#1E1812' : '#FEF3C7',
-          borderColor: theme.mode === 'mystic_dark' ? '#D97706' : '#F59E0B',
-        }}
-        className="p-4 sm:p-5 rounded-2xl border-2 shadow-sm space-y-2"
-      >
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-amber-600/20 flex items-center justify-center shrink-0">
-            <Lock className="w-4 h-4 text-amber-700 dark:text-amber-300" />
-          </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-black font-serif text-amber-950 dark:text-amber-200 flex items-center gap-1.5">
-              <span>{language === 'pb' ? '🔒 ੧੦੦% ਸੁਰੱਖਿਅਤ ਤੇ ਅਪਰਿਵਰਤਨੀਯ ਪਾਵਨ ਵਾਚਨਾਲਯ (Read-Only Mode)' : language === 'en' ? '🔒 100% Protected & Tamper-Proof Sanctuary (Read-Only)' : '🔒 १००% सुरक्षित एवं अपरिवर्तनीय पावन वाचनालय (Read-Only Mode)'}</span>
-              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            </h4>
-            <p className="text-[0.6875rem] sm:text-xs text-amber-900/80 dark:text-amber-300/80 font-serif leading-relaxed mt-0.5">
-              {language === 'pb'
-                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪਾਵਨ ਮਰਿਆਦਾ ਅਤੇ ਬਾਣੀ ਦੀ ਸ਼ੁੱਧਤਾ ਲਈ ਇਹ ਐਪ ਜਨਤਕ ਤੌਰ \'ਤੇ ਪੂਰਨ ਅਪਰਿਵਰਤਨੀਯ ਹੈ। ਕੋਈ ਵੀ ਬਾਹਰੀ ਵਿਅਕਤੀ ਇਸ ਵਿੱਚ ਕੋਈ ਬਦਲਾਅ ਜਾਂ ਛੇੜਛਾੜ ਨਹੀਂ ਕਰ ਸਕਦਾ।'
-                : language === 'en'
-                ? 'To preserve the supreme sanctity and pristine purity of Satguru Kabir Saheb’s bani, this app is completely tamper-proof and publically read-only. No external edits or modifications can be made.'
-                : 'सतगुरु कबीर साहेब की पावन मर्यादा और वाणी की शुद्धता बनाए रखने हेतु यह ऐप सार्वजनिक रूप से पूर्णतः अपरिवर्तनीय (Read-Only) है। कोई भी बाहरी व्यक्ति या उपयोगकर्ता इसमें कोई फेरबदल या अवांछित बदलाव नहीं कर सकता।'}
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Category Pills */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-2 no-scrollbar">
         {[
@@ -449,7 +420,7 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
 
                   <div className="flex items-center gap-1 text-[0.625rem] text-emerald-700 dark:text-emerald-400 font-serif font-bold">
                     <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>{language === 'pb' ? 'ਸੁਰੱਖਿਅਤ ਪਾਠ' : language === 'en' ? 'Read-Only' : 'सुरक्षित वाचनालय'}</span>
+                    <span>{language === 'pb' ? 'ਪਾਵਨ ਵਿਚਾਰ' : language === 'en' ? 'Sacred Vani' : 'पावन सत्संग वाणी'}</span>
                   </div>
                 </div>
               </motion.div>

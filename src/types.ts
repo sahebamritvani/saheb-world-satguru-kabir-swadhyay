@@ -212,7 +212,12 @@ export type AppView =
   | 'aatma-bhushan'
   | 'gyan-chakra'
   | 'nature-wallpaper'
-  | 'hukamnama';
+  | 'mool-siddhant'
+  | 'hukamnama'
+  | 'vani-card-maker'
+  | 'satvik-sankalp'
+  | 'kabir-gyan-quiz'
+  | 'vansh-bayalis';
 
 export type ReaderCustomTheme = 'mool' | 'pothi' | 'black' | 'netra' | 'dark' | 'light' | 'sepia' | 'classic' | 'comfort' | 'deep_sepia' | 'midnight';
 export type ReaderFontSize = 'small' | 'normal' | 'medium' | 'large' | 'xlarge' | 'elderly' | 'xl'; // A-, A, A+, A++, A+++ (Elderly Senior Citizen 8XL)

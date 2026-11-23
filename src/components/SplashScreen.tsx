@@ -198,6 +198,17 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
               {footerText}
             </div>
 
+            {/* Subtle Golden-bordered Core Principle Card */}
+            <div className="w-full px-3.5 py-2 rounded-xl bg-amber-500/10 border border-amber-400/50 shadow-xs text-center backdrop-blur-xs">
+              <p className="text-[11px] sm:text-xs font-serif font-black text-[#8C2818] dark:text-amber-200 leading-snug">
+                {activeLang === 'pb' 
+                  ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ। ਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥'
+                  : activeLang === 'en'
+                  ? 'Master the One Satyanaam, and everything in life falls into place; Kabir says, without this One Root, the entire life goes in vain.'
+                  : 'सत्यनाम को साध ले, सब कुछ सधता जाय। कहैं कबीर इस मूल बिन, सारा जीवन जाय॥'}
+              </p>
+            </div>
+
             {/* Direct Enter Button */}
             <button
               type="button"

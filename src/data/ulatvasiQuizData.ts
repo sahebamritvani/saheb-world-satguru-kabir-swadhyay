@@ -167,7 +167,7 @@ export const ULATVASI_CORE_QUESTIONS: UlatvasiQuestion[] = [
       en: 'Moves without feet, hears without ears, works without hands and speaks without mouth.',
     },
     clueHint: {
-      hi: 'यह निराकार परम सत्ता (सत्यपुरुष/सतनाम) का वर्णन है जो बिना भौतिक इंद्रियों के सर्वव्यापी है।',
+      hi: 'यह निराकार परम सत्ता (सत्यपुरुष/सत्यनाम) का वर्णन है जो बिना भौतिक इंद्रियों के सर्वव्यापी है।',
       pb: 'ਇਹ ਨਿਰਾਕਾਰ ਪਰਮ ਸੱਤਾ (ਸਤਪੁਰਸ਼) ਦਾ ਵਰਣਨ ਹੈ ਜੋ ਬਿਨਾਂ ਸਰੀਰਕ ਅੰਗਾਂ ਦੇ ਸਰਬ-ਵਿਆਪਕ ਹੈ।',
       en: 'Describes the Formless Supreme Being who is omnipresent beyond physical organs.',
     },
@@ -210,7 +210,7 @@ export const ULATVASI_CORE_QUESTIONS: UlatvasiQuestion[] = [
       },
       kabirPhilosophy: {
         hi: 'जहाँ शब्द, मन और इंद्रियाँ थक जाती हैं, वहाँ से सत्यनाम का निराकार अनुभव आरंभ होता है।',
-        pb: 'ਜਿੱਥੇ ਸ਼ਬਦ ਅਤੇ ਇੰਦਰੀਆਂ ਰੁਕ ਜਾਂਦੀਆਂ ਹਨ, ਉੱਥੋਂ ਸਤਿਨਾਮ ਦਾ ਨਿਰਾਕਾਰ ਅਨੁਭਵ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ।',
+        pb: 'ਜਿੱਥੇ ਸ਼ਬਦ ਅਤੇ ਇੰਦਰੀਆਂ ਰੁਕ ਜਾਂਦੀਆਂ ਹਨ, ਉੱਥੋਂ ਸਤਯਨਾਮ ਦਾ ਨਿਰਾਕਾਰ ਅਨੁਭਵ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ।',
         en: 'Where speech and senses stop, the formless experience of Satyanaam begins.',
       },
       parakhiInsight: {

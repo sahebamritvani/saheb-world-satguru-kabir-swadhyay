@@ -143,7 +143,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
       >
         <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider flex items-center gap-1.5" style={{ color: theme.sacredMaroon }}>
           <Layers className="w-4 h-4 text-amber-600" />
-          <span>{isHi ? 'भंडारण श्रेणी विवरण (Detailed Allocation)' : 'Storage Category Breakdown'}</span>
+          <span>{isHi ? 'भंडारण श्रेणी विवरण' : isPb ? 'ਭੰਡਾਰਨ ਸ਼੍ਰੇਣੀ ਵੇਰਵਾ' : 'Storage Category Breakdown'}</span>
         </h4>
 
         {successNotice && (
@@ -157,10 +157,10 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
           <table className="w-full text-xs text-left border-collapse">
             <thead>
               <tr style={{ borderColor: theme.cardBorder }} className="border-b text-[10px] uppercase opacity-60 tracking-wider">
-                <th className="py-2.5 font-bold">{isHi ? 'श्रेणी (Category)' : 'Category'}</th>
-                <th className="py-2.5 font-bold text-center">{isHi ? 'वर्णन (Details)' : 'Scope'}</th>
-                <th className="py-2.5 font-bold text-right">{isHi ? 'आकार (Size)' : 'Size'}</th>
-                <th className="py-2.5 font-bold text-right">{isHi ? 'प्रबंध (Action)' : 'Manage'}</th>
+                <th className="py-2.5 font-bold">{isHi ? 'श्रेणी' : isPb ? 'ਸ਼੍ਰੇਣੀ' : 'Category'}</th>
+                <th className="py-2.5 font-bold text-center">{isHi ? 'वर्णन' : isPb ? 'ਵੇਰਵਾ' : 'Scope'}</th>
+                <th className="py-2.5 font-bold text-right">{isHi ? 'आकार' : isPb ? 'ਆਕਾਰ' : 'Size'}</th>
+                <th className="py-2.5 font-bold text-right">{isHi ? 'प्रबंध' : isPb ? 'ਪ੍ਰਬੰਧ' : 'Manage'}</th>
               </tr>
             </thead>
             <tbody className="divide-y" style={{ borderColor: theme.cardBorder }}>
@@ -170,7 +170,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                   📝 {isHi ? 'साधना जर्नल' : isPb ? 'ਸਾਧਨਾ ਜਰਨਲ' : 'Diary Entries'}
                 </td>
                 <td className="py-3 text-stone-500 dark:text-stone-400">
-                  {isHi ? 'व्यक्तिगत विचार, संकल्प व टिप्पणियां' : 'My Reflections & Daily logs'}
+                  {isHi ? 'व्यक्तिगत विचार, संकल्प व टिप्पणियां' : isPb ? 'ਨਿੱਜੀ ਵਿਚਾਰ, ਸੰਕਲਪ ਅਤੇ ਟਿੱਪਣੀਆਂ' : 'My Reflections & Daily logs'}
                 </td>
                 <td className="py-3 text-right font-mono font-bold" style={{ color: theme.sacredMaroon }}>
                   {storageDetails.diary} KB
@@ -180,7 +180,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                     onClick={() => triggerConfirmModal('diary')}
                     className="px-2.5 py-1 text-[11px] font-bold text-red-600 bg-red-500/5 hover:bg-red-500/15 border border-red-200 dark:border-red-900/30 rounded-lg cursor-pointer transition"
                   >
-                    {isHi ? 'साफ़ करें' : 'Clear'}
+                    {isHi ? 'साफ़ करें' : isPb ? 'ਸਾਫ਼ ਕਰੋ' : 'Clear'}
                   </button>
                 </td>
               </tr>
@@ -191,7 +191,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                   📖 {isHi ? 'स्वाध्याय प्रगति' : isPb ? 'ਪਠਨ ਪ੍ਰਗਤੀ' : 'Progress Cache'}
                 </td>
                 <td className="py-3 text-stone-500 dark:text-stone-400">
-                  {isHi ? 'अनलॉक सोपान, अंतिम साखी व बुकमार्क' : 'Step unlocking & Reading index'}
+                  {isHi ? 'अनलॉक सोपान, अंतिम साखी व बुकमार्क' : isPb ? 'ਅਨਲੌਕ ਪੜਾਅ, ਅੰਤਿਮ ਸਾਖੀ ਅਤੇ ਬੁੱਕਮਾਰਕ' : 'Step unlocking & Reading index'}
                 </td>
                 <td className="py-3 text-right font-mono font-bold" style={{ color: theme.sacredMaroon }}>
                   {storageDetails.progress} KB
@@ -201,7 +201,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                     onClick={() => triggerConfirmModal('progress')}
                     className="px-2.5 py-1 text-[11px] font-bold text-red-600 bg-red-500/5 hover:bg-red-500/15 border border-red-200 dark:border-red-900/30 rounded-lg cursor-pointer transition"
                   >
-                    {isHi ? 'रीसेट करें' : 'Reset'}
+                    {isHi ? 'रीसेट करें' : isPb ? 'ਰੀਸੈੱਟ ਕਰੋ' : 'Reset'}
                   </button>
                 </td>
               </tr>
@@ -212,13 +212,13 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                   🎯 {isHi ? 'साधना लक्ष्य' : isPb ? 'ਸਾਧਨਾ ਟੀਚੇ' : 'Sadhana Goals'}
                 </td>
                 <td className="py-3 text-stone-500 dark:text-stone-400">
-                  {isHi ? 'अखंड प्रवाह, माला जाप व ध्यान सत्र' : 'Daily meditation & Simran logs'}
+                  {isHi ? 'अखंड प्रवाह, माला जाप व ध्यान सत्र' : isPb ? 'ਅਖੰਡ ਪ੍ਰਵਾਹ, ਮਾਲਾ ਜਾਪ ਅਤੇ ਧਿਆਨ ਸੈਸ਼ਨ' : 'Daily meditation & Simran logs'}
                 </td>
                 <td className="py-3 text-right font-mono font-bold" style={{ color: theme.sacredMaroon }}>
                   {storageDetails.goals} KB
                 </td>
                 <td className="py-3 text-right text-stone-400 italic text-[11px] font-serif">
-                  {isHi ? 'सिंक सुरक्षित' : 'Synced'}
+                  {isHi ? 'सिंक सुरक्षित' : isPb ? 'ਸਿੰਕ ਸੁਰੱਖਿਅਤ' : 'Synced'}
                 </td>
               </tr>
 
@@ -228,13 +228,13 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                   ⚙️ {isHi ? 'ऐप प्राथमिकताएं' : isPb ? 'ਮੋਡ ਤੇ ਸੈਟਿੰਗ' : 'Preferences'}
                 </td>
                 <td className="py-3 text-stone-500 dark:text-stone-400">
-                  {isHi ? 'पाठ आकार, थीम मोड, भाषा' : 'Font size, sound & reading layout'}
+                  {isHi ? 'पाठ आकार, थीम मोड, भाषा' : isPb ? 'ਪਾਠ ਆਕਾਰ, ਥੀਮ ਮੋਡ ਅਤੇ ਭਾਸ਼ਾ' : 'Font size, sound & reading layout'}
                 </td>
                 <td className="py-3 text-right font-mono font-bold" style={{ color: theme.sacredMaroon }}>
                   {storageDetails.prefs} KB
                 </td>
                 <td className="py-3 text-right text-stone-400 italic text-[11px] font-serif">
-                  {isHi ? 'सुरक्षित' : 'Protected'}
+                  {isHi ? 'सुरक्षित' : isPb ? 'ਸੁਰੱਖਿਅਤ' : 'Protected'}
                 </td>
               </tr>
             </tbody>
@@ -245,7 +245,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
         <div className="pt-3 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style={{ borderColor: theme.cardBorder }}>
           <div className="flex items-center gap-1.5 opacity-70">
             <RefreshCw className="w-3.5 h-3.5 text-amber-600 animate-spin" style={{ animationDuration: '6s' }} />
-            <span>{isHi ? 'डेटा प्रबंधन स्वायत्तता रिपोर्ट' : 'Autonomous local data engine'}</span>
+            <span>{isHi ? 'डेटा प्रबंधन स्वायत्तता रिपोर्ट' : isPb ? 'ਸਥਾਨਕ ਡੇਟਾ ਪ੍ਰਬੰਧਨ ਰਿਪੋਰਟ' : 'Autonomous local data engine'}</span>
           </div>
 
           <button
@@ -253,7 +253,7 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
             className="w-full sm:w-auto px-4 py-2 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-700 hover:scale-105 active:scale-95 transition cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
           >
             <Trash2 className="w-4 h-4" />
-            <span>{isHi ? 'संपूर्ण ऐप डेटा साफ़ करें (Master Reset)' : 'Clear App Cache & All Data'}</span>
+            <span>{isHi ? 'संपूर्ण ऐप डेटा साफ़ करें' : isPb ? 'ਸਾਰਾ ਐਪ ਡੇਟਾ ਸਾਫ਼ ਕਰੋ' : 'Clear App Cache & All Data'}</span>
           </button>
         </div>
       </div>
@@ -271,15 +271,27 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
 
             <div className="space-y-1.5">
               <h4 className="font-serif font-black text-sm uppercase text-red-600">
-                {isHi ? '⚠️ अंतिम चेतावनी (Double Confirmation)' : '⚠️ Master Reset Confirmation'}
+                {isHi ? '⚠️ अंतिम चेतावनी' : isPb ? '⚠️ ਅੰਤਿਮ ਚੇਤਾਵਨੀ' : '⚠️ Master Reset Confirmation'}
               </h4>
               <p style={{ color: theme.textPrimary }} className="text-xs font-serif leading-relaxed">
                 {resetCategory === 'diary' ? (
-                  isHi ? 'क्या आप सचमुच अपने सभी साधना जर्नल डायरी के पावन विचारों को हटाना चाहते हैं? यह प्रक्रिया अपरिवर्तनीय है!' : 'Do you really want to permanently delete all your spiritual diary and reflection notes? This cannot be undone.'
+                  isHi
+                    ? 'क्या आप सचमुच अपने सभी साधना जर्नल डायरी के पावन विचारों को हटाना चाहते हैं? यह प्रक्रिया अपरिवर्तनीय है!'
+                    : isPb
+                    ? 'ਕੀ ਤੁਸੀਂ ਸੱਚਮੁੱਚ ਆਪਣੀ ਸਾਧਨਾ ਡਾਇਰੀ ਦੇ ਸਾਰੇ ਨੋਟ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ? ਇਹ ਵਾਪਸ ਨਹੀਂ ਲਏ ਜਾ ਸਕਦੇ।'
+                    : 'Do you really want to permanently delete all your spiritual diary and reflection notes? This cannot be undone.'
                 ) : resetCategory === 'progress' ? (
-                  isHi ? 'क्या आप अपने सभी सोपानों की प्रगति और स्वाध्याय पठन इतिहास को रीसेट करना चाहते हैं?' : 'Do you really want to reset all step unlocks and study history back to default step 1?'
+                  isHi
+                    ? 'क्या आप अपने सभी सोपानों की प्रगति और स्वाध्याय पठन इतिहास को रीसेट करना चाहते हैं?'
+                    : isPb
+                    ? 'ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਸਾਰੇ ਪੜਾਵਾਂ ਦੀ ਪ੍ਰਗਤੀ ਅਤੇ ਸਵਾਧਿਆਏ ਇਤਿਹਾਸ ਨੂੰ ਰੀਸੈੱਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?'
+                    : 'Do you really want to reset all step unlocks and study history back to default step 1?'
                 ) : (
-                  isHi ? 'क्या आप सचमुच पूरे साहिबवर्ल्ड ऐप के डेटा और स्थानीय फ़ाइलों को मिटाना चाहते हैं? आपकी प्रगति और डायरी दोनों स्थायी रूप से डिलीट हो जाएंगे।' : 'This will perform a full factory reset of SahebWorld, clearing all progress, custom themes, goals, and spiritual diary logs. Are you absolutely certain?'
+                  isHi
+                    ? 'क्या आप सचमुच पूरे साहेबवर्ल्ड ऐप के डेटा और स्थानीय फ़ाइलों को मिटाना चाहते हैं? आपकी प्रगति और डायरी दोनों स्थायी रूप से डिलीट हो जाएंगे।'
+                    : isPb
+                    ? 'ਕੀ ਤੁਸੀਂ ਸੱਚਮੁੱਚ ਸਾਹੇਬਵਰਲਡ ਐਪ ਦਾ ਸਾਰਾ ਸਥਾਨਕ ਡੇਟਾ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ? ਤੁਹਾਡੀ ਪ੍ਰਗਤੀ ਤੇ ਡਾਇਰੀ ਦੋਵੇਂ ਹਮੇਸ਼ਾ ਲਈ ਮਿਟ ਜਾਣਗੀਆਂ।'
+                    : 'This will perform a full factory reset of SahebWorld, clearing all progress, custom themes, goals, and spiritual diary logs. Are you absolutely certain?'
                 )}
               </p>
             </div>
@@ -294,14 +306,14 @@ export const StorageCapacityReport: React.FC<StorageCapacityReportProps> = ({
                 style={{ backgroundColor: theme.bgSecondary, color: theme.textPrimary, borderColor: theme.cardBorder }}
                 className="flex-1 py-2 rounded-xl border text-xs font-bold hover:bg-black/5 active:scale-95 transition cursor-pointer"
               >
-                {isHi ? 'नहीं, वापस जाएं' : 'Cancel'}
+                {isHi ? 'नहीं, वापस जाएं' : isPb ? 'ਨਹੀਂ, ਵਾਪਸ ਜਾਓ' : 'Cancel'}
               </button>
 
               <button
                 onClick={() => handleClearCache(resetCategory || 'all')}
                 className="flex-1 py-2 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-700 active:scale-95 transition cursor-pointer"
               >
-                {isHi ? 'हाँ, नष्ट करें' : 'Yes, Delete'}
+                {isHi ? 'हाँ, नष्ट करें' : isPb ? 'ਹਾਂ, ਮਿਟਾਓ' : 'Yes, Delete'}
               </button>
             </div>
           </div>

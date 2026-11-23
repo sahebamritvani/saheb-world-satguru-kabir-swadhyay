@@ -29,7 +29,7 @@ export const getSakhis = async (): Promise<Sakhi[]> => {
 
 export const addSakhi = async (sakhi: Sakhi) => {
   if (!isFirebaseAdminVerified()) {
-    throw new Error('केवल अधिकृत एडमिन (smongia76@gmail.com) ही नई साखी जोड़ सकते हैं।');
+    throw new Error('केवल अधिकृत एडमिन ही नई साखी जोड़ सकते हैं।');
   }
   try {
     const payload: Record<string, string> = {
@@ -48,7 +48,7 @@ export const addSakhi = async (sakhi: Sakhi) => {
 
 export const deleteSakhi = async (sakhiId: string) => {
   if (!isFirebaseAdminVerified()) {
-    throw new Error('केवल अधिकृत एडमिन (smongia76@gmail.com) ही साखी हटा सकते हैं।');
+    throw new Error('केवल अधिकृत एडमिन ही साखी हटा सकते हैं।');
   }
   try {
     await deleteDoc(doc(db, 'sakhis', sakhiId));
@@ -71,7 +71,7 @@ export const getQuizQuestions = async (): Promise<QuizQuestion[]> => {
 
 export const addQuizQuestion = async (question: QuizQuestion) => {
   if (!isFirebaseAdminVerified()) {
-    throw new Error('केवल अधिकृत एडमिन (smongia76@gmail.com) ही प्रश्नोत्तरी जोड़ सकते हैं।');
+    throw new Error('केवल अधिकृत एडमिन ही प्रश्नोत्तरी जोड़ सकते हैं।');
   }
   try {
     const payload = {

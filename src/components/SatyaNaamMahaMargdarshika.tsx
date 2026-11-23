@@ -355,8 +355,8 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
               {language === 'pb'
                 ? 'ਸੁਲਤਾਨਪੁਰ ਲੋਧੀ, ਕਾਲੀ ਵੇਈਂ ਨਦੀ ਪ੍ਰਸੰਗ ਅਤੇ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਯਨਾਮ ਦਾ ਪ੍ਰਮਾਣ'
                 : language === 'en'
-                ? 'Sultanpur Lodhi, Bein River Immersion, and the Glory of Satnam in Sri Guru Granth Sahib'
-                : 'सुल्तानपुर लोधी, काली वेईं नदी प्रसंग एवं श्री गुरु ग्रंथ साहिब में सत्यनाम प्रमाण'}
+                ? 'Sultanpur Lodhi, Bein River Immersion, and the Glory of Satyanaam in Sri Guru Granth Sahib'
+                : 'सुल्तानपुर लोधी, काली वेईं नदी प्रसंग एवं सत्यनाम प्रमाण'}
             </p>
           </div>
 

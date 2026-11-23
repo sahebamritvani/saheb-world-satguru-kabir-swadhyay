@@ -9,7 +9,7 @@ import {
   stableStringHash,
   buildMoolSakhiConnection,
 } from '../data/step8CrossReferenceVault';
-import { buildFiveDimensionQuiz, shuffleGeneratedQuiz } from './quizGenerator';
+import { buildFiveDimensionQuiz, shuffleGeneratedQuiz, generateDistractorFeedback } from './quizGenerator';
 import { buildStep6EsotericContent } from './swadhyayContentEngine';
 
 export interface QuizOption {
@@ -145,11 +145,128 @@ function fisherYatesShuffle<T>(arr: T[]): T[] {
   return copy;
 }
 
+function cleanQuizPrefix(raw: string): string {
+  return (raw || '').replace(/^[✓✗✔✕❌]\s*[^!|।]+[!|।]\s*/, '').trim() || (raw || '').trim();
+}
+
+export function normalizeElevenStepQuizQuestion(
+  rawQ: any,
+  language: Language,
+  qIdx: number,
+  fallbackQuestion?: ElevenStepQuizQuestion
+): ElevenStepQuizQuestion {
+  const rawOptionsInput = Array.isArray(rawQ?.options) ? rawQ.options : [];
+  const rawQuestionText =
+    typeof rawQ?.questionText === 'string' && rawQ.questionText.trim()
+      ? rawQ.questionText.trim()
+      : typeof rawQ?.question === 'string' && rawQ.question.trim()
+      ? rawQ.question.trim()
+      : fallbackQuestion?.questionText || fallbackQuestion?.question || '';
+
+  const extractedTexts: Array<{ text: string; isCorrect?: boolean; feedback?: string }> = [];
+  for (let i = 0; i < 4; i++) {
+    const item = rawOptionsInput[i];
+    if (typeof item === 'string') {
+      const txt = item.trim();
+      if (txt) extractedTexts.push({ text: txt });
+    } else if (item && typeof item === 'object') {
+      const txt = String(item.text || item.label || item.option || '').trim();
+      if (txt) {
+        extractedTexts.push({
+          text: txt,
+          isCorrect: typeof item.isCorrect === 'boolean' ? item.isCorrect : undefined,
+          feedback: typeof item.feedback === 'string' ? item.feedback.trim() : undefined,
+        });
+      }
+    }
+  }
+
+  if (!rawQuestionText || extractedTexts.length < 4) {
+    if (fallbackQuestion && Array.isArray(fallbackQuestion.options) && fallbackQuestion.options.length >= 4) {
+      return fallbackQuestion;
+    }
+  }
+
+  const padFallbackOpts = fallbackQuestion?.options || [];
+  while (extractedTexts.length < 4) {
+    const fbOpt = padFallbackOpts[extractedTexts.length];
+    extractedTexts.push({
+      text:
+        fbOpt?.text ||
+        (language === 'pb'
+          ? `ਵਿਕਲਪ ${extractedTexts.length + 1}`
+          : language === 'en'
+          ? `Option ${extractedTexts.length + 1}`
+          : `विकल्प ${extractedTexts.length + 1}`),
+      isCorrect: false,
+      feedback: fbOpt?.feedback,
+    });
+  }
+
+  const objCorrectIdx = extractedTexts.findIndex((o) => o.isCorrect === true);
+  const rawCorrectIdx =
+    objCorrectIdx >= 0
+      ? objCorrectIdx
+      : typeof rawQ?.correctIndex === 'number' && rawQ.correctIndex >= 0 && rawQ.correctIndex < extractedTexts.length
+      ? rawQ.correctIndex
+      : 0;
+
+  const baseExplanation = cleanQuizPrefix(
+    (typeof rawQ?.explanation === 'string' && rawQ.explanation.trim()) ||
+      extractedTexts[rawCorrectIdx]?.feedback ||
+      fallbackQuestion?.explanation ||
+      (language === 'pb'
+        ? 'ਇਹ ਉੱਤਰ ਸਾਖੀ ਦੇ ਮੂਲ ਭਾਵ ਅਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਉਪਦੇਸ਼ ਨਾਲ ਸਹੀ ਮੇਲ ਖਾਂਦਾ ਹੈ।'
+        : language === 'en'
+        ? 'This answer directly aligns with the core spiritual message of this Sakhi.'
+        : 'यह उत्तर इस साखी के मूल भाव और सतगुरु कबीर साहेब के पावन उपदेश के पूर्णतः अनुरूप है।')
+  );
+
+  const correctPrefix =
+    language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ! ' : language === 'en' ? '✓ Correct Answer! ' : '✓ सही उत्तर! ';
+
+  const normalizedOptions: QuizOption[] = extractedTexts.slice(0, 4).map((opt, idx) => {
+    const isCorrect = idx === rawCorrectIdx;
+    if (isCorrect) {
+      const fb =
+        opt.feedback && !opt.feedback.startsWith('✗') ? cleanQuizPrefix(opt.feedback) : baseExplanation;
+      return {
+        text: opt.text,
+        isCorrect: true,
+        feedback: fb.startsWith('✓') ? fb : `${correctPrefix}${fb}`,
+      };
+    }
+
+    const existingWrongFb =
+      opt.feedback && !opt.feedback.startsWith('✓') ? cleanQuizPrefix(opt.feedback) : '';
+    const smartDistractor = generateDistractorFeedback(opt.text, language);
+    return {
+      text: opt.text,
+      isCorrect: false,
+      feedback: existingWrongFb ? `✗ ${existingWrongFb}` : smartDistractor,
+    };
+  });
+
+  return {
+    id: String(rawQ?.id || fallbackQuestion?.id || `sakhi-q-${qIdx + 1}`),
+    angle: String(rawQ?.angle || fallbackQuestion?.angle || 'बोध परख'),
+    questionText: rawQuestionText,
+    question: rawQuestionText,
+    options: normalizedOptions,
+    correctIndex: rawCorrectIdx,
+    explanation: baseExplanation,
+  };
+}
+
 /**
  * Shuffles BOTH the order of quiz questions AND option positions (A, B, C, D) on every attempt.
  */
-export function shuffleElevenStepQuiz(questions: ElevenStepQuizQuestion[]): ElevenStepQuizQuestion[] {
-  return shuffleGeneratedQuiz(questions);
+export function shuffleElevenStepQuiz(
+  questions: ElevenStepQuizQuestion[],
+  language: Language = 'hi'
+): ElevenStepQuizQuestion[] {
+  const normalized = questions.map((q, idx) => normalizeElevenStepQuizQuestion(q, language, idx));
+  return shuffleGeneratedQuiz(normalized);
 }
 
 /**
@@ -790,30 +907,44 @@ export async function fetchAiElevenStepSwadhyay(params: {
     throw new Error('Invalid response structure from AI Swadhyay endpoint.');
   }
 
-  const payload = json.data as SwadhyayAiResponsePayload;
+  const normalizedServerQuestions = Array.isArray(json.data.step5_quiz)
+    ? json.data.step5_quiz.slice(0, 5).map((q: any, idx: number) =>
+        normalizeElevenStepQuizQuestion(q, language, idx)
+      )
+    : [];
+  const payload = {
+    ...(json.data as SwadhyayAiResponsePayload),
+    step5_quiz: normalizedServerQuestions,
+  };
   aiSwadhyayCache.set(cacheKey, payload);
   return { payload, fromCache: false };
 }
 
 export async function shuffleQuizViaBackend(
-  questions: ElevenStepQuizQuestion[]
+  questions: ElevenStepQuizQuestion[],
+  language: Language = 'hi'
 ): Promise<ElevenStepQuizQuestion[]> {
+  const normalizedInput = questions.map((q, idx) =>
+    normalizeElevenStepQuizQuestion(q, language, idx)
+  );
   try {
     const res = await fetch('/api/swadhyay-quiz-shuffle', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ questions }),
+      body: JSON.stringify({ questions: normalizedInput }),
     });
     if (res.ok) {
       const json = await res.json();
       if (Array.isArray(json?.questions) && json.questions.length > 0) {
-        return json.questions;
+        return json.questions.map((q: any, idx: number) =>
+          normalizeElevenStepQuizQuestion(q, language, idx, normalizedInput[idx])
+        );
       }
     }
   } catch {
     // Offline fallback still shuffles questions and A/B/C/D options randomly
   }
-  return shuffleElevenStepQuiz(questions);
+  return shuffleElevenStepQuiz(normalizedInput, language);
 }
 
 export function extractMultilingualWordsFromAi(
@@ -838,8 +969,15 @@ export function mergeAiIntoElevenStepData(
       : base.step8_crossReferences.references;
 
   const validQuestions =
-    Array.isArray(ai.step5_quiz) && ai.step5_quiz.length >= 5
-      ? ai.step5_quiz.slice(0, 5)
+    Array.isArray(ai.step5_quiz) && ai.step5_quiz.length > 0
+      ? ai.step5_quiz.slice(0, 5).map((q, idx) =>
+          normalizeElevenStepQuizQuestion(
+            q,
+            language,
+            idx,
+            base.step5_quiz.questions[idx] || base.step5_quiz.questions[0]
+          )
+        )
       : base.step5_quiz.questions;
 
   const validBullets =

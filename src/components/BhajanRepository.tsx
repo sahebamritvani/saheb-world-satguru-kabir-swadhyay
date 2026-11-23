@@ -28,7 +28,7 @@ const DAMAKHEDA_BHAJANS: TraditionalBhajan[] = [
       'सतगुरु की महिमा अनंत, अनंत किया उपकार।',
       'लोचन अनंत उघाड़िया, अनंत दिखाया सृजनहार॥',
       'आरती कीजै सतगुरु की, पातक दोष मिटै सब जी की।',
-      'सतलोक धाम ते साहिब आए, बन्दीछोड़ सतगुरु कहलाए॥'
+      'सतलोक धाम ते साहेब आए, बन्दीछोड़ सतगुरु कहलाए॥'
     ],
     duration: '12:45 min',
     dhunType: 'tanpura'
@@ -49,7 +49,7 @@ const DAMAKHEDA_BHAJANS: TraditionalBhajan[] = [
   {
     id: 'bhajan-3',
     title: { hi: 'चेतावनी शबद - जागो जागो मुसाफिर भाई', pb: 'ਚੇਤਾਵਨੀ ਸ਼ਬਦ - ਜਾਗੋ ਜਾਗੋ ਮੁਸਾਫਿਰ ਭਾਈ', en: 'Chetawani Shabad - Jago Jago Musafir' },
-    category: { hi: 'चेतावनी व उलटबासी', pb: 'ਚੇਤਾਵਨੀ ਵ ਉਲਟਬਾਸੀ', en: 'Chetawani & Ulatvasi' },
+    category: { hi: 'चेतावनी व उलटबासी', pb: 'ਚੇਤਾਵਨੀ ਵ ਉਲਟਬਾਂਸੀ', en: 'Chetawani & Ulatvasi' },
     lyrics: [
       'जागो जागो मुसाफिर भोर भयो, रेन गँवाई सोवत में॥',
       'साँस साँस हीरा जनम अनमोल खोवत, जग मोहे रोवत में॥',
@@ -102,13 +102,17 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
         <div className="relative z-10 flex items-center justify-between gap-4">
           <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-xs font-mono font-bold uppercase tracking-wider mb-2">
-              <Radio size={13} className="animate-pulse" /> {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਪਰੰਪਰਾ' : 'दमाखेड़ा परंपरा & चौका आरती'}
+              <Radio size={13} className="animate-pulse" /> {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਪਰੰਪਰਾ ਅਤੇ ਚੌਕਾ ਆਰਤੀ' : language === 'en' ? 'Damakheda Tradition & Chauka Aarti' : 'दमाखेड़ा परंपरा & चौका आरती'}
             </span>
             <h2 className="text-2xl sm:text-3xl font-black font-serif">
-              {language === 'pb' ? 'ਪਰੰਪਰਾਗਤ ਭਜਨ ਤੇ ਸਾਖੀ ਧੁਨ' : 'पारंपरिक भजन व साखी धुन संग्रह'}
+              {language === 'pb' ? 'ਪਰੰਪਰਾਗਤ ਭਜਨ ਤੇ ਸਾਖੀ ਧੁਨ ਸੰਗ੍ਰਹਿ' : language === 'en' ? 'Traditional Bhajan & Sakhi Dhun Archive' : 'पारंपरिक भजन व साखी धुन संग्रह'}
             </h2>
             <p className="text-xs sm:text-sm font-serif opacity-90 mt-1 max-w-xl">
-              {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪਵਿੱਤਰ ਭਜਨ ਅਤੇ ਚੌਕਾ ਆਰਤੀ ਦੀਆਂ ਧੁਨਾਂ' : 'सतगुरु कबीर साहेब जी के पावन पारंपरिक भजन, चौका आरती और सिमरन धुनें जो आत्मा को विभोर करती हैं।'}
+              {language === 'pb'
+                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪਵਿੱਤਰ ਭਜਨ, ਚੌਕਾ ਆਰਤੀ ਅਤੇ ਸਿਮਰਨ ਧੁਨਾਂ ਜੋ ਆਤਮਾ ਨੂੰ ਨਿਹਾਲ ਕਰਦੀਆਂ ਹਨ।'
+                : language === 'en'
+                ? 'Sacred traditional bhajans, Chauka Aarti chants, and devotional meditation waves of Satguru Kabir Saheb.'
+                : 'सतगुरु कबीर साहेब जी के पावन पारंपरिक भजन, चौका आरती और सिमरन धुनें जो आत्मा को विभोर करती हैं।'}
             </p>
           </div>
           {onClose && (
@@ -161,7 +165,9 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
 
               <div className="pt-3 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between">
                 <span className="text-[11px] font-mono opacity-75">
-                  {isThisPlaying ? '🎶 बज रहा है (Playing)...' : '✨ दमाखेड़ा परंपरा'}
+                  {isThisPlaying
+                    ? (language === 'pb' ? '🎶 ਚੱਲ ਰਿਹਾ ਹੈ...' : language === 'en' ? '🎶 Now Playing...' : '🎶 बज रहा है...')
+                    : (language === 'pb' ? '✨ ਦਮਾਖੇੜਾ ਪਰੰਪਰਾ' : language === 'en' ? '✨ Damakheda Tradition' : '✨ दमाखेड़ा परंपरा')}
                 </span>
                 <button
                   type="button"
@@ -173,7 +179,11 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
                   }`}
                 >
                   {isThisPlaying ? <Pause size={15} /> : <Play size={15} />}
-                  <span>{isThisPlaying ? 'विराम (Pause)' : 'श्रवण करें (Listen)'}</span>
+                  <span>
+                    {isThisPlaying
+                      ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Pause' : 'विराम')
+                      : (language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'श्रवण करें')}
+                  </span>
                 </button>
               </div>
             </motion.div>
@@ -189,7 +199,7 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
             </div>
             <div className="truncate">
               <span className="text-[10px] font-mono text-amber-400 font-bold block">
-                🪷 24x7 Bhajan Stream Active
+                {language === 'pb' ? '🪷 24x7 ਭਜਨ ਧਾਰਾ ਚਾਲੂ' : language === 'en' ? '🪷 24x7 Bhajan Stream Active' : '🪷 २४x७ भजन धारा सक्रिय'}
               </span>
               <p className="text-xs font-serif font-bold truncate">
                 {activeBhajan?.title[language] || activeBhajan?.title.hi}
@@ -201,7 +211,7 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
             onClick={handleStopAll}
             className="px-3 py-1.5 rounded-xl bg-red-600/30 hover:bg-red-600/50 text-red-300 font-bold text-xs transition cursor-pointer"
           >
-            बंद करें
+            {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Stop' : 'बंद करें'}
           </button>
         </div>
       )}

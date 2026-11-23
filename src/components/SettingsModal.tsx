@@ -21,8 +21,6 @@ import {
   Clock,
   Zap,
   ShieldCheck,
-  KeyRound,
-  Lock,
   Mic,
   Volume2 as SpeechVolumeIcon,
   Upload,
@@ -59,7 +57,7 @@ import {
   subscribeToCustomPortraitState,
   updateAdminDarshanObjectFit,
 } from '../services/customPortraitStore';
-import { isAdminAuthenticated, verifyAdminPin, setAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
+import { isAdminAuthenticated, setAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
 import {
   subscribeToSacredMedia,
   publishAdminSacredMedia,
@@ -142,8 +140,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const [portraitState, setPortraitState] = useState<DarshanPortraitState>(() => getCustomDarshanState());
   const [isUploadingPortrait, setIsUploadingPortrait] = useState<boolean>(false);
   const darshanInputRef = React.useRef<HTMLInputElement>(null);
-  const [adminPinInput, setAdminPinInput] = useState<string>('');
-  const [showAdminPasskeyDialog, setShowAdminPasskeyDialog] = useState<boolean>(false);
   const [adminNotice, setAdminNotice] = useState<string | null>(null);
 
   // Unified Admin Media Studio state
@@ -215,31 +211,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     };
   }, []);
 
-  const handleAdminLogin = () => {
-    if (verifyAdminPin(adminPinInput)) {
-      setIsAdmin(true);
-      setAdminPinInput('');
-      setShowAdminPasskeyDialog(false);
-      setAdminNotice(language === 'hi' ? '✓ अधिकृत एडमिन प्रमाणीकरण सफल!' : '✓ Authorized Admin authenticated!');
-      setTimeout(() => setAdminNotice(null), 3500);
-    } else {
-      setAdminNotice(language === 'hi' ? '✗ अमान्य सुरक्षा क्रेडेंशियल्स - केवल अधिकृत एडमिन के लिए' : '✗ Invalid credentials - Authorized Admin only');
-      setTimeout(() => setAdminNotice(null), 3500);
-    }
-  };
-
   const handleAdminLogout = async () => {
     setAdminAuthenticated(false);
     setIsAdmin(false);
     setIsFirebaseAdmin(false);
-    setShowAdminPasskeyDialog(false);
     if (auth?.currentUser?.email && isAuthorizedAdminEmail(auth.currentUser.email)) {
       try {
         await signOut(auth);
       } catch {}
     }
-    setAdminNotice(language === 'hi' ? '✓ एडमिन लॉग-आउट हो गया (पब्लिक रीड-ओनली मोड सक्रिय)' : '✓ Admin logged out');
-    setTimeout(() => setAdminNotice(null), 3500);
+    setAdminNotice(null);
   };
 
   const handleAdminPortraitUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -273,7 +254,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       if (u?.email && isAuthorizedAdminEmail(u.email)) {
         setAdminAuthenticated(true);
         setIsAdmin(true);
-        setShowAdminPasskeyDialog(false);
         if (portraitState.imageData) {
           await publishAdminDarshanPortrait(portraitState.imageData, portraitState.objectFit);
         }
@@ -281,10 +261,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       } else {
         setAdminAuthenticated(false);
         setIsAdmin(false);
-        setAdminNotice(language === 'hi' ? '✗ केवल अधिकृत एडमिन ईमेल (smongia76@gmail.com) ही मान्य है।' : '✗ Only authorized admin email (smongia76@gmail.com) is allowed.');
+        setAdminNotice(language === 'hi' ? '✗ केवल अधिकृत एडमिन खाता ही मान्य है।' : '✗ Only the authorized admin account is allowed.');
       }
     } catch {
-      setAdminNotice(language === 'hi' ? 'Google साइन-इन पॉपअप रद्द या अवरुद्ध हुआ। नीचे पासकी से या नए टैब में खोलकर प्रयास करें।' : 'Google Sign-In cancelled or blocked in preview.');
+      setAdminNotice(language === 'hi' ? 'Google साइन-इन पॉपअप रद्द या अवरुद्ध हुआ।' : 'Google Sign-In cancelled or blocked in preview.');
     }
     setTimeout(() => setAdminNotice(null), 4500);
   };
@@ -1431,23 +1411,22 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
           </div>
 
-          {/* Admin & Tamper-Proof Protection Section */}
+          {/* Admin Panel Section (Strictly hidden from public visitors unless unlocked via secret gesture) */}
+          {isAdmin && (
           <div 
             style={{ 
-              backgroundColor: isAdmin ? (theme.mode === 'mystic_dark' ? '#1E293B' : '#ECFDF5') : (theme.mode === 'mystic_dark' ? '#1E1812' : '#FDF8F3'),
-              borderColor: isAdmin ? '#10B981' : theme.cardBorder
+              backgroundColor: theme.mode === 'mystic_dark' ? '#1E293B' : '#ECFDF5',
+              borderColor: '#10B981'
             }}
             className="p-4 rounded-2xl border-2 space-y-3 shadow-xs"
           >
             <div className="flex items-center justify-between">
-              <h3 style={{ color: isAdmin ? '#059669' : theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 font-serif">
-                {isAdmin ? <ShieldCheck className="w-4 h-4 text-emerald-600" /> : <Lock className="w-4 h-4 text-amber-700" />}
-                <span>{isAdmin ? 'सतगुरु साहेब एडमिन पैनल (Authorized)' : 'सार्वजनिक संरक्षण एवं सुरक्षा (Read-Only)'}</span>
+              <h3 style={{ color: '#059669' }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 font-serif">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>सतगुरु साहेब एडमिन पैनल (Authorized)</span>
               </h3>
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold border ${
-                isAdmin ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30' : 'bg-stone-500/10 text-stone-700 dark:text-stone-300 border-stone-500/20'
-              }`}>
-                {isAdmin ? '👑 एडमिन सक्रिय' : '🔒 पब्लिक रीड-ओनली'}
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold border bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30">
+                👑 एडमिन सक्रिय
               </span>
             </div>
 
@@ -1457,7 +1436,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               </div>
             )}
 
-            {isAdmin ? (
               <div className="space-y-3">
                 <p className="text-xs font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
                   {language === 'hi' 
@@ -1706,74 +1684,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   <span>{language === 'pb' ? 'ਐਡਮਿਨ ਲੌਗ-ਆਉਟ ਕਰੋ' : language === 'en' ? 'Admin Logout' : 'एडमिन लॉग-आउट करें'}</span>
                 </button>
               </div>
-            ) : (
-              <div className="space-y-2.5">
-                <p className="text-xs font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' 
-                    ? 'सार्वजनिक आगंतुकों के लिए साहेब वर्ल्ड 100% सुरक्षित और रीड-ओनली है। कोई भी बाहरी व्यक्ति पावन स्वरूप, वाणी अथवा ऑडियो में परिवर्तन या अपलोड नहीं कर सकता।' 
-                    : 'Saheb World is 100% read-only and tamper-proof for all public visitors. Public uploads and deletions are locked.'}
-                </p>
-
-                {/* Subtle trigger for authorized administrator only */}
-                {!showAdminPasskeyDialog ? (
-                  <div className="pt-1 flex items-center justify-between text-[0.6875rem]">
-                    <span className="opacity-50 font-serif">अधिकृत एडमिन: smongia76@gmail.com</span>
-                    <button
-                      type="button"
-                      onClick={() => setShowAdminPasskeyDialog(true)}
-                      className="text-amber-800 dark:text-amber-400 hover:underline font-serif cursor-pointer font-bold"
-                    >
-                      एडमिन प्रमाणीकरण
-                    </button>
-                  </div>
-                ) : (
-                  <div className="pt-2.5 space-y-2.5 border-t border-amber-500/20">
-                    <button
-                      type="button"
-                      onClick={handleAdminGoogleConnect}
-                      className="w-full min-h-[40px] py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-serif transition cursor-pointer shadow-xs flex items-center justify-center gap-1.5"
-                    >
-                      <Cloud className="w-4 h-4" />
-                      <span>Google से एडमिन लॉग-इन करें (smongia76@gmail.com)</span>
-                    </button>
-
-                    <div className="text-center text-[10px] opacity-60 font-serif">
-                      — या गुप्त एडमिन पासकी दर्ज करें —
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <div className="relative flex-1">
-                        <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-600 opacity-60" />
-                        <input
-                          type="password"
-                          value={adminPinInput}
-                          onChange={(e) => setAdminPinInput(e.target.value)}
-                          onKeyDown={(e) => { if (e.key === 'Enter') handleAdminLogin(); }}
-                          placeholder="गुप्त एडमिन पासकी"
-                          className="w-full pl-9 pr-3 py-2 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-mono focus:ring-2 focus:ring-amber-500"
-                          style={{ color: theme.textPrimary }}
-                        />
-                      </div>
-                      <button
-                        type="button"
-                        onClick={handleAdminLogin}
-                        className="py-2 px-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold font-serif transition cursor-pointer shadow-xs whitespace-nowrap"
-                      >
-                        सत्यापित करें
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setShowAdminPasskeyDialog(false); setAdminPinInput(''); }}
-                        className="py-2 px-2.5 rounded-xl border border-stone-300 dark:border-zinc-700 text-stone-600 dark:text-stone-300 text-xs font-serif transition cursor-pointer"
-                      >
-                        रद्द
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
           </div>
+          )}
 
           {/* Section 5: Daily Nitya Vani Notification */}
           <div className="space-y-4">
@@ -1899,12 +1811,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
           </div>
 
-          {/* Section: Advanced & Admin Tools */}
+          {/* Section: Advanced & Swadhyay Tools */}
           <div className="space-y-3 pt-4 border-t border-amber-500/20">
             <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
               <ShieldCheck className="w-4 h-4" />
               <span>
-                {language === 'pb' ? 'ਉੱਨਤ ਤੇ ਐਡਮਿನ್ ਟੂਲਸ' : language === 'en' ? 'Advanced & Admin Tools' : 'उन्नत एवं एडमिन टूल्स'}
+                {language === 'pb' ? 'ਉੱਨਤ ਤੇ ਸਵਾਧਿਆਏ ਟੂਲਸ' : language === 'en' ? 'Advanced & Swadhyay Tools' : 'उन्नत एवं स्वाध्याय टूल्स'}
               </span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

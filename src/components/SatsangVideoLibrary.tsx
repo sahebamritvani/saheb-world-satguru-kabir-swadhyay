@@ -11,7 +11,6 @@ import {
   Search,
   Video,
   Check,
-  Lock,
   Plus,
   Upload,
   Trash2,
@@ -231,7 +230,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
-          {isAdmin ? (
+          {isAdmin && (
             <button
               type="button"
               onClick={() => setShowAddForm((p) => !p)}
@@ -240,11 +239,6 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
               <Plus className="w-4 h-4" />
               <span>{isHi ? 'नया वीडियो जोड़ें (Admin)' : isPb ? 'ਨਵਾਂ ਵੀਡੀਓ ਜੋੜੋ' : 'Add Video'}</span>
             </button>
-          ) : (
-            <div className="px-3 py-1.5 rounded-xl bg-stone-500/10 border border-stone-500/20 text-[11px] font-bold flex items-center gap-1.5" style={{ color: theme.textSecondary }}>
-              <Lock className="w-3.5 h-3.5 text-amber-600" />
-              <span>{isHi ? 'पब्लिक रीड-ओनली' : isPb ? 'ਪਬਲਿਕ ਰੀਡ-ਓਨਲੀ' : 'Read-Only'}</span>
-            </div>
           )}
 
           {onClose && (
@@ -292,7 +286,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
 
           {!isFirebaseAdminVerified() && (
             <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-[11px] font-bold text-amber-900 dark:text-amber-200">
-              ⚠️ क्लाउड वीडियो प्रकाशन हेतु कृपया सेटिंग्स ⚙️ → एडमिन प्रमाणीकरण में Google (smongia76@gmail.com) से साइन-इन करें।
+              ⚠️ क्लाउड वीडियो प्रकाशन हेतु कृपया Google एडमिन खाते से साइन-इन करें।
             </div>
           )}
 
@@ -543,10 +537,10 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
                   ? 'अभी कोई वीडियो नहीं जोड़ा गया है। ऊपर "+ नया वीडियो जोड़ें (Admin)" दबाकर सत्संग वीडियो प्रकाशित करें।'
                   : 'No videos yet. Click "+ Add Video" above to publish a Satsang video.')
               : (isHi
-                  ? 'वर्तमान में कोई वीडियो उपलब्ध नहीं है। केवल अधिकृत एडमिन ही सत्संग वीडियो प्रकाशित कर सकते हैं।'
+                  ? 'वर्तमान में कोई वीडियो उपलब्ध नहीं है। शीघ्र ही पावन सत्संग वीडियो दर्शन यहाँ जुड़ेंगे।'
                   : isPb
-                  ? 'ਇਸ ਸਮੇਂ ਕੋਈ ਵੀਡੀਓ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਸਿਰਫ਼ ਐਡਮਿਨ ਹੀ ਵੀਡੀਓ ਜੋੜ ਸਕਦੇ ਹਨ।'
-                  : 'No video discourses available at this time (Admin-only publishing).')}
+                  ? 'ਇਸ ਸਮੇਂ ਕੋਈ ਵੀਡੀਓ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਜਲਦੀ ਹੀ ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ ਦਰਸ਼ਨ ਇੱਥੇ ਉਪਲਬਧ ਹੋਣਗੇ।'
+                  : 'No video discourses are available at this time.')}
           </p>
         </div>
       ) : (
