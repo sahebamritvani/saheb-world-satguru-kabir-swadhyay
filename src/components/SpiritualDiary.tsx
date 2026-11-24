@@ -887,19 +887,6 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
 
   return (
     <div className="space-y-6 animate-fadeIn pb-12">
-      {/* Strict Sacred Header Spelling */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2.5 px-4 text-center select-none rounded-2xl shadow-xs"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-lg sm:text-xl font-bold tracking-widest font-serif block"
-        >
-          {exactTop}
-        </span>
-      </div>
-
       {/* Main Journal & Gratitude Container */}
       <div
         id="spiritual-diary-container"
@@ -935,22 +922,6 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            {onClose && (
-              <button
-                onClick={onClose}
-                style={{
-                  backgroundColor: theme.accentGoldLight,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon,
-                }}
-                className="px-3.5 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-xs active:scale-95"
-                title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-              >
-                <ArrowLeft size={14} />
-                <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-              </button>
-            )}
-
             <button
               id="export-diary-btn"
               onClick={handleExportDiary}
@@ -2350,19 +2321,6 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
             </div>
           </div>
         )}
-      </div>
-
-      {/* Strict Sacred Footer Spelling */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-t py-2 px-4 text-center select-none rounded-2xl shadow-xs"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-xs sm:text-sm font-semibold tracking-wider font-serif block"
-        >
-          {exactBottom}
-        </span>
       </div>
 
       {/* Small Animated Flower Bloom Blessing Modal */}

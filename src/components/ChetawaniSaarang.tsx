@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ShieldAlert, ArrowRight, Scroll, Sparkles } from 'lucide-react';
+import { ShieldAlert, ArrowRight, Scroll } from 'lucide-react';
 import type { GranthVerse } from '../data/granths/granthTypes';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
-import { devanagariToGurmukhi } from '../services/transliteration';
 import { SacredLoader } from './SacredLoader';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface ChetawaniSaarangProps {
   language: Language;
@@ -13,7 +13,7 @@ interface ChetawaniSaarangProps {
   onClose?: () => void;
 }
 
-export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, onOpenSwadhyay, onClose }) => {
+export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, onOpenSwadhyay }) => {
   const { theme } = useAppTheme();
   const [ang15Verses, setAng15Verses] = useState<GranthVerse[]>([]);
 
@@ -65,83 +65,52 @@ export const ChetawaniSaarang: React.FC<ChetawaniSaarangProps> = ({ language, on
         <SacredLoader language={language} compact />
       ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {sarangVerses.map((verse, idx) => (
-          <motion.div
-            key={verse.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
-            style={{ 
-              backgroundColor: theme.cardBg,
-              borderColor: theme.accentGold,
-            }}
-            className="group relative rounded-2xl border-2 p-5 space-y-4 hover:shadow-xl transition-all duration-300 overflow-hidden backdrop-blur-md"
-          >
-            {/* Index Badge */}
-            <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
-              <span className="text-6xl font-black font-serif">{idx + 1}</span>
-            </div>
-
-            <div className="space-y-3 relative z-10">
-              <div className="flex items-center gap-2 text-amber-600">
-                <Sparkles className="w-4 h-4" />
-                <span className="text-[10px] font-black uppercase tracking-widest font-mono">
-                  Sakhi #{String(verse.id).includes('-v') ? String(verse.id).split('-v')[1] : verse.id}
-                </span>
-              </div>
-
-              <blockquote 
-                className="text-lg font-serif font-black leading-relaxed"
-                style={{ color: theme.textPrimary }}
-              >
-                {verse.lines[language][0]}
-                <br />
-                {verse.lines[language][1]}
-              </blockquote>
-
-              <p 
-                className="text-xs font-serif leading-relaxed italic opacity-80 border-l-2 pl-3"
-                style={{ color: theme.textSecondary, borderColor: theme.accentGold }}
-              >
-                {verse.bhavarth?.[language] || ''}
-              </p>
-            </div>
-
-            <div className="pt-3 flex items-center justify-between border-t" style={{ borderColor: theme.cardBorder }}>
-              <button
-                onClick={() => {
-                  const idStr = String(verse.id);
-                  const num = idStr.includes('-v') ? parseInt(idStr.split('-v')[1]) : parseInt(idStr);
-                  onOpenSwadhyay?.(num);
+        {sarangVerses.map((verse, idx) => {
+          const idStr = String(verse.id);
+          const sakhiNum = idStr.includes('-v') ? parseInt(idStr.split('-v')[1]) : parseInt(idStr);
+          return (
+            <motion.div
+              key={verse.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.08 }}
+            >
+              <UnifiedDohaCard
+                id={`chetawani-${verse.id}`}
+                verseNumber={sakhiNum}
+                source={{
+                  hi: `साखी संग्रह • साखी #${sakhiNum}`,
+                  pb: `ਸਾਖੀ ਸੰਗ੍ਰਹਿ • ਸਾਖੀ #${sakhiNum}`,
+                  en: `Sakhi Sangrah • Sakhi #${sakhiNum}`,
                 }}
-                style={{ color: theme.sacredMaroon }}
-                className="flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider hover:opacity-80 transition-opacity cursor-pointer group/btn"
-              >
-                <span>{language === 'hi' ? 'गहन स्वाध्याय' : language === 'pb' ? 'ਗਹਿਨ ਸਵਾਧਿਆਏ' : 'Deep Study'}</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
-              </button>
-              
-              <div className="flex items-center gap-1">
-                <Scroll className="w-3.5 h-3.5 text-amber-500/40" />
-              </div>
-            </div>
-          </motion.div>
-        ))}
+                text={{
+                  hi: verse.lines.hi.join('\n'),
+                  pb: verse.lines.pb.join('\n'),
+                  en: verse.lines.en.join('\n'),
+                }}
+                meaning={verse.bhavarth}
+                language={language}
+                footerExtra={
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => onOpenSwadhyay?.(sakhiNum)}
+                      style={{ color: theme.sacredMaroon }}
+                      className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider hover:opacity-80 transition-opacity cursor-pointer group/btn"
+                    >
+                      <span>{language === 'hi' ? 'गहन स्वाध्याय' : language === 'pb' ? 'ਗਹਿਨ ਸਵਾਧਿਆਏ' : 'Deep Study'}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                    </button>
+                    <Scroll className="w-3.5 h-3.5 text-amber-500/50" />
+                  </>
+                }
+              />
+            </motion.div>
+          );
+        })}
       </div>
       )}
 
-      {onClose && (
-        <div className="flex justify-center pt-4">
-          <button
-            onClick={onClose}
-            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
-            className="px-8 py-3 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition cursor-pointer flex items-center gap-2"
-          >
-            <ArrowRight className="w-4 h-4 rotate-180" />
-            <span>{language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}</span>
-          </button>
-        </div>
-      )}
     </div>
   );
 };

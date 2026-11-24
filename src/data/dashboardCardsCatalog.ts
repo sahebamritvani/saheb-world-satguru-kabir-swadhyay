@@ -333,7 +333,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     slotNumber: 11,
     categoryId: 1,
     kicker: { hi: 'परम मोक्ष', pb: 'ਪਰਮ ਮੋਕਸ਼', en: 'Ultimate Truth' },
-    title: { hi: 'सत्यनाम व अमरलोक बोध', pb: 'ਸਤਯਨਾਮ ਤੇ ਅਮਰਲੋਕ ਬੋਧ', en: 'Satya Naam & Saar Shabd' },
+    title: { hi: 'सत्यनाम व अमरलोक बोध', pb: 'ਸਤਯਨਾਮ ਤੇ ਅਮਰਲੋਕ ਬੋਧ', en: 'Satyanaam & Saar Shabd' },
     description: {
       hi: 'सत्यनाम महिमा, सारशब्द एवं अमरलोक बोध की महा-मार्गदर्शिका।',
       pb: 'ਸਤਯਨਾਮ ਮਹਿਮਾ, ਸਾਰਸ਼ਬਦ ਅਤੇ ਅਮਰਲੋਕ ਬੋਧ ਦੀ ਮਹਾ-ਮਾਰਗਦਰਸ਼ਿਕਾ।',

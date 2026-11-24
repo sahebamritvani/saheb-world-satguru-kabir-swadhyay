@@ -189,7 +189,7 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
       title: {
         hi: 'सत्यनाम एवं सारशब्द',
         pb: 'ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਸ਼ਬਦ',
-        en: 'Satya Naam & Saar Shabd',
+        en: 'Satyanaam & Saar Shabd',
       },
       subtitle: {
         hi: 'जीव की मुक्ति का गुप्त मार्ग एवं सारशब्द रहस्य',

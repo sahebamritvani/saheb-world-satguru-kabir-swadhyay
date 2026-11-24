@@ -54,7 +54,7 @@ const AUTHENTIC_REFLECTIONS: SacredReflection[] = [
     text: {
       hi: 'सत्यनाम का सुमिरन केवल शब्दों का उच्चारण नहीं, अपितु सुरति और शब्द का आंतरिक संगम है। जब श्वास-श्वास में नाम समाता है, तब समस्त मानसिक विकार शांत हो जाते हैं।',
       pb: 'ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕੇਵਲ ਸ਼ਬਦਾਂ ਦਾ ਉਚਾਰਨ ਨਹੀਂ, ਸਗੋਂ ਸੁਰਤ ਤੇ ਸ਼ਬਦ ਦਾ ਅੰਦਰੂਨੀ ਮਿਲਾਪ ਹੈ। ਜਦੋਂ ਹਰ ਸੁਆਸ ਵਿੱਚ ਨਾਮ ਵੱਸਦਾ ਹੈ, ਤਦ ਸਾਰੇ ਵਿਕਾਰ ਸ਼ਾਂਤ ਹੋ ਜਾਂਦੇ ਹਨ।',
-      en: 'The remembrance of Satya Naam is not merely the recitation of syllables, but the inner communion of awareness and divine resonance. When name imbues every breath, all mental turmoil dissolves.',
+      en: 'The remembrance of Satyanaam is not merely the recitation of syllables, but the inner communion of awareness and divine resonance. When name imbues every breath, all mental turmoil dissolves.',
     },
     quoteVani: {
       hi: 'माला फेरत जुग भया, फिरा न मन का फेर। कर का मनका डारि दे, मन का मनका फेर॥',
@@ -215,19 +215,6 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
 
   return (
     <div className="max-w-3xl mx-auto space-y-4 pb-20 relative select-none">
-      {/* Top Sacred Branding Bar */}
-      <div 
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border py-2.5 sm:py-3 px-4 rounded-2xl shadow-xs text-center"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-base font-black tracking-widest font-serif block drop-shadow-xs"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
       {/* Navigation & Header Bar */}
       <div className="flex items-center justify-between py-1">
         <div className="flex items-center gap-2">
@@ -236,22 +223,6 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
             {language === 'hi' ? 'साधना मंच (सत्संग विचार)' : language === 'pb' ? 'ਸਾਧਨਾ ਮੰਚ (ਸਤਿਸੰਗ ਵਿਚਾਰ)' : 'Sadhana Forum (Satsang Vichar)'}
           </span>
         </div>
-
-        {onClose && (
-          <button 
-            onClick={onClose} 
-            style={{
-              backgroundColor: theme.accentGoldLight,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-            title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-          </button>
-        )}
       </div>
 
       {/* Toast Notification */}

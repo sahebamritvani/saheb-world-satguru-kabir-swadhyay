@@ -16,6 +16,7 @@ import {
 import { Language, SACRED_BRANDING } from '../types';
 import { TEN_SATYA_VACHAN_SUTRAS, DAS_SUTRAS_METADATA, SatyaVachanSutra } from '../data/dasSutraData';
 import { useAppTheme } from '../theme/ThemeContext';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface GuruJiDasSutraViewProps {
   language: Language;
@@ -306,64 +307,8 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
   return (
     <div
       id="guru-ji-das-sutra-container"
-      style={{
-        backgroundColor: theme.cardBg,
-        borderColor: theme.cardBorder,
-        color: theme.textPrimary,
-      }}
-      className="rounded-3xl border shadow-2xl overflow-x-hidden flex flex-col transition-all duration-300 max-w-5xl mx-auto my-3"
+      className="w-full space-y-6"
     >
-      {/* 1. SACRED TOP BANNER (Satyanaam) - Sticky at top */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="sticky top-0 z-30 border-b py-2 px-3 sm:px-4 mb-2 select-none flex items-center justify-center overflow-hidden min-h-[42px] backdrop-blur-md"
-        role="region"
-        aria-label="Sacred Top Banner"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[activeLang] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
-      {/* Reader Navigation Controls Bar */}
-      <div className="flex items-center justify-between px-4 my-2">
-        <div className="flex items-center gap-2">
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.bgSecondary,
-                borderColor: theme.borderOrnament,
-                color: theme.textPrimary,
-              }}
-              className="p-1.5 rounded-xl border text-xs font-bold flex items-center gap-1 hover:border-amber-500 transition cursor-pointer shadow-xs active:scale-95"
-              title="वापस जाएं (Go Back)"
-            >
-              <ArrowLeft className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-              <span className="hidden sm:inline font-serif text-xs">{activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-            </button>
-          )}
-        </div>
-
-        <div className="flex items-center gap-1.5">
-          <button
-            type="button"
-            onClick={handleShare}
-            style={{
-              backgroundColor: theme.bgSecondary,
-              borderColor: theme.borderOrnament,
-            }}
-            className="p-1.5 rounded-xl border text-xs font-bold flex items-center gap-1 hover:border-amber-500 transition cursor-pointer shadow-xs"
-            title="साझा करें (Share)"
-          >
-            <Share2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-          </button>
-        </div>
-      </div>
 
       {/* 3. SACRED HEADER & PROMINENT LANGUAGE CONTROLS */}
       <div className="p-4 sm:p-6 border-b space-y-4" style={{ borderColor: theme.cardBorder }}>
@@ -763,29 +708,6 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
             </div>
           )}
         </div>
-      </div>
-
-      {/* 6. SACRED CLOSING SALUTATION */}
-      <div className="text-center pt-2 pb-4">
-        <span
-          className="text-lg sm:text-xl font-extrabold font-serif tracking-wide block drop-shadow-xs"
-          style={{ color: theme.sacredMaroon }}
-        >
-          {uiLabels.closingPrayer}
-        </span>
-      </div>
-
-      {/* 7. BOTTOM BRANDING */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-t py-2 px-4 text-center select-none"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-xs sm:text-sm font-semibold tracking-widest font-serif block opacity-90"
-        >
-          {exactBottom}
-        </span>
       </div>
     </div>
   );

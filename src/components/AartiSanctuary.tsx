@@ -119,7 +119,7 @@ export const AUTHENTIC_AARTI_DEFAULTS: Record<AartiSection, Record<Language, str
 ਜੈ ਜੈ ਸਤ੍ਯ ਕਬੀਰ, ਗੁਰੂ ਜੈ ਜੈ ਸਤ੍ਯ ਕਬੀਰ।
 
 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।`,
-    en: `।। Satyanam ।।
+    en: `।। Satyanaam ।।
 Aarti - 1
 
 Jai Jai Satya Kabir, Guru Jai Jai Satya Kabir.
@@ -127,7 +127,7 @@ Ajar Amar Ho Saheb, Ajar Amar Ho Saheb.
 Charon Yug Ke Peer, Guru Jai Jai Satya Kabir.
 Jai Jai Satya Kabir, Guru Jai Jai Satya Kabir.
 
-Satyanam Sat Sukrit, Satrat Hatkaami, Vigat Kalesh Satdhami Tribhuvan Pati Swami. (Refrain)
+Satyanaam Sat Sukrit, Satrat Hatkaami, Vigat Kalesh Satdhami Tribhuvan Pati Swami. (Refrain)
 
 Jayati Jayati Kabbiram, Nashak Bhav-peeram, Dharyo Manuj Shariram, Shishu Var Sartiiram.
 Guru Jai Jai Satya Kabir...
@@ -211,7 +211,7 @@ Jai Jai Satya Kabir, Guru Jai Jai Satya Kabir.
 ਆਰਤੀ ਦੀਨ ਦਿਆਲ, ਸਾਹੇਬ ਆਰਤੀ ਹੋ।
 
 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।`,
-    en: `।। Satyanam ।।
+    en: `।। Satyanaam ।।
 Aarti - 2
 
 Aarti Ho Saheb Aarti Ho.
@@ -310,7 +310,7 @@ Aarti Deen Dayaal, Saheb Aarti Ho.
 ਜੈ ਜੈ ਸ਼੍ਰੀ ਗੁਰੂਦੇਵ…
 
 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।`,
-    en: `।। Satyanam ।।
+    en: `।। Satyanaam ।।
 Aarti - 3
 
 Jai Jai Shri Gurudev, Jai Jai Shri Gurudev.
@@ -405,32 +405,32 @@ Jai Jai Shri Gurudev...
 ਜੀਵਨ ਜਨਮ ਸੁਫਲ ਕਰ ਲੀਜੈ।।
 
 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।`,
-    en: `।। Satyanam ।।
+    en: `।। Satyanaam ।।
 Aarti - 4
 
-Aarti Satyanam Ki Keejai.
+Aarti Satyanaam Ki Keejai.
 Jeevan Janam Sufal Kar Leejai.
 
 Agra Ki Thaar Anupam Baati.
 Jyoti Prakash Kare Din Raati.
-Aarti Satyanam Ki Keejai...
+Aarti Satyanaam Ki Keejai...
 
 Murli Dhwani Anupam Baaje.
 Shabd Anaahad Dhanu Tahan Gaaje.
-Aarti Satyanam Ki Keejai...
+Aarti Satyanaam Ki Keejai...
 
 Trikuti Sangam Jhalke Heera.
 Charan Kamal Chit Raakhu Sharira.
-Aarti Satyanam Ki Keejai...
+Aarti Satyanaam Ki Keejai...
 
 Satsukriti Aarti Chit Deeje.
 Tan Man Dhan-hi Nichhaavari Keejai.
-Aarti Satyanam Ki Keejai...
+Aarti Satyanaam Ki Keejai...
 
 Satya Kabir Ki Aarti Jo Koyi Nar Gaave,
 Bhakti Padarath Paave, Mukti Padarath Paave Bhav Mein Nahi Aave.
 
-Aarti Satyanam Ki Keejai.
+Aarti Satyanaam Ki Keejai.
 Jeevan Janam Sufal Kar Leejai.
 
 ।। Saheb Bandagi Saheb ।।`
@@ -458,7 +458,7 @@ Jeevan Janam Sufal Kar Leejai.
 ਸਤਿਗੁਰੂ ਕੇ ਚਰਨਨ ਸੀਸ ਨਿਵਾ, ਜਨਮ ਪਦਾਰਥ ਪਾਏ ਲੇ॥
 
 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।`,
-    en: `।। Satyanam ।।
+    en: `।। Satyanaam ।।
 Morning Mangal Gaan
 Satguru Kabiraya Namah
 
@@ -493,7 +493,7 @@ Bow at the lotus feet of Satguru Kabir and fulfill the highest purpose of this h
 ਸਾਹੇਬ ਕਬੀਰ ਦਯਾ ਕੇ ਸਾਗਰ, ਜੀਵਨ ਸਫਲ ਕਰਾਯੋ॥
 
 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।`,
-    en: `।। Satyanam ।।
+    en: `।। Satyanaam ।।
 Bhog Aarti & Bandagi Path
 Satguru Kabiraya Namah
 
@@ -973,7 +973,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
     aarti4: {
       pb: 'ਆਰਤੀ-੪ (ਆਰਤੀ ਸਤ੍ਯਨਾਮ ਕੀ)',
       hi: 'आरती-४ (आरति सत्यनाम की)',
-      en: 'Aarti - 4 (Aarti Satyanam Ki)'
+      en: 'Aarti - 4 (Aarti Satyanaam Ki)'
     },
     prabhat: {
       pb: 'ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ',
@@ -989,73 +989,6 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto p-3 sm:p-6 space-y-6">
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
-      {/* Reader Controls Bar: Language and Close (Shifted here from Top Bar) */}
-      <div className="flex items-center justify-end gap-3 px-1 mb-2">
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {onSelectLanguage && (
-            <div 
-              className="flex items-center gap-1 p-0.5 rounded-lg shrink-0 border"
-              style={{
-                backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.stepActiveBg,
-                borderColor: theme.mode === 'mystic_dark' ? 'rgba(253, 230, 138, 0.3)' : theme.cardBorder,
-              }}
-            >
-              {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
-                const isSelected = language === lng;
-                return (
-                  <button
-                    key={lng}
-                    onClick={() => onSelectLanguage(lng)}
-                    style={{
-                      backgroundColor: isSelected
-                        ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon)
-                        : 'transparent',
-                      color: isSelected
-                        ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF')
-                        : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textPrimary),
-                    }}
-                    className={`px-2 py-0.5 rounded text-xs font-serif transition-all cursor-pointer ${
-                      isSelected ? 'font-black shadow-xs' : 'font-bold hover:opacity-90'
-                    }`}
-                  >
-                    {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
-                  </button>
-                );
-              })}
-            </div>
-          )}
-
-          {onClose && (
-            <button
-              type="button"
-              onClick={handleCloseSanctuary}
-              style={{
-                backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                borderColor: '#EF4444',
-                color: '#DC2626',
-              }}
-              className="px-2.5 py-1 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:bg-red-500 hover:text-white transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-              title={language === 'pb' ? 'ਮੁੱਖ ਪੰਨੇ ਤੇ ਜਾਓ' : language === 'en' ? 'Go to Main Screen' : 'मुख्य पृष्ठ पर जाएं'}
-            >
-              <span className="font-serif font-bold">{language === 'pb' ? '🔙 ਮੁੱਖ ਪੰਨੇ ਤੇ ਜਾਓ' : language === 'en' ? '🔙 Main Menu' : '🔙 मुख्य पृष्ठ पर जाएं'}</span>
-            </button>
-          )}
-        </div>
-      </div>
-
       {/* Top Banner with Header Info */}
       <div 
         className="p-5 sm:p-7 rounded-3xl border shadow-md relative overflow-hidden"
@@ -1269,7 +1202,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                   className="px-2 py-0.5 rounded-lg text-xs font-bold transition cursor-pointer"
                   title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
                 >
-                  {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
+                  {lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
                 </button>
               ))}
             </div>

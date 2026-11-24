@@ -199,19 +199,6 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto space-y-6 pb-24 px-2 sm:px-4">
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[currentLang]}
-        </span>
-      </div>
-
       {/* Unified Ulatvasi Segmented Tabs */}
       <div className="flex p-1 bg-black/5 dark:bg-white/5 rounded-2xl border" style={{ borderColor: theme.cardBorder }}>
         <button
@@ -258,49 +245,6 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
         />
       ) : (
         <>
-          {/* Reader Controls Bar: Navigation and Language */}
-          <div className="flex items-center justify-between gap-3 px-1">
-            <button
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.bgSecondary,
-                borderColor: theme.cardBorder,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3.5 py-2 rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 hover:opacity-90 transition cursor-pointer shadow-xs active:scale-95 font-serif"
-              title={currentLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : currentLang === 'en' ? 'Back' : 'वापस जाएं'}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{currentLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : currentLang === 'en' ? 'Back' : 'वापस जाएं'}</span>
-            </button>
-
-            <div 
-              className="flex items-center gap-1 p-0.5 rounded-lg shrink-0 border"
-              style={{
-                backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.stepActiveBg,
-                borderColor: theme.mode === 'mystic_dark' ? 'rgba(253, 230, 138, 0.3)' : theme.cardBorder,
-              }}
-            >
-              {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
-                const isSelected = currentLang === lng;
-                return (
-                  <button
-                    key={lng}
-                    onClick={() => handleLanguageChange(lng)}
-                    style={{
-                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
-                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
-                    }}
-                    className={`px-2 py-0.5 rounded text-xs font-serif transition-all cursor-pointer ${
-                      isSelected ? 'font-black shadow-xs' : 'font-bold hover:opacity-90'
-                    }`}
-                  >
-                    {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
 
       {/* Hero Section with Trilingual Intro */}
       <motion.div
@@ -419,7 +363,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                             isSelected ? 'font-black shadow-xs' : 'font-bold hover:opacity-90'
                           }`}
                         >
-                          {l === 'hi' ? 'हि' : l === 'pb' ? 'ਪੰ' : 'EN'}
+                          {l === 'hi' ? 'हिंदी' : l === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
                         </button>
                       );
                     })}

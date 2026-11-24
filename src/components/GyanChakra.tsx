@@ -648,21 +648,6 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
         }}
       >
         <div className="flex items-center gap-3 w-full sm:w-auto">
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: '#FEF3C7',
-                borderColor: '#D97706',
-                color: '#6B1D1D'
-              }}
-              className="p-2.5 rounded-2xl border flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xs cursor-pointer shrink-0"
-              title="Go Back"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-          )}
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xl">☸️</span>
@@ -1406,12 +1391,6 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
         </div>
       )}
 
-      {/* Sacred Bottom Branding */}
-      <div className="text-center pt-4 pb-2">
-        <span className="text-base font-serif font-bold" style={{ color: theme.sacredMaroon }}>
-          {SACRED_BRANDING.footer[language]}
-        </span>
-      </div>
     </div>
   );
 };

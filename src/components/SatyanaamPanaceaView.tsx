@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  ArrowLeft, 
   Sparkles, 
-  ShieldCheck, 
-  Volume2, 
-  VolumeX, 
-  Share2, 
-  Check, 
-  Sun, 
   BookOpen,
   HeartPulse,
-  Award,
   RefreshCw
 } from 'lucide-react';
-import { Language, AppView, SACRED_BRANDING } from '../types';
+import { Language, AppView } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
-import { formatCoupletString } from '../utils/textSanitizer';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface SatyanaamPanaceaViewProps {
   language: Language;
@@ -28,15 +20,10 @@ interface SatyanaamPanaceaViewProps {
 
 export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
   language,
-  onClose,
-  onNavigateView,
-  onSelectLanguage,
 }) => {
   const { isDarkMode } = useAppTheme();
   const [activeLang, setActiveLang] = useState<Language>(language);
   const [isPanaceaTaken, setIsPanaceaTaken] = useState(false);
-  const [isPlayingAudio, setIsPlayingAudio] = useState<string | null>(null);
-  const [copiedCardId, setCopiedCardId] = useState<string | null>(null);
 
   useEffect(() => {
     setActiveLang(language);
@@ -133,7 +120,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
       id: 'sggs-sukhmani',
       source: {
         hi: 'श्री गुरु ग्रंथ साहिब (सुखमनी साहिब, अंग २७४)',
-        pb: 'ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾहिਬ (ਸੁਖਮਨੀ ਸਾਹਿਬ, ਅੰਗ ੨੭੪)',
+        pb: 'ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ (ਸੁਖਮਨੀ ਸਾਹਿਬ, ਅੰਗ ੨੭੪)',
         en: 'Sri Guru Granth Sahib (Sukhmani Sahib, Ang 274)',
       },
       verse: {
@@ -143,143 +130,14 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
       },
       meaning: {
         hi: 'श्री गुरु ग्रंथ साहिब में परम पावन सुखमनी साहिब का यह वचन है कि सत्यनाम का सुमिरन समस्त औषधियों में सर्वोच्च है। इसके प्रताप से जीव आवागमन के चक्र से हमेशा के लिए मुक्त हो जाता है।',
-        pb: 'ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿੱਚ ਸੁਖਮਨੀ ਸਾਹਿਬ ਦਾ ਫੁਰਮਾਨ ਹੈ ਕਿ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਸਭ ਤੋਂ ਉੱਚਾ ਹੈ। ਇਸ ਨਾਲ ਜੀਵ ਜਨਮ-ਮरण ਦੇ ਦੁੱਖਾਂ ਤੋਂ ਪੂਰਨ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
+        pb: 'ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿੱਚ ਸੁਖਮਨੀ ਸਾਹਿਬ ਦਾ ਫੁਰਮਾਨ ਹੈ ਕਿ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਸਭ ਤੋਂ ਉੱਚਾ ਹੈ। ਇਸ ਨਾਲ ਜੀਵ ਜਨਮ-ਮਰਨ ਦੇ ਦੁੱਖਾਂ ਤੋਂ ਪੂਰਨ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
         en: 'In Sukhmani Sahib, it is enshrined that the remembrance of the Supreme Truth is the highest panacea, liberating the seeker from all suffering and wandering.',
       },
     },
   ];
 
-  const handleShareCard = (card: typeof panaceaCards[0]) => {
-    sacredHaptics.lightTap();
-    const liveUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sahebworld.app';
-    const header = SACRED_BRANDING.header[activeLang] || SACRED_BRANDING.header.hi;
-    const sourceLabel = activeLang === 'pb' ? 'ਸਰੋਤ' : activeLang === 'en' ? 'Source' : 'स्रोत';
-    const meaningLabel = activeLang === 'pb' ? 'ਭਾਵਾਰਥ' : activeLang === 'en' ? 'Meaning' : 'भावार्थ';
-    const footer = SACRED_BRANDING.footer[activeLang] || SACRED_BRANDING.footer.hi;
-
-    const text = `${header}\n\n✨ ${card.source[activeLang] || card.source.hi}\n\n${formatCoupletString(card.verse[activeLang] || card.verse.hi)}\n\n📖 ${meaningLabel}: ${card.meaning[activeLang] || card.meaning.hi}\n\n👉 ${liveUrl}/#satyanaam-panacea\n\n${footer}`;
-
-    if (navigator.share) {
-      navigator.share({
-        title: activeLang === 'pb' ? 'ਸਤਯਨਾਮ: ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ' : activeLang === 'en' ? 'Satyanaam: The Supreme Panacea' : 'सत्यनाम: सर्व रोग निवारक औषधि',
-        text: text,
-      }).catch(() => {
-        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
-      });
-    } else {
-      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
-    }
-
-    setCopiedCardId(card.id);
-    setTimeout(() => setCopiedCardId(null), 2500);
-  };
-
-  const handleToggleAudio = (cardId: string, verseText: string) => {
-    sacredHaptics.lightTap();
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
-
-    if (isPlayingAudio === cardId) {
-      window.speechSynthesis.cancel();
-      setIsPlayingAudio(null);
-      return;
-    }
-
-    window.speechSynthesis.cancel();
-    setIsPlayingAudio(cardId);
-
-    const utterance = new SpeechSynthesisUtterance(verseText);
-    utterance.lang = activeLang === 'pb' ? 'pa-IN' : activeLang === 'en' ? 'en-IN' : 'hi-IN';
-    utterance.rate = 0.88;
-    utterance.onend = () => setIsPlayingAudio(null);
-    utterance.onerror = () => setIsPlayingAudio(null);
-
-    window.speechSynthesis.speak(utterance);
-  };
-
   return (
-    <div 
-      style={{ 
-        backgroundColor: isDarkMode ? '#17120E' : '#FDF8EE',
-        color: isDarkMode ? '#F5EBE1' : '#2C1810' 
-      }} 
-      className="min-h-screen pb-20 selection:bg-amber-500 selection:text-white"
-    >
-      {/* Top-Center Sacred Banner */}
-      <div
-        style={{
-          backgroundColor: isDarkMode ? '#241A14' : '#FAF0DC',
-          borderColor: 'rgba(217, 119, 6, 0.35)',
-        }}
-        className="border-b py-2 px-3 sm:px-4 flex items-center justify-center select-none"
-      >
-        <span
-          style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[activeLang]}
-        </span>
-      </div>
-
-      {/* Top Header Navigation Bar */}
-      <header 
-        style={{
-          backgroundColor: isDarkMode ? 'rgba(26, 18, 14, 0.92)' : 'rgba(253, 248, 238, 0.92)',
-          borderColor: '#D97706',
-        }}
-        className="sticky top-0 z-40 backdrop-blur-md border-b px-4 py-3 sm:px-6 shadow-xs flex items-center justify-between"
-      >
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={onClose}
-            className="p-2 rounded-xl border border-amber-600/30 hover:bg-amber-500/10 transition-colors cursor-pointer flex items-center justify-center text-[#6B1D1D] dark:text-amber-400"
-            title={activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Go Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black tracking-widest text-[#D97706] uppercase">
-                {activeLang === 'pb' ? 'ਸਾਧਨਾ ਤੇ ਆਤਮ-ਸ਼ੁੱਧੀ' : activeLang === 'en' ? 'Sadhana & Healing' : 'साधना एवं आत्म-शुद्धि'}
-              </span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 font-bold border border-amber-500/20">
-                100% Panacea
-              </span>
-            </div>
-            <h1 
-              style={{ color: '#6B1D1D' }} 
-              className="text-base sm:text-lg font-serif font-black dark:text-amber-300 tracking-tight"
-            >
-              {activeLang === 'pb' ? 'ਸਤਯਨਾਮ: ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ' : activeLang === 'en' ? 'Satyanaam: The Supreme Panacea' : 'सत्यनाम: सर्व रोग निवारक औषधि'}
-            </h1>
-          </div>
-        </div>
-
-        {/* Language Selector Pills */}
-        <div className="flex items-center gap-1 bg-amber-500/10 p-1 rounded-xl border border-amber-500/20">
-          {(['hi', 'pb', 'en'] as Language[]).map((lang) => (
-            <button
-              key={lang}
-              type="button"
-              onClick={() => {
-                sacredHaptics.lightTap();
-                setActiveLang(lang);
-                if (onSelectLanguage) onSelectLanguage(lang);
-              }}
-              className={`px-2.5 py-1 text-xs font-serif font-black rounded-lg transition-all cursor-pointer ${
-                activeLang === lang
-                  ? 'bg-[#6B1D1D] text-amber-50 shadow-xs'
-                  : 'text-stone-700 dark:text-stone-300 hover:bg-amber-500/15'
-              }`}
-            >
-              {lang === 'hi' ? 'हिंदी' : lang === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
-            </button>
-          ))}
-        </div>
-      </header>
-
-      {/* Main Container */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-5 space-y-7">
+    <div className="w-full space-y-7">
         
         {/* ========================================================================= */}
         {/* INTRO BANNER                                                              */}
@@ -305,7 +163,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
             style={{ color: '#6B1D1D' }} 
             className="text-xl sm:text-2xl md:text-3xl font-serif font-black dark:text-amber-300 leading-snug tracking-tight max-w-2xl mx-auto"
           >
-            {activeLang === 'pb' && 'ਸਤਯਨਾਮ ਹੀ ਭਵ-ਵ්‍යාਧੀ, ਮੋਹ, ਭ੍ਰम ਅਤੇ ਕਰਮ-ਬੰਧਨਾਂ ਦੀ ਇੱਕੋ-ਇੱਕ ਅਚूक ਔਸ਼ਧੀ ਹੈ।'}
+            {activeLang === 'pb' && 'ਸਤਯਨਾਮ ਹੀ ਭਵ-ਵਿਆਧੀ, ਮੋਹ, ਭਰਮ ਅਤੇ ਕਰਮ-ਬੰਧਨਾਂ ਦੀ ਇੱਕੋ-ਇੱਕ ਅਚੂਕ ਔਸ਼ਧੀ ਹੈ।'}
             {activeLang === 'en' && 'Satyanaam is the supreme panacea dissolving all worldly ailments, illusions, and karmic bonds.'}
             {activeLang === 'hi' && 'सत्यनाम ही समस्त भव-व्याधि, मोह-भ्रम और कर्म-बंधन रोगों की एकमात्र अचूक महा-औषधि है।'}
           </h2>
@@ -342,7 +200,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
               </div>
               <p className="text-xs font-serif text-stone-600 dark:text-stone-400 mt-0.5">
                 {activeLang === 'pb'
-                  ? 'ਮੋਹ, ਭ੍ਰम ਤੇ ਅਸ਼ਾਂਤੀ ਦੇ ਬੱ बादल ਹਟਾ ਕੇ ਅੰਤਰਘਟ ਵਿੱਚ ਸ਼ੁੱਧ ਚੇਤਨਾ ਪ੍ਰਗਟ ਕਰੋ'
+                  ? 'ਮੋਹ, ਭਰਮ ਤੇ ਅਸ਼ਾਂਤੀ ਦੇ ਬੱਦਲ ਹਟਾ ਕੇ ਅੰਤਰਘਟ ਵਿੱਚ ਸ਼ੁੱਧ ਚੇਤਨਾ ਪ੍ਰਗਟ ਕਰੋ'
                   : activeLang === 'en'
                   ? 'Dissolve mist clouds of illusion and ailment, revealing the radiant white lotus core'
                   : 'मोह, भ्रम एवं अशांति के आवरण हटाकर अंतर्घट में शुद्ध श्वेत दिव्य प्रकाश का अनुभव करें'}
@@ -384,15 +242,15 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
                 </div>
                 {/* Cloud 2: मोह-भ्रम */}
                 <div className="absolute top-6 right-6 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg">
-                  {activeLang === 'pb' ? '☁️ मोह-भ्रम (Illusion)' : activeLang === 'en' ? '☁️ Illusion & Maya' : '☁️ मोह-भ्रम'}
+                  {activeLang === 'pb' ? '☁️ ਮੋਹ-ਭਰਮ (Illusion)' : activeLang === 'en' ? '☁️ Illusion & Maya' : '☁️ मोह-भ्रम'}
                 </div>
                 {/* Cloud 3: कर्म-बंधन */}
                 <div className="absolute bottom-6 left-8 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg">
-                  {activeLang === 'pb' ? '☁️ कर्म-बंधन (Karmas)' : activeLang === 'en' ? '☁️ Karmic Bonds' : '☁️ कर्म-बंधन'}
+                  {activeLang === 'pb' ? '☁️ ਕਰਮ-ਬੰਧਨ (Karmas)' : activeLang === 'en' ? '☁️ Karmic Bonds' : '☁️ कर्म-बंधन'}
                 </div>
                 {/* Cloud 4: अशांति */}
                 <div className="absolute bottom-4 right-8 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg animate-pulse">
-                  {activeLang === 'pb' ? '☁️ अशांति (Agitation)' : activeLang === 'en' ? '☁️ Inner Agitation' : '☁️ अशांति'}
+                  {activeLang === 'pb' ? '☁️ ਅਸ਼ਾਂਤੀ (Agitation)' : activeLang === 'en' ? '☁️ Inner Agitation' : '☁️ अशांति'}
                 </div>
               </motion.div>
             </div>
@@ -457,7 +315,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
                 >
                   <Sparkles className="w-4 h-4 text-stone-900 animate-spin" />
                   <span>
-                    {activeLang === 'pb' ? 'ਸਤਯਨਾਮ ਔਸ਼ਧੀ ग्रहण ਕਰੋ (Experience Light)' : activeLang === 'en' ? 'Take Satyanaam Panacea (Experience Divine Light)' : 'सत्यनाम औषधि ग्रहण करें (दिव्य प्रकाश अनुभव करें)'}
+                    {activeLang === 'pb' ? 'ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਗ੍ਰਹਿਣ ਕਰੋ (Experience Light)' : activeLang === 'en' ? 'Take Satyanaam Panacea (Experience Divine Light)' : 'सत्यनाम औषधि ग्रहण करें (दिव्य प्रकाश अनुभव करें)'}
                   </span>
                 </button>
               </div>
@@ -482,7 +340,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
               </div>
               <p className="text-xs font-serif text-stone-600 dark:text-stone-400 mt-0.5">
                 {activeLang === 'pb'
-                  ? 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ, ਕਬੀਰ ਗ੍ਰंਥਾਵਲੀ ਅਤੇ ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਤੋਂ ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਦੇ ਪ੍ਰਮਾਣ'
+                  ? 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ, ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ ਅਤੇ ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਤੋਂ ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਦੇ ਪ੍ਰਮਾਣ'
                   : activeLang === 'en'
                   ? 'Authoritative verses from Sakhi Sangrah, Kabir Granthavali and Sri Guru Granth Sahib'
                   : 'साखी संग्रह, कबीर ग्रंथावली एवं श्री गुरु ग्रंथ साहिब से सत्यनाम औषधि के पावन प्रमाण'}
@@ -494,77 +352,20 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {panaceaCards.map((card) => {
-              const isPlaying = isPlayingAudio === card.id;
-              const isCopied = copiedCardId === card.id;
-
-              return (
-                <div
-                  key={card.id}
-                  style={{
-                    backgroundColor: isDarkMode ? '#221812' : '#FFFDF9',
-                    borderColor: 'rgba(217, 119, 6, 0.35)',
-                  }}
-                  className="rounded-2xl border-2 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4"
-                >
-                  <div className="space-y-3">
-                    {/* Source Header */}
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-serif font-black text-[#D97706] flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block shrink-0" />
-                        <span>{card.source[activeLang] || card.source.hi}</span>
-                      </span>
-
-                      {/* Actions */}
-                      <div className="flex items-center gap-1 shrink-0">
-                        <button
-                          type="button"
-                          onClick={() => handleToggleAudio(card.id, card.verse[activeLang] || card.verse.hi)}
-                          className={`p-1.5 rounded-lg border transition-colors cursor-pointer ${
-                            isPlaying
-                              ? 'bg-amber-600 text-white border-amber-700'
-                              : 'border-amber-500/30 hover:bg-amber-500/15 text-stone-700 dark:text-stone-300'
-                          }`}
-                          title={isPlaying ? 'Stop Audio' : 'Listen Audio'}
-                        >
-                          {isPlaying ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleShareCard(card)}
-                          className="p-1.5 rounded-lg border border-amber-500/30 hover:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
-                          title="Share on WhatsApp"
-                        >
-                          {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Share2 className="w-3.5 h-3.5" />}
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Verse */}
-                    <p 
-                      style={{ color: '#6B1D1D' }} 
-                      className="font-serif font-black text-sm sm:text-base leading-relaxed dark:text-amber-300"
-                    >
-                      {formatCoupletString(card.verse[activeLang] || card.verse.hi)}
-                    </p>
-
-                    {/* Meaning */}
-                    <div className="p-3 rounded-xl bg-amber-500/8 border border-amber-500/15">
-                      <p className="text-xs font-serif leading-relaxed text-stone-700 dark:text-stone-300">
-                        <span className="font-bold text-[#D97706]">
-                          {activeLang === 'pb' ? 'ਭਾਵਾਰਥ: ' : activeLang === 'en' ? 'Meaning: ' : 'भावार्थ: '}
-                        </span>
-                        {card.meaning[activeLang] || card.meaning.hi}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {panaceaCards.map((card, idx) => (
+              <UnifiedDohaCard
+                key={card.id}
+                id={card.id}
+                verseNumber={idx + 1}
+                source={card.source[activeLang] || card.source.hi}
+                text={card.verse[activeLang] || card.verse.hi}
+                meaning={card.meaning[activeLang] || card.meaning.hi}
+                language={activeLang}
+                defaultExpandedMeaning={true}
+              />
+            ))}
           </div>
         </section>
-
-      </main>
     </div>
   );
 };

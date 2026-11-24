@@ -1163,7 +1163,7 @@ export const SacredLeelas: React.FC<SacredLeelasProps> = ({
             >
               {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
                 const isSelected = language === lng;
-                const label = lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN';
+                const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
                 return (
                   <button
                     key={lng}

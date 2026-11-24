@@ -261,38 +261,6 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 pb-20">
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
-      {/* Top Navigation Controls Bar (Close Button shifted here) */}
-      <div className="flex items-center justify-end px-1 mb-2">
-        {onClose && (
-          <button 
-            onClick={onClose} 
-            style={{
-              backgroundColor: theme.accentGoldLight,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-            title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-          </button>
-        )}
-      </div>
-
       {/* Header */}
       <div className="text-center space-y-3">
         <motion.div

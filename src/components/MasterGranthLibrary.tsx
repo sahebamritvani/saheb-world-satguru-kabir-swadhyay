@@ -1012,10 +1012,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           <span>{language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Exit Zen Mode' : 'ज़ेन मोड बंद करें'}</span>
         </button>
       )}
-      {/* Sacred Granth Library Header */}
-      <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-3 py-2.5 sm:p-4 flex items-center justify-between shadow-md sticky top-0 z-30 border-b border-amber-400/25">
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          {selectedGranthSlug ? (
+      {/* Active Granth Sub-Header Bar (only when reading a specific Granth) */}
+      {selectedGranthSlug && (
+        <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-3 py-2.5 sm:p-4 rounded-2xl flex items-center justify-between shadow-md sticky top-16 z-20 border border-amber-400/25 mb-3">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <button
               type="button"
               onClick={() => {
@@ -1023,59 +1023,38 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 sacredHaptics.lightTap();
               }}
               aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer shrink-0"
+              className="min-w-[40px] min-h-[40px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer shrink-0"
             >
-              <ArrowLeft size={22} />
+              <ArrowLeft size={20} />
             </button>
-          ) : onClose ? (
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer shrink-0"
-            >
-              <ArrowLeft size={22} />
-            </button>
-          ) : null}
-          <div>
-            <h1 className="text-lg sm:text-xl font-bold font-serif leading-none">
-              {selectedGranthSlug ? currentGranth.title[language] : (language === 'pb' ? 'ਗ੍ਰੰਥ ਸਾਹੇਬ' : language === 'en' ? 'Sacred Granths' : 'पावन ग्रन्थ साहेब')}
-            </h1>
-            {!selectedGranthSlug && (
-               <p className="text-[0.625rem] sm:text-[0.6875rem] opacity-90 font-serif mt-0.5">
-                  {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਣੀ' : language === 'en' ? 'Satguru Kabir Saheb Bani' : 'सतगुरु कबीर साहेब अमृत वाणी'}
-               </p>
+            <div className="min-w-0">
+              <h2 className="text-base sm:text-lg font-bold font-serif leading-tight truncate">
+                {currentGranth.title[language]}
+              </h2>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {onSelectLanguage && (
+              <div className="flex items-center gap-1 bg-white/20 p-1 rounded-lg shrink-0">
+                {(['hi', 'pb', 'en'] as Language[]).map((lng) => (
+                  <button
+                    key={lng}
+                    onClick={() => onSelectLanguage(lng)}
+                    className={`px-2 py-0.5 rounded text-xs font-bold font-serif transition-all cursor-pointer ${
+                      language === lng
+                        ? 'bg-white text-amber-600 shadow-sm'
+                        : 'text-white/80 hover:bg-white/10'
+                    }`}
+                  >
+                    {lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
+                  </button>
+                ))}
+              </div>
             )}
           </div>
         </div>
-
-        <div className="flex items-center gap-2">
-          {onSelectLanguage && (
-            <div className="flex items-center gap-1 bg-white/20 p-1 rounded-lg shrink-0">
-              {(['hi', 'pb', 'en'] as Language[]).map((lng) => (
-                <button
-                  key={lng}
-                  onClick={() => onSelectLanguage(lng)}
-                  className={`px-2 py-0.5 rounded text-xs font-bold font-serif transition-all ${
-                    language === lng
-                      ? 'bg-white text-amber-600 shadow-sm'
-                      : 'text-white/80 hover:bg-white/10'
-                  }`}
-                >
-                  {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
-                </button>
-              ))}
-            </div>
-          )}
-          <button
-            type="button"
-            onClick={onOpenSettings}
-            className="p-2 hover:bg-white/20 rounded-full transition cursor-pointer"
-          >
-            <Settings size={22} />
-          </button>
-        </div>
-      </div>
+      )}
 
       {/* Top Main Heading: Saheb World Sacred Granths & Features */}
       {!zenMode && !selectedGranthSlug && (
@@ -1388,7 +1367,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       {language === 'pb'
                         ? '੪ ਪਾਵਨ ਆਰਤੀਆਂ (ਜੈ ਜੈ ਸਤ੍ਯ ਕਬੀਰ, ਗ਼ਰੀਬ ਨਿਵਾਜ਼, ਸ਼੍ਰੀ ਗੁਰੂਦੇਵ, ਸਤ੍ਯਨਾਮ ਕੀਜੈ), ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ ਤੇ ਆਰਤੀ ਗਾਨ ਆਡੀਓ।'
                         : language === 'en'
-                        ? '4 authentic Aartis (Jai Jai Satya Kabir, Gareeb Niwaj, Shri Gurudev, Satyanam Keejai), Prabhat Gaan & audio recitation.'
+                        ? '4 authentic Aartis (Jai Jai Satya Kabir, Gareeb Niwaj, Shri Gurudev, Satyanaam Keejai), Prabhat Gaan & audio recitation.'
                         : '४ पावन आरतियां (जय जय सत्य कबीर, गरीब निवाज, श्री गुरुदेव, सत्यनाम कीजै), प्रभात मंगल गान एवं आरती गान ऑडियो।'}
                     </p>
                   </div>
@@ -4450,20 +4429,6 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
         )
       )}
 
-      {/* Sacred Bottom Footer */}
-      {!zenMode && (
-        <div
-          style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-          className="border-t py-2 px-4 text-center rounded-xl mt-4 select-none"
-        >
-          <span
-            style={{ color: theme.sacredMaroon }}
-            className="text-xs sm:text-sm font-bold tracking-wider font-serif block"
-          >
-            {exactBottom}
-          </span>
-        </div>
-      )}
       {/* Sacred Sandhukkari Glossary Popup Modal */}
       <SandhukkariGlossaryModal
         isOpen={!!selectedGlossaryTerm}

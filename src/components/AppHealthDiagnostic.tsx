@@ -233,38 +233,6 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
 
   return (
     <div className="space-y-6 pb-10">
-      {/* Dedicated Sacred Satyanaam Bar */}
-      <div 
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border py-2 px-4 rounded-2xl flex items-center justify-center shadow-xs select-none"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block drop-shadow-xs text-center whitespace-nowrap"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
-      {/* Navigation Controls Row (Shifted from Satyanaam Bar) */}
-      {onClose && (
-        <div className="flex items-center justify-between px-1 -my-2">
-          <button 
-            onClick={onClose} 
-            style={{
-              backgroundColor: theme.cardBg,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-3.5 py-1.5 rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 font-serif"
-            title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}</span>
-          </button>
-        </div>
-      )}
-
       <div className="text-center space-y-3">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

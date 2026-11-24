@@ -183,19 +183,6 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
 
   return (
     <div className="max-w-3xl mx-auto space-y-6 pb-20">
-      {/* Sacred Header */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center min-h-[42px] rounded-xl"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
       {/* Main Header & Streak */}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
@@ -221,16 +208,6 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
             </span>
           </div>
 
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-3 py-1.5 rounded-xl border border-amber-600/20 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 cursor-pointer text-xs font-bold flex items-center gap-1"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{isPb ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}</span>
-            </button>
-          )}
         </div>
       </div>
 

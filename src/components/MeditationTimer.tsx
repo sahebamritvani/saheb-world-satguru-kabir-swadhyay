@@ -278,19 +278,6 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 pb-20">
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
       {/* Dedicated Top Action & Navigation Bar (Including Rate Saheb World & Return/Close) */}
       <div 
         className="flex items-center justify-between gap-3 p-3 rounded-2xl border shadow-sm backdrop-blur-md"
@@ -346,26 +333,6 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
           </button>
         </div>
 
-        <div className="flex items-center gap-2">
-          {onClose && (
-            <button 
-              id="meditation-close-btn"
-              type="button"
-              onClick={onClose} 
-              style={{
-                backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                borderColor: '#EF4444',
-                color: '#DC2626',
-              }}
-              className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:bg-red-500 hover:text-white transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-              title={language === 'pb' ? 'ਮੁੱਖ ਪੰਨੇ ਤੇ ਜਾਓ' : language === 'en' ? 'Go to Main Screen' : 'मुख्य पृष्ठ पर जाएं'}
-            >
-              <span className="font-serif font-bold">
-                {language === 'pb' ? '🔙 ਮੁੱਖ ਪੰਨੇ ਤੇ ਜਾਓ' : language === 'en' ? '🔙 Main Menu' : '🔙 मुख्य पृष्ठ पर जाएं'}
-              </span>
-            </button>
-          )}
-        </div>
       </div>
 
       {/* Main Title Header */}

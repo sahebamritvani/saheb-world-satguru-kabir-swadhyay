@@ -529,19 +529,6 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
 
   return (
     <div className="space-y-4 sm:space-y-6 pb-16 select-none max-w-5xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
-      {/* Standardized Sacred Top Bar */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-3 select-none flex items-center justify-center overflow-hidden min-h-[40px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
       {/* Top Banner */}
       <div 
         style={{ 
@@ -578,16 +565,6 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
               <span className="hidden xs:inline text-[11px]">{language === 'pb' ? 'ਰੀਸੈੱਟ' : language === 'en' ? 'Reset' : 'रीसेट'}</span>
             </button>
 
-            {onClose && (
-              <button 
-                type="button"
-                onClick={onClose} 
-                className="w-9 h-9 rounded-xl bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all cursor-pointer border border-white/30 active:scale-95"
-                title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-            )}
           </div>
         </div>
       </div>

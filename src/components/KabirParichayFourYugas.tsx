@@ -263,7 +263,7 @@ const FOUR_YUGAS_DATA: YugaData[] = [
         significance: {
           hi: 'सत्यनाम के प्रभाव से भारी से भारी पत्थर व जीव भी भवसागर पार हो जाते हैं।',
           pb: 'ਸਤਯਨਾਮ ਦੇ ਪ੍ਰਭਾਵ ਨਾਲ ਭਾਰੇ ਪੱਥਰ ਤੇ ਪਾਪੀ ਜੀਵ ਵੀ ਭਵਸਾਗਰ ਤਰ ਜਾਂਦੇ ਹਨ।',
-          en: 'Symbolizes how even heavy worldly souls float effortlessly across the cosmic ocean via Satnaam.',
+          en: 'Symbolizes how even heavy worldly souls float effortlessly across the cosmic ocean via Satyanaam.',
         },
       },
       {
@@ -280,7 +280,7 @@ const FOUR_YUGAS_DATA: YugaData[] = [
         significance: {
           hi: 'घोर अंधकार और आसुरी परिवेश में भी सत्य की ज्योति प्रज्वलित रहती है।',
           pb: 'ਹਨੇਰੇ ਵਿੱਚ ਵੀ ਸੱਚ ਦੀ ਜੋਤਿ ਸਦਾ ਬਲਦੀ ਰਹਿੰਦੀ ਹੈ।',
-          en: 'The flame of Satnaam burns brightly even within the darkest material strongholds.',
+          en: 'The flame of Satyanaam burns brightly even within the darkest material strongholds.',
         },
       },
     ],
@@ -641,23 +641,6 @@ export const KabirParichayFourYugas: React.FC<KabirParichayFourYugasProps> = ({
               {isSpeaking ? <VolumeX className="w-4 h-4 animate-pulse" /> : <Volume2 className="w-4 h-4" />}
               <span>{isSpeaking ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Stop' : 'रोकें') : (language === 'pb' ? 'ਸੁਣੋ' : language === 'en' ? 'Listen' : 'गाथा सुनें')}</span>
             </button>
-
-            {onClose && (
-              <button
-                type="button"
-                onClick={onClose}
-                style={{
-                  backgroundColor: theme.accentGoldLight,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon,
-                }}
-                className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1 hover:scale-105 transition cursor-pointer shadow-xs"
-                title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-              </button>
-            )}
           </div>
         </div>
 

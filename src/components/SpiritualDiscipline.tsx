@@ -378,26 +378,6 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto p-3 sm:p-6 space-y-6">
-      {/* Top Close Button Bar */}
-      {onClose && (
-        <div className="flex justify-start -mb-2">
-          <button
-            type="button"
-            onClick={onClose}
-            style={{
-              backgroundColor: theme.accentGoldLight,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-            title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-          </button>
-        </div>
-      )}
-
       {/* Top Banner */}
       <div 
         className="p-5 sm:p-7 rounded-3xl border shadow-sm relative overflow-hidden"
@@ -449,7 +429,7 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
               >
               {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
                 const isSelected = language === lng;
-                const label = lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN';
+                const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
                 return (
                   <button
                     key={lng}

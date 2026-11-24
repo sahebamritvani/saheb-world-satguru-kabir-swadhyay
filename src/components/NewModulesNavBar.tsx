@@ -76,60 +76,8 @@ export const NewModulesNavBar: React.FC<NewModulesNavBarProps> = ({
         backgroundColor: isDarkMode ? 'rgba(28, 22, 18, 0.94)' : 'rgba(253, 248, 238, 0.96)',
         borderColor: theme.cardBorder,
       }}
-      className="rounded-2xl border p-3 sm:p-4 shadow-sm space-y-3"
+      className="rounded-2xl border p-3 sm:p-4 shadow-sm"
     >
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <button
-          type="button"
-          onClick={() => {
-            sacredHaptics.lightTap();
-            onClose();
-          }}
-          style={{
-            backgroundColor: theme.bgSecondary,
-            borderColor: theme.cardBorder,
-            color: theme.sacredMaroon,
-          }}
-          className="min-h-[40px] px-3.5 py-2 rounded-xl border text-xs sm:text-sm font-serif font-bold flex items-center gap-1.5 hover:brightness-95 transition cursor-pointer whitespace-nowrap shrink-0"
-        >
-          <ArrowLeft className="w-4 h-4 shrink-0" />
-          <span>
-            {language === 'pb' ? 'ਡੈਸ਼ਬੋਰਡ ਤੇ ਵਾਪਸ' : language === 'en' ? 'Back to Home' : 'मुख्य पृष्ठ'}
-          </span>
-        </button>
-
-        {onSelectLanguage && (
-          <div
-            role="group"
-            aria-label="Language switcher"
-            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-            className="flex items-center gap-1 p-1 rounded-xl border"
-          >
-            {langLabels.map((item) => {
-              const active = language === item.id;
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    onSelectLanguage(item.id);
-                  }}
-                  style={
-                    active
-                      ? { backgroundColor: '#6B1D1D', color: '#FFFFFF' }
-                      : { color: theme.textSecondary }
-                  }
-                  className="min-h-[34px] px-3 py-1 rounded-lg text-xs font-serif font-bold transition cursor-pointer whitespace-nowrap shrink-0"
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </div>
-        )}
-      </div>
-
       {/* Smooth Module Switcher Strip */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
         {navItems.map((item) => {

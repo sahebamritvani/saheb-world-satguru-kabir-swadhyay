@@ -24,8 +24,6 @@ import {
   ArrowRight,
   Feather,
   Download,
-  ArrowLeft,
-  X,
   Copy
 } from 'lucide-react';
 import { Language, SACRED_BRANDING } from '../types';
@@ -42,6 +40,7 @@ import {
 import { GuruJiDasSutraView } from './GuruJiDasSutraView';
 import { satyanaamAudio } from '../services/audioDhun';
 import { useAppTheme } from '../theme/ThemeContext';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface DainikChintanProps {
   language: Language;
@@ -71,8 +70,6 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
   language,
   onChangeLanguage,
   onOpenBlessing,
-  onClose,
-  onNavigateToSwadhyay,
   initialTab = 'today',
 }) => {
   const { theme } = useAppTheme();
@@ -337,9 +334,6 @@ ${bottom}`;
     }
   };
 
-  const exactTop = SACRED_BRANDING.header[language];
-  const exactBottom = SACRED_BRANDING.footer[language];
-
   // Trilingual labels
   const tr = {
     title: language === 'hi' ? 'दैनिक आत्म-चिंतन' : language === 'pb' ? 'ਦੈਨਿਕ ਆਤਮ-ਚਿੰਤਨ' : 'Daily Contemplation',
@@ -372,59 +366,6 @@ ${bottom}`;
       }}
       className="rounded-3xl border shadow-2xl overflow-hidden flex flex-col transition-all duration-300"
     >
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
-      {/* Reader Controls Bar: Language and Close (Shifted here from Top Bar) */}
-      <div className="flex items-center justify-end gap-3 px-1 mb-2">
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {onChangeLanguage && (
-            <div className="flex items-center gap-1 bg-black/5 dark:bg-white/10 p-1 rounded-lg shrink-0">
-              {(['hi', 'pb', 'en'] as Language[]).map((lng) => (
-                <button
-                  key={lng}
-                  onClick={() => onChangeLanguage(lng)}
-                  className={`px-2 py-0.5 rounded text-xs font-bold font-serif transition-all ${
-                    language === lng
-                      ? 'bg-[#8B2500] text-white shadow-xs'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/10'
-                  }`}
-                >
-                  {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-              title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-            </button>
-          )}
-        </div>
-      </div>
-
       {/* Main Header & Tab Navigation */}
       <div className="p-4 sm:p-6 border-b space-y-4" style={{ borderColor: theme.cardBorder }}>
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -582,24 +523,14 @@ ${bottom}`;
               {selectedChintan.title[language]}
             </h3>
 
-            {/* Sacred Parchment Couplet */}
-            <div
-              style={{
-                backgroundColor: theme.cardBg,
-                borderColor: theme.accentGold,
-              }}
-              className="p-5 sm:p-6 rounded-2xl border-2 shadow-inner text-center space-y-2 relative overflow-hidden"
-            >
-              <div className="text-amber-500 font-serif text-3xl opacity-20 absolute top-2 left-3 select-none">❝</div>
-              <div className="text-amber-500 font-serif text-3xl opacity-20 absolute bottom-2 right-3 select-none">❞</div>
-
-              <p
-                style={{ color: theme.sacredMaroon }}
-                className="font-serif text-lg sm:text-2xl font-bold leading-relaxed whitespace-pre-line tracking-wide"
-              >
-                {selectedChintan.verse[language]}
-              </p>
-            </div>
+            {/* Sacred Couplet via UnifiedDohaCard */}
+            <UnifiedDohaCard
+              id={`chintan-${selectedChintan.id}`}
+              verseNumber={selectedChintan.dayNumber}
+              badgeLabel={selectedChintan.categoryTitle}
+              text={selectedChintan.verse}
+              language={language}
+            />
 
             {/* Core Teaching & Deep Contemplation */}
             <div className="space-y-3 pt-2">
@@ -1086,18 +1017,6 @@ ${bottom}`;
         </div>
       )}
 
-      {/* Sacred Bottom Branding */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-t py-2 px-4 text-center select-none"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-xs sm:text-sm font-semibold tracking-widest font-serif block opacity-90"
-        >
-          {exactBottom}
-        </span>
-      </div>
     </div>
   );
 };

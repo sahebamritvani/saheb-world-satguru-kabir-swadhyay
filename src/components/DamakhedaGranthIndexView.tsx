@@ -41,7 +41,7 @@ export const DamakhedaGranthIndexView: React.FC<DamakhedaGranthIndexViewProps> =
     setIsChalisaLooping(!isChalisaLooping);
     if (!isChalisaLooping) {
       speechReciter.speak(
-        'सतगुरु कबीर चालीसा - आदि अंत सतनाम हमारा। बन्दी छोड़ सतगुरु सहारा॥',
+        'सतगुरु कबीर चालीसा - आदि अंत सत्यनाम हमारा। बन्दी छोड़ सतगुरु सहारा॥',
         language,
         () => {
           if (isChalisaLooping) {

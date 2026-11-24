@@ -2250,21 +2250,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         </div>
       )}
 
-      {/* Strict Sacred Header Spelling - Frozen (Sticky) at top */}
-      <div
-        style={{ backgroundColor: rc.stepActive, borderColor: rc.border }}
-        className="sticky top-0 z-30 border-b py-2 px-3 sm:px-4 select-none backdrop-blur-md flex items-center justify-center min-h-[42px]"
-        role="region"
-        aria-label="Sacred Header Banner"
-      >
-        <span
-          style={{ color: rc.maroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif whitespace-nowrap text-center"
-        >
-          {exactTop}
-        </span>
-      </div>
-
       {/* ⚠️ Offline Warning Toast */}
       {isOffline && (
         <div className="bg-amber-600/15 border-b border-amber-600/30 text-amber-900 dark:text-amber-200 px-4 py-2 text-xs font-serif font-bold text-center flex items-center justify-center gap-2 animate-fadeIn">
@@ -2707,7 +2692,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           >
             {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
               const isSelected = language === lng;
-              const label = lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN';
+              const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
               return (
                 <button
                   key={lng}
@@ -2751,24 +2736,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
             </span>
           </button>
 
-          {/* EXPLICIT CLOSE SWADHYAY BUTTON (TOOLBAR) */}
-          {onClose && (
-            <button
-              id="toolbar-close-swadhyay-btn"
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: rc.bg,
-                borderColor: rc.borderOrnament,
-                color: rc.maroon,
-              }}
-              className="min-h-[44px] sm:min-h-[34px] px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg border font-bold text-xs flex items-center gap-1.5 cursor-pointer hover:border-amber-500 transition shadow-2xs"
-              title={language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}
-            >
-              <ArrowLeft className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-amber-600" />
-              <span>{language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Back'}</span>
-            </button>
-          )}
         </div>
       </div>
 
@@ -4300,20 +4267,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     </span>
                   </button>
 
-                  {onClose && (
-                    <button
-                      onClick={onClose}
-                      style={{
-                        backgroundColor: rc.bg,
-                        borderColor: rc.borderOrnament,
-                        color: rc.maroon,
-                      }}
-                      className="px-5 py-3 rounded-2xl border font-bold text-sm hover:border-amber-500 transition flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-                    >
-                      <ArrowLeft className="w-4 h-4 text-amber-600" />
-                      <span>{language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}</span>
-                    </button>
-                  )}
                 </div>
               </div>
             )}
@@ -4380,18 +4333,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         </motion.div>
       </AnimatePresence>
 
-      {/* Strict Sacred Footer Spelling */}
-      <div
-        style={{ backgroundColor: rc.stepActive, borderColor: rc.border }}
-        className="border-t py-2 px-4 text-center select-none"
-      >
-        <span
-          style={{ color: rc.maroon }}
-          className="text-xs sm:text-sm font-semibold tracking-wider font-serif block"
-        >
-          {exactBottom}
-        </span>
-      </div>
     </div>
 
       {/* =======================================================
@@ -4698,7 +4639,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                             }}
                             className="px-2 py-0.5 rounded text-[0.625rem] font-bold border transition cursor-pointer hover:opacity-90"
                           >
-                            {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
+                            {lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
                           </button>
                         );
                       })}
@@ -4880,7 +4821,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       className="px-2 py-1 rounded-lg text-xs font-bold transition cursor-pointer hover:opacity-90"
                       title={lng === 'hi' ? 'हिन्दी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
                     >
-                      {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
+                      {lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
                     </button>
                   );
                 })}

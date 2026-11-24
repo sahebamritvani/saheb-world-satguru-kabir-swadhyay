@@ -18,14 +18,14 @@ import {
   Share2,
   Edit3,
   Search,
-  Check,
-  X
+  Check
 } from 'lucide-react';
-import { Language, Sakhi, SACRED_BRANDING } from '../types';
+import { Language, Sakhi } from '../types';
 import { sakhisDatabase } from '../data/sakhis';
 import { useAppTheme } from '../theme/ThemeContext';
 import { speechReciter, ambientReaderAudio, DhunSoundType } from '../services/audioDhun';
 import { parseSakhiInto5StepDiscourse, Discourse5StepData } from '../services/discourseParser';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface DiscourseEngineProps {
   language: Language;
@@ -37,8 +37,6 @@ interface DiscourseEngineProps {
 export const DiscourseEngine: React.FC<DiscourseEngineProps> = ({
   language,
   initialSakhi,
-  onOpenBlessing,
-  onClose,
 }) => {
   const { theme } = useAppTheme();
 
@@ -173,39 +171,6 @@ ${discourseData.dainikChintan.questions.join('\n')}
 
   return (
     <div className="space-y-6 max-w-4xl mx-auto pb-12 animate-fadeIn">
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
-      {/* Reader Controls Bar: Close (Shifted here from Top Bar) */}
-      <div className="flex items-center justify-end px-1 mb-2">
-        {onClose && (
-          <button
-            type="button"
-            onClick={onClose}
-            style={{
-              backgroundColor: 'rgba(239, 68, 68, 0.1)',
-              borderColor: '#EF4444',
-              color: '#DC2626',
-            }}
-            className="px-2.5 py-1 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:bg-red-500 hover:text-white transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-            title={language === 'pb' ? 'ਬੰਦ ਕਰੋ (Close)' : language === 'en' ? 'Close' : 'बंद करें (Close)'}
-          >
-            <X size={14} className="group-hover:rotate-90 transition-transform duration-200" />
-            <span className="hidden sm:inline font-serif font-bold">{language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें'}</span>
-          </button>
-        )}
-      </div>
-
       {/* --- HEADER BANNER: Satguru Kabir Satyanaam Path-Pradarshak --- */}
       <div
         style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
@@ -495,23 +460,19 @@ ${discourseData.dainikChintan.questions.join('\n')}
           )}
         </AnimatePresence>
 
-        {/* SACRED COUPLET LINES */}
-        <div className="space-y-2 py-3">
-          {discourseData.originalText.lines.map((line, idx) => (
-            <p
-              key={idx}
-              className="text-xl sm:text-2xl md:text-3xl font-serif font-extrabold tracking-wide text-amber-950 dark:text-amber-100 leading-relaxed drop-shadow-xs"
-            >
-              {line}
-            </p>
-          ))}
+        {/* SACRED COUPLET DISPLAY (UNIFIED DOHA CARD) */}
+        <div className="text-left">
+          <UnifiedDohaCard
+            id={`discourse-${discourseData.sakhiNumber || 'custom'}`}
+            verseNumber={discourseData.sakhiNumber}
+            badgeLabel={discourseData.originalText.title}
+            source={discourseData.originalText.transliteration}
+            text={discourseData.originalText.lines.join('\n')}
+            meaning={discourseData.deepBhavarth.bhavarthSummary}
+            language={language}
+            defaultExpandedMeaning={false}
+          />
         </div>
-
-        {discourseData.originalText.transliteration && (
-          <p className="text-xs sm:text-sm italic font-sans opacity-80 max-w-xl mx-auto">
-            "{discourseData.originalText.transliteration}"
-          </p>
-        )}
       </div>
 
       {/* =========================================================================

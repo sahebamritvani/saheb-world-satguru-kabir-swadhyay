@@ -725,19 +725,6 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
       }}
       className="rounded-2xl border shadow-xl overflow-hidden flex flex-col transition-all duration-300 relative mx-auto w-full max-w-7xl"
     >
-      {/* Standardized Sacred Top Bar */}
-      <div
-        style={{ backgroundColor: rc.stepActive, borderColor: rc.border }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center min-h-[42px]"
-      >
-        <span
-          style={{ color: rc.maroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
       {/* Akhand Path Header Controls */}
       <div
         style={{
@@ -765,42 +752,6 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
             </p>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            <div className="flex items-center gap-1 bg-black/5 dark:bg-white/10 p-1 rounded-lg shrink-0">
-              {(['hi', 'pb', 'en'] as Language[]).map((lng) => (
-                <button
-                  key={lng}
-                  onClick={() => {
-                    // Handled by parent or external state if needed
-                  }}
-                  className={`px-2 py-0.5 rounded text-xs font-bold font-serif transition-all ${
-                    language === lng
-                      ? 'bg-[#8B2500] text-white shadow-xs'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/10'
-                  }`}
-                >
-                  {lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN'}
-                </button>
-              ))}
-            </div>
-
-            {onClose && (
-              <button
-                type="button"
-                onClick={handleClose}
-                style={{
-                  backgroundColor: theme.accentGoldLight,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon,
-                }}
-                className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-                title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-              </button>
-            )}
-          </div>
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
@@ -1453,19 +1404,6 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
           </>
         )}
       </motion.div>
-
-      {/* Strict Sacred Footer Spelling */}
-      <div
-        style={{ backgroundColor: rc.stepActive, borderColor: rc.border }}
-        className="border-t py-2 px-4 text-center select-none"
-      >
-        <span
-          style={{ color: rc.maroon }}
-          className="text-xs sm:text-sm font-semibold tracking-wider font-serif block"
-        >
-          {exactBottom}
-        </span>
-      </div>
 
       {/* TEXT SHARING EXPORT MODAL */}
       {showExportModal && (

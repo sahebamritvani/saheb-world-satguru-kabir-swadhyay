@@ -7,13 +7,13 @@ import {
   Lock,
   Flame,
   RotateCcw,
-  HeartHandshake,
   ChevronRight,
 } from 'lucide-react';
 import { AppView, Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { NewModulesNavBar } from './NewModulesNavBar';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface SatvikSankalpTrackerProps {
   language: Language;
@@ -548,23 +548,13 @@ export const SatvikSankalpTracker: React.FC<SatvikSankalpTrackerProps> = ({
       </div>
 
       {/* Daily Motivational Kabir Sakhi */}
-      <div
-        style={{
-          backgroundColor: isDarkMode ? '#231812' : '#FDF8EE',
-          borderColor: '#D97706',
-        }}
-        className="rounded-3xl border p-5 sm:p-6 shadow-sm space-y-3"
-      >
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <HeartHandshake className="w-5 h-5 text-[#D97706]" />
-            <h3
-              style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
-              className="text-sm sm:text-base font-serif font-black"
-            >
-              {ui.dailySakhiTitle}
-            </h3>
-          </div>
+      <UnifiedDohaCard
+        id={`satvik-sakhi-${sakhiIndex}`}
+        badgeLabel={ui.dailySakhiTitle}
+        text={currentSakhi.verse}
+        meaning={currentSakhi.meaning}
+        language={language}
+        footerExtra={
           <button
             type="button"
             onClick={() => {
@@ -576,23 +566,13 @@ export const SatvikSankalpTracker: React.FC<SatvikSankalpTrackerProps> = ({
               borderColor: theme.cardBorder,
               color: theme.sacredMaroon,
             }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-serif font-bold flex items-center gap-1 cursor-pointer hover:brightness-95"
+            className="ml-auto px-3 py-1.5 rounded-xl border text-xs font-serif font-bold flex items-center gap-1 cursor-pointer hover:brightness-95"
           >
             <span>{ui.nextSakhi}</span>
             <ChevronRight className="w-3.5 h-3.5" />
           </button>
-        </div>
-
-        <p
-          style={{ color: isDarkMode ? '#FEF3C7' : '#451A03' }}
-          className="text-base sm:text-lg font-serif font-bold leading-relaxed"
-        >
-          “{currentSakhi.verse[language]}”
-        </p>
-        <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif leading-relaxed">
-          {currentSakhi.meaning[language]}
-        </p>
-      </div>
+        }
+      />
     </div>
   );
 };

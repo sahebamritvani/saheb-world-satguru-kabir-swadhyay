@@ -27,7 +27,7 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
     },
     en: {
       title: 'Acharya Parampara History: Sacred Lineage of Sadguru Kabir Saheb',
-      subtitle: "A sacred introduction to the eternal 'Vansh Bayalis' (42 Generations) Guru lineage of Sadguru Kabir Saheb. This holy lineage keeps the eternal flame of Satnaam and the Chauka-Aarti tradition alive in the world since time immemorial.",
+      subtitle: "A sacred introduction to the eternal 'Vansh Bayalis' (42 Generations) Guru lineage of Sadguru Kabir Saheb. This holy lineage keeps the eternal flame of Satyanaam and the Chauka-Aarti tradition alive in the world since time immemorial.",
       back: 'Go Back',
       closing: '|| Saheb Bandagi Saheb ||'
     }
@@ -90,7 +90,7 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
       desc: {
         hi: "कबीर पंथ के द्वितीय वंशाचार्य, जिन्होंने सत्यनाम के पवित्र सिद्धांतों का देश-विदेश में अद्भुत प्रचार-प्रसार किया और अनेक भटके हुए जीवों को सन्मार्ग दिखाया।",
         pb: "ਕਬੀਰ ਪੰਥ ਦੇ ਦੂਜੇ ਵੰਸ਼ਾਚਾਰੀਆ, ਜਿਨ੍ਹਾਂ ਨੇ ਸਤਯਨਾਮ ਦੇ ਪਵਿੱਤਰ ਸਿਧਾਂਤਾਂ ਦਾ ਦੇਸ਼-ਵਿਦੇਸ਼ ਵਿੱਚ ਅਦਭੁਤ ਪ੍ਰਚਾਰ-ਪ੍ਰਸਾਰ ਕੀਤਾ ਅਤੇ ਅਨੇਕਾਂ ਜੀਵਾਂ ਦਾ ਉਧਾਰ ਕੀਤਾ।",
-        en: "The second Vanshacharya of Kabir Panth, who widely propagated the eternal principles of Satnaam across regions and guided countless souls onto the path of truth."
+        en: "The second Vanshacharya of Kabir Panth, who widely propagated the eternal principles of Satyanaam across regions and guided countless souls onto the path of truth."
       }
     },
     {
@@ -164,7 +164,7 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
 • ੧੨. ਉਗਰ ਨਾਮ ਸਾਹੇਬ ਜੀ (ਕਬੀਰ ਧਰਮਨਗਰ, ਦਾਮਾਖੇੜਾ ਗੱਦੀ ਦੇ ਸੰਸਥਾਪਕ)
 • ੧੩. ਦਯਾ ਨਾਮ ਸਾਹੇਬ ਜੀ
 • ੧੪. ਗ੍ਰਿੰਧਮੁਨੀ ਨਾਮ ਸਾਹੇਬ ਜੀ`,
-        en: `Successive Vanshacharyas of the Vansh Bayalis tradition who kept the flame of Satnaam burning across generations. During this era, the seat moved to Kawardha and later in 1903, the 12th Vanshacharya, Pujya Ugra Naam Saheb Ji, established the sacred seat at 'Kabir Dharmanagar, Damakheda' (Chhattisgarh):
+        en: `Successive Vanshacharyas of the Vansh Bayalis tradition who kept the flame of Satyanaam burning across generations. During this era, the seat moved to Kawardha and later in 1903, the 12th Vanshacharya, Pujya Ugra Naam Saheb Ji, established the sacred seat at 'Kabir Dharmanagar, Damakheda' (Chhattisgarh):
 • 5. Kewal Naam Saheb Ji
 • 6. Amol Naam Saheb Ji
 • 7. Surati Sanehi Naam Saheb Ji
@@ -210,7 +210,7 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
       desc: {
         hi: "कबीर धर्मदास वंशावली के १६वें नवोदित वंशाचार्य, जो आधुनिक युवा पीढ़ी और जनमानस में सत्यनाम का पावन संदेश अत्यंत प्रभावशाली और सरल ढंग से प्रचारित कर रहे हैं।",
         pb: "ਕਬੀਰ ਧਰਮਦਾਸ ਵੰਸ਼ਾਵਲੀ ਦੇ ੧੬ਵੇਂ ਨਵੋਦਿਤ ਵੰਸ਼ਾਚਾਰੀਆ, ਜੋ ਆਧੁਨਿਕ ਨੌਜਵਾਨ ਪੀੜ੍ਹੀ ਅਤੇ ਲੋਕਾਈ ਵਿੱਚ ਸਤਯਨਾਮ ਦਾ ਪਾਵਨ ਸੰਦੇਸ਼ ਬੜੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਢੰਗ ਨਾਲ ਪਹੁੰਚਾ ਰਹੇ ਹਨ।",
-        en: "The 16th emerging Vanshacharya of the Kabir Dharmadas lineage, who is inspiring the modern youth and masses with the sacred message of Satnaam in a profound and accessible manner."
+        en: "The 16th emerging Vanshacharya of the Kabir Dharmadas lineage, who is inspiring the modern youth and masses with the sacred message of Satyanaam in a profound and accessible manner."
       }
     }
   ];
@@ -221,20 +221,13 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
       animate={{ opacity: 1 }}
       className="max-w-4xl mx-auto p-4 sm:p-6"
     >
-      <div className="flex items-center justify-between mb-6 bg-amber-500/10 p-4 rounded-3xl border border-amber-500/20 shadow-xs">
-        <button 
-          onClick={onClose}
-          className="p-3 rounded-2xl hover:bg-white transition-all bg-white/50 border border-amber-200/50 cursor-pointer shadow-xs"
-        >
-          <ArrowLeft className="w-5 h-5 text-amber-800" />
-        </button>
+      <div className="flex items-center justify-center mb-6 bg-amber-500/10 p-4 rounded-3xl border border-amber-500/20 shadow-xs">
         <div className="text-center flex-1 px-2">
           <h1 className="text-base sm:text-xl font-serif font-black text-amber-950 flex items-center justify-center gap-2">
             <span className="text-amber-600">🪷</span>
             <span className="truncate">{t.title}</span>
           </h1>
         </div>
-        <div className="w-12 h-12" />
       </div>
 
       {/* Summary Box */}

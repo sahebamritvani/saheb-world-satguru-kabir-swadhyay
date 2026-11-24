@@ -204,19 +204,6 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
 
   return (
     <div className="max-w-4xl mx-auto space-y-6 pb-20">
-      {/* Standardized Sacred Top Bar */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center overflow-hidden min-h-[42px] rounded-xl"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
@@ -241,21 +228,6 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
             </button>
           )}
 
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-xs"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{isHi ? 'वापस जाएं' : isPb ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}</span>
-            </button>
-          )}
         </div>
       </div>
 

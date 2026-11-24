@@ -77,6 +77,7 @@ const SatvikSankalpTracker = lazy(() => import('./components/SatvikSankalpTracke
 const KabirGyanQuiz = lazy(() => import('./components/KabirGyanQuiz').then(m => ({ default: m.KabirGyanQuiz })));
 const VanshBayalisModule = lazy(() => import('./components/VanshBayalisModule').then(m => ({ default: m.VanshBayalisModule })));
 const SatyanaamPanaceaView = lazy(() => import('./components/SatyanaamPanaceaView').then(m => ({ default: m.SatyanaamPanaceaView })));
+import { MasterFeatureCardLayout } from './components/MasterFeatureCardLayout';
 import { getStarterDailySakhi, loadFullSakhisModule } from './data/sakhiStarterData';
 import { Language, AppView, Sakhi, DiaryEntry, SggsKabirVerse } from './types';
 import { translations } from './data/translations';
@@ -682,8 +683,18 @@ function MainApp() {
         />
       )}
 
-      {/* View 2: 5-Step Traditional Swadhyay Study */}
-      {currentView === 'swadhyay' && (
+      {/* Unified Master Feature Card Layout for all 58/59 Feature Views */}
+      {currentView !== 'daily' && (
+        <MasterFeatureCardLayout
+          currentView={currentView}
+          language={language}
+          onBack={() => handleSelectView('daily')}
+          onSelectLanguage={setLanguage}
+          onOpenSettings={() => setIsSettingsOpen(true)}
+          onOpenAccessibility={() => setIsAccessibilityOpen(true)}
+        >
+          {/* View 2: 5-Step Traditional Swadhyay Study */}
+          {currentView === 'swadhyay' && (
         <SwadhyayReader
           key={`swadhyay-${activeSakhi?.id || 'none'}`}
           sakhi={activeSakhi}
@@ -1370,17 +1381,19 @@ function MainApp() {
         />
       )}
 
-      {/* View: Satyanaam: The Supreme Panacea */}
-      {currentView === 'satyanaam-panacea' && (
-        <SatyanaamPanaceaView
-          language={language}
-          onSelectLanguage={setLanguage}
-          onNavigateView={handleSelectView}
-          onClose={() => {
-            setCurrentView('daily');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-        />
+          {/* View: Satyanaam: The Supreme Panacea */}
+          {currentView === 'satyanaam-panacea' && (
+            <SatyanaamPanaceaView
+              language={language}
+              onSelectLanguage={setLanguage}
+              onNavigateView={handleSelectView}
+              onClose={() => {
+                setCurrentView('daily');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
+          )}
+        </MasterFeatureCardLayout>
       )}
 
       {/* Guaranteed Permanent Safety Fallback: Never Blank */}

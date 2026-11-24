@@ -2219,24 +2219,6 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
               <ArrowLeft size={18} className="shrink-0" />
               <span className="hidden sm:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
             </button>
-          ) : onClose ? (
-            <button
-              type="button"
-              onClick={() => {
-                if (isPureVaniMode) {
-                  exitPureVaniMode(true);
-                } else {
-                  stopAllAudioPlayback();
-                }
-                onClose();
-              }}
-              className="min-h-[44px] min-w-[44px] sm:min-h-[40px] px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center justify-center gap-1 shrink-0 whitespace-nowrap"
-              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
-              title={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
-            >
-              <ArrowLeft size={18} className="shrink-0" />
-              <span className="hidden sm:inline">{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
-            </button>
           ) : null}
           <div 
             onClick={viewMode === 'reading' ? scrollToContainerTop : undefined}

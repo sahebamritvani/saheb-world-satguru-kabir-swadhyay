@@ -871,7 +871,7 @@ export const Layout: React.FC<LayoutProps> = ({
           label: {
             hi: 'सत्यनाम एवं सारशब्द',
             pb: 'ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਸ਼ਬਦ',
-            en: 'Satya Naam & Saar Shabd',
+            en: 'Satyanaam & Saar Shabd',
           },
           icon: Atom,
           badge: { hi: 'परम मोक्ष', pb: 'ਪਰਮ ਮੋਕਸ਼', en: 'Moksha' },
@@ -1299,8 +1299,8 @@ export const Layout: React.FC<LayoutProps> = ({
         </div>
       )}
 
-      {/* Sacred Top Header - Hidden in Full-Screen Reading Mode to maximize reading space */}
-      {!isFullscreen && (
+      {/* Sacred Top Header - Shown on Daily Dashboard; Card Screens use unified MasterFeatureCardLayout */}
+      {!isFullscreen && currentView === 'daily' && (
         <SacredHeaderContainer theme={theme} $translucent={!!globalWallpaper}>
         {/* ================= BAR 1: TOP BAR (CENTRE: SATYANAAM) ================= */}
         <div
@@ -1743,11 +1743,9 @@ export const Layout: React.FC<LayoutProps> = ({
             {/* Quick Divine Darshan Jump */}
             <button
               onClick={() => handleNavClick('divine-darshan')}
-              className={`h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs ${
-                currentView === 'divine-darshan' ? 'ring-1.5 ring-amber-500 font-black' : ''
-              }`}
+              className="h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs"
               style={{
-                backgroundColor: currentView === 'divine-darshan' ? theme.stepActiveBg : theme.accentGoldLight,
+                backgroundColor: theme.accentGoldLight,
                 borderColor: theme.accentGold,
                 color: theme.sacredMaroon
               }}
@@ -1762,12 +1760,10 @@ export const Layout: React.FC<LayoutProps> = ({
             {/* Quick Aarti Sanctuary Jump */}
             <button
               onClick={() => handleNavClick('aarti-sanctuary')}
-              className={`h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs ${
-                currentView === 'aarti-sanctuary' ? 'ring-1.5 ring-amber-500 font-black' : ''
-              }`}
+              className="h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs"
               style={{
-                backgroundColor: currentView === 'aarti-sanctuary' ? theme.stepActiveBg : theme.cardBg,
-                borderColor: currentView === 'aarti-sanctuary' ? theme.accentGold : theme.cardBorder,
+                backgroundColor: theme.cardBg,
+                borderColor: theme.cardBorder,
                 color: theme.sacredMaroon
               }}
               title={language === 'pb' ? 'ਸੰਧਿਆ ਆਰਤੀ' : language === 'en' ? 'Evening Aarti' : 'संध्या आरती'}
@@ -1958,7 +1954,7 @@ export const Layout: React.FC<LayoutProps> = ({
             >
               {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
                 const isSelected = language === lng;
-                const label = lng === 'hi' ? 'हि' : lng === 'pb' ? 'ਪੰ' : 'EN';
+                const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
                 return (
                   <button
                     key={lng}

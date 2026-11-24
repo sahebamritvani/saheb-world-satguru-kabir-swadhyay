@@ -195,24 +195,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
   return (
     <div className="max-w-5xl mx-auto space-y-6 pb-28 px-4 sm:px-6" style={{ color: theme.textPrimary }}>
       {/* TOP NAVIGATION BAR */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pt-4">
-        <button
-          type="button"
-          onClick={() => {
-            sacredHaptics.lightTap();
-            onBack();
-          }}
-          style={{
-            backgroundColor: theme.cardBg,
-            borderColor: theme.cardBorder,
-            color: theme.textPrimary,
-          }}
-          className="flex items-center gap-2 px-4 py-2 rounded-2xl border backdrop-blur-md font-bold text-xs shadow-xs hover:opacity-90 transition cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4" style={{ color: theme.accentGold }} />
-          <span>{isPb ? 'ਵਾਪਸ ਮੁੱਖ ਪੰਨੇ ਤੇ' : isEn ? 'Back to Daily View' : 'वापस दैनिक स्वाध्याय'}</span>
-        </button>
-
+      <div className="flex flex-wrap items-center justify-end gap-3 pt-2">
         {/* Global Language Switcher */}
         <div
           style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}

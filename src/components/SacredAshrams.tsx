@@ -113,7 +113,7 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
     },
     en: {
       title: 'Sacred Pilgrimage Sites of Kabir Panth',
-      subtitle: 'Major spiritual centers associated with Sadguru Kabir Saheb and the Dharmadas lineage, where the eternal flame of Satnaam and universal brotherhood has shone for centuries.',
+      subtitle: 'Major spiritual centers associated with Sadguru Kabir Saheb and the Dharmadas lineage, where the eternal flame of Satyanaam and universal brotherhood has shone for centuries.',
       closing: '|| Saheb Bandagi Saheb ||',
       physicalTab: 'Sacred Pilgrimages',
       innerTab: 'Inner Residence',
@@ -143,39 +143,6 @@ export const SacredAshrams: React.FC<SacredAshramsProps> = ({
       exit={{ opacity: 0, y: 15 }}
       className="max-w-4xl mx-auto px-4 py-6 sm:py-8 space-y-6 pb-20"
     >
-      {/* Standardized Sacred Top Bar */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-        </span>
-      </div>
-
-      {/* Header Controls Bar */}
-      <div className="flex items-center justify-end px-1 mb-2">
-        {onClose && (
-          <button
-            type="button"
-            onClick={onClose}
-            style={{
-              backgroundColor: theme.accentGoldLight,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-            title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft size={14} />
-            <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-          </button>
-        )}
-      </div>
-
       {/* Header Banner */}
       <div 
         style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}

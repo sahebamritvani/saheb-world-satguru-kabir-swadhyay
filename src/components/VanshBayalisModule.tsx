@@ -308,9 +308,6 @@ export const VanshBayalisModule: React.FC<VanshBayalisModuleProps> = ({
         </button>
       </div>
 
-      <p style={{ color: theme.sacredMaroon }} className="text-center text-xs sm:text-sm font-serif font-bold pt-2">
-        {SACRED_BRANDING.footer[language]}
-      </p>
     </div>
   );
 };

@@ -377,41 +377,16 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
 
   return (
     <div className="max-w-4xl mx-auto space-y-6 pb-20 relative animate-fadeIn">
-      {/* Top Banner Header with Inline Close Button */}
+      {/* Top Sub-Banner Title */}
       <div 
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border py-3 px-4 rounded-3xl flex items-center justify-between shadow-xs select-none relative"
+        className="border py-2.5 px-4 rounded-2xl flex items-center justify-center shadow-xs select-none"
       >
         <div className="flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-amber-600" />
           <span className="text-xs sm:text-sm font-black uppercase tracking-wider font-serif" style={{ color: theme.sacredMaroon }}>
             {language === 'hi' ? 'आध्यात्मिक स्वाध्याय एवं साधना डैशबोर्ड' : language === 'pb' ? 'ਸਾਧਨਾ ਪ੍ਰਗਤੀ ਡੈਸ਼ਬੋਰਡ' : 'Spiritual Growth Dashboard'}
           </span>
-        </div>
-
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-base font-black tracking-widest font-serif hidden sm:block drop-shadow-xs"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-
-        <div className="flex items-center justify-end">
-          {onClose && (
-            <button
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-              title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-            </button>
-          )}
         </div>
       </div>
 

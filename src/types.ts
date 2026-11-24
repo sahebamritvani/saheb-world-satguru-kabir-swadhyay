@@ -302,14 +302,14 @@ export interface SpiritualRank {
 
 export const SACRED_BRANDING = {
   header: {
-    hi: '🌹।।सत्यनाम।।🌹',
-    pb: '🌹।।ਸਤਯਨਾਮ।।🌹',
-    en: '🌹||Satyanaam||🌹',
+    hi: '🌹 ।। सत्यनाम ।। 🌹',
+    pb: '🌹 ।। ਸਤਯਨਾਮ ।। 🌹',
+    en: '🌹 ।। Satyanaam ।। 🌹',
   },
   footer: {
-    hi: '।।साहेब बन्दगी साहेब।। 🙏',
-    pb: '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।। 🙏',
-    en: '||Saheb Bandagi Saheb|| 🙏',
+    hi: '।। साहेब बंदगी साहेब ।। 🙏',
+    pb: '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏',
+    en: '।। Saheb Bandgi Saheb ।। 🙏',
   },
 } as const;
 

@@ -802,15 +802,6 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                 ))}
               </div>
 
-              {onClose && (
-                <button
-                  onClick={onClose}
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition cursor-pointer border border-white/20"
-                  title={activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Go Back' : 'वापस जाएं'}
-                >
-                  <ChevronDown className="w-5 h-5 text-white" />
-                </button>
-              )}
             </div>
           </div>
 

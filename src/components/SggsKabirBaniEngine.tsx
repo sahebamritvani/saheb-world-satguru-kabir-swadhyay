@@ -261,16 +261,6 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   : 'श्री गुरु ग्रंथ साहिब जी एवं सतगुरु कबीर वाणी संगम'}
               </span>
             </div>
-            {onBack && (
-              <button
-                type="button"
-                onClick={onBack}
-                className="px-3.5 py-1 rounded-xl bg-white/15 hover:bg-white/25 transition text-xs font-bold flex items-center gap-1 cursor-pointer"
-              >
-                <ArrowLeft size={14} />
-                <span>{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
-              </button>
-            )}
           </div>
 
           <div>

@@ -500,23 +500,6 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                 <span className="hidden sm:inline">{language === 'pb' ? 'ਨਮਨ' : language === 'en' ? 'Salutation' : 'नमन'}</span>
                 <Volume2 className="w-4 h-4" />
               </button>
-
-              <button
-                onClick={onClose}
-                className="px-3 py-2 rounded-xl flex items-center justify-center border transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-2xs gap-2"
-                style={{
-                  backgroundColor: theme.cardBg,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon,
-                }}
-                title={language === 'pb' ? 'ਪਿੱਛੇ' : language === 'en' ? 'Back' : 'वापस'}
-                aria-label="Go Back"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span className="font-bold text-xs sm:text-sm">
-                  {language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस आएं'}
-                </span>
-              </button>
             </div>
           </div>
 

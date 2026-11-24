@@ -23,6 +23,7 @@ import { Language, AppView, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { formatCoupletString } from '../utils/textSanitizer';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface MoolSiddhantModuleProps {
   language: Language;
@@ -425,89 +426,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
     : [{ x: 120, y: 245, label: "भक्ति" }, { x: 280, y: 245, label: "सुख" }, { x: 155, y: 300, label: "मुक्ति" }, { x: 245, y: 300, label: "शांति" }];
 
   return (
-    <div 
-      style={{ 
-        backgroundColor: isDarkMode ? '#17120E' : '#FDF8EE',
-        color: isDarkMode ? '#F5EBE1' : '#2C1810' 
-      }} 
-      className="min-h-screen pb-20 selection:bg-amber-500 selection:text-white"
-    >
-      {/* Top-Center Sacred Banner */}
-      <div
-        style={{
-          backgroundColor: isDarkMode ? '#241A14' : '#FAF0DC',
-          borderColor: 'rgba(217, 119, 6, 0.35)',
-        }}
-        className="border-b py-2 px-3 sm:px-4 flex items-center justify-center select-none"
-      >
-        <span
-          style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[activeLang]}
-        </span>
-      </div>
-
-      {/* Top Header Navigation Bar */}
-      <header 
-        style={{
-          backgroundColor: isDarkMode ? 'rgba(26, 18, 14, 0.92)' : 'rgba(253, 248, 238, 0.92)',
-          borderColor: '#D97706',
-        }}
-        className="sticky top-0 z-40 backdrop-blur-md border-b px-4 py-3 sm:px-6 shadow-xs flex items-center justify-between"
-      >
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={onClose}
-            className="p-2 rounded-xl border border-amber-600/30 hover:bg-amber-500/10 transition-colors cursor-pointer flex items-center justify-center text-[#6B1D1D] dark:text-amber-400"
-            title={activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Go Back' : 'वापस जाएं'}
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black tracking-widest text-[#D97706] uppercase">
-                {activeLang === 'pb' ? 'ਮੂਲ ਸਿਧਾਂਤ' : activeLang === 'en' ? 'Core Principle' : 'मूल सिद्धांत'}
-              </span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 font-bold border border-amber-500/20">
-                100% Offline
-              </span>
-            </div>
-            <h1 
-              style={{ color: '#6B1D1D' }} 
-              className="text-base sm:text-lg font-serif font-black dark:text-amber-300 tracking-tight"
-            >
-              {activeLang === 'pb' ? 'ਇੱਕ ਸਤਯਨਾਮ ਤੋਂ ਸਭ ਸਧੈ' : activeLang === 'en' ? 'Master the One Satyanaam' : 'एक सत्यनाम से सब सधै'}
-            </h1>
-          </div>
-        </div>
-
-        {/* Language Selector Pills */}
-        <div className="flex items-center gap-1 bg-amber-500/10 p-1 rounded-xl border border-amber-500/20">
-          {(['hi', 'pb', 'en'] as Language[]).map((lang) => (
-            <button
-              key={lang}
-              type="button"
-              onClick={() => {
-                sacredHaptics.lightTap();
-                setActiveLang(lang);
-                if (onSelectLanguage) onSelectLanguage(lang);
-              }}
-              className={`px-2.5 py-1 text-xs font-serif font-black rounded-lg transition-all cursor-pointer ${
-                activeLang === lang
-                  ? 'bg-[#6B1D1D] text-amber-50 shadow-xs'
-                  : 'text-stone-700 dark:text-stone-300 hover:bg-amber-500/15'
-              }`}
-            >
-              {lang === 'hi' ? 'हिंदी' : lang === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
-            </button>
-          ))}
-        </div>
-      </header>
-
-      {/* Main Container */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-5 space-y-7">
+    <div className="w-full space-y-7">
         
         {/* ========================================================================= */}
         {/* SECTION A — TOP CORE MOTTO CARD (Multilanguage)                           */}
@@ -872,118 +791,36 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {dohasList.map((item) => {
-              const isPlaying = playingDohaId === item.id;
-              const isCopied = copiedId === item.id;
-
-              return (
-                <div
-                  key={item.id}
-                  style={{
-                    backgroundColor: isDarkMode ? '#221812' : '#FFFDF9',
-                    borderColor: item.isCrossReference ? '#D97706' : 'rgba(217, 119, 6, 0.4)',
-                  }}
-                  className={`rounded-2xl border-2 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3 relative overflow-hidden ${
-                    item.isCrossReference ? 'ring-1 ring-amber-500/30' : ''
-                  }`}
-                >
-                  <div className="space-y-2.5">
-                    {/* Top Row: Granth Source Badge & Actions */}
-                    <div className="flex items-center justify-between gap-2">
-                      <span 
-                        style={{ color: '#D97706' }} 
-                        className="text-[11px] font-serif font-black tracking-wide truncate flex items-center gap-1.5"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block shrink-0" />
-                        <span>{item.source[activeLang] || item.source.hi}</span>
-                      </span>
-
-                      {/* Right Action Icons: TTS & WhatsApp Share */}
-                      <div className="flex items-center gap-1.5 shrink-0">
-                        {/* Audio / TTS Button */}
-                        <button
-                          type="button"
-                          onClick={() => handleToggleSpeech(item)}
-                          className={`p-1.5 rounded-lg border transition-colors cursor-pointer ${
-                            isPlaying
-                              ? 'bg-amber-600 text-white border-amber-700'
-                              : 'border-amber-500/30 hover:bg-amber-500/15 text-stone-700 dark:text-stone-300'
-                          }`}
-                          title={
-                            isPlaying
-                              ? activeLang === 'pb'
-                                ? 'ਆਵਾਜ਼ ਰੋਕੋ'
-                                : activeLang === 'en'
-                                ? 'Stop Audio'
-                                : 'ध्वनि रोकें'
-                              : activeLang === 'pb'
-                              ? 'ਬਾਣੀ ਸੁਣੋ'
-                              : activeLang === 'en'
-                              ? 'Listen Audio'
-                              : 'वाणी श्रवण करें'
-                          }
-                        >
-                          {isPlaying ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-amber-700 dark:text-amber-400" />}
-                        </button>
-
-                        {/* WhatsApp Share Button */}
-                        <button
-                          type="button"
-                          onClick={() => handleShareDoha(item)}
-                          className="p-1.5 rounded-lg border border-amber-500/30 hover:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
-                          title={
-                            activeLang === 'pb'
-                              ? 'WhatsApp ਤੇ ਭੇਜੋ'
-                              : activeLang === 'en'
-                              ? 'Share on WhatsApp'
-                              : 'WhatsApp पर भेजें'
-                          }
-                        >
-                          {isCopied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Sacred Two-Line Doha Text */}
-                    <p 
-                      style={{ color: '#6B1D1D' }} 
-                      className="font-serif font-black text-sm sm:text-base leading-relaxed dark:text-amber-300 whitespace-pre-line"
+            {dohasList.map((item) => (
+              <div key={item.id} className="space-y-2">
+                <UnifiedDohaCard
+                  id={`mool-doha-${item.id}`}
+                  verseNumber={item.id}
+                  source={item.source[activeLang] || item.source.hi}
+                  text={item.doha}
+                  meaning={item.meaning[activeLang] || item.meaning.hi}
+                  language={activeLang}
+                  defaultExpandedMeaning={true}
+                />
+                {item.id === 4 && (
+                  <div className="pt-1">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        sacredHaptics.mediumTap();
+                        if (onNavigateView) onNavigateView('satyanaam-panacea');
+                      }}
+                      className="w-full py-2.5 px-4 rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-amber-50 font-serif font-black text-xs sm:text-sm shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer border border-amber-400/40 flex items-center justify-center gap-2"
                     >
-                      {formatCoupletString(item.doha)}
-                    </p>
-
-                    {/* Simple 2-Line Meaning in Active Language */}
-                    <div className="p-3 rounded-xl bg-amber-500/8 border border-amber-500/15">
-                      <p className="text-xs font-serif leading-relaxed text-stone-700 dark:text-stone-300">
-                        <span className="font-bold text-[#D97706]">
-                          {activeLang === 'pb' ? 'ਭਾਵਾਰਥ: ' : activeLang === 'en' ? 'Meaning: ' : 'भावार्थ: '}
-                        </span>
-                        {item.meaning[activeLang] || item.meaning.hi}
-                      </p>
-                    </div>
+                      <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
+                      <span>
+                        {activeLang === 'pb' ? 'ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਨੁਭਵ ਕਰੋ (ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ)' : activeLang === 'en' ? 'Experience Divine White Light (Supreme Panacea)' : 'दिव्य प्रकाश अनुभव करें (सर्व रोग निवारक औषधि)'}
+                      </span>
+                    </button>
                   </div>
-
-                  {/* Direct Navigation Button for Satyanaam Panacea (Supreme Panacea) */}
-                  {item.id === 4 && (
-                    <div className="pt-2">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          sacredHaptics.mediumTap();
-                          if (onNavigateView) onNavigateView('satyanaam-panacea');
-                        }}
-                        className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-amber-50 font-serif font-black text-xs sm:text-sm shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer border border-amber-400/40 flex items-center justify-center gap-2"
-                      >
-                        <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
-                        <span>
-                          {activeLang === 'pb' ? 'ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਨੁਭਵ ਕਰੋ (ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ)' : activeLang === 'en' ? 'Experience Divine White Light (Supreme Panacea)' : 'दिव्य प्रकाश अनुभव करें (सर्व रोग निवारक औषधि)'}
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -1061,7 +898,6 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
           </div>
         </section>
 
-      </main>
     </div>
   );
 };

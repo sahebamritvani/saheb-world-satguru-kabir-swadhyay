@@ -982,23 +982,6 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
             </button>
           )}
 
-          {onClose && (
-            <button
-              id="close-dhun-player-btn"
-              type="button"
-              onClick={handleClosePlayer}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3.5 py-2 rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-2xs active:scale-95"
-              title={language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Go Back'}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Back'}</span>
-            </button>
-          )}
         </div>
       </div>
 
@@ -1973,23 +1956,6 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
             );
           })}
 
-          {onClose && (
-            <button
-              id="footer-close-dhun-player-btn"
-              type="button"
-              onClick={handleClosePlayer}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="ml-auto sm:ml-2 px-3 py-1.5 rounded-xl border text-xs font-bold font-serif flex items-center gap-1 hover:scale-105 transition-all cursor-pointer shadow-2xs active:scale-95"
-              title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}</span>
-            </button>
-          )}
         </div>
       </div>
       </div>

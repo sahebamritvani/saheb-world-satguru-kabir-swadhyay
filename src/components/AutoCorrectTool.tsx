@@ -299,25 +299,6 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
-            {onClose && (
-              <button
-                onClick={onClose}
-                style={{
-                  backgroundColor: theme.accentGoldLight,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon,
-                }}
-                className="px-3.5 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-                title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span className="font-serif font-bold">
-                  {language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-                </span>
-              </button>
-            )}
-          </div>
         </div>
 
         {/* Tab Switcher: Single vs Bulk */}

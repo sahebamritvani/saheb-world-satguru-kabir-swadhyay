@@ -115,15 +115,6 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
                 : 'सतगुरु कबीर साहेब जी के पावन पारंपरिक भजन, चौका आरती और सिमरन धुनें जो आत्मा को विभोर करती हैं।'}
             </p>
           </div>
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              className="p-2.5 rounded-2xl bg-black/20 hover:bg-black/30 text-white transition cursor-pointer"
-            >
-              <X size={20} />
-            </button>
-          )}
         </div>
       </div>
 

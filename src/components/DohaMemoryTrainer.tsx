@@ -264,14 +264,6 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
           </div>
         </div>
 
-        {onClose && (
-          <button
-            onClick={onClose}
-            className="p-2 rounded-xl hover:bg-black/10 transition cursor-pointer"
-          >
-            ✕
-          </button>
-        )}
       </div>
 
       {/* Content Body */}
@@ -480,15 +472,6 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         )}
       </div>
 
-      {/* Footer Branding */}
-      <div 
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-t py-2.5 px-4 text-center select-none"
-      >
-        <span style={{ color: theme.sacredMaroon }} className="text-xs sm:text-sm font-semibold tracking-wider font-serif block">
-          {SACRED_BRANDING.footer[language]}
-        </span>
-      </div>
     </div>
   );
 };

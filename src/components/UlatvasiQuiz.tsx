@@ -351,7 +351,7 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     correctIndex: 0,
     explanation: {
       hi: 'कबीर साहेब अचेत अज्ञानी जीव को जगाते हैं कि जब अंत में कब्र या श्मशान में ही समाना है, तो सांसारिक सुखों में बेखबर होकर सोने के बजाय सत्य की साधना में जागो।',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਦੇ ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚੋਂ ਜਾਗੋ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਲੱਗੋ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਦੇ ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚੋਂ ਜਾਗੋ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਲੱਗੋ।',
       en: 'Knowing mortal impermanence, the seeker is urged to awaken from mundane sleep into devotional consciousness.'
     }
   },
@@ -361,16 +361,16 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     verseText: {
       hi: 'कबीर काल सबन को खाय, कालहि खाय कबीर।\nसत्यनाम की नाव चढ़ि, उतरा निर्मल तीर।।',
       pb: 'ਕਬੀਰ ਕਾਲ ਸਬਨ ਕੋ ਖਾਯ, ਕਾਲਹਿ ਖਾਯ ਕਬੀਰ।\nਸਤਯਨਾਮ ਕੀ ਨਾਵ ਚੜ੍ਹ, ਉਤਰਾ ਨਿਰਮਲ ਤੀਰ।।',
-      en: 'Kabir kaal saban ko khaay, kaalahi khaay Kabir |\nSatyanam ki naav chadhi, utara nirmal teer ||'
+      en: 'Kabir kaal saban ko khaay, kaalahi khaay Kabir |\nSatyanaam ki naav chadhi, utara nirmal teer ||'
     },
-    transliteration: 'Kabir kaal saban ko khaay, kaalahi khaay Kabir. Satyanam ki naav chadhi, utara nirmal teer.',
+    transliteration: 'Kabir kaal saban ko khaay, kaalahi khaay Kabir. Satyanaam ki naav chadhi, utara nirmal teer.',
     themeTitle: {
       hi: 'सत्यनाम की नाव व काल पर पूर्ण विजय',
       pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਤੇ ਕਾਲ ਉੱਤੇ ਪੂਰਨ ਜਿੱਤ',
       en: 'Ark of Satyanaam & Complete Victory Over Kal'
     },
     glossaryKey: 'सत्यनाम की नाव (Ark of Truth)',
-    glossaryBadge: { hi: 'सत्यनाम की नाव', pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ', en: 'Ark of Satnaam' },
+    glossaryBadge: { hi: 'सत्यनाम की नाव', pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ', en: 'Ark of Satyanaam' },
     clue: {
       hi: 'सत्यनाम की नाव पर आरूढ़ होकर कबीर साहेब ने काल को ही जीत लिया और निर्मल तट पर पहुंच गए।',
       pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਵਿੱਚ ਸਵਾਰ ਹੋ ਕੇ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਾਲ ਨੂੰ ਜਿੱਤ ਲਿਆ ਤੇ ਪਾਰ ਉੱਤਰ ਗਏ।',
@@ -1158,41 +1158,8 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
       }}
       className="rounded-3xl border shadow-2xl overflow-hidden flex flex-col transition-all duration-300"
     >
-      {/* Sacred Top Banner */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-4 text-center select-none"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-base font-bold tracking-normal font-serif block"
-        >
-          {exactTop}
-        </span>
-      </div>
-
       {/* Main Header & Tab Controls */}
       <div className="p-4 sm:p-6 border-b space-y-4" style={{ borderColor: theme.cardBorder }}>
-        {/* Dedicated Back Navigation Row */}
-        {onClose && (
-          <div className="flex items-center justify-between gap-2">
-            <button
-              id="ulatvasi-back-btn"
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.bgSecondary,
-                borderColor: theme.cardBorder,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3.5 py-2 min-h-[40px] rounded-xl border text-xs sm:text-sm font-bold flex items-center gap-1.5 hover:opacity-90 transition cursor-pointer shadow-xs active:scale-95 font-serif"
-              title={tr.backBtn}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{tr.backBtn}</span>
-            </button>
-          </div>
-        )}
 
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
@@ -1242,7 +1209,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                       : 'opacity-70 hover:opacity-100 hover:bg-black/5'
                   }`}
                 >
-                  {l === 'hi' ? 'हि' : l === 'pb' ? 'ਪੰ' : 'EN'}
+                  {l === 'hi' ? 'हिंदी' : l === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
                 </button>
               ))}
             </div>
@@ -2856,18 +2823,6 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
         </div>
       )}
 
-      {/* Sacred Bottom Banner */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-t py-2 px-4 text-center select-none"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-xs sm:text-sm font-semibold tracking-wider font-serif block"
-        >
-          {exactBottom}
-        </span>
-      </div>
     </div>
   );
 };

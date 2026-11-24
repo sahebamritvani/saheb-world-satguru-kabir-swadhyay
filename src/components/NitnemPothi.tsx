@@ -802,18 +802,6 @@ export const NitnemPothi: React.FC<{
       ref={containerRef}
       className="nitnem-pothi-wrapper w-full flex flex-col items-center justify-between rounded-3xl transition-all duration-300 relative space-y-3 my-2"
     >
-      {/* Standardized Sacred Top Bar */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl select-none flex items-center justify-center min-h-[44px] w-full"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[currentLang]}
-        </span>
-      </div>
 
       {/* Standalone 7-Section Category Picker when used directly */}
       {!propSections && (

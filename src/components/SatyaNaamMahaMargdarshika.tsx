@@ -11,59 +11,28 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   ChevronDown, 
   BookOpenText, 
-  ArrowLeft, 
   Sparkles, 
   Scale, 
-  Flame, 
   Scroll, 
-  Volume2, 
-  Check, 
-  Copy, 
   ShieldCheck,
   Compass
 } from 'lucide-react';
 import { sacredHaptics } from '../services/haptics';
-import { speechReciter } from '../services/audioDhun';
-import { formatCoupletString } from '../utils/textSanitizer';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface SatyaNaamMahaMargdarshikaProps {
   language: Language;
   onClose?: () => void;
 }
 
-export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps> = ({ language, onClose }) => {
+export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps> = ({ language }) => {
   const { theme } = useAppTheme();
   const [activeTab, setActiveTab] = useState<'darshan' | 'comparison' | 'dialogue'>('darshan');
   const [expandedId, setExpandedId] = useState<string | null>('mool-arth');
-  const [copiedText, setCopiedText] = useState<string | null>(null);
-  const [isPlayingAudio, setIsPlayingAudio] = useState<string | null>(null);
 
   const getTranslated = (obj: any) => {
     if (!obj) return '';
     return obj[language] || obj['hi'] || obj['en'] || '';
-  };
-
-  const handleCopy = (text: string, id: string) => {
-    sacredHaptics.lightTap();
-    navigator.clipboard.writeText(text);
-    setCopiedText(id);
-    setTimeout(() => setCopiedText(null), 2500);
-  };
-
-  const handleSpeak = (text: string, id: string) => {
-    sacredHaptics.lightTap();
-    if (isPlayingAudio === id) {
-      speechReciter.stop();
-      setIsPlayingAudio(null);
-      return;
-    }
-    setIsPlayingAudio(id);
-    speechReciter.speak(
-      text,
-      language,
-      () => setIsPlayingAudio(null),
-      () => setIsPlayingAudio(null)
-    );
   };
 
   return (
@@ -98,17 +67,6 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
             </p>
           </div>
 
-          {onClose && (
-            <button 
-              type="button"
-              onClick={onClose} 
-              className="px-4 py-2 rounded-2xl bg-white/20 hover:bg-white/30 flex items-center gap-1.5 transition cursor-pointer border border-white/30 text-xs font-bold self-start sm:self-auto"
-              title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
-            </button>
-          )}
         </div>
       </div>
 
@@ -125,7 +83,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           },
           { 
             id: 'comparison' as const, 
-            label: language === 'pb' ? '੨. ਸਤਯਨਾਮ ਬਨਾਮ ਸਾਰਸ਼ਬਦ' : language === 'en' ? '2. Satya Naam vs Saar Shabd' : '२. सत्यनाम बनाम सारनाम (तुलना)',
+            label: language === 'pb' ? '੨. ਸਤਯਨਾਮ ਬਨਾਮ ਸਾਰਸ਼ਬਦ' : language === 'en' ? '2. Satyanaam vs Saar Shabd' : '२. सत्यनाम बनाम सारनाम (तुलना)',
             icon: Scale 
           },
           { 
@@ -204,46 +162,18 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
                         {section.dohas && section.dohas.length > 0 && (
                           <div className="space-y-3 pt-2">
                             {section.dohas.map((d, dIdx) => (
-                              <div
+                              <UnifiedDohaCard
                                 key={dIdx}
-                                style={{
-                                  backgroundColor: theme.bgSecondary,
-                                  borderColor: theme.accentGold,
+                                id={`satyanaam-${section.id}-${dIdx}`}
+                                text={{
+                                  hi: d.couplet,
+                                  pb: d.coupletPb || d.couplet,
+                                  en: d.couplet,
                                 }}
-                                className="p-4 rounded-2xl border-l-4 shadow-xs space-y-2 relative"
-                              >
-                                <div className="flex items-center justify-between gap-2">
-                                  <span className="text-[10px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300 font-mono">
-                                    ✦ {language === 'pb' ? 'ਪ੍ਰਮਾਣਿਕ ਪਵਿੱਤਰ ਬਾਣੀ' : language === 'en' ? 'Sacred Verse' : 'प्रामाणिक पावन वाणी'}
-                                  </span>
-                                  <div className="flex items-center gap-1.5">
-                                    <button
-                                      type="button"
-                                      onClick={() => handleSpeak(language === 'pb' ? d.coupletPb : d.couplet, `${section.id}-${dIdx}`)}
-                                      className="p-1 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 text-amber-700 dark:text-amber-300 cursor-pointer"
-                                      title="Listen to verse"
-                                    >
-                                      <Volume2 size={14} className={isPlayingAudio === `${section.id}-${dIdx}` ? 'animate-pulse text-amber-600' : ''} />
-                                    </button>
-                                    <button
-                                      type="button"
-                                      onClick={() => handleCopy(language === 'pb' ? d.coupletPb : d.couplet, `${section.id}-${dIdx}`)}
-                                      className="p-1 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 text-amber-700 dark:text-amber-300 cursor-pointer"
-                                      title="Copy verse"
-                                    >
-                                      {copiedText === `${section.id}-${dIdx}` ? <Check size={14} className="text-emerald-600" /> : <Copy size={14} />}
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <p className="font-serif font-black text-sm sm:text-base text-amber-950 dark:text-amber-100 whitespace-pre-line leading-relaxed">
-                                  {formatCoupletString(language === 'pb' ? d.coupletPb : d.couplet)}
-                                </p>
-
-                                <div className="text-[11px] font-mono text-gray-500 dark:text-gray-400">
-                                  {d.reference}
-                                </div>
-                              </div>
+                                source={d.reference}
+                                language={language}
+                                defaultExpandedMeaning={false}
+                              />
                             ))}
                           </div>
                         )}
@@ -270,7 +200,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
                 {language === 'pb'
                   ? 'ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਨਾਮ (ਸਾਰਸ਼ਬਦ) ਵਿੱਚ ਮੁੱਖ ਅੰਤਰ'
                   : language === 'en'
-                  ? 'Key Distinction: Satya Naam vs Saar Shabd'
+                  ? 'Key Distinction: Satyanaam vs Saar Shabd'
                   : 'सत्यनाम और सारनाम (सारशब्द) में मुख्य अंतर (अनुराग सागर)'}
               </h2>
             </div>
@@ -292,7 +222,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
                     {language === 'pb' ? 'ਵਿਸ਼ੇਸ਼ਤਾ' : language === 'en' ? 'Feature' : 'विशेषता'}
                   </th>
                   <th className="p-3 sm:p-4 w-3/8 text-amber-800 dark:text-amber-300">
-                    {language === 'pb' ? 'ਸਤਯਨਾਮ (Satnaam)' : language === 'en' ? 'Satya Naam' : 'सत्यनाम (Satnaam)'}
+                    {language === 'pb' ? 'ਸਤਯਨਾਮ (Satyanaam)' : language === 'en' ? 'Satyanaam' : 'सत्यनाम (Satyanaam)'}
                   </th>
                   <th className="p-3 sm:p-4 w-3/8 text-emerald-800 dark:text-emerald-300">
                     {language === 'pb' ? 'ਸਾਰਨਾਮ / ਸਾਰਸ਼ਬਦ (Saarshabd)' : language === 'en' ? 'Saar Naam / Saar Shabd' : 'सारनाम / सारशब्द (Saarnaam)'}
@@ -318,24 +248,25 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           </div>
 
           {/* Sacred Anurag Sagar Vani Callout */}
-          <div 
-            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.accentGold }}
-            className="p-5 rounded-2xl border-2 space-y-2 text-center"
-          >
-            <span className="text-[11px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300 font-mono">
-              ✦ {language === 'pb' ? 'ਅਨੁਰਾਗ ਸਾਗਰ ਪਾਵਨ ਪ੍ਰਮਾਣ' : language === 'en' ? 'Anurag Sagar Verse' : 'अनुराग सागर पावन प्रमाण'}
-            </span>
-            <p className="font-serif font-black text-base sm:text-lg text-amber-950 dark:text-amber-100 leading-relaxed">
-              {language === 'pb'
-                ? 'ਕਬੀਰ, ਮੂਲ ਨਾਮ (ਸਾਰਸ਼ਬਦ) ਗੁਪਤ ਹੈ, ਵਾਕੋ ਜਾਨੈ ਨ ਕੋਇ ॥\nਜੋ ਜਾਨੈ ਸੋ ਜੀਵ ਮੁਕਤ, ਬਹੁਰਿ ਨ ਸੰਕਟ ਹੋਇ ॥'
-                : 'कबीर, मूल नाम (सारशब्द) गुप्त है, वाको जाने न कोय॥\nजो जाने सो जीव मुक्त, बहुरि न संकट होय॥'}
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 font-serif">
-              {language === 'pb'
-                ? 'ਅਰਥ: ਸਾਰਸ਼ਬਦ ਪਰਮ ਗੁਪਤ ਹੈ; ਜਿਸ ਜੀਵ ਨੂੰ ਸਤਿਗੁਰੂ ਰਾਹੀਂ ਇਸਦੀ ਪਛਾਣ ਹੋ ਜਾਂਦੀ ਹੈ, ਉਹ ਸਦਾ ਲਈ ਕਾਲ ਦੇ ਸੰਕਟ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।'
-                : 'अर्थ: सारशब्द परम गुप्त है; जिस जीव को सतगुरु द्वारा इसकी पहचान हो जाती है, वह जन्म-मरण के संकट से सदा के लिए मुक्त हो जाता है।'}
-            </p>
-          </div>
+          <UnifiedDohaCard
+            id="anurag-sagar-saarshabd"
+            badgeLabel={{
+              hi: 'अनुराग सागर पावन प्रमाण',
+              pb: 'ਅਨੁਰਾਗ ਸਾਗਰ ਪਾਵਨ ਪ੍ਰਮਾਣ',
+              en: 'Anurag Sagar Verse',
+            }}
+            text={{
+              hi: 'कबीर, मूल नाम (सारशब्द) गुप्त है, वाको जाने न कोय॥\nजो जाने सो जीव मुक्त, बहुरि न संकट होय॥',
+              pb: 'ਕਬੀਰ, ਮੂਲ ਨਾਮ (ਸਾਰਸ਼ਬਦ) ਗੁਪਤ ਹੈ, ਵਾਕੋ ਜਾਨੈ ਨ ਕੋਇ ॥\nਜੋ ਜਾਨੈ ਸੋ ਜੀਵ ਮੁਕਤ, ਬਹੁਰਿ ਨ ਸੰਕਟ ਹੋਇ ॥',
+              en: 'Kabir, mool naam (Saarshabd) gupt hai, vaako jaane na koy ||\nJo jaane so jeev mukt, bahuri na sankat hoy ||',
+            }}
+            meaning={{
+              hi: 'सारशब्द परम गुप्त है; जिस जीव को सतगुरु द्वारा इसकी पहचान हो जाती है, वह जन्म-मरण के संकट से सदा के लिए मुक्त हो जाता है।',
+              pb: 'ਸਾਰਸ਼ਬਦ ਪਰਮ ਗੁਪਤ ਹੈ; ਜਿਸ ਜੀਵ ਨੂੰ ਸਤਿਗੁਰੂ ਰਾਹੀਂ ਇਸਦੀ ਪਛਾਣ ਹੋ ਜਾਂਦੀ ਹੈ, ਉਹ ਸਦਾ ਲਈ ਕਾਲ ਦੇ ਸੰਕਟ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
+              en: 'Saar Shabd is supremely esoteric; the soul awakened to it by the Satguru is forever liberated from the cycle of birth and death.',
+            }}
+            language={language}
+          />
         </div>
       )}
 
@@ -408,20 +339,19 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
             <h3 className="font-serif font-bold text-xs uppercase tracking-wider text-amber-700 dark:text-amber-300">
               {language === 'pb' ? 'ਇਤਿਹਾਸਕ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ ਤੁਕਾਂ' : language === 'en' ? 'Authentic Historical Vani Excerpts' : 'ऐतिहासिक प्रामाणिक वाणी पंक्तियाँ'}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {GURU_NANAK_KABIR_DIALOGUE.historicalVerses.map((v, vIdx) => (
-                <div 
+                <UnifiedDohaCard
                   key={vIdx}
-                  style={{ backgroundColor: theme.cardBg, borderColor: theme.borderOrnament }}
-                  className="p-4 rounded-2xl border space-y-2 shadow-2xs"
-                >
-                  <p className="font-serif font-black text-sm text-amber-900 dark:text-amber-200 whitespace-pre-line">
-                    {formatCoupletString(language === 'pb' ? v.gurmukhi : v.devanagari)}
-                  </p>
-                  <p className="text-xs text-gray-600 dark:text-gray-300 font-serif leading-relaxed">
-                    {getTranslated(v.meaning)}
-                  </p>
-                </div>
+                  id={`nanak-kabir-verse-${vIdx}`}
+                  text={{
+                    hi: v.devanagari,
+                    pb: v.gurmukhi,
+                    en: v.devanagari,
+                  }}
+                  meaning={v.meaning}
+                  language={language}
+                />
               ))}
             </div>
           </div>

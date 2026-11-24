@@ -81,7 +81,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     mysticalMeaning: {
       pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੁਢਾਪਾ ਕੁੱਤੇ ਦੀ ਨਿਆਈਂ ਅਤੇ ਜਵਾਨੀ ਖ਼ਰਗੋਸ਼ ਦੀ ਨਿਆਈਂ ਹੈ। ਕਾਲ ਰੂਪੀ ਸ਼ਿਕਾਰੀ ਨੇ ਇਸ ਜੀਵ ਰੂਪੀ ਝੌਂਪੜੀ ਨੂੰ ਦੋਹਾਂ ਵੈਰੀਆਂ ਵਿਚਕਾਰ ਘੇਰ ਰੱਖਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਬਿਨਾਂ ਇਸ ਤੋਂ ਕੋਈ ਨਹੀਂ ਬਚ ਸਕਦਾ।',
       hi: 'कबीर साहेब के अनुसार वृद्धावस्था कुत्ते की भांति और युवावस्था खरगोश की भांति है। काल रूपी शिकारी ने यौवन पर बुढ़ापे को शिकार हेतु छोड़ा है। दोनों शत्रुओं के बीच मनुष्य की झोंपड़ी है, अतः सतगुरु के सत्यनाम बिना रक्षा असंभव है।',
-      en: 'In Kabir Saheb\'s mystical warning, old age is like a hound and youth like a rabbit, with Kal the hunter pursuing the fragile body. Only refuge in the Satguru and Satnaam bestows deliverance.'
+      en: 'In Kabir Saheb\'s mystical warning, old age is like a hound and youth like a rabbit, with Kal the hunter pursuing the fragile body. Only refuge in the Satguru and Satyanaam bestows deliverance.'
     },
     exampleSakhi: {
       text: 'जरा कुत्ता जोबन ससा, काल अहेरी नित्त।\nदो बैरी बिच झोंपड़ा, कुशल कहां सो मित्त।।',
@@ -1302,19 +1302,6 @@ export const ShabdKosha: React.FC<ShabdKoshaProps> = ({
 
   return (
     <div className="max-w-5xl mx-auto p-3 sm:p-6 space-y-6">
-      {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
-      <div
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center min-h-[42px]"
-      >
-        <span
-          style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-        >
-          {SACRED_BRANDING.header[language]}
-        </span>
-      </div>
-
       {/* Top Banner */}
       <div 
         className="p-5 sm:p-7 rounded-3xl border shadow-md relative overflow-hidden"
@@ -1326,21 +1313,6 @@ export const ShabdKosha: React.FC<ShabdKoshaProps> = ({
         {/* Navigation & Close Button Header Bar */}
         <div className="flex items-center justify-between gap-3 pb-3 border-b border-amber-200/50 mb-3">
           <div className="flex items-center gap-2">
-            {onClose && (
-              <button
-                onClick={() => {
-                  sacredHaptics.lightTap();
-                  onClose();
-                }}
-                className="p-2 rounded-xl bg-amber-100/80 dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:bg-amber-200 transition flex items-center gap-1.5 text-xs font-bold font-serif cursor-pointer shadow-xs"
-                title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span className="hidden sm:inline">
-                  {language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-                </span>
-              </button>
-            )}
             <div className="flex items-center gap-1.5 text-xs font-semibold text-amber-800 dark:text-amber-300">
               <BookMarked className="w-4 h-4 text-amber-700" />
               <span>
@@ -1678,27 +1650,6 @@ export const ShabdKosha: React.FC<ShabdKoshaProps> = ({
           </motion.div>
         ))}
       </div>
-
-      {/* Bottom Close / Back Button */}
-      {onClose && (
-        <div className="pt-4 flex items-center justify-center">
-          <button
-            onClick={() => {
-              sacredHaptics.lightTap();
-              onClose();
-            }}
-            style={{
-              backgroundColor: theme.accentGoldLight,
-              borderColor: theme.accentGold,
-              color: theme.sacredMaroon,
-            }}
-            className="px-6 py-2.5 rounded-2xl border font-bold text-xs hover:scale-105 transition flex items-center gap-2 cursor-pointer shadow-xs"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-          </button>
-        </div>
-      )}
 
       {/* ==========================================================
           SMART TOOLTIP POPOVER WITH 'EXPAND TO CONTEXT' IN SHABDKOSHA

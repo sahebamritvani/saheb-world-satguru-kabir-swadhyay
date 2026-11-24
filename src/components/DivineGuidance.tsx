@@ -15,13 +15,12 @@ import {
   ShieldCheck,
   HelpCircle,
   Eye,
-  Feather,
-  ArrowLeft,
-  X
+  Feather
 } from 'lucide-react';
-import { Language, SACRED_BRANDING } from '../types';
+import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
+import { UnifiedDohaCard } from './UnifiedDohaCard';
 
 interface DivineGuidanceProps {
   language: Language;
@@ -406,10 +405,8 @@ const formatSakhiSource = (src: string, lang: Language) => {
 
 export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
   language,
-  onClose,
   onOpenBlessing,
   onSaveToDiary,
-  onOpenSwadhyay
 }) => {
   const { theme } = useAppTheme();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -468,42 +465,6 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto p-3 sm:p-6 space-y-6">
-      {/* Standardized Sacred Top Bar */}
-      <div
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none grid grid-cols-[1fr_auto_1fr] items-center min-h-[44px]"
-        style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-      >
-        <div />
-
-        <div className="flex items-center justify-center text-center px-1">
-          <span
-            style={{ color: theme.sacredMaroon }}
-            className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap"
-          >
-            {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
-          </span>
-        </div>
-
-        <div className="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group"
-              title={language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-serif font-bold">{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
-            </button>
-          )}
-        </div>
-      </div>
-
       {/* Top Banner & Header */}
       <div 
         className="p-5 sm:p-7 rounded-3xl border shadow-sm relative overflow-hidden"
@@ -673,28 +634,19 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
           </div>
 
           {/* Sacred Verse Centerpiece */}
-          <div 
-            className="p-6 rounded-2xl border text-center space-y-3 relative shadow-inner"
-            style={{ 
-              backgroundColor: theme.stepActiveBg,
-              borderColor: theme.accentGold 
+          <UnifiedDohaCard
+            id={`guidance-${activeGuidance.id}`}
+            badgeLabel={activeGuidance.category}
+            source={formatSakhiSource(activeGuidance.source, language)}
+            text={{
+              hi: activeGuidance.sakhiText.hi,
+              pb: activeGuidance.sakhiText.pb,
+              en: activeGuidance.sakhiText.hi,
             }}
-          >
-            <div className="text-stone-400 dark:text-stone-500 text-xs font-serif">
-              {language === 'hi' ? '।। सतगुरु कबीराय नमः ।। साहेब बंदगी साहेब ।।' : language === 'pb' ? '।। ਸਤਿਗੁਰੂ ਕਬੀਰਾਯ ਨਮਃ ।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : '।। Satguru Kabiraya Namah ।। Saheb Bandagi Saheb ।।'}
-            </div>
-            
-            <p 
-              style={{ color: theme.sacredMaroon }}
-              className="text-lg sm:text-xl font-bold font-serif whitespace-pre-line leading-relaxed tracking-wide drop-shadow-xs"
-            >
-              {language === 'pb' ? activeGuidance.sakhiText.pb : activeGuidance.sakhiText.hi}
-            </p>
-
-            <div className="pt-2 text-xs text-stone-600 dark:text-stone-400 font-serif">
-              {formatSakhiSource(activeGuidance.source, language)}
-            </div>
-          </div>
+            meaning={activeGuidance.meaning}
+            language={language}
+            defaultExpandedMeaning={false}
+          />
 
           {/* Meaning / Bhavarth */}
           <div className="space-y-1.5">
