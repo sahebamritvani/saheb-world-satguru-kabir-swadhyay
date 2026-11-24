@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Target, TrendingUp, History, RotateCcw, Plus, CheckCircle2, Trophy, Clock, Bell, ArrowLeft, X, Volume2, VolumeX, Activity, Sparkles, Disc, Sliders } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -149,9 +149,9 @@ export const MantraTracker: React.FC<MantraTrackerProps> = ({ language: propLang
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
         </span>
       </div>
 

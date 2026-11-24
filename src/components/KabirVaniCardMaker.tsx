@@ -14,6 +14,7 @@ import { AppView, Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { NewModulesNavBar } from './NewModulesNavBar';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface KabirVaniCardMakerProps {
   language: Language;
@@ -106,18 +107,18 @@ const CARD_THEMES: CardThemeConfig[] = [
 
 const PRELOADED_QUOTES: Record<Language, string[]> = {
   hi: [
-    'गुरु गोविन्द दोऊ खड़े, काके लागूं पाँय। बलिहारी गुरु आपने, गोविन्द दियो बताय।।',
-    'ऐसी वाणी बोलिए, मन का आपा खोय। औरन को शीतल करे, आपहुं शीतल होय।।',
+    'गुरु गोविन्द दोऊ खड़े, काके लागूं पाँय।\nबलिहारी गुरु आपने, गोविन्द दियो बताय।।',
+    'ऐसी वाणी बोलिए, मन का आपा खोय।\nऔरन को शीतल करे, आपहुं शीतल होय।।',
     '।। साहेब बंदगी साहेब ।।',
   ],
   pb: [
-    'ਗੁਰੂ ਗੋਵਿੰਦ ਦੋਊ ਖੜੇ, ਕਾਕੇ ਲਾਗੂੰ ਪਾਂਇ। ਬਲਿਹਾਰੀ ਗੁਰੂ ਆਪਨੇ, ਗੋਵਿੰਦ ਦਿਓ ਬਤਾਇ।।',
-    'ਐਸੀ ਬਾਣੀ ਬੋਲੀਏ, ਮਨ ਕਾ ਆਪਾ ਖੋਇ। ਔਰਨ ਕੋ ਸੀਤਲ ਕਰੇ, ਆਪਹੁਂ ਸੀਤਲ ਹੋਇ।।',
+    'ਗੁਰੂ ਗੋਵਿੰਦ ਦੋਊ ਖੜੇ, ਕਾਕੇ ਲਾਗੂੰ ਪਾਂਇ।\nਬਲਿਹਾਰੀ ਗੁਰੂ ਆਪਨੇ, ਗੋਵਿੰਦ ਦਿਓ ਬਤਾਇ।।',
+    'ਐਸੀ ਬਾਣੀ ਬੋਲੀਏ, ਮਨ ਕਾ ਆਪਾ ਖੋਇ।\nਔਰਨ ਕੋ ਸੀਤਲ ਕਰੇ, ਆਪਹੁਂ ਸੀਤਲ ਹੋਇ।।',
     '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।',
   ],
   en: [
-    'Guru and God both stand before me, to whom should I bow first? Glory to the Guru, who showed me the path to God.',
-    'Speak such sweet words that dissolve ego, bringing peace to others and tranquility to yourself.',
+    'Guru and God both stand before me, to whom should I bow first?\nGlory to the Guru, who showed me the path to God.',
+    'Speak such sweet words that dissolve ego,\nbringing peace to others and tranquility to yourself.',
     '|| Saheb Bandagi Saheb ||',
   ],
 };
@@ -333,7 +334,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
     ctx.fillText('🪷', size / 2, 238);
 
     // Main quote text
-    const trimmedQuote = quoteText.trim() || PRELOADED_QUOTES[language][0];
+    const trimmedQuote = formatCoupletString(quoteText.trim() || PRELOADED_QUOTES[language][0]);
     ctx.fillStyle = activeTheme.textColor;
     const fontSizePx = trimmedQuote.length > 130 ? 40 : trimmedQuote.length > 85 ? 46 : 52;
     ctx.font = `bold ${fontSizePx}px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif`;
@@ -754,7 +755,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
               <div className="relative z-10 space-y-1.5 pt-2">
                 <p
                   style={{ color: activeTheme.accentColor }}
-                  className="text-sm sm:text-base font-serif font-black tracking-wide"
+                  className="text-sm sm:text-base font-serif font-black tracking-wide whitespace-nowrap"
                 >
                   {SACRED_BRANDING.header[language]}
                 </p>
@@ -768,7 +769,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
                   style={{ color: activeTheme.textColor }}
                   className="text-base sm:text-xl font-serif font-bold leading-relaxed whitespace-pre-line break-words"
                 >
-                  {quoteText.trim() || PRELOADED_QUOTES[language][0]}
+                  {formatCoupletString(quoteText.trim() || PRELOADED_QUOTES[language][0])}
                 </p>
               </div>
 

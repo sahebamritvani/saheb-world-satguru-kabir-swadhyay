@@ -1006,10 +1006,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           type="button"
           onClick={() => setZenMode(false)}
           className="fixed top-4 right-4 z-[100] min-h-[44px] px-4 py-2 rounded-full bg-[#8B2500] hover:bg-[#7C1D00] text-white text-xs font-bold font-serif shadow-2xl transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 border border-white/30"
-          title={language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन एकाग्रता बंद करें'}
+          title={language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Exit Zen Mode' : 'ज़ेन एकाग्रता बंद करें'}
         >
           <EyeOff size={15} />
-          <span>{language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : 'ज़ेन मोड बंद करें (Exit Zen)'}</span>
+          <span>{language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Exit Zen Mode' : 'ज़ेन मोड बंद करें'}</span>
         </button>
       )}
       {/* Sacred Granth Library Header */}
@@ -1108,7 +1108,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           </div>
           <div className="flex items-center gap-2 shrink-0">
             <span className="text-xs font-bold font-serif px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/40 shadow-2xs">
-              {MASTER_GRANTH_CATALOG.length} पवित्र ग्रन्थ • ६ मुख्य साधना द्वार
+              {language === 'pb'
+                ? `${MASTER_GRANTH_CATALOG.length} ਪਵਿੱਤਰ ਗ੍ਰੰਥ • ੬ ਮੁੱਖ ਸਾਧਨਾ ਦੁਆਰ`
+                : language === 'en'
+                ? `${MASTER_GRANTH_CATALOG.length} Sacred Granths • 6 Main Sadhana Portals`
+                : `${MASTER_GRANTH_CATALOG.length} पवित्र ग्रन्थ • ६ मुख्य साधना द्वार`}
             </span>
           </div>
         </div>
@@ -1132,7 +1136,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               </p>
             </div>
             <div className="text-xs font-bold font-mono px-3 py-1 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 shrink-0 self-start sm:self-auto">
-              ५ मुख्य ग्रन्थ • {MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ अंग/अध्याय
+              {language === 'pb'
+                ? `੫ ਮੁੱਖ ਗ੍ਰੰਥ • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ ਅੰਗ/ਅਧਿਆਇ`
+                : language === 'en'
+                ? `5 Main Granths • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ Angs/Chapters`
+                : `५ मुख्य ग्रन्थ • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ अंग/अध्याय`}
             </div>
           </div>
 
@@ -1156,7 +1164,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   case 'nitnem-gutka':
                     return { text: language === 'pb' ? 'ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? 'Daily Liturgy' : 'नित्य नियम पाठ', color: 'bg-orange-500/20 text-orange-800 border-orange-500/40' };
                   default:
-                    return { text: 'पवित्र ग्रन्थ', color: 'bg-amber-500/20 text-amber-800 border-amber-500/40' };
+                    return { text: language === 'pb' ? 'ਪਵਿੱਤਰ ਗ੍ਰੰਥ' : language === 'en' ? 'Holy Granth' : 'पवित्र ग्रन्थ', color: 'bg-amber-500/20 text-amber-800 border-amber-500/40' };
                 }
               };
               const tag = getGranthTag();
@@ -1574,11 +1582,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       style={{ color: theme.sacredMaroon }}
                       className="text-base sm:text-lg font-black font-serif tracking-wide group-hover:text-amber-800 transition"
                     >
-                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ' : language === 'en' ? 'Satguru Kabir Saheb Biography & 4 Yugas Leelas' : 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं'}
+                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ' : language === 'en' ? 'Satguru Kabir Saheb Biography & 4 Yugas Leelas' : 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं'}
                     </h4>
                     <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed">
                       {language === 'pb'
-                        ? 'ਸਤਿਯੁਗ (ਸਤ੍ਯ ਸੁਕ੍ਰਿਤ), ਤ੍ਰੇਤਾ (ਮੁਨੀਂਦ੍ਰ), ਦ੍ਵਾਪਰ (ਕਰੁਣਾਮਯ) ਤੇ ਕਲਿਯੁਗ (ਕਬੀਰ) ਦੇ ਪਾਵਨ ਪ੍ਰਕਾਸ਼ ਅਤੇ ੨੫ ਲੀਲਾ-ਕਥਾਵਾਂ।'
+                        ? 'ਸਤਿਯੁਗ (ਸਤਯ ਸੁਕ੍ਰਿਤ), ਤ੍ਰੇਤਾ (ਮੁਨੀਂਦ੍ਰ), ਦ੍ਵਾਪਰ (ਕਰੁਣਾਮਯ) ਤੇ ਕਲਿਯੁਗ (ਕਬੀਰ) ਦੇ ਪਾਵਨ ਪ੍ਰਕਾਸ਼ ਅਤੇ ੨੫ ਲੀਲਾ-ਕਥਾਵਾਂ।'
                         : language === 'en'
                         ? 'Divine manifestations in Satya Yug (Sat Sukrit), Treta (Munindra), Dwapar (Karunamay), & Kali Yug (Kabir) with 25 sacred parables.'
                         : 'सत्ययुग (सत्य सुकृत), त्रेता (मुनींद्र), द्वापर (करुणामय) तथा कलयुग (कबीर साहेब) के प्राकट्य एवं २५ पावन लीला-कथाओं का दर्शन।'}
@@ -1726,10 +1734,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   borderColor: theme.accentGold
                 }}
                 className="px-3 py-1.5 rounded-lg border text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition cursor-pointer shadow-sm"
-                title="अध्याय प्रिंट / पीडीएफ सेव करें (Export PDF / Print)"
+                title={language === 'pb' ? 'ਅਧਿਆਇ ਪ੍ਰਿੰਟ / PDF ਸੇਵ ਕਰੋ' : language === 'en' ? 'Print / Export PDF' : 'अध्याय प्रिंट / पीडीएफ सेव करें'}
               >
                 <FileText size={15} />
-                <span>PDF / प्रिंट</span>
+                <span>{language === 'pb' ? 'PDF / ਪ੍ਰਿੰਟ' : language === 'en' ? 'PDF / Print' : 'PDF / प्रिंट'}</span>
               </button>
             </div>
           </div>
@@ -1762,10 +1770,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           {selectedGranthSlug === 'bijak' && (
             <div className="flex flex-wrap gap-2 pt-2 border-t border-dashed" style={{ borderColor: themeStyle.border }}>
               {[
-                { id: 'all', hi: 'सभी', en: 'All' },
-                { id: 'sakhi', hi: 'साखी (दोहे)', en: 'Sakhi (Couplets)' },
-                { id: 'shabad', hi: 'सबद (पद)', en: 'Shabad (Hymns)' },
-                { id: 'ramaini', hi: 'रमैनी (चौपाइयां)', en: 'Ramaini (Quatrains)' }
+                { id: 'all', hi: 'सभी', pb: 'ਸਾਰੇ', en: 'All' },
+                { id: 'sakhi', hi: 'साखी (दोहे)', pb: 'ਸਾਖੀ (ਦੋਹੇ)', en: 'Sakhi (Couplets)' },
+                { id: 'shabad', hi: 'सबद (पद)', pb: 'ਸ਼ਬਦ (ਪਦ)', en: 'Shabad (Hymns)' },
+                { id: 'ramaini', hi: 'रमैनी (चौपाइयां)', pb: 'ਰਮੈਨੀ (ਚੌਪਈਆਂ)', en: 'Ramaini (Quatrains)' }
               ].map(cat => (
                 <button
                   key={cat.id}
@@ -1789,7 +1797,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   }}
                   className={`px-3 py-1 rounded-full text-[0.625rem] sm:text-xs font-bold border transition-all hover:scale-105 active:scale-95 cursor-pointer`}
                 >
-                  {language === 'hi' ? cat.hi : cat.en}
+                  {language === 'pb' ? cat.pb : language === 'en' ? cat.en : cat.hi}
                 </button>
               ))}
             </div>
@@ -1887,15 +1895,15 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="थीम चुनें (Themes)"
+              title={language === 'pb' ? 'ਥੀਮ ਚੁਣੋ' : language === 'en' ? 'Choose Theme' : 'थीम चुनें'}
             >
               <Palette className="w-3.5 h-3.5 text-amber-600" />
               <span className="text-[0.6875rem]">
-                {readerTheme === 'mool' && (language === 'pb' ? 'ਮੂਲ' : 'मूल')}
-                {readerTheme === 'comfort' && (language === 'pb' ? 'ਸੁਖਦ' : 'सुखद')}
-                {readerTheme === 'pothi' && (language === 'pb' ? 'ਪੋਥੀ' : 'पोथी')}
-                {readerTheme === 'black' && (language === 'pb' ? 'ਬਲੈਕ' : 'ब्लैक')}
-                {readerTheme === 'netra' && (language === 'pb' ? 'ਨੇਤਰ' : 'नेत्र')}
+                {readerTheme === 'mool' && (language === 'pb' ? 'ਮੂਲ' : language === 'en' ? 'Mool' : 'मूल')}
+                {readerTheme === 'comfort' && (language === 'pb' ? 'ਸੁਖਦ' : language === 'en' ? 'Comfort' : 'सुखद')}
+                {readerTheme === 'pothi' && (language === 'pb' ? 'ਪੋਥੀ' : language === 'en' ? 'Pothi' : 'पोथी')}
+                {readerTheme === 'black' && (language === 'pb' ? 'ਬਲੈਕ' : language === 'en' ? 'Black' : 'ब्लैक')}
+                {readerTheme === 'netra' && (language === 'pb' ? 'ਨੇਤਰ' : language === 'en' ? 'Netra' : 'नेत्र')}
               </span>
             </button>
 
@@ -1911,7 +1919,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="फ़ॉन्ट व विस्तार (Font & Width)"
+              title={language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਤੇ ਵਿਸਤਾਰ' : language === 'en' ? 'Font Size & Canvas Width' : 'फ़ॉन्ट व विस्तार'}
             >
               <span className="font-serif font-black text-amber-600">A</span>
               <span className="text-[0.6875rem] font-mono">
@@ -1931,7 +1939,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="हाइलाइटर (Highlighter)"
+              title={language === 'pb' ? 'ਹਾਈਲਾਈਟਰ' : language === 'en' ? 'Highlighter' : 'हाइलाइटर'}
             >
               <Highlighter className="w-3.5 h-3.5" />
               {activeHighlightColor && (
@@ -1959,7 +1967,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="स्वतः स्क्रॉल (Auto-Advance)"
+              title={language === 'pb' ? 'ਸਵੈ-ਸਕ੍ਰੌਲ' : language === 'en' ? 'Auto-Scroll' : 'स्वतः स्क्रॉल'}
             >
               {isAutoPlaying ? <Pause className="w-3.5 h-3.5 animate-pulse" /> : <Play className="w-3.5 h-3.5 text-amber-600" />}
               <span className="text-[0.6875rem]">{autoScrollSpeed}x</span>
@@ -1977,7 +1985,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="दैनिक लक्ष्य (Target Pace)"
+              title={language === 'pb' ? 'ਦੈਨਿਕ ਟੀਚਾ' : language === 'en' ? 'Daily Target' : 'दैनिक लक्ष्य'}
             >
               <Target className="w-3.5 h-3.5 text-amber-600" />
               <span className="text-[0.6875rem] font-mono">{targetPace}</span>
@@ -1997,10 +2005,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="इंटरलीनियर ३-भाषा दर्शन"
+              title={language === 'pb' ? 'ਇੰਟਰਲੀਨੀਅਰ ੩-ਭਾਸ਼ਾ ਦਰਸ਼ਨ' : language === 'en' ? 'Interlinear 3-Script View' : 'इंटरलीनियर ३-भाषा दर्शन'}
             >
               <FileText className="w-3.5 h-3.5 text-amber-600" />
-              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਇੰਟਰਲੀਨੀਅਰ' : 'इंटरलीनियर'}</span>
+              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਇੰਟਰਲੀਨੀਅਰ' : language === 'en' ? 'Interlinear' : 'इंटरलीनियर'}</span>
             </button>
 
             {/* Shabdarth & Bhavarth Toggle */}
@@ -2016,10 +2024,14 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10 opacity-70'
               }`}
-              title={showMeaning ? "व्याख्या छिपाएं" : "व्याख्या देखें"}
+              title={showMeaning ? (language === 'pb' ? 'ਅਰਥ ਛੁਪਾਓ' : language === 'en' ? 'Hide Meanings' : 'व्याख्या छिपाएं') : (language === 'pb' ? 'ਅਰਥ ਦੇਖੋ' : language === 'en' ? 'Show Meanings' : 'व्याख्या देखें')}
             >
               {showMeaning ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
-              <span className="text-[0.6875rem] hidden sm:inline">{showMeaning ? (language === 'pb' ? 'ਅਰਥ ਸਹਿਤ' : 'अर्थ सहित') : (language === 'pb' ? 'ਕੇਵਲ ਮੂਲ' : 'केवल मूल')}</span>
+              <span className="text-[0.6875rem] hidden sm:inline">
+                {showMeaning
+                  ? (language === 'pb' ? 'ਅਰਥ ਸਹਿਤ' : language === 'en' ? 'With Meaning' : 'अर्थ सहित')
+                  : (language === 'pb' ? 'ਕੇਵਲ ਮੂਲ' : language === 'en' ? 'Text Only' : 'केवल मूल')}
+              </span>
             </button>
 
             {/* Line Guide Focus Beam */}
@@ -2034,10 +2046,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-amber-500/20 text-amber-700 border-amber-500/40 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10 opacity-70'
               }`}
-              title="पंक्ति गाइड (Line Focus)"
+              title={language === 'pb' ? 'ਪੰਕਤੀ ਗਾਈਡ' : language === 'en' ? 'Line Focus Guide' : 'पंक्ति गाइड'}
             >
               <Sliders className="w-3.5 h-3.5 text-amber-600" />
-              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਗਾਈਡ' : 'गाइड'}</span>
+              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਗਾਈਡ' : language === 'en' ? 'Guide' : 'गाइड'}</span>
             </button>
 
             {/* Background Dhun Menu Button */}
@@ -2052,14 +2064,14 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="पृष्ठभूमि धुन (Tanpura / Flute / Satyanaam)"
+              title={language === 'pb' ? 'ਪਿਛੋਕੜ ਧੁਨ' : language === 'en' ? 'Background Sacred Dhun' : 'पृष्ठभूमि धुन'}
             >
               <Music className="w-3.5 h-3.5" />
               <span className="text-[0.6875rem]">
-                {bgDhun === 'off' && (language === 'pb' ? 'ਮਿਊਟ' : 'म्यूट')}
-                {bgDhun === 'tanpura' && (language === 'pb' ? 'ਤਾਨਪੂਰਾ' : 'तानपुरा')}
-                {bgDhun === 'flute' && (language === 'pb' ? 'ਬਾਂਸੁਰੀ' : 'बांसुरी')}
-                {bgDhun === 'satyanaam' && (language === 'pb' ? 'ਸਤਯਨਾਮ' : 'सत्यनाम')}
+                {bgDhun === 'off' && (language === 'pb' ? 'ਮਿਊਟ' : language === 'en' ? 'Mute' : 'म्यूट')}
+                {bgDhun === 'tanpura' && (language === 'pb' ? 'ਤਾਨਪੂਰਾ' : language === 'en' ? 'Tanpura' : 'तानपुरा')}
+                {bgDhun === 'flute' && (language === 'pb' ? 'ਬਾਂਸੁਰੀ' : language === 'en' ? 'Flute' : 'बांसुरी')}
+                {bgDhun === 'satyanaam' && (language === 'pb' ? 'ਸਤਯਨਾਮ' : language === 'en' ? 'Satyanaam' : 'सत्यनाम')}
               </span>
             </button>
 
@@ -2075,10 +2087,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-[#8B2500] text-white border-amber-600 shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="जेन एकाग्रता मोड (Zen Mode)"
+              title={language === 'pb' ? 'ਜ਼ੇਨ ਇਕਾਗਰਤਾ ਮੋਡ' : language === 'en' ? 'Zen Focus Mode' : 'ज़ेन एकाग्रता मोड'}
             >
               {zenMode ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5 text-amber-600" />}
-              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਜ਼ੇਨ' : 'ज़ेन'}</span>
+              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਜ਼ੇਨ' : language === 'en' ? 'Zen' : 'ज़ेन'}</span>
             </button>
 
             {/* Divine Breathing Guide Button */}
@@ -2093,10 +2105,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-xs'
                   : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 text-inherit border-black/10 dark:border-white/10'
               }`}
-              title="दैनिक स्वतः चक्र सुधार (दिव्य श्वास चक्र)"
+              title={language === 'pb' ? 'ਦਿਵਯ ਸੁਆਸ ਚੱਕਰ' : language === 'en' ? 'Sacred Breathing Cycle' : 'दिव्य श्वास चक्र'}
             >
               <Sparkles className="w-3.5 h-3.5 animate-pulse text-amber-500" />
-              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਸ਼ਵਾਸ ਚੱਕਰ' : 'श्वास चक्र'}</span>
+              <span className="text-[0.6875rem] hidden sm:inline">{language === 'pb' ? 'ਸ਼ਵਾਸ ਚੱਕਰ' : language === 'en' ? 'Breath' : 'श्वास चक्र'}</span>
             </button>
 
             {/* Advanced Suite Trigger Button */}
@@ -2107,10 +2119,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 setShowAdvancedSuiteModal(true);
               }}
               className="px-2.5 py-1.5 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0"
-              title="उन्नत पठन साधन (Advanced Reading Suite)"
+              title={language === 'pb' ? 'ਉੱਨਤ ਸਾਧਨ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन'}
             >
               <Settings className="w-3.5 h-3.5 text-amber-600" />
-              <span className="text-[0.6875rem]">{language === 'pb' ? 'ਉੱਨਤ ਸਾਧਨ' : 'उन्नत साधन'}</span>
+              <span className="text-[0.6875rem]">{language === 'pb' ? 'ਉੱਨਤ ਸਾਧਨ' : language === 'en' ? 'Reading Suite' : 'उन्नत साधन'}</span>
             </button>
 
             {/* Quick Link to Nitnem Gutka Saheb */}
@@ -2125,10 +2137,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 }
               }}
               className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold text-xs flex items-center gap-1.5 transition shadow-xs hover:scale-105 active:scale-95 cursor-pointer shrink-0"
-              title="सतगुरु कबीर साहेब नितनेम गुटका साहेब (नित्य पाठ, अस्तुति, आरती एवं ग्रन्थ संग्रह)"
+              title={language === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}
             >
               <span>🌹</span>
-              <span className="text-[0.6875rem] whitespace-nowrap">{language === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ' : 'नितनेम गुटका साहेब'}</span>
+              <span className="text-[0.6875rem] whitespace-nowrap">{language === 'pb' ? 'ਨਿਤਨੇਮ ਗੁਟਕਾ' : language === 'en' ? 'Nitnem Gutka' : 'नितनेम गुटका साहेब'}</span>
             </button>
           </div>
         </div>
@@ -2144,7 +2156,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               <div className="flex flex-wrap items-center gap-1.5 w-full">
                 <span className="font-bold text-amber-700 mr-2 flex items-center gap-1">
                   <Palette size={14} />
-                  <span>{language === 'pb' ? 'ਥੀਮ ਚੁਣੋ:' : 'थीम चुनें:'}</span>
+                  <span>{language === 'pb' ? 'ਥੀਮ ਚੁਣੋ:' : language === 'en' ? 'Choose Theme:' : 'थीम चुनें:'}</span>
                 </span>
                 {(['mool', 'comfort', 'pothi', 'black', 'netra'] as ReaderCustomTheme[]).map((thm) => (
                   <button
@@ -2157,11 +2169,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       readerTheme === thm ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                     }`}
                   >
-                    {thm === 'mool' && (language === 'pb' ? 'ਮੂਲ' : 'मूल')}
-                    {thm === 'comfort' && (language === 'pb' ? 'ਸੁਖਦ' : 'सुखद')}
-                    {thm === 'pothi' && (language === 'pb' ? 'ਪੋਥੀ' : 'पोथी')}
-                    {thm === 'black' && (language === 'pb' ? 'ਬਲੈਕ' : 'ब्लैक')}
-                    {thm === 'netra' && (language === 'pb' ? 'ਨੇਤਰ' : 'नेत्र')}
+                    {thm === 'mool' && (language === 'pb' ? 'ਮੂਲ' : language === 'en' ? 'Mool' : 'मूल')}
+                    {thm === 'comfort' && (language === 'pb' ? 'ਸੁਖਦ' : language === 'en' ? 'Comfort' : 'सुखद')}
+                    {thm === 'pothi' && (language === 'pb' ? 'ਪੋਥੀ' : language === 'en' ? 'Pothi' : 'पोथी')}
+                    {thm === 'black' && (language === 'pb' ? 'ਬਲੈਕ' : language === 'en' ? 'Black' : 'ब्लैक')}
+                    {thm === 'netra' && (language === 'pb' ? 'ਨੇਤਰ' : language === 'en' ? 'Netra' : 'नेत्र')}
                   </button>
                 ))}
               </div>
@@ -2173,7 +2185,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="font-bold text-amber-700 mr-1 flex items-center gap-1">
                     <Sliders size={14} />
-                    <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ:' : 'फ़ॉन्ट आकार:'}</span>
+                    <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ:' : language === 'en' ? 'Font Size:' : 'फ़ॉन्ट आकार:'}</span>
                   </span>
                   <input
                     type="range"
@@ -2202,11 +2214,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           : 'bg-black/5 hover:bg-black/10'
                       }`}
                     >
-                      {fs === 'small' && 'A- (छोटा)'}
-                      {fs === 'normal' && 'A (मध्यम)'}
-                      {fs === 'large' && 'A+ (बड़ा)'}
-                      {fs === 'xlarge' && 'A++ (विशाल)'}
-                      {fs === 'elderly' && '👵 A+++ (बुजुर्ग)'}
+                      {fs === 'small' && (language === 'pb' ? 'A- (ਛੋਟਾ)' : language === 'en' ? 'A- (Small)' : 'A- (छोटा)')}
+                      {fs === 'normal' && (language === 'pb' ? 'A (ਮੱਧਮ)' : language === 'en' ? 'A (Medium)' : 'A (मध्यम)')}
+                      {fs === 'large' && (language === 'pb' ? 'A+ (ਵੱਡਾ)' : language === 'en' ? 'A+ (Large)' : 'A+ (बड़ा)')}
+                      {fs === 'xlarge' && (language === 'pb' ? 'A++ (ਵਿਸ਼ਾਲ)' : language === 'en' ? 'A++ (XL)' : 'A++ (विशाल)')}
+                      {fs === 'elderly' && (language === 'pb' ? '👵 A+++ (ਬਜ਼ੁਰਗ)' : language === 'en' ? '👵 A+++ (Senior)' : '👵 A+++ (बुजुर्ग)')}
                     </button>
                   ))}
                 </div>
@@ -2214,11 +2226,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-black/10 dark:border-white/10">
                   {/* Line Spacing Controls */}
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਲਾਈਨ ਅੰਤਰਾਲ:' : 'पंक्ति अंतराल:'}</span>
+                    <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਲਾਈਨ ਅੰਤਰਾਲ:' : language === 'en' ? 'Line Spacing:' : 'पंक्ति अंतराल:'}</span>
                     {[
-                      { id: 'small' as const, label: language === 'pb' ? 'ਘੱਟ' : 'कॉम्पैक्ट' },
-                      { id: 'medium' as const, label: language === 'pb' ? 'ਸੰਤੁਲਿਤ' : 'संतुलित' },
-                      { id: 'large' as const, label: language === 'pb' ? 'ਖੁੱਲ੍ਹਾ' : 'विस्तृत' },
+                      { id: 'small' as const, label: language === 'pb' ? 'ਘੱਟ' : language === 'en' ? 'Compact' : 'कॉम्पैक्ट' },
+                      { id: 'medium' as const, label: language === 'pb' ? 'ਸੰਤੁਲਿਤ' : language === 'en' ? 'Balanced' : 'संतुलित' },
+                      { id: 'large' as const, label: language === 'pb' ? 'ਖੁੱਲ੍ਹਾ' : language === 'en' ? 'Spacious' : 'विस्तृत' },
                     ].map((lh) => (
                       <button
                         key={lh.id}
@@ -2240,8 +2252,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   <div className="flex flex-wrap items-center gap-2">
                     <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 p-0.5 rounded-lg">
                       {[
-                        { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ' : '📜 ग्रंथ (Serif)' },
-                        { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ' : '🔤 सरल (Sans)' },
+                        { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ' : language === 'en' ? '📜 Serif' : '📜 ग्रंथ (Serif)' },
+                        { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ' : language === 'en' ? '🔤 Sans' : '🔤 सरल (Sans)' },
                       ].map((ff) => (
                         <button
                           key={ff.id}
@@ -2260,10 +2272,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     </div>
 
                     <div className="flex items-center gap-1.5">
-                      <span className="font-bold text-amber-700">{language === 'pb' ? 'ਕੈਨਵਸ:' : 'विस्तार:'}</span>
+                      <span className="font-bold text-amber-700">{language === 'pb' ? 'ਕੈਨਵਸ:' : language === 'en' ? 'Width:' : 'विस्तार:'}</span>
                       {[
-                        { id: 'wide', label: language === 'pb' ? 'ਵਿਸ਼ਾਲ 7XL' : '7XL' },
-                        { id: 'medium', label: language === 'pb' ? 'ਮੱਧਮ 5XL' : '5XL' },
+                        { id: 'wide', label: language === 'pb' ? 'ਵਿਸ਼ਾਲ 7XL' : language === 'en' ? 'Wide 7XL' : '7XL' },
+                        { id: 'medium', label: language === 'pb' ? 'ਮੱਧਮ 5XL' : language === 'en' ? 'Medium 5XL' : '5XL' },
                       ].map((wObj) => (
                         <button
                           key={wObj.id}
@@ -2288,7 +2300,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             {/* Highlighter Swatches Panel */}
             {activeQuickPanel === 'highlighter' && (
               <div className="flex flex-wrap items-center gap-2.5 w-full">
-                <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਹਾਈਲਾਈਟਰ ਰੰਗ:' : 'हाइलाइटर रंग:'}</span>
+                <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਹਾਈਲਾਈਟਰ ਰੰਗ:' : language === 'en' ? 'Highlighter Color:' : 'हाइलाइटर रंग:'}</span>
                 {(['saffron', 'green', 'yellow'] as HighlightColor[]).map((clr) => (
                   <button
                     key={clr}
@@ -2304,7 +2316,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     }`}
                   >
                     <span>●</span>
-                    <span>{clr === 'saffron' ? (language === 'pb' ? 'ਕੇਸਰੀ' : 'केसरिया') : clr === 'green' ? (language === 'pb' ? 'ਹਰਾ' : 'हरा') : (language === 'pb' ? 'ਪੀਲਾ' : 'पीला')}</span>
+                    <span>
+                      {clr === 'saffron'
+                        ? (language === 'pb' ? 'ਕੇਸਰੀ' : language === 'en' ? 'Saffron' : 'केसरिया')
+                        : clr === 'green'
+                        ? (language === 'pb' ? 'ਹਰਾ' : language === 'en' ? 'Green' : 'हरा')
+                        : (language === 'pb' ? 'ਪੀਲਾ' : language === 'en' ? 'Yellow' : 'पीला')}
+                    </span>
                   </button>
                 ))}
                 {activeHighlightColor && (
@@ -2315,11 +2333,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     }}
                     className="px-2.5 py-1 rounded-lg font-bold text-xs bg-black/10 hover:bg-black/20 text-gray-700 cursor-pointer"
                   >
-                    {language === 'pb' ? 'ਰੱਦ ਕਰੋ' : 'रद्द करें'}
+                    {language === 'pb' ? 'ਰੱਦ ਕਰੋ' : language === 'en' ? 'Cancel' : 'रद्द करें'}
                   </button>
                 )}
                 <span className="text-[0.6875rem] opacity-75 ml-auto">
-                  {language === 'pb' ? '(ਰੰਗ ਚੁਣ ਕੇ ਕਿਸੇ ਵੀ ਪਦ ਤੇ ਕਲਿੱਕ ਕਰੋ)' : '(रंग चुनकर किसी भी पद्य पर क्लिक करें)'}
+                  {language === 'pb' ? '(ਰੰਗ ਚੁਣ ਕੇ ਕਿਸੇ ਵੀ ਪਦ ਤੇ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? '(Pick a color, then tap any verse to highlight)' : '(रंग चुनकर किसी भी पद्य पर क्लिक करें)'}
                 </span>
               </div>
             )}
@@ -2338,12 +2356,16 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     }`}
                   >
                     {isAutoPlaying ? <Pause size={14} /> : <Play size={14} />}
-                    <span>{isAutoPlaying ? (language === 'pb' ? 'ਸਕ੍ਰੋਲ ਰੋਕੋ' : 'स्क्रॉल रोकें') : (language === 'pb' ? 'ਸਕ੍ਰੋਲ ਸ਼ੁਰੂ ਕਰੋ' : 'स्क्रॉल शुरू करें')}</span>
+                    <span>
+                      {isAutoPlaying
+                        ? (language === 'pb' ? 'ਸਕ੍ਰੋਲ ਰੋਕੋ' : language === 'en' ? 'Pause Scroll' : 'स्क्रॉल रोकें')
+                        : (language === 'pb' ? 'ਸਕ੍ਰੋਲ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Start Scroll' : 'स्क्रॉल शुरू करें')}
+                    </span>
                   </button>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਗਤੀ:' : 'गति:'}</span>
+                  <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਗਤੀ:' : language === 'en' ? 'Speed:' : 'गति:'}</span>
                   {([0.5, 1, 1.5, 2, 2.5, 3, 5] as const).map((spd) => (
                     <button
                       key={spd}
@@ -2365,7 +2387,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             {/* Target Pace Panel */}
             {activeQuickPanel === 'target' && (
               <div className="flex flex-wrap items-center gap-2 w-full">
-                <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਦੈਨਿਕ ਪਾਠ ਟੀਚਾ:' : 'दैनिक पठन लक्ष्य:'}</span>
+                <span className="font-bold text-amber-700 mr-1">{language === 'pb' ? 'ਦੈਨਿਕ ਪਾਠ ਟੀਚਾ:' : language === 'en' ? 'Daily Reading Target:' : 'दैनिक पठन लक्ष्य:'}</span>
                 {([5, 11, 21, 51, 108] as ReaderTarget[]).map((tgt) => (
                   <button
                     key={tgt}
@@ -2377,7 +2399,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       targetPace === tgt ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                     }`}
                   >
-                    {tgt} {language === 'pb' ? 'ਪਦ' : 'पद्य'}
+                    {tgt} {language === 'pb' ? 'ਪਦ' : language === 'en' ? 'Verses' : 'पद्य'}
                   </button>
                 ))}
               </div>
@@ -2388,7 +2410,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               <div className="flex flex-wrap items-center gap-2 w-full">
                 <span className="font-bold text-amber-700 mr-1 flex items-center gap-1">
                   <Music size={14} />
-                  <span>{language === 'pb' ? 'ਪਾਵਨ ਧੁਨ:' : 'पावन पृष्ठभूमि धुन:'}</span>
+                  <span>{language === 'pb' ? 'ਪਾਵਨ ਧੁਨ:' : language === 'en' ? 'Sacred Background Dhun:' : 'पावन पृष्ठभूमि धुन:'}</span>
                 </span>
                 {(['off', 'tanpura', 'flute', 'satyanaam'] as (DhunSoundType | 'off')[]).map((snd) => (
                   <button
@@ -2401,10 +2423,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       bgDhun === snd ? 'bg-[#8B2500] text-white shadow-xs' : 'bg-black/5 hover:bg-black/10'
                     }`}
                   >
-                    {snd === 'off' && (language === 'pb' ? '🔇 ਮਿਊਟ' : '🔇 म्यूट')}
-                    {snd === 'tanpura' && (language === 'pb' ? '🪕 ਤਾਨਪੂਰਾ' : '🪕 तानपुरा')}
-                    {snd === 'flute' && (language === 'pb' ? '🪈 ਬਾਂਸੁਰੀ' : '🪈 बांसुरी')}
-                    {snd === 'satyanaam' && (language === 'pb' ? '🌹 ਸਤਯਨਾਮ ਧੁਨ' : '🌹 सत्यनाम धुन')}
+                    {snd === 'off' && (language === 'pb' ? '🔇 ਮਿਊਟ' : language === 'en' ? '🔇 Mute' : '🔇 म्यूट')}
+                    {snd === 'tanpura' && (language === 'pb' ? '🪕 ਤਾਨਪੂਰਾ' : language === 'en' ? '🪕 Tanpura' : '🪕 तानपुरा')}
+                    {snd === 'flute' && (language === 'pb' ? '🪈 ਬਾਂਸੁਰੀ' : language === 'en' ? '🪈 Flute' : '🪈 बांसुरी')}
+                    {snd === 'satyanaam' && (language === 'pb' ? '🌹 ਸਤਯਨਾਮ ਧੁਨ' : language === 'en' ? '🌹 Satyanaam Dhun' : '🌹 सत्यनाम धुन')}
                   </button>
                 ))}
               </div>
@@ -2436,10 +2458,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-serif font-black text-base sm:text-lg text-amber-900 dark:text-amber-200 truncate">
-                    {language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ (Advanced Reading Suite)' : 'उन्नत पठन साधन (Advanced Reading Suite)'}
+                    {language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन'}
                   </h3>
                   <p className="text-[0.6875rem] opacity-75 font-serif truncate">
-                    {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
+                    {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : language === 'en' ? 'Satguru Kabir Saheb Granthavali Study Controls' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
                   </p>
                 </div>
               </div>
@@ -2449,7 +2471,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 className="min-h-[44px] sm:min-h-[38px] px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0"
               >
                 <ArrowLeft size={16} />
-                <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'वापस जाएं'}</span>
+                <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Back' : 'वापस जाएं'}</span>
               </button>
             </div>
 
@@ -2468,7 +2490,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 }`}
               >
                 <Sliders size={16} />
-                <span>{language === 'pb' ? 'ਪਠਨ ਸਾਧਨ ਤੇ ਸੈਟਿੰਗਜ਼' : 'पठन साधन व सेटिंग्स'}</span>
+                <span>{language === 'pb' ? 'ਪਠਨ ਸਾਧਨ ਤੇ ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'Controls & Settings' : 'पठन साधन व सेटिंग्स'}</span>
               </button>
 
               <button
@@ -2484,7 +2506,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 }`}
               >
                 <RotateCcw size={16} />
-                <span>{language === 'pb' ? 'ਪਠਨ ਇਤਿਹਾਸ' : 'पठन इतिहास (History)'}</span>
+                <span>{language === 'pb' ? 'ਪਠਨ ਇਤਿਹਾਸ' : language === 'en' ? 'Reading History' : 'पठन इतिहास (History)'}</span>
                 {readingHistory.length > 0 && (
                   <span className={`px-1.5 py-0.5 text-[0.625rem] rounded-full font-bold ${
                     suiteActiveTab === 'history' ? 'bg-white text-amber-900' : 'bg-[#8B2500] text-white'
@@ -2505,7 +2527,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     <div className="flex items-center gap-2">
                       <span className="text-lg">📖</span>
                       <h4 className="font-serif font-black text-xs sm:text-sm text-amber-950 dark:text-amber-200 uppercase tracking-wider">
-                        {language === 'pb' ? '੮ ਪਾਵਨ ਪਾਠ ਮੋਡ (8 Reading Modes)' : '८ प्रकार के पावन पाठ मोड (8 Reading Modes)'}
+                        {language === 'pb' ? '੮ ਪਾਵਨ ਪਾਠ ਮੋਡ' : language === 'en' ? '8 Sacred Reading Modes' : '८ प्रकार के पावन पाठ मोड'}
                       </h4>
                     </div>
                     <span className="px-2 py-0.5 rounded-full bg-[#8B2500] text-white text-[0.625rem] font-bold font-mono">
@@ -2520,6 +2542,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '📜',
                         titleHi: '१. निरंतर स्क्रॉल मोड',
                         titlePb: '੧. ਨਿਰੰਤਰ ਸਕ੍ਰੋਲ ਮੋਡ',
+                        titleEn: '1. Continuous Scroll',
                         active: !isPageFlipMode && !isParallelView,
                         action: () => {
                           setIsPageFlipMode(false);
@@ -2531,6 +2554,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '📖',
                         titleHi: '२. ३D पोथी पन्ना मोड',
                         titlePb: '੨. ੩D ਪੋਥੀ ਪੰਨਾ ਮੋਡ',
+                        titleEn: '2. 3D Pothi Page Flip',
                         active: isPageFlipMode,
                         action: () => {
                           setIsPageFlipMode(true);
@@ -2542,6 +2566,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '📊',
                         titleHi: '३. समानांतर तुलना मोड',
                         titlePb: '੩. ਸਮਾਨਾਂਤਰ ਤੁਲਨਾ ਮੋਡ',
+                        titleEn: '3. Parallel Comparison',
                         active: isParallelView,
                         action: () => {
                           setIsParallelView(true);
@@ -2553,6 +2578,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '🧘',
                         titleHi: '४. सहज पाठ (ज़ेन मोड)',
                         titlePb: '੪. ਜੇਨ ਇਕਾਗਰਤਾ ਮੋਡ',
+                        titleEn: '4. Zen Focus Mode',
                         active: zenMode,
                         action: () => {
                           setZenMode(!zenMode);
@@ -2564,6 +2590,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '🪷',
                         titleHi: '५. लारीवार अखंड पाठ',
                         titlePb: '੫. ਲਾਰੀਵਾਰ ਅਖੰਡ ਪਾਠ',
+                        titleEn: '5. Larivaar Akhand Mode',
                         active: isLarivaarMode,
                         action: () => setIsLarivaarMode(!isLarivaarMode),
                       },
@@ -2572,6 +2599,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '🎯',
                         titleHi: '६. विश्राम हाइलाइट',
                         titlePb: '੬. ਵਿਸ਼ਰਾਮ ਹਾਈਲਾਈਟ',
+                        titleEn: '6. Visraam Pause Marks',
                         active: isVisraamHighlightEnabled,
                         action: () => setIsVisraamHighlightEnabled(!isVisraamHighlightEnabled),
                       },
@@ -2580,6 +2608,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '⚡',
                         titleHi: '७. स्वतः स्क्रॉल एवं श्वास',
                         titlePb: '੭. ਸਵੈ-ਸਕ੍ਰੋਲ ਤੇ ਸੁਆਸ',
+                        titleEn: '7. Auto-Scroll & Breath',
                         active: isAutoPlaying,
                         action: () => setIsAutoPlaying(!isAutoPlaying),
                       },
@@ -2588,6 +2617,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         icon: '📚',
                         titleHi: '८. स्वाध्याय ८-चरण मर्म',
                         titlePb: '੮. ਸਵਾਧਿਆਇ ੮-ਚਰਣ ਮਨਨ',
+                        titleEn: '8. 8-Step Swadhyay Study',
                         active: false,
                         action: () => {
                           setShowAdvancedSuiteModal(false);
@@ -2610,7 +2640,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       >
                         <span className="text-xl shrink-0">{mode.icon}</span>
                         <span className="font-serif font-black text-xs block truncate">
-                          {language === 'pb' ? mode.titlePb : mode.titleHi}
+                          {language === 'pb' ? mode.titlePb : language === 'en' ? mode.titleEn : mode.titleHi}
                         </span>
                       </button>
                     ))}
@@ -2626,10 +2656,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       </div>
                       <div>
                         <h4 className="font-serif font-black text-xs sm:text-sm text-amber-900 dark:text-amber-200 uppercase tracking-wider">
-                          {language === 'pb' ? 'ਰਾਤਰੀ ਪਠਨ ਮੋਡ (Night Study Mode)' : 'रात्रि पठन मोड (Night Study Mode)'}
+                          {language === 'pb' ? 'ਰਾਤਰੀ ਪਠਨ ਮੋਡ' : language === 'en' ? 'Night Study Mode' : 'रात्रि पठन मोड'}
                         </h4>
                         <p className="text-[0.6875rem] opacity-75 font-serif">
-                          {language === 'pb' ? 'ਗਹਿਰਾ ਸੇਪੀਆ ਤੇ ਨੇਤਰ ਸੁਰੱਖਿਆ ਨਾਈਟ ਥੀਮ' : 'अंधेरे में पठन हेतु गहरा सेपिया व नेत्र-सुरक्षा डार्क थीम'}
+                          {language === 'pb' ? 'ਗਹਿਰਾ ਸੇਪੀਆ ਤੇ ਨੇਤਰ ਸੁਰੱਖਿਆ ਨਾਈਟ ਥੀਮ' : language === 'en' ? 'Deep Sepia & Eye-Comfort dark themes for night reading' : 'अंधेरे में पठन हेतु गहरा सेपिया व नेत्र-सुरक्षा डार्क थीम'}
                         </p>
                       </div>
                     </div>
@@ -2646,8 +2676,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       {isNightMode || readerTheme === 'deep_sepia' || readerTheme === 'midnight' ? <Moon size={15} /> : <Sun size={15} />}
                       <span>
                         {isNightMode || readerTheme === 'deep_sepia' || readerTheme === 'midnight'
-                          ? (language === 'pb' ? '🌙 ਰਾਤਰੀ ਮੋਡ ਚਾਲੂ' : '🌙 रात्रि मोड चालू')
-                          : (language === 'pb' ? '☀️ ਦਿਨ ਮੋਡ ਚਾਲੂ' : '☀️ दिन मोड चालू')}
+                          ? (language === 'pb' ? '🌙 ਰਾਤਰੀ ਮੋਡ ਚਾਲੂ' : language === 'en' ? '🌙 Night Active' : '🌙 रात्रि मोड चालू')
+                          : (language === 'pb' ? '☀️ ਦਿਨ ਮੋਡ ਚਾਲੂ' : language === 'en' ? '☀️ Day Active' : '☀️ दिन मोड चालू')}
                       </span>
                     </button>
                   </div>
@@ -2655,12 +2685,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   {/* Night Theme Presets */}
                   <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-black/5 dark:border-white/5">
                     <span className="text-xs font-serif font-bold text-amber-800 dark:text-amber-300">
-                      {language === 'pb' ? 'ਨਾਈਟ ਰੰਗ ਰੂਪ:' : 'रात्रि रंग स्वरूप:'}
+                      {language === 'pb' ? 'ਨਾਈਟ ਰੰਗ ਰੂਪ:' : language === 'en' ? 'Night Theme Preset:' : 'रात्रि रंग स्वरूप:'}
                     </span>
                     {[
-                      { id: 'deep_sepia', label: language === 'pb' ? '🤎 ਗਹਿਰਾ ਸੇਪੀਆ' : '🤎 गहरा सेपिया (Sepia)' },
-                      { id: 'midnight', label: language === 'pb' ? '🌑 ਮਿਡਨਾਈਟ ਡਾਰਕ' : '🌑 मिडनाइट (Midnight)' },
-                      { id: 'black', label: language === 'pb' ? '🖤 ਬਲੈਕ' : '🖤 ब्लैक (Black)' },
+                      { id: 'deep_sepia', label: language === 'pb' ? '🤎 ਗਹਿਰਾ ਸੇਪੀਆ' : language === 'en' ? '🤎 Deep Sepia' : '🤎 गहरा सेपिया' },
+                      { id: 'midnight', label: language === 'pb' ? '🌑 ਮਿਡਨਾਈਟ ਡਾਰਕ' : language === 'en' ? '🌑 Midnight Dark' : '🌑 मिडनाइट' },
+                      { id: 'black', label: language === 'pb' ? '🖤 ਬਲੈਕ' : language === 'en' ? '🖤 Pure Black' : '🖤 ब्लैक' },
                     ].map((nt) => (
                       <button
                         key={nt.id}
@@ -2687,16 +2717,16 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       </div>
                       <div>
                         <h4 className="font-serif font-black text-xs sm:text-sm text-amber-900 dark:text-amber-200 uppercase tracking-wider">
-                          {language === 'pb' ? 'ਅਨੁਮਾਨਿਤ ਬਾਕੀ ਪਠਨ ਸਮਾਂ' : 'शेष पठन समय इंडिकेटर (Reading Time Remaining)'}
+                          {language === 'pb' ? 'ਅਨੁਮਾਨਿਤ ਬਾਕੀ ਪਠਨ ਸਮਾਂ' : language === 'en' ? 'Estimated Reading Time Left' : 'शेष पठन समय इंडिकेटर'}
                         </h4>
                         <p className="text-[0.6875rem] opacity-75 font-serif">
-                          {language === 'pb' ? 'ਤੁਹਾਡੀ ਪਠਨ ਗਤੀ ਦੇ ਆਧਾਰ ਤੇ ਗਣਨਾ ਕੀਤਾ ਗਿਆ' : 'आपकी औसत पठन गति व साखी की लम्बाई पर आधारित'}
+                          {language === 'pb' ? 'ਤੁਹਾਡੀ ਪਠਨ ਗਤੀ ਦੇ ਆਧਾਰ ਤੇ ਗਣਨਾ ਕੀਤਾ ਗਿਆ' : language === 'en' ? 'Calculated dynamically from verse count and your pace' : 'आपकी औसत पठन गति व साखी की लम्बाई पर आधारित'}
                         </p>
                       </div>
                     </div>
 
                     <span className="px-3 py-1 rounded-xl bg-[#8B2500] text-white font-black text-xs shadow-xs font-mono">
-                      ~{estimatedReadingMinsRemaining} {language === 'pb' ? 'ਮਿੰਟ ਬਾਕੀ' : 'मिनट शेष'}
+                      ~{estimatedReadingMinsRemaining} {language === 'pb' ? 'ਮਿੰਟ ਬਾਕੀ' : language === 'en' ? 'min left' : 'मिनट शेष'}
                     </span>
                   </div>
 
@@ -2704,7 +2734,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   <div className="space-y-1.5 pt-1">
                     <div className="flex items-center justify-between text-[0.6875rem] font-serif font-bold text-amber-900 dark:text-amber-200">
                       <span>📖 {currentChapter?.title[language] || currentChapter?.title.hi}</span>
-                      <span>{activeVerseIndex + 1} / {filteredVerses.length} {language === 'pb' ? 'ਪਦ' : 'पद्य'} ({chapterReadingProgressPercent}%)</span>
+                      <span>{activeVerseIndex + 1} / {filteredVerses.length} {language === 'pb' ? 'ਪਦ' : language === 'en' ? 'Verses' : 'पद्य'} ({chapterReadingProgressPercent}%)</span>
                     </div>
                     <div className="w-full h-2.5 bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">
                       <div
@@ -2717,13 +2747,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   {/* Adjustable WPM Speed Setting */}
                   <div className="flex items-center justify-between pt-2 border-t border-black/5 dark:border-white/5 text-xs">
                     <span className="font-serif font-bold text-amber-800 dark:text-amber-300">
-                      {language === 'pb' ? 'ਪਠਨ ਗਤੀ (Speed):' : 'अपनी पठन गति (Reading Speed):'}
+                      {language === 'pb' ? 'ਪਠਨ ਗਤੀ:' : language === 'en' ? 'Reading Speed:' : 'पठन गति:'}
                     </span>
                     <div className="flex items-center gap-1.5">
                       {[
-                        { wpm: 100, label: language === 'pb' ? 'ਧੀਮੀ (100 wpm)' : 'धीमी (100 wpm)' },
-                        { wpm: 140, label: language === 'pb' ? 'ਮੱਧਮ (140 wpm)' : 'मध्यम (140 wpm)' },
-                        { wpm: 180, label: language === 'pb' ? 'ਤੇਜ਼ (180 wpm)' : 'तीव्र (180 wpm)' },
+                        { wpm: 100, label: language === 'pb' ? 'ਧੀਮੀ (100 wpm)' : language === 'en' ? 'Slow (100 wpm)' : 'धीमी (100 wpm)' },
+                        { wpm: 140, label: language === 'pb' ? 'ਮੱਧਮ (140 wpm)' : language === 'en' ? 'Medium (140 wpm)' : 'मध्यम (140 wpm)' },
+                        { wpm: 180, label: language === 'pb' ? 'ਤੇਜ਼ (180 wpm)' : language === 'en' ? 'Fast (180 wpm)' : 'तीव्र (180 wpm)' },
                       ].map((s) => (
                         <button
                           key={s.wpm}
@@ -2757,10 +2787,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       </div>
                       <div>
                         <h4 className="font-serif font-black text-xs sm:text-sm text-amber-900 dark:text-amber-200 uppercase tracking-wider">
-                          {language === 'pb' ? 'ਟੈਕਸਟ ਟੂ ਸਪੀਚ (Text to Speech)' : 'पाठ वाणी वाचन (Text-to-Speech TTS)'}
+                          {language === 'pb' ? 'ਟੈਕਸਟ ਟੂ ਸਪੀਚ (TTS)' : language === 'en' ? 'Text-to-Speech Audio (TTS)' : 'पाठ वाणी वाचन (TTS)'}
                         </h4>
                         <p className="text-[0.6875rem] opacity-75 font-serif">
-                          {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਉਚਾਰਨ ਸ਼੍ਰਵਣ ਕਰੋ' : 'सतगुरु कबीर साहेब पावन वाणी का एआई पाठ वाचन श्रवण करें'}
+                          {language === 'pb' ? 'ਸਤਗੁਰੂ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਉਚਾਰਨ ਸ਼੍ਰਵਣ ਕਰੋ' : language === 'en' ? 'Listen to clear audio recitation of Satguru Kabir Bani' : 'सतगुरु कबीर साहेब पावन वाणी का वाचन श्रवण करें'}
                         </p>
                       </div>
                     </div>
@@ -2777,8 +2807,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       {isSpeaking || isFullRecitationActive ? <VolumeX size={15} /> : <Volume2 size={15} />}
                       <span>
                         {isSpeaking || isFullRecitationActive
-                          ? (language === 'pb' ? 'ਵਾਚਣ ਰੋਕੋ' : 'वाचन रोकें')
-                          : (language === 'pb' ? 'ਬਾਣੀ ਸੁਣੋ' : 'वाणी श्रवण करें')}
+                          ? (language === 'pb' ? 'ਵਾਚਣ ਰੋਕੋ' : language === 'en' ? 'Stop Audio' : 'वाचन रोकें')
+                          : (language === 'pb' ? 'ਬਾਣੀ ਸੁਣੋ' : language === 'en' ? 'Listen Bani' : 'वाणी श्रवण करें')}
                       </span>
                     </button>
                   </div>
@@ -2789,6 +2819,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       <span>
                         {language === 'pb'
                           ? `🔊 ਪਾਵਨ ਬਾਣੀ ਵਾਚਣ ਚੱਲ ਰਿਹਾ ਹੈ... (ਪਦ #${activeVerseIndex + 1})`
+                          : language === 'en'
+                          ? `🔊 Sacred audio recitation active... (Verse #${activeVerseIndex + 1})`
                           : `🔊 पावन वाणी वाचन जारी है... (पद्य #${activeVerseIndex + 1})`}
                       </span>
                     </div>
@@ -2804,17 +2836,17 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       </div>
                       <div>
                         <h4 className="font-serif font-black text-xs sm:text-sm text-amber-900 dark:text-amber-200 uppercase tracking-wider">
-                          {language === 'pb' ? 'ਹਾਈਲਾਈਟਰ ਸਾਧਨ (Highlighting)' : 'हाइलाइटर साधन (Highlighting Feature)'}
+                          {language === 'pb' ? 'ਹਾਈਲਾਈਟਰ ਸਾਧਨ' : language === 'en' ? 'Verse Highlighter Tool' : 'हाइलाइटर साधन'}
                         </h4>
                         <p className="text-[0.6875rem] opacity-75 font-serif">
-                          {language === 'pb' ? 'ਮਨਪਸੰਦ ਪਦਾਂ ਨੂੰ ਵੱਖ-ਵੱਖ ਰੰਗਾਂ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕਰੋ' : 'साखियों व पदों को अपनी पसंद के पावन रंगों में हाइलाइट करें'}
+                          {language === 'pb' ? 'ਮਨਪਸੰਦ ਪਦਾਂ ਨੂੰ ਵੱਖ-ਵੱਖ ਰੰਗਾਂ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕਰੋ' : language === 'en' ? 'Highlight and save favorite verses in custom sacred colors' : 'साखियों व पदों को अपनी पसंद के पावन रंगों में हाइलाइट करें'}
                         </p>
                       </div>
                     </div>
 
                     {totalGranthHighlightsCount > 0 && (
                       <span className="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200 text-[0.625rem] font-bold border border-amber-500/30">
-                        {totalGranthHighlightsCount} {language === 'pb' ? 'ਸੁਰੱਖਿਅਤ' : 'सहेजे गए'}
+                        {totalGranthHighlightsCount} {language === 'pb' ? 'ਸੁਰੱਖਿਅਤ' : language === 'en' ? 'Saved' : 'सहेजे गए'}
                       </span>
                     )}
                   </div>
@@ -2838,10 +2870,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         <span>●</span>
                         <span>
                           {clr === 'saffron'
-                            ? (language === 'pb' ? 'ਕੇਸਰੀ' : 'केसरिया')
+                            ? (language === 'pb' ? 'ਕੇਸਰੀ' : language === 'en' ? 'Saffron' : 'केसरिया')
                             : clr === 'green'
-                            ? (language === 'pb' ? 'ਹਰਾ' : 'हरा')
-                            : (language === 'pb' ? 'ਪੀਲਾ' : 'पीला')}
+                            ? (language === 'pb' ? 'ਹਰਾ' : language === 'en' ? 'Green' : 'हरा')
+                            : (language === 'pb' ? 'ਪੀਲਾ' : language === 'en' ? 'Yellow' : 'पीला')}
                         </span>
                       </button>
                     ))}
@@ -2855,7 +2887,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         }}
                         className="px-3 py-1.5 rounded-xl bg-black/10 hover:bg-black/20 text-xs font-bold font-serif cursor-pointer"
                       >
-                        {language === 'pb' ? 'ਰੱਦ ਕਰੋ' : 'हाइलाइटर बंद करें'}
+                        {language === 'pb' ? 'ਰੱਦ ਕਰੋ' : language === 'en' ? 'Turn Off' : 'हाइलाइटर बंद करें'}
                       </button>
                     )}
                   </div>
@@ -2863,6 +2895,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   <p className="text-[0.6875rem] opacity-75 font-serif italic">
                     {language === 'pb'
                       ? '💡 ਰੰਗ ਚੁਣ ਕੇ ਕਿਸੇ ਵੀ ਪਦ ਤੇ ਟੈਪ ਕਰਨ ਨਾਲ ਉਹ ਰੰਗੀਨ ਹੋ ਜਾਵੇਗਾ।'
+                      : language === 'en'
+                      ? '💡 Select a color above and tap any verse to highlight it.'
                       : '💡 रंग चुनकर स्क्रीन पर किसी भी साखी/पद्य पर टैप करने से वह तुरंत हाइलाइट हो जाएगा।'}
                   </p>
                 </div>
@@ -2871,11 +2905,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-[#7C1D00] via-[#8B2500] to-[#9A3412] text-white space-y-2 shadow-md">
                   <div className="flex items-center gap-2 font-serif font-black text-sm sm:text-base">
                     <span>🌹</span>
-                    <span>{language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
+                    <span>{language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
                   </div>
                   <p className="text-xs text-amber-100 leading-relaxed font-serif">
                     {language === 'pb'
-                      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਯ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ, ਚਾਲੀਸਾ ਤੇ ਸੰਪੂਰਨ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ।'
+                      ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਯ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ, ਚਾਲੀਸਾ ਤੇ ਸੰਪੂਰਨ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ।'
+                      : language === 'en'
+                      ? 'Daily liturgy, Astuti prayers, Aarti, Chalisa & complete Granth collection.'
                       : 'सतगुरु कबीर साहेब नित्य पाठ, अस्तुति, आरती, चालीसा एवं समग्र पावन ग्रन्थ संग्रह।'}
                   </p>
                   <button
@@ -2890,7 +2926,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     }}
                     className="px-4 py-2 bg-white text-amber-900 rounded-xl font-bold text-xs hover:bg-amber-50 transition shadow cursor-pointer active:scale-95"
                   >
-                    {language === 'pb' ? 'ਗੁਟਕਾ ਸਾਹੇਬ ਖੋਲ੍ਹੋ →' : 'नितनेम गुटका साहेब खोलें →'}
+                    {language === 'pb' ? 'ਗੁਟਕਾ ਸਾਹੇਬ ਖੋਲ੍ਹੋ →' : language === 'en' ? 'Open Nitnem Gutka →' : 'नितनेम गुटका साहेब खोलें →'}
                   </button>
                 </div>
 
@@ -2899,13 +2935,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
                       <Sliders size={15} />
-                      <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਸਲਾਈਡਰ (Font Size):' : 'फ़ॉन्ट आकार स्लाइडर (Font Size Slider):'}</span>
+                      <span>{language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਸਲਾਈਡਰ:' : language === 'en' ? 'Font Size Slider:' : 'फ़ॉन्ट आकार स्लाइडर:'}</span>
                     </label>
                     <span className="text-xs font-black px-2 py-0.5 rounded bg-[#8B2500] text-white">
-                      {fontSize === 'small' && (language === 'pb' ? 'A- (ਛੋਟਾ 14px)' : 'A- (छोटा 14px)')}
-                      {fontSize === 'normal' && (language === 'pb' ? 'A (ਮੱਧਮ 16px)' : 'A (मध्यम 16px)')}
-                      {fontSize === 'large' && (language === 'pb' ? 'A+ (ਵੱਡਾ 18px)' : 'A+ (बड़ा 18px)')}
-                      {fontSize === 'xlarge' && (language === 'pb' ? 'A++ (ਵਿਸ਼ਾਲ 22px)' : 'A++ (विशाल 22px)')}
+                      {fontSize === 'small' && (language === 'pb' ? 'A- (ਛੋਟਾ 14px)' : language === 'en' ? 'A- (Small 14px)' : 'A- (छोटा 14px)')}
+                      {fontSize === 'normal' && (language === 'pb' ? 'A (ਮੱਧਮ 16px)' : language === 'en' ? 'A (Medium 16px)' : 'A (मध्यम 16px)')}
+                      {fontSize === 'large' && (language === 'pb' ? 'A+ (ਵੱਡਾ 18px)' : language === 'en' ? 'A+ (Large 18px)' : 'A+ (बड़ा 18px)')}
+                      {fontSize === 'xlarge' && (language === 'pb' ? 'A++ (ਵਿਸ਼ਾਲ 22px)' : language === 'en' ? 'A++ (Extra Large 22px)' : 'A++ (विशाल 22px)')}
                     </span>
                   </div>
 
@@ -2934,7 +2970,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       fontSize === 'normal' ? 'text-sm sm:text-base' :
                       fontSize === 'large' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'
                     }`}>
-                      {language === 'pb' ? '॥ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਪਾਵਨ ਅਮਰ ਬਾਣੀ ॥' : '॥ सतगुरु कबीर साहेब पावन अमर वाणी ॥'}
+                      {language === 'pb' ? '॥ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਅਮਰ ਬਾਣੀ ॥' : language === 'en' ? '|| Satguru Kabir Saheb Sacred Eternal Bani ||' : '॥ सतगुरु कबीर साहेब पावन अमर वाणी ॥'}
                     </p>
                   </div>
                 </div>
@@ -2942,13 +2978,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 {/* Reading Modes Summary */}
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider block">
-                    {language === 'pb' ? 'ਪਠਨ ਵਿਧਾ:' : 'पठन विधा (Reading Mode):'}
+                    {language === 'pb' ? 'ਪਠਨ ਵਿਧਾ:' : language === 'en' ? 'Reading Mode:' : 'पठन विधा:'}
                   </label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { id: 'scroll', label: language === 'pb' ? '📜 ਨਿਰੰਤਰ' : '📜 निरंतर' },
-                      { id: 'parallel', label: language === 'pb' ? '📖 ਸਮਾਨਾਂਤਰ' : '📖 समानांतर' },
-                      { id: 'flip', label: language === 'pb' ? '🪞 ੩D ਪੋਥੀ' : '🪞 ३D पोथी' },
+                      { id: 'scroll', label: language === 'pb' ? '📜 ਨਿਰੰਤਰ' : language === 'en' ? '📜 Continuous' : '📜 निरंतर' },
+                      { id: 'parallel', label: language === 'pb' ? '📖 ਸਮਾਨਾਂਤਰ' : language === 'en' ? '📖 Parallel' : '📖 समानांतर' },
+                      { id: 'flip', label: language === 'pb' ? '🪞 ੩D ਪੋਥੀ' : language === 'en' ? '🪞 3D Pothi' : '🪞 ३D पोथी' },
                     ].map((m) => (
                       <button
                         key={m.id}
@@ -2983,18 +3019,24 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-amber-800 dark:text-amber-300 block">
-                      {language === 'pb' ? 'ਥੀਮ ਰੰਗ:' : 'थीम रंग (Theme):'}
+                      {language === 'pb' ? 'ਥੀਮ ਰੰਗ:' : language === 'en' ? 'Theme Color:' : 'थीम रंग:'}
                     </label>
                     <div className="flex flex-wrap gap-1.5">
-                      {(['mool', 'comfort', 'pothi', 'black', 'netra'] as ReaderCustomTheme[]).map((thm) => (
+                      {([
+                        { id: 'mool', pb: 'ਮੂਲ', en: 'Original', hi: 'मूल' },
+                        { id: 'comfort', pb: 'ਆਰਾਮਦਾਇਕ', en: 'Comfort', hi: 'आरामदायक' },
+                        { id: 'pothi', pb: 'ਪੋਥੀ', en: 'Pothi', hi: 'पोथी' },
+                        { id: 'black', pb: 'ਕਾਲਾ', en: 'Dark', hi: 'गहरा' },
+                        { id: 'netra', pb: 'ਨੇਤਰ ਸੁਰੱਖਿਆ', en: 'Eye Care', hi: 'नेत्र रक्षा' },
+                      ] as { id: ReaderCustomTheme; pb: string; en: string; hi: string }[]).map((thm) => (
                         <button
-                          key={thm}
-                          onClick={() => changeReaderTheme(thm)}
+                          key={thm.id}
+                          onClick={() => changeReaderTheme(thm.id)}
                           className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
-                            readerTheme === thm ? 'bg-[#8B2500] text-white' : 'bg-black/5 hover:bg-black/10'
+                            readerTheme === thm.id ? 'bg-[#8B2500] text-white' : 'bg-black/5 hover:bg-black/10'
                           }`}
                         >
-                          {thm}
+                          {thm[language]}
                         </button>
                       ))}
                     </div>
@@ -3002,7 +3044,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-amber-800 dark:text-amber-300 block">
-                      {language === 'pb' ? 'ਕੈਨਵਸ ਵਿਸਤਾਰ:' : 'कैनवास विस्तार (Canvas):'}
+                      {language === 'pb' ? 'ਕੈਨਵਸ ਵਿਸਤਾਰ:' : language === 'en' ? 'Canvas Width:' : 'कैनवास विस्तार:'}
                     </label>
                     <div className="flex gap-2">
                       <button
@@ -3012,7 +3054,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           widthMode === 'wide' ? 'bg-[#8B2500] text-white border-amber-600' : 'bg-black/5'
                         }`}
                       >
-                        विशाल 7XL
+                        {language === 'pb' ? 'ਵਿਸ਼ਾਲ 7XL' : language === 'en' ? 'Wide 7XL' : 'विशाल 7XL'}
                       </button>
                       <button
                         type="button"
@@ -3021,7 +3063,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           widthMode === 'medium' ? 'bg-[#8B2500] text-white border-amber-600' : 'bg-black/5'
                         }`}
                       >
-                        मध्यम 5XL
+                        {language === 'pb' ? 'ਮੱਧਮ 5XL' : language === 'en' ? 'Medium 5XL' : 'मध्यम 5XL'}
                       </button>
                     </div>
                   </div>
@@ -3036,10 +3078,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   <div>
                     <h4 className="font-serif font-bold text-sm sm:text-base text-amber-900 dark:text-amber-200 flex items-center gap-1.5">
                       <BookMarked className="w-4 h-4 text-amber-600" />
-                      <span>{language === 'pb' ? 'ਹਾਲ ਹੀ ਵਿੱਚ ਪੜ੍ਹੇ ਗਏ ੧੦ ਪਾਵਨ ਅੰਗ' : 'हाल ही में पढ़े गए १० पावन साखी व ग्रन्थ खंड'}</span>
+                      <span>{language === 'pb' ? 'ਹਾਲ ਹੀ ਵਿੱਚ ਪੜ੍ਹੇ ਗਏ ੧੦ ਪਾਵਨ ਅੰਗ' : language === 'en' ? 'Last 10 Sacred Readings' : 'हाल ही में पढ़े गए १० पावन साखी व ग्रन्थ खंड'}</span>
                     </h4>
                     <p className="text-[0.6875rem] opacity-75 font-serif">
-                      {language === 'pb' ? 'ਤੁਰੰਤ ਮੁੜ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਸੇ ਵੀ ਖੰਡ ਤੇ ਕਲਿੱਕ ਕਰੋ' : 'त्वरित पुनरारंभ (Quick Resumption) के लिए किसी भी खंड पर टैप करें'}
+                      {language === 'pb' ? 'ਤੁਰੰਤ ਮੁੜ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਸੇ ਵੀ ਖੰਡ ਤੇ ਕਲਿੱਕ ਕਰੋ' : language === 'en' ? 'Tap any section for quick resumption' : 'त्वरित पुनरारंभ के लिए किसी भी खंड पर टैप करें'}
                     </p>
                   </div>
 
@@ -3057,7 +3099,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       }}
                       className="text-[0.6875rem] font-bold text-red-600 hover:text-red-700 underline cursor-pointer"
                     >
-                      {language === 'pb' ? 'ਇਤਿਹਾਸ ਮਿਟਾਓ' : 'इतिहास साफ़ करें'}
+                      {language === 'pb' ? 'ਇਤਿਹਾਸ ਮਿਟਾਓ' : language === 'en' ? 'Clear History' : 'इतिहास साफ़ करें'}
                     </button>
                   )}
                 </div>
@@ -3068,6 +3110,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     <p className="text-xs sm:text-sm font-serif font-semibold opacity-75">
                       {language === 'pb'
                         ? 'ਅਜੇ ਤੱਕ ਕੋਈ ਪਠਨ ਇਤਿਹਾਸ ਦਰਜ ਨਹੀਂ ਹੈ। ਗ੍ਰੰਥ ਪਾਠ ਸ਼ੁਰੂ ਕਰੋ!'
+                        : language === 'en'
+                        ? 'No reading history yet. Start studying a sacred Granth!'
                         : 'अभी तक कोई पठन इतिहास दर्ज नहीं है। पावन ग्रन्थ स्वाध्याय आरंभ करें!'}
                     </p>
                   </div>
@@ -3108,7 +3152,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                               </span>
                               {isCurrent && (
                                 <span className="px-2 py-0.5 rounded-full text-[0.625rem] font-bold bg-green-600 text-white shrink-0">
-                                  {language === 'pb' ? 'ਮੌਜੂਦਾ' : 'वर्तमान'}
+                                  {language === 'pb' ? 'ਮੌਜੂਦਾ' : language === 'en' ? 'Current' : 'वर्तमान'}
                                 </span>
                               )}
                             </div>
@@ -3126,7 +3170,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             type="button"
                             className="px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-serif font-bold shrink-0 transition flex items-center gap-1 shadow-xs"
                           >
-                            <span>{language === 'pb' ? 'ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ' : 'पुनः पढ़ें'}</span>
+                            <span>{language === 'pb' ? 'ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Resume' : 'पुनः पढ़ें'}</span>
                             <ChevronRight size={14} />
                           </button>
                         </div>
@@ -3144,7 +3188,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 className="px-5 py-2 rounded-xl bg-[#8B2500] text-white font-bold text-xs hover:bg-amber-700 transition cursor-pointer shadow flex items-center gap-1.5"
               >
                 <ArrowLeft size={16} />
-                <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'वापस जाएं'}</span>
+                <span>{language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : language === 'en' ? 'Go Back' : 'वापस जाएं'}</span>
               </button>
             </div>
           </div>
@@ -3405,10 +3449,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                     <div className="pt-4 border-t border-amber-500/20 flex items-center justify-between text-xs font-serif">
                       <span className="text-amber-700 font-bold">
-                        {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਾਣੀ' : language === 'en' ? 'Satguru Kabir Bani' : 'सतगुरु कबीर वाणी'}
+                        {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਬਾਣੀ' : language === 'en' ? 'Satguru Kabir Bani' : 'सतगुरु कबीर वाणी'}
                       </span>
                       <span className="opacity-70">
-                        {language === 'pb' ? 'ਸਤਿਲੋਕ ਪ੍ਰਕਾਸ਼ਨ' : language === 'en' ? 'Satlok Publication' : 'सत्यलोक प्रकाशन'}
+                        {language === 'pb' ? 'ਸਤਯਲੋਕ ਪ੍ਰਕਾਸ਼ਨ' : language === 'en' ? 'Satyalok Publication' : 'सत्यलोक प्रकाशन'}
                       </span>
                     </div>
                   </div>
@@ -3438,7 +3482,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             className={`p-2 rounded-xl transition cursor-pointer ${
                               isThisSpeaking ? 'bg-[#8B2500] text-white animate-pulse' : 'hover:bg-black/5 text-gray-700 dark:text-gray-200'
                             }`}
-                            title="वाणी पाठ ऑडियो (Audio Recite)"
+                            title={language === 'pb' ? 'ਬਾਣੀ ਪਾਠ ਆਡੀਓ' : language === 'en' ? 'Audio Recite' : 'वाणी पाठ ऑडियो'}
                           >
                             <Volume2 size={16} />
                           </button>
@@ -3447,7 +3491,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             type="button"
                             onClick={() => handleCopyVerse(verse)}
                             className="p-2 rounded-xl hover:bg-black/5 text-gray-700 dark:text-gray-200 transition cursor-pointer"
-                            title="प्रतिलिपि बनाएं (Copy)"
+                            title={language === 'pb' ? 'ਕਾਪੀ ਕਰੋ' : language === 'en' ? 'Copy' : 'प्रतिलिपि बनाएं'}
                           >
                             {copiedId === verse.id ? <Check size={16} className="text-green-600" /> : <Copy size={16} />}
                           </button>
@@ -3456,7 +3500,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             type="button"
                             onClick={() => handleSaveVerseToDiary(verse)}
                             className="p-2 rounded-xl hover:bg-black/5 text-gray-700 dark:text-gray-200 transition cursor-pointer"
-                            title="डायरी में सहेजें"
+                            title={language === 'pb' ? 'ਡਾਇਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਕਰੋ' : language === 'en' ? 'Save to Diary' : 'डायरी में सहेजें'}
                           >
                             {diarySavedId === verse.id ? <CheckCircle2 size={16} className="text-amber-600" /> : <Bookmark size={16} />}
                           </button>
@@ -3574,7 +3618,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                               </div>
                               <p className="leading-relaxed opacity-95 text-xs sm:text-sm font-serif" style={{ color: themeStyle.text }}>
                                 {language === 'hi'
-                                  ? `सद्गुरु कबीर साहेब इस उलटबांसी पद के माध्यम से समझाते हैं कि जब तक साधक की सुरति बाह्य प्रपंच और माया के जाल में उलझी रहती है, तब तक वह सतनाम और आत्म-स्वरूप से अनजान रहता है। इस पद का आंतरिक योगार्थ यह है कि प्राण और अपान की गति को उलटकर सुषुम्ना मार्ग से ब्रह्मरंध्र (दसम द्वार) की ओर यात्रा करनी होती है। यही उलटबांसी का सच्चा आंतरिक रहस्य है।`
+                                  ? `सद्गुरु कबीर साहेब इस उलटबांसी पद के माध्यम से समझाते हैं कि जब तक साधक की सुरति बाह्य प्रपंच और माया के जाल में उलझी रहती है, तब तक वह सत्यनाम और आत्म-स्वरूप से अनजान रहता है। इस पद का आंतरिक योगार्थ यह है कि प्राण और अपान की गति को उलटकर सुषुम्ना मार्ग से ब्रह्मरंध्र (दसम द्वार) की ओर यात्रा करनी होती है। यही उलटबांसी का सच्चा आंतरिक रहस्य है।`
                                   : analysis.esotericReversalAnalysis}
                               </p>
                             </div>
@@ -4439,8 +4483,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           'अध्याय स्वाध्याय पूर्ण'
         }
         message={
-          language === 'pb' ? 'ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ! ਅੱਜ ਤੁਸੀਂ ਜੀਵਨ ਦੇ ਇੱਕ ਨਵੇਂ ਸੱਤਿਆ ਦਾ ਸੁਆਧਿਆਏ ਪੂਰਾ ਕੀਤਾ। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ 🙏' :
-          language === 'en' ? 'Saheb Bandgi Saheb! Today you have completed the study of a new truth of life. Saheb Bandgi Saheb 🙏' :
+          language === 'pb' ? 'ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ! ਅੱਜ ਤੁਸੀਂ ਜੀਵਨ ਦੇ ਇੱਕ ਨਵੇਂ ਸੱਤ ਦਾ ਸੁਆਧਿਆਇ ਪੂਰਾ ਕੀਤਾ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ 🙏' :
+          language === 'en' ? 'Saheb Bandagi Saheb! Today you have completed the study of a new truth of life. Saheb Bandagi Saheb 🙏' :
           'साहेब बंदगी साहेब! आज आपने जीवन के एक नए सत्य का स्वाध्याय पूरा किया। साहेब बंदगी साहेब 🙏'
         }
       />

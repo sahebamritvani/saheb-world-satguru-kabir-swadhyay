@@ -78,7 +78,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
             id: 3,
             text: {
               hi: 'कबीरा कागद की छुरी, सब घट चली चले ॥',
-              pb: 'ਕਬീਰਾ ਕਾਗਦ ਕੀ ਛुरी, ਸਭ ਘਟ ਚਲੀ ਚਲੇ ॥',
+              pb: 'ਕਬੀਰਾ ਕਾਗਦ ਕੀ ਛੁਰੀ, ਸਭ ਘਟ ਚਲੀ ਚਲੇ ॥',
               en: 'Kabir, paper knife cutting through all hearts.'
             }
           }
@@ -86,7 +86,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         correctOptionId: 1,
         spiritualContext: {
           hi: 'सद्गुरु कबीर साहेब चेतावनी देते हैं कि बाहरी महल-अटारी और दिखावा चाहे कितना भी सुंदर हो, बिना सतगुरु के नाम-ज्ञान के जीव को भवसागर में काल की मार सहनी पड़ती है।',
-          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਬਾهري ਮਹਿਲ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੁੰਦਰ ਹੋਣ, ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਬਾਹਰੀ ਮਹਿਲ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੁੰਦਰ ਹੋਣ, ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
           en: 'Satguru Kabir cautions that exterior worldly splendor is futile without the inner awakening of Satguru’s true Nam.'
         }
       },
@@ -100,7 +100,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         },
         missingLine: {
           hi: 'कहै कबीर गुरु ज्ञान तें, एक आध उभरन्त ॥',
-          pb: 'ਕਹੈ ਕਬੀਰ ਗुरु ਗਿਆਨ ਤੇਂ, ਇਕ ਆਧ ਉဘਰੰਤ ॥',
+          pb: 'ਕਹੈ ਕਬੀਰ ਗੁਰੂ ਗਿਆਨ ਤੇਂ, ਇਕ ਆਧ ਉਭਰੰਤ ॥',
           en: 'Kabir says by Guru’s grace, rare souls manage to escape.'
         },
         options: [
@@ -141,12 +141,12 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         sakhiNum: 45,
         firstLine: {
           hi: 'कबीरा गर्व न कीजिए, कबहुँ न हँसै कोइ।',
-          pb: 'ਕਬീरा ਗਰ्व ਨ ਕੀਜੀਏ, ਕਬਹੁਂ ਨ ਹँਸੈ ਕੋਇ।',
+          pb: 'ਕਬੀਰਾ ਗਰਵ ਨ ਕੀਜੀਏ, ਕਬਹੁਂ ਨ ਹੰਸੈ ਕੋਇ।',
           en: 'Kabir, never take pride or laugh scornfully at anyone.'
         },
         missingLine: {
           hi: 'अजै नाव समुद्र में, का जाने का होइ ॥',
-          pb: 'ਅਜੈ ਨਾਉ ਸਮੁੰद्र ਮੇਂ, ਕਾ ਜਾਨੇ ਕਾ ਹੋਇ ॥',
+          pb: 'ਅਜੈ ਨਾਉ ਸਮੁੰਦਰ ਮੇਂ, ਕਾ ਜਾਨੇ ਕਾ ਹੋਇ ॥',
           en: 'Your boat is still in mid ocean, who knows what destiny awaits.'
         },
         options: [
@@ -154,7 +154,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
             id: 1,
             text: {
               hi: 'अजै नाव समुद्र में, का जाने का होइ ॥',
-              pb: 'ਅਜੈ ਨਾਉ ਸਮੁੰद्र ਮੇਂ, ਕਾ ਜਾਨੇ ਕਾ ਹੋਇ ॥',
+              pb: 'ਅਜੈ ਨਾਉ ਸਮੁੰਦਰ ਮੇਂ, ਕਾ ਜਾਨੇ ਕਾ ਹੋਇ ॥',
               en: 'Your boat is still in mid ocean, who knows what destiny awaits.'
             }
           },
@@ -162,7 +162,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
             id: 2,
             text: {
               hi: 'उठि प्रभात सुमिरो सत्यनाम, मेटो भव के सब संताप।',
-              pb: 'ਉਠਿ ਪ੍ਰਭਾਤ ਸੁਮਿਰੋ ਸਤ੍ਯਨਾਮ, ਮੇਟੋ ਭਵ ਕੇ ਸਬ ਸੰਤਾਪ।',
+              pb: 'ਉਠਿ ਪ੍ਰਭਾਤ ਸੁਮਿਰੋ ਸਤਯਨਾਮ, ਮੇਟੋ ਭਵ ਕੇ ਸਬ ਸੰਤਾਪ।',
               en: 'Arise in morning and meditate on Satyanaam.'
             }
           },

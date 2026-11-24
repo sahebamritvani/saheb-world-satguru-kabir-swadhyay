@@ -370,7 +370,7 @@ export const SmartGlossingToolModal: React.FC<SmartGlossingToolModalProps> = ({
           {/* Footer */}
           <div className="p-3 sm:p-4 border-t border-amber-500/20 bg-amber-500/5 flex items-center justify-between gap-3 text-xs">
             <span className="opacity-75 font-serif">
-              🌹 ।। साहेब बंदगी साहेब ।।
+              {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
             </span>
             <button
               type="button"

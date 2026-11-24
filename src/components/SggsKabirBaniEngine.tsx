@@ -111,7 +111,13 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
     if (!shlokJumpNumber.trim()) return;
     const num = parseInt(shlokJumpNumber.trim(), 10);
     if (isNaN(num)) {
-      setShlokJumpError(language === 'pb' ? 'ਸਹੀ ਸਲੋਕ ਨੰਬਰ ਦਰਜ ਕਰੋ' : 'सही सलोक संख्या दर्ज करें');
+      setShlokJumpError(
+        language === 'pb'
+          ? 'ਸਹੀ ਸਲੋਕ ਨੰਬਰ ਦਰਜ ਕਰੋ'
+          : language === 'en'
+          ? 'Please enter a valid Salok number'
+          : 'सही सलोक संख्या दर्ज करें'
+      );
       setTimeout(() => setShlokJumpError(null), 3000);
       return;
     }
@@ -141,6 +147,8 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
       setShlokJumpError(
         language === 'pb'
           ? `ਸਲੋਕ #${num} ਨਹੀਂ ਮਿਲਿਆ (੧ ਤੋਂ ੨੪੩ ਦਰਜ ਕਰੋ)`
+          : language === 'en'
+          ? `Salok #${num} not found (enter 1 to 243)`
           : `सलोक #${num} नहीं मिला (१ से २४३ दर्ज करें)`
       );
       setTimeout(() => setShlokJumpError(null), 3500);
@@ -247,7 +255,9 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               <span>☬</span>
               <span>
                 {language === 'pb'
-                  ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਾਣੀ ਸੰਗਮ'
+                  ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਤੇ ਸਤਗੁਰੂ ਕਬੀਰ ਬਾਣੀ ਸੰਗਮ'
+                  : language === 'en'
+                  ? 'Sri Guru Granth Sahib Ji & Satguru Kabir Bani Concordance'
                   : 'श्री गुरु ग्रंथ साहिब जी एवं सतगुरु कबीर वाणी संगम'}
               </span>
             </div>
@@ -258,7 +268,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 className="px-3.5 py-1 rounded-xl bg-white/15 hover:bg-white/25 transition text-xs font-bold flex items-center gap-1 cursor-pointer"
               >
                 <ArrowLeft size={14} />
-                <span>{language === 'pb' ? 'ਵਾਪਸ' : 'वापस'}</span>
+                <span>{language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}</span>
               </button>
             )}
           </div>
@@ -267,11 +277,15 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             <h1 className="text-2xl sm:text-4xl font-black font-serif tracking-wide leading-tight">
               {language === 'pb'
                 ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਭਗਤ ਕਬੀਰ ਜੀ ਦੀ ਪਾਵਨ ਬਾਣੀ'
+                : language === 'en'
+                ? 'Sacred Kabir Bani in Sri Guru Granth Sahib Ji'
                 : 'श्री गुरु ग्रंथ साहिब जी में सतगुरु कबीर साहेब की पावन वाणी'}
             </h1>
             <p className="text-xs sm:text-sm text-amber-100/90 font-serif max-w-3xl mt-1.5 leading-relaxed">
               {language === 'pb'
                 ? 'ਪੰਚਮ ਪਾਤਸ਼ਾਹ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਵੱਲੋਂ ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸੁਭਾਇਮਾਨ ੨੨੭ ਸ਼ਬਦ (੧੭ ਰਾਗ), ੨੪੩ ਸਲੋਕ, ਬਾਵਨ ਅੱਖਰੀ ਤੇ ਥਿਤੀ ਬਾਣੀ ਦਾ ਸਰਬੋਤਮ ਸੰਕਲਨ।'
+                : language === 'en'
+                ? 'Authentic collection of 227 Shabads (17 Raags), 243 Saloks, Bavan Akhree & Thiti enshrined by Guru Arjan Dev Ji in Sri Adi Granth Sahib Ji.'
                 : 'पंचम पातशाह श्री गुरु अर्जुन देव जी द्वारा श्री आदि ग्रंथ साहिब में प्रतिष्ठित २२७ शब्द (१७ राग), २४३ सलोक, बावन अखरी एवं पावन पदों का प्रामाणिक दिव्य ज्ञान-इंजन।'}
             </p>
           </div>
@@ -283,7 +297,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 {SGGS_KABIR_STATS.totalShabads}
               </span>
               <span className="text-[10px] opacity-80 font-serif">
-                {language === 'pb' ? 'ਪਾਵਨ ਸ਼ਬਦ / ਪਦੇ' : 'पावन शब्द / पद'}
+                {language === 'pb' ? 'ਪਾਵਨ ਸ਼ਬਦ / ਪਦੇ' : language === 'en' ? 'Sacred Shabads / Padas' : 'पावन शब्द / पद'}
               </span>
             </div>
             <div className="bg-black/20 rounded-2xl p-2.5 border border-white/10 text-center">
@@ -291,7 +305,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 {SGGS_KABIR_STATS.totalSaloks}
               </span>
               <span className="text-[10px] opacity-80 font-serif">
-                {language === 'pb' ? 'ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਕੇ' : 'सलोक भगत कबीर जीउ के'}
+                {language === 'pb' ? 'ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਕੇ' : language === 'en' ? 'Saloks of Bhagat Kabir' : 'सलोक भगत कबीर जीउ के'}
               </span>
             </div>
             <div className="bg-black/20 rounded-2xl p-2.5 border border-white/10 text-center">
@@ -299,15 +313,15 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 {SGGS_KABIR_STATS.totalRaags}
               </span>
               <span className="text-[10px] opacity-80 font-serif">
-                {language === 'pb' ? 'ਸ਼ਾਸਤਰੀ ਰਾਗ' : 'शास्त्रीय राग'}
+                {language === 'pb' ? 'ਸ਼ਾਸਤਰੀ ਰਾਗ' : language === 'en' ? 'Classical Raags' : 'शास्त्रीय राग'}
               </span>
             </div>
             <div className="bg-black/20 rounded-2xl p-2.5 border border-white/10 text-center">
               <span className="text-lg sm:text-xl font-mono font-black block text-amber-300">
-                ੫੪੧+
+                {language === 'pb' ? '੫੪੧+' : '541+'}
               </span>
               <span className="text-[10px] opacity-80 font-serif">
-                {language === 'pb' ? 'ਕੁੱਲ ਪਾਵਨ ਬਾਣੀ ਅੰਗ' : 'कुल पावन श्लोक/पद'}
+                {language === 'pb' ? 'ਕੁੱਲ ਪਾਵਨ ਬਾਣੀ ਅੰਗ' : language === 'en' ? 'Total Sacred Verses' : 'कुल पावन श्लोक/पद'}
               </span>
             </div>
           </div>
@@ -330,6 +344,8 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               placeholder={
                 language === 'pb'
                   ? 'ਸ਼ਬਦ, ਸਲੋਕ, ਅੰਗ ਨੰਬਰ ਜਾਂ ਰਾਗ ਖੋਜੋ (ਜਿਵੇਂ: ਅਵਲਿ ਅਲਹ, ਰਸਨਾ, ਗਉੜੀ)...'
+                  : language === 'en'
+                  ? 'Search Shabad, Salok, Ang number or Raag (e.g. Avali Allah, Gauri)...'
                   : 'शब्द, सलोक, अंग नंबर या राग खोजें (उदा: अवलि अलह, रसना, गउड़ी)...'
               }
               className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm rounded-xl bg-black/5 dark:bg-white/5 border-none focus:ring-2 focus:ring-amber-500 font-medium"
@@ -353,7 +369,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
           >
             <div className="flex items-center gap-1 pl-1">
               <span className="text-[11px] font-serif font-black text-amber-900 dark:text-amber-200 whitespace-nowrap">
-                {language === 'pb' ? 'ਸਲੋਕ ਨੰ.' : 'सलोक नं.'}
+                {language === 'pb' ? 'ਸਲੋਕ ਨੰ.' : language === 'en' ? 'Salok #' : 'सलोक नं.'}
               </span>
             </div>
             <input
@@ -369,9 +385,9 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             <button
               type="submit"
               className="px-2.5 py-1 rounded-lg font-serif font-bold text-xs bg-amber-600 hover:bg-amber-700 text-white shadow-xs transition flex items-center gap-1 cursor-pointer active:scale-95"
-              title={language === 'pb' ? 'ਸਲੋਕ ਖੋਲ੍ਹੋ' : 'सलोक खोलें'}
+              title={language === 'pb' ? 'ਸਲੋਕ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open Salok' : 'सलोक खोलें'}
             >
-              <span>{language === 'pb' ? 'ਜਾਓ' : 'जाएं'}</span>
+              <span>{language === 'pb' ? 'ਜਾਓ' : language === 'en' ? 'Go' : 'जाएं'}</span>
               <ChevronRight className="w-3 h-3" />
             </button>
           </form>
@@ -379,7 +395,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
           {/* Script Modes (Gurmukhi, Devanagari, Roman, 3-in-1) */}
           <div className="flex items-center gap-1 shrink-0 self-end sm:self-auto">
             <span className="text-[11px] font-serif font-bold text-gray-500 mr-1 hidden sm:inline">
-              {language === 'pb' ? 'ਲਿਪੀ:' : 'लिपि:'}
+              {language === 'pb' ? 'ਲਿਪੀ:' : language === 'en' ? 'Script:' : 'लिपि:'}
             </span>
             {[
               { id: 'tri' as const, label: '🌐 3-in-1' },
@@ -412,13 +428,13 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
         {/* Section Navigation Tabs */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-hide pt-1">
           {[
-            { id: 'all', label: language === 'pb' ? '🌟 ਸਭ ਪਾਵਨ ਬਾਣੀ' : '🌟 सम्पूर्ण वाणी' },
-            { id: 'salok', label: language === 'pb' ? '📜 ਸਲੋਕ (੨੪੩)' : '📜 सलोक (२४३)' },
-            { id: 'shabad', label: language === 'pb' ? '🎶 ਰਾਗ ਸ਼ਬਦ' : '🎶 राग शब्द' },
-            { id: 'bavan-akhari', label: language === 'pb' ? '🔤 ਬਾਵਨ ਅਖਰੀ' : '🔤 बावन अखरी' },
-            { id: 'dialogue', label: language === 'pb' ? '👑 ਗੁਰੂ ਸਾਹਿਬਾਨ ਸੰਵਾਦ' : '👑 गुरु साहिबान संवाद' },
-            { id: 'raags', label: language === 'pb' ? '🎼 ੧੭ ਰਾਗ ਸੂਚੀ' : '🎼 १७ राग सूची' },
-            { id: 'history', label: language === 'pb' ? '🏛️ ਪਾਵਨ ਇਤਿਹਾਸ' : '🏛️ पावन इतिहास' },
+            { id: 'all', label: language === 'pb' ? '🌟 ਸਭ ਪਾਵਨ ਬਾਣੀ' : language === 'en' ? '🌟 All Sacred Bani' : '🌟 सम्पूर्ण वाणी' },
+            { id: 'salok', label: language === 'pb' ? '📜 ਸਲੋਕ (੨੪੩)' : language === 'en' ? '📜 Saloks (243)' : '📜 सलोक (२४३)' },
+            { id: 'shabad', label: language === 'pb' ? '🎶 ਰਾਗ ਸ਼ਬਦ' : language === 'en' ? '🎶 Raag Shabads' : '🎶 राग शब्द' },
+            { id: 'bavan-akhari', label: language === 'pb' ? '🔤 ਬਾਵਨ ਅਖਰੀ' : language === 'en' ? '🔤 Bavan Akhree' : '🔤 बावन अखरी' },
+            { id: 'dialogue', label: language === 'pb' ? '👑 ਗੁਰੂ ਸਹਿਬਾਨ ਸੰਵਾਦ' : language === 'en' ? '👑 Guru Dialogue' : '👑 गुरु साहिबान संवाद' },
+            { id: 'raags', label: language === 'pb' ? '🎼 ੧੭ ਰਾਗ ਸੂਚੀ' : language === 'en' ? '🎼 17 Raags Index' : '🎼 १७ राग सूची' },
+            { id: 'history', label: language === 'pb' ? '🏛️ ਪਾਵਨ ਇਤਿਹਾਸ' : language === 'en' ? '🏛️ Sacred History' : '🏛️ पावन इतिहास' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -447,11 +463,15 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               <div className="flex items-center gap-2">
                 <Music className="w-5 h-5 text-amber-600" />
                 <h3 className="font-serif font-black text-base sm:text-lg" style={{ color: theme.sacredMaroon }}>
-                  {language === 'pb' ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ੧੭ ਰਾਗਾਂ ਵਿੱਚ ਕਬੀਰ ਬਾਣੀ' : 'श्री गुरु ग्रंथ साहिब जी के १७ रागों में कबीर वाणी'}
+                  {language === 'pb'
+                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ੧੭ ਰਾਗਾਂ ਵਿੱਚ ਕਬੀਰ ਬਾਣੀ'
+                    : language === 'en'
+                    ? 'Kabir Bani Across 17 Raags in Sri Guru Granth Sahib Ji'
+                    : 'श्री गुरु ग्रंथ साहिब जी के १७ रागों में कबीर वाणी'}
                 </h3>
               </div>
               <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-full">
-                ਕੁੱਲ ੨੨੭ ਸ਼ਬਦ
+                {language === 'pb' ? 'ਕੁੱਲ ੨੨੭ ਸ਼ਬਦ' : language === 'en' ? 'Total 227 Shabads' : 'कुल २२७ शब्द'}
               </span>
             </div>
 
@@ -472,15 +492,15 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                     </span>
                     <div>
                       <h4 className="font-serif font-black text-sm text-gray-800 dark:text-gray-100 group-hover:text-amber-700 transition">
-                        {language === 'pb' ? `ਰਾਗੁ ${r.namePb}` : `राग ${r.nameHi}`}
+                        {language === 'pb' ? `ਰਾਗੁ ${r.namePb}` : language === 'en' ? `Raag ${r.nameEn}` : `राग ${r.nameHi}`}
                       </h4>
                       <span className="text-[10px] text-gray-500 block font-mono">
-                        {language === 'pb' ? `ਅੰਗ ${r.angStart} ਤੋਂ` : `अंग ${r.angStart} से`}
+                        {language === 'pb' ? `ਅੰਗ ${r.angStart} ਤੋਂ` : language === 'en' ? `From Ang ${r.angStart}` : `अंग ${r.angStart} से`}
                       </span>
                     </div>
                   </div>
                   <span className="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200">
-                    {r.count} {language === 'pb' ? 'ਸ਼ਬਦ' : 'पद'}
+                    {r.count} {language === 'pb' ? 'ਸ਼ਬਦ' : language === 'en' ? 'Shabads' : 'पद'}
                   </span>
                 </div>
               ))}
@@ -504,12 +524,16 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               <div>
                 <h3 className="font-serif font-black text-lg sm:text-2xl" style={{ color: theme.sacredMaroon }}>
                   {language === 'pb'
-                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ'
+                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ'
+                    : language === 'en'
+                    ? 'Sacred Bani of Satguru Kabir Saheb in Sri Guru Granth Sahib Ji'
                     : 'श्री गुरु ग्रंथ साहिब जी में सतगुरु कबीर साहेब की पावन वाणी'}
                 </h3>
                 <p className="text-xs text-amber-700 dark:text-amber-400 font-medium">
                   {language === 'pb' 
                     ? 'ਪੂਰਨ ਇਤਿਹਾਸਕ ਸੰਦਰਭ, ਪ੍ਰਮਾਣਿਕ ਅੰਕੜੇ ਅਤੇ ੧੭ ਰਾਗਾਂ ਦਾ ਅਧਿਆਤਮਿਕ ਸੰਕਲਨ' 
+                    : language === 'en'
+                    ? 'Complete Historical Context, Authentic Statistics & Classification Across 17 Classical Raags'
                     : 'ऐतिहासिक संदर्भ, प्रमाणिक विवरण एवं १७ शास्त्रीय रागों का संपूर्ण वर्गीकरण'}
                 </p>
               </div>
@@ -531,7 +555,9 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   }}
                   className="px-3 py-1.5 rounded-xl text-[10px] font-bold transition-all cursor-pointer whitespace-nowrap"
                 >
-                  {ch === 0 ? (language === 'pb' ? 'ਸਟੀਕ' : 'सटीक') : (language === 'pb' ? `ਅਧਿ. ${ch}` : `अध्याय ${ch}`)}
+                  {ch === 0
+                    ? (language === 'pb' ? 'ਸਟੀਕ' : language === 'en' ? 'Intro' : 'सटीक')
+                    : (language === 'pb' ? `ਅਧਿ. ${ch}` : language === 'en' ? `Ch. ${ch}` : `अध्याय ${ch}`)}
                 </button>
               ))}
             </div>
@@ -544,10 +570,14 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             {historyChapter === 0 && (
               <div className="space-y-4 animate-fadeIn">
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-600 font-mono font-black text-lg">ਸਟੀਕ:</span>
+                  <span className="text-amber-600 font-mono font-black text-lg">
+                    {language === 'pb' ? 'ਸਟੀਕ:' : language === 'en' ? 'Intro:' : 'सटीक:'}
+                  </span>
                   <h4 className="font-serif font-black text-base sm:text-lg text-amber-800 dark:text-amber-300">
                     {language === 'pb' 
-                      ? 'ਸਲੋਕ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ (ਜੀਵਨ ਪਰਿਚੈ)' 
+                      ? 'ਸਲੋਕ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ (ਜੀਵਨ ਪਰਿਚੈ)' 
+                      : language === 'en'
+                      ? 'Salok Satguru Kabir Saheb (Sacred Life Introduction)'
                       : 'सलोक सतगुरु कबीर साहेब (जीवन परिचय)'}
                   </h4>
                 </div>
@@ -555,18 +585,28 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 <div className="space-y-4 text-justify leading-relaxed font-serif">
                   {language === 'pb' ? (
                     <>
-                      <p>ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਜਨਮ ਇਕ ਵਿਧਵਾ ਬ੍ਰਾਹਮਣੀ ਦੇ ਉਦਰ ਤੋਂ ਜੇਠ ਸੁਦੀ ੧੫ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਵਿਚ ਹੋਇਆ। ਇਨ੍ਹਾਂ ਦੀ ਮਾਤਾ ਨੇ ਇਸ ਨਵੇਂ ਜਨਮੇ ਬਾਲਕ ਨੂੰ ਬਨਾਰਸ ਲਾਗੇ ਇਕ ਨਹਿਰ ਪਾਸ ਰੱਖ ਦਿੱਤਾ। ਉਥੋਂ ਇਸ ਨਵ-ਜੰਮੇ ਬਾਲਕ ਨੂੰ ਇਕ ਨੀਰੂ ਜੁਲਾਹੇ ਨੇ ਚੁੱਕ ਕੇ ਆਪਣੇ ਘਰ ਲੈ ਆਂਦਾ। ਨੀਰੂ ਦੀ ਇਸਤ੍ਰੀ ਨੇ ਇਸ ਨੂੰ ਆਪਣੇ ਪੁੱਤਰ ਸਮਾਨ ਹੀ ਦੇਖ ਭਾਲ ਕਰ ਕੇ ਪਾਲਿਆ।</p>
-                      <p>ਉਪਰੰਤ ਸਮੇਂ ਅਨੁਸਾਰ ਇਸ ਦਾ ਮੁਸਲਮਾਨੀ ਮੱਤ ਅਨੁਸਾਰ ਕਬੀਰ ਨਾਮ ਰਖਿਆ ਗਿਆ ਅਤੇ ਇਸਲਾਮ ਦੀ ਸਿਖਿਆ ਦਿੱਤੀ ਗਈ। ਪਰ ਕਬੀਰ ਜੀ ਦਾ ਸੁਭਾਵਕ ਹੀ ਝੁਕਾਉ ਹਿੰਦੂ ਮੱਤ ਵਲ ਸੀ। ਜਦ ਜਵਾਨ ਹੋਏ ਤਾਂ ਇਹਨਾਂ ਦਾ ਵਿਆਹ ਲੋਈ ਨਾਮ ਦੀ ਇਸਤ੍ਰੀ ਨਾਲ ਹੋਇਆ। ਜਿਸ ਤੋਂ ਇਹਨਾਂ ਦੇ ਘਰ ਇਕ ਪੁੱਤਰ ਨੇ ਜਨਮ ਲਿਆ, ਜਿਸ ਦਾ ਨਾਮ ਕਮਾਲਾ ਰਖਿਆ ਗਿਆ।</p>
-                      <p>ਕਬੀਰ ਜੀ ਨੇ ਉਸ ਸਮੇਂ ਦੇ ਬਨਾਰਸ ਵਿਚ ਪ੍ਰਸਿੱਧ ਭਗਤ ਰਾਮਾ ਨੰਦ ਜੀ ਤੋਂ ਗੁਰ-ਦੀਖਿਆ ਰਾਮ ਨਾਮ ਦਾ ਉਪਦੇਸ਼ ਲਿਆ ਅਤੇ ਵੈਸ਼ਨੋ ਮੱਤ ਗ੍ਰਹਿਣ ਕੀਤਾ। ਉਸ ਸਮੇਂ ਕਾਂਸ਼ੀ ਵਿਦਵਾਨਾਂ ਦਾ ਕੇਂਦਰ ਹੋਣ ਕਰਕੇ ਕਬੀਰ ਜੀ ਨੂੰ ਸਾਰੇ ਮਤ ਮਤਾਂਤਰਾਂ ਦੇ ਨਿਯਮ ਜਾਨਣ ਦਾ ਅਤੇ ਵਿਦਵਾਨਾਂ ਨਾਲ ਚਰਚਾ ਕਰਨ ਦਾ ਚੰਗਾ ਸਮਾਂ ਮਿਲ ਗਿਆ। ਜਿਸ ਕਰਕੇ ਚਤੁਰ ਹੋ ਗਏ ਅਤੇ ਫਿਰ ਪੂਰਨ ਗਿਆਨੀਆਂ ਦੀ ਸੰਗਤ ਕਰਕੇ ਆਪ ਜੀ ਬ੍ਰਹਮ ਗਿਆਨੀ ਦੀ ਪਦਵੀ ਨੂੰ ਪਹੁੰਚ ਗਏ ਅਤੇ ਆਪਣੇ ਅਨੇਕਾਂ ਸੰਗੀਆਂ ਨੂੰ ਗਿਆਨ ਮਾਰਗ ਦਰਸਾਇਆ।</p>
-                      <p>ਬਾਦਸ਼ਾਹ ਸਿਕੰਦਰ ਲੋਧੀ ਜਦ ਸੰਮਤ ੧੫੪੭ ਵਿਚ ਬਨਾਰਸ ਆਇਆ ਤਾਂ ਕਬੀਰ ਜੀ ਨੂੰ ਈਰਖਾਵਾਦੀ ਮੁਸਲਮਾਨਾਂ ਬਹੁਤ ਕਸ਼ਟ ਪਹੁੰਚਾਇਆ। ਜਿਸ ਦਾ ਕੁਝ ਵਰਣਨ ਕਬੀਰ ਜੀ ਨੇ ਆਪਣੇ ਇਸ ਸ਼ਬਦ ਦੁਆਰਾ ਕੀਤਾ ਹੈ- ਭੁਜਾ ਬਾਂਧਿ ਭਿਲਾ ਕਰਿ ਡਾਰਿਓ॥ (ਰਾਗ ਗੋਂਡ ਕਬੀਰ ਜੀ)</p>
-                      <p>ਕਬੀਰ ਜੀ ਨੇ ਆਪਣੇ ਅੰਤਲੇ ਦਿਨ ਮਗਹਰ ਜ਼ਿਲਾ ਗੋਰਖ ਪੁਰ ਜਾ ਬਤੀਤ ਕੀਤੇ। ਉਥੇ ਹੀ ਆਪ ਜੀ ਦਾ ਦੇਹਾਂਤ ਸੰਮਤ ੧੫੭੫ ਵਿਚ ਹੋਇਆ।</p>
-                      <p>ਕਬੀਰ ਜੀ ਦੀ ਬਾਣੀ ਦਾ ਸੰਗ੍ਰਹਿ ਇਹਨਾਂ ਦੇ ਚੇਲਿਆਂ ਨੇ ਕੀਤਾ, ਇਸ ਸੰਗ੍ਰਹਿ ਪੋਥੀ ਦਾ ਨਾਮ 'ਕਬੀਰ ਬੀਜਕ' ਹੈ, ਜੋ ਇਸ ਦੇ ਇਕ ਧਰਮ ਦਾਸ ਚੇਲੇ ਨੇ ਸੰਮਤ ੧੫੨੧ ਵਿਚ ਲਿਖਿਆ ਸੀ ਅਤੇ ਰਿਆਸਤ ਰੀਵਾ ਵਿਚ ਰਖਿਆ ਹੋਇਆ ਹੈ।</p>
-                      <p>ਕਬੀਰ ਜੀ ਦੀ ਬਹੁਤ ਸਾਰੀ ਬਾਣੀ ਸ਼ਬਦਾਂ ਤੇ ਸਲੋਕਾਂ ਵਿਚ ਉਚਾਰਨ ਕੀਤੀ ਹੋਈ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿਚ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀ ਕੁਲ ਗਿਣਤੀ ੫੩੪ ਹੈ। ਇਸ ਪੁਸਤਕ ਵਿਚ ਕੇਵਲ ਆਪ ਜੀ ਦੇ ੨੪੩ ਸਲੋਕਾਂ ਦਾ ਹੀ ਸੁਖੈਨ ਭਾਸ਼ਾ ਵਿਚ ਟੀਕਾ ਪਾਠਕਾਂ ਦੀ ਭੇਟ ਹੈ। ਇਹ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਪੰਨਾ ੧੩੬੪ ਤੋਂ ਆਰੰਭ ਹੁੰਦੇ ਹਨ।</p>
+                      <p>ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਜੇਠ ਸੁਦੀ ੧੫ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਦੇ ਪਾਵਨ ਲਹਰਤਾਰਾ ਸਰੋਵਰ ਵਿਖੇ ਕਮਲ ਦੇ ਫੁੱਲ ਉੱਤੇ ਹੋਇਆ। ਇਥੋਂ ਇਸ ਨਵ-ਜੰਮੇ ਬਾਲਕ ਨੂੰ ਨੀਰੂ ਤੇ ਨੀਮਾ ਜੀ ਨੇ ਚੁੱਕ ਕੇ ਆਪਣੇ ਘਰ ਲੈ ਆਂਦਾ ਅਤੇ ਆਪਣੇ ਪੁੱਤਰ ਸਮਾਨ ਹੀ ਦੇਖਭਾਲ ਕਰ ਕੇ ਪਾਲਿਆ।</p>
+                      <p>ਉਪਰੰਤ ਸਮੇਂ ਅਨੁਸਾਰ ਆਪ ਜੀ ਦਾ ਨਾਮ ਕਬੀਰ ਰਖਿਆ ਗਿਆ। ਪਰ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਸੁਭਾਵਕ ਹੀ ਝੁਕਾਉ ਸਤਿ, ਨਾਮ-ਸਿਮਰਨ ਅਤੇ ਆਤਮ-ਗਿਆਨ ਵੱਲ ਸੀ। ਜਦ ਜਵਾਨ ਹੋਏ ਤਾਂ ਇਹਨਾਂ ਦਾ ਵਿਆਹ ਮਾਤਾ ਲੋਈ ਜੀ ਨਾਲ ਹੋਇਆ, ਜਿਨ੍ਹਾਂ ਤੋਂ ਪੁੱਤਰ ਕਮਾਲ ਅਤੇ ਪੁੱਤਰੀ ਕਮਾਲੀ ਹੋਏ।</p>
+                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਬਨਾਰਸ ਵਿੱਚ ਸੁਆਮੀ ਰਾਮਾਨੰਦ ਜੀ ਤੋਂ ਗੁਰ-ਦੀਖਿਆ ਤੇ ਨਾਮ ਉਪਦੇਸ਼ ਲਿਆ। ਉਸ ਸਮੇਂ ਕਾਸ਼ੀ ਵਿਦਵਾਨਾਂ ਦਾ ਕੇਂਦਰ ਹੋਣ ਕਰਕੇ ਆਪ ਜੀ ਨੇ ਸਭ ਮਤ-ਮਤਾਂਤਰਾਂ ਦੇ ਪਾਖੰਡ ਤੇ ਕਰਮਕਾਂਡ ਦਾ ਖੰਡਨ ਕਰਕੇ ਸੱਚਾ ਗਿਆਨ ਮਾਰਗ ਦਰਸਾਇਆ।</p>
+                      <p>ਬਾਦਸ਼ਾਹ ਸਿਕੰਦਰ ਲੋਧੀ ਜਦ ਸੰਮਤ ੧੫੪੭ ਵਿਚ ਬਨਾਰਸ ਆਇਆ ਤਾਂ ਈਰਖਾਵਾਦੀ ਲੋਕਾਂ ਨੇ ਕਬੀਰ ਜੀ ਨੂੰ ਬਹੁਤ ਕਸ਼ਟ ਪਹੁੰਚਾਇਆ, ਜਿਸ ਦਾ ਵਰਣਨ ਆਪ ਜੀ ਨੇ ਆਪਣੇ ਸ਼ਬਦ “ਭੁਜਾ ਬਾਂਧਿ ਭਿਲਾ ਕਰਿ ਡਾਰਿਓ॥” (ਰਾਗ ਗੋਂਡ) ਦੁਆਰਾ ਕੀਤਾ ਹੈ।</p>
+                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਆਪਣੇ ਅੰਤਲੇ ਦਿਨ ਮਗਹਰ (ਜ਼ਿਲ੍ਹਾ ਸੰਤ ਕਬੀਰ ਨਗਰ) ਜਾ ਕੇ ਬਤੀਤ ਕੀਤੇ ਅਤੇ ਸੰਮਤ ੧੫੭੫ ਵਿਚ ਅੰਤਿਰਧਿਆਨ ਹੋਏ, ਜਿੱਥੇ ਕੇਵਲ ਸੁਗੰਧਿਤ ਪੁਸ਼ਪ ਪ੍ਰਾਪਤ ਹੋਏ।</p>
+                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦਾ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ ‘ਬੀਜਕ’ ਦੇ ਰੂਪ ਵਿਚ ਧਰਮਦਾਸ ਜੀ ਨੇ ਸੰਮਤ ੧੫੨੧ ਵਿਚ ਸੰਕਲਿਤ ਕੀਤਾ।</p>
+                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਹੁਤ ਸਾਰੀ ਬਾਣੀ ਸ਼ਬਦਾਂ ਤੇ ਸਲੋਕਾਂ ਵਿਚ ਉਚਾਰਨ ਕੀਤੀ ਹੋਈ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿਚ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀ ਕੁੱਲ ਗਿਣਤੀ ੫੩੪ ਤੋਂ ਵੱਧ ਹੈ। ਆਪ ਜੀ ਦੇ ੨੪੩ ਪਾਵਨ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਅੰਗ ੧੩੬੪ ਤੋਂ ਆਰੰਭ ਹੁੰਦੇ ਹਨ।</p>
+                    </>
+                  ) : language === 'en' ? (
+                    <>
+                      <p>Satguru Kabir Saheb holds the highest place among the foremost spiritual luminaries and saints of India. His divine manifestation took place on Jyeshtha Shukla Purnima, Samvat 1455 (1398 CE), upon a blooming lotus flower at the sacred Lahartara pond in Kashi (Varanasi), where Neeru and Neema discovered and raised him with loving care.</p>
+                      <p>Named Kabir (the Great One), his natural inclination from childhood was toward Truth, Naam-Sumiran, and spiritual realization. He married Mata Loi, and their household was blessed with Kamal and Kamali.</p>
+                      <p>In Kashi, Satguru Kabir Saheb took initiation from Swami Ramanand Ji and revealed the inner essence of Satyanaam. Surrounded by scholars in Banaras, he fearlessly dismantled hypocrisy, caste discrimination, and empty ritualism, guiding humanity toward Sahaj Samadhi and true divine realization.</p>
+                      <p>When Sultan Sikandar Lodi visited Banaras in Samvat 1547, envious detractors subjected Kabir Saheb to severe trials, which he immortalized in Raag Gond (“Bhuja Baandh Bhila Kar Daario”).</p>
+                      <p>Satguru Kabir Saheb spent his final days in Magahar (District Sant Kabir Nagar) in Samvat 1575, dissolving the superstition surrounding Magahar and leaving behind only fragrant flowers.</p>
+                      <p>His authentic teachings were compiled in the ‘Kabir Beejak’ by Dharamdas Ji, preserving his timeless wisdom for seekers across ages.</p>
+                      <p>Satguru Kabir Saheb’s sacred hymns and couplets are enshrined with supreme reverence in Sri Guru Granth Sahib Ji—numbering over 534 verses in total—with his 243 sacred Saloks commencing from Ang 1364.</p>
                     </>
                   ) : (
                     <>
                       <p>सतगुरु कबीर साहेब भारत के प्रसिद्ध संतों व आध्यात्मिक मार्गदर्शकों में सर्वोच्च स्थान रखते हैं। आपका प्राकट्य ज्येष्ठ सुदी १५ संवत १४५५ को काशी के पावन लहरतारा सरोवर पर कमल पुष्प पर हुआ। वहां से इस नवजात दिव्य बालक को नीरू नामक जुलाहे ने उठा लिया और अपने घर ले आया। नीरू की पत्नी (नीमा) ने इनका पालन-पोषण किया।</p>
-                      <p>समय के अनुसार आपका नाम कबीर (सर्वश्रेष्ठ/महान) रखा गया। सतगुरु कबीर साहेब का स्वाभाविक झुकाव सत्य, नाम-सुमिरन और आध्यात्मिक ज्ञान की ओर था। आपका विवाह माता लोई से हुआ এবং इनके घर पुत्र कमाल व पुत्री कमाली ने जन्म लिया।</p>
+                      <p>समय के अनुसार आपका नाम कबीर (सर्वश्रेष्ठ/महान) रखा गया। सतगुरु कबीर साहेब का स्वाभाविक झुकाव सत्य, नाम-सुमिरन और आध्यात्मिक ज्ञान की ओर था। आपका विवाह माता लोई से हुआ और इनके घर पुत्र कमाल व पुत्री कमाली ने जन्म लिया।</p>
                       <p>सतगुरु कबीर साहेब ने काशी में स्वामी रामानंद जी से गुरु-दीक्षा ली और राम नाम (सत्यनाम) का मर्म उजागर किया। आपने सभी मत-मतांतरों के पाखंड, कर्मकांड और बाह्य आडंबरों का निर्भीकता से खंडन किया और जनमानस को सहज समाधि और सत्य ज्ञान का मार्ग दिखाया।</p>
                       <p>बादशाह सिकंदर लोदी जब संवत १५४७ में बनारस आया तो ईर्ष्यालु लोगों ने सतगुरु कबीर साहेब को अनेक कष्ट पहुँचाने के प्रयास किए, जिनका वर्णन सतगुरु कबीर साहेब ने अपने इस शब्द द्वारा किया है- "भुजा बांधि भिला करि डारिओ" (राग गोंड)।</p>
                       <p>सतगुरु कबीर साहेब ने अपना नश्वर चोला मगहर (जिला संतकबीरनगर) में संवत १५७५ में त्यागा, जहां केवल सुगंधित पुष्प प्राप्त हुए।</p>
@@ -580,11 +620,15 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             {historyChapter === 1 && (
               <div className="space-y-4 animate-fadeIn">
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-600 font-mono font-black text-lg">Chapter 1:</span>
+                  <span className="text-amber-600 font-mono font-black text-lg">
+                    {language === 'pb' ? 'ਅਧਿਆਇ ੧:' : language === 'en' ? 'Chapter 1:' : 'अध्याय १:'}
+                  </span>
                   <h4 className="font-serif font-black text-base sm:text-lg text-amber-800 dark:text-amber-300">
                     {language === 'pb' 
                       ? 'ਇਤਿਹਾਸਕ ਸੰਦਰਭ ਅਤੇ ਸੰਕਲਨ (Historical Context)' 
-                      : 'इतिहासकार संदर्भ और संकलन (Historical Context)'}
+                      : language === 'en'
+                      ? 'Historical Context & Sacred Compilation'
+                      : 'ऐतिहासिक संदर्भ और संकलन (Historical Context)'}
                   </h4>
                 </div>
 
@@ -592,23 +636,31 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   <p>
                     {language === 'pb' ? (
                       <strong>ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ</strong>
+                    ) : language === 'en' ? (
+                      <strong>Sri Guru Granth Sahib Ji</strong>
                     ) : (
                       <strong>श्री गुरु ग्रंथ साहिब जी</strong>
                     )}
                     {language === 'pb'
-                      ? ' ਸਿੱਖ ਧਰਮ ਦਾ ਸਭ ਤੋਂ ਪਵਿੱਤਰ, ਸਰਵੋੱਚ ਅਤੇ ਜਗਤ-ਜੋਤੀ ਪਰਮੇਸ਼ੁਰ ਸਵਰੂਪ ਗ੍ਰੰਥ ਹੈ। ਇਸ ਪਵਿੱਤਰ ਗ੍ਰੰਥ ਦੀ ਸੰਯੋਜਨਾ ਸੰਨ ੧ବ੦੪ ਵਿੱਚ ਪੰਚਮ ਪਾਤਸ਼ਾਹ, ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਨੇ \'ਆਦਿ ਗ੍ਰੰਥ\' ਦੇ ਰੂਪ ਵਿੱਚ ਸ੍ਰੀ ਹਰਿਮੰਦਰ ਸਾਹਿਬ, ਅੰਮ੍ਰਿਤਸਰ ਵਿਖੇ ਕੀਤੀ ਸੀ।'
+                      ? ' ਸਿੱਖ ਧਰਮ ਦਾ ਸਭ ਤੋਂ ਪਵਿੱਤਰ, ਸਰਵੋੱਚ ਅਤੇ ਜਗਤ-ਜੋਤੀ ਪਰਮੇਸ਼ੁਰ ਸਵਰੂਪ ਗ੍ਰੰਥ ਹੈ। ਇਸ ਪਵਿੱਤਰ ਗ੍ਰੰਥ ਦੀ ਸੰਯੋਜਨਾ ਸੰਨ ੧੬੦੪ ਵਿੱਚ ਪੰਚਮ ਪਾਤਸ਼ਾਹ, ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਨੇ \'ਆਦਿ ਗ੍ਰੰਥ\' ਦੇ ਰੂਪ ਵਿੱਚ ਸ੍ਰੀ ਹਰਿਮੰਦਰ ਸਾਹਿਬ, ਅੰਮ੍ਰਿਤਸਰ ਵਿਖੇ ਕੀਤੀ ਸੀ।'
+                      : language === 'en'
+                      ? ' is the eternal, supreme, and living spiritual scripture of Sikhism. Compiled in 1604 CE as the Adi Granth by the Fifth Guru, Sri Guru Arjan Dev Ji, at Sri Harmandir Sahib in Amritsar, it preserves timeless mystical poetry dedicated to the One Formless Creator.'
                       : ' सिख धर्म का सबसे पवित्र, सर्वोच्च और जगत-ज्योति परमेश्वर स्वरूप ग्रंथ है। इस पवित्र ग्रंथ की संयोजना सन १६०४ में पांचवें पातशाह, श्री गुरु अर्जुन देव जी ने \'आदि ग्रंथ\' के रूप में की थी।'}
                   </p>
 
                   <div className="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/20 italic font-serif leading-relaxed" style={{ color: theme.textPrimary }}>
                     {language === 'pb'
-                      ? '“ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਨੇ ਜਦੋਂ ਵੱਖ-ਵੱਖ ਧਰਮੀ ਪੁਰਸ਼ਾਂ, ਸੰਤਾਂ ਅਤੇ ਭਗਤਾਂ ਦੀ ਬਾਣੀ ਨੂੰ ਇਸ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਦਾ ਵਿਚਾਰ ਕੀਤਾ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਦੇਖਿਆ ਕਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਪਰਮਾਤਮਾ ਦੇ ਨਿਰਗੁਣ ਰੂਪ, ਜ਼ਾਤ-ਪਾਤ ਦੇ ਖੰਡਨ, ਬਾਹਰੀ ਅਡੰਬਰਾਂ ਦੇ ਕਰੜੇ ਵਿਰੋਧ ਅਤੇ ਕੇਵਲ ਸੱਚੇ ਧਰਮ (ਸਤਯਨਾਮ ਸਿਮਰਨ) \'ਤੇ ਅਧਾਰਿਤ ਹੈ। ਇਹ ਵਿਚਾਰਧਾਰਾ ਗੁਰਮਤਿ (ਸਿੱਖ ਦਰਸ਼ਨ) ਦੇ ਬਿਲਕੁਲ ਅਨੁਕੂਲ ਸੀ।”'
+                      ? '“ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਨੇ ਜਦੋਂ ਵੱਖ-ਵੱਖ ਧਰਮੀ ਪੁਰਸ਼ਾਂ, ਸੰਤਾਂ ਅਤੇ ਭਗਤਾਂ ਦੀ ਬਾਣੀ ਨੂੰ ਇਸ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਦਾ ਵਿਚਾਰ ਕੀਤਾ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਦੇਖਿਆ ਕਿ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਪਰਮਾਤਮਾ ਦੇ ਨਿਰਗੁਣ ਰੂਪ, ਜ਼ਾਤ-ਪਾਤ ਦੇ ਖੰਡਨ, ਬਾਹਰੀ ਅਡੰਬਰਾਂ ਦੇ ਕਰੜੇ ਵਿਰੋਧ ਅਤੇ ਕੇਵਲ ਸੱਚੇ ਧਰਮ (ਸਤਯਨਾਮ ਸਿਮਰਨ) \'ਤੇ ਅਧਾਰਿਤ ਹੈ। ਇਹ ਵਿਚਾਰਧਾਰਾ ਗੁਰਮਤਿ (ਸਿੱਖ ਦਰਸ਼ਨ) ਦੇ ਬਿਲਕੁਲ ਅਨੁਕੂਲ ਸੀ।”'
+                      : language === 'en'
+                      ? '“When Guru Arjan Dev Ji included the sacred hymns of illuminated Bhagats and saints, he recognized that Satguru Kabir Saheb’s Bani is wholly rooted in the Formless Divine (Nirguna), the dismantling of caste and hollow ritualism, and pure devotion through Satyanaam remembrance—perfectly aligned with Gurmat philosophy.”'
                       : '“गुरु अर्जुन देव जी ने जब धर्मी पुरुषों, संतों और भगतों की वाणी को इसमें शामिल करने का विचार किया, तब उन्होंने देखा कि सतगुरु कबीर साहेब जी की वाणी परमात्मा के निरगुण रूप, जात-पात के खंडन, बाह्य आडंबरों के विरोध और केवल सच्चा धरम (सत्य नामस्मरण) पर आधारित है। यह विचारधारा गुरु मत (सिख दर्शन) के बिल्कुल अनुरूप थी।”'}
                   </div>
 
                   <p>
                     {language === 'pb'
-                      ? 'ਇਸੇ ਕਰਕੇ, ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਸਾਰੇ ੧੫ ਭਗਤਾਂ ਵਿੱਚੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਨੂੰ ਸਭ ਤੋਂ ਉੱਚਾ, ਆਦਰਯੋਗ ਅਤੇ ਵਿਸ਼ਿਸ਼ਟ ਸਥਾਨ ਦਿੱਤਾ ਗਿਆ। ਇਹ ਸੰਗਮ ਦਰਸਾਉਂਦਾ ਹੈ ਕਿ ਸੱਚੀ ਅਧਿਆਤਮਿਕਤਾ ਕਿਸੇ ਖ਼ਾਸ ਵਰਗ ਜਾਂ ਫ਼ਿਰਕੇ ਤੱਕ ਸੀਮਿਤ ਨਹੀਂ ਹੈ, ਬਲਕਿ ਇਹ ਸਰਬ-ਸਾਂਝੀ ਹੈ।'
+                      ? 'ਇਸੇ ਕਰਕੇ, ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਸਾਰੇ ੧੫ ਭਗਤਾਂ ਵਿੱਚੋਂ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਨੂੰ ਸਭ ਤੋਂ ਉੱਚਾ, ਆਦਰਯੋਗ ਅਤੇ ਵਿਸ਼ਿਸ਼ਟ ਸਥਾਨ ਦਿੱਤਾ ਗਿਆ। ਇਹ ਸੰਗਮ ਦਰਸਾਉਂਦਾ ਹੈ ਕਿ ਸੱਚੀ ਅਧਿਆਤਮਿਕਤਾ ਕਿਸੇ ਖ਼ਾਸ ਵਰਗ ਜਾਂ ਫ਼ਿਰਕੇ ਤੱਕ ਸੀਮਿਤ ਨਹੀਂ ਹੈ, ਬਲਕਿ ਇਹ ਸਰਬ-ਸਾਂਝੀ ਹੈ।'
+                      : language === 'en'
+                      ? 'For this reason, among all 15 Bhagats enshrined in Sri Guru Granth Sahib Ji, Satguru Kabir Saheb’s Bani occupies the most expansive and revered place—testifying that Universal Truth transcends geography, creed, and social boundaries.'
                       : 'इसीलिए, सभी १५ भक्तों में से सतगुरु कबीर साहेब की वाणी को गुरु ग्रंथ साहिब जी में सबसे ऊंचा और विशिष्ट स्थान दिया गया। यह दिव्य समागम इस बात का प्रत्यक्ष प्रमाण है कि सत्य केवल एक है और वह किसी भौगोलिक सीमा या जाति के बंधन में नहीं बंधा है।'}
                   </p>
                 </div>
@@ -616,12 +668,14 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 {/* Aesthetic Quote Block */}
                 <div className="p-4 rounded-xl bg-gradient-to-r from-amber-600/10 to-orange-600/10 border-l-4 border-amber-500 space-y-1">
                   <span className="text-[10px] uppercase tracking-widest text-amber-600 dark:text-amber-400 font-extrabold block">
-                    {language === 'pb' ? 'ਗੁਰੂ ਸ਼ਬਦ ਮਰਯਾਦਾ' : 'गुरु शब्द मर्यादा'}
+                    {language === 'pb' ? 'ਗੁਰੂ ਸ਼ਬਦ ਮਰਯਾਦਾ' : language === 'en' ? 'Sacred Scriptural Reverence' : 'गुरु शब्द मर्यादा'}
                   </span>
                   <p className="text-xs sm:text-sm font-bold" style={{ color: theme.sacredMaroon }}>
                     {language === 'pb'
                       ? 'ਲੋਗੁ ਜਾਨੈ ਇਹੁ ਗੀਤੁ ਹੈ ਇਹੁ ਤਉ ਬ੍ਰਹਮ ਬੀਚਾਰ ॥ (ਅੰਗ ੩੩੫)'
-                      : 'लोगु जानै इहु गीतु है इहु तਉ ब्रह्म बीचार ॥ (अंग ३३५)'}
+                      : language === 'en'
+                      ? 'Logu Jaanai Ihu Geetu Hai Ihu Tau Brahm Beechaar || (Ang 335 — People think this is merely a song, yet it is contemplation of the Supreme Divine)'
+                      : 'लोगु जानै इहु गीतु है इहु तउ ब्रह्म बीचार ॥ (अंग ३३५)'}
                   </p>
                 </div>
               </div>
@@ -631,17 +685,23 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             {historyChapter === 2 && (
               <div className="space-y-4 animate-fadeIn">
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-600 font-mono font-black text-lg">Chapter 2:</span>
+                  <span className="text-amber-600 font-mono font-black text-lg">
+                    {language === 'pb' ? 'ਅਧਿਆਇ ੨:' : language === 'en' ? 'Chapter 2:' : 'अध्याय २:'}
+                  </span>
                   <h4 className="font-serif font-black text-base sm:text-lg text-amber-800 dark:text-amber-300">
                     {language === 'pb' 
                       ? 'ਬਾਣੀ ਦਾ ਪ੍ਰਮਾਣਿਕ ਵੇਰਵਾ (Hymn Count & Statistics)' 
+                      : language === 'en'
+                      ? 'Authentic Hymn Count & Scriptural Statistics'
                       : 'वाणी का प्रमाणिक विवरण (Hymn Count & Statistics)'}
                   </h4>
                 </div>
 
                 <p>
                   {language === 'pb'
-                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਸਭ ਤੋਂ ਵੱਧ ਸੰਖਿਆ ਵਿੱਚ ਦਰਜ ਹੈ। ਸਮੂਹ ਭਗਤਾਂ ਵਿੱਚੋਂ ਉਨ੍ਹਾਂ ਦਾ ਯੋਗਦਾਨ ਸਭ ਤੋਂ ਵੱਡਾ ਅਤੇ ਵਿਸ਼ਾਲ ਹੈ:'
+                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਸਭ ਤੋਂ ਵੱਧ ਸੰਖਿਆ ਵਿੱਚ ਦਰਜ ਹੈ। ਸਮੂਹ ਭਗਤਾਂ ਵਿੱਚੋਂ ਉਨ੍ਹਾਂ ਦਾ ਯੋਗਦਾਨ ਸਭ ਤੋਂ ਵੱਡਾ ਅਤੇ ਵਿਸ਼ਾਲ ਹੈ:'
+                    : language === 'en'
+                    ? 'Satguru Kabir Saheb’s sacred compositions form the largest single Bhagat contribution in Sri Guru Granth Sahib Ji:'
                     : 'श्री गुरु ग्रंथ साहिब जी में सतगुरु कबीर साहेब की वाणी सबसे ज्यादा संख्या में दर्ज है। उनका योगदान किसी भी अन्य भक्त से कहीं अधिक है:'}
                 </p>
 
@@ -652,7 +712,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       227
                     </span>
                     <span className="text-xs font-serif font-bold text-gray-700 dark:text-gray-300 block">
-                      {language === 'pb' ? 'ਕੁੱਲ ਸ਼ਬਦ / ਪਦੇ' : 'कुल शब्द / पद'}
+                      {language === 'pb' ? 'ਕੁੱਲ ਸ਼ਬਦ / ਪਦੇ' : language === 'en' ? 'Total Shabads / Padas' : 'कुल शब्द / पद'}
                     </span>
                     <span className="text-[10px] text-gray-500 block">
                       (Total Shabads/Padas)
@@ -664,7 +724,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       237
                     </span>
                     <span className="text-xs font-serif font-bold text-gray-700 dark:text-gray-300 block">
-                      {language === 'pb' ? 'ਕੁੱਲ ਸਲੋਕ (Couplets)' : 'कुल सलोक (Couplets)'}
+                      {language === 'pb' ? 'ਕੁੱਲ ਸਲੋਕ (Couplets)' : language === 'en' ? 'Total Saloks (Couplets)' : 'कुल सलोक (Couplets)'}
                     </span>
                     <span className="text-[10px] text-gray-500 block">
                       (Sakhis/Couplets)
@@ -676,7 +736,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       ~544
                     </span>
                     <span className="text-xs font-serif font-bold text-gray-700 dark:text-gray-300 block">
-                      {language === 'pb' ? 'ਕੁੱਲ ਬਾਣੀ ਅੰਗ (Hymns)' : 'कुल सयुंक्त वाणी (Hymns)'}
+                      {language === 'pb' ? 'ਕੁੱਲ ਬਾਣੀ ਅੰਸ਼ (Hymns)' : language === 'en' ? 'Total Combined Verses' : 'कुल संयुक्त वाणी (Hymns)'}
                     </span>
                     <span className="text-[10px] text-gray-500 block">
                       (Approx Combined Verses)
@@ -686,11 +746,13 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
 
                 <div className="p-4 rounded-2xl bg-black/5 dark:bg-white/5 space-y-2 border border-amber-500/10">
                   <h5 className="font-serif font-black text-sm text-amber-700 dark:text-amber-300">
-                    📜 {language === 'pb' ? 'ਵਿਸ਼ੇਸ਼ ਵੱਡੀਆਂ ਰਚਨਾਵਾਂ (Large Compositions):' : 'विशेष बड़ी रचनाएँ (Large Compositions):'}
+                    📜 {language === 'pb' ? 'ਵਿਸ਼ੇਸ਼ ਵੱਡੀਆਂ ਰਚਨਾਵਾਂ (Large Compositions):' : language === 'en' ? 'Special Extended Compositions:' : 'विशेष बड़ी रचनाएँ (Large Compositions):'}
                   </h5>
                   <p className="leading-relaxed text-xs sm:text-sm">
                     {language === 'pb'
-                      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਇੱਕ ਸਭ ਤੋਂ ਵੱਡੀ ਵਿਸ਼ੇਸ਼ਤਾ ਇਹ ਹੈ ਕਿ ਇਸ ਵਿੱਚ \'ਬਾਵਨ ਅੱਖਰੀ\' (Bavan Akhree - ਅੰਗ ੩੪੦) ਅਤੇ \'ਥਿਤੀ\' (Thiti - ਅੰਗ ੩੪੩) ਵਰਗੀਆਂ ਵਿਸ਼ਾਲ ਰਚਨਾਵਾਂ ਵੀ ਦਰਜ ਹਨ। ਇਹ ਰਚਨਾਵਾਂ ਆਤਮ-ਗਿਆਨ, ਅੱਖਰ-ਭੇਦ, ਅਤੇ ਬ੍ਰਹਮ ਵਿਚਾਰ ਨੂੰ ਬਹੁਤ ਹੀ ਸਰਲ ਪਰ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਉਂਦੀਆਂ ਹਨ।'
+                      ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਇੱਕ ਸਭ ਤੋਂ ਵੱਡੀ ਵਿਸ਼ੇਸ਼ਤਾ ਇਹ ਹੈ ਕਿ ਇਸ ਵਿੱਚ \'ਬਾਵਨ ਅੱਖਰੀ\' (Bavan Akhree - ਅੰਗ ੩੪੦) ਅਤੇ \'ਥਿਤੀ\' (Thiti - ਅੰਗ ੩੪੩) ਵਰਗੀਆਂ ਵਿਸ਼ਾਲ ਰਚਨਾਵਾਂ ਵੀ ਦਰਜ ਹਨ। ਇਹ ਰਚਨਾਵਾਂ ਆਤਮ-ਗਿਆਨ, ਅੱਖਰ-ਭੇਦ, ਅਤੇ ਬ੍ਰਹਮ ਵਿਚਾਰ ਨੂੰ ਬਹੁਤ ਹੀ ਸਰਲ ਪਰ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਉਂਦੀਆਂ ਹਨ।'
+                      : language === 'en'
+                      ? 'A unique hallmark of Satguru Kabir Saheb’s Bani in Guru Granth Sahib Ji is the inclusion of extended philosophical works such as ‘Bavan Akhree’ (52 Letters Acrostic, Ang 340) and ‘Thiti’ (Lunar Days, Ang 343), illuminating Self-knowledge and impermanence.'
                       : 'सतगुरु कबीर साहेब की वाणी की एक सबसे बड़ी विशेषता यह है कि इसमें \'बावन अखरी\' (Bavan Akhree) और \'थिती\' (Thiti) जैसी बड़ी रचनाएं भी दर्ज हैं, जो आत्म-ज्ञान, संसार की अनित्यता और अक्षर-भेद को अत्यंत गहराई से समझाती हैं।'}
                   </p>
                 </div>
@@ -701,17 +763,23 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             {historyChapter === 3 && (
               <div className="space-y-4 animate-fadeIn">
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-600 font-mono font-black text-lg">Chapter 3:</span>
+                  <span className="text-amber-600 font-mono font-black text-lg">
+                    {language === 'pb' ? 'ਅਧਿਆਇ ੩:' : language === 'en' ? 'Chapter 3:' : 'अध्याय ३:'}
+                  </span>
                   <h4 className="font-serif font-black text-base sm:text-lg text-amber-800 dark:text-amber-300">
                     {language === 'pb' 
                       ? 'ਰਾਗ ਅਤੇ ਅੰਗ ਵਰਗੀਕਰਨ (Raag & Ang Pages)' 
+                      : language === 'en'
+                      ? 'Raag & Ang (Page Range) Classification'
                       : 'राग और अंग (पृष्ठ संख्या) वर्गीकरण'}
                   </h4>
                 </div>
 
                 <p className="leading-relaxed">
                   {language === 'pb'
-                    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਨੂੰ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਵੱਖ-ਵੱਖ \'ਅੰਗਾਂ\' (ਪੰਨਿਆਂ) \'ਤੇ ਉਨ੍ਹਾਂ ਦੀ ਰਾਗ-ਵਿਵਸਥਾ ਅਨੁਸਾਰ ਸੰਕਲਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਕੁੱਲ ੧੭ ਮੁੱਖ ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹੈ:'
+                    ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਨੂੰ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਵੱਖ-ਵੱਖ \'ਅੰਗਾਂ\' (ਪੰਨਿਆਂ) \'ਤੇ ਉਨ੍ਹਾਂ ਦੀ ਰਾਗ-ਵਿਵਸਥਾ ਅਨੁਸਾਰ ਸੰਕਲਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਕੁੱਲ ੧੭ ਮੁੱਖ ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹੈ:'
+                    : language === 'en'
+                    ? 'Satguru Kabir Saheb’s sacred verses are systematically arranged across Sri Guru Granth Sahib Ji according to 17 classical musical Raags:'
                     : 'सतगुरु कबीर साहेब की वाणी को श्री गुरु ग्रंथ साहिब जी के विभिन्न \'अंगों\' (पृष्ठों) पर उनकी राग-व्यवस्था के अनुसार दर्ज किया गया है। सतगुरु कबीर साहेब की वाणी कुल १७ मुख्य रागों में निबद्ध है:'}
                 </p>
 
@@ -720,35 +788,35 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   {/* Table Header */}
                   <div className="grid grid-cols-12 bg-[#8B2500] text-white p-3 text-xs sm:text-sm font-black font-serif text-center">
                     <div className="col-span-2">#</div>
-                    <div className="col-span-5 text-left pl-3">{language === 'pb' ? 'ਰਾਗ ਦਾ ਨਾਮ' : 'राग का नाम'}</div>
-                    <div className="col-span-5">{language === 'pb' ? 'ਪਾਵਨ ਅੰਗ ਸੀਮਾ' : 'पावन अंग सीमा'}</div>
+                    <div className="col-span-5 text-left pl-3">{language === 'pb' ? 'ਰਾਗ ਦਾ ਨਾਮ' : language === 'en' ? 'Raag Name' : 'राग का नाम'}</div>
+                    <div className="col-span-5">{language === 'pb' ? 'ਪਾਵਨ ਅੰਗ ਸੀਮਾ' : language === 'en' ? 'Sacred Ang Range' : 'पावन अंग सीमा'}</div>
                   </div>
 
                   {/* Table Body */}
                   <div className="divide-y divide-amber-500/15 max-h-[360px] overflow-y-auto scrollbar-thin text-center text-xs font-semibold">
                     {[
-                      { num: 1, hi: 'राग गउड़ी', pb: 'ਰਾਗੁ ਗਉੜੀ', range: 'Ang 323 to 345', note: 'Includes Bavan Akhree & Thiti' },
-                      { num: 2, hi: 'राग आसा', pb: 'ਰਾਗੁ ਆਸਾ', range: 'Ang 475 to 484', note: '' },
-                      { num: 3, hi: 'राग गूजरी', pb: 'ਰਾਗੁ ਗੂਜਰੀ', range: 'Ang 524', note: '' },
-                      { num: 4, hi: 'राग सोरठि', pb: 'ਰਾਗੁ ਸੋਰਠਿ', range: 'Ang 654 to 656', note: '' },
-                      { num: 5, hi: 'राग धनासरी', pb: 'ਰਾਗੁ ਧਨਾਸਰੀ', range: 'Ang 691 to 692', note: '' },
-                      { num: 6, hi: 'राग तिलंग', pb: 'ਰਾਗੁ ਤਿਲੰਗ', range: 'Ang 727', note: '' },
-                      { num: 7, hi: 'राग सूही', pb: 'ਰਾਗੁ ਸੂਹੀ', range: 'Ang 792 to 793', note: '' },
-                      { num: 8, hi: 'राग बिलावलु', pb: 'ਰਾਗੁ ਬਿਲਾਵਲੁ', range: 'Ang 855 to 858', note: '' },
-                      { num: 9, hi: 'राग गोंड', pb: 'ਰਾਗੁ ਗੋਂਡ', range: 'Ang 870 to 873', note: '' },
-                      { num: 10, hi: 'राग रामकली', pb: 'ਰਾਗੁ ਰਾਮਕਲੀ', range: 'Ang 968 to 972', note: '' },
-                      { num: 11, hi: 'राग मारू', pb: 'ਰਾਗੁ ਮਾਰੂ', range: 'Ang 1102 to 1106', note: '' },
-                      { num: 12, hi: 'राग केदारा', pb: 'ਰਾਗੁ ਕੇਦਾਰਾ', range: 'Ang 1123 to 1124', note: '' },
-                      { num: 13, hi: 'राग भैरउ', pb: 'ਰਾਗੁ ਭੈਰਉ', range: 'Ang 1157 to 1162', note: '' },
-                      { num: 14, hi: 'राग बसंतु', pb: 'ਰਾਗੁ ਬਸੰਤੁ', range: 'Ang 1193 to 1196', note: '' },
-                      { num: 15, hi: 'राग सारंग', pb: 'ਰਾਗੁ ਸਾਰੰਗ', range: 'Ang 1251 to 1252', note: '' },
-                      { num: 16, hi: 'राग मलਾਰ', pb: 'ਰਾਗੁ ਮਲਾਰ', range: 'Ang 1292', note: '' },
-                      { num: 17, hi: 'राग प्रभाती', pb: 'ਰਾਗੁ ਪ੍ਰਭਾਤੀ', range: 'Ang 1349 to 1350', note: '' },
+                      { num: 1, hi: 'राग गउड़ी', pb: 'ਰਾਗੁ ਗਉੜੀ', en: 'Raag Gauri', range: 'Ang 323 to 345', note: 'Includes Bavan Akhree & Thiti' },
+                      { num: 2, hi: 'राग आसा', pb: 'ਰਾਗੁ ਆਸਾ', en: 'Raag Aasa', range: 'Ang 475 to 484', note: '' },
+                      { num: 3, hi: 'राग गूजरी', pb: 'ਰਾਗੁ ਗੂਜਰੀ', en: 'Raag Gujri', range: 'Ang 524', note: '' },
+                      { num: 4, hi: 'राग सोरठि', pb: 'ਰਾਗੁ ਸੋਰਠਿ', en: 'Raag Sorath', range: 'Ang 654 to 656', note: '' },
+                      { num: 5, hi: 'राग धनासरी', pb: 'ਰਾਗੁ ਧਨਾਸਰੀ', en: 'Raag Dhanasari', range: 'Ang 691 to 692', note: '' },
+                      { num: 6, hi: 'राग तिलंग', pb: 'ਰਾਗੁ ਤਿਲੰਗ', en: 'Raag Tilang', range: 'Ang 727', note: '' },
+                      { num: 7, hi: 'राग सूही', pb: 'ਰਾਗੁ ਸੂਹੀ', en: 'Raag Suhi', range: 'Ang 792 to 793', note: '' },
+                      { num: 8, hi: 'राग बिलावलु', pb: 'ਰਾਗੁ ਬਿਲਾਵਲੁ', en: 'Raag Bilawal', range: 'Ang 855 to 858', note: '' },
+                      { num: 9, hi: 'राग गोंड', pb: 'ਰਾਗੁ ਗੋਂਡ', en: 'Raag Gond', range: 'Ang 870 to 873', note: '' },
+                      { num: 10, hi: 'राग रामकली', pb: 'ਰਾਗੁ ਰਾਮਕਲੀ', en: 'Raag Ramkali', range: 'Ang 968 to 972', note: '' },
+                      { num: 11, hi: 'राग मारू', pb: 'ਰਾਗੁ ਮਾਰੂ', en: 'Raag Maru', range: 'Ang 1102 to 1106', note: '' },
+                      { num: 12, hi: 'राग केदारा', pb: 'ਰਾਗੁ ਕੇਦਾਰਾ', en: 'Raag Kedara', range: 'Ang 1123 to 1124', note: '' },
+                      { num: 13, hi: 'राग भैरउ', pb: 'ਰਾਗੁ ਭੈਰਉ', en: 'Raag Bhairo', range: 'Ang 1157 to 1162', note: '' },
+                      { num: 14, hi: 'राग बसंतु', pb: 'ਰਾਗੁ ਬਸੰਤੁ', en: 'Raag Basant', range: 'Ang 1193 to 1196', note: '' },
+                      { num: 15, hi: 'राग सारंग', pb: 'ਰਾਗੁ ਸਾਰੰਗ', en: 'Raag Sarang', range: 'Ang 1251 to 1252', note: '' },
+                      { num: 16, hi: 'राग मलार', pb: 'ਰਾਗੁ ਮਲਾਰ', en: 'Raag Malar', range: 'Ang 1292', note: '' },
+                      { num: 17, hi: 'राग प्रभाती', pb: 'ਰਾਗੁ ਪ੍ਰਭਾਤੀ', en: 'Raag Prabhati', range: 'Ang 1349 to 1350', note: '' },
                     ].map((row) => (
                       <div key={row.num} className="grid grid-cols-12 p-2.5 items-center hover:bg-amber-500/5 transition">
                         <div className="col-span-2 font-mono font-bold text-amber-700 dark:text-amber-400">{row.num}</div>
                         <div className="col-span-5 text-left pl-3 font-serif font-black text-stone-800 dark:text-stone-200">
-                          {language === 'pb' ? row.pb : row.hi}
+                          {language === 'pb' ? row.pb : language === 'en' ? row.en : row.hi}
                         </div>
                         <div className="col-span-5 font-mono text-gray-600 dark:text-gray-300">
                           <span className="bg-amber-500/10 px-2.5 py-0.5 rounded-md text-[11px] font-bold text-amber-800 dark:text-amber-200 border border-amber-500/10">
@@ -770,12 +838,14 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   <div className="flex items-center gap-2">
                     <Feather className="w-5 h-5 text-amber-600" />
                     <h5 className="font-serif font-black text-sm text-amber-900 dark:text-amber-300">
-                      {language === 'pb' ? 'ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀਉ ਕੇ (Salok)' : 'सलोक भगत कबीर जीउ के (Salok)'}
+                      {language === 'pb' ? 'ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀਉ ਕੇ (Salok)' : language === 'en' ? 'Salok Bhagat Kabir Jio Ke (Couplets)' : 'सलोक भगत कबीर जीउ के (Salok)'}
                     </h5>
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed">
                     {language === 'pb'
-                      ? 'ਭਗਤ ਕਬੀਰ ਜੀ ਦੇ ਸਾਰਿਆਂ ਸਲੋਕਾਂ ਦਾ ਸੰਗ੍ਰਹਿ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਆਖ਼ਰੀ ਭਾਗ ਵਿੱਚ ਅੰਗ ੧੩ବ੪ ਤੋਂ ਲੈ ਕੇ ਅੰਗ ੧੩੭੭ ਤੱਕ ਬੜੀ ਹੀ ਸ਼ਰਧਾ ਅਤੇ ਮਰਯਾਦਾ ਨਾਲ ਦਰਜ ਕੀਤਾ ਗਿਆ ਹੈ। ਇਹ ਸਲੋਕ ਅਧਿਆਤਮਿਕ ਰਸ ਅਤੇ ਬ੍ਰਹਮ-ਵਿਚਾਰ ਦੇ ਅਮੁੱਲ ਰਤਨ ਹਨ।'
+                      ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸਾਰੇ ਸਲੋਕਾਂ ਦਾ ਸੰਗ੍ਰਹਿ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਆਖ਼ਰੀ ਭਾਗ ਵਿੱਚ ਅੰਗ ੧੩੬੪ ਤੋਂ ਲੈ ਕੇ ਅੰਗ ੧੩੭੭ ਤੱਕ ਬੜੀ ਹੀ ਸ਼ਰਧਾ ਅਤੇ ਮਰਯਾਦਾ ਨਾਲ ਦਰਜ ਕੀਤਾ ਗਿਆ ਹੈ। ਇਹ ਸਲੋਕ ਅਧਿਆਤਮਿਕ ਰਸ ਅਤੇ ਬ੍ਰਹਮ-ਵਿਚਾਰ ਦੇ ਅਮੁੱਲ ਰਤਨ ਹਨ।'
+                      : language === 'en'
+                      ? 'The revered collection of Satguru Kabir Saheb’s Saloks is enshrined near the conclusion of Sri Guru Granth Sahib Ji from Ang 1364 to Ang 1377. These couplets are priceless spiritual gems of awakening, Sahaj Samadhi, and Naam-remembrance.'
                       : 'सतगुरु कबीर साहेब के पवित्र सलोकों का दिव्य संग्रह पवित्र ग्रंथ के अंतिम भाग में अंग १३६४ से अंग १३७७ तक बड़ी ही श्रद्धा एवं मर्यादा के साथ दर्ज किया गया है। ये सलोक सीधे जीवन-परिवर्तन, सहज समाधि और नाम-स्मरण के अनमोल मोती हैं।'}
                   </p>
                 </div>
@@ -793,6 +863,8 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             <span>
               {language === 'pb'
                 ? `ਕੁੱਲ ${filteredVerses.length} ਪਾਵਨ ਬਾਣੀ ਅੰਸ਼ ਉਪਲਬਧ`
+                : language === 'en'
+                ? `${filteredVerses.length} Sacred Verses Available`
                 : `कुल ${filteredVerses.length} पावन वाणी प्रसंग उपलब्ध`}
             </span>
             {selectedRaag !== 'all' && (
@@ -801,7 +873,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 onClick={() => setSelectedRaag('all')}
                 className="text-amber-700 font-bold hover:underline flex items-center gap-1 cursor-pointer"
               >
-                <span>ਰਾਗ ਫਿਲਟਰ ਹਟਾਓ (Show All)</span>
+                <span>{language === 'pb' ? 'ਰਾਗ ਫਿਲਟਰ ਹਟਾਓ' : language === 'en' ? 'Show All Raags' : 'राग फ़िल्टर हटाएं'}</span>
                 <X size={12} />
               </button>
             )}
@@ -858,15 +930,31 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="px-3 py-1 rounded-full text-xs font-black font-serif bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30">
                         {verse.category === 'salok'
-                          ? 'ਸਲੋਕ ਭਗਤ ਕਬੀਰ'
+                          ? language === 'pb'
+                            ? 'ਸਲੋਕ ਭਗਤ ਕਬੀਰ'
+                            : language === 'en'
+                            ? 'Salok Bhagat Kabir'
+                            : 'सलोक भगत कबीर'
                           : verse.category === 'shabad'
-                          ? `ਰਾਗੁ ${verse.raag || 'ਗਉੜੀ'}`
+                          ? language === 'pb'
+                            ? `ਰਾਗੁ ${verse.raag || 'ਗਉੜੀ'}`
+                            : language === 'en'
+                            ? `Raag ${verse.raag || 'Gauri'}`
+                            : `राग ${verse.raag || 'गउड़ी'}`
                           : verse.category === 'bavan-akhari'
-                          ? 'ਬਾਵਨ ਅਖਰੀ'
-                          : 'ਗੁਰੂ ਸੰਵਾਦ'}
+                          ? language === 'pb'
+                            ? 'ਬਾਵਨ ਅੱਖਰੀ'
+                            : language === 'en'
+                            ? 'Bavan Akhree'
+                            : 'बावन अखरी'
+                          : language === 'pb'
+                          ? 'ਗੁਰੂ ਸੰਵਾਦ'
+                          : language === 'en'
+                          ? 'Guru Dialogue'
+                          : 'गुरु संवाद'}
                       </span>
                       <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-500/5 px-2.5 py-0.5 rounded-md">
-                        {language === 'pb' ? `ਅੰਗ ${verse.ang}` : `अंग ${verse.ang}`}
+                        {language === 'pb' ? `ਅੰਗ ${verse.ang}` : language === 'en' ? `Ang ${verse.ang}` : `अंग ${verse.ang}`}
                       </span>
                     </div>
 
@@ -879,17 +967,29 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                             ? 'bg-[#8B2500] text-white shadow-xs animate-pulse'
                             : 'hover:bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20'
                         }`}
-                        title={isPlayingAudio && currentPlayingId === verse.id ? 'ਰੋਕੋ (Stop Voice)' : 'ਸੁਣੋ (Listen Voice)'}
+                        title={
+                          isPlayingAudio && currentPlayingId === verse.id
+                            ? language === 'pb'
+                              ? 'ਰੋਕੋ'
+                              : language === 'en'
+                              ? 'Stop Voice'
+                              : 'रोकें'
+                            : language === 'pb'
+                            ? 'ਸੁਣੋ'
+                            : language === 'en'
+                            ? 'Listen Voice'
+                            : 'सुनें'
+                        }
                       >
                         {isPlayingAudio && currentPlayingId === verse.id ? (
                           <>
                             <VolumeX size={15} />
-                            <span className="hidden sm:inline">{language === 'pb' ? 'ਬੰਦ ਕਰੋ' : 'रोकें'}</span>
+                            <span className="hidden sm:inline">{language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Stop' : 'रोकें'}</span>
                           </>
                         ) : (
                           <>
                             <Volume2 size={15} />
-                            <span className="hidden sm:inline">{language === 'pb' ? 'ਪਾਠ ਸੁਣੋ' : 'पाठ सुनें'}</span>
+                            <span className="hidden sm:inline">{language === 'pb' ? 'ਪਾਠ ਸੁਣੋ' : language === 'en' ? 'Listen' : 'पाठ सुनें'}</span>
                           </>
                         )}
                       </button>
@@ -902,7 +1002,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                             ? 'bg-amber-500/20 text-amber-700'
                             : 'hover:bg-black/5 text-gray-400'
                         }`}
-                        title="ਬੁੱਕਮਾਰਕ ਕਰੋ"
+                        title={language === 'pb' ? 'ਬੁੱਕਮਾਰਕ ਕਰੋ' : language === 'en' ? 'Bookmark' : 'बुकमार्क करें'}
                       >
                         <Bookmark size={15} className={isBookmarked ? 'fill-amber-600 text-amber-600' : ''} />
                       </button>
@@ -911,7 +1011,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                         type="button"
                         onClick={() => handleCopy(verse)}
                         className="p-2 rounded-xl hover:bg-black/5 text-gray-500 transition cursor-pointer"
-                        title="ਕਾਪੀ ਕਰੋ"
+                        title={language === 'pb' ? 'ਕਾਪੀ ਕਰੋ' : language === 'en' ? 'Copy' : 'कॉपी करें'}
                       >
                         {copiedVerseId === verse.id ? <Check size={15} className="text-emerald-600" /> : <Copy size={15} />}
                       </button>
@@ -921,7 +1021,19 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                         onClick={() => setExpandedVerseId(isExpanded ? null : verse.id)}
                         className="px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-serif font-bold text-xs transition cursor-pointer flex items-center gap-1"
                       >
-                        <span>{isExpanded ? (language === 'pb' ? 'ਸੰਖੇਪ' : 'संक्षेप') : (language === 'pb' ? '੫ ਚਰਨ ਵਿਆਖਿਆ' : '५ चरण व्याख्या')}</span>
+                        <span>
+                          {isExpanded
+                            ? language === 'pb'
+                              ? 'ਸੰਖੇਪ'
+                              : language === 'en'
+                              ? 'Collapse'
+                              : 'संक्षेप'
+                            : language === 'pb'
+                            ? '੫ ਚਰਨ ਵਿਆਖਿਆ'
+                            : language === 'en'
+                            ? '5-Step Meaning'
+                            : '५ चरण व्याख्या'}
+                        </span>
                         {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                       </button>
                     </div>
@@ -1001,11 +1113,11 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                     <div className="space-y-3 pt-2">
                       <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
                         {[
-                          { id: 0, label: language === 'pb' ? '📖 ੧. ਸ਼ਬਦਾਰਥ' : '📖 १. शब्दार्थ' },
-                          { id: 1, label: language === 'pb' ? '💡 ੨. ਭਾਵਾਰਥ' : '💡 २. भावार्थ' },
-                          { id: 2, label: language === 'pb' ? '💭 ੩. ਦੈਨਿਕ ਚਿੰਤਨ' : '💭 ३. दैनिक चिंतन' },
-                          { id: 3, label: language === 'pb' ? '🌿 ੪. ਜੀਵਨ ਆਚਰਨ' : '🌿 ४. जीवन आचरण' },
-                          { id: 4, label: language === 'pb' ? '🙏 ੫. ਅਰਦਾਸ ਤੇ ਸਮਰਪਣ' : '🙏 ५. समर्पण प्रार्थना' },
+                          { id: 0, label: language === 'pb' ? '📖 ੧. ਸ਼ਬਦਾਰਥ' : language === 'en' ? '📖 1. Glossary' : '📖 १. शब्दार्थ' },
+                          { id: 1, label: language === 'pb' ? '💡 ੨. ਭਾਵਾਰਥ' : language === 'en' ? '💡 2. Meaning' : '💡 २. भावार्थ' },
+                          { id: 2, label: language === 'pb' ? '💭 ੩. ਦੈਨਿਕ ਚਿੰਤਨ' : language === 'en' ? '💭 3. Contemplation' : '💭 ३. दैनिक चिंतन' },
+                          { id: 3, label: language === 'pb' ? '🌿 ੪. ਜੀਵਨ ਆਚਰਨ' : language === 'en' ? '🌿 4. Practice' : '🌿 ४. जीवन आचरण' },
+                          { id: 4, label: language === 'pb' ? '🙏 ੫. ਅਰਦਾਸ ਤੇ ਸਮਰਪਣ' : language === 'en' ? '🙏 5. Prayer' : '🙏 ५. समर्पण प्रार्थना' },
                         ].map((sTab) => (
                           <button
                             key={sTab.id}
@@ -1028,7 +1140,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       {currentStep === 0 && (
                         <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/15 space-y-2">
                           <span className="text-xs font-black text-amber-800 dark:text-amber-300 font-serif block">
-                            📖 {language === 'pb' ? 'ਮੁੱਖ ਸ਼ਬਦਾਰਥ ਤੇ ਰੂਹਾਨੀ ਸੰਕੇਤ:' : 'मुख्य शब्दार्थ एवं आध्यात्मिक संकेत:'}
+                            📖 {language === 'pb' ? 'ਮੁੱਖ ਸ਼ਬਦਾਰਥ ਤੇ ਰੂਹਾਨੀ ਸੰਕੇਤ:' : language === 'en' ? 'Key Glossary & Spiritual Meanings:' : 'मुख्य शब्दार्थ एवं आध्यात्मिक संकेत:'}
                           </span>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             {verse.shabdarth.map((sh, shIdx) => (
@@ -1045,7 +1157,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       {currentStep === 1 && (
                         <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/15 space-y-2">
                           <span className="text-xs font-black text-amber-800 dark:text-amber-300 font-serif block">
-                            💡 {language === 'pb' ? 'ਵਿਸਤ੍ਰਿਤ ਪਾਵਨ ਭਾਵਾਰਥ:' : 'विस्तृत पावन अमृत भावार्थ:'}
+                            💡 {language === 'pb' ? 'ਵਿਸਤ੍ਰਿਤ ਪਾਵਨ ਭਾਵਾਰਥ:' : language === 'en' ? 'Deep Spiritual Meaning:' : 'विस्तृत पावन अमृत भावार्थ:'}
                           </span>
                           <p className="text-xs sm:text-sm font-serif leading-relaxed opacity-95">
                             {verse.bhavarth[language] || verse.bhavarth.hi}
@@ -1057,7 +1169,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       {currentStep === 2 && (
                         <div className="p-4 rounded-2xl bg-blue-500/5 border border-blue-500/15 space-y-2">
                           <span className="text-xs font-black text-blue-800 dark:text-blue-300 font-serif block">
-                            💭 {language === 'pb' ? 'ਦੈਨਿਕ ਆਤਮ-ਚਿੰਤਨ (ਮਨਨ ਪ੍ਰਸ਼ਨ):' : 'दैनिक आत्म-चिंतन (मनन प्रश्न):'}
+                            💭 {language === 'pb' ? 'ਦੈਨਿਕ ਆਤਮ-ਚਿੰਤਨ (ਮਨਨ ਪ੍ਰਸ਼ਨ):' : language === 'en' ? 'Daily Contemplation Question:' : 'दैनिक आत्म-चिंतन (मनन प्रश्न):'}
                           </span>
                           <p className="text-xs sm:text-sm font-serif leading-relaxed italic text-blue-950 dark:text-blue-200">
                             "{verse.chintan[language] || verse.chintan.hi}"
@@ -1069,7 +1181,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       {currentStep === 3 && (
                         <div className="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/15 space-y-2">
                           <span className="text-xs font-black text-emerald-800 dark:text-emerald-300 font-serif block">
-                            🌿 {language === 'pb' ? 'ਵਿਵਹਾਰਕ ਜੀਵਨ ਵਿੱਚ ਅਮਲ (ਆਚਰਨ):' : 'व्यावहारिक जीवन में सच्चा अमल (आचरण):'}
+                            🌿 {language === 'pb' ? 'ਵਿਵਹਾਰਕ ਜੀਵਨ ਵਿੱਚ ਅਮਲ (ਆਚਰਨ):' : language === 'en' ? 'Practical Conduct in Daily Life:' : 'व्यावहारिक जीवन में सच्चा अमल (आचरण):'}
                           </span>
                           <p className="text-xs sm:text-sm font-serif leading-relaxed text-emerald-950 dark:text-emerald-200">
                             {verse.acharana[language] || verse.acharana.hi}
@@ -1081,7 +1193,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                       {currentStep === 4 && (
                         <div className="p-4 rounded-2xl bg-purple-500/5 border border-purple-500/15 space-y-2">
                           <span className="text-xs font-black text-purple-800 dark:text-purple-300 font-serif block">
-                            🙏 {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਅੱਗੇ ਸਮਰਪਣ ਅਰਦਾਸ:' : 'सतगुरु के चरणों में समर्पण एवं प्रार्थना:'}
+                            🙏 {language === 'pb' ? 'ਸਤਗੁਰੂ ਅੱਗੇ ਸਮਰਪਣ ਅਰਦਾਸ:' : language === 'en' ? 'Devotional Prayer & Surrender:' : 'सतगुरु के चरणों में समर्पण एवं प्रार्थना:'}
                           </span>
                           <p className="text-xs sm:text-sm font-serif leading-relaxed italic text-purple-950 dark:text-purple-200">
                             "{verse.samarpan[language] || verse.samarpan.hi}"

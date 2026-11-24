@@ -18,6 +18,7 @@ import { STARTER_SAKHIS, loadFullSakhisModule } from '../data/sakhiStarterData';
 import { sakhisDatabase } from '../data/sakhis';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter } from '../services/audioDhun';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface SacredWisdomWidgetProps {
   language: Language;
@@ -48,7 +49,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'साधो ऐसा ही गुरु कीजै, घट के पट जो खोलै।\nअनल अचैतन्य पारख देई, अमृत बानी बोलै॥',
       pb: 'ਸਾਧੋ ਐਸਾ ਹੀ ਗੁਰੂ ਕੀਜੈ, ਘਟ ਕੇ ਪਟ ਜੋ ਖੋਲੈ।\nਅਨਲ ਅਚੈਤੰਨ੍ਯ ਪਾਰਖ ਦੇਈ, ਅੰਮ੍ਰਿਤ ਬਾਨੀ ਬੋਲੈ॥',
-      en: 'Seek such a Satguru who opens the inner portals of your heart, awakens dormant consciousness, and speaks immortal wisdom.',
+      en: 'Seek such a Satguru who opens the inner portals of your heart,\nawakens dormant consciousness, and speaks immortal wisdom.',
     },
     transliteration: 'Sadho aisa hi guru keejai, ghat ke pat jo kholai; Anal achaitanya parakh deyi, amrit bani bolai.',
     bhavarth: {
@@ -69,7 +70,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'ऐसी बानी बोलिये, मन का आपा खोय।\nऔरन को शीतल करै, आपहुँ शीतल होय॥',
       pb: 'ਐਸੀ ਬਾਨੀ ਬੋਲੀਯੇ, ਮਨ ਕਾ ਆਪਾ ਖੋਯ।\nਔਰਨ ਕੋ ਸ਼ੀਤਲ ਕਰੈ, ਆਪਹੁਂ ਸ਼ੀਤਲ ਹੋਯ॥',
-      en: 'Speak words devoid of ego, bringing coolness and peace to listeners as well as to your own soul.',
+      en: 'Speak words devoid of ego,\nbringing coolness and peace to listeners as well as to your own soul.',
     },
     transliteration: 'Aisi bani boliye, man ka aapa khoy; Auran ko sheetal karai, aapahun sheetal hoy.',
     bhavarth: {
@@ -90,7 +91,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'गो धन गज धन बाजि धन, और रतन धन खान।\nजब आवै संतोष धन, सब धन धूरि समान॥',
       pb: 'ਗੋ ਧਨ ਗਜ ਧਨ ਬਾਜਿ ਧਨ, ਔਰ ਰਤਨ ਧਨ ਖਾਨ।\nਜਬ ਆਵੈ ਸੰਤੋਖ ਧਨ, ਸਬ ਧਨ ਧੂਰਿ ਸਮਾਨ॥',
-      en: 'Though one possess herds, elephants, steeds, and mines of gems—when the wealth of contentment dawns, all else seems dust.',
+      en: 'Though one possess herds, elephants, steeds, and mines of gems—\nwhen the wealth of contentment dawns, all else seems dust.',
     },
     transliteration: 'Go dhan gaj dhan baaji dhan, aur ratan dhan khaan; Jab aawai santosh dhan, sab dhan dhoori samaan.',
     bhavarth: {
@@ -111,7 +112,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'साधु ऐसा चाहिये, जैसा सूप सुभाय।\nसार सार को गहि रहै, थोथा देई उड़ाय॥',
       pb: 'ਸਾਧੂ ਐਸਾ ਚਾਹੀਯੇ, ਜੈਸਾ ਸੂਪ ਸੁਭਾਯ।\nਸਾਰ ਸਾਰ ਕੋ ਗਹਿ ਰਹੈ, ਥੋਥਾ ਦੇਈ ਉਡਾਯ॥',
-      en: 'A true seeker is like a winnowing fan: retaining the pure grain of truth and blowing away hollow chaff.',
+      en: 'A true seeker is like a winnowing fan:\nretaining the pure grain of truth and blowing away hollow chaff.',
     },
     transliteration: 'Sadhu aisa chahiye, jaisa soop subhay; Saar saar ko gahi rahai, thotha deyi uday.',
     bhavarth: {
@@ -132,7 +133,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'मोको कहाँ ढूंढे रे बन्दे, मैं तो तेरे पास में।\nना तीर्थ में ना मूरत में, ना एकांत निवास में॥',
       pb: 'ਮੋਕੋ ਕਹਾਂ ਢੂੰਢੇ ਰੇ ਬੰਦੇ, ਮੈਂ ਤੋ ਤੇਰੇ ਪਾਸ ਮੇਂ।\nਨਾ ਤੀਰਥ ਮੇਂ ਨਾ ਮੂਰਤ ਮੇਂ, ਨਾ ਏਕਾਂਤ ਨਿਵਾਸ ਮੇਂ॥',
-      en: 'Where do you search for Me, O seeker? I dwell right beside you—within the breath of every breath.',
+      en: 'Where do you search for Me, O seeker? I dwell right beside you—\nneither in temples nor in solitude, but within the breath of every breath.',
     },
     transliteration: 'Moko kahan dhoondhe re bande, main to tere paas mein; Na teerath mein na moorat mein, na ekaant nivaas mein.',
     bhavarth: {
@@ -153,7 +154,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'जब मैं था तब हरि नहीं, अब हरि हैं मैं नाहिं।\nसब अँधियारा मिटि गया, जब दीपक देख्या माहिं॥',
       pb: 'ਜਬ ਮੈਂ ਥਾ ਤਬ ਹਰਿ ਨਹੀਂ, ਅਬ ਹਰਿ ਹੈਂ ਮੈਂ ਨਾਹਿਂ।\nਸਬ ਅੰਧਿਆਰਾ ਮਿਟਿ ਗਯਾ, ਜਬ ਦੀਪਕ ਦੇਖ੍ਯਾ ਮਾਹਿਂ॥',
-      en: 'When "I" (ego) existed, the Divine was absent; now Truth abides and "I" is gone. All darkness vanished once the inner lamp was seen.',
+      en: 'When "I" (ego) existed, the Divine was absent; now Truth abides and "I" is gone.\nAll darkness vanished once the inner lamp was seen.',
     },
     transliteration: 'Jab main tha tab Hari nahin, ab Hari hain main naahin; Sab andhiyara miti gaya, jab deepak dekhya maahin.',
     bhavarth: {
@@ -174,7 +175,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'काल करे सो आज कर, आज करे सो अब।\nपल में परलय होयगी, बहुरि करेगा कब॥',
       pb: 'ਕਾਲ ਕਰੇ ਸੋ ਆਜ ਕਰ, ਆਜ ਕਰੇ ਸੋ ਅਬ।\nਪਲ ਮੇਂ ਪਰਲਯ ਹੋਯਗੀ, ਬਹੁਰਿ ਕਰੇਗਾ ਕਬ॥',
-      en: 'Do tomorrow’s noble task today, and today’s right now; in a single fleeting moment the hour turns—when else will you fulfill it?',
+      en: 'Do tomorrow’s noble task today, and today’s right now;\nin a single fleeting moment the hour turns—when else will you fulfill it?',
     },
     transliteration: 'Kaal kare so aaj kar, aaj kare so ab; Pal mein parlay hoyegi, bahuri karega kab.',
     bhavarth: {
@@ -195,7 +196,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'पोथी पढ़ि पढ़ि जग मुआ, पंडित भया न कोय।\nढाई आखर प्रेम का, पढ़े सो पंडित होय॥',
       pb: 'ਪੋਥੀ ਪੜ੍ਹਿ ਪੜ੍ਹਿ ਜਗ ਮੁਆ, ਪੰਡਿਤ ਭਯਾ ਨ ਕੋਯ।\nਢਾਈ ਆਖਰ ਪ੍ਰੇਮ ਕਾ, ਪੜ੍ਹੇ ਸੋ ਪੰਡਿਤ ਹੋਯ॥',
-      en: 'Multitudes exhausted life reading volumes yet none grew truly wise; one who understands pure Love alone is a sage.',
+      en: 'Multitudes exhausted life reading volumes yet none grew truly wise;\none who understands pure Love alone is a sage.',
     },
     transliteration: 'Pothi padhi padhi jag mua, pandit bhaya na koy; Dhaai aakhar prem ka, padhe so pandit hoy.',
     bhavarth: {
@@ -216,7 +217,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'बुरा जो देखन मैं चला, बुरा न मिलिया कोय।\nजो दिल खोजा आपना, मुझसा बुरा न कोय॥',
       pb: 'ਬੁਰਾ ਜੋ ਦੇਖਨ ਮੈਂ ਚਲਾ, ਬੁਰਾ ਨ ਮਿਲਿਯਾ ਕੋਯ।\nਜੋ ਦਿਲ ਖੋਜਾ ਆਪਨਾ, ਮੁਝਸਾ ਬੁਰਾ ਨ ਕੋਯ॥',
-      en: 'When I went out looking for flaws in others, I found none truly evil; searching my own heart revealed what needed refining.',
+      en: 'When I went out looking for flaws in others, I found none truly evil;\nsearching my own heart revealed what needed refining.',
     },
     transliteration: 'Bura jo dekhan main chala, bura na miliya koy; Jo dil khoja aapna, mujhsa bura na koy.',
     bhavarth: {
@@ -237,7 +238,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     text: {
       hi: 'धीरे धीरे रे मना, धीरे सब कुछ होय।\nमाली सींचे सौ घड़ा, ऋतु आए फल होय॥',
       pb: 'ਧੀਰੇ ਧੀਰੇ ਰੇ ਮਨਾ, ਧੀਰੇ ਸਬ ਕੁਛ ਹੋਯ।\nਮਾਲੀ ਸੀਂਚੇ ਸੌ ਘੜਾ, ਰਿਤੁ ਆਏ ਫਲ ਹੋਯ॥',
-      en: 'Be patient, O mind—all unfolds in its right season. Though a gardener pours a hundred vessels, fruit ripens in due time.',
+      en: 'Be patient, O mind—all unfolds in its right season.\nThough a gardener pours a hundred vessels, fruit ripens in due time.',
     },
     transliteration: 'Dheere dheere re mana, dheere sab kuch hoy; Maali seenche sau ghada, ritu aaye phal hoy.',
     bhavarth: {
@@ -473,7 +474,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
                 {language === 'pb' ? 'ਪਾਵਨ ਬਿਬੇਕ ਤੇ ਅਮਰ ਸੂਤਰ' : language === 'en' ? 'Sacred Wisdom & Sutras' : 'पावन विवेक एवं अमर सूत्र'}
               </h3>
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">
-                {activeEntry.isSutra ? `सूत्र ${activeEntry.number}/${CURATED_AMRIT_SUTRAS.length}` : `#${activeEntry.number}`}
+                {activeEntry.isSutra ? `${language === 'pb' ? 'ਸੂਤਰ' : language === 'en' ? 'Sutra' : 'सूत्र'} ${activeEntry.number}/${CURATED_AMRIT_SUTRAS.length}` : `#${activeEntry.number}`}
               </span>
             </div>
             <p className="text-[11px] opacity-75 font-serif line-clamp-1" style={{ color: theme.textSecondary }}>
@@ -640,7 +641,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
             style={{ color: theme.sacredMaroon }}
             className="font-serif font-black text-base sm:text-xl md:text-2xl leading-relaxed whitespace-pre-line tracking-wide"
           >
-            {activeEntry.verse}
+            {formatCoupletString(activeEntry.verse)}
           </p>
 
           {activeEntry.transliteration && (

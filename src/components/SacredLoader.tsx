@@ -1,5 +1,5 @@
 import React from 'react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 
 interface SacredLoaderProps {
   language?: Language;
@@ -12,12 +12,7 @@ export const SacredLoader: React.FC<SacredLoaderProps> = ({
   message,
   compact = false,
 }) => {
-  const defaultTitle =
-    language === 'pb'
-      ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹'
-      : language === 'en'
-      ? '🌹 ।। Satyanaam ।। 🌹'
-      : '🌹 ।। सत्यनाम ।। 🌹';
+  const defaultTitle = SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi;
 
   const defaultSubtitle =
     message ||

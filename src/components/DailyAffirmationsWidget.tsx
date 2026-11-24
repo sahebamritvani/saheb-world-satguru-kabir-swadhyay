@@ -62,7 +62,7 @@ export const DailyAffirmationsWidget: React.FC<DailyAffirmationsWidgetProps> = (
     const explanation = currentAffirmation.explanation?.[language] || currentAffirmation.explanation?.hi || '';
     const header = SACRED_BRANDING.header[language];
     
-    return `।। ${header} ।।\n\n` +
+    return `${header}\n\n` +
       `✨ दैनिक पावन संकल्प (Daily Sacred Affirmation)\n` +
       `"${text}"\n\n` +
       (explanation ? `🌿 भावार्थ: ${explanation}\n\n` : '') +

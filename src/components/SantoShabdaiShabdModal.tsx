@@ -121,20 +121,20 @@ export const SantoShabdaiShabdModal: React.FC<SantoShabdaiShabdModalProps> = ({
                   ? 'bg-amber-500 text-white border-amber-600 animate-pulse'
                   : 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/30 hover:bg-amber-500/20'
               }`}
-              title="सत्यनाम धुन सिमरण"
+              title={language === 'pb' ? 'ਸਤਯਨਾਮ ਧੁਨ ਸਿਮਰਨ' : language === 'en' ? 'Satyanaam Dhun Simran' : 'सत्यनाम धुन सिमरण'}
             >
               {isPlayingAudio ? <VolumeX size={13} /> : <Volume2 size={13} />}
               <span className="hidden xs:inline">
                 {isPlayingAudio 
-                  ? (language === 'pb' ? 'ਧੁਨ ਰੋਕੋ' : 'धुन बंद') 
-                  : (language === 'pb' ? 'ਸਤਯਨਾਮ' : 'सत्यनाम')}
+                  ? (language === 'pb' ? 'ਧੁਨ ਰੋਕੋ' : language === 'en' ? 'Stop Dhun' : 'धुन बंद') 
+                  : (language === 'pb' ? 'ਸਤਯਨਾਮ' : language === 'en' ? 'Satyanaam' : 'सत्यनाम')}
               </span>
             </button>
 
             <button
               onClick={onClose}
               className="p-1.5 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition text-gray-500 cursor-pointer"
-              title="बंद करें"
+              title={language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें'}
             >
               <X size={18} />
             </button>

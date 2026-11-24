@@ -723,6 +723,23 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     hoverBorderClass: 'hover:border-emerald-600',
     action: { kind: 'view', view: 'satvik-sankalp' },
   },
+  {
+    slotId: 'slot-59-satyanaam-panacea',
+    slotNumber: 59,
+    categoryId: 2,
+    kicker: { hi: 'सर्व रोग निवारक', pb: 'ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ', en: 'Supreme Panacea' },
+    title: { hi: 'सत्यनाम: सर्व रोग निवारक औषधि', pb: 'ਸਤਯਨਾਮ: ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ', en: 'Satyanaam: The Supreme Panacea' },
+    description: {
+      hi: 'श्वेत दिव्य प्रकाश व 3 पावन प्रमाणों के साथ भव-व्याधि और मोह-भ्रम का निवारण।',
+      pb: 'ਸ਼੍ਵੇਤ ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਤੇ 3 ਪਾਵਨ ਪ੍ਰਮਾਣਾਂ ਨਾਲ ਭਵ-ਵ්‍යාਧੀ ਤੇ ਮੋਹ-ਭ੍ਰम ਦਾ ਨਿਵਾਰਨ।',
+      en: 'Experience the pure white divine light panacea and canonical verses dissolving all ailments.',
+    },
+    actionLabel: { hi: 'दिव्य प्रकाश अनुभव करें', pb: 'ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਨੁਭਵ ਕਰੋ', en: 'Experience Light' },
+    icon: 'sparkles',
+    accentClass: 'text-amber-700 dark:text-amber-300',
+    hoverBorderClass: 'hover:border-amber-600',
+    action: { kind: 'view', view: 'satyanaam-panacea' },
+  },
 
   // =========================================================================
   // CATEGORY 3: Wisdom, Lineage & Quizzes (12 Cards: #33 – #42, #57 – #58)
@@ -1024,7 +1041,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     slotId: 'slot-48-nature-wallpaper',
     slotNumber: 48,
     categoryId: 4,
-    kicker: { hi: 'वॉलपेपर इंजन', pb: 'ਵਾਲਪੇपर ਇੰਜਣ', en: 'Wallpapers' },
+    kicker: { hi: 'वॉलपेपर इंजन', pb: 'ਵਾਲਪੇਪਰ ਇੰਜਣ', en: 'Wallpapers' },
     title: { hi: 'कुदरत वॉलपेपर जनरेटर', pb: 'ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਜਨਰੇਟਰ', en: 'Nature Wallpaper Engine' },
     description: {
       hi: 'सत्यनाम व पावन दोहों से सुसज्जित दिव्य प्राकृतिक वॉलपेपर निर्माण।',

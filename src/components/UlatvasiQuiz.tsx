@@ -111,7 +111,7 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     correctIndex: 0,
     explanation: {
       hi: 'कबीर साहेब बताते हैं कि जीव की कैसी भी परिस्थिति हो, आस-पास चाहे कितने भी बलवान शूरवीर खड़े हों, काल जब बीच महल से पकड़कर ले चलता है तो कोई कुछ नहीं कर सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਸ-ਪਾਸ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੂਰਮੇ ਖੜ੍ਹੇ ਹੋਣ, ਜਦੋਂ ਪਰਬਲ ਕਾਲ ਆਉਂਦਾ ਹੈ ਤਾਂ ਸਭ ਧਰੇ ਧਰਾਏ ਰਹਿ ਜਾਂਦੇ ਹਨ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਸ-ਪਾਸ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੂਰਮੇ ਖੜ੍ਹੇ ਹੋਣ, ਜਦੋਂ ਪਰਬਲ ਕਾਲ ਆਉਂਦਾ ਹੈ ਤਾਂ ਸਭ ਧਰੇ ਧਰਾਏ ਰਹਿ ਜਾਂਦੇ ਹਨ।',
       en: 'Kabir Saheb reveals that worldly power and guards are powerless when invincible Time extracts the embodied soul.'
     }
   },
@@ -360,7 +360,7 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     sakhiNumber: 10,
     verseText: {
       hi: 'कबीर काल सबन को खाय, कालहि खाय कबीर।\nसत्यनाम की नाव चढ़ि, उतरा निर्मल तीर।।',
-      pb: 'ਕਬੀਰ ਕਾਲ ਸਬਨ ਕੋ ਖਾਯ, ਕਾਲਹਿ ਖਾਯ ਕਬੀਰ।\nਸਤ੍ਯਨਾਮ ਕੀ ਨਾਵ ਚੜ੍ਹ, ਉਤਰਾ ਨਿਰਮਲ ਤੀਰ।।',
+      pb: 'ਕਬੀਰ ਕਾਲ ਸਬਨ ਕੋ ਖਾਯ, ਕਾਲਹਿ ਖਾਯ ਕਬੀਰ।\nਸਤਯਨਾਮ ਕੀ ਨਾਵ ਚੜ੍ਹ, ਉਤਰਾ ਨਿਰਮਲ ਤੀਰ।।',
       en: 'Kabir kaal saban ko khaay, kaalahi khaay Kabir |\nSatyanam ki naav chadhi, utara nirmal teer ||'
     },
     transliteration: 'Kabir kaal saban ko khaay, kaalahi khaay Kabir. Satyanam ki naav chadhi, utara nirmal teer.',
@@ -373,7 +373,7 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     glossaryBadge: { hi: 'सत्यनाम की नाव', pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ', en: 'Ark of Satnaam' },
     clue: {
       hi: 'सत्यनाम की नाव पर आरूढ़ होकर कबीर साहेब ने काल को ही जीत लिया और निर्मल तट पर पहुंच गए।',
-      pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਵਿੱਚ ਸਵਾਰ ਹੋ ਕੇ ਕਬੀਰ ਸਾਹਿਬ ਨੇ ਕਾਲ ਨੂੰ ਜਿੱਤ ਲਿਆ ਤੇ ਪਾਰ ਉੱਤਰ ਗਏ।',
+      pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਵਿੱਚ ਸਵਾਰ ਹੋ ਕੇ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਾਲ ਨੂੰ ਜਿੱਤ ਲਿਆ ਤੇ ਪਾਰ ਉੱਤਰ ਗਏ।',
       en: 'Boarding the ark of Satyanaam, Kabir conquers Time itself and lands on the sacred shore.'
     },
     options: {
@@ -463,7 +463,7 @@ export function generate5SakhiQuestions(db: any[]): Sakhi5QuestionItem[] {
       transliteration: sakhi.transliteration,
       promptQuestion: {
         hi: 'कबीर साहेब की इस पावन साखी का मुख्य आध्यात्मिक भावार्थ क्या है?',
-        pb: 'ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਇਸ ਪਾਵਨ ਸਾਖੀ ਦਾ ਮੁੱਖ ਆਤਮਿਕ ਭਾਵਾਰਥ ਕੀ ਹੈ?',
+        pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਪਾਵਨ ਸਾਖੀ ਦਾ ਮੁੱਖ ਆਤਮਿਕ ਭਾਵਾਰਥ ਕੀ ਹੈ?',
         en: 'What is the core spiritual essence of this sacred Sakhi by Kabir Saheb?',
       },
       options: {
@@ -2629,7 +2629,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                 </h3>
                 <p className="text-xs sm:text-sm opacity-80 max-w-xl mx-auto leading-relaxed">
                   {language === 'pb'
-                    ? 'ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੇ \'ਕਾਲ ਕੋ ਅੰਗ\' ਦੇ ਪਾਵਨ ਦੋਹੇ ਪੜ੍ਹ ਕੇ ਗੂੜ੍ਹ ਸੰਧੁੱਕੜੀ ਸ਼ਬਦਾਰਥ ਅਤੇ ਆਤਮਿਕ ਬੋਧ ਨੂੰ ਦ੍ਰਿੜ੍ਹ ਕਰੋ।'
+                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ \'ਕਾਲ ਕੋ ਅੰਗ\' ਦੇ ਪਾਵਨ ਦੋਹੇ ਪੜ੍ਹ ਕੇ ਗੂੜ੍ਹ ਸੰਧੁੱਕੜੀ ਸ਼ਬਦਾਰਥ ਅਤੇ ਆਤਮਿਕ ਬੋਧ ਨੂੰ ਦ੍ਰਿੜ੍ਹ ਕਰੋ।'
                     : language === 'en'
                     ? 'Strengthen your spiritual retention by correlating authentic verses from Kaal Ko Ang with key concepts in the sacred lexicon.'
                     : 'कबीर साहेब के \'काल को अंग\' के पावन दोहों का स्वाध्याय कर संधुक्कड़ी शब्दकोश के गूढ़ भावों को अंतर्मन में धारण करें।'}
@@ -2837,8 +2837,8 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="space-y-4">
                   <div className={`p-4 rounded-2xl border-2 font-bold ${memoryAnswerState === 'correct' ? 'bg-emerald-500/10 border-emerald-500 text-emerald-700' : 'bg-red-500/10 border-red-500 text-red-700'}`}>
                     {memoryAnswerState === 'correct' 
-                      ? (language === 'hi' ? '✓ अद्भुत स्मृति! बिल्कुल सही उत्तर।' : '✓ Incredible Memory! Correct Answer.') 
-                      : (language === 'hi' ? '✗ क्षमा करें, यह उत्तर सही नहीं है।' : '✗ Sorry, that is not correct.')}
+                      ? (language === 'pb' ? '✓ ਅਦਭੁਤ ਸਿਮਰਤੀ! ਬਿਲਕੁਲ ਸਹੀ ਉੱਤਰ।' : language === 'en' ? '✓ Incredible Memory! Correct Answer.' : '✓ अद्भुत स्मृति! बिल्कुल सही उत्तर।') 
+                      : (language === 'pb' ? '✗ ਮਾਫ਼ ਕਰਨਾ, ਇਹ ਉੱਤਰ ਸਹੀ ਨਹੀਂ ਹੈ।' : language === 'en' ? '✗ Sorry, that is not correct.' : '✗ क्षमा करें, यह उत्तर सही नहीं है।')}
                   </div>
                   <button
                     type="button"
@@ -2847,7 +2847,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                     className="px-8 py-3 rounded-2xl font-black shadow-lg hover:scale-105 transition cursor-pointer flex items-center gap-2 mx-auto"
                   >
                     <RotateCw className="w-5 h-5" />
-                    <span>{language === 'hi' ? 'अगली साखी पहचानें' : 'Next Verse'}</span>
+                    <span>{language === 'pb' ? 'ਅਗਲੀ ਸਾਖੀ ਪਛਾਣੋ' : language === 'en' ? 'Next Verse' : 'अगली साखी पहचानें'}</span>
                   </button>
                 </motion.div>
               )}

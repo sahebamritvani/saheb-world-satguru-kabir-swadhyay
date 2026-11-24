@@ -1,5 +1,6 @@
-import { Sakhi, Language } from '../types';
+import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { buildThemeOneLineBlessing } from './swadhyayElevenSteps';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 export interface GeneratedCertificate {
   dataUrl: string;
@@ -365,7 +366,7 @@ export async function generateCertificateCanvas(
   const completionLines = wrapTextLines(ctx, completionText, width - 210);
 
   // Main Highlight Box contains ONLY the exact completed Mool Sakhi
-  const activeVani = (sakhi.text[language] || sakhi.text.hi || '').trim();
+  const activeVani = formatCoupletString((sakhi.text[language] || sakhi.text.hi || '').trim());
   ctx.font = `bold ${sakhiFontSize}px ${serifFont}`;
   const sakhiBoxLines = activeVani
     ? wrapTextLines(ctx, activeVani, width - 270).slice(0, 5)
@@ -419,10 +420,10 @@ export async function generateCertificateCanvas(
   ctx.textBaseline = 'top';
   let cursorY = topMarginY;
 
-  // 3. Top Centered Sacred Mantra: 🌹।।सत्यनाम।।🌹
+  // 3. Top Centered Sacred Mantra
   ctx.fillStyle = '#B45309';
   ctx.font = `bold ${mantraFontSize}px ${serifFont}`;
-  ctx.fillText('🌹।।सत्यनाम।।🌹', width / 2, cursorY);
+  ctx.fillText(SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi, width / 2, cursorY);
   cursorY += mantraBlockH + gapAfterMantra;
 
   // 4. Main Certificate Title

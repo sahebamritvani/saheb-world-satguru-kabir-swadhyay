@@ -73,7 +73,7 @@ export function getSharePayloadText(language: string = 'hi', customUrl?: string)
   const currentUrl = customUrl || getLiveShareUrl();
 
   if (language === 'pb') {
-    return `🌹 ।। ਸਤਯਨਾਮ ।। 🌹
+    return `🌹।।ਸਤਯਨਾਮ।।🌹
 ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ਜੀ। 🙏
 
 ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪਾਵਨ ਬਾਣੀ ਅਤੇ ਸਾਖੀਆਂ ਦੇ ਗਹਿਰੇ ਸਵਾਧਿਆਏ ਲਈ 'Saheb World' ਐਪ ਨਾਲ ਜੁੜੋ।
@@ -90,7 +90,7 @@ export function getSharePayloadText(language: string = 'hi', customUrl?: string)
   }
 
   if (language === 'en') {
-    return `🌹 || Satyanaam || 🌹
+    return `🌹||Satyanaam||🌹
 Saheb Bandagi Saheb Ji. 🙏
 
 Join the 'Saheb World' app for deep Swadhyay (self-study) of Satguru Kabir Saheb Ji's sacred Vani and Sakhis.
@@ -107,7 +107,7 @@ Join the 'Saheb World' app for deep Swadhyay (self-study) of Satguru Kabir Saheb
   }
 
   // Exact Hindi Devotional Invitation Payload
-  return `🌹 ।। सत्यनाम ।। 🌹
+  return `🌹।।सत्यनाम।।🌹
 साहेब बंदगी साहेब जी। 🙏
 
 सतगुरु कबीर साहेब जी की पावन वाणी और साखियों के गहन स्वाध्याय के लिए 'Saheb World' ऐप से जुड़ें।

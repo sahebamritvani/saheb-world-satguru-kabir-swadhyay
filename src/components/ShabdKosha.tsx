@@ -21,7 +21,7 @@ import {
   ChevronUp,
   BookOpen
 } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { 
@@ -79,7 +79,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Time as the relentless hunter waiting in ambush for the soul.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੁਢਾਪਾ ਕੁੱਤੇ ਦੀ ਨਿਆਈਂ ਅਤੇ ਜਵਾਨੀ ਖ਼ਰਗੋਸ਼ ਦੀ ਨਿਆਈਂ ਹੈ। ਕਾਲ ਰੂਪੀ ਸ਼ਿਕਾਰੀ ਨੇ ਇਸ ਜੀਵ ਰੂਪੀ ਝੌਂਪੜੀ ਨੂੰ ਦੋਹਾਂ ਵੈਰੀਆਂ ਵਿਚਕਾਰ ਘੇਰ ਰੱਖਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਬਿਨਾਂ ਇਸ ਤੋਂ ਕੋਈ ਨਹੀਂ ਬਚ ਸਕਦਾ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੁਢਾਪਾ ਕੁੱਤੇ ਦੀ ਨਿਆਈਂ ਅਤੇ ਜਵਾਨੀ ਖ਼ਰਗੋਸ਼ ਦੀ ਨਿਆਈਂ ਹੈ। ਕਾਲ ਰੂਪੀ ਸ਼ਿਕਾਰੀ ਨੇ ਇਸ ਜੀਵ ਰੂਪੀ ਝੌਂਪੜੀ ਨੂੰ ਦੋਹਾਂ ਵੈਰੀਆਂ ਵਿਚਕਾਰ ਘੇਰ ਰੱਖਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਬਿਨਾਂ ਇਸ ਤੋਂ ਕੋਈ ਨਹੀਂ ਬਚ ਸਕਦਾ।',
       hi: 'कबीर साहेब के अनुसार वृद्धावस्था कुत्ते की भांति और युवावस्था खरगोश की भांति है। काल रूपी शिकारी ने यौवन पर बुढ़ापे को शिकार हेतु छोड़ा है। दोनों शत्रुओं के बीच मनुष्य की झोंपड़ी है, अतः सतगुरु के सत्यनाम बिना रक्षा असंभव है।',
       en: 'In Kabir Saheb\'s mystical warning, old age is like a hound and youth like a rabbit, with Kal the hunter pursuing the fragile body. Only refuge in the Satguru and Satnaam bestows deliverance.'
     },
@@ -463,7 +463,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The petulant, wayward jester mind resisting discipline.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਬੜਾ ਮਸਖ਼ਰਾ ਹੈ; ਜੇ ਇਸਨੂੰ ਸੱਚੇ ਰਾਹ \'ਤੇ ਲਾਈਏ ਤਾਂ ਇਹ ਰੁੱਸ ਜਾਂਦਾ ਹੈ। ਜਿੱਥੇ ਪ੍ਰਭੂ ਮਿਲਦੇ ਹਨ, ਓਧਰ ਕਦਮ ਨਹੀਂ ਚੁੱਕਦਾ। ਇਸਨੂੰ ਗਿਆਨ ਤੇ ਨਾਮ ਦੇ ਅੰਕੁਸ਼ ਨਾਲ ਹੀ ਸਾਧਿਆ ਜਾ ਸਕਦਾ ਹੈ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਬੜਾ ਮਸਖ਼ਰਾ ਹੈ; ਜੇ ਇਸਨੂੰ ਸੱਚੇ ਰਾਹ \'ਤੇ ਲਾਈਏ ਤਾਂ ਇਹ ਰੁੱਸ ਜਾਂਦਾ ਹੈ। ਜਿੱਥੇ ਪ੍ਰਭੂ ਮਿਲਦੇ ਹਨ, ਓਧਰ ਕਦਮ ਨਹੀਂ ਚੁੱਕਦਾ। ਇਸਨੂੰ ਗਿਆਨ ਤੇ ਨਾਮ ਦੇ ਅੰਕੁਸ਼ ਨਾਲ ਹੀ ਸਾਧਿਆ ਜਾ ਸਕਦਾ ਹੈ।',
       hi: 'कबीरजी कहते हैं कि यह मन मसखरे के समान चंचल है; समझाने पर रूठता है और जिस मार्ग पर प्रभु मिलते हैं, उधर एक कदम भी नहीं चलता। इसे केवल सतगुरु के विवेक-अंकुश से ही सन्मार्ग पर लगाया जा सकता है।',
       en: 'The mind acts like a willful jester: rebuke it and it sulks, refuse to tread where God resides. Only the Master’s goad of wisdom can tame it.'
     },
@@ -607,7 +607,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'A venomous serpent that strikes and devours the very one who feeds it.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਮਾਇਆ ਨੂੰ ਇੱਕ ਜ਼ਹਿਰੀਲੀ ਸੱਪਣੀ ਆਖਦੇ ਹਨ ਜੋ ਮੋਹ ਕਰਨ ਵਾਲੇ ਜੀਵਾਂ ਦੀ ਚੇਤਨਾ ਨੂੰ ਹੀ ਡੱਸ ਕੇ ਮਾਰ ਦਿੰਦੀ ਹੈ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਰੂਪੀ ਸਮਰੱਥ ਗਾਰੁੜੀ (ਸਪੇਰਾ) ਹੀ ਇਸਨੂੰ ਗਿਆਨ ਦੇ ਪਟਾਰੇ ਵਿੱਚ ਬੰਨ੍ਹ ਸਕਦਾ ਹੈ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਮਾਇਆ ਨੂੰ ਇੱਕ ਜ਼ਹਿਰੀਲੀ ਸੱਪਣੀ ਆਖਦੇ ਹਨ ਜੋ ਮੋਹ ਕਰਨ ਵਾਲੇ ਜੀਵਾਂ ਦੀ ਚੇਤਨਾ ਨੂੰ ਹੀ ਡੱਸ ਕੇ ਮਾਰ ਦਿੰਦੀ ਹੈ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਰੂਪੀ ਸਮਰੱਥ ਗਾਰੁੜੀ (ਸਪੇਰਾ) ਹੀ ਇਸਨੂੰ ਗਿਆਨ ਦੇ ਪਟਾਰੇ ਵਿੱਚ ਬੰਨ੍ਹ ਸਕਦਾ ਹੈ।',
       hi: 'माया अत्यंत विषैली सर्पिणी है जो अपने पोषक अज्ञानी जीवों को ही डस लेती है। केवल समर्थ सद्गुरु रूपी गारुड़ी (विष-निवारक) ही अपने दिव्य ज्ञान-मंत्र से इसे वश में कर पिटारे में बंद कर सकते हैं।',
       en: 'Maya is a deadly serpent devouring those who foster her attachments. Only the Satguru—the sovereign snake-charmer—neutralizes her poison and locks her inside the basket of divine wisdom.'
     },
@@ -631,7 +631,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The enchantress sitting in the worldly marketplace with a noose of desires.'
     },
     mysticalMeaning: {
-      pb: 'ਮਾਇਆ ਸੰਸਾਰਕ ਹੱਟ \'ਤੇ ਭੋਗ-ਵਿਲਾਸਾਂ ਦਾ ਜਾਲ ਵਿਛਾ ਕੇ ਬੈਠੀ ਹੈ ਜਿਸ ਵਿੱਚ ਸਾਰਾ ਸੰਸਾਰ ਫਸ ਗਿਆ। ਪਰ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਗਿਆਨ ਦੀ ਕਿਰਪਾਨ ਨਾਲ ਕਬੀਰ ਸਾਹਿਬ ਨੇ ਇਸ ਫਾਹੀ ਨੂੰ ਕੱਟ ਕੇ ਅਮਰ ਪਦ ਪਾਇਆ।',
+      pb: 'ਮਾਇਆ ਸੰਸਾਰਕ ਹੱਟ \'ਤੇ ਭੋਗ-ਵਿਲਾਸਾਂ ਦਾ ਜਾਲ ਵਿਛਾ ਕੇ ਬੈਠੀ ਹੈ ਜਿਸ ਵਿੱਚ ਸਾਰਾ ਸੰਸਾਰ ਫਸ ਗਿਆ। ਪਰ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਗਿਆਨ ਦੀ ਕਿਰਪਾਨ ਨਾਲ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਸ ਫਾਹੀ ਨੂੰ ਕੱਟ ਕੇ ਅਮਰ ਪਦ ਪਾਇਆ।',
       hi: 'संसार रूपी बाजार में माया अपनी भोग-सामग्री का जाल फैलाए बैठी है। अज्ञानी जन इसके फंदे में फंस जाते हैं, किंतु सद्गुरु के ज्ञानोपदेश से विवेकवान साधक इस बंधन को काटकर मुक्त हो जाता है।',
       en: 'Sitting in the bazaar of worldly life, Maya sets snares of sensory temptation. The heedless world gets caught, but the seeker armed with the Master’s wisdom severs the trap and walks free.'
     },
@@ -655,7 +655,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The deep reservoir of attachments, including supernatural powers and earthly treasures.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਵੀ ਮੋਹ ਦੀ ਖਾਣ ਹਨ। ਜਦ ਤੱਕ ਅੰਦਰਲੀ ਸੂਖਮ ਵਾਸਨਾ ਨੂੰ ਨਹੀਂ ਤਿਆਗਿਆ ਜਾਂਦਾ, ਤਦ ਤੱਕ ਸੱਚੀ ਆਤਮ-ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਵੀ ਮੋਹ ਦੀ ਖਾਣ ਹਨ। ਜਦ ਤੱਕ ਅੰਦਰਲੀ ਸੂਖਮ ਵਾਸਨਾ ਨੂੰ ਨਹੀਂ ਤਿਆਗਿਆ ਜਾਂਦਾ, ਤਦ ਤੱਕ ਸੱਚੀ ਆਤਮ-ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
       hi: 'कबीर साहेब सावधान करते हैं कि अलौकिक सिद्धियां भी मोह की खान हैं। जब तक अंतःकरण से सूक्ष्म वासना का भी क्षय नहीं होता, तब तक सच्चा आत्म-कल्याण असंभव है।',
       en: 'Kabir warns that even subtle psychic powers and material riches are mere mines of delusion. Total surrender requires extinguishing the very roots of latent desire (Vasana).'
     },
@@ -751,7 +751,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The brave spiritual warrior who dissolves lust, wrath, greed, and ancestral pride.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵਿਕਾਰਾਂ ਵਿੱਚ ਫਸੇ ਮਨੁੱਖਾਂ ਤੋਂ ਭਗਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ। ਭਗਤੀ ਕੇਵਲ ਉਹੀ ਸੂਰਮਾ ਕਰਦਾ ਹੈ ਜੋ ਅੰਦਰੂਨੀ ਕਾਮ-ਕ੍ਰੋਧ ਅਤੇ ਬਾਹਰੀ ਜਾਤ-ਪਾਤ ਦੇ ਹੰਕਾਰ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਮਿਟਾ ਦੇਵੇ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵਿਕਾਰਾਂ ਵਿੱਚ ਫਸੇ ਮਨੁੱਖਾਂ ਤੋਂ ਭਗਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ। ਭਗਤੀ ਕੇਵਲ ਉਹੀ ਸੂਰਮਾ ਕਰਦਾ ਹੈ ਜੋ ਅੰਦਰੂਨੀ ਕਾਮ-ਕ੍ਰੋਧ ਅਤੇ ਬਾਹਰੀ ਜਾਤ-ਪਾਤ ਦੇ ਹੰਕਾਰ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਮਿਟਾ ਦੇਵੇ।',
       hi: 'कामी, क्रोधी और लालची व्यक्ति भक्ति नहीं कर सकते। भक्ति वही शूरवीर कर सकता है जो आत्म-संयम साधकर कुल, वर्ण और जाति के मिथ्या अभिमान को तिलांजलि दे दे।',
       en: 'True devotion cannot take root in minds obsessed with lust, wrath, or wealth. It demands a spiritual hero who slays internal passions and discards all social and caste arrogance.'
     },
@@ -823,7 +823,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Anger appears singular, but behind it follows an unbroken train of millions of sins.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕ੍ਰੋਧ ਨਾਲ ਰਾਗ, ਦ੍ਵੇਸ਼, ਹੰਕਾਰ ਅਤੇ ਈਰਖਾ ਦੇ ਸਾਰੇ ਪਾਪ ਉਪਜਦੇ ਹਨ। ਅਹੰਕਾਰ ਦੇ ਆਉਂਦੇ ਹੀ ਮਨੁੱਖ ਦੀ ਸਾਰੀ ਪੁੰਨ-ਕਮਾਈ ਸੁਆਹ ਹੋ ਜਾਂਦੀ ਹੈ।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕ੍ਰੋਧ ਨਾਲ ਰਾਗ, ਦ੍ਵੇਸ਼, ਹੰਕਾਰ ਅਤੇ ਈਰਖਾ ਦੇ ਸਾਰੇ ਪਾਪ ਉਪਜਦੇ ਹਨ। ਅਹੰਕਾਰ ਦੇ ਆਉਂਦੇ ਹੀ ਮਨੁੱਖ ਦੀ ਸਾਰੀ ਪੁੰਨ-ਕਮਾਈ ਸੁਆਹ ਹੋ ਜਾਂਦੀ ਹੈ।',
       hi: 'क्रोध राग, द्वेष, ईर्ष्या और अहंकार की जननी है। जैसे ही मन में अहंकार और क्रोध का प्रवेश होता है, मनुष्य के जीवन भर के पुण्य-कर्म जलकर भस्म हो जाते हैं।',
       en: 'Anger gives birth to malice, envy, pride, and illusion. The moment anger and pride enter the heart, a lifetime of accumulated spiritual merit is turned to ashes.'
     },
@@ -1305,13 +1305,13 @@ export const ShabdKosha: React.FC<ShabdKoshaProps> = ({
       {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
+        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center min-h-[42px]"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language]}
         </span>
       </div>
 
@@ -1442,7 +1442,13 @@ export const ShabdKosha: React.FC<ShabdKoshaProps> = ({
                 <div 
                   onClick={(e) => handleTermTap(e, entry)}
                   className="cursor-pointer group"
-                  title={language === 'pb' ? 'ਟੂਲਟਿਪ ਤੇ ਮੂਲ ਸੰਦਰਭ ਵੇਖੋ' : 'टूलटिप व मूल संदर्भ देखें (Tap for Tooltip & Context)'}
+                  title={
+                    language === 'pb'
+                      ? 'ਟੂਲਟਿਪ ਤੇ ਮੂਲ ਸੰਦਰਭ ਵੇਖੋ'
+                      : language === 'en'
+                      ? 'Tap for Tooltip & Original Context'
+                      : 'टूलटिप व मूल संदर्भ देखें'
+                  }
                 >
                   <h3 
                     style={{ color: theme.sacredMaroon }}

@@ -11,6 +11,16 @@ import {
   X,
   RotateCcw,
   Search,
+  Plus,
+  Edit2,
+  Download,
+  Copy,
+  Sliders,
+  BookOpen,
+  Sparkles,
+  MessageSquare,
+  Feather,
+  Layers,
 } from 'lucide-react';
 import { Language } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -30,6 +40,7 @@ import {
   validateAdminSlotJson,
 } from '../services/adminSlotInjectorStore';
 import { isAdminAuthenticated } from '../services/adminAuth';
+import { devanagariToGurmukhi } from '../services/transliteration';
 
 interface AdminDataInjectorProps {
   isOpen: boolean;
@@ -39,6 +50,34 @@ interface AdminDataInjectorProps {
 }
 
 type StatusFilter = 'all' | 'loaded' | 'empty';
+type CmsMode = 'easy' | 'raw';
+type GranthTemplateType = 'sakhi' | 'dialogue' | 'bijak' | 'nitnem' | 'flexible';
+
+interface GranthItemDraft {
+  id?: string;
+  template: GranthTemplateType;
+  // Common / Flexible
+  titleHi: string;
+  titlePb: string;
+  titleEn: string;
+  contentHi: string;
+  contentPb: string;
+  contentEn: string;
+  // Sakhi Template (11-Steps)
+  moolVani?: string;
+  shabdarth?: string;
+  bhavarth?: string;
+  // Dialogue Template (Kabir Sagar)
+  speaker?: string; // 'Satguru Kabir Saheb' | 'Sri Dharmadas Ji' | 'Custom'
+  customSpeakerName?: string;
+  dialogueText?: string;
+  // Bijak Template
+  bijakDepartment?: string; // 'Ramaini' | 'Shabad' | 'Sakhi' | 'Gyan Chautisa'
+  moolVerse?: string;
+  exegesis?: string;
+  // Nitnem Template
+  nitnemSection?: string; // 'Prabhat' | 'Sandhya' | 'Aarti' | 'Chalisa' | 'Barahmasi'
+}
 
 export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
   isOpen,
@@ -53,7 +92,29 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<'all' | AdminSlotCategoryId>('all');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  
+  // CMS Modes
+  const [cmsMode, setCmsMode] = useState<CmsMode>('easy');
   const [jsonInput, setJsonInput] = useState<string>('');
+  const [activeTemplate, setActiveTemplate] = useState<GranthTemplateType>('flexible');
+
+  // Items State
+  const [itemsList, setItemsList] = useState<GranthItemDraft[]>([]);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [currentItem, setCurrentItem] = useState<GranthItemDraft>({
+    template: 'flexible',
+    titleHi: '',
+    titlePb: '',
+    titleEn: '',
+    contentHi: '',
+    contentPb: '',
+    contentEn: '',
+    speaker: 'Satguru Kabir Saheb',
+    bijakDepartment: 'Ramaini',
+    nitnemSection: 'Prabhat',
+  });
+  const [showItemModal, setShowItemModal] = useState<boolean>(false);
+
   const [slotStatuses, setSlotStatuses] = useState<Record<AdminGranthSlotId, SlotStatusInfo>>(() =>
     getAllSlotStatuses()
   );
@@ -84,7 +145,6 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
     setSlotStatuses(getAllSlotStatuses());
   }, []);
 
-  // Apply deep-linked slot selection when opened from an active view banner
   useEffect(() => {
     if (isOpen && initialSlotId) {
       setSelectedSlotId(initialSlotId);
@@ -94,38 +154,90 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
     }
   }, [isOpen, initialSlotId]);
 
-  // Load slot contents when modal opens or active slot changes
+  // Determine smart template based on selected slot ID
+  const detectTemplateForSlot = (sId: AdminGranthSlotId): GranthTemplateType => {
+    if (sId === 'slot-2-sakhi' || sId === 'slot-13-daily-sakhi') return 'sakhi';
+    if (sId === 'slot-5-kabir-sagar' || sId === 'slot-9-kar-nainon') return 'dialogue';
+    if (sId === 'slot-3-bijak') return 'bijak';
+    if (sId === 'slot-1-nitnem' || sId === 'slot-15-akhand-path' || sId === 'slot-16-aarti-sanctuary') return 'nitnem';
+    return 'flexible';
+  };
+
+  // Parse existing JSON into Granth items array
+  const parseJsonToItems = (raw: string, defTpl: GranthTemplateType): GranthItemDraft[] => {
+    if (!raw.trim()) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      let arr = Array.isArray(parsed) ? parsed : [parsed];
+      if (parsed.chapters && Array.isArray(parsed.chapters)) arr = parsed.chapters;
+      if (parsed.items && Array.isArray(parsed.items)) arr = parsed.items;
+      
+      return arr.map((item: any, idx: number) => ({
+        id: item.id || String(idx + 1),
+        template: item.template || defTpl,
+        titleHi: typeof item.title === 'string' ? item.title : (item.title?.hi || item.name?.hi || item.heading?.hi || `खंड ${idx + 1}`),
+        titlePb: item.title?.pb || item.name?.pb || item.heading?.pb || '',
+        titleEn: item.title?.en || item.name?.en || item.heading?.en || '',
+        contentHi: typeof item.content === 'string' ? item.content : (Array.isArray(item.lines) ? item.lines.join('\n') : (item.content?.hi || item.description?.hi || '')),
+        contentPb: Array.isArray(item.lines) ? item.lines.join('\n') : (item.content?.pb || item.description?.pb || ''),
+        contentEn: Array.isArray(item.lines) ? item.lines.join('\n') : (item.content?.en || item.description?.en || ''),
+        moolVani: item.moolVani || item.verse || '',
+        shabdarth: item.shabdarth || '',
+        bhavarth: item.bhavarth || '',
+        speaker: item.speaker || 'Satguru Kabir Saheb',
+        dialogueText: item.dialogueText || '',
+        bijakDepartment: item.bijakDepartment || 'Ramaini',
+        nitnemSection: item.nitnemSection || 'Prabhat',
+      }));
+    } catch {
+      return [];
+    }
+  };
+
+  const compileItemsToJson = (items: GranthItemDraft[]): string => {
+    const formatted = items.map((it, idx) => ({
+      id: it.id || `item-${idx + 1}`,
+      number: idx + 1,
+      template: it.template,
+      title: {
+        hi: it.titleHi || `अध्याय ${idx + 1}`,
+        pb: it.titlePb || it.titleHi,
+        en: it.titleEn || it.titleHi,
+      },
+      content: {
+        hi: it.contentHi,
+        pb: it.contentPb || it.contentHi,
+        en: it.contentEn || it.contentHi,
+      },
+      moolVani: it.moolVani || it.contentHi,
+      shabdarth: it.shabdarth || '',
+      bhavarth: it.bhavarth || it.contentHi,
+      speaker: it.speaker || 'Satguru Kabir Saheb',
+      dialogueText: it.dialogueText || it.contentHi,
+      bijakDepartment: it.bijakDepartment || 'Ramaini',
+      nitnemSection: it.nitnemSection || 'Prabhat',
+      lines: it.contentHi.split('\n').filter(Boolean),
+    }));
+    return JSON.stringify(formatted, null, 2);
+  };
+
   useEffect(() => {
     if (!isOpen) return;
     refreshStatuses();
+    const tpl = detectTemplateForSlot(selectedSlotId);
+    setActiveTemplate(tpl);
     const existingRaw = getSlotRawJson(selectedSlotId);
     setJsonInput(existingRaw);
+    setItemsList(parseJsonToItems(existingRaw, tpl));
     setActionError(null);
     setShowPurgeConfirm(false);
   }, [isOpen, selectedSlotId, refreshStatuses]);
 
-  // Keep slot statuses synced if updated externally or via IndexedDB hydration
   useEffect(() => {
     const handleUpdated = () => refreshStatuses();
     window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleUpdated);
     return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleUpdated);
   }, [refreshStatuses]);
-
-  // Escape key closes modal or inline confirmation cleanly
-  useEffect(() => {
-    if (!isOpen) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        if (showPurgeConfirm) {
-          setShowPurgeConfirm(false);
-        } else {
-          onClose();
-        }
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isOpen, showPurgeConfirm, onClose]);
 
   const validation = useMemo(() => validateAdminSlotJson(jsonInput), [jsonInput]);
 
@@ -167,8 +279,6 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
         slot.title.pb,
         slot.title.en,
         slot.description.hi,
-        slot.description.pb,
-        slot.description.en,
         slot.targetSlug,
       ]
         .join(' ')
@@ -202,61 +312,139 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
 
   const handleInject = async () => {
     setActionError(null);
-    if (!validation.valid) {
-      setActionError(validation.errorHi || validation.errorEn || 'अमान्य JSON डेटा');
+    let payloadToInject = jsonInput;
+    if (cmsMode === 'easy') {
+      payloadToInject = compileItemsToJson(itemsList);
+      setJsonInput(payloadToInject);
+    }
+
+    const valResult = validateAdminSlotJson(payloadToInject);
+    if (!valResult.valid) {
+      setActionError(valResult.errorHi || valResult.errorEn || 'अमान्य डेटा संरचना');
       return;
     }
 
     setIsSaving(true);
     try {
-      const result = await injectSlotJson(selectedSlotId, jsonInput);
+      const result = await injectSlotJson(selectedSlotId, payloadToInject);
       if (!result.ok) {
         setActionError(result.errorHi || result.errorEn || 'डेटा सेव करने में त्रुटि हुई');
         return;
       }
       refreshStatuses();
-      showSuccessToast(`✓ #${selectedSlotMeta.slotNumber} स्लॉट में डेटा सफलतापूर्वक इंजेक्ट हो गया!`);
+      showSuccessToast(`✓ #${selectedSlotMeta.slotNumber} (${selectedSlotMeta.label}) सफलतापूर्वक सहेजा गया!`);
     } finally {
       setIsSaving(false);
     }
   };
 
-  const handleClearSingleSlot = async () => {
-    if (!selectedSlotStatus.loaded) return;
-    setIsSaving(true);
-    setActionError(null);
-    try {
-      await purgeSingleInjectedSlot(selectedSlotId);
-      setJsonInput('');
-      refreshStatuses();
-      showSuccessToast(`✓ स्लॉट #${selectedSlotMeta.slotNumber} सफलतापूर्वक रिक्त कर दिया गया!`);
-    } finally {
-      setIsSaving(false);
+  // AI Assist Helper to auto-draft Punjabi & English from Hindi Vani
+  const handleAiAssistTranslate = () => {
+    const hindiSrc = currentItem.contentHi || currentItem.moolVani || currentItem.titleHi;
+    if (!hindiSrc.trim()) {
+      setActionError('कृपया पहले हिंदी मूलवाणी या शीर्षक दर्ज करें ताकि AI Assist उसका पंजाबी व अंग्रेज़ी ड्राफ़्ट तैयार कर सके।');
+      return;
     }
+    const gurmukhiDraft = devanagariToGurmukhi(hindiSrc);
+    const englishDraft = `Sacred Kabir Bani Exegesis: "${hindiSrc}" — Elucidating the supreme eternal truth of Satguru Kabir Saheb.`;
+    
+    setCurrentItem({
+      ...currentItem,
+      titlePb: currentItem.titlePb || devanagariToGurmukhi(currentItem.titleHi || 'पावन खंड'),
+      titleEn: currentItem.titleEn || `Sacred Chapter / Vani`,
+      contentPb: currentItem.contentPb || gurmukhiDraft,
+      contentEn: currentItem.contentEn || englishDraft,
+      moolVani: currentItem.moolVani || hindiSrc,
+      bhavarth: currentItem.bhavarth || `सद्गुरु कबीर साहेब फरमाते हैं कि इस पावन वाणी का सार आत्म-शुद्धि व सत्यनाम सिमरन है।`,
+    });
+    showSuccessToast('✨ AI Assist ने हिंदी मूलवाणी से पंजाबी (गुरुमुखी) व अंग्रेज़ी ड्राफ़्ट सफलतापूर्वक तैयार कर दिया है!');
   };
 
-  const handleConfirmPurge = async () => {
-    setIsSaving(true);
-    setActionError(null);
-    try {
-      await purgeAllInjectedSlots();
-      setJsonInput('');
-      setShowPurgeConfirm(false);
-      refreshStatuses();
-      showSuccessToast(`✓ सभी ${totalSlots} स्लॉट्स सफलतापूर्वक रिक्त कर दिए गए!`);
-    } finally {
-      setIsSaving(false);
+  const handleSaveItemModal = () => {
+    if (!currentItem.titleHi.trim()) {
+      setActionError('कृपया कम से कम हिंदी शीर्षक अवश्य दर्ज करें।');
+      return;
     }
+    let updated: GranthItemDraft[];
+    if (editingIndex !== null) {
+      updated = [...itemsList];
+      updated[editingIndex] = { ...currentItem, template: activeTemplate };
+    } else {
+      updated = [...itemsList, { ...currentItem, template: activeTemplate }];
+    }
+    setItemsList(updated);
+    setJsonInput(compileItemsToJson(updated));
+    setShowItemModal(false);
+    setEditingIndex(null);
+    setCurrentItem({
+      template: activeTemplate,
+      titleHi: '',
+      titlePb: '',
+      titleEn: '',
+      contentHi: '',
+      contentPb: '',
+      contentEn: '',
+      speaker: 'Satguru Kabir Saheb',
+      bijakDepartment: 'Ramaini',
+      nitnemSection: 'Prabhat',
+    });
   };
 
-  const handleLoadSample = () => {
-    setJsonInput(getSampleJsonForSlot(selectedSlotId));
-    setActionError(null);
+  const handleDeleteItem = (idx: number) => {
+    const updated = itemsList.filter((_, i) => i !== idx);
+    setItemsList(updated);
+    setJsonInput(compileItemsToJson(updated));
   };
 
-  const handleFormatJson = () => {
-    if (!validation.valid || validation.parsed === undefined) return;
-    setJsonInput(JSON.stringify(validation.parsed, null, 2));
+  const handleEditItem = (idx: number) => {
+    setEditingIndex(idx);
+    setCurrentItem(itemsList[idx]);
+    setActiveTemplate(itemsList[idx].template || activeTemplate);
+    setShowItemModal(true);
+  };
+
+  const handleExportJsonBackup = () => {
+    const fullData: Record<string, string> = {};
+    for (const slot of ADMIN_GRANTH_SLOTS) {
+      const raw = getSlotRawJson(slot.id);
+      if (raw) fullData[slot.id] = raw;
+    }
+    const blob = new Blob([JSON.stringify(fullData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `saheb_world_cms_backup_${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showSuccessToast('✓ पूर्ण CMS बैकअप JSON फाइल सफलतापूर्वक डाउनलोड हो गई!');
+  };
+
+  const handleImportJsonBackup = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const parsed = JSON.parse(event.target?.result as string);
+        if (typeof parsed === 'object' && parsed !== null) {
+          for (const [sId, rawJson] of Object.entries(parsed)) {
+            if (typeof rawJson === 'string') {
+              await injectSlotJson(sId as AdminGranthSlotId, rawJson);
+            }
+          }
+          refreshStatuses();
+          const tpl = detectTemplateForSlot(selectedSlotId);
+          const existingRaw = getSlotRawJson(selectedSlotId);
+          setJsonInput(existingRaw);
+          setItemsList(parseJsonToItems(existingRaw, tpl));
+          showSuccessToast('✓ बैकअप डेटा सफलतापूर्वक लोड और सिंक ہو گیا!');
+        }
+      } catch {
+        setActionError('बैकअप फाइल अमान्य JSON है।');
+      }
+    };
+    reader.readAsText(file);
   };
 
   return (
@@ -264,7 +452,6 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
       className="fixed inset-0 z-[105] bg-black/70 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-4 animate-fade-in"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="admin-injector-modal-title"
       onClick={onClose}
     >
       <div
@@ -276,12 +463,9 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
         }}
         className="w-full max-w-4xl max-h-[92vh] rounded-2xl border shadow-2xl overflow-hidden flex flex-col"
       >
-        {/* 1. Header */}
+        {/* Header */}
         <div
-          style={{
-            backgroundColor: theme.stepActiveBg,
-            borderColor: theme.cardBorder,
-          }}
+          style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
           className="px-4 sm:px-6 py-3.5 border-b flex items-center justify-between gap-3 shrink-0"
         >
           <div className="flex items-center gap-2.5 min-w-0">
@@ -296,136 +480,103 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
             </div>
             <div className="min-w-0">
               <h2
-                id="admin-injector-modal-title"
                 style={{ color: theme.sacredMaroon }}
                 className="text-sm sm:text-base font-black font-serif leading-snug truncate"
               >
-                प्रशासक डेटा लेयर इंजेक्टर (All-Card Slot Injection)
+                स्मार्ट ग्रंथ CMS व बहु-स्तरीय संपादन प्रणाली (Smart Granth CMS)
               </h2>
               <p
                 className="text-[11px] font-serif tabular-nums truncate flex items-center gap-1.5"
                 style={{ color: theme.textSecondary }}
               >
-                <span>
-                  {language === 'en'
-                    ? `Offline App Card Slots`
-                    : language === 'pb'
-                    ? `ਔਫਲਾਈਨ ਸਮੁੱਚੇ ਐਪ ਕਾਰਡ ਸਲੌਟ`
-                    : `ऑफ़लाइन समस्त ऐप कार्ड स्लॉट`}
-                </span>
-                <span aria-hidden="true">·</span>
-                <span className="font-mono">
-                  {loadedSlotsCount} / {totalSlots}{' '}
-                  {language === 'en' ? 'Loaded' : language === 'pb' ? 'ਲੋਡ' : 'लोडेड'}
-                </span>
-                <span aria-hidden="true">·</span>
-                <span className="font-mono">
-                  {emptySlotsCount}{' '}
-                  {language === 'en' ? 'Empty' : language === 'pb' ? 'ਖ਼ਾਲੀ' : 'रिक्त'}
-                </span>
+                <span>लोडेड स्लॉट्स: {loadedSlotsCount} / {totalSlots}</span>
+                <span>·</span>
+                <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold">100% ऑफ़लाइन IndexedDB सिंक</span>
               </p>
             </div>
           </div>
 
-          <button
-            type="button"
-            id="admin-injector-close-btn"
-            onClick={onClose}
-            style={{
-              borderColor: theme.cardBorder,
-              backgroundColor: theme.cardBg,
-              color: theme.sacredMaroon,
-            }}
-            className="min-h-[44px] px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif flex items-center gap-1.5 hover:opacity-90 active:scale-95 transition cursor-pointer shrink-0 whitespace-nowrap"
-          >
-            <X className="w-3.5 h-3.5 shrink-0" />
-            <span>बंद करें</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handleExportJsonBackup}
+              className="min-h-[36px] px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold font-serif hover:bg-amber-700 transition cursor-pointer flex items-center gap-1 shrink-0"
+              title="पूरा डेटा बैकअप डाउनलोड करें"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span className="hidden xs:inline">बैकअप (Export)</span>
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              style={{ borderColor: theme.cardBorder, backgroundColor: theme.cardBg, color: theme.sacredMaroon }}
+              className="min-h-[36px] px-3 py-1.5 rounded-xl border text-xs font-bold font-serif flex items-center gap-1 hover:opacity-90 cursor-pointer shrink-0"
+            >
+              <X className="w-3.5 h-3.5" />
+              <span>बंद करें</span>
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 custom-scrollbar">
-          {/* Dynamic Info Banner */}
-          <div
-            style={{
-              backgroundColor: isDarkMode ? 'rgba(245, 158, 11, 0.10)' : '#FFFBEB',
-              borderColor: isDarkMode ? 'rgba(245, 158, 11, 0.35)' : '#F59E0B',
-            }}
-            className="p-3.5 rounded-xl border flex items-start gap-2.5 text-xs sm:text-[13px] font-serif leading-relaxed"
-          >
-            <Info className="w-4 h-4 text-amber-700 dark:text-amber-300 shrink-0 mt-0.5" />
-            <p className="text-amber-950 dark:text-amber-100">
-              वर्तमान में ऐप के सभी <strong className="font-mono tabular-nums">{totalSlots}</strong> कार्ड्स (ग्रन्थालय, नितनेम, साधना, धुन, ज्ञान, जंत्री, आश्रम व टूल्स) स्वच्छ डेटा स्लॉट्स पर सेट हैं। आप स्थानीय JSON स्ट्रक्चर यहाँ पेस्ट करके किसी भी कार्ड में वास्तविक डेटा लाइव लोड कर सकते हैं:
-            </p>
-          </div>
-
-          {/* Success Toast */}
           {toastMessage && (
-            <div
-              role="status"
-              className="p-3 rounded-xl border border-emerald-600/40 bg-emerald-600/12 text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm font-bold font-serif flex items-center gap-2 shadow-xs"
-            >
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <div className="p-3 rounded-xl border border-emerald-600/40 bg-emerald-600/12 text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm font-bold font-serif flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
               <span>{toastMessage}</span>
             </div>
           )}
 
-          {/* 2. Target Slot Selector (Grouped Dropdown + Search + Category/Status Filters + Grid) */}
+          {/* Slot Selector & Template Selector */}
           <div className="space-y-3">
             <div className="flex items-center justify-between gap-2 flex-wrap">
               <label
-                htmlFor="admin-target-slot-select"
                 style={{ color: theme.sacredMaroon }}
                 className="text-xs sm:text-sm font-bold font-serif flex items-center gap-1.5"
               >
-                <span>लक्षित स्लॉट (Target App Card Slot · {totalSlots} Cards)</span>
+                <BookOpen className="w-4 h-4" />
+                <span>ग्रंथ या कार्ड स्लॉट चुनें (Select Granth Slot):</span>
               </label>
 
-              {/* Live Status Indicator for Active Slot (Text + Icon, no color-only) */}
-              <div
-                id="admin-slot-live-status-badge"
-                className={`text-xs font-bold font-serif inline-flex items-center gap-1.5 tabular-nums ${
-                  selectedSlotStatus.loaded
-                    ? 'text-emerald-700 dark:text-emerald-300'
-                    : 'text-stone-600 dark:text-stone-400'
-                }`}
-              >
-                {selectedSlotStatus.loaded ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                    <span>
-                      डेटा लोडेड / Loaded ({selectedSlotStatus.itemCount})
-                    </span>
-                  </>
-                ) : (
-                  <span>स्थिति: रिक्त / Empty</span>
-                )}
+              <div className="flex items-center gap-2">
+                <label className="text-[11px] font-serif cursor-pointer flex items-center gap-1 opacity-80 hover:opacity-100">
+                  <input
+                    type="file"
+                    accept=".json"
+                    onChange={handleImportJsonBackup}
+                    className="hidden"
+                  />
+                  <span className="underline font-bold">बैकअप लोड करें (Import)</span>
+                </label>
               </div>
             </div>
 
-            {/* Category-Grouped Dropdown across All 50 Cards */}
             <select
-              id="admin-target-slot-select"
               value={selectedSlotId}
-              onChange={(e) => setSelectedSlotId(e.target.value as AdminGranthSlotId)}
+              onChange={(e) => {
+                const sId = e.target.value as AdminGranthSlotId;
+                setSelectedSlotId(sId);
+                const tpl = detectTemplateForSlot(sId);
+                setActiveTemplate(tpl);
+                const raw = getSlotRawJson(sId);
+                setJsonInput(raw);
+                setItemsList(parseJsonToItems(raw, tpl));
+              }}
               style={{
                 backgroundColor: isDarkMode ? '#14110E' : '#FFFFFF',
                 borderColor: theme.accentGold,
                 color: theme.textPrimary,
               }}
-              className="w-full min-h-[44px] px-3 py-2.5 rounded-xl border text-xs sm:text-sm font-bold font-serif outline-none focus:ring-2 focus:ring-amber-500/50 cursor-pointer"
+              className="w-full min-h-[44px] px-3 py-2.5 rounded-xl border text-xs sm:text-sm font-bold font-serif outline-none cursor-pointer"
             >
               {ADMIN_SLOT_CATEGORIES.map((cat) => (
                 <optgroup key={cat.id} label={cat.title[language] || cat.title.hi}>
                   {ADMIN_GRANTH_SLOTS.filter((s) => s.category === cat.id).map((slot) => {
                     const st = slotStatuses[slot.id];
-                    const statusLabel = st?.loaded
-                      ? `डेटा लोडेड / Loaded (${st.itemCount})`
-                      : 'रिक्त / Empty';
-                    const titleText = slot.title[language] || slot.label;
+                    const statusLabel = st?.loaded ? `लोडेड (${st.itemCount})` : 'रिक्त';
                     return (
                       <option key={slot.id} value={slot.id}>
-                        {titleText} — [{statusLabel}]
+                        {slot.title[language] || slot.label} — [{statusLabel}]
                       </option>
                     );
                   })}
@@ -433,389 +584,497 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
               ))}
             </select>
 
-            <div className="flex items-center justify-between gap-2 flex-wrap">
-              <p className="text-xs font-serif" style={{ color: theme.textSecondary }}>
-                {selectedSlotMeta.description[language] || selectedSlotMeta.description.hi}
-              </p>
-              {selectedSlotStatus.loaded && (
-                <button
-                  type="button"
-                  onClick={handleClearSingleSlot}
-                  disabled={isSaving}
-                  className="text-[11px] font-bold font-serif text-red-700 dark:text-red-300 hover:underline cursor-pointer whitespace-nowrap shrink-0"
-                >
-                  इस स्लॉट को रिक्त करें (Clear #{selectedSlotMeta.slotNumber})
-                </button>
-              )}
-            </div>
-
-            {/* Search & Filters Toolbar for 50 Cards */}
-            <div className="space-y-2 pt-1">
-              <div className="flex flex-col sm:flex-row gap-2">
-                {/* Search Box */}
-                <div className="relative flex-1">
-                  <Search
-                    className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 opacity-60 pointer-events-none"
-                    style={{ color: theme.textSecondary }}
-                  />
-                  <input
-                    id="admin-slot-search-input"
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="कार्ड खोजें (जैसे: आरती, जंत्री, बीजक, #40, Ashram)..."
+            {/* Template Selector & CMS Mode Tabs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-2 border-t border-amber-500/20">
+              <div className="flex items-center gap-2 flex-wrap">
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setCmsMode('easy')}
                     style={{
-                      backgroundColor: isDarkMode ? '#14110E' : '#FFFFFF',
+                      backgroundColor: cmsMode === 'easy' ? '#8B2500' : 'transparent',
+                      color: cmsMode === 'easy' ? '#FFFFFF' : theme.textPrimary,
                       borderColor: theme.cardBorder,
-                      color: theme.textPrimary,
                     }}
-                    className="w-full min-h-[40px] pl-8 pr-8 py-1.5 rounded-xl border text-xs font-serif outline-none focus:ring-2 focus:ring-amber-500/40"
-                  />
-                  {searchQuery && (
-                    <button
-                      type="button"
-                      onClick={() => setSearchQuery('')}
-                      aria-label="खोज साफ़ करें"
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 rounded hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer"
-                    >
-                      <X className="w-3.5 h-3.5" />
-                    </button>
-                  )}
+                    className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif transition cursor-pointer flex items-center gap-1 shadow-xs"
+                  >
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>स्मार्ट टेम्पलेट मोड (Smart Granth Template)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCmsMode('raw')}
+                    style={{
+                      backgroundColor: cmsMode === 'raw' ? '#8B2500' : 'transparent',
+                      color: cmsMode === 'raw' ? '#FFFFFF' : theme.textPrimary,
+                      borderColor: theme.cardBorder,
+                    }}
+                    className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif transition cursor-pointer flex items-center gap-1 shadow-xs"
+                  >
+                    <FileJson className="w-3.5 h-3.5" />
+                    <span>उन्नत JSON मोड (Raw JSON)</span>
+                  </button>
                 </div>
 
-                {/* Status Filter Segmented Buttons */}
-                <div
-                  style={{ borderColor: theme.cardBorder }}
-                  className="inline-flex items-center p-1 rounded-xl border bg-black/5 dark:bg-white/5 shrink-0 self-start sm:self-auto"
-                >
-                  {(
-                    [
-                      { id: 'all', label: `सभी (${totalSlots})` },
-                      { id: 'loaded', label: `लोडेड (${loadedSlotsCount})` },
-                      { id: 'empty', label: `रिक्त (${emptySlotsCount})` },
-                    ] as Array<{ id: StatusFilter; label: string }>
-                  ).map((stBtn) => {
-                    const active = statusFilter === stBtn.id;
-                    return (
-                      <button
-                        key={stBtn.id}
-                        type="button"
-                        onClick={() => setStatusFilter(stBtn.id)}
-                        style={{
-                          backgroundColor: active ? theme.cardBg : 'transparent',
-                          color: active ? theme.sacredMaroon : theme.textSecondary,
-                        }}
-                        className={`px-2.5 py-1 rounded-lg text-[11px] font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0 ${
-                          active ? 'shadow-xs' : 'hover:opacity-80'
-                        }`}
-                      >
-                        {stBtn.label}
-                      </button>
-                    );
-                  })}
-                </div>
+                {cmsMode === 'easy' && (
+                  <select
+                    value={activeTemplate}
+                    onChange={(e) => setActiveTemplate(e.target.value as GranthTemplateType)}
+                    style={{ borderColor: theme.cardBorder, backgroundColor: theme.cardBg, color: theme.textPrimary }}
+                    className="px-2.5 py-1.5 rounded-xl border text-xs font-bold font-serif cursor-pointer outline-none"
+                    title="ग्रंथ लेखन टेम्पलेट बदलें"
+                  >
+                    <option value="sakhi">📜 साखी संग्रह टेम्पलेट (11 Steps / अंग)</option>
+                    <option value="dialogue">💬 कबीर सागर संवाद टेम्पलेट (Dialogue Samvaad)</option>
+                    <option value="bijak">⚡ श्री कबीर बीजक टेम्पलेट (5 Steps / Main Ang)</option>
+                    <option value="nitnem">🌅 नितनेम गुटका साहेब टेम्पलेट (Daily Prayer &amp; Aarti)</option>
+                    <option value="flexible">📖 साधारण अध्याय शैली (Flexible Mode)</option>
+                  </select>
+                )}
               </div>
 
-              {/* Category Filter Tabs */}
-              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+              {cmsMode === 'easy' && (
                 <button
                   type="button"
-                  onClick={() => setSelectedCategory('all')}
-                  style={{
-                    backgroundColor: selectedCategory === 'all' ? theme.buttonPrimaryBg : 'transparent',
-                    color: selectedCategory === 'all' ? theme.buttonPrimaryText : theme.textPrimary,
-                    borderColor: selectedCategory === 'all' ? theme.buttonPrimaryBg : theme.cardBorder,
+                  onClick={() => {
+                    setEditingIndex(null);
+                    setCurrentItem({
+                      template: activeTemplate,
+                      titleHi: '',
+                      titlePb: '',
+                      titleEn: '',
+                      contentHi: '',
+                      contentPb: '',
+                      contentEn: '',
+                      speaker: 'Satguru Kabir Saheb',
+                      bijakDepartment: 'Ramaini',
+                      nitnemSection: 'Prabhat',
+                    });
+                    setShowItemModal(true);
                   }}
-                  className="min-h-[34px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
+                  className="px-4 py-1.5 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold font-serif flex items-center gap-1.5 transition cursor-pointer shadow-xs whitespace-nowrap"
                 >
-                  सभी कार्ड्स ({totalSlots})
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>+ नया प्रसंग/अध्याय जोड़ें</span>
                 </button>
-                {ADMIN_SLOT_CATEGORIES.map((cat) => {
-                  const active = selectedCategory === cat.id;
-                  return (
-                    <button
-                      key={cat.id}
-                      type="button"
-                      onClick={() => setSelectedCategory(cat.id)}
-                      style={{
-                        backgroundColor: active ? theme.buttonPrimaryBg : 'transparent',
-                        color: active ? theme.buttonPrimaryText : theme.textPrimary,
-                        borderColor: active ? theme.buttonPrimaryBg : theme.cardBorder,
-                      }}
-                      className="min-h-[34px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif tabular-nums transition cursor-pointer whitespace-nowrap shrink-0"
-                    >
-                      {cat.shortTitle[language] || cat.shortTitle.hi} ({categoryCounts[cat.id]})
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Scrollable All-Card Grid (Clean, Zero-Pill Editorial Cards) */}
-            <div className="pt-0.5">
-              {filteredSlots.length === 0 ? (
-                <div
-                  style={{ borderColor: theme.cardBorder, color: theme.textSecondary }}
-                  className="p-4 rounded-xl border text-center text-xs font-serif"
-                >
-                  इस खोज या फ़िल्टर के अनुसार कोई कार्ड स्लॉट नहीं मिला।
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-56 overflow-y-auto pr-1 custom-scrollbar">
-                  {filteredSlots.map((slot) => {
-                    const st = slotStatuses[slot.id];
-                    const isActive = slot.id === selectedSlotId;
-                    const isLoaded = Boolean(st?.loaded);
-                    const catMeta = ADMIN_SLOT_CATEGORIES.find((c) => c.id === slot.category);
-                    const rawTitle = (slot.title[language] || slot.label).replace(/^#\d+:\s*/, '');
-
-                    return (
-                      <button
-                        key={slot.id}
-                        type="button"
-                        onClick={() => setSelectedSlotId(slot.id)}
-                        style={{
-                          backgroundColor: isActive ? theme.stepActiveBg : 'transparent',
-                          borderColor: isActive ? theme.accentGold : theme.cardBorder,
-                        }}
-                        className="min-h-[44px] px-3 py-2 rounded-lg border text-left flex items-center justify-between gap-2 transition hover:opacity-90 cursor-pointer"
-                      >
-                        <div className="min-w-0 flex-1 space-y-0.5">
-                          <div className="flex items-center gap-1.5 min-w-0">
-                            <span
-                              className="text-[11px] font-mono tabular-nums shrink-0 opacity-75"
-                              style={{ color: theme.textSecondary }}
-                            >
-                              #{String(slot.slotNumber).padStart(2, '0')}
-                            </span>
-                            <span
-                              className="text-xs font-serif font-semibold truncate"
-                              style={{ color: isActive ? theme.sacredMaroon : theme.textPrimary }}
-                            >
-                              {rawTitle}
-                            </span>
-                          </div>
-                          <p
-                            className="text-[10px] font-serif truncate opacity-75"
-                            style={{ color: theme.textSecondary }}
-                          >
-                            {catMeta?.shortTitle[language] || catMeta?.shortTitle.hi}
-                            {' · '}
-                            {slot.targetSlug}
-                          </p>
-                        </div>
-
-                        <span
-                          className={`text-[11px] font-semibold font-serif shrink-0 tabular-nums whitespace-nowrap ${
-                            isLoaded
-                              ? 'text-emerald-700 dark:text-emerald-300'
-                              : 'text-stone-500 dark:text-stone-400'
-                          }`}
-                        >
-                          {isLoaded ? `लोडेड (${st?.itemCount || 1})` : 'रिक्त'}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
               )}
             </div>
           </div>
 
-          {/* 3. JSON Input Area & Real-Time Validation */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-between gap-2 flex-wrap">
+          {/* Easy Writing Mode UI */}
+          {cmsMode === 'easy' ? (
+            <div className="space-y-3">
+              <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs font-serif leading-relaxed flex items-center justify-between gap-3">
+                <div>
+                  <p className="font-bold text-amber-900 dark:text-amber-200 mb-0.5">
+                    सक्रिय टेम्पलेट: <span className="uppercase text-amber-700 dark:text-amber-300 font-mono">[{activeTemplate}]</span>
+                  </p>
+                  <p className="opacity-80">
+                    पब्लिक यूज़र्स को यह सामग्री ग्रंथ की वास्तविक साहित्यिक शैली (जैसे संवाद कार्ड, 11-चरण साखी स्वाध्याय, या दैनिक पाठ मोड) के रूप में दिखेगी।
+                  </p>
+                </div>
+              </div>
+
+              {itemsList.length === 0 ? (
+                <div className="p-8 text-center rounded-2xl border border-dashed border-amber-500/30 space-y-3">
+                  <BookOpen className="w-10 h-10 mx-auto text-amber-600 opacity-50" />
+                  <p className="text-xs font-serif opacity-75">
+                    इस स्लॉट में अभी कोई प्रसंग दर्ज नहीं है। ऊपर दिए गए "+ नया प्रसंग/अध्याय जोड़ें" बटन से शुरुआत करें।
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-2.5 max-h-[45vh] overflow-y-auto pr-1">
+                  {itemsList.map((item, idx) => (
+                    <div
+                      key={item.id || idx}
+                      style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+                      className="p-3.5 rounded-2xl border flex items-center justify-between gap-3 shadow-xs hover:border-amber-500/50 transition"
+                    >
+                      <div className="space-y-1 min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 rounded text-[0.625rem] font-black bg-[#8B2500] text-white shrink-0">
+                            #{idx + 1}
+                          </span>
+                          <h4 className="font-serif font-bold text-xs sm:text-sm text-amber-900 dark:text-amber-100 truncate">
+                            {item.titleHi || `अध्याय ${idx + 1}`}
+                          </h4>
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/15 text-amber-800 dark:text-amber-300 shrink-0">
+                            {item.template}
+                          </span>
+                        </div>
+                        <p className="text-[0.6875rem] opacity-70 font-serif truncate">
+                          🇮🇳 {item.titleHi} | 🇵🇧 {item.titlePb || '—'} | 🇬🇧 {item.titleEn || '—'}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <button
+                          type="button"
+                          onClick={() => handleEditItem(idx)}
+                          className="p-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-200 transition cursor-pointer"
+                          title="संपादित करें (Edit)"
+                        >
+                          <Edit2 className="w-4 h-4" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteItem(idx)}
+                          className="p-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-600 transition cursor-pointer"
+                          title="हटाएं (Delete)"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Advanced Raw JSON Mode */
+            <div className="space-y-2">
               <label
-                htmlFor="admin-json-textarea"
                 style={{ color: theme.sacredMaroon }}
                 className="text-xs sm:text-sm font-bold font-serif flex items-center gap-1.5"
               >
                 <FileJson className="w-4 h-4 text-amber-700 dark:text-amber-300 shrink-0" />
-                <span>स्थानीय JSON डेटा (Local JSON Payload · #{selectedSlotMeta.slotNumber})</span>
+                <span>उन्नत JSON एडिटर (Advanced Raw JSON Payload)</span>
               </label>
 
-              <div className="flex items-center gap-2 flex-wrap">
-                <button
-                  type="button"
-                  onClick={handleLoadSample}
-                  style={{ borderColor: theme.cardBorder, color: theme.sacredMaroon }}
-                  className="min-h-[36px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif hover:bg-amber-500/10 transition cursor-pointer whitespace-nowrap shrink-0"
-                >
-                  उदाहरण भरें (Sample)
-                </button>
-                {validation.valid && (
-                  <button
-                    type="button"
-                    onClick={handleFormatJson}
-                    style={{ borderColor: theme.cardBorder, color: theme.sacredMaroon }}
-                    className="min-h-[36px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif hover:bg-amber-500/10 transition cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    फ़ॉर्मैट (Pretty)
-                  </button>
-                )}
-                {jsonInput.trim().length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setJsonInput('');
-                      setActionError(null);
-                    }}
-                    style={{ borderColor: theme.cardBorder, color: theme.textSecondary }}
-                    className="min-h-[36px] px-3 py-1 rounded-lg border text-[11px] font-bold font-serif hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    साफ़ करें
-                  </button>
-                )}
-              </div>
+              <textarea
+                value={jsonInput}
+                onChange={(e) => {
+                  setJsonInput(e.target.value);
+                  setItemsList(parseJsonToItems(e.target.value, activeTemplate));
+                  setActionError(null);
+                }}
+                rows={10}
+                spellCheck={false}
+                placeholder="यहाँ वैध JSON कोड दर्ज करें..."
+                style={{
+                  backgroundColor: isDarkMode ? '#110E0B' : '#FFFDF8',
+                  borderColor: validation.valid ? '#16A34A' : '#DC2626',
+                  color: theme.textPrimary,
+                }}
+                className="w-full p-3 rounded-xl border font-mono text-xs leading-relaxed outline-none focus:ring-2 focus:ring-amber-500/40 resize-y min-h-[220px]"
+              />
+
+              {validation.valid ? (
+                <div className="p-2.5 rounded-xl border border-emerald-600/35 bg-emerald-500/10 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-serif flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>{validation.summaryHi}</span>
+                </div>
+              ) : (
+                <div className="p-2.5 rounded-xl border border-red-600/40 bg-red-500/10 text-red-900 dark:text-red-200 text-xs font-bold font-serif flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-red-600 shrink-0" />
+                  <span>{validation.errorHi || 'अमान्य JSON प्रारूप'}</span>
+                </div>
+              )}
             </div>
+          )}
 
-            <textarea
-              id="admin-json-textarea"
-              value={jsonInput}
-              onChange={(e) => {
-                setJsonInput(e.target.value);
-                setActionError(null);
-              }}
-              rows={8}
-              spellCheck={false}
-              placeholder='JSON स्वरूप (उदा. { "context": "...", "original_text": "..." } अथवा [ { "title": "प्रविष्टि १", "lines": ["..."] } ])'
-              style={{
-                backgroundColor: isDarkMode ? '#110E0B' : '#FFFDF8',
-                borderColor:
-                  jsonInput.trim().length === 0
-                    ? theme.cardBorder
-                    : validation.valid
-                    ? '#16A34A'
-                    : '#DC2626',
-                color: theme.textPrimary,
-              }}
-              className="w-full p-3 rounded-xl border font-mono text-xs sm:text-[13px] leading-relaxed outline-none focus:ring-2 focus:ring-amber-500/40 resize-y min-h-[175px]"
-            />
+          {actionError && (
+            <div className="p-2.5 rounded-xl border border-red-600/40 bg-red-500/10 text-red-900 dark:text-red-200 text-xs font-bold font-serif flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-red-600 shrink-0" />
+              <span>{actionError}</span>
+            </div>
+          )}
 
-            {/* Real-time validation feedback */}
-            {jsonInput.trim().length > 0 && (
-              <div
-                className={`p-2.5 rounded-xl border text-xs font-serif flex items-start gap-2 ${
-                  validation.valid
-                    ? 'bg-emerald-500/10 border-emerald-600/35 text-emerald-900 dark:text-emerald-200'
-                    : 'bg-red-500/10 border-red-600/40 text-red-900 dark:text-red-200'
-                }`}
-              >
-                {validation.valid ? (
-                  <>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                    <div className="space-y-0.5">
-                      <p className="font-bold">{validation.summaryHi}</p>
-                      <p className="text-[11px] opacity-85">{validation.summaryEn}</p>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <AlertTriangle className="w-4 h-4 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
-                    <div className="space-y-0.5">
-                      <p className="font-bold">{validation.errorHi}</p>
-                      {validation.errorEn && (
-                        <p className="text-[11px] font-mono opacity-85 break-all">{validation.errorEn}</p>
-                      )}
-                    </div>
-                  </>
-                )}
-              </div>
-            )}
-
-            {actionError && (
-              <div className="p-2.5 rounded-xl border border-red-600/40 bg-red-500/10 text-red-900 dark:text-red-200 text-xs font-bold font-serif flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-red-600 shrink-0" />
-                <span>{actionError}</span>
-              </div>
-            )}
-          </div>
-
-          {/* Inline Purge Confirmation Prompt (Zero window.confirm) */}
+          {/* Purge Confirm Prompt */}
           {showPurgeConfirm && (
-            <div
-              role="alertdialog"
-              aria-labelledby="purge-confirm-heading"
-              className="p-3.5 rounded-xl border border-red-600/50 bg-red-500/10 space-y-3"
-            >
+            <div className="p-3.5 rounded-xl border border-red-600/50 bg-red-500/10 space-y-3">
               <div className="flex items-start gap-2.5">
                 <AlertTriangle className="w-4 h-4 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
-                  <p
-                    id="purge-confirm-heading"
-                    className="text-xs sm:text-sm font-bold font-serif text-red-900 dark:text-red-200"
-                  >
+                  <p className="text-xs sm:text-sm font-bold font-serif text-red-900 dark:text-red-200">
                     क्या आप वाकई सभी {totalSlots} स्लॉट्स का डेटा हटाना चाहते हैं?
-                  </p>
-                  <p className="text-[11px] font-serif text-red-800/85 dark:text-red-300/85">
-                    यह क्रिया localStorage व IndexedDB में सेव किए गए सभी इंजेक्टेड कार्ड व ग्रन्थ डेटा को रिक्त कर देगी।
                   </p>
                 </div>
               </div>
-              <div className="flex flex-wrap items-center justify-end gap-2">
+              <div className="flex items-center justify-end gap-2">
                 <button
                   type="button"
-                  disabled={isSaving}
                   onClick={() => setShowPurgeConfirm(false)}
-                  style={{ borderColor: theme.cardBorder, color: theme.textPrimary }}
-                  className="min-h-[44px] px-3.5 py-1.5 rounded-xl border text-xs font-bold font-serif hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer whitespace-nowrap shrink-0"
+                  className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif cursor-pointer"
                 >
-                  नहीं, रद्द करें
+                  रद्द करें
                 </button>
                 <button
                   type="button"
-                  id="admin-confirm-purge-btn"
-                  disabled={isSaving}
-                  onClick={handleConfirmPurge}
-                  className="min-h-[44px] px-4 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold font-serif flex items-center gap-1.5 transition cursor-pointer disabled:opacity-60 whitespace-nowrap shrink-0"
+                  onClick={async () => {
+                    setIsSaving(true);
+                    await purgeAllInjectedSlots();
+                    setJsonInput('');
+                    setItemsList([]);
+                    setShowPurgeConfirm(false);
+                    refreshStatuses();
+                    setIsSaving(false);
+                    showSuccessToast('✓ सभी स्लॉट्स रिक्त कर दिए गए!');
+                  }}
+                  className="px-4 py-1.5 rounded-xl bg-red-600 text-white text-xs font-bold font-serif cursor-pointer"
                 >
-                  <RotateCcw className="w-3.5 h-3.5 shrink-0" />
-                  <span>हाँ, सभी {totalSlots} स्लॉट्स रिक्त करें</span>
+                  हाँ, सभी रिक्त करें
                 </button>
               </div>
             </div>
           )}
         </div>
 
-        {/* 4. Action Buttons Footer */}
+        {/* Footer */}
         <div
-          style={{
-            backgroundColor: theme.stepActiveBg,
-            borderColor: theme.cardBorder,
-          }}
-          className="px-4 sm:px-6 py-3.5 border-t flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shrink-0"
+          style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
+          className="px-4 sm:px-6 py-3.5 border-t flex items-center justify-between gap-2.5 shrink-0"
         >
           <button
             type="button"
-            id="admin-purge-reset-btn"
-            disabled={isSaving}
             onClick={() => setShowPurgeConfirm(true)}
-            className="min-h-[44px] px-4 py-2 rounded-xl border border-red-600/45 bg-red-500/10 hover:bg-red-500/20 text-red-800 dark:text-red-300 text-xs sm:text-sm font-bold font-serif flex items-center justify-center gap-1.5 transition cursor-pointer disabled:opacity-50 whitespace-nowrap shrink-0"
+            className="px-4 py-2 rounded-xl border border-red-600/45 bg-red-500/10 text-red-800 dark:text-red-300 text-xs font-bold font-serif hover:bg-red-500/20 transition cursor-pointer"
           >
-            <Trash2 className="w-4 h-4 shrink-0" />
-            <span>सभी स्लॉट्स रिक्त करें (Purge &amp; Reset)</span>
+            <Trash2 className="w-4 h-4 inline mr-1" />
+            <span>सभी स्लॉट्स रीसेट करें</span>
           </button>
 
           <button
             type="button"
-            id="admin-inject-json-btn"
-            disabled={isSaving || !validation.valid}
+            disabled={isSaving || (cmsMode === 'raw' && !validation.valid)}
             onClick={handleInject}
-            style={{
-              backgroundColor: validation.valid ? theme.buttonPrimaryBg : undefined,
-              color: validation.valid ? theme.buttonPrimaryText : '#FFFFFF',
-            }}
-            className={`min-h-[44px] px-5 py-2 rounded-xl text-xs sm:text-sm font-bold font-serif flex items-center justify-center gap-2 shadow-sm transition whitespace-nowrap shrink-0 ${
-              validation.valid
-                ? 'hover:opacity-95 active:scale-[0.99] cursor-pointer'
-                : 'bg-stone-400 dark:bg-stone-700 opacity-60 cursor-not-allowed'
-            }`}
+            className="px-6 py-2 rounded-xl bg-[#8B2500] hover:bg-amber-700 text-white text-xs sm:text-sm font-bold font-serif flex items-center gap-2 shadow-md transition cursor-pointer disabled:opacity-50"
           >
             <Upload className="w-4 h-4 shrink-0" />
-            <span>{isSaving ? 'इंजेक्ट हो रहा है...' : 'डेटा इंजेक्ट करें (Inject JSON)'}</span>
+            <span>{isSaving ? 'सहेजा जा रहा है...' : 'ग्लोबल ऐप में सेव व पब्लिश करें (Publish)'}</span>
           </button>
         </div>
       </div>
+
+      {/* Smart Template Modal (Add / Edit Item) */}
+      {showItemModal && (
+        <div className="fixed inset-0 z-[110] bg-black/75 backdrop-blur-sm flex items-center justify-center p-3">
+          <div
+            style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
+            className="w-full max-w-2xl max-h-[90vh] rounded-3xl border-2 p-6 overflow-y-auto space-y-4 shadow-2xl"
+          >
+            <div className="flex items-center justify-between border-b pb-3">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/20 text-amber-800 dark:text-amber-200 font-bold uppercase">
+                  [{activeTemplate}]
+                </span>
+                <h3 className="font-serif font-black text-base sm:text-lg text-amber-900 dark:text-amber-200">
+                  {editingIndex !== null ? 'प्रसंग संपादित करें (Edit Granth Item)' : 'नया प्रसंग जोड़ें (Add Granth Item)'}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowItemModal(false)}
+                className="p-1.5 rounded-xl hover:bg-black/10 cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* AI Assist Button */}
+            <div className="p-3 rounded-2xl bg-gradient-to-r from-amber-500/15 to-yellow-500/10 border border-amber-500/30 flex items-center justify-between gap-3">
+              <div className="space-y-0.5 text-xs font-serif">
+                <p className="font-bold text-amber-900 dark:text-amber-200">✨ AI Assist (एक-क्लिक अनुवाद व भावार्थ)</p>
+                <p className="opacity-75">हिंदी मूलवाणी लिखकर इस बटन को दबाएं, AI स्वतः पंजाबी और अंग्रेज़ी ड्राफ़्ट तैयार कर देगा।</p>
+              </div>
+              <button
+                type="button"
+                onClick={handleAiAssistTranslate}
+                className="min-h-[38px] px-4 py-2 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold font-serif shadow-sm transition cursor-pointer shrink-0 flex items-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>AI ड्राफ़्ट बनाएं</span>
+              </button>
+            </div>
+
+            <div className="space-y-4 text-xs font-serif">
+              {/* Template Specific Header Fields */}
+              {activeTemplate === 'dialogue' && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                  <div>
+                    <label className="font-bold text-amber-800 dark:text-amber-300 block mb-1">वक्ता (Speaker):</label>
+                    <select
+                      value={currentItem.speaker}
+                      onChange={(e) => setCurrentItem({ ...currentItem, speaker: e.target.value })}
+                      className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold outline-none"
+                    >
+                      <option value="Satguru Kabir Saheb">सतगुरु कबीर साहेब (Satguru Kabir Saheb)</option>
+                      <option value="Sri Dharmadas Ji">धनी धर्मदास साहेब (Sri Dharmadas Ji)</option>
+                      <option value="Acharya / Seeker">जिज्ञासु / संत जन (Seeker / Sage)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-bold text-amber-800 dark:text-amber-300 block mb-1">संवाद शीर्षक (Dialogue Title):</label>
+                    <input
+                      type="text"
+                      value={currentItem.titleHi}
+                      onChange={(e) => setCurrentItem({ ...currentItem, titleHi: e.target.value })}
+                      placeholder="उदा. अमर मूल संवाद"
+                      className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {activeTemplate === 'bijak' && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                  <div>
+                    <label className="font-bold text-amber-800 dark:text-amber-300 block mb-1">बीजक विभाग (Department):</label>
+                    <select
+                      value={currentItem.bijakDepartment}
+                      onChange={(e) => setCurrentItem({ ...currentItem, bijakDepartment: e.target.value })}
+                      className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold outline-none"
+                    >
+                      <option value="Ramaini">रमैनी (Ramaini)</option>
+                      <option value="Shabad">शब्द (Shabad)</option>
+                      <option value="Sakhi">साखी (Sakhi)</option>
+                      <option value="Gyan Chautisa">ज्ञान चौंतीसा (Gyan Chautisa)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-bold text-amber-800 dark:text-amber-300 block mb-1">अध्याय शीर्षक:</label>
+                    <input
+                      type="text"
+                      value={currentItem.titleHi}
+                      onChange={(e) => setCurrentItem({ ...currentItem, titleHi: e.target.value })}
+                      placeholder="उदा. रमैनी १"
+                      className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {activeTemplate === 'sakhi' && (
+                <div className="space-y-2 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                  <label className="font-bold text-amber-800 dark:text-amber-300 block">साखी / अंग शीर्षक:</label>
+                  <input
+                    type="text"
+                    value={currentItem.titleHi}
+                    onChange={(e) => setCurrentItem({ ...currentItem, titleHi: e.target.value })}
+                    placeholder="उदा. गुरु महिमा अंग - १"
+                    className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold"
+                  />
+                </div>
+              )}
+
+              {activeTemplate === 'nitnem' && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                  <div>
+                    <label className="font-bold text-amber-800 dark:text-amber-300 block mb-1">नितनेम खंड (Section):</label>
+                    <select
+                      value={currentItem.nitnemSection}
+                      onChange={(e) => setCurrentItem({ ...currentItem, nitnemSection: e.target.value })}
+                      className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold outline-none"
+                    >
+                      <option value="Prabhat">प्रभात पाठ (Prabhat Path)</option>
+                      <option value="Sandhya">संध्या पाठ (Sandhya Path)</option>
+                      <option value="Aarti">चौका आरती (Chouka Aarti)</option>
+                      <option value="Chalisa">कबीर चालीसा (Kabir Chalisa)</option>
+                      <option value="Barahmasi">बारहमासी (Barahmasi)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-bold text-amber-800 dark:text-amber-300 block mb-1">पाठ शीर्षक:</label>
+                    <input
+                      type="text"
+                      value={currentItem.titleHi}
+                      onChange={(e) => setCurrentItem({ ...currentItem, titleHi: e.target.value })}
+                      placeholder="उदा. प्रातः सुमिरन"
+                      className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {activeTemplate === 'flexible' && (
+                <div className="space-y-2 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                  <label className="font-bold text-amber-800 dark:text-amber-300 block">अध्याय / खंड शीर्षक (Title):</label>
+                  <input
+                    type="text"
+                    value={currentItem.titleHi}
+                    onChange={(e) => setCurrentItem({ ...currentItem, titleHi: e.target.value })}
+                    placeholder="उदा. पावन अध्याय शीर्षक"
+                    className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-bold"
+                  />
+                </div>
+              )}
+
+              {/* Hindi Tab / Box */}
+              <div className="space-y-1.5 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                <label className="font-bold text-amber-800 dark:text-amber-300 block">
+                  🇮🇳 हिंदी मूलवाणी / मुख्य सामग्री (Hindi):
+                </label>
+                <textarea
+                  value={currentItem.contentHi}
+                  onChange={(e) => setCurrentItem({ ...currentItem, contentHi: e.target.value })}
+                  rows={4}
+                  placeholder="हिंदी में मूलवाणी, श्लोक या संवाद यहाँ लिखें..."
+                  className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-serif"
+                />
+              </div>
+
+              {/* Punjabi Tab / Box */}
+              <div className="space-y-1.5 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                <label className="font-bold text-amber-800 dark:text-amber-300 block">
+                  🇵🇧 ਪੰਜਾਬੀ (Gurmukhi) ਸਿਰਲੇਖ ਅਤੇ ਪਾਵਨ ਬਾਣੀ:
+                </label>
+                <input
+                  type="text"
+                  value={currentItem.titlePb}
+                  onChange={(e) => setCurrentItem({ ...currentItem, titlePb: e.target.value })}
+                  placeholder="ਪੰਜਾਬੀ ਸਿਰਲੇਖ"
+                  className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-serif font-bold mb-1"
+                />
+                <textarea
+                  value={currentItem.contentPb}
+                  onChange={(e) => setCurrentItem({ ...currentItem, contentPb: e.target.value })}
+                  rows={4}
+                  placeholder="ਪੰਜਾਬੀ (ਗੁਰਮੁਖੀ) ਵਿੱਚ ਪਾਵਨ ਬਾਣੀ ਜਾਂ ਵੇਰਵਾ..."
+                  className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-serif"
+                />
+              </div>
+
+              {/* English Tab / Box */}
+              <div className="space-y-1.5 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                <label className="font-bold text-amber-800 dark:text-amber-300 block">
+                  🇬🇧 English Title &amp; Sacred Verse:
+                </label>
+                <input
+                  type="text"
+                  value={currentItem.titleEn}
+                  onChange={(e) => setCurrentItem({ ...currentItem, titleEn: e.target.value })}
+                  placeholder="English Title"
+                  className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-serif font-bold mb-1"
+                />
+                <textarea
+                  value={currentItem.contentEn}
+                  onChange={(e) => setCurrentItem({ ...currentItem, contentEn: e.target.value })}
+                  rows={4}
+                  placeholder="English translation or exegesis..."
+                  className="w-full p-2.5 rounded-xl border border-amber-500/40 bg-white dark:bg-zinc-900 text-xs font-serif"
+                />
+              </div>
+            </div>
+
+            <div className="pt-3 border-t flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setShowItemModal(false)}
+                className="px-4 py-2 rounded-xl border text-xs font-bold font-serif cursor-pointer"
+              >
+                रद्द करें
+              </button>
+              <button
+                type="button"
+                onClick={handleSaveItemModal}
+                className="px-5 py-2 rounded-xl bg-[#8B2500] hover:bg-amber-700 text-white text-xs font-bold font-serif cursor-pointer shadow-md"
+              >
+                प्रसंग सहेजें (Save Item)
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

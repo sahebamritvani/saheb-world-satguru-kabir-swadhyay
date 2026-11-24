@@ -19,7 +19,7 @@ import {
   ArrowLeft,
   X
 } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 
@@ -441,7 +441,7 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
       if (onOpenBlessing) {
         onOpenBlessing(
           language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦਿਵਯ ਆਦੇਸ਼ ਪ੍ਰਗਟ' : language === 'en' ? 'Divine Guidance Revealed' : 'सतगुरु दिव्य आदेश प्रकट',
-          language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਕਿਰਪਾ ਆਪ ਜੀ ਦੇ ਅੰਗ-ਸੰਗ ਹੈ।' : 'सतगुरु कबीर साहेब की कृपा आपके अंग-संग है।'
+          language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਕਿਰਪਾ ਆਪ ਜੀ ਦੇ ਅੰਗ-ਸੰਗ ਹੈ।' : language === 'en' ? 'The grace of Satguru Kabir Saheb is forever with you.' : 'सतगुरु कबीर साहेब की कृपा आपके अंग-संग है।'
         );
       }
     }, 1200);
@@ -470,21 +470,21 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
     <div className="max-w-4xl mx-auto p-3 sm:p-6 space-y-6">
       {/* Standardized Sacred Top Bar */}
       <div
+        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none grid grid-cols-[1fr_auto_1fr] items-center min-h-[44px]"
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-between gap-2 overflow-hidden min-h-[42px]"
       >
-        <div className="w-12 sm:w-20" /> 
+        <div />
 
-        <div className="flex-1 flex items-center justify-center text-center overflow-hidden px-1">
+        <div className="flex items-center justify-center text-center px-1">
           <span
             style={{ color: theme.sacredMaroon }}
-            className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis max-w-full"
+            className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap"
           >
-            {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+            {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
           </span>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
           {onClose && (
             <button
               type="button"
@@ -764,8 +764,8 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
               {onOpenBlessing && (
                 <button
                   onClick={() => onOpenBlessing(
-                    language === 'pb' ? 'ਪੁਸ਼ਪ ਅਰਪਣ ਤੇ ਗੁਰੂ ਕਿਰਪਾ' : 'पुष्प अर्पण एवं गुरु कृपा',
-                    language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦਾ ਸਮਰਪਣ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : 'सतगुरु कबीर साहेब के चरणों में आपका समर्पण स्वीकार हो।'
+                    language === 'pb' ? 'ਪੁਸ਼ਪ ਅਰਪਣ ਤੇ ਗੁਰੂ ਕਿਰਪਾ' : language === 'en' ? 'Sacred Petal Offering & Grace' : 'पुष्प अर्पण एवं गुरु कृपा',
+                    language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦਾ ਸਮਰਪਣ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your devotion at the lotus feet of Satguru Kabir Saheb be accepted.' : 'सतगुरु कबीर साहेब के चरणों में आपका समर्पण स्वीकार हो।'
                   )}
                   style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon }}
                   className="px-4 py-2.5 rounded-xl border border-amber-300 font-bold text-xs hover:scale-105 transition flex items-center gap-1.5 cursor-pointer"

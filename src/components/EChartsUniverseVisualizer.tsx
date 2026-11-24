@@ -392,7 +392,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                     ? 'Kabir Sagar: Incomprehensible plane of pristine non-attachment.'
                     : 'कबीर सागर: अलख अगम की महिमा भारी, जहँ सुरत पहुंचे निर्विकारी॥',
                   stateOfSoul: isPb ? 'ਅਲਖ ਨਿਰਮਲ ਚੇਤਨਾ' : isEn ? 'Pure transcendent awareness' : 'अलख निर्मल चेतना',
-                  verse: isPb ? 'ਅਲਖ ਅਗਮ ਕੀ ਸੀਮਾ ਨਾਹੀਂ, ਅਨਾਮੀ ਪੁਰਸ਼ ਤਹਾਂ ਸਮਾਨੀ॥' : 'अलख अगम की सीमा नाहीं, अनामी पुरुष तहाँ समानी॥',
+                  verse: isPb
+                    ? 'ਅਲਖ ਅਗਮ ਕੀ ਸੀਮਾ ਨਾਹੀਂ,\nਅਨਾਮੀ ਪੁਰਸ਼ ਤਹਾਂ ਸਮਾਨੀ॥'
+                    : isEn
+                    ? 'Beyond Alakh and Agam lies no boundary;\nThere dwells the Supreme Nameless Lord.'
+                    : 'अलख अगम की सीमा नाहीं,\nअनामी पुरुष तहाँ समानी॥',
                   searchKeywords: alakhKeywords,
                 },
               },
@@ -418,7 +422,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                     ? 'Kabir Sagar: Inaccessible realm attained via the true Sar Shabad.'
                     : 'कबीर सागर: अगम देश की अजब कहानी, जो जाने सोई पहचाने। कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
                   stateOfSoul: isPb ? 'ਅਗਮ ਅਵਸਥਾ ਵਿੱਚ ਲੀਨ' : isEn ? 'Merged in Agam essence' : 'अगम अवस्था में लीन',
-                  verse: isPb ? 'ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥' : 'कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
+                  verse: isPb
+                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ,\nਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥'
+                    : isEn
+                    ? 'Kabir Saheb revealed the Unfathomable Realm,\nEnding all suffering of birth and rebirth.'
+                    : 'कबीर साहेब अगम लखाया,\nआवागमन का कष्ट मिटाया॥',
                   searchKeywords: agamKeywords,
                 },
               },
@@ -467,7 +475,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                     : isEn
                     ? 'Resonates with the celestial flute melody before the gates of Truth.'
                     : 'जहाँ निरंतर अमृतमयी मुरली की धुन गूंजती है और हंस परमानंद में मग्न रहते हैं।',
-                  verse: isPb ? 'ਭੰਵਰ ਗੁਫ਼ਾ ਮੇਂ ਮੁਰਲੀ ਬਾਜੇ, ਸੋਹੰ ਲੋਕ ਸੁਹਾਵਨ ਹੋ॥' : 'भंवर गुफा में मुरली बाजे, सोहं लोक सुहावन हो॥',
+                  verse: isPb
+                    ? 'ਭੰਵਰ ਗੁਫ਼ਾ ਮੇਂ ਮੁਰਲੀ ਬਾਜੇ,\nਸੋਹੰ ਲੋਕ ਸੁਹਾਵਨ ਹੋ॥'
+                    : isEn
+                    ? 'In Bhanwar Gupha the celestial flute resounds,\nIlluminating the blissful realm of Soham.'
+                    : 'भंवर गुफा में मुरली बाजे,\nसोहं लोक सुहावन हो॥',
                   searchKeywords: 'bhanwar gupha soham murli flute',
                 },
               },
@@ -485,7 +497,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                     : isEn
                     ? 'The 16 Shankh Yojanas void where only the light of the Master\'s Name guides the soul.'
                     : '१६ शंख योजन का अगाध महा-शून्य जहाँ केवल सतगुरु के सत्यनाम का प्रकाश ही पार ले जाता है।',
-                  verse: isPb ? 'ਮਹਾਸ਼ੁੰਨ ਕੀ ਘਾਟੀ ਭਾਰੀ, ਗੁਰੂ ਬਿਨੁ ਪਾਰ ਨ ਪਾਵੇ ਕੋਈ॥' : 'महाशून्य की घाटी भारी, गुरु बिनु पार न पावै कोई॥',
+                  verse: isPb
+                    ? 'ਮਹਾਸ਼ੁੰਨ ਕੀ ਘਾਟੀ ਭਾਰੀ,\nਗੁਰੂ ਬਿਨੁ ਪਾਰ ਨ ਪਾਵੇ ਕੋਈ॥'
+                    : isEn
+                    ? 'Vast is the valley of Maha-Sunna Void;\nWithout the Satguru, none can cross over.'
+                    : 'महाशून्य की घाटी भारी,\nगुरु बिनु पार न पावै कोई॥',
                   searchKeywords: 'maha sunna great void 16 shankh yojanas',
                 },
               },
@@ -503,7 +519,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                     : isEn
                     ? 'The summit of Kaal\'s territory where Omkar sound reverberates.'
                     : '२१ ब्रह्मांडों का शिखर जहाँ ओंकार की नाद है। इसके पार अमरलोक का मार्ग खुलता है।',
-                  verse: isPb ? 'ਤ੍ਰਿਕੁਟੀ ਮਹਲ ਮੇਂ ਬਾਦਲ ਗਰਜੇ, ਲਾਲ ਗਗਨ ਵਿਚ ਸੁਰਤ ਬਿਰਾਜੇ॥' : 'त्रिकुटी महल में बादल गरजे, लाल गगन विच सुरत बिराजे॥',
+                  verse: isPb
+                    ? 'ਤ੍ਰਿਕੁਟੀ ਮਹਲ ਮੇਂ ਬਾਦਲ ਗਰਜੇ,\nਲਾਲ ਗਗਨ ਵਿਚ ਸੁਰਤ ਬਿਰਾਜੇ॥'
+                    : isEn
+                    ? 'In the palace of Trikuti clouds thunder;\nAmidst the crimson sky the soul abides.'
+                    : 'त्रिकुटी महल में बादल गरजे,\nलाल गगन विच सुरत बिराजे॥',
                   searchKeywords: 'trikuti omkar brahma kaal',
                 },
               },
@@ -536,7 +556,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                 ? 'Kabir Sagar: The 21 universes of Kaal Niranjan where souls wander in transmigrations.'
                 : 'कबीर सागर: काल पसारा सब जगत बंधाना, कोई विरला हंसा पार निकाला॥',
               stateOfSoul: isPb ? 'ਚੌਰਾਸੀ ਲੱਖ ਜੂਨਾਂ ਵਿੱਚ ਭਟਕਣਾ' : isEn ? 'Wandering in 8.4 million species' : 'चौरासी लाख योनियों में भ्रमण',
-              verse: isPb ? 'ਕਾਲ ਪਸਾਰਾ ਸਭ ਜਗਤ ਬੰਧਾਨਾ, ਕੋਈ ਵਿਰਲਾ ਹੰਸਾ ਪਾਰ ਨਿਕਾਨਾ॥' : 'काल पसारा सब जगत बंधाना, कोई विरला हंसा पार निकाला॥',
+              verse: isPb
+                ? 'ਕਾਲ ਪਸਾਰਾ ਸਭ ਜਗਤ ਬੰਧਾਨਾ,\nਕੋਈ ਵਿਰਲਾ ਹੰਸਾ ਪਾਰ ਨਿਕਾਨਾ॥'
+                : isEn
+                ? 'Kaal’s expanse has bound the entire world;\nOnly a rare awakened soul crosses beyond.'
+                : 'काल पसारा सब जगत बंधाना,\nकोई विरला हंसा पार निकाला॥',
               searchKeywords: kaalKeywords,
             },
             children: brahmandItems,
@@ -1005,23 +1029,23 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-700 inline-block" />
-                <span>{language === 'pb' ? 'ਅਨਾਮੀ ਲੋਕ (ਸਭ ਤੋਂ ਉੱਪਰ)' : 'अनामी लोक (सबसे ऊपर)'}</span>
+                <span>{language === 'pb' ? 'ਅਨਾਮੀ ਲੋਕ (ਸਭ ਤੋਂ ਉੱਪਰ)' : language === 'en' ? 'Anami Lok (Supreme)' : 'अनामी लोक (सबसे ऊपर)'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
-                <span>{language === 'pb' ? 'ਸਤਯਲੋਕ (ਸੱਚਖੰਡ)' : 'सत्यलोक (सचखंड)'}</span>
+                <span>{language === 'pb' ? 'ਸਤਯਲੋਕ (ਸੱਚਖੰਡ)' : language === 'en' ? 'Satyalok (Sachkhand)' : 'सत्यलोक (सचखंड)'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-orange-600 inline-block" />
-                <span>{language === 'pb' ? 'ਅਲਖ ਤੇ ਅਗਮ ਲੋਕ' : 'अलख व अगम लोक'}</span>
+                <span>{language === 'pb' ? 'ਅਲਖ ਤੇ ਅਗਮ ਲੋਕ' : language === 'en' ? 'Alakh & Agam Loks' : 'अलख व अगम लोक'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-stone-600 inline-block" />
-                <span>{language === 'pb' ? '੨੧ ਬ੍ਰਹਿਮੰਡ (ਕਾਲ)' : '२१ ब्रह्मांड (काल)'}</span>
+                <span>{language === 'pb' ? '੨੧ ਬ੍ਰਹਿਮੰਡ (ਕਾਲ)' : language === 'en' ? '21 Universes (Kaal)' : '२१ ब्रह्मांड (काल)'}</span>
               </span>
             </div>
             <span className="text-[10px] italic text-amber-700 dark:text-amber-300 font-bold">
-              💡 {language === 'pb' ? 'ਕਿਸੇ ਵੀ ਮੰਡਲ \'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਪੂਰਾ ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼ ਵੇਖੋ' : 'किसी भी मंडल पर क्लिक करके पूरा कबीर सागर उपदेश देखें'}
+              💡 {language === 'pb' ? 'ਕਿਸੇ ਵੀ ਮੰਡਲ \'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਪੂਰਾ ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼ ਵੇਖੋ' : language === 'en' ? 'Tap any realm to explore the full Kabir Sagar teaching' : 'किसी भी मंडल पर क्लिक करके पूरा कबीर सागर उपदेश देखें'}
             </span>
           </div>
         )}

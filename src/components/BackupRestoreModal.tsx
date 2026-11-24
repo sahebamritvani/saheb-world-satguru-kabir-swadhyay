@@ -36,7 +36,7 @@ export const BackupRestoreModal: React.FC<BackupRestoreModalProps> = ({ isOpen, 
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
 
-      setSuccessMsg(language === 'pb' ? 'ਬੈਕਅੱਪ ਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਡਾਊਨਲੋਡ ਹੋ ਗਈ!' : 'बैकअप फाइल सफलतापूर्वक डाउनलोड हो गई!');
+      setSuccessMsg(language === 'pb' ? 'ਬੈਕਅੱਪ ਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਡਾਊਨਲੋਡ ਹੋ ਗਈ!' : language === 'en' ? 'Backup file downloaded successfully!' : 'बैकअप फाइल सफलतापूर्वक डाउनलोड हो गई!');
       setTimeout(() => setSuccessMsg(null), 3000);
     } catch (err) {
       console.error('Export error:', err);

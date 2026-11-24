@@ -18,6 +18,7 @@ import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { satyanaamAudio } from '../services/audioDhun';
 import { buildFiveDimensionQuiz } from '../services/quizGenerator';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface DailySadhanaQuizModalProps {
   isOpen: boolean;
@@ -241,7 +242,7 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
                     style={{ color: isDarkMode ? '#FFFDF7' : theme.textPrimary }}
                     className="font-serif font-bold text-xs sm:text-sm leading-snug italic whitespace-pre-line"
                   >
-                    "{sakhi.text[language] || sakhi.text.hi}"
+                    "{formatCoupletString(sakhi.text[language] || sakhi.text.hi)}"
                   </p>
                 </div>
               </div>

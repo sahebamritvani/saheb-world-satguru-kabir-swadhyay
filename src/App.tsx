@@ -76,6 +76,7 @@ const KabirVaniCardMaker = lazy(() => import('./components/KabirVaniCardMaker').
 const SatvikSankalpTracker = lazy(() => import('./components/SatvikSankalpTracker').then(m => ({ default: m.SatvikSankalpTracker })));
 const KabirGyanQuiz = lazy(() => import('./components/KabirGyanQuiz').then(m => ({ default: m.KabirGyanQuiz })));
 const VanshBayalisModule = lazy(() => import('./components/VanshBayalisModule').then(m => ({ default: m.VanshBayalisModule })));
+const SatyanaamPanaceaView = lazy(() => import('./components/SatyanaamPanaceaView').then(m => ({ default: m.SatyanaamPanaceaView })));
 import { getStarterDailySakhi, loadFullSakhisModule } from './data/sakhiStarterData';
 import { Language, AppView, Sakhi, DiaryEntry, SggsKabirVerse } from './types';
 import { translations } from './data/translations';
@@ -161,7 +162,8 @@ function MainApp() {
       'vani-card-maker': 'vani-card-maker',
       'satvik-sankalp': 'satvik-sankalp',
       'kabir-gyan-quiz': 'kabir-gyan-quiz',
-      'vansh-bayalis': 'vansh-bayalis'
+      'vansh-bayalis': 'vansh-bayalis',
+      'satyanaam-panacea': 'satyanaam-panacea'
     };
     
     if (rawHash && !viewMap[rawHash]) {
@@ -1368,6 +1370,19 @@ function MainApp() {
         />
       )}
 
+      {/* View: Satyanaam: The Supreme Panacea */}
+      {currentView === 'satyanaam-panacea' && (
+        <SatyanaamPanaceaView
+          language={language}
+          onSelectLanguage={setLanguage}
+          onNavigateView={handleSelectView}
+          onClose={() => {
+            setCurrentView('daily');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
       {/* Guaranteed Permanent Safety Fallback: Never Blank */}
       {![
         'daily', 'swadhyay', 'das-sutra', 'dainik-chintan', 'nitnem-gutka', 'quiz',
@@ -1379,7 +1394,7 @@ function MainApp() {
         'growth-dashboard', 'bhajan-repository', 'damakheda-index', 'acharya-parampara',
         'divine-darshan', 'chetavani-saarang', 'sggs-kabir-bani', 'satya-naam', 'aatma-bhushan',
         'gyan-chakra', 'nature-wallpaper', 'mool-siddhant', 'hukamnama',
-        'vani-card-maker', 'satvik-sankalp', 'kabir-gyan-quiz', 'vansh-bayalis'
+        'vani-card-maker', 'satvik-sankalp', 'kabir-gyan-quiz', 'vansh-bayalis', 'satyanaam-panacea'
       ].includes(currentView) && (
         <DailyPawanSakhi
           sakhi={currentDailySakhi}

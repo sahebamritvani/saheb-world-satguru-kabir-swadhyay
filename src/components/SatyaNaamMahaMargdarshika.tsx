@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter } from '../services/audioDhun';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface SatyaNaamMahaMargdarshikaProps {
   language: Language;
@@ -236,7 +237,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
                                 </div>
 
                                 <p className="font-serif font-black text-sm sm:text-base text-amber-950 dark:text-amber-100 whitespace-pre-line leading-relaxed">
-                                  {language === 'pb' ? d.coupletPb : d.couplet}
+                                  {formatCoupletString(language === 'pb' ? d.coupletPb : d.couplet)}
                                 </p>
 
                                 <div className="text-[11px] font-mono text-gray-500 dark:text-gray-400">
@@ -275,7 +276,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-serif">
               {language === 'pb'
-                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਨੇ ਅਨੁਰਾਗ ਸਾਗਰ ਵਿੱਚ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਸਮਝਾਇਆ ਹੈ ਕਿ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਨਿਕਲਣ ਲਈ ਜੀਵ ਨੂੰ ਨਾਮ ਦੀਆਂ ਤਿੰਨ ਅਵਸਥਾਵਾਂ (ਪ੍ਰਥਮ ਨਾਮ, ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਨਾਮ) ਵਿੱਚੋਂ ਗੁਜ਼ਰਨਾ ਪੈਂਦਾ ਹੈ:'
+                ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਅਨੁਰਾਗ ਸਾਗਰ ਵਿੱਚ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਸਮਝਾਇਆ ਹੈ ਕਿ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਨਿਕਲਣ ਲਈ ਜੀਵ ਨੂੰ ਨਾਮ ਦੀਆਂ ਤਿੰਨ ਅਵਸਥਾਵਾਂ (ਪ੍ਰਥਮ ਨਾਮ, ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਨਾਮ) ਵਿੱਚੋਂ ਗੁਜ਼ਰਨਾ ਪੈਂਦਾ ਹੈ:'
                 : language === 'en'
                 ? 'In Anurag Sagar, Kabir Saheb elucidated to Dharmadas Ji that the soul passes through distinct stages of Naam to cross beyond the 21 universes of Kal:'
                 : 'सतगुरु कबीर साहेब ने अपने ग्रंथ \'अनुराग सागर\' में धर्मदास जी को समझाया है कि काल के जाल से निकलने के लिए जीव को नाम की तीन अवस्थाओं (प्रथम नाम, सत्यनाम, और सारनाम) से गुजरना पड़ता है:'}
@@ -367,7 +368,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           >
             <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300 font-serif font-bold text-sm">
               <Sparkles className="w-4 h-4 text-amber-600" />
-              <span>{language === 'pb' ? 'ਵੇਈਂ ਨਦੀ ਮਿਲਾਪ ਅਤੇ ਜ਼ਿੰਦਾ ਪੀਰ ਦਰਸ਼ਨ' : 'वेईं नदी मिलाप एवं जिंदा महात्मा दर्शन'}</span>
+              <span>{language === 'pb' ? 'ਵੇਈਂ ਨਦੀ ਮਿਲਾਪ ਅਤੇ ਜ਼ਿੰਦਾ ਪੀਰ ਦਰਸ਼ਨ' : language === 'en' ? 'Bein River Meeting & Zinda Mahatma Darshan' : 'वेईं नदी मिलाप एवं जिंदा महात्मा दर्शन'}</span>
             </div>
             <p className="text-xs sm:text-sm font-serif leading-relaxed text-justify text-gray-700 dark:text-gray-200">
               {getTranslated(GURU_NANAK_KABIR_DIALOGUE.meetingBackground)}
@@ -381,7 +382,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           >
             <div className="flex items-center gap-2 text-amber-800 dark:text-amber-200 font-serif font-black text-sm sm:text-base">
               <span>☬</span>
-              <span>{language === 'pb' ? 'ਜਪੁਜੀ ਸਾਹਿਬ ਦੀ ਪ੍ਰਥਮ ਤੁਕ ਵਿੱਚ ਸਤਯਨਾਮ ਦੀ ਮਹਿਮਾ' : 'जपुजी साहिब की प्रथम पंक्ति में सत्यनाम की महिमा'}</span>
+              <span>{language === 'pb' ? 'ਜਪੁਜੀ ਸਾਹਿਬ ਦੀ ਪ੍ਰਥਮ ਤੁਕ ਵਿੱਚ ਸਤਯਨਾਮ ਦੀ ਮਹਿਮਾ' : language === 'en' ? 'Glory of Satyanaam in Japji Sahib Opening Verse' : 'जपुजी साहिब की प्रथम पंक्ति में सत्यनाम की महिमा'}</span>
             </div>
             <p className="text-xs sm:text-sm font-serif leading-relaxed text-justify text-gray-800 dark:text-gray-100">
               {getTranslated(GURU_NANAK_KABIR_DIALOGUE.satyaNaamMahima)}
@@ -395,7 +396,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           >
             <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300 font-serif font-bold text-sm">
               <Compass className="w-4 h-4 text-amber-600" />
-              <span>{language === 'pb' ? 'ਤ੍ਰਿਲੋਕੀ (ਕਾਲ ਲੋਕ) ਦੇ ਪਾਰ ਸੱਚਖੰਡ ਦਾ ਮਾਰਗ' : 'त्रिलोकी (काल लोक) के पार सचखंड (सतलोक) का मार्ग'}</span>
+              <span>{language === 'pb' ? 'ਤ੍ਰਿਲੋਕੀ (ਕਾਲ ਲੋਕ) ਦੇ ਪਾਰ ਸੱਚਖੰਡ ਦਾ ਮਾਰਗ' : language === 'en' ? 'Path to Sachkhand (Satlok) Beyond the Three Worlds' : 'त्रिलोकी (काल लोक) के पार सचखंड (सतलोक) का मार्ग'}</span>
             </div>
             <p className="text-xs sm:text-sm font-serif leading-relaxed text-justify text-gray-700 dark:text-gray-200">
               {getTranslated(GURU_NANAK_KABIR_DIALOGUE.trilokiVsSachkhand)}
@@ -405,7 +406,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           {/* Historical Authentic Verses */}
           <div className="space-y-3">
             <h3 className="font-serif font-bold text-xs uppercase tracking-wider text-amber-700 dark:text-amber-300">
-              {language === 'pb' ? 'ਇਤਿਹਾਸਕ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ ਤੁਕਾਂ' : 'ऐतिहासिक प्रामाणिक वाणी पंक्तियाँ'}
+              {language === 'pb' ? 'ਇਤਿਹਾਸਕ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ ਤੁਕਾਂ' : language === 'en' ? 'Authentic Historical Vani Excerpts' : 'ऐतिहासिक प्रामाणिक वाणी पंक्तियाँ'}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {GURU_NANAK_KABIR_DIALOGUE.historicalVerses.map((v, vIdx) => (
@@ -414,8 +415,8 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
                   style={{ backgroundColor: theme.cardBg, borderColor: theme.borderOrnament }}
                   className="p-4 rounded-2xl border space-y-2 shadow-2xs"
                 >
-                  <p className="font-serif font-black text-sm text-amber-900 dark:text-amber-200">
-                    {language === 'pb' ? v.gurmukhi : v.devanagari}
+                  <p className="font-serif font-black text-sm text-amber-900 dark:text-amber-200 whitespace-pre-line">
+                    {formatCoupletString(language === 'pb' ? v.gurmukhi : v.devanagari)}
                   </p>
                   <p className="text-xs text-gray-600 dark:text-gray-300 font-serif leading-relaxed">
                     {getTranslated(v.meaning)}
@@ -432,7 +433,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
           >
             <div className="flex items-center gap-2 text-amber-800 dark:text-amber-300 font-serif font-bold text-xs uppercase tracking-widest">
               <ShieldCheck className="w-4 h-4" />
-              <span>{language === 'pb' ? 'ਇਸ ਮਾਰਗ ਦੀ ਪਰਮ ਪ੍ਰਾਸੰਗਿਕਤਾ' : 'इस मार्ग की परम प्रासंगिकता व मोक्ष निश्चय'}</span>
+              <span>{language === 'pb' ? 'ਇਸ ਮਾਰਗ ਦੀ ਪਰਮ ਪ੍ਰਾਸੰਗਿਕਤਾ' : language === 'en' ? 'Supreme Spiritual Relevance & Liberation' : 'इस मार्ग की परम प्रासंगिकता व मोक्ष निश्चय'}</span>
             </div>
             <p className="text-xs sm:text-sm font-serif leading-relaxed text-gray-700 dark:text-gray-200">
               {getTranslated(GURU_NANAK_KABIR_DIALOGUE.spiritualRelevance)}

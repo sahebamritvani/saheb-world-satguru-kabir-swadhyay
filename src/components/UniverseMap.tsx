@@ -22,7 +22,7 @@ import {
   Sun
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
@@ -536,9 +536,9 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-xs sm:text-base font-black tracking-normal font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
         </span>
       </div>
 
@@ -739,7 +739,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                   </span>
                 </h3>
                 <span className="text-[10px] font-bold text-red-600 dark:text-red-400 font-serif">
-                  {filteredStages.length} {language === 'pb' ? 'ਮੰਡਲ' : 'मंडल'}
+                  {filteredStages.length} {language === 'pb' ? 'ਮੰਡਲ' : language === 'en' ? 'Realms' : 'मंडल'}
                 </span>
               </div>
 

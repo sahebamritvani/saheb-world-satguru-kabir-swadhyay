@@ -19,9 +19,10 @@ import {
   Award,
   CircleDot
 } from 'lucide-react';
-import { Language, AppView } from '../types';
+import { Language, AppView, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface MoolSiddhantModuleProps {
   language: Language;
@@ -150,12 +151,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
   const handleShareDoha = (dohaItem: DohaItem) => {
     sacredHaptics.lightTap();
     const liveUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sahebworld.app';
-    const header =
-      activeLang === 'pb'
-        ? '🌹 ॥ ਸਤਯਨਾਮ ॥ 🌹'
-        : activeLang === 'en'
-        ? '🌹 || Satyanaam || 🌹'
-        : '🌹 ॥ सत्यनाम ॥ 🌹';
+    const header = SACRED_BRANDING.header[activeLang] || SACRED_BRANDING.header.hi;
     const sourceLabel = activeLang === 'pb' ? 'ਸਰੋਤ' : activeLang === 'en' ? 'Source' : 'स्रोत';
     const meaningLabel = activeLang === 'pb' ? 'ਭਾਵਾਰਥ' : activeLang === 'en' ? 'Meaning' : 'भावार्थ';
     const openLabel =
@@ -164,14 +160,9 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
         : activeLang === 'en'
         ? 'Explore full Swadhyay in Saheb World:'
         : 'पावन स्वाध्याय हेतु साहेब वर्ल्ड खोलें:';
-    const footer =
-      activeLang === 'pb'
-        ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏'
-        : activeLang === 'en'
-        ? '|| Saheb Bandagi Saheb || 🙏'
-        : '।। साहेब बंदगी साहेब ।। 🙏';
+    const footer = SACRED_BRANDING.footer[activeLang] || SACRED_BRANDING.footer.hi;
 
-    const text = `${header}\n\n${dohaItem.doha}\n\n📌 ${sourceLabel}: ${dohaItem.source[activeLang] || dohaItem.source.hi}\n\n📖 ${meaningLabel}: ${dohaItem.meaning[activeLang] || dohaItem.meaning.hi}\n\n👉 ${openLabel}\n${liveUrl}/#mool-siddhant\n\n${footer}`;
+    const text = `${header}\n\n${formatCoupletString(dohaItem.doha)}\n\n📌 ${sourceLabel}: ${dohaItem.source[activeLang] || dohaItem.source.hi}\n\n📖 ${meaningLabel}: ${dohaItem.meaning[activeLang] || dohaItem.meaning.hi}\n\n👉 ${openLabel}\n${liveUrl}/#mool-siddhant\n\n${footer}`;
 
     if (navigator.share) {
       navigator.share({
@@ -213,7 +204,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       detail: {
         hi: 'सत्ययुग में सतगुरु कबीर साहेब "सत्सुकृत" नाम से अवतरित हुए। राजा सुकृत को अमर ज्ञान दिया और बताया कि संसार की उत्पत्ति से पूर्व भी केवल एक सत्यपुरुष और सत्यनाम ही अविनाशी था।',
-        pb: 'ਸਤਿਯੁਗ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ "ਸਤਸੁਕ੍ਰਿਤ" ਨਾਮ ਨਾਲ ਪ੍ਰਗਟ ਹੋਏ। ਰਾਜਾ ਸੁਕ੍ਰਿਤ ਨੂੰ ਅਮਰ ਗਿਆਨ ਦਿੱਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦੀ ਸ਼ਾਸ਼ਵਤ ਮਹਿਮਾ ਦਰਸਾਈ।',
+        pb: 'ਸਤਿਯੁਗ ਵਿੱਚ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ "ਸਤਸੁਕ੍ਰਿਤ" ਨਾਮ ਨਾਲ ਪ੍ਰਗਟ ਹੋਏ। ਰਾਜਾ ਸੁਕ੍ਰਿਤ ਨੂੰ ਅਮਰ ਗਿਆਨ ਦਿੱਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦੀ ਸ਼ਾਸ਼ਵਤ ਮਹਿਮਾ ਦਰਸਾਈ।',
         en: 'In Satyuga, Satguru Kabir manifested as "Satsukrit", awakening King Sukrit to the immortal truth that before cosmos emerged, the One Satyanaam alone is eternal.',
       },
       badge: { hi: 'युग १', pb: 'ਯੁਗ ੧', en: 'Yuga 1' },
@@ -237,7 +228,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       detail: {
         hi: 'त्रेतायुग में "मुनिन्द्र साहेब" के रूप में पधारे। नल, नील, मंदोदरी और विभीषण को नामदान दिया तथा समुद्र पर पत्थर तैराने में सत्यनाम की अगाध शक्ति प्रकट की।',
-        pb: 'ਤ੍ਰੇਤਾਯੁਗ ਵਿੱਚ "ਮੁਨਿੰਦ੍ਰ ਸਾਹਿਬ" ਦੇ ਰੂਪ ਵਿੱਚ ਪਧਾਰੇ। ਨਲ, ਨੀਲ ਅਤੇ ਵਿਭੀਸ਼ਣ ਨੂੰ ਨਾਮਦਾਨ ਦੇ ਕੇ ਸਤਯਨਾਮ ਦੀ ਅਥਾਹ ਸ਼ਕਤੀ ਪ੍ਰਗਟ ਕੀਤੀ।',
+        pb: 'ਤ੍ਰੇਤਾਯੁਗ ਵਿੱਚ "ਮੁਨਿੰਦ੍ਰ ਸਾਹੇਬ" ਦੇ ਰੂਪ ਵਿੱਚ ਪਧਾਰੇ। ਨਲ, ਨੀਲ ਅਤੇ ਵਿਭੀਸ਼ਣ ਨੂੰ ਨਾਮਦਾਨ ਦੇ ਕੇ ਸਤਯਨਾਮ ਦੀ ਅਥਾਹ ਸ਼ਕਤੀ ਪ੍ਰਗਟ ਕੀਤੀ।',
         en: 'In Tretayuga, manifested as "Munindra", initiating Nal, Neel, Mandodari, and Vibhishana into Satyanaam and demonstrating its supreme divine potency.',
       },
       badge: { hi: 'युग २', pb: 'ਯੁਗ ੨', en: 'Yuga 2' },
@@ -261,7 +252,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       detail: {
         hi: 'द्वापरयुग में "करुणामय साहेब" के नाम से प्रकट होकर सुपच सुदर्शन (सुपच भगत) को सत्य भक्ति का अधिकारी बनाया और पाण्डवों के यज्ञ को सत्यनाम की कृपा से पूर्ण कराया।',
-        pb: 'ਦ੍ਵਾਪਰਯੁਗ ਵਿੱਚ "ਕਰੁਣਾਮਯ ਸਾਹਿਬ" ਵਜੋਂ ਪ੍ਰਗਟ ਹੋ ਕੇ ਸੁਪਚ ਸੁਦਰਸ਼ਨ ਨੂੰ ਸੱਚੀ ਭਗਤੀ ਦਾ ਅਧਿਕਾਰੀ ਬਣਾਇਆ ਤੇ ਪਾਂਡਵਾਂ ਦੇ ਯੱਗ ਨੂੰ ਪੂਰਾ ਕਰਵਾਇਆ।',
+        pb: 'ਦ੍ਵਾਪਰਯੁਗ ਵਿੱਚ "ਕਰੁਣਾਮਯ ਸਾਹੇਬ" ਵਜੋਂ ਪ੍ਰਗਟ ਹੋ ਕੇ ਸੁਪਚ ਸੁਦਰਸ਼ਨ ਨੂੰ ਸੱਚੀ ਭਗਤੀ ਦਾ ਅਧਿਕਾਰੀ ਬਣਾਇਆ ਤੇ ਪਾਂਡਵਾਂ ਦੇ ਯੱਗ ਨੂੰ ਪੂਰਾ ਕਰਵਾਇਆ।',
         en: 'In Dwaparyuga as "Karunamay", blessed Supach Sudarshan, crowning the Pandavas\' great Yajna with the supreme grace of humble Satyanaam remembrance.',
       },
       badge: { hi: 'युग ३', pb: 'ਯੁਗ ੩', en: 'Yuga 3' },
@@ -285,7 +276,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       detail: {
         hi: 'कलियुग में काशी के लहरतारा सरोवर में नीर-क्षीर कमल पर साक्षात "सद्गुरु कबीर साहेब" प्रकट हुए। धनी धर्मदास जी को वंश बयालीस का वरदान और संसार को सत्यनाम से मोक्ष का अटल मार्ग दिया।',
-        pb: 'ਕਲਿਯੁਗ ਵਿੱਚ ਕਾਸ਼ੀ ਦੇ ਲਹਰਤਾਰਾ ਸਰੋਵਰ \'ਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਪ੍ਰਗਟ ਹੋਏ। ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਵੰਸ਼ ਬਤਾਲੀ ਦਾ ਵਰਦਾਨ ਅਤੇ ਸਤਯਨਾਮ ਰਾਹੀਂ ਮੁਕਤੀ ਦਾ ਮਾਰਗ ਦਿੱਤਾ।',
+        pb: 'ਕਲਿਯੁਗ ਵਿੱਚ ਕਾਸ਼ੀ ਦੇ ਲਹਰਤਾਰਾ ਸਰੋਵਰ \'ਤੇ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਗਟ ਹੋਏ। ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਵੰਸ਼ ਬਤਾਲੀ ਦਾ ਵਰਦਾਨ ਅਤੇ ਸਤਯਨਾਮ ਰਾਹੀਂ ਮੁਕਤੀ ਦਾ ਮਾਰਗ ਦਿੱਤਾ।',
         en: 'In Kaliyuga, manifested directly as "Satguru Kabir Saheb" upon the Lahartara lake in Kashi, gifting the Vansh Bayalis promise to Dhani Dharmadas and eternal salvation to humanity.',
       },
       badge: { hi: 'युग ४', pb: 'ਯੁਗ ੪', en: 'Yuga 4' },
@@ -375,7 +366,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       meaning: {
         hi: 'वृक्ष के मूल (जड़) को पकड़ने से पूरा वृक्ष फलित होता है, पर केवल डालियों को पकड़ने से सब व्यर्थ हो जाता है। कबीर साहेब कहते हैं, वही मनुष्य धन्य हैं जो मूल सत्यनाम से जुड़े रहते हैं।',
-        pb: 'ਜੜ੍ਹ ਨੂੰ ਫੜਨ ਨਾਲ ਸਾਰਾ ਰੁੱਖ ਸਧਦਾ ਹੈ, ਡਾਲੀਆਂ ਫੜਨ ਨਾਲ ਸਭ ਨਸ਼ਟ ਹੋ ਜਾਂਦਾ ਹੈ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ, ਉਹੀ ਧੰਨ ਹਨ ਜੋ ਮੂਲ ਸਤਯਨਾਮ ਨਾਲ ਜੁੜੇ ਰਹਿੰਦੇ ਹਨ।',
+        pb: 'ਜੜ੍ਹ ਨੂੰ ਫੜਨ ਨਾਲ ਸਾਰਾ ਰੁੱਖ ਸਧਦਾ ਹੈ, ਡਾਲੀਆਂ ਫੜਨ ਨਾਲ ਸਭ ਨਸ਼ਟ ਹੋ ਜਾਂਦਾ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ, ਉਹੀ ਧੰਨ ਹਨ ਜੋ ਮੂਲ ਸਤਯਨਾਮ ਨਾਲ ਜੁੜੇ ਰਹਿੰਦੇ ਹਨ।',
         en: 'Holding the root nourishes the entire tree; grasping only the outer branches leads to ruin. Kabir says, blessed are those who stay anchored to the One Root.',
       },
     },
@@ -428,10 +419,10 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
 
   // Dynamic fruit badges labels based on active language
   const fruitLabels = activeLang === 'pb' 
-    ? [{ x: 132, y: 245, label: "ਭਗਤੀ" }, { x: 268, y: 245, label: "ਸੁੱਖ" }, { x: 168, y: 292, label: "ਮੁਕਤੀ" }, { x: 232, y: 292, label: "ਸ਼ਾਂਤੀ" }]
+    ? [{ x: 120, y: 245, label: "ਭਗਤੀ" }, { x: 280, y: 245, label: "ਸੁੱਖ" }, { x: 155, y: 300, label: "ਮੁਕਤੀ" }, { x: 245, y: 300, label: "ਸ਼ਾਂਤੀ" }]
     : activeLang === 'en'
-    ? [{ x: 132, y: 245, label: "Bhakti" }, { x: 268, y: 245, label: "Joy" }, { x: 168, y: 292, label: "Mukti" }, { x: 232, y: 292, label: "Shanti" }]
-    : [{ x: 132, y: 245, label: "भक्ति" }, { x: 268, y: 245, label: "सुख" }, { x: 168, y: 292, label: "मुक्ति" }, { x: 232, y: 292, label: "शांति" }];
+    ? [{ x: 110, y: 245, label: "Devotion" }, { x: 290, y: 245, label: "Happiness" }, { x: 150, y: 300, label: "Liberation" }, { x: 250, y: 300, label: "Peace" }]
+    : [{ x: 120, y: 245, label: "भक्ति" }, { x: 280, y: 245, label: "सुख" }, { x: 155, y: 300, label: "मुक्ति" }, { x: 245, y: 300, label: "शांति" }];
 
   return (
     <div 
@@ -441,6 +432,22 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       }} 
       className="min-h-screen pb-20 selection:bg-amber-500 selection:text-white"
     >
+      {/* Top-Center Sacred Banner */}
+      <div
+        style={{
+          backgroundColor: isDarkMode ? '#241A14' : '#FAF0DC',
+          borderColor: 'rgba(217, 119, 6, 0.35)',
+        }}
+        className="border-b py-2 px-3 sm:px-4 flex items-center justify-center select-none"
+      >
+        <span
+          style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
+          className="text-base sm:text-lg font-black tracking-wide font-serif whitespace-nowrap text-center"
+        >
+          {SACRED_BRANDING.header[activeLang]}
+        </span>
+      </div>
+
       {/* Top Header Navigation Bar */}
       <header 
         style={{
@@ -535,7 +542,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
               <>ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ।<br />ਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥</>
             )}
             {activeLang === 'en' && (
-              <>Master the One Satyanaam, and everything in life falls into place;<br className="hidden sm:inline" /> Kabir says, without this One Root, the entire life goes in vain.</>
+              <>Master the One Satyanaam, and everything in life falls into place;<br />Kabir says, without this One Root, the entire life goes in vain.</>
             )}
             {activeLang === 'hi' && (
               <>सत्यनाम को साध ले, सब कुछ सधता जाय।<br />कहैं कबीर इस मूल बिन, सारा जीवन जाय॥</>
@@ -600,79 +607,123 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
             </button>
           </div>
 
-          {/* SVG Inverted Tree Canvas */}
-          <div className="bg-gradient-to-b from-amber-50/40 via-amber-100/20 to-transparent dark:from-stone-900/40 dark:to-transparent rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center">
-            <svg viewBox="0 0 400 360" className="w-full max-w-md mx-auto overflow-visible select-none">
+          {/* SVG Inverted Tree Canvas with Multi-layered Light Animations */}
+          <div className="bg-gradient-to-b from-amber-50/50 via-amber-100/20 to-transparent dark:from-stone-900/50 dark:to-transparent rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+            <svg viewBox="0 0 400 380" className="w-full max-w-md mx-auto overflow-visible select-none">
               <defs>
-                <radialGradient id="rootGlow" cx="50%" cy="20%" r="50%">
-                  <stop offset="0%" stopColor="#FBBF24" stopOpacity={isWatered ? "0.9" : "0.3"} />
+                <radialGradient id="rootHalo" cx="50%" cy="18%" r="55%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity={isWatered ? "1" : "0.85"} />
+                  <stop offset="40%" stopColor="#FEF08A" stopOpacity={isWatered ? "0.9" : "0.4"} />
                   <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#F59E0B" />
-                  <stop offset="40%" stopColor="#78350F" />
-                  <stop offset="100%" stopColor="#451A03" />
+                  <stop offset="50%" stopColor="#92400E" />
+                  <stop offset="100%" stopColor="#3F1502" />
                 </linearGradient>
+                <linearGradient id="lightRayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+                  <stop offset="50%" stopColor="#FDE047" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
+                </linearGradient>
+                <filter id="glowShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation={isWatered ? "8" : "3"} result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
               </defs>
 
-              {/* Top Golden Aura */}
-              <circle cx="200" cy="65" r={isWatered ? "85" : "55"} fill="url(#rootGlow)" className="transition-all duration-1000" />
+              {/* Radiant Pure White & Soft Golden Divine Light Rays shining downward */}
+              <g opacity={isWatered ? "1" : "0.5"} className="transition-opacity duration-1000">
+                <polygon points="200,45 130,220 170,220" fill="url(#lightRayGrad)" />
+                <polygon points="200,45 170,240 210,240" fill="url(#lightRayGrad)" />
+                <polygon points="200,45 230,220 270,220" fill="url(#lightRayGrad)" />
+                <polygon points="200,45 100,190 140,190" fill="url(#lightRayGrad)" opacity="0.6" />
+                <polygon points="200,45 260,190 300,190" fill="url(#lightRayGrad)" opacity="0.6" />
+              </g>
 
-              {/* Top Label: Satyanaam Mool */}
-              <text x="200" y="24" textAnchor="middle" fill="#6B1D1D" fontWeight="bold" fontSize="16">
-                {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ (ਮੂਲ) ॥' : activeLang === 'en' ? '|| SATYANAAM (ROOT) ||' : '॥ सत्यनाम (मूल) ॥'}
+              {/* Top Luminous Halo */}
+              <circle cx="200" cy="55" r={isWatered ? "95" : "65"} fill="url(#rootHalo)" className="transition-all duration-1000" />
+
+              {/* Top Label: Satyanaam Root */}
+              <text x="200" y="22" textAnchor="middle" fill="#6B1D1D" fontWeight="900" fontSize="16" className="dark:fill-amber-300 font-serif tracking-wide drop-shadow-sm">
+                {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ (ਮੂਲ) ॥' : activeLang === 'en' ? '॥ Satyanaam (Root) ॥' : '॥ सत्यनाम (मूल) ॥'}
               </text>
 
-              {/* Upward Roots (Top) */}
-              <g stroke={isWatered ? "#F59E0B" : "#92400E"} strokeWidth="3" fill="none" className="transition-colors duration-700">
-                <path d="M200,85 C190,60 165,45 140,38" />
-                <path d="M200,85 C195,55 180,40 170,32" />
-                <path d="M200,85 C200,55 200,40 200,30" />
-                <path d="M200,85 C205,55 220,40 230,32" />
-                <path d="M200,85 C210,60 235,45 260,38" />
+              {/* Intricate Glowing Roots Spreading Upward */}
+              <g stroke={isWatered ? "#FFFFFF" : "#F59E0B"} strokeWidth={isWatered ? "3.5" : "2.5"} fill="none" filter="url(#glowShadow)" className="transition-all duration-700">
+                <path d="M200,75 C190,50 160,35 125,28" />
+                <path d="M200,75 C195,45 175,30 155,20" />
+                <path d="M200,75 C200,45 200,25 200,15" />
+                <path d="M200,75 C205,45 225,30 245,20" />
+                <path d="M200,75 C210,50 240,35 275,28" />
+                <path d="M185,65 C175,45 150,35 135,25" />
+                <path d="M215,65 C225,45 250,35 265,25" />
               </g>
 
-              {/* Inverted Trunk & Downward Branches */}
-              <path d="M185,85 L215,85 L222,175 L265,230 L250,240 L208,190 L208,260 L192,260 L192,190 L150,240 L135,230 L178,175 Z" fill="url(#trunkGrad)" />
+              {/* Majestic Inverted Banyan Trunk & Branches with 3D Depth */}
+              <path d="M182,75 L218,75 L228,170 C245,190 275,215 285,235 C295,250 275,265 255,250 C235,235 220,200 210,185 L210,265 C210,280 190,280 190,265 L190,185 C180,200 165,235 145,250 C125,265 105,250 115,235 C125,215 155,190 172,170 Z" fill="url(#trunkGrad)" filter="url(#glowShadow)" />
 
-              {/* Downward Lush Green Foliage */}
-              <g fill={isWatered ? "#15803D" : "#166534"} className="transition-colors duration-700">
-                <circle cx="135" cy="245" r="42" />
-                <circle cx="265" cy="245" r="42" />
-                <circle cx="170" cy="285" r="46" />
-                <circle cx="230" cy="285" r="46" />
-                <circle cx="200" cy="255" r="50" />
+              {/* Lush Multi-layered Downward Foliage (Clusters of Green Leaves) */}
+              <g fill={isWatered ? "#16A34A" : "#15803D"} filter="url(#glowShadow)" className="transition-colors duration-700">
+                <circle cx="125" cy="245" r="45" opacity="0.95" />
+                <circle cx="275" cy="245" r="45" opacity="0.95" />
+                <circle cx="160" cy="295" r="50" opacity="0.9" />
+                <circle cx="240" cy="295" r="50" opacity="0.9" />
+                <circle cx="200" cy="265" r="55" opacity="0.95" />
               </g>
 
-              {/* Golden Energy Flow Lines (Top Root to Bottom Branches) */}
-              <g stroke="#FDE047" strokeWidth={isWatered ? "3.5" : "1"} strokeDasharray="6 4" fill="none" opacity={isWatered ? "1" : "0.25"} className="transition-all duration-1000">
-                <path d="M200,60 L200,180 L140,245" />
-                <path d="M200,60 L200,180 L260,245" />
-                <path d="M200,60 L200,285 L175,285" />
-                <path d="M200,60 L200,285 L225,285" />
+              {/* Smooth Luminous Golden-White Energy Waves Flowing Down */}
+              <g stroke="#FFFFFF" strokeWidth={isWatered ? "4" : "1.5"} strokeDasharray="8 6" fill="none" opacity={isWatered ? "1" : "0.3"} className="transition-all duration-1000 animate-pulse">
+                <path d="M200,55 L200,180 L125,245" />
+                <path d="M200,55 L200,180 L275,245" />
+                <path d="M200,55 L200,265 L160,295" />
+                <path d="M200,55 L200,265 L240,295" />
               </g>
 
-              {/* Upright Readable Fruit Badges on Downward Branches */}
+              {/* Four Upright Readable Leaf Badges (Devotion, Happiness, Liberation, Peace) */}
               {fruitLabels.map((item, idx) => (
-                <g key={idx}>
-                  <rect x={item.x - 28} y={item.y - 13} width="56" height="26" rx="13" fill={isWatered ? "#FEF08A" : "#FEF3C7"} stroke="#D97706" strokeWidth="2" />
-                  <text x={item.x} y={item.y + 5} textAnchor="middle" fill="#6B1D1D" fontWeight="bold" fontSize="13">
+                <g key={idx} className="transition-transform duration-300 hover:scale-105">
+                  <rect 
+                    x={item.x - 42} 
+                    y={item.y - 15} 
+                    width="84" 
+                    height="32" 
+                    rx="16" 
+                    fill={isWatered ? "#FEF08A" : "#FEF3C7"} 
+                    stroke="#D97706" 
+                    strokeWidth="2.5" 
+                    filter="url(#glowShadow)" 
+                  />
+                  <text 
+                    x={item.x} 
+                    y={item.y + 5} 
+                    textAnchor="middle" 
+                    fill="#6B1D1D" 
+                    fontWeight="900" 
+                    fontSize="13" 
+                    className="font-serif tracking-tight"
+                  >
                     {item.label}
                   </text>
                 </g>
               ))}
             </svg>
 
-            {/* Inverted Tree Explanation Footer */}
-            <div className="mt-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-center max-w-lg">
-              <p className="text-xs font-serif text-stone-700 dark:text-stone-300">
+            {/* Peaceful Status Message & Gita/Bijak Wisdom Footer */}
+            <div className="mt-4 p-4 rounded-2xl bg-amber-500/12 border border-amber-500/30 text-center max-w-xl space-y-2">
+              {isWatered && (
+                <div className="p-2 rounded-xl bg-emerald-600/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-serif font-black animate-pulse">
+                  ✨ {activeLang === 'pb' ? 'ਇੱਕ ਸਤਯਨਾਮ ਨੂੰ ਸਾਧਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਆਪਣੇ ਆਪ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।' : activeLang === 'en' ? 'By mastering the One Satyanaam, devotion, happiness, liberation, and peace are effortlessly attained.' : 'एक सत्यनाम को साधने से भक्ति, सुख, मुक्ति और शांति स्वतः प्राप्त होते हैं।'}
+                </div>
+              )}
+              <p className="text-xs font-serif text-stone-700 dark:text-stone-300 leading-relaxed">
                 <span className="font-bold text-[#D97706]">
                   {activeLang === 'pb' ? 'ਬੀਜਕ ਤੇ ਗੀਤਾ ਦਰਸ਼ਨ: ' : activeLang === 'en' ? 'Bijak & Gita Wisdom: ' : 'बीजक एवं गीता दर्शन: '}
                 </span>
                 {activeLang === 'pb'
                   ? '"ਊਰਧਵਮੂਲਮਧਃਸ਼ਾਖਮਸ਼ਵੱਥੰ ਪ੍ਰਾਹੁਰਵਯਯਮ" — ਜੜ੍ਹਾਂ ਸਤਯਨਾਮ ਪੁਰਸ਼ ਹਨ। ਜੜ੍ਹਾਂ ਨੂੰ ਸਿੰਜਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਦੇ ਫਲ ਸਹਿਜੇ ਹੀ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।'
                   : activeLang === 'en'
-                  ? '"Urdhvamulam Adhahshakham" — The roots dwell in Supreme Satyanaam. By watering the Root, the fruits of Bhakti, Joy, Mukti, and Peace blossom effortlessly.'
+                  ? '"Urdhvamulam Adhahshakham" — The roots dwell in Supreme Satyanaam. By watering the Root, the fruits of Bhakti, Happiness, Liberation, and Peace blossom effortlessly.'
                   : '"ऊर्ध्वमूलमधःशाखमश्वत्थं प्राहुरव्ययम्" — जड़ें परम सत्यनाम पुरुष हैं। जड़ को सींचने से भक्ति, सुख, मुक्ति और शांति के चारों पावन फल स्वतः प्राप्त होते हैं।'}
               </p>
             </div>
@@ -893,12 +944,12 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                       </div>
                     </div>
 
-                    {/* Sacred Doha Text */}
+                    {/* Sacred Two-Line Doha Text */}
                     <p 
                       style={{ color: '#6B1D1D' }} 
-                      className="font-serif font-black text-sm sm:text-base leading-relaxed dark:text-amber-300"
+                      className="font-serif font-black text-sm sm:text-base leading-relaxed dark:text-amber-300 whitespace-pre-line"
                     >
-                      {item.doha}
+                      {formatCoupletString(item.doha)}
                     </p>
 
                     {/* Simple 2-Line Meaning in Active Language */}
@@ -911,6 +962,25 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                       </p>
                     </div>
                   </div>
+
+                  {/* Direct Navigation Button for Satyanaam Panacea (Supreme Panacea) */}
+                  {item.id === 4 && (
+                    <div className="pt-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          sacredHaptics.mediumTap();
+                          if (onNavigateView) onNavigateView('satyanaam-panacea');
+                        }}
+                        className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-amber-50 font-serif font-black text-xs sm:text-sm shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer border border-amber-400/40 flex items-center justify-center gap-2"
+                      >
+                        <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
+                        <span>
+                          {activeLang === 'pb' ? 'ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਨੁਭਵ ਕਰੋ (ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ)' : activeLang === 'en' ? 'Experience Divine White Light (Supreme Panacea)' : 'दिव्य प्रकाश अनुभव करें (सर्व रोग निवारक औषधि)'}
+                        </span>
+                      </button>
+                    </div>
+                  )}
                 </div>
               );
             })}

@@ -23,7 +23,7 @@ import {
   Heart,
   CheckCircle2
 } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { AmbientSoundPlayer } from './AmbientSoundPlayer';
@@ -285,9 +285,9 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
         </span>
       </div>
 

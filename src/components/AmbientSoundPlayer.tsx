@@ -174,7 +174,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
         max="1"
         step="0.05"
         value={volume}
-        aria-label={language === 'en' ? 'Ambient sound volume' : 'पृष्ठभूमि ध्वनि स्तर'}
+        aria-label={language === 'pb' ? 'ਪਿਛੋਕੜ ਧੁਨੀ ਪੱਧਰ' : language === 'en' ? 'Ambient sound volume' : 'पृष्ठभूमि ध्वनि स्तर'}
         onChange={(e) => ambientAudio.setVolume(parseFloat(e.target.value))}
         className="w-full accent-amber-600 h-2.5 sm:h-1.5 bg-stone-200 dark:bg-stone-700 rounded-lg cursor-pointer"
       />
@@ -236,7 +236,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
                     <button
                       type="button"
                       onClick={closeMenu}
-                      aria-label={language === 'en' ? 'Close sound menu' : 'बंद करें'}
+                      aria-label={language === 'pb' ? 'ਧੁਨੀ ਮੀਨੂ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close sound menu' : 'बंद करें'}
                       className="min-w-[44px] min-h-[44px] rounded-xl flex items-center justify-center text-stone-500 hover:bg-black/5 dark:hover:bg-white/10 transition cursor-pointer shrink-0"
                     >
                       <X className="w-5 h-5" />
@@ -321,7 +321,7 @@ export const AmbientSoundPlayer: React.FC<AmbientSoundPlayerProps> = ({
                     <button
                       type="button"
                       onClick={closeMenu}
-                      aria-label={language === 'en' ? 'Close sound menu' : 'बंद करें'}
+                      aria-label={language === 'pb' ? 'ਧੁਨੀ ਮੀਨੂ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close sound menu' : 'बंद करें'}
                       className="min-w-[32px] min-h-[32px] flex items-center justify-center text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 rounded-lg cursor-pointer shrink-0"
                     >
                       <X className="w-4 h-4" />

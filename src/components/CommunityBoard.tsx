@@ -195,15 +195,15 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
           title: 'साहेब वर्ल्ड • पावन सत्संग विचार',
           text,
         });
-        setShareNotice(language === 'hi' ? '✓ विचार साझा किया गया' : '✓ Reflection shared');
+        setShareNotice(language === 'pb' ? '✓ ਵਿਚਾਰ ਸਾਂਝਾ ਕੀਤਾ ਗਿਆ' : language === 'en' ? '✓ Reflection shared' : '✓ विचार साझा किया गया');
       } else {
         await navigator.clipboard.writeText(text);
-        setShareNotice(language === 'hi' ? '✓ विचार कॉपी हो गया! इसे WhatsApp पर साझा करें' : '✓ Copied to clipboard! Share on WhatsApp');
+        setShareNotice(language === 'pb' ? '✓ ਵਿਚਾਰ ਕਾਪੀ ਹੋਇਆ! ਵਟਸਐਪ ਤੇ ਸਾਂਝਾ ਕਰੋ' : language === 'en' ? '✓ Copied to clipboard! Share on WhatsApp' : '✓ विचार कॉपी हो गया! इसे WhatsApp पर साझा करें');
       }
     } catch {
       try {
         await navigator.clipboard.writeText(text);
-        setShareNotice(language === 'hi' ? '✓ विचार कॉपी हो गया' : '✓ Copied');
+        setShareNotice(language === 'pb' ? '✓ ਵਿਚਾਰ ਕਾਪੀ ਹੋਇਆ' : language === 'en' ? '✓ Copied' : '✓ विचार कॉपी हो गया');
       } catch {}
     }
     setTimeout(() => setShareNotice(null), 3000);
@@ -409,7 +409,7 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
                     <button
                       onClick={() => handleShareReflection(item)}
                       className="flex items-center gap-1.5 text-xs font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer text-amber-700 dark:text-amber-300"
-                      title={language === 'hi' ? 'व्हाट्सएप पर शेयर करें' : 'Share'}
+                      title={language === 'pb' ? 'ਵਟਸਐਪ ਤੇ ਸਾਂਝਾ ਕਰੋ' : language === 'en' ? 'Share' : 'व्हाट्सएप पर शेयर करें'}
                     >
                       <div className="p-1.5 rounded-full hover:bg-amber-500/10">
                         <Share2 className="w-4 h-4" />

@@ -58,6 +58,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sakhi, Language, SACRED_BRANDING, AppView, SggsKabirVerse } from '../types';
+import { formatCoupletString } from '../utils/textSanitizer';
 import { translations, formatSakhiShareText } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -977,13 +978,13 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               </h3>
               <p
                 style={{ color: theme.textSecondary }}
-                className="text-xs sm:text-sm font-serif font-bold mt-1 leading-relaxed opacity-90"
+                className="text-xs sm:text-sm font-serif font-bold mt-1 leading-relaxed opacity-90 whitespace-pre-line"
               >
                 {language === 'pb'
-                  ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ। ਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥ (ਊਰਧਵ ਮੂਲ ਰੁੱਖ, ਚਾਰੇ ਯੁਗ ਤੇ ੯ ਪ੍ਰਮਾਣਿਕ ਦੋਹੇ)'
+                  ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ।\nਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥\n(ਊਰਧਵ ਮੂਲ ਰੁੱਖ, ਚਾਰੇ ਯੁਗ ਤੇ ੯ ਪ੍ਰਮਾਣਿਕ ਦੋਹੇ)'
                   : language === 'en'
-                  ? 'Master the One Satyanaam, and everything in life falls into place; Kabir says, without this One Root, the entire life goes in vain. (Inverted Tree, 4 Yugas & 9 Dohas)'
-                  : 'सत्यनाम को साध ले, सब कुछ सधता जाय। कहैं कबीर इस मूल बिन, सारा जीवन जाय॥ (ऊर्ध्व मूल वृक्ष, चारों युग एवं ९ प्रमाणिक दोहे)'}
+                  ? 'Master the One Satyanaam, and everything in life falls into place;\nKabir says, without this One Root, the entire life goes in vain.\n(Inverted Tree, 4 Yugas & 9 Dohas)'
+                  : 'सत्यनाम को साध ले, सब कुछ सधता जाय।\nकहैं कबीर इस मूल बिन, सारा जीवन जाय॥\n(ऊर्ध्व मूल वृक्ष, चारों युग एवं ९ प्रमाणिक दोहे)'}
               </p>
             </div>
           </div>
@@ -1165,7 +1166,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
         >
           <span
             style={{ color: theme.sacredMaroon }}
-            className="text-base sm:text-lg font-bold tracking-widest font-serif block truncate"
+            className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
           >
             {exactTop}
           </span>
@@ -1215,7 +1216,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 id="daily-listen-speech-btn"
                 type="button"
                 onClick={handleToggleSpeech}
-                title={isSpeaking ? (language === 'hi' ? 'आवाज़ रोकें' : 'Stop voice') : t.listenBtn}
+                title={isSpeaking ? (language === 'pb' ? 'ਆਵਾਜ਼ ਰੋਕੋ' : language === 'en' ? 'Stop voice' : 'आवाज़ रोकें') : t.listenBtn}
                 style={{
                   backgroundColor: isSpeaking ? '#EF4444' : theme.bgSecondary,
                   borderColor: isSpeaking ? '#EF4444' : theme.borderOrnament,
@@ -1326,7 +1327,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               style={{ color: theme.sacredMaroon }}
               className={`font-serif font-bold leading-relaxed whitespace-pre-line tracking-wide break-words ${fontSizes[fontSize]}`}
             >
-              {sakhi.text[language] || sakhi.text.hi}
+              {formatCoupletString(sakhi.text[language] || sakhi.text.hi)}
             </p>
 
             {sakhi.transliteration && (
@@ -1607,7 +1608,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     </div>
 
                     <div className="text-xs sm:text-sm font-serif italic font-bold text-amber-950 dark:text-amber-100 pl-5 whitespace-pre-line">
-                      "{sakhi.text?.[language] || sakhi.text?.hi}"
+                      "{formatCoupletString(sakhi.text?.[language] || sakhi.text?.hi)}"
                     </div>
 
                     {(sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi) && (
@@ -1658,7 +1659,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                       className="w-full p-3.5 sm:p-4 rounded-2xl border text-sm font-serif focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none h-32 leading-relaxed"
                     />
                     <div className="absolute right-3 bottom-3 text-[0.625rem] font-mono text-stone-400">
-                      {kalReflectionText.length} {language === 'en' ? 'chars' : 'वर्ण'}
+                      {kalReflectionText.length} {language === 'pb' ? 'ਅੱਖਰ' : language === 'en' ? 'chars' : 'वर्ण'}
                     </div>
                   </div>
 

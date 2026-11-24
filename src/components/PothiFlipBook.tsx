@@ -267,7 +267,7 @@ export const PothiAngPage = forwardRef<HTMLDivElement, {
             {pageData.angNumber === 1 && !linesToRender[0]?.includes('सत्यनाम') && !linesToRender[0]?.includes('ਸਤਯਨਾਮ') && (
               <div className="mb-3 text-center">
                 <span className="inline-block px-4 py-1 rounded-full text-xs sm:text-sm font-serif font-black bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-400/50 shadow-2xs">
-                  {language === 'pb' ? '।।ਸਤ੍ਯਨਾਮ।।' : language === 'en' ? '|| Satyanam ||' : '।।सत्यनाम।।'}
+                  {language === 'pb' ? '।।ਸਤਯਨਾਮ।।' : language === 'en' ? '||Satyanaam||' : '।।सत्यनाम।।'}
                 </span>
               </div>
             )}
@@ -761,7 +761,7 @@ export const PothiFlipBook: React.FC<PothiFlipBookProps> = ({
                   📖 {currentPage + 1} / {pages.length}
                 </span>
                 <span className="text-[10px] text-gray-500 dark:text-gray-400 block">
-                  {language === 'pb' ? 'ਸਵਾਈਪ ਕਰੋ / ਬਟਨ ਦਬਾਓ' : 'स्वाइप करें या बटन दबाएं'}
+                  {language === 'pb' ? 'ਸਵਾਈਪ ਕਰੋ / ਬਟਨ ਦਬਾਓ' : language === 'en' ? 'Swipe or Tap Buttons' : 'स्वाइप करें या बटन दबाएं'}
                 </span>
               </div>
 

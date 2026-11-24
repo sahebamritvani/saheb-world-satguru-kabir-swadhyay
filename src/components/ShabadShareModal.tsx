@@ -102,7 +102,7 @@ export const ShabadShareModal: React.FC<ShabadShareModalProps> = ({
           {/* Theme Picker */}
           <div className="px-4 py-2.5 bg-gray-50 dark:bg-zinc-900 border-b border-gray-100 dark:border-zinc-800 flex items-center justify-between gap-2">
             <span className="text-xs font-serif opacity-75 font-bold">
-              {language === 'pb' ? 'ਕਾਰਡ ਥੀਮ:' : 'कार्ड थीम चुने:'}
+              {language === 'pb' ? 'ਕਾਰਡ ਥੀਮ:' : language === 'en' ? 'Card Theme:' : 'कार्ड थीम चुने:'}
             </span>
             <div className="flex items-center gap-1.5">
               {(['amber', 'emerald', 'maroon', 'midnight'] as const).map(t => (

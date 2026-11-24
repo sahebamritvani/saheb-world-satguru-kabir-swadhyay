@@ -18,7 +18,7 @@ import {
   ShieldCheck,
   Cloud,
 } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { useOnlineStatus } from '../hooks/usePWAInstall';
@@ -211,9 +211,9 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {isPb ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
         </span>
       </div>
 
@@ -392,12 +392,12 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
         <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
           {[
             { id: 'all', label: isHi ? 'सभी सत्संग' : isPb ? 'ਸਾਰੇ ਸਤਿਸੰਗ' : 'All Videos' },
-            { id: 'bookmarks', label: `⭐ ${isHi ? 'बुकमार्क' : 'Bookmarks'} (${bookmarkedVideoIds.length})` },
-            { id: 'anurag', label: isHi ? 'अनुराग सागर' : 'Anurag Sagar' },
-            { id: 'bijak', label: isHi ? 'बीजक विचार' : 'Bijak' },
-            { id: 'amritvani', label: isHi ? 'अमृतवाणी' : 'Amritvani' },
-            { id: 'yoga', label: isHi ? 'सूरत-शब्द योग' : 'Surat Shabad' },
-            { id: 'leela', label: isHi ? 'जीवन लीला' : 'Divine Leelas' },
+            { id: 'bookmarks', label: `⭐ ${isHi ? 'बुकमार्क' : isPb ? 'ਬੁੱਕਮਾਰਕ' : 'Bookmarks'} (${bookmarkedVideoIds.length})` },
+            { id: 'anurag', label: isHi ? 'अनुराग सागर' : isPb ? 'ਅਨੁਰਾਗ ਸਾਗਰ' : 'Anurag Sagar' },
+            { id: 'bijak', label: isHi ? 'बीजक विचार' : isPb ? 'ਬੀਜਕ ਵਿਚਾਰ' : 'Bijak' },
+            { id: 'amritvani', label: isHi ? 'अमृतवाणी' : isPb ? 'ਅੰਮ੍ਰਿਤਬਾਣੀ' : 'Amritvani' },
+            { id: 'yoga', label: isHi ? 'सूरत-शब्द योग' : isPb ? 'ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ' : 'Surat Shabad' },
+            { id: 'leela', label: isHi ? 'जीवन लीला' : isPb ? 'ਜੀਵਨ ਲੀਲਾ' : 'Divine Leelas' },
           ].map((cat) => {
             const isSelected = selectedCategory === cat.id;
             return (
@@ -497,7 +497,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
                     ) : (
                       <Bookmark className="w-4 h-4 opacity-50" />
                     )}
-                    <span>{bookmarkedVideoIds.includes(activeVideo.id) ? (isHi ? 'सहेजा गया' : 'Saved') : (isHi ? 'बुकमार्क' : 'Bookmark')}</span>
+                    <span>{bookmarkedVideoIds.includes(activeVideo.id) ? (isHi ? 'सहेजा गया' : isPb ? 'ਸੰਭਾਲਿਆ' : 'Saved') : (isHi ? 'बुकमार्क' : isPb ? 'ਬੁੱਕਮਾਰਕ' : 'Bookmark')}</span>
                   </button>
 
                   <button
@@ -507,7 +507,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
                     style={{ borderColor: theme.cardBorder }}
                   >
                     {copiedId === activeVideo.id ? <Check className="w-4 h-4 text-green-600" /> : <Share2 className="w-4 h-4 opacity-50" />}
-                    <span>{copiedId === activeVideo.id ? (isHi ? 'कॉपी हुआ' : 'Copied') : (isHi ? 'साझा करें' : 'Share')}</span>
+                    <span>{copiedId === activeVideo.id ? (isHi ? 'कॉपी हुआ' : isPb ? 'ਕਾਪੀ ਹੋਇਆ' : 'Copied') : (isHi ? 'साझा करें' : isPb ? 'ਸਾਂਝਾ ਕਰੋ' : 'Share')}</span>
                   </button>
                 </div>
               </div>

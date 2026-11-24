@@ -197,9 +197,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLang
 
     // Secondary verification check for Satyanaam string and locale integrity
     const expectedHeaders: Record<Language, string> = {
-      hi: '🌹 ।। सत्यनाम ।। 🌹',
-      pb: '🌹 ।। ਸਤਯਨਾਮ ।। 🌹',
-      en: '🌹 || Satyanaam || 🌹'
+      hi: '🌹।।सत्यनाम।।🌹',
+      pb: '🌹।।ਸਤਯਨਾਮ।।🌹',
+      en: '🌹||Satyanaam||🌹'
     };
 
     const actualHeader = SACRED_BRANDING.header[language];
@@ -272,8 +272,8 @@ export const useLanguage = (): LanguageContextType => {
         isInspectKeyOverlayActive: false,
         localeVerification: {
           isVerified: true,
-          satyanaamFormatted: '🌹 ।। सत्यनाम ।। 🌹',
-          expectedSatyanaam: '🌹 ।। सत्यनाम ।। 🌹',
+          satyanaamFormatted: '🌹।।सत्यनाम।।🌹',
+          expectedSatyanaam: '🌹।।सत्यनाम।।🌹',
           scriptName: 'Devanagari (हिन्दी)',
           details: 'Default verified'
         }

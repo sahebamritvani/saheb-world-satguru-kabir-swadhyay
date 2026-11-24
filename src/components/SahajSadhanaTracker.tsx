@@ -38,11 +38,13 @@ export const SahajSadhanaTracker: React.FC<SahajSadhanaTrackerProps> = ({ langua
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-black font-serif flex items-center gap-2" style={{ color: theme.sacredMaroon }}>
           <Sparkles className="w-5 h-5 text-amber-500" />
-          {language === 'hi' ? 'सहज साधना प्रगति' : 'Sahaj Sadhana Progress'}
+          {language === 'pb' ? 'ਸਹਿਜ ਸਾਧਨਾ ਪ੍ਰਗਤੀ' : language === 'en' ? 'Sahaj Sadhana Progress' : 'सहज साधना प्रगति'}
         </h3>
         <div className="flex items-center gap-2 px-3 py-1 rounded-xl bg-amber-500/10 border border-amber-500/20">
           <Flame className="w-4 h-4 text-orange-500" />
-          <span className="font-bold text-xs text-amber-900 dark:text-amber-100">{streak} {language === 'hi' ? 'दिन' : 'Day Streak'}</span>
+          <span className="font-bold text-xs text-amber-900 dark:text-amber-100">
+            {streak} {language === 'pb' ? 'ਦਿਨ' : language === 'en' ? 'Day Streak' : 'दिन'}
+          </span>
         </div>
       </div>
 
@@ -55,8 +57,8 @@ export const SahajSadhanaTracker: React.FC<SahajSadhanaTrackerProps> = ({ langua
           <div className="text-4xl mb-2">{hasCompletedToday ? '✨' : '🧘'}</div>
           <p className="text-sm font-serif font-bold text-gray-700 dark:text-gray-200">
             {hasCompletedToday 
-              ? (language === 'hi' ? 'आज की साधना पूर्ण हुई' : 'Today\'s Sadhana Completed')
-              : (language === 'hi' ? 'आज की साधना शेष' : 'Today\'s Sadhana Pending')}
+              ? (language === 'pb' ? 'ਅੱਜ ਦੀ ਸਾਧਨਾ ਪੂਰੀ ਹੋਈ' : language === 'en' ? 'Today\'s Sadhana Completed' : 'आज की साधना पूर्ण हुई')
+              : (language === 'pb' ? 'ਅੱਜ ਦੀ ਸਾਧਨਾ ਬਾਕੀ' : language === 'en' ? 'Today\'s Sadhana Pending' : 'आज की साधना शेष')}
           </p>
         </motion.div>
       </div>
@@ -67,7 +69,7 @@ export const SahajSadhanaTracker: React.FC<SahajSadhanaTrackerProps> = ({ langua
           className="w-full py-3 rounded-2xl font-black font-serif cursor-pointer transition hover:scale-[1.02] active:scale-[0.98]"
           style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
         >
-          {language === 'hi' ? 'आज का अमृतवेला ध्यान पूर्ण करें' : 'Mark Amritvela Meditation Complete'}
+          {language === 'pb' ? 'ਅੱਜ ਦਾ ਅੰਮ੍ਰਿਤਵੇਲਾ ਧਿਆਨ ਪੂਰਾ ਕਰੋ' : language === 'en' ? 'Mark Amritvela Meditation Complete' : 'आज का अमृतवेला ध्यान पूर्ण करें'}
         </button>
       )}
     </div>

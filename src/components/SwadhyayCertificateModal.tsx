@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Award, X, Printer, CheckCircle2, Loader2, AlertCircle, User } from 'lucide-react';
 import { toPng } from 'html-to-image';
-import { Language, Sakhi } from '../types';
+import { Language, Sakhi, SACRED_BRANDING } from '../types';
 import confetti from 'canvas-confetti';
 import { sacredHaptics } from '../services/haptics';
 import { auth } from '../lib/firebase';
@@ -171,7 +171,9 @@ export const SwadhyayCertificateModal: React.FC<SwadhyayCertificateModalProps> =
     sacredHaptics.lightTap();
     setIsSharing(true);
 
-    const shareText = `🌹।।सत्यनाम।।🌹\nसतगुरु कबीर साहेब पावन स्वाध्याय सिद्धि प्रमाण-पत्र\nश्री/सुश्री ${displayName} ने Saheb World ऐप पर साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।\n\n"${activeMoolSakhi}"\n\n"${cleanBlessing}"\nSaheb World App • पावन स्वाध्याय मंच\n।।साहेब बंदगी साहेब।।🙏`;
+    const sacredHead = SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi;
+    const sacredFoot = SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi;
+    const shareText = `${sacredHead}\nसतगुरु कबीर साहेब पावन स्वाध्याय सिद्धि प्रमाण-पत्र\nश्री/सुश्री ${displayName} ने Saheb World ऐप पर साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।\n\n"${activeMoolSakhi}"\n\n"${cleanBlessing}"\nSaheb World App • पावन स्वाध्याय मंच\n${sacredFoot} 🙏`;
 
     try {
       const dataUrl = await captureCertificatePngDataUrl(2);
@@ -337,10 +339,10 @@ export const SwadhyayCertificateModal: React.FC<SwadhyayCertificateModalProps> =
             <div className="absolute bottom-2.5 left-2.5 text-amber-700/50 text-xl select-none">❖</div>
             <div className="absolute bottom-2.5 right-2.5 text-amber-700/50 text-xl select-none">❖</div>
 
-            {/* Top Sacred Heading - Centered: 🌹।।सत्यनाम।।🌹 */}
+            {/* Top Sacred Heading - Centered */}
             <div className="text-center w-full space-y-2 pb-3 border-b border-amber-600/25">
-              <p className="text-amber-800 font-serif font-black tracking-widest text-lg sm:text-xl">
-                🌹।।सत्यनाम।।🌹
+              <p className="text-amber-800 font-serif font-black tracking-wide text-lg sm:text-xl whitespace-nowrap">
+                {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
               </p>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-black font-serif text-[#8C2818] tracking-wide leading-snug [word-break:keep-all] [overflow-wrap:break-word]">
                 {language === 'pb'

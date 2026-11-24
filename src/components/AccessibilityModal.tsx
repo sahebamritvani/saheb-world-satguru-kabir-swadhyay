@@ -110,7 +110,7 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({ isOpen, 
                 className="py-2 px-3 rounded-xl bg-red-600 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-sm transition cursor-pointer"
               >
                 <VolumeX className="w-4 h-4" />
-                <span>{language === 'pb' ? 'ਬੰਦ' : 'Stop'}</span>
+                <span>{language === 'pb' ? 'ਬੰਦ' : language === 'en' ? 'Stop' : 'रोकें'}</span>
               </button>
             )}
           </div>

@@ -565,7 +565,7 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
 
                 {/* Verse */}
                 <div className="text-sm sm:text-base font-bold text-amber-950 dark:text-amber-100 whitespace-pre-line leading-relaxed">
-                  {sakhi.text[cardLanguage] || sakhi.text.hi}
+                  {formatCoupletString(sakhi.text[cardLanguage] || sakhi.text.hi)}
                 </div>
 
                 {/* Bhavarth */}

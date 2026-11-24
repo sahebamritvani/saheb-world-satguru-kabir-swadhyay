@@ -26,7 +26,7 @@ import {
   Wind,
   BookOpen
 } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import {
@@ -996,9 +996,9 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
         </span>
       </div>
 
@@ -1406,8 +1406,8 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
             <div className="space-y-5">
               {/* Top Sacred Invocation */}
               <div className="text-center py-1.5">
-                <span className="inline-block px-5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-orange-500/25 to-amber-500/20 text-amber-950 dark:text-amber-200 border border-amber-400/50 text-xs sm:text-sm font-black font-serif shadow-xs tracking-normal">
-                  {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 || Satyanaam || 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+                <span className="inline-block px-5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-orange-500/25 to-amber-500/20 text-amber-950 dark:text-amber-200 border border-amber-400/50 text-sm sm:text-base font-black font-serif shadow-xs tracking-wide whitespace-nowrap">
+                  {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
                 </span>
               </div>
 

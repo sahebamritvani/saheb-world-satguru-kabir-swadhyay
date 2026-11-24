@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਭੂ ਨਾਲ ਇੱਕ ਹੋਣਾ ਹੀ ਸੱਚੀ ਤ੍ਰਿਪਤੀ ਹੈ।',
         en: 'Merging into the Divine Ocean brings ultimate fulfillment.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸतਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },

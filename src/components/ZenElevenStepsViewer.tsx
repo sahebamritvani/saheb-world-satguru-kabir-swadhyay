@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sakhi, Language } from '../types';
+import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { EightStepSwadhyayData } from '../services/swadhyayEightSteps';
 import { ElevenStepSwadhyayData, normalizeElevenStepQuizQuestion } from '../services/swadhyayElevenSteps';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { SmartGlossaryText } from './SmartGlossaryText';
 import { sacredHaptics } from '../services/haptics';
+import { formatCoupletString } from '../utils/textSanitizer';
 import { getStep1ConciseMeaning } from '../services/swadhyayContentEngine';
 
 interface ZenElevenStepsViewerProps {
@@ -224,14 +225,10 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
 
             <div className="p-6 sm:p-10 rounded-3xl border-2 border-[#d6ba8d]/80 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] text-[#38200b] dark:text-[#f7e7ce] shadow-inner text-center space-y-4">
               <div className="text-xl sm:text-2xl font-black leading-relaxed whitespace-pre-line">
-                {sakhi.text[language] || sakhi.text.hi}
+                {formatCoupletString(sakhi.text[language] || sakhi.text.hi)}
               </div>
-              <div className="text-xs text-amber-800 dark:text-amber-300 font-bold uppercase tracking-widest pt-2">
-                {language === 'pb'
-                  ? '🌹 ।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🌹'
-                  : language === 'en'
-                  ? '🌹 ।। Saheb Bandgi Saheb ।। 🌹'
-                  : '🌹 ।। साहेब बंदगी साहेब ।। 🌹'}
+              <div className="text-xs text-amber-800 dark:text-amber-300 font-bold tracking-widest pt-2">
+                {SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi}
               </div>
             </div>
 
@@ -955,8 +952,8 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
             </div>
 
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300">
-                {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+              <span className="text-sm sm:text-base font-bold tracking-wide text-amber-700 dark:text-amber-300 whitespace-nowrap">
+                {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-amber-900 dark:text-amber-100">
                 {elevenStepData.step11_blessingCertificate.title}

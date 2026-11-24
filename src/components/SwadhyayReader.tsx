@@ -1823,7 +1823,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           <div className="flex items-center gap-2">
             {siddhantHighlights.length > 0 && (
               <span className="text-[0.625rem] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-200 font-mono font-bold">
-                {siddhantHighlights.length} {language === 'pb' ? 'ਸਿਧਾਂਤ' : 'सिद्धांत'}
+                {siddhantHighlights.length} {language === 'pb' ? 'ਸਿਧਾਂਤ' : language === 'en' ? 'Siddhant' : 'सिद्धांत'}
               </span>
             )}
             {hasAnyHighlight && (
@@ -2253,20 +2253,16 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       {/* Strict Sacred Header Spelling - Frozen (Sticky) at top */}
       <div
         style={{ backgroundColor: rc.stepActive, borderColor: rc.border }}
-        className="sticky top-0 z-30 border-b py-2 px-4 select-none backdrop-blur-md"
+        className="sticky top-0 z-30 border-b py-2 px-3 sm:px-4 select-none backdrop-blur-md flex items-center justify-center min-h-[42px]"
         role="region"
         aria-label="Sacred Header Banner"
       >
-        <div className="flex flex-row items-center justify-center gap-2 sm:gap-3 flex-nowrap">
-          <span className="text-base sm:text-lg select-none shrink-0" aria-hidden="true">🌹</span>
-          <span
-            style={{ color: rc.maroon }}
-            className="text-sm sm:text-base font-bold tracking-normal font-serif whitespace-nowrap"
-          >
-            {language === 'pb' ? '।। ਸਤ੍ਯਨਾਮ ।।' : language === 'en' ? '|| Satyanaam ||' : '।। सत्यनाम ।।'}
-          </span>
-          <span className="text-base sm:text-lg select-none shrink-0" aria-hidden="true">🌹</span>
-        </div>
+        <span
+          style={{ color: rc.maroon }}
+          className="text-base sm:text-lg font-black tracking-wide font-serif whitespace-nowrap text-center"
+        >
+          {exactTop}
+        </span>
       </div>
 
       {/* ⚠️ Offline Warning Toast */}
@@ -2696,7 +2692,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               borderColor: rc.accent,
             }}
             className="px-2.5 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer hover:opacity-90 active:scale-95 transition shadow-sm"
-            title={language === 'pb' ? 'ਪਾਠ ਮੋਡ ਸਿਲੈਕਟਰ' : 'पठन मोड Selector'}
+            title={language === 'pb' ? 'ਪਾਠ ਮੋਡ ਚੁਣੋ' : language === 'en' ? 'Reading Style Selector' : 'पठन मोड चुनें'}
           >
             <BookOpen className="w-3.5 h-3.5" />
             <span>{language === 'pb' ? 'ਪਾਠ ਮੋਡ' : language === 'en' ? 'Reading Style' : 'पठन मोड'}</span>
@@ -2804,7 +2800,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
             style={{ backgroundColor: rc.accent, color: '#FFFFFF' }}
             className="px-3 py-1 rounded-lg font-bold transition hover:opacity-95 text-[0.625rem] cursor-pointer"
           >
-            {language === 'pb' ? 'ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ' : 'शुरू करें'}
+            {language === 'pb' ? 'ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Resume' : 'शुरू करें'}
           </button>
         </div>
       )}
@@ -2914,10 +2910,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 color: rc.text,
               }}
               className="p-2.5 rounded-xl border transition shadow-sm hover:opacity-90 flex items-center gap-1.5 text-xs font-medium cursor-pointer"
-              title={language === 'pb' ? 'ਪਾਵਨ ਸਾਖੀ ਕਾਰਡ ਬਣਾਓ' : 'पावन साखी कार्ड बनाएं'}
+              title={language === 'pb' ? 'ਪਾਵਨ ਸਾਖੀ ਕਾਰਡ ਬਣਾਓ' : language === 'en' ? 'Create Sacred Quote Card' : 'पावन साखी कार्ड बनाएं'}
             >
               <ImageIcon className="w-4 h-4 text-amber-500 animate-pulse" />
-              <span className="hidden sm:inline">{language === 'pb' ? 'ਪਾਵਨ ਕਾਰਡ' : 'साखी कार्ड'}</span>
+              <span className="hidden sm:inline">{language === 'pb' ? 'ਪਾਵਨ ਕਾਰਡ' : language === 'en' ? 'Quote Card' : 'साखी कार्ड'}</span>
             </button>
 
             <div 
@@ -2970,7 +2966,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
             <button
               id="bookmark-sakhi-btn"
               onClick={handleToggleBookmark}
-              title={isBookmarked ? (language === 'hi' ? 'बुकमार्क हटाएं' : 'ਬੁੱਕਮਾਰਕ ਹਟਾਓ') : (language === 'hi' ? 'साखी बुकमार्क करें' : 'ਸਾਖੀ ਬੁੱਕਮਾਰਕ ਕਰੋ')}
+              title={
+                isBookmarked
+                  ? language === 'pb'
+                    ? 'ਬੁੱਕਮਾਰਕ ਹਟਾਓ'
+                    : language === 'en'
+                    ? 'Remove Bookmark'
+                    : 'बुकमार्क हटाएं'
+                  : language === 'pb'
+                  ? 'ਸਾਖੀ ਬੁੱਕਮਾਰਕ ਕਰੋ'
+                  : language === 'en'
+                  ? 'Bookmark Sakhi'
+                  : 'साखी बुकमार्क करें'
+              }
               style={{
                 backgroundColor: isBookmarked ? rc.accentLight : rc.bg,
                 borderColor: rc.borderOrnament,
@@ -3175,8 +3183,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           className="px-2.5 py-0.5 rounded-full text-[0.6875rem] font-serif font-semibold border border-amber-700/25 bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20 transition cursor-pointer"
                         >
                           {showRomanTransliteration
-                            ? (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਛੁਪਾਓ' : 'Roman उच्चारण छिपाएं')
-                            : (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਦਿਖਾਓ' : 'Roman उच्चारण देखें')}
+                            ? (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਛੁਪਾਓ' : 'रोमन उच्चारण छिपाएं')
+                            : (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਦਿਖਾਓ' : 'रोमन उच्चारण देखें')}
                         </button>
                       </div>
                     )}
@@ -3376,7 +3384,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       title="Play Context Verse"
                     >
                       {activePlayingStanzaKey === 'step-2' ? <VolumeX size={13} className="animate-spin text-amber-300" /> : <Volume2 size={13} className="text-amber-600" />}
-                      <span>{activePlayingStanzaKey === 'step-2' ? (language === 'pb' ? 'ਰੋਕੋ' : 'रोकें') : (language === 'pb' ? 'ਸੁਣੋ' : 'पाठ सुनें')}</span>
+                      <span>
+                        {activePlayingStanzaKey === 'step-2'
+                          ? language === 'pb'
+                            ? 'ਰੋਕੋ'
+                            : language === 'en'
+                            ? 'Stop'
+                            : 'रोकें'
+                          : language === 'pb'
+                          ? 'ਸੁਣੋ'
+                          : language === 'en'
+                          ? 'Listen'
+                          : 'पाठ सुनें'}
+                      </span>
                     </button>
 
                     <span style={{ color: rc.accent }} className="text-xs font-bold font-mono bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
@@ -3434,7 +3454,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       title="Play Vocabulary Stanza"
                     >
                       {activePlayingStanzaKey === 'step-3' ? <VolumeX size={13} className="animate-spin text-amber-300" /> : <Volume2 size={13} className="text-amber-600" />}
-                      <span>{activePlayingStanzaKey === 'step-3' ? (language === 'pb' ? 'ਰੋਕੋ' : 'रोकें') : (language === 'pb' ? 'ਸ਼ਬਦਾਰਥ ਸੁਣੋ' : 'शब्दार्थ सुनें')}</span>
+                      <span>
+                        {activePlayingStanzaKey === 'step-3'
+                          ? language === 'pb'
+                            ? 'ਰੋਕੋ'
+                            : language === 'en'
+                            ? 'Stop'
+                            : 'रोकें'
+                          : language === 'pb'
+                          ? 'ਸ਼ਬਦਾਰਥ ਸੁਣੋ'
+                          : language === 'en'
+                          ? 'Listen Glossary'
+                          : 'शब्दार्थ सुनें'}
+                      </span>
                     </button>
 
                     {/* Step 3 Direct Language Switcher Tabs */}
@@ -3931,7 +3963,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       title="Play Spiritual Insight"
                     >
                       {activePlayingStanzaKey === 'step-6' ? <VolumeX size={13} className="animate-spin text-amber-300" /> : <Volume2 size={13} className="text-amber-600" />}
-                      <span>{activePlayingStanzaKey === 'step-6' ? (language === 'pb' ? 'ਰੋਕੋ' : 'रोकें') : (language === 'pb' ? 'ਰਹੱਸ ਸੁਣੋ' : 'रहस्य सुनें')}</span>
+                      <span>
+                        {activePlayingStanzaKey === 'step-6'
+                          ? language === 'pb'
+                            ? 'ਰੋਕੋ'
+                            : language === 'en'
+                            ? 'Stop'
+                            : 'रोकें'
+                          : language === 'pb'
+                          ? 'ਰਹੱਸ ਸੁਣੋ'
+                          : language === 'en'
+                          ? 'Listen Insight'
+                          : 'रहस्य सुनें'}
+                      </span>
                     </button>
 
                     <button
@@ -4733,7 +4777,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               >
                 <div className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: rc.accent }}>
                   <Compass className="w-4 h-4 text-amber-600" />
-                  <span>{language === 'pb' ? 'ਚਿੰਤਨ-ਸੂਤਰ' : 'चिंतन सूत्र'}:</span>
+                  <span>{language === 'pb' ? 'ਚਿੰਤਨ-ਸੂਤਰ' : language === 'en' ? 'Contemplation' : 'चिंतन सूत्र'}:</span>
                 </div>
                 <blockquote style={{ ...activeFontStyle, color: rc.text, borderColor: rc.accent }} className={`text-sm sm:text-base ${activeFontClass} sacred-meaning-typography ${getLineHeightClass(lineHeight)} italic border-l-3 pl-3`}>
                   "{sakhi.contemplation[language]}"
@@ -4774,7 +4818,19 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 className="p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 cursor-pointer transition shadow-xs"
               >
                 {isSpeaking ? <VolumeX className="w-4 h-4 animate-pulse" /> : <Volume2 className="w-4 h-4" />}
-                <span>{isSpeaking ? (language === 'hi' ? 'मौन' : 'ਮੌਨ') : (language === 'hi' ? 'पाठ सुनें' : 'ਪਾਠ ਸੁਣੋ')}</span>
+                <span>
+                  {isSpeaking
+                    ? language === 'pb'
+                      ? 'ਮੌਨ'
+                      : language === 'en'
+                      ? 'Mute'
+                      : 'मौन'
+                    : language === 'pb'
+                    ? 'ਪਾਠ ਸੁਣੋ'
+                    : language === 'en'
+                    ? 'Listen'
+                    : 'पाठ सुनें'}
+                </span>
               </button>
 
               <div className="flex items-center gap-1 ml-2">

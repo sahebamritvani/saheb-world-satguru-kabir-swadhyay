@@ -16,7 +16,7 @@ import {
   Minus
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
@@ -186,13 +186,13 @@ export const DailySadhanaGoal: React.FC<DailySadhanaGoalProps> = ({
       {/* Sacred Header */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center overflow-hidden min-h-[42px] rounded-xl"
+        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center min-h-[42px] rounded-xl"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {isPb ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language]}
         </span>
       </div>
 

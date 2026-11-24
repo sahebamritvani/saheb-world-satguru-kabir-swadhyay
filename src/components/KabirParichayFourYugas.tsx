@@ -23,6 +23,7 @@ import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface KabirParichayFourYugasProps {
   language: Language;
@@ -830,9 +831,9 @@ export const KabirParichayFourYugas: React.FC<KabirParichayFourYugasProps> = ({
               </div>
               <p 
                 style={{ color: theme.sacredMaroon }}
-                className="text-sm sm:text-base font-serif font-black italic tracking-wide"
+                className="text-sm sm:text-base font-serif font-black italic tracking-wide whitespace-pre-line"
               >
-                "{currentYuga.scripturalEvidence.verse}"
+                "{formatCoupletString(currentYuga.scripturalEvidence.verse)}"
               </p>
               <p className="text-xs text-gray-700 dark:text-gray-300 leading-snug">
                 {currentYuga.scripturalEvidence.meaning[language]}
@@ -891,10 +892,10 @@ export const KabirParichayFourYugas: React.FC<KabirParichayFourYugasProps> = ({
                 style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
                 className="border-b text-[11px] font-serif font-black uppercase text-amber-900 dark:text-amber-300"
               >
-                <th className="p-3">युग (Yuga)</th>
-                <th className="p-3">अवतार रूप (Manifestation)</th>
-                <th className="p-3">प्रमुख शिष्य / प्रसंग</th>
-                <th className="p-3">अमर साक्ष्य</th>
+                <th className="p-3">{language === 'pb' ? 'ਯੁਗ (Yuga)' : language === 'en' ? 'Yuga / Age' : 'युग (Yuga)'}</th>
+                <th className="p-3">{language === 'pb' ? 'ਪ੍ਰਗਟ ਰੂਪ (Manifestation)' : language === 'en' ? 'Manifestation' : 'अवतार रूप (Manifestation)'}</th>
+                <th className="p-3">{language === 'pb' ? 'ਮੁੱਖ ਪ੍ਰਸੰਗ / ਸ਼ਿਸ਼' : language === 'en' ? 'Key Episode / Disciple' : 'प्रमुख शिष्य / प्रसंग'}</th>
+                <th className="p-3">{language === 'pb' ? 'ਪ੍ਰਮਾਣਿਕ ਸਾਖੀ' : language === 'en' ? 'Scriptural Verse' : 'अमर साक्ष्य'}</th>
               </tr>
             </thead>
             <tbody className="divide-y" style={{ borderColor: theme.cardBorder }}>

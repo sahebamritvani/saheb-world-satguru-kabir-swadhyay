@@ -21,7 +21,7 @@ import {
   Check,
   X
 } from 'lucide-react';
-import { Language, Sakhi } from '../types';
+import { Language, Sakhi, SACRED_BRANDING } from '../types';
 import { sakhisDatabase } from '../data/sakhis';
 import { useAppTheme } from '../theme/ThemeContext';
 import { speechReciter, ambientReaderAudio, DhunSoundType } from '../services/audioDhun';
@@ -176,13 +176,13 @@ ${discourseData.dainikChintan.questions.join('\n')}
       {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
+        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center min-h-[42px]"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language]}
         </span>
       </div>
 

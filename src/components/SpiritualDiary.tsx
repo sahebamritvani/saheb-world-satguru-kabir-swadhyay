@@ -570,9 +570,27 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
   };
 
   const handleSave3PointGratitude = () => {
-    const item1 = gratitudeItem1.trim() || (language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕ੍ਰਿਪਾ ਤੇ ਸਤਯਨਾਮ ਸਹਾਰਾ' : 'सतगुरु कृपा व सत्यनाम का सान्निध्य');
-    const item2 = gratitudeItem2.trim() || (language === 'pb' ? 'ਸਵਾਸਾਂ ਦੀ ਅਨਮੋਲ ਪੂੰਜੀ ਤੇ ਜੀਵਨ' : 'श्वासों की अनमोल पूँजी व जीवन');
-    const item3 = gratitudeItem3.trim() || (language === 'pb' ? 'ਸਤਿਸੰਗ ਤੇ ਅੱਜ ਦਾ ਮੰਗਲ ਅਨੁਭਵ' : 'सत्संग, सद्विचार व आज का मंगल अनुभव');
+    const item1 =
+      gratitudeItem1.trim() ||
+      (language === 'pb'
+        ? 'ਸਤਗੁਰੂ ਕ੍ਰਿਪਾ ਤੇ ਸਤਯਨਾਮ ਸਹਾਰਾ'
+        : language === 'en'
+        ? 'Satguru grace & support of Satyanaam'
+        : 'सतगुरु कृपा व सत्यनाम का सान्निध्य');
+    const item2 =
+      gratitudeItem2.trim() ||
+      (language === 'pb'
+        ? 'ਸਵਾਸਾਂ ਦੀ ਅਨਮੋਲ ਪੂੰਜੀ ਤੇ ਜੀਵਨ'
+        : language === 'en'
+        ? 'Precious gift of breath & life'
+        : 'श्वासों की अनमोल पूँजी व जीवन');
+    const item3 =
+      gratitudeItem3.trim() ||
+      (language === 'pb'
+        ? 'ਸਤਿਸੰਗ ਤੇ ਅੱਜ ਦਾ ਮੰਗਲ ਅਨੁਭਵ'
+        : language === 'en'
+        ? 'Satsang & today’s blessed reflection'
+        : 'सत्संग, सद्विचार व आज का मंगल अनुभव');
 
     const newLog: GratitudeLogEntry = {
       id: 'gratitude-' + Date.now(),
@@ -1089,7 +1107,19 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                   className="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer self-start sm:self-center shrink-0"
                 >
                   {isAddingGratitude ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                  <span>{isAddingGratitude ? (language === 'pb' ? 'ਸਮੇਟੋ' : 'समेटें') : (language === 'pb' ? '੩ ਸ਼ੁਕਰਾਨੇ ਦਰਜ ਕਰੋ' : '३ शुकराने दर्ज करें')}</span>
+                  <span>
+                    {isAddingGratitude
+                      ? language === 'pb'
+                        ? 'ਸਮੇਟੋ'
+                        : language === 'en'
+                        ? 'Collapse'
+                        : 'समेटें'
+                      : language === 'pb'
+                      ? '੩ ਸ਼ੁਕਰਾਨੇ ਦਰਜ ਕਰੋ'
+                      : language === 'en'
+                      ? 'Log 3 Gratitudes'
+                      : '३ शुकराने दर्ज करें'}
+                  </span>
                 </button>
               </div>
 
@@ -1100,7 +1130,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                   <div className="flex items-center justify-between gap-2 text-xs">
                     <span className="font-serif font-bold text-amber-700 flex items-center gap-1 text-[11px]">
                       <Sparkles className="w-3.5 h-3.5" />
-                      <span>{language === 'pb' ? 'ਤਤਕਾਲ ਸੁਝਾਅ:' : 'त्वरित प्रेरणा सुझाव:'}</span>
+                      <span>{language === 'pb' ? 'ਤਤਕਾਲ ਸੁਝਾਅ:' : language === 'en' ? 'Quick Inspiration:' : 'त्वरित प्रेरणा सुझाव:'}</span>
                     </span>
                     <div className="flex items-center gap-1.5">
                       <button
@@ -1108,14 +1138,14 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                         onClick={() => handleApplyGratitudeSuggestion(0)}
                         className="px-2 py-0.5 rounded-lg bg-amber-500/15 text-amber-900 dark:text-amber-200 text-[10px] font-bold hover:bg-amber-500/25 transition cursor-pointer"
                       >
-                        {language === 'pb' ? 'ਸੁਝਾਅ ੧' : 'सुझाव १'}
+                        {language === 'pb' ? 'ਸੁਝਾਅ ੧' : language === 'en' ? 'Idea 1' : 'सुझाव १'}
                       </button>
                       <button
                         type="button"
                         onClick={() => handleApplyGratitudeSuggestion(1)}
                         className="px-2 py-0.5 rounded-lg bg-amber-500/15 text-amber-900 dark:text-amber-200 text-[10px] font-bold hover:bg-amber-500/25 transition cursor-pointer"
                       >
-                        {language === 'pb' ? 'ਸੁਝਾਅ ੨' : 'सुझाव २'}
+                        {language === 'pb' ? 'ਸੁਝਾਅ ੨' : language === 'en' ? 'Idea 2' : 'सुझाव २'}
                       </button>
                     </div>
                   </div>
@@ -1141,7 +1171,19 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       type="text"
                       value={gratitudeItem1}
                       onChange={(e) => setGratitudeItem1(e.target.value)}
-                      placeholder={isListeningG1 ? 'बोलें... सुन रहे हैं...' : (language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕ੍ਰਿਪਾ ਤੇ ਸਤਯਨਾਮ ਸਹਾਰਾ...' : 'सतगुरु कृपा, सत्यनाम का ज्ञान व पावन वचनों का सान्निध्य...')}
+                      placeholder={
+                        isListeningG1
+                          ? language === 'pb'
+                            ? 'ਬੋਲੋ... ਸੁਣ ਰਹੇ ਹਾਂ...'
+                            : language === 'en'
+                            ? 'Speak... listening...'
+                            : 'बोलें... सुन रहे हैं...'
+                          : language === 'pb'
+                          ? 'ਸਤਗੁਰੂ ਕ੍ਰਿਪਾ ਤੇ ਸਤਯਨਾਮ ਸਹਾਰਾ...'
+                          : language === 'en'
+                          ? 'Satguru grace, Satyanaam wisdom & sacred company...'
+                          : 'सतगुरु कृपा, सत्यनाम का ज्ञान व पावन वचनों का सान्निध्य...'
+                      }
                       style={{
                         backgroundColor: theme.cardBg,
                         borderColor: isListeningG1 ? '#EF4444' : theme.cardBorder,
@@ -1172,7 +1214,19 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       type="text"
                       value={gratitudeItem2}
                       onChange={(e) => setGratitudeItem2(e.target.value)}
-                      placeholder={isListeningG2 ? 'बोलें... सुन रहे हैं...' : (language === 'pb' ? 'ਸਵਾਸਾਂ ਦੀ ਅਨਮੋਲ ਪੂੰਜੀ ਤੇ ਚੰਗੀ ਸਿਹਤ...' : 'श्वासों की अनमोल पूँजी, उत्तम स्वास्थ्य व परिवार का संबल...')}
+                      placeholder={
+                        isListeningG2
+                          ? language === 'pb'
+                            ? 'ਬੋਲੋ... ਸੁਣ ਰਹੇ ਹਾਂ...'
+                            : language === 'en'
+                            ? 'Speak... listening...'
+                            : 'बोलें... सुन रहे हैं...'
+                          : language === 'pb'
+                          ? 'ਸਵਾਸਾਂ ਦੀ ਅਨਮੋਲ ਪੂੰਜੀ ਤੇ ਚੰਗੀ ਸਿਹਤ...'
+                          : language === 'en'
+                          ? 'Precious gift of breath, health & family support...'
+                          : 'श्वासों की अनमोल पूँजी, उत्तम स्वास्थ्य व परिवार का संबल...'
+                      }
                       style={{
                         backgroundColor: theme.cardBg,
                         borderColor: isListeningG2 ? '#EF4444' : theme.cardBorder,
@@ -1203,7 +1257,19 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       type="text"
                       value={gratitudeItem3}
                       onChange={(e) => setGratitudeItem3(e.target.value)}
-                      placeholder={isListeningG3 ? 'बोलें... सुन रहे हैं...' : (language === 'pb' ? 'ਸ਼ਾਂਤਮਈ ਸਤਿਸੰਗ ਤੇ ਅੱਜ ਦਾ ਸੁੱਖ...' : 'शांतिमय सत्संग, दया भाव व आज आत्म-चिंतन का मिला पावन अवसर...')}
+                      placeholder={
+                        isListeningG3
+                          ? language === 'pb'
+                            ? 'ਬੋਲੋ... ਸੁਣ ਰਹੇ ਹਾਂ...'
+                            : language === 'en'
+                            ? 'Speak... listening...'
+                            : 'बोलें... सुन रहे हैं...'
+                          : language === 'pb'
+                          ? 'ਸ਼ਾਂਤਮਈ ਸਤਿਸੰਗ ਤੇ ਅੱਜ ਦਾ ਸੁੱਖ...'
+                          : language === 'en'
+                          ? 'Peaceful Satsang, compassion & today’s reflection...'
+                          : 'शांतिमय सत्संग, दया भाव व आज आत्म-चिंतन का मिला पावन अवसर...'
+                      }
                       style={{
                         backgroundColor: theme.cardBg,
                         borderColor: isListeningG3 ? '#EF4444' : theme.cardBorder,
@@ -1244,7 +1310,11 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                 <div className="p-8 text-center space-y-2 border border-dashed rounded-2xl" style={{ borderColor: theme.cardBorder }}>
                   <Flower2 className="w-8 h-8 mx-auto opacity-40 text-pink-500" />
                   <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
-                    {language === 'hi' ? 'अभी कोई कृतज्ञता प्रविष्टि नहीं है। ऊपर क्लिक करके आज के ३ शुकराने दर्ज करें।' : 'No gratitude logs yet. Click above to log your 3 daily gratitudes.'}
+                    {language === 'pb'
+                      ? 'ਅਜੇ ਕੋਈ ਸ਼ੁਕਰਾਨਾ ਦਰਜ ਨਹੀਂ ਹੈ। ਉੱਪਰ ਕਲਿੱਕ ਕਰਕੇ ਅੱਜ ਦੇ ੩ ਸ਼ੁਕਰਾਨੇ ਦਰਜ ਕਰੋ।'
+                      : language === 'en'
+                      ? 'No gratitude logs yet. Click above to log your 3 daily gratitudes.'
+                      : 'अभी कोई कृतज्ञता प्रविष्टि नहीं है। ऊपर क्लिक करके आज के ३ शुकराने दर्ज करें।'}
                   </p>
                 </div>
               ) : (
@@ -1700,7 +1770,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       className="px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition"
                     >
                       <Grid className="w-3.5 h-3.5" />
-                      <span>{language === 'hi' ? 'गैलरी' : 'Gallery'}</span>
+                      <span>{language === 'pb' ? 'ਗੈਲਰੀ' : language === 'en' ? 'Gallery' : 'गैलरी'}</span>
                     </button>
                     <button
                       type="button"
@@ -1712,7 +1782,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                       className="px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition"
                     >
                       <List className="w-3.5 h-3.5" />
-                      <span>{language === 'hi' ? 'सूची' : 'List'}</span>
+                      <span>{language === 'pb' ? 'ਸੂਚੀ' : language === 'en' ? 'List' : 'सूची'}</span>
                     </button>
                   </div>
                 </div>
@@ -1771,7 +1841,11 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
               <div className="p-8 text-center space-y-2 border border-dashed rounded-2xl" style={{ borderColor: theme.cardBorder }}>
                 <Search style={{ color: theme.textMuted }} className="w-8 h-8 mx-auto opacity-40" />
                 <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
-                  {language === 'hi' ? 'कोई प्रविष्टि नहीं मिली। कृपया खोज शब्द बदलें।' : 'No matching journal entries found.'}
+                  {language === 'pb'
+                    ? 'ਕੋਈ ਪ੍ਰਵਿਸ਼ਟੀ ਨਹੀਂ ਮਿਲੀ। ਕਿਰਪਾ ਕਰਕੇ ਖੋਜ ਸ਼ਬਦ ਬਦਲੋ।'
+                    : language === 'en'
+                    ? 'No matching journal entries found.'
+                    : 'कोई प्रविष्टि नहीं मिली। कृपया खोज शब्द बदलें।'}
                 </p>
               </div>
             ) : (
@@ -1818,7 +1892,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                                   className="font-bold text-[11px] cursor-pointer hover:underline shrink-0"
                                   onClick={() => onSelectSakhiNumber && onSelectSakhiNumber(item.sakhiNumber!)}
                                 >
-                                  📜 साखी #{item.sakhiNumber}
+                                  {language === 'pb' ? '📜 ਸਾਖੀ' : language === 'en' ? '📜 Sakhi' : '📜 साखी'} #{item.sakhiNumber}
                                 </span>
                               )}
                             </div>
@@ -1835,7 +1909,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                                   <div className="flex items-start gap-1.5 text-rose-700 dark:text-rose-300">
                                     <Heart className="w-3.5 h-3.5 shrink-0 mt-0.5" />
                                     <span className="text-[11px] leading-relaxed">
-                                      <strong>कृतज्ञता:</strong> {item.gratitude}
+                                      <strong>{language === 'pb' ? 'ਸ਼ੁਕਰਾਨਾ:' : language === 'en' ? 'Gratitude:' : 'कृतज्ञता:'}</strong> {item.gratitude}
                                     </span>
                                   </div>
                                 )}
@@ -1843,7 +1917,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                                   <div className="flex items-start gap-1.5 text-amber-700 dark:text-amber-300">
                                     <Flame className="w-3.5 h-3.5 shrink-0 mt-0.5" />
                                     <span className="text-[11px] leading-relaxed">
-                                      <strong>संकल्प:</strong> {item.resolution}
+                                      <strong>{language === 'pb' ? 'ਸੰਕਲਪ:' : language === 'en' ? 'Resolution:' : 'संकल्प:'}</strong> {item.resolution}
                                     </span>
                                   </div>
                                 )}
@@ -2152,7 +2226,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
                               className="px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase tracking-wider border border-amber-400/30 flex items-center gap-1"
                             >
                               <Quote size={10} className="text-amber-600" />
-                              <span>{note.categoryTitle || (language === 'pb' ? 'ਸਿਧਾਂਤ' : 'सिद्धांत')}</span>
+                              <span>{note.categoryTitle || (language === 'pb' ? 'ਸਿਧਾਂਤ' : language === 'en' ? 'Siddhant' : 'सिद्धांत')}</span>
                             </span>
 
                             {note.sakhiNumber && (

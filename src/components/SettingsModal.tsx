@@ -233,14 +233,29 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       const dataUrl = await compressDarshanImage(file);
       const res = await publishAdminDarshanPortrait(dataUrl, portraitState.objectFit);
       if (res.syncedToCloud) {
-        setAdminNotice(language === 'hi' ? '✓ पावन स्वरूप अपडेट व ग्लोबल क्लाउड सिंक सफल!' : '✓ Portrait updated & synced globally!');
+        setAdminNotice(
+          language === 'pb'
+            ? '✓ ਪਾਵਨ ਸਰੂਪ ਅਪਡੇਟ ਤੇ ਗਲੋਬਲ ਕਲਾਉਡ ਸਿੰਕ ਸਫਲ!'
+            : language === 'en'
+            ? '✓ Portrait updated & synced globally!'
+            : '✓ पावन स्वरूप अपडेट व ग्लोबल क्लाउड सिंक सफल!'
+        );
       } else if (res.needsGoogleAdminSignIn) {
-        setAdminNotice(language === 'hi' ? '✓ डिवाइस पर सेव — सभी भक्तों तक पहुँचाने हेतु Google एडमिन साइन-इन करें।' : '✓ Saved locally — Sign in with Admin Google to sync globally.');
+        setAdminNotice(
+          language === 'pb'
+            ? '✓ ਡਿਵਾਈਸ ਤੇ ਸੇਵ — ਸਾਰੇ ਭਗਤਾਂ ਤੱਕ ਪਹੁੰਚਾਉਣ ਲਈ Google ਐਡਮਿਨ ਸਾਈਨ-ਇਨ ਕਰੋ।'
+            : language === 'en'
+            ? '✓ Saved locally — Sign in with Admin Google to sync globally.'
+            : '✓ डिवाइस पर सेव — सभी भक्तों तक पहुँचाने हेतु Google एडमिन साइन-इन करें।'
+        );
       } else {
-        setAdminNotice(res.error || '✓ Portrait updated');
+        setAdminNotice(res.error || (language === 'pb' ? '✓ ਸਰੂਪ ਅਪਡੇਟ ਹੋਇਆ' : language === 'en' ? '✓ Portrait updated' : '✓ पावन स्वरूप अपडेट हुआ'));
       }
     } catch (err: any) {
-      setAdminNotice(err?.message || (language === 'hi' ? 'छवि संसाधन में त्रुटि' : 'Image upload error'));
+      setAdminNotice(
+        err?.message ||
+          (language === 'pb' ? 'ਚਿੱਤਰ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਗਲਤੀ' : language === 'en' ? 'Image upload error' : 'छवि संसाधन में त्रुटि')
+      );
     } finally {
       setIsUploadingPortrait(false);
       setTimeout(() => setAdminNotice(null), 4500);
@@ -257,14 +272,32 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         if (portraitState.imageData) {
           await publishAdminDarshanPortrait(portraitState.imageData, portraitState.objectFit);
         }
-        setAdminNotice(language === 'hi' ? '✓ Google एडमिन प्रमाणीकरण व क्लाउड सिंक सक्रिय!' : '✓ Admin Google verified & Cloud Sync active!');
+        setAdminNotice(
+          language === 'pb'
+            ? '✓ Google ਐਡਮਿਨ ਪ੍ਰਮਾਣੀਕਰਣ ਤੇ ਕਲਾਉਡ ਸਿੰਕ ਸਰਗਰਮ!'
+            : language === 'en'
+            ? '✓ Admin Google verified & Cloud Sync active!'
+            : '✓ Google एडमिन प्रमाणीकरण व क्लाउड सिंक सक्रिय!'
+        );
       } else {
         setAdminAuthenticated(false);
         setIsAdmin(false);
-        setAdminNotice(language === 'hi' ? '✗ केवल अधिकृत एडमिन खाता ही मान्य है।' : '✗ Only the authorized admin account is allowed.');
+        setAdminNotice(
+          language === 'pb'
+            ? '✗ ਕੇਵਲ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਖਾਤਾ ਹੀ ਮਾਨਯ ਹੈ।'
+            : language === 'en'
+            ? '✗ Only the authorized admin account is allowed.'
+            : '✗ केवल अधिकृत एडमिन खाता ही मान्य है।'
+        );
       }
     } catch {
-      setAdminNotice(language === 'hi' ? 'Google साइन-इन पॉपअप रद्द या अवरुद्ध हुआ।' : 'Google Sign-In cancelled or blocked in preview.');
+      setAdminNotice(
+        language === 'pb'
+          ? 'Google ਸਾਈਨ-ਇਨ ਰੱਦ ਜਾਂ ਬਲਾਕ ਹੋਇਆ।'
+          : language === 'en'
+          ? 'Google Sign-In cancelled or blocked in preview.'
+          : 'Google साइन-इन पॉपअप रद्द या अवरुद्ध हुआ।'
+      );
     }
     setTimeout(() => setAdminNotice(null), 4500);
   };
@@ -279,7 +312,13 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const handleAdminResetPortrait = async () => {
     if (!isAdmin) return;
     await resetAdminDarshanPortrait();
-    setAdminNotice(language === 'hi' ? '✓ पावन दर्शन स्वरूप रीसेट हो गया' : '✓ Portrait reset to sacred emblem');
+    setAdminNotice(
+      language === 'pb'
+        ? '✓ ਪਾਵਨ ਦਰਸ਼ਨ ਸਰੂਪ ਰੀਸੈੱਟ ਹੋ ਗਿਆ'
+        : language === 'en'
+        ? '✓ Portrait reset to sacred emblem'
+        : '✓ पावन दर्शन स्वरूप रीसेट हो गया'
+    );
     setTimeout(() => setAdminNotice(null), 3000);
   };
 
@@ -393,7 +432,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     speechReciter.setPitch(speechPitch);
     const testSampleText =
       activeLang === 'pb'
-        ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਕੀ ਜੈ। ਸਤਯਨਾਮ ਹੀ ਸਾਰ ਸ਼ਬਦ ਹੈ।'
+        ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਜੈ। ਸਤਯਨਾਮ ਹੀ ਸਾਰ ਸ਼ਬਦ ਹੈ।'
         : activeLang === 'en'
         ? 'Hail Satguru Kabir Saheb. Satyanaam is the supreme essence of truth.'
         : 'सतगुरु कबीर साहेब की जय। सत्यनाम ही सार शब्द है।';
@@ -478,10 +517,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             id="close-settings-modal-back"
             onClick={onClose}
             className="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer"
-            title="वापस जाएं"
+            title={activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Go Back' : 'वापस जाएं'}
           >
             <ArrowLeft size={16} />
-            <span>{activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'वापस जाएं'}</span>
+            <span>{activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Back' : 'वापस जाएं'}</span>
           </button>
         </div>
 
@@ -1369,7 +1408,17 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               </h3>
               <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                {navigator.onLine ? (language === 'pb' ? 'ਔਫਲਾਈਨ ਲਈ ਤਿਆਰ (100% Caching Active)' : 'Fully Cached & Ready') : 'Offline Mode Active'}
+                {navigator.onLine
+                  ? language === 'pb'
+                    ? 'ਔਫਲਾਈਨ ਲਈ ਤਿਆਰ (100% Caching Active)'
+                    : language === 'en'
+                    ? 'Fully Cached & Ready'
+                    : 'पूर्णतः कैश्ड व तैयार'
+                  : language === 'pb'
+                  ? 'ਔਫਲਾਈਨ ਮੋਡ ਸਰਗਰਮ'
+                  : language === 'en'
+                  ? 'Offline Mode Active'
+                  : 'ऑफ़लाइन मोड सक्रिय'}
               </span>
             </div>
 
@@ -1405,7 +1454,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   onClick={() => clearAllPinnedAudio()}
                   className="px-2.5 py-1 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-600 text-[11px] font-bold transition cursor-pointer shrink-0"
                 >
-                  {language === 'hi' ? 'साफ़ करें' : 'Clear'}
+                  {language === 'pb' ? 'ਸਾਫ਼ ਕਰੋ' : language === 'en' ? 'Clear' : 'साफ़ करें'}
                 </button>
               )}
             </div>
@@ -1438,9 +1487,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
               <div className="space-y-3">
                 <p className="text-xs font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' 
-                    ? 'आप अधिकृत एडमिन के रूप में प्रमाणित हैं। पावन स्वरूप, पवित्र ऑडियो एवं संपूर्ण सामग्री प्रबंधन आपके लिए सक्रिय है।' 
-                    : 'You are authenticated as Authorized Admin. Sacred image and media management are fully unlocked.'}
+                  {language === 'pb'
+                    ? 'ਤੁਸੀਂ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਵਜੋਂ ਪ੍ਰਮਾਣਿਤ ਹੋ। ਪਾਵਨ ਸਰੂਪ, ਪਵਿੱਤਰ ਆਡੀਓ ਤੇ ਸਮੱਗਰੀ ਪ੍ਰਬੰਧਨ ਸਰਗਰਮ ਹੈ।'
+                    : language === 'en'
+                    ? 'You are authenticated as Authorized Admin. Sacred image and media management are fully unlocked.'
+                    : 'आप अधिकृत एडमिन के रूप में प्रमाणित हैं। पावन स्वरूप, पवित्र ऑडियो एवं संपूर्ण सामग्री प्रबंधन आपके लिए सक्रिय है।'}
                 </p>
 
                 {/* Admin-Only Darshan Swaroop Manager */}
@@ -1792,9 +1843,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     : 'ऐप खोलने पर दिव्य स्प्लैश स्क्रीन दिखाएँ'}
                 </div>
                 <div className="text-[10px]" style={{ color: theme.textMuted }}>
-                  {language === 'hi'
-                    ? 'हर बार ऐप खुलने पर सत्यनाम चक्र व पावन प्रतीक दर्शन स्वतः प्रारंभ होगा'
-                    : 'Auto-display Satyanaam emblem splash when launching the app'}
+                  {language === 'pb'
+                    ? 'ਹਰ ਵਾਰ ਐਪ ਖੁੱਲ੍ਹਣ ਤੇ ਸਤਯਨਾਮ ਚੱਕਰ ਅਤੇ ਪਾਵਨ ਪ੍ਰਤੀਕ ਦਰਸ਼ਨ ਆਪਣੇ ਆਪ ਸ਼ੁਰੂ ਹੋਵੇਗਾ'
+                    : language === 'en'
+                    ? 'Auto-display Satyanaam emblem splash when launching the app'
+                    : 'हर बार ऐप खुलने पर सत्यनाम चक्र व पावन प्रतीक दर्शन स्वतः प्रारंभ होगा'}
                 </div>
               </div>
               <button
@@ -1806,7 +1859,17 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     : 'bg-stone-300 dark:bg-stone-700 text-stone-700 dark:text-stone-300'
                 }`}
               >
-                {splashOnLaunch ? (language === 'hi' ? 'चालू (ON)' : 'ON') : (language === 'hi' ? 'बंद (OFF)' : 'OFF')}
+                {splashOnLaunch
+                  ? language === 'pb'
+                    ? 'ਚਾਲੂ (ON)'
+                    : language === 'en'
+                    ? 'ON'
+                    : 'चालू (ON)'
+                  : language === 'pb'
+                  ? 'ਬੰਦ (OFF)'
+                  : language === 'en'
+                  ? 'OFF'
+                  : 'बंद (OFF)'}
               </button>
             </div>
           </div>

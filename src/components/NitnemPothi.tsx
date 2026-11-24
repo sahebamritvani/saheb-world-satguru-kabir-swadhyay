@@ -21,7 +21,7 @@ import {
   Flower2,
   Type
 } from 'lucide-react';
-import { Language, NitnemSection, ReaderFontSize } from '../types';
+import { Language, NitnemSection, ReaderFontSize, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { speechReciter } from '../services/audioDhun';
@@ -805,13 +805,13 @@ export const NitnemPothi: React.FC<{
       {/* Standardized Sacred Top Bar */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl select-none flex items-center justify-center overflow-hidden min-h-[44px] w-full"
+        className="border-b py-2 px-3 sm:px-4 rounded-xl select-none flex items-center justify-center min-h-[44px] w-full"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {currentLang === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : currentLang === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[currentLang]}
         </span>
       </div>
 

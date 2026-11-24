@@ -13,13 +13,14 @@ import {
   Mic,
   MicOff
 } from 'lucide-react';
-import { Language, Sakhi } from '../types';
+import { Language, Sakhi, SACRED_BRANDING } from '../types';
 import { translations, getLocalizedGranthaName } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sakhisDatabase } from '../data/sakhis';
 import { ULATVASI_CORE_QUESTIONS, loadAllUlatvasiDatabase, UlatvasiQuestion } from '../data/ulatvasiQuizData';
 import { useVoiceInput } from '../services/speechRecognition';
 import { db, auth } from '../lib/firebase';
+import { formatCoupletString } from '../utils/textSanitizer';
 import { collection, addDoc, query, getDocs, orderBy, limit, serverTimestamp, doc } from 'firebase/firestore';
 
 interface DeepSearchProps {
@@ -267,9 +268,9 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi}
         </span>
       </div>
 
@@ -516,7 +517,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
             {t.searchResults}
             <span className="ml-2 font-mono text-xs font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-300">
               {results.sakhis.length} {isHi ? 'साखियाँ' : isPb ? 'ਸਾਖੀਆਂ' : 'Sakhis'}
-              {results.ulatvasis.length > 0 && ` • ${results.ulatvasis.length} ${isHi ? 'उलटबांसियां' : 'Ulatbaasis'}`}
+              {results.ulatvasis.length > 0 && ` • ${results.ulatvasis.length} ${language === 'pb' ? 'ਉਲਟਬਾਂਸੀਆਂ' : language === 'en' ? 'Ulatbaasis' : 'उलटबांसियां'}`}
             </span>
           </h3>
         </div>
@@ -527,7 +528,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
             <div className="space-y-4">
               <h4 className="px-4 text-xs font-black uppercase tracking-widest text-amber-600 flex items-center gap-2">
                 <Scroll className="w-3 h-3" />
-                {language === 'hi' ? 'पावन साखी' : 'Sacred Sakhis'}
+                {language === 'pb' ? 'ਪਾਵਨ ਸਾਖੀਆਂ' : language === 'en' ? 'Sacred Sakhis' : 'पावन साखी'}
               </h4>
               <div className="grid grid-cols-1 gap-4">
                 <AnimatePresence mode="popLayout">
@@ -557,8 +558,8 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
                         </div>
                         <ArrowRight className="w-5 h-5" style={{ color: theme.accentGold }} />
                       </div>
-                      <p className="text-lg font-serif leading-relaxed line-clamp-2" style={{ color: theme.textPrimary }}>
-                        {sakhi.text[language]}
+                      <p className="text-base sm:text-lg font-serif leading-relaxed whitespace-pre-line" style={{ color: theme.textPrimary }}>
+                        {formatCoupletString(sakhi.text[language] || sakhi.text.hi)}
                       </p>
                     </motion.div>
                   ))}
@@ -572,7 +573,7 @@ export const DeepSearch: React.FC<DeepSearchProps> = ({
             <div className="space-y-4">
               <h4 className="px-4 text-xs font-black uppercase tracking-widest text-amber-600 flex items-center gap-2">
                 <Sparkles className="w-3 h-3" />
-                {language === 'hi' ? 'उलटबांसी रहस्य' : 'Ulatvasi Paradoxes'}
+                {language === 'hi' ? 'उलटबांसी रहस्य' : language === 'pb' ? 'ਉਲਟਬਾਂਸੀ ਰਹੱਸ' : 'Ulatvasi Paradoxes'}
               </h4>
               <div className="grid grid-cols-1 gap-4">
                 <AnimatePresence mode="popLayout">

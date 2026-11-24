@@ -27,6 +27,14 @@ export function formatCoupletIntoTwoLines(rawText: string): string[] {
     }
   }
 
+  // Try splitting by semicolon if present (common in English doha couplets)
+  const semiIdx = text.indexOf(';');
+  if (semiIdx > 5 && semiIdx < text.length - 5) {
+    const line1 = text.slice(0, semiIdx + 1).trim();
+    const line2 = text.slice(semiIdx + 1).trim();
+    return [line1, line2];
+  }
+
   // Try splitting by comma if present
   const commaIdx = text.indexOf(',');
   if (commaIdx > 10 && commaIdx < text.length - 10) {
@@ -70,7 +78,6 @@ export function ensureSatguruKabirSaheb(text: string): string {
   // Punjabi: Ensure "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ"
   res = res
     .replace(/(?<!ਸਤਿਗੁਰੂ\s+|ਬੰਦੀਛੋੜ\s+|ਸਤਿਗੁਰ\s+)ਕਬੀਰ ਸਾਹੇਬ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ')
-    .replace(/(?<!ਸਤਿਗੁਰੂ\s+|ਬੰਦੀਛੋੜ\s+|ਸਤਿਗੁਰ\s+)ਸੰਤ ਕबीर/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ')
     .replace(/(?<!ਸਤਿਗੁਰੂ\s+|ਬੰਦੀਛੋੜ\s+|ਸਤਿਗੁਰ\s+)ਸੰਤ ਕਬੀਰ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ');
 
   // English: Ensure "Satguru Kabir Saheb"

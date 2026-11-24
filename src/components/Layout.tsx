@@ -265,9 +265,9 @@ export const Layout: React.FC<LayoutProps> = ({
         } else if (resultText.includes('स्वाध्याय')) {
           matchedView = 'swadhyay';
           speechConfirmText = 'स्वाध्याय खोल रहा हूँ...';
-        } else if (resultText.includes('नितनेम') || resultText.includes('गुटका') || resultText.includes('गुटका साहिब')) {
+        } else if (resultText.includes('नितनेम') || resultText.includes('गुटका') || resultText.includes('गुटका साहेब') || resultText.includes('गुटका साहिब')) {
           matchedView = 'nitnem-gutka';
-          speechConfirmText = 'नितनेम गुटका साहिब खोल रहा हूँ...';
+          speechConfirmText = 'नितनेम गुटका साहेब खोल रहा हूँ...';
         } else if (resultText.includes('डायरी')) {
           matchedView = 'diary';
           speechConfirmText = 'आत्मिक डायरी खोल रहा हूँ...';
@@ -1266,14 +1266,16 @@ export const Layout: React.FC<LayoutProps> = ({
             backgroundColor: theme.stepActiveBg,
             borderColor: theme.accentGold,
           }}
-          className="sticky top-0 z-40 border-b px-3 py-1.5 flex items-center justify-between gap-2 min-h-[48px] shadow-md select-none"
+          className="sticky top-0 z-40 border-b px-3 py-1.5 grid grid-cols-[1fr_auto_1fr] items-center gap-2 min-h-[48px] shadow-md select-none"
         >
+          <span aria-hidden="true" />
           <span
             style={{ color: theme.sacredMaroon }}
-            className="text-xs sm:text-sm font-black font-serif tracking-wide truncate"
+            className="text-sm sm:text-base font-black font-serif tracking-wide whitespace-nowrap text-center"
           >
             {exactTop}
           </span>
+          <div className="justify-self-end">
           <button
             type="button"
             onClick={exitAppFullscreen}
@@ -1293,6 +1295,7 @@ export const Layout: React.FC<LayoutProps> = ({
                 : 'सामान्य स्क्रीन (वापस आएं)'}
             </span>
           </button>
+          </div>
         </div>
       )}
 
@@ -1308,54 +1311,68 @@ export const Layout: React.FC<LayoutProps> = ({
               : theme.stepActiveBg,
             borderColor: theme.cardBorder,
           }}
-          className={`border-b py-1 sm:py-1.5 px-1.5 xs:px-2.5 sm:px-5 relative flex items-center justify-between gap-1 sm:gap-2 select-none min-h-[38px] sm:min-h-[42px] overflow-hidden ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
+          className={`border-b select-none ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
-          {/* Left: Sidebar Toggle & App Brand */}
-          <div className="z-10 flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <button
-              id="header-sidebar-toggle-btn"
-              onClick={() => setIsSidebarOpen(true)}
-              style={{ color: theme.sacredMaroon, borderColor: theme.accentGold, backgroundColor: theme.cardBg }}
-              className="h-7 sm:h-7.5 px-2 sm:px-2.5 rounded-lg border flex items-center gap-1.5 hover:opacity-90 transition cursor-pointer shrink-0 shadow-2xs hover:scale-105"
-              title="समस्त पावन फीचर्स एवं ग्रन्थालय (All Features Menu)"
-              aria-label={language === 'hi' ? 'समस्त फीचर्स मेनू खोलें' : language === 'pb' ? 'ਸਾਰੇ ਫੀਚਰਸ ਮੇਨੂ ਖੋਲ੍ਹੋ' : 'Open All Features Menu'}
-            >
-              <Menu className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-              <span className="text-[0.6875rem] sm:text-xs font-bold font-serif hidden sm:inline">
-                {language === 'pb' ? 'ਸਾਰੇ ਫੀਚਰਸ' : language === 'en' ? 'All Features' : 'समस्त फीचर्स'}
-              </span>
-            </button>
-
-            <div
-              id="header-brand-link"
-              className="flex items-center gap-1.5 cursor-pointer select-none group shrink-0"
-              title="Saheb World"
-              onClick={handleHeaderBrandTap}
-            >
-              <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full overflow-hidden shrink-0 shadow-2xs border border-amber-600/30">
-                <img src="/Saheb_World_icon.jpg" alt="Saheb World" className="w-full h-full object-cover" />
-              </div>
-              <span
-                style={{ color: theme.sacredMaroon }}
-                className="text-xs sm:text-sm font-black font-serif tracking-tight drop-shadow-xs whitespace-nowrap hidden md:inline"
-              >
-                {t.appName}
-              </span>
-            </div>
-          </div>
-          
-          {/* Centre: Strict Top Header (🌹।।सत्यनाम।।🌹) - Prominent, Centered, Fluid Flex Zone */}
-          <div className="flex-1 min-w-0 flex items-center justify-center text-center px-1 z-20 overflow-hidden">
+          {/* Mobile & Small Tablet: Dedicated Centered Top Strip for 🌹।।सत्यनाम।।🌹 */}
+          <div
+            className="md:hidden w-full flex items-center justify-center py-1 px-2 border-b"
+            style={{ borderColor: theme.cardBorder }}
+          >
             <span
               style={{ color: theme.sacredMaroon }}
-              className="font-serif drop-shadow-xs truncate text-center text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-black tracking-normal sm:tracking-wide leading-none block max-w-full"
+              className="font-serif drop-shadow-xs text-center text-base sm:text-lg font-black tracking-wide leading-tight whitespace-nowrap"
             >
               {exactTop}
             </span>
           </div>
 
-          {/* Right: Install App, Share App & Fullscreen Buttons */}
-          <div className="z-10 shrink-0 flex items-center gap-1.5 justify-end">
+          <div className="py-1 sm:py-1.5 px-2 xs:px-3 sm:px-5 relative flex md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-between gap-1.5 sm:gap-2 min-h-[38px] sm:min-h-[44px]">
+            {/* Left: Sidebar Toggle & App Brand */}
+            <div className="z-10 flex items-center gap-1.5 sm:gap-2 shrink-0 justify-self-start">
+              <button
+                id="header-sidebar-toggle-btn"
+                onClick={() => setIsSidebarOpen(true)}
+                style={{ color: theme.sacredMaroon, borderColor: theme.accentGold, backgroundColor: theme.cardBg }}
+                className="h-7 sm:h-7.5 px-2 sm:px-2.5 rounded-lg border flex items-center gap-1.5 hover:opacity-90 transition cursor-pointer shrink-0 shadow-2xs hover:scale-105"
+                title={language === 'pb' ? 'ਸਾਰੇ ਫੀਚਰਸ ਤੇ ਗ੍ਰੰਥਾਲਯ' : language === 'en' ? 'All Features & Sacred Library' : 'समस्त पावन फीचर्स एवं ग्रन्थालय'}
+                aria-label={language === 'hi' ? 'समस्त फीचर्स मेनू खोलें' : language === 'pb' ? 'ਸਾਰੇ ਫੀਚਰਸ ਮੇਨੂ ਖੋਲ੍ਹੋ' : 'Open All Features Menu'}
+              >
+                <Menu className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                <span className="text-[0.6875rem] sm:text-xs font-bold font-serif hidden sm:inline">
+                  {language === 'pb' ? 'ਸਾਰੇ ਫੀਚਰਸ' : language === 'en' ? 'All Features' : 'समस्त फीचर्स'}
+                </span>
+              </button>
+
+              <div
+                id="header-brand-link"
+                className="flex items-center gap-1.5 cursor-pointer select-none group shrink-0"
+                title="Saheb World"
+                onClick={handleHeaderBrandTap}
+              >
+                <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full overflow-hidden shrink-0 shadow-2xs border border-amber-600/30">
+                  <img src="/Saheb_World_icon.jpg" alt="Saheb World" className="w-full h-full object-cover" />
+                </div>
+                <span
+                  style={{ color: theme.sacredMaroon }}
+                  className="text-xs sm:text-sm font-black font-serif tracking-tight drop-shadow-xs whitespace-nowrap"
+                >
+                  {t.appName}
+                </span>
+              </div>
+            </div>
+
+            {/* Desktop Centre: Strict Top Header (🌹।।सत्यनाम।।🌹) - Mathematically Centered */}
+            <div className="hidden md:flex items-center justify-center text-center px-2 z-20 justify-self-center">
+              <span
+                style={{ color: theme.sacredMaroon }}
+                className="font-serif drop-shadow-xs text-center text-lg lg:text-xl font-black tracking-wide leading-none whitespace-nowrap"
+              >
+                {exactTop}
+              </span>
+            </div>
+
+            {/* Right: Install App, Share App & Fullscreen Buttons */}
+            <div className="z-10 shrink-0 flex items-center gap-1.5 justify-end justify-self-end">
             {!pwaStandalone && !isAppInstalled && (
               <button
                 id="header-install-app-btn"
@@ -1416,7 +1433,11 @@ export const Layout: React.FC<LayoutProps> = ({
                   backgroundColor: theme.cardBg,
                 }}
                 className="h-7 sm:h-7.5 px-2 sm:px-2.5 rounded-lg border flex items-center gap-1.5 hover:opacity-95 transition-all cursor-pointer shadow-2xs hover:scale-105 active:scale-95 shrink-0"
-                title={isFullscreen ? (language === 'pb' ? 'ਛੋਟੀ ਸਕ੍ਰੀਨ' : 'सामान्य स्क्रीन') : (language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ' : 'पूरी स्क्रीन')}
+                title={
+                  isFullscreen
+                    ? (language === 'pb' ? 'ਛੋਟੀ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Normal Screen' : 'सामान्य स्क्रीन')
+                    : (language === 'pb' ? 'ਪੂਰੀ ਸਕ੍ਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूरी स्क्रीन')
+                }
                 aria-label={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
               >
                 {isFullscreen ? (
@@ -1432,6 +1453,7 @@ export const Layout: React.FC<LayoutProps> = ({
                 </span>
               </button>
             )}
+            </div>
           </div>
         </div>
 
@@ -1510,7 +1532,7 @@ export const Layout: React.FC<LayoutProps> = ({
             <div 
               onClick={() => { if (bar2MovedDistance > 6) return; handleNavClick('dhun'); }}
               className="flex items-center justify-center text-center overflow-hidden px-1.5 cursor-pointer shrink-0 min-w-[220px] sm:min-w-[280px] max-w-[380px]"
-              title="अखंड सुमिरन एवं अमर लोक धाम"
+              title={language === 'pb' ? 'ਅਖੰਡ ਸਿਮਰਨ ਤੇ ਅਮਰ ਲੋਕ ਧਾਮ' : language === 'en' ? 'Eternal Remembrance & Amar Lok' : 'अखंड सुमिरन एवं अमर लोक धाम'}
             >
               <div className="relative overflow-hidden w-full py-0.5 text-center">
                 <span 
@@ -1538,12 +1560,20 @@ export const Layout: React.FC<LayoutProps> = ({
                 className={`px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border flex items-center gap-1.5 cursor-pointer transition-all hover:scale-105 shadow-2xs shrink-0 ${
                   isDhunPlaying ? 'ring-1.5 ring-amber-500/60' : ''
                 }`}
-                title={isDhunPlaying ? 'अखंड सत्यनाम धुन रोकें (Pause Dhun)' : 'अखंड सत्यनाम धुन प्रारंभ करें (Play Dhun)'}
+                title={
+                  isDhunPlaying
+                    ? (language === 'pb' ? 'ਅਖੰਡ ਸਤਯਨਾਮ ਧੁਨ ਰੋਕੋ' : language === 'en' ? 'Pause Akhand Satyanaam Dhun' : 'अखंड सत्यनाम धुन रोकें')
+                    : (language === 'pb' ? 'ਅਖੰਡ ਸਤਯਨਾਮ ਧੁਨ ਚਲਾਓ' : language === 'en' ? 'Play Akhand Satyanaam Dhun' : 'अखंड सत्यनाम धुन प्रारंभ करें')
+                }
               >
                 {/* 5-Bar Animated Audio Equalizer Visualizer */}
                 <div 
                   className="flex items-end gap-[2px] h-3 sm:h-3.5 w-4 sm:w-5 justify-center" 
-                  title={isDhunPlaying ? 'ध्वनि तरंगे सक्रिय (Audio Wave Active)' : 'ऑडियो शांत'}
+                  title={
+                    isDhunPlaying
+                      ? (language === 'pb' ? 'ਆਡੀਓ ਤਰੰਗਾਂ ਚਾਲੂ ਹਨ' : language === 'en' ? 'Audio Wave Active' : 'ध्वनि तरंगे सक्रिय')
+                      : (language === 'pb' ? 'ਆਡੀਓ ਸ਼ਾਂਤ' : language === 'en' ? 'Audio Paused' : 'ऑडियो शांत')
+                  }
                 >
                   <span 
                     className={`w-[2px] rounded-full transition-all duration-300 ${
@@ -1987,7 +2017,7 @@ export const Layout: React.FC<LayoutProps> = ({
                 <div className="text-center w-full">
                   <span 
                     style={{ color: theme.sacredMaroon }}
-                    className="text-xs font-black font-serif tracking-widest block drop-shadow-xs"
+                    className="text-sm sm:text-base font-black font-serif tracking-wide block drop-shadow-xs whitespace-nowrap"
                   >
                     {exactTop}
                   </span>
@@ -2225,7 +2255,11 @@ export const Layout: React.FC<LayoutProps> = ({
                   >
                     <Download className="w-4 h-4 shrink-0" />
                     <span>
-                      {language === 'en' ? 'Check GitHub APK Updates' : 'GitHub Android APK अपडेट जांचें'}
+                      {language === 'pb'
+                        ? 'GitHub Android APK ਅੱਪਡੇਟ ਜਾਂਚੋ'
+                        : language === 'en'
+                        ? 'Check GitHub APK Updates'
+                        : 'GitHub Android APK अपडेट जांचें'}
                     </span>
                   </button>
                 )}
@@ -2674,7 +2708,19 @@ export const Layout: React.FC<LayoutProps> = ({
                     ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText, borderColor: theme.accentGold }
                     : { backgroundColor: theme.bgSecondary, color: theme.sacredMaroon, borderColor: theme.cardBorder }
                 }
-                aria-label={isDhunPlaying ? (language === 'hi' ? 'धुन बंद करें' : 'Pause Dhun') : (language === 'hi' ? 'धुन बजाएं' : 'Play Dhun')}
+                aria-label={
+                  isDhunPlaying
+                    ? language === 'pb'
+                      ? 'ਧੁਨ ਰੋਕੋ'
+                      : language === 'en'
+                      ? 'Pause Dhun'
+                      : 'धुन बंद करें'
+                    : language === 'pb'
+                    ? 'ਧੁਨ ਚਲਾਓ'
+                    : language === 'en'
+                    ? 'Play Dhun'
+                    : 'धुन बजाएं'
+                }
               >
                 {isDhunPlaying ? <Volume2 size={12} /> : <VolumeX size={12} />}
                 <span>{t.dhunTitle}</span>
@@ -2908,32 +2954,56 @@ export const Layout: React.FC<LayoutProps> = ({
                   <div className="rounded-xl border border-amber-600/20 bg-white/70 dark:bg-black/25 divide-y divide-amber-600/15 text-left text-xs font-serif">
                     <div className="px-3 py-2 flex items-center justify-between gap-2">
                       <span style={{ color: theme.textSecondary }}>
-                        {language === 'en' ? 'Browser Window' : 'ब्राउज़र विंडो'}
+                        {language === 'pb' ? 'ਬ੍ਰਾਊਜ਼ਰ ਵਿੰਡੋ' : language === 'en' ? 'Browser Window' : 'ब्राउज़र विंडो'}
                       </span>
                       <span className={`font-bold ${!isRunningInIframe ? 'text-emerald-700 dark:text-emerald-400' : 'text-amber-800 dark:text-amber-300'}`}>
                         {!isRunningInIframe
-                          ? (language === 'en' ? 'Top-Level Ready' : 'सीधे Chrome में खुला')
-                          : (language === 'en' ? 'Preview Frame — Open Chrome' : 'प्रीव्यू फ्रेम — नीचे Chrome बटन दबाएं')}
+                          ? language === 'pb'
+                            ? 'ਸਿੱਧੇ Chrome ਵਿੱਚ ਖੁੱਲ੍ਹਾ'
+                            : language === 'en'
+                            ? 'Top-Level Ready'
+                            : 'सीधे Chrome में खुला'
+                          : language === 'pb'
+                          ? 'ਪ੍ਰੀਵਿਊ ਫ੍ਰੇਮ — Chrome ਖੋਲ੍ਹੋ'
+                          : language === 'en'
+                          ? 'Preview Frame — Open Chrome'
+                          : 'प्रीव्यू फ्रेम — नीचे Chrome बटन दबाएं'}
                       </span>
                     </div>
                     <div className="px-3 py-2 flex items-center justify-between gap-2">
                       <span style={{ color: theme.textSecondary }}>
-                        {language === 'en' ? 'Chakra Icon & Manifest' : 'गोल्डन चक्र आइकन व मैनिफेस्ट'}
+                        {language === 'pb' ? 'ਚੱਕਰ ਆਈਕਨ ਤੇ ਮੈਨੀਫੈਸਟ' : language === 'en' ? 'Chakra Icon & Manifest' : 'गोल्डन चक्र आइकन व मैनिफेस्ट'}
                       </span>
                       <span className={`font-bold ${isManifestVerified ? 'text-emerald-700 dark:text-emerald-400' : 'text-amber-700 dark:text-amber-300'}`}>
                         {isManifestVerified
-                          ? (language === 'en' ? 'Verified' : 'सत्यापित ✓')
-                          : (language === 'en' ? 'Checking...' : 'तैयार हो रहा है')}
+                          ? language === 'pb'
+                            ? 'ਤਸਦੀਕਸ਼ੁਦਾ ✓'
+                            : language === 'en'
+                            ? 'Verified'
+                            : 'सत्यापित ✓'
+                          : language === 'pb'
+                          ? 'ਜਾਂਚ ਜਾਰੀ...'
+                          : language === 'en'
+                          ? 'Checking...'
+                          : 'तैयार हो रहा है'}
                       </span>
                     </div>
                     <div className="px-3 py-2 flex items-center justify-between gap-2">
                       <span style={{ color: theme.textSecondary }}>
-                        {language === 'en' ? 'Offline Storage' : 'ऑफ़लाइन भंडार'}
+                        {language === 'pb' ? 'ਔਫਲਾਈਨ ਭੰਡਾਰ' : language === 'en' ? 'Offline Storage' : 'ऑफ़लाइन भंडार'}
                       </span>
                       <span className={`font-bold ${isOfflineReady ? 'text-emerald-700 dark:text-emerald-400' : 'text-amber-700 dark:text-amber-300'}`}>
                         {isOfflineReady
-                          ? (language === 'en' ? 'Ready (100% Offline)' : 'सक्रिय ✓')
-                          : (language === 'en' ? 'Caching...' : 'सहेजा जा रहा है')}
+                          ? language === 'pb'
+                            ? 'ਤਿਆਰ (100% ਔਫਲਾਈਨ) ✓'
+                            : language === 'en'
+                            ? 'Ready (100% Offline)'
+                            : 'सक्रिय ✓'
+                          : language === 'pb'
+                          ? 'ਸੇਵ ਹੋ ਰਿਹਾ ਹੈ...'
+                          : language === 'en'
+                          ? 'Caching...'
+                          : 'सहेजा जा रहा है'}
                       </span>
                     </div>
                   </div>
@@ -3020,7 +3090,13 @@ export const Layout: React.FC<LayoutProps> = ({
                           className="min-h-[44px] py-2.5 px-3 rounded-xl border border-amber-600/35 text-amber-900 dark:text-amber-200 font-bold font-serif text-xs flex items-center justify-center gap-1.5 hover:bg-amber-500/10 transition cursor-pointer no-underline whitespace-nowrap"
                         >
                           <Smartphone className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                          <span className="truncate">{language === 'en' ? 'Switch to Chrome App' : 'Android Chrome में बदलें'}</span>
+                          <span className="truncate">
+                            {language === 'pb'
+                              ? 'Android Chrome ਵਿੱਚ ਬਦਲੋ'
+                              : language === 'en'
+                              ? 'Switch to Chrome App'
+                              : 'Android Chrome में बदलें'}
+                          </span>
                         </a>
                       ) : (
                         <a
@@ -3043,7 +3119,13 @@ export const Layout: React.FC<LayoutProps> = ({
                           try {
                             await navigator.clipboard.writeText(currentUrl);
                             setIsAppCopied(true);
-                            setInstallFeedbackToast(language === 'hi' ? '✓ लिंक कॉपी हो गया! इसे फ़ोन के Chrome में खोलें।' : '✓ Link copied! Open in Chrome on phone.');
+                            setInstallFeedbackToast(
+                              language === 'pb'
+                                ? '✓ ਲਿੰਕ ਕਾਪੀ ਹੋ ਗਿਆ! ਇਸਨੂੰ ਫ਼ੋਨ ਦੇ Chrome ਵਿੱਚ ਖੋਲ੍ਹੋ।'
+                                : language === 'en'
+                                ? '✓ Link copied! Open in Chrome on phone.'
+                                : '✓ लिंक कॉपी हो गया! इसे फ़ोन के Chrome में खोलें।'
+                            );
                             setTimeout(() => {
                               setIsAppCopied(false);
                               setInstallFeedbackToast(null);
@@ -3053,7 +3135,19 @@ export const Layout: React.FC<LayoutProps> = ({
                         className="min-h-[44px] py-2.5 px-3 rounded-xl border border-amber-600/35 text-amber-900 dark:text-amber-200 font-bold font-serif text-xs flex items-center justify-center gap-1.5 hover:bg-amber-500/10 transition cursor-pointer whitespace-nowrap"
                       >
                         {isAppCopied ? <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> : <Copy className="w-3.5 h-3.5 text-amber-600 shrink-0" />}
-                        <span className="truncate">{isAppCopied ? (language === 'hi' ? 'कॉपी हुआ! ✓' : 'Copied!') : (language === 'hi' ? 'लिंक कॉपी करें' : 'Copy Link')}</span>
+                        <span className="truncate">
+                          {isAppCopied
+                            ? language === 'pb'
+                              ? 'ਕਾਪੀ ਹੋਇਆ! ✓'
+                              : language === 'en'
+                              ? 'Copied!'
+                              : 'कॉपी हुआ! ✓'
+                            : language === 'pb'
+                            ? 'ਲਿੰਕ ਕਾਪੀ ਕਰੋ'
+                            : language === 'en'
+                            ? 'Copy Link'
+                            : 'लिंक कॉपी करें'}
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -3061,12 +3155,28 @@ export const Layout: React.FC<LayoutProps> = ({
                   {/* Highlights Grid */}
                   <div className="grid grid-cols-2 gap-2 text-[0.6875rem] font-serif pt-1 text-left">
                     <div className="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
-                      <span className="font-bold block text-amber-900 dark:text-amber-300">100% ऑफ़लाइन</span>
-                      <span className="text-gray-600 dark:text-gray-400">बिना इंटरनेट सभी ग्रंथ व साखियाँ चलेंगी</span>
+                      <span className="font-bold block text-amber-900 dark:text-amber-300">
+                        {language === 'pb' ? '100% ਔਫਲਾਈਨ' : language === 'en' ? '100% Offline' : '100% ऑफ़लाइन'}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        {language === 'pb'
+                          ? 'ਬਿਨਾਂ ਇੰਟਰਨੈੱਟ ਸਾਰੇ ਗ੍ਰੰਥ ਤੇ ਸਾਖੀਆਂ ਚੱਲਣਗੀਆਂ'
+                          : language === 'en'
+                          ? 'All scriptures & sakhis work without internet'
+                          : 'बिना इंटरनेट सभी ग्रंथ व साखियाँ चलेंगी'}
+                      </span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
-                      <span className="font-bold block text-amber-900 dark:text-amber-300">गोल्डन चक्र आइकन</span>
-                      <span className="text-gray-600 dark:text-gray-400">बिना सुरक्षा चेतावनी सीधे ऐप ड्रॉवर में</span>
+                      <span className="font-bold block text-amber-900 dark:text-amber-300">
+                        {language === 'pb' ? 'ਗੋਲਡਨ ਚੱਕਰ ਆਈਕਨ' : language === 'en' ? 'Golden Chakra Icon' : 'गोल्डन चक्र आइकन'}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        {language === 'pb'
+                          ? 'ਬਿਨਾਂ ਸੁਰੱਖਿਆ ਚੇਤਾਵਨੀ ਸਿੱਧਾ ਐਪ ਡਰਾਅਰ ਵਿੱਚ'
+                          : language === 'en'
+                          ? 'Direct to app drawer without warnings'
+                          : 'बिना सुरक्षा चेतावनी सीधे ऐप ड्रॉवर में'}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -3129,7 +3239,13 @@ export const Layout: React.FC<LayoutProps> = ({
                           try {
                             await navigator.clipboard.writeText(currentUrl);
                             setIsAppCopied(true);
-                            setInstallFeedbackToast(language === 'hi' ? '✓ लिंक कॉपी हो गया!' : '✓ Link copied!');
+                            setInstallFeedbackToast(
+                              language === 'pb'
+                                ? '✓ ਲਿੰਕ ਕਾਪੀ ਹੋ ਗਿਆ!'
+                                : language === 'en'
+                                ? '✓ Link copied!'
+                                : '✓ लिंक कॉपी हो गया!'
+                            );
                             setTimeout(() => {
                               setIsAppCopied(false);
                               setInstallFeedbackToast(null);
@@ -3149,7 +3265,7 @@ export const Layout: React.FC<LayoutProps> = ({
                         className="flex-1 py-2 px-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs hover:bg-emerald-500 transition cursor-pointer"
                       >
                         <Share2 className="w-3.5 h-3.5" />
-                        <span>WhatsApp पर भेजें</span>
+                        <span>{language === 'pb' ? 'WhatsApp ਤੇ ਭੇਜੋ' : language === 'en' ? 'Send on WhatsApp' : 'WhatsApp पर भेजें'}</span>
                       </a>
                     </div>
                   </div>
@@ -3317,8 +3433,16 @@ export const Layout: React.FC<LayoutProps> = ({
                   style={{ color: theme.mode === 'mystic_dark' ? '#FDE68A' : theme.textSecondary }}
                 >
                   {isInstallable
-                    ? (language === 'en' ? 'Install with Golden Chakra icon' : 'गोल्डन चक्र आइकन सहित 1-टैप इंस्टॉल')
-                    : (language === 'en' ? 'Tap ⋮ -> Install App in Chrome' : 'Chrome ⋮ मेनू से Install App चुनें')}
+                    ? language === 'pb'
+                      ? 'ਗੋਲਡਨ ਚੱਕਰ ਆਈਕਨ ਸਹਿਤ 1-ਟੈਪ ਇੰਸਟਾਲ'
+                      : language === 'en'
+                      ? 'Install with Golden Chakra icon'
+                      : 'गोल्डन चक्र आइकन सहित 1-टैप इंस्टॉल'
+                    : language === 'pb'
+                    ? 'Chrome ⋮ ਮੀਨੂ ਤੋਂ Install App ਚੁਣੋ'
+                    : language === 'en'
+                    ? 'Tap ⋮ -> Install App in Chrome'
+                    : 'Chrome ⋮ मेनू से Install App चुनें'}
                 </p>
               </div>
             </div>

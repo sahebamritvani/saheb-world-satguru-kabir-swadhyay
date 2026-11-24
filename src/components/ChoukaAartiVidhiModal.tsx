@@ -398,14 +398,14 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
           {/* Footer */}
           <div className="p-4 border-t border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-950 flex items-center justify-between">
             <span className="text-[11px] font-serif text-amber-900 dark:text-amber-300 font-bold">
-              {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਕਬੀਰ ਪੰਥ ਮਰਿਆਦਾ' : 'दमाखेड़ा कबीर पंथ अमर मर्यादा'}
+              {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਕਬੀਰ ਪੰਥ ਮਰਿਆਦਾ' : language === 'en' ? 'Damakheda Kabir Panth Sacred Tradition' : 'दमाखेड़ा कबीर पंथ अमर मर्यादा'}
             </span>
             <button
               type="button"
               onClick={onClose}
               className="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs cursor-pointer"
             >
-              {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '।। Saheb Bandagi Saheb ।।' : '।। साहेब बंदगी साहेब ।।'}
+              {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
             </button>
           </div>
         </motion.div>

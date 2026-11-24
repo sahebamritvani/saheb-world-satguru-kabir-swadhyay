@@ -4,6 +4,7 @@ import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { speechReciter } from '../services/audioDhun';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 interface GranthaSangrahProps {
   sakhis: Sakhi[];
@@ -86,13 +87,13 @@ export const GranthaSangrah: React.FC<GranthaSangrahProps> = ({
       {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
+        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center min-h-[42px]"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤ੍ਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language]}
         </span>
       </div>
 
@@ -251,7 +252,7 @@ export const GranthaSangrah: React.FC<GranthaSangrahProps> = ({
                     style={{ color: theme.sacredMaroon }}
                     className="font-serif font-bold text-base sm:text-lg leading-relaxed whitespace-pre-line"
                   >
-                    {sakhi.text[language]}
+                    {formatCoupletString(sakhi.text[language] || sakhi.text.hi)}
                   </p>
 
                   <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm line-clamp-2 leading-relaxed">
@@ -272,7 +273,7 @@ export const GranthaSangrah: React.FC<GranthaSangrahProps> = ({
                     className="px-3 py-1.5 rounded-lg border text-xs font-semibold hover:opacity-90 flex items-center gap-1.5 transition cursor-pointer"
                   >
                     <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
-                    <span>प्रश्नोत्तरी</span>
+                    <span>{language === 'pb' ? 'ਪ੍ਰਸ਼ਨੋੱਤਰੀ' : language === 'en' ? 'Quiz' : 'प्रश्नोत्तरी'}</span>
                   </button>
 
                   <button

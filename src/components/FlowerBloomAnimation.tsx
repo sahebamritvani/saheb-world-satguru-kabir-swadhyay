@@ -111,8 +111,8 @@ export const FlowerBloomAnimation: React.FC<FlowerBloomAnimationProps> = ({
 
           {/* Title & Sacred Header */}
           <div className="space-y-1">
-            <span className="text-[11px] font-bold text-amber-700 dark:text-amber-300 uppercase tracking-widest font-serif block">
-              🌹 {SACRED_BRANDING.header[language]} 🌹
+            <span className="text-sm sm:text-base font-black text-amber-700 dark:text-amber-300 tracking-wide font-serif block text-center whitespace-nowrap">
+              {SACRED_BRANDING.header[language]}
             </span>
             <h3 
               className="text-lg font-black font-serif"

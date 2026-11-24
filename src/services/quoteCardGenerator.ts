@@ -1,4 +1,5 @@
-import { Sakhi, Language } from '../types';
+import { Sakhi, Language, SACRED_BRANDING } from '../types';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 export interface GeneratedCardResult {
   blob: Blob;
@@ -119,14 +120,22 @@ export async function generateQuoteCardCanvas(options: {
   ctx.fillStyle = themeItem.accent || '#D97706';
   ctx.font = 'bold 36px "Noto Serif Devanagari", serif';
   ctx.textAlign = 'center';
-  ctx.fillText('🌹 ।। सत्यनाम ।। 🌹', width / 2, 120);
+  ctx.fillText(SACRED_BRANDING.header[language], width / 2, 120);
 
   ctx.font = '24px "Noto Sans Devanagari", sans-serif';
   ctx.fillStyle = themeItem.text;
-  ctx.fillText('सतगुरु कबीर साहेब पावन साखी', width / 2, 165);
+  ctx.fillText(
+    language === 'pb'
+      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸਾਖੀ'
+      : language === 'en'
+      ? 'Satguru Kabir Saheb Sacred Sakhi'
+      : 'सतगुरु कबीर साहेब पावन साखी',
+    width / 2,
+    165
+  );
 
-  // Main Verse Text
-  const verseText = customText || sakhi.text[language] || sakhi.text.hi;
+  // Main Verse Text (Two-line formatted)
+  const verseText = formatCoupletString(customText || sakhi.text[language] || sakhi.text.hi);
   const lines = verseText.split('\n');
 
   ctx.font = 'bold 44px "Noto Serif Devanagari", serif';

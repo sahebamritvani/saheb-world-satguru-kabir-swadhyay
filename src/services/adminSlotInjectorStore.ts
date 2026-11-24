@@ -150,7 +150,8 @@ export type AdminGranthSlotId =
   | 'slot-55-vani-card-maker'
   | 'slot-56-satvik-sankalp'
   | 'slot-57-kabir-gyan-quiz'
-  | 'slot-58-vansh-bayalis';
+  | 'slot-58-vansh-bayalis'
+  | 'slot-59-satyanaam-panacea';
 
 export interface AdminGranthSlotDefinition {
   id: AdminGranthSlotId;

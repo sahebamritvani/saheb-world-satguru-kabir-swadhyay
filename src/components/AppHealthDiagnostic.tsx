@@ -16,7 +16,7 @@ import {
   Download,
   ArrowLeft
 } from 'lucide-react';
-import { Language } from '../types';
+import { Language, SACRED_BRANDING } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 
@@ -240,9 +240,9 @@ export const AppHealthDiagnostic: React.FC<HealthDiagnosticProps> = ({ language,
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-base sm:text-lg font-black tracking-normal sm:tracking-widest font-serif block drop-shadow-xs text-center"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block drop-shadow-xs text-center whitespace-nowrap"
         >
-          {language === 'pb' ? '🌹।।ਸਤ੍ਯਨਾਮ।।🌹' : language === 'en' ? '🌹||Satyanaam||🌹' : '🌹।।सत्यनाम।।🌹'}
+          {SACRED_BRANDING.header[language]}
         </span>
       </div>
 

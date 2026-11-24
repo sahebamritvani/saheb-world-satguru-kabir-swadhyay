@@ -49,7 +49,7 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
       searchPlaceholder: 'मार्गदर्शिका में खोजें (उदा. 11 चरण, नितनेम, प्रमाण-पत्र)...',
       allTopics: 'सभी प्रमुख विषय',
       tipsTitle: 'साधक के लिए विशेष सुझाव (Spiritual Tips)',
-      satgurHeading: '🌹 ।। सत्यनाम ।। 🌹',
+      satgurHeading: '🌹।।सत्यनाम।।🌹',
       salutation: '।। साहेब बंदगी साहेब ।। 🙏',
       expandAll: 'सभी खोलें',
       collapseAll: 'सभी समेटें'
@@ -60,8 +60,8 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
       searchPlaceholder: 'ਮਾਰਗਦਰਸ਼ਿਕਾ ਵਿੱਚ ਖੋਜੋ (ਜਿਵੇਂ ੧੧ ਚਰਣ, ਨਿੱਤਨੇਮ, ਪ੍ਰਮਾਣ-ਪੱਤਰ)...',
       allTopics: 'ਸਾਰੇ ਪ੍ਰਮੁੱਖ ਵਿਸ਼ੇ',
       tipsTitle: 'ਸਾਧਕ ਲਈ ਵਿਸ਼ੇਸ਼ ਸੁਝਾਅ (Spiritual Tips)',
-      satgurHeading: '🌹 ।। ਸਤਯਨਾਮ ।। 🌹',
-      salutation: '।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।। 🙏',
+      satgurHeading: '🌹।।ਸਤਯਨਾਮ।।🌹',
+      salutation: '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।। 🙏',
       expandAll: 'ਸਾਰੇ ਖੋਲ੍ਹੋ',
       collapseAll: 'ਸਾਰੇ ਸਮੇਟੋ'
     },
@@ -71,7 +71,7 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
       searchPlaceholder: 'Search Guide (e.g., 11 Steps, Nitnem, Certificate)...',
       allTopics: 'Key Guide Topics',
       tipsTitle: 'Helpful Seeker Tips',
-      satgurHeading: '🌹 || Satyanaam || 🌹',
+      satgurHeading: '🌹||Satyanaam||🌹',
       salutation: '|| Saheb Bandagi Saheb || 🙏',
       expandAll: 'Expand All',
       collapseAll: 'Collapse All'
@@ -275,7 +275,7 @@ export const UserGuideView: React.FC<UserGuideViewProps> = ({
       badge: 'नित्य नियम',
       title: {
         hi: '२. नितनेम गुटका साहेब (Nitnem Gutka Reader)',
-        pb: '੨. ਨਿੱਤਨੇਮ ਗੁਟਕਾ ਸਾਹਿਬ (Nitnem Gutka Reader)',
+        pb: '੨. ਨਿੱਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (Nitnem Gutka Reader)',
         en: '2. Nitnem Gutka Sacred Daily Prayers'
       },
       summary: {

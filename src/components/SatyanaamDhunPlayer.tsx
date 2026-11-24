@@ -558,7 +558,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
         if (isAdmin) {
           fileInputRef.current?.click();
         } else {
-          showToast(language === 'hi' ? 'केवल एडमिन ही नई ऑडियो धुन अपलोड कर सकते हैं।' : 'Admin-only upload.');
+          showToast(
+            language === 'pb'
+              ? 'ਕੇਵਲ ਐਡਮਿਨ ਹੀ ਨਵੀਂ ਆਡੀਓ ਧੁਨ ਅਪਲੋਡ ਕਰ ਸਕਦੇ ਹਨ।'
+              : language === 'en'
+              ? 'Admin-only upload.'
+              : 'केवल एडमिन ही नई ऑडियो धुन अपलोड कर सकते हैं।'
+          );
         }
         return;
       }
@@ -617,7 +623,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
     if (pinnedMap[tr.id]) {
       await unpinOfflineAudio(tr.id);
-      showToast(language === 'hi' ? `✓ "${tr.title}" ऑफ़लाइन कैश से हटाया गया` : `Removed "${tr.title}" from offline cache`);
+      showToast(
+        language === 'pb'
+          ? `✓ "${tr.title}" ਔਫਲਾਈਨ ਕੈਸ਼ ਤੋਂ ਹਟਾਇਆ ਗਿਆ`
+          : language === 'en'
+          ? `Removed "${tr.title}" from offline cache`
+          : `✓ "${tr.title}" ऑफ़लाइन कैश से हटाया गया`
+      );
       return;
     }
 
@@ -641,7 +653,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
 
     if (res.success) {
       sacredHaptics.successVibration();
-      showToast(language === 'hi' ? `✓ "${tr.title}" बिना इंटरनेट सुनने हेतु सेव हो गया!` : `Pinned "${tr.title}" for offline playback!`);
+      showToast(
+        language === 'pb'
+          ? `✓ "${tr.title}" ਬਿਨਾਂ ਇੰਟਰਨੈੱਟ ਸੁਣਨ ਲਈ ਸੇਵ ਹੋ ਗਿਆ!`
+          : language === 'en'
+          ? `Pinned "${tr.title}" for offline playback!`
+          : `✓ "${tr.title}" बिना इंटरनेट सुनने हेतु सेव हो गया!`
+      );
     } else {
       showToast(res.error || t.saveFailedToast);
     }
@@ -668,7 +686,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!isAdmin) {
       e.target.value = '';
-      showToast(language === 'hi' ? 'केवल अधिकृत एडमिन ही ऑडियो अपलोड कर सकते हैं।' : 'Only Admin can upload audio.');
+      showToast(
+        language === 'pb'
+          ? 'ਕੇਵਲ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਹੀ ਆਡੀਓ ਅਪਲੋਡ ਕਰ ਸਕਦੇ ਹਨ।'
+          : language === 'en'
+          ? 'Only Admin can upload audio.'
+          : 'केवल अधिकृत एडमिन ही ऑडियो अपलोड कर सकते हैं।'
+      );
       return;
     }
     const file = e.target.files?.[0];
@@ -696,7 +720,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
           file,
         });
         if (res.success) {
-          showToast(language === 'hi' ? '✓ सत्यनाम धुन क्लाउड व डिवाइस में अपलोड हो गई!' : t.addedToast);
+          showToast(
+            language === 'pb'
+              ? '✓ ਸਤਯਨਾਮ ਧੁਨ ਕਲਾਉਡ ਤੇ ਡਿਵਾਈਸ ਵਿੱਚ ਅਪਲੋਡ ਹੋ ਗਈ!'
+              : language === 'en'
+              ? '✓ Satyanaam Dhun uploaded to cloud & device!'
+              : '✓ सत्यनाम धुन क्लाउड व डिवाइस में अपलोड हो गई!'
+          );
         } else {
           showToast(t.addedToast);
         }
@@ -763,7 +793,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       if (selectedTrack?.id === trackId) {
         setSelectedTrack((prev) => prev ? { ...prev, title: editingTitle.trim() } : prev);
       }
-      showToast(language === 'hi' ? 'धुन का नाम अपडेट हो गया!' : 'Track title updated!');
+      showToast(
+        language === 'pb'
+          ? 'ਧੁਨ ਦਾ ਨਾਮ ਅਪਡੇਟ ਹੋ ਗਿਆ!'
+          : language === 'en'
+          ? 'Track title updated!'
+          : 'धुन का नाम अपडेट हो गया!'
+      );
     }
     setEditingTrackId(null);
   };
@@ -813,7 +849,13 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
       trackIds: [...pl.trackIds, trackId],
     });
     setPlaylists(updated);
-    showToast(language === 'hi' ? 'ट्रैक प्लेलिस्ट में जोड़ा गया' : 'Track added to playlist');
+    showToast(
+      language === 'pb'
+        ? 'ਟਰੈਕ ਪਲੇਲਿਸਟ ਵਿੱਚ ਜੋੜਿਆ ਗਿਆ'
+        : language === 'en'
+        ? 'Track added to playlist'
+        : 'ट्रैक प्लेलिस्ट में जोड़ा गया'
+    );
   };
 
   const handleRemoveTrackFromPlaylist = (plId: string, trackId: string) => {

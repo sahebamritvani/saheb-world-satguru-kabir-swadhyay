@@ -176,7 +176,13 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!isAdmin) {
-      showToast(language === 'hi' ? 'केवल एडमिन पावन स्वरूप बदल सकते हैं।' : 'Only Admin can change the portrait.');
+      showToast(
+        language === 'pb'
+          ? 'ਕੇਵਲ ਐਡਮਿਨ ਪਾਵਨ ਸਰੂਪ ਬਦਲ ਸਕਦੇ ਹਨ।'
+          : language === 'en'
+          ? 'Only Admin can change the portrait.'
+          : 'केवल एडमिन पावन स्वरूप बदल सकते हैं।'
+      );
       return;
     }
     const file = e.target.files?.[0];
@@ -204,12 +210,19 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
             : 'इस डिवाइस पर सेव हो गया — सभी के लिए सिंक करने हेतु ऊपर Google एडमिन साइन-इन करें'
         );
       } else {
-        showToast(res.error || (language === 'hi' ? 'पावन स्वरूप अपडेट हुआ' : 'Portrait updated'));
+        showToast(
+          res.error ||
+            (language === 'pb' ? 'ਪਾਵਨ ਸਰੂਪ ਅਪਡੇਟ ਹੋਇਆ' : language === 'en' ? 'Portrait updated' : 'पावन स्वरूप अपडेट हुआ')
+        );
       }
     } catch (err: any) {
       showToast(
         err?.message ||
-          (language === 'hi' ? 'छवि संसाधित करने में त्रुटि, कृपया छोटी छवि चुनें।' : 'Unable to process image file.')
+          (language === 'pb'
+            ? 'ਚਿੱਤਰ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਗਲਤੀ, ਕਿਰਪਾ ਕਰਕੇ ਛੋਟੀ ਫਾਈਲ ਚੁਣੋ।'
+            : language === 'en'
+            ? 'Unable to process image file.'
+            : 'छवि संसाधित करने में त्रुटि, कृपया छोटी छवि चुनें।')
       );
     } finally {
       setIsUploading(false);
@@ -235,19 +248,29 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
             return;
           }
         }
-        showToast(language === 'hi' ? '✓ Google एडमिन सत्र सक्रिय हो गया' : '✓ Admin Google session active');
+        showToast(
+          language === 'pb'
+            ? '✓ Google ਐਡਮਿਨ ਸੈਸ਼ਨ ਸਰਗਰਮ ਹੋ ਗਿਆ'
+            : language === 'en'
+            ? '✓ Admin Google session active'
+            : '✓ Google एडमिन सत्र सक्रिय हो गया'
+        );
       } else {
         showToast(
-          language === 'hi'
-            ? 'कृपया अधिकृत एडमिन खाते से साइन-इन करें।'
-            : 'Please sign in with the authorized admin account.'
+          language === 'pb'
+            ? 'ਕਿਰਪਾ ਕਰਕੇ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਖਾਤੇ ਨਾਲ ਸਾਈਨ-ਇਨ ਕਰੋ।'
+            : language === 'en'
+            ? 'Please sign in with the authorized admin account.'
+            : 'कृपया अधिकृत एडमिन खाते से साइन-इन करें।'
         );
       }
     } catch {
       showToast(
-        language === 'hi'
-          ? 'पॉप-अप ब्लॉक हुआ या रद्द किया गया। कृपया नए टैब में Google साइन-इन आज़माएं।'
-          : 'Google Sign-In popup cancelled or blocked in preview frame.'
+        language === 'pb'
+          ? 'ਪੌਪ-ਅੱਪ ਬਲਾਕ ਜਾਂ ਰੱਦ ਹੋ ਗਿਆ। ਨਵੇਂ ਟੈਬ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ।'
+          : language === 'en'
+          ? 'Google Sign-In popup cancelled or blocked in preview frame.'
+          : 'पॉप-अप ब्लॉक हुआ या रद्द किया गया। कृपया नए टैब में Google साइन-इन आज़माएं।'
       );
     }
   };
@@ -721,12 +744,12 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                     {portraitState.objectFit === 'contain' ? (
                       <>
                         <Maximize2 className="w-3.5 h-3.5 text-amber-600" />
-                        <span>{language === 'hi' ? 'फ़्रेम भरें (Cover)' : 'Fill Frame'}</span>
+                        <span>{language === 'pb' ? 'ਫ੍ਰੇਮ ਭਰੋ (Cover)' : language === 'en' ? 'Fill Frame' : 'फ़्रेम भरें (Cover)'}</span>
                       </>
                     ) : (
                       <>
                         <Minimize2 className="w-3.5 h-3.5 text-amber-600" />
-                        <span>{language === 'hi' ? 'पूर्ण चित्र (Contain)' : 'Fit Full'}</span>
+                        <span>{language === 'pb' ? 'ਪੂਰਾ ਚਿੱਤਰ (Contain)' : language === 'en' ? 'Fit Full' : 'पूर्ण चित्र (Contain)'}</span>
                       </>
                     )}
                   </button>

@@ -217,7 +217,8 @@ export type AppView =
   | 'vani-card-maker'
   | 'satvik-sankalp'
   | 'kabir-gyan-quiz'
-  | 'vansh-bayalis';
+  | 'vansh-bayalis'
+  | 'satyanaam-panacea';
 
 export type ReaderCustomTheme = 'mool' | 'pothi' | 'black' | 'netra' | 'dark' | 'light' | 'sepia' | 'classic' | 'comfort' | 'deep_sepia' | 'midnight';
 export type ReaderFontSize = 'small' | 'normal' | 'medium' | 'large' | 'xlarge' | 'elderly' | 'xl'; // A-, A, A+, A++, A+++ (Elderly Senior Citizen 8XL)
@@ -301,9 +302,9 @@ export interface SpiritualRank {
 
 export const SACRED_BRANDING = {
   header: {
-    hi: '🌹 ।। सत्यनाम ।। 🌹',
-    pb: '🌹 ।। ਸਤਯਨਾਮ ।। 🌹',
-    en: '🌹 || Satyanaam || 🌹',
+    hi: '🌹।।सत्यनाम।।🌹',
+    pb: '🌹।।ਸਤਯਨਾਮ।।🌹',
+    en: '🌹||Satyanaam||🌹',
   },
   footer: {
     hi: '।।साहेब बन्दगी साहेब।। 🙏',

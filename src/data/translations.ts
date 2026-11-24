@@ -694,7 +694,7 @@ export const translations: Record<Language, AppTranslations> = {
     noImageUploadedYet: 'दर्शन हेतु अपना प्रामाणिक चित्र अपलोड करें',
     satguruMahimaTitle: '।। सतगुरु महिमा ।।',
     vaniPathBtn: 'वाणी पाठ',
-    vaniVandanaLabel: 'वाणी वंदਨਾ',
+    vaniVandanaLabel: 'वाणी वंदना',
     darshanHeaderTitle: 'सतगुरु कबीर साहेब पावन दर्शन',
     tilakAuthenticityDetail: 'पारंपरिक कबीर पंथ मान्यता अनुसार सतगुरु कबीर साहेब के ललाट पर पावन श्वेत ऊर्ध्व पुण्ड्र तिलक (माथे के केंद्र से नासिका तक) सुशोभित रहता है। आप अपने आश्रम अथवा मंदिर का मूल प्रामाणिक चित्र यहाँ सीधे अपलोड कर सकते हैं।',
     guruGodCouplet: '"गुरु गोविंद दोऊ खड़े, काके लागूं पांय। बलिहारी गुरु आपने, गोविंद दियो बताय॥"',
@@ -1804,7 +1804,7 @@ export const translations: Record<Language, AppTranslations> = {
     kabirNirvanLabel: 'Satguru Kabir Saheb Nirvana Day',
     guruJayantiLabel: 'Guru Jayanti',
     magharUtsavLabel: 'Maghar Sacred Festival',
-    satnamSalutation: '🌹 || SATYANAAM || 🌹',
+    satnamSalutation: '🌹||Satyanaam||🌹',
     sahebBangiSalutation: '|| Saheb Bandagi Saheb || 🙏',
     monthlyGridTitle: 'Annual Saheb Jantri 2026',
     // Mantra Tracker

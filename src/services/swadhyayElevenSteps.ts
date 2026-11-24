@@ -1,4 +1,4 @@
-import { Sakhi, Language, WordMeaning } from '../types';
+import { Sakhi, Language, WordMeaning, SACRED_BRANDING } from '../types';
 import {
   SGGS_CROSS_REF_VAULT,
   BIJAK_CROSS_REF_VAULT,
@@ -830,7 +830,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
           : 'पावन स्वाध्याय प्रमाण-पत्र प्राप्त करें',
     },
     certificateData: {
-      topHeader: '🌹।।सत्यनाम।।🌹',
+      topHeader: SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi,
       certificationStatement:
         language === 'pb'
           ? `ਇਹ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ [User Name] ਨੇ ਸਾਖੀ #${sakhi.number} ਦਾ ੧੧-ਚਰਣੀ ਸਵਾਧਿਆਇ ਸਫਲਤਾਪੂਰਵਕ ਸੰਪੰਨ ਕੀਤਾ।`
@@ -839,8 +839,13 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
           : `यह प्रमाणित किया जाता है कि [User Name] ने साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।`,
       highlightMoolSakhi: sakhiVerse,
       oneLineBlessing,
-      footerBrand: 'Saheb World App • पावन स्वाध्याय मंच',
-      bottomFooter: '।।साहेब बंदगी साहेब।।🙏',
+      footerBrand:
+        language === 'pb'
+          ? 'Saheb World App • ਪਾਵਨ ਸਵਾਧਿਆਇ ਮੰਚ'
+          : language === 'en'
+          ? 'Saheb World App • Sacred Swadhyay Sanctuary'
+          : 'Saheb World App • पावन स्वाध्याय मंच',
+      bottomFooter: `${SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi} 🙏`,
     },
     isAiGenerated: false,
   };

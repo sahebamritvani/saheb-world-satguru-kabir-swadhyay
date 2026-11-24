@@ -29,7 +29,7 @@ import {
   BookmarkCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Language, Sakhi } from '../types';
+import { Language, Sakhi, SACRED_BRANDING } from '../types';
 import { QuoteCardModal } from './QuoteCardModal';
 import { UlatvasiQuiz } from './UlatvasiQuiz';
 import { translations } from '../data/translations';
@@ -202,13 +202,13 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
+        className="border-b py-2 px-3 sm:px-4 select-none flex items-center justify-center min-h-[42px]"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-normal font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {currentLang === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : currentLang === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[currentLang]}
         </span>
       </div>
 
@@ -973,7 +973,7 @@ const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({
                 ? 'bg-green-500/20 text-green-700 border-green-500 font-bold'
                 : 'border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 opacity-75'
             }`}
-            title={language === 'hi' ? 'सीधा शेयर लिंक कॉपी करें' : 'Copy Link'}
+            title={language === 'hi' ? 'सीधा शेयर लिंक कॉपी करें' : language === 'pb' ? 'ਸਿੱਧਾ ਸਾਂਝਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ' : 'Copy Link'}
           >
             {isPathCopied ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4 text-amber-600" />}
           </button>
@@ -985,7 +985,13 @@ const UlatvasiAccordionItem: React.FC<UlatvasiAccordionItemProps> = ({
                 ? 'bg-amber-500 text-stone-950 border-amber-600 font-bold shadow-xs'
                 : 'border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 opacity-75'
             }`}
-            title={language === 'hi' ? (isBookmarked ? 'बुकमार्क हटाया गया' : 'साधना हेतु बुकमार्क करें') : 'Bookmark Pad'}
+            title={
+              language === 'hi'
+                ? isBookmarked ? 'बुकमार्क हटाया गया' : 'साधना हेतु बुकमार्क करें'
+                : language === 'pb'
+                ? isBookmarked ? 'ਬੁੱਕਮਾਰਕ ਹਟਾਓ' : 'ਸਾਧਨਾ ਲਈ ਬੁੱਕਮਾਰਕ ਕਰੋ'
+                : isBookmarked ? 'Remove Bookmark' : 'Bookmark Pad'
+            }
           >
             {isBookmarked ? <BookmarkCheck className="w-4 h-4 text-stone-950" /> : <Bookmark className="w-4 h-4" />}
           </button>

@@ -29,11 +29,12 @@ import {
   X
 } from 'lucide-react';
 import { AATMA_16_BHUSHAN, Bhushan } from '../data/aatmaBhushan';
-import { Language, SiddhantNote } from '../types';
+import { Language, SiddhantNote, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { sacredHaptics } from '../services/haptics';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
+import { formatCoupletString } from '../utils/textSanitizer';
 
 export interface BhushanExtended extends Bhushan {
   pillarId: 'truth' | 'love' | 'renunciation' | 'wisdom';
@@ -334,6 +335,33 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
   const [copiedToast, setCopiedToast] = useState<boolean>(false);
   const autoSpinTimerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // 3D Wheel drag rotation & tilt state
+  const [wheelRotation, setWheelRotation] = useState<number>(0);
+  const [tiltX, setTiltX] = useState<number>(0);
+  const [tiltY, setTiltY] = useState<number>(0);
+  const isDraggingRef = useRef<boolean>(false);
+  const dragStartRef = useRef<{ x: number; y: number; rot: number }>({ x: 0, y: 0, rot: 0 });
+
+  const handleTouchOrMouseDown = (clientX: number, clientY: number) => {
+    isDraggingRef.current = true;
+    dragStartRef.current = { x: clientX, y: clientY, rot: wheelRotation };
+  };
+
+  const handleTouchOrMouseMove = (clientX: number, clientY: number) => {
+    if (!isDraggingRef.current) return;
+    const dx = clientX - dragStartRef.current.x;
+    const dy = clientY - dragStartRef.current.y;
+    setWheelRotation(dragStartRef.current.rot + dx * 0.4);
+    setTiltX(-dy * 0.04);
+    setTiltY(dx * 0.04);
+  };
+
+  const handleTouchOrMouseUp = () => {
+    isDraggingRef.current = false;
+    setTiltX(0);
+    setTiltY(0);
+  };
+
   const currentBhushan = ENRICHED_16_BHUSHAN[selectedIndex];
 
   // Language helper
@@ -492,7 +520,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
   const handleShare = async () => {
     sacredHaptics.lightTap();
     const b = currentBhushan;
-    const shareText = `🌹 ।। सत्यनाम ।। 🌹\n\n✨ आत्मा के १६ भूषण (ज्ञान-चक्र) ✨\n\n💎 ${b.order}. ${t(b.name)}\n📍 ${t(b.pillarTitle)}\n\n📜 पावन साखी:\n"${b.sakhi.text}"\n\n🌸 भावार्थ: ${b.sakhi.meaning}\n\n💡 आध्यात्मिक रहस्य:\n${t(b.relationship)}\n\n🌱 दैनिक साधना अभ्यास:\n${t(b.dailyPractice)}\n\n।। साहेब बंदगी साहेब ।। 🙏`;
+    const shareText = `${SACRED_BRANDING.header[language]}\n\n✨ आत्मा के १६ भूषण (ज्ञान-चक्र) ✨\n\n💎 ${b.order}. ${t(b.name)}\n📍 ${t(b.pillarTitle)}\n\n📜 पावन साखी:\n"${formatCoupletString(b.sakhi.text)}"\n\n🌸 भावार्थ: ${b.sakhi.meaning}\n\n💡 आध्यात्मिक रहस्य:\n${t(b.relationship)}\n\n🌱 दैनिक साधना अभ्यास:\n${t(b.dailyPractice)}\n\n${SACRED_BRANDING.footer[language]}`;
 
     try {
       if (navigator.share) {
@@ -531,7 +559,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
   const totalSegments = 16;
   const anglePerSegment = 360 / totalSegments;
   const center = 300;
-  const innerRadius = 135;
+  const innerRadius = 130;
   const outerRadius = 265;
 
   const createSegmentPath = (index: number) => {
@@ -611,19 +639,25 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
         )}
       </AnimatePresence>
 
-      {/* Top Header & Navigation Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b pb-5" style={{ borderColor: theme.borderOrnament }}>
+      {/* Top Header & Navigation Bar inside Clean Cream/Off-White Rounded Card Container (#FFFDF7) */}
+      <div 
+        className="p-5 sm:p-6 rounded-3xl border-2 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4"
+        style={{
+          backgroundColor: '#FFFDF7',
+          borderColor: '#D97706',
+        }}
+      >
         <div className="flex items-center gap-3 w-full sm:w-auto">
           {onClose && (
             <button
               type="button"
               onClick={onClose}
               style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon
+                backgroundColor: '#FEF3C7',
+                borderColor: '#D97706',
+                color: '#6B1D1D'
               }}
-              className="p-2.5 rounded-2xl border flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xs cursor-pointer"
+              className="p-2.5 rounded-2xl border flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xs cursor-pointer shrink-0"
               title="Go Back"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -632,16 +666,16 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xl">☸️</span>
-              <h1 className="text-2xl sm:text-3xl font-black font-serif tracking-tight" style={{ color: theme.sacredMaroon }}>
+              <h1 className="text-xl sm:text-2xl font-black font-serif tracking-tight text-[#6B1D1D]">
                 {language === 'pb' ? 'ਗਿਆਨ-ਚੱਕਰ : ਆਤਮਾ ਦੇ ੧੬ ਭੂਸ਼ਣ' : 
                  language === 'en' ? 'Gyan-Chakra: 16 Jewels of the Soul' : 
-                 'ज्ञान-चक्र : आत्मा के 16 भूषण'}
+                 'ज्ञान-चक्र • आत्मा के 16 भूषण'}
               </h1>
             </div>
-            <p className="text-xs sm:text-sm font-medium mt-0.5" style={{ color: theme.textSecondary }}>
-              {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਅਨੁਸਾਰ ਸਤਲੋਕ ਗਮਨ ਹਿਤ ਆਤਮਾ ਦੇ ੧੬ ਅਮਰ ਗਹਿਣੇ' : 
-               language === 'en' ? 'The 16 eternal ornaments of the Soul required for the ascent to Satlok' : 
-               'सद्गुरु कबीर साहेब के अनुसार सत्यलोक गमन हेतु आत्मा के 16 अलौकिक आभूषण'}
+            <p className="text-xs sm:text-sm font-serif font-semibold text-amber-900/90 mt-1">
+              {language === 'pb' ? 'ਇੱਕ ਸਤਯਨਾਮ ਨੂੰ ਸਾਧਣ ਨਾਲ ਆਤਮਾ ਦੇ ਇਹ ੧੬ ਅਲੌਕਿਕ ਗਹਿਣੇ ਆਪਣੇ ਆਪ ਪ੍ਰਗਟ ਹੁੰਦੇ ਹਨ।' : 
+               language === 'en' ? 'By mastering the One Satyanaam, these 16 divine ornaments naturally blossom within the soul.' : 
+               'एक सत्यनाम को साधने से आत्मा के ये १६ अलौकिक आभूषण स्वतः प्रस्फुटित होते हैं।'}
             </p>
           </div>
         </div>
@@ -651,7 +685,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
           {/* View Mode Switcher */}
           <div 
             className="flex items-center p-1 rounded-2xl border backdrop-blur-md"
-            style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
+            style={{ backgroundColor: '#FAF0DC', borderColor: '#D97706' }}
           >
             <button
               type="button"
@@ -660,8 +694,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 viewLayout === 'chakra' ? 'shadow-xs scale-102' : 'opacity-70 hover:opacity-100'
               }`}
               style={{
-                backgroundColor: viewLayout === 'chakra' ? theme.buttonPrimaryBg : 'transparent',
-                color: viewLayout === 'chakra' ? theme.buttonPrimaryText : theme.textPrimary
+                backgroundColor: viewLayout === 'chakra' ? '#6B1D1D' : 'transparent',
+                color: viewLayout === 'chakra' ? '#FEF3C7' : '#2C1810'
               }}
             >
               <CircleDot className="w-4 h-4" />
@@ -674,8 +708,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 viewLayout === 'cards' ? 'shadow-xs scale-102' : 'opacity-70 hover:opacity-100'
               }`}
               style={{
-                backgroundColor: viewLayout === 'cards' ? theme.buttonPrimaryBg : 'transparent',
-                color: viewLayout === 'cards' ? theme.buttonPrimaryText : theme.textPrimary
+                backgroundColor: viewLayout === 'cards' ? '#6B1D1D' : 'transparent',
+                color: viewLayout === 'cards' ? '#FEF3C7' : '#2C1810'
               }}
             >
               <Grid className="w-4 h-4" />
@@ -688,8 +722,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 viewLayout === 'journey' ? 'shadow-xs scale-102' : 'opacity-70 hover:opacity-100'
               }`}
               style={{
-                backgroundColor: viewLayout === 'journey' ? theme.buttonPrimaryBg : 'transparent',
-                color: viewLayout === 'journey' ? theme.buttonPrimaryText : theme.textPrimary
+                backgroundColor: viewLayout === 'journey' ? '#6B1D1D' : 'transparent',
+                color: viewLayout === 'journey' ? '#FEF3C7' : '#2C1810'
               }}
             >
               <Compass className="w-4 h-4" />
@@ -706,9 +740,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
             }}
             className="px-3.5 py-2 rounded-2xl border text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shadow-xs hover:scale-105 active:scale-95"
             style={{
-              backgroundColor: isAutoSpinning ? theme.buttonPrimaryBg : theme.cardBg,
-              borderColor: isAutoSpinning ? theme.buttonPrimaryBg : theme.borderOrnament,
-              color: isAutoSpinning ? theme.buttonPrimaryText : theme.sacredMaroon
+              backgroundColor: isAutoSpinning ? '#6B1D1D' : '#FFFDF7',
+              borderColor: '#D97706',
+              color: isAutoSpinning ? '#FEF3C7' : '#6B1D1D'
             }}
             title={isAutoSpinning ? 'Pause Auto Tour' : 'Start Auto Tour'}
           >
@@ -731,9 +765,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
             selectedPillarFilter === 'all' ? 'shadow-xs ring-2 ring-amber-400' : 'opacity-75 hover:opacity-100'
           }`}
           style={{
-            backgroundColor: selectedPillarFilter === 'all' ? theme.buttonPrimaryBg : theme.cardBg,
-            borderColor: selectedPillarFilter === 'all' ? theme.buttonPrimaryBg : theme.borderOrnament,
-            color: selectedPillarFilter === 'all' ? theme.buttonPrimaryText : theme.textPrimary
+            backgroundColor: selectedPillarFilter === 'all' ? '#6B1D1D' : '#FFFDF7',
+            borderColor: '#D97706',
+            color: selectedPillarFilter === 'all' ? '#FEF3C7' : '#2C1810'
           }}
         >
           {language === 'pb' ? 'ਸਾਰੇ ੧੬ ਭੂਸ਼ਣ (੧੬/੧੬)' : language === 'en' ? 'All 16 Jewels (16/16)' : 'समग्र 16 भूषण (16/16)'}
@@ -748,9 +782,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
               selectedPillarFilter === pillar.id ? 'shadow-xs ring-2' : 'opacity-75 hover:opacity-100'
             }`}
             style={{
-              backgroundColor: selectedPillarFilter === pillar.id ? pillar.color : theme.cardBg,
+              backgroundColor: selectedPillarFilter === pillar.id ? pillar.color : '#FFFDF7',
               borderColor: pillar.color,
-              color: selectedPillarFilter === pillar.id ? '#FFFFFF' : theme.textPrimary
+              color: selectedPillarFilter === 'active' || selectedPillarFilter === pillar.id ? '#FFFFFF' : '#2C1810'
             }}
           >
             <span className="w-2 h-2 rounded-full" style={{ backgroundColor: selectedPillarFilter === pillar.id ? '#FFFFFF' : pillar.color }} />
@@ -760,216 +794,228 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
       </div>
 
       {/* ========================================================================= */}
-      {/* VIEW 1: THE INTERACTIVE CIRCULAR GYAN-CHAKRA WHEEL */}
+      {/* VIEW 1: THE INTERACTIVE 3D SACRED WHEEL (3D चक्र दर्शन)                      */}
       {/* ========================================================================= */}
       {viewLayout === 'chakra' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left / Center Column: Interactive Circular Chakra Canvas */}
+          {/* Left / Center Column: Interactive 3D Circular Chakra Canvas */}
           <div 
             className="lg:col-span-6 xl:col-span-6 rounded-3xl border p-4 sm:p-6 shadow-sm flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-md"
             style={{ 
               backgroundColor: theme.cardBg, 
               borderColor: theme.borderOrnament,
-              boxShadow: theme.cardShadow 
+              boxShadow: theme.cardShadow,
+              perspective: '1000px'
             }}
           >
             {/* Background Sacred Mandala Glow */}
             <div 
-              className="absolute inset-0 opacity-10 pointer-events-none animate-pulse"
+              className="absolute inset-0 opacity-15 pointer-events-none animate-pulse"
               style={{
                 background: `radial-gradient(circle at center, ${currentBhushan.pillarColor} 0%, transparent 70%)`
               }}
             />
 
-            {/* Circular Chakra SVG Container */}
-            <div className="w-full max-w-[460px] aspect-square relative flex items-center justify-center select-none">
+            {/* Circular 3D Chakra SVG Container with Touch/Mouse Drag */}
+            <div 
+              className="w-full max-w-[480px] aspect-square relative flex items-center justify-center select-none cursor-grab active:cursor-grabbing"
+              style={{ transformStyle: 'preserve-3d' }}
+              onMouseDown={(e) => handleTouchOrMouseDown(e.clientX, e.clientY)}
+              onMouseMove={(e) => handleTouchOrMouseMove(e.clientX, e.clientY)}
+              onMouseUp={handleTouchOrMouseUp}
+              onMouseLeave={handleTouchOrMouseUp}
+              onTouchStart={(e) => handleTouchOrMouseDown(e.touches[0].clientX, e.touches[0].clientY)}
+              onTouchMove={(e) => handleTouchOrMouseMove(e.touches[0].clientX, e.touches[0].clientY)}
+              onTouchEnd={handleTouchOrMouseUp}
+            >
               <svg 
                 viewBox="0 0 600 600" 
-                className="w-full h-full transform transition-transform duration-700 drop-shadow-md"
+                className="w-full h-full drop-shadow-xl transition-transform duration-100 ease-out"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`
+                }}
               >
                 <defs>
-                  {/* Glowing Filter */}
-                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
+                  {/* Glowing 3D Filter */}
+                  <filter id="glow3D" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="6" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                   </filter>
                   <radialGradient id="hubGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#FFFDF7" />
+                    <stop offset="0%" stopColor="#FFFFFF" />
                     <stop offset="60%" stopColor="#FEF3C7" />
                     <stop offset="100%" stopColor="#F59E0B" />
                   </radialGradient>
                   <radialGradient id="centerAura" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.45" />
+                    <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.65" />
                     <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
                   </radialGradient>
                 </defs>
 
-                {/* Outer Decorative Orbit Ring */}
-                <circle
-                  cx={center}
-                  cy={center}
-                  r={outerRadius + 8}
-                  fill="none"
-                  stroke={theme.borderOrnament}
-                  strokeWidth="1.5"
-                  strokeDasharray="4 6"
-                  opacity="0.6"
-                />
+                {/* Spinning Wheel Group */}
+                <g 
+                  style={{
+                    transformOrigin: `${center}px ${center}px`,
+                    transform: `rotate(${wheelRotation}deg)`,
+                    transition: isDraggingRef.current ? 'none' : 'transform 0.3s ease-out'
+                  }}
+                >
+                  {/* Outer Decorative Orbit Ring */}
+                  <circle
+                    cx={center}
+                    cy={center}
+                    r={outerRadius + 10}
+                    fill="none"
+                    stroke={theme.borderOrnament}
+                    strokeWidth="2"
+                    strokeDasharray="4 6"
+                    opacity="0.6"
+                  />
 
-                {/* Outer Golden Border Ring */}
-                <circle
-                  cx={center}
-                  cy={center}
-                  r={outerRadius}
-                  fill="none"
-                  stroke="#D97706"
-                  strokeWidth="2"
-                  opacity="0.3"
-                />
+                  {/* Outer Golden Border Ring */}
+                  <circle
+                    cx={center}
+                    cy={center}
+                    r={outerRadius}
+                    fill="none"
+                    stroke="#D97706"
+                    strokeWidth="3"
+                    opacity="0.4"
+                  />
 
-                {/* The 16 Petals / Segments with gentle rotation on hover */}
-                {ENRICHED_16_BHUSHAN.map((bhushan, index) => {
-                  const isSelected = selectedIndex === index;
-                  const isFilteredIn = selectedPillarFilter === 'all' || bhushan.pillarId === selectedPillarFilter;
-                  const pathD = createSegmentPath(index);
-                  const { x, y } = getSegmentCenterCoords(index);
+                  {/* The 16 3D Petals / Segments */}
+                  {ENRICHED_16_BHUSHAN.map((bhushan, index) => {
+                    const isSelected = selectedIndex === index;
+                    const isFilteredIn = selectedPillarFilter === 'all' || bhushan.pillarId === selectedPillarFilter;
+                    const pathD = createSegmentPath(index);
+                    const { x, y } = getSegmentCenterCoords(index);
 
-                  return (
-                    <g 
-                      key={bhushan.id}
-                      onClick={() => handleSelectSegment(index)}
-                      className="cursor-pointer transition-transform duration-500 hover:rotate-6 hover:scale-105 origin-center group"
-                      style={{ opacity: isFilteredIn ? 1 : 0.25, transformOrigin: `${center}px ${center}px` }}
-                    >
-                      {/* Segment Arc Path */}
-                      <path
-                        d={pathD}
-                        fill={isSelected ? bhushan.pillarColor : `${bhushan.pillarColor}22`}
-                        stroke={isSelected ? '#FBBF24' : bhushan.pillarColor}
-                        strokeWidth={isSelected ? 3.5 : 1.2}
-                        filter={isSelected ? 'url(#glow)' : undefined}
-                        className="transition-all duration-300 hover:brightness-110"
-                      />
-
-                      {/* Segment Label / Number */}
-                      <text
-                        x={x}
-                        y={y}
-                        textAnchor="middle"
-                        dominantBaseline="central"
-                        fill={isSelected ? '#FFFFFF' : theme.textPrimary}
-                        fontSize={isSelected ? '15' : '13'}
-                        fontWeight={isSelected ? '800' : '700'}
-                        fontFamily="serif"
-                        className="pointer-events-none select-none drop-shadow-xs"
+                    return (
+                      <g 
+                        key={bhushan.id}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectSegment(index);
+                        }}
+                        className="cursor-pointer transition-transform duration-300 group"
+                        style={{ opacity: isFilteredIn ? 1 : 0.25 }}
                       >
-                        {bhushan.order}
-                      </text>
-
-                      {/* Highlight Ring around active segment */}
-                      {isSelected && (
-                        <circle
-                          cx={x}
-                          cy={y}
-                          r="16"
-                          fill="none"
-                          stroke="#FFFFFF"
-                          strokeWidth="2"
-                          strokeDasharray="2 3"
-                          className="animate-spin-slow pointer-events-none"
+                        {/* Segment Arc Path with 3D Pop-out Elevation */}
+                        <path
+                          d={pathD}
+                          fill={isSelected ? '#FEF3C7' : `${bhushan.pillarColor}28`}
+                          stroke={isSelected ? '#FFFFFF' : bhushan.pillarColor}
+                          strokeWidth={isSelected ? 4 : 1.5}
+                          filter={isSelected ? 'url(#glow3D)' : undefined}
+                          className="transition-all duration-300 hover:brightness-110"
+                          style={{
+                            transform: isSelected ? 'translateZ(20px) scale(1.03)' : 'translateZ(0px) scale(1)',
+                            transformOrigin: `${center}px ${center}px`
+                          }}
                         />
-                      )}
-                    </g>
-                  );
-                })}
 
-                {/* Inner Quadrants Ring (4 Pillars Bands) */}
+                        {/* Segment Label / Number (Counter-rotated so numbers stay perfectly upright) */}
+                        <text
+                          x={x}
+                          y={y}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          fill={isSelected ? '#6B1D1D' : theme.textPrimary}
+                          fontSize={isSelected ? '16' : '13'}
+                          fontWeight={isSelected ? '900' : '700'}
+                          fontFamily="serif"
+                          className="pointer-events-none select-none drop-shadow-sm"
+                          transform={`rotate(${-wheelRotation} ${x} ${y})`}
+                        >
+                          {bhushan.order}
+                        </text>
+
+                        {/* Highlight Ring around active segment */}
+                        {isSelected && (
+                          <circle
+                            cx={x}
+                            cy={y}
+                            r="19"
+                            fill="none"
+                            stroke="#F59E0B"
+                            strokeWidth="2.5"
+                            strokeDasharray="3 3"
+                            className="animate-spin-slow pointer-events-none"
+                            transform={`rotate(${-wheelRotation} ${x} ${y})`}
+                          />
+                        )}
+                      </g>
+                    );
+                  })}
+                </g>
+
+                {/* Inner Quadrants Ring */}
                 <circle
                   cx={center}
                   cy={center}
                   r={innerRadius}
                   fill="none"
                   stroke="#D97706"
-                  strokeWidth="2"
-                  opacity="0.4"
+                  strokeWidth="2.5"
+                  opacity="0.5"
                 />
 
-                {/* Center Core Hub with Subtle Pulsing Effect */}
-                <circle
-                  cx={center}
-                  cy={center}
-                  r="115"
-                  fill="url(#centerAura)"
-                  className="animate-pulse"
-                />
-                
-                <circle
-                  cx={center}
-                  cy={center}
-                  r="95"
-                  fill={theme.cardBg}
-                  stroke={currentBhushan.pillarColor}
-                  strokeWidth="3"
-                  className="transition-colors duration-500 shadow-lg animate-pulse"
-                />
+                {/* Center 3D Hub: Luminous Golden-White Lotus Medallion Displaying Satyanaam */}
+                <circle cx={center} cy={center} r="120" fill="url(#centerAura)" className="animate-pulse" />
+                <circle cx={center} cy={center} r="100" fill="#FFFDF7" stroke="#F59E0B" strokeWidth="4" filter="url(#glow3D)" />
+                <circle cx={center} cy={center} r="90" fill="url(#hubGradient)" opacity="0.4" />
 
-                <circle
-                  cx={center}
-                  cy={center}
-                  r="85"
-                  fill="url(#hubGradient)"
-                  opacity="0.3"
-                />
-
-                {/* Center Content: Current Active Bhushan Indicator */}
+                {/* Center Content: Upright Satyanaam Medallion */}
                 <g className="select-none pointer-events-none">
                   <text
                     x={center}
-                    y={center - 38}
+                    y={center - 32}
                     textAnchor="middle"
                     dominantBaseline="central"
-                    fontSize="22"
+                    fontSize="24"
                   >
-                    🦢
+                    🪷
                   </text>
 
                   <text
                     x={center}
-                    y={center - 10}
+                    y={center - 2}
                     textAnchor="middle"
                     dominantBaseline="central"
-                    fill={theme.sacredMaroon}
-                    fontSize="18"
+                    fill="#6B1D1D"
+                    fontSize="16"
                     fontWeight="900"
                     fontFamily="serif"
                   >
-                    {t(currentBhushan.name).split(' ')[0]}
+                    {language === 'pb' ? '॥ ਸਤਯਨਾਮ ॥' : language === 'en' ? '|| Satyanaam ||' : '॥ सत्यनाम ॥'}
                   </text>
 
                   <text
                     x={center}
-                    y={center + 14}
+                    y={center + 22}
                     textAnchor="middle"
                     dominantBaseline="central"
-                    fill={theme.textSecondary}
+                    fill="#92400E"
                     fontSize="11"
                     fontWeight="bold"
+                    fontFamily="serif"
                   >
-                    {language === 'pb' ? `ਭੂਸ਼ਣ ${currentBhushan.order} / ੧੬` : 
-                     language === 'en' ? `Virtue ${currentBhushan.order} of 16` : 
-                     `भूषण ${currentBhushan.order} / 16`}
+                    {t(currentBhushan.name)}
                   </text>
 
                   <text
                     x={center}
-                    y={center + 36}
+                    y={center + 38}
                     textAnchor="middle"
                     dominantBaseline="central"
-                    fill={currentBhushan.pillarColor}
-                    fontSize="10"
+                    fill="#D97706"
+                    fontSize="9"
                     fontWeight="800"
                   >
-                    ✨ हंस पद आरोहण ✨
+                    {language === 'pb' ? `ਭੂਸ਼ਣ ${currentBhushan.order}/੧੬` : 
+                     language === 'en' ? `Jewel ${currentBhushan.order}/16` : 
+                     `भूषण ${currentBhushan.order}/16`}
                   </text>
                 </g>
               </svg>
@@ -981,9 +1027,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 type="button"
                 onClick={handlePrev}
                 style={{
-                  backgroundColor: theme.accentGoldLight,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon
+                  backgroundColor: '#FEF3C7',
+                  borderColor: '#D97706',
+                  color: '#6B1D1D'
                 }}
                 className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1 hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
@@ -992,7 +1038,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
               </button>
 
               <div className="text-center">
-                <span className="text-xs font-bold" style={{ color: theme.sacredMaroon }}>
+                <span className="text-xs font-bold" style={{ color: '#6B1D1D' }}>
                   {currentBhushan.order}. {t(currentBhushan.name)}
                 </span>
                 <div className="text-[10px]" style={{ color: theme.textSecondary }}>
@@ -1004,9 +1050,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 type="button"
                 onClick={handleNext}
                 style={{
-                  backgroundColor: theme.accentGoldLight,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon
+                  backgroundColor: '#FEF3C7',
+                  borderColor: '#D97706',
+                  color: '#6B1D1D'
                 }}
                 className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1 hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
@@ -1169,8 +1215,8 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 </button>
               </div>
 
-              <div className="font-serif font-bold text-base sm:text-lg text-amber-950 italic">
-                "{currentBhushan.sakhi.text}"
+              <div className="font-serif font-bold text-base sm:text-lg text-amber-950 italic whitespace-pre-line">
+                "{formatCoupletString(currentBhushan.sakhi.text)}"
               </div>
 
               <div className="text-xs sm:text-sm text-neutral-700 pt-1 border-t border-amber-500/15">
@@ -1199,18 +1245,16 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                 boxShadow: '0 2px 10px -2px rgba(16, 185, 129, 0.1)'
               }}
             >
-              <div className="p-1.5 rounded-xl bg-emerald-500/10 text-emerald-600 mt-0.5">
-                <CheckCircle2 className="w-4 h-4" />
+              <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-700 shrink-0">
+                <Sparkles className="w-4 h-4" />
               </div>
-              <div className="space-y-0.5 flex-1">
-                <div className="text-xs font-bold text-emerald-800">
-                  {language === 'pb' ? 'ਨਿੱਤ ਜੀਵਨ ਵਿੱਚ ਅਭਿਆਸ (Daily Sadhana Action)' : 
-                   language === 'en' ? 'Daily Life Practice Action' : 
-                   'नित्य जीवन में अभ्यास व साधना संकल्प'}
-                </div>
-                <div className="text-xs text-emerald-950 font-medium leading-relaxed">
+              <div className="space-y-1">
+                <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 block uppercase tracking-wider">
+                  {language === 'pb' ? 'ਦੈਨਿਕ ਸਾਧਨਾ ਸੰਕਲਪ' : language === 'en' ? 'Daily Sadhana Practice Resolution' : 'दैनिक साधना संकल्प अभ्यास'}
+                </span>
+                <p className="text-xs sm:text-sm font-serif leading-relaxed" style={{ color: theme.textPrimary }}>
                   {t(currentBhushan.dailyPractice)}
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -1222,53 +1266,51 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
       {/* ========================================================================= */}
       {viewLayout === 'cards' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {filteredBhushans.map((bhushan) => {
-            const isSelected = currentBhushan.id === bhushan.id;
+          {filteredBhushans.map((bhushan, index) => {
+            const isSelected = selectedIndex === bhushan.order - 1;
+
             return (
               <motion.div
                 key={bhushan.id}
-                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: (index % 8) * 0.03 }}
                 onClick={() => {
                   handleSelectSegment(bhushan.order - 1);
                   setViewLayout('chakra');
                 }}
-                className={`p-5 rounded-3xl border cursor-pointer transition-all duration-300 hover:scale-102 hover:shadow-md space-y-3 ${
-                  isSelected ? 'ring-2' : ''
-                }`}
+                className="p-4 sm:p-5 rounded-3xl border-2 shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between space-y-3 relative overflow-hidden group"
                 style={{
-                  backgroundColor: theme.cardBg,
-                  borderColor: isSelected ? bhushan.pillarColor : theme.borderOrnament,
-                  boxShadow: theme.cardShadow
+                  backgroundColor: isSelected ? '#FEF3C7' : theme.cardBg,
+                  borderColor: isSelected ? '#D97706' : theme.cardBorder,
+                  boxShadow: isSelected ? '0 10px 25px -5px rgba(217, 119, 6, 0.2)' : theme.cardShadow
                 }}
               >
-                <div className="flex items-center justify-between">
-                  <span 
-                    className="w-7 h-7 rounded-xl flex items-center justify-center text-xs font-black text-white"
-                    style={{ backgroundColor: bhushan.pillarColor }}
-                  >
-                    {bhushan.order}
-                  </span>
-                  <span className="text-[11px] font-bold" style={{ color: bhushan.pillarColor }}>
-                    {t(bhushan.pillarTitle).split('.')[1]}
-                  </span>
-                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span 
+                      className="px-2.5 py-0.5 rounded-lg text-xs font-bold text-white shadow-xs"
+                      style={{ backgroundColor: bhushan.pillarColor }}
+                    >
+                      #{bhushan.order}
+                    </span>
+                    <span className="text-[11px] font-bold opacity-75" style={{ color: theme.textSecondary }}>
+                      {t(bhushan.pillarTitle).split(' ')[3] || ''}
+                    </span>
+                  </div>
 
-                <div>
-                  <h3 className="font-bold text-lg font-serif" style={{ color: theme.sacredMaroon }}>
+                  <h3 className="text-lg font-black font-serif group-hover:text-amber-700 transition-colors" style={{ color: theme.sacredMaroon }}>
                     {t(bhushan.name)}
                   </h3>
-                  <p className="text-xs line-clamp-2 mt-1" style={{ color: theme.textSecondary }}>
+
+                  <p className="text-xs line-clamp-3 leading-relaxed opacity-90" style={{ color: theme.textPrimary }}>
                     {t(bhushan.definition)}
                   </p>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-amber-500/5 border border-amber-500/10 text-xs italic font-serif line-clamp-2 text-amber-900">
-                  "{bhushan.sakhi.text}"
-                </div>
-
-                <div className="flex items-center justify-between pt-1 text-xs font-bold" style={{ color: theme.sacredMaroon }}>
-                  <span>{language === 'pb' ? 'ਚੱਕਰ ਵਿੱਚ ਦੇਖੋ' : language === 'en' ? 'View in Chakra' : 'विस्तार देखें'}</span>
-                  <ChevronRight className="w-4 h-4" />
+                <div className="pt-2 border-t flex items-center justify-between text-xs font-bold" style={{ borderColor: theme.borderOrnament, color: bhushan.pillarColor }}>
+                  <span>{language === 'pb' ? 'ਚੱਕਰ ਵਿੱਚ ਵੇਖੋ' : language === 'en' ? 'View in Wheel' : 'चक्र में देखें'}</span>
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
             );
@@ -1277,82 +1319,99 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
       )}
 
       {/* ========================================================================= */}
-      {/* VIEW 3: 4-PILLAR STEP-BY-STEP SADHANA JOURNEY */}
+      {/* VIEW 3: PATH JOURNEY VIEW (साधना सोपान)                                     */}
       {/* ========================================================================= */}
       {viewLayout === 'journey' && (
-        <div className="space-y-8">
-          {PILLARS_CONFIG.map((pillar, pIdx) => {
-            const pillarBhushans = ENRICHED_16_BHUSHAN.filter((b) => b.pillarId === pillar.id);
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl font-black font-serif" style={{ color: theme.sacredMaroon }}>
+              {language === 'pb' ? 'ਆਤਮਾ ਦਾ ਸਤਲੋਕ ਆਰੋਹਣ ਪਥ (੧੬ ਸੋपान)' : 
+               language === 'en' ? 'The 16-Step Ascent Path to Satlok' : 
+               'आत्मा का सत्यलोक आरोहण पथ (16 साधना सोपान)'}
+            </h2>
+            <p className="text-xs sm:text-sm" style={{ color: theme.textSecondary }}>
+              {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੁਆਰਾ ਦਰਸਾਏ ਗਏ ੧੬ ਅਧਿਆਤਮਕ ਕਦਮਾਂ ਦੀ ਲੜੀਵਾਰ ਯਾਤਰਾ' : 
+               language === 'en' ? 'Sequential spiritual journey through the 16 divine stages taught by Satguru Kabir' : 
+               'सद्गुरु कबीर साहेब द्वारा दर्शाये गए 16 आध्यात्मिक सोपानों की क्रमबद्ध मार्गदर्शिका'}
+            </p>
+          </div>
 
-            return (
-              <div 
-                key={pillar.id}
-                className="rounded-3xl border p-5 sm:p-7 space-y-4 shadow-sm"
-                style={{
-                  backgroundColor: theme.cardBg,
-                  borderColor: theme.borderOrnament,
-                  boxShadow: theme.cardShadow
-                }}
+          <div className="relative border-l-2 ml-4 sm:ml-8 pl-4 sm:pl-8 space-y-8" style={{ borderColor: '#D97706' }}>
+            {ENRICHED_16_BHUSHAN.map((bhushan, index) => (
+              <motion.div
+                key={bhushan.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
+                className="relative space-y-2"
               >
-                <div className="flex items-center gap-3 border-b pb-3" style={{ borderColor: theme.borderOrnament }}>
-                  <div 
-                    className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg font-bold text-white shadow-xs"
-                    style={{ backgroundColor: pillar.color }}
-                  >
-                    {pIdx + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold font-serif" style={{ color: theme.sacredMaroon }}>
-                      {t(pillar.title)}
-                    </h3>
-                    <p className="text-xs" style={{ color: theme.textSecondary }}>
-                      {language === 'pb' ? `ਭੂਸ਼ਣ ${pillar.range[0]} ਤੋਂ ${pillar.range[3]} ਤੱਕ ਦੀ ਰੂਹਾਨੀ ਉੱਨਤੀ` : 
-                       language === 'en' ? `Spiritual Progression from Jewel #${pillar.range[0]} to #${pillar.range[3]}` : 
-                       `भूषण संख्या ${pillar.range[0]} से ${pillar.range[3]} तक का दिव्य सोपान`}
-                    </p>
-                  </div>
+                {/* Timeline Dot */}
+                <div 
+                  className="absolute -left-[25px] sm:-left-[41px] top-1 w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-black shadow-md text-white"
+                  style={{ backgroundColor: bhushan.pillarColor, borderColor: '#FFFDF7' }}
+                >
+                  {bhushan.order}
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
-                  {pillarBhushans.map((bhushan) => (
-                    <div
-                      key={bhushan.id}
+                <div 
+                  className="p-5 rounded-3xl border-2 shadow-sm space-y-3"
+                  style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span 
+                      className="px-2.5 py-0.5 rounded-lg text-xs font-bold text-white shadow-xs"
+                      style={{ backgroundColor: bhushan.pillarColor }}
+                    >
+                      {t(bhushan.pillarTitle)}
+                    </span>
+                    <span className="text-xs font-serif opacity-75" style={{ color: theme.textSecondary }}>
+                      {language === 'pb' ? `ਸੋपान ${bhushan.order} / ੧੬` : language === 'en' ? `Step ${bhushan.order} of 16` : `सोपान ${bhushan.order} / 16`}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-black font-serif" style={{ color: theme.sacredMaroon }}>
+                    {t(bhushan.name)}
+                  </h3>
+
+                  <p className="text-sm font-medium leading-relaxed" style={{ color: theme.textPrimary }}>
+                    {t(bhushan.definition)}
+                  </p>
+
+                  <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm font-serif italic text-amber-950">
+                    "{formatCoupletString(bhushan.sakhi.text)}"
+                  </div>
+
+                  <div className="pt-2 flex justify-end">
+                    <button
+                      type="button"
                       onClick={() => {
                         handleSelectSegment(bhushan.order - 1);
                         setViewLayout('chakra');
                       }}
-                      className="p-4 rounded-2xl border cursor-pointer hover:scale-102 transition-all space-y-2"
                       style={{
-                        backgroundColor: theme.stepActiveBg,
-                        borderColor: theme.cardBorder
+                        backgroundColor: '#FEF3C7',
+                        borderColor: '#D97706',
+                        color: '#6B1D1D'
                       }}
+                      className="px-4 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-xs"
                     >
-                      <div className="flex items-center gap-2">
-                        <span 
-                          className="w-5 h-5 rounded-lg text-[11px] font-bold text-white flex items-center justify-center"
-                          style={{ backgroundColor: bhushan.pillarColor }}
-                        >
-                          {bhushan.order}
-                        </span>
-                        <h4 className="font-bold text-sm" style={{ color: theme.sacredMaroon }}>
-                          {t(bhushan.name)}
-                        </h4>
-                      </div>
-                      <p className="text-xs line-clamp-2" style={{ color: theme.textPrimary }}>
-                        {t(bhushan.definition)}
-                      </p>
-                      <div className="text-[11px] font-bold text-amber-700 flex items-center gap-1">
-                        <span>{language === 'pb' ? 'ਸੰਬੰਧ ਪੜ੍ਹੋ' : language === 'en' ? 'Read Relation' : 'संबंध देखें'}</span>
-                        <ChevronRight className="w-3 h-3" />
-                      </div>
-                    </div>
-                  ))}
+                      <span>{language === 'pb' ? 'ਚੱਕਰ ਵਿੱਚ ਵੇਖੋ' : language === 'en' ? 'Open in Wheel' : 'चक्र दर्शन में देखें'}</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              </motion.div>
+            ))}
+          </div>
         </div>
       )}
+
+      {/* Sacred Bottom Branding */}
+      <div className="text-center pt-4 pb-2">
+        <span className="text-base font-serif font-bold" style={{ color: theme.sacredMaroon }}>
+          {SACRED_BRANDING.footer[language]}
+        </span>
+      </div>
     </div>
   );
 };

@@ -41,8 +41,8 @@ export const GLOBAL_NATURE_PRESETS: GlobalNaturePreset[] = [
   },
   {
     id: 'light_floral_geometric',
-    name: { hi: 'पुष्पीय ज्यामितीय (Light)', pb: 'ਫੁੱਲ ਤੇ ਜ్యాਮਿਤਿਕ ਰੋਸ਼ਨੀ', en: 'Light Floral & Geometric' },
-    sub: { hi: 'गुलाब फूल 🌹 व ज्यामितीय चक्र', pb: 'ਗੁਲਾਬ ਫੁੱल 🌹 ਅਤੇ ਜ్యాਮਿਤਿਕ ਆਕృతి', en: 'Roses 🌹 & sacred geometry' },
+    name: { hi: 'पुष्पीय ज्यामितीय (Light)', pb: 'ਫੁੱਲ ਤੇ ਜਿਆਮਿਤੀ ਰੋਸ਼ਨੀ', en: 'Light Floral & Geometric' },
+    sub: { hi: 'गुलाब फूल 🌹 व ज्यामितीय चक्र', pb: 'ਗੁਲਾਬ ਫੁੱਲ 🌹 ਅਤੇ ਜਿਆਮਿਤੀ ਆਕ੍ਰਿਤੀ', en: 'Roses 🌹 & sacred geometry' },
     accent: '#E11D48',
     previewBg: `url("${lightFloralWallpaper}")`,
   },

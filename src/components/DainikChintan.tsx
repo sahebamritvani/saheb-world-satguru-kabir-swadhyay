@@ -154,7 +154,11 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
             if (onOpenBlessing) {
               onOpenBlessing(
                 language === 'hi' ? 'शांत चिंतन पूर्ण' : language === 'pb' ? 'ਸ਼ਾਂਤ ਚਿੰਤਨ ਸੰਪੂਰਨ' : 'Contemplation Complete',
-                language === 'hi' ? 'आपने आज का शांत चिंतन व ध्यान पूर्ण किया। सत साहेब!' : 'You have completed today’s silent contemplation.'
+                language === 'pb'
+                  ? 'ਤੁਸੀਂ ਅੱਜ ਦਾ ਸ਼ਾਂਤ ਚਿੰਤਨ ਅਤੇ ਧਿਆਨ ਪੂਰਾ ਕਰ ਲਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਕ੍ਰਿਪਾ!'
+                  : language === 'en'
+                  ? 'You have completed today’s silent contemplation.'
+                  : 'आपने आज का शांत चिंतन व ध्यान पूर्ण किया। सत साहेब!'
               );
             }
             return 0;
@@ -196,7 +200,7 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
   };
 
   const handleSaveJournalEntry = () => {
-    const todayStr = new Date().toLocaleDateString(language === 'hi' ? 'hi-IN' : 'en-US', {
+    const todayStr = new Date().toLocaleDateString(language === 'pb' ? 'pa-IN' : language === 'en' ? 'en-US' : 'hi-IN', {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
@@ -237,7 +241,11 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
     if (onOpenBlessing) {
       onOpenBlessing(
         language === 'hi' ? 'चिंतन समर्पण' : language === 'pb' ? 'ਚਿੰਤਨ ਸਮਰਪਣ' : 'Contemplation Saved',
-        language === 'hi' ? 'आपके आत्म-चिंतन विचार डायरी में सुरक्षित हो गए हैं। साहेब बंदगी साहेब!' : 'Your sacred reflections have been saved in your personal journal.'
+        language === 'pb'
+          ? 'ਤੁਹਾਡੇ ਆਤਮ-ਚਿੰਤਨ ਵਿਚਾਰ ਡਾਇਰੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਹੋ ਗਏ ਹਨ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!'
+          : language === 'en'
+          ? 'Your sacred reflections have been saved in your personal journal.'
+          : 'आपके आत्म-चिंतन विचार डायरी में सुरक्षित हो गए हैं। साहेब बंदगी साहेब!'
       );
     }
   };
@@ -367,13 +375,13 @@ ${bottom}`;
       {/* Standardized Sacred Top Bar (Satyanaam ONLY) */}
       <div
         style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center overflow-hidden min-h-[42px]"
+        className="border-b py-2 px-3 sm:px-4 rounded-xl mb-4 select-none flex items-center justify-center min-h-[42px]"
       >
         <span
           style={{ color: theme.sacredMaroon }}
-          className="text-sm sm:text-lg font-black tracking-wider sm:tracking-widest font-serif block whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
         >
-          {language === 'pb' ? '🌹 ।। ਸਤਯਨਾਮ ।। 🌹' : language === 'en' ? '🌹 ।। Satyanaam ।। 🌹' : '🌹 ।। सत्यनाम ।। 🌹'}
+          {SACRED_BRANDING.header[language]}
         </span>
       </div>
 
@@ -461,7 +469,7 @@ ${bottom}`;
               title="Daily Contemplation Streak"
             >
               <Flame className="w-4 h-4 text-orange-500" />
-              <span>{streakCount} {language === 'hi' ? 'दिन प्रवाह' : 'days'} 🔥</span>
+              <span>{streakCount} {language === 'pb' ? 'ਦਿਨ ਪ੍ਰਵਾਹ' : language === 'en' ? 'days' : 'दिन प्रवाह'} 🔥</span>
             </div>
 
             {/* Share Button */}
@@ -647,7 +655,7 @@ ${bottom}`;
                   </div>
                   <input
                     type="text"
-                    placeholder={language === 'hi' ? 'आपका उत्तर / अंतर्दृष्टि...' : 'Your inner reflection / answer...'}
+                    placeholder={language === 'pb' ? 'ਤੁਹਾਡਾ ਉੱਤਰ / ਅੰਤਰਦ੍ਰਿਸ਼ਟੀ...' : language === 'en' ? 'Your inner reflection / answer...' : 'आपका उत्तर / अंतर्दृष्टि...'}
                     value={inquiryAnswers[idx] || ''}
                     onChange={(e) =>
                       setInquiryAnswers({ ...inquiryAnswers, [idx]: e.target.value })
@@ -683,7 +691,7 @@ ${bottom}`;
                 }`}
               >
                 <Check className="w-3.5 h-3.5" />
-                <span>{isSankalpDone ? (language === 'hi' ? 'स्वीकृत ✓' : 'Accepted ✓') : tr.resolveAccept}</span>
+                <span>{isSankalpDone ? (language === 'pb' ? 'ਸਵੀਕਾਰ ਕੀਤਾ ✓' : language === 'en' ? 'Accepted ✓' : 'स्वीकृत ✓') : tr.resolveAccept}</span>
               </button>
             </div>
 

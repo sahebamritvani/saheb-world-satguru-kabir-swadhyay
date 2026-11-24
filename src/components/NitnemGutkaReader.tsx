@@ -2251,7 +2251,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             {viewMode === 'selection' && (
               <p className="hidden md:block text-[0.6875rem] opacity-90 font-serif mt-0.5 truncate">
                 {language === 'pb' 
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
+                  ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
                   : language === 'en' 
                   ? 'Satguru Kabir Saheb Daily Prayers, Praises, Aarti & Sacred Texts' 
                   : 'सतगुरु कबीर साहेब नित्य पाठ, अस्तुति, आरती एवं ग्रन्थ संग्रह'}
@@ -2460,7 +2460,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 >
                   <div className="space-y-1">
                     <span style={{ color: theme.accentGold }} className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider block">
-                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਨਿਤਨੇਮ ਗੁਟਕਾ' : language === 'en' ? 'Complete 7-Section Gutka' : 'सम्पूर्ण ७ खंड गुटका साहेब'}
+                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਨਿਤਨੇਮ ਗੁਟਕਾ' : language === 'en' ? 'Complete 7-Section Gutka' : 'सम्पूर्ण ७ खंड गुटका साहेब'}
                     </span>
                     <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm sm:text-base">
                       {haziriMarkedToday
@@ -2495,7 +2495,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਅਨੁਕ੍ਰਮਣਿਕਾ ਤੇ ਸੂਚੀ' : language === 'en' ? 'Sacred Nitnem Index & Chapters' : 'पावन नितनेम अनुक्रमणिका व सूची'}
                     </h2>
                     <p className="text-xs text-amber-100 font-serif">
-                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
+                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
                     </p>
                   </div>
                 </div>
@@ -3001,17 +3001,23 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     breathPhase === 'exhale' ? 'scale-95 bg-transparent' : 'scale-90 bg-black/10'
                   }`}>
                     <span className="text-[0.5625rem] font-black uppercase text-amber-950 dark:text-amber-200">
-                      {breathPhase === 'inhale' ? (language === 'pb' ? 'ਸੁਆਸ ਭਰੋ' : 'Inhale') :
-                       breathPhase === 'hold' ? (language === 'pb' ? 'ਰੋਕੋ' : 'Hold') :
-                       breathPhase === 'exhale' ? (language === 'pb' ? 'ਛੱਡੋ' : 'Exhale') : 
-                       (language === 'pb' ? 'ਬਾਹਰ ਰੋਕੋ' : 'Hold Out')}
+                      {breathPhase === 'inhale'
+                        ? (language === 'pb' ? 'ਸੁਆਸ ਭਰੋ' : language === 'en' ? 'Inhale' : 'श्वास भरें')
+                        : breathPhase === 'hold'
+                        ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Hold' : 'रोकें')
+                        : breathPhase === 'exhale'
+                        ? (language === 'pb' ? 'ਛੱਡੋ' : language === 'en' ? 'Exhale' : 'छोड़ें')
+                        : (language === 'pb' ? 'ਬਾਹਰ ਰੋਕੋ' : language === 'en' ? 'Hold Out' : 'बाहर रोकें')}
                     </span>
                   </div>
                   <p className="text-[0.6875rem] font-serif font-bold text-gray-700 dark:text-gray-300 max-w-md leading-relaxed text-left">
-                    {breathPhase === 'inhale' ? (language === 'pb' ? 'ਨਾਸਕਾ ਰਾਹੀਂ ਪਾਵਨ ਸੁਆਸ ਅੰਦਰ ਭਰੋ।' : 'Slowly inhale sacred breath.') :
-                     breathPhase === 'hold' ? (language === 'pb' ? 'ਸੁਆਸ ਅੰਦਰ ਰੋਕ ਕੇ ਸਤਯਨਾਮ ਸਿਮਰਨ ਕਰੋ।' : 'Hold breath inside, meditate on Satnaam.') :
-                     breathPhase === 'exhale' ? (language === 'pb' ? 'ਸੁਆਸ ਹੌਲੀ-ਹੌਲੀ ਬਾਹਰ ਛੱਡੋ।' : 'Slowly exhale breath.') : 
-                     (language === 'pb' ? 'ਸੁਆਸ ਬਾਹਰ ਰੋਕ ਕੇ ਸ਼ਾਂਤ ਚਿੱਤ ਹੋਵੋ।' : 'Hold breath out, tranquil mind.')}
+                    {breathPhase === 'inhale'
+                      ? (language === 'pb' ? 'ਨਾਸਕਾ ਰਾਹੀਂ ਪਾਵਨ ਸੁਆਸ ਅੰਦਰ ਭਰੋ।' : language === 'en' ? 'Slowly inhale sacred breath.' : 'नासिका द्वारा पावन श्वास धीरे-धीरे अंदर भरें।')
+                      : breathPhase === 'hold'
+                      ? (language === 'pb' ? 'ਸੁਆਸ ਅੰਦਰ ਰੋਕ ਕੇ ਸਤਯਨਾਮ ਸਿਮਰਨ ਕਰੋ।' : language === 'en' ? 'Hold breath inside, meditate on Satyanaam.' : 'श्वास अंदर रोककर सत्यनाम सुमिरन करें।')
+                      : breathPhase === 'exhale'
+                      ? (language === 'pb' ? 'ਸੁਆਸ ਹੌਲੀ-ਹੌਲੀ ਬਾਹਰ ਛੱਡੋ।' : language === 'en' ? 'Slowly exhale breath.' : 'श्वास धीरे-धीरे बाहर छोड़ें।')
+                      : (language === 'pb' ? 'ਸੁਆਸ ਬਾਹਰ ਰੋਕ ਕੇ ਸ਼ਾਂਤ ਚਿੱਤ ਹੋਵੋ।' : language === 'en' ? 'Hold breath out, tranquil mind.' : 'श्वास बाहर रोककर शांत चित्त हो जाएं।')}
                   </p>
                 </div>
               </div>
@@ -3289,7 +3295,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         }}
                         className="inline-block px-6 py-2 rounded-full border-2 font-serif font-black text-sm sm:text-base tracking-normal backdrop-blur-md shadow-xs"
                       >
-                        {language === 'pb' ? '।। ਸਤ੍ਯਨਾਮ ।।' : language === 'en' ? '|| Satyanam ||' : '।। सत्यनाम ।।'}
+                        {language === 'pb' ? '।।ਸਤਯਨਾਮ।।' : language === 'en' ? '||Satyanaam||' : '।।सत्यनाम।।'}
                       </span>
                     </div>
 
@@ -3979,7 +3985,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         <div className="flex items-center justify-between">
                                           <span className="text-xs font-bold font-serif text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
                                             <span>🔤</span>
-                                            <span>{language === 'pb' ? 'ਇਸ ਬਾਣੀ ਦੇ ਸਾਧੁੱਕੜੀ ਸ਼ਬਦ (Tap to view definition)' : 'इस वाणी के मुख्य साधुक्कड़ी शब्द (अर्थ जानने हेतु स्पर्श करें)'}</span>
+                                            <span>{language === 'pb' ? 'ਇਸ ਬਾਣੀ ਦੇ ਸਾਧੁੱਕੜੀ ਸ਼ਬਦ (ਅਰਥ ਦੇਖਣ ਲਈ ਛੂਹੋ)' : language === 'en' ? 'Key Sandhukkari Terms (Tap to view meaning)' : 'इस वाणी के मुख्य साधुक्कड़ी शब्द (अर्थ जानने हेतु स्पर्श करें)'}</span>
                                           </span>
                                         </div>
 
@@ -3995,20 +4001,20 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                                 }}
                                                 className="px-3 py-1.5 rounded-xl bg-white dark:bg-zinc-900 border border-amber-300 dark:border-amber-800/60 hover:border-amber-500 shadow-xs flex items-center gap-1.5 text-xs font-serif font-bold text-amber-900 dark:text-amber-200 hover:scale-105 transition cursor-pointer"
                                               >
-                                                <span>✨ {language === 'pb' ? term.punjabi : term.word}</span>
-                                                <span className="text-[0.625rem] opacity-70 font-mono">({term.transliteration})</span>
+                                                <span>✨ {language === 'pb' ? term.punjabi : language === 'en' ? term.transliteration : term.word}</span>
+                                                <span className="text-[0.625rem] opacity-70 font-mono">({language === 'en' ? term.word : term.transliteration})</span>
                                               </button>
                                             ))}
                                           </div>
                                         ) : (
                                           <div className="text-xs text-gray-500 font-serif italic">
-                                            {language === 'pb' ? 'ਇਸ ਪਦ ਦੇ ਸ਼ਬਦਾਂ \'ਤੇ ਟੈਪ ਕਰਕੇ ਸਿੱਧਾ ਅਰਥ ਦੇਖ ਸਕਦੇ ਹੋ।' : 'इस पद के किसी भी शब्द पर टैप करके आप तुरंत उसका अर्थ व आध्यात्मिक रहस्य जान सकते हैं।'}
+                                            {language === 'pb' ? 'ਇਸ ਪਦ ਦੇ ਸ਼ਬਦਾਂ \'ਤੇ ਟੈਪ ਕਰਕੇ ਸਿੱਧਾ ਅਰਥ ਦੇਖ ਸਕਦੇ ਹੋ।' : language === 'en' ? 'Tap on any word in this verse to view its literal & spiritual meaning.' : 'इस पद के किसी भी शब्द पर टैप करके आप तुरंत उसका अर्थ व आध्यात्मिक रहस्य जान सकते हैं।'}
                                           </div>
                                         )}
 
                                         <div className="pt-2 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
                                           <span className="text-[0.6875rem] text-gray-500 font-serif">
-                                            {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਖਿਚੜੀ / ਸਾਧੁੱਕੜੀ ਭਾਸ਼ਾ' : 'कबीर साहेब की खिचड़ी / साधुक्कड़ी भाषा'}
+                                            {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਖਿਚੜੀ / ਸਾਧੁੱਕੜੀ ਭਾਸ਼ਾ' : language === 'en' ? 'Kabir Saheb’s Khichadi / Sandhukkari Language' : 'कबीर साहेब की खिचड़ी / साधुक्कड़ी भाषा'}
                                           </span>
                                           <button
                                             type="button"
@@ -4018,7 +4024,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                             }}
                                             className="text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1"
                                           >
-                                            <span>📚 {language === 'pb' ? 'ਪੂਰਾ ਸ਼ਬਦਕੋਸ਼ ਖੋਲ੍ਹੋ' : 'पूरा शब्दकोश खोलें'}</span>
+                                            <span>📚 {language === 'pb' ? 'ਪੂਰਾ ਸ਼ਬਦਕੋਸ਼ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open Full Glossary' : 'पूरा शब्दकोश खोलें'}</span>
                                             <ChevronRight size={13} />
                                           </button>
                                         </div>
@@ -4595,7 +4601,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     {language === 'pb' ? 'ਸਾਧੁੱਕੜੀ ਸ਼ਬਦਕੋਸ਼ (ਖਿਚੜੀ ਭਾਸ਼ਾ)' : language === 'en' ? 'Sandhukkari Spiritual Glossary' : 'साधुक्कड़ी शब्दकोश (संत / खिचड़ी भाषा)'}
                   </h3>
                   <p className="text-[0.6875rem] text-amber-800 dark:text-amber-400 font-serif">
-                    {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਰਥ ਤੇ ਆਤਮਿਕ ਰਹੱਸ' : 'कबीर साहेब की वाणी के गूढ़ शब्दार्थ, व्युत्ਪਤਿ एवं आत्मिक रहस्य'}
+                    {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਰਥ ਤੇ ਆਤਮਿਕ ਰਹੱਸ' : language === 'en' ? 'Deep meanings, etymology & spiritual essence of Kabir Saheb Bani' : 'कबीर साहेब की वाणी के गूढ़ शब्दार्थ, व्युत्पत्ति एवं आत्मिक रहस्य'}
                   </p>
                 </div>
               </div>
@@ -4643,10 +4649,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       <div>
                         <div className="flex items-center justify-between gap-1 mb-1">
                           <h4 className="font-serif font-black text-sm text-amber-900 dark:text-amber-200 group-hover:text-amber-600">
-                            {language === 'pb' ? term.punjabi : term.word}
+                            {language === 'pb' ? term.punjabi : language === 'en' ? term.transliteration : term.word}
                           </h4>
                           <span className="text-[0.625rem] font-mono text-gray-500 font-bold">
-                            {term.transliteration}
+                            {language === 'en' ? term.word : term.transliteration}
                           </span>
                         </div>
                         <p className="text-[0.6875rem] font-serif text-gray-600 dark:text-gray-300 line-clamp-2 leading-relaxed">
@@ -4655,7 +4661,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       </div>
 
                       <div className="pt-2 mt-2 border-t border-amber-200/40 dark:border-zinc-700/40 flex items-center justify-between text-[0.625rem] font-serif text-amber-700 dark:text-amber-400 font-bold">
-                        <span>✨ {language === 'pb' ? 'ਗੂੜ੍ਹ ਰਹੱਸ ਦੇਖੋ' : 'गूढ़ रहस्य देखें'}</span>
+                        <span>✨ {language === 'pb' ? 'ਗੂੜ੍ਹ ਰਹੱਸ ਦੇਖੋ' : language === 'en' ? 'View Deep Essence' : 'गूढ़ रहस्य देखें'}</span>
                         <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -4666,14 +4672,14 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             {/* Footer */}
             <div className="p-3 sm:p-4 border-t border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-950 flex items-center justify-between text-xs">
               <span className="font-serif opacity-75 text-[0.6875rem]">
-                {Object.keys(SANDHUKKARI_GLOSSARY).length} {language === 'pb' ? 'ਪਵਿੱਤਰ ਸ਼ਬਦ ਉਪਲਬਧ ਹਨ' : 'पवित्र साधुक्कड़ी शब्द उपलब्ध'}
+                {Object.keys(SANDHUKKARI_GLOSSARY).length} {language === 'pb' ? 'ਪਵਿੱਤਰ ਸ਼ਬਦ ਉਪਲਬਧ ਹਨ' : language === 'en' ? 'Sacred Sandhukkari Terms Available' : 'पवित्र साधुक्कड़ी शब्द उपलब्ध'}
               </span>
               <button
                 type="button"
                 onClick={() => setShowAllGlossaryModal(false)}
                 className="px-4 py-1.5 rounded-xl bg-[#8B2500] text-white font-bold text-xs hover:bg-[#7C1D00] transition cursor-pointer"
               >
-                {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : 'बंद करें'}
+                {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें'}
               </button>
             </div>
           </div>
@@ -4784,7 +4790,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       {language === 'pb' ? 'ਉੱਨਤ ਪਾਠ ਸੁਵਿਧਾਵਾਂ (Advanced Reading Suite)' : language === 'en' ? 'Advanced Reading Suite & Controls' : 'उन्नत पठन साधन (Advanced Reading Suite)'}
                                     </h3>
                                     <p className="text-[0.625rem] font-serif text-amber-700 dark:text-amber-400 truncate">
-                                      {language === 'pb' ? '੫ ਵਿਸ਼ੇਸ਼ ਸਮੂਹ: ਪ੍ਰਾਰੂਪ, ਸਕ੍ਰੌਲ, ਥੀਮ, ਧਿਆਨ ਸਾਧਨਾ ਤੇ ਜਾਪ ਟੀਚਾ' : '५ विशेष समूह: प्रारूप, स्क्रॉल, थीम, ध्यान साधना एवं जाप लक्ष्य'}
+                                      {language === 'pb'
+                                        ? '੫ ਵਿਸ਼ੇਸ਼ ਸਮੂਹ: ਪ੍ਰਾਰੂਪ, ਸਕ੍ਰੌਲ, ਥੀਮ, ਧਿਆਨ ਸਾਧਨਾ ਤੇ ਜਾਪ ਟੀਚਾ'
+                                        : language === 'en'
+                                        ? '5 Control Groups: Format, Scroll, Themes, Meditation & Jaap Target'
+                                        : '५ विशेष समूह: प्रारूप, स्क्रॉल, थीम, ध्यान साधना एवं जाप लक्ष्य'}
                                     </p>
                                   </div>
                                 </div>
@@ -4797,10 +4807,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         onOpenSettings();
                                       }}
                                       className="min-h-[44px] sm:min-h-[38px] px-3 py-1.5 rounded-xl border border-amber-500/40 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 text-xs font-bold font-serif hover:bg-amber-100 transition cursor-pointer flex items-center gap-1 shadow-2xs"
-                                      title="समग्र ऐप सेटिंग्स"
+                                      title={language === 'pb' ? 'ਐਪ ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'Global App Settings' : 'समग्र ऐप सेटिंग्स'}
                                     >
                                       <Settings size={15} />
-                                      <span className="hidden sm:inline">{language === 'pb' ? 'ਐਪ ਸੈਟਿੰਗਜ਼' : 'ऐप सेटिंग्स'}</span>
+                                      <span className="hidden sm:inline">{language === 'pb' ? 'ਐਪ ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'App Settings' : 'ऐप सेटिंग्स'}</span>
                                     </button>
                                   )}
                                   <button
@@ -4849,11 +4859,17 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     <div className="flex items-center gap-2">
                                       <span className="text-base">📖</span>
                                       <h4 className="font-serif font-black text-xs sm:text-sm text-amber-950 dark:text-amber-300">
-                                        {language === 'pb' ? 'ਸਮੂਹ ੧: ਪਾਠ ਪ੍ਰਾਰੂਪ (Reading Framework)' : 'समूह १: पठन प्रारूप (Reading Framework)'}
+                                        {language === 'pb'
+                                          ? 'ਸਮੂਹ ੧: ਪਾਠ ਪ੍ਰਾਰੂਪ (Reading Framework)'
+                                          : language === 'en'
+                                          ? 'Group 1: Reading Framework & Script'
+                                          : 'समूह १: पठन प्रारूप (Reading Framework)'}
                                       </h4>
                                     </div>
                                     <span className="text-[0.625rem] font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">
-                                      {isPageFlipMode ? (language === 'pb' ? 'ਪੋਥੀ ਮੋਡ' : 'पेज फ़्लिप') : (language === 'pb' ? 'ਸਕ੍ਰੌਲ ਮੋਡ' : 'निरंतर स्क्रॉल')}
+                                      {isPageFlipMode
+                                        ? (language === 'pb' ? 'ਪੋਥੀ ਮੋਡ' : language === 'en' ? 'Page Flip' : 'पेज फ़्लिप')
+                                        : (language === 'pb' ? 'ਸਕ੍ਰੌਲ ਮੋਡ' : language === 'en' ? 'Smooth Scroll' : 'निरंतर स्क्रॉल')}
                                     </span>
                                   </div>
 
@@ -4869,7 +4885,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     {/* Script selector */}
                                     <div className="space-y-1.5">
                                       <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                        🪷 {language === 'pb' ? 'ਲਿਪੀ ਵਿਕਲਪ:' : 'लिपि विकल्प (Script):'}
+                                        🪷 {language === 'pb' ? 'ਲਿਪੀ ਵਿਕਲਪ:' : language === 'en' ? 'Script Option:' : 'लिपि विकल्प (Script):'}
                                       </span>
                                       <div className="flex items-center gap-1 flex-wrap">
                                         {([
@@ -4904,7 +4920,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     {/* Font Size controls */}
                                     <div className="space-y-1.5">
                                       <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                        🔤 {language === 'pb' ? 'ਅੱਖਰ ਅਕਾਰ (Font Size):' : 'अक्षर आकार (Font Size):'}
+                                        🔤 {language === 'pb' ? 'ਅੱਖਰ ਅਕਾਰ:' : language === 'en' ? 'Font Size:' : 'अक्षर आकार (Font Size):'}
                                       </span>
                                       <div className="flex items-center gap-1">
                                         {(['small', 'normal', 'large', 'xlarge', 'elderly'] as const).map(fs => (
@@ -4927,7 +4943,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     {/* Line Spacing controls */}
                                     <div className="space-y-1.5">
                                       <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                        ↕️ {language === 'pb' ? 'ਲਾਈਨ ਅੰਤਰਾਲ (Line Spacing):' : 'पंक्ति अंतराल (Line Height):'}
+                                        ↕️ {language === 'pb' ? 'ਲਾਈਨ ਅੰਤਰਾਲ:' : language === 'en' ? 'Line Spacing:' : 'पंक्ति अंतराल (Line Height):'}
                                       </span>
                                       <div className="flex items-center gap-1">
                                         {([
@@ -4957,12 +4973,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     {/* Font Style (Serif vs Sans) */}
                                     <div className="space-y-1.5">
                                       <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                        ✒️ {language === 'pb' ? 'ਅੱਖਰ ਸ਼ੈਲੀ (Script Face):' : 'लिपि शैली (Font Style):'}
+                                        ✒️ {language === 'pb' ? 'ਅੱਖਰ ਸ਼ੈਲੀ:' : language === 'en' ? 'Font Style:' : 'लिपि शैली (Font Style):'}
                                       </span>
                                       <div className="flex items-center gap-1">
                                         {([
-                                          { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ (Serif)' : '📜 ग्रंथ (Serif)' },
-                                          { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ (Sans)' : '🔤 सरल (Sans)' },
+                                          { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ (Serif)' : language === 'en' ? '📜 Granth (Serif)' : '📜 ग्रंथ (Serif)' },
+                                          { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ (Sans)' : language === 'en' ? '🔤 Simple (Sans)' : '🔤 सरल (Sans)' },
                                         ]).map(ff => (
                                           <button
                                             key={ff.id}
@@ -4995,7 +5011,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     <div className="flex items-center gap-2">
                                       <span className="text-base">⚡</span>
                                       <h4 className="font-serif font-black text-xs sm:text-sm text-emerald-950 dark:text-emerald-300">
-                                        {language === 'pb' ? 'ਸਮੂਹ ੨: ਸਵੈ-ਸਕ੍ਰੌਲ ਤੇ ਗਤੀ (Auto-Scroll & Speed)' : 'समूह २: स्वतः स्क्रॉल एवं गति (Auto-Scroll & Speed)'}
+                                        {language === 'pb' ? 'ਸਮੂਹ ੨: ਸਵੈ-ਸਕ੍ਰੌਲ ਤੇ ਗਤੀ' : language === 'en' ? 'Group 2: Auto-Scroll & Speed' : 'समूह २: स्वतः स्क्रॉल एवं गति'}
                                       </h4>
                                     </div>
                                     <button
@@ -5007,14 +5023,14 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           : 'bg-gray-200 dark:bg-zinc-800 text-gray-700 dark:text-gray-300'
                                       }`}
                                     >
-                                      <span>{isAutoPlaying ? '● चालू (Active)' : '○ बंद (Off)'}</span>
+                                      <span>{isAutoPlaying ? (language === 'pb' ? '● ਚਾਲੂ' : language === 'en' ? '● Active' : '● चालू') : (language === 'pb' ? '○ ਬੰਦ' : language === 'en' ? '○ Off' : '○ बंद')}</span>
                                     </button>
                                   </div>
 
                                   {/* Speed factors 0.5x, 1x, 1.5x, 2x, 2.5x, 3x, 5x */}
                                   <div className="space-y-1.5">
                                     <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                      ⏱️ {language === 'pb' ? 'ਸਕ੍ਰੌਲਿੰਗ ਗਤੀ ਗੁਣਾਂਕ (Speed Factors):' : 'स्क्रॉलिंग गति गुणक (Speed Factors):'}
+                                      ⏱️ {language === 'pb' ? 'ਸਕ੍ਰੌਲਿੰਗ ਗਤੀ ਗੁਣਾਂਕ:' : language === 'en' ? 'Scrolling Speed Factors:' : 'स्क्रॉलिंग गति गुणक:'}
                                     </span>
                                     <div className="grid grid-cols-7 gap-1 sm:gap-1.5">
                                       {([0.5, 1, 1.5, 2, 2.5, 3, 5] as const).map(spd => (
@@ -5036,7 +5052,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       ))}
                                     </div>
                                     <p className="text-[0.625rem] font-serif text-gray-500 dark:text-gray-400 italic pt-1">
-                                      {language === 'pb' ? 'ਸਕ੍ਰੀਨ ਛੂਹਣ ਜਾਂ ਉਂਗਲੀ ਨਾਲ ਹਿਲਾਉਣ ਤੇ ਸਵੈ-ਸਕ੍ਰੌਲ ਆਪਣੇ ਆਪ ਸ਼ਾਂਤ ਹੋ ਜਾਂਦਾ ਹੈ।' : 'स्क्रीन को छूने या स्क्रॉल करने पर स्वतः स्क्रॉल सहजता से विराम ले लेता है।'}
+                                      {language === 'pb' ? 'ਸਕ੍ਰੀਨ ਛੂਹਣ ਜਾਂ ਉਂਗਲੀ ਨਾਲ ਹਿਲਾਉਣ ਤੇ ਸਵੈ-ਸਕ੍ਰੌਲ ਆਪਣੇ ਆਪ ਸ਼ਾਂਤ ਹੋ ਜਾਂਦਾ ਹੈ।' : language === 'en' ? 'Auto-scroll gently pauses whenever you touch or manually scroll.' : 'स्क्रीन को छूने या स्क्रॉल करने पर स्वतः स्क्रॉल सहजता से विराम ले लेता है।'}
                                     </p>
                                   </div>
                                 </div>
@@ -5051,11 +5067,17 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     <div className="flex items-center gap-2">
                                       <span className="text-base">🎨</span>
                                       <h4 className="font-serif font-black text-xs sm:text-sm text-amber-950 dark:text-amber-300">
-                                        {language === 'pb' ? 'ਸਮੂਹ ੩: ਪਾਠ ਥੀਮ ਤੇ ਰੰਗ (Reading Themes)' : 'समूह ३: थीम एवं रंग (Reading Themes & Background)'}
+                                        {language === 'pb' ? 'ਸਮੂਹ ੩: ਪਾਠ ਥੀਮ ਤੇ ਰੰਗ' : language === 'en' ? 'Group 3: Reading Themes' : 'समूह ३: थीम एवं रंग'}
                                       </h4>
                                     </div>
                                     <span className="text-[0.625rem] font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">
-                                      {readerTheme === 'mool' ? 'मूल (Cream)' : (readerTheme === 'pothi' || readerTheme === 'sepia') ? 'पोथी (Sepia)' : (readerTheme === 'black' || readerTheme === 'dark') ? 'ब्लैक (Dark)' : 'नेत्र (Eye-Care)'}
+                                      {readerTheme === 'mool'
+                                        ? (language === 'pb' ? 'ਮੂਲ' : language === 'en' ? 'Mool' : 'मूल')
+                                        : (readerTheme === 'pothi' || readerTheme === 'sepia')
+                                        ? (language === 'pb' ? 'ਪੋਥੀ' : language === 'en' ? 'Pothi' : 'पोथी')
+                                        : (readerTheme === 'black' || readerTheme === 'dark')
+                                        ? (language === 'pb' ? 'ਬਲੈਕ' : language === 'en' ? 'Black' : 'ब्लैक')
+                                        : (language === 'pb' ? 'ਨੇਤ੍ਰ' : language === 'en' ? 'Netra' : 'नेत्र')}
                                     </span>
                                   </div>
 
@@ -5064,32 +5086,32 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     {[
                                       {
                                         id: 'mool' as const,
-                                        label: language === 'pb' ? 'ਮੂਲ' : 'मूल',
-                                        sub: language === 'pb' ? 'ਲਾਈਟ ਕਰੀਮ' : 'Light Cream',
+                                        label: language === 'pb' ? 'ਮੂਲ' : language === 'en' ? 'Mool' : 'मूल',
+                                        sub: language === 'pb' ? 'ਲਾਈਟ ਕਰੀਮ' : language === 'en' ? 'Light Cream' : 'हल्का क्रीम',
                                         bgClass: 'bg-[#fffef9] border-[#e6dcbe] text-[#332211]',
                                         previewColor: '#fffef9',
                                         borderAccent: '#8b2500'
                                       },
                                       {
                                         id: 'pothi' as const,
-                                        label: language === 'pb' ? 'ਪੋਥੀ (ਸੇਪੀਆ)' : 'पोथी (सेपिया)',
-                                        sub: language === 'pb' ? 'ਪੁਰਾਤਨ ਪੱਤਰਾ' : 'Sepia Parchment',
+                                        label: language === 'pb' ? 'ਪੋਥੀ (ਸੇਪੀਆ)' : language === 'en' ? 'Pothi (Sepia)' : 'पोथी (सेपिया)',
+                                        sub: language === 'pb' ? 'ਪੁਰਾਤਨ ਪੱਤਰਾ' : language === 'en' ? 'Sepia Parchment' : 'पुरातन पत्र',
                                         bgClass: 'bg-[#fbf4e1] border-[#d6be8a] text-[#3a220c]',
                                         previewColor: '#fbf4e1',
                                         borderAccent: '#9a4208'
                                       },
                                       {
                                         id: 'black' as const,
-                                        label: language === 'pb' ? 'ਬਲੈਕ' : 'ब्लैक',
-                                        sub: language === 'pb' ? 'ਓਲੇਡ ਡਾਰਕ' : 'Pure Dark',
+                                        label: language === 'pb' ? 'ਬਲੈਕ' : language === 'en' ? 'Black' : 'ब्लैक',
+                                        sub: language === 'pb' ? 'ਓਲੇਡ ਡਾਰਕ' : language === 'en' ? 'Pure Dark' : 'पूर्ण डार्क',
                                         bgClass: 'bg-[#09090b] border-[#3f3f46] text-[#fafafa]',
                                         previewColor: '#09090b',
                                         borderAccent: '#a1a1aa'
                                       },
                                       {
                                         id: 'netra' as const,
-                                        label: language === 'pb' ? 'ਨੇਤ੍ਰ' : 'नेत्र',
-                                        sub: language === 'pb' ? 'ਕੋਮਲ ਹਰਾ' : 'Soft Green',
+                                        label: language === 'pb' ? 'ਨੇਤ੍ਰ' : language === 'en' ? 'Netra' : 'नेत्र',
+                                        sub: language === 'pb' ? 'ਕੋਮਲ ਹਰਾ' : language === 'en' ? 'Soft Green' : 'कोमल हरा',
                                         bgClass: 'bg-[#101f17] border-[#047857] text-[#d7f7e6]',
                                         previewColor: '#101f17',
                                         borderAccent: '#10b981'
@@ -5148,7 +5170,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     <div className="flex items-center gap-2">
                                       <span className="text-base">🧘</span>
                                       <h4 className="font-serif font-black text-xs sm:text-sm text-purple-950 dark:text-purple-300">
-                                        {language === 'pb' ? 'ਸਮੂਹ ੪: ਆਡੀਓ ਤੇ ਧਿਆਨ ਸਾਧਨਾ (Audio & Meditative)' : 'समूह ४: ऑडियो एवं ध्यान साधना (Audio & Meditative)'}
+                                        {language === 'pb' ? 'ਸਮੂਹ ੪: ਆਡੀਓ ਤੇ ਧਿਆਨ ਸਾਧਨਾ' : language === 'en' ? 'Group 4: Audio & Meditative' : 'समूह ४: ऑडियो एवं ध्यान साधना'}
                                       </h4>
                                     </div>
                                     <button
@@ -5161,7 +5183,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       }`}
                                     >
                                       <Volume2 size={12} />
-                                      <span>{isFullBaniAudioPlaying ? (language === 'pb' ? 'ਪਾਠ ਚੱਲ ਰਿਹਾ' : 'पाठ चालू') : (language === 'pb' ? 'ਪਾਠ ਸੁਣੋ' : 'पाठ सुनें')}</span>
+                                      <span>{isFullBaniAudioPlaying ? (language === 'pb' ? 'ਪਾਠ ਚੱਲ ਰਿਹਾ' : language === 'en' ? 'Playing Audio' : 'पाठ चालू') : (language === 'pb' ? 'ਪਾਠ ਸੁਣੋ' : language === 'en' ? 'Listen Bani' : 'पाठ सुनें')}</span>
                                     </button>
                                   </div>
 
@@ -5181,10 +5203,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         <span>🔦</span>
                                         <div>
                                           <span className="font-serif font-bold text-xs block">
-                                            {language === 'pb' ? 'ਪੰਕਤੀ ਗਾਈਡ' : 'पंक्ति गाइड'}
+                                            {language === 'pb' ? 'ਪੰਕਤੀ ਗਾਈਡ' : language === 'en' ? 'Line Guide' : 'पंक्ति गाइड'}
                                           </span>
                                           <span className={`text-[0.625rem] block opacity-80 ${isLineGuideActive ? 'text-white' : 'text-gray-500'}`}>
-                                            {isLineGuideActive ? 'चालू (Active)' : 'बंद (Off)'}
+                                            {isLineGuideActive ? (language === 'pb' ? 'ਚਾਲੂ' : language === 'en' ? 'Active' : 'चालू') : (language === 'pb' ? 'ਬੰਦ' : language === 'en' ? 'Off' : 'बंद')}
                                           </span>
                                         </div>
                                       </div>
@@ -5205,10 +5227,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         <span>🧘</span>
                                         <div>
                                           <span className="font-serif font-bold text-xs block">
-                                            {language === 'pb' ? 'ਜੇਨ ਇਕਾਗਰਤਾ' : 'जेन एकाग्रता'}
+                                            {language === 'pb' ? 'ਜੇਨ ਇਕਾਗਰਤਾ' : language === 'en' ? 'Zen Focus Mode' : 'जेन एकाग्रता'}
                                           </span>
                                           <span className={`text-[0.625rem] block opacity-80 ${isZenMode ? 'text-white' : 'text-gray-500'}`}>
-                                            {language === 'pb' ? 'ਨਿਰਵਿਕਲਪ ਧਿਆਨ' : 'निर्विकल्प ध्यान'}
+                                            {language === 'pb' ? 'ਨਿਰਵਿਕਲਪ ਧਿਆਨ' : language === 'en' ? 'Distraction-Free' : 'निर्विकल्प ध्यान'}
                                           </span>
                                         </div>
                                       </div>
@@ -5229,10 +5251,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         <span>🌀</span>
                                         <div>
                                           <span className="font-serif font-bold text-xs block">
-                                            {language === 'pb' ? 'ਦਿਵਯ ਸੁਆਸ ਚੱਕਰ' : 'दिव्य श्वास चक्र'}
+                                            {language === 'pb' ? 'ਦਿਵਯ ਸੁਆਸ ਚੱਕਰ' : language === 'en' ? 'Breathing Cycle' : 'दिव्य श्वास चक्र'}
                                           </span>
                                           <span className={`text-[0.625rem] block opacity-80 ${showBreathingGuide ? 'text-white' : 'text-gray-500'}`}>
-                                            {language === 'pb' ? 'ਪ੍ਰਾਣਾਯਾਮ ਸਾਧਨਾ' : 'प्राणायाम साधना'}
+                                            {language === 'pb' ? 'ਪ੍ਰਾਣਾਯਾਮ ਸਾਧਨਾ' : language === 'en' ? 'Calm Pranayama' : 'प्राणायाम साधना'}
                                           </span>
                                         </div>
                                       </div>
@@ -5245,7 +5267,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     {/* Audio Speed Controls */}
                                     <div className="bg-white/50 dark:bg-zinc-800/50 p-3 rounded-xl mb-3">
                                       <div className="flex justify-between text-[0.6875rem] font-bold mb-2">
-                                        <span>{language === 'pb' ? 'ਪਾਠ ਦੀ ਗਤੀ' : 'पाठ की गति'} (0.2x - 5x)</span>
+                                        <span>{language === 'pb' ? 'ਪਾਠ ਦੀ ਗਤੀ' : language === 'en' ? 'Recitation Speed' : 'पाठ की गति'} (0.2x - 5x)</span>
                                         <span>{audioSpeedLevel.toFixed(1)}x</span>
                                       </div>
                                       <input
@@ -5302,7 +5324,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         },
                                         {
                                           id: 'flute',
-                                          label: language === 'pb' ? 'ਬੰਸਰੀ' : 'बांसुरी',
+                                          label: language === 'pb' ? 'ਬੰਸਰੀ' : language === 'en' ? 'Flute' : 'बांसुरी',
                                           active: isBackgroundDhunPlaying && dhunSound === 'flute',
                                           action: () => {
                                             handleChangeDhunSound('flute');
@@ -5391,7 +5413,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     <div className="flex items-center gap-2">
                                       <span className="text-base">📿</span>
                                       <h4 className="font-serif font-black text-xs sm:text-sm text-emerald-950 dark:text-emerald-300">
-                                        {language === 'pb' ? 'ਸਮੂਹ ੫: ਜਾਪ ਟੀਚਾ ਤੇ ਮਾਲਾ ਕਾਊਂਟਰ (Jaap Targets)' : 'समूह ५: जाप लक्ष्य एवं माला काउंटर (Jaap Targets)'}
+                                        {language === 'pb' ? 'ਸਮੂਹ ੫: ਜਾਪ ਟੀਚਾ ਤੇ ਮਾਲਾ ਕਾਊਂਟਰ' : language === 'en' ? 'Group 5: Chanting Target & Mala Counter' : 'समूह ५: जाप लक्ष्य एवं माला काउंटर'}
                                       </h4>
                                     </div>
                                     <button
@@ -5402,14 +5424,14 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       }}
                                       className="px-3 py-1 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-serif font-bold text-xs flex items-center gap-1 shadow-sm transition cursor-pointer"
                                     >
-                                      <span>📿 {language === 'pb' ? 'ਮਾਲਾ ਖੋਲ੍ਹੋ' : 'माला खोलें'}</span>
+                                      <span>📿 {language === 'pb' ? 'ਮਾਲਾ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open Mala' : 'माला खोलें'}</span>
                                     </button>
                                   </div>
 
                                   {/* Goal Buttons: 5, 11, 21, 51, 108, 0 */}
                                   <div className="space-y-1.5">
                                     <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                      🎯 {language === 'pb' ? 'ਮਣਕੇ / ਪਾਠ ਸੰਕਲਪ ਟੀਚਾ (Goal Targets):' : 'मनके / पाठ संकल्प लक्ष्य (Goal Targets):'}
+                                      🎯 {language === 'pb' ? 'ਮਣਕੇ / ਪਾਠ ਸੰਕਲਪ ਟੀਚਾ:' : language === 'en' ? 'Chanting / Reading Goal Target:' : 'मनके / पाठ संकल्प लक्ष्य:'}
                                     </span>
                                     <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
                                       {[
@@ -5418,7 +5440,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         { val: 21 as const, label: '21' },
                                         { val: 51 as const, label: '51' },
                                         { val: 108 as const, label: '108' },
-                                        { val: 0 as const, label: language === 'pb' ? 'ਅਖੰਡ' : 'अनंत' },
+                                        { val: 0 as const, label: language === 'pb' ? 'ਅਖੰਡ' : language === 'en' ? 'Infinite' : 'अनंत' },
                                       ].map((tgt) => {
                                         const isSelected = selectedTarget === tgt.val;
                                         return (
@@ -5434,7 +5456,9 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           >
                                             <span className="text-sm font-mono">{tgt.label}</span>
                                             <span className="text-[0.5625rem] opacity-80">
-                                              {tgt.val === 0 ? (language === 'pb' ? 'ਅਖੰਡ' : 'अखंड') : (language === 'pb' ? 'ਮਣਕੇ' : 'मनके')}
+                                              {tgt.val === 0
+                                                ? (language === 'pb' ? 'ਅਖੰਡ' : language === 'en' ? 'Akhand' : 'अखंड')
+                                                : (language === 'pb' ? 'ਮਣਕੇ' : language === 'en' ? 'Beads' : 'मनके')}
                                             </span>
                                           </button>
                                         );
@@ -5443,6 +5467,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     <p className="text-[0.625rem] font-serif text-gray-500 dark:text-gray-400 italic pt-1">
                                       {language === 'pb'
                                         ? 'ਨਿਰਧਾਰਿਤ ਟੀਚਾ ਪੂਰਾ ਹੋਣ ਤੇ ਮਾਲਾ ਆਟੋਮੈਟਿਕ ਵਧਾਈ ਦਿੰਦੀ ਹੈ।'
+                                        : language === 'en'
+                                        ? 'Completing your chosen target automatically displays a sacred blessing celebration.'
                                         : 'निर्धारित लक्ष्य पूरा होने पर माला एवं पाठक स्वतः दिव्य उत्सव एवं मंगल बधाई प्रदर्शित करता है।'}
                                     </p>
                                   </div>
