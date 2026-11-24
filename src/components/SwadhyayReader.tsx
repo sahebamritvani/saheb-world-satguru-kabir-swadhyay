@@ -4212,7 +4212,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                     {elevenStepData.step11_blessingCertificate.samarpanSankalp}
                   </p>
                   <p style={{ color: rc.maroon }} className="text-base font-black tracking-widest pt-1 text-center">
-                    ।।साहेब बंदगी साहेब।।
+                    {SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi}
                   </p>
                 </div>
 

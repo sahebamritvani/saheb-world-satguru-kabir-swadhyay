@@ -501,7 +501,7 @@ export function buildThemeOneLineBlessing(sakhi: Sakhi, language: Language): str
   }
 
   if (language === 'pb') {
-    return `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਕਿਰਪਾ ਨਾਲ '${category}' ਦਾ ਇਹ ਪਾਵਨ ਬੋਧ ਤੁਹਾਡੇ ਜੀਵਨ ਨੂੰ ਸਤਯਨਾਮ ਦੇ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਕਰੇ।`;
+    return `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ '${category}' ਦਾ ਇਹ ਪਾਵਨ ਬੋਧ ਤੁਹਾਡੇ ਜੀਵਨ ਨੂੰ ਸਤਯਨਾਮ ਦੇ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਕਰੇ।`;
   }
   if (language === 'en') {
     return `May Satguru Kabir Saheb’s grace illuminate your daily life with the wisdom of '${category}'.`;
@@ -597,7 +597,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
     ? formatWordTakeaway(words[2], true)
     : contextNote ||
       (language === 'pb'
-        ? `ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।`
+        ? `ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।`
         : language === 'en'
         ? `Pause periodically during the day to contemplate the inner meaning of Sakhi #${sakhi.number}.`
         : `दिन में कुछ क्षण मौन होकर साखी #${sakhi.number} के मर्म का अंतर्मन में चिंतन करें।`);
@@ -787,7 +787,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
               : 'तृतीय चरण: मौन अनुभूति व सतगुरु समर्पण',
           instruction:
             language === 'pb'
-              ? `ਸਭ ਸੰਦੇਹਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰਕੇ ਨਿਰਮਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਓ।`
+              ? `ਸਭ ਸੰਦੇਹਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰਕੇ ਨਿਰਮਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਓ।`
               : language === 'en'
               ? `Release all mental chatter at the feet of Satguru Kabir Saheb and abide in luminous stillness.`
               : `समस्त विकार व संशय सतगुरु कबीर साहेब के चरणों में अर्पित कर साखी के पावन प्रकाश में विश्राम करें।`,
@@ -797,17 +797,27 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
     step11_blessingCertificate: {
       title:
         language === 'pb'
-          ? '੧੧. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦਾ ਪਾਵਨ ਅਸੀਸ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
+          ? '੧੧. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਪਾਵਨ ਅਸੀਸ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
           : language === 'en'
           ? '11. Satguru Kabir Saheb Blessing & Completion Certificate'
-          : '११. सतगुरु कबीर साहेब का पावन आशीर्वाद एवं प्रमाण-पत्र',
+          : '११. सद्गुरु कबीर साहेब का पावन आशीर्वाद एवं प्रमाण-पत्र',
       subtitle:
         language === 'pb'
-          ? `ਸਾਖੀ #${sakhi.number} (${categoryTitle}) ਸਵਾਧਿਆਇ ਸੰਪੂਰਨਤਾ`
+          ? `ਸਾਖੀ #${sakhi.number} (${categoryTitle}) ਸ੍ਵਾਧਿਆਇ ਸੰਪੂਰਨਤਾ`
           : language === 'en'
           ? `Completion of 11-Step Study for Sakhi #${sakhi.number} (${categoryTitle})`
           : `साखी #${sakhi.number} (${categoryTitle}) एकादश-सोपान स्वाध्याय संपूर्णता`,
-      blessingVerse: sakhiVerse,
+      blessingVerse: sakhiVerse
+        .split(/\r?\n/)
+        .map((l) => l.trim())
+        .filter(
+          (l) =>
+            l &&
+            !/^[🌹\s।॥|/]*(?:सत्यनाम|सतनाम|ਸਤਯਨਾਮ|ਸਤਨਾਮ|satyanaam|satnaam|satnam)[🌹\s।॥|/]*$/i.test(l) &&
+            !/^[🙏\s।॥|/]*(?:साहेब\s*बंदगी(?:\s*साहेब)?|ਸਾਹੇਬ\s*ਬੰਦਗੀ(?:\s*ਸਾਹੇਬ)?|saheb\s*banda?gi(?:\s*saheb)?)[🙏\s।॥|/]*$/i.test(l)
+        )
+        .join('\n')
+        .replace(/\s*\/\/+\s*/g, ' ॥ '),
       guruVachan: samarpanPrayer || oneLineBlessing,
       samarpanSankalp:
         practical
@@ -824,7 +834,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
       oneLineBlessing,
       certificateActionLabel:
         language === 'pb'
-          ? 'ਸਵਾਧਿਆਇ ਪ੍ਰਮਾਣ-ਪੱਤਰ ਪ੍ਰਾਪਤ ਕਰੋ'
+          ? 'ਸ੍ਵਾਧਿਆਇ ਪ੍ਰਮਾਣ-ਪੱਤਰ ਪ੍ਰਾਪਤ ਕਰੋ'
           : language === 'en'
           ? 'View & Download Certificate'
           : 'पावन स्वाध्याय प्रमाण-पत्र प्राप्त करें',
@@ -833,7 +843,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
       topHeader: SACRED_BRANDING.header[language] || SACRED_BRANDING.header.hi,
       certificationStatement:
         language === 'pb'
-          ? `ਇਹ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ [User Name] ਨੇ ਸਾਖੀ #${sakhi.number} ਦਾ ੧੧-ਚਰਣੀ ਸਵਾਧਿਆਇ ਸਫਲਤਾਪੂਰਵਕ ਸੰਪੰਨ ਕੀਤਾ।`
+          ? `ਇਹ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ [User Name] ਨੇ ਸਾਖੀ #${sakhi.number} ਦਾ ੧੧-ਚਰਣੀ ਸ੍ਵਾਧਿਆਇ ਸਫਲਤਾਪੂਰਵਕ ਸੰਪੰਨ ਕੀਤਾ।`
           : language === 'en'
           ? `This certifies that [User Name] has successfully completed the 11-Step Swadhyay of Sakhi #${sakhi.number}.`
           : `यह प्रमाणित किया जाता है कि [User Name] ने साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।`,
@@ -841,11 +851,11 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
       oneLineBlessing,
       footerBrand:
         language === 'pb'
-          ? 'Saheb World App • ਪਾਵਨ ਸਵਾਧਿਆਇ ਮੰਚ'
+          ? 'Saheb World App • ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਮੰਚ'
           : language === 'en'
           ? 'Saheb World App • Sacred Swadhyay Sanctuary'
           : 'Saheb World App • पावन स्वाध्याय मंच',
-      bottomFooter: `${SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi} 🙏`,
+      bottomFooter: SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi,
     },
     isAiGenerated: false,
   };

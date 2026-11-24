@@ -1,6 +1,6 @@
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { buildThemeOneLineBlessing } from './swadhyayElevenSteps';
-import { formatCoupletString } from '../utils/textSanitizer';
+import { formatCoupletIntoTwoLines } from '../utils/textSanitizer';
 
 export interface GeneratedCertificate {
   dataUrl: string;
@@ -12,6 +12,298 @@ export interface GeneratedCertificate {
 export interface CertificateRenderOptions {
   userName?: string;
   themeBlessing?: string;
+}
+
+const HONORIFIC_PREFIXES = [
+  // Multi-word / combined first
+  'श्री/सुश्री',
+  'ਸ਼੍ਰੀ/ਸੁਸ਼੍ਰੀ',
+  'ਸ੍ਰੀ/ਸ੍ਰੀਮਤੀ',
+  'shri/smt',
+  'sri/smt',
+  // Devanagari
+  'श्रीमती',
+  'सुश्री',
+  'श्रीमान',
+  'श्री',
+  'साध्वी',
+  'साधक',
+  'साधु',
+  'संत',
+  'सन्त',
+  'आचार्य',
+  'महंत',
+  'स्वामी',
+  'भक्त',
+  'गुरु',
+  'भाई',
+  'बहन',
+  'माता',
+  'डॉ',
+  'पं',
+  'प्रो',
+  // Gurmukhi
+  'ਸ੍ਰੀਮਤੀ',
+  'ਸ਼੍ਰੀਮਤੀ',
+  'ਸੁਸ੍ਰੀ',
+  'ਸੁਸ਼੍ਰੀ',
+  'ਸ੍ਰੀਮਾਨ',
+  'ਸ੍ਰੀ',
+  'ਸ਼੍ਰੀ',
+  'ਸਾਧਵੀ',
+  'ਸਾਧਕ',
+  'ਸਾਧੂ',
+  'ਸੰਤ',
+  'ਭਗਤ',
+  'ਭਾਈ',
+  'ਬੀਬੀ',
+  'ਮਾਤਾ',
+  'ਸਰਦਾਰ',
+  'ਡਾ',
+  // English / Roman
+  'shrimati',
+  'sushri',
+  'shree',
+  'shri',
+  'sri',
+  'mrs',
+  'ms',
+  'mr',
+  'miss',
+  'smt',
+  'sant',
+  'sadhu',
+  'sadhak',
+  'sadhvi',
+  'seeker',
+  'devotee',
+  'bhai',
+  'sardar',
+  'bibi',
+  'mata',
+  'swami',
+  'acharya',
+  'mahant',
+  'dr',
+  'prof',
+];
+
+/**
+ * Formats the seeker's name cleanly without duplicating honorifics (e.g. "श्री/सुश्री सुश्री स्मृति")
+ * and ensures a respectful "जी / ਜੀ / Ji" suffix.
+ */
+export function formatCertificateSeekerName(rawName: string | undefined, language: Language): string {
+  const cleaned = (rawName || '')
+    .trim()
+    .replace(/^(?:श्री\/सुश्री|ਸ਼੍ਰੀ\/ਸੁਸ਼੍ਰੀ|ਸ੍ਰੀ\/ਸ੍ਰੀਮਤੀ|Sri\/Smt|Shri\/Smt)\s+/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!cleaned) {
+    return language === 'pb'
+      ? 'ਸ਼ਰਧਾਲੂ ਸਾਧਕ ਜੀ'
+      : language === 'en'
+      ? 'Devout Seeker'
+      : 'श्रद्धालु साधक जी';
+  }
+
+  const lower = cleaned.toLowerCase();
+  const hasHonorific = HONORIFIC_PREFIXES.some((prefix) => {
+    const pLower = prefix.toLowerCase();
+    if (lower === pLower) return true;
+    return (
+      lower.startsWith(`${pLower} `) ||
+      lower.startsWith(`${pLower}.`) ||
+      lower.startsWith(`${pLower}।`)
+    );
+  });
+
+  const withPrefix = hasHonorific
+    ? cleaned
+    : language === 'pb'
+    ? `ਸਾਧਕ ${cleaned}`
+    : language === 'en'
+    ? `Seeker ${cleaned}`
+    : `साधक ${cleaned}`;
+
+  const hasRespectfulSuffix = /(?:^|\s)(?:जी|ਜੀ|ji)\.?$/i.test(withPrefix);
+  if (hasRespectfulSuffix) {
+    return withPrefix;
+  }
+
+  return language === 'pb'
+    ? `${withPrefix} ਜੀ`
+    : language === 'en'
+    ? `${withPrefix} Ji`
+    : `${withPrefix} जी`;
+}
+
+/**
+ * Localizes Granth name strictly into the active language so English doesn't leak into HI/PB certificates.
+ */
+export function localizeGranthaName(grantha: string | undefined, language: Language): string {
+  const raw = (grantha || '').trim();
+  const key = raw.toLowerCase();
+
+  const map: Record<string, { hi: string; pb: string; en: string }> = {
+    'kabir sagar': { hi: 'कबीर सागर', pb: 'ਕਬੀਰ ਸਾਗਰ', en: 'Kabir Sagar' },
+    'sakhi sangrah': { hi: 'साखी संग्रह', pb: 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ', en: 'Sakhi Sangrah' },
+    'bijak': { hi: 'कबीर बीजक', pb: 'ਕਬੀਰ ਬੀਜਕ', en: 'Kabir Bijak' },
+    'kabir bijak': { hi: 'कबीर बीजक', pb: 'ਕਬੀਰ ਬੀਜਕ', en: 'Kabir Bijak' },
+    'beejak': { hi: 'कबीर बीजक', pb: 'ਕਬੀਰ ਬੀਜਕ', en: 'Kabir Bijak' },
+    'anurag sagar': { hi: 'अनुराग सागर', pb: 'ਅਨੁਰਾਗ ਸਾਗਰ', en: 'Anurag Sagar' },
+    'padavali': { hi: 'कबीर पदावली', pb: 'ਕਬੀਰ ਪਦਾਵਲੀ', en: 'Kabir Padavali' },
+    'prabhat-sandhya': { hi: 'प्रभात-संध्या पाठ', pb: 'ਪ੍ਰਭਾਤ-ਸੰਧਿਆ ਪਾਠ', en: 'Prabhat-Sandhya Path' },
+    'granthavali': { hi: 'कबीर ग्रंथावली', pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ', en: 'Kabir Granthavali' },
+    'kabir granthavali': { hi: 'कबीर ग्रंथावली', pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ', en: 'Kabir Granthavali' },
+    'shabdawali': { hi: 'कबीर शब्दावली', pb: 'ਕਬੀਰ ਸ਼ਬਦਾਵਲੀ', en: 'Kabir Shabdawali' },
+  };
+
+  if (map[key]) {
+    return map[key][language] || map[key].hi;
+  }
+
+  return raw || (language === 'pb' ? 'ਕਬੀਰ ਸਾਗਰ' : language === 'en' ? 'Kabir Sagar' : 'कबीर सागर');
+}
+
+/**
+ * Formats the Granth & Category label cleanly (e.g., "कबीर सागर (ज्ञान गुदड़ी)").
+ */
+export function formatCertificateSourceLabel(sakhi: Sakhi, language: Language): string {
+  const grantha = localizeGranthaName(sakhi.grantha, language);
+  let category = (sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '').trim();
+
+  if (language !== 'en') {
+    category = category
+      .replace(/\(\s*(?:Kabir Sagar|Bijak|Beejak|Sakhi Sangrah|Granthavali|Anurag Sagar)\s*\)/gi, '')
+      .trim();
+  }
+
+  if (grantha && category && grantha.toLowerCase() !== category.toLowerCase()) {
+    return `${grantha} (${category})`;
+  }
+  return grantha || category;
+}
+
+/**
+ * Cleans any duplicate Satyanaam header, trailing Saheb Bandagi footer, or broken "//" punctuation
+ * from a Sakhi verse so the Certificate Sakhi box renders a pristine 2-line Doha.
+ */
+export function formatCertificateSakhiDoha(rawVerse: string | undefined, language: Language): string {
+  const input = (rawVerse || '').trim();
+  if (!input) return '';
+
+  const isInvocationLine = (line: string) => {
+    const stripped = line
+      .replace(/[🌹🌺✨🙏।॥|/\\\-–—•·\[\]()]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    return (
+      stripped === 'सत्यनाम' ||
+      stripped === 'सतनाम' ||
+      stripped === 'ਸਤਯਨਾਮ' ||
+      stripped === 'ਸਤਨਾਮ' ||
+      stripped === 'satyanaam' ||
+      stripped === 'satnaam' ||
+      stripped === 'satnam'
+    );
+  };
+
+  const isClosingSalutationLine = (line: string) => {
+    const stripped = line
+      .replace(/[🌹🌺✨🙏।॥|/\\\-–—•·\[\]()]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    return (
+      stripped === 'साहेब बंदगी साहेब' ||
+      stripped === 'साहेब बंदगी' ||
+      stripped === 'ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ' ||
+      stripped === 'ਸਾਹੇਬ ਬੰਦਗੀ' ||
+      stripped === 'saheb bandagi saheb' ||
+      stripped === 'saheb bandgi saheb' ||
+      stripped === 'saheb bandagi' ||
+      stripped === 'saheb bandgi'
+    );
+  };
+
+  let lines = input
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l && !isInvocationLine(l) && !isClosingSalutationLine(l));
+
+  // Strip any inline trailing salutation or leading invocation
+  lines = lines
+    .map((line) =>
+      line
+        .replace(/^[🌹\s।॥|/]*(?:सत्यनाम|सतनाम|ਸਤਯਨਾਮ|ਸਤਨਾਮ|Satyanaam|Satnaam)[🌹\s।॥|/]*/i, '')
+        .replace(
+          /[।\s।॥|/]*(?:साहेब\s*बंदगी(?:\s*साहेब)?|ਸਾਹੇਬ\s*ਬੰਦਗੀ(?:\s*ਸਾਹੇਬ)?|Saheb\s*Banda?gi(?:\s*Saheb)?)[🙏\s।॥|/\.]*$/gi,
+          ''
+        )
+        .replace(/🙏+/g, '')
+        .trim()
+    )
+    .filter(Boolean);
+
+  if (lines.length === 1) {
+    lines = formatCoupletIntoTwoLines(lines[0]).filter(Boolean);
+  }
+
+  if (language === 'en') {
+    return lines
+      .map((line) =>
+        line
+          .replace(/\s*\/\/+\s*$/g, '')
+          .replace(/\s*\|\s*$/g, '')
+          .replace(/\s+/g, ' ')
+          .trim()
+      )
+      .filter(Boolean)
+      .join('\n');
+  }
+
+  const normalized = lines
+    .map((line) =>
+      line
+        .replace(/\s*\/\/+\s*/g, ' ॥ ')
+        .replace(/([^\s])॥/g, '$1 ॥')
+        .replace(/([^\s])।।/g, '$1 ॥')
+        .replace(/।।/g, '॥')
+        .replace(/\s+/g, ' ')
+        .trim()
+    )
+    .filter(Boolean);
+
+  if (normalized.length > 0) {
+    const lastIdx = normalized.length - 1;
+    let last = normalized[lastIdx];
+    if (/।\s*$/.test(last) && !/॥\s*$/.test(last)) {
+      last = last.replace(/।\s*$/, ' ॥').trim();
+    } else if (!/[।॥?!.]$/.test(last)) {
+      last = `${last} ॥`;
+    }
+    normalized[lastIdx] = last;
+  }
+
+  return normalized.join('\n');
+}
+
+export function getCertificateTitle(language: Language): string {
+  return language === 'pb'
+    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਸਿੱਧੀ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
+    : language === 'en'
+    ? 'Satguru Kabir Saheb Sacred Swadhyay Completion Certificate'
+    : 'सद्गुरु कबीर साहेब पावन स्वाध्याय सिद्धि प्रमाण-पत्र';
+}
+
+export function getCertificateFooterBrand(language: Language): string {
+  return language === 'pb'
+    ? 'Saheb World App • ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਮੰਚ'
+    : language === 'en'
+    ? 'Saheb World App • Sacred Swadhyay Sanctuary'
+    : 'Saheb World App • पावन स्वाध्याय मंच';
 }
 
 const SWAROOP_IMAGE_PATHS = ['/Saheb_World_icon.jpg', '/icon.png'];
@@ -280,11 +572,11 @@ export async function generateCertificateCanvas(
   const sansFont =
     '"Noto Sans Devanagari", "Noto Sans Gurmukhi", system-ui, sans-serif';
 
-  // 1. Warm Antique Parchment Gradient Background
+  // 1. Warm Cream / Parchment Background (#FFFDF7)
   const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-  bgGrad.addColorStop(0, '#FFFDF8');
+  bgGrad.addColorStop(0, '#FFFDF7');
   bgGrad.addColorStop(0.5, '#FAF3E6');
-  bgGrad.addColorStop(1, '#FFF5DF');
+  bgGrad.addColorStop(1, '#FFF7E8');
   ctx.fillStyle = bgGrad;
   ctx.fillRect(0, 0, width, height);
 
@@ -296,23 +588,23 @@ export async function generateCertificateCanvas(
     height * 0.44,
     720
   );
-  glow.addColorStop(0, 'rgba(245, 158, 11, 0.11)');
-  glow.addColorStop(1, 'rgba(245, 158, 11, 0)');
+  glow.addColorStop(0, 'rgba(217, 119, 6, 0.10)');
+  glow.addColorStop(1, 'rgba(217, 119, 6, 0)');
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, width, height);
 
-  // 2. Ornate Double Golden Frame
-  ctx.strokeStyle = '#B45309';
-  ctx.lineWidth = 8;
-  drawRoundedRect(ctx, 46, 46, width - 92, height - 92, 28);
-  ctx.stroke();
-
+  // 2. Double Ornate Golden-Maroon Frame (#D97706 outer, #6B1D1D inner)
   ctx.strokeStyle = '#D97706';
-  ctx.lineWidth = 3;
-  drawRoundedRect(ctx, 66, 66, width - 132, height - 132, 20);
+  ctx.lineWidth = 8;
+  drawRoundedRect(ctx, 44, 44, width - 88, height - 88, 28);
   ctx.stroke();
 
-  ctx.fillStyle = '#B45309';
+  ctx.strokeStyle = '#6B1D1D';
+  ctx.lineWidth = 3.5;
+  drawRoundedRect(ctx, 64, 64, width - 128, height - 128, 20);
+  ctx.stroke();
+
+  ctx.fillStyle = '#D97706';
   ctx.font = 'bold 34px serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -322,51 +614,44 @@ export async function generateCertificateCanvas(
   ctx.fillText('❖', width - 102, height - 102);
 
   // --- Resolved Certificate Copy & Metrics ---
-  const displayName =
-    (options.userName && options.userName.trim()) ||
-    (language === 'pb' ? 'ਸ਼ਰਧਾਲੂ ਸਾਧਕ' : language === 'en' ? 'Devotee Seeker' : 'श्रद्धालु साधक');
+  const formattedSeekerName = formatCertificateSeekerName(options.userName, language);
 
   const resolvedBlessing =
     (options.themeBlessing && options.themeBlessing.trim()) ||
     buildThemeOneLineBlessing(sakhi, language);
 
   const mantraFontSize = 44;
-  const titleFontSize = 52;
-  const titleLineHeight = 70;
-  const medallionRadius = 122;
-  const completionFontSize = 36;
+  const titleFontSize = 50;
+  const titleLineHeight = 68;
+  const medallionRadius = 120;
+  const completionFontSize = 35;
   const completionLineHeight = 54;
   const subtitleFontSize = 28;
-  const sakhiFontSize = 42;
-  const sakhiLineHeight = 64;
-  const blessingFontSize = 30;
+  const sakhiFontSize = 40;
+  const sakhiLineHeight = 62;
+  const blessingFontSize = 29;
   const blessingLineHeight = 44;
   const dateFontSize = 26;
   const brandFontSize = 26;
-  const closingFontSize = 46;
+  const closingFontSize = 44;
 
-  const titleText =
-    language === 'pb'
-      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸਵਾਧਿਆਏ ਸਿੱਧੀ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
-      : language === 'en'
-      ? 'Satguru Kabir Saheb Sacred Swadhyay Certificate'
-      : 'सतगुरु कबीर साहेब पावन स्वाध्याय सिद्धि प्रमाण-पत्र';
+  const titleText = getCertificateTitle(language);
 
   ctx.font = `bold ${titleFontSize}px ${serifFont}`;
   const titleLines = wrapTextLines(ctx, titleText, width - 200);
 
   const completionText =
     language === 'pb'
-      ? `ਇਹ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਸ਼੍ਰੀ/ਸੁਸ਼੍ਰੀ ${displayName} ਨੇ ਸਾਖੀ #${sakhi.number} ਦਾ ੧੧-ਚਰਣੀ ਸਵਾਧਿਆਏ ਸਫਲਤਾਪੂਰਵਕ ਸੰਪੰਨ ਕੀਤਾ।`
+      ? `ਇਹ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ${formattedSeekerName} ਨੇ ਸਾਖੀ #${sakhi.number} ਦਾ ੧੧-ਚਰਣੀ ਸ੍ਵਾਧਿਆਇ ਸਫਲਤਾਪੂਰਵਕ ਸੰਪੰਨ ਕੀਤਾ।`
       : language === 'en'
-      ? `This certifies that Sri/Smt ${displayName} has successfully completed the 11-Step Swadhyay of Sakhi #${sakhi.number}.`
-      : `यह प्रमाणित किया जाता है कि श्री/सुश्री ${displayName} ने साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।`;
+      ? `This certifies that ${formattedSeekerName} has successfully completed the 11-Step Swadhyay of Sakhi #${sakhi.number}.`
+      : `यह प्रमाणित किया जाता है कि ${formattedSeekerName} ने साखी #${sakhi.number} का ११-चरणीय स्वाध्याय सफलतापूर्वक पूर्ण किया।`;
 
   ctx.font = `bold ${completionFontSize}px ${serifFont}`;
   const completionLines = wrapTextLines(ctx, completionText, width - 210);
 
-  // Main Highlight Box contains ONLY the exact completed Mool Sakhi
-  const activeVani = formatCoupletString((sakhi.text[language] || sakhi.text.hi || '').trim());
+  // Main Highlight Box contains ONLY the clean 2-line Mool Sakhi Doha (no duplicate header or footer)
+  const activeVani = formatCertificateSakhiDoha(sakhi.text[language] || sakhi.text.hi || '', language);
   ctx.font = `bold ${sakhiFontSize}px ${serifFont}`;
   const sakhiBoxLines = activeVani
     ? wrapTextLines(ctx, activeVani, width - 270).slice(0, 5)
@@ -427,7 +712,7 @@ export async function generateCertificateCanvas(
   cursorY += mantraBlockH + gapAfterMantra;
 
   // 4. Main Certificate Title
-  ctx.fillStyle = '#8C2818';
+  ctx.fillStyle = '#6B1D1D';
   ctx.font = `bold ${titleFontSize}px ${serifFont}`;
   for (const line of titleLines) {
     ctx.fillText(line, width / 2, cursorY);
@@ -444,7 +729,7 @@ export async function generateCertificateCanvas(
   drawSwaroopMedallion(ctx, width / 2, swaroopCenterY, medallionRadius, swaroopImg, serifFont);
   cursorY += swaroopBlockH + gapAfterSwaroop;
 
-  // 6. Recipient Completion Statement (Prominent User Name) & Grantha Subtitle
+  // 6. Recipient Completion Statement (Prominent User Name) & Localized Grantha Subtitle
   ctx.fillStyle = '#38200B';
   ctx.font = `bold ${completionFontSize}px ${serifFont}`;
   for (const line of completionLines) {
@@ -452,20 +737,20 @@ export async function generateCertificateCanvas(
     cursorY += completionLineHeight;
   }
 
-  const categoryName = sakhi.categoryTitle[language] || sakhi.categoryTitle.hi;
-  ctx.fillStyle = '#78350F';
+  const localizedSource = formatCertificateSourceLabel(sakhi, language);
+  ctx.fillStyle = '#6B1D1D';
   ctx.font = `600 ${subtitleFontSize}px ${sansFont}`;
-  ctx.fillText(`(${sakhi.grantha}  •  ${categoryName})`, width / 2, cursorY + 8);
+  ctx.fillText(localizedSource, width / 2, cursorY + 8);
   cursorY += 44 + gapAfterCompletion;
 
-  // 7. Main Highlight Box — ONLY the exact completed Mool Sakhi
+  // 7. Main Highlight Box — Clean 2-Line Sacred Original Sakhi Doha
   const boxX = 110;
   const boxW = width - 220;
-  ctx.fillStyle = 'rgba(217, 119, 6, 0.09)';
+  ctx.fillStyle = 'rgba(217, 119, 6, 0.08)';
   drawRoundedRect(ctx, boxX, cursorY, boxW, sakhiBoxH, 24);
   ctx.fill();
 
-  ctx.strokeStyle = 'rgba(217, 119, 6, 0.52)';
+  ctx.strokeStyle = 'rgba(107, 29, 29, 0.38)';
   ctx.lineWidth = 3;
   drawRoundedRect(ctx, boxX, cursorY, boxW, sakhiBoxH, 24);
   ctx.stroke();
@@ -475,16 +760,16 @@ export async function generateCertificateCanvas(
   ctx.font = `bold 24px ${sansFont}`;
   ctx.fillText(
     language === 'pb'
-      ? `— ਪਾਵਨ ਮੂਲ ਸਾਖੀ —`
+      ? '✦ ਪਾਵਨ ਮੂਲ ਸਾਖੀ ✦'
       : language === 'en'
-      ? `— Sacred Mool Sakhi —`
-      : `— पावन मूल साखी —`,
+      ? '✦ Sacred Original Sakhi ✦'
+      : '✦ पावन मूल साखी ✦',
     width / 2,
     boxInnerY
   );
   boxInnerY += sakhiLabelH;
 
-  ctx.fillStyle = '#8C2818';
+  ctx.fillStyle = '#6B1D1D';
   ctx.font = `bold ${sakhiFontSize}px ${serifFont}`;
   for (const line of sakhiBoxLines) {
     ctx.fillText(line, width / 2, boxInnerY);
@@ -493,7 +778,7 @@ export async function generateCertificateCanvas(
   cursorY += sakhiBoxH + gapAfterSakhiBox;
 
   // 8. 1-Line Theme-Based Blessing below Sakhi
-  ctx.fillStyle = '#6D2E15';
+  ctx.fillStyle = '#5C2410';
   ctx.font = `italic 600 ${blessingFontSize}px ${serifFont}`;
   for (const line of oneLineBlessingLines) {
     ctx.fillText(line, width / 2, cursorY);
@@ -520,9 +805,9 @@ export async function generateCertificateCanvas(
   );
   cursorY += dateBlockH + gapBeforeFooter;
 
-  // 10. Footer Divider + App Brand Line + Centered Closing: ।।साहेब बंदगी साहेब।।🙏
+  // 10. Footer Divider + App Brand Line + Centered Closing: ।। साहेब बंदगी साहेब ।। 🙏
   const footerTopY = Math.max(cursorY, bottomMarginY - footerBlockH);
-  ctx.strokeStyle = 'rgba(180, 83, 9, 0.35)';
+  ctx.strokeStyle = 'rgba(107, 29, 29, 0.28)';
   ctx.lineWidth = 2.5;
   ctx.beginPath();
   ctx.moveTo(190, footerTopY);
@@ -531,11 +816,15 @@ export async function generateCertificateCanvas(
 
   ctx.fillStyle = '#78350F';
   ctx.font = `600 ${brandFontSize}px ${sansFont}`;
-  ctx.fillText('Saheb World App • पावन स्वाध्याय मंच', width / 2, footerTopY + 18);
+  ctx.fillText(getCertificateFooterBrand(language), width / 2, footerTopY + 18);
 
-  ctx.fillStyle = '#8C2818';
+  ctx.fillStyle = '#6B1D1D';
   ctx.font = `bold ${closingFontSize}px ${serifFont}`;
-  ctx.fillText('।।साहेब बंदगी साहेब।।🙏', width / 2, footerTopY + 56);
+  ctx.fillText(
+    SACRED_BRANDING.footer[language] || SACRED_BRANDING.footer.hi,
+    width / 2,
+    footerTopY + 56
+  );
 
   const dataUrl = canvas.toDataURL('image/png');
   const blob: Blob = await new Promise((resolve, reject) => {
