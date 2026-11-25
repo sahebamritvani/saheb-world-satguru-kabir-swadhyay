@@ -36,7 +36,7 @@ export const NITNEM_STEEK_DATA: Record<string, Partial<VerseSteekCommentary>> = 
   'prabhat-mangalacharan': {
     contextAndSatire: {
       hi: 'कबीर साहेब का यह मंगलाचरण बाह्य आडंबरों और पाखंडों पर गहरा कटाक्ष है। साहेब स्पष्ट करते हैं कि ईश्वर किसी तीर्थ, पत्थर या मूर्ति में नहीं, बल्कि जीवात्मा के भीतर ही सत्यनाम के रूप में विद्यमान है।',
-      pb: "ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦਾ ਇਹ ਮੰਗਲਾਚਰਨ ਬਾਹਰੀ ਕਰਮ-ਕਾਂਡਾਂ 'ਤੇ ਚੋਟ ਕਰਦਾ ਹੈ। ਪ੍ਰਭੂ ਬਾਹਰੀ ਤੀਰਥਾਂ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਜੀਵ ਦੇ ਅੰਦਰ ਹੀ ਵਸਦਾ ਹੈ।",
+      pb: "ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਇਹ ਮੰਗਲਾਚਰਨ ਬਾਹਰੀ ਕਰਮ-ਕਾਂਡਾਂ 'ਤੇ ਚੋਟ ਕਰਦਾ ਹੈ। ਪ੍ਰਭੂ ਬਾਹਰੀ ਤੀਰਥਾਂ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਜੀਵ ਦੇ ਅੰਦਰ ਹੀ ਵਸਦਾ ਹੈ।",
       en: 'Kabir Saheb opens with a piercing critique of external rituals and empty dogmas. True Divinity dwells not in outward pilgrimages or idols, but within the soul as the True Name.'
     },
     esotericSecret: {
@@ -53,7 +53,7 @@ export const NITNEM_STEEK_DATA: Record<string, Partial<VerseSteekCommentary>> = 
   'prabhat-aarambh-vandana': {
     contextAndSatire: {
       hi: 'यहाँ साहेब मिथ्या गुरुओं (जो केवल वेशभूषा और धन के लोभी हैं) की पोल खोलते हुए सच्चे पूर्ण सतगुरु की महिमा बताते हैं, जो भवसागर से पार उतारने का सामर्थ्य रखते हैं।',
-      pb: 'ਇੱਥੇ ਸਾਹਿਬ ਝੂਠੇ ਭੇਖੀ ਗੁਰੂਆਂ ਦਾ ਖੰਡਨ ਕਰਦੇ ਹੋਏ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੀ ਮਹਿਮਾ ਪ੍ਰਗਟ ਕਰਦੇ ਹਨ।',
+      pb: 'ਇੱਥੇ ਸਾਹੇਬ ਝੂਠੇ ਭੇਖੀ ਗੁਰੂਆਂ ਦਾ ਖੰਡਨ ਕਰਦੇ ਹੋਏ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੀ ਮਹਿਮਾ ਪ੍ਰਗਟ ਕਰਦੇ ਹਨ।',
       en: 'Kabir Saheb dismantles pretender gurus who trade in outer garb and wealth, revealing the glory of the True Enlightened Master who liberates the soul.'
     },
     esotericSecret: {
@@ -121,7 +121,7 @@ export function getVerseSteekCommentary(
     hi: customSteek.contextAndSatire?.hi || 
       `कबीर साहेब की यह वाणी साधक को संसार के नश्वर प्रपंच, माया के मोह और झूठे पाखंडों से सावधान करती है। साहेब दो टूक सत्य कहते हैं कि बिना आत्म-पहचान और सतगुरु के ज्ञान के मनुष्य जीवन व्यर्थ बीत जाता है।`,
     pb: customSteek.contextAndSatire?.pb ||
-      `ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦਾ ਇਹ ਬਚਨ ਸੰਸਾਰ ਦੀ ਮਾਇਆ ਅਤੇ ਝੂਠੇ ਮੋਹ ਤੋਂ ਜਾਗਰੂਕ ਕਰਦਾ ਹੈ। ਆਤਮ-ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖਾ ਜੀਵਨ ਅਧੂਰਾ ਹੈ।`,
+      `ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਇਹ ਬਚਨ ਸੰਸਾਰ ਦੀ ਮਾਇਆ ਅਤੇ ਝੂਠੇ ਮੋਹ ਤੋਂ ਜਾਗਰੂਕ ਕਰਦਾ ਹੈ। ਆਤਮ-ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖਾ ਜੀਵਨ ਅਧੂਰਾ ਹੈ।`,
     en: customSteek.contextAndSatire?.en ||
       `Kabir Saheb cuts through worldly illusions, religious hypocrisy, and the attachment to the transient body, awakening the soul to its eternal truth.`
   };

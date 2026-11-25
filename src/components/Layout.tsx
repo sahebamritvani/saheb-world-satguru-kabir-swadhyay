@@ -1244,6 +1244,24 @@ export const Layout: React.FC<LayoutProps> = ({
 
   return (
     <StyledAppContainer theme={theme} $transparentBg={!!globalWallpaper}>
+      {/* Universal Frozen Top Sticky Bar (36px height, z-50, Cream #FDF8EE, Gold bottom border) */}
+      {!isFullscreen && (
+        <div
+          id="universal-sacred-sticky-top-bar"
+          style={{
+            backgroundColor: isDarkMode ? '#1E150F' : '#FDF8EE',
+            borderColor: '#D97706',
+            color: isDarkMode ? '#FDE68A' : '#6B1D1D',
+          }}
+          className="fixed top-0 inset-x-0 z-50 h-[36px] border-b flex items-center justify-center px-3 select-none print:hidden shadow-xs"
+        >
+          <span className="font-serif font-black text-sm sm:text-base tracking-wide whitespace-nowrap">
+            {exactTop}
+          </span>
+        </div>
+      )}
+
+      <div className={!isFullscreen ? 'pt-[36px] pb-[36px] flex flex-col flex-1 w-full min-h-screen' : 'flex flex-col flex-1 w-full min-h-screen'}>
       {/* Fullscreen Compact Top Return Bar - Always accessible on mobile & desktop */}
       {isFullscreen && (
         <div
@@ -1288,7 +1306,7 @@ export const Layout: React.FC<LayoutProps> = ({
       {/* Sacred Top Header - Shown on Daily Dashboard; Card Screens use unified MasterFeatureCardLayout */}
       {!isFullscreen && currentView === 'daily' && (
         <SacredHeaderContainer theme={theme} $translucent={!!globalWallpaper}>
-        {/* ================= BAR 1: TOP BAR (CENTRE: SATYANAAM) ================= */}
+        {/* ================= BAR 1: TOP UTILITY & BRAND BAR ================= */}
         <div
           id="sacred-bar-1-top"
           style={{
@@ -1299,22 +1317,9 @@ export const Layout: React.FC<LayoutProps> = ({
           }}
           className={`border-b select-none ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
-          {/* Mobile & Small Tablet: Dedicated Centered Top Strip for 🌹।।सत्यनाम।।🌹 */}
-          <div
-            className="md:hidden w-full flex items-center justify-center py-1 px-2 border-b"
-            style={{ borderColor: theme.cardBorder }}
-          >
-            <span
-              style={{ color: theme.sacredMaroon }}
-              className="font-serif drop-shadow-xs text-center text-base sm:text-lg font-black tracking-wide leading-tight whitespace-nowrap"
-            >
-              {exactTop}
-            </span>
-          </div>
-
-          <div className="py-1 sm:py-1.5 px-2 xs:px-3 sm:px-5 relative flex flex-wrap md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-between gap-1.5 sm:gap-2 min-h-[38px] sm:min-h-[44px] w-full">
+          <div className="py-1 sm:py-1.5 px-2 xs:px-3 sm:px-5 relative flex items-center justify-between gap-1.5 sm:gap-2 min-h-[38px] sm:min-h-[42px] w-full">
             {/* Left: Sidebar Toggle & App Brand */}
-            <div className="z-10 flex items-center gap-1.5 sm:gap-2 shrink-0 justify-self-start">
+            <div className="z-10 flex items-center gap-1.5 sm:gap-2 shrink-0">
               <button
                 id="header-sidebar-toggle-btn"
                 onClick={() => setIsSidebarOpen(true)}
@@ -1345,16 +1350,6 @@ export const Layout: React.FC<LayoutProps> = ({
                   {t.appName}
                 </span>
               </div>
-            </div>
-
-            {/* Desktop Centre: Strict Top Header (🌹।।सत्यनाम।।🌹) - Mathematically Centered */}
-            <div className="hidden md:flex items-center justify-center text-center px-2 z-20 justify-self-center">
-              <span
-                style={{ color: theme.sacredMaroon }}
-                className="font-serif drop-shadow-xs text-center text-lg lg:text-xl font-black tracking-wide leading-none whitespace-nowrap"
-              >
-                {exactTop}
-              </span>
             </div>
 
             {/* Right: Install App, Share App & Fullscreen Buttons */}
@@ -1713,7 +1708,7 @@ export const Layout: React.FC<LayoutProps> = ({
           </div>
         </div>
 
-        {/* ================= BAR 3: NEW UTILITY & ICONS BAR ================= */}
+        {/* ================= BAR 3: RESPONSIVE QUICK ACTIONS & UTILITY BAR ================= */}
         <div
           id="sacred-bar-3-tools"
           style={{
@@ -1722,14 +1717,14 @@ export const Layout: React.FC<LayoutProps> = ({
               : theme.cardBg,
             borderColor: theme.cardBorder,
           }}
-          className={`border-b py-0.5 sm:py-1 px-2 sm:px-5 relative select-none flex items-center justify-between gap-1.5 sm:gap-2.5 overflow-x-auto scrollbar-none min-h-[32px] sm:min-h-[34px] ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
+          className={`border-b py-1.5 px-2 sm:px-5 relative select-none flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 sm:gap-2.5 ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
-          {/* Left: Quick Access Sacred Shortcuts */}
-          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+          {/* Quick Access Sacred Shortcuts: 2x2 non-clipping grid on mobile, inline row on tablet/desktop */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 w-full md:w-auto">
             {/* Quick Divine Darshan Jump */}
             <button
               onClick={() => handleNavClick('divine-darshan')}
-              className="h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs"
+              className="h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0"
               style={{
                 backgroundColor: theme.accentGoldLight,
                 borderColor: theme.accentGold,
@@ -1738,7 +1733,7 @@ export const Layout: React.FC<LayoutProps> = ({
               title={language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦਿਵਯ ਦਰਸ਼ਨ' : language === 'en' ? 'Divine Darshan' : 'सतगुरु दिव्य दर्शन'}
             >
               <Sparkles className="w-3 h-3 text-amber-700 shrink-0" />
-              <span className="font-serif text-[0.625rem] sm:text-[0.6875rem] font-bold">
+              <span className="font-serif text-[0.6875rem] font-bold truncate">
                 {language === 'pb' ? 'ਪਾਵਨ ਦਰਸ਼ਨ' : language === 'en' ? 'Darshan' : 'पावन दर्शन'}
               </span>
             </button>
@@ -1746,7 +1741,7 @@ export const Layout: React.FC<LayoutProps> = ({
             {/* Quick Aarti Sanctuary Jump */}
             <button
               onClick={() => handleNavClick('aarti-sanctuary')}
-              className="h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs"
+              className="h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0"
               style={{
                 backgroundColor: theme.cardBg,
                 borderColor: theme.cardBorder,
@@ -1755,7 +1750,7 @@ export const Layout: React.FC<LayoutProps> = ({
               title={language === 'pb' ? 'ਸੰਧਿਆ ਆਰਤੀ' : language === 'en' ? 'Evening Aarti' : 'संध्या आरती'}
             >
               <Flame className="w-3 h-3 text-amber-600 shrink-0" />
-              <span className="font-serif text-[0.625rem] sm:text-[0.6875rem]">
+              <span className="font-serif text-[0.6875rem] truncate">
                 {language === 'pb' ? 'ਆਰਤੀ' : language === 'en' ? 'Aarti' : 'आरती'}
               </span>
             </button>
@@ -1763,7 +1758,7 @@ export const Layout: React.FC<LayoutProps> = ({
             {/* Quick Daily Sakhi Jump */}
             <button
               onClick={() => handleNavClick('daily')}
-              className={`h-6 sm:h-6.5 px-1.5 sm:px-2 rounded-md border text-[0.6875rem] font-bold flex items-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs ${
+              className={`h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0 ${
                 currentView === 'daily' ? 'ring-1.5 ring-amber-500 font-black' : ''
               }`}
               style={{
@@ -1774,15 +1769,12 @@ export const Layout: React.FC<LayoutProps> = ({
               title={language === 'pb' ? 'ਦੈਨਿਕ ਪਾਵਨ ਸਾਖੀ' : language === 'en' ? 'Daily Sakhi' : 'दैनिक पावन साखी'}
             >
               <Sun className="w-3 h-3 text-amber-700 shrink-0" />
-              <span className="font-serif text-[0.625rem] sm:text-[0.6875rem]">
+              <span className="font-serif text-[0.6875rem] truncate">
                 {language === 'pb' ? 'ਦੈਨਿਕ ਸਾਖੀ' : language === 'en' ? 'Daily Sakhi' : 'दैनिक साखी'}
               </span>
             </button>
-          </div>
 
-          {/* Right: All Shifted Action & Utility Icons */}
-          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
-            {/* Divine Blessing & Flower Shower Trigger */}
+            {/* Divine Blessing & Flower Shower Trigger (4th Pill cleanly inside 2x2 grid) */}
             <button
               id="header-open-blessing-btn"
               onClick={onOpenBlessing}
@@ -1792,13 +1784,17 @@ export const Layout: React.FC<LayoutProps> = ({
                 borderColor: theme.accentGold,
                 color: theme.sacredMaroon,
               }}
-              className="h-6 sm:h-6.5 px-2 sm:px-2.5 rounded-md border text-[0.6875rem] font-bold inline-flex items-center justify-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs shrink-0"
+              className="h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0"
             >
               <Sparkles className="w-3 h-3 text-amber-800 shrink-0" />
-              <span className="font-serif font-bold text-[0.625rem] sm:text-[0.6875rem]">
+              <span className="font-serif font-bold text-[0.6875rem] truncate">
                 {language === 'pb' ? 'ਅਸੀਸ' : language === 'en' ? 'Blessing' : 'आशीर्वाद'}
               </span>
             </button>
+          </div>
+
+          {/* Right: Shifted Action & Utility Icons (Clean flex-wrap so nothing clips) */}
+          <div className="flex flex-wrap items-center justify-between md:justify-end gap-1 sm:gap-1.5 w-full md:w-auto">
 
             {/* Advanced Reading Suite (उन्नत पठन साधन) Trigger Button in 3rd Top Bar */}
             <button
@@ -2629,14 +2625,14 @@ export const Layout: React.FC<LayoutProps> = ({
           }}
           className={`w-full border-t select-none print:hidden mt-auto ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
-          <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 flex items-center justify-between gap-2">
-            {/* Left: Quick Dhun Audio & Divine Darshan */}
+          <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2">
+            {/* Left: Quick Dhun Audio ("सत्यनाम पावन धुन") directly above Bottom Sticky Bar */}
             <div className="flex items-center gap-1.5">
               <button
                 id="footbar-dhun-toggle"
                 type="button"
                 onClick={onToggleDhun}
-                className="px-2 py-1 rounded-md text-xs font-bold font-serif flex items-center gap-1.5 transition-all cursor-pointer border shadow-sm"
+                className="px-2.5 py-1.5 rounded-lg text-xs font-bold font-serif flex items-center gap-1.5 transition-all cursor-pointer border shadow-xs"
                 style={
                   isDhunPlaying
                     ? { backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText, borderColor: theme.accentGold }
@@ -2656,26 +2652,17 @@ export const Layout: React.FC<LayoutProps> = ({
                     : 'धुन बजाएं'
                 }
               >
-                {isDhunPlaying ? <Volume2 size={12} /> : <VolumeX size={12} />}
+                {isDhunPlaying ? <Volume2 size={13} /> : <VolumeX size={13} />}
                 <span>{t.dhunTitle}</span>
               </button>
-          </div>
+            </div>
 
-          {/* Center: Strict Footbar Salutation (।। साहेब बंदगी साहेब।।🙏) */}
-          <div className="flex-1 min-w-0 text-center px-1">
-            <span
-              style={{ color: theme.sacredMaroon }}
-              className="text-xs sm:text-base font-black tracking-wide font-serif whitespace-nowrap inline-block drop-shadow-2xs"
-            >
-              {exactBottom}
+            <span className="text-xs sm:text-sm font-black font-serif tracking-wide opacity-80" style={{ color: theme.sacredMaroon }}>
+              साहेब वर्ल्ड • Saheb World
             </span>
           </div>
 
-          {/* Right: Balance Spacer */}
-          <div className="flex items-center gap-1.5 sm:gap-2 w-[75px] justify-end" />
-        </div>
-
-        {/* Footbar Branding Details in Page Flow */}
+        {/* Footbar Branding Details in Page Flow (No duplicate Saheb Bandagi line) */}
         <div 
           style={{ color: theme.sacredMaroon, backgroundColor: 'rgba(0,0,0,0.03)' }}
           className="w-full text-center py-2 px-4 border-t border-black/5 dark:border-white/5"
@@ -2739,12 +2726,12 @@ export const Layout: React.FC<LayoutProps> = ({
       </footer>
       )}
 
-      {/* 🧭 Compact Floating Quick Scroll Navigation Pill (Lower Bottom-Right Corner) */}
+      {/* 🧭 Compact Floating Quick Scroll Navigation Pill (Lower Bottom-Right Corner above Sticky Bar) */}
       {showScrollControls && currentView !== 'nitnem-gutka' && (
         <aside
           id="floating-quick-scroll-pill"
           aria-label="Scroll Navigation"
-          className="fixed right-2 sm:right-4 bottom-5 sm:bottom-6 z-40 flex flex-col items-center gap-1 p-1 rounded-full bg-white/85 dark:bg-stone-900/85 backdrop-blur-md border border-amber-500/35 shadow-lg transition-all duration-300 animate-fadeIn select-none"
+          className="fixed right-2 sm:right-4 bottom-12 sm:bottom-12 z-40 flex flex-col items-center gap-1 p-1 rounded-full bg-white/85 dark:bg-stone-900/85 backdrop-blur-md border border-amber-500/35 shadow-lg transition-all duration-300 animate-fadeIn select-none"
         >
           {/* Scroll To Top Button */}
           <button
@@ -3350,7 +3337,7 @@ export const Layout: React.FC<LayoutProps> = ({
           <div
             role="region"
             aria-label="Install Saheb World App"
-            className="fixed bottom-3 left-1/2 -translate-x-1/2 z-[160] w-[calc(100%-1.5rem)] max-w-md rounded-2xl border border-amber-500/45 bg-[#FFFDF9]/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-xl px-3 py-2 flex items-center justify-between gap-2.5"
+            className="fixed bottom-11 left-1/2 -translate-x-1/2 z-[160] w-[calc(100%-1.5rem)] max-w-md rounded-2xl border border-amber-500/45 bg-[#FFFDF9]/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-xl px-3 py-2 flex items-center justify-between gap-2.5"
           >
             <div className="flex items-center gap-2.5 min-w-0">
               <img
@@ -3419,6 +3406,24 @@ export const Layout: React.FC<LayoutProps> = ({
         language={language}
         onOpenSettings={onOpenSettings}
       />
+      </div>
+
+      {/* Universal Frozen Bottom Sticky Bar (36px height, z-50, Cream #FDF8EE, Gold top border) */}
+      {!isFullscreen && (
+        <div
+          id="universal-sacred-sticky-bottom-bar"
+          style={{
+            backgroundColor: isDarkMode ? '#1E150F' : '#FDF8EE',
+            borderColor: '#D97706',
+            color: isDarkMode ? '#FDE68A' : '#6B1D1D',
+          }}
+          className="fixed bottom-0 inset-x-0 z-50 h-[36px] border-t flex items-center justify-center px-3 select-none print:hidden shadow-xs"
+        >
+          <span className="font-serif font-black text-sm sm:text-base tracking-wide whitespace-nowrap">
+            {exactBottom}
+          </span>
+        </div>
+      )}
     </StyledAppContainer>
   );
 };

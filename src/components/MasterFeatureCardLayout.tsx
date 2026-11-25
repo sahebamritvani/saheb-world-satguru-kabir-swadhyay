@@ -135,34 +135,12 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
     return '';
   })();
 
-  const topHeader = SACRED_BRANDING.header[language];
-
   return (
-    <div className={`w-full max-w-5xl mx-auto pb-10 transition-all duration-300 ${className}`}>
+    <div className={`w-full max-w-5xl mx-auto pb-8 transition-all duration-300 ${className}`}>
       {/* =========================================================================
-          1. SACRED TOP HEADER & BRANDING (Centered "🌹 ।। सत्यनाम ।। 🌹")
-          ========================================================================= */}
-      <div 
-        id="master-screen-sacred-top-bar"
-        style={{
-          backgroundColor: isDarkMode ? '#201812' : '#FDF8EE',
-          borderColor: 'rgba(217, 119, 6, 0.4)',
-        }}
-        className="w-full rounded-2xl border-2 py-2 px-3 sm:px-4 mb-3 flex items-center justify-center select-none shadow-sm"
-      >
-        <span
-          style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
-          className="text-base sm:text-xl font-black tracking-wider font-serif whitespace-nowrap text-center drop-shadow-xs"
-        >
-          {topHeader}
-        </span>
-      </div>
-
-      {/* =========================================================================
-          2. UNIFORM SUB-HEADER BAR
-          - Left: ← वापस (Back) button with official brand avatar
-          - Center: Active Feature/Card Title + small "100% Offline" badge
-          - Right: Uniform 3-Language Toggle + "पाठ साधन (A+)" + "⚙️ Settings"
+          SCROLLABLE 2-ROW NAVIGATION HEADER (Directly below 36px Frozen Top Bar)
+          - Row 1: ← वापस + 100% Offline | हिंदी | ਪੰਜਾਬੀ | EN + unified ⚙️ Settings
+          - Row 2: Full, untruncated Card/Granth Title centered cleanly
           ========================================================================= */}
       <header
         id="master-screen-header-stack"
@@ -170,7 +148,7 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
           backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.96)' : 'rgba(253, 248, 238, 0.98)',
           borderColor: '#D97706',
         }}
-        className="sticky top-0 sm:top-2 z-40 backdrop-blur-md rounded-2xl border-2 p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-lg flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
+        className="relative z-20 rounded-2xl border p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-sm flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
       >
         {/* Row 1: Top Utility Bar (Back button + Offline Badge on Left | Lang Toggle + Font + Settings on Right) */}
         <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 border-b border-amber-500/20 pb-2 w-full min-w-0">

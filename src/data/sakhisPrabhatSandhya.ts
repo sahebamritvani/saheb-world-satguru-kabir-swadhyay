@@ -651,8 +651,8 @@ export const SAKHIS_PRABHAT_SANDHYA: Sakhi[] = RAW_SAKHIS_PRABHAT_SANDHYA.map((s
     en: 'Apply the teachings of the holy verse in daily life and practice.'
   },
   samarpanPrayer: s.samarpanPrayer || {
-    hi: 'हे सतगुरु कबीर साहेब! मुझे सत्य के मार्ग पर चलने की शक्ति प्रदान करें। ।।साहेब बन्दगी साहेब।।',
-    pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ! ਮੈਨੂੰ ਸੱਚ ਦੇ ਮਾਰਗ ਤੇ ਚੱਲਣ ਦੀ ਸਮਰੱਥਾ ਬਖਸ਼ੋ। ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।',
+    hi: 'हे सतगुरु कबीर साहेब! मुझे सत्य के मार्ग पर चलने की शक्ति प्रदान करें। ।।साहेब बंदगी साहेब।।',
+    pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਮੈਨੂੰ ਸੱਚ ਦੇ ਮਾਰਗ ਤੇ ਚੱਲਣ ਦੀ ਸਮਰੱਥਾ ਬਖਸ਼ੋ। ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।',
     en: 'O Satguru Kabir Saheb! Grant me devotion and strength to walk the path of truth. || Saheb Bandagi Saheb ||'
   },
   quiz: s.quiz || []

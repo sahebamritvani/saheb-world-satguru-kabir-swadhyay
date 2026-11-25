@@ -188,7 +188,11 @@ export function autoCorrectSacredText(rawText: string): string {
     .replace(/एਿ/g, 'ए')
     .replace(/िा/g, 'ा')
     .replace(/बन्दगी/g, 'बंदगी')
+    .replace(/सतनाम|सत्नाम/g, 'सत्यनाम')
+    .replace(/ਸਤਿਨਾਮ|ਸਤਨਾਮ/g, 'ਸਤਯਨਾਮ')
+    .replace(/\b(Satyaanaam|Satnaam|Satnam)\b/gi, 'Satyanaam')
     .replace(/(?<!ਗੁਰੂ\s+ਗ੍ਰੰਥ\s+|ਜਪੁਜੀ\s+|ਸੁਖਮਨੀ\s+)ਸਾਹਿਬ/g, 'ਸਾਹੇਬ')
+    .replace(/(?<!Guru\s+Granth\s+|Japuji\s+|Sukhmani\s+)\bSahib\b/gi, 'Saheb')
     .replace(/\s+/g, ' ')
     .trim();
 

@@ -307,61 +307,46 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
   };
 
   return (
-    <div 
-      className={`relative w-full rounded-2xl sm:rounded-3xl border-2 transition-all duration-300 shadow-md hover:shadow-lg overflow-hidden ${
-        isDarkMode 
-          ? 'bg-[#241A14] border-amber-600/40 text-[#F5F5F5]' 
-          : 'bg-[#FFFDF9] border-amber-600/30 text-[#1A1A1A]'
+    <article
+      className={`relative w-full py-5 sm:py-6 px-2 sm:px-4 transition-colors duration-200 ${
+        isDarkMode
+          ? 'text-[#F5F5F5]'
+          : 'bg-[#FDF8EE]/45 text-[#1A1A1A]'
       } ${className}`}
     >
-      {/* Top Row: Authentic Vani Label on Left, 4 Unified Action Buttons on Right */}
-      <div 
-        className={`px-3 sm:px-5 py-2.5 sm:py-3 border-b flex items-center justify-between gap-2 select-none ${
-          isDarkMode 
-            ? 'bg-[#2E2018] border-amber-600/30' 
-            : 'bg-[#FDF8EE] border-amber-600/20'
-        }`}
-      >
-        {/* Left: Authentic Sacred Vani Badge / Kicker */}
-        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-1">
-          <span 
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-serif font-black tracking-wide border shadow-2xs shrink-0 bg-amber-500/15 text-amber-800 dark:text-amber-200 border-amber-500/30"
+      {/* Top Row: Clean Unboxed Vani Label on Left (flex-1 min-w-0) + 4 Compact Action Icons on Right (zero overlap) */}
+      <div className="flex items-center justify-between gap-[6px] mb-3.5 select-none">
+        <div className="flex-1 min-w-0">
+          <span
+            style={{ color: '#D97706' }}
+            className="text-xs sm:text-sm font-serif font-black tracking-wide truncate block"
           >
-            <Sparkles className="w-3 h-3 text-amber-600 shrink-0" />
-            <span className="truncate">
-              {customBadge || (
-                language === 'pb' ? '✦ ਪ੍ਰਮਾਣਿਕ ਪਾਵਨ ਬਾਣੀ' :
-                language === 'en' ? '✦ Authentic Sacred Vani' :
-                '✦ प्रामाणिक पावन वाणी'
-              )}
-            </span>
+            {customBadge || (
+              language === 'pb' ? '✦ ਪ੍ਰਮਾਣਿਕ ਪਾਵਨ ਬਾਣੀ' :
+              language === 'en' ? '✦ Authentic Sacred Vani' :
+              '✦ प्रामाणिक पावन वाणी'
+            )}{verseNumber ? ` #${verseNumber}` : ''}
           </span>
-
-          {verseNumber && (
-            <span className="text-[11px] font-black font-serif px-2 py-0.5 rounded-md bg-stone-500/10 dark:bg-stone-400/10 text-stone-700 dark:text-stone-300 shrink-0">
-              #{verseNumber}
-            </span>
-          )}
         </div>
 
-        {/* Right: 4 Master Action Icons (Audio, Copy, Share, Bookmark) */}
-        <div className="flex items-center gap-1.5 shrink-0">
+        {/* Right: 4 Compact Action Icons (Audio, Copy, Share, Bookmark) */}
+        <div className="shrink-0 flex items-center gap-[6px]">
           {/* 1. Audio Play Button */}
           <button
             type="button"
             onClick={handleToggleAudio}
-            className={`p-1.5 sm:p-2 rounded-xl border transition-all cursor-pointer flex items-center justify-center shadow-2xs hover:scale-105 active:scale-95 ${
-              isPlayingAudio 
-                ? 'bg-amber-600 text-white border-amber-700 ring-2 ring-amber-500/50' 
-                : 'bg-white dark:bg-stone-800 text-amber-800 dark:text-amber-200 border-amber-600/30 hover:bg-amber-50 dark:hover:bg-stone-700'
+            className={`w-8 h-8 rounded-lg border transition-all cursor-pointer flex items-center justify-center active:scale-95 ${
+              isPlayingAudio
+                ? 'bg-amber-600 text-white border-amber-700 ring-2 ring-amber-500/40'
+                : 'bg-[#FFFDF9] dark:bg-stone-800/80 text-amber-800 dark:text-amber-200 border-amber-600/25 hover:bg-amber-50 dark:hover:bg-stone-700'
             }`}
             title={isPlayingAudio ? 'वाणी रोकें' : 'वाणी श्रवण करें'}
             aria-label="Play sacred audio"
           >
             {isPlayingAudio ? (
-              <VolumeX className="w-4 h-4 animate-pulse text-amber-100" />
+              <VolumeX className="w-3.5 h-3.5 animate-pulse text-amber-100" />
             ) : (
-              <Volume2 className="w-4 h-4 text-amber-700 dark:text-amber-300" />
+              <Volume2 className="w-3.5 h-3.5 text-amber-700 dark:text-amber-300" />
             )}
           </button>
 
@@ -369,18 +354,18 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
           <button
             type="button"
             onClick={handleCopyText}
-            className={`p-1.5 sm:p-2 rounded-xl border transition-all cursor-pointer flex items-center justify-center shadow-2xs hover:scale-105 active:scale-95 ${
-              isCopied 
-                ? 'bg-emerald-600 text-white border-emerald-700' 
-                : 'bg-white dark:bg-stone-800 text-amber-800 dark:text-amber-200 border-amber-600/30 hover:bg-amber-50 dark:hover:bg-stone-700'
+            className={`w-8 h-8 rounded-lg border transition-all cursor-pointer flex items-center justify-center active:scale-95 ${
+              isCopied
+                ? 'bg-emerald-600 text-white border-emerald-700'
+                : 'bg-[#FFFDF9] dark:bg-stone-800/80 text-amber-800 dark:text-amber-200 border-amber-600/25 hover:bg-amber-50 dark:hover:bg-stone-700'
             }`}
             title="पावन वाणी कॉपी करें"
             aria-label="Copy verse text"
           >
             {isCopied ? (
-              <Check className="w-4 h-4 text-white" />
+              <Check className="w-3.5 h-3.5 text-white" />
             ) : (
-              <Copy className="w-4 h-4 text-amber-700 dark:text-amber-300" />
+              <Copy className="w-3.5 h-3.5 text-amber-700 dark:text-amber-300" />
             )}
           </button>
 
@@ -392,11 +377,11 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                 sacredHaptics.lightTap();
                 setShowShareMenu(!showShareMenu);
               }}
-              className="p-1.5 sm:p-2 rounded-xl border bg-white dark:bg-stone-800 text-amber-800 dark:text-amber-200 border-amber-600/30 hover:bg-amber-50 dark:hover:bg-stone-700 transition-all cursor-pointer flex items-center justify-center shadow-2xs hover:scale-105 active:scale-95"
+              className="w-8 h-8 rounded-lg border bg-[#FFFDF9] dark:bg-stone-800/80 text-amber-800 dark:text-amber-200 border-amber-600/25 hover:bg-amber-50 dark:hover:bg-stone-700 transition-all cursor-pointer flex items-center justify-center active:scale-95"
               title="साझा करें (Share)"
               aria-label="Share verse"
             >
-              <Share2 className="w-4 h-4 text-amber-700 dark:text-amber-300" />
+              <Share2 className="w-3.5 h-3.5 text-amber-700 dark:text-amber-300" />
             </button>
 
             {/* Dropdown Menu */}
@@ -406,13 +391,13 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                   initial={{ opacity: 0, scale: 0.95, y: -6 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -6 }}
-                  className="absolute right-0 top-full mt-1.5 w-60 z-50 rounded-2xl border-2 border-amber-600/40 bg-[#FFFDF9] dark:bg-stone-900 shadow-2xl p-1.5 text-stone-800 dark:text-amber-100 backdrop-blur-md"
+                  className="absolute right-0 top-full mt-1.5 w-60 z-50 rounded-2xl border border-amber-600/35 bg-[#FFFDF9] dark:bg-stone-900 shadow-xl p-1.5 text-stone-800 dark:text-amber-100 backdrop-blur-md"
                 >
                   <button
                     type="button"
                     onClick={handleShareImage}
                     disabled={isGeneratingImage}
-                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left text-xs font-serif font-bold hover:bg-amber-500/15 transition-colors cursor-pointer border border-transparent hover:border-amber-500/30"
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left text-xs font-serif font-bold hover:bg-amber-500/15 transition-colors cursor-pointer"
                   >
                     <ImageIcon className="w-4 h-4 text-amber-600 shrink-0" />
                     <div>
@@ -428,7 +413,7 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                   <button
                     type="button"
                     onClick={handleShareText}
-                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left text-xs font-serif font-bold hover:bg-amber-500/15 transition-colors cursor-pointer border border-transparent hover:border-amber-500/30 mt-1"
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left text-xs font-serif font-bold hover:bg-amber-500/15 transition-colors cursor-pointer mt-1"
                   >
                     <MessageSquare className="w-4 h-4 text-amber-600 shrink-0" />
                     <div>
@@ -445,64 +430,58 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
             </AnimatePresence>
           </div>
 
-          {/* 4. Sacred Ribbon Bookmark (Bookmark Icon) */}
+          {/* 4. Sacred Ribbon Bookmark */}
           <button
             type="button"
             onClick={handleToggleBookmark}
-            className={`p-1.5 sm:p-2 rounded-xl border transition-all cursor-pointer flex items-center justify-center shadow-2xs hover:scale-105 active:scale-95 ${
-              isBookmarked 
-                ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-600' 
-                : 'bg-white dark:bg-stone-800 text-stone-400 hover:text-amber-600 border-amber-600/30 hover:bg-amber-50 dark:hover:bg-stone-700'
+            className={`w-8 h-8 rounded-lg border transition-all cursor-pointer flex items-center justify-center active:scale-95 ${
+              isBookmarked
+                ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-600'
+                : 'bg-[#FFFDF9] dark:bg-stone-800/80 text-stone-400 hover:text-amber-600 border-amber-600/25 hover:bg-amber-50 dark:hover:bg-stone-700'
             }`}
             title={isBookmarked ? 'बुकमार्क से हटाएं' : 'पावन बुकमार्क में जोड़ें'}
             aria-label="Bookmark verse"
           >
-            <Bookmark 
-              className={`w-4 h-4 transition-all ${
-                isBookmarked 
-                  ? 'fill-[#D97706] text-[#D97706]' 
+            <Bookmark
+              className={`w-3.5 h-3.5 transition-all ${
+                isBookmarked
+                  ? 'fill-[#D97706] text-[#D97706]'
                   : 'text-stone-500 dark:text-stone-400'
-              }`} 
+              }`}
             />
           </button>
         </div>
       </div>
 
-      {/* Middle: Main Doha / Vani in Bold Maroon with Dynamic Font Size */}
-      <div className="p-4 sm:p-6 text-center select-text">
-        <div 
+      {/* Middle: Main Doha / Vani in Bold Maroon (2 clean lines) */}
+      <div className="py-3 sm:py-4 px-1 text-center select-text">
+        <div
           style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
-          className={`font-serif font-black whitespace-pre-line tracking-tight drop-shadow-2xs ${getDohaFontSizeClass()}`}
+          className={`font-serif font-black whitespace-pre-line tracking-tight ${getDohaFontSizeClass()}`}
         >
           {formattedVerse}
         </div>
 
         {/* Source citation */}
         {sourceText && (
-          <div className="mt-3 flex items-center justify-center gap-1.5">
-            <span className="text-xs sm:text-sm font-serif font-bold text-amber-800/80 dark:text-amber-300/80 italic">
+          <div className="mt-2.5 flex items-center justify-center gap-1.5">
+            <span className="text-xs sm:text-sm font-serif font-bold text-amber-800/85 dark:text-amber-300/85 italic">
               ॥ {sourceText} ॥
             </span>
           </div>
         )}
       </div>
 
-      {/* Bottom: Toggleable Simple Meaning (भावार्थ) & Life Message */}
+      {/* Bottom: Open Scripture Meaning (भावार्थ) & Life Message without nested heavy boxes */}
       {(meaningText || lifeMessageText) && (
-        <div 
-          className={`border-t transition-all ${
-            isDarkMode 
-              ? 'bg-[#1D140E] border-amber-600/20' 
-              : 'bg-[#FAF3E0]/70 border-amber-600/15'
-          }`}
-        >
+        <div className="mt-2">
           <button
             type="button"
             onClick={() => {
               sacredHaptics.lightTap();
               setIsMeaningExpanded(!isMeaningExpanded);
             }}
-            className="w-full px-4 py-2 sm:py-2.5 flex items-center justify-between text-xs font-serif font-bold text-amber-900 dark:text-amber-200 hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer select-none"
+            className="w-full py-1.5 px-2 flex items-center justify-between text-xs font-serif font-bold text-amber-900 dark:text-amber-200 hover:opacity-80 transition-opacity cursor-pointer select-none"
           >
             <span className="flex items-center gap-1.5">
               <span>📖</span>
@@ -521,11 +500,11 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="px-4 pb-4 sm:px-6 sm:pb-5 space-y-3"
+                className="pt-2 pl-3 sm:pl-4 border-l-2 border-amber-500/35 space-y-2.5 text-left"
               >
                 {meaningText && (
-                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-800 dark:text-stone-200 bg-white/70 dark:bg-stone-800/60 p-3 sm:p-3.5 rounded-xl border border-amber-500/20 shadow-2xs">
-                    <span className="font-bold text-amber-900 dark:text-amber-300 block mb-1">
+                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-800 dark:text-stone-200">
+                    <span className="font-bold text-amber-900 dark:text-amber-300 mr-1.5">
                       {language === 'pb' ? 'ਭਾਵਾਰਥ:' : language === 'en' ? 'Meaning:' : 'भावार्थ:'}
                     </span>
                     {meaningText}
@@ -533,10 +512,9 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                 )}
 
                 {lifeMessageText && (
-                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-amber-950 dark:text-amber-100 bg-amber-500/15 dark:bg-amber-900/30 p-3 sm:p-3.5 rounded-xl border border-amber-500/30 shadow-2xs">
-                    <span className="font-bold text-amber-900 dark:text-amber-200 flex items-center gap-1.5 mb-1">
-                      <span>🌟</span>
-                      <span>{language === 'pb' ? 'ਜੀਵਨ ਸੰਦੇਸ਼:' : language === 'en' ? 'Life Message:' : 'जीवन संदेश:'}</span>
+                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-amber-950 dark:text-amber-100">
+                    <span className="font-bold text-amber-900 dark:text-amber-200 mr-1.5">
+                      🌟 {language === 'pb' ? 'ਜੀਵਨ ਸੰਦੇਸ਼:' : language === 'en' ? 'Life Message:' : 'जीवन संदेश:'}
                     </span>
                     {lifeMessageText}
                   </div>
@@ -548,10 +526,18 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
       )}
 
       {footerExtra && (
-        <div className="px-4 py-3 border-t border-amber-600/15 flex items-center justify-between gap-2">
+        <div className="pt-3 mt-2 flex items-center justify-between gap-2">
           {footerExtra}
         </div>
       )}
-    </div>
+
+      {/* Open Sacred Scripture Divider Line with Centered ✦ */}
+      <div className="relative mt-6 flex items-center justify-center select-none" aria-hidden="true">
+        <div className="w-full border-b border-[rgba(217,119,6,0.25)]" />
+        <span className="absolute px-3 text-xs font-bold text-[#D97706] bg-[#FDF8EE] dark:bg-[#1E150F]">
+          ✦
+        </span>
+      </div>
+    </article>
   );
 };

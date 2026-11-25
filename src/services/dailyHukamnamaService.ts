@@ -168,7 +168,7 @@ export function getDailyLifeDiscipline(verse: SggsKabirVerse, lang: Language): D
       ? 'Daily Life Discipline & Spiritual Conduct'
       : 'दैनिक जीवन में अनुशासन एवं पावन आचरण',
     subtitle: isPb
-      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੇ ਹੁਕਮਨਾਮੇ ਅਨੁਸਾਰ ਅੱਜ ਦਾ ਨਿੱਤ ਨੇਮ ਤੇ ਸੰਕਲਪ'
+      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਹੁਕਮਨਾਮੇ ਅਨੁਸਾਰ ਅੱਜ ਦਾ ਨਿੱਤ ਨੇਮ ਤੇ ਸੰਕਲਪ'
       : isEn
       ? "Today's Sacred Discipline & Commitment guided by Satguru Kabir Saheb's Vani"
       : 'सतगुरु कबीर साहेब के पावन हुकमनामे अनुसार आज का जीवन संकल्प व व्यवहार',

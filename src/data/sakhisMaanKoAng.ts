@@ -493,7 +493,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
       en: 'Maan Ko Ang - 10',
     },
     text: {
-      hi: 'मान बड़ाई ऊरमी, ये जग का व्यवहार।\nदीन गरीबी बन्दगी, सतगुरु का उपकार।।',
+      hi: 'मान बड़ाई ऊरमी, ये जग का व्यवहार।\nदीन गरीबी बंदगी, सतगुरु का उपकार।।',
       pb: 'ਮਾਨ ਬੜਾਈ ਊਰਮੀ, ਯੇ ਜਗ ਕਾ ਬ੍ਯਵਹਾਰ।\nਦੀਨ ਗਰੀਬੀ ਬੰਦਗੀ, ਸਤਗੁਰੁ ਕਾ ਉਪਕਾਰ।।',
       en: 'Maan badai oorami, ye jag ka vyavhaar. Deen gareebi bandagi, satguru ka upkaar..',
     },
@@ -507,7 +507,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
       hi: [
         { word: 'ऊरमी (Oorami)', meaning: 'तरंग / लहर / हलचल' },
         { word: 'दीन गरीबी (Deen gareebi)', meaning: 'नम्रता व निरहंकारिता' },
-        { word: 'बन्दगी (Bandagi)', meaning: 'सेवा व साहेब-भक्ति' }
+        { word: 'बंदगी (Bandagi)', meaning: 'सेवा व साहेब-भक्ति' }
       ],
       pb: [
         { word: 'ਊਰਮੀ (Oorami)', meaning: 'ਦੁੱਖ ਦੀ ਲਹਿਰ' },

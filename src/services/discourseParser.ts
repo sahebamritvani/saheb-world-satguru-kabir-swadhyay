@@ -225,13 +225,13 @@ export function parseSakhiInto5StepDiscourse(
     title: titles.step1,
     relevanceText:
       lang === 'pb'
-        ? `ਇਹ ਪਾਵਨ ਸਾਖੀ '${categoryName}' ਅਧੀਨ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਅਮ੍ਰਿਤ ਬਾਣੀ ਦਾ ਅੰਗ ਹੈ। ਇਹ ਜੀਵ ਨੂੰ ਮਾਇਆ ਦੇ ਜਾਲ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਅਨਾਹਤ ਸਤਯਨਾਮ ਧੁਨ ਨਾਲ ਜੋੜਦੀ ਹੈ।`
+        ? `ਇਹ ਪਾਵਨ ਸਾਖੀ '${categoryName}' ਅਧੀਨ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਅਮ੍ਰਿਤ ਬਾਣੀ ਦਾ ਅੰਗ ਹੈ। ਇਹ ਜੀਵ ਨੂੰ ਮਾਇਆ ਦੇ ਜਾਲ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਅਨਾਹਤ ਸਤਯਨਾਮ ਧੁਨ ਨਾਲ ਜੋੜਦੀ ਹੈ।`
         : lang === 'en'
         ? `This sacred verse under '${categoryName}' serves as an eternal divine beacon on the path of Satyanaam, elevating the soul above material illusions into pure uncreated sound.`
         : `यह पावन दोहा '${categoryName}' के अंतर्गत सतगुरु कबीर साहेब की अमृतवाणी का सार है। यह साधक को संसार के भ्रम से निकालकर अनहद सत्यनाम की शाश्वत ध्वनि से जोड़ने का पावन आधार प्रस्तुत करता है।`,
     spiritualSignificance:
       lang === 'pb'
-        ? 'ਸਤਿਗੁਰੂ ਸਾਹਿਬ ਜੀ ਦੀ ਬਾਣੀ ਆਤਮ-ਗਿਆਨ ਦੀ ਜੋਤ ਜਗਾ ਕੇ ਸੁਰਤ ਨੂੰ ਦਸ਼ਮ ਦੁਆਰ ਵਿੱਚ ਸਥਿਰ ਕਰਦੀ ਹੈ।'
+        ? 'ਸਤਿਗੁਰੂ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਆਤਮ-ਗਿਆਨ ਦੀ ਜੋਤ ਜਗਾ ਕੇ ਸੁਰਤ ਨੂੰ ਦਸ਼ਮ ਦੁਆਰ ਵਿੱਚ ਸਥਿਰ ਕਰਦੀ ਹੈ।'
         : lang === 'en'
         ? 'The Satguru’s word awakens inner spiritual illumination, anchoring the soul’s awareness in the Tenth Door.'
         : 'सतगुरु साहेब की वाणी अंतःकरण की मलीनता को धोकर सुरति को दसम द्वार की अनाहत शबद ध्वनि में लीन करती है।',

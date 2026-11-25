@@ -183,7 +183,7 @@ Jai Jai Satya Kabir, Guru Jai Jai Satya Kabir.
 आरती गरीब निवाज, साहेब आरती हो ।
 आरती दीन दयाल, साहेब आरती हो ।
 
-।।साहेब बन्दगी साहेब।।`,
+।।साहेब बंदगी साहेब।।`,
     pb: `।।ਸਤ੍ਯਨਾਮ।।
 ਆਰਤੀ-੨
 
@@ -274,7 +274,7 @@ Aarti Deen Dayaal, Saheb Aarti Ho.
 मानस साधु मरालं नाशक भव जालम् ॥
 जय जय श्री गुरुदेव…
 
-।।साहेब बन्दगी साहेब।।`,
+।।साहेब बंदगी साहेब।।`,
     pb: `।।ਸਤ੍ਯਨਾਮ।।
 ਆਰਤੀ-੩
 
@@ -375,7 +375,7 @@ Jai Jai Shri Gurudev...
 आरति सत्यनाम की कीजै । 
 जीवन जनम सुफल कर लीजै ।।
 
-।।साहेब बन्दगी साहेब।।`,
+।।साहेब बंदगी साहेब।।`,
     pb: `।।ਸਤ੍ਯਨਾਮ।।
 ਆਰਤੀ-੪
 
@@ -446,7 +446,7 @@ Jeevan Janam Sufal Kar Leejai.
 टुक नींद से अंखियां खोल जरा, अपने प्रभु के गुण गाए ले।
 सतगुरु के चरणन शीश नवा, जनम पदारथ पाए ले॥
 
-।।साहेब बन्दगी साहेब।।`,
+।।साहेब बंदगी साहेब।।`,
     pb: `।।ਸਤ੍ਯਨਾਮ।।
 ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ
 ਸਤਿਗੁਰੂ ਕਬੀਰਾਯ ਨਮਃ
@@ -481,7 +481,7 @@ Bow at the lotus feet of Satguru Kabir and fulfill the highest purpose of this h
 तन मन धन सब अर्पण कीन्हो, चरण शरण चित लायो।
 साहेब कबीर दया के सागर, जीवन सफल करायो॥
 
-।।साहेब बन्दगी साहेब।।`,
+।।साहेब बंदगी साहेब।।`,
     pb: `।।ਸਤ੍ਯਨਾਮ।।
 ਭੋਗ ਆਰਤੀ ਤੇ ਬੰਦਗੀ ਪਾਠ
 ਸਤਿਗੁਰੂ ਕਬੀਰਾਯ ਨਮਃ
@@ -1175,7 +1175,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                 {language === 'hi' ? 'सतगुरु कबीराय नमः' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰਾਯ ਨਮਃ' : 'Satguru Kabiraya Namah'}
               </p>
               <p className="text-xs font-bold" style={{ color: theme.sacredMaroon }}>
-                {language === 'hi' ? '।।साहेब बन्दगी साहेब।।🙏' : language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।🙏' : '।। Saheb Bandagi Saheb ।।🙏'}
+                {language === 'hi' ? '।।साहेब बंदगी साहेब।।🙏' : language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।🙏' : '।। Saheb Bandagi Saheb ।।🙏'}
               </p>
             </div>
           </div>
@@ -1390,7 +1390,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
               {/* Concluding Salutation */}
               <div className="text-center pt-4 border-t border-amber-300/40">
                 <span className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 text-amber-950 dark:text-amber-100 border border-amber-400/50 text-xs sm:text-sm font-black font-serif shadow-xs tracking-wider">
-                  {language === 'pb' ? '🙏 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।। 🙏' : language === 'en' ? '🙏 || Saheb Bandagi Saheb || 🙏' : '🙏 ।।साहेब बन्दगी साहेब।। 🙏'}
+                  {language === 'pb' ? '🙏 ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।। 🙏' : language === 'en' ? '🙏 || Saheb Bandagi Saheb || 🙏' : '🙏 ।।साहेब बंदगी साहेब।। 🙏'}
                 </span>
               </div>
             </div>
@@ -1404,7 +1404,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
               </div>
 
               <div className="pt-4 border-t border-amber-200/50 text-xs text-stone-500 font-serif">
-                {language === 'hi' ? '।।साहेब बन्दगी साहेब।।' : language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।' : '।।Saheb Bandagi Saheb।।'}
+                {language === 'hi' ? '।।साहेब बंदगी साहेब।।' : language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।' : '।।Saheb Bandagi Saheb।।'}
               </div>
             </div>
           )

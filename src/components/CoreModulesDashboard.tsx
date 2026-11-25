@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Library, 
@@ -22,16 +22,18 @@ import { Language, AppView, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { sacredHaptics } from '../services/haptics';
-import { MasterGranthLibrary } from './MasterGranthLibrary';
-import { KabirParichayFourYugas } from './KabirParichayFourYugas';
-import { SpiritualCalendar } from './SpiritualCalendar';
-import { UniverseMap } from './UniverseMap';
-import { SacredAshrams } from './SacredAshrams';
-import { SatyaNaamMahaMargdarshika } from './SatyaNaamMahaMargdarshika';
-import { AatmaBhushanModule } from './AatmaBhushanModule';
+import { SacredLoader } from './SacredLoader';
 import { AcharyaParamparaModal } from './AcharyaParamparaModal';
 import { ChoukaAartiVidhiModal } from './ChoukaAartiVidhiModal';
 import { SacredWisdomWidget } from './SacredWisdomWidget';
+
+const MasterGranthLibrary = lazy(() => import('./MasterGranthLibrary').then(m => ({ default: m.MasterGranthLibrary })));
+const KabirParichayFourYugas = lazy(() => import('./KabirParichayFourYugas').then(m => ({ default: m.KabirParichayFourYugas })));
+const SpiritualCalendar = lazy(() => import('./SpiritualCalendar').then(m => ({ default: m.SpiritualCalendar })));
+const UniverseMap = lazy(() => import('./UniverseMap').then(m => ({ default: m.UniverseMap })));
+const SacredAshrams = lazy(() => import('./SacredAshrams').then(m => ({ default: m.SacredAshrams })));
+const SatyaNaamMahaMargdarshika = lazy(() => import('./SatyaNaamMahaMargdarshika').then(m => ({ default: m.SatyaNaamMahaMargdarshika })));
+const AatmaBhushanModule = lazy(() => import('./AatmaBhushanModule').then(m => ({ default: m.AatmaBhushanModule })));
 
 export type CoreModuleTab = 'granth-library' | 'kabir-parichay' | 'saheb-jantri' | 'brahmand-darshan' | 'sacred-ashrams' | 'satya-naam' | 'aatma-bhushan';
 
@@ -416,6 +418,7 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
 
       {/* Dynamic Tab Content Area */}
       <div className="w-full">
+        <Suspense fallback={<SacredLoader language={language} />}>
         <AnimatePresence mode="wait">
           {activeTab === 'granth-library' && (
             <motion.div
@@ -525,6 +528,7 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
             </motion.div>
           )}
         </AnimatePresence>
+        </Suspense>
       </div>
 
       {/* Specialized Panthic Vaults: Acharya Parampara & Prashnottari (Sawal-Jawab) */}

@@ -403,17 +403,17 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
     },
     {
       id: 9,
-      doha: 'एकै साधे सब सधै, सब साधै सब जाय। रहिमन मूलहिं सींचिबो, फूलै फलै अघाय॥',
-      isCrossReference: true,
+      doha: 'नावँ बरोबर कछु नहीं, ना कोई दीसै ओर।\nकहैं कबीर तिहुँ लोक में, सत्यनाम सिरमौर॥',
+      isCrossReference: false,
       source: {
-        hi: 'रहीम दोहावली',
-        pb: 'ਰਹੀਮ ਦੋਹਾਵਲੀ',
-        en: 'Rahim Dohavali',
+        hi: 'कबीर साखी संग्रह',
+        pb: 'ਕਬੀਰ ਸਾਖੀ ਸੰਗ੍ਰਹਿ',
+        en: 'Kabir Sakhi Sangrah',
       },
       meaning: {
-        hi: 'एक मूल (परमात्मा/सत्यनाम) को साध लेने से सब कुछ अपने आप सध जाता है; सबको अलग-अलग साधने से सब कुछ नष्ट हो जाता है। जैसे जड़ को सींचने से पूरा वृक्ष तृप्त होकर फूलता-फलता है।',
-        pb: 'ਇੱਕ ਮੂਲ ਨੂੰ ਸਾਧਣ ਨਾਲ ਸਭ ਕੁਝ ਸਧ ਜਾਂਦਾ ਹੈ, ਸਭ ਨੂੰ ਵੱਖਰਾ ਸਾਧਣ ਨਾਲ ਸਭ ਚਲਾ ਜਾਂਦਾ ਹੈ। ਜਿਵੇਂ ਜੜ੍ਹ ਨੂੰ ਸਿੰਜਣ ਨਾਲ ਪੂਰਾ ਰੁੱਖ ਫੁੱਲਦਾ ਤੇ ਫਲਦਾ ਹੈ।',
-        en: 'Nurturing the One Root fulfills everything; chasing everything leaves one with nothing. Rahim says, water the root, and branches, blossoms, and fruits flourish in abundance.',
+        hi: 'एक सत्यनाम के बराबर तीनों लोकों में कुछ भी नहीं है; सतगुरु कबीर साहेब स्पष्ट करते हैं कि समस्त साधनों, मंत्रों और सिद्धांतों में एक सत्यनाम ही सिरमौर एवं परम मूल है।',
+        pb: 'ਇੱਕ ਸਤਯਨਾਮ ਦੇ ਬਰਾਬਰ ਤਿੰਨਾਂ ਲੋਕਾਂ ਵਿੱਚ ਕੁਝ ਵੀ ਨਹੀਂ ਹੈ; ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਰੇ ਸਾਧਨਾਂ ਵਿੱਚ ਕੇਵਲ ਸਤਯਨਾਮ ਹੀ ਸਿਰਮੌਰ ਅਤੇ ਪਰਮ ਮੂਲ ਹੈ।',
+        en: 'Nothing in all the three worlds equals the One Satyanaam; Satguru Kabir Saheb affirms that Satyanaam alone is the crowning crest and supreme Root of all existence.',
       },
     },
   ];
@@ -526,20 +526,28 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
             </button>
           </div>
 
-          {/* SVG Inverted Tree Canvas: Luminous Golden-Green Sacred Ashvattha Tree */}
-          <div className="bg-gradient-to-b from-[#1E130C] via-[#132217] to-[#0B140E] dark:from-[#0C0906] dark:via-[#0B1910] dark:to-[#070D09] rounded-2xl border-2 border-amber-500/40 p-3 sm:p-6 flex flex-col items-center justify-center shadow-inner relative overflow-hidden">
-            {/* Soft ambient golden-white radiance behind roots */}
+          {/* SVG Inverted Tree Canvas: Warm High-Contrast Cream Container (#FDF8EE) */}
+          <div
+            style={{
+              backgroundColor: isDarkMode ? '#1D1510' : '#FDF8EE',
+              borderColor: '#D97706',
+            }}
+            className="rounded-2xl border p-3 sm:p-5 flex flex-col items-center justify-center shadow-inner relative overflow-hidden"
+          >
+            {/* Soft ambient luminous white-gold radiance behind top roots */}
             <div
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-44 pointer-events-none transition-opacity duration-700"
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[92%] h-36 pointer-events-none transition-opacity duration-700"
               style={{
-                background: 'radial-gradient(ellipse at top center, rgba(255,255,255,0.42) 0%, rgba(253,224,71,0.22) 45%, transparent 75%)',
-                opacity: isWatered ? 1 : 0.72,
+                background: isDarkMode
+                  ? 'radial-gradient(ellipse at top center, rgba(255,255,255,0.28) 0%, rgba(251,191,36,0.18) 45%, transparent 75%)'
+                  : 'radial-gradient(ellipse at top center, rgba(255,255,255,0.92) 0%, rgba(253,224,71,0.34) 48%, transparent 78%)',
+                opacity: isWatered ? 1 : 0.85,
               }}
             />
 
             <svg
-              viewBox="0 0 600 470"
-              className="w-full max-w-2xl mx-auto h-[340px] sm:h-[420px] overflow-visible select-none relative z-10"
+              viewBox="0 0 600 432"
+              className="w-full max-w-2xl mx-auto h-auto max-h-[360px] overflow-visible select-none relative z-10"
               role="img"
               aria-label={activeLang === 'pb' ? 'ਊਰਧਵ ਮੂਲ ਰੁੱਖ — ਸਤਯਨਾਮ ਮੂਲ' : activeLang === 'en' ? 'Luminous Golden-Green Sacred Ashvattha Inverted Tree' : 'ऊर्ध्व मूल वृक्ष — सत्यनाम मूल और घने हरे पत्ते'}
             >
@@ -547,23 +555,23 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                 {/* Top Radiant Pure White & Soft Golden Halo */}
                 <radialGradient id="ashvatthaRootHalo" cx="50%" cy="15%" r="55%">
                   <stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />
-                  <stop offset="28%" stopColor="#FEF9C3" stopOpacity={isWatered ? "0.95" : "0.78"} />
-                  <stop offset="60%" stopColor="#FBBF24" stopOpacity={isWatered ? "0.45" : "0.25"} />
+                  <stop offset="32%" stopColor="#FEF08A" stopOpacity={isWatered ? "0.95" : "0.78"} />
+                  <stop offset="65%" stopColor="#F59E0B" stopOpacity={isWatered ? "0.42" : "0.24"} />
                   <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
                 </radialGradient>
 
                 {/* Descending White-Gold Divine Light Rays */}
                 <linearGradient id="ashvatthaLightRay" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity={isWatered ? "0.85" : "0.6"} />
-                  <stop offset="42%" stopColor="#FEF08A" stopOpacity={isWatered ? "0.35" : "0.2"} />
+                  <stop offset="0%" stopColor="#FDE047" stopOpacity={isWatered ? "0.48" : "0.3"} />
+                  <stop offset="45%" stopColor="#FEF08A" stopOpacity={isWatered ? "0.24" : "0.14"} />
                   <stop offset="100%" stopColor="#84CC16" stopOpacity="0" />
                 </linearGradient>
 
-                {/* Golden-White Glowing Root Gradient */}
+                {/* Golden-White Glowing Root Gradient (Crisp Amber-Gold on Cream + Luminous Core) */}
                 <linearGradient id="ashvatthaRootGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#FFFFFF" />
-                  <stop offset="55%" stopColor="#FEF08A" />
-                  <stop offset="100%" stopColor="#D97706" />
+                  <stop offset="0%" stopColor="#FFFBEB" />
+                  <stop offset="45%" stopColor="#F59E0B" />
+                  <stop offset="100%" stopColor="#92400E" />
                 </linearGradient>
 
                 {/* 3D Shaded Sacred Trunk Gradient */}
@@ -604,7 +612,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                 </radialGradient>
 
                 <filter id="luminousWhiteGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
-                  <feGaussianBlur stdDeviation={isWatered ? "7" : "4"} result="blur" />
+                  <feGaussianBlur stdDeviation={isWatered ? "5" : "3"} result="blur" />
                   <feMerge>
                     <feMergeNode in="blur" />
                     <feMergeNode in="SourceGraphic" />
@@ -612,12 +620,12 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                 </filter>
 
                 <filter id="canopySoftShadow" x="-15%" y="-15%" width="130%" height="130%">
-                  <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#021409" floodOpacity="0.65" />
+                  <feDropShadow dx="0" dy="5" stdDeviation="5" floodColor="#14532D" floodOpacity="0.35" />
                 </filter>
               </defs>
 
-              {/* 1. Descending Pure White & Golden Light Rays */}
-              <g opacity={isWatered ? "0.95" : "0.7"} className="transition-opacity duration-700">
+              {/* 1. Descending White & Golden Light Rays */}
+              <g opacity={isWatered ? "0.95" : "0.75"} className="transition-opacity duration-700">
                 <polygon points="300,48 75,295 160,295" fill="url(#ashvatthaLightRay)" />
                 <polygon points="300,48 165,330 245,330" fill="url(#ashvatthaLightRay)" />
                 <polygon points="300,48 255,345 345,345" fill="url(#ashvatthaLightRay)" />
@@ -625,32 +633,33 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                 <polygon points="300,48 440,295 525,295" fill="url(#ashvatthaLightRay)" />
               </g>
 
-              {/* 2. Top Radiant Pure White Halo */}
-              <ellipse cx="300" cy="76" rx={isWatered ? "180" : "145"} ry={isWatered ? "82" : "66"} fill="url(#ashvatthaRootHalo)" className="transition-all duration-700" />
+              {/* 2. Top Radiant White-Gold Halo */}
+              <ellipse cx="300" cy="76" rx={isWatered ? "190" : "155"} ry={isWatered ? "82" : "68"} fill="url(#ashvatthaRootHalo)" className="transition-all duration-700" />
 
               {/* 3. Top Sacred Pill Label: ॥ सत्यनाम (मूल) ॥ */}
               <g transform="translate(300, 24)">
-                <rect x="-112" y="-17" width="224" height="32" rx="16" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="2" filter="url(#luminousWhiteGoldGlow)" />
-                <text x="0" y="5" textAnchor="middle" fill="#6B1D1D" fontWeight="900" fontSize="15.5" className="font-serif tracking-wide">
+                <rect x="-118" y="-18" width="236" height="34" rx="17" fill="#FFFDF7" stroke="#D97706" strokeWidth="2.4" filter="url(#luminousWhiteGoldGlow)" />
+                <text x="0" y="5.5" textAnchor="middle" fill="#6B1D1D" fontWeight="900" fontSize="16" className="font-serif tracking-wide">
                   {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ (ਮੂਲ) ॥' : activeLang === 'en' ? '॥ Satyanaam (Root) ॥' : '॥ सत्यनाम (मूल) ॥'}
                 </text>
               </g>
 
-              {/* 4. Intricate Glowing Top Roots Spreading Up into Divine Light */}
+              {/* 4. Intricate Glowing Top Roots Spreading Up into Divine Light (Crisp Gold-Brown on Cream) */}
               <g strokeLinecap="round" fill="none" filter="url(#luminousWhiteGoldGlow)">
                 {/* Primary Thick Radiant Taproots */}
-                <path d="M300,115 C295,86 270,66 225,52" stroke="url(#ashvatthaRootGrad)" strokeWidth="6.5" />
-                <path d="M300,115 C305,86 330,66 375,52" stroke="url(#ashvatthaRootGrad)" strokeWidth="6.5" />
-                <path d="M300,115 C298,84 300,62 300,43" stroke="#FFFFFF" strokeWidth="7.5" />
-                <path d="M286,112 C258,88 214,76 162,64" stroke="url(#ashvatthaRootGrad)" strokeWidth="4.8" />
-                <path d="M314,112 C342,88 386,76 438,64" stroke="url(#ashvatthaRootGrad)" strokeWidth="4.8" />
+                <path d="M300,115 C295,86 270,66 225,52" stroke="url(#ashvatthaRootGrad)" strokeWidth="7" />
+                <path d="M300,115 C305,86 330,66 375,52" stroke="url(#ashvatthaRootGrad)" strokeWidth="7" />
+                <path d="M300,115 C298,84 300,62 300,43" stroke="#D97706" strokeWidth="8" />
+                <path d="M300,115 C298,84 300,62 300,43" stroke="#FFFBEB" strokeWidth="3" />
+                <path d="M286,112 C258,88 214,76 162,64" stroke="url(#ashvatthaRootGrad)" strokeWidth="5.2" />
+                <path d="M314,112 C342,88 386,76 438,64" stroke="url(#ashvatthaRootGrad)" strokeWidth="5.2" />
                 {/* Secondary Fine Root Tendrils */}
-                <path d="M262,80 C235,66 205,54 185,46" stroke="#FEF9C3" strokeWidth="2.8" />
-                <path d="M338,80 C365,66 395,54 415,46" stroke="#FEF9C3" strokeWidth="2.8" />
-                <path d="M286,75 C275,56 262,48 248,42" stroke="#FFFFFF" strokeWidth="2.6" />
-                <path d="M314,75 C325,56 338,48 352,42" stroke="#FFFFFF" strokeWidth="2.6" />
-                <path d="M242,88 C210,82 175,80 145,76" stroke="#FDE047" strokeWidth="2.2" />
-                <path d="M358,88 C390,82 425,80 455,76" stroke="#FDE047" strokeWidth="2.2" />
+                <path d="M262,80 C235,66 205,54 185,46" stroke="#D97706" strokeWidth="3" />
+                <path d="M338,80 C365,66 395,54 415,46" stroke="#D97706" strokeWidth="3" />
+                <path d="M286,75 C275,56 262,48 248,42" stroke="#B45309" strokeWidth="2.8" />
+                <path d="M314,75 C325,56 338,48 352,42" stroke="#B45309" strokeWidth="2.8" />
+                <path d="M242,88 C210,82 175,80 145,76" stroke="#D97706" strokeWidth="2.4" />
+                <path d="M358,88 C390,82 425,80 455,76" stroke="#D97706" strokeWidth="2.4" />
               </g>
 
               {/* Subtle Divine Sparkle Motes Around Top Roots */}
@@ -761,43 +770,43 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
                 <path d="M300,82 C302,190 322,285 385,374" />
               </g>
 
-              {/* 9. Four Crisp Upright Golden-Cream Badges (भक्ति, सुख, मुक्ति, शांति) */}
+              {/* 9. Four Larger Crisp Upright Golden-Cream Badges (भक्ति, सुख, मुक्ति, शांति) */}
               {[
-                { x: 148, y: 304, label: activeLang === 'pb' ? 'ਭਗਤੀ' : activeLang === 'en' ? 'Devotion' : 'भक्ति' },
-                { x: 452, y: 304, label: activeLang === 'pb' ? 'ਸੁੱਖ' : activeLang === 'en' ? 'Happiness' : 'सुख' },
-                { x: 215, y: 376, label: activeLang === 'pb' ? 'ਮੁਕਤੀ' : activeLang === 'en' ? 'Liberation' : 'मुक्ति' },
-                { x: 385, y: 376, label: activeLang === 'pb' ? 'ਸ਼ਾਂਤੀ' : activeLang === 'en' ? 'Peace' : 'शांति' },
+                { x: 144, y: 302, label: activeLang === 'pb' ? 'ਭਗਤੀ' : activeLang === 'en' ? 'Devotion' : 'भक्ति' },
+                { x: 456, y: 302, label: activeLang === 'pb' ? 'ਸੁੱਖ' : activeLang === 'en' ? 'Happiness' : 'सुख' },
+                { x: 212, y: 374, label: activeLang === 'pb' ? 'ਮੁਕਤੀ' : activeLang === 'en' ? 'Liberation' : 'मुक्ति' },
+                { x: 388, y: 374, label: activeLang === 'pb' ? 'ਸ਼ਾਂਤੀ' : activeLang === 'en' ? 'Peace' : 'शांति' },
               ].map((item, idx) => (
                 <g key={idx} className="transition-transform duration-300 hover:scale-105">
-                  <circle cx={item.x} cy={item.y} r="54" fill="url(#badgeAura)" opacity={isWatered ? "0.95" : "0.65"} />
+                  <circle cx={item.x} cy={item.y} r="58" fill="url(#badgeAura)" opacity={isWatered ? "0.95" : "0.7"} />
                   <rect
-                    x={item.x - 50}
-                    y={item.y - 19}
-                    width="100"
-                    height="38"
-                    rx="19"
-                    fill="#FFFDF7"
+                    x={item.x - 58}
+                    y={item.y - 22}
+                    width="116"
+                    height="44"
+                    rx="22"
+                    fill="#FDF8EE"
                     stroke="#D97706"
                     strokeWidth="2.8"
                   />
                   <rect
-                    x={item.x - 46}
-                    y={item.y - 15}
-                    width="92"
-                    height="30"
-                    rx="15"
+                    x={item.x - 53}
+                    y={item.y - 17}
+                    width="106"
+                    height="34"
+                    rx="17"
                     fill="none"
                     stroke="#FDE047"
-                    strokeWidth="1"
-                    opacity="0.85"
+                    strokeWidth="1.2"
+                    opacity="0.9"
                   />
                   <text
                     x={item.x}
-                    y={item.y + 5.5}
+                    y={item.y + 6}
                     textAnchor="middle"
                     fill="#6B1D1D"
                     fontWeight="900"
-                    fontSize="14.5"
+                    fontSize="16"
                     className="font-serif tracking-tight"
                   >
                     {item.label}
@@ -806,26 +815,41 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
               ))}
             </svg>
 
-            {/* Peaceful Status Message & Satguru Kabir Saheb Philosophy Footer */}
-            <div className="mt-5 p-5 rounded-2xl bg-amber-500/12 border-2 border-amber-500/30 text-center max-w-2xl space-y-3">
+            {/* High-Contrast Cream Philosophy Footer Box (Zero dark-on-dark bug) */}
+            <div
+              style={{
+                backgroundColor: isDarkMode ? '#261B14' : '#FDF8EE',
+                borderColor: '#D97706',
+              }}
+              className="mt-4 p-5 rounded-2xl border text-center max-w-2xl space-y-3 shadow-sm"
+            >
               {isWatered && (
-                <div className="p-2.5 rounded-xl bg-emerald-600/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-serif font-black animate-pulse">
+                <div className="p-2.5 rounded-xl bg-emerald-600/15 border border-emerald-500/35 text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm font-serif font-black animate-pulse">
                   ✨ {activeLang === 'pb' ? 'ਇੱਕ ਸਤਯਨਾਮ ਨੂੰ ਸਾਧਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਆਪਣੇ ਆਪ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।' : activeLang === 'en' ? 'By mastering the One Satyanaam, devotion, happiness, liberation, and peace are effortlessly attained.' : 'एक सत्यनाम को साधने से भक्ति, सुख, मुक्ति और शांति स्वतः प्राप्त होते हैं।'}
                 </div>
               )}
               
-              <div className="space-y-1.5">
-                <h4 className="font-serif font-black text-sm sm:text-base text-[#6B1D1D] dark:text-amber-300">
+              <div className="space-y-2">
+                <h4
+                  style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
+                  className="font-serif font-black text-sm sm:text-base"
+                >
                   {activeLang === 'pb' ? '✦ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਮੂਲ-ਦਰਸ਼ਨ (ਕਬੀਰ ਸਾਗਰ) ✦' : activeLang === 'en' ? '✦ Satguru Kabir Saheb\'s Core Philosophy (Kabir Sagar) ✦' : '✦ सद्गुरु कबीर साहेब का मूल-दर्शन (कबीर सागर) ✦'}
                 </h4>
-                <p className="font-serif font-bold text-xs sm:text-sm text-amber-950 dark:text-amber-100 whitespace-pre-line leading-relaxed">
+                <p
+                  style={{ color: isDarkMode ? '#FEF3C7' : '#451A03' }}
+                  className="font-serif font-bold text-xs sm:text-sm whitespace-pre-line leading-relaxed"
+                >
                   {activeLang === 'pb'
                     ? 'ਮੂਲ ਗਹੇ ਤੇ ਸਬ ਗਹੇ, ਡਾਰ ਗਹੇ ਤੇ ਜਾਇ।\nਕਹ ਕਬੀਰ ਤੇ ਨਰ ਭਏ, ਜੋ ਰਹੇ ਮੂਲ ਲਪਟਾਇ॥'
                     : activeLang === 'en'
                     ? 'Mool gahe te sab gahe, daar gahe te jaay.\nKah Kabir te nar bhaye, jo rahe mool laptaay.'
                     : 'मूल गहे ते सब गहे, डार गहे ते जाय।\nकह कबीर ते नर भये, जो रहे मूल लपटाय॥'}
                 </p>
-                <p className="text-xs font-serif text-stone-700 dark:text-stone-300 leading-relaxed pt-1 border-t border-amber-500/20">
+                <p
+                  style={{ color: isDarkMode ? '#E7E5E4' : '#3F2312', borderColor: 'rgba(217, 119, 6, 0.28)' }}
+                  className="text-xs sm:text-[13px] font-serif leading-relaxed pt-2 border-t"
+                >
                   {activeLang === 'pb'
                     ? 'ਇਸ ਸ੍ਰਿਸ਼ਟੀ ਰੂਪੀ ਉਲਟੇ ਰੁੱਖ ਦੀਆਂ ਜੜ੍ਹਾਂ ਉੱਪਰ ਪਰਮ ਤੱਤ \'ਸਤਯਨਾਮ\' (ਮੂਲ) ਵਿੱਚ ਸਥਿਤ ਹਨ। ਕੇਵਲ ਇੱਕ ਸਤਯਨਾਮ ਰੂਪੀ ਜੜ੍ਹ ਨੂੰ ਸਿੰਜਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਦੇ ਚਾਰੇ ਪਾਵਨ ਫਲ ਆਪਣੇ ਆਪ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।'
                     : activeLang === 'en'
@@ -967,10 +991,10 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
               </div>
               <p className="text-xs font-serif text-stone-600 dark:text-stone-400 mt-0.5">
                 {activeLang === 'pb'
-                  ? 'ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਸਾਖੀ ਸੰਗ੍ਰਹਿ, ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਤੇ ਰਹੀਮ ਦੋਹਾਵਲੀ ਦੇ ਅਟੱਲ ਪ੍ਰਮਾਣ'
+                  ? 'ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਸਾਖੀ ਸੰਗ੍ਰਹਿ ਅਤੇ ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ (ਭਗਤ ਕਬੀਰ ਬਾਣੀ) ਦੇ ਅਟੱਲ ਪ੍ਰਮਾਣ'
                   : activeLang === 'en'
-                  ? 'Nine canonical verses from Kabir Sagar, Bijak, SGGS, and Rahim Dohavali'
-                  : 'कबीर सागर, बीजक, साखी संग्रह, श्री गुरु ग्रंथ साहिब एवं रहीम दोहावली के अटल प्रमाण'}
+                  ? 'Nine canonical verses from Kabir Sagar, Bijak, Sakhi Sangrah, and Sri Guru Granth Sahib'
+                  : 'कबीर सागर, बीजक, साखी संग्रह एवं श्री गुरु ग्रंथ साहिब (भगत कबीर वाणी) के अटल प्रमाण'}
               </p>
             </div>
             <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-300 bg-amber-500/15 px-2.5 py-1 rounded-lg border border-amber-500/20">

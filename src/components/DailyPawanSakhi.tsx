@@ -65,7 +65,6 @@ import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { STARTER_SAKHIS, loadFullSakhisModule } from '../data/sakhiStarterData';
-import { sakhisDatabase } from '../data/sakhis';
 import { QuoteCardModal } from './QuoteCardModal';
 import { HaziriModal } from './HaziriModal';
 import { DailySadhanaQuizModal } from './DailySadhanaQuizModal';
@@ -154,7 +153,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   const [showCardModal, setShowCardModal] = useState(false);
   const [showBhavarth, setShowBhavarth] = useState(false);
   const [showContemplation, setShowContemplation] = useState(false);
-  const [sakhisList, setSakhisList] = useState<Sakhi[]>(sakhisDatabase);
+  const [sakhisList, setSakhisList] = useState<Sakhi[]>(STARTER_SAKHIS);
 
   useEffect(() => {
     let active = true;
@@ -855,10 +854,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   return (
     <div className="space-y-4 sm:space-y-6 max-w-5xl mx-auto w-full px-2 sm:px-4 overflow-hidden break-words">
       {/* Unified Search & Go to Sakhi Number Jump Bar */}
-      <div className="space-y-2 sticky top-0 z-20">
+      <div className="space-y-2 relative z-20">
         <div 
           style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
-          className="rounded-2xl border p-2 sm:p-3 shadow-md backdrop-blur-md bg-opacity-95 flex flex-col md:flex-row gap-2"
+          className="rounded-2xl border p-2 sm:p-3 shadow-sm backdrop-blur-md bg-opacity-95 flex flex-col md:flex-row gap-2"
         >
           {/* Main Keyword Search Input */}
           <form 
@@ -1154,26 +1153,8 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           borderColor: theme.cardBorder,
           color: theme.textPrimary,
         }}
-        className={`rounded-3xl border shadow-xl overflow-hidden flex flex-col transition-all relative max-w-full ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
+        className={`rounded-3xl border shadow-sm overflow-hidden flex flex-col transition-all relative max-w-full ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
       >
-        {/* Sacred Header Banner */}
-        <div
-          style={{
-            backgroundColor: globalWallpaper
-              ? (isDarkMode ? 'rgba(38, 30, 22, 0.72)' : 'rgba(245, 228, 196, 0.78)')
-              : theme.stepActiveBg,
-            borderColor: theme.cardBorder,
-          }}
-          className="border-b py-2 px-3 text-center select-none"
-        >
-          <span
-            style={{ color: theme.sacredMaroon }}
-            className="text-base sm:text-lg font-black tracking-wide font-serif block whitespace-nowrap text-center"
-          >
-            {exactTop}
-          </span>
-        </div>
-
         {/* Card Body */}
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 max-w-full">
           {/* Metadata & Actions Bar (Clean Single-Row Layout) */}
@@ -1315,14 +1296,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             </div>
           )}
 
-          {/* Central Sacred Couplet Display (Glorious Typography & No Overflow) */}
+          {/* Central Sacred Couplet Display (Open Sacred Scripture Flow on Cream) */}
           <div
             id="daily-couplet-highlight"
-            style={{
-              backgroundColor: theme.bgSecondary,
-              borderColor: theme.accentGold,
-            }}
-            className="rounded-3xl border p-4 sm:p-7 text-center space-y-3 relative shadow-md overflow-hidden max-w-full break-words"
+            className="py-4 sm:py-6 px-2 sm:px-6 text-center space-y-3 relative overflow-hidden max-w-full break-words bg-[#FDF8EE]/60 dark:bg-transparent rounded-2xl"
           >
             {/* Couplet Text */}
             <p
@@ -1391,21 +1368,24 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             </div>
           </div>
 
-          {/* Essential Bhavarth */}
-          <div
-            style={{
-              backgroundColor: theme.cardBg,
-              borderColor: theme.cardBorder,
-            }}
-            className="rounded-2xl border p-3.5 sm:p-4 space-y-1.5 overflow-hidden break-words"
-          >
-            <div className="flex items-center justify-between">
+          {/* Thin Golden Scripture Divider */}
+          <div className="relative flex items-center justify-center my-1" aria-hidden="true">
+            <div className="w-full border-t" style={{ borderColor: 'rgba(217, 119, 6, 0.25)' }} />
+            <span className="px-2.5 text-[11px] text-[#D97706] font-serif bg-[#FDF8EE] dark:bg-stone-900 select-none">
+              ✦
+            </span>
+            <div className="w-full border-t" style={{ borderColor: 'rgba(217, 119, 6, 0.25)' }} />
+          </div>
+
+          {/* Essential Bhavarth (Open Flow) */}
+          <div className="py-2 px-1 sm:px-2 space-y-1.5 overflow-hidden break-words border-l-2 border-amber-600/35 pl-3">
+            <div className="flex items-center justify-between gap-2">
               <span style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider block">
                 {t.divineBhavarthLabel}
               </span>
               <button
                 onClick={() => setShowBhavarth(!showBhavarth)}
-                className="text-xs font-semibold cursor-pointer"
+                className="text-xs font-semibold cursor-pointer shrink-0"
                 style={{ color: theme.sacredMaroon }}
               >
                 {showBhavarth ? (language === 'hi' ? 'छिपाएं' : language === 'pb' ? 'ਲੁਕਾਓ' : 'Hide') : (language === 'hi' ? 'दिखाएं' : language === 'pb' ? 'ਦਿਖਾਓ' : 'Show')}
@@ -1418,21 +1398,15 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             )}
           </div>
 
-          {/* Contemplation Prompt */}
-          <div
-            style={{
-              backgroundColor: theme.stepActiveBg,
-              borderColor: theme.borderOrnament,
-            }}
-            className="rounded-2xl border p-3.5 sm:p-4 space-y-1 overflow-hidden break-words"
-          >
-            <div className="flex items-center justify-between">
+          {/* Contemplation Prompt (Open Flow) */}
+          <div className="py-2 px-1 sm:px-2 space-y-1 overflow-hidden break-words border-l-2 border-amber-700/35 pl-3">
+            <div className="flex items-center justify-between gap-2">
               <span style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider block">
                 {t.contemplationPromptTitle}
               </span>
               <button
                 onClick={() => setShowContemplation(!showContemplation)}
-                className="text-xs font-semibold cursor-pointer"
+                className="text-xs font-semibold cursor-pointer shrink-0"
                 style={{ color: theme.sacredMaroon }}
               >
                 {showContemplation ? (language === 'hi' ? 'छिपाएं' : language === 'pb' ? 'ਲੁਕਾਓ' : 'Hide') : (language === 'hi' ? 'दिखाएं' : language === 'pb' ? 'ਦਿਖਾਓ' : 'Show')}

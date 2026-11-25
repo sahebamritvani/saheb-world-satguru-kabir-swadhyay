@@ -337,9 +337,8 @@ export const SacredHeaderContainer = styled.header<{ theme: SpiritualTheme; $tra
   -webkit-backdrop-filter: ${({ $translucent }) => ($translucent ? 'blur(14px)' : 'none')};
   border-bottom: 1.5px solid ${({ theme }) => theme.cardBorder};
   box-shadow: ${({ theme }) => theme.cardShadow};
-  position: sticky;
-  top: 0;
-  z-index: 40;
+  position: relative;
+  z-index: 30;
   transition: all 0.3s ease;
 `;
 

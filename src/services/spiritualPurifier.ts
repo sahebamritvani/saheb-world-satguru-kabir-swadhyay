@@ -270,7 +270,7 @@ export function purifyAndAnalyzeVani(
     // Format full text for single-click copying
     let fullFormattedText = '';
     if (language === 'pb') {
-      fullFormattedText = `ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਇਸ ਪਾਵਨ ਮੂਲ ਬਾਣੀ (ਸਾਖੀ) ਦਾ ਸ਼ੁੱਧ ਰੂਪ ਇਸ ਪ੍ਰਕਾਰ ਹੈ:\n${correctedText}\n\n`;
+      fullFormattedText = `ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਪਾਵਨ ਮੂਲ ਬਾਣੀ (ਸਾਖੀ) ਦਾ ਸ਼ੁੱਧ ਰੂਪ ਇਸ ਪ੍ਰਕਾਰ ਹੈ:\n${correctedText}\n\n`;
       if (corrections.length > 0) {
         fullFormattedText += `ਸਰਲ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸੁਧਾਰ (ਵਰਤਣੀ):\n${corrections.map(c => `• ${c.note || `'${c.original}' ਦੀ ਥਾਂ '${c.corrected}'`}`).join('\n')}\n\n`;
       }
@@ -328,14 +328,14 @@ export function purifyAndAnalyzeVani(
   workingText = formatVaniPunctuation(workingText, language);
 
   const fallbackMeaning = language === 'pb'
-    ? 'ਇਸ ਪਾਵਨ ਬਾਣੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਆਤਮਿਕ ਗਿਆਨ, ਸਤਯਨਾਮ ਦੇ ਸਿਮਰਨ ਅਤੇ ਮਨ ਦੀ ਸ਼ੁੱਧਤਾ ਦਾ ਅਮਰ ਸੰਦੇਸ਼ ਬਖਸ਼ਦੇ ਹਨ।'
+    ? 'ਇਸ ਪਾਵਨ ਬਾਣੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਆਤਮਿਕ ਗਿਆਨ, ਸਤਯਨਾਮ ਦੇ ਸਿਮਰਨ ਅਤੇ ਮਨ ਦੀ ਸ਼ੁੱਧਤਾ ਦਾ ਅਮਰ ਸੰਦੇਸ਼ ਬਖਸ਼ਦੇ ਹਨ।'
     : language === 'en'
     ? 'In this sacred verse, Satguru Kabir Saheb reveals the path of spiritual awareness, devotion, and inner awakening.'
     : 'इस पावन वाणी में कबीर साहेब अंतर्मन की शुद्धि, सतगुरु के ज्ञान और सत्यनाम के सुमिरन का पावन संदेश देते हैं।';
 
   let fullFormattedText = '';
   if (language === 'pb') {
-    fullFormattedText = `ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੀ ਇਸ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਰੂਪ:\n${workingText}\n\n`;
+    fullFormattedText = `ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਰੂਪ:\n${workingText}\n\n`;
     if (detectedCorrections.length > 0) {
       fullFormattedText += `ਸਰਲ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸੁਧਾਰ (ਵਰਤਣੀ):\n${detectedCorrections.map(c => `• ${c.note || `'${c.original}' ਦੀ ਥਾਂ '${c.corrected}'`}`).join('\n')}\n\n`;
     }

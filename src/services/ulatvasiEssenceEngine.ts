@@ -149,7 +149,7 @@ export function generateUniqueUlatvasiAnalysis(params: AnalysisParams): Ulatvasi
     : `इंद्रियों के धरातल पर यह दृश्य सर्वथा असंभव प्रतीत होता है क्योंकि संसारी बुद्धि भौतिक कार्य-कारण नियमों में बंधी है, किंतु यह अंतःकरण के परम योग का प्रत्यक्ष मानचित्र है।`);
 
   const esotericAnalysis = deepMeaning || clueHint || (isPb
-    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਸਾਧਕ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਬਾਹਰੀ ਸੰਸਾਰ ਤੋਂ ਮੋੜ ਕੇ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਸਥਿਰ ਕਰਦਾ ਹੈ, ਤਾਂ ਮਾਇਆ ਦਾ ਪਰਦਾ ਹਟ ਕੇ ਅਨਾਹਤ ਸਤਯਨਾਮ ਧੁਨ ਪ੍ਰਗਟ ਹੁੰਦੀ ਹੈ।`
+    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਸਾਧਕ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਬਾਹਰੀ ਸੰਸਾਰ ਤੋਂ ਮੋੜ ਕੇ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਸਥਿਰ ਕਰਦਾ ਹੈ, ਤਾਂ ਮਾਇਆ ਦਾ ਪਰਦਾ ਹਟ ਕੇ ਅਨਾਹਤ ਸਤਯਨਾਮ ਧੁਨ ਪ੍ਰਗਟ ਹੁੰਦੀ ਹੈ।`
     : isEn
     ? `Satguru Kabir Saheb reveals that when awareness is retracted from outward sensory channels and stabilized in the Tenth Door, the illusion dissolves and the uncreated sound rings eternally.`
     : `सतगुरु कबीर साहेब स्पष्ट करते हैं कि जब साधक सुरति को बाह्य प्रपंच से मोड़कर दसम द्वार में एकाग्र करता है, तो माया का आवरण छिन्न-भिन्न हो जाता है और हृदय में अनहद नाद का अलौकिक संगीत जाग उठता है।`);

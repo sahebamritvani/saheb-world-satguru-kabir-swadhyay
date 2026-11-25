@@ -112,7 +112,7 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
   // 1. STEP 1: मूल पावन वाणी (Original Sacred Text)
   const step1Original = {
     title: isHi ? '१. मूल पावन वाणी' : isPb ? '੧. ਮੂਲ ਪਾਵਨ ਬਾਣੀ' : '1. Sacred Original Text (Mool Vani)',
-    subtitle: isHi ? 'सतगुरु साहेब की अमृतवाणी का शुद्ध एवं प्रामाणिक पाठ' : isPb ? 'ਸਤਿਗੁਰੂ ਸਾਹਿਬ ਜੀ ਦੀ ਅੰਮ੍ਰਿਤ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਪਾਠ' : 'Authentic Couplet Recitation & Sacred Vibration',
+    subtitle: isHi ? 'सतगुरु साहेब की अमृतवाणी का शुद्ध एवं प्रामाणिक पाठ' : isPb ? 'ਸਤਿਗੁਰੂ ਸਾਹੇਬ ਜੀ ਦੀ ਅੰਮ੍ਰਿਤ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਪਾਠ' : 'Authentic Couplet Recitation & Sacred Vibration',
     sakhiNumber: sakhi.number,
     text: originalCouplet,
     transliteration: sakhi.transliteration || '',
@@ -125,14 +125,14 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
     isHi
       ? `यह साखी सतगुरु कबीर साहेब के '${categoryTitle}' (साखी #${sakhi.number}) के अंतर्गत अंतःकरण को जाग्रत करने वाली विशिष्ट वाणी है। यह मन और इंद्रियों के विकारों को शांत कर साधक को 'सत्यनाम' के सच्चे आचरण की प्रेरणा देती है।`
       : isPb
-      ? `ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੇ '${categoryTitle}' (ਸਾਖੀ #${sakhi.number}) ਤਹਿਤ ਰੂਹਾਨੀ ਚੇਤਨਾ ਨੂੰ ਪ੍ਰਕਾਸ਼ਮਾਨ ਕਰਨ ਵਾਲੀ ਅਨਮੋਲ ਬਾਣੀ ਹੈ।`
+      ? `ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ '${categoryTitle}' (ਸਾਖੀ #${sakhi.number}) ਤਹਿਤ ਰੂਹਾਨੀ ਚੇਤਨਾ ਨੂੰ ਪ੍ਰਕਾਸ਼ਮਾਨ ਕਰਨ ਵਾਲੀ ਅਨਮੋਲ ਬਾਣੀ ਹੈ।`
       : `This sacred sakhi from '${categoryTitle}' (Sakhi #${sakhi.number}) illuminates the practitioner's inner consciousness toward living Truth.`
   );
 
   const dynamicSignificance = isHi
     ? `सतगुरु कबीर साहेब की इस पावन साखी में "${originalCouplet.split('\n')[0]}" के माध्यम से जीवन के मूल सत्य को उजागर किया गया है। इसका स्वाध्याय साधक को बाह्य प्रपंचों से मुक्त कर आंतरिक चेतना से जोड़ता है।`
     : isPb
-    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦੀ ਇਸ ਪਾਵਨ ਬਾਣੀ ("${originalCouplet.split('\n')[0]}") ਰਾਹੀਂ ਜੀਵ ਨੂੰ ਅੰਦਰੂਨੀ ਗਿਆਨ ਅਤੇ ਸਹਿਜ ਜੀਵਨ ਦਾ ਮਾਰਗ ਦਰਸਾਇਆ ਗਿਆ ਹੈ।`
+    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਪਾਵਨ ਬਾਣੀ ("${originalCouplet.split('\n')[0]}") ਰਾਹੀਂ ਜੀਵ ਨੂੰ ਅੰਦਰੂਨੀ ਗਿਆਨ ਅਤੇ ਸਹਿਜ ਜੀਵਨ ਦਾ ਮਾਰਗ ਦਰਸਾਇਆ ਗਿਆ ਹੈ।`
     : `Through "${originalCouplet.split('\n')[0]}", Satguru Kabir Saheb directs the seeker from outer illusion toward direct inner awareness.`;
 
   const step2Context = {
@@ -177,7 +177,7 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
 
   const step4Satsang = {
     title: isHi ? '४. गहरा सत्संग एवं व्यवहारिक व्याख्या' : isPb ? '੪. ਗਹਿਰਾ ਸਤਿਸੰਗ ਤੇ ਵਿਵਹਾਰਕ ਵਿਆਖਿਆ' : '4. Deep Satsang & Practical Illustration',
-    subtitle: isHi ? `सतगुरु कबीर साहेब ने साखी #${sakhi.number} क्यों कही व जीवन दृष्टांत` : isPb ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਨੇ ਸਾਖੀ #${sakhi.number} ਕਿਉਂ ਕਹੀ ਤੇ ਜੀਵਨ ਉਦਾਹਰਨ` : `Why Satguru Kabir Saheb Gave This Teaching & Everyday Example`,
+    subtitle: isHi ? `सतगुरु कबीर साहेब ने साखी #${sakhi.number} क्यों कही व जीवन दृष्टांत` : isPb ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਸਾਖੀ #${sakhi.number} ਕਿਉਂ ਕਹੀ ਤੇ ਜੀਵਨ ਉਦਾਹਰਨ` : `Why Satguru Kabir Saheb Gave This Teaching & Everyday Example`,
     bhavarth: step4Depth.whyTaught,
     deepSatsangGyan: step4Depth.satsangWithDrishtant,
     mindMayaAnalysis: step4Depth.mindMayaAnalysis,
@@ -348,7 +348,7 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
 
   // 10. STEP 10: Blessing
   const step10Blessing = {
-    title: isHi ? '१०. सतगुरु कबीर साहेब का दिव्य आशीर्वाद' : isPb ? '੧੦. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਦਾ ਅਸ਼ੀਰਵਾਦ' : '10. Satguru Kabir Saheb Blessing & Dedication',
+    title: isHi ? '१०. सतगुरु कबीर साहेब का दिव्य आशीर्वाद' : isPb ? '੧੦. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਅਸ਼ੀਰਵਾਦ' : '10. Satguru Kabir Saheb Blessing & Dedication',
     subtitle: isHi
       ? 'स्वाध्याय संपूर्णता पर गुरु वंदन'
       : isPb

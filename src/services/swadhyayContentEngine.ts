@@ -213,7 +213,7 @@ const THEME_DEPTH_TEMPLATES: Record<ThemeKey, ThemeTemplates> = {
     mindHi: 'मन एवं वाणी विश्लेषण: जिह्वा वही बोलती है जो मन में संचित होता है; वाणी को संयमित रखने का अभ्यास सीधा मन के अहंकार को निर्बल करता है।',
     mindPb: 'ਮਨ ਤੇ ਬੋਲੀ ਦੀ ਪਰਖ: ਜ਼ੁਬਾਨ ਉਹੀ ਬੋਲਦੀ ਹੈ ਜੋ ਮਨ ਵਿੱਚ ਹੁੰਦਾ ਹੈ; ਬੋਲੀ ਉੱਤੇ ਸੰਜਮ ਰੱਖਣ ਨਾਲ ਮਨ ਦਾ ਹੰਕਾਰ ਆਪੇ ਘਟਦਾ ਹੈ।',
     mindEn: 'Mind & Speech Analysis: The tongue merely echoes what fills the heart; disciplining speech immediately weakens underlying pride and anger.',
-    esotericHi: 'आध्यात्मिक प्रतीक: इस वाणी में "शब्द" या "बचन" केवल उच्चारित ध्वनि नहीं, बल्कि चित्त की तरंग है। जब साधक कटु तरंगों को रोककर "शीतल शब्द" (सतनाम-ध्वनि) में स्थित होता है, तब अंतरंग कमल खिल उठता है।',
+    esotericHi: 'आध्यात्मिक प्रतीक: इस वाणी में "शब्द" या "बचन" केवल उच्चारित ध्वनि नहीं, बल्कि चित्त की तरंग है। जब साधक कटु तरंगों को रोककर "शीतल शब्द" (सत्यनाम-ध्वनि) में स्थित होता है, तब अंतरंग कमल खिल उठता है।',
     esotericPb: 'ਰੂਹਾਨੀ ਪ੍ਰਤੀਕ: ਇਸ ਬਾਣੀ ਵਿੱਚ "ਸ਼ਬਦ" ਜਾਂ "ਬਚਨ" ਕੇਵਲ ਬਾਹਰੀ ਆਵਾਜ਼ ਨਹੀਂ, ਸਗੋਂ ਚਿੱਤ ਦੀ ਤਰੰਗ ਹੈ। ਕੌੜੀਆਂ ਤਰੰਗਾਂ ਰੋਕ ਕੇ "ਸ਼ੀਤਲ ਸ਼ਬਦ" (ਸਤਯਨਾਮ) ਵਿੱਚ ਟਿਕਣ ਨਾਲ ਅੰਦਰਲਾ ਪ੍ਰਕਾਸ਼ ਖਿੜਦਾ ਹੈ।',
     esotericEn: 'Esoteric Symbolism: Here "Shabd" or speech signifies not just vocal sound, but the subtle vibration of consciousness. Stilling bitter mental waves reveals the cooling inner Naam.',
     tattvaHi: 'तत्व ज्ञान: वाणी की शुद्धता ही सुरति-शब्द योग की प्रथम सीढ़ी है; बिना शीतल स्वभाव के घट में सत्य का वास नहीं होता।',

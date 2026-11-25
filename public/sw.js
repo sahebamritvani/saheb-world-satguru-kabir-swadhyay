@@ -1,4 +1,4 @@
-const CACHE_NAME = 'saheb-world-v1.2.0';
+const CACHE_NAME = 'saheb-world-v1.3.0';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -36,6 +36,10 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  const reqUrl = new URL(event.request.url);
+  if (reqUrl.origin === self.location.origin && reqUrl.pathname === '/version.json') {
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {

@@ -115,7 +115,7 @@ const SPIRITUAL_LEXICON: Record<string, MysticalEntry> = {
   'सतनाम': { gurmukhi: 'ਸਤਯਨਾਮ', roman: 'Satyanaam', enConcept: 'The True Holy Name', punjabiMeaning: 'ਸਤਿ ਸਰੂਪ ਨਾਮ' },
   'सतगुरु': { gurmukhi: 'ਸਤਿਗੁਰੂ', roman: 'Satguru', enConcept: 'True Spiritual Master / Divine Guide', punjabiMeaning: 'ਪੂਰਨ ਸੱਚਾ ਗੁਰੂ' },
   'सद्गुरु': { gurmukhi: 'ਸਤਿਗੁਰੂ', roman: 'Satguru', enConcept: 'Supreme Divine Enlightener', punjabiMeaning: 'ਪਰਮ ਸਤਿਗੁਰੂ' },
-  'साहेब': { gurmukhi: 'ਸਾਹਿਬ', roman: 'Saheb', enConcept: 'The Sovereign Divine Lord', punjabiMeaning: 'ਮਾਲਕ / ਸੁਆਮੀ' },
+  'साहेब': { gurmukhi: 'ਸਾਹੇਬ', roman: 'Saheb', enConcept: 'The Sovereign Divine Lord', punjabiMeaning: 'ਮਾਲਕ / ਸੁਆਮੀ' },
   'कबीर': { gurmukhi: 'ਕਬੀਰ', roman: 'Kabir', enConcept: 'The Infinite Divine Light / Satguru Kabir', punjabiMeaning: 'ਪਰਮ ਚੇਤਨਾ / ਭਗਤ ਕਬੀਰ ਜੀ' },
   'गगन': { gurmukhi: 'ਗਗਨ', roman: 'Gagan', enConcept: 'Spiritual Sky / High Consciousness Realm / Trikuti', punjabiMeaning: 'ਅੰਦਰੂਨੀ ਆਕਾਸ਼ / ਦਸਮ ਦੁਆਰ' },
   'अनामी': { gurmukhi: 'ਅਨਾਮੀ', roman: 'Anaami', enConcept: 'The Nameless Supreme Abode / Anami Lok', punjabiMeaning: 'ਨਾਮ-ਰੂਪ ਤੋਂ ਰਹਿਤ ਪਰਮ ਧਾਮ' },
@@ -367,7 +367,7 @@ export function generatePunjabiMeaning(hindiMeaning: string): string {
   paMeaning = paMeaning
     .replace(/ਕਹਿੰਦੇ ਹਨ/g, 'ਫ਼ਰਮਾਉਂਦੇ ਹਨ')
     .replace(/ਅਰਥ ਇਹ ਹੈ/g, 'ਭਾਵ ਇਹ ਹੈ')
-    .replace(/ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ');
+    .replace(/ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ');
 
   return enforceSacredNameSpelling(paMeaning, 'pa');
 }
@@ -427,7 +427,7 @@ export function convertGranthContent(inputJson: string | object): ConvertedGrant
 
   const paMeaning = rawMeaning && rawMeaning.trim().length > 0
     ? generatePunjabiMeaning(rawMeaning)
-    : `।। ${SACRED_NAME_CONSTANTS.pa} ।। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਨਾਸ਼ਵੰਤ ਹੈ ਅਤੇ ਕੇਵਲ ${SACRED_NAME_CONSTANTS.pa} ਹੀ ਸੱਚੀ ਮੁਕਤੀ ਦਾ ਆਧਾਰ ਹੈ। ਆਪਣੇ ਮਨ ਨੂੰ ਅੰਦਰੂਨੀ ਸੁਰਤ ਵਿਚ ਲਗਾ ਕੇ ਪਰਮ ਸੱਚ ਦੀ ਪ੍ਰਾਪਤੀ ਕਰੋ।`;
+    : `।। ${SACRED_NAME_CONSTANTS.pa} ।। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਨਾਸ਼ਵੰਤ ਹੈ ਅਤੇ ਕੇਵਲ ${SACRED_NAME_CONSTANTS.pa} ਹੀ ਸੱਚੀ ਮੁਕਤੀ ਦਾ ਆਧਾਰ ਹੈ। ਆਪਣੇ ਮਨ ਨੂੰ ਅੰਦਰੂਨੀ ਸੁਰਤ ਵਿਚ ਲਗਾ ਕੇ ਪਰਮ ਸੱਚ ਦੀ ਪ੍ਰਾਪਤੀ ਕਰੋ।`;
 
   // 3. ENGLISH BLOCK (Satyanaam || Romanized Transliteration & Spiritual Meaning)
   const enTitle = transliterateDevanagariToRoman(hiTitleClean)

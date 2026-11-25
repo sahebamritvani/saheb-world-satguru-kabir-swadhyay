@@ -908,7 +908,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
       en: 'Updesh Ko Ang - 18',
     },
     text: {
-      hi: 'बन्दे तू कर बन्दगी, तो पावै दीदार।\nऔसर मानुष जनम का, बहुरि न बारंबार।।',
+      hi: 'बन्दे तू कर बंदगी, तो पावै दीदार।\nऔसर मानुष जनम का, बहुरि न बारंबार।।',
       pb: 'ਬੰਦੇ ਤੂੰ ਕਰ ਬੰਦਗੀ, ਤੋ ਪਾਵੈ ਦੀਦਾਰ।\nਔਸਰ ਮਾਨੁਸ਼ ਜਨਮ ਕਾ, ਬਹੁਪਿ ਨ ਬਾਰੰਬਾਰ।।',
       en: 'Bande tu kar bandagi, to pavai didar. Aosar manush janam ka, bahuri na barambar..'
     },
@@ -920,7 +920,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     wordMeanings: {
       hi: [
-        { word: 'बन्दगी (Bandagi)', meaning: 'भक्ति / सेवा / समर्पण' },
+        { word: 'बंदगी (Bandagi)', meaning: 'भक्ति / सेवा / समर्पण' },
         { word: 'दीदार (Didar)', meaning: 'दर्शन' },
         { word: 'औसर (Aosar)', meaning: 'अवसर / मौका' }
       ],

@@ -37,14 +37,14 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
   }, [language]);
 
   useEffect(() => {
-    // Keep splash screen visible for divine darshan, then smoothly fade out
+    // Brief sacred darshan so app starts within 1 second offline and online
     const fadeTimer = setTimeout(() => {
       setIsFadingOut(true);
-    }, 2800);
+    }, 550);
 
     const finishTimer = setTimeout(() => {
       onFinishRef.current();
-    }, 3200);
+    }, 750);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -56,21 +56,21 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
     setIsFadingOut(true);
     setTimeout(() => {
       onFinishRef.current();
-    }, 150);
+    }, 100);
   };
 
   // Top Header text according to active language state
   const topHeaderDisplay = activeLang === 'pb'
-    ? '🌹।।ਸਤਯਨਾਮ।।🌹'
+    ? '🌹 ।।ਸਤਯਨਾਮ।। 🌹'
     : activeLang === 'en'
-    ? '🌹||Satyanaam||🌹'
-    : '🌹।।सत्यनाम।।🌹';
+    ? '🌹 ||Satyanaam|| 🌹'
+    : '🌹 ।। सत्यनाम ।। 🌹';
 
   // Bottom Title according to active language state
   const titleText = activeLang === 'pb'
     ? 'ਬੰਦੀਛੋੜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ'
     : activeLang === 'en'
-    ? 'Bandichoor Satguru Kabir Saheb'
+    ? 'Bandichhor Satguru Kabir Saheb'
     : 'बंदीछोड़ सतगुरु कबीर साहेब';
 
   const subtitleText = activeLang === 'pb'
@@ -191,7 +191,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
             className="w-full max-w-sm text-center pb-2 flex flex-col items-center gap-2.5"
           >
             <div className="w-full bg-[#EEDBBD]/80 border border-amber-300/40 h-2 rounded-full overflow-hidden shadow-inner">
-              <div className="bg-gradient-to-r from-[#EA580C] via-[#F59E0B] to-[#FBBF24] h-full rounded-full animate-[progress_2.8s_linear_forwards]" />
+              <div className="bg-gradient-to-r from-[#EA580C] via-[#F59E0B] to-[#FBBF24] h-full rounded-full animate-[progress_0.65s_linear_forwards]" />
             </div>
 
             <div className="text-xs sm:text-sm font-serif font-bold text-[#8C2818] tracking-wide">

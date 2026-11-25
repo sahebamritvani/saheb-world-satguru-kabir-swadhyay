@@ -68,10 +68,9 @@ export default defineConfig(({ command }) => {
                   request.destination === 'document' ||
                   url.pathname === '/' ||
                   url.pathname === '/index.html'),
-              handler: 'NetworkFirst',
+              handler: 'StaleWhileRevalidate',
               options: {
                 cacheName: 'sahebworld-html-shell',
-                networkTimeoutSeconds: 3,
                 matchOptions: {
                   ignoreSearch: true,
                 },
@@ -134,13 +133,12 @@ export default defineConfig(({ command }) => {
               urlPattern: ({ sameOrigin, request }) =>
                 sameOrigin &&
                 (request.destination === 'script' || request.destination === 'style'),
-              handler: 'NetworkFirst',
+              handler: 'CacheFirst',
               options: {
                 cacheName: 'sahebworld-app-shell',
-                networkTimeoutSeconds: 3,
                 expiration: {
                   maxEntries: 150,
-                  maxAgeSeconds: 60 * 60 * 24 * 14,
+                  maxAgeSeconds: 60 * 60 * 24 * 30,
                 },
                 cacheableResponse: {
                   statuses: [0, 200],

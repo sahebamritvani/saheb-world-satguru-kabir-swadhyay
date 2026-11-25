@@ -10,7 +10,6 @@ import { LanguageProvider, useLanguage, getScriptDirection } from './context/Lan
 import { Layout } from './components/Layout';
 import { DailyPawanSakhi } from './components/DailyPawanSakhi';
 import { SacredLoader } from './components/SacredLoader';
-import { CoreModulesDashboard } from './components/CoreModulesDashboard';
 import { NityaVaniSettings } from './components/NityaVaniSettings';
 import { RosePetalShower } from './components/RosePetalShower';
 import { SettingsModal, SettingsTabId } from './components/SettingsModal';
