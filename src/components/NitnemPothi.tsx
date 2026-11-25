@@ -414,7 +414,7 @@ export const NitnemAngItem = forwardRef<HTMLDivElement, {
                 borderColor: `${pothiColors.gold}70`,
               }}
             >
-              {language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।।साहेब बन्दगी साहेब।।'}
+              {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
             </span>
           </div>
         )}

@@ -1,7 +1,7 @@
 let cachedAppUrl: string | null = null;
 
-export const SHARED_APP_URL = 'https://ais-pre-meux3g56fqgqmol3tohmrd-795050738320.asia-east1.run.app';
-export const DEV_APP_URL = 'https://ais-pre-meux3g56fqgqmol3tohmrd-795050738320.asia-east1.run.app';
+export const SHARED_APP_URL = 'https://saheb-world-satguru-kabir-swadhyay.vercel.app/';
+export const DEV_APP_URL = 'https://saheb-world-satguru-kabir-swadhyay.vercel.app/';
 
 /**
  * Synchronously returns the active live deployment URL.

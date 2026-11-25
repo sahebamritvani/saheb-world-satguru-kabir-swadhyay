@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { X, ShieldCheck, KeyRound, Cloud, LogOut, Database, Sliders } from 'lucide-react';
-import { signOut } from 'firebase/auth';
-import { auth, signInWithGoogle } from '../lib/firebase';
+import { X, ShieldCheck, KeyRound, LogOut, Database, Sliders } from 'lucide-react';
 import { useAppTheme } from '../theme/ThemeContext';
 import { Language } from '../types';
 import {
   isAdminAuthenticated,
-  isAuthorizedAdminEmail,
-  isFirebaseAdminVerified,
   setAdminAuthenticated,
   verifyAdminPin,
 } from '../services/adminAuth';
@@ -28,15 +24,12 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
 }) => {
   const { theme, isDarkMode } = useAppTheme();
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
-  const [isFirebaseAdmin, setIsFirebaseAdmin] = useState<boolean>(() => isFirebaseAdminVerified());
   const [passkeyInput, setPasskeyInput] = useState<string>('');
   const [statusNotice, setStatusNotice] = useState<string | null>(null);
-  const [isGooglePending, setIsGooglePending] = useState<boolean>(false);
 
   useEffect(() => {
     const syncAuth = () => {
       setIsAdmin(isAdminAuthenticated());
-      setIsFirebaseAdmin(isFirebaseAdminVerified());
     };
     syncAuth();
     window.addEventListener('sahebworld:admin-auth-change', syncAuth);
@@ -89,60 +82,9 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    setIsGooglePending(true);
-    setStatusNotice(null);
-    try {
-      const user = await signInWithGoogle();
-      setIsFirebaseAdmin(isFirebaseAdminVerified());
-      if (user?.email && isAuthorizedAdminEmail(user.email)) {
-        setAdminAuthenticated(true);
-        setIsAdmin(true);
-        setStatusNotice(
-          language === 'pb'
-            ? '✓ Google ਪ੍ਰਮਾਣੀਕਰਨ ਤੇ ਕਲਾਉਡ ਸਿੰਕ ਸਰਗਰਮ!'
-            : language === 'en'
-            ? '✓ Google verification & cloud sync active!'
-            : '✓ Google प्रमाणीकरण व क्लाउड सिंक सक्रिय!'
-        );
-      } else {
-        setAdminAuthenticated(false);
-        setIsAdmin(false);
-        if (auth.currentUser) {
-          try {
-            await signOut(auth);
-          } catch {}
-        }
-        setStatusNotice(
-          language === 'pb'
-            ? '✗ ਸਿਰਫ਼ ਅਧਿਕਾਰਤ ਪ੍ਰਸ਼ਾਸਕ ਖਾਤਾ ਹੀ ਮਾਨਯ ਹੈ।'
-            : language === 'en'
-            ? '✗ Only the authorized administrator account is allowed.'
-            : '✗ केवल अधिकृत प्रशासक खाता ही मान्य है।'
-        );
-      }
-    } catch {
-      setStatusNotice(
-        language === 'pb'
-          ? 'Google ਸਾਈਨ-ਇਨ ਰੱਦ ਹੋਇਆ। ਹੇਠਾਂ ਪਾਸਕੀ ਨਾਲ ਕੋਸ਼ਿਸ਼ ਕਰੋ।'
-          : language === 'en'
-          ? 'Google Sign-In was cancelled or blocked. Try the passkey below.'
-          : 'Google साइन-इन रद्द या अवरुद्ध हुआ। नीचे पासकी से प्रयास करें।'
-      );
-    } finally {
-      setIsGooglePending(false);
-    }
-  };
-
-  const handleLogout = async () => {
+  const handleLogout = () => {
     setAdminAuthenticated(false);
     setIsAdmin(false);
-    setIsFirebaseAdmin(false);
-    if (auth?.currentUser?.email && isAuthorizedAdminEmail(auth.currentUser.email)) {
-      try {
-        await signOut(auth);
-      } catch {}
-    }
     setStatusNotice(null);
     onClose();
   };
@@ -214,29 +156,11 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                 }`}
               >
                 {language === 'pb'
-                  ? 'ਪ੍ਰਸ਼ਾਸਕ ਸੈਸ਼ਨ ਸਰਗਰਮ ਹੈ। ਤੁਸੀਂ ਸੈਟਿੰਗਜ਼ ਸਟੂਡੀਓ, ਦਰਸ਼ਨ, ਆਡੀਓ ਤੇ ਵੀਡੀਓ ਪ੍ਰਬੰਧਨ ਕਰ ਸਕਦੇ ਹੋ।'
+                  ? 'ਪ੍ਰਸ਼ਾਸਕ ਸੈਸ਼ਨ ਸਰਗਰਮ ਹੈ। ਤੁਸੀਂ ਸੈਟਿੰਗਜ਼ ਸਟੂਡੀਓ, ਦਰਸ਼ਨ, ਆਡੀਓ ਤੇ ਡੇਟਾ ਲੇਅਰ ਇੰਜੈਕਟਰ ਪ੍ਰਬੰਧਨ ਕਰ ਸਕਦੇ ਹੋ।'
                   : language === 'en'
                   ? 'Administrator session is active. You can manage portraits, media uploads, and content slots.'
-                  : 'प्रशासक सत्र सक्रिय है। अब आप सेटिंग्स स्टूडियो, पावन दर्शन, ऑडियो एवं वीडियो प्रबंधन कर सकते हैं।'}
+                  : 'प्रशासक सत्र सक्रिय है। अब आप सेटिंग्स स्टूडियो, पावन दर्शन, ऑडियो एवं डेटा लेयर इंजेक्टर प्रबंधन कर सकते हैं।'}
               </div>
-
-              {!isFirebaseAdmin && (
-                <button
-                  type="button"
-                  disabled={isGooglePending}
-                  onClick={handleGoogleSignIn}
-                  className="w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold font-serif transition cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60"
-                >
-                  <Cloud className="w-4 h-4 shrink-0" />
-                  <span>
-                    {language === 'pb'
-                      ? 'Google ਕਲਾਉਡ ਸਿੰਕ ਚਾਲੂ ਕਰੋ'
-                      : language === 'en'
-                      ? 'Connect Google Cloud Sync'
-                      : 'Google क्लाउड सिंक सक्रिय करें'}
-                  </span>
-                </button>
-              )}
 
               {onOpenSettings && (
                 <button
@@ -282,7 +206,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                     ? 'ਡੇਟਾ ਲੇਅਰ ਇੰਜੈਕਟਰ ਖੋਲ੍ਹੋ'
                     : language === 'en'
                     ? 'Open Data Layer Injector'
-                    : 'डेटा लेयर इंजेक्टर खोलें'}
+                    : 'प्रशासक डेटा लेयर इंजेक्टर खोलें'}
                 </span>
               </button>
 
@@ -303,33 +227,13 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
             </div>
           ) : (
             <div className="space-y-3.5">
-              <button
-                type="button"
-                disabled={isGooglePending}
-                onClick={handleGoogleSignIn}
-                className="w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold font-serif transition cursor-pointer shadow-xs flex items-center justify-center gap-2 disabled:opacity-60"
-              >
-                <Cloud className="w-4 h-4 shrink-0" />
-                <span>
-                  {isGooglePending
-                    ? language === 'en'
-                      ? 'Signing in...'
-                      : 'साइन-इन हो रहा है...'
-                    : language === 'pb'
-                    ? 'Google ਨਾਲ ਲੌਗ-ਇਨ ਕਰੋ'
-                    : language === 'en'
-                    ? 'Sign in with Google'
-                    : 'Google से लॉग-इन करें'}
-                </span>
-              </button>
-
-              <div className="text-center text-[11px] opacity-65 font-serif">
+              <p className="text-xs font-serif opacity-80 leading-relaxed" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
-                  ? '— ਜਾਂ ਗੁਪਤ ਪਾਸਕੀ ਦਰਜ ਕਰੋ —'
+                  ? 'ਐਡਮਿਨ ਪੈਨਲ ਖੋਲ੍ਹਣ ਲਈ ਆਪਣੀ ਗੁਪਤ ਪਾਸਕੀ / ਪ੍ਰਸ਼ਾਸਕ ਪਿੰਨ ਦਰਜ ਕਰੋ।'
                   : language === 'en'
-                  ? '— or enter secret passkey —'
-                  : '— या गुप्त पासकी दर्ज करें —'}
-              </div>
+                  ? 'Enter your secret administrator passkey / PIN to unlock admin controls.'
+                  : 'प्रशासक पैनल व डेटा लेयर इंजेक्टर खोलने के लिए अपनी गुप्त पासकी / प्रशासक पिन दर्ज करें।'}
+              </p>
 
               <form onSubmit={handlePasskeySubmit} className="flex items-center gap-2">
                 <div className="relative flex-1">
@@ -341,10 +245,10 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                     onChange={(e) => setPasskeyInput(e.target.value)}
                     placeholder={
                       language === 'pb'
-                        ? 'ਗੁਪਤ ਪਾਸਕੀ'
+                        ? 'ਗੁਪਤ ਪਾਸਕੀ / ਪਿੰਨ'
                         : language === 'en'
-                        ? 'Secret Passkey'
-                        : 'गुप्त पासकी'
+                        ? 'Admin Passkey / PIN'
+                        : 'गुप्त पासकी / प्रशासक पिन'
                     }
                     style={{
                       backgroundColor: theme.bgSecondary,

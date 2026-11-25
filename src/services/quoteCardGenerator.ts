@@ -1,5 +1,6 @@
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
-import { formatCoupletString } from '../utils/textSanitizer';
+import { formatCoupletIntoTwoLines, formatCoupletString } from '../utils/textSanitizer';
+import { SACRED_SHARE_TEMPLATE } from './shareTemplate';
 
 export interface GeneratedCardResult {
   blob: Blob;
@@ -116,11 +117,11 @@ export async function generateQuoteCardCanvas(options: {
   ctx.lineWidth = 3;
   ctx.strokeRect(54, 54, width - 108, height - 108);
 
-  // Header
+  // Header: "🌹 ।। सत्यनाम ।। 🌹"
   ctx.fillStyle = themeItem.accent || '#D97706';
-  ctx.font = 'bold 36px "Noto Serif Devanagari", serif';
+  ctx.font = 'bold 38px "Noto Serif Devanagari", serif';
   ctx.textAlign = 'center';
-  ctx.fillText(SACRED_BRANDING.header[language], width / 2, 120);
+  ctx.fillText(SACRED_SHARE_TEMPLATE.header[language] || SACRED_BRANDING.header[language], width / 2, 120);
 
   ctx.font = '24px "Noto Sans Devanagari", sans-serif';
   ctx.fillStyle = themeItem.text;
@@ -134,18 +135,26 @@ export async function generateQuoteCardCanvas(options: {
     165
   );
 
-  // Main Verse Text (Two-line formatted)
-  const verseText = formatCoupletString(customText || sakhi.text[language] || sakhi.text.hi);
-  const lines = verseText.split('\n');
+  // Main Verse Text (Strictly 2 lines ending with double danda ॥)
+  const rawText = customText || sakhi.text[language] || sakhi.text.hi;
+  const [line1, line2] = formatCoupletIntoTwoLines(rawText, language);
+  const lines = [line1, line2].filter(Boolean);
 
   ctx.font = 'bold 44px "Noto Serif Devanagari", serif';
   ctx.fillStyle = themeItem.text;
 
-  let currentY = height * 0.42 - (lines.length * 30);
+  let currentY = height * 0.40 - (lines.length * 30);
   lines.forEach((line) => {
     ctx.fillText(line.trim(), width / 2, currentY);
-    currentY += 65;
+    currentY += 68;
   });
+
+  // Attribution Line right below the Doha: "— सद्गुरु कबीर साहेब"
+  const attributionText = SACRED_SHARE_TEMPLATE.attribution[language];
+  ctx.font = 'bold 26px "Noto Serif Devanagari", serif';
+  ctx.fillStyle = themeItem.accent || '#D97706';
+  ctx.fillText(attributionText, width / 2, currentY + 10);
+  currentY += 46;
 
   // Bhavarth
   const bhavarth = sakhi.bhavarth[language] || sakhi.bhavarth.hi;
@@ -154,11 +163,11 @@ export async function generateQuoteCardCanvas(options: {
     ctx.fillStyle = themeItem.text;
     ctx.globalAlpha = 0.88;
     
-    // Simple line wrap for bhavarth
+    // Line wrap for bhavarth
     const words = bhavarth.split(' ');
     let currentLine = '';
-    let bY = currentY + 50;
-    const maxBhavarthLines = ratio === 'story' ? 10 : 5;
+    let bY = currentY + 40;
+    const maxBhavarthLines = ratio === 'story' ? 10 : 4;
     let lineCount = 0;
 
     for (let n = 0; n < words.length; n++) {
@@ -183,16 +192,21 @@ export async function generateQuoteCardCanvas(options: {
     ctx.globalAlpha = 1.0;
   }
 
-  // Footer Branding
-  ctx.fillStyle = themeItem.accent || '#D97706';
-  ctx.font = 'bold 26px "Noto Serif Devanagari", serif';
-  ctx.fillText('साहेब वर्ल्ड • Saheb World', width / 2, height - 90);
+  // Clean Unified Footer:
+  // "सौजन्यः साहेब वर्ल्ड साधक परिवार (Saheb World)"
+  // "।। साहेब बंदगी साहेब ।। 🙏"
+  // Zero duplicate branding!
+  const footerLines = SACRED_SHARE_TEMPLATE.footer[language].split('\n');
+  const footerL1 = footerLines[0];
+  const footerL2 = footerLines[1];
 
-  ctx.font = '18px "Noto Sans Devanagari", sans-serif';
+  ctx.fillStyle = themeItem.accent || '#D97706';
+  ctx.font = 'bold 23px "Noto Sans Devanagari", sans-serif';
+  ctx.fillText(footerL1, width / 2, height - 92);
+
+  ctx.font = 'bold 30px "Noto Serif Devanagari", serif';
   ctx.fillStyle = themeItem.text;
-  ctx.globalAlpha = 0.7;
-  ctx.fillText('satgurukabir.app • बंदीछोड़ सतगुरु कबीर साहेब', width / 2, height - 60);
-  ctx.globalAlpha = 1.0;
+  ctx.fillText(footerL2, width / 2, height - 52);
 
   return new Promise<GeneratedCardResult>((resolve, reject) => {
     canvas.toBlob((blob) => {

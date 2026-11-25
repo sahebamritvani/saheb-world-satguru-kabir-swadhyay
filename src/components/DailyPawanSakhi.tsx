@@ -58,7 +58,8 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sakhi, Language, SACRED_BRANDING, AppView, SggsKabirVerse } from '../types';
-import { formatCoupletString } from '../utils/textSanitizer';
+import { formatCoupletString, formatCoupletIntoTwoLines } from '../utils/textSanitizer';
+import { SACRED_SHARE_TEMPLATE, buildStandardShareText } from '../services/shareTemplate';
 import { translations, formatSakhiShareText } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -763,11 +764,13 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
   // --- TEXT EXPORT GENERATION ---
   const generateExportText = () => {
-    let out = `${exactTop}\n`;
+    const [l1, l2] = formatCoupletIntoTwoLines(sakhi.text[language], language);
+    let out = `${SACRED_SHARE_TEMPLATE.header[language]}\n`;
     out += `${language === 'hi' ? 'सतगुरु कबीर साहेब पावन साखी' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸਾਖੀ' : 'Satguru Kabir Saheb Sacred Sakhi'} #${sakhi.number}\n`;
     out += `[${sakhi.categoryTitle[language]}]\n`;
     out += `--------------------------------------------------------\n\n`;
-    out += `${sakhi.text[language]}\n\n`;
+    out += `${l1}\n${l2}\n`;
+    out += `${SACRED_SHARE_TEMPLATE.attribution[language]}\n\n`;
     
     if (sakhi.transliteration) {
       out += `"${sakhi.transliteration}"\n\n`;
@@ -788,8 +791,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     out += `${sakhi.contemplation[language]}\n\n`;
 
     out += `--------------------------------------------------------\n`;
-    out += `${exactBottom}\n`;
-    out += `${language === 'hi' ? 'साहेब वर्ल्ड - सतगुरु कबीर साहेब स्वाध्याय ऐप' : language === 'pb' ? 'ਸਾਹੇਬ ਵਰਲਡ - ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਵਾਧਿਆਏ ਐਪ' : 'Saheb World - Satguru Kabir Saheb Swadhyay'}\n`;
+    out += `${SACRED_SHARE_TEMPLATE.footer[language]}\n`;
 
     return out;
   };
@@ -1343,7 +1345,12 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
               <button
                 onClick={async () => {
-                  await navigator.clipboard.writeText(`${exactTop}\n${sakhi.text[language]}\n${exactBottom}`);
+                  const shareText = buildStandardShareText({
+                    text: sakhi.text[language],
+                    language,
+                    sakhiNumber: sakhi.number,
+                  });
+                  await navigator.clipboard.writeText(shareText);
                   setCopiedToast(true);
                   setTimeout(() => setCopiedToast(false), 2000);
                 }}
@@ -1356,7 +1363,12 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
               <button
                 onClick={() => {
-                  const text = `${exactTop}\n*${sakhi.text[language]}*\n\n${sakhi.bhavarth[language]}\n\n${exactBottom}\n- Saheb World App`;
+                  const text = buildStandardShareText({
+                    text: sakhi.text[language],
+                    language,
+                    meaning: sakhi.bhavarth[language],
+                    sakhiNumber: sakhi.number,
+                  });
                   window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
                 }}
                 className="px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 bg-[#25D366] text-white hover:opacity-90 transition shadow-xs cursor-pointer"

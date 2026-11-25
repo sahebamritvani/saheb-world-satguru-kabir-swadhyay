@@ -82,7 +82,7 @@ export const AUTHENTIC_AARTI_DEFAULTS: Record<AartiSection, Record<Language, str
 चारों युग के पीर,गुरु जय जय सत्य कबीर।
 जय जय सत्य कबीर, गुरु जय जय सत्य कबीर।
 
-।।साहेब बन्दगी साहेब।।`,
+।। साहेब बंदगी साहेब ।।`,
     pb: `।।ਸਤ੍ਯਨਾਮ।।
 ਆਰਤੀ-੧
 

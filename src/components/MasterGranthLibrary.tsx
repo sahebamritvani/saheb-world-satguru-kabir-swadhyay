@@ -164,9 +164,6 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
   }, [initialGranthId]);
 
   useEffect(() => {
-    const handleOpenAdvancedSuite = () => {
-      setShowAdvancedSuiteModal(true);
-    };
     const handleAdminSlotsUpdated = () => {
       clearMasterGranthCaches();
       setLoadedGranthsMap(Object.fromEntries(MASTER_GRANTH_CATALOG.map((g) => [g.slug, g])));
@@ -174,10 +171,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
       setCurrentPage(1);
       setAdminSlotsVersion((v) => v + 1);
     };
-    window.addEventListener('sahebworld_open_advanced_reading_suite', handleOpenAdvancedSuite);
     window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
     return () => {
-      window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenAdvancedSuite);
       window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
     };
   }, []);
@@ -998,7 +993,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
         backgroundColor: themeStyle.bg,
         color: themeStyle.text,
       }}
-      className="w-full max-w-full min-h-screen p-0 pb-16 transition-colors duration-300"
+      className="w-full max-w-full min-h-screen pt-2 sm:pt-4 p-0 pb-16 transition-colors duration-300"
     >
       {/* Floating Exit Button for Zen Mode */}
       {zenMode && (
@@ -1011,49 +1006,6 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           <EyeOff size={15} />
           <span>{language === 'pb' ? 'ਜੇਨ ਮੋਡ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Exit Zen Mode' : 'ज़ेन मोड बंद करें'}</span>
         </button>
-      )}
-      {/* Active Granth Sub-Header Bar (only when reading a specific Granth) */}
-      {selectedGranthSlug && (
-        <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-3 py-2.5 sm:p-4 rounded-2xl flex items-center justify-between shadow-md sticky top-16 z-20 border border-amber-400/25 mb-3">
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <button
-              type="button"
-              onClick={() => {
-                setSelectedGranthSlug('');
-                sacredHaptics.lightTap();
-              }}
-              aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
-              className="min-w-[40px] min-h-[40px] flex items-center justify-center hover:bg-white/20 rounded-full transition cursor-pointer shrink-0"
-            >
-              <ArrowLeft size={20} />
-            </button>
-            <div className="min-w-0">
-              <h2 className="text-base sm:text-lg font-bold font-serif leading-tight truncate">
-                {currentGranth.title[language]}
-              </h2>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            {onSelectLanguage && (
-              <div className="flex items-center gap-1 bg-white/20 p-1 rounded-lg shrink-0">
-                {(['hi', 'pb', 'en'] as Language[]).map((lng) => (
-                  <button
-                    key={lng}
-                    onClick={() => onSelectLanguage(lng)}
-                    className={`px-2 py-0.5 rounded text-xs font-bold font-serif transition-all cursor-pointer ${
-                      language === lng
-                        ? 'bg-white text-amber-600 shadow-sm'
-                        : 'text-white/80 hover:bg-white/10'
-                    }`}
-                  >
-                    {lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN'}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
       )}
 
       {/* Top Main Heading: Saheb World Sacred Granths & Features */}
@@ -1791,7 +1743,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           backgroundColor: themeStyle.card,
           borderColor: themeStyle.border,
         }}
-        className="sticky top-2 z-30 p-2.5 sm:p-3.5 rounded-2xl border shadow-lg backdrop-blur-md bg-opacity-95 transition-all duration-200 flex flex-col gap-2 mx-auto w-full max-w-7xl"
+        className="relative z-20 p-2.5 sm:p-3.5 rounded-2xl border shadow-md backdrop-blur-md bg-opacity-95 transition-all duration-200 flex flex-col gap-2 mx-auto w-full max-w-7xl"
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
           {/* 1. Layout Mode Switcher: Continuous vs Parallel vs Page Flip (3-Col Segmented Control) */}
@@ -2095,7 +2047,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               type="button"
               onClick={() => {
                 sacredHaptics.lightTap();
-                setShowAdvancedSuiteModal(true);
+                window.dispatchEvent(new CustomEvent('sahebworld_open_advanced_reading_suite'));
               }}
               className="px-2.5 py-1.5 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0"
               title={language === 'pb' ? 'ਉੱਨਤ ਸਾਧਨ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन'}
@@ -2423,14 +2375,14 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
           <div
             onClick={(e) => e.stopPropagation()}
             style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border, color: themeStyle.text }}
-            className="rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 shadow-2xl backdrop-blur-xl max-w-xl w-full max-h-[88dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain p-4 sm:p-7 pb-safe space-y-6"
+            className="rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 shadow-2xl backdrop-blur-xl max-w-xl w-full max-h-[88dvh] sm:max-h-[90vh] overflow-y-auto overflow-x-hidden overscroll-contain p-3.5 sm:p-7 pb-safe space-y-6"
           >
             <div
               onClick={() => setShowAdvancedSuiteModal(false)}
               className="sm:hidden w-12 h-1.5 bg-amber-500/40 rounded-full mx-auto -mt-1 mb-1 cursor-pointer"
               aria-hidden="true"
             />
-            <div className="flex items-center justify-between border-b pb-3 gap-2" style={{ borderColor: themeStyle.border }}>
+            <div className="flex flex-wrap items-center justify-between border-b pb-3 gap-2" style={{ borderColor: themeStyle.border }}>
               <div className="flex items-center gap-2 min-w-0">
                 <div className="w-9 h-9 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-600 shrink-0">
                   <Settings size={20} />

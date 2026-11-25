@@ -376,7 +376,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       </motion.div>
 
       {/* Search & Filter Bar */}
-      <div className="space-y-3 sticky top-0 z-10 p-1" style={{ backgroundColor: theme.cardBg }}>
+      <div className="space-y-3 relative z-10 p-1" style={{ backgroundColor: theme.cardBg }}>
         <div className="relative group">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-amber-600 opacity-50 group-focus-within:opacity-100" />
           <input

@@ -22,7 +22,8 @@ import {
   GeneratedCardResult 
 } from '../services/quoteCardGenerator';
 import { satyanaamAudio } from '../services/audioDhun';
-import { formatCoupletString, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
+import { formatCoupletString, formatCoupletIntoTwoLines, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
+import { SACRED_SHARE_TEMPLATE } from '../services/shareTemplate';
 
 interface QuoteCardModalProps {
   isOpen: boolean;
@@ -111,7 +112,7 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
         const status = await downloadOrShareImage(
           result,
           `Saheb World - Sakhi #${sakhi.number}`,
-          `।। साहेब बंदगी साहेब ।।\n${sakhi.text[cardLanguage] || sakhi.text.hi}`
+          shareTextContent
         );
         if (status === 'shared') {
           setDownloadSuccessToast(
@@ -427,15 +428,24 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                         ? `Sakhi #${sakhi.number} • ${getLocalizedGranthaName(sakhi.grantha, 'en')}`
                         : `साखी #${sakhi.number} • ${getLocalizedGranthaName(sakhi.grantha, 'hi')}`}
                     </span>
-                    {formatCoupletString(sakhi.text[cardLanguage] || sakhi.text.hi).split('\n').map((line, idx) => (
-                      <p
-                        key={idx}
-                        style={{ color: currentTheme.secondary }}
-                        className="font-serif font-black leading-relaxed text-sm sm:text-base"
-                      >
-                        {line.trim()}
-                      </p>
-                    ))}
+                    {(() => {
+                      const [l1, l2] = formatCoupletIntoTwoLines(sakhi.text[cardLanguage] || sakhi.text.hi, cardLanguage);
+                      return (
+                        <>
+                          <p style={{ color: currentTheme.secondary }} className="font-serif font-black leading-relaxed text-sm sm:text-base">
+                            {l1}
+                          </p>
+                          {l2 && (
+                            <p style={{ color: currentTheme.secondary }} className="font-serif font-black leading-relaxed text-sm sm:text-base">
+                              {l2}
+                            </p>
+                          )}
+                          <p style={{ color: currentTheme.accent }} className="font-serif font-bold text-xs pt-1">
+                            {SACRED_SHARE_TEMPLATE.attribution[cardLanguage]}
+                          </p>
+                        </>
+                      );
+                    })()}
                   </div>
 
                   {/* Bhavarth Box Preview */}
@@ -457,17 +467,17 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                     </p>
                   </div>
 
-                  {/* Footer Preview */}
+                  {/* Clean Unified Footer Preview */}
                   <div
                     style={{ borderColor: currentTheme.accent }}
-                    className="pt-2 border-t border-dashed opacity-80 flex items-center justify-between text-[10px] font-serif"
+                    className="pt-2 border-t border-dashed opacity-85 text-center text-[10px] font-serif space-y-0.5"
                   >
-                    <span style={{ color: currentTheme.accent }} className="font-bold">
-                      {SACRED_BRANDING.footer[cardLanguage]}
-                    </span>
-                    <span style={{ color: currentTheme.accent }}>
-                      {translations[cardLanguage].appName}
-                    </span>
+                    <p style={{ color: currentTheme.accent }} className="font-sans font-bold">
+                      {SACRED_SHARE_TEMPLATE.footer[cardLanguage].split('\n')[0]}
+                    </p>
+                    <p style={{ color: currentTheme.secondary }} className="font-bold">
+                      {SACRED_SHARE_TEMPLATE.footer[cardLanguage].split('\n')[1]}
+                    </p>
                   </div>
                 </div>
               )}
@@ -559,13 +569,30 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
               {/* Formatted Text Box Preview */}
               <div className="p-4 rounded-2xl bg-amber-500/5 dark:bg-amber-950/20 border border-amber-500/20 space-y-3 font-serif">
                 <div className="flex items-center justify-between pb-2 border-b border-amber-500/20 text-[11px] text-amber-900/80 dark:text-amber-200/80 font-bold">
-                  <span>{SACRED_BRANDING.header[cardLanguage]}</span>
+                  <span>{SACRED_SHARE_TEMPLATE.header[cardLanguage] || SACRED_BRANDING.header[cardLanguage]}</span>
                   <span>साखी #{sakhi.number}</span>
                 </div>
 
                 {/* Verse */}
-                <div className="text-sm sm:text-base font-bold text-amber-950 dark:text-amber-100 whitespace-pre-line leading-relaxed">
-                  {formatCoupletString(sakhi.text[cardLanguage] || sakhi.text.hi)}
+                <div className="space-y-1">
+                  {(() => {
+                    const [l1, l2] = formatCoupletIntoTwoLines(sakhi.text[cardLanguage] || sakhi.text.hi, cardLanguage);
+                    return (
+                      <>
+                        <p className="text-sm sm:text-base font-bold text-amber-950 dark:text-amber-100 leading-relaxed">
+                          {l1}
+                        </p>
+                        {l2 && (
+                          <p className="text-sm sm:text-base font-bold text-amber-950 dark:text-amber-100 leading-relaxed">
+                            {l2}
+                          </p>
+                        )}
+                        <p className="text-xs font-bold text-amber-800 dark:text-amber-300 pt-0.5">
+                          {SACRED_SHARE_TEMPLATE.attribution[cardLanguage]}
+                        </p>
+                      </>
+                    );
+                  })()}
                 </div>
 
                 {/* Bhavarth */}
@@ -588,9 +615,10 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-dashed border-amber-500/20 text-[10px] text-amber-800/70 dark:text-amber-300/70 flex justify-between">
-                  <span>{SACRED_BRANDING.footer[cardLanguage]}</span>
-                  <span>{translations[cardLanguage].appName}</span>
+                {/* Clean Unified Footer */}
+                <div className="pt-2 border-t border-dashed border-amber-500/20 text-[10px] text-amber-800/80 dark:text-amber-300/80 text-center space-y-0.5 whitespace-pre-line font-serif">
+                  <p className="font-sans font-bold">{SACRED_SHARE_TEMPLATE.footer[cardLanguage].split('\n')[0]}</p>
+                  <p className="font-bold">{SACRED_SHARE_TEMPLATE.footer[cardLanguage].split('\n')[1]}</p>
                 </div>
               </div>
 

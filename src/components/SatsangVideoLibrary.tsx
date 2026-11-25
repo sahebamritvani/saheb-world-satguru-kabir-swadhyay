@@ -22,7 +22,7 @@ import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { useOnlineStatus } from '../hooks/usePWAInstall';
-import { isAdminAuthenticated, isFirebaseAdminVerified } from '../services/adminAuth';
+import { isAdminAuthenticated } from '../services/adminAuth';
 import {
   subscribeToSacredMedia,
   publishAdminSacredMedia,
@@ -256,11 +256,7 @@ export const SatsangVideoLibrary: React.FC<SatsangVideoLibraryProps> = ({ langua
             </button>
           </div>
 
-          {!isFirebaseAdminVerified() && (
-            <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-[11px] font-bold text-amber-900 dark:text-amber-200">
-              ⚠️ क्लाउड वीडियो प्रकाशन हेतु कृपया Google एडमिन खाते से साइन-इन करें।
-            </div>
-          )}
+          {/* Passkey-authenticated Admin Mode */}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <input

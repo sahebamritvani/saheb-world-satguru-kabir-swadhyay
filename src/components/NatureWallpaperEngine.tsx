@@ -23,7 +23,8 @@ import { sakhisDatabase } from '../data/sakhis';
 import { SggsKabirVerse, FALLBACK_HUKAMNAMA_VERSE } from '../data/sggsKabirMetadata';
 import { satyanaamAudio } from '../services/audioDhun';
 import { downloadOrShareImage, triggerBlobDownload, GeneratedCardResult } from '../services/quoteCardGenerator';
-import { autoCorrectSacredText, formatCoupletString, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
+import { autoCorrectSacredText, formatCoupletString, formatCoupletIntoTwoLines, ensureSatguruKabirSaheb } from '../utils/textSanitizer';
+import { SACRED_SHARE_TEMPLATE, buildStandardShareText } from '../services/shareTemplate';
 import { useAppTheme } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { sacredHaptics } from '../services/haptics';
@@ -483,7 +484,8 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
     let categoryBadge = '';
 
     if (textMode === 'sakhi') {
-      verseText = formatCoupletString(autoCorrectSacredText(currentSakhi.text[activeLang] || currentSakhi.text.hi));
+      const [l1, l2] = formatCoupletIntoTwoLines(currentSakhi.text[activeLang] || currentSakhi.text.hi, activeLang);
+      verseText = [l1, l2].filter(Boolean).join('\n');
       bhavarthText = ensureSatguruKabirSaheb(currentSakhi.bhavarth[activeLang] || currentSakhi.bhavarth.hi);
       const sakhiLabel = activeLang === 'pb' ? 'ਸਾਖੀ' : activeLang === 'en' ? 'Sakhi' : 'साखी';
       categoryBadge = `${sakhiLabel} #${currentSakhi.number} • ${currentSakhi.grantha}`;
@@ -555,6 +557,14 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
       currentY += lineHeight;
     });
 
+    // Attribution Line right below Doha
+    if (textMode === 'sakhi') {
+      ctx.font = 'bold 22px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif';
+      ctx.fillStyle = accentColor;
+      ctx.fillText(SACRED_SHARE_TEMPLATE.attribution[activeLang], width / 2, currentY + 10);
+      currentY += 32;
+    }
+
     ctx.shadowBlur = 0; // Reset shadow
 
     // 7. GLASSMORPHIC BHAVARTH CARD BOX (LOWER HALF)
@@ -622,14 +632,15 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
       });
     }
 
-    // 8. FOOTER BRANDING
+    // 8. FOOTER BRANDING (Clean unified footer, zero duplicate branding)
+    const [footerL1, footerL2] = SACRED_SHARE_TEMPLATE.footer[activeLang].split('\n');
     ctx.fillStyle = accentColor;
-    ctx.font = 'bold 26px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif';
-    ctx.fillText(SACRED_BRANDING.footer[activeLang], width / 2, height * 0.89);
+    ctx.font = 'bold 22px "Noto Sans Devanagari", sans-serif';
+    ctx.fillText(footerL1, width / 2, height * 0.89);
 
-    ctx.font = 'bold 22px Arial, sans-serif';
+    ctx.font = 'bold 26px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif';
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillText('साहेब वर्ल्ड • Saheb World', width / 2, height * 0.94);
+    ctx.fillText(footerL2, width / 2, height * 0.935);
 
     // Save canvas as Blob URL for immediate preview
     canvas.toBlob(
@@ -711,14 +722,28 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
       }
 
       if (preferShare) {
+        const currentVerseText =
+          textMode === 'sakhi'
+            ? formatCoupletString(autoCorrectSacredText(currentSakhi.text[activeLang] || currentSakhi.text.hi))
+            : textMode === 'sggs'
+            ? (activeLang === 'pb' ? currentSalok.moolGurmukhi : currentSalok.moolDevanagari).join('\n')
+            : customText;
+
+        const shareText =
+          textMode === 'sakhi'
+            ? buildStandardShareText({
+                text: currentSakhi.text[activeLang] || currentSakhi.text.hi,
+                language: activeLang,
+                source: currentSakhi.grantha,
+                meaning: currentSakhi.bhavarth[activeLang] || currentSakhi.bhavarth.hi,
+                sakhiNumber: currentSakhi.number,
+              })
+            : `${SACRED_SHARE_TEMPLATE.header[activeLang]}\n\n${currentVerseText}\n${SACRED_SHARE_TEMPLATE.attribution[activeLang]}\n\n${SACRED_SHARE_TEMPLATE.footer[activeLang]}`;
+
         const status = await downloadOrShareImage(
           previewResult,
           'Saheb World Nature Wallpaper',
-          (activeLang === 'pb'
-            ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।\n'
-            : activeLang === 'en'
-            ? '|| Saheb Bandagi Saheb ||\n'
-            : '।। साहेब बंदगी साहेब ।।\n') + customTitle
+          shareText
         );
         setToastMessage(
           status === 'shared'
@@ -1000,11 +1025,14 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
                   onChange={(e) => setSelectedSakhiId(e.target.value)}
                   className="w-full p-2.5 rounded-xl border border-black/15 dark:border-white/15 bg-white dark:bg-zinc-900 text-amber-950 dark:text-amber-100 font-serif text-xs"
                 >
-                  {sakhisDatabase.map((s: Sakhi) => (
-                    <option key={s.id} value={s.id}>
-                      #{s.number} • {(s.text[activeLang] || s.text.hi).slice(0, 48)}...
-                    </option>
-                  ))}
+                  {sakhisDatabase.map((s: Sakhi) => {
+                    const [l1, l2] = formatCoupletIntoTwoLines(s.text[activeLang] || s.text.hi, activeLang);
+                    return (
+                      <option key={s.id} value={s.id}>
+                        #{s.number} • {l1} / {l2}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             )}

@@ -2198,8 +2198,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         </button>
       )}
       {/* High-Contrast Sacred Header */}
-      <div className="bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-2.5 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3 shadow-md sticky top-0 z-30 flex-nowrap overflow-hidden border-b border-amber-300/25">
-        <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1 overflow-hidden">
+      <div className={`bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-2 py-2 sm:px-4 sm:py-2.5 flex flex-wrap sm:flex-nowrap items-center justify-between gap-1.5 sm:gap-3 shadow-md ${isFullscreen ? 'sticky top-0 z-30' : 'relative z-20 rounded-t-2xl'} border-b border-amber-300/25 w-full`}>
+        <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1">
           {viewMode === 'reading' ? (
             <button
               type="button"
@@ -2212,7 +2212,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 setViewMode('selection');
                 setIsAutoPlaying(false);
               }}
-              className="min-h-[44px] min-w-[44px] sm:min-h-[40px] px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center justify-center gap-1 shrink-0 whitespace-nowrap"
+              className="min-h-[38px] min-w-[38px] sm:min-h-[40px] px-2 sm:px-2.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl transition cursor-pointer font-bold text-xs flex items-center justify-center gap-1 shrink-0 whitespace-nowrap"
               aria-label={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
               title={language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
             >
@@ -2242,12 +2242,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0 ml-auto">
           {/* Top Bar Dedicated Entry: Sirf Vani (Auto-Scroll + Audio) Mode */}
           <button
             type="button"
             onClick={handleTogglePureVaniMode}
-            className={`min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
+            className={`min-h-[38px] sm:min-h-[40px] px-2 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1 text-[11px] sm:text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
               isPureVaniMode
                 ? 'bg-white text-amber-800 shadow-md ring-2 ring-white/70'
                 : 'bg-white/18 hover:bg-white/28 text-white border border-white/25'
@@ -2261,7 +2261,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             }
             aria-pressed={isPureVaniMode}
           >
-            <Volume2 size={16} className="shrink-0" />
+            <Volume2 size={15} className="shrink-0" />
             <span>
               {language === 'pb'
                 ? (isPureVaniMode ? 'ਸਿਰਫ਼ ਬਾਣੀ ✓' : 'ਸਿਰਫ਼ ਬਾਣੀ')
@@ -2275,7 +2275,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={toggleFullscreen}
-            className={`min-h-[44px] min-w-[44px] sm:min-h-[40px] sm:min-w-0 px-2.5 py-1.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
+            className={`min-h-[38px] min-w-[38px] sm:min-h-[40px] sm:min-w-0 px-2 sm:px-2.5 py-1.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 text-xs font-bold font-serif active:scale-95 whitespace-nowrap shrink-0 ${
               isFullscreen
                 ? 'bg-white text-amber-800 shadow-md ring-2 ring-white/60'
                 : 'bg-white/15 hover:bg-white/25 text-white border border-white/20'
@@ -2300,11 +2300,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={() => handleToggleBackgroundDhun()}
-            className={`min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl transition cursor-pointer shrink-0 ${isBackgroundDhunPlaying ? 'bg-white text-amber-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+            className={`min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl transition cursor-pointer shrink-0 ${isBackgroundDhunPlaying ? 'bg-white text-amber-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
             title={rt.bgDhun}
             aria-label="Toggle Background Dhun"
           >
-            {isBackgroundDhunPlaying ? <Music size={18} /> : <VolumeX size={18} />}
+            {isBackgroundDhunPlaying ? <Music size={17} /> : <VolumeX size={17} />}
           </button>
 
           {/* Smart Glossing Tool Button */}
@@ -2323,11 +2323,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           <button
             type="button"
             onClick={() => setIsSettingsExpanded(true)}
-            className="min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px] p-2 bg-white/25 hover:bg-white/35 rounded-xl transition-all cursor-pointer text-white flex items-center justify-center shrink-0 shadow-xs z-30 ring-1 ring-white/30"
+            className="min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] p-2 bg-white/25 hover:bg-white/35 rounded-xl transition-all cursor-pointer text-white flex items-center justify-center shrink-0 shadow-xs z-30 ring-1 ring-white/30"
             title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼ ਅਤੇ ਟੂਲਸ' : language === 'en' ? 'Settings & Tools' : 'सेटिंग्स व टूल्स'}
             aria-label="Reading Settings"
           >
-            <Settings size={18} className="shrink-0" />
+            <Settings size={17} className="shrink-0" />
             <span className="sr-only">Settings</span>
           </button>
         </div>
@@ -4156,7 +4156,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       )
                     )}
 
-                    {/* Global Sacred Concluding Salutation: Every prayer ends with '।। साहेब बन्दगी साहेब ।।' */}
+                    {/* Global Sacred Concluding Salutation: Every prayer ends with '।। साहेब बंदगी साहेब ।।' */}
                     <div className="text-center py-6 my-4 border-t-2 border-amber-500/25">
                       <div
                         style={{
@@ -4170,7 +4170,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           {language === 'pb' ? '॥ ਸੰਪੂਰਨ ਸਮਾਪਤੀ ਵੰਦਨਾ ॥' : language === 'en' ? '|| Sacred Concluding Prostration ||' : '।। सम्पूर्ण समाप्ति वंदना ।।'}
                         </span>
                         <span className="font-serif font-black text-base sm:text-lg tracking-normal">
-                          {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बन्दगी साहेब ।।'}
+                          {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
                         </span>
                       </div>
                     </div>
@@ -4755,7 +4755,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             exit={{ opacity: 0, y: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
                             style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold, color: theme.textPrimary }}
-                            className="fixed bottom-0 left-0 right-0 z-[130] backdrop-blur-xl rounded-t-3xl shadow-2xl p-4 sm:p-6 pb-safe border-t-2 max-h-[86dvh] overflow-y-auto overscroll-contain"
+                            className="fixed bottom-0 left-0 right-0 z-[130] backdrop-blur-xl rounded-t-3xl shadow-2xl p-3 sm:p-6 pb-safe border-t-2 max-h-[86dvh] overflow-y-auto overflow-x-hidden overscroll-contain"
                           >
                             <div
                               onClick={() => setIsSettingsExpanded(false)}
@@ -4764,7 +4764,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             />
                             <div className="w-full flex flex-col gap-4">
                               {/* Header with Title & Quick Close button */}
-                              <div className="flex items-center justify-between border-b pb-3 border-amber-200/50 dark:border-zinc-800 gap-2">
+                              <div className="flex flex-wrap items-center justify-between border-b pb-3 border-amber-200/50 dark:border-zinc-800 gap-2">
                                 <div className="flex items-center gap-2 min-w-0">
                                   <span className="text-xl shrink-0">⚙️</span>
                                   <div className="min-w-0">

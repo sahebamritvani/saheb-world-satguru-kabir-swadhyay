@@ -47,23 +47,23 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({ isOpen, 
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-2.5 sm:p-4 animate-fadeIn overflow-x-hidden">
       <div className="bg-amber-50 dark:bg-zinc-900 border-2 border-amber-500/30 rounded-3xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
         {/* Header - Fixed at top of modal */}
-        <div className="flex justify-between items-center border-b border-amber-500/20 p-5 shrink-0">
-          <div className="flex items-center gap-2">
-            <Volume2 className="w-5 h-5 text-amber-700 dark:text-amber-400" />
-            <h3 className="text-lg font-bold font-serif text-amber-900 dark:text-amber-100">
+        <div className="flex justify-between items-center gap-2 border-b border-amber-500/20 p-3.5 sm:p-5 shrink-0">
+          <div className="flex items-center gap-2 min-w-0">
+            <Volume2 className="w-5 h-5 text-amber-700 dark:text-amber-400 shrink-0" />
+            <h3 className="text-base sm:text-lg font-bold font-serif text-amber-900 dark:text-amber-100 truncate">
               {language === 'pb' ? 'ਸੁਗਮਤਾ ਅਤੇ ਵਾਚਨ ਸੈਟਿੰਗਾਂ' : language === 'en' ? 'Accessibility & Speech Vani' : 'सुगमता एवं वाणी सेटिंग्स'}
             </h3>
           </div>
-          <button onClick={() => { handleStopSpeech(); onClose(); }} className="p-1.5 hover:bg-black/10 dark:hover:bg-white/10 rounded-full transition cursor-pointer">
+          <button onClick={() => { handleStopSpeech(); onClose(); }} className="p-1.5 hover:bg-black/10 dark:hover:bg-white/10 rounded-full transition cursor-pointer shrink-0">
             <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
           </button>
         </div>
 
         {/* Scrollable Content Container */}
-        <div className="p-6 space-y-5 overflow-y-auto custom-scrollbar">
+        <div className="p-4 sm:p-6 space-y-5 overflow-y-auto overflow-x-hidden custom-scrollbar">
 
         {/* Speech / Vani Section */}
         <div className="space-y-3 bg-white/70 dark:bg-zinc-800/70 p-4 rounded-2xl border border-amber-500/20 shadow-xs">

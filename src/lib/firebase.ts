@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import {
   getFirestore,
   initializeFirestore,
@@ -32,28 +32,7 @@ try {
 
 export const db = dbInstance;
 export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
 export const storage = getStorage(app);
-
-export const signInWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    return result.user;
-  } catch (error: any) {
-    const errorCode = error?.code || '';
-    if (
-      errorCode === 'auth/popup-blocked' || 
-      errorCode === 'auth/cancelled-popup-request' || 
-      errorCode === 'auth/popup-closed-by-user' ||
-      errorCode === 'auth/unauthorized-domain'
-    ) {
-      console.warn('Google Sign-In is restricted inside preview iframe. Please open in a new tab to authenticate.');
-    } else {
-      console.warn('Google Sign-In notice:', error?.message || error);
-    }
-    throw error;
-  }
-};
 
 // Safe connection check helper on initial boot
 export async function testFirebaseConnection(): Promise<boolean> {

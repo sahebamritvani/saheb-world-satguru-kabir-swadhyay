@@ -84,7 +84,6 @@ import { SmartGlossaryTooltip } from './SmartGlossaryTooltip';
 import { SmartGlossaryText } from './SmartGlossaryText';
 import { SandhukkariGlossaryModal } from './SandhukkariGlossaryModal';
 import { SmartGlossingToolModal } from './SmartGlossingToolModal';
-import { AccessibilityModal } from './AccessibilityModal';
 import { ZenElevenStepsViewer } from './ZenElevenStepsViewer';
 
 interface SwadhyayReaderProps {
@@ -319,7 +318,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       autoScrollOnSpeech: true,
     };
   });
-  const [showAccessibilityModal, setShowAccessibilityModal] = useState(false);
   const [activePlayingStanzaKey, setActivePlayingStanzaKey] = useState<string | null>(null);
 
   const updateAccessibilitySettings = (updates: Partial<AccessibilitySettings>) => {
@@ -2633,7 +2631,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           {/* Accessibility & Speech Synthesis Settings Button */}
           <button
             type="button"
-            onClick={() => setShowAccessibilityModal(true)}
+            onClick={() => window.dispatchEvent(new CustomEvent('sahebworld_open_accessibility'))}
             style={{
               backgroundColor: rc.accentLight,
               color: rc.maroon,
@@ -4342,10 +4340,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         <div
           ref={zenContainerRef}
           style={{ backgroundColor: rc.bg }}
-          className="fixed inset-0 z-[100] overflow-y-auto flex flex-col justify-between p-4 sm:p-8 select-none transition-all duration-500 animate-fadeIn"
+          className="fixed inset-0 z-[100] overflow-y-auto overflow-x-hidden flex flex-col justify-between p-2.5 sm:p-8 select-none transition-all duration-500 animate-fadeIn"
         >
           {/* Distraction-Free Header Bar - Compact sticky top bar with prominent Return CTA */}
-          <div className="sticky top-0 z-30 flex items-center justify-between gap-2 border-b py-2 px-1 backdrop-blur-md min-h-[52px]" style={{ borderColor: rc.border, backgroundColor: rc.bg }}>
+          <div className="sticky top-0 z-30 flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 border-b py-2 px-1 backdrop-blur-md min-h-[52px]" style={{ borderColor: rc.border, backgroundColor: rc.bg }}>
             <div className="flex items-center gap-2 min-w-0">
               <span
                 style={{ backgroundColor: rc.accentLight, color: rc.maroon, borderColor: rc.accent }}
@@ -4360,7 +4358,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
             </div>
 
             {/* Embedded Compact Toggles + Always-Visible Top Return Button */}
-            <div className="flex items-center gap-1.5 shrink-0">
+            <div className="flex flex-wrap items-center gap-1.5 shrink-0 ml-auto">
               <div className="hidden sm:flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
                 <Type className="w-3.5 h-3.5 mr-1 ml-1 text-amber-700 shrink-0" />
                 {['small', 'medium', 'large', 'xl', 'elderly'].map((size) => (
@@ -4891,12 +4889,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       <SmartGlossingToolModal
         isOpen={showSmartGlossingTool}
         onClose={() => setShowSmartGlossingTool(false)}
-        language={language}
-      />
-
-      <AccessibilityModal
-        isOpen={showAccessibilityModal}
-        onClose={() => setShowAccessibilityModal(false)}
         language={language}
       />
 

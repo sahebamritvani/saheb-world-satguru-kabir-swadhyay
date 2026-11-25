@@ -151,7 +151,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
   // WhatsApp Share for specific Doha
   const handleShareDoha = (dohaItem: DohaItem) => {
     sacredHaptics.lightTap();
-    const liveUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sahebworld.app';
+    const liveUrl = typeof window !== 'undefined' ? window.location.origin : 'https://saheb-world-satguru-kabir-swadhyay.vercel.app/';
     const header = SACRED_BRANDING.header[activeLang] || SACRED_BRANDING.header.hi;
     const sourceLabel = activeLang === 'pb' ? 'ਸਰੋਤ' : activeLang === 'en' ? 'Source' : 'स्रोत';
     const meaningLabel = activeLang === 'pb' ? 'ਭਾਵਾਰਥ' : activeLang === 'en' ? 'Meaning' : 'भावार्थ';
@@ -526,100 +526,278 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
             </button>
           </div>
 
-          {/* SVG Inverted Tree Canvas with Multi-layered Light Animations */}
-          <div className="bg-gradient-to-b from-amber-50/50 via-amber-100/20 to-transparent dark:from-stone-900/50 dark:to-transparent rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
-            <svg viewBox="0 0 400 380" className="w-full max-w-md mx-auto overflow-visible select-none">
+          {/* SVG Inverted Tree Canvas: Luminous Golden-Green Sacred Ashvattha Tree */}
+          <div className="bg-gradient-to-b from-[#1E130C] via-[#132217] to-[#0B140E] dark:from-[#0C0906] dark:via-[#0B1910] dark:to-[#070D09] rounded-2xl border-2 border-amber-500/40 p-3 sm:p-6 flex flex-col items-center justify-center shadow-inner relative overflow-hidden">
+            {/* Soft ambient golden-white radiance behind roots */}
+            <div
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-44 pointer-events-none transition-opacity duration-700"
+              style={{
+                background: 'radial-gradient(ellipse at top center, rgba(255,255,255,0.42) 0%, rgba(253,224,71,0.22) 45%, transparent 75%)',
+                opacity: isWatered ? 1 : 0.72,
+              }}
+            />
+
+            <svg
+              viewBox="0 0 600 470"
+              className="w-full max-w-2xl mx-auto h-[340px] sm:h-[420px] overflow-visible select-none relative z-10"
+              role="img"
+              aria-label={activeLang === 'pb' ? 'ਊਰਧਵ ਮੂਲ ਰੁੱਖ — ਸਤਯਨਾਮ ਮੂਲ' : activeLang === 'en' ? 'Luminous Golden-Green Sacred Ashvattha Inverted Tree' : 'ऊर्ध्व मूल वृक्ष — सत्यनाम मूल और घने हरे पत्ते'}
+            >
               <defs>
-                <radialGradient id="rootHalo" cx="50%" cy="18%" r="55%">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity={isWatered ? "1" : "0.85"} />
-                  <stop offset="40%" stopColor="#FEF08A" stopOpacity={isWatered ? "0.9" : "0.4"} />
+                {/* Top Radiant Pure White & Soft Golden Halo */}
+                <radialGradient id="ashvatthaRootHalo" cx="50%" cy="15%" r="55%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />
+                  <stop offset="28%" stopColor="#FEF9C3" stopOpacity={isWatered ? "0.95" : "0.78"} />
+                  <stop offset="60%" stopColor="#FBBF24" stopOpacity={isWatered ? "0.45" : "0.25"} />
                   <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
                 </radialGradient>
-                <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#F59E0B" />
-                  <stop offset="50%" stopColor="#92400E" />
-                  <stop offset="100%" stopColor="#3F1502" />
+
+                {/* Descending White-Gold Divine Light Rays */}
+                <linearGradient id="ashvatthaLightRay" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity={isWatered ? "0.85" : "0.6"} />
+                  <stop offset="42%" stopColor="#FEF08A" stopOpacity={isWatered ? "0.35" : "0.2"} />
+                  <stop offset="100%" stopColor="#84CC16" stopOpacity="0" />
                 </linearGradient>
-                <linearGradient id="lightRayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
-                  <stop offset="50%" stopColor="#FDE047" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
+
+                {/* Golden-White Glowing Root Gradient */}
+                <linearGradient id="ashvatthaRootGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#FFFFFF" />
+                  <stop offset="55%" stopColor="#FEF08A" />
+                  <stop offset="100%" stopColor="#D97706" />
                 </linearGradient>
-                <filter id="glowShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation={isWatered ? "8" : "3"} result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+
+                {/* 3D Shaded Sacred Trunk Gradient */}
+                <linearGradient id="ashvatthaTrunk3D" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#3B1806" />
+                  <stop offset="28%" stopColor="#7C2D12" />
+                  <stop offset="52%" stopColor="#B45309" />
+                  <stop offset="76%" stopColor="#78350F" />
+                  <stop offset="100%" stopColor="#2A0F03" />
+                </linearGradient>
+
+                {/* Deep Forest Shadow Foliage Gradient */}
+                <radialGradient id="foliageDeepGrad" cx="50%" cy="60%" r="55%">
+                  <stop offset="0%" stopColor="#14532D" />
+                  <stop offset="65%" stopColor="#064E3B" />
+                  <stop offset="100%" stopColor="#052E16" />
+                </radialGradient>
+
+                {/* Rich Mid Emerald Foliage Gradient */}
+                <radialGradient id="foliageMidGrad" cx="50%" cy="35%" r="60%">
+                  <stop offset="0%" stopColor={isWatered ? "#4ADE80" : "#22C55E"} />
+                  <stop offset="55%" stopColor="#15803D" />
+                  <stop offset="100%" stopColor="#14532D" />
+                </radialGradient>
+
+                {/* Sunlit Luminous Golden-Green Rim Gradient */}
+                <linearGradient id="foliageGoldGreenGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+                  <stop offset="0%" stopColor="#FEF08A" stopOpacity="0.95" />
+                  <stop offset="35%" stopColor="#A3E635" stopOpacity="0.92" />
+                  <stop offset="80%" stopColor="#16A34A" stopOpacity="0.95" />
+                  <stop offset="100%" stopColor="#15803D" stopOpacity="1" />
+                </linearGradient>
+
+                {/* Golden Aura Behind Fruit Badges */}
+                <radialGradient id="badgeAura" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#FEF08A" stopOpacity="0.75" />
+                  <stop offset="100%" stopColor="#FEF08A" stopOpacity="0" />
+                </radialGradient>
+
+                <filter id="luminousWhiteGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+                  <feGaussianBlur stdDeviation={isWatered ? "7" : "4"} result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+
+                <filter id="canopySoftShadow" x="-15%" y="-15%" width="130%" height="130%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#021409" floodOpacity="0.65" />
                 </filter>
               </defs>
 
-              {/* Radiant Pure White & Soft Golden Divine Light Rays shining downward */}
-              <g opacity={isWatered ? "1" : "0.5"} className="transition-opacity duration-1000">
-                <polygon points="200,45 130,220 170,220" fill="url(#lightRayGrad)" />
-                <polygon points="200,45 170,240 210,240" fill="url(#lightRayGrad)" />
-                <polygon points="200,45 230,220 270,220" fill="url(#lightRayGrad)" />
-                <polygon points="200,45 100,190 140,190" fill="url(#lightRayGrad)" opacity="0.6" />
-                <polygon points="200,45 260,190 300,190" fill="url(#lightRayGrad)" opacity="0.6" />
+              {/* 1. Descending Pure White & Golden Light Rays */}
+              <g opacity={isWatered ? "0.95" : "0.7"} className="transition-opacity duration-700">
+                <polygon points="300,48 75,295 160,295" fill="url(#ashvatthaLightRay)" />
+                <polygon points="300,48 165,330 245,330" fill="url(#ashvatthaLightRay)" />
+                <polygon points="300,48 255,345 345,345" fill="url(#ashvatthaLightRay)" />
+                <polygon points="300,48 355,330 435,330" fill="url(#ashvatthaLightRay)" />
+                <polygon points="300,48 440,295 525,295" fill="url(#ashvatthaLightRay)" />
               </g>
 
-              {/* Top Luminous Halo */}
-              <circle cx="200" cy="55" r={isWatered ? "95" : "65"} fill="url(#rootHalo)" className="transition-all duration-1000" />
+              {/* 2. Top Radiant Pure White Halo */}
+              <ellipse cx="300" cy="76" rx={isWatered ? "180" : "145"} ry={isWatered ? "82" : "66"} fill="url(#ashvatthaRootHalo)" className="transition-all duration-700" />
 
-              {/* Top Label: Satyanaam Root */}
-              <text x="200" y="22" textAnchor="middle" fill="#6B1D1D" fontWeight="900" fontSize="16" className="dark:fill-amber-300 font-serif tracking-wide drop-shadow-sm">
-                {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ (ਮੂਲ) ॥' : activeLang === 'en' ? '॥ Satyanaam (Root) ॥' : '॥ सत्यनाम (मूल) ॥'}
-              </text>
-
-              {/* Intricate Glowing Roots Spreading Upward */}
-              <g stroke={isWatered ? "#FFFFFF" : "#F59E0B"} strokeWidth={isWatered ? "3.5" : "2.5"} fill="none" filter="url(#glowShadow)" className="transition-all duration-700">
-                <path d="M200,75 C190,50 160,35 125,28" />
-                <path d="M200,75 C195,45 175,30 155,20" />
-                <path d="M200,75 C200,45 200,25 200,15" />
-                <path d="M200,75 C205,45 225,30 245,20" />
-                <path d="M200,75 C210,50 240,35 275,28" />
-                <path d="M185,65 C175,45 150,35 135,25" />
-                <path d="M215,65 C225,45 250,35 265,25" />
+              {/* 3. Top Sacred Pill Label: ॥ सत्यनाम (मूल) ॥ */}
+              <g transform="translate(300, 24)">
+                <rect x="-112" y="-17" width="224" height="32" rx="16" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="2" filter="url(#luminousWhiteGoldGlow)" />
+                <text x="0" y="5" textAnchor="middle" fill="#6B1D1D" fontWeight="900" fontSize="15.5" className="font-serif tracking-wide">
+                  {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ (ਮੂਲ) ॥' : activeLang === 'en' ? '॥ Satyanaam (Root) ॥' : '॥ सत्यनाम (मूल) ॥'}
+                </text>
               </g>
 
-              {/* Majestic Inverted Banyan Trunk & Branches with 3D Depth */}
-              <path d="M182,75 L218,75 L228,170 C245,190 275,215 285,235 C295,250 275,265 255,250 C235,235 220,200 210,185 L210,265 C210,280 190,280 190,265 L190,185 C180,200 165,235 145,250 C125,265 105,250 115,235 C125,215 155,190 172,170 Z" fill="url(#trunkGrad)" filter="url(#glowShadow)" />
-
-              {/* Lush Multi-layered Downward Foliage (Clusters of Green Leaves) */}
-              <g fill={isWatered ? "#16A34A" : "#15803D"} filter="url(#glowShadow)" className="transition-colors duration-700">
-                <circle cx="125" cy="245" r="45" opacity="0.95" />
-                <circle cx="275" cy="245" r="45" opacity="0.95" />
-                <circle cx="160" cy="295" r="50" opacity="0.9" />
-                <circle cx="240" cy="295" r="50" opacity="0.9" />
-                <circle cx="200" cy="265" r="55" opacity="0.95" />
+              {/* 4. Intricate Glowing Top Roots Spreading Up into Divine Light */}
+              <g strokeLinecap="round" fill="none" filter="url(#luminousWhiteGoldGlow)">
+                {/* Primary Thick Radiant Taproots */}
+                <path d="M300,115 C295,86 270,66 225,52" stroke="url(#ashvatthaRootGrad)" strokeWidth="6.5" />
+                <path d="M300,115 C305,86 330,66 375,52" stroke="url(#ashvatthaRootGrad)" strokeWidth="6.5" />
+                <path d="M300,115 C298,84 300,62 300,43" stroke="#FFFFFF" strokeWidth="7.5" />
+                <path d="M286,112 C258,88 214,76 162,64" stroke="url(#ashvatthaRootGrad)" strokeWidth="4.8" />
+                <path d="M314,112 C342,88 386,76 438,64" stroke="url(#ashvatthaRootGrad)" strokeWidth="4.8" />
+                {/* Secondary Fine Root Tendrils */}
+                <path d="M262,80 C235,66 205,54 185,46" stroke="#FEF9C3" strokeWidth="2.8" />
+                <path d="M338,80 C365,66 395,54 415,46" stroke="#FEF9C3" strokeWidth="2.8" />
+                <path d="M286,75 C275,56 262,48 248,42" stroke="#FFFFFF" strokeWidth="2.6" />
+                <path d="M314,75 C325,56 338,48 352,42" stroke="#FFFFFF" strokeWidth="2.6" />
+                <path d="M242,88 C210,82 175,80 145,76" stroke="#FDE047" strokeWidth="2.2" />
+                <path d="M358,88 C390,82 425,80 455,76" stroke="#FDE047" strokeWidth="2.2" />
               </g>
 
-              {/* Smooth Luminous Golden-White Energy Waves Flowing Down */}
-              <g stroke="#FFFFFF" strokeWidth={isWatered ? "4" : "1.5"} strokeDasharray="8 6" fill="none" opacity={isWatered ? "1" : "0.3"} className="transition-all duration-1000 animate-pulse">
-                <path d="M200,55 L200,180 L125,245" />
-                <path d="M200,55 L200,180 L275,245" />
-                <path d="M200,55 L200,265 L160,295" />
-                <path d="M200,55 L200,265 L240,295" />
+              {/* Subtle Divine Sparkle Motes Around Top Roots */}
+              <g fill="#FFFFFF" opacity={isWatered ? "0.95" : "0.65"}>
+                <circle cx="195" cy="54" r="2.2" />
+                <circle cx="405" cy="54" r="2.2" />
+                <circle cx="255" cy="48" r="1.8" />
+                <circle cx="345" cy="48" r="1.8" />
+                <circle cx="155" cy="72" r="1.6" />
+                <circle cx="445" cy="72" r="1.6" />
               </g>
 
-              {/* Four Upright Readable Leaf Badges (Devotion, Happiness, Liberation, Peace) */}
-              {fruitLabels.map((item, idx) => (
+              {/* 5. Deep Back Canopy Shadow Layer (Creates 3D Depth behind branches) */}
+              <g fill="url(#foliageDeepGrad)" filter="url(#canopySoftShadow)">
+                <path d="M110,280 C70,280 55,325 82,355 C68,388 102,422 148,412 C175,436 228,438 258,418 C286,442 325,442 350,418 C382,438 430,434 456,408 C498,418 532,382 518,350 C542,320 524,276 484,276 C456,238 398,236 364,256 C332,226 268,226 236,256 C202,236 140,238 110,280 Z" />
+              </g>
+
+              {/* 6. Rich 3D Textured Sacred Banyan/Ashvattha Trunk & Downward Branches */}
+              <g>
+                {/* Main Trunk & Sweeping Downward Boughs */}
+                <path
+                  d="M276,96 L324,96 C326,138 334,170 356,200 C385,232 438,248 474,282 C480,290 468,300 458,292 C422,262 372,248 338,224 C324,252 324,292 336,332 C340,342 324,348 318,338 C308,308 304,276 300,248 C296,276 292,308 282,338 C276,348 260,342 264,332 C276,292 276,252 262,224 C228,248 178,262 142,292 C132,300 120,290 126,282 C162,248 215,232 244,200 C266,170 274,138 276,96 Z"
+                  fill="url(#ashvatthaTrunk3D)"
+                />
+                {/* Secondary Inner Branches */}
+                <path d="M278,195 C255,222 222,256 196,298" stroke="#78350F" strokeWidth="11" strokeLinecap="round" fill="none" />
+                <path d="M322,195 C345,222 378,256 404,298" stroke="#78350F" strokeWidth="11" strokeLinecap="round" fill="none" />
+                {/* Bark Texture Highlights & Aerial Prop Roots (जटाएँ) */}
+                <g stroke="#FEF3C7" strokeOpacity="0.28" strokeWidth="2" strokeLinecap="round" fill="none">
+                  <path d="M294,108 C295,152 293,195 298,236" />
+                  <path d="M312,115 C315,154 328,185 352,212" />
+                  <path d="M286,122 C282,158 268,188 246,214" />
+                </g>
+                <g stroke="#92400E" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.85">
+                  <path d="M225,224 Q206,276 198,335" />
+                  <path d="M375,224 Q394,276 402,335" />
+                  <path d="M178,254 Q165,295 158,342" />
+                  <path d="M422,254 Q435,295 442,342" />
+                </g>
+              </g>
+
+              {/* 7. Lush Multi-Layered Green Ashvattha Foliage Clusters */}
+              {/* Mid Emerald Leaf Clouds */}
+              <g fill="url(#foliageMidGrad)">
+                <ellipse cx="145" cy="312" rx="68" ry="48" />
+                <ellipse cx="455" cy="312" rx="68" ry="48" />
+                <ellipse cx="210" cy="364" rx="74" ry="52" />
+                <ellipse cx="390" cy="364" rx="74" ry="52" />
+                <ellipse cx="300" cy="348" rx="84" ry="58" />
+                <ellipse cx="235" cy="278" rx="54" ry="38" />
+                <ellipse cx="365" cy="278" rx="54" ry="38" />
+              </g>
+
+              {/* Sunlit Luminous Golden-Green Upper Leaf Highlights (Divine Light hitting the foliage!) */}
+              <g fill="url(#foliageGoldGreenGrad)" opacity={isWatered ? "0.96" : "0.84"} className="transition-opacity duration-500">
+                <path d="M104,292 C122,258 175,254 202,284 C172,276 135,278 104,292 Z" />
+                <path d="M398,284 C425,254 478,258 496,292 C465,278 428,276 398,284 Z" />
+                <path d="M204,268 C228,236 278,236 298,266 C272,254 232,254 204,268 Z" />
+                <path d="M302,266 C322,236 372,236 396,268 C368,254 328,254 302,266 Z" />
+                <path d="M238,314 C272,286 328,286 362,314 C326,302 274,302 238,314 Z" />
+                <path d="M150,342 C182,316 228,318 248,346 C218,334 176,334 150,342 Z" />
+                <path d="M352,346 C372,318 418,316 450,342 C424,334 382,334 352,346 Z" />
+              </g>
+
+              {/* Botanical Pointed Ashvattha (Peepal) Leaf Accents along Canopy Edges */}
+              <g>
+                {[
+                  { x: 86, y: 314, r: -42, c: '#84CC16' },
+                  { x: 108, y: 274, r: -25, c: '#A3E635' },
+                  { x: 158, y: 256, r: -10, c: '#BEF264' },
+                  { x: 222, y: 248, r: -8, c: '#A3E635' },
+                  { x: 378, y: 248, r: 8, c: '#A3E635' },
+                  { x: 442, y: 256, r: 10, c: '#BEF264' },
+                  { x: 492, y: 274, r: 25, c: '#A3E635' },
+                  { x: 514, y: 314, r: 42, c: '#84CC16' },
+                  { x: 112, y: 382, r: -145, c: '#22C55E' },
+                  { x: 185, y: 416, r: -165, c: '#4ADE80' },
+                  { x: 300, y: 418, r: 180, c: '#4ADE80' },
+                  { x: 415, y: 416, r: 165, c: '#4ADE80' },
+                  { x: 488, y: 382, r: 145, c: '#22C55E' },
+                ].map((leaf, i) => (
+                  <g key={i} transform={`translate(${leaf.x}, ${leaf.y}) rotate(${leaf.r})`}>
+                    <path
+                      d="M0,-14 C10,-6 11,6 0,14 C-11,6 -10,-6 0,-14 Z"
+                      fill={leaf.c}
+                      stroke="#14532D"
+                      strokeWidth="1"
+                      opacity="0.92"
+                    />
+                    <line x1="0" y1="-10" x2="0" y2="11" stroke="#FEF9C3" strokeWidth="0.9" opacity="0.7" />
+                  </g>
+                ))}
+              </g>
+
+              {/* 8. Flowing Luminous White-Gold Nectar Waves from Root to 4 Fruits */}
+              <g
+                stroke="#FFFFFF"
+                strokeWidth={isWatered ? "3.5" : "1.8"}
+                strokeDasharray="8 6"
+                strokeLinecap="round"
+                fill="none"
+                opacity={isWatered ? "0.95" : "0.4"}
+                className="transition-all duration-700 animate-pulse"
+              >
+                <path d="M300,82 C296,155 270,210 148,302" />
+                <path d="M300,82 C304,155 330,210 452,302" />
+                <path d="M300,82 C298,190 278,285 215,374" />
+                <path d="M300,82 C302,190 322,285 385,374" />
+              </g>
+
+              {/* 9. Four Crisp Upright Golden-Cream Badges (भक्ति, सुख, मुक्ति, शांति) */}
+              {[
+                { x: 148, y: 304, label: activeLang === 'pb' ? 'ਭਗਤੀ' : activeLang === 'en' ? 'Devotion' : 'भक्ति' },
+                { x: 452, y: 304, label: activeLang === 'pb' ? 'ਸੁੱਖ' : activeLang === 'en' ? 'Happiness' : 'सुख' },
+                { x: 215, y: 376, label: activeLang === 'pb' ? 'ਮੁਕਤੀ' : activeLang === 'en' ? 'Liberation' : 'मुक्ति' },
+                { x: 385, y: 376, label: activeLang === 'pb' ? 'ਸ਼ਾਂਤੀ' : activeLang === 'en' ? 'Peace' : 'शांति' },
+              ].map((item, idx) => (
                 <g key={idx} className="transition-transform duration-300 hover:scale-105">
-                  <rect 
-                    x={item.x - 42} 
-                    y={item.y - 15} 
-                    width="84" 
-                    height="32" 
-                    rx="16" 
-                    fill={isWatered ? "#FEF08A" : "#FEF3C7"} 
-                    stroke="#D97706" 
-                    strokeWidth="2.5" 
-                    filter="url(#glowShadow)" 
+                  <circle cx={item.x} cy={item.y} r="54" fill="url(#badgeAura)" opacity={isWatered ? "0.95" : "0.65"} />
+                  <rect
+                    x={item.x - 50}
+                    y={item.y - 19}
+                    width="100"
+                    height="38"
+                    rx="19"
+                    fill="#FFFDF7"
+                    stroke="#D97706"
+                    strokeWidth="2.8"
                   />
-                  <text 
-                    x={item.x} 
-                    y={item.y + 5} 
-                    textAnchor="middle" 
-                    fill="#6B1D1D" 
-                    fontWeight="900" 
-                    fontSize="13" 
+                  <rect
+                    x={item.x - 46}
+                    y={item.y - 15}
+                    width="92"
+                    height="30"
+                    rx="15"
+                    fill="none"
+                    stroke="#FDE047"
+                    strokeWidth="1"
+                    opacity="0.85"
+                  />
+                  <text
+                    x={item.x}
+                    y={item.y + 5.5}
+                    textAnchor="middle"
+                    fill="#6B1D1D"
+                    fontWeight="900"
+                    fontSize="14.5"
                     className="font-serif tracking-tight"
                   >
                     {item.label}
@@ -628,23 +806,33 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
               ))}
             </svg>
 
-            {/* Peaceful Status Message & Gita/Bijak Wisdom Footer */}
-            <div className="mt-4 p-4 rounded-2xl bg-amber-500/12 border border-amber-500/30 text-center max-w-xl space-y-2">
+            {/* Peaceful Status Message & Satguru Kabir Saheb Philosophy Footer */}
+            <div className="mt-5 p-5 rounded-2xl bg-amber-500/12 border-2 border-amber-500/30 text-center max-w-2xl space-y-3">
               {isWatered && (
-                <div className="p-2 rounded-xl bg-emerald-600/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-serif font-black animate-pulse">
+                <div className="p-2.5 rounded-xl bg-emerald-600/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-serif font-black animate-pulse">
                   ✨ {activeLang === 'pb' ? 'ਇੱਕ ਸਤਯਨਾਮ ਨੂੰ ਸਾਧਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਆਪਣੇ ਆਪ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।' : activeLang === 'en' ? 'By mastering the One Satyanaam, devotion, happiness, liberation, and peace are effortlessly attained.' : 'एक सत्यनाम को साधने से भक्ति, सुख, मुक्ति और शांति स्वतः प्राप्त होते हैं।'}
                 </div>
               )}
-              <p className="text-xs font-serif text-stone-700 dark:text-stone-300 leading-relaxed">
-                <span className="font-bold text-[#D97706]">
-                  {activeLang === 'pb' ? 'ਬੀਜਕ ਤੇ ਗੀਤਾ ਦਰਸ਼ਨ: ' : activeLang === 'en' ? 'Bijak & Gita Wisdom: ' : 'बीजक एवं गीता दर्शन: '}
-                </span>
-                {activeLang === 'pb'
-                  ? '"ਊਰਧਵਮੂਲਮਧਃਸ਼ਾਖਮਸ਼ਵੱਥੰ ਪ੍ਰਾਹੁਰਵਯਯਮ" — ਜੜ੍ਹਾਂ ਸਤਯਨਾਮ ਪੁਰਸ਼ ਹਨ। ਜੜ੍ਹਾਂ ਨੂੰ ਸਿੰਜਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਦੇ ਫਲ ਸਹਿਜੇ ਹੀ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।'
-                  : activeLang === 'en'
-                  ? '"Urdhvamulam Adhahshakham" — The roots dwell in Supreme Satyanaam. By watering the Root, the fruits of Bhakti, Happiness, Liberation, and Peace blossom effortlessly.'
-                  : '"ऊर्ध्वमूलमधःशाखमश्वत्थं प्राहुरव्ययम्" — जड़ें परम सत्यनाम पुरुष हैं। जड़ को सींचने से भक्ति, सुख, मुक्ति और शांति के चारों पावन फल स्वतः प्राप्त होते हैं।'}
-              </p>
+              
+              <div className="space-y-1.5">
+                <h4 className="font-serif font-black text-sm sm:text-base text-[#6B1D1D] dark:text-amber-300">
+                  {activeLang === 'pb' ? '✦ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਮੂਲ-ਦਰਸ਼ਨ (ਕਬੀਰ ਸਾਗਰ) ✦' : activeLang === 'en' ? '✦ Satguru Kabir Saheb\'s Core Philosophy (Kabir Sagar) ✦' : '✦ सद्गुरु कबीर साहेब का मूल-दर्शन (कबीर सागर) ✦'}
+                </h4>
+                <p className="font-serif font-bold text-xs sm:text-sm text-amber-950 dark:text-amber-100 whitespace-pre-line leading-relaxed">
+                  {activeLang === 'pb'
+                    ? 'ਮੂਲ ਗਹੇ ਤੇ ਸਬ ਗਹੇ, ਡਾਰ ਗਹੇ ਤੇ ਜਾਇ।\nਕਹ ਕਬੀਰ ਤੇ ਨਰ ਭਏ, ਜੋ ਰਹੇ ਮੂਲ ਲਪਟਾਇ॥'
+                    : activeLang === 'en'
+                    ? 'Mool gahe te sab gahe, daar gahe te jaay.\nKah Kabir te nar bhaye, jo rahe mool laptaay.'
+                    : 'मूल गहे ते सब गहे, डार गहे ते जाय।\nकह कबीर ते नर भये, जो रहे मूल लपटाय॥'}
+                </p>
+                <p className="text-xs font-serif text-stone-700 dark:text-stone-300 leading-relaxed pt-1 border-t border-amber-500/20">
+                  {activeLang === 'pb'
+                    ? 'ਇਸ ਸ੍ਰਿਸ਼ਟੀ ਰੂਪੀ ਉਲਟੇ ਰੁੱਖ ਦੀਆਂ ਜੜ੍ਹਾਂ ਉੱਪਰ ਪਰਮ ਤੱਤ \'ਸਤਯਨਾਮ\' (ਮੂਲ) ਵਿੱਚ ਸਥਿਤ ਹਨ। ਕੇਵਲ ਇੱਕ ਸਤਯਨਾਮ ਰੂਪੀ ਜੜ੍ਹ ਨੂੰ ਸਿੰਜਣ ਨਾਲ ਭਗਤੀ, ਸੁੱਖ, ਮੁਕਤੀ ਅਤੇ ਸ਼ਾਂਤੀ ਦੇ ਚਾਰੇ ਪਾਵਨ ਫਲ ਆਪਣੇ ਆਪ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ।'
+                    : activeLang === 'en'
+                    ? 'The roots of this inverted cosmic tree dwell above in the Supreme Truth \'Satyanaam\' (the Root). Nourishing this sole Root of Satyanaam naturally yields all four divine fruits: Devotion, Happiness, Liberation, and Peace.'
+                    : 'इस सृष्टि रूपी उल्टे वृक्ष की जड़ें ऊपर परम तत्व \'सत्यनाम\' (मूल) में स्थित हैं। केवल एक सत्यनाम रूपी जड़ को सींचने से भक्ति, सुख, मुक्ति और शांति के चारों पावन फल स्वतः प्राप्त होते हैं।'}
+                </p>
+              </div>
             </div>
           </div>
         </section>

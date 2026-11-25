@@ -15,7 +15,6 @@ import {
   Download,
   Info,
   LogOut,
-  User as UserIcon,
   ArrowLeft,
   Scroll,
   Clock,
@@ -25,7 +24,6 @@ import {
   Volume2 as SpeechVolumeIcon,
   Upload,
   RotateCcw,
-  Cloud,
   Music,
   Video,
   Image as ImageIcon,
@@ -36,28 +34,37 @@ import {
   Activity,
   SpellCheck,
   Database,
+  History,
+  BookOpen,
+  Highlighter,
+  Target,
+  Play,
+  Square,
 } from 'lucide-react';
 import { ADMIN_GRANTH_SLOTS, OPEN_ADMIN_INJECTOR_EVENT } from '../services/adminSlotInjectorStore';
-import { onAuthStateChanged, User, signOut } from 'firebase/auth';
-import { auth, signInWithGoogle } from '../lib/firebase';
 import { NityaVaniSettings } from './NityaVaniSettings';
-import { Language, ThemeMode, SACRED_BRANDING } from '../types';
+import { Language, ThemeMode, SACRED_BRANDING, ReaderCustomTheme, ReaderTarget, AppView } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme, GLOBAL_NATURE_PRESETS } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { satyanaamAudio, speechReciter } from '../services/audioDhun';
+import { sacredHaptics } from '../services/haptics';
+import {
+  getReadingHistory,
+  clearReadingHistory,
+  ReadingHistoryItem,
+} from '../services/readingHistoryStore';
 import {
   DarshanObjectFit,
   DarshanPortraitState,
   compressDarshanImage,
   getCustomDarshanState,
-  isFirebaseAdminSessionActive,
   publishAdminDarshanPortrait,
   resetAdminDarshanPortrait,
   subscribeToCustomPortraitState,
   updateAdminDarshanObjectFit,
 } from '../services/customPortraitStore';
-import { isAdminAuthenticated, setAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
+import { isAdminAuthenticated, setAdminAuthenticated } from '../services/adminAuth';
 import {
   subscribeToSacredMedia,
   publishAdminSacredMedia,
@@ -74,6 +81,8 @@ import {
 import { PWAInstallButton } from './PWAInstallButton';
 import { manualCheckAndReloadUpdates } from '../utils/appUpdateManager';
 
+export type SettingsTabId = 'general' | 'accessibility' | 'reading';
+
 interface SettingsModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -82,6 +91,8 @@ interface SettingsModalProps {
   isDhunPlaying: boolean;
   onToggleDhun: () => void;
   onPreviewSplash?: () => void;
+  initialTab?: SettingsTabId;
+  onNavigateView?: (view: AppView) => void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -92,6 +103,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   isDhunPlaying,
   onToggleDhun,
   onPreviewSplash,
+  initialTab = 'general',
+  onNavigateView,
 }) => {
   const { 
     theme, 
@@ -109,6 +122,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     setThemeMode,
     isAutoNightMode,
     setIsAutoNightMode,
+    isMuted,
+    setIsMuted,
     speechRate,
     setSpeechRate,
     zenModeActive,
@@ -130,13 +145,42 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const activeLang = language || contextLang;
   const t = translations[activeLang] || contextT;
 
+  const [activeTab, setActiveTab] = useState<SettingsTabId>(initialTab);
+  const [suiteSubTab, setSuiteSubTab] = useState<'controls' | 'history'>('controls');
+  const [historyItems, setHistoryItems] = useState<ReadingHistoryItem[]>([]);
+  const [activeReaderTheme, setActiveReaderTheme] = useState<ReaderCustomTheme>(() => {
+    try {
+      return (localStorage.getItem('sahebworld_reader_theme') as ReaderCustomTheme) || 'mool';
+    } catch {
+      return 'mool';
+    }
+  });
+  const [activeHighlighter, setActiveHighlighter] = useState<'saffron' | 'green' | 'yellow' | 'none'>(() => {
+    try {
+      return (localStorage.getItem('sahebworld_active_highlighter') as any) || 'saffron';
+    } catch {
+      return 'saffron';
+    }
+  });
+  const [targetPace, setTargetPace] = useState<ReaderTarget>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_target_pace');
+      return saved ? (parseInt(saved, 10) as ReaderTarget) : 21;
+    } catch {
+      return 21;
+    }
+  });
+  const [suiteToast, setSuiteToast] = useState<string | null>(null);
+  const [currentReadingText, setCurrentReadingText] = useState<string>('');
+  const [currentReadingTitle, setCurrentReadingTitle] = useState<string>('');
+  const [currentReadingProgress, setCurrentReadingProgress] = useState<number>(0);
+  const [readingWpm, setReadingWpm] = useState<number>(140);
+
   const [dhunVolume, setDhunVolume] = useState<number>(() => satyanaamAudio.getVolume());
   const [vocalChantEnabled, setVocalChantEnabled] = useState<boolean>(() => satyanaamAudio.getVocalChantEnabled());
   const [speechPitch, setSpeechPitch] = useState<number>(() => speechReciter.getPitch());
   const [isVoiceTesting, setIsVoiceTesting] = useState<boolean>(false);
-  const [user, setUser] = useState<User | null>(null);
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
-  const [isFirebaseAdmin, setIsFirebaseAdmin] = useState<boolean>(() => isFirebaseAdminSessionActive());
   const [portraitState, setPortraitState] = useState<DarshanPortraitState>(() => getCustomDarshanState());
   const [isUploadingPortrait, setIsUploadingPortrait] = useState<boolean>(false);
   const darshanInputRef = React.useRef<HTMLInputElement>(null);
@@ -195,7 +239,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   useEffect(() => {
     const handleAuthChange = () => {
       setIsAdmin(isAdminAuthenticated());
-      setIsFirebaseAdmin(isFirebaseAdminSessionActive());
     };
     window.addEventListener('sahebworld:admin-auth-change', handleAuthChange);
     const unsubPortrait = subscribeToCustomPortraitState((next) => setPortraitState(next));
@@ -211,15 +254,9 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     };
   }, []);
 
-  const handleAdminLogout = async () => {
+  const handleAdminLogout = () => {
     setAdminAuthenticated(false);
     setIsAdmin(false);
-    setIsFirebaseAdmin(false);
-    if (auth?.currentUser?.email && isAuthorizedAdminEmail(auth.currentUser.email)) {
-      try {
-        await signOut(auth);
-      } catch {}
-    }
     setAdminNotice(null);
   };
 
@@ -235,21 +272,20 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       if (res.syncedToCloud) {
         setAdminNotice(
           language === 'pb'
-            ? '✓ ਪਾਵਨ ਸਰੂਪ ਅਪਡੇਟ ਤੇ ਗਲੋਬਲ ਕਲਾਉਡ ਸਿੰਕ ਸਫਲ!'
+            ? '✓ ਪਾਵਨ ਸਰੂਪ ਅਪਡੇਟ ਤੇ ਕਲਾਉਡ ਸਿੰਕ ਸਫਲ!'
             : language === 'en'
             ? '✓ Portrait updated & synced globally!'
-            : '✓ पावन स्वरूप अपडेट व ग्लोबल क्लाउड सिंक सफल!'
-        );
-      } else if (res.needsGoogleAdminSignIn) {
-        setAdminNotice(
-          language === 'pb'
-            ? '✓ ਡਿਵਾਈਸ ਤੇ ਸੇਵ — ਸਾਰੇ ਭਗਤਾਂ ਤੱਕ ਪਹੁੰਚਾਉਣ ਲਈ Google ਐਡਮਿਨ ਸਾਈਨ-ਇਨ ਕਰੋ।'
-            : language === 'en'
-            ? '✓ Saved locally — Sign in with Admin Google to sync globally.'
-            : '✓ डिवाइस पर सेव — सभी भक्तों तक पहुँचाने हेतु Google एडमिन साइन-इन करें।'
+            : '✓ पावन स्वरूप अपडेट व ग्लोबल सिंक सफल!'
         );
       } else {
-        setAdminNotice(res.error || (language === 'pb' ? '✓ ਸਰੂਪ ਅਪਡੇਟ ਹੋਇਆ' : language === 'en' ? '✓ Portrait updated' : '✓ पावन स्वरूप अपडेट हुआ'));
+        setAdminNotice(
+          res.error ||
+            (language === 'pb'
+              ? '✓ ਪਾਵਨ ਸਰੂਪ ਡਿਵਾਈਸ ਤੇ ਸੁਰੱਖਿਅਤ ਸੇਵ ਹੋਇਆ!'
+              : language === 'en'
+              ? '✓ Portrait saved locally on device!'
+              : '✓ पावन स्वरूप सफलतापूर्वक सहेजा गया!')
+        );
       }
     } catch (err: any) {
       setAdminNotice(
@@ -260,46 +296,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       setIsUploadingPortrait(false);
       setTimeout(() => setAdminNotice(null), 4500);
     }
-  };
-
-  const handleAdminGoogleConnect = async () => {
-    try {
-      const u = await signInWithGoogle();
-      setIsFirebaseAdmin(isFirebaseAdminSessionActive());
-      if (u?.email && isAuthorizedAdminEmail(u.email)) {
-        setAdminAuthenticated(true);
-        setIsAdmin(true);
-        if (portraitState.imageData) {
-          await publishAdminDarshanPortrait(portraitState.imageData, portraitState.objectFit);
-        }
-        setAdminNotice(
-          language === 'pb'
-            ? '✓ Google ਐਡਮਿਨ ਪ੍ਰਮਾਣੀਕਰਣ ਤੇ ਕਲਾਉਡ ਸਿੰਕ ਸਰਗਰਮ!'
-            : language === 'en'
-            ? '✓ Admin Google verified & Cloud Sync active!'
-            : '✓ Google एडमिन प्रमाणीकरण व क्लाउड सिंक सक्रिय!'
-        );
-      } else {
-        setAdminAuthenticated(false);
-        setIsAdmin(false);
-        setAdminNotice(
-          language === 'pb'
-            ? '✗ ਕੇਵਲ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਖਾਤਾ ਹੀ ਮਾਨਯ ਹੈ।'
-            : language === 'en'
-            ? '✗ Only the authorized admin account is allowed.'
-            : '✗ केवल अधिकृत एडमिन खाता ही मान्य है।'
-        );
-      }
-    } catch {
-      setAdminNotice(
-        language === 'pb'
-          ? 'Google ਸਾਈਨ-ਇਨ ਰੱਦ ਜਾਂ ਬਲਾਕ ਹੋਇਆ।'
-          : language === 'en'
-          ? 'Google Sign-In cancelled or blocked in preview.'
-          : 'Google साइन-इन पॉपअप रद्द या अवरुद्ध हुआ।'
-      );
-    }
-    setTimeout(() => setAdminNotice(null), 4500);
   };
 
   const handleAdminObjectFit = async (fit: DarshanObjectFit) => {
@@ -374,29 +370,77 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     return () => window.removeEventListener('sahebworld_tts_settings_changed', handleSettingsChanged);
   }, []);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (u) => {
-      setUser(u);
-      if (u?.email && isAuthorizedAdminEmail(u.email)) {
-        setIsAdmin(true);
-        setAdminAuthenticated(true);
-      }
-    });
-    return () => unsubscribe();
-  }, []);
 
   const modalRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setActiveTab(initialTab || 'general');
+    }
+  }, [isOpen, initialTab]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setHistoryItems(getReadingHistory());
+    const handleHistoryUpdate = () => setHistoryItems(getReadingHistory());
+    const handleReadingUpdate = () => {
+      try {
+        setCurrentReadingText(localStorage.getItem('sahebworld_current_reading_text') || '');
+        setCurrentReadingTitle(localStorage.getItem('sahebworld_current_reading_title') || '');
+        const savedProgress = localStorage.getItem('sahebworld_current_reading_progress');
+        setCurrentReadingProgress(savedProgress ? parseInt(savedProgress, 10) : 0);
+        const savedWpm = localStorage.getItem('sahebworld_reading_wpm');
+        if (savedWpm) setReadingWpm(parseInt(savedWpm, 10));
+      } catch {}
+    };
+    handleReadingUpdate();
+    window.addEventListener('sahebworld_reading_history_updated', handleHistoryUpdate);
+    window.addEventListener('sahebworld_current_reading_updated', handleReadingUpdate);
+    return () => {
+      window.removeEventListener('sahebworld_reading_history_updated', handleHistoryUpdate);
+      window.removeEventListener('sahebworld_current_reading_updated', handleReadingUpdate);
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleZenToggle = () => setZenModeActive(!zenModeActive);
+    const handleLarivaarToggle = () => setLarivaarModeActive(!larivaarModeActive);
+    const handleVisraamToggle = () => setVisraamModeActive(!visraamModeActive);
+    window.addEventListener('sahebworld_toggle_zen_mode', handleZenToggle);
+    window.addEventListener('sahebworld_toggle_larivaar_mode', handleLarivaarToggle);
+    window.addEventListener('sahebworld_toggle_visraam_mode', handleVisraamToggle);
+    return () => {
+      window.removeEventListener('sahebworld_toggle_zen_mode', handleZenToggle);
+      window.removeEventListener('sahebworld_toggle_larivaar_mode', handleLarivaarToggle);
+      window.removeEventListener('sahebworld_toggle_visraam_mode', handleVisraamToggle);
+    };
+  }, [zenModeActive, larivaarModeActive, visraamModeActive, setZenModeActive, setLarivaarModeActive, setVisraamModeActive]);
+
+  const calculatedRemainingMins = React.useMemo(() => {
+    if (!currentReadingText) return 2;
+    const wordCount = currentReadingText.trim().split(/\s+/).filter(Boolean).length;
+    const totalWordsEstimate = Math.max(wordCount, 15);
+    const remainingFraction = 1 - currentReadingProgress / 100;
+    const remainingWords = Math.round(totalWordsEstimate * Math.max(0.1, remainingFraction));
+    return Math.max(1, Math.ceil(remainingWords / readingWpm));
+  }, [currentReadingText, currentReadingProgress, readingWpm]);
+
+  const handleCloseModal = React.useCallback(() => {
+    speechReciter.stop();
+    setIsVoiceTesting(false);
+    onClose();
+  }, [onClose]);
 
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        handleCloseModal();
       }
     };
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
       if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-        onClose();
+        handleCloseModal();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -407,9 +451,184 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleCloseModal]);
 
   if (!isOpen) return null;
+
+  const isHi = activeLang === 'hi';
+  const isPb = activeLang === 'pb';
+
+  const showSuiteNotice = (msg: string) => {
+    setSuiteToast(msg);
+    window.setTimeout(() => setSuiteToast(null), 2400);
+  };
+
+  const handleSelectReadingMode = (modeId: string) => {
+    sacredHaptics.lightTap();
+    setAutoScrollActive(false);
+    setZenModeActive(false);
+    setLarivaarModeActive(false);
+    setVisraamModeActive(false);
+    setReadingFramework('scroll');
+
+    switch (modeId) {
+      case 'scroll':
+        setReadingFramework('scroll');
+        try {
+          localStorage.setItem('sahebworld_reading_framework', 'scroll');
+          window.dispatchEvent(new CustomEvent('sahebworld_framework_changed', { detail: { framework: 'scroll' } }));
+        } catch {}
+        showSuiteNotice(isHi ? 'निरंतर स्क्रॉल मोड सक्रिय!' : isPb ? 'ਨਿਰੰਤਰ ਸਕ੍ਰੋਲ ਮੋਡ ਚਾਲੂ!' : 'Continuous Scroll Mode Active!');
+        break;
+      case 'flip':
+        setReadingFramework('flip');
+        try {
+          localStorage.setItem('sahebworld_reading_framework', 'flip');
+          window.dispatchEvent(new CustomEvent('sahebworld_framework_changed', { detail: { framework: 'flip' } }));
+        } catch {}
+        showSuiteNotice(isHi ? '३D पोथी पन्ना मोड सक्रिय!' : isPb ? '੩D ਪੋਥੀ ਪੰਨਾ ਮੋਡ ਚਾਲੂ!' : '3D Pothi Flip Mode Active!');
+        break;
+      case 'parallel':
+        setReadingFramework('parallel');
+        try {
+          localStorage.setItem('sahebworld_reading_framework', 'parallel');
+          window.dispatchEvent(new CustomEvent('sahebworld_framework_changed', { detail: { framework: 'parallel' } }));
+        } catch {}
+        showSuiteNotice(isHi ? 'समानांतर तुलना मोड सक्रिय!' : isPb ? 'ਸਮਾਨਾਂਤਰ ਤੁਲਨਾ ਮੋਡ ਚਾਲੂ!' : 'Parallel Translation Mode Active!');
+        break;
+      case 'zen':
+        setZenModeActive(true);
+        try {
+          localStorage.setItem('sahebworld_zen_mode', 'true');
+          window.dispatchEvent(new CustomEvent('sahebworld_toggle_zen_mode'));
+        } catch {}
+        showSuiteNotice(isHi ? 'ज़ेन एकाग्रता मोड सक्रिय!' : isPb ? 'ਜੇਨ ਇਕਾਗਰਤਾ ਮੋਡ ਚਾਲੂ!' : 'Zen Focus Mode Active!');
+        handleCloseModal();
+        break;
+      case 'larivaar':
+        setLarivaarModeActive(true);
+        try {
+          localStorage.setItem('sahebworld_larivaar_mode', 'true');
+          window.dispatchEvent(new CustomEvent('sahebworld_toggle_larivaar_mode'));
+        } catch {}
+        showSuiteNotice(isHi ? 'लारीवार अखंड पाठ मोड सक्रिय!' : isPb ? 'ਲਾਰੀਵਾਰ ਅਖੰਡ ਪਾਠ ਮੋਡ ਚਾਲੂ!' : 'Larivaar Mode Active!');
+        break;
+      case 'visraam':
+        setVisraamModeActive(true);
+        try {
+          localStorage.setItem('sahebworld_visraam_mode', 'true');
+          window.dispatchEvent(new CustomEvent('sahebworld_toggle_visraam_mode'));
+        } catch {}
+        showSuiteNotice(isHi ? 'विश्राम हाइलाइट मोड सक्रिय!' : isPb ? 'ਵਿਸ਼ਰਾਮ ਹਾਈਲਾਈਟ ਮੋਡ ਚਾਲੂ!' : 'Visraam Highlight Mode Active!');
+        break;
+      case 'autoplay':
+        setAutoScrollActive(true);
+        try {
+          localStorage.setItem('sahebworld_autoscroll_active', 'true');
+          window.dispatchEvent(new CustomEvent('sahebworld_autoscroll_toggled', { detail: { active: true, speed: autoScrollSpeed } }));
+        } catch {}
+        showSuiteNotice(isHi ? 'स्वतः स्क्रॉल एवं श्वास मोड सक्रिय!' : isPb ? 'ਸਵੈ-ਸਕ੍ਰੋਲ ਤੇ ਸੁਆਸ ਮੋਡ ਚਾਲੂ!' : 'Auto-Scroll & Breath Mode Active!');
+        break;
+      case 'swadhyay':
+        handleCloseModal();
+        if (onNavigateView) onNavigateView('swadhyay');
+        else window.dispatchEvent(new CustomEvent('sahebworld:navigate', { detail: 'swadhyay' }));
+        break;
+      case 'akhand-path':
+        handleCloseModal();
+        if (onNavigateView) onNavigateView('akhand-path');
+        else window.dispatchEvent(new CustomEvent('sahebworld:navigate', { detail: 'akhand-path' }));
+        break;
+    }
+  };
+
+  const handleSpeedChange = (speed: number) => {
+    sacredHaptics.lightTap();
+    setAutoScrollSpeed(speed);
+    try {
+      localStorage.setItem('sahebworld_autoscroll_speed', String(speed));
+      window.dispatchEvent(new CustomEvent('sahebworld_autoscroll_speed_changed', { detail: { speed } }));
+    } catch {}
+    showSuiteNotice(`${isHi ? 'स्क्रॉल गति' : isPb ? 'ਸਕ੍ਰੋਲ ਗਤੀ' : 'Scroll Speed'} ${speed}x`);
+  };
+
+  const handleReaderPaletteChange = (thm: ReaderCustomTheme) => {
+    sacredHaptics.lightTap();
+    setActiveReaderTheme(thm);
+    try {
+      localStorage.setItem('sahebworld_reader_theme', thm);
+      window.dispatchEvent(new CustomEvent('sahebworld_reader_theme_changed', { detail: { theme: thm } }));
+      const thmStr = thm as string;
+      if (thmStr === 'deep_sepia' || thmStr === 'black' || thmStr === 'midnight' || thmStr === 'oled' || thmStr === 'dark') {
+        setThemeMode('mystic_dark');
+      } else {
+        setThemeMode('bhojpatra');
+      }
+    } catch {}
+    showSuiteNotice(isHi ? 'पठन थीम लागू हुई!' : isPb ? 'ਥੀਮ ਲਾਗੂ ਹੋਈ!' : 'Reader Theme Applied!');
+  };
+
+  const handleHighlighterChange = (hl: 'saffron' | 'green' | 'yellow' | 'none') => {
+    sacredHaptics.lightTap();
+    setActiveHighlighter(hl);
+    try {
+      localStorage.setItem('sahebworld_active_highlighter', hl);
+      window.dispatchEvent(new CustomEvent('sahebworld_highlighter_changed', { detail: { color: hl } }));
+    } catch {}
+    showSuiteNotice(isHi ? 'हाइलाइटर अद्यतित!' : isPb ? 'ਹਾਈਲਾਈਟਰ ਅੱਪਡੇਟ ਹੋਇਆ!' : 'Highlighter Color Set!');
+  };
+
+  const handleTargetChange = (tgt: ReaderTarget) => {
+    sacredHaptics.lightTap();
+    setTargetPace(tgt);
+    try {
+      localStorage.setItem('sahebworld_target_pace', String(tgt));
+      window.dispatchEvent(new CustomEvent('sahebworld_target_pace_changed', { detail: { target: tgt } }));
+    } catch {}
+    showSuiteNotice(`${isHi ? 'दैनिक लक्ष्य' : isPb ? 'ਦੈਨਿਕ ਟੀਚਾ' : 'Daily Goal'}: ${tgt} ${isHi ? 'पद्य' : isPb ? 'ਪਦ' : 'Verses'}`);
+  };
+
+  const handleClearHistory = () => {
+    sacredHaptics.lightTap();
+    clearReadingHistory();
+    setHistoryItems([]);
+    showSuiteNotice(isHi ? 'पठन इतिहास साफ़ कर दिया गया!' : isPb ? 'ਪਠਨ ਇਤਿਹਾਸ ਸਾਫ਼ ਹੋ ਗਿਆ!' : 'Reading history cleared!');
+  };
+
+  const handleResumeHistoryItem = (item: ReadingHistoryItem) => {
+    sacredHaptics.lightTap();
+    handleCloseModal();
+    const targetView: AppView =
+      item.type === 'nitnem'
+        ? 'nitnem-gutka'
+        : item.type === 'granth'
+        ? 'grantha'
+        : item.type === 'ulatvasi'
+        ? 'ulatvasi-library'
+        : item.type === 'aarti'
+        ? 'aarti-sanctuary'
+        : item.type === 'chintan'
+        ? 'dainik-chintan'
+        : 'swadhyay';
+    if (onNavigateView) onNavigateView(targetView);
+    else window.dispatchEvent(new CustomEvent('sahebworld:navigate', { detail: targetView }));
+  };
+
+  const formatTimeAgo = (isoDate: string) => {
+    try {
+      const d = new Date(isoDate);
+      const diffMs = Date.now() - d.getTime();
+      const diffMins = Math.floor(diffMs / (1000 * 60));
+      if (diffMins < 1) return isHi ? 'अभी-अभी' : isPb ? 'ਹੁਣੇ-ਹੁਣੇ' : 'Just now';
+      if (diffMins < 60) return `${diffMins} ${isHi ? 'मिनट पहले' : isPb ? 'ਮਿੰਟ ਪਹਿਲਾਂ' : 'mins ago'}`;
+      const diffHours = Math.floor(diffMins / 60);
+      if (diffHours < 24) return `${diffHours} ${isHi ? 'घंटे पहले' : isPb ? 'ਘੰਟੇ ਪਹਿਲਾਂ' : 'hours ago'}`;
+      const diffDays = Math.floor(diffHours / 24);
+      return `${diffDays} ${isHi ? 'दिन पहले' : isPb ? 'ਦਿਨ ਪਹਿਲਾਂ' : 'days ago'}`;
+    } catch {
+      return '';
+    }
+  };
 
   const handleSpeechRateChange = (newRate: number) => {
     setSpeechRate(newRate);
@@ -470,26 +689,30 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     }
   };
 
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error('Sign out failed:', error);
-    }
-  };
 
   const exactTop = SACRED_BRANDING.header[language];
   const exactBottom = SACRED_BRANDING.footer[language];
+
+  const FONT_SIZE_PRESETS: Array<{ id: 'small' | 'normal' | 'medium' | 'large' | 'xlarge' | 'xl' | 'elderly'; label: string; sub: string }> = [
+    { id: 'small', label: 'A-', sub: t.fontSmall },
+    { id: 'normal', label: 'A', sub: isPb ? 'ਸਾਧਾਰਣ' : isHi ? 'सामान्य' : 'Normal' },
+    { id: 'medium', label: 'A+', sub: t.fontMedium },
+    { id: 'large', label: 'A++', sub: t.fontLarge },
+    { id: 'xlarge', label: 'A+++', sub: 'XL' },
+    { id: 'xl', label: '7XL', sub: isPb ? 'ਵਿਸ਼ਾਲ' : isHi ? 'बृहत्' : 'Huge' },
+    { id: 'elderly', label: '👵 Elderly', sub: isPb ? 'ਬਜ਼ੁਰਗ' : isHi ? 'वरिष्ठ' : 'Senior' },
+  ];
+  const currentFontIndex = Math.max(0, FONT_SIZE_PRESETS.findIndex((f) => f.id === fontSize));
 
   return (
     <div
       id="settings-modal-overlay"
       onClick={(e) => {
         if ((e.target as HTMLElement).id === 'settings-modal-overlay') {
-          onClose();
+          handleCloseModal();
         }
       }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm transition-opacity"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60 backdrop-blur-sm transition-opacity overflow-x-hidden"
     >
       <div
         id="settings-drawer-card"
@@ -499,54 +722,95 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           borderColor: theme.accentGold,
           color: theme.textPrimary,
         }}
-        className="relative z-20 w-full max-w-lg rounded-2xl border-2 shadow-2xl overflow-hidden flex flex-col max-h-[88vh] sm:max-h-[85vh] transition-all"
+        className="relative z-20 w-full max-w-lg rounded-2xl border-2 shadow-2xl overflow-hidden flex flex-col max-h-[90dvh] sm:max-h-[85vh] transition-all"
       >
         {/* Strict Top Center Sacred Branding */}
         <div
           style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder }}
-          className="border-b py-2 px-4 text-center select-none flex items-center justify-between shrink-0"
+          className="border-b py-2 px-3 sm:px-4 text-center select-none flex items-center justify-between gap-2 shrink-0"
         >
-          <div className="w-8" />
+          <div className="hidden sm:block w-8 shrink-0" />
           <span
             style={{ color: theme.sacredMaroon }}
-            className="text-base sm:text-lg font-bold tracking-widest font-serif drop-shadow-xs"
+            className="text-sm sm:text-lg font-bold tracking-wider sm:tracking-widest font-serif drop-shadow-xs min-w-0 truncate"
           >
             {exactTop}
           </span>
           <button
             id="close-settings-modal-back"
-            onClick={onClose}
-            className="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer"
+            onClick={handleCloseModal}
+            className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 whitespace-nowrap"
             title={activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Go Back' : 'वापस जाएं'}
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={16} className="shrink-0" />
             <span>{activeLang === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : activeLang === 'en' ? 'Back' : 'वापस जाएं'}</span>
           </button>
         </div>
 
-        {/* Vertically Scrollable Content */}
-        <div className="overflow-y-auto px-4 sm:px-6 py-5 space-y-6 flex-1 overscroll-contain pb-20 sm:pb-24">
-          {/* User Account Info */}
-          {user && (
-            <div className="p-4 rounded-xl border flex items-center justify-between" style={{ borderColor: theme.cardBorder, backgroundColor: theme.bgSecondary }}>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 flex items-center justify-center">
-                  <UserIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold" style={{ color: theme.textPrimary }}>{user.displayName}</p>
-                  <p className="text-[10px] opacity-60" style={{ color: theme.textSecondary }}>{user.email}</p>
-                </div>
-              </div>
+        {/* Unified 3-Tab Navigation Bar */}
+        <div
+          role="tablist"
+          aria-label="Unified Settings Tabs"
+          style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+          className="grid grid-cols-3 gap-1 p-1.5 border-b shrink-0"
+        >
+          {[
+            {
+              id: 'general' as SettingsTabId,
+              icon: <Sliders className="w-3.5 h-3.5 shrink-0" />,
+              label: isPb ? 'ਸੈਟਿੰਗਜ਼' : isHi ? 'सामान्य व थीम' : 'General',
+            },
+            {
+              id: 'accessibility' as SettingsTabId,
+              icon: <Volume2 className="w-3.5 h-3.5 shrink-0" />,
+              label: isPb ? 'ਸੁਗਮਤਾ ਤੇ ਬਾਣੀ' : isHi ? 'सुगमता व वाणी' : 'Access & Vani',
+            },
+            {
+              id: 'reading' as SettingsTabId,
+              icon: <BookOpen className="w-3.5 h-3.5 shrink-0" />,
+              label: isPb ? 'ਉੱਨਤ ਪਠਨ' : isHi ? 'उन्नत पाठ साधन' : 'Reading Suite',
+            },
+          ].map((tab) => {
+            const isTabActive = activeTab === tab.id;
+            return (
               <button
-                onClick={handleSignOut}
-                className="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors"
-                title="Sign Out"
+                key={tab.id}
+                type="button"
+                role="tab"
+                id={`settings-tab-${tab.id}`}
+                aria-selected={isTabActive}
+                onClick={() => {
+                  sacredHaptics.lightTap();
+                  setActiveTab(tab.id);
+                }}
+                style={{
+                  backgroundColor: isTabActive ? theme.buttonPrimaryBg : 'transparent',
+                  color: isTabActive ? theme.buttonPrimaryText : theme.sacredMaroon,
+                  borderColor: isTabActive ? theme.accentGold : 'transparent',
+                }}
+                className={`py-2 px-1.5 sm:px-2.5 rounded-xl border text-[11px] sm:text-xs font-serif font-bold flex items-center justify-center gap-1 transition cursor-pointer min-w-0 ${
+                  isTabActive ? 'shadow-sm' : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-85'
+                }`}
               >
-                <LogOut className="w-5 h-5" />
+                {tab.icon}
+                <span className="truncate">{tab.label}</span>
               </button>
-            </div>
-          )}
+            );
+          })}
+        </div>
+
+        {/* Success Toast Notice */}
+        {suiteToast && (
+          <div className="bg-[#8B2500] text-white px-3 py-1.5 text-xs font-bold font-serif text-center flex items-center justify-center gap-1.5 animate-fadeIn shrink-0">
+            <Check className="w-3.5 h-3.5" />
+            <span>{suiteToast}</span>
+          </div>
+        )}
+
+        {/* Vertically Scrollable Content */}
+        <div className="overflow-y-auto overflow-x-hidden px-3 sm:px-6 py-4 sm:py-5 space-y-5 sm:space-y-6 flex-1 overscroll-contain pb-20 sm:pb-24">
+          {activeTab === 'general' && (
+            <>
 
           {/* Section 1: Multi-Language Selector */}
           <div className="space-y-3">
@@ -779,81 +1043,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
           </div>
 
-          {/* Section: Advanced Reading Suite Sync */}
-          <div className="space-y-3">
-            <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-              <Sliders className="w-4 h-4" />
-              <span>{language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਵਿਕਲਪ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन विकल्प (Advanced Suite)'}</span>
-            </h3>
-
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { 
-                  id: 'zen', 
-                  label: language === 'pb' ? 'ਧਿਆਨ (Zen)' : language === 'en' ? 'Zen Mode' : 'ध्यान (Zen Mode)', 
-                  active: zenModeActive, 
-                  setter: setZenModeActive,
-                  icon: <Sparkles className="w-3.5 h-3.5" />
-                },
-                { 
-                  id: 'larivaar', 
-                  label: language === 'pb' ? 'ਲੜੀਵਾਰ' : language === 'en' ? 'Larivaar' : 'लड़ीवार (Larivaar)', 
-                  active: larivaarModeActive, 
-                  setter: setLarivaarModeActive,
-                  icon: <Scroll className="w-3.5 h-3.5" />
-                },
-                { 
-                  id: 'visraam', 
-                  label: language === 'pb' ? 'ਵਿਸ਼ਰਾਮ' : language === 'en' ? 'Visraam' : 'विश्राम (Visraam)', 
-                  active: visraamModeActive, 
-                  setter: setVisraamModeActive,
-                  icon: <Clock className="w-3.5 h-3.5" />
-                },
-                { 
-                  id: 'autoscroll', 
-                  label: language === 'pb' ? 'ਆਟੋ-ਸਕ੍ਰੌਲ' : language === 'en' ? 'Auto-Scroll' : 'स्वतः-स्क्रॉल (Auto)', 
-                  active: autoScrollActive, 
-                  setter: setAutoScrollActive,
-                  icon: <Zap className="w-3.5 h-3.5" />
-                }
-              ].map((mode) => (
-                <button
-                  key={mode.id}
-                  onClick={() => mode.setter(!mode.active)}
-                  style={{
-                    backgroundColor: mode.active ? theme.accentGoldLight : theme.bgSecondary,
-                    borderColor: mode.active ? theme.accentGold : theme.cardBorder,
-                    color: mode.active ? theme.sacredMaroon : theme.textPrimary,
-                  }}
-                  className="flex items-center gap-2 p-2.5 rounded-xl border text-[11px] font-bold transition hover:opacity-90"
-                >
-                  <span className={mode.active ? 'text-amber-600' : 'text-amber-500/50'}>
-                    {mode.icon}
-                  </span>
-                  <span className="flex-1 text-left">{mode.label}</span>
-                  {mode.active && <Check className="w-3 h-3" />}
-                </button>
-              ))}
-            </div>
-
-            {autoScrollActive && (
-              <div className="p-3 rounded-xl border space-y-2 mt-1" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
-                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-tighter opacity-70">
-                  <span style={{ color: theme.textPrimary }}>{language === 'pb' ? 'ਸਕ੍ਰੌਲ ਗਤੀ' : language === 'en' ? 'Scroll Speed' : 'स्क्रॉल गति'}</span>
-                  <span style={{ color: theme.sacredMaroon }}>{autoScrollSpeed.toFixed(1)}x</span>
-                </div>
-                <input
-                  type="range"
-                  min="0.5"
-                  max="3.0"
-                  step="0.1"
-                  value={autoScrollSpeed}
-                  onChange={(e) => setAutoScrollSpeed(parseFloat(e.target.value))}
-                  className="w-full accent-amber-600 h-1.5 cursor-pointer"
-                />
-              </div>
-            )}
-          </div>
+          {/* Quick Reading Suite & Accessibility Moved Cleanly Into Dedicated Tabs */}
 
           {/* Section: Global High-Contrast Night Mode Toggle */}
           <div
@@ -864,8 +1054,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             }}
             className="p-4 sm:p-5 rounded-2xl border-2 transition-all duration-300 space-y-3 relative shadow-xs"
           >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-start gap-3 text-left font-serif">
+            <div className="flex items-start justify-between gap-2.5 sm:gap-3">
+              <div className="flex items-start gap-2.5 sm:gap-3 text-left font-serif min-w-0 flex-1">
                 <div 
                   style={{
                     backgroundColor: isDarkMode ? theme.buttonPrimaryBg : theme.cardBg,
@@ -935,8 +1125,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             }}
             className="p-4 sm:p-5 rounded-2xl border-2 transition-all duration-300 space-y-3 relative shadow-xs"
           >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-start gap-3 text-left font-serif">
+            <div className="flex items-start justify-between gap-2.5 sm:gap-3">
+              <div className="flex items-start gap-2.5 sm:gap-3 text-left font-serif min-w-0 flex-1">
                 <div 
                   style={{
                     backgroundColor: isAutoNightMode ? theme.buttonPrimaryBg : theme.cardBg,
@@ -1006,8 +1196,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             }}
             className="p-4 sm:p-5 rounded-2xl border-2 transition-all duration-300 space-y-3 relative shadow-xs"
           >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-start gap-3">
+            <div className="flex items-start justify-between gap-2.5 sm:gap-3">
+              <div className="flex items-start gap-2.5 sm:gap-3 min-w-0 flex-1">
                 <div 
                   style={{
                     backgroundColor: isSahajMode ? theme.buttonPrimaryBg : theme.cardBg,
@@ -1079,139 +1269,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             )}
           </div>
 
-          {/* Section 2: Line Spacing */}
-          <div className="space-y-3">
-            <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-              <Sliders className="w-4 h-4" />
-              <span>{t.lineSpacingTitle || 'Line Spacing'}</span>
-            </h3>
-
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { height: 'small' as const, label: t.fontSmall },
-                { height: 'medium' as const, label: t.fontMedium },
-                { height: 'large' as const, label: t.fontLarge },
-              ].map((h) => (
-                <button
-                  key={h.height}
-                  onClick={() => setLineHeight(h.height)}
-                  style={{
-                    backgroundColor: lineHeight === h.height ? theme.accentGoldLight : theme.bgSecondary,
-                    borderColor: lineHeight === h.height ? theme.accentGold : theme.cardBorder,
-                    color: lineHeight === h.height ? theme.sacredMaroon : theme.textPrimary,
-                  }}
-                  className="py-2 px-3 rounded-xl border text-xs font-semibold transition text-center cursor-pointer"
-                >
-                  {h.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 3: Width Mode */}
-          <div className="space-y-3">
-            <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-              <Sliders className="w-4 h-4" />
-              <span>{t.widthModeTitle || 'Content Width'}</span>
-            </h3>
-
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { mode: 'narrow' as const, label: t.widthNarrow || 'Narrow' },
-                { mode: 'medium' as const, label: t.widthMedium || 'Medium' },
-                { mode: 'wide' as const, label: t.widthWide || 'Wide' },
-              ].map((m) => (
-                <button
-                  key={m.mode}
-                  onClick={() => setWidthMode(m.mode)}
-                  style={{
-                    backgroundColor: widthMode === m.mode ? theme.accentGoldLight : theme.bgSecondary,
-                    borderColor: widthMode === m.mode ? theme.accentGold : theme.cardBorder,
-                    color: widthMode === m.mode ? theme.sacredMaroon : theme.textPrimary,
-                  }}
-                  className="py-2 px-3 rounded-xl border text-xs font-semibold transition text-center cursor-pointer"
-                >
-                  {m.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 4: Font Size (Dynamic Scaling & Slider) */}
-          <div className="space-y-3">
-            <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-              <Type className="w-4 h-4" />
-              <span>{t.fontSizeTitle || 'पठन अक्षर आकार (Reading Font Size Slider)'}</span>
-            </h3>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs font-serif font-bold">
-                <span style={{ color: theme.textSecondary }}>छोटा (Small)</span>
-                <span style={{ color: theme.sacredMaroon }} className="text-sm font-black">
-                  {fontSize === 'small' ? 'छोटा (Small)' : fontSize === 'medium' ? 'सामान्य (Medium)' : fontSize === 'large' ? 'बड़ा (Large)' : 'विशाल (XL)'}
-                </span>
-                <span style={{ color: theme.textSecondary }}>विशाल (XL)</span>
-              </div>
-
-              <input
-                type="range"
-                min="1"
-                max="4"
-                step="1"
-                value={fontSize === 'small' ? 1 : fontSize === 'medium' ? 2 : fontSize === 'large' ? 3 : 4}
-                onChange={(e) => {
-                  const val = parseInt(e.target.value, 10);
-                  if (val === 1) setFontSize('small');
-                  else if (val === 2) setFontSize('medium');
-                  else if (val === 3) setFontSize('large');
-                  else if (val === 4) setFontSize('xlarge');
-                }}
-                className="w-full accent-amber-600 cursor-pointer h-2 bg-amber-200/40 dark:bg-amber-900/40 rounded-lg"
-              />
-            </div>
-
-            <div className="flex items-center gap-1.5 p-1 rounded-2xl border" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
-              {[
-                { size: 'small' as const, label: 'A', sub: t.fontSmall },
-                { size: 'medium' as const, label: 'A', sub: t.fontMedium },
-                { size: 'large' as const, label: 'A', sub: t.fontLarge },
-                { size: 'xlarge' as const, label: 'A', sub: 'XL' },
-              ].map((f) => {
-                const isSelected = fontSize === f.size;
-                
-                return (
-                  <button
-                    key={f.size}
-                    onClick={() => setFontSize(f.size)}
-                    style={{
-                      backgroundColor: isSelected ? theme.buttonPrimaryBg : 'transparent',
-                      color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
-                    }}
-                    className={`flex-1 flex flex-col items-center justify-center py-2 rounded-xl transition-all duration-200 cursor-pointer ${
-                      isSelected ? 'shadow-md scale-105 font-bold' : 'hover:bg-black/5 dark:hover:bg-white/5'
-                    }`}
-                  >
-                    <span className={`${f.size === 'small' ? 'text-sm' : f.size === 'medium' ? 'text-base' : f.size === 'large' ? 'text-lg' : 'text-xl'} font-black`}>
-                      {f.label}
-                    </span>
-                    <span className="text-[9px] opacity-70">{f.sub}</span>
-                  </button>
-                );
-              })}
-            </div>
-            <p className="text-[10px] text-center opacity-60 italic" style={{ color: theme.textSecondary }}>
-              {language === 'pb' ? 'ਇਹ ਸੈਟਿੰਗ ਸਾਰੇ ਸਵਾਧਿਆਏ ਅਤੇ ਗੁਟਕਾ ਪਾਠਾਂ ‘ਤੇ ਲਾਗੂ ਹੋਵੇਗੀ।' : language === 'en' ? 'This will scale text across all Swadhyay and Gutka views.' : 'यह सेटिंग समस्त स्वाध्याय एवं गुटका पाठों पर समान रूप से लागू होगी।'}
-            </p>
-          </div>
+          {/* Typography (Font Size, Line Spacing, Width) & Speech moved to Tab 2 (Accessibility & Vani) */}
 
           {/* Section 4: Satyanaam Dhun Audio Synthesizer */}
           <div
             style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
             className="p-4 rounded-xl border space-y-3"
           >
-            <div className="flex items-center justify-between">
-              <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                <Volume2 className="w-4 h-4" />
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 min-w-0">
+                <Volume2 className="w-4 h-4 shrink-0" />
                 <span>{t.dhunPlayerTitle}</span>
               </h3>
 
@@ -1248,8 +1315,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
 
             {/* Vocal Simran Toggle */}
-            <div className="flex items-center justify-between pt-1 border-t border-amber-900/10 dark:border-amber-100/10">
-              <div>
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-amber-900/10 dark:border-amber-100/10">
+              <div className="min-w-0 flex-1">
                 <p style={{ color: theme.textPrimary }} className="text-xs font-bold">
                   {t.vocalChantTitle}
                 </p>
@@ -1265,13 +1332,13 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   borderColor: vocalChantEnabled ? theme.buttonPrimaryBg : theme.borderOrnament,
                   color: vocalChantEnabled ? theme.buttonPrimaryText : theme.textMuted,
                 }}
-                className="px-2.5 py-1 rounded-md text-xs font-semibold border transition cursor-pointer"
+                className="px-2.5 py-1 rounded-md text-xs font-semibold border transition cursor-pointer shrink-0"
               >
                 {vocalChantEnabled ? t.onStatus : t.offStatus}
               </button>
             </div>
 
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
               <button
                 onClick={handleRingTripleChime}
                 style={{ color: theme.accentGold }}
@@ -1290,123 +1357,19 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
           </div>
 
-          {/* Section: Web Speech API Voice Speed & Pitch Settings */}
-          <div
-            style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
-            className="p-4 rounded-2xl border space-y-4 shadow-xs"
-          >
-            <div className="flex items-center justify-between">
-              <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                <SpeechVolumeIcon className="w-4 h-4 text-amber-600" />
-                <span>
-                  {language === 'pb'
-                    ? 'ਵਾਕ ਪਾਠ ਆਵਾਜ਼ ਸੈਟਿੰਗਾਂ (Speech Settings)'
-                    : language === 'en'
-                    ? 'Voice Recitation Settings (Speed & Pitch)'
-                    : 'वाणी वाचन स्वर सेटिंग्स (Voice Speed & Pitch)'}
-                </span>
-              </h3>
-
-              <button
-                type="button"
-                onClick={handleTestVoiceRecitation}
-                style={{
-                  backgroundColor: isVoiceTesting ? theme.sacredMaroon : theme.buttonPrimaryBg,
-                  color: theme.buttonPrimaryText,
-                }}
-                className="px-2.5 py-1 rounded-lg text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer hover:opacity-90 active:scale-95"
-              >
-                <Mic className="w-3.5 h-3.5 animate-pulse" />
-                <span>
-                  {isVoiceTesting
-                    ? (language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Stop' : 'रोकें')
-                    : (language === 'pb' ? 'ਟੈਸਟ ਸੁਣੋ' : language === 'en' ? 'Test Voice' : 'टेस्ट सुनें')}
-                </span>
-              </button>
-            </div>
-
-            <p style={{ color: theme.textSecondary }} className="text-xs leading-relaxed">
-              {language === 'pb'
-                ? 'ਸਵਾਧਿਆਏ ਸਾਖੀ ਦੋਹਾ ਸੁਣਨ ਲਈ ਆਵਾਜ਼ ਦੀ ਗਤੀ (Speed) ਅਤੇ ਸੁਰ (Pitch) ਨੂੰ ਆਪਣੇ ਅਨੁਕੂਲ ਕਰੋ।'
-                : language === 'en'
-                ? 'Adjust the voice recitation speed and pitch for listening to Sakhi verses aloud.'
-                : 'स्वाध्याय में साखी दोहा श्रवण हेतु वाणी की गति (Speed) एवं स्वर (Pitch) को अपनी रुचि अनुसार निर्धारित करें।'}
-            </p>
-
-            {/* Voice Speed (Rate) Control */}
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between text-xs font-bold">
-                <span style={{ color: theme.textPrimary }} className="flex items-center gap-1">
-                  <span>{language === 'pb' ? 'ਗਤੀ (Speed / Rate):' : language === 'en' ? 'Voice Speed:' : 'वाणी गति (Rate):'}</span>
-                  <span className="font-mono text-amber-600 dark:text-amber-400">{speechRate.toFixed(2)}x</span>
-                </span>
-                <span className="text-[10px] opacity-70 font-mono" style={{ color: theme.textSecondary }}>
-                  {speechRate <= 0.8
-                    ? (language === 'pb' ? 'ਸ਼ਾਂਤ (ਧੀਮੀ)' : language === 'en' ? 'Slow' : 'शांत / धीमी')
-                    : speechRate >= 1.2
-                    ? (language === 'pb' ? 'ਤੇਜ਼' : language === 'en' ? 'Fast' : 'शीघ्र')
-                    : (language === 'pb' ? 'ਸਾਧਾਰਣ' : language === 'en' ? 'Normal' : 'सामान्य')}
-                </span>
-              </div>
-              <input
-                type="range"
-                min="0.6"
-                max="1.5"
-                step="0.05"
-                value={speechRate}
-                onChange={(e) => handleSpeechRateChange(parseFloat(e.target.value))}
-                className="w-full accent-amber-600 cursor-pointer h-2 bg-amber-200/40 dark:bg-amber-900/40 rounded-lg"
-              />
-              <div className="flex justify-between text-[10px] font-mono opacity-60" style={{ color: theme.textMuted }}>
-                <span>0.60x (शांत)</span>
-                <span>1.00x</span>
-                <span>1.50x (शीघ्र)</span>
-              </div>
-            </div>
-
-            {/* Voice Pitch Control */}
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between text-xs font-bold">
-                <span style={{ color: theme.textPrimary }} className="flex items-center gap-1">
-                  <span>{language === 'pb' ? 'ਸੁਰ (Pitch):' : language === 'en' ? 'Voice Pitch:' : 'वाणी स्वर (Pitch):'}</span>
-                  <span className="font-mono text-amber-600 dark:text-amber-400">{speechPitch.toFixed(2)}</span>
-                </span>
-                <span className="text-[10px] opacity-70 font-mono" style={{ color: theme.textSecondary }}>
-                  {speechPitch <= 0.8
-                    ? (language === 'pb' ? 'ਗੰਭੀਰ' : language === 'en' ? 'Deep' : 'गंभीर')
-                    : speechPitch >= 1.2
-                    ? (language === 'pb' ? 'ਸੁਕੋਮਲ' : language === 'en' ? 'High' : 'सुकोमल')
-                    : (language === 'pb' ? 'ਸੁਭਾਵਿਕ' : language === 'en' ? 'Natural' : 'स्वाभाविक')}
-                </span>
-              </div>
-              <input
-                type="range"
-                min="0.5"
-                max="1.5"
-                step="0.05"
-                value={speechPitch}
-                onChange={(e) => handleSpeechPitchChange(parseFloat(e.target.value))}
-                className="w-full accent-amber-600 cursor-pointer h-2 bg-amber-200/40 dark:bg-amber-900/40 rounded-lg"
-              />
-              <div className="flex justify-between text-[10px] font-mono opacity-60" style={{ color: theme.textMuted }}>
-                <span>0.50 (गंभीर)</span>
-                <span>1.00 (स्वाभाविक)</span>
-                <span>1.50 (सुकोमल)</span>
-              </div>
-            </div>
-          </div>
+          {/* Voice Recitation Speed & Pitch consolidated into Tab 2 (Accessibility & Vani) */}
 
           {/* Section: Smart Offline Library Availability Status Indicator */}
           <div 
             style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
             className="p-4 rounded-2xl border space-y-2.5 shadow-xs"
           >
-            <div className="flex items-center justify-between">
-              <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-emerald-600" />
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 min-w-0">
+                <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>{language === 'pb' ? 'ਔਫਲਾਈਨ ਲਾਇਬ੍ਰੇਰੀ ਉਪਲਬਧਤਾ' : language === 'en' ? 'Offline Library Status' : 'ऑफ़लाइन ग्रंथालय उपलब्धता (Offline Ready)'}</span>
               </h3>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1 shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                 {navigator.onLine
                   ? language === 'pb'
@@ -1430,14 +1393,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 : 'समस्त साखियाँ, नितनेम गुटका, अखंड पाठ एवं पावन ग्रंथ आपके डिवाइस में कैश्ड हैं। बिना इंटरनेट के भी निर्बाध पठन संभव है।'}
             </p>
 
-            <div className="pt-1 flex items-center justify-between text-[11px] font-mono opacity-80" style={{ color: theme.textMuted }}>
+            <div className="pt-1 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono opacity-80" style={{ color: theme.textMuted }}>
               <span>ServiceWorker: Active</span>
               <span>Cache: 100% Synced</span>
             </div>
 
             {/* Pinned Offline Audio Summary */}
-            <div className="pt-2 border-t border-dashed flex items-center justify-between gap-2 text-xs" style={{ borderColor: theme.cardBorder }}>
-              <div className="flex items-center gap-1.5 font-bold" style={{ color: theme.textPrimary }}>
+            <div className="pt-2 border-t border-dashed flex flex-wrap items-center justify-between gap-2 text-xs" style={{ borderColor: theme.cardBorder }}>
+              <div className="flex items-center gap-1.5 font-bold min-w-0" style={{ color: theme.textPrimary }}>
                 <Pin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>
                   {language === 'pb'
@@ -1469,12 +1432,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             }}
             className="p-4 rounded-2xl border-2 space-y-3 shadow-xs"
           >
-            <div className="flex items-center justify-between">
-              <h3 style={{ color: '#059669' }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 font-serif">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 style={{ color: '#059669' }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 font-serif min-w-0">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>सतगुरु साहेब एडमिन पैनल (Authorized)</span>
               </h3>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold border bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold border bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30 shrink-0">
                 👑 एडमिन सक्रिय
               </span>
             </div>
@@ -1496,12 +1459,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
                 {/* Admin-Only Darshan Swaroop Manager */}
                 <div className="p-3 rounded-xl border border-emerald-500/30 bg-white/70 dark:bg-zinc-900/70 space-y-2.5">
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="text-xs font-black font-serif text-emerald-900 dark:text-emerald-300">
                       🖼️ पावन दर्शन स्वरूप प्रबंधन (Darshan Settings)
                     </span>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isFirebaseAdmin ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300' : 'bg-amber-500/20 text-amber-800 dark:text-amber-300'}`}>
-                      {isFirebaseAdmin ? '☁️ वैश्विक सिंक सक्रिय' : '📱 लोकल एडमिन'}
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">
+                      {language === 'pb' ? '🔐 ਐਡਮਿਨ ਪਿੰਨ ਸਰਗਰਮ' : language === 'en' ? '🔐 Admin PIN Active' : '🔐 एडमिन पिन सक्रिय'}
                     </span>
                   </div>
 
@@ -1569,17 +1532,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       </button>
                     )}
                   </div>
-
-                  {!isFirebaseAdmin && (
-                    <button
-                      type="button"
-                      onClick={handleAdminGoogleConnect}
-                      className="w-full min-h-[40px] py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1.5"
-                    >
-                      <Cloud className="w-3.5 h-3.5" />
-                      <span>Google एडमिन साइन-इन (सभी भक्तों एवं APK हेतु सिंक)</span>
-                    </button>
-                  )}
                 </div>
 
                 {/* Unified Admin Media Studio (Images, Audio & Video) */}
@@ -1764,23 +1716,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   window.dispatchEvent(new CustomEvent('sahebworld:open-install-modal'));
                 }}
               />
-              <button
-                type="button"
-                onClick={() => {
-                  onClose();
-                  window.dispatchEvent(new CustomEvent('sahebworld:open-install-modal'));
-                }}
-                className="min-h-[44px] py-2 px-3.5 rounded-xl border border-amber-600/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
-              >
-                <Download className="w-3.5 h-3.5 shrink-0" />
-                <span>
-                  {language === 'pb'
-                    ? 'Android APK ਡਾਊਨਲੋਡ / ਅਪਡੇਟ'
-                    : language === 'en'
-                    ? 'Android APK & Updates'
-                    : 'Android APK व अपडेट'}
-                </span>
-              </button>
               {onPreviewSplash && (
                 <button
                   type="button"
@@ -1788,7 +1723,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     onClose();
                     onPreviewSplash();
                   }}
-                  className="min-h-[44px] py-1.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+                  className="min-h-[44px] py-1.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-800 dark:text-amber-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-normal text-center"
                 >
                   <span className="w-4 h-4 rounded-full bg-[#8B2500] text-white font-serif font-black text-[9px] flex items-center justify-center shrink-0">स</span>
                   <span>{language === 'pb' ? 'ਪਾਵਨ ਪ੍ਰਤੀਕ ਤੇ ਸਪਲੈਸ਼ ਦਰਸ਼ਨ' : language === 'en' ? 'Preview Emblem & Splash' : 'दिव्य प्रतीक व स्प्लैश दर्शन'}</span>
@@ -1800,7 +1735,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 id="settings-check-for-updates-btn"
                 disabled={isReloadingApp}
                 onClick={handleCheckForUpdates}
-                className="min-h-[44px] py-1.5 px-3.5 rounded-xl border border-emerald-600/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap disabled:opacity-60"
+                className="min-h-[44px] py-1.5 px-3 rounded-xl border border-emerald-600/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-serif transition flex items-center justify-center gap-1.5 cursor-pointer whitespace-normal text-center disabled:opacity-60"
                 title={
                   language === 'pb'
                     ? 'ਪੁਰਾਣਾ ਕੈਸ਼ ਸਾਫ਼ ਕਰਕੇ ਨਵੀਂ ਬਾਣੀ ਅੱਪਡੇਟ ਲੋਡ ਕਰੋ (ਡਾਇਰੀ ਤੇ ਹਾਜ਼ਰੀ ਸੁਰੱਖਿਅਤ ਰਹਿਣਗੇ)'
@@ -1833,8 +1768,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             )}
 
             {/* Persistent Auto Splash Screen Toggle on App Open */}
-            <div className="pt-2 border-t border-dashed flex items-center justify-between gap-3 text-left" style={{ borderColor: theme.borderOrnament }}>
-              <div>
+            <div className="pt-2 border-t border-dashed flex items-center justify-between gap-2.5 sm:gap-3 text-left" style={{ borderColor: theme.borderOrnament }}>
+              <div className="min-w-0 flex-1">
                 <div className="text-xs font-bold font-serif" style={{ color: theme.textPrimary }}>
                   {language === 'pb'
                     ? 'ਐਪ ਖੋਲ੍ਹਣ ਤੇ ਦਿਵਯ ਸਪਲੈਸ਼ ਸਕ੍ਰੀਨ ਦਿਖਾਓ'
@@ -1911,7 +1846,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
           {/* Quick Close Settings Button */}
           <button
-            onClick={onClose}
+            onClick={handleCloseModal}
             style={{
               backgroundColor: theme.buttonPrimaryBg,
               color: theme.buttonPrimaryText
@@ -1920,6 +1855,678 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           >
             <span>{language === 'pb' ? 'ਬੰਦ ਕਰੋ (Close)' : language === 'en' ? 'Close Settings' : 'सेटिंग्स बंद करें (Close)'}</span>
           </button>
+            </>
+          )}
+
+          {/* TAB 2: ACCESSIBILITY & VANI (सुगमता एवं वाणी) */}
+          {activeTab === 'accessibility' && (
+            <div className="space-y-5">
+              {/* Unified Font Size & Elderly Support */}
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 rounded-2xl border space-y-3.5 shadow-xs"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                    <Type className="w-4 h-4 text-amber-600 shrink-0" />
+                    <span>{t.fontSizeTitle || 'अक्षर आकार (Font Size)'}</span>
+                  </h3>
+                  <span
+                    style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                    className="text-[11px] font-black px-2.5 py-0.5 rounded-full"
+                  >
+                    {FONT_SIZE_PRESETS[currentFontIndex]?.label || 'A+'} ({FONT_SIZE_PRESETS[currentFontIndex]?.sub})
+                  </span>
+                </div>
+
+                <input
+                  type="range"
+                  min={0}
+                  max={FONT_SIZE_PRESETS.length - 1}
+                  step={1}
+                  value={currentFontIndex}
+                  onChange={(e) => {
+                    const idx = parseInt(e.target.value, 10);
+                    const preset = FONT_SIZE_PRESETS[idx];
+                    if (preset) setFontSize(preset.id);
+                  }}
+                  className="w-full accent-amber-600 cursor-pointer h-2 bg-amber-200/40 dark:bg-amber-900/40 rounded-lg"
+                />
+
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                  {FONT_SIZE_PRESETS.map((fObj) => {
+                    const isSelected = fontSize === fObj.id;
+                    return (
+                      <button
+                        key={fObj.id}
+                        type="button"
+                        onClick={() => {
+                          sacredHaptics.lightTap();
+                          setFontSize(fObj.id);
+                        }}
+                        style={{
+                          backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.cardBg,
+                          borderColor: isSelected ? theme.accentGold : theme.cardBorder,
+                          color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                        }}
+                        className={`py-2 px-2 rounded-xl border text-xs font-bold transition cursor-pointer flex flex-col items-center justify-center ${
+                          isSelected ? 'shadow-md ring-1 ring-amber-400' : 'hover:opacity-90'
+                        }`}
+                      >
+                        <span>{fObj.label}</span>
+                        <span className="text-[9px] opacity-75 font-normal">{fObj.sub}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <p className="text-[11px] text-center opacity-75 italic" style={{ color: theme.textSecondary }}>
+                  {isPb
+                    ? 'ਇਹ ਸੈਟਿੰਗ ਸਾਰੇ ਸਵਾਧਿਆਏ, ਗੁਟਕਾ ਅਤੇ ਗ੍ਰੰਥ ਪਾਠਾਂ ‘ਤੇ ਲਾਗੂ ਹੋਵੇਗੀ।'
+                    : isHi
+                    ? 'यह सेटिंग समस्त स्वाध्याय, गुटका एवं ग्रंथ पाठों पर समान रूप से लागू होगी।'
+                    : 'Applies consistently across all Swadhyay, Nitnem Gutka, and Granth readers.'}
+                </p>
+              </div>
+
+              {/* Line Spacing */}
+              <div className="space-y-2.5">
+                <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                  <Sliders className="w-4 h-4" />
+                  <span>{t.lineSpacingTitle || 'Line Spacing'}</span>
+                </h3>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { height: 'small' as const, label: t.fontSmall },
+                    { height: 'medium' as const, label: t.fontMedium },
+                    { height: 'large' as const, label: t.fontLarge },
+                  ].map((h) => (
+                    <button
+                      key={h.height}
+                      type="button"
+                      onClick={() => setLineHeight(h.height)}
+                      style={{
+                        backgroundColor: lineHeight === h.height ? theme.accentGoldLight : theme.bgSecondary,
+                        borderColor: lineHeight === h.height ? theme.accentGold : theme.cardBorder,
+                        color: lineHeight === h.height ? theme.sacredMaroon : theme.textPrimary,
+                      }}
+                      className="py-2.5 px-3 rounded-xl border text-xs font-semibold transition text-center cursor-pointer"
+                    >
+                      {h.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Content Width */}
+              <div className="space-y-2.5">
+                <h3 style={{ color: theme.accentGold }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                  <Sliders className="w-4 h-4" />
+                  <span>{t.widthModeTitle || 'Content Width'}</span>
+                </h3>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { mode: 'narrow' as const, label: t.widthNarrow || 'Narrow' },
+                    { mode: 'medium' as const, label: t.widthMedium || 'Medium' },
+                    { mode: 'wide' as const, label: t.widthWide || 'Wide' },
+                  ].map((m) => (
+                    <button
+                      key={m.mode}
+                      type="button"
+                      onClick={() => setWidthMode(m.mode)}
+                      style={{
+                        backgroundColor: widthMode === m.mode ? theme.accentGoldLight : theme.bgSecondary,
+                        borderColor: widthMode === m.mode ? theme.accentGold : theme.cardBorder,
+                        color: widthMode === m.mode ? theme.sacredMaroon : theme.textPrimary,
+                      }}
+                      className="py-2.5 px-3 rounded-xl border text-xs font-semibold transition text-center cursor-pointer"
+                    >
+                      {m.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Voice Recitation Speed & Pitch Settings */}
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 rounded-2xl border space-y-4 shadow-xs"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2 min-w-0 flex-1">
+                    <SpeechVolumeIcon className="w-4 h-4 text-amber-600 shrink-0" />
+                    <span>
+                      {isPb
+                        ? 'ਵਾਕ ਪਾਠ ਆਵਾਜ਼ ਸੈਟਿੰਗਾਂ (Speech Vani)'
+                        : isHi
+                        ? 'वाणी वाचन स्वर सेटिंग्स (Speech & Vani)'
+                        : 'Voice Recitation Settings (Speed & Pitch)'}
+                    </span>
+                  </h3>
+
+                  <button
+                    type="button"
+                    onClick={handleTestVoiceRecitation}
+                    style={{
+                      backgroundColor: isVoiceTesting ? theme.sacredMaroon : theme.buttonPrimaryBg,
+                      color: theme.buttonPrimaryText,
+                    }}
+                    className="px-3 py-1.5 rounded-lg text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer hover:opacity-90 active:scale-95 shrink-0"
+                  >
+                    {isVoiceTesting ? <Square className="w-3.5 h-3.5 animate-pulse" /> : <Play className="w-3.5 h-3.5" />}
+                    <span>
+                      {isVoiceTesting
+                        ? (isPb ? 'ਵਾਣੀ ਰੋਕੋ' : isHi ? 'रोकें' : 'Stop')
+                        : (isPb ? 'ਬਾਣੀ ਟੈਸਟ ਸੁਣੋ' : isHi ? 'वाणी परीक्षण सुनें' : 'Test Voice')}
+                    </span>
+                  </button>
+                </div>
+
+                {/* Quick Rate Chips */}
+                <div className="grid grid-cols-4 gap-2">
+                  {[0.75, 1.0, 1.25, 1.5].map((rate) => {
+                    const isSelected = Math.abs(speechRate - rate) < 0.03;
+                    return (
+                      <button
+                        key={rate}
+                        type="button"
+                        onClick={() => handleSpeechRateChange(rate)}
+                        style={{
+                          backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.cardBg,
+                          borderColor: isSelected ? theme.accentGold : theme.cardBorder,
+                          color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                        }}
+                        className="py-1.5 rounded-xl border text-xs font-mono font-bold transition cursor-pointer"
+                      >
+                        {rate}x
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Voice Speed (Rate) Fine Slider */}
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-bold">
+                    <span style={{ color: theme.textPrimary }} className="flex items-center gap-1">
+                      <span>{isPb ? 'ਗਤੀ (Speed / Rate):' : isHi ? 'वाणी गति (Rate):' : 'Voice Speed:'}</span>
+                      <span className="font-mono text-amber-600 dark:text-amber-400">{speechRate.toFixed(2)}x</span>
+                    </span>
+                    <span className="text-[10px] opacity-70 font-mono" style={{ color: theme.textSecondary }}>
+                      {speechRate <= 0.8
+                        ? (isPb ? 'ਸ਼ਾਂਤ (ਧੀਮੀ)' : isHi ? 'शांत / धीमी' : 'Slow')
+                        : speechRate >= 1.2
+                        ? (isPb ? 'ਤੇਜ਼' : isHi ? 'शीघ्र' : 'Fast')
+                        : (isPb ? 'ਸਾਧਾਰਣ' : isHi ? 'सामान्य' : 'Normal')}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0.6"
+                    max="1.5"
+                    step="0.05"
+                    value={speechRate}
+                    onChange={(e) => handleSpeechRateChange(parseFloat(e.target.value))}
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-amber-200/40 dark:bg-amber-900/40 rounded-lg"
+                  />
+                </div>
+
+                {/* Voice Pitch Control */}
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-bold">
+                    <span style={{ color: theme.textPrimary }} className="flex items-center gap-1">
+                      <span>{isPb ? 'ਸੁਰ (Pitch):' : isHi ? 'वाणी स्वर (Pitch):' : 'Voice Pitch:'}</span>
+                      <span className="font-mono text-amber-600 dark:text-amber-400">{speechPitch.toFixed(2)}</span>
+                    </span>
+                    <span className="text-[10px] opacity-70 font-mono" style={{ color: theme.textSecondary }}>
+                      {speechPitch <= 0.8
+                        ? (isPb ? 'ਗੰਭੀਰ' : isHi ? 'गंभीर' : 'Deep')
+                        : speechPitch >= 1.2
+                        ? (isPb ? 'ਸੁਕੋਮਲ' : isHi ? 'सुकोमल' : 'High')
+                        : (isPb ? 'ਸੁਭਾਵਿਕ' : isHi ? 'स्वाभाविक' : 'Natural')}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0.5"
+                    max="1.5"
+                    step="0.05"
+                    value={speechPitch}
+                    onChange={(e) => handleSpeechPitchChange(parseFloat(e.target.value))}
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-amber-200/40 dark:bg-amber-900/40 rounded-lg"
+                  />
+                </div>
+
+                {/* Global Audio Mute Toggle */}
+                <div className="pt-2 border-t flex items-center justify-between gap-2" style={{ borderColor: theme.cardBorder }}>
+                  <span style={{ color: theme.textPrimary }} className="text-xs font-bold flex items-center gap-1.5">
+                    {isMuted ? <VolumeX className="w-4 h-4 text-red-500" /> : <Volume2 className="w-4 h-4 text-amber-600" />}
+                    <span>{isPb ? 'ਸਮੁੱਚੀ ਆਵਾਜ਼ ਮਿਊਟ ਕਰੋ' : isHi ? 'समस्त पठन ध्वनि म्यूट करें' : 'Mute Global Audio'}</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      setIsMuted(!isMuted);
+                    }}
+                    className={`px-3 py-1 rounded-xl text-xs font-bold border transition cursor-pointer ${
+                      isMuted
+                        ? 'bg-red-600 text-white border-red-600'
+                        : 'bg-black/5 dark:bg-white/10 border-amber-500/30'
+                    }`}
+                  >
+                    {isMuted ? (isPb ? 'ਮਿਊਟ (ON)' : isHi ? 'म्यूट (ON)' : 'Muted') : (isPb ? 'ਚਾਲੂ (Sound)' : isHi ? 'ध्वनि सक्रिय' : 'Active')}
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleCloseModal}
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="w-full py-2.5 rounded-xl font-bold font-serif text-sm shadow-md hover:opacity-90 transition cursor-pointer flex items-center justify-center gap-1.5"
+              >
+                <Check className="w-4 h-4" />
+                <span>{isPb ? 'ਸੈਟਿੰਗਜ਼ ਸੁਰੱਖਿਅਤ ਕਰੋ' : isHi ? 'सेटिंग्स सहेजें एवं बंद करें' : 'Save & Close'}</span>
+              </button>
+            </div>
+          )}
+
+          {/* TAB 3: ADVANCED READING SUITE & HISTORY (उन्नत पाठ साधन व इतिहास) */}
+          {activeTab === 'reading' && (
+            <div className="space-y-5">
+              {/* Sub-tab Switcher: Controls vs Reading History */}
+              <div
+                className="flex items-center p-1 rounded-2xl border gap-1"
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setSuiteSubTab('controls');
+                  }}
+                  style={{
+                    backgroundColor: suiteSubTab === 'controls' ? theme.cardBg : 'transparent',
+                    borderColor: suiteSubTab === 'controls' ? theme.accentGold : 'transparent',
+                    color: suiteSubTab === 'controls' ? theme.sacredMaroon : theme.textMuted,
+                  }}
+                  className="flex-1 py-1.5 px-2.5 rounded-xl border font-serif font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
+                >
+                  <Sliders className="w-3.5 h-3.5 shrink-0" />
+                  <span className="truncate">{isHi ? 'पठन साधन (Controls)' : isPb ? 'ਪਠਨ ਸਾਧਨ' : 'Controls'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setSuiteSubTab('history');
+                  }}
+                  style={{
+                    backgroundColor: suiteSubTab === 'history' ? theme.cardBg : 'transparent',
+                    borderColor: suiteSubTab === 'history' ? theme.accentGold : 'transparent',
+                    color: suiteSubTab === 'history' ? theme.sacredMaroon : theme.textMuted,
+                  }}
+                  className="flex-1 py-1.5 px-2.5 rounded-xl border font-serif font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
+                >
+                  <History className="w-3.5 h-3.5 shrink-0" />
+                  <span className="truncate">{isHi ? 'पठन इतिहास (Last 10)' : isPb ? 'ਪਠਨ ਇਤਿਹਾਸ' : 'History'}</span>
+                  {historyItems.length > 0 && (
+                    <span className="w-4 h-4 rounded-full bg-[#8B2500] text-white text-[9px] font-mono flex items-center justify-center font-bold shrink-0">
+                      {historyItems.length}
+                    </span>
+                  )}
+                </button>
+              </div>
+
+              {suiteSubTab === 'controls' ? (
+                <div className="space-y-5">
+                  {currentReadingTitle && (
+                    <div
+                      style={{ backgroundColor: theme.accentGoldLight, borderColor: theme.accentGold }}
+                      className="p-3 rounded-2xl border flex items-center justify-between gap-2 text-xs font-serif"
+                    >
+                      <div className="min-w-0">
+                        <span style={{ color: theme.sacredMaroon }} className="font-bold block truncate">
+                          📖 {currentReadingTitle}
+                        </span>
+                        <span style={{ color: theme.textSecondary }} className="text-[11px]">
+                          {currentReadingProgress}% • ~{calculatedRemainingMins} {isHi ? 'मिनट शेष' : isPb ? 'ਮਿੰਟ ਬਾਕੀ' : 'min left'} ({readingWpm} WPM)
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 9 Sacred Reading Modes */}
+                  <div className="p-3.5 rounded-2xl bg-amber-500/10 dark:bg-amber-950/30 border-2 border-amber-500/30 space-y-3">
+                    <div className="flex items-center justify-between border-b border-amber-500/20 pb-2 gap-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-base shrink-0">🔱</span>
+                        <h4 className="font-serif font-black text-xs sm:text-sm text-amber-950 dark:text-amber-200 truncate">
+                          {isPb ? '੯ ਪਾਵਨ ਪਾਠ ਮੋਡ' : isHi ? '९ प्रकार के पावन पाठ मोड' : '9 Sacred Reading Modes'}
+                        </h4>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full bg-[#8B2500] text-white text-[10px] font-bold font-mono shrink-0">
+                        9 MODES
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {[
+                        {
+                          id: 'scroll',
+                          icon: '📜',
+                          titleHi: '१. निरंतर स्क्रॉल मोड',
+                          titlePb: '੧. ਨਿਰੰਤਰ ਸਕ੍ਰੋਲ ਮੋਡ',
+                          titleEn: '1. Continuous Scroll',
+                          descHi: 'अखंड ऊर्ध्वाधर स्क्रॉल प्रवाह',
+                          descPb: 'ਅਖੰਡ ਸਕ੍ਰੋਲ ਪ੍ਰਵਾਹ',
+                          descEn: 'Smooth vertical flow',
+                          active: readingFramework === 'scroll' && !autoScrollActive && !zenModeActive && !larivaarModeActive && !visraamModeActive,
+                          action: () => handleSelectReadingMode('scroll'),
+                        },
+                        {
+                          id: 'flip',
+                          icon: '📖',
+                          titleHi: '२. ३D पोथी पन्ना मोड',
+                          titlePb: '੨. ੩D ਪੋਥੀ ਪੰਨਾ ਮੋਡ',
+                          titleEn: '2. 3D Pothi Page Flip',
+                          descHi: 'हस्तलिखित पोथी पन्ना पलटने का अनुभव',
+                          descPb: 'ਹਸਤਲਿਖਤ ਪੋਥੀ ਪੰਨਾ ਪਲਟਣ ਦਾ ਅਨੁਭਵ',
+                          descEn: 'Traditional page-turn view',
+                          active: readingFramework === 'flip',
+                          action: () => handleSelectReadingMode('flip'),
+                        },
+                        {
+                          id: 'parallel',
+                          icon: '📊',
+                          titleHi: '३. समानांतर तुलना मोड',
+                          titlePb: '੩. ਸਮਾਨਾਂਤਰ ਤੁਲਨਾ ਮੋਡ',
+                          titleEn: '3. Parallel Bilingual',
+                          descHi: 'मूल वाणी व भावार्थ साथ-साथ',
+                          descPb: 'ਮੂਲ ਬਾਣੀ ਤੇ ਅਰਥ ਨਾਲ-ਨਾਲ',
+                          descEn: 'Original & meaning side-by-side',
+                          active: readingFramework === 'parallel',
+                          action: () => handleSelectReadingMode('parallel'),
+                        },
+                        {
+                          id: 'zen',
+                          icon: '🧘',
+                          titleHi: '४. ज़ेन एकाग्रता मोड',
+                          titlePb: '੪. ਜੇਨ ਇਕਾਗਰਤਾ ਮੋਡ',
+                          titleEn: '4. Zen Focus Mode',
+                          descHi: 'बिना रुकावट केवल वाणी पर ध्यान',
+                          descPb: 'ਬਿਨਾ ਰੁਕਾਵਟ ਕੇਵਲ ਬਾਣੀ ਉੱਤੇ ਧਿਆਨ',
+                          descEn: 'Distraction-free reading',
+                          active: zenModeActive,
+                          action: () => handleSelectReadingMode('zen'),
+                        },
+                        {
+                          id: 'larivaar',
+                          icon: '🪷',
+                          titleHi: '५. लारीवार अखंड पाठ',
+                          titlePb: '੫. ਲਾਰੀਵਾਰ ਅਖੰਡ ਮੋਡ',
+                          titleEn: '5. Larivaar Akhand',
+                          descHi: 'पारंपरिक निरंतर अखंड पाठ',
+                          descPb: 'ਰਵਾਇਤੀ ਅਖੰਡ ਪਾਠ',
+                          descEn: 'Traditional continuous script',
+                          active: larivaarModeActive,
+                          action: () => handleSelectReadingMode('larivaar'),
+                        },
+                        {
+                          id: 'visraam',
+                          icon: '🎯',
+                          titleHi: '६. विश्राम हाइलाइट',
+                          titlePb: '੬. ਵਿਸ਼ਰਾਮ ਹਾਈਲਾਈਟ',
+                          titleEn: '6. Visraam Highlight',
+                          descHi: 'शुद्ध उच्चारण हेतु विश्राम चिह्न',
+                          descPb: 'ਸ਼ੁੱਧ ਉੱਚਾਰਣ ਹੇਤੂ ਵਿਸ਼ਰਾਮ',
+                          descEn: 'Pronunciation pause cues',
+                          active: visraamModeActive,
+                          action: () => handleSelectReadingMode('visraam'),
+                        },
+                        {
+                          id: 'autoplay',
+                          icon: '⚡',
+                          titleHi: '७. स्वतः स्क्रॉल व श्वास',
+                          titlePb: '੭. ਸਵੈ-ਸਕ੍ਰੋਲ ਤੇ ਸੁਆਸ',
+                          titleEn: '7. Auto-Scroll & Breath',
+                          descHi: '0.2x–5x स्क्रॉल व श्वास चक्र',
+                          descPb: '0.2x–5x ਸਕ੍ਰੋਲ ਤੇ ਸੁਆਸ ਚੱਕਰ',
+                          descEn: 'Guided scroll & breath',
+                          active: autoScrollActive,
+                          action: () => handleSelectReadingMode('autoplay'),
+                        },
+                        {
+                          id: 'swadhyay',
+                          icon: '📚',
+                          titleHi: '८. स्वाध्याय ८-चरण मर्म',
+                          titlePb: '੮. ਸਵਾਧਿਆਇ ੮-ਚਰਣ ਮਨਨ',
+                          titleEn: '8. 8-Step Swadhyay',
+                          descHi: 'क्रमबद्ध आध्यात्मिक चिंतन',
+                          descPb: 'ਕ੍ਰਮਬੱਧ ਗੂੜ੍ਹ ਅਧਿਐਨ',
+                          descEn: 'Deep structured study',
+                          active: false,
+                          action: () => handleSelectReadingMode('swadhyay'),
+                        },
+                        {
+                          id: 'akhand-path',
+                          icon: '🔱',
+                          titleHi: '९. अखंड पाठ मोड',
+                          titlePb: '੯. ਅਖੰਡ ਪਾਠ ਮੋਡ',
+                          titleEn: '9. Akhand Sakhi Path',
+                          descHi: 'अविराम साखी पाठ',
+                          descPb: 'ਨਿਰੰਤਰ ਸਾਖੀ ਪਾਠ',
+                          descEn: 'Unbroken Sakhi recitation',
+                          active: false,
+                          action: () => handleSelectReadingMode('akhand-path'),
+                        },
+                      ].map((mode) => (
+                        <button
+                          key={mode.id}
+                          type="button"
+                          onClick={mode.action}
+                          className={`p-2.5 rounded-2xl border text-left transition-all cursor-pointer flex items-start gap-2 ${
+                            mode.active
+                              ? 'bg-[#8B2500] text-white border-amber-600 shadow-md ring-1 ring-amber-400/50'
+                              : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-800 dark:text-gray-200 hover:border-amber-400'
+                          }`}
+                        >
+                          <span className="text-xl shrink-0 leading-none pt-0.5">{mode.icon}</span>
+                          <div className="min-w-0 flex-1">
+                            <span className="font-serif font-black text-xs block leading-snug">
+                              {isPb ? mode.titlePb : isHi ? mode.titleHi : mode.titleEn}
+                            </span>
+                            <span className={`text-[10px] font-serif block mt-0.5 truncate ${mode.active ? 'text-amber-100' : 'text-gray-500 dark:text-gray-400'}`}>
+                              {isPb ? mode.descPb : isHi ? mode.descHi : mode.descEn}
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Auto-Scroll Speed Selector */}
+                  <div className="p-3.5 rounded-2xl border space-y-2.5" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                        <Zap className="w-4 h-4 text-amber-600 shrink-0" />
+                        <span>{isHi ? 'स्वतः स्क्रॉल गति (0.2x - 5x)' : isPb ? 'ਸਵੈ-ਸਕ੍ਰੋਲ ਗਤੀ (0.2x - 5x)' : 'Auto-Scroll Speed'}</span>
+                      </h4>
+                      <span className="text-xs font-mono font-black text-amber-700 dark:text-amber-300">{autoScrollSpeed}x</span>
+                    </div>
+                    <div className="grid grid-cols-4 gap-2">
+                      {([0.2, 0.5, 1, 1.5, 2, 2.5, 3, 5] as const).map((spd) => (
+                        <button
+                          key={spd}
+                          type="button"
+                          onClick={() => handleSpeedChange(spd)}
+                          className={`py-1.5 rounded-xl text-xs font-mono font-black border transition-all cursor-pointer ${
+                            autoScrollSpeed === spd
+                              ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-sm'
+                              : 'bg-white dark:bg-zinc-800 text-stone-700 dark:text-stone-300 border-stone-200 dark:border-zinc-700 hover:border-amber-400'
+                          }`}
+                        >
+                          {spd}x
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Daily Reading Goal */}
+                  <div className="p-3.5 rounded-2xl border space-y-2.5" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
+                    <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                      <Target className="w-4 h-4 text-amber-600 shrink-0" />
+                      <span>{isHi ? 'दैनिक पठन लक्ष्य (Daily Verses Goal)' : isPb ? 'ਦੈਨਿਕ ਪਠਨ ਟੀਚਾ' : 'Daily Reading Goal'}</span>
+                    </h4>
+                    <div className="grid grid-cols-4 gap-2">
+                      {([11, 21, 51, 108] as ReaderTarget[]).map((tgt) => (
+                        <button
+                          key={tgt}
+                          type="button"
+                          onClick={() => handleTargetChange(tgt)}
+                          className={`py-1.5 rounded-xl text-xs font-mono font-black border transition cursor-pointer ${
+                            targetPace === tgt
+                              ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-sm'
+                              : 'bg-white dark:bg-zinc-800 text-stone-700 dark:text-stone-300 border-stone-200 dark:border-zinc-700'
+                          }`}
+                        >
+                          {tgt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Reader Palettes & Highlighter Colors */}
+                  <div className="p-3.5 rounded-2xl border space-y-3" style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}>
+                    <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                      <Palette className="w-4 h-4 text-amber-600 shrink-0" />
+                      <span>{isHi ? 'ग्रन्थ पठन रंग एवं हाइलाइटर' : isPb ? 'ਪਾਠ ਰੰਗ ਤੇ ਹਾਈਲਾਈਟਰ' : 'Reader Palettes & Highlighter'}</span>
+                    </h4>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      {[
+                        { id: 'mool', labelHi: '📜 मूल भोजपत्र', labelPb: '📜 ਮੂਲ ਭੋਜਪੱਤਰ', labelEn: '📜 Mool' },
+                        { id: 'comfort', labelHi: '🍃 सुखद पठन', labelPb: '🍃 ਸੁਖਦ ਪਠਨ', labelEn: '🍃 Comfort' },
+                        { id: 'pothi', labelHi: '📜 प्राचीन पोथी', labelPb: '📜 ਪ੍ਰਾਚੀਨ ਪੋਥੀ', labelEn: '📜 Pothi' },
+                        { id: 'deep_sepia', labelHi: '🤎 गहरा सेपिया', labelPb: '🤎 ਗਹਿਰਾ ਸੇਪੀਆ', labelEn: '🤎 Sepia' },
+                        { id: 'black', labelHi: '🖤 ब्लैक नाइट', labelPb: '🖤 ਬਲੈਕ ਨਾਈਟ', labelEn: '🖤 Black' },
+                      ].map((nt) => (
+                        <button
+                          key={nt.id}
+                          type="button"
+                          onClick={() => handleReaderPaletteChange(nt.id as ReaderCustomTheme)}
+                          className={`px-2.5 py-2 rounded-xl text-[11px] font-serif font-bold transition cursor-pointer border ${
+                            activeReaderTheme === nt.id
+                              ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
+                              : 'bg-white/60 dark:bg-zinc-800/60 border-transparent hover:border-amber-400'
+                          }`}
+                        >
+                          {isPb ? nt.labelPb : isHi ? nt.labelHi : nt.labelEn}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2 pt-1 border-t" style={{ borderColor: theme.cardBorder }}>
+                      <Highlighter className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                      {[
+                        { id: 'saffron', color: '#F59E0B', labelHi: 'केसरिया', labelPb: 'ਕੇਸਰੀ', labelEn: 'Saffron' },
+                        { id: 'green', color: '#10B981', labelHi: 'हरा', labelPb: 'ਹਰਾ', labelEn: 'Green' },
+                        { id: 'yellow', color: '#FDE047', labelHi: 'पीला', labelPb: 'ਪੀਲਾ', labelEn: 'Yellow' },
+                        { id: 'none', color: '#9CA3AF', labelHi: 'बंद', labelPb: 'ਬੰਦ', labelEn: 'Off' },
+                      ].map((hl) => (
+                        <button
+                          key={hl.id}
+                          type="button"
+                          onClick={() => handleHighlighterChange(hl.id as any)}
+                          className={`flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-[11px] font-bold border transition cursor-pointer ${
+                            activeHighlighter === hl.id ? 'border-amber-600 bg-amber-600/15' : 'border-transparent bg-black/5 dark:bg-white/5'
+                          }`}
+                        >
+                          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: hl.color }} />
+                          <span>{isPb ? hl.labelPb : isHi ? hl.labelHi : hl.labelEn}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                /* Reading History Sub-view */
+                <div className="space-y-3.5">
+                  <div className="flex items-center justify-between border-b pb-2.5" style={{ borderColor: theme.borderOrnament }}>
+                    <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                      <History className="w-4 h-4 text-amber-600" />
+                      <span>{isHi ? 'अन्तिम १० पठन इतिहास' : isPb ? 'ਅਖੀਰੀ ੧੦ ਪਠਨ ਇਤਿਹਾਸ' : 'Last 10 Recently Read'}</span>
+                    </h4>
+                    {historyItems.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={handleClearHistory}
+                        className="px-2.5 py-1 rounded-lg bg-red-500/15 hover:bg-red-500/25 text-red-700 dark:text-red-300 border border-red-500/30 text-[11px] font-serif font-bold flex items-center gap-1 transition cursor-pointer"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                        <span>{isHi ? 'साफ़ करें' : isPb ? 'ਸਾਫ਼ ਕਰੋ' : 'Clear All'}</span>
+                      </button>
+                    )}
+                  </div>
+
+                  {historyItems.length === 0 ? (
+                    <div className="p-6 text-center space-y-2 border-2 border-dashed rounded-2xl" style={{ borderColor: theme.borderOrnament }}>
+                      <Clock className="w-7 h-7 mx-auto text-amber-500/50" />
+                      <p className="font-serif text-xs opacity-75">
+                        {isHi
+                          ? 'कोई हालिया पठन इतिहास उपलब्ध नहीं है। जब आप साखियों या ग्रंथों का स्वाध्याय करते हैं, तो वे यहाँ स्वतः सुरक्षित हो जाएंगे।'
+                          : isPb
+                          ? 'ਕੋਈ ਪਠਨ ਇਤਿਹਾਸ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।'
+                          : 'No recent reading history. Your last 10 read items will appear here.'}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      {historyItems.map((item, idx) => (
+                        <div
+                          key={item.id}
+                          onClick={() => handleResumeHistoryItem(item)}
+                          className="p-3 rounded-2xl border transition-all cursor-pointer hover:scale-[1.01] flex items-center justify-between gap-2.5 shadow-xs"
+                          style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                        >
+                          <div className="space-y-0.5 flex-1 min-w-0">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-200 text-[10px] font-mono font-bold flex items-center justify-center shrink-0">
+                                #{idx + 1}
+                              </span>
+                              <span className="text-[10px] font-serif opacity-65 flex items-center gap-1 ml-auto shrink-0">
+                                <Clock className="w-3 h-3 text-amber-600" />
+                                <span>{formatTimeAgo(item.timestamp)}</span>
+                              </span>
+                            </div>
+                            <h5 className="font-serif font-black text-xs text-amber-900 dark:text-amber-200 truncate">
+                              {item.title}
+                            </h5>
+                            {item.snippet && (
+                              <p className="text-[11px] font-serif opacity-80 truncate italic">{item.snippet}</p>
+                            )}
+                          </div>
+                          <span className="px-2.5 py-1 rounded-xl bg-[#8B2500] text-white font-serif font-bold text-[11px] flex items-center gap-1 shrink-0">
+                            <RotateCcw className="w-3 h-3" />
+                            <span>{isHi ? 'पुनः पढ़ें' : isPb ? 'ਪੜ੍ਹੋ' : 'Resume'}</span>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={handleCloseModal}
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="w-full py-2.5 rounded-xl font-bold font-serif text-sm shadow-md hover:opacity-90 transition cursor-pointer flex items-center justify-center gap-1.5"
+              >
+                <span>{isPb ? 'ਬੰਦ ਕਰੋ (Close)' : isHi ? 'बंद करें (Close)' : 'Close'}</span>
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Strict Bottom Center Sacred Branding */}

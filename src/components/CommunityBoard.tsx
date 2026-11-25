@@ -187,7 +187,7 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
       `🌸 ${reflection.authorName} (${reflection.date}):\n\n` +
       `"${reflection.text[language] || reflection.text.hi}"\n\n` +
       (reflection.quoteVani ? `📜 पावन वाणी:\n"${reflection.quoteVani[language] || reflection.quoteVani.hi}"\n\n` : '') +
-      `📱 'साहेब वर्ल्ड • Saheb World' ऐप से साभार\nhttps://ais-pre-meux3g56fqgqmol3tohmrd-795050738320.asia-east1.run.app`;
+      `📱 'साहेब वर्ल्ड • Saheb World' ऐप से साभार\nhttps://saheb-world-satguru-kabir-swadhyay.vercel.app/`;
 
     try {
       if (navigator.share) {

@@ -347,7 +347,7 @@ export const PothiAngPage = forwardRef<HTMLDivElement, {
             {pageData.angNumber === totalPages && (
               <div className="mt-3 pt-2 text-center border-t border-amber-500/20">
                 <span className="inline-block px-4 py-1 rounded-full text-xs sm:text-sm font-serif font-black bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-400/50 shadow-2xs">
-                  {language === 'pb' ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।।साहेब बन्दगी साहेब।।'}
+                  {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
                 </span>
               </div>
             )}

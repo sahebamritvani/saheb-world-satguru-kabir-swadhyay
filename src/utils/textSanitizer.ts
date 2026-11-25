@@ -7,58 +7,121 @@
 /**
  * Splits any single or multi-line couplet / doha into strictly 2 balanced lines.
  */
-export function formatCoupletIntoTwoLines(rawText: string): string[] {
+export function formatCoupletIntoTwoLines(rawText: string, lang?: 'hi' | 'pb' | 'en'): [string, string] {
   if (!rawText) return ['', ''];
-  const text = rawText.trim();
-  
-  // If already multiline
-  const explicitLines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
-  if (explicitLines.length >= 2) {
-    return [explicitLines[0], explicitLines.slice(1).join(' ')];
-  }
-  
-  // Try splitting by Devanagari single danda '।', or '|' (not followed by another danda)
-  const dandaMatch = text.match(/^(.*?)([\।\|])(?!\s*[\।\|])\s*(.+)$/);
-  if (dandaMatch && dandaMatch[1] && dandaMatch[3]) {
-    const line1 = `${dandaMatch[1].trim()} ${dandaMatch[2]}`;
-    const line2 = dandaMatch[3].trim();
-    if (line1 && line2) {
-      return [line1, line2];
+
+  // 1. Filter out stray invocation or salutation lines that might be embedded in the text
+  const isStrayHeaderOrFooter = (line: string) => {
+    const s = line
+      .replace(/[🌹🌺✨🙏।॥|/\\\-–—•·\[\]()]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    return (
+      s === 'सत्यनाम' ||
+      s === 'सतनाम' ||
+      s === 'ਸਤਯਨਾਮ' ||
+      s === 'ਸਤਨਾਮ' ||
+      s === 'satyanaam' ||
+      s === 'satnaam' ||
+      s === 'satnam' ||
+      s.includes('साहेब बंदगी') ||
+      s.includes('साहेब बन्दगी') ||
+      s.includes('ਸਾਹੇਬ ਬੰਦਗੀ') ||
+      s.includes('saheb bandagi') ||
+      s.includes('saheb bandgi')
+    );
+  };
+
+  let lines = rawText
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l && !isStrayHeaderOrFooter(l));
+
+  let line1 = '';
+  let line2 = '';
+
+  if (lines.length >= 2) {
+    line1 = lines[0];
+    line2 = lines.slice(1).join(' ').trim();
+  } else if (lines.length === 1) {
+    const text = lines[0];
+    // Try splitting by Devanagari single danda '।', or '|' (not followed by another danda)
+    const dandaMatch = text.match(/^(.*?)([\।\|])(?!\s*[\।\|])\s*(.+)$/);
+    if (dandaMatch && dandaMatch[1] && dandaMatch[3]) {
+      line1 = `${dandaMatch[1].trim()} ${dandaMatch[2]}`.trim();
+      line2 = dandaMatch[3].trim();
+    } else {
+      // Try splitting by semicolon
+      const semiIdx = text.indexOf(';');
+      if (semiIdx > 5 && semiIdx < text.length - 5) {
+        line1 = text.slice(0, semiIdx + 1).trim();
+        line2 = text.slice(semiIdx + 1).trim();
+      } else {
+        // Try splitting by comma
+        const commaIdx = text.indexOf(',');
+        if (commaIdx > 8 && commaIdx < text.length - 8) {
+          line1 = text.slice(0, commaIdx + 1).trim();
+          line2 = text.slice(commaIdx + 1).trim();
+        } else {
+          // Midpoint word split as fallback
+          const words = text.split(/\s+/);
+          if (words.length >= 4) {
+            const mid = Math.ceil(words.length / 2);
+            line1 = words.slice(0, mid).join(' ');
+            line2 = words.slice(mid).join(' ');
+          } else {
+            line1 = text;
+            line2 = '';
+          }
+        }
+      }
     }
   }
 
-  // Try splitting by semicolon if present (common in English doha couplets)
-  const semiIdx = text.indexOf(';');
-  if (semiIdx > 5 && semiIdx < text.length - 5) {
-    const line1 = text.slice(0, semiIdx + 1).trim();
-    const line2 = text.slice(semiIdx + 1).trim();
-    return [line1, line2];
+  // Enforce proper punctuation for line 1
+  if (line1) {
+    line1 = line1
+      .replace(/\s*\/\/+\s*$/, '')
+      .replace(/\s*।।+\s*$/, '।')
+      .replace(/\s*॥+\s*$/, '।')
+      .trim();
+
+    // If Devanagari or Gurmukhi and has no terminal punctuation, add '।'
+    if (/[\u0900-\u097F\u0A00-\u0A7F]/.test(line1)) {
+      if (!/[।|,;?!]$/.test(line1)) {
+        line1 = `${line1}।`;
+      }
+    }
   }
 
-  // Try splitting by comma if present
-  const commaIdx = text.indexOf(',');
-  if (commaIdx > 10 && commaIdx < text.length - 10) {
-    const line1 = text.slice(0, commaIdx + 1).trim();
-    const line2 = text.slice(commaIdx + 1).trim();
-    return [line1, line2];
+  // Enforce proper double vertical bar punctuation (॥) at the end of line 2
+  if (line2) {
+    line2 = line2
+      .replace(/\s*\/\/+\s*$/, '')
+      .replace(/\s*[।|]+\s*$/, '')
+      .replace(/\s*।।+\s*$/, '')
+      .replace(/\s*॥+\s*$/, '')
+      .trim();
+
+    // Attach proper double vertical bar punctuation (॥)
+    if (lang === 'en' && !/[\u0900-\u097F\u0A00-\u0A7F]/.test(line2)) {
+      line2 = `${line2}॥`;
+    } else {
+      line2 = `${line2}॥`;
+    }
   }
 
-  // Midpoint word split as fallback
-  const words = text.split(/\s+/);
-  if (words.length >= 4) {
-    const mid = Math.ceil(words.length / 2);
-    return [words.slice(0, mid).join(' '), words.slice(mid).join(' ')];
-  }
-
-  return [text, ''];
+  return [line1, line2];
 }
 
 /**
- * Ensures couplet text is always a 2-line string joined by newline
+ * Ensures couplet text is strictly formatted as 2 distinct lines ending with double vertical bar (॥)
  */
-export function formatCoupletString(rawText: string): string {
-  const lines = formatCoupletIntoTwoLines(rawText);
-  return lines.filter(Boolean).join('\n');
+export function formatCoupletString(rawText: string, lang?: 'hi' | 'pb' | 'en'): string {
+  const [line1, line2] = formatCoupletIntoTwoLines(rawText, lang);
+  if (!line2) return line1;
+  return `${line1}\n${line2}`;
 }
 
 /**
@@ -124,8 +187,8 @@ export function autoCorrectSacredText(rawText: string): string {
     .replace(/उਿ/g, 'उ')
     .replace(/एਿ/g, 'ए')
     .replace(/िा/g, 'ा')
-    .replace(/([^\s])॥/g, '$1 ॥')
-    .replace(/॥([^\s])/g, '॥ $1')
+    .replace(/बन्दगी/g, 'बंदगी')
+    .replace(/(?<!ਗੁਰੂ\s+ਗ੍ਰੰਥ\s+|ਜਪੁਜੀ\s+|ਸੁਖਮਨੀ\s+)ਸਾਹਿਬ/g, 'ਸਾਹੇਬ')
     .replace(/\s+/g, ' ')
     .trim();
 

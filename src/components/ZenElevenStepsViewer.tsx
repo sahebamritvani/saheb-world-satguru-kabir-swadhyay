@@ -128,7 +128,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
       {/* Zen Mode 11-Step Progress Pills Bar + Font Switcher */}
       <div
         style={{ backgroundColor: rc.cardBg, borderColor: rc.border }}
-        className="p-3 sm:p-4 rounded-3xl border shadow-sm sticky top-14 z-20 backdrop-blur-md space-y-2"
+        className="p-3 sm:p-4 rounded-3xl border shadow-sm relative z-20 backdrop-blur-md space-y-2"
       >
         <div className="flex items-center justify-between gap-2 flex-wrap">
           <span className={`text-[11px] font-bold opacity-75 ${activeFontClass}`} style={{ color: rc.maroon }}>

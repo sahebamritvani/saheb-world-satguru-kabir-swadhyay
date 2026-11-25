@@ -1083,7 +1083,7 @@ export const SatyanaamDhunPlayer: React.FC<SatyanaamDhunPlayerProps> = ({ langua
           </div>
 
           <div className="space-y-1">
-            <h3 className="text-lg font-bold font-serif" style={{ color: theme.sacredMaroon }}>
+            <h3 className="text-base sm:text-lg font-bold font-serif whitespace-nowrap overflow-hidden text-ellipsis px-1" style={{ color: theme.sacredMaroon }}>
               {t.synthSimranTitle}
             </h3>
             <p className="text-xs sm:text-sm max-w-md mx-auto" style={{ color: theme.textSecondary }}>

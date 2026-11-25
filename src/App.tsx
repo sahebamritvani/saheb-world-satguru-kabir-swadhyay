@@ -13,8 +13,7 @@ import { SacredLoader } from './components/SacredLoader';
 import { CoreModulesDashboard } from './components/CoreModulesDashboard';
 import { NityaVaniSettings } from './components/NityaVaniSettings';
 import { RosePetalShower } from './components/RosePetalShower';
-import { SettingsModal } from './components/SettingsModal';
-import { AccessibilityModal } from './components/AccessibilityModal';
+import { SettingsModal, SettingsTabId } from './components/SettingsModal';
 import { SplashScreen } from './components/SplashScreen';
 import { NetworkStatusIndicator } from './components/NetworkStatusIndicator';
 import { SacredMaryadaModal } from './components/SacredMaryadaModal';
@@ -276,7 +275,7 @@ function MainApp() {
   const [isBlessingOpen, setIsBlessingOpen] = useState(false);
   const [blessingInfo, setBlessingInfo] = useState<{ title?: string; message?: string }>({});
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [isAccessibilityOpen, setIsAccessibilityOpen] = useState(false);
+  const [settingsInitialTab, setSettingsInitialTab] = useState<SettingsTabId>('general');
   const [isMaryadaOpen, setIsMaryadaOpen] = useState<boolean>(false);
   const [isAdminInjectorOpen, setIsAdminInjectorOpen] = useState<boolean>(false);
   const [adminInjectorInitialSlotId, setAdminInjectorInitialSlotId] = useState<AdminGranthSlotId | null>(null);
@@ -372,7 +371,6 @@ function MainApp() {
         stopTransientSacredAudio();
         ambientAudio.stop();
         setIsSettingsOpen(false);
-        setIsAccessibilityOpen(false);
         setIsMaryadaOpen(false);
         setIsBlessingOpen(false);
         setIsAdminInjectorOpen(false);
@@ -389,7 +387,6 @@ function MainApp() {
       satyanaamAudio.stopDhun();
       setIsDhunPlaying(false);
       setIsSettingsOpen(false);
-      setIsAccessibilityOpen(false);
       setIsMaryadaOpen(false);
       setIsBlessingOpen(false);
       setIsAdminInjectorOpen(false);
@@ -504,13 +501,26 @@ function MainApp() {
   }, [language]);
 
   useEffect(() => {
-    const handleOpenSettings = () => setIsSettingsOpen(true);
-    const handleOpenAccessibility = () => setIsAccessibilityOpen(true);
+    const handleOpenSettings = (e: Event) => {
+      const detail = (e as CustomEvent<{ tab?: SettingsTabId }>).detail;
+      setSettingsInitialTab(detail?.tab || 'general');
+      setIsSettingsOpen(true);
+    };
+    const handleOpenAccessibility = () => {
+      setSettingsInitialTab('accessibility');
+      setIsSettingsOpen(true);
+    };
+    const handleOpenReadingSuite = () => {
+      setSettingsInitialTab('reading');
+      setIsSettingsOpen(true);
+    };
     window.addEventListener('sahebworld_open_settings', handleOpenSettings);
     window.addEventListener('sahebworld_open_accessibility', handleOpenAccessibility);
+    window.addEventListener('sahebworld_open_advanced_reading_suite', handleOpenReadingSuite);
     return () => {
       window.removeEventListener('sahebworld_open_settings', handleOpenSettings);
       window.removeEventListener('sahebworld_open_accessibility', handleOpenAccessibility);
+      window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenReadingSuite);
     };
   }, []);
 
@@ -572,21 +582,6 @@ function MainApp() {
     }
   };
 
-  // Custom RTL-aware transition that automatically inverts slide-in X-offset based on document direction or language
-  const rtlAwareTransition = () => {
-    const docDir = typeof document !== 'undefined' ? (document.documentElement.dir || document.dir || '') : '';
-    // Automatically invert x-offset for RTL document directions to maintain consistent flow
-    const isInverted = docDir === 'rtl';
-    const offset = isInverted ? -24 : 24;
-    return {
-      initial: { opacity: 0, x: offset },
-      animate: { opacity: 1, x: 0 },
-      exit: { opacity: 0, x: -offset },
-    };
-  };
-
-  const animVariants = rtlAwareTransition();
-
   return (
     <>
       <Layout
@@ -594,7 +589,10 @@ function MainApp() {
       onSelectView={handleSelectView}
       language={language}
       onSelectLanguage={setLanguage}
-      onOpenSettings={() => setIsSettingsOpen(true)}
+      onOpenSettings={() => {
+        setSettingsInitialTab('general');
+        setIsSettingsOpen(true);
+      }}
       onOpenBlessing={() => handleOpenBlessing()}
       isDhunPlaying={isDhunPlaying}
       onToggleDhun={handleToggleDhun}
@@ -602,10 +600,10 @@ function MainApp() {
       <AnimatePresence mode="wait">
         <motion.div
           key={currentView}
-          initial={animVariants.initial}
-          animate={animVariants.animate}
-          exit={animVariants.exit}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.18, ease: "easeInOut" }}
           className="w-full min-h-screen"
         >
           <ErrorBoundary
@@ -690,8 +688,10 @@ function MainApp() {
           language={language}
           onBack={() => handleSelectView('daily')}
           onSelectLanguage={setLanguage}
-          onOpenSettings={() => setIsSettingsOpen(true)}
-          onOpenAccessibility={() => setIsAccessibilityOpen(true)}
+          onOpenSettings={() => {
+            setSettingsInitialTab('general');
+            setIsSettingsOpen(true);
+          }}
         >
           {/* View 2: 5-Step Traditional Swadhyay Study */}
           {currentView === 'swadhyay' && (
@@ -1486,7 +1486,7 @@ function MainApp() {
         />
       </ErrorBoundary>
 
-      {/* Global Settings Modal (Theming, Language, Audio, Notifications) */}
+      {/* Unified Global Settings Modal (General, Accessibility & Vani, Reading Suite & History) */}
       <ErrorBoundary compact language={language} onGoHome={() => setIsSettingsOpen(false)}>
         <SettingsModal
           isOpen={isSettingsOpen}
@@ -1498,19 +1498,12 @@ function MainApp() {
           onSelectLanguage={setLanguage}
           isDhunPlaying={isDhunPlaying}
           onToggleDhun={handleToggleDhun}
+          initialTab={settingsInitialTab}
+          onNavigateView={handleSelectView}
           onPreviewSplash={() => {
             setShowSplash(true);
             setIsSettingsOpen(false);
           }}
-        />
-      </ErrorBoundary>
-
-      {/* Accessibility & Font Scaling Modal for Elderly Support */}
-      <ErrorBoundary compact language={language} onGoHome={() => setIsAccessibilityOpen(false)}>
-        <AccessibilityModal
-          isOpen={isAccessibilityOpen}
-          onClose={() => setIsAccessibilityOpen(false)}
-          language={language}
         />
       </ErrorBoundary>
 

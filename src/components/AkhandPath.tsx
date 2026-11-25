@@ -731,7 +731,7 @@ export const AkhandPath: React.FC<AkhandPathProps> = ({
           backgroundColor: rc.bg,
           borderColor: rc.border,
         }}
-        className="p-4 sm:p-5 border-b space-y-4 sticky top-14 z-20 backdrop-blur-md shadow-xs"
+        className="p-4 sm:p-5 border-b space-y-4 relative z-20 backdrop-blur-md shadow-xs"
       >
         {/* Top Header Row with Title, Primary Actions & Explicit Close Button */}
         <div className="flex flex-wrap items-center justify-between gap-3">

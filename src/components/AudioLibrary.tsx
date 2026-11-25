@@ -27,7 +27,7 @@ import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
 import { satyanaamAudio } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
-import { isAdminAuthenticated, isFirebaseAdminVerified } from '../services/adminAuth';
+import { isAdminAuthenticated } from '../services/adminAuth';
 import {
   subscribeToSacredMedia,
   publishAdminSacredMedia,
@@ -646,11 +646,6 @@ export const AudioLibrary: React.FC<AudioLibraryProps> = ({ language, onClose })
             </button>
           </div>
 
-          {!isFirebaseAdminVerified() && (
-            <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-[11px] font-bold text-amber-900 dark:text-amber-200">
-              ⚠️ वैश्विक क्लाउड अपलोड के लिए कृपया Google एडमिन खाते से साइन-इन अवश्य करें।
-            </div>
-          )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <input

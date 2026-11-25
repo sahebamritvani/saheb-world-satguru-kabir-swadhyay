@@ -74,7 +74,6 @@ import { translations } from '../data/translations';
 import { AboutDisclaimerModal, AboutDisclaimerSection } from './AboutDisclaimerModal';
 import { KarNainonDeedarModal } from './KarNainonDeedarModal';
 import { SantoShabdaiShabdModal } from './SantoShabdaiShabdModal';
-import { AdvancedReadingSuiteModal } from './AdvancedReadingSuiteModal';
 import { LanguageDiagnostics } from './LanguageDiagnostics';
 import { AdminLoginModal } from './AdminLoginModal';
 
@@ -96,7 +95,6 @@ import {
 } from '../utils/url';
 import { usePWAInstall, useOnlineStatus } from '../hooks/usePWAInstall';
 import { PWAInstallButton } from './PWAInstallButton';
-import { GitHubApkCard } from './GitHubApkCard';
 import { isCapacitorAndroid, registerAndroidBackHandler } from '../services/capacitorBridge';
 
 interface LayoutProps {
@@ -364,7 +362,6 @@ export const Layout: React.FC<LayoutProps> = ({
   });
   const [showKarNainonDeedarModal, setShowKarNainonDeedarModal] = useState(false);
   const [showSantoShabdaiShabdModal, setShowSantoShabdaiShabdModal] = useState(false);
-  const [showReadingSuiteModal, setShowReadingSuiteModal] = useState(false);
   const [showLanguageDiagnostics, setShowLanguageDiagnostics] = useState(false);
   const [isAppInstalled, setIsAppInstalled] = useState(false);
   const [isAppCopied, setIsAppCopied] = useState(false);
@@ -390,12 +387,6 @@ export const Layout: React.FC<LayoutProps> = ({
     hasInstallIntent,
     install: triggerPWAInstall,
   } = usePWAInstall();
-
-  useEffect(() => {
-    const handleOpenSuite = () => setShowReadingSuiteModal(true);
-    window.addEventListener('sahebworld_open_advanced_reading_suite', handleOpenSuite);
-    return () => window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenSuite);
-  }, []);
 
   useEffect(() => {
     const handleOpenAboutSection = (e: Event) => {
@@ -598,10 +589,6 @@ export const Layout: React.FC<LayoutProps> = ({
         setShowSantoShabdaiShabdModal(false);
         return true;
       }
-      if (showReadingSuiteModal) {
-        setShowReadingSuiteModal(false);
-        return true;
-      }
       if (showLanguageDiagnostics) {
         setShowLanguageDiagnostics(false);
         return true;
@@ -625,7 +612,6 @@ export const Layout: React.FC<LayoutProps> = ({
     aboutModalSection,
     showKarNainonDeedarModal,
     showSantoShabdaiShabdModal,
-    showReadingSuiteModal,
     showLanguageDiagnostics,
     showRateModal,
     isSidebarOpen,
@@ -1266,9 +1252,9 @@ export const Layout: React.FC<LayoutProps> = ({
             backgroundColor: theme.stepActiveBg,
             borderColor: theme.accentGold,
           }}
-          className="sticky top-0 z-40 border-b px-3 py-1.5 grid grid-cols-[1fr_auto_1fr] items-center gap-2 min-h-[48px] shadow-md select-none"
+          className="sticky top-0 z-40 border-b px-2 sm:px-3 py-1.5 flex flex-wrap sm:grid sm:grid-cols-[1fr_auto_1fr] items-center justify-between gap-1.5 sm:gap-2 min-h-[48px] shadow-md select-none w-full overflow-hidden"
         >
-          <span aria-hidden="true" />
+          <span aria-hidden="true" className="hidden sm:inline" />
           <span
             style={{ color: theme.sacredMaroon }}
             className="text-sm sm:text-base font-black font-serif tracking-wide whitespace-nowrap text-center"
@@ -1326,7 +1312,7 @@ export const Layout: React.FC<LayoutProps> = ({
             </span>
           </div>
 
-          <div className="py-1 sm:py-1.5 px-2 xs:px-3 sm:px-5 relative flex md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-between gap-1.5 sm:gap-2 min-h-[38px] sm:min-h-[44px]">
+          <div className="py-1 sm:py-1.5 px-2 xs:px-3 sm:px-5 relative flex flex-wrap md:grid md:grid-cols-[1fr_auto_1fr] items-center justify-between gap-1.5 sm:gap-2 min-h-[38px] sm:min-h-[44px] w-full">
             {/* Left: Sidebar Toggle & App Brand */}
             <div className="z-10 flex items-center gap-1.5 sm:gap-2 shrink-0 justify-self-start">
               <button
@@ -1819,7 +1805,7 @@ export const Layout: React.FC<LayoutProps> = ({
               id="header-open-advanced-reading-suite-btn"
               onClick={() => {
                 sacredHaptics.lightTap();
-                setShowReadingSuiteModal(true);
+                window.dispatchEvent(new CustomEvent('sahebworld_open_advanced_reading_suite'));
               }}
               style={{
                 backgroundColor: theme.accentGoldLight,
@@ -2209,55 +2195,7 @@ export const Layout: React.FC<LayoutProps> = ({
                         setShowInstallModal(true);
                       }}
                     />
-                    {isAdmin && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setIsSidebarOpen(false);
-                          setShowInstallModal(true);
-                        }}
-                        style={{
-                          borderColor: theme.accentGold,
-                          color: theme.mode === 'mystic_dark' ? '#FDE68A' : theme.sacredMaroon,
-                        }}
-                        className="w-full min-h-[44px] px-3 py-2 rounded-xl border text-xs font-serif font-bold flex items-center justify-center gap-1.5 hover:bg-amber-500/10 transition cursor-pointer whitespace-nowrap"
-                      >
-                        <Download className="w-3.5 h-3.5 shrink-0" />
-                        <span>
-                          {language === 'pb'
-                            ? 'GitHub Android APK / ਅਪਡੇਟ'
-                            : language === 'en'
-                            ? 'GitHub Android APK & Updates'
-                            : 'GitHub Android APK डाउनलोड / अपडेट'}
-                        </span>
-                      </button>
-                    )}
                   </div>
-                )}
-
-                {(pwaStandalone || isCapacitorAndroid()) && isAdmin && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsSidebarOpen(false);
-                      setShowInstallModal(true);
-                    }}
-                    style={{
-                      backgroundColor: theme.mode === 'mystic_dark' ? '#1E1812' : theme.stepActiveBg,
-                      borderColor: theme.accentGold,
-                      color: theme.mode === 'mystic_dark' ? '#FDE68A' : theme.sacredMaroon,
-                    }}
-                    className="w-full min-h-[44px] px-3.5 py-2.5 rounded-2xl border flex items-center justify-center gap-2 text-xs font-serif font-bold mb-3 hover:opacity-95 transition cursor-pointer whitespace-nowrap"
-                  >
-                    <Download className="w-4 h-4 shrink-0" />
-                    <span>
-                      {language === 'pb'
-                        ? 'GitHub Android APK ਅੱਪਡੇਟ ਜਾਂਚੋ'
-                        : language === 'en'
-                        ? 'Check GitHub APK Updates'
-                        : 'GitHub Android APK अपडेट जांचें'}
-                    </span>
-                  </button>
                 )}
                 
                 {/* Sahaj Mode Alert Banner in Drawer if Active */}
@@ -2646,8 +2584,8 @@ export const Layout: React.FC<LayoutProps> = ({
         )}
       </AnimatePresence>
 
-      {/* Main App Body - Global Edge-to-Edge Full Width with standard 16dp (px-4) padding */}
-      <main className="flex-1 w-full max-w-full mx-auto px-4 py-4 sm:py-6 pb-12 transition-all duration-300">
+      {/* Main App Body - Mobile-safe padding & horizontal clip so sticky Return headers freeze cleanly */}
+      <main className="flex-1 w-full max-w-full mx-auto px-2 xs:px-3 sm:px-4 py-3 sm:py-6 pb-12 overflow-x-clip transition-all duration-300">
         {children}
       </main>
 
@@ -2935,18 +2873,18 @@ export const Layout: React.FC<LayoutProps> = ({
 
                   <div>
                     <h4 className="text-base sm:text-lg font-black font-serif" style={{ color: theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.sacredMaroon }}>
-                      {language === 'pb' ? 'Android ਹੋਮ ਸਕ੍ਰੀਨ ਐਪ (WebAPK)' : language === 'en' ? 'Android App Icon Install (WebAPK)' : 'असली ऐप आइकन के साथ Android इंस्टॉलेशन'}
+                      {language === 'pb' ? 'Chrome ਤੋਂ ਐਪ ਇੰਸਟਾਲ ਕਰੋ (Install App)' : language === 'en' ? 'Install App via Chrome' : 'Chrome से ऐप इंस्टॉल करें (Install App)'}
                     </h4>
                     <p className="text-xs text-amber-800 dark:text-amber-300 font-serif font-medium mt-0.5 leading-relaxed">
                       {language === 'pb' 
                         ? 'Chrome ਰਾਹੀਂ ਸਿੱਧਾ ਫੋਨ ਦੇ ਐਪ ਡਰਾਅਰ ਵਿੱਚ ਆਈਕਨ ਸਹਿਤ ਜੁੜਦਾ ਹੈ — ਬਿਨਾਂ ਇੰਟਰਨੈੱਟ ੧੦੦% ਚੱਲੇਗਾ' 
                         : language === 'en' 
-                        ? 'Installs via Chrome WebAPK directly into your Android App Drawer with the Golden Chakra icon and 100% offline support.' 
-                        : 'Chrome का WebAPK आपके फोन के ऐप ड्रॉअर में सतगुरु कबीर साहेब के गोल्डन चक्र आइकन के साथ इंस्टॉल होता है और बिना इंटरनेट 100% चलता है।'}
+                        ? 'Installs cleanly from Chrome directly onto your Home Screen with the Golden Chakra icon and 100% offline support.' 
+                        : 'साधारण Chrome ब्राउज़र से आपके फोन में सतगुरु कबीर साहेब के गोल्डन चक्र आइकन के साथ इंस्टॉल होता है और बिना इंटरनेट 100% चलता है।'}
                     </p>
                   </div>
 
-                  {/* Live Android WebAPK Readiness Checklist */}
+                  {/* Live Chrome App Readiness Checklist */}
                   <div className="rounded-xl border border-amber-600/20 bg-white/70 dark:bg-black/25 divide-y divide-amber-600/15 text-left text-xs font-serif">
                     <div className="px-3 py-2 flex items-center justify-between gap-2">
                       <span style={{ color: theme.textSecondary }}>
@@ -3177,20 +3115,30 @@ export const Layout: React.FC<LayoutProps> = ({
                   </div>
                 </div>
 
-                {/* 1B. GitHub Releases Auto-Updated Android APK Download & Update Card (Admin Only) */}
-                {isAdmin && <GitHubApkCard language={language} />}
-
-                {/* 2. Step-by-Step Instructions (Android Chrome WebAPK focus) */}
+                {/* 2. Step-by-Step Instructions (Simple Chrome Install App Guide) */}
                 <div className="space-y-3 pt-1">
                   <h5 className="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-800 dark:text-amber-400">
-                    {language === 'pb' ? 'ਮੋਬਾਈਲ ਗਾਈਡ (ਮਿੰਟਾਂ ਵਿੱਚ)' : language === 'en' ? 'Android Chrome Steps' : 'Android (Chrome) में इंस्टॉल करने के 3 आसान चरण:'}
+                    {language === 'pb' ? 'Chrome ਰਾਹੀਂ ਐਪ ਇੰਸਟਾਲ ਕਰਨ ਦੇ ੨ ਆਸਾਨ ਪੜਾਅ:' : language === 'en' ? '2 Easy Steps to Install via Chrome:' : 'Chrome से ऐप इंस्टॉल करने के 2 आसान चरण:'}
                   </h5>
 
                   <div className="p-3.5 rounded-xl border bg-amber-500/5 border-amber-500/20 text-xs space-y-2">
                     <ol className="list-decimal list-inside space-y-1.5 text-gray-700 dark:text-gray-300 font-serif text-xs leading-relaxed">
-                      <li>ऊपर <b>"सीधे Chrome में खोलें"</b> बटन दबाएं या दूसरे फोन से नीचे का <b>QR कोड</b> स्कैन करें।</li>
-                      <li>यदि Chrome में साइन-इन मांगे तो अपने उसी Google खाते से एक बार लॉगिन होने दें (ताकि ऐप आइकन व डेटा लोड हो सके)।</li>
-                      <li>अब Chrome में ऊपर दाईं ओर <b>३ बिंदुओं (⋮)</b> पर दबाकर <b>"Add to Home Screen" → "Install"</b> (अथवा <b>"Install App"</b>) चुनें — कुछ ही सेकंड में <b>Saheb World</b> ऐप आइकन के साथ इंस्टॉल हो जाएगा!</li>
+                      {language === 'pb' ? (
+                        <>
+                          <li>ਉੱਪਰ <b>"Chrome ਵਿੱਚ ਖੋਲ੍ਹੋ"</b> ਬਟਨ ਦਬਾਓ ਜਾਂ ਹੇਠਾਂ ਦਿੱਤਾ <b>QR ਕੋਡ</b> ਸਕੈਨ ਕਰੋ।</li>
+                          <li>Chrome ਵਿੱਚ ਉੱਪਰ ਸੱਜੇ ਪਾਸੇ <b>੩ ਬਿੰਦੂਆਂ (⋮)</b> ਉੱਤੇ ਟੈਪ ਕਰਕੇ <b>"Install App"</b> (ਜਾਂ <b>"Add to Home Screen" → "Install"</b>) ਚੁਣੋ — ਕੁਝ ਹੀ ਸਕਿੰਟਾਂ ਵਿੱਚ <b>Saheb World</b> ਫ਼ੋਨ ਵਿੱਚ ਸੇਵ ਹੋ ਜਾਵੇਗਾ।</li>
+                        </>
+                      ) : language === 'en' ? (
+                        <>
+                          <li>Tap <b>"Open in Chrome &amp; Install App"</b> above or scan the <b>QR Code</b> below.</li>
+                          <li>In Chrome, tap the top-right menu <b>(⋮)</b> and select <b>"Install App"</b> (or <b>"Add to Home Screen" → "Install"</b>) to add <b>Saheb World</b> directly to your phone.</li>
+                        </>
+                      ) : (
+                        <>
+                          <li>ऊपर <b>"सीधे Chrome में खोलें"</b> बटन दबाएं या दूसरे फोन से नीचे का <b>QR कोड</b> स्कैन करें।</li>
+                          <li>अब Chrome में ऊपर दाईं ओर <b>३ बिंदुओं (⋮)</b> पर दबाकर <b>"Install App"</b> (अथवा <b>"Add to Home Screen" → "Install"</b>) चुनें — कुछ ही सेकंड में बिना किसी लॉगिन के <b>Saheb World</b> ऐप आइकन के साथ इंस्टॉल हो जाएगा!</li>
+                        </>
+                      )}
                     </ol>
                   </div>
                 </div>
@@ -3377,13 +3325,6 @@ export const Layout: React.FC<LayoutProps> = ({
           </div>
         )}
       </AnimatePresence>
-
-      {/* Global Advanced Reading Suite Standalone Modal */}
-      <AdvancedReadingSuiteModal
-        isOpen={showReadingSuiteModal}
-        onClose={() => setShowReadingSuiteModal(false)}
-        language={language}
-      />
 
       {/* Language Diagnostics & Audit Modal */}
       <LanguageDiagnostics

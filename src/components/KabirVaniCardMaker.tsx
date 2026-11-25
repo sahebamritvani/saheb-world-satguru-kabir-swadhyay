@@ -14,7 +14,8 @@ import { AppView, Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { NewModulesNavBar } from './NewModulesNavBar';
-import { formatCoupletString } from '../utils/textSanitizer';
+import { formatCoupletString, formatCoupletIntoTwoLines } from '../utils/textSanitizer';
+import { SACRED_SHARE_TEMPLATE, buildStandardShareText } from '../services/shareTemplate';
 
 interface KabirVaniCardMakerProps {
   language: Language;
@@ -107,19 +108,19 @@ const CARD_THEMES: CardThemeConfig[] = [
 
 const PRELOADED_QUOTES: Record<Language, string[]> = {
   hi: [
-    'गुरु गोविन्द दोऊ खड़े, काके लागूं पाँय।\nबलिहारी गुरु आपने, गोविन्द दियो बताय।।',
-    'ऐसी वाणी बोलिए, मन का आपा खोय।\nऔरन को शीतल करे, आपहुं शीतल होय।।',
-    '।। साहेब बंदगी साहेब ।।',
+    'गुरु गोविन्द दोऊ खड़े, काके लागू पाँय।\nबलिहारी गुरु आपने, गोविन्द दियो बताय॥',
+    'ऐसी वाणी बोलिए, मन का आपा खोय।\nऔरन को शीतल करे, आपहुं शीतल होय॥',
+    'माटी कहे कुम्हार से, तू क्या रूँदे मोहि।\nइक दिन ऐसा आएगा, मैं रूँदूंगी तोहि॥',
   ],
   pb: [
-    'ਗੁਰੂ ਗੋਵਿੰਦ ਦੋਊ ਖੜੇ, ਕਾਕੇ ਲਾਗੂੰ ਪਾਂਇ।\nਬਲਿਹਾਰੀ ਗੁਰੂ ਆਪਨੇ, ਗੋਵਿੰਦ ਦਿਓ ਬਤਾਇ।।',
-    'ਐਸੀ ਬਾਣੀ ਬੋਲੀਏ, ਮਨ ਕਾ ਆਪਾ ਖੋਇ।\nਔਰਨ ਕੋ ਸੀਤਲ ਕਰੇ, ਆਪਹੁਂ ਸੀਤਲ ਹੋਇ।।',
-    '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।',
+    'ਗੁਰੂ ਗੋਵਿੰਦ ਦੋਊ ਖੜੇ, ਕਾਕੇ ਲਾਗੂ ਪਾਂਇ।\nਬਲਿਹਾਰੀ ਗੁਰੂ ਆਪਨੇ, ਗੋਵਿੰਦ ਦਿਓ ਬਤਾਇ॥',
+    'ਐਸੀ ਬਾਣੀ ਬੋਲੀਏ, ਮਨ ਕਾ ਆਪਾ ਖੋਇ।\nਔਰਨ ਕੋ ਸੀਤਲ ਕਰੇ, ਆਪਹੁਂ ਸੀਤਲ ਹੋਇ॥',
+    'ਮਾਟੀ ਕਹੇ ਕੁਮ੍ਹਾਰ ਸੇ, ਤੂ ਕਿਆ ਰੂੰਦੇ ਮੋਹਿ।\nਇਕ ਦਿਨ ਐਸਾ ਆਏਗਾ, ਮੈਂ ਰੂੰਦੂੰਗੀ ਤੋਹਿ॥',
   ],
   en: [
     'Guru and God both stand before me, to whom should I bow first?\nGlory to the Guru, who showed me the path to God.',
-    'Speak such sweet words that dissolve ego,\nbringing peace to others and tranquility to yourself.',
-    '|| Saheb Bandagi Saheb ||',
+    'Speak such sacred words that dissolve personal pride;\nSoothing the hearts of others while filling yourself with divine peace.',
+    'Clay says to the potter, why do you trample me?\nA day shall come, when I shall trample thee.',
   ],
 };
 
@@ -327,26 +328,34 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
     ctx.textAlign = 'center';
     ctx.fillStyle = activeTheme.accentColor;
     ctx.font = 'bold 36px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
-    ctx.fillText(SACRED_BRANDING.header[language], size / 2, 165);
+    ctx.fillText(SACRED_SHARE_TEMPLATE.header[language] || SACRED_BRANDING.header[language], size / 2, 165);
 
     // Lotus divider
     ctx.font = '44px serif';
     ctx.fillText('🪷', size / 2, 238);
 
-    // Main quote text
-    const trimmedQuote = formatCoupletString(quoteText.trim() || PRELOADED_QUOTES[language][0]);
-    ctx.fillStyle = activeTheme.textColor;
-    const fontSizePx = trimmedQuote.length > 130 ? 40 : trimmedQuote.length > 85 ? 46 : 52;
-    ctx.font = `bold ${fontSizePx}px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif`;
-    const wrappedLines = wrapCanvasText(ctx, trimmedQuote, size - 210);
-    const lineHeight = fontSizePx * 1.48;
-    const totalTextHeight = wrappedLines.length * lineHeight;
-    let startY = Math.max(330, size / 2 - totalTextHeight / 2 + 10);
+    // Main quote text: strictly formatted into 2 lines ending with ॥
+    const [line1, line2] = formatCoupletIntoTwoLines(quoteText.trim() || PRELOADED_QUOTES[language][0], language);
+    const dohaLines = [line1, line2].filter(Boolean);
 
-    for (const line of wrappedLines) {
+    ctx.fillStyle = activeTheme.textColor;
+    const maxLineLen = Math.max(...dohaLines.map((l) => l.length));
+    const fontSizePx = maxLineLen > 55 ? 38 : maxLineLen > 40 ? 44 : 50;
+    ctx.font = `bold ${fontSizePx}px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif`;
+    const lineHeight = fontSizePx * 1.55;
+    const totalTextHeight = dohaLines.length * lineHeight;
+    let startY = Math.max(320, size / 2 - totalTextHeight / 2 - 20);
+
+    for (const line of dohaLines) {
       ctx.fillText(line, size / 2, startY);
       startY += lineHeight;
     }
+
+    // Attribution Line right below Doha: "— सद्गुरु कबीर साहेब"
+    const attributionText = SACRED_SHARE_TEMPLATE.attribution[language];
+    ctx.fillStyle = activeTheme.accentColor;
+    ctx.font = 'bold 28px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
+    ctx.fillText(attributionText, size / 2, startY + 16);
 
     // Divider above courtesy
     ctx.strokeStyle = activeTheme.innerBorderColor;
@@ -358,14 +367,15 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
 
     // Courtesy / Name at bottom
     ctx.fillStyle = activeTheme.accentColor;
-    ctx.font = 'bold 34px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
+    ctx.font = 'bold 32px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
     ctx.fillText(courtesyLine, size / 2, size - 188);
 
-    // Saheb Bandagi Footer
+    // Clean Unified Closing Salutation (No duplicate branding!)
+    const closingSalutation = SACRED_SHARE_TEMPLATE.footer[language].split('\n')[1];
     ctx.fillStyle = activeTheme.mutedColor;
-    ctx.font = '600 26px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
+    ctx.font = 'bold 30px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
     ctx.fillText(
-      `${SACRED_BRANDING.footer[language]} · Saheb World`,
+      closingSalutation,
       size / 2,
       size - 122
     );
@@ -419,7 +429,11 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
       sacredHaptics.mediumTap();
       const { blob, dataUrl } = await renderCardToCanvas();
       const file = new File([blob], 'saheb-world-kabir-vani.png', { type: 'image/png' });
-      const shareText = `${SACRED_BRANDING.header[language]}\n\n"${quoteText.trim()}"\n\n${courtesyLine}\n${SACRED_BRANDING.footer[language]}`;
+      const shareText = buildStandardShareText({
+        text: quoteText.trim() || PRELOADED_QUOTES[language][0],
+        language,
+        customCourtesy: prefs.senderName.trim() || undefined,
+      });
 
       if (navigator.share) {
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
@@ -459,8 +473,12 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
 
   const handleWhatsAppShare = () => {
     sacredHaptics.lightTap();
-    const message = `${SACRED_BRANDING.header[language]}\n\n"${quoteText.trim()}"\n\n${courtesyLine}\n${SACRED_BRANDING.footer[language]}`;
-    const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const shareText = buildStandardShareText({
+      text: quoteText.trim() || PRELOADED_QUOTES[language][0],
+      language,
+      customCourtesy: prefs.senderName.trim() || undefined,
+    });
+    const url = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
     incrementCount();
   };
@@ -757,20 +775,43 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
                   style={{ color: activeTheme.accentColor }}
                   className="text-sm sm:text-base font-serif font-black tracking-wide whitespace-nowrap"
                 >
-                  {SACRED_BRANDING.header[language]}
+                  {SACRED_SHARE_TEMPLATE.header[language] || SACRED_BRANDING.header[language]}
                 </p>
                 <div className="text-2xl select-none" aria-hidden="true">
                   🪷
                 </div>
               </div>
 
-              <div className="relative z-10 px-2 my-auto">
-                <p
-                  style={{ color: activeTheme.textColor }}
-                  className="text-base sm:text-xl font-serif font-bold leading-relaxed whitespace-pre-line break-words"
-                >
-                  {formatCoupletString(quoteText.trim() || PRELOADED_QUOTES[language][0])}
-                </p>
+              <div className="relative z-10 px-2 my-auto space-y-2">
+                {(() => {
+                  const [l1, l2] = formatCoupletIntoTwoLines(quoteText.trim() || PRELOADED_QUOTES[language][0], language);
+                  return (
+                    <>
+                      <div className="space-y-1">
+                        <p
+                          style={{ color: activeTheme.textColor }}
+                          className="text-base sm:text-lg font-serif font-bold leading-relaxed whitespace-pre-line break-words"
+                        >
+                          {l1}
+                        </p>
+                        {l2 && (
+                          <p
+                            style={{ color: activeTheme.textColor }}
+                            className="text-base sm:text-lg font-serif font-bold leading-relaxed whitespace-pre-line break-words"
+                          >
+                            {l2}
+                          </p>
+                        )}
+                      </div>
+                      <p
+                        style={{ color: activeTheme.accentColor }}
+                        className="text-xs sm:text-sm font-serif font-bold"
+                      >
+                        {SACRED_SHARE_TEMPLATE.attribution[language]}
+                      </p>
+                    </>
+                  );
+                })()}
               </div>
 
               <div
@@ -785,9 +826,9 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
                 </p>
                 <p
                   style={{ color: activeTheme.mutedColor }}
-                  className="text-[11px] font-serif font-semibold opacity-90"
+                  className="text-[11px] font-serif font-bold opacity-90"
                 >
-                  {SACRED_BRANDING.footer[language]} · Saheb World
+                  {SACRED_SHARE_TEMPLATE.footer[language].split('\n')[1]}
                 </p>
               </div>
             </div>

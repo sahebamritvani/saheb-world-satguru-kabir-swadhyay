@@ -304,12 +304,12 @@ export const SACRED_BRANDING = {
   header: {
     hi: '🌹 ।। सत्यनाम ।। 🌹',
     pb: '🌹 ।। ਸਤਯਨਾਮ ।। 🌹',
-    en: '🌹 ।। Satyanaam ।। 🌹',
+    en: '🌹 || Satyanaam || 🌹',
   },
   footer: {
     hi: '।। साहेब बंदगी साहेब ।। 🙏',
     pb: '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏',
-    en: '।। Saheb Bandgi Saheb ।। 🙏',
+    en: '|| Saheb Bandagi Saheb || 🙏',
   },
 } as const;
 

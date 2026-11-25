@@ -1,5 +1,6 @@
 import { Language, SACRED_BRANDING } from '../types';
 import { getAppUrlSync } from '../utils/url';
+import { buildStandardShareText } from '../services/shareTemplate';
 
 export interface AppTranslations {
   appName: string;
@@ -754,8 +755,8 @@ export const translations: Record<Language, AppTranslations> = {
     kabirNirvanLabel: 'सतगुरु कबीर साहेब निर्वाण दिवस',
     guruJayantiLabel: 'गुरु जयंती',
     magharUtsavLabel: 'मघर पावन उत्सव',
-    satnamSalutation: '🌹।।सत्यनाम।।🌹',
-    sahebBangiSalutation: '।।साहेब बन्दगी साहेब।।🙏',
+    satnamSalutation: '🌹 ।। सत्यनाम ।। 🌹',
+    sahebBangiSalutation: '।। साहेब बंदगी साहेब ।। 🙏',
     monthlyGridTitle: 'साहेब वार्षिक जंत्री 2026',
     // Mantra Tracker
     mantraTrackerTitle: 'सत्यनाम नाम-सिमरन आवर्तन',
@@ -2147,62 +2148,15 @@ export function formatSakhiShareText(
   bhavarth: string,
   contemplation: string,
   lang: Language,
-  number: number
+  number?: number
 ): string {
-  const top = SACRED_BRANDING.header[lang];
-  const bottom = SACRED_BRANDING.footer[lang];
-
-  const currentUrl = getAppUrlSync();
-
-  if (lang === 'pb') {
-    return `${top}
-ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸਾਖੀ #${number}
-
-${sakhiText}
-
-।। ਭਾਵਾਰਥ ।।
-${bhavarth}
-
-।। ਆਤਮ-ਚਿੰਤਨ ।।
-${contemplation}
-
-${bottom}
-ਸਾਹੇਬ ਵਰਲਡ - ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਵਾਧਿਆਏ ਐਪ
-🔗 ${currentUrl}`;
-  }
-
-  if (lang === 'en') {
-    return `${top}
-Satguru Kabir Saheb Sacred Sakhi #${number}
-
-${sakhiText}
-
-।। Spiritual Meaning (Bhavarth) ।।
-${bhavarth}
-
-।। Self-Inquiry (Contemplation) ।।
-${contemplation}
-
-${bottom}
-Saheb World - Satguru Kabir Saheb Swadhyay PWA
-🔗 ${currentUrl}`;
-  }
-
-  // Default Hindi
-  return `${top}
-सतगुरु कबीर साहेब पावन साखी #${number}
-
-${sakhiText}
-
-।। भावार्थ ।।
-${bhavarth}
-
-।। आत्म-चिंतन प्रश्न ।।
-${contemplation}
-
-${bottom}
-साहेब वर्ल्ड - सतगुरु कबीर साहेब स्वाध्याय ऐप
-🔗 ${currentUrl}`;
+  return buildStandardShareText({
+    text: sakhiText,
+    language: lang,
+    sakhiNumber: number,
+    meaning: bhavarth,
+    lifeMessage: contemplation,
+  });
 }
 
 export const GRANTHA_TRANSLATIONS: Record<string, Record<Language, string>> = {

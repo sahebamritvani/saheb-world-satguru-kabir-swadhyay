@@ -2,7 +2,6 @@ import React from 'react';
 import { 
   ArrowLeft, 
   Settings, 
-  Sliders, 
   Wifi, 
   WifiOff, 
   Sparkles,
@@ -21,7 +20,7 @@ export interface MasterFeatureCardLayoutProps {
   onBack: () => void;
   onSelectLanguage: (lang: Language) => void;
   onOpenSettings: () => void;
-  onOpenAccessibility: () => void;
+  onOpenAccessibility?: () => void;
   title?: string | { hi: string; pb: string; en: string };
   kicker?: string | { hi: string; pb: string; en: string };
   slotNumber?: number;
@@ -90,7 +89,6 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
   onBack,
   onSelectLanguage,
   onOpenSettings,
-  onOpenAccessibility,
   title,
   kicker,
   slotNumber,
@@ -167,166 +165,136 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
           - Right: Uniform 3-Language Toggle + "पाठ साधन (A+)" + "⚙️ Settings"
           ========================================================================= */}
       <header
-        id="master-screen-sub-header-bar"
+        id="master-screen-header-stack"
         style={{
-          backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.94)' : 'rgba(253, 248, 238, 0.96)',
+          backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.96)' : 'rgba(253, 248, 238, 0.98)',
           borderColor: '#D97706',
         }}
-        className="sticky top-2 z-40 backdrop-blur-md rounded-2xl border-2 px-3 py-2 sm:px-4 sm:py-2.5 mb-5 shadow-lg flex items-center justify-between gap-2.5 transition-all"
+        className="sticky top-0 sm:top-2 z-40 backdrop-blur-md rounded-2xl border-2 p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-lg flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
       >
-        {/* Left: Uniform Back Button with Avatar */}
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            type="button"
-            id="master-back-btn"
-            onClick={() => {
-              sacredHaptics.lightTap();
-              onBack();
-            }}
-            style={{
-              backgroundColor: isDarkMode ? '#2C1E16' : '#FFFDF9',
-              borderColor: 'rgba(217, 119, 6, 0.45)',
-              color: isDarkMode ? '#FDE68A' : '#6B1D1D',
-            }}
-            className="h-8 sm:h-9 px-2.5 sm:px-3 rounded-xl border-1.5 flex items-center gap-1.5 hover:opacity-90 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-xs shrink-0 font-serif font-black text-xs sm:text-sm"
-            title={language === 'pb' ? 'ਮੁੱਖ ਪੰਨੇ ਤੇ ਵਾਪਸ' : language === 'en' ? 'Back to Dashboard' : 'मुख्य पृष्ठ पर वापस'}
-            aria-label="Back to dashboard"
-          >
-            <ArrowLeft className="w-4 h-4 text-amber-700 dark:text-amber-400 shrink-0" />
-            <span className="hidden xs:inline">
-              {language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
-            </span>
-          </button>
-
-          {/* Official Brand Avatar */}
-          <div 
-            onClick={() => {
-              sacredHaptics.lightTap();
-              onBack();
-            }}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-1.5 border-amber-600/50 overflow-hidden shadow-2xs shrink-0 cursor-pointer hidden sm:block hover:scale-105 transition-transform"
-            title="Saheb World"
-          >
-            <img src="/Saheb_World_icon.jpg" alt="Saheb World" className="w-full h-full object-cover" />
-          </div>
-        </div>
-
-        {/* Center: Active Card Title & 100% Offline Badge */}
-        <div className="flex-1 min-w-0 text-center px-1">
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-            {resolvedKicker && (
-              <span className="text-[10px] sm:text-xs font-black tracking-widest text-[#D97706] uppercase hidden md:inline-block">
-                {resolvedKicker} •
-              </span>
-            )}
-            <h1 
-              style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }} 
-              className="text-xs sm:text-sm md:text-base font-serif font-black truncate max-w-[220px] xs:max-w-[280px] sm:max-w-md drop-shadow-2xs"
-              title={resolvedTitle}
+        {/* Row 1: Top Utility Bar (Back button + Offline Badge on Left | Lang Toggle + Font + Settings on Right) */}
+        <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 border-b border-amber-500/20 pb-2 w-full min-w-0">
+          {/* Left: Back button + Offline Badge */}
+          <div className="flex items-center gap-1 sm:gap-2 min-w-0 shrink-0">
+            <button
+              type="button"
+              id="master-back-btn"
+              onClick={() => {
+                sacredHaptics.lightTap();
+                onBack();
+              }}
+              style={{
+                backgroundColor: isDarkMode ? '#2C1E16' : '#FFFDF9',
+                borderColor: 'rgba(217, 119, 6, 0.45)',
+                color: isDarkMode ? '#FDE68A' : '#6B1D1D',
+              }}
+              className="h-8 sm:h-9 px-2 sm:px-3 rounded-xl border-1.5 flex items-center gap-1 hover:opacity-90 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-xs shrink-0 font-serif font-black text-[11px] sm:text-sm"
+              title={language === 'pb' ? 'ਮੁੱਖ ਪੰਨੇ ਤੇ ਵਾਪਸ' : language === 'en' ? 'Back to Dashboard' : 'मुख्य पृष्ठ पर वापस'}
+              aria-label="Back to dashboard"
             >
-              {resolvedTitle}
-            </h1>
-
-            {activeSlotNumber && (
-              <span className="text-[10px] font-black font-serif px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/30 hidden lg:inline">
-                #{activeSlotNumber}
+              <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-700 dark:text-amber-400 shrink-0" />
+              <span>
+                {language === 'pb' ? 'ਵਾਪਸ' : language === 'en' ? 'Back' : 'वापस'}
               </span>
-            )}
+            </button>
 
             {/* 100% Offline Badge */}
             <span 
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-serif font-bold bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 shadow-2xs shrink-0"
-              title="100% Offline Functional (कबीर सागर, बीजक एवं समस्त वाणी ऑफ़लाइन उपलब्ध)"
+              className="inline-flex items-center gap-1 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9.5px] sm:text-xs font-serif font-bold bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 shadow-2xs shrink-0"
+              title="100% Offline Functional"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse shrink-0" />
               <span>
                 {language === 'pb' ? '੧੦੦% ਔਫਲਾਈਨ' : language === 'en' ? '100% Offline' : '१००% ऑफ़लाइन'}
               </span>
             </span>
           </div>
+
+          {/* Right: Compact Language Toggle + Font + Settings */}
+          <div className="flex items-center gap-1 sm:gap-2 min-w-0 shrink-0 ml-auto">
+            {/* Uniform 3-Language Toggle Buttons */}
+            <div 
+              style={{
+                backgroundColor: isDarkMode ? '#241A14' : '#FDF3E0',
+                borderColor: 'rgba(217, 119, 6, 0.4)',
+              }}
+              className="flex items-center border rounded-xl p-0.5 shadow-2xs shrink-0"
+            >
+              {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
+                const isSelected = language === lng;
+                const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
+                return (
+                  <button
+                    key={lng}
+                    type="button"
+                    id={`master-lang-btn-${lng}`}
+                    onClick={() => {
+                      sacredHaptics.lightTap();
+                      onSelectLanguage(lng);
+                    }}
+                    style={{
+                      backgroundColor: isSelected 
+                        ? (isDarkMode ? '#D97706' : '#6B1D1D') 
+                        : 'transparent',
+                      color: isSelected 
+                        ? '#FFFFFF' 
+                        : (isDarkMode ? '#F5F5F5' : '#451A03'),
+                    }}
+                    className={`h-7 px-1.5 sm:px-2.5 rounded-lg transition-all cursor-pointer flex items-center justify-center text-[10px] sm:text-xs font-serif font-black ${
+                      isSelected ? 'shadow-xs' : 'hover:opacity-85'
+                    }`}
+                    title={lng === 'hi' ? 'हिंदी भाषा' : lng === 'pb' ? 'ਪੰਜਾਬੀ ਭਾਸ਼ਾ' : 'English Language'}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Quick Button for Unified "⚙️ Settings" (Settings + Accessibility + Reading Suite) */}
+            <button
+              type="button"
+              id="master-settings-btn"
+              onClick={() => {
+                sacredHaptics.lightTap();
+                onOpenSettings();
+              }}
+              style={{
+                backgroundColor: isDarkMode ? '#2C1E16' : '#FFFDF9',
+                borderColor: 'rgba(217, 119, 6, 0.45)',
+                color: isDarkMode ? '#FDE68A' : '#6B1D1D',
+              }}
+              className="h-8 px-2 sm:px-2.5 rounded-xl border flex items-center justify-center gap-1 hover:opacity-90 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-2xs shrink-0"
+              title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼, ਸੁਗਮਤਾ ਤੇ ਪਠਨ ਸਾਧਨ' : language === 'en' ? 'Settings, Accessibility & Reading Suite' : 'सेटिंग्स, सुगमता एवं पाठ साधन'}
+              aria-label="Settings"
+            >
+              <Settings className="w-4 h-4 text-amber-700 dark:text-amber-400 shrink-0" />
+              <span className="hidden xs:inline text-[10px] sm:text-xs font-serif font-black">
+                {language === 'pb' ? 'ਸੈਟਿੰਗ' : language === 'en' ? 'Settings' : 'सेटिंग्स'}
+              </span>
+            </button>
+          </div>
         </div>
 
-        {/* Right: 3-Language Toggle + पाठ साधन (A+) + ⚙️ Settings */}
-        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
-          {/* Uniform 3-Language Toggle Buttons */}
-          <div 
-            style={{
-              backgroundColor: isDarkMode ? '#241A14' : '#FDF3E0',
-              borderColor: 'rgba(217, 119, 6, 0.4)',
-            }}
-            className="flex items-center border rounded-xl p-0.5 shadow-2xs shrink-0"
+        {/* Row 2: Full-Width Title Bar */}
+        <div className="w-full text-center px-1 sm:px-2 py-0.5 sm:py-1 min-w-0">
+          {resolvedKicker && (
+            <span className="text-[11px] font-black tracking-widest text-[#D97706] uppercase block mb-0.5">
+              {resolvedKicker}
+            </span>
+          )}
+          <h1 
+            style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }} 
+            className="text-base sm:text-lg md:text-xl font-serif font-black whitespace-normal break-words leading-tight drop-shadow-2xs"
+            title={resolvedTitle}
           >
-            {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
-              const isSelected = language === lng;
-              const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
-              return (
-                <button
-                  key={lng}
-                  type="button"
-                  id={`master-lang-btn-${lng}`}
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    onSelectLanguage(lng);
-                  }}
-                  style={{
-                    backgroundColor: isSelected 
-                      ? (isDarkMode ? '#D97706' : '#6B1D1D') 
-                      : 'transparent',
-                    color: isSelected 
-                      ? '#FFFFFF' 
-                      : (isDarkMode ? '#F5F5F5' : '#451A03'),
-                  }}
-                  className={`h-7 px-1.5 sm:px-2.5 rounded-lg transition-all cursor-pointer flex items-center justify-center text-[10.5px] sm:text-xs font-serif font-black ${
-                    isSelected ? 'shadow-xs' : 'hover:opacity-85'
-                  }`}
-                  title={lng === 'hi' ? 'हिंदी भाषा' : lng === 'pb' ? 'ਪੰਜਾਬੀ ਭਾਸ਼ਾ' : 'English Language'}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Quick Button for "पाठ साधन (A+)" */}
-          <button
-            type="button"
-            id="master-accessibility-btn"
-            onClick={() => {
-              sacredHaptics.lightTap();
-              onOpenAccessibility();
-            }}
-            style={{
-              backgroundColor: isDarkMode ? '#2C1E16' : '#FFFDF9',
-              borderColor: 'rgba(217, 119, 6, 0.45)',
-              color: isDarkMode ? '#FDE68A' : '#6B1D1D',
-            }}
-            className="h-8 w-8 sm:w-auto sm:px-2 rounded-xl border flex items-center justify-center gap-1 hover:opacity-90 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-2xs shrink-0 font-serif font-black text-xs"
-            title={language === 'pb' ? 'ਪਾਠ ਸਾਧਨ ਤੇ ਅੱਖਰ ਆਕਾਰ (A+)' : language === 'en' ? 'Reading Mode & Font Size (A+)' : 'पाठ साधन एवं अक्षर आकार (A+)'}
-            aria-label="Font size and reading suite"
-          >
-            <Sliders className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400 shrink-0" />
-            <span className="hidden md:inline">A+</span>
-          </button>
-
-          {/* Quick Button for "⚙️ Settings" */}
-          <button
-            type="button"
-            id="master-settings-btn"
-            onClick={() => {
-              sacredHaptics.lightTap();
-              onOpenSettings();
-            }}
-            style={{
-              backgroundColor: isDarkMode ? '#2C1E16' : '#FFFDF9',
-              borderColor: 'rgba(217, 119, 6, 0.45)',
-              color: isDarkMode ? '#FDE68A' : '#6B1D1D',
-            }}
-            className="h-8 w-8 rounded-xl border flex items-center justify-center hover:opacity-90 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-2xs shrink-0"
-            title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'Settings' : 'सेटिंग्स'}
-            aria-label="Settings"
-          >
-            <Settings className="w-4 h-4 text-amber-700 dark:text-amber-400" />
-          </button>
+            {resolvedTitle}
+          </h1>
+          {activeSlotNumber && (
+            <span className="inline-block mt-1 text-[10px] font-black font-serif px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/30">
+              Slot #{activeSlotNumber}
+            </span>
+          )}
         </div>
       </header>
 
@@ -345,7 +313,7 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
             backgroundColor: isDarkMode ? 'rgba(32, 24, 18, 0.96)' : 'rgba(253, 248, 238, 0.96)',
             borderColor: '#D97706',
           }}
-          className="relative w-full rounded-2xl sm:rounded-3xl border-2 shadow-2xl p-4 sm:p-6 sm:py-8 backdrop-blur-md overflow-hidden text-[#1A1A1A] dark:text-[#F5F5F5] min-h-[500px]"
+          className="relative w-full rounded-2xl sm:rounded-3xl border-2 shadow-2xl p-4 sm:p-6 sm:py-8 backdrop-blur-md overflow-x-clip text-[#1A1A1A] dark:text-[#F5F5F5] min-h-[500px]"
         >
           {/* Subtle (~8% to 10%) Satguru Kabir Saheb Official Portrait Watermark */}
           <div 

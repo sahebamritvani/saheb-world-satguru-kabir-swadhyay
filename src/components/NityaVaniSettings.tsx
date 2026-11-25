@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Bell, Clock, Info, ShieldCheck, ShieldAlert, Save, LogIn, ExternalLink, Volume2, CheckCircle2, Sunrise, Sunset, Sparkles, Activity, Lightbulb } from 'lucide-react';
+import { Bell, Clock, Info, ShieldCheck, ShieldAlert, Save, ExternalLink, Volume2, CheckCircle2, Sunrise, Sunset, Sparkles } from 'lucide-react';
 import { doc, setDoc, onSnapshot } from 'firebase/firestore';
 import { onAuthStateChanged, User } from 'firebase/auth';
-import { db, auth, signInWithGoogle, handleFirestoreError, OperationType } from '../lib/firebase';
+import { db, auth, handleFirestoreError, OperationType } from '../lib/firebase';
 import { Language } from '../types';
 import { translations } from '../data/translations';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -365,24 +365,6 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
     setTimeout(() => setSavedSuccess(false), 3000);
   };
 
-  const [authNotice, setAuthNotice] = useState<string | null>(null);
-
-  const handleSignIn = async () => {
-    setAuthNotice(null);
-    try {
-      await signInWithGoogle();
-    } catch {
-      setAuthNotice(
-        isHi
-          ? 'गूगल साइन-इन के लिए कृपया ऐप को नए टैब में खोलें, अथवा बिना साइन-इन के सेटिंग्स सुरक्षित रखें।'
-          : isPb
-          ? 'ਗੂਗਲ ਸਾਈਨ-ਇਨ ਲਈ ਨਵੇਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹੋ।'
-          : 'Please open the app in a new tab to complete Google Sign-in.'
-      );
-      setTimeout(() => setAuthNotice(null), 5000);
-    }
-  };
-
   if (loading && user) {
     return (
       <div className="flex items-center justify-center p-8">
@@ -420,28 +402,10 @@ export const NityaVaniSettings: React.FC<NityaVaniSettingsProps> = ({ language }
           </div>
         </div>
 
-        {user ? (
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-green-100 text-green-800 border border-green-200 shrink-0">
-            Cloud Sync
-          </span>
-        ) : (
-          <button
-            onClick={handleSignIn}
-            className="text-[11px] font-bold px-2.5 py-1 rounded-lg border bg-white dark:bg-zinc-800 hover:bg-gray-50 flex items-center gap-1 shrink-0 transition cursor-pointer"
-            style={{ borderColor: theme.cardBorder, color: theme.sacredMaroon }}
-            title={t.continueWithGoogle}
-          >
-            <LogIn className="w-3.5 h-3.5" />
-            <span>{t.continueWithGoogle}</span>
-          </button>
-        )}
+        <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200 shrink-0">
+          {isHi ? 'ऑफ़लाइन सुरक्षित' : isPb ? 'ਆਫ਼ਲਾਈਨ ਸੁਰੱਖਿਅਤ' : 'Offline Ready'}
+        </span>
       </div>
-
-      {authNotice && (
-        <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-800 dark:text-amber-200">
-          {authNotice}
-        </div>
-      )}
 
       {/* Permission Status Bar */}
       <div 

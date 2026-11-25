@@ -8,7 +8,6 @@ import {
   ShieldCheck,
   Upload,
   RotateCcw,
-  Cloud,
   Maximize2,
   Minimize2,
   Eye,
@@ -28,20 +27,18 @@ import {
   DarshanPortraitState,
   compressDarshanImage,
   getCustomDarshanState,
-  isFirebaseAdminSessionActive,
   publishAdminDarshanPortrait,
   resetAdminDarshanPortrait,
   subscribeToCustomPortraitState,
   updateAdminDarshanObjectFit,
 } from '../services/customPortraitStore';
-import { isAdminAuthenticated, isAuthorizedAdminEmail } from '../services/adminAuth';
+import { isAdminAuthenticated } from '../services/adminAuth';
 import {
   SacredMediaItem,
   subscribeToSacredMedia,
   publishAdminSacredMedia,
   deleteAdminSacredMedia,
 } from '../services/sacredMediaService';
-import { signInWithGoogle } from '../lib/firebase';
 import { speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
 
@@ -116,7 +113,6 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
   const language: Language = contextLanguage || propLanguage || 'hi';
 
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
-  const [isFirebaseAdmin, setIsFirebaseAdmin] = useState<boolean>(() => isFirebaseAdminSessionActive());
   const [flowerCount, setFlowerCount] = useState<number>(() => {
     try {
       return parseInt(localStorage.getItem('sahebworld_darshan_flowers') || '0', 10);
@@ -147,7 +143,6 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
   useEffect(() => {
     const handleAuthChange = () => {
       setIsAdmin(isAdminAuthenticated());
-      setIsFirebaseAdmin(isFirebaseAdminSessionActive());
     };
     window.addEventListener('sahebworld:admin-auth-change', handleAuthChange);
     const unsubscribe = subscribeToCustomPortraitState((next) => {
@@ -201,18 +196,10 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
             ? '✓ Sacred portrait updated & synced for all devotees'
             : '✓ पावन स्वरूप सफलतापूर्वक सेव एवं सभी भक्तों हेतु वैश्विक सिंक हो गया'
         );
-      } else if (res.needsGoogleAdminSignIn) {
-        showToast(
-          language === 'pb'
-            ? 'ਡਿਵਾਈਸ ਤੇ ਸੁਰੱਖਿਅਤ ਹੈ — ਗਲੋਬਲ ਸਿੰਕ ਲਈ Google Admin ਸਾਈਨ-ਇਨ ਕਰੋ'
-            : language === 'en'
-            ? 'Saved on this device — Sign in with Admin Google account to sync globally'
-            : 'इस डिवाइस पर सेव हो गया — सभी के लिए सिंक करने हेतु ऊपर Google एडमिन साइन-इन करें'
-        );
       } else {
         showToast(
           res.error ||
-            (language === 'pb' ? 'ਪਾਵਨ ਸਰੂਪ ਅਪਡੇਟ ਹੋਇਆ' : language === 'en' ? 'Portrait updated' : 'पावन स्वरूप अपडेट हुआ')
+            (language === 'pb' ? '✓ ਪਾਵਨ ਸਰੂਪ ਡਿਵਾਈਸ ਤੇ ਸੁਰੱਖਿਅਤ ਹੋ ਗਿਆ' : language === 'en' ? '✓ Portrait saved' : '✓ पावन स्वरूप सफलतापूर्वक सहेजा गया')
         );
       }
     } catch (err: any) {
@@ -226,52 +213,6 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
       );
     } finally {
       setIsUploading(false);
-    }
-  };
-
-  const handleAdminGoogleSync = async () => {
-    if (!isAdmin) return;
-    try {
-      const user = await signInWithGoogle();
-      setIsFirebaseAdmin(isFirebaseAdminSessionActive());
-      if (user?.email && isAuthorizedAdminEmail(user.email)) {
-        if (portraitState.imageData) {
-          const res = await publishAdminDarshanPortrait(portraitState.imageData, portraitState.objectFit);
-          if (res.syncedToCloud) {
-            showToast(
-              language === 'pb'
-                ? '✓ Google ਐਡਮਿਨ ਪ੍ਰਮਾਣਿਤ ਅਤੇ ਪਾਵਨ ਸਰੂਪ ਗਲੋਬਲ ਸਿੰਕ ਹੋ ਗਿਆ'
-                : language === 'en'
-                ? '✓ Admin Google verified & sacred portrait synced globally!'
-                : '✓ Google एडमिन प्रमाणित — पावन स्वरूप सभी के लिए वैश्विक सिंक हो गया!'
-            );
-            return;
-          }
-        }
-        showToast(
-          language === 'pb'
-            ? '✓ Google ਐਡਮਿਨ ਸੈਸ਼ਨ ਸਰਗਰਮ ਹੋ ਗਿਆ'
-            : language === 'en'
-            ? '✓ Admin Google session active'
-            : '✓ Google एडमिन सत्र सक्रिय हो गया'
-        );
-      } else {
-        showToast(
-          language === 'pb'
-            ? 'ਕਿਰਪਾ ਕਰਕੇ ਅਧਿਕਾਰਤ ਐਡਮਿਨ ਖਾਤੇ ਨਾਲ ਸਾਈਨ-ਇਨ ਕਰੋ।'
-            : language === 'en'
-            ? 'Please sign in with the authorized admin account.'
-            : 'कृपया अधिकृत एडमिन खाते से साइन-इन करें।'
-        );
-      }
-    } catch {
-      showToast(
-        language === 'pb'
-          ? 'ਪੌਪ-ਅੱਪ ਬਲਾਕ ਜਾਂ ਰੱਦ ਹੋ ਗਿਆ। ਨਵੇਂ ਟੈਬ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ।'
-          : language === 'en'
-          ? 'Google Sign-In popup cancelled or blocked in preview frame.'
-          : 'पॉप-अप ब्लॉक हुआ या रद्द किया गया। कृपया नए टैब में Google साइन-इन आज़माएं।'
-      );
     }
   };
 
@@ -551,23 +492,10 @@ export const DivineDarshanModule: React.FC<DivineDarshanModuleProps> = ({
                   <span>👑 सतगुरु साहेब एडमिन मोड सक्रिय (Admin Authorized)</span>
                 </h5>
                 <p className="text-[0.6875rem] text-emerald-900/80 dark:text-emerald-300/80 font-serif">
-                  {isFirebaseAdmin
-                    ? '✓ Google एडमिन क्लाउड सिंक सक्रिय — आपका अपलोड सभी भक्तों और APK में दिखाई देगा।'
-                    : 'केवल आप (एडमिन) पावन स्वरूप बदल सकते हैं। सभी उपकरणों हेतु क्लाउड सिंक के लिए Google साइन-इन करें।'}
+                  केवल आप (प्रशासक पासकी द्वारा अधिकृत) पावन दर्शन स्वरूप अपलोड व संपादित कर सकते हैं।
                 </p>
               </div>
             </div>
-
-            {!isFirebaseAdmin && (
-              <button
-                type="button"
-                onClick={handleAdminGoogleSync}
-                className="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-serif flex items-center gap-1.5 shrink-0 cursor-pointer shadow-xs transition"
-              >
-                <Cloud className="w-3.5 h-3.5" />
-                <span>Google एडमिन सिंक</span>
-              </button>
-            )}
           </div>
         )}
 

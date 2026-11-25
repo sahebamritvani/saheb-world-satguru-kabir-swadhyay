@@ -18,6 +18,7 @@ import { Language, SACRED_BRANDING } from '../types';
 import { useAppTheme } from '../theme/ThemeContext';
 import { sacredHaptics } from '../services/haptics';
 import { formatCoupletString } from '../utils/textSanitizer';
+import { buildStandardShareText, renderStandardDohaCanvas } from '../services/shareTemplate';
 
 export interface UnifiedDohaCardProps {
   id?: string | number;
@@ -128,12 +129,14 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
   // Copy Clean Text with Sacred Headers & Footers
   const handleCopyText = async () => {
     sacredHaptics.lightTap();
-    const topHeader = SACRED_BRANDING.header[language];
-    const bottomFooter = SACRED_BRANDING.footer[language];
-    const srcStr = sourceText ? `\n📖 ${language === 'pb' ? 'ਸਰੋਤ' : language === 'en' ? 'Source' : 'स्रोत'}: ${sourceText}` : '';
-    const meaningStr = meaningText ? `\n\n🕊️ ${language === 'pb' ? 'ਭਾਵਾਰਥ' : language === 'en' ? 'Meaning' : 'भावार्थ'}:\n${meaningText}` : '';
-    const lifeMsgStr = lifeMessageText ? `\n\n🌟 ${language === 'pb' ? 'ਜੀਵਨ ਸੰਦੇਸ਼' : language === 'en' ? 'Life Message' : 'जीवन संदेश'}:\n${lifeMessageText}` : '';
-    const fullText = `${topHeader}\n\n${formattedVerse}${srcStr}${meaningStr}${lifeMsgStr}\n\n${bottomFooter}\nhttps://sahebworld.app`;
+    const fullText = buildStandardShareText({
+      text: rawVerseText,
+      language,
+      source: sourceText,
+      meaning: meaningText,
+      lifeMessage: lifeMessageText,
+      sakhiNumber: verseNumber,
+    });
 
     try {
       await navigator.clipboard.writeText(fullText);
@@ -195,15 +198,20 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
   const handleShareText = () => {
     sacredHaptics.lightTap();
     setShowShareMenu(false);
-    const topHeader = SACRED_BRANDING.header[language];
-    const bottomFooter = SACRED_BRANDING.footer[language];
-    const srcStr = sourceText ? `\n📖 ${language === 'pb' ? 'ਸਰੋਤ' : language === 'en' ? 'Source' : 'स्रोत'}: ${sourceText}` : '';
-    const meaningStr = meaningText ? `\n\n🕊️ ${language === 'pb' ? 'ਭਾਵਾਰਥ' : language === 'en' ? 'Meaning' : 'भावार्थ'}:\n${meaningText}` : '';
-    const fullText = `${topHeader}\n\n${formattedVerse}${srcStr}${meaningStr}\n\n${bottomFooter}\nhttps://sahebworld.app`;
+    const fullText = buildStandardShareText({
+      text: rawVerseText,
+      language,
+      source: sourceText,
+      meaning: meaningText,
+      lifeMessage: lifeMessageText,
+      sakhiNumber: verseNumber,
+    });
+
+    const shareTitle = sourceText || (language === 'pb' ? 'ਸਤਯਨਾਮ ਪਾਵਨ ਬਾਣੀ' : language === 'en' ? 'Satyanaam Sacred Vani' : 'सत्यनाम पावन वाणी');
 
     if (navigator.share) {
       navigator.share({
-        title: sourceText || 'सत्यनाम पावन वाणी',
+        title: shareTitle,
         text: fullText,
       }).catch(() => {
         window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(fullText)}`, '_blank');
@@ -220,126 +228,14 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
     setIsGeneratingImage(true);
 
     try {
-      const width = 1080;
-      const height = 1080;
       const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) throw new Error('Canvas not supported');
-
-      // 1. Background Parchment / Cream
-      const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-      bgGrad.addColorStop(0, '#FFFDF7');
-      bgGrad.addColorStop(0.5, '#FDF8EE');
-      bgGrad.addColorStop(1, '#F7EED8');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
-
-      // 2. Dual Golden Frame
-      ctx.strokeStyle = '#D97706';
-      ctx.lineWidth = 14;
-      ctx.strokeRect(36, 36, width - 72, height - 72);
-
-      ctx.strokeStyle = '#92400E';
-      ctx.lineWidth = 3;
-      ctx.strokeRect(52, 52, width - 104, height - 104);
-
-      // 3. Subtle Brand Portrait Watermark in Center
-      try {
-        const img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.src = '/Saheb_World_icon.jpg';
-        await new Promise((resolve) => {
-          img.onload = resolve;
-          img.onerror = resolve; // Continue gracefully if image fails
-        });
-        if (img.complete && img.naturalWidth > 0) {
-          ctx.save();
-          ctx.globalAlpha = 0.09;
-          const imgSize = 460;
-          ctx.drawImage(img, (width - imgSize) / 2, (height - imgSize) / 2, imgSize, imgSize);
-          ctx.restore();
-        }
-      } catch {
-        // Fallback watermark silently
-      }
-
-      // 4. Sacred Top Header
-      ctx.fillStyle = '#6B1D1D';
-      ctx.font = 'bold 40px "Noto Serif Devanagari", serif';
-      ctx.textAlign = 'center';
-      ctx.fillText(SACRED_BRANDING.header[language], width / 2, 120);
-
-      // Subheading
-      ctx.font = 'bold 22px "Noto Sans Devanagari", sans-serif';
-      ctx.fillStyle = '#B45309';
-      ctx.fillText(
-        language === 'pb' ? '✦ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਮਾਣਿਕ ਪਾਵਨ ਬਾਣੀ ✦' :
-        language === 'en' ? '✦ Satguru Kabir Saheb Authentic Sacred Vani ✦' :
-        '✦ सतगुरु कबीर साहेब प्रामाणिक पावन वाणी ✦',
-        width / 2,
-        165
-      );
-
-      // Source Tag
-      if (sourceText) {
-        ctx.font = 'italic 22px "Noto Serif Devanagari", serif';
-        ctx.fillStyle = '#78350F';
-        ctx.fillText(`॥ ${sourceText} ॥`, width / 2, 210);
-      }
-
-      // 5. Main Doha Verse (Bold Maroon, 2 Lines)
-      ctx.font = 'bold 46px "Noto Serif Devanagari", serif';
-      ctx.fillStyle = '#6B1D1D';
-      const lines = formattedVerse.split('\n');
-      let startY = 380 - (lines.length * 28);
-      lines.forEach((line) => {
-        ctx.fillText(line.trim(), width / 2, startY);
-        startY += 75;
+      await renderStandardDohaCanvas(canvas, {
+        verseText: rawVerseText,
+        language,
+        sourceText,
+        meaningText,
       });
 
-      // 6. Meaning (Bhavarth)
-      if (meaningText) {
-        ctx.font = '500 26px "Noto Sans Devanagari", sans-serif';
-        ctx.fillStyle = '#292524';
-        const words = meaningText.split(' ');
-        let curLine = '';
-        let mY = startY + 50;
-        const maxLines = 6;
-        let lineCount = 0;
-
-        for (let i = 0; i < words.length; i++) {
-          const test = curLine + words[i] + ' ';
-          const metrics = ctx.measureText(test);
-          if (metrics.width > width - 200 && i > 0) {
-            ctx.fillText(curLine.trim(), width / 2, mY);
-            curLine = words[i] + ' ';
-            mY += 40;
-            lineCount++;
-            if (lineCount >= maxLines) {
-              ctx.fillText('...', width / 2, mY);
-              break;
-            }
-          } else {
-            curLine = test;
-          }
-        }
-        if (lineCount < maxLines && curLine.trim()) {
-          ctx.fillText(curLine.trim(), width / 2, mY);
-        }
-      }
-
-      // 7. Footer Branding
-      ctx.font = 'bold 28px "Noto Serif Devanagari", serif';
-      ctx.fillStyle = '#6B1D1D';
-      ctx.fillText(SACRED_BRANDING.footer[language], width / 2, height - 110);
-
-      ctx.font = 'bold 18px "Noto Sans Devanagari", sans-serif';
-      ctx.fillStyle = '#B45309';
-      ctx.fillText('साहेब वर्ल्ड • Saheb World | satgurukabir.app', width / 2, height - 72);
-
-      // Export canvas
       canvas.toBlob((blob) => {
         if (!blob) {
           setIsGeneratingImage(false);
@@ -348,9 +244,15 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
         const file = new File([blob], `SahebWorld_Vani_${verseNumber || Date.now()}.png`, { type: 'image/png' });
 
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          const shareText = buildStandardShareText({
+            text: rawVerseText,
+            language,
+            source: sourceText,
+            sakhiNumber: verseNumber,
+          });
           navigator.share({
-            title: sourceText || 'सत्यनाम पावन वाणी',
-            text: formattedVerse,
+            title: sourceText || (language === 'pb' ? 'ਸਤਯਨਾਮ ਪਾਵਨ ਬਾਣੀ' : language === 'en' ? 'Satyanaam Sacred Vani' : 'सत्यनाम पावन वाणी'),
+            text: shareText,
             files: [file],
           }).catch(() => {
             // Trigger download if share dismissed
@@ -358,8 +260,10 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
             const a = document.createElement('a');
             a.href = url;
             a.download = `SahebWorld_Vani_${verseNumber || Date.now()}.png`;
+            document.body.appendChild(a);
             a.click();
-            URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
           }).finally(() => {
             setIsGeneratingImage(false);
           });
@@ -369,8 +273,10 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
           const a = document.createElement('a');
           a.href = url;
           a.download = `SahebWorld_Vani_${verseNumber || Date.now()}.png`;
+          document.body.appendChild(a);
           a.click();
-          URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
           setIsGeneratingImage(false);
         }
       }, 'image/png');
@@ -417,7 +323,7 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
         }`}
       >
         {/* Left: Authentic Sacred Vani Badge / Kicker */}
-        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-1">
           <span 
             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-serif font-black tracking-wide border shadow-2xs shrink-0 bg-amber-500/15 text-amber-800 dark:text-amber-200 border-amber-500/30"
           >
@@ -439,7 +345,7 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
         </div>
 
         {/* Right: 4 Master Action Icons (Audio, Copy, Share, Bookmark) */}
-        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <div className="flex items-center gap-1.5 shrink-0">
           {/* 1. Audio Play Button */}
           <button
             type="button"

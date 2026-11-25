@@ -88,8 +88,8 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
         en: 'Kabir Sakhi Sangrah — Panacea Ang',
       },
       verse: {
-        hi: 'सत्यनामऔषधि है, भव-व्याधि की एक। जो जन सुमिरै प्रेम सों, ताके कटैं अनेक॥',
-        pb: 'ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਹੈ, ਭਵ-व्याਧੀ ਕੀ ਏਕ। ਜੋ ਜਨ ਸਿਮਰੈ ਪ੍ਰੇਮ ਸੋਂ, ਤਾਕੇ ਕਟੈਂ ਅਨੇਕ॥',
+        hi: 'सत्यनाम औषधि है, भव-व्याधि की एक। जो जन सुमिरै प्रेम सों, ताके कटैं अनेक॥',
+        pb: 'ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਹੈ, ਭਵ-ਵਿਆਧੀ ਕੀ ਏਕ। ਜੋ ਜਨ ਸਿਮਰੈ ਪ੍ਰੇਮ ਸੋਂ, ਤਾਕੇ ਕਟੈਂ ਅਨੇਕ॥',
         en: 'Satyanaam is the supreme medicine for all worldly ailments; whoever remembers it with pure devotion, their myriad bonds are severed.',
       },
       meaning: {
@@ -220,106 +220,146 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
           </div>
 
           {/* Canvas Visualization Area */}
-          <div className="relative py-8 px-4 bg-gradient-to-b from-stone-900 via-amber-950/40 to-stone-900 rounded-2xl border border-amber-500/30 overflow-hidden flex flex-col items-center justify-center min-h-[320px]">
+          <div className="relative py-5 sm:py-7 px-3 sm:px-6 bg-gradient-to-b from-slate-950 via-stone-900 to-slate-950 rounded-2xl border-2 border-amber-500/35 overflow-hidden flex flex-col items-center justify-between gap-5 min-h-[390px] sm:min-h-[430px]">
             
             {/* Ambient Background Rays */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18)_0%,transparent_70%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.20)_0%,rgba(253,224,71,0.06)_38%,transparent_70%)] pointer-events-none" />
 
-            {/* Surrounding Ailment Mist Clouds (Fade away when Panacea is taken) */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+            {/* 4-Corner Mandala Frame around the Center Pure White Divine Light Orb */}
+            <div className="relative z-10 w-full max-w-2xl flex flex-col items-center justify-between gap-4 sm:gap-5">
+              
+              {/* Top Two Corners: भव-व्याधि (Top-Left) & मोह-भ्रम (Top-Right) */}
               <motion.div
                 animate={{
-                  opacity: isPanaceaTaken ? 0 : 0.85,
-                  scale: isPanaceaTaken ? 1.4 : 1,
-                  filter: isPanaceaTaken ? 'blur(16px)' : 'blur(4px)',
+                  opacity: isPanaceaTaken ? 0 : 1,
+                  scale: isPanaceaTaken ? 0.85 : 1,
+                  y: isPanaceaTaken ? -12 : 0,
                 }}
-                transition={{ duration: 1.2 }}
-                className="relative w-full max-w-sm h-64 flex items-center justify-center"
+                transition={{ duration: 0.7 }}
+                className="w-full flex items-center justify-between gap-2 z-20 pointer-events-none"
               >
-                {/* Cloud 1: भव-व्याधि */}
-                <div className="absolute top-4 left-6 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg animate-pulse">
-                  {activeLang === 'pb' ? '☁️ ਭਵ-ਵ්‍යාਧੀ (Ailment)' : activeLang === 'en' ? '☁️ Worldly Ailment' : '☁️ भव-व्याधि'}
+                <div
+                  style={{
+                    background: 'rgba(15, 23, 42, 0.92)',
+                    color: '#FFFFFF',
+                    border: '1.5px solid rgba(248, 250, 252, 0.45)',
+                  }}
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-serif font-bold shadow-[0_8px_24px_rgba(0,0,0,0.65)] backdrop-blur-md"
+                >
+                  {activeLang === 'pb' ? '☁️ ਭਵ-ਵਿਆਧੀ' : activeLang === 'en' ? '☁️ Worldly Ailment' : '☁️ भव-व्याधि'}
                 </div>
-                {/* Cloud 2: मोह-भ्रम */}
-                <div className="absolute top-6 right-6 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg">
-                  {activeLang === 'pb' ? '☁️ ਮੋਹ-ਭਰਮ (Illusion)' : activeLang === 'en' ? '☁️ Illusion & Maya' : '☁️ मोह-भ्रम'}
+
+                <div
+                  style={{
+                    background: 'rgba(15, 23, 42, 0.92)',
+                    color: '#FFFFFF',
+                    border: '1.5px solid rgba(248, 250, 252, 0.45)',
+                  }}
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-serif font-bold shadow-[0_8px_24px_rgba(0,0,0,0.65)] backdrop-blur-md"
+                >
+                  {activeLang === 'pb' ? '☁️ ਮੋਹ-ਭਰਮ' : activeLang === 'en' ? '☁️ Illusion & Maya' : '☁️ मोह-भ्रम'}
                 </div>
-                {/* Cloud 3: कर्म-बंधन */}
-                <div className="absolute bottom-6 left-8 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg">
-                  {activeLang === 'pb' ? '☁️ ਕਰਮ-ਬੰਧਨ (Karmas)' : activeLang === 'en' ? '☁️ Karmic Bonds' : '☁️ कर्म-बंधन'}
+              </motion.div>
+
+              {/* Center Pure White Divine Light Orb & Lotus */}
+              <div className="relative z-10 flex flex-col items-center justify-center space-y-3 py-1 sm:py-2">
+                {/* Lotus Base */}
+                <div className="text-3xl filter drop-shadow-[0_0_15px_rgba(255,255,255,0.95)] select-none">
+                  🪷
                 </div>
-                {/* Cloud 4: अशांति */}
-                <div className="absolute bottom-4 right-8 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-600/50 text-stone-300 text-xs font-serif shadow-lg animate-pulse">
-                  {activeLang === 'pb' ? '☁️ ਅਸ਼ਾਂਤੀ (Agitation)' : activeLang === 'en' ? '☁️ Inner Agitation' : '☁️ अशांति'}
+
+                {/* Radiant Pure White Divine Light Orb */}
+                <motion.div
+                  animate={{
+                    scale: isPanaceaTaken ? [1, 1.28, 1.15] : [1, 1.07, 1],
+                    boxShadow: isPanaceaTaken 
+                      ? ['0 0 60px 25px rgba(255, 255, 255, 0.9)', '0 0 90px 35px rgba(255, 255, 255, 1)', '0 0 70px 30px rgba(255, 255, 255, 0.95)']
+                      : ['0 0 40px 15px rgba(255, 255, 255, 0.7)', '0 0 60px 25px rgba(255, 255, 255, 0.9)', '0 0 40px 15px rgba(255, 255, 255, 0.7)'],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{
+                    background: 'radial-gradient(circle, #FFFFFF 0%, #F8FAFC 45%, rgba(255,255,255,0.35) 75%, transparent 100%)',
+                    boxShadow: '0 0 60px 25px rgba(255, 255, 255, 0.9)',
+                  }}
+                  className="w-44 h-44 sm:w-52 sm:h-52 rounded-full flex flex-col items-center justify-center p-4 text-stone-900 border-4 border-white/85 cursor-pointer select-none"
+                  onClick={handleTakePanacea}
+                >
+                  <span className="text-xs uppercase font-bold tracking-widest text-stone-700">
+                    {activeLang === 'pb' ? 'ਸ਼੍ਵੇਤ ਪ੍ਰਕਾਸ਼' : activeLang === 'en' ? 'Divine Light' : 'श्वेत दिव्य प्रकाश'}
+                  </span>
+                  <span className="text-lg sm:text-2xl font-serif font-black my-1 text-stone-950">
+                    {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ ॥' : activeLang === 'en' ? '|| Satyanaam ||' : '॥ सत्यनाम ॥'}
+                  </span>
+                  <span className="text-[11px] font-serif text-stone-800 font-bold">
+                    {activeLang === 'pb' ? 'ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ' : activeLang === 'en' ? 'Supreme Panacea' : 'सर्व रोग निवारक'}
+                  </span>
+                </motion.div>
+              </div>
+
+              {/* Bottom Two Corners: कर्म-बंधन (Bottom-Left) & अशांति (Bottom-Right) */}
+              <motion.div
+                animate={{
+                  opacity: isPanaceaTaken ? 0 : 1,
+                  scale: isPanaceaTaken ? 0.85 : 1,
+                  y: isPanaceaTaken ? 12 : 0,
+                }}
+                transition={{ duration: 0.7 }}
+                className="w-full flex items-center justify-between gap-2 z-20 pointer-events-none"
+              >
+                <div
+                  style={{
+                    background: 'rgba(15, 23, 42, 0.92)',
+                    color: '#FFFFFF',
+                    border: '1.5px solid rgba(248, 250, 252, 0.45)',
+                  }}
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-serif font-bold shadow-[0_8px_24px_rgba(0,0,0,0.65)] backdrop-blur-md"
+                >
+                  {activeLang === 'pb' ? '☁️ ਕਰਮ-ਬੰਧਨ' : activeLang === 'en' ? '☁️ Karmic Bonds' : '☁️ कर्म-बंधन'}
+                </div>
+
+                <div
+                  style={{
+                    background: 'rgba(15, 23, 42, 0.92)',
+                    color: '#FFFFFF',
+                    border: '1.5px solid rgba(248, 250, 252, 0.45)',
+                  }}
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-serif font-bold shadow-[0_8px_24px_rgba(0,0,0,0.65)] backdrop-blur-md"
+                >
+                  {activeLang === 'pb' ? '☁️ ਅਸ਼ਾਂਤੀ' : activeLang === 'en' ? '☁️ Inner Agitation' : '☁️ अशांति'}
                 </div>
               </motion.div>
             </div>
 
-            {/* Center Pure White Divine Light Orb & Lotus */}
-            <div className="relative z-10 flex flex-col items-center justify-center space-y-4">
-              {/* Lotus Base */}
-              <div className="text-3xl filter drop-shadow-[0_0_12px_rgba(255,255,255,0.6)] select-none">
-                🪷
-              </div>
-
-              {/* Radiant White Light Orb */}
-              <motion.div
-                animate={{
-                  scale: isPanaceaTaken ? [1, 1.25, 1.15] : [1, 1.08, 1],
-                  boxShadow: isPanaceaTaken 
-                    ? ['0 0 30px rgba(255,255,255,0.8)', '0 0 60px rgba(255,255,255,1)', '0 0 45px rgba(255,255,255,0.9)']
-                    : ['0 0 20px rgba(255,255,255,0.4)', '0 0 35px rgba(255,255,255,0.7)', '0 0 20px rgba(255,255,255,0.4)'],
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                style={{
-                  background: 'radial-gradient(circle, #FFFFFF 0%, #FEF3C7 60%, #F59E0B 100%)',
-                }}
-                className="w-40 h-40 sm:w-48 sm:h-48 rounded-full flex flex-col items-center justify-center p-4 text-stone-900 border-4 border-amber-200 shadow-2xl cursor-pointer select-none"
-                onClick={handleTakePanacea}
-              >
-                <span className="text-xs uppercase font-bold tracking-widest text-amber-900">
-                  {activeLang === 'pb' ? 'ਸ਼੍ਵੇਤ ਪ੍ਰਕਾਸ਼' : activeLang === 'en' ? 'Divine Light' : 'श्वेत दिव्य प्रकाश'}
-                </span>
-                <span className="text-lg sm:text-xl font-serif font-black my-1 text-stone-900">
-                  {activeLang === 'pb' ? '॥ ਸਤਯਨਾਮ ॥' : activeLang === 'en' ? '|| Satyanaam ||' : '॥ सत्यनाम ॥'}
-                </span>
-                <span className="text-[10px] font-serif text-amber-900/80 font-semibold">
-                  {activeLang === 'pb' ? 'ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ' : activeLang === 'en' ? 'Supreme Panacea' : 'सर्व रोग निवारक'}
-                </span>
-              </motion.div>
-
-              {/* Success Message when Panacea Taken */}
+            {/* Success Message or Action Button cleanly below the 4-Corner Orb */}
+            <div className="relative z-20 w-full flex flex-col items-center justify-center pt-1">
               <AnimatePresence>
                 {isPanaceaTaken && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-3 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 text-white max-w-sm text-center shadow-lg"
+                    className="p-3 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 text-white max-w-md text-center shadow-lg"
                   >
-                    <p className="text-xs font-serif font-bold text-amber-200">
-                      ✨ {activeLang === 'pb' ? 'ਸਤਯਨਾਮ ਮਹਾ-ਔਸ਼ਧੀ ਪ੍ਰਾਪਤ ਹੋਈ! ਸਾਰੇ ਵਿਕਾਰ ਤੇ ਭਵ-ਵ්‍යාਧੀ ਨਸ਼ਟ ਹੋ ਗਏ।' : activeLang === 'en' ? 'Satyanaam Panacea received! All ailments and illusions have dissolved into pure light.' : 'सत्यनाम महा-औषधि ग्रहण संपन्न! समस्त भव-व्याधि एवं मोह-भ्रम श्वेत प्रकाश में विलीन हो गए।'}
+                    <p className="text-xs sm:text-sm font-serif font-bold text-amber-200">
+                      ✨ {activeLang === 'pb' ? 'ਸਤਯਨਾਮ ਮਹਾ-ਔਸ਼ਧੀ ਪ੍ਰਾਪਤ ਹੋਈ! ਸਾਰੇ ਵਿਕਾਰ ਤੇ ਭਵ-ਵਿਆਧੀ ਨਸ਼ਟ ਹੋ ਗਏ।' : activeLang === 'en' ? 'Satyanaam Panacea received! All ailments and illusions have dissolved into pure light.' : 'सत्यनाम महा-औषधि ग्रहण संपन्न! समस्त भव-व्याधि, मोह-भ्रम, कर्म-बंधन एवं अशांति श्वेत दिव्य प्रकाश में विलीन हो गए।'}
                     </p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
 
-            {/* Action Button */}
-            {!isPanaceaTaken && (
-              <div className="mt-6 z-10">
+              {!isPanaceaTaken && (
                 <button
                   type="button"
                   onClick={handleTakePanacea}
-                  className="px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 text-stone-950 font-serif font-black text-xs sm:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer border border-amber-200 flex items-center gap-2"
+                  className="px-5 sm:px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 text-stone-950 font-serif font-black text-xs sm:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer border border-amber-200 flex items-center gap-2"
                 >
-                  <Sparkles className="w-4 h-4 text-stone-900 animate-spin" />
+                  <Sparkles className="w-4 h-4 text-stone-900 animate-spin shrink-0" />
                   <span>
                     {activeLang === 'pb' ? 'ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਗ੍ਰਹਿਣ ਕਰੋ (Experience Light)' : activeLang === 'en' ? 'Take Satyanaam Panacea (Experience Divine Light)' : 'सत्यनाम औषधि ग्रहण करें (दिव्य प्रकाश अनुभव करें)'}
                   </span>
                 </button>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </section>
 

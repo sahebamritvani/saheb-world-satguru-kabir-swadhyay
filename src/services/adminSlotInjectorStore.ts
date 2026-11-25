@@ -2037,6 +2037,61 @@ export function getInjectedGranthChapters(slotId: AdminGranthSlotId): GranthChap
   return chapters.length > 0 ? chapters : null;
 }
 
+type NitnemMajorCategoryId = NonNullable<NitnemSection['majorCategoryId']>;
+
+const NITNEM_CATEGORY_DEFS: Array<{
+  id: NitnemMajorCategoryId;
+  title: { hi: string; pb: string; en: string };
+  keywords: string[];
+}> = [
+  {
+    id: 'prabhat-path',
+    title: { hi: '१. प्रभात (प्रातः) पाठ', pb: '੧. ਪ੍ਰਭਾਤ (ਪ੍ਰਾਤਹ) ਪਾਠ', en: '1. Prabhat (Morning) Path' },
+    keywords: ['प्रभात', 'प्रातः', 'prabhat', 'morning', 'सुमिरन', 'आरम्भ', 'वंदना', '1.'],
+  },
+  {
+    id: 'sandhya-path',
+    title: { hi: '२. मूल संध्या पाठ', pb: '੨. ਮੂਲ ਸੰਧਿਆ ਪਾਠ', en: '2. Mool Sandhya (Evening) Path' },
+    keywords: ['संध्या', 'sandhya', 'evening', 'आरती', 'aarti', '2.'],
+  },
+  {
+    id: 'gayatri',
+    title: { hi: '३. गायत्री', pb: '੩. ਗਾਇਤਰੀ', en: '3. Gayatri Path' },
+    keywords: ['गायत्री', 'gayatri', '3.'],
+  },
+  {
+    id: 'poonam-mahatmya',
+    title: { hi: '४. पूनो महात्म्य पाठ', pb: '੪. ਪੂਨੋ ਮਹਾਤਮਯ ਪਾਠ', en: '4. Poonam Mahatmya Path' },
+    keywords: ['पूनो', 'पूर्णमासी', 'पूनम', 'महात्म्य', 'poonam', 'purnima', '4.'],
+  },
+  {
+    id: 'chalisa',
+    title: { hi: '५. सतगुरु कबीर चालीसा पाठ', pb: '੫. ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ ਪਾਠ', en: '5. Satguru Kabir Chalisa Path' },
+    keywords: ['चालीसा', 'chalisa', '5.'],
+  },
+  {
+    id: 'barahmasi',
+    title: { hi: '६. बारहमासी पाठ', pb: '੬. ਬਾਰਹਮਾਸੀ ਪਾਠ', en: '6. Barahmasi Path' },
+    keywords: ['बारहमासी', 'barahmasi', 'बारह', '6.'],
+  },
+  {
+    id: 'teesa-yantra',
+    title: { hi: '७. तीसा यंत्र', pb: '੭. ਤੀਸਾ ਯੰਤਰ', en: '7. Teesa Yantra' },
+    keywords: ['तीसा', 'यंत्र', 'teesa', 'yantra', '7.'],
+  },
+];
+
+function inferNitnemCategory(ch: GranthChapter, fallbackIndex: number): { id: NitnemMajorCategoryId; title: { hi: string; pb: string; en: string } } {
+  const haystack = `${ch.id} ${ch.title.hi} ${ch.title.pb} ${ch.title.en}`.toLowerCase();
+  for (const cat of NITNEM_CATEGORY_DEFS) {
+    if (cat.keywords.some((kw) => haystack.includes(kw.toLowerCase()))) {
+      return { id: cat.id, title: cat.title };
+    }
+  }
+  const byIdx = NITNEM_CATEGORY_DEFS[fallbackIndex % NITNEM_CATEGORY_DEFS.length];
+  return byIdx ? { id: byIdx.id, title: byIdx.title } : { id: 'prabhat-path', title: NITNEM_CATEGORY_DEFS[0].title };
+}
+
 function applySlotToNitnemSections(
   sections: NitnemSection[],
   slotId: AdminGranthSlotId,
@@ -2048,7 +2103,7 @@ function applySlotToNitnemSections(
   }
 
   const updated = sections.map((sec) => ({ ...sec }));
-  const unmatchedChapters: GranthChapter[] = [];
+  const unmatchedChapters: Array<{ ch: GranthChapter; idx: number }> = [];
 
   injectedChapters.forEach((ch, idx) => {
     const mappedVerses: NitnemVersePair[] = ch.verses.map((v, vIdx) => ({
@@ -2067,7 +2122,8 @@ function applySlotToNitnemSections(
     let targetIdx = updated.findIndex(
       (s) =>
         s.id === ch.id ||
-        s.title.hi.trim().toLowerCase() === ch.title.hi.trim().toLowerCase()
+        s.title.hi.trim().toLowerCase() === ch.title.hi.trim().toLowerCase() ||
+        s.majorCategoryTitle?.hi.trim().toLowerCase() === ch.title.hi.trim().toLowerCase()
     );
 
     if (targetIdx < 0 && preferredMatchTokens.length > 0 && idx === 0) {
@@ -2081,27 +2137,30 @@ function applySlotToNitnemSections(
       );
     }
 
+    if (targetIdx < 0 && slotId === 'slot-1-nitnem') {
+      const inferred = inferNitnemCategory(ch, idx);
+      // Fill first empty stub matching this category if present
+      targetIdx = updated.findIndex(
+        (s) => s.majorCategoryId === inferred.id && s.verses.length === 0
+      );
+    }
+
     if (targetIdx >= 0) {
       updated[targetIdx] = {
         ...updated[targetIdx],
-        verses: mappedVerses,
-        totalVerses: mappedVerses.length,
-        estimatedMinutes: Math.max(2, Math.ceil(mappedVerses.length * 0.6)),
-      };
-    } else if (updated.length > 0 && idx === 0 && ch.id.startsWith('slot-1-nitnem')) {
-      updated[0] = {
-        ...updated[0],
+        title: ch.title.hi ? ch.title : updated[targetIdx].title,
+        subtitle: ch.subtitle || updated[targetIdx].subtitle,
         verses: mappedVerses,
         totalVerses: mappedVerses.length,
         estimatedMinutes: Math.max(2, Math.ceil(mappedVerses.length * 0.6)),
       };
     } else {
-      unmatchedChapters.push(ch);
+      unmatchedChapters.push({ ch, idx });
     }
   });
 
   if (unmatchedChapters.length > 0) {
-    unmatchedChapters.forEach((ch, idx) => {
+    unmatchedChapters.forEach(({ ch, idx }) => {
       const mappedVerses: NitnemVersePair[] = ch.verses.map((v, vIdx) => ({
         id: v.id || `${slotId}-extra-${idx}-${vIdx}`,
         type: (v.type === 'katha' ? 'pada' : v.type) as NitnemVersePair['type'],
@@ -2114,14 +2173,11 @@ function applySlotToNitnemSections(
         bhavarth: v.bhavarth,
         spiritualEssence: v.spiritualEssence || v.deepInsight,
       }));
+      const inferred = inferNitnemCategory(ch, idx);
       updated.push({
         id: ch.id || `${slotId}-injected-${idx + 1}`,
-        majorCategoryId: 'prabhat-path',
-        majorCategoryTitle: updated[0]?.majorCategoryTitle || {
-          hi: '१. प्रभात (प्रातः) पाठ',
-          pb: '੧. ਪ੍ਰਭਾਤ (ਪ੍ਰਾਤਹ) ਪਾਠ',
-          en: '1. Prabhat (Morning) Path',
-        },
+        majorCategoryId: inferred.id,
+        majorCategoryTitle: inferred.title,
         title: ch.title,
         subtitle: ch.subtitle,
         iconName: 'BookOpen',
