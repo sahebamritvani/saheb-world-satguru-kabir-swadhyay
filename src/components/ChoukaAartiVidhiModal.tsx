@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Flame, CheckCircle, HelpCircle, BookOpen, ChevronDown, ChevronUp, Sparkles, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';
@@ -12,9 +13,9 @@ interface ChoukaAartiVidhiModalProps {
 const CHOUKA_SECTIONS = {
   hi: {
     title: `चौका-आरती: पावन विधि एवं सात्विक नियम`,
-    subtitle: `सद्गुरु कबीर साहेब एवं धनी धर्मदास साहेब द्वारा प्रवर्तित 'सात्विक यज्ञ' का आध्यात्मिक परिचय।`,
+    subtitle: `सतगुरु कबीर साहेब एवं धनी धर्मदास साहेब द्वारा प्रवर्तित 'सात्विक यज्ञ' का आध्यात्मिक परिचय।`,
     introTitle: `१. चौका-आरती का आध्यात्मिक महत्व`,
-    introDesc: `कबीर पंथ में चौका-आरती को 'सात्विक यज्ञ' कहा गया है। यह अनुष्ठान जीव के चौरासी लाख योनियों के भ्रम को मिटाकर सतलोक और अमरलोक का मार्ग प्रशस्त करता है। यह सद्गुरु कबीर साहेब के प्रति अनन्य भक्ति, कृतज्ञता और सत्यनाम के स्मरण का जीवंत माध्यम है।`,
+    introDesc: `कबीर पंथ में चौका-आरती को 'सात्विक यज्ञ' कहा गया है। यह अनुष्ठान जीव के चौरासी लाख योनियों के भ्रम को मिटाकर सतलोक और अमरलोक का मार्ग प्रशस्त करता है। यह सतगुरु कबीर साहेब के प्रति अनन्य भक्ति, कृतज्ञता और सत्यनाम के स्मरण का जीवंत माध्यम है।`,
     materialsTitle: `२. आवश्यक पवित्र सामग्री सूची`,
     materials: [
       `शुद्ध गंगाजल व पावन जल कलश`,
@@ -33,7 +34,7 @@ const CHOUKA_SECTIONS = {
     ],
     stepsTitle: `४. चरण-दर-चरण पावन विधि`,
     steps: [
-      { step: `प्रथम चरण: स्थान की शुद्धि व लिपाइ`, desc: `पवित्र स्थल की सफाई करके शुद्ध जल व गंगाजल से छिड़काव करें। पावन भूमि को शुद्ध मिट्टी या गोबर से लीपकर आसन स्थापित करें।` },
+      { step: `प्रथम चरण: स्थान की शुद्धि व लिपाई`, desc: `पवित्र स्थल की सफाई करके शुद्ध जल व गंगाजल से छिड़काव करें। पावन भूमि को शुद्ध मिट्टी या गोबर से लीपकर आसन स्थापित करें।` },
       { step: `द्वितीय चरण: चौका का रेखांकन (आकृतियाँ)`, desc: `शुद्ध आटे या चावल के चूर्ण से सुंदर चौका रेखांकन करें। चौका के चारों कोनों पर स्वस्तिक, ॐ व कमल की पंखुड़ियाँ बनाएँ।` },
       { step: `तृतीय चरण: श्रीफल, पान व कसैली स्थापना`, desc: `चौका के केंद्र में श्रीफल (नारियल), नौ पान के पत्ते, नौ सुपारियाँ और पावन नैवेद्य श्रद्धापूर्वक अर्पित करें।` },
       { step: `चतुर्थ चरण: दीप प्रज्वलन व आरती गान`, desc: `कपूर व शुद्ध घृत (घी) का दीपक प्रज्वलित कर कबीर साहेब की आरती, मंगलाचरण और अमर वाणी का सस्वर पाठ करें।` },
@@ -141,13 +142,13 @@ const PANTHIC_QA_LIST = [
   },
   {
     q: {
-      hi: `प्रश्न ४: कबीर धर्मनगर दमाखेड़ा धाम की क्या पंथिक महत्ता है?`,
-      pb: `ਪ੍ਰਸ਼ਨ ੪: ਕਬੀਰ ਧਰਮਨਗਰ ਦਮਾਖੇੜਾ ਧਾਮ ਦੀ ਕੀ ਮਹੱਤਤਾ ਹੈ?`,
+      hi: `प्रश्न ४: कबीर धर्मनगर दामाखेड़ा धाम की क्या पंथिक महत्ता है?`,
+      pb: `ਪ੍ਰਸ਼ਨ ੪: ਕਬੀਰ ਧਰਮਨਗਰ ਦਾਮਾਖੇੜਾ ਧਾਮ ਦੀ ਕੀ ਮਹੱਤਤਾ ਹੈ?`,
       en: `Q4: What is the supreme importance of Kabir Dharamnagar Damakheda Dham?`
     },
     a: {
-      hi: `दमाखेड़ा धाम धनी धर्मदास साहेब जी की वंश बयालीस आचार्यों की मूल पवित्र गद्दी है। यहाँ कबीर साहेब की मूल मर्यादा, चौका आरती एवं अखंड ज्योति की अविरल धारा प्रवाहित है।`,
-      pb: `ਦਮਾਖੇੜਾ ਧਾਮ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਦੀ ਵੰਸ਼ ਬਿਆਲੀਸ ਆਚਾਰੀਆ ਜੀ ਦੀ ਮੁੱਖ ਗੱਦੀ ਹੈ ਜਿੱਥੇ ਅਮਰ ਸੰਦੇਸ਼ ਤੇ ਚੌਕਾ ਆਰਤੀ ਦੀ ਅਖੰਡ ਧਾਰਾ ਹੈ।`,
+      hi: `दामाखेड़ा धाम धनी धर्मदास साहेब जी की वंश बयालीस आचार्यों की मूल पवित्र गद्दी है। यहाँ कबीर साहेब की मूल मर्यादा, चौका आरती एवं अखंड ज्योति की अविरल धारा प्रवाहित है।`,
+      pb: `ਦਾਮਾਖੇੜਾ ਧਾਮ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਦੀ ਵੰਸ਼ ਬਿਆਲੀਸ ਆਚਾਰੀਆ ਜੀ ਦੀ ਮੁੱਖ ਗੱਦੀ ਹੈ ਜਿੱਥੇ ਅਮਰ ਸੰਦੇਸ਼ ਤੇ ਚੌਕਾ ਆਰਤੀ ਦੀ ਅਖੰਡ ਧਾਰਾ ਹੈ।`,
       en: `Damakheda Dham is the sacred supreme seat of Dhani Dharmdas Saheb Vansh 42 Acharyas, preserving authentic Kabir Panth traditions and eternal light.`
     }
   },
@@ -173,14 +174,26 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
 
   const currentContent = CHOUKA_SECTIONS[language] || CHOUKA_SECTIONS.hi;
 
-  return (
+  const modalContent = (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[260] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '16px',
+          zIndex: 120,
+        }}
+        className="fixed inset-0 bg-black/85 backdrop-blur-md"
+        onClick={onClose}
+      >
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 15 }}
+          initial={{ opacity: 0, scale: 0.94, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 15 }}
-          className="relative w-full max-w-3xl rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+          exit={{ opacity: 0, scale: 0.94, y: 12 }}
+          style={{ maxHeight: '82vh' }}
+          className="relative w-full max-w-3xl rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-gradient-to-r from-[#7C1D00] via-[#8B2500] to-[#9A3412] text-white flex items-center justify-between">
@@ -292,7 +305,7 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
                   </span>
                   <p className="opacity-85 leading-relaxed">
                     {language === 'hi' 
-                      ? 'चौका-आरती केवल एक बाह्य अनुष्ठान नहीं, बल्कि अंतःकरण की शुद्धि, सद्गुरु के चरणों में समर्पण और अमरलोक की प्राप्ति का मार्ग है।'
+                      ? 'चौका-आरती केवल एक बाह्य अनुष्ठान नहीं, बल्कि अंतःकरण की शुद्धि, सतगुरु के चरणों में समर्पण और अमरलोक की प्राप्ति का मार्ग है।'
                       : language === 'pb' 
                       ? 'ਚੌਕਾ-ਆਰਤੀ ਕੇਵਲ ਇੱਕ ਬਾਹਰੀ ਅਨੁਸ਼ਠਾਨ ਨਹੀਂ, ਸਗੋਂ ਅੰਤਰਾਤਮਾ ਦੀ ਸ਼ੁੱਧੀ ਅਤੇ ਸਤਿਗੁਰੂ ਪ੍ਰਤੀ ਸਮਰਪਣ ਹੈ।'
                       : 'Chouka Aarti is not merely an external ritual, but inner purification, surrender at the feet of Satguru, and the pathway to Satyaloka.'}
@@ -396,14 +409,14 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
           </div>
 
           {/* Footer */}
-          <div className="p-4 border-t border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-950 flex items-center justify-between">
+          <div className="p-3.5 sm:p-4 border-t border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-950 flex items-center justify-between gap-2 shrink-0">
             <span className="text-[11px] font-serif text-amber-900 dark:text-amber-300 font-bold">
-              {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਕਬੀਰ ਪੰਥ ਮਰਿਆਦਾ' : language === 'en' ? 'Damakheda Kabir Panth Sacred Tradition' : 'दमाखेड़ा कबीर पंथ अमर मर्यादा'}
+              {language === 'pb' ? 'ਦਾਮਾਖੇੜਾ ਕਬੀਰ ਪੰਥ ਮਰਿਆਦਾ' : language === 'en' ? 'Damakheda Kabir Panth Sacred Tradition' : 'दामाखेड़ा कबीर पंथ अमर मर्यादा'}
             </span>
             <button
               type="button"
               onClick={onClose}
-              className="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs cursor-pointer"
+              className="px-4 sm:px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs cursor-pointer shrink-0"
             >
               {language === 'pb' ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।' : language === 'en' ? '|| Saheb Bandagi Saheb ||' : '।। साहेब बंदगी साहेब ।।'}
             </button>
@@ -412,4 +425,10 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
       </div>
     </AnimatePresence>
   );
+
+  if (typeof document !== 'undefined') {
+    return createPortal(modalContent, document.body);
+  }
+
+  return modalContent;
 };

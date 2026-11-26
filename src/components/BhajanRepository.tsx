@@ -36,7 +36,7 @@ const DAMAKHEDA_BHAJANS: TraditionalBhajan[] = [
   {
     id: 'bhajan-2',
     title: { hi: 'अमर कथा व बीजक साखी धुन', pb: 'ਅਮਰ ਕਥਾ ਵ ਬੀਜਕ ਸਾਖੀ ਧੁਨ', en: 'Amar Katha & Beejak Sakhi Dhun' },
-    category: { hi: 'दमाखेड़ा साखी धुन', pb: 'ਦਮਾਖੇੜਾ ਸਾਖੀ ਧੁਨ', en: 'Damakheda Sakhi Dhun' },
+    category: { hi: 'दामाखेड़ा साखी धुन', pb: 'ਦਾਮਾਖੇੜਾ ਸਾਖੀ ਧੁਨ', en: 'Damakheda Sakhi Dhun' },
     lyrics: [
       'सुमिरन कर ले बंदे मोत न टारे टारी।',
       'माया के मद में भूला, माटी मिल जाएगी सारी॥',
@@ -102,7 +102,7 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
         <div className="relative z-10 flex items-center justify-between gap-4">
           <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-xs font-mono font-bold uppercase tracking-wider mb-2">
-              <Radio size={13} className="animate-pulse" /> {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਪਰੰਪਰਾ ਅਤੇ ਚੌਕਾ ਆਰਤੀ' : language === 'en' ? 'Damakheda Tradition & Chauka Aarti' : 'दमाखेड़ा परंपरा & चौका आरती'}
+              <Radio size={13} className="animate-pulse" /> {language === 'pb' ? 'ਦਾਮਾਖੇੜਾ ਪਰੰਪਰਾ ਅਤੇ ਚੌਕਾ ਆਰਤੀ' : language === 'en' ? 'Damakheda Tradition & Chauka Aarti' : 'दामाखेड़ा परंपरा एवं चौका आरती'}
             </span>
             <h2 className="text-2xl sm:text-3xl font-black font-serif">
               {language === 'pb' ? 'ਪਰੰਪਰਾਗਤ ਭਜਨ ਤੇ ਸਾਖੀ ਧੁਨ ਸੰਗ੍ਰਹਿ' : language === 'en' ? 'Traditional Bhajan & Sakhi Dhun Archive' : 'पारंपरिक भजन व साखी धुन संग्रह'}
@@ -158,7 +158,7 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
                 <span className="text-[11px] font-mono opacity-75">
                   {isThisPlaying
                     ? (language === 'pb' ? '🎶 ਚੱਲ ਰਿਹਾ ਹੈ...' : language === 'en' ? '🎶 Now Playing...' : '🎶 बज रहा है...')
-                    : (language === 'pb' ? '✨ ਦਮਾਖੇੜਾ ਪਰੰਪਰਾ' : language === 'en' ? '✨ Damakheda Tradition' : '✨ दमाखेड़ा परंपरा')}
+                    : (language === 'pb' ? '✨ ਦਾਮਾਖੇੜਾ ਪਰੰਪਰਾ' : language === 'en' ? '✨ Damakheda Tradition' : '✨ दामाखेड़ा परंपरा')}
                 </span>
                 <button
                   type="button"

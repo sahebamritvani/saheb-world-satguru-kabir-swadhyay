@@ -550,8 +550,8 @@ export function getSmartNitnemRecommendation(now: Date = new Date()): SmartNitne
       primaryCategoryId: 'prabhat-path',
       primarySectionId: 'prabhat-aarambh-vandana',
       badge: {
-        hi: 'प्रभात बेला • सुझायित पाठ',
-        pb: 'ਪ੍ਰਭਾਤ ਵੇਲਾ • ਸੁਝਾਇਆ ਪਾਠ',
+        hi: 'प्रभात बेला • निर्धारित पाठ',
+        pb: 'ਪ੍ਰਭਾਤ ਵੇਲਾ • ਨਿਰਧਾਰਤ ਪਾਠ',
         en: 'Morning Hour • Recommended',
       },
       title: {
@@ -576,8 +576,8 @@ export function getSmartNitnemRecommendation(now: Date = new Date()): SmartNitne
       primaryCategoryId: 'gayatri',
       primarySectionId: 'gayatri-madhyahan',
       badge: {
-        hi: 'मध्याह्न बेला • सुझायित पाठ',
-        pb: 'ਦੁਪਹਿਰ ਵੇਲਾ • ਸੁਝਾਇਆ ਪਾਠ',
+        hi: 'मध्याह्न बेला • निर्धारित पाठ',
+        pb: 'ਦੁਪਹਿਰ ਵੇਲਾ • ਨਿਰਧਾਰਤ ਪਾਠ',
         en: 'Midday Hour • Recommended',
       },
       title: {
@@ -601,8 +601,8 @@ export function getSmartNitnemRecommendation(now: Date = new Date()): SmartNitne
     primaryCategoryId: 'sandhya-path',
     primarySectionId: 'sandhya-aarambh-vandana',
     badge: {
-      hi: 'संध्या बेला • सुझायित पाठ',
-      pb: 'ਸੰਧਿਆ ਵੇਲਾ • ਸੁਝਾਇਆ ਪਾਠ',
+      hi: 'संध्या बेला • निर्धारित पाठ',
+      pb: 'ਸੰਧਿਆ ਵੇਲਾ • ਨਿਰਧਾਰਤ ਪਾਠ',
       en: 'Evening Hour • Recommended',
     },
     title: {

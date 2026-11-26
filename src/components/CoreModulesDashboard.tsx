@@ -557,17 +557,21 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
               </div>
               <div>
                 <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base">
-                  {language === 'pb' ? 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ' : language === 'en' ? 'Acharya Parampara Itihas' : 'आचार्य परंपरा इतिहास'}
+                  {language === 'pb' ? 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ' : language === 'en' ? 'Acharya Parampara History' : 'आचार्य परंपरा इतिहास'}
                 </h4>
                 <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-medium mt-0.5">
-                  Lineage of Damakheda Gaddi Acharyas
+                  {language === 'pb'
+                    ? 'ਦਾਮਾਖੇੜਾ ਪਾਵਨ ਗੱਦੀ ਦੀ ਆਚਾਰੀਆ ਪਰੰਪਰਾ'
+                    : language === 'en'
+                    ? 'Lineage of Damakheda Gaddi Acharyas'
+                    : 'दामाखेड़ा पावन गद्दी की आचार्य परंपरा'}
                 </p>
               </div>
             </div>
             <ChevronRight style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform" />
           </div>
 
-          {/* Prashnottari (Sawal-Jawab) Card */}
+          {/* Chouka-Aarti & Panthic Prashnottari Card */}
           <div
             onClick={() => setShowQAtaModal(true)}
             style={{
@@ -586,10 +590,18 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
               </div>
               <div>
                 <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-base">
-                  {language === 'pb' ? 'ਪ੍ਰਸ਼ਨੋਤਰੀ (ਸਵਾਲ-ਜਵਾਬ)' : language === 'en' ? 'Prashnottari (Sawal-Jawab)' : 'प्रश्नोत्तरी (Sawal-Jawab)'}
+                  {language === 'pb'
+                    ? 'ਚੌਕਾ-ਆਰਤੀ: ਪਾਵਨ ਵਿਧੀ ਅਤੇ ਸਾਤਵਿਕ ਨਿਯਮ'
+                    : language === 'en'
+                    ? 'Chouka Aarti: Sacred Vidhi & Holy Rules'
+                    : 'चौका-आरती: पावन विधि एवं सात्विक नियम'}
                 </h4>
                 <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-medium mt-0.5">
-                  Panthic Q&A regarding rituals and Chouka Vidhi
+                  {language === 'pb'
+                    ? 'ਪੰਥਕ ਮਰਿਆਦਾ, ਚੌਕਾ ਆਰਤੀ ਤੇ ਰੂਹਾਨੀ ਜਿਗਿਆਸਾ ਸਮਾਧਾਨ'
+                    : language === 'en'
+                    ? 'Panthic Q&A regarding rituals and Chouka Vidhi'
+                    : 'पंथिक मर्यादा, चौका आरती एवं आध्यात्मिक जिज्ञासा समाधान'}
                 </p>
               </div>
             </div>

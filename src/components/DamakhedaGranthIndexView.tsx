@@ -81,7 +81,7 @@ export const DamakhedaGranthIndexView: React.FC<DamakhedaGranthIndexViewProps> =
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-black font-serif">
-            {language === 'pb' ? 'ਦਮਾਖੇੜਾ ਕਬੀਰ ਪੰਥ ਗ੍ਰੰਥ-ਸੂਚੀ' : language === 'en' ? 'Damakheda Kabir Panth Scripture Index' : 'दमखेड़ा कबीर पंथ पावन ग्रंथ-सूची (Index)'}
+            {language === 'pb' ? 'ਦਾਮਾਖੇੜਾ ਕਬੀਰ ਪੰਥ ਗ੍ਰੰਥ-ਸੂਚੀ' : language === 'en' ? 'Damakheda Kabir Panth Scripture Index' : 'दामाखेड़ा कबीर पंथ पावन ग्रंथ-सूची'}
           </h2>
 
           <p className="text-xs sm:text-sm font-serif opacity-90 max-w-xl">

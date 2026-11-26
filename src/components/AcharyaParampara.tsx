@@ -14,8 +14,8 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
 }) => {
   const t = {
     hi: {
-      title: 'आचार्य परंपरा इतिहास: सद्गुरु कबीर साहेब की पावन वंशावली',
-      subtitle: "सद्गुरु कबीर साहेब की अटल 'वंश बयालीस' गुरु परंपरा का पावन परिचय। यह पवित्र वंशावली अनादि काल से चली आ रही सत्यनाम की अमर ज्योति और चौका-आरती परंपरा को संसार में प्रज्वलित रखती है।",
+      title: 'आचार्य परंपरा इतिहास: सतगुरु कबीर साहेब की पावन वंशावली',
+      subtitle: "सतगुरु कबीर साहेब की अटल 'वंश बयालीस' गुरु परंपरा का पावन परिचय। यह पवित्र वंशावली अनादि काल से चली आ रही सत्यनाम की अमर ज्योति और चौका-आरती परंपरा को संसार में प्रज्वलित रखती है।",
       back: 'वापस जाएं',
       closing: '।। साहेब बंदगी साहेब ।।'
     },
@@ -26,14 +26,14 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
       closing: '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।'
     },
     en: {
-      title: 'Acharya Parampara History: Sacred Lineage of Sadguru Kabir Saheb',
-      subtitle: "A sacred introduction to the eternal 'Vansh Bayalis' (42 Generations) Guru lineage of Sadguru Kabir Saheb. This holy lineage keeps the eternal flame of Satyanaam and the Chauka-Aarti tradition alive in the world since time immemorial.",
+      title: 'Acharya Parampara History: Sacred Lineage of Satguru Kabir Saheb',
+      subtitle: "A sacred introduction to the eternal 'Vansh Bayalis' (42 Generations) Guru lineage of Satguru Kabir Saheb. This holy lineage keeps the eternal flame of Satyanaam and the Chauka-Aarti tradition alive in the world since time immemorial.",
       back: 'Go Back',
       closing: '|| Saheb Bandagi Saheb ||'
     }
   }[language] || {
-    title: 'आचार्य परंपरा इतिहास: सद्गुरु कबीर साहेब की पावन वंशावली',
-    subtitle: "सद्गुरु कबीर साहेब की अटल 'वंश बयालीस' गुरु परंपरा का पावन परिचय।",
+    title: 'आचार्य परंपरा इतिहास: सतगुरु कबीर साहेब की पावन वंशावली',
+    subtitle: "सतगुरु कबीर साहेब की अटल 'वंश बयालीस' गुरु परंपरा का पावन परिचय।",
     back: 'वापस',
     closing: '।।साहेब बंदगी साहेब।।'
   };
@@ -52,9 +52,9 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
         en: "First Gaddi-Pati & Foundation of Vansh Bayalis"
       },
       desc: {
-        hi: "सद्गुरु कबीर साहेब जी के प्रमुख शिष्य। कबीर साहेब ने आपको 'वंश बयालीस' का वरदान दिया। आपने बांधवगढ़ (मध्य प्रदेश) से सत्य भक्ति, सात्विक जीवन और चौका-आरती परंपरा का प्रथम प्रसार किया।",
-        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪ੍ਰਮੁੱਖ ਸ਼ਿਸ਼। ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪ ਜੀ ਨੂੰ 'ਵੰਸ਼ ਬਿਆਲੀ' ਦਾ ਵਰਦਾਨ ਦਿੱਤਾ। ਆਪ ਜੀ ਨੇ ਬਾਂਧਵਗੜ੍ਹ (ਮੱਧ ਪ੍ਰਦੇਸ਼) ਤੋਂ ਸੱਚੀ ਭਗਤੀ, ਸਾਤਵਿਕ ਜੀਵਨ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਪਰੰਪਰਾ ਦਾ ਪਹਿਲਾ ਪ੍ਰਸਾਰ ਕੀਤਾ।",
-        en: "Principal disciple of Sadguru Kabir Saheb Ji, blessed with the 'Vansh Bayalis' lineage. He initiated the spread of true devotion, pure living, and the Chauka-Aarti tradition from Bandhavgarh (Madhya Pradesh)."
+        hi: "सतगुरु कबीर साहेब जी के प्रमुख शिष्य, वंश बयालीस परंपरा के आदि गद्दीपति तथा पावन ग्रंथ 'कबीर सागर' के प्रमुख संवाददाता व संग्रहकर्ता। आपने बांधवगढ़ (मध्य प्रदेश) से सत्य भक्ति, सात्विक जीवन और चौका-आरती परंपरा का प्रथम प्रसार किया।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪ੍ਰਮੁੱਖ ਸ਼ਿਸ਼, ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦੇ ਆਦਿ ਗੱਦੀਪਤੀ ਅਤੇ ਪਾਵਨ ਗ੍ਰੰਥ 'ਕਬੀਰ ਸਾਗਰ' ਦੇ ਪ੍ਰਮੁੱਖ ਸੰਵਾਦਦਾਤਾ ਤੇ ਸੰਗ੍ਰਹਿਕਰਤਾ। ਆਪ ਜੀ ਨੇ ਬਾਂਧਵਗੜ੍ਹ (ਮੱਧ ਪ੍ਰਦੇਸ਼) ਤੋਂ ਸੱਚੀ ਭਗਤੀ, ਸਾਤਵਿਕ ਜੀਵਨ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਪਰੰਪਰਾ ਦਾ ਪਹਿਲਾ ਪ੍ਰਸਾਰ ਕੀਤਾ।",
+        en: "Principal disciple of Satguru Kabir Saheb Ji, Adi Gaddipati of Vansh Bayalis, and principal interlocutor and compiler of 'Kabir Sagar'. He initiated the spread of true devotion, pure living, and the Chauka-Aarti tradition from Bandhavgarh (Madhya Pradesh)."
       }
     },
     {

@@ -2662,7 +2662,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                   style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon, borderColor: theme.accentGold }}
                                   className="px-2 py-0.5 rounded-full border text-[0.625rem] font-bold font-serif whitespace-nowrap"
                                 >
-                                  ✨ {language === 'pb' ? 'ਸੁਝਾਇਆ ਪਾਠ' : language === 'en' ? 'Recommended Now' : 'अभी सुझायित'}
+                                  ✨ {language === 'pb' ? 'ਨਿਰਧਾਰਤ ਪਾਠ' : language === 'en' ? 'Recommended Now' : 'अभी निर्धारित'}
                                 </span>
                               )}
                               {isPurnimaSec && (
@@ -2968,17 +2968,21 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                 </div>
               </div>
 
-              {/* Specialized Panthic Vaults: Acharya Parampara & Prashnottari (Sawal-Jawab) */}
+              {/* Specialized Panthic Vaults: Acharya Parampara & Chouka-Aarti Vidhi */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {/* Acharya Parampara Itihas Card */}
-                <div
-                  onClick={() => setShowAcharyaModal(true)}
+                {/* Acharya Parampara Itihas Card (Single Canonical Card) */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setShowAcharyaModal(true);
+                  }}
                   style={{
                     backgroundColor: theme.cardBg,
                     borderColor: theme.cardBorder,
                     color: theme.textPrimary,
                   }}
-                  className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:shadow-md backdrop-blur-md transition shadow-xs group"
+                  className="border-2 rounded-3xl p-4 flex items-center justify-between gap-3 cursor-pointer hover:border-amber-500/70 hover:shadow-md active:scale-[0.99] backdrop-blur-md transition-all shadow-xs group text-left w-full"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <div
@@ -2986,31 +2990,45 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         backgroundColor: theme.buttonPrimaryBg,
                         color: theme.buttonPrimaryText,
                       }}
-                      className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0"
+                      className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0"
                     >
                       <span className="text-lg">👑</span>
                     </div>
                     <div className="min-w-0">
                       <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm truncate">
-                        {language === 'pb' ? 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ' : language === 'en' ? 'Acharya Parampara Itihas' : 'आचार्य परंपरा इतिहास'}
+                        {language === 'pb' ? 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ' : language === 'en' ? 'Acharya Parampara History' : 'आचार्य परंपरा इतिहास'}
                       </h4>
-                      <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-semibold truncate">
-                        Lineage of Damakheda Gaddi Acharyas
+                      <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-semibold line-clamp-2 mt-0.5">
+                        {language === 'pb'
+                          ? 'ਦਾਮਾਖੇੜਾ ਪਾਵਨ ਗੱਦੀ ਦੀ ਆਚਾਰੀਆ ਪਰੰਪਰਾ'
+                          : language === 'en'
+                          ? 'Lineage of Damakheda Gaddi Acharyas'
+                          : 'दामाखेड़ा पावन गद्दी की आचार्य परंपरा'}
                       </p>
                     </div>
                   </div>
-                  <ChevronRight size={18} style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
-                </div>
+                  <span
+                    style={{ color: theme.accentGold }}
+                    className="text-xs font-serif font-bold whitespace-nowrap underline decoration-dotted shrink-0"
+                  >
+                    {language === 'pb' ? 'ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open' : 'खोलें'} →
+                  </span>
+                </button>
 
-                {/* Prashnottari (Sawal-Jawab) Card */}
-                <div
-                  onClick={() => setShowChoukaVidhiModal(true)}
+                {/* Compact Summary Card: Chouka-Aarti Vidhi & Satvik Niyam (Modal-Style like Nitnem Haziri Sankalp) */}
+                <button
+                  type="button"
+                  id="nitnem-chouka-aarti-card"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setShowChoukaVidhiModal(true);
+                  }}
                   style={{
                     backgroundColor: theme.cardBg,
                     borderColor: theme.cardBorder,
                     color: theme.textPrimary,
                   }}
-                  className="border-2 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:shadow-md backdrop-blur-md transition shadow-xs group"
+                  className="border-2 rounded-3xl p-4 flex items-center justify-between gap-3 cursor-pointer hover:border-amber-500/70 hover:shadow-md active:scale-[0.99] backdrop-blur-md transition-all shadow-xs group text-left w-full"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <div
@@ -3018,21 +3036,34 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         backgroundColor: theme.buttonPrimaryBg,
                         color: theme.buttonPrimaryText,
                       }}
-                      className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0"
+                      className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0"
                     >
-                      <span className="text-lg">❓</span>
+                      <span className="text-lg">🪷</span>
                     </div>
                     <div className="min-w-0">
                       <h4 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm truncate">
-                        {language === 'pb' ? 'ਪ੍ਰਸ਼ਨੋਤਰੀ (ਸਵਾਲ-ਜਵਾਬ)' : language === 'en' ? 'Prashnottari (Sawal-Jawab)' : 'प्रश्नोत्तरी (Sawal-Jawab)'}
+                        {language === 'pb'
+                          ? 'ਚੌਕਾ-ਆਰਤੀ: ਪਾਵਨ ਵਿਧੀ ਅਤੇ ਸਾਤਵਿਕ ਨਿਯਮ'
+                          : language === 'en'
+                          ? 'Chouka Aarti: Sacred Vidhi & Holy Rules'
+                          : 'चौका-आरती: पावन विधि एवं सात्विक नियम'}
                       </h4>
-                      <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-semibold truncate">
-                        Panthic Q&A regarding rituals and Chouka Vidhi
+                      <p style={{ color: theme.textSecondary }} className="text-xs font-serif font-semibold line-clamp-2 mt-0.5">
+                        {language === 'pb'
+                          ? 'ਪੰਥਕ ਮਰਿਆਦਾ, ਚੌਕਾ ਆਰਤੀ ਤੇ ਰੂਹਾਨੀ ਜਿਗਿਆਸਾ ਸਮਾਧਾਨ'
+                          : language === 'en'
+                          ? 'Panthic Q&A regarding rituals and Chouka Vidhi'
+                          : 'पंथिक मर्यादा, चौका आरती एवं आध्यात्मिक जिज्ञासा समाधान'}
                       </p>
                     </div>
                   </div>
-                  <ChevronRight size={18} style={{ color: theme.sacredMaroon }} className="group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
-                </div>
+                  <span
+                    style={{ color: theme.accentGold }}
+                    className="text-xs font-serif font-bold whitespace-nowrap underline decoration-dotted shrink-0"
+                  >
+                    {language === 'pb' ? 'ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open' : 'खोलें'} →
+                  </span>
+                </button>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Train, Bus, BedDouble } from 'lucide-react';
 import { Language } from '../types';
@@ -22,17 +23,23 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[260] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px', zIndex: 120 }}
+        className="fixed inset-0 bg-black/85 backdrop-blur-md"
+        onClick={onClose}
+      >
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 15 }}
+          initial={{ opacity: 0, scale: 0.94, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 15 }}
-          className="relative w-full max-w-lg rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+          exit={{ opacity: 0, scale: 0.94, y: 12 }}
+          style={{ maxHeight: '82vh' }}
+          className="relative w-full max-w-lg rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-amber-50/90 dark:bg-zinc-950/90 flex items-center justify-between">
+          <div className="p-4 sm:p-5 border-b border-amber-200 dark:border-zinc-800 bg-amber-50/90 dark:bg-zinc-950/90 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-[#8B2500] text-white flex items-center justify-center text-xl shadow-sm">
                 🚩
@@ -40,17 +47,17 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
               <div>
                 <h3 className="text-base sm:text-lg font-black font-serif text-amber-950 dark:text-amber-200">
                   {isPb
-                    ? 'ਦਮਾਖੇੜਾ ਆਸ਼ਰਮ ਮਾਰਗ ਤੇ ਠਹਿਰਣ ਦਾ ਪ੍ਰਬੰਧ'
+                    ? 'ਦਾਮਾਖੇੜਾ ਆਸ਼ਰਮ ਮਾਰਗ ਤੇ ਠਹਿਰਣ ਦਾ ਪ੍ਰਬੰਧ'
                     : isEn
                     ? 'Damakheda Ashram Route & Stay Guide'
-                    : 'दमाखेड़ा आश्रम मार्ग व ठहरने की व्यवस्था'}
+                    : 'दामाखेड़ा आश्रम मार्ग व ठहरने की व्यवस्था'}
                 </h3>
                 <p className="text-[11px] font-serif text-amber-800 dark:text-amber-400">
                   {isPb
-                    ? 'ਕਬੀਰ ਧਰਮਨਗਰ ਦਮਾਖੇੜਾ (ਜ਼ਿਲ੍ਹਾ ਬਲੌਦਾਬਾਜ਼ਾਰ, ਛੱਤੀਸਗੜ੍ਹ)'
+                    ? 'ਕਬੀਰ ਧਰਮਨਗਰ ਦਾਮਾਖੇੜਾ (ਜ਼ਿਲ੍ਹਾ ਬਲੌਦਾਬਾਜ਼ਾਰ, ਛੱਤੀਸਗੜ੍ਹ)'
                     : isEn
                     ? 'Kabir Dharmanagar Damakheda (Dist. Baloda Bazar, Chhattisgarh)'
-                    : 'कबीर धर्मनगर दमाखेड़ा (जिला बलौदाबाजार, छत्तीसगढ़)'}
+                    : 'कबीर धर्मनगर दामाखेड़ा (जिला बलौदाबाजार, छत्तीसगढ़)'}
                 </p>
               </div>
             </div>
@@ -80,7 +87,7 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
                 {isPb ? (
                   <>
                     • <strong>ਨਜ਼ਦੀਕੀ ਮੁੱਖ ਰੇਲਵੇ ਸਟੇਸ਼ਨ:</strong> ਰਾਏਪੁਰ ਜੰਕਸ਼ਨ (Raipur Jn) - ਲਗਭਗ 45 ਕਿਮੀ।<br />
-                    • <strong>ਭਾਟਾਪਾਰਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ:</strong> ਭਾਟਾਪਾਰਾ ਤੋਂ ਦਮਾਖੇੜਾ ਲਗਭਗ 25 ਕਿਮੀ।<br />
+                    • <strong>ਭਾਟਾਪਾਰਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ:</strong> ਭਾਟਾਪਾਰਾ ਤੋਂ ਦਾਮਾਖੇੜਾ ਲਗਭਗ 25 ਕਿਮੀ।<br />
                     • <strong>ਨਜ਼ਦੀਕੀ ਹਵਾਈ ਅੱਡਾ:</strong> ਸਵਾਮੀ ਵਿਵੇਕਾਨੰਦ ਹਵਾਈ ਅੱਡਾ, ਰਾਏਪੁਰ।
                   </>
                 ) : isEn ? (
@@ -92,7 +99,7 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
                 ) : (
                   <>
                     • <strong>निकटतम मुख्य रेलवे स्टेशन:</strong> रायपुर जंक्शन (Raipur Jn) - लगभग 45 किमी।<br />
-                    • <strong>भाटापारा रेलवे स्टेशन:</strong> भाटापारा से दमाखेड़ा लगभग 25 किमी।<br />
+                    • <strong>भाटापारा रेलवे स्टेशन:</strong> भाटापारा से दामाखेड़ा लगभग 25 किमी।<br />
                     • <strong>निकटतम एयरपोर्ट:</strong> स्वामी विवेकानंद एयरपोर्ट, रायपुर।
                   </>
                 )}
@@ -109,10 +116,10 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
               </h4>
               <p className="opacity-80 leading-relaxed">
                 {isPb
-                  ? 'ਰਾਏਪੁਰ ਬੱਸ ਸਟੈਂਡ (ਪੰਡਰੀ / ਭਾਠਾਗਾਂਵ) ਤੋਂ ਬਲੌਦਾਬਾਜ਼ਾਰ / ਬਿਲਾਸਪੁਰ ਮਾਰਗ ਦੀਆਂ ਬੱਸਾਂ ਸਿੱਧੇ ਦਮਾਖੇੜਾ ਆਸ਼ਰਮ ਗੇਟ \'ਤੇ ਉਤਾਰਦੀਆਂ ਹਨ। ਟੈਕਸੀ ਤੇ ਆਟੋ ਵੀ ਲਗਾਤਾਰ ਉਪਲਬਧ ਹਨ।'
+                  ? 'ਰਾਏਪੁਰ ਬੱਸ ਸਟੈਂਡ (ਪੰਡਰੀ / ਭਾਠਾਗਾਂਵ) ਤੋਂ ਬਲੌਦਾਬਾਜ਼ਾਰ / ਬਿਲਾਸਪੁਰ ਮਾਰਗ ਦੀਆਂ ਬੱਸਾਂ ਸਿੱਧੇ ਦਾਮਾਖੇੜਾ ਆਸ਼ਰਮ ਗੇਟ \'ਤੇ ਉਤਾਰਦੀਆਂ ਹਨ। ਟੈਕਸੀ ਤੇ ਆਟੋ ਵੀ ਲਗਾਤਾਰ ਉਪਲਬਧ ਹਨ।'
                   : isEn
                   ? 'Regular buses from Raipur Bus Stand (Pandri / Bhatagaon) via Baloda Bazar or Bilaspur highway stop right at the Damakheda Ashram Gate. Taxis and autos are readily available.'
-                  : 'रायपुर बस स्टैंड (पंडरी / भाठागांव) से बलौदाबाजार / बिलासपुर मार्ग पर चलने वाली बसें सीधे दमाखेड़ा आश्रम गेट पर उतरती हैं। टैक्सी व ऑटो भी निरंतर उपलब्ध रहते हैं।'}
+                  : 'रायपुर बस स्टैंड (पंडरी / भाठागांव) से बलौदाबाजार / बिलासपुर मार्ग पर चलने वाली बसें सीधे दामाखेड़ा आश्रम गेट पर उतरती हैं। टैक्सी व ऑटो भी निरंतर उपलब्ध रहते हैं।'}
               </p>
             </div>
 
@@ -152,7 +159,7 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
             </div>
           </div>
 
-          <div className="p-4 border-t border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-950 flex justify-end">
+          <div className="p-3.5 sm:p-4 border-t border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-950 flex justify-end shrink-0">
             <button
               type="button"
               onClick={onClose}
@@ -165,5 +172,11 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
       </div>
     </AnimatePresence>
   );
+
+  if (typeof document !== 'undefined') {
+    return createPortal(modalContent, document.body);
+  }
+
+  return modalContent;
 };
 
