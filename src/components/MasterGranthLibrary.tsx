@@ -47,7 +47,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { Language, SACRED_BRANDING, ReaderCustomTheme, ReaderFontSize, ReaderTarget, AppView } from '../types';
 import { translations, getVerseTypeLabel } from '../data/translations';
-import { useAppTheme } from '../theme/ThemeContext';
+import { useAppTheme, FONT_STYLE_OPTIONS } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { hindiToPunjabiWordConverter } from '../services/transliteration';
 import { MASTER_GRANTH_CATALOG, loadMasterGranth, loadMasterGranthChapter, clearMasterGranthCaches } from '../data/granths/masterGranthIndex';
@@ -134,7 +134,8 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
     widthMode,
     setWidthMode,
     fontFamily,
-    setFontFamily,
+    fontStyle: readerFontStyle,
+    setFontStyle,
     globalWallpaper
   } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
@@ -2232,25 +2233,22 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     ))}
                   </div>
 
-                  {/* Script Face & Canvas Width */}
+                  {/* 7-Option Font Style Selector & Canvas Width */}
                   <div className="flex flex-wrap items-center gap-2">
-                    <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 p-0.5 rounded-lg">
-                      {[
-                        { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ' : language === 'en' ? '📜 Serif' : '📜 ग्रंथ (Serif)' },
-                        { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ' : language === 'en' ? '🔤 Sans' : '🔤 सरल (Sans)' },
-                      ].map((ff) => (
+                    <div className="flex flex-wrap items-center gap-1 bg-black/5 dark:bg-white/5 p-1 rounded-lg">
+                      {FONT_STYLE_OPTIONS.map((ff) => (
                         <button
                           key={ff.id}
                           type="button"
                           onClick={() => {
                             sacredHaptics.lightTap();
-                            setFontFamily(ff.id);
+                            setFontStyle(ff.id);
                           }}
-                          className={`min-h-[38px] sm:min-h-[30px] px-2.5 py-1 rounded-md font-bold text-xs transition cursor-pointer ${
-                            fontFamily === ff.id ? 'bg-[#8B2500] text-white shadow-xs' : 'hover:bg-black/10'
+                          className={`min-h-[34px] sm:min-h-[28px] px-2.5 py-1 rounded-md font-bold text-xs transition cursor-pointer ${
+                            readerFontStyle === ff.id ? 'bg-[#8B2500] text-white shadow-xs' : 'hover:bg-black/10'
                           }`}
                         >
-                          {ff.label}
+                          <span className={ff.previewClass}>{ff.icon} {ff.label[lang] || ff.label.hi}</span>
                         </button>
                       ))}
                     </div>
@@ -4032,10 +4030,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           >
                             <span>
                               {language === 'pb' 
-                                ? 'ਇਸ ਪਦ ਦਾ ੫-ਪੜਾਵੀ ਸਵਾਧਿਆਏ ਖੋਲ੍ਹੋ' 
+                                ? 'ਇਸ ਪਦ ਦਾ ੧੧-ਪੜਾਵੀ ਸਵਾਧਿਆਏ ਖੋਲ੍ਹੋ' 
                                 : language === 'en' 
-                                ? 'Open 5-Step Swadhyay for this Verse' 
-                                : 'इस पद्य का ५-पड़ावी स्वाध्याय खोलें'}
+                                ? 'Open 11-Step Swadhyay for this Verse' 
+                                : 'इस पद्य का ११-चरणीय स्वाध्याय खोलें'}
                             </span>
                             <ChevronRight size={12} />
                           </button>

@@ -32,7 +32,7 @@ export interface MasterFeatureCardLayoutProps {
 // Fallback catalog of localized titles for all views
 const VIEW_TITLES: Record<string, { hi: string; pb: string; en: string }> = {
   'daily': { hi: 'दैनिक पावन साखी', pb: 'ਦੈਨਿਕ ਪਾਵਨ ਸਾਖੀ', en: 'Daily Pawan Sakhi' },
-  'swadhyay': { hi: '५-चरणीय पारंपरिक स्वाध्याय', pb: '੫-ਪੜਾਵੀ ਪਰੰਪਰਾਗਤ ਸਵਾਧਿਆਏ', en: '5-Step Traditional Swadhyay' },
+  'swadhyay': { hi: '११-चरणीय पारंपरिक स्वाध्याय', pb: '੧੧-ਪੜਾਵੀ ਪਰੰਪਰਾਗਤ ਸਵਾਧਿਆਏ', en: '11-Step Traditional Swadhyay' },
   'das-sutra': { hi: '१० सत्य वचन सूत्र', pb: '੧੦ ਸੱਤ ਵਚਨ ਸੂਤਰ', en: '10 Satya Vachan Sutras' },
   'dainik-chintan': { hi: 'दैनिक चिंतन एवं मनन', pb: 'ਦੈਨਿਕ ਚਿੰਤਨ ਤੇ ਮਨਨ', en: 'Daily Contemplation' },
   'nitnem-gutka': { hi: 'नितनेम गुटका साहेब', pb: 'ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ', en: 'Nitnem Gutka Saheb' },
@@ -142,17 +142,20 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
   return (
     <div className={`w-full max-w-5xl mx-auto pb-8 transition-all duration-300 ${className}`}>
       {/* =========================================================================
-          SCROLLABLE 2-ROW NAVIGATION HEADER (Directly below 36px Frozen Top Bar)
+          FROZEN 2-ROW NAVIGATION & TITLE HEADER (Directly below 36px Top Bar)
           - Row 1: ← वापस + 100% Offline | हिंदी | ਪੰਜਾਬੀ | EN + unified ⚙️ Settings
           - Row 2: Full, untruncated Card/Granth Title centered cleanly
           ========================================================================= */}
       <header
         id="master-screen-header-stack"
         style={{
-          backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.98)' : 'rgba(253, 248, 238, 0.98)',
-          borderColor: '#D97706',
+          position: 'sticky',
+          top: '36px',
+          zIndex: 45,
+          backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.98)' : '#FDF8EE',
+          borderColor: 'rgba(217, 119, 6, 0.3)',
         }}
-        className="relative z-20 rounded-2xl border p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-md backdrop-blur-md flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
+        className="sticky top-[36px] z-[45] rounded-2xl border border-b-[1px] p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-md backdrop-blur-md flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
       >
         {/* Row 1: Top Utility Bar (Back button + Offline Badge on Left | Lang Toggle + Font + Settings on Right) */}
         <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 border-b border-amber-500/20 pb-2 w-full min-w-0">

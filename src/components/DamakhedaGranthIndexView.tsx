@@ -173,19 +173,19 @@ export const DamakhedaGranthIndexView: React.FC<DamakhedaGranthIndexViewProps> =
           </button>
         </div>
 
-        {/* Gayatri Four Prahar */}
+        {/* Gayatri Five Parts */}
         <div className="p-4 rounded-3xl bg-blue-500/10 dark:bg-blue-500/15 border-2 border-blue-400/40 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-300">चार प्रहर</span>
+              <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-300">५ गायत्री</span>
               <Sun size={18} className="text-blue-600" />
             </div>
-            <h4 className="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">गायत्री (आदि, प्रभात, मध्याह्न, संध्या)</h4>
-            <p className="text-[11px] opacity-75 font-serif mt-1">दिन के चारों प्रहर की पावन गायत्री वंदना।</p>
+            <h4 className="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">गायत्री (आदि, प्रभात, मध्याह्न, संध्या, महानिशा)</h4>
+            <p className="text-[11px] opacity-75 font-serif mt-1">मूल एवं चारों प्रहर सहित परोक्ष ब्रह्म अजपा ध्यान की पावन गायत्री।</p>
           </div>
           <button
             type="button"
-            onClick={() => onSelectSection('gayatri-chhar-prahar')}
+            onClick={() => onSelectSection('gayatri-aadi')}
             className="mt-3 w-full py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition cursor-pointer"
           >
             गायत्री पाठ खोलें

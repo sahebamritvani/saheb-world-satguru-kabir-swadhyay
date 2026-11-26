@@ -52,7 +52,7 @@ import {
 import { NityaVaniSettings } from './NityaVaniSettings';
 import { Language, ThemeMode, SACRED_BRANDING, ReaderCustomTheme, ReaderTarget, AppView } from '../types';
 import { translations } from '../data/translations';
-import { useAppTheme, GLOBAL_NATURE_PRESETS } from '../theme/ThemeContext';
+import { useAppTheme, GLOBAL_NATURE_PRESETS, FONT_STYLE_OPTIONS, getFontStyleOption } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { satyanaamAudio, speechReciter } from '../services/audioDhun';
 import { sacredHaptics } from '../services/haptics';
@@ -123,6 +123,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     setWidthMode,
     fontFamily,
     setFontFamily,
+    fontStyle,
+    setFontStyle,
     isSahajMode,
     setIsSahajMode,
     isDarkMode,
@@ -338,6 +340,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     setFontSize('normal');
     setLineHeight('medium');
     setFontFamily('serif');
+    setFontStyle('granth');
     try {
       localStorage.setItem('sahebworld_font_size', 'normal');
       localStorage.setItem('sahebworld_line_height', 'medium');
@@ -2282,7 +2285,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 </p>
               </div>
 
-              {/* Sacred Font Family: Traditional Granth (Serif) vs Modern Saral (Sans) */}
+              {/* Sacred Font Style Selector: 7 Traditional & Modern Script Styles */}
               <div
                 style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
                 className="p-4 rounded-2xl border space-y-3.5 shadow-xs"
@@ -2290,57 +2293,46 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                     <Type className="w-4 h-4 text-amber-600 shrink-0" />
-                    <span>{isPb ? 'ਲਿਪੀ ਤੇ ਫੌਂਟ ਸ਼ੈਲੀ (Font Style)' : isHi ? 'लिपि एवं फॉन्ट शैली (Font Style)' : 'Script & Font Style'}</span>
+                    <span>{isPb ? 'ਲਿਪੀ ਤੇ ਫੌਂਟ ਸ਼ੈਲੀ (7 Font Styles)' : isHi ? 'लिपि एवं फॉन्ट शैली (7 Font Styles)' : 'Script & Font Style (7 Options)'}</span>
                   </h3>
                   <span
                     style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
                     className="text-[11px] font-black px-2.5 py-0.5 rounded-full"
                   >
-                    {fontFamily === 'serif'
-                      ? (isPb ? 'ਗ੍ਰੰਥ (Serif)' : isHi ? 'ग्रंथ (सेरिफ़)' : 'Granth (Serif)')
-                      : (isPb ? 'ਸਰਲ (Sans)' : isHi ? 'सरल (सांस)' : 'Saral (Sans)')}
+                    {getFontStyleOption(fontStyle).icon} {getFontStyleOption(fontStyle).label[isPb ? 'pb' : isHi ? 'hi' : 'en']}
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2.5">
-                  {[
-                    {
-                      id: 'serif' as const,
-                      label: isPb ? 'ਗ੍ਰੰਥ (ਪਾਰੰਪਰਿਕ)' : isHi ? 'ग्रंथ (पारंपरिक)' : 'Granth (Serif)',
-                      sub: isPb ? 'ਨੋਟੋ ਸੇਰਿਫ ਦੇਵਨਾਗਰੀ' : isHi ? 'पारंपरिक पोथी लिपि (Noto Serif)' : 'Traditional Serif',
-                      preview: 'ੴ सत्यनाम साहेब'
-                    },
-                    {
-                      id: 'sans' as const,
-                      label: isPb ? 'ਸਰਲ (ਆਧੁਨਿਕ)' : isHi ? 'सरल (आधुनिक)' : 'Saral (Clean Sans)',
-                      sub: isPb ? 'ਨੋਟੋ ਸਾਂਸ / ਮੁਕਤਾ' : isHi ? 'सुगम सरल लिपि (Mukta & Sans)' : 'Modern Clean Sans',
-                      preview: 'ੴ सत्यनाम साहेब'
-                    }
-                  ].map((f) => {
-                    const isSelected = fontFamily === f.id;
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {FONT_STYLE_OPTIONS.map((f) => {
+                    const isSelected = fontStyle === f.id;
+                    const langKey = isPb ? 'pb' : isHi ? 'hi' : 'en';
                     return (
                       <button
                         key={f.id}
                         type="button"
                         onClick={() => {
                           sacredHaptics.lightTap();
-                          setFontFamily(f.id);
+                          setFontStyle(f.id);
                         }}
                         style={{
                           backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.cardBg,
                           borderColor: isSelected ? theme.accentGold : theme.cardBorder,
                           color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
                         }}
-                        className={`p-3 rounded-xl border text-left transition cursor-pointer flex flex-col justify-between gap-1.5 ${
+                        className={`p-3 rounded-xl border text-left transition cursor-pointer flex flex-col justify-between gap-1 ${
                           isSelected ? 'shadow-md ring-2 ring-amber-400' : 'hover:opacity-90'
                         }`}
                       >
-                        <div className="flex items-center justify-between">
-                          <span className="font-bold text-xs">{f.label}</span>
+                        <div className="flex items-center justify-between gap-1.5">
+                          <span className="font-bold text-xs flex items-center gap-1">
+                            <span>{f.icon}</span>
+                            <span>{f.label[langKey]}</span>
+                          </span>
                           {isSelected && <span className="text-[10px] font-black">✓</span>}
                         </div>
-                        <span className="text-[10px] opacity-75">{f.sub}</span>
-                        <span className={`text-xs mt-1 font-bold ${f.id === 'serif' ? 'font-granth' : 'font-saral'}`}>{f.preview}</span>
+                        <span className="text-[10px] opacity-75">{f.sub[langKey]}</span>
+                        <span className={`text-sm mt-1 font-bold ${f.previewClass}`}>{f.sample[langKey]}</span>
                       </button>
                     );
                   })}

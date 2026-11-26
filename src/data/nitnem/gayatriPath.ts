@@ -5,20 +5,20 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
     id: "gayatri-aadi",
     majorCategoryId: "gayatri",
     majorCategoryTitle: {
-      hi: "३. गायत्री पाठ",
-      pb: "੩. ਗਾਇਤ੍ਰੀ ਪਾਠ",
-      en: "3. Gayatri Sacred Chants"
+      hi: "३. गायत्री",
+      pb: "੩. ਗਾਇਤਰੀ",
+      en: "3. Gayatri"
     },
     subGroup: "गायत्री",
     title: {
       hi: "आदि गायत्री",
-      pb: "ਆਦਿ ਗਾਇਤ੍ਰੀ",
+      pb: "ਆਦਿ ਗਾਇਤਰੀ",
       en: "Aadi Gayatri"
     },
     subtitle: {
-      hi: "।। सत्यनाम ।। सनातन सत्यपुरुष स्वरूप महामंत्र एवं भवजल तारक बीज प्रकाश",
-      pb: "॥ ਸਤਯਨਾਮ ॥ ਆਦਿ ਗਾਇਤ੍ਰੀ ਮਹਾਮੰਤ੍ਰ",
-      en: "Primal Gayatri Supreme Invocatory Chant"
+      hi: "।। सत्यनाम ।। मूल / परोक्ष ब्रह्म गायत्री",
+      pb: "॥ ਸਤਯਨਾਮ ॥ ਮੂਲ / ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਗਾਇਤਰੀ",
+      en: "|| Satyanaam || Mool / Paroksh Brahma Gayatri"
     },
     iconName: "Sun",
     estimatedMinutes: 4,
@@ -148,20 +148,20 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
     id: "gayatri-prabhat",
     majorCategoryId: "gayatri",
     majorCategoryTitle: {
-      hi: "३. गायत्री पाठ",
-      pb: "੩. ਗਾਇਤ੍ਰੀ ਪਾਠ",
-      en: "3. Gayatri Sacred Chants"
+      hi: "३. गायत्री",
+      pb: "੩. ਗਾਇਤਰੀ",
+      en: "3. Gayatri"
     },
     subGroup: "गायत्री",
     title: {
       hi: "प्रभात गायत्री",
-      pb: "ਪ੍ਰਭਾਤ ਗਾਇਤ੍ਰੀ",
+      pb: "ਪ੍ਰਭਾਤ ਗਾਇਤਰੀ",
       en: "Prabhat Gayatri"
     },
     subtitle: {
-      hi: "।। सत्यनाम ।। प्रातःकालीन प्रकाश गायत्री, अजपा जाप एवं अमृत घर वास",
-      pb: "॥ ਸਤਯਨਾਮ ॥ ਸਵੇਰ ਵੇਲੇ ਦੀ ਗਾਇਤ੍ਰੀ",
-      en: "Dawn Illumination Gayatri Chant"
+      hi: "।। सत्यनाम ।। प्रातः काल / ब्रह्म मुहूर्त",
+      pb: "॥ ਸਤਯਨਾਮ ॥ ਪ੍ਰਾਤਹ ਕਾਲ / ਬ੍ਰਹਮ ਮੁਹੂਰਤ",
+      en: "|| Satyanaam || Early Morning / Brahma Muhurta"
     },
     iconName: "Sun",
     estimatedMinutes: 3,
@@ -219,20 +219,20 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
     id: "gayatri-madhyahan",
     majorCategoryId: "gayatri",
     majorCategoryTitle: {
-      hi: "३. गायत्री पाठ",
-      pb: "੩. ਗਾਇਤ੍ਰੀ ਪਾਠ",
-      en: "3. Gayatri Sacred Chants"
+      hi: "३. गायत्री",
+      pb: "੩. ਗਾਇਤਰੀ",
+      en: "3. Gayatri"
     },
     subGroup: "गायत्री",
     title: {
       hi: "मध्याह्न गायत्री",
-      pb: "ਮਧ੍ਯਾਹ੍ਨ ਗਾਇਤ੍ਰੀ",
-      en: "Madhyahan Gayatri"
+      pb: "ਮਧਿਆਹਨ ਗਾਇਤਰੀ",
+      en: "Madhyahn Gayatri"
     },
     subtitle: {
-      hi: "।। सत्यनाम ।। दोपहर का पावन स्मरण, अचिन्त पुरुष ध्यान एवं सत्यलोक प्राप्ति",
-      pb: "॥ ਸਤਯਨਾਮ ॥ ਦੁਪਹਿਰ ਵੇਲੇ ਦੀ ਗਾਇਤ੍ਰੀ",
-      en: "Midday Contemplation Gayatri Chant"
+      hi: "।। सत्यनाम ।। दोपहर का समय",
+      pb: "॥ ਸਤਯਨਾਮ ॥ ਦੁਪਹਿਰ ਦਾ ਸਮਾਂ",
+      en: "|| Satyanaam || Midday / Noon Hour"
     },
     iconName: "Sun",
     estimatedMinutes: 3,
@@ -290,20 +290,20 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
     id: "gayatri-sandhya",
     majorCategoryId: "gayatri",
     majorCategoryTitle: {
-      hi: "३. गायत्री पाठ",
-      pb: "੩. ਗਾਇਤ੍ਰੀ ਪਾਠ",
-      en: "3. Gayatri Sacred Chants"
+      hi: "३. गायत्री",
+      pb: "੩. ਗਾਇਤਰੀ",
+      en: "3. Gayatri"
     },
     subGroup: "गायत्री",
     title: {
       hi: "संध्या गायत्री",
-      pb: "ਸੰਧਿਆ ਗਾਇਤ੍ਰੀ",
+      pb: "ਸੰਧਿਆ ਗਾਇਤਰੀ",
       en: "Sandhya Gayatri"
     },
     subtitle: {
-      hi: "।। सत्यनाम ।। सायंकालीन चित्त विश्राम, काल-पाश भंजन एवं घट शब्द प्रकाश",
-      pb: "॥ ਸਤਯਨਾਮ ॥ ਸੰਧਿਆ ਵੇਲੇ ਦੀ ਗਾਇਤ੍ਰੀ",
-      en: "Twilight Peace & Inner Light Gayatri"
+      hi: "।। सत्यनाम ।। सायंकाल",
+      pb: "॥ ਸਤਯਨਾਮ ॥ ਸ਼ਾਮ ਦਾ ਸਮਾਂ (ਸਾਯੰਕਾਲ)",
+      en: "|| Satyanaam || Evening Twilight"
     },
     iconName: "Moon",
     estimatedMinutes: 4,
@@ -410,20 +410,20 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
     id: "gayatri-madhyan-2",
     majorCategoryId: "gayatri",
     majorCategoryTitle: {
-      hi: "३. गायत्री पाठ",
-      pb: "੩. ਗਾਇਤ੍ਰੀ ਪਾਠ",
-      en: "3. Gayatri Sacred Chants"
+      hi: "३. गायत्री",
+      pb: "੩. ਗਾਇਤਰੀ",
+      en: "3. Gayatri"
     },
     subGroup: "गायत्री",
     title: {
-      hi: "मध्यान गायत्री",
-      pb: "ਮਧ੍ਯਾਨ ਗਾਇਤ੍ਰੀ",
-      en: "Madhyan Gayatri"
+      hi: "महानिशा गायत्री",
+      pb: "ਮਹਾਨਿਸ਼ਾ ਗਾਇਤਰੀ",
+      en: "Mahanisha Gayatri"
     },
     subtitle: {
-      hi: "।। सत्यनाम ।। सारनाम महिमा, अष्ट सिद्धि नव निधि प्रदाता एवं सुरत-कमल भेद",
-      pb: "॥ ਸਤਯਨਾਮ ॥ ਮਧ੍ਯਾਹ੍ਨ ਗਾਇਤ੍ਰੀ ਭਾਗ ੨",
-      en: "Essential Name Glory & Remembrance"
+      hi: "।। सत्यनाम ।। अर्धरात्रि / परोक्ष ब्रह्म अजपा ध्यान",
+      pb: "॥ ਸਤਯਨਾਮ ॥ ਅੱਧੀ ਰਾਤ / ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਅਜਪਾ ਧਿਆਨ",
+      en: "|| Satyanaam || Midnight / Paroksh Brahma Ajapa Meditation"
     },
     iconName: "Sun",
     estimatedMinutes: 4,

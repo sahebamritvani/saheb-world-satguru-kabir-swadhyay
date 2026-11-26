@@ -492,7 +492,7 @@ export const translations: Record<Language, AppTranslations> = {
     sacredBottom: SACRED_BRANDING.footer.hi,
 
     tabDailySakhi: 'दैनिक पावन साखी',
-    tabStepsFormula: 'स्वाध्याय 5-चरण',
+    tabStepsFormula: 'स्वाध्याय ११-चरण',
     tabGranthaSangrah: 'ग्रंथ संग्रह',
     tabQuiz: 'अमृत प्रश्नोत्तरी',
     tabAkhandPath: 'अखंड पाठ',
@@ -520,7 +520,7 @@ export const translations: Record<Language, AppTranslations> = {
     savedToBookmarks: 'साखी स्मृति में सुरक्षित हो गई!',
 
     stepsHeaderTitle: 'सतगुरु साखी स्वाध्याय पद्धति',
-    stepsHeaderDesc: 'पारंपरिक 5-चरणीय स्वाध्याय विधि से साखी का अंतरंग मर्म समझें',
+    stepsHeaderDesc: 'पारंपरिक ११-चरणीय स्वाध्याय विधि से साखी का अंतरंग मर्म समझें',
     step1Title: 'चरण 1: मूल पावन वाणी',
     step1Subtitle: 'पवित्र साखी का आदरपूर्वक पाठ व अंतर्मुखी होकर श्रवण',
     step2Title: 'चरण 2: शब्दार्थ एवं भावार्थ',
@@ -641,7 +641,7 @@ export const translations: Record<Language, AppTranslations> = {
 
     appTitle: 'साहेब वर्ल्ड',
     allSakhisTitle: 'ग्रंथ संग्रह (साखी संकलन)',
-    studyMethodologyTitle: '5-चरणीय स्वाध्याय',
+    studyMethodologyTitle: '११-चरणीय स्वाध्याय',
     chooseLanguageTitle: 'भाषा चयन (Language)',
     chooseThemeTitle: 'स्वाध्याय थीम (पठन शैली)',
     readingModeTitle: 'पठन विन्यास व शैली',
@@ -1023,7 +1023,7 @@ export const translations: Record<Language, AppTranslations> = {
     sacredBottom: SACRED_BRANDING.footer.pb,
 
     tabDailySakhi: 'ਦੈਨਿਕ ਪਾਵਨ ਸਾਖੀ',
-    tabStepsFormula: 'ਸਵਾਧਿਆਏ 5-ਪੜਾਅ',
+    tabStepsFormula: 'ਸਵਾਧਿਆਏ ੧੧-ਪੜਾਅ',
     tabGranthaSangrah: 'ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ',
     tabQuiz: 'ਅੰਮ੍ਰਿਤ ਪ੍ਰਸ਼ਨੋਤਰੀ',
     tabAkhandPath: 'ਅਖੰਡ ਪਾਠ',
@@ -1041,7 +1041,7 @@ export const translations: Record<Language, AppTranslations> = {
     savedToBookmarks: 'ਸਾਖੀ ਯਾਦਗਾਰ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਹੋ ਗਈ!',
 
     stepsHeaderTitle: 'ਸਤਿਗੁਰੂ ਸਾਖੀ ਸਵਾਧਿਆਏ ਵਿਧੀ',
-    stepsHeaderDesc: 'ਰਵਾਇਤੀ 5-ਪੜਾਵੀ ਸਵਾਧਿਆਏ ਢੰਗ ਨਾਲ ਸਾਖੀ ਦਾ ਅੰਦਰਲਾ ਭੇਤ ਸਮਝੋ',
+    stepsHeaderDesc: 'ਰਵਾਇਤੀ ੧੧-ਪੜਾਵੀ ਸਵਾਧਿਆਏ ਢੰਗ ਨਾਲ ਸਾਖੀ ਦਾ ਅੰਦਰਲਾ ਭੇਤ ਸਮਝੋ',
     step1Title: 'ਪੜਾਅ 1: ਮੂਲ ਪਾਵਨ ਬਾਣੀ',
     step1Subtitle: 'ਪਵਿੱਤਰ ਸਾਖੀ ਦਾ ਸਤਿਕਾਰ ਸਹਿਤ ਪਾਠ ਅਤੇ ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਰਵਣ',
     step2Title: 'ਪੜਾਅ 2: ਸ਼ਬਦਾਰਥ ਅਤੇ ਭਾਵਾਰਥ',
@@ -1150,7 +1150,7 @@ export const translations: Record<Language, AppTranslations> = {
 
     appTitle: 'ਸਾਹੇਬ ਵਰਲਡ',
     allSakhisTitle: 'ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ (ਸਾਖੀ ਸੰਗ੍ਰਹਿ)',
-    studyMethodologyTitle: '5-ਪੜਾਵੀ ਸਵਾਧਿਆਏ',
+    studyMethodologyTitle: '੧੧-ਪੜਾਵੀ ਸਵਾਧਿਆਏ',
     chooseLanguageTitle: 'ਭਾਸ਼ਾ ਚੋਣ (Language)',
     chooseThemeTitle: 'ਸਵਾਧਿਆਏ ਥੀਮ (ਸ਼ੈਲੀ)',
     readingModeTitle: 'ਪਾਠ ਸ਼ੈਲੀ ਤੇ ਵਿਵਸਥਾ',
@@ -1554,7 +1554,7 @@ export const translations: Record<Language, AppTranslations> = {
     sacredBottom: SACRED_BRANDING.footer.en,
 
     tabDailySakhi: 'Daily Pawan Sakhi',
-    tabStepsFormula: '5-Step Swadhyay',
+    tabStepsFormula: '11-Step Swadhyay',
     tabGranthaSangrah: 'Sacred Scripture',
     tabQuiz: 'Spiritual Quiz',
     tabAkhandPath: 'Akhand Path',
@@ -1582,7 +1582,7 @@ export const translations: Record<Language, AppTranslations> = {
     savedToBookmarks: 'Sakhi preserved in your spiritual memory!',
 
     stepsHeaderTitle: 'Satguru Sakhi Swadhyay Formula',
-    stepsHeaderDesc: 'The traditional 5-step contemplation methodology to unlock the mystic core',
+    stepsHeaderDesc: 'The traditional 11-step contemplation methodology to unlock the mystic core',
     step1Title: 'Step 1: Sacred Recitation (Mool Path)',
     step1Subtitle: 'Reverent recitation and inward meditative listening to the original couplet',
     step2Title: 'Step 2: Word Breakdown & Meaning (Bhavarth)',
@@ -1691,7 +1691,7 @@ export const translations: Record<Language, AppTranslations> = {
 
     appTitle: 'Saheb World',
     allSakhisTitle: 'Sacred Scripture Explorer',
-    studyMethodologyTitle: '5-Step Swadhyay',
+    studyMethodologyTitle: '11-Step Swadhyay',
     chooseLanguageTitle: 'Language Selection',
     chooseThemeTitle: 'Reading Canvas Theme',
     readingModeTitle: 'Reading Layout & Style',

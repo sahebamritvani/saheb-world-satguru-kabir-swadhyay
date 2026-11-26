@@ -1356,15 +1356,52 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               </button>
 
               <button
+                id="daily-sakhi-chintan-toggle-btn"
+                type="button"
+                aria-expanded={showKalChintan}
+                aria-controls="dainik-chintan-kal-trigger-section"
                 onClick={() => {
                   sacredHaptics.lightTap();
-                  setShowKalChintan(!showKalChintan);
+                  const nextOpen = !showKalChintan;
+                  setShowKalChintan(nextOpen);
+                  if (nextOpen) {
+                    setTimeout(() => {
+                      document
+                        .getElementById('dainik-chintan-kal-trigger-section')
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 80);
+                  }
                 }}
-                style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon }}
-                className="px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 hover:opacity-90 transition shadow-xs border border-amber-300 dark:border-amber-700 cursor-pointer"
+                style={
+                  showKalChintan
+                    ? {
+                        backgroundColor: theme.buttonPrimaryBg,
+                        color: theme.buttonPrimaryText,
+                        borderColor: theme.accentGold,
+                      }
+                    : {
+                        backgroundColor: theme.stepActiveBg,
+                        color: theme.sacredMaroon,
+                        borderColor: theme.accentGold,
+                      }
+                }
+                className="px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 hover:opacity-90 transition shadow-xs border cursor-pointer"
               >
-                <Feather className="w-3 h-3 text-indigo-600" />
-                <span>{language === 'hi' ? 'दैनिक चिंतन' : language === 'pb' ? 'ਦੈਨਿਕ ਚਿੰਤਨ' : 'Daily Reflection'}</span>
+                <Feather className={`w-3 h-3 ${showKalChintan ? 'text-amber-200' : 'text-indigo-600'}`} />
+                <span>
+                  {showKalChintan
+                    ? language === 'hi'
+                      ? 'दैनिक चिंतन छुपाएं'
+                      : language === 'pb'
+                      ? 'ਦੈਨਿਕ ਚਿੰਤਨ ਲੁਕਾਓ'
+                      : 'Hide Reflection'
+                    : language === 'hi'
+                    ? 'दैनिक चिंतन देखें'
+                    : language === 'pb'
+                    ? 'ਦੈਨਿਕ ਚਿੰਤਨ ਦਿਖਾਓ'
+                    : 'Daily Reflection'}
+                </span>
+                {showKalChintan ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
               </button>
             </div>
           </div>
@@ -1478,7 +1515,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           )}
 
           {/* ========================================================================= */}
-          {/* DAINIK CHINTAN CARD: DYNAMICALLY ALIGNED TO ACTIVE DAILY SAKHI THEME      */}
+          {/* DAINIK CHINTAN CARD: SHOW/HIDE (देखें / छुपाएं) SAKHI REFLECTION         */}
           {/* ========================================================================= */}
           <div 
             id="dainik-chintan-kal-trigger-section"
@@ -1486,26 +1523,30 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               backgroundColor: theme.bgSecondary,
               borderColor: theme.accentGold,
             }}
-            className="mt-6 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 shadow-sm space-y-4 text-left transition-all"
+            className="mt-4 p-3.5 sm:p-5 rounded-2xl border-2 shadow-sm space-y-3 text-left transition-all"
           >
-            {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 border-amber-500/20">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-700 dark:text-indigo-300 shrink-0">
-                  <Feather className="w-5 h-5" />
+            {/* Header (Clicking row or button cleanly toggles देखें / छुपाएं) */}
+            <div
+              className={`flex items-center justify-between gap-3 ${
+                showKalChintan ? 'border-b pb-3 border-amber-500/20' : ''
+              }`}
+            >
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-700 dark:text-indigo-300 shrink-0">
+                  <Feather className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="px-2 py-0.5 rounded-full text-[0.625rem] font-black uppercase font-serif tracking-wider bg-indigo-500/20 text-indigo-900 dark:text-indigo-200 border border-indigo-500/40">
                       {language === 'pb' ? 'ਦੈਨਿਕ ਚਿੰਤਨ' : language === 'en' ? 'Daily Reflection' : 'दैनिक चिंतन'}
                     </span>
-                    <span className="text-[0.625rem] font-serif font-bold text-amber-700 dark:text-amber-300">
+                    <span className="text-[0.625rem] font-serif font-bold text-amber-700 dark:text-amber-300 truncate">
                       {activeThemeTitle} • #{sakhi.number}
                     </span>
                   </div>
                   <h4 
                     style={{ color: theme.sacredMaroon }}
-                    className="text-base sm:text-lg font-black font-serif tracking-tight mt-0.5"
+                    className="text-sm sm:text-base font-black font-serif tracking-tight mt-0.5 leading-snug"
                   >
                     {language === 'pb' 
                       ? `ਦੈਨਿਕ ਚਿੰਤਨ: '${activeThemeTitle}' ਅਤੇ ਅੱਜ ਦਾ ਆਚਰਣ` 
@@ -1518,55 +1559,63 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
               <button
                 type="button"
+                aria-expanded={showKalChintan}
                 onClick={() => {
                   sacredHaptics.lightTap();
                   setShowKalChintan(!showKalChintan);
                 }}
-                style={{
-                  backgroundColor: showKalChintan ? theme.accentGoldLight : theme.stepActiveBg,
-                  borderColor: theme.accentGold,
-                  color: theme.sacredMaroon,
-                }}
-                className="px-4 py-2 rounded-xl border text-xs font-serif font-black flex items-center justify-center gap-1.5 hover:scale-105 transition shadow-xs cursor-pointer shrink-0"
+                style={
+                  showKalChintan
+                    ? {
+                        backgroundColor: theme.buttonPrimaryBg,
+                        borderColor: theme.accentGold,
+                        color: theme.buttonPrimaryText,
+                      }
+                    : {
+                        backgroundColor: theme.stepActiveBg,
+                        borderColor: theme.accentGold,
+                        color: theme.sacredMaroon,
+                      }
+                }
+                className="px-3.5 py-2 rounded-xl border text-xs font-serif font-black flex items-center justify-center gap-1.5 hover:opacity-95 transition shadow-xs cursor-pointer shrink-0"
               >
                 <Edit3 className="w-3.5 h-3.5" />
                 <span>
                   {showKalChintan
-                    ? (language === 'pb' ? 'ਚਿੰਤਨ ਸਮੇਟੋ' : language === 'en' ? 'Collapse Reflection' : 'चिंतन समेटें')
-                    : (language === 'pb' ? 'ਚਿੰਤਨ ਲਿਖੋ (Start Reflection)' : language === 'en' ? 'Write Reflection' : 'चिंतन लिखें (Start Reflection)')}
+                    ? (language === 'pb' ? 'ਲੁਕਾਓ' : language === 'en' ? 'Hide' : 'छुपाएं')
+                    : (language === 'pb' ? 'ਦਿਖਾਓ' : language === 'en' ? 'Show' : 'देखें')}
                 </span>
                 {showKalChintan ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
               </button>
             </div>
 
-            {/* Dynamic Sakhi-Aligned Prompt Banner */}
-            <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-700 dark:text-stone-300 space-y-2">
-              <p className="font-semibold text-stone-800 dark:text-stone-100">
-                {activeContemplationPrompt}
-              </p>
-              {activePracticalStep && (
-                <p className="text-xs sm:text-[0.8125rem] text-amber-900 dark:text-amber-300 flex items-start gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-                  <span>
-                    <strong className="font-bold">
-                      {language === 'pb' ? 'ਵਿਵਹਾਰਕ ਅਭਿਆਸ:' : language === 'en' ? 'Daily Practice:' : 'व्यावहारिक अभ्यास:'}
-                    </strong>{' '}
-                    {activePracticalStep}
-                  </span>
-                </p>
-              )}
-            </div>
-
-            {/* Expandable Reflection Box */}
-            <AnimatePresence>
+            {/* Expandable Prompt + Reflection Box (Shown only when देखें / Show is active) */}
+            <AnimatePresence initial={false}>
               {showKalChintan && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="space-y-3.5 pt-2"
+                  transition={{ duration: 0.22 }}
+                  className="overflow-hidden space-y-3.5 pt-1"
                 >
+                  {/* Dynamic Sakhi-Aligned Prompt Banner */}
+                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-700 dark:text-stone-300 space-y-2">
+                    <p className="font-semibold text-stone-800 dark:text-stone-100">
+                      {activeContemplationPrompt}
+                    </p>
+                    {activePracticalStep && (
+                      <p className="text-xs sm:text-[0.8125rem] text-amber-900 dark:text-amber-300 flex items-start gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+                        <span>
+                          <strong className="font-bold">
+                            {language === 'pb' ? 'ਵਿਵਹਾਰਕ ਅਭਿਆਸ:' : language === 'en' ? 'Daily Practice:' : 'व्यावहारिक अभ्यास:'}
+                          </strong>{' '}
+                          {activePracticalStep}
+                        </span>
+                      </p>
+                    )}
+                  </div>
                   {/* Active Daily Sakhi Source Anchor */}
                   <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-2">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
@@ -1684,10 +1733,13 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
 
                     <button
                       type="button"
-                      onClick={() => setShowKalChintan(false)}
-                      className="text-xs font-serif text-stone-500 hover:text-stone-800 transition cursor-pointer"
+                      onClick={() => {
+                        sacredHaptics.lightTap();
+                        setShowKalChintan(false);
+                      }}
+                      className="text-xs font-serif font-semibold text-stone-500 hover:text-stone-800 transition cursor-pointer"
                     >
-                      {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Dismiss' : 'समेटें'}
+                      {language === 'pb' ? 'ਲੁਕਾਓ' : language === 'en' ? 'Hide' : 'छुपाएं'}
                     </button>
                   </div>
 

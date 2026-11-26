@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { EightStepSwadhyayData } from '../services/swadhyayEightSteps';
 import { ElevenStepSwadhyayData, normalizeElevenStepQuizQuestion } from '../services/swadhyayElevenSteps';
-import { useAppTheme } from '../theme/ThemeContext';
+import { useAppTheme, FONT_STYLE_OPTIONS, getFontStyleOption } from '../theme/ThemeContext';
 import {
   BookOpen,
   Volume2,
@@ -72,13 +72,10 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
   const [dhyanTimerSeconds, setDhyanTimerSeconds] = useState<number>(180);
   const [isDhyanActive, setIsDhyanActive] = useState(false);
 
-  const { fontFamily, setFontFamily } = useAppTheme();
+  const { fontFamily, fontStyle, setFontStyle } = useAppTheme();
   const activeFontClass = fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif';
   const activeFontStyle: React.CSSProperties = {
-    fontFamily:
-      fontFamily === 'sans'
-        ? "'Mukta', 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', ui-sans-serif, system-ui, sans-serif"
-        : "'Noto Serif Devanagari', 'Noto Serif Gurmukhi', 'Rozha One', Georgia, Cambria, serif",
+    fontFamily: getFontStyleOption(fontStyle).stack,
   };
 
   // Mark step complete and advance
@@ -134,27 +131,24 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
           <span className={`text-[11px] font-bold opacity-75 ${activeFontClass}`} style={{ color: rc.maroon }}>
             {language === 'pb' ? '੧੧-ਚਰਣੀ ਸਵਾਧਿਆਇ' : language === 'en' ? '11-Step Study' : '११-चरणीय स्वाध्याय'}
           </span>
-          <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/20">
-            {[
-              { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Serif' : 'ग्रंथ' },
-              { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Sans' : 'सरल' },
-            ].map((ff) => (
-              <button
-                key={ff.id}
-                type="button"
-                onClick={() => {
-                  sacredHaptics.lightTap();
-                  setFontFamily(ff.id);
-                }}
-                style={{
-                  backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
-                  color: fontFamily === ff.id ? '#FFFFFF' : rc.maroon,
-                }}
-                className="min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold transition cursor-pointer"
-              >
-                {ff.label}
-              </button>
-            ))}
+          <div className="flex items-center gap-1.5 bg-black/5 dark:bg-white/5 rounded-xl px-2.5 py-1 border border-amber-400/20">
+            <span className="text-xs">✒️</span>
+            <select
+              value={fontStyle}
+              onChange={(e) => {
+                sacredHaptics.lightTap();
+                setFontStyle(e.target.value as any);
+              }}
+              style={{ color: rc.maroon }}
+              className="bg-transparent text-[11px] font-bold cursor-pointer focus:outline-none max-w-[175px]"
+              title={language === 'pb' ? 'ਫੌਂਟ ਸ਼ੈਲੀ (7 ਵਿਕਲਪ)' : language === 'en' ? 'Font Style (7 Options)' : 'फॉन्ट शैली चुनें (7 विकल्प)'}
+            >
+              {FONT_STYLE_OPTIONS.map((opt) => (
+                <option key={opt.id} value={opt.id} className="text-black bg-white">
+                  {opt.icon} {opt.label[language] || opt.label.hi}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">

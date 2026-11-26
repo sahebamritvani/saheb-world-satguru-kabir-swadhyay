@@ -52,7 +52,7 @@ import {
 import { Sakhi, Language, StudyStep, SACRED_BRANDING, ReaderCustomTheme, SiddhantNote, AccessibilitySettings, ReaderFontSize } from '../types';
 import { motion, AnimatePresence, PanInfo } from 'motion/react';
 import { translations, formatSakhiShareText, getLocalizedGranthaName } from '../data/translations';
-import { useAppTheme } from '../theme/ThemeContext';
+import { useAppTheme, FONT_STYLE_OPTIONS, getFontStyleOption } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { speechReciter, satyanaamAudio } from '../services/audioDhun';
 import { sakhisDatabase } from '../data/sakhis';
@@ -185,6 +185,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     setWidthMode,
     fontFamily,
     setFontFamily,
+    fontStyle,
+    setFontStyle,
     zenModeActive: isZenMode,
     setZenModeActive: setIsZenMode,
     larivaarModeActive: isLarivaarMode,
@@ -202,10 +204,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const t = translations[lang] || contextT;
   const activeFontClass = fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif';
   const activeFontStyle: React.CSSProperties = {
-    fontFamily:
-      fontFamily === 'sans'
-        ? "'Mukta', 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-        : "'Noto Serif Devanagari', 'Noto Serif Gurmukhi', 'Rozha One', Georgia, Cambria, serif",
+    fontFamily: getFontStyleOption(fontStyle).stack,
   };
 
   // 2 Reference Sakhis (संदर्भ साखियाँ) rotating daily for comparative deep study
@@ -2405,36 +2404,32 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         }}
         className="px-3.5 sm:px-4 py-2 border-b flex flex-wrap items-center justify-between gap-2 text-xs"
       >
-        {/* Left Side: Working Granth | Saral Typography Toggle + Daily Reading Goal Timer */}
+        {/* Left Side: 7-Option Font Style Selector + Daily Reading Goal Timer */}
         <div className="flex flex-wrap items-center gap-2">
-          {/* Working Granth | Saral Toggle (Synced with ThemeContext) */}
+          {/* Font Style Selector (Synced with ThemeContext) */}
           <div
-            className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/20"
+            className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl px-2 py-1 border border-amber-400/20"
             role="group"
-            aria-label={language === 'pb' ? 'ਲਿਪੀ ਸ਼ੈਲੀ' : language === 'en' ? 'Typography Style' : 'लिपि शैली'}
+            aria-label={language === 'pb' ? 'ਲਿਪੀ ਸ਼ੈਲੀ' : language === 'en' ? 'Font Style' : 'लिपि व फॉन्ट शैली'}
           >
-            {[
-              { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Granth' : 'ग्रंथ' },
-              { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Saral' : 'सरल' },
-            ].map(ff => (
-              <button
-                key={ff.id}
-                type="button"
-                id={`swadhyay-font-toggle-${ff.id}`}
-                onClick={() => {
-                  sacredHaptics.lightTap();
-                  setFontFamily(ff.id);
-                }}
-                style={{
-                  backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
-                  color: fontFamily === ff.id ? '#FFFFFF' : rc.maroon,
-                }}
-                className="min-h-[34px] sm:min-h-[28px] px-2.5 py-1 sm:py-0.5 rounded-lg font-bold text-[0.6875rem] transition cursor-pointer whitespace-nowrap"
-                title={ff.id === 'serif' ? 'Noto Serif Granth / Traditional' : 'Mukta / Noto Sans Saral'}
-              >
-                {ff.label}
-              </button>
-            ))}
+            <Type className="w-3.5 h-3.5 text-amber-700 dark:text-amber-300 shrink-0" />
+            <select
+              id="swadhyay-font-style-select"
+              value={fontStyle}
+              onChange={(e) => {
+                sacredHaptics.lightTap();
+                setFontStyle(e.target.value as any);
+              }}
+              style={{ color: rc.maroon }}
+              className="bg-transparent text-[0.6875rem] font-bold cursor-pointer focus:outline-none max-w-[165px]"
+              title={language === 'pb' ? 'ਫੌਂਟ ਸ਼ੈਲੀ (7 ਵਿਕਲਪ)' : language === 'en' ? 'Font Style (7 Options)' : 'फॉन्ट शैली चुनें (7 विकल्प)'}
+            >
+              {FONT_STYLE_OPTIONS.map((opt) => (
+                <option key={opt.id} value={opt.id} className="text-black bg-white">
+                  {opt.icon} {opt.label[lang] || opt.label.hi}
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Smart Reading Countdown Timer Widget */}
@@ -4168,29 +4163,25 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 ))}
               </div>
 
-              {/* Serif vs Sans Font Style Toggle in Zen Mode */}
-              <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-1 border border-amber-400/20">
-                {[
-                  { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Serif' : 'ग्रंथ' },
-                  { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Sans' : 'सरल' },
-                ].map((ff) => (
-                  <button
-                    key={ff.id}
-                    type="button"
-                    onClick={() => {
-                      sacredHaptics.lightTap();
-                      setFontFamily(ff.id);
-                    }}
-                    style={{
-                      backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
-                      color: fontFamily === ff.id ? '#FFFFFF' : rc.textSecondary,
-                    }}
-                    className="px-2 py-1 rounded-lg text-xs font-bold transition cursor-pointer"
-                    title={ff.id === 'serif' ? 'Noto Serif / Traditional' : 'Mukta / Noto Sans Clean'}
-                  >
-                    {ff.label}
-                  </button>
-                ))}
+              {/* 7-Style Font Selector in Zen Mode */}
+              <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl px-2 py-1 border border-amber-400/20">
+                <Type className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                <select
+                  value={fontStyle}
+                  onChange={(e) => {
+                    sacredHaptics.lightTap();
+                    setFontStyle(e.target.value as any);
+                  }}
+                  style={{ color: rc.textSecondary }}
+                  className="bg-transparent text-xs font-bold cursor-pointer focus:outline-none max-w-[145px]"
+                  title={language === 'pb' ? 'ਫੌਂਟ ਸ਼ੈਲੀ' : language === 'en' ? 'Font Style' : 'फॉन्ट शैली'}
+                >
+                  {FONT_STYLE_OPTIONS.map((opt) => (
+                    <option key={opt.id} value={opt.id} className="text-black bg-white">
+                      {opt.icon} {opt.label[lang] || opt.label.hi}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {/* Exit Focus Mode Button — Guaranteed Top-Visible & 44px Touch Target */}

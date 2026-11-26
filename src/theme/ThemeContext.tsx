@@ -9,6 +9,96 @@ import lightLotusWallpaper from '../assets/images/light_lotus_blossom_wallpaper_
 
 const magharAuthenticWallpaper = '/assets/aistudio/clean_maghar_dham_nature_1794955298410_2cef22f0.jpg';
 
+export type FontStyleId = 'granth' | 'saral' | 'pothi' | 'kalam' | 'spasht' | 'rajasi' | 'bhakti';
+
+export interface FontStyleOption {
+  id: FontStyleId;
+  family: 'serif' | 'sans';
+  icon: string;
+  previewClass: string;
+  label: { hi: string; pb: string; en: string };
+  sub: { hi: string; pb: string; en: string };
+  stack: string;
+  sample: { hi: string; pb: string; en: string };
+}
+
+export const FONT_STYLE_OPTIONS: FontStyleOption[] = [
+  {
+    id: 'granth',
+    family: 'serif',
+    icon: '📜',
+    previewClass: 'font-opt-granth',
+    label: { hi: 'पारंपरिक ग्रंथ (Serif)', pb: 'ਪਾਰੰਪਰਿਕ ਗ੍ਰੰਥ (Serif)', en: 'Granth Classic (Serif)' },
+    sub: { hi: 'नोटो सेरिफ़ देवनागरी / गुरुमुखी', pb: 'ਨੋਟੋ ਸੇਰਿਫ਼ ਗੁਰਮੁਖੀ', en: 'Traditional Sacred Serif' },
+    stack: '"Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, Cambria, serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+  {
+    id: 'saral',
+    family: 'sans',
+    icon: '🔤',
+    previewClass: 'font-opt-saral',
+    label: { hi: 'सुगम सरल (Clean Sans)', pb: 'ਸੁਗਮ ਸਰਲ (Sans)', en: 'Saral Modern (Sans)' },
+    sub: { hi: 'मुक्ता एवं नोटो सैन्स आधुनिक लिपि', pb: 'ਮੁਕਤਾ ਤੇ ਨੋਟੋ ਸਾਂਸ', en: 'Modern Clean Sans' },
+    stack: '"Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, sans-serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+  {
+    id: 'pothi',
+    family: 'serif',
+    icon: '📖',
+    previewClass: 'font-opt-pothi',
+    label: { hi: 'प्राचीन पोथी (Tiro)', pb: 'ਪ੍ਰਾਚੀਨ ਪੋਥੀ (Tiro)', en: 'Ancient Pothi (Tiro)' },
+    sub: { hi: 'टायरो देवनागरी शास्त्रीय मुद्रण', pb: 'ਟਾਇਰੋ ਕਲਾਸਿਕ ਛਪਾਈ', en: 'Classical Pothi Typeset' },
+    stack: '"Tiro Devanagari Hindi", "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+  {
+    id: 'kalam',
+    family: 'sans',
+    icon: '✒️',
+    previewClass: 'font-opt-kalam',
+    label: { hi: 'हस्तलिखित कलम (Kalam)', pb: 'ਹਸਤਲਿਖਤ ਕਲਮ (Kalam)', en: 'Handwritten Kalam' },
+    sub: { hi: 'कलम / लंगर हस्तलेख शैली', pb: 'ਲੰਗਰ / ਕਲਮ ਹਸਤਲੇਖ', en: 'Handwritten Bhakti Script' },
+    stack: '"Kalam", "Langar", "Noto Sans Devanagari", "Noto Sans Gurmukhi", cursive, sans-serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+  {
+    id: 'spasht',
+    family: 'sans',
+    icon: '👁️',
+    previewClass: 'font-opt-spasht',
+    label: { hi: 'अति-स्पष्ट पठन (Hind)', pb: 'ਅਤਿ-ਸਪੱਸ਼ਟ (Baloo)', en: 'Ultra-Clear Read (Hind)' },
+    sub: { hi: 'वरिष्ठ पाठकों हेतु स्पष्ट अक्षर', pb: 'ਵੱਡੇ ਤੇ ਸਪੱਸ਼ਟ ਅੱਖਰ', en: 'High-Legibility Wide Font' },
+    stack: '"Hind", "Baloo Paaji 2", "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+  {
+    id: 'rajasi',
+    family: 'serif',
+    icon: '👑',
+    previewClass: 'font-opt-rajasi',
+    label: { hi: 'राजसी साखी (Yatra)', pb: 'ਰਾਜਸੀ ਸਾਖੀ (Yatra)', en: 'Royal Heritage (Yatra)' },
+    sub: { hi: 'यात्रा वन / रोज़ा भव्य शिल्प', pb: 'ਸ਼ਾਨਦਾਰ ਵਿਰਾਸਤੀ ਅੱਖਰ', en: 'Expressive Heritage Display' },
+    stack: '"Yatra One", "Rozha One", "Noto Serif Devanagari", "Noto Serif Gurmukhi", serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+  {
+    id: 'bhakti',
+    family: 'serif',
+    icon: '🪷',
+    previewClass: 'font-opt-bhakti',
+    label: { hi: 'भक्ति ललित (Amita)', pb: 'ਭਗਤੀ ਲਲਿਤ (Amita)', en: 'Devotional Lyrical (Amita)' },
+    sub: { hi: 'अमिता / मारटेल सुलेख लिपि', pb: 'ਅਮਿਤਾ ਸੁੰਦਰ ਸੁਲੇਖ', en: 'Warm Calligraphic Script' },
+    stack: '"Amita", "Martel", "Noto Serif Devanagari", "Noto Serif Gurmukhi", serif',
+    sample: { hi: 'सत्यनाम साहेब बंदगी', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ ਬੰਦਗੀ', en: 'Satyanaam Saheb' },
+  },
+];
+
+export const getFontStyleOption = (styleId?: string | null): FontStyleOption => {
+  return FONT_STYLE_OPTIONS.find((opt) => opt.id === styleId) || FONT_STYLE_OPTIONS[0];
+};
+
 export interface GlobalNaturePreset {
   id: 'banyan_ghat' | 'maghar_dham' | 'saheb_icon_emblem' | 'maghar_authentic' | 'light_floral_geometric' | 'light_lotus' | 'dawn_mountain' | 'emerald_forest' | 'sunset_sky' | 'sacred_river' | 'golden_autumn';
   name: { hi: string; pb: string; en: string };
@@ -380,6 +470,8 @@ interface ThemeContextType {
   setWidthMode: (mode: 'narrow' | 'medium' | 'wide') => void;
   fontFamily: 'serif' | 'sans';
   setFontFamily: (font: 'serif' | 'sans') => void;
+  fontStyle: FontStyleId;
+  setFontStyle: (style: FontStyleId) => void;
   isSahajMode: boolean;
   setIsSahajMode: (enabled: boolean) => void;
   isAutoNightMode: boolean;
@@ -534,8 +626,24 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     return 'wide';
   });
 
+  const [fontStyle, setFontStyleState] = useState<FontStyleId>(() => {
+    if (typeof window !== 'undefined') {
+      const savedStyle = localStorage.getItem('sahebworld_font_style') as FontStyleId | null;
+      if (savedStyle && FONT_STYLE_OPTIONS.some((o) => o.id === savedStyle)) {
+        return savedStyle;
+      }
+      const legacyFamily = localStorage.getItem('sahebworld_fontfamily');
+      if (legacyFamily === 'sans') return 'saral';
+    }
+    return 'granth';
+  });
+
   const [fontFamily, setFontFamilyState] = useState<'serif' | 'sans'>(() => {
     if (typeof window !== 'undefined') {
+      const savedStyle = localStorage.getItem('sahebworld_font_style') as FontStyleId | null;
+      if (savedStyle && FONT_STYLE_OPTIONS.some((o) => o.id === savedStyle)) {
+        return getFontStyleOption(savedStyle).family;
+      }
       const saved = localStorage.getItem('sahebworld_fontfamily');
       if (saved && ['serif', 'sans'].includes(saved)) {
         return saved as 'serif' | 'sans';
@@ -580,11 +688,28 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     }
   };
 
+  const setFontStyle = (style: FontStyleId) => {
+    const opt = getFontStyleOption(style);
+    setFontStyleState(opt.id);
+    setFontFamilyState(opt.family);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('sahebworld_font_style', opt.id);
+      localStorage.setItem('sahebworld_fontfamily', opt.family);
+      window.dispatchEvent(new CustomEvent('sahebworld_fontstyle_changed', { detail: opt.id }));
+      window.dispatchEvent(new CustomEvent('sahebworld_fontfamily_changed', { detail: opt.family }));
+    }
+  };
+
   const setFontFamily = (font: 'serif' | 'sans') => {
     setFontFamilyState(font);
+    const currentOpt = getFontStyleOption(fontStyle);
+    const nextStyle: FontStyleId = currentOpt.family === font ? currentOpt.id : (font === 'sans' ? 'saral' : 'granth');
+    setFontStyleState(nextStyle);
     if (typeof window !== 'undefined') {
       localStorage.setItem('sahebworld_fontfamily', font);
+      localStorage.setItem('sahebworld_font_style', nextStyle);
       window.dispatchEvent(new CustomEvent('sahebworld_fontfamily_changed', { detail: font }));
+      window.dispatchEvent(new CustomEvent('sahebworld_fontstyle_changed', { detail: nextStyle }));
     }
   };
 
@@ -865,17 +990,24 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       root.classList.add(`font-size-${fontSize}`);
       document.body.classList.add(`font-size-${fontSize}`);
 
-      // Font family class update (ग्रंथ vs सरल)
+      // Font family & style class update (7 Font Styles)
+      const activeFontOpt = getFontStyleOption(fontStyle);
       root.classList.remove('font-granth', 'font-saral');
       document.body.classList.remove('font-granth', 'font-saral');
+      FONT_STYLE_OPTIONS.forEach((opt) => {
+        root.classList.remove(`font-style-${opt.id}`);
+        document.body.classList.remove(`font-style-${opt.id}`);
+      });
       const fontClass = fontFamily === 'sans' ? 'font-saral' : 'font-granth';
-      root.classList.add(fontClass);
-      document.body.classList.add(fontClass);
+      root.classList.add(fontClass, `font-style-${activeFontOpt.id}`);
+      document.body.classList.add(fontClass, `font-style-${activeFontOpt.id}`);
+      root.style.setProperty('--saheb-reading-font', activeFontOpt.stack);
       root.setAttribute('data-font-family', fontFamily);
+      root.setAttribute('data-font-style', activeFontOpt.id);
 
       window.dispatchEvent(new CustomEvent('sahebworld_theme_changed', { detail: themeMode }));
     }
-  }, [themeMode, activeTheme, fontSize, fontFamily, activeWallpaperCss]);
+  }, [themeMode, activeTheme, fontSize, fontFamily, fontStyle, activeWallpaperCss]);
 
   // Cross-component theme sync listener
   useEffect(() => {
@@ -900,7 +1032,7 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     };
   }, [themeMode]);
 
-  // Cross-component font family sync listener
+  // Cross-component font family & style sync listener
   useEffect(() => {
     const handleFontChange = (e: Event) => {
       const customEvent = e as CustomEvent;
@@ -909,19 +1041,35 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       }
     };
 
+    const handleFontStyleChange = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail && FONT_STYLE_OPTIONS.some((o) => o.id === customEvent.detail) && customEvent.detail !== fontStyle) {
+        const opt = getFontStyleOption(customEvent.detail);
+        setFontStyleState(opt.id);
+        setFontFamilyState(opt.family);
+      }
+    };
+
     const handleStorage = (e: StorageEvent) => {
       if (e.key === 'sahebworld_fontfamily' && e.newValue && (e.newValue === 'serif' || e.newValue === 'sans') && e.newValue !== fontFamily) {
         setFontFamilyState(e.newValue as 'serif' | 'sans');
       }
+      if (e.key === 'sahebworld_font_style' && e.newValue && FONT_STYLE_OPTIONS.some((o) => o.id === e.newValue) && e.newValue !== fontStyle) {
+        const opt = getFontStyleOption(e.newValue);
+        setFontStyleState(opt.id);
+        setFontFamilyState(opt.family);
+      }
     };
 
     window.addEventListener('sahebworld_fontfamily_changed', handleFontChange as EventListener);
+    window.addEventListener('sahebworld_fontstyle_changed', handleFontStyleChange as EventListener);
     window.addEventListener('storage', handleStorage);
     return () => {
       window.removeEventListener('sahebworld_fontfamily_changed', handleFontChange as EventListener);
+      window.removeEventListener('sahebworld_fontstyle_changed', handleFontStyleChange as EventListener);
       window.removeEventListener('storage', handleStorage);
     };
-  }, [fontFamily]);
+  }, [fontFamily, fontStyle]);
 
   const toggleDarkMode = () => {
     const nextMode: ThemeMode = (themeMode === 'amrit_neel' || themeMode === 'mystic_dark') ? 'bhojpatra' : 'amrit_neel';
@@ -942,6 +1090,8 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     setWidthMode,
     fontFamily,
     setFontFamily,
+    fontStyle,
+    setFontStyle,
     isSahajMode,
     setIsSahajMode,
     isAutoNightMode,
@@ -973,6 +1123,7 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     lineHeight,
     widthMode,
     fontFamily,
+    fontStyle,
     isSahajMode,
     isAutoNightMode,
     isMuted,

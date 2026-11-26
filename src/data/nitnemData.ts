@@ -36,7 +36,7 @@ export const MAJOR_GRANTH_CATEGORIES: MajorGranthCategory[] = [
     title: {
       hi: '३. गायत्री',
       pb: '੩. ਗਾਇਤਰੀ',
-      en: '3. Gayatri Path',
+      en: '3. Gayatri',
     },
     iconName: 'Sparkles',
   },
@@ -103,9 +103,9 @@ export const NITNEM_SECTION_STUBS: NitnemSection[] = MASTER_NITNEM_INDEX.granth_
       en: sub.english || sub.hindi,
     },
     subtitle: {
-      hi: 'नए पावन पाठ हेतु आरक्षित रिक्त स्थान',
-      pb: 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਲਈ ਰਾਖਵੀਂ ਖਾਲੀ ਥਾਂ',
-      en: 'Clean space reserved for upcoming sacred Path text',
+      hi: sub.subtitle_hi || 'नए पावन पाठ हेतु आरक्षित रिक्त स्थान',
+      pb: sub.subtitle_pb || 'ਨਵੇਂ ਪਾਵਨ ਪਾਠ ਲਈ ਰਾਖਵੀਂ ਖਾਲੀ ਥਾਂ',
+      en: sub.subtitle_en || 'Clean space reserved for upcoming sacred Path text',
     },
     iconName: catMeta?.iconName || 'BookOpen',
     estimatedMinutes: 0,

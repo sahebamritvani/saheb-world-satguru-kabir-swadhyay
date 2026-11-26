@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Baloo+Paaji+2:wght@500;600;700&family=Hind:wght@400;500;600;700&family=Kalam:wght@400;700&family=Langar&family=Martel:wght@400;600;700&family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Noto+Serif+Gurmukhi:wght@400;600;700&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Noto+Serif+Gurmukhi:wght@400;600;700&family=Rozha+One&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -9,15 +9,38 @@
   --font-sans: "Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* 📜 Sacred Scripture Font Classes (ग्रंथ vs सरल) */
+/* 📜 Sacred Scripture Font Classes (Dynamic 7-Style System) */
 .font-granth,
 .font-serif-granth {
-  font-family: "Noto Serif Devanagari", "Noto Serif Gurmukhi", "Rozha One", Georgia, serif !important;
+  font-family: var(--saheb-reading-font, "Noto Serif Devanagari", "Noto Serif Gurmukhi", "Rozha One", Georgia, serif) !important;
 }
 
 .font-saral,
 .font-sans-saral {
-  font-family: "Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: var(--saheb-reading-font, "Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif) !important;
+}
+
+/* Distinct Font Preview Classes (for Font Style pickers) */
+.font-opt-granth {
+  font-family: "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif !important;
+}
+.font-opt-saral {
+  font-family: "Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, sans-serif !important;
+}
+.font-opt-pothi {
+  font-family: "Tiro Devanagari Hindi", "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif !important;
+}
+.font-opt-kalam {
+  font-family: "Kalam", "Langar", "Noto Sans Devanagari", "Noto Sans Gurmukhi", cursive, sans-serif !important;
+}
+.font-opt-spasht {
+  font-family: "Hind", "Baloo Paaji 2", "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif !important;
+}
+.font-opt-rajasi {
+  font-family: "Yatra One", "Rozha One", "Noto Serif Devanagari", "Noto Serif Gurmukhi", serif !important;
+}
+.font-opt-bhakti {
+  font-family: "Amita", "Martel", "Noto Serif Devanagari", "Noto Serif Gurmukhi", serif !important;
 }
 
 
@@ -322,7 +345,7 @@ body,
 #root {
   min-height: 100dvh;
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -342,7 +365,7 @@ body,
     height: 100dvh !important;
     min-height: 100dvh !important;
     overflow-y: auto !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     background: transparent !important;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;

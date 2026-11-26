@@ -8,7 +8,6 @@ import {
   Bookmark, 
   Music, 
   Settings, 
-  Sliders,
   Languages, 
   Volume2, 
   VolumeX,
@@ -63,7 +62,8 @@ import {
   Star,
   Maximize2,
   Minimize2,
-  Database
+  Database,
+  Type
 } from 'lucide-react';
 import { OPEN_ADMIN_INJECTOR_EVENT } from '../services/adminSlotInjectorStore';
 import { isAdminAuthenticated } from '../services/adminAuth';
@@ -82,7 +82,9 @@ import {
   useAppTheme, 
   StyledAppContainer, 
   SacredHeaderContainer, 
-  SacredFooterContainer 
+  SacredFooterContainer,
+  FONT_STYLE_OPTIONS,
+  getFontStyleOption
 } from '../theme/ThemeContext';
 import {
   getAppUrlSync,
@@ -120,9 +122,11 @@ export const Layout: React.FC<LayoutProps> = ({
   onToggleDhun,
   children,
 }) => {
-  const { theme, isDarkMode, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
+  const { theme, isDarkMode, isSahajMode, setIsSahajMode, globalWallpaper, fontStyle, setFontStyle } = useAppTheme();
+  const activeFontOpt = getFontStyleOption(fontStyle);
   const t = translations[language] || translations.hi;
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showFontStylePopover, setShowFontStylePopover] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(() => {
     try {
       const saved = localStorage.getItem('sahebworld_fullscreen');
@@ -602,7 +606,7 @@ export const Layout: React.FC<LayoutProps> = ({
     updateBar3ScrollBounds();
     window.addEventListener('resize', updateBar3ScrollBounds);
     return () => window.removeEventListener('resize', updateBar3ScrollBounds);
-  }, [language, isAdmin, isOnline]);
+  }, [language, isAdmin, isOnline, fontStyle]);
 
   const handleBar3MouseDown = (e: React.MouseEvent) => {
     if (!bar3ScrollRef.current) return;
@@ -1854,7 +1858,7 @@ export const Layout: React.FC<LayoutProps> = ({
           </div>
         </div>
 
-        {/* ================= BAR 3: RESPONSIVE QUICK ACTIONS & UTILITY BAR ================= */}
+        {/* ================= BAR 3: UNIFIED SINGLE-ROW MOVEABLE QUICK ACTIONS & SETTINGS BAR ================= */}
         <div
           id="sacred-bar-3-tools"
           style={{
@@ -1863,84 +1867,9 @@ export const Layout: React.FC<LayoutProps> = ({
               : theme.cardBg,
             borderColor: theme.cardBorder,
           }}
-          className={`border-b py-1.5 px-2 sm:px-5 relative select-none flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 sm:gap-2.5 ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
+          className={`border-b py-1 px-1.5 sm:px-4 relative select-none ${globalWallpaper ? 'backdrop-blur-md' : ''}`}
         >
-          {/* Quick Access Sacred Shortcuts: 2x2 non-clipping grid on mobile, inline row on tablet/desktop */}
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 w-full md:w-auto">
-            {/* Quick Divine Darshan Jump */}
-            <button
-              onClick={() => handleNavClick('divine-darshan')}
-              className="h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0"
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon
-              }}
-              title={language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦਿਵਯ ਦਰਸ਼ਨ' : language === 'en' ? 'Divine Darshan' : 'सतगुरु दिव्य दर्शन'}
-            >
-              <Sparkles className="w-3 h-3 text-amber-700 shrink-0" />
-              <span className="font-serif text-[0.6875rem] font-bold truncate">
-                {language === 'pb' ? 'ਪਾਵਨ ਦਰਸ਼ਨ' : language === 'en' ? 'Darshan' : 'पावन दर्शन'}
-              </span>
-            </button>
-
-            {/* Quick Aarti Sanctuary Jump */}
-            <button
-              onClick={() => handleNavClick('aarti-sanctuary')}
-              className="h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0"
-              style={{
-                backgroundColor: theme.cardBg,
-                borderColor: theme.cardBorder,
-                color: theme.sacredMaroon
-              }}
-              title={language === 'pb' ? 'ਸੰਧਿਆ ਆਰਤੀ' : language === 'en' ? 'Evening Aarti' : 'संध्या आरती'}
-            >
-              <Flame className="w-3 h-3 text-amber-600 shrink-0" />
-              <span className="font-serif text-[0.6875rem] truncate">
-                {language === 'pb' ? 'ਆਰਤੀ' : language === 'en' ? 'Aarti' : 'आरती'}
-              </span>
-            </button>
-
-            {/* Quick Daily Sakhi Jump */}
-            <button
-              onClick={() => handleNavClick('daily')}
-              className={`h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0 ${
-                currentView === 'daily' ? 'ring-1.5 ring-amber-500 font-black' : ''
-              }`}
-              style={{
-                backgroundColor: currentView === 'daily' ? theme.stepActiveBg : theme.cardBg,
-                borderColor: currentView === 'daily' ? theme.accentGold : theme.cardBorder,
-                color: theme.sacredMaroon
-              }}
-              title={language === 'pb' ? 'ਦੈਨਿਕ ਪਾਵਨ ਸਾਖੀ' : language === 'en' ? 'Daily Sakhi' : 'दैनिक पावन साखी'}
-            >
-              <Sun className="w-3 h-3 text-amber-700 shrink-0" />
-              <span className="font-serif text-[0.6875rem] truncate">
-                {language === 'pb' ? 'ਦੈਨਿਕ ਸਾਖੀ' : language === 'en' ? 'Daily Sakhi' : 'दैनिक साखी'}
-              </span>
-            </button>
-
-            {/* Divine Blessing & Flower Shower Trigger (4th Pill cleanly inside 2x2 grid) */}
-            <button
-              id="header-open-blessing-btn"
-              onClick={onOpenBlessing}
-              title={language === 'pb' ? 'ਸਤਿਗੁਰੂ ਅਸੀਸ ਤੇ ਪੁਸ਼ਪ ਵਰਖਾ' : language === 'en' ? 'Divine Blessing & Flower Shower' : 'सतगुरु आशीर्वाद एवं पुष्प वर्षा'}
-              style={{
-                backgroundColor: theme.accentGoldLight,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="h-7 px-2 rounded-lg border text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.02] shadow-2xs min-w-0"
-            >
-              <Sparkles className="w-3 h-3 text-amber-800 shrink-0" />
-              <span className="font-serif font-bold text-[0.6875rem] truncate">
-                {language === 'pb' ? 'ਅਸੀਸ' : language === 'en' ? 'Blessing' : 'आशीर्वाद'}
-              </span>
-            </button>
-          </div>
-
-          {/* Bottom / Right: Moveable Single-Row Horizontally Scrollable Utility Bar (Bar 3) */}
-          <div className="relative w-full md:flex-1 min-w-0">
+          <div className="relative w-full min-w-0">
             {/* Left Move Arrow Button */}
             <button
               type="button"
@@ -1967,204 +1896,279 @@ export const Layout: React.FC<LayoutProps> = ({
                 display: 'flex',
                 flexWrap: 'nowrap',
                 overflowX: 'auto',
-                gap: '8px',
+                gap: '6px',
               }}
               className={`items-center justify-start w-full min-w-0 px-7 no-scrollbar scrollbar-none scroll-smooth touch-pan-x select-none py-0.5 ${
                 isDraggingBar3 ? 'cursor-grabbing' : 'cursor-grab'
               }`}
               title={language === 'pb' ? 'ਖਿਸਕਾਉਣ ਯੋਗ ਪੱਟੀ (ਖੱਬੇ-ਸੱਜੇ ਘਸੀਟੋ)' : language === 'en' ? 'Moveable Bar (Drag or click arrows)' : 'खिसकाने योग्य पट्टी (बाएं-दाएं स्लाइड या ड्रैग करें)'}
             >
-            {/* Unified 3-in-1 Settings Pill (सामान्य व थीम • सुगमता व वाणी • उन्नत पाठ साधन) */}
-            <button
-              id="header-open-settings-btn"
-              onClick={() => {
-                if (bar3MovedDistance > 8) return;
-                sacredHaptics.lightTap();
-                onOpenSettings();
-              }}
-              title={
-                language === 'pb'
-                  ? 'ਸੈਟਿੰਗਜ਼: ਸਾਧਾਰਨ ਅਤੇ ਥੀਮ • ਸੁਗਮਤਾ • ਉੱਨਤ ਪਠਨ ਸਾਧਨ'
-                  : language === 'en'
-                  ? 'Unified Settings: General & Theme • Accessibility • Reading Suite'
-                  : 'एकीकृत सेटिंग्स: सामान्य व थीम • सुगमता व वाणी • उन्नत पाठ साधन'
-              }
-              style={{
-                borderColor: theme.accentGold,
-                backgroundColor: theme.accentGoldLight,
-                color: theme.sacredMaroon,
-              }}
-              className="h-7 px-2.5 rounded-md border flex items-center justify-center gap-1.5 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
-              aria-label="Settings"
-            >
-              <Settings className="w-3.5 h-3.5 text-amber-800 shrink-0" />
-              <span className="font-serif font-bold text-[0.65rem] sm:text-[0.6875rem] whitespace-nowrap">
-                {language === 'pb'
-                  ? 'ਸੈਟਿੰਗਜ਼ • ਥੀਮ • ਸਾਧਨ'
-                  : language === 'en'
-                  ? 'Settings • Theme • Tools'
-                  : 'सामान्य • सुगमता • पाठ साधन'}
-              </span>
-            </button>
-
-            {/* Quick Tab 3 Shortcut: Advanced Reading Suite (उन्नत पठन साधन) */}
-            <button
-              id="header-open-advanced-reading-suite-btn"
-              onClick={() => {
-                if (bar3MovedDistance > 8) return;
-                sacredHaptics.lightTap();
-                window.dispatchEvent(new CustomEvent('sahebworld_open_advanced_reading_suite'));
-              }}
-              style={{
-                backgroundColor: theme.cardBg,
-                borderColor: theme.accentGold,
-                color: theme.sacredMaroon,
-              }}
-              className="h-7 px-2.5 rounded-md border text-[0.6875rem] font-bold inline-flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
-              title={language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ (Advanced Reading Suite)' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन (Advanced Reading Suite)'}
-            >
-              <span className="text-[0.875rem] leading-none shrink-0" style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))' }}>🔱</span>
-              <span className="font-serif font-bold text-[0.65rem] sm:text-[0.6875rem] whitespace-nowrap">
-                {language === 'pb' ? 'ਉੱਨਤ ਸਾਧਨ' : language === 'en' ? 'Reading Tools' : 'उन्नत पाठ साधन'}
-              </span>
-            </button>
-
-            {/* Quick Tab 2 Shortcut: Accessibility / Font Scaling Button */}
-            <button
-              id="header-open-accessibility-btn"
-              onClick={() => {
-                if (bar3MovedDistance > 8) return;
-                sacredHaptics.lightTap();
-                window.dispatchEvent(new CustomEvent('sahebworld_open_accessibility'));
-              }}
-              title={language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਅਤੇ ਸੁਗਮਤਾ (Font Size & Accessibility)' : language === 'en' ? 'Accessibility & Font Size' : 'अक्षर आकार एवं सुगमता (Accessibility)'}
-              style={{
-                borderColor: theme.accentGold,
-                backgroundColor: theme.cardBg,
-                color: theme.sacredMaroon,
-              }}
-              className="h-7 px-2.5 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
-              aria-label="Accessibility"
-            >
-              <Sliders className="w-3.5 h-3.5 text-amber-800 shrink-0" />
-              <span className="font-serif font-black text-[0.7rem] sm:text-[0.75rem] whitespace-nowrap">A+</span>
-            </button>
-
-            {/* Offline Readiness Status Indicator */}
-            <button
-              type="button"
-              id="header-network-status-btn"
-              onClick={() => {
-                if (bar3MovedDistance > 8) return;
-                onSelectView('health-diagnostic');
-              }}
-              title={
-                isOnline
-                  ? (isOfflineReady
-                      ? (language === 'pb' ? 'ਆਨਲਾਈਨ · ਔਫਲਾਈਨ ਕੈਸ਼ੇ ਤਿਆਰ (ਜਾਂਚਣ ਲਈ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? 'Online · Offline Cache Ready (Click to test)' : 'ऑनलाइन · ऑफ़लाइन कैशे तैयार (जांचने के लिए क्लिक करें)')
-                      : (language === 'pb' ? 'ਆਨਲਾਈਨ (ਡਾਇਗਨੋਸਟਿਕ ਖੋਲ੍ਹੋ)' : language === 'en' ? 'Online (Open Diagnostic)' : 'ऑनलाइन (डायग्नोस्टिक खोलें)'))
-                  : (language === 'pb' ? 'ਔਫਲਾਈਨ ਮੋਡ ਚਾਲੂ (ਜਾਂਚ ਲਈ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? 'Offline Mode Active (Click to inspect)' : 'ऑफ़लाइन मोड सक्रिय (जांचने के लिए क्लिक करें)')
-              }
-              style={{
-                borderColor: isOnline ? theme.accentGold : '#16A34A',
-                backgroundColor: isOnline ? theme.cardBg : 'rgba(22, 163, 74, 0.12)',
-                color: isOnline ? theme.sacredMaroon : '#166534',
-              }}
-              className="h-7 px-2 rounded-md border flex items-center justify-center gap-1 transition shadow-2xs shrink-0 whitespace-nowrap font-serif text-[0.625rem] font-bold cursor-pointer hover:scale-[1.03] active:scale-95"
-            >
-              {isOnline ? (
-                <>
-                  <Wifi className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span>{language === 'pb' ? 'ਆਨਲਾਈਨ' : language === 'en' ? 'Online' : 'ऑनलाइन'}</span>
-                </>
-              ) : (
-                <>
-                  <WifiOff className="w-3 h-3 text-emerald-700 shrink-0" />
-                  <span>{language === 'pb' ? 'ਔਫਲਾਈਨ' : language === 'en' ? 'Offline' : 'ऑफ़लाइन'}</span>
-                </>
-              )}
-            </button>
-
-            {/* Admin-Only Tool Trigger (प्रशासक टूल) */}
-            {isAdmin && (
+              {/* 1. Quick Divine Darshan Jump */}
               <button
                 type="button"
-                id="header-open-admin-injector-btn"
                 onClick={() => {
                   if (bar3MovedDistance > 8) return;
                   sacredHaptics.lightTap();
-                  window.dispatchEvent(new CustomEvent(OPEN_ADMIN_INJECTOR_EVENT));
+                  handleNavClick('divine-darshan');
                 }}
-                title="प्रशासक टूल (Admin Data Layer Injector)"
+                className="h-7 px-2.5 rounded-md border text-[0.65rem] sm:text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
                 style={{
-                  borderColor: theme.cardBorder,
-                  backgroundColor: theme.cardBg,
-                  color: theme.textSecondary,
+                  backgroundColor: theme.accentGoldLight,
+                  borderColor: theme.accentGold,
+                  color: theme.sacredMaroon
                 }}
-                className="h-7 px-2 rounded-md border flex items-center justify-center transition cursor-pointer opacity-80 hover:opacity-100 shrink-0 whitespace-nowrap"
-                aria-label="प्रशासक टूल"
+                title={language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦਿਵਯ ਦਰਸ਼ਨ' : language === 'en' ? 'Divine Darshan' : 'सतगुरु दिव्य दर्शन'}
               >
-                <Database className="w-3 h-3 text-amber-800 dark:text-amber-300 shrink-0" />
+                <Sparkles className="w-3 h-3 text-amber-700 shrink-0" />
+                <span className="font-serif font-bold whitespace-nowrap">
+                  {language === 'pb' ? 'ਪਾਵਨ ਦਰਸ਼ਨ' : language === 'en' ? 'Darshan' : 'पावन दर्शन'}
+                </span>
               </button>
-            )}
 
-            {/* Language Diagnostics / Tri-Lingual Status & Audit Trigger */}
-            <button
-              id="header-open-language-diagnostics-btn"
-              onClick={() => {
-                if (bar3MovedDistance > 8) return;
-                sacredHaptics.lightTap();
-                setShowLanguageDiagnostics(true);
-              }}
-              title={language === 'pb' ? 'ਭਾਸ਼ਾ ਡਾਇਗਨੌਸਟਿਕਸ ਤੇ ਆਡਿਟ' : language === 'en' ? 'Language Diagnostics & Audit' : 'भाषा डायग्नोस्टिक्स एवं ऑडिट'}
-              style={{
-                borderColor: theme.accentGold,
-                backgroundColor: theme.cardBg,
-                color: theme.sacredMaroon,
-              }}
-              className="h-7 px-2 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap font-serif text-[0.625rem] font-bold"
-            >
-              <span>🌐</span>
-              <span>{language.toUpperCase()}</span>
-            </button>
+              {/* 2. Quick Aarti Sanctuary Jump */}
+              <button
+                type="button"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  handleNavClick('aarti-sanctuary');
+                }}
+                className="h-7 px-2.5 rounded-md border text-[0.65rem] sm:text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
+                style={{
+                  backgroundColor: theme.cardBg,
+                  borderColor: theme.cardBorder,
+                  color: theme.sacredMaroon
+                }}
+                title={language === 'pb' ? 'ਸੰਧਿਆ ਆਰਤੀ' : language === 'en' ? 'Evening Aarti' : 'संध्या आरती'}
+              >
+                <Flame className="w-3 h-3 text-amber-600 shrink-0" />
+                <span className="font-serif whitespace-nowrap">
+                  {language === 'pb' ? 'ਆਰਤੀ' : language === 'en' ? 'Aarti' : 'आरती'}
+                </span>
+              </button>
 
-            {/* Language Switcher Control (kept cleanly in the same scrollable row) */}
-            <div 
-              className="flex items-center border rounded-md overflow-hidden font-bold shadow-2xs shrink-0 whitespace-nowrap h-7 p-0.5" 
-              style={{
-                borderColor: theme.mode === 'mystic_dark' ? '#F59E0B' : theme.accentGold,
-                backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.stepActiveBg
-              }}
-            >
-              {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
-                const isSelected = language === lng;
-                const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
-                return (
-                  <button
-                    key={lng}
-                    id={`header-lang-${lng}`}
-                    onClick={() => {
-                      if (bar3MovedDistance > 8) return;
-                      onSelectLanguage(lng);
-                    }}
-                    style={{
-                      backgroundColor: isSelected 
-                        ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon) 
-                        : 'transparent',
-                      color: isSelected 
-                        ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF') 
-                        : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textSecondary),
-                    }}
-                    className={`h-full px-2 rounded transition-all cursor-pointer flex items-center justify-center text-[0.625rem] whitespace-nowrap ${
-                      isSelected ? 'font-black shadow-xs' : 'font-semibold hover:opacity-90'
-                    }`}
-                    title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
-            </div>
+              {/* 3. Quick Daily Sakhi Jump */}
+              <button
+                type="button"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  handleNavClick('daily');
+                }}
+                className={`h-7 px-2.5 rounded-md border text-[0.65rem] sm:text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap ${
+                  currentView === 'daily' ? 'ring-1.5 ring-amber-500 font-black' : ''
+                }`}
+                style={{
+                  backgroundColor: currentView === 'daily' ? theme.stepActiveBg : theme.cardBg,
+                  borderColor: currentView === 'daily' ? theme.accentGold : theme.cardBorder,
+                  color: theme.sacredMaroon
+                }}
+                title={language === 'pb' ? 'ਦੈਨਿਕ ਪਾਵਨ ਸਾਖੀ' : language === 'en' ? 'Daily Sakhi' : 'दैनिक पावन साखी'}
+              >
+                <Sun className="w-3 h-3 text-amber-700 shrink-0" />
+                <span className="font-serif whitespace-nowrap">
+                  {language === 'pb' ? 'ਦੈਨਿਕ ਸਾਖੀ' : language === 'en' ? 'Daily Sakhi' : 'दैनिक साखी'}
+                </span>
+              </button>
+
+              {/* 4. Divine Blessing & Flower Shower Trigger */}
+              <button
+                type="button"
+                id="header-open-blessing-btn"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  onOpenBlessing();
+                }}
+                title={language === 'pb' ? 'ਸਤਿਗੁਰੂ ਅਸੀਸ ਤੇ ਪੁਸ਼ਪ ਵਰਖਾ' : language === 'en' ? 'Divine Blessing & Flower Shower' : 'सतगुरु आशीर्वाद एवं पुष्प वर्षा'}
+                style={{
+                  backgroundColor: theme.accentGoldLight,
+                  borderColor: theme.accentGold,
+                  color: theme.sacredMaroon,
+                }}
+                className="h-7 px-2.5 rounded-md border text-[0.65rem] sm:text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
+              >
+                <Sparkles className="w-3 h-3 text-amber-800 shrink-0" />
+                <span className="font-serif font-bold whitespace-nowrap">
+                  {language === 'pb' ? 'ਅਸੀਸ' : language === 'en' ? 'Blessing' : 'आशीर्वाद'}
+                </span>
+              </button>
+
+              {/* 5. Quick Font Style Picker Pill (7 Font Styles) */}
+              <button
+                type="button"
+                id="header-font-style-btn"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  setShowFontStylePopover((prev) => !prev);
+                }}
+                title={language === 'pb' ? 'ਫੌਂਟ ਸ਼ੈਲੀ ਬਦਲੋ (7 ਸ਼ੈਲੀਆਂ)' : language === 'en' ? 'Font Style (7 Options)' : 'लिपि एवं फॉन्ट शैली चुनें (7 विकल्प)'}
+                style={{
+                  borderColor: showFontStylePopover ? '#D97706' : theme.accentGold,
+                  backgroundColor: showFontStylePopover ? theme.accentGold : theme.cardBg,
+                  color: showFontStylePopover ? '#FFFFFF' : theme.sacredMaroon,
+                }}
+                className="h-7 px-2.5 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
+              >
+                <Type className="w-3 h-3 shrink-0" />
+                <span className="font-serif font-bold text-[0.65rem] sm:text-[0.6875rem] whitespace-nowrap">
+                  {activeFontOpt.icon} {language === 'pb' ? 'ਫੌਂਟ' : language === 'en' ? 'Font' : 'फॉन्ट'}
+                </span>
+              </button>
+
+              {/* 6. Unified Settings Pill (⚙️ सेटिंग्स) */}
+              <button
+                type="button"
+                id="header-open-settings-btn"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  setShowFontStylePopover(false);
+                  onOpenSettings();
+                }}
+                title={
+                  language === 'pb'
+                    ? 'ਸੈਟਿੰਗਜ਼ (ਥੀਮ, ਸੁਗਮਤਾ ਤੇ ਪਠਨ ਸਾਧਨ)'
+                    : language === 'en'
+                    ? 'Settings (Theme, Accessibility & Reading Suite)'
+                    : 'सेटिंग्स (सामान्य, सुगमता एवं पाठ साधन)'
+                }
+                style={{
+                  borderColor: theme.accentGold,
+                  backgroundColor: theme.accentGoldLight,
+                  color: theme.sacredMaroon,
+                }}
+                className="h-7 px-2.5 rounded-md border flex items-center justify-center gap-1.5 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
+                aria-label="Settings"
+              >
+                <Settings className="w-3.5 h-3.5 text-amber-800 shrink-0" />
+                <span className="font-serif font-bold text-[0.65rem] sm:text-[0.6875rem] whitespace-nowrap">
+                  {language === 'pb'
+                    ? 'ਸੈਟਿੰਗਜ਼'
+                    : language === 'en'
+                    ? 'Settings'
+                    : 'सेटिंग्स'}
+                </span>
+              </button>
+
+              {/* 7. Offline Readiness Status Indicator */}
+              <button
+                type="button"
+                id="header-network-status-btn"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  onSelectView('health-diagnostic');
+                }}
+                title={
+                  isOnline
+                    ? (isOfflineReady
+                        ? (language === 'pb' ? 'ਆਨਲਾਈਨ · ਔਫਲਾਈਨ ਕੈਸ਼ੇ ਤਿਆਰ (ਜਾਂਚਣ ਲਈ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? 'Online · Offline Cache Ready (Click to test)' : 'ऑनलाइन · ऑफ़लाइन कैशे तैयार (जांचने के लिए क्लिक करें)')
+                        : (language === 'pb' ? 'ਆਨਲਾਈਨ (ਡਾਇਗਨੋਸਟਿਕ ਖੋਲ੍ਹੋ)' : language === 'en' ? 'Online (Open Diagnostic)' : 'ऑनलाइन (डायग्नोस्टिक खोलें)'))
+                    : (language === 'pb' ? 'ਔਫਲਾਈਨ ਮੋਡ ਚਾਲੂ (ਜਾਂਚ ਲਈ ਕਲਿੱਕ ਕਰੋ)' : language === 'en' ? 'Offline Mode Active (Click to inspect)' : 'ऑफ़लाइन मोड सक्रिय (जांचने के लिए क्लिक करें)')
+                }
+                style={{
+                  borderColor: isOnline ? theme.accentGold : '#16A34A',
+                  backgroundColor: isOnline ? theme.cardBg : 'rgba(22, 163, 74, 0.12)',
+                  color: isOnline ? theme.sacredMaroon : '#166534',
+                }}
+                className="h-7 px-2 rounded-md border flex items-center justify-center gap-1 transition shadow-2xs shrink-0 whitespace-nowrap font-serif text-[0.625rem] font-bold cursor-pointer hover:scale-[1.03] active:scale-95"
+              >
+                {isOnline ? (
+                  <>
+                    <Wifi className="w-3 h-3 text-emerald-600 shrink-0" />
+                    <span>{language === 'pb' ? 'ਆਨਲਾਈਨ' : language === 'en' ? 'Online' : 'ऑनलाइन'}</span>
+                  </>
+                ) : (
+                  <>
+                    <WifiOff className="w-3 h-3 text-emerald-700 shrink-0" />
+                    <span>{language === 'pb' ? 'ਔਫਲਾਈਨ' : language === 'en' ? 'Offline' : 'ऑफ़लाइन'}</span>
+                  </>
+                )}
+              </button>
+
+              {/* 8. Admin-Only Tool Trigger (प्रशासक टूल) */}
+              {isAdmin && (
+                <button
+                  type="button"
+                  id="header-open-admin-injector-btn"
+                  onClick={() => {
+                    if (bar3MovedDistance > 8) return;
+                    sacredHaptics.lightTap();
+                    window.dispatchEvent(new CustomEvent(OPEN_ADMIN_INJECTOR_EVENT));
+                  }}
+                  title="प्रशासक टूल (Admin Data Layer Injector)"
+                  style={{
+                    borderColor: theme.cardBorder,
+                    backgroundColor: theme.cardBg,
+                    color: theme.textSecondary,
+                  }}
+                  className="h-7 px-2 rounded-md border flex items-center justify-center transition cursor-pointer opacity-80 hover:opacity-100 shrink-0 whitespace-nowrap"
+                  aria-label="प्रशासक टूल"
+                >
+                  <Database className="w-3 h-3 text-amber-800 dark:text-amber-300 shrink-0" />
+                </button>
+              )}
+
+              {/* 9. Language Diagnostics / Tri-Lingual Status & Audit Trigger */}
+              <button
+                type="button"
+                id="header-open-language-diagnostics-btn"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  setShowLanguageDiagnostics(true);
+                }}
+                title={language === 'pb' ? 'ਭਾਸ਼ਾ ਡਾਇਗਨੌਸਟਿਕਸ ਤੇ ਆਡਿਟ' : language === 'en' ? 'Language Diagnostics & Audit' : 'भाषा डायग्नोस्टिक्स एवं ऑडिट'}
+                style={{
+                  borderColor: theme.accentGold,
+                  backgroundColor: theme.cardBg,
+                  color: theme.sacredMaroon,
+                }}
+                className="h-7 px-2 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap font-serif text-[0.625rem] font-bold"
+              >
+                <span>🌐</span>
+                <span>{language.toUpperCase()}</span>
+              </button>
+
+              {/* 10. Language Switcher Control */}
+              <div 
+                className="flex items-center border rounded-md overflow-hidden font-bold shadow-2xs shrink-0 whitespace-nowrap h-7 p-0.5" 
+                style={{
+                  borderColor: theme.mode === 'mystic_dark' ? '#F59E0B' : theme.accentGold,
+                  backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.stepActiveBg
+                }}
+              >
+                {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
+                  const isSelected = language === lng;
+                  const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
+                  return (
+                    <button
+                      key={lng}
+                      type="button"
+                      id={`header-lang-${lng}`}
+                      onClick={() => {
+                        if (bar3MovedDistance > 8) return;
+                        onSelectLanguage(lng);
+                      }}
+                      style={{
+                        backgroundColor: isSelected 
+                          ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon) 
+                          : 'transparent',
+                        color: isSelected 
+                          ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF') 
+                          : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textSecondary),
+                      }}
+                      className={`h-full px-2 rounded transition-all cursor-pointer flex items-center justify-center text-[0.625rem] whitespace-nowrap ${
+                        isSelected ? 'font-black shadow-xs' : 'font-semibold hover:opacity-90'
+                      }`}
+                      title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Right Move Arrow Button */}
@@ -2180,6 +2184,76 @@ export const Layout: React.FC<LayoutProps> = ({
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
+
+          {/* Floating Quick Font Style Picker Popover (7 Font Styles) */}
+          {showFontStylePopover && (
+            <>
+              <div
+                className="fixed inset-0 z-40"
+                onClick={() => setShowFontStylePopover(false)}
+              />
+              <div
+                style={{
+                  backgroundColor: theme.cardBg,
+                  borderColor: theme.accentGold,
+                  color: theme.textPrimary,
+                }}
+                className="absolute left-2 right-2 sm:left-auto sm:right-6 sm:w-[420px] top-full mt-1.5 z-50 rounded-2xl border-2 shadow-2xl p-3 space-y-2.5"
+              >
+                <div className="flex items-center justify-between gap-2 border-b pb-2" style={{ borderColor: theme.cardBorder }}>
+                  <div className="flex items-center gap-1.5">
+                    <Type className="w-4 h-4 text-amber-700" />
+                    <span className="font-serif font-black text-xs sm:text-sm" style={{ color: theme.sacredMaroon }}>
+                      {language === 'pb' ? 'ਪਾਵਨ ਫੌਂਟ ਸ਼ੈਲੀ ਚੁਣੋ (7 ਵਿਕਲਪ)' : language === 'en' ? 'Choose Reading Font Style (7 Options)' : 'पावन लिपि व फॉन्ट शैली चुनें (7 विकल्प)'}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowFontStylePopover(false)}
+                    className="p-1 rounded-lg hover:bg-black/10 cursor-pointer"
+                    aria-label="Close font selector"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-[60vh] overflow-y-auto pr-0.5">
+                  {FONT_STYLE_OPTIONS.map((opt) => {
+                    const isSelected = fontStyle === opt.id;
+                    return (
+                      <button
+                        key={opt.id}
+                        type="button"
+                        onClick={() => {
+                          sacredHaptics.lightTap();
+                          setFontStyle(opt.id);
+                          setShowFontStylePopover(false);
+                        }}
+                        style={{
+                          backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.bgSecondary,
+                          borderColor: isSelected ? theme.accentGold : theme.cardBorder,
+                          color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                        }}
+                        className={`p-2.5 rounded-xl border text-left transition cursor-pointer flex flex-col gap-0.5 ${
+                          isSelected ? 'shadow-md ring-2 ring-amber-400' : 'hover:opacity-90'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between gap-1">
+                          <span className="text-[11px] font-bold truncate">
+                            {opt.icon} {opt.label[language] || opt.label.hi}
+                          </span>
+                          {isSelected && <span className="text-[10px] font-black shrink-0">✓</span>}
+                        </div>
+                        <span className={`text-sm font-bold leading-snug ${opt.previewClass}`}>
+                          {opt.sample[language] || opt.sample.hi}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Dynamic Morning / Evening Sadhana Prompt Banner removed as per user request */}

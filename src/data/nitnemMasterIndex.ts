@@ -8,6 +8,9 @@ export interface SubChapterIndexItem {
   hindi: string;
   punjabi: string;
   english?: string;
+  subtitle_hi?: string;
+  subtitle_pb?: string;
+  subtitle_en?: string;
 }
 
 export interface NitnemOutlineChapter {
@@ -15,6 +18,9 @@ export interface NitnemOutlineChapter {
   hindi: string;
   punjabi: string;
   english: string;
+  subtitle_hi?: string;
+  subtitle_pb?: string;
+  subtitle_en?: string;
   sectionId?: string;
   children?: SubChapterIndexItem[];
 }
@@ -336,7 +342,10 @@ export const TRADITIONAL_GUTKA_OUTLINES: Record<
       number: '१',
       hindi: 'आदि गायत्री',
       punjabi: 'ਆਦਿ ਗਾਇਤਰੀ',
-      english: 'Adi Gayatri',
+      english: 'Aadi Gayatri',
+      subtitle_hi: 'मूल / परोक्ष ब्रह्म गायत्री',
+      subtitle_pb: 'ਮੂਲ / ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਗਾਇਤਰੀ',
+      subtitle_en: 'Mool / Paroksh Brahma Gayatri',
       sectionId: 'gayatri-aadi',
     },
     {
@@ -344,6 +353,9 @@ export const TRADITIONAL_GUTKA_OUTLINES: Record<
       hindi: 'प्रभात गायत्री',
       punjabi: 'ਪ੍ਰਭਾਤ ਗਾਇਤਰੀ',
       english: 'Prabhat Gayatri',
+      subtitle_hi: 'प्रातः काल / ब्रह्म मुहूर्त',
+      subtitle_pb: 'ਪ੍ਰਾਤਹ ਕਾਲ / ਬ੍ਰਹਮ ਮੁਹੂਰਤ',
+      subtitle_en: 'Early Morning / Brahma Muhurta',
       sectionId: 'gayatri-prabhat',
     },
     {
@@ -351,6 +363,9 @@ export const TRADITIONAL_GUTKA_OUTLINES: Record<
       hindi: 'मध्याह्न गायत्री',
       punjabi: 'ਮਧਿਆਹਨ ਗਾਇਤਰੀ',
       english: 'Madhyahn Gayatri',
+      subtitle_hi: 'दोपहर का समय',
+      subtitle_pb: 'ਦੁਪਹਿਰ ਦਾ ਸਮਾਂ',
+      subtitle_en: 'Midday / Noon Hour',
       sectionId: 'gayatri-madhyahan',
     },
     {
@@ -358,13 +373,19 @@ export const TRADITIONAL_GUTKA_OUTLINES: Record<
       hindi: 'संध्या गायत्री',
       punjabi: 'ਸੰਧਿਆ ਗਾਇਤਰੀ',
       english: 'Sandhya Gayatri',
+      subtitle_hi: 'सायंकाल',
+      subtitle_pb: 'ਸ਼ਾਮ ਦਾ ਸਮਾਂ (ਸਾਯੰਕਾਲ)',
+      subtitle_en: 'Evening Twilight',
       sectionId: 'gayatri-sandhya',
     },
     {
       number: '५',
-      hindi: 'परोक्ष ब्रह्म गायत्री',
-      punjabi: 'ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਗਾਇਤਰੀ',
-      english: 'Paroksh Brahma Gayatri',
+      hindi: 'महानिशा गायत्री',
+      punjabi: 'ਮਹਾਨਿਸ਼ਾ ਗਾਇਤਰੀ',
+      english: 'Mahanisha Gayatri',
+      subtitle_hi: 'अर्धरात्रि / परोक्ष ब्रह्म अजपा ध्यान',
+      subtitle_pb: 'ਅੱਧੀ ਰਾਤ / ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਅਜਪਾ ਧਿਆਨ',
+      subtitle_en: 'Midnight / Paroksh Brahma Ajapa Meditation',
       sectionId: 'gayatri-madhyan-2',
     },
   ],

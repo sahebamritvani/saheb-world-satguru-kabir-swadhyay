@@ -77,13 +77,58 @@
       "major_category_id": "gayatri",
       "hindi_title": "३. गायत्री",
       "punjabi_title": "੩. ਗਾਇਤਰੀ",
-      "english_title": "3. Gayatri Path",
+      "english_title": "3. Gayatri",
       "sub_chapters": [
-        { "id": "gayatri_1", "section_id": "gayatri-aadi", "hindi": "आदि गायत्री", "punjabi": "ਆਦਿ ਗਾਇਤਰੀ", "english": "Adi Gayatri" },
-        { "id": "gayatri_2", "section_id": "gayatri-prabhat", "hindi": "प्रभात गायत्री", "punjabi": "ਪ੍ਰਭਾਤ ਗਾਇਤਰੀ", "english": "Prabhat Gayatri" },
-        { "id": "gayatri_3", "section_id": "gayatri-madhyahan", "hindi": "मध्याह्न गायत्री", "punjabi": "ਮਧਿਆਹਨ ਗਾਇਤਰੀ", "english": "Madhyahn Gayatri" },
-        { "id": "gayatri_4", "section_id": "gayatri-sandhya", "hindi": "संध्या गायत्री", "punjabi": "ਸੰਧਿਆ ਗਾਇਤਰੀ", "english": "Sandhya Gayatri" },
-        { "id": "gayatri_5", "section_id": "gayatri-madhyan-2", "hindi": "परोक्ष ब्रह्म गायत्री", "punjabi": "ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਗਾਇਤਰੀ", "english": "Paroksh Brahma Gayatri" }
+        {
+          "id": "gayatri_1",
+          "section_id": "gayatri-aadi",
+          "hindi": "आदि गायत्री",
+          "punjabi": "ਆਦਿ ਗਾਇਤਰੀ",
+          "english": "Aadi Gayatri",
+          "subtitle_hi": "मूल / परोक्ष ब्रह्म गायत्री",
+          "subtitle_pb": "ਮੂਲ / ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਗਾਇਤਰੀ",
+          "subtitle_en": "Mool / Paroksh Brahma Gayatri"
+        },
+        {
+          "id": "gayatri_2",
+          "section_id": "gayatri-prabhat",
+          "hindi": "प्रभात गायत्री",
+          "punjabi": "ਪ੍ਰਭਾਤ ਗਾਇਤਰੀ",
+          "english": "Prabhat Gayatri",
+          "subtitle_hi": "प्रातः काल / ब्रह्म मुहूर्त",
+          "subtitle_pb": "ਪ੍ਰਾਤਹ ਕਾਲ / ਬ੍ਰਹਮ ਮੁਹੂਰਤ",
+          "subtitle_en": "Early Morning / Brahma Muhurta"
+        },
+        {
+          "id": "gayatri_3",
+          "section_id": "gayatri-madhyahan",
+          "hindi": "मध्याह्न गायत्री",
+          "punjabi": "ਮਧਿਆਹਨ ਗਾਇਤਰੀ",
+          "english": "Madhyahn Gayatri",
+          "subtitle_hi": "दोपहर का समय",
+          "subtitle_pb": "ਦੁਪਹਿਰ ਦਾ ਸਮਾਂ",
+          "subtitle_en": "Midday / Noon Hour"
+        },
+        {
+          "id": "gayatri_4",
+          "section_id": "gayatri-sandhya",
+          "hindi": "संध्या गायत्री",
+          "punjabi": "ਸੰਧਿਆ ਗਾਇਤਰੀ",
+          "english": "Sandhya Gayatri",
+          "subtitle_hi": "सायंकाल",
+          "subtitle_pb": "ਸ਼ਾਮ ਦਾ ਸਮਾਂ (ਸਾਯੰਕਾਲ)",
+          "subtitle_en": "Evening Twilight"
+        },
+        {
+          "id": "gayatri_5",
+          "section_id": "gayatri-madhyan-2",
+          "hindi": "महानिशा गायत्री",
+          "punjabi": "ਮਹਾਨਿਸ਼ਾ ਗਾਇਤਰੀ",
+          "english": "Mahanisha Gayatri",
+          "subtitle_hi": "अर्धरात्रि / परोक्ष ब्रह्म अजपा ध्यान",
+          "subtitle_pb": "ਅੱਧੀ ਰਾਤ / ਪਰੋਕਸ਼ ਬ੍ਰਹਮ ਅਜਪਾ ਧਿਆਨ",
+          "subtitle_en": "Midnight / Paroksh Brahma Ajapa Meditation"
+        }
       ]
     },
     {

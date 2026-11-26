@@ -80,10 +80,12 @@ import {
   markNitnemSadhanaDone,
   subscribeToHaziri,
   SADHANA_GOAL_EVENT,
+  HaziriState,
 } from '../services/haziriStore';
+import { HaziriModal } from './HaziriModal';
 import { translations, getVerseTypeLabel } from '../data/translations';
 import { sacredHaptics } from '../services/haptics';
-import { useAppTheme } from '../theme/ThemeContext';
+import { useAppTheme, FONT_STYLE_OPTIONS } from '../theme/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { speechReciter, ambientReaderAudio, DhunSoundType } from '../services/audioDhun';
 import { AmbientSoundPlayer } from './AmbientSoundPlayer';
@@ -381,7 +383,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   onClose,
   onOpenSettings
 }) => {
-  const { theme, themeMode, setThemeMode, isDarkMode, globalWallpaper, fontSize, setFontSize, lineHeight, setLineHeight, widthMode, setWidthMode, fontFamily, setFontFamily } = useAppTheme();
+  const { theme, themeMode, setThemeMode, isDarkMode, globalWallpaper, fontSize, setFontSize, lineHeight, setLineHeight, widthMode, setWidthMode, fontFamily, fontStyle, setFontStyle } = useAppTheme();
   const { language: contextLang, t: contextT } = useLanguage();
   const language = propLanguage || contextLang;
   const lang = language;
@@ -464,6 +466,16 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   }, [mergeResolvedSections]);
 
   // Live refresh when Admin Data Injector injects or purges Slot #1 without page reload
+  const [haziriModalState, setHaziriModalState] = useState<HaziriState>(() => getHaziriState());
+  const [showNitnemHaziriModal, setShowNitnemHaziriModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    const unsubHz = subscribeToHaziri((hz) => {
+      setHaziriModalState(hz);
+    });
+    return () => unsubHz();
+  }, []);
+
   useEffect(() => {
     const handleAdminSlotsUpdated = () => {
       loadAllNitnemSections()
@@ -2471,13 +2483,20 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                   </button>
                 </div>
               ) : (
-                <div
+                <button
+                  type="button"
+                  id="nitnem-haziri-sankalp-card"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setHaziriModalState(getHaziriState());
+                    setShowNitnemHaziriModal(true);
+                  }}
                   style={{
                     backgroundColor: theme.cardBg,
                     borderColor: theme.cardBorder,
                     color: theme.textPrimary,
                   }}
-                  className="border-2 rounded-3xl p-4 sm:p-5 shadow-sm backdrop-blur-md flex flex-col justify-between gap-3"
+                  className="border-2 rounded-3xl p-4 sm:p-5 shadow-sm backdrop-blur-md flex flex-col justify-between gap-3 text-left cursor-pointer hover:border-amber-500/70 hover:shadow-md active:scale-[0.99] transition-all w-full"
                 >
                   <div className="space-y-1">
                     <span style={{ color: theme.accentGold }} className="text-[0.6875rem] font-mono font-bold uppercase tracking-wider block">
@@ -2496,11 +2515,13 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         : 'किसी भी प्रमुख पाठ की समाप्ति पर पावन हाज़िरी दर्ज करें।'}
                     </p>
                   </div>
-                  <div style={{ color: theme.accentGold, borderColor: theme.cardBorder }} className="flex items-center justify-between text-xs font-serif font-bold pt-2 border-t">
+                  <div style={{ color: theme.accentGold, borderColor: theme.cardBorder }} className="flex items-center justify-between text-xs font-serif font-bold pt-2 border-t w-full">
                     <span>🔥 {haziriStreak} {language === 'pb' ? 'ਦਿਨ ਲੜੀ' : language === 'en' ? 'Day Streak' : 'दिन निरंतर'}</span>
-                    <span>{haziriMarkedToday ? '🙏 ✓' : '🕊️'}</span>
+                    <span className="inline-flex items-center gap-1 underline decoration-dotted">
+                      {haziriMarkedToday ? '🙏 ✓' : (language === 'pb' ? 'ਖੋਲ੍ਹੋ' : language === 'en' ? 'Open' : 'खोलें')} →
+                    </span>
                   </div>
-                </div>
+                </button>
               )}
             </div>
 
@@ -2719,6 +2740,12 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                 : language === 'en'
                                 ? chapter.english
                                 : chapter.hindi;
+                            const chapterSubtitle =
+                              language === 'pb'
+                                ? chapter.subtitle_pb
+                                : language === 'en'
+                                ? chapter.subtitle_en
+                                : chapter.subtitle_hi;
                             const targetSectionId =
                               chapter.sectionId ||
                               chapter.children?.[0]?.section_id ||
@@ -2753,9 +2780,16 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                     >
                                       {chapter.number}
                                     </span>
-                                    <h4 style={{ color: theme.textPrimary }} className="font-serif font-bold text-xs sm:text-sm truncate">
-                                      {chapterTitle}
-                                    </h4>
+                                    <div className="min-w-0">
+                                      <h4 style={{ color: theme.textPrimary }} className="font-serif font-bold text-xs sm:text-sm truncate">
+                                        {chapterTitle}
+                                      </h4>
+                                      {chapterSubtitle && (
+                                        <p style={{ color: theme.textSecondary }} className="text-[0.6875rem] font-serif opacity-80 truncate mt-0.5">
+                                          ({chapterSubtitle})
+                                        </p>
+                                      )}
+                                    </div>
                                   </div>
 
                                   <div className="flex items-center gap-1 shrink-0">
@@ -4705,6 +4739,17 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         />
       )}
 
+      {/* Nitnem Haziri Sankalp Modal */}
+      <HaziriModal
+        isOpen={showNitnemHaziriModal}
+        onClose={() => setShowNitnemHaziriModal(false)}
+        language={language}
+        haziriState={haziriModalState}
+        isTodayMarked={haziriMarkedToday}
+        onMarkNitnemHaziri={handleMarkNitnemPathHaziri}
+        onTriggerFlowerShower={() => triggerSacredFlowerShower()}
+      />
+
       {/* Collapsible Bottom Sheet Panel for Settings & Controls (Stays hidden until triggered) */}
                     <AnimatePresence>
                       {isSettingsExpanded && (
@@ -4922,30 +4967,28 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                       </div>
                                     </div>
 
-                                    {/* Font Style (Serif vs Sans) */}
+                                    {/* Font Style (7 Script Styles) */}
                                     <div className="space-y-1.5">
                                       <span className="text-[0.6875rem] font-serif font-bold text-gray-600 dark:text-gray-300 block">
-                                        ✒️ {language === 'pb' ? 'ਅੱਖਰ ਸ਼ੈਲੀ:' : language === 'en' ? 'Font Style:' : 'लिपि शैली (Font Style):'}
+                                        ✒️ {language === 'pb' ? 'ਅੱਖਰ ਤੇ ਫੌਂਟ ਸ਼ੈਲੀ (7 ਵਿਕਲਪ):' : language === 'en' ? 'Font Style (7 Options):' : 'लिपि एवं फॉन्ट शैली (7 विकल्प):'}
                                       </span>
-                                      <div className="flex items-center gap-1">
-                                        {([
-                                          { id: 'serif' as const, label: language === 'pb' ? '📜 ਗ੍ਰੰਥ (Serif)' : language === 'en' ? '📜 Granth (Serif)' : '📜 ग्रंथ (Serif)' },
-                                          { id: 'sans' as const, label: language === 'pb' ? '🔤 ਸਰਲ (Sans)' : language === 'en' ? '🔤 Simple (Sans)' : '🔤 सरल (Sans)' },
-                                        ]).map(ff => (
+                                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+                                        {FONT_STYLE_OPTIONS.map(ff => (
                                           <button
                                             key={ff.id}
                                             type="button"
                                             onClick={() => {
                                               sacredHaptics.lightTap();
-                                              setFontFamily(ff.id);
+                                              setFontStyle(ff.id);
                                             }}
-                                            className={`min-h-[40px] sm:min-h-[34px] flex-1 py-1 px-2 rounded-xl text-xs font-serif font-bold transition-all border cursor-pointer ${
-                                              fontFamily === ff.id
-                                                ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
+                                            className={`min-h-[38px] sm:min-h-[34px] py-1.5 px-2 rounded-xl text-[11px] font-bold transition-all border cursor-pointer text-left flex flex-col gap-0.5 ${
+                                              fontStyle === ff.id
+                                                ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs ring-1 ring-amber-400'
                                                 : 'bg-white/80 dark:bg-zinc-800/80 text-gray-800 dark:text-gray-200 border-gray-200 dark:border-zinc-700 hover:bg-amber-50'
                                             }`}
                                           >
-                                            {ff.label}
+                                            <span className="truncate">{ff.icon} {ff.label[language] || ff.label.hi}</span>
+                                            <span className={`text-[10px] opacity-80 truncate ${ff.previewClass}`}>{ff.sample[language] || ff.sample.hi}</span>
                                           </button>
                                         ))}
                                       </div>
