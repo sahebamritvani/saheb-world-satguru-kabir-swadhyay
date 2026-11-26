@@ -233,10 +233,52 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
   };
 
   const [targetPace, setTargetPace] = useState<ReaderTarget>(21);
-  const [showLineGuide, setShowLineGuide] = useState<boolean>(true);
-  const [showMeaning, setShowMeaning] = useState<boolean>(true);
+  const [showLineGuide, setShowLineGuide] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_focus_ruler');
+      return saved === null ? true : saved === 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [showMeaning, setShowMeaning] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_show_bhavarth');
+      return saved === null ? true : saved !== 'false';
+    } catch {
+      return true;
+    }
+  });
   const [individualToggle, setIndividualToggle] = useState<Record<number | string, boolean>>({});
   const [activeVerseIndex, setActiveVerseIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const handleBhavarthChanged = (e: Event) => {
+      const ce = e as CustomEvent;
+      if (typeof ce.detail?.show === 'boolean') {
+        setShowMeaning(ce.detail.show);
+        setIndividualToggle({});
+      } else {
+        try {
+          const saved = localStorage.getItem('sahebworld_show_bhavarth');
+          setShowMeaning(saved === null ? true : saved !== 'false');
+          setIndividualToggle({});
+        } catch {}
+      }
+    };
+    const handleFocusRulerChanged = (e: Event) => {
+      const ce = e as CustomEvent;
+      if (typeof ce.detail?.active === 'boolean') {
+        setShowLineGuide(ce.detail.active);
+      }
+    };
+    window.addEventListener('sahebworld_bhavarth_changed', handleBhavarthChanged);
+    window.addEventListener('sahebworld_focus_ruler_changed', handleFocusRulerChanged);
+    return () => {
+      window.removeEventListener('sahebworld_bhavarth_changed', handleBhavarthChanged);
+      window.removeEventListener('sahebworld_focus_ruler_changed', handleFocusRulerChanged);
+    };
+  }, []);
 
   const isMeaningVisible = (verseId: number | string) => {
     if (individualToggle[verseId] !== undefined) {
@@ -1596,6 +1638,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             language={language} 
             onSelectLanguage={onSelectLanguage} 
             onClose={() => setSelectedGranthSlug('')}
+            onOpenSettings={onOpenSettings}
           />
         </Suspense>
       ) : (
@@ -1947,8 +1990,13 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               type="button"
               onClick={() => {
                 sacredHaptics.lightTap();
-                setShowMeaning(!showMeaning);
+                const next = !showMeaning;
+                setShowMeaning(next);
                 setIndividualToggle({});
+                try {
+                  localStorage.setItem('sahebworld_show_bhavarth', String(next));
+                  window.dispatchEvent(new CustomEvent('sahebworld_bhavarth_changed', { detail: { show: next } }));
+                } catch {}
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 showMeaning
@@ -1970,7 +2018,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
               type="button"
               onClick={() => {
                 sacredHaptics.lightTap();
-                setShowLineGuide(!showLineGuide);
+                const next = !showLineGuide;
+                setShowLineGuide(next);
+                try {
+                  localStorage.setItem('sahebworld_focus_ruler', String(next));
+                  window.dispatchEvent(new CustomEvent('sahebworld_focus_ruler_changed', { detail: { active: next } }));
+                } catch {}
               }}
               className={`px-2.5 py-1.5 rounded-xl border font-bold text-xs flex items-center gap-1.5 transition cursor-pointer shrink-0 ${
                 showLineGuide
@@ -3439,7 +3492,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       </div>
 
                       {/* Main Sacred Verse Lines (Interactive Sandhukkari Words) */}
-                      <div className={`space-y-3 py-2 text-center md:text-left font-serif font-black ${fontStyle.verse}`} style={{ color: themeStyle.text }}>
+                      <div className={`space-y-3 py-2 text-center md:text-left ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-black ${fontStyle.verse}`} style={{ color: themeStyle.text }}>
                         {verse.lines[language]?.map((line, lIdx) => (
                           <p key={lIdx} className="leading-relaxed drop-shadow-2xs">
                             {renderInteractiveLine(line)}
@@ -3454,7 +3507,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         return (
                           <div
                             style={{ backgroundColor: themeStyle.badgeBg, borderColor: themeStyle.border }}
-                            className="p-3.5 rounded-2xl border text-xs space-y-1.5 font-serif"
+                            className={`p-3.5 rounded-2xl border text-xs space-y-1.5 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'}`}
                           >
                             <span className="font-bold text-amber-700 block text-[0.6875rem] uppercase tracking-wider">
                               {language === 'pb' ? 'ਅੱਖਰੀ ਅਰਥ (ਸ਼ਬਦਾਰਥ):' : language === 'en' ? 'Glossary (Word Meanings):' : t.shabdarthLabel}
@@ -3478,7 +3531,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       {verse.bhavarth && (verse.bhavarth[language] || verse.bhavarth.hi) && (
                         <div
                           style={{ backgroundColor: themeStyle.highlight, borderColor: themeStyle.border }}
-                          className="p-4 rounded-2xl border text-xs sm:text-sm font-serif leading-relaxed"
+                          className={`p-4 rounded-2xl border text-xs sm:text-sm ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed`}
                         >
                           <div className="font-bold text-amber-600 mb-1 flex items-center gap-1.5">
                             <Sparkles className="w-3.5 h-3.5" />
@@ -3791,7 +3844,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             <p
                               key={lIdx}
                               style={{ color: themeStyle.text }}
-                              className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black ${fontStyle.verse}`}
+                              className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-bold sm:font-black ${fontStyle.verse}`}
                             >
                               {renderInteractiveLine(line)}
                             </p>
@@ -3861,7 +3914,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           return (
                             <div
                               style={{ backgroundColor: themeStyle.badgeBg, borderColor: themeStyle.border }}
-                              className="p-3 rounded-xl border text-xs space-y-1 font-serif"
+                              className={`p-3 rounded-xl border text-xs space-y-1 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'}`}
                             >
                               <span className="font-bold text-amber-700 block text-[0.6875rem] uppercase tracking-wider">
                                 {language === 'pb' ? 'ਅੱਖਰੀ ਅਰਥ (ਸ਼ਬਦਾਰਥ):' : language === 'en' ? 'Word Meanings:' : t.shabdarthLabel}
@@ -3883,7 +3936,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                         {/* Step 2: Bhavarth Box */}
                         {verse.bhavarth && (verse.bhavarth[language] || verse.bhavarth.hi) && (
-                          <div className="space-y-1.5 font-serif p-3 rounded-xl bg-amber-500/5 dark:bg-amber-950/20 border border-amber-500/15">
+                          <div className={`space-y-1.5 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} p-3 rounded-xl bg-amber-500/5 dark:bg-amber-950/20 border border-amber-500/15`}>
                             <span className="text-xs font-bold text-amber-700 dark:text-amber-300 flex items-center gap-1.5">
                               <span>📖</span>
                               <span>{language === 'pb' ? 'ਪੜਾਅ ੨: ਭਾਵਾਰਥ' : language === 'en' ? 'Step 2: Core Meaning' : 'चरण २: शब्दार्थ एवं भावार्थ'}</span>
@@ -3898,7 +3951,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                         {/* Step 3: Contemplation */}
                         {verse.contemplation && (verse.contemplation[language] || verse.contemplation.hi) && (
-                          <div className="space-y-1.5 font-serif p-3 rounded-xl bg-blue-500/5 dark:bg-blue-950/20 border border-blue-500/15">
+                          <div className={`space-y-1.5 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} p-3 rounded-xl bg-blue-500/5 dark:bg-blue-950/20 border border-blue-500/15`}>
                             <span className="text-xs font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1.5">
                               <span>💭</span>
                               <span>{language === 'pb' ? 'ਪੜਾਅ ੩: ਦੈਨਿਕ ਚਿੰਤਨ' : language === 'en' ? 'Step 3: Contemplation' : 'चरण ३: दैनिक चिंतन एवं आत्म-मनन'}</span>
@@ -3913,7 +3966,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                         {/* Step 4: Practical Application */}
                         {verse.practicalApplication && (verse.practicalApplication[language] || verse.practicalApplication.hi) && (
-                          <div className="space-y-1.5 font-serif p-3 rounded-xl bg-emerald-500/5 dark:bg-emerald-950/20 border border-emerald-500/15">
+                          <div className={`space-y-1.5 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} p-3 rounded-xl bg-emerald-500/5 dark:bg-emerald-950/20 border border-emerald-500/15`}>
                             <span className="text-xs font-bold text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5">
                               <span>🌿</span>
                               <span>{language === 'pb' ? 'ਪੜਾਅ ੪: ਜੀਵਨ ਆਚਰਨ' : language === 'en' ? 'Step 4: Living Practice' : 'चरण ४: व्यावहारिक आचरण एवं जीवन उपयोग'}</span>
@@ -3928,7 +3981,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                         {/* Step 5: Devotional Prayer */}
                         {verse.samarpanPrayer && (verse.samarpanPrayer[language] || verse.samarpanPrayer.hi) && (
-                          <div className="space-y-1.5 font-serif p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/20 border border-purple-500/15">
+                          <div className={`space-y-1.5 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/20 border border-purple-500/15`}>
                             <span className="text-xs font-bold text-purple-700 dark:text-purple-300 flex items-center gap-1.5">
                               <span>🙏</span>
                               <span>{language === 'pb' ? 'ਪੜਾਅ ੫: ਸਮਰਪਣ ਤੇ ਅਰਦਾਸ' : language === 'en' ? 'Step 5: Prayer & Surrender' : 'चरण ५: समर्पण एवं पावन प्रार्थना'}</span>
@@ -3945,7 +3998,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         {verse.spiritualEssence && !verse.contemplation && (verse.spiritualEssence[language] || verse.spiritualEssence.hi) && (
                           <div
                             style={{ backgroundColor: themeStyle.card, borderColor: themeStyle.border }}
-                            className="p-3 rounded-xl border flex items-start gap-2 text-xs font-serif"
+                            className={`p-3 rounded-xl border flex items-start gap-2 text-xs ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'}`}
                           >
                             <Sparkles className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                             <div>
@@ -4056,37 +4109,36 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   }
                 }}
                 style={{
-                  backgroundColor: highlightStyle?.backgroundColor || (isGuideActive ? themeStyle.highlight : themeStyle.card),
-                  borderColor: highlightStyle?.borderColor || (isGuideActive ? themeStyle.accent : themeStyle.border),
+                  backgroundColor: highlightStyle?.backgroundColor || (isGuideActive ? themeStyle.highlight : (readerTheme === 'mool' ? '#FDF8EE' : 'transparent')),
                 }}
-                className={`p-4 sm:p-6 rounded-2xl border-2 transition-all duration-200 cursor-pointer shadow-sm relative ${
-                  isGuideActive ? 'ring-2 ring-amber-500/50 shadow-md' : 'hover:border-amber-500/40'
+                className={`py-4 sm:py-6 px-2 sm:px-4 border-b border-[rgba(217,119,6,0.25)] dark:border-amber-500/25 last:border-b-0 transition-all duration-200 cursor-pointer relative ${
+                  isGuideActive ? 'ring-1 ring-amber-500/40 rounded-xl' : ''
                 }`}
               >
                 {/* Active Golden Beam Marker */}
                 {isGuideActive && (
-                  <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-amber-500 to-orange-600 rounded-l-2xl" />
+                  <div className="absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b from-amber-500 to-orange-600 rounded-full" />
                 )}
 
                 {/* Verse Header (Badge, Type, Actions) */}
-                <div className="flex items-center justify-between border-b pb-3 mb-3" style={{ borderColor: themeStyle.border }}>
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between gap-[6px] border-b pb-2.5 mb-3" style={{ borderColor: themeStyle.border }}>
+                  <div className="flex items-center gap-[6px] flex-1 min-w-0">
                     <span
                       style={{ backgroundColor: themeStyle.badgeBg }}
-                      className="px-2.5 py-0.5 rounded-md text-xs font-black font-serif"
+                      className="px-2.5 py-0.5 rounded-md text-xs font-black font-serif truncate"
                     >
                       {getVerseTypeLabel(verse.type, verse.id, language)} #{globalIdx + 1}
                     </span>
 
                     {/* Quick Highlight Tag */}
                     {highlight && (
-                      <span className="text-[0.625rem] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800">
-                        हाइलाइट किया गया
+                      <span className="text-[0.625rem] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 shrink-0">
+                        हाइलाइट
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-xs">
+                  <div className="flex items-center gap-[6px] text-xs shrink-0">
                     {/* Highlighter Picker Button */}
                     <div className="hidden sm:flex items-center gap-1 mr-1">
                       {(['saffron', 'green', 'yellow'] as HighlightColor[]).map((clr) => (
@@ -4189,17 +4241,17 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         interlLines.push(
                           <div key={i} className="mb-4 pb-2 border-b border-black/5 dark:border-white/5 last:border-0">
                             {pb[i] && (
-                              <div className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black mb-1 ${fontStyle.verse}`} style={{ color: themeStyle.text }}>
+                              <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-bold sm:font-black mb-1 ${fontStyle.verse}`} style={{ color: themeStyle.text }}>
                                 {renderInteractiveLine(pb[i])}
                               </div>
                             )}
                             {hi[i] && (
-                              <div className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black mb-1 opacity-90 ${fontStyle.verse}`} style={{ color: themeStyle.accent }}>
+                              <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-bold sm:font-black mb-1 opacity-90 ${fontStyle.verse}`} style={{ color: themeStyle.accent }}>
                                 {renderInteractiveLine(hi[i])}
                               </div>
                             )}
                             {en[i] && (
-                              <div className="font-serif text-sm italic opacity-75 mt-1" style={{ color: themeStyle.text }}>
+                              <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} text-sm italic opacity-75 mt-1`} style={{ color: themeStyle.text }}>
                                 {en[i]}
                               </div>
                             )}
@@ -4213,7 +4265,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       <p
                         key={lIdx}
                         style={{ color: themeStyle.text }}
-                        className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold ${fontStyle.verse}`}
+                        className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-bold ${fontStyle.verse}`}
                       >
                         {renderInteractiveLine(line)}
                       </p>
@@ -4233,7 +4285,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                             backgroundColor: themeStyle.badgeBg,
                             borderColor: themeStyle.border 
                           }}
-                          className="p-3 rounded-xl text-xs space-y-1 my-3 font-serif border"
+                          className={`p-3 rounded-xl text-xs space-y-1 my-3 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} border`}
                         >
                           <span className="font-bold text-amber-700 block text-[0.6875rem]">
                             {language === 'pb' ? 'ਅੱਖਰੀ ਅਰਥ (ਸ਼ਬਦਾਰਥ):' : language === 'en' ? 'Word Meanings:' : t.shabdarthLabel}
@@ -4256,10 +4308,10 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     {/* Step 2: Bhavarth */}
                     {verse.bhavarth && (verse.bhavarth[language] || verse.bhavarth.hi) && (
                       <div className="pt-2 border-t space-y-1" style={{ borderColor: themeStyle.border }}>
-                        <span className="text-[0.6875rem] font-bold text-amber-700 dark:text-amber-300 font-serif block">
+                        <span className={`text-[0.6875rem] font-bold text-amber-700 dark:text-amber-300 ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} block`}>
                           📖 {language === 'pb' ? 'ਪੜਾਅ ੨: ਭਾਵਾਰਥ' : language === 'en' ? 'Step 2: Meaning' : 'चरण २: शब्दार्थ एवं भावार्थ'}
                         </span>
-                        <p className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} opacity-95 ${fontStyle.text}`}>
+                        <p className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} opacity-95 ${fontStyle.text}`}>
                           {language === 'pb'
                             ? hindiToPunjabiWordConverter(verse.bhavarth.pb || verse.bhavarth.hi)
                             : (verse.bhavarth[language] || verse.bhavarth.hi)}
@@ -4273,7 +4325,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         <span className="text-[0.6875rem] font-bold text-blue-700 dark:text-blue-300 font-serif block">
                           💭 {language === 'pb' ? 'ਪੜਾਅ ੩: ਦੈਨਿਕ ਚਿੰਤਨ' : language === 'en' ? 'Step 3: Contemplation' : 'चरण ३: दैनिक चिंतन एवं आत्म-मनन'}
                         </span>
-                        <p className="text-xs font-serif leading-relaxed italic opacity-95">
+                        <p className={`text-xs ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed italic opacity-95`}>
                           {verse.contemplation[language] || verse.contemplation.hi}
                         </p>
                       </div>
@@ -4285,7 +4337,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         <span className="text-[0.6875rem] font-bold text-emerald-700 dark:text-emerald-300 font-serif block">
                           🌿 {language === 'pb' ? 'ਪੜਾਅ ੪: ਜੀਵਨ ਆਚਰਨ' : language === 'en' ? 'Step 4: Living Practice' : 'चरण ४: व्यावहारिक आचरण एवं जीवन उपयोग'}
                         </span>
-                        <p className="text-xs font-serif leading-relaxed opacity-95">
+                        <p className={`text-xs ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed opacity-95`}>
                           {verse.practicalApplication[language] || verse.practicalApplication.hi}
                         </p>
                       </div>
@@ -4297,7 +4349,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         <span className="text-[0.6875rem] font-bold text-purple-700 dark:text-purple-300 font-serif block">
                           🙏 {language === 'pb' ? 'ਪੜਾਅ ੫: ਸਮਰਪਣ ਤੇ ਅਰਦਾਸ' : language === 'en' ? 'Step 5: Prayer & Surrender' : 'चरण ५: समर्पण एवं पावन प्रार्थना'}
                         </span>
-                        <p className="text-xs font-serif leading-relaxed italic opacity-95">
+                        <p className={`text-xs ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed italic opacity-95`}>
                           {verse.samarpanPrayer[language] || verse.samarpanPrayer.hi}
                         </p>
                       </div>
@@ -4317,7 +4369,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           <span className="text-[0.6875rem] font-bold text-amber-700 font-serif block">
                             {t.spiritualEssenceLabel}
                           </span>
-                          <p className="text-xs font-serif leading-relaxed italic opacity-90">
+                          <p className={`text-xs ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed italic opacity-90`}>
                             {deriveDistinctSpiritualEssence(
                               verse.lines?.hi?.join(' ') || '',
                               verse.bhavarth?.hi || '',
@@ -4328,6 +4380,12 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                         </div>
                       </div>
                     )}
+                  </div>
+                )}
+
+                {idx < paginatedVerses.length - 1 && (
+                  <div className="mt-4 flex items-center justify-center text-amber-600/55 text-xs select-none" aria-hidden="true">
+                    ✦
                   </div>
                 )}
               </div>

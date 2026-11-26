@@ -49,7 +49,8 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
   defaultExpandedMeaning = true,
   footerExtra,
 }) => {
-  const { isDarkMode, fontSize } = useAppTheme();
+  const { isDarkMode, fontSize, fontFamily } = useAppTheme();
+  const activeFontClass = fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif';
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
@@ -457,7 +458,7 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
       <div className="py-3 sm:py-4 px-1 text-center select-text">
         <div
           style={{ color: isDarkMode ? '#FDE68A' : '#6B1D1D' }}
-          className={`font-serif font-black whitespace-pre-line tracking-tight ${getDohaFontSizeClass()}`}
+          className={`${activeFontClass} font-black whitespace-pre-line tracking-tight ${getDohaFontSizeClass()}`}
         >
           {formattedVerse}
         </div>
@@ -503,7 +504,7 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                 className="pt-2 pl-3 sm:pl-4 border-l-2 border-amber-500/35 space-y-2.5 text-left"
               >
                 {meaningText && (
-                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-800 dark:text-stone-200">
+                  <div className={`text-xs sm:text-sm ${activeFontClass} leading-relaxed text-stone-800 dark:text-stone-200`}>
                     <span className="font-bold text-amber-900 dark:text-amber-300 mr-1.5">
                       {language === 'pb' ? 'ਭਾਵਾਰਥ:' : language === 'en' ? 'Meaning:' : 'भावार्थ:'}
                     </span>
@@ -512,7 +513,7 @@ export const UnifiedDohaCard: React.FC<UnifiedDohaCardProps> = ({
                 )}
 
                 {lifeMessageText && (
-                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-amber-950 dark:text-amber-100">
+                  <div className={`text-xs sm:text-sm ${activeFontClass} leading-relaxed text-amber-950 dark:text-amber-100`}>
                     <span className="font-bold text-amber-900 dark:text-amber-200 mr-1.5">
                       🌟 {language === 'pb' ? 'ਜੀਵਨ ਸੰਦੇਸ਼:' : language === 'en' ? 'Life Message:' : 'जीवन संदेश:'}
                     </span>

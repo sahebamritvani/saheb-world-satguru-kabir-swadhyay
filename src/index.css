@@ -1,12 +1,25 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Noto+Serif+Gurmukhi:wght@400;600;700&family=Rozha+One&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --breakpoint-xs: 480px;
   --font-serif: "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-sans: "Noto Sans Devanagari", "Noto Sans Gurmukhi", "Mukta", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* 📜 Sacred Scripture Font Classes (ग्रंथ vs सरल) */
+.font-granth,
+.font-serif-granth {
+  font-family: "Noto Serif Devanagari", "Noto Serif Gurmukhi", "Rozha One", Georgia, serif !important;
+}
+
+.font-saral,
+.font-sans-saral {
+  font-family: "Mukta", "Noto Sans Devanagari", "Noto Sans Gurmukhi", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
 
 @layer utilities {
   .perspective-1000 {

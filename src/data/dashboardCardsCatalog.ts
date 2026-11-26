@@ -727,8 +727,12 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     slotId: 'slot-59-satyanaam-panacea',
     slotNumber: 59,
     categoryId: 2,
-    kicker: { hi: 'सर्व रोग निवारक', pb: 'ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ', en: 'Supreme Panacea' },
-    title: { hi: 'सत्यनाम: सर्व रोग निवारक औषधि', pb: 'ਸਤਯਨਾਮ: ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ', en: 'Satyanaam: The Supreme Panacea' },
+    kicker: { hi: 'महा-औषधि', pb: 'ਮਹਾ-ਔਸ਼ਧੀ', en: 'Universal Remedy' },
+    title: { 
+      hi: 'सत्यनाम महा-औषधि (Satyanaam Panacea)', 
+      pb: 'ਸਤਯਨਾਮ ਮਹਾ-ਔਸ਼ਧੀ (Satyanaam Panacea)', 
+      en: 'Satyanaam Panacea (Universal Spiritual Remedy)' 
+    },
     description: {
       hi: 'श्वेत दिव्य प्रकाश व 3 पावन प्रमाणों के साथ भव-व्याधि और मोह-भ्रम का निवारण।',
       pb: 'ਸ਼੍ਵੇਤ ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਤੇ 3 ਪਾਵਨ ਪ੍ਰਮਾਣਾਂ ਨਾਲ ਭਵ-ਵ්‍යාਧੀ ਤੇ ਮੋਹ-ਭ੍ਰम ਦਾ ਨਿਵਾਰਨ।',

@@ -699,6 +699,10 @@ function MainApp() {
           sakhi={activeSakhi}
           language={language}
           onChangeLanguage={setLanguage}
+          onOpenSettings={() => {
+            setSettingsInitialTab('general');
+            setIsSettingsOpen(true);
+          }}
           onOpenBlessing={() =>
             handleOpenBlessing(
               translations[language].swadhyayBlessingTitle,
@@ -722,6 +726,10 @@ function MainApp() {
           sakhi={activeSakhi}
           language={language}
           onChangeLanguage={setLanguage}
+          onOpenSettings={() => {
+            setSettingsInitialTab('general');
+            setIsSettingsOpen(true);
+          }}
           onOpenBlessing={() =>
             handleOpenBlessing(
               translations[language].swadhyayBlessingTitle,

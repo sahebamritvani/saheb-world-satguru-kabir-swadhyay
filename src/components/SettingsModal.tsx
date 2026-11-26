@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   X, 
   Moon, 
@@ -41,7 +41,14 @@ import {
   Play,
   Square,
 } from 'lucide-react';
-import { ADMIN_GRANTH_SLOTS, OPEN_ADMIN_INJECTOR_EVENT } from '../services/adminSlotInjectorStore';
+import { 
+  ADMIN_GRANTH_SLOTS, 
+  OPEN_ADMIN_INJECTOR_EVENT,
+  getSlotRawJson,
+  injectSlotJson,
+  ADMIN_SLOTS_UPDATED_EVENT,
+  AdminGranthSlotId 
+} from '../services/adminSlotInjectorStore';
 import { NityaVaniSettings } from './NityaVaniSettings';
 import { Language, ThemeMode, SACRED_BRANDING, ReaderCustomTheme, ReaderTarget, AppView } from '../types';
 import { translations } from '../data/translations';
@@ -114,6 +121,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     setLineHeight, 
     widthMode, 
     setWidthMode,
+    fontFamily,
+    setFontFamily,
     isSahajMode,
     setIsSahajMode,
     isDarkMode,
@@ -203,6 +212,198 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       return true;
     }
   });
+
+  const [keepAwakeActive, setKeepAwakeActive] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_nitnem_wakelock');
+      return saved === null ? true : saved === 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [showBhavarthSetting, setShowBhavarthSetting] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_show_bhavarth');
+      return saved === null ? true : saved === 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [showMoolvaniSetting, setShowMoolvaniSetting] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_show_moolvani');
+      return saved === null ? true : saved === 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [bellEnabledSetting, setBellEnabledSetting] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('sahebworld_bell_enabled') !== 'false';
+    } catch {
+      return true;
+    }
+  });
+  const [focusRulerSetting, setFocusRulerSetting] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('sahebworld_focus_ruler') === 'true';
+    } catch {
+      return false;
+    }
+  });
+  const wakeLockRef = useRef<any>(null);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+
+  const toggleShowBhavarthSetting = () => {
+    sacredHaptics.lightTap();
+    setShowBhavarthSetting((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('sahebworld_show_bhavarth', String(next));
+        window.dispatchEvent(new CustomEvent('sahebworld_bhavarth_changed', { detail: { showBhavarth: next } }));
+      } catch {}
+      return next;
+    });
+  };
+
+  const toggleShowMoolvaniSetting = () => {
+    sacredHaptics.lightTap();
+    setShowMoolvaniSetting((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('sahebworld_show_moolvani', String(next));
+        window.dispatchEvent(new CustomEvent('sahebworld_moolvani_changed', { detail: { showMoolvani: next } }));
+      } catch {}
+      return next;
+    });
+  };
+
+  const toggleBellEnabledSetting = () => {
+    sacredHaptics.lightTap();
+    setBellEnabledSetting((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('sahebworld_bell_enabled', String(next));
+        window.dispatchEvent(new CustomEvent('sahebworld_bell_changed', { detail: { bellEnabled: next } }));
+      } catch {}
+      if (next) {
+        try { satyanaamAudio.ringSacredBell(); } catch {}
+      }
+      return next;
+    });
+  };
+
+  const toggleFocusRulerSetting = () => {
+    sacredHaptics.lightTap();
+    setFocusRulerSetting((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('sahebworld_focus_ruler', String(next));
+        window.dispatchEvent(new CustomEvent('sahebworld_focus_ruler_changed', { detail: { focusRuler: next } }));
+      } catch {}
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    let isMounted = true;
+    const requestWakeLock = async () => {
+      if (keepAwakeActive && typeof navigator !== 'undefined' && 'wakeLock' in navigator) {
+        try {
+          wakeLockRef.current = await (navigator as any).wakeLock.request('screen');
+          wakeLockRef.current.addEventListener('release', () => {
+            if (isMounted) setKeepAwakeActive(false);
+          });
+        } catch (err) {
+          console.warn('Wake Lock error:', err);
+        }
+      } else if (!keepAwakeActive && wakeLockRef.current) {
+        try {
+          wakeLockRef.current.release();
+          wakeLockRef.current = null;
+        } catch {}
+      }
+    };
+    requestWakeLock();
+    return () => {
+      isMounted = false;
+      if (wakeLockRef.current) {
+        try { wakeLockRef.current.release(); } catch {}
+      }
+    };
+  }, [keepAwakeActive]);
+
+  const handleResetToDefault = () => {
+    sacredHaptics.mediumTap();
+    setFontSize('normal');
+    setLineHeight('medium');
+    setFontFamily('serif');
+    try {
+      localStorage.setItem('sahebworld_font_size', 'normal');
+      localStorage.setItem('sahebworld_line_height', 'medium');
+      localStorage.setItem('sahebworld_reader_theme', 'mool');
+      localStorage.setItem('sahebworld_show_bhavarth', 'true');
+      localStorage.setItem('sahebworld_show_moolvani', 'true');
+      setShowBhavarthSetting(true);
+      setShowMoolvaniSetting(true);
+      window.dispatchEvent(new CustomEvent('sahebworld_bhavarth_changed', { detail: { showBhavarth: true } }));
+      window.dispatchEvent(new CustomEvent('sahebworld_moolvani_changed', { detail: { showMoolvani: true } }));
+      window.dispatchEvent(new CustomEvent('sahebworld:theme-reset'));
+    } catch {}
+    setShowResetConfirm(false);
+    setSuiteToast('✓ डिफ़ॉल्ट सेटिंग्स (Classic Bhojpatra थीम व Standard A+ फोंट) पर रीसेट हो गई!');
+    setTimeout(() => setSuiteToast(null), 3500);
+  };
+
+  const handleExportJsonBackup = () => {
+    sacredHaptics.lightTap();
+    try {
+      const fullData: Record<string, string> = {};
+      for (const slot of ADMIN_GRANTH_SLOTS) {
+        const raw = getSlotRawJson(slot.id);
+        if (raw) fullData[slot.id] = raw;
+      }
+      const blob = new Blob([JSON.stringify(fullData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `saheb-world-backup.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      setSuiteToast('✓ saheb-world-backup.json सफलतापूर्वक डाउनलोड हो गया!');
+      setTimeout(() => setSuiteToast(null), 3500);
+    } catch (e) {
+      console.warn('Backup export error:', e);
+    }
+  };
+
+  const handleImportJsonBackup = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const parsed = JSON.parse(event.target?.result as string);
+        if (typeof parsed === 'object' && parsed !== null) {
+          for (const [sId, rawJson] of Object.entries(parsed)) {
+            if (typeof rawJson === 'string') {
+              await injectSlotJson(sId as AdminGranthSlotId, rawJson);
+            } else if (Array.isArray(rawJson) || (rawJson && typeof rawJson === 'object')) {
+              await injectSlotJson(sId as AdminGranthSlotId, JSON.stringify(rawJson, null, 2));
+            }
+          }
+          window.dispatchEvent(new CustomEvent(ADMIN_SLOTS_UPDATED_EVENT));
+          setSuiteToast('✓ बैकअप सफलतापूर्वक रीस्टोर और सिंक हो गया!');
+          setTimeout(() => setSuiteToast(null), 3500);
+        }
+      } catch {
+        setSuiteToast('✕ बैकअप फाइल अमान्य JSON है।');
+        setTimeout(() => setSuiteToast(null), 3500);
+      }
+    };
+    reader.readAsText(file);
+  };
 
   // Offline Pinned Audio stats & Check for Updates state
   const [pinnedStats, setPinnedStats] = useState<{ count: number; totalBytes: number }>(() =>
@@ -1678,6 +1879,24 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   </span>
                 </button>
 
+                {/* Admin Data Backup & Restore Buttons */}
+                <div className="flex items-center gap-2 pt-1">
+                  <button
+                    type="button"
+                    onClick={handleExportJsonBackup}
+                    className="flex-1 min-h-[38px] py-1.5 px-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-[11px] font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1 shadow-xs"
+                    title="Export all custom Admin slots as JSON backup"
+                  >
+                    <Download className="w-3.5 h-3.5 shrink-0" />
+                    <span>📥 डेटा बैकअप डाउनलोड करें</span>
+                  </button>
+                  <label className="flex-1 min-h-[38px] py-1.5 px-2.5 rounded-xl border border-amber-600/50 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 dark:text-amber-200 text-[11px] font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1 text-center truncate">
+                    <Upload className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <span className="truncate">📤 बैकअप वापस लोड करें</span>
+                    <input type="file" accept=".json" onChange={handleImportJsonBackup} className="hidden" />
+                  </label>
+                </div>
+
                 <button
                   type="button"
                   onClick={handleAdminLogout}
@@ -1861,6 +2080,140 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           {/* TAB 2: ACCESSIBILITY & VANI (सुगमता एवं वाणी) */}
           {activeTab === 'accessibility' && (
             <div className="space-y-5">
+              {/* Keep Screen Awake Toggle */}
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 rounded-2xl border flex items-center justify-between gap-3 shadow-xs"
+              >
+                <div>
+                  <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                    <span>🔆</span>
+                    <span>{isPb ? 'ਪਾਠ ਸਮੇਂ ਸਕ੍ਰੀਨ ਚਾਲੂ ਰੱਖੋ (Keep Awake)' : isHi ? 'पाठ के समय स्क्रीन चालू रखें (Keep Awake)' : 'Keep Screen Awake During Path'}</span>
+                  </h3>
+                  <p className="text-[11px] opacity-80 mt-0.5" style={{ color: theme.textSecondary }}>
+                    {isPb
+                      ? 'ਨਿਤਨੇਮ ਜਾਂ ਅਖੰਡ ਪਾਠ ਪੜ੍ਹਦੇ ਸਮੇਂ ਮੋਬਾਈਲ ਦੀ ਸਕ੍ਰੀਨ ਬੰਦ ਨਹੀਂ ਹੋਵੇਗੀ।'
+                      : isHi
+                      ? 'नितनेम या अखंड पाठ पढ़ते समय मोबाइल की स्क्रीन अपने आप स्लीप मोड में नहीं जाएगी।'
+                      : 'Prevents the phone screen from sleeping while reading sacred Nitnem or Akhand Path.'}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    const next = !keepAwakeActive;
+                    setKeepAwakeActive(next);
+                    try {
+                      localStorage.setItem('sahebworld_nitnem_wakelock', String(next));
+                      window.dispatchEvent(new CustomEvent('sahebworld_wakelock_changed', { detail: { keepAwake: next } }));
+                    } catch {}
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold font-serif transition shadow-xs cursor-pointer shrink-0 ${
+                    keepAwakeActive ? 'bg-emerald-600 text-white' : 'bg-stone-300 dark:bg-stone-700 text-stone-700 dark:text-stone-300'
+                  }`}
+                >
+                  {keepAwakeActive ? (isPb ? '✓ ਚਾਲੂ' : isHi ? '✓ चालू (ON)' : '✓ ON') : (isPb ? '✕ ਬੰਦ' : isHi ? '✕ बंद (OFF)' : '✕ OFF')}
+                </button>
+              </div>
+
+              {/* Show / Hide Bhavarth Meaning, Moolvani, Temple Bell & Focus Line Guide */}
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 rounded-2xl border space-y-3 shadow-xs"
+              >
+                <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-amber-600 shrink-0" />
+                  <span>{isPb ? 'ਪਾਠ ਸਹਾਇਤਾ ਤੇ ਭਗਤੀ ਵਿਕਲਪ' : isHi ? 'पाठ दृश्यता एवं भक्ति विकल्प (Reader Toggles)' : 'Scripture Visibility & Reader Toggles'}</span>
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <button
+                    type="button"
+                    onClick={toggleShowBhavarthSetting}
+                    style={{
+                      backgroundColor: showBhavarthSetting ? theme.buttonPrimaryBg : theme.cardBg,
+                      borderColor: showBhavarthSetting ? theme.accentGold : theme.cardBorder,
+                      color: showBhavarthSetting ? theme.buttonPrimaryText : theme.textPrimary,
+                    }}
+                    className="p-3 rounded-xl border text-left transition cursor-pointer flex items-center justify-between gap-2"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold font-serif truncate">
+                        {isPb ? '📖 ਅਰਥ ਦਿਖਾਓ / ਛੁਪਾਓ' : isHi ? '📖 अर्थ दिखाएं / छुपाएं (भावार्थ)' : '📖 Show / Hide Bhavarth Meaning'}
+                      </div>
+                      <div className="text-[10px] opacity-75 truncate">
+                        {showBhavarthSetting ? (isPb ? 'ਅਰਥ ਚਾਲੂ ਹਨ' : isHi ? 'अर्थ व व्याख्या दृश्य' : 'Meaning visible') : (isPb ? 'ਕੇਵਲ ਮੂਲ ਬਾਣੀ' : isHi ? 'अर्थ छुपे हैं (केवल वाणी)' : 'Meaning hidden')}
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-black shrink-0">{showBhavarthSetting ? 'ON' : 'OFF'}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleShowMoolvaniSetting}
+                    style={{
+                      backgroundColor: showMoolvaniSetting ? theme.buttonPrimaryBg : theme.cardBg,
+                      borderColor: showMoolvaniSetting ? theme.accentGold : theme.cardBorder,
+                      color: showMoolvaniSetting ? theme.buttonPrimaryText : theme.textPrimary,
+                    }}
+                    className="p-3 rounded-xl border text-left transition cursor-pointer flex items-center justify-between gap-2"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold font-serif truncate">
+                        {isPb ? '📜 ਮੂਲ ਬਾਣੀ ਦਿਖਾਓ' : isHi ? '📜 मूलवाणी दिखाएं / छुपाएं' : '📜 Show / Hide Moolvani'}
+                      </div>
+                      <div className="text-[10px] opacity-75 truncate">
+                        {showMoolvaniSetting ? (isPb ? 'ਮੂਲ ਦੋਹਾ ਚਾਲੂ' : isHi ? 'स्वाध्याय में मूल दोहा दृश्य' : 'Original verse visible') : (isPb ? 'ਮੂਲ ਬਾਣੀ ਛੁਪੀ' : isHi ? 'मूल दोहा छुपा' : 'Original verse hidden')}
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-black shrink-0">{showMoolvaniSetting ? 'ON' : 'OFF'}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleBellEnabledSetting}
+                    style={{
+                      backgroundColor: bellEnabledSetting ? theme.buttonPrimaryBg : theme.cardBg,
+                      borderColor: bellEnabledSetting ? theme.accentGold : theme.cardBorder,
+                      color: bellEnabledSetting ? theme.buttonPrimaryText : theme.textPrimary,
+                    }}
+                    className="p-3 rounded-xl border text-left transition cursor-pointer flex items-center justify-between gap-2"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold font-serif truncate">
+                        {isPb ? '🔔 ਮੰਦਿਰ ਘੰਟੀ ਨਾਦ' : isHi ? '🔔 मंदिर घंटी ध्वनि' : '🔔 Sacred Temple Bell'}
+                      </div>
+                      <div className="text-[10px] opacity-75 truncate">
+                        {bellEnabledSetting ? (isPb ? 'ਚਰਨ ਪੂਰੇ ਤੇ ਘੰਟੀ' : isHi ? 'चरण पूर्ण होने पर घंटी' : 'Chimes on completion') : (isPb ? 'ਘੰਟੀ ਬੰਦ' : isHi ? 'घंटी मौन' : 'Bell muted')}
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-black shrink-0">{bellEnabledSetting ? 'ON' : 'OFF'}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleFocusRulerSetting}
+                    style={{
+                      backgroundColor: focusRulerSetting ? theme.buttonPrimaryBg : theme.cardBg,
+                      borderColor: focusRulerSetting ? theme.accentGold : theme.cardBorder,
+                      color: focusRulerSetting ? theme.buttonPrimaryText : theme.textPrimary,
+                    }}
+                    className="p-3 rounded-xl border text-left transition cursor-pointer flex items-center justify-between gap-2"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold font-serif truncate">
+                        {isPb ? '🎯 ਪੰਕਤੀ ਗਾਈਡ' : isHi ? '🎯 पठन पंक्ति गाइड' : '🎯 Focus Reading Line Guide'}
+                      </div>
+                      <div className="text-[10px] opacity-75 truncate">
+                        {focusRulerSetting ? (isPb ? 'ਪੰਕਤੀ ਹਾਈਲਾਈਟ ਚਾਲੂ' : isHi ? 'सक्रिय पंक्ति मार्गदर्शक चालू' : 'Line guide active') : (isPb ? 'ਪੰਕਤੀ ਗਾਈਡ ਬੰਦ' : isHi ? 'मार्गदर्शक बंद' : 'Line guide off')}
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-black shrink-0">{focusRulerSetting ? 'ON' : 'OFF'}</span>
+                  </button>
+                </div>
+              </div>
+
               {/* Unified Font Size & Elderly Support */}
               <div
                 style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
@@ -1927,6 +2280,71 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     ? 'यह सेटिंग समस्त स्वाध्याय, गुटका एवं ग्रंथ पाठों पर समान रूप से लागू होगी।'
                     : 'Applies consistently across all Swadhyay, Nitnem Gutka, and Granth readers.'}
                 </p>
+              </div>
+
+              {/* Sacred Font Family: Traditional Granth (Serif) vs Modern Saral (Sans) */}
+              <div
+                style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
+                className="p-4 rounded-2xl border space-y-3.5 shadow-xs"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                    <Type className="w-4 h-4 text-amber-600 shrink-0" />
+                    <span>{isPb ? 'ਲਿਪੀ ਤੇ ਫੌਂਟ ਸ਼ੈਲੀ (Font Style)' : isHi ? 'लिपि एवं फॉन्ट शैली (Font Style)' : 'Script & Font Style'}</span>
+                  </h3>
+                  <span
+                    style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                    className="text-[11px] font-black px-2.5 py-0.5 rounded-full"
+                  >
+                    {fontFamily === 'serif'
+                      ? (isPb ? 'ਗ੍ਰੰਥ (Serif)' : isHi ? 'ग्रंथ (सेरिफ़)' : 'Granth (Serif)')
+                      : (isPb ? 'ਸਰਲ (Sans)' : isHi ? 'सरल (सांस)' : 'Saral (Sans)')}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2.5">
+                  {[
+                    {
+                      id: 'serif' as const,
+                      label: isPb ? 'ਗ੍ਰੰਥ (ਪਾਰੰਪਰਿਕ)' : isHi ? 'ग्रंथ (पारंपरिक)' : 'Granth (Serif)',
+                      sub: isPb ? 'ਨੋਟੋ ਸੇਰਿਫ ਦੇਵਨਾਗਰੀ' : isHi ? 'पारंपरिक पोथी लिपि (Noto Serif)' : 'Traditional Serif',
+                      preview: 'ੴ सत्यनाम साहेब'
+                    },
+                    {
+                      id: 'sans' as const,
+                      label: isPb ? 'ਸਰਲ (ਆਧੁਨਿਕ)' : isHi ? 'सरल (आधुनिक)' : 'Saral (Clean Sans)',
+                      sub: isPb ? 'ਨੋਟੋ ਸਾਂਸ / ਮੁਕਤਾ' : isHi ? 'सुगम सरल लिपि (Mukta & Sans)' : 'Modern Clean Sans',
+                      preview: 'ੴ सत्यनाम साहेब'
+                    }
+                  ].map((f) => {
+                    const isSelected = fontFamily === f.id;
+                    return (
+                      <button
+                        key={f.id}
+                        type="button"
+                        onClick={() => {
+                          sacredHaptics.lightTap();
+                          setFontFamily(f.id);
+                        }}
+                        style={{
+                          backgroundColor: isSelected ? theme.buttonPrimaryBg : theme.cardBg,
+                          borderColor: isSelected ? theme.accentGold : theme.cardBorder,
+                          color: isSelected ? theme.buttonPrimaryText : theme.textPrimary,
+                        }}
+                        className={`p-3 rounded-xl border text-left transition cursor-pointer flex flex-col justify-between gap-1.5 ${
+                          isSelected ? 'shadow-md ring-2 ring-amber-400' : 'hover:opacity-90'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-xs">{f.label}</span>
+                          {isSelected && <span className="text-[10px] font-black">✓</span>}
+                        </div>
+                        <span className="text-[10px] opacity-75">{f.sub}</span>
+                        <span className={`text-xs mt-1 font-bold ${f.id === 'serif' ? 'font-granth' : 'font-saral'}`}>{f.preview}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Line Spacing */}
@@ -2117,6 +2535,42 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                     {isMuted ? (isPb ? 'ਮਿਊਟ (ON)' : isHi ? 'म्यूट (ON)' : 'Muted') : (isPb ? 'ਚਾਲੂ (Sound)' : isHi ? 'ध्वनि सक्रिय' : 'Active')}
                   </button>
                 </div>
+              </div>
+
+              {/* Reset to Default Settings Button & Confirmation */}
+              <div className="pt-2">
+                {!showResetConfirm ? (
+                  <button
+                    type="button"
+                    onClick={() => setShowResetConfirm(true)}
+                    className="w-full min-h-[40px] py-2 px-3 rounded-xl border border-red-500/40 bg-red-500/10 hover:bg-red-500/20 text-red-900 dark:text-red-200 text-xs font-bold font-serif transition cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5 text-red-600" />
+                    <span>{isPb ? 'ਡਿਫਾਲਟ ਸੈਟਿੰਗਜ਼ ਤੇ ਰੀਸੈਟ ਕਰੋ' : isHi ? 'डिफ़ॉल्ट सेटिंग्स पर रीसेट करें (Reset to Default)' : 'Reset to Default Settings'}</span>
+                  </button>
+                ) : (
+                  <div className="p-3 rounded-2xl border border-red-500/60 bg-red-500/15 space-y-2 text-center">
+                    <p className="text-xs font-serif font-bold text-red-900 dark:text-red-200">
+                      {isPb ? 'ਕੀ ਤੁਸੀਂ ਸੈਟਿੰਗਜ਼ ਡਿਫਾਲਟ (ਭੋਜਪੱਤਰ ਤੇ ਸਟੈਂਡਰਡ ਫੋਂট) ਤੇ ਰੀਸੈਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?' : isHi ? 'क्या आप डिफ़ॉल्ट सेटिंग्स (Classic Bhojpatra थीम व Standard A+ फोंट) पर रीसेट करना चाहते हैं?' : 'Reset to default settings (keeps your saved scripture data)?'}
+                    </p>
+                    <div className="flex items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={handleResetToDefault}
+                        className="px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold font-serif cursor-pointer"
+                      >
+                        {isPb ? 'ਹਾਂ, ਰੀਸੈਟ ਕਰੋ' : isHi ? 'हाँ, रीसेट करें' : 'Yes, Reset'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setShowResetConfirm(false)}
+                        className="px-3 py-1.5 rounded-xl border border-stone-400/50 text-xs font-bold font-serif cursor-pointer"
+                      >
+                        {isPb ? 'ਰੱਦ ਕਰੋ' : isHi ? 'रद्द करें' : 'Cancel'}
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <button

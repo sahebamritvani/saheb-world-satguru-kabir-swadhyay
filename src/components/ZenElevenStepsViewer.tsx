@@ -73,12 +73,12 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
   const [isDhyanActive, setIsDhyanActive] = useState(false);
 
   const { fontFamily, setFontFamily } = useAppTheme();
-  const activeFontClass = fontFamily === 'sans' ? 'font-sans' : 'font-serif';
+  const activeFontClass = fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif';
   const activeFontStyle: React.CSSProperties = {
     fontFamily:
       fontFamily === 'sans'
-        ? '"Noto Sans Devanagari", "Noto Sans Gurmukhi", "Mukta", ui-sans-serif, system-ui, sans-serif'
-        : '"Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, Cambria, serif',
+        ? "'Mukta', 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', ui-sans-serif, system-ui, sans-serif"
+        : "'Noto Serif Devanagari', 'Noto Serif Gurmukhi', 'Rozha One', Georgia, Cambria, serif",
   };
 
   // Mark step complete and advance

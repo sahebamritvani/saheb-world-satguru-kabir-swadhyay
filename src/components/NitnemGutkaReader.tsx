@@ -666,7 +666,13 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   };
 
   const [selectedTarget, setSelectedTarget] = useState<ReaderTarget>(0); // 0 = Full path
-  const [isLineGuideActive, setIsLineGuideActive] = useState<boolean>(false);
+  const [isLineGuideActive, setIsLineGuideActive] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('sahebworld_focus_ruler') === 'true';
+    } catch {
+      return false;
+    }
+  });
   const [selectedLineId, setSelectedLineId] = useState<string | null>(null);
   const [isZenMode, setIsZenMode] = useState<boolean>(false);
   const [isBackgroundDhunPlaying, setIsBackgroundDhunPlaying] = useState<boolean>(false);
@@ -684,7 +690,13 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   const [readVersesSet, setReadVersesSet] = useState<Set<number | string>>(new Set([1]));
   const [playingVoiceVerseId, setPlayingVoiceVerseId] = useState<number | string | null>(null);
   const [copiedId, setCopiedId] = useState<number | string | null>(null);
-  const [showBhavarthGlobal, setShowBhavarthGlobal] = useState<boolean>(true);
+  const [showBhavarthGlobal, setShowBhavarthGlobal] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('sahebworld_show_bhavarth') !== 'false';
+    } catch {
+      return true;
+    }
+  });
   const [verseBhavarthOverrides, setVerseBhavarthOverrides] = useState<Record<string | number, boolean>>({});
   const [pinnedVerseId, setPinnedVerseId] = useState<string | number | null>(null);
   const [showQuickNav, setShowQuickNav] = useState<boolean>(false);
@@ -876,7 +888,44 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   }, [keepScreenAwake]);
 
   useEffect(() => {
+    const syncBhavarth = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (typeof detail?.show === 'boolean') {
+        setShowBhavarthGlobal(detail.show);
+      } else {
+        try {
+          setShowBhavarthGlobal(localStorage.getItem('sahebworld_show_bhavarth') !== 'false');
+        } catch {}
+      }
+      setVerseBhavarthOverrides({});
+    };
+    const syncWakeLock = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (typeof detail?.enabled === 'boolean') {
+        setKeepScreenAwake(detail.enabled);
+      } else {
+        try {
+          setKeepScreenAwake(localStorage.getItem('sahebworld_nitnem_wakelock') !== 'false');
+        } catch {}
+      }
+    };
+    const syncFocusRuler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (typeof detail?.enabled === 'boolean') {
+        setIsLineGuideActive(detail.enabled);
+      } else {
+        try {
+          setIsLineGuideActive(localStorage.getItem('sahebworld_focus_ruler') === 'true');
+        } catch {}
+      }
+    };
+    window.addEventListener('sahebworld_bhavarth_changed', syncBhavarth as EventListener);
+    window.addEventListener('sahebworld_wakelock_changed', syncWakeLock as EventListener);
+    window.addEventListener('sahebworld_focus_ruler_changed', syncFocusRuler as EventListener);
     return () => {
+      window.removeEventListener('sahebworld_bhavarth_changed', syncBhavarth as EventListener);
+      window.removeEventListener('sahebworld_wakelock_changed', syncWakeLock as EventListener);
+      window.removeEventListener('sahebworld_focus_ruler_changed', syncFocusRuler as EventListener);
       speechReciter.stop();
       ambientReaderAudio.stop();
     };
@@ -2197,7 +2246,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           </span>
         </button>
       )}
-      {/* High-Contrast Sacred Header */}
+      {/* High-Contrast Sacred Header: Shown on Index Selection OR Fullscreen Mode (Removed duplicate maroon bar during normal reading) */}
+      {(viewMode === 'selection' || isFullscreen) && (
       <div className={`bg-gradient-to-r from-[#7C1D00]/95 via-[#8B2500]/95 to-[#9A3412]/95 backdrop-blur-md text-white px-2 py-2 sm:px-4 sm:py-2.5 flex flex-wrap sm:flex-nowrap items-center justify-between gap-1.5 sm:gap-3 shadow-md ${isFullscreen ? 'sticky top-0 z-30' : 'relative z-20 rounded-t-2xl'} border-b border-amber-300/25 w-full`}>
         <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1">
           {viewMode === 'reading' ? (
@@ -2243,7 +2293,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         </div>
 
         <div className="flex items-center gap-1 sm:gap-2 shrink-0 ml-auto">
-          {/* Top Bar Dedicated Entry: Sirf Vani (Auto-Scroll + Audio) Mode */}
+          {/* Sirf Vani (Auto-Scroll + Audio) Mode */}
           <button
             type="button"
             onClick={handleTogglePureVaniMode}
@@ -2271,7 +2321,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             </span>
           </button>
 
-          {/* Full-Screen Toggle Button (Compact on mobile so Settings button is never pushed off-screen) */}
+          {/* Full-Screen Toggle Button */}
           <button
             type="button"
             onClick={toggleFullscreen}
@@ -2296,7 +2346,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             </span>
           </button>
 
-          {/* Audio Resonance Toggle in Header */}
+          {/* Audio Resonance Toggle */}
           <button
             type="button"
             onClick={() => handleToggleBackgroundDhun()}
@@ -2318,20 +2368,9 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
               <Sparkles size={18} className="text-amber-200" />
             </button>
           )}
-          
-          {/* Settings & Tools Button — Always Prominent and Guaranteed Visible on Mobile */}
-          <button
-            type="button"
-            onClick={() => setIsSettingsExpanded(true)}
-            className="min-w-[38px] min-h-[38px] sm:min-w-[40px] sm:min-h-[40px] p-2 bg-white/25 hover:bg-white/35 rounded-xl transition-all cursor-pointer text-white flex items-center justify-center shrink-0 shadow-xs z-30 ring-1 ring-white/30"
-            title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼ ਅਤੇ ਟੂਲਸ' : language === 'en' ? 'Settings & Tools' : 'सेटिंग्स व टूल्स'}
-            aria-label="Reading Settings"
-          >
-            <Settings size={17} className="shrink-0" />
-            <span className="sr-only">Settings</span>
-          </button>
         </div>
       </div>
+      )}
 
       {/* Main Content Area */}
       <div className={`transition-all duration-300 ${viewMode === 'selection' ? 'p-4 sm:p-6' : 'p-0'}`}>
@@ -3065,171 +3104,102 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         <h2 className="text-xl sm:text-2xl font-black font-serif text-amber-950 dark:text-amber-100">
                           {currentSection.title[language] || currentSection.title.hi}
                         </h2>
+                        <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (isPureVaniMode) {
+                                exitPureVaniMode(true);
+                              } else {
+                                stopAllAudioPlayback();
+                              }
+                              setViewMode('selection');
+                              setIsAutoPlaying(false);
+                            }}
+                            className="px-3 py-1 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-900 dark:text-amber-200 text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-amber-500/20 transition"
+                          >
+                            <ArrowLeft size={13} />
+                            <span>{language === 'pb' ? 'ਅਧਿਆਇ ਸੂਚੀ' : language === 'en' ? 'Chapters' : 'अनुक्रमणिका'}</span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={handleTogglePureVaniMode}
+                            className="px-3 py-1 rounded-lg border border-amber-500/30 bg-amber-600 text-white text-xs font-bold flex items-center gap-1 cursor-pointer hover:opacity-90 transition"
+                          >
+                            <Volume2 size={13} />
+                            <span>{language === 'pb' ? 'ਸਿਰਫ਼ ਬਾਣੀ ਬੰਦ' : language === 'en' ? 'Exit Pure Vani' : 'सामान्य वाचन'}</span>
+                          </button>
+                        </div>
                       </div>
                     ) : (
                       <div 
                         id="nitnem-reading-top-header"
                         style={{
                           scrollSnapAlign: 'start',
-                          backgroundColor: theme.cardBg,
-                          borderColor: theme.accentGold,
                           color: theme.textPrimary,
+                          borderColor: 'rgba(217, 119, 6, 0.25)',
                         }}
-                        className="nitnem-verse-snap-item snap-start p-4 sm:p-5 rounded-2xl border-2 backdrop-blur-md text-center space-y-2 shadow-sm"
+                        className="nitnem-verse-snap-item snap-start py-3 sm:py-4 px-2 border-b text-center space-y-2.5"
                       >
-                        <span style={{ color: theme.accentGold }} className="text-[0.625rem] sm:text-xs font-mono font-bold uppercase tracking-wider">
-                          {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? 'Sacred Nitnem Recitation' : 'पावन नितनेम पाठ'}
-                        </span>
-                        <h2 style={{ color: theme.sacredMaroon }} className="text-lg sm:text-2xl font-black font-serif">
-                          {currentSection.title[language] || currentSection.title.hi}
-                        </h2>
-                        {currentSection.subtitle && (
-                          <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif max-w-xl mx-auto">
-                            {currentSection.subtitle[language] || currentSection.subtitle.hi}
-                          </p>
-                        )}
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              stopAllAudioPlayback();
+                              setViewMode('selection');
+                              setIsAutoPlaying(false);
+                            }}
+                            className="px-2.5 py-1 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-900 dark:text-amber-200 text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-amber-500/20 transition whitespace-nowrap"
+                          >
+                            <ArrowLeft size={13} />
+                            <span>{language === 'pb' ? '੭-ਭਾਗ ਸੂਚੀ' : language === 'en' ? 'Index' : 'अनुक्रमणिका'}</span>
+                          </button>
 
-                        {/* Distraction-Free Gutka Mode Quick Comfort Bar: Meaning Toggle, Font Size, Parchment Paper, Wake Lock, Auto-Scroll */}
-                        <div className="flex items-center justify-center sm:justify-between flex-wrap gap-2 pt-3 border-t border-amber-500/20">
-                          <div className="flex items-center flex-wrap justify-center gap-2">
-                            {/* 1. Meaning Toggle: अर्थ दिखाएं / अर्थ छुपाएं */}
+                          <div className="flex items-center gap-1.5 flex-wrap">
                             <button
                               type="button"
-                              onClick={() => {
-                                const next = !showBhavarthGlobal;
-                                setShowBhavarthGlobal(next);
-                                setVerseBhavarthOverrides({});
-                                sacredHaptics.lightTap();
-                              }}
-                              className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border whitespace-nowrap ${
-                                showBhavarthGlobal
-                                  ? 'bg-[#8B2500] text-white border-[#7C1D00] shadow-xs'
-                                  : 'bg-white/85 dark:bg-zinc-800/85 text-amber-950 dark:text-amber-200 border-amber-400/40 hover:bg-amber-500/20'
-                              }`}
+                              onClick={handleTogglePureVaniMode}
+                              className="px-2.5 py-1 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-900 dark:text-amber-200 text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-amber-500/20 transition whitespace-nowrap"
                             >
-                              {showBhavarthGlobal ? <Eye size={14} /> : <EyeOff size={14} />}
-                              <span>
-                                {language === 'pb'
-                                  ? (showBhavarthGlobal ? 'ਅਰਥ ਛੁਪਾਓ' : 'ਅਰਥ ਦਿਖਾਓ')
-                                  : language === 'en'
-                                  ? (showBhavarthGlobal ? 'Hide Meaning' : 'Show Meaning')
-                                  : (showBhavarthGlobal ? 'अर्थ छुपाएं' : 'अर्थ दिखाएं')}
-                              </span>
+                              <Volume2 size={13} />
+                              <span>{language === 'pb' ? 'ਸਿਰਫ਼ ਬਾਣੀ' : language === 'en' ? 'Pure Vani' : 'सिर्फ वाणी'}</span>
                             </button>
-
-                            {/* 2. One-Tap Font Size Adjuster */}
-                            <div className="flex items-center rounded-xl border border-amber-400/40 bg-white/80 dark:bg-zinc-800 overflow-hidden">
-                              <button
-                                type="button"
-                                onClick={() => cycleQuickFontSize(-1)}
-                                className="min-h-[44px] min-w-[40px] px-2.5 text-xs font-black text-amber-900 dark:text-amber-200 hover:bg-amber-500/15 transition cursor-pointer whitespace-nowrap"
-                                title={language === 'pb' ? 'ਅੱਖਰ ਛੋਟੇ ਕਰੋ' : language === 'en' ? 'Decrease Font Size' : 'अक्षर छोटे करें'}
-                                aria-label="Decrease Font Size"
-                              >
-                                A-
-                              </button>
-                              <span className="px-1.5 text-[0.6875rem] font-mono font-bold text-amber-800 dark:text-amber-300 border-x border-amber-400/25 whitespace-nowrap">
-                                <Type size={12} className="inline mr-1" />
-                                {fontSizeLevel.toUpperCase()}
-                              </span>
-                              <button
-                                type="button"
-                                onClick={() => cycleQuickFontSize(1)}
-                                className="min-h-[44px] min-w-[40px] px-2.5 text-xs font-black text-amber-900 dark:text-amber-200 hover:bg-amber-500/15 transition cursor-pointer whitespace-nowrap"
-                                title={language === 'pb' ? 'ਅੱਖਰ ਵੱਡੇ ਕਰੋ' : language === 'en' ? 'Increase Font Size' : 'अक्षर बड़े करें'}
-                                aria-label="Increase Font Size"
-                              >
-                                A+
-                              </button>
-                            </div>
-
-                            {/* 3. Traditional Parchment / Cream Paper Mode Toggle */}
                             <button
                               type="button"
-                              onClick={() => {
-                                sacredHaptics.lightTap();
-                                const nextTheme: ReaderCustomTheme =
-                                  readerTheme === 'pothi' ? 'black' : readerTheme === 'black' ? 'mool' : 'pothi';
-                                changeReaderTheme(nextTheme);
-                              }}
-                              className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border whitespace-nowrap ${
-                                readerTheme === 'pothi' || readerTheme === 'sepia'
-                                  ? 'bg-[#8b4513] text-amber-50 border-[#6e350d] shadow-xs'
-                                  : readerTheme === 'black' || readerTheme === 'dark'
-                                  ? 'bg-zinc-900 text-amber-300 border-zinc-700'
-                                  : 'bg-white/85 dark:bg-zinc-800 text-amber-900 dark:text-amber-200 border-amber-400/40 hover:bg-amber-500/20'
-                              }`}
-                              title={language === 'pb' ? 'ਪੋਥੀ ਕਾਗਜ਼ / ਰਾਤ ਮੋਡ ਬਦਲੋ' : language === 'en' ? 'Toggle Parchment / Cream Paper / Night Mode' : 'पोथी कागज़ (Cream) / रात्रि मोड बदलें'}
+                              onClick={toggleFullscreen}
+                              className="px-2.5 py-1 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-900 dark:text-amber-200 text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-amber-500/20 transition whitespace-nowrap"
+                              title={language === 'pb' ? 'ਪੂਰੀ ਸਕਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूर्ण स्क्रीन'}
                             >
-                              {readerTheme === 'black' || readerTheme === 'dark' ? <Moon size={14} /> : <Scroll size={14} />}
-                              <span>
-                                {readerTheme === 'pothi' || readerTheme === 'sepia'
-                                  ? (language === 'pb' ? 'ਪੋਥੀ ਕਾਗਜ਼ ✓' : language === 'en' ? 'Parchment ✓' : 'पोथी कागज़ ✓')
-                                  : readerTheme === 'black' || readerTheme === 'dark'
-                                  ? (language === 'pb' ? 'ਰਾਤ ਮੋਡ' : language === 'en' ? 'Night Paper' : 'रात्रि मोड')
-                                  : (language === 'pb' ? 'ਕਰੀਮ ਕਾਗਜ਼' : language === 'en' ? 'Cream Paper' : 'क्रीम कागज़')}
-                              </span>
+                              <Maximize2 size={13} />
+                              <span className="hidden sm:inline">{language === 'pb' ? 'ਪੂਰੀ ਸਕਰੀਨ' : language === 'en' ? 'Full Screen' : 'पूर्ण स्क्रीन'}</span>
                             </button>
-
-                            {/* 4. Keep Screen Awake (Wake Lock API) Toggle */}
                             <button
                               type="button"
-                              onClick={toggleKeepScreenAwake}
-                              className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-serif font-bold transition flex items-center gap-1.5 cursor-pointer border whitespace-nowrap ${
-                                keepScreenAwake
-                                  ? 'bg-emerald-600/15 text-emerald-900 dark:text-emerald-200 border-emerald-500/45'
-                                  : 'bg-white/80 dark:bg-zinc-800 text-gray-600 dark:text-gray-300 border-gray-300/60'
+                              onClick={() => handleToggleBackgroundDhun()}
+                              className={`px-2 py-1 rounded-lg border text-xs font-bold flex items-center gap-1 cursor-pointer transition whitespace-nowrap ${
+                                isBackgroundDhunPlaying
+                                  ? 'bg-[#8B2500] text-white border-[#8B2500]'
+                                  : 'border-amber-500/30 bg-amber-500/10 text-amber-900 dark:text-amber-200'
                               }`}
-                              title={language === 'pb' ? 'ਪਾਠ ਦੌਰਾਨ ਸਕਰੀਨ ਚਾਲੂ ਰੱਖੋ' : language === 'en' ? 'Keep Screen Awake (Wake Lock)' : 'पाठ के समय स्क्रीन जागृत रखें'}
+                              title={rt.bgDhun}
                             >
-                              <Sun size={14} />
-                              <span>
-                                {language === 'pb'
-                                  ? (keepScreenAwake ? 'ਸਕਰੀਨ ਜਾਗ੍ਰਿਤ' : 'ਸਕਰੀਨ ਆਮ')
-                                  : language === 'en'
-                                  ? (keepScreenAwake ? 'Awake On' : 'Awake Off')
-                                  : (keepScreenAwake ? 'स्क्रीन जागृत' : 'स्क्रीन सामान्य')}
-                              </span>
+                              {isBackgroundDhunPlaying ? <Music size={13} /> : <VolumeX size={13} />}
                             </button>
-
-                            {/* 5. Auto-Scroll Speed Control */}
-                            <div className="flex items-center rounded-xl border border-amber-400/40 bg-white/80 dark:bg-zinc-800 overflow-hidden">
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  sacredHaptics.lightTap();
-                                  setIsAutoPlaying((p) => !p);
-                                }}
-                                className={`min-h-[44px] px-3 py-1.5 text-xs font-serif font-bold flex items-center gap-1.5 transition cursor-pointer whitespace-nowrap ${
-                                  isAutoPlaying
-                                    ? 'bg-[#8B2500] text-white'
-                                    : 'text-amber-900 dark:text-amber-200 hover:bg-amber-500/15'
-                                }`}
-                              >
-                                {isAutoPlaying ? <Pause size={13} /> : <Play size={13} />}
-                                <span>
-                                  {language === 'pb' ? 'ਆਟੋ-ਸਕ੍ਰੌਲ' : language === 'en' ? 'Auto-Scroll' : 'ऑटो-स्क्रॉल'}
-                                </span>
-                              </button>
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  sacredHaptics.lightTap();
-                                  const speeds: Array<0.5 | 1 | 1.5 | 2> = [0.5, 1, 1.5, 2];
-                                  const idx = speeds.indexOf(autoScrollSpeed as any);
-                                  setAutoScrollSpeed(speeds[(idx + 1) % speeds.length]);
-                                }}
-                                className="min-h-[44px] px-2.5 text-[0.6875rem] font-mono font-bold text-amber-800 dark:text-amber-300 border-l border-amber-400/25 hover:bg-amber-500/15 transition cursor-pointer whitespace-nowrap"
-                                title={language === 'pb' ? 'ਗਤੀ ਬਦਲੋ' : language === 'en' ? 'Cycle Auto-Scroll Speed' : 'स्क्रॉल गति बदलें'}
-                              >
-                                {autoScrollSpeed}x
-                              </button>
-                            </div>
                           </div>
+                        </div>
 
-                          <span className="text-[0.6875rem] font-mono text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                            {granthContext.currentIndex + 1}/{granthContext.totalCount} · {versesList.length} {language === 'pb' ? 'ਪਦ / ਛੰਦ' : language === 'en' ? 'Verses' : 'पद / छंद'}
+                        <div className="space-y-1">
+                          <span style={{ color: theme.accentGold }} className="text-[0.625rem] sm:text-xs font-mono font-bold uppercase tracking-wider block">
+                            {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? 'Sacred Nitnem Recitation' : 'पावन नितनेम पाठ'} · {granthContext.currentIndex + 1}/{granthContext.totalCount} · {versesList.length} {language === 'pb' ? 'ਪਦ' : language === 'en' ? 'Verses' : 'पद'}
                           </span>
+                          <h2 style={{ color: theme.sacredMaroon }} className="text-lg sm:text-2xl font-black font-serif">
+                            {currentSection.title[language] || currentSection.title.hi}
+                          </h2>
+                          {currentSection.subtitle && (
+                            <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm font-serif max-w-xl mx-auto">
+                              {currentSection.subtitle[language] || currentSection.subtitle.hi}
+                            </p>
+                          )}
                         </div>
                       </div>
                     )}
@@ -3253,7 +3223,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                             ✕ {language === 'pb' ? 'ਹਟਾਓ (Unpin)' : language === 'en' ? 'Unpin' : 'हटाएं (Unpin)'}
                           </button>
                         </div>
-                        <div className="font-serif font-black text-center text-sm sm:text-base leading-relaxed text-amber-950 dark:text-amber-100">
+                        <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-black text-center text-sm sm:text-base leading-relaxed text-amber-950 dark:text-amber-100`}>
                           {(pinnedVerse.lines[language] || pinnedVerse.lines.hi).map((l, idx) => (
                             <div key={idx} className="my-0.5">{l}</div>
                           ))}
@@ -3485,7 +3455,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               direction: 'ltr',
                               textAlign: 'center',
                             }}
-                            className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} font-bold sm:font-black sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] max-w-full w-full ${getFontSizeClass(fontSizeLevel)} ${isPureVaniMode ? 'leading-[2]' : getLineHeightClass(lineHeight)} ${currentThemeStyle.textColor}`}
+                            className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} font-bold sm:font-black sacred-verse-typography [word-break:keep-all] [overflow-wrap:break-word] max-w-full w-full ${getFontSizeClass(fontSizeLevel)} ${isPureVaniMode ? 'leading-[2]' : getLineHeightClass(lineHeight)} ${currentThemeStyle.textColor}`}
                           >
                             {lines.map((line, lIdx) => {
                               const lineId = `${verse.id}-${langCode}-${lIdx}`;
@@ -3565,7 +3535,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                               {language === 'pb' ? `ਪਦ ${vIdx + 1}` : language === 'en' ? `Couplet ${vIdx + 1}` : `चरण ${vIdx + 1}`}
                                             </span>
                                           </div>
-                                          <div className={`${fontFamily === 'sans' ? 'font-sans' : 'font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)} text-sm sm:text-base ${currentThemeStyle.textColor}`}>
+                                          <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)} text-sm sm:text-base ${currentThemeStyle.textColor}`}>
                                             <SmartGlossaryText 
                                               text={verse.bhavarth[language] || verse.bhavarth.hi}
                                               language={language}
@@ -3641,8 +3611,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                 </span>
                               </div>
                             ) : (
-                              <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-black/5 dark:border-white/5">
-                              <div className="flex items-center gap-2 flex-wrap">
+                              <div className="flex items-center justify-between gap-[6px] mb-4 pb-3 border-b border-black/5 dark:border-white/5">
+                              <div className="flex items-center gap-1.5 flex-wrap flex-1 min-w-0">
                                 {(() => {
                                   const verseLabel = getVerseTypeLabel(verse.type || 'doha', verse.id, language);
                                   const idStr = String(verse.id || '');
@@ -3652,18 +3622,18 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                   
                                   return (
                                     <>
-                                      <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold text-xs font-mono ${
+                                      <span className={`w-7 h-7 sm:w-8 sm:h-8 shrink-0 rounded-xl flex items-center justify-center font-bold text-xs font-mono ${
                                         isRead 
                                           ? 'bg-green-600 text-white shadow-xs' 
                                           : `bg-black/5 dark:bg-white/5 ${currentThemeStyle.textColor} opacity-80 border ${currentThemeStyle.cardBorder}`
                                       }`}>
                                         {isSpecial ? (vIdx + 1) : displayNum}
                                       </span>
-                                      <span className={`text-xs font-bold font-serif ${currentThemeStyle.accentText}`}>
+                                      <span className={`text-xs font-bold font-serif truncate ${currentThemeStyle.accentText}`}>
                                         {verseLabel}
                                       </span>
                                       {/* Distinct Page Badge */}
-                                      <span className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30">
+                                      <span className="text-[0.625rem] sm:text-[0.6875rem] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30 whitespace-nowrap shrink-0">
                                         📖 {language === 'pb' ? `ਪੰਨਾ ${vIdx + 1}` : language === 'en' ? `Page ${vIdx + 1}` : `पृष्ठ ${vIdx + 1}`} / {versesList.length}
                                       </span>
                                     </>
@@ -3672,7 +3642,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               </div>
 
                               {/* Right Action Icons */}
-                              <div className="flex items-center gap-1 sm:gap-2">
+                              <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
                                 {/* Pin to Top Focus button */}
                                 <button
                                   type="button"
@@ -3903,7 +3873,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                               {language === 'pb' ? 'ਸਰਲ ਟੀਕਾ' : language === 'en' ? 'Couplet Meaning' : 'सरल भावार्थ'}
                                             </span>
                                           </div>
-                                          <div className="font-serif leading-relaxed text-xs sm:text-sm">
+                                          <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed text-xs sm:text-sm`}>
                                             <SmartGlossaryText 
                                               text={verse.bhavarth?.[language] || verse.bhavarth?.hi || 'कबीर साहेब की यह पावन वाणी जीवात्मा को सत्य का दर्शन कराती है।'}
                                               language={language}
@@ -3916,7 +3886,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           <span className="font-bold text-[0.6875rem] uppercase tracking-wider text-blue-800 dark:text-blue-300 block mb-1 font-mono">
                                             🌐 English Translation (English Arth)
                                           </span>
-                                          <p className="italic font-serif leading-relaxed">
+                                          <p className={`italic ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed`}>
                                             "{steekData.englishTranslation}"
                                           </p>
                                         </div>
@@ -3932,7 +3902,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                             <span>🎯</span>
                                             <span>{language === 'pb' ? 'ਪ੍ਰਸੰਗ ਤੇ ਕਟਾਖਸ਼ (Context & Sharp Satire)' : language === 'en' ? 'Context & Satire' : 'कटाक्ष एवं संदर्भ (Context & Sharp Satire)'}</span>
                                           </div>
-                                          <p className="leading-relaxed font-serif opacity-90">
+                                          <p className={`leading-relaxed ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} opacity-90`}>
                                             {steekData.contextAndSatire[language] || steekData.contextAndSatire.hi}
                                           </p>
                                         </div>
@@ -3943,7 +3913,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                             <Sparkles size={14} />
                                             <span>{language === 'pb' ? 'ਗੂੜ੍ਹ ਅਧਿਆਤਮਿਕ ਭੇਦ (Esoteric Spiritual Secret)' : language === 'en' ? 'Esoteric Meaning' : 'गूढ़ आध्यात्मिक रहस्य (Esoteric Secret)'}</span>
                                           </div>
-                                          <p className="leading-relaxed font-serif opacity-90">
+                                          <p className={`leading-relaxed ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} opacity-90`}>
                                             {steekData.esotericSecret[language] || steekData.esotericSecret.hi}
                                           </p>
                                         </div>
@@ -3954,7 +3924,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                             <span>🧘</span>
                                             <span>{language === 'pb' ? 'ਸਾਧਨਾ ਕੁੰਜੀ (Practical Sadhana Key)' : language === 'en' ? 'Sadhana Key' : 'साधना सूत्र (Practical Sadhana Key)'}</span>
                                           </div>
-                                          <p className="leading-relaxed font-serif opacity-90">
+                                          <p className={`leading-relaxed ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} opacity-90`}>
                                             {steekData.sadhanaApplication[language] || steekData.sadhanaApplication.hi}
                                           </p>
                                         </div>

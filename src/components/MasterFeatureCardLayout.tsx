@@ -74,7 +74,11 @@ const VIEW_TITLES: Record<string, { hi: string; pb: string; en: string }> = {
   'satvik-sankalp': { hi: 'नशामुक्ति एवं सात्विक संकल्प', pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ', en: 'Satvik Sankalp Tracker' },
   'kabir-gyan-quiz': { hi: 'कबीर ज्ञान प्रश्नोत्तरी', pb: 'ਕਬੀਰ ਗਿਆਨ ਕੁਇਜ਼', en: 'Kabir Gyan Quiz' },
   'vansh-bayalis': { hi: 'वंश बयालीस पावन परम्परा', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਪਾਵਨ ਪਰੰਪਰਾ', en: 'Vansh Bayalis Lineage' },
-  'satyanaam-panacea': { hi: 'सत्यनाम: सर्व रोग निवारक औषधि', pb: 'ਸਤਯਨਾਮ: ਸਰਬ ਰੋਗ ਨਿਵਾਰਕ ਔਸ਼ਧੀ', en: 'Satyanaam: The Supreme Panacea' },
+  'satyanaam-panacea': { 
+    hi: 'सत्यनाम महा-औषधि (Satyanaam Panacea)', 
+    pb: 'ਸਤਯਨਾਮ ਮਹਾ-ਔਸ਼ਧੀ (Satyanaam Panacea)', 
+    en: 'Satyanaam Panacea (Universal Spiritual Remedy)' 
+  },
   'ulatvasi-quiz': { hi: 'उलटबांसी 3D गेमिंग प्रश्नोत्तरी', pb: 'ਉਲਟਬਾਂਸੀ ੩ਡੀ ਕੁਇਜ਼', en: 'Ulatvasi 3D Quiz' },
   'ulatvasi-library': { hi: '२५० उलटबांसी पद संग्रह', pb: '੨੫੦ ਉਲਟਬਾਂਸੀ ਪਦ ਸੰਗ੍ਰਹਿ', en: '250 Ulatvasi Library' },
   'deep-search': { hi: 'समग्र ग्रन्थ अन्वेषण', pb: 'ਸਮੁੱਚੀ ਗ੍ਰੰਥ ਖੋਜ', en: 'Deep Scripture Search' },
@@ -145,10 +149,10 @@ export const MasterFeatureCardLayout: React.FC<MasterFeatureCardLayoutProps> = (
       <header
         id="master-screen-header-stack"
         style={{
-          backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.96)' : 'rgba(253, 248, 238, 0.98)',
+          backgroundColor: isDarkMode ? 'rgba(28, 20, 15, 0.98)' : 'rgba(253, 248, 238, 0.98)',
           borderColor: '#D97706',
         }}
-        className="relative z-20 rounded-2xl border p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-sm flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
+        className="relative z-20 rounded-2xl border p-2.5 sm:p-4 mb-4 sm:mb-5 shadow-md backdrop-blur-md flex flex-col gap-2 transition-all w-full max-w-full overflow-hidden"
       >
         {/* Row 1: Top Utility Bar (Back button + Offline Badge on Left | Lang Toggle + Font + Settings on Right) */}
         <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 border-b border-amber-500/20 pb-2 w-full min-w-0">

@@ -123,10 +123,22 @@ export const Layout: React.FC<LayoutProps> = ({
   const { theme, isDarkMode, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
   const t = translations[language] || translations.hi;
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_fullscreen');
+      if (saved !== null) return saved === '1';
+    } catch {}
+    return true;
+  });
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
   const [showAdminLoginModal, setShowAdminLoginModal] = useState(false);
   const brandTapTimestampsRef = useRef<number[]>([]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('sahebworld_fullscreen', isFullscreen ? '1' : '0');
+    } catch {}
+  }, [isFullscreen]);
 
   const handleHeaderBrandTap = () => {
     const now = Date.now();
@@ -197,6 +209,42 @@ export const Layout: React.FC<LayoutProps> = ({
 
   const [showScrollControls, setShowScrollControls] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
+
+  // Draggable floating scroll pill position state
+  const [scrollPillPos, setScrollPillPos] = useState<{ x: number; y: number }>(() => {
+    try {
+      const saved = localStorage.getItem('sahebworld_scroll_pill_pos');
+      if (saved) return JSON.parse(saved);
+    } catch {}
+    return { x: typeof window !== 'undefined' ? window.innerWidth - 60 : 360, y: typeof window !== 'undefined' ? window.innerHeight - 140 : 500 };
+  });
+  const isDraggingPillRef = useRef(false);
+  const dragOffsetRef = useRef({ x: 0, y: 0 });
+
+  const handlePillPointerDown = (e: React.PointerEvent) => {
+    isDraggingPillRef.current = true;
+    const target = e.currentTarget as HTMLElement;
+    target.setPointerCapture(e.pointerId);
+    dragOffsetRef.current = {
+      x: e.clientX - scrollPillPos.x,
+      y: e.clientY - scrollPillPos.y,
+    };
+  };
+
+  const handlePillPointerMove = (e: React.PointerEvent) => {
+    if (!isDraggingPillRef.current) return;
+    const nextX = Math.max(10, Math.min(window.innerWidth - 60, e.clientX - dragOffsetRef.current.x));
+    const nextY = Math.max(50, Math.min(window.innerHeight - 80, e.clientY - dragOffsetRef.current.y));
+    setScrollPillPos({ x: nextX, y: nextY });
+  };
+
+  const handlePillPointerUp = (e: React.PointerEvent) => {
+    if (!isDraggingPillRef.current) return;
+    isDraggingPillRef.current = false;
+    try {
+      localStorage.setItem('sahebworld_scroll_pill_pos', JSON.stringify(scrollPillPos));
+    } catch {}
+  };
 
   // 🎙️ Voice-Controlled Navigation States
   const [isListeningVoice, setIsListeningVoice] = useState<boolean>(false);
@@ -533,6 +581,68 @@ export const Layout: React.FC<LayoutProps> = ({
     }
     setTimeout(updateBar2ScrollBounds, 320);
   };
+
+  // Bar 3 Moveable Drag & Scroll State (Single-Row Utility Bar)
+  const bar3ScrollRef = useRef<HTMLDivElement>(null);
+  const [isDraggingBar3, setIsDraggingBar3] = useState(false);
+  const [bar3DragStartX, setBar3DragStartX] = useState(0);
+  const [bar3DragScrollLeft, setBar3DragScrollLeft] = useState(0);
+  const [bar3MovedDistance, setBar3MovedDistance] = useState(0);
+
+  const handleBar3MouseDown = (e: React.MouseEvent) => {
+    if (!bar3ScrollRef.current) return;
+    setIsDraggingBar3(true);
+    setBar3MovedDistance(0);
+    setBar3DragStartX(e.pageX - bar3ScrollRef.current.offsetLeft);
+    setBar3DragScrollLeft(bar3ScrollRef.current.scrollLeft);
+  };
+
+  const handleBar3TouchStart = (e: React.TouchEvent) => {
+    if (!bar3ScrollRef.current || e.touches.length === 0) return;
+    setIsDraggingBar3(true);
+    setBar3MovedDistance(0);
+    setBar3DragStartX(e.touches[0].pageX - bar3ScrollRef.current.offsetLeft);
+    setBar3DragScrollLeft(bar3ScrollRef.current.scrollLeft);
+  };
+
+  const handleBar3TouchMove = (e: React.TouchEvent) => {
+    if (!isDraggingBar3 || !bar3ScrollRef.current || e.touches.length === 0) return;
+    const x = e.touches[0].pageX - bar3ScrollRef.current.offsetLeft;
+    const walk = (x - bar3DragStartX) * 1.5;
+    setBar3MovedDistance(Math.abs(walk));
+    bar3ScrollRef.current.scrollLeft = bar3DragScrollLeft - walk;
+  };
+
+  const handleBar3TouchEnd = () => {
+    setIsDraggingBar3(false);
+  };
+
+  const handleBar3Wheel = (e: React.WheelEvent) => {
+    if (!bar3ScrollRef.current) return;
+    if (e.deltaY !== 0 && e.deltaX === 0) {
+      bar3ScrollRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    if (!isDraggingBar3) return;
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!bar3ScrollRef.current) return;
+      const x = e.pageX - bar3ScrollRef.current.offsetLeft;
+      const walk = (x - bar3DragStartX) * 1.5;
+      setBar3MovedDistance(Math.abs(walk));
+      bar3ScrollRef.current.scrollLeft = bar3DragScrollLeft - walk;
+    };
+    const handleGlobalMouseUp = () => {
+      setIsDraggingBar3(false);
+    };
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+    window.addEventListener('mouseup', handleGlobalMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
+  }, [isDraggingBar3, bar3DragStartX, bar3DragScrollLeft]);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -1793,55 +1903,108 @@ export const Layout: React.FC<LayoutProps> = ({
             </button>
           </div>
 
-          {/* Right: Shifted Action & Utility Icons (Clean flex-wrap so nothing clips) */}
-          <div className="flex flex-wrap items-center justify-between md:justify-end gap-1 sm:gap-1.5 w-full md:w-auto">
+          {/* Bottom / Right: Moveable Single-Row Horizontally Scrollable Utility Bar (Bar 3) */}
+          <div
+            ref={bar3ScrollRef}
+            onMouseDown={handleBar3MouseDown}
+            onTouchStart={handleBar3TouchStart}
+            onTouchMove={handleBar3TouchMove}
+            onTouchEnd={handleBar3TouchEnd}
+            onWheel={handleBar3Wheel}
+            style={{
+              display: 'flex',
+              flexWrap: 'nowrap',
+              overflowX: 'auto',
+              gap: '8px',
+            }}
+            className={`items-center justify-start md:justify-end w-full md:flex-1 min-w-0 no-scrollbar touch-pan-x select-none py-0.5 ${
+              isDraggingBar3 ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+          >
+            {/* Unified 3-in-1 Settings Pill (सामान्य व थीम • सुगमता व वाणी • उन्नत पाठ साधन) */}
+            <button
+              id="header-open-settings-btn"
+              onClick={() => {
+                if (bar3MovedDistance > 8) return;
+                sacredHaptics.lightTap();
+                onOpenSettings();
+              }}
+              title={
+                language === 'pb'
+                  ? 'ਸੈਟਿੰਗਜ਼: ਸਾਧਾਰਨ ਅਤੇ ਥੀਮ • ਸੁਗਮਤਾ • ਉੱਨਤ ਪਠਨ ਸਾਧਨ'
+                  : language === 'en'
+                  ? 'Unified Settings: General & Theme • Accessibility • Reading Suite'
+                  : 'एकीकृत सेटिंग्स: सामान्य व थीम • सुगमता व वाणी • उन्नत पाठ साधन'
+              }
+              style={{
+                borderColor: theme.accentGold,
+                backgroundColor: theme.accentGoldLight,
+                color: theme.sacredMaroon,
+              }}
+              className="h-7 px-2.5 rounded-md border flex items-center justify-center gap-1.5 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
+              aria-label="Settings"
+            >
+              <Settings className="w-3.5 h-3.5 text-amber-800 shrink-0" />
+              <span className="font-serif font-bold text-[0.65rem] sm:text-[0.6875rem] whitespace-nowrap">
+                {language === 'pb'
+                  ? 'ਸੈਟਿੰਗਜ਼ • ਥੀਮ • ਸਾਧਨ'
+                  : language === 'en'
+                  ? 'Settings • Theme • Tools'
+                  : 'सामान्य • सुगमता • पाठ साधन'}
+              </span>
+            </button>
 
-            {/* Advanced Reading Suite (उन्नत पठन साधन) Trigger Button in 3rd Top Bar */}
+            {/* Quick Tab 3 Shortcut: Advanced Reading Suite (उन्नत पठन साधन) */}
             <button
               id="header-open-advanced-reading-suite-btn"
               onClick={() => {
+                if (bar3MovedDistance > 8) return;
                 sacredHaptics.lightTap();
                 window.dispatchEvent(new CustomEvent('sahebworld_open_advanced_reading_suite'));
               }}
               style={{
-                backgroundColor: theme.accentGoldLight,
+                backgroundColor: theme.cardBg,
                 borderColor: theme.accentGold,
                 color: theme.sacredMaroon,
               }}
-              className="h-6 sm:h-6.5 px-2 sm:px-2.5 rounded-md border text-[0.6875rem] font-bold inline-flex items-center justify-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs shrink-0"
+              className="h-7 px-2.5 rounded-md border text-[0.6875rem] font-bold inline-flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
               title={language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ (Advanced Reading Suite)' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन (Advanced Reading Suite)'}
             >
               <span className="text-[0.875rem] leading-none shrink-0" style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))' }}>🔱</span>
-              <span className="font-serif font-bold text-[0.625rem] sm:text-[0.6875rem]">
-                {language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन'}
+              <span className="font-serif font-bold text-[0.65rem] sm:text-[0.6875rem] whitespace-nowrap">
+                {language === 'pb' ? 'ਉੱਨਤ ਸਾਧਨ' : language === 'en' ? 'Reading Tools' : 'उन्नत पाठ साधन'}
               </span>
             </button>
 
-            {/* Accessibility / Font Scaling Button (Quick Access for Elderly) */}
+            {/* Quick Tab 2 Shortcut: Accessibility / Font Scaling Button */}
             <button
               id="header-open-accessibility-btn"
               onClick={() => {
+                if (bar3MovedDistance > 8) return;
                 sacredHaptics.lightTap();
                 window.dispatchEvent(new CustomEvent('sahebworld_open_accessibility'));
               }}
               title={language === 'pb' ? 'ਅੱਖਰ ਆਕਾਰ ਅਤੇ ਸੁਗਮਤਾ (Font Size & Accessibility)' : language === 'en' ? 'Accessibility & Font Size' : 'अक्षर आकार एवं सुगमता (Accessibility)'}
               style={{
                 borderColor: theme.accentGold,
-                backgroundColor: theme.accentGoldLight,
+                backgroundColor: theme.cardBg,
                 color: theme.sacredMaroon,
               }}
-              className="h-6 sm:h-6.5 px-2 sm:px-2.5 rounded-md border flex items-center justify-center gap-1.5 transition cursor-pointer hover:scale-105 shadow-2xs shrink-0"
+              className="h-7 px-2.5 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
               aria-label="Accessibility"
             >
               <Sliders className="w-3.5 h-3.5 text-amber-800 shrink-0" />
-              <span className="font-serif font-black text-[0.7rem] sm:text-[0.75rem]">A+</span>
+              <span className="font-serif font-black text-[0.7rem] sm:text-[0.75rem] whitespace-nowrap">A+</span>
             </button>
 
             {/* Offline Readiness Status Indicator */}
             <button
               type="button"
               id="header-network-status-btn"
-              onClick={() => onSelectView('health-diagnostic')}
+              onClick={() => {
+                if (bar3MovedDistance > 8) return;
+                onSelectView('health-diagnostic');
+              }}
               title={
                 isOnline
                   ? (isOfflineReady
@@ -1854,12 +2017,12 @@ export const Layout: React.FC<LayoutProps> = ({
                 backgroundColor: isOnline ? theme.cardBg : 'rgba(22, 163, 74, 0.12)',
                 color: isOnline ? theme.sacredMaroon : '#166534',
               }}
-              className="h-6 sm:h-6.5 px-2 rounded-md border flex items-center justify-center gap-1 transition shadow-2xs shrink-0 font-serif text-[0.625rem] font-bold cursor-pointer hover:scale-105 active:scale-95"
+              className="h-7 px-2 rounded-md border flex items-center justify-center gap-1 transition shadow-2xs shrink-0 whitespace-nowrap font-serif text-[0.625rem] font-bold cursor-pointer hover:scale-[1.03] active:scale-95"
             >
               {isOnline ? (
                 <>
                   <Wifi className="w-3 h-3 text-emerald-600 shrink-0" />
-                  <span className="hidden md:inline">{language === 'pb' ? 'ਆਨਲਾਈਨ' : language === 'en' ? 'Online' : 'ऑनलाइन'}</span>
+                  <span>{language === 'pb' ? 'ਆਨਲਾਈਨ' : language === 'en' ? 'Online' : 'ऑनलाइन'}</span>
                 </>
               ) : (
                 <>
@@ -1869,28 +2032,13 @@ export const Layout: React.FC<LayoutProps> = ({
               )}
             </button>
 
-            {/* Settings Button */}
-            <button
-              id="header-open-settings-btn"
-              onClick={onOpenSettings}
-              title={language === 'pb' ? 'ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'Settings' : 'सेटिंग्स'}
-              style={{
-                borderColor: theme.accentGold,
-                backgroundColor: theme.cardBg,
-                color: theme.sacredMaroon,
-              }}
-              className="h-6 sm:h-6.5 px-2 sm:px-2.5 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs shrink-0"
-              aria-label="Settings"
-            >
-              <Settings className="w-3.5 h-3.5 text-amber-800 shrink-0" />
-            </button>
-
             {/* Admin-Only Tool Trigger (प्रशासक टूल) */}
             {isAdmin && (
               <button
                 type="button"
                 id="header-open-admin-injector-btn"
                 onClick={() => {
+                  if (bar3MovedDistance > 8) return;
                   sacredHaptics.lightTap();
                   window.dispatchEvent(new CustomEvent(OPEN_ADMIN_INJECTOR_EVENT));
                 }}
@@ -1900,7 +2048,7 @@ export const Layout: React.FC<LayoutProps> = ({
                   backgroundColor: theme.cardBg,
                   color: theme.textSecondary,
                 }}
-                className="h-6 sm:h-6.5 px-1.5 rounded-md border flex items-center justify-center transition cursor-pointer opacity-75 hover:opacity-100 shrink-0"
+                className="h-7 px-2 rounded-md border flex items-center justify-center transition cursor-pointer opacity-80 hover:opacity-100 shrink-0 whitespace-nowrap"
                 aria-label="प्रशासक टूल"
               >
                 <Database className="w-3 h-3 text-amber-800 dark:text-amber-300 shrink-0" />
@@ -1911,6 +2059,7 @@ export const Layout: React.FC<LayoutProps> = ({
             <button
               id="header-open-language-diagnostics-btn"
               onClick={() => {
+                if (bar3MovedDistance > 8) return;
                 sacredHaptics.lightTap();
                 setShowLanguageDiagnostics(true);
               }}
@@ -1920,15 +2069,15 @@ export const Layout: React.FC<LayoutProps> = ({
                 backgroundColor: theme.cardBg,
                 color: theme.sacredMaroon,
               }}
-              className="h-6 sm:h-6.5 px-2 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-105 shadow-2xs shrink-0 font-serif text-[0.625rem] font-bold"
+              className="h-7 px-2 rounded-md border flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap font-serif text-[0.625rem] font-bold"
             >
               <span>🌐</span>
-              <span className="hidden xs:inline">{language.toUpperCase()}</span>
+              <span>{language.toUpperCase()}</span>
             </button>
 
-            {/* Language Switcher Control */}
+            {/* Language Switcher Control (kept cleanly in the same scrollable row) */}
             <div 
-              className="flex items-center border rounded-md overflow-hidden font-bold shadow-2xs shrink-0 h-6 sm:h-6.5 p-0.5" 
+              className="flex items-center border rounded-md overflow-hidden font-bold shadow-2xs shrink-0 whitespace-nowrap h-7 p-0.5" 
               style={{
                 borderColor: theme.mode === 'mystic_dark' ? '#F59E0B' : theme.accentGold,
                 backgroundColor: theme.mode === 'mystic_dark' ? '#2A2016' : theme.stepActiveBg
@@ -1941,7 +2090,10 @@ export const Layout: React.FC<LayoutProps> = ({
                   <button
                     key={lng}
                     id={`header-lang-${lng}`}
-                    onClick={() => onSelectLanguage(lng)}
+                    onClick={() => {
+                      if (bar3MovedDistance > 8) return;
+                      onSelectLanguage(lng);
+                    }}
                     style={{
                       backgroundColor: isSelected 
                         ? (theme.mode === 'mystic_dark' ? '#D97706' : theme.sacredMaroon) 
@@ -1950,7 +2102,7 @@ export const Layout: React.FC<LayoutProps> = ({
                         ? (theme.mode === 'mystic_dark' ? '#000000' : '#FFFFFF') 
                         : (theme.mode === 'mystic_dark' ? '#FFFDF7' : theme.textSecondary),
                     }}
-                    className={`h-full px-1.5 sm:px-2 rounded transition-all cursor-pointer flex items-center justify-center text-[9.5px] sm:text-[0.625rem] ${
+                    className={`h-full px-2 rounded transition-all cursor-pointer flex items-center justify-center text-[0.625rem] whitespace-nowrap ${
                       isSelected ? 'font-black shadow-xs' : 'font-semibold hover:opacity-90'
                     }`}
                     title={lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
@@ -2726,12 +2878,22 @@ export const Layout: React.FC<LayoutProps> = ({
       </footer>
       )}
 
-      {/* 🧭 Compact Floating Quick Scroll Navigation Pill (Lower Bottom-Right Corner above Sticky Bar) */}
+      {/* 🧭 Compact Floating Quick Scroll Navigation Pill (Draggable) */}
       {showScrollControls && currentView !== 'nitnem-gutka' && (
         <aside
           id="floating-quick-scroll-pill"
           aria-label="Scroll Navigation"
-          className="fixed right-2 sm:right-4 bottom-12 sm:bottom-12 z-40 flex flex-col items-center gap-1 p-1 rounded-full bg-white/85 dark:bg-stone-900/85 backdrop-blur-md border border-amber-500/35 shadow-lg transition-all duration-300 animate-fadeIn select-none"
+          style={{
+            left: `${scrollPillPos.x}px`,
+            top: `${scrollPillPos.y}px`,
+            touchAction: 'none',
+          }}
+          onPointerDown={handlePillPointerDown}
+          onPointerMove={handlePillPointerMove}
+          onPointerUp={handlePillPointerUp}
+          onPointerCancel={handlePillPointerUp}
+          className="fixed z-40 flex flex-col items-center gap-1 p-1 rounded-full bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border border-amber-500/35 shadow-xl transition-shadow duration-200 cursor-grab active:cursor-grabbing select-none"
+          title="खींचकर कहीं भी ले जाएं (Draggable Scroll Pill)"
         >
           {/* Scroll To Top Button */}
           <button

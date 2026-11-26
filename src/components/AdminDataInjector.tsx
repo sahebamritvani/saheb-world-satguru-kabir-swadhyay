@@ -51,6 +51,8 @@ interface EasyHindiItem {
   id?: string;
   title: string;
   lines: string[];
+  bhavarth?: string;
+  englishTranslation?: string;
   extra?: Record<string, unknown>;
 }
 
@@ -137,9 +139,11 @@ function parseJsonToEasyItems(raw: string): EasyHindiItem[] {
       .map((item, idx) => {
         const title = extractTitleString(item.title ?? item.name ?? item.heading, idx);
         const lines = extractLinesArray(item);
+        const bhavarth = typeof item.bhavarth === 'string' ? item.bhavarth : typeof item.meaning === 'string' ? item.meaning : '';
+        const englishTranslation = typeof item.englishTranslation === 'string' ? item.englishTranslation : typeof item.translation === 'string' ? item.translation : '';
         const extra: Record<string, unknown> = {};
         for (const [k, v] of Object.entries(item)) {
-          if (!['id', 'title', 'lines', 'content', 'moolVani'].includes(k)) {
+          if (!['id', 'title', 'lines', 'content', 'moolVani', 'bhavarth', 'meaning', 'englishTranslation', 'translation'].includes(k)) {
             extra[k] = v;
           }
         }
@@ -147,6 +151,8 @@ function parseJsonToEasyItems(raw: string): EasyHindiItem[] {
           id: typeof item.id === 'string' && item.id.trim() ? item.id.trim() : undefined,
           title,
           lines,
+          bhavarth: bhavarth.trim() || undefined,
+          englishTranslation: englishTranslation.trim() || undefined,
           extra: Object.keys(extra).length > 0 ? extra : undefined,
         };
       });
@@ -158,24 +164,13 @@ function parseJsonToEasyItems(raw: string): EasyHindiItem[] {
 function compileEasyItemsToJson(items: EasyHindiItem[]): string {
   const normalized = items.map((it) => {
     const cleanLines = it.lines.map((l) => l.trim()).filter(Boolean);
-    if (it.extra && Object.keys(it.extra).length > 0) {
-      return {
-        ...(it.id ? { id: it.id } : {}),
-        title: it.title.trim(),
-        lines: cleanLines,
-        ...it.extra,
-      };
-    }
-    if (it.id) {
-      return {
-        id: it.id,
-        title: it.title.trim(),
-        lines: cleanLines,
-      };
-    }
     return {
+      ...(it.id ? { id: it.id } : {}),
       title: it.title.trim(),
       lines: cleanLines,
+      ...(it.bhavarth?.trim() ? { bhavarth: it.bhavarth.trim() } : {}),
+      ...(it.englishTranslation?.trim() ? { englishTranslation: it.englishTranslation.trim() } : {}),
+      ...(it.extra || {}),
     };
   });
   return JSON.stringify(normalized, null, 2);
@@ -207,6 +202,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
   const [editingId, setEditingId] = useState<string | undefined>(undefined);
   const [sectionTitleInput, setSectionTitleInput] = useState<string>('');
   const [sectionLinesInput, setSectionLinesInput] = useState<string>('');
+  const [sectionBhavarthInput, setSectionBhavarthInput] = useState<string>('');
+  const [sectionEnglishInput, setSectionEnglishInput] = useState<string>('');
 
   const [slotStatuses, setSlotStatuses] = useState<Record<AdminGranthSlotId, SlotStatusInfo>>(() =>
     getAllSlotStatuses()
@@ -405,6 +402,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
       .split('\n')
       .map((l) => l.trim())
       .filter((l) => l.length > 0);
+    const bhavarth = sectionBhavarthInput.trim();
+    const englishTranslation = sectionEnglishInput.trim();
 
     if (!trimmedTitle) {
       setActionError('कृपया पहले "खंड/अध्याय का शीर्षक" लिखें।');
@@ -425,6 +424,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
               id: editingId || item.id,
               title: trimmedTitle,
               lines,
+              bhavarth: bhavarth || undefined,
+              englishTranslation: englishTranslation || undefined,
             }
           : item
       );
@@ -438,6 +439,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
                 id: editingId,
                 title: trimmedTitle,
                 lines,
+                bhavarth: bhavarth || undefined,
+                englishTranslation: englishTranslation || undefined,
               }
             : item
         );
@@ -448,6 +451,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
             ...(editingId ? { id: editingId } : {}),
             title: trimmedTitle,
             lines,
+            ...(bhavarth ? { bhavarth } : {}),
+            ...(englishTranslation ? { englishTranslation } : {}),
           },
         ];
       }
@@ -465,6 +470,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
       setEditingId(undefined);
       setSectionTitleInput('');
       setSectionLinesInput('');
+      setSectionBhavarthInput('');
+      setSectionEnglishInput('');
     }
   };
 
@@ -475,6 +482,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
     setEditingId(target.id);
     setSectionTitleInput(target.title);
     setSectionLinesInput(target.lines.join('\n'));
+    setSectionBhavarthInput(target.bhavarth || '');
+    setSectionEnglishInput(target.englishTranslation || '');
     setActionError(null);
     formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     window.setTimeout(() => titleInputRef.current?.focus(), 120);
@@ -492,6 +501,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
     setEditingId(item.id);
     setSectionTitleInput(item.title);
     setSectionLinesInput(item.lines.join('\n'));
+    setSectionBhavarthInput(item.bhavarth || '');
+    setSectionEnglishInput(item.englishTranslation || '');
     setActionError(null);
     formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     window.setTimeout(() => titleInputRef.current?.focus(), 120);
@@ -505,6 +516,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
       setEditingId(undefined);
       setSectionTitleInput('');
       setSectionLinesInput('');
+      setSectionBhavarthInput('');
+      setSectionEnglishInput('');
     } else if (editingIndex !== null && editingIndex > idx) {
       setEditingIndex(editingIndex - 1);
     }
@@ -519,6 +532,8 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
     setEditingId(undefined);
     setSectionTitleInput('');
     setSectionLinesInput('');
+    setSectionBhavarthInput('');
+    setSectionEnglishInput('');
     setActionError(null);
   };
 
@@ -976,6 +991,50 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
                       color: theme.textPrimary,
                     }}
                     className="w-full p-3 rounded-xl border text-xs sm:text-sm font-serif leading-relaxed outline-none focus:ring-2 focus:ring-amber-500/40 resize-y min-h-[140px]"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label
+                    htmlFor="easy-section-bhavarth"
+                    className="block text-xs font-bold font-serif text-amber-950 dark:text-amber-200"
+                  >
+                    सरल भावार्थ एवं जीवन संदेश <span className="font-normal opacity-75">(Renders inside the Bhavarth card)</span>
+                  </label>
+                  <textarea
+                    id="easy-section-bhavarth"
+                    rows={3}
+                    value={sectionBhavarthInput}
+                    onChange={(e) => setSectionBhavarthInput(e.target.value)}
+                    placeholder={'यहाँ इस खंड या दोहे का सरल भावार्थ/जीवन संदेश लिखें...'}
+                    style={{
+                      backgroundColor: isDarkMode ? '#14110E' : '#FFFFFF',
+                      borderColor: theme.cardBorder,
+                      color: theme.textPrimary,
+                    }}
+                    className="w-full p-3 rounded-xl border text-xs sm:text-sm font-serif leading-relaxed outline-none focus:ring-2 focus:ring-amber-500/40 resize-y min-h-[90px]"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label
+                    htmlFor="easy-section-english"
+                    className="block text-xs font-bold font-serif text-amber-950 dark:text-amber-200"
+                  >
+                    English Translation & Meaning <span className="font-normal opacity-75">(Renders in English Translation box)</span>
+                  </label>
+                  <textarea
+                    id="easy-section-english"
+                    rows={2}
+                    value={sectionEnglishInput}
+                    onChange={(e) => setSectionEnglishInput(e.target.value)}
+                    placeholder={'Enter English translation or summary here (never repeats raw Hindi text if left empty)...'}
+                    style={{
+                      backgroundColor: isDarkMode ? '#14110E' : '#FFFFFF',
+                      borderColor: theme.cardBorder,
+                      color: theme.textPrimary,
+                    }}
+                    className="w-full p-3 rounded-xl border text-xs sm:text-sm font-serif leading-relaxed outline-none focus:ring-2 focus:ring-amber-500/40 resize-y min-h-[70px]"
                   />
                 </div>
 

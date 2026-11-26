@@ -178,6 +178,45 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
         </section>
 
         {/* ========================================================================= */}
+        {/* FOUNDATIONAL DOHA & MEANING CARD (High-contrast Cream #FDF8EE, Gold border) */}
+        {/* ========================================================================= */}
+        <section
+          style={{
+            backgroundColor: isDarkMode ? '#241A14' : '#FDF8EE',
+            borderColor: '#D97706',
+          }}
+          className="rounded-3xl border-2 p-5 sm:p-7 shadow-md space-y-4 text-center relative overflow-hidden"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs font-serif font-black uppercase">
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>
+              {activeLang === 'pb' ? '📖 ਸਰੋਤ: ਕਬੀਰ ਸਾਖੀ ਸੰਗ੍ਰਹਿ — ਰੋਗ ਨਿਵਾਰਕ ਅੰਗ' : activeLang === 'en' ? '📖 Source: Kabir Sakhi Sangrah — Panacea Ang' : '📖 स्रोत: कबीर साखी संग्रह — रोग निवारक अंग'}
+            </span>
+          </div>
+
+          <div className="font-serif font-bold text-base sm:text-lg md:text-xl text-[#6B1D1D] dark:text-amber-200 leading-relaxed whitespace-pre-line py-1">
+            {activeLang === 'pb' 
+              ? 'ਸਤਯਨਾਮ ਔਸ਼ਧੀ ਹੈ, ਭਵ-ਵਿਆਧੀ ਕੀ ਏਕ。\nਜੋ ਜਨ ਸਿਮਰੈ ਪ੍ਰੇਮ ਸੋਂ, ਤਾਕੇ ਕਟੈਂ ਅਨੇਕ॥' 
+              : activeLang === 'en'
+              ? 'Satyanaam is the supreme medicine for all worldly ailments;\nWhoever remembers it with pure devotion, their myriad bonds are severed.'
+              : 'सत्यनाम औषधि है, भव-व्याधि की एक।\nजो जन सुमिरै प्रेम सों, ताके कटैं अनेक॥'}
+          </div>
+
+          <div className="border-t border-amber-500/25 pt-3 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm font-serif text-stone-700 dark:text-stone-300 leading-relaxed">
+              <strong className="text-[#6B1D1D] dark:text-amber-400 font-bold">
+                {activeLang === 'pb' ? 'ਭਾਵਾਰਥ: ' : activeLang === 'en' ? 'Meaning: ' : 'भावार्थ: '}
+              </strong>
+              {activeLang === 'pb'
+                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ \'ਸਤਯਨਾਮ\' ਹੀ ਸਮੁੱਚੇ ਜਨਮ-ਮਰਨ, ਅਗਿਆਨ, ਮੋਹ ਅਤੇ ਮਾਨਸਿਕ ਤਾਪਾਂ ਦੀ ਇੱਕੋ-ਇੱਕ ਮਹਾ-ਔਸ਼ਧੀ ਹੈ। ਪ੍ਰੇਮ ਸਹਿਤ ਸਿਮਰਨ ਨਾਲ ਸਾਰੇ ਕਸ਼ਟ ਮਿਟ ਜਾਂਦੇ ਹਨ।'
+                : activeLang === 'en'
+                ? 'Satguru Kabir Saheb proclaims that \'Satyanaam\' is the supreme panacea for all worldly ailments, illusions, and karmic bonds. With loving remembrance, all suffering dissolves.'
+                : 'सतगुरु कबीर साहेब फरमाते हैं कि \'सत्यनाम\' ही समस्त जन्म-मरण, अज्ञान, मोह और मानसिक संतापों की एकमात्र महा-औषधि (Panacea) है। प्रेमपूर्वक इसके स्मरण से सभी कष्ट स्वतः नष्ट हो जाते हैं।'}
+            </p>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
         {/* INTERACTIVE PURE WHITE DIVINE LIGHT VISUALIZATION CANVAS                  */}
         {/* ========================================================================= */}
         <section 

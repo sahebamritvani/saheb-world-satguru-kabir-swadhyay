@@ -584,6 +584,7 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     setFontFamilyState(font);
     if (typeof window !== 'undefined') {
       localStorage.setItem('sahebworld_fontfamily', font);
+      window.dispatchEvent(new CustomEvent('sahebworld_fontfamily_changed', { detail: font }));
     }
   };
 
@@ -864,9 +865,17 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       root.classList.add(`font-size-${fontSize}`);
       document.body.classList.add(`font-size-${fontSize}`);
 
+      // Font family class update (ग्रंथ vs सरल)
+      root.classList.remove('font-granth', 'font-saral');
+      document.body.classList.remove('font-granth', 'font-saral');
+      const fontClass = fontFamily === 'sans' ? 'font-saral' : 'font-granth';
+      root.classList.add(fontClass);
+      document.body.classList.add(fontClass);
+      root.setAttribute('data-font-family', fontFamily);
+
       window.dispatchEvent(new CustomEvent('sahebworld_theme_changed', { detail: themeMode }));
     }
-  }, [themeMode, activeTheme, fontSize, activeWallpaperCss]);
+  }, [themeMode, activeTheme, fontSize, fontFamily, activeWallpaperCss]);
 
   // Cross-component theme sync listener
   useEffect(() => {
@@ -890,6 +899,29 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
       window.removeEventListener('storage', handleStorage);
     };
   }, [themeMode]);
+
+  // Cross-component font family sync listener
+  useEffect(() => {
+    const handleFontChange = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail && (customEvent.detail === 'serif' || customEvent.detail === 'sans') && customEvent.detail !== fontFamily) {
+        setFontFamilyState(customEvent.detail);
+      }
+    };
+
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'sahebworld_fontfamily' && e.newValue && (e.newValue === 'serif' || e.newValue === 'sans') && e.newValue !== fontFamily) {
+        setFontFamilyState(e.newValue as 'serif' | 'sans');
+      }
+    };
+
+    window.addEventListener('sahebworld_fontfamily_changed', handleFontChange as EventListener);
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      window.removeEventListener('sahebworld_fontfamily_changed', handleFontChange as EventListener);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, [fontFamily]);
 
   const toggleDarkMode = () => {
     const nextMode: ThemeMode = (themeMode === 'amrit_neel' || themeMode === 'mystic_dark') ? 'bhojpatra' : 'amrit_neel';

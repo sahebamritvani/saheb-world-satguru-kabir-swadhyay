@@ -140,7 +140,8 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   onOpenWallpaperWithHukamnama,
   isCustomSakhiActive = false
 }) => {
-  const { theme, isDarkMode, fontSize, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
+  const { theme, isDarkMode, fontSize, fontFamily, isSahajMode, setIsSahajMode, globalWallpaper } = useAppTheme();
+  const activeFontClass = fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif';
   const { language: contextLang, setLanguage, t: contextT } = useLanguage();
   const lang = language || contextLang;
   const t = translations[lang] || contextT;
@@ -1304,7 +1305,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             {/* Couplet Text */}
             <p
               style={{ color: theme.sacredMaroon }}
-              className={`font-serif font-bold leading-relaxed whitespace-pre-line tracking-wide break-words ${fontSizes[fontSize]}`}
+              className={`${activeFontClass} font-bold leading-relaxed whitespace-pre-line tracking-wide break-words ${fontSizes[fontSize]}`}
             >
               {formatCoupletString(sakhi.text[language] || sakhi.text.hi)}
             </p>
@@ -1392,7 +1393,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               </button>
             </div>
             {showBhavarth && (
-              <p style={{ color: theme.textPrimary }} className="text-sm sm:text-base leading-relaxed font-serif break-words">
+              <p style={{ color: theme.textPrimary }} className={`text-sm sm:text-base leading-relaxed ${activeFontClass} break-words`}>
                 {sakhi.bhavarth[language] || sakhi.bhavarth.hi}
               </p>
             )}
@@ -1413,7 +1414,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               </button>
             </div>
             {showContemplation && (
-              <p style={{ color: theme.textPrimary }} className="text-xs sm:text-sm font-serif italic font-semibold leading-relaxed animate-fadeIn break-words">
+              <p style={{ color: theme.textPrimary }} className={`text-xs sm:text-sm ${activeFontClass} italic font-semibold leading-relaxed animate-fadeIn break-words`}>
                 "{sakhi.contemplation[language] || sakhi.contemplation.hi}"
               </p>
             )}

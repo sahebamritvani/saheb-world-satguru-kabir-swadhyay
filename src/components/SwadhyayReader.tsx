@@ -95,6 +95,7 @@ interface SwadhyayReaderProps {
   onChangeLanguage?: (lang: Language) => void;
   onSelectSakhi?: (sakhi: Sakhi) => void;
   onClose?: () => void;
+  onOpenSettings?: () => void;
 }
 
 // Global Sacred Esoteric Spiritual Glossary for Kabeer Path
@@ -170,6 +171,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   onChangeLanguage,
   onSelectSakhi,
   onClose,
+  onOpenSettings,
 }) => {
   const { 
     theme, 
@@ -198,12 +200,12 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const { language: contextLang, t: contextT } = useLanguage();
   const lang = language || contextLang;
   const t = translations[lang] || contextT;
-  const activeFontClass = fontFamily === 'sans' ? 'font-sans' : 'font-serif';
+  const activeFontClass = fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif';
   const activeFontStyle: React.CSSProperties = {
     fontFamily:
       fontFamily === 'sans'
-        ? '"Noto Sans Devanagari", "Noto Sans Gurmukhi", "Mukta", ui-sans-serif, system-ui, sans-serif'
-        : '"Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, Cambria, serif',
+        ? "'Mukta', 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+        : "'Noto Serif Devanagari', 'Noto Serif Gurmukhi', 'Rozha One', Georgia, Cambria, serif",
   };
 
   // 2 Reference Sakhis (संदर्भ साखियाँ) rotating daily for comparative deep study
@@ -723,7 +725,14 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
   const [showEightStepContemplation, setShowEightStepContemplation] = useState<boolean>(true);
   const [unlockedSatsang, setUnlockedSatsang] = useState<boolean>(true);
   const [unlockedInsight, setUnlockedInsight] = useState<boolean>(true);
-  const [showBhavarth, setShowBhavarth] = useState<boolean>(true);
+  const [showBhavarth, setShowBhavarth] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('sahebworld_show_bhavarth') !== 'false';
+      } catch {}
+    }
+    return true;
+  });
   const [showMoolvani, setShowMoolvani] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('sahebworld_show_moolvani');
@@ -1042,7 +1051,14 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     }
   });
 
-  const [focusRuler, setFocusRuler] = useState<boolean>(false);
+  const [focusRuler, setFocusRuler] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('sahebworld_focus_ruler') === 'true';
+      } catch {}
+    }
+    return false;
+  });
   const [selectedGlossaryKey, setSelectedGlossaryKey] = useState<{ type: 'data'; index: number } | { type: 'override'; key: string } | null>(null);
 
   // Smart Glossing State for non-intrusive tooltip and full detail modal
@@ -1240,11 +1256,59 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       }
     };
 
+    const handleBhavarthChanged = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (typeof customEvent.detail?.show === 'boolean') {
+        setShowBhavarth(customEvent.detail.show);
+      } else {
+        try {
+          setShowBhavarth(localStorage.getItem('sahebworld_show_bhavarth') !== 'false');
+        } catch {}
+      }
+    };
+
+    const handleMoolvaniChanged = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (typeof customEvent.detail?.show === 'boolean') {
+        setShowMoolvani(customEvent.detail.show);
+      } else {
+        try {
+          setShowMoolvani(localStorage.getItem('sahebworld_show_moolvani') !== 'false');
+        } catch {}
+      }
+    };
+
+    const handleBellChanged = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (typeof customEvent.detail?.enabled === 'boolean') {
+        setIsBellEnabled(customEvent.detail.enabled);
+      } else {
+        try {
+          setIsBellEnabled(localStorage.getItem('sahebworld_bell_enabled') !== 'false');
+        } catch {}
+      }
+    };
+
+    const handleFocusRulerChanged = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (typeof customEvent.detail?.enabled === 'boolean') {
+        setFocusRuler(customEvent.detail.enabled);
+      } else {
+        try {
+          setFocusRuler(localStorage.getItem('sahebworld_focus_ruler') === 'true');
+        } catch {}
+      }
+    };
+
     window.addEventListener('sahebworld_autoscroll_toggled', handleAutoScrollToggled);
     window.addEventListener('sahebworld_toggle_tts', handleToggleTtsEvent);
     window.addEventListener('sahebworld_highlighter_changed', handleHighlighterEvent);
     window.addEventListener('sahebworld_reader_theme_changed', handleThemeEvent);
     window.addEventListener('sahebworld_framework_changed', handleFrameworkEvent as EventListener);
+    window.addEventListener('sahebworld_bhavarth_changed', handleBhavarthChanged as EventListener);
+    window.addEventListener('sahebworld_moolvani_changed', handleMoolvaniChanged as EventListener);
+    window.addEventListener('sahebworld_bell_changed', handleBellChanged as EventListener);
+    window.addEventListener('sahebworld_focus_ruler_changed', handleFocusRulerChanged as EventListener);
     
     return () => {
       window.removeEventListener('sahebworld_autoscroll_toggled', handleAutoScrollToggled);
@@ -1252,6 +1316,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
       window.removeEventListener('sahebworld_highlighter_changed', handleHighlighterEvent);
       window.removeEventListener('sahebworld_reader_theme_changed', handleThemeEvent);
       window.removeEventListener('sahebworld_framework_changed', handleFrameworkEvent as EventListener);
+      window.removeEventListener('sahebworld_bhavarth_changed', handleBhavarthChanged as EventListener);
+      window.removeEventListener('sahebworld_moolvani_changed', handleMoolvaniChanged as EventListener);
+      window.removeEventListener('sahebworld_bell_changed', handleBellChanged as EventListener);
+      window.removeEventListener('sahebworld_focus_ruler_changed', handleFocusRulerChanged as EventListener);
     };
   }, [sakhi, language, isSpeaking, ttsRate, isZenMode, isLarivaarMode, isVisraamHighlightEnabled, isAkhandScrollActive, globalAutoScrollSpeed]);
 
@@ -2329,156 +2397,49 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
         </div>
       )}
 
-      {/* --- SADHANA READING MODE TOOLBAR --- */}
+      {/* --- COMPACT SWADHYAY TOOLBAR (Controls already in Settings ⚙️ removed) --- */}
       <div
         style={{
           backgroundColor: rc.bg,
           borderColor: rc.border,
         }}
-        className="px-4 py-2.5 border-b flex flex-wrap items-center justify-between gap-3 text-xs"
+        className="px-3.5 sm:px-4 py-2 border-b flex flex-wrap items-center justify-between gap-2 text-xs"
       >
-        {/* Left Side: Theme, Font Size, Line Spacing, Font Face & Width Controls */}
-        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-          <div className="flex items-center gap-1.5 flex-wrap">
-            <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
-              <Eye className="w-3.5 h-3.5" />
-              <span>{fl.theme}:</span>
-            </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15 flex-wrap gap-0.5">
-              {[
-                { id: 'default', label: fl.themeMool },
-                { id: 'flow_state', label: fl.themeFlow },
-                { id: 'sepia', label: fl.themePothi },
-                { id: 'oled', label: fl.themeOled },
-                { id: 'contrast', label: fl.themeEye }
-              ].map(tObj => (
-                <button
-                  key={tObj.id}
-                  type="button"
-                  onClick={() => changeReadingTheme(tObj.id as any)}
-                  style={{
-                    backgroundColor: readingTheme === tObj.id ? rc.accent : 'transparent',
-                    color: readingTheme === tObj.id ? '#FFFFFF' : rc.textSecondary,
-                  }}
-                  className="min-h-[38px] sm:min-h-[28px] px-2.5 sm:px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
-                >
-                  {tObj.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-1.5 flex-wrap">
-            <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
-              <Type className="w-3.5 h-3.5" />
-              <span>{fl.font}:</span>
-            </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15 gap-0.5">
-              {['small', 'medium', 'large', 'xl', 'elderly'].map(size => (
-                <button
-                  key={size}
-                  type="button"
-                  onClick={() => handleSetLocalFontSize(size as any)}
-                  style={{
-                    backgroundColor: localFontSize === size || (size === 'medium' && localFontSize === 'normal') ? rc.accent : 'transparent',
-                    color: localFontSize === size || (size === 'medium' && localFontSize === 'normal') ? '#FFFFFF' : rc.textSecondary,
-                  }}
-                  className="min-h-[38px] sm:min-h-[28px] px-2.5 sm:px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-black text-[0.6875rem] sm:text-[0.625rem] uppercase transition cursor-pointer"
-                >
-                  {size === 'small' ? 'A-' : size === 'medium' ? 'A' : size === 'large' ? 'A+' : size === 'xl' ? 'A++' : '👵 A+++'}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Line Spacing (पंक्ति अंतराल) Controls */}
-          <div className="flex items-center gap-1.5">
-            <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
-              <span>{language === 'pb' ? 'ਲਾਈਨ:' : language === 'en' ? 'Spacing:' : 'अंतराल:'}</span>
-            </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15 gap-0.5">
-              {[
-                { id: 'small' as const, label: language === 'pb' ? 'ਘੱਟ' : language === 'en' ? 'Tight' : 'कम' },
-                { id: 'medium' as const, label: language === 'pb' ? 'ਸੰਤੁਲਿਤ' : language === 'en' ? 'Balanced' : 'संतुलित' },
-                { id: 'large' as const, label: language === 'pb' ? 'ਖੁੱਲ੍ਹਾ' : language === 'en' ? 'Airy' : 'खुला' },
-              ].map(lhObj => (
-                <button
-                  key={lhObj.id}
-                  type="button"
-                  onClick={() => {
-                    sacredHaptics.lightTap();
-                    setLineHeight(lhObj.id);
-                  }}
-                  style={{
-                    backgroundColor: lineHeight === lhObj.id ? rc.accent : 'transparent',
-                    color: lineHeight === lhObj.id ? '#FFFFFF' : rc.textSecondary,
-                  }}
-                  className="min-h-[38px] sm:min-h-[28px] px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
-                >
-                  {lhObj.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Devanagari / Gurmukhi Font Style (Serif vs Sans) */}
-          <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15">
+        {/* Left Side: Working Granth | Saral Typography Toggle + Daily Reading Goal Timer */}
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Working Granth | Saral Toggle (Synced with ThemeContext) */}
+          <div
+            className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/20"
+            role="group"
+            aria-label={language === 'pb' ? 'ਲਿਪੀ ਸ਼ੈਲੀ' : language === 'en' ? 'Typography Style' : 'लिपि शैली'}
+          >
             {[
-              { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Serif' : 'ग्रंथ' },
-              { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Sans' : 'सरल' },
+              { id: 'serif' as const, label: language === 'pb' ? 'ਪਾਰੰਪਰਿਕ' : language === 'en' ? 'Granth' : 'ग्रंथ' },
+              { id: 'sans' as const, label: language === 'pb' ? 'ਸਰਲ' : language === 'en' ? 'Saral' : 'सरल' },
             ].map(ff => (
               <button
                 key={ff.id}
                 type="button"
+                id={`swadhyay-font-toggle-${ff.id}`}
                 onClick={() => {
                   sacredHaptics.lightTap();
                   setFontFamily(ff.id);
                 }}
                 style={{
                   backgroundColor: fontFamily === ff.id ? rc.accent : 'transparent',
-                  color: fontFamily === ff.id ? '#FFFFFF' : rc.textSecondary,
+                  color: fontFamily === ff.id ? '#FFFFFF' : rc.maroon,
                 }}
-                className="min-h-[38px] sm:min-h-[28px] px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
-                title={ff.id === 'serif' ? 'Noto Serif Devanagari / Traditional' : 'Mukta / Noto Sans Clean'}
+                className="min-h-[34px] sm:min-h-[28px] px-2.5 py-1 sm:py-0.5 rounded-lg font-bold text-[0.6875rem] transition cursor-pointer whitespace-nowrap"
+                title={ff.id === 'serif' ? 'Noto Serif Granth / Traditional' : 'Mukta / Noto Sans Saral'}
               >
                 {ff.label}
               </button>
             ))}
           </div>
 
-          {/* Spacious Granth Width Controls */}
-          <div className="flex items-center gap-1.5">
-            <span style={{ color: rc.textSecondary }} className="font-bold flex items-center gap-1">
-              <Columns className="w-3.5 h-3.5" />
-              <span>{language === 'pb' ? 'ਵਿਸਤਾਰ:' : language === 'en' ? 'Canvas:' : 'विस्तार:'}</span>
-            </span>
-            <div className="flex items-center bg-black/5 dark:bg-white/5 rounded-xl p-0.5 border border-amber-400/15">
-              {[
-                { id: 'wide', label: language === 'pb' ? 'ਵਿਸ਼ਾਲ (7XL)' : language === 'en' ? 'Spacious 7XL' : 'विशाल (7XL)' },
-                { id: 'medium', label: language === 'pb' ? 'ਮੱਧਮ' : language === 'en' ? 'Medium' : 'मध्यम' },
-              ].map(wObj => (
-                <button
-                  key={wObj.id}
-                  type="button"
-                  onClick={() => setWidthMode(wObj.id as any)}
-                  style={{
-                    backgroundColor: widthMode === wObj.id ? rc.accent : 'transparent',
-                    color: widthMode === wObj.id ? '#FFFFFF' : rc.textSecondary,
-                  }}
-                  className="min-h-[38px] sm:min-h-[28px] px-2 py-1 sm:py-0.5 rounded-lg sm:rounded-md font-bold text-[0.6875rem] sm:text-[0.625rem] transition cursor-pointer"
-                >
-                  {wObj.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side: Interactive Guides & Zen Toggles */}
-        <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
           {/* Smart Reading Countdown Timer Widget */}
-          <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-lg px-2 py-1 border border-amber-400/10" title="Daily Swadhyay Reading Goal">
-            <Timer className={`w-3.5 h-3.5 ${isTimerActive ? 'animate-spin text-amber-500' : 'text-neutral-400'}`} />
+          <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 rounded-lg px-2 py-1 border border-amber-400/15" title="Daily Swadhyay Reading Goal">
+            <Timer className={`w-3.5 h-3.5 ${isTimerActive ? 'animate-spin text-amber-500' : 'text-amber-700 dark:text-amber-300'}`} />
             <select
               value={dailyGoal}
               onChange={(e) => {
@@ -2490,10 +2451,10 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 }
               }}
               style={{ color: rc.text }}
-              className="bg-transparent font-bold text-[0.625rem] focus:outline-none cursor-pointer max-w-[70px] sm:max-w-none"
+              className="bg-transparent font-bold text-[0.6875rem] focus:outline-none cursor-pointer max-w-[85px] sm:max-w-none"
             >
-              <option value="0">{language === 'pb' ? 'ਟੀਚਾ ਚੁਣੋ' : language === 'en' ? 'Select Goal' : 'लक्ष्य चुनें'}</option>
-              <option value="1">1 {language === 'pb' ? 'ਮਿੰਟ (ਪਰੀਖਣ)' : language === 'en' ? 'min (Test)' : 'मिनट (टेस्ट)'}</option>
+              <option value="0">{language === 'pb' ? 'ਟੀਚਾ ਚੁਣੋ' : language === 'en' ? 'Goal' : 'लक्ष्य'}</option>
+              <option value="1">1 {language === 'pb' ? 'ਮਿੰਟ' : language === 'en' ? 'min' : 'मिनट'}</option>
               <option value="5">5 {language === 'pb' ? 'ਮਿੰਟ' : language === 'en' ? 'min' : 'मिनट'}</option>
               <option value="15">15 {language === 'pb' ? 'ਮਿੰਟ' : language === 'en' ? 'min' : 'मिनट'}</option>
               <option value="30">30 {language === 'pb' ? 'ਮਿੰਟ' : language === 'en' ? 'min' : 'मिनट'}</option>
@@ -2510,77 +2471,12 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               </span>
             )}
           </div>
+        </div>
 
-          {/* 100% Offline Ambient Sound Player for Deep Focus */}
+        {/* Right Side: Unique Swadhyay Tools + Unified Settings Entry */}
+        <div className="flex items-center gap-1.5 flex-wrap">
           <AmbientSoundPlayer language={language} variant="compact" />
 
-          {/* Akhand Scroll Toggle */}
-          <button
-            type="button"
-            onClick={() => {
-              const nextVal = !isAkhandScrollActive;
-              setIsAkhandScrollActive(nextVal);
-              setCurrentReadingMode(nextVal ? 'autoplay' : 'swadhyay');
-            }}
-            style={{
-              backgroundColor: isAkhandScrollActive ? rc.accent : 'transparent',
-              color: isAkhandScrollActive ? '#FFFFFF' : rc.textSecondary,
-              borderColor: rc.border,
-            }}
-            className="px-2 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer transition hover:bg-black/5"
-            title="Auto-Scroll"
-          >
-            {isAkhandScrollActive ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-            <span>{isAkhandScrollActive ? (language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Pause' : 'रोकें') : (language === 'pb' ? 'ਸਵੈ-ਸਕਰੋਲ' : language === 'en' ? 'Auto-Scroll' : 'स्वतः स्क्रॉल')}</span>
-          </button>
-
-            {/* Speed Control - Always show if scrollable mode */}
-            {(isAkhandScrollActive || isPageFlipMode) && (
-              <div className="flex items-center gap-2 px-2 py-1 rounded-lg border" style={{ borderColor: rc.border, backgroundColor: rc.bg }}>
-                <span className="text-[0.625rem] font-bold" style={{ color: rc.text }}>{scrollSpeed}</span>
-                <input
-                  type="range"
-                  min="0.2"
-                  max="5.0"
-                  step="0.1"
-                  value={parseFloat(scrollSpeed.replace('x', ''))}
-                  onChange={(e) => setScrollSpeed(`${e.target.value}x` as any)}
-                  className="w-24 h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-amber-500"
-                />
-              </div>
-            )}
-
-          {/* Temple Bell Toggle Button */}
-          <button
-            type="button"
-            onClick={handleToggleBell}
-            style={{
-              backgroundColor: isBellEnabled ? rc.accentLight : 'transparent',
-              borderColor: isBellEnabled ? rc.accent : rc.border,
-              color: isBellEnabled ? rc.maroon : rc.textSecondary,
-            }}
-            className="p-1.5 rounded-lg border transition hover:bg-black/5 flex items-center justify-center cursor-pointer"
-            title={language === 'pb' ? 'ਘੰਟੀ ਆਵਾਜ਼ (ਚਾਲੂ/ਬੰਦ)' : language === 'en' ? 'Temple Bell Sound (On/Off)' : 'मंदिर घंटी (चालू/बंद)'}
-          >
-            {isBellEnabled ? <Bell className="w-3.5 h-3.5 animate-bounce" /> : <BellOff className="w-3.5 h-3.5 text-neutral-400" />}
-          </button>
-
-          {/* Focus Ruler */}
-          <button
-            type="button"
-            onClick={() => setFocusRuler(!focusRuler)}
-            style={{
-              backgroundColor: focusRuler ? rc.accent : 'transparent',
-              color: focusRuler ? '#FFFFFF' : rc.textSecondary,
-              borderColor: rc.border,
-            }}
-            className="px-2 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer transition hover:bg-black/5"
-            title="Focus Reading Guide Line"
-          >
-            <span>{fl.marker}</span>
-          </button>
-
-          {/* Ambient Sound */}
           <button
             type="button"
             onClick={handleToggleAmbient}
@@ -2589,30 +2485,13 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               color: isAmbientPlaying ? '#FFFFFF' : rc.textSecondary,
               borderColor: rc.border,
             }}
-            className="px-2 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer transition hover:bg-black/5"
-            title="Background Low-Volume Tanpura Ambient Sound"
+            className="px-2 py-1 rounded-lg border font-bold text-[0.6875rem] flex items-center gap-1 cursor-pointer transition hover:bg-black/5 whitespace-nowrap"
+            title="Background Satyanaam Dhun"
           >
             <Volume2 className="w-3 h-3" />
             <span>{fl.bgDhun}</span>
           </button>
 
-          {/* Copy Direct Shareable Link Button */}
-          <button
-            type="button"
-            onClick={handleCopyPathUrl}
-            style={{
-              backgroundColor: isPathCopied ? 'rgba(34, 197, 94, 0.15)' : 'transparent',
-              borderColor: isPathCopied ? '#22C55E' : rc.border,
-              color: isPathCopied ? '#166534' : rc.textSecondary,
-            }}
-            className="px-2.5 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer transition hover:bg-black/5"
-            title={language === 'hi' ? 'साखी का सीधा शेयर लिंक कॉपी करें' : language === 'pb' ? 'ਸਾਖੀ ਦਾ ਸਿੱਧਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ' : 'Copy Direct Sakhi Link'}
-          >
-            {isPathCopied ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5 text-amber-600" />}
-            <span>{isPathCopied ? (language === 'hi' ? 'लिंक कॉपी हुआ!' : language === 'pb' ? 'ਲਿੰਕ ਕਾਪੀ ਹੋ ਗਿਆ!' : 'Copied!') : (language === 'hi' ? 'लिंक कॉपी करें' : language === 'pb' ? 'ਲਿੰਕ ਕਾਪੀ ਕਰੋ' : 'Copy Link')}</span>
-          </button>
-
-          {/* Smart Glossing Tool Button */}
           <button
             type="button"
             onClick={() => setShowSmartGlossingTool(true)}
@@ -2621,30 +2500,28 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               color: rc.maroon,
               borderColor: rc.accent,
             }}
-            className="px-2.5 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1.5 cursor-pointer hover:opacity-90 active:scale-95 transition shadow-2xs"
-            title={language === 'pb' ? 'ਸਮਾਰਟ ਸ਼ਬਦਾਵਲੀ ਟੂਲ (Smart Glossing Tool)' : language === 'en' ? 'Smart Glossing Tool' : 'स्मार्ट शब्दावली टूल (Smart Glossing Tool)'}
+            className="px-2.5 py-1 rounded-lg border font-bold text-[0.6875rem] flex items-center gap-1 cursor-pointer hover:opacity-90 active:scale-95 transition whitespace-nowrap"
+            title={language === 'pb' ? 'ਸ਼ਬਦਾਰਥ ਟੂਲ' : language === 'en' ? 'Smart Glossary' : 'शब्दावली टूल'}
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
-            <span>{language === 'pb' ? 'ਸ਼ਬਦਾਰਥ ਟੂਲ' : language === 'en' ? 'Smart Glossary' : 'शब्दावली टूल'}</span>
+            <Sparkles className="w-3 h-3 text-amber-600" />
+            <span>{language === 'pb' ? 'ਸ਼ਬਦਾਰਥ' : language === 'en' ? 'Glossary' : 'शब्दावली'}</span>
           </button>
 
-          {/* Accessibility & Speech Synthesis Settings Button */}
           <button
             type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent('sahebworld_open_accessibility'))}
+            onClick={handleCopyPathUrl}
             style={{
-              backgroundColor: rc.accentLight,
-              color: rc.maroon,
-              borderColor: rc.accent,
+              backgroundColor: isPathCopied ? 'rgba(34, 197, 94, 0.15)' : 'transparent',
+              borderColor: isPathCopied ? '#22C55E' : rc.border,
+              color: isPathCopied ? '#166534' : rc.textSecondary,
             }}
-            className="px-2.5 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1.5 cursor-pointer hover:opacity-90 active:scale-95 transition shadow-2xs"
-            title={language === 'pb' ? 'ਸੁਗਮਤਾ ਤੇ ਵਾਚਨ ਸੈਟਿੰਗਾਂ (Accessibility & Speech)' : language === 'en' ? 'Accessibility & Speech Settings' : 'सुगमता एवं वाचन सेटिंग्स (Accessibility & Speech)'}
+            className="px-2 py-1 rounded-lg border font-bold text-[0.6875rem] flex items-center gap-1 cursor-pointer transition hover:bg-black/5 whitespace-nowrap"
+            title={language === 'hi' ? 'सीधा शेयर लिंक कॉपी करें' : language === 'pb' ? 'ਸਿੱਧਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ' : 'Copy Direct Link'}
           >
-            <SlidersHorizontal className="w-3.5 h-3.5 text-amber-600" />
-            <span>{language === 'pb' ? 'ਸੁਗਮਤਾ' : language === 'en' ? 'Accessibility' : 'सुगमता व वाणी'}</span>
+            {isPathCopied ? <Check className="w-3 h-3 text-green-600" /> : <Copy className="w-3 h-3 text-amber-600" />}
+            <span>{isPathCopied ? (language === 'hi' ? 'कॉपी हुआ' : language === 'pb' ? 'ਕਾਪੀ' : 'Copied') : (language === 'hi' ? 'लिंक' : language === 'pb' ? 'ਲਿੰਕ' : 'Link')}</span>
           </button>
 
-          {/* Zen Mode & Fullscreen Button */}
           <button
             type="button"
             onClick={() => {
@@ -2659,81 +2536,34 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
               backgroundColor: rc.accent,
               color: '#FFFFFF',
             }}
-            className="px-2.5 py-1 rounded-lg font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer hover:opacity-90 active:scale-95 transition shadow-sm"
+            className="px-2.5 py-1 rounded-lg font-bold text-[0.6875rem] flex items-center gap-1 cursor-pointer hover:opacity-90 active:scale-95 transition whitespace-nowrap"
           >
             <Maximize2 className="w-3 h-3" />
             <span>{fl.zenModeBtn}</span>
           </button>
 
-          {/* Reading Styles Button */}
           <button
             type="button"
-            onClick={() => setShowReadingStyleSelector(!showReadingStyleSelector)}
-            style={{
-              backgroundColor: showReadingStyleSelector ? rc.accent : rc.accentLight,
-              color: showReadingStyleSelector ? '#FFFFFF' : rc.maroon,
-              borderColor: rc.accent,
+            id="swadhyay-toolbar-open-settings"
+            onClick={() => {
+              sacredHaptics.lightTap();
+              if (onOpenSettings) {
+                onOpenSettings();
+              } else {
+                window.dispatchEvent(new CustomEvent('sahebworld_open_settings'));
+              }
             }}
-            className="px-2.5 py-1 rounded-lg border font-bold text-[0.625rem] flex items-center gap-1 cursor-pointer hover:opacity-90 active:scale-95 transition shadow-sm"
-            title={language === 'pb' ? 'ਪਾਠ ਮੋਡ ਚੁਣੋ' : language === 'en' ? 'Reading Style Selector' : 'पठन मोड चुनें'}
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>{language === 'pb' ? 'ਪਾਠ ਮੋਡ' : language === 'en' ? 'Reading Style' : 'पठन मोड'}</span>
-          </button>
-
-          {/* Quick Language Switcher */}
-          <div 
-            className="flex items-center rounded-lg p-0.5 border shadow-2xs" 
-            style={{ backgroundColor: rc.bg, borderColor: rc.borderOrnament }}
-            role="group"
-            aria-label="Reader Language"
-          >
-            {(['hi', 'pb', 'en'] as Language[]).map((lng) => {
-              const isSelected = language === lng;
-              const label = lng === 'hi' ? 'हिंदी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'EN';
-              return (
-                <button
-                  key={lng}
-                  type="button"
-                  id={`swadhyay-toolbar-lang-${lng}`}
-                  onClick={() => onChangeLanguage && onChangeLanguage(lng)}
-                  style={{
-                    backgroundColor: isSelected ? rc.accent : 'transparent',
-                    color: isSelected ? '#FFFFFF' : rc.maroon,
-                  }}
-                  className="px-2 py-0.5 rounded text-[0.625rem] font-bold transition hover:opacity-90 cursor-pointer"
-                  title={lng === 'hi' ? 'हिन्दी (Devanagari)' : lng === 'pb' ? 'ਪੰਜਾਬੀ (Gurmukhi)' : 'English (Roman)'}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Moolvani Visibility Preference Toggle in Toolbar */}
-          <button
-            type="button"
-            id="swadhyay-toolbar-toggle-moolvani"
-            onClick={handleToggleMoolvani}
             style={{
-              backgroundColor: showMoolvani ? rc.accentLight : rc.bg,
-              borderColor: rc.borderOrnament,
+              backgroundColor: rc.accentLight,
+              borderColor: rc.accent,
               color: rc.maroon,
             }}
-            className="px-2.5 py-1 rounded-xl border font-bold text-xs flex items-center gap-1.5 cursor-pointer hover:border-amber-500 transition shadow-2xs"
-            title={showMoolvani ? 'मूलवाणी छिपाएं' : 'मूलवाणी दिखाएं'}
+            className="px-2.5 py-1 rounded-lg border font-bold text-[0.6875rem] flex items-center gap-1 cursor-pointer hover:opacity-90 active:scale-95 transition whitespace-nowrap"
+            title={language === 'pb' ? 'ਥੀਮ, ਫੌਂਟ, ਸੁਗਮਤਾ ਅਤੇ ਆਟੋ-ਸਕ੍ਰੌਲ ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'Open Theme, Font & Path Settings' : 'थीम, फ़ॉन्ट, भावार्थ व पाठ साधन सेटिंग्स'}
           >
-            <Scroll className="w-3.5 h-3.5 text-amber-600" />
-            <span className="hidden sm:inline">
-              {showMoolvani
-                ? (language === 'pb' ? 'ਮੂਲ ਬਾਣੀ' : language === 'en' ? 'Moolvani' : 'मूलवाणी')
-                : (language === 'pb' ? 'ਮੂਲ ਬਾਣੀ ਛੁਪੀ' : language === 'en' ? 'Moolvani Off' : 'मूलवाणी बंद')}
-            </span>
-            <span className={`inline-flex h-4 w-7 shrink-0 items-center rounded-full p-0.5 transition-colors duration-200 ${showMoolvani ? 'bg-amber-600' : 'bg-stone-300 dark:bg-stone-600'}`}>
-              <span className={`h-3 w-3 rounded-full bg-white shadow-xs transition-transform duration-200 ${showMoolvani ? 'translate-x-3' : 'translate-x-0'}`} />
-            </span>
+            <SlidersHorizontal className="w-3.5 h-3.5 text-amber-700 dark:text-amber-300" />
+            <span>{language === 'pb' ? 'ਸੈਟਿੰਗਜ਼' : language === 'en' ? 'Settings' : 'सेटिंग्स'}</span>
           </button>
-
         </div>
       </div>
 
@@ -2754,10 +2584,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           <button
             type="button"
             onClick={() => {
-              // Locate the Sakhi in database and trigger parent view jump
               const found = sakhisDatabase.find(s => s.number === lastReadSakhiNo);
               if (found) {
-                // To simulate click / load
                 window.location.reload();
                 localStorage.setItem('sahebworld_last_sakhi_id', String(lastReadSakhiNo));
               }
@@ -2767,31 +2595,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
           >
             {language === 'pb' ? 'ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Resume' : 'शुरू करें'}
           </button>
-        </div>
-      )}
-
-      {showReadingStyleSelector && (
-        <div 
-          style={{ backgroundColor: rc.bg, borderColor: rc.border }}
-          className="mx-4 mt-4 p-4 rounded-2xl border-2 space-y-4 animate-slideDown z-20"
-        >
-          <div className="flex justify-between items-center pb-2 border-b border-dashed border-amber-500/20">
-            <h3 className="font-serif font-black text-xs sm:text-sm" style={{ color: rc.maroon }}>
-              {language === 'pb' ? '☬ ਅੱਠ ਵਿਲੱਖਣ ਪਾਠ ਪ੍ਰਣਾਲੀਆਂ' : language === 'en' ? '8 Sacred Reading Modes' : '८ विशिष्ट पठन प्रणालियाँ (Select Reading Mode):'}
-            </h3>
-            <button 
-              onClick={() => setShowReadingStyleSelector(false)} 
-              className="text-xs font-bold opacity-60 hover:opacity-100 cursor-pointer"
-              style={{ color: rc.text }}
-            >
-              ✕
-            </button>
-          </div>
-          <ReadingModeSelector
-            currentMode={currentReadingMode}
-            onModeSelect={handleModeSelect}
-            language={language}
-          />
         </div>
       )}
 
@@ -2988,7 +2791,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
         {/* Dynamic Mode Content Rendering */}
             <div className="space-y-6 animate-fadeIn">
-            {/* STEP 1: मूल पावन वाणी (Original Text) */}
+            {/* STEP 1: मूल पावन वाणी (Open Parchment Flow) */}
             <div
               id="eightstep-card-1"
               style={{
@@ -2997,11 +2800,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   highlightColor === 'saffron' ? (readingTheme === 'oled' ? '#2D1E0C' : '#FDF2E9') :
                   highlightColor === 'emerald' ? (readingTheme === 'oled' ? '#0C231A' : '#E8F8F5') :
                   rc.bg,
-                borderColor: rc.accent,
+                borderColor: 'rgba(217, 119, 6, 0.25)',
               }}
-              className="p-5 sm:p-8 rounded-3xl border-2 text-center relative overflow-hidden shadow-md space-y-5 animate-fadeIn"
+              className="px-2 py-4 sm:px-4 sm:py-6 border-b text-center relative space-y-4 animate-fadeIn"
             >
-              <div className="flex flex-wrap items-center justify-between border-b pb-3 gap-2" style={{ borderColor: rc.borderOrnament }}>
+              <div className="flex flex-wrap items-center justify-between border-b pb-2.5 gap-2" style={{ borderColor: 'rgba(217, 119, 6, 0.25)' }}>
                 <span style={{ color: rc.accent }} className="text-xs font-black uppercase tracking-widest flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-amber-600" />
                   <span>{eightStepData.step1_originalText.title}</span>
@@ -3017,7 +2820,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       borderColor: rc.accent,
                       color: rc.maroon,
                     }}
-                    className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-2 shadow-2xs hover:opacity-90 cursor-pointer transition"
+                    className="px-3 py-1 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:opacity-90 cursor-pointer transition"
                     title={showMoolvani ? 'मूलवाणी छिपाएं' : 'मूलवाणी दिखाएं'}
                   >
                     <Scroll className="w-3.5 h-3.5 text-amber-600" />
@@ -3040,12 +2843,11 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       borderColor: rc.accent,
                       color: rc.maroon,
                     }}
-                    className="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 shadow-2xs hover:opacity-90 cursor-pointer"
+                    className="px-3 py-1 rounded-xl border text-xs font-bold flex items-center gap-1.5 hover:opacity-90 cursor-pointer"
                     title="Generate and Share Beautiful Image Card"
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
                     <ImageIcon className="w-3.5 h-3.5 text-amber-600" />
-                    <span>{language === 'hi' ? 'सोशल शेयर कार्ड' : language === 'pb' ? 'ਸੋਸ਼ਲ ਸ਼ੇਅਰ ਕਾਰਡ' : 'Share Image Card'}</span>
+                    <span>{language === 'hi' ? 'सोशल शेयर कार्ड' : language === 'pb' ? 'ਸੋਸ਼ਲ ਸ਼ੇਅਰ ਕਾਰਡ' : 'Share Card'}</span>
                   </button>
 
                   {/* Audio Narration Controls */}
@@ -3068,7 +2870,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           ? 'ऑडियो पाठ'
                           : language === 'pb'
                           ? 'ਆਡੀਓ ਪਾਠ'
-                          : 'Audio Narration'}
+                          : 'Audio'}
                       </span>
                     </button>
 
@@ -3093,37 +2895,31 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                 </div>
               </div>
 
-              {/* Visually Separated Parchment Typography Block for Moolvani with motion.div fade-in */}
+              {/* Open Sacred Parchment Typography Flow for Moolvani */}
               <AnimatePresence mode="wait">
                 {showMoolvani ? (
                   <motion.div
                     key={`step1-moolvani-on-${sakhi.number}-${language}`}
-                    initial={{ opacity: 0, y: 10, scale: 0.99 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.99 }}
-                    transition={{ duration: 0.35, ease: 'easeOut' }}
-                    className="relative my-4 p-3.5 xs:p-5 sm:p-8 rounded-3xl border-2 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] border-[#d6ba8d]/90 dark:border-[#735732]/90 shadow-md shadow-amber-900/5 dark:shadow-black/50 space-y-4 ring-2 ring-amber-600/20 max-w-full overflow-hidden"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    className={`relative py-3 px-1 sm:px-4 border-b border-[rgba(217,119,6,0.25)] space-y-3 max-w-full ${
+                      (isNightTheme || isFlowTheme) ? '' : 'bg-[#FDF8EE]/60 rounded-2xl'
+                    }`}
                   >
-                    {/* Antique Parchment Corner Flourishes */}
-                    <div className="absolute top-2.5 left-3 text-amber-700/30 dark:text-amber-500/30 text-xs font-serif select-none">✦</div>
-                    <div className="absolute top-2.5 right-3 text-amber-700/30 dark:text-amber-500/30 text-xs font-serif select-none">✦</div>
-                    <div className="absolute bottom-2.5 left-3 text-amber-700/30 dark:text-amber-500/30 text-xs font-serif select-none">✦</div>
-                    <div className="absolute bottom-2.5 right-3 text-amber-700/30 dark:text-amber-500/30 text-xs font-serif select-none">✦</div>
-
-                    {/* Distinct Label Badge for Original Moolvani (Golden Sacred Header) */}
-                    <div className="flex items-center justify-between gap-2 border-b border-amber-800/15 dark:border-amber-400/15 pb-2.5">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6875rem] font-serif font-black bg-amber-700/15 text-amber-950 dark:text-amber-200 border border-amber-700/30 uppercase tracking-widest shadow-2xs">
+                    <div className="flex items-center justify-between gap-2 pb-1">
+                      <span className="inline-flex items-center gap-1.5 text-[0.6875rem] font-black text-amber-900 dark:text-amber-300 uppercase tracking-widest">
                         <Scroll className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
-                        <span>{language === 'pb' ? '☬ ਮੂਲ ਪਾਵਨ ਬਾਣੀ (ਪਵਿੱਤਰ ਦੋਹਾ)' : language === 'en' ? '☬ Sacred Original Couplet' : '☬ मूल पावन वाणी (पवित्र दोहा)'}</span>
+                        <span>{language === 'pb' ? '☬ ਮੂਲ ਪਾਵਨ ਬਾਣੀ' : language === 'en' ? '☬ Sacred Original Couplet' : '☬ मूल पावन वाणी'}</span>
                       </span>
-                      <span className="text-[0.625rem] font-mono font-bold text-amber-800 dark:text-amber-300 bg-amber-500/15 px-2 py-0.5 rounded-md border border-amber-600/20">
+                      <span className="text-[0.625rem] font-mono font-bold text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded bg-amber-500/10">
                         #{sakhi.number}
                       </span>
                     </div>
 
-                    {/* Refined Parchment Typography Block */}
                     <div 
-                      className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${activeFontClass} font-bold sm:font-black text-center drop-shadow-2xs select-none max-w-full`}
+                      className={`${fontSizes[localFontSize]} ${getLineHeightClass(lineHeight)} ${activeFontClass} font-bold sm:font-black text-center select-none max-w-full`}
                       style={{
                         ...activeFontStyle,
                         color: (isNightTheme || isFlowTheme)
@@ -3134,9 +2930,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       {renderInteractiveCouplet(sakhi.text[language] || sakhi.text.hi)}
                     </div>
 
-                    {/* Roman Transliteration: automatically shown in English mode, toggled in Hindi/Punjabi */}
                     {sakhi.transliteration && (language === 'en' || showRomanTransliteration) && (
-                      <div className="pt-2.5 border-t border-amber-700/20 dark:border-amber-500/20 text-xs sm:text-sm font-sans italic text-stone-700 dark:text-stone-300 text-center select-text">
+                      <div className="pt-2 border-t border-amber-700/15 text-xs sm:text-sm font-sans italic text-stone-700 dark:text-stone-300 text-center select-text">
                         "{sakhi.transliteration}"
                       </div>
                     )}
@@ -3145,7 +2940,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         <button
                           type="button"
                           onClick={() => setShowRomanTransliteration((prev) => !prev)}
-                          className="px-2.5 py-0.5 rounded-full text-[0.6875rem] font-serif font-semibold border border-amber-700/25 bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20 transition cursor-pointer"
+                          className="px-2.5 py-0.5 rounded-full text-[0.6875rem] font-semibold border border-amber-700/25 bg-amber-500/10 text-amber-900 dark:text-amber-200 hover:bg-amber-500/20 transition cursor-pointer"
                         >
                           {showRomanTransliteration
                             ? (language === 'pb' ? 'ਰੋਮਨ ਉਚਾਰਨ ਛੁਪਾਓ' : 'रोमन उच्चारण छिपाएं')
@@ -3153,75 +2948,47 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         </button>
                       </div>
                     )}
+                    <div className="text-center text-amber-700/40 dark:text-amber-400/40 text-xs select-none pt-1">✦</div>
                   </motion.div>
                 ) : (
                   <motion.div
                     key={`step1-moolvani-off-${sakhi.number}-${language}`}
-                    initial={{ opacity: 0, y: 10, scale: 0.99 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.99 }}
-                    transition={{ duration: 0.35, ease: 'easeOut' }}
-                    className="py-8 px-4 text-center text-xs sm:text-sm text-stone-500 dark:text-stone-400 italic border-2 border-dashed border-amber-500/30 rounded-2xl bg-amber-500/5 font-serif space-y-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    className="py-6 px-4 text-center text-xs sm:text-sm text-stone-500 dark:text-stone-400 italic border-b border-[rgba(217,119,6,0.25)] space-y-1.5"
                   >
-                    <EyeOff className="w-6 h-6 mx-auto text-amber-600/70 mb-1" />
+                    <EyeOff className="w-5 h-5 mx-auto text-amber-600/70 mb-1" />
                     <p className="font-bold text-amber-800 dark:text-amber-300 text-sm">
                       {language === 'pb' ? '।। ਮੂਲ ਬਾਣੀ ਛੁਪਾਈ ਗਈ ਹੈ ।।' : language === 'en' ? '|| Moolvani Text Hidden ||' : '।। मूलवाणी दृष्टि से छिपाई गई है ।।'}
-                    </p>
-                    <p className="text-xs text-stone-600 dark:text-stone-400 max-w-md mx-auto">
-                      {language === 'pb'
-                        ? 'ਤੁਸੀਂ ਕੇਵਲ ਵਿਆਖਿਆ ਅਤੇ ਅਰਥ \'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰ ਰਹੇ ਹੋ। ਮੂਲ ਬਾਣੀ ਦੇਖਣ ਲਈ ਉੱਪਰ ਦਿੱਤਾ ਬਟਨ ਦਬਾਓ।'
-                        : language === 'en'
-                        ? 'You are focusing solely on the verse explanation and satsang discourse. Click above to show Moolvani.'
-                        : 'आप केवल व्याख्या एवं अर्थ पर ध्यान केंद्रित कर रहे हैं। मूलवाणी पुनः देखने हेतु ऊपर बटन दबाएं।'}
                     </p>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              {/* DISTINCT CLEAR SEPARATOR WITH EMBEDDED TRANSLATIONS CARD (MOBILE OPTIMIZED) */}
-              <div className="mt-4 pt-4 border-t-2 border-dashed border-amber-500/30 space-y-3">
-                <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <div className="flex items-center gap-1.5">
-                    <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                    <span className="text-xs font-serif font-black uppercase tracking-wider text-emerald-900 dark:text-emerald-300">
-                      {language === 'pb' ? 'ਪਾਵਨ ਟੀਕਾ ਤੇ ਅਰਥ (ਸਰਲ ਭਾਸ਼ਾ)' : language === 'en' ? 'Sacred Meaning & Translation' : 'पावन अर्थ व टीका (सरल अनुवाद)'}
-                    </span>
+              {/* Step 1 Bhavarth / Translation Flow (Respects Settings Tab 2 Bhavarth Toggle) */}
+              {showBhavarth && (
+                <div className="pt-2 space-y-2.5 text-left">
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <div className="flex items-center gap-1.5">
+                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
+                      <span className="text-xs font-black uppercase tracking-wider text-emerald-900 dark:text-emerald-300">
+                        {language === 'pb' ? 'ਪਾਵਨ ਟੀਕਾ ਤੇ ਅਰਥ (ਸਰਲ ਭਾਸ਼ਾ)' : language === 'en' ? 'Sacred Meaning & Translation' : 'पावन अर्थ व टीका (सरल अनुवाद)'}
+                      </span>
+                    </div>
                   </div>
-                  {/* Quick Translation Language Badges */}
-                  <div className="flex items-center gap-1">
-                    {(['hi', 'pb', 'en'] as Language[]).map((lng) => (
-                      <button
-                        key={lng}
-                        type="button"
-                        onClick={() => onChangeLanguage && onChangeLanguage(lng)}
-                        className={`px-2 py-0.5 rounded-md text-[0.625rem] font-bold font-serif transition cursor-pointer border ${
-                          language === lng
-                            ? 'bg-emerald-600 text-white border-emerald-700 shadow-2xs'
-                            : 'bg-emerald-500/10 text-emerald-900 dark:text-emerald-200 border-emerald-500/20 hover:bg-emerald-500/20'
-                        }`}
-                      >
-                        {lng === 'hi' ? 'हिन्दी' : lng === 'pb' ? 'ਪੰਜਾਬੀ' : 'English'}
-                      </button>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Translation Display Box with Distinct Background and Border */}
-                <div 
-                  style={{
-                    backgroundColor: (isNightTheme || isFlowTheme) ? '#112218' : readingTheme === 'sepia' ? '#F3F8F1' : '#F0FDF4',
-                    borderColor: (isNightTheme || isFlowTheme) ? '#059669' : '#10B981'
-                  }}
-                  className="p-4 sm:p-5 rounded-2xl border text-left shadow-xs space-y-2 relative"
-                >
-                  <p style={activeFontStyle} className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${activeFontClass} text-stone-800 dark:text-stone-100 font-medium select-text`}>
-                    <span className="font-bold text-emerald-800 dark:text-emerald-300 block mb-1">
-                      {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Simple Translation:' : 'सरल अर्थ:'}
-                    </span>
-                    {getStep1ConciseMeaning(sakhi, language)}
-                  </p>
+                  <div className="py-2.5 px-3 border-l-3 border-emerald-600/60 space-y-1.5">
+                    <p style={activeFontStyle} className={`text-sm sm:text-base ${getLineHeightClass(lineHeight)} sacred-meaning-typography ${activeFontClass} text-stone-800 dark:text-stone-100 font-medium select-text`}>
+                      <span className="font-bold text-emerald-800 dark:text-emerald-300 block mb-1">
+                        {language === 'pb' ? 'ਸਰਲ ਅਰਥ:' : language === 'en' ? 'Simple Translation:' : 'सरल अर्थ:'}
+                      </span>
+                      {getStep1ConciseMeaning(sakhi, language)}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Interactive Word Meaning Popup Card (Standard Reader Mode) */}
               {activeGlossaryItem && (
