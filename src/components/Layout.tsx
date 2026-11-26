@@ -588,6 +588,21 @@ export const Layout: React.FC<LayoutProps> = ({
   const [bar3DragStartX, setBar3DragStartX] = useState(0);
   const [bar3DragScrollLeft, setBar3DragScrollLeft] = useState(0);
   const [bar3MovedDistance, setBar3MovedDistance] = useState(0);
+  const [bar3CanScrollLeft, setBar3CanScrollLeft] = useState(false);
+  const [bar3CanScrollRight, setBar3CanScrollRight] = useState(true);
+
+  const updateBar3ScrollBounds = () => {
+    if (!bar3ScrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = bar3ScrollRef.current;
+    setBar3CanScrollLeft(scrollLeft > 4);
+    setBar3CanScrollRight(scrollLeft + clientWidth < scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    updateBar3ScrollBounds();
+    window.addEventListener('resize', updateBar3ScrollBounds);
+    return () => window.removeEventListener('resize', updateBar3ScrollBounds);
+  }, [language, isAdmin, isOnline]);
 
   const handleBar3MouseDown = (e: React.MouseEvent) => {
     if (!bar3ScrollRef.current) return;
@@ -611,17 +626,35 @@ export const Layout: React.FC<LayoutProps> = ({
     const walk = (x - bar3DragStartX) * 1.5;
     setBar3MovedDistance(Math.abs(walk));
     bar3ScrollRef.current.scrollLeft = bar3DragScrollLeft - walk;
+    updateBar3ScrollBounds();
   };
 
   const handleBar3TouchEnd = () => {
     setIsDraggingBar3(false);
+    updateBar3ScrollBounds();
+    setTimeout(() => setBar3MovedDistance(0), 60);
   };
 
   const handleBar3Wheel = (e: React.WheelEvent) => {
     if (!bar3ScrollRef.current) return;
     if (e.deltaY !== 0 && e.deltaX === 0) {
       bar3ScrollRef.current.scrollLeft += e.deltaY;
+      updateBar3ScrollBounds();
     }
+  };
+
+  const scrollBar3 = (direction: 'left' | 'right' | 'start' | 'end') => {
+    if (!bar3ScrollRef.current) return;
+    const el = bar3ScrollRef.current;
+    if (direction === 'start') {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (direction === 'end') {
+      el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+    } else {
+      const amount = direction === 'left' ? -200 : 200;
+      el.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+    setTimeout(updateBar3ScrollBounds, 320);
   };
 
   useEffect(() => {
@@ -632,9 +665,12 @@ export const Layout: React.FC<LayoutProps> = ({
       const walk = (x - bar3DragStartX) * 1.5;
       setBar3MovedDistance(Math.abs(walk));
       bar3ScrollRef.current.scrollLeft = bar3DragScrollLeft - walk;
+      updateBar3ScrollBounds();
     };
     const handleGlobalMouseUp = () => {
       setIsDraggingBar3(false);
+      updateBar3ScrollBounds();
+      setTimeout(() => setBar3MovedDistance(0), 60);
     };
     window.addEventListener('mousemove', handleGlobalMouseMove);
     window.addEventListener('mouseup', handleGlobalMouseUp);
@@ -1904,23 +1940,40 @@ export const Layout: React.FC<LayoutProps> = ({
           </div>
 
           {/* Bottom / Right: Moveable Single-Row Horizontally Scrollable Utility Bar (Bar 3) */}
-          <div
-            ref={bar3ScrollRef}
-            onMouseDown={handleBar3MouseDown}
-            onTouchStart={handleBar3TouchStart}
-            onTouchMove={handleBar3TouchMove}
-            onTouchEnd={handleBar3TouchEnd}
-            onWheel={handleBar3Wheel}
-            style={{
-              display: 'flex',
-              flexWrap: 'nowrap',
-              overflowX: 'auto',
-              gap: '8px',
-            }}
-            className={`items-center justify-start md:justify-end w-full md:flex-1 min-w-0 no-scrollbar touch-pan-x select-none py-0.5 ${
-              isDraggingBar3 ? 'cursor-grabbing' : 'cursor-grab'
-            }`}
-          >
+          <div className="relative w-full md:flex-1 min-w-0">
+            {/* Left Move Arrow Button */}
+            <button
+              type="button"
+              onClick={() => scrollBar3('left')}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 h-6 w-6 rounded-full bg-amber-500/25 hover:bg-amber-500/45 text-amber-900 dark:text-amber-100 flex items-center justify-center transition-all cursor-pointer backdrop-blur-md border border-amber-500/50 shadow-sm active:scale-90 ${
+                bar3CanScrollLeft ? 'opacity-100' : 'opacity-35 hover:opacity-75'
+              }`}
+              title={language === 'pb' ? 'ਖੱਬੇ ਪਾਸੇ ਖਿਸਕਾਓ ◄' : language === 'en' ? 'Move Left ◄' : 'बाईं ओर खिसकाएं ◄'}
+              aria-label="Move utility bar left"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+
+            <div
+              ref={bar3ScrollRef}
+              onMouseDown={handleBar3MouseDown}
+              onTouchStart={handleBar3TouchStart}
+              onTouchMove={handleBar3TouchMove}
+              onTouchEnd={handleBar3TouchEnd}
+              onTouchCancel={handleBar3TouchEnd}
+              onWheel={handleBar3Wheel}
+              onScroll={updateBar3ScrollBounds}
+              style={{
+                display: 'flex',
+                flexWrap: 'nowrap',
+                overflowX: 'auto',
+                gap: '8px',
+              }}
+              className={`items-center justify-start w-full min-w-0 px-7 no-scrollbar scrollbar-none scroll-smooth touch-pan-x select-none py-0.5 ${
+                isDraggingBar3 ? 'cursor-grabbing' : 'cursor-grab'
+              }`}
+              title={language === 'pb' ? 'ਖਿਸਕਾਉਣ ਯੋਗ ਪੱਟੀ (ਖੱਬੇ-ਸੱਜੇ ਘਸੀਟੋ)' : language === 'en' ? 'Moveable Bar (Drag or click arrows)' : 'खिसकाने योग्य पट्टी (बाएं-दाएं स्लाइड या ड्रैग करें)'}
+            >
             {/* Unified 3-in-1 Settings Pill (सामान्य व थीम • सुगमता व वाणी • उन्नत पाठ साधन) */}
             <button
               id="header-open-settings-btn"
@@ -2112,6 +2165,20 @@ export const Layout: React.FC<LayoutProps> = ({
                 );
               })}
             </div>
+            </div>
+
+            {/* Right Move Arrow Button */}
+            <button
+              type="button"
+              onClick={() => scrollBar3('right')}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 h-6 w-6 rounded-full bg-amber-500/25 hover:bg-amber-500/45 text-amber-900 dark:text-amber-100 flex items-center justify-center transition-all cursor-pointer backdrop-blur-md border border-amber-500/50 shadow-sm active:scale-90 ${
+                bar3CanScrollRight ? 'opacity-100' : 'opacity-35 hover:opacity-75'
+              }`}
+              title={language === 'pb' ? 'ਸੱਜੇ ਪਾਸੇ ਖਿਸਕਾਓ ►' : language === 'en' ? 'Move Right ►' : 'दायीं ओर खिसकाएं ►'}
+              aria-label="Move utility bar right"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
           </div>
         </div>
 

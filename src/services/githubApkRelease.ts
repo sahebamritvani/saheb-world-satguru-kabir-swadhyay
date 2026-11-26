@@ -35,6 +35,16 @@ export interface GitHubApkReleaseInfo {
   fromCache?: boolean;
 }
 
+const LEGACY_GITHUB_REPO = 'sahebamritvani/saheb-world-satguru-kabir-swadhyay-';
+export const DEFAULT_GITHUB_REPO = 'sahebamritvani/saheb-world-satguru-kabir-swadhyay';
+
+export function normalizeGitHubRepoSlug(slug: string): string {
+  if (slug.toLowerCase() === LEGACY_GITHUB_REPO.toLowerCase()) {
+    return DEFAULT_GITHUB_REPO;
+  }
+  return slug;
+}
+
 /**
  * Extracts a clean "owner/repo" slug from a GitHub URL or shorthand string.
  */
@@ -56,7 +66,7 @@ export function parseGitHubRepoSlug(rawInput: string): string | null {
   if (!/^[a-zA-Z0-9_.-]+$/.test(owner) || !/^[a-zA-Z0-9_.-]+$/.test(repo)) {
     return null;
   }
-  return `${owner}/${repo}`;
+  return normalizeGitHubRepoSlug(`${owner}/${repo}`);
 }
 
 export function getConfiguredGitHubRepo(): string {
@@ -64,13 +74,18 @@ export function getConfiguredGitHubRepo(): string {
     const saved = localStorage.getItem(STORAGE_REPO_KEY);
     if (saved) {
       const parsed = parseGitHubRepoSlug(saved);
-      if (parsed) return parsed;
+      if (parsed) {
+        if (parsed !== saved) {
+          localStorage.setItem(STORAGE_REPO_KEY, parsed);
+        }
+        return parsed;
+      }
     }
   } catch {
     // ignore storage restriction
   }
   const builtIn = parseGitHubRepoSlug(BUILTIN_GITHUB_REPO);
-  return builtIn || 'sahebamritvani/saheb-world-satguru-kabir-swadhyay';
+  return builtIn || DEFAULT_GITHUB_REPO;
 }
 
 export function saveConfiguredGitHubRepo(rawInput: string): string | null {
@@ -123,8 +138,16 @@ function readCachedRelease(repo: string): GitHubApkReleaseInfo | null {
     const raw = localStorage.getItem(STORAGE_RELEASE_CACHE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as GitHubApkReleaseInfo;
-    if (parsed?.repo === repo && parsed?.apkDownloadUrl) {
-      return { ...parsed, fromCache: true };
+    const normalizedCachedRepo = parsed?.repo ? normalizeGitHubRepoSlug(parsed.repo) : '';
+    if (normalizedCachedRepo === repo && parsed?.apkDownloadUrl) {
+      return {
+        ...parsed,
+        repo: normalizedCachedRepo,
+        apkDownloadUrl: parsed.apkDownloadUrl.replace(LEGACY_GITHUB_REPO, DEFAULT_GITHUB_REPO),
+        releasePageUrl: parsed.releasePageUrl?.replace(LEGACY_GITHUB_REPO, DEFAULT_GITHUB_REPO),
+        actionsPageUrl: parsed.actionsPageUrl?.replace(LEGACY_GITHUB_REPO, DEFAULT_GITHUB_REPO),
+        fromCache: true,
+      };
     }
   } catch {
     // ignore invalid cache
