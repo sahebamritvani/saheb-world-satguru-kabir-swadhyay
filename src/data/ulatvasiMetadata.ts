@@ -111,15 +111,15 @@ export const getUlatvasiRank = (score: number, _language: Language = 'hi') => {
       badge: '👑',
       auraColor: '#F59E0B',
       description: {
-        hi: 'कबीर साहेब की समस्त उलटबांसियों का गूढ़ आध्यात्मिक भेद आपको हृदयंगम हो चुका है। आप सच्चे पारखी हंस हैं।',
-        pb: 'ਤੁਸੀਂ ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਦਾ ਗੂੜ੍ਹ ਭੇਦ ਸਮਝ ਲਿਆ ਹੈ। ਤੁਸੀਂ ਸੱਚੇ ਪਾਰਖੀ ਹੰਸ ਹੋ।',
+        hi: 'सतगुरु कबीर साहेब की समस्त उलटबांसियों का गूढ़ आध्यात्मिक भेद आपको हृदयंगम हो चुका है। आप सच्चे पारखी हंस हैं।',
+        pb: 'ਤੁਸੀਂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਦਾ ਗੂੜ੍ਹ ਭੇਦ ਸਮਝ ਲਿਆ ਹੈ। ਤੁਸੀਂ ਸੱਚੇ ਪਾਰਖੀ ਹੰਸ ਹੋ।',
         en: 'You have decoded the highest esoteric paradoxes of Satguru Kabir. You stand as a true Illumined Soul.',
       },
     };
   }
   if (score >= 1000) {
     return {
-      title: { hi: 'साहेब कृपा पात्र', pb: 'ਸਾਹਿਬ ਕਿਰਪਾ ਪਾਤਰ', en: 'Beloved Disciple' },
+      title: { hi: 'साहेब कृपा पात्र', pb: 'ਸਾਹੇਬ ਕਿਰਪਾ ਪਾਤਰ', en: 'Beloved Disciple' },
       badge: '🪷',
       auraColor: '#EC4899',
       description: {
@@ -147,8 +147,8 @@ export const getUlatvasiRank = (score: number, _language: Language = 'hi') => {
       badge: '🔮',
       auraColor: '#3B82F6',
       description: {
-        hi: 'कबीर साहेब की रूपक शैली और प्रतीक विद्या में आपकी गहरी गति बन रही है।',
-        pb: 'ਕਬੀਰ ਸਾਹਿਬ ਦੇ ਰਹੱਸਮਈ ਪ੍ਰਤੀਕਾਂ ਵਿੱਚ ਤੁਹਾਡੀ ਸਮਝ ਵਧ ਰਹੀ ਹੈ।',
+        hi: 'सतगुरु कबीर साहेब की रूपक शैली और प्रतीक विद्या में आपकी गहरी गति बन रही है।',
+        pb: 'ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਰਹੱਸਮਈ ਪ੍ਰਤੀਕਾਂ ਵਿੱਚ ਤੁਹਾਡੀ ਸਮਝ ਵਧ ਰਹੀ ਹੈ।',
         en: 'Your spiritual intellect is blossoming into the symbolic mysteries and divine allegories of Kabir.',
       },
     };

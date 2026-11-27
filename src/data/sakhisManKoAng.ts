@@ -13,14 +13,14 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       en: 'Man Ko Ang - 1',
     },
     text: {
-      hi: 'कबीर यह मन मसखरा, कहूं तो मानै रोस।\nजा मारग साहिब मिलै, तहां न चालै कोस।।',
-      pb: devanagariToGurmukhi('कबीर यह मन मसखरा, कहूं तो मानै रोस। जा मारग साहिब मिलै, तहां न चालै कोस।।'),
+      hi: 'कबीर यह मन मसखरा, कहूं तो मानै रोस।\nजा मारग साहेब मिलै, तहां न चालै कोस।।',
+      pb: devanagariToGurmukhi('कबीर यह मन मसखरा, कहूं तो मानै रोस। जा मारग साहेब मिलै, तहां न चालै कोस।।'),
       en: 'Kabeer yeh man masakhraa, kahoon to maanai ros. Jaa maarag saahib milai, tahaan na chaalai kos..'
     },
     transliteration: 'Kabeer yeh man masakhra, kahoon to maanai ros. Ja maarag saahib milai, tahaan na chaalai kos.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह मन तो बहुत ही चुलबुला और मदमस्त है। यदि इसे कुछ समझाने का प्रयत्न करें तो यह बुरा मानता है तथा खिन्न हो उठता है। जिस भक्ति-साधना के मार्ग से अंतर्यामी परमात्मा का साक्षात्कार हो सकता है, उस ओर चलने को यह तैयार ही नहीं होता। मन को जितना जिस ओर से रोकने का प्रयास किया जाता है, यह दुःखी होकर उतना ही उसी ओर जाता है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਬੜਾ ਮਸਖ਼ਰਾ ਤੇ ਚੰਚਲ ਹੈ। ਜੇ ਇਸਨੂੰ ਸਮਝਾਈਏ ਤਾਂ ਗੁੱਸਾ ਕਰਦਾ ਹੈ। ਜਿਸ ਰਾਹ \'ਤੇ ਪ੍ਰਭੂ ਮਿਲਦੇ ਹਨ, ਓਧਰ ਇੱਕ ਕਦਮ ਵੀ ਨਹੀਂ ਤੁਰਦਾ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह मन तो बहुत ही चुलबुला और मदमस्त है। यदि इसे कुछ समझाने का प्रयत्न करें तो यह बुरा मानता है तथा खिन्न हो उठता है। जिस भक्ति-साधना के मार्ग से अंतर्यामी परमात्मा का साक्षात्कार हो सकता है, उस ओर चलने को यह तैयार ही नहीं होता। मन को जितना जिस ओर से रोकने का प्रयास किया जाता है, यह दुःखी होकर उतना ही उसी ओर जाता है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਬੜਾ ਮਸਖ਼ਰਾ ਤੇ ਚੰਚਲ ਹੈ। ਜੇ ਇਸਨੂੰ ਸਮਝਾਈਏ ਤਾਂ ਗੁੱਸਾ ਕਰਦਾ ਹੈ। ਜਿਸ ਰਾਹ \'ਤੇ ਪ੍ਰਭੂ ਮਿਲਦੇ ਹਨ, ਓਧਰ ਇੱਕ ਕਦਮ ਵੀ ਨਹੀਂ ਤੁਰਦਾ।'),
       en: 'Kabir observes that this mind is a willful jester: admonish it, and it sulks with irritation. Towards the path where the Supreme Lord is realized, it refuses to walk even a single step, ever rebelling against restraint.'
     },
     wordMeanings: {
@@ -91,7 +91,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा मन सद्गुरु के तत्व-ज्ञान के घड़े में स्थिर है, या सांसारिक चंचलता में बह रहा है?',
+      hi: 'क्या मेरा मन सतगुरु के तत्व-ज्ञान के घड़े में स्थिर है, या सांसारिक चंचलता में बह रहा है?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰਾ ਮਨ ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਵਿੱਚ ਟਿਕਿਆ ਹੈ?'),
       en: 'Is my mind contained within the vessel of spiritual wisdom, or spilling into restlessness?'
     },
@@ -285,7 +285,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Pahile yeh man kaag thaa, kartaa jeevan ghaat. Ab to man hansa bhaya, motee chuni-chuni khaat.',
     bhavarth: {
-      hi: 'पहले अज्ञानता की दशा में यह मन कौए की भांति था। इसका खान-पान, बोल-चाल तथा रंग-ढंग आदि सब अशुभ था। यह हिंसक था, इसलिए जीवों पर घात करता था, परंतु अब सत्संगति तथा सद्गुरु के ज्ञानोपदेश से यह हंस समान हो गया है, अतः सहज-सरल तथा विवेकी भाव से दुर्गुणों को छोड़कर सद्गुण-ज्ञान रूपी मोतियों को ही चुन-चुनकर खाता है।',
+      hi: 'पहले अज्ञानता की दशा में यह मन कौए की भांति था। इसका खान-पान, बोल-चाल तथा रंग-ढंग आदि सब अशुभ था। यह हिंसक था, इसलिए जीवों पर घात करता था, परंतु अब सत्संगति तथा सतगुरु के ज्ञानोपदेश से यह हंस समान हो गया है, अतः सहज-सरल तथा विवेकी भाव से दुर्गुणों को छोड़कर सद्गुण-ज्ञान रूपी मोतियों को ही चुन-चुनकर खाता है।',
       pb: devanagariToGurmukhi('ਪਹਿਲਾਂ ਇਹ ਮਨ ਕਾਂ ਵਾਂਗ ਗੰਦਗੀ ਖਾਂਦਾ ਅਤੇ ਦੂਜਿਆਂ ਨੂੰ ਦੁੱਖ ਦਿੰਦਾ ਸੀ। ਪਰ ਸਤਿਗੁਰੂ ਦੀ ਸੰਗਤ ਨਾਲ ਇਹ ਹੰਸ ਬਣ ਗਿਆ ਹੈ, ਜੋ ਸਿਰਫ਼ ਗਿਆਨ ਦੇ ਮੋਤੀ ਹੀ ਚੁਗਦਾ ਹੈ।'),
       en: 'Formerly in ignorance, this mind was like a crow—feeding on filth and causing injury. But by the grace of the Satguru’s holy company, it has transformed into a swan (Hansa), feeding purely on the selected pearls of divine wisdom.'
     },
@@ -340,9 +340,9 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer man parbat bhaya, ab main paaya jaan. Taanki laagee prem kee, niksee kanchan khaan.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अब मैं अच्छी प्रकार जान व समझ गया हूं कि यह मन मोम की भांति मुलायम नहीं है। यह तो विशाल और सुदृढ़ पर्वत की भांति है। यदि इसमें सद्भाव-प्रेम की टांकी (छेनी) लगाई जाए तो इसके अंदर से सद्गुणों का स्वर्णिम भंडार निकल सकता है। प्रेम-भक्ति से मन आत्म-परायण हो जाता है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਪਹਾੜ ਵਰਗਾ ਪੱਕਾ ਹੈ। ਪਰ ਜਦੋਂ ਇਸ ਉੱਤੇ ਪ੍ਰੇਮ-ਭਗਤੀ ਦੀ ਛੈਣੀ ਲੱਗੀ ਤਾਂ ਇਸ ਵਿੱਚੋਂ ਸੋਨੇ ਦੀ ਖਾਣ (ਆਤਮ-ਗਿਆਨ) ਨਿਕਲ ਆਈ।'),
-      en: 'Kabir declares: I have realized that the mind is like a rugged granite mountain. When struck with the chisel of divine love, it opens up to reveal an inexhaustible mine of pure spiritual gold.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अब मैं अच्छी प्रकार जान व समझ गया हूं कि यह मन मोम की भांति मुलायम नहीं है। यह तो विशाल और सुदृढ़ पर्वत की भांति है। यदि इसमें सद्भाव-प्रेम की टांकी (छेनी) लगाई जाए तो इसके अंदर से सद्गुणों का स्वर्णिम भंडार निकल सकता है। प्रेम-भक्ति से मन आत्म-परायण हो जाता है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਪਹਾੜ ਵਰਗਾ ਪੱਕਾ ਹੈ। ਪਰ ਜਦੋਂ ਇਸ ਉੱਤੇ ਪ੍ਰੇਮ-ਭਗਤੀ ਦੀ ਛੈਣੀ ਲੱਗੀ ਤਾਂ ਇਸ ਵਿੱਚੋਂ ਸੋਨੇ ਦੀ ਖਾਣ (ਆਤਮ-ਗਿਆਨ) ਨਿਕਲ ਆਈ।'),
+      en: 'Satguru Kabir Saheb proclaims: I have realized that the mind is like a rugged granite mountain. When struck with the chisel of divine love, it opens up to reveal an inexhaustible mine of pure spiritual gold.'
     },
     wordMeanings: {
       hi: [
@@ -422,7 +422,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       en: 'Is my untamed mind trampling my spiritual garden, or controlled by the goad of wisdom?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के वचनों और निरंतर विवेक के अंकुश से मन की वासनाओं को नियंत्रित करें।',
+      hi: 'सतगुरु के वचनों और निरंतर विवेक के अंकुश से मन की वासनाओं को नियंत्रित करें।',
       pb: devanagariToGurmukhi('ਗਿਆਨ ਦੇ ਅੰਕੁਸ਼ ਨਾਲ ਮਨ ਨੂੰ ਕਾਬੂ ਰੱਖੋ।'),
       en: 'Apply the firm goad of mindfulness whenever the mind strays toward unwholesome desires.'
     },
@@ -450,7 +450,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bina sees ka mirag hai, chahun dis charne jaay. Baandhi laao gurugyaan soon, raakho tatva lagaay.',
     bhavarth: {
-      hi: 'मन रूपी मृग बहुत ही विचित्र है। यह बिना सिर का है, इसलिए किसी के पहचानने में नहीं आता। यह चारों दिशाओं में विचरण करता रहता है। इसे सद्गुरु के ज्ञान-उपदेश की डोरी से बांधकर, अविनाशी आत्म-तत्त्व की ध्यान-साधना में लगाओ।',
+      hi: 'मन रूपी मृग बहुत ही विचित्र है। यह बिना सिर का है, इसलिए किसी के पहचानने में नहीं आता। यह चारों दिशाओं में विचरण करता रहता है। इसे सतगुरु के ज्ञान-उपदेश की डोरी से बांधकर, अविनाशी आत्म-तत्त्व की ध्यान-साधना में लगाओ।',
       pb: devanagariToGurmukhi('ਮਨ ਬਿਨਾਂ ਸਿਰ ਦਾ ਅਜਿਹਾ ਹਿਰਨ ਹੈ ਜੋ ਚਾਰੇ ਪਾਸੇ ਦੌੜਦਾ ਹੈ। ਇਸਨੂੰ ਗੁਰੂ ਦੇ ਗਿਆਨ ਦੀ ਰੱਸੀ ਨਾਲ ਬੰਨ੍ਹ ਕੇ ਆਤਮ-ਤੱਤ ਦੇ ਸਿਮਰਨ ਵਿੱਚ ਲਾਓ।'),
       en: 'The mind is a formless, headless deer roaming in all four directions undetected. Tether it securely with the cord of the Guru’s wisdom, and tether its attention firmly to the supreme Soul-Principle (Tatva).'
     },
@@ -579,7 +579,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       en: 'Am I enslaved by sensory impulses, sold to cyclic rebirth?'
     },
     practicalApplication: {
-      hi: 'मन की कुसंगति को पहचानकर सद्गुरु के पावन सत्संग और नाम-सिमरन की शरण लें।',
+      hi: 'मन की कुसंगति को पहचानकर सतगुरु के पावन सत्संग और नाम-सिमरन की शरण लें।',
       pb: devanagariToGurmukhi('ਕੁਸੰਗਤ ਛੱਡ ਕੇ ਨਾਮ ਸਿਮਰਨ ਦਾ ਆਸਰਾ ਲਵੋ।'),
       en: 'Sever ties with mental delusions and anchor consciousness in holy Satsang.'
     },
@@ -715,7 +715,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Yeh man Hari charane chala, maya-moh se chhoot. Behad maaheen ghar kiya, kaal raha shir koot.',
     bhavarth: {
-      hi: 'माया-मोह के बंधन से छूटकर, अब यह मन सद्गुरु परमात्मा की शरण में चला गया है। सद्गुरु की कृपा से इसने आत्म-स्वरूप को पहचानकर उसे अपना घर बना लिया है, अर्थात अंतर्मुखी होकर ध्यान में स्थिर हो गया है। अब काल भी अपना सिर पटकता रहेगा, किंतु वह भी इसका कुछ नहीं बिगाड़ सकता।',
+      hi: 'माया-मोह के बंधन से छूटकर, अब यह मन सतगुरु परमात्मा की शरण में चला गया है। सतगुरु की कृपा से इसने आत्म-स्वरूप को पहचानकर उसे अपना घर बना लिया है, अर्थात अंतर्मुखी होकर ध्यान में स्थिर हो गया है। अब काल भी अपना सिर पटकता रहेगा, किंतु वह भी इसका कुछ नहीं बिगाड़ सकता।',
       pb: devanagariToGurmukhi('ਮਾਇਆ-ਮੋਹ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਜਦੋਂ ਮਨ ਪ੍ਰਭੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਟਿਕ ਗਿਆ ਅਤੇ ਬੇਅੰਤ ਅਸੀਮ ਸੱਚ ਵਿੱਚ ਘਰ ਬਣਾ ਲਿਆ, ਤਾਂ ਕਾਲ ਵੀ ਸਿਰ ਪਿੱਟਦਾ ਰਹਿ ਗਿਆ ਪਰ ਕੁਝ ਵਿਗਾੜ ਨਾ ਸਕਿਆ।'),
       en: 'Liberated from illusion and worldly infatuation, the mind has surrendered at the feet of the Lord. Settling permanently into the boundless realm of the Infinite, even Death (Kal) beats its head in futile helplessness.'
     },
@@ -850,7 +850,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       en: 'Does my attention fly instantaneously into distant illusions without physical movement?'
     },
     practicalApplication: {
-      hi: 'मन की इस तीव्र गति को समझकर इसे सांसारिक कल्पनाओं के बजाय सद्गुरु के नाम-सिमरन में लगाएं।',
+      hi: 'मन की इस तीव्र गति को समझकर इसे सांसारिक कल्पनाओं के बजाय सतगुरु के नाम-सिमरन में लगाएं।',
       pb: devanagariToGurmukhi('ਮਨ ਦੀ ਗਤੀ ਨੂੰ ਸਿਮਰਨ ਵਿੱਚ ਲਾਓ।'),
       en: 'Harness the mind’s swift flight toward the contemplation of divine virtues.'
     },
@@ -878,8 +878,8 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer bairi sabal hai, ek jeev ripu paanch. Apne-apne swaad ko, bahut nachaavai naach.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि शत्रु बहुत ही शक्तिमान है। इस एक जीव के पीछे पांच शत्रु (पांच ज्ञानेंद्रियां—नाक, कान, आंख, जिह्वा एवं त्वचा) लगे हुए हैं। ये सब विभिन्न प्रकार का स्वाद पाने के लिए जीव को बहुत नाच नचवाते हैं, अर्थात बहुत दुःखी करते हैं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵੈਰੀ ਬੜਾ ਤਾਕਤਵਰ ਹੈ। ਇਕੱਲੇ ਜੀਵ ਦੇ ਪਿੱਛੇ ਪੰਜ ਵੈਰੀ (ਪੰਜ ਇੰਦਰੀਆਂ) ਲੱਗੇ ਹੋਏ ਹਨ, ਜੋ ਆਪੋ-ਆਪਣੇ ਸੁਆਦ ਲਈ ਜੀਵ ਨੂੰ ਬਹੁਤ ਨਚਾਉਂਦੇ (ਦੁਖੀ ਕਰਦੇ) ਹਨ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि शत्रु बहुत ही शक्तिमान है। इस एक जीव के पीछे पांच शत्रु (पांच ज्ञानेंद्रियां—नाक, कान, आंख, जिह्वा एवं त्वचा) लगे हुए हैं। ये सब विभिन्न प्रकार का स्वाद पाने के लिए जीव को बहुत नाच नचवाते हैं, अर्थात बहुत दुःखी करते हैं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵੈਰੀ ਬੜਾ ਤਾਕਤਵਰ ਹੈ। ਇਕੱਲੇ ਜੀਵ ਦੇ ਪਿੱਛੇ ਪੰਜ ਵੈਰੀ (ਪੰਜ ਇੰਦਰੀਆਂ) ਲੱਗੇ ਹੋਏ ਹਨ, ਜੋ ਆਪੋ-ਆਪਣੇ ਸੁਆਦ ਲਈ ਜੀਵ ਨੂੰ ਬਹੁਤ ਨਚਾਉਂਦੇ (ਦੁਖੀ ਕਰਦੇ) ਹਨ।'),
       en: 'Kabir warns that the enemy is exceedingly formidable: against this solitary soul stand five relentless adversaries (the five senses). Demanding their individual gratifications, they make the helpless soul dance in anguish.'
     },
     wordMeanings: {
@@ -932,8 +932,8 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer lahari samudra ki, keto aavai jaanhi. Balihari wa daas ki, ulati samaavai maanhi.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि समुद्र की असंख्य चंचल लहरों के समान मनोवृत्तियां होती हैं, जो लहरों की भांति आती-जाती रहती हैं, जिन्हें रोकना व पकड़ना बहुत ही कठिन है, लेकिन सद्गुरु का प्यारा दास-भक्त धन्य है, जो इन्हें उलटकर निज स्वरूप में लीन कर लेता है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਮੁੰਦਰ ਦੀਆਂ ਲਹਿਰਾਂ ਵਾਂਗ ਮਨ ਦੀਆਂ ਅਣਗਿਣਤ ਬਿਰਤੀਆਂ ਆਉਂਦੀਆਂ-ਜਾਂਦੀਆਂ ਰਹਿੰਦੀਆਂ ਹਨ। ਪਰ ਧੰਨ ਹੈ ਉਹ ਗੁਰਮੁਖ ਸੇਵਕ ਜੋ ਇਹਨਾਂ ਨੂੰ ਅੰਦਰ ਵੱਲ ਉਲਟਾ ਕੇ ਆਤਮ-ਸਰੂਪ ਵਿੱਚ ਸਮਾ ਲੈਂਦਾ ਹੈ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि समुद्र की असंख्य चंचल लहरों के समान मनोवृत्तियां होती हैं, जो लहरों की भांति आती-जाती रहती हैं, जिन्हें रोकना व पकड़ना बहुत ही कठिन है, लेकिन सतगुरु का प्यारा दास-भक्त धन्य है, जो इन्हें उलटकर निज स्वरूप में लीन कर लेता है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਮੁੰਦਰ ਦੀਆਂ ਲਹਿਰਾਂ ਵਾਂਗ ਮਨ ਦੀਆਂ ਅਣਗਿਣਤ ਬਿਰਤੀਆਂ ਆਉਂਦੀਆਂ-ਜਾਂਦੀਆਂ ਰਹਿੰਦੀਆਂ ਹਨ। ਪਰ ਧੰਨ ਹੈ ਉਹ ਗੁਰਮੁਖ ਸੇਵਕ ਜੋ ਇਹਨਾਂ ਨੂੰ ਅੰਦਰ ਵੱਲ ਉਲਟਾ ਕੇ ਆਤਮ-ਸਰੂਪ ਵਿੱਚ ਸਮਾ ਲੈਂਦਾ ਹੈ।'),
       en: 'Kabir observes that thoughts surge and recede like countless waves upon the sea. Blessed is that devoted servant who reverses the tide of thoughts inward, dissolving all fluctuations into the silent depths of the Self.'
     },
     wordMeanings: {
@@ -985,9 +985,9 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Baat banayi jag thagyo, man parmodha naanhi. Kahain Kabeer man le gaya, lakh chaurasi maanhi.',
     bhavarth: {
-      hi: 'मृदुल और मनोहारी बातें बनाकर जग को ठगते रहे, परंतु अपने मन को ज्ञानोपदेश से शांत नहीं किया। कबीरजी कहते हैं कि ऐसे अज्ञानी जनों का अशांत मन उन्हें संसार की चौरासी लाख योनियों में भटका गया।',
-      pb: devanagariToGurmukhi('ਮਿੱਠੀਆਂ ਗੱਲਾਂ ਬਣਾ ਕੇ ਦੁਨੀਆ ਨੂੰ ਤਾਂ ਠੱਗ ਲਿਆ, ਪਰ ਆਪਣੇ ਮਨ ਨੂੰ ਗਿਆਨ ਨਾਲ ਨਹੀਂ ਸਮਝਾਇਆ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹੋ ਕਾਬੂ ਨਾ ਆਇਆ ਮਨ ਜੀਵ ਨੂੰ ਚੌਰਾਸੀ ਲੱਖ ਜੂਨਾਂ ਵਿੱਚ ਧੱਕ ਲੈ ਗਿਆ।'),
-      en: 'Crafting sweet, deceptive words, hypocrites delude the world while leaving their own minds utterly untamed. Kabir declares that this unpurified mind drags the soul right into the wheel of eighty-four lakh species of rebirth.'
+      hi: 'मृदुल और मनोहारी बातें बनाकर जग को ठगते रहे, परंतु अपने मन को ज्ञानोपदेश से शांत नहीं किया। सतगुरु कबीर साहेब फरमाते हैं कि ऐसे अज्ञानी जनों का अशांत मन उन्हें संसार की चौरासी लाख योनियों में भटका गया।',
+      pb: devanagariToGurmukhi('ਮਿੱਠੀਆਂ ਗੱਲਾਂ ਬਣਾ ਕੇ ਦੁਨੀਆ ਨੂੰ ਤਾਂ ਠੱਗ ਲਿਆ, ਪਰ ਆਪਣੇ ਮਨ ਨੂੰ ਗਿਆਨ ਨਾਲ ਨਹੀਂ ਸਮਝਾਇਆ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹੋ ਕਾਬੂ ਨਾ ਆਇਆ ਮਨ ਜੀਵ ਨੂੰ ਚੌਰਾਸੀ ਲੱਖ ਜੂਨਾਂ ਵਿੱਚ ਧੱਕ ਲੈ ਗਿਆ।'),
+      en: 'Crafting sweet, deceptive words, hypocrites delude the world while leaving their own minds utterly untamed. Satguru Kabir Saheb proclaims that this unpurified mind drags the soul right into the wheel of eighty-four lakh species of rebirth.'
     },
     wordMeanings: {
       hi: [
@@ -1038,9 +1038,9 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer yeh gat atpati, chatpat lakhi na jaay. Jo man ki khatpat mitai, adhar bhaye thaharaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि ज्ञान की यह स्थिति बहुत ही अनोखी है, जो कहने में भी कठिन है तथा जिसे शीघ्र-अति-शीघ्र देखा भी नहीं जा सकता। यदि मन का संदेह दूर होकर यह एकाग्र हो जाए, तो सत्य स्वरूपी अविनाशी परमात्मा का मार्ग मिल जाता है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਆਤਮ-ਗਿਆਨ ਦੀ ਇਹ ਦਸ਼ਾ ਬੜੀ ਅਨੋਖੀ ਹੈ, ਜੋ ਜਲਦਬਾਜ਼ੀ ਵਿੱਚ ਸਮਝ ਨਹੀਂ ਆਉਂਦੀ। ਜੇਕਰ ਮਨ ਦੇ ਸੰਸੇ-ਖਟਪਟ ਮਿਟ ਜਾਣ ਤਾਂ ਸੁਰਤਿ ਸਹਿਜੇ ਹੀ ਨਿਰਾਧਾਰ ਬ੍ਰਹਮ ਵਿੱਚ ਟਿਕ ਜਾਂਦੀ ਹੈ।'),
-      en: 'Kabir declares that this mystical state of Self-realization is profound and subtle, not perceived through hasty impatience. When the restless clamor and doubt of the mind subside, consciousness is established in the unconditioned Divine.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि ज्ञान की यह स्थिति बहुत ही अनोखी है, जो कहने में भी कठिन है तथा जिसे शीघ्र-अति-शीघ्र देखा भी नहीं जा सकता। यदि मन का संदेह दूर होकर यह एकाग्र हो जाए, तो सत्य स्वरूपी अविनाशी परमात्मा का मार्ग मिल जाता है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਤਮ-ਗਿਆਨ ਦੀ ਇਹ ਦਸ਼ਾ ਬੜੀ ਅਨੋਖੀ ਹੈ, ਜੋ ਜਲਦਬਾਜ਼ੀ ਵਿੱਚ ਸਮਝ ਨਹੀਂ ਆਉਂਦੀ। ਜੇਕਰ ਮਨ ਦੇ ਸੰਸੇ-ਖਟਪਟ ਮਿਟ ਜਾਣ ਤਾਂ ਸੁਰਤਿ ਸਹਿਜੇ ਹੀ ਨਿਰਾਧਾਰ ਬ੍ਰਹਮ ਵਿੱਚ ਟਿਕ ਜਾਂਦੀ ਹੈ।'),
+      en: 'Satguru Kabir Saheb proclaims that this mystical state of Self-realization is profound and subtle, not perceived through hasty impatience. When the restless clamor and doubt of the mind subside, consciousness is established in the unconditioned Divine.'
     },
     wordMeanings: {
       hi: [
@@ -1253,7 +1253,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Man daata man laalchi, man raja man rank. Jo yeh man Guru so milai, to Guru mile nisank.',
     bhavarth: {
-      hi: 'यह मन दया भाव के कारण दानी तथा कंजूस भाव के कारण लालची, निर्भीकता और पुरुषार्थ के कारण राजा और भयभीत तथा हीन भाव से गरीब बन जाता है। यदि यह मन गुरु से मिलने का शुभ संकल्प ले, तो निःसंदेह इसे सद्गुरु का दर्शन व मिलन प्राप्त हो जाता है।',
+      hi: 'यह मन दया भाव के कारण दानी तथा कंजूस भाव के कारण लालची, निर्भीकता और पुरुषार्थ के कारण राजा और भयभीत तथा हीन भाव से गरीब बन जाता है। यदि यह मन गुरु से मिलने का शुभ संकल्प ले, तो निःसंदेह इसे सतगुरु का दर्शन व मिलन प्राप्त हो जाता है।',
       pb: devanagariToGurmukhi('ਇਹ ਮਨ ਹੀ ਦਾਨੀ ਹੈ, ਇਹੋ ਲਾਲਚੀ; ਇਹੋ ਰਾਜਾ ਹੈ ਅਤੇ ਇਹੋ ਕੰਗਾਲ। ਜੇਕਰ ਇਹ ਮਨ ਪੂਰੀ ਸ਼ਰਧਾ ਨਾਲ ਗੁਰੂ ਨਾਲ ਜੁੜ ਜਾਵੇ, ਤਾਂ ਬਿਨਾਂ ਸ਼ੱਕ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੀ ਪ੍ਰਾਪਤੀ ਹੋ ਜਾਂਦੀ ਹੈ।'),
       en: 'The mind shifts states instantly: generous or miserly, king or beggar, fearless or terrified. If this very mind sincerely resolves to surrender unto the Satguru, it doubtlessly attains divine union with the Master.'
     },
@@ -1275,12 +1275,12 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा मन संसार के अभावों और प्रलोभनों में भटक रहा है, या सद्गुरु की शरण में लग चुका है?',
+      hi: 'क्या मेरा मन संसार के अभावों और प्रलोभनों में भटक रहा है, या सतगुरु की शरण में लग चुका है?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰਾ ਮਨ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਟਿਕਿਆ ਹੈ?'),
       en: 'Is my mind vacillating between worldly roles or surrendered at the feet of the Satguru?'
     },
     practicalApplication: {
-      hi: 'मन की चंचलता को समझें और इसे एकाग्र कर गुरु-सेवा व सतनाम-सिमरन में समर्पित करें।',
+      hi: 'मन की चंचलता को समझें और इसे एकाग्र कर गुरु-सेवा व सत्यनाम-सिमरन में समर्पित करें।',
       pb: devanagariToGurmukhi('ਮਨ ਨੂੰ ਗੁਰੂ ਸੇਵਾ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰੋ।'),
       en: 'Direct all mental faculties with steadfast devotion toward the holy Master.'
     },
@@ -1385,7 +1385,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं सांसारिक वासनाओं की दावानल से बचने के लिए सद्गुरु के ज्ञान-जल की शरण ले रहा हूं?',
+      hi: 'क्या मैं सांसारिक वासनाओं की दावानल से बचने के लिए सतगुरु के ज्ञान-जल की शरण ले रहा हूं?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਤ੍ਰਿਸ਼ਨਾ ਦੀ ਅੱਗ ਤੋਂ ਬਚਣ ਲਈ ਨਾਮ ਦਾ ਆਸਰਾ ਲਿਆ ਹੈ?'),
       en: 'Am I taking refuge in the cooling waters of the holy Name amidst this sensory blaze?'
     },
@@ -1418,8 +1418,8 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Man ke maare ban gaye, ban taji basti maanhi. Kahain Kabeer kya kijiye, yeh man thaharai naahin.',
     bhavarth: {
-      hi: 'मन से हारकर, परेशान होकर हम वन में गए, परंतु वहां भी यही स्थिति रही, अतः जंगल त्यागकर फिर अपने गांव-बस्ती में आ गए। कबीरजी कहते हैं कि हम क्या करें? यह मन बहुत ही प्रबल है, यह कहीं भी स्थिर नहीं रह पाता।',
-      pb: devanagariToGurmukhi('ਮਨ ਤੋਂ ਦੁਖੀ ਹੋ ਕੇ ਜੰਗਲ ਚਲੇ ਗਏ, ਪਰ ਓਥੇ ਵੀ ਮਨ ਨਾ ਟਿਕਿਆ ਤਾਂ ਮੁੜ ਬਸਤੀ ਵਿੱਚ ਆ ਗਏ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਕੀ ਕਰੀਏ, ਇਹ ਮਨ ਬਾਹਰੀ ਥਾਵਾਂ ਬਦਲਣ ਨਾਲ ਸ਼ਾਂਤ ਨਹੀਂ ਹੁੰਦਾ।'),
+      hi: 'मन से हारकर, परेशान होकर हम वन में गए, परंतु वहां भी यही स्थिति रही, अतः जंगल त्यागकर फिर अपने गांव-बस्ती में आ गए। सतगुरु कबीर साहेब फरमाते हैं कि हम क्या करें? यह मन बहुत ही प्रबल है, यह कहीं भी स्थिर नहीं रह पाता।',
+      pb: devanagariToGurmukhi('ਮਨ ਤੋਂ ਦੁਖੀ ਹੋ ਕੇ ਜੰਗਲ ਚਲੇ ਗਏ, ਪਰ ਓਥੇ ਵੀ ਮਨ ਨਾ ਟਿਕਿਆ ਤਾਂ ਮੁੜ ਬਸਤੀ ਵਿੱਚ ਆ ਗਏ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕੀ ਕਰੀਏ, ਇਹ ਮਨ ਬਾਹਰੀ ਥਾਵਾਂ ਬਦਲਣ ਨਾਲ ਸ਼ਾਂਤ ਨਹੀਂ ਹੁੰਦਾ।'),
       en: 'Harassed by the mind, seekers flee into the wilderness, yet finding no peace there, they return to the town. Kabir remarks: What can mere external renunciation do when the untamed mind refuses to be still anywhere?'
     },
     wordMeanings: {
@@ -1526,14 +1526,14 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Man murid sansaar hai, Guru murid koy saadh. Jo maane Guru bachan ko, taaka mata agaadh.',
     bhavarth: {
-      hi: 'यह समस्त संसार मन का दास है, अर्थात जैसा मन चाहता है, यहां के लोग वैसा ही करते हैं, परंतु सद्गुरु के दास तो कोई विरले ही साधु-संत होते हैं, जो गुरु के सदुपदेश-ज्ञान प्रवचन को मानता है, उसका मत अथाह गंभीर होता है।',
+      hi: 'यह समस्त संसार मन का दास है, अर्थात जैसा मन चाहता है, यहां के लोग वैसा ही करते हैं, परंतु सतगुरु के दास तो कोई विरले ही साधु-संत होते हैं, जो गुरु के सदुपदेश-ज्ञान प्रवचन को मानता है, उसका मत अथाह गंभीर होता है।',
       pb: devanagariToGurmukhi('ਸਾਰਾ ਸੰਸਾਰ ਮਨ ਦਾ ਗੁਲਾਮ (ਮੁਰੀਦ) ਹੈ, ਪਰ ਗੁਰੂ ਦਾ ਸੱਚਾ ਸੇਵਕ ਕੋਈ ਵਿਰਲਾ ਸਾਧੂ ਹੁੰਦਾ ਹੈ। ਜੋ ਗੁਰੂ ਦੇ ਬਚਨਾਂ ਨੂੰ ਸਿਰ-ਮੱਥੇ ਮੰਨਦਾ ਹੈ, ਉਸਦੀ ਆਤਮਿਕ ਸਮਝ ਅਥਾਹ ਗੰਭੀਰ ਹੁੰਦੀ ਹੈ।'),
       en: 'The whole world is a disciple and slave of the fickle mind (Man-mureed), whereas a true disciple of the Satguru (Guru-mureed) is exceedingly rare. Whoever faithfully obeys the Master’s sacred word attains an unfathomable depth of spiritual wisdom.'
     },
     wordMeanings: {
       hi: [
         { word: 'मन मुरीद (Man mureed)', meaning: 'मन का गुलाम, मनमानी करने वाला संसारी' },
-        { word: 'गुरु मुरीद (Guru mureed)', meaning: 'सद्गुरु की आज्ञा व ज्ञान पर चलने वाला सच्चा साधक' },
+        { word: 'गुरु मुरीद (Guru mureed)', meaning: 'सतगुरु की आज्ञा व ज्ञान पर चलने वाला सच्चा साधक' },
         { word: 'मता अगाध (Mataa agaadh)', meaning: 'गंभीर, अथाह और सर्वोच्च आत्म-ज्ञान' }
       ],
       pb: [
@@ -1548,12 +1548,12 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं मन के कहे अनुसार आचरण करता हूँ (मनमुरीद), या सद्गुरु के वचनों को शिरोधार्य करता हूँ (गुरुमुरीद)?',
+      hi: 'क्या मैं मन के कहे अनुसार आचरण करता हूँ (मनमुरीद), या सतगुरु के वचनों को शिरोधार्य करता हूँ (गुरुमुरीद)?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਮਨਮੁਖ ਹਾਂ ਜਾਂ ਗੁਰਮੁਖ?'),
       en: 'Am I a slave to my whims (Man-mureed) or a surrendered disciple of the Satguru (Guru-mureed)?'
     },
     practicalApplication: {
-      hi: 'मन की चंचलता को छोड़कर सद्गुरु के प्रत्येक वचन व आज्ञा को अपने जीवन का सर्वोच्च नियम बनाएं।',
+      hi: 'मन की चंचलता को छोड़कर सतगुरु के प्रत्येक वचन व आज्ञा को अपने जीवन का सर्वोच्च नियम बनाएं।',
       pb: devanagariToGurmukhi('ਗੁਰੂ ਦੇ ਬਚਨਾਂ ਨੂੰ ਜੀਵਨ ਵਿੱਚ ਅਪਣਾਓ।'),
       en: 'Surrender all personal opinions to the supreme wisdom of the Master’s teachings.'
     },
@@ -1684,13 +1684,13 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       en: 'Man Ko Ang - 52',
     },
     text: {
-      hi: 'कोटि करमकर पलक में, या मन विषया स्वाद।\nसद्गुरु शब्द न मानहीं, जनम गंवाय बाद ।।',
-      pb: devanagariToGurmukhi('कोटि करमकर पलक में, या मन विषया स्वाद। सद्गुरु शब्द न मानहीं, जनम गंवाय बाद ।।'),
-      en: 'Koti karamkar palak mein, yaa man vishayaa swaad. Sadguru shabd na maanheen, janam ganvaay baad..'
+      hi: 'कोटि करमकर पलक में, या मन विषया स्वाद।\nसतगुरु शब्द न मानहीं, जनम गंवाय बाद ।।',
+      pb: devanagariToGurmukhi('कोटि करमकर पलक में, या मन विषया स्वाद। सतगुरु शब्द न मानहीं, जनम गंवाय बाद ।।'),
+      en: 'Koti karamkar palak mein, yaa man vishayaa swaad. Satguru shabd na maanheen, janam ganvaay baad..'
     },
-    transliteration: 'Koti karamkar palak mein, ya man vishaya swaad. Sadguru shabd na maanheen, janam ganvaay baad.',
+    transliteration: 'Koti karamkar palak mein, ya man vishaya swaad. Satguru shabd na maanheen, janam ganvaay baad.',
     bhavarth: {
-      hi: 'यह अज्ञानी मन, विषयों के स्वाद में पड़कर पल-भर में ही करोड़ों दुष्कर्म कर डालता है। यह सद्गुरु के ज्ञान-उपदेश को भी स्वीकार नहीं करता और व्यर्थ में ही सारा जीवन गंवा देता है, अर्थात संसार के झंझटों में पड़कर जीवन का सारा समय निकल जाता है।',
+      hi: 'यह अज्ञानी मन, विषयों के स्वाद में पड़कर पल-भर में ही करोड़ों दुष्कर्म कर डालता है। यह सतगुरु के ज्ञान-उपदेश को भी स्वीकार नहीं करता और व्यर्थ में ही सारा जीवन गंवा देता है, अर्थात संसार के झंझटों में पड़कर जीवन का सारा समय निकल जाता है।',
       pb: devanagariToGurmukhi('ਵਿਸ਼ਿਆਂ ਦੇ ਸੁਆਦ ਵਿੱਚ ਪੈ ਕੇ ਇਹ ਮਨ ਪਲ ਵਿੱਚ ਹੀ ਕਰੋੜਾਂ ਮਾੜੇ ਕਰਮ ਕਰ ਬੈਠਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਉਪਦੇਸ਼ ਨੂੰ ਮੰਨਦਾ ਨਹੀਂ ਅਤੇ ਅਨਮੋਲ ਮਨੁੱਖਾ ਜਨਮ ਵਿਅਰਥ ਗਵਾ ਲੈਂਦਾ ਹੈ।'),
       en: 'Chasing the momentary taste of sensory pleasures, the reckless mind accumulates millions of karmic bondages in an instant. Refusing to heed the Satguru’s word, it squanders the priceless human birth in vain.'
     },
@@ -1711,7 +1711,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं क्षणिक सांसारिक स्वाद के लिए अपने अनमोल जीवन और सद्गुरु के वचनों की उपेक्षा कर रहा हूं?',
+      hi: 'क्या मैं क्षणिक सांसारिक स्वाद के लिए अपने अनमोल जीवन और सतगुरु के वचनों की उपेक्षा कर रहा हूं?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਸੁਆਦਾਂ ਪਿੱਛੇ ਅਨਮੋਲ ਜੀਵਨ ਗਵਾ ਰਿਹਾ ਹਾਂ?'),
       en: 'Am I risking my spiritual liberation for transient sensory gratification?'
     },
@@ -1744,8 +1744,8 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kagad keri nawari, paani keri Gang. Kahain Kabeer kaise tirai, paanch kusangi sang.',
     bhavarth: {
-      hi: 'नाशवान तन-मन रूपी यह कागज की नाव, संसार के विषयों के जल-प्रवाह में पड़ी हुई है। कबीरजी कहते हैं कि भला यह कैसे पार लग सकती है, जब इसके ऊपर पांच कुसंगी (पांच विकार) इसे डुबोने के लिए बैठे हुए हैं।',
-      pb: devanagariToGurmukhi('ਕਾਗਜ਼ ਦੀ ਕੱਚੀ ਬੇੜੀ ਹੈ ਅਤੇ ਭਿਆਨਕ ਪਾਣੀ ਦਾ ਵਹਾਅ ਹੈ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਕਿਵੇਂ ਪਾਰ ਲੰਘੇਗੀ ਜਦੋਂ ਇਸ ਵਿੱਚ ਪੰਜ ਕੁਸੰਗੀ ਵਿਕਾਰ ਬੈਠੇ ਹੋਏ ਹਨ?'),
+      hi: 'नाशवान तन-मन रूपी यह कागज की नाव, संसार के विषयों के जल-प्रवाह में पड़ी हुई है। सतगुरु कबीर साहेब फरमाते हैं कि भला यह कैसे पार लग सकती है, जब इसके ऊपर पांच कुसंगी (पांच विकार) इसे डुबोने के लिए बैठे हुए हैं।',
+      pb: devanagariToGurmukhi('ਕਾਗਜ਼ ਦੀ ਕੱਚੀ ਬੇੜੀ ਹੈ ਅਤੇ ਭਿਆਨਕ ਪਾਣੀ ਦਾ ਵਹਾਅ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਕਿਵੇਂ ਪਾਰ ਲੰਘੇਗੀ ਜਦੋਂ ਇਸ ਵਿੱਚ ਪੰਜ ਕੁਸੰਗੀ ਵਿਕਾਰ ਬੈਠੇ ਹੋਏ ਹਨ?'),
       en: 'This fragile mortal frame is a paper boat floating upon the torrential river of worldly desires. Kabir asks: How can it ever reach the other shore when five destructive companions (the five senses/vices) are aboard weighing it down into the deep?'
     },
     wordMeanings: {
@@ -1858,7 +1858,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       hi: [
         { word: 'मन पंछी (Man panchhee)', meaning: 'मन रूपी चंचल पक्षी' },
         { word: 'विषय वासना मांहि (Vishaya vaasanaa maanhi)', meaning: 'भोग-विलास और सांसारिक इच्छाओं के आकाश में' },
-        { word: 'ज्ञान बाज (Gyaan baaj)', meaning: 'सद्गुरु का तीक्ष्ण और शक्तिशाली ब्रह्म-ज्ञान रूपी बाज' }
+        { word: 'ज्ञान बाज (Gyaan baaj)', meaning: 'सतगुरु का तीक्ष्ण और शक्तिशाली ब्रह्म-ज्ञान रूपी बाज' }
       ],
       pb: [
         { word: 'ਗਿਆਨ ਬਾਜ', meaning: 'ਸਤਿਗੁਰੂ ਦਾ ਗਿਆਨ ਰੂਪੀ ਬਾਜ਼' },
@@ -1870,7 +1870,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा मन अभी भी वासनाओं के आकाश में भटक रहा है, या सद्गुरु के ज्ञान-बाज की पकड़ में आ चुका है?',
+      hi: 'क्या मेरा मन अभी भी वासनाओं के आकाश में भटक रहा है, या सतगुरु के ज्ञान-बाज की पकड़ में आ चुका है?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰਾ ਮਨ ਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ ਕਾਬੂ ਆਇਆ ਹੈ?'),
       en: 'Has my wandering mind been captured by the transformative power of divine wisdom?'
     },
@@ -2065,8 +2065,8 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Man ke haare haar hai, man ke jeete jeet. Kahain Kabeer Guru paaiye, man hi ke parteet.',
     bhavarth: {
-      hi: 'जहां पर मन उदास होकर अपनी हार स्वीकार कर लेता है, वहां उसकी हार ही होती है और जहां पर मन साहस और उत्साह से भरकर जीत की ओर अग्रसर होता है, वहां जीत ही प्राप्त होती है। कबीरजी कहते हैं कि यदि मन में सच्ची श्रद्धा और सुदृढ़ विश्वास हो तो निश्चित ही समर्थ सद्गुरु का दर्शन-मिलन होता है।',
-      pb: devanagariToGurmukhi('ਮਨ ਦੇ ਹਾਰਨ ਨਾਲ ਹੀ ਹਾਰ ਹੁੰਦੀ ਹੈ ਅਤੇ ਮਨ ਦੇ ਜਿੱਤਣ ਨਾਲ ਹੀ ਸੱਚੀ ਜਿੱਤ ਹੁੰਦੀ ਹੈ। ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨ ਵਿੱਚ ਸੱਚੀ ਸ਼ਰਧਾ ਤੇ ਦ੍ਰਿੜ੍ਹ ਭਰੋਸਾ ਹੋਵੇ ਤਾਂ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੀ ਪ੍ਰਾਪਤੀ ਹੋ ਜਾਂਦੀ ਹੈ।'),
+      hi: 'जहां पर मन उदास होकर अपनी हार स्वीकार कर लेता है, वहां उसकी हार ही होती है और जहां पर मन साहस और उत्साह से भरकर जीत की ओर अग्रसर होता है, वहां जीत ही प्राप्त होती है। सतगुरु कबीर साहेब फरमाते हैं कि यदि मन में सच्ची श्रद्धा और सुदृढ़ विश्वास हो तो निश्चित ही समर्थ सतगुरु का दर्शन-मिलन होता है।',
+      pb: devanagariToGurmukhi('ਮਨ ਦੇ ਹਾਰਨ ਨਾਲ ਹੀ ਹਾਰ ਹੁੰਦੀ ਹੈ ਅਤੇ ਮਨ ਦੇ ਜਿੱਤਣ ਨਾਲ ਹੀ ਸੱਚੀ ਜਿੱਤ ਹੁੰਦੀ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨ ਵਿੱਚ ਸੱਚੀ ਸ਼ਰਧਾ ਤੇ ਦ੍ਰਿੜ੍ਹ ਭਰੋਸਾ ਹੋਵੇ ਤਾਂ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੀ ਪ੍ਰਾਪਤੀ ਹੋ ਜਾਂਦੀ ਹੈ।'),
       en: 'Defeat lies only in yielding to the dejection of the mind, and victory is won when the mind is conquered through divine resolve. Kabir proclaims: When the mind is anchored in unwavering faith (Parteet), one attains direct union with the Supreme Satguru.'
     },
     wordMeanings: {
@@ -2086,7 +2086,7 @@ export const SAKHIS_MAN_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा विश्वास सद्गुरु और सत्यनाम में इतना सुदृढ़ है कि मन की कोई भी निराशा मुझे विचलित नहीं कर सकती?',
+      hi: 'क्या मेरा विश्वास सतगुरु और सत्यनाम में इतना सुदृढ़ है कि मन की कोई भी निराशा मुझे विचलित नहीं कर सकती?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰਾ ਗੁਰੂ \'ਤੇ ਅਟੁੱਟ ਭਰੋਸਾ ਹੈ?'),
       en: 'Is my faith in the Satguru and Truth steadfast enough to conquer any mental despair?'
     },

@@ -73,9 +73,9 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer soee peer hai, jo jaane par peer. Jo par peer na jaanai, so kaaphir bepeer.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि वही पीर महान है, जो दूसरों की पीड़ा को अपनी पीड़ा के समान समझता हो, परंतु जो दूसरों की पीड़ा को अपने अनुभव से नहीं जानता, वह बेपीर यानी काफिर है, अर्थात दयाहीन और निष्ठुर है।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਹੀ ਅਸਲ ਵਿੱਚ ਪੀਰ (ਸੱਚਾ ਮਾਰਗਦਰਸ਼ਕ) ਹੈ, ਜੋ ਦੂਜਿਆਂ ਦੇ ਦੁੱਖ-ਦਰਦ ਨੂੰ ਆਪਣਾ ਸਮਝਦਾ ਹੈ। ਪਰ ਜੋ ਦੂਜਿਆਂ ਦੇ ਦੁੱਖ ਨੂੰ ਨਹੀਂ ਜਾਣਦਾ, ਉਹ ਬੇਪੀਰ ਅਤੇ ਦਇਆ-ਹੀਣ ਹੈ।',
-      en: 'Kabir says that only he is a true saint or spiritual guide who understands and feels the pain of others as his own. He who cannot feel another’s suffering is compassionless and spiritually blind.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि वही पीर महान है, जो दूसरों की पीड़ा को अपनी पीड़ा के समान समझता हो, परंतु जो दूसरों की पीड़ा को अपने अनुभव से नहीं जानता, वह बेपीर यानी काफिर है, अर्थात दयाहीन और निष्ठुर है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹੀ ਅਸਲ ਵਿੱਚ ਪੀਰ (ਸੱਚਾ ਮਾਰਗਦਰਸ਼ਕ) ਹੈ, ਜੋ ਦੂਜਿਆਂ ਦੇ ਦੁੱਖ-ਦਰਦ ਨੂੰ ਆਪਣਾ ਸਮਝਦਾ ਹੈ। ਪਰ ਜੋ ਦੂਜਿਆਂ ਦੇ ਦੁੱਖ ਨੂੰ ਨਹੀਂ ਜਾਣਦਾ, ਉਹ ਬੇਪੀਰ ਅਤੇ ਦਇਆ-ਹੀਣ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims that only he is a true saint or spiritual guide who understands and feels the pain of others as his own. He who cannot feel another’s suffering is compassionless and spiritually blind.',
     },
     wordMeanings: {
       hi: [
@@ -157,8 +157,8 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
       en: 'Extend kindness to animals, birds, and small creatures alike, causing no harm to any living form.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे वह आत्म-ज्ञान दें जिससे मैं समस्त प्राणियों में एक ही अविनाशी आत्मा का वास देख सकूँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸੱਚੇ ਗੁਰਦੇਵ! ਮੈਨੂੰ ਅਜਿਹੀ ਬੁੱਧੀ ਬਖਸ਼ੋ ਕਿ ਮੈਂ ਸਾਰਿਆਂ ਜੀਵਾਂ ਵਿੱਚ ਇੱਕੋ ਪ੍ਰਭੂ ਦੀ ਜੋਤ ਦੇਖ ਸਕਾਂ। ਸਾਹेਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      hi: 'हे सतगुरुदेव! मुझे वह आत्म-ज्ञान दें जिससे मैं समस्त प्राणियों में एक ही अविनाशी आत्मा का वास देख सकूँ। साहेब बंदगी साहेब!',
+      pb: 'ਹੇ ਸੱਚੇ ਗੁਰਦੇਵ! ਮੈਨੂੰ ਅਜਿਹੀ ਬੁੱਧੀ ਬਖਸ਼ੋ ਕਿ ਮੈਂ ਸਾਰਿਆਂ ਜੀਵਾਂ ਵਿੱਚ ਇੱਕੋ ਪ੍ਰਭੂ ਦੀ ਜੋਤ ਦੇਖ ਸਕਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Gift me the realization to perceive the same eternal soul in all creatures. Saheb Bandagi Saheb!',
     },
     quiz: []
@@ -240,7 +240,7 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
       hi: [
         { word: 'बेहद (Behad)', meaning: 'असीम / बहुत अधिक' },
         { word: 'नरकहि (Narakahi)', meaning: 'नरक जैसे भयंकर दुखों में' },
-        { word: 'साखी शबद (Saakhee Shabd)', meaning: 'कबीर साहेब के गुरुवचन और पद' }
+        { word: 'साखी शबद (Saakhee Shabd)', meaning: 'सतगुरु कबीर साहेब के गुरुवचन और पद' }
       ],
       pb: [
         { word: 'ਬੇਹਦ (Behad)', meaning: 'ਬਹੁਤ ਜ਼ਿਆਦਾ / ਹੱਦ ਤੋਂ ਬਾਹਰ' },
@@ -264,7 +264,7 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
       en: 'Do not be a scholar in words alone; prioritize animal safety, selfless service, and kindness in practical conduct.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे कोरे वाचाल ज्ञान से बचाएं और मेरे कर्मों में करुणा और दया का वास स्थापित करें। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे कोरे वाचाल ज्ञान से बचाएं और मेरे कर्मों में करुणा और दया का वास स्थापित करें। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਪਰਮ ਪੁਰਖ! ਮੈਨੂੰ ਕੋਰੇ ਗਿਆਨ ਤੋਂ ਬਚਾ ਕੇ ਸੇਵਾ ਤੇ ਦਇਆ ਦੇ ਅਮਲੀ ਜੀਵਨ ਵਿੱਚ ਲਗਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Save me from hollow verbal knowledge and embed compassion and active kindness in my deeds. Saheb Bandagi Saheb!',
     },
@@ -287,7 +287,7 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Aachaaree sab jag mila, beechaaree nahin koy. Jaake hiradai guru naheen, jiya akaarath soy.',
     bhavarth: {
-      hi: 'इस जग में सदाचारी तो बहुत मिल जाएंगे, परंतु विचारवान कोई नहीं मिलता। जिसके हृदय में सद्गुरु के ज्ञान-विचार नहीं हैं, उसका तो जीवन ही निरर्थक है। दया से पूर्ण सद्गुरु के ज्ञान-विचार से ही जीवन की सार्थकता है।',
+      hi: 'इस जग में सदाचारी तो बहुत मिल जाएंगे, परंतु विचारवान कोई नहीं मिलता। जिसके हृदय में सतगुरु के ज्ञान-विचार नहीं हैं, उसका तो जीवन ही निरर्थक है। दया से पूर्ण सतगुरु के ज्ञान-विचार से ही जीवन की सार्थकता है।',
       pb: 'ਦੁਨੀਆ ਵਿੱਚ ਸਦਾਚਾਰ (ਨਿਯਮ ਪਾਲਣ ਵਾਲੇ) ਦੇਖਣ ਨੂੰ ਬਹੁਤ ਮਿਲ ਜਾਣਗੇ, ਪਰ ਗੂੜ੍ਹ ਵਿਚਾਰ ਕਰਨ ਵਾਲਾ ਕੋਈ ਵਿਚਾਰਵਾਨ ਨਹੀਂ ਮਿਲਦਾ। ਜਿਸ ਦੇ ਦਿਲ ਵਿੱਚ ਗੁਰੂ ਦਾ ਗਿਆਨ-ਵਿਚਾਰ ਨਹੀਂ, ਉਸ ਦਾ ਜੀਣਾ ਵਿਅਰਥ ਹੈ।',
       en: 'Many in this world follow rigid external conduct, but very few reflect deeply with real spiritual wisdom. He who does not harbor the Guru’s teachings in his heart lives his life in vain.',
     },
@@ -314,12 +314,12 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
       en: 'Do I deeply contemplate the Guru\'s teachings inside, or am I merely adhering to dry social or ritualistic behaviors?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु की शिक्षाओं का गहन चिंतन करें और बाहरी दिखावे को छोड़कर विवेकपूर्ण जीवन जिएं।',
+      hi: 'सतगुरु की शिक्षाओं का गहन चिंतन करें और बाहरी दिखावे को छोड़कर विवेकपूर्ण जीवन जिएं।',
       pb: 'ਗੁਰੂ ਦੀ ਸਿੱਖਿਆ \'ਤੇ ਗਹਿਰਾ ਚਿੰਤਨ ਕਰੋ ਅਤੇ ਬਾਹਰੀ ਦਿਖਾਵੇ ਨੂੰ ਛੱਡ ਕੇ ਵਿਵੇਕ ਨਾਲ ਜੀਵਨ ਜੀਓ।',
       en: 'Contemplate deeply on the Satguru\'s wisdom, letting go of hollow display and leading a life of spiritual discretion.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे केवल बाहरी आचरण का दंभ न देकर, अपने पावन शब्दों का गहरा विचार और प्रेम बख्शें। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे केवल बाहरी आचरण का दंभ न देकर, अपने पावन शब्दों का गहरा विचार और प्रेम बख्शें। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਬਾਹਰੀ ਅਡੰਬਰਾਂ ਤੋਂ ਬਚਾ ਕੇ ਆਪਣੇ ਨਾਮ ਦਾ ਡੂੰਘਾ ਵਿਚਾਰ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Bless me with deep reflection of your words and love, rather than the pride of outward righteousness. Saheb Bandagi Saheb!',
     },
@@ -374,7 +374,7 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
       en: 'Provide food and water for birds and smaller creatures, and happily share meals with those in need.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे ऐसा उदार हृदय दें कि मैं अपनी सुख-समृद्धि को समाज के उपेक्षित और नन्हे जीवों के कल्याण में बिना संकोच समर्पित करूँ। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे ऐसा उदार हृदय दें कि मैं अपनी सुख-समृद्धि को समाज के उपेक्षित और नन्हे जीवों के कल्याण में बिना संकोच समर्पित करूँ। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਪਰਮ ਪੁਰਖ! ਮੈਨੂੰ ਉਦਾਰਤਾ ਬਖਸ਼ੋ ਕਿ ਮੈਂ ਲੋੜਵੰਦ ਜੀਵਾਂ ਦੀ ਸੇਵਾ ਕਰ ਸਕਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Bless me with a generous mind to share my prosperity with smaller, silent creatures and those in need. Saheb Bandagi Saheb!',
     },
@@ -397,9 +397,9 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bhaavai jao baadaree, bhaavai jaavahu gaya. Kahain kabeer suno bhai saadho, sab te badee daya.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि हे साधु-सज्जनो! चाहे तीर्थस्थान बद्रीनाथ के आश्रम जाओ, चाहे गया के धाम अथवा जहां भी अच्छा लगे, वहां जाओ, इस संसार में सबसे बड़ा सुख प्रदान करने वाला केवल दया-भाव ही है। दयाहीन व्यक्ति किसी भी तीर्थस्थान पर जाए, पुण्य की प्राप्ति नहीं कर पाएगा।',
-      pb: 'ਕਬੀਰ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਸੰਤ ਜਨੋ! ਚਾਹੇ ਬਦਰੀਨਾਥ ਚਲੇ ਜਾਓ, ਚਾਹੇ ਗਯਾ ਜੀ ਜਾਂ ਕਿਸੇ ਹੋਰ ਤੀਰਥ \'ਤੇ, ਪਰ ਸਭ ਤੋਂ ਵੱਡਾ ਧਰਮ ਦਇਆ ਹੀ ਹੈ। ਦਇਆ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਵੀ ਪੁੰਨ ਹਾਸਲ ਨਹੀਂ ਹੁੰਦਾ।',
-      en: 'Kabir says, O seekers! Whether you go on a pilgrimage to Badrinath or visit Gaya, remember that compassion is supreme. Without a kind heart, visiting holy shrines yields no spiritual merit.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि हे साधु-सज्जनो! चाहे तीर्थस्थान बद्रीनाथ के आश्रम जाओ, चाहे गया के धाम अथवा जहां भी अच्छा लगे, वहां जाओ, इस संसार में सबसे बड़ा सुख प्रदान करने वाला केवल दया-भाव ही है। दयाहीन व्यक्ति किसी भी तीर्थस्थान पर जाए, पुण्य की प्राप्ति नहीं कर पाएगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਸੰਤ ਜਨੋ! ਚਾਹੇ ਬਦਰੀਨਾਥ ਚਲੇ ਜਾਓ, ਚਾਹੇ ਗਯਾ ਜੀ ਜਾਂ ਕਿਸੇ ਹੋਰ ਤੀਰਥ \'ਤੇ, ਪਰ ਸਭ ਤੋਂ ਵੱਡਾ ਧਰਮ ਦਇਆ ਹੀ ਹੈ। ਦਇਆ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਵੀ ਪੁੰਨ ਹਾਸਲ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims, O seekers! Whether you go on a pilgrimage to Badrinath or visit Gaya, remember that compassion is supreme. Without a kind heart, visiting holy shrines yields no spiritual merit.',
     },
     wordMeanings: {
       hi: [
@@ -484,7 +484,7 @@ export const SAKHIS_DAYA_KO_ANG: Sakhi[] = [
       en: 'Avoid harsh language; commit to causing no injury by thoughts, words, or deeds, and practice forgiveness.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे क्षमाशील और दयावान बनाएं ताकि मेरे आचरण से किसी जीव को संताप न पहुँचे और प्रभु का वास सदा मेरे अंतःकरण में रहे। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे क्षमाशील और दयावान बनाएं ताकि मेरे आचरण से किसी जीव को संताप न पहुँचे और प्रभु का वास सदा मेरे अंतःकरण में रहे। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਪਰਮ ਪੁਰਖ ਗੁਰੂਦੇਵ! ਮੈਨੂੰ ਅਜਿਹੀ ਖਿਮਾ ਬਖਸ਼ੋ ਕਿ ਮੇਰੇ ਬੋਲਾਂ ਨਾਲ ਕਿਸੇ ਨੂੰ ਦੁੱਖ ਨਾ ਮਿਲੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Make me forgiving and compassionate so that my conduct causes no distress to any soul, and your presence remains forever in my heart. Saheb Bandagi Saheb!',
     },

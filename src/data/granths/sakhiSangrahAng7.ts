@@ -66,9 +66,9 @@ export const SAKHI_SANGRAH_ANG_7_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'गृहस्थ-मनुष्य का कर्तव्य है कि वह साधु-संतों की सेवा करे और सदा भक्ति प्रेम स्थिर होकर आनंदपूर्वक रहे। कबीरजी कहते हैं कि वैरागी संत का धर्म है कि वह संसार के विवादों से दूर, सुख-दुःख से रहित उन्मुक्त भाव में रहे।',
-      pb: devanagariToGurmukhi('गृहस्थ मनुष्य का कर्तव्य है कि वह साधु-संतों की सेवा करे और सदा भक्ति प्रेम में आनंदपूर्वक रहे। कबीरजी कहते हैं कि वैरागी संत का धर्म है कि वह संसार के विवादों से दूर, सुख-दुःख से रहित रहे।'),
-      en: 'The householder’s duty is to lovingly serve holy saints in joyous devotion. Kabir says the renunciate’s duty is to remain free from worldly dualities, anxieties, and contentious entanglements.'
+      hi: 'गृहस्थ-मनुष्य का कर्तव्य है कि वह साधु-संतों की सेवा करे और सदा भक्ति प्रेम स्थिर होकर आनंदपूर्वक रहे। सतगुरु कबीर साहेब फरमाते हैं कि वैरागी संत का धर्म है कि वह संसार के विवादों से दूर, सुख-दुःख से रहित उन्मुक्त भाव में रहे।',
+      pb: devanagariToGurmukhi('गृहस्थ मनुष्य का कर्तव्य है कि वह साधु-संतों की सेवा करे और सदा भक्ति प्रेम में आनंदपूर्वक रहे। सतगुरु कबीर साहेब फरमाते हैं कि वैरागी संत का धर्म है कि वह संसार के विवादों से दूर, सुख-दुःख से रहित रहे।'),
+      en: 'The householder’s duty is to lovingly serve holy saints in joyous devotion. Satguru Kabir Saheb proclaims the renunciate’s duty is to remain free from worldly dualities, anxieties, and contentious entanglements.'
     }
   },
   {
@@ -135,8 +135,8 @@ export const SAKHI_SANGRAH_ANG_7_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कविता करने वाले कवि तो करोड़ों हैं और सिर मुंडवाकर घूमने वाले वेशधारी भी करोड़ो हैं इनकी कोई विशेष बात नहीं, परंतु जिन्होंने अपने मन को वश में कर लिया है, हमें ऐसे साधु-संत सद्गुरु की शरण में जाना चाहिए।',
-      pb: devanagariToGurmukhi('कविता करने वाले कवि और सिर मुंडवाकर घूमने वाले वेशधारी तो करोड़ों हैं, परंतु जिन्होंने अपने मन को जीत लिया है, ऐसे साधु-संत सद्गुरु की ही शरण में जाना चाहिए।'),
+      hi: 'कविता करने वाले कवि तो करोड़ों हैं और सिर मुंडवाकर घूमने वाले वेशधारी भी करोड़ो हैं इनकी कोई विशेष बात नहीं, परंतु जिन्होंने अपने मन को वश में कर लिया है, हमें ऐसे साधु-संत सतगुरु की शरण में जाना चाहिए।',
+      pb: devanagariToGurmukhi('कविता करने वाले कवि और सिर मुंडवाकर घूमने वाले वेशधारी तो करोड़ों हैं, परंतु जिन्होंने अपने मन को जीत लिया है, ऐसे साधु-संत सतगुरु की ही शरण में जाना चाहिए।'),
       en: 'Poets and shaved-headed monks exist by millions, but true spiritual refuge belongs only with those who have conquered and disciplined their own minds.'
     }
   },
@@ -250,9 +250,9 @@ export const SAKHI_SANGRAH_ANG_7_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'माला का पहनना व तिलक लगाना तो एक वेश धारण करना है और यह बाहर का रूप है, परंतु राम-भक्ति तो कुछ और ही है, यह आंतरिक रहस्य है। कबीरजी कहते हैं कि जो इसे धारण करता है, फिर वह अपनी पांचों ज्ञानेन्द्रियों को वश में कर लेता है, अर्थात वह सांसारिक विषयों से मुक्त हो जाता है।',
+      hi: 'माला का पहनना व तिलक लगाना तो एक वेश धारण करना है और यह बाहर का रूप है, परंतु राम-भक्ति तो कुछ और ही है, यह आंतरिक रहस्य है। सतगुरु कबीर साहेब फरमाते हैं कि जो इसे धारण करता है, फिर वह अपनी पांचों ज्ञानेन्द्रियों को वश में कर लेता है, अर्थात वह सांसारिक विषयों से मुक्त हो जाता है।',
       pb: devanagariToGurmukhi('माला और तिलक तो बाह्य वेश है, परंतु राम-भक्ति अंतर का रहस्य है। जो इसे धारण करता है, वह अपनी पाँचों इन्द्रियों को वश में कर लेता है।'),
-      en: 'Rosaries and forehead marks are mere external costumes; divine devotion is an inner experience. Kabir says one who truly adorns divine love restrains all five senses and gains freedom from worldly bondage.'
+      en: 'Rosaries and forehead marks are mere external costumes; divine devotion is an inner experience. Satguru Kabir Saheb proclaims one who truly adorns divine love restrains all five senses and gains freedom from worldly bondage.'
     }
   },
   {
@@ -296,7 +296,7 @@ export const SAKHI_SANGRAH_ANG_7_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'घर में रहकर साधु-संतों एवं सद्गुरु की सेवा-भक्ति करनी चाहिए, अन्यथा गृहस्थ धर्म त्यागकर वैराग्य लेना चाहिए, परंतु जो व्यक्ति वैरागी (विरक्त) होकर फिर सांसारिक बंधनों को अपनाए, वह बड़ा दुर्भाग्यशाली होता है। अतः गृहस्थ एवं वैरागी को अपने-अपने कर्तव्य का पालन पूर्ण ईमानदारी से करना चाहिए।',
+      hi: 'घर में रहकर साधु-संतों एवं सतगुरु की सेवा-भक्ति करनी चाहिए, अन्यथा गृहस्थ धर्म त्यागकर वैराग्य लेना चाहिए, परंतु जो व्यक्ति वैरागी (विरक्त) होकर फिर सांसारिक बंधनों को अपनाए, वह बड़ा दुर्भाग्यशाली होता है। अतः गृहस्थ एवं वैरागी को अपने-अपने कर्तव्य का पालन पूर्ण ईमानदारी से करना चाहिए।',
       pb: devanagariToGurmukhi('घर में रहकर गुरु की भक्ति करो अथवा पूर्ण वैराग्य धारण करो। परंतु वैरागी होकर फिर सांसारिक बंधनों में पड़ना परम दुर्भाग्य की बात है।'),
       en: 'If in householder life, serve the Master and saints with devotion; otherwise embrace total detachment. But a renunciate who falls back into worldly attachments is truly unfortunate.'
     }

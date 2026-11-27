@@ -1556,14 +1556,14 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       style={{ color: theme.sacredMaroon }}
                       className="text-base sm:text-lg font-black font-serif tracking-wide group-hover:text-amber-800 transition"
                     >
-                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ' : language === 'en' ? 'Satguru Kabir Saheb Biography & 4 Yugas Leelas' : 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं'}
+                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ' : language === 'en' ? 'Satguru Kabir Saheb Biography & 4 Yugas Leelas' : 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं'}
                     </h4>
                     <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed">
                       {language === 'pb'
                         ? 'ਸਤਿਯੁਗ (ਸਤਯ ਸੁਕ੍ਰਿਤ), ਤ੍ਰੇਤਾ (ਮੁਨੀਂਦ੍ਰ), ਦ੍ਵਾਪਰ (ਕਰੁਣਾਮਯ) ਤੇ ਕਲਿਯੁਗ (ਕਬੀਰ) ਦੇ ਪਾਵਨ ਪ੍ਰਕਾਸ਼ ਅਤੇ ੨੫ ਲੀਲਾ-ਕਥਾਵਾਂ।'
                         : language === 'en'
                         ? 'Divine manifestations in Satya Yug (Sat Sukrit), Treta (Munindra), Dwapar (Karunamay), & Kali Yug (Kabir) with 25 sacred parables.'
-                        : 'सत्ययुग (सत्य सुकृत), त्रेता (मुनींद्र), द्वापर (करुणामय) तथा कलयुग (कबीर साहेब) के प्राकट्य एवं २५ पावन लीला-कथाओं का दर्शन।'}
+                        : 'सत्ययुग (सत्य सुकृत), त्रेता (मुनींद्र), द्वापर (करुणामय) तथा कलयुग (सतगुरु कबीर साहेब) के प्राकट्य एवं २५ पावन लीला-कथाओं का दर्शन।'}
                     </p>
                   </div>
                 </div>
@@ -2443,7 +2443,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     {language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन'}
                   </h3>
                   <p className="text-[0.6875rem] opacity-75 font-serif truncate">
-                    {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : language === 'en' ? 'Satguru Kabir Saheb Granthavali Study Controls' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
+                    {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : language === 'en' ? 'Satguru Kabir Saheb Granthavali Study Controls' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
                   </p>
                 </div>
               </div>
@@ -2887,11 +2887,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-[#7C1D00] via-[#8B2500] to-[#9A3412] text-white space-y-2 shadow-md">
                   <div className="flex items-center gap-2 font-serif font-black text-sm sm:text-base">
                     <span>🌹</span>
-                    <span>{language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
+                    <span>{language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
                   </div>
                   <p className="text-xs text-amber-100 leading-relaxed font-serif">
                     {language === 'pb'
-                      ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਯ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ, ਚਾਲੀਸਾ ਤੇ ਸੰਪੂਰਨ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ।'
+                      ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਯ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ, ਚਾਲੀਸਾ ਤੇ ਸੰਪੂਰਨ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ।'
                       : language === 'en'
                       ? 'Daily liturgy, Astuti prayers, Aarti, Chalisa & complete Granth collection.'
                       : 'सतगुरु कबीर साहेब नित्य पाठ, अस्तुति, आरती, चालीसा एवं समग्र पावन ग्रन्थ संग्रह।'}
@@ -2952,7 +2952,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       fontSize === 'normal' ? 'text-sm sm:text-base' :
                       fontSize === 'large' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'
                     }`}>
-                      {language === 'pb' ? '॥ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਅਮਰ ਬਾਣੀ ॥' : language === 'en' ? '|| Satguru Kabir Saheb Sacred Eternal Bani ||' : '॥ सतगुरु कबीर साहेब पावन अमर वाणी ॥'}
+                      {language === 'pb' ? '॥ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਅਮਰ ਬਾਣੀ ॥' : language === 'en' ? '|| Satguru Kabir Saheb Sacred Eternal Bani ||' : '॥ सतगुरु कबीर साहेब पावन अमर वाणी ॥'}
                     </p>
                   </div>
                 </div>
@@ -3600,7 +3600,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                               </div>
                               <p className="leading-relaxed opacity-95 text-xs sm:text-sm font-serif" style={{ color: themeStyle.text }}>
                                 {language === 'hi'
-                                  ? `सद्गुरु कबीर साहेब इस उलटबांसी पद के माध्यम से समझाते हैं कि जब तक साधक की सुरति बाह्य प्रपंच और माया के जाल में उलझी रहती है, तब तक वह सत्यनाम और आत्म-स्वरूप से अनजान रहता है। इस पद का आंतरिक योगार्थ यह है कि प्राण और अपान की गति को उलटकर सुषुम्ना मार्ग से ब्रह्मरंध्र (दसम द्वार) की ओर यात्रा करनी होती है। यही उलटबांसी का सच्चा आंतरिक रहस्य है।`
+                                  ? `सतगुरु कबीर साहेब इस उलटबांसी पद के माध्यम से समझाते हैं कि जब तक साधक की सुरति बाह्य प्रपंच और माया के जाल में उलझी रहती है, तब तक वह सत्यनाम और आत्म-स्वरूप से अनजान रहता है। इस पद का आंतरिक योगार्थ यह है कि प्राण और अपान की गति को उलटकर सुषुम्ना मार्ग से ब्रह्मरंध्र (दसम द्वार) की ओर यात्रा करनी होती है। यही उलटबांसी का सच्चा आंतरिक रहस्य है।`
                                   : analysis.esotericReversalAnalysis}
                               </p>
                             </div>

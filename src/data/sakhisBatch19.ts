@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Guru aagya maane nahi, chale atpati chaal. Lok ved dono gaye, aaye sir par kaal.',
     bhavarth: {
-      hi: 'कबीर साहेब सावधान करते हैं कि जो शिष्य सतगुरु के दिए गए वचनों और आज्ञा का पालन नहीं करता और मनमुखी होकर टेढ़ी-मेढ़ी मनमानी चाल चलता है, उसका लोक (सांसारिक मान-मर्यादा) और वेद (पारमार्थिक ज्ञान) दोनों नष्ट हो जाते हैं और अंततः वह काल (मृत्यु व माया के चक्र) के मुख में जा गिरता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜੋ ਗੁਰੂ ਦਾ ਹੁਕਮ ਨਹੀਂ ਮੰਨਦਾ ਅਤੇ ਮਨਮਤੀ ਚਾਲ ਚੱਲਦਾ ਹੈ, ਉਸਦਾ ਇਹ ਲੋਕ ਅਤੇ ਪਰਲੋਕ ਦੋਵੇਂ ਬਿਨਸ ਜਾਂਦੇ ਹਨ ਅਤੇ ਉਸਦੇ ਸਿਰ ਤੇ ਕਾਲ ਮੰਡਰਾਉਣ ਲੱਗਦਾ ਹੈ।',
-      en: 'Kabir Saheb warns that whoever disobeys the divine command of the Satguru and walks according to their own willful ego loses both worldly dignity and spiritual truth, falling straight into the clutches of Kaal (death and karmic entrapment).',
+      hi: 'सतगुरु कबीर साहेब सावधान करते हैं कि जो शिष्य सतगुरु के दिए गए वचनों और आज्ञा का पालन नहीं करता और मनमुखी होकर टेढ़ी-मेढ़ी मनमानी चाल चलता है, उसका लोक (सांसारिक मान-मर्यादा) और वेद (पारमार्थिक ज्ञान) दोनों नष्ट हो जाते हैं और अंततः वह काल (मृत्यु व माया के चक्र) के मुख में जा गिरता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜੋ ਗੁਰੂ ਦਾ ਹੁਕਮ ਨਹੀਂ ਮੰਨਦਾ ਅਤੇ ਮਨਮਤੀ ਚਾਲ ਚੱਲਦਾ ਹੈ, ਉਸਦਾ ਇਹ ਲੋਕ ਅਤੇ ਪਰਲੋਕ ਦੋਵੇਂ ਬਿਨਸ ਜਾਂਦੇ ਹਨ ਅਤੇ ਉਸਦੇ ਸਿਰ ਤੇ ਕਾਲ ਮੰਡਰਾਉਣ ਲੱਗਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb warns that whoever disobeys the divine command of the Satguru and walks according to their own willful ego loses both worldly dignity and spiritual truth, falling straight into the clutches of Kaal (death and karmic entrapment).',
     },
     wordMeanings: {
       hi: [
@@ -101,9 +101,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Guru bichaara kya kare, sikkhahi maahi chook. Bhaave tyo parabodhiye, baans bajaaye phoonk.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि यदि शिष्य के हृदय में ही ग्रहणशीलता और सच्चाई का अभाव हो (दोष या चूक हो), तो समर्थ सतगुरु भी क्या करें? जैसे खोखले खुले बाँस में जितनी भी फूँक मारी जाए वह टिकती नहीं बल्कि आर-पार निकल जाती है, वैसे ही कुपात्र को चाहे कितना भी ज्ञान दिया जाए, वह उस पर असर नहीं करता। शिष्य को पहले अपनी पात्रता सिद्ध करनी होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਸਿੱਖ ਵਿੱਚ ਹੀ ਖੋਟ ਜਾਂ ਕਮੀ ਹੋਵੇ ਤਾਂ ਵਿਚਾਰਾ ਗੁਰੂ ਕੀ ਕਰੇ? ਜਿਵੇਂ ਪੋਲੇ ਬਾਂਸ ਵਿੱਚ ਫੂਕ ਮਾਰਿਆਂ ਕੋਈ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ, ਓਵੇਂ ਹੀ ਬਿਨਾਂ ਪਾਤਰਤਾ ਦੇ ਉਪਦੇਸ਼ ਟਿਕਦਾ ਨਹੀਂ।',
-      en: 'Kabir Saheb explains that if the seeker lacks sincere receptivity and genuine commitment, what can even a gracious Satguru do? Just as blowing air into a hollow open bamboo cannot produce a sweet melody without holes and stops, spiritual truth cannot abide in an unprepared, closed heart.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यदि शिष्य के हृदय में ही ग्रहणशीलता और सच्चाई का अभाव हो (दोष या चूक हो), तो समर्थ सतगुरु भी क्या करें? जैसे खोखले खुले बाँस में जितनी भी फूँक मारी जाए वह टिकती नहीं बल्कि आर-पार निकल जाती है, वैसे ही कुपात्र को चाहे कितना भी ज्ञान दिया जाए, वह उस पर असर नहीं करता। शिष्य को पहले अपनी पात्रता सिद्ध करनी होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਸਿੱਖ ਵਿੱਚ ਹੀ ਖੋਟ ਜਾਂ ਕਮੀ ਹੋਵੇ ਤਾਂ ਵਿਚਾਰਾ ਗੁਰੂ ਕੀ ਕਰੇ? ਜਿਵੇਂ ਪੋਲੇ ਬਾਂਸ ਵਿੱਚ ਫੂਕ ਮਾਰਿਆਂ ਕੋਈ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ, ਓਵੇਂ ਹੀ ਬਿਨਾਂ ਪਾਤਰਤਾ ਦੇ ਉਪਦੇਸ਼ ਟਿਕਦਾ ਨਹੀਂ।',
+      en: 'Satguru Kabir Saheb explains that if the seeker lacks sincere receptivity and genuine commitment, what can even a gracious Satguru do? Just as blowing air into a hollow open bamboo cannot produce a sweet melody without holes and stops, spiritual truth cannot abide in an unprepared, closed heart.',
     },
     wordMeanings: {
       hi: [
@@ -183,9 +183,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Guru bin gyan na oopje, Guru bin mile na moksh. Guru bin lakhe na satya ko, Guru bin mite na dosh.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु की अनिवार्य महत्ता बताते हैं कि सच्चे सतगुरु के बिना वास्तविक आत्मज्ञान उत्पन्न नहीं हो सकता और न ही जन्म-मरण से मुक्ति (मोक्ष) मिल सकती है। गुरु के बिना परम सत्य का साक्षात्कार नहीं हो सकता और न ही मनुष्य के अंतःकरण के जन्म-जन्मांतरों के विकार और दोष मिट सकते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਤੋਂ ਬਿਨਾਂ ਸੱਚਾ ਗਿਆਨ ਨਹੀਂ ਉਪਜਦਾ, ਨਾ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ। ਗੁਰੂ ਬਿਨਾਂ ਸੱਚ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਨਾ ਹੀ ਮਨ ਦੇ ਵਿਕਾਰ ਦੂਰ ਹੁੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb declares that without a true Satguru, genuine spiritual illumination cannot awaken, nor can liberation from rebirth be achieved. Without the Master, eternal Truth cannot be perceived, and deep-seated inner flaws cannot be dissolved.',
+      hi: 'सतगुरु कबीर साहेब गुरु की अनिवार्य महत्ता बताते हैं कि सच्चे सतगुरु के बिना वास्तविक आत्मज्ञान उत्पन्न नहीं हो सकता और न ही जन्म-मरण से मुक्ति (मोक्ष) मिल सकती है। गुरु के बिना परम सत्य का साक्षात्कार नहीं हो सकता और न ही मनुष्य के अंतःकरण के जन्म-जन्मांतरों के विकार और दोष मिट सकते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਤੋਂ ਬਿਨਾਂ ਸੱਚਾ ਗਿਆਨ ਨਹੀਂ ਉਪਜਦਾ, ਨਾ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ। ਗੁਰੂ ਬਿਨਾਂ ਸੱਚ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਨਾ ਹੀ ਮਨ ਦੇ ਵਿਕਾਰ ਦੂਰ ਹੁੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb proclaims that without a true Satguru, genuine spiritual illumination cannot awaken, nor can liberation from rebirth be achieved. Without the Master, eternal Truth cannot be perceived, and deep-seated inner flaws cannot be dissolved.',
     },
     wordMeanings: {
       hi: [
@@ -220,7 +220,7 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
       en: 'O Gracious Satguru! Awaken in me the light of Truth and liberate my soul from all karmic flaws. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब के गुरु-केंद्रित आध्यात्मिक दर्शन का मूल आधार है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब के गुरु-केंद्रित आध्यात्मिक दर्शन का मूल आधार है।',
       pb: 'ਇਹ ਸਾਖੀ ਗੁਰੂ ਦੀ ਅਨਿਵਾਰੀ ਲੋੜ ਨੂੰ ਬਿਆਨ ਕਰਦੀ ਹੈ।',
       en: 'This verse is foundational in understanding the essential role of the Satguru in attaining salvation.',
     },
@@ -265,9 +265,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Guru ko keeje bandagi, koti koti parnam. Keet na jaane bhring ko, Guru karle aap samaan.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि ऐसे सतगुरु को बारंबार बंदगी और कोटि-कोटि प्रणाम करना चाहिए, जिनका सामर्थ्य ऐसा है जैसे भृंगी कीट साधारण कीड़े को अपने नाद और संगति से अपने ही जैसा (भृंग) बना लेती है। साधारण जीव को इस रहस्य का ज्ञान नहीं होता, किंतु गुरु कृपा करके शिष्य को अपने ही समान ब्रह्मरूप बना लेते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਨੂੰ ਕਰੋੜਾਂ ਵਾਰ ਪ੍ਰਣਾਮ ਹੈ, ਜੋ ਭ੍ਰਿੰਗੀ ਵਾਂਗ ਸਾਧਾਰਨ ਕੀੜੇ (ਜੀਵ) ਨੂੰ ਆਪਣੇ ਸ਼ਬਦ ਤੇ ਸੰਗਤ ਨਾਲ ਆਪਣੇ ਵਰਗਾ ਹੀ ਬਣਾ ਲੈਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb says: Offer millions of salutations to the Satguru! Just as the mystical Bhringi wasp transforms an ordinary crawler into its own form through its continuous hum and association, the Satguru transforms the humble disciple into an embodiment of Divine Light.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि ऐसे सतगुरु को बारंबार बंदगी और कोटि-कोटि प्रणाम करना चाहिए, जिनका सामर्थ्य ऐसा है जैसे भृंगी कीट साधारण कीड़े को अपने नाद और संगति से अपने ही जैसा (भृंग) बना लेती है। साधारण जीव को इस रहस्य का ज्ञान नहीं होता, किंतु गुरु कृपा करके शिष्य को अपने ही समान ब्रह्मरूप बना लेते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਨੂੰ ਕਰੋੜਾਂ ਵਾਰ ਪ੍ਰਣਾਮ ਹੈ, ਜੋ ਭ੍ਰਿੰਗੀ ਵਾਂਗ ਸਾਧਾਰਨ ਕੀੜੇ (ਜੀਵ) ਨੂੰ ਆਪਣੇ ਸ਼ਬਦ ਤੇ ਸੰਗਤ ਨਾਲ ਆਪਣੇ ਵਰਗਾ ਹੀ ਬਣਾ ਲੈਂਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb proclaims: Offer millions of salutations to the Satguru! Just as the mystical Bhringi wasp transforms an ordinary crawler into its own form through its continuous hum and association, the Satguru transforms the humble disciple into an embodiment of Divine Light.',
     },
     wordMeanings: {
       hi: [
@@ -347,9 +347,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Gyan prakasa Guru mila, so jini beesari jaai. Jab Govind kripa kari, tab Gur miliya aai.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जब ईश्वर (गोविंद) की अहैतुकी कृपा होती है, तब जीवन में ज्ञान का प्रकाश देने वाले सच्चे सतगुरु की प्राप्ति होती है। अतः जीव को सावधान रहना चाहिए कि वह ऐसे परोपकारी गुरु को कभी विस्मृत न करे और सदैव उनकी स्मृति व वचनों में लीन रहे।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਹੋਈ ਤਾਂ ਗਿਆਨ ਦਾ ਚਾਨਣ ਕਰਨ ਵਾਲਾ ਗੁਰੂ ਮਿਲਿਆ। ਹੁਣ ਅਜਿਹੇ ਸਤਿਗੁਰੂ ਨੂੰ ਕਦੇ ਵੀ ਭੁਲਾਉਣਾ ਨਹੀਂ ਚਾਹੀਦਾ।',
-      en: 'Kabir Saheb proclaims: It is only when the Supreme Lord showers His ultimate grace that one encounters the Satguru who kindles the light of true wisdom. Take heed never to forget this benevolent Master, holding His holy remembrance forever in your heart.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब ईश्वर (गोविंद) की अहैतुकी कृपा होती है, तब जीवन में ज्ञान का प्रकाश देने वाले सच्चे सतगुरु की प्राप्ति होती है। अतः जीव को सावधान रहना चाहिए कि वह ऐसे परोपकारी गुरु को कभी विस्मृत न करे और सदैव उनकी स्मृति व वचनों में लीन रहे।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਹੋਈ ਤਾਂ ਗਿਆਨ ਦਾ ਚਾਨਣ ਕਰਨ ਵਾਲਾ ਗੁਰੂ ਮਿਲਿਆ। ਹੁਣ ਅਜਿਹੇ ਸਤਿਗੁਰੂ ਨੂੰ ਕਦੇ ਵੀ ਭੁਲਾਉਣਾ ਨਹੀਂ ਚਾਹੀਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims: It is only when the Supreme Lord showers His ultimate grace that one encounters the Satguru who kindles the light of true wisdom. Take heed never to forget this benevolent Master, holding His holy remembrance forever in your heart.',
     },
     wordMeanings: {
       hi: [
@@ -429,9 +429,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Gyan ratan ka jatan kar, maati ka sansaar. Haay Kabira phir gaya, pheeka hai sansaar.',
     bhavarth: {
-      hi: 'कबीर साहेब चेतावनी देते हैं कि सतगुरु से मिले हुए अनमोल आत्मज्ञान रूपी रत्न की पूरे जतन और सावधानी से रक्षा कर। यह सारा दृश्यमान संसार तो मिट्टी की तरह नश्वर और क्षणभंगुर है। कबीर कहते हैं कि मैंने इस पूरे संसार को परख कर देख लिया है, हरि नाम के रस के बिना यह संसार बिल्कुल नीरस, सारहीन और फीका है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਤੋਂ ਮਿਲੇ ਗਿਆਨ ਰੂਪੀ ਰਤਨ ਨੂੰ ਸੰਭਾਲ ਕੇ ਰੱਖ, ਕਿਉਂਕਿ ਇਹ ਸੰਸਾਰ ਮਿੱਟੀ ਸਮਾਨ ਨਾਸ਼ਵਾਨ ਹੈ। ਮੈਂ ਸਾਰੇ ਸੰਸਾਰ ਨੂੰ ਪਰਖ ਲਿਆ ਹੈ, ਪ੍ਰਭੂ ਨਾਮ ਬਿਨਾਂ ਇਹ ਸਭ ਫਿੱਕਾ ਤੇ ਬੇਸਵਾਦ ਹੈ।',
-      en: 'Kabir Saheb cautions: Guard the priceless jewel of divine knowledge with utmost care, for this material world is nothing more than fragile clay. Kabir proclaims, "Having observed the entire realm of mortals, I find that without the nectar of the Divine Name, the world is completely tasteless and transient."',
+      hi: 'सतगुरु कबीर साहेब चेतावनी देते हैं कि सतगुरु से मिले हुए अनमोल आत्मज्ञान रूपी रत्न की पूरे जतन और सावधानी से रक्षा कर। यह सारा दृश्यमान संसार तो मिट्टी की तरह नश्वर और क्षणभंगुर है। सतगुरु कबीर साहेब फरमाते हैं कि मैंने इस पूरे संसार को परख कर देख लिया है, हरि नाम के रस के बिना यह संसार बिल्कुल नीरस, सारहीन और फीका है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਤੋਂ ਮਿਲੇ ਗਿਆਨ ਰੂਪੀ ਰਤਨ ਨੂੰ ਸੰਭਾਲ ਕੇ ਰੱਖ, ਕਿਉਂਕਿ ਇਹ ਸੰਸਾਰ ਮਿੱਟੀ ਸਮਾਨ ਨਾਸ਼ਵਾਨ ਹੈ। ਮੈਂ ਸਾਰੇ ਸੰਸਾਰ ਨੂੰ ਪਰਖ ਲਿਆ ਹੈ, ਪ੍ਰਭੂ ਨਾਮ ਬਿਨਾਂ ਇਹ ਸਭ ਫਿੱਕਾ ਤੇ ਬੇਸਵਾਦ ਹੈ।',
+      en: 'Satguru Kabir Saheb cautions: Guard the priceless jewel of divine knowledge with utmost care, for this material world is nothing more than fragile clay. Kabir proclaims, "Having observed the entire realm of mortals, I find that without the nectar of the Divine Name, the world is completely tasteless and transient."',
     },
     wordMeanings: {
       hi: [
@@ -511,9 +511,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Had me chale so manav, behad chale so saadh. Had behad dono taje, taako mata agaadh.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक चेतना के उच्चतम स्तर की व्याख्या करते हैं: जो सांसारिक सीमाओं, नियमों और संकीर्णताओं (हद) में जीता है वह साधारण मानव है; जो इन सीमाओं से ऊपर उठकर व्यापक विस्तार (बेहद) में विचरण करता है वह साधु है; किंतु जो हद (संसार) और बेहद (आकाश/सूक्ष्म मंडल) दोनों की सीमाओं से परे परम अनाम स्वरूप में स्थित हो जाता है, उसकी स्थिति अत्यंत गंभीर, अथाह और अकथनीय (अगाध) होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਹੱਦਾਂ-ਸੀਮਾਵਾਂ ਵਿੱਚ ਰਹੇ ਉਹ ਸਾਧਾਰਨ ਮਨੁੱਖ ਹੈ, ਜੋ ਵਿਸ਼ਾਲਤਾ (ਬੇਹੱਦ) ਵਿੱਚ ਵਿਚਰੇ ਉਹ ਸਾਧੂ ਹੈ; ਪਰ ਜੋ ਹੱਦ ਅਤੇ ਬੇਹੱਦ ਦੋਵਾਂ ਤੋਂ ਪਾਰ ਨਿਰਗੁਣ-ਨਿਰਾਲਮ ਸੱਚ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਵੇ, ਉਸਦੀ ਅਵਸਥਾ ਅਥਾਹ ਹੈ।',
-      en: 'Kabir Saheb unveils the ultimate zenith of consciousness: One who lives bound by worldly limits (Had) is an ordinary human; one who expands into cosmic realms (Behad) is a spiritual seeker or sage; but the mystic who transcends both the finite and the subtle cosmic boundaries into the absolute Source possesses an unfathomable and transcendental state (Agaadh).',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक चेतना के उच्चतम स्तर की व्याख्या करते हैं: जो सांसारिक सीमाओं, नियमों और संकीर्णताओं (हद) में जीता है वह साधारण मानव है; जो इन सीमाओं से ऊपर उठकर व्यापक विस्तार (बेहद) में विचरण करता है वह साधु है; किंतु जो हद (संसार) और बेहद (आकाश/सूक्ष्म मंडल) दोनों की सीमाओं से परे परम अनाम स्वरूप में स्थित हो जाता है, उसकी स्थिति अत्यंत गंभीर, अथाह और अकथनीय (अगाध) होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਹੱਦਾਂ-ਸੀਮਾਵਾਂ ਵਿੱਚ ਰਹੇ ਉਹ ਸਾਧਾਰਨ ਮਨੁੱਖ ਹੈ, ਜੋ ਵਿਸ਼ਾਲਤਾ (ਬੇਹੱਦ) ਵਿੱਚ ਵਿਚਰੇ ਉਹ ਸਾਧੂ ਹੈ; ਪਰ ਜੋ ਹੱਦ ਅਤੇ ਬੇਹੱਦ ਦੋਵਾਂ ਤੋਂ ਪਾਰ ਨਿਰਗੁਣ-ਨਿਰਾਲਮ ਸੱਚ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਵੇ, ਉਸਦੀ ਅਵਸਥਾ ਅਥਾਹ ਹੈ।',
+      en: 'Satguru Kabir Saheb unveils the ultimate zenith of consciousness: One who lives bound by worldly limits (Had) is an ordinary human; one who expands into cosmic realms (Behad) is a spiritual seeker or sage; but the mystic who transcends both the finite and the subtle cosmic boundaries into the absolute Source possesses an unfathomable and transcendental state (Agaadh).',
     },
     wordMeanings: {
       hi: [
@@ -548,9 +548,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
       en: 'O Transcendent Satguru! Liberate me from all finite and subtle entrapments, granting me refuge in Your unfathomable Eternal Abode. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह कबीर साहेब की गुह्यतम साखियों में से एक है, जो द्वैत और अद्वैत दोनों के पार "निज तत्व" को इंगित करती है।',
+      hi: 'यह सतगुरु कबीर साहेब की गुह्यतम साखियों में से एक है, जो द्वैत और अद्वैत दोनों के पार "निज तत्व" को इंगित करती है।',
       pb: 'ਇਹ ਸਾਖੀ ਪਰਮ ਅਧਿਆਤਮਿਕ ਅਵਸਥਾ ਨੂੰ ਦਰਸਾਉਂਦੀ ਹੈ।',
-      en: 'This is one of the deepest esoteric verses of Kabir Saheb, pointing to the supreme state beyond all dualities.',
+      en: 'This is one of the deepest esoteric verses of Satguru Kabir Saheb, pointing to the supreme state beyond all dualities.',
     },
     quiz: [
       {
@@ -593,9 +593,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Hari gun gaave harshi ke, hirday kapat na jaaye. Aapan to samujhe nahi, aurahi gyan sunaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब पाखंडी साधकों को फटकारते हुए कहते हैं कि बाहर से तो बड़े उल्लास और प्रसन्नता के साथ ईश्वर के गुण गाता है, किंतु हृदय से कपट, द्वेष और छल दूर नहीं होता। वह स्वयं तो सत्य को समझकर आचरण में नहीं ढालता, परंतु दूसरों को ज्ञान और उपदेश सुनाता फिरता है। ऐसी भक्ति निष्फल है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪਾਖੰਡ ਦੀ ਨਿੰਦਾ ਕਰਦੇ ਹਨ: ਬਾਹਰੋਂ ਖੁਸ਼ ਹੋ ਕੇ ਪ੍ਰਭੂ ਦੇ ਗੁਣ ਗਾਉਂਦਾ ਹੈ ਪਰ ਦਿਲੋਂ ਖੋਟ ਤੇ ਕਪਟ ਨਹੀਂ ਜਾਂਦਾ। ਆਪਣੇ ਆਪ ਤਾਂ ਸਮਝਦਾ ਨਹੀਂ, ਪਰ ਦੂਜਿਆਂ ਨੂੰ ਉਪਦੇਸ਼ ਦਿੰਦਾ ਫਿਰਦਾ ਹੈ।',
-      en: 'Kabir Saheb denounces hypocrisy: Joyfully singing the praises of the Divine while harboring malice, deceit, and pride within the heart is futile. Such a person does not comprehend or practice Truth themselves, yet pompously lectures others on spiritual knowledge.',
+      hi: 'सतगुरु कबीर साहेब पाखंडी साधकों को फटकारते हुए कहते हैं कि बाहर से तो बड़े उल्लास और प्रसन्नता के साथ ईश्वर के गुण गाता है, किंतु हृदय से कपट, द्वेष और छल दूर नहीं होता। वह स्वयं तो सत्य को समझकर आचरण में नहीं ढालता, परंतु दूसरों को ज्ञान और उपदेश सुनाता फिरता है। ऐसी भक्ति निष्फल है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਖੰਡ ਦੀ ਨਿੰਦਾ ਕਰਦੇ ਹਨ: ਬਾਹਰੋਂ ਖੁਸ਼ ਹੋ ਕੇ ਪ੍ਰਭੂ ਦੇ ਗੁਣ ਗਾਉਂਦਾ ਹੈ ਪਰ ਦਿਲੋਂ ਖੋਟ ਤੇ ਕਪਟ ਨਹੀਂ ਜਾਂਦਾ। ਆਪਣੇ ਆਪ ਤਾਂ ਸਮਝਦਾ ਨਹੀਂ, ਪਰ ਦੂਜਿਆਂ ਨੂੰ ਉਪਦੇਸ਼ ਦਿੰਦਾ ਫਿਰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb denounces hypocrisy: Joyfully singing the praises of the Divine while harboring malice, deceit, and pride within the heart is futile. Such a person does not comprehend or practice Truth themselves, yet pompously lectures others on spiritual knowledge.',
     },
     wordMeanings: {
       hi: [
@@ -675,9 +675,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Hari kripa tab jaaniye, de maanav avatar. Guru kripa tab jaaniye, mukt kare sansaar.',
     bhavarth: {
-      hi: 'कबीर साहेब ईश्वर और सतगुरु की कृपा का भेद समझाते हैं: जब चौरासी लाख योनियों के उपरांत दुर्लभ मानव देह प्राप्त होती है, तो यह ईश्वर (हरि) की कृपा समझनी चाहिए। किंतु जब सतगुरु इस मनुष्य को ज्ञान देकर भवसागर और जन्म-मरण के बंधनों से सदा के लिए मुक्त कर देते हैं, तो वह सतगुरु की असीम कृपा होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਇਹ ਦੁਰਲੱਭ ਮਨੁੱਖਾ ਦੇਹ ਮਿਲਦੀ ਹੈ, ਪਰ ਜਦੋਂ ਸਤਿਗੁਰੂ ਜੀ ਗਿਆਨ ਦੇ ਕੇ ਸੰਸਾਰ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਸਦਾ ਲਈ ਮੁਕਤ ਕਰ ਦੇਣ, ਤਾਂ ਉਹ ਗੁਰੂ ਦੀ ਅਪਾਰ ਬਖਸ਼ਿਸ਼ ਹੁੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb delineates the divine gifts: It is the grace of the Supreme Lord that grants this rare human incarnation after traversing countless life-forms. But when the Satguru bestows transcendental wisdom and eternally liberates the soul from worldly bondage, that is the supreme grace of the Master.',
+      hi: 'सतगुरु कबीर साहेब ईश्वर और सतगुरु की कृपा का भेद समझाते हैं: जब चौरासी लाख योनियों के उपरांत दुर्लभ मानव देह प्राप्त होती है, तो यह ईश्वर (हरि) की कृपा समझनी चाहिए। किंतु जब सतगुरु इस मनुष्य को ज्ञान देकर भवसागर और जन्म-मरण के बंधनों से सदा के लिए मुक्त कर देते हैं, तो वह सतगुरु की असीम कृपा होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਇਹ ਦੁਰਲੱਭ ਮਨੁੱਖਾ ਦੇਹ ਮਿਲਦੀ ਹੈ, ਪਰ ਜਦੋਂ ਸਤਿਗੁਰੂ ਜੀ ਗਿਆਨ ਦੇ ਕੇ ਸੰਸਾਰ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਸਦਾ ਲਈ ਮੁਕਤ ਕਰ ਦੇਣ, ਤਾਂ ਉਹ ਗੁਰੂ ਦੀ ਅਪਾਰ ਬਖਸ਼ਿਸ਼ ਹੁੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb delineates the divine gifts: It is the grace of the Supreme Lord that grants this rare human incarnation after traversing countless life-forms. But when the Satguru bestows transcendental wisdom and eternally liberates the soul from worldly bondage, that is the supreme grace of the Master.',
     },
     wordMeanings: {
       hi: [
@@ -757,9 +757,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Hari sangat sheetal bhaya, miti moh ki taap. Nishivaasar sukh nidhi laha, aan pragata aap.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्संग की महिमा गाते हैं: परमात्मा और सच्चे संतों की पावन संगति में आते ही मन परम शीतल व शांत हो गया और संसार के मोह-माया, तृष्णा व संताप की सारी तपन मिट गई। अब दिन-रात (निशिवासर) परम सुख का खजाना प्राप्त हो गया है और हृदय में साक्षात प्रभु स्वयं प्रकट हो गए हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਤਾਂ ਤੇ ਹਰਿ ਦੀ ਸੰਗਤ ਨਾਲ ਮਨ ਠੰਢਾ-ਠਾਰ ਹੋ ਗਿਆ, ਮੋਹ-ਮਾਇਆ ਦੀ ਅੱਗ ਬੁੱਝ ਗਈ। ਹੁਣ ਦਿਨ-ਰਾਤ ਪਰਮ ਸੁਖ ਦਾ ਖਜ਼ਾਨਾ ਮਿਲ ਗਿਆ ਹੈ ਅਤੇ ਪ੍ਰਭੂ ਖੁਦ ਪ੍ਰਗਟ ਹੋ ਗਿਆ ਹੈ।',
-      en: 'Kabir Saheb extols the bliss of holy company: In the sacred sanctuary of the Divine and true saints, the burning flames of worldly attachment and cravings are extinguished, leaving the heart profoundly cool and tranquil. Day and night, the infinite treasure of supreme bliss is realized, as the Lord reveals Himself within.',
+      hi: 'सतगुरु कबीर साहेब सत्संग की महिमा गाते हैं: परमात्मा और सच्चे संतों की पावन संगति में आते ही मन परम शीतल व शांत हो गया और संसार के मोह-माया, तृष्णा व संताप की सारी तपन मिट गई। अब दिन-रात (निशिवासर) परम सुख का खजाना प्राप्त हो गया है और हृदय में साक्षात प्रभु स्वयं प्रकट हो गए हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਤਾਂ ਤੇ ਹਰਿ ਦੀ ਸੰਗਤ ਨਾਲ ਮਨ ਠੰਢਾ-ਠਾਰ ਹੋ ਗਿਆ, ਮੋਹ-ਮਾਇਆ ਦੀ ਅੱਗ ਬੁੱਝ ਗਈ। ਹੁਣ ਦਿਨ-ਰਾਤ ਪਰਮ ਸੁਖ ਦਾ ਖਜ਼ਾਨਾ ਮਿਲ ਗਿਆ ਹੈ ਅਤੇ ਪ੍ਰਭੂ ਖੁਦ ਪ੍ਰਗਟ ਹੋ ਗਿਆ ਹੈ।',
+      en: 'Satguru Kabir Saheb extols the bliss of holy company: In the sacred sanctuary of the Divine and true saints, the burning flames of worldly attachment and cravings are extinguished, leaving the heart profoundly cool and tranquil. Day and night, the infinite treasure of supreme bliss is realized, as the Lord reveals Himself within.',
     },
     wordMeanings: {
       hi: [
@@ -836,21 +836,21 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
       en: 'Eradication of Ego and Divine Oneness (Aapa Nivaran)',
     },
     text: {
-      hi: 'हरिजन हरि तो एक है, जो आपा मिट जाय ।\nजा घट में आपा बसे, साहिब कहां समाय ॥',
+      hi: 'हरिजन हरि तो एक है, जो आपा मिट जाय ।\nजा घट में आपा बसे, साहेब कहां समाय ॥',
       pb: 'ਹਰਿਜਨ ਹਰਿ ਤੋ ਏਕ ਹੈ, ਜੋ ਆਪਾ ਮਿਟ ਜਾਯ ।\nਜਾ ਘਟ ਮੇਂ ਆਪਾ ਬਸੇ, ਸਾਹੇਬ ਕਹਾਂ ਸਮਾਯ ॥',
       en: 'Harijan Hari to ek hai, jo aapa mit jaay |\nJa ghat mein aapa base, Saahib kahan samaay ||',
     },
-    transliteration: 'Harijan Hari to ek hai, jo aapa mit jaaye. Ja ghat me aapa base, Sahib kahan samaaye.',
+    transliteration: 'Harijan Hari to ek hai, jo aapa mit jaaye. Ja ghat me aapa base, Saheb kahan samaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब अद्वैत स्थिति और निरहंकारता का रहस्य प्रकट करते हैं: भक्त (हरिजन) और भगवान (हरि) वास्तव में एक ही तत्व हैं, बशर्ते कि साधक के भीतर का "मैं-भाव" (अहंकार या आपा) पूरी तरह समाप्त हो जाए। जिस हृदय में अहंकार का वास होता है, वहाँ सर्वव्यापी साहिब के लिए कोई स्थान नहीं रह जाता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਅਤੇ ਉਸਦਾ ਭਗਤ ਇੱਕ-ਰੂਪ ਹਨ, ਬਸ਼ਰਤੇ ਕਿ ਹੰਕਾਰ ਮਿਟ ਜਾਵੇ। ਜਿਸ ਹਿਰਦੇ ਵਿੱਚ "ਮੈਂ-ਮੇਰੀ" ਵੱਸਦੀ ਹੈ, ਉੱਥੇ ਪ੍ਰਭੂ ਦਾ ਵਾਸਾ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
-      en: 'Kabir Saheb unveils the supreme secret of Oneness: The devotee (Harijan) and the Divine (Hari) are essentially one, provided the ego ("I-ness") is thoroughly extinguished. But in a heart where pride and self-importance dwell, how can the Supreme Lord abide?',
+      hi: 'सतगुरु कबीर साहेब अद्वैत स्थिति और निरहंकारता का रहस्य प्रकट करते हैं: भक्त (हरिजन) और भगवान (हरि) वास्तव में एक ही तत्व हैं, बशर्ते कि साधक के भीतर का "मैं-भाव" (अहंकार या आपा) पूरी तरह समाप्त हो जाए। जिस हृदय में अहंकार का वास होता है, वहाँ सर्वव्यापी साहेब के लिए कोई स्थान नहीं रह जाता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਅਤੇ ਉਸਦਾ ਭਗਤ ਇੱਕ-ਰੂਪ ਹਨ, ਬਸ਼ਰਤੇ ਕਿ ਹੰਕਾਰ ਮਿਟ ਜਾਵੇ। ਜਿਸ ਹਿਰਦੇ ਵਿੱਚ "ਮੈਂ-ਮੇਰੀ" ਵੱਸਦੀ ਹੈ, ਉੱਥੇ ਪ੍ਰਭੂ ਦਾ ਵਾਸਾ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb unveils the supreme secret of Oneness: The devotee (Harijan) and the Divine (Hari) are essentially one, provided the ego ("I-ness") is thoroughly extinguished. But in a heart where pride and self-importance dwell, how can the Supreme Lord abide?',
     },
     wordMeanings: {
       hi: [
         { word: 'हरिजन (Harijan)', meaning: 'ईश्वर का सच्चा अनन्य सेवक/भक्त' },
         { word: 'आपा मिट जाय (Aapa Mit Jaay)', meaning: 'अहंकार और पृथकता का भाव समाप्त हो जाना' },
-        { word: 'साहिब कहां समाय (Saahib Kahan Samaay)', meaning: 'अहंकारी मन में प्रभु का वास असंभव होना' },
+        { word: 'साहेब कहां समाय (Saahib Kahan Samaay)', meaning: 'अहंकारी मन में प्रभु का वास असंभव होना' },
       ],
       pb: [
         { word: 'ਹਰਿਜਨ', meaning: 'ਰੱਬ ਦਾ ਭਗਤ' },
@@ -874,7 +874,7 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
       en: 'Surrender all personal credit and pride today, recognizing the Divine as the sole actor in all things.',
     },
     samarpanPrayer: {
-      hi: 'हे साहिब! मेरे इस झूठे "मैं" को मिटा दीजिए ताकि मेरे घट में केवल आपका ही पावन प्रकाश विद्यमान रहे। साहेब बंदगी साहेब!',
+      hi: 'हे साहेब! मेरे इस झूठे "मैं" को मिटा दीजिए ताकि मेरे घट में केवल आपका ही पावन प्रकाश विद्यमान रहे। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਮੇਰੇ ਮਾਲਕ! ਮੇਰੀ ਹਉਮੈ ਮਿਟਾ ਕੇ ਮੇਰੇ ਅੰਦਰ ਆਪਣਾ ਨੂਰ ਪ੍ਰਗਟ ਕਰੋ ਜੀ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Eradicate this illusory "I" within me so that only Your radiant presence remains in my soul. Saheb Bandagi Saheb!',
     },
@@ -924,9 +924,9 @@ export const SAKHIS_BATCH_19: Sakhi[] = [
     },
     transliteration: 'Harijan to haara bhala, jeetan de sansaar. Haara to Hari se mile, jeeta Jam ke dwaar.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार और अध्यात्म की विपरीत दिशाओं को स्पष्ट करते हैं: ईश्वर के सच्चे भक्त के लिए सांसारिक वाद-विवाद, मान-बड़ाई और प्रतिस्पर्धा में हार जाना ही श्रेष्ठ है; संसार के अज्ञानी लोगों को अपनी जीत का दंभ भरने दो। जो संसार से अपनी हार स्वीकार कर विनम्र बनता है वह हरि से मिल जाता है, जबकि संसार को जीतने का अहंकार रखने वाला काल/यम के द्वार पर दंड भुगतता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਰੱਬ ਦੇ ਭਗਤ ਦਾ ਸੰਸਾਰਕ ਝਗੜਿਆਂ ਵਿੱਚ ਹਾਰ ਜਾਣਾ ਹੀ ਚੰਗਾ ਹੈ। ਦੁਨੀਆ ਨੂੰ ਜਿੱਤਣ ਦਿਓ। ਜੋ ਨਿਮਰਤਾ ਨਾਲ ਹਾਰ ਮੰਨ ਲੈਂਦਾ ਹੈ ਉਹ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਦਾ ਹੈ, ਅਤੇ ਜੋ ਹੰਕਾਰ ਨਾਲ ਜਿੱਤਦਾ ਹੈ ਉਹ ਜਮਦੂਤਾਂ ਦੇ ਵੱਸ ਪੈਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the paradox of spiritual grace: It is far better for a devotee to accept defeat in worldly arguments, rivalries, and egoistic competitions—let the worldly glory seekers claim their petty victories! The humble soul who yields meets the Divine, while the arrogant victor marches straight to the gates of Death (Yama).',
+      hi: 'सतगुरु कबीर साहेब संसार और अध्यात्म की विपरीत दिशाओं को स्पष्ट करते हैं: ईश्वर के सच्चे भक्त के लिए सांसारिक वाद-विवाद, मान-बड़ाई और प्रतिस्पर्धा में हार जाना ही श्रेष्ठ है; संसार के अज्ञानी लोगों को अपनी जीत का दंभ भरने दो। जो संसार से अपनी हार स्वीकार कर विनम्र बनता है वह हरि से मिल जाता है, जबकि संसार को जीतने का अहंकार रखने वाला काल/यम के द्वार पर दंड भुगतता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਰੱਬ ਦੇ ਭਗਤ ਦਾ ਸੰਸਾਰਕ ਝਗੜਿਆਂ ਵਿੱਚ ਹਾਰ ਜਾਣਾ ਹੀ ਚੰਗਾ ਹੈ। ਦੁਨੀਆ ਨੂੰ ਜਿੱਤਣ ਦਿਓ। ਜੋ ਨਿਮਰਤਾ ਨਾਲ ਹਾਰ ਮੰਨ ਲੈਂਦਾ ਹੈ ਉਹ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਦਾ ਹੈ, ਅਤੇ ਜੋ ਹੰਕਾਰ ਨਾਲ ਜਿੱਤਦਾ ਹੈ ਉਹ ਜਮਦੂਤਾਂ ਦੇ ਵੱਸ ਪੈਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the paradox of spiritual grace: It is far better for a devotee to accept defeat in worldly arguments, rivalries, and egoistic competitions—let the worldly glory seekers claim their petty victories! The humble soul who yields meets the Divine, while the arrogant victor marches straight to the gates of Death (Yama).',
     },
     wordMeanings: {
       hi: [

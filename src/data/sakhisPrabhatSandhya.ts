@@ -503,9 +503,9 @@ Serving God for four ages vs. serving the Guru for one moment—the two are inco
       en: 'Prayer 2\nSalutations again and again to your True Name, salutations to the merciful Kabir. |\nSalutations to the refuge of Saints, through which all sins are turned to ashes.',
     },
     bhavarth: {
-      hi: 'आपके निज नाम (सत्यनाम) को बार-बार नमस्कार है, कृपालु कबीर साहेब को नमस्कार है। संतों की शरण में आने से समस्त पाप भस्म होकर राख हो जाते हैं।',
-      pb: 'ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਵਾਰ-ਵਾਰ ਨਮਸਕਾਰ ਹੈ, ਦਿਆਲੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਉਣ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸਵਾਹ ਹੋ ਜਾਂਦੇ ਹਨ।',
-      en: 'Repeated salutations to your Essential Name (Satyanaam) and salutations to the merciful Kabir Saheb. By seeking refuge in the Saints, all sins are completely incinerated and turned to dust.',
+      hi: 'आपके निज नाम (सत्यनाम) को बार-बार नमस्कार है, कृपालु सतगुरु कबीर साहेब को नमस्कार है। संतों की शरण में आने से समस्त पाप भस्म होकर राख हो जाते हैं।',
+      pb: 'ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਵਾਰ-ਵਾਰ ਨਮਸਕਾਰ ਹੈ, ਦਿਆਲੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਉਣ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸਵਾਹ ਹੋ ਜਾਂਦੇ ਹਨ।',
+      en: 'Repeated salutations to your Essential Name (Satyanaam) and salutations to the merciful Satguru Kabir Saheb. By seeking refuge in the Saints, all sins are completely incinerated and turned to dust.',
     },
     quiz: []
   },
@@ -642,7 +642,7 @@ export const SAKHIS_PRABHAT_SANDHYA: Sakhi[] = RAW_SAKHIS_PRABHAT_SANDHYA.map((s
   wordMeanings: s.wordMeanings || { hi: [], pb: [], en: [] },
   contemplation: s.contemplation || {
     hi: s.bhavarth?.hi || 'सतगुरु कबीर साहेब की पावन वाणी का नित्य स्वाध्याय करें।',
-    pb: s.bhavarth?.pb || 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦਾ ਨਿੱਤ ਸਵਾਧਿਆਏ ਕਰੋ।',
+    pb: s.bhavarth?.pb || 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦਾ ਨਿੱਤ ਸਵਾਧਿਆਏ ਕਰੋ।',
     en: s.bhavarth?.en || 'Contemplate daily on Satguru Kabir Saheb’s divine words.'
   },
   practicalApplication: s.practicalApplication || {
@@ -652,7 +652,7 @@ export const SAKHIS_PRABHAT_SANDHYA: Sakhi[] = RAW_SAKHIS_PRABHAT_SANDHYA.map((s
   },
   samarpanPrayer: s.samarpanPrayer || {
     hi: 'हे सतगुरु कबीर साहेब! मुझे सत्य के मार्ग पर चलने की शक्ति प्रदान करें। ।।साहेब बंदगी साहेब।।',
-    pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਮੈਨੂੰ ਸੱਚ ਦੇ ਮਾਰਗ ਤੇ ਚੱਲਣ ਦੀ ਸਮਰੱਥਾ ਬਖਸ਼ੋ। ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।',
+    pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਸੱਚ ਦੇ ਮਾਰਗ ਤੇ ਚੱਲਣ ਦੀ ਸਮਰੱਥਾ ਬਖਸ਼ੋ। ।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।।',
     en: 'O Satguru Kabir Saheb! Grant me devotion and strength to walk the path of truth. || Saheb Bandagi Saheb ||'
   },
   quiz: s.quiz || []

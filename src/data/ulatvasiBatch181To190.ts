@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਨਿਮਰਤਾ ਅੱਗੇ ਹੰਕਾਰ ਝੁਕ ਜਾਂਦਾ ਹੈ।',
         en: 'Innocent spiritual humility easily subdues the fiercest ego.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਆਨੰਦ ਅੰਦਰੋਂ ਮਿਲਦਾ ਹੈ।',
         en: 'True spiritual bliss requires no worldly tools, only inward devotion.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਾ ਸਵੈ-ਪ੍ਰਕਾਸ਼ਿਤ ਹੈ।',
         en: 'The Soul is self-luminous, requiring no worldly fuel.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾम ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾम ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -206,7 +206,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਇੱਛਾਵਾਂ ਦਾ ਅੰਤ ਹੀ ਗਿਆਨ ਦਾ ਜਨਮ ਹੈ।',
         en: 'Death of desires is the true birth of Divine Enlightenment.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -258,7 +258,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਨਿਮਰਤਾ ਅੱਗੇ ਹੰਕਾਰ ਝੁਕ ਜਾਂਦਾ ਹੈ।',
         en: 'Spiritual humility tames and cages the wildest ego.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -310,7 +310,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਇੰਦਰੀਆਂ ਤੇ ਕਾਬੂ ਨਾਲ ਆਤਮ-ਆਨੰਦ ਮਿਲਦਾ ਹੈ।',
         en: 'Subjugation of lower senses paves the way for supreme spiritual joy.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -362,7 +362,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਾਣਾਂ ਦਾ ਉੱਪਰ ਉੱਠਣਾ ਹੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Ascension of subtle life force to crown chakra opens the gate of liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -373,8 +373,8 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
     realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
     title: { hi: '188. सुई की नोक पर पूरा संसार नाचे', pb: '188. ਸੂਈ ਦੀ ਨੋਕ ਤੇ ਪੂਰਾ ਸੰਸਾਰ ਨੱਚੇ', en: '188. Universe Dancing on Needle Tip' },
     verse: {
-      hi: '"सुई की नोक पर नाचै संसारा, राई में ब्रह्मांड समाया। कहै कबीर सुनो भाई संतो, यह साहिब की माया॥"',
-      pb: '"ਸੂਈ ਕੀ ਨੋਕ ਪਰ ਨਾਚੈ ਸੰਸਾਰਾ, ਰਾਈ ਮੇਂ ਬ੍ਰਹ੍ਮਾਂਡ ਸਮਾਯਾ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਾਹਿਬ ਕੀ ਮਾਯਾ॥"',
+      hi: '"सुई की नोक पर नाचै संसारा, राई में ब्रह्मांड समाया। कहै कबीर सुनो भाई संतो, यह साहेब की माया॥"',
+      pb: '"ਸੂਈ ਕੀ ਨੋਕ ਪਰ ਨਾਚੈ ਸੰਸਾਰਾ, ਰਾਈ ਮੇਂ ਬ੍ਰਹ੍ਮਾਂਡ ਸਮਾਯਾ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਾਹੇਬ ਕੀ ਮਾਯਾ॥"',
       en: '"On the needle tip dances the universe, inside a mustard seed cosmos is contained. Says Kabir listen saints, this is the illusion of the Lord."'
     },
     literalParadox: {
@@ -414,7 +414,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਸੂਖਮ ਆਤਮਾ ਹੀ ਬ੍ਰਹਮਾਂਡ ਦਾ ਆਧਾਰ ਹੈ।',
         en: 'The subtlest Spirit is the foundation and ruler of the vast cosmos.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -466,7 +466,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਬਾਹਰੀ ਇੰਦਰੀਆਂ ਬੰਦ ਹੋਣ ਤੇ ਅੰਦਰੂਨੀ ਗਿਆਨ ਮਿਲਦਾ ਹੈ।',
         en: 'Closure of outer senses opens inner spiritual faculties.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -509,7 +509,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'परम समाधि एवं अमृतरस का पान', pb: 'ਸਮਾਧੀ ਅਤੇ ਅੰਮ੍ਰਿਤ ਰਸ', en: 'Immortal State via Silent Absorption in Divine Ambrosia' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ परम समाधि और आत्मिक अवस्था का वर्णन कर रहे हैं। जब जीवात्मा परमात्मा से एकाकार होती है, तो उसे उस परम सुख और ब्रह्म-रस को चखने के लिए इस हाड़-मांस के मुँह या जीभ की आवश्यकता नहीं होती। आत्मा स्वतः अजपा-जाप द्वारा गुणगान करती है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ परम समाधि और आत्मिक अवस्था का वर्णन कर रहे हैं। जब जीवात्मा परमात्मा से एकाकार होती है, तो उसे उस परम सुख और ब्रह्म-रस को चखने के लिए इस हाड़-मांस के मुँह या जीभ की आवश्यकता नहीं होती। आत्मा स्वतः अजपा-जाप द्वारा गुणगान करती है।',
         pb: 'ਸਮਾਧੀ ਵਿੱਚ ਆਤਮਾ ਬਿਨਾਂ ਬੋਲੇ ਅਜਪਾ-ਜਾਪ ਕਰਦੀ ਹੈ ਅਤੇ ਅੰਮ੍ਰਿਤ ਪੀ ਕੇ ਅਮਰ ਹੋ ਜਾਂਦੀ ਹੈ।',
         en: 'In supreme meditative union, tasting divine nectar requires no physical lips or tongue. The soul spontaneously engages in silent Ajapa Japa, attaining immortality.'
       },
@@ -518,7 +518,7 @@ export const ULATVASI_BATCH_181_TO_190: UlatvasiQuestion[] = [
         pb: 'ਅਜਪਾ ਜਾਪ ਨਾਲ ਅਮਰਤਾ ਮਿਲਦੀ ਹੈ।',
         en: 'Silent remembrance and tasting divine ambrosia grant immortality.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

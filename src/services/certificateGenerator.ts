@@ -295,7 +295,7 @@ export function getCertificateTitle(language: Language): string {
     ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਸਿੱਧੀ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
     : language === 'en'
     ? 'Satguru Kabir Saheb Sacred Swadhyay Completion Certificate'
-    : 'सद्गुरु कबीर साहेब पावन स्वाध्याय सिद्धि प्रमाण-पत्र';
+    : 'सतगुरु कबीर साहेब पावन स्वाध्याय सिद्धि प्रमाण-पत्र';
 }
 
 export function getCertificateFooterBrand(language: Language): string {

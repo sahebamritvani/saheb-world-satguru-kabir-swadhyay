@@ -15,7 +15,7 @@ export const GURU_SHATAK_SAAR_SECTION: NitnemSection = {
     en: "Atha Sri Guru Shatak Saar"
   },
   subtitle: {
-    hi: "।। सत्यनाम ।। सद्गुरु के दिव्य गुण, बन्दीछोर स्वरूप एवं शतक सार महिमा",
+    hi: "।। सत्यनाम ।। सतगुरु के दिव्य गुण, बन्दीछोर स्वरूप एवं शतक सार महिमा",
     pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਦੇ ਦਿਵਯ ਗੁਣ, ਬੰਦੀਛੋੜ ਸਰੂਪ ਅਤੇ ਸ਼ਤਕ ਸਾਰ ਮਹਿਮਾ",
     en: "Sacred Essence of Guru's Hundred Virtues, Bandichhor Nature and True Realization"
   },
@@ -340,8 +340,8 @@ export const GURU_SHATAK_SAAR_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "इस प्रकार सद्गुरु के सौ दिव्य नामों व गुणों की महिमा कही गई है, जिसे गुरुमुख जन सहज ही समझ लेते हैं। वे परम साधु सद्गुरु कबीर साहेब ही हैं; हे भाई! उनके 'बन्दीछोर' पावन नाम का निरंतर जप करो।",
-        pb: "ਇਸ ਤਰ੍ਹਾਂ ਸਤਿਗੁਰੂ ਦੇ ਸੌ ਨਾਵਾਂ ਤੇ ਗੁਣਾਂ ਦੀ ਮਹਿਮਾ ਕਹੀ ਗਈ ਹੈ, ਜਿਸਨੂੰ ਗੁਰਮੁਖ ਜਨ ਸਮਝਦੇ ਹਨ। ਉਹ ਪਰਮ ਸਾਧੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਹਨ; ਹੇ ਭਰਾਵੋ! ਉਹਨਾਂ ਦੇ 'ਬੰਦੀਛੋੜ' ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰੋ।",
+        hi: "इस प्रकार सतगुरु के सौ दिव्य नामों व गुणों की महिमा कही गई है, जिसे गुरुमुख जन सहज ही समझ लेते हैं। वे परम साधु सतगुरु कबीर साहेब ही हैं; हे भाई! उनके 'बन्दीछोर' पावन नाम का निरंतर जप करो।",
+        pb: "ਇਸ ਤਰ੍ਹਾਂ ਸਤਿਗੁਰੂ ਦੇ ਸੌ ਨਾਵਾਂ ਤੇ ਗੁਣਾਂ ਦੀ ਮਹਿਮਾ ਕਹੀ ਗਈ ਹੈ, ਜਿਸਨੂੰ ਗੁਰਮੁਖ ਜਨ ਸਮਝਦੇ ਹਨ। ਉਹ ਪਰਮ ਸਾਧੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹਨ; ਹੇ ਭਰਾਵੋ! ਉਹਨਾਂ ਦੇ 'ਬੰਦੀਛੋੜ' ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰੋ।",
         en: "Thus the essence of the Master's hundred sacred virtues is extolled, comprehended clearly by enlightened disciples. He is the holy Saint Satguru Kabir Saheb; chant His liberator name 'Bandichhor', O brothers!"
       }
     },
@@ -363,7 +363,7 @@ export const GURU_SHATAK_SAAR_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "सद्गुरु के अमृतमय वचनों को जो शिष्य कान और मन लगाकर एकाग्रचित्त होकर सुनता है, उसके काल के गुण, भ्रम की झांई और संशय सब मिट जाते हैं और उसकी सुरत कभी सत्य से विचलित नहीं होती।",
+        hi: "सतगुरु के अमृतमय वचनों को जो शिष्य कान और मन लगाकर एकाग्रचित्त होकर सुनता है, उसके काल के गुण, भ्रम की झांई और संशय सब मिट जाते हैं और उसकी सुरत कभी सत्य से विचलित नहीं होती।",
         pb: "ਸਤਿਗੁਰੂ ਦੇ ਅੰਮ੍ਰਿਤ ਬਚਨਾਂ ਨੂੰ ਜਿਹੜਾ ਸਿੱਖ ਕੰਨ ਤੇ ਮਨ ਲਗਾ ਕੇ ਸੁਣਦਾ ਹੈ, ਉਸਦੇ ਕਾਲ ਦੇ ਬੰਧਨ, ਭਰਮ ਅਤੇ ਸ਼ੰਕੇ ਮਿਟ ਜਾਂਦੇ ਹਨ ਅਤੇ ਉਸਦੀ ਸੁਰਤ ਸਦਾ ਅਡੋਲ ਰਹਿੰਦੀ ਹੈ।",
         en: "The disciple who hearkens attentively to the Master's nectar-like words with ear and heart is purged of the illusions and qualities of Kaal, and his focused consciousness never slips into oblivion."
       }
@@ -386,7 +386,7 @@ export const GURU_SHATAK_SAAR_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "ऐसे हैं हमारे गरीब निवाज और दीनों के सच्चे उद्धारक सद्गुरु! सुजान शिष्य उनके इस स्वरूप को पहचानकर अपने आत्म-बोध और कल्याण को पूर्ण करता है।",
+        hi: "ऐसे हैं हमारे गरीब निवाज और दीनों के सच्चे उद्धारक सतगुरु! सुजान शिष्य उनके इस स्वरूप को पहचानकर अपने आत्म-बोध और कल्याण को पूर्ण करता है।",
         pb: "ਅਜਿਹੇ ਹਨ ਸਾਡੇ ਗ਼ਰੀਬ ਨਿਵਾਜ਼ ਅਤੇ ਦੀਨਾਂ ਦੇ ਸੱਚੇ ਉੱਧਾਰਕ ਸਤਿਗੁਰੂ! ਸਮਝਦਾਰ ਸਿੱਖ ਉਹਨਾਂ ਨੂੰ ਪਛਾਣ ਕੇ ਆਪਣੇ ਆਤਮ-ਗਿਆਨ ਨੂੰ ਪੂਰਾ ਕਰਦਾ ਹੈ।",
         en: "Such is our Lord, the Cherisher of the poor and the authentic redeemer of the humble! The wise disciple recognizes this and attains complete self-realization for his eternal emancipation."
       }
@@ -409,8 +409,8 @@ export const GURU_SHATAK_SAAR_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "श्री गुरु शतक सार का पावन पाठ यहाँ संपूर्ण होता है, जो सद्गुरु कबीर बन्दीछोर साहेब के अलौकिक गुणों और सत्य बोध की प्राप्ति कराता है। ।। साहेब बंदगी साहेब।।",
-        pb: "ਸ਼੍ਰੀ ਗੁਰੂ ਸ਼ਤਕ ਸਾਰ ਦਾ ਪਵਿੱਤਰ ਪਾਠ ਇੱਥੇ ਸਮਾਪਤ ਹੁੰਦਾ ਹੈ, ਜੋ ਸਤਿਗੁਰੂ ਕਬੀਰ ਬੰਦੀਛੋੜ ਸਾਹੇਬ ਜੀ ਦੇ ਗੁਣਾਂ ਅਤੇ ਸੱਚੇ ਗਿਆਨ ਦੀ ਪ੍ਰਾਪਤੀ ਕਰਵਾਉਂਦਾ ਹੈ। ।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।।",
+        hi: "श्री गुरु शतक सार का पावन पाठ यहाँ संपूर्ण होता है, जो सतगुरु कबीर बन्दीछोर साहेब के अलौकिक गुणों और सत्य बोध की प्राप्ति कराता है। ।। साहेब बंदगी साहेब।।",
+        pb: "ਸ਼੍ਰੀ ਗੁਰੂ ਸ਼ਤਕ ਸਾਰ ਦਾ ਪਵਿੱਤਰ ਪਾਠ ਇੱਥੇ ਸਮਾਪਤ ਹੁੰਦਾ ਹੈ, ਜੋ ਸਤਿਗੁਰੂ ਕਬੀਰ ਬੰਦੀਛੋੜ ਸਾਹੇਬ ਜੀ ਦੇ ਗੁਣਾਂ ਅਤੇ ਸੱਚੇ ਗਿਆਨ ਦੀ ਪ੍ਰਾਪਤੀ ਕਰਵਾਉਂਦਾ ਹੈ। ।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।",
         en: "Here concludes the sacred recitation of Sri Guru Shatak Saar, bestowing the eternal realization of Satguru Kabir Bandichhor Saheb's divine virtues. || Saheb Bandgi Saheb ||"
       }
     }

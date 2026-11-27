@@ -3,7 +3,9 @@ import type { SwadhyayAiResponsePayload } from './swadhyayElevenSteps';
 import {
   buildStep4SatsangContent,
   buildStep6EsotericContent,
+  getAngSpiritualProfile,
 } from './swadhyayContentEngine';
+import { SANDHUKKARI_GLOSSARY } from './sandhukkariGlossary';
 import { buildFiveDimensionQuiz } from './quizGenerator';
 import { hindiToPunjabiWordConverter } from './transliteration';
 
@@ -120,20 +122,23 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
     dhunAudioTitle: isHi ? '🎵 धुन: साहेब की अमृतवाणी' : isPb ? '🎵 ਧੁਨ: ਸਾਹੇਬ ਦੀ ਅੰਮ੍ਰਿਤ ਬਾਣੀ' : '🎵 Sound: Saheb Divine Melody',
   };
 
+  const angProfile = getAngSpiritualProfile(sakhi, language);
+
   // 2. STEP 2: विषय संदर्भ एवं आध्यात्मिक पृष्ठभूमि
   const dynamicRelevance = originalContext || (
     isHi
-      ? `यह साखी सतगुरु कबीर साहेब के '${categoryTitle}' (साखी #${sakhi.number}) के अंतर्गत अंतःकरण को जाग्रत करने वाली विशिष्ट वाणी है। यह मन और इंद्रियों के विकारों को शांत कर साधक को 'सत्यनाम' के सच्चे आचरण की प्रेरणा देती है।`
+      ? `यह साखी सतगुरु कबीर साहेब के '${categoryTitle}' (साखी #${sakhi.number}) के अंतर्गत अंतःकरण को जाग्रत करने वाली विशिष्ट वाणी है। इसका केंद्रीय उद्देश्य है — ${angProfile.angFocus}।`
       : isPb
-      ? `ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ '${categoryTitle}' (ਸਾਖੀ #${sakhi.number}) ਤਹਿਤ ਰੂਹਾਨੀ ਚੇਤਨਾ ਨੂੰ ਪ੍ਰਕਾਸ਼ਮਾਨ ਕਰਨ ਵਾਲੀ ਅਨਮੋਲ ਬਾਣੀ ਹੈ।`
-      : `This sacred sakhi from '${categoryTitle}' (Sakhi #${sakhi.number}) illuminates the practitioner's inner consciousness toward living Truth.`
+      ? `ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ '${categoryTitle}' (ਸਾਖੀ #${sakhi.number}) ਤਹਿਤ ਰੂਹਾਨੀ ਚੇਤਨਾ ਨੂੰ ਪ੍ਰਕਾਸ਼ਮਾਨ ਕਰਨ ਵਾਲੀ ਅਨਮੋਲ ਬਾਣੀ ਹੈ, ਜਿਸਦਾ ਮੂਲ ਉਦੇਸ਼ ਹੈ — ${angProfile.angFocus}।`
+      : `This sacred sakhi from '${categoryTitle}' (Sakhi #${sakhi.number}) centers on ${angProfile.angFocus}.`
   );
 
+  const primaryWordHint = (sakhi.wordMeanings[language] || sakhi.wordMeanings.hi || [])[0];
   const dynamicSignificance = isHi
-    ? `सतगुरु कबीर साहेब की इस पावन साखी में "${originalCouplet.split('\n')[0]}" के माध्यम से जीवन के मूल सत्य को उजागर किया गया है। इसका स्वाध्याय साधक को बाह्य प्रपंचों से मुक्त कर आंतरिक चेतना से जोड़ता है।`
+    ? `सतगुरु कबीर साहेब फरमाते हैं कि '${categoryTitle}'${primaryWordHint ? ` एवं "${primaryWordHint.word}" (${primaryWordHint.meaning})` : ''} के मर्म द्वारा साधक का लक्ष्य ${angProfile.angFocus} है। इसका स्वाध्याय साधक को बाह्य प्रपंचों से मुक्त कर आंतरिक चेतना से जोड़ता है।`
     : isPb
-    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਪਾਵਨ ਬਾਣੀ ("${originalCouplet.split('\n')[0]}") ਰਾਹੀਂ ਜੀਵ ਨੂੰ ਅੰਦਰੂਨੀ ਗਿਆਨ ਅਤੇ ਸਹਿਜ ਜੀਵਨ ਦਾ ਮਾਰਗ ਦਰਸਾਇਆ ਗਿਆ ਹੈ।`
-    : `Through "${originalCouplet.split('\n')[0]}", Satguru Kabir Saheb directs the seeker from outer illusion toward direct inner awareness.`;
+    ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ '${categoryTitle}'${primaryWordHint ? ` ਅਤੇ "${primaryWordHint.word}" (${primaryWordHint.meaning})` : ''} ਰਾਹੀਂ ਜੀਵ ਦਾ ਮੁੱਖ ਮਾਰਗ ${angProfile.angFocus} ਹੈ।`
+    : `Satguru Kabir Saheb proclaims through '${categoryTitle}'${primaryWordHint ? ` and "${primaryWordHint.word}" (${primaryWordHint.meaning})` : ''} the vital path of ${angProfile.angFocus}.`;
 
   const step2Context = {
     title: isHi ? '२. विषय संदर्भ एवं आध्यात्मिक पृष्ठभूमि' : isPb ? '੨. ਵਿਸ਼ਾ ਸੰਦਰਭ ਤੇ ਰੂਹਾਨੀ ਪਿੱਠਭੂਮੀ' : '2. Context & Spiritual Significance',
@@ -150,19 +155,44 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
   // 3. STEP 3: शब्दार्थ (Vocabulary)
   let wordsList = sakhi.wordMeanings[language] || sakhi.wordMeanings.hi || [];
   if (wordsList.length < 2) {
+    const glossaryTerms = Object.values(SANDHUKKARI_GLOSSARY);
     const tokens = originalCouplet
       .replace(/[।॥,.;:'"?!\n\r]/g, ' ')
       .split(/\s+/)
       .filter((t) => t.length >= 2)
-      .slice(0, 5);
-    wordsList = tokens.map((tok) => ({
-      word: tok,
-      meaning: isHi
-        ? `साखी #${sakhi.number} ('${categoryTitle}') में प्रयुक्त पावन पद`
-        : isPb
-        ? `ਸਾਖੀ #${sakhi.number} ('${categoryTitle}') ਵਿੱਚ ਆਇਆ ਪਾਵਨ ਸ਼ਬਦ`
-        : `Key term appearing in Sakhi #${sakhi.number} (${categoryTitle})`,
-    }));
+      .slice(0, 6);
+    const derivedWords: WordMeaning[] = [];
+    for (const tok of tokens) {
+      const cleanTok = tok.trim();
+      const matchedTerm = glossaryTerms.find(
+        (term) =>
+          term.word === cleanTok ||
+          term.punjabi === cleanTok ||
+          term.transliteration.toLowerCase() === cleanTok.toLowerCase() ||
+          cleanTok.includes(term.word) ||
+          cleanTok.includes(term.punjabi)
+      );
+      if (matchedTerm) {
+        const langKey: Language = isPb ? 'pb' : isHi ? 'hi' : 'en';
+        derivedWords.push({
+          word: tok,
+          meaning: matchedTerm.literalMeaning[langKey] || matchedTerm.esotericMeaning[langKey],
+        });
+      }
+      if (derivedWords.length >= 5) break;
+    }
+    if (derivedWords.length >= 2) {
+      wordsList = derivedWords;
+    } else {
+      wordsList = tokens.slice(0, 5).map((tok) => ({
+        word: tok,
+        meaning: isHi
+          ? `'${categoryTitle}' के अंतर्गत (${angProfile.angFocus}) से जुड़ा पावन पद`
+          : isPb
+          ? `'${categoryTitle}' ਤਹਿਤ (${angProfile.angFocus}) ਨਾਲ ਜੁੜਿਆ ਪਾਵਨ ਸ਼ਬਦ`
+          : `Sacred term within '${categoryTitle}' reflecting ${angProfile.angFocus}`,
+      }));
+    }
   }
   const step3Vocab = {
     title: isHi ? '३. शब्दार्थ' : isPb ? '੩. ਸ਼ਬਦਾਰਥ' : '3. Word Meanings & Glossary',
@@ -199,38 +229,37 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
   };
 
   // 6. STEP 6: सत्यनाम गूँज और सूरत-योग साधना
-  const firstLine = originalCouplet.split('\n')[0] || originalCouplet;
   const step6SuratYoga = {
     title: isHi ? '६. सत्यनाम गूँज और सूरत-योग साधना' : isPb ? '੬. ਸਤਯਨਾਮ ਗੂੰਜ ਅਤੇ ਸੁਰਤ-ਸ਼ਬਦ ਯੋਗ ਸਾਧਨਾ' : '6. Surat-Shabad Yoga & Satyanaam Resonance',
-    subtitle: isHi ? `साखी #${sakhi.number} के भाव के अनुरूप सूरत और शब्द का संधान` : isPb ? `ਸਾਖੀ #${sakhi.number} ਅਨੁਸਾਰ ਸੁਰਤ ਅਤੇ ਸ਼ਬਦ ਦਾ ਅਭਿਆਸ` : `Contemplative Breath & Sound Alignment for Sakhi #${sakhi.number}`,
+    subtitle: isHi ? `साखी #${sakhi.number} ('${categoryTitle}') के भाव के अनुरूप सूरत और शब्द का संधान` : isPb ? `ਸਾਖੀ #${sakhi.number} ('${categoryTitle}') ਅਨੁਸਾਰ ਸੁਰਤ ਅਤੇ ਸ਼ਬਦ ਦਾ ਅਭਿਆਸ` : `Contemplative Breath & Sound Alignment for Sakhi #${sakhi.number}`,
     suratFocusPrinciple: isHi
-      ? `साखी #${sakhi.number} ("${firstLine}") के इस पावन संदेश को ध्यान में रखते हुए अपनी सूरत को समस्त बाहरी विक्षेपों से मुक्त कर अंतर्मुखी करें।`
+      ? `साखी #${sakhi.number} ('${categoryTitle}') के केंद्रीय मर्म — ${angProfile.angFocus} — को हृदय में धारण कर ${angProfile.meditationAnchor}।`
       : isPb
-      ? `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਦੇ ਇਸ ਪਾਵਨ ਸੰਦੇਸ਼ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖਦਿਆਂ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਅੰਦਰੂਨੀ ਸ਼ਾਂਤੀ ਨਾਲ ਜੋੜੋ।`
-      : `Reflecting upon Sakhi #${sakhi.number} ("${firstLine}"), gather your attention inward and rest in the silent grace of Satyanaam.`,
+      ? `ਸਾਖੀ #${sakhi.number} ('${categoryTitle}') ਦੇ ਕੇਂਦਰੀ ਭਾਵ — ${angProfile.angFocus} — ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਂਦਿਆਂ ${angProfile.meditationAnchor}।`
+      : `Holding '${categoryTitle}' (${angProfile.angFocus}) at heart, ${angProfile.meditationAnchor}.`,
     shabadAnahatVibration: isHi
-      ? `श्वास-प्रश्वास की माला पर सत्यनाम का सिमरन करते हुए अनुभव करें कि सतगुरु का शब्द आपके अंतःकरण को पावन कर रहा है।`
+      ? `श्वास-प्रश्वास की माला पर "सत्यनाम" का सिमरन करते हुए '${categoryTitle}' के इस अभ्यास को जीएँ: ${angProfile.practiceDirective}`
       : isPb
-      ? `ਸੁਆਸਾਂ ਦੀ ਮਾਲਾ ਉੱਤੇ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰੋ ਅਤੇ ਮਹਿਸੂਸ ਕਰੋ ਕਿ ਸਤਿਗੁਰੂ ਦਾ ਸ਼ਬਦ ਤੁਹਾਡੇ ਹਿਰਦੇ ਨੂੰ ਪਵਿੱਤਰ ਕਰ ਰਿਹਾ ਹੈ।`
-      : `Practice breath remembrance of Satyanaam, feeling the unbroken resonance of the Satguru within.`,
+      ? `ਸੁਆਸਾਂ ਦੀ ਮਾਲਾ ਉੱਤੇ "ਸਤਯਨਾਮ" ਦਾ ਸਿਮਰਨ ਕਰਦਿਆਂ '${categoryTitle}' ਦੇ ਇਸ ਅਭਿਆਸ ਨੂੰ ਅਪਣਾਓ: ${angProfile.practiceDirective}`
+      : `Synchronize breath remembrance of Satyanaam with this Ang’s discipline: ${angProfile.practiceDirective}`,
     innerChimeGuidance: isHi
       ? [
-          `१. शांत आसन में बैठकर साखी #${sakhi.number} के इस मर्म का स्मरण करें: "${firstLine}"`,
+          `१. शांत आसन में बैठकर '${categoryTitle}' के केंद्रीय भाव (${angProfile.angFocus}) का मौन स्मरण करें।`,
           '२. श्वास लेते समय "सत्य" और छोड़ते समय "नाम" का मानसिक अजपा जाप करें।',
-          '३. मन के सभी विकारों को त्यागकर पूर्ण समर्पण भाव में स्थित हो जाएं।',
-          '४. अनहद शांति और आनंद का अनुभव करते हुए विश्राम करें।',
+          `३. ध्यान का आलंबन: ${angProfile.meditationAnchor}।`,
+          '४. अनहद शांति और आनंद का अनुभव करते हुए सतगुरु चरणों में विश्राम करें।',
         ]
       : isPb
       ? [
-          `੧. ਸ਼ਾਂਤ ਆਸਣ ਵਿੱਚ ਬੈਠ ਕੇ ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਦਾ ਮਨਨ ਕਰੋ।`,
+          `੧. ਸ਼ਾਂਤ ਆਸਣ ਵਿੱਚ ਬੈਠ ਕੇ '${categoryTitle}' (${angProfile.angFocus}) ਦੇ ਪਾਵਨ ਭਾਵ ਦਾ ਮਨਨ ਕਰੋ।`,
           '੨. ਸੁਆਸ ਲੈਂਦੇ ਸਮੇਂ "ਸਤਿ" ਅਤੇ ਛੱਡਦੇ ਸਮੇਂ "ਨਾਮ" ਦਾ ਮਾਨਸਿਕ ਸਿਮਰਨ ਕਰੋ।',
-          '੩. ਮਨ ਦੇ ਸਾਰੇ ਵਿਕਾਰਾਂ ਤੇ ਹੰਕਾਰ ਨੂੰ ਛੱਡ ਕੇ ਨਿਮਰ ਸਮਰਪਣ ਭਾਵ ਵਿੱਚ ਟਿਕ ਜਾਓ।',
+          `੩. ਧਿਆਨ-ਬਿੰਦੂ: ${angProfile.meditationAnchor}।`,
           '੪. ਅੰਦਰੂਨੀ ਅਨਹਦ ਸ਼ਾਂਤੀ ਦਾ ਅਨੁਭਵ ਕਰਦੇ ਹੋਏ ਵਿਸ਼ਰਾਮ ਕਰੋ।',
         ]
       : [
-          `1. Sit in stillness and contemplate Sakhi #${sakhi.number}: "${firstLine}"`,
+          `1. Sit in stillness and focus calmly on the essence of '${categoryTitle}': ${angProfile.angFocus}.`,
           '2. Mentally vibrate "Sat" on inhalation and "Naam" on exhalation.',
-          '3. Release all mental turbulence and ego into pure surrender.',
+          `3. Meditation Anchor: ${angProfile.meditationAnchor}.`,
           '4. Rest peacefully in the inner unstruck silence.',
         ],
     ghatMandirVisual: isHi
@@ -254,13 +283,14 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
       ? 'ਸਾਧਕ ਦੇ ਅੰਤਰਮੁਖੀ ਆਤਮ-ਮੰਥਨ ਲਈ ਖਾਸ ਸਵਾਲ'
       : 'Special Inquiry Prompts for this Sakhi',
     inquiryQuestions: [
-      originalContemplation,
+      originalContemplation || angProfile.reflectionLens,
+      angProfile.reflectionLens,
       isHi
-        ? `साखी #${sakhi.number} के इस संदेश को मैं आज अपने जीवन में किस प्रकार आचरण में लाऊँगा?`
+        ? `साखी #${sakhi.number} ('${categoryTitle}') के संदेश को आज मैं किस प्रकार आचरण में लाऊँगा?`
         : isPb
-        ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਇਸ ਸੰਦੇਸ਼ ਨੂੰ ਮੈਂ ਅੱਜ ਆਪਣੇ ਜੀਵਨ ਦੇ ਵਿਹਾਰ ਵਿੱਚ ਕਿਵੇਂ ਉਤਾਰਾਂਗਾ?`
-        : `How will I translate the teaching of Sakhi #${sakhi.number} into daily action today?`,
-    ],
+        ? `ਸਾਖੀ #${sakhi.number} ('${categoryTitle}') ਦੇ ਸੰਦੇਸ਼ ਨੂੰ ਮੈਂ ਅੱਜ ਆਪਣੇ ਵਿਹਾਰ ਵਿੱਚ ਕਿਵੇਂ ਉਤਾਰਾਂਗਾ?`
+        : `How will I translate Sakhi #${sakhi.number} (${categoryTitle}) into daily action today?`,
+    ].filter((q, idx, arr) => q && arr.indexOf(q) === idx),
     selfObservationGuide: isHi
       ? 'अपने उत्तर को साक्षी भाव से देखें।'
       : isPb
@@ -281,20 +311,8 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
       : isPb
       ? 'ਇਸ ਸਾਖੀ ਤੋਂ ਮਿਲਣ ਵਾਲਾ ਮੁੱਖ ਵਿਵਹਾਰਕ ਸੂਤਰ'
       : 'Core practical takeaway from this sakhi',
-    dailySadhanaSutra:
-      originalAction ||
-      (isHi
-        ? 'सत्य, संयम और निरंतर नाम सिमरन ही जीवन का सच्चा आभूषण है।'
-        : isPb
-        ? 'ਸੱਚ, ਸੰਜਮ ਅਤੇ ਨਿਰੰਤਰ ਨਾਮ ਸਿਮਰਨ ਹੀ ਜੀਵਨ ਦਾ ਅਸਲੀ ਗਹਿਣਾ ਹੈ।'
-        : "Truth, self-restraint, and continuous Simran are life's true adornment."),
-    sankalpPledge:
-      originalPrayer ||
-      (isHi
-        ? 'हे सतगुरु कबीर साहेब! मुझे इस साखी के मर्म पर अडिग रहने की शक्ति प्रदान करें।'
-        : isPb
-        ? 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਇਸ ਸਾਖੀ ਦੇ ਮਰਮ ਉੱਤੇ ਅਡਿੱਗ ਰਹਿਣ ਦੀ ਸ਼ਕਤੀ ਬਖਸ਼ੋ।'
-        : 'O Satguru Kabir Saheb, grant me the strength to abide firmly by this sacred teaching.'),
+    dailySadhanaSutra: originalAction || angProfile.practiceDirective,
+    sankalpPledge: originalPrayer || angProfile.blessingPhrase,
   };
 
   // 9. STEP 9: Five-dimension Quiz (synced via quizGenerator)
@@ -359,13 +377,7 @@ export function getEightStepSwadhyayData(sakhi: Sakhi, language: Language): Eigh
       : isPb
       ? 'ਸਾਹੇਬ ਮੇਰਾ ਏਕ ਹੈ, ਦੂਜਾ ਕਹੈ ਸੋ ਦੋਇ।'
       : 'Saheb mera ek hai, dooja kahe so doy.',
-    blessingMessage:
-      originalPrayer ||
-      (isHi
-        ? `सतगुरु कबीर साहेब की अहैतुकी कृपा से साखी #${sakhi.number} का यह स्वाध्याय आपके अंतःकरण को आलोकित करे।`
-        : isPb
-        ? `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਅਪਾਰ ਕਿਰਪਾ ਨਾਲ ਸਾਖੀ #${sakhi.number} ਦਾ ਇਹ ਸਵਾਧਿਆਇ ਤੁਹਾਡੇ ਹਿਰਦੇ ਨੂੰ ਪ੍ਰਕਾਸ਼ਮਾਨ ਕਰੇ।`
-        : `May the study of Sakhi #${sakhi.number} illuminate your inner consciousness with divine grace.`),
+    blessingMessage: originalPrayer || angProfile.blessingPhrase,
     finalSalutation: isPb
       ? '।।ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।। • ਸਤਯਨਾਮ'
       : '।।साहेब बंदगी साहेब।। • सत्यनाम',

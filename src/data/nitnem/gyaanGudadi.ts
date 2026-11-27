@@ -17,7 +17,7 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
   subtitle: {
     hi: "।। सत्यनाम ।। धर्मदास-कबीर संवाद, काया-गुदड़ी का आध्यात्मिक रहस्य एवं आत्म-बोध",
     pb: "॥ ਸਤਯਨਾਮ ॥ ਧਰਮਦਾਸ-ਕਬੀਰ ਸੰਵਾਦ, ਕਾਇਆ-ਗੁਦੜੀ ਦਾ ਅਧਿਆਤਮਕ ਰਹੱਸ ਅਤੇ ਆਤਮ-ਬੋਧ",
-    en: "Divine Dialogue of Dharmadas & Kabir Saheb on the Mystic Garment of Consciousness"
+    en: "Divine Dialogue of Dharmadas & Satguru Kabir Saheb on the Mystic Garment of Consciousness"
   },
   iconName: "Feather",
   estimatedMinutes: 12,
@@ -66,7 +66,7 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "सतगुरु कबीर साहेब कहते हैं: हे धर्मदास! एकाग्रचित्त होकर सुनो, मैं तुम्हें काया का भेद समझाता हूँ। जब अलख पुरुष ने सृष्टि-रचना का विचार किया, तब चौरासी लाख योनियों का ताना-बाना (धागा) फैलाया।",
+        hi: "सतगुरु कबीर साहेब फरमाते हैं: हे धर्मदास! एकाग्रचित्त होकर सुनो, मैं तुम्हें काया का भेद समझाता हूँ। जब अलख पुरुष ने सृष्टि-रचना का विचार किया, तब चौरासी लाख योनियों का ताना-बाना (धागा) फैलाया।",
         pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਧਰਮਦਾਸ! ਮਨ ਲਗਾ ਕੇ ਸੁਣੋ। ਜਦੋਂ ਅਲੱਖ ਪੁਰਖ ਨੇ ਸ੍ਰਿਸ਼ਟੀ ਦੀ ਰਚਨਾ ਕੀਤੀ, ਤਾਂ ਚੌਰਾਸੀ ਲੱਖ ਜੂਨੀਆਂ ਦਾ ਧਾਗਾ ਪਾਇਆ।",
         en: "Satguru Kabir speaks: Listen attentively, Dharmadas, as I unfold the body's secret. When the Ineffable Supreme Being willed creation, He spun the thread of 8.4 million lifeforms."
       }
@@ -204,7 +204,7 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "साधना की युक्ति रूपी कमंडल हाथ में लिया, प्रेम की खड़ाऊं पहनकर सद्गुरु की पहचान की। शील (सदाचार) की सेली, विवेक की माला और दया की टोपी धारण कर इस शरीर को धर्म की शाला (पवित्र मंदिर) बनाया।",
+        hi: "साधना की युक्ति रूपी कमंडल हाथ में लिया, प्रेम की खड़ाऊं पहनकर सतगुरु की पहचान की। शील (सदाचार) की सेली, विवेक की माला और दया की टोपी धारण कर इस शरीर को धर्म की शाला (पवित्र मंदिर) बनाया।",
         pb: "ਸਾਧਨਾ ਦੀ ਜੁਗਤ ਦਾ ਕਮੰਡਲ, ਪ੍ਰੇਮ ਦੀ ਖੜਾਵਾਂ ਨਾਲ ਸਤਿਗੁਰੂ ਨੂੰ ਪਛਾਣਿਆ। ਸ਼ੀਲ ਦੀ ਸੇਲੀ, ਵਿਵੇਕ ਦੀ ਮਾਲਾ ਤੇ ਦਇਆ ਦੀ ਟੋਪੀ ਪਹਿਨ ਕੇ ਤਨ ਨੂੰ ਧਰਮਸਾਲ ਬਣਾਇਆ।",
         en: "Holding the vessel of spiritual discernment, shod with love, the Master was recognized. Adorned with serenity, the rosary of wisdom, and the cap of mercy, the body became a temple."
       }
@@ -504,7 +504,7 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "जब सतगुरु कबीर साहेब ने यह ज्ञान-गुदड़ी बख्शी, तो देवताओं, मनुष्यों और मुनियों ने इसे श्रद्धा से सिर-माथे लिया। जो साधक प्रातःकाल इस ज्ञान गुदड़ी का पाठ करता है, उसके जन्म-जन्मांतरों के पाप नष्ट हो जाते हैं।",
-        pb: "ਜਦੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਇਹ ਦਾਤ ਬਖ਼ਸ਼ੀ ਤਾਂ ਸਭ ਨੇ ਇਸਨੂੰ ਧਾਰਨ ਕੀਤਾ। ਜੋ ਪ੍ਰਭਾਤ ਵੇਲੇ ਗਿਆਨ ਗੁਦੜੀ ਦਾ ਪਾਠ ਕਰਦਾ ਹੈ, ਉਸਦੇ ਜਨਮਾਂ-ਜਨਮਾਂਤਰਾਂ ਦੇ ਪਾਪ ਮਿਟ ਜਾਂਦੇ ਹਨ।",
+        pb: "ਜਦੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਹ ਦਾਤ ਬਖ਼ਸ਼ੀ ਤਾਂ ਸਭ ਨੇ ਇਸਨੂੰ ਧਾਰਨ ਕੀਤਾ। ਜੋ ਪ੍ਰਭਾਤ ਵੇਲੇ ਗਿਆਨ ਗੁਦੜੀ ਦਾ ਪਾਠ ਕਰਦਾ ਹੈ, ਉਸਦੇ ਜਨਮਾਂ-ਜਨਮਾਂਤਰਾਂ ਦੇ ਪਾਪ ਮਿਟ ਜਾਂਦੇ ਹਨ।",
         en: "When Satguru Kabir bestowed this divine robe, celestials, mortals, and sages embraced it. Whoever recites this Gyaan Gudadi in the morning is purged of lifetimes of sin."
       }
     },
@@ -549,8 +549,8 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "सद्गुरु कबीर साहेब कहते हैं: हे धर्मदास! इस ज्ञान गुदड़ी का संसार में प्रकाश करो। जिसने इस काया-गुदड़ी के आध्यात्मिक सार को समझ लिया, उसका संसार में बार-बार आना-जाना (आवागमन) सदा के लिए समाप्त हो जाता है।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਧਰਮਦਾਸ! ਇਸ ਗਿਆਨ ਗੁਦੜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਕਰੋ। ਜਿਸਨੇ ਇਸਦਾ ਸਾਰ ਜਾਣ ਲਿਆ, ਉਸਦਾ ਜਨਮ-ਮਰਨ ਦਾ ਚੱਕਰ ਸਦਾ ਲਈ ਮਿਟ ਜਾਂਦਾ ਹੈ।",
+        hi: "सतगुरु कबीर साहेब फरमाते हैं: हे धर्मदास! इस ज्ञान गुदड़ी का संसार में प्रकाश करो। जिसने इस काया-गुदड़ी के आध्यात्मिक सार को समझ लिया, उसका संसार में बार-बार आना-जाना (आवागमन) सदा के लिए समाप्त हो जाता है।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਧਰਮਦਾਸ! ਇਸ ਗਿਆਨ ਗੁਦੜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਕਰੋ। ਜਿਸਨੇ ਇਸਦਾ ਸਾਰ ਜਾਣ ਲਿਆ, ਉਸਦਾ ਜਨਮ-ਮਰਨ ਦਾ ਚੱਕਰ ਸਦਾ ਲਈ ਮਿਟ ਜਾਂਦਾ ਹੈ।",
         en: "Says Kabir: Listen Dharmadas, illuminate the world with this Gyaan Gudadi. He who grasps the true essence of this bodily garment is released forever from the cycle of transmigration."
       }
     },
@@ -572,7 +572,7 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "सद्गुरु ने कृपा कर मुझे विवेक की माला, दया की टोपी और नाम-सुमिरनी की अनमोल बख्शीश दी है। मैं पल-पल अपने पूज्य गुरुदेव की बंदगी करता हूँ और उनके पावन चरणों में शीश नवाता हूँ।",
+        hi: "सतगुरु ने कृपा कर मुझे विवेक की माला, दया की टोपी और नाम-सुमिरनी की अनमोल बख्शीश दी है। मैं पल-पल अपने पूज्य गुरुदेव की बंदगी करता हूँ और उनके पावन चरणों में शीश नवाता हूँ।",
         pb: "ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਮਾਲਾ, ਟੋਪੀ ਅਤੇ ਸਿਮਰਨੀ ਦੀ ਬਖ਼ਸ਼ਿਸ਼ ਕੀਤੀ ਹੈ। ਮੈਂ ਹਰ ਪਲ ਗੁਰੂ ਦੀ ਬੰਦਗੀ ਕਰਦਾ ਹਾਂ ਅਤੇ ਚਰਨਾਂ ਵਿੱਚ ਸੀਸ ਝੁਕਾਉਂਦਾ ਹਾਂ।",
         en: "The True Master blessed me with the rosary of mindfulness, cap of compassion, and bead of remembrance. Every moment I offer homage, bowing my head at His sacred feet."
       }
@@ -596,7 +596,7 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "संसार के भय को नष्ट करने वाले, समस्त दुखों को हरने वाले और आत्मा को अजर-अमर पद देने वाले सतगुरु कबीर साहेब आप ही सृष्टि के आदि और युगादि से चारों युगों में सत्य रूप से विद्यमान हैं।",
-        pb: "ਸੰਸਾਰ ਦੇ ਭੈਅ ਮਿਟਾਉਣ ਵਾਲੇ, ਦੁੱਖ ਦੂਰ ਕਰਨ ਵਾਲੇ ਤੇ ਅਮਰ ਪਦ ਦੇਣ ਵਾਲੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਆਪ ਹੀ ਚਾਰੇ ਯੁਗਾਂ ਵਿੱਚ ਸੱਚੇ ਪ੍ਰਕਾਸ਼ ਰੂਪ ਹੋ।",
+        pb: "ਸੰਸਾਰ ਦੇ ਭੈਅ ਮਿਟਾਉਣ ਵਾਲੇ, ਦੁੱਖ ਦੂਰ ਕਰਨ ਵਾਲੇ ਤੇ ਅਮਰ ਪਦ ਦੇਣ ਵਾਲੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਹੀ ਚਾਰੇ ਯੁਗਾਂ ਵਿੱਚ ਸੱਚੇ ਪ੍ਰਕਾਸ਼ ਰੂਪ ਹੋ।",
         en: "Destroyer of worldly fear, remover of all sorrow, bestower of immortality—You are from the beginning, throughout all ages, manifest in all four eras as Kabir."
       }
     },
@@ -641,8 +641,8 @@ export const GYAAN_GUDADI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "सद्गुरु कबीर साहेब वचन देते हैं: मेरा सत्य-शब्द सर्वसमर्थ है और मैं अपने सत्य-मार्ग से कभी विचलित नहीं होता। जो हंस आत्मा इस सत्य-शब्द के रथ पर आरूढ़ होगी, उसे मैं निश्चित रूप से अमर सत्यलोक पहुँचाऊँगा।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੇਰਾ ਸ਼ਬਦ ਸਮਰੱਥ ਹੈ ਤੇ ਮੈਂ ਕਦੇ ਡੋਲਦਾ ਨਹੀਂ। ਜੋ ਸ਼ਬਦ ਦੇ ਰਥ ਤੇ ਸਵਾਰ ਹੋਵੇਗਾ, ਉਸਨੂੰ ਮੈਂ ਅਮਰ ਸੱਚਖੰਡ ਪਹੁੰਚਾਵਾਂਗਾ।",
+        hi: "सतगुरु कबीर साहेब वचन देते हैं: मेरा सत्य-शब्द सर्वसमर्थ है और मैं अपने सत्य-मार्ग से कभी विचलित नहीं होता। जो हंस आत्मा इस सत्य-शब्द के रथ पर आरूढ़ होगी, उसे मैं निश्चित रूप से अमर सत्यलोक पहुँचाऊँगा।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੇਰਾ ਸ਼ਬਦ ਸਮਰੱਥ ਹੈ ਤੇ ਮੈਂ ਕਦੇ ਡੋਲਦਾ ਨਹੀਂ। ਜੋ ਸ਼ਬਦ ਦੇ ਰਥ ਤੇ ਸਵਾਰ ਹੋਵੇਗਾ, ਉਸਨੂੰ ਮੈਂ ਅਮਰ ਸੱਚਖੰਡ ਪਹੁੰਚਾਵਾਂਗਾ।",
         en: "I, Kabir, waver never; all-powerful is my Word. Whosoever ascends the celestial chariot of this Word, him shall I convey to the eternal Abode."
       }
     },
@@ -689,7 +689,7 @@ export const SANDHYA_GYAN_GUDADI_SECTION: NitnemSection = {
   subtitle: {
     hi: "।। सत्यनाम ।। संध्या वेला धर्मदास-कबीर संवाद, काया-गुदड़ी का आध्यात्मिक रहस्य एवं आत्म-बोध",
     pb: "॥ ਸਤਯਨਾਮ ॥ ਸੰਧਿਆ ਵੇਲੇ ਧਰਮਦਾਸ-ਕਬੀਰ ਸੰਵਾਦ, ਕਾਇਆ-ਗੁਦੜੀ ਦਾ ਅਧਿਆਤਮਕ ਰਹੱਸ ਅਤੇ ਆਤਮ-ਬੋਧ",
-    en: "Evening Divine Dialogue of Dharmadas & Kabir Saheb on the Mystic Garment of Consciousness"
+    en: "Evening Divine Dialogue of Dharmadas & Satguru Kabir Saheb on the Mystic Garment of Consciousness"
   },
   iconName: "Feather",
   estimatedMinutes: 12,

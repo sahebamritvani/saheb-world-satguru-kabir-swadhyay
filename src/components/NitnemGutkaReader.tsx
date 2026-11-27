@@ -468,6 +468,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
   // Live refresh when Admin Data Injector injects or purges Slot #1 without page reload
   const [haziriModalState, setHaziriModalState] = useState<HaziriState>(() => getHaziriState());
   const [showNitnemHaziriModal, setShowNitnemHaziriModal] = useState<boolean>(false);
+  const [showNitnemOverview, setShowNitnemOverview] = useState<boolean>(false);
 
   useEffect(() => {
     const unsubHz = subscribeToHaziri((hz) => {
@@ -2295,7 +2296,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             {viewMode === 'selection' && (
               <p className="hidden md:block text-[0.6875rem] opacity-90 font-serif mt-0.5 truncate">
                 {language === 'pb' 
-                  ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
+                  ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
                   : language === 'en' 
                   ? 'Satguru Kabir Saheb Daily Prayers, Praises, Aarti & Sacred Texts' 
                   : 'सतगुरु कबीर साहेब नित्य पाठ, अस्तुति, आरती एवं ग्रन्थ संग्रह'}
@@ -2391,6 +2392,96 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
           /* SELECTION VIEW: Index First with V-shape Collapsible Controls             */
           /* ========================================================================= */
           <div className="w-full mx-auto space-y-6">
+
+            {/* COLLAPSIBLE OVERVIEW CARD ("ग्रंथ परिचय एवं नित्य पाठ महत्व") */}
+            <div
+              style={{
+                backgroundColor: theme.cardBg,
+                borderColor: theme.accentGold,
+                color: theme.textPrimary,
+              }}
+              className="border-2 rounded-3xl p-4 sm:p-5 shadow-sm backdrop-blur-md transition-all space-y-3"
+            >
+              <div className="flex items-center justify-between gap-3 cursor-pointer" onClick={() => setShowNitnemOverview(!showNitnemOverview)}>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-700 dark:text-amber-300 font-bold shrink-0">
+                    📜
+                  </div>
+                  <div>
+                    <h3 style={{ color: theme.sacredMaroon }} className="font-serif font-black text-sm sm:text-base">
+                      {language === 'pb' ? 'ਗ੍ਰੰਥ ਪਰਿਚਯ ਅਤੇ ਨਿੱਤ ਪਾਠ ਮਹੱਤਵ' : language === 'en' ? 'Scripture Overview & Daily Path Importance' : 'ग्रंथ परिचय एवं नित्य पाठ महत्व'}
+                    </h3>
+                    <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
+                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ ਦਾ ਰੂਹਾਨੀ ਸਰੂਪ' : language === 'en' ? 'Spiritual essence of Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब का पावन परिचय'}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    sacredHaptics.lightTap();
+                    setShowNitnemOverview(!showNitnemOverview);
+                  }}
+                  style={{
+                    backgroundColor: showNitnemOverview ? theme.accentGoldLight : theme.stepActiveBg,
+                    borderColor: theme.accentGold,
+                    color: theme.sacredMaroon,
+                  }}
+                  className="px-3.5 py-1.5 rounded-xl border text-xs font-serif font-black flex items-center gap-1.5 transition cursor-pointer shrink-0"
+                >
+                  <span>
+                    {showNitnemOverview
+                      ? (language === 'pb' ? 'ਛੁਪਾਓ' : language === 'en' ? 'Hide' : 'छुपाएं')
+                      : (language === 'pb' ? 'ਵੇਖੋ' : language === 'en' ? 'Show' : 'देखें')}
+                  </span>
+                  {showNitnemOverview ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                </button>
+              </div>
+
+              {showNitnemOverview && (
+                <div className="space-y-3 pt-3 border-t border-amber-500/20 text-xs sm:text-sm font-serif leading-relaxed animate-fadeIn">
+                  <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-1">
+                    <strong className="text-amber-900 dark:text-amber-300 font-bold block">
+                      {language === 'pb' ? '੧. ਪਾਵਨ ਗ੍ਰੰਥ ਪਰਿਚਯ:' : language === 'en' ? '1. Sacred Granth Introduction:' : '१. पावन ग्रंथ परिचय:'}
+                    </strong>
+                    <p className="opacity-95">
+                      {language === 'pb'
+                        ? "'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' ਸਾਧਕਾਂ ਦੇ ਰੋਜ਼ਾਨਾ ਰੂਹਾਨੀ ਅਨੁਸ਼ਾਸਨ (ਨਿੱਤ ਨੇਮ) ਅਤੇ ਵਿਸ਼ੇਸ਼ ਤਿਉਹਾਰਾਂ ਦੇ ਸਵਾਧਿਆਏ ਲਈ ਸੰਕਲਪਿਤ ਇੱਕ ਬੇਹੱਦ ਪਵਿੱਤਰ ਅਤੇ ਪ੍ਰਮਾਣਿਕ ਪਾਠ-ਸੰਗ੍ਰਹਿ ਹੈ।"
+                        : language === 'en'
+                        ? "'Satguru Kabir Saheb Nitnem Gutka Saheb' is a sacred, authentic scripture anthology compiled for practitioners' daily spiritual discipline (Nitya Niyam) and auspicious scriptural study."
+                        : "'सतगुरु कबीर साहेब नितनेम गुटका साहेब' साधकों के दैनिक आध्यात्मिक अनुशासन (नित्य नियम) और विशेष पर्वों के स्वाध्याय के लिए संकलित एक अत्यंत पावन और प्रमाणिक पाठ-संग्रह है।"}
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-1">
+                    <strong className="text-amber-900 dark:text-amber-300 font-bold block">
+                      {language === 'pb' ? '੨. ਆਤਮਿਕ ਮਹੱਤਵ (ਇੱਕ ਸਤਯਨਾਮ):' : language === 'en' ? '2. Spiritual Significance (One Satyanaam):' : '२. आध्यात्मिक महत्व (एक सत्यनाम):'}
+                    </strong>
+                    <p className="opacity-95">
+                      {language === 'pb'
+                        ? "ਜਿਸ ਤਰ੍ਹਾਂ ਸਰੀਰ ਲਈ ਰੋਜ਼ਾਨਾ ਭੋਜਨ ਜ਼ਰੂਰੀ ਹੈ, ਉਸੇ ਤਰ੍ਹਾਂ ਆਤਮਾ ਦੀ ਸ਼ੁੱਧੀ, ਮਾਨਸਿਕ ਸ਼ਾਂਤੀ ਅਤੇ ਦਿਨ ਭਰ 'ਸਤਯਨਾਮ' ਨਾਲ ਜੁੜੇ ਰਹਿਣ ਲਈ ਪ੍ਰਭਾਤ, ਸੰਧਿਆ ਤੇ ਨਿੱਤ ਗਾਇਤਰੀ ਪਾਠ ਲਾਜ਼ਮੀ ਹਨ।"
+                        : language === 'en'
+                        ? "Just as daily food is essential for the physical body, morning, evening, and regular Gayatri recitations are indispensable for soul purification, inner peace, and constant remembrance of 'Satyanaam'."
+                        : "जिस प्रकार शरीर के लिए प्रतिदिन भोजन आवश्यक है, उसी प्रकार आत्मा की शुद्धि, मानसिक शांति और दिन भर 'सत्यनाम' से जुड़े रहने के लिए प्रातः, संध्या व नित्य गायत्री पाठ अनिवार्य है।"}
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-1">
+                    <strong className="text-amber-900 dark:text-amber-300 font-bold block">
+                      {language === 'pb' ? '੩. ਸੰਪੂਰਨ ੭-ਖੰਡੀਏ ਵਿਵਸਥਾ:' : language === 'en' ? '3. Complete 7-Section Architecture:' : '३. संपूर्ण ७-खंडीय व्यवस्था:'}
+                    </strong>
+                    <p className="opacity-95">
+                      {language === 'pb'
+                        ? "ਇਸ ਵਿੱਚ ਪ੍ਰਭਾਤ ਅਤੇ ਸੰਧਿਆ ਦੇ ਨਿੱਤ ਪਾਠਾਂ ਦੇ ਨਾਲ-ਨਾਲ ਪੰਜੇ ਗਾਇਤਰੀਆਂ, ਪੂਨੋ ਮਹਾਤਮਯ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਚਾਲੀਸਾ, ਬਾਰਹਮਾਸੀ ਅਤੇ ਤੀਸਾ ਯੰਤਰ ਇੱਕੋ ਪ੍ਰਮਾਣਿਕ ਕ੍ਰਮ ਵਿੱਚ ਵਿਵਸਥਿਤ ਹਨ।"
+                        : language === 'en'
+                        ? "It features morning and evening daily paths alongside all five Gayatris, Poono Mahatmya, Satguru Kabir Chalisa, Baramasi, and Teesa Yantra in one authentic sequential order."
+                        : "इसमें प्रातः और संध्या के नित्य पाठों के साथ-साथ पाँचों गायत्री, पूनो महात्म्य, सतगुरु कबीर चालीसा, बारहमासी और तीसा यंत्र एक ही प्रमाणिक क्रम में व्यवस्थित हैं।"}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* 1. SMART TIME & PURNIMA RECOMMENDATION + DAILY HAZIRI STATUS */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
@@ -2537,7 +2628,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਅਨੁਕ੍ਰਮਣਿਕਾ ਤੇ ਸੂਚੀ' : language === 'en' ? 'Sacred Nitnem Index & Chapters' : 'पावन नितनेम अनुक्रमणिका व सूची'}
                     </h2>
                     <p className="text-xs text-amber-100 font-serif">
-                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
+                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
                     </p>
                   </div>
                 </div>
@@ -3940,7 +4031,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           </div>
                                           <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed text-xs sm:text-sm`}>
                                             <SmartGlossaryText 
-                                              text={verse.bhavarth?.[language] || verse.bhavarth?.hi || 'कबीर साहेब की यह पावन वाणी जीवात्मा को सत्य का दर्शन कराती है।'}
+                                              text={verse.bhavarth?.[language] || verse.bhavarth?.hi || 'सतगुरु कबीर साहेब की यह पावन वाणी जीवात्मा को सत्य का दर्शन कराती है।'}
                                               language={language}
                                             />
                                           </div>
@@ -4031,7 +4122,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
                                         <div className="pt-2 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
                                           <span className="text-[0.6875rem] text-gray-500 font-serif">
-                                            {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਖਿਚੜੀ / ਸਾਧੁੱਕੜੀ ਭਾਸ਼ਾ' : language === 'en' ? 'Kabir Saheb’s Khichadi / Sandhukkari Language' : 'कबीर साहेब की खिचड़ी / साधुक्कड़ी भाषा'}
+                                            {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਖਿਚੜੀ / ਸਾਧੁੱਕੜੀ ਭਾਸ਼ਾ' : language === 'en' ? 'Satguru Kabir Saheb’s Khichadi / Sandhukkari Language' : 'सतगुरु कबीर साहेब की खिचड़ी / साधुक्कड़ी भाषा'}
                                           </span>
                                           <button
                                             type="button"
@@ -4618,7 +4709,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     {language === 'pb' ? 'ਸਾਧੁੱਕੜੀ ਸ਼ਬਦਕੋਸ਼ (ਖਿਚੜੀ ਭਾਸ਼ਾ)' : language === 'en' ? 'Sandhukkari Spiritual Glossary' : 'साधुक्कड़ी शब्दकोश (संत / खिचड़ी भाषा)'}
                   </h3>
                   <p className="text-[0.6875rem] text-amber-800 dark:text-amber-400 font-serif">
-                    {language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਰਥ ਤੇ ਆਤਮਿਕ ਰਹੱਸ' : language === 'en' ? 'Deep meanings, etymology & spiritual essence of Kabir Saheb Bani' : 'कबीर साहेब की वाणी के गूढ़ शब्दार्थ, व्युत्पत्ति एवं आत्मिक रहस्य'}
+                    {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਰਥ ਤੇ ਆਤਮਿਕ ਰਹੱਸ' : language === 'en' ? 'Deep meanings, etymology & spiritual essence of Satguru Kabir Saheb Bani' : 'सतगुरु कबीर साहेब की वाणी के गूढ़ शब्दार्थ, व्युत्पत्ति एवं आत्मिक रहस्य'}
                   </p>
                 </div>
               </div>

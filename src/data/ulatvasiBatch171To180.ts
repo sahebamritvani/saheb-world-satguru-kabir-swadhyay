@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਇਕਾਗਰ ਧਿਆਨ ਨਾਲ ਕਰਮਾਂ ਦਾ ਨਾਸ਼ ਹੁੰਦਾ ਹੈ।',
         en: 'Pinpointed meditation dissolves mountains of past karmic debt.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਾਣਾਂ ਦਾ ਉੱਪਰ ਉੱਠਣਾ ਹੀ ਯੋਗ ਹੈ।',
         en: 'Reversing life energy upward to crown center drenches the soul in divine bliss.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਵਾਸਨਾ ਦਾ ਅੰਤ ਹੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Complete annihilation of mental impressions unlocks spiritual liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਗੁਰੂ ਦਾ ਸ਼ਬਦ ਹੀ ਹਿਰਦੇ ਨੂੰ ਪਵਿੱਤਰ ਬਣਾਉਂਦਾ ਹੈ।',
         en: 'The Master Word fashions and ripens the human heart into immortal Truth.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -216,8 +216,8 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '175. चूहे ने लोहे की जंजीर चबाई', pb: '175. ਚੂਹੇ ਨੇ ਲੋਹੇ ਦੀ ਜ਼ੰਜੀਰ ਚਬਾਈ', en: '175. Mouse Chewed the Iron Chain' },
     verse: {
-      hi: '"मूस ने लोहे की जंजीर चबाई, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह सद्गुरु का ग्यान॥"',
-      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਜੰਜੀਰ ਚਬਾਈ, ਹਸਤੀ ਖੜਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਦਗੁਰੂ ਕਾ ਗ੍ਯਾਨ॥"',
+      hi: '"मूस ने लोहे की जंजीर चबाई, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह सतगुरु का ग्यान॥"',
+      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਜੰਜੀਰ ਚਬਾਈ, ਹਸਤੀ ਖੜਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਤਿਗੁਰੂ ਕਾ ਗ੍ਯਾਨ॥"',
       en: '"Mouse chewed through the iron chain, elephant stood bewildered. Says Kabir listen saints, this is the wisdom of True Master."'
     },
     literalParadox: {
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਕਰਮ-ਬੰਧਨ ਕੱਟਦੇ ਹਨ।',
         en: 'Unceasing meditation on Holy Name chews apart all karmic bondage.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'इंद्रियातीत दिव्य दृष्टि एवं अनहद नाद', pb: 'ਅੰਦਰੂਨੀ ਅੱਖ ਅਤੇ ਆਤਮ-ਗਿਆਨ', en: 'Transcendental Inner Vision and Unstruck Sound' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ इंद्रियों से परे आत्मा की मूल शक्ति का वर्णन कर रहे हैं। जब साधक का ध्यान चरम पर होता है, तो उसे अंतरात्मा से ही दिव्य ज्ञान का दर्शन होता है। उसे सत्य को देखने के लिए बाहरी आँखों या अनहद सुनने के लिए कानों की आवश्यकता नहीं होती।',
+        hi: 'सतगुरु कबीर साहेब यहाँ इंद्रियों से परे आत्मा की मूल शक्ति का वर्णन कर रहे हैं। जब साधक का ध्यान चरम पर होता है, तो उसे अंतरात्मा से ही दिव्य ज्ञान का दर्शन होता है। उसे सत्य को देखने के लिए बाहरी आँखों या अनहद सुनने के लिए कानों की आवश्यकता नहीं होती।',
         pb: 'ਧਿਆਨ ਦੀ ਉੱਚੀ ਅਵਸਥਾ ਵਿੱਚ ਸਾਧਕ ਅੰਦਰੂਨੀ ਅੱਖ ਨਾਲ ਸੱਚ ਦੇਖਦਾ ਹੈ ਅਤੇ ਅਨਹਦ ਸ਼ਬਦ ਸੁਣਦਾ ਹੈ।',
         en: 'Spiritual vision transcends physical flesh. Upon reaching deep absorption, the soul sees Truth via third eye and hears the divine Unstruck Sound.'
       },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਾ ਆਪ ਹੀ ਦੇਖਣ ਅਤੇ ਸੁਣਨ ਵਾਲੀ ਹੈ।',
         en: 'The spirit is self-sufficient witness, independent of physical sense organs.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਅੰਦਰ ਹੀ ਪ੍ਰਮਾਤਮਾ ਹੈ, ਬਾਹਰ ਢੂੰਢਣਾ ਅਗਿਆਨਤਾ ਹੈ।',
         en: 'The Supreme Lord is right inside the heart; searching outside is pure ignorance.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰੇਮ ਨਾਲ ਆਤਮ-ਆਨੰਦ ਮਿਲਦਾ ਹੈ।',
         en: 'Enslavement to Divine Love grants ultimate spiritual joy.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -435,11 +435,11 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
     },
     clueHint: {
       hi: 'सूखा तरुवर = विरक्त संत का शरीर/उपदेश; अमृत बरसे = ज्ञान-वाणी; धरती = कठोर संसारी मन जो ज्ञान से नहीं भीगता।',
-      pb: 'ਸੁੱਕਾ ਰੁੱਖ ਸਦਗੁਰੂ ਹੈ, ਅੰਮ੍ਰਿਤ ਗਿਆਨ ਹੈ, ਧਰਤੀ ਮੋਹੀ ਹਿਰਦਾ ਹੈ।',
+      pb: 'ਸੁੱਕਾ ਰੁੱਖ ਸਤਿਗੁਰੂ ਹੈ, ਅੰਮ੍ਰਿਤ ਗਿਆਨ ਹੈ, ਧਰਤੀ ਮੋਹੀ ਹਿਰਦਾ ਹੈ।',
       en: 'Dry Tree = Detached Satguru / Master; Ambrosia Shower = Divine Wisdom; Dry Earth = Unreceptive worldly heart.'
     },
     symbols: [
-      { symbol: 'सूखे तरुवर से अमृत (Nectar from Dry Tree)', meaning: { hi: 'संसार से विरक्त (सूखे) सद्गुरु के मुख से बहने वाली ज्ञान-अमृत वर्षा', pb: 'ਸਦਗੁਰੂ ਤੋਂ ਗਿਆਨ-ਅੰਮ੍ਰਿਤ ਦੀ ਵਰਖਾ', en: 'Shower of divine wisdom pouring from the worldly-detached Master' } },
+      { symbol: 'सूखे तरुवर से अमृत (Nectar from Dry Tree)', meaning: { hi: 'संसार से विरक्त (सूखे) सतगुरु के मुख से बहने वाली ज्ञान-अमृत वर्षा', pb: 'ਸਤਿਗੁਰੂ ਤੋਂ ਗਿਆਨ-ਅੰਮ੍ਰਿਤ ਦੀ ਵਰਖਾ', en: 'Shower of divine wisdom pouring from the worldly-detached Master' } },
       { symbol: 'धरती भींजै नहिं (Earth Remaining Unsoaked)', meaning: { hi: 'अज्ञानी और कठोर संसारी जीवों के हृदय का ज्ञान-वर्षा के बाद भी सूखा रहना', pb: 'ਅਗਿਆਨੀ ਹਿਰਦੇ ਦਾ ਸੁੱਕਾ ਰਹਿਣਾ', en: 'Hardened worldly mind remaining completely dry despite divine grace' } }
     ],
     question: {
@@ -456,8 +456,8 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'गुरु की ज्ञान वर्षा एवं संसारी चित्त', pb: 'ਗੁਰੂ ਦੀ ਗਿਆਨ-ਵਰਖਾ ਅਤੇ ਮਨ', en: 'Divine Wisdom Rain and Hardened Worldly Heart' },
       deepMeaning: {
-        hi: 'सूखा तरुवर यहाँ सद्गुरु या विरक्त संत का शरीर है जो बाहर से संसार के भोगों के लिए बिल्कुल सूखा (उदासीन) दिखता है। लेकिन उनके मुख से ज्ञान-अमृत बरसता है। विडंबना यह है कि अज्ञानी जीवों का हृदय (धरती) इतना कठोर होता है कि वह ज्ञान-वर्षा के बाद भी सूखा रहता है।',
-        pb: 'ਸਦਗੁਰੂ ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਅੰਮ੍ਰਿਤ ਵਰ੍ਹਾਉਂਦੇ ਹਨ, ਪਰ ਸੰਸਾਰੀ ਮਨੁੱਖ ਦਾ ਹਿਰਦਾ ਸੁੱਕਾ ਹੀ ਰਹਿੰਦਾ ਹੈ।',
+        hi: 'सूखा तरुवर यहाँ सतगुरु या विरक्त संत का शरीर है जो बाहर से संसार के भोगों के लिए बिल्कुल सूखा (उदासीन) दिखता है। लेकिन उनके मुख से ज्ञान-अमृत बरसता है। विडंबना यह है कि अज्ञानी जीवों का हृदय (धरती) इतना कठोर होता है कि वह ज्ञान-वर्षा के बाद भी सूखा रहता है।',
+        pb: 'ਸਤਿਗੁਰੂ ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਅੰਮ੍ਰਿਤ ਵਰ੍ਹਾਉਂਦੇ ਹਨ, ਪਰ ਸੰਸਾਰੀ ਮਨੁੱਖ ਦਾ ਹਿਰਦਾ ਸੁੱਕਾ ਹੀ ਰਹਿੰਦਾ ਹੈ।',
         en: 'The dry tree is the detached Satguru. From Him flows torrents of Divine Wisdom, yet hardened unreceptive worldly hearts remain dery and unbent.'
       },
       kabirPhilosophy: {
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਸ਼ਰਧਾ ਤੋਂ ਬਿਨਾਂ ਗਿਆਨ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ।',
         en: 'Without humility and faith, even showers of supreme wisdom cannot drench the heart.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_171_TO_180: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਗਿਆਨ ਨਾਲ ਸਾਰੇ ਦਵੰਦ ਮਿਟ ਜਾਂਦੇ ਹਨ।',
         en: 'Self-luminous Spirit destroys all illusions of duality and separation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

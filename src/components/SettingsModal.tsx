@@ -855,7 +855,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     speechReciter.setPitch(speechPitch);
     const testSampleText =
       activeLang === 'pb'
-        ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਜੈ। ਸਤਯਨਾਮ ਹੀ ਸਾਰ ਸ਼ਬਦ ਹੈ।'
+        ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਜੈ। ਸਤਯਨਾਮ ਹੀ ਸਾਰ ਸ਼ਬਦ ਹੈ।'
         : activeLang === 'en'
         ? 'Hail Satguru Kabir Saheb. Satyanaam is the supreme essence of truth.'
         : 'सतगुरु कबीर साहेब की जय। सत्यनाम ही सार शब्द है।';

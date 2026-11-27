@@ -79,7 +79,7 @@ export const TextCorrectionModal: React.FC<TextCorrectionModalProps> = ({
                 </h4>
                 <p className="text-xs font-serif opacity-75 max-w-xs mx-auto">
                   {language === 'pb'
-                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਸ਼ੁੱਧਤਾ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ। ਅਗਲੇ ਅਪਡੇਟ ਵਿੱਚ ਇਸਨੂੰ ਦਰੁਸਤ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।'
+                    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦੀ ਸ਼ੁੱਧਤਾ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ। ਅਗਲੇ ਅਪਡੇਟ ਵਿੱਚ ਇਸਨੂੰ ਦਰੁਸਤ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।'
                     : language === 'en'
                     ? 'Thank you for helping preserve the purity of Satguru Kabir Saheb\'s verses. This will be reviewed and corrected.'
                     : 'सतगुरु कबीर साहेब की वाणी की शुद्धता एवं पवित्रता बनाए रखने में सहयोग हेतु धन्यवाद। अगले अपडेट में इसे जांचकर तुरंत ठीक कर दिया जाएगा।'}

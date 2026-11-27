@@ -125,7 +125,7 @@ export const VINATI_PRAVANCHI_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "विनती (नमो नमो निज नाम): हे कृपालु कबीर! आपको बारम्बार नमन है। जैसे जहाज पर रहने वाला पक्षी (कौआ) अन्य कहीं आश्रय न पाकर जहाज पर ही लौटता है, वैसे ही हे बन्दिछोर! आपके बिना मेरा अन्य कोई ठौर नहीं है। हे आदिनाम स्वरूप, दया के सागर! मेरा उद्धार कीजिए, आप ही मेरे तारणहार हैं।",
-        pb: "ਬੇਨਤੀ (ਨਮੋ ਨਮੋ ਨਿਜ ਨਾਮ): ਹੇ ਕ੍ਰਿਪਾਲੂ ਕਬੀਰ ਜੀ! ਆਪ ਜੀ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਜਿਵੇਂ ਜਹਾਜ਼ ਉੱਤੇ ਬੈਠਾ ਕਾਗ ਹੋਰ ਕਿਤੇ ਆਸਰਾ ਨਾ ਪਾ ਕੇ ਜਹਾਜ਼ 'ਤੇ ਹੀ ਵਾਪਸ ਮੁੜਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਹੇ ਬੰਦਿਛੋਰ! ਆਪ ਜੀ ਤੋਂ ਬਿਨਾਂ ਸਾਡਾ ਕੋਈ ਹੋਰ ਟਿਕਾਣਾ ਨਹੀਂ। ਹੇ ਦੀਨਬੰਧੂ! ਸਾਡਾ ਉੱਧਾਰ ਕਰੋ।",
+        pb: "ਬੇਨਤੀ (ਨਮੋ ਨਮੋ ਨਿਜ ਨਾਮ): ਹੇ ਕ੍ਰਿਪਾਲੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਜੀ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਜਿਵੇਂ ਜਹਾਜ਼ ਉੱਤੇ ਬੈਠਾ ਕਾਗ ਹੋਰ ਕਿਤੇ ਆਸਰਾ ਨਾ ਪਾ ਕੇ ਜਹਾਜ਼ 'ਤੇ ਹੀ ਵਾਪਸ ਮੁੜਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਹੇ ਬੰਦਿਛੋਰ! ਆਪ ਜੀ ਤੋਂ ਬਿਨਾਂ ਸਾਡਾ ਕੋਈ ਹੋਰ ਟਿਕਾਣਾ ਨਹੀਂ। ਹੇ ਦੀਨਬੰਧੂ! ਸਾਡਾ ਉੱਧਾਰ ਕਰੋ।",
         en: "Petition (Namo Namo): O compassionate Kabir! Countless salutations to You. Just like a bird on a ship flies away but finding no other refuge must return to the ship, O Bandichhor Guru, I have no other shelter save Your lotus feet. Deliver me from this material world, O Savior!"
       }
     },
@@ -219,7 +219,7 @@ export const VINATI_PRAVANCHI_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "ध्यान श्लोक: हम श्वेत वस्त्रों से सुशोभित, कानों में कुंडल धारण किए, मस्तक पर दिव्य मुकुट व हीरामणि से मण्डित, पद्मासन पर विराजमान दया के सागर करुणामय सतगुरु का ध्यान करते हैं। ध्यान का मूल गुरु की मूर्ति है, पूजा का मूल गुरुदेव के चरण हैं, मंत्र का मूल गुरु के वचन हैं और मोक्ष का मूल गुरु की असीम कृपा है।",
-        pb: "ਧਿਆਨ ਸ਼ਲੋਕ: ਅਸੀਂ ਸ਼ਵੇਤ ਬਸਤਰਾਂ ਵਾਲੇ, ਕੰਨਾਂ ਵਿੱਚ ਕੁੰਡਲ, ਹੀਰੇ-ਮਣੀਆਂ ਨਾਲ ਸਜੇ ਮੁਕਟ ਵਾਲੇ, ਪਦਮਾਸਣ 'ਤੇ ਬਿਰਾਜਮਾਨ ਦਯา ਦੇ ਸਾਗਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਜੀ ਦਾ ਧਿਆਨ ਕਰਦੇ ਹਾਂ। ਧਿਆਨ ਦਾ ਮੂਲ ਗੁਰੂ-ਮੂਰਤੀ ਹੈ ਅਤੇ ਮੋਕਸ਼ ਦਾ ਮੂਲ ਗੁਰੂ-ਕ੍ਰਿਪਾ ਹੈ।",
+        pb: "ਧਿਆਨ ਸ਼ਲੋਕ: ਅਸੀਂ ਸ਼ਵੇਤ ਬਸਤਰਾਂ ਵਾਲੇ, ਕੰਨਾਂ ਵਿੱਚ ਕੁੰਡਲ, ਹੀਰੇ-ਮਣੀਆਂ ਨਾਲ ਸਜੇ ਮੁਕਟ ਵਾਲੇ, ਪਦਮਾਸਣ 'ਤੇ ਬਿਰਾਜਮਾਨ ਦਯา ਦੇ ਸਾਗਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਧਿਆਨ ਕਰਦੇ ਹਾਂ। ਧਿਆਨ ਦਾ ਮੂਲ ਗੁਰੂ-ਮੂਰਤੀ ਹੈ ਅਤੇ ਮੋਕਸ਼ ਦਾ ਮੂਲ ਗੁਰੂ-ਕ੍ਰਿਪਾ ਹੈ।",
         en: "Meditation Shlokas: We meditate upon the compassionate Satguru, who is adorned in pure white attire, wearing divine earrings, a shining crown embellished with diamonds, seated gracefully in the lotus posture. The root of meditation is the Guru's form, the root of worship is the Guru's feet, the root of mantra is the Guru's word, and the root of salvation is the Guru's grace."
       }
     },
@@ -253,8 +253,8 @@ export const VINATI_PRAVANCHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "विनती (बालापीर): सत्य कबीर साहेब बाल्यकाल में ही अलौकिक ज्ञान के दाता हैं। वे दीन-दुखियों और भूखों का उद्धार करने वाले, सूखी नदी में भी ज्ञान रूपी जल बहाने वाले हैं। जो सतनाम का सुमिरन करता है, वह जन्म-मरण और यमराज के जाल से मुक्त होकर परम सुखधाम को प्राप्त करता है।",
-        pb: "ਬੇਨਤੀ (ਬਾਲਾਪੀਰ): ਸਤਿਗੁਰੂ ਕਬੀਰ ਜੀ ਬਾਲਕਾਲ ਤੋਂ ਹੀ ਗਿਆਨ ਦੇ ਦਾਤਾ ਹਨ। ਉਹ ਦੀਨਾਂ ਦੇ ਦੁੱਖ ਦੂਰ ਕਰਨ ਵਾਲੇ ਅਤੇ ਸੂਖੀ ਨਦੀ ਵਿੱਚ ਵੀ ਪ੍ਰੇਮ-ਜਲ ਵਹਾਉਣ ਵਾਲੇ ਹਨ। ਜੋ ਸੱਚੇ ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਦਾ ਹੈ, ਉਹ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।",
+        hi: "विनती (बालापीर): सत्य सतगुरु कबीर साहेब बाल्यकाल में ही अलौकिक ज्ञान के दाता हैं। वे दीन-दुखियों और भूखों का उद्धार करने वाले, सूखी नदी में भी ज्ञान रूपी जल बहाने वाले हैं। जो सत्यनाम का सुमिरन करता है, वह जन्म-मरण और यमराज के जाल से मुक्त होकर परम सुखधाम को प्राप्त करता है।",
+        pb: "ਬੇਨਤੀ (ਬਾਲਾਪੀਰ): ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਲਕਾਲ ਤੋਂ ਹੀ ਗਿਆਨ ਦੇ ਦਾਤਾ ਹਨ। ਉਹ ਦੀਨਾਂ ਦੇ ਦੁੱਖ ਦੂਰ ਕਰਨ ਵਾਲੇ ਅਤੇ ਸੂਖੀ ਨਦੀ ਵਿੱਚ ਵੀ ਪ੍ਰੇਮ-ਜਲ ਵਹਾਉਣ ਵਾਲੇ ਹਨ। ਜੋ ਸੱਚੇ ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਦਾ ਹੈ, ਉਹ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।",
         en: "Balapir Petition: Satguru Kabir is the divine Master who reveals transcendental wisdom even in child form. He is the savior of the poor, turning dry rivers into flowing waters of love. Whosoever meditates upon the True Name conquers death and attains the eternal abode of peace."
       }
     }

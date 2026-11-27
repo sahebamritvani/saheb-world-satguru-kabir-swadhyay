@@ -33,9 +33,9 @@ const QUIZ_QUESTIONS: QuizQuestionItem[] = [
   {
     id: 'q1-lahartara',
     question: {
-      hi: 'सद्गुरु कबीर साहेब का पावन प्राकट्य किस सरोवर में हुआ था?',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਪਾਵਨ ਪ੍ਰਕਾਸ਼ ਕਿਸ ਸਰੋਵਰ ਵਿੱਚ ਹੋਇਆ ਸੀ?',
-      en: 'In which sacred pond did Sadguru Kabir Saheb manifest?',
+      hi: 'सतगुरु कबीर साहेब का पावन प्राकट्य किस सरोवर में हुआ था?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਪਾਵਨ ਪ੍ਰਕਾਸ਼ ਕਿਸ ਸਰੋਵਰ ਵਿੱਚ ਹੋਇਆ ਸੀ?',
+      en: 'In which sacred pond did Satguru Kabir Saheb manifest?',
     },
     options: {
       hi: ['लहरतारा (काशी)', 'मानसरोवर', 'पुष्कर', 'त्रिवेणी'],
@@ -44,17 +44,17 @@ const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: 'ज्येष्ठ शुक्ल पूर्णिमा, संवत १४५५ (सन् १३९८) को काशी के पावन लहरतारा तालाब में कमल पुष्प पर सद्गुरु कबीर साहेब का प्राकट्य हुआ था।',
-      pb: 'ਜੇਠ ਸੁਦੀ ਪੂਰਨਮਾਸ਼ੀ, ਸੰਮਤ ੧੪੫੫ (੧੩੯੮ ਈ.) ਨੂੰ ਕਾਸ਼ੀ ਦੇ ਪਾਵਨ ਲਹਿਰਤਾਰਾ ਸਰੋਵਰ ਵਿੱਚ ਕਮਲ ਫੁੱਲ ਉੱਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਪ੍ਰਗਟ ਹੋਏ ਸਨ।',
-      en: 'On Jyeshtha Shukla Purnima in 1398 CE, Sadguru Kabir Saheb manifested upon a blooming lotus in the sacred Lahartara pond in Kashi.',
+      hi: 'ज्येष्ठ शुक्ल पूर्णिमा, संवत १४५५ (सन् १३९८) को काशी के पावन लहरतारा तालाब में कमल पुष्प पर सतगुरु कबीर साहेब का प्राकट्य हुआ था।',
+      pb: 'ਜੇਠ ਸੁਦੀ ਪੂਰਨਮਾਸ਼ੀ, ਸੰਮਤ ੧੪੫੫ (੧੩੯੮ ਈ.) ਨੂੰ ਕਾਸ਼ੀ ਦੇ ਪਾਵਨ ਲਹਿਰਤਾਰਾ ਸਰੋਵਰ ਵਿੱਚ ਕਮਲ ਫੁੱਲ ਉੱਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਗਟ ਹੋਏ ਸਨ।',
+      en: 'On Jyeshtha Shukla Purnima in 1398 CE, Satguru Kabir Saheb manifested upon a blooming lotus in the sacred Lahartara pond in Kashi.',
     },
   },
   {
     id: 'q2-dharmadas',
     question: {
-      hi: "सद्गुरु कबीर साहेब ने किस शिष्य को 'वंश बयालीस' का वरदान दिया था?",
-      pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਕਿਸ ਸ਼ਿਸ਼ ਨੂੰ 'ਵੰਸ਼ ਬਿਆਲੀ' ਦਾ ਵਰਦਾਨ ਦਿੱਤਾ ਸੀ?",
-      en: "Which disciple did Sadguru Kabir Saheb bless with the 'Vansh Bayalis' lineage?",
+      hi: "सतगुरु कबीर साहेब ने किस शिष्य को 'वंश बयालीस' का वरदान दिया था?",
+      pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਿਸ ਸ਼ਿਸ਼ ਨੂੰ 'ਵੰਸ਼ ਬਿਆਲੀ' ਦਾ ਵਰਦਾਨ ਦਿੱਤਾ ਸੀ?",
+      en: "Which disciple did Satguru Kabir Saheb bless with the 'Vansh Bayalis' lineage?",
     },
     options: {
       hi: ['धनी धर्मदास साहेब जी', 'कमाल साहेब जी', 'सुरति गोपाल साहेब जी', 'भगवानदास साहेब जी'],
@@ -63,9 +63,9 @@ const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: "सद्गुरु कबीर साहेब ने अपने परम शिष्य धनी धर्मदास साहेब जी और माता आमिनी देवी की अनन्य भक्ति से प्रसन्न होकर ४२ पीढ़ियों के 'वंश बयालीस' का वरदान दिया था।",
+      hi: "सतगुरु कबीर साहेब ने अपने परम शिष्य धनी धर्मदास साहेब जी और माता आमिनी देवी की अनन्य भक्ति से प्रसन्न होकर ४२ पीढ़ियों के 'वंश बयालीस' का वरदान दिया था।",
       pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਅਤੇ ਮਾਤਾ ਆਮਿਨੀ ਦੇਵੀ ਦੀ ਭਗਤੀ ਤੋਂ ਪ੍ਰਸੰਨ ਹੋ ਕੇ ੪੨ ਪੀੜ੍ਹੀਆਂ ਦੇ 'ਵੰਸ਼ ਬਿਆਲੀ' ਦਾ ਵਰਦਾਨ ਦਿੱਤਾ ਸੀ।",
-      en: "Pleased with the supreme devotion of Dhani Dharmadas Saheb Ji and Mata Amini Devi, Sadguru Kabir Saheb granted the boon of the 42-generation 'Vansh Bayalis' lineage.",
+      en: "Pleased with the supreme devotion of Dhani Dharmadas Saheb Ji and Mata Amini Devi, Satguru Kabir Saheb granted the boon of the 42-generation 'Vansh Bayalis' lineage.",
     },
   },
   {
@@ -150,7 +150,7 @@ const QUIZ_QUESTIONS: QuizQuestionItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: 'कबीर पंथ में चौका-आरती को अहिंसक सात्विक यज्ञ कहा गया है, जो आत्मा की शुद्धि और सद्गुरु के प्रति कृतज्ञता का पावन अनुष्ठान है।',
+      hi: 'कबीर पंथ में चौका-आरती को अहिंसक सात्विक यज्ञ कहा गया है, जो आत्मा की शुद्धि और सतगुरु के प्रति कृतज्ञता का पावन अनुष्ठान है।',
       pb: 'ਕਬੀਰ ਪੰਥ ਵਿੱਚ ਚੌਕਾ-ਆਰਤੀ ਨੂੰ ਅਹਿੰਸਕ ਸਾਤਵਿਕ ਯੱਗ ਕਿਹਾ ਜਾਂਦਾ ਹੈ, ਜੋ ਆਤਮਾ ਦੀ ਸ਼ੁੱਧੀ ਅਤੇ ਸਤਿਗੁਰੂ ਪ੍ਰਤੀ ਸ਼ਰਧਾ ਦਾ ਪਵਿੱਤਰ ਅਨੁਸ਼ਠਾਨ ਹੈ।',
       en: 'In Kabir Panth, Chauka-Aarti is celebrated as the non-violent Satvik Yagya for spiritual purification and gratitude to Satguru.',
     },
@@ -241,7 +241,7 @@ export const KabirGyanQuiz: React.FC<KabirGyanQuizProps> = ({
   const ui = {
     hi: {
       title: 'कबीर ज्ञान प्रश्नोत्तरी',
-      subtitle: 'सद्गुरु कबीर साहेब, धनी धर्मदास साहेब एवं वंश बयालीस परंपरा से जुड़े ६ प्रामाणिक प्रश्न।',
+      subtitle: 'सतगुरु कबीर साहेब, धनी धर्मदास साहेब एवं वंश बयालीस परंपरा से जुड़े ६ प्रामाणिक प्रश्न।',
       questionLabel: 'प्रश्न',
       of: 'में से',
       bestScore: 'सर्वश्रेष्ठ स्कोर:',
@@ -283,7 +283,7 @@ export const KabirGyanQuiz: React.FC<KabirGyanQuizProps> = ({
     },
     en: {
       title: 'Kabir Gyan Spiritual Quiz',
-      subtitle: 'Test your knowledge with 6 authentic questions on Sadguru Kabir Saheb, Dhani Dharmadas Ji, and the Vansh Bayalis lineage.',
+      subtitle: 'Test your knowledge with 6 authentic questions on Satguru Kabir Saheb, Dhani Dharmadas Ji, and the Vansh Bayalis lineage.',
       questionLabel: 'Question',
       of: 'of',
       bestScore: 'Best Score:',

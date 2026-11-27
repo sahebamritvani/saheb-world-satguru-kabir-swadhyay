@@ -1611,7 +1611,7 @@ const ARCHETYPE_PACKS: Record<ArchetypeKey, ArchetypeQuestionPack> = {
     },
     tattvaOptions: {
       hi: [
-        'मन की चंचलता को पार कर विवेकपूर्ण सूरत (सद्गुरु के शब्द-प्रकाश) के मार्गदर्शन में चलना',
+        'मन की चंचलता को पार कर विवेकपूर्ण सूरत (सतगुरु के शब्द-प्रकाश) के मार्गदर्शन में चलना',
         'जीवन के किसी भी निर्णय में सोच-विचार करना पूरी तरह बंद कर देना',
         'केवल शारीरिक परिश्रम करके बौद्धिक चिंतन से दूर भागना',
         'इच्छाओं को दबाते हुए समाज से शत्रुता कर लेना',
@@ -1686,42 +1686,406 @@ function wrapOptionsWithFeedback(
   explanation: string,
   language: Language
 ): { options: QuizOption[]; correctIndex: number; explanation: string } {
+  const oneLineExpl = toConciseOneLine(explanation);
   const options = optTexts.map((text, idx) => {
     const isCorrect = idx === correctIdx;
     let feedback = '';
     if (isCorrect) {
       const correctPrefix =
         language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ! ' : language === 'en' ? '✓ Correct! ' : '✓ सही उत्तर! ';
-      feedback = explanation.startsWith('✓') ? explanation : `${correctPrefix}${explanation}`;
+      feedback = oneLineExpl.startsWith('✓') ? oneLineExpl : `${correctPrefix}${oneLineExpl}`;
     } else {
       feedback = generateDistractorFeedback(text, language);
     }
     return { text, isCorrect, feedback };
   });
-  return { options, correctIndex: correctIdx, explanation };
+  return { options, correctIndex: correctIdx, explanation: oneLineExpl };
+}
+
+function toConciseOneLine(raw: string, maxChars = 155): string {
+  const normalized = cleanSentence(ensureSatguruKabirSaheb(raw || ''));
+  if (!normalized) return '';
+  const firstSentence = normalized.split(/(?<=[।.!?])\s+/)[0]?.trim() || normalized;
+  if (firstSentence.length <= maxChars) return firstSentence;
+  const sliced = firstSentence.slice(0, maxChars);
+  const lastSpace = sliced.lastIndexOf(' ');
+  return `${(lastSpace > 40 ? sliced.slice(0, lastSpace) : sliced).trim()}...`;
+}
+
+function distillCoreTeachingClause(rawBhavarth: string, language: Language, maxChars = 105): string {
+  const clean = cleanSentence(ensureSatguruKabirSaheb(rawBhavarth || ''));
+  if (!clean) return '';
+
+  const sentences = clean
+    .split(/(?<=[।.!?])\s+|[।.]\s+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  // Prefer the teaching/conclusion sentence (often contains कहते हैं कि / तात्पर्य / इसलिए / says / teaches / ਫਰਮਾਉਂਦੇ)
+  let picked =
+    sentences.find((s) =>
+      /फरमाते हैं|कहते हैं|समझाते हैं|तात्पर्य|इसलिए|चाहिए|ਫ਼ਰਮਾਉਂਦੇ|ਫਰਮਾਉਂਦੇ|ਕਹਿੰਦੇ ਹਨ|ਚਾਹੀਦਾ|proclaims|says|teaches|discards|saves/i.test(s)
+    ) ||
+    sentences[sentences.length - 1] ||
+    sentences[0] ||
+    clean;
+
+  // Strip common attribution lead-ins so the answer option reads directly as the core principle
+  picked = picked
+    .replace(
+      /^(?:अतः\s*)?(?:सतगुरु\s*कबीर\s*साहेब|संत\s*कबीर|कबीर\s*साहेब|कबीर\s*जी|कबीरजी|कबीर)\s*(?:जी\s*)?(?:फरमाते\s*हैं\s*कि|कहते\s*हैं\s*कि|समझाते\s*हैं\s*कि|उपदेश\s*देते\s*हैं\s*कि|बताते\s*हैं\s*कि)[:\s,-]*/i,
+      ''
+    )
+    .replace(
+      /^(?:ਸਤਿਗੁਰੂ\s*ਕਬੀਰ\s*ਸਾਹੇਬ|ਕਬੀਰ\s*ਸਾਹੇਬ|ਕਬੀਰ\s*ਜੀ|ਕਬੀਰ)\s*(?:ਜੀ\s*)?(?:ਫ਼ਰਮਾਉਂਦੇ\s*ਹਨ\s*ਕਿ|ਫਰਮਾਉਂਦੇ\s*ਹਨ\s*ਕਿ|ਕਹਿੰਦੇ\s*ਹਨ\s*ਕਿ|ਸਮਝਾਉਂਦੇ\s*ਹਨ\s*ਕਿ)[:\s,-]*/i,
+      ''
+    )
+    .replace(
+      /^(?:Satguru\s*Kabir\s*Saheb|Kabir\s*Saheb|Kabir)\s*(?:proclaims|says|teaches|explains|advises|declares)\s*(?:that)?[:\s,-]*/i,
+      ''
+    )
+    .trim();
+
+  if (!picked || picked.length < 16) {
+    picked = sentences[0] || clean;
+  }
+
+  if (language === 'en' && picked.length > 0) {
+    picked = picked.charAt(0).toUpperCase() + picked.slice(1);
+  }
+
+  if (picked.length <= maxChars) return cleanSentence(picked);
+  const clipped = picked.slice(0, maxChars);
+  const lastSpace = clipped.lastIndexOf(' ');
+  return cleanSentence((lastSpace > 40 ? clipped.slice(0, lastSpace) : clipped).trim());
+}
+
+function pickRichWordMeaning(words: Array<{ word: string; meaning: string }>, index = 0) {
+  const meaningful = words.filter(
+    (w) =>
+      w &&
+      w.word &&
+      w.meaning &&
+      !/^(कबीर|कहैं|कहे|कहि|साखी|ਸਤਿਗੁਰੂ|ਕਬੀਰ|kabir|kahein)$/i.test(w.word.replace(/\s*\([^)]*\)/g, '').trim()) &&
+      w.meaning.trim().length >= 3
+  );
+  const pool = meaningful.length > 0 ? meaningful : words.filter((w) => w && w.word && w.meaning);
+  return pool[index] || null;
+}
+
+const SYMBOLIC_DISTRACTOR_BANK: Record<Language, string[]> = {
+  hi: [
+    'बाहरी तीर्थाटन एवं कर्मकांडी अनुष्ठान',
+    'सांसारिक धन-संपत्ति और पद का संग्रह',
+    'अहंकारपूर्ण वाद-विवाद व कोरी विद्वत्ता',
+    'क्षणिक शारीरिक बल और यौवन का घमंड',
+    'दिखावे की वेशभूषा एवं संप्रदाय-भेद',
+    'मन की चंचल कल्पना और स्वार्थ-मोह',
+    'कठोर एवं कटु वाणी द्वारा प्रतिशोध लेना',
+    'अज्ञानवश बाहरी आडंबरों पर निर्भर रहना',
+    'व्यर्थ के तर्क-वितर्क में जीवन गँवाना',
+    'भौतिक वैभव से स्थायी सुख की आशा करना',
+    'समाज से कटकर निष्क्रिय पलायन कर जाना',
+    'बिना आचरण के केवल पोथियों का पाठ करना',
+  ],
+  pb: [
+    'ਬਾਹਰੀ ਤੀਰਥ-ਯਾਤਰਾ ਅਤੇ ਕਰਮਕਾਂਡੀ ਰਸਮਾਂ',
+    'ਦੁਨਿਆਵੀ ਧਨ-ਦੌਲਤ ਅਤੇ ਅਹੁਦੇ ਦਾ ਸੰਗ੍ਰਹਿ',
+    'ਹੰਕਾਰ ਭਰੀ ਬਹਿਸਬਾਜ਼ੀ ਤੇ ਕੋਰਾ ਕਿਤਾਬੀ ਗਿਆਨ',
+    'ਅਸਥਾਈ ਸਰੀਰਕ ਬਲ ਅਤੇ ਜਵਾਨੀ ਦਾ ਮਾਣ',
+    'ਦਿਖਾਵੇ ਦਾ ਪਹਿਰਾਵਾ ਅਤੇ ਬਾਹਰੀ ਭੇਖ',
+    'ਮਨ ਦੀ ਚੰਚਲ ਕਲਪਨਾ ਤੇ ਸਵਾਰਥ-ਮੋਹ',
+    'ਕੌੜੇ ਤੇ ਤਿੱਖੇ ਬੋਲਾਂ ਨਾਲ ਬਦਲਾ ਲੈਣਾ',
+    'ਅਗਿਆਨ ਵਿੱਚ ਬਾਹਰੀ ਪਾਖੰਡਾਂ ਉੱਤੇ ਭਰੋਸਾ ਰੱਖਣਾ',
+    'ਫ਼ਜ਼ੂਲ ਦੇ ਤਰਕ-ਵਿਤਕਰ ਵਿੱਚ ਸਮਾਂ ਗੁਆਉਣਾ',
+    'ਭੌਤਿਕ ਸੁੱਖਾਂ ਤੋਂ ਸਥਾਈ ਸ਼ਾਂਤੀ ਦੀ ਉਮੀਦ ਰੱਖਣੀ',
+    'ਜ਼ਿੰਮੇਵਾਰੀਆਂ ਛੱਡ ਕੇ ਵਿਹਲੇ ਬੈਠ ਜਾਣਾ',
+    'ਅਮਲ ਤੋਂ ਬਿਨਾਂ ਕੇਵਲ ਪੋਥੀਆਂ ਪੜ੍ਹਦੇ ਰਹਿਣਾ',
+  ],
+  en: [
+    'Outward ritual ceremonies and pilgrimage displays',
+    'Accumulating worldly wealth and social prestige',
+    'Prideful intellectual debate without humility',
+    'Boasting in fleeting youth and physical strength',
+    'External robes and sectarian badge-wearing',
+    'Restless mental fantasy and selfish attachment',
+    'Retaliating with sharp and bitter speech',
+    'Relying blindly on hollow outward show',
+    'Wasting life in fruitless arguments',
+    'Expecting lasting peace from material luxury',
+    'Escaping daily duties into idle isolation',
+    'Reading texts aloud without inner practice',
+  ],
+};
+
+function selectDistinctDistractors(
+  seed: number,
+  excludeTexts: string[],
+  primaryPool: string[],
+  secondaryPool: string[],
+  count = 3
+): string[] {
+  const normalizedExcluded = excludeTexts.map((t) => cleanSentence(t).toLowerCase());
+  const combined = [...primaryPool, ...secondaryPool];
+  const uniquePool: string[] = [];
+  for (const item of combined) {
+    const c = cleanSentence(item);
+    if (!c) continue;
+    const cLower = c.toLowerCase();
+    const overlaps = normalizedExcluded.some(
+      (ex) => ex && (cLower === ex || cLower.includes(ex.slice(0, 18)) || ex.includes(cLower.slice(0, 18)))
+    );
+    if (!overlaps && !uniquePool.some((u) => u.toLowerCase() === cLower)) {
+      uniquePool.push(c);
+    }
+  }
+  const picked: string[] = [];
+  if (uniquePool.length === 0) return picked;
+  const start = Math.abs(seed) % uniquePool.length;
+  for (let i = 0; i < uniquePool.length && picked.length < count; i++) {
+    picked.push(uniquePool[(start + i * 2) % uniquePool.length]);
+  }
+  return picked.slice(0, count);
+}
+
+function buildVerseSpecificCoreQ(
+  sakhi: Sakhi,
+  language: Language,
+  archetype: ArchetypeKey
+): GeneratedQuizQuestion {
+  const pack = ARCHETYPE_PACKS[archetype];
+  const verse = sakhi.text?.[language] || sakhi.text?.hi || '';
+  const verseHi = sakhi.text?.hi || '';
+  const firstLine = cleanSentence(verse.split('\n')[0] || verse);
+  const bhavarth = ensureSatguruKabirSaheb(sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi || '');
+  const seed = (Number(sakhi.number) || 1) * 7 + firstLine.length;
+
+  let question = '';
+  let correctAns = '';
+  let explanation = '';
+
+  // Direct high-precision patterns for iconic couplet motifs
+  if (/काल फिरै सिर ऊपरै.*गुरु शब्द गहि|काल फिरै सिर ऊपरै.*जम से जीव बचाय/.test(verseHi)) {
+    if (language === 'pb') {
+      question = `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਅਨੁਸਾਰ ਜੀਵ ਨੂੰ ਕਾਲ ਅਤੇ ਜਮ ਦੇ ਭੈਅ ਤੋਂ ਕੌਣ ਬਚਾਉਂਦਾ ਹੈ?`;
+      correctAns = 'ਸਤਿਗੁਰੂ ਦਾ ਅਵਿਨਾਸ਼ੀ ਸ਼ਬਦ ਅਤੇ ਸਤਯਨਾਮ';
+      explanation = 'ਸਤਿਗੁਰੂ ਦੇ ਸ਼ਬਦ-ਗਿਆਨ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜਨ ਨਾਲ ਹੀ ਜੀਵ ਕਾਲ ਅਤੇ ਮੌਤ ਦੇ ਭੈਅ ਤੋਂ ਬਚਦਾ ਹੈ।';
+    } else if (language === 'en') {
+      question = `In Sakhi #${sakhi.number} ("${firstLine}"), what saves the soul from the clutches of Kaal (death)?`;
+      correctAns = 'The Guru’s Imperishable Word (Shabd) and Satyanaam';
+      explanation = 'Holding firmly to the Guru’s living Word protects the soul from fear and the cycle of time.';
+    } else {
+      question = `साखी #${sakhi.number} ("${firstLine}") के अनुसार जीव को काल और यम के भय से कौन बचाता है?`;
+      correctAns = 'सतगुरु का अविनाशी शब्द एवं सत्यनाम';
+      explanation = 'सतगुरु के अविनाशी शब्द-ज्ञान को दृढ़ता से धारण करने पर ही जीव काल के चक्र से सुरक्षित होता है।';
+    }
+  } else if (/काल फिरै सिर ऊपरे.*गहु नाम को|हाथों धरी कमान/.test(verseHi)) {
+    if (language === 'pb') {
+      question = `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਵਿੱਚ ਕਾਲ ਤੋਂ ਬਚਣ ਲਈ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕੀ ਕਰਨ ਦਾ ਉਪਦੇਸ਼ ਦਿੰਦੇ ਹਨ?`;
+      correctAns = 'ਸਾਰਾ ਹੰਕਾਰ ਛੱਡ ਕੇ ਸਤਿਗੁਰੂ ਦੇ ਸਤਯਨਾਮ ਦਾ ਦ੍ਰਿੜ੍ਹ ਆਸਰਾ ਲੈਣਾ';
+      explanation = 'ਹਰ ਪਲ ਤਿਆਰ ਖੜ੍ਹੇ ਕਾਲ ਤੋਂ ਬਚਣ ਦਾ ਇੱਕੋ-ਇੱਕ ਰਾਹ ਹੰਕਾਰ ਤਿਆਗ ਕੇ ਸਤਯਨਾਮ ਨੂੰ ਫੜਨਾ ਹੈ।';
+    } else if (language === 'en') {
+      question = `In Sakhi #${sakhi.number} ("${firstLine}"), how does Satguru Kabir Saheb counsel us to overcome hovering Kaal?`;
+      correctAns = 'Discard all pride and cling firmly to the Sacred Name (Satyanaam)';
+      explanation = 'Letting go of arrogance and holding fast to Satyanaam shields the seeker from sudden spiritual loss.';
+    } else {
+      question = `साखी #${sakhi.number} ("${firstLine}") में काल के प्रहार से बचने के लिए सतगुरु कबीर साहेब क्या करने का उपदेश देते हैं?`;
+      correctAns = 'समस्त अभिमान त्यागकर सत्यनाम को दृढ़ता से पकड़ना';
+      explanation = 'धनुष ताने खड़े काल से रक्षा केवल अहंकार त्यागकर सतगुरु के सत्यनाम का आश्रय लेने से होती है।';
+    }
+  } else {
+    const distilled = distillCoreTeachingClause(bhavarth, language, 108);
+    correctAns = distilled || cleanSentence(pack.coreCorrect[language] || pack.coreCorrect.hi);
+    const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+    const anchorWord = pickRichWordMeaning(words, 0)?.word?.replace(/\s*\([^)]*\)/g, '').trim();
+
+    if (language === 'pb') {
+      question = anchorWord
+        ? `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਵਿੱਚ "${anchorWord}" ਦੇ ਪ੍ਰਸੰਗ ਰਾਹੀਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕੀ ਮੁੱਖ ਸਿੱਖਿਆ ਦਿੰਦੇ ਹਨ?`
+        : `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਦਾ ਮੁੱਖ ਅਧਿਆਤਮਿਕ ਸੰਦੇਸ਼ ਕੀ ਹੈ?`;
+      explanation = toConciseOneLine(bhavarth || correctAns);
+    } else if (language === 'en') {
+      question = anchorWord
+        ? `In Sakhi #${sakhi.number} ("${firstLine}"), what core truth does Satguru Kabir Saheb reveal through "${anchorWord}"?`
+        : `What is the central spiritual message of Sakhi #${sakhi.number} ("${firstLine}")?`;
+      explanation = toConciseOneLine(bhavarth || correctAns);
+    } else {
+      question = anchorWord
+        ? `साखी #${sakhi.number} ("${firstLine}") में "${anchorWord}" के संदर्भ से सतगुरु कबीर साहेब क्या मुख्य बोध कराते हैं?`
+        : `साखी #${sakhi.number} ("${firstLine}") का मुख्य आध्यात्मिक संदेश क्या है?`;
+      explanation = toConciseOneLine(bhavarth || correctAns);
+    }
+  }
+
+  const archetypeWrongPool = [
+    ...(pack.coreDistractors[language] || pack.coreDistractors.hi),
+    ...(pack.scenarioOptions[language]?.slice(1) || []),
+    ...(pack.causeOptions[language]?.slice(1) || []),
+  ];
+  const distractors = selectDistinctDistractors(
+    seed,
+    [correctAns],
+    archetypeWrongPool,
+    SYMBOLIC_DISTRACTOR_BANK[language] || SYMBOLIC_DISTRACTOR_BANK.hi,
+    3
+  );
+
+  const res = wrapOptionsWithFeedback([correctAns, ...distractors], 0, explanation, language);
+  return {
+    id: `q-${sakhi.id || sakhi.number}-core`,
+    dimension: 'core-message',
+    angle: language === 'pb' ? 'ਮੁੱਖ ਸੰਦੇਸ਼' : language === 'en' ? 'Core Message' : 'केंद्रीय संदेश',
+    question,
+    options: res.options,
+    correctIndex: res.correctIndex,
+    explanation: res.explanation,
+  };
+}
+
+function buildWordSymbolQ(
+  sakhi: Sakhi,
+  language: Language,
+  wordIndex = 0
+): GeneratedQuizQuestion | null {
+  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+  const chosen = pickRichWordMeaning(words, wordIndex);
+  if (!chosen) return null;
+
+  const cleanWord = chosen.word.trim();
+  const cleanMeaning = cleanSentence(chosen.meaning);
+  if (!cleanWord || !cleanMeaning) return null;
+
+  const seed = (Number(sakhi.number) || 1) * 13 + cleanWord.length + wordIndex * 11;
+  const siblingMeanings = words
+    .map((w) => cleanSentence(w.meaning))
+    .filter(Boolean);
+
+  const distractors = selectDistinctDistractors(
+    seed,
+    [cleanMeaning, ...siblingMeanings],
+    SYMBOLIC_DISTRACTOR_BANK[language] || SYMBOLIC_DISTRACTOR_BANK.hi,
+    [],
+    3
+  );
+
+  const expl =
+    language === 'pb'
+      ? `ਇਸ ਸਾਖੀ ਵਿੱਚ "${cleanWord}" ਦਾ ਸਟੀਕ ਅਰਥ "${cleanMeaning}" ਹੈ।`
+      : language === 'en'
+      ? `In Sakhi #${sakhi.number}, "${cleanWord}" specifically means "${cleanMeaning}".`
+      : `इस साखी में "${cleanWord}" का सटीक अर्थ "${cleanMeaning}" है।`;
+
+  const res = wrapOptionsWithFeedback([cleanMeaning, ...distractors], 0, expl, language);
+  const question =
+    language === 'pb'
+      ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਪ੍ਰਸੰਗ ਵਿੱਚ "${cleanWord}" ਸ਼ਬਦ ਦਾ ਸਟੀਕ ਅਰਥ ਕੀ ਹੈ?`
+      : language === 'en'
+      ? `Within Sakhi #${sakhi.number}, what does "${cleanWord}" signify?`
+      : `साखी #${sakhi.number} के संदर्भ में "${cleanWord}" का सटीक अर्थ क्या है?`;
+
+  return {
+    id: `q-${sakhi.id || sakhi.number}-symbolic-${wordIndex}`,
+    dimension: 'symbolic-meaning',
+    angle: language === 'pb' ? 'ਸ਼ਬਦਾਰਥ ਪਰਖ' : language === 'en' ? 'Word & Symbol' : 'शब्द-प्रतीक अर्थ',
+    question,
+    options: res.options,
+    correctIndex: res.correctIndex,
+    explanation: res.explanation,
+  };
+}
+
+function buildPracticalApplicationQ(
+  sakhi: Sakhi,
+  language: Language,
+  archetype: ArchetypeKey,
+  coreAnswer: string
+): GeneratedQuizQuestion | null {
+  const practicalRaw = ensureSatguruKabirSaheb(
+    sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || ''
+  ).trim();
+  const practicalAns = distillCoreTeachingClause(practicalRaw, language, 108);
+
+  // Skip if practicalApplication is missing or essentially identical to Q1's answer
+  if (
+    !practicalAns ||
+    practicalAns.length < 18 ||
+    practicalAns.toLowerCase() === coreAnswer.toLowerCase() ||
+    practicalAns.toLowerCase().includes(coreAnswer.slice(0, 24).toLowerCase())
+  ) {
+    return null;
+  }
+
+  const pack = ARCHETYPE_PACKS[archetype];
+  const category = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
+  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+  const anchorWord = pickRichWordMeaning(words, 0)?.word?.replace(/\s*\([^)]*\)/g, '').trim();
+  const seed = (Number(sakhi.number) || 1) * 19 + practicalAns.length;
+
+  const question =
+    language === 'pb'
+      ? anchorWord
+        ? `ਸਾਖੀ #${sakhi.number} (${category}) ਦੇ "${anchorWord}" ਸੰਕੇਤ ਨੂੰ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਲਾਗੂ ਕਰਨ ਦਾ ਸਹੀ ਤਰੀਕਾ ਕੀ ਹੈ?`
+        : `ਸਾਖੀ #${sakhi.number} (${category}) ਦੀ ਸਿੱਖਿਆ ਨੂੰ ਰੋਜ਼ਾਨਾ ਵਿਹਾਰ ਵਿੱਚ ਉਤਾਰਨ ਦਾ ਸਹੀ ਅਭਿਆਸ ਕੀ ਹੈ?`
+      : language === 'en'
+      ? anchorWord
+        ? `How can the insight of "${anchorWord}" in Sakhi #${sakhi.number} (${category}) be applied in daily life?`
+        : `Which daily practice authentically applies Sakhi #${sakhi.number} (${category})?`
+      : anchorWord
+      ? `साखी #${sakhi.number} (${category}) के "${anchorWord}" सूत्र को दैनिक जीवन में उतारने का सबसे सही अभ्यास क्या है?`
+      : `साखी #${sakhi.number} (${category}) के उपदेश का दैनिक आचरण में सटीक प्रयोग क्या होगा?`;
+
+  const scenarioWrongPool = [
+    ...(pack.scenarioOptions[language]?.slice(1) || []),
+    ...(pack.tattvaOptions[language]?.slice(1) || []),
+  ];
+  const distractors = selectDistinctDistractors(
+    seed,
+    [practicalAns, coreAnswer],
+    scenarioWrongPool,
+    SYMBOLIC_DISTRACTOR_BANK[language] || SYMBOLIC_DISTRACTOR_BANK.hi,
+    3
+  );
+
+  const expl =
+    language === 'pb'
+      ? `ਇਸ ਸਾਖੀ ਦਾ ਵਿਹਾਰਕ ਸਾਰ ਹੈ: ${practicalAns}।`
+      : language === 'en'
+      ? `Living this Sakhi means practicing: ${practicalAns}.`
+      : `इस साखी का व्यावहारिक सूत्र यही है: ${practicalAns}।`;
+
+  const res = wrapOptionsWithFeedback([practicalAns, ...distractors], 0, expl, language);
+  return {
+    id: `q-${sakhi.id || sakhi.number}-practical`,
+    dimension: 'real-life-scenario',
+    angle: language === 'pb' ? 'ਵਿਹਾਰਕ ਅਭਿਆਸ' : language === 'en' ? 'Daily Application' : 'व्यावहारिक अभ्यास',
+    question,
+    options: res.options,
+    correctIndex: res.correctIndex,
+    explanation: res.explanation,
+  };
 }
 
 /**
- * Builds 5 distinct, thoughtful, verse-specific MCQs covering all 5 dimensions:
- * 1. केंद्रीय जीवन संदेश (Core Practical Message)
- * 2. आध्यात्मिक एवं प्रतीकात्मक अर्थ (Symbolic / Inner Meaning)
- * 3. दैनिक व्यवहार एवं अनुशासन (Real-Life Application Scenario)
- * 4. कारण और परिणाम (Cause & Spiritual Effect)
- * 5. तत्व ज्ञान एवं आत्म-बोध (Deeper Kabir Panth Philosophy connected to the Anga)
+ * Generates 2 to 3 crisp, truly Sakhi-specific MCQs (with 4 shuffled options each
+ * and a concise 1-line explanation) derived strictly from the active Sakhi's
+ * verses, archaic keywords (wordMeanings), Ang theme, and Bhavarth.
  */
 export function buildFiveDimensionQuiz(sakhi: Sakhi, language: Language): GeneratedQuizQuestion[] {
   const curated = CURATED_SAKHI_QUIZZES[sakhi.number];
-  if (curated && curated.length >= 5) {
-    const mapped: GeneratedQuizQuestion[] = curated.slice(0, 5).map((q: any, idx: number) => {
+  if (curated && curated.length >= 3) {
+    const mapped: GeneratedQuizQuestion[] = curated.slice(0, 3).map((q: any, idx: number) => {
       const dims: GeneratedQuizQuestion['dimension'][] = [
         'core-message',
         'symbolic-meaning',
         'real-life-scenario',
-        'cause-effect',
-        'tattva-gyan',
       ];
       if (q.optionObjects && q.optionObjects[language]) {
-        const opts: QuizOption[] = q.optionObjects[language];
+        const opts: QuizOption[] = q.optionObjects[language].map((opt: QuizOption) => ({
+          ...opt,
+          feedback: opt.isCorrect
+            ? `✓ ${toConciseOneLine(opt.feedback.replace(/^[✓✔]\s*(?:सही उत्तर!|ਸਹੀ ਉੱਤਰ!|Correct!?)\s*/i, ''))}`
+            : toConciseOneLine(opt.feedback),
+        }));
         const correctIdx = opts.findIndex((o) => o.isCorrect);
         const resolvedCorrectIdx = correctIdx >= 0 ? correctIdx : 0;
         return {
@@ -1731,11 +2095,13 @@ export function buildFiveDimensionQuiz(sakhi: Sakhi, language: Language): Genera
           question: q.question[language] || q.question.hi,
           options: opts,
           correctIndex: resolvedCorrectIdx,
-          explanation: opts[resolvedCorrectIdx]?.feedback || '',
+          explanation: toConciseOneLine(
+            (opts[resolvedCorrectIdx]?.feedback || '').replace(/^[✓✔]\s*/, '')
+          ),
         };
       }
       const rawOpts = q.options[language] || q.options.hi;
-      const expl = ensureSatguruKabirSaheb(q.explanation[language] || q.explanation.hi);
+      const expl = toConciseOneLine(q.explanation?.[language] || q.explanation?.hi || '');
       const res = wrapOptionsWithFeedback(rawOpts, q.correctIndex ?? 0, expl, language);
       return {
         id: q.id,
@@ -1751,194 +2117,48 @@ export function buildFiveDimensionQuiz(sakhi: Sakhi, language: Language): Genera
   }
 
   const archetype = classifySakhiArchetype(sakhi);
-  const pack = ARCHETYPE_PACKS[archetype];
-  const verse = sakhi.text?.[language] || sakhi.text?.hi || '';
-  const firstLine = verse.split('\n')[0]?.trim() || verse;
-  const bhavarth = ensureSatguruKabirSaheb(sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi || '');
-  const category = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
-  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+  const q1 = buildVerseSpecificCoreQ(sakhi, language, archetype);
+  const q2 = buildWordSymbolQ(sakhi, language, 0);
+  const coreText = q1.options[q1.correctIndex]?.text || '';
+  const q3Practical = buildPracticalApplicationQ(sakhi, language, archetype, coreText);
+  const q3Word = !q3Practical ? buildWordSymbolQ(sakhi, language, 1) : null;
 
-  // Dimension 1: Core Practical Message (केंद्रीय जीवन संदेश)
-  const coreOpt0 = pack.coreCorrect[language] || pack.coreCorrect.hi;
-  const coreDistractors = pack.coreDistractors[language] || pack.coreDistractors.hi;
-  const res1 = wrapOptionsWithFeedback(
-    [coreOpt0, coreDistractors[0], coreDistractors[1], coreDistractors[2]],
-    0,
-    bhavarth || coreOpt0,
-    language
-  );
-  const q1: GeneratedQuizQuestion = {
-    id: `q-${sakhi.id || sakhi.number}-core`,
-    dimension: 'core-message',
-    angle: language === 'pb' ? 'ਮੁੱਖ ਸੰਦੇਸ਼' : language === 'en' ? 'Core Message' : 'केंद्रीय जीवन संदेश',
-    question:
-      language === 'pb'
-        ? `ਸਾਖੀ #${sakhi.number} ("${firstLine}") ਦਾ ਮੁੱਖ ਵਿਵਹਾਰਕ ਜੀਵਨ ਸੰਦੇਸ਼ ਕੀ ਹੈ?`
-        : language === 'en'
-        ? `What is the central practical life message of Sakhi #${sakhi.number} ("${firstLine}")?`
-        : `साखी #${sakhi.number} ("${firstLine}") का केंद्रीय जीवन संदेश क्या है?`,
-    options: res1.options,
-    correctIndex: res1.correctIndex,
-    explanation: res1.explanation,
-  };
-
-  // Dimension 2: Symbolic / Inner Meaning (आध्यात्मिक एवं प्रतीकात्मक अर्थ)
-  let res2: { options: QuizOption[]; correctIndex: number; explanation: string };
-  let q2Text: string;
-  const primaryWord = words[0];
-  if (primaryWord && primaryWord.word && primaryWord.meaning) {
-    const siblingMeanings = words
-      .slice(1)
-      .map((w) => cleanSentence(w.meaning))
-      .filter((m) => m && m !== cleanSentence(primaryWord.meaning));
-
-    const symbolicDistractorPool =
-      language === 'pb'
-        ? [
-            'ਕੇਵਲ ਬਾਹਰੀ ਦਿਖਾਵੇ ਦੀ ਰਸਮ ਜੋ ਅਸਲ ਅਰਥ ਤੋਂ ਸੱਖਣੀ ਹੋਵੇ',
-            'ਸੰਸਾਰਿਕ ਸੁੱਖ-ਸਹੂਲਤਾਂ ਅਤੇ ਪਦਾਰਥ ਇਕੱਠੇ ਕਰਨ ਦੀ ਲਾਲਸਾ',
-            'ਅਨੁਭਵ ਤੋਂ ਬਿਨਾਂ ਕੀਤੀ ਗਈ ਸੁੱਕੀ ਕਿਤਾਬੀ ਬਹਿਸਬਾਜ਼ੀ',
-          ]
-        : language === 'en'
-        ? [
-            'A purely outward ceremony devoid of inner contemplation',
-            'Worldly ambition focused on status and possessions',
-            'Dry intellectual debate lacking lived humility',
-          ]
-        : [
-            'केवल बाहरी रस्म जो अंतर्मन की जागृति से रहित हो',
-            'संसारिक मान-प्रतिष्ठा एवं भौतिक संग्रह की लालसा',
-            'स्व-अनुभव से हीन केवल कोरी किताबी बहस',
-          ];
-
-    const rawOpts2 = [cleanSentence(primaryWord.meaning)];
-    for (const sm of siblingMeanings) {
-      if (rawOpts2.length < 4 && !rawOpts2.includes(sm)) rawOpts2.push(sm);
+  const questions: GeneratedQuizQuestion[] = [q1];
+  if (q2) questions.push(q2);
+  if (q3Practical) {
+    questions.push(q3Practical);
+  } else if (q3Word) {
+    questions.push(q3Word);
+  } else if (!q2) {
+    // Fallback second question from contextNote if a Sakhi had neither wordMeanings nor distinct practical
+    const contextHint = cleanSentence(ensureSatguruKabirSaheb(sakhi.contextNote?.[language] || sakhi.contextNote?.hi || ''));
+    if (contextHint && contextHint.length >= 16) {
+      const pack = ARCHETYPE_PACKS[archetype];
+      const distractors = selectDistinctDistractors(
+        (Number(sakhi.number) || 1) * 23,
+        [contextHint, coreText],
+        pack.tattvaOptions[language]?.slice(1) || [],
+        SYMBOLIC_DISTRACTOR_BANK[language] || SYMBOLIC_DISTRACTOR_BANK.hi,
+        3
+      );
+      const res = wrapOptionsWithFeedback([contextHint, ...distractors], 0, contextHint, language);
+      questions.push({
+        id: `q-${sakhi.id || sakhi.number}-context`,
+        dimension: 'symbolic-meaning',
+        angle: language === 'pb' ? 'ਪ੍ਰਸੰਗ ਪਰਖ' : language === 'en' ? 'Context Insight' : 'संदर्भ बोध',
+        question:
+          language === 'pb'
+            ? `ਸਾਖੀ #${sakhi.number} ਕਿਸ ਅਧਿਆਤਮਿਕ ਪ੍ਰਸੰਗ ਨੂੰ ਸਪੱਸ਼ਟ ਕਰਦੀ ਹੈ?`
+            : language === 'en'
+            ? `Which spiritual context does Sakhi #${sakhi.number} illuminate?`
+            : `साखी #${sakhi.number} किस आध्यात्मिक संदर्भ को स्पष्ट करती है?`,
+        options: res.options,
+        correctIndex: res.correctIndex,
+        explanation: res.explanation,
+      });
     }
-    for (const d of symbolicDistractorPool) {
-      if (rawOpts2.length < 4 && !rawOpts2.includes(d)) rawOpts2.push(d);
-    }
-    const finalRaw2 = rawOpts2.slice(0, 4);
-    const expl2 =
-      language === 'pb'
-        ? `ਇਸ ਪਾਵਨ ਸਾਖੀ ਵਿੱਚ "${primaryWord.word}" ਦਾ ਭਾਵ "${primaryWord.meaning}" ਹੈ। ${bhavarth}`
-        : language === 'en'
-        ? `In this verse, "${primaryWord.word}" signifies "${primaryWord.meaning}". ${bhavarth}`
-        : `इस साखी में "${primaryWord.word}" से तात्पर्य "${primaryWord.meaning}" है। ${bhavarth}`;
-    res2 = wrapOptionsWithFeedback(finalRaw2, 0, expl2, language);
-    q2Text =
-      language === 'pb'
-        ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਪ੍ਰਸੰਗ ਵਿੱਚ "${primaryWord.word}" ਦਾ ਆਤਮਿਕ ਤੇ ਸਟੀਕ ਭਾਵ ਕੀ ਹੈ?`
-        : language === 'en'
-        ? `Within the spiritual context of Sakhi #${sakhi.number}, what does "${primaryWord.word}" signify?`
-        : `साखी #${sakhi.number} के आध्यात्मिक संदर्भ में "${primaryWord.word}" का सटीक एवं प्रतीकात्मक अर्थ क्या है?`;
-  } else {
-    const contextHint = cleanSentence(sakhi.contextNote?.[language] || sakhi.contextNote?.hi || '');
-    const rightSymbolic =
-      contextHint && contextHint.length >= 24 && contextHint !== cleanSentence(coreOpt0)
-        ? contextHint
-        : cleanSentence(bhavarth) || cleanSentence(pack.causeOptions[language][0]);
-    const symDistractors =
-      language === 'pb'
-        ? [
-            'ਕੇਵਲ ਬਾਹਰਲੇ ਤੀਰਥਾਂ ਜਾਂ ਰਸਮਾਂ ਰਾਹੀਂ ਮਨ ਨੂੰ ਪਰਚਾਉਣਾ',
-            'ਸੰਸਾਰਿਕ ਵਿਖਾਵੇ ਲਈ ਕਠੋਰ ਤੇ ਤਿੱਖੇ ਬੋਲ ਵਰਤਣੇ',
-            'ਆਪਣੇ ਅੰਦਰ ਝਾਕਣ ਦੀ ਥਾਂ ਦੂਜਿਆਂ ਵਿੱਚ ਕਮੀਆਂ ਲੱਭਣੀਆਂ',
-          ]
-        : language === 'en'
-        ? [
-            'Pacifying the restless mind solely through outer ceremonies',
-            'Asserting superiority over others through harsh speech',
-            'Searching externally for faults while neglecting inner stillness',
-          ]
-        : [
-            'केवल बाहरी कर्मकांडों से मन को क्षणिक संतुष्टि देना',
-            'दूसरों पर अधिकार जताने हेतु कठोर वाणी का प्रयोग करना',
-            'अपने अंतर्मन को सुधारने की बजाय बाहर दोष खोजते रहना',
-          ];
-    res2 = wrapOptionsWithFeedback(
-      [rightSymbolic, symDistractors[0], symDistractors[1], symDistractors[2]],
-      0,
-      bhavarth || rightSymbolic,
-      language
-    );
-    q2Text =
-      language === 'pb'
-        ? `"${firstLine}" — ਇਸ ਪੰਕਤੀ ਦੇ ਪ੍ਰਤੀਕਾਂ ਦਾ ਅੰਦਰੂਨੀ ਭੇਦ ਕੀ ਦਰਸਾਉਂਦਾ ਹੈ?`
-        : language === 'en'
-        ? `What inner symbolic meaning is revealed through "${firstLine}"?`
-        : `"${firstLine}" — इस पंक्ति के प्रतीकों का आंतरिक रहस्य क्या दर्शाता है?`;
   }
-  const q2: GeneratedQuizQuestion = {
-    id: `q-${sakhi.id || sakhi.number}-symbolic`,
-    dimension: 'symbolic-meaning',
-    angle: language === 'pb' ? 'ਪ੍ਰਤੀਕਾਤਮਕ ਅਰਥ' : language === 'en' ? 'Symbolic Meaning' : 'प्रतीकात्मक अर्थ',
-    question: q2Text,
-    options: res2.options,
-    correctIndex: res2.correctIndex,
-    explanation: res2.explanation,
-  };
 
-  // Dimension 3: Real-Life Application Scenario (दैनिक व्यवहार एवं अनुशासन)
-  const scOpts = pack.scenarioOptions[language] || pack.scenarioOptions.hi;
-  const res3 = wrapOptionsWithFeedback(
-    [scOpts[0], scOpts[1], scOpts[2], scOpts[3]],
-    0,
-    sakhi.practicalApplication?.[language] || sakhi.practicalApplication?.hi || bhavarth || scOpts[0],
-    language
-  );
-  const q3: GeneratedQuizQuestion = {
-    id: `q-${sakhi.id || sakhi.number}-scenario`,
-    dimension: 'real-life-scenario',
-    angle: language === 'pb' ? 'ਵਿਹਾਰਕ ਆਚਰਣ' : language === 'en' ? 'Real-Life Application' : 'दैनिक व्यवहार',
-    question: pack.scenarioQuestion[language] || pack.scenarioQuestion.hi,
-    options: res3.options,
-    correctIndex: res3.correctIndex,
-    explanation: res3.explanation,
-  };
-
-  // Dimension 4: Cause & Spiritual Effect (कारण और परिणाम)
-  const ceOpts = pack.causeOptions[language] || pack.causeOptions.hi;
-  const res4 = wrapOptionsWithFeedback(
-    [ceOpts[0], ceOpts[1], ceOpts[2], ceOpts[3]],
-    0,
-    bhavarth || ceOpts[0],
-    language
-  );
-  const q4: GeneratedQuizQuestion = {
-    id: `q-${sakhi.id || sakhi.number}-cause`,
-    dimension: 'cause-effect',
-    angle: language === 'pb' ? 'ਕਾਰਨ ਤੇ ਨਤੀਜਾ' : language === 'en' ? 'Cause & Consequence' : 'कारण और परिणाम',
-    question: pack.causeQuestion[language] || pack.causeQuestion.hi,
-    options: res4.options,
-    correctIndex: res4.correctIndex,
-    explanation: res4.explanation,
-  };
-
-  // Dimension 5: Deeper Kabir Panth Philosophy connected to Anga (तत्व ज्ञान एवं आत्म-बोध)
-  const tvOpts = pack.tattvaOptions[language] || pack.tattvaOptions.hi;
-  const res5 = wrapOptionsWithFeedback(
-    [tvOpts[0], tvOpts[1], tvOpts[2], tvOpts[3]],
-    0,
-    sakhi.contemplation?.[language] || sakhi.contemplation?.hi || bhavarth || tvOpts[0],
-    language
-  );
-  const q5: GeneratedQuizQuestion = {
-    id: `q-${sakhi.id || sakhi.number}-tattva`,
-    dimension: 'tattva-gyan',
-    angle: language === 'pb' ? 'ਤੱਤ ਗਿਆਨ' : language === 'en' ? 'Tattva Gyan' : 'तत्व ज्ञान',
-    question:
-      category
-        ? language === 'pb'
-          ? `'${category}' ਦੇ ਤੱਤ-ਗਿਆਨ ਅਨੁਸਾਰ: ${pack.tattvaQuestion.pb}`
-          : language === 'en'
-          ? `Connected to '${category}': ${pack.tattvaQuestion.en}`
-          : `'${category}' के तत्व-ज्ञान के संदर्भ में: ${pack.tattvaQuestion.hi}`
-        : pack.tattvaQuestion[language] || pack.tattvaQuestion.hi,
-    options: res5.options,
-    correctIndex: res5.correctIndex,
-    explanation: res5.explanation,
-  };
-
-  return shuffleGeneratedQuiz([q1, q2, q3, q4, q5]);
+  return shuffleGeneratedQuiz(questions);
 }
+

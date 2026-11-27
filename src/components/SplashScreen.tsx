@@ -209,7 +209,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
                 ) : activeLang === 'en' ? (
                   <>
                     <span className="block">Master the One Satyanaam, and everything in life falls into place;</span>
-                    <span className="block">Kabir says, without this One Root, the entire life goes in vain.</span>
+                    <span className="block">Satguru Kabir Saheb proclaims, without this One Root, the entire life goes in vain.</span>
                   </>
                 ) : (
                   <>

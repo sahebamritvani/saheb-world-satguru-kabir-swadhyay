@@ -96,9 +96,9 @@ const AUTHENTIC_REFLECTIONS: SacredReflection[] = [
     authorName: 'मगहर तीर्थ वाचनालय',
     category: 'philosophy',
     text: {
-      hi: 'कबीर साहेब की उलटबांसी बुद्धि को विस्मित करके अंतरात्मा को जगाने वाली कुंजी है। जब हम बाहर खोजने के बजाय भीतर शून्य में ध्यान लगाते हैं, तब परमात्मा का प्रत्यक्ष बोध होता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਉਲਟਬਾਂਸੀ ਬੁੱਧੀ ਨੂੰ ਹੈਰਾਨ ਕਰਕੇ ਅੰਤਰ-ਆਤਮਾ ਨੂੰ ਜਗਾਉਣ ਵਾਲੀ ਕੁੰਜੀ ਹੈ। ਜਦੋਂ ਬਾਹਰ ਖੋਜਣ ਦੀ ਬਜਾਏ ਅੰਦਰ ਧਿਆਨ ਲਗਾਈਏ, ਤਦ ਪਰਮਾਤਮਾ ਦਾ ਸੱਚਾ ਬੋਧ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb’s Ulatbansi is the mystical key that bewilders external intellect to awaken the inner consciousness. Turning inward to the silent void reveals the Supreme Reality.',
+      hi: 'सतगुरु कबीर साहेब की उलटबांसी बुद्धि को विस्मित करके अंतरात्मा को जगाने वाली कुंजी है। जब हम बाहर खोजने के बजाय भीतर शून्य में ध्यान लगाते हैं, तब परमात्मा का प्रत्यक्ष बोध होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਉਲਟਬਾਂਸੀ ਬੁੱਧੀ ਨੂੰ ਹੈਰਾਨ ਕਰਕੇ ਅੰਤਰ-ਆਤਮਾ ਨੂੰ ਜਗਾਉਣ ਵਾਲੀ ਕੁੰਜੀ ਹੈ। ਜਦੋਂ ਬਾਹਰ ਖੋਜਣ ਦੀ ਬਜਾਏ ਅੰਦਰ ਧਿਆਨ ਲਗਾਈਏ, ਤਦ ਪਰਮਾਤਮਾ ਦਾ ਸੱਚਾ ਬੋਧ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb’s Ulatbansi is the mystical key that bewilders external intellect to awaken the inner consciousness. Turning inward to the silent void reveals the Supreme Reality.',
     },
     quoteVani: {
       hi: 'कस्तूरी कुंडल बसै, मृग ढूंढ़े बन माहि। ऐसे घट-घट राम हैं, दुनिया देखै नाहिं॥',
@@ -254,7 +254,7 @@ export const CommunityBoard: React.FC<CommunityBoardProps> = ({ language, onClos
         </h2>
         <p className="text-xs sm:text-sm max-w-xl mx-auto opacity-75 font-serif" style={{ color: theme.textSecondary }}>
           {language === 'pb' 
-            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਸਿੱਖਿਆ, ਸ਼ੁੱਧ ਨਾਮ-ਸਿਮਰਨ ਅਤੇ ਸੱਚੀ ਸਾਧਨਾ ਨਾਲ ਜੁੜੇ ਪ੍ਰਮਾਣਿਤ ਅੰਮ੍ਰਿਤ ਵਿਚਾਰ।'
+            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਸਿੱਖਿਆ, ਸ਼ੁੱਧ ਨਾਮ-ਸਿਮਰਨ ਅਤੇ ਸੱਚੀ ਸਾਧਨਾ ਨਾਲ ਜੁੜੇ ਪ੍ਰਮਾਣਿਤ ਅੰਮ੍ਰਿਤ ਵਿਚਾਰ।'
             : language === 'en'
             ? 'Verified spiritual reflections and divine insights anchored in Satguru Kabir Saheb’s timeless teachings.'
             : 'सतगुरु कबीर साहेब की पावन शिक्षा, शुद्ध नाम-सुमिरन एवं सच्ची साधना से जुड़े प्रामाणिक अमृत विचार।'}

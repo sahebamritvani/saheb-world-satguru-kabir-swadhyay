@@ -18,7 +18,7 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({ isOpen, 
   if (!isOpen) return null;
 
   const sampleText = language === 'pb' 
-    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਅੰਮ੍ਰਿਤ ਬਾਣੀ - ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ।' 
+    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਅੰਮ੍ਰਿਤ ਬਾਣੀ - ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ।' 
     : language === 'en' 
     ? 'Satguru Kabir Saheb divine grace and inner remembrance of Satyanaam.' 
     : 'सतगुरु कबीर साहेब की अमृतवाणी - सत्यनाम का पावन सुमिरन।';

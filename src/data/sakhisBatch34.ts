@@ -19,7 +19,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Saakat te sant hot hai, jo guru mile sujaan. Ram-naam nij mantr de, chhudvave charo khaan.',
     bhavarth: {
-      hi: 'निगुरा आदमी भी साधु-संत के समान हो सकता है, यदि उसे अनुभवी व पूर्ण सद्गुरु मिल जाएं। वे पवित्र राम-नाम का मंत्र देकर, अर्थात आत्म-ज्ञान की दीक्षा प्रदान करके उसे संसार की चारों खानि से मुक्ति दिला सकते हैं। ऐसे पारखी सदगुरु में खोटे को खरा बनाने की क्षमता होती है और उनके सद्ज्ञान से कुमार्गी भी सन्मार्ग पर चलने लगते हैं।',
+      hi: 'निगुरा आदमी भी साधु-संत के समान हो सकता है, यदि उसे अनुभवी व पूर्ण सतगुरु मिल जाएं। वे पवित्र राम-नाम का मंत्र देकर, अर्थात आत्म-ज्ञान की दीक्षा प्रदान करके उसे संसार की चारों खानि से मुक्ति दिला सकते हैं। ऐसे पारखी सतगुरु में खोटे को खरा बनाने की क्षमता होती है और उनके सद्ज्ञान से कुमार्गी भी सन्मार्ग पर चलने लगते हैं।',
       pb: 'ਇਕ ਨਿਗੁਰਾ (ਬਿਨਾਂ ਗੁਰੂ ਵਾਲਾ) ਇਨਸਾਨ ਵੀ ਸੰਤ ਬਣ ਸਕਦਾ ਹੈ ਜੇਕਰ ਉਸਨੂੰ ਸਿਆਣਾ ਗੁਰੂ ਮਿਲ ਜਾਵੇ। ਗੁਰੂ ਨਾਮ ਦਾ ਮੰਤਰ ਦੇ ਕੇ ਉਸਨੂੰ ਜਨਮ-ਮਰਨ ਦੇ ਗੇੜ ਵਿੱਚੋਂ ਕੱਢ ਲੈਂਦੇ ਹਨ।',
       en: 'Even an uninitiated or "Saakat" person can become a saintly being if they find an experienced and perfect Satguru. By bestowing the sacred mantra of "Ram-Naam" (Self-knowledge), the Guru liberates them from the four categories of existence (reincarnation). A true Master has the power to transform the flawed into the pure.',
     },
@@ -41,7 +41,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
       ],
     },
     contemplation: {
-      hi: 'क्या मैं यह मानता हूँ कि कोई भी व्यक्ति, चाहे उसका अतीत कैसा भी हो, सद्गुरु की कृपा से पूर्णतः परिवर्तित हो सकता है?',
+      hi: 'क्या मैं यह मानता हूँ कि कोई भी व्यक्ति, चाहे उसका अतीत कैसा भी हो, सतगुरु की कृपा से पूर्णतः परिवर्तित हो सकता है?',
       pb: 'ਕੀ ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਇਨਸਾਨ ਬਦਲ ਸਕਦਾ ਹੈ?',
       en: 'Do I believe that any person, regardless of their past, can be completely transformed by the grace of a Satguru?',
     },
@@ -64,13 +64,13 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
           en: 'According to the Sakhi, how can a "Saakat" person become a saint?',
         },
         options: {
-          hi: ['बहुत धन कमाने से', 'पूर्ण सद्गुरु के मिलने और दीक्षा प्राप्त करने से', 'तीर्थों पर घूमने से', 'कठोर तपस्या से'],
+          hi: ['बहुत धन कमाने से', 'पूर्ण सतगुरु के मिलने और दीक्षा प्राप्त करने से', 'तीर्थों पर घूमने से', 'कठोर तपस्या से'],
           pb: ['ਬਹੁਤ ਪੈਸਾ ਕਮਾਉਣ ਨਾਲ', 'ਸੱਚੇ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਤੇ ਨਾਮ ਨਾਲ', 'ਤੀਰਥਾਂ ਤੇ ਜਾਣ ਨਾਲ', 'ਤਪੱਸਿਆ ਨਾਲ'],
           en: ['By earning a lot of wealth', 'By finding a perfect Satguru and receiving initiation', 'By visiting pilgrimages', 'By severe penance'],
         },
         correctIndex: 1,
         explanation: {
-          hi: 'सद्गुरु का ज्ञान और मंत्र ही वह शक्ति है जो मनुष्य के भीतर के विकार मिटाकर उसे संत बना देती है।',
+          hi: 'सतगुरु का ज्ञान और मंत्र ही वह शक्ति है जो मनुष्य के भीतर के विकार मिटाकर उसे संत बना देती है।',
           pb: 'ਗੁਰੂ ਦਾ ਗਿਆਨ ਹੀ ਬਦਲਾਅ ਲਿਆਉਂਦਾ ਹੈ।',
           en: 'The Master’s wisdom and mantra are the powers that erase inner vices and transform a human into a saint.',
         },
@@ -96,7 +96,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Jo kaamini pardai rahai, sunai na gurumukh baat. So to hogi kookari, phirai ughaarai gaat.',
     bhavarth: {
-      hi: 'जो स्त्री परदे में रहती है और सद्गुरु के दर्शन कर उनके श्रीमुख से निकले ज्ञानोपदेश को नहीं सुनती, वह भविष्य में कूकरी (पशु योनि) होगी और नंगे बदन घूमती फिरेगी, अर्थात परदा करने वाली स्त्रियों को गुरु से परदा नहीं करना चाहिए। श्रद्धा भाव से उनके सदुपदेश का श्रवण कर अपने जीवन का कल्याण करना चाहिए।',
+      hi: 'जो स्त्री परदे में रहती है और सतगुरु के दर्शन कर उनके श्रीमुख से निकले ज्ञानोपदेश को नहीं सुनती, वह भविष्य में कूकरी (पशु योनि) होगी और नंगे बदन घूमती फिरेगी, अर्थात परदा करने वाली स्त्रियों को गुरु से परदा नहीं करना चाहिए। श्रद्धा भाव से उनके सदुपदेश का श्रवण कर अपने जीवन का कल्याण करना चाहिए।',
       pb: 'ਜਿਹੜੀ ਇਸਤਰੀ ਪਰਦੇ ਵਿੱਚ ਰਹਿੰਦੀ ਹੈ ਤੇ ਗੁਰੂ ਦੇ ਬਚਨ ਨਹੀਂ ਸੁਣਦੀ, ਉਹ ਅਗਲੇ ਜਨਮ ਵਿੱਚ ਕੂਕਰੀ (ਕੁੱਤੀ) ਬਣ ਕੇ ਨੰਗੇ ਬਦਨ ਫਿਰੇਗੀ। ਗੁਰੂ ਤੋਂ ਪਰਦਾ ਨਹੀਂ ਕਰਨਾ ਚਾਹੀਦਾ।',
       en: 'A woman who remains hidden in veils (purdah) and avoids seeing the Satguru or listening to His wisdom will, in the future, be born as a "Kookari" (bitch/animal) and wander naked. This implies that one should not hide from the Guru; instead, one should listen to sacred teachings with devotion for spiritual welfare.',
     },
@@ -121,7 +121,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
       ],
     },
     contemplation: {
-      hi: 'क्या मैं सामाजिक बंधनों या झूठी मर्यादाओं के कारण सद्गुरु के ज्ञान से वंचित रह रहा हूँ?',
+      hi: 'क्या मैं सामाजिक बंधनों या झूठी मर्यादाओं के कारण सतगुरु के ज्ञान से वंचित रह रहा हूँ?',
       pb: 'ਕੀ ਮੈਂ ਗੁਰੂ ਦੇ ਬਚਨ ਸੁਣਦਾ ਹਾਂ?',
       en: 'Am I depriving myself of the Satguru’s wisdom due to social constraints or false notions of modesty?',
     },
@@ -150,7 +150,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'सद्गुरु के समक्ष हृदय को खोलना चाहिए, वहां सांसारिक परदे ज्ञान प्राप्ति में बाधक होते हैं।',
+          hi: 'सतगुरु के समक्ष हृदय को खोलना चाहिए, वहां सांसारिक परदे ज्ञान प्राप्ति में बाधक होते हैं।',
           pb: 'ਗੁਰੂ ਤੋਂ ਪਰਦਾ ਗਿਆਨ ਵਿੱਚ ਰੁਕਾਵਟ ਹੈ।',
           en: 'One must open their heart before the Satguru; worldly veils are obstacles to attaining knowledge.',
         },
@@ -176,9 +176,9 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Kabir hirday kathor ke, shabd na laagai saar. Sudhi budhi ke hirday vidhe, upaje gyan vichaar.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जिनका हृदय कठोर है, उनके ऊपर सत्य सार शब्द के उपदेश का उसी प्रकार कोई असर नहीं होता, जिस प्रकार पाषाण पर जल वृष्टि का कोई प्रभाव नहीं पड़ता। जिनमें जिज्ञासा, श्रद्धा व प्रेम है, अर्थात जो सच्चे जिज्ञासु हैं, उन्हीं के हृदय में ज्ञान प्राप्ति के विचार उत्पन्न होते हैं।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਹੜੇ ਪੱਥਰ ਦਿਲ ਹੁੰਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਤੇ ਗੁਰੂ ਦੇ ਸ਼ਬਦ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ। ਜਿਨ੍ਹਾਂ ਦੇ ਦਿਲ ਵਿੱਚ ਸ਼ਰਧਾ ਤੇ ਪ੍ਰੇਮ ਹੈ, ਉਥੇ ਹੀ ਗਿਆਨ ਪੈਦਾ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb says that the essence of the "Saar Shabd" (True Word) has no effect on those with a hard heart, much like rain having no effect on a stone. Only in the hearts of those with curiosity, faith, and love—the true seekers—do spiritual thoughts and wisdom arise.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जिनका हृदय कठोर है, उनके ऊपर सत्य सार शब्द के उपदेश का उसी प्रकार कोई असर नहीं होता, जिस प्रकार पाषाण पर जल वृष्टि का कोई प्रभाव नहीं पड़ता। जिनमें जिज्ञासा, श्रद्धा व प्रेम है, अर्थात जो सच्चे जिज्ञासु हैं, उन्हीं के हृदय में ज्ञान प्राप्ति के विचार उत्पन्न होते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਹੜੇ ਪੱਥਰ ਦਿਲ ਹੁੰਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਤੇ ਗੁਰੂ ਦੇ ਸ਼ਬਦ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ। ਜਿਨ੍ਹਾਂ ਦੇ ਦਿਲ ਵਿੱਚ ਸ਼ਰਧਾ ਤੇ ਪ੍ਰੇਮ ਹੈ, ਉਥੇ ਹੀ ਗਿਆਨ ਪੈਦਾ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims that the essence of the "Saar Shabd" (True Word) has no effect on those with a hard heart, much like rain having no effect on a stone. Only in the hearts of those with curiosity, faith, and love—the true seekers—do spiritual thoughts and wisdom arise.',
     },
     wordMeanings: {
       hi: [
@@ -254,7 +254,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Hariya jaanai rukhada, us paani ka neh. Sookha kaath na jaani hai, kitahoon booda meh.',
     bhavarth: {
-      hi: 'पानी (ज्ञान) के गुण-स्नेह को तो हरा-भरा वृक्ष (ज्ञानवान शिष्य) ही जानता है, क्योंकि उसी पानी के प्रभाव से वह पल्लवित हुआ है, परंतु सूखी लकड़ी को कितना भी पानी में डुबो दो, वह उसके गुण से प्रभावित नहीं होती। इसी प्रकार सद्गुरु के ज्ञान का प्रभाव जिज्ञासु जनों पर ही पड़ता है।',
+      hi: 'पानी (ज्ञान) के गुण-स्नेह को तो हरा-भरा वृक्ष (ज्ञानवान शिष्य) ही जानता है, क्योंकि उसी पानी के प्रभाव से वह पल्लवित हुआ है, परंतु सूखी लकड़ी को कितना भी पानी में डुबो दो, वह उसके गुण से प्रभावित नहीं होती। इसी प्रकार सतगुरु के ज्ञान का प्रभाव जिज्ञासु जनों पर ही पड़ता है।',
       pb: 'ਪਾਣੀ ਦੀ ਅਹਿਮੀਅਤ ਹਰਾ ਰੁੱਖ ਹੀ ਜਾਣਦਾ ਹੈ, ਸੁੱਕੀ ਲੱਕੜ ਨੂੰ ਪਾਣੀ ਵਿੱਚ ਡੋਬ ਦਿਓ ਤਾਂ ਵੀ ਉਹ ਹਰੀ ਨਹੀਂ ਹੁੰਦੀ। ਇਸੇ ਤਰ੍ਹਾਂ ਗੁਰੂ ਦੇ ਗਿਆਨ ਦਾ ਅਸਰ ਸਿਰਫ ਸੱਚੇ ਜਿਗਿਆਸੂ ਤੇ ਹੁੰਦਾ ਹੈ।',
       en: 'Only a green tree (a receptive disciple) knows the love and benefit of water (wisdom), for it is through that water that it flourishes. But dry wood, no matter how much you submerge it in water, remains unaffected. Similarly, the Satguru’s wisdom only impacts those who are spiritually curious and receptive.',
     },
@@ -332,9 +332,9 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Kabir lahari samudr kee, moti bikhre aay. Bagula parakh na jaanai, hansa chuni chuni khaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि समुद्र में लहर उठती है, तो मोती किनारे पर आकर बिखर जाते हैं। बगुला (मूर्ख व्यक्ति) तो उनकी परख नहीं जानता, परंतु हंस (ज्ञानी-जन) उन्हीं मोतियों को चुन-चुनकर खाते हैं, अर्थात सत्संग-रूपी समुद्र में से ज्ञान-रूपी मोती बिखरने पर सद्गुरु के प्रेमी पारखी हंस-जन ही ग्रहण कर पाते हैं।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि समुद्र में लहर उठती है, तो मोती किनारे पर आकर बिखर जाते हैं। बगुला (मूर्ख व्यक्ति) तो उनकी परख नहीं जानता, परंतु हंस (ज्ञानी-जन) उन्हीं मोतियों को चुन-चुनकर खाते हैं, अर्थात सत्संग-रूपी समुद्र में से ज्ञान-रूपी मोती बिखरने पर सतगुरु के प्रेमी पारखी हंस-जन ही ग्रहण कर पाते हैं।',
       pb: 'ਸਮੁੰਦਰ ਦੀਆਂ ਲਹਿਰਾਂ ਮੋਤੀ ਕਿਨਾਰੇ ਤੇ ਲੈ ਆਉਂਦੀਆਂ ਹਨ, ਬਗੁਲਾ ਉਨ੍ਹਾਂ ਦੀ ਪਰਖ ਨਹੀਂ ਜਾਣਦਾ ਪਰ ਹੰਸ ਉਨ੍ਹਾਂ ਮੋਤੀਆਂ ਨੂੰ ਚੁਣ ਲੈਂਦਾ ਹੈ। ਸਤਿਸੰਗ ਵਿੱਚੋਂ ਗਿਆਨ ਦੇ ਮੋਤੀ ਸਿਰਫ ਸਿਆਣੇ ਲੋਕ ਹੀ ਲੈਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb says that when waves rise in the ocean, pearls are scattered on the shore. A stork (a foolish person) does not recognize their value, but a swan (a wise seeker) picks them up and eats them. Similarly, when pearls of wisdom are scattered in the ocean of Satsang, only the discerning devotees of the Satguru can grasp them.',
+      en: 'Satguru Kabir Saheb proclaims that when waves rise in the ocean, pearls are scattered on the shore. A stork (a foolish person) does not recognize their value, but a swan (a wise seeker) picks them up and eats them. Similarly, when pearls of wisdom are scattered in the ocean of Satsang, only the discerning devotees of the Satguru can grasp them.',
     },
     wordMeanings: {
       hi: [
@@ -378,7 +378,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
           en: 'What do "pearls" symbolize in this Sakhi?',
         },
         options: {
-          hi: ['सफेद पत्थरों का', 'सद्गुरु के ज्ञान-वचनों का', 'समुद्री झाग का', 'धन-दौलत का'],
+          hi: ['सफेद पत्थरों का', 'सतगुरु के ज्ञान-वचनों का', 'समुद्री झाग का', 'धन-दौलत का'],
           pb: ['ਪੱਥਰਾਂ ਦਾ', 'ਗੁਰੂ ਦੇ ਗਿਆਨ ਦਾ', 'ਝੱਗ ਦਾ', 'ਪੈਸੇ ਦਾ'],
           en: ['White stones', 'The wisdom-words of the Satguru', 'Sea foam', 'Wealth'],
         },
@@ -410,9 +410,9 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Kabir hariras barasiya, giri parvat banraay. Neer nivaanoo thaaharai, na vah chhaapar daay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि बरसात तो पर्वत-शिखर, ऊंचे-नीचे तथा समतल भागों पर समान रूप से होती है, परंतु पानी सभी जगह नहीं ठहरता। वह केवल गहरे गड्ढों या तालाब में ठहरता है, अर्थात सद्गुरु का ज्ञान-प्रवचन तो सभी के लिए समान होता है, परंतु वह सच्चे जिज्ञासु जनों के पवित्र खाली विकाररहित हृदयों में ही समाता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि बरसात तो पर्वत-शिखर, ऊंचे-नीचे तथा समतल भागों पर समान रूप से होती है, परंतु पानी सभी जगह नहीं ठहरता। वह केवल गहरे गड्ढों या तालाब में ठहरता है, अर्थात सतगुरु का ज्ञान-प्रवचन तो सभी के लिए समान होता है, परंतु वह सच्चे जिज्ञासु जनों के पवित्र खाली विकाररहित हृदयों में ही समाता है।',
       pb: 'ਮੀਂਹ ਹਰ ਜਗ੍ਹਾ ਪੈਂਦਾ ਹੈ ਪਰ ਪਾਣੀ ਸਿਰਫ ਡੂੰਘੀਆਂ ਥਾਵਾਂ ਤੇ ਟਿਕਦਾ ਹੈ। ਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਸਭ ਲਈ ਹੈ ਪਰ ਉਹ ਸਿਰਫ ਨਿਮਰ ਤੇ ਪਵਿੱਤਰ ਦਿਲਾਂ ਵਿੱਚ ਹੀ ਟਿਕਦਾ ਹੈ।',
-      en: 'Kabir Saheb says that rain falls equally on mountain peaks, uneven ground, and flat lands, but water does not stay everywhere. It only settles in deep pits or ponds. Similarly, the Satguru’s discourse is the same for everyone, but it only dwells in the pure, empty, and vice-free hearts of true seekers.',
+      en: 'Satguru Kabir Saheb proclaims that rain falls equally on mountain peaks, uneven ground, and flat lands, but water does not stay everywhere. It only settles in deep pits or ponds. Similarly, the Satguru’s discourse is the same for everyone, but it only dwells in the pure, empty, and vice-free hearts of true seekers.',
     },
     wordMeanings: {
       hi: [
@@ -644,7 +644,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Chausath deeva joy ke, chaudah chanda maahin. Tehi ghar kisaka chaandana, jihi ghar satguru naahin.',
     bhavarth: {
-      hi: 'भले ही कोई चौंसठ कलाओं और चौदह विद्याओं का ज्ञाता हो, अर्थात कितना भी बड़ा विद्वान बन जाए, परंतु सद्गुरु के ज्ञान के बिना उसके मन रूपी घर में प्रकाश नहीं हो सकता। जिस घर में सद्गुरु का कभी आना ही नहीं हुआ, वहां सदैव अज्ञान रूपी अंधेरा छाया रहता है।',
+      hi: 'भले ही कोई चौंसठ कलाओं और चौदह विद्याओं का ज्ञाता हो, अर्थात कितना भी बड़ा विद्वान बन जाए, परंतु सतगुरु के ज्ञान के बिना उसके मन रूपी घर में प्रकाश नहीं हो सकता। जिस घर में सतगुरु का कभी आना ही नहीं हुआ, वहां सदैव अज्ञान रूपी अंधेरा छाया रहता है।',
       pb: 'ਭਾਵੇਂ ਕੋਈ 64 ਕਲਾਵਾਂ ਤੇ 14 ਵਿੱਦਿਆਵਾਂ ਦਾ ਗਿਆਨੀ ਹੋਵੇ, ਪਰ ਗੁਰੂ ਦੇ ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਉਸਦੇ ਮਨ ਵਿੱਚ ਹਨੇਰਾ ਹੀ ਰਹੇਗਾ। ਜਿਸਦੇ ਜੀਵਨ ਵਿੱਚ ਗੁਰੂ ਨਹੀਂ, ਉਥੇ ਗਿਆਨ ਦੀ ਰੋਸ਼ਨੀ ਨਹੀਂ ਹੋ ਸਕਦੀ।',
       en: 'Even if someone is a master of sixty-four arts and fourteen sciences—becoming a great scholar—without the Satguru’s wisdom, their mind-home cannot be illuminated. In a house where the Satguru has never entered, the darkness of ignorance always prevails.',
     },
@@ -672,7 +672,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
       en: 'Do I take pride in my degrees and worldly knowledge, while my mind is still in the darkness of ignorance?',
     },
     practicalApplication: {
-      hi: 'सांसारिक शिक्षा बाहरी सफलता दे सकती है, पर आंतरिक प्रकाश (शांति और मोक्ष) केवल सद्गुरु की कृपा से ही संभव है।',
+      hi: 'सांसारिक शिक्षा बाहरी सफलता दे सकती है, पर आंतरिक प्रकाश (शांति और मोक्ष) केवल सतगुरु की कृपा से ही संभव है।',
       pb: 'ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਲਵੋ।',
       en: 'Worldly education can give outward success, but inner light (peace and liberation) is possible only through the grace of the Satguru.',
     },
@@ -690,13 +690,13 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
           en: 'Without whom can there be no light in the mind-home?',
         },
         options: {
-          hi: ['सैकड़ों दीपकों के', 'सद्गुरु के ज्ञान के', 'चन्द्रमा के', 'पुस्तकों के'],
-          pb: ['ਦੀਵਿਆਂ ਦੇ', 'ਸਦਗੁਰੂ ਦੇ ਗਿਆਨ ਦੇ', 'ਚੰਦ ਦੇ', 'ਕਿਤਾਬਾਂ ਦੇ'],
+          hi: ['सैकड़ों दीपकों के', 'सतगुरु के ज्ञान के', 'चन्द्रमा के', 'पुस्तकों के'],
+          pb: ['ਦੀਵਿਆਂ ਦੇ', 'ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਦੇ', 'ਚੰਦ ਦੇ', 'ਕਿਤਾਬਾਂ ਦੇ'],
           en: ['Hundreds of lamps', 'The Satguru’s wisdom', 'The moon', 'Books'],
         },
         correctIndex: 1,
         explanation: {
-          hi: 'सांसारिक कलाएं और विद्याएं (६४ और १४) मिलकर भी वह आत्म-प्रकाश नहीं दे सकतीं जो सद्गुरु देते हैं।',
+          hi: 'सांसारिक कलाएं और विद्याएं (६४ और १४) मिलकर भी वह आत्म-प्रकाश नहीं दे सकतीं जो सतगुरु देते हैं।',
           pb: 'ਗੁਰੂ ਦਾ ਗਿਆਨ ਹੀ ਸਭ ਤੋਂ ਵੱਡਾ ਹੈ।',
           en: 'Worldly arts and sciences combined cannot provide that self-illumination which the Satguru provides.',
         },
@@ -878,9 +878,9 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Kabir guru kee bhakti binu, raaja raasabh hoy. Maati ladai kumhaar kee, ghaas na daarai koy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि गुरु की सेवा-भक्ति के बिना राज्य-संपत्ति का स्वामी राजा भी अंत में गधे की योनि को प्राप्त होगा, जो कुम्हार की मिट्टी ही ढोएगा और उसे कई पेट भर घास भी नहीं डालेगा, अतः सदैव गुरु-भक्ति में तत्पर रहना चाहिए।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि गुरु की सेवा-भक्ति के बिना राज्य-संपत्ति का स्वामी राजा भी अंत में गधे की योनि को प्राप्त होगा, जो कुम्हार की मिट्टी ही ढोएगा और उसे कई पेट भर घास भी नहीं डालेगा, अतः सदैव गुरु-भक्ति में तत्पर रहना चाहिए।',
       pb: 'ਗੁਰੂ ਦੀ ਭਗਤੀ ਤੋਂ ਬਿਨਾਂ ਇੱਕ ਰਾਜਾ ਵੀ ਅਗਲੇ ਜਨਮ ਵਿੱਚ ਗਧਾ ਬਣੇਗਾ ਜੋ ਘੁਮਿਆਰ ਦੀ ਮਿੱਟੀ ਢੋਵੇਗਾ ਤੇ ਉਸਨੂੰ ਕੋਈ ਘਾਹ ਵੀ ਨਹੀਂ ਪਾਵੇਗਾ। ਗੁਰੂ-ਭਗਤੀ ਹੀ ਅਸਲ ਕਮਾਈ ਹੈ।',
-      en: 'Kabir Saheb says that without the service and devotion of a Guru, even a king—the owner of state and wealth—will eventually be born as a donkey. He will carry the potter’s clay and no one will even give him enough grass to eat. Therefore, one should always be eager for Guru-bhakti.',
+      en: 'Satguru Kabir Saheb proclaims that without the service and devotion of a Guru, even a king—the owner of state and wealth—will eventually be born as a donkey. He will carry the potter’s clay and no one will even give him enough grass to eat. Therefore, one should always be eager for Guru-bhakti.',
     },
     wordMeanings: {
       hi: [
@@ -1007,9 +1007,9 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'कबीर साहेब के अनुसार गुरु-दीक्षा और भक्ति ही मनुष्य को श्रेष्ठ बनाती है, न कि उसकी जाति।',
+          hi: 'सतगुरु कबीर साहेब के अनुसार गुरु-दीक्षा और भक्ति ही मनुष्य को श्रेष्ठ बनाती है, न कि उसकी जाति।',
           pb: 'ਭਗਤੀ ਹੀ ਇਨਸਾਨ ਨੂੰ ਉੱਚਾ ਬਣਾਉਂਦੀ ਹੈ।',
-          en: 'According to Kabir Saheb, Guru-initiation and devotion are what make a human superior, not their caste.',
+          en: 'According to Satguru Kabir Saheb, Guru-initiation and devotion are what make a human superior, not their caste.',
         },
       },
     ],
@@ -1033,9 +1033,9 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Kanchan meru arpaheen, arpain kanak bhandaar. Kahain kabir guru bemukhee, kabahun na paavai paar.',
     bhavarth: {
-      hi: 'गुरु से विमुख हुआ व्यक्ति चाहे सुमेरु पर्वत के बराबर स्वर्ण का दान कर दे और चाहे कितना रत्न-माणिक्य का भंडार अर्पण कर दे, परंतु वह कभी भी पार नहीं पा सकता। कबीरजी दृढ़-निश्चय के साथ कहते हैं कि निगुरा कभी भी भव-सागर से तर नहीं सकता।',
+      hi: 'गुरु से विमुख हुआ व्यक्ति चाहे सुमेरु पर्वत के बराबर स्वर्ण का दान कर दे और चाहे कितना रत्न-माणिक्य का भंडार अर्पण कर दे, परंतु वह कभी भी पार नहीं पा सकता। सतगुरु कबीर साहेब दृढ़-निश्चय के साथ कहते हैं कि निगुरा कभी भी भव-सागर से तर नहीं सकता।',
       pb: 'ਗੁਰੂ ਤੋਂ ਬੇਮੁਖ ਹੋਇਆ ਇਨਸਾਨ ਭਾਵੇਂ ਸੋਨੇ ਦੇ ਪਹਾੜ ਦਾਨ ਕਰ ਦੇਵੇ, ਉਹ ਕਦੇ ਵੀ ਮੁਕਤੀ ਨਹੀਂ ਪਾ ਸਕਦਾ। ਨਿਗੁਰਾ ਕਦੇ ਵੀ ਭਵ-ਸਾਗਰ ਤੋਂ ਪਾਰ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
-      en: 'A person turned away from the Guru can never cross the ocean of existence, even if they donate gold as massive as Mount Sumeru or offer vast stores of gems. Kabir Saheb asserts with firm conviction that an uninitiated person can never find liberation.',
+      en: 'A person turned away from the Guru can never cross the ocean of existence, even if they donate gold as massive as Mount Sumeru or offer vast stores of gems. Satguru Kabir Saheb asserts with firm conviction that an uninitiated person can never find liberation.',
     },
     wordMeanings: {
       hi: [
@@ -1190,7 +1190,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
     },
     transliteration: 'Gagan mandal ke beech mein, tahvaan jhalakai noor. Nigura mahal na paavai, pahunchega guru poor.',
     bhavarth: {
-      hi: 'गुरु में श्रद्धा रखने वालों के हृदय-मंदिर में अविनाशी आत्म-देव का प्रकाश झलक रहा है, परंतु निगुरा उस स्थान को कदापि नहीं पा सकता। उसे तो जो पूर्ण सद्गुरु का शिष्य होगा, वही साधना के माध्यम से पा सकेगा, अर्थात आत्म-दर्शन के लिए गुरु-ज्ञान परम आवश्यक है।',
+      hi: 'गुरु में श्रद्धा रखने वालों के हृदय-मंदिर में अविनाशी आत्म-देव का प्रकाश झलक रहा है, परंतु निगुरा उस स्थान को कदापि नहीं पा सकता। उसे तो जो पूर्ण सतगुरु का शिष्य होगा, वही साधना के माध्यम से पा सकेगा, अर्थात आत्म-दर्शन के लिए गुरु-ज्ञान परम आवश्यक है।',
       pb: 'ਆਤਮਿਕ ਮੰਡਲ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦੀ ਰੋਸ਼ਨੀ ਚਮਕ ਰਹੀ ਹੈ, ਪਰ ਨਿਗੁਰਾ ਉਸ ਸੱਚੇ ਮਹਿਲ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦਾ। ਉਥੇ ਸਿਰਫ ਪੂਰੇ ਗੁਰੂ ਵਾਲਾ ਹੀ ਪਹੁੰਚ ਸਕਦਾ ਹੈ।',
       en: 'In the heart-temple of those who have faith in the Guru, the light of the eternal Self is shimmering. However, the uninitiated person can never attain that state. Only the disciple of a perfect Satguru will reach it through spiritual practice—meaning, Guru-wisdom is essential for Self-realization.',
     },
@@ -1199,7 +1199,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
         { word: 'गगन मंडल (Gagan mandal)', meaning: 'ब्रह्मरंध्र, उच्च आध्यात्मिक अवस्था' },
         { word: 'नूर (Noor)', meaning: 'प्रकाश, आत्म-ज्योति' },
         { word: 'महल (Mahal)', meaning: 'परम पद, मुक्ति का स्थान' },
-        { word: 'गुरु पूर (Guru poor)', meaning: 'पूर्ण सद्गुरु का अनुयायी' },
+        { word: 'गुरु पूर (Guru poor)', meaning: 'पूर्ण सतगुरु का अनुयायी' },
       ],
       pb: [
         { word: 'ਗਗਨ ਮੰਡਲ', meaning: 'ਆਕਾਸ਼/ਆਤਮਿਕ ਅਵਸਥਾ' },
@@ -1443,7 +1443,7 @@ export const SAKHIS_BATCH_34: Sakhi[] = [
       ],
     },
     contemplation: {
-      hi: 'क्या मैं अपनी मनमानी से साधना कर रहा हूँ, या मैंने स्वयं को सद्गुरु के निर्देशन में समर्पित किया है?',
+      hi: 'क्या मैं अपनी मनमानी से साधना कर रहा हूँ, या मैंने स्वयं को सतगुरु के निर्देशन में समर्पित किया है?',
       pb: 'ਕੀ ਮੇਰੀ ਭਗਤੀ ਸਹੀ ਹੈ?',
       en: 'Am I practicing spirituality according to my own whims, or have I surrendered myself to the Satguru’s direction?',
     },

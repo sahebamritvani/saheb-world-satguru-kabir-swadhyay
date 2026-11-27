@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jaha kaam taha naam nahi, jaha naam nahi waha kaam. Dono kabahu nahi mile, ravi rajani ik dhaam.',
     bhavarth: {
-      hi: 'कबीर साहेब वासना और भक्ति के परस्पर विरोधी स्वभाव को समझाते हैं: जहाँ काम-वासना और शारीरिक आसक्ति का वास होता है वहाँ प्रभु का पावन नाम नहीं ठहर सकता, और जहाँ सत्यनाम का निवास होता है वहाँ वासना का कोई स्थान नहीं रहता। ये दोनों कभी एक साथ नहीं रह सकते, जैसे सूर्य (रवि) और रात्रि का अंधकार (रजनी) एक ही स्थान पर एक साथ कभी उपस्थित नहीं हो सकते।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿੱਥੇ ਕਾਮ-ਵਾਸਨਾ ਹੈ ਉੱਥੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਅਤੇ ਜਿੱਥੇ ਨਾਮ ਵੱਸਦਾ ਹੈ ਉੱਥੇ ਕਾਮ ਦਾ ਕੋਈ ਕੰਮ ਨਹੀਂ। ਜਿਵੇਂ ਸੂਰਜ ਅਤੇ ਰਾਤ ਕਦੇ ਇਕੱਠੇ ਨਹੀਂ ਹੋ ਸਕਦੇ, ਓਵੇਂ ਹੀ ਕਾਮ ਅਤੇ ਨਾਮ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ।',
-      en: 'Kabir Saheb illustrates the irreconcilable duality of lust and devotion: Where carnal lust and sensual desires dwell, the holy Divine Name cannot abide; and where the sacred Name is enshrined, lust cannot exist. These two can never co-exist in one heart, just as radiant daylight (the sun) and pitch darkness (the night) can never inhabit the same place at the same moment.',
+      hi: 'सतगुरु कबीर साहेब वासना और भक्ति के परस्पर विरोधी स्वभाव को समझाते हैं: जहाँ काम-वासना और शारीरिक आसक्ति का वास होता है वहाँ प्रभु का पावन नाम नहीं ठहर सकता, और जहाँ सत्यनाम का निवास होता है वहाँ वासना का कोई स्थान नहीं रहता। ये दोनों कभी एक साथ नहीं रह सकते, जैसे सूर्य (रवि) और रात्रि का अंधकार (रजनी) एक ही स्थान पर एक साथ कभी उपस्थित नहीं हो सकते।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿੱਥੇ ਕਾਮ-ਵਾਸਨਾ ਹੈ ਉੱਥੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਅਤੇ ਜਿੱਥੇ ਨਾਮ ਵੱਸਦਾ ਹੈ ਉੱਥੇ ਕਾਮ ਦਾ ਕੋਈ ਕੰਮ ਨਹੀਂ। ਜਿਵੇਂ ਸੂਰਜ ਅਤੇ ਰਾਤ ਕਦੇ ਇਕੱਠੇ ਨਹੀਂ ਹੋ ਸਕਦੇ, ਓਵੇਂ ਹੀ ਕਾਮ ਅਤੇ ਨਾਮ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ।',
+      en: 'Satguru Kabir Saheb illustrates the irreconcilable duality of lust and devotion: Where carnal lust and sensual desires dwell, the holy Divine Name cannot abide; and where the sacred Name is enshrined, lust cannot exist. These two can never co-exist in one heart, just as radiant daylight (the sun) and pitch darkness (the night) can never inhabit the same place at the same moment.',
     },
     wordMeanings: {
       hi: [
@@ -104,9 +104,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jaisi bhakti kare sabhi, waise pooja hoye. Bhay paaras hai jeev ko, nirbhay hoy na koye.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति के अनुशासन और परमात्मा के प्रति पावन मर्यादा (भय) का रहस्य बताते हैं: जैसी भावना से जीव भक्ति करता है, वैसी ही उसकी पूजा फलवती होती है। किंतु जीव के लिए परमात्मा और सतगुरु का पावन "भय" (मर्यादा व आदर) पारसमणि के समान है, जो जीव को पापों से बचाकर कुंदन बनाता है। जब तक मर्यादा का पावन भय न हो, तब तक कोई भी विकार-रहित व सच्चा "निर्भय" नहीं बन सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਦੀ ਭਾਵਨਾ ਨਾਲ ਕੋਈ ਭਗਤੀ ਕਰਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਫਲ ਮਿਲਦਾ ਹੈ। ਗੁਰੂ ਅਤੇ ਪ੍ਰਭੂ ਦਾ ਪਵਿੱਤਰ ਡਰ (ਮਰਯਾਦਾ) ਜੀਵ ਲਈ ਪਾਰਸ ਵਰਗਾ ਹੈ ਜੋ ਉਸਨੂੰ ਸ਼ੁੱਧ ਕਰਦਾ ਹੈ। ਸੱਚੇ ਡਰ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਨਿਰਭੈ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
-      en: 'Kabir Saheb unveils the sublime mystery of divine reverence: Worship yields fruit in exact accordance with the inner sincerity of the devotee. But the holy, reverential awe (Bhay) of the Master and Truth acts as a touchstone (Paras) for the soul, transmuting raw base instincts into golden purity. Without walking in this sacred discipline and reverence, none can attain true spiritual fearlessness (Nirbhay).',
+      hi: 'सतगुरु कबीर साहेब भक्ति के अनुशासन और परमात्मा के प्रति पावन मर्यादा (भय) का रहस्य बताते हैं: जैसी भावना से जीव भक्ति करता है, वैसी ही उसकी पूजा फलवती होती है। किंतु जीव के लिए परमात्मा और सतगुरु का पावन "भय" (मर्यादा व आदर) पारसमणि के समान है, जो जीव को पापों से बचाकर कुंदन बनाता है। जब तक मर्यादा का पावन भय न हो, तब तक कोई भी विकार-रहित व सच्चा "निर्भय" नहीं बन सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਦੀ ਭਾਵਨਾ ਨਾਲ ਕੋਈ ਭਗਤੀ ਕਰਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਫਲ ਮਿਲਦਾ ਹੈ। ਗੁਰੂ ਅਤੇ ਪ੍ਰਭੂ ਦਾ ਪਵਿੱਤਰ ਡਰ (ਮਰਯਾਦਾ) ਜੀਵ ਲਈ ਪਾਰਸ ਵਰਗਾ ਹੈ ਜੋ ਉਸਨੂੰ ਸ਼ੁੱਧ ਕਰਦਾ ਹੈ। ਸੱਚੇ ਡਰ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਨਿਰਭੈ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb unveils the sublime mystery of divine reverence: Worship yields fruit in exact accordance with the inner sincerity of the devotee. But the holy, reverential awe (Bhay) of the Master and Truth acts as a touchstone (Paras) for the soul, transmuting raw base instincts into golden purity. Without walking in this sacred discipline and reverence, none can attain true spiritual fearlessness (Nirbhay).',
     },
     wordMeanings: {
       hi: [
@@ -183,9 +183,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jal jyo pyaara maahri, lobhi pyaara daam. Maata pyaara baarka, bhagati pyaara naam.',
     bhavarth: {
-      hi: 'कबीर साहेब अनन्य और स्वाभाविक प्रेम के सुंदर दृष्टांत देते हैं: जैसे मछली (माहरी) को जल से प्राणप्रिय प्रेम होता है (जिसके बिना वह एक पल भी नहीं जी सकती), जैसे लोभी व्यक्ति को धन (दाम) सबसे प्रिय लगता है, और जैसे माता को अपनी संतान (बालक) से अगाध प्रेम होता है—ठीक उसी प्रकार सच्चे भक्त को केवल परमात्मा का सत्यनाम ही परम प्रिय और प्राणों से प्यारा होता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰੇਮ ਦੀਆਂ ਉਦਾਹਰਣਾਂ ਦਿੰਦੇ ਹਨ: ਜਿਵੇਂ ਮੱਛੀ ਨੂੰ ਪਾਣੀ ਪਿਆਰਾ ਹੈ, ਲੋਭੀ ਨੂੰ ਧਨ ਪਿਆਰਾ ਹੈ, ਮਾਂ ਨੂੰ ਆਪਣਾ ਬੱਚਾ ਪਿਆਰਾ ਹੈ—ਓਵੇਂ ਹੀ ਸੱਚੇ ਭਗਤ ਨੂੰ ਪ੍ਰਭੂ ਦਾ ਪਾਵਨ ਨਾਮ ਪ੍ਰਾਣਾਂ ਤੋਂ ਵੱਧ ਪਿਆਰਾ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates the depth of pure spiritual love with vivid metaphors: Just as water is life itself to the fish (who cannot survive a moment without it), just as wealth is dear to the covetous miser, and just as a tender child is the apple of its mother’s eye—even so, the holy Name of the Supreme Lord is infinitely dear and life-giving to the true devotee.',
+      hi: 'सतगुरु कबीर साहेब अनन्य और स्वाभाविक प्रेम के सुंदर दृष्टांत देते हैं: जैसे मछली (माहरी) को जल से प्राणप्रिय प्रेम होता है (जिसके बिना वह एक पल भी नहीं जी सकती), जैसे लोभी व्यक्ति को धन (दाम) सबसे प्रिय लगता है, और जैसे माता को अपनी संतान (बालक) से अगाध प्रेम होता है—ठीक उसी प्रकार सच्चे भक्त को केवल परमात्मा का सत्यनाम ही परम प्रिय और प्राणों से प्यारा होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰੇਮ ਦੀਆਂ ਉਦਾਹਰਣਾਂ ਦਿੰਦੇ ਹਨ: ਜਿਵੇਂ ਮੱਛੀ ਨੂੰ ਪਾਣੀ ਪਿਆਰਾ ਹੈ, ਲੋਭੀ ਨੂੰ ਧਨ ਪਿਆਰਾ ਹੈ, ਮਾਂ ਨੂੰ ਆਪਣਾ ਬੱਚਾ ਪਿਆਰਾ ਹੈ—ਓਵੇਂ ਹੀ ਸੱਚੇ ਭਗਤ ਨੂੰ ਪ੍ਰਭੂ ਦਾ ਪਾਵਨ ਨਾਮ ਪ੍ਰਾਣਾਂ ਤੋਂ ਵੱਧ ਪਿਆਰਾ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the depth of pure spiritual love with vivid metaphors: Just as water is life itself to the fish (who cannot survive a moment without it), just as wealth is dear to the covetous miser, and just as a tender child is the apple of its mother’s eye—even so, the holy Name of the Supreme Lord is infinitely dear and life-giving to the true devotee.',
     },
     wordMeanings: {
       hi: [
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jeevat samjhe jeevat bujhe, jeevat hi karo aas. Jeevat karam ki faansi na kate, mue mukti ki aas.',
     bhavarth: {
-      hi: 'कबीर साहेब जीते जी मुक्ति (जीवन्मुक्ति) का क्रांतिकारी सत्य उद्घाटित करते हैं: जो कुछ समझना, जानना और सत्य का बोध प्राप्त करना है, वह इसी जीवित अवस्था में करो; मुक्ति की वास्तविक आशा भी इसी देह में रहते हुए पूरी की जा सकती है। यदि जीते जी कर्मों और अज्ञान की फाँसी नहीं कटी, तो मरने के बाद मुक्ति मिलने की कोरी कल्पना करना सर्वथा व्यर्थ और भ्रम है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚ ਦਾ ਗਿਆਨ ਜਿਊਂਦੇ ਜੀਅ ਹੀ ਪ੍ਰਾਪਤ ਕਰੋ। ਜੇਕਰ ਜਿਊਂਦੇ ਜੀਅ ਕਰਮਾਂ ਦੀ ਫਾਹੀ ਨਾ ਕੱਟੀ ਗਈ, ਤਾਂ ਮਰਨ ਪਿੱਛੋਂ ਮੁਕਤੀ ਦੀ ਆਸ ਰੱਖਣਾ ਨਿਰਾ ਭਰਮ ਹੈ।',
-      en: 'Kabir Saheb proclaims the revolutionary doctrine of Jeevan Mukti (liberation while living): Whatever Truth is to be understood and realized must be experienced right now while alive in this body; true spiritual realization must be accomplished during life. If the choking noose of karmic illusion is not severed while living, hoping for salvation after physical death is a tragic delusion.',
+      hi: 'सतगुरु कबीर साहेबते जी मुक्ति (जीवन्मुक्ति) का क्रांतिकारी सत्य उद्घाटित करते हैं: जो कुछ समझना, जानना और सत्य का बोध प्राप्त करना है, वह इसी जीवित अवस्था में करो; मुक्ति की वास्तविक आशा भी इसी देह में रहते हुए पूरी की जा सकती है। यदि जीते जी कर्मों और अज्ञान की फाँसी नहीं कटी, तो मरने के बाद मुक्ति मिलने की कोरी कल्पना करना सर्वथा व्यर्थ और भ्रम है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚ ਦਾ ਗਿਆਨ ਜਿਊਂਦੇ ਜੀਅ ਹੀ ਪ੍ਰਾਪਤ ਕਰੋ। ਜੇਕਰ ਜਿਊਂਦੇ ਜੀਅ ਕਰਮਾਂ ਦੀ ਫਾਹੀ ਨਾ ਕੱਟੀ ਗਈ, ਤਾਂ ਮਰਨ ਪਿੱਛੋਂ ਮੁਕਤੀ ਦੀ ਆਸ ਰੱਖਣਾ ਨਿਰਾ ਭਰਮ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the revolutionary doctrine of Jeevan Mukti (liberation while living): Whatever Truth is to be understood and realized must be experienced right now while alive in this body; true spiritual realization must be accomplished during life. If the choking noose of karmic illusion is not severed while living, hoping for salvation after physical death is a tragic delusion.',
     },
     wordMeanings: {
       hi: [
@@ -350,9 +350,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jhoothe sukh ko sukh kahe, maanta hai man mod. Jagat chabena kaal ka, kuch mukh me kuch god.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार की क्षणभंगुरता और मृत्यु की अवश्यंभाविता पर तीव्र चेतावनी देते हैं: अज्ञानी मनुष्य इस संसार के नश्वर, क्षणिक और झूठे भोगों को ही सच्चा सुख समझ बैठता है और मन ही मन बड़ा प्रसन्न होता है। वह यह नहीं देखता कि यह सारा संसार काल (मृत्यु) का भुना हुआ चना (चबेना) है—जिसमें से कुछ जीव तो काल के मुख में जा चुके हैं और बाकी उसकी गोद (झोली) में अपनी बारी की प्रतीक्षा कर रहे हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਝੂਠੇ ਸੰਸਾਰਕ ਸੁਖਾਂ ਨੂੰ ਸੱਚਾ ਸੁਖ ਮੰਨ ਕੇ ਖੁਸ਼ ਹੁੰਦਾ ਹੈ। ਇਹ ਸਾਰੀ ਦੁਨੀਆ ਕਾਲ (ਮੌਤ) ਦਾ ਚਬੇਣਾ (ਭੁੰਨੇ ਹੋਏ ਛੋਲੇ) ਹੈ—ਕੁਝ ਉਸਦੇ ਮੂੰਹ ਵਿੱਚ ਜਾ ਚੁੱਕੇ ਹਨ ਤੇ ਬਾਕੀ ਉਸਦੀ ਝੋਲੀ ਵਿੱਚ ਹਨ।',
-      en: 'Kabir Saheb sounds a piercing awakening call on the fragility of existence: Deluded mortals mistake the transient, illusory pleasures of this world for genuine happiness, rejoicing in their hearts. They fail to realize that this entire universe is merely a light snack (Chabena) in the hands of Kaal (Death)—some souls are already being chewed in his mouth, while the rest sit in his lap awaiting their turn.',
+      hi: 'सतगुरु कबीर साहेब संसार की क्षणभंगुरता और मृत्यु की अवश्यंभाविता पर तीव्र चेतावनी देते हैं: अज्ञानी मनुष्य इस संसार के नश्वर, क्षणिक और झूठे भोगों को ही सच्चा सुख समझ बैठता है और मन ही मन बड़ा प्रसन्न होता है। वह यह नहीं देखता कि यह सारा संसार काल (मृत्यु) का भुना हुआ चना (चबेना) है—जिसमें से कुछ जीव तो काल के मुख में जा चुके हैं और बाकी उसकी गोद (झोली) में अपनी बारी की प्रतीक्षा कर रहे हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਝੂਠੇ ਸੰਸਾਰਕ ਸੁਖਾਂ ਨੂੰ ਸੱਚਾ ਸੁਖ ਮੰਨ ਕੇ ਖੁਸ਼ ਹੁੰਦਾ ਹੈ। ਇਹ ਸਾਰੀ ਦੁਨੀਆ ਕਾਲ (ਮੌਤ) ਦਾ ਚਬੇਣਾ (ਭੁੰਨੇ ਹੋਏ ਛੋਲੇ) ਹੈ—ਕੁਝ ਉਸਦੇ ਮੂੰਹ ਵਿੱਚ ਜਾ ਚੁੱਕੇ ਹਨ ਤੇ ਬਾਕੀ ਉਸਦੀ ਝੋਲੀ ਵਿੱਚ ਹਨ।',
+      en: 'Satguru Kabir Saheb sounds a piercing awakening call on the fragility of existence: Deluded mortals mistake the transient, illusory pleasures of this world for genuine happiness, rejoicing in their hearts. They fail to realize that this entire universe is merely a light snack (Chabena) in the hands of Kaal (Death)—some souls are already being chewed in his mouth, while the rest sit in his lap awaiting their turn.',
     },
     wordMeanings: {
       hi: [
@@ -432,9 +432,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jin Gur jaisa jaanya, tin koo taisa laabh. Oas pyaas na bhaajsi, jab lagi dhase na aabh.',
     bhavarth: {
-      hi: 'कबीर साहेब शिष्य के विश्वास और समर्पण की गहराई का फल समझाते हैं: जिस साधक ने अपने सतगुरु को जिस स्तर का जाना (साधारण मनुष्य, संत या साक्षात परमात्मा), उसे वैसा ही आध्यात्मिक लाभ प्राप्त हुआ। केवल ओस की नन्हीं बूँदों को चाटने से प्यास नहीं बुझती, जब तक कि आकाश से मूसलाधार वर्षा का जल (आभ) घट में न समा जाए। सतगुरु के ज्ञान में गहरा उतरने से ही तृप्ति होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸਨੇ ਗੁਰੂ ਨੂੰ ਜਿੰਨਾ ਪਛਾਣਿਆ ਤੇ ਸ਼ਰਧਾ ਰੱਖੀ, ਉਸਨੂੰ ਓਨਾ ਹੀ ਰੂਹਾਨੀ ਲਾਭ ਮਿਲਿਆ। ਤ੍ਰੇਲ ਦੀਆਂ ਬੂੰਦਾਂ ਨਾਲ ਪਿਆਸ ਨਹੀਂ ਬੁੱਝਦੀ, ਜਦ ਤੱਕ ਅੰਮ੍ਰਿਤ ਵਰਖਾ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਾ ਭਿੱਜਿਆ ਜਾਵੇ।',
-      en: 'Kabir Saheb explains that spiritual benefit is directly proportional to the depth of one’s faith in the Master: As deeply and exalted as a disciple perceives their Satguru, exactly that profound is the grace and realization they receive. Licking mere morning dew drops can never quench deep thirst until one plunges into the torrential downpour of heavenly rain (Aabh). Sincere, wholehearted immersion in the Guru’s wisdom alone satisfies the soul.',
+      hi: 'सतगुरु कबीर साहेब शिष्य के विश्वास और समर्पण की गहराई का फल समझाते हैं: जिस साधक ने अपने सतगुरु को जिस स्तर का जाना (साधारण मनुष्य, संत या साक्षात परमात्मा), उसे वैसा ही आध्यात्मिक लाभ प्राप्त हुआ। केवल ओस की नन्हीं बूँदों को चाटने से प्यास नहीं बुझती, जब तक कि आकाश से मूसलाधार वर्षा का जल (आभ) घट में न समा जाए। सतगुरु के ज्ञान में गहरा उतरने से ही तृप्ति होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸਨੇ ਗੁਰੂ ਨੂੰ ਜਿੰਨਾ ਪਛਾਣਿਆ ਤੇ ਸ਼ਰਧਾ ਰੱਖੀ, ਉਸਨੂੰ ਓਨਾ ਹੀ ਰੂਹਾਨੀ ਲਾਭ ਮਿਲਿਆ। ਤ੍ਰੇਲ ਦੀਆਂ ਬੂੰਦਾਂ ਨਾਲ ਪਿਆਸ ਨਹੀਂ ਬੁੱਝਦੀ, ਜਦ ਤੱਕ ਅੰਮ੍ਰਿਤ ਵਰਖਾ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਾ ਭਿੱਜਿਆ ਜਾਵੇ।',
+      en: 'Satguru Kabir Saheb explains that spiritual benefit is directly proportional to the depth of one’s faith in the Master: As deeply and exalted as a disciple perceives their Satguru, exactly that profound is the grace and realization they receive. Licking mere morning dew drops can never quench deep thirst until one plunges into the torrential downpour of heavenly rain (Aabh). Sincere, wholehearted immersion in the Guru’s wisdom alone satisfies the soul.',
     },
     wordMeanings: {
       hi: [
@@ -514,9 +514,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jis marne se jag dare, mere man me aanand. Kab maru kab paau, pooran parmanand.',
     bhavarth: {
-      hi: 'कबीर साहेब मृत्यु के भय से परे परम आनंद की अवस्था का उद्घोष करते हैं: जिस मृत्यु के नाम से सारा संसार भयभीत और थर-थर कांपता है, उस (अहंकार की) मृत्यु का विचार आते ही मेरे मन में असीम आनंद की लहर उठती है। मैं उस क्षण की प्रतीक्षा में हूँ जब मेरा यह देह-अहंकार पूरी तरह विलीन हो जाए और मुझे परमात्मा का पूर्ण, अखंड परमानंद प्राप्त हो सके।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਮੌਤ ਤੋਂ ਸਾਰਾ ਸੰਸਾਰ ਡਰਦਾ ਹੈ, ਉਸ ਨਾਲ ਮੇਰੇ ਮਨ ਵਿੱਚ ਆਨੰਦ ਉਮਡਦਾ ਹੈ। ਮੈਂ ਤਾਂ ਲੋਚਦਾ ਹਾਂ ਕਿ ਕਦੋਂ ਮੇਰੀ ਹਉਮੈ ਮਰੇ ਅਤੇ ਮੈਨੂੰ ਪੂਰਨ ਪ੍ਰਭੂ ਦਾ ਪਰਮਾਨੰਦ ਮਿਲੇ।',
-      en: 'Kabir Saheb boldly proclaims transcendental fearlessness and spiritual ecstasy: "That very death which strikes terror into the heart of the entire mortal world fills my soul with supreme, overflowing bliss! I eagerly await that holy dissolution of the ego and body, when I shall forever merge into the absolute, complete ecstasy of the Supreme Beloved!"',
+      hi: 'सतगुरु कबीर साहेब मृत्यु के भय से परे परम आनंद की अवस्था का उद्घोष करते हैं: जिस मृत्यु के नाम से सारा संसार भयभीत और थर-थर कांपता है, उस (अहंकार की) मृत्यु का विचार आते ही मेरे मन में असीम आनंद की लहर उठती है। मैं उस क्षण की प्रतीक्षा में हूँ जब मेरा यह देह-अहंकार पूरी तरह विलीन हो जाए और मुझे परमात्मा का पूर्ण, अखंड परमानंद प्राप्त हो सके।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਮੌਤ ਤੋਂ ਸਾਰਾ ਸੰਸਾਰ ਡਰਦਾ ਹੈ, ਉਸ ਨਾਲ ਮੇਰੇ ਮਨ ਵਿੱਚ ਆਨੰਦ ਉਮਡਦਾ ਹੈ। ਮੈਂ ਤਾਂ ਲੋਚਦਾ ਹਾਂ ਕਿ ਕਦੋਂ ਮੇਰੀ ਹਉਮੈ ਮਰੇ ਅਤੇ ਮੈਨੂੰ ਪੂਰਨ ਪ੍ਰਭੂ ਦਾ ਪਰਮਾਨੰਦ ਮਿਲੇ।',
+      en: 'Satguru Kabir Saheb boldly proclaims transcendental fearlessness and spiritual ecstasy: "That very death which strikes terror into the heart of the entire mortal world fills my soul with supreme, overflowing bliss! I eagerly await that holy dissolution of the ego and body, when I shall forever merge into the absolute, complete ecstasy of the Supreme Beloved!"',
     },
     wordMeanings: {
       hi: [
@@ -596,9 +596,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jo jaane jeev na aapna, karhi jeev ka saar. Jeeva aisa paahona, mile na dooji baar.',
     bhavarth: {
-      hi: 'कबीर साहेब मानव जीवन की अनमोलता और क्षणभंगुरता समझाते हैं: जो विवेकी जन यह समझ लेता है कि यह देह और जीवन उसका स्थायी या निजी नहीं है, वही इस जीवात्मा के सच्चे कल्याण (सार तत्व / मुक्ति) का यत्न करता है। यह जीवात्मा इस देह में एक ऐसे अतिथि (पाहुना) के समान आई है, जिसे ऐसा दुर्लभ मानव चोला बार-बार नहीं मिलेगा। अतः समय रहते आत्म-कल्याण कर लो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਇਹ ਜਾਣਦਾ ਹੈ ਕਿ ਇਹ ਸਰੀਰ ਸਦਾ ਰਹਿਣ ਵਾਲਾ ਨਹੀਂ, ਉਹੀ ਆਤਮਾ ਦਾ ਸੱਚਾ ਉੱਧਾਰ ਕਰਦਾ ਹੈ। ਇਹ ਜੀਵ ਇਸ ਦੇਹ ਵਿੱਚ ਇੱਕ ਪ੍ਰਾਹੁਣੇ ਵਾਂਗ ਹੈ, ਇਹ ਦੁਰਲੱਭ ਮਨੁੱਖਾ ਜਨਮ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਣਾ।',
-      en: 'Kabir Saheb illuminates the precious fragility of human incarnation: One who realizes that this physical body and breath are not their permanent possession strives earnestly for the supreme welfare and liberation of their soul. The soul is merely a visiting guest (Paahona) in this mortal vessel, and this priceless human opportunity will not be easily granted a second time.',
+      hi: 'सतगुरु कबीर साहेब मानव जीवन की अनमोलता और क्षणभंगुरता समझाते हैं: जो विवेकी जन यह समझ लेता है कि यह देह और जीवन उसका स्थायी या निजी नहीं है, वही इस जीवात्मा के सच्चे कल्याण (सार तत्व / मुक्ति) का यत्न करता है। यह जीवात्मा इस देह में एक ऐसे अतिथि (पाहुना) के समान आई है, जिसे ऐसा दुर्लभ मानव चोला बार-बार नहीं मिलेगा। अतः समय रहते आत्म-कल्याण कर लो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਇਹ ਜਾਣਦਾ ਹੈ ਕਿ ਇਹ ਸਰੀਰ ਸਦਾ ਰਹਿਣ ਵਾਲਾ ਨਹੀਂ, ਉਹੀ ਆਤਮਾ ਦਾ ਸੱਚਾ ਉੱਧਾਰ ਕਰਦਾ ਹੈ। ਇਹ ਜੀਵ ਇਸ ਦੇਹ ਵਿੱਚ ਇੱਕ ਪ੍ਰਾਹੁਣੇ ਵਾਂਗ ਹੈ, ਇਹ ਦੁਰਲੱਭ ਮਨੁੱਖਾ ਜਨਮ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਣਾ।',
+      en: 'Satguru Kabir Saheb illuminates the precious fragility of human incarnation: One who realizes that this physical body and breath are not their permanent possession strives earnestly for the supreme welfare and liberation of their soul. The soul is merely a visiting guest (Paahona) in this mortal vessel, and this priceless human opportunity will not be easily granted a second time.',
     },
     wordMeanings: {
       hi: [
@@ -678,9 +678,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jo jan bheege ramras, vigat kabahu na rookh. Anubhav bhaav na daraste, na dukh na sukh.',
     bhavarth: {
-      hi: 'कबीर साहेब आत्म-साक्षात्कार की द्वंद्वातीत परमानंद अवस्था बताते हैं: जो साधक परमात्मा के पावन "रामरस" (ईश्वरीय प्रेम व नाम के अमृत) में पूरी तरह भीग जाता है, वह कभी भी आध्यात्मिक रूप से सूखता या मुरझाता नहीं है। उसकी अंतःचेतना सांसारिक हर्ष-शोक के द्वंद्वों से ऊपर उठ जाती है; वहाँ न सांसारिक दुःख की कोई छाया होती है और न नश्वर सुख का कोई उद्वेग—वह केवल अखंड शांति में स्थित रहता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪ੍ਰਭੂ ਦੇ ਨਾਮ-ਅੰਮ੍ਰਿਤ (ਰਾਮਰਸ) ਵਿੱਚ ਭਿੱਜ ਗਿਆ, ਉਹ ਕਦੇ ਸੁੱਕਦਾ ਨਹੀਂ। ਉਸਦੀ ਅਵਸਥਾ ਸੁਖ-ਦੁੱਖ ਦੇ ਦਵੰਦ ਤੋਂ ਪਰੇ ਹੋ ਕੇ ਸਦਾ-ਅਟੱਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਂਦੀ ਹੈ।',
-      en: 'Kabir Saheb describes the state of transcendental equilibrium: The devotee whose entire being is thoroughly drenched in the divine nectar of the Supreme Name (Raamras) never dries up or withers away spiritually. Their inner awareness transcends the dualities of worldly emotion; neither phantom sorrow nor fleeting pleasure can disturb their profound, unshakeable peace.',
+      hi: 'सतगुरु कबीर साहेब आत्म-साक्षात्कार की द्वंद्वातीत परमानंद अवस्था बताते हैं: जो साधक परमात्मा के पावन "रामरस" (ईश्वरीय प्रेम व नाम के अमृत) में पूरी तरह भीग जाता है, वह कभी भी आध्यात्मिक रूप से सूखता या मुरझाता नहीं है। उसकी अंतःचेतना सांसारिक हर्ष-शोक के द्वंद्वों से ऊपर उठ जाती है; वहाँ न सांसारिक दुःख की कोई छाया होती है और न नश्वर सुख का कोई उद्वेग—वह केवल अखंड शांति में स्थित रहता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪ੍ਰਭੂ ਦੇ ਨਾਮ-ਅੰਮ੍ਰਿਤ (ਰਾਮਰਸ) ਵਿੱਚ ਭਿੱਜ ਗਿਆ, ਉਹ ਕਦੇ ਸੁੱਕਦਾ ਨਹੀਂ। ਉਸਦੀ ਅਵਸਥਾ ਸੁਖ-ਦੁੱਖ ਦੇ ਦਵੰਦ ਤੋਂ ਪਰੇ ਹੋ ਕੇ ਸਦਾ-ਅਟੱਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਂਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb describes the state of transcendental equilibrium: The devotee whose entire being is thoroughly drenched in the divine nectar of the Supreme Name (Raamras) never dries up or withers away spiritually. Their inner awareness transcends the dualities of worldly emotion; neither phantom sorrow nor fleeting pleasure can disturb their profound, unshakeable peace.',
     },
     wordMeanings: {
       hi: [
@@ -760,9 +760,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jo ro-u to bal ghati, hanso to Ram risaai. Manhi maahi bisoorna, jyu ghun kaathi khaai.',
     bhavarth: {
-      hi: 'कबीर साहेब विरह-भक्ति की अत्यंत मार्मिक और गुप्त अंतर्वेदना का चित्रण करते हैं: यदि मैं विरह में बिलख-बिलख कर रोता हूँ तो मेरा शारीरिक व आत्मिक बल क्षीण होता है; यदि संसार में हँसता-खेलता हूँ तो लगता है कि मेरे प्रभु राम मुझसे अप्रसन्न हो रहे हैं (क्योंकि चित्त संसार में लग जाता है)। इसलिए यह विरही मन अंदर ही अंदर गुप्त रूप से घुलता-तड़पता रहता है, ठीक वैसे ही जैसे लकड़ी के भीतर लगा हुआ घुन (कीड़ा) बाहर से दिखाई दिए बिना लकड़ी को अंदर ही अंदर खोखला कर देता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੇ ਗੁਪਤ ਵਿਰੋਗ ਦੀ ਦਸ਼ਾ ਬਿਆਨ ਕਰਦੇ ਹਨ: ਜੇ ਰੋਵਾਂ ਤਾਂ ਤਾਕਤ ਘਟਦੀ ਹੈ, ਜੇ ਹੱਸਾਂ ਤਾਂ ਪ੍ਰਭੂ ਨਾਰਾਜ਼ ਹੁੰਦਾ ਹੈ। ਇਸ ਲਈ ਮਨ ਅੰਦਰੋ-ਅੰਦਰੀ ਇੰਝ ਘੁਲਦਾ ਰਹਿੰਦਾ ਹੈ ਜਿਵੇਂ ਘੁਣ ਲੱਕੜੀ ਨੂੰ ਅੰਦਰੋਂ ਖਾ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb portrays the profound, silent anguish of mystical separation: "If I weep loudly in grief, my physical strength wanes; if I laugh carelessly in the world, my Beloved Ram feels distant and displeased. Thus, my heart silently yearns and dissolves from within, just as an unseen woodworm (Ghun) hollows out timber from the inside without making a sound."',
+      hi: 'सतगुरु कबीर साहेब विरह-भक्ति की अत्यंत मार्मिक और गुप्त अंतर्वेदना का चित्रण करते हैं: यदि मैं विरह में बिलख-बिलख कर रोता हूँ तो मेरा शारीरिक व आत्मिक बल क्षीण होता है; यदि संसार में हँसता-खेलता हूँ तो लगता है कि मेरे प्रभु राम मुझसे अप्रसन्न हो रहे हैं (क्योंकि चित्त संसार में लग जाता है)। इसलिए यह विरही मन अंदर ही अंदर गुप्त रूप से घुलता-तड़पता रहता है, ठीक वैसे ही जैसे लकड़ी के भीतर लगा हुआ घुन (कीड़ा) बाहर से दिखाई दिए बिना लकड़ी को अंदर ही अंदर खोखला कर देता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੇ ਗੁਪਤ ਵਿਰੋਗ ਦੀ ਦਸ਼ਾ ਬਿਆਨ ਕਰਦੇ ਹਨ: ਜੇ ਰੋਵਾਂ ਤਾਂ ਤਾਕਤ ਘਟਦੀ ਹੈ, ਜੇ ਹੱਸਾਂ ਤਾਂ ਪ੍ਰਭੂ ਨਾਰਾਜ਼ ਹੁੰਦਾ ਹੈ। ਇਸ ਲਈ ਮਨ ਅੰਦਰੋ-ਅੰਦਰੀ ਇੰਝ ਘੁਲਦਾ ਰਹਿੰਦਾ ਹੈ ਜਿਵੇਂ ਘੁਣ ਲੱਕੜੀ ਨੂੰ ਅੰਦਰੋਂ ਖਾ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb portrays the profound, silent anguish of mystical separation: "If I weep loudly in grief, my physical strength wanes; if I laugh carelessly in the world, my Beloved Ram feels distant and displeased. Thus, my heart silently yearns and dissolves from within, just as an unseen woodworm (Ghun) hollows out timber from the inside without making a sound."',
     },
     wordMeanings: {
       hi: [
@@ -845,9 +845,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jo toko kaanta buve, taahi bov tu phool. Tohi phool ko phool hai, waako hai trishool.',
     bhavarth: {
-      hi: 'कबीर साहेब परम क्षमा, अहिंसा और कर्मफल का शाश्वत नियम सिखाते हैं: जो व्यक्ति तुम्हारे मार्ग में काँटे बोता है (तुम्हारे साथ बुरा व्यवहार, अपमान या षड्यंत्र करता है), तुम उसके बदले में भी उसके मार्ग में प्रेम, भलाई और शुभकामनाओं के फूल ही बोओ। तुम्हारी भलाई के बदले तुम्हें सदा सुख और आनंद रूपी फूल ही प्राप्त होंगे, जबकि बुराई करने वाले को उसके अपने ही बोए हुए काँटे त्रिशूल बनकर चुभेंगे।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਤੇਰੇ ਰਾਹ ਵਿੱਚ ਕੰਡੇ ਬੀਜੇ (ਬੁਰਾ ਕਰੇ), ਤੂੰ ਉਸ ਲਈ ਵੀ ਫੁੱਲ ਹੀ ਬੀਜ (ਭਲਾ ਕਰ)। ਤੈਨੂੰ ਤੇਰੀ ਨੇਕੀ ਦਾ ਫੁੱਲ ਮਿਲੇਗਾ, ਜਦਕਿ ਉਸਨੂੰ ਉਸਦੀ ਬੁਰਾਈ ਤ੍ਰਿਸੂਲ ਬਣ ਕੇ ਵੱਜੇਗੀ।',
-      en: 'Kabir Saheb teaches the golden rule of radical forgiveness and karmic justice: If someone sows thorns in your pathway (harboring malice, insult, or deceit against you), respond by sowing fragrant blossoms of kindness and goodwill in return. You shall unfailingly reap the fragrant harvest of peace and joy, while their own wicked thorns shall transform into piercing tridents of misery for them.',
+      hi: 'सतगुरु कबीर साहेब परम क्षमा, अहिंसा और कर्मफल का शाश्वत नियम सिखाते हैं: जो व्यक्ति तुम्हारे मार्ग में काँटे बोता है (तुम्हारे साथ बुरा व्यवहार, अपमान या षड्यंत्र करता है), तुम उसके बदले में भी उसके मार्ग में प्रेम, भलाई और शुभकामनाओं के फूल ही बोओ। तुम्हारी भलाई के बदले तुम्हें सदा सुख और आनंद रूपी फूल ही प्राप्त होंगे, जबकि बुराई करने वाले को उसके अपने ही बोए हुए काँटे त्रिशूल बनकर चुभेंगे।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਤੇਰੇ ਰਾਹ ਵਿੱਚ ਕੰਡੇ ਬੀਜੇ (ਬੁਰਾ ਕਰੇ), ਤੂੰ ਉਸ ਲਈ ਵੀ ਫੁੱਲ ਹੀ ਬੀਜ (ਭਲਾ ਕਰ)। ਤੈਨੂੰ ਤੇਰੀ ਨੇਕੀ ਦਾ ਫੁੱਲ ਮਿਲੇਗਾ, ਜਦਕਿ ਉਸਨੂੰ ਉਸਦੀ ਬੁਰਾਈ ਤ੍ਰਿਸੂਲ ਬਣ ਕੇ ਵੱਜੇਗੀ।',
+      en: 'Satguru Kabir Saheb teaches the golden rule of radical forgiveness and karmic justice: If someone sows thorns in your pathway (harboring malice, insult, or deceit against you), respond by sowing fragrant blossoms of kindness and goodwill in return. You shall unfailingly reap the fragrant harvest of peace and joy, while their own wicked thorns shall transform into piercing tridents of misery for them.',
     },
     wordMeanings: {
       hi: [
@@ -927,9 +927,9 @@ export const SAKHIS_BATCH_22: Sakhi[] = [
     },
     transliteration: 'Jo tu chaahe mukti ko, chhod de sabki aas. Mukt hi jaisa ho rahe, sab kuch tere paas.',
     bhavarth: {
-      hi: 'कबीर साहेब मुक्ति का सबसे सरल और प्रत्यक्ष सूत्र बताते हैं: यदि तुम वास्तव में जन्म-मरण और दुःखों से मुक्ति चाहते हो, तो संसार और प्राणियों से सुख की सारी आशाएं व अपेक्षाएं छोड़ दो। जब तुम अपेक्षाओं से रहित होकर स्वयं एक मुक्त आत्मा के समान अनासक्त भाव में जीने लगते हो, तो पाओगे कि समस्त आनंद, शांति और परम तत्व पहले से ही तुम्हारे अपने पास विद्यमान है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਮੁਕਤੀ ਦਾ ਸੌਖਾ ਰਾਹ ਦੱਸਦੇ ਹਨ: ਜੇ ਤੂੰ ਸੱਚੀ ਮੁਕਤੀ ਚਾਹੁੰਦਾ ਹੈਂ ਤਾਂ ਦੁਨੀਆ ਦੀਆਂ ਸਾਰੀਆਂ ਆਸਾਂ-ਉਮੀਦਾਂ ਛੱਡ ਦੇ। ਜਦੋਂ ਤੂੰ ਨਿਰਲੇਪ ਹੋ ਕੇ ਜਿਊਣ ਲੱਗ ਪਵੇਂਗਾ ਤਾਂ ਸਭ ਸੁਖ ਤੇ ਪ੍ਰਭੂ ਤੇਰੇ ਅੰਦਰ ਹੀ ਪ੍ਰਗਟ ਹੋ ਜਾਣਗੇ।',
-      en: 'Kabir Saheb reveals the direct and effortless key to liberation: If you genuinely yearn for spiritual freedom, completely relinquish all clinging expectations and desires from the world and mortals. The moment you abide in detached, expectation-free awareness like an already liberated soul, you discover that the supreme treasure of peace and divinity has been right within you all along.',
+      hi: 'सतगुरु कबीर साहेब मुक्ति का सबसे सरल और प्रत्यक्ष सूत्र बताते हैं: यदि तुम वास्तव में जन्म-मरण और दुःखों से मुक्ति चाहते हो, तो संसार और प्राणियों से सुख की सारी आशाएं व अपेक्षाएं छोड़ दो। जब तुम अपेक्षाओं से रहित होकर स्वयं एक मुक्त आत्मा के समान अनासक्त भाव में जीने लगते हो, तो पाओगे कि समस्त आनंद, शांति और परम तत्व पहले से ही तुम्हारे अपने पास विद्यमान है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮੁਕਤੀ ਦਾ ਸੌਖਾ ਰਾਹ ਦੱਸਦੇ ਹਨ: ਜੇ ਤੂੰ ਸੱਚੀ ਮੁਕਤੀ ਚਾਹੁੰਦਾ ਹੈਂ ਤਾਂ ਦੁਨੀਆ ਦੀਆਂ ਸਾਰੀਆਂ ਆਸਾਂ-ਉਮੀਦਾਂ ਛੱਡ ਦੇ। ਜਦੋਂ ਤੂੰ ਨਿਰਲੇਪ ਹੋ ਕੇ ਜਿਊਣ ਲੱਗ ਪਵੇਂਗਾ ਤਾਂ ਸਭ ਸੁਖ ਤੇ ਪ੍ਰਭੂ ਤੇਰੇ ਅੰਦਰ ਹੀ ਪ੍ਰਗਟ ਹੋ ਜਾਣਗੇ।',
+      en: 'Satguru Kabir Saheb reveals the direct and effortless key to liberation: If you genuinely yearn for spiritual freedom, completely relinquish all clinging expectations and desires from the world and mortals. The moment you abide in detached, expectation-free awareness like an already liberated soul, you discover that the supreme treasure of peace and divinity has been right within you all along.',
     },
     wordMeanings: {
       hi: [

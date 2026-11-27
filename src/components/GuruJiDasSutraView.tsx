@@ -161,7 +161,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
     if (mode === 'all') {
       content = [
         SACRED_BRANDING.header[activeLang],
-        'सतगुरु कबीर साहेब जी के १० पावन सत्य वचन सूत्र (त्रिभाषी / Tri-lingual)',
+        'सतगुरु कबीर साहेब के १० पावन सत्य वचन सूत्र (त्रिभाषी / Tri-lingual)',
         '====================================================',
         '',
         ...TEN_SATYA_VACHAN_SUTRAS.map((s) => {
@@ -272,7 +272,7 @@ export const GuruJiDasSutraView: React.FC<GuruJiDasSutraViewProps> = ({
     },
     pb: {
       tagBadge: '੧੦ ਸਤਯ ਵਚਨ ਸੂਤਰ',
-      mainTitle: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪਾਵਨ ਸੂਤਰ',
+      mainTitle: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਾਵਨ ਸੂਤਰ',
       subtitle: 'ਜੀਵਨ-ਰੂਪਾਂਤਰਣ, ਆਤਮ-ਜਾਗ੍ਰਿਤੀ ਅਤੇ ਸਤਯਨਾਮ ਅਨੁਭੂਤੀ ਦੇ ਅਮਰ ਅਧਿਆਤਮਿਕ ਸੂਤਰ',
       langTitle: 'ਭਾਸ਼ਾ ਚੁਣੋ (Select Language):',
       btnPlayAll: isPlayingAll ? 'ਬੋਲਣਾ ਰੋਕੋ (Stop)' : 'ਅਖੰਡ ਪਾਠ ਸੁਣੋ (Play All)',

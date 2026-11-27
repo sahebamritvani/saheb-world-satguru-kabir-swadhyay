@@ -87,7 +87,7 @@ export const POONAM_VERSES_PART_2: NitnemVersePair[] = [
         "और ब्रत सब करे करावे, पुनो व्रत का भेद न पावे।",
         "एकादशी व्रत चित सो करही, चौबीस फल साल में परही।",
         "वे चौबीसों का मत है न्यारा, राधे व्रत जन्मे संसारा।",
-        "सुन धर्मनि यह अगम संदेशा, पूनो व्रत सद्गुरु पद भेशा।",
+        "सुन धर्मनि यह अगम संदेशा, पूनो व्रत सतगुरु पद भेशा।",
         "मुसलमान जो रोजा करे, सो तैसा फल वाको धरे।",
         "यह तो कर्मकांड व्यवहारा, पूनो भेद है इनसे न्यारा।",
         "saty व्रत पुरुष अनुसारा, धर्मनि तुमसो कह्यो विचारा।",
@@ -425,9 +425,9 @@ export const POONAM_VERSES_PART_2: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "ग्रन्थ समाप्ति (निष्कर्ष): सबसे पहले अपने घर-आँगन और हृदय रूपी मंदिर को स्वच्छ करें, भक्ति का पवित्र चौका लगाएं। प्रेमपूर्वक पान-प्रसाद बनाकर परमेश्वर कबीर साहेब को भोग लगाएं। एकाग्र चित्त से इस पूनो व्रत को धारण करें और संतों का पावन महाप्रसाद ग्रहण करें। कबीर साहेब धर्मदास जी से कहते हैं कि ऐसा करने वाला जीव अपनी संतानों व कुल सहित भवसागर से पार उतर जाता है।",
-      pb: "ਗ੍ਰੰਥ ਸਮਾਪਤੀ: ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੇ ਹਿਰਦੇ ਰੂਪੀ ਮੰਦਰ ਨੂੰ ਸਾਫ਼ ਕਰੋ, ਭਗਤੀ ਦਾ ਚੌਕਾ ਲਗਾਓ। ਪ੍ਰੇਮ ਨਾਲ ਪ੍ਰਸਾਦ ਬਣਾ ਕੇ ਸਾਹੇਬ ਕਬੀਰ ਜੀ ਨੂੰ ਭੋਗ ਲਗਾਓ। ਇਕਾਗਰ ਚਿੱਤ ਨਾਲ ਪੂਨੋ ਵਰਤ ਰੱਖੋ ਅਤੇ ਸੰਤਾਂ ਦਾ ਪ੍ਰਸਾਦ ਲਓ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਅਜਿਹਾ ਜੀਵ ਆਪਣੀ ਕੁਲ ਸਮੇਤ ਪਾਰ ਲੰਘ ਜਾਂਦਾ ਹੈ।",
-      en: "Epilogue (Conclusion): First, cleanse the temple of your heart and home, preparing the sacred altar of devotion. Offer holy food with love to the Lord Kabir Saheb. Keep this Full Moon vow with single-pointed concentration and receive the blessings of the saints. Kabir assures Dharmadas that such a devotee achieves ultimate liberation along with their entire family."
+      hi: "ग्रन्थ समाप्ति (निष्कर्ष): सबसे पहले अपने घर-आँगन और हृदय रूपी मंदिर को स्वच्छ करें, भक्ति का पवित्र चौका लगाएं। प्रेमपूर्वक पान-प्रसाद बनाकर परमेश्वर सतगुरु कबीर साहेब को भोग लगाएं। एकाग्र चित्त से इस पूनो व्रत को धारण करें और संतों का पावन महाप्रसाद ग्रहण करें। सतगुरु कबीर साहेब धर्मदास जी से कहते हैं कि ऐसा करने वाला जीव अपनी संतानों व कुल सहित भवसागर से पार उतर जाता है।",
+      pb: "ਗ੍ਰੰਥ ਸਮਾਪਤੀ: ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੇ ਹਿਰਦੇ ਰੂਪੀ ਮੰਦਰ ਨੂੰ ਸਾਫ਼ ਕਰੋ, ਭਗਤੀ ਦਾ ਚੌਕਾ ਲਗਾਓ। ਪ੍ਰੇਮ ਨਾਲ ਪ੍ਰਸਾਦ ਬਣਾ ਕੇ ਸਾਹੇਬ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਭੋਗ ਲਗਾਓ। ਇਕਾਗਰ ਚਿੱਤ ਨਾਲ ਪੂਨੋ ਵਰਤ ਰੱਖੋ ਅਤੇ ਸੰਤਾਂ ਦਾ ਪ੍ਰਸਾਦ ਲਓ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਜਿਹਾ ਜੀਵ ਆਪਣੀ ਕੁਲ ਸਮੇਤ ਪਾਰ ਲੰਘ ਜਾਂਦਾ ਹੈ।",
+      en: "Epilogue (Conclusion): First, cleanse the temple of your heart and home, preparing the sacred altar of devotion. Offer holy food with love to the Lord Satguru Kabir Saheb. Keep this Full Moon vow with single-pointed concentration and receive the blessings of the saints. Kabir assures Dharmadas that such a devotee achieves ultimate liberation along with their entire family."
     }
   }
 ];

@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਮਾਤਮਾ ਅੰਦਰ ਹੈ, ਬਾਹਰ ਲੱਭਣਾ ਭੁਲੇਖਾ ਹੈ।',
         en: 'The Divine is within; searching for Him in external rituals is the ultimate spiritual irony.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾม ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾม ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਸੱਚੀ ਭਗਤੀ ਅੰਦਰੂਨੀ ਸਮਰਪਣ ਹੈ।',
         en: 'Genuine devotion is a state of wordless, motionless inner surrender, transcending outer displays.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -122,12 +122,12 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
       en: 'A completely dead, dry tree is pouring down torrents of sweet nectar, yet the ground directly beneath it remains bone-dry.'
     },
     clueHint: {
-      hi: 'सूखा तरुवर = विरक्त संत/सद्गुरु देह; अमृत वर्षा = गुरु मुख से ज्ञान वाणी; धरती = अज्ञानी/मायाग्रसित जीव हृदय।',
+      hi: 'सूखा तरुवर = विरक्त संत/सतगुरु देह; अमृत वर्षा = गुरु मुख से ज्ञान वाणी; धरती = अज्ञानी/मायाग्रसित जीव हृदय।',
       pb: 'ਸੁੱਕਾ ਰੁੱਖ ਵੈਰਾਗੀ ਗੁਰੂ ਹੈ, ਅੰਮ੍ਰਿਤ ਗਿਆਨ-ਬਾਣੀ ਹੈ, ਧਰਤੀ ਪੱਥਰ-ਹਿਰਦਾ ਜੀਵ ਹੈ.',
       en: 'Dry tree = Ascetic Guru/saint; Nectar shower = Words of spiritual wisdom; Earth = Rigid, worldly hearts.'
     },
     symbols: [
-      { symbol: 'सूखा तरुवर (Dry Tree)', meaning: { hi: 'बाहर से शुष्क व उदासीन दिखने वाले, संसार से विरक्त सद्गुरु या संत महापुरुष', pb: 'ਸੰਸਾਰ ਤੋਂ ਵਿਰਕਤ ਸਤਿਗੁਰੂ', en: 'The worldly detached Saint or Guru, appearing dry and empty of material desires' } },
+      { symbol: 'सूखा तरुवर (Dry Tree)', meaning: { hi: 'बाहर से शुष्क व उदासीन दिखने वाले, संसार से विरक्त सतगुरु या संत महापुरुष', pb: 'ਸੰਸਾਰ ਤੋਂ ਵਿਰਕਤ ਸਤਿਗੁਰੂ', en: 'The worldly detached Saint or Guru, appearing dry and empty of material desires' } },
       { symbol: 'धरती भींजै नहिं (Dry Ground)', meaning: { hi: 'ज्ञान वर्षा होने पर भी अज्ञानी जीवों के कठोर व मायाग्रस्त हृदय का अप्रभावित रहना', pb: 'ਜੀਵਾਂ ਦੇ ਹਿਰਦੇ ਵਿਚ ਗਿਆਨ ਨਾ ਵੱਸਣਾ', en: 'The rigid hearts of ignorant souls remaining unsoftened despite receiving divine instruction' } }
     ],
     question: {
@@ -144,7 +144,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'ज्ञान वृष्टि एवं मायावी हृदय', pb: 'ਗੁਰੂ ਦੀ ਗਿਆਨ-ਵਰਖਾ', en: 'The Shower of Wisdom on Rigid Hearts' },
       deepMeaning: {
-        hi: 'सूखा तरुवर यहाँ सद्गुरु या विरक्त संत का शरीर है जो बाहर से संसार के भोगों के लिए बिल्कुल सूखा (उदासीन) दिखता है। लेकिन उनके मुख से ज्ञान और अमृत रूपी वाणी बरसती है। विडंबना यह है कि अज्ञानी जीवों का हृदय (धरती) इतना कठोर और माया में अंधा होता है कि वह उस ज्ञान वर्षा के बाद भी भीतर से बिल्कुल सूखा (प्रेमविहीन) रह जाता है।',
+        hi: 'सूखा तरुवर यहाँ सतगुरु या विरक्त संत का शरीर है जो बाहर से संसार के भोगों के लिए बिल्कुल सूखा (उदासीन) दिखता है। लेकिन उनके मुख से ज्ञान और अमृत रूपी वाणी बरसती है। विडंबना यह है कि अज्ञानी जीवों का हृदय (धरती) इतना कठोर और माया में अंधा होता है कि वह उस ज्ञान वर्षा के बाद भी भीतर से बिल्कुल सूखा (प्रेमविहीन) रह जाता है।',
         pb: 'ਸੁੱਕਾ ਰੁੱਖ ਸੰਸਾਰ ਤੋਂ ਮੁਕਤ ਅਤੇ ਤਿਆਗੀ ਸੰਤ ਹਨ, ਜਿਨ੍ਹਾਂ ਦੇ ਬਚਨ ਅੰਮ੍ਰਿਤ ਸਮਾਨ ਹਨ। ਪਰ ਸੰਸਾਰੀ ਜੀਵਾਂ ਦਾ ਮਨ (ਧਰਤੀ) ਇੰਨਾ ਕਠੋਰ ਹੁੰਦਾ ਹੈ ਕਿ ਉਹ ਇਸ ਗਿਆਨ ਰੂਪੀ ਅੰਮ੍ਰਿਤ ਤੋਂ ਲਾਭ ਨਹੀਂ ਉਠਾ ਪਾਉਂਦਾ ਅਤੇ ਸੁੱਕਾ ਰਹਿ ਜਾਂਦਾ ਹੈ।',
         en: 'The "dry tree" represents the detached saint or Satguru, completely dry (indifferent) to worldly pleasures and desires. Yet, their mouth continuously showers the sweet nectar of spiritual wisdom. The tragedy is that the minds of worldly people (earth) are so hardened and blinded by illusion that they remain bone-dry, unable to absorb even a single drop of this wisdom.'
       },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਸ਼ਰਧਾ ਤੋਂ ਬਿਨਾਂ ਹਿਰਦਾ ਗੁਰੂ-ਗਿਆਨ ਨੂੰ ਗ੍ਰਹਿਣ ਨਹੀਂ ਕਰ ਸਕਦਾ।',
         en: 'Unless the soil of the heart is tilled with humility and faith, even the highest wisdom cannot penetrate it.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਅੰਦਰੂਨੀ ਗਿਆਨ ਦਾ ਦੀਵਾ ਕਦੇ ਨਹੀਂ ਬੁਝਦਾ।',
         en: 'External flames eventually flicker out, but the inner lamp of non-dual awareness shines eternally.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਇੰਦਰੀਆਂ ਦੇ ਸ਼ਾਂਤ ਹੋਣ ਤੇ ਹੀ ਅਸਲੀ ਗਿਆਨ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ।',
         en: 'Only when the physical senses fall silent does the boundless wisdom of the Spirit dance.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'ब्रह्मानंद स्वाद एवं अजपा सुमिरन', pb: 'ਅਜਪਾ ਜਾਪ ਅਤੇ ਆਤਮ-ਆਨੰਦ', en: 'Spontaneous Inner Worship & Inexpressible Bliss' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ परम समाधि और आत्मिक अवस्था का वर्णन कर रहे हैं। जब जीवात्मा परमात्मा से एकाकार होती है, तो उसे उस परम सुख और ब्रह्म-रस को चखने के लिए इस हाड़-मांस के मुँह या जीभ की आवश्यकता नहीं होती। आत्मा स्वतः ही बिना बोले \'अजपा-जाप\' द्वारा ईश्वर का गुणगान करती है और उस परम अमृतरस का पान करके हमेशा के लिए अमर हो जाती है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ परम समाधि और आत्मिक अवस्था का वर्णन कर रहे हैं। जब जीवात्मा परमात्मा से एकाकार होती है, तो उसे उस परम सुख और ब्रह्म-रस को चखने के लिए इस हाड़-मांस के मुँह या जीभ की आवश्यकता नहीं होती। आत्मा स्वतः ही बिना बोले \'अजपा-जाप\' द्वारा ईश्वर का गुणगान करती है और उस परम अमृतरस का पान करके हमेशा के लिए अमर हो जाती है।',
         pb: 'ਬਿਨਾਂ ਮੂੰਹ ਦੇ ਰਸ ਪੀਣਾ ਆਤਮਿਕ ਸੁੱਖ ਦਾ ਪ੍ਰਤੀਕ ਹੈ। ਜਦੋਂ ਆਤਮਾ ਪ੍ਰਭੂ ਨਾਲ ਜੁੜਦੀ ਹੈ, ਤਾਂ ਉਸਨੂੰ ਕਿਸੇ ਜੀਭ ਜਾਂ ਹੱਡ-ਮਾਸ ਦੇ ਸਰੀਰ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ। ਉਹ ਚੁੱਪ ਰਹਿ ਕੇ ਅਜਪਾ-ਜਾਪ ਰਾਹੀਂ ਪ੍ਰਮਾਤਮਾ ਦੀ ਭਗਤੀ ਕਰਦੀ ਹੈ ਅਤੇ ਅਮਰ ਹੋ ਜਾਂਦੀ ਹੈ।',
         en: 'Kabir outlines the state of deep absorption (Samadhi). When the soul unites with the Divine, it requires no physical tongue of flesh and bone to taste that supreme bliss. The soul silently chants through the unstruck breath (Ajapa-Japa), praising the Lord in motionless silence and drinking the nectar of immortality.'
       },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਅਸਲੀ ਸਿਮਰਨ ਜੀਭ ਤੋਂ ਬਿਨਾਂ ਅੰਦਰੂਨੀ ਸੁਰਤ ਦਾ ਜੁੜਨਾ ਹੈ।',
         en: 'Vocal chanting is merely the outer gateway; true contemplation is the wordless dye of the soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -330,7 +330,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
       en: 'Without any gust of wind, a boat glides smoothly over water, and the oarsman navigates without any oars in hand.'
     },
     clueHint: {
-      hi: 'नैया = जीवन यात्रा/सुरति; बिनु पवन = श्वासों की स्थिरता (प्राण स्थिरता); मांझी = अंतरात्मा/सद्गुरु; अनहद = अनाहत नाद।',
+      hi: 'नैया = जीवन यात्रा/सुरति; बिनु पवन = श्वासों की स्थिरता (प्राण स्थिरता); मांझी = अंतरात्मा/सतगुरु; अनहद = अनाहत नाद।',
       pb: 'ਬੇੜੀ ਸੁਰਤ ਹੈ, ਬਿਨਾਂ ਹਵਾ ਪ੍ਰਾਣਾਂ ਦੀ ਸਥਿਰਤਾ ਹੈ, ਮਾਂਝੀ ਆਤਮਾ ਹੈ।',
       en: 'Boat = Soul awareness; Without wind = Motionless breath (Kumbhaka); Steersman = Inner Spirit/Guru; Unstruck = Anhad.'
     },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਸਹਿਜ ਭਗਤੀ ਨਾਲ ਸੁਰਤ ਦੀ ਬੇੜੀ ਪਾਰ ਲੰਘਦੀ ਹੈ।',
         en: 'Not through rigorous mechanical efforts, but through spontaneous love does the soul easily cross over.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਸੂਖਮ ਸੁਰਤ ਦੇ ਜਾਗਣ ਨਾਲ ਕਾਲ ਦਾ ਡਰ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
         en: 'When the subtle consciousness awakens, the fear of time dissolves, and maya becomes a humble servant.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -456,8 +456,8 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'अतीन्द्रिय आत्मानंद एवं अनहद श्रवण', pb: 'ਇੰਦਰੀਆਂ ਤੋਂ ਪਰੇ ਆਤਮ-ਰਸ', en: 'Transcendental Ecstasy Beyond Sensory Organs' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ इंद्रियों से परे आत्मा के मूल स्वरूप का वर्णन कर रहे हैं। ईश्वर की साधना में जब साधक का मन अंतर्मुखी होता है, तो उसे आत्मानंद का रस चखने के लिए भौतिक जीभ की और भगवान की भीतरी आवाज़ सुनने के लिए बाहरी कानों की जरूरत नहीं पड़ती। आत्मा स्वयं ही उस परम आनंद का अनुभव कर लेती है।',
-        pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੀ ਸਾਧਨਾ ਇੰਦਰੀਆਂ ਦੇ ਸੁਆਦਾਂ ਤੋਂ ਉੱਪਰ ਉੱਠਣ ਵਿੱਚ ਹੈ। ਜਦੋਂ ਸੁਰਤ ਅੰਤਰਮੁਖੀ ਹੁੰਦੀ ਹੈ, ਤਾਂ ਆਤਮਾ ਬਿਨਾਂ ਜੀਭ ਦੇ ਪਰਮ ਰਸ (ਨਾਮ-ਅੰਮ੍ਰਿਤ) ਚੱਖਦੀ ਹੈ ਅਤੇ ਬਿਨਾਂ ਕੰਨਾਂ ਦੇ ਉਹ ਅਨਹਦ ਨਾਦ ਦਾ ਇਲਾਹੀ ਸੰਗੀਤ ਸੁਣਦੀ ਹੈ।',
+        hi: 'सतगुरु कबीर साहेब यहाँ इंद्रियों से परे आत्मा के मूल स्वरूप का वर्णन कर रहे हैं। ईश्वर की साधना में जब साधक का मन अंतर्मुखी होता है, तो उसे आत्मानंद का रस चखने के लिए भौतिक जीभ की और भगवान की भीतरी आवाज़ सुनने के लिए बाहरी कानों की जरूरत नहीं पड़ती। आत्मा स्वयं ही उस परम आनंद का अनुभव कर लेती है।',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੀ ਸਾਧਨਾ ਇੰਦਰੀਆਂ ਦੇ ਸੁਆਦਾਂ ਤੋਂ ਉੱਪਰ ਉੱਠਣ ਵਿੱਚ ਹੈ। ਜਦੋਂ ਸੁਰਤ ਅੰਤਰਮੁਖੀ ਹੁੰਦੀ ਹੈ, ਤਾਂ ਆਤਮਾ ਬਿਨਾਂ ਜੀਭ ਦੇ ਪਰਮ ਰਸ (ਨਾਮ-ਅੰਮ੍ਰਿਤ) ਚੱਖਦੀ ਹੈ ਅਤੇ ਬਿਨਾਂ ਕੰਨਾਂ ਦੇ ਉਹ ਅਨਹਦ ਨਾਦ ਦਾ ਇਲਾਹੀ ਸੰਗੀਤ ਸੁਣਦੀ ਹੈ।',
         en: 'Kabir outlines the boundless nature of the Spirit transcending physical organs. In deep contemplation, as focus withdraws inward, the soul requires no physical tongue to taste the nectar of supreme bliss, nor physical ears to hear the voice of the Divine. The Spirit directly experiences its own uncaused joy and listens to the eternal vibration of the cosmos.'
       },
       kabirPhilosophy: {
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਿਕ ਸੁੱਖ ਅਵਿਨਾਸ਼ੀ ਅਤੇ ਸਦਾ ਰਹਿਣ ਵਾਲਾ ਹੈ।',
         en: 'Sensory pleasures are brief and fleeting, whereas the uncaused bliss of the Soul is vast and everlasting.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_241_TO_250: UlatvasiQuestion[] = [
         pb: 'ਆਪਣੇ ਅੰਦਰ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਨਾ ਪਛਾਣਨਾ ਹੀ ਅਗਿਆਨਤਾ ਹੈ।',
         en: 'The fish is thirsty inside the lake; searching for water outside is the height of ignorance.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

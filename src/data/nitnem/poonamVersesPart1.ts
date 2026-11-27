@@ -94,8 +94,8 @@ export const POONAM_VERSES_PART_1: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "सत्यपुरुष साहेब, आदि गुरु कबीर साहेब, धनी धर्मदास साहेब और उनके पावन ब्यालीस वंश गुरुओं की पवित्र गुरु-परम्परा के श्रीचरणों में 'बृहत पूनो महात्म्य' पाठ के शुभारंभ की विनम्र पायलगि व साहेब बंदगी साहेब।",
-      pb: "ਸਤਿਪੁਰਖ ਸਾਹੇਬ, ਆਦਿ ਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ, ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਅਤੇ ਉਹਨਾਂ ਦੀ ਪਵਿੱਤਰ ਬਿਆਲੀਸ ਵੰਸ਼ ਗੁਰੂ-ਪਰੰਪਰਾ ਦੇ ਚਰਨ ਕਮਲਾਂ ਵਿੱਚ 'ਬ੍ਰਿਹਤ ਪੂਨੋ ਮਹਾਤਮਯ' ਪਾਠ ਦੇ ਸ਼ੁਰੂਆਤ ਦੀ ਬੰਦਗੀ।",
+      hi: "सत्यपुरुष साहेब, आदि गुरु सतगुरु कबीर साहेब, धनी धर्मदास साहेब और उनके पावन ब्यालीस वंश गुरुओं की पवित्र गुरु-परम्परा के श्रीचरणों में 'बृहत पूनो महात्म्य' पाठ के शुभारंभ की विनम्र पायलगि व साहेब बंदगी साहेब।",
+      pb: "ਸਤਿਪੁਰਖ ਸਾਹੇਬ, ਆਦਿ ਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ, ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਅਤੇ ਉਹਨਾਂ ਦੀ ਪਵਿੱਤਰ ਬਿਆਲੀਸ ਵੰਸ਼ ਗੁਰੂ-ਪਰੰਪਰਾ ਦੇ ਚਰਨ ਕਮਲਾਂ ਵਿੱਚ 'ਬ੍ਰਿਹਤ ਪੂਨੋ ਮਹਾਤਮਯ' ਪਾਠ ਦੇ ਸ਼ੁਰੂਆਤ ਦੀ ਬੰਦਗੀ।",
       en: "Humble prostrations at the lotus feet of the Primal Supreme Being, Satguru Kabir, Dhani Dharmadas, and the complete 42 Vansh lineage before starting the sacred Brihat Poonam Mahatmya discourse."
     }
   },
@@ -488,9 +488,9 @@ export const POONAM_VERSES_PART_1: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "सूतक (अशुद्धि) शंका समाधान: धर्मदास जी ने पूछा कि यदि शरीर अशुद्ध हो, तो पूनो व्रत कैसे करें? कबीर साहेब ने वणिक (व्यापारी) भक्त दंपत्ति की कथा सुनाई। नवजात शिशु के जन्म पर पड़ोसियों ने सूतक के कारण व्रत छोड़ने को कहा। परंतु दृढ़ निश्चयी माता ने उत्तर दिया: 'भले ही देह अशुद्ध है, परंतु मेरा हृदय और भाव शुद्ध हैं। मैं सतगुरु का प्रेम और व्रत कदापि नहीं छोड़ सकती।'",
-      pb: "ਸੂਤਕ (ਅਸ਼ੁੱਧੀ) ਸ਼ੰਕਾ ਦਾ ਹੱਲ: ਧਰਮਦਾਸ ਜੀ ਨੇ ਪੁੱਛਿਆ ਕਿ ਜੇਕਰ ਸ਼ਰੀਰ ਅਸ਼ੁੱਧ ਹੋਵੇ ਤਾਂ ਪੂਨੋ ਵਰਤ ਕਿਵੇਂ ਕਰੀਏ? ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਵਣਿਕ ਭਗਤ ਦੀ ਕਥਾ ਸੁਣਾਈ। ਪੁੱਤਰ ਦੇ ਜਨਮ 'ਤੇ ਸੂਤਕ ਕਾਰਨ ਗੁਆਂਢਣਾਂ ਨੇ ਵਰਤ ਛੱਡਣ ਲਈ ਕਿਹਾ। ਪਰ ਪਿਆਰੀ ਮਾਤਾ ਨੇ ਕਿਹਾ: 'ਸ਼ਰੀਰ ਅਸ਼ੁੱਧ ਹੋ ਸਕਦਾ ਹੈ ਪਰ ਮੇਰਾ ਹਿਰਦਾ ਅਤੇ ਪ੍ਰੇਮ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸ਼ੁੱਧ ਹੈ।'",
-      en: "Resolution of Impurity/Sootak Doubts: Dharmadas asks how to observe the Poonam vow during physical impurity (such as childbirth or sootak). Kabir Saheb narrates the story of a devoted merchant couple. When a son was born, the neighbors advised the mother to skip the vow due to customary postpartum impurity. The steadfast mother replied: 'Though my body is deemed impure, my heart is pure and devoted. How can I abandon the Satguru's love and vow?'"
+      hi: "सूतक (अशुद्धि) शंका समाधान: धर्मदास जी ने पूछा कि यदि शरीर अशुद्ध हो, तो पूनो व्रत कैसे करें? सतगुरु कबीर साहेब ने वणिक (व्यापारी) भक्त दंपत्ति की कथा सुनाई। नवजात शिशु के जन्म पर पड़ोसियों ने सूतक के कारण व्रत छोड़ने को कहा। परंतु दृढ़ निश्चयी माता ने उत्तर दिया: 'भले ही देह अशुद्ध है, परंतु मेरा हृदय और भाव शुद्ध हैं। मैं सतगुरु का प्रेम और व्रत कदापि नहीं छोड़ सकती।'",
+      pb: "ਸੂਤਕ (ਅਸ਼ੁੱਧੀ) ਸ਼ੰਕਾ ਦਾ ਹੱਲ: ਧਰਮਦਾਸ ਜੀ ਨੇ ਪੁੱਛਿਆ ਕਿ ਜੇਕਰ ਸ਼ਰੀਰ ਅਸ਼ੁੱਧ ਹੋਵੇ ਤਾਂ ਪੂਨੋ ਵਰਤ ਕਿਵੇਂ ਕਰੀਏ? ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਵਣਿਕ ਭਗਤ ਦੀ ਕਥਾ ਸੁਣਾਈ। ਪੁੱਤਰ ਦੇ ਜਨਮ 'ਤੇ ਸੂਤਕ ਕਾਰਨ ਗੁਆਂਢਣਾਂ ਨੇ ਵਰਤ ਛੱਡਣ ਲਈ ਕਿਹਾ। ਪਰ ਪਿਆਰੀ ਮਾਤਾ ਨੇ ਕਿਹਾ: 'ਸ਼ਰੀਰ ਅਸ਼ੁੱਧ ਹੋ ਸਕਦਾ ਹੈ ਪਰ ਮੇਰਾ ਹਿਰਦਾ ਅਤੇ ਪ੍ਰੇਮ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸ਼ੁੱਧ ਹੈ।'",
+      en: "Resolution of Impurity/Sootak Doubts: Dharmadas asks how to observe the Poonam vow during physical impurity (such as childbirth or sootak). Satguru Kabir Saheb narrates the story of a devoted merchant couple. When a son was born, the neighbors advised the mother to skip the vow due to customary postpartum impurity. The steadfast mother replied: 'Though my body is deemed impure, my heart is pure and devoted. How can I abandon the Satguru's love and vow?'"
     }
   }
 ];

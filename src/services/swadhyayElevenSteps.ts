@@ -10,7 +10,7 @@ import {
   buildMoolSakhiConnection,
 } from '../data/step8CrossReferenceVault';
 import { buildFiveDimensionQuiz, shuffleGeneratedQuiz, generateDistractorFeedback } from './quizGenerator';
-import { buildStep6EsotericContent } from './swadhyayContentEngine';
+import { buildStep6EsotericContent, getAngSpiritualProfile } from './swadhyayContentEngine';
 
 export interface QuizOption {
   text: string;
@@ -486,7 +486,7 @@ function resolveScripturalCrossReferences(sakhi: Sakhi, language: Language): Ele
  * Generates a concise 1-line theme-based blessing strictly tailored to the completed Sakhi.
  */
 export function buildThemeOneLineBlessing(sakhi: Sakhi, language: Language): string {
-  const category = sakhi.categoryTitle[language] || sakhi.categoryTitle.hi || '';
+  const angProfile = getAngSpiritualProfile(sakhi, language);
   const prayer = sakhi.samarpanPrayer?.[language] || sakhi.samarpanPrayer?.hi || '';
   const firstPrayerSentence = prayer
     .replace(/साहेब बंदगी साहेब!?/gi, '')
@@ -500,13 +500,7 @@ export function buildThemeOneLineBlessing(sakhi: Sakhi, language: Language): str
       : firstPrayerSentence;
   }
 
-  if (language === 'pb') {
-    return `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ '${category}' ਦਾ ਇਹ ਪਾਵਨ ਬੋਧ ਤੁਹਾਡੇ ਜੀਵਨ ਨੂੰ ਸਤਯਨਾਮ ਦੇ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਕਰੇ।`;
-  }
-  if (language === 'en') {
-    return `May Satguru Kabir Saheb’s grace illuminate your daily life with the wisdom of '${category}'.`;
-  }
-  return `सतगुरु कबीर साहेब की कृपा से '${category}' (साखी #${sakhi.number}) का यह पावन बोध आपके जीवन को सत्यनाम से आलोकित करे।`;
+  return angProfile.blessingPhrase;
 }
 
 /**
@@ -540,15 +534,10 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
 
   // Step 6: Esoteric & yogic decoding of symbols strictly for THIS Sakhi (zero repetition of Step 1)
   const step6MysticalText = buildStep6EsotericContent(sakhi, language);
+  const angProfile = getAngSpiritualProfile(sakhi, language);
 
-  // Step 7: 4 practical daily-life takeaways grounded in THIS Sakhi's wisdom
-  const keyPoint1 =
-    practical ||
-    (language === 'pb'
-      ? `"${firstLine}" ਦੇ ਭਾਵ ਨੂੰ ਆਪਣੀ ਰੋਜ਼ਾਨਾ ਬੋਲਚਾਲ ਤੇ ਸੋਚ ਵਿੱਚ ਉਤਾਰੋ।`
-      : language === 'en'
-      ? `Apply the core wisdom of "${firstLine}" deliberately in your next conversation or decision.`
-      : `"${firstLine}" के मूल सत्य को आज अपनी बातचीत, व्यवहार और निर्णयों में उतारें।`);
+  // Step 7: 4 practical daily-life takeaways grounded in THIS Sakhi's Ang & wisdom
+  const keyPoint1 = practical || angProfile.practiceDirective;
 
   const formatWordTakeaway = (
     w: { word: string; meaning: string },
@@ -560,36 +549,32 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
 
     if (isCautionary) {
       if (language === 'pb') {
-        return `"${w.word}" (${w.meaning}) ਦੀ ਚੇਤਾਵਨੀ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖ ਕੇ ਵਿਅਰਥ ਭਟਕਣ ਅਤੇ ਆਤਮਿਕ ਨੁਕਸਾਨ ਤੋਂ ਸਦਾ ਬਚੋ।`;
+        return `"${w.word}" (${w.meaning}) ਦੀ ਚੇਤਾਵਨੀ ਨੂੰ ਸਮਝ ਕੇ '${categoryTitle}' ਦੇ ਰਾਹ ਵਿੱਚ ਵਿਅਰਥ ਭਟਕਣ ਤੋਂ ਬਚੋ।`;
       }
       if (language === 'en') {
-        return `Heed the warning of "${w.word}" (${w.meaning}) to steer clear of spiritual delusion and wasted life.`;
+        return `Heed the warning of "${w.word}" (${w.meaning}) within '${categoryTitle}' to guard against spiritual delusion.`;
       }
-      return `"${w.word}" (${w.meaning}) की चेतावनी को ध्यान में रखकर व्यर्थ भटकाव और आध्यात्मिक पतन से अपनी रक्षा करें।`;
+      return `"${w.word}" (${w.meaning}) की चेतावनी को ध्यान में रखकर '${categoryTitle}' के पथ से भटकने से स्वयं को बचाएं।`;
     }
 
     if (language === 'pb') {
       return isSecondary
-        ? `"${w.word}" (${w.meaning}) ਦੇ ਮਰਮ ਨੂੰ ਪਛਾਣ ਕੇ ਅੰਦਰੂਨੀ ਵਿਵੇਕ ਅਤੇ ਸ਼ੁੱਧੀ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰੋ।`
-        : `ਪਾਵਨ ਸੰਕੇਤ "${w.word}" (${w.meaning}) ਨੂੰ ਜੀਵਨ ਵਿੱਚ ਅਪਣਾ ਕੇ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਤੇ ਇਕਾਗਰ ਰੱਖੋ।`;
+        ? `"${w.word}" (${w.meaning}) ਦੇ ਮਰਮ ਰਾਹੀਂ ${angProfile.angFocus} ਨੂੰ ਜੀਵਨ ਵਿੱਚ ਦ੍ਰਿੜ੍ਹ ਕਰੋ।`
+        : `ਪਾਵਨ ਸੰਕੇਤ "${w.word}" (${w.meaning}) ਨੂੰ ਅਪਣਾ ਕੇ ${angProfile.angFocus} ਵੱਲ ਕਦਮ ਵਧਾਓ।`;
     }
     if (language === 'en') {
       return isSecondary
-        ? `Recognize the deeper significance of "${w.word}" (${w.meaning}) in daily self-observation.`
-        : `Embody "${w.word}" (${w.meaning}) whenever restlessness or doubt arises.`;
+        ? `Recognize "${w.word}" (${w.meaning}) as a direct call toward ${angProfile.angFocus}.`
+        : `Embody "${w.word}" (${w.meaning}) to stay anchored in ${angProfile.angFocus}.`;
     }
     return isSecondary
-      ? `साखी के प्रमुख संकेत "${w.word}" (${w.meaning}) को आचरण में उतारकर अंतःकरण को निर्मल रखें।`
-      : `साखी के पावन सूत्र "${w.word}" (${w.meaning}) का स्मरण रखकर हर परिस्थिति में विवेक को स्थिर करें।`;
+      ? `साखी के प्रमुख संकेत "${w.word}" (${w.meaning}) को आचरण में उतारकर ${angProfile.angFocus} को पुष्ट करें।`
+      : `साखी के पावन सूत्र "${w.word}" (${w.meaning}) द्वारा ${angProfile.angFocus} में अपने चित्त को स्थिर करें।`;
   };
 
   const keyPoint2 = words[0]
     ? formatWordTakeaway(words[0], false)
-    : language === 'pb'
-    ? `'${categoryTitle}' ਅਨੁਸਾਰ ਮਨ ਦੀ ਪਰਖ ਕਰਦਿਆਂ ਸੱਚਾ ਵਿਵੇਕ ਧਾਰਨ ਕਰੋ।`
-    : language === 'en'
-    ? `Practice quiet inner vigilance aligned with '${categoryTitle}' throughout everyday challenges.`
-    : `'${categoryTitle}' की इस वाणी के अनुरूप प्रतिकूल परिस्थिति में भी विवेक बनाए रखें।`;
+    : angProfile.practiceDirective;
 
   const keyPoint3 = words[1]
     ? formatWordTakeaway(words[1], true)
@@ -597,18 +582,18 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
     ? formatWordTakeaway(words[2], true)
     : contextNote ||
       (language === 'pb'
-        ? `ਅੰਤਰਮੁਖੀ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।`
+        ? `'${categoryTitle}' ਦਾ ਕੇਂਦਰੀ ਸਿਧਾਂਤ: ${angProfile.angFocus}।`
         : language === 'en'
-        ? `Pause periodically during the day to contemplate the inner meaning of Sakhi #${sakhi.number}.`
-        : `दिन में कुछ क्षण मौन होकर साखी #${sakhi.number} के मर्म का अंतर्मन में चिंतन करें।`);
+        ? `Core Ang focus ('${categoryTitle}'): ${angProfile.angFocus}.`
+        : `'${categoryTitle}' का केंद्रीय सूत्र: ${angProfile.angFocus}।`);
 
   const keyPoint4 =
     contemplationPrompt ||
     (language === 'pb'
-      ? `ਇਸ ਸਾਖੀ ਦੀ ਸਿੱਖਿਆ ਅਨੁਸਾਰ ਹਉਮੈ ਛੱਡ ਕੇ ਨਿਮਰਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦਾ ਪੱਲਾ ਫੜੋ।`
+      ? `ਨਿੱਤ ਅਭਿਆਸ (${categoryTitle}): ${angProfile.practiceDirective}`
       : language === 'en'
-      ? `Anchor Sakhi #${sakhi.number} through steady humility, calm words, and inner Satyanaam remembrance.`
-      : `साखी #${sakhi.number} की शिक्षा को जीवन का अंग बनाकर अहंकार से बचें और सत्यनाम स्मरण में स्थित रहें।`);
+      ? `Daily Ang Commitment (${categoryTitle}): ${angProfile.practiceDirective}`
+      : `दैनिक साधना सूत्र ('${categoryTitle}'): ${angProfile.practiceDirective}`);
 
   const bulletPoints =
     language === 'pb'
@@ -620,34 +605,35 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
   // Step 8: Authentic Scriptural Cross-References from 4 Granths
   const crossRefs = resolveScripturalCrossReferences(sakhi, language);
 
-  // Step 9: 3 Self-Reflection questions based directly on THIS Sakhi's moral
+  // Step 9: 3 Self-Reflection questions based directly on THIS Sakhi's Ang & moral
   const reflectionQuestions =
     language === 'pb'
       ? [
-          contemplationPrompt || `"${firstLine}" ਦਾ ਸਿਧਾਂਤ ਮੇਰੇ ਅੱਜ ਦੇ ਵਿਹਾਰ ਵਿੱਚ ਕਿੱਥੇ ਪ੍ਰਗਟ ਹੋ ਰਿਹਾ ਹੈ?`,
-          `ਸਾਖੀ #${sakhi.number} ਦੇ ਅਨੁਸਾਰ '${categoryTitle}' ਦੇ ਰਾਹ ਵਿੱਚ ਮੇਰੇ ਮਨ ਦੀ ਸਭ ਤੋਂ ਵੱਡੀ ਰੁਕਾਵਟ ਕੀ ਹੈ?`,
-          practical
-            ? `ਮੈਂ ਅੱਜ "${practical}" ਨੂੰ ਬਿਨਾਂ ਕਿਸੇ ਟਾਲ-ਮਟੋਲ ਦੇ ਕਿਸ ਸਮੇਂ ਲਾਗੂ ਕਰਾਂਗਾ?`
-            : `ਇਸ ਸਾਖੀ ਦੇ ਭਾਵਾਰਥ ਅਨੁਸਾਰ ਮੈਂ ਅੱਜ ਆਪਣੇ ਕਿਹੜੇ ਸੁਭਾਅ ਵਿੱਚ ਸੁਧਾਰ ਲਿਆ ਸਕਦਾ ਹਾਂ?`,
+          contemplationPrompt || angProfile.reflectionLens,
+          angProfile.reflectionLens !== contemplationPrompt
+            ? angProfile.reflectionLens
+            : `'${categoryTitle}' (ਸਾਖੀ #${sakhi.number}) ਦੇ ਸਿਧਾਂਤ — ${angProfile.angFocus} — ਵਿੱਚ ਮੇਰੇ ਮਨ ਦੀ ਸਭ ਤੋਂ ਵੱਡੀ ਰੁਕਾਵਟ ਕੀ ਹੈ?`,
+          `ਮੈਂ ਅੱਜ "${practical || angProfile.practiceDirective}" ਨੂੰ ਆਪਣੇ ਵਿਹਾਰ ਵਿੱਚ ਕਿਸ ਸਮੇਂ ਲਾਗੂ ਕਰਾਂਗਾ?`,
         ]
       : language === 'en'
       ? [
-          contemplationPrompt || `Where is the truth of "${firstLine}" calling for honest change in my conduct today?`,
-          `What inner habit currently resists the teaching of Sakhi #${sakhi.number} (${categoryTitle})?`,
-          practical
-            ? `How can I immediately practice "${practical}" in my next real-life interaction?`
-            : `What concrete adjustment in thought or speech does this Sakhi ask of me right now?`,
+          contemplationPrompt || angProfile.reflectionLens,
+          angProfile.reflectionLens !== contemplationPrompt
+            ? angProfile.reflectionLens
+            : `What inner habit resists '${categoryTitle}' (Sakhi #${sakhi.number}): ${angProfile.angFocus}?`,
+          `When will I directly practice "${practical || angProfile.practiceDirective}" in my next real-life interaction?`,
         ]
       : [
-          contemplationPrompt || `साखी #${sakhi.number} ("${firstLine}") का संदेश मेरे आज के आचरण की किस कमी को दर्शाता है?`,
-          `'${categoryTitle}' के इस पावन सिद्धांत को अपनाने में मेरे मन की कौन-सी वृत्ति सबसे बड़ी बाधा बनती है?`,
-          practical
-            ? `आज मैं "${practical}" — इस सूत्र को अपने जीवन की किस परिस्थिति में तत्काल लागू करूँगा?`
-            : `इस साखी के संदेश को जीवन में उतारने के लिए मैं आज कौन-सा ठोस सुधार करूँगा?`,
+          contemplationPrompt || angProfile.reflectionLens,
+          angProfile.reflectionLens !== contemplationPrompt
+            ? angProfile.reflectionLens
+            : `'${categoryTitle}' (साखी #${sakhi.number}) के मूल लक्ष्य — ${angProfile.angFocus} — के मार्ग में मेरे मन की कौन-सी वृत्ति सबसे बड़ी बाधा बनती है?`,
+          `आज मैं "${practical || angProfile.practiceDirective}" — इस सूत्र को अपने जीवन की किस परिस्थिति में तत्काल लागू करूँगा?`,
         ];
 
   const oneLineBlessing = buildThemeOneLineBlessing(sakhi, language);
   const questions = buildSakhiSpecificQuiz(sakhi, language);
+  const qCount = questions.length;
 
   return {
     step5_quiz: {
@@ -659,10 +645,10 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
           : '५. बोध परख (साखी-विशेष प्रश्नोत्तरी)',
       subtitle:
         language === 'pb'
-          ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਸ਼ਬਦਾਂ ਤੇ ਮਰਮ 'ਤੇ ਆਧਾਰਿਤ ੫ ਪ੍ਰਸ਼ਨ (ਹਰ ਵਾਰ ਨਵਾਂ ਕ੍ਰਮ)`
+          ? `ਸਾਖੀ #${sakhi.number} ਦੇ ਸ਼ਬਦਾਂ ਤੇ ਮਰਮ 'ਤੇ ਆਧਾਰਿਤ ${qCount} ਪ੍ਰਸ਼ਨ (ਹਰ ਵਾਰ ਨਵਾਂ ਕ੍ਰਮ)`
           : language === 'en'
-          ? `5 randomized MCQs testing the exact words and teaching of Sakhi #${sakhi.number}`
-          : `साखी #${sakhi.number} के शब्दों, प्रतीकों व संदेश पर आधारित ५ प्रश्न (प्रत्येक प्रयास में क्रम परिवर्तित)`,
+          ? `${qCount} randomized MCQs testing the exact words and teaching of Sakhi #${sakhi.number}`
+          : `साखी #${sakhi.number} के शब्दों, प्रतीकों व संदेश पर आधारित ${qCount} विशेष प्रश्न (क्रम परिवर्तित)`,
       questions,
     },
     step6_spiritualInsight: {
@@ -742,10 +728,10 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
           : `साखी #${sakhi.number} के केंद्रीय भाव के अनुरूप ३-चरणीय ध्यान-साधना`,
       sadhanaMethodName:
         language === 'pb'
-          ? `${categoryTitle} ਅਨੁਭੂਤੀ ਤੇ ਸਵਾਸ ਸਿਮਰਨ`
+          ? `${categoryTitle} — ਸੁਰਤ-ਸ਼ਬਦ ਤੇ ਸਤਯਨਾਮ ਅਨੁਭੂਤੀ`
           : language === 'en'
-          ? `${categoryTitle} Witness Awareness & Breath Simran`
-          : `'${categoryTitle}' अंतर्दर्शन व स्वांस-सूरत ध्यान`,
+          ? `${categoryTitle} — Surat-Shabd & Satyanaam Practice`
+          : `'${categoryTitle}' — सुरति-शब्द एवं सत्यनाम ध्यान`,
       stages: [
         {
           stageNumber: 1,
@@ -753,14 +739,14 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
             language === 'pb'
               ? 'ਪੜਾਅ ੧: ਸਾਖੀ ਪਾਠ ਤੇ ਸਥਿਰਤਾ'
               : language === 'en'
-              ? 'Stage 1: Anchoring the Verse'
-              : 'प्रथम चरण: मूल साखी स्मरण व स्थिर आसन',
+              ? 'Stage 1: Anchoring the Ang Essence'
+              : 'प्रथम चरण: अंग-भाव स्मरण व स्थिर आसन',
           instruction:
             language === 'pb'
-              ? `ਅੱਖਾਂ ਬੰਦ ਕਰਕੇ "${firstLine}" ਨੂੰ ਮਨ ਵਿੱਚ ਸ਼ਾਂਤੀ ਨਾਲ ਦੁਹਰਾਓ ਅਤੇ ਸਰੀਰ ਨੂੰ ਢਿੱਲਾ ਛੱਡੋ।`
+              ? `ਅੱਖਾਂ ਬੰਦ ਕਰਕੇ ਸਰੀਰ ਨੂੰ ਢਿੱਲਾ ਛੱਡੋ ਅਤੇ '${categoryTitle}' ਦੇ ਮੁੱਖ ਭਾਵ — ${angProfile.angFocus} — ਵਿੱਚ ਸ਼ਾਂਤੀ ਨਾਲ ਟਿਕੋ।`
               : language === 'en'
-              ? `Close your eyes gently, recall "${firstLine}", and let the physical body relax in stillness.`
-              : `नेत्र बंद कर सुखासन में स्थिर हों और "${firstLine}" का मौन स्मरण करते हुए देह को शिथिल करें।`,
+              ? `Close your eyes gently, relax the body, and center awareness on '${categoryTitle}': ${angProfile.angFocus}.`
+              : `नेत्र बंद कर सुखासन में स्थिर हों और '${categoryTitle}' के केंद्रीय लक्ष्य — ${angProfile.angFocus} — में एकाग्र हों।`,
         },
         {
           stageNumber: 2,
@@ -772,10 +758,10 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
               : 'द्वितीय चरण: प्रतीक-चिंतन व स्वांस सत्यनाम',
           instruction:
             language === 'pb'
-              ? `ਹਰ ਆਉਂਦੇ-ਜਾਂਦੇ ਸੁਆਸ ਨਾਲ "${words[0]?.meaning || categoryTitle}" ਦੇ ਗੂੜ੍ਹ ਅਰਥ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਉਤਾਰੋ।`
+              ? `${angProfile.meditationAnchor}। ਹਰ ਆਉਂਦੇ-ਜਾਂਦੇ ਸੁਆਸ ਨਾਲ "${words[0]?.meaning || angProfile.angFocus}" ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਉਤਾਰੋ।`
               : language === 'en'
-              ? `With each calm breath, visualize "${practical || categoryTitle}" illuminating your heart center.`
-              : `प्रत्येक श्वास में सत्यनाम का अनुभव करते हुए साखी के इस मर्म — "${practical || categoryTitle}" — को अंतःकरण में धारण करें।`,
+              ? `${angProfile.meditationAnchor}. With each calm breath, imbibe "${practical || angProfile.practiceDirective}".`
+              : `${angProfile.meditationAnchor}। प्रत्येक श्वास में सत्यनाम का अनुभव करते हुए "${practical || angProfile.practiceDirective}" को अंतःकरण में धारण करें।`,
         },
         {
           stageNumber: 3,
@@ -787,10 +773,10 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
               : 'तृतीय चरण: मौन अनुभूति व सतगुरु समर्पण',
           instruction:
             language === 'pb'
-              ? `ਸਭ ਸੰਦੇਹਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰਕੇ ਨਿਰਮਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਓ।`
+              ? `ਸਭ ਸੰਦੇਹਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰਕੇ '${categoryTitle}' ਦੀ ਨਿਰਮਲ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕ ਜਾਓ।`
               : language === 'en'
-              ? `Release all mental chatter at the feet of Satguru Kabir Saheb and abide in luminous stillness.`
-              : `समस्त विकार व संशय सतगुरु कबीर साहेब के चरणों में अर्पित कर साखी के पावन प्रकाश में विश्राम करें।`,
+              ? `Release all mental chatter at the feet of Satguru Kabir Saheb and abide in the luminous stillness of '${categoryTitle}'.`
+              : `समस्त विकार व संशय सतगुरु कबीर साहेब के चरणों में अर्पित कर '${categoryTitle}' के पावन सत्यनाम प्रकाश में विश्राम करें।`,
         },
       ],
     },
@@ -800,7 +786,7 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
           ? '੧੧. ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਪਾਵਨ ਅਸੀਸ ਤੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ'
           : language === 'en'
           ? '11. Satguru Kabir Saheb Blessing & Completion Certificate'
-          : '११. सद्गुरु कबीर साहेब का पावन आशीर्वाद एवं प्रमाण-पत्र',
+          : '११. सतगुरु कबीर साहेब का पावन आशीर्वाद एवं प्रमाण-पत्र',
       subtitle:
         language === 'pb'
           ? `ਸਾਖੀ #${sakhi.number} (${categoryTitle}) ਸ੍ਵਾਧਿਆਇ ਸੰਪੂਰਨਤਾ`
@@ -827,10 +813,10 @@ export function getElevenStepSwadhyayData(sakhi: Sakhi, language: Language): Ele
             ? `Sacred Commitment: ${practical}`
             : `पावन संकल्प: ${practical}`
           : language === 'pb'
-          ? `ਸੰਕਲਪ: ਮੈਂ '${categoryTitle}' ਦੀ ਇਸ ਸਿੱਖਿਆ ਨੂੰ ਆਪਣੇ ਜੀਵਨ ਵਿੱਚ ਧਾਰਨ ਕਰਾਂਗਾ।`
+          ? `ਸੰਕਲਪ (${categoryTitle}): ${angProfile.practiceDirective}`
           : language === 'en'
-          ? `Sacred Commitment: I will embody this teaching of '${categoryTitle}' with humility.`
-          : `पावन संकल्प: मैं '${categoryTitle}' से प्राप्त इस शिक्षा को नित्य आचरण में उतारूँगा।`,
+          ? `Sacred Commitment (${categoryTitle}): ${angProfile.practiceDirective}`
+          : `पावन संकल्प ('${categoryTitle}'): ${angProfile.practiceDirective}`,
       oneLineBlessing,
       certificateActionLabel:
         language === 'pb'
@@ -923,7 +909,7 @@ export async function fetchAiElevenStepSwadhyay(params: {
   }
 
   const normalizedServerQuestions = Array.isArray(json.data.step5_quiz)
-    ? json.data.step5_quiz.slice(0, 5).map((q: any, idx: number) =>
+    ? json.data.step5_quiz.slice(0, 3).map((q: any, idx: number) =>
         normalizeElevenStepQuizQuestion(q, language, idx)
       )
     : [];
@@ -985,7 +971,7 @@ export function mergeAiIntoElevenStepData(
 
   const validQuestions =
     Array.isArray(ai.step5_quiz) && ai.step5_quiz.length > 0
-      ? ai.step5_quiz.slice(0, 5).map((q, idx) =>
+      ? ai.step5_quiz.slice(0, 3).map((q, idx) =>
           normalizeElevenStepQuizQuestion(
             q,
             language,
@@ -1022,6 +1008,12 @@ export function mergeAiIntoElevenStepData(
     ...base,
     step5_quiz: {
       ...base.step5_quiz,
+      subtitle:
+        language === 'pb'
+          ? `ਸਾਖੀ #${base.step5_quiz.subtitle.match(/#\d+/)?.[0]?.slice(1) || ''} ਦੇ ਸ਼ਬਦਾਂ ਤੇ ਮਰਮ 'ਤੇ ਆਧਾਰਿਤ ${validQuestions.length} ਪ੍ਰਸ਼ਨ`
+          : language === 'en'
+          ? `${validQuestions.length} randomized MCQs testing the exact words and teaching of Sakhi #${base.step5_quiz.subtitle.match(/#\d+/)?.[0]?.slice(1) || ''}`
+          : `साखी #${base.step5_quiz.subtitle.match(/#\d+/)?.[0]?.slice(1) || ''} के शब्दों, प्रतीकों व संदेश पर आधारित ${validQuestions.length} विशेष प्रश्न`,
       questions: validQuestions,
     },
     step6_spiritualInsight: {

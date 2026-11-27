@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Kabir koota Ram ka, mutiya mera naau. Gale Ram ki jevadi, jit kheencho tit jaau.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा के चरणों में अपनी पूर्ण शरणागति और निश्छल दास्य-भक्ति का अनुपम परिचय देते हुए कहते हैं कि मैं अपने प्रियतम राम (परमात्मा) का एक वफादार कुत्ता हूँ और उन्होंने प्रेम से मेरा नाम "मुतिया" (मोती) रखा है। मेरे गले में प्रभु के हुक्म और प्रेम की रस्सी (जेवड़ी) बंधी हुई है; वे जिस ओर भी मुझे खींचते हैं, मैं बिना किसी तर्क या संकोच के सहर्ष उसी ओर चला जाता हूँ। मेरा अपना कोई स्वतंत्र अहंकार या इच्छा नहीं बची है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਪ੍ਰਭੂ ਦਾ ਵਫ਼ਾਦਾਰ ਕੁੱਤਾ ਹਾਂ ਅਤੇ ਮੇਰਾ ਨਾਮ "ਮੋਤੀ" ਹੈ। ਮੇਰੇ ਗਲੇ ਵਿੱਚ ਪ੍ਰਭੂ ਦੇ ਹੁਕਮ ਦੀ ਡੋਰੀ ਪਈ ਹੋਈ ਹੈ; ਜਿੱਧਰ ਉਹ ਮੈਨੂੰ ਖਿੱਚਦੇ ਹਨ, ਮੈਂ ਉੱਧਰ ਹੀ ਤੁਰ ਪੈਂਦਾ ਹਾਂ। ਮੇਰੀ ਆਪਣੀ ਕੋਈ ਮਰਜ਼ੀ ਨਹੀਂ ਰਹੀ।',
-      en: 'Kabir Saheb illustrates the peak of ego-less surrender and loving servitude: I am the faithful hound of my Beloved Lord (Ram), and my name is Mutiya (Pearl). Around my neck is the leash of the Lord\'s divine will and love; wherever He tugs and leads me, I joyfully follow without resistance. I have relinquished all self-will and personal ego.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा के चरणों में अपनी पूर्ण शरणागति और निश्छल दास्य-भक्ति का अनुपम परिचय देते हुए कहते हैं कि मैं अपने प्रियतम राम (परमात्मा) का एक वफादार कुत्ता हूँ और उन्होंने प्रेम से मेरा नाम "मुतिया" (मोती) रखा है। मेरे गले में प्रभु के हुक्म और प्रेम की रस्सी (जेवड़ी) बंधी हुई है; वे जिस ओर भी मुझे खींचते हैं, मैं बिना किसी तर्क या संकोच के सहर्ष उसी ओर चला जाता हूँ। मेरा अपना कोई स्वतंत्र अहंकार या इच्छा नहीं बची है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਪ੍ਰਭੂ ਦਾ ਵਫ਼ਾਦਾਰ ਕੁੱਤਾ ਹਾਂ ਅਤੇ ਮੇਰਾ ਨਾਮ "ਮੋਤੀ" ਹੈ। ਮੇਰੇ ਗਲੇ ਵਿੱਚ ਪ੍ਰਭੂ ਦੇ ਹੁਕਮ ਦੀ ਡੋਰੀ ਪਈ ਹੋਈ ਹੈ; ਜਿੱਧਰ ਉਹ ਮੈਨੂੰ ਖਿੱਚਦੇ ਹਨ, ਮੈਂ ਉੱਧਰ ਹੀ ਤੁਰ ਪੈਂਦਾ ਹਾਂ। ਮੇਰੀ ਆਪਣੀ ਕੋਈ ਮਰਜ਼ੀ ਨਹੀਂ ਰਹੀ।',
+      en: 'Satguru Kabir Saheb illustrates the peak of ego-less surrender and loving servitude: I am the faithful hound of my Beloved Lord (Ram), and my name is Mutiya (Pearl). Around my neck is the leash of the Lord\'s divine will and love; wherever He tugs and leads me, I joyfully follow without resistance. I have relinquished all self-will and personal ego.',
     },
     wordMeanings: {
       hi: [
@@ -66,9 +66,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-1-1',
         question: {
-          hi: 'कबीर साहेब ने अपने गले में किसकी रस्सी (जेवड़ी) बंधी होना बताया है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੇ ਗਲੇ ਵਿੱਚ ਕਿਸ ਦੀ ਰੱਸੀ (ਜੇਵੜੀ) ਪਈ ਹੋਈ ਦੱਸੀ ਹੈ?',
-          en: 'Whose leash/rope does Kabir Saheb say is tied around his neck?',
+          hi: 'सतगुरु कबीर साहेब ने अपने गले में किसकी रस्सी (जेवड़ी) बंधी होना बताया है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੇ ਗਲੇ ਵਿੱਚ ਕਿਸ ਦੀ ਰੱਸੀ (ਜੇਵੜੀ) ਪਈ ਹੋਈ ਦੱਸੀ ਹੈ?',
+          en: 'Whose leash/rope does Satguru Kabir Saheb say is tied around his neck?',
         },
         options: {
           hi: ['सांसारिक समाज की', 'परमात्मा (राम) के प्रेम और हुक्म की', 'धन-दौलत की', 'शत्रुओं की'],
@@ -77,9 +77,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'कबीर साहेब कहते हैं कि उनके गले में राम के हुक्म और प्रेम की डोरी है, वे जिधर खींचते हैं उधर ही जाते हैं।',
-          pb: 'ਕਬੀਰ ਜੀ ਪ੍ਰਭੂ ਦੇ ਹੁਕਮ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਮਰਪਿਤ ਹਨ।',
-          en: 'Kabir Saheb is bound purely by the leash of God\'s divine love and sovereign will.',
+          hi: 'सतगुरु कबीर साहेब फरमाते हैं कि उनके गले में राम के हुक्म और प्रेम की डोरी है, वे जिधर खींचते हैं उधर ही जाते हैं।',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੇ ਹੁਕਮ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਮਰਪਿਤ ਹਨ।',
+          en: 'Satguru Kabir Saheb is bound purely by the leash of God\'s divine love and sovereign will.',
         },
       },
     ],
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Kaami amiy na bhavai, vish hi kau laye sodhi. Kubuddhi na jaayi jeev ki, bhavai svayambhu rahau prabodhi.',
     bhavarth: {
-      hi: 'कबीर साहेब काम-वासना और अज्ञान में डूबे जीव की विकृत मनोदशा का उद्घाटन करते हुए कहते हैं कि जो व्यक्ति वासनाओं और सांसारिक भोगों में अंधा हो चुका है, उसे परमात्मा का सत्यज्ञान रूपी अमृत तनिक भी नहीं सुहाता; वह केवल विषय-वासना रूपी हलाहल विष को ही ढूँढ-ढूँढ कर ग्रहण करता है। ऐसे जीव की दुर्मति और कुबुद्धि तब तक दूर नहीं हो सकती, चाहे साक्षात सृष्टिकर्ता ब्रह्मा (स्वयंभू) या ईश्वर स्वयं आकर उसे रात-दिन ज्ञान का उपदेश क्यों न दें।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਾਮ ਅਤੇ ਵਿਕਾਰਾਂ ਵਿੱਚ ਡੁੱਬੇ ਮਨੁੱਖ ਨੂੰ ਰੂਹਾਨੀ ਅੰਮ੍ਰਿਤ ਚੰਗਾ ਨਹੀਂ ਲੱਗਦਾ, ਉਹ ਵਿਕਾਰਾਂ ਦਾ ਜ਼ਹਿਰ ਹੀ ਭਾਲਦਾ ਹੈ। ਅਜਿਹੇ ਜੀਵ ਦੀ ਖੋਟੀ ਮੱਤ ਉਦੋਂ ਤੱਕ ਨਹੀਂ ਜਾਂਦੀ, ਭਾਵੇਂ ਸਾਖਸ਼ਾਤ ਬ੍ਰਹਮਾ ਜੀ ਆਪ ਆ ਕੇ ਉਸ ਨੂੰ ਉਪਦੇਸ਼ ਦੇਣ।',
-      en: 'Kabir Saheb exposes the obstinate delusion of a passion-blinded mind: A soul consumed by sensual desires finds no delight in the divine nectar of spiritual truth; it persistently seeks out and consumes the deadly poison of sensual vices. The twisted, perverse intellect of such an unawakened being will not relent, even if the Supreme Creator (Svayambhu) Himself were to descend and preach truth to him day and night.',
+      hi: 'सतगुरु कबीर साहेब काम-वासना और अज्ञान में डूबे जीव की विकृत मनोदशा का उद्घाटन करते हुए कहते हैं कि जो व्यक्ति वासनाओं और सांसारिक भोगों में अंधा हो चुका है, उसे परमात्मा का सत्यज्ञान रूपी अमृत तनिक भी नहीं सुहाता; वह केवल विषय-वासना रूपी हलाहल विष को ही ढूँढ-ढूँढ कर ग्रहण करता है। ऐसे जीव की दुर्मति और कुबुद्धि तब तक दूर नहीं हो सकती, चाहे साक्षात सृष्टिकर्ता ब्रह्मा (स्वयंभू) या ईश्वर स्वयं आकर उसे रात-दिन ज्ञान का उपदेश क्यों न दें।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਾਮ ਅਤੇ ਵਿਕਾਰਾਂ ਵਿੱਚ ਡੁੱਬੇ ਮਨੁੱਖ ਨੂੰ ਰੂਹਾਨੀ ਅੰਮ੍ਰਿਤ ਚੰਗਾ ਨਹੀਂ ਲੱਗਦਾ, ਉਹ ਵਿਕਾਰਾਂ ਦਾ ਜ਼ਹਿਰ ਹੀ ਭਾਲਦਾ ਹੈ। ਅਜਿਹੇ ਜੀਵ ਦੀ ਖੋਟੀ ਮੱਤ ਉਦੋਂ ਤੱਕ ਨਹੀਂ ਜਾਂਦੀ, ਭਾਵੇਂ ਸਾਖਸ਼ਾਤ ਬ੍ਰਹਮਾ ਜੀ ਆਪ ਆ ਕੇ ਉਸ ਨੂੰ ਉਪਦੇਸ਼ ਦੇਣ।',
+      en: 'Satguru Kabir Saheb exposes the obstinate delusion of a passion-blinded mind: A soul consumed by sensual desires finds no delight in the divine nectar of spiritual truth; it persistently seeks out and consumes the deadly poison of sensual vices. The twisted, perverse intellect of such an unawakened being will not relent, even if the Supreme Creator (Svayambhu) Himself were to descend and preach truth to him day and night.',
     },
     wordMeanings: {
       hi: [
@@ -152,9 +152,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार कामी व्यक्ति को क्या अच्छा नहीं लगता?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਾਮੀ ਮਨੁੱਖ ਨੂੰ ਕੀ ਚੰਗਾ ਨਹੀਂ ਲੱਗਦਾ?',
-          en: 'According to Kabir Saheb, what does a lustful/sensual person dislike?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार कामी व्यक्ति को क्या अच्छा नहीं लगता?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਾਮੀ ਮਨੁੱਖ ਨੂੰ ਕੀ ਚੰਗਾ ਨਹੀਂ ਲੱਗਦਾ?',
+          en: 'According to Satguru Kabir Saheb, what does a lustful/sensual person dislike?',
         },
         options: {
           hi: ['सांसारिक विषय-भोग', 'परम सत्य का ज्ञान रूपी अमृत (अमिय)', 'सोना-चांदी', 'मदिरा'],
@@ -189,9 +189,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Kaami lajja na karai, man maahe ahilaad. Neend na maange saanthara, bhookh na maange svaad.',
     bhavarth: {
-      hi: 'कबीर साहेब तीव्र इच्छाओं और वासनाओं की अंधता का यथार्थ चित्रण करते हुए कहते हैं कि जो व्यक्ति काम-वासना के वशीभूत होता है, वह लोक-लाज, मर्यादा और कुल की लज्जा त्याग देता है और केवल अपने मन के क्षणिक आमोद-प्रमोद (अहिलाद) में डूबा रहता है। जैसे अत्यधिक गहरी नींद को किसी बिछौने (सांथरा) की आवश्यकता नहीं होती और तीव्र भूख में कोई स्वाद या पकवान नहीं देखा जाता, वैसे ही वासना में अंधा मनुष्य भले-बुरे का सारा विवेक खो बैठता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਾਮੀ ਮਨੁੱਖ ਸ਼ਰਮ-ਹਯਾ ਛੱਡ ਦਿੰਦਾ ਹੈ ਅਤੇ ਮਨ ਦੇ ਝੂਠੇ ਸੁਆਦ ਵਿੱਚ ਮਸਤ ਰਹਿੰਦਾ ਹੈ। ਜਿਵੇਂ ਗੂੜ੍ਹੀ ਨੀਂਦ ਨੂੰ ਬਿਸਤਰੇ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਭੁੱਖ ਨੂੰ ਸੁਆਦ ਦੀ ਪਰਵਾਹ ਨਹੀਂ ਹੁੰਦੀ, ਤਿਵੇਂ ਵਿਕਾਰੀ ਮਨੁੱਖ ਚੰਗੇ-ਮੰਦੇ ਦਾ ਵਿਵੇਕ ਗਵਾ ਲੈਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb vividly depicts how overwhelming impulses overpower moral discernment: One gripped by lust casts aside all shame and modesty, consumed entirely by fleeting emotional excitement (Ahlaad). Just as overpowering exhaustion requires no soft bed (Santhara) and starving hunger demands no gourmet flavors, a passion-driven person loses all capacity for spiritual discretion and dignity.',
+      hi: 'सतगुरु कबीर साहेब तीव्र इच्छाओं और वासनाओं की अंधता का यथार्थ चित्रण करते हुए कहते हैं कि जो व्यक्ति काम-वासना के वशीभूत होता है, वह लोक-लाज, मर्यादा और कुल की लज्जा त्याग देता है और केवल अपने मन के क्षणिक आमोद-प्रमोद (अहिलाद) में डूबा रहता है। जैसे अत्यधिक गहरी नींद को किसी बिछौने (सांथरा) की आवश्यकता नहीं होती और तीव्र भूख में कोई स्वाद या पकवान नहीं देखा जाता, वैसे ही वासना में अंधा मनुष्य भले-बुरे का सारा विवेक खो बैठता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਾਮੀ ਮਨੁੱਖ ਸ਼ਰਮ-ਹਯਾ ਛੱਡ ਦਿੰਦਾ ਹੈ ਅਤੇ ਮਨ ਦੇ ਝੂਠੇ ਸੁਆਦ ਵਿੱਚ ਮਸਤ ਰਹਿੰਦਾ ਹੈ। ਜਿਵੇਂ ਗੂੜ੍ਹੀ ਨੀਂਦ ਨੂੰ ਬਿਸਤਰੇ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਭੁੱਖ ਨੂੰ ਸੁਆਦ ਦੀ ਪਰਵਾਹ ਨਹੀਂ ਹੁੰਦੀ, ਤਿਵੇਂ ਵਿਕਾਰੀ ਮਨੁੱਖ ਚੰਗੇ-ਮੰਦੇ ਦਾ ਵਿਵੇਕ ਗਵਾ ਲੈਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb vividly depicts how overwhelming impulses overpower moral discernment: One gripped by lust casts aside all shame and modesty, consumed entirely by fleeting emotional excitement (Ahlaad). Just as overpowering exhaustion requires no soft bed (Santhara) and starving hunger demands no gourmet flavors, a passion-driven person loses all capacity for spiritual discretion and dignity.',
     },
     wordMeanings: {
       hi: [
@@ -235,9 +235,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-3-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार अत्यधिक नींद और भूख किसकी परवाह नहीं करते?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੂੜ੍ਹੀ ਨੀਂਦ ਅਤੇ ਭੁੱਖ ਕਿਸ ਦੀ ਪਰਵਾਹ ਨਹੀਂ ਕਰਦੇ?',
-          en: 'According to Kabir Saheb, what do deep sleep and intense hunger not care for?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार अत्यधिक नींद और भूख किसकी परवाह नहीं करते?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੂੜ੍ਹੀ ਨੀਂਦ ਅਤੇ ਭੁੱਖ ਕਿਸ ਦੀ ਪਰਵਾਹ ਨਹੀਂ ਕਰਦੇ?',
+          en: 'According to Satguru Kabir Saheb, what do deep sleep and intense hunger not care for?',
         },
         options: {
           hi: ['क्रमशः बिछौने (सांथरा) और स्वाद की', 'हवा और पानी की', 'घर और कपड़े की', 'पैसों की'],
@@ -272,9 +272,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Gyani mool ganvaya, aapan bhaye karta. Taate sansari bhala, man me rahe darta.',
     bhavarth: {
-      hi: 'कबीर साहेब कोरे बौद्धिक ज्ञान और अहंकार के विनाशकारी परिणाम की चेतावनी देते हुए कहते हैं कि तथाकथित अहंकारी ज्ञानी ने स्वयं को ही कर्ता (सब कुछ करने वाला) मानकर अपने मूल सत्य और भक्ति को ही गँवा दिया। ऐसे दंभी ज्ञानी से तो वह सीधा-साधा संसारी मनुष्य कहीं श्रेष्ठ है, जिसके मन में कम से कम ईश्वर का भय, पाप का संकोच और विनम्रता तो शेष रहती है। अहंकार से भरा ज्ञान मुक्ति नहीं, पतन का कारण बन जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੰਕਾਰੀ ਗਿਆਨੀ ਨੇ ਆਪਣੇ ਆਪ ਨੂੰ ਹੀ ਕਰਤਾ-ਧਰਤਾ ਮੰਨ ਕੇ ਅਸਲ ਆਤਮਿਕ ਪੂੰਜੀ ਗਵਾ ਲਈ। ਉਸ ਨਾਲੋਂ ਤਾਂ ਉਹ ਸਧਾਰਨ ਦੁਨੀਆਵੀ ਮਨੁੱਖ ਚੰਗਾ ਹੈ ਜਿਸ ਦੇ ਮਨ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਡਰ ਅਤੇ ਨਿਮਰਤਾ ਬਣੀ ਰਹਿੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb delivers a sharp warning against dry intellectual conceit: The proud intellectual has squandered his spiritual essence by falsely assuming himself to be the ultimate doer (Karta). Far better than such an arrogant scholar is the simple worldly person, whose heart still retains holy reverence, humility, and the fear of divine justice. Arrogant knowledge leads to downfall rather than liberation.',
+      hi: 'सतगुरु कबीर साहेब कोरे बौद्धिक ज्ञान और अहंकार के विनाशकारी परिणाम की चेतावनी देते हुए कहते हैं कि तथाकथित अहंकारी ज्ञानी ने स्वयं को ही कर्ता (सब कुछ करने वाला) मानकर अपने मूल सत्य और भक्ति को ही गँवा दिया। ऐसे दंभी ज्ञानी से तो वह सीधा-साधा संसारी मनुष्य कहीं श्रेष्ठ है, जिसके मन में कम से कम ईश्वर का भय, पाप का संकोच और विनम्रता तो शेष रहती है। अहंकार से भरा ज्ञान मुक्ति नहीं, पतन का कारण बन जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੰਕਾਰੀ ਗਿਆਨੀ ਨੇ ਆਪਣੇ ਆਪ ਨੂੰ ਹੀ ਕਰਤਾ-ਧਰਤਾ ਮੰਨ ਕੇ ਅਸਲ ਆਤਮਿਕ ਪੂੰਜੀ ਗਵਾ ਲਈ। ਉਸ ਨਾਲੋਂ ਤਾਂ ਉਹ ਸਧਾਰਨ ਦੁਨੀਆਵੀ ਮਨੁੱਖ ਚੰਗਾ ਹੈ ਜਿਸ ਦੇ ਮਨ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਡਰ ਅਤੇ ਨਿਮਰਤਾ ਬਣੀ ਰਹਿੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb delivers a sharp warning against dry intellectual conceit: The proud intellectual has squandered his spiritual essence by falsely assuming himself to be the ultimate doer (Karta). Far better than such an arrogant scholar is the simple worldly person, whose heart still retains holy reverence, humility, and the fear of divine justice. Arrogant knowledge leads to downfall rather than liberation.',
     },
     wordMeanings: {
       hi: [
@@ -319,9 +319,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-4-1',
         question: {
-          hi: 'कबीर साहेब ने अहंकारी ज्ञानी से संसारी को भला क्यों कहा है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਹੰਕਾਰੀ ਗਿਆਨੀ ਨਾਲੋਂ ਦੁਨੀਆਵੀ ਮਨੁੱਖ ਨੂੰ ਚੰਗਾ ਕਿਉਂ ਕਿਹਾ ਹੈ?',
-          en: 'Why does Kabir Saheb regard a simple worldly person as better than an arrogant intellectual?',
+          hi: 'सतगुरु कबीर साहेब ने अहंकारी ज्ञानी से संसारी को भला क्यों कहा है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਹੰਕਾਰੀ ਗਿਆਨੀ ਨਾਲੋਂ ਦੁਨੀਆਵੀ ਮਨੁੱਖ ਨੂੰ ਚੰਗਾ ਕਿਉਂ ਕਿਹਾ ਹੈ?',
+          en: 'Why does Satguru Kabir Saheb regard a simple worldly person as better than an arrogant intellectual?',
         },
         options: {
           hi: ['क्योंकि संसारी के पास बहुत धन है', 'क्योंकि संसारी के मन में ईश्वर का भय और पाप से संकोच रहता है', 'क्योंकि संसारी अधिक सोता है', 'क्योंकि वह किताबें नहीं पढ़ता'],
@@ -356,9 +356,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Ihi udar ke karne, jag jaachyo nis jaam. Swami-pan jo sir chadhyo, saryo na eko kaam.',
     bhavarth: {
-      hi: 'कबीर साहेब धर्म के नाम पर पेट भरने वाले और गुरुडम चलाने वाले पाखंडियों पर तीखा कटाक्ष करते हुए कहते हैं कि केवल इस नश्वर पेट (उदर) की भूख मिटाने के लिए मनुष्य रात-दिन (निस जाम) संसार के आगे हाथ फैलाता और याचना करता रहा। फिर जब उसके सिर पर तथाकथित ‘स्वामी’ या धर्मगुरु होने का अहंकार सवार हो गया, तो इस आडंबर में उसका आत्म-कल्याण का एक भी कार्य सिद्ध नहीं हो सका; वह लोक और परलोक दोनों से हाथ धो बैठा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਿਰਫ ਪੇਟ ਭਰਨ ਦੀ ਖਾਤਰ ਮਨੁੱਖ ਦਿਨ-ਰਾਤ ਦੁਨੀਆ ਅੱਗੇ ਮੰਗਦਾ ਰਿਹਾ। ਫਿਰ ਜਦੋਂ ਸਿਰ ਉੱਤੇ ਮਹੰਤ ਜਾਂ ਸਵਾਮੀ ਬਣਨ ਦਾ ਹੰਕਾਰ ਚੜ੍ਹ ਗਿਆ, ਤਾਂ ਅਸਲ ਰੂਹਾਨੀ ਭਲਾਈ ਦਾ ਇੱਕ ਵੀ ਕੰਮ ਪੂਰਾ ਨਾ ਹੋ ਸਕਿਆ।',
-      en: 'Kabir Saheb exposes religious charlatans who commodify spirituality for livelihood: Merely to fill this physical belly, the pretender spent days and nights begging from the worldly public. And when the haughty delusion of being a grand "Swami" or spiritual lord went to his head, not a single true spiritual duty or salvation was accomplished. He lost both worldly peace and divine realization.',
+      hi: 'सतगुरु कबीर साहेब धर्म के नाम पर पेट भरने वाले और गुरुडम चलाने वाले पाखंडियों पर तीखा कटाक्ष करते हुए कहते हैं कि केवल इस नश्वर पेट (उदर) की भूख मिटाने के लिए मनुष्य रात-दिन (निस जाम) संसार के आगे हाथ फैलाता और याचना करता रहा। फिर जब उसके सिर पर तथाकथित ‘स्वामी’ या धर्मगुरु होने का अहंकार सवार हो गया, तो इस आडंबर में उसका आत्म-कल्याण का एक भी कार्य सिद्ध नहीं हो सका; वह लोक और परलोक दोनों से हाथ धो बैठा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਿਰਫ ਪੇਟ ਭਰਨ ਦੀ ਖਾਤਰ ਮਨੁੱਖ ਦਿਨ-ਰਾਤ ਦੁਨੀਆ ਅੱਗੇ ਮੰਗਦਾ ਰਿਹਾ। ਫਿਰ ਜਦੋਂ ਸਿਰ ਉੱਤੇ ਮਹੰਤ ਜਾਂ ਸਵਾਮੀ ਬਣਨ ਦਾ ਹੰਕਾਰ ਚੜ੍ਹ ਗਿਆ, ਤਾਂ ਅਸਲ ਰੂਹਾਨੀ ਭਲਾਈ ਦਾ ਇੱਕ ਵੀ ਕੰਮ ਪੂਰਾ ਨਾ ਹੋ ਸਕਿਆ।',
+      en: 'Satguru Kabir Saheb exposes religious charlatans who commodify spirituality for livelihood: Merely to fill this physical belly, the pretender spent days and nights begging from the worldly public. And when the haughty delusion of being a grand "Swami" or spiritual lord went to his head, not a single true spiritual duty or salvation was accomplished. He lost both worldly peace and divine realization.',
     },
     wordMeanings: {
       hi: [
@@ -404,9 +404,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-5-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सिर पर "स्वामी-पन" चढ़ने का क्या दुष्परिणाम होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਿਰ ਉੱਤੇ "ਸਵਾਮੀਪੁਣੇ" ਦਾ ਹੰਕਾਰ ਆਉਣ ਦਾ ਕੀ ਨੁਕਸਾਨ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the consequence of letting the pride of "Masterhood" go to one\'s head?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सिर पर "स्वामी-पन" चढ़ने का क्या दुष्परिणाम होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਿਰ ਉੱਤੇ "ਸਵਾਮੀਪੁਣੇ" ਦਾ ਹੰਕਾਰ ਆਉਣ ਦਾ ਕੀ ਨੁਕਸਾਨ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the consequence of letting the pride of "Masterhood" go to one\'s head?',
         },
         options: {
           hi: ['व्यक्ति बहुत अमीर हो जाता है', 'आत्म-कल्याण का एक भी काम सिद्ध नहीं होता', 'उसे स्वर्ग मिल जाता है', 'सभी लोग उसके दास बन जाते हैं'],
@@ -441,9 +441,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Swami hua seetka, paikakaar pachaas. Ramnaam kathayi rahya, kare seesha ki aas.',
     bhavarth: {
-      hi: 'कबीर साहेब लोभी और पाखंडी गुरुओं की पोल खोलते हुए कहते हैं कि स्वयं तो दो कौड़ी (सीतका/तुच्छ) का स्वामी बन बैठा है और उसने अपने इर्द-गिर्द पचास ऐसे चाटुकार और भाड़े के टट्टू (पैकाकार) जमा कर लिए हैं। मुख से तो वह बड़े-बड़े उपदेश देकर राम-नाम की कथा बाँच रहा है, परंतु उसके भीतर केवल अपने शिष्यों (सीशा) से धन, भेंट और चढ़ावे बटोरने की अधम आशा लगी हुई है। ऐसे गुरु स्वयं भी डूबते हैं और शिष्यों को भी डुबोते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਪ ਤਾਂ ਦੋ ਕੌਡੀ ਦਾ ਸਵਾਮੀ ਬਣਿਆ ਬੈਠਾ ਹੈ ਅਤੇ ਆਲੇ-ਦੁਆਲੇ ਪੰਜਾਹ ਚਮਚੇ ਇਕੱਠੇ ਕਰ ਰੱਖੇ ਹਨ। ਮੂੰਹੋਂ ਰਾਮ-ਨਾਮ ਦੀ ਕਥਾ ਕਰਦਾ ਹੈ ਪਰ ਅੰਦਰੋਂ ਚੇਲਿਆਂ ਤੋਂ ਪੈਸੇ ਤੇ ਭੇਟਾ ਬਟੋਰਨ ਦੀ ਲਾਲਸਾ ਰੱਖਦਾ ਹੈ।',
-      en: 'Kabir Saheb unveils the mercenary hypocrisy of false gurus: Himself a worthless master of no spiritual substance (Seetka), he has gathered fifty mercenary sycophants around him. While publicly discoursing on the sacred name of Ram, his underlying heart constantly craves money, offerings, and tributes from his gullible disciples (Seesha). Such masters mislead both themselves and their followers.',
+      hi: 'सतगुरु कबीर साहेब लोभी और पाखंडी गुरुओं की पोल खोलते हुए कहते हैं कि स्वयं तो दो कौड़ी (सीतका/तुच्छ) का स्वामी बन बैठा है और उसने अपने इर्द-गिर्द पचास ऐसे चाटुकार और भाड़े के टट्टू (पैकाकार) जमा कर लिए हैं। मुख से तो वह बड़े-बड़े उपदेश देकर राम-नाम की कथा बाँच रहा है, परंतु उसके भीतर केवल अपने शिष्यों (सीशा) से धन, भेंट और चढ़ावे बटोरने की अधम आशा लगी हुई है। ऐसे गुरु स्वयं भी डूबते हैं और शिष्यों को भी डुबोते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਪ ਤਾਂ ਦੋ ਕੌਡੀ ਦਾ ਸਵਾਮੀ ਬਣਿਆ ਬੈਠਾ ਹੈ ਅਤੇ ਆਲੇ-ਦੁਆਲੇ ਪੰਜਾਹ ਚਮਚੇ ਇਕੱਠੇ ਕਰ ਰੱਖੇ ਹਨ। ਮੂੰਹੋਂ ਰਾਮ-ਨਾਮ ਦੀ ਕਥਾ ਕਰਦਾ ਹੈ ਪਰ ਅੰਦਰੋਂ ਚੇਲਿਆਂ ਤੋਂ ਪੈਸੇ ਤੇ ਭੇਟਾ ਬਟੋਰਨ ਦੀ ਲਾਲਸਾ ਰੱਖਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb unveils the mercenary hypocrisy of false gurus: Himself a worthless master of no spiritual substance (Seetka), he has gathered fifty mercenary sycophants around him. While publicly discoursing on the sacred name of Ram, his underlying heart constantly craves money, offerings, and tributes from his gullible disciples (Seesha). Such masters mislead both themselves and their followers.',
     },
     wordMeanings: {
       hi: [
@@ -525,9 +525,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Aagi jo laagi samand mein, dhuva na pargat hoye. So jaane jo jari mua, jaaki laagi hoye.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति और ईश्वरीय प्रेम की गूढ़ अंतर्दशा का रूपक बांधते हुए कहते हैं कि जब हृदय रूपी अगाध समुद्र में परमात्मा के प्रेम और विरह की पावन अग्नि प्रज्वलित होती है, तो बाहर कोई धुआँ दिखाई नहीं देता। यह एक ऐसी गुप्त और अलौकिक ज्वाला है जिसकी तीव्रता को केवल वही साधक समझ सकता है जो स्वयं इस प्रेम-अग्नि में जलकर अपने अहंकार को भस्म कर चुका है और जिसके हृदय में यह चोट लगी है। सांसारिक लोग इस आंतरिक अवस्था को नहीं समझ सकते।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਹਿਰਦੇ ਰੂਪੀ ਸਮੁੰਦਰ ਵਿੱਚ ਇਲਾਹੀ ਪ੍ਰੇਮ ਦੀ ਅੱਗ ਲੱਗਦੀ ਹੈ ਤਾਂ ਬਾਹਰ ਕੋਈ ਧੂੰਆਂ ਨਜ਼ਰ ਨਹੀਂ ਆਉਂਦਾ। ਇਸ ਬਿਰਹੋਂ ਦੀ ਅੱਗ ਨੂੰ ਸਿਰਫ ਉਹੀ ਜਾਣਦਾ ਹੈ ਜੋ ਇਸ ਵਿੱਚ ਸੜ ਕੇ ਆਪਣੀ ਹਉਮੈ ਮਿਟਾ ਚੁੱਕਾ ਹੈ ਅਤੇ ਜਿਸ ਦੇ ਦਿਲ ਵਿੱਚ ਇਹ ਅੱਗ ਲੱਗੀ ਹੈ।',
-      en: 'Kabir Saheb describes the profound mystic interiority of divine love: When the sacred fire of longing ignites within the ocean of the heart, no outward smoke appears. This hidden divine fire is known only to that soul who has burned and dissolved in its flames, upon whose inner being this fire has struck. Worldly spectators can never comprehend this silent inner alchemy.',
+      hi: 'सतगुरु कबीर साहेब भक्ति और ईश्वरीय प्रेम की गूढ़ अंतर्दशा का रूपक बांधते हुए कहते हैं कि जब हृदय रूपी अगाध समुद्र में परमात्मा के प्रेम और विरह की पावन अग्नि प्रज्वलित होती है, तो बाहर कोई धुआँ दिखाई नहीं देता। यह एक ऐसी गुप्त और अलौकिक ज्वाला है जिसकी तीव्रता को केवल वही साधक समझ सकता है जो स्वयं इस प्रेम-अग्नि में जलकर अपने अहंकार को भस्म कर चुका है और जिसके हृदय में यह चोट लगी है। सांसारिक लोग इस आंतरिक अवस्था को नहीं समझ सकते।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਹਿਰਦੇ ਰੂਪੀ ਸਮੁੰਦਰ ਵਿੱਚ ਇਲਾਹੀ ਪ੍ਰੇਮ ਦੀ ਅੱਗ ਲੱਗਦੀ ਹੈ ਤਾਂ ਬਾਹਰ ਕੋਈ ਧੂੰਆਂ ਨਜ਼ਰ ਨਹੀਂ ਆਉਂਦਾ। ਇਸ ਬਿਰਹੋਂ ਦੀ ਅੱਗ ਨੂੰ ਸਿਰਫ ਉਹੀ ਜਾਣਦਾ ਹੈ ਜੋ ਇਸ ਵਿੱਚ ਸੜ ਕੇ ਆਪਣੀ ਹਉਮੈ ਮਿਟਾ ਚੁੱਕਾ ਹੈ ਅਤੇ ਜਿਸ ਦੇ ਦਿਲ ਵਿੱਚ ਇਹ ਅੱਗ ਲੱਗੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb describes the profound mystic interiority of divine love: When the sacred fire of longing ignites within the ocean of the heart, no outward smoke appears. This hidden divine fire is known only to that soul who has burned and dissolved in its flames, upon whose inner being this fire has struck. Worldly spectators can never comprehend this silent inner alchemy.',
     },
     wordMeanings: {
       hi: [
@@ -564,7 +564,7 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       en: 'O Fountain of Divine Love Satguru! Kindle the fire of Your sacred love within my heart\'s ocean until all traces of selfhood are consumed. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की प्रसिद्ध उलटबांसी शैली में हृदयस्थ गुप्त प्रेम-विरह की अगाध अनुभूति को दर्शाती है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की प्रसिद्ध उलटबांसी शैली में हृदयस्थ गुप्त प्रेम-विरह की अगाध अनुभूति को दर्शाती है।',
       pb: 'ਇਹ ਸਾਖੀ ਹਿਰਦੇ ਅੰਦਰਲੀ ਰੂਹਾਨੀ ਤੜਪ ਅਤੇ ਪ੍ਰੇਮ ਦੇ ਰਹੱਸ ਨੂੰ ਬਿਆਨ ਕਰਦੀ ਹੈ।',
       en: 'Uses paradox (fire in the ocean without smoke) to reveal the invisible, transformative power of divine love within the soul.',
     },
@@ -572,9 +572,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार समुद्र में लगी गुप्त प्रेम की आग को कौन जान सकता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਹਿਰਦੇ ਦੇ ਸਮੁੰਦਰ ਵਿੱਚ ਲੱਗੀ ਪ੍ਰੇਮ ਦੀ ਅੱਗ ਨੂੰ ਕੌਣ ਜਾਣ ਸਕਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who alone understands the fire burning in the ocean of the heart?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार समुद्र में लगी गुप्त प्रेम की आग को कौन जान सकता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਹਿਰਦੇ ਦੇ ਸਮੁੰਦਰ ਵਿੱਚ ਲੱਗੀ ਪ੍ਰੇਮ ਦੀ ਅੱਗ ਨੂੰ ਕੌਣ ਜਾਣ ਸਕਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who alone understands the fire burning in the ocean of the heart?',
         },
         options: {
           hi: ['तमाशबीन लोग', 'जो स्वयं उस प्रेम में जलकर अपने अहंकार को मिटा चुका है (जाकी लगी होए)', 'पुस्तकों के लेखक', 'व्यापारी'],
@@ -609,9 +609,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Aahaar kare man bhaavta, indri kiye svaad. Naak talak pooran bhare, to ka kahiye prasaad.',
     bhavarth: {
-      hi: 'कबीर साहेब धर्म के नाम पर स्वाद लोलुपता और पेटू प्रवृत्ति का खंडन करते हुए कहते हैं कि मनुष्य अपनी जिह्वा और इंद्रियों के स्वाद के लिए मनमाना गरिष्ठ भोजन करता है और पेट को गले और नाक तक ठूँस-ठूँस कर भर लेता है; फिर वह पाखंडपूर्वक उसे ईश्वर का ‘प्रसाद’ कैसे कह सकता है? प्रसाद तो पवित्रता, अल्पाहार, संयम और कृतज्ञता का प्रतीक है; इंद्रिय लोलुपता और पेटूपन को प्रसाद का नाम देकर आत्म-धोखा नहीं देना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਸੁਆਦਾਂ ਖਾਤਰ ਮਨਮਰਜ਼ੀ ਦਾ ਖਾਣਾ ਨੱਕ ਤੱਕ ਤੁੰਨ-ਤੁੰਨ ਕੇ ਖਾਂਦਾ ਹੈ, ਫਿਰ ਉਸ ਨੂੰ ਰੱਬ ਦਾ "ਪ੍ਰਸਾਦ" ਕਿਵੇਂ ਆਖਿਆ ਜਾ ਸਕਦਾ ਹੈ? ਪ੍ਰਸਾਦ ਸੰਜਮ ਅਤੇ ਪਵਿੱਤਰਤਾ ਦਾ ਨਾਮ ਹੈ, ਨਾ ਕਿ ਪੇਟੂਪੁਣੇ ਦਾ।',
-      en: 'Kabir Saheb criticizes gluttony masquerading as religious sanctimony: One indulges every whim of the palate for sensory pleasure, stuffing oneself right up to the nostrils—and then hypocritically calls this feast holy "Prasad" (divine offering)? True Prasad is received with restraint, sanctity, and reverence; labeling unchecked gluttony as holy food is pure self-deception.',
+      hi: 'सतगुरु कबीर साहेब धर्म के नाम पर स्वाद लोलुपता और पेटू प्रवृत्ति का खंडन करते हुए कहते हैं कि मनुष्य अपनी जिह्वा और इंद्रियों के स्वाद के लिए मनमाना गरिष्ठ भोजन करता है और पेट को गले और नाक तक ठूँस-ठूँस कर भर लेता है; फिर वह पाखंडपूर्वक उसे ईश्वर का ‘प्रसाद’ कैसे कह सकता है? प्रसाद तो पवित्रता, अल्पाहार, संयम और कृतज्ञता का प्रतीक है; इंद्रिय लोलुपता और पेटूपन को प्रसाद का नाम देकर आत्म-धोखा नहीं देना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਸੁਆਦਾਂ ਖਾਤਰ ਮਨਮਰਜ਼ੀ ਦਾ ਖਾਣਾ ਨੱਕ ਤੱਕ ਤੁੰਨ-ਤੁੰਨ ਕੇ ਖਾਂਦਾ ਹੈ, ਫਿਰ ਉਸ ਨੂੰ ਰੱਬ ਦਾ "ਪ੍ਰਸਾਦ" ਕਿਵੇਂ ਆਖਿਆ ਜਾ ਸਕਦਾ ਹੈ? ਪ੍ਰਸਾਦ ਸੰਜਮ ਅਤੇ ਪਵਿੱਤਰਤਾ ਦਾ ਨਾਮ ਹੈ, ਨਾ ਕਿ ਪੇਟੂਪੁਣੇ ਦਾ।',
+      en: 'Satguru Kabir Saheb criticizes gluttony masquerading as religious sanctimony: One indulges every whim of the palate for sensory pleasure, stuffing oneself right up to the nostrils—and then hypocritically calls this feast holy "Prasad" (divine offering)? True Prasad is received with restraint, sanctity, and reverence; labeling unchecked gluttony as holy food is pure self-deception.',
     },
     wordMeanings: {
       hi: [
@@ -656,9 +656,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-8-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार नाक तक ठूँसकर पेट भरने को क्या नहीं कहा जा सकता?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਨੱਕ ਤੱਕ ਤੁੰਨ ਕੇ ਖਾਣ ਨੂੰ ਕੀ ਨਹੀਂ ਕਿਹਾ ਜਾ ਸਕਦਾ?',
-          en: 'According to Kabir Saheb, what cannot be called "Prasad"?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार नाक तक ठूँसकर पेट भरने को क्या नहीं कहा जा सकता?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਨੱਕ ਤੱਕ ਤੁੰਨ ਕੇ ਖਾਣ ਨੂੰ ਕੀ ਨਹੀਂ ਕਿਹਾ ਜਾ ਸਕਦਾ?',
+          en: 'According to Satguru Kabir Saheb, what cannot be called "Prasad"?',
         },
         options: {
           hi: ['पवित्र प्रसाद', 'विष', 'कचरा', 'दवा'],
@@ -693,9 +693,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Aaj kahe Hari kal bhajunga, kaal kahe phir kaal. Aaj kaal ke karat hi, avsar jaasi chaal.',
     bhavarth: {
-      hi: 'कबीर साहेब मनुष्य की टालमटोल की आत्मघाती आदत पर चेतावनी देते हुए कहते हैं कि मनुष्य आज कहता है कि "मैं कल परमात्मा का भजन करूँगा", और जब कल आता है तो फिर कह देता है कि "अगले कल करूँगा"। इस प्रकार ‘आज-कल, आज-कल’ करते-करते यह अनमोल मानव जीवन और मुक्ति का स्वर्णिम अवसर हाथ से फिसल जाएगा और मृत्यु (काल) आकर अचानक दबोच लेगी। अतः प्रभु सुमिरन में एक क्षण का भी विलंब नहीं करना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਅੱਜ ਕਹਿੰਦਾ ਹੈ ਕਿ ਕੱਲ੍ਹ ਭਜਨ ਕਰਾਂਗਾ ਅਤੇ ਕੱਲ੍ਹ ਆਉਣ ਤੇ ਫਿਰ ਅਗਲੇ ਦਿਨ ਦੀ ਗੱਲ ਕਰਦਾ ਹੈ। ਇਸ ਅੱਜ-ਕੱਲ੍ਹ ਦੇ ਚੱਕਰ ਵਿੱਚ ਹੀ ਜ਼ਿੰਦਗੀ ਦਾ ਕੀਮਤੀ ਮੌਕਾ ਹੱਥੋਂ ਨਿਕਲ ਜਾਵੇਗਾ ਅਤੇ ਮੌਤ ਆ ਜਾਵੇਗੀ।',
-      en: 'Kabir Saheb sounds a piercing alarm against spiritual procrastination: Today man says, "I will meditate on God tomorrow," and when tomorrow arrives, he puts it off yet again. Caught in this perpetual trap of "today and tomorrow," the golden opportunity of human birth slips away and death unexpectedly overtakes him. Devotion must begin this very instant.',
+      hi: 'सतगुरु कबीर साहेब मनुष्य की टालमटोल की आत्मघाती आदत पर चेतावनी देते हुए कहते हैं कि मनुष्य आज कहता है कि "मैं कल परमात्मा का भजन करूँगा", और जब कल आता है तो फिर कह देता है कि "अगले कल करूँगा"। इस प्रकार ‘आज-कल, आज-कल’ करते-करते यह अनमोल मानव जीवन और मुक्ति का स्वर्णिम अवसर हाथ से फिसल जाएगा और मृत्यु (काल) आकर अचानक दबोच लेगी। अतः प्रभु सुमिरन में एक क्षण का भी विलंब नहीं करना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਅੱਜ ਕਹਿੰਦਾ ਹੈ ਕਿ ਕੱਲ੍ਹ ਭਜਨ ਕਰਾਂਗਾ ਅਤੇ ਕੱਲ੍ਹ ਆਉਣ ਤੇ ਫਿਰ ਅਗਲੇ ਦਿਨ ਦੀ ਗੱਲ ਕਰਦਾ ਹੈ। ਇਸ ਅੱਜ-ਕੱਲ੍ਹ ਦੇ ਚੱਕਰ ਵਿੱਚ ਹੀ ਜ਼ਿੰਦਗੀ ਦਾ ਕੀਮਤੀ ਮੌਕਾ ਹੱਥੋਂ ਨਿਕਲ ਜਾਵੇਗਾ ਅਤੇ ਮੌਤ ਆ ਜਾਵੇਗੀ।',
+      en: 'Satguru Kabir Saheb sounds a piercing alarm against spiritual procrastination: Today man says, "I will meditate on God tomorrow," and when tomorrow arrives, he puts it off yet again. Caught in this perpetual trap of "today and tomorrow," the golden opportunity of human birth slips away and death unexpectedly overtakes him. Devotion must begin this very instant.',
     },
     wordMeanings: {
       hi: [
@@ -737,9 +737,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-9-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार ‘आज-कल’ करने का क्या परिणाम होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ‘ਅੱਜ-ਕੱਲ੍ਹ’ ਕਰਨ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the consequence of saying "I will meditate tomorrow"?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार ‘आज-कल’ करने का क्या परिणाम होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ‘ਅੱਜ-ਕੱਲ੍ਹ’ ਕਰਨ ਦਾ ਕੀ ਨਤੀਜਾ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the consequence of saying "I will meditate tomorrow"?',
         },
         options: {
           hi: ['काम आसानी से हो जाता है', 'मानव जीवन रूपी अनमोल अवसर हाथ से निकल जाता है', 'आयु बढ़ जाती है', 'धन मिल जाता है'],
@@ -774,9 +774,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
     },
     transliteration: 'Aasan maari gupha mein baithe, manva chahu dishi jaaye. Bhavsagar ghat bich biraje, khojan teerath jaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य योग क्रियाओं और तीर्थाटन के खोखलेपन को दर्शाते हुए कहते हैं कि शरीर से पद्मासन लगाकर एकांत गुफा में बैठ गए, परंतु चंचल मन चारों दिशाओं में सांसारिक भोगों के पीछे दौड़ रहा है। जिस परमात्मा ने इस घट (हृदय) के भीतर ही समस्त सृष्टि और मुक्ति का अमृत धाम रचा है, उसे अपने अंतःकरण में खोजने के बजाय अज्ञानी मनुष्य बाहर दूर-दूर तीर्थों और वनों में भटक रहा है। मन की एकाग्रता और अंतर्मुखी दृष्टि के बिना सब साधन व्यर्थ हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਰੀਰ ਨਾਲ ਗੁਫਾ ਵਿੱਚ ਆਸਣ ਲਗਾ ਕੇ ਬੈਠ ਗਏ ਪਰ ਮਨ ਚਾਰੇ ਪਾਸੇ ਭਟਕ ਰਿਹਾ ਹੈ। ਜਿਸ ਪ੍ਰਭੂ ਨੇ ਹਿਰਦੇ ਅੰਦਰ ਹੀ ਸੱਚਾ ਤੀਰਥ ਰੱਖਿਆ ਹੈ, ਉਸ ਨੂੰ ਬਾਹਰਲੇ ਤੀਰਥਾਂ ਤੇ ਲੱਭਣ ਜਾਣਾ ਸਿਰਫ ਭਟਕਣਾ ਹੈ।',
-      en: 'Kabir Saheb contrasts outer ascetic posturing with true inner stillness: The ascetic sits rigid in meditative posture inside a solitary cave, yet his restless mind gallops in all four directions chasing worldly desires. While the Supreme Reality and the entire mystery of the cosmos reside right within the temple of the heart (Ghat), the unawakened seeker wanders to distant outer pilgrimage shrines in search of God.',
+      hi: 'सतगुरु कबीर साहेब बाह्य योग क्रियाओं और तीर्थाटन के खोखलेपन को दर्शाते हुए कहते हैं कि शरीर से पद्मासन लगाकर एकांत गुफा में बैठ गए, परंतु चंचल मन चारों दिशाओं में सांसारिक भोगों के पीछे दौड़ रहा है। जिस परमात्मा ने इस घट (हृदय) के भीतर ही समस्त सृष्टि और मुक्ति का अमृत धाम रचा है, उसे अपने अंतःकरण में खोजने के बजाय अज्ञानी मनुष्य बाहर दूर-दूर तीर्थों और वनों में भटक रहा है। मन की एकाग्रता और अंतर्मुखी दृष्टि के बिना सब साधन व्यर्थ हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਰੀਰ ਨਾਲ ਗੁਫਾ ਵਿੱਚ ਆਸਣ ਲਗਾ ਕੇ ਬੈਠ ਗਏ ਪਰ ਮਨ ਚਾਰੇ ਪਾਸੇ ਭਟਕ ਰਿਹਾ ਹੈ। ਜਿਸ ਪ੍ਰਭੂ ਨੇ ਹਿਰਦੇ ਅੰਦਰ ਹੀ ਸੱਚਾ ਤੀਰਥ ਰੱਖਿਆ ਹੈ, ਉਸ ਨੂੰ ਬਾਹਰਲੇ ਤੀਰਥਾਂ ਤੇ ਲੱਭਣ ਜਾਣਾ ਸਿਰਫ ਭਟਕਣਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb contrasts outer ascetic posturing with true inner stillness: The ascetic sits rigid in meditative posture inside a solitary cave, yet his restless mind gallops in all four directions chasing worldly desires. While the Supreme Reality and the entire mystery of the cosmos reside right within the temple of the heart (Ghat), the unawakened seeker wanders to distant outer pilgrimage shrines in search of God.',
     },
     wordMeanings: {
       hi: [
@@ -821,9 +821,9 @@ export const SAKHIS_BATCH_13: Sakhi[] = [
       {
         id: 'q-b13-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार परमात्मा का सच्चा वास कहाँ है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪਰਮਾਤਮਾ ਦਾ ਸੱਚਾ ਵਾਸ ਕਿੱਥੇ ਹੈ?',
-          en: 'According to Kabir Saheb, where does the Supreme Divine truly reside?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार परमात्मा का सच्चा वास कहाँ है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪਰਮਾਤਮਾ ਦਾ ਸੱਚਾ ਵਾਸ ਕਿੱਥੇ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, where does the Supreme Divine truly reside?',
         },
         options: {
           hi: ['बाहरी गुफाओं और तीर्थों में', 'प्रत्येक जीव के हृदय (घट) के भीतर', 'पहाड़ों के ऊपर', 'समुद्र की गहराइयों में'],

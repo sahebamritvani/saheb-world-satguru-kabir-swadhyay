@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Aasha karai baikunth ki, durmati teeno kaal. Shukra kahi bali na karee, taate gayo pataal.',
     bhavarth: {
-      hi: 'कबीर साहेब समझाते हैं कि जो जीव दुर्बुद्धि से ग्रस्त होकर केवल स्वर्ग-बैकुंठ की कामनाओं में उलझा रहता है, वह तीनों कालों में धोखा खाता है। जैसे राजा बलि ने शुक्राचार्य की चेतावनी को नहीं माना और अहंकार व स्वर्ग की चाहत में पाताल चले गए। सच्ची मुक्ति स्वर्ग की कामना में नहीं, बल्कि निष्काम सत्य की शरण में है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦੁਰਮਤ ਵਿੱਚ ਫਸ ਕੇ ਸਵਰਗ ਦੀ ਆਸ ਰੱਖਣ ਵਾਲਾ ਜੀਵ ਤਿੰਨਾਂ ਕਾਲਾਂ ਵਿੱਚ ਦੁਖੀ ਰਹਿੰਦਾ ਹੈ। ਜਿਵੇਂ ਰਾਜਾ ਬਲਿ ਨੇ ਸ਼ੁਕਰਾਚਾਰੀਆ ਦਾ ਕਹਿਣਾ ਨਾ ਮੰਨਿਆ ਅਤੇ ਅੰਤ ਵਿੱਚ ਪਤਾਲ ਵਿੱਚ ਜਾਣਾ ਪਿਆ। ਸੱਚੀ ਮੁਕਤੀ ਵਾਸਨਾ-ਰਹਿਤ ਹੋਣ ਵਿੱਚ ਹੈ।',
-      en: 'Kabir Saheb teaches that desiring heavenly paradises out of misguided ignorance binds the soul across all three periods of time. Just as King Bali ignored the counsel of Shukracharya and ended up relegated to the netherworld, true liberation lies not in seeking heaven, but in transcending all worldly and celestial desires.',
+      hi: 'सतगुरु कबीर साहेब समझाते हैं कि जो जीव दुर्बुद्धि से ग्रस्त होकर केवल स्वर्ग-बैकुंठ की कामनाओं में उलझा रहता है, वह तीनों कालों में धोखा खाता है। जैसे राजा बलि ने शुक्राचार्य की चेतावनी को नहीं माना और अहंकार व स्वर्ग की चाहत में पाताल चले गए। सच्ची मुक्ति स्वर्ग की कामना में नहीं, बल्कि निष्काम सत्य की शरण में है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦੁਰਮਤ ਵਿੱਚ ਫਸ ਕੇ ਸਵਰਗ ਦੀ ਆਸ ਰੱਖਣ ਵਾਲਾ ਜੀਵ ਤਿੰਨਾਂ ਕਾਲਾਂ ਵਿੱਚ ਦੁਖੀ ਰਹਿੰਦਾ ਹੈ। ਜਿਵੇਂ ਰਾਜਾ ਬਲਿ ਨੇ ਸ਼ੁਕਰਾਚਾਰੀਆ ਦਾ ਕਹਿਣਾ ਨਾ ਮੰਨਿਆ ਅਤੇ ਅੰਤ ਵਿੱਚ ਪਤਾਲ ਵਿੱਚ ਜਾਣਾ ਪਿਆ। ਸੱਚੀ ਮੁਕਤੀ ਵਾਸਨਾ-ਰਹਿਤ ਹੋਣ ਵਿੱਚ ਹੈ।',
+      en: 'Satguru Kabir Saheb teaches that desiring heavenly paradises out of misguided ignorance binds the soul across all three periods of time. Just as King Bali ignored the counsel of Shukracharya and ended up relegated to the netherworld, true liberation lies not in seeking heaven, but in transcending all worldly and celestial desires.',
     },
     wordMeanings: {
       hi: [
@@ -65,9 +65,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
       {
         id: 'q-b15-201',
         question: {
-          hi: 'कबीर साहेब के अनुसार स्वर्ग-बैकुंठ की वासना क्या दर्शाती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਵਰਗ ਦੀ ਆਸ ਕੀ ਦਰਸਾਉਂਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what does craving heaven signify?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार स्वर्ग-बैकुंठ की वासना क्या दर्शाती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਵਰਗ ਦੀ ਆਸ ਕੀ ਦਰਸਾਉਂਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what does craving heaven signify?',
         },
         options: {
           hi: ['अज्ञान व दुर्बुद्धि', 'परम सिद्धि', 'सच्ची मुक्ति', 'पुण्य का अंत'],
@@ -102,9 +102,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Atki bhaal shareer mein, teer raha hai toot. Chumbak bina nikle nahee, koti pathan ko phoot.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि अज्ञान और कर्मों का लोहे जैसा नुकीला फल (भाल) शरीर व अंतःकरण में धंसा हुआ है और तीर की लकड़ी टूट चुकी है। यह केवल करोड़ों वेद-शास्त्र पढ़ने या बाहरी उपायों से नहीं निकल सकता; इसके लिए तो सतगुरु रूपी चुम्बक (परम कृपा) की ही आवश्यकता है, जो अपने प्रेम-आकर्षण से इसे बाहर खींच लेती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਰੀਰ ਅੰਦਰ ਮੋਹ-ਮਾਇਆ ਦਾ ਲੋਹੇ ਦਾ ਤੀਰ ਖੁਭਿਆ ਹੋਇਆ ਹੈ। ਇਹ ਕੇਵਲ ਕਿਤਾਬਾਂ ਪੜ੍ਹਨ ਨਾਲ ਨਹੀਂ ਨਿਕਲਦਾ, ਇਸਨੂੰ ਸਿਰਫ ਸਤਿਗੁਰੂ ਰੂਪੀ ਚੁੰਬਕ ਹੀ ਖਿੱਚ ਕੇ ਕੱਢ ਸਕਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals that the iron arrowhead of worldly attachment is deeply embedded within the soul while the shaft has snapped. Millions of recitations or intellectual scriptures cannot dislodge it; only the magnetic spiritual presence of the Satguru can effortlessly draw it out through divine love.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अज्ञान और कर्मों का लोहे जैसा नुकीला फल (भाल) शरीर व अंतःकरण में धंसा हुआ है और तीर की लकड़ी टूट चुकी है। यह केवल करोड़ों वेद-शास्त्र पढ़ने या बाहरी उपायों से नहीं निकल सकता; इसके लिए तो सतगुरु रूपी चुम्बक (परम कृपा) की ही आवश्यकता है, जो अपने प्रेम-आकर्षण से इसे बाहर खींच लेती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਰੀਰ ਅੰਦਰ ਮੋਹ-ਮਾਇਆ ਦਾ ਲੋਹੇ ਦਾ ਤੀਰ ਖੁਭਿਆ ਹੋਇਆ ਹੈ। ਇਹ ਕੇਵਲ ਕਿਤਾਬਾਂ ਪੜ੍ਹਨ ਨਾਲ ਨਹੀਂ ਨਿਕਲਦਾ, ਇਸਨੂੰ ਸਿਰਫ ਸਤਿਗੁਰੂ ਰੂਪੀ ਚੁੰਬਕ ਹੀ ਖਿੱਚ ਕੇ ਕੱਢ ਸਕਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals that the iron arrowhead of worldly attachment is deeply embedded within the soul while the shaft has snapped. Millions of recitations or intellectual scriptures cannot dislodge it; only the magnetic spiritual presence of the Satguru can effortlessly draw it out through divine love.',
     },
     wordMeanings: {
       hi: [
@@ -139,7 +139,7 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
       en: 'O Compassionate Master! With the magnet of Your Grace, extract all thorns of delusion from my heart. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी स्पष्ट करती है कि विकारों का शमन केवल सद्गुरु कृपा से ही संभव है।',
+      hi: 'यह साखी स्पष्ट करती है कि विकारों का शमन केवल सतगुरु कृपा से ही संभव है।',
       pb: 'ਇਹ ਸਾਖੀ ਗੁਰੂ ਕਿਰਪਾ ਦੀ ਮਹਿਮਾ ਦਰਸਾਉਂਦੀ ਹੈ।',
       en: 'This verse emphasizes that deep-rooted spiritual ignorance yields only to the Master’s grace.',
     },
@@ -184,9 +184,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Avagun kahu sharaab ka, aapa ahmak saath. Maanush se pashua kare, daay gaanth se khaat.',
     bhavarth: {
-      hi: 'कबीर साहेब मदिरा (शराब) व नशों की बुराई बताते हुए कहते हैं कि शराब मनुष्य का विवेक छीनकर उसे मूर्ख (अहमक) बना देती है। यह विवेकशील इंसान को पशु के समान बना देती है और इंसान अपनी ही गांठ (कमाई व जीवन) का सर्वनाश कर बैठता है। अतः समस्त नशों से दूर रहना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸ਼ਰਾਬ ਦੇ ਨੁਕਸਾਨ ਦੱਸਦੇ ਹਨ ਕਿ ਇਹ ਮਨੁੱਖ ਦਾ ਗਿਆਨ ਖੋਹ ਕੇ ਉਸਨੂੰ ਪਸ਼ੂ ਬਣਾ ਦਿੰਦੀ ਹੈ ਅਤੇ ਉਸਦਾ ਧਨ ਤੇ ਇੱਜ਼ਤ ਸਭ ਬਰਬਾਦ ਕਰ ਦਿੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb strictly warns against alcohol and intoxicants, stating that liquor robs a person of sense, turning an intelligent human into a beast while draining hard-earned wealth and dignity.',
+      hi: 'सतगुरु कबीर साहेब मदिरा (शराब) व नशों की बुराई बताते हुए कहते हैं कि शराब मनुष्य का विवेक छीनकर उसे मूर्ख (अहमक) बना देती है। यह विवेकशील इंसान को पशु के समान बना देती है और इंसान अपनी ही गांठ (कमाई व जीवन) का सर्वनाश कर बैठता है। अतः समस्त नशों से दूर रहना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸ਼ਰਾਬ ਦੇ ਨੁਕਸਾਨ ਦੱਸਦੇ ਹਨ ਕਿ ਇਹ ਮਨੁੱਖ ਦਾ ਗਿਆਨ ਖੋਹ ਕੇ ਉਸਨੂੰ ਪਸ਼ੂ ਬਣਾ ਦਿੰਦੀ ਹੈ ਅਤੇ ਉਸਦਾ ਧਨ ਤੇ ਇੱਜ਼ਤ ਸਭ ਬਰਬਾਦ ਕਰ ਦਿੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb strictly warns against alcohol and intoxicants, stating that liquor robs a person of sense, turning an intelligent human into a beast while draining hard-earned wealth and dignity.',
     },
     wordMeanings: {
       hi: [
@@ -223,15 +223,15 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     contextNote: {
       hi: 'कबीर पंथ में नशा-मुक्ति और सात्विक जीवन को आध्यात्मिक उन्नति की पहली सीढ़ी माना गया है।',
       pb: 'ਨਸ਼ਾ ਮੁਕਤੀ ਕਬੀਰ ਪੰਥ ਦਾ ਮੁੱਖ ਨਿਯਮ ਹੈ।',
-      en: 'Purity from intoxicants is a fundamental pillar in the teachings of Kabir Saheb.',
+      en: 'Purity from intoxicants is a fundamental pillar in the teachings of Satguru Kabir Saheb.',
     },
     quiz: [
       {
         id: 'q-b15-203',
         question: {
-          hi: 'कबीर साहेब के अनुसार शराब मनुष्य को किस स्तर पर गिरा देती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸ਼ਰਾਬ ਮਨੁੱਖ ਨੂੰ ਕੀ ਬਣਾ ਦਿੰਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what does alcohol reduce a human being to?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार शराब मनुष्य को किस स्तर पर गिरा देती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸ਼ਰਾਬ ਮਨੁੱਖ ਨੂੰ ਕੀ ਬਣਾ ਦਿੰਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what does alcohol reduce a human being to?',
         },
         options: {
           hi: ['पशु के समान मूर्ख', 'बुद्धिमान', 'शूरवीर', 'तपस्वी'],
@@ -266,9 +266,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Avagun ko to na gahe, gun hi ko le been. Ghat ghat mahke madhup jyo, parmaatam le cheenh.',
     bhavarth: {
-      hi: 'कबीर साहेब उपदेश देते हैं कि किसी के भी अवगुणों और दोषों को न पकड़ें, केवल गुणों को ही चुन लें। जैसे भौंरा (मधुप) कांटों की परवाह किए बिना केवल फूलों के रस व सुगंध को ग्रहण करता है, वैसे ही हर घट (प्राणी) में बसे परमात्मा के सत्य स्वरूप को पहचानो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਔਗੁਣ ਨਾ ਦੇਖੋ, ਕੇਵਲ ਗੁਣਾਂ ਨੂੰ ਗ੍ਰਹਿਣ ਕਰੋ। ਜਿਵੇਂ ਭੌਰਾ ਸਿਰਫ ਫੁੱਲਾਂ ਦਾ ਰਸ ਲੈਂਦਾ ਹੈ, ਤਿਵੇਂ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦੇ ਪ੍ਰਭੂ ਨੂੰ ਪਛਾਣੋ।',
-      en: 'Kabir Saheb teaches us to overlook flaws and gather only virtues: Just as the honeybee seeks out fragrance without dwelling on thorns, recognize and embrace the divine light dwelling in every living heart.',
+      hi: 'सतगुरु कबीर साहेब उपदेश देते हैं कि किसी के भी अवगुणों और दोषों को न पकड़ें, केवल गुणों को ही चुन लें। जैसे भौंरा (मधुप) कांटों की परवाह किए बिना केवल फूलों के रस व सुगंध को ग्रहण करता है, वैसे ही हर घट (प्राणी) में बसे परमात्मा के सत्य स्वरूप को पहचानो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਔਗੁਣ ਨਾ ਦੇਖੋ, ਕੇਵਲ ਗੁਣਾਂ ਨੂੰ ਗ੍ਰਹਿਣ ਕਰੋ। ਜਿਵੇਂ ਭੌਰਾ ਸਿਰਫ ਫੁੱਲਾਂ ਦਾ ਰਸ ਲੈਂਦਾ ਹੈ, ਤਿਵੇਂ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦੇ ਪ੍ਰਭੂ ਨੂੰ ਪਛਾਣੋ।',
+      en: 'Satguru Kabir Saheb teaches us to overlook flaws and gather only virtues: Just as the honeybee seeks out fragrance without dwelling on thorns, recognize and embrace the divine light dwelling in every living heart.',
     },
     wordMeanings: {
       hi: [
@@ -350,9 +350,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Baajigar ka baandra, aisa jeev man ke saath. Naana naach dikhaay kar, raakhe apne saath.',
     bhavarth: {
-      hi: 'कबीर साहेब मन की चंचलता का रहस्य खोलते हैं: जैसे मदारी (बाजीगर) अपने बंदर को डमरू बजाकर अनेक प्रकार के नाच नचाता है और अपने वश में रखता है, ठीक उसी प्रकार यह चंचल मन इस जीवात्मा को भांति-भांति की इच्छाओं और सांसारिक तमाशों में नचाता रहता है। गुरु ज्ञान से ही मन के इस जाल से मुक्ति मिलती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਮਦਾਰੀ ਬਾਂਦਰ ਨੂੰ ਆਪਣੇ ਇਸ਼ਾਰਿਆਂ ਤੇ ਨਚਾਉਂਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਇਹ ਮਨ ਜੀਵ ਨੂੰ ਤ੍ਰਿਸ਼ਨਾਵਾਂ ਦੇ ਨਾਚ ਨਚਾ ਕੇ ਭਟਕਾਉਂਦਾ ਰਹਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates that the soul is held captive by the restless mind just like a monkey dancing to the tunes of a juggler. The mind makes the soul dance to endless cravings and worldly illusions until enlightened by the Master’s wisdom.',
+      hi: 'सतगुरु कबीर साहेब मन की चंचलता का रहस्य खोलते हैं: जैसे मदारी (बाजीगर) अपने बंदर को डमरू बजाकर अनेक प्रकार के नाच नचाता है और अपने वश में रखता है, ठीक उसी प्रकार यह चंचल मन इस जीवात्मा को भांति-भांति की इच्छाओं और सांसारिक तमाशों में नचाता रहता है। गुरु ज्ञान से ही मन के इस जाल से मुक्ति मिलती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਮਦਾਰੀ ਬਾਂਦਰ ਨੂੰ ਆਪਣੇ ਇਸ਼ਾਰਿਆਂ ਤੇ ਨਚਾਉਂਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਇਹ ਮਨ ਜੀਵ ਨੂੰ ਤ੍ਰਿਸ਼ਨਾਵਾਂ ਦੇ ਨਾਚ ਨਚਾ ਕੇ ਭਟਕਾਉਂਦਾ ਰਹਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates that the soul is held captive by the restless mind just like a monkey dancing to the tunes of a juggler. The mind makes the soul dance to endless cravings and worldly illusions until enlightened by the Master’s wisdom.',
     },
     wordMeanings: {
       hi: [
@@ -432,9 +432,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Baani se pehchaaniye, saam chor ki ghaat. Andar ki karnee se sab, nikle munh kai baat.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि मनुष्य की वाणी से उसके आंतरिक चरित्र और नीयत की पहचान हो जाती है, जैसे चोर की चाल-ढाल से उसकी घात का पता चलता है। मनुष्य के अंतःकरण में जो भाव और कर्म पक रहे होते हैं, वे अंततः उसकी जुबान से बातों के रूप में बाहर प्रकट हो ही जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੋਲ-ਚਾਲ ਤੋਂ ਮਨੁੱਖ ਦੇ ਅੰਦਰਲੇ ਸੁਭਾਅ ਅਤੇ ਨੀਅਤ ਦਾ ਪਤਾ ਲੱਗ ਜਾਂਦਾ ਹੈ। ਜੋ ਕੁਝ ਮਨ ਅੰਦਰ ਚੱਲ ਰਿਹਾ ਹੁੰਦਾ ਹੈ, ਉਹ ਜ਼ੁਬਾਨ ਰਾਹੀਂ ਬਾਹਰ ਆ ਹੀ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb states that a person’s speech reveals their true inner character and motives, just as a thief’s subtle moves reveal their intent. Whatever thoughts, purity, or deceit brew in the heart inevitably flow out through the spoken word.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि मनुष्य की वाणी से उसके आंतरिक चरित्र और नीयत की पहचान हो जाती है, जैसे चोर की चाल-ढाल से उसकी घात का पता चलता है। मनुष्य के अंतःकरण में जो भाव और कर्म पक रहे होते हैं, वे अंततः उसकी जुबान से बातों के रूप में बाहर प्रकट हो ही जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੋਲ-ਚਾਲ ਤੋਂ ਮਨੁੱਖ ਦੇ ਅੰਦਰਲੇ ਸੁਭਾਅ ਅਤੇ ਨੀਅਤ ਦਾ ਪਤਾ ਲੱਗ ਜਾਂਦਾ ਹੈ। ਜੋ ਕੁਝ ਮਨ ਅੰਦਰ ਚੱਲ ਰਿਹਾ ਹੁੰਦਾ ਹੈ, ਉਹ ਜ਼ੁਬਾਨ ਰਾਹੀਂ ਬਾਹਰ ਆ ਹੀ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims that a person’s speech reveals their true inner character and motives, just as a thief’s subtle moves reveal their intent. Whatever thoughts, purity, or deceit brew in the heart inevitably flow out through the spoken word.',
     },
     wordMeanings: {
       hi: [
@@ -478,9 +478,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
       {
         id: 'q-b15-206',
         question: {
-          hi: 'कबीर साहेब के अनुसार मनुष्य की नीयत और अंतर्मन का पता किससे चलता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦੇ ਅੰਦਰਲੇ ਭੇਦ ਦਾ ਪਤਾ ਕਿਸ ਤੋਂ ਲੱਗਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what reveals a person’s inner intent and character?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार मनुष्य की नीयत और अंतर्मन का पता किससे चलता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦੇ ਅੰਦਰਲੇ ਭੇਦ ਦਾ ਪਤਾ ਕਿਸ ਤੋਂ ਲੱਗਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what reveals a person’s inner intent and character?',
         },
         options: {
           hi: ['उनकी वाणी और बोलचाल से', 'पहनावे से', 'धन-दौलत से', 'मकान से'],
@@ -515,9 +515,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Bahata paani nirmala, bandha ganda hoy. Saadhu jan ramta bhala, daag na laage koy.',
     bhavarth: {
-      hi: 'कबीर साहेब संतों की निर्लिप्तता का सुंदर दृष्टांत देते हैं: जैसे बहती हुई नदी का जल सदा स्वच्छ और निर्मल रहता है, जबकि एक जगह ठहरा हुआ (बंधा) पानी सड़कर गंदा हो जाता है; उसी प्रकार जो संत निरंतर सत्य के चिंतन और परोपकार में गतिशील (रमता) रहते हैं, उन पर संसार के मोह-माया का कोई दाग या विकार नहीं लगता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਵਗਦਾ ਪਾਣੀ ਹਮੇਸ਼ਾ ਸਾਫ਼ ਰਹਿੰਦਾ ਹੈ ਤੇ ਖੜ੍ਹਾ ਪਾਣੀ ਖਰਾਬ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਸੰਤ ਜਨ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿ ਕੇ ਸਦਾ ਪਵਿੱਤਰ ਰਹਿੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb provides a vivid metaphor: Flowing river water remains sparkling pure, whereas stagnant water gathers filth and decays. Similarly, spiritual seekers and saints who remain detached and dynamic in devotion stay untouched by the stains of worldly illusion and greed.',
+      hi: 'सतगुरु कबीर साहेब संतों की निर्लिप्तता का सुंदर दृष्टांत देते हैं: जैसे बहती हुई नदी का जल सदा स्वच्छ और निर्मल रहता है, जबकि एक जगह ठहरा हुआ (बंधा) पानी सड़कर गंदा हो जाता है; उसी प्रकार जो संत निरंतर सत्य के चिंतन और परोपकार में गतिशील (रमता) रहते हैं, उन पर संसार के मोह-माया का कोई दाग या विकार नहीं लगता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਵਗਦਾ ਪਾਣੀ ਹਮੇਸ਼ਾ ਸਾਫ਼ ਰਹਿੰਦਾ ਹੈ ਤੇ ਖੜ੍ਹਾ ਪਾਣੀ ਖਰਾਬ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਸੰਤ ਜਨ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿ ਕੇ ਸਦਾ ਪਵਿੱਤਰ ਰਹਿੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb provides a vivid metaphor: Flowing river water remains sparkling pure, whereas stagnant water gathers filth and decays. Similarly, spiritual seekers and saints who remain detached and dynamic in devotion stay untouched by the stains of worldly illusion and greed.',
     },
     wordMeanings: {
       hi: [
@@ -599,9 +599,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Bairaagi birkat bhala, girahi chitt udaar. Do-oo chooki khaali pade, taako vaar na paar.',
     bhavarth: {
-      hi: 'कबीर साहेब दोनों जीवन-मार्गों का सच्चा मर्म बताते हैं: सन्यासी (बैरागी) वही श्रेष्ठ है जो संसार की वासनाओं से पूर्णतः विरक्त हो, और गृहस्थ वही श्रेष्ठ है जिसका हृदय उदार, दयालु और दानी हो। यदि दोनों अपने-अपने धर्म से चूक जाएं (सन्यासी लोभी हो जाए और गृहस्थ संकीर्ण हो जाए), तो दोनों ही पतन के गहरे गर्त में गिर जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਨਿਆਸੀ ਉਹ ਚੰਗਾ ਜੋ ਮਾਇਆ ਤੋਂ ਦੂਰ ਰਹੇ, ਅਤੇ ਗ੍ਰਹਿਸਥੀ ਉਹ ਚੰਗਾ ਜਿਸਦਾ ਦਿਲ ਖੁੱਲ੍ਹਾ ਤੇ ਦਾਨੀ ਹੋਵੇ। ਜੇ ਦੋਵੇਂ ਆਪਣੇ ਧਰਮ ਤੋਂ ਭਟਕ ਜਾਣ ਤਾਂ ਦੋਹਾਂ ਦਾ ਵਿਨਾਸ਼ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb defines true righteousness in both paths: An ascetic is virtuous only when genuinely detached from worldly cravings, while a householder is noble when generous, compassionate, and hospitable. If either fails their fundamental duty, both fall into spiritual ruin.',
+      hi: 'सतगुरु कबीर साहेब दोनों जीवन-मार्गों का सच्चा मर्म बताते हैं: सन्यासी (बैरागी) वही श्रेष्ठ है जो संसार की वासनाओं से पूर्णतः विरक्त हो, और गृहस्थ वही श्रेष्ठ है जिसका हृदय उदार, दयालु और दानी हो। यदि दोनों अपने-अपने धर्म से चूक जाएं (सन्यासी लोभी हो जाए और गृहस्थ संकीर्ण हो जाए), तो दोनों ही पतन के गहरे गर्त में गिर जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਨਿਆਸੀ ਉਹ ਚੰਗਾ ਜੋ ਮਾਇਆ ਤੋਂ ਦੂਰ ਰਹੇ, ਅਤੇ ਗ੍ਰਹਿਸਥੀ ਉਹ ਚੰਗਾ ਜਿਸਦਾ ਦਿਲ ਖੁੱਲ੍ਹਾ ਤੇ ਦਾਨੀ ਹੋਵੇ। ਜੇ ਦੋਵੇਂ ਆਪਣੇ ਧਰਮ ਤੋਂ ਭਟਕ ਜਾਣ ਤਾਂ ਦੋਹਾਂ ਦਾ ਵਿਨਾਸ਼ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb defines true righteousness in both paths: An ascetic is virtuous only when genuinely detached from worldly cravings, while a householder is noble when generous, compassionate, and hospitable. If either fails their fundamental duty, both fall into spiritual ruin.',
     },
     wordMeanings: {
       hi: [
@@ -647,9 +647,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
       {
         id: 'q-b15-208',
         question: {
-          hi: 'कबीर साहेब के अनुसार गृहस्थ का मुख्य लक्षण क्या होना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗ੍ਰਹਿਸਥੀ ਦਾ ਮੁੱਖ ਗੁਣ ਕੀ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the primary virtue of a noble householder?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार गृहस्थ का मुख्य लक्षण क्या होना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗ੍ਰਹਿਸਥੀ ਦਾ ਮੁੱਖ ਗੁਣ ਕੀ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the primary virtue of a noble householder?',
         },
         options: {
           hi: ['चित्त की उदारता और दानशीलता', 'केवल धन संचय करना', 'क्रोध करना', 'दिखावा करना'],
@@ -684,9 +684,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Balihaari guru aapno, ghadi-ghadi sau sau baar. Maanush se devat kiya karat na laagi baar.',
     bhavarth: {
-      hi: 'कबीर साहेब अपने सतगुरु के चरणों में अनंत कृतज्ञता अर्पित करते हुए कहते हैं कि मैं अपने गुरु पर प्रत्येक घड़ी सौ-सौ बार न्यौछावर होता हूँ। उन्होंने अपने ज्ञान और कृपा से मुझ जैसे साधारण व अज्ञानी मनुष्य को पलक झपकत ही दिव्य गुणों से युक्त देवता (आत्म-ज्ञानी) बना दिया, और इसमें तनिक भी देर नहीं लगाई।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਉੱਤੇ ਪਲ-ਪਲ ਸੌ-ਸੌ ਵਾਰ ਕੁਰਬਾਨ ਜਾਂਦਾ ਹਾਂ। ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਮੈਨੂੰ ਸਾਧਾਰਨ ਮਨੁੱਖ ਤੋਂ ਦੇਵਤਾ ਬਣਾਉਣ ਵਿੱਚ ਰਤਾ ਵੀ ਦੇਰ ਨਹੀਂ ਲਾਈ।',
-      en: 'Kabir Saheb surrenders wholeheartedly to his Master: I sacrifice myself a hundred times every passing moment unto my Satguru. Through His divine grace and wisdom, He transformed an ordinary ignorant mortal into a divine, enlightened soul without a moment’s delay.',
+      hi: 'सतगुरु कबीर साहेब अपने सतगुरु के चरणों में अनंत कृतज्ञता अर्पित करते हुए कहते हैं कि मैं अपने गुरु पर प्रत्येक घड़ी सौ-सौ बार न्यौछावर होता हूँ। उन्होंने अपने ज्ञान और कृपा से मुझ जैसे साधारण व अज्ञानी मनुष्य को पलक झपकत ही दिव्य गुणों से युक्त देवता (आत्म-ज्ञानी) बना दिया, और इसमें तनिक भी देर नहीं लगाई।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਉੱਤੇ ਪਲ-ਪਲ ਸੌ-ਸੌ ਵਾਰ ਕੁਰਬਾਨ ਜਾਂਦਾ ਹਾਂ। ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਮੈਨੂੰ ਸਾਧਾਰਨ ਮਨੁੱਖ ਤੋਂ ਦੇਵਤਾ ਬਣਾਉਣ ਵਿੱਚ ਰਤਾ ਵੀ ਦੇਰ ਨਹੀਂ ਲਾਈ।',
+      en: 'Satguru Kabir Saheb surrenders wholeheartedly to his Master: I sacrifice myself a hundred times every passing moment unto my Satguru. Through His divine grace and wisdom, He transformed an ordinary ignorant mortal into a divine, enlightened soul without a moment’s delay.',
     },
     wordMeanings: {
       hi: [
@@ -724,7 +724,7 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
       en: 'O my Beloved Master! Millions of salutations at Your lotus feet for elevating my soul to divine light. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह आदि ग्रन्थ (गुरु ग्रन्थ साहिब) और साखी संग्रह में सतगुरु महिमा का सर्वाधिक प्रसिद्ध श्लोक है।',
+      hi: 'यह आदि ग्रन्थ (गुरु ग्रन्थ साहेब) और साखी संग्रह में सतगुरु महिमा का सर्वाधिक प्रसिद्ध श्लोक है।',
       pb: 'ਇਹ ਸਤਿਗੁਰੂ ਮਹਿਮਾ ਦਾ ਅਤਿ ਪਵਿੱਤਰ ਅਤੇ ਪ੍ਰਸਿੱਧ ਸਲੋਕ ਹੈ।',
       en: 'This is one of the most celebrated verses highlighting the transformative power of the Satguru.',
     },
@@ -769,9 +769,9 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
     },
     transliteration: 'Balihaari va doodh ki, jaame nikse gheev. Ghee saakhi kabeer ki, chaar ved ka jeev.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि उस दूध की महिमा अपरंपार है जिससे मथने पर शुद्ध घी निकलता है। ठीक उसी प्रकार चारों वेदों और धर्मग्रंथों का जो परम सार और जीवन-तत्व है, वही कबीर की यह "साखी" (सत्य ज्ञान) रूपी शुद्ध घी है। साखी केवल वाणी नहीं, बल्कि समस्त ज्ञान का निचोड़ है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹ ਦੁੱਧ ਧੰਨ ਹੈ ਜਿਸ ਵਿੱਚੋਂ ਘਿਓ ਨਿਕਲਦਾ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਚਾਰਾਂ ਵੇਦਾਂ ਦਾ ਜੋ ਅਸਲ ਤੱਤ ਤੇ ਸਾਰ ਹੈ, ਉਹ ਕਬੀਰ ਜੀ ਦੀ ਇਹ ਸਾਖੀ (ਗਿਆਨ) ਰੂਪੀ ਘਿਓ ਹੈ।',
-      en: 'Kabir Saheb extols the essence of spiritual wisdom: Blessed is the milk from which pure clarified butter (ghee) is extracted. Similarly, the core essence and life-principle of all four Vedas and sacred scriptures is condensed into these enlightened Sakhis (verses of Truth).',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि उस दूध की महिमा अपरंपार है जिससे मथने पर शुद्ध घी निकलता है। ठीक उसी प्रकार चारों वेदों और धर्मग्रंथों का जो परम सार और जीवन-तत्व है, वही कबीर की यह "साखी" (सत्य ज्ञान) रूपी शुद्ध घी है। साखी केवल वाणी नहीं, बल्कि समस्त ज्ञान का निचोड़ है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹ ਦੁੱਧ ਧੰਨ ਹੈ ਜਿਸ ਵਿੱਚੋਂ ਘਿਓ ਨਿਕਲਦਾ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਚਾਰਾਂ ਵੇਦਾਂ ਦਾ ਜੋ ਅਸਲ ਤੱਤ ਤੇ ਸਾਰ ਹੈ, ਉਹ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਹ ਸਾਖੀ (ਗਿਆਨ) ਰੂਪੀ ਘਿਓ ਹੈ।',
+      en: 'Satguru Kabir Saheb extols the essence of spiritual wisdom: Blessed is the milk from which pure clarified butter (ghee) is extracted. Similarly, the core essence and life-principle of all four Vedas and sacred scriptures is condensed into these enlightened Sakhis (verses of Truth).',
     },
     wordMeanings: {
       hi: [
@@ -796,7 +796,7 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
       en: 'Am I lost in voluminous intellectual debates, or distilling the pure essence of Truth in daily living?',
     },
     practicalApplication: {
-      hi: 'आज कबीर साहेब की साखी के गहरे आध्यात्मिक मर्म पर चिंतन करके जीवन को सरल बनाएं।',
+      hi: 'आज सतगुरु कबीर साहेब की साखी के गहरे आध्यात्मिक मर्म पर चिंतन करके जीवन को सरल बनाएं।',
       pb: 'ਅੱਜ ਸਾਖੀ ਦੇ ਭਾਵ ਨੂੰ ਸਮਝ ਕੇ ਜੀਵਨ ਵਿੱਚ ਧਾਰਨ ਕਰੋ।',
       en: 'Meditate on the direct essence of Kabir’s verses today rather than getting entangled in complexities.',
     },
@@ -820,12 +820,12 @@ export const SAKHIS_BATCH_15: Sakhi[] = [
         },
         options: {
           hi: ['कबीर की साखी (सत्य ज्ञान)', 'कर्मकांड को', 'कठिन तपस्या को', 'धन-संपत्ति को'],
-          pb: ['ਕਬੀਰ ਜੀ ਦੀ ਸਾਖੀ ਨੂੰ', 'ਕਰਮਕਾਂਡ ਨੂੰ', 'ਤਪੱਸਿਆ ਨੂੰ', 'ਧਨ ਨੂੰ'],
+          pb: ['ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਸਾਖੀ ਨੂੰ', 'ਕਰਮਕਾਂਡ ਨੂੰ', 'ਤਪੱਸਿਆ ਨੂੰ', 'ਧਨ ਨੂੰ'],
           en: ['Kabir’s Sakhi (Enlightened Truth)', 'Ritualism', 'Austerity', 'Material wealth'],
         },
         correctIndex: 0,
         explanation: {
-          hi: 'कबीर साहेब की साखी समस्त वेदों का निचोड़ और सार-तत्व है।',
+          hi: 'सतगुरु कबीर साहेब की साखी समस्त वेदों का निचोड़ और सार-तत्व है।',
           pb: 'ਸਾਖੀ ਸਭ ਗਿਆਨ ਦਾ ਨਿਚੋੜ ਹੈ।',
           en: 'Kabir’s direct wisdom is the distilled spiritual nectar of all ancient wisdom.',
         },

@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਸ਼ਕਤੀ ਅੱਗੇ ਹੰਕਾਰ ਨਹੀਂ ਟਿਕਦਾ।',
         en: 'Intellectual pride cannot stand before the awakening of spiritual energy.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -92,7 +92,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'त्रिताप अग्नि एवं वासना का दाह', pb: 'ਵਿਕਾਰਾਂ ਦੀ ਅੱਗ ਅਤੇ ਨਾਮ ਨਾਲ ਸ਼ਾਂਤੀ', en: 'The Invisible Fires of Worldly Desires' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ संसार की त्रिताप अग्नि (काम, क्रोध, लोभ, मोह और ईर्ष्या) की बात कर रहे हैं। इस अदृश्य आग में पूरा संसार हर समय जल रहा है और दुखी है, लेकिन इसका कोई भौतिक धुँआ नहीं निकलता। जो साधक गुरु के नाम-सिमरन के जल से इस आग को बुझा लेता है, वही ज्ञानी है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ संसार की त्रिताप अग्नि (काम, क्रोध, लोभ, मोह और ईर्ष्या) की बात कर रहे हैं। इस अदृश्य आग में पूरा संसार हर समय जल रहा है और दुखी है, लेकिन इसका कोई भौतिक धुँआ नहीं निकलता। जो साधक गुरु के नाम-सिमरन के जल से इस आग को बुझा लेता है, वही ज्ञानी है।',
         pb: 'ਮਨੁੱਖ ਵਿਕਾਰਾਂ ਦੀ ਅੱਗ ਵਿੱਚ ਸੜ ਰਿਹਾ ਹੈ। ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਹੀ ਇਸ ਅੱਗ ਤੋਂ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ।',
         en: 'The fireless burning is the invisible fire of lust, anger, greed, and envy consuming humanity. Holy Name meditation cools this inner fire, granting eternal peace.'
       },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਵਿਕਾਰਾਂ ਦੀ ਅੱਗ ਮਿਟਦੀ ਹੈ।',
         en: 'The cooling water of Holy Name alone extinguishes the unseen fire of desire.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਇੱਛਾਵਾਂ ਤੋਂ ਰਹਿਤ ਹਿਰਦਾ ਹੀ ਆਤਮ-ਆਨੰਦ ਦਾ ਘਰ ਹੈ।',
         en: 'A heart emptied of worldly desires becomes the abode of pure spiritual bliss.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -164,8 +164,8 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '204. अंधेरे में सूरज का प्रकट होना', pb: '204. ਅੰਧੇਰੇ ਵਿੱਚ ਸੂਰਜ ਦਾ ਪ੍ਰਗਟ ਹੋਣਾ', en: '204. Millions of Suns in Deep Night' },
     verse: {
-      hi: '"घोर अंधेरी रैनि में, ऊग्या कोटि भानु प्रकास। कहै कबीर सोई घर मेरा, जहाँ साहिब का निवास॥"',
-      pb: '"ਘੋਰ ਅੰਧੇਰੀ ਰੈਨਿ ਮੇਂ, ਊਗ੍ਯਾ ਕੋਟਿ ਭਾਨੁ ਪ੍ਰਕਾਸ। ਕਹੈ ਕਬੀਰ ਸੋਈ ਘਰ ਮੇਰਾ, ਜਹਾਂ ਸਾਹਿਬ ਕਾ ਨਿਵਾਸ॥"',
+      hi: '"घोर अंधेरी रैनि में, ऊग्या कोटि भानु प्रकास। कहै कबीर सोई घर मेरा, जहाँ साहेब का निवास॥"',
+      pb: '"ਘੋਰ ਅੰਧੇਰੀ ਰੈਨਿ ਮੇਂ, ਊਗ੍ਯਾ ਕੋਟਿ ਭਾਨੁ ਪ੍ਰਕਾਸ। ਕਹੈ ਕਬੀਰ ਸੋਈ ਘਰ ਮੇਰਾ, ਜਹਾਂ ਸਾਹੇਬ ਕਾ ਨਿਵਾਸ॥"',
       en: '"In deep pitch dark night, light of millions of suns arose. Says Kabir that is my true home where the Lord resides."'
     },
     literalParadox: {
@@ -174,7 +174,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
       en: 'In the middle of a pitch dark night, the brilliant light of millions of suns suddenly blazed forth.'
     },
     clueHint: {
-      hi: 'अंधेरी रैनि = मोहांधकार/अज्ञानता; कोटि भानु = ब्रह्मप्रकाश/आत्मानुभव; साहिब निवास = दशम द्वार/अमरापुर।',
+      hi: 'अंधेरी रैनि = मोहांधकार/अज्ञानता; कोटि भानु = ब्रह्मप्रकाश/आत्मानुभव; साहेब निवास = दशम द्वार/अमरापुर।',
       pb: 'ਅੰਧੇਰੀ ਰਾਤ ਅਗਿਆਨਤਾ ਹੈ, ਸੂਰਜ ਆਤਮ-ਗਿਆਨ ਹੈ।',
       en: 'Dark Night = Ignorance of Maya; Millions of Suns = Self-Luminous Divine Light.'
     },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਦਾ ਚਾਨਣ ਜਨਮਾਂ ਦਾ ਅੰਧੇਰਾ ਮਿਟਾ ਦਿੰਦਾ ਹੈ।',
         en: 'A single moment of Divine Light instantly dissolves ages of darkness.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਸਾਕਸ਼ੀ ਭਾਵ ਨਾਲ ਹੀ ਆਤਮ-ਰੱਖਿਆ ਹੁੰਦੀ ਹੈ।',
         en: 'Silent awareness is the invulnerable guard of spiritual treasure.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਹੀ ਆਤਮ-ਆਨੰਦ ਮਿਲਦਾ ਹੈ।',
         en: 'Internal cultivation of Holy Name yields the crop of immortal peace.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਬਾਹਰੀ ਸ਼ੋਰ ਤੋਂ ਦੂਰ ਹੋ ਕੇ ਹੀ ਸੱਚ ਮਿਲਦਾ ਹੈ।',
         en: 'Indifference to worldly chatter enables unbiased spiritual judgment.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -372,8 +372,8 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '208. चूहे ने लोहे की तराजू को निगला', pb: '208. ਚੂਹੇ ਨੇ ਲੋਹੇ ਦੀ ਤਰਾਜ਼ੂ ਲੰਘਾਈ', en: '208. Mouse Swallowed the Iron Scale' },
     verse: {
-      hi: '"मूस ने लोहे की कँडी निगली, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह अद्भुत सद्गुरु ग्यान॥"',
-      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਕੰਡੀ ਨਿਗਲੀ, ਹਸਤੀ ਖੜਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਅਦਭੁਤ ਸਦਗੁਰੂ ਗ੍ਯਾਨ॥"',
+      hi: '"मूस ने लोहे की कँडी निगली, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह अद्भुत सतगुरु ग्यान॥"',
+      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਕੰਡੀ ਨਿਗਲੀ, ਹਸਤੀ ਖੜਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਅਦਭੁਤ ਸਤਿਗੁਰੂ ਗ੍ਯਾਨ॥"',
       en: '"Mouse swallowed the iron scale/rod whole, elephant stood astonished. Says Kabir listen saints, this is wondrous wisdom of True Master."'
     },
     literalParadox: {
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ ਦਾ ਇੱਕ ਕਣ ਪਾਪਾਂ ਨੂੰ ਮਿਟਾ ਦਿੰਦਾ ਹੈ।',
         en: 'A particle of Holy Name incinerates mountains of past karmic debt.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -456,7 +456,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'दशम द्वार में अनहद नाद का संगीत', pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਅੰਦਰੂਨੀ ਸੰਗੀਤ', en: 'Acousticless Resonance of Unstruck Divine Music' },
       deepMeaning: {
-        hi: "कबीर साहेब यहाँ 'अनहद नाद' (भीतर गूँजने वाला परमात्मा का दिव्य संगीत) की बात कर रहे हैं। जब साधक समाधि में उतरता है, तो उसके मस्तिष्क के दशम द्वार में बिना किसी भौतिक कंठ के और बिना किसी ढोल, सितार या बाजे के, परमात्मा की ओमकार ध्वनि स्वतः गूँजती है।",
+        hi: "सतगुरु कबीर साहेब यहाँ 'अनहद नाद' (भीतर गूँजने वाला परमात्मा का दिव्य संगीत) की बात कर रहे हैं। जब साधक समाधि में उतरता है, तो उसके मस्तिष्क के दशम द्वार में बिना किसी भौतिक कंठ के और बिना किसी ढोल, सितार या बाजे के, परमात्मा की ओमकार ध्वनि स्वतः गूँजती है।",
         pb: 'ਸਮਾਧੀ ਵਿੱਚ ਸਾਧਕ ਦੇ ਦਸਮ ਦੁਆਰ ਅੰਦਰ ਬਿਨਾਂ ਕਿਸੇ ਬਾਜੇ ਦੇ ਅਨਹਦ ਨਾਦ ਦਾ ਸੰਗੀਤ ਆਪਣੇ-ਆਪ ਗੂੰਜਦਾ ਹੈ।',
         en: 'This refers to the Unstruck Inner Music. Upon deep meditative absorption, the Crown Chakra resounds with spontaneous divine Omkar music without physical throat or instruments.'
       },
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਅਨਹਦ ਨਾਦ ਨਾਲ ਹੀ ਪਰਮ ਸ਼ਾਂਤੀ ਮਿਲਦੀ ਹੈ।',
         en: 'The acousticless Unstruck Divine Music grants eternal peace to the soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_201_TO_210: UlatvasiQuestion[] = [
         pb: 'ਅੰਤਰਮੁਖੀ ਸਾਧਨਾ ਨਾਲ ਹੀ ਮਾਇਆ ਦਾ ਅੰਤ ਹੁੰਦਾ ਹੈ।',
         en: 'Inward contemplation completely evaporates outer illusion, leaving pure Truth.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

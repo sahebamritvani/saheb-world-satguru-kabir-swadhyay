@@ -18,9 +18,9 @@ export const STARTER_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Guru Govinda do-u khade, kake lagu paye. Balihari Guru aapne, Govind diyo bataye.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जब मेरे समक्ष गुरु और ईश्वर (गोविंद) दोनों साक्षात प्रकट खड़े हों, तो मेरे मन में संशय हुआ कि पहले किसके चरण स्पर्श करूँ? तब विवेक जागा कि मैं अपने सतगुरु पर न्योछावर हूँ, क्योंकि यदि सतगुरु कृपा न करते, तो मुझे ईश्वर की पहचान और उनका बोध कभी प्राप्त न होता। अतः गुरु का स्थान सर्वोपरि है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਮੇਰੇ ਸਨਮੁੱਖ ਗੁਰੂ ਅਤੇ ਪ੍ਰਮਾਤਮਾ (ਗੋਵਿੰਦ) ਦੋਵੇਂ ਖੜ੍ਹੇ ਹੋਣ, ਤਾਂ ਮੈਂ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਾਂ? ਅੰਤ ਵਿੱਚ ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਅੱਗੇ ਸਿਰ ਝੁਕਾਉਂਦਾ ਹਾਂ, ਕਿਉਂਕਿ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਬਖਸ਼ਿਸ਼ ਸਦਕਾ ਹੀ ਮੈਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਗਿਆਨ ਅਤੇ ਦਰਸ਼ਨ ਨਸੀਬ ਹੋਇਆ ਹੈ।',
-      en: 'Kabir Saheb reveals: If both the Satguru and the Supreme Lord stand before me, at whose feet should I bow first? I surrender wholeheartedly unto my Satguru, for without the grace and light of the Guru, I would never have recognized the Divine.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब मेरे समक्ष गुरु और ईश्वर (गोविंद) दोनों साक्षात प्रकट खड़े हों, तो मेरे मन में संशय हुआ कि पहले किसके चरण स्पर्श करूँ? तब विवेक जागा कि मैं अपने सतगुरु पर न्योछावर हूँ, क्योंकि यदि सतगुरु कृपा न करते, तो मुझे ईश्वर की पहचान और उनका बोध कभी प्राप्त न होता। अतः गुरु का स्थान सर्वोपरि है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਮੇਰੇ ਸਨਮੁੱਖ ਗੁਰੂ ਅਤੇ ਪ੍ਰਮਾਤਮਾ (ਗੋਵਿੰਦ) ਦੋਵੇਂ ਖੜ੍ਹੇ ਹੋਣ, ਤਾਂ ਮੈਂ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਾਂ? ਅੰਤ ਵਿੱਚ ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਅੱਗੇ ਸਿਰ ਝੁਕਾਉਂਦਾ ਹਾਂ, ਕਿਉਂਕਿ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਬਖਸ਼ਿਸ਼ ਸਦਕਾ ਹੀ ਮੈਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਗਿਆਨ ਅਤੇ ਦਰਸ਼ਨ ਨਸੀਬ ਹੋਇਆ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals: If both the Satguru and the Supreme Lord stand before me, at whose feet should I bow first? I surrender wholeheartedly unto my Satguru, for without the grace and light of the Guru, I would never have recognized the Divine.',
     },
     wordMeanings: {
       hi: [
@@ -63,21 +63,21 @@ export const STARTER_SAKHIS: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरु कबीर साहेब! आपके पावन वचनों से ही मुझे सत्यनाम का मर्म मिला है। मेरे भीतर का अज्ञान और अहंकार शांत हो, और मेरा हृदय सदा आपके चरणों में समर्पित रहे। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਆਪ ਜੀ ਦੀ ਮਿਹਰ ਨਾਲ ਹੀ ਸਤਯਨਾਮ ਦਾ ਰਸ ਮਿਲਿਆ ਹੈ। ਮੇਰੇ ਅੰਦਰਲਾ ਹੰਕਾਰ ਮਿਟੇ ਤੇ ਮੇਰਾ ਚਿੱਤ ਸਦਾ ਆਪ ਜੀ ਦੇ ਚਰਨਾਂ ਨਾਲ ਜੁੜਿਆ ਰਹੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਜੀ ਦੀ ਮਿਹਰ ਨਾਲ ਹੀ ਸਤਯਨਾਮ ਦਾ ਰਸ ਮਿਲਿਆ ਹੈ। ਮੇਰੇ ਅੰਦਰਲਾ ਹੰਕਾਰ ਮਿਟੇ ਤੇ ਮੇਰਾ ਚਿੱਤ ਸਦਾ ਆਪ ਜੀ ਦੇ ਚਰਨਾਂ ਨਾਲ ਜੁੜਿਆ ਰਹੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru Kabir Saheb! Through your divine grace alone, the nectar of Satyanaam is revealed. Dissolve my inner ego, and grant me steady shelter in pure awareness. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की गुरु-महिमा का मूल आधार है, जो साधन और साध्य के बीच गुरु की अनिवार्यता सिद्ध करती है।',
-      pb: 'ਇਹ ਸਾਖੀ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਗੁਰੂ-ਮਹਿਮਾ ਦਾ ਕੇਂਦਰੀ ਧੁਰਾ ਹੈ ਜੋ ਸਤਿਗੁਰੂ ਦੀ ਸਰਵਉੱਚਤਾ ਦਰਸਾਉਂਦੀ ਹੈ।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की गुरु-महिमा का मूल आधार है, जो साधन और साध्य के बीच गुरु की अनिवार्यता सिद्ध करती है।',
+      pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਗੁਰੂ-ਮਹਿਮਾ ਦਾ ਕੇਂਦਰੀ ਧੁਰਾ ਹੈ ਜੋ ਸਤਿਗੁਰੂ ਦੀ ਸਰਵਉੱਚਤਾ ਦਰਸਾਉਂਦੀ ਹੈ।',
       en: 'This foundational sakhi highlights why the enlightened Master is honored before all else: because without the lens of the Satguru, Truth remains unseen.',
     },
     quiz: [
       {
         id: 'q1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार गुरु और गोविंद दोनों के समक्ष होने पर पहले किसके चरण छूने चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਅਤੇ ਗੋਵਿੰਦ ਦੋਵਾਂ ਦੇ ਸਨਮੁੱਖ ਹੋਣ ਤੇ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਣੇ ਚਾਹੀਦੇ ਹਨ?',
-          en: 'According to Kabir Saheb, when both Guru and Govind stand before you, whose feet should you touch first?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार गुरु और गोविंद दोनों के समक्ष होने पर पहले किसके चरण छूने चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਅਤੇ ਗੋਵਿੰਦ ਦੋਵਾਂ ਦੇ ਸਨਮੁੱਖ ਹੋਣ ਤੇ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਣੇ ਚਾਹੀਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, when both Guru and Govind stand before you, whose feet should you touch first?',
         },
         options: {
           hi: ['गोविंद (ईश्वर) के', 'सतगुरु के', 'दोनों के एक साथ बिना सोचे', 'किसी के भी नहीं'],
@@ -113,9 +113,9 @@ export const STARTER_SAKHIS: Sakhi[] = [
       {
         id: 'q1-3',
         question: {
-          hi: 'कबीर साहेब ने ईश्वर की पहचान कराने का श्रेय किसे दिया है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪਛਾਣ ਕਰਾਉਣ ਦਾ ਸਿਹਰਾ ਕਿਸ ਨੂੰ ਦਿੱਤਾ ਹੈ?',
-          en: 'To whom does Kabir Saheb attribute the revelation and recognition of God?',
+          hi: 'सतगुरु कबीर साहेब ने ईश्वर की पहचान कराने का श्रेय किसे दिया है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪਛਾਣ ਕਰਾਉਣ ਦਾ ਸਿਹਰਾ ਕਿਸ ਨੂੰ ਦਿੱਤਾ ਹੈ?',
+          en: 'To whom does Satguru Kabir Saheb attribute the revelation and recognition of God?',
         },
         options: {
           hi: ['केवल शास्त्रों के पठन को', 'अपने सतगुरु की कृपा को', 'अपनी शारीरिक शक्ति को', 'सांसारिक मित्रों को'],
@@ -151,9 +151,9 @@ export const STARTER_SAKHIS: Sakhi[] = [
       {
         id: 'q1-5',
         question: {
-          hi: 'कबीर साहेब की इस साखी का संबंध किस ग्रंथ अंग से है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਸਾਖੀ ਦਾ ਸੰਬੰਧ ਕਿਸ ਅੰਗ ਨਾਲ ਹੈ?',
-          en: 'Which section (Ang) of Kabir Saheb’s Sakhi Sangrah does this couplet belong to?',
+          hi: 'सतगुरु कबीर साहेब की इस साखी का संबंध किस ग्रंथ अंग से है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਸਾਖੀ ਦਾ ਸੰਬੰਧ ਕਿਸ ਅੰਗ ਨਾਲ ਹੈ?',
+          en: 'Which section (Ang) of Satguru Kabir Saheb’s Sakhi Sangrah does this couplet belong to?',
         },
         options: {
           hi: ['गुरु महिमा अंग', 'माया अंग', 'काल अंग', 'उपदेश अंग'],

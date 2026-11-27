@@ -49,7 +49,16 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
     setCardLanguage(initialLanguage);
   }, [initialLanguage]);
 
-  const [cardDesign, setCardDesign] = useState<'royal' | 'saffron' | 'emerald' | 'oled' | 'nature_mountain' | 'nature_forest' | 'nature_sunset' | 'nature_river' | 'nature_autumn' | 'scenic_tree' | 'scenic_maghar'>('scenic_tree');
+  const [cardDesign, setCardDesign] = useState<
+    | 'royal_bhojpatra'
+    | 'maghar_dham'
+    | 'kabir_chaura_kashi'
+    | 'lahartara_pond'
+    | 'bandhavgarh_forest'
+    | 'jagannath_puri_math'
+    | 'damakheda_darshan'
+    | string
+  >('royal_bhojpatra');
   const [cardRatio, setCardRatio] = useState<'1:1' | '9:16'>('1:1');
 
   useEffect(() => {
@@ -64,20 +73,51 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
   if (!isOpen) return null;
 
   const t = translations[cardLanguage] || translations.hi;
-  const currentTheme = CARD_THEMES[cardDesign] || CARD_THEMES.scenic_tree;
+  const currentTheme = CARD_THEMES[cardDesign] || CARD_THEMES.royal_bhojpatra;
 
   const themesList = [
-    { id: 'scenic_tree', label: t.themeBanyanGhat, bg: '#1A120B', text: '#FEF08A' },
-    { id: 'scenic_maghar', label: t.themeMagharDham, bg: '#120D08', text: '#FEF3C7' },
-    { id: 'royal', label: t.themeRoyal, bg: '#FFFDF9', text: '#2E1C0C' },
-    { id: 'saffron', label: t.themeSaffron, bg: '#FDF2E9', text: '#2E1A0C' },
-    { id: 'emerald', label: t.themeEmerald, bg: '#E8F8F5', text: '#142C24' },
-    { id: 'oled', label: t.themeOled, bg: '#121212', text: '#E5E7EB' },
-    { id: 'nature_mountain', label: t.themeDawn, bg: '#2D1B06', text: '#FAD074' },
-    { id: 'nature_forest', label: t.themeForest, bg: '#061A12', text: '#6EE7B7' },
-    { id: 'nature_sunset', label: t.themeSunset, bg: '#2A0820', text: '#FFD166' },
-    { id: 'nature_river', label: t.themeRiver, bg: '#031B2E', text: '#67E8F9' },
-    { id: 'nature_autumn', label: t.themeAutumn, bg: '#2C1A04', text: '#FFE082' },
+    {
+      id: 'royal_bhojpatra',
+      label: cardLanguage === 'pb' ? 'ਸ਼ਾਹੀ ਭੋਜਪੱਤਰ ਕਰੀਮ' : cardLanguage === 'en' ? 'Royal Bhojpatra Cream' : 'शाही भोजपत्र क्रीम',
+      bg: '#FAF3E0',
+      text: '#2E1C0C',
+    },
+    {
+      id: 'maghar_dham',
+      label: cardLanguage === 'pb' ? 'ਮਗਹਰ ਪਾਵਨ ਸਮਾਧੀ' : cardLanguage === 'en' ? 'Maghar Nirvana Dham' : 'मगहर पावन समाधि स्थल',
+      bg: '#180E08',
+      text: '#FEF3C7',
+    },
+    {
+      id: 'kabir_chaura_kashi',
+      label: cardLanguage === 'pb' ? 'ਕਬੀਰ ਚੌਰਾ ਧਾਮ, ਕਾਸ਼ੀ' : cardLanguage === 'en' ? 'Kabir Chaura Math, Kashi' : 'कबीर चौरा धाम, काशी',
+      bg: '#1C1008',
+      text: '#FEF08A',
+    },
+    {
+      id: 'lahartara_pond',
+      label: cardLanguage === 'pb' ? 'ਲਹਿਰਤਾਰਾ ਪਾਵਨ ਸਰੋਵਰ' : cardLanguage === 'en' ? 'Lahartara Lotus Pond' : 'लहरतारा पावन सरोवर',
+      bg: '#061824',
+      text: '#E0F2FE',
+    },
+    {
+      id: 'bandhavgarh_forest',
+      label: cardLanguage === 'pb' ? 'ਬਾਂਧਵਗੜ੍ਹ ਪਾਵਨ ਅਸਥਾਨ' : cardLanguage === 'en' ? 'Bandhavgarh Sacred Forest' : 'बांधवगढ़ पावन स्थल',
+      bg: '#071A12',
+      text: '#DCFCE7',
+    },
+    {
+      id: 'jagannath_puri_math',
+      label: cardLanguage === 'pb' ? 'ਜਗਨਨਾਥ ਪੁਰੀ ਕਬੀਰ ਮਠ' : cardLanguage === 'en' ? 'Jagannath Puri Kabir Math' : 'जगन्नाथ पुरी कबीर मठ',
+      bg: '#0B192C',
+      text: '#FEF9C3',
+    },
+    {
+      id: 'damakheda_darshan',
+      label: cardLanguage === 'pb' ? 'ਦਾਮਾਖੇੜਾ ਦਰਸ਼ਨ ਅਸਥਾਨ' : cardLanguage === 'en' ? 'Damakheda Paavan Darshan' : 'दामाखेड़ा दर्शन स्थल',
+      bg: '#220804',
+      text: '#FFEDD5',
+    },
   ] as const;
 
   const shareTextContent = formatSakhiShareText(
@@ -198,14 +238,31 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
   return (
     <div
       id="quote-card-modal-backdrop"
-      className="fixed inset-0 z-[120] bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto print:hidden"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '48px 14px',
+        zIndex: 100,
+      }}
+      className="fixed inset-0 bg-black/85 backdrop-blur-md overflow-hidden print:hidden"
+      onClick={onClose}
     >
       <div
         id="quote-card-modal-container"
-        className="bg-white dark:bg-[#1C1712] rounded-3xl border border-amber-500/30 w-full max-w-xl shadow-2xl overflow-hidden flex flex-col my-auto max-h-[92vh]"
+        style={{
+          width: '100%',
+          maxWidth: '520px',
+          maxHeight: 'calc(100dvh - 104px)',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+        }}
+        className="bg-white dark:bg-[#1C1712] rounded-3xl border border-amber-500/30 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-black/10 dark:border-white/10 bg-amber-50/70 dark:bg-amber-950/40">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-black/10 dark:border-white/10 bg-amber-50/70 dark:bg-amber-950/40 shrink-0">
           <div className="flex items-center gap-2">
             <span className="p-1.5 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300">
               {activeTab === 'image' ? <ImageIcon className="w-5 h-5" /> : <FileText className="w-5 h-5" />}

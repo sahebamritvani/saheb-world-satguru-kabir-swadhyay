@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Daya bhav hirday nahin, gyan kathe behad. Te nar narak hi jaayenge, suni suni sakhi shabd.',
     bhavarth: {
-      hi: 'कबीर साहेब पाखंडी और शुष्क ज्ञानियों को चेतावनी देते हुए कहते हैं कि जिन मनुष्यों के हृदय में समस्त जीवों के प्रति दया, प्रेम और करुणा का भाव नहीं है, परंतु वे केवल मुंह से अगाध ब्रह्मज्ञान की बातें बघारते रहते हैं—वे चाहे जीवन भर संतों की साखियाँ और शब्द सुनते रहें, फिर भी वे दुर्गति (नरक) को ही प्राप्त होंगे। बिना दया के ज्ञान मात्र पाखंड और अहंकार का साधन बन जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜਿਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਜੀਵਾਂ ਲਈ ਰਹਿਮ ਤੇ ਦਇਆ ਨਹੀਂ, ਪਰ ਉਹ ਬੇਅੰਤ ਗਿਆਨ ਦੀਆਂ ਗੱਲਾਂ ਕਰਦਾ ਹੈ—ਉਹ ਸਾਖੀਆਂ ਤੇ ਸ਼ਬਦ ਸੁਣ ਕੇ ਵੀ ਨਰਕ ਹੀ ਜਾਵੇਗਾ ਕਿਉਂਕਿ ਦਇਆ ਤੋਂ ਬਿਨਾਂ ਗਿਆਨ ਫੋਕਾ ਹੈ।',
-      en: 'Kabir Saheb sternly warns: Those whose hearts are devoid of living compassion and tender love for all creation, yet who endlessly preach profound philosophical knowledge—even if they spend their lives listening to sacred verses and spiritual discourses, their hypocrisy leads only to spiritual ruin. Knowledge without compassion is barren pride.',
+      hi: 'सतगुरु कबीर साहेब पाखंडी और शुष्क ज्ञानियों को चेतावनी देते हुए कहते हैं कि जिन मनुष्यों के हृदय में समस्त जीवों के प्रति दया, प्रेम और करुणा का भाव नहीं है, परंतु वे केवल मुंह से अगाध ब्रह्मज्ञान की बातें बघारते रहते हैं—वे चाहे जीवन भर संतों की साखियाँ और शब्द सुनते रहें, फिर भी वे दुर्गति (नरक) को ही प्राप्त होंगे। बिना दया के ज्ञान मात्र पाखंड और अहंकार का साधन बन जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜਿਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਜੀਵਾਂ ਲਈ ਰਹਿਮ ਤੇ ਦਇਆ ਨਹੀਂ, ਪਰ ਉਹ ਬੇਅੰਤ ਗਿਆਨ ਦੀਆਂ ਗੱਲਾਂ ਕਰਦਾ ਹੈ—ਉਹ ਸਾਖੀਆਂ ਤੇ ਸ਼ਬਦ ਸੁਣ ਕੇ ਵੀ ਨਰਕ ਹੀ ਜਾਵੇਗਾ ਕਿਉਂਕਿ ਦਇਆ ਤੋਂ ਬਿਨਾਂ ਗਿਆਨ ਫੋਕਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb sternly warns: Those whose hearts are devoid of living compassion and tender love for all creation, yet who endlessly preach profound philosophical knowledge—even if they spend their lives listening to sacred verses and spiritual discourses, their hypocrisy leads only to spiritual ruin. Knowledge without compassion is barren pride.',
     },
     wordMeanings: {
       hi: [
@@ -64,9 +64,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किस गुण के बिना साखी-शब्द का सारा ज्ञान व्यर्थ और नरकगामी है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਹੜੇ ਗੁਣ ਤੋਂ ਬਿਨਾਂ ਸਾਰਾ ਗਿਆਨ ਵਿਅਰਥ ਹੈ?',
-          en: 'According to Kabir Saheb, without which essential virtue is all scriptural knowledge futile?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किस गुण के बिना साखी-शब्द का सारा ज्ञान व्यर्थ और नरकगामी है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਹੜੇ ਗੁਣ ਤੋਂ ਬਿਨਾਂ ਸਾਰਾ ਗਿਆਨ ਵਿਅਰਥ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, without which essential virtue is all scriptural knowledge futile?',
         },
         options: {
           hi: ['अपार धन-दौलत', 'हृदय में दया और करुणा का भाव', 'राजसी वैभव', 'तीर्थ यात्रा'],
@@ -101,9 +101,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Jahan kaam tahan naam nahin, jahan naam nahin wahan kaam. Dono kabhu nahin mile, ravi rajni ik dhaam.',
     bhavarth: {
-      hi: 'कबीर साहेब स्पष्ट सत्य उजागर करते हुए कहते हैं कि जिस चित्त में विषय-वासना, काम और सांसारिक भोगों की तृष्णा है, वहाँ परमात्मा के पावन "सत्यनाम" का वास नहीं हो सकता; और जहाँ सत्यनाम का प्रकाश जग जाता है, वहाँ काम-वासना टिक नहीं सकती। ये दोनों एक साथ कभी नहीं रह सकते, ठीक वैसे ही जैसे सूर्य (दिन का प्रकाश) और रजनी (रात्रि का अंधकार) एक ही स्थान पर एक समय में कभी उपस्थित नहीं हो सकते।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿੱਥੇ ਕਾਮ-ਵਾਸਨਾ ਹੈ ਉੱਥੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਤੇ ਜਿੱਥੇ ਨਾਮ ਹੈ ਉੱਥੇ ਕਾਮ ਨਹੀਂ ਰਹਿ ਸਕਦਾ। ਜਿਵੇਂ ਸੂਰਜ ਅਤੇ ਰਾਤ ਇੱਕੋ ਥਾਂ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ, ਉਸੇ ਤਰ੍ਹਾਂ ਵਾਸਨਾ ਤੇ ਨਾਮ ਇਕੱਠੇ ਨਹੀਂ ਸਮਾ ਸਕਦੇ।',
-      en: 'Kabir Saheb unveils an immutable spiritual law: Where lust and worldly sensuality dominate the mind, the Divine Name cannot reside; and where the sacred Name is realized, lust cannot linger. The two can never coexist simultaneously, just as the blazing Sun (day) and the dark Night (darkness) can never occupy the same space together.',
+      hi: 'सतगुरु कबीर साहेब स्पष्ट सत्य उजागर करते हुए कहते हैं कि जिस चित्त में विषय-वासना, काम और सांसारिक भोगों की तृष्णा है, वहाँ परमात्मा के पावन "सत्यनाम" का वास नहीं हो सकता; और जहाँ सत्यनाम का प्रकाश जग जाता है, वहाँ काम-वासना टिक नहीं सकती। ये दोनों एक साथ कभी नहीं रह सकते, ठीक वैसे ही जैसे सूर्य (दिन का प्रकाश) और रजनी (रात्रि का अंधकार) एक ही स्थान पर एक समय में कभी उपस्थित नहीं हो सकते।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿੱਥੇ ਕਾਮ-ਵਾਸਨਾ ਹੈ ਉੱਥੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਤੇ ਜਿੱਥੇ ਨਾਮ ਹੈ ਉੱਥੇ ਕਾਮ ਨਹੀਂ ਰਹਿ ਸਕਦਾ। ਜਿਵੇਂ ਸੂਰਜ ਅਤੇ ਰਾਤ ਇੱਕੋ ਥਾਂ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ, ਉਸੇ ਤਰ੍ਹਾਂ ਵਾਸਨਾ ਤੇ ਨਾਮ ਇਕੱਠੇ ਨਹੀਂ ਸਮਾ ਸਕਦੇ।',
+      en: 'Satguru Kabir Saheb unveils an immutable spiritual law: Where lust and worldly sensuality dominate the mind, the Divine Name cannot reside; and where the sacred Name is realized, lust cannot linger. The two can never coexist simultaneously, just as the blazing Sun (day) and the dark Night (darkness) can never occupy the same space together.',
     },
     wordMeanings: {
       hi: [
@@ -151,9 +151,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-2-1',
         question: {
-          hi: 'कबीर साहेब ने काम (वासना) और राम-नाम की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਾਮ ਅਤੇ ਨਾਮ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'To what natural phenomenon does Kabir Saheb compare the mutual exclusion of Lust (Kaam) and Divine Name (Naam)?',
+          hi: 'सतगुरु कबीर साहेब ने काम (वासना) और राम-नाम की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਾਮ ਅਤੇ ਨਾਮ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'To what natural phenomenon does Satguru Kabir Saheb compare the mutual exclusion of Lust (Kaam) and Divine Name (Naam)?',
         },
         options: {
           hi: ['नदी और पहाड़ से', 'सूर्य और रात्रि (अंधकार) से', 'हवा और पानी से', 'पेड़ और पत्ते से'],
@@ -188,9 +188,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Unche paani na tike, neeche hi thehraay. Neecha ho so bhari piye, ooncha pyasa jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब जल के स्वाभाविक प्रवाह का दृष्टांत देकर विनम्रता का रहस्य बताते हैं। ऊँचे टीलों और पर्वतों पर जल कभी नहीं ठहरता, वह सदैव ढलान की ओर नीचे ही इकट्ठा होता है। जो मनुष्य अभिमान त्यागकर विनम्र और नीचा (लघु) बनता है, वह भगवद्-कृपा और ज्ञान का अमृत तृप्त होकर पीता है; जबकि जो अहंकार में ऊँचा व अकड़ा रहता है, वह जीवन भर प्यासा ही रह जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਾਣੀ ਕਦੇ ਉੱਚੀਆਂ ਥਾਵਾਂ ਉੱਤੇ ਨਹੀਂ ਖੜ੍ਹਦਾ, ਸਗੋਂ ਨੀਵਾਣ ਵੱਲ ਵਹਿੰਦਾ ਹੈ। ਜਿਹੜਾ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰਕੇ ਨੀਵਾਂ ਹੁੰਦਾ ਹੈ, ਉਹ ਨਾਮ-ਅੰਮ੍ਰਿਤ ਰੱਜ ਕੇ ਪੀਂਦਾ ਹੈ; ਪਰ ਹੰਕਾਰੀ ਉੱਚਾ ਰਹਿ ਕੇ ਵੀ ਪਿਆਸਾ ਮਰ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates the sublime law of spiritual grace through water: Water never rests on high elevations or mountain peaks; it naturally flows down to gather in the low valleys. One who assumes true humility and bows low drinks deeply from the ocean of Divine Nectar; but the proud and high-headed person departs forever parched and empty.',
+      hi: 'सतगुरु कबीर साहेब जल के स्वाभाविक प्रवाह का दृष्टांत देकर विनम्रता का रहस्य बताते हैं। ऊँचे टीलों और पर्वतों पर जल कभी नहीं ठहरता, वह सदैव ढलान की ओर नीचे ही इकट्ठा होता है। जो मनुष्य अभिमान त्यागकर विनम्र और नीचा (लघु) बनता है, वह भगवद्-कृपा और ज्ञान का अमृत तृप्त होकर पीता है; जबकि जो अहंकार में ऊँचा व अकड़ा रहता है, वह जीवन भर प्यासा ही रह जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਾਣੀ ਕਦੇ ਉੱਚੀਆਂ ਥਾਵਾਂ ਉੱਤੇ ਨਹੀਂ ਖੜ੍ਹਦਾ, ਸਗੋਂ ਨੀਵਾਣ ਵੱਲ ਵਹਿੰਦਾ ਹੈ। ਜਿਹੜਾ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰਕੇ ਨੀਵਾਂ ਹੁੰਦਾ ਹੈ, ਉਹ ਨਾਮ-ਅੰਮ੍ਰਿਤ ਰੱਜ ਕੇ ਪੀਂਦਾ ਹੈ; ਪਰ ਹੰਕਾਰੀ ਉੱਚਾ ਰਹਿ ਕੇ ਵੀ ਪਿਆਸਾ ਮਰ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the sublime law of spiritual grace through water: Water never rests on high elevations or mountain peaks; it naturally flows down to gather in the low valleys. One who assumes true humility and bows low drinks deeply from the ocean of Divine Nectar; but the proud and high-headed person departs forever parched and empty.',
     },
     wordMeanings: {
       hi: [
@@ -235,9 +235,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-3-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार कौन मनुष्य ज्ञान-अमृत से तृप्त होकर पीता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕੌਣ ਨਾਮ-ਅੰਮ੍ਰਿਤ ਰੱਜ ਕੇ ਪੀਂਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who drinks deeply of the Divine Nectar?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार कौन मनुष्य ज्ञान-अमृत से तृप्त होकर पीता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕੌਣ ਨਾਮ-ਅੰਮ੍ਰਿਤ ਰੱਜ ਕੇ ਪੀਂਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who drinks deeply of the Divine Nectar?',
         },
         options: {
           hi: ['जो अहंकार में ऊँचा रहता है', 'जो विनम्र होकर नीचा बनता है', 'जो दूसरों से झगड़ता है', 'जो केवल धन संचय करता है'],
@@ -272,9 +272,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Jab hi naam hirday dharyo, bhayo paap ka naash. Maano chingee agni ki, pari puraani ghaas.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्यनाम के असीम सामर्थ्य का गुणगान करते हुए कहते हैं कि जैसे ही साधक अपने अंतःकरण में परमात्मा के पावन नाम को धारण करता है, उसके जन्म-जन्मांतरों के संचित पापों का क्षण मात्र में विनाश हो जाता है। ठीक वैसे ही, जैसे सूखी और पुरानी घास के विशाल ढेर पर यदि अग्नि की एक छोटी सी चिंगारी भी पड़ जाए, तो वह पूरे ढेर को पलक झपकते ही भस्म कर देती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਹੀ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਨਾਮ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦਾ ਹੈ, ਪਾਪਾਂ ਦਾ ਨਾਸ਼ ਹੋ ਜਾਂਦਾ ਹੈ। ਜਿਵੇਂ ਸੁੱਕੇ ਘਾਹ ਦੇ ਢੇਰ ਉੱਤੇ ਅੱਗ ਦੀ ਇੱਕ ਨਿੱਕੀ ਜਿਹੀ ਚੰਗਿਆੜੀ ਪੈਣ ਨਾਲ ਸਭ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the immense purifying power of the Divine Name: The very moment the sacred Name is enshrined within the heart, mountains of past accumulated sins are instantly incinerated. It is just like a single spark of fire falling upon a massive heap of dry, aged grass—in a split second, the entire accumulation is reduced to ashes.',
+      hi: 'सतगुरु कबीर साहेब सत्यनाम के असीम सामर्थ्य का गुणगान करते हुए कहते हैं कि जैसे ही साधक अपने अंतःकरण में परमात्मा के पावन नाम को धारण करता है, उसके जन्म-जन्मांतरों के संचित पापों का क्षण मात्र में विनाश हो जाता है। ठीक वैसे ही, जैसे सूखी और पुरानी घास के विशाल ढेर पर यदि अग्नि की एक छोटी सी चिंगारी भी पड़ जाए, तो वह पूरे ढेर को पलक झपकते ही भस्म कर देती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਹੀ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਨਾਮ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦਾ ਹੈ, ਪਾਪਾਂ ਦਾ ਨਾਸ਼ ਹੋ ਜਾਂਦਾ ਹੈ। ਜਿਵੇਂ ਸੁੱਕੇ ਘਾਹ ਦੇ ਢੇਰ ਉੱਤੇ ਅੱਗ ਦੀ ਇੱਕ ਨਿੱਕੀ ਜਿਹੀ ਚੰਗਿਆੜੀ ਪੈਣ ਨਾਲ ਸਭ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the immense purifying power of the Divine Name: The very moment the sacred Name is enshrined within the heart, mountains of past accumulated sins are instantly incinerated. It is just like a single spark of fire falling upon a massive heap of dry, aged grass—in a split second, the entire accumulation is reduced to ashes.',
     },
     wordMeanings: {
       hi: [
@@ -318,9 +318,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-4-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सत्यनाम हृदय में धारण करने पर पापों का नाश किस प्रकार होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਨਾਮ ਨਾਲ ਪਾਪ ਕਿਸ ਤਰ੍ਹਾਂ ਨਸ਼ਟ ਹੁੰਦੇ ਹਨ?',
-          en: 'According to Kabir Saheb, how are sins destroyed when the Divine Name enters the heart?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सत्यनाम हृदय में धारण करने पर पापों का नाश किस प्रकार होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਨਾਮ ਨਾਲ ਪਾਪ ਕਿਸ ਤਰ੍ਹਾਂ ਨਸ਼ਟ ਹੁੰਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, how are sins destroyed when the Divine Name enters the heart?',
         },
         options: {
           hi: ['जैसे पानी से पत्थर धुलता है', 'जैसे अग्नि की एक चिंगारी सूखी घास के ढेर को भस्म कर देती है', 'जैसे हवा से धूल उड़ती है', 'जैसे रात में तारे चमकते हैं'],
@@ -355,9 +355,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Sukh saagar ka sheel hai, koi na paave thaah. Shabd bina saadhu nahin, dravya bina nahin shaah.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि शील (सदाचार, पवित्र स्वभाव और निर्मलता) सुखों का अगाध सागर है, जिसकी गहराई की कोई थाह नहीं पा सकता। जैसे धन-दौलत (द्रव्य) के बिना कोई सच्चा साहूकार या राजा (शाह) नहीं कहला सकता, उसी प्रकार अंतर में सत्य-शब्द और ज्ञान की अनुभूति के बिना कोई सच्चा साधु या संत नहीं हो सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸ਼ੀਲ-ਸੁਭਾਅ ਸੁੱਖਾਂ ਦਾ ਅਥਾਹ ਸਾਗਰ ਹੈ। ਜਿਵੇਂ ਧਨ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਸ਼ਾਹੂਕਾਰ ਨਹੀਂ ਬਣਦਾ, ਓਵੇਂ ਹੀ ਸੱਚੇ ਸ਼ਬਦ ਅਤੇ ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਸਾਧੂ ਨਹੀਂ ਕਹਾ ਸਕਦਾ।',
-      en: 'Kabir Saheb declares: Pure character and virtue (Sheel) is a boundless ocean of serene happiness, whose profound depths none can measure. Just as a merchant or emperor cannot be acknowledged without actual wealth (Dravya), in the exact same manner, no person can truly be called a Saint without the living treasure of the Divine Word (Shabd).',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि शील (सदाचार, पवित्र स्वभाव और निर्मलता) सुखों का अगाध सागर है, जिसकी गहराई की कोई थाह नहीं पा सकता। जैसे धन-दौलत (द्रव्य) के बिना कोई सच्चा साहूकार या राजा (शाह) नहीं कहला सकता, उसी प्रकार अंतर में सत्य-शब्द और ज्ञान की अनुभूति के बिना कोई सच्चा साधु या संत नहीं हो सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸ਼ੀਲ-ਸੁਭਾਅ ਸੁੱਖਾਂ ਦਾ ਅਥਾਹ ਸਾਗਰ ਹੈ। ਜਿਵੇਂ ਧਨ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਸ਼ਾਹੂਕਾਰ ਨਹੀਂ ਬਣਦਾ, ਓਵੇਂ ਹੀ ਸੱਚੇ ਸ਼ਬਦ ਅਤੇ ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਸਾਧੂ ਨਹੀਂ ਕਹਾ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims: Pure character and virtue (Sheel) is a boundless ocean of serene happiness, whose profound depths none can measure. Just as a merchant or emperor cannot be acknowledged without actual wealth (Dravya), in the exact same manner, no person can truly be called a Saint without the living treasure of the Divine Word (Shabd).',
     },
     wordMeanings: {
       hi: [
@@ -405,9 +405,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-5-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किसके बिना कोई मनुष्य सच्चा साधु नहीं हो सकता?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਸਾਧੂ ਨਹੀਂ ਹੋ ਸਕਦਾ?',
-          en: 'According to Kabir Saheb, without what can no person be considered a true Saint?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किसके बिना कोई मनुष्य सच्चा साधु नहीं हो सकता?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਸਾਧੂ ਨਹੀਂ ਹੋ ਸਕਦਾ?',
+          en: 'According to Satguru Kabir Saheb, without what can no person be considered a true Saint?',
         },
         options: {
           hi: ['गेरुए वस्त्रों के बिना', 'सत्य शब्द / गुरु ज्ञान के बिना', 'कमंडल के बिना', 'लंबी दाढ़ी के बिना'],
@@ -442,9 +442,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Bahar kya dikhlayiye, antar japiye ram. Kaha kaaj sansar se, tujhe dhani se kaam.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य आडंबर और दिखावे की भक्ति को निरर्थक बताते हुए कहते हैं कि दुनिया को दिखाने के लिए बाहरी वेश, तिलक या माला का प्रदर्शन करने की क्या आवश्यकता है? अपने अंतःकरण में गुप्त रूप से परमात्मा (राम) के नाम का सुमिरन करो। इस नश्वर संसार और लोगों की वाहवाही से तुम्हारा क्या प्रयोजन? तुम्हारा वास्तविक संबंध तो केवल उस जगत के स्वामी (परम धनी ईश्वर) से होना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦੁਨੀਆ ਨੂੰ ਬਾਹਰੀ ਦਿਖਾਵਾ ਕਰਨ ਦੀ ਕੀ ਲੋੜ ਹੈ? ਆਪਣੇ ਹਿਰਦੇ ਅੰਦਰ ਗੁਪਤ ਰੂਪ ਵਿੱਚ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰੋ। ਦੁਨੀਆ ਦੀ ਪ੍ਰਸ਼ੰਸਾ ਨਾਲ ਕੀ ਲੈਣਾ, ਤੈਨੂੰ ਤਾਂ ਸਿਰਫ ਸੱਚੇ ਮਾਲਕ (ਪ੍ਰਭੂ) ਨਾਲ ਮਤਲਬ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।',
-      en: 'Kabir Saheb cuts through ostentatious religiosity: Why make an outward show of piety before the world with robes and rituals? Meditate upon the Supreme Lord secretly in the depths of your inner heart. What concern do you have with winning the applause of the mortal world? Your sole business is with the Master and Owner of the universe.',
+      hi: 'सतगुरु कबीर साहेब बाह्य आडंबर और दिखावे की भक्ति को निरर्थक बताते हुए कहते हैं कि दुनिया को दिखाने के लिए बाहरी वेश, तिलक या माला का प्रदर्शन करने की क्या आवश्यकता है? अपने अंतःकरण में गुप्त रूप से परमात्मा (राम) के नाम का सुमिरन करो। इस नश्वर संसार और लोगों की वाहवाही से तुम्हारा क्या प्रयोजन? तुम्हारा वास्तविक संबंध तो केवल उस जगत के स्वामी (परम धनी ईश्वर) से होना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦੁਨੀਆ ਨੂੰ ਬਾਹਰੀ ਦਿਖਾਵਾ ਕਰਨ ਦੀ ਕੀ ਲੋੜ ਹੈ? ਆਪਣੇ ਹਿਰਦੇ ਅੰਦਰ ਗੁਪਤ ਰੂਪ ਵਿੱਚ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰੋ। ਦੁਨੀਆ ਦੀ ਪ੍ਰਸ਼ੰਸਾ ਨਾਲ ਕੀ ਲੈਣਾ, ਤੈਨੂੰ ਤਾਂ ਸਿਰਫ ਸੱਚੇ ਮਾਲਕ (ਪ੍ਰਭੂ) ਨਾਲ ਮਤਲਬ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb cuts through ostentatious religiosity: Why make an outward show of piety before the world with robes and rituals? Meditate upon the Supreme Lord secretly in the depths of your inner heart. What concern do you have with winning the applause of the mortal world? Your sole business is with the Master and Owner of the universe.',
     },
     wordMeanings: {
       hi: [
@@ -488,9 +488,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-6-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार साधक को संसार की चिंता छोड़कर किससे काम (सरोकार) रखना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤ ਨੂੰ ਕਿਸ ਨਾਲ ਮਤਲਬ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, instead of worldly opinion, with whom should the seeker be concerned?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार साधक को संसार की चिंता छोड़कर किससे काम (सरोकार) रखना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤ ਨੂੰ ਕਿਸ ਨਾਲ ਮਤਲਬ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, instead of worldly opinion, with whom should the seeker be concerned?',
         },
         options: {
           hi: ['पड़ोसियों से', 'परम धनी (परमात्मा) से', 'व्यापारियों से', 'नेताओं से'],
@@ -525,9 +525,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Sadhu sati aur soorma, inki baat agaadh. Aasha chhode deh ki, tan ki anathak saadh.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि सच्चा साधु (संत), सती (पतिव्रता निष्ठा) और रणभूमि का शूरवीर—इन तीनों का संकल्प और त्याग अत्यंत अगाध एवं अतुलनीय होता है। ये तीनों अपने भौतिक शरीर की ममता और जीने की आस को त्यागकर अपने पावन लक्ष्य के लिए बिना थके सर्वस्व समर्पित कर देते हैं। आध्यात्मिकता भी शूरवीरों का मार्ग है, कायरों का नहीं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸਾਧੂ, ਸਤੀ ਅਤੇ ਸੂਰਬੀਰ ਯੋਧਾ—ਇਹਨਾਂ ਤਿੰਨਾਂ ਦਾ ਸਮਰਪਣ ਅਥਾਹ ਹੈ। ਇਹ ਆਪਣੇ ਸਰੀਰ ਦਾ ਮੋਹ ਤਿਆਗ ਕੇ ਅਣਥੱਕ ਸਾਧਨਾ ਕਰਦੇ ਹਨ ਅਤੇ ਸੱਚ ਲਈ ਸੀਸ ਵਾਰ ਦਿੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb praises unwavering courage: A genuine Saint, a dedicated Sati (exemplar of absolute faithfulness), and a valiant warrior on the battlefield—the caliber of these three is fathomless. Casting aside all attachment to the physical body and life itself, they dedicate their being to tireless spiritual and moral realization. Devotion is the realm of the brave, not the faint-hearted.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सच्चा साधु (संत), सती (पतिव्रता निष्ठा) और रणभूमि का शूरवीर—इन तीनों का संकल्प और त्याग अत्यंत अगाध एवं अतुलनीय होता है। ये तीनों अपने भौतिक शरीर की ममता और जीने की आस को त्यागकर अपने पावन लक्ष्य के लिए बिना थके सर्वस्व समर्पित कर देते हैं। आध्यात्मिकता भी शूरवीरों का मार्ग है, कायरों का नहीं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸਾਧੂ, ਸਤੀ ਅਤੇ ਸੂਰਬੀਰ ਯੋਧਾ—ਇਹਨਾਂ ਤਿੰਨਾਂ ਦਾ ਸਮਰਪਣ ਅਥਾਹ ਹੈ। ਇਹ ਆਪਣੇ ਸਰੀਰ ਦਾ ਮੋਹ ਤਿਆਗ ਕੇ ਅਣਥੱਕ ਸਾਧਨਾ ਕਰਦੇ ਹਨ ਅਤੇ ਸੱਚ ਲਈ ਸੀਸ ਵਾਰ ਦਿੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb praises unwavering courage: A genuine Saint, a dedicated Sati (exemplar of absolute faithfulness), and a valiant warrior on the battlefield—the caliber of these three is fathomless. Casting aside all attachment to the physical body and life itself, they dedicate their being to tireless spiritual and moral realization. Devotion is the realm of the brave, not the faint-hearted.',
     },
     wordMeanings: {
       hi: [
@@ -572,9 +572,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार साधु, सती और शूरमा में कौन सी समान विशेषता होती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਧੂ, ਸਤੀ ਅਤੇ ਸੂਰਮੇ ਵਿੱਚ ਕਿਹੜੀ ਸਾਂਝੀ ਖੂਬੀ ਹੁੰਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what defining quality unites the Saint, the Sati, and the Warrior?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार साधु, सती और शूरमा में कौन सी समान विशेषता होती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਧੂ, ਸਤੀ ਅਤੇ ਸੂਰਮੇ ਵਿੱਚ ਕਿਹੜੀ ਸਾਂਝੀ ਖੂਬੀ ਹੁੰਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what defining quality unites the Saint, the Sati, and the Warrior?',
         },
         options: {
           hi: ['वे धन एकत्रित करते हैं', 'वे देह का मोह त्यागकर अनथक समर्पण करते हैं', 'वे केवल बातें करते हैं', 'वे युद्ध से भागते हैं'],
@@ -609,9 +609,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Hari sangati sheetal bhaya, miti moh ki taap. Nishiwasar sukh nidhi laha, ann pragat aapp.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्संगति की महिमा बताते हुए कहते हैं कि संतों और परमात्मा की पावन संगति में आते ही मन परम शीतल और शांत हो गया। संसार की तृष्णा, वासना और मोह-माया की त्रिताप रूपी ज्वाला सदा के लिए बुझ गई। अब दिन-रात (निशि-वासर) केवल अखूट सुख का भंडार प्राप्त हो गया है और अंतरात्मा में स्वतः ही आत्म-प्रकाश व तृप्ति प्रकट हो गई है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਅਤੇ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਤੇ ਸੀਤਲ ਹੋ ਗਿਆ ਅਤੇ ਮੋਹ-ਮਾਇਆ ਦੀ ਅੱਗ ਬੁੱਝ ਗਈ। ਦਿਨ-ਰਾਤ ਆਤਮਿਕ ਸੁੱਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਮਿਲ ਗਿਆ ਹੈ।',
-      en: 'Kabir Saheb extols the bliss of sacred association: In the sanctifying company of the Divine and the Saints, the agitated mind became exquisitely cool and tranquil. The scorching heat of delusion, worldly attachments, and desires vanished completely. Day and night, one discovers an inexhaustible treasure of inner bliss as the true divine Self shines forth within.',
+      hi: 'सतगुरु कबीर साहेब सत्संगति की महिमा बताते हुए कहते हैं कि संतों और परमात्मा की पावन संगति में आते ही मन परम शीतल और शांत हो गया। संसार की तृष्णा, वासना और मोह-माया की त्रिताप रूपी ज्वाला सदा के लिए बुझ गई। अब दिन-रात (निशि-वासर) केवल अखूट सुख का भंडार प्राप्त हो गया है और अंतरात्मा में स्वतः ही आत्म-प्रकाश व तृप्ति प्रकट हो गई है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਅਤੇ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਤੇ ਸੀਤਲ ਹੋ ਗਿਆ ਅਤੇ ਮੋਹ-ਮਾਇਆ ਦੀ ਅੱਗ ਬੁੱਝ ਗਈ। ਦਿਨ-ਰਾਤ ਆਤਮਿਕ ਸੁੱਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਮਿਲ ਗਿਆ ਹੈ।',
+      en: 'Satguru Kabir Saheb extols the bliss of sacred association: In the sanctifying company of the Divine and the Saints, the agitated mind became exquisitely cool and tranquil. The scorching heat of delusion, worldly attachments, and desires vanished completely. Day and night, one discovers an inexhaustible treasure of inner bliss as the true divine Self shines forth within.',
     },
     wordMeanings: {
       hi: [
@@ -696,9 +696,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Aawat gaari ek hai, ultan hoye anek. Kah Kabir nahin ultiye, wahi ek ki ek.',
     bhavarth: {
-      hi: 'कबीर साहेब वाणी के संयम और शांति का अचूक नियम समझाते हुए कहते हैं कि जब कोई दुर्जन गाली (अपशब्द या कटु वचन) देता है, तो वह केवल एक ही होती है। परंतु जब हम क्रोध में आकर उसका प्रत्युत्तर देते हैं और उलटकर गाली देते हैं, तो वह बढ़कर अनेक हो जाती है और झगड़ा विकराल रूप ले लेता है। यदि हम विवेक और क्षमा से काम लें और पलटकर जवाब न दें, तो वह गाली निष्प्रभावी होकर एक की एक ही रह जाएगी और स्वतः समाप्त हो जाएगी।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਕੋਈ ਮੰਦਾ ਬੋਲਦਾ ਹੈ ਤਾਂ ਉਹ ਇੱਕ ਹੀ ਗਾਲ ਹੁੰਦੀ ਹੈ। ਪਰ ਜੇ ਅਸੀਂ ਅੱਗੋਂ ਉਲਟ ਕੇ ਜਵਾਬ ਦੇਈਏ ਤਾਂ ਉਹ ਅਨੇਕਾਂ ਬਣ ਜਾਂਦੀਆਂ ਹਨ ਤੇ ਕਲੇਸ਼ ਵਧਦਾ ਹੈ। ਜੇ ਅਸੀਂ ਚੁੱਪ ਰਹੀਏ ਤਾਂ ਉਹ ਇੱਕ ਦੀ ਇੱਕ ਰਹਿ ਕੇ ਖ਼ਤਮ ਹੋ ਜਾਂਦੀ ਹੈ।',
-      en: 'Kabir Saheb provides a masterclass in psychological peace and patience: When someone hurls an abuse or insult, it arrives as just a single offense. But if you retaliate in anger, that single insult multiplies into countless grievances and destructive conflict. If you exercise mindful restraint and refuse to return the insult, it remains powerless, dying out harmlessly as just one isolated word.',
+      hi: 'सतगुरु कबीर साहेब वाणी के संयम और शांति का अचूक नियम समझाते हुए कहते हैं कि जब कोई दुर्जन गाली (अपशब्द या कटु वचन) देता है, तो वह केवल एक ही होती है। परंतु जब हम क्रोध में आकर उसका प्रत्युत्तर देते हैं और उलटकर गाली देते हैं, तो वह बढ़कर अनेक हो जाती है और झगड़ा विकराल रूप ले लेता है। यदि हम विवेक और क्षमा से काम लें और पलटकर जवाब न दें, तो वह गाली निष्प्रभावी होकर एक की एक ही रह जाएगी और स्वतः समाप्त हो जाएगी।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਕੋਈ ਮੰਦਾ ਬੋਲਦਾ ਹੈ ਤਾਂ ਉਹ ਇੱਕ ਹੀ ਗਾਲ ਹੁੰਦੀ ਹੈ। ਪਰ ਜੇ ਅਸੀਂ ਅੱਗੋਂ ਉਲਟ ਕੇ ਜਵਾਬ ਦੇਈਏ ਤਾਂ ਉਹ ਅਨੇਕਾਂ ਬਣ ਜਾਂਦੀਆਂ ਹਨ ਤੇ ਕਲੇਸ਼ ਵਧਦਾ ਹੈ। ਜੇ ਅਸੀਂ ਚੁੱਪ ਰਹੀਏ ਤਾਂ ਉਹ ਇੱਕ ਦੀ ਇੱਕ ਰਹਿ ਕੇ ਖ਼ਤਮ ਹੋ ਜਾਂਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb provides a masterclass in psychological peace and patience: When someone hurls an abuse or insult, it arrives as just a single offense. But if you retaliate in anger, that single insult multiplies into countless grievances and destructive conflict. If you exercise mindful restraint and refuse to return the insult, it remains powerless, dying out harmlessly as just one isolated word.',
     },
     wordMeanings: {
       hi: [
@@ -743,9 +743,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-9-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किसी की गाली या अपशब्द को बढ़ने से रोकने का सर्वोत्तम उपाय क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮੰਦੇ ਬੋਲ ਨੂੰ ਵਧਣ ਤੋਂ ਰੋਕਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the best way to prevent an insult from escalating into conflict?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किसी की गाली या अपशब्द को बढ़ने से रोकने का सर्वोत्तम उपाय क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮੰਦੇ ਬੋਲ ਨੂੰ ਵਧਣ ਤੋਂ ਰੋਕਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the best way to prevent an insult from escalating into conflict?',
         },
         options: {
           hi: ['दस गुना तेज चिल्लाना', 'पलटकर जवाब न देना (मौन व क्षमा रखना)', 'लाठी उठाना', 'सबको बुलाना'],
@@ -780,9 +780,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Ujjwal pehre kapda, paan supaari khaay. Ek hari ke naam bin, bandha yampur jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब मनुष्य के भौतिक विलास और सजधज की व्यर्थता बताते हुए कहते हैं कि मनुष्य भले ही श्वेत, चमकीले व सुंदर वस्त्र पहने और मुख में पान-सुपारी चबाकर ठाठ-बाट दिखाए—परंतु यदि उसके जीवन में एक परमात्मा का सच्चा नाम और भक्ति नहीं है, तो वह अंत समय में यमदूतों द्वारा बांधकर यमलोक (यातनाओं) में ले जाया जाएगा। सांसारिक चमक-दमक आत्मा को काल के बंधन से नहीं बचा सकती।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਇਨਸਾਨ ਚਾਹੇ ਸੋਹਣੇ ਚਿੱਟੇ ਕੱਪੜੇ ਪਾ ਕੇ ਪਾਨ-ਸੁਪਾਰੀ ਚਬਾਵੇ ਤੇ ਐਸ਼ ਕਰੇ—ਪਰ ਜੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਨਹੀਂ ਜਪਿਆ, ਤਾਂ ਅੰਤ ਵੇਲੇ ਜਮਾਂ ਦੇ ਬੰਧਨਾਂ ਵਿੱਚ ਜਮਪੁਰੀ ਜਾਣਾ ਪਵੇਗਾ। ਬਾਹਰੀ ਠਾਠ ਨਾਮ ਬਿਨਾਂ ਵਿਅਰਥ ਹੈ।',
-      en: 'Kabir Saheb delivers a sobering wake-up call to worldly luxury: A person may wear dazzling, immaculate garments and indulge in fragrant betel leaf and pleasures, exuding aristocratic pride—yet without devotion to the One Divine Name, such a soul departs bound in chains to the realm of death and karmic retribution. Outward glamor cannot shield a soul devoid of Truth.',
+      hi: 'सतगुरु कबीर साहेब मनुष्य के भौतिक विलास और सजधज की व्यर्थता बताते हुए कहते हैं कि मनुष्य भले ही श्वेत, चमकीले व सुंदर वस्त्र पहने और मुख में पान-सुपारी चबाकर ठाठ-बाट दिखाए—परंतु यदि उसके जीवन में एक परमात्मा का सच्चा नाम और भक्ति नहीं है, तो वह अंत समय में यमदूतों द्वारा बांधकर यमलोक (यातनाओं) में ले जाया जाएगा। सांसारिक चमक-दमक आत्मा को काल के बंधन से नहीं बचा सकती।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਇਨਸਾਨ ਚਾਹੇ ਸੋਹਣੇ ਚਿੱਟੇ ਕੱਪੜੇ ਪਾ ਕੇ ਪਾਨ-ਸੁਪਾਰੀ ਚਬਾਵੇ ਤੇ ਐਸ਼ ਕਰੇ—ਪਰ ਜੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਨਹੀਂ ਜਪਿਆ, ਤਾਂ ਅੰਤ ਵੇਲੇ ਜਮਾਂ ਦੇ ਬੰਧਨਾਂ ਵਿੱਚ ਜਮਪੁਰੀ ਜਾਣਾ ਪਵੇਗਾ। ਬਾਹਰੀ ਠਾਠ ਨਾਮ ਬਿਨਾਂ ਵਿਅਰਥ ਹੈ।',
+      en: 'Satguru Kabir Saheb delivers a sobering wake-up call to worldly luxury: A person may wear dazzling, immaculate garments and indulge in fragrant betel leaf and pleasures, exuding aristocratic pride—yet without devotion to the One Divine Name, such a soul departs bound in chains to the realm of death and karmic retribution. Outward glamor cannot shield a soul devoid of Truth.',
     },
     wordMeanings: {
       hi: [
@@ -863,9 +863,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Avgun kahu sharaab ka, aapa ahmak hoy. Maanush se pashua bhaya, daam gaanth se khoye.',
     bhavarth: {
-      hi: 'कबीर साहेब मद्यपान (शराब व नशीले पदार्थों) के विनाशकारी दुष्परिणामों का पर्दाफाश करते हुए कहते हैं कि शराब पीने से मनुष्य की बुद्धि भ्रष्ट हो जाती है और वह विवेकहीन मूर्ख (अहमक) बन जाता है। नशा करने से मनुष्य अपने होश खोकर पशु के समान हीन आचरण करने लगता है, और साथ ही अपनी जेब का गाढ़ी कमाई का धन भी व्यर्थ नष्ट कर बैठता है। अतः समस्त व्यसनों का त्याग अनिवार्य है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸ਼ਰਾਬ ਅਤੇ ਨਸ਼ਿਆਂ ਦੇ ਨੁਕਸਾਨ ਦੱਸਦੇ ਹਨ ਕਿ ਨਸ਼ਾ ਕਰਨ ਨਾਲ ਇਨਸਾਨ ਦੀ ਮੱਤ ਮਾਰੀ ਜਾਂਦੀ ਹੈ ਤੇ ਉਹ ਮੂਰਖ ਬਣ ਜਾਂਦਾ ਹੈ। ਬੰਦੇ ਤੋਂ ਪਸ਼ੂ ਬਣ ਜਾਂਦਾ ਹੈ ਅਤੇ ਆਪਣੀ ਕਮਾਈ ਦਾ ਧਨ ਵੀ ਬਰਬਾਦ ਕਰ ਲੈਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb unequivocally condemns intoxicants and alcoholism: Consuming wine impairs human intellect, turning a rational being into a senseless fool. Under its toxic influence, a human degrades into beast-like behavior while squandering hard-earned wealth. Spiritual awakening requires complete freedom from all debilitating intoxicants.',
+      hi: 'सतगुरु कबीर साहेब मद्यपान (शराब व नशीले पदार्थों) के विनाशकारी दुष्परिणामों का पर्दाफाश करते हुए कहते हैं कि शराब पीने से मनुष्य की बुद्धि भ्रष्ट हो जाती है और वह विवेकहीन मूर्ख (अहमक) बन जाता है। नशा करने से मनुष्य अपने होश खोकर पशु के समान हीन आचरण करने लगता है, और साथ ही अपनी जेब का गाढ़ी कमाई का धन भी व्यर्थ नष्ट कर बैठता है। अतः समस्त व्यसनों का त्याग अनिवार्य है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸ਼ਰਾਬ ਅਤੇ ਨਸ਼ਿਆਂ ਦੇ ਨੁਕਸਾਨ ਦੱਸਦੇ ਹਨ ਕਿ ਨਸ਼ਾ ਕਰਨ ਨਾਲ ਇਨਸਾਨ ਦੀ ਮੱਤ ਮਾਰੀ ਜਾਂਦੀ ਹੈ ਤੇ ਉਹ ਮੂਰਖ ਬਣ ਜਾਂਦਾ ਹੈ। ਬੰਦੇ ਤੋਂ ਪਸ਼ੂ ਬਣ ਜਾਂਦਾ ਹੈ ਅਤੇ ਆਪਣੀ ਕਮਾਈ ਦਾ ਧਨ ਵੀ ਬਰਬਾਦ ਕਰ ਲੈਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb unequivocally condemns intoxicants and alcoholism: Consuming wine impairs human intellect, turning a rational being into a senseless fool. Under its toxic influence, a human degrades into beast-like behavior while squandering hard-earned wealth. Spiritual awakening requires complete freedom from all debilitating intoxicants.',
     },
     wordMeanings: {
       hi: [
@@ -910,9 +910,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-11-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार शराब पीने से मनुष्य की क्या दशा हो जाती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸ਼ਰਾਬ ਪੀਣ ਨਾਲ ਇਨਸਾਨ ਦਾ ਕੀ ਹਾਲ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the disastrous consequence of alcohol consumption on a person?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार शराब पीने से मनुष्य की क्या दशा हो जाती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸ਼ਰਾਬ ਪੀਣ ਨਾਲ ਇਨਸਾਨ ਦਾ ਕੀ ਹਾਲ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the disastrous consequence of alcohol consumption on a person?',
         },
         options: {
           hi: ['वह बलवान बन जाता है', 'उसकी बुद्धि भ्रष्ट होती है, वह पशुवत बनता है और धन गंवाता है', 'वह ज्ञानी बनता है', 'वह राजा बन जाता है'],
@@ -947,9 +947,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Kabira garab na kijiye, kabahun na haansi koy. Ajahun naav samudr mein, na jaane ka hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार के हर प्राणी को सचेत करते हुए कहते हैं कि कभी अपनी स्थिति, धन या सफलता पर गर्व (अहंकार) मत करो और न ही किसी दुर्बल या पतित व्यक्ति की हंसी (उपहास) उड़ाओ। क्योंकि तुम्हारी जीवन रूपी नाव अभी भी संसार रूपी अथाह महासागर के बीच में डोल रही है; कल क्या होगा, कौन सा तूफान आएगा, यह कोई नहीं जानता। जब तक किनारे न लग जाओ, तब तक सतर्कता व विनम्रता अनिवार्य है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕਦੇ ਆਪਣੀ ਪ੍ਰਾਪਤੀ ਤੇ ਹੰਕਾਰ ਨਾ ਕਰੋ ਤੇ ਨਾ ਕਿਸੇ ਦਾ ਮਜ਼ਾਕ ਉਡਾਓ। ਸਾਡੀ ਜੀਵਨ-ਬੇੜੀ ਅਜੇ ਵੀ ਸੰਸਾਰ-ਸਮੁੰਦਰ ਦੇ ਵਿਚਕਾਰ ਹੈ, ਪਤਾ ਨਹੀਂ ਕੱਲ੍ਹ ਕੀ ਹੋ ਜਾਵੇ।',
-      en: 'Kabir Saheb offers a profound caution against self-righteous pride: Never boast about your virtues, fortune, or achievements, and never ridicule anyone who has stumbled. Remember that the fragile boat of your own life is still adrift in the turbulent ocean of this world; who knows what unforeseen storm may strike before reaching the distant shore? Maintain unbroken vigilance and humility.',
+      hi: 'सतगुरु कबीर साहेब संसार के हर प्राणी को सचेत करते हुए कहते हैं कि कभी अपनी स्थिति, धन या सफलता पर गर्व (अहंकार) मत करो और न ही किसी दुर्बल या पतित व्यक्ति की हंसी (उपहास) उड़ाओ। क्योंकि तुम्हारी जीवन रूपी नाव अभी भी संसार रूपी अथाह महासागर के बीच में डोल रही है; कल क्या होगा, कौन सा तूफान आएगा, यह कोई नहीं जानता। जब तक किनारे न लग जाओ, तब तक सतर्कता व विनम्रता अनिवार्य है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕਦੇ ਆਪਣੀ ਪ੍ਰਾਪਤੀ ਤੇ ਹੰਕਾਰ ਨਾ ਕਰੋ ਤੇ ਨਾ ਕਿਸੇ ਦਾ ਮਜ਼ਾਕ ਉਡਾਓ। ਸਾਡੀ ਜੀਵਨ-ਬੇੜੀ ਅਜੇ ਵੀ ਸੰਸਾਰ-ਸਮੁੰਦਰ ਦੇ ਵਿਚਕਾਰ ਹੈ, ਪਤਾ ਨਹੀਂ ਕੱਲ੍ਹ ਕੀ ਹੋ ਜਾਵੇ।',
+      en: 'Satguru Kabir Saheb offers a profound caution against self-righteous pride: Never boast about your virtues, fortune, or achievements, and never ridicule anyone who has stumbled. Remember that the fragile boat of your own life is still adrift in the turbulent ocean of this world; who knows what unforeseen storm may strike before reaching the distant shore? Maintain unbroken vigilance and humility.',
     },
     wordMeanings: {
       hi: [
@@ -994,9 +994,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-12-1',
         question: {
-          hi: 'कबीर साहेब मनुष्य को अहंकार न करने और किसी की हंसी न उड़ाने की सलाह क्यों देते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਹੰਕਾਰ ਨਾ ਕਰਨ ਤੇ ਕਿਸੇ ਦਾ ਮਜ਼ਾਕ ਨਾ ਉਡਾਉਣ ਦੀ ਸਲਾਹ ਕਿਉਂ ਦਿੰਦੇ ਹਨ?',
-          en: 'Why does Kabir Saheb advise against boastful pride and mocking others?',
+          hi: 'सतगुरु कबीर साहेब मनुष्य को अहंकार न करने और किसी की हंसी न उड़ाने की सलाह क्यों देते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੰਕਾਰ ਨਾ ਕਰਨ ਤੇ ਕਿਸੇ ਦਾ ਮਜ਼ਾਕ ਨਾ ਉਡਾਉਣ ਦੀ ਸਲਾਹ ਕਿਉਂ ਦਿੰਦੇ ਹਨ?',
+          en: 'Why does Satguru Kabir Saheb advise against boastful pride and mocking others?',
         },
         options: {
           hi: ['क्योंकि सब लोग अमीर हैं', 'क्योंकि हमारी जीवन-नाव अभी संसार के समुद्र में है और भविष्य अनिश्चित है', 'क्योंकि लोग नाराज हो जाएंगे', 'क्योंकि हँसना मना है'],
@@ -1031,9 +1031,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Kabira kalah aru kalpana, satsangati se jaay. Dukh waase bhaaga phire, sukh mein rahe samaay.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्संगति की दिव्य शक्ति प्रकट करते हुए कहते हैं कि सतपुरुषों और संतों की संगति में जाने से मन के सारे कलह (झगड़े-विवाद) और व्यर्थ की कल्पनाएं (चिंताएं, शंकाएं और मनोरोग) समूल नष्ट हो जाती हैं। ऐसे सत्संगी साधक से दुःख भयभीत होकर दूर भागता है, और उसका चित्त निरंतर अविनाशी आत्मिक सुख व परमानंद में समाया रहता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੇ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਕਰਨ ਨਾਲ ਮਨ ਦੇ ਝਗੜੇ ਅਤੇ ਬੇਲੋੜੀਆਂ ਚਿੰਤਾਵਾਂ ਦੂਰ ਹੋ ਜਾਂਦੀਆਂ ਹਨ। ਦੁੱਖ ਅਜਿਹੇ ਇਨਸਾਨ ਤੋਂ ਭੱਜਦਾ ਹੈ ਅਤੇ ਉਹ ਹਮੇਸ਼ਾ ਆਤਮਿਕ ਸੁੱਖ ਵਿੱਚ ਲੀਨ ਰਹਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the immense therapeutic power of Holy Communion: Entering the company of realized saints completely dissolves inner conflicts (Kalah) and neurotic anxieties or anxious projections (Kalpana). Misery and sorrow flee far away from such a steadfast practitioner, whose soul becomes forever merged in the unceasing bliss of divine peace.',
+      hi: 'सतगुरु कबीर साहेब सत्संगति की दिव्य शक्ति प्रकट करते हुए कहते हैं कि सतपुरुषों और संतों की संगति में जाने से मन के सारे कलह (झगड़े-विवाद) और व्यर्थ की कल्पनाएं (चिंताएं, शंकाएं और मनोरोग) समूल नष्ट हो जाती हैं। ऐसे सत्संगी साधक से दुःख भयभीत होकर दूर भागता है, और उसका चित्त निरंतर अविनाशी आत्मिक सुख व परमानंद में समाया रहता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੇ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਕਰਨ ਨਾਲ ਮਨ ਦੇ ਝਗੜੇ ਅਤੇ ਬੇਲੋੜੀਆਂ ਚਿੰਤਾਵਾਂ ਦੂਰ ਹੋ ਜਾਂਦੀਆਂ ਹਨ। ਦੁੱਖ ਅਜਿਹੇ ਇਨਸਾਨ ਤੋਂ ਭੱਜਦਾ ਹੈ ਅਤੇ ਉਹ ਹਮੇਸ਼ਾ ਆਤਮਿਕ ਸੁੱਖ ਵਿੱਚ ਲੀਨ ਰਹਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the immense therapeutic power of Holy Communion: Entering the company of realized saints completely dissolves inner conflicts (Kalah) and neurotic anxieties or anxious projections (Kalpana). Misery and sorrow flee far away from such a steadfast practitioner, whose soul becomes forever merged in the unceasing bliss of divine peace.',
     },
     wordMeanings: {
       hi: [
@@ -1077,9 +1077,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-13-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार कलह (झगड़े) और व्यर्थ कल्पनाएं (चिंताएं) किससे नष्ट होती हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਲੇਸ਼ ਅਤੇ ਚਿੰਤਾਵਾਂ ਕਿਸ ਨਾਲ ਖ਼ਤਮ ਹੁੰਦੀਆਂ ਹਨ?',
-          en: 'According to Kabir Saheb, what eradicates inner discord and anxious mental projections?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार कलह (झगड़े) और व्यर्थ कल्पनाएं (चिंताएं) किससे नष्ट होती हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਲੇਸ਼ ਅਤੇ ਚਿੰਤਾਵਾਂ ਕਿਸ ਨਾਲ ਖ਼ਤਮ ਹੁੰਦੀਆਂ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, what eradicates inner discord and anxious mental projections?',
         },
         options: {
           hi: ['अधिक धन कमाने से', 'सच्ची सत्संगति से', 'बहस करने से', 'अकेले सोने से'],
@@ -1114,9 +1114,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
     },
     transliteration: 'Kaah bharosa deh ka, binas jaat chhin maahi. Saans saans sumiran karo, aur yatan kuchh naahi.',
     bhavarth: {
-      hi: 'कबीर साहेब शरीर की क्षणभंगुरता का बोध कराते हुए कहते हैं कि इस नश्वर देह का क्या भरोसा, जो एक पल में नष्ट हो सकती है? कौन सी सांस अंतिम होगी, कोई नहीं जानता। इसलिए जीवन के हर एक श्वास-प्रश्वास के साथ निरंतर परमात्मा का नाम-सुमिरन करो। भवसागर पार करने और आत्मा के उद्धार के लिए इसके अतिरिक्त अन्य कोई उपाय या साधन नहीं है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਨਾਸ਼ਵਾਨ ਸਰੀਰ ਦਾ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ, ਇਹ ਇੱਕ ਪਲ ਵਿੱਚ ਖ਼ਤਮ ਹੋ ਸਕਦਾ ਹੈ। ਇਸ ਲਈ ਹਰ ਸੁਆਸ-ਸੁਆਸ ਨਾਲ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰੋ, ਮੁਕਤੀ ਦਾ ਇਸ ਤੋਂ ਬਿਨਾਂ ਹੋਰ ਕੋਈ ਸਾਧਨ ਨਹੀਂ।',
-      en: 'Kabir Saheb awakens us to the acute impermanence of the physical body: What reliance can one place upon this fragile vessel, which can perish in the fraction of a second? No one knows which breath will be the last. Therefore, remember the Divine with every incoming and outgoing breath; there is no other path or refuge for the liberation of the soul.',
+      hi: 'सतगुरु कबीर साहेब शरीर की क्षणभंगुरता का बोध कराते हुए कहते हैं कि इस नश्वर देह का क्या भरोसा, जो एक पल में नष्ट हो सकती है? कौन सी सांस अंतिम होगी, कोई नहीं जानता। इसलिए जीवन के हर एक श्वास-प्रश्वास के साथ निरंतर परमात्मा का नाम-सुमिरन करो। भवसागर पार करने और आत्मा के उद्धार के लिए इसके अतिरिक्त अन्य कोई उपाय या साधन नहीं है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਨਾਸ਼ਵਾਨ ਸਰੀਰ ਦਾ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ, ਇਹ ਇੱਕ ਪਲ ਵਿੱਚ ਖ਼ਤਮ ਹੋ ਸਕਦਾ ਹੈ। ਇਸ ਲਈ ਹਰ ਸੁਆਸ-ਸੁਆਸ ਨਾਲ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰੋ, ਮੁਕਤੀ ਦਾ ਇਸ ਤੋਂ ਬਿਨਾਂ ਹੋਰ ਕੋਈ ਸਾਧਨ ਨਹੀਂ।',
+      en: 'Satguru Kabir Saheb awakens us to the acute impermanence of the physical body: What reliance can one place upon this fragile vessel, which can perish in the fraction of a second? No one knows which breath will be the last. Therefore, remember the Divine with every incoming and outgoing breath; there is no other path or refuge for the liberation of the soul.',
     },
     wordMeanings: {
       hi: [
@@ -1163,9 +1163,9 @@ export const SAKHIS_BATCH_6: Sakhi[] = [
       {
         id: 'q-b6-14-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार जीवन की नश्वरता को देखते हुए किस प्रकार सुमिरन करना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜੀਵਨ ਦੀ ਨਾਸ਼ਵਾਨਤਾ ਨੂੰ ਦੇਖ ਕੇ ਕਿਵੇਂ ਸਿਮਰਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'In view of mortal fragility, how does Kabir Saheb instruct us to meditate?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जीवन की नश्वरता को देखते हुए किस प्रकार सुमिरन करना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜੀਵਨ ਦੀ ਨਾਸ਼ਵਾਨਤਾ ਨੂੰ ਦੇਖ ਕੇ ਕਿਵੇਂ ਸਿਮਰਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'In view of mortal fragility, how does Satguru Kabir Saheb instruct us to meditate?',
         },
         options: {
           hi: ['वर्ष में एक बार', 'साँस-साँस (प्रत्येक श्वास) के साथ निरंतर', 'केवल बुढ़ापे में', 'केवल संकट के समय'],

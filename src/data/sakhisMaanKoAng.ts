@@ -19,9 +19,9 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Prabhuta ko sab koi bhajai, prabhu ko bhajai na koy. Kahain kabir prabhu ko bhajai, prabhuta cheri hoy.',
     bhavarth: {
-      hi: 'सुख-वैभव रूपी अभिमान-शक्ति के मोहवश सभी पूजा-अर्चना करते हैं तथा उसको मन में याद करते रहते हैं, परंतु सबके स्वामी-अंतर्यामी परमात्मा का ध्यान-भजन कोई नहीं करता। कबीरजी कहते हैं कि यदि कोई चेतन-अविनाशी परमात्मा का ध्यान-भजन करे, तो यह प्रभुता भी उसकी दासी हो जाती है, अर्थात वह इसके मोह-बंधन से छूटकर, इसका भी स्वामी हो सकता है।',
-      pb: 'ਸੁਖ-ਵੈਭਵ ਤੇ ਪ੍ਰਭੁਤਾ ਦੇ ਮੋਹ ਵਿੱਚ ਸਭ ਪੂਜਾ-ਅਰਚਨਾ ਕਰਦੇ ਹਨ, ਪਰ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕੋਈ ਨਹੀਂ ਕਰਦਾ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੋ ਪਰਮਾਤਮਾ ਦਾ ਭਜਨ ਕਰਦਾ ਹੈ, ਪ੍ਰਭੁਤਾ ਉਸ ਦੀ ਦਾਸੀ ਬਣ ਜਾਂਦੀ ਹੈ।',
-      en: 'Everyone worships and seeks worldly power and prestige, but no one truly adores the Supreme Master. Kabir says that if one earnestly worships the True Lord, worldly glory becomes a humble servant at their feet.',
+      hi: 'सुख-वैभव रूपी अभिमान-शक्ति के मोहवश सभी पूजा-अर्चना करते हैं तथा उसको मन में याद करते रहते हैं, परंतु सबके स्वामी-अंतर्यामी परमात्मा का ध्यान-भजन कोई नहीं करता। सतगुरु कबीर साहेब फरमाते हैं कि यदि कोई चेतन-अविनाशी परमात्मा का ध्यान-भजन करे, तो यह प्रभुता भी उसकी दासी हो जाती है, अर्थात वह इसके मोह-बंधन से छूटकर, इसका भी स्वामी हो सकता है।',
+      pb: 'ਸੁਖ-ਵੈਭਵ ਤੇ ਪ੍ਰਭੁਤਾ ਦੇ ਮੋਹ ਵਿੱਚ ਸਭ ਪੂਜਾ-ਅਰਚਨਾ ਕਰਦੇ ਹਨ, ਪਰ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕੋਈ ਨਹੀਂ ਕਰਦਾ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪਰਮਾਤਮਾ ਦਾ ਭਜਨ ਕਰਦਾ ਹੈ, ਪ੍ਰਭੁਤਾ ਉਸ ਦੀ ਦਾਸੀ ਬਣ ਜਾਂਦੀ ਹੈ।',
+      en: 'Everyone worships and seeks worldly power and prestige, but no one truly adores the Supreme Master. Satguru Kabir Saheb proclaims that if one earnestly worships the True Lord, worldly glory becomes a humble servant at their feet.',
     },
     wordMeanings: {
       hi: [
@@ -162,7 +162,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे अहंकार से बचाकर संतों की चरण-धूलि स्वीकार करने की सदबुद्धि दें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਸਾਧੂਆਂ ਦੀ ਚਰਨ-ਧੂੜ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਸਾਧੂਆਂ ਦੀ ਚਰਨ-ਧੂੜ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Keep me safe from pride, and grant me the privilege of serving Your true devotees.'
     },
     quiz: []
@@ -266,7 +266,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे दयालु साहेब! मुझे कुलाभिमान से मुक्त कर आपके चरणों की दास्य-भक्ति दें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਕੁਲ-ਅਹੰਕਾਰ ਤੋਂ ਮੁਕਤ ਕਰ ਕੇ ਨਾਮ-ਸਿਮਰਨ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਕੁਲ-ਅਹੰਕਾਰ ਤੋਂ ਮੁਕਤ ਕਰ ਕੇ ਨਾਮ-ਸਿਮਰਨ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Benevolent Master! Deliver me from caste pride, and grant me eternal refuge at Your holy feet.'
     },
     quiz: []
@@ -373,7 +373,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे परोपकारी एवं सेवाभावी हृदय प्रदान करें ताकि मेरा जीवन सार्थक हो। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਪਰਉਪਕਾਰੀ ਹਿਰਦਾ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਪਰਉਪਕਾਰੀ ਹਿਰਦਾ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Saheb! Fill my heart with compassion so that my presence provides shelter and aid to others.'
     },
     quiz: []
@@ -395,8 +395,8 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir apne jeevate, ye do baanta dhoy. Maan badai kaaranai, achhata mool na khoy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अपने जीवन में ही मानस-मन से इन दो कलंकों (मान और बड़ाई) को धो डालो। इन क्षणिक मान-बड़ाई के लिए अक्षय-मोक्ष रूपी परम सुख को, मानवता के मूल लक्ष्य को यूं ही नष्ट मत करो।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਆਪਣੇ ਜਿਉਂਦੇ ਜੀਅ ਮਾਨ ਤੇ ਵਡਿਆਈ ਦੇ ਦੋਹਾਂ ਕਲੰਕਾਂ ਨੂੰ ਧੋ ਦੇਵੋ। ਥੋੜ੍ਹੀ ਜਿਹੀ ਵਡਿਆਈ ਲਈ ਆਪਣੀ ਰੂਹਾਨੀ ਪੂੰਜੀ ਨਾ ਗੁਆਓ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अपने जीवन में ही मानस-मन से इन दो कलंकों (मान और बड़ाई) को धो डालो। इन क्षणिक मान-बड़ाई के लिए अक्षय-मोक्ष रूपी परम सुख को, मानवता के मूल लक्ष्य को यूं ही नष्ट मत करो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਪਣੇ ਜਿਉਂਦੇ ਜੀਅ ਮਾਨ ਤੇ ਵਡਿਆਈ ਦੇ ਦੋਹਾਂ ਕਲੰਕਾਂ ਨੂੰ ਧੋ ਦੇਵੋ। ਥੋੜ੍ਹੀ ਜਿਹੀ ਵਡਿਆਈ ਲਈ ਆਪਣੀ ਰੂਹਾਨੀ ਪੂੰਜੀ ਨਾ ਗੁਆਓ।',
       en: 'Kabir advises: Wash away these two stains—pride and ego—while you are still alive. Do not squander your immortal soul’s eternal wealth for momentary worldly prestige.'
     },
     wordMeanings: {
@@ -499,7 +499,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maan badai oorami, ye jag ka vyavhaar. Deen gareebi bandagi, satguru ka upkaar.',
     bhavarth: {
-      hi: 'जगत के व्यवहार से यह पूर्ण रूप से प्रमाणित है कि मान-बड़ाई सबके लिए बहुत ही दु:खदायी हैं। सद्गुरु की शरण में रहते हुए, उनके उपकार के फलस्वरूप दीनता, विनम्रता, सेवा, भक्ति आदि की जितनी भी मान्यताएं हैं, वे सभी सेवक-भक्तों को सुख देने वाली हैं।',
+      hi: 'जगत के व्यवहार से यह पूर्ण रूप से प्रमाणित है कि मान-बड़ाई सबके लिए बहुत ही दु:खदायी हैं। सतगुरु की शरण में रहते हुए, उनके उपकार के फलस्वरूप दीनता, विनम्रता, सेवा, भक्ति आदि की जितनी भी मान्यताएं हैं, वे सभी सेवक-भक्तों को सुख देने वाली हैं।',
       pb: 'ਮਾਨ-ਵਡਿਆਈ ਦੁੱਖ ਦੇਣ ਵਾਲੀਆਂ ਲਹਿਰਾਂ ਹਨ, ਜੋ ਸੰਸਾਰ ਦਾ ਸੁਭਾਅ ਹਨ। ਪਰ ਨਿਮਰਤਾ, ਗਰੀਬੀ ਤੇ ਬੰਦਗੀ ਸਤਿਗੁਰੂ ਦੀ ਮਹਾਨ ਕਿਰਪਾ ਨਾਲ ਹੀ ਮਿਲਦੀ ਹੈ।',
       en: 'Craving for honor and glory is the tumultuous wave of worldly life. But humility, spiritual poverty, and sacred worship are the rare blessings bestowed by the Satguru.'
     },
@@ -526,7 +526,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
       en: 'Am I swept away by the worldly tide of prestige, or anchored in the Master’s grace of humble prayer?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु की असीम कृपा मानकर नम्रतापूर्वक बंदगी एवं सेवा में संलग्न रहें।',
+      hi: 'सतगुरु की असीम कृपा मानकर नम्रतापूर्वक बंदगी एवं सेवा में संलग्न रहें।',
       pb: 'ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਮੰਨ ਕੇ ਨਿਮਰਤਾ ਨਾਲ ਨਾਮ ਜਪੋ।',
       en: 'Recognize humility and devotion as divine gifts from the Satguru, and practice them daily.'
     },
@@ -587,7 +587,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे भक्ति मार्ग में अडिग एवं निष्काम रहने की शक्ति प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਅਡੋਲ ਭਗਤੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਅਡੋਲ ਭਗਤੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Master! Grant me unwavering faith that stays true through all tides of life.'
     },
     quiz: []
@@ -664,7 +664,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kanchan tajana sahaj hai, sahaj tiriya ka neh. Maan badai eersha, duralabh tajanee yeh.',
     bhavarth: {
-      hi: 'स्वर्ण-संपत्ति का त्याग सरल है और स्त्री का मोह त्यागना भी सरल ही है, परंतु इस संसार में सामान्य जनों के लिए मान, बड़ाई और ईर्ष्या का त्याग करना बहुत ही कठिन है। बिना सत्संगति और सद्गुरु की शरण के इनका त्याग संभव नहीं है।',
+      hi: 'स्वर्ण-संपत्ति का त्याग सरल है और स्त्री का मोह त्यागना भी सरल ही है, परंतु इस संसार में सामान्य जनों के लिए मान, बड़ाई और ईर्ष्या का त्याग करना बहुत ही कठिन है। बिना सत्संगति और सतगुरु की शरण के इनका त्याग संभव नहीं है।',
       pb: 'ਸੋਨਾ-ਚਾਂਦੀ ਤੇ ਕਾਮ-ਮੋਹ ਛੱਡਣਾ ਫਿਰ ਵੀ ਸੁਖਾਲਾ ਹੈ, ਪਰ ਮਾਨ, ਵਡਿਆਈ ਤੇ ਈਰਖਾ ਦਾ ਤਿਆਗ ਕਰਨਾ ਬਹੁਤ ਹੀ ਔਖਾ ਹੈ।',
       en: 'It is relatively easy to renounce gold and riches, and even family affection. But eradicating pride, prestige, and envy is extraordinarily difficult without divine wisdom.'
     },
@@ -697,7 +697,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे मान, बड़ाई और ईर्ष्या के इस सूक्ष्म बंधन से मुक्त करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਈਰਖਾ ਤੇ ਮਾਨ ਤੋਂ ਮੁਕਤ ਕਰੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਈਰਖਾ ਤੇ ਮਾਨ ਤੋਂ ਮੁਕਤ ਕਰੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Deliver me from the deepest roots of subtle pride and envy.'
     },
     quiz: []
@@ -771,8 +771,8 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaala mukh kar maan ka, aadar laavo aag. Maan badai chhandi ke, rahau naam lau aag.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि हे जिज्ञासू सज्जनो! अभिमान के मुख को काला कर दो और जिस आदर की चाह-आसक्ति है, उसमें अग्नि लगा दो। इस प्रकार मान और बड़ाई को छोड़कर, सद्गुरु के नाम-ज्ञान के उपदेश में रमकर भक्ति के जीवन में स्थिर हो जाओ।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਅਹੰਕਾਰ ਦਾ ਮੂੰਹ ਕਾਲਾ ਕਰ ਦਿਓ ਅਤੇ ਆਦਰ ਦੀ ਚਾਹਤ ਨੂੰ ਅੱਗ ਲਗਾ ਦਿਓ। ਮਾਨ-ਵਡਿਆਈ ਛੱਡ ਕੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਵੋ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि हे जिज्ञासू सज्जनो! अभिमान के मुख को काला कर दो और जिस आदर की चाह-आसक्ति है, उसमें अग्नि लगा दो। इस प्रकार मान और बड़ाई को छोड़कर, सतगुरु के नाम-ज्ञान के उपदेश में रमकर भक्ति के जीवन में स्थिर हो जाओ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਹੰਕਾਰ ਦਾ ਮੂੰਹ ਕਾਲਾ ਕਰ ਦਿਓ ਅਤੇ ਆਦਰ ਦੀ ਚਾਹਤ ਨੂੰ ਅੱਗ ਲਗਾ ਦਿਓ। ਮਾਨ-ਵਡਿਆਈ ਛੱਡ ਕੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਵੋ।',
       en: 'Kabir instructs: Blacken the face of pride and burn your desire for worldly honor! Forsake fame, and immerse yourself in the blazing light of Nam.'
     },
     wordMeanings: {
@@ -804,7 +804,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे मान-सम्मान की चाह से मुक्त कर अपने पावन नाम की अखंड लगन दें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਨਾਮ ਦੀ ਲਗਨ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਨਾਮ ਦੀ ਲਗਨ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Supreme Saheb! Free me from craving respect, and kindle in me constant love for Nam.'
     },
     quiz: []
@@ -826,9 +826,9 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bag dhyaani gyaani ghane, arathee mile anek. Maan rahit kabir kahain, so laakhan mein ek.',
     bhavarth: {
-      hi: 'इस संसार में बगुले की भांति कपटी, दिखावटी ध्यान लगाने वाले, अधिक बोलने वाले ज्ञानी-अभिमानी तथा धन-संपत्ति बटोरने वाले तो बहुत मिलते हैं। कबीरजी कहते हैं कि मान से रहित सहज व सरल स्वभाव वाला गुणी व्यक्ति तो लाखों में कोई एक ही होता है।',
+      hi: 'इस संसार में बगुले की भांति कपटी, दिखावटी ध्यान लगाने वाले, अधिक बोलने वाले ज्ञानी-अभिमानी तथा धन-संपत्ति बटोरने वाले तो बहुत मिलते हैं। सतगुरु कबीर साहेब फरमाते हैं कि मान से रहित सहज व सरल स्वभाव वाला गुणी व्यक्ति तो लाखों में कोई एक ही होता है।',
       pb: 'ਬਗੁਲੇ ਵਾਂਗ ਪਾਖੰਡੀ ਧਿਆਨ ਲਗਾਉਣ ਵਾਲੇ ਤੇ ਧਨ ਦੇ ਲੋਭੀ ਬਹੁਤ ਮਿਲਦੇ ਹਨ, ਪਰ ਅਹੰਕਾਰ ਤੋਂ ਰਹਿਤ ਨਿਮਰ ਪੁਰਖ ਲੱਖਾਂ ਵਿੱਚ ਕੋਈ ਇੱਕ ਹੁੰਦਾ ਹੈ।',
-      en: 'The world is full of hypocritical meditators, proud talkers, and seekers of wealth. Kabir says that a truly humble person, free from ego, is one in a million.'
+      en: 'The world is full of hypocritical meditators, proud talkers, and seekers of wealth. Satguru Kabir Saheb proclaims that a truly humble person, free from ego, is one in a million.'
     },
     wordMeanings: {
       hi: [
@@ -911,7 +911,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे लोक-दिखावे और वैभव के अहंकार से बचाकर अपनी बंदगी में लीन रखें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਵਿਖਾਵੇ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਵਿਖਾਵੇ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Saheb! Protect me from ostentation, and anchor me in simple, sincere worship.'
     },
     quiz: []
@@ -1254,8 +1254,8 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maan diya man harashiya, apamaane tan chheen. Kahain kabir tab jaaniye, maya mein lau leen.',
     bhavarth: {
-      hi: 'जब किसी के सम्मान देने से मन हर्षित हो जाए, खुशी से फूला न समाए, परंतु अपमान के मिलने से यही मन शोकाकुल हो जाए, दुःख से भर जाए, तो कबीरजी कहते हैं कि अच्छी तरह जान लो, हमारा यह मन अर्थात ‘हम’ माया में डूबे हुए हैं। दूसरे शब्दों में हमें मान-अपमान दोनों से रहित होकर सेवा-भक्ति का जीवन जीना चाहिए।',
-      pb: 'ਜਦੋਂ ਮਾਨ ਮਿਲਣ ਤੇ ਮਨ ਖ਼ੁਸ਼ ਹੁੰਦਾ ਹੈ ਅਤੇ ਅਪਮਾਨ ਨਾਲ ਮਨ ਦੁਖੀ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਮਝ ਲਵੋ ਮਨ ਅਜੇ ਵੀ ਮਾਇਆ ਵਿੱਚ ਡੁੱਬਿਆ ਹੋਇਆ ਹੈ।',
+      hi: 'जब किसी के सम्मान देने से मन हर्षित हो जाए, खुशी से फूला न समाए, परंतु अपमान के मिलने से यही मन शोकाकुल हो जाए, दुःख से भर जाए, तो सतगुरु कबीर साहेब फरमाते हैं कि अच्छी तरह जान लो, हमारा यह मन अर्थात ‘हम’ माया में डूबे हुए हैं। दूसरे शब्दों में हमें मान-अपमान दोनों से रहित होकर सेवा-भक्ति का जीवन जीना चाहिए।',
+      pb: 'ਜਦੋਂ ਮਾਨ ਮਿਲਣ ਤੇ ਮਨ ਖ਼ੁਸ਼ ਹੁੰਦਾ ਹੈ ਅਤੇ ਅਪਮਾਨ ਨਾਲ ਮਨ ਦੁਖੀ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਮਝ ਲਵੋ ਮਨ ਅਜੇ ਵੀ ਮਾਇਆ ਵਿੱਚ ਡੁੱਬਿਆ ਹੋਇਆ ਹੈ।',
       en: 'When praise makes your heart swell with joy, and insult leaves you crushed and grieving, know for certain—says Kabir—that your mind is still entangled in Maya.'
     },
     wordMeanings: {
@@ -1287,7 +1287,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे मान-अपमान के इस मायावी द्वंद्व से मुक्त कर निश्चल स्थिति प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਦਵੰਦਾਂ ਤੋਂ ਮੁਕਤ ਕਰੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਦਵੰਦਾਂ ਤੋਂ ਮੁਕਤ ਕਰੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Deliver me from the illusion of praise and blame, and fix my soul in peace.'
     },
     quiz: []
@@ -1309,7 +1309,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jaun mila so guru mila, chela mila na koy. Chela ko chela milai, tab kachhu hoy to hoy.',
     bhavarth: {
-      hi: 'इस संसार में अभिमानी लोग बहुत हैं। वे सदा गुरु-रूप में ही मिलते हैं, अर्थात हर कोई अपने आपको महान सिद्ध करना चाहता है। शिष्य भाव में आकर कोई नहीं मिलता, जो स्वयं भी सद्गुरु का शिष्य हो, उसे ऐसा ही जिज्ञासु शिष्य मिले, तभी ज्ञानकर्म की सिद्धि हो सकती है, अर्थात गुणग्राही को, गुणग्राही ही मिलना चाहिए।',
+      hi: 'इस संसार में अभिमानी लोग बहुत हैं। वे सदा गुरु-रूप में ही मिलते हैं, अर्थात हर कोई अपने आपको महान सिद्ध करना चाहता है। शिष्य भाव में आकर कोई नहीं मिलता, जो स्वयं भी सतगुरु का शिष्य हो, उसे ऐसा ही जिज्ञासु शिष्य मिले, तभी ज्ञानकर्म की सिद्धि हो सकती है, अर्थात गुणग्राही को, गुणग्राही ही मिलना चाहिए।',
       pb: 'ਸੰਸਾਰ ਵਿੱਚ ਅਹੰਕਾਰ ਵਸ ਹਰ ਕੋਈ ਗੁਰੂ (ਵੱਡਾ) ਬਣ ਕੇ ਮਿਲਦਾ ਹੈ, ਸ਼ਿਸ਼ (ਚੇਲਾ) ਬਣ ਕੇ ਕੋਈ ਨਹੀਂ ਮਿਲਦਾ। ਜਦੋਂ ਸੱਚਾ ਸੇਵਕ ਸੱਚੇ ਸੇਵਕ ਨੂੰ ਮਿਲਦਾ ਹੈ, ਉਦੋਂ ਹੀ ਕਲਿਆਣ ਹੁੰਦਾ ਹੈ।',
       en: 'Every arrogant person you meet acts like a master; almost no one comes in humble discipleship. True spiritual progress happens only when a humble seeker meets another humble seeker.'
     },
@@ -1361,7 +1361,7 @@ export const SAKHIS_MAAN_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Lene ko harinaam hai, dene ko anmdaan. Tarane ko hai deenata, boodan ko abhimaan.',
     bhavarth: {
-      hi: 'इस संसार में ग्रहण करने के लिए तो सद्गुरु के नाम-ज्ञान का सदुपदेश है। और किसी को देने के लिए सर्वोत्तम अन्न का दान है। इस भव-सागर से तरने के लिए दीनता ही सद्गुण है तथा डूब मरने के लिए अभिमान है, अतः जीवन-कल्याण के लिए अभिमान का त्याग करना चाहिए।',
+      hi: 'इस संसार में ग्रहण करने के लिए तो सतगुरु के नाम-ज्ञान का सदुपदेश है। और किसी को देने के लिए सर्वोत्तम अन्न का दान है। इस भव-सागर से तरने के लिए दीनता ही सद्गुण है तथा डूब मरने के लिए अभिमान है, अतः जीवन-कल्याण के लिए अभिमान का त्याग करना चाहिए।',
       pb: 'ਲੈਣ ਲਈ ਹਰਿ-ਨਾਮ ਸ੍ਰੇਸ਼ਠ ਹੈ, ਦੇਣ ਲਈ ਅੰਨ ਦਾ ਦਾਨ ਸ੍ਰੇਸ਼ਠ ਹੈ। ਸੰਸਾਰ-ਸਮੁੰਦਰ ਤੋਂ ਤਰਨ ਲਈ ਨਿਮਰਤਾ ਹੈ ਅਤੇ ਡੁੱਬਣ ਲਈ ਅਹੰਕਾਰ ਹੈ।',
       en: 'To receive, the Supreme Name is best; to give, the gift of food is finest. To cross the ocean of existence, humility is your raft; to drown, pride is your stone.'
     },

@@ -19,9 +19,9 @@ export const SAKHIS_LOBH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bahut jatan kari keejiye, sab phal jay nasay. Kabir sanchai soom dhan, ant chor le jay.',
     bhavarth: {
-      hi: 'बहुत यत्न-उद्योग से संचित किए गए धन का सब फल अंत में नष्ट ही हो जाता है। कबीरजी कहते हैं कि कंजूस व्यक्ति लोभ करके जीवन-भर धन जोड़ता रहता है और अंत में उस धन को चोर-लुटेरे ले जाते हैं।',
-      pb: 'ਬਹੁਤ ਜਤਨ ਕਰ ਕੇ ਇਕੱਠੇ ਕੀਤੇ ਧਨ ਦਾ ਸਾਰਾ ਫਲ ਅੰਤ ਵਿੱਚ ਨਸ਼ਟ ਹੋ ਜਾਂਦਾ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਕੰਜੂਸ ਮਨੁੱਖ ਲੋਭ ਕਰ ਕੇ ਉਮਰ ਭਰ ਧਨ ਜੋੜਦਾ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਅੰਤ ਵਿੱਚ ਉਸ ਧਨ ਨੂੰ ਚੋਰ-ਡਾਕੂ ਲੈ ਜਾਂਦੇ ਹਨ।',
-      en: 'All the fruit of wealth gathered through painstaking effort is ultimately lost. Kabir says the miser hoards riches out of greed all his life, only for thieves and plunderers to carry it away in the end.',
+      hi: 'बहुत यत्न-उद्योग से संचित किए गए धन का सब फल अंत में नष्ट ही हो जाता है। सतगुरु कबीर साहेब फरमाते हैं कि कंजूस व्यक्ति लोभ करके जीवन-भर धन जोड़ता रहता है और अंत में उस धन को चोर-लुटेरे ले जाते हैं।',
+      pb: 'ਬਹੁਤ ਜਤਨ ਕਰ ਕੇ ਇਕੱਠੇ ਕੀਤੇ ਧਨ ਦਾ ਸਾਰਾ ਫਲ ਅੰਤ ਵਿੱਚ ਨਸ਼ਟ ਹੋ ਜਾਂਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕੰਜੂਸ ਮਨੁੱਖ ਲੋਭ ਕਰ ਕੇ ਉਮਰ ਭਰ ਧਨ ਜੋੜਦਾ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਅੰਤ ਵਿੱਚ ਉਸ ਧਨ ਨੂੰ ਚੋਰ-ਡਾਕੂ ਲੈ ਜਾਂਦੇ ਹਨ।',
+      en: 'All the fruit of wealth gathered through painstaking effort is ultimately lost. Satguru Kabir Saheb proclaims the miser hoards riches out of greed all his life, only for thieves and plunderers to carry it away in the end.',
     },
     wordMeanings: {
       hi: [
@@ -106,7 +106,7 @@ export const SAKHIS_LOBH_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरी अनियंत्रित तृष्णा को शांत कर मुझे सहज राम-नाम का अमृत प्रदान करें।',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੀ ਤ੍ਰਿਸ਼ਨਾ ਨੂੰ ਸ਼ਾਂਤ ਕਰੋ।',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੀ ਤ੍ਰਿਸ਼ਨਾ ਨੂੰ ਸ਼ਾਂਤ ਕਰੋ।',
       en: 'O Lord! Calm my restless desires and quench my soul with the nectar of Your Holy Name.'
     },
     quiz: []
@@ -128,8 +128,8 @@ export const SAKHIS_LOBH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jab man laaga lobh son, gaya vishai mein bhoy. Kahain kabeer vichaar ke, kehi prakaar dhan hoy.',
     bhavarth: {
-      hi: 'कबीरजी विचारकर समझाते हुए कहते हैं कि जब मनुष्य का मन धन के लोभ में आसक्त हो जाता है, तो वह विषयों के चक्कर में फंसकर स्वयं को विस्मृत कर दिन-रात बस यही सोचता रहता है कि किस प्रकार धन का संग्रह हो।',
-      pb: 'ਕਬੀਰ ਜੀ ਵੀਚਾਰ ਕੇ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮਨੁੱਖ ਦਾ ਮਨ ਲੋਭ ਵਿੱਚ ਫਸ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਉਹ ਵਿਕਾਰਾਂ ਵਿੱਚ ਡੁੱਬ ਕੇ ਦਿਨ-ਰਾਤ ਬਸ ਇਹੋ ਸੋਚਦਾ ਰਹਿੰਦਾ ਹੈ ਕਿ ਕਿਸ ਤਰ੍ਹਾਂ ਧਨ ਇਕੱਠਾ ਕੀਤਾ ਜਾਵੇ।',
+      hi: 'सतगुरु कबीर साहेब विचारकर समझाते हुए कहते हैं कि जब मनुष्य का मन धन के लोभ में आसक्त हो जाता है, तो वह विषयों के चक्कर में फंसकर स्वयं को विस्मृत कर दिन-रात बस यही सोचता रहता है कि किस प्रकार धन का संग्रह हो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਵੀਚਾਰ ਕੇ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮਨੁੱਖ ਦਾ ਮਨ ਲੋਭ ਵਿੱਚ ਫਸ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਉਹ ਵਿਕਾਰਾਂ ਵਿੱਚ ਡੁੱਬ ਕੇ ਦਿਨ-ਰਾਤ ਬਸ ਇਹੋ ਸੋਚਦਾ ਰਹਿੰਦਾ ਹੈ ਕਿ ਕਿਸ ਤਰ੍ਹਾਂ ਧਨ ਇਕੱਠਾ ਕੀਤਾ ਜਾਵੇ।',
       en: 'Kabir reflects and explains that when a person\'s mind becomes addicted to greed, it sinks into worldly attachments, forgetting self-realization and endlessly obsessing over how to acquire more riches.'
     },
     wordMeanings: {
@@ -210,7 +210,7 @@ export const SAKHIS_LOBH_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरे भीतर की कंजूसी मिटाकर मुझे उदार और सेवाभावी बनाएं।',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਉਦਾਰ ਚਿੱਤ ਬਣਾਓ।',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਉਦਾਰ ਚਿੱਤ ਬਣਾਓ।',
       en: 'O Lord! Eradicate stinginess from my heart and bless me with generous, loving spirit.'
     },
     quiz: []

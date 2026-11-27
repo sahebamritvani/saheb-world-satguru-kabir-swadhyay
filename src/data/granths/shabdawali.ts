@@ -72,7 +72,7 @@ export const SHABDAWALI_GRANTH: MasterGranth = {
           },
           bhavarth: {
             hi: 'सतगुरु कबीर साहेब बताते हैं कि यह सांसारिक माया महाठगनी है। यह तीनों गुणों (सत्व, रज, तम) का फंदा हाथ में लिए घूमती है और अत्यंत मधुर वचनों से जीव को फंसा लेती है।',
-            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਬਹੁਤ ਵੱਡੀ ਠੱਗਣੀ ਹੈ ਜੋ ਮਿੱਠੇ ਬਚਨ ਬੋਲ ਕੇ ਜੀਵ ਨੂੰ ਤਿੰਨਾਂ ਗੁਣਾਂ ਦੇ ਜਾਲ ਵਿੱਚ ਫਸਾ ਲੈਂਦੀ ਹੈ।',
+            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਬਹੁਤ ਵੱਡੀ ਠੱਗਣੀ ਹੈ ਜੋ ਮਿੱਠੇ ਬਚਨ ਬੋਲ ਕੇ ਜੀਵ ਨੂੰ ਤਿੰਨਾਂ ਗੁਣਾਂ ਦੇ ਜਾਲ ਵਿੱਚ ਫਸਾ ਲੈਂਦੀ ਹੈ।',
             en: 'Satguru Kabir Saheb warns: Maya is a master illusionist. Holding the trap of the three gunas, she speaks sweet words to entrap worldly minds.'
           },
           contemplation: {

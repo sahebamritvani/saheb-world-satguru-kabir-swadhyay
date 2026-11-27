@@ -136,10 +136,10 @@ const MOTIVATIONAL_SAKHIS: Array<{
     verse: {
       hi: 'भांग तमाखू छोड़ि दे, सुरा पान को त्याग। कहे कबीर गुरु भक्ति कर, तो होवे बड़ भाग॥',
       pb: 'ਭੰਗ ਤਮਾਖੂ ਛੋੜਿ ਦੇ, ਸੁਰਾ ਪਾਨ ਕੋ ਤਿਆਗ। ਕਹੇ ਕਬੀਰ ਗੁਰੂ ਭਗਤੀ ਕਰ, ਤੋ ਹੋਵੇ ਬੜ ਭਾਗ॥',
-      en: 'Renounce intoxicants, tobacco, and liquor; Kabir says, devote yourself to the Guru and awaken supreme fortune.',
+      en: 'Renounce intoxicants, tobacco, and liquor; Satguru Kabir Saheb proclaims, devote yourself to the Guru and awaken supreme fortune.',
     },
     meaning: {
-      hi: 'व्यसन मुक्त और पवित्र जीवन ही सद्गुरु की सच्ची भक्ति और आत्म-उन्नति की प्रथम सीढ़ी है।',
+      hi: 'व्यसन मुक्त और पवित्र जीवन ही सतगुरु की सच्ची भक्ति और आत्म-उन्नति की प्रथम सीढ़ी है।',
       pb: 'ਨਸ਼ਾ-ਮੁਕਤ ਅਤੇ ਪਵਿੱਤਰ ਜੀਵਨ ਹੀ ਸਤਿਗੁਰੂ ਦੀ ਸੱਚੀ ਭਗਤੀ ਅਤੇ ਆਤਮ-ਉੱਨਤੀ ਦੀ ਪਹਿਲੀ ਪੌੜੀ ਹੈ।',
       en: 'An addiction-free, pure lifestyle is the very first step toward true Guru devotion and inner peace.',
     },
@@ -218,7 +218,7 @@ export const SatvikSankalpTracker: React.FC<SatvikSankalpTrackerProps> = ({
   const ui = {
     hi: {
       title: 'नशामुक्ति एवं सात्विक संकल्प',
-      subtitle: 'सद्गुरु कबीर साहेब एवं पूज्य आचार्य श्री के मार्गदर्शन में व्यसन-मुक्त, सात्विक जीवन का संकल्प लें।',
+      subtitle: 'सतगुरु कबीर साहेब एवं पूज्य आचार्य श्री के मार्गदर्शन में व्यसन-मुक्त, सात्विक जीवन का संकल्प लें।',
       chooseVow: '१. अपना सात्विक संकल्प चुनें',
       startDateLabel: '२. संकल्प प्रारंभ तिथि चुनें',
       startToday: 'आज से आरंभ करें',
@@ -254,7 +254,7 @@ export const SatvikSankalpTracker: React.FC<SatvikSankalpTrackerProps> = ({
     },
     en: {
       title: 'De-addiction & Satvik Vow Tracker',
-      subtitle: 'Take a sacred pledge for an addiction-free, pure Satvik life inspired by Sadguru Kabir Saheb and Pujya Acharya Shri.',
+      subtitle: 'Take a sacred pledge for an addiction-free, pure Satvik life inspired by Satguru Kabir Saheb and Pujya Acharya Shri.',
       chooseVow: '1. Select Your Sacred Vow (Sankalp)',
       startDateLabel: '2. Select Start Date',
       startToday: 'Start Today',

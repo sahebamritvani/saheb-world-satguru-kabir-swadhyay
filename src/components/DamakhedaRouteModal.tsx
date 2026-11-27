@@ -26,7 +26,7 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
   const modalContent = (
     <AnimatePresence>
       <div
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px', zIndex: 120 }}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '48px 14px', zIndex: 100 }}
         className="fixed inset-0 bg-black/85 backdrop-blur-md"
         onClick={onClose}
       >
@@ -34,8 +34,16 @@ export const DamakhedaRouteModal: React.FC<DamakhedaRouteModalProps> = ({
           initial={{ opacity: 0, scale: 0.94, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 12 }}
-          style={{ maxHeight: '82vh' }}
-          className="relative w-full max-w-lg rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
+          style={{
+            width: '100%',
+            maxWidth: '480px',
+            maxHeight: 'calc(100dvh - 104px)',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+            borderRadius: '16px',
+          }}
+          className="relative border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}

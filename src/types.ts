@@ -252,6 +252,8 @@ export interface NitnemVersePair {
     pb?: string;
     en?: string;
   };
+  englishTranslation?: string;
+  translationEn?: string;
 }
 
 export interface NitnemSection {

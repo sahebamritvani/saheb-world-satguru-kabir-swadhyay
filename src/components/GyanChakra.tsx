@@ -1214,7 +1214,7 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
             <div className="space-y-1.5 pt-1">
               <div className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: theme.sacredMaroon }}>
                 <Flame className="w-3.5 h-3.5 text-orange-500" />
-                <span>{language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਜੀਵਨ ਲੀਲਾ ਪ੍ਰਸੰਗ' : language === 'en' ? 'Historical Leela Narrative' : 'सद्गुरु कबीर जीवन लीला प्रसंग'}</span>
+                <span>{language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਜੀਵਨ ਲੀਲਾ ਪ੍ਰਸੰਗ' : language === 'en' ? 'Historical Leela Narrative' : 'सतगुरु कबीर जीवन लीला प्रसंग'}</span>
               </div>
               <p className="text-xs sm:text-sm leading-relaxed text-justify opacity-90" style={{ color: theme.textSecondary }}>
                 {t(currentBhushan.katha)}
@@ -1315,9 +1315,9 @@ export const GyanChakra: React.FC<GyanChakraProps> = ({
                'आत्मा का सत्यलोक आरोहण पथ (16 साधना सोपान)'}
             </h2>
             <p className="text-xs sm:text-sm" style={{ color: theme.textSecondary }}>
-              {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੁਆਰਾ ਦਰਸਾਏ ਗਏ ੧੬ ਅਧਿਆਤਮਕ ਕਦਮਾਂ ਦੀ ਲੜੀਵਾਰ ਯਾਤਰਾ' : 
+              {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੁਆਰਾ ਦਰਸਾਏ ਗਏ ੧੬ ਅਧਿਆਤਮਕ ਕਦਮਾਂ ਦੀ ਲੜੀਵਾਰ ਯਾਤਰਾ' : 
                language === 'en' ? 'Sequential spiritual journey through the 16 divine stages taught by Satguru Kabir' : 
-               'सद्गुरु कबीर साहेब द्वारा दर्शाये गए 16 आध्यात्मिक सोपानों की क्रमबद्ध मार्गदर्शिका'}
+               'सतगुरु कबीर साहेब द्वारा दर्शाये गए 16 आध्यात्मिक सोपानों की क्रमबद्ध मार्गदर्शिका'}
             </p>
           </div>
 

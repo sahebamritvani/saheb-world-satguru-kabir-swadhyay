@@ -94,7 +94,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
       },
       meaning: {
         hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सत्यनाम ही समस्त जन्म-मरण, अज्ञान, मोह और मानसिक संतापों की एकमात्र महा-औषधि (Panacea) है। प्रेमपूर्वक इसके स्मरण से सभी कष्ट स्वतः नष्ट हो जाते हैं।',
-        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਯਨਾਮ ਹੀ ਸਮੁੱਚੇ ਮਾਨਸਿਕ ਤਾਪਾਂ ਤੇ ਵਿਕਾਰਾਂ ਦੀ ਮਹਾ-ਔਸ਼ਧੀ ਹੈ। ਪ੍ਰੇਮ ਸਹਿਤ ਸਿਮਰਨ ਨਾਲ ਸਾਰੇ ਰੋਗ ਮਿਟ ਜਾਂਦੇ ਹਨ।',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਯਨਾਮ ਹੀ ਸਮੁੱਚੇ ਮਾਨਸਿਕ ਤਾਪਾਂ ਤੇ ਵਿਕਾਰਾਂ ਦੀ ਮਹਾ-ਔਸ਼ਧੀ ਹੈ। ਪ੍ਰੇਮ ਸਹਿਤ ਸਿਮਰਨ ਨਾਲ ਸਾਰੇ ਰੋਗ ਮਿਟ ਜਾਂਦੇ ਹਨ।',
         en: 'Satguru Kabir Saheb proclaims that Satyanaam is the supreme panacea for all spiritual and worldly ailments. With loving remembrance, all suffering dissolves.',
       },
     },
@@ -108,7 +108,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
       verse: {
         hi: 'सुमिरन तें सुख होत है, सुमिरन तें सब व्याधि। कबीर सुमिरन के प्रभाव तें, मिटै जन्म की आधि॥',
         pb: 'ਸਿਮਰਨ ਤੇ ਸੁਖ ਹੋਤ ਹੈ, ਸਿਮਰਨ ਤੇ ਸਭ ਵਿਆਧੀ। ਕਬੀਰ ਸਿਮਰਨ ਕੇ ਪ੍ਰਭਾਵ ਤੇ, ਮਿਟੈ ਜਨਮ ਕੀ ਆਧੀ॥',
-        en: 'Remembrance brings supreme bliss; remembrance cures all ailments. By the potency of simran, Kabir says, the fever of worldly rebirth is extinguished.',
+        en: 'Remembrance brings supreme bliss; remembrance cures all ailments. By the potency of simran, Satguru Kabir Saheb proclaims, the fever of worldly rebirth is extinguished.',
       },
       meaning: {
         hi: 'सत्यनाम के सतत सुमिरन से अंतःकरण में आत्यंतिक सुख की स्थापना होती है और शारीरिक-मानसिक समस्त व्याधियाँ शांत होती हैं। यह भवसागर के भयंकर रोगों की अचूक दवा है।',
@@ -208,7 +208,7 @@ export const SatyanaamPanaceaView: React.FC<SatyanaamPanaceaViewProps> = ({
                 {activeLang === 'pb' ? 'ਭਾਵਾਰਥ: ' : activeLang === 'en' ? 'Meaning: ' : 'भावार्थ: '}
               </strong>
               {activeLang === 'pb'
-                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ \'ਸਤਯਨਾਮ\' ਹੀ ਸਮੁੱਚੇ ਜਨਮ-ਮਰਨ, ਅਗਿਆਨ, ਮੋਹ ਅਤੇ ਮਾਨਸਿਕ ਤਾਪਾਂ ਦੀ ਇੱਕੋ-ਇੱਕ ਮਹਾ-ਔਸ਼ਧੀ ਹੈ। ਪ੍ਰੇਮ ਸਹਿਤ ਸਿਮਰਨ ਨਾਲ ਸਾਰੇ ਕਸ਼ਟ ਮਿਟ ਜਾਂਦੇ ਹਨ।'
+                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ \'ਸਤਯਨਾਮ\' ਹੀ ਸਮੁੱਚੇ ਜਨਮ-ਮਰਨ, ਅਗਿਆਨ, ਮੋਹ ਅਤੇ ਮਾਨਸਿਕ ਤਾਪਾਂ ਦੀ ਇੱਕੋ-ਇੱਕ ਮਹਾ-ਔਸ਼ਧੀ ਹੈ। ਪ੍ਰੇਮ ਸਹਿਤ ਸਿਮਰਨ ਨਾਲ ਸਾਰੇ ਕਸ਼ਟ ਮਿਟ ਜਾਂਦੇ ਹਨ।'
                 : activeLang === 'en'
                 ? 'Satguru Kabir Saheb proclaims that \'Satyanaam\' is the supreme panacea for all worldly ailments, illusions, and karmic bonds. With loving remembrance, all suffering dissolves.'
                 : 'सतगुरु कबीर साहेब फरमाते हैं कि \'सत्यनाम\' ही समस्त जन्म-मरण, अज्ञान, मोह और मानसिक संतापों की एकमात्र महा-औषधि (Panacea) है। प्रेमपूर्वक इसके स्मरण से सभी कष्ट स्वतः नष्ट हो जाते हैं।'}

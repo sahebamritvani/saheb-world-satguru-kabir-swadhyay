@@ -13,7 +13,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
       en: '"Stone in reverse began to weep, tears flowing from eyes. With that water Kabir saw the fire of births extinguished."'
     },
     literalParadox: {
-      hi: 'एक कठोर पत्थर (पाषाण) उलटकर इंसानों की तरह रोने लगा और उसकी आँखों से पानी (नीर) बहने लगा। उस पानी से कबीर साहेब ने अपने जन्म-जन्मांतर की आग को बुझा दिया।',
+      hi: 'एक कठोर पत्थर (पाषाण) उलटकर इंसानों की तरह रोने लगा और उसकी आँखों से पानी (नीर) बहने लगा। उस पानी से सतगुरु कबीर साहेब ने अपने जन्म-जन्मांतर की आग को बुझा दिया।',
       pb: 'ਇੱਕ ਕਠੋਰ ਪੱਥਰ ਇਨਸਾਨਾਂ ਵਾਂਗ ਰੋਣ ਲੱਗ ਪਿਆ ਅਤੇ ਉਸਦੇ ਹੰਝੂਆਂ ਨਾਲ ਜਨਮਾਂ ਦੀ ਅੱਗ ਬੁਝ ਗਈ।',
       en: 'A hard stone wept human tears, and that water extinguished the burning fires of lifetimes.'
     },
@@ -23,7 +23,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
       en: 'Stone = Hardened sinful heart; Tears = Repentance & detachment; Fire Extinguished = Extinction of desires.'
     },
     symbols: [
-      { symbol: 'पाषाण रोवन लागा (Stone Weeping)', meaning: { hi: 'सद्गुरु के ज्ञान की चोट से कठोर से कठोर पापी हृदय का पिघलना', pb: 'ਗਿਆਨ ਨਾਲ ਕਠੋਰ ਹਿਰਦੇ ਦਾ ਪਿਘਲਣਾ', en: 'Hardened sinner heart melting under the impact of Guru wisdom' } },
+      { symbol: 'पाषाण रोवन लागा (Stone Weeping)', meaning: { hi: 'सतगुरु के ज्ञान की चोट से कठोर से कठोर पापी हृदय का पिघलना', pb: 'ਗਿਆਨ ਨਾਲ ਕਠੋਰ ਹਿਰਦੇ ਦਾ ਪਿਘਲਣਾ', en: 'Hardened sinner heart melting under the impact of Guru wisdom' } },
       { symbol: 'जनम की आगि बुझाए (Extinguishing Lifetimes Fire)', meaning: { hi: 'पश्चाताप के अश्रुओं से जनम-जनम की काम-क्रोध व वासना की आग का शांत होना', pb: 'ਪਸ਼ਚਾਤਾਪ ਨਾਲ ਵਿਕਾਰਾਂ ਦੀ ਅੱਗ ਮਿਟਣਾ', en: 'Tears of true repentance extinguishing eternal fires of lust and anger' } }
     ],
     question: {
@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਸੱਚਾ ਪਸ਼ਚਾਤਾਪ ਹੀ ਪਾਪਾਂ ਦਾ ਨਾਸ਼ ਕਰਦਾ ਹੈ।',
         en: 'True tears of repentance wash away lifetimes of karmic impurities.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਜਿਉਂਦੇ ਜੀ ਮੁਕਤ ਹੋਣਾ ਹੀ ਪਰਮ ਪਦ ਹੈ।',
         en: 'Transcending body identification while alive is supreme liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਮਾਤਮਾ ਮਾਇਆ ਤੋਂ ਪਰੇ ਹੈ।',
         en: 'The Supreme Being is uncreated, self-luminous, and beyond illusions of Maya.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -164,8 +164,8 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
     realmTitle: { hi: 'कौतूहल (Curiosity)', pb: 'ਕੌਤਕ (Curiosity)', en: 'Curiosity' },
     title: { hi: '214. बछड़े ने उलटकर सांड को जनमा', pb: '214. ਵੱਛੇ ਨੇ ਪਿਓ ਨੂੰ ਜਨਮ ਦਿੱਤਾ', en: '214. Calf Gave Birth to the Bull' },
     verse: {
-      hi: '"बछरू उलटि के पिता को जनमा, गइया खड़ी हैरान। कहै कबीर सुनो भाई संतो, यह अद्भुत सद्गुरु ग्यान॥"',
-      pb: '"ਬਛਰੂ ਉਲਟਿ ਕੇ ਪਿਤਾ ਕੋ ਜਨਮਾ, ਗਇਆ ਖੜੀ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਅਦਭੁਤ ਸਦਗੁਰੂ ਗਿਆਨ॥"',
+      hi: '"बछरू उलटि के पिता को जनमा, गइया खड़ी हैरान। कहै कबीर सुनो भाई संतो, यह अद्भुत सतगुरु ग्यान॥"',
+      pb: '"ਬਛਰੂ ਉਲਟਿ ਕੇ ਪਿਤਾ ਕੋ ਜਨਮਾ, ਗਇਆ ਖੜੀ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਅਦਭੁਤ ਸਤਿਗੁਰੂ ਗਿਆਨ॥"',
       en: '"Calf in reverse gave birth to its father bull, cow stands astonished. Says Kabir listen saints, this is wondrous Guru wisdom."'
     },
     literalParadox: {
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਨਾਲ ਮਨ ਸਿਧਾ ਹੁੰਦਾ ਹੈ।',
         en: 'Guru wisdom transforms the wild mind into an obedient servant of the Soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਨਾਲ ਵਾਸਨਾਵਾਂ ਦਾ ਅੰਤ ਹੁੰਦਾ ਹੈ।',
         en: 'When desires burn in the fire of wisdom, the soul effortlessly ascends to higher dimensions.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਮਨ ਨੂੰ ਕਾਬੂ ਕਰਨਾ ਜ਼ਰੂਰੀ ਹੈ।',
         en: 'Unless the mind watchman is mastered, the soul king remains impoverished.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -350,18 +350,18 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सद्गुरु उपदेश से मन-शांत होना', pb: 'ਗੁਰੂ-ਉਪਦੇਸ਼ ਨਾਲ ਮਨ ਦੀ ਸ਼ਾਂਤੀ', en: 'Mind Stilled by Holy Name Pointer of Introspective Saint' },
+      headline: { hi: 'सतगुरु उपदेश से मन-शांत होना', pb: 'ਗੁਰੂ-ਉਪਦੇਸ਼ ਨਾਲ ਮਨ ਦੀ ਸ਼ਾਂਤੀ', en: 'Mind Stilled by Holy Name Pointer of Introspective Saint' },
       deepMeaning: {
         hi: 'बहरा वह संत या साधक है जो दुनिया की बकवास, निंदा और पाखंड को सुनने के लिए पूरी तरह बहरा हो चुका है और मौन समाधि में लीन है। जब ऐसा शांत पुरुष अपने आत्मज्ञान का एक छोटा सा इशारा (वचन) देता है, तो सुनने वाले शिष्यों के मन का शोर हमेशा के लिए शांत हो जाता है।',
         pb: 'ਜੋ ਸੰਤ ਸੰਸਾਰੀ ਗੱਲਾਂ ਲਈ ਬੋਲਾ ਹੈ, ਉਸਦੇ ਇੱਕ ਉਪਦੇਸ਼ ਨਾਲ ਸ਼ਿਸ਼ ਦਾ ਚੰਚਲ ਮਨ ਸ਼ਾਂਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
         en: 'The deaf man is the saint indifferent to worldly chatter. A single gesture of Holy Name instruction from such an introspective Master instantly stills all mental turmoil in the disciple.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु के एक शब्द-संकेत से मन का जनम-जनम का शोर शांत हो जाता है।',
+        hi: 'सतगुरु के एक शब्द-संकेत से मन का जनम-जनम का शोर शांत हो जाता है।',
         pb: 'ਗੁਰੂ ਦੇ ਸ਼ਬਦ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਹੁੰਦਾ ਹੈ।',
         en: 'A single divine pointer from Satguru stills ages of internal mental noise.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -404,7 +404,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'सहस्रार अमृत पान एवं अमरत्व', pb: 'ਅੰਮ੍ਰਿਤ ਪਾਨ ਅਤੇ ਅਮਰਤਾ', en: 'Direct Spiritual Drinking of Crown Chakra Nectar' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ सहस्रार चक्र के अमृत कुण्ड (भँवर गुफा) की बात कर रहे हैं। जब ध्यान की चरम अवस्था में चेतना वहाँ पहुँचती है, तो आत्मा को उस भीतरी ब्रह्मानंद के रस का पान करने के लिए इस हाड़-मांस के भौतिक मुँह या जीभ की ज़रूरत नहीं होती। आत्मा स्वतः अमर हो जाती है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ सहस्रार चक्र के अमृत कुण्ड (भँवर गुफा) की बात कर रहे हैं। जब ध्यान की चरम अवस्था में चेतना वहाँ पहुँचती है, तो आत्मा को उस भीतरी ब्रह्मानंद के रस का पान करने के लिए इस हाड़-मांस के भौतिक मुँह या जीभ की ज़रूरत नहीं होती। आत्मा स्वतः अमर हो जाती है।',
         pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਜਦੋਂ ਧਿਆਨ ਟਿਕਦਾ ਹੈ, ਤਾਂ ਆਤਮਾ ਬਿਨਾਂ ਮੂੰਹ-ਜੀਭ ਦੇ ਹੀ ਆਤਮ-ਆਨੰਦ ਦਾ ਅੰਮ੍ਰਿਤ ਪੀ ਕੇ ਅਮਰ ਹੋ ਜਾਂਦੀ ਹੈ।',
         en: 'In deep absorption at the Crown Chakra, the soul directly drinks the flowing ambrosial nectar without relying on physical mouth or tongue, attaining immortality.'
       },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਅੰਮ੍ਰਿਤ ਹੀ ਮਨੁੱਖ ਨੂੰ ਅਮਰ ਕਰਦਾ ਹੈ।',
         en: 'The internal ambrosial nectar absorbed by the soul bestows true immortality.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਨਾਲ ਮਾਇਆ ਦਾਸੀ ਬਣਦੀ ਹੈ।',
         en: 'Spiritual realization transforms deceptive Maya into an obedient servant.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_211_TO_220: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਅੰਮ੍ਰਿਤ ਨਾਲ ਜੀਵਨ ਬਦਲਦਾ ਹੈ।',
         en: 'Descent of Crown Nectar completely transforms bodily existence into divine bliss.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

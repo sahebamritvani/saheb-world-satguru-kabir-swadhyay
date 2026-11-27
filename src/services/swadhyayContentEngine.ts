@@ -12,6 +12,7 @@ export interface CuratedStepDepth {
 }
 
 type ThemeKey =
+  | 'shabd'
   | 'sweet-speech'
   | 'ego-inner'
   | 'guru'
@@ -64,7 +65,7 @@ const CURATED_SAKHI_DEPTH: Record<number, CuratedStepDepth> = {
   },
   1108: {
     step1Concise: {
-      hi: 'जो साधक अंतरंग में परम सत्य (सार-शब्द) का सच्चा अन्वेषक बनता है, वह संत जन धन्य है। सतगुरु कबीर साहेब कहते हैं कि जो सत्य-शब्द को अपने हृदय में दृढ़ता से धारण कर लेता है, उसका अमूल्य मानव जीवन कभी व्यर्थ नष्ट नहीं होता और न वह भवसागर में भटकता है।',
+      hi: 'जो साधक अंतरंग में परम सत्य (सार-शब्द) का सच्चा अन्वेषक बनता है, वह संत जन धन्य है। सतगुरु कबीर साहेब फरमाते हैं कि जो सत्य-शब्द को अपने हृदय में दृढ़ता से धारण कर लेता है, उसका अमूल्य मानव जीवन कभी व्यर्थ नष्ट नहीं होता और न वह भवसागर में भटकता है।',
       pb: 'ਜਿਹੜਾ ਸਾਧਕ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਪਰਮ ਸਤਿ (ਸਾਰ-ਸ਼ਬਦ) ਦਾ ਸੱਚਾ ਖੋਜੀ ਬਣਦਾ ਹੈ, ਉਹ ਸੰਤ ਧੰਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਤਯ-ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਧਾਰਨ ਕਰ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਅਮੋਲਕ ਜੀਵਨ ਕਦੇ ਭਟਕ ਕੇ ਵਿਅਰਥ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ।',
       en: 'Blessed is that noble seeker who becomes an earnest seeker of the Ultimate Living Word (Saar-Shabd). Satguru Kabir Saheb affirms that whoever firmly anchors the sacred Word within consciousness never wanders in vain nor is their precious human life squandered.',
     },
@@ -113,8 +114,11 @@ function detectThemeAndSymbols(sakhi: Sakhi): {
 
   let primaryTheme: ThemeKey = 'mind-control';
 
-  if (/खोजी|सार शब्द|सत्य शब्द|शब्द को अंग|गहि शब्द|शबद\b/.test(blob)) {
-    primaryTheme = 'naam';
+  if (
+    sakhi.category === 'shabd-ko-ang' ||
+    /शब्द को अंग|खोजी|सार शब्द|सत्य शब्द|गहि शब्द|गुरु शब्द|शबद\b/.test(blob)
+  ) {
+    primaryTheme = 'shabd';
   } else if (/शीतल शब्द|कुटिल|बचन|वचन|वाणी|बानी|रसना|बोल|मीठा|मधुर/.test(blob)) {
     primaryTheme = 'sweet-speech';
   } else if (/प्रीतम तुझहि|दुसमन भी तुझ|अहं|अहंकार|आपा|अभिमान|मैं|रोड़ा|बुरा जो देखन/.test(blob)) {
@@ -203,6 +207,23 @@ interface ThemeTemplates {
 }
 
 const THEME_DEPTH_TEMPLATES: Record<ThemeKey, ThemeTemplates> = {
+  shabd: {
+    whyHi: 'सतगुरु कबीर साहेब ने शब्द को अंग के अंतर्गत यह वाणी इसलिए फरमाई ताकि साधक बाहरी अक्षरों, वाद-विवाद और थोथे कर्मकांडों से ऊपर उठकर अपनी चेतना (सुरति) को शाश्वत एवं अविनाशी "सत्यनाम" सार-शब्द में स्थिर कर सके। केवल जीवित सतगुरु-शब्द ही काल के चक्र से रक्षा करता है।',
+    whyPb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਸ਼ਬਦ ਕੋ ਅੰਗ ਵਿੱਚ ਇਹ ਬਾਣੀ ਇਸ ਲਈ ਫ਼ਰਮਾਈ ਤਾਂ ਜੋ ਸਾਧਕ ਬਾਹਰੀ ਅੱਖਰਾਂ, ਬਹਿਸਾਂ ਤੇ ਕਰਮਕਾਂਡਾਂ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਅਵਿਨਾਸ਼ੀ "ਸਤਯਨਾਮ" ਸਾਰ-ਸ਼ਬਦ ਵਿੱਚ ਟਿਕਾ ਸਕੇ।',
+    whyEn: 'Satguru Kabir Saheb revealed this verse in Shabd Ko Ang so the seeker rises above outward letters, bookish debate, and empty ritual to anchor consciousness (Surat) firmly in the eternal, uncreated "Satyanaam" Shabd—the sole refuge from Kaal.',
+    drishtantHi: 'दैनिक जीवन का दृष्टांत: जैसे किसी गहरे समुद्र या तीव्र धारा में फँसा यात्री किनारे की मज़बूत रस्सी को पकड़कर सुरक्षित पार लग जाता है, वैसे ही संसार की अनिश्चितता और भय के बीच अंतरंग "सत्यनाम" शब्द को दृढ़ता से थामने वाला साधक अडिग रहता है।',
+    drishtantPb: 'ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦੀ ਉਦਾਹਰਨ: ਜਿਵੇਂ ਤੇਜ਼ ਵਹਾਅ ਵਿੱਚ ਫਸਿਆ ਮਨੁੱਖ ਮਜ਼ਬੂਤ ਰੱਸੇ ਨੂੰ ਫੜ ਕੇ ਪਾਰ ਲੱਗ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਹੀ ਸੰਸਾਰ ਦੀਆਂ ਉਲਝਣਾਂ ਵਿੱਚ ਅੰਦਰੂਨੀ "ਸਤਯਨਾਮ" ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜਨ ਵਾਲਾ ਸਾਧਕ ਅਡੋਲ ਰਹਿੰਦਾ ਹੈ।',
+    drishtantEn: 'Everyday Example: Just as a traveler caught in a swift current reaches safety by gripping a sturdy lifeline, a seeker who anchors awareness in the inner "Satyanaam" Shabd remains unshaken amidst worldly turmoil.',
+    mindHi: 'मन विश्लेषण: चंचल मन केवल वर्णों, तर्कों और बाहरी कथाओं में उलझना चाहता है; सार-शब्द की साधना मन के बिखराव को समेटकर सुरति को निज-घर की ओर मोड़ती है।',
+    mindPb: 'ਮਨ ਦੀ ਪਰਖ: ਚੰਚਲ ਮਨ ਬਾਹਰੀ ਦਲੀਲਾਂ ਵਿੱਚ ਉਲਝਿਆ ਰਹਿੰਦਾ ਹੈ; ਸਾਰ-ਸ਼ਬਦ ਦੀ ਸਾਧਨਾ ਮਨ ਦੇ ਭਟਕਾਅ ਨੂੰ ਸਮੇਟ ਕੇ ਸੁਰਤ ਨੂੰ ਅੰਤਰਮੁਖੀ ਕਰਦੀ ਹੈ।',
+    mindEn: 'Mind Analysis: The restless intellect prefers endless debate over inward stillness; anchoring in the Living Word gathers scattered attention back to its True Home.',
+    esotericHi: 'आध्यात्मिक प्रतीक: कबीर साहेब के तत्वज्ञान में "शब्द" (सार-शब्द) कोई कंठ से बोला जाने वाला वर्ण नहीं, बल्कि दसवें द्वार में निरंतर गुंजायमान होने वाला अमर, निह-अक्षर "सत्यनाम" स्पंदन है जो सुरति को काल-माया के पाश से छुड़ाता है।',
+    esotericPb: 'ਰੂਹਾਨੀ ਪ੍ਰਤੀਕ: ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਤੱਤ-ਗਿਆਨ ਵਿੱਚ "ਸ਼ਬਦ" (ਸਾਰ-ਸ਼ਬਦ) ਕੇਵਲ ਬੋਲਣ ਵਾਲਾ ਅੱਖਰ ਨਹੀਂ, ਸਗੋਂ ਦਸਵੇਂ ਦੁਆਰ ਵਿੱਚ ਗੂੰਜਣ ਵਾਲਾ ਅਮਰ "ਸਤਯਨਾਮ" ਨਾਦ ਹੈ ਜੋ ਸੁਰਤ ਨੂੰ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਬਚਾਉਂਦਾ ਹੈ।',
+    esotericEn: 'Esoteric Symbolism: In Satguru Kabir Saheb’s philosophy, "Shabd" (Saar-Shabd) is not a spoken syllable—it is the eternal, uncreated "Satyanaam" resonance vibrating within the Tenth Door that liberates Surat from Kaal.',
+    tattvaHi: 'तत्व ज्ञान: जो साधक अपनी सुरति को शाश्वत "सत्यनाम" शब्द में पिरो लेता है, वह जीते-जी काल-भय से मुक्त होकर अमर पद प्राप्त करता है।',
+    tattvaPb: 'ਤੱਤ-ਗਿਆਨ: ਜੋ ਸਾਧਕ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਸਦੀਵੀ "ਸਤਯਨਾਮ" ਸ਼ਬਦ ਵਿੱਚ ਟਿਕਾ ਲੈਂਦਾ ਹੈ, ਉਹ ਕਾਲ ਦੇ ਭੈਅ ਤੋਂ ਸਦਾ ਲਈ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
+    tattvaEn: 'Tattva Gyan: Whoever anchors Surat in the eternal "Satyanaam" Shabd transcends the fear of time and attains the imperishable state.',
+  },
   'sweet-speech': {
     whyHi: 'सतगुरु कबीर साहेब ने यह वाणी इसलिए कही ताकि साधक समझ सके कि शब्दों में औषधि और अग्नि दोनों की शक्ति होती है। कठोर वचन मन और रिश्तों को जलाते हैं, जबकि शीतल वाणी चित्त को शांत कर सत्य ग्रहण करने योग्य बनाती है।',
     whyPb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਹ ਬਾਣੀ ਇਸ ਲਈ ਉਚਾਰੀ ਕਿਉਂਕਿ ਬੋਲਾਂ ਵਿੱਚ ਦਵਾਈ ਅਤੇ ਅੱਗ ਦੋਵਾਂ ਦੀ ਤਾਕਤ ਹੁੰਦੀ ਹੈ। ਕੌੜੇ ਬੋਲ ਮਨ ਤੇ ਰਿਸ਼ਤਿਆਂ ਨੂੰ ਸਾੜਦੇ ਹਨ, ਜਦਕਿ ਸ਼ੀਤਲ ਬੋਲੀ ਹਿਰਦੇ ਨੂੰ ਸ਼ਾਂਤ ਕਰਦੀ ਹੈ।',
@@ -238,7 +259,7 @@ const THEME_DEPTH_TEMPLATES: Record<ThemeKey, ThemeTemplates> = {
     tattvaEn: 'Tattva Gyan: Dissolving ego does not mean low self-worth; it means dropping selfish ownership and beholding the One Saheb in all.',
   },
   guru: {
-    whyHi: 'सतगुरु कबीर साहेब ने गुरु-महिमा का वर्णन इसलिए किया ताकि साधक अंधविश्वास या भटकाव में न पड़े और समझे कि आत्म-ज्ञान बिना सद्गुरु के मार्गदर्शन व सार-शब्द के पूर्ण नहीं होता।',
+    whyHi: 'सतगुरु कबीर साहेब ने गुरु-महिमा का वर्णन इसलिए किया ताकि साधक अंधविश्वास या भटकाव में न पड़े और समझे कि आत्म-ज्ञान बिना सतगुरु के मार्गदर्शन व सार-शब्द के पूर्ण नहीं होता।',
     whyPb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਗੁਰੂ-ਮਹਿਮਾ ਇਸ ਲਈ ਬਿਆਨ ਕੀਤੀ ਤਾਂ ਜੋ ਸਾਧਕ ਭਟਕਣਾ ਤੋਂ ਬਚੇ ਅਤੇ ਸਮਝੇ ਕਿ ਸੱਚੇ ਸਤਿਗੁਰੂ ਤੇ ਸਾਰ-ਸ਼ਬਦ ਬਿਨਾਂ ਆਤਮ-ਗਿਆਨ ਸੰਭਵ ਨਹੀਂ।',
     whyEn: 'Satguru Kabir Saheb reveals the necessity of a true Satguru so the seeker does not wander in blind guesswork, recognizing that spiritual sight opens through authentic guidance and the living Word.',
     drishtantHi: 'दैनिक जीवन का दृष्टांत: जैसे किसी अनजान नगर या घने जंगल में केवल नक्शा काफी नहीं होता, एक अनुभवी मार्गदर्शक हर मोड़ के खतरों से बचाकर सुरक्षित गंतव्य तक पहुँचा देता है—वैसे ही सतगुरु मन की भूलभुलैया से पार उतारते हैं।',
@@ -446,12 +467,22 @@ export function buildStep4SatsangContent(sakhi: Sakhi, language: Language): Step
 
   const { primaryTheme } = detectThemeAndSymbols(sakhi);
   const tpl = THEME_DEPTH_TEMPLATES[primaryTheme];
+  const words = sakhi.wordMeanings?.[language] || sakhi.wordMeanings?.hi || [];
+  const primaryWord = words.find((w) => w?.word && w?.meaning);
+  const categoryTitle = sakhi.categoryTitle?.[language] || sakhi.categoryTitle?.hi || '';
 
   const whyBase =
     language === 'pb' ? tpl.whyPb : language === 'en' ? tpl.whyEn : tpl.whyHi;
+  const keywordBridge = primaryWord
+    ? language === 'pb'
+      ? ` ਇਸ ਸਾਖੀ ਵਿੱਚ "${primaryWord.word}" (${primaryWord.meaning}) ਰਾਹੀਂ ਜੀਵਨ ਦੀ ਅੰਦਰੂਨੀ ਸੱਚਾਈ ਨੂੰ ਸਪੱਸ਼ਟ ਕੀਤਾ ਗਿਆ ਹੈ।`
+      : language === 'en'
+      ? ` Specifically, by highlighting "${primaryWord.word}" (${primaryWord.meaning}) in '${categoryTitle}', this Sakhi turns attention toward inner clarity.`
+      : ` विशेष रूप से '${categoryTitle}' की इस साखी में "${primaryWord.word}" (${primaryWord.meaning}) के माध्यम से साधक को आत्म-जागृति का बोध कराया गया है।`
+    : '';
   const whyTaught = contextNote
     ? `${whyBase}\n\n${contextNote}`
-    : whyBase;
+    : `${whyBase}${keywordBridge}`;
 
   const drishtant =
     language === 'pb' ? tpl.drishtantPb : language === 'en' ? tpl.drishtantEn : tpl.drishtantHi;
@@ -566,4 +597,335 @@ export function deriveDistinctSpiritualEssence(
     return ensureSatguruKabirSaheb(`${tpl.esotericEn} ${tpl.tattvaEn}`);
   }
   return ensureSatguruKabirSaheb(`${tpl.esotericHi} ${tpl.tattvaHi}`);
+}
+
+export interface AngSpiritualProfile {
+  themeKey: ThemeKey;
+  angTitle: string;
+  angFocus: string;
+  practiceDirective: string;
+  meditationAnchor: string;
+  reflectionLens: string;
+  blessingPhrase: string;
+}
+
+const ANG_PROFILES: Record<
+  ThemeKey,
+  Record<
+    Language,
+    Omit<AngSpiritualProfile, 'themeKey' | 'angTitle'>
+  >
+> = {
+  shabd: {
+    hi: {
+      angFocus: 'शाश्वत, निह-अक्षर "सत्यनाम" सार-शब्द में सुरति को दृढ़ता से स्थिर करना और काल-भ्रम से रक्षा पाना',
+      practiceDirective: 'बाहरी वाद-विवाद व कर्मकांडों से ध्यान हटाकर आज प्रत्येक श्वास में सतगुरु-प्रदत्त "सत्यनाम" शब्द का अंतरंग आश्रय ग्रहण करें।',
+      meditationAnchor: 'दसवें द्वार में निरंतर गूँजते अनादि "सत्यनाम" सार-शब्द में अपनी सुरति को एकाग्र कर अडिग विश्राम करें',
+      reflectionLens: 'क्या मेरी चेतना बाहरी शब्दों व तर्कों में भटक रही है, या वह शाश्वत "सत्यनाम" शब्द में दृढ़ता से टिकी है?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपकी सुरति शाश्वत "सत्यनाम" शब्द में अडिग स्थित हो और काल-भय से सदा सुरक्षित रहे।',
+    },
+    pb: {
+      angFocus: 'ਅਵਿਨਾਸ਼ੀ "ਸਤਯਨਾਮ" ਸਾਰ-ਸ਼ਬਦ ਵਿੱਚ ਸੁਰਤ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਟਿਕਾਉਣਾ ਅਤੇ ਕਾਲ ਦੇ ਭੈਅ ਤੋਂ ਬਚਣਾ',
+      practiceDirective: 'ਬਾਹਰੀ ਬਹਿਸਾਂ ਤੇ ਦਿਖਾਵੇ ਤੋਂ ਹਟ ਕੇ ਅੱਜ ਹਰ ਸੁਆਸ ਵਿੱਚ ਸਤਿਗੁਰੂ ਦੇ "ਸਤਯਨਾਮ" ਸ਼ਬਦ ਦਾ ਸਹਾਰਾ ਲਓ।',
+      meditationAnchor: 'ਅੰਦਰੂਨੀ ਅਨਾਦੀ "ਸਤਯਨਾਮ" ਸ਼ਬਦ-ਧੁਨ ਵਿੱਚ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਅਡੋਲ ਟਿਕਾ ਕੇ ਸ਼ਾਂਤੀ ਦਾ ਅਨੁਭਵ ਕਰੋ',
+      reflectionLens: 'ਕੀ ਮੇਰੀ ਸੁਰਤ ਬਾਹਰੀ ਗੱਲਾਂ ਵਿੱਚ ਭਟਕ ਰਹੀ ਹੈ, ਜਾਂ ਸਦੀਵੀ "ਸਤਯਨਾਮ" ਸ਼ਬਦ ਵਿੱਚ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਜੁੜੀ ਹੋਈ ਹੈ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡੀ ਸੁਰਤ ਅਮਰ "ਸਤਯਨਾਮ" ਸ਼ਬਦ ਵਿੱਚ ਅਡਿੱਗ ਟਿਕੇ।',
+    },
+    en: {
+      angFocus: 'Anchoring consciousness (Surat) firmly in the eternal, uncreated "Satyanaam" Shabd beyond rituals and Kaal',
+      practiceDirective: 'Step back from outer arguments and rituals today, anchoring your attention steadily in the living Satyanaam Shabd.',
+      meditationAnchor: 'Gather scattered thoughts inward and rest Surat steadily in the unbroken resonance of Satyanaam Shabd',
+      reflectionLens: 'Is my awareness drifting in outer mental chatter, or is it anchored in the eternal Satyanaam Shabd?',
+      blessingPhrase: 'May Satguru Kabir Saheb anchor your awareness eternally in the living Satyanaam Shabd, safe beyond fear and illusion.',
+    },
+  },
+  'sweet-speech': {
+    hi: {
+      angFocus: 'वाणी में शीतलता, विनम्रता और अहंकार-त्याग द्वारा भीतर बसे प्रीतम का सम्मान करना',
+      practiceDirective: 'प्रतिक्रिया देने से पहले तीन श्वास रुकें और कठिन परिस्थिति में भी केवल शीतल व सम्मानजनक शब्द बोलें।',
+      meditationAnchor: 'हृदय-आकाश में शीतल शब्द की अमृत-तरंगों को अनुभव करते हुए भीतर के कटु अहं को शांत करें',
+      reflectionLens: 'क्या आज मेरी वाणी ने किसी के मन को शीतलता पहुँचाई या मेरे अहंकार ने कठोर शब्द निकाले?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपकी वाणी में शीतल अमृत और हृदय में निरहंकार प्रेम सदैव प्रवाहित रहे।',
+    },
+    pb: {
+      angFocus: 'ਬੋਲੀ ਵਿੱਚ ਸ਼ੀਤਲਤਾ, ਨਿਮਰਤਾ ਅਤੇ ਹੰਕਾਰ-ਤਿਆਗ ਰਾਹੀਂ ਅੰਦਰਲੇ ਪ੍ਰੀਤਮ ਦੀ ਕਦਰ ਕਰਨੀ',
+      practiceDirective: 'ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਰੁਕ ਕੇ ਸੋਚੋ ਅਤੇ ਔਖੇ ਵੇਲੇ ਵੀ ਕੇਵਲ ਸ਼ੀਤਲ ਤੇ ਨਿਮਰ ਬਚਨ ਬੋਲੋ।',
+      meditationAnchor: 'ਹਿਰਦੇ ਵਿੱਚ ਸ਼ੀਤਲ ਸ਼ਬਦ ਦੀ ਠੰਢਕ ਮਹਿਸੂਸ ਕਰਦਿਆਂ ਅੰਦਰਲੇ ਹੰਕਾਰ ਨੂੰ ਸ਼ਾਂਤ ਕਰੋ',
+      reflectionLens: 'ਕੀ ਅੱਜ ਮੇਰੀ ਬੋਲੀ ਨੇ ਕਿਸੇ ਨੂੰ ਸ਼ਾਂਤੀ ਦਿੱਤੀ ਜਾਂ ਮੇਰੇ ਹੰਕਾਰ ਨੇ ਕੌੜੇ ਬੋਲ ਕੱਢੇ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡੀ ਬੋਲੀ ਵਿੱਚ ਸ਼ੀਤਲਤਾ ਅਤੇ ਹਿਰਦੇ ਵਿੱਚ ਨਿਮਰਤਾ ਸਦਾ ਬਣੀ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Cultivating cooling, gentle speech and humility to honor the Indwelling Beloved',
+      practiceDirective: 'Pause for three calm breaths before replying today so every word carries healing rather than ego.',
+      meditationAnchor: 'Feel the cooling wave of Shital Shabd calming inner friction and pride within the heart sanctuary',
+      reflectionLens: 'Did my words today bring cooling peace to others, or did injured pride make them sharp?',
+      blessingPhrase: 'May Satguru Kabir Saheb bless your speech with cooling grace and your heart with ego-free peace.',
+    },
+  },
+  'ego-inner': {
+    hi: {
+      angFocus: 'बाहरी दोषारोपण छोड़कर भीतर छिपे अहंकार ("आपा") को पहचानना और निर्मल निरहंकारिता धारण करना',
+      practiceDirective: 'आज दूसरों की त्रुटि गिनने की बजाय अपने क्रोध, श्रेष्ठता-बोध या तुलना के भाव को साक्षी बनकर शांत करें।',
+      meditationAnchor: '"मैं-पन" और कर्तापन को श्वास के साथ विसर्जित कर हृदय में एक ही साहेब की उपस्थिति निहारें',
+      reflectionLens: 'आज किस प्रसंग में मेरा "मैं" आहत हुआ और मैंने बाहर दोष मढ़कर अपने अहंकार को बचाया?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपके भीतर का "मैं-पन" गलकर विनम्रता और समदृष्टि में रूपांतरित हो।',
+    },
+    pb: {
+      angFocus: 'ਬਾਹਰਲੇ ਦੋਸ਼ ਕੱਢਣ ਦੀ ਬਜਾਏ ਅੰਦਰਲੇ ਹੰਕਾਰ ("ਆਪਾ") ਨੂੰ ਪਛਾਣ ਕੇ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰਨੀ',
+      practiceDirective: 'ਅੱਜ ਦੂਜਿਆਂ ਦੀਆਂ ਕਮੀਆਂ ਗਿਣਨ ਦੀ ਥਾਂ ਆਪਣੇ ਹੰਕਾਰ ਅਤੇ ਗੁੱਸੇ ਨੂੰ ਸਾਖੀ-ਭਾਵ ਨਾਲ ਸ਼ਾਂਤ ਕਰੋ।',
+      meditationAnchor: '"ਮੈਂ-ਪੁਣੇ" ਨੂੰ ਸੁਆਸਾਂ ਨਾਲ ਤਿਆਗ ਕੇ ਅੰਦਰ ਵਸਦੇ ਇੱਕੋ ਸਾਹੇਬ ਦੀ ਹਜ਼ੂਰੀ ਮਹਿਸੂਸ ਕਰੋ',
+      reflectionLens: 'ਅੱਜ ਕਿਸ ਗੱਲ ਤੇ ਮੇਰਾ ਹੰਕਾਰ ਜਾਗਿਆ ਅਤੇ ਮੈਂ ਬਾਹਰ ਦੋਸ਼ ਲੱਭਣ ਲੱਗ ਪਿਆ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚੋਂ ਹੰਕਾਰ ਮਿਟੇ ਤੇ ਸੱਚੀ ਨਿਮਰਤਾ ਵਸੇ।',
+    },
+    en: {
+      angFocus: 'Uncovering and dissolving inner ego rather than blaming external people or circumstances',
+      practiceDirective: 'Whenever irritation arises today, turn the spotlight inward to notice pride instead of judging others.',
+      meditationAnchor: 'Let go of self-importance with every exhalation until only silent humility remains inside',
+      reflectionLens: 'Where did wounded pride make me defensive or quick to judge someone else today?',
+      blessingPhrase: 'May Satguru Kabir Saheb melt away every trace of pride, awakening radiant humility within you.',
+    },
+  },
+  guru: {
+    hi: {
+      angFocus: 'पूर्ण सतगुरु के शब्द-ज्ञान और विवेक-दृष्टि के प्रति अटल श्रद्धा व समर्पण',
+      practiceDirective: 'किसी भी निर्णय से पहले अपनी मनमानी की बजाय सतगुरु की शिक्षा और सत्य-विवेक को प्राथमिकता दें।',
+      meditationAnchor: 'हृदय-कमल में सतगुरु के शब्द-प्रकाश का ध्यान करते हुए पूर्ण शरणागति में स्थित हों',
+      reflectionLens: 'क्या मैं अपने मन की चंचल इच्छाओं का अनुसरण कर रहा हूँ या सतगुरु के सत्य उपदेश की आज्ञा में चल रहा हूँ?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की पावन चरण-कृपा सदैव आपके मार्ग को सत्य-विवेक से आलोकित करती रहे।',
+    },
+    pb: {
+      angFocus: 'ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਸ਼ਬਦ-ਗਿਆਨ ਅਤੇ ਵਿਵੇਕ ਪ੍ਰਤੀ ਅਟੱਲ ਸ਼ਰਧਾ ਤੇ ਸਮਰਪਣ',
+      practiceDirective: 'ਅੱਜ ਕਿਸੇ ਵੀ ਫ਼ੈਸਲੇ ਸਮੇਂ ਮਨਮੁਖੀ ਜ਼ਿੱਦ ਛੱਡ ਕੇ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਉਪਦੇਸ਼ ਨੂੰ ਅੱਗੇ ਰੱਖੋ।',
+      meditationAnchor: 'ਹਿਰਦੇ ਵਿੱਚ ਸਤਿਗੁਰੂ ਦੀ ਗਿਆਨ-ਜੋਤ ਦਾ ਧਿਆਨ ਧਰ ਕੇ ਨਿਮਰ ਸ਼ਰਧਾ ਵਿੱਚ ਟਿਕੋ',
+      reflectionLens: 'ਕੀ ਮੈਂ ਆਪਣੇ ਮਨ ਦੀਆਂ ਇੱਛਾਵਾਂ ਪਿੱਛੇ ਚੱਲ ਰਿਹਾ ਹਾਂ ਜਾਂ ਸਤਿਗੁਰੂ ਦੇ ਹੁਕਮ ਦੀ ਪਾਲਣਾ ਕਰ ਰਿਹਾ ਹਾਂ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਅਪਾਰ ਮਿਹਰ ਤੁਹਾਡੇ ਜੀਵਨ ਨੂੰ ਸਦਾ ਸਹੀ ਮਾਰਗ ਤੇ ਚਲਾਏ।',
+    },
+    en: {
+      angFocus: 'Wholehearted trust and surrender to the living wisdom-guidance of the true Satguru',
+      practiceDirective: 'Before acting today, choose the Satguru’s timeless principle over impulsive personal preference.',
+      meditationAnchor: 'Rest your awareness in grateful receptivity to the Satguru’s inner light dispelling doubt',
+      reflectionLens: 'Am I following restless personal whims, or walking faithfully in the light of the Satguru’s teaching?',
+      blessingPhrase: 'May the illuminating grace of Satguru Kabir Saheb guide every step of your inner journey.',
+    },
+  },
+  naam: {
+    hi: {
+      angFocus: 'श्वास-प्रश्वास के साथ अविरत "सत्यनाम" स्मरण (अजपा सुमिरन) की जीवंत साधना',
+      practiceDirective: 'दैनिक कार्यों के मध्य हर एक घंटे पर १ मिनट रुककर तीन बार मौन रूप से श्वास में "सत्यनाम" का सिमरन करें।',
+      meditationAnchor: 'आती-जाती श्वास की लय में बिना होंठ हिलाए सहज "सत्यनाम" सुमिरन की डोर थामे रहें',
+      reflectionLens: 'आज मेरे दिन का कितना समय व्यर्थ चिंताओं में गया और कितनी घड़ियाँ "सत्यनाम" स्मरण से पावन हुईं?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपका प्रत्येक श्वास "सत्यनाम" के अमृतमय सुमिरन से सार्थक हो।',
+    },
+    pb: {
+      angFocus: 'ਸੁਆਸ-ਸੁਆਸ ਨਿਰੰਤਰ "ਸਤਯਨਾਮ" ਸਿਮਰਨ (ਅਜਪਾ ਜਾਪ) ਦੀ ਸਜੀਵ ਸਾਧਨਾ',
+      practiceDirective: 'ਰੋਜ਼ਾਨਾ ਕੰਮਾਂ ਦੇ ਵਿਚਕਾਰ ਰੁਕ ਕੇ ਕੁਝ ਪਲ ਸੁਆਸਾਂ ਨਾਲ ਮਾਨਸਿਕ "ਸਤਯਨਾਮ" ਸਿਮਰਨ ਜ਼ਰੂਰ ਕਰੋ।',
+      meditationAnchor: 'ਆਉਂਦੇ-ਜਾਂਦੇ ਸੁਆਸਾਂ ਦੀ ਲੈਅ ਵਿੱਚ ਸਹਿਜ "ਸਤਯਨਾਮ" ਸਿਮਰਨ ਨਾਲ ਸੁਰਤ ਨੂੰ ਜੋੜੀ ਰੱਖੋ',
+      reflectionLens: 'ਅੱਜ ਮੇਰੇ ਦਿਨ ਦਾ ਕਿੰਨਾ ਸਮਾਂ ਵਿਅਰਥ ਚਿੰਤਾਵਾਂ ਵਿੱਚ ਗਿਆ ਅਤੇ ਕਿੰਨਾ ਸਮਾਂ "ਸਤਯਨਾਮ" ਸਿਮਰਨ ਵਿੱਚ ਸਫਲ ਹੋਇਆ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਖਸ਼ਿਸ਼ ਨਾਲ ਤੁਹਾਡਾ ਹਰ ਸੁਆਸ "ਸਤਯਨਾਮ" ਸਿਮਰਨ ਨਾਲ ਸਫਲ ਹੋਵੇ।',
+    },
+    en: {
+      angFocus: 'Unbroken breath-synchronized inner remembrance (Ajapa Simran) of Satyanaam',
+      practiceDirective: 'Pause briefly between daily tasks to anchor three calm breaths in silent Satyanaam remembrance.',
+      meditationAnchor: 'Ride each natural inhalation and exhalation with silent, loving awareness of Satyanaam',
+      reflectionLens: 'How much of my attention today stayed anchored in Satyanaam versus scattered worry?',
+      blessingPhrase: 'May every breath you take be sanctified with the peaceful remembrance of Satyanaam.',
+    },
+  },
+  maya: {
+    hi: {
+      angFocus: 'माया, तृष्णा और नश्वर मोह के आकर्षण से ऊपर उठकर संतोष और विवेक में स्थित होना',
+      practiceDirective: 'आज अनावश्यक तुलना, दिखावे या लोभ की एक इच्छा को पहचानकर संतोषपूर्वक त्याग दें।',
+      meditationAnchor: 'बाह्य वस्तुओं से मन को समेटकर भीतर स्थित असीम संतोष और आत्म-ऐश्वर्य का अनुभव करें',
+      reflectionLens: 'कौन-सी तृष्णा या दिखावे की चाह मुझे आज भीतर की शांति से दूर खींच रही है?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आप माया की चकाचौंध से अलिप्त रहकर संतोष-धन से समृद्ध रहें।',
+    },
+    pb: {
+      angFocus: 'ਮਾਇਆ, ਤ੍ਰਿਸ਼ਨਾ ਅਤੇ ਨਾਸ਼ਵਾਨ ਮੋਹ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਸੰਤੋਖ ਤੇ ਵਿਵੇਕ ਵਿੱਚ ਟਿਕਣਾ',
+      practiceDirective: 'ਅੱਜ ਬੇਲੋੜੇ ਦਿਖਾਵੇ ਜਾਂ ਲਾਲਚ ਦੀ ਕਿਸੇ ਇੱਕ ਇੱਛਾ ਨੂੰ ਪਛਾਣ ਕੇ ਸੰਤੋਖ ਨਾਲ ਛੱਡ ਦਿਓ।',
+      meditationAnchor: 'ਬਾਹਰਲੀਆਂ ਚੀਜ਼ਾਂ ਤੋਂ ਮਨ ਸਮੇਟ ਕੇ ਅੰਦਰਲੇ ਸੰਤੋਖ ਤੇ ਸ਼ਾਂਤੀ ਦਾ ਅਨੁਭਵ ਕਰੋ',
+      reflectionLens: 'ਕਿਹੜੀ ਤ੍ਰਿਸ਼ਨਾ ਜਾਂ ਦਿਖਾਵੇ ਦੀ ਚਾਹ ਮੈਨੂੰ ਅੱਜ ਅੰਦਰੂਨੀ ਸ਼ਾਂਤੀ ਤੋਂ ਦੂਰ ਖਿੱਚ ਰਹੀ ਹੈ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਸੀਂ ਮਾਇਆ ਦੇ ਪ੍ਰਭਾਵ ਤੋਂ ਨਿਰਲੇਪ ਤੇ ਸੰਤੋਖੀ ਰਹੋ।',
+    },
+    en: {
+      angFocus: 'Rising above Maya, restless craving, and worldly attachment into quiet contentment',
+      practiceDirective: 'Notice one unnecessary craving, comparison, or status urge today and release it with gratitude.',
+      meditationAnchor: 'Withdraw attention from fleeting possessions and rest in the inexhaustible fullness within',
+      reflectionLens: 'Which subtle craving or desire for validation is pulling me away from inner peace right now?',
+      blessingPhrase: 'May Satguru Kabir Saheb bless your heart with fearless detachment and luminous contentment.',
+    },
+  },
+  chetavani: {
+    hi: {
+      angFocus: 'जीवन और श्वासों की नश्वरता को समझकर आलस्य व टालमटोल त्यागना और आज ही जागृत होना',
+      practiceDirective: '"कल करेंगे" का भ्रम छोड़कर आज ही क्षमा, सेवा और सत्यनाम साधना का आवश्यक कदम उठाएं।',
+      meditationAnchor: 'प्रत्येक श्वास को अनमोल धरोहर मानकर वर्तमान क्षण में पूर्ण सजगता से स्थिर हों',
+      reflectionLens: 'यदि समय अत्यंत सीमित है, तो मैं आज किस व्यर्थ विवाद को छोड़कर सबसे आवश्यक आध्यात्मिक कार्य करूँ?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपका प्रत्येक क्षण जागृत हो और जीवन काल-जाल से पार उतरे।',
+    },
+    pb: {
+      angFocus: 'ਜੀਵਨ ਤੇ ਸੁਆਸਾਂ ਦੀ ਨਾਸ਼ਵਾਨਤਾ ਸਮਝ ਕੇ ਆਲਸ ਤਿਆਗਣਾ ਅਤੇ ਅੱਜ ਹੀ ਸੱਚੇ ਮਾਰਗ ਤੇ ਲੱਗਣਾ',
+      practiceDirective: '"ਕੱਲ੍ਹ ਕਰਾਂਗੇ" ਦਾ ਭਰਮ ਛੱਡ ਕੇ ਅੱਜ ਹੀ ਨਿਮਰਤਾ, ਸੇਵਾ ਅਤੇ ਸਤਯਨਾਮ ਸਾਧਨਾ ਦਾ ਕਦਮ ਚੁੱਕੋ।',
+      meditationAnchor: 'ਹਰ ਸੁਆਸ ਨੂੰ ਅਮੋਲਕ ਦਾਤ ਸਮਝ ਕੇ ਇਸੇ ਪਲ ਅੰਦਰੂਨੀ ਜਾਗ੍ਰਿਤੀ ਵਿੱਚ ਟਿਕੋ',
+      reflectionLens: 'ਜਦੋਂ ਸਮਾਂ ਸੀਮਿਤ ਹੈ, ਤਾਂ ਮੈਂ ਅੱਜ ਕਿਹੜੇ ਵਿਅਰਥ ਝਗੜੇ ਛੱਡ ਕੇ ਸੱਚੇ ਕਰਮ ਵਿੱਚ ਜੁੱਟਾਂ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡਾ ਹਰ ਪਲ ਜਾਗ੍ਰਿਤ ਤੇ ਸਫਲ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Heeding the brevity of mortal time to drop procrastination and awaken today',
+      practiceDirective: 'Do not postpone goodness to tomorrow—practice forgiveness, kindness, and Simran today.',
+      meditationAnchor: 'Honor this very breath as sacred and abide fully awake in the living present',
+      reflectionLens: 'Knowing how fleeting every breath is, what petty distraction must I release right now?',
+      blessingPhrase: 'May Satguru Kabir Saheb awaken your present moment with urgency, clarity, and fearlessness.',
+    },
+  },
+  'satya-hypocrisy': {
+    hi: {
+      angFocus: 'बाहरी आडंबर और दिखावे से हटकर कथनी-करनी की एकता और हृदय के सत्य ("साँच") को जीना',
+      practiceDirective: 'आज जो आदर्श आप बोलते हैं, बिना किसी प्रदर्शन या प्रशंसा की अपेक्षा के ठीक वैसा ही आचरण करें।',
+      meditationAnchor: 'कपट और द्वैत विचारों को त्यागकर साक्षी परमात्मा के समक्ष पारदर्शी हृदय से टिकें',
+      reflectionLens: 'मेरी कथनी और मेरी वास्तविक करनी के बीच आज कहाँ अंतर दिखाई दे रहा है?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपकी कथनी-करनी एक हो और हृदय में अखंड सत्य का वास हो।',
+    },
+    pb: {
+      angFocus: 'ਬਾਹਰੀ ਦਿਖਾਵੇ ਨੂੰ ਛੱਡ ਕੇ ਕਹਿਣੀ ਤੇ ਕਰਨੀ ਦੀ ਏਕਤਾ ਅਤੇ ਦਿਲ ਦੀ ਸੱਚਾਈ ਨੂੰ ਜੀਊਣਾ',
+      practiceDirective: 'ਅੱਜ ਜੋ ਸੱਚ ਤੁਸੀਂ ਬੋਲਦੇ ਹੋ, ਬਿਨਾਂ ਕਿਸੇ ਦਿਖਾਵੇ ਦੇ ਉਸੇ ਨੂੰ ਆਪਣੇ ਵਿਹਾਰ ਵਿੱਚ ਲਾਗੂ ਕਰੋ।',
+      meditationAnchor: 'ਕਪਟ ਤੇ ਦੋਹਰੇਪਣ ਨੂੰ ਛੱਡ ਕੇ ਸਾਖੀ ਪ੍ਰਭੂ ਅੱਗੇ ਨਿਰਮਲ ਤੇ ਸੱਚੇ ਹਿਰਦੇ ਨਾਲ ਟਿਕੋ',
+      reflectionLens: 'ਮੇਰੀ ਕਹਿਣੀ ਅਤੇ ਮੇਰੀ ਅਸਲ ਕਰਨੀ ਵਿਚਕਾਰ ਅੱਜ ਕਿੱਥੇ ਫ਼ਰਕ ਦਿਸ ਰਿਹਾ ਹੈ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡੀ ਕਹਿਣੀ ਤੇ ਕਰਨੀ ਵਿੱਚ ਸਦਾ ਸੱਚ ਦੀ ਏਕਤਾ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Replacing outward religious show with inner integrity and alignment of word and deed',
+      practiceDirective: 'Let your quiet private actions today match the highest truth you speak aloud.',
+      meditationAnchor: 'Drop every mask and rest before the Indwelling Witness in transparent honesty',
+      reflectionLens: 'Where is there a gap today between what I profess spiritually and how I actually act?',
+      blessingPhrase: 'May Satguru Kabir Saheb bless you with undivided honesty where speech and action shine as one.',
+    },
+  },
+  satsang: {
+    hi: {
+      angFocus: 'सत्संग और साधु-विवेक द्वारा कुसंग से बचना तथा सार ग्रहण कर थोथा त्यागना',
+      practiceDirective: 'आज निंदा, गपशप और नकारात्मक चर्चा से स्वयं को बचाकर सद्ग्रंथ स्वाध्याय व सज्जन-संग को चुनें।',
+      meditationAnchor: 'हृदय में शांत संत-संगति और सत्य-विवेक की सुगंध को अनुभव करते हुए ध्यानस्थ हों',
+      reflectionLens: 'आज मैंने किस संगति, संवाद या विचार को पोषित किया—सार-ग्राही सत्संग को या निंदा-कुसंग को?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपका जीवन सज्जनों के सत्संग और हंस-विवेक से सदा महकता रहे।',
+    },
+    pb: {
+      angFocus: 'ਸਤਿਸੰਗ ਤੇ ਸਾਧੂ-ਵਿਵੇਕ ਰਾਹੀਂ ਕੁਸੰਗਤ ਤੋਂ ਬਚਣਾ ਅਤੇ ਸਾਰ ਗ੍ਰਹਿਣ ਕਰਕੇ ਨਿੰਦਾ ਤਿਆਗਣੀ',
+      practiceDirective: 'ਅੱਜ ਨਿੰਦਾ ਤੇ ਵਿਅਰਥ ਗੱਲਾਂ ਤੋਂ ਦੂਰ ਰਹਿ ਕੇ ਗੁਰਬਾਣੀ ਸਵਾਧਿਆਇ ਤੇ ਨੇਕ ਸੰਗਤ ਦੀ ਚੋਣ ਕਰੋ।',
+      meditationAnchor: 'ਹਿਰਦੇ ਵਿੱਚ ਸ਼ਾਂਤ ਸਤਿਸੰਗ ਤੇ ਵਿਵੇਕ ਦੀ ਸੁਗੰਧ ਮਹਿਸੂਸ ਕਰਦਿਆਂ ਧਿਆਨ ਵਿੱਚ ਟਿਕੋ',
+      reflectionLens: 'ਅੱਜ ਮੈਂ ਕਿਸ ਸੰਗਤ ਜਾਂ ਵਿਚਾਰ ਨੂੰ ਥਾਂ ਦਿੱਤੀ—ਸੱਚੇ ਸਤਿਸੰਗ ਨੂੰ ਜਾਂ ਨਿੰਦਾ-ਕੁਸੰਗਤ ਨੂੰ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡਾ ਜੀਵਨ ਸਦਾ ਸਤਿਸੰਗ ਤੇ ਹੰਸ-ਵਿਵੇਕ ਨਾਲ ਭਰਪੂਰ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Choosing uplifting Satsang and saintly discernment while avoiding gossip and negative company',
+      practiceDirective: 'Step away from gossip and cynicism today; nourish your mind with sacred study and calm company.',
+      meditationAnchor: 'Rest inwardly in the serene fragrance of Satsang where only Truth is welcomed',
+      reflectionLens: 'What mental company did I keep today—truthful discernment or petty criticism?',
+      blessingPhrase: 'May Satguru Kabir Saheb surround your heart with pure Satsang and swan-like discernment.',
+    },
+  },
+  'prem-bhakti': {
+    hi: {
+      angFocus: 'शुष्क तर्क के बजाय निश्छल प्रेम, भक्ति और विनम्र समर्पण द्वारा प्रभु-मिलन का पथ अपनाना',
+      practiceDirective: 'आज किसी व्यक्ति या कार्य से व्यवहार करते समय कठोर अधिकार के बजाय निस्वार्थ स्नेह और करुणा रखें।',
+      meditationAnchor: 'हृदय-मंदिर में परमात्मा के प्रति असीम, शांत प्रेम व कृतज्ञता की लौ प्रज्वलित करें',
+      reflectionLens: 'मेरी साधना केवल बौद्धिक जानकारी तक सीमित है या उसमें हृदय का निश्छल प्रेम भी जुड़ा है?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपके हृदय में निष्काम प्रेमा-भक्ति का अमृत झरता रहे।',
+    },
+    pb: {
+      angFocus: 'ਸੁੱਕੇ ਤਰਕ ਦੀ ਥਾਂ ਨਿਰਛਲ ਪ੍ਰੇਮ, ਭਗਤੀ ਅਤੇ ਨਿਮਰ ਸਮਰਪਣ ਰਾਹੀਂ ਪ੍ਰਭੂ-ਮਿਲਾਪ ਦਾ ਰਾਹ ਅਪਣਾਉਣਾ',
+      practiceDirective: 'ਅੱਜ ਹਰ ਰਿਸ਼ਤੇ ਤੇ ਕੰਮ ਵਿੱਚ ਹੰਕਾਰੀ ਹੱਕ ਦੀ ਬਜਾਏ ਨਿਸ਼ਕਾਮ ਪਿਆਰ ਤੇ ਸਤਿਕਾਰ ਰੱਖੋ।',
+      meditationAnchor: 'ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਪ੍ਰਤੀ ਨਿਰਛਲ ਪ੍ਰੇਮ ਤੇ ਸ਼ੁਕਰਾਨੇ ਦੀ ਜੋਤ ਜਗਾ ਕੇ ਟਿਕੋ',
+      reflectionLens: 'ਮੇਰੀ ਸਾਧਨਾ ਕੇਵਲ ਦਿਮਾਗੀ ਜਾਣਕਾਰੀ ਤੱਕ ਹੈ ਜਾਂ ਉਸ ਵਿੱਚ ਦਿਲ ਦਾ ਸੱਚਾ ਪ੍ਰੇਮ ਵੀ ਹੈ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚ ਨਿਰਛਲ ਪ੍ਰੇਮਾ-ਭਗਤੀ ਸਦਾ ਵਸੇ।',
+    },
+    en: {
+      angFocus: 'Transcending dry intellect through wholehearted divine love and humble devotion',
+      practiceDirective: 'Meet someone today not with insistence on control, but with quiet warmth and selfless goodwill.',
+      meditationAnchor: 'Kindle silent gratitude and pure loving devotion inside the quiet center of your heart',
+      reflectionLens: 'Has my spiritual path stayed purely intellectual, or is it alive with sincere humility and love?',
+      blessingPhrase: 'May Satguru Kabir Saheb fill your heart with selfless devotion and the nectar of divine love.',
+    },
+  },
+  compassion: {
+    hi: {
+      angFocus: 'समस्त प्राणियों में एक ही साहेब का अंश देखकर दया, अहिंसा, क्षमा और परोपकार का जीवन जीना',
+      practiceDirective: 'आज बिना किसी स्वार्थ या प्रशंसा की चाह के किसी प्राणी या व्यक्ति की पीड़ा कम करने का कार्य करें।',
+      meditationAnchor: 'हर जीव के भीतर चमकती एक ही परमात्म-ज्योति को नमन करते हुए करुणामय शांति में ठहरें',
+      reflectionLens: 'आज मेरा व्यवहार किसी कमज़ोर प्राणी या व्यक्ति के प्रति कठोर तो नहीं रहा?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपका हृदय दया, क्षमा और निस्वार्थ परोपकार का पावन धाम बने।',
+    },
+    pb: {
+      angFocus: 'ਸਭ ਜੀਵਾਂ ਵਿੱਚ ਇੱਕੋ ਸਾਹੇਬ ਦੀ ਜੋਤ ਵੇਖ ਕੇ ਦਇਆ, ਅਹਿੰਸਾ, ਖਿਮਾ ਤੇ ਪਰਉਪਕਾਰ ਵਾਲਾ ਜੀਵਨ ਜੀਊਣਾ',
+      practiceDirective: 'ਅੱਜ ਬਿਨਾਂ ਕਿਸੇ ਸਵਾਰਥ ਦੇ ਕਿਸੇ ਜੀਵ ਜਾਂ ਲੋੜਵੰਦ ਦਾ ਦੁੱਖ ਘਟਾਉਣ ਵਾਲਾ ਨੇਕ ਕੰਮ ਕਰੋ।',
+      meditationAnchor: 'ਹਰ ਜੀਵ ਅੰਦਰ ਵਸਦੀ ਇੱਕੋ ਪ੍ਰਭੂ-ਜੋਤ ਨੂੰ ਸਿਜਦਾ ਕਰਦਿਆਂ ਕਰੁਣਾ ਤੇ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕੋ',
+      reflectionLens: 'ਅੱਜ ਮੇਰਾ ਵਿਹਾਰ ਕਿਸੇ ਕਮਜ਼ੋਰ ਜਾਂ ਬੇਜ਼ੁਬਾਨ ਜੀਵ ਪ੍ਰਤੀ ਕਠੋਰ ਤਾਂ ਨਹੀਂ ਰਿਹਾ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡਾ ਹਿਰਦਾ ਦਇਆ, ਖਿਮਾ ਅਤੇ ਪਰਉਪਕਾਰ ਨਾਲ ਸਦਾ ਖਿੜਿਆ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Seeing the One Light in all beings through active mercy, non-violence, and forgiveness',
+      practiceDirective: 'Perform one quiet act of compassion or forgiveness today without expecting recognition.',
+      meditationAnchor: 'Radiate gentle goodwill to every living being, recognizing the One Saheb dwelling in all',
+      reflectionLens: 'Was there any moment today where impatience made me indifferent to another being’s feelings?',
+      blessingPhrase: 'May Satguru Kabir Saheb make your life a sanctuary of compassion, forgiveness, and selfless service.',
+    },
+  },
+  'yoga-ghat': {
+    hi: {
+      angFocus: 'बाहरी तीर्थों में भटकने की बजाय अपने ही घट-मंदिर में अनहद नाद और आत्म-प्रकाश का साक्षात्कार करना',
+      practiceDirective: 'आज कुछ मिनट नेत्र मूँदकर बाहर की खोज रोकें और अपने भीतर स्थित शांति के स्रोत में ठहरें।',
+      meditationAnchor: 'त्रिकुटी व दसम द्वार की ओर सुरति को केंद्रित कर घट के भीतर अनहद मौन का अनुभव करें',
+      reflectionLens: 'क्या मैं शांति और ईश्वर को अब भी बाहरी वस्तुओं या स्थानों में ढूँढ रहा हूँ, जबकि वे मेरे भीतर हैं?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपका घट-मंदिर अनहद प्रकाश और अंतरंग आनंद से आलोकित हो।',
+    },
+    pb: {
+      angFocus: 'ਬਾਹਰਲੇ ਤੀਰਥਾਂ ਵਿੱਚ ਭਟਕਣ ਦੀ ਥਾਂ ਆਪਣੇ ਹੀ ਘਟ-ਮੰਦਿਰ ਵਿੱਚ ਅਨਹਦ ਨਾਦ ਤੇ ਆਤਮ-ਪ੍ਰਕਾਸ਼ ਦੀ ਪਛਾਣ ਕਰਨੀ',
+      practiceDirective: 'ਅੱਜ ਕੁਝ ਪਲ ਅੱਖਾਂ ਬੰਦ ਕਰਕੇ ਬਾਹਰਲੀ ਦੌੜ ਰੋਕੋ ਅਤੇ ਆਪਣੇ ਅੰਦਰਲੀ ਸ਼ਾਂਤੀ ਵਿੱਚ ਟਿਕੋ।',
+      meditationAnchor: 'ਤ੍ਰਿਕੁਟੀ ਤੇ ਦਸਵੇਂ ਦੁਆਰ ਵੱਲ ਸੁਰਤ ਟਿਕਾ ਕੇ ਅੰਦਰੂਨੀ ਅਨਹਦ ਮੌਨ ਦਾ ਅਨੁਭਵ ਕਰੋ',
+      reflectionLens: 'ਕੀ ਮੈਂ ਸ਼ਾਂਤੀ ਨੂੰ ਹਾਲੇ ਵੀ ਬਾਹਰ ਲੱਭ ਰਿਹਾ ਹਾਂ, ਜਦਕਿ ਅਸਲ ਖ਼ਜ਼ਾਨਾ ਮੇਰੇ ਆਪਣੇ ਘਟ ਵਿੱਚ ਹੈ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡਾ ਘਟ-ਮੰਦਿਰ ਅਨਹਦ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਸਦਾ ਰੌਸ਼ਨ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Turning away from external searching to discover the inner light and Anhad resonance within the Ghat',
+      practiceDirective: 'Take a few quiet minutes today to close outer eyes and seek contentment strictly within.',
+      meditationAnchor: 'Focus awareness gently at the eye center (Trikuti) and listen to the silent inner stillness',
+      reflectionLens: 'Where am I still chasing fulfillment outside myself when the true treasure already lives within?',
+      blessingPhrase: 'May Satguru Kabir Saheb illuminate your inner temple with unstruck stillness and self-realization.',
+    },
+  },
+  'mind-control': {
+    hi: {
+      angFocus: 'चंचल मन और कर्मों की प्रवृत्तियों को साक्षी भाव व विवेक से अनुशासित करना',
+      practiceDirective: 'आज क्रोध, आवेग या व्यर्थ चिंता उठते ही तुरंत प्रतिक्रिया न देकर मन के दृष्टा (साक्षी) बनें।',
+      meditationAnchor: 'मन के उठते-गिरते विचारों को शांत साक्षी भाव से देखते हुए सहज संतुलन में स्थिर हों',
+      reflectionLens: 'आज मेरा मन मेरी चेतना का सेवक रहा, या उसने क्रोध-भय बनकर मुझ पर शासन किया?',
+      blessingPhrase: 'सतगुरु कबीर साहेब की कृपा से आपका चंचल मन शांत होकर विवेकपूर्ण साक्षी भाव में स्थित हो।',
+    },
+    pb: {
+      angFocus: 'ਚੰਚਲ ਮਨ ਦੀਆਂ ਬਿਰਤੀਆਂ ਨੂੰ ਸਾਖੀ-ਭਾਵ ਤੇ ਵਿਵੇਕ ਨਾਲ ਕਾਬੂ ਵਿੱਚ ਰੱਖਣਾ',
+      practiceDirective: 'ਅੱਜ ਗੁੱਸਾ ਜਾਂ ਚਿੰਤਾ ਉੱਠਦੇ ਹੀ ਤੁਰੰਤ ਪ੍ਰਤੀਕਿਰਿਆ ਦੇਣ ਦੀ ਬਜਾਏ ਮਨ ਦੇ ਸਾਖੀ ਬਣ ਕੇ ਰੁਕੋ।',
+      meditationAnchor: 'ਮਨ ਦੇ ਵਿਚਾਰਾਂ ਨੂੰ ਸ਼ਾਂਤ ਸਾਖੀ-ਭਾਵ ਨਾਲ ਵੇਖਦੇ ਹੋਏ ਸਹਿਜ ਸੰਤੁਲਨ ਵਿੱਚ ਟਿਕੋ',
+      reflectionLens: 'ਅੱਜ ਮੇਰਾ ਮਨ ਮੇਰਾ ਸੇਵਕ ਰਿਹਾ, ਜਾਂ ਉਸਨੇ ਗੁੱਸੇ ਤੇ ਭਟਕਣਾ ਰਾਹੀਂ ਮੇਰੇ ਤੇ ਰਾਜ ਕੀਤਾ?',
+      blessingPhrase: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਤੁਹਾਡਾ ਮਨ ਸ਼ਾਂਤ ਤੇ ਵਿਵੇਕਸ਼ੀਲ ਬਣਿਆ ਰਹੇ।',
+    },
+    en: {
+      angFocus: 'Disciplining the restless mind and habitual reactions through calm witness-awareness',
+      practiceDirective: 'Notice emotional impulses before acting today, choosing witness-clarity over automatic reaction.',
+      meditationAnchor: 'Watch passing thoughts like clouds across a quiet sky, remaining centered as the calm Witness',
+      reflectionLens: 'Did I guide my mind wisely today, or did restless reactions carry me away?',
+      blessingPhrase: 'May Satguru Kabir Saheb steady your mind in calm witness-awareness and inner mastery.',
+    },
+  },
+};
+
+export function getAngSpiritualProfile(sakhi: Sakhi, language: Language): AngSpiritualProfile {
+  const { primaryTheme } = detectThemeAndSymbols(sakhi);
+  const langKey: Language = language === 'pb' ? 'pb' : language === 'en' ? 'en' : 'hi';
+  const angTitle = sakhi.categoryTitle?.[langKey] || sakhi.categoryTitle?.hi || '';
+  const profile = ANG_PROFILES[primaryTheme]?.[langKey] || ANG_PROFILES['mind-control'][langKey];
+
+  return {
+    themeKey: primaryTheme,
+    angTitle,
+    ...profile,
+  };
 }

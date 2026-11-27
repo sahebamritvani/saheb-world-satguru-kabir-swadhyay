@@ -94,8 +94,8 @@ export const POONAM_KAHRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "जीव की रक्षा के निमित्त (साटे) नारियल की सांकेतिक बलि अर्पित की जाती है, जिससे जीव को कालपुरुष के बंधन से छुड़ा लिया जाता है। बन्दीछोर कबीर साहेब जीव को भवसागर से पार उतार देते हैं और सदा सहायक बने रहते हैं।",
-      pb: "ਜੀਵ ਦੀ ਰੱਖਿਆ ਲਈ ਨਾਰੀਅਲ ਦੀ ਸੰਕੇਤਕ ਭੇਟ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਜੀਵ ਨੂੰ ਕਾਲ ਦੇ ਬੰਧਨ ਤੋਂ ਛੁਡਾ ਲਿਆ ਜਾਂਦਾ ਹੈ। ਬੰਦੀਛੋੜ ਕਬੀਰ ਸਾਹੇਬ ਜੀਵ ਨੂੰ ਭਵਜਲ ਤੋਂ ਪਾਰ ਕਰ ਦਿੰਦੇ ਹਨ ਅਤੇ ਸਦਾ ਸਹਾਈ ਹੁੰਦੇ ਹਨ।",
+      hi: "जीव की रक्षा के निमित्त (साटे) नारियल की सांकेतिक बलि अर्पित की जाती है, जिससे जीव को कालपुरुष के बंधन से छुड़ा लिया जाता है। बन्दीछोर सतगुरु कबीर साहेबव को भवसागर से पार उतार देते हैं और सदा सहायक बने रहते हैं।",
+      pb: "ਜੀਵ ਦੀ ਰੱਖਿਆ ਲਈ ਨਾਰੀਅਲ ਦੀ ਸੰਕੇਤਕ ਭੇਟ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਜੀਵ ਨੂੰ ਕਾਲ ਦੇ ਬੰਧਨ ਤੋਂ ਛੁਡਾ ਲਿਆ ਜਾਂਦਾ ਹੈ। ਬੰਦੀਛੋੜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬਵ ਨੂੰ ਭਵਜਲ ਤੋਂ ਪਾਰ ਕਰ ਦਿੰਦੇ ਹਨ ਅਤੇ ਸਦਾ ਸਹਾਈ ਹੁੰਦੇ ਹਨ।",
       en: "In lieu of a living sacrifice, a coconut is symbolically offered (broken) to secure the soul's freedom from the negative force of Kaal. The savior Kabir (Bandichhor) carries the soul across the ocean of existence, acting as an eternal refuge."
     }
   }
@@ -330,9 +330,9 @@ export const POONAM_MANGAL_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "कबीर साहेब कहते हैं कि सच्चे भाव से सत्यलोक की राह पर चलें; जिससे जन्म और मृत्यु का चक्र सदा के लिए समाप्त हो जाए और पुनः इस संसार में न आना पड़े।",
-      pb: "ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੇ ਭਾਵ ਨਾਲ ਸੱਚਖੰਡ (ਸਤਿਲੋਕ) ਦੇ ਰਾਹ 'ਤੇ ਚੱਲੋ; ਜਿਸ ਨਾਲ ਜਨਮ ਤੇ ਮਰਨ ਦਾ ਗੇੜ ਸਦਾ ਲਈ ਖ਼ਤਮ ਹੋ ਜਾਵੇ ਅਤੇ ਦੁਬਾਰਾ ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਨਾ ਆਉਣਾ ਪਵੇ।",
-      en: "Kabir Saheb declares: Propelled by true devotion, ascend to the absolute realm of Satlok. This completely dissolves the cycle of birth and death, ensuring you never return to this mortal world."
+      hi: "सतगुरु कबीर साहेब फरमाते हैं कि सच्चे भाव से सत्यलोक की राह पर चलें; जिससे जन्म और मृत्यु का चक्र सदा के लिए समाप्त हो जाए और पुनः इस संसार में न आना पड़े।",
+      pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੇ ਭਾਵ ਨਾਲ ਸੱਚਖੰਡ (ਸਤਿਲੋਕ) ਦੇ ਰਾਹ 'ਤੇ ਚੱਲੋ; ਜਿਸ ਨਾਲ ਜਨਮ ਤੇ ਮਰਨ ਦਾ ਗੇੜ ਸਦਾ ਲਈ ਖ਼ਤਮ ਹੋ ਜਾਵੇ ਅਤੇ ਦੁਬਾਰਾ ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਨਾ ਆਉਣਾ ਪਵੇ।",
+      en: "Satguru Kabir Saheb proclaims: Propelled by true devotion, ascend to the absolute realm of Satlok. This completely dissolves the cycle of birth and death, ensuring you never return to this mortal world."
     }
   }
 ];

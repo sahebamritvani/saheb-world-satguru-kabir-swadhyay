@@ -137,9 +137,9 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         bhavarth: {
-          hi: "वहाँ जाकर वह परम पुरुष के साक्षात दर्शन पाती है जिससे उसे परम आनंद की प्राप्ति होती है। कबीर साहेब समझाकर कहते हैं कि आदि गायत्री का सुमिरन कर जीव जन्म-मरण (आवागमन) मिटाकर सदा के लिए सत्यलोक में वास करता है।",
-          pb: "ਉੱਥੇ ਜਾ ਕੇ ਉਹ ਪਰਮ ਪੁਰਖ ਦੇ ਦਰਸ਼ਨ ਕਰਦੀ ਹੈ ਜਿਸ ਨਾਲ ਪਰਮ ਆਨੰਦ ਮਿਲਦਾ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਆਦਿ ਗਾਇਤ੍ਰੀ ਦਾ ਸਿਮਰਨ ਕਰਕੇ ਜੀਵ ਜਨਮ-ਮਰਨ ਮਿਟਾ ਕੇ ਸਤਿਲੋਕ ਵਿੱਚ ਵਾਸ ਕਰਦਾ ਹੈ।",
-          en: "There it beholds the Supreme Being directly, attaining supreme bliss. Kabir Saheb explains that by remembering the Primal Gayatri, the soul eliminates the cycle of transmigration and dwells forever in the True Realm of Satlok."
+          hi: "वहाँ जाकर वह परम पुरुष के साक्षात दर्शन पाती है जिससे उसे परम आनंद की प्राप्ति होती है। सतगुरु कबीर साहेब समझाकर कहते हैं कि आदि गायत्री का सुमिरन कर जीव जन्म-मरण (आवागमन) मिटाकर सदा के लिए सत्यलोक में वास करता है।",
+          pb: "ਉੱਥੇ ਜਾ ਕੇ ਉਹ ਪਰਮ ਪੁਰਖ ਦੇ ਦਰਸ਼ਨ ਕਰਦੀ ਹੈ ਜਿਸ ਨਾਲ ਪਰਮ ਆਨੰਦ ਮਿਲਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਦਿ ਗਾਇਤ੍ਰੀ ਦਾ ਸਿਮਰਨ ਕਰਕੇ ਜੀਵ ਜਨਮ-ਮਰਨ ਮਿਟਾ ਕੇ ਸਤਿਲੋਕ ਵਿੱਚ ਵਾਸ ਕਰਦਾ ਹੈ।",
+          en: "There it beholds the Supreme Being directly, attaining supreme bliss. Satguru Kabir Saheb explains that by remembering the Primal Gayatri, the soul eliminates the cycle of transmigration and dwells forever in the True Realm of Satlok."
         }
       }
     ]
@@ -185,9 +185,9 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         bhavarth: {
-          hi: "आदि गायत्री जीव को अमर स्थान पर ले जाती है, जहाँ 'सोऽहं' तत्त्व के सहारे हंस सत्यलोक में लीन हो जाता है। सच्चा गायत्री पाठ तो श्वास-उच्छ्वास का अजपा जाप है, जिससे कबीर साहेब कहते हैं कि अविनाशी अमर घर की प्राप्ति होती है।",
+          hi: "आदि गायत्री जीव को अमर स्थान पर ले जाती है, जहाँ 'सोऽहं' तत्त्व के सहारे हंस सत्यलोक में लीन हो जाता है। सच्चा गायत्री पाठ तो श्वास-उच्छ्वास का अजपा जाप है, जिससे सतगुरु कबीर साहेब फरमाते हैं कि अविनाशी अमर घर की प्राप्ति होती है।",
           pb: "ਆਦਿ ਗਾਇਤ੍ਰੀ ਜੀਵ ਨੂੰ ਅਮਰ ਸਥਾਨ 'ਤੇ ਲੈ ਜਾਂਦੀ ਹੈ, ਜਿੱਥੇ ਸੋਹੰ ਤੱਤ ਦੇ ਆਸਰੇ ਆਤਮਾ ਸਤਿਲੋਕ ਵਿੱਚ ਸਮਾ ਜਾਂਦੀ ਹੈ। ਅਸਲ ਗਾਇਤ੍ਰੀ ਅਜਪਾ ਜਾਪ ਹੈ, ਜਿਸ ਨਾਲ ਅਮਰ ਘਰ ਮਿਲਦਾ ਹੈ।",
-          en: "Primal Gayatri guides the soul to the immortal realm, where the Soham essence unites the swan with Satlok. The true Gayatri is the effortless, silent chant (Ajapa Jap) which Kabir says leads to the eternal home."
+          en: "Primal Gayatri guides the soul to the immortal realm, where the Soham essence unites the swan with Satlok. The true Gayatri is the effortless, silent chant (Ajapa Jap) which Satguru Kabir Saheb proclaims leads to the eternal home."
         }
       },
       {
@@ -208,9 +208,9 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         bhavarth: {
-          hi: "वह परम सत्य ही अमर है और वही विचार-शून्य (सहज समाधि) अवस्था है। उस विशुद्ध सत्य में न कोई पाप है और न कोई पुण्य, वह समस्त द्वंद्वों से परे है। कबीर साहेब धर्मदास जी से कहते हैं कि हृदय में इस सत्य गायत्री का प्रकाश करो।",
-          pb: "ਉਹ ਪਰਮ ਸੱਚ ਹੀ ਅਮਰ ਹੈ ਅਤੇ ਉਹੀ ਸੁੰਨ ਅਵਸਥਾ ਹੈ। ਉਸ ਸੱਚ ਵਿੱਚ ਨਾ ਕੋਈ ਪਾਪ ਹੈ ਅਤੇ ਨਾ ਹੀ ਪੁੰਨ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਹਿਰਦੇ ਵਿੱਚ ਇਸ ਗਾਇਤ੍ਰੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਕਰੋ।",
-          en: "The supreme Truth alone is immortal and void of mental agitation. In that absolute Truth, there is neither sin nor merit—it is beyond all dualities. Kabir says to Dharmadas, illuminate this Gayatri within your heart."
+          hi: "वह परम सत्य ही अमर है और वही विचार-शून्य (सहज समाधि) अवस्था है। उस विशुद्ध सत्य में न कोई पाप है और न कोई पुण्य, वह समस्त द्वंद्वों से परे है। सतगुरु कबीर साहेब धर्मदास जी से कहते हैं कि हृदय में इस सत्य गायत्री का प्रकाश करो।",
+          pb: "ਉਹ ਪਰਮ ਸੱਚ ਹੀ ਅਮਰ ਹੈ ਅਤੇ ਉਹੀ ਸੁੰਨ ਅਵਸਥਾ ਹੈ। ਉਸ ਸੱਚ ਵਿੱਚ ਨਾ ਕੋਈ ਪਾਪ ਹੈ ਅਤੇ ਨਾ ਹੀ ਪੁੰਨ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹਿਰਦੇ ਵਿੱਚ ਇਸ ਗਾਇਤ੍ਰੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਕਰੋ।",
+          en: "The supreme Truth alone is immortal and void of mental agitation. In that absolute Truth, there is neither sin nor merit—it is beyond all dualities. Satguru Kabir Saheb proclaims to Dharmadas, illuminate this Gayatri within your heart."
         }
       }
     ]
@@ -279,9 +279,9 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         bhavarth: {
-          hi: "कबीर साहेब ने उस अचिन्त पुरुष की वास्तविक गायत्री का गुप्त मार्ग प्रकट कर दिया है। जो साधक रात-दिन इसका सुमिरन करता है, उसके जीवन के समस्त संशय, भ्रम और कर्म-बंधन सदा के लिए नष्ट हो जाते हैं।",
-          pb: "ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਉਸ ਅਚਿੰਤ ਪੁਰਖ ਦੀ ਗਾਇਤ੍ਰੀ ਦਾ ਭੇਦ ਦੱਸਿਆ ਹੈ। ਜੋ ਦਿਨ-ਰਾਤ ਇਸਦਾ ਸਿਮਰਨ ਕਰਦਾ ਹੈ, ਉਸਦੇ ਸਾਰੇ ਭਰਮ ਤੇ ਕਰਮ ਨਸ਼ਟ ਹੋ ਜਾਂਦੇ ਹਨ।",
-          en: "Kabir Saheb has revealed the secret Gayatri of the Unfathomable Lord. Whosoever remembers it day and night, all their doubts, illusions, and karmic bondages are entirely erased."
+          hi: "सतगुरु कबीर साहेब ने उस अचिन्त पुरुष की वास्तविक गायत्री का गुप्त मार्ग प्रकट कर दिया है। जो साधक रात-दिन इसका सुमिरन करता है, उसके जीवन के समस्त संशय, भ्रम और कर्म-बंधन सदा के लिए नष्ट हो जाते हैं।",
+          pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਉਸ ਅਚਿੰਤ ਪੁਰਖ ਦੀ ਗਾਇਤ੍ਰੀ ਦਾ ਭੇਦ ਦੱਸਿਆ ਹੈ। ਜੋ ਦਿਨ-ਰਾਤ ਇਸਦਾ ਸਿਮਰਨ ਕਰਦਾ ਹੈ, ਉਸਦੇ ਸਾਰੇ ਭਰਮ ਤੇ ਕਰਮ ਨਸ਼ਟ ਹੋ ਜਾਂਦੇ ਹਨ।",
+          en: "Satguru Kabir Saheb has revealed the secret Gayatri of the Unfathomable Lord. Whosoever remembers it day and night, all their doubts, illusions, and karmic bondages are entirely erased."
         }
       }
     ]
@@ -399,9 +399,9 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         bhavarth: {
-          hi: "साधु और सिद्ध पुरुष भी इस चेतन दशा में लय होकर शरीर रूपी मंदिर में परमात्मा की सच्ची पूजा करते हैं। कबीर साहेब कहते हैं कि जो भी जीव इस सत्य शब्द को हृदय में धारण करता है, वह काल-चक्र से मुक्त होकर पवित्र हंस शरीर पा लेता है।",
-          pb: "ਸਿੱਧ ਪੁਰਖ ਵੀ ਇਸ ਅਵਸਥਾ ਵਿੱਚ ਲੀਨ ਹੋ ਕੇ ਪ੍ਰਭੂ ਦੀ ਸੱਚੀ ਪੂਜਾ ਕਰਦੇ ਹਨ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੋ ਇਸ ਸ਼ਬਦ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹ ਹੰਸ ਰੂਪ ਹੋ ਜਾਂਦਾ ਹੈ।",
-          en: "Sages and perfect ones merge in this conscious state, performing true worship within the temple of the body. Kabir says, whosoever holds this holy Word in their heart gets liberated and obtains the pure body of a celestial swan."
+          hi: "साधु और सिद्ध पुरुष भी इस चेतन दशा में लय होकर शरीर रूपी मंदिर में परमात्मा की सच्ची पूजा करते हैं। सतगुरु कबीर साहेब फरमाते हैं कि जो भी जीव इस सत्य शब्द को हृदय में धारण करता है, वह काल-चक्र से मुक्त होकर पवित्र हंस शरीर पा लेता है।",
+          pb: "ਸਿੱਧ ਪੁਰਖ ਵੀ ਇਸ ਅਵਸਥਾ ਵਿੱਚ ਲੀਨ ਹੋ ਕੇ ਪ੍ਰਭੂ ਦੀ ਸੱਚੀ ਪੂਜਾ ਕਰਦੇ ਹਨ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਇਸ ਸ਼ਬਦ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹ ਹੰਸ ਰੂਪ ਹੋ ਜਾਂਦਾ ਹੈ।",
+          en: "Sages and perfect ones merge in this conscious state, performing true worship within the temple of the body. Satguru Kabir Saheb proclaims, whosoever holds this holy Word in their heart gets liberated and obtains the pure body of a celestial swan."
         }
       }
     ]
@@ -447,9 +447,9 @@ export const GAYATRI_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         bhavarth: {
-          hi: "कबीर साहेब कहते हैं कि जो भी साधक मुझसे इस गुप्त नाम का मर्म समझता है, उसे हृदय के भीतर ही अजपा-जाप का रहस्य सूझने लगता है। जो अपना तन, मन और धन सतगुरु के चरणों में निछावर कर देता है, वह सारनाम को ग्रहण कर भवसागर से पार उतर जाता है।",
-          pb: "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੋ ਮੇਰੇ ਤੋਂ ਇਸ ਗੁਪਤ ਨਾਮ ਦਾ ਭੇਦ ਸਮਝਦਾ ਹੈ, ਉਸਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਅਜਪਾ ਜਾਪ ਦਾ ਭੇਦ ਲੱਭਦਾ ਹੈ। ਜੋ ਤਨ-ਮਨ-ਧਨ ਅਰਪਣ ਕਰਕੇ ਸਾਰਨਾਮ ਲੈਂਦਾ ਹੈ, ਉਹ ਪਾਰ ਲੰਘ ਜਾਂਦਾ ਹੈ।",
-          en: "Kabir says whosoever understands the secret Name from Me perceives the effortless inner chant (Ajapa) within their heart. By surrendering body, mind, and wealth to the Master and holding the Essential Name, they cross the worldly ocean safely."
+          hi: "सतगुरु कबीर साहेब फरमाते हैं कि जो भी साधक मुझसे इस गुप्त नाम का मर्म समझता है, उसे हृदय के भीतर ही अजपा-जाप का रहस्य सूझने लगता है। जो अपना तन, मन और धन सतगुरु के चरणों में निछावर कर देता है, वह सारनाम को ग्रहण कर भवसागर से पार उतर जाता है।",
+          pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਮੇਰੇ ਤੋਂ ਇਸ ਗੁਪਤ ਨਾਮ ਦਾ ਭੇਦ ਸਮਝਦਾ ਹੈ, ਉਸਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਅਜਪਾ ਜਾਪ ਦਾ ਭੇਦ ਲੱਭਦਾ ਹੈ। ਜੋ ਤਨ-ਮਨ-ਧਨ ਅਰਪਣ ਕਰਕੇ ਸਾਰਨਾਮ ਲੈਂਦਾ ਹੈ, ਉਹ ਪਾਰ ਲੰਘ ਜਾਂਦਾ ਹੈ।",
+          en: "Satguru Kabir Saheb proclaims whosoever understands the secret Name from Me perceives the effortless inner chant (Ajapa) within their heart. By surrendering body, mind, and wealth to the Master and holding the Essential Name, they cross the worldly ocean safely."
         }
       },
       {

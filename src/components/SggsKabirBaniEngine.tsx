@@ -273,10 +273,10 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
             </h1>
             <p className="text-xs sm:text-sm text-amber-100/90 font-serif max-w-3xl mt-1.5 leading-relaxed">
               {language === 'pb'
-                ? 'ਪੰਚਮ ਪਾਤਸ਼ਾਹ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਵੱਲੋਂ ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸੁਭਾਇਮਾਨ ੨੨੭ ਸ਼ਬਦ (੧੭ ਰਾਗ), ੨੪੩ ਸਲੋਕ, ਬਾਵਨ ਅੱਖਰੀ ਤੇ ਥਿਤੀ ਬਾਣੀ ਦਾ ਸਰਬੋਤਮ ਸੰਕਲਨ।'
+                ? 'ਪੰਚਮ ਪਾਤਸ਼ਾਹ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਵੱਲੋਂ ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ ਵਿੱਚ ਸੁਭਾਇਮਾਨ ੨੨੭ ਸ਼ਬਦ (੧੭ ਰਾਗ), ੨੪੩ ਸਲੋਕ, ਬਾਵਨ ਅੱਖਰੀ ਤੇ ਥਿਤੀ ਬਾਣੀ ਦਾ ਸਰਬੋਤਮ ਸੰਕਲਨ।'
                 : language === 'en'
                 ? 'Authentic collection of 227 Shabads (17 Raags), 243 Saloks, Bavan Akhree & Thiti enshrined by Guru Arjan Dev Ji in Sri Adi Granth Sahib Ji.'
-                : 'पंचम पातशाह श्री गुरु अर्जुन देव जी द्वारा श्री आदि ग्रंथ साहिब में प्रतिष्ठित २२७ शब्द (१७ राग), २४३ सलोक, बावन अखरी एवं पावन पदों का प्रामाणिक दिव्य ज्ञान-इंजन।'}
+                : 'पंचम पातशाह श्री गुरु अर्जुन देव जी द्वारा श्री आदि ग्रंथ साहेब में प्रतिष्ठित २२७ शब्द (१७ राग), २४३ सलोक, बावन अखरी एवं पावन पदों का प्रामाणिक दिव्य ज्ञान-इंजन।'}
             </p>
           </div>
 
@@ -514,7 +514,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
               <div>
                 <h3 className="font-serif font-black text-lg sm:text-2xl" style={{ color: theme.sacredMaroon }}>
                   {language === 'pb'
-                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ'
+                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ'
                     : language === 'en'
                     ? 'Sacred Bani of Satguru Kabir Saheb in Sri Guru Granth Sahib Ji'
                     : 'श्री गुरु ग्रंथ साहिब जी में सतगुरु कबीर साहेब की पावन वाणी'}
@@ -565,7 +565,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   </span>
                   <h4 className="font-serif font-black text-base sm:text-lg text-amber-800 dark:text-amber-300">
                     {language === 'pb' 
-                      ? 'ਸਲੋਕ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ (ਜੀਵਨ ਪਰਿਚੈ)' 
+                      ? 'ਸਲੋਕ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ (ਜੀਵਨ ਪਰਿਚੈ)' 
                       : language === 'en'
                       ? 'Salok Satguru Kabir Saheb (Sacred Life Introduction)'
                       : 'सलोक सतगुरु कबीर साहेब (जीवन परिचय)'}
@@ -575,20 +575,20 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                 <div className="space-y-4 text-justify leading-relaxed font-serif">
                   {language === 'pb' ? (
                     <>
-                      <p>ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਜੇਠ ਸੁਦੀ ੧੫ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਦੇ ਪਾਵਨ ਲਹਰਤਾਰਾ ਸਰੋਵਰ ਵਿਖੇ ਕਮਲ ਦੇ ਫੁੱਲ ਉੱਤੇ ਹੋਇਆ। ਇਥੋਂ ਇਸ ਨਵ-ਜੰਮੇ ਬਾਲਕ ਨੂੰ ਨੀਰੂ ਤੇ ਨੀਮਾ ਜੀ ਨੇ ਚੁੱਕ ਕੇ ਆਪਣੇ ਘਰ ਲੈ ਆਂਦਾ ਅਤੇ ਆਪਣੇ ਪੁੱਤਰ ਸਮਾਨ ਹੀ ਦੇਖਭਾਲ ਕਰ ਕੇ ਪਾਲਿਆ।</p>
-                      <p>ਉਪਰੰਤ ਸਮੇਂ ਅਨੁਸਾਰ ਆਪ ਜੀ ਦਾ ਨਾਮ ਕਬੀਰ ਰਖਿਆ ਗਿਆ। ਪਰ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਸੁਭਾਵਕ ਹੀ ਝੁਕਾਉ ਸਤਿ, ਨਾਮ-ਸਿਮਰਨ ਅਤੇ ਆਤਮ-ਗਿਆਨ ਵੱਲ ਸੀ। ਜਦ ਜਵਾਨ ਹੋਏ ਤਾਂ ਇਹਨਾਂ ਦਾ ਵਿਆਹ ਮਾਤਾ ਲੋਈ ਜੀ ਨਾਲ ਹੋਇਆ, ਜਿਨ੍ਹਾਂ ਤੋਂ ਪੁੱਤਰ ਕਮਾਲ ਅਤੇ ਪੁੱਤਰੀ ਕਮਾਲੀ ਹੋਏ।</p>
-                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਬਨਾਰਸ ਵਿੱਚ ਸੁਆਮੀ ਰਾਮਾਨੰਦ ਜੀ ਤੋਂ ਗੁਰ-ਦੀਖਿਆ ਤੇ ਨਾਮ ਉਪਦੇਸ਼ ਲਿਆ। ਉਸ ਸਮੇਂ ਕਾਸ਼ੀ ਵਿਦਵਾਨਾਂ ਦਾ ਕੇਂਦਰ ਹੋਣ ਕਰਕੇ ਆਪ ਜੀ ਨੇ ਸਭ ਮਤ-ਮਤਾਂਤਰਾਂ ਦੇ ਪਾਖੰਡ ਤੇ ਕਰਮਕਾਂਡ ਦਾ ਖੰਡਨ ਕਰਕੇ ਸੱਚਾ ਗਿਆਨ ਮਾਰਗ ਦਰਸਾਇਆ।</p>
-                      <p>ਬਾਦਸ਼ਾਹ ਸਿਕੰਦਰ ਲੋਧੀ ਜਦ ਸੰਮਤ ੧੫੪੭ ਵਿਚ ਬਨਾਰਸ ਆਇਆ ਤਾਂ ਈਰਖਾਵਾਦੀ ਲੋਕਾਂ ਨੇ ਕਬੀਰ ਜੀ ਨੂੰ ਬਹੁਤ ਕਸ਼ਟ ਪਹੁੰਚਾਇਆ, ਜਿਸ ਦਾ ਵਰਣਨ ਆਪ ਜੀ ਨੇ ਆਪਣੇ ਸ਼ਬਦ “ਭੁਜਾ ਬਾਂਧਿ ਭਿਲਾ ਕਰਿ ਡਾਰਿਓ॥” (ਰਾਗ ਗੋਂਡ) ਦੁਆਰਾ ਕੀਤਾ ਹੈ।</p>
-                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਆਪਣੇ ਅੰਤਲੇ ਦਿਨ ਮਗਹਰ (ਜ਼ਿਲ੍ਹਾ ਸੰਤ ਕਬੀਰ ਨਗਰ) ਜਾ ਕੇ ਬਤੀਤ ਕੀਤੇ ਅਤੇ ਸੰਮਤ ੧੫੭੫ ਵਿਚ ਅੰਤਿਰਧਿਆਨ ਹੋਏ, ਜਿੱਥੇ ਕੇਵਲ ਸੁਗੰਧਿਤ ਪੁਸ਼ਪ ਪ੍ਰਾਪਤ ਹੋਏ।</p>
-                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦਾ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ ‘ਬੀਜਕ’ ਦੇ ਰੂਪ ਵਿਚ ਧਰਮਦਾਸ ਜੀ ਨੇ ਸੰਮਤ ੧੫੨੧ ਵਿਚ ਸੰਕਲਿਤ ਕੀਤਾ।</p>
-                      <p>ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਹੁਤ ਸਾਰੀ ਬਾਣੀ ਸ਼ਬਦਾਂ ਤੇ ਸਲੋਕਾਂ ਵਿਚ ਉਚਾਰਨ ਕੀਤੀ ਹੋਈ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿਚ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀ ਕੁੱਲ ਗਿਣਤੀ ੫੩੪ ਤੋਂ ਵੱਧ ਹੈ। ਆਪ ਜੀ ਦੇ ੨੪੩ ਪਾਵਨ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਅੰਗ ੧੩੬੪ ਤੋਂ ਆਰੰਭ ਹੁੰਦੇ ਹਨ।</p>
+                      <p>ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਸੰਤਾਂ ਤੇ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਜੇਠ ਸੁਦੀ ੧੫ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਦੇ ਪਾਵਨ ਲਹਰਤਾਰਾ ਸਰੋਵਰ ਵਿਖੇ ਕਮਲ ਦੇ ਫੁੱਲ ਉੱਤੇ ਹੋਇਆ। ਇਥੋਂ ਇਸ ਨਵ-ਜੰਮੇ ਬਾਲਕ ਨੂੰ ਨੀਰੂ ਤੇ ਨੀਮਾ ਜੀ ਨੇ ਚੁੱਕ ਕੇ ਆਪਣੇ ਘਰ ਲੈ ਆਂਦਾ ਅਤੇ ਆਪਣੇ ਪੁੱਤਰ ਸਮਾਨ ਹੀ ਦੇਖਭਾਲ ਕਰ ਕੇ ਪਾਲਿਆ।</p>
+                      <p>ਉਪਰੰਤ ਸਮੇਂ ਅਨੁਸਾਰ ਆਪ ਜੀ ਦਾ ਨਾਮ ਕਬੀਰ ਰਖਿਆ ਗਿਆ। ਪਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਸੁਭਾਵਕ ਹੀ ਝੁਕਾਉ ਸਤਿ, ਨਾਮ-ਸਿਮਰਨ ਅਤੇ ਆਤਮ-ਗਿਆਨ ਵੱਲ ਸੀ। ਜਦ ਜਵਾਨ ਹੋਏ ਤਾਂ ਇਹਨਾਂ ਦਾ ਵਿਆਹ ਮਾਤਾ ਲੋਈ ਜੀ ਨਾਲ ਹੋਇਆ, ਜਿਨ੍ਹਾਂ ਤੋਂ ਪੁੱਤਰ ਕਮਾਲ ਅਤੇ ਪੁੱਤਰੀ ਕਮਾਲੀ ਹੋਏ।</p>
+                      <p>ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਬਨਾਰਸ ਵਿੱਚ ਸੁਆਮੀ ਰਾਮਾਨੰਦ ਜੀ ਤੋਂ ਗੁਰ-ਦੀਖਿਆ ਤੇ ਨਾਮ ਉਪਦੇਸ਼ ਲਿਆ। ਉਸ ਸਮੇਂ ਕਾਸ਼ੀ ਵਿਦਵਾਨਾਂ ਦਾ ਕੇਂਦਰ ਹੋਣ ਕਰਕੇ ਆਪ ਜੀ ਨੇ ਸਭ ਮਤ-ਮਤਾਂਤਰਾਂ ਦੇ ਪਾਖੰਡ ਤੇ ਕਰਮਕਾਂਡ ਦਾ ਖੰਡਨ ਕਰਕੇ ਸੱਚਾ ਗਿਆਨ ਮਾਰਗ ਦਰਸਾਇਆ।</p>
+                      <p>ਬਾਦਸ਼ਾਹ ਸਿਕੰਦਰ ਲੋਧੀ ਜਦ ਸੰਮਤ ੧੫੪੭ ਵਿਚ ਬਨਾਰਸ ਆਇਆ ਤਾਂ ਈਰਖਾਵਾਦੀ ਲੋਕਾਂ ਨੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਬਹੁਤ ਕਸ਼ਟ ਪਹੁੰਚਾਇਆ, ਜਿਸ ਦਾ ਵਰਣਨ ਆਪ ਜੀ ਨੇ ਆਪਣੇ ਸ਼ਬਦ “ਭੁਜਾ ਬਾਂਧਿ ਭਿਲਾ ਕਰਿ ਡਾਰਿਓ॥” (ਰਾਗ ਗੋਂਡ) ਦੁਆਰਾ ਕੀਤਾ ਹੈ।</p>
+                      <p>ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੇ ਅੰਤਲੇ ਦਿਨ ਮਗਹਰ (ਜ਼ਿਲ੍ਹਾ ਸੰਤ ਕਬੀਰ ਨਗਰ) ਜਾ ਕੇ ਬਤੀਤ ਕੀਤੇ ਅਤੇ ਸੰਮਤ ੧੫੭੫ ਵਿਚ ਅੰਤਿਰਧਿਆਨ ਹੋਏ, ਜਿੱਥੇ ਕੇਵਲ ਸੁਗੰਧਿਤ ਪੁਸ਼ਪ ਪ੍ਰਾਪਤ ਹੋਏ।</p>
+                      <p>ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦਾ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ ‘ਬੀਜਕ’ ਦੇ ਰੂਪ ਵਿਚ ਧਰਮਦਾਸ ਜੀ ਨੇ ਸੰਮਤ ੧੫੨੧ ਵਿਚ ਸੰਕਲਿਤ ਕੀਤਾ।</p>
+                      <p>ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਹੁਤ ਸਾਰੀ ਬਾਣੀ ਸ਼ਬਦਾਂ ਤੇ ਸਲੋਕਾਂ ਵਿਚ ਉਚਾਰਨ ਕੀਤੀ ਹੋਈ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿਚ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀ ਕੁੱਲ ਗਿਣਤੀ ੫੩੪ ਤੋਂ ਵੱਧ ਹੈ। ਆਪ ਜੀ ਦੇ ੨੪੩ ਪਾਵਨ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਅੰਗ ੧੩੬੪ ਤੋਂ ਆਰੰਭ ਹੁੰਦੇ ਹਨ।</p>
                     </>
                   ) : language === 'en' ? (
                     <>
                       <p>Satguru Kabir Saheb holds the highest place among the foremost spiritual luminaries and saints of India. His divine manifestation took place on Jyeshtha Shukla Purnima, Samvat 1455 (1398 CE), upon a blooming lotus flower at the sacred Lahartara pond in Kashi (Varanasi), where Neeru and Neema discovered and raised him with loving care.</p>
                       <p>Named Kabir (the Great One), his natural inclination from childhood was toward Truth, Naam-Sumiran, and spiritual realization. He married Mata Loi, and their household was blessed with Kamal and Kamali.</p>
                       <p>In Kashi, Satguru Kabir Saheb took initiation from Swami Ramanand Ji and revealed the inner essence of Satyanaam. Surrounded by scholars in Banaras, he fearlessly dismantled hypocrisy, caste discrimination, and empty ritualism, guiding humanity toward Sahaj Samadhi and true divine realization.</p>
-                      <p>When Sultan Sikandar Lodi visited Banaras in Samvat 1547, envious detractors subjected Kabir Saheb to severe trials, which he immortalized in Raag Gond (“Bhuja Baandh Bhila Kar Daario”).</p>
+                      <p>When Sultan Sikandar Lodi visited Banaras in Samvat 1547, envious detractors subjected Satguru Kabir Saheb to severe trials, which he immortalized in Raag Gond (“Bhuja Baandh Bhila Kar Daario”).</p>
                       <p>Satguru Kabir Saheb spent his final days in Magahar (District Sant Kabir Nagar) in Samvat 1575, dissolving the superstition surrounding Magahar and leaving behind only fragrant flowers.</p>
                       <p>His authentic teachings were compiled in the ‘Kabir Beejak’ by Dharamdas Ji, preserving his timeless wisdom for seekers across ages.</p>
                       <p>Satguru Kabir Saheb’s sacred hymns and couplets are enshrined with supreme reverence in Sri Guru Granth Sahib Ji—numbering over 534 verses in total—with his 243 sacred Saloks commencing from Ang 1364.</p>
@@ -640,15 +640,15 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
 
                   <div className="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/20 italic font-serif leading-relaxed" style={{ color: theme.textPrimary }}>
                     {language === 'pb'
-                      ? '“ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਨੇ ਜਦੋਂ ਵੱਖ-ਵੱਖ ਧਰਮੀ ਪੁਰਸ਼ਾਂ, ਸੰਤਾਂ ਅਤੇ ਭਗਤਾਂ ਦੀ ਬਾਣੀ ਨੂੰ ਇਸ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਦਾ ਵਿਚਾਰ ਕੀਤਾ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਦੇਖਿਆ ਕਿ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਪਰਮਾਤਮਾ ਦੇ ਨਿਰਗੁਣ ਰੂਪ, ਜ਼ਾਤ-ਪਾਤ ਦੇ ਖੰਡਨ, ਬਾਹਰੀ ਅਡੰਬਰਾਂ ਦੇ ਕਰੜੇ ਵਿਰੋਧ ਅਤੇ ਕੇਵਲ ਸੱਚੇ ਧਰਮ (ਸਤਯਨਾਮ ਸਿਮਰਨ) \'ਤੇ ਅਧਾਰਿਤ ਹੈ। ਇਹ ਵਿਚਾਰਧਾਰਾ ਗੁਰਮਤਿ (ਸਿੱਖ ਦਰਸ਼ਨ) ਦੇ ਬਿਲਕੁਲ ਅਨੁਕੂਲ ਸੀ।”'
+                      ? '“ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਨੇ ਜਦੋਂ ਵੱਖ-ਵੱਖ ਧਰਮੀ ਪੁਰਸ਼ਾਂ, ਸੰਤਾਂ ਅਤੇ ਭਗਤਾਂ ਦੀ ਬਾਣੀ ਨੂੰ ਇਸ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਦਾ ਵਿਚਾਰ ਕੀਤਾ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਦੇਖਿਆ ਕਿ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਪਰਮਾਤਮਾ ਦੇ ਨਿਰਗੁਣ ਰੂਪ, ਜ਼ਾਤ-ਪਾਤ ਦੇ ਖੰਡਨ, ਬਾਹਰੀ ਅਡੰਬਰਾਂ ਦੇ ਕਰੜੇ ਵਿਰੋਧ ਅਤੇ ਕੇਵਲ ਸੱਚੇ ਧਰਮ (ਸਤਯਨਾਮ ਸਿਮਰਨ) \'ਤੇ ਅਧਾਰਿਤ ਹੈ। ਇਹ ਵਿਚਾਰਧਾਰਾ ਗੁਰਮਤਿ (ਸਿੱਖ ਦਰਸ਼ਨ) ਦੇ ਬਿਲਕੁਲ ਅਨੁਕੂਲ ਸੀ।”'
                       : language === 'en'
                       ? '“When Guru Arjan Dev Ji included the sacred hymns of illuminated Bhagats and saints, he recognized that Satguru Kabir Saheb’s Bani is wholly rooted in the Formless Divine (Nirguna), the dismantling of caste and hollow ritualism, and pure devotion through Satyanaam remembrance—perfectly aligned with Gurmat philosophy.”'
-                      : '“गुरु अर्जुन देव जी ने जब धर्मी पुरुषों, संतों और भगतों की वाणी को इसमें शामिल करने का विचार किया, तब उन्होंने देखा कि सतगुरु कबीर साहेब जी की वाणी परमात्मा के निरगुण रूप, जात-पात के खंडन, बाह्य आडंबरों के विरोध और केवल सच्चा धरम (सत्य नामस्मरण) पर आधारित है। यह विचारधारा गुरु मत (सिख दर्शन) के बिल्कुल अनुरूप थी।”'}
+                      : '“गुरु अर्जुन देव जी ने जब धर्मी पुरुषों, संतों और भगतों की वाणी को इसमें शामिल करने का विचार किया, तब उन्होंने देखा कि सतगुरु कबीर साहेब की वाणी परमात्मा के निरगुण रूप, जात-पात के खंडन, बाह्य आडंबरों के विरोध और केवल सच्चा धरम (सत्य नामस्मरण) पर आधारित है। यह विचारधारा गुरु मत (सिख दर्शन) के बिल्कुल अनुरूप थी।”'}
                   </div>
 
                   <p>
                     {language === 'pb'
-                      ? 'ਇਸੇ ਕਰਕੇ, ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਸਾਰੇ ੧੫ ਭਗਤਾਂ ਵਿੱਚੋਂ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਨੂੰ ਸਭ ਤੋਂ ਉੱਚਾ, ਆਦਰਯੋਗ ਅਤੇ ਵਿਸ਼ਿਸ਼ਟ ਸਥਾਨ ਦਿੱਤਾ ਗਿਆ। ਇਹ ਸੰਗਮ ਦਰਸਾਉਂਦਾ ਹੈ ਕਿ ਸੱਚੀ ਅਧਿਆਤਮਿਕਤਾ ਕਿਸੇ ਖ਼ਾਸ ਵਰਗ ਜਾਂ ਫ਼ਿਰਕੇ ਤੱਕ ਸੀਮਿਤ ਨਹੀਂ ਹੈ, ਬਲਕਿ ਇਹ ਸਰਬ-ਸਾਂਝੀ ਹੈ।'
+                      ? 'ਇਸੇ ਕਰਕੇ, ਸ੍ਰੀ ਆਦਿ ਗ੍ਰੰਥ ਸਾਹੇਬ ਜੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਸਾਰੇ ੧੫ ਭਗਤਾਂ ਵਿੱਚੋਂ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਨੂੰ ਸਭ ਤੋਂ ਉੱਚਾ, ਆਦਰਯੋਗ ਅਤੇ ਵਿਸ਼ਿਸ਼ਟ ਸਥਾਨ ਦਿੱਤਾ ਗਿਆ। ਇਹ ਸੰਗਮ ਦਰਸਾਉਂਦਾ ਹੈ ਕਿ ਸੱਚੀ ਅਧਿਆਤਮਿਕਤਾ ਕਿਸੇ ਖ਼ਾਸ ਵਰਗ ਜਾਂ ਫ਼ਿਰਕੇ ਤੱਕ ਸੀਮਿਤ ਨਹੀਂ ਹੈ, ਬਲਕਿ ਇਹ ਸਰਬ-ਸਾਂਝੀ ਹੈ।'
                       : language === 'en'
                       ? 'For this reason, among all 15 Bhagats enshrined in Sri Guru Granth Sahib Ji, Satguru Kabir Saheb’s Bani occupies the most expansive and revered place—testifying that Universal Truth transcends geography, creed, and social boundaries.'
                       : 'इसीलिए, सभी १५ भक्तों में से सतगुरु कबीर साहेब की वाणी को गुरु ग्रंथ साहिब जी में सबसे ऊंचा और विशिष्ट स्थान दिया गया। यह दिव्य समागम इस बात का प्रत्यक्ष प्रमाण है कि सत्य केवल एक है और वह किसी भौगोलिक सीमा या जाति के बंधन में नहीं बंधा है।'}
@@ -689,7 +689,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
 
                 <p>
                   {language === 'pb'
-                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਸਭ ਤੋਂ ਵੱਧ ਸੰਖਿਆ ਵਿੱਚ ਦਰਜ ਹੈ। ਸਮੂਹ ਭਗਤਾਂ ਵਿੱਚੋਂ ਉਨ੍ਹਾਂ ਦਾ ਯੋਗਦਾਨ ਸਭ ਤੋਂ ਵੱਡਾ ਅਤੇ ਵਿਸ਼ਾਲ ਹੈ:'
+                    ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਸਭ ਤੋਂ ਵੱਧ ਸੰਖਿਆ ਵਿੱਚ ਦਰਜ ਹੈ। ਸਮੂਹ ਭਗਤਾਂ ਵਿੱਚੋਂ ਉਨ੍ਹਾਂ ਦਾ ਯੋਗਦਾਨ ਸਭ ਤੋਂ ਵੱਡਾ ਅਤੇ ਵਿਸ਼ਾਲ ਹੈ:'
                     : language === 'en'
                     ? 'Satguru Kabir Saheb’s sacred compositions form the largest single Bhagat contribution in Sri Guru Granth Sahib Ji:'
                     : 'श्री गुरु ग्रंथ साहिब जी में सतगुरु कबीर साहेब की वाणी सबसे ज्यादा संख्या में दर्ज है। उनका योगदान किसी भी अन्य भक्त से कहीं अधिक है:'}
@@ -740,7 +740,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   </h5>
                   <p className="leading-relaxed text-xs sm:text-sm">
                     {language === 'pb'
-                      ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਇੱਕ ਸਭ ਤੋਂ ਵੱਡੀ ਵਿਸ਼ੇਸ਼ਤਾ ਇਹ ਹੈ ਕਿ ਇਸ ਵਿੱਚ \'ਬਾਵਨ ਅੱਖਰੀ\' (Bavan Akhree - ਅੰਗ ੩੪੦) ਅਤੇ \'ਥਿਤੀ\' (Thiti - ਅੰਗ ੩੪੩) ਵਰਗੀਆਂ ਵਿਸ਼ਾਲ ਰਚਨਾਵਾਂ ਵੀ ਦਰਜ ਹਨ। ਇਹ ਰਚਨਾਵਾਂ ਆਤਮ-ਗਿਆਨ, ਅੱਖਰ-ਭੇਦ, ਅਤੇ ਬ੍ਰਹਮ ਵਿਚਾਰ ਨੂੰ ਬਹੁਤ ਹੀ ਸਰਲ ਪਰ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਉਂਦੀਆਂ ਹਨ।'
+                      ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦੀ ਇੱਕ ਸਭ ਤੋਂ ਵੱਡੀ ਵਿਸ਼ੇਸ਼ਤਾ ਇਹ ਹੈ ਕਿ ਇਸ ਵਿੱਚ \'ਬਾਵਨ ਅੱਖਰੀ\' (Bavan Akhree - ਅੰਗ ੩੪੦) ਅਤੇ \'ਥਿਤੀ\' (Thiti - ਅੰਗ ੩੪੩) ਵਰਗੀਆਂ ਵਿਸ਼ਾਲ ਰਚਨਾਵਾਂ ਵੀ ਦਰਜ ਹਨ। ਇਹ ਰਚਨਾਵਾਂ ਆਤਮ-ਗਿਆਨ, ਅੱਖਰ-ਭੇਦ, ਅਤੇ ਬ੍ਰਹਮ ਵਿਚਾਰ ਨੂੰ ਬਹੁਤ ਹੀ ਸਰਲ ਪਰ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਉਂਦੀਆਂ ਹਨ।'
                       : language === 'en'
                       ? 'A unique hallmark of Satguru Kabir Saheb’s Bani in Guru Granth Sahib Ji is the inclusion of extended philosophical works such as ‘Bavan Akhree’ (52 Letters Acrostic, Ang 340) and ‘Thiti’ (Lunar Days, Ang 343), illuminating Self-knowledge and impermanence.'
                       : 'सतगुरु कबीर साहेब की वाणी की एक सबसे बड़ी विशेषता यह है कि इसमें \'बावन अखरी\' (Bavan Akhree) और \'थिती\' (Thiti) जैसी बड़ी रचनाएं भी दर्ज हैं, जो आत्म-ज्ञान, संसार की अनित्यता और अक्षर-भेद को अत्यंत गहराई से समझाती हैं।'}
@@ -767,7 +767,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
 
                 <p className="leading-relaxed">
                   {language === 'pb'
-                    ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਨੂੰ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਵੱਖ-ਵੱਖ \'ਅੰਗਾਂ\' (ਪੰਨਿਆਂ) \'ਤੇ ਉਨ੍ਹਾਂ ਦੀ ਰਾਗ-ਵਿਵਸਥਾ ਅਨੁਸਾਰ ਸੰਕਲਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਕੁੱਲ ੧੭ ਮੁੱਖ ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹੈ:'
+                    ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਨੂੰ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਵੱਖ-ਵੱਖ \'ਅੰਗਾਂ\' (ਪੰਨਿਆਂ) \'ਤੇ ਉਨ੍ਹਾਂ ਦੀ ਰਾਗ-ਵਿਵਸਥਾ ਅਨੁਸਾਰ ਸੰਕਲਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਕੁੱਲ ੧੭ ਮੁੱਖ ਰਾਗਾਂ ਵਿੱਚ ਦਰਜ ਹੈ:'
                     : language === 'en'
                     ? 'Satguru Kabir Saheb’s sacred verses are systematically arranged across Sri Guru Granth Sahib Ji according to 17 classical musical Raags:'
                     : 'सतगुरु कबीर साहेब की वाणी को श्री गुरु ग्रंथ साहिब जी के विभिन्न \'अंगों\' (पृष्ठों) पर उनकी राग-व्यवस्था के अनुसार दर्ज किया गया है। सतगुरु कबीर साहेब की वाणी कुल १७ मुख्य रागों में निबद्ध है:'}
@@ -833,7 +833,7 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed">
                     {language === 'pb'
-                      ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸਾਰੇ ਸਲੋਕਾਂ ਦਾ ਸੰਗ੍ਰਹਿ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਆਖ਼ਰੀ ਭਾਗ ਵਿੱਚ ਅੰਗ ੧੩੬੪ ਤੋਂ ਲੈ ਕੇ ਅੰਗ ੧੩੭੭ ਤੱਕ ਬੜੀ ਹੀ ਸ਼ਰਧਾ ਅਤੇ ਮਰਯਾਦਾ ਨਾਲ ਦਰਜ ਕੀਤਾ ਗਿਆ ਹੈ। ਇਹ ਸਲੋਕ ਅਧਿਆਤਮਿਕ ਰਸ ਅਤੇ ਬ੍ਰਹਮ-ਵਿਚਾਰ ਦੇ ਅਮੁੱਲ ਰਤਨ ਹਨ।'
+                      ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਸਾਰੇ ਸਲੋਕਾਂ ਦਾ ਸੰਗ੍ਰਹਿ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਆਖ਼ਰੀ ਭਾਗ ਵਿੱਚ ਅੰਗ ੧੩੬੪ ਤੋਂ ਲੈ ਕੇ ਅੰਗ ੧੩੭੭ ਤੱਕ ਬੜੀ ਹੀ ਸ਼ਰਧਾ ਅਤੇ ਮਰਯਾਦਾ ਨਾਲ ਦਰਜ ਕੀਤਾ ਗਿਆ ਹੈ। ਇਹ ਸਲੋਕ ਅਧਿਆਤਮਿਕ ਰਸ ਅਤੇ ਬ੍ਰਹਮ-ਵਿਚਾਰ ਦੇ ਅਮੁੱਲ ਰਤਨ ਹਨ।'
                       : language === 'en'
                       ? 'The revered collection of Satguru Kabir Saheb’s Saloks is enshrined near the conclusion of Sri Guru Granth Sahib Ji from Ang 1364 to Ang 1377. These couplets are priceless spiritual gems of awakening, Sahaj Samadhi, and Naam-remembrance.'
                       : 'सतगुरु कबीर साहेब के पवित्र सलोकों का दिव्य संग्रह पवित्र ग्रंथ के अंतिम भाग में अंग १३६४ से अंग १३७७ तक बड़ी ही श्रद्धा एवं मर्यादा के साथ दर्ज किया गया है। ये सलोक सीधे जीवन-परिवर्तन, सहज समाधि और नाम-स्मरण के अनमोल मोती हैं।'}

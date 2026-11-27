@@ -147,8 +147,8 @@ export const SAKHIS_BATCH_40: Sakhi[] = [
     },
     transliteration: 'Kahta hoon kahi jaat hoon, deta hoon hela. Guru ki karni Guru jaane, chela ki chela.',
     bhavarth: {
-      hi: 'कबीरजी दृढतापूर्वक चेतावनी देते हुए कहते हैं कि मैं बार-बार पुकारकर कहता हूं और अपना ठोस निर्णय सुना रहा हूं कि गुरु अपनी करनी को भोगेंगे एवं शिष्य अपनी करनी को। कोई भी एक-दूसरे की करनी के फल प्राप्त करने का अधिकारी नहीं।',
-      pb: 'ਕਬੀਰ ਜੀ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਆਪਣੀ ਕਰਨੀ ਦਾ ਫਲ ਭੋਗਣਗੇ ਅਤੇ ਚੇਲਾ ਆਪਣੀ ਕਰਨੀ ਦਾ।',
+      hi: 'सतगुरु कबीर साहेब दृढतापूर्वक चेतावनी देते हुए कहते हैं कि मैं बार-बार पुकारकर कहता हूं और अपना ठोस निर्णय सुना रहा हूं कि गुरु अपनी करनी को भोगेंगे एवं शिष्य अपनी करनी को। कोई भी एक-दूसरे की करनी के फल प्राप्त करने का अधिकारी नहीं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਆਪਣੀ ਕਰਨੀ ਦਾ ਫਲ ਭੋਗਣਗੇ ਅਤੇ ਚੇਲਾ ਆਪਣੀ ਕਰਨੀ ਦਾ।',
       en: 'Kabir warns firmly: Guru reaps the consequences of his own actions, and the disciple reaps his own. No one can inherit another’s karmic fate.',
     },
     wordMeanings: {
@@ -175,8 +175,8 @@ export const SAKHIS_BATCH_40: Sakhi[] = [
       {
         id: 'q-gp-3',
         question: {
-          hi: 'कबीर साहेब के अनुसार कर्मों का फल किसे भोगना पड़ता है?',
-          pb: 'ਕਬੀਰ ਸਾਹਿਬ ਅਨੁਸਾਰ ਕਰਮਾਂ ਦਾ ਫਲ ਕਿਸ ਨੂੰ ਭੋਗਣਾ ਪੈਂਦਾ ਹੈ?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार कर्मों का फल किसे भोगना पड़ता है?',
+          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਰਮਾਂ ਦਾ ਫਲ ਕਿਸ ਨੂੰ ਭੋਗਣਾ ਪੈਂਦਾ ਹੈ?',
           en: 'According to Kabir, who bears the fruits of actions?',
         },
         options: {
@@ -211,7 +211,7 @@ export const SAKHIS_BATCH_40: Sakhi[] = [
     },
     transliteration: 'Guru kiya hai deh ka, Satguru cheenha naanhi. Bhavsagar ke jaal mein, phir phir gota khaanhi.',
     bhavarth: {
-      hi: 'जो किसी देह को गुरु समझते है या जिन्होंने केवल वर्ण-जाति, रंग-रूप, विद्या-वेश आदि देखकर ही गुरु बनाया है, तो उन्होंने सद्गुरु को जाना-समझा ही नहीं। ऐसे लोग भव-सागर के जाल में फंसकर बार-बार डूबते-उतराते रहते हैं।',
+      hi: 'जो किसी देह को गुरु समझते है या जिन्होंने केवल वर्ण-जाति, रंग-रूप, विद्या-वेश आदि देखकर ही गुरु बनाया है, तो उन्होंने सतगुरु को जाना-समझा ही नहीं। ऐसे लोग भव-सागर के जाल में फंसकर बार-बार डूबते-उतराते रहते हैं।',
       pb: 'ਜਿਹੜੇ ਕੇਵਲ ਦੇਹ ਜਾਂ ਬਾਹਰੀ ਰੂਪ ਨੂੰ ਗੁਰੂ ਮੰਨਦੇ ਹਨ, ਉਹ ਸਤਿਗੁਰੂ ਦੇ ਤੱਤ ਗਿਆਨ ਨੂੰ ਨਹੀਂ ਪਛਾਣਦੇ ਅਤੇ ਸੰਸਾਰ ਵਿੱਚ ਭਟਕਦੇ ਰਹਿੰਦੇ ਹਨ।',
       en: 'Those who take the physical body or outward appearance as the Guru fail to realize the Satguru within, sinking repeatedly in the ocean of Maya.',
     },
@@ -275,9 +275,9 @@ export const SAKHIS_BATCH_40: Sakhi[] = [
     },
     transliteration: 'Guru bichara kya kare, shabd na laaga ang. Kahein Kabir maili gaji, kaise laagai rang.',
     bhavarth: {
-      hi: 'उस अवस्था में गुरु बेचारा क्या करे, जब शिष्य ही सुपात्र न हो और उस पर ज्ञान के उपदेश का तनिक भी असर न होता हो। कबीरजी कहते हैं कि घनी मैली चादर हो तो भला उस पर कैसे अच्छा रंग चढ़ सकता है? अतः गुरु से ज्ञान की प्राप्ति के लिए शिष्य का सुयोग्य होना भी आवश्यक है।',
+      hi: 'उस अवस्था में गुरु बेचारा क्या करे, जब शिष्य ही सुपात्र न हो और उस पर ज्ञान के उपदेश का तनिक भी असर न होता हो। सतगुरु कबीर साहेब फरमाते हैं कि घनी मैली चादर हो तो भला उस पर कैसे अच्छा रंग चढ़ सकता है? अतः गुरु से ज्ञान की प्राप्ति के लिए शिष्य का सुयोग्य होना भी आवश्यक है।',
       pb: 'ਜੇਕਰ ਚੇਲਾ ਹੀ ਮੈਲੀ ਚਾਦਰ ਵਾਂਗ ਬੁਰਾਈਆਂ ਨਾਲ ਭਰਿਆ ਹੋਵੇ, ਤਾਂ ਗੁਰੂ ਦੇ ਗਿਆਨ ਦਾ ਰੰਗ ਕਿਵੇਂ ਚੜ੍ਹੇਗਾ? ਚੇਲੇ ਦਾ ਪਵਿੱਤਰ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ।',
-      en: 'What can the Master do if the disciple remains unyielding like a filthy cloth? Kabir says a heavily soiled garment cannot take bright dye unless first washed.',
+      en: 'What can the Master do if the disciple remains unyielding like a filthy cloth? Satguru Kabir Saheb proclaims a heavily soiled garment cannot take bright dye unless first washed.',
     },
     wordMeanings: {
       hi: [{ word: 'मैली गजी', meaning: 'अत्यधिक मैला या गंदा कपड़ा' }, { word: 'लागै रंग', meaning: 'उपदेश का प्रभाव पड़ना' }],
@@ -303,7 +303,7 @@ export const SAKHIS_BATCH_40: Sakhi[] = [
       {
         id: 'q-gp-5',
         question: {
-          hi: 'कबीर साहेब ने मैली गजी (कपड़े) का उदाहरण क्यों दिया है?',
+          hi: 'सतगुरु कबीर साहेब ने मैली गजी (कपड़े) का उदाहरण क्यों दिया है?',
           pb: 'ਮੈਲੇ ਕੱਪੜੇ ਦਾ ਉਦਾਹਰਨ ਕਿਉਂ ਦਿੱਤਾ ਗਿਆ ਹੈ?',
           en: 'Why is the example of a soiled cloth used?',
         },

@@ -733,9 +733,9 @@ export const ARJINAMA_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "संत धर्मदास जी स्वयं को दासानुदास मानकर कहते हैं कि सत्यनाम पर दृढ़ विश्वास धारण करो। स्वयं सत्य कबीर साहेब पधारे हैं और उनके प्रेम-रंग में मेरा रोम-रोम सराबोर हो गया है।",
-        pb: "ਧਰਮਦਾਸ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਤਯਨਾਮ 'ਤੇ ਵਿਸ਼ਵਾਸ ਰੱਖੋ। ਸੱਚੇ ਕਬੀਰ ਸਾਹੇਬ ਆਏ ਹਨ ਅਤੇ ਸਰੀਰ ਪ੍ਰੇਮ-ਰੰਗ ਵਿੱਚ ਰੰਗਿਆ ਗਿਆ ਹੈ।",
-        en: "Dharmdas, servant of servants, urges: Hold unshakeable faith in Satnaam! True Kabir Himself has arrived, steeping body and soul in divine love."
+        hi: "संत धर्मदास जी स्वयं को दासानुदास मानकर कहते हैं कि सत्यनाम पर दृढ़ विश्वास धारण करो। स्वयं सत्य सतगुरु कबीर साहेब पधारे हैं और उनके प्रेम-रंग में मेरा रोम-रोम सराबोर हो गया है।",
+        pb: "ਧਰਮਦਾਸ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਤਯਨਾਮ 'ਤੇ ਵਿਸ਼ਵਾਸ ਰੱਖੋ। ਸੱਚੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਆਏ ਹਨ ਅਤੇ ਸਰੀਰ ਪ੍ਰੇਮ-ਰੰਗ ਵਿੱਚ ਰੰਗਿਆ ਗਿਆ ਹੈ।",
+        en: "Dharmdas, servant of servants, urges: Hold unshakeable faith in Satyanaam! True Kabir Himself has arrived, steeping body and soul in divine love."
       }
     },
     {
@@ -759,9 +759,9 @@ export const ARJINAMA_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "केवल सतनाम और केवल पूर्ण गुरु कबीर साहेब (बालापीर/अमर गुरु) ही सत्य हैं। आपके द्वार पर खड़े होकर ये जीवात्मा-हंस विनती कर रहे हैं कि हे कबीर साहेब! हमें अपने अविनाशी दर्शन दीजिए।",
-        pb: "ਕੇਵਲ ਨਾਮ ਅਤੇ ਕੇਵਲ ਸਤਿਗੁਰੂ ਕਬੀਰ ਹੀ ਸੱਚ ਹਨ। ਚਰਨਾਂ ਵਿੱਚ ਖੜ੍ਹੇ ਹੰਸ ਅਰਦਾਸ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਕਬੀਰ ਸਾਹੇਬ! ਦਰਸ਼ਨ ਬਖ਼ਸ਼ੋ।",
-        en: "Only the Holy Name and only Satguru Kabir are supreme. Standing at Your threshold, humble souls pray: O Kabir Saheb, grant us Your divine Darshan!"
+        hi: "केवल सत्यनाम और केवल पूर्ण गुरु सतगुरु कबीर साहेब (बालापीर/अमर गुरु) ही सत्य हैं। आपके द्वार पर खड़े होकर ये जीवात्मा-हंस विनती कर रहे हैं कि हे सतगुरु कबीर साहेब! हमें अपने अविनाशी दर्शन दीजिए।",
+        pb: "ਕੇਵਲ ਨਾਮ ਅਤੇ ਕੇਵਲ ਸਤਿਗੁਰੂ ਕਬੀਰ ਹੀ ਸੱਚ ਹਨ। ਚਰਨਾਂ ਵਿੱਚ ਖੜ੍ਹੇ ਹੰਸ ਅਰਦਾਸ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਦਰਸ਼ਨ ਬਖ਼ਸ਼ੋ।",
+        en: "Only the Holy Name and only Satguru Kabir are supreme. Standing at Your threshold, humble souls pray: O Satguru Kabir Saheb, grant us Your divine Darshan!"
       }
     }
   ]

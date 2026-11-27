@@ -40,7 +40,7 @@ const DAMAKHEDA_BHAJANS: TraditionalBhajan[] = [
     lyrics: [
       'सुमिरन कर ले बंदे मोत न टारे टारी।',
       'माया के मद में भूला, माटी मिल जाएगी सारी॥',
-      'कबीर साहेब की बानी जो मन चित्त लावे।',
+      'सतगुरु कबीर साहेब की बानी जो मन चित्त लावे।',
       'जन्म मरण के फंदे से निश्चय तर जावे॥'
     ],
     duration: '08:30 min',
@@ -109,10 +109,10 @@ export const BhajanRepository: React.FC<BhajanRepositoryProps> = ({ language, on
             </h2>
             <p className="text-xs sm:text-sm font-serif opacity-90 mt-1 max-w-xl">
               {language === 'pb'
-                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪਵਿੱਤਰ ਭਜਨ, ਚੌਕਾ ਆਰਤੀ ਅਤੇ ਸਿਮਰਨ ਧੁਨਾਂ ਜੋ ਆਤਮਾ ਨੂੰ ਨਿਹਾਲ ਕਰਦੀਆਂ ਹਨ।'
+                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਵਿੱਤਰ ਭਜਨ, ਚੌਕਾ ਆਰਤੀ ਅਤੇ ਸਿਮਰਨ ਧੁਨਾਂ ਜੋ ਆਤਮਾ ਨੂੰ ਨਿਹਾਲ ਕਰਦੀਆਂ ਹਨ।'
                 : language === 'en'
                 ? 'Sacred traditional bhajans, Chauka Aarti chants, and devotional meditation waves of Satguru Kabir Saheb.'
-                : 'सतगुरु कबीर साहेब जी के पावन पारंपरिक भजन, चौका आरती और सिमरन धुनें जो आत्मा को विभोर करती हैं।'}
+                : 'सतगुरु कबीर साहेब के पावन पारंपरिक भजन, चौका आरती और सिमरन धुनें जो आत्मा को विभोर करती हैं।'}
             </p>
           </div>
         </div>

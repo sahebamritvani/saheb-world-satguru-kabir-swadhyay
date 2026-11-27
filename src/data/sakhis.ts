@@ -84,9 +84,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Guru Govinda do-u khade, kake lagu paye. Balihari Guru aapne, Govind diyo bataye.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जब मेरे समक्ष गुरु और ईश्वर (गोविंद) दोनों साक्षात प्रकट खड़े हों, तो मेरे मन में संशय हुआ कि पहले किसके चरण स्पर्श करूँ? तब विवेक जागा कि मैं अपने सतगुरु पर न्योछावर हूँ, क्योंकि यदि सतगुरु कृपा न करते, तो मुझे ईश्वर की पहचान और उनका बोध कभी प्राप्त न होता। अतः गुरु का स्थान सर्वोपरि है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਮੇਰੇ ਸਨਮੁੱਖ ਗੁਰੂ ਅਤੇ ਪ੍ਰਮਾਤਮਾ (ਗੋਵਿੰਦ) ਦੋਵੇਂ ਖੜ੍ਹੇ ਹੋਣ, ਤਾਂ ਮੈਂ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਾਂ? ਅੰਤ ਵਿੱਚ ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਅੱਗੇ ਸਿਰ ਝੁਕਾਉਂਦਾ ਹਾਂ, ਕਿਉਂਕਿ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਬਖਸ਼ਿਸ਼ ਸਦਕਾ ਹੀ ਮੈਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਗਿਆਨ ਅਤੇ ਦਰਸ਼ਨ ਨਸੀਬ ਹੋਇਆ ਹੈ।',
-      en: 'Kabir Saheb reveals: If both the Satguru and the Supreme Lord stand before me, at whose feet should I bow first? I surrender wholeheartedly unto my Satguru, for without the grace and light of the Guru, I would never have recognized the Divine.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब मेरे समक्ष गुरु और ईश्वर (गोविंद) दोनों साक्षात प्रकट खड़े हों, तो मेरे मन में संशय हुआ कि पहले किसके चरण स्पर्श करूँ? तब विवेक जागा कि मैं अपने सतगुरु पर न्योछावर हूँ, क्योंकि यदि सतगुरु कृपा न करते, तो मुझे ईश्वर की पहचान और उनका बोध कभी प्राप्त न होता। अतः गुरु का स्थान सर्वोपरि है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਮੇਰੇ ਸਨਮੁੱਖ ਗੁਰੂ ਅਤੇ ਪ੍ਰਮਾਤਮਾ (ਗੋਵਿੰਦ) ਦੋਵੇਂ ਖੜ੍ਹੇ ਹੋਣ, ਤਾਂ ਮੈਂ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਾਂ? ਅੰਤ ਵਿੱਚ ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਅੱਗੇ ਸਿਰ ਝੁਕਾਉਂਦਾ ਹਾਂ, ਕਿਉਂਕਿ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਬਖਸ਼ਿਸ਼ ਸਦਕਾ ਹੀ ਮੈਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਗਿਆਨ ਅਤੇ ਦਰਸ਼ਨ ਨਸੀਬ ਹੋਇਆ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals: If both the Satguru and the Supreme Lord stand before me, at whose feet should I bow first? I surrender wholeheartedly unto my Satguru, for without the grace and light of the Guru, I would never have recognized the Divine.',
     },
     wordMeanings: {
       hi: [
@@ -129,21 +129,21 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरु कबीर साहेब! आपके पावन वचनों से ही मुझे सत्यनाम का मर्म मिला है। मेरे भीतर का अज्ञान और अहंकार शांत हो, और मेरा हृदय सदा आपके चरणों में समर्पित रहे। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਆਪ ਜੀ ਦੀ ਮਿਹਰ ਨਾਲ ਹੀ ਸਤਯਨਾਮ ਦਾ ਰਸ ਮਿਲਿਆ ਹੈ। ਮੇਰੇ ਅੰਦਰਲਾ ਹੰਕਾਰ ਮਿਟੇ ਤੇ ਮੇਰਾ ਚਿੱਤ ਸਦਾ ਆਪ ਜੀ ਦੇ ਚਰਨਾਂ ਨਾਲ ਜੁੜਿਆ ਰਹੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਜੀ ਦੀ ਮਿਹਰ ਨਾਲ ਹੀ ਸਤਯਨਾਮ ਦਾ ਰਸ ਮਿਲਿਆ ਹੈ। ਮੇਰੇ ਅੰਦਰਲਾ ਹੰਕਾਰ ਮਿਟੇ ਤੇ ਮੇਰਾ ਚਿੱਤ ਸਦਾ ਆਪ ਜੀ ਦੇ ਚਰਨਾਂ ਨਾਲ ਜੁੜਿਆ ਰਹੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru Kabir Saheb! Through your divine grace alone, the nectar of Satyanaam is revealed. Dissolve my inner ego, and grant me steady shelter in pure awareness. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की गुरु-महिमा का मूल आधार है, जो साधन और साध्य के बीच गुरु की अनिवार्यता सिद्ध करती है।',
-      pb: 'ਇਹ ਸਾਖੀ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਗੁਰੂ-ਮਹਿਮਾ ਦਾ ਕੇਂਦਰੀ ਧੁਰਾ ਹੈ ਜੋ ਸਤਿਗੁਰੂ ਦੀ ਸਰਵਉੱਚਤਾ ਦਰਸਾਉਂਦੀ ਹੈ।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की गुरु-महिमा का मूल आधार है, जो साधन और साध्य के बीच गुरु की अनिवार्यता सिद्ध करती है।',
+      pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਗੁਰੂ-ਮਹਿਮਾ ਦਾ ਕੇਂਦਰੀ ਧੁਰਾ ਹੈ ਜੋ ਸਤਿਗੁਰੂ ਦੀ ਸਰਵਉੱਚਤਾ ਦਰਸਾਉਂਦੀ ਹੈ।',
       en: 'This foundational sakhi highlights why the enlightened Master is honored before all else: because without the lens of the Satguru, Truth remains unseen.',
     },
     quiz: [
       {
         id: 'q1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार गुरु और गोविंद दोनों के समक्ष होने पर पहले किसके चरण छूने चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਅਤੇ ਗੋਵਿੰਦ ਦੋਵਾਂ ਦੇ ਸਨਮੁੱਖ ਹੋਣ ਤੇ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਣੇ ਚਾਹੀਦੇ ਹਨ?',
-          en: 'According to Kabir Saheb, when both Guru and Govind stand before you, whose feet should you touch first?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार गुरु और गोविंद दोनों के समक्ष होने पर पहले किसके चरण छूने चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਅਤੇ ਗੋਵਿੰਦ ਦੋਵਾਂ ਦੇ ਸਨਮੁੱਖ ਹੋਣ ਤੇ ਪਹਿਲਾਂ ਕਿਸ ਦੇ ਚਰਨ ਛੋਹਣੇ ਚਾਹੀਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, when both Guru and Govind stand before you, whose feet should you touch first?',
         },
         options: {
           hi: ['गोविंद (ईश्वर) के', 'सतगुरु के', 'दोनों के एक साथ बिना सोचे', 'किसी के भी नहीं'],
@@ -179,9 +179,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q1-3',
         question: {
-          hi: 'कबीर साहेब ने ईश्वर की पहचान कराने का श्रेय किसे दिया है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪਛਾਣ ਕਰਾਉਣ ਦਾ ਸਿਹਰਾ ਕਿਸ ਨੂੰ ਦਿੱਤਾ ਹੈ?',
-          en: 'To whom does Kabir Saheb attribute the revelation and recognition of God?',
+          hi: 'सतगुरु कबीर साहेब ने ईश्वर की पहचान कराने का श्रेय किसे दिया है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪਛਾਣ ਕਰਾਉਣ ਦਾ ਸਿਹਰਾ ਕਿਸ ਨੂੰ ਦਿੱਤਾ ਹੈ?',
+          en: 'To whom does Satguru Kabir Saheb attribute the revelation and recognition of God?',
         },
         options: {
           hi: ['केवल शास्त्रों के पठन को', 'अपने सतगुरु की कृपा को', 'अपनी शारीरिक शक्ति को', 'सांसारिक मित्रों को'],
@@ -217,9 +217,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q1-5',
         question: {
-          hi: 'कबीर साहेब की इस साखी का संबंध किस ग्रंथ अंग से है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਸਾਖੀ ਦਾ ਸੰਬੰਧ ਕਿਸ ਅੰਗ ਨਾਲ ਹੈ?',
-          en: 'Which section (Ang) of Kabir Saheb’s Sakhi Sangrah does this couplet belong to?',
+          hi: 'सतगुरु कबीर साहेब की इस साखी का संबंध किस ग्रंथ अंग से है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਸਾਖੀ ਦਾ ਸੰਬੰਧ ਕਿਸ ਅੰਗ ਨਾਲ ਹੈ?',
+          en: 'Which section (Ang) of Satguru Kabir Saheb’s Sakhi Sangrah does this couplet belong to?',
         },
         options: {
           hi: ['गुरु महिमा अंग', 'माया अंग', 'काल अंग', 'उपदेश अंग'],
@@ -296,17 +296,17 @@ const INITIAL_SAKHIS: Sakhi[] = [
       en: 'Satguru Saheb! Spare me from intellectual arrogance. Ignite within my heart the pure, radiant flame of divine love and Satyanaam. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'कबीर साहेब ने विद्वता के आडंबर पर चोट करते हुए प्रेम-भक्ति को अध्यात्म का प्राण माना है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਵਿਖਾਵੇ ਵਾਲੀ ਵਿਦਵਤਾ ਦੀ ਥਾਂ ਹਿਰਦੇ ਦੇ ਪਵਿੱਤਰ ਪ੍ਰੇਮ ਨੂੰ ਸਭ ਤੋਂ ਉੱਤਮ ਮੰਨਿਆ ਹੈ।',
-      en: 'Kabir Saheb cuts through empty scholarship, declaring that without the awakening of real love, knowledge remains dead weight.',
+      hi: 'सतगुरु कबीर साहेब ने विद्वता के आडंबर पर चोट करते हुए प्रेम-भक्ति को अध्यात्म का प्राण माना है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਵਿਖਾਵੇ ਵਾਲੀ ਵਿਦਵਤਾ ਦੀ ਥਾਂ ਹਿਰਦੇ ਦੇ ਪਵਿੱਤਰ ਪ੍ਰੇਮ ਨੂੰ ਸਭ ਤੋਂ ਉੱਤਮ ਮੰਨਿਆ ਹੈ।',
+      en: 'Satguru Kabir Saheb cuts through empty scholarship, declaring that without the awakening of real love, knowledge remains dead weight.',
     },
     quiz: [
       {
         id: 'q2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्चा पंडित या ज्ञानी कौन बनता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚਾ ਪੰਡਿਤ ਜਾਂ ਗਿਆਨੀ ਕੌਣ ਬਣਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who truly becomes an enlightened sage (Pandit)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्चा पंडित या ज्ञानी कौन बनता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚਾ ਪੰਡਿਤ ਜਾਂ ਗਿਆਨੀ ਕੌਣ ਬਣਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who truly becomes an enlightened sage (Pandit)?',
         },
         options: {
           hi: ['जो बहुत सारे वेद-शास्त्र रट लेता है', 'जो प्रेम के ढाई अक्षर को हृदय में धारण करता है', 'जो कठिन संन्यास लेता है', 'जो बहुत धन दान करता है'],
@@ -323,9 +323,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q2-2',
         question: {
-          hi: 'साखी में "पोथी पढ़ि पढ़ि जग मुआ" से कबीर साहेब का क्या तात्पर्य है?',
-          pb: 'ਸਾਖੀ ਵਿੱਚ "ਪੋਥੀ ਪੜ੍ਹ ਪੜ੍ਹ ਜਗ ਮੁਆ" ਤੋਂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਕੀ ਭਾਵ ਹੈ?',
-          en: 'What does Kabir Saheb mean by "Pothi padhi padhi jag mua"?',
+          hi: 'साखी में "पोथी पढ़ि पढ़ि जग मुआ" से सतगुरु कबीर साहेब का क्या तात्पर्य है?',
+          pb: 'ਸਾਖੀ ਵਿੱਚ "ਪੋਥੀ ਪੜ੍ਹ ਪੜ੍ਹ ਜਗ ਮੁਆ" ਤੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਕੀ ਭਾਵ ਹੈ?',
+          en: 'What does Satguru Kabir Saheb mean by "Pothi padhi padhi jag mua"?',
         },
         options: {
           hi: ['केवल पुस्तकों के बाह्य पठन से आत्म-कल्याण नहीं होता', 'किताबें पढ़ना पाप है', 'सभी को पढ़ना छोड़ देना चाहिए', 'पोथियां नदी में बहा देनी चाहिए'],
@@ -334,7 +334,7 @@ const INITIAL_SAKHIS: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'कबीर साहेब का आशय यह है कि जब तक ज्ञान आचरण और प्रेम में न बदले, वह व्यर्थ बोझ है।',
+          hi: 'सतगुरु कबीर साहेब का आशय यह है कि जब तक ज्ञान आचरण और प्रेम में न बदले, वह व्यर्थ बोझ है।',
           pb: 'ਜਦੋਂ ਤੱਕ ਗਿਆਨ ਜੀਵਨ ਵਿੱਚ ਅਮਲ ਅਤੇ ਪ੍ਰੇਮ ਦਾ ਰੂਪ ਨਾ ਲਵੇ, ਓਦੋਂ ਤੱਕ ਉਹ ਵਿਅਰਥ ਹੈ।',
           en: 'Unless knowledge transforms into lived love and conscious action, it remains an empty intellectual burden.',
         },
@@ -361,9 +361,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q2-4',
         question: {
-          hi: 'सच्चे ज्ञान की कसौटी कबीर साहेब के अनुसार क्या है?',
-          pb: 'ਸੱਚੇ ਗਿਆਨ ਦੀ ਪਰਖ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕੀ ਹੈ?',
-          en: 'What is the true litmus test of genuine wisdom according to Kabir Saheb?',
+          hi: 'सच्चे ज्ञान की कसौटी सतगुरु कबीर साहेब के अनुसार क्या है?',
+          pb: 'ਸੱਚੇ ਗਿਆਨ ਦੀ ਪਰਖ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕੀ ਹੈ?',
+          en: 'What is the true litmus test of genuine wisdom according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['तर्क में जीतना', 'हृदय में प्रेम और विनम्रता का प्रकटन', 'कठिन शब्दों का प्रयोग', 'दूसरों को नीचा दिखाना'],
@@ -416,8 +416,8 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Mati kahe kumhar se, tu kya ronde mohi. Ek din aisa aayega, main rondungi tohi.',
     bhavarth: {
-      hi: 'कबीर साहेब अत्यंत गूढ़ चेतावनी देते हुए कहते हैं कि मिट्टी बर्तन बनाने वाले कुम्हार से कहती है: आज तू अपने पैरों से मुझे रौंद-रौंद कर घमंड कर रहा है, किंतु यह संसार नश्वर है। एक दिन काल का ऐसा चक्र आएगा जब तेरी यह नश्वर देह मिट्टी में मिल जाएगी और मैं तुझे अपने भीतर समाहित कर रौंदूँगी। अतः इस नश्वर शरीर का अहंकार त्याग कर सत्यनाम का स्मरण कर।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਬੜੀ ਗੰਭੀਰ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਿੱਟੀ ਘੁਮਿਆਰ ਨੂੰ ਆਖਦੀ ਹੈ: ਅੱਜ ਤੂੰ ਮੈਨੂੰ ਆਪਣੇ ਪੈਰਾਂ ਹੇਠ ਲਿਤਾੜ ਰਿਹਾ ਹੈਂ, ਪਰ ਯਾਦ ਰੱਖ ਇਕ ਦਿਨ ਅਜਿਹਾ ਆਵੇਗਾ ਜਦੋਂ ਤੇਰਾ ਸਰੀਰ ਮਿੱਟੀ ਵਿੱਚ ਮਿਲ ਜਾਵੇਗਾ ਅਤੇ ਮੈਂ ਤੈਨੂੰ ਆਪਣੇ ਵਿੱਚ ਸਮਾ ਲਵਾਂਗੀ। ਇਸ ਲਈ ਹੰਕਾਰ ਤਿਆਗ ਕੇ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰ।',
+      hi: 'सतगुरु कबीर साहेब अत्यंत गूढ़ चेतावनी देते हुए कहते हैं कि मिट्टी बर्तन बनाने वाले कुम्हार से कहती है: आज तू अपने पैरों से मुझे रौंद-रौंद कर घमंड कर रहा है, किंतु यह संसार नश्वर है। एक दिन काल का ऐसा चक्र आएगा जब तेरी यह नश्वर देह मिट्टी में मिल जाएगी और मैं तुझे अपने भीतर समाहित कर रौंदूँगी। अतः इस नश्वर शरीर का अहंकार त्याग कर सत्यनाम का स्मरण कर।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬੜੀ ਗੰਭੀਰ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਿੱਟੀ ਘੁਮਿਆਰ ਨੂੰ ਆਖਦੀ ਹੈ: ਅੱਜ ਤੂੰ ਮੈਨੂੰ ਆਪਣੇ ਪੈਰਾਂ ਹੇਠ ਲਿਤਾੜ ਰਿਹਾ ਹੈਂ, ਪਰ ਯਾਦ ਰੱਖ ਇਕ ਦਿਨ ਅਜਿਹਾ ਆਵੇਗਾ ਜਦੋਂ ਤੇਰਾ ਸਰੀਰ ਮਿੱਟੀ ਵਿੱਚ ਮਿਲ ਜਾਵੇਗਾ ਅਤੇ ਮੈਂ ਤੈਨੂੰ ਆਪਣੇ ਵਿੱਚ ਸਮਾ ਲਵਾਂਗੀ। ਇਸ ਲਈ ਹੰਕਾਰ ਤਿਆਗ ਕੇ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰ।',
       en: 'The clay speaks to the potter: Today, in your pride, you trample upon me to mold your vessels. But heed this truth—a day shall surely arrive when your mortal body will return to the earth, and I shall absorb you back into dust. Awaken from mortal pride and seek the eternal.',
     },
     wordMeanings: {
@@ -524,9 +524,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q3-4',
         question: {
-          hi: 'कबीर साहेब की साखियों में "चेतावनी अंग" का क्या उद्देश्य होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀਆਂ ਸਾਖੀਆਂ ਵਿੱਚ "ਚੇਤਾਵਨੀ ਅੰਗ" ਦਾ ਕੀ ਮਕਸਦ ਹੈ?',
-          en: 'What is the primary spiritual purpose of "Chetavani Ang" in Kabir Saheb’s verses?',
+          hi: 'सतगुरु कबीर साहेब की साखियों में "चेतावनी अंग" का क्या उद्देश्य होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਸਾਖੀਆਂ ਵਿੱਚ "ਚੇਤਾਵਨੀ ਅੰਗ" ਦਾ ਕੀ ਮਕਸਦ ਹੈ?',
+          en: 'What is the primary spiritual purpose of "Chetavani Ang" in Satguru Kabir Saheb’s verses?',
         },
         options: {
           hi: ['जीव को मोह-निद्रा से जगाकर आत्म-कल्याण के मार्ग पर लगाना', 'केवल डराना', 'संसार को नष्ट करना', 'समय व्यतीत करना'],
@@ -545,7 +545,7 @@ const INITIAL_SAKHIS: Sakhi[] = [
         question: {
           hi: 'इस साखी के अनुसार कौन-सा तत्व शाश्वत और अविनाशी है?',
           pb: 'ਇਸ ਸਾਖੀ ਅਨੁਸਾਰ ਕਿਹੜਾ ਤੱਤ ਅਟੱਲ ਤੇ ਅਬਿਨਾਸੀ ਹੈ?',
-          en: 'Contrasted with the mortal body, what is eternal according to Kabir Saheb?',
+          en: 'Contrasted with the mortal body, what is eternal according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['सत्यनाम / आत्म-तत्व', 'भौतिक शरीर', 'सोना-चांदी', 'सांसारिक पद'],
@@ -579,8 +579,8 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Mala pheyrat jug bhaya, phira na man ka pher. Kar ka manka dari de, man ka manka pher.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य दिखावे का खंडन करते हुए कहते हैं कि हाथ में माला फेरते हुए युग बीत गए, परंतु मन की चंचलता और विकारों का चक्कर नहीं छूटा। इसलिए हे मानव! हाथ (कर) के मनके (मोतियों की माला) को छोड़ और अपने "मन के मनके" को फेर, अर्थात अपने अंतर्मन को सत्यनाम में एकाग्र कर, अंतरात्मा का शुद्धिकरण कर।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੱਥ ਵਿੱਚ ਮਾਲਾ ਫੇਰਦਿਆਂ ਯੁਗ ਬੀਤ ਗਏ ਪਰ ਮਨ ਦੀ ਭਟਕਣਾ ਦੂਰ ਨਾ ਹੋਈ। ਇਸ ਲਈ ਹੱਥ ਦੇ ਮਣਕੇ ਛੱਡ ਕੇ ਆਪਣੇ ਅੰਦਰਲੇ ਮਨ ਦੇ ਮਣਕੇ ਨੂੰ ਪ੍ਰਭੂ ਵੱਲ ਮੋੜ ਅਤੇ ਸਤਯਨਾਮ ਦਾ ਅੰਦਰੂਨੀ ਸਿਮਰਨ ਕਰ।',
+      hi: 'सतगुरु कबीर साहेब बाह्य दिखावे का खंडन करते हुए कहते हैं कि हाथ में माला फेरते हुए युग बीत गए, परंतु मन की चंचलता और विकारों का चक्कर नहीं छूटा। इसलिए हे मानव! हाथ (कर) के मनके (मोतियों की माला) को छोड़ और अपने "मन के मनके" को फेर, अर्थात अपने अंतर्मन को सत्यनाम में एकाग्र कर, अंतरात्मा का शुद्धिकरण कर।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੱਥ ਵਿੱਚ ਮਾਲਾ ਫੇਰਦਿਆਂ ਯੁਗ ਬੀਤ ਗਏ ਪਰ ਮਨ ਦੀ ਭਟਕਣਾ ਦੂਰ ਨਾ ਹੋਈ। ਇਸ ਲਈ ਹੱਥ ਦੇ ਮਣਕੇ ਛੱਡ ਕੇ ਆਪਣੇ ਅੰਦਰਲੇ ਮਨ ਦੇ ਮਣਕੇ ਨੂੰ ਪ੍ਰਭੂ ਵੱਲ ਮੋੜ ਅਤੇ ਸਤਯਨਾਮ ਦਾ ਅੰਦਰੂਨੀ ਸਿਮਰਨ ਕਰ।',
       en: 'Ages have passed counting the beads of the hand, yet the wanderings of the restless mind remain untamed. Set aside the external beads held by the hand, and turn the true bead of the mind—repose your conscious awareness inwardly within the holy vibration of Satyanaam.',
     },
     wordMeanings: {
@@ -630,9 +630,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q4-1',
         question: {
-          hi: 'इस साखी में कबीर साहेब ने किसे छोड़ने का परामर्श दिया है?',
-          pb: 'ਇਸ ਸਾਖੀ ਵਿੱਚ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਿਸ ਚੀਜ਼ ਨੂੰ ਛੱਡਣ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਹੈ?',
-          en: 'What does Kabir Saheb advise setting aside in this couplet?',
+          hi: 'इस साखी में सतगुरु कबीर साहेब ने किसे छोड़ने का परामर्श दिया है?',
+          pb: 'ਇਸ ਸਾਖੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਿਸ ਚੀਜ਼ ਨੂੰ ਛੱਡਣ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਹੈ?',
+          en: 'What does Satguru Kabir Saheb advise setting aside in this couplet?',
         },
         options: {
           hi: ['हाथ की लकड़ी की माला का दिखावा', 'सत्य बोलना', 'स्वाध्याय करना', 'सत्संग जाना'],
@@ -687,9 +687,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q4-4',
         question: {
-          hi: 'कबीर साहेब के मत में सच्ची साधना का केंद्र क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਅਨੁਸਾਰ ਸੱਚੀ ਭਗਤੀ ਦਾ ਕੇਂਦਰ ਕੀ ਹੈ?',
-          en: 'What is the epicenter of authentic spiritual practice according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के मत में सच्ची साधना का केंद्र क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੀ ਭਗਤੀ ਦਾ ਕੇਂਦਰ ਕੀ ਹੈ?',
+          en: 'What is the epicenter of authentic spiritual practice according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['अंतःकरण और मन का शोधन', 'केवल वस्त्रों का रंग बदलना', 'जटाएं बढ़ाना', 'भस्म लगाना'],
@@ -698,9 +698,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'कबीर साहेब बाह्य वेशभूषा की जगह मन की निर्मलता और सत्य आचरण को प्राथमिकता देते हैं।',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਮਨ ਦੀ ਪਵਿੱਤਰਤਾ ਨੂੰ ਸਭ ਤੋਂ ਜ਼ਰੂਰੀ ਮੰਨਦੇ ਹਨ।',
-          en: 'Kabir Saheb champions the purity of mind and truthful living over mere ascetic costumes.',
+          hi: 'सतगुरु कबीर साहेब बाह्य वेशभूषा की जगह मन की निर्मलता और सत्य आचरण को प्राथमिकता देते हैं।',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮਨ ਦੀ ਪਵਿੱਤਰਤਾ ਨੂੰ ਸਭ ਤੋਂ ਜ਼ਰੂਰੀ ਮੰਨਦੇ ਹਨ।',
+          en: 'Satguru Kabir Saheb champions the purity of mind and truthful living over mere ascetic costumes.',
         },
       },
       {
@@ -718,7 +718,7 @@ const INITIAL_SAKHIS: Sakhi[] = [
         correctIndex: 0,
         explanation: {
           hi: 'सत्यनाम ही सतगुरु कबीर साहेब का मूल मंत्र और शाश्वत सार है।',
-          pb: 'ਸਤਯਨਾਮ ਹੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਮੂਲ ਉਪਦੇਸ਼ ਹੈ।',
+          pb: 'ਸਤਯਨਾਮ ਹੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਮੂਲ ਉਪਦੇਸ਼ ਹੈ।',
           en: 'Satyanaam is the supreme, primordial vibration and core teaching of Satguru Kabir Saheb.',
         },
       },
@@ -777,8 +777,8 @@ const INITIAL_SAKHIS: Sakhi[] = [
       en: 'Stand firmly for truthfulness today. Speak straightforwardly with love, rejecting deceit, manipulation, or false flattery.',
     },
     samarpanPrayer: {
-      hi: 'हे सत्यस्वरुप कबीर साहेब! मेरे मन, वचन और कर्म में सत्य का वास हो। असत्य और प्रपंच से मेरी रक्षा कीजिए और अपने पावन सत्यनाम में मेरा वास बनाए रखिए। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਮੇਰੇ ਮਨ ਵਿੱਚ ਸਦਾ ਸੱਚ ਦਾ ਵਾਸ ਹੋਵੇ ਅਤੇ ਮੈਨੂੰ ਝੂਠ ਤੋਂ ਬਚਾ ਕੇ ਆਪਣੇ ਸਤਯਨਾਮ ਨਾਲ ਜੋੜੀ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      hi: 'हे सत्यस्वरुप सतगुरु कबीर साहेब! मेरे मन, वचन और कर्म में सत्य का वास हो। असत्य और प्रपंच से मेरी रक्षा कीजिए और अपने पावन सत्यनाम में मेरा वास बनाए रखिए। साहेब बंदगी साहेब!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੇਰੇ ਮਨ ਵਿੱਚ ਸਦਾ ਸੱਚ ਦਾ ਵਾਸ ਹੋਵੇ ਅਤੇ ਮੈਨੂੰ ਝੂਠ ਤੋਂ ਬਚਾ ਕੇ ਆਪਣੇ ਸਤਯਨਾਮ ਨਾਲ ਜੋੜੀ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Truth-Embodied Satguru Kabir Saheb! May my thoughts, speech, and deeds dwell forever in Truth. Guard me against all falsehood, and anchor me in Satyanaam. Saheb Bandagi Saheb!',
     },
     contextNote: {
@@ -790,9 +790,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q5-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सबसे बड़ी तपस्या कौन सी है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਭ ਤੋਂ ਵੱਡੀ ਤਪੱਸਿਆ ਕਿਹੜੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the greatest form of spiritual discipline (tap)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सबसे बड़ी तपस्या कौन सी है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਭ ਤੋਂ ਵੱਡੀ ਤਪੱਸਿਆ ਕਿਹੜੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the greatest form of spiritual discipline (tap)?',
         },
         options: {
           hi: ['सत्य (साँच) का आचरण करना', 'पहाड़ों पर भूखे रहना', 'कड़ी धूप में बैठना', 'मौन रहने का दिखावा'],
@@ -828,9 +828,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q5-3',
         question: {
-          hi: 'कबीर साहेब ने सबसे बड़ा पाप किसे माना है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਸਭ ਤੋਂ ਵੱਡਾ ਪਾਪ ਕਿਸ ਨੂੰ ਮੰਨਿਆ ਹੈ?',
-          en: 'What is regarded as the gravest spiritual failing according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब ने सबसे बड़ा पाप किसे माना है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਸਭ ਤੋਂ ਵੱਡਾ ਪਾਪ ਕਿਸ ਨੂੰ ਮੰਨਿਆ ਹੈ?',
+          en: 'What is regarded as the gravest spiritual failing according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['झूठ, असत्य और कपट को', 'निर्धन होने को', 'कम पढ़ा-लिखा होने को', 'व्यापार करने को'],
@@ -847,8 +847,8 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q5-4',
         question: {
-          hi: 'यह साखी कबीर साहेब के किस प्रमुख ग्रंथ से उद्धृत है?',
-          pb: 'ਇਹ ਸਾਖੀ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਕਿਸ ਪ੍ਰਮੁੱਖ ਗ੍ਰੰਥ ਵਿੱਚੋਂ ਹੈ?',
+          hi: 'यह साखी सतगुरु कबीर साहेब के किस प्रमुख ग्रंथ से उद्धृत है?',
+          pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਕਿਸ ਪ੍ਰਮੁੱਖ ਗ੍ਰੰਥ ਵਿੱਚੋਂ ਹੈ?',
           en: 'From which major scripture of Satguru Kabir Saheb is this couplet sourced?',
         },
         options: {
@@ -901,9 +901,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Jina Gura jaisa janya, tina kun taisa labha. Osa pyasa na bhajasi, jaba lagi dhasai na abha.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जिस शिष्य ने अपने गुरु को जैसा समझा (या जाना), उसे वैसा ही लाभ मिलता है। जैसे केवल ओस की बूंदें चाटने से प्यास नहीं बुझती, उसके लिए तो वर्षा की झड़ी (आभ/बादल का बरसना) में ही जाना पड़ता है। ठीक उसी तरह, ऊपरी या दिखावे की भक्ति से ईश्वर नहीं मिलते, गुरु के ज्ञान में पूरी तरह डूबना पड़ता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਜਗਿਆਸੂ ਨੇ ਆਪਣੇ ਸਤਿਗੁਰੂ ਜੀ ਨੂੰ ਜਿਸ ਭਾਵਨਾ ਨਾਲ ਸਮਝਿਆ ਤੇ ਜਾਣਿਆ, ਉਸਨੂੰ ਓਨਾ ਹੀ ਰੂਹਾਨੀ ਲਾਭ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ। ਜਿਵੇਂ ਮਾਤਰ ਤ੍ਰੇਲ (ਓਸ) ਦੀਆਂ ਬੂੰਦਾਂ ਚੱਟਣ ਨਾਲ ਪਿਆਸ ਨਹੀਂ ਬੁਝਦੀ, ਜਦ ਤੱਕ ਕਿ ਬੱਦਲਾਂ ਦੀ ਵਰਖਾ (ਆਭ) ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਡੁੱਬਿਆ ਨਾ ਜਾਵੇ। ਠੀਕ ਉਸੇ ਤਰ੍ਹਾਂ, ਉੱਪਰਲੇ ਦਿਖਾਵੇ ਦੀ ਭਗਤੀ ਨਾਲ ਮੁਕਤੀ ਨਹੀਂ ਮਿਲਦੀ, ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਲੀਨ ਹੋਣਾ ਪੈਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals that as a seeker realizes and surrenders to the Master, so is the spiritual harvest they reap. Just as licking mere drops of dew cannot quench a burning thirst until one plunges into the deluge of the rainclouds, superficial devotion cannot liberate the soul until one is fully immersed in the ocean of the Satguru’s wisdom.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जिस शिष्य ने अपने गुरु को जैसा समझा (या जाना), उसे वैसा ही लाभ मिलता है। जैसे केवल ओस की बूंदें चाटने से प्यास नहीं बुझती, उसके लिए तो वर्षा की झड़ी (आभ/बादल का बरसना) में ही जाना पड़ता है। ठीक उसी तरह, ऊपरी या दिखावे की भक्ति से ईश्वर नहीं मिलते, गुरु के ज्ञान में पूरी तरह डूबना पड़ता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਜਗਿਆਸੂ ਨੇ ਆਪਣੇ ਸਤਿਗੁਰੂ ਜੀ ਨੂੰ ਜਿਸ ਭਾਵਨਾ ਨਾਲ ਸਮਝਿਆ ਤੇ ਜਾਣਿਆ, ਉਸਨੂੰ ਓਨਾ ਹੀ ਰੂਹਾਨੀ ਲਾਭ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ। ਜਿਵੇਂ ਮਾਤਰ ਤ੍ਰੇਲ (ਓਸ) ਦੀਆਂ ਬੂੰਦਾਂ ਚੱਟਣ ਨਾਲ ਪਿਆਸ ਨਹੀਂ ਬੁਝਦੀ, ਜਦ ਤੱਕ ਕਿ ਬੱਦਲਾਂ ਦੀ ਵਰਖਾ (ਆਭ) ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਡੁੱਬਿਆ ਨਾ ਜਾਵੇ। ਠੀਕ ਉਸੇ ਤਰ੍ਹਾਂ, ਉੱਪਰਲੇ ਦਿਖਾਵੇ ਦੀ ਭਗਤੀ ਨਾਲ ਮੁਕਤੀ ਨਹੀਂ ਮਿਲਦੀ, ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਲੀਨ ਹੋਣਾ ਪੈਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals that as a seeker realizes and surrenders to the Master, so is the spiritual harvest they reap. Just as licking mere drops of dew cannot quench a burning thirst until one plunges into the deluge of the rainclouds, superficial devotion cannot liberate the soul until one is fully immersed in the ocean of the Satguru’s wisdom.',
     },
     wordMeanings: {
       hi: [
@@ -958,9 +958,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
       {
         id: 'q6-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार शिष्य को गुरु से कैसा लाभ प्राप्त होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਚੇਲੇ ਨੂੰ ਗੁਰੂ ਤੋਂ ਕਿਸ ਤਰ੍ਹਾਂ ਦਾ ਲਾਭ ਮਿਲਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what kind of spiritual fruit does a disciple receive from the Guru?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार शिष्य को गुरु से कैसा लाभ प्राप्त होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਚੇਲੇ ਨੂੰ ਗੁਰੂ ਤੋਂ ਕਿਸ ਤਰ੍ਹਾਂ ਦਾ ਲਾਭ ਮਿਲਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what kind of spiritual fruit does a disciple receive from the Guru?',
         },
         options: {
           hi: ['जैसा वह गुरु को समझता और जानता है', 'केवल धन-दौलत का', 'बिना किसी समर्पण के सब कुछ', 'कोई लाभ नहीं मिलता'],
@@ -1012,9 +1012,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Akshara Purusha eka peda hai, Niranjana vaki dara. Tino Deva shakha hain, pata rupa sansara.',
     bhavarth: {
-      hi: 'कबीर साहेब सृष्टि के रहस्य को समझाते हुए कहते हैं कि अक्षर पुरुष (ब्रह्म) एक वृक्ष के समान है, और ज्योति निरंजन (काल) उसकी शाखा है। ब्रह्मा, विष्णु और महेश उस शाखा की उप-शाखाएं हैं, और सारा संसार पत्तों के समान है जो अस्थायी है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਸ੍ਰਿਸ਼ਟੀ ਦੇ ਭੇਤ ਨੂੰ ਸਮਝਾਉਂਦੇ ਹੋਏ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਕਸ਼ਰ ਪੁਰਸ਼ ਇੱਕ ਰੁੱਖ ਵਰਗਾ ਹੈ ਅਤੇ ਨਿਰੰਜਨ ਉਸਦੀ ਟਾਹਣੀ ਹੈ। ਬ੍ਰਹਮਾ, ਵਿਸ਼ਨੂੰ ਤੇ ਮਹੇਸ਼ ਉਸ ਟਾਹਣੀ ਦੀਆਂ ਸ਼ਾਖਾਵਾਂ ਹਨ ਅਤੇ ਸਾਰਾ ਸੰਸਾਰ ਪੱਤਿਆਂ ਵਾਂਗ ਹੈ ਜੋ ਸਥਾਈ ਨਹੀਂ ਹੈ।',
-      en: 'Kabir Saheb explains the hierarchy of creation: the Eternal Spirit (Akshar Purush) is like the trunk of a tree, Niranjan is its branch, the three deities (Brahma, Vishnu, Mahesh) are sub-branches, and the entire physical universe is like temporary leaves.',
+      hi: 'सतगुरु कबीर साहेब सृष्टि के रहस्य को समझाते हुए कहते हैं कि अक्षर पुरुष (ब्रह्म) एक वृक्ष के समान है, और ज्योति निरंजन (काल) उसकी शाखा है। ब्रह्मा, विष्णु और महेश उस शाखा की उप-शाखाएं हैं, और सारा संसार पत्तों के समान है जो अस्थायी है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸ੍ਰਿਸ਼ਟੀ ਦੇ ਭੇਤ ਨੂੰ ਸਮਝਾਉਂਦੇ ਹੋਏ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਕਸ਼ਰ ਪੁਰਸ਼ ਇੱਕ ਰੁੱਖ ਵਰਗਾ ਹੈ ਅਤੇ ਨਿਰੰਜਨ ਉਸਦੀ ਟਾਹਣੀ ਹੈ। ਬ੍ਰਹਮਾ, ਵਿਸ਼ਨੂੰ ਤੇ ਮਹੇਸ਼ ਉਸ ਟਾਹਣੀ ਦੀਆਂ ਸ਼ਾਖਾਵਾਂ ਹਨ ਅਤੇ ਸਾਰਾ ਸੰਸਾਰ ਪੱਤਿਆਂ ਵਾਂਗ ਹੈ ਜੋ ਸਥਾਈ ਨਹੀਂ ਹੈ।',
+      en: 'Satguru Kabir Saheb explains the hierarchy of creation: the Eternal Spirit (Akshar Purush) is like the trunk of a tree, Niranjan is its branch, the three deities (Brahma, Vishnu, Mahesh) are sub-branches, and the entire physical universe is like temporary leaves.',
     },
     wordMeanings: {
       hi: [
@@ -1095,9 +1095,9 @@ const INITIAL_SAKHIS: Sakhi[] = [
     },
     transliteration: 'Maya maha thagini ham jani. Tirguna phansa liye kara doley, boley madhuri bani.',
     bhavarth: {
-      hi: 'कबीर साहेब चेतावनी देते हुए कहते हैं कि माया सबसे बड़ी ठगिनी है। वह अपने हाथ में तीन गुणों (सत, रज, तम) की फांसी लेकर घूमती है और बहुत ही मीठी वाणी बोलती है ताकि जीव को अपने मोहपाश में बांध सके।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹੋਏ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਸਭ ਤੋਂ ਵੱਡੀ ਠਗਣੀ ਹੈ। ਉਹ ਆਪਣੇ ਹੱਥ ਵਿੱਚ ਤਿੰਨਾਂ ਗੁਣਾਂ ਦੀ ਫਾਹੀ ਲੈ ਕੇ ਘੁੰਮਦੀ ਹੈ ਅਤੇ ਬਹੁਤ ਮਿੱਠੀ ਬੋਲੀ ਬੋਲਦੀ ਹੈ ਤਾਂ ਜੋ ਜੀਵਾਂ ਨੂੰ ਆਪਣੇ ਮੋਹ-ਜਾਲ ਵਿੱਚ ਫਸਾ ਸਕੇ।',
-      en: 'Kabir Saheb warns that Illusion (Maya) is a master deceiver. She holds the snare of the three gunas (qualities of nature) and speaks sweetly to trap the soul in the cycle of worldliness.',
+      hi: 'सतगुरु कबीर साहेब चेतावनी देते हुए कहते हैं कि माया सबसे बड़ी ठगिनी है। वह अपने हाथ में तीन गुणों (सत, रज, तम) की फांसी लेकर घूमती है और बहुत ही मीठी वाणी बोलती है ताकि जीव को अपने मोहपाश में बांध सके।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹੋਏ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਸਭ ਤੋਂ ਵੱਡੀ ਠਗਣੀ ਹੈ। ਉਹ ਆਪਣੇ ਹੱਥ ਵਿੱਚ ਤਿੰਨਾਂ ਗੁਣਾਂ ਦੀ ਫਾਹੀ ਲੈ ਕੇ ਘੁੰਮਦੀ ਹੈ ਅਤੇ ਬਹੁਤ ਮਿੱਠੀ ਬੋਲੀ ਬੋਲਦੀ ਹੈ ਤਾਂ ਜੋ ਜੀਵਾਂ ਨੂੰ ਆਪਣੇ ਮੋਹ-ਜਾਲ ਵਿੱਚ ਫਸਾ ਸਕੇ।',
+      en: 'Satguru Kabir Saheb warns that Illusion (Maya) is a master deceiver. She holds the snare of the three gunas (qualities of nature) and speaks sweetly to trap the soul in the cycle of worldliness.',
     },
     wordMeanings: {
       hi: [
@@ -1135,8 +1135,8 @@ const INITIAL_SAKHIS: Sakhi[] = [
       en: 'O Saheb! Protect me from the web of Maya and grant me the wisdom of discrimination. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह प्रसिद्ध पद बीजक के "शब्द" भाग से लिया गया है, जिसमें कबीर साहेब ने माया के प्रलोभनकारी स्वरूप का वर्णन किया है।',
-      pb: 'ਇਹ ਪ੍ਰਸਿੱਧ ਸ਼ਬਦ ਬੀਜਕ ਵਿੱਚੋਂ ਲਿਆ ਗਿਆ ਹੈ ਜਿਸ ਵਿੱਚ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਮਾਇਆ ਦੇ ਮੋਹਣੇ ਰੂਪ ਦਾ ਵਰਣਨ ਕੀਤਾ ਹੈ।',
+      hi: 'यह प्रसिद्ध पद बीजक के "शब्द" भाग से लिया गया है, जिसमें सतगुरु कबीर साहेब ने माया के प्रलोभनकारी स्वरूप का वर्णन किया है।',
+      pb: 'ਇਹ ਪ੍ਰਸਿੱਧ ਸ਼ਬਦ ਬੀਜਕ ਵਿੱਚੋਂ ਲਿਆ ਗਿਆ ਹੈ ਜਿਸ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਾਇਆ ਦੇ ਮੋਹਣੇ ਰੂਪ ਦਾ ਵਰਣਨ ਕੀਤਾ ਹੈ।',
       en: 'This famous verse from the Bijak describes the alluring and deceptive nature of the material world.',
     },
     quiz: [

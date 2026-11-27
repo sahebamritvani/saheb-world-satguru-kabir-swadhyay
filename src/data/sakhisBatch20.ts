@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Hariya jaane rukhada, jo paani ka geh. Sookha kaath na jaan hi, ketu booda meh.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति और प्रेम की संवेदनशीलता समझाते हैं: जो वृक्ष सजीव और हरा-भरा होता है, वही जल और वर्षा के वास्तविक महत्व और रस को जानता है। सूखी निर्जीव लकड़ी पर चाहे कितनी भी घनघोर वर्षा हो जाए, वह जल की शीतलता और जीवनदायिनी शक्ति को नहीं समझ सकती। इसी प्रकार सहृदय और प्रेमी भक्त ही गुरु-ज्ञान और प्रभु-कृपा की वर्षा का आनंद समझ पाते हैं, शुष्क संसारी नहीं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਾਣੀ ਦੀ ਕਦਰ ਹਰਾ-ਭਰਾ ਰੁੱਖ ਹੀ ਜਾਣਦਾ ਹੈ। ਸੁੱਕੀ ਲੱਕੜ ਤੇ ਭਾਵੇਂ ਕਿੰਨਾ ਵੀ ਮੀਂਹ ਪੈ ਜਾਵੇ, ਉਹ ਪਾਣੀ ਦਾ ਰਸ ਨਹੀਂ ਸਮਝ ਸਕਦੀ। ਓਵੇਂ ਹੀ ਪ੍ਰੇਮੀ ਭਗਤ ਹੀ ਗੁਰੂ-ਕਿਰਪਾ ਦਾ ਆਨੰਦ ਮਾਣਦੇ ਹਨ।',
-      en: 'Kabir Saheb illustrates the receptivity of a loving heart: Only a living, green tree understands the life-giving essence of water and rain. A dead, dry log of wood cannot perceive or absorb the blessing of rain, no matter how heavy the downpour. Similarly, only a tender, devoted soul can taste the nectar of the Master’s grace, while hardened, dry minds remain unmoved.',
+      hi: 'सतगुरु कबीर साहेब भक्ति और प्रेम की संवेदनशीलता समझाते हैं: जो वृक्ष सजीव और हरा-भरा होता है, वही जल और वर्षा के वास्तविक महत्व और रस को जानता है। सूखी निर्जीव लकड़ी पर चाहे कितनी भी घनघोर वर्षा हो जाए, वह जल की शीतलता और जीवनदायिनी शक्ति को नहीं समझ सकती। इसी प्रकार सहृदय और प्रेमी भक्त ही गुरु-ज्ञान और प्रभु-कृपा की वर्षा का आनंद समझ पाते हैं, शुष्क संसारी नहीं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਾਣੀ ਦੀ ਕਦਰ ਹਰਾ-ਭਰਾ ਰੁੱਖ ਹੀ ਜਾਣਦਾ ਹੈ। ਸੁੱਕੀ ਲੱਕੜ ਤੇ ਭਾਵੇਂ ਕਿੰਨਾ ਵੀ ਮੀਂਹ ਪੈ ਜਾਵੇ, ਉਹ ਪਾਣੀ ਦਾ ਰਸ ਨਹੀਂ ਸਮਝ ਸਕਦੀ। ਓਵੇਂ ਹੀ ਪ੍ਰੇਮੀ ਭਗਤ ਹੀ ਗੁਰੂ-ਕਿਰਪਾ ਦਾ ਆਨੰਦ ਮਾਣਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb illustrates the receptivity of a loving heart: Only a living, green tree understands the life-giving essence of water and rain. A dead, dry log of wood cannot perceive or absorb the blessing of rain, no matter how heavy the downpour. Similarly, only a tender, devoted soul can taste the nectar of the Master’s grace, while hardened, dry minds remain unmoved.',
     },
     wordMeanings: {
       hi: [
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Heera pada bazaar me, raha chhaar lipataaye. Bahutak moorakh chale gaye, koi paarkhi liya uthaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्य और आत्मज्ञान की दुर्लभता बताते हैं: अनमोल हीरा बाज़ार की धूल-मिट्टी (छार) में पड़ा हुआ था। अज्ञानी और मूर्ख लोग उसे साधारण पत्थर समझकर उसके पास से होकर गुज़र गए। किंतु जब कोई सच्चा पारखी (जौहरी या संत) वहाँ से निकला, तो उसने धूल के बीच से उस अनमोल हीरे को पहचान कर आदरपूर्वक उठा लिया। संत ही सत्य की पहचान करते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਮੋਲਕ ਹੀਰਾ ਧੂੜ ਵਿੱਚ ਲਿਪਟਿਆ ਪਿਆ ਸੀ। ਮੂਰਖ ਲੋਕ ਉਸਨੂੰ ਪੱਥਰ ਸਮਝ ਕੇ ਲੰਘ ਗਏ, ਪਰ ਇੱਕ ਪਾਰਖੀ ਜੌਹਰੀ ਨੇ ਉਸਦੀ ਕਦਰ ਜਾਣ ਕੇ ਉਸਨੂੰ ਚੁੱਕ ਲਿਆ।',
-      en: 'Kabir Saheb speaks of the discernment of saints: A priceless diamond lay in the dusty marketplace covered in ashes and dirt. Multitudes of foolish people walked right past, mistaking it for a worthless stone. But when a true master jeweler (connoisseur of Truth) arrived, he immediately recognized its infinite worth and picked it up with great reverence.',
+      hi: 'सतगुरु कबीर साहेब सत्य और आत्मज्ञान की दुर्लभता बताते हैं: अनमोल हीरा बाज़ार की धूल-मिट्टी (छार) में पड़ा हुआ था। अज्ञानी और मूर्ख लोग उसे साधारण पत्थर समझकर उसके पास से होकर गुज़र गए। किंतु जब कोई सच्चा पारखी (जौहरी या संत) वहाँ से निकला, तो उसने धूल के बीच से उस अनमोल हीरे को पहचान कर आदरपूर्वक उठा लिया। संत ही सत्य की पहचान करते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਮੋਲਕ ਹੀਰਾ ਧੂੜ ਵਿੱਚ ਲਿਪਟਿਆ ਪਿਆ ਸੀ। ਮੂਰਖ ਲੋਕ ਉਸਨੂੰ ਪੱਥਰ ਸਮਝ ਕੇ ਲੰਘ ਗਏ, ਪਰ ਇੱਕ ਪਾਰਖੀ ਜੌਹਰੀ ਨੇ ਉਸਦੀ ਕਦਰ ਜਾਣ ਕੇ ਉਸਨੂੰ ਚੁੱਕ ਲਿਆ।',
+      en: 'Satguru Kabir Saheb speaks of the discernment of saints: A priceless diamond lay in the dusty marketplace covered in ashes and dirt. Multitudes of foolish people walked right past, mistaking it for a worthless stone. But when a true master jeweler (connoisseur of Truth) arrived, he immediately recognized its infinite worth and picked it up with great reverence.',
     },
     wordMeanings: {
       hi: [
@@ -185,9 +185,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Heera soyi sarahiye, sahe ghanan ki chot. Kapat kurangi maanva, parkhat nikla khot.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्ची निष्ठा और कपटहीनता की कसौटी बताते हैं: वास्तविक हीरा केवल वही प्रशंसनीय है जो निहाई पर रखे जाने पर लोहार के भारी घन (हथौड़े) की चोट को बिना टूटे सह जाए। इसके विपरीत, कपटी और बहुरूपी ढोंगी मनुष्य जब परीक्षा की कसौटी पर परखा जाता है, तो उसका सारा खोट और पाखंड तुरंत उजागर हो जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸਲ ਹੀਰਾ ਉਹੀ ਹੈ ਜੋ ਹਥੌੜੇ ਦੀਆਂ ਸੱਟਾਂ ਨੂੰ ਸਹਾਰ ਲਵੇ। ਦੂਜੇ ਪਾਸੇ ਕਪਟੀ ਤੇ ਪਾਖੰਡੀ ਮਨੁੱਖ ਪਰੀਖਿਆ ਆਉਣ ਤੇ ਖੋਟਾ ਸਾਬਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb proclaims the true test of spiritual authenticity: Only that diamond is truly praiseworthy which endures the relentless blows of a heavy sledgehammer on the anvil without shattering. In contrast, hypocritical and deceitful persons are quickly unmasked as utterly counterfeit when put to the test of adversity.',
+      hi: 'सतगुरु कबीर साहेब सच्ची निष्ठा और कपटहीनता की कसौटी बताते हैं: वास्तविक हीरा केवल वही प्रशंसनीय है जो निहाई पर रखे जाने पर लोहार के भारी घन (हथौड़े) की चोट को बिना टूटे सह जाए। इसके विपरीत, कपटी और बहुरूपी ढोंगी मनुष्य जब परीक्षा की कसौटी पर परखा जाता है, तो उसका सारा खोट और पाखंड तुरंत उजागर हो जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸਲ ਹੀਰਾ ਉਹੀ ਹੈ ਜੋ ਹਥੌੜੇ ਦੀਆਂ ਸੱਟਾਂ ਨੂੰ ਸਹਾਰ ਲਵੇ। ਦੂਜੇ ਪਾਸੇ ਕਪਟੀ ਤੇ ਪਾਖੰਡੀ ਮਨੁੱਖ ਪਰੀਖਿਆ ਆਉਣ ਤੇ ਖੋਟਾ ਸਾਬਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the true test of spiritual authenticity: Only that diamond is truly praiseworthy which endures the relentless blows of a heavy sledgehammer on the anvil without shattering. In contrast, hypocritical and deceitful persons are quickly unmasked as utterly counterfeit when put to the test of adversity.',
     },
     wordMeanings: {
       hi: [
@@ -270,9 +270,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Heera waha na kholiye, jaha kujado ki haat. Baandho chup ki potari, laagahu apni baat.',
     bhavarth: {
-      hi: 'कबीर साहेब अत्यंत व्यावहारिक आध्यात्मिक विवेक देते हैं: जहाँ शाक-भाजी बेचने वाले कुंजड़ों का बाज़ार हो, वहाँ अपना अनमोल हीरा कभी खोलकर मत दिखाओ, क्योंकि वे केवल सब्ज़ियों का भाव जानते हैं, हीरे का नहीं। ऐसे अज्ञानी और अपात्र लोगों के बीच अपने ज्ञान की चर्चा करने के बजाय मौन की पोटली बाँध लो और शांति से अपने मार्ग पर आगे बढ़ जाओ।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਬਜ਼ੀ ਵੇਚਣ ਵਾਲਿਆਂ ਦੀ ਹੱਟੀ ਅੱਗੇ ਅਮੋਲਕ ਹੀਰਾ ਨਾ ਖੋਲ੍ਹੋ। ਉੱਥੇ ਬਹਿਸ ਕਰਨ ਦੀ ਬਜਾਏ ਚੁੱਪ ਵੱਟ ਕੇ ਆਪਣੇ ਰਾਹੇ ਤੁਰ ਪਵੋ। ਗਿਆਨ ਸਿਰਫ ਸੁਣਨ ਵਾਲੇ ਪਾਤਰ ਅੱਗੇ ਹੀ ਪ੍ਰਗਟ ਕਰੋ।',
-      en: 'Kabir Saheb offers profound practical wisdom: Do not open and display your priceless diamond in a marketplace of vegetable vendors who know only the price of greens and cannot fathom the value of a jewel. Among unreceptive and argumentative minds, tie up the bundle of silence and quietly proceed along your spiritual way.',
+      hi: 'सतगुरु कबीर साहेब अत्यंत व्यावहारिक आध्यात्मिक विवेक देते हैं: जहाँ शाक-भाजी बेचने वाले कुंजड़ों का बाज़ार हो, वहाँ अपना अनमोल हीरा कभी खोलकर मत दिखाओ, क्योंकि वे केवल सब्ज़ियों का भाव जानते हैं, हीरे का नहीं। ऐसे अज्ञानी और अपात्र लोगों के बीच अपने ज्ञान की चर्चा करने के बजाय मौन की पोटली बाँध लो और शांति से अपने मार्ग पर आगे बढ़ जाओ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਬਜ਼ੀ ਵੇਚਣ ਵਾਲਿਆਂ ਦੀ ਹੱਟੀ ਅੱਗੇ ਅਮੋਲਕ ਹੀਰਾ ਨਾ ਖੋਲ੍ਹੋ। ਉੱਥੇ ਬਹਿਸ ਕਰਨ ਦੀ ਬਜਾਏ ਚੁੱਪ ਵੱਟ ਕੇ ਆਪਣੇ ਰਾਹੇ ਤੁਰ ਪਵੋ। ਗਿਆਨ ਸਿਰਫ ਸੁਣਨ ਵਾਲੇ ਪਾਤਰ ਅੱਗੇ ਹੀ ਪ੍ਰਗਟ ਕਰੋ।',
+      en: 'Satguru Kabir Saheb offers profound practical wisdom: Do not open and display your priceless diamond in a marketplace of vegetable vendors who know only the price of greens and cannot fathom the value of a jewel. Among unreceptive and argumentative minds, tie up the bundle of silence and quietly proceed along your spiritual way.',
     },
     wordMeanings: {
       hi: [
@@ -302,7 +302,7 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
       en: 'Practice silence in frivolous or hostile debates today, quietly holding true wisdom in your heart.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरु! मुझे यह विवेक दीजिए कि मैं कहाँ बोलूँ और कहाँ मौन रहकर अपने आत्म-धन की रक्षा करूँ। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरु! मुझे यह विवेक दीजिए कि मैं कहाँ बोलूँ और कहाँ मौन रहकर अपने आत्म-धन की रक्षा करूँ। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ ਜੀ! ਮੈਨੂੰ ਬੋਲਣ ਅਤੇ ਚੁੱਪ ਰਹਿਣ ਦਾ ਸਹੀ ਵਿਵੇਕ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Bestow upon me the wisdom of silence, that I may guard the sacred jewel of Truth with discernment. Saheb Bandagi Saheb!',
     },
@@ -352,9 +352,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Herat herat he sakhi, raha Kabir heraaye. Boond samaani samundar me, so kat heri jaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब आत्म-साक्षात्कार और अद्वैत में लीन होने का परम अनुभव प्रकट करते हैं: हे सखी (आत्माराम)! उस परमात्मा को खोजते-खोजते कबीर का स्वयं का पृथक अस्तित्व ही खो गया। जैसे पानी की नन्हीं बूँद जब अथाह महासागर में समा जाती है, तो फिर उस बूँद को अलग से कैसे खोजा जा सकता है? जीवात्मा का परमात्मा में पूर्ण विलय हो गया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਨੂੰ ਲੱਭਦਿਆਂ-ਲੱਭਦਿਆਂ ਮੇਰੀ ਆਪਣੀ ਹੋਂਦ ਹੀ ਮਿਟ ਗਈ। ਜਿਵੇਂ ਪਾਣੀ ਦੀ ਬੂੰਦ ਸਮੁੰਦਰ ਵਿੱਚ ਮਿਲ ਕੇ ਸਮੁੰਦਰ ਹੀ ਬਣ ਜਾਂਦੀ ਹੈ, ਉਸਨੂੰ ਵੱਖਰਾ ਨਹੀਂ ਲੱਭਿਆ ਜਾ ਸਕਦਾ, ਓਵੇਂ ਹੀ ਆਤਮਾ ਪ੍ਰਮਾਤਮਾ ਵਿੱਚ ਲੀਨ ਹੋ ਗਈ।',
-      en: 'Kabir Saheb articulates the pinnacle of mystical non-duality: "Searching and seeking for the Beloved, O friend, Kabir himself vanished into the Infinite! When the tiny drop of water dissolves into the boundless ocean, how can that individual drop ever be retrieved separately?" The seeker and the Sought have merged as One.',
+      hi: 'सतगुरु कबीर साहेब आत्म-साक्षात्कार और अद्वैत में लीन होने का परम अनुभव प्रकट करते हैं: हे सखी (आत्माराम)! उस परमात्मा को खोजते-खोजते कबीर का स्वयं का पृथक अस्तित्व ही खो गया। जैसे पानी की नन्हीं बूँद जब अथाह महासागर में समा जाती है, तो फिर उस बूँद को अलग से कैसे खोजा जा सकता है? जीवात्मा का परमात्मा में पूर्ण विलय हो गया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਨੂੰ ਲੱਭਦਿਆਂ-ਲੱਭਦਿਆਂ ਮੇਰੀ ਆਪਣੀ ਹੋਂਦ ਹੀ ਮਿਟ ਗਈ। ਜਿਵੇਂ ਪਾਣੀ ਦੀ ਬੂੰਦ ਸਮੁੰਦਰ ਵਿੱਚ ਮਿਲ ਕੇ ਸਮੁੰਦਰ ਹੀ ਬਣ ਜਾਂਦੀ ਹੈ, ਉਸਨੂੰ ਵੱਖਰਾ ਨਹੀਂ ਲੱਭਿਆ ਜਾ ਸਕਦਾ, ਓਵੇਂ ਹੀ ਆਤਮਾ ਪ੍ਰਮਾਤਮਾ ਵਿੱਚ ਲੀਨ ਹੋ ਗਈ।',
+      en: 'Satguru Kabir Saheb articulates the pinnacle of mystical non-duality: "Searching and seeking for the Beloved, O friend, Kabir himself vanished into the Infinite! When the tiny drop of water dissolves into the boundless ocean, how can that individual drop ever be retrieved separately?" The seeker and the Sought have merged as One.',
     },
     wordMeanings: {
       hi: [
@@ -389,8 +389,8 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
       en: 'O Infinite Beloved! Dissolve my tiny drop of individual consciousness forever into the boundless ocean of Your Light. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी भारतीय रहस्यवाद (Mysticism) और कबीर साहेब के परम अद्वैत दर्शन की अमर गाथा है।',
-      pb: 'ਇਹ ਸਾਖੀ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਰਮ ਅਦਵੈਤ ਅਨੁਭਵ ਦਾ ਸਿਖਰ ਹੈ।',
+      hi: 'यह साखी भारतीय रहस्यवाद (Mysticism) और सतगुरु कबीर साहेब के परम अद्वैत दर्शन की अमर गाथा है।',
+      pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਰਮ ਅਦਵੈਤ ਅਨੁਭਵ ਦਾ ਸਿਖਰ ਹੈ।',
       en: 'This immortal Sakhi represents the zenith of mystical absorption and transcendent non-duality.',
     },
     quiz: [
@@ -434,9 +434,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Het bina aave nahi, het taha chali jaaye. Kabir jal aur santjan, name taha thehraaye.',
     bhavarth: {
-      hi: 'कबीर साहेब प्रेम और संतों के स्वभाव का मर्म समझाते हैं: जहाँ निष्कपट प्रेम (हेत) न हो वहाँ संतों का मन नहीं आता, और जहाँ सच्चा प्रेम होता है वहाँ वे स्वयं खिंचे चले जाते हैं। जैसे जल सदैव नीचे (ढलान) की ओर बहकर वहीं ठहरता है, वैसे ही संतजन भी वहीं निवास करते हैं जहाँ हृदय में नम्रता और झुकने का भाव होता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬਿਨਾਂ ਸੱਚੇ ਪ੍ਰੇਮ ਤੋਂ ਸੰਤ ਨਹੀਂ ਆਉਂਦੇ, ਅਤੇ ਜਿੱਥੇ ਪ੍ਰੇਮ ਹੋਵੇ ਉੱਥੇ ਆਪੇ ਚਲੇ ਜਾਂਦੇ ਹਨ। ਜਿਵੇਂ ਪਾਣੀ ਨਿਵਾਣ ਵੱਲ ਜਾ ਕੇ ਟਿਕਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਸੰਤ ਵੀ ਨਿਮਰਤਾ ਵਾਲੇ ਹਿਰਦੇ ਵਿੱਚ ਠਹਿਰਦੇ ਹਨ।',
-      en: 'Kabir Saheb elucidates the divine dynamics of love and saintliness: Saints never visit where sincere love is lacking, but where true devotion abides, they are effortlessly drawn. Just as water naturally flows downward and settles only in low, hollow ground, saintly grace abides only where there is genuine humility and bowing of the heart.',
+      hi: 'सतगुरु कबीर साहेब प्रेम और संतों के स्वभाव का मर्म समझाते हैं: जहाँ निष्कपट प्रेम (हेत) न हो वहाँ संतों का मन नहीं आता, और जहाँ सच्चा प्रेम होता है वहाँ वे स्वयं खिंचे चले जाते हैं। जैसे जल सदैव नीचे (ढलान) की ओर बहकर वहीं ठहरता है, वैसे ही संतजन भी वहीं निवास करते हैं जहाँ हृदय में नम्रता और झुकने का भाव होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬਿਨਾਂ ਸੱਚੇ ਪ੍ਰੇਮ ਤੋਂ ਸੰਤ ਨਹੀਂ ਆਉਂਦੇ, ਅਤੇ ਜਿੱਥੇ ਪ੍ਰੇਮ ਹੋਵੇ ਉੱਥੇ ਆਪੇ ਚਲੇ ਜਾਂਦੇ ਹਨ। ਜਿਵੇਂ ਪਾਣੀ ਨਿਵਾਣ ਵੱਲ ਜਾ ਕੇ ਟਿਕਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਸੰਤ ਵੀ ਨਿਮਰਤਾ ਵਾਲੇ ਹਿਰਦੇ ਵਿੱਚ ਠਹਿਰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb elucidates the divine dynamics of love and saintliness: Saints never visit where sincere love is lacking, but where true devotion abides, they are effortlessly drawn. Just as water naturally flows downward and settles only in low, hollow ground, saintly grace abides only where there is genuine humility and bowing of the heart.',
     },
     wordMeanings: {
       hi: [
@@ -516,9 +516,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Hil mil khele shabd so, antar rahi na rekh. Samujhe ka mat ek hai, kya pandit kya shekh.',
     bhavarth: {
-      hi: 'कबीर साहेब सर्वधर्म समन्वय और आत्म-तत्व की एकता का उद्घोष करते हैं: जो साधक प्रेमपूर्वक सतगुरु के पावन "शब्द" (अनहद नाद / सत्य नाम) में रम जाता है, उसके भीतर किसी भी प्रकार का भेदभाव या द्वैत की कोई रेखा शेष नहीं रहती। जो उस परम तत्व को समझ लेते हैं, उन सभी का अनुभव एक ही होता है—चाहे वह हिंदू पंडित हो या मुस्लिम शेख।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਗੁਰੂ ਦੇ ਸ਼ਬਦ ਨਾਲ ਇੱਕ-ਮਿੱਕ ਹੋ ਗਿਆ, ਉਸਦੇ ਅੰਦਰ ਵਿਤਕਰੇ ਦੀ ਕੋਈ ਲਕੀਰ ਨਹੀਂ ਰਹਿੰਦੀ। ਸੱਚ ਨੂੰ ਸਮਝਣ ਵਾਲਿਆਂ ਦਾ ਮਾਰਗ ਇੱਕੋ ਹੈ, ਭਾਵੇਂ ਉਹ ਪੰਡਿਤ ਹੋਵੇ ਜਾਂ ਸ਼ੇਖ।',
-      en: 'Kabir Saheb proclaims the universal unity of realization: One who playfully and lovingly immerses in the vibrant divine Word (Shabd) leaves no line of division or duality within. Those who truly comprehend the Supreme Truth arrive at the very same realization, whether known outwardly as a Hindu Pandit or a Muslim Sheikh.',
+      hi: 'सतगुरु कबीर साहेब सर्वधर्म समन्वय और आत्म-तत्व की एकता का उद्घोष करते हैं: जो साधक प्रेमपूर्वक सतगुरु के पावन "शब्द" (अनहद नाद / सत्य नाम) में रम जाता है, उसके भीतर किसी भी प्रकार का भेदभाव या द्वैत की कोई रेखा शेष नहीं रहती। जो उस परम तत्व को समझ लेते हैं, उन सभी का अनुभव एक ही होता है—चाहे वह हिंदू पंडित हो या मुस्लिम शेख।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਗੁਰੂ ਦੇ ਸ਼ਬਦ ਨਾਲ ਇੱਕ-ਮਿੱਕ ਹੋ ਗਿਆ, ਉਸਦੇ ਅੰਦਰ ਵਿਤਕਰੇ ਦੀ ਕੋਈ ਲਕੀਰ ਨਹੀਂ ਰਹਿੰਦੀ। ਸੱਚ ਨੂੰ ਸਮਝਣ ਵਾਲਿਆਂ ਦਾ ਮਾਰਗ ਇੱਕੋ ਹੈ, ਭਾਵੇਂ ਉਹ ਪੰਡਿਤ ਹੋਵੇ ਜਾਂ ਸ਼ੇਖ।',
+      en: 'Satguru Kabir Saheb proclaims the universal unity of realization: One who playfully and lovingly immerses in the vibrant divine Word (Shabd) leaves no line of division or duality within. Those who truly comprehend the Supreme Truth arrive at the very same realization, whether known outwardly as a Hindu Pandit or a Muslim Sheikh.',
     },
     wordMeanings: {
       hi: [
@@ -553,9 +553,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
       en: 'O Universal Satguru! Intoxicate my soul with Your divine Word so that every barrier of division within me dissolves. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब के निर्गुण शब्द-योग और सर्वधर्म समभाव का अत्यंत तेजस्वी प्रमाण है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब के निर्गुण शब्द-योग और सर्वधर्म समभाव का अत्यंत तेजस्वी प्रमाण है।',
       pb: 'ਇਹ ਸਾਖੀ ਸ਼ਬਦ-ਅਭਿਆਸ ਅਤੇ ਸਾਂਝੀਵਾਲਤਾ ਦਾ ਸੰਦੇਸ਼ ਦਿੰਦੀ ਹੈ।',
-      en: 'This verse is a shining testament to Kabir Saheb’s philosophy of universal oneness through the Divine Word.',
+      en: 'This verse is a shining testament to Satguru Kabir Saheb’s philosophy of universal oneness through the Divine Word.',
     },
     quiz: [
       {
@@ -598,9 +598,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Him se paani ho gaya, paani hua bhaap. Jo pahile tha so bhaya, pragata aap hi aap.',
     bhavarth: {
-      hi: 'कबीर साहेब सृष्टि और आत्मा के मूल स्वरूप का अद्वैत रहस्य प्रकट करते हैं: जैसे बर्फ (हिम) पिघलकर पानी बनी और वही पानी गर्म होकर अदृश्य भाप बन गया—किंतु मूल तत्व (जल) वही रहा। इसी प्रकार जीवात्मा उपाधियों के कारण रूप बदलती है, परंतु आत्मज्ञान होते ही वह पुनः अपने मूल परम चेतन स्वरूप में स्थित हो जाती है। जो अनादि काल से था, वही स्वयं में स्वयं प्रकट हो गया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਦਵੈਤ ਤੱਤ ਦਾ ਖੁਲਾਸਾ ਕਰਦੇ ਹਨ: ਬਰਫ਼ ਪਿਘਲ ਕੇ ਪਾਣੀ ਬਣੀ ਅਤੇ ਪਾਣੀ ਤੋਂ ਭਾਫ਼ ਬਣ ਗਈ, ਪਰ ਅਸਲ ਤੱਤ ਇੱਕੋ ਰਿਹਾ। ਓਵੇਂ ਹੀ ਆਤਮਾ ਗਿਆਨ ਹੋਣ ਤੇ ਆਪਣੇ ਅਸਲ ਪ੍ਰਭੂ-ਸਰੂਪ ਵਿੱਚ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦੀ ਹੈ।',
-      en: 'Kabir Saheb reveals the unchanging essence of Consciousness: Ice melts into water, and water evaporates into invisible steam, yet the fundamental element (H2O) remains identical throughout. Likewise, the individual soul assumes various forms through illusion, but upon enlightenment, it returns to its pristine, original Divine Nature—that which eternally existed reveals Itself to Itself.',
+      hi: 'सतगुरु कबीर साहेब सृष्टि और आत्मा के मूल स्वरूप का अद्वैत रहस्य प्रकट करते हैं: जैसे बर्फ (हिम) पिघलकर पानी बनी और वही पानी गर्म होकर अदृश्य भाप बन गया—किंतु मूल तत्व (जल) वही रहा। इसी प्रकार जीवात्मा उपाधियों के कारण रूप बदलती है, परंतु आत्मज्ञान होते ही वह पुनः अपने मूल परम चेतन स्वरूप में स्थित हो जाती है। जो अनादि काल से था, वही स्वयं में स्वयं प्रकट हो गया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਦਵੈਤ ਤੱਤ ਦਾ ਖੁਲਾਸਾ ਕਰਦੇ ਹਨ: ਬਰਫ਼ ਪਿਘਲ ਕੇ ਪਾਣੀ ਬਣੀ ਅਤੇ ਪਾਣੀ ਤੋਂ ਭਾਫ਼ ਬਣ ਗਈ, ਪਰ ਅਸਲ ਤੱਤ ਇੱਕੋ ਰਿਹਾ। ਓਵੇਂ ਹੀ ਆਤਮਾ ਗਿਆਨ ਹੋਣ ਤੇ ਆਪਣੇ ਅਸਲ ਪ੍ਰਭੂ-ਸਰੂਪ ਵਿੱਚ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the unchanging essence of Consciousness: Ice melts into water, and water evaporates into invisible steam, yet the fundamental element (H2O) remains identical throughout. Likewise, the individual soul assumes various forms through illusion, but upon enlightenment, it returns to its pristine, original Divine Nature—that which eternally existed reveals Itself to Itself.',
     },
     wordMeanings: {
       hi: [
@@ -680,9 +680,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Ja ghat prem na sanchare, so ghat jaan samaan. Jaise khaal luhaar ki, saans letu bin praan.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति और प्रेम की अपरिहार्यता बताते हैं: जिस हृदय (घट) में ईश्वर और मानवता के प्रति सच्चा प्रेम प्रवाहित नहीं होता, उस शरीर को श्मशान या निर्जीव समान समझना चाहिए। वह मनुष्य जीवित होते हुए भी उसी प्रकार है जैसे लुहार की चमड़े की धौंकनी (खाल), जो बिना किसी प्राण के भी केवल हवा की साँसें लेती और छोड़ती रहती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ-ਪ੍ਰੇਮ ਨਹੀਂ ਉਪਜਦਾ, ਉਹ ਸਰੀਰ ਮੁਰਦੇ ਸਮਾਨ ਹੈ। ਜਿਵੇਂ ਲੁਹਾਰ ਦੀ ਧੌਂਕਣੀ ਬਿਨਾਂ ਜਾਨ ਦੇ ਸਾਹ ਲੈਂਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜਿਊਣਾ ਵਿਅਰਥ ਹੈ।',
-      en: 'Kabir Saheb underscores the absolute necessity of divine love: A heart in which pure love does not flow is like a desolate cremation ground or a lifeless corpse. Such a person merely breathes like the leather bellows of a blacksmith, taking in and expelling air without possessing true spiritual life.',
+      hi: 'सतगुरु कबीर साहेब भक्ति और प्रेम की अपरिहार्यता बताते हैं: जिस हृदय (घट) में ईश्वर और मानवता के प्रति सच्चा प्रेम प्रवाहित नहीं होता, उस शरीर को श्मशान या निर्जीव समान समझना चाहिए। वह मनुष्य जीवित होते हुए भी उसी प्रकार है जैसे लुहार की चमड़े की धौंकनी (खाल), जो बिना किसी प्राण के भी केवल हवा की साँसें लेती और छोड़ती रहती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ-ਪ੍ਰੇਮ ਨਹੀਂ ਉਪਜਦਾ, ਉਹ ਸਰੀਰ ਮੁਰਦੇ ਸਮਾਨ ਹੈ। ਜਿਵੇਂ ਲੁਹਾਰ ਦੀ ਧੌਂਕਣੀ ਬਿਨਾਂ ਜਾਨ ਦੇ ਸਾਹ ਲੈਂਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜਿਊਣਾ ਵਿਅਰਥ ਹੈ।',
+      en: 'Satguru Kabir Saheb underscores the absolute necessity of divine love: A heart in which pure love does not flow is like a desolate cremation ground or a lifeless corpse. Such a person merely breathes like the leather bellows of a blacksmith, taking in and expelling air without possessing true spiritual life.',
     },
     wordMeanings: {
       hi: [
@@ -720,9 +720,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
       en: 'O Satguru of Divine Love! Infuse my dry heart with the nectar of devotion so that every breath I take becomes an act of worship. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब के प्रेम-दर्शन की सबसे प्रसिद्ध और प्रभावशाली साखियों में से एक है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब के प्रेम-दर्शन की सबसे प्रसिद्ध और प्रभावशाली साखियों में से एक है।',
       pb: 'ਇਹ ਸਾਖੀ ਪ੍ਰੇਮ ਬਿਨਾਂ ਜੀਵਨ ਨੂੰ ਵਿਅਰਥ ਦੱਸਦੀ ਹੈ।',
-      en: 'This is one of the most celebrated verses of Kabir Saheb, highlighting love as the true essence of life.',
+      en: 'This is one of the most celebrated verses of Satguru Kabir Saheb, highlighting love as the true essence of life.',
     },
     quiz: [
       {
@@ -765,9 +765,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Ja karan jag dhoondhiya, so to ghat hi maahi. Parda diya bharam ka, taate soojhe naahi.',
     bhavarth: {
-      hi: 'कबीर साहेब आंतरिक खोज का रहस्य बताते हैं: जिस परमात्मा को खोजने के लिए मनुष्य ने सारे संसार, तीर्थों, जंगलों और मंदिरों की खाक छानी, वह परमेश्वर तो उसके अपने ही हृदय (घट) के भीतर विराजमान है। किंतु बीच में अज्ञान और संशय रूपी "भ्रम का पर्दा" पड़ा हुआ है, जिसके कारण वह नज़दीक होते हुए भी दिखाई नहीं देता। गुरु इस पर्दे को हटाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਪ੍ਰਭੂ ਨੂੰ ਲੱਭਣ ਲਈ ਸਾਰਾ ਸੰਸਾਰ ਛਾਣ ਮਾਰਿਆ, ਉਹ ਤਾਂ ਆਪਣੇ ਹੀ ਹਿਰਦੇ ਦੇ ਅੰਦਰ ਵੱਸਦਾ ਹੈ। ਪਰ ਵਿਚਕਾਰ ਭਰਮ ਤੇ ਅਗਿਆਨ ਦਾ ਪਰਦਾ ਹੋਣ ਕਰਕੇ ਉਹ ਨਜ਼ਰ ਨਹੀਂ ਆਉਂਦਾ।',
-      en: 'Kabir Saheb reveals the secret of inner realization: The Divine whom mortals seek through endless worldly wanderings, pilgrimages, and outer temples resides right within the inner sanctuary of their own heart. Yet because of the thick veil of mental delusion and ignorance, the ever-present Beloved remains unseen until the Satguru removes the veil.',
+      hi: 'सतगुरु कबीर साहेब आंतरिक खोज का रहस्य बताते हैं: जिस परमात्मा को खोजने के लिए मनुष्य ने सारे संसार, तीर्थों, जंगलों और मंदिरों की खाक छानी, वह परमेश्वर तो उसके अपने ही हृदय (घट) के भीतर विराजमान है। किंतु बीच में अज्ञान और संशय रूपी "भ्रम का पर्दा" पड़ा हुआ है, जिसके कारण वह नज़दीक होते हुए भी दिखाई नहीं देता। गुरु इस पर्दे को हटाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਪ੍ਰਭੂ ਨੂੰ ਲੱਭਣ ਲਈ ਸਾਰਾ ਸੰਸਾਰ ਛਾਣ ਮਾਰਿਆ, ਉਹ ਤਾਂ ਆਪਣੇ ਹੀ ਹਿਰਦੇ ਦੇ ਅੰਦਰ ਵੱਸਦਾ ਹੈ। ਪਰ ਵਿਚਕਾਰ ਭਰਮ ਤੇ ਅਗਿਆਨ ਦਾ ਪਰਦਾ ਹੋਣ ਕਰਕੇ ਉਹ ਨਜ਼ਰ ਨਹੀਂ ਆਉਂਦਾ।',
+      en: 'Satguru Kabir Saheb reveals the secret of inner realization: The Divine whom mortals seek through endless worldly wanderings, pilgrimages, and outer temples resides right within the inner sanctuary of their own heart. Yet because of the thick veil of mental delusion and ignorance, the ever-present Beloved remains unseen until the Satguru removes the veil.',
     },
     wordMeanings: {
       hi: [
@@ -850,9 +850,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Ja pal darsan sadhu ka, ta pal ki balihaari. Ram naam rasna base, leeje janam sudhaari.',
     bhavarth: {
-      hi: 'कबीर साहेब संत-दर्शन और नाम-स्मरण के पावन क्षण की महिमा गाते हैं: जिस क्षण सच्चे साधु-संत के पावन दर्शन प्राप्त होते हैं, वह क्षण अत्यंत दुर्लभ और न्योछावर करने योग्य (बलिहारी) है। उस शुभ घड़ी में अपनी जिह्वा (रसना) पर प्रभु का पावन नाम बसाकर इस अमूल्य मानव जन्म को सुधार और सफल कर लेना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਘੜੀ ਸੱਚੇ ਸਾਧੂ ਦੇ ਦਰਸ਼ਨ ਹੋਣ, ਉਹ ਪਲ ਧੰਨ ਹੈ। ਉਸੇ ਵੇਲੇ ਜੀਭ ਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਵਸਾ ਕੇ ਆਪਣਾ ਮਨੁੱਖਾ ਜਨਮ ਸਫਲ ਕਰ ਲਵੋ।',
-      en: 'Kabir Saheb celebrates the supreme sanctity of holy association: Blessed and priceless is that auspicious moment when one is blessed with the holy vision (Darshan) of a true saint! In that divine instance, anchor the sacred Name of the Lord upon your tongue and redeem the purpose of this human incarnation.',
+      hi: 'सतगुरु कबीर साहेब संत-दर्शन और नाम-स्मरण के पावन क्षण की महिमा गाते हैं: जिस क्षण सच्चे साधु-संत के पावन दर्शन प्राप्त होते हैं, वह क्षण अत्यंत दुर्लभ और न्योछावर करने योग्य (बलिहारी) है। उस शुभ घड़ी में अपनी जिह्वा (रसना) पर प्रभु का पावन नाम बसाकर इस अमूल्य मानव जन्म को सुधार और सफल कर लेना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਘੜੀ ਸੱਚੇ ਸਾਧੂ ਦੇ ਦਰਸ਼ਨ ਹੋਣ, ਉਹ ਪਲ ਧੰਨ ਹੈ। ਉਸੇ ਵੇਲੇ ਜੀਭ ਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਵਸਾ ਕੇ ਆਪਣਾ ਮਨੁੱਖਾ ਜਨਮ ਸਫਲ ਕਰ ਲਵੋ।',
+      en: 'Satguru Kabir Saheb celebrates the supreme sanctity of holy association: Blessed and priceless is that auspicious moment when one is blessed with the holy vision (Darshan) of a true saint! In that divine instance, anchor the sacred Name of the Lord upon your tongue and redeem the purpose of this human incarnation.',
     },
     wordMeanings: {
       hi: [
@@ -932,9 +932,9 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
     },
     transliteration: 'Jaagan me sovan kare, saadhan me lau laaye. Soorat dor laagi rahe, taar toot naahi jaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब सहज योग और निरंतर ध्यान (सहज समाधि) की विधि बताते हैं: साधक जागते हुए भी संसार के प्रपंचों के प्रति सोया रहे (उदासीन रहे) और अपनी साधना में अखंड लौ लगाए रखे। उसकी सूरत (चेतना) की डोर परमात्मा के शब्द से ऐसी बंधी रहे कि दिन-रात के किसी भी कार्य में वह तार टूटने न पाए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸਹਿਜ ਅਵਸਥਾ ਦਾ ਰਹੱਸ ਦੱਸਦੇ ਹਨ: ਜਾਗਦਿਆਂ ਹੋਇਆਂ ਵੀ ਸੰਸਾਰਕ ਮੋਹ ਤੋਂ ਸੁੱਤਾ (ਨਿਰਲੇਪ) ਰਹੇ ਅਤੇ ਪ੍ਰਭੂ ਦੇ ਸਿਮਰਨ ਵਿੱਚ ਸੁਰਤ ਜੋੜੀ ਰੱਖੇ। ਧਿਆਨ ਦੀ ਡੋਰ ਇਸ ਤਰ੍ਹਾਂ ਬੱਝੀ ਰਹੇ ਕਿ ਕਦੇ ਵੀ ਨਾ ਟੁੱਟੇ।',
-      en: 'Kabir Saheb unveils the sublime art of Sahaj Samadhi (perpetual meditation): While fully awake and engaged in the world, the wise seeker remains asleep (detached and aloof) to worldly temptations, keeping the flame of devotion burning continuously within. Let the subtle thread of inner awareness (Surati) remain so firmly anchored in the Divine that it never snaps amid any daily activity.',
+      hi: 'सतगुरु कबीर साहेब सहज योग और निरंतर ध्यान (सहज समाधि) की विधि बताते हैं: साधक जागते हुए भी संसार के प्रपंचों के प्रति सोया रहे (उदासीन रहे) और अपनी साधना में अखंड लौ लगाए रखे। उसकी सूरत (चेतना) की डोर परमात्मा के शब्द से ऐसी बंधी रहे कि दिन-रात के किसी भी कार्य में वह तार टूटने न पाए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਹਿਜ ਅਵਸਥਾ ਦਾ ਰਹੱਸ ਦੱਸਦੇ ਹਨ: ਜਾਗਦਿਆਂ ਹੋਇਆਂ ਵੀ ਸੰਸਾਰਕ ਮੋਹ ਤੋਂ ਸੁੱਤਾ (ਨਿਰਲੇਪ) ਰਹੇ ਅਤੇ ਪ੍ਰਭੂ ਦੇ ਸਿਮਰਨ ਵਿੱਚ ਸੁਰਤ ਜੋੜੀ ਰੱਖੇ। ਧਿਆਨ ਦੀ ਡੋਰ ਇਸ ਤਰ੍ਹਾਂ ਬੱਝੀ ਰਹੇ ਕਿ ਕਦੇ ਵੀ ਨਾ ਟੁੱਟੇ।',
+      en: 'Satguru Kabir Saheb unveils the sublime art of Sahaj Samadhi (perpetual meditation): While fully awake and engaged in the world, the wise seeker remains asleep (detached and aloof) to worldly temptations, keeping the flame of devotion burning continuously within. Let the subtle thread of inner awareness (Surati) remain so firmly anchored in the Divine that it never snaps amid any daily activity.',
     },
     wordMeanings: {
       hi: [
@@ -972,7 +972,7 @@ export const SAKHIS_BATCH_20: Sakhi[] = [
       en: 'O Divine Master! Weave the thread of my inner consciousness so tightly into Your holy Word that no worldly wave can ever sever it. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की "सहज समाधि" और "कर्म करते हुए नाम सुमिरन" का उत्कृष्ट मार्गदर्शन है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की "सहज समाधि" और "कर्म करते हुए नाम सुमिरन" का उत्कृष्ट मार्गदर्शन है।',
       pb: 'ਇਹ ਸਾਖੀ ਸਹਿਜ ਸਮਾਧੀ ਅਤੇ ਅਖੰਡ ਸਿਮਰਨ ਦਾ ਉਪਦੇਸ਼ ਦਿੰਦੀ ਹੈ।',
       en: 'This verse is a masterclass in living in Sahaj Samadhi—meditative absorption while engaged in active duty.',
     },

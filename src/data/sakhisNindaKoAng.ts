@@ -162,7 +162,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरे मन को निर्मल ज्ञान से भर दीजिए ताकि बाह्य आडम्बरों के स्थान पर मैं शुद्ध आत्म-चिंतन पा सकूँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੇ ਹਿਰਦੇ ਨੂੰ ਸ਼ੁੱਧ ਤੇ ਪਵਿੱਤਰ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹेਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੇ ਹਿਰਦੇ ਨੂੰ ਸ਼ੁੱਧ ਤੇ ਪਵਿੱਤਰ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Wash away my inner impurities and anchor my soul in pure truth, beyond vain rituals.'
     },
     quiz: []
@@ -327,7 +327,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! इस निंदा रूपी सूक्ष्म वासना से मेरी रक्षा करें और मुझे परम पवित्रता प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਨਿੰਦਾ ਕਰਨ ਦੀ ਆਦਤ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਨਿੰਦਾ ਕਰਨ ਦੀ ਆਦਤ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Deliver my consciousness from this deep-seated habit of gossip, and keep me pure.'
     },
     quiz: []
@@ -437,7 +437,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे वह समझ दीजिए कि मैं कभी अपने भाग्य का घमंड न करूँ और सभी प्राणियों का सम्मान करूँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਅਹੰਕਾਰ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਅਹੰਕਾਰ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Saheb! Keep me free from vanity of fortune, and fill my heart with respect for all.'
     },
     quiz: []
@@ -563,7 +563,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Nindak mera jani maro, jeevo aadi jugaadi. Kabir satguru paaiye, nindak ke parasaadi.',
     bhavarth: {
-      hi: 'हे मेरे निंदक! तुम मत मरो, बल्कि युग-युग तक जीयो। हे मनुष्यों! तुम निंदक व्यवहार से होने वाली कृपा से ही यथार्थ सद्गुरु को पा सकते हो।',
+      hi: 'हे मेरे निंदक! तुम मत मरो, बल्कि युग-युग तक जीयो। हे मनुष्यों! तुम निंदक व्यवहार से होने वाली कृपा से ही यथार्थ सतगुरु को पा सकते हो।',
       pb: 'ਹੇ ਮੇਰੇ ਨਿੰਦਕ! ਤੂੰ ਕਦੇ ਨਾ ਮਰ, ਸਗੋਂ ਜੁੱਗਾਂ-ਜੁੱਗਾਂ ਤੱਕ ਜਿਊਂਦਾ ਰਹਿ। ਤੇਰੀ ਨਿੰਦਾ ਕਾਰਨ ਹੀ ਮੇਰਾ ਹੰਕਾਰ ਟੁੱਟਦਾ ਹੈ ਅਤੇ ਮੈਨੂੰ ਸਤਿਗੁਰੂ ਮਿਲਦੇ ਹਨ।',
       en: 'May my slanderer never die; let them live from age to age! For it is through the ego-shattering grace of their criticism that one is driven to find the True Master.',
     },
@@ -596,7 +596,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरे मन में निंदकों के प्रति भी क्षमा व करुणा का वास रहे। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਨਿੰਦਕਾਂ ਪ੍ਰਤੀ ਵੀ ਦਇਆ ਭਾਵ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਨਿੰਦਕਾਂ ਪ੍ਰਤੀ ਵੀ ਦਇਆ ਭਾਵ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Bless my heart with infinite compassion so that I feel only kindness toward my slanders.'
     },
     quiz: []
@@ -618,9 +618,9 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir nindak mari gaya, ab kya kahiye jaay. Aisa koi na mila, beeda ley uthaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो मेरा निंदक था, वह मर गया, क्या कहा जाए? ऐसा कोई नहीं मिलता कि वह फिर से मेरी निंदा करने का बीड़ा उठा ले।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੇਰੀ ਨਿੰਦਾ ਕਰਨ ਵਾਲਾ ਚਲਾ ਗਿਆ ਹੈ, ਹੁਣ ਉਸਦੀ ਥਾਂ ਕੋਈ ਅਜਿਹਾ ਨਹੀਂ ਮਿਲ ਰਿਹਾ ਜੋ ਮੇਰੀ ਨਿੰਦਾ ਕਰਨ ਦਾ ਬੀੜਾ ਚੁੱਕੇ।',
-      en: 'Kabir says: My slanderer has passed away, and what is there to say now? I find no one else willing to take up the heavy task of guarding and criticizing my conduct.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो मेरा निंदक था, वह मर गया, क्या कहा जाए? ऐसा कोई नहीं मिलता कि वह फिर से मेरी निंदा करने का बीड़ा उठा ले।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੇਰੀ ਨਿੰਦਾ ਕਰਨ ਵਾਲਾ ਚਲਾ ਗਿਆ ਹੈ, ਹੁਣ ਉਸਦੀ ਥਾਂ ਕੋਈ ਅਜਿਹਾ ਨਹੀਂ ਮਿਲ ਰਿਹਾ ਜੋ ਮੇਰੀ ਨਿੰਦਾ ਕਰਨ ਦਾ ਬੀੜਾ ਚੁੱਕੇ।',
+      en: 'Satguru Kabir Saheb proclaims: My slanderer has passed away, and what is there to say now? I find no one else willing to take up the heavy task of guarding and criticizing my conduct.',
     },
     wordMeanings: {
       hi: [
@@ -703,7 +703,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे प्रभु! मेरी बुद्धि को सदा पवित्र रखें ताकि मैं पर-निंदा के इस भयानक पाप जाल से बचा रहूँ। साहेब बंदगी साहेब!',
-      pb: 'Hੇ ਪ੍ਰਭੂ! ਮੇਰੀ ਬੁੱਧੀ ਨੂੰ ਪਵਿੱਤਰ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਪ੍ਰਭੂ! ਮੇਰੀ ਬੁੱਧੀ ਨੂੰ ਪਵਿੱਤਰ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Protect my consciousness from the trap of gossip, and keep my spiritual record clear.'
     },
     quiz: []
@@ -807,7 +807,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे सदा संतों के पावन समाज में रहने और उनके जैसा निर्मल बनने का सौभाग्य प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਸਾਧੂਆਂ ਦੀ ਸੰਗਤ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਸਾਧੂਆਂ ਦੀ ਸੰਗਤ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Saheb! Keep my heart aligned with saintly virtues, allowing me to sit in holy fellowship.'
     },
     quiz: []
@@ -966,7 +966,7 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे करुणामयी साहेब! मुझे प्रत्येक प्राणी के प्रति विनम्र व संवेदनशील बनने का गुण प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਹਰ ਜੀਵ ਤੇ ਦਇਆ ਕਰਨ ਦੀ ਸਮਰੱਥਾ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਹਰ ਜੀਵ ਤੇ ਦਇਆ ਕਰਨ ਦੀ ਸਮਰੱਥਾ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Compassionate Master! Awaken my heart to value and respect the smallest of Your creations.'
     },
     quiz: []
@@ -988,8 +988,8 @@ export const SAKHIS_NINDA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Nindak niyare raakhiye, aangan kutee chhavaay. Bin paanee saabun bina, niramal kare subhaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि निंदक को अपने आंगन में मकान बनवाकर सदैव पास में रखे, क्योंकि वह बिना साबुन-पानी के ही आपका स्वभाव निर्मल करता रहेगा।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਨਿੰਦਕ ਨੂੰ ਹਮੇਸ਼ਾ ਆਪਣੇ ਨੇੜੇ ਰੱਖੋ, ਕਿਉਂਕਿ ਉਹ ਬਿਨਾਂ ਪਾਣੀ ਤੇ ਸਾਬਣ ਦੇ ਹੀ ਤੁਹਾਡੇ ਸੁਭਾਅ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਰਹਿੰਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि निंदक को अपने आंगन में मकान बनवाकर सदैव पास में रखे, क्योंकि वह बिना साबुन-पानी के ही आपका स्वभाव निर्मल करता रहेगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਨਿੰਦਕ ਨੂੰ ਹਮੇਸ਼ਾ ਆਪਣੇ ਨੇੜੇ ਰੱਖੋ, ਕਿਉਂਕਿ ਉਹ ਬਿਨਾਂ ਪਾਣੀ ਤੇ ਸਾਬਣ ਦੇ ਹੀ ਤੁਹਾਡੇ ਸੁਭਾਅ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਰਹਿੰਦਾ ਹੈ।',
       en: 'Keep your critic close to you, even building a cottage for them in your courtyard! For they wash away your inner blemishes and purify your character without water or soap.',
     },
     wordMeanings: {

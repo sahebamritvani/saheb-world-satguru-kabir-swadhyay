@@ -112,8 +112,8 @@ export const ULATVASI_BATCH_151_TO_160: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '153. अंधे ने हीरे की परख की', pb: '153. ਅੰਧੇ ਨੇ ਹੀਰੇ ਦੀ ਪਰਖ ਕੀਤੀ', en: '153. Blind Man Evaluated the Diamond' },
     verse: {
-      hi: '"अंधे ने एक हीरा परखा, जौहरी भया हैरान। कहै कबीर सुनो भाई संतो, यह सद्गुरु का ग्यान॥"',
-      pb: '"ਅੰਧੇ ਨੇ ਏਕ ਹੀਰਾ ਪਰਖਾ, ਜੌਹਰੀ ਭਯਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਦਗੁਰੂ ਕਾ ਗ੍ਯਾਨ॥"',
+      hi: '"अंधे ने एक हीरा परखा, जौहरी भया हैरान। कहै कबीर सुनो भाई संतो, यह सतगुरु का ग्यान॥"',
+      pb: '"ਅੰਧੇ ਨੇ ਏਕ ਹੀਰਾ ਪਰਖਾ, ਜੌਹਰੀ ਭਯਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਤਿਗੁਰੂ ਕਾ ਗ੍ਯਾਨ॥"',
       en: '"Blind man evaluated a diamond, leaving jeweller astonished. Says Kabir listen saints, this is the wisdom of True Master."'
     },
     literalParadox: {
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_151_TO_160: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'सहस्रार का अमृत पान व अमरता', pb: 'ਦਸਮ ਦੁਆਰ ਦਾ ਅੰਮ੍ਰਿਤ ਅਤੇ ਅਮਰਤਾ', en: 'Partaking Nectar in Crown Chakra for Immortality' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ सहस्रार चक्र से टपकने वाले भीतरी अमृत की बात कर रहे हैं। इस आत्मिक आनंद को प्राप्त करने के लिए भौतिक हाथों या कर्मकांडों की ज़रूरत नहीं होती। जब चेतना ऊपर उठती है, तो आत्मा बिना मुँह के ही उस अमृतरस को पीकर अमर हो जाती है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ सहस्रार चक्र से टपकने वाले भीतरी अमृत की बात कर रहे हैं। इस आत्मिक आनंद को प्राप्त करने के लिए भौतिक हाथों या कर्मकांडों की ज़रूरत नहीं होती। जब चेतना ऊपर उठती है, तो आत्मा बिना मुँह के ही उस अमृतरस को पीकर अमर हो जाती है।',
         pb: 'ਦਸਮ ਦੁਆਰ ਦਾ ਅੰਮ੍ਰਿਤ ਪੀਣ ਲਈ ਭੌਤਿਕ ਹੱਥਾਂ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ, ਆਤਮਾ ਆਪ ਹੀ ਆਨੰਦ ਮਾਣਦੀ ਹੈ।',
         en: 'The ambrosia pot resides in the Crown Chakra. Accessing and drinking this divine nectar requires no physical hands or mouth, granting spiritual immortality.'
       },

@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਸਾਧਨਾ ਨਾਲ ਮਨ ਵਾਸਨਾ ਤੇ ਕਾਬੂ ਪਾਉਂਦਾ ਹੈ।',
         en: 'Awareness empowers the mind to master inner desires.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਾ ਆਪ ਹੀ ਆਨੰਦ ਰੂਪ ਹੈ।',
         en: 'Soul is self-sufficient consciousness independent of physical organs.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਸੂਖਮ ਧਿਆਨ ਨਾਲ ਪ੍ਰਮਾਤਮਾ ਮਿਲਦਾ ਹੈ।',
         en: 'Subtle inner concentration reveals the infinite Divine.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ ਗਿਆਨ ਬੁੱਧੀ ਤੋਂ ਪਰੇ ਹੈ।',
         en: 'Self-Realization transcends intellectual logic.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਉੱਪਰ ਦੀ ਸਾਧਨਾ ਹੀ ਸੱਚੀ ਖੇਤੀ ਹੈ।',
         en: 'Upward spiritual cultivation is true inner farming.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -287,8 +287,8 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
       { symbol: 'हंसा पीछे जावै (Swan Following)', meaning: { hi: 'अज्ञानता में भोली आत्मा का पाखंडी गुरुओं के पीछे भटकना', pb: 'ਜੀਵ ਦਾ ਪਾਖੰਡੀਆਂ ਪਿੱਛੇ ਭਟਕਣਾ', en: 'Innocent Soul wandering behind false guides' } }
     ],
     question: {
-      hi: 'कबीर साहेब "बगुला मार्ग बतावै हंसा पीछे जावै" से किस पर व्यंग्य कर रहे हैं?',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਇਸ ਬਾਣੀ ਨਾਲ ਕਿਸ ਤੇ ਵਿਅੰਗ ਕਰਦੇ ਹਨ?',
+      hi: 'सतगुरु कबीर साहेब "बगुला मार्ग बतावै हंसा पीछे जावै" से किस पर व्यंग्य कर रहे हैं?',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਇਸ ਬਾਣੀ ਨਾਲ ਕਿਸ ਤੇ ਵਿਅੰਗ ਕਰਦੇ ਹਨ?',
       en: 'What does Kabir satirize in "Heron leading the Swan"?'
     },
     options: {
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'पाखंडी गुरुओं व कलयुगी अज्ञान पर व्यंग्य', pb: 'ਪਾਖੰਡੀ ਗੁਰੂਆਂ ਤੋਂ ਸਾਵਧਾਨੀ', en: 'Warning Against Hypocritical False Teachers' },
       deepMeaning: {
-        hi: 'कबीर साहेब संसार के कलयुगी भ्रम पर व्यंग्य करते हैं कि पाखंडी बगुला-वृत्ति वाले गुरु मार्गदर्शक बने हैं, और पवित्र आत्माएँ (हंस) अज्ञानता के कारण उनके पीछे भटक रही हैं। पारखी बनकर ही इससे बचा जा सकता है।',
+        hi: 'सतगुरु कबीर साहेब संसार के कलयुगी भ्रम पर व्यंग्य करते हैं कि पाखंडी बगुला-वृत्ति वाले गुरु मार्गदर्शक बने हैं, और पवित्र आत्माएँ (हंस) अज्ञानता के कारण उनके पीछे भटक रही हैं। पारखी बनकर ही इससे बचा जा सकता है।',
         pb: 'ਪਾਖੰਡੀ ਬਗੁਲੇ ਵਰਗੇ ਗੁਰੂ ਜੀਵ ਨੂੰ ਭਟਕਾਉਂਦੇ ਹਨ, ਪਰਖ ਕਰਕੇ ਸੱਚੇ ਗੁਰੂ ਨੂੰ ਲੱਭੋ।',
         en: 'Hypocritical heron-like false guides misdirect innocent souls. Only discernment (Parakhi) leads to true Satguru.'
       },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਪਰਖ ਨਾਲ ਪਾਖੰਡ ਤੋਂ ਬਚਾਅ ਹੁੰਦਾ ਹੈ।',
         en: 'Discernment shields the soul from false spiritual traps.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਸਾਸ ਠਹਿਰਾਅ ਨਾਲ ਅਨਹਦ ਨਾਦ ਮਿਲਦਾ ਹੈ।',
         en: 'Breath standstill leads to deep absorption in Anhad Naad.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਸੂਖਮ ਵਾਸਨਾ ਮਿਟਾਉਣਾ ਹੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Destroying subtle desires achieves permanent liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -434,13 +434,13 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
       en: 'A small mouse chews up and eats a massive iron beam or scale.'
     },
     clueHint: {
-      hi: 'लोहा = कड़े प्रारब्ध व कर्म बंधन; मूस (चूहा) = सूक्ष्म सतनाम सिमरन जो कड़े कर्मों को काट देता है।',
+      hi: 'लोहा = कड़े प्रारब्ध व कर्म बंधन; मूस (चूहा) = सूक्ष्म सत्यनाम सिमरन जो कड़े कर्मों को काट देता है।',
       pb: 'ਲੋਹਾ ਕਰਮ ਬੰਧਨ ਹੈ, ਚੂਹਾ ਸਤਯਨਾਮ ਸਿਮਰਨ ਹੈ।',
-      en: 'Iron = Rigid Karmic bonds & destiny; Mouse = Subtle Satnam Remembrance cutting karma.'
+      en: 'Iron = Rigid Karmic bonds & destiny; Mouse = Subtle Satyanaam Remembrance cutting karma.'
     },
     symbols: [
       { symbol: 'लोहा (Iron)', meaning: { hi: 'कठोर कर्म बंधन व प्रारब्ध', pb: 'ਕਠੋਰ ਕਰਮ ਬੰਧਨ', en: 'Unyielding bonds of Karma & Destiny' } },
-      { symbol: 'मूस (Mouse)', meaning: { hi: 'सूक्ष्म सतनाम सिमरन', pb: 'ਸੂਖਮ ਸਤਯਨਾਮ ਸਿਮਰਨ', en: 'Subtle Remembrance of Satnam' } }
+      { symbol: 'मूस (Mouse)', meaning: { hi: 'सूक्ष्म सत्यनाम सिमरन', pb: 'ਸੂਖਮ ਸਤਯਨਾਮ ਸਿਮਰਨ', en: 'Subtle Remembrance of Satyanaam' } }
     ],
     question: {
       hi: '"चूहे द्वारा लोहे की तराजू खाने" का क्या अर्थ है?',
@@ -448,24 +448,24 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
       en: 'What does "Mouse eating iron scale" mean?'
     },
     options: {
-      hi: ['सूक्ष्म सतनाम सिमरन (चूहा) द्वारा कठोर कर्म बंधनों (लोहा) का कट जाना', 'लोहार का काम', 'तराजू', 'जंग लगना'],
+      hi: ['सूक्ष्म सत्यनाम सिमरन (चूहा) द्वारा कठोर कर्म बंधनों (लोहा) का कट जाना', 'लोहार का काम', 'तराजू', 'जंग लगना'],
       pb: ['ਸਤਯਨਾਮ ਸਿਮਰਨ ਨਾਲ ਕਠੋਰ ਕਰਮ ਕੱਟਣਾ', 'ਲੋਹਾਰ', 'ਤੱਕੜੀ', 'ਜੰਗ'],
-      en: ['Subtle Satnam remembrance (Mouse) destroying rigid karmic bonds (Iron)', 'Blacksmith work', 'Scale', 'Rusting']
+      en: ['Subtle Satyanaam remembrance (Mouse) destroying rigid karmic bonds (Iron)', 'Blacksmith work', 'Scale', 'Rusting']
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सतनाम सिमरन से कर्म-बंधन का दाह', pb: 'ਸਤਯਨਾਮ ਨਾਲ ਕਰਮ ਕੱਟਣਾ', en: 'Eradication of Karma Bonds through Satnam' },
+      headline: { hi: 'सत्यनाम सिमरन से कर्म-बंधन का दाह', pb: 'ਸਤਯਨਾਮ ਨਾਲ ਕਰਮ ਕੱਟਣਾ', en: 'Eradication of Karma Bonds through Satyanaam' },
       deepMeaning: {
         hi: 'लोहा जन्म-जन्मांतर के कड़े कर्म बंधन व प्रारब्ध का प्रतीक है जिन्हें काटना असंभव लगता है। परंतु निष्ठापूर्वक सूक्ष्म राम-नाम (मूस) का सिमरन करने पर वह छोटा सा नाम भी लोहे जैसे भारी कर्म बंधनों को कुतर-कुतर कर काट देता है।',
         pb: 'ਸਤਯਨਾਮ ਦਾ ਸੂਖਮ ਸਿਮਰਨ ਲੋਹੇ ਵਰਗੇ ਕਠੋਰ ਕਰਮ ਬੰਧਨਾਂ ਨੂੰ ਕੱਟ ਦਿੰਦਾ ਹੈ।',
-        en: 'Subtle remembrance of Satnam continuously gnaws away rigid karmic bonds that otherwise seem impossible to break.'
+        en: 'Subtle remembrance of Satyanaam continuously gnaws away rigid karmic bonds that otherwise seem impossible to break.'
       },
       kabirPhilosophy: {
         hi: 'प्रभु नाम में कठोरतम कर्म बंधनों को नष्ट करने की परम शक्ति है।',
         pb: 'ਨਾਮ ਵਿੱਚ ਕਰਮ ਕੱਟਣ ਦੀ ਸ਼ਕਤੀ ਹੈ।',
         en: 'Supreme Name possesses power to dissolve heavy karmic bonds.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -495,9 +495,9 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
       { symbol: 'मिट गया निसि का भोर (Vanishing Night & Day)', meaning: { hi: 'द्वंद्व, अज्ञान व संसारी काल भेद का अंत', pb: 'ਭਰਮ ਅਤੇ ਦਵੰਦ ਦਾ ਨਾਸ਼', en: 'Dissolution of duality, illusion & time' } }
     ],
     question: {
-      hi: 'सद्गुरु कबीर साहेब की 80वीं उलटबांसी का मुख्य आध्यात्मिक संदेश क्या है?',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਦੀ 80ਵੀਂ ਉਲਟਬਾਂਸੀ ਦਾ ਕੀ ਸੰਦੇਸ਼ ਹੈ?',
-      en: 'What is the spiritual summary of Kabir Saheb\'s 80th Ulatbaansi?'
+      hi: 'सतगुरु कबीर साहेब की 80वीं उलटबांसी का मुख्य आध्यात्मिक संदेश क्या है?',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਦੀ 80ਵੀਂ ਉਲਟਬਾਂਸੀ ਦਾ ਕੀ ਸੰਦੇਸ਼ ਹੈ?',
+      en: 'What is the spiritual summary of Satguru Kabir Saheb\'s 80th Ulatbaansi?'
     },
     options: {
       hi: ['ध्यान एकाग्रता से हृदय में अखंड स्वयं-प्रकाशित ब्रह्म प्रकाश चमकना व अज्ञान भ्रम मिटना', 'दीपक जलाना', 'दिवाली उत्सव', 'रात और दिन'],
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_71_TO_80: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ ਗਿਆਨ ਨਾਲ ਪਰਮ ਪਦ ਮਿਲਦਾ ਹੈ।',
         en: 'The climax of 80 Ulatbaansis: Self-Realization ends all delusion and reveals Supreme Truth.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

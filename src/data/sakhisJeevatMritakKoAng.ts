@@ -169,13 +169,13 @@ export const SAKHIS_JEEVAT_MRITAK_KO_ANG: Sakhi[] = [
       en: 'Jeevat Mritak Ko Ang - 4',
     },
     text: {
-      hi: 'जीवत मिरतक होय रहै, तजै खलक की आस।\nरच्छक समरथ सद्गुरु, मति दुख पावै दास।।',
-      pb: devanagariToGurmukhi('जीवत मिरतक होय रहै, तजै खलक की आस। रच्छक समरथ सद्गुरु, मति दुख पावै दास।।'),
-      en: 'Jeevat mirtak hoy rahai, tajai khalak ki aas. Rachhak samrath Sadguru, mati dukh paavai daas..'
+      hi: 'जीवत मिरतक होय रहै, तजै खलक की आस।\nरच्छक समरथ सतगुरु, मति दुख पावै दास।।',
+      pb: devanagariToGurmukhi('जीवत मिरतक होय रहै, तजै खलक की आस। रच्छक समरथ सतगुरु, मति दुख पावै दास।।'),
+      en: 'Jeevat mirtak hoy rahai, tajai khalak ki aas. Rachhak samrath Satguru, mati dukh paavai daas..'
     },
-    transliteration: 'Jeevat mirtak hoy rahai, tajai khalak ki aas. Rachhak samrath Sadguru, mati dukh paavai daas.',
+    transliteration: 'Jeevat mirtak hoy rahai, tajai khalak ki aas. Rachhak samrath Satguru, mati dukh paavai daas.',
     bhavarth: {
-      hi: 'संसार की आशा त्यागकर, जीते-जी मर जाए (सब अहंकार को त्याग दें)। हे शिष्य! संसार की कामनाओं में पड़कर तू क्यों दुःखी होता है? समर्थ सद्गुरु ही तेरे रक्षक हैं।',
+      hi: 'संसार की आशा त्यागकर, जीते-जी मर जाए (सब अहंकार को त्याग दें)। हे शिष्य! संसार की कामनाओं में पड़कर तू क्यों दुःखी होता है? समर्थ सतगुरु ही तेरे रक्षक हैं।',
       pb: devanagariToGurmukhi('ਸੰਸਾਰ ਦੀ ਆਸਾ ਤਿਆਗ ਕੇ ਜਿਊਂਦੇ ਜੀਅ ਮਰ ਜਾਓ। ਹੇ ਸੇਵਕ! ਸੰਸਾਰਕ ਦੁੱਖਾਂ ਵਿੱਚ ਨਾ ਪਓ, ਸਮਰੱਥ ਸਤਿਗੁਰੂ ਹੀ ਤੇਰੇ ਰੱਖਿਅਕ ਹਨ।'),
       en: 'Live dead to the world, renouncing expectations from worldly people. O disciple, do not suffer in earthly desires; the omnipotent Satguru is your supreme protector.'
     },
@@ -227,9 +227,9 @@ export const SAKHIS_JEEVAT_MRITAK_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Panchon indriya chhatha man, sam sangat soochant. Kahain Kabir jag kya kare, saaton ganth nishchint.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि आंख, नाक, कान, जिह्वा तथा त्वचा इन पांचों ज्ञानेंद्रियों तथा छठे मन को सातवें सत्य चेतन स्वरूप में जिन्होंने स्वयं को जोड़ लिया है, ऐसे स्वरूपरत विवेकी को मन वासना रूपी यमराज क्या करेगा, उपर्युक्त सातों गांठें निश्चित हैं।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि आंख, नाक, कान, जिह्वा तथा त्वचा इन पांचों ज्ञानेंद्रियों तथा छठे मन को सातवें सत्य चेतन स्वरूप में जिन्होंने स्वयं को जोड़ लिया है, ऐसे स्वरूपरत विवेकी को मन वासना रूपी यमराज क्या करेगा, उपर्युक्त सातों गांठें निश्चित हैं।',
       pb: devanagariToGurmukhi('ਪੰਜ ਇੰਦਰੀਆਂ ਅਤੇ ਛੇਵਾਂ ਮਨ, ਜਿਨ੍ਹਾਂ ਨੇ ਸਤਿਸੰਗ ਅਤੇ ਆਤਮ-ਸਰੂਪ ਵਿੱਚ ਜੋੜ ਲਏ, ਸੰਸਾਰ ਉਹਨਾਂ ਦਾ ਕੀ ਵਿਗਾੜ ਸਕਦਾ ਹੈ? ਉਹ ਸਦਾ ਨਿਸ਼ਚਿੰਤ ਰਹਿੰਦੇ ਹਨ।'),
-      en: 'Kabir says: one who unifies the five senses and the sixth element—the mind—into the seventh supreme consciousness, what harm can the world do to them? All knots of bondage are undone.'
+      en: 'Satguru Kabir Saheb proclaims: one who unifies the five senses and the sixth element—the mind—into the seventh supreme consciousness, what harm can the world do to them? All knots of bondage are undone.'
     },
     wordMeanings: {
       hi: [
@@ -384,9 +384,9 @@ export const SAKHIS_JEEVAT_MRITAK_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Main mera ghar jaaliya, liya paleeta haath. Jo ghar jaaro aapna, chalo hamaare saath.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि शरीर में जो मैं-मेरापन की अहंता-ममता हो रही है, उसे ज्ञान की आग-बत्ती हाथ में लेकर जला डालो। अपने अहंकार-रूपी घर को जलाकर ही तुम मेरे संगी बन सकते हो।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि शरीर में जो मैं-मेरापन की अहंता-ममता हो रही है, उसे ज्ञान की आग-बत्ती हाथ में लेकर जला डालो। अपने अहंकार-रूपी घर को जलाकर ही तुम मेरे संगी बन सकते हो।',
       pb: devanagariToGurmukhi('ਮੈਂ ਆਪਣੀ ਹਉਮੈ-ਮਮਤਾ ਦਾ ਘਰ ਗਿਆਨ ਦੀ ਮਸ਼ਾਲ ਲੈ ਕੇ ਸਾੜ ਦਿੱਤਾ ਹੈ। ਜਿਹੜਾ ਆਪਣਾ ਹੰਕਾਰ ਦਾ ਘਰ ਸਾੜ ਸਕਦਾ ਹੈ, ਉਹੀ ਸਾਡੇ ਨਾਲ ਚੱਲੇ।'),
-      en: 'Kabir says: I have burnt down the house of "I and mine" with the torch of spiritual wisdom in hand. Only one ready to burn their ego-house can walk on this path with me.'
+      en: 'Satguru Kabir Saheb proclaims: I have burnt down the house of "I and mine" with the torch of spiritual wisdom in hand. Only one ready to burn their ego-house can walk on this path with me.'
     },
     wordMeanings: {
       hi: [

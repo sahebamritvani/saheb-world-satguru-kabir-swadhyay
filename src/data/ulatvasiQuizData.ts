@@ -32,8 +32,8 @@ export const ULATVASI_CORE_QUESTIONS: UlatvasiQuestion[] = [
       { symbol: 'कंबल / पानी (Blanket / Water)', meaning: { hi: 'प्रभु कृपा और शांत मन/बुद्धि', pb: 'ਕਿਰਪਾ ਅਤੇ ਮਨ', en: 'Divine Grace and Calm Mind' } },
     ],
     question: {
-      hi: 'कबीर साहेब के अनुसार "बरसे कंबल भींजे पानी" का वास्तविक आध्यात्मिक अर्थ क्या है?',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਅਨੁਸਾਰ "ਬਰਸੇ ਕੰਬਲ ਭੀਂਜੇ ਪਾਣੀ" ਦਾ ਅਸਲ ਅਧਿਆਤਮਕ ਅਰਥ ਕੀ ਹੈ?',
+      hi: 'सतगुरु कबीर साहेब के अनुसार "बरसे कंबल भींजे पानी" का वास्तविक आध्यात्मिक अर्थ क्या है?',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਬਰਸੇ ਕੰਬਲ ਭੀਂਜੇ ਪਾਣੀ" ਦਾ ਅਸਲ ਅਧਿਆਤਮਕ ਅਰਥ ਕੀ ਹੈ?',
       en: 'According to Satguru Kabir, what is the true spiritual meaning of "The blanket rains and water gets wet"?',
     },
     options: {

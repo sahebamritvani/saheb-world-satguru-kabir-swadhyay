@@ -285,7 +285,7 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
             </h1>
             <p className="text-xs sm:text-sm font-serif opacity-85 max-w-3xl">
               {language === 'pb'
-                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਮਹਾਨ ਗ੍ਰੰਥਾਂ, ਚਾਰਾਂ ਯੁਗਾਂ ਦੀਆਂ ਅਮਰ ਲੀਲ੍ਹਾਵਾਂ, ਪਾਵਨ ਜੰਤਰੀ ਅਤੇ ਅਮਰਲੋਕ ਦੀ ਬ੍ਰਹਮੰਡੀ ਯਾਤਰਾ ਦਾ ਏਕੀਕ੍ਰਿਤ ਪਾਵਨ ਮੰਚ।'
+                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਮਹਾਨ ਗ੍ਰੰਥਾਂ, ਚਾਰਾਂ ਯੁਗਾਂ ਦੀਆਂ ਅਮਰ ਲੀਲ੍ਹਾਵਾਂ, ਪਾਵਨ ਜੰਤਰੀ ਅਤੇ ਅਮਰਲੋਕ ਦੀ ਬ੍ਰਹਮੰਡੀ ਯਾਤਰਾ ਦਾ ਏਕੀਕ੍ਰਿਤ ਪਾਵਨ ਮੰਚ।'
                 : language === 'en'
                 ? 'Integrated sacred portals for Holy Scriptures, 4 Yuga Leelas, Spiritual Almanac, and the Soul’s Ascent to Satyaloka.'
                 : 'सतगुरु कबीर साहेब के मूल प्रामाणिक ग्रन्थ, चारों युगों का प्राकट्य, साहेब जंत्री और काल निरंजन के २१ ब्रह्मांडों से सत्यलोक आरोहण का संपूर्ण संकलन।'}

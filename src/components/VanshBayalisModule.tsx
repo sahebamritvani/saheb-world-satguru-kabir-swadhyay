@@ -41,7 +41,7 @@ const VANSH_CONTENT: Record<
   hi: {
     title: 'वंश बयालीस (४२ पीढ़ियों) की पावन परंपरा एवं रहस्य',
     subtitle:
-      'सद्गुरु कबीर साहेब द्वारा धनी धर्मदास साहेब जी को प्रदान किए गए दिव्य आशीर्वाद और अटल गुरु परंपरा का परिचय।',
+      'सतगुरु कबीर साहेब द्वारा धनी धर्मदास साहेब जी को प्रदान किए गए दिव्य आशीर्वाद और अटल गुरु परंपरा का परिचय।',
     studiedLabel: 'अध्ययन प्रगति:',
     markStudied: 'पठित चिन्हित करें',
     studiedDone: 'अध्ययन पूर्ण',
@@ -61,7 +61,7 @@ const VANSH_CONTENT: Record<
   en: {
     title: 'The Sacred Tradition & Glory of Vansh Bayalis (42 Generations)',
     subtitle:
-      'An introduction to the divine boon granted by Sadguru Kabir Saheb to Dhani Dharmadas Saheb Ji and the unbroken Guru lineage.',
+      'An introduction to the divine boon granted by Satguru Kabir Saheb to Dhani Dharmadas Saheb Ji and the unbroken Guru lineage.',
     studiedLabel: 'Study Progress:',
     markStudied: 'Mark as Studied',
     studiedDone: 'Studied',
@@ -79,9 +79,9 @@ const VANSH_SECTIONS: VanshSection[] = [
       en: '1. What is Vansh Bayalis?',
     },
     body: {
-      hi: "'वंश बयालीस' का अर्थ है ४२ पीढ़ियों तक चलने वाली अखंड वंशावली। सद्गुरु कबीर साहेब ने अपने परम शिष्य धनी धर्मदास साहेब जी और माता आमिनी देवी की अनन्य भक्ति से प्रसन्न होकर वरदान दिया था कि उनके कुल में ४२ पीढ़ियों तक सत्यनाम की ज्योति प्रज्वलित करने वाले वंशाचार्य अवतरित होंगे।",
+      hi: "'वंश बयालीस' का अर्थ है ४२ पीढ़ियों तक चलने वाली अखंड वंशावली। सतगुरु कबीर साहेब ने अपने परम शिष्य धनी धर्मदास साहेब जी और माता आमिनी देवी की अनन्य भक्ति से प्रसन्न होकर वरदान दिया था कि उनके कुल में ४२ पीढ़ियों तक सत्यनाम की ज्योति प्रज्वलित करने वाले वंशाचार्य अवतरित होंगे।",
       pb: "'ਵੰਸ਼ ਬਿਆਲੀ' ਦਾ ਅਰਥ ਹੈ ੪੨ ਪੀੜ੍ਹੀਆਂ ਤੱਕ ਚੱਲਣ ਵਾਲੀ ਅਖੰਡ ਵੰਸ਼ਾਵਲੀ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੇ ਪਰਮ ਸ਼ਿਸ਼ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਅਤੇ ਮਾਤਾ ਆਮਿਨੀ ਦੇਵੀ ਦੀ ਅਨਿੰਨ ਭਗਤੀ ਤੋਂ ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਵਰਦਾਨ ਦਿੱਤਾ ਸੀ ਕਿ ਉਨ੍ਹਾਂ ਦੀ ਕੁੱਲ ਵਿੱਚ ੪੨ ਪੀੜ੍ਹੀਆਂ ਤੱਕ ਸਤਯਨਾਮ ਦੀ ਜੋਤ ਜਗਾਉਣ ਵਾਲੇ ਵੰਸ਼ਾਚਾਰੀਆ ਪ੍ਰਗਟ ਹੋਣਗੇ।",
-      en: "'Vansh Bayalis' literally translates to a lineage of 42 generations. Pleased with the supreme devotion of Dhani Dharmadas Saheb Ji and Mata Amini Devi, Sadguru Kabir Saheb blessed them that 42 successive Vanshacharyas would manifest in their lineage to keep the eternal flame of Satyanaam burning in the world.",
+      en: "'Vansh Bayalis' literally translates to a lineage of 42 generations. Pleased with the supreme devotion of Dhani Dharmadas Saheb Ji and Mata Amini Devi, Satguru Kabir Saheb blessed them that 42 successive Vanshacharyas would manifest in their lineage to keep the eternal flame of Satyanaam burning in the world.",
     },
   },
   {
@@ -92,9 +92,9 @@ const VANSH_SECTIONS: VanshSection[] = [
       en: '2. Divine Manifestation of Vanshacharyas',
     },
     body: {
-      hi: "इस पावन परंपरा के अनुसार, प्रत्येक वंशाचार्य का प्राकट्य किसी साधारण सांसारिक विधि से नहीं, बल्कि सद्गुरु कबीर साहेब के आशीर्वाद (नारियल और पान के परवाना प्रसाद) से होता है। प्रत्येक वंशाचार्य के नाम के साथ 'नाम साहेब' जुड़ता है, जो सत्यनाम की अखंडता का प्रतीक है।",
-      pb: "ਇਸ ਪਾਵਨ ਪਰੰਪਰਾ ਅਨੁਸਾਰ, ਹਰੇਕ ਵੰਸ਼ਾਚਾਰੀਆ ਦਾ ਪ੍ਰਕਾਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਆਸ਼ੀਰਵਾਦ (ਨਾਰੀਅਲ ਅਤੇ ਪਾਨ ਦੇ ਪਰਵਾਨਾ ਪ੍ਰਸ਼ਾਦ) ਸਦਕਾ ਹੁੰਦਾ ਹੈ। ਹਰੇਕ ਵੰਸ਼ਾਚਾਰੀਆ ਦੇ ਨਾਮ ਨਾਲ 'ਨਾਮ ਸਾਹੇਬ' ਜੁੜਦਾ ਹੈ, ਜੋ ਸਤਯਨਾਮ ਦੀ ਅਖੰਡਤਾ ਦਾ ਪ੍ਰਤੀਕ ਹੈ।",
-      en: "According to sacred tradition, the birth of each Vanshacharya occurs through the divine blessing (blessed coconut and betel leaf Parwana) of Sadguru Kabir Saheb. Every Acharya carries the sacred title 'Naam Saheb', symbolizing the eternal Satyanaam.",
+      hi: "इस पावन परंपरा के अनुसार, प्रत्येक वंशाचार्य का प्राकट्य किसी साधारण सांसारिक विधि से नहीं, बल्कि सतगुरु कबीर साहेब के आशीर्वाद (नारियल और पान के परवाना प्रसाद) से होता है। प्रत्येक वंशाचार्य के नाम के साथ 'नाम साहेब' जुड़ता है, जो सत्यनाम की अखंडता का प्रतीक है।",
+      pb: "ਇਸ ਪਾਵਨ ਪਰੰਪਰਾ ਅਨੁਸਾਰ, ਹਰੇਕ ਵੰਸ਼ਾਚਾਰੀਆ ਦਾ ਪ੍ਰਕਾਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਆਸ਼ੀਰਵਾਦ (ਨਾਰੀਅਲ ਅਤੇ ਪਾਨ ਦੇ ਪਰਵਾਨਾ ਪ੍ਰਸ਼ਾਦ) ਸਦਕਾ ਹੁੰਦਾ ਹੈ। ਹਰੇਕ ਵੰਸ਼ਾਚਾਰੀਆ ਦੇ ਨਾਮ ਨਾਲ 'ਨਾਮ ਸਾਹੇਬ' ਜੁੜਦਾ ਹੈ, ਜੋ ਸਤਯਨਾਮ ਦੀ ਅਖੰਡਤਾ ਦਾ ਪ੍ਰਤੀਕ ਹੈ।",
+      en: "According to sacred tradition, the birth of each Vanshacharya occurs through the divine blessing (blessed coconut and betel leaf Parwana) of Satguru Kabir Saheb. Every Acharya carries the sacred title 'Naam Saheb', symbolizing the eternal Satyanaam.",
     },
   },
   {
@@ -105,9 +105,9 @@ const VANSH_SECTIONS: VanshSection[] = [
       en: '3. Preservation of the Path',
     },
     body: {
-      hi: "धर्मदास साहेब के परिवार के एक पुत्र (नारायणदास) द्वारा पंथ की मर्यादा से विमुख होने पर, कबीर साहेब ने द्वितीय पुत्र 'चूड़ामणि (मुक्तामणि) नाम साहेब' से वंश बयालीस की स्थापना की, ताकि काल (माया) के प्रभाव से जीवों को बचाया जा सके और चौका-आरती एवं सत्यनाम का मार्ग युगों तक सुरक्षित रहे।",
+      hi: "धर्मदास साहेब के परिवार के एक पुत्र (नारायणदास) द्वारा पंथ की मर्यादा से विमुख होने पर, सतगुरु कबीर साहेब ने द्वितीय पुत्र 'चूड़ामणि (मुक्तामणि) नाम साहेब' से वंश बयालीस की स्थापना की, ताकि काल (माया) के प्रभाव से जीवों को बचाया जा सके और चौका-आरती एवं सत्यनाम का मार्ग युगों तक सुरक्षित रहे।",
       pb: "ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਦੇ ਪਰਿਵਾਰ ਵਿੱਚੋਂ ਸੱਚੇ ਮਾਰਗ ਦੀ ਰੱਖਿਆ ਲਈ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਸਪੁੱਤਰ 'ਚੂੜਾਮਣੀ (ਮੁਕਤਾਮਣੀ) ਨਾਮ ਸਾਹੇਬ' ਜੀ ਤੋਂ ਵੰਸ਼ ਬਿਆਲੀ ਦੀ ਨੀਂਹ ਰੱਖੀ, ਤਾਂ ਜੋ ਕਾਲ (ਮਾਇਆ) ਦੇ ਪ੍ਰਭਾਵ ਤੋਂ ਜੀਵਾਂ ਨੂੰ ਬਚਾਇਆ ਜਾ ਸਕੇ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਤੇ ਸਤਯਨਾਮ ਦਾ ਮਾਰਗ ਸੁਰੱਖਿਅਤ ਰਹੇ।",
-      en: "To protect the pure spiritual path from worldly distortions, Sadguru Kabir Saheb initiated the Vansh Bayalis lineage through Dharmadas Ji's blessed son, Panth Shri Chudamani (Muktamani) Naam Saheb Ji, ensuring that the Satvik Chauka-Aarti and true devotion guide humanity for ages.",
+      en: "To protect the pure spiritual path from worldly distortions, Satguru Kabir Saheb initiated the Vansh Bayalis lineage through Dharmadas Ji's blessed son, Panth Shri Chudamani (Muktamani) Naam Saheb Ji, ensuring that the Satvik Chauka-Aarti and true devotion guide humanity for ages.",
     },
   },
   {

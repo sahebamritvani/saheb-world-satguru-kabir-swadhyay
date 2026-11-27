@@ -241,14 +241,14 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
     const anamiMatched = matchesSearch(anamiTitle, anamiDesc, anamiRealm, anamiKeywords);
 
     // 2. SATLOK / SATYALOKA (Next under Anami)
-    const satlokTitle = isPb ? 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ (ਸਤਿਪੁਰੁਸ਼ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)' : isEn ? 'Satlok / Satyaloka (Sachkhand - Satpurush Kabir Saheb)' : 'सत्यलोक / सचखंड (सतपुरुष कबीर साहेब धाम)';
+    const satlokTitle = isPb ? 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ (ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)' : isEn ? 'Satlok / Satyaloka (Sachkhand - Satpurush Satguru Kabir Saheb)' : 'सत्यलोक / सचखंड (सतपुरुष सतगुरु कबीर साहेब धाम)';
     const satlokDesc = isPb
       ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਨਿੱਜ ਧਾਮ ਜਿੱਥੇ ਇੱਕ-ਇੱਕ ਹੰਸ ਦਾ ਤੇਜ ਕ੍ਰੋੜਾਂ ਸੂਰਜਾਂ ਤੋਂ ਵੀ ਅਧਿਕ ਹੁੰਦਾ ਹੈ। ਅੰਮ੍ਰਿਤ ਦੇ ਮਾਨਸਰੋਵਰ ਅਤੇ ਅਮਰ ਕਲਪਵ੍ਰਿਕਸ਼ ਹਨ।'
       : isEn
       ? 'The eternal heart of Amarlok where Satguru Kabir Saheb resides. Every soul shines brighter than millions of suns.'
       : 'सतगुरु कबीर साहेब का निज शाश्वत धाम जहाँ एक-एक हंस का तेज करोड़ों सूर्यों से अधिक देदीप्यमान होता है। यहाँ अमृत के मानसरोवर व कल्पवृक्ष हैं।';
     const satlokRealm = isPb ? 'ਅਮਰਲੋਕ ਦਾ ਮੁੱਖ ਪ੍ਰਵੇਸ਼ ਧਾਮ' : isEn ? 'Heart of Amarlok' : 'अमरलोक का मुख्य दिव्य धाम';
-    const satlokKeywords = 'satlok satyaloka sachkhand satpurush kabir saheb hans amrit mansarovar';
+    const satlokKeywords = 'satlok satyaloka sachkhand satpurush Satguru Kabir Saheb hans amrit mansarovar';
     const satlokMatched = matchesSearch(satlokTitle, satlokDesc, satlokRealm, satlokKeywords);
 
     // 3. ALAKH LOK (Next)
@@ -355,7 +355,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
             tooltipInfo: {
               title: satlokTitle,
               realm: satlokRealm,
-              category: isPb ? 'ਸ਼ਾਸ਼ਵਤ ਅਮਰ ਮੰਡਲ' : isEn ? 'Eternal Abode of Kabir Saheb' : 'शाश्वत अमर मंडल',
+              category: isPb ? 'ਸ਼ਾਸ਼ਵਤ ਅਮਰ ਮੰਡਲ' : isEn ? 'Eternal Abode of Satguru Kabir Saheb' : 'शाश्वत अमर मंडल',
               desc: satlokDesc,
               granthTeaching: isPb
                 ? 'ਕਬੀਰ ਸਾਗਰ: ਕੋਟਿਨ ਰਵਿ ਜਾਕੇ ਤੇਜ ਪ੍ਰਕਾਸ਼ਾ, ਹੰਸਾ ਕਰਹਿਂ ਅੰਮ੍ਰਿਤ ਕਾ ਪਾਸਾ। ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ, ਅਮਰ ਲੋਕ ਮੇਂ ਜਯੋਤ ਜਗਾਈ॥'
@@ -425,7 +425,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                   verse: isPb
                     ? 'ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ,\nਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥'
                     : isEn
-                    ? 'Kabir Saheb revealed the Unfathomable Realm,\nEnding all suffering of birth and rebirth.'
+                    ? 'Satguru Kabir Saheb revealed the Unfathomable Realm,\nEnding all suffering of birth and rebirth.'
                     : 'कबीर साहेब अगम लखाया,\nआवागमन का कष्ट मिटाया॥',
                   searchKeywords: agamKeywords,
                 },

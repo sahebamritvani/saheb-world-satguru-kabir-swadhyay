@@ -922,7 +922,7 @@ export const KAR_NAINON_DEEDAR_VERSES: GranthVerse[] = [
     },
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब फ़रमाते हैं कि हमारी चाल "विहंगम चाल" (पक्षियों जैसी सीधे आकाश मार्ग की सीधी उड़ान) है! सतगुरु ने अपनी दया से पार होने की ताली (कुंजी) दे दी है। जब अंतर के किवाड़ खुलते हैं और शब्द की झंकार उठती है, तब जीव पिण्ड और अण्ड के पार अपने वास्तविक निज-देश (सत्त लोक/अनामी पद) पहुँच जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਡੀ ਚਾਲ ਵਿਹੰਗਮ ਚਾਲ (ਸਿੱਧੀ ਉਡਾਰੀ) ਹੈ। ਪਿੰਡ ਤੇ ਅੰਡ ਤੋਂ ਪਾਰ ਹੀ ਸਾਡਾ ਅਸਲੀ ਨਿਜ ਘਰ (ਸੱਤ ਲੋਕ) ਹੈ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਡੀ ਚਾਲ ਵਿਹੰਗਮ ਚਾਲ (ਸਿੱਧੀ ਉਡਾਰੀ) ਹੈ। ਪਿੰਡ ਤੇ ਅੰਡ ਤੋਂ ਪਾਰ ਹੀ ਸਾਡਾ ਅਸਲੀ ਨਿਜ ਘਰ (ਸੱਤ ਲੋਕ) ਹੈ।',
       en: 'Satguru Kabir Saheb proclaims: Our path is Bihangam Chaal (direct bird-like soaring flight)! Satguru unlocked the inner gates — beyond Pind and And lies our Eternal Homeland Satt Lok!'
     },
     spiritualEssence: {

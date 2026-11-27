@@ -100,7 +100,25 @@ export const getFontStyleOption = (styleId?: string | null): FontStyleOption => 
 };
 
 export interface GlobalNaturePreset {
-  id: 'banyan_ghat' | 'maghar_dham' | 'saheb_icon_emblem' | 'maghar_authentic' | 'light_floral_geometric' | 'light_lotus' | 'dawn_mountain' | 'emerald_forest' | 'sunset_sky' | 'sacred_river' | 'golden_autumn';
+  id:
+    | 'royal_bhojpatra'
+    | 'maghar_dham'
+    | 'kabir_chaura_kashi'
+    | 'lahartara_pond'
+    | 'bandhavgarh_forest'
+    | 'jagannath_puri_math'
+    | 'damakheda_darshan'
+    | 'banyan_ghat'
+    | 'saheb_icon_emblem'
+    | 'maghar_authentic'
+    | 'light_floral_geometric'
+    | 'light_lotus'
+    | 'dawn_mountain'
+    | 'emerald_forest'
+    | 'sunset_sky'
+    | 'sacred_river'
+    | 'golden_autumn'
+    | string;
   name: { hi: string; pb: string; en: string };
   sub: { hi: string; pb: string; en: string };
   accent: string;
@@ -109,25 +127,60 @@ export interface GlobalNaturePreset {
 
 export const GLOBAL_NATURE_PRESETS: GlobalNaturePreset[] = [
   {
+    id: 'royal_bhojpatra',
+    name: { hi: 'शाही भोजपत्र क्रीम', pb: 'ਸ਼ਾਹੀ ਭੋਜਪੱਤਰ ਕਰੀਮ', en: 'Royal Bhojpatra Cream' },
+    sub: { hi: 'स्वर्ण एवं प्राचीन भोजपत्र', pb: 'ਸੁਨਹਿਰੀ ਤੇ ਪ੍ਰਾਚੀਨ ਭੋਜਪੱਤਰ', en: 'Royal Cream & Gold' },
+    accent: '#D97706',
+    previewBg: 'linear-gradient(135deg, #FFFDF7 0%, #FDF6E2 50%, #F5E8C7 100%)',
+  },
+  {
+    id: 'maghar_dham',
+    name: { hi: 'मगहर पावन समाधि स्थल', pb: 'ਮਗਹਰ ਪਾਵਨ ਸਮਾਧੀ ਅਸਥਾਨ', en: 'Maghar Nirvana Dham' },
+    sub: { hi: 'सतगुरु निर्वाण महातीर्थ', pb: 'ਸਤਿਗੁਰੂ ਨਿਰਵਾਣ ਮਹਾਂਤੀਰਥ', en: 'Historic Nirvana Shrine' },
+    accent: '#F59E0B',
+    previewBg: `url("${magharAuthenticWallpaper}")`,
+  },
+  {
+    id: 'kabir_chaura_kashi',
+    name: { hi: 'कबीर चौरा धाम, काशी', pb: 'ਕਬੀਰ ਚੌਰਾ ਧਾਮ, ਕਾਸ਼ੀ', en: 'Kabir Chaura Math, Kashi' },
+    sub: { hi: 'ऐतिहासिक मूल साधना पीठ', pb: 'ਇਤਿਹਾਸਕ ਮੂਲ ਸਾਧਨਾ ਪੀਠ', en: 'Historic Kashi Sanctum' },
+    accent: '#FBBF24',
+    previewBg: 'linear-gradient(135deg, #1C1008 0%, #3B200C 45%, #6B3012 80%, #9A3412 100%)',
+  },
+  {
+    id: 'lahartara_pond',
+    name: { hi: 'लहरतारा पावन सरोवर', pb: 'ਲਹਿਰਤਾਰਾ ਪਾਵਨ ਸਰੋਵਰ', en: 'Lahartara Sacred Lotus Pond' },
+    sub: { hi: 'सतगुरु प्राकट्य नीर व श्वेत कमल', pb: 'ਸਤਿਗੁਰੂ ਪ੍ਰਗਟਾਸ ਤਾਲ ਤੇ ਕਮਲ', en: 'Sacred Lotus Water Sanctum' },
+    accent: '#38BDF8',
+    previewBg: `url("${lightLotusWallpaper}")`,
+  },
+  {
+    id: 'bandhavgarh_forest',
+    name: { hi: 'बांधवगढ़ पावन स्थल', pb: 'ਬਾਂਧਵਗੜ੍ਹ ਪਾਵਨ ਅਸਥਾਨ', en: 'Bandhavgarh Sacred Hill & Forest' },
+    sub: { hi: 'धनी धर्मदास साधना वन', pb: 'ਧਨੀ ਧਰਮਦਾਸ ਸਾਧਨਾ ਵਣ', en: 'Sacred Sal Forest & Hill' },
+    accent: '#34D399',
+    previewBg: 'linear-gradient(135deg, #051A10 0%, #0E3622 45%, #185235 80%, #2D6A4F 100%)',
+  },
+  {
+    id: 'jagannath_puri_math',
+    name: { hi: 'जगन्नाथ पुरी कबीर मठ', pb: 'ਜਗਨਨਾਥ ਪੁਰੀ ਕਬੀਰ ਮਠ', en: 'Jagannath Puri Kabir Math' },
+    sub: { hi: 'समुद्र तट पावन बड़ आश्रम', pb: 'ਸਮੁੰਦਰ ਤੱਟ ਪਾਵਨ ਮਠ', en: 'Oceanic Coastal Kabir Math' },
+    accent: '#FACC15',
+    previewBg: 'linear-gradient(135deg, #091728 0%, #153252 45%, #254F77 80%, #4682A9 100%)',
+  },
+  {
+    id: 'damakheda_darshan',
+    name: { hi: 'दामाखेड़ा दर्शन स्थल', pb: 'ਦਾਮਾਖੇੜਾ ਦਰਸ਼ਨ ਅਸਥਾਨ', en: 'Damakheda Paavan Darshan' },
+    sub: { hi: 'वंश बयालीस मूल कबीर धर्मनगर', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਮੂਲ ਗੱਦੀ ਦਰਸ਼ਨ', en: 'Damakheda Sacred Seat' },
+    accent: '#FB923C',
+    previewBg: 'linear-gradient(135deg, #220804 0%, #451508 45%, #7C2810 80%, #B43E12 100%)',
+  },
+  {
     id: 'banyan_ghat',
     name: { hi: 'पावन बरगद घाट', pb: 'ਪਾਵਨ ਬਰਗਦ ਘਾਟ', en: 'Sacred Banyan Ghat' },
     sub: { hi: 'सूर्योदय व बरगद तट', pb: 'ਸੂਰਜ ਚੜ੍ਹਨ ਤੇ ਬਰਗਦ ਤੱਟ', en: 'Golden dawn & banyan bank' },
     accent: '#FACC15',
     previewBg: `url("${banyanGhatWallpaper}")`,
-  },
-  {
-    id: 'maghar_dham',
-    name: { hi: 'मगहर धाम', pb: 'ਮਗਹਰ ਧਾਮ', en: 'Maghar Dham' },
-    sub: { hi: 'सतगुरु निर्वाण भूमि', pb: 'ਸਤਿਗੁਰੂ ਨਿਰਵਾਣ ਭੂਮੀ', en: 'Satguru sanctuary dawn' },
-    accent: '#F59E0B',
-    previewBg: `url("${magharDhamWallpaper}")`,
-  },
-  {
-    id: 'maghar_authentic',
-    name: { hi: 'मगहर प्रामाणिक धाम', pb: 'ਮਗਹਰ ਪ੍ਰਮਾਣਿਕ ਧਾਮ', en: 'Maghar Authentic Shrine' },
-    sub: { hi: 'ऐतिहासिक श्वेत गुंबद व प्रांगण', pb: 'ਇਤਿਹਾਸਕ ਗੁੰਬਦ ਤੇ ਵਿਹੜਾ', en: 'Historic shrine & courtyard' },
-    accent: '#F59E0B',
-    previewBg: `url("${magharAuthenticWallpaper}")`,
   },
   {
     id: 'light_floral_geometric',
@@ -137,16 +190,9 @@ export const GLOBAL_NATURE_PRESETS: GlobalNaturePreset[] = [
     previewBg: `url("${lightFloralWallpaper}")`,
   },
   {
-    id: 'light_lotus',
-    name: { hi: 'पावन श्वेत-स्वर्ण कमल', pb: 'ਪਾਵਨ ਚਿੱਟਾ ਕਮਲ', en: 'Sacred Light Lotus' },
-    sub: { hi: 'निर्मल संगमरमर व दिव्य कमल 🪷', pb: 'ਸੰਗਮਰਮਰ ਤੇ ਦਿਵਯ ਕਮਲ 🪷', en: 'Pearl marble & holy lotus 🪷' },
-    accent: '#D97706',
-    previewBg: `url("${lightLotusWallpaper}")`,
-  },
-  {
     id: 'saheb_icon_emblem',
     name: { hi: 'साहेब वर्ल्ड प्रतीक', pb: 'ਸਾਹੇਬ ਵਰਲਡ ਪ੍ਰਤੀਕ', en: 'Saheb World Emblem' },
-    sub: { hi: 'गोल्डन चक्र व कमल', pb: 'ਸੁਨਹਿਰੀ ਚੱਕਰ ਤੇ ਕਮಲ', en: 'Golden chakra & lotus' },
+    sub: { hi: 'गोल्डन चक्र व कमल', pb: 'ਸੁਨਹਿਰੀ ਚੱਕਰ ਤੇ ਕਮਲ', en: 'Golden chakra & lotus' },
     accent: '#FBBF24',
     previewBg: `url("${sahebEmblemWallpaper}")`,
   },
@@ -806,50 +852,74 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
     };
 
     const wallpapers: Record<string, { backgroundImage: string; overlay: string }> = {
-      banyan_ghat: {
-        backgroundImage: `url("${banyanGhatWallpaper}")`,
-        overlay: overlays.medium
+      royal_bhojpatra: {
+        backgroundImage: 'linear-gradient(135deg, #FAF3E0 0%, #F5E6C4 50%, #EBD5A0 100%)',
+        overlay: 'linear-gradient(rgba(253, 248, 238, 0.40), rgba(253, 248, 238, 0.60))',
       },
       maghar_dham: {
-        backgroundImage: `url("${magharDhamWallpaper}")`,
-        overlay: overlays.medium
+        backgroundImage: `url("${magharAuthenticWallpaper}")`,
+        overlay: overlays.medium,
+      },
+      kabir_chaura_kashi: {
+        backgroundImage: 'linear-gradient(135deg, #1C1008 0%, #3B200C 45%, #6B3012 80%, #9A3412 100%)',
+        overlay: overlays.medium,
+      },
+      lahartara_pond: {
+        backgroundImage: `url("${lightLotusWallpaper}")`,
+        overlay: overlays.light,
+      },
+      bandhavgarh_forest: {
+        backgroundImage: 'linear-gradient(135deg, #051A10 0%, #0E3622 45%, #185235 80%, #2D6A4F 100%)',
+        overlay: overlays.medium,
+      },
+      jagannath_puri_math: {
+        backgroundImage: 'linear-gradient(135deg, #091728 0%, #153252 45%, #254F77 80%, #4682A9 100%)',
+        overlay: overlays.medium,
+      },
+      damakheda_darshan: {
+        backgroundImage: 'linear-gradient(135deg, #220804 0%, #451508 45%, #7C2810 80%, #B43E12 100%)',
+        overlay: overlays.medium,
+      },
+      banyan_ghat: {
+        backgroundImage: `url("${banyanGhatWallpaper}")`,
+        overlay: overlays.medium,
       },
       maghar_authentic: {
         backgroundImage: `url("${magharAuthenticWallpaper}")`,
-        overlay: overlays.medium
+        overlay: overlays.medium,
       },
       light_floral_geometric: {
         backgroundImage: `url("${lightFloralWallpaper}")`,
-        overlay: overlays.light
+        overlay: overlays.light,
       },
       light_lotus: {
         backgroundImage: `url("${lightLotusWallpaper}")`,
-        overlay: overlays.light
+        overlay: overlays.light,
       },
       saheb_icon_emblem: {
         backgroundImage: `url("${sahebEmblemWallpaper}")`,
-        overlay: overlays.medium
+        overlay: overlays.medium,
       },
       dawn_mountain: {
         backgroundImage: 'linear-gradient(135deg, #1A0F03 0%, #4A280B 50%, #9E5B1A 100%)',
-        overlay: overlays.light
+        overlay: overlays.light,
       },
       emerald_forest: {
         backgroundImage: 'linear-gradient(135deg, #04120C 0%, #0B2D1F 50%, #2B7051 100%)',
-        overlay: overlays.medium
+        overlay: overlays.medium,
       },
       sunset_sky: {
         backgroundImage: 'linear-gradient(135deg, #1E0517 0%, #4A0E2E 50%, #8C1F38 100%, #F4A261 100%)',
-        overlay: overlays.medium
+        overlay: overlays.medium,
       },
       sacred_river: {
         backgroundImage: 'linear-gradient(135deg, #02101C 0%, #0B2D46 50%, #228BE6 100%)',
-        overlay: overlays.medium
+        overlay: overlays.medium,
       },
       golden_autumn: {
         backgroundImage: 'linear-gradient(135deg, #190E02 0%, #422406 50%, #B87319 100%)',
-        overlay: overlays.medium
-      }
+        overlay: overlays.medium,
+      },
     };
 
     return wallpapers[wallpaperId] || null;
@@ -1163,6 +1233,31 @@ export const SpiritualThemeProvider: React.FC<{ children: React.ReactNode }> = (
                 background: activeWallpaperCss.overlay,
               }}
             />
+            {/* Low-opacity (0.12) Satguru Kabir Saheb Background Watermark so it never collides with top 🌹 ।। सत्यनाम ।। 🌹 header */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: 0.12,
+                pointerEvents: 'none',
+                overflow: 'hidden',
+              }}
+            >
+              <img
+                src="/Saheb_World_icon.jpg"
+                alt=""
+                style={{
+                  width: '380px',
+                  height: '380px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  filter: 'contrast(120%)',
+                }}
+              />
+            </div>
           </div>
         )}
         <StyledAppContainer theme={activeTheme} $transparentBg={!!activeWallpaperCss}>

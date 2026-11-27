@@ -18,12 +18,12 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
       en: 'A washerman cleanses without a river ghat or soap, completely destroying physical and mental dirt.'
     },
     clueHint: {
-      hi: 'धोबी = सद्गुरु; घाट = बाहरी कर्मकांड; जल-साबुन = नाम-सिमरन व गुरु-उपदेश।',
+      hi: 'धोबी = सतगुरु; घाट = बाहरी कर्मकांड; जल-साबुन = नाम-सिमरन व गुरु-उपदेश।',
       pb: 'ਧੋਬੀ ਗੁਰੂ ਹੈ, ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਮਨ ਧੋਇਆ ਜਾਂਦਾ ਹੈ।',
-      en: 'Washerman = Satguru; Water/Soap = Satnam remembrance cleansing mental vices.'
+      en: 'Washerman = Satguru; Water/Soap = Satyanaam remembrance cleansing mental vices.'
     },
     symbols: [
-      { symbol: 'घाट बिना धोबी (Washerman without Ghat)', meaning: { hi: 'बाहरी कर्मकांडों से मुक्त सद्गुरु', pb: 'ਕਰਮਕਾਂਡਾਂ ਤੋਂ ਮੁਕਤ ਸਤਿਗੁਰੂ', en: 'Satguru free from external rituals' } },
+      { symbol: 'घाट बिना धोबी (Washerman without Ghat)', meaning: { hi: 'बाहरी कर्मकांडों से मुक्त सतगुरु', pb: 'ਕਰਮਕਾਂਡਾਂ ਤੋਂ ਮੁਕਤ ਸਤਿਗੁਰੂ', en: 'Satguru free from external rituals' } },
       { symbol: 'मैल नसावे (Cleansing Dirt)', meaning: { hi: 'नाम-सिमरन व गुरु-ज्ञान द्वारा मन के विकारों का नाश', pb: 'ਨਾਮ ਨਾਲ ਮਨ ਦੇ ਪਾਪ ਧੋਣਾ', en: 'Purifying mental vices through Naam remembrance' } }
     ],
     question: {
@@ -32,15 +32,15 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
       en: 'What does "Washing mind\'s dirt without soap or water" mean?'
     },
     options: {
-      hi: ['सद्गुरु द्वारा नाम-सिमरन से मन के विकारों को निर्मल करना', 'कपड़े धोना', 'ड्राई क्लीनिंग', 'स्नान'],
+      hi: ['सतगुरु द्वारा नाम-सिमरन से मन के विकारों को निर्मल करना', 'कपड़े धोना', 'ड्राई क्लीनिंग', 'स्नान'],
       pb: ['ਗੁਰੂ ਦੁਆਰਾ ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਮਨ ਸ਼ੁੱਧ ਕਰਨਾ', 'ਕੱਪੜੇ', 'ਡ੍ਰਾਈ ਕਲੀਨਿੰਗ', 'ਇਸ਼ਨਾਨ'],
       en: ['Satguru purifying mental impurities through Naam remembrance', 'Washing clothes', 'Dry cleaning', 'Bathing']
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सद्गुरु द्वारा नाम-सिमरन से मन की शुद्धि', pb: 'ਨਾਮ ਨਾਲ ਮਨ ਦੀ ਪਰਮ ਸ਼ੁੱਧੀ', en: 'Inner Purification through Satguru\'s Naam' },
+      headline: { hi: 'सतगुरु द्वारा नाम-सिमरन से मन की शुद्धि', pb: 'ਨਾਮ ਨਾਲ ਮਨ ਦੀ ਪਰਮ ਸ਼ੁੱਧੀ', en: 'Inner Purification through Satguru\'s Naam' },
       deepMeaning: {
-        hi: 'यहाँ धोबी सद्गुरु हैं। वे किसी बाहरी नदी या साबुन का उपयोग नहीं करते, बल्कि अपने ज्ञान-उपदेश व सत्यनाम सिमरन से साधक के अंतःकरण पर जन्म-जन्मांतर से जमे विकारों को धोकर निर्मल कर देते हैं।',
+        hi: 'यहाँ धोबी सतगुरु हैं। वे किसी बाहरी नदी या साबुन का उपयोग नहीं करते, बल्कि अपने ज्ञान-उपदेश व सत्यनाम सिमरन से साधक के अंतःकरण पर जन्म-जन्मांतर से जमे विकारों को धोकर निर्मल कर देते हैं।',
         pb: 'ਸਤਿਗੁਰੂ ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਜਨਮਾਂ-ਜਨਮਾਂ ਦੇ ਪਾਪ ਮਿਟਾ ਦਿੰਦੇ ਹਨ।',
         en: 'Satguru cleanses accumulated mental impurities of births using the spiritual soap of Naam remembrance.'
       },
@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ ਸਿਮਰਨ ਹੀ ਸੱਚਾ ਇਸ਼ਨਾਨ ਹੈ।',
         en: 'Naam remembrance is the ultimate purifier of the human soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਾ ਆਪ ਹੀ ਚਾਨਣ ਰੂਪ ਹੈ।',
         en: 'Soul is inherently self-luminous Divine Light.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਇੱਛਾਵਾਂ ਦਾ ਅੰਤ ਹੀ ਗਿਆਨ ਦਾ ਆਰੰਭ ਹੈ।',
         en: 'Death of desires marks the birth of true spiritual awakening.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਿਕ ਆਨੰਦ ਆਪ ਹੀ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ।',
         en: 'Divine bliss is uncaused, spontaneous, and self-existent.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਨਿਮਰਤਾ ਨਾਲ ਅਹੰਕਾਰ ਤੇ ਜਿੱਤ ਹੁੰਦੀ ਹੈ।',
         en: 'True humility masters the most fierce inner ego.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਇੰਦਰੀਆਂ ਦਾ ਰੋਣਾ ਹੀ ਆਤਮਾ ਦੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Weeping of sensory craving brings forth the joy of Liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਊਰਜਾ ਦਾ ਉੱਪਰ ਚੜ੍ਹਨਾ ਹੀ ਸਮਾਧੀ ਹੈ।',
         en: 'Upward vital flow is the hallmark of Yogic Samadhi.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -372,8 +372,8 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
     realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
     title: { hi: '98. सुई की नोक पर पूरा संसार नाचे', pb: '98. ਸੂਈ ਦੀ ਨੋਕ ਤੇ ਸੰਸਾਰ ਦਾ ਨੱਚਣਾ', en: '98. Entire World Dancing on Needle Point' },
     verse: {
-      hi: '"सुई की नोक पर नाचै संसारा, राई में ब्रह्मांड समाया। कहै कबीर सुनो भाई संतो, यह साहिब की माया॥"',
-      pb: '"ਸੂਈ ਕੀ ਨੋਕ ਪਰ ਨਾਚੈ ਸੰਸਾਰਾ, ਰਾਈ ਵਿੱਚ ਬ੍ਰਹਮੰਡ ਸਮਾਯਾ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਾਹਿਬ ਕੀ ਮਾਯਾ॥"',
+      hi: '"सुई की नोक पर नाचै संसारा, राई में ब्रह्मांड समाया। कहै कबीर सुनो भाई संतो, यह साहेब की माया॥"',
+      pb: '"ਸੂਈ ਕੀ ਨੋਕ ਪਰ ਨਾਚੈ ਸੰਸਾਰਾ, ਰਾਈ ਵਿੱਚ ਬ੍ਰਹਮੰਡ ਸਮਾਯਾ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਾਹੇਬ ਕੀ ਮਾਯਾ॥"',
       en: '"On needle point the entire world dances, behind a mustard seed universe fits. Says Kabir listen saints, this is Saheb\'s divine sport."'
     },
     literalParadox: {
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਸੂਖਮ ਪ੍ਰਮਾਤਮਾ ਹੀ ਸਭ ਦਾ ਆਧਾਰ ਹੈ।',
         en: 'The infinitely subtle Divine is the sole pillar of existence.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -436,11 +436,11 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
     clueHint: {
       hi: 'बहरे ने कथा सुनाई = संसारी बातों से बहरा साधक अनहद कथा सुनाता है; अंधे ने बांचे = बाहर अंधा होकर अंतरात्मा में सत्यनाम पढ़ना।',
       pb: 'ਨਿੰਦਿਆ ਤੋਂ ਬੋਲਾ ਅਨਹਦ ਸੁਣਾਉਂਦਾ ਹੈ, ਅੰਧਾ ਅੰਦਰੂਨੀ ਨਾਮ ਪੜ੍ਹਦਾ ਹੈ।',
-      en: 'Deaf narrator = Detached from gossip, expounding inner Anhad Word; Blind reader = Inner Eye reading Satnam.'
+      en: 'Deaf narrator = Detached from gossip, expounding inner Anhad Word; Blind reader = Inner Eye reading Satyanaam.'
     },
     symbols: [
       { symbol: 'बहरे कथा सुनाई (Deaf Narrating)', meaning: { hi: 'संसार प्रपंचों से बहरा होकर अंतर में अनहद नाद कथा प्रकट करना', pb: 'ਅੰਦਰੂਨੀ ਅਨਹਦ ਕਥਾ', en: 'Deaf to worldly talk, expounding inner Unstruck Discourse' } },
-      { symbol: 'अंधे अक्षर बांचे (Blind Reading)', meaning: { hi: 'बाहरी दृष्टि बंद कर अंतरात्मा के ज्ञान-चक्षु से सत्यनाम शब्द पढ़ना', pb: 'ਅੰਦਰੂਨੀ ਨਾਮ ਪੜ੍ਹਨਾ', en: 'Closing outer eyes, reading Satnam via Third Eye' } }
+      { symbol: 'अंधे अक्षर बांचे (Blind Reading)', meaning: { hi: 'बाहरी दृष्टि बंद कर अंतरात्मा के ज्ञान-चक्षु से सत्यनाम शब्द पढ़ना', pb: 'ਅੰਦਰੂਨੀ ਨਾਮ ਪੜ੍ਹਨਾ', en: 'Closing outer eyes, reading Satyanaam via Third Eye' } }
     ],
     question: {
       hi: '"अंधे द्वारा अक्षर बांचने" का क्या भेद है?',
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਅੰਤਰਮੁਖੀ ਹੋਣਾ ਹੀ ਗਿਆਨ ਹੈ।',
         en: 'Inward consciousness unveils the secret Truth of Supreme Naam.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_91_TO_100: UlatvasiQuestion[] = [
         pb: 'ਅਜਪਾ ਜਾਪ ਹੀ ਅਮਰ ਪਦ ਪਾਉਣ ਦਾ ਰਾਹ ਹੈ।',
         en: 'Ajapa-Japa is the ultimate key to the Immortal Realm.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

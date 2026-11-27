@@ -19,7 +19,7 @@ export const SAKHIS_BATCH_38: Sakhi[] = [
     },
     transliteration: 'Saakat te sant hot hai, jo guru mile sujaan. Ram-naam nij mantr de, chhudhaavai chaaron khaan.',
     bhavarth: {
-      hi: 'निगुरा (गुरुहीन) या संसारी व्यक्ति भी साधु-संत के समान हो सकता है, यदि उसे अनुभवी व पूर्ण सद्गुरु मिल जाएं। वे पवित्र राम-नाम का मंत्र देकर, अर्थात आत्म-ज्ञान की दीक्षा प्रदान करके उसे संसार के आवागमन से मुक्ति दिला सकते हैं।',
+      hi: 'निगुरा (गुरुहीन) या संसारी व्यक्ति भी साधु-संत के समान हो सकता है, यदि उसे अनुभवी व पूर्ण सतगुरु मिल जाएं। वे पवित्र राम-नाम का मंत्र देकर, अर्थात आत्म-ज्ञान की दीक्षा प्रदान करके उसे संसार के आवागमन से मुक्ति दिला सकते हैं।',
       pb: 'ਇੱਕ ਨਿਗੁਰਾ ਇਨਸਾਨ ਵੀ ਸੰਤ ਬਣ ਸਕਦਾ ਹੈ ਜੇਕਰ ਉਸਨੂੰ ਸੱਚਾ ਗੁਰੂ ਮਿਲ ਜਾਵੇ। ਗੁਰੂ ਉਸਨੂੰ ਨਾਮ ਦਾ ਮੰਤਰ ਦੇ ਕੇ ਜਨਮ-ਮਰਨ ਦੇ ਗੇੜ ਵਿੱਚੋਂ ਕੱਢ ਲੈਂਦੇ ਹਨ।',
       en: 'Even a person without a Guru or a worldly-minded person can become a saint if they find a wise and perfect Satguru. By granting the sacred mantra of Ram-Naam—that is, the initiation into self-knowledge—the Guru can liberate them from the cycle of four categories of existence (rebirth).',
     },
@@ -70,7 +70,7 @@ export const SAKHIS_BATCH_38: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'सद्गुरु में पारस जैसी शक्ति होती है जो लोहे को सोना बना देती है।',
+          hi: 'सतगुरु में पारस जैसी शक्ति होती है जो लोहे को सोना बना देती है।',
           pb: 'ਗੁਰੂ ਲੋਹੇ ਨੂੰ ਸੋਨਾ ਬਣਾ ਦਿੰਦੇ ਹਨ।',
           en: 'The Satguru possesses power like a philosopher\'s stone that turns iron into gold.',
         },
@@ -95,7 +95,7 @@ export const SAKHIS_BATCH_38: Sakhi[] = [
     },
     transliteration: 'Jo kaaminee paddai rahai, sunai na gurumukh baat. So to hogee kookaree, firai ughaarai gaat.',
     bhavarth: {
-      hi: 'जो स्त्री (या जीव) परदे में रहती है (अर्थात संसार के बंधनों और लोक-लाज में फंसी रहती है) और सद्गुरु के ज्ञानोपदेश को नहीं सुनती, वह भविष्य में पशु योनि (कूकरी) को प्राप्त होगी, जहाँ उसे नंगे बदन भटकना पड़ेगा। तात्पर्य यह है कि गुरु से कभी परदा या दुराव नहीं रखना चाहिए।',
+      hi: 'जो स्त्री (या जीव) परदे में रहती है (अर्थात संसार के बंधनों और लोक-लाज में फंसी रहती है) और सतगुरु के ज्ञानोपदेश को नहीं सुनती, वह भविष्य में पशु योनि (कूकरी) को प्राप्त होगी, जहाँ उसे नंगे बदन भटकना पड़ेगा। तात्पर्य यह है कि गुरु से कभी परदा या दुराव नहीं रखना चाहिए।',
       pb: 'ਜਿਹੜੀ ਇਸਤਰੀ ਗੁਰੂ ਦੇ ਗਿਆਨ ਨੂੰ ਨਹੀਂ ਸੁਣਦੀ ਤੇ ਸਿਰਫ ਸੰਸਾਰ ਵਿੱਚ ਫਸੀ ਰਹਿੰਦੀ ਹੈ, ਉਹ ਅਗਲੇ ਜਨਮ ਵਿੱਚ ਨੀਵੀਂ ਜੂਨ ਪਾਵੇਗੀ। ਗੁਰੂ ਤੋਂ ਕੁਝ ਨਹੀਂ ਛੁਪਾਉਣਾ ਚਾਹੀਦਾ।',
       en: 'One who remains hidden behind the veil (of worldly attachments and false modesty) and does not listen to the wisdom of the Satguru will attain a lower animal birth (as a dog) in the future, wandering with a bare body. The essence is that one should never hide anything from the Guru or prioritize false social prestige over spiritual wisdom.',
     },

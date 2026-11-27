@@ -39,9 +39,9 @@ export const SAKHIS_GYAN_GUDRI: Sakhi[] = [
       en: 'Listen attentively, Dharmadas, I explain the mystery of the body. |\nWhen the Unseen Supreme Being thought of creation, He cast the threads of 8.4 million species.',
     },
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं—हे धर्मदास! मन लगाकर सुनो, मैं तुम्हें शरीर का भेद समझाता हूँ। जब उस अदृश्य परमात्मा ने सृष्टि की रचना का विचार किया, तो उन्होंने ८४ लाख योनियों रूपी धागे डाले।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ—ਹੇ ਧਰਮਦਾਸ! ਮਨ ਲਗਾ ਕੇ ਸੁਣੋ, ਮੈਂ ਤੁਹਾਨੂੰ ਸਰੀਰ ਦਾ ਭੇਦ ਸਮਝਾਉਂਦਾ ਹਾਂ। ਜਦੋਂ ਉਸ ਅਦ੍ਰਿਸ਼ ਪ੍ਰਮਾਤਮਾ ਨੇ ਸ੍ਰਿਸ਼ਟੀ ਦੀ ਰਚਨਾ ਦਾ ਵਿਚਾਰ ਕੀਤਾ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ੮੪ ਲੱਖ ਜੂਨਾਂ ਰੂਪੀ ਧਾਗੇ ਪਾਏ।',
-      en: 'Kabir Saheb says: "Listen with concentration, Dharmadas. When the Unseen Supreme Being contemplated creation, He cast the threads of 8.4 million species."',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं—हे धर्मदास! मन लगाकर सुनो, मैं तुम्हें शरीर का भेद समझाता हूँ। जब उस अदृश्य परमात्मा ने सृष्टि की रचना का विचार किया, तो उन्होंने ८४ लाख योनियों रूपी धागे डाले।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ—ਹੇ ਧਰਮਦਾਸ! ਮਨ ਲਗਾ ਕੇ ਸੁਣੋ, ਮੈਂ ਤੁਹਾਨੂੰ ਸਰੀਰ ਦਾ ਭੇਦ ਸਮਝਾਉਂਦਾ ਹਾਂ। ਜਦੋਂ ਉਸ ਅਦ੍ਰਿਸ਼ ਪ੍ਰਮਾਤਮਾ ਨੇ ਸ੍ਰਿਸ਼ਟੀ ਦੀ ਰਚਨਾ ਦਾ ਵਿਚਾਰ ਕੀਤਾ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ੮੪ ਲੱਖ ਜੂਨਾਂ ਰੂਪੀ ਧਾਗੇ ਪਾਏ।',
+      en: 'Satguru Kabir Saheb proclaims: "Listen with concentration, Dharmadas. When the Unseen Supreme Being contemplated creation, He cast the threads of 8.4 million species."',
     },
     wordMeanings: {
       hi: [{ word: 'अलख पुरुष', meaning: 'अदृश्य परमात्मा' }, { word: 'लख चौरासी', meaning: '८४ लाख योनियाँ' }],
@@ -535,7 +535,7 @@ export const SAKHIS_GYAN_GUDRI: Sakhi[] = [
     bhavarth: {
       hi: 'साहेब कबीर की इस कृपा को सबने अपनाया। जो सुबह इसे पढ़ता है, उसके पाप नष्ट हो जाते हैं।',
       pb: 'ਸਾਹੇਬ ਕਬੀਰ ਦੀ ਇਸ ਕਿਰਪਾ ਨੂੰ ਸਾਰਿਆਂ ਨੇ ਮੰਨਿਆ। ਸਵੇਰੇ ਇਸਨੂੰ ਪੜ੍ਹਨ ਨਾਲ ਪਾਪ ਨਾਸ਼ ਹੁੰਦੇ ਹਨ।',
-      en: 'Bestowed by Kabir Saheb, this wisdom was embraced by all. Reciting it at dawn removes the sins of lifetimes.',
+      en: 'Bestowed by Satguru Kabir Saheb, this wisdom was embraced by all. Reciting it at dawn removes the sins of lifetimes.',
     },
     wordMeanings: {
       hi: [{ word: 'बकस', meaning: 'कृपा' }, { word: 'पातक', meaning: 'पाप' }],
@@ -585,9 +585,9 @@ export const SAKHIS_GYAN_GUDRI: Sakhi[] = [
       en: 'Says Kabir, listen Dharmadas, let the light of wisdom shine.',
     },
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं—हे धर्मदास! इस रहस्य को समझकर अपने भीतर ज्ञान का प्रकाश करो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ—ਹੇ ਧਰਮਦਾਸ! ਆਪਣੇ ਅੰਦਰ ਗਿਆਨ ਦੀ ਰੌਸ਼ਨੀ ਕਰੋ।',
-      en: 'Kabir Saheb says: "Dharmadas, understand this secret and illuminate your inner self with wisdom."',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं—हे धर्मदास! इस रहस्य को समझकर अपने भीतर ज्ञान का प्रकाश करो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ—ਹੇ ਧਰਮਦਾਸ! ਆਪਣੇ ਅੰਦਰ ਗਿਆਨ ਦੀ ਰੌਸ਼ਨੀ ਕਰੋ।',
+      en: 'Satguru Kabir Saheb proclaims: "Dharmadas, understand this secret and illuminate your inner self with wisdom."',
     },
     wordMeanings: {
       hi: [{ word: 'प्रकाशा', meaning: 'रौशनी' }],
@@ -637,9 +637,9 @@ export const SAKHIS_GYAN_GUDRI: Sakhi[] = [
       en: 'Remover of sorrow, immortalizer of the soul. |\nFrom the beginning, You exist in all four eons.',
     },
     bhavarth: {
-      hi: 'कबीर साहेब दुखों को हरने वाले और अमर करने वाले हैं। वे आदि काल से चारों युगों में विद्यमान हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਦੁੱਖਾਂ ਨੂੰ ਹਰਨ ਵਾਲੇ ਹਨ। ਉਹ ਚਾਰੋਂ ਜੁੱਗਾਂ ਵਿੱਚ ਮੌਜੂਦ ਹਨ।',
-      en: 'Kabir Saheb removes sorrows and grants immortality. He has existed throughout all four eons.',
+      hi: 'सतगुरु कबीर साहेब दुखों को हरने वाले और अमर करने वाले हैं। वे आदि काल से चारों युगों में विद्यमान हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੁੱਖਾਂ ਨੂੰ ਹਰਨ ਵਾਲੇ ਹਨ। ਉਹ ਚਾਰੋਂ ਜੁੱਗਾਂ ਵਿੱਚ ਮੌਜੂਦ ਹਨ।',
+      en: 'Satguru Kabir Saheb removes sorrows and grants immortality. He has existed throughout all four eons.',
     },
     wordMeanings: {
       hi: [{ word: 'भव भंजन', meaning: 'संसार चक्र नाशक' }, { word: 'युगादि', meaning: 'युगों के प्रारंभ से' }],
@@ -647,7 +647,7 @@ export const SAKHIS_GYAN_GUDRI: Sakhi[] = [
       en: [{ word: 'Ammer', meaning: 'Immortal' }]
     },
     contemplation: { hi: 'क्या मैं उस अमर शक्ति को पहचान पा रहा हूँ?', pb: 'ਕੀ ਮੈਂ ਉਸ ਅਮਰ ਸ਼ਕਤੀ ਨੂੰ ਪਛਾਣ ਰਿਹਾ ਹਾਂ?', en: 'Can I recognize that immortal power?' },
-    practicalApplication: { hi: 'आज कबीर साहेब की शिक्षाओं का मनन करें।', pb: 'ਅੱਜ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਸਿੱਖਿਆਵਾਂ ਦਾ ਚਿੰਤਨ ਕਰੋ।', en: 'Today, contemplate Kabir Saheb\'s teachings.' },
+    practicalApplication: { hi: 'आज सतगुरु कबीर साहेब की शिक्षाओं का मनन करें।', pb: 'ਅੱਜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਸਿੱਖਿਆਵਾਂ ਦਾ ਚਿੰਤਨ ਕਰੋ।', en: 'Today, contemplate Satguru Kabir Saheb\'s teachings.' },
     samarpanPrayer: { hi: 'हे आदि गुरु कबीर! मेरे बंधन काट दें।', pb: 'ਹੇ ਆਦਿ ਗੁਰੂ ਕਬੀਰ! ਮੇਰੇ ਬੰਧਨ ਕੱਟ ਦਿਓ।', en: 'O Original Guru Kabir! Sever my bonds.' },
     quiz: []
   },
@@ -689,9 +689,9 @@ export const SAKHIS_GYAN_GUDRI: Sakhi[] = [
       en: 'I never waver; my Word is all-powerful. |\nI shall send them to the Abode who ride the chariot of Word.\n|| Saheb Bandagi Saheb ||',
     },
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं—मैं कभी विचलित नहीं होता, मेरा शब्द समर्थ है। जो शब्द के मार्ग पर चलेगा, वह सत्यलोक पहुँचेगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ—ਮੇਰਾ ਸ਼ਬਦ ਸਮਰੱਥ ਹੈ। ਜੋ ਇਸ ਤੇ ਚੱਲੇਗਾ, ਉਹ ਸੱਚਖੰਡ ਪਹੁੰਚੇਗਾ।',
-      en: 'Kabir Saheb declares: "My Word is powerful. I shall escort those souls to the Eternal Abode who follow the Divine Word."',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं—मैं कभी विचलित नहीं होता, मेरा शब्द समर्थ है। जो शब्द के मार्ग पर चलेगा, वह सत्यलोक पहुँचेगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ—ਮੇਰਾ ਸ਼ਬਦ ਸਮਰੱਥ ਹੈ। ਜੋ ਇਸ ਤੇ ਚੱਲੇਗਾ, ਉਹ ਸੱਚਖੰਡ ਪਹੁੰਚੇਗਾ।',
+      en: 'Satguru Kabir Saheb proclaims: "My Word is powerful. I shall escort those souls to the Eternal Abode who follow the Divine Word."',
     },
     wordMeanings: {
       hi: [{ word: 'बिचलूं', meaning: 'डगमगाना' }, { word: 'लोक', meaning: 'सत्यलोक' }],

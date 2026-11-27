@@ -27,8 +27,8 @@ export const BARAHMASI_VERSES: NitnemVersePair[] = [
       en: "Chorus (Core Theme): In this world, only the Name of the Lord (Saheb) is eternally true. Constantly chanting the Guru's name, learn to endure all situations, knowing that this physical body is transient and fragile like unbaked clay."
     },
     marmNote: {
-      hi: "कबीर साहेब की बारहमासी का मूल आधार जीव को शरीर की नश्वरता समझाकर नाम-सुमिरण और सहनशीलता के पावन मार्ग पर लगाना है।",
-      pb: "ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਰਹਮਾਸੀ ਦਾ ਮੁੱਖ ਉਪਦੇਸ਼ ਜੀਵ ਨੂੰ ਸ਼ਰੀਰ ਦੀ ਨਾਸਵਾਨਤਾ ਸਮਝਾ ਕੇ ਸਿਮਰਨ ਅਤੇ ਸਬਰ ਦੇ ਮਾਰਗ 'ਤੇ ਤੋਰਨਾ ਹੈ।",
+      hi: "सतगुरु कबीर साहेब की बारहमासी का मूल आधार जीव को शरीर की नश्वरता समझाकर नाम-सुमिरण और सहनशीलता के पावन मार्ग पर लगाना है।",
+      pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਰਹਮਾਸੀ ਦਾ ਮੁੱਖ ਉਪਦੇਸ਼ ਜੀਵ ਨੂੰ ਸ਼ਰੀਰ ਦੀ ਨਾਸਵਾਨਤਾ ਸਮਝਾ ਕੇ ਸਿਮਰਨ ਅਤੇ ਸਬਰ ਦੇ ਮਾਰਗ 'ਤੇ ਤੋਰਨਾ ਹੈ।",
       en: "The foundational theme of the Barahmasi is to awaken the soul to the transience of physical existence, grounding it in remembrance and graceful endurance."
     }
   },
@@ -309,13 +309,13 @@ export const BARAHMASI_VERSES: NitnemVersePair[] = [
     },
     bhavarth: {
       hi: "जेठ मास (बारहवां महीना): जतन (प्रयास) करके अपनी सुरति (चेतना) को स्थिर करो ताकि तुम्हें निज अविनाशी नाम का स्मरण बना रहे। धर्मदास जी महाराज गाते हैं कि इस प्रकार पूरे बारह महीनों का यह नियम (व्रत) पूर्ण हुआ। हे साहेब कबीर! मैं आपके परम पावन चरणों का अनन्य दास हूँ, मैं आप पर न्योछावर जाता हूँ, कृपा कर मेरी मोक्ष की अभिलाषा को पूर्ण करें।",
-      pb: "ਜੇਠ ਮਹੀਨਾ: ਜਤਨ ਕਰਕੇ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਸਥਿਰ ਕਰੋ ਤਾਂ ਜੋ ਨਿਜ-ਨਾਮ ਦਾ ਸਿਮਰਨ ਬਣਿਆ ਰਹੇ। ਧਰਮਦਾਸ ਜੀ ਗਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਤਰ੍ਹਾਂ ਪੂਰੇ ਬਾਰਾਂ ਮਹੀਨਿਆਂ ਦਾ ਇਹ ਸਿਮਰਨ-ਨੇਮ ਪੂਰਾ ਹੋਇਆ। ਹੇ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਂ ਤੁਹਾਡੇ ਚਰਨਾਂ ਦਾ ਦਾਸ ਹਾਂ, ਮੈਂ ਤੁਹਾਡੇ ਤੋਂ ਬਲਿਹਾਰ ਜਾਂਦਾ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਮੇਰੀ ਮੁਕਤੀ ਦੀ ਆਸ ਪੂਰੀ ਕਰੋ।",
+      pb: "ਜੇਠ ਮਹੀਨਾ: ਜਤਨ ਕਰਕੇ ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਸਥਿਰ ਕਰੋ ਤਾਂ ਜੋ ਨਿਜ-ਨਾਮ ਦਾ ਸਿਮਰਨ ਬਣਿਆ ਰਹੇ। ਧਰਮਦਾਸ ਜੀ ਗਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਤਰ੍ਹਾਂ ਪੂਰੇ ਬਾਰਾਂ ਮਹੀਨਿਆਂ ਦਾ ਇਹ ਸਿਮਰਨ-ਨੇਮ ਪੂਰਾ ਹੋਇਆ। ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਂ ਤੁਹਾਡੇ ਚਰਨਾਂ ਦਾ ਦਾਸ ਹਾਂ, ਮੈਂ ਤੁਹਾਡੇ ਤੋਂ ਬਲਿਹਾਰ ਜਾਂਦਾ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਮੇਰੀ ਮੁਕਤੀ ਦੀ ਆਸ ਪੂਰੀ ਕਰੋ।",
       en: "Month of Jeth: Put effort into settling your consciousness (surat) so that you remain anchored in the true Name. Dharamdas Ji sings that the sacred practice across the twelve months is now complete. O Lord Kabir! I am the servant of Your lotus feet, I surrender myself to You; please fulfill my aspiration for liberation."
     },
     marmNote: {
-      hi: "जेठ मास के अंत में कबीर साहेब की भक्ति की पूर्णता को दर्शाया गया है, जहाँ धर्मदास जी महाराज साहेब के चरणों में सर्वस्व समर्पण करते हैं।",
-      pb: "ਜੇਠ ਮਹੀਨੇ ਦੇ ਅੰਤ ਵਿੱਚ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਭਗਤੀ ਦੀ ਪੂਰਨਤਾ ਨੂੰ ਦਰਸਾਇਆ ਗਿਆ ਹੈ, ਜਿੱਥେ ਧਰਮਦਾਸ ਜੀ ਮਹਾਰਾਜ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਭ ਕੁਝ ਅਰਪਣ ਕਰਦੇ ਹਨ।",
-      en: "Concluding with Jeth, the spiritual journey culminates in absolute surrender to Kabir Saheb's feet, fulfilling the soul's ancient quest for complete emancipation."
+      hi: "जेठ मास के अंत में सतगुरु कबीर साहेब की भक्ति की पूर्णता को दर्शाया गया है, जहाँ धर्मदास जी महाराज साहेब के चरणों में सर्वस्व समर्पण करते हैं।",
+      pb: "ਜੇਠ ਮਹੀਨੇ ਦੇ ਅੰਤ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਭਗਤੀ ਦੀ ਪੂਰਨਤਾ ਨੂੰ ਦਰਸਾਇਆ ਗਿਆ ਹੈ, ਜਿੱਥେ ਧਰਮਦਾਸ ਜੀ ਮਹਾਰਾਜ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਭ ਕੁਝ ਅਰਪਣ ਕਰਦੇ ਹਨ।",
+      en: "Concluding with Jeth, the spiritual journey culminates in absolute surrender to Satguru Kabir Saheb's feet, fulfilling the soul's ancient quest for complete emancipation."
     }
   },
   {
@@ -336,7 +336,7 @@ export const BARAHMASI_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "दोहा: इस बारहमासी पाठ के माध्यम से जो भी साधक सत्यनाम की बारंबार पुकार करता है और सद्गुरु के चरणों में बार-बार वंदन करता है, उसके जीवन के काम, क्रोध आदि सभी मानसिक विकार सदा के लिए नष्ट हो जाते हैं।",
+      hi: "दोहा: इस बारहमासी पाठ के माध्यम से जो भी साधक सत्यनाम की बारंबार पुकार करता है और सतगुरु के चरणों में बार-बार वंदन करता है, उसके जीवन के काम, क्रोध आदि सभी मानसिक विकार सदा के लिए नष्ट हो जाते हैं।",
       pb: "ਦੋਹਾ: ਇਸ ਬਾਰਾਂ-ਮਾਹ ਦੇ ਪਾਠ ਰਾਹੀਂ ਜੋ ਵੀ ਅਭਿਆਸੀ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਦਾ ਹੈ ਅਤੇ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਬਾਰ-ਬਾਰ ਪ੍ਰਣਾਮ ਕਰਦਾ ਹੈ, ਉਸਦੇ ਸਾਰੇ ਮਾਨਸਿਕ ਵਿਕਾਰ ਸਦਾ ਲਈ ਦੂਰ ਹੋ ਜਾਂਦੇ ਹਨ।",
       en: "Doha: Whosoever recites this Barahmasi Path, calling upon the holy Name and bowing again and again at the feet of the Satguru, will find all their mental impurities and vices dissolved forever."
     }
@@ -359,9 +359,9 @@ export const BARAHMASI_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "साहेब बंदगी: मैं आप सभी के भीतर विद्यमान परम चेतन सत्ता कबीर साहेब को नमन करता हूँ। साहेब बंदगी साहेब।",
-      pb: "ਸਾਹੇਬ ਬੰਦਗੀ: ਮੈਂ ਤੁਹਾਡੇ ਸਾਰਿਆਂ ਦੇ ਅੰਦਰ ਵਸਦੇ ਪਰਮਾਤਮਾ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਪ੍ਰਣਾਮ ਕਰਦਾ ਹਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।",
-      en: "Saheb Bandagi: I offer my humblest salutations to the Supreme Divine Spirit of Kabir Saheb residing in the sanctuary of every heart. Saheb Bandagi Saheb."
+      hi: "साहेब बंदगी: मैं आप सभी के भीतर विद्यमान परम चेतन सत्ता सतगुरु कबीर साहेब को नमन करता हूँ। साहेब बंदगी साहेब।",
+      pb: "ਸਾਹੇਬ ਬੰਦਗੀ: ਮੈਂ ਤੁਹਾਡੇ ਸਾਰਿਆਂ ਦੇ ਅੰਦਰ ਵਸਦੇ ਪਰਮਾਤਮਾ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਪ੍ਰਣਾਮ ਕਰਦਾ ਹਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।",
+      en: "Saheb Bandagi: I offer my humblest salutations to the Supreme Divine Spirit of Satguru Kabir Saheb residing in the sanctuary of every heart. Saheb Bandagi Saheb."
     }
   }
 ];

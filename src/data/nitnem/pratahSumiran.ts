@@ -67,9 +67,9 @@ export const PRABHAT_PRATAH_SUMIRAN_AARTI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "जब शरीर, मन, वचन और ध्यान स्थिर हो जाते हैं, तब कबीर साहेब कहते हैं कि उस सेवक को समय का कोई भी कष्ट (कल्प) प्रभावित नहीं कर सकता।",
-        pb: "ਜਦੋਂ ਸਰੀਰ, ਮਨ, ਬਚਨ ਅਤੇ ਸੁਰਤ ਸਥਿਰ ਹੋ ਜਾਂਦੇ ਹਨ, ਤਦ ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਸ ਦਾਸ ਨੂੰ ਕੋਈ ਵੀ ਕਾਲ ਨਹੀਂ ਵਿਆਪਦਾ।",
-        en: "When body, mind, speech, and consciousness become still, Kabir says no cyclic suffering or time can afflict that devotee."
+        hi: "जब शरीर, मन, वचन और ध्यान स्थिर हो जाते हैं, तब सतगुरु कबीर साहेब फरमाते हैं कि उस सेवक को समय का कोई भी कष्ट (कल्प) प्रभावित नहीं कर सकता।",
+        pb: "ਜਦੋਂ ਸਰੀਰ, ਮਨ, ਬਚਨ ਅਤੇ ਸੁਰਤ ਸਥਿਰ ਹੋ ਜਾਂਦੇ ਹਨ, ਤਦ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਸ ਦਾਸ ਨੂੰ ਕੋਈ ਵੀ ਕਾਲ ਨਹੀਂ ਵਿਆਪਦਾ।",
+        en: "When body, mind, speech, and consciousness become still, Satguru Kabir Saheb proclaims no cyclic suffering or time can afflict that devotee."
       }
     },
     {
@@ -113,9 +113,9 @@ export const PRABHAT_PRATAH_SUMIRAN_AARTI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "मुख से संतों की महिमा (साधु-साधु) का गान करने से पाप भस्म हो जाते हैं; स्वयं कबीर साहेब कहते हैं कि संत सदा सहायक होते हैं।",
-        pb: "ਮੁਖ ਤੋਂ ਸਾਧੂਆਂ ਦੀ ਵਡਿਆਈ ਕਰਨ ਨਾਲ ਪਾਪ ਸੜ ਜਾਂਦੇ ਹਨ; ਗੁਰੂ ਕਬੀਰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸੰਤ ਸਦਾ ਸਹਾਈ ਹੁੰਦੇ ਹਨ।",
-        en: "Chanting the glory of saints burns away sins; Kabir Himself declares that holy ones are ever-helpful."
+        hi: "मुख से संतों की महिमा (साधु-साधु) का गान करने से पाप भस्म हो जाते हैं; स्वयं सतगुरु कबीर साहेब फरमाते हैं कि संत सदा सहायक होते हैं।",
+        pb: "ਮੁਖ ਤੋਂ ਸਾਧੂਆਂ ਦੀ ਵਡਿਆਈ ਕਰਨ ਨਾਲ ਪਾਪ ਸੜ ਜਾਂਦੇ ਹਨ; ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਤ ਸਦਾ ਸਹਾਈ ਹੁੰਦੇ ਹਨ।",
+        en: "Chanting the glory of saints burns away sins; Satguru Kabir Saheb proclaims that holy ones are ever-helpful."
       }
     },
     {
@@ -139,8 +139,8 @@ export const PRABHAT_PRATAH_SUMIRAN_AARTI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "संत गुरु का ही रूप हैं और गुरु संतों का ही रूप हैं; मन, वचन और कर्म से कबीर साहेब यही सत्य वचन कहते हैं। ।।साहेब बंदगी साहेब।।",
-        pb: "ਸੰਤ ਗੁਰੂ ਦਾ ਰੂਪ ਹਨ ਤੇ ਗੁਰੂ ਸੰਤਾਂ ਦਾ ਰੂਪ ਹਨ; ਮਨ, ਬਚਨ ਤੇ ਕਰਮ ਨਾਲ ਕਬੀਰ ਸਾਹੇਬ ਇਹੀ ਸੱਚ ਕਹਿੰਦੇ ਹਨ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!",
+        hi: "संत गुरु का ही रूप हैं और गुरु संतों का ही रूप हैं; मन, वचन और कर्म से सतगुरु कबीर साहेब यही सत्य वचन कहते हैं। ।।साहेब बंदगी साहेब।।",
+        pb: "ਸੰਤ ਗੁਰੂ ਦਾ ਰੂਪ ਹਨ ਤੇ ਗੁਰੂ ਸੰਤਾਂ ਦਾ ਰੂਪ ਹਨ; ਮਨ, ਬਚਨ ਤੇ ਕਰਮ ਨਾਲ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਇਹੀ ਸੱਚ ਕਹਿੰਦੇ ਹਨ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!",
         en: "The saint is the form of the Guru, and the Guru is the form of the saint; this is the true word of Kabir in thought, word, and deed. Saheb Bandagi Saheb!"
       }
     }
@@ -162,7 +162,7 @@ export const PRABHAT_SHLOK_DHYANAM_SECTION: NitnemSection = {
     en: "Shlok Dhyanam"
   },
   subtitle: {
-    hi: "।। सत्यनाम ।। श्री सद्गुरुदेव श्वेतरूप ध्यान श्लोक",
+    hi: "।। सत्यनाम ।। श्री सतगुरुदेव श्वेतरूप ध्यान श्लोक",
     pb: "॥ ਸਤਯਨਾਮ ॥ ਸ਼੍ਰੀ ਸਤਿਗੁਰੂ ਸ਼ਵੇਤਰੂਪ ਧਿਆਨ ਸ਼ਲੋਕ",
     en: "Meditative Shlokas on the Luminous Master"
   },
@@ -258,8 +258,8 @@ export const PRABHAT_VINATI_SECTION: NitnemSection = {
   },
   subGroup: "विनती",
   title: {
-    hi: "विनती (बालारूप कबीर साहेब)",
-    pb: "ਵਿਨਤੀ (ਬਾਲਾਰੂਪ ਕਬੀਰ ਸਾਹੇਬ)",
+    hi: "विनती (बालारूप सतगुरु कबीर साहेब)",
+    pb: "ਵਿਨਤੀ (ਬਾਲਾਰੂਪ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ)",
     en: "Vinati (Petition to Lord Kabir)"
   },
   subtitle: {
@@ -292,8 +292,8 @@ export const PRABHAT_VINATI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "हे कृपालु कबीर साहेब, आपके निज नाम (सत्यनाम) को बार-बार नमन है। संतों की शरणागति को नमन है, जिससे समस्त पाप भस्म होकर राख हो जाते हैं।",
-        pb: "ਹੇ ਕਿਰਪਾਲੂ ਕਬੀਰ ਸਾਹੇਬ, ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਨੂੰ ਪ੍ਰਣਾਮ ਹੈ, ਜਿਸ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦੇ ਹਨ।",
+        hi: "हे कृपालु सतगुरु कबीर साहेब, आपके निज नाम (सत्यनाम) को बार-बार नमन है। संतों की शरणागति को नमन है, जिससे समस्त पाप भस्म होकर राख हो जाते हैं।",
+        pb: "ਹੇ ਕਿਰਪਾਲੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ, ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਨੂੰ ਪ੍ਰਣਾਮ ਹੈ, ਜਿਸ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦੇ ਹਨ।",
         en: "Salutations again and again to Your own Name (Satyanaam), O merciful Kabir. Salutations to the refuge of saints, by which all sins are burnt to ashes."
       }
     },

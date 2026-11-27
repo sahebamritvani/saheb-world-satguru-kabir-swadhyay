@@ -45,7 +45,7 @@ const PRABHAT_AARAMBH_VANDANA_SECTION: NitnemSection = {
           "अजर अचिन्त साहेब, ",
           "पुरुष मुनिन्द्र साहेब, ",
           "करुणामय साहेब, ",
-          "कबीर साहेब, ",
+          "सतगुरु कबीर साहेब, ",
           "सुरतियोग संतायन साहेब, ",
           "धनी धर्मदास साहेब, ",
           "वचन वंश चूरामणि नाम साहेब, ",
@@ -75,7 +75,7 @@ const PRABHAT_AARAMBH_VANDANA_SECTION: NitnemSection = {
           "ਅਜਰ ਅਚਿੰਤ ਸਾਹੇਬ, ",
           "ਪੁਰੁਸ਼ ਮੁਨਿੰਦ੍ਰ ਸਾਹੇਬ, ",
           "ਕਰੁਣਾਮਯ ਸਾਹੇਬ, ",
-          "ਕਬੀਰ ਸਾਹੇਬ, ",
+          "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ, ",
           "ਸੁਰਤਿਯੋਗ ਸੰਤਾਯਨ ਸਾਹੇਬ, ",
           "ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ, ",
           "ਵਚਨ ਵੰਸ਼ ਚੂਰਾਮਣਿ ਨਾਮ ਸਾਹੇਬ, ",
@@ -105,7 +105,7 @@ const PRABHAT_AARAMBH_VANDANA_SECTION: NitnemSection = {
           "Ajar Achint Saheb, ",
           "Purush Munindra Saheb, ",
           "Karunamay Saheb, ",
-          "Kabir Saheb, ",
+          "Satguru Kabir Saheb, ",
           "Suratiyog Santayan Saheb, ",
           "Dhani Dharamdas Saheb, ",
           "Vachan Vansh Churamani Nam Saheb, ",
@@ -180,9 +180,9 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "सर्वशक्तिमान पुरुषोत्तम कबीर साहेब और उनके सोलह दिव्य अंशों की वंदना करता हूँ। अचल-धैर्यवान परमात्मा और एक सौ एक (१०१) वंशों की पावन परम्परा को मेरा बारम्बार नमन है।",
-          "pb": "ਸਰਬਸ਼ਕਤੀਮਾਨ ਕਬੀਰ ਸਾਹੇਬ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ੧੬ ਅੰਸ਼ਾਂ ਦੀ ਵੰਦਨਾ ਹੈ। ਧੀਰਜਵਾਨ ਪ੍ਰਭੂ ਅਤੇ ੧੦੧ ਵੰਸ਼ਾਂ ਦੀ ਪਰੰਪਰਾ ਨੂੰ ਮੇਰਾ ਪ੍ਰਣਾਮ ਹੈ।",
-          "en": "I bow to the Supreme Being Kabir Saheb and His sixteen divine emanations. Salutations to the steadfast Divine and the sacred lineage of 101 generations."
+          "hi": "सर्वशक्तिमान पुरुषोत्तम सतगुरु कबीर साहेब और उनके सोलह दिव्य अंशों की वंदना करता हूँ। अचल-धैर्यवान परमात्मा और एक सौ एक (१०१) वंशों की पावन परम्परा को मेरा बारम्बार नमन है।",
+          "pb": "ਸਰਬਸ਼ਕਤੀਮਾਨ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ੧੬ ਅੰਸ਼ਾਂ ਦੀ ਵੰਦਨਾ ਹੈ। ਧੀਰਜਵਾਨ ਪ੍ਰਭੂ ਅਤੇ ੧੦੧ ਵੰਸ਼ਾਂ ਦੀ ਪਰੰਪਰਾ ਨੂੰ ਮੇਰਾ ਪ੍ਰਣਾਮ ਹੈ।",
+          "en": "I bow to the Supreme Being Satguru Kabir Saheb and His sixteen divine emanations. Salutations to the steadfast Divine and the sacred lineage of 101 generations."
         }
       },
       {
@@ -203,7 +203,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "मैं गुरु सहतेजी बाई और सात प्रमुख वंशों की वंदना करता हूँ। राजा के समान प्रतापी सद्गुरु राय बंकेजी और सत्ताईस (२७) स्वरूपों वाले पावन वंशों को मेरा सादर नमन है।",
+          "hi": "मैं गुरु सहतेजी बाई और सात प्रमुख वंशों की वंदना करता हूँ। राजा के समान प्रतापी सतगुरु राय बंकेजी और सत्ताईस (२७) स्वरूपों वाले पावन वंशों को मेरा सादर नमन है।",
           "pb": "ਮੈਂ ਗੁਰੂ ਸਹਤੇਜੀ ਬਾਈ ਅਤੇ ਸੱਤ ਵੰਸ਼ਾਂ ਦੀ ਵੰਦਨਾ ਕਰਦਾ ਹਾਂ। ਪ੍ਰਤਾਪੀ ਗੁਰੂ ਬੰਕੇਜੀ ਅਤੇ ੨੭ ਵੰਸ਼ਾਂ ਨੂੰ ਮੇਰਾ ਪ੍ਰਣਾਮ ਹੈ।",
           "en": "I revere Guru Sahateji Bai and the seven exalted lineages. Homage to the majestic Guru Bankeji and the twenty-seven forms of the holy lineage."
         }
@@ -249,7 +249,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "चारों सद्गुरु और परमात्मा के दिव्य नवीन अंश संसार के सभी हंस-जीवों को भवसागर से पार उतारते हैं। चूरामणि नाम साहेब इस कबीर पंथ के छत्रपति राजा हैं, जिनके कृपा-हस्त में जीवों का परम कल्याण निहित है।",
+          "hi": "चारों सतगुरु और परमात्मा के दिव्य नवीन अंश संसार के सभी हंस-जीवों को भवसागर से पार उतारते हैं। चूरामणि नाम साहेब इस कबीर पंथ के छत्रपति राजा हैं, जिनके कृपा-हस्त में जीवों का परम कल्याण निहित है।",
           "pb": "ਚਾਰ ਗੁਰੂ ਅਤੇ ਨਵੇਂ ਅੰਸ਼ ਸਾਰੇ ਜਗਤ ਦੇ ਜੀਵਾਂ ਦਾ ਉਧਾਰ ਕਰਦੇ ਹਨ। ਚੂਰਾਮਣਿ ਸਾਹੇਬ ਪੰਥ ਦੇ ਰਾਜਾ ਹਨ ਜਿਨ੍ਹਾਂ ਦੇ ਹੱਥ ਜੀਵਾਂ ਦੇ ਕਲਿਆਣ ਦੀ ਕੁੰਜੀ ਹੈ।",
           "en": "The four holy Masters and divine emanations liberate all the pure souls of the world. Churamani Nam Saheb is the sovereign protector of the lineage, in whose hands lies the spiritual salvation of all beings."
         }
@@ -295,7 +295,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "सद्गुरु के चरण कमलों की वंदना करता हूँ, जिससे जन्म, वृद्धावस्था और मरण का संताप समूल नष्ट हो गया। जिस जीव पर सद्गुरु की कृपा हो जाती है, उसका मन सत्यनाम के आनंद में सदा मग्न रहता है।",
+          "hi": "सतगुरु के चरण कमलों की वंदना करता हूँ, जिससे जन्म, वृद्धावस्था और मरण का संताप समूल नष्ट हो गया। जिस जीव पर सतगुरु की कृपा हो जाती है, उसका मन सत्यनाम के आनंद में सदा मग्न रहता है।",
           "pb": "ਸਤਿਗੁਰੂ ਦੇ ਚਰਨ ਕਮਲਾਂ ਨੂੰ ਪ੍ਰਣਾਮ ਹੈ, ਜਿਨ੍ਹਾਂ ਨਾਲ ਜਨਮ-ਮਰਨ ਦੇ ਦੁੱਖ ਦੂਰ ਹੁੰਦੇ ਹਨ। ਜਿਸ 'ਤੇ ਸਤਿਗੁਰੂ ਦੀ ਦਇਆ ਹੋਵੇ, ਉਸਦਾ ਮਨ ਸਤਯਨਾਮ ਵਿੱਚ ਲੀਨ ਰਹਿੰਦਾ ਹੈ।",
           "en": "I bow to the lotus feet of the True Master, which obliterate the agonies of old age and death. He upon whom the Satguru showers grace finds eternal delight in Satyanam."
         }
@@ -318,7 +318,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "हे संतों! विवेकपूर्वक समझो कि इस संसार में केवल 'सत्यनाम' ही एकमात्र सार तत्व है। सद्गुरु का यही पावन उपदेश है कि सत्यनाम का सुमिरन करके इस भवसागर को पार कर जाओ।",
+          "hi": "हे संतों! विवेकपूर्वक समझो कि इस संसार में केवल 'सत्यनाम' ही एकमात्र सार तत्व है। सतगुरु का यही पावन उपदेश है कि सत्यनाम का सुमिरन करके इस भवसागर को पार कर जाओ।",
           "pb": "ਹੇ ਸੰਤੋ! ਵਿਵੇਕ ਨਾਲ ਸਮਝੋ ਕਿ ਸਤਯਨਾਮ ਹੀ ਸਭ ਦਾ ਸਾਰ ਹੈ। ਸਤਿਗੁਰੂ ਦਾ ਇਹੀ ਉਪਦੇਸ਼ ਹੈ ਕਿ ਇਸ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਉਤਰ ਜਾਓ।",
           "en": "O saints, realize with discerning wisdom that Satyanam alone is the essence of all reality. The True Master's eternal teaching is to cross the ocean of mundane existence through this sacred truth."
         }
@@ -341,7 +341,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "सद्गुरु के पावन चरणों की वंदना करने से समस्त कार्य मंगलकारी और सिद्ध हो जाते हैं। अब मैं सद्गुरु की अपार महिमा का गान करने जा रहा हूँ, हे मेरे दयालु सतगुरु, मेरी लाज और संकल्प की रक्षा कीजिए।",
+          "hi": "सतगुरु के पावन चरणों की वंदना करने से समस्त कार्य मंगलकारी और सिद्ध हो जाते हैं। अब मैं सतगुरु की अपार महिमा का गान करने जा रहा हूँ, हे मेरे दयालु सतगुरु, मेरी लाज और संकल्प की रक्षा कीजिए।",
           "pb": "ਗੁਰੂ ਦੇ ਚਰਨਾਂ ਦੀ ਵੰਦਨਾ ਨਾਲ ਸਾਰੇ ਕਾਰਜ ਸਫਲ ਹੁੰਦੇ ਹਨ। ਮੈਂ ਗੁਰੂ ਦੀ ਮਹਿਮਾ ਦਾ ਵਰਣਨ ਕਰਦਾ ਹਾਂ, ਹੇ ਸਤਿਗੁਰੂ, ਮੇਰੀ ਲਾਜ ਰੱਖਣਾ।",
           "en": "By saluting the Master's holy feet, all undertakings turn into auspicious blessings. As I now narrate the glory of the Master, protect my devotion and dignity, O compassionate Satguru!"
         }
@@ -364,7 +364,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "हे संतों के हृदय में रमण करने वाले, श्वेत कमल के समान परम पवित्र एवं आनंद के धाम सद्गुरु! आपको श्रद्धापूर्वक प्रणाम करके मैं इस पावन सदग्रंथ (गुरु महिमा पाठ) का श्रीगणेश करता हूँ।",
+          "hi": "हे संतों के हृदय में रमण करने वाले, श्वेत कमल के समान परम पवित्र एवं आनंद के धाम सतगुरु! आपको श्रद्धापूर्वक प्रणाम करके मैं इस पावन सदग्रंथ (गुरु महिमा पाठ) का श्रीगणेश करता हूँ।",
           "pb": "ਹੇ ਸੰਤਾਂ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਣ ਵਾਲੇ, ਸ਼ਵੇਤ ਕੰਵਲ ਰੂਪ ਸੁੱਖ ਦੇ ਧਾਮ ਸਤਿਗੁਰੂ! ਤੁਹਾਨੂੰ ਪ੍ਰਣਾਮ ਕਰਕੇ ਮੈਂ ਪਵਿੱਤਰ ਬਾਣੀ ਦਾ ਆਰੰਭ ਕਰਦਾ ਹਾਂ।",
           "en": "O Satguru who abides within the hearts of saints, pure as a white lotus and abode of supreme bliss! Offering my humble prostrations unto You, I commence this sacred recitation of the scriptures."
         }
@@ -386,7 +386,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
       "en": "The Glory of the Master (Part 1)"
     },
     "subtitle": {
-      "hi": "सद्गुरु की अपार महिमा और भक्ति का महात्म्य",
+      "hi": "सतगुरु की अपार महिमा और भक्ति का महात्म्य",
       "pb": "ਸਤਿਗੁਰੂ ਦੀ ਅਪਾਰ ਮਹਿਮਾ ਅਤੇ ਭਗਤੀ ਦਾ ਮਹਾਤਮ",
       "en": "The Infinite Glory of the True Master and the Greatness of Devotion"
     },
@@ -431,7 +431,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           "en": ["Guru ki kripa kate yam fansi | Bilam na hoye mile avinasi ||", "Guru bin kaahu na paya gyana | Jyon thotha bhus chhaand kisana ||"]
         },
         "bhavarth": {
-          "hi": "सद्गुरु की कृपा काल के फंदे को क्षण भर में काट देती है और जीव का मिलन अविनाशी पुरुष से हो जाता है। बिना गुरु के ज्ञान वैसा ही निष्फल है जैसे बिना दाने के भूसा।",
+          "hi": "सतगुरु की कृपा काल के फंदे को क्षण भर में काट देती है और जीव का मिलन अविनाशी पुरुष से हो जाता है। बिना गुरु के ज्ञान वैसा ही निष्फल है जैसे बिना दाने के भूसा।",
           "pb": "ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਜਮਾਂ ਦੀ ਫਾਂਸੀ ਕੱਟੀ ਜਾਂਦੀ ਹੈ। ਗੁਰੂ ਤੋਂ ਬਿਨਾਂ ਗਿਆਨ ਉਸੇ ਤਰ੍ਹਾਂ ਹੈ ਜਿਵੇਂ ਬਿਨਾਂ ਦਾਣੇ ਦੇ ਫੂਸ।",
           "en": "The Master's grace severs the noose of death instantly, uniting the soul with the Eternal. Knowledge without a Master is as hollow as chaff without grain."
         }
@@ -515,7 +515,7 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           "en": ["Satguru mile to agam bataave | Yam ki aanch taahi nahin aave ||", "Guru ke mile kate dukh paapa | Janam janam ke mite santaapa ||"]
         },
         "bhavarth": {
-          "hi": "सद्गुरु उस अगम देश का रहस्य बताते हैं जिससे यमराज का भय समाप्त हो जाता है। गुरु के मिलन से जन्म-जन्मांतर के संताप और पाप नष्ट हो जाते हैं।",
+          "hi": "सतगुरु उस अगम देश का रहस्य बताते हैं जिससे यमराज का भय समाप्त हो जाता है। गुरु के मिलन से जन्म-जन्मांतर के संताप और पाप नष्ट हो जाते हैं।",
           "pb": "ਸਤਿਗੁਰੂ ਅਗੰਮ ਦਾ ਭੇਦ ਦੱਸਦੇ ਹਨ ਜਿਸ ਨਾਲ ਮੌਤ ਦਾ ਡਰ ਮੁੱਕ ਜਾਂਦਾ ਹੈ ਅਤੇ ਸਾਰੇ ਪਾਪ ਕੱਟੇ ਜਾਂਦੇ ਹਨ।",
           "en": "The True Master reveals the unapproachable realm, ending the fear of death. Meeting the Master dissolves the sins and sufferings of countless lifetimes."
         }
@@ -1033,9 +1033,9 @@ export const PRABHAT_PATH_SECTIONS: NitnemSection[] = [
           "en": ["Guru samarth hai sab ke paara | Guru sharnan utare bhav paara ||", "Kahahin Kabir guru aap akela | Dason avtar guru ka chela ||"]
         },
         "bhavarth": {
-          "hi": "गुरु सर्व-समर्थ हैं जो संसार के पार ले जाते हैं। कबीर साहेब कहते हैं कि गुरु तत्व अद्वितीय है, यहाँ तक कि दसों अवतारों ने भी गुरु की महत्ता को स्वीकार किया है।",
-          "pb": "ਗੁਰੂ ਸਭ ਕੁਝ ਕਰਨ ਦੇ ਸਮਰਥ ਹਨ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਦੀ ਮਹਿਮਾ ਸਭ ਤੋਂ ਉੱਪਰ ਹੈ।",
-          "en": "The Master is all-powerful, transcending everything. Kabir says the Master-principle is unique; even the ten incarnations were humble followers of the Master."
+          "hi": "गुरु सर्व-समर्थ हैं जो संसार के पार ले जाते हैं। सतगुरु कबीर साहेब फरमाते हैं कि गुरु तत्व अद्वितीय है, यहाँ तक कि दसों अवतारों ने भी गुरु की महत्ता को स्वीकार किया है।",
+          "pb": "ਗੁਰੂ ਸਭ ਕੁਝ ਕਰਨ ਦੇ ਸਮਰਥ ਹਨ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਦੀ ਮਹਿਮਾ ਸਭ ਤੋਂ ਉੱਪਰ ਹੈ।",
+          "en": "The Master is all-powerful, transcending everything. Satguru Kabir Saheb proclaims the Master-principle is unique; even the ten incarnations were humble followers of the Master."
         }
       },
       {

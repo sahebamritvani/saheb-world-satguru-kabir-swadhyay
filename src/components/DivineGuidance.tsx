@@ -88,8 +88,8 @@ const SACRED_GUIDANCE_DB: GuidanceEntry[] = [
     },
     source: 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ · ਗਾਲੀ ਕੋ ਅੰਗ',
     meaning: {
-      pb: 'ਕੋਈ ਅਪਮਾਨਜਨਕ ਬੋਲ ਜਾਂ ਗਾਲੀ ਇਕ ਹੀ ਆਉਂਦੀ ਹੈ, ਪਰ ਜੇ ਅਸੀਂ ਉਸਦਾ ਉਲਟਾ ਜਵਾਬ ਦੇ ਦਈਏ ਤਾਂ ਉਹ ਅਨੇਕਾਂ ਬਣ ਜਾਂਦੀ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਲਟ ਕੇ ਜਵਾਬ ਨਾ ਦਿਓ, ਉਹ ਗਾਲੀ ਇਕ ਹੀ ਰਹਿ ਕੇ ਆਪਣੇ-ਆਪ ਸ਼ਾਂਤ ਹੋ ਜਾਵੇਗੀ।',
-      hi: 'अपशब्द या गाली जब सामने से आती है तो वह केवल एक होती है, पर यदि उसका पलटकर उत्तर दिया जाए तो वह अनेक बन जाती है। कबीर साहेब कहते हैं कि पलटकर उत्तर मत दो, वह एक की एक ही रहकर शांत हो जाएगी।',
+      pb: 'ਕੋਈ ਅਪਮਾਨਜਨਕ ਬੋਲ ਜਾਂ ਗਾਲੀ ਇਕ ਹੀ ਆਉਂਦੀ ਹੈ, ਪਰ ਜੇ ਅਸੀਂ ਉਸਦਾ ਉਲਟਾ ਜਵਾਬ ਦੇ ਦਈਏ ਤਾਂ ਉਹ ਅਨੇਕਾਂ ਬਣ ਜਾਂਦੀ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਲਟ ਕੇ ਜਵਾਬ ਨਾ ਦਿਓ, ਉਹ ਗਾਲੀ ਇਕ ਹੀ ਰਹਿ ਕੇ ਆਪਣੇ-ਆਪ ਸ਼ਾਂਤ ਹੋ ਜਾਵੇਗੀ।',
+      hi: 'अपशब्द या गाली जब सामने से आती है तो वह केवल एक होती है, पर यदि उसका पलटकर उत्तर दिया जाए तो वह अनेक बन जाती है। सतगुरु कबीर साहेब फरमाते हैं कि पलटकर उत्तर मत दो, वह एक की एक ही रहकर शांत हो जाएगी।',
       en: 'When an insult comes, it is just one. But if returned in retaliation, it multiplies endlessly. Do not react or throw it back; let it dissolve into quietude.'
     },
     divineDirection: {
@@ -438,7 +438,7 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
       if (onOpenBlessing) {
         onOpenBlessing(
           language === 'pb' ? 'ਸਤਿਗੁਰੂ ਦਿਵਯ ਆਦੇਸ਼ ਪ੍ਰਗਟ' : language === 'en' ? 'Divine Guidance Revealed' : 'सतगुरु दिव्य आदेश प्रकट',
-          language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਕਿਰਪਾ ਆਪ ਜੀ ਦੇ ਅੰਗ-ਸੰਗ ਹੈ।' : language === 'en' ? 'The grace of Satguru Kabir Saheb is forever with you.' : 'सतगुरु कबीर साहेब की कृपा आपके अंग-संग है।'
+          language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਆਪ ਜੀ ਦੇ ਅੰਗ-ਸੰਗ ਹੈ।' : language === 'en' ? 'The grace of Satguru Kabir Saheb is forever with you.' : 'सतगुरु कबीर साहेब की कृपा आपके अंग-संग है।'
         );
       }
     }, 1200);
@@ -717,7 +717,7 @@ export const DivineGuidance: React.FC<DivineGuidanceProps> = ({
                 <button
                   onClick={() => onOpenBlessing(
                     language === 'pb' ? 'ਪੁਸ਼ਪ ਅਰਪਣ ਤੇ ਗੁਰੂ ਕਿਰਪਾ' : language === 'en' ? 'Sacred Petal Offering & Grace' : 'पुष्प अर्पण एवं गुरु कृपा',
-                    language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦਾ ਸਮਰਪਣ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your devotion at the lotus feet of Satguru Kabir Saheb be accepted.' : 'सतगुरु कबीर साहेब के चरणों में आपका समर्पण स्वीकार हो।'
+                    language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦਾ ਸਮਰਪਣ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your devotion at the lotus feet of Satguru Kabir Saheb be accepted.' : 'सतगुरु कबीर साहेब के चरणों में आपका समर्पण स्वीकार हो।'
                   )}
                   style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon }}
                   className="px-4 py-2.5 rounded-xl border border-amber-300 font-bold text-xs hover:scale-105 transition flex items-center gap-1.5 cursor-pointer"

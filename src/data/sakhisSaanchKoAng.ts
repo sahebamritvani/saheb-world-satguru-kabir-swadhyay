@@ -19,7 +19,7 @@ export const SAKHIS_SAANCH_KO_ANG: Sakhi[] = [
     transliteration: 'Saanch barabar tap nahi, jhooth barabar paap. Jaake hirdai saanch hai, taake hirdai aap.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब सत्य की सर्वोपरिता उद्घोषित करते हैं: सत्य के समान कोई अन्य महान तपस्या नहीं है, और असत्य (झूठ) के समान कोई बड़ा पाप नहीं। जिसके अंतःकरण में सत्य का वास है, उसके हृदय में साक्षात परमात्मा स्वयं निवास करते हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚ ਦੇ ਬਰਾਬਰ ਕੋਈ ਤਪੱਸਿਆ ਨਹੀਂ ਅਤੇ ਝੂਠ ਦੇ ਬਰਾਬਰ ਕੋਈ ਪਾਪ ਨਹੀਂ। ਜਿਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਸੱਚ ਵੱਸਦਾ ਹੈ, ਉਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਆਪ ਵੱਸਦੇ ਹਨ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚ ਦੇ ਬਰਾਬਰ ਕੋਈ ਤਪੱਸਿਆ ਨਹੀਂ ਅਤੇ ਝੂਠ ਦੇ ਬਰਾਬਰ ਕੋਈ ਪਾਪ ਨਹੀਂ। ਜਿਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਸੱਚ ਵੱਸਦਾ ਹੈ, ਉਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਆਪ ਵੱਸਦੇ ਹਨ।',
       en: 'Satguru Kabir Saheb proclaims the supreme sanctity of Truth: There is no austerity equal to Truth, and no sin equal to untruth. In whose heart Truth abides, in that sanctified heart the Divine Lord Himself resides.',
     },
     wordMeanings: {
@@ -66,7 +66,7 @@ export const SAKHIS_SAANCH_KO_ANG: Sakhi[] = [
     transliteration: 'Saanch kahau to maari dhavai, jhoothe jag patiyaye. Akath kahani prem ki, kachhu kahi na jaye.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब संसार की विपरीत दशा प्रकट करते हुए कहते हैं: जब मैं यथार्थ सत्य कहता हूँ, तो संसारी अज्ञानी जन क्रोधित होकर मारने दौड़ते हैं, किंतु जब कोई झूठी मनगढ़ंत बातें करता है, तो सारा संसार उस पर विश्वास कर लेता है। प्रेम और सत्य की अलौकिक कथा अकथनीय है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਸੱਚ ਆਖਾਂ ਤਾਂ ਸੰਸਾਰੀ ਲੋਕ ਮਾਰਨ ਦੌੜਦੇ ਹਨ, ਪਰ ਝੂਠ ਉੱਤੇ ਦੁਨੀਆ ਝੱਟ ਯਕੀਨ ਕਰ ਲੈਂਦੀ ਹੈ। ਪ੍ਰੇਮ ਦੀ ਕਥਾ ਅਕੱਥ ਹੈ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਸੱਚ ਆਖਾਂ ਤਾਂ ਸੰਸਾਰੀ ਲੋਕ ਮਾਰਨ ਦੌੜਦੇ ਹਨ, ਪਰ ਝੂਠ ਉੱਤੇ ਦੁਨੀਆ ਝੱਟ ਯਕੀਨ ਕਰ ਲੈਂਦੀ ਹੈ। ਪ੍ਰੇਮ ਦੀ ਕਥਾ ਅਕੱਥ ਹੈ।',
       en: 'Satguru Kabir Saheb highlights the worldly paradox: When I utter profound truth, worldly people run to strike me, yet when falsehood is told, the world readily believes it. The divine tale of love is beyond words.',
     },
     wordMeanings: {

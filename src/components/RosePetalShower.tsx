@@ -142,10 +142,10 @@ export const RosePetalShower: React.FC<RosePetalShowerProps> = ({
   const handlePranamChant = () => {
     sacredHaptics.divineBlessing();
     const text = language === 'pb'
-      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪਾਵਨ ਚਰਨਾਂ ਵਿੱਚ ਕੋਟਿ-ਕੋਟਿ ਨਮਨ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।'
+      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਾਵਨ ਚਰਨਾਂ ਵਿੱਚ ਕੋਟਿ-ਕੋਟਿ ਨਮਨ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।'
       : language === 'en'
       ? 'Infinite salutations and floral offerings at the sacred lotus feet of Satguru Kabir Saheb. Saheb Bandgi Saheb.'
-      : 'सतगुरु कबीर साहेब जी के पावन चरणों में कोटि-कोटि नमन। साहेब बंदगी साहेब दयाल।';
+      : 'सतगुरु कबीर साहेब के पावन चरणों में कोटि-कोटि नमन। साहेब बंदगी साहेब दयाल।';
     speechReciter.speak(text, language);
   };
 

@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saadhu gaanthi na baandhai, udar samaata ley. Aage-peechhe hari khade jab bhoge tab dey.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे साधु के अपरिग्रह और प्रभु पर अटूट भरोसे का चित्रण करते हैं: सच्चा संत कभी भविष्य के लिए धन, अन्न या वस्तुओं का संग्रह (गाँठ बाँधना) नहीं करता; वह केवल वर्तमान में अपने पेट (उदर) की भूख शांत करने जितना ही सादा आहार स्वीकार करता है। उसे पूर्ण विश्वास है कि परमात्मा स्वयं उसके आगे-पीछे उसकी रक्षा और भरण-पोषण के लिए खड़े हैं, जब भी उसे आवश्यकता होगी प्रभु स्वयं व्यवस्था कर देंगे।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ ਕਦੇ ਦੌਲਤ ਜਾਂ ਅੰਨ ਦਾ ਸੰਗ੍ਰਹਿ (ਗੰਢ ਬੰਨ੍ਹਣਾ) ਨਹੀਂ ਕਰਦਾ, ਉਹ ਕੇਵਲ ਓਨਾ ਹੀ ਲੈਂਦਾ ਹੈ ਜਿੰਨਾ ਢਿੱਡ ਲਈ ਲੋੜੀਂਦਾ ਹੋਵੇ। ਉਸਨੂੰ ਪੱਕਾ ਯਕੀਨ ਹੈ ਕਿ ਪ੍ਰਮਾਤਮਾ ਉਸਦੇ ਅੱਗੇ-ਪਿੱਛੇ ਖੜ੍ਹਾ ਹੈ ਤੇ ਲੋੜ ਵੇਲੇ ਆਪੇ ਸਭ ਕੁਝ ਦੇਵੇਗਾ।',
-      en: 'Kabir Saheb illustrates the saint’s radical non-possession (Aparigraha) and absolute trust in Divine Providence: A genuine saint never hoards wealth, grains, or material goods for tomorrow (Gaanthi Na Baandhaee); he accepts only just enough to satisfy today’s simple hunger (Udar Samaata). He abides in the serene certainty that the Divine stands ever watchful before and behind him, unfailingly providing whatever is needed at the precise moment of need.',
+      hi: 'सतगुरु कबीर साहेब सच्चे साधु के अपरिग्रह और प्रभु पर अटूट भरोसे का चित्रण करते हैं: सच्चा संत कभी भविष्य के लिए धन, अन्न या वस्तुओं का संग्रह (गाँठ बाँधना) नहीं करता; वह केवल वर्तमान में अपने पेट (उदर) की भूख शांत करने जितना ही सादा आहार स्वीकार करता है। उसे पूर्ण विश्वास है कि परमात्मा स्वयं उसके आगे-पीछे उसकी रक्षा और भरण-पोषण के लिए खड़े हैं, जब भी उसे आवश्यकता होगी प्रभु स्वयं व्यवस्था कर देंगे।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ ਕਦੇ ਦੌਲਤ ਜਾਂ ਅੰਨ ਦਾ ਸੰਗ੍ਰਹਿ (ਗੰਢ ਬੰਨ੍ਹਣਾ) ਨਹੀਂ ਕਰਦਾ, ਉਹ ਕੇਵਲ ਓਨਾ ਹੀ ਲੈਂਦਾ ਹੈ ਜਿੰਨਾ ਢਿੱਡ ਲਈ ਲੋੜੀਂਦਾ ਹੋਵੇ। ਉਸਨੂੰ ਪੱਕਾ ਯਕੀਨ ਹੈ ਕਿ ਪ੍ਰਮਾਤਮਾ ਉਸਦੇ ਅੱਗੇ-ਪਿੱਛੇ ਖੜ੍ਹਾ ਹੈ ਤੇ ਲੋੜ ਵੇਲੇ ਆਪੇ ਸਭ ਕੁਝ ਦੇਵੇਗਾ।',
+      en: 'Satguru Kabir Saheb illustrates the saint’s radical non-possession (Aparigraha) and absolute trust in Divine Providence: A genuine saint never hoards wealth, grains, or material goods for tomorrow (Gaanthi Na Baandhaee); he accepts only just enough to satisfy today’s simple hunger (Udar Samaata). He abides in the serene certainty that the Divine stands ever watchful before and behind him, unfailingly providing whatever is needed at the precise moment of need.',
     },
     wordMeanings: {
       hi: [
@@ -101,9 +101,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saadhu sati aur soorma, inki baat agaadh. Aasha chhode deh ki, tan ki anathak saadh.',
     bhavarth: {
-      hi: 'कबीर साहेब सर्वोच्च समर्पण के तीन शिखरों का गुणगान करते हैं: सच्चा साधु (जो इंद्रियों को जीतता है), सती (जो अनन्य प्रेम में सर्वस्व न्यौछावर करती है), और शूरवीर योद्धा (जो रणभूमि में धर्म के लिए प्राण देता है)—इन तीनों का संकल्प और त्याग अत्यंत अगाध और अतुलनीय होता है। ये तीनों अपने नश्वर शरीर और प्राणों के मोह (देह की आशा) को पूरी तरह त्याग देते हैं और अपनी साधना व लक्ष्य में अडिग व अनथक रहते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ, ਪਤੀਵਰਤਾ ਸਤੀ ਅਤੇ ਧਰਮੀ ਸੂਰਮਾ—ਇਹਨਾਂ ਤਿੰਨਾਂ ਦਾ ਤਿਆਗ ਤੇ ਸਿਦਕ ਬੇਅੰਤ ਡੂੰਘਾ (ਅਗਾਧ) ਹੁੰਦਾ ਹੈ। ਇਹ ਸਰੀਰ ਦਾ ਮੋਹ ਪੂਰੀ ਤਰ੍ਹਾਂ ਛੱਡ ਕੇ ਆਪਣੇ ਉਦੇਸ਼ ਲਈ ਅਡੋਲ ਰਹਿੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb extols the three sublime archetypes of absolute self-sacrifice: The genuine Saint (conqueror of the senses), the Faithful Soul (Sati, who surrenders all for true love), and the fearless Warrior (Soorma, who fights for righteousness)—the spiritual depth and valor of these three are unfathomable (Agaadh). All three renounce all bodily attachment and fear of death (Aasha Chhode Deh Kee), persevering with unyielding resolve.',
+      hi: 'सतगुरु कबीर साहेब सर्वोच्च समर्पण के तीन शिखरों का गुणगान करते हैं: सच्चा साधु (जो इंद्रियों को जीतता है), सती (जो अनन्य प्रेम में सर्वस्व न्यौछावर करती है), और शूरवीर योद्धा (जो रणभूमि में धर्म के लिए प्राण देता है)—इन तीनों का संकल्प और त्याग अत्यंत अगाध और अतुलनीय होता है। ये तीनों अपने नश्वर शरीर और प्राणों के मोह (देह की आशा) को पूरी तरह त्याग देते हैं और अपनी साधना व लक्ष्य में अडिग व अनथक रहते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ, ਪਤੀਵਰਤਾ ਸਤੀ ਅਤੇ ਧਰਮੀ ਸੂਰਮਾ—ਇਹਨਾਂ ਤਿੰਨਾਂ ਦਾ ਤਿਆਗ ਤੇ ਸਿਦਕ ਬੇਅੰਤ ਡੂੰਘਾ (ਅਗਾਧ) ਹੁੰਦਾ ਹੈ। ਇਹ ਸਰੀਰ ਦਾ ਮੋਹ ਪੂਰੀ ਤਰ੍ਹਾਂ ਛੱਡ ਕੇ ਆਪਣੇ ਉਦੇਸ਼ ਲਈ ਅਡੋਲ ਰਹਿੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb extols the three sublime archetypes of absolute self-sacrifice: The genuine Saint (conqueror of the senses), the Faithful Soul (Sati, who surrenders all for true love), and the fearless Warrior (Soorma, who fights for righteousness)—the spiritual depth and valor of these three are unfathomable (Agaadh). All three renounce all bodily attachment and fear of death (Aasha Chhode Deh Kee), persevering with unyielding resolve.',
     },
     wordMeanings: {
       hi: [
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saadhu shabd samudra hai, ja me ratan bharaay. Mand bhaagya mutthi bhare, kankar haath lagaay.',
     bhavarth: {
-      hi: 'कबीर साहेब संत-वाणी और सत्संग की दिव्यता का रहस्य समझाते हैं: सच्चा साधु परमात्मा के अनमोल अनाहत शब्द और ज्ञान का अथाह समुद्र है, जिसमें आत्म-साक्षात्कार, शांति और मुक्ति रूपी बहुमूल्य रत्न भरे पड़े हैं। किंतु जो मंदभाग्य (अहंकारी और संकीर्ण दृष्टि वाले) लोग होते हैं, वे सत्संग के इस महासागर के तट पर आकर भी केवल सांसारिक विवादों, दोष-दृष्टि और अहंकार रूपी व्यर्थ कंकड़-पत्थरों से ही अपनी मुट्ठी भरते हैं और रत्नों से वंचित रह जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ ਸ਼ਬਦ ਅਤੇ ਗਿਆਨ ਦਾ ਅਥਾਹ ਸਮੁੰਦਰ ਹੈ ਜਿਸ ਵਿੱਚ ਰੂਹਾਨੀ ਰਤਨ ਭਰੇ ਹਨ। ਪਰ ਬਦਕਿਸਮਤ ਲੋਕ ਸਤਿਸੰਗ ਵਿੱਚ ਆ ਕੇ ਵੀ ਲੜਾਈ-ਝਗੜੇ ਤੇ ਨਿੰਦਾ ਰੂਪੀ ਕੰਕਰ-ਪੱਥਰ ਹੀ ਇਕੱਠੇ ਕਰਦੇ ਹਨ ਅਤੇ ਅਸਲ ਹੀਰੇ ਗੁਆ ਲੈਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb unveils the treasure trove of the Master’s Word: A true saint is a boundless ocean of the Divine Word (Shabd Samudra), teeming with priceless gems of spiritual illumination, peace, and liberation. Yet those of unfortunate, shallow disposition (Mand Bhaagya) come to this celestial ocean only to scoop up handfuls of worthless pebbles (Kankar)—entangling themselves in petty disputes, fault-finding, and worldly gossip, missing the luminous gems of Truth.',
+      hi: 'सतगुरु कबीर साहेब संत-वाणी और सत्संग की दिव्यता का रहस्य समझाते हैं: सच्चा साधु परमात्मा के अनमोल अनाहत शब्द और ज्ञान का अथाह समुद्र है, जिसमें आत्म-साक्षात्कार, शांति और मुक्ति रूपी बहुमूल्य रत्न भरे पड़े हैं। किंतु जो मंदभाग्य (अहंकारी और संकीर्ण दृष्टि वाले) लोग होते हैं, वे सत्संग के इस महासागर के तट पर आकर भी केवल सांसारिक विवादों, दोष-दृष्टि और अहंकार रूपी व्यर्थ कंकड़-पत्थरों से ही अपनी मुट्ठी भरते हैं और रत्नों से वंचित रह जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ ਸ਼ਬਦ ਅਤੇ ਗਿਆਨ ਦਾ ਅਥਾਹ ਸਮੁੰਦਰ ਹੈ ਜਿਸ ਵਿੱਚ ਰੂਹਾਨੀ ਰਤਨ ਭਰੇ ਹਨ। ਪਰ ਬਦਕਿਸਮਤ ਲੋਕ ਸਤਿਸੰਗ ਵਿੱਚ ਆ ਕੇ ਵੀ ਲੜਾਈ-ਝਗੜੇ ਤੇ ਨਿੰਦਾ ਰੂਪੀ ਕੰਕਰ-ਪੱਥਰ ਹੀ ਇਕੱਠੇ ਕਰਦੇ ਹਨ ਅਤੇ ਅਸਲ ਹੀਰੇ ਗੁਆ ਲੈਂਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb unveils the treasure trove of the Master’s Word: A true saint is a boundless ocean of the Divine Word (Shabd Samudra), teeming with priceless gems of spiritual illumination, peace, and liberation. Yet those of unfortunate, shallow disposition (Mand Bhaagya) come to this celestial ocean only to scoop up handfuls of worthless pebbles (Kankar)—entangling themselves in petty disputes, fault-finding, and worldly gossip, missing the luminous gems of Truth.',
     },
     wordMeanings: {
       hi: [
@@ -260,20 +260,20 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     grantha: 'Sakhi Sangrah',
     category: 'sarvavyapi-saheb',
     categoryTitle: {
-      hi: 'मेहंदी की लाली व सर्वव्यापी साहिब अंग',
+      hi: 'मेहंदी की लाली व सर्वव्यापी साहेब अंग',
       pb: 'ਮਹਿੰਦੀ ਦੀ ਲਾਲੀ ਤੇ ਸਰਬ-ਵਿਆਪਕ ਸਾਹੇਬ ਅੰਗ',
       en: 'The Hidden Redness of Henna and the Omnipresent Lord (Saahib Teree Saahibee)',
     },
     text: {
-      hi: 'साहिब तेरी साहिबी, सब घट रही समाय ।\nज्यों मेहंदी के पात में, लाली लखी न जाय ॥',
+      hi: 'साहेब तेरी साहिबी, सब घट रही समाय ।\nज्यों मेहंदी के पात में, लाली लखी न जाय ॥',
       pb: 'ਸਾਹੇਬ ਤੇਰੀ ਸਾਹੇਬੀ, ਸਬ ਘਟ ਰਹੀ ਸਮਾਯ ।\nਜ੍ਯੋਂ ਮੇਂਹਦੀ ਕੇ ਪਾਤ ਮੇਂ, ਲਾਲੀ ਲਖੀ ਨ ਜਾਯ ॥',
       en: 'Saahib teree saahibee, sab ghat rahee samaay |\nJyoon mehandee ke paat mein, laalee lakhee na jaay ||',
     },
     transliteration: 'Saahib teri saahibi, sab ghat rahi samaay. Jyo mehndi ke paat me, laali lakhi na jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा की गुप्त और सर्वव्यापी सत्ता का अनुपम दृष्टांत देते हैं: हे मेरे परमपिता परमात्मा (साहिब)! आपका ऐश्वर्य, सामर्थ्य और दिव्य सत्ता संसार के प्रत्येक प्राणी के हृदय (सब घट) में सूक्ष्म रूप से समाई हुई है। जैसे हरी-भरी मेहंदी के पत्ते को बाहर से देखने पर उसमें कोई लालिमा दिखाई नहीं देती, किंतु जब उसे पीसा और मथा जाता है तो उसकी छिपी हुई गहरा लाल रंग प्रकट हो जाता है—वैसे ही नाम-सुमिरन और ध्यान द्वारा अंतःकरण में परमात्मा का साक्षात्कार होता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਮੇਰੇ ਮਾਲਕ (ਸਾਹੇਬ)! ਤੁਹਾਡੀ ਰਹਿਮਤ ਤੇ ਜੋਤ ਹਰ ਜੀਵ ਦੇ ਹਿਰਦੇ ਅੰਦਰ ਸਮਾਈ ਹੋਈ ਹੈ। ਜਿਵੇਂ ਮਹਿੰਦੀ ਦੇ ਹਰੇ ਪੱਤਿਆਂ ਵਿੱਚ ਬਾਹਰੋਂ ਲਾਲ ਰੰਗ ਨਜ਼ਰ ਨਹੀਂ ਆਉਂਦਾ ਪਰ ਪੀਸਣ ਤੇ ਲਾਲੀ ਪ੍ਰਗਟ ਹੁੰਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਸਿਮਰਨ ਨਾਲ ਹਿਰਦੇ ਚ ਪ੍ਰਭੂ ਦਾ ਦੀਦਾਰ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb presents an exquisite metaphor for the omnipresent yet hidden Divine: "O Supreme Lord (Saheb)! Your sovereign presence and divine radiance permeate the secret depths of every single living heart (Sab Ghat). Just as the vibrant crimson hue is completely invisible inside the green leaves of the Henna (Mehndi) plant until it is crushed and grounded—so does Your unmanifest divine presence blossom into direct realization within the soul through deep meditation and the Holy Name!"',
+      hi: 'सतगुरु कबीर साहेब परमात्मा की गुप्त और सर्वव्यापी सत्ता का अनुपम दृष्टांत देते हैं: हे मेरे परमपिता परमात्मा (साहेब)! आपका ऐश्वर्य, सामर्थ्य और दिव्य सत्ता संसार के प्रत्येक प्राणी के हृदय (सब घट) में सूक्ष्म रूप से समाई हुई है। जैसे हरी-भरी मेहंदी के पत्ते को बाहर से देखने पर उसमें कोई लालिमा दिखाई नहीं देती, किंतु जब उसे पीसा और मथा जाता है तो उसकी छिपी हुई गहरा लाल रंग प्रकट हो जाता है—वैसे ही नाम-सुमिरन और ध्यान द्वारा अंतःकरण में परमात्मा का साक्षात्कार होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਮੇਰੇ ਮਾਲਕ (ਸਾਹੇਬ)! ਤੁਹਾਡੀ ਰਹਿਮਤ ਤੇ ਜੋਤ ਹਰ ਜੀਵ ਦੇ ਹਿਰਦੇ ਅੰਦਰ ਸਮਾਈ ਹੋਈ ਹੈ। ਜਿਵੇਂ ਮਹਿੰਦੀ ਦੇ ਹਰੇ ਪੱਤਿਆਂ ਵਿੱਚ ਬਾਹਰੋਂ ਲਾਲ ਰੰਗ ਨਜ਼ਰ ਨਹੀਂ ਆਉਂਦਾ ਪਰ ਪੀਸਣ ਤੇ ਲਾਲੀ ਪ੍ਰਗਟ ਹੁੰਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਸਿਮਰਨ ਨਾਲ ਹਿਰਦੇ ਚ ਪ੍ਰਭੂ ਦਾ ਦੀਦਾਰ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb presents an exquisite metaphor for the omnipresent yet hidden Divine: "O Supreme Lord (Saheb)! Your sovereign presence and divine radiance permeate the secret depths of every single living heart (Sab Ghat). Just as the vibrant crimson hue is completely invisible inside the green leaves of the Henna (Mehndi) plant until it is crushed and grounded—so does Your unmanifest divine presence blossom into direct realization within the soul through deep meditation and the Holy Name!"',
     },
     wordMeanings: {
       hi: [
@@ -301,12 +301,12 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
       en: 'Am I searching for God in outer structures, or churning my inner consciousness to reveal His latent presence within?',
     },
     practicalApplication: {
-      hi: 'ध्यान और नाम-सुमिरन का नियमित अभ्यास करें; जैसे मेहंदी पीसने से लाल होती है, वैसे ही निरंतर अभ्यास से घट में साहिब प्रकट होते हैं।',
+      hi: 'ध्यान और नाम-सुमिरन का नियमित अभ्यास करें; जैसे मेहंदी पीसने से लाल होती है, वैसे ही निरंतर अभ्यास से घट में साहेब प्रकट होते हैं।',
       pb: 'ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਅੰਦਰ ਪ੍ਰਭੂ ਦਾ ਦੀਦਾਰ ਕਰੋ।',
       en: 'Practice dedicated inner meditation today; churn your mind with the Holy Name to unveil the hidden Divine within.',
     },
     samarpanPrayer: {
-      hi: 'हे घट-घट वासी साहिब! आप मेरे अंतःकरण में गुप्त रूप से विद्यमान हैं; सतगुरु की कृपा से मेरे भीतर अपनी पावन ज्योति प्रकट कर दीजिए। साहेब बंदगी साहेब!',
+      hi: 'हे घट-घट वासी साहेब! आप मेरे अंतःकरण में गुप्त रूप से विद्यमान हैं; सतगुरु की कृपा से मेरे भीतर अपनी पावन ज्योति प्रकट कर दीजिए। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਰਬ-ਵਿਆਪਕ ਸਾਹੇਬ ਜੀ! ਮੇਰੇ ਹਿਰਦੇ ਅੰਦਰ ਆਪਣੀ ਗੁਪਤ ਜੋਤ ਨੂੰ ਪ੍ਰਗਟ ਕਰ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Indwelling Saheb! You reside secretly within my heart; by the grace of the Satguru, unveil Your radiant presence within my soul. Saheb Bandagi Saheb!',
     },
@@ -330,7 +330,7 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'जैसे मेहंदी के पत्ते में लाली समाई रहती है और पीसने पर प्रकट होती है, वैसे ही साहिब सब घट में समाए हैं और ध्यान से प्रकट होते हैं।',
+          hi: 'जैसे मेहंदी के पत्ते में लाली समाई रहती है और पीसने पर प्रकट होती है, वैसे ही साहेब सब घट में समाए हैं और ध्यान से प्रकट होते हैं।',
           pb: 'ਜਿਵੇਂ ਮਹਿੰਦੀ ਚ ਲਾਲੀ ਹੁੰਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਸਭ ਦੇ ਅੰਦਰ ਪ੍ਰਭੂ ਸਮਾਇਆ ਹੋਇਆ ਹੈ।',
           en: 'Just as redness is latent in green henna leaves, the Divine Lord is immanent within all souls, revealed through meditation.',
         },
@@ -356,9 +356,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saain aage saanch hai, saain saanch suhaay. Chaahe bole kes rakh, chaahe ghaunt mundaay.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्य और आंतरिक सच्चाई की सर्वोपरिता स्थापित करते हैं: उस परमपिता परमात्मा (साईं) के दरबार में केवल और केवल सत्य, निष्कपटता और अंतःकरण की सच्चाई ही स्वीकार होती है; साईं को केवल सच्चा हृदय ही सुहाता और प्रिय लगता है। फिर मनुष्य चाहे सिर पर जटाएं और लंबे केश बढ़ाकर रखे, या अपना पूरा सिर घोंटकर मुंडवा ले—यदि भीतर सच्चाई नहीं है तो ये सभी बाहरी वेशभूषाएं परमात्मा की दृष्टि में सर्वथा व्यर्थ हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਸਿਰਫ ਸੱਚ ਤੇ ਪਵਿੱਤਰਤਾ ਹੀ ਕਬੂਲ ਹੁੰਦੀ ਹੈ; ਪ੍ਰਭੂ ਨੂੰ ਸੱਚਾ ਮਨ ਹੀ ਪਸੰਦ ਆਉਂਦਾ ਹੈ। ਚਾਹੇ ਕੋਈ ਲੰਮੇ ਕੇਸ ਰੱਖ ਲਵੇ ਜਾਂ ਸਿਰ ਗੰਜਾ ਕਰਵਾ ਲਵੇ, ਜੇਕਰ ਦਿਲ ਵਿੱਚ ਸੱਚ ਨਹੀਂ ਤਾਂ ਬਾਹਰੀ ਭੇਖ ਦਾ ਕੋਈ ਲਾਭ ਨਹੀਂ।',
-      en: 'Kabir Saheb establishes Truth as the sole currency of the Divine Court: Before the Supreme Lord (Saaee), Truth alone stands valid, and pure truth alone pleases Him (Saanch Suhaay). Whether one grows long tangled hair (Kes) or shaves the skull completely clean (Ghaunt Mundaay)—outward ascetic fashion is utterly meaningless in the eyes of God if the heart is devoid of truthfulness and integrity.',
+      hi: 'सतगुरु कबीर साहेब सत्य और आंतरिक सच्चाई की सर्वोपरिता स्थापित करते हैं: उस परमपिता परमात्मा (साईं) के दरबार में केवल और केवल सत्य, निष्कपटता और अंतःकरण की सच्चाई ही स्वीकार होती है; साईं को केवल सच्चा हृदय ही सुहाता और प्रिय लगता है। फिर मनुष्य चाहे सिर पर जटाएं और लंबे केश बढ़ाकर रखे, या अपना पूरा सिर घोंटकर मुंडवा ले—यदि भीतर सच्चाई नहीं है तो ये सभी बाहरी वेशभूषाएं परमात्मा की दृष्टि में सर्वथा व्यर्थ हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਸਿਰਫ ਸੱਚ ਤੇ ਪਵਿੱਤਰਤਾ ਹੀ ਕਬੂਲ ਹੁੰਦੀ ਹੈ; ਪ੍ਰਭੂ ਨੂੰ ਸੱਚਾ ਮਨ ਹੀ ਪਸੰਦ ਆਉਂਦਾ ਹੈ। ਚਾਹੇ ਕੋਈ ਲੰਮੇ ਕੇਸ ਰੱਖ ਲਵੇ ਜਾਂ ਸਿਰ ਗੰਜਾ ਕਰਵਾ ਲਵੇ, ਜੇਕਰ ਦਿਲ ਵਿੱਚ ਸੱਚ ਨਹੀਂ ਤਾਂ ਬਾਹਰੀ ਭੇਖ ਦਾ ਕੋਈ ਲਾਭ ਨਹੀਂ।',
+      en: 'Satguru Kabir Saheb establishes Truth as the sole currency of the Divine Court: Before the Supreme Lord (Saaee), Truth alone stands valid, and pure truth alone pleases Him (Saanch Suhaay). Whether one grows long tangled hair (Kes) or shaves the skull completely clean (Ghaunt Mundaay)—outward ascetic fashion is utterly meaningless in the eyes of God if the heart is devoid of truthfulness and integrity.',
     },
     wordMeanings: {
       hi: [
@@ -438,9 +438,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saain itna deejiye, ja me kutum samaay. Main bhi bhookha na rahu, saadhu na bhookha jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब सम्पूर्ण मानव जाति के लिए परम संतोष और आदर्श गृहस्थ धर्म की अमर प्रार्थना प्रस्तुत करते हैं: हे मेरे दयालु प्रभु (साईं)! मुझे केवल उतना ही सांसारिक धन-धान्य और साधन प्रदान कीजिए, जितने में मेरे परिवार (कुटुंब) का भरण-पोषण सरलता व सम्मान से हो सके। न तो मैं और मेरा परिवार भूख से तड़पे, और मेरे द्वार पर आए हुए किसी भी अतिथि, संत या भूखे जीव को कभी खाली हाथ भूखा न लौटना पड़े। यह लोभ-रहित संतोष की सर्वोत्तम प्रार्थना है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਮੇਰੇ ਪ੍ਰਭੂ! ਮੈਨੂੰ ਸਿਰਫ ਓਨਾ ਹੀ ਦਿਓ ਜਿਸ ਨਾਲ ਮੇਰੇ ਪਰਿਵਾਰ ਦਾ ਗੁਜ਼ਾਰਾ ਇੱਜ਼ਤ ਨਾਲ ਹੋ ਸਕੇ। ਨਾ ਮੈਂ ਭੁੱਖਾ ਰਹਾਂ ਅਤੇ ਮੇਰੇ ਬੂਹੇ ਤੇ ਆਇਆ ਕੋਈ ਸਾਧੂ-ਫਕੀਰ ਜਾਂ ਮਹਿਮਾਨ ਵੀ ਭੁੱਖਾ ਨਾ ਜਾਵੇ। ਇਹ ਸੰਤੋਖ ਦੀ ਸਭ ਤੋਂ ਸੁੰਦਰ ਅਰਦਾਸ ਹੈ।',
-      en: 'Kabir Saheb presents the most celebrated prayer of contentment and noble hospitality in human literature: "O Lord (Saaee)! Grant me just enough worldly provision that my family (Kutum) may be honorably sustained; that neither I nor my dependents go hungry, and that no wandering saint, hungry traveler, or guest at my threshold ever turns away with an empty stomach." This is the supreme golden mean of spiritual contentment.',
+      hi: 'सतगुरु कबीर साहेब सम्पूर्ण मानव जाति के लिए परम संतोष और आदर्श गृहस्थ धर्म की अमर प्रार्थना प्रस्तुत करते हैं: हे मेरे दयालु प्रभु (साईं)! मुझे केवल उतना ही सांसारिक धन-धान्य और साधन प्रदान कीजिए, जितने में मेरे परिवार (कुटुंब) का भरण-पोषण सरलता व सम्मान से हो सके। न तो मैं और मेरा परिवार भूख से तड़पे, और मेरे द्वार पर आए हुए किसी भी अतिथि, संत या भूखे जीव को कभी खाली हाथ भूखा न लौटना पड़े। यह लोभ-रहित संतोष की सर्वोत्तम प्रार्थना है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਮੇਰੇ ਪ੍ਰਭੂ! ਮੈਨੂੰ ਸਿਰਫ ਓਨਾ ਹੀ ਦਿਓ ਜਿਸ ਨਾਲ ਮੇਰੇ ਪਰਿਵਾਰ ਦਾ ਗੁਜ਼ਾਰਾ ਇੱਜ਼ਤ ਨਾਲ ਹੋ ਸਕੇ। ਨਾ ਮੈਂ ਭੁੱਖਾ ਰਹਾਂ ਅਤੇ ਮੇਰੇ ਬੂਹੇ ਤੇ ਆਇਆ ਕੋਈ ਸਾਧੂ-ਫਕੀਰ ਜਾਂ ਮਹਿਮਾਨ ਵੀ ਭੁੱਖਾ ਨਾ ਜਾਵੇ। ਇਹ ਸੰਤੋਖ ਦੀ ਸਭ ਤੋਂ ਸੁੰਦਰ ਅਰਦਾਸ ਹੈ।',
+      en: 'Satguru Kabir Saheb presents the most celebrated prayer of contentment and noble hospitality in human literature: "O Lord (Saaee)! Grant me just enough worldly provision that my family (Kutum) may be honorably sustained; that neither I nor my dependents go hungry, and that no wandering saint, hungry traveler, or guest at my threshold ever turns away with an empty stomach." This is the supreme golden mean of spiritual contentment.',
     },
     wordMeanings: {
       hi: [
@@ -483,9 +483,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
       {
         id: 'q-b29-354',
         question: {
-          hi: 'कबीर साहेब की इस अमर प्रार्थना में परमात्मा से क्या माँगा गया है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਪ੍ਰਾਰਥਨਾ ਵਿੱਚ ਕੀ ਮੰਗਿਆ ਗਿਆ ਹੈ?',
-          en: 'In this immortal prayer, what does Kabir Saheb request from the Lord?',
+          hi: 'सतगुरु कबीर साहेब की इस अमर प्रार्थना में परमात्मा से क्या माँगा गया है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਪ੍ਰਾਰਥਨਾ ਵਿੱਚ ਕੀ ਮੰਗਿਆ ਗਿਆ ਹੈ?',
+          en: 'In this immortal prayer, what does Satguru Kabir Saheb request from the Lord?',
         },
         options: {
           hi: ['इतना भोजन-साधन जिससे परिवार का पोषण हो सके और द्वार से कोई साधु भूखा न लौटे', 'करोड़ों का खजाना', 'संसार का राज्य', 'सोने का महल'],
@@ -520,9 +520,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saain mera baaniya, sahaj kare vyopaar. Bin daandi bin paalde, tole sab sansaar.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा के अचूक कर्म-सिद्धांत और न्याय-विधान का रूपक रचते हैं: मेरा परमपिता परमात्मा (सांई) एक ऐसा अद्भुत और सर्वज्ञ व्यापारी (बानिया) है जो बिना किसी प्रयास के सहज भाव से संपूर्ण सृष्टि का संचालन करता है। उसके पास कोई भौतिक तराजू की डंडी (डांडी) और पलड़ा (पालडा) नहीं है, फिर भी वह संसार के प्रत्येक प्राणी के सूक्ष्म कर्मों, विचारों और पाप-पुण्य को रत्ती-रत्ती तौलकर यथार्थ फल प्रदान करता है। ईश्वर का न्याय अचूक है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਮੇਰਾ ਪ੍ਰਭੂ ਇੱਕ ਅਜਿਹਾ ਵਪਾਰੀ ਹੈ ਜੋ ਬਿਨਾਂ ਕਿਸੇ ਤੱਕੜੀ ਜਾਂ ਪਲੜੇ ਦੇ ਸਾਰੇ ਸੰਸਾਰ ਦੇ ਕਰਮਾਂ ਨੂੰ ਬਿਲਕੁਲ ਸਹੀ ਤੋਲਦਾ ਹੈ। ਉਸਦਾ ਇਨਸਾਫ਼ ਅਟੱਲ ਤੇ ਅਚੂਕ ਹੈ।',
-      en: 'Kabir Saheb crafts a magnificent allegorical portrait of the infallible cosmic law of Karma: "My Supreme Lord (Saaee) is a wondrous cosmic Merchant (Baaniya) who effortlessly conducts the great commerce of the universe. Devoid of any physical balance-beam (Daandee) or weighing pans (Paalade), His omniscient justice accurately weighs the innermost thoughts, actions, and karmas of the entire universe with absolute, flawless precision!"',
+      hi: 'सतगुरु कबीर साहेब परमात्मा के अचूक कर्म-सिद्धांत और न्याय-विधान का रूपक रचते हैं: मेरा परमपिता परमात्मा (सांई) एक ऐसा अद्भुत और सर्वज्ञ व्यापारी (बानिया) है जो बिना किसी प्रयास के सहज भाव से संपूर्ण सृष्टि का संचालन करता है। उसके पास कोई भौतिक तराजू की डंडी (डांडी) और पलड़ा (पालडा) नहीं है, फिर भी वह संसार के प्रत्येक प्राणी के सूक्ष्म कर्मों, विचारों और पाप-पुण्य को रत्ती-रत्ती तौलकर यथार्थ फल प्रदान करता है। ईश्वर का न्याय अचूक है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੇਰਾ ਪ੍ਰਭੂ ਇੱਕ ਅਜਿਹਾ ਵਪਾਰੀ ਹੈ ਜੋ ਬਿਨਾਂ ਕਿਸੇ ਤੱਕੜੀ ਜਾਂ ਪਲੜੇ ਦੇ ਸਾਰੇ ਸੰਸਾਰ ਦੇ ਕਰਮਾਂ ਨੂੰ ਬਿਲਕੁਲ ਸਹੀ ਤੋਲਦਾ ਹੈ। ਉਸਦਾ ਇਨਸਾਫ਼ ਅਟੱਲ ਤੇ ਅਚੂਕ ਹੈ।',
+      en: 'Satguru Kabir Saheb crafts a magnificent allegorical portrait of the infallible cosmic law of Karma: "My Supreme Lord (Saaee) is a wondrous cosmic Merchant (Baaniya) who effortlessly conducts the great commerce of the universe. Devoid of any physical balance-beam (Daandee) or weighing pans (Paalade), His omniscient justice accurately weighs the innermost thoughts, actions, and karmas of the entire universe with absolute, flawless precision!"',
     },
     wordMeanings: {
       hi: [
@@ -605,9 +605,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Saain te sab hote hai, bande se kuchh naahi. Raai se parvat kare, parvat raai maahi.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा की सर्वशक्तिमत्ता और मनुष्य की तुच्छता का यथार्थ बोध कराते हैं: इस सृष्टि में सब कुछ केवल उस सर्वसमर्थ परमात्मा (साँई) की कृपा और इच्छा से ही संभव होता है, मनुष्य (बंदे) के अपने झूठे अहंकार के बल पर कुछ भी नहीं हो सकता। वह समर्थ प्रभु एक क्षण में सरसों के छोटे से दाने (राई) को विशाल पर्वत बना सकता है, और क्षण भर में विशाल पर्वत को राई के समान धूल में मिला सकता है। अतः मनुष्य को अहंकार त्यागकर प्रभु-शरण में रहना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਭ ਕੁਝ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਹੀ ਹੁੰਦਾ ਹੈ, ਮਨੁੱਖ ਦੇ ਆਪਣੇ ਵੱਸ ਕੁਝ ਨਹੀਂ। ਉਹ ਪਰਮਾਤਮਾ ਪਲ ਵਿੱਚ ਰਾਈ ਦੇ ਦਾਣੇ ਨੂੰ ਪਹਾੜ ਬਣਾ ਸਕਦਾ ਹੈ ਅਤੇ ਪਹਾੜ ਨੂੰ ਰਾਈ ਬਣਾ ਸਕਦਾ ਹੈ। ਇਸ ਲਈ ਹੰਕਾਰ ਛੱਡੋ।',
-      en: 'Kabir Saheb highlights the omnipotence of God and the utter helplessness of the mortal ego: Everything in this vast cosmos is accomplished solely through the sovereign power and grace of the Supreme Lord (Saaee); mortal man by his own vanity can achieve nothing. That Almighty Lord can instantly transform a tiny mustard seed (Raaee) into a towering mountain, and compress an immense mountain into a speck of dust! Therefore, discard all human pride and take refuge in Him.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा की सर्वशक्तिमत्ता और मनुष्य की तुच्छता का यथार्थ बोध कराते हैं: इस सृष्टि में सब कुछ केवल उस सर्वसमर्थ परमात्मा (साँई) की कृपा और इच्छा से ही संभव होता है, मनुष्य (बंदे) के अपने झूठे अहंकार के बल पर कुछ भी नहीं हो सकता। वह समर्थ प्रभु एक क्षण में सरसों के छोटे से दाने (राई) को विशाल पर्वत बना सकता है, और क्षण भर में विशाल पर्वत को राई के समान धूल में मिला सकता है। अतः मनुष्य को अहंकार त्यागकर प्रभु-शरण में रहना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਭ ਕੁਝ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਹੀ ਹੁੰਦਾ ਹੈ, ਮਨੁੱਖ ਦੇ ਆਪਣੇ ਵੱਸ ਕੁਝ ਨਹੀਂ। ਉਹ ਪਰਮਾਤਮਾ ਪਲ ਵਿੱਚ ਰਾਈ ਦੇ ਦਾਣੇ ਨੂੰ ਪਹਾੜ ਬਣਾ ਸਕਦਾ ਹੈ ਅਤੇ ਪਹਾੜ ਨੂੰ ਰਾਈ ਬਣਾ ਸਕਦਾ ਹੈ। ਇਸ ਲਈ ਹੰਕਾਰ ਛੱਡੋ।',
+      en: 'Satguru Kabir Saheb highlights the omnipotence of God and the utter helplessness of the mortal ego: Everything in this vast cosmos is accomplished solely through the sovereign power and grace of the Supreme Lord (Saaee); mortal man by his own vanity can achieve nothing. That Almighty Lord can instantly transform a tiny mustard seed (Raaee) into a towering mountain, and compress an immense mountain into a speck of dust! Therefore, discard all human pride and take refuge in Him.',
     },
     wordMeanings: {
       hi: [
@@ -687,9 +687,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Sajjan jan wahi hai jo, dhaal sareekha hoye. Dukh me aage rahe, sukh me paachhe hoye.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे मित्र, सज्जन पुरुष और श्रेष्ठ सेवक का परम लक्षण बताते हैं: वास्तविक सज्जन और सच्चा हितैषी वही है जिसका स्वभाव युद्ध की सुरक्षात्मक ढाल (ढाल सरीखा) के समान होता है। जब संकट, विपत्ति और दुःख का समय आए तो वह ढाल की तरह आगे आकर वार झेलता है और रक्षा करता है, और जब सुख, उत्सव व सम्मान का अवसर हो तो वह पीछे रहकर दूसरे को श्रेय देता है। स्वार्थी लोग सुख में आगे और दुःख में भाग जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸੱਜਣ ਤੇ ਮਿੱਤਰ ਉਹ ਹੈ ਜੋ ਢਾਲ ਵਾਂਗ ਕੰਮ ਕਰਦਾ ਹੈ। ਦੁੱਖ ਤੇ ਮੁਸੀਬਤ ਵੇਲੇ ਉਹ ਅੱਗੇ ਹੋ ਕੇ ਰੱਖਿਆ ਕਰਦਾ ਹੈ ਅਤੇ ਸੁੱਖ ਵੇਲੇ ਪਿੱਛੇ ਰਹਿੰਦਾ ਹੈ। ਸੱਚੀ ਮਿੱਤਰਤਾ ਨਿਰਸੁਆਰਥ ਹੁੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb defines the noble character of a true friend and virtuous soul: A genuine, noble-hearted person (Sajjan Jan) is like a warrior’s protective shield (Dhaal). When sorrow, adversity, and danger strike, he stands in the front lines absorbing the blows to protect his companion; but in times of prosperity, joy, and celebration, he stays humbly in the background, seeking no glory for himself. Selfish people do the opposite—rushing for joy and fleeing in pain.',
+      hi: 'सतगुरु कबीर साहेब सच्चे मित्र, सज्जन पुरुष और श्रेष्ठ सेवक का परम लक्षण बताते हैं: वास्तविक सज्जन और सच्चा हितैषी वही है जिसका स्वभाव युद्ध की सुरक्षात्मक ढाल (ढाल सरीखा) के समान होता है। जब संकट, विपत्ति और दुःख का समय आए तो वह ढाल की तरह आगे आकर वार झेलता है और रक्षा करता है, और जब सुख, उत्सव व सम्मान का अवसर हो तो वह पीछे रहकर दूसरे को श्रेय देता है। स्वार्थी लोग सुख में आगे और दुःख में भाग जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸੱਜਣ ਤੇ ਮਿੱਤਰ ਉਹ ਹੈ ਜੋ ਢਾਲ ਵਾਂਗ ਕੰਮ ਕਰਦਾ ਹੈ। ਦੁੱਖ ਤੇ ਮੁਸੀਬਤ ਵੇਲੇ ਉਹ ਅੱਗੇ ਹੋ ਕੇ ਰੱਖਿਆ ਕਰਦਾ ਹੈ ਅਤੇ ਸੁੱਖ ਵੇਲੇ ਪਿੱਛੇ ਰਹਿੰਦਾ ਹੈ। ਸੱਚੀ ਮਿੱਤਰਤਾ ਨਿਰਸੁਆਰਥ ਹੁੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb defines the noble character of a true friend and virtuous soul: A genuine, noble-hearted person (Sajjan Jan) is like a warrior’s protective shield (Dhaal). When sorrow, adversity, and danger strike, he stands in the front lines absorbing the blows to protect his companion; but in times of prosperity, joy, and celebration, he stays humbly in the background, seeking no glory for himself. Selfish people do the opposite—rushing for joy and fleeing in pain.',
     },
     wordMeanings: {
       hi: [
@@ -769,9 +769,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Samjhaaye samjhe nahi, par ke saath bikaay. Main kheenchat hoon aapke, tu chala jampur jaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब अज्ञानी और हठधर्मी जीवों की दुर्दशा पर गहरा खेद प्रकट करते हैं: मैं बार-बार सत्य और विवेक का उपदेश देकर समझाता हूँ, किंतु यह जीव समझने को तैयार नहीं होता और माया, वासना व सांसारिक आकर्षणों (पर) के हाथों कौड़ी के मोल बिक जाता है। मैं तो दया करके इसे अपनी ओर खींचकर भवसागर से बचाना चाहता हूँ, किंतु यह अपनी मूर्खता और पाप-वासनाओं के वशीभूत होकर सीधा यमराज के लोक (जमपुरी/नरक) की ओर दौड़ा चला जा रहा है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਬਾਰ-ਬਾਰ ਸਮਝਾਉਣ ਤੇ ਵੀ ਇਹ ਜੀਵ ਨਹੀਂ ਸਮਝਦਾ ਅਤੇ ਮਾਇਆ ਦੇ ਹੱਥ ਵਿਕ ਜਾਂਦਾ ਹੈ। ਮੈਂ ਇਸਨੂੰ ਬਚਾਉਣ ਲਈ ਆਪਣੇ ਵੱਲ ਖਿੱਚਦਾ ਹਾਂ ਪਰ ਇਹ ਮੂਰਖਤਾ ਵੱਸ ਸਿੱਧਾ ਜਮਪੁਰ (ਨਰਕ) ਵੱਲ ਦੌੜਿਆ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb laments the tragic obstinacy of the deluded soul: "I counsel and instruct time and time again, yet this heedless mind refuses to understand, selling itself cheap to the illusions of sensory pleasure (Par). With compassionate hands I strive to pull you toward the safety of Truth and liberation, yet driven by your foolish attachments, you break free and march straight toward the harrowing City of Death (Jampur)!"',
+      hi: 'सतगुरु कबीर साहेब अज्ञानी और हठधर्मी जीवों की दुर्दशा पर गहरा खेद प्रकट करते हैं: मैं बार-बार सत्य और विवेक का उपदेश देकर समझाता हूँ, किंतु यह जीव समझने को तैयार नहीं होता और माया, वासना व सांसारिक आकर्षणों (पर) के हाथों कौड़ी के मोल बिक जाता है। मैं तो दया करके इसे अपनी ओर खींचकर भवसागर से बचाना चाहता हूँ, किंतु यह अपनी मूर्खता और पाप-वासनाओं के वशीभूत होकर सीधा यमराज के लोक (जमपुरी/नरक) की ओर दौड़ा चला जा रहा है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਬਾਰ-ਬਾਰ ਸਮਝਾਉਣ ਤੇ ਵੀ ਇਹ ਜੀਵ ਨਹੀਂ ਸਮਝਦਾ ਅਤੇ ਮਾਇਆ ਦੇ ਹੱਥ ਵਿਕ ਜਾਂਦਾ ਹੈ। ਮੈਂ ਇਸਨੂੰ ਬਚਾਉਣ ਲਈ ਆਪਣੇ ਵੱਲ ਖਿੱਚਦਾ ਹਾਂ ਪਰ ਇਹ ਮੂਰਖਤਾ ਵੱਸ ਸਿੱਧਾ ਜਮਪੁਰ (ਨਰਕ) ਵੱਲ ਦੌੜਿਆ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb laments the tragic obstinacy of the deluded soul: "I counsel and instruct time and time again, yet this heedless mind refuses to understand, selling itself cheap to the illusions of sensory pleasure (Par). With compassionate hands I strive to pull you toward the safety of Truth and liberation, yet driven by your foolish attachments, you break free and march straight toward the harrowing City of Death (Jampur)!"',
     },
     wordMeanings: {
       hi: [
@@ -851,9 +851,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Sangat keejai saadhu ki, hoye din-din het. Saakut kaali kaamli, dhowat hoy na shwet.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्संग की महिमा और कुसंगी (साक्त) की संगति की निरर्थकता बताते हैं: सदा सच्चे साधु और संतों की संगति करनी चाहिए, क्योंकि उनकी संगति में रहने से हृदय में प्रभु-प्रेम और भक्ति का भाव दिन-प्रतिदिन (दिन-दिन हेत) बढ़ता जाता है। इसके विपरीत जो संसारी, भोगी और अभक्त (साक्त/साकुट) व्यक्ति है, वह उस काली ऊनी कमली (काली कामली) के समान है जिसे साबुन से कितना भी धोया जाए, वह कभी श्वेत (सफेद) नहीं हो सकती। कुसंगति से बचना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਦਾ ਸਾਧੂ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਕਰੋ ਜਿਸ ਨਾਲ ਪ੍ਰਭੂ-ਪ੍ਰੇਮ ਦਿਨ-ਬ-ਦਿਨ ਵਧਦਾ ਹੈ। ਪਰ ਸਾਕਤ (ਰੱਬ ਤੋਂ ਟੁੱਟੇ) ਦੀ ਸੰਗਤ ਕਾਲੀ ਕੰਬਲੀ ਵਾਂਗ ਹੈ ਜਿਸਨੂੰ ਜਿੰਨਾ ਮਰਜ਼ੀ ਧੋਵੋ ਉਹ ਕਦੇ ਚਿੱਟੀ ਨਹੀਂ ਹੁੰਦੀ। ਕੁਸੰਗਤ ਛੱਡੋ।',
-      en: 'Kabir Saheb contrasts the elevating power of holy fellowship with the futility of bad company: Seek ever the blessed company of Saints (Saadhu), for in their holy presence divine love and spiritual devotion multiply day by day (Din-Din Het). In sharp contrast, associating with an obstinate, worldly materialist (Saakut) is like trying to wash a jet-black wool blanket (Kaalee Kaamalee)—no matter how intensely you wash it with soap, it will never turn white. Avoid toxic association.',
+      hi: 'सतगुरु कबीर साहेब सत्संग की महिमा और कुसंगी (साक्त) की संगति की निरर्थकता बताते हैं: सदा सच्चे साधु और संतों की संगति करनी चाहिए, क्योंकि उनकी संगति में रहने से हृदय में प्रभु-प्रेम और भक्ति का भाव दिन-प्रतिदिन (दिन-दिन हेत) बढ़ता जाता है। इसके विपरीत जो संसारी, भोगी और अभक्त (साक्त/साकुट) व्यक्ति है, वह उस काली ऊनी कमली (काली कामली) के समान है जिसे साबुन से कितना भी धोया जाए, वह कभी श्वेत (सफेद) नहीं हो सकती। कुसंगति से बचना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਦਾ ਸਾਧੂ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਕਰੋ ਜਿਸ ਨਾਲ ਪ੍ਰਭੂ-ਪ੍ਰੇਮ ਦਿਨ-ਬ-ਦਿਨ ਵਧਦਾ ਹੈ। ਪਰ ਸਾਕਤ (ਰੱਬ ਤੋਂ ਟੁੱਟੇ) ਦੀ ਸੰਗਤ ਕਾਲੀ ਕੰਬਲੀ ਵਾਂਗ ਹੈ ਜਿਸਨੂੰ ਜਿੰਨਾ ਮਰਜ਼ੀ ਧੋਵੋ ਉਹ ਕਦੇ ਚਿੱਟੀ ਨਹੀਂ ਹੁੰਦੀ। ਕੁਸੰਗਤ ਛੱਡੋ।',
+      en: 'Satguru Kabir Saheb contrasts the elevating power of holy fellowship with the futility of bad company: Seek ever the blessed company of Saints (Saadhu), for in their holy presence divine love and spiritual devotion multiply day by day (Din-Din Het). In sharp contrast, associating with an obstinate, worldly materialist (Saakut) is like trying to wash a jet-black wool blanket (Kaalee Kaamalee)—no matter how intensely you wash it with soap, it will never turn white. Avoid toxic association.',
     },
     wordMeanings: {
       hi: [
@@ -933,9 +933,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
     },
     transliteration: 'Sangati so sukhya oopaje, kusangati so dukh hoy. Kah Kabir taha jaaiye, saadhu sang jaha hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब संगति के सार्वभौमिक आध्यात्मिक परिणाम का स्पष्ट निर्णय देते हैं: श्रेष्ठ, ज्ञानी और संतों की संगति करने से जीवन में परम सुख, शांति और आत्म-कल्याण उत्पन्न होता है; जबकि दुष्टों, लोभियों और अज्ञानियों की कुसंगति से केवल क्लेश, पाप और घोर दुःख की ही उत्पत्ति होती है। इसलिए कबीर उपदेश देते हैं कि हे मानव! केवल उसी स्थान पर जाओ और वहीं अपना समय बिताओ, जहाँ सच्चे साधुओं और संतों का पावन सत्संग हो रहा हो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਚੰਗੀ ਸੰਗਤ ਨਾਲ ਸੁੱਖ ਤੇ ਸ਼ਾਂਤੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ, ਜਦਕਿ ਬੁਰੀ ਸੰਗਤ ਨਾਲ ਦੁੱਖ ਤੇ ਬਰਬਾਦੀ ਮਿਲਦੀ ਹੈ। ਇਸ ਲਈ ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਦਾ ਉੱਥੇ ਹੀ ਜਾਓ ਜਿੱਥੇ ਸਾਧੂ-ਸੰਤਾਂ ਦਾ ਸੱਚਾ ਸਤਿਸੰਗ ਹੁੰਦਾ ਹੋਵੇ।',
-      en: 'Kabir Saheb pronounces the universal spiritual law of association: From noble, saintly association (Sangati) springs supreme peace, joy, and spiritual illumination; whereas from vile and corrupt company (Kusangati) arises nothing but misery, distress, and karmic ruin. Therefore, Kabir counsels: Direct your footsteps only to that sacred place where the purifying company of holy Saints (Saadhu Sang) is found.',
+      hi: 'सतगुरु कबीर साहेब संगति के सार्वभौमिक आध्यात्मिक परिणाम का स्पष्ट निर्णय देते हैं: श्रेष्ठ, ज्ञानी और संतों की संगति करने से जीवन में परम सुख, शांति और आत्म-कल्याण उत्पन्न होता है; जबकि दुष्टों, लोभियों और अज्ञानियों की कुसंगति से केवल क्लेश, पाप और घोर दुःख की ही उत्पत्ति होती है। इसलिए कबीर उपदेश देते हैं कि हे मानव! केवल उसी स्थान पर जाओ और वहीं अपना समय बिताओ, जहाँ सच्चे साधुओं और संतों का पावन सत्संग हो रहा हो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਚੰਗੀ ਸੰਗਤ ਨਾਲ ਸੁੱਖ ਤੇ ਸ਼ਾਂਤੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ, ਜਦਕਿ ਬੁਰੀ ਸੰਗਤ ਨਾਲ ਦੁੱਖ ਤੇ ਬਰਬਾਦੀ ਮਿਲਦੀ ਹੈ। ਇਸ ਲਈ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਦਾ ਉੱਥੇ ਹੀ ਜਾਓ ਜਿੱਥੇ ਸਾਧੂ-ਸੰਤਾਂ ਦਾ ਸੱਚਾ ਸਤਿਸੰਗ ਹੁੰਦਾ ਹੋਵੇ।',
+      en: 'Satguru Kabir Saheb pronounces the universal spiritual law of association: From noble, saintly association (Sangati) springs supreme peace, joy, and spiritual illumination; whereas from vile and corrupt company (Kusangati) arises nothing but misery, distress, and karmic ruin. Therefore, Kabir counsels: Direct your footsteps only to that sacred place where the purifying company of holy Saints (Saadhu Sang) is found.',
     },
     wordMeanings: {
       hi: [
@@ -978,9 +978,9 @@ export const SAKHIS_BATCH_29: Sakhi[] = [
       {
         id: 'q-b29-360',
         question: {
-          hi: 'साखी के अनुसार कबीर साहेब मनुष्य को कहाँ जाने का परामर्श देते हैं?',
-          pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਕਬੀਰ ਜੀ ਕਿੱਥੇ ਜਾਣ ਦੀ ਸਲਾਹ ਦਿੰਦੇ ਹਨ?',
-          en: 'According to this Sakhi, where does Kabir Saheb advise a person to go?',
+          hi: 'साखी के अनुसार सतगुरु कबीर साहेब मनुष्य को कहाँ जाने का परामर्श देते हैं?',
+          pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕਿੱਥੇ ਜਾਣ ਦੀ ਸਲਾਹ ਦਿੰਦੇ ਹਨ?',
+          en: 'According to this Sakhi, where does Satguru Kabir Saheb advise a person to go?',
         },
         options: {
           hi: ['जहाँ सच्चे साधुओं और संतों की पावन संगति हो (साधु संग जहँ होय)', 'जहाँ मेला लगा हो', 'जहाँ बहुत शोर हो', 'जहाँ जुआ खेला जाता हो'],

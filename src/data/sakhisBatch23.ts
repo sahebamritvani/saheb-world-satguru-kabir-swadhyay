@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_23: Sakhi[] = [
     },
     transliteration: 'Jogi hoke jaaga naahi, chaurasi bharmaaye. Jog jugat so daas Kabira, alakh niranjan paaye.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य भेष और आंतरिक जागरण का भेद बताते हैं: यदि कोई व्यक्ति केवल गेरुआ वस्त्र पहनकर या जटा बढ़ाकर बाहर से "जोगी" (सन्यासी) बन गया, किंतु उसकी अंतरात्मा अज्ञान की नींद से नहीं जागी, तो वह चौरासी लाख योनियों के आवागमन में ही भटकता रहता है। सच्चा योग तो वह युक्ति और ज्ञान है जिससे दास कबीर ने उस अलख, निरंजन और पारब्रह्म परमात्मा का साक्षात्कार अपने भीतर कर लिया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਬਾਹਰੋਂ ਜੋਗੀ ਬਣ ਕੇ ਵੀ ਅੰਦਰੋਂ ਗਿਆਨ ਨਾ ਜਾਗਿਆ, ਤਾਂ ਜੀਵ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਵਿੱਚ ਹੀ ਭਟਕਦਾ ਰਹਿੰਦਾ ਹੈ। ਕਬੀਰ ਦਾਸ ਨੇ ਸੱਚੇ ਜੋਗ ਦੀ ਜੁਗਤ ਨਾਲ ਉਸ ਅਲਖ ਨਿਰੰਜਨ ਪ੍ਰਭੂ ਨੂੰ ਪਾ ਲਿਆ।',
-      en: 'Kabir Saheb contrasts external ascetic disguise with authentic spiritual awakening: If one adopts the outer garbs of a yogi but fails to awaken within from the slumber of worldly delusion, they remain trapped in the grueling cycle of eighty-four lakh incarnations. True Yoga is the sacred inner discipline and wisdom through which humble Kabir realized and merged into the Unseen, Stainless Supreme Being.',
+      hi: 'सतगुरु कबीर साहेब बाह्य भेष और आंतरिक जागरण का भेद बताते हैं: यदि कोई व्यक्ति केवल गेरुआ वस्त्र पहनकर या जटा बढ़ाकर बाहर से "जोगी" (सन्यासी) बन गया, किंतु उसकी अंतरात्मा अज्ञान की नींद से नहीं जागी, तो वह चौरासी लाख योनियों के आवागमन में ही भटकता रहता है। सच्चा योग तो वह युक्ति और ज्ञान है जिससे दास कबीर ने उस अलख, निरंजन और पारब्रह्म परमात्मा का साक्षात्कार अपने भीतर कर लिया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਬਾਹਰੋਂ ਜੋਗੀ ਬਣ ਕੇ ਵੀ ਅੰਦਰੋਂ ਗਿਆਨ ਨਾ ਜਾਗਿਆ, ਤਾਂ ਜੀਵ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਵਿੱਚ ਹੀ ਭਟਕਦਾ ਰਹਿੰਦਾ ਹੈ। ਕਬੀਰ ਦਾਸ ਨੇ ਸੱਚੇ ਜੋਗ ਦੀ ਜੁਗਤ ਨਾਲ ਉਸ ਅਲਖ ਨਿਰੰਜਨ ਪ੍ਰਭੂ ਨੂੰ ਪਾ ਲਿਆ।',
+      en: 'Satguru Kabir Saheb contrasts external ascetic disguise with authentic spiritual awakening: If one adopts the outer garbs of a yogi but fails to awaken within from the slumber of worldly delusion, they remain trapped in the grueling cycle of eighty-four lakh incarnations. True Yoga is the sacred inner discipline and wisdom through which humble Kabir realized and merged into the Unseen, Stainless Supreme Being.',
     },
     wordMeanings: {
       hi: [
@@ -104,9 +104,9 @@ export const SAKHIS_BATCH_23: Sakhi[] = [
     },
     transliteration: 'Jyo nainan me putli, tyo maalik ghar maahi. Moorkh log na jaaniye, baahar dhoondhat jaanhi.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा की निकटता का अनुपम दृष्टांत देते हैं: जिस प्रकार आँखों के भीतर पुतली अत्यंत सूक्ष्म और अभिन्न रूप से समाई रहती है, ठीक उसी प्रकार सृष्टि का स्वामी परमात्मा तुम्हारे अपने ही घट (शरीर व हृदय रूपी घर) के भीतर विराजमान है। किंतु अज्ञानी और विवेकहीन लोग इस सूक्ष्म रहस्य को न जानकर परमात्मा को बाहर तीर्थों, जंगलों और मंदिरों में व्यर्थ ढूँढते फिरते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਅੱਖਾਂ ਵਿੱਚ ਪੁਤਲੀ ਵੱਸਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਮਾਲਕ ਪ੍ਰਭੂ ਸਾਡੇ ਹਿਰਦੇ-ਘਰ ਦੇ ਅੰਦਰ ਵੱਸਦਾ ਹੈ। ਪਰ ਅਗਿਆਨੀ ਮਨੁੱਖ ਇਸ ਭੇਤ ਨੂੰ ਨਾ ਜਾਣ ਕੇ ਉਸਨੂੰ ਬਾਹਰ ਭਾਲਦੇ ਫਿਰਦੇ ਹਨ।',
-      en: 'Kabir Saheb provides a sublime and intimate metaphor for divine immanence: Just as the pupil dwells intrinsically inside the eye, so too the Supreme Master of the cosmos resides intimately within the temple of your own heart. Yet ignorant and unawakened souls, blind to this inner truth, wander restlessly searching for God outside in external temples, forests, and distant shrines.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा की निकटता का अनुपम दृष्टांत देते हैं: जिस प्रकार आँखों के भीतर पुतली अत्यंत सूक्ष्म और अभिन्न रूप से समाई रहती है, ठीक उसी प्रकार सृष्टि का स्वामी परमात्मा तुम्हारे अपने ही घट (शरीर व हृदय रूपी घर) के भीतर विराजमान है। किंतु अज्ञानी और विवेकहीन लोग इस सूक्ष्म रहस्य को न जानकर परमात्मा को बाहर तीर्थों, जंगलों और मंदिरों में व्यर्थ ढूँढते फिरते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਅੱਖਾਂ ਵਿੱਚ ਪੁਤਲੀ ਵੱਸਦੀ ਹੈ, ਓਵੇਂ ਹੀ ਮਾਲਕ ਪ੍ਰਭੂ ਸਾਡੇ ਹਿਰਦੇ-ਘਰ ਦੇ ਅੰਦਰ ਵੱਸਦਾ ਹੈ। ਪਰ ਅਗਿਆਨੀ ਮਨੁੱਖ ਇਸ ਭੇਤ ਨੂੰ ਨਾ ਜਾਣ ਕੇ ਉਸਨੂੰ ਬਾਹਰ ਭਾਲਦੇ ਫਿਰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb provides a sublime and intimate metaphor for divine immanence: Just as the pupil dwells intrinsically inside the eye, so too the Supreme Master of the cosmos resides intimately within the temple of your own heart. Yet ignorant and unawakened souls, blind to this inner truth, wander restlessly searching for God outside in external temples, forests, and distant shrines.',
     },
     wordMeanings: {
       hi: [
@@ -188,9 +188,9 @@ export const SAKHIS_BATCH_23: Sakhi[] = [
     },
     transliteration: 'Kaache guru ke milan se, agli bhi bigdi. Chaale the Hari milan ko, dooni vipat padi.',
     bhavarth: {
-      hi: 'कबीर साहेब अपूर्ण, लोभी और कच्चे गुरुओं की संगति से गंभीर चेतावनी देते हैं: अज्ञानी या अपूर्ण (कच्चे) गुरु की शरण लेने से साधक की पूर्व की बची-खुची साधना और विवेक (अगली पूंजी) भी नष्ट हो जाती है। चले तो थे परमात्मा से मिलने और मोक्ष पाने, किंतु गलत मार्गदर्शन के कारण उल्टा दोगुने संकट, भ्रम और दुःखों के जाल में फँस गए। अतः केवल पूर्ण सतगुरु की ही शरण लेनी चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਅਧੂਰੇ (ਕੱਚੇ) ਗੁਰੂ ਦੇ ਲੜ ਲੱਗਣ ਨਾਲ ਪਹਿਲੀ ਕੀਤੀ ਸਾਧਨਾ ਵੀ ਵਿਅਰਥ ਜਾਂਦੀ ਹੈ। ਚੱਲੇ ਤਾਂ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਣ ਸੀ, ਪਰ ਕੱਚੇ ਗੁਰੂ ਕਾਰਨ ਦੁੱਗਣੀ ਮੁਸੀਬਤ ਵਿੱਚ ਫਸ ਗਏ।',
-      en: 'Kabir Saheb sounds a grave warning against pseudo-masters and unqualified guides: Associating with an imperfect, shallow, or deceitful teacher (Kaacha Guru) ruins even one’s prior spiritual merit and discernment. The seeker had set out with the noble intent to unite with the Divine, but ended up plunged into double the confusion, suffering, and worldly distress due to false guidance.',
+      hi: 'सतगुरु कबीर साहेब अपूर्ण, लोभी और कच्चे गुरुओं की संगति से गंभीर चेतावनी देते हैं: अज्ञानी या अपूर्ण (कच्चे) गुरु की शरण लेने से साधक की पूर्व की बची-खुची साधना और विवेक (अगली पूंजी) भी नष्ट हो जाती है। चले तो थे परमात्मा से मिलने और मोक्ष पाने, किंतु गलत मार्गदर्शन के कारण उल्टा दोगुने संकट, भ्रम और दुःखों के जाल में फँस गए। अतः केवल पूर्ण सतगुरु की ही शरण लेनी चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਅਧੂਰੇ (ਕੱਚੇ) ਗੁਰੂ ਦੇ ਲੜ ਲੱਗਣ ਨਾਲ ਪਹਿਲੀ ਕੀਤੀ ਸਾਧਨਾ ਵੀ ਵਿਅਰਥ ਜਾਂਦੀ ਹੈ। ਚੱਲੇ ਤਾਂ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਣ ਸੀ, ਪਰ ਕੱਚੇ ਗੁਰੂ ਕਾਰਨ ਦੁੱਗਣੀ ਮੁਸੀਬਤ ਵਿੱਚ ਫਸ ਗਏ।',
+      en: 'Satguru Kabir Saheb sounds a grave warning against pseudo-masters and unqualified guides: Associating with an imperfect, shallow, or deceitful teacher (Kaacha Guru) ruins even one’s prior spiritual merit and discernment. The seeker had set out with the noble intent to unite with the Divine, but ended up plunged into double the confusion, suffering, and worldly distress due to false guidance.',
     },
     wordMeanings: {
       hi: [
@@ -270,9 +270,9 @@ export const SAKHIS_BATCH_23: Sakhi[] = [
     },
     transliteration: 'Tek kare so baawara, tek hi hove haani. Jo tek hi Saheb mile, soyi tek parmaan.',
     bhavarth: {
-      hi: 'कबीर साहेब हठ, दुराग्रह और सत्य निष्ठा (टेक) का सूक्ष्म विवेक समझाते हैं: जो व्यक्ति संसार में व्यर्थ के सांसारिक दुराग्रहों, हठ और रूढ़ियों की "टेक" (हठपूर्ण जिद) पकड़ कर बैठता है, वह पागल (बावला) है और ऐसी हठ से केवल आत्मिक हानि होती है। किंतु जिस निष्ठा, दृढ़ संकल्प और सच्ची टेक से परमात्मा (साहेब) का साक्षात्कार हो सके, केवल वही टेक सत्य और प्रामाणिक मानी जाती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸੰਸਾਰਕ ਜਿੱਦ ਜਾਂ ਹਠ ਦੀ ਟੇਕ ਫੜਦਾ ਹੈ ਉਹ ਬਾਵਲਾ ਹੈ ਅਤੇ ਉਸਦਾ ਨੁਕਸਾਨ ਹੁੰਦਾ ਹੈ। ਪਰ ਜਿਸ ਅਟੱਲ ਭਰੋਸੇ ਤੇ ਟੇਕ ਨਾਲ ਪਰਮਾਤਮਾ (ਸਾਹੇਬ) ਮਿਲ ਜਾਵੇ, ਉਹੀ ਟੇਕ ਸੱਚੀ ਤੇ ਪ੍ਰਵਾਨ ਹੈ।',
-      en: 'Kabir Saheb distinguishes between blind obstinacy and genuine spiritual steadfastness: One who clings stubbornly to foolish worldly dogmas, rigid pride, and petty bigotry (Tek) is truly deluded, bringing only ruin and spiritual harm upon themselves. But that unwavering, sacred resolve and holy faith through which the Supreme Lord (Saheb) is realized—that resolve alone is authentic, valid, and supreme.',
+      hi: 'सतगुरु कबीर साहेब हठ, दुराग्रह और सत्य निष्ठा (टेक) का सूक्ष्म विवेक समझाते हैं: जो व्यक्ति संसार में व्यर्थ के सांसारिक दुराग्रहों, हठ और रूढ़ियों की "टेक" (हठपूर्ण जिद) पकड़ कर बैठता है, वह पागल (बावला) है और ऐसी हठ से केवल आत्मिक हानि होती है। किंतु जिस निष्ठा, दृढ़ संकल्प और सच्ची टेक से परमात्मा (साहेब) का साक्षात्कार हो सके, केवल वही टेक सत्य और प्रामाणिक मानी जाती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸੰਸਾਰਕ ਜਿੱਦ ਜਾਂ ਹਠ ਦੀ ਟੇਕ ਫੜਦਾ ਹੈ ਉਹ ਬਾਵਲਾ ਹੈ ਅਤੇ ਉਸਦਾ ਨੁਕਸਾਨ ਹੁੰਦਾ ਹੈ। ਪਰ ਜਿਸ ਅਟੱਲ ਭਰੋਸੇ ਤੇ ਟੇਕ ਨਾਲ ਪਰਮਾਤਮਾ (ਸਾਹੇਬ) ਮਿਲ ਜਾਵੇ, ਉਹੀ ਟੇਕ ਸੱਚੀ ਤੇ ਪ੍ਰਵਾਨ ਹੈ।',
+      en: 'Satguru Kabir Saheb distinguishes between blind obstinacy and genuine spiritual steadfastness: One who clings stubbornly to foolish worldly dogmas, rigid pride, and petty bigotry (Tek) is truly deluded, bringing only ruin and spiritual harm upon themselves. But that unwavering, sacred resolve and holy faith through which the Supreme Lord (Saheb) is realized—that resolve alone is authentic, valid, and supreme.',
     },
     wordMeanings: {
       hi: [

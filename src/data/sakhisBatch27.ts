@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Parbat-parbat mai phira, nayan ganvaaya roy. So booti paau nahi, jaate jeevan hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक खोज की गहन विरह-व्यथा प्रकट करते हैं: मैं उस अमर संजीवनी बूटी (सत्यनाम व आत्मज्ञान) की खोज में पहाड़-पहाड़ और जंगलों में भटकता फिरा, और विरह के आँसू बहा-बहाकर मैंने अपने नेत्रों की ज्योति तक क्षीण कर ली। किंतु बाहरी पर्वतों पर मुझे वह जीवनदायिनी अमर बूटी नहीं मिली जिससे आत्मा का शाश्वत जीवन और मुक्ति सिद्ध हो सके। वह दिव्य बूटी तो अंततः सतगुरु की कृपा से अपने ही घट के भीतर प्राप्त होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਅਮਰ ਨਾਮ-ਬੂਟੀ ਦੀ ਭਾਲ ਵਿੱਚ ਪਹਾੜ-ਪਹਾੜ ਭਟਕਿਆ ਤੇ ਰੋ-ਰੋ ਕੇ ਅੱਖਾਂ ਦੀ ਰੌਸ਼ਨੀ ਗੁਆ ਲਈ। ਪਰ ਬਾਹਰ ਉਹ ਬੂਟੀ ਨਾ ਮਿਲੀ ਜਿਸ ਨਾਲ ਆਤਮਾ ਅਮਰ ਹੁੰਦੀ ਹੈ। ਉਹ ਸੱਚੀ ਬੂਟੀ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਅੰਦਰੋਂ ਹੀ ਮਿਲਦੀ ਹੈ।',
-      en: 'Kabir Saheb gives voice to the agonizing search of the longing soul: "I wandered restlessly over mountain peaks and wilderness, weeping tears of separation until my eyes grew dim with grief. Yet nowhere on those outer mountains could I find that miraculous life-giving herb (Sanjeevani Bootee) that bestows immortal life upon the soul! That supreme nectar cannot be found in external cliffs—it is revealed within the heart solely by the grace of the Satguru."',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक खोज की गहन विरह-व्यथा प्रकट करते हैं: मैं उस अमर संजीवनी बूटी (सत्यनाम व आत्मज्ञान) की खोज में पहाड़-पहाड़ और जंगलों में भटकता फिरा, और विरह के आँसू बहा-बहाकर मैंने अपने नेत्रों की ज्योति तक क्षीण कर ली। किंतु बाहरी पर्वतों पर मुझे वह जीवनदायिनी अमर बूटी नहीं मिली जिससे आत्मा का शाश्वत जीवन और मुक्ति सिद्ध हो सके। वह दिव्य बूटी तो अंततः सतगुरु की कृपा से अपने ही घट के भीतर प्राप्त होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਅਮਰ ਨਾਮ-ਬੂਟੀ ਦੀ ਭਾਲ ਵਿੱਚ ਪਹਾੜ-ਪਹਾੜ ਭਟਕਿਆ ਤੇ ਰੋ-ਰੋ ਕੇ ਅੱਖਾਂ ਦੀ ਰੌਸ਼ਨੀ ਗੁਆ ਲਈ। ਪਰ ਬਾਹਰ ਉਹ ਬੂਟੀ ਨਾ ਮਿਲੀ ਜਿਸ ਨਾਲ ਆਤਮਾ ਅਮਰ ਹੁੰਦੀ ਹੈ। ਉਹ ਸੱਚੀ ਬੂਟੀ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਅੰਦਰੋਂ ਹੀ ਮਿਲਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb gives voice to the agonizing search of the longing soul: "I wandered restlessly over mountain peaks and wilderness, weeping tears of separation until my eyes grew dim with grief. Yet nowhere on those outer mountains could I find that miraculous life-giving herb (Sanjeevani Bootee) that bestows immortal life upon the soul! That supreme nectar cannot be found in external cliffs—it is revealed within the heart solely by the grace of the Satguru."',
     },
     wordMeanings: {
       hi: [
@@ -67,7 +67,7 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       {
         id: 'q-b27-325',
         question: {
-          hi: 'साखी में "सो बूटी" से क्या तात्पर्य है जिसे खोजते हुए कबीर साहेब ने नयन रो-रोकर गँवाए?',
+          hi: 'साखी में "सो बूटी" से क्या तात्पर्य है जिसे खोजते हुए सतगुरु कबीर साहेब ने नयन रो-रोकर गँवाए?',
           pb: 'ਸਾਖੀ ਵਿੱਚ "ਸੋ ਬੂਟੀ" ਤੋਂ ਕੀ ਭਾਵ ਹੈ?',
           en: 'In this Sakhi, what is meant by "So Bootee" (that life-giving herb)?',
         },
@@ -104,9 +104,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Pativrata mailee, kaali kuchal kuroop. Pativrata ke roop par, vaaro koti saroop.',
     bhavarth: {
-      hi: 'कबीर साहेब अनन्य निष्ठा और एकनिष्ठ समर्पण की महिमा बताते हैं: जो आत्मा अपने प्रियतम परमात्मा / सतगुरु के प्रति पूर्णतः एकनिष्ठ (पतिव्रता) है, वह चाहे बाह्य रूप से सांसारिक दृष्टि में मैली, काली, साधारण वस्त्रों वाली या कुरूप ही क्यों न दिखाई दे—उसकी उस निष्कपट आंतरिक निष्ठा और पातिव्रत धर्म के सौंदर्य पर मैं संसार के करोड़ों रूपवान, सुंदर और आकर्षक रूप-रंगों को न्यौछावर (वारो) करता हूँ। बाहरी रूप क्षणिक है, एकनिष्ठ प्रेम ही शाश्वत सौंदर्य है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਜੀਵ-ਇਸਤਰੀ ਆਪਣੇ ਪ੍ਰਭੂ-ਪਤੀ ਨਾਲ ਸੱਚਾ ਤੇ ਇੱਕ-ਨਿਸ਼ਠ ਪ੍ਰੇਮ ਰੱਖਦੀ ਹੈ, ਭਾਵੇਂ ਉਹ ਬਾਹਰੋਂ ਕਾਲੀ, ਮੈਲੀ ਜਾਂ ਕੁਰੂਪ ਦਿੱਸੇ, ਉਸਦੀ ਸੱਚੀ ਸ਼ਰਧਾ ਤੇ ਪਵਿੱਤਰਤਾ ਉੱਤੇ ਮੈਂ ਕਰੋੜਾਂ ਸੁੰਦਰ ਰੂਪਾਂ ਨੂੰ ਕੁਰਬਾਨ ਕਰਦਾ ਹਾਂ। ਸੱਚਾ ਪ੍ਰੇਮ ਹੀ ਅਸਲ ਸੁੰਦਰਤਾ ਹੈ।',
-      en: 'Kabir Saheb celebrates the supreme beauty of unwavering devotion over cosmetic appearance: A devoted soul (Pativrata) who remains fiercely loyal and dedicated to the One Beloved Lord may outwardly appear plain, dusty, dark-complexioned, or unadorned in the eyes of the world. Yet upon the immaculate inner radiance of her single-minded loyalty, I sacrifice millions of superficial beauties and physical charms! External beauty is fleeting; single-pointed fidelity is the highest divine splendor.',
+      hi: 'सतगुरु कबीर साहेब अनन्य निष्ठा और एकनिष्ठ समर्पण की महिमा बताते हैं: जो आत्मा अपने प्रियतम परमात्मा / सतगुरु के प्रति पूर्णतः एकनिष्ठ (पतिव्रता) है, वह चाहे बाह्य रूप से सांसारिक दृष्टि में मैली, काली, साधारण वस्त्रों वाली या कुरूप ही क्यों न दिखाई दे—उसकी उस निष्कपट आंतरिक निष्ठा और पातिव्रत धर्म के सौंदर्य पर मैं संसार के करोड़ों रूपवान, सुंदर और आकर्षक रूप-रंगों को न्यौछावर (वारो) करता हूँ। बाहरी रूप क्षणिक है, एकनिष्ठ प्रेम ही शाश्वत सौंदर्य है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਜੀਵ-ਇਸਤਰੀ ਆਪਣੇ ਪ੍ਰਭੂ-ਪਤੀ ਨਾਲ ਸੱਚਾ ਤੇ ਇੱਕ-ਨਿਸ਼ਠ ਪ੍ਰੇਮ ਰੱਖਦੀ ਹੈ, ਭਾਵੇਂ ਉਹ ਬਾਹਰੋਂ ਕਾਲੀ, ਮੈਲੀ ਜਾਂ ਕੁਰੂਪ ਦਿੱਸੇ, ਉਸਦੀ ਸੱਚੀ ਸ਼ਰਧਾ ਤੇ ਪਵਿੱਤਰਤਾ ਉੱਤੇ ਮੈਂ ਕਰੋੜਾਂ ਸੁੰਦਰ ਰੂਪਾਂ ਨੂੰ ਕੁਰਬਾਨ ਕਰਦਾ ਹਾਂ। ਸੱਚਾ ਪ੍ਰੇਮ ਹੀ ਅਸਲ ਸੁੰਦਰਤਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb celebrates the supreme beauty of unwavering devotion over cosmetic appearance: A devoted soul (Pativrata) who remains fiercely loyal and dedicated to the One Beloved Lord may outwardly appear plain, dusty, dark-complexioned, or unadorned in the eyes of the world. Yet upon the immaculate inner radiance of her single-minded loyalty, I sacrifice millions of superficial beauties and physical charms! External beauty is fleeting; single-pointed fidelity is the highest divine splendor.',
     },
     wordMeanings: {
       hi: [
@@ -149,7 +149,7 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       {
         id: 'q-b27-326',
         question: {
-          hi: 'साखी के अनुसार एकनिष्ठ पतिव्रता भक्त के आंतरिक रूप पर कबीर साहेब क्या न्यौछावर करते हैं?',
+          hi: 'साखी के अनुसार एकनिष्ठ पतिव्रता भक्त के आंतरिक रूप पर सतगुरु कबीर साहेब क्या न्यौछावर करते हैं?',
           pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਪਤੀਵਰਤਾ ਦੀ ਸੱਚੀ ਸ਼ਰਧਾ ਤੇ ਕੀ ਕੁਰਬਾਨ ਕੀਤਾ ਜਾਂਦਾ ਹੈ?',
           en: 'According to this Sakhi, what is sacrificed upon the devoted soul’s spiritual beauty?',
         },
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Patta bola vriksh se, suno vriksh banraay. Ab ke bichhude na mile, door padenge jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवन की क्षणभंगुरता और बिछुड़ने की अंतिम विदाई का मार्मिक दृश्य प्रस्तुत करते हैं: पीला पड़ा हुआ पत्ता वृक्ष (वनराज) से कहता है कि हे वन के राजा वृक्ष! अब मेरी विदाई का समय आ गया है। इस बार डाल से अलग होने के बाद हम फिर कभी दोबारा नहीं मिल सकेंगे, क्योंकि हवा मुझे उड़ाकर बहुत दूर ले जाएगी और मैं धूल में मिल जाऊँगा। इसी प्रकार संसार के नाते-रिश्ते और यह शरीर एक बार बिछुड़ने पर कभी दोबारा नहीं मिलते। अतः समय रहते आत्म-कल्याण कर लो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਪੱਤਾ ਰੁੱਖ ਨੂੰ ਕਹਿੰਦਾ ਹੈ ਕਿ ਹੇ ਬਨਰਾਜ! ਹੁਣ ਸਾਡੇ ਵਿਛੋੜੇ ਦਾ ਵੇਲਾ ਆ ਗਿਆ ਹੈ, ਇੱਕ ਵਾਰ ਟੁੱਟਣ ਪਿੱਛੋਂ ਅਸੀਂ ਮੁੜ ਕਦੇ ਨਹੀਂ ਮਿਲਾਂਗੇ, ਅਸੀਂ ਦੂਰ ਜਾ ਪਵਾਂਗੇ। ਓਵੇਂ ਹੀ ਸੰਸਾਰ ਦੇ ਸਾਰੇ ਰਿਸ਼ਤੇ ਤੇ ਇਹ ਸਰੀਰ ਸਦਾ ਲਈ ਵਿਛੜ ਜਾਣਗੇ।',
-      en: 'Kabir Saheb presents a hauntingly beautiful allegory of mortal separation: The falling leaf whispers to the mighty forest tree: "Hear me, O noble sovereign of the woods! The hour of our final parting has arrived. Once severed from this branch, we shall never meet again in this world—the winds of time will cast me far away into the dust." In the same way, the bonds of family and this mortal body part forever at death. Realize your eternal Soul before time runs out.',
+      hi: 'सतगुरु कबीर साहेबवन की क्षणभंगुरता और बिछुड़ने की अंतिम विदाई का मार्मिक दृश्य प्रस्तुत करते हैं: पीला पड़ा हुआ पत्ता वृक्ष (वनराज) से कहता है कि हे वन के राजा वृक्ष! अब मेरी विदाई का समय आ गया है। इस बार डाल से अलग होने के बाद हम फिर कभी दोबारा नहीं मिल सकेंगे, क्योंकि हवा मुझे उड़ाकर बहुत दूर ले जाएगी और मैं धूल में मिल जाऊँगा। इसी प्रकार संसार के नाते-रिश्ते और यह शरीर एक बार बिछुड़ने पर कभी दोबारा नहीं मिलते। अतः समय रहते आत्म-कल्याण कर लो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਪੱਤਾ ਰੁੱਖ ਨੂੰ ਕਹਿੰਦਾ ਹੈ ਕਿ ਹੇ ਬਨਰਾਜ! ਹੁਣ ਸਾਡੇ ਵਿਛੋੜੇ ਦਾ ਵੇਲਾ ਆ ਗਿਆ ਹੈ, ਇੱਕ ਵਾਰ ਟੁੱਟਣ ਪਿੱਛੋਂ ਅਸੀਂ ਮੁੜ ਕਦੇ ਨਹੀਂ ਮਿਲਾਂਗੇ, ਅਸੀਂ ਦੂਰ ਜਾ ਪਵਾਂਗੇ। ਓਵੇਂ ਹੀ ਸੰਸਾਰ ਦੇ ਸਾਰੇ ਰਿਸ਼ਤੇ ਤੇ ਇਹ ਸਰੀਰ ਸਦਾ ਲਈ ਵਿਛੜ ਜਾਣਗੇ।',
+      en: 'Satguru Kabir Saheb presents a hauntingly beautiful allegory of mortal separation: The falling leaf whispers to the mighty forest tree: "Hear me, O noble sovereign of the woods! The hour of our final parting has arrived. Once severed from this branch, we shall never meet again in this world—the winds of time will cast me far away into the dust." In the same way, the bonds of family and this mortal body part forever at death. Realize your eternal Soul before time runs out.',
     },
     wordMeanings: {
       hi: [
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Patta toota daal se, le gayi pavan udaay. Abke bichhde na mile, door padenge jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब काल (मृत्यु) के अप्रत्याशित झोंके का सत्य उजागर करते हैं: जैसे ही पत्ता अपनी शाखा (डाल) से टूटकर अलग हुआ, तेज हवा (पवन) का झोंका उसे उड़ाकर न जाने कहाँ दूर ले गया। अब उस पत्ते का अपनी डाल से पुनर्मिलन कभी संभव नहीं है। ठीक इसी प्रकार जब काल रूपी पवन का झोंका आता है, तो जीवात्मा इस शरीर और संसार से अलग हो जाती है और चौरासी लाख योनियों के दूर-दराज के चक्करों में भटक जाती है। अतः जब तक डाल (जीवन) से जुड़े हो, तब तक प्रभु-सुमिरन कर लो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜਦੋਂ ਪੱਤਾ ਟਾਹਣੀ ਤੋਂ ਟੁੱਟਦਾ ਹੈ ਤਾਂ ਤੇਜ਼ ਹਵਾ ਉਸਨੂੰ ਉਡਾ ਕੇ ਦੂਰ ਲੈ ਜਾਂਦੀ ਹੈ, ਫਿਰ ਮੁੜ ਮਿਲਣਾ ਅਸੰਭਵ ਹੋ ਜਾਂਦਾ ਹੈ। ਓਵੇਂ ਹੀ ਮੌਤ ਦੀ ਹਵਾ ਜੀਵ ਨੂੰ ਸਰੀਰ ਤੋਂ ਵੱਖ ਕਰਕੇ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਵਿੱਚ ਪਾ ਦਿੰਦੀ ਹੈ। ਸਮਾਂ ਰਹਿੰਦੇ ਨਾਮ ਜਪ ਲਵੋ।',
-      en: 'Kabir Saheb reveals the sudden, irreversible stroke of mortality: The moment the leaf snaps from its supporting branch, the gusts of wind blow it away to distant, unknown lands. Once severed, that leaf can never rejoin its native bough. In the exact same manner, when the tempest of Death strikes, the soul is ripped from this physical frame and hurled into the distant wilderness of reincarnation. While breath remains, secure your soul in the Divine Name.',
+      hi: 'सतगुरु कबीर साहेब काल (मृत्यु) के अप्रत्याशित झोंके का सत्य उजागर करते हैं: जैसे ही पत्ता अपनी शाखा (डाल) से टूटकर अलग हुआ, तेज हवा (पवन) का झोंका उसे उड़ाकर न जाने कहाँ दूर ले गया। अब उस पत्ते का अपनी डाल से पुनर्मिलन कभी संभव नहीं है। ठीक इसी प्रकार जब काल रूपी पवन का झोंका आता है, तो जीवात्मा इस शरीर और संसार से अलग हो जाती है और चौरासी लाख योनियों के दूर-दराज के चक्करों में भटक जाती है। अतः जब तक डाल (जीवन) से जुड़े हो, तब तक प्रभु-सुमिरन कर लो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜਦੋਂ ਪੱਤਾ ਟਾਹਣੀ ਤੋਂ ਟੁੱਟਦਾ ਹੈ ਤਾਂ ਤੇਜ਼ ਹਵਾ ਉਸਨੂੰ ਉਡਾ ਕੇ ਦੂਰ ਲੈ ਜਾਂਦੀ ਹੈ, ਫਿਰ ਮੁੜ ਮਿਲਣਾ ਅਸੰਭਵ ਹੋ ਜਾਂਦਾ ਹੈ। ਓਵੇਂ ਹੀ ਮੌਤ ਦੀ ਹਵਾ ਜੀਵ ਨੂੰ ਸਰੀਰ ਤੋਂ ਵੱਖ ਕਰਕੇ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਵਿੱਚ ਪਾ ਦਿੰਦੀ ਹੈ। ਸਮਾਂ ਰਹਿੰਦੇ ਨਾਮ ਜਪ ਲਵੋ।',
+      en: 'Satguru Kabir Saheb reveals the sudden, irreversible stroke of mortality: The moment the leaf snaps from its supporting branch, the gusts of wind blow it away to distant, unknown lands. Once severed, that leaf can never rejoin its native bough. In the exact same manner, when the tempest of Death strikes, the soul is ripped from this physical frame and hurled into the distant wilderness of reincarnation. While breath remains, secure your soul in the Divine Name.',
     },
     wordMeanings: {
       hi: [
@@ -350,9 +350,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Peeche laaga jaai tha, lok ved ke saath. Aage the satgur milya, deepak deeya haath.',
     bhavarth: {
-      hi: 'कबीर साहेब अज्ञान के मार्ग से सतगुरु द्वारा बचाए जाने की कृतज्ञता प्रकट करते हैं: मैं संसार के अंधानुकरण, रूढ़ियों, सामाजिक अंधविश्वासों और शास्त्रों के बाह्य कर्मकांडों (लोक और वेद) के पीछे-पीछे आँखें मूँदकर भटके जा रहा था और भवसागर के घोर अंधकार में गिर रहा था। किंतु धन्य हैं मेरे कृपालु सतगुरु, जो आगे से आकर मुझे मिल गए और उन्होंने मेरे हाथ में आत्मज्ञान का प्रकाशमान दिव्य दीपक थमा दिया, जिससे मेरा सारा मार्ग आलोकित हो गया और मैं भटकने से बच गया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਅੰਧਵਿਸ਼ਵਾਸਾਂ, ਕਰਮਕਾਂਡਾਂ ਤੇ ਲੋਕ-ਲਾਜ ਦੇ ਪਿੱਛੇ ਅੰਨ੍ਹਿਆਂ ਵਾਂਗ ਭਟਕ ਰਿਹਾ ਸੀ। ਪਰ ਅੱਗੋਂ ਦਿਆਲੂ ਸਤਿਗੁਰੂ ਮਿਲ ਪਏ ਜਿਨ੍ਹਾਂ ਨੇ ਮੇਰੇ ਹੱਥ ਵਿੱਚ ਗਿਆਨ ਦਾ ਦੀਵਾ ਫੜਾ ਦਿੱਤਾ, ਜਿਸ ਨਾਲ ਮੇਰਾ ਸਾਰਾ ਹਨੇਰਾ ਮਿਟ ਗਿਆ।',
-      en: 'Kabir Saheb expresses overflowing gratitude for deliverance from dogmatic blindness: "I was wandering blindly down the dark path of worldly customs, blind rituals, and literalist scriptural dogmas (Lok and Ved). But lo! The merciful Satguru encountered me on the way and placed the blazing Lamp of Divine Knowledge right into my hands! In that radiant light, all delusion vanished and the direct path to liberation was revealed!"',
+      hi: 'सतगुरु कबीर साहेब अज्ञान के मार्ग से सतगुरु द्वारा बचाए जाने की कृतज्ञता प्रकट करते हैं: मैं संसार के अंधानुकरण, रूढ़ियों, सामाजिक अंधविश्वासों और शास्त्रों के बाह्य कर्मकांडों (लोक और वेद) के पीछे-पीछे आँखें मूँदकर भटके जा रहा था और भवसागर के घोर अंधकार में गिर रहा था। किंतु धन्य हैं मेरे कृपालु सतगुरु, जो आगे से आकर मुझे मिल गए और उन्होंने मेरे हाथ में आत्मज्ञान का प्रकाशमान दिव्य दीपक थमा दिया, जिससे मेरा सारा मार्ग आलोकित हो गया और मैं भटकने से बच गया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਅੰਧਵਿਸ਼ਵਾਸਾਂ, ਕਰਮਕਾਂਡਾਂ ਤੇ ਲੋਕ-ਲਾਜ ਦੇ ਪਿੱਛੇ ਅੰਨ੍ਹਿਆਂ ਵਾਂਗ ਭਟਕ ਰਿਹਾ ਸੀ। ਪਰ ਅੱਗੋਂ ਦਿਆਲੂ ਸਤਿਗੁਰੂ ਮਿਲ ਪਏ ਜਿਨ੍ਹਾਂ ਨੇ ਮੇਰੇ ਹੱਥ ਵਿੱਚ ਗਿਆਨ ਦਾ ਦੀਵਾ ਫੜਾ ਦਿੱਤਾ, ਜਿਸ ਨਾਲ ਮੇਰਾ ਸਾਰਾ ਹਨੇਰਾ ਮਿਟ ਗਿਆ।',
+      en: 'Satguru Kabir Saheb expresses overflowing gratitude for deliverance from dogmatic blindness: "I was wandering blindly down the dark path of worldly customs, blind rituals, and literalist scriptural dogmas (Lok and Ved). But lo! The merciful Satguru encountered me on the way and placed the blazing Lamp of Divine Knowledge right into my hands! In that radiant light, all delusion vanished and the direct path to liberation was revealed!"',
     },
     wordMeanings: {
       hi: [
@@ -387,7 +387,7 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       en: 'O Illuminator Satguru! Infinite gratitude to You for pulling me from the pit of blind dogma and placing the lamp of Truth in my hands. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी संतमत के अनुसार बाह्य कर्मकांडों के अंधकार से मुक्त होकर सद्गुरु प्रदत्त ज्ञान-प्रकाश पाने की सर्वश्रेष्ठ साखी है।',
+      hi: 'यह साखी संतमत के अनुसार बाह्य कर्मकांडों के अंधकार से मुक्त होकर सतगुरु प्रदत्त ज्ञान-प्रकाश पाने की सर्वश्रेष्ठ साखी है।',
       pb: 'ਇਹ ਸਾਖੀ ਗੁਰੂ ਦੁਆਰਾ ਗਿਆਨ ਦਾ ਦੀਵਾ ਮਿਲਣ ਦੀ ਮਹਿਮਾ ਹੈ।',
       en: 'This immortal verse celebrates the liberating awakening that occurs when the Master hands us the lamp of inner Truth.',
     },
@@ -395,9 +395,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       {
         id: 'q-b27-329',
         question: {
-          hi: 'साखी के अनुसार जब कबीर साहेब लोक-वेद के पीछे भटक रहे थे, तब सतगुरु ने उनके हाथ में क्या दिया?',
-          pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਸਤਿਗੁਰੂ ਨੇ ਕਬੀਰ ਜੀ ਦੇ ਹੱਥ ਵਿੱਚ ਕੀ ਦਿੱਤਾ?',
-          en: 'According to this Sakhi, what did the Satguru place in Kabir Saheb’s hands when he was wandering in darkness?',
+          hi: 'साखी के अनुसार जब सतगुरु कबीर साहेब लोक-वेद के पीछे भटक रहे थे, तब सतगुरु ने उनके हाथ में क्या दिया?',
+          pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਸਤਿਗੁਰੂ ਨੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਹੱਥ ਵਿੱਚ ਕੀ ਦਿੱਤਾ?',
+          en: 'According to this Sakhi, what did the Satguru place in Satguru Kabir Saheb’s hands when he was wandering in darkness?',
         },
         options: {
           hi: ['आत्मज्ञान और विवेक का प्रकाशमान दीपक (दीपक दीया हाथि)', 'सोने का सिक्का', 'किताबों का बस्ता', 'तीर्थ का जल'],
@@ -432,9 +432,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Pehle agan birha ki, paachhe prem ki pyaas. Kahe Kabir tab jaaniye, naam milan ki aas.',
     bhavarth: {
-      hi: 'कबीर साहेब भगवत्-प्राप्ति और नाम-दीक्षा की आंतरिक पात्रता का क्रम समझाते हैं: साधना में सबसे पहले परमात्मा से वियोग की सच्ची तड़प और विरह की पावन अग्नि (अगन बिरहा की) प्रज्वलित होनी चाहिए; उसके पश्चात हृदय में निष्कपट ईश्वरीय प्रेम की तीव्र प्यास जगनी चाहिए। कबीर कहते हैं कि जब ये दोनों अवस्थाएं परिपक्व हो जाएं, तभी यह विश्वास करना चाहिए कि अब परमात्मा के सत्यनाम से मिलन और आत्म-साक्षात्कार की सच्ची आशा (आस) पूरी होगी।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਪਹਿਲਾਂ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਦੇ ਵਿਛੋੜੇ ਦੀ ਸੱਚੀ ਤੜਪ (ਵਿਰਹਾ ਦੀ ਅੱਗ) ਬਲਣੀ ਚਾਹੀਦੀ ਹੈ, ਫਿਰ ਪ੍ਰੇਮ ਦੀ ਸੱਚੀ ਪਿਆਸ ਲੱਗਣੀ ਚਾਹੀਦੀ ਹੈ। ਜਦੋਂ ਇਹ ਦੋਵੇਂ ਹੋਣ, ਤਦ ਹੀ ਸੱਚੇ ਨਾਮ ਦੇ ਮਿਲਣ ਦੀ ਉਮੀਦ ਰੱਖਣੀ ਚਾਹੀਦੀ ਹੈ।',
-      en: 'Kabir Saheb outlines the authentic sequence of divine realization: First, the sacred fire of separation (Agan Biraha) must ignite within the soul, burning away all worldly attachments; next, an unquenchable, desperate thirst for divine love must seize the heart. Kabir declares: Only when these two profound conditions are fulfilled can one truly hope for the living union with the Holy Name and Self-realization.',
+      hi: 'सतगुरु कबीर साहेब भगवत्-प्राप्ति और नाम-दीक्षा की आंतरिक पात्रता का क्रम समझाते हैं: साधना में सबसे पहले परमात्मा से वियोग की सच्ची तड़प और विरह की पावन अग्नि (अगन बिरहा की) प्रज्वलित होनी चाहिए; उसके पश्चात हृदय में निष्कपट ईश्वरीय प्रेम की तीव्र प्यास जगनी चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि जब ये दोनों अवस्थाएं परिपक्व हो जाएं, तभी यह विश्वास करना चाहिए कि अब परमात्मा के सत्यनाम से मिलन और आत्म-साक्षात्कार की सच्ची आशा (आस) पूरी होगी।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਪਹਿਲਾਂ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਦੇ ਵਿਛੋੜੇ ਦੀ ਸੱਚੀ ਤੜਪ (ਵਿਰਹਾ ਦੀ ਅੱਗ) ਬਲਣੀ ਚਾਹੀਦੀ ਹੈ, ਫਿਰ ਪ੍ਰੇਮ ਦੀ ਸੱਚੀ ਪਿਆਸ ਲੱਗਣੀ ਚਾਹੀਦੀ ਹੈ। ਜਦੋਂ ਇਹ ਦੋਵੇਂ ਹੋਣ, ਤਦ ਹੀ ਸੱਚੇ ਨਾਮ ਦੇ ਮਿਲਣ ਦੀ ਉਮੀਦ ਰੱਖਣੀ ਚਾਹੀਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb outlines the authentic sequence of divine realization: First, the sacred fire of separation (Agan Biraha) must ignite within the soul, burning away all worldly attachments; next, an unquenchable, desperate thirst for divine love must seize the heart. Satguru Kabir Saheb proclaims: Only when these two profound conditions are fulfilled can one truly hope for the living union with the Holy Name and Self-realization.',
     },
     wordMeanings: {
       hi: [
@@ -514,9 +514,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Pehle shabd pehchaaniye, peechhe kije mol. Paarkhi parkhe ratan ko, shabd ka mol na tol.',
     bhavarth: {
-      hi: 'कबीर साहेब वाणी के विवेक और सतगुरु के अनाहत शब्द की महिमा समझाते हैं: बोलने से पहले प्रत्येक शब्द के प्रभाव, मर्म और गरिमा को पहचानो; किसी भी बात को तौलकर बोलो। जैसे एक कुशल जौहरी (पारखी) किसी मूल्यवान रत्न की वास्तविक गुणवत्ता को परखता है, वैसे ही ज्ञानी पुरुष शब्द की परीक्षा करते हैं। सतगुरु के दिए हुए उस दिव्य "सत्य-शब्द" का तो कोई सांसारिक मूल्य या तौल ही नहीं है, वह सर्वथा अनमोल और असीम है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਸ਼ਬਦ ਦੀ ਪਰਖ ਕਰੋ। ਜਿਵੇਂ ਜੌਹਰੀ ਹੀਰੇ ਦੀ ਪਰਖ ਕਰਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਸਿਆਣਾ ਸ਼ਬਦ ਨੂੰ ਸਮਝਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਸ਼ਬਦ ਦਾ ਕੋਈ ਮੁੱਲ ਜਾਂ ਤੋਲ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਉਹ ਬੇਸ਼ਕੀਮਤੀ ਹੈ।',
-      en: 'Kabir Saheb teaches the profound art of verbal discrimination and the infinite value of the Divine Word: First discern the depth, power, and consequence of every word before uttering it; speak with weighted mindfulness. Just as an expert jeweler (Paarakhee) tests the purity of a precious gem, so does the wise soul test spoken words. And as for the True Master’s holy Word of Truth (Shabd)—it is beyond all worldly price or measure, utterly invaluable!',
+      hi: 'सतगुरु कबीर साहेब वाणी के विवेक और सतगुरु के अनाहत शब्द की महिमा समझाते हैं: बोलने से पहले प्रत्येक शब्द के प्रभाव, मर्म और गरिमा को पहचानो; किसी भी बात को तौलकर बोलो। जैसे एक कुशल जौहरी (पारखी) किसी मूल्यवान रत्न की वास्तविक गुणवत्ता को परखता है, वैसे ही ज्ञानी पुरुष शब्द की परीक्षा करते हैं। सतगुरु के दिए हुए उस दिव्य "सत्य-शब्द" का तो कोई सांसारिक मूल्य या तौल ही नहीं है, वह सर्वथा अनमोल और असीम है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਸ਼ਬਦ ਦੀ ਪਰਖ ਕਰੋ। ਜਿਵੇਂ ਜੌਹਰੀ ਹੀਰੇ ਦੀ ਪਰਖ ਕਰਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਸਿਆਣਾ ਸ਼ਬਦ ਨੂੰ ਸਮਝਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਸ਼ਬਦ ਦਾ ਕੋਈ ਮੁੱਲ ਜਾਂ ਤੋਲ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਉਹ ਬੇਸ਼ਕੀਮਤੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb teaches the profound art of verbal discrimination and the infinite value of the Divine Word: First discern the depth, power, and consequence of every word before uttering it; speak with weighted mindfulness. Just as an expert jeweler (Paarakhee) tests the purity of a precious gem, so does the wise soul test spoken words. And as for the True Master’s holy Word of Truth (Shabd)—it is beyond all worldly price or measure, utterly invaluable!',
     },
     wordMeanings: {
       hi: [
@@ -596,9 +596,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Phal kaaran seva kare, kare na man se kaam. Kahe Kabir sevak nahi, chaahe chaugun daam.',
     bhavarth: {
-      hi: 'कबीर साहेब सकाम और लालची सेवा का पर्दाफाश करते हैं: जो व्यक्ति केवल किसी सांसारिक फल, प्रतिष्ठा, लाभ या स्वर्ग की कामना से गुरु या ईश्वर की सेवा करता है, और पूरे मन व निष्कपट प्रेम से सेवा नहीं करता—कबीर कहते हैं कि वह वास्तव में सच्चा सेवक या भक्त नहीं है। वह तो एक लालची व्यापारी या मजदूर की तरह है जो थोड़ी सी सेवा करके चार गुना मूल्य (दाम) वसूलना चाहता है। सच्ची सेवा तो सर्वथा निष्काम और निस्वार्थ होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਸਿਰਫ ਕਿਸੇ ਲਾਲਚ ਜਾਂ ਫਲ ਦੀ ਖਾਤਰ ਸੇਵਾ ਕਰਦਾ ਹੈ ਤੇ ਮਨੋਂ ਸਮਰਪਿਤ ਨਹੀਂ ਹੁੰਦਾ, ਉਹ ਸੱਚਾ ਸੇਵਕ ਨਹੀਂ ਹੈ। ਉਹ ਤਾਂ ਵਪਾਰੀ ਵਾਂਗ ਥੋੜ੍ਹੀ ਸੇਵਾ ਕਰਕੇ ਚੌਗੁਣਾ ਫਲ ਮੰਗਦਾ ਹੈ। ਸੱਚੀ ਸੇਵਾ ਨਿਸ਼ਕਾਮ ਹੁੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb unmasks transactional and self-serving devotion: He who performs service only for the sake of reward, worldly gain, or heavenly compensation, without wholeheartedly offering pure love and sincerity—Kabir declares: such a person is no true servant (Sevak) of God! He is merely a greedy laborer who renders a token service and demands fourfold wages (Chaugun Daam). True service is unconditionally selfless and devoid of barter.',
+      hi: 'सतगुरु कबीर साहेब सकाम और लालची सेवा का पर्दाफाश करते हैं: जो व्यक्ति केवल किसी सांसारिक फल, प्रतिष्ठा, लाभ या स्वर्ग की कामना से गुरु या ईश्वर की सेवा करता है, और पूरे मन व निष्कपट प्रेम से सेवा नहीं करता—सतगुरु कबीर साहेब फरमाते हैं कि वह वास्तव में सच्चा सेवक या भक्त नहीं है। वह तो एक लालची व्यापारी या मजदूर की तरह है जो थोड़ी सी सेवा करके चार गुना मूल्य (दाम) वसूलना चाहता है। सच्ची सेवा तो सर्वथा निष्काम और निस्वार्थ होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਸਿਰਫ ਕਿਸੇ ਲਾਲਚ ਜਾਂ ਫਲ ਦੀ ਖਾਤਰ ਸੇਵਾ ਕਰਦਾ ਹੈ ਤੇ ਮਨੋਂ ਸਮਰਪਿਤ ਨਹੀਂ ਹੁੰਦਾ, ਉਹ ਸੱਚਾ ਸੇਵਕ ਨਹੀਂ ਹੈ। ਉਹ ਤਾਂ ਵਪਾਰੀ ਵਾਂਗ ਥੋੜ੍ਹੀ ਸੇਵਾ ਕਰਕੇ ਚੌਗੁਣਾ ਫਲ ਮੰਗਦਾ ਹੈ। ਸੱਚੀ ਸੇਵਾ ਨਿਸ਼ਕਾਮ ਹੁੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb unmasks transactional and self-serving devotion: He who performs service only for the sake of reward, worldly gain, or heavenly compensation, without wholeheartedly offering pure love and sincerity—Satguru Kabir Saheb proclaims: such a person is no true servant (Sevak) of God! He is merely a greedy laborer who renders a token service and demands fourfold wages (Chaugun Daam). True service is unconditionally selfless and devoid of barter.',
     },
     wordMeanings: {
       hi: [
@@ -641,9 +641,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       {
         id: 'q-b27-332',
         question: {
-          hi: 'साखी के अनुसार जो फल की लालसा से सेवा करता है, उसे कबीर साहेब क्या कहते हैं?',
+          hi: 'साखी के अनुसार जो फल की लालसा से सेवा करता है, उसे सतगुरु कबीर साहेब क्या कहते हैं?',
           pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਫਲ ਦੀ ਖਾਤਰ ਸੇਵਾ ਕਰਨ ਵਾਲੇ ਨੂੰ ਕੀ ਕਿਹਾ ਗਿਆ ਹੈ?',
-          en: 'According to this Sakhi, what does Kabir Saheb call one who serves only for personal reward?',
+          en: 'According to this Sakhi, what does Satguru Kabir Saheb call one who serves only for personal reward?',
         },
         options: {
           hi: ['वह सच्चा सेवक नहीं है, बल्कि चार गुना दाम चाहने वाला लालची है', 'वह महान संत है', 'वह सबसे बड़ा ज्ञानी है', 'वह उत्तम भक्त है'],
@@ -678,9 +678,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Phooti aankh vivek ki, lakhe na sant asant. Jaake sang das-bees hai, taako naam mahant.',
     bhavarth: {
-      hi: 'कबीर साहेब समाज के विवेकहीन अंधानुकरण और झूठे गुरुओं पर तीखा प्रहार करते हैं: अज्ञानी संसार की विवेक रूपी आंतरिक आँख फूट चुकी है (नष्ट हो गई है), इसलिए वह सच्चे संत और ढोंगी पाखंडी (असन्त) के बीच का अंतर नहीं देख पाता। जिस व्यक्ति के पीछे दस-बीस चेले-चपाटे और चापलूसों की भीड़ इकट्ठी हो जाती है, मूर्ख संसार उसी को बड़ा संत और "महंत" मानकर पूजने लगता है। भीड़ से नहीं, आचरण और आत्मज्ञान से संत की परख होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਲੋਕਾਂ ਦੀ ਅਕਲ ਤੇ ਵਿਵੇਕ ਦੀ ਅੱਖ ਫੁੱਟ ਚੁੱਕੀ ਹੈ, ਉਹ ਸੱਚੇ ਸੰਤ ਅਤੇ ਪਾਖੰਡੀ ਵਿੱਚ ਫਰਕ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਜਿਸਦੇ ਮਗਰ ਦਸ-ਵੀਹ ਚੇਲਿਆਂ ਦੀ ਭੀੜ ਹੋਵੇ, ਲੋਕ ਉਸਨੂੰ ਹੀ ਮਹੰਤ ਤੇ ਵੱਡਾ ਗੁਰੂ ਮੰਨ ਲੈਂਦੇ ਹਨ। ਭੀੜ ਨਾਲ ਨਹੀਂ, ਗਿਆਨ ਨਾਲ ਪਰਖ ਕਰੋ।',
-      en: 'Kabir Saheb sharply exposes worldly gullibility and superficial religious leadership: "The inner eye of discernment (Vivek) of the worldly crowd is utterly blinded; hence people cannot distinguish between a genuine Saint (Sant) and a hypocritical impostor (Asant). Whoever gathers a noisy following of ten or twenty sycophantic disciples is instantly crowned a great spiritual leader and ‘Mahant’ by the gullible public!" Spiritual greatness is measured by purity, truth, and realization—not by the size of a crowd.',
+      hi: 'सतगुरु कबीर साहेब समाज के विवेकहीन अंधानुकरण और झूठे गुरुओं पर तीखा प्रहार करते हैं: अज्ञानी संसार की विवेक रूपी आंतरिक आँख फूट चुकी है (नष्ट हो गई है), इसलिए वह सच्चे संत और ढोंगी पाखंडी (असन्त) के बीच का अंतर नहीं देख पाता। जिस व्यक्ति के पीछे दस-बीस चेले-चपाटे और चापलूसों की भीड़ इकट्ठी हो जाती है, मूर्ख संसार उसी को बड़ा संत और "महंत" मानकर पूजने लगता है। भीड़ से नहीं, आचरण और आत्मज्ञान से संत की परख होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਲੋਕਾਂ ਦੀ ਅਕਲ ਤੇ ਵਿਵੇਕ ਦੀ ਅੱਖ ਫੁੱਟ ਚੁੱਕੀ ਹੈ, ਉਹ ਸੱਚੇ ਸੰਤ ਅਤੇ ਪਾਖੰਡੀ ਵਿੱਚ ਫਰਕ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਜਿਸਦੇ ਮਗਰ ਦਸ-ਵੀਹ ਚੇਲਿਆਂ ਦੀ ਭੀੜ ਹੋਵੇ, ਲੋਕ ਉਸਨੂੰ ਹੀ ਮਹੰਤ ਤੇ ਵੱਡਾ ਗੁਰੂ ਮੰਨ ਲੈਂਦੇ ਹਨ। ਭੀੜ ਨਾਲ ਨਹੀਂ, ਗਿਆਨ ਨਾਲ ਪਰਖ ਕਰੋ।',
+      en: 'Satguru Kabir Saheb sharply exposes worldly gullibility and superficial religious leadership: "The inner eye of discernment (Vivek) of the worldly crowd is utterly blinded; hence people cannot distinguish between a genuine Saint (Sant) and a hypocritical impostor (Asant). Whoever gathers a noisy following of ten or twenty sycophantic disciples is instantly crowned a great spiritual leader and ‘Mahant’ by the gullible public!" Spiritual greatness is measured by purity, truth, and realization—not by the size of a crowd.',
     },
     wordMeanings: {
       hi: [
@@ -715,7 +715,7 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       en: 'O Satguru of Supreme Discernment! Bestow upon me the clear vision of wisdom to steer clear of impostors and rest in Your Truth. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी गुरु-परख और धार्मिक अंधानुकरण के विरुद्ध कबीर साहेब की अत्यंत तीक्ष्ण चेतावनी है।',
+      hi: 'यह साखी गुरु-परख और धार्मिक अंधानुकरण के विरुद्ध सतगुरु कबीर साहेब की अत्यंत तीक्ष्ण चेतावनी है।',
       pb: 'ਇਹ ਸਾਖੀ ਅੰਧਵਿਸ਼ਵਾਸ ਦੇ ਖਿਲਾਫ ਸਖ਼ਤ ਚੇਤਾਵਨੀ ਹੈ।',
       en: 'This verse is an incisive spiritual warning against confusing popularity with genuine saintliness.',
     },
@@ -760,9 +760,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Pothi baanche yaad karaave, bhakti kachhu nahi paaye. Manka manka phire naahi, tulsi maala phiraaye.',
     bhavarth: {
-      hi: 'कबीर साहेब कोरे पठन और माला फेरने के यांत्रिक दिखावे का खंडन करते हैं: मनुष्य पोथियाँ पढ़ता है और दूसरों को कंठस्थ करवाता है, किंतु इस केवल बौद्धिक अभ्यास से उसे सच्ची भक्ति और शांति की रंचक भी प्राप्ति नहीं होती। हाथ में तुलसी की लकड़ी की माला के मनके (दाने) तो लगातार घुमाता रहता है, किंतु अपने मन के "मनका" (चित्त की चंचलता) को परमात्मा की ओर नहीं मोड़ता। जब तक मन नहीं बदलता, माला फेरना व्यर्थ है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਕਿਤਾਬਾਂ ਪੜ੍ਹ ਕੇ ਯਾਦ ਕਰਵਾਉਣ ਨਾਲ ਸੱਚੀ ਭਗਤੀ ਨਹੀਂ ਮਿਲਦੀ। ਹੱਥ ਵਿੱਚ ਤੁਲਸੀ ਦੀ ਮਾਲਾ ਦੇ ਦਾਣੇ ਤਾਂ ਫੇਰਦਾ ਹੈ ਪਰ ਆਪਣੇ ਮਨ ਦੇ ਮਣਕੇ (ਵਿਚਾਰਾਂ) ਨੂੰ ਪ੍ਰਭੂ ਵੱਲ ਨਹੀਂ ਫੇਰਦਾ। ਮਨ ਫੇਰੇ ਬਿਨਾਂ ਮਾਲਾ ਵਿਅਰਥ ਹੈ।',
-      en: 'Kabir Saheb dismantles mechanical book-recitation and outward rosary-twirling: One may recite scriptures and force others to memorize verses, yet gain not a single grain of genuine divine devotion! With the hand, one mechanically counts the wooden beads of the Tulsi rosary (Maala), but never turns the true inner bead of the restless mind (Man Ka Manka) toward God. Outward rosary turns in vain if the mind remains entangled in worldly desires.',
+      hi: 'सतगुरु कबीर साहेब कोरे पठन और माला फेरने के यांत्रिक दिखावे का खंडन करते हैं: मनुष्य पोथियाँ पढ़ता है और दूसरों को कंठस्थ करवाता है, किंतु इस केवल बौद्धिक अभ्यास से उसे सच्ची भक्ति और शांति की रंचक भी प्राप्ति नहीं होती। हाथ में तुलसी की लकड़ी की माला के मनके (दाने) तो लगातार घुमाता रहता है, किंतु अपने मन के "मनका" (चित्त की चंचलता) को परमात्मा की ओर नहीं मोड़ता। जब तक मन नहीं बदलता, माला फेरना व्यर्थ है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਕਿਤਾਬਾਂ ਪੜ੍ਹ ਕੇ ਯਾਦ ਕਰਵਾਉਣ ਨਾਲ ਸੱਚੀ ਭਗਤੀ ਨਹੀਂ ਮਿਲਦੀ। ਹੱਥ ਵਿੱਚ ਤੁਲਸੀ ਦੀ ਮਾਲਾ ਦੇ ਦਾਣੇ ਤਾਂ ਫੇਰਦਾ ਹੈ ਪਰ ਆਪਣੇ ਮਨ ਦੇ ਮਣਕੇ (ਵਿਚਾਰਾਂ) ਨੂੰ ਪ੍ਰਭੂ ਵੱਲ ਨਹੀਂ ਫੇਰਦਾ। ਮਨ ਫੇਰੇ ਬਿਨਾਂ ਮਾਲਾ ਵਿਅਰਥ ਹੈ।',
+      en: 'Satguru Kabir Saheb dismantles mechanical book-recitation and outward rosary-twirling: One may recite scriptures and force others to memorize verses, yet gain not a single grain of genuine divine devotion! With the hand, one mechanically counts the wooden beads of the Tulsi rosary (Maala), but never turns the true inner bead of the restless mind (Man Ka Manka) toward God. Outward rosary turns in vain if the mind remains entangled in worldly desires.',
     },
     wordMeanings: {
       hi: [
@@ -842,9 +842,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Pothi padh padh jag mua, pandit bhaya na koy. Dhaai aakhar prem ka, padhe so pandit hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब विश्व के समस्त ज्ञान और दर्शन का सर्वोपरि निचोड़ प्रस्तुत करते हैं: संसार भर के लोग भारी-भरकम धार्मिक ग्रंथों, पोथियों और शास्त्रों को पढ़-पढ़ कर मृत्यु के गाल में समा गए, किंतु केवल किताबी ज्ञान से कोई भी सच्चा ज्ञानी या आत्मदर्शी (पंडित) नहीं बन सका। वास्तव में जो मनुष्य निष्कपट हृदय से "प्रेम" (या सत्यनाम) के ढाई अक्षरों का वास्तविक पाठ पढ़ लेता है और उसे अपने आचरण व साधना में उतार लेता है, वही संसार का सच्चा और पूर्ण पंडित होता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਦੁਨੀਆ ਪੋਥੀਆਂ-ਕਿਤਾਬਾਂ ਪੜ੍ਹ-ਪੜ੍ਹ ਕੇ ਮਰ ਖਪ ਗਈ ਪਰ ਕੋਈ ਅਸਲ ਗਿਆਨੀ ਨਾ ਬਣਿਆ। ਜੋ ਪ੍ਰਭੂ ਦੇ ਸੱਚੇ "ਪ੍ਰੇਮ" ਦੇ ਢਾਈ ਅੱਖਰ ਪੜ੍ਹ ਲੈਂਦਾ ਹੈ ਅਤੇ ਉਸਨੂੰ ਦਿਲ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਵਿਦਵਾਨ ਤੇ ਪੰਡਿਤ ਹੈ।',
-      en: 'Kabir Saheb delivers the crowning essence of all spiritual philosophy: "The whole world has perished reading ponderous tomes and endless scriptures, yet not a single soul became genuinely enlightened (Pandit) through bookish lore alone. He who truly learns and embodies the two and a half letters of Divine Love (Prem)—he alone is crowned the true scholar and enlightened sage of the universe!"',
+      hi: 'सतगुरु कबीर साहेब विश्व के समस्त ज्ञान और दर्शन का सर्वोपरि निचोड़ प्रस्तुत करते हैं: संसार भर के लोग भारी-भरकम धार्मिक ग्रंथों, पोथियों और शास्त्रों को पढ़-पढ़ कर मृत्यु के गाल में समा गए, किंतु केवल किताबी ज्ञान से कोई भी सच्चा ज्ञानी या आत्मदर्शी (पंडित) नहीं बन सका। वास्तव में जो मनुष्य निष्कपट हृदय से "प्रेम" (या सत्यनाम) के ढाई अक्षरों का वास्तविक पाठ पढ़ लेता है और उसे अपने आचरण व साधना में उतार लेता है, वही संसार का सच्चा और पूर्ण पंडित होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਦੁਨੀਆ ਪੋਥੀਆਂ-ਕਿਤਾਬਾਂ ਪੜ੍ਹ-ਪੜ੍ਹ ਕੇ ਮਰ ਖਪ ਗਈ ਪਰ ਕੋਈ ਅਸਲ ਗਿਆਨੀ ਨਾ ਬਣਿਆ। ਜੋ ਪ੍ਰਭੂ ਦੇ ਸੱਚੇ "ਪ੍ਰੇਮ" ਦੇ ਢਾਈ ਅੱਖਰ ਪੜ੍ਹ ਲੈਂਦਾ ਹੈ ਅਤੇ ਉਸਨੂੰ ਦਿਲ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਵਿਦਵਾਨ ਤੇ ਪੰਡਿਤ ਹੈ।',
+      en: 'Satguru Kabir Saheb delivers the crowning essence of all spiritual philosophy: "The whole world has perished reading ponderous tomes and endless scriptures, yet not a single soul became genuinely enlightened (Pandit) through bookish lore alone. He who truly learns and embodies the two and a half letters of Divine Love (Prem)—he alone is crowned the true scholar and enlightened sage of the universe!"',
     },
     wordMeanings: {
       hi: [
@@ -879,17 +879,17 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
       en: 'O Embodiment of Divine Love, Satguru! Release me from the burden of dry books and bestow upon my heart the living alphabet of holy love. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की विश्व में सर्वाधिक प्रसिद्ध, लोकप्रिय और मानव-मात्र को जोड़ने वाली कालजयी साखी है।',
-      pb: 'ਇਹ ਸਾਖੀ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਸਭ ਤੋਂ ਮਸ਼ਹੂਰ ਸਾਖੀ ਹੈ।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की विश्व में सर्वाधिक प्रसिद्ध, लोकप्रिय और मानव-मात्र को जोड़ने वाली कालजयी साखी है।',
+      pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਸਭ ਤੋਂ ਮਸ਼ਹੂਰ ਸਾਖੀ ਹੈ।',
       en: 'This immortal verse is universally celebrated across the globe as the ultimate anthem of divine love.',
     },
     quiz: [
       {
         id: 'q-b27-335',
         question: {
-          hi: 'कबीर साहेब के अनुसार वास्तव में सच्चा पंडित और ज्ञानी कौन होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲ ਪੰਡਿਤ ਕੌਣ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who is recognized as the true enlightened scholar (Pandit)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार वास्तव में सच्चा पंडित और ज्ञानी कौन होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲ ਪੰਡਿਤ ਕੌਣ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is recognized as the true enlightened scholar (Pandit)?',
         },
         options: {
           hi: ['जो निष्कपट भाव से प्रेम के ढाई अक्षर पढ़कर हृदय में धारण करता है', 'जो बहुत सारी भारी पोथियाँ पढ़ता है', 'जो बहुत बड़े मंदिर बनाता है', 'जो सबसे तेज बोलता है'],
@@ -924,9 +924,9 @@ export const SAKHIS_BATCH_27: Sakhi[] = [
     },
     transliteration: 'Prem bina dheeraj nahi, birah bina bairaag. Satguru bina mitte nahi, man mansa ke daag.',
     bhavarth: {
-      hi: 'कबीर साहेब साधना के तीन मूलभूत आध्यात्मिक सूत्रों को प्रकट करते हैं: सच्चे ईश्वरीय प्रेम के बिना हृदय में अटल धैर्य और सहनशीलता नहीं आ सकती; विरह (ईश्वर-वियोग की तड़प) के बिना संसार के प्रति सच्चा और स्थायी वैराग्य उत्पन्न नहीं हो सकता; और पूर्ण सतगुरु की कृपा और ज्ञान के बिना मन और उसकी वासनाओं-कामनाओं (मनसा) पर लगे जन्म-जन्मांतरों के गहरे मैल और दाग कभी मिट नहीं सकते। केवल सतगुरु ही चित्त को निर्मल करते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਪ੍ਰੇਮ ਬਿਨਾਂ ਸੱਚਾ ਧੀਰਜ ਨਹੀਂ ਆਉਂਦਾ, ਵਿਛੋੜੇ ਦੀ ਤੜਪ (ਵਿਰਹਾ) ਬਿਨਾਂ ਸੱਚਾ ਵੈਰਾਗ ਨਹੀਂ ਉਪਜਦਾ; ਅਤੇ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਤੋਂ ਬਿਨਾਂ ਮਨ ਦੀਆਂ ਵਾਸਨਾਵਾਂ ਦੇ ਮੈਲੇ ਦਾਗ਼ ਕਦੇ ਸਾਫ਼ ਨਹੀਂ ਹੋ ਸਕਦੇ।',
-      en: 'Kabir Saheb reveals three foundational spiritual axioms: Without deep divine love, unshakeable patience (Dheeraj) cannot take root; without the agony of spiritual longing (Birah), authentic and lasting detachment (Bairaag) cannot awaken; and without the supreme grace of the True Master (Satguru), the deep-seated karmic stains of worldly desires and cravings (Man Mansa Ke Daag) can never be washed away.',
+      hi: 'सतगुरु कबीर साहेब साधना के तीन मूलभूत आध्यात्मिक सूत्रों को प्रकट करते हैं: सच्चे ईश्वरीय प्रेम के बिना हृदय में अटल धैर्य और सहनशीलता नहीं आ सकती; विरह (ईश्वर-वियोग की तड़प) के बिना संसार के प्रति सच्चा और स्थायी वैराग्य उत्पन्न नहीं हो सकता; और पूर्ण सतगुरु की कृपा और ज्ञान के बिना मन और उसकी वासनाओं-कामनाओं (मनसा) पर लगे जन्म-जन्मांतरों के गहरे मैल और दाग कभी मिट नहीं सकते। केवल सतगुरु ही चित्त को निर्मल करते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਪ੍ਰੇਮ ਬਿਨਾਂ ਸੱਚਾ ਧੀਰਜ ਨਹੀਂ ਆਉਂਦਾ, ਵਿਛੋੜੇ ਦੀ ਤੜਪ (ਵਿਰਹਾ) ਬਿਨਾਂ ਸੱਚਾ ਵੈਰਾਗ ਨਹੀਂ ਉਪਜਦਾ; ਅਤੇ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਤੋਂ ਬਿਨਾਂ ਮਨ ਦੀਆਂ ਵਾਸਨਾਵਾਂ ਦੇ ਮੈਲੇ ਦਾਗ਼ ਕਦੇ ਸਾਫ਼ ਨਹੀਂ ਹੋ ਸਕਦੇ।',
+      en: 'Satguru Kabir Saheb reveals three foundational spiritual axioms: Without deep divine love, unshakeable patience (Dheeraj) cannot take root; without the agony of spiritual longing (Birah), authentic and lasting detachment (Bairaag) cannot awaken; and without the supreme grace of the True Master (Satguru), the deep-seated karmic stains of worldly desires and cravings (Man Mansa Ke Daag) can never be washed away.',
     },
     wordMeanings: {
       hi: [

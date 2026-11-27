@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Sant hi me sat baantai, roti me te took. Kahe Kabir ta daas ko, kabahu na aave chook.',
     bhavarth: {
-      hi: 'कबीर साहेब संतों की सेवा, अन्नदान और सत्य-व्यवहार की अचूक महिमा बताते हैं: जो भक्त संतों और साधुओं के संग में निष्कपट सत्य, प्रेम और धर्म का आचरण (सत) बांटता है, और अपनी रूखी-सूखी रोटी में से भी प्रेमपूर्वक एक टुकड़ा (टूक) भूखे संतों व जीवों को अर्पित करता है—कबीर कहते हैं कि ऐसे परम समर्पित सेवक और भक्त के जीवन में कभी कोई त्रुटि, पतन या असफलता (चूक) नहीं आ सकती; परमात्मा सदा उसकी रक्षा करते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਮਨੁੱਖ ਸਾਧੂ-ਸੰਤਾਂ ਨਾਲ ਸੱਚ ਦਾ ਵਿਹਾਰ ਕਰਦਾ ਹੈ ਅਤੇ ਆਪਣੀ ਰੋਟੀ ਵਿੱਚੋਂ ਅੱਧਾ ਟੁੱਕ ਵੀ ਲੋੜਵੰਦਾਂ ਤੇ ਸੰਤਾਂ ਨਾਲ ਵੰਡ ਕੇ ਛਕਦਾ ਹੈ, ਉਸ ਸੱਚੇ ਸੇਵਕ ਦੇ ਜੀਵਨ ਵਿੱਚ ਕਦੇ ਕੋਈ ਕਮੀ ਜਾਂ ਢਾਹ ਨਹੀਂ ਆਉਂਦੀ; ਪ੍ਰਭੂ ਸਦਾ ਉਸਦੀ ਰੱਖਿਆ ਕਰਦੇ ਹਨ।',
-      en: 'Kabir Saheb extols the infallible virtue of truthfulness and sharing one’s bread with saints: That devoted servant who shares pure truth, sincerity, and virtue (Sat) in the company of the holy, and joyfully breaks off a humble morsel (Took) from his daily bread to feed the hungry and the saints—Kabir declares that such a consecrated soul shall never suffer spiritual lapse, failure, or deficiency (Chook). Divine Grace protects him forever.',
+      hi: 'सतगुरु कबीर साहेब संतों की सेवा, अन्नदान और सत्य-व्यवहार की अचूक महिमा बताते हैं: जो भक्त संतों और साधुओं के संग में निष्कपट सत्य, प्रेम और धर्म का आचरण (सत) बांटता है, और अपनी रूखी-सूखी रोटी में से भी प्रेमपूर्वक एक टुकड़ा (टूक) भूखे संतों व जीवों को अर्पित करता है—सतगुरु कबीर साहेब फरमाते हैं कि ऐसे परम समर्पित सेवक और भक्त के जीवन में कभी कोई त्रुटि, पतन या असफलता (चूक) नहीं आ सकती; परमात्मा सदा उसकी रक्षा करते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਮਨੁੱਖ ਸਾਧੂ-ਸੰਤਾਂ ਨਾਲ ਸੱਚ ਦਾ ਵਿਹਾਰ ਕਰਦਾ ਹੈ ਅਤੇ ਆਪਣੀ ਰੋਟੀ ਵਿੱਚੋਂ ਅੱਧਾ ਟੁੱਕ ਵੀ ਲੋੜਵੰਦਾਂ ਤੇ ਸੰਤਾਂ ਨਾਲ ਵੰਡ ਕੇ ਛਕਦਾ ਹੈ, ਉਸ ਸੱਚੇ ਸੇਵਕ ਦੇ ਜੀਵਨ ਵਿੱਚ ਕਦੇ ਕੋਈ ਕਮੀ ਜਾਂ ਢਾਹ ਨਹੀਂ ਆਉਂਦੀ; ਪ੍ਰਭੂ ਸਦਾ ਉਸਦੀ ਰੱਖਿਆ ਕਰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb extols the infallible virtue of truthfulness and sharing one’s bread with saints: That devoted servant who shares pure truth, sincerity, and virtue (Sat) in the company of the holy, and joyfully breaks off a humble morsel (Took) from his daily bread to feed the hungry and the saints—Satguru Kabir Saheb proclaims that such a consecrated soul shall never suffer spiritual lapse, failure, or deficiency (Chook). Divine Grace protects him forever.',
     },
     wordMeanings: {
       hi: [
@@ -101,9 +101,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Sant na chhaade santai, jo kotik mile asant. Chandan bhuvanga baithiya, tau seetalta na tajant.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे संत के अविचल, क्षमाशील और परोपकारी स्वभाव की उपमा देते हैं: सच्चा संत अपनी सज्जनता, क्षमा, दया और शांति (संतई) को कभी नहीं छोड़ता, चाहे उसे करोड़ों दुष्ट, कपटी और असाधु (असंत) लोग क्यों न मिल जाएं और सताएं। देखो, चंदन के सुवासित वृक्ष पर सैकड़ों विषैले काले सर्प (भुवंगा) लिपटे रहते हैं, फिर भी चंदन कभी अपने स्वभाव की शीतल ठंडक और सुगंध को नहीं त्यागता, न ही विषैला बनता है। संत सदा शीतल रहते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸੰਤ ਆਪਣੇ ਨੇਕ ਸੁਭਾਅ, ਦਇਆ ਤੇ ਸ਼ਾਂਤੀ ਨੂੰ ਕਦੇ ਨਹੀਂ ਤਿਆਗਦਾ, ਭਾਵੇਂ ਉਸਨੂੰ ਕ੍ਰੋੜਾਂ ਦੁਸ਼ਟ ਤੇ ਨਿੰਦਕ ਕਿਉਂ ਨਾ ਮਿਲ ਜਾਣ। ਜਿਵੇਂ ਚੰਦਨ ਦੇ ਰੁੱਖ ਤੇ ਜ਼ਹਿਰੀਲੇ ਸੱਪ ਲਿਪਟੇ ਰਹਿੰਦੇ ਹਨ, ਫਿਰ ਵੀ ਚੰਦਨ ਆਪਣੀ ਸ਼ੀਤਲਤਾ ਤੇ ਸੁਗੰਧ ਨਹੀਂ ਛੱਡਦਾ। ਸੰਤ ਸਦਾ ਸ਼ਾਂਤ ਰਹਿੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb depicts the unshakeable forgiveness and serene nature of a true saint: A genuine saint never abandons his spotless virtue, compassion, and divine serenity (Santaee), even if he encounters millions of malicious, deceitful, and hostile critics (Asant). Consider the fragrant Sandalwood tree (Chandan): though venomous serpents (Bhuvanga) wrap tightly around its trunk day and night, the sandalwood tree never surrenders its natural coolness and perfume, nor absorbs their poison. The saint remains ever cool.',
+      hi: 'सतगुरु कबीर साहेब सच्चे संत के अविचल, क्षमाशील और परोपकारी स्वभाव की उपमा देते हैं: सच्चा संत अपनी सज्जनता, क्षमा, दया और शांति (संतई) को कभी नहीं छोड़ता, चाहे उसे करोड़ों दुष्ट, कपटी और असाधु (असंत) लोग क्यों न मिल जाएं और सताएं। देखो, चंदन के सुवासित वृक्ष पर सैकड़ों विषैले काले सर्प (भुवंगा) लिपटे रहते हैं, फिर भी चंदन कभी अपने स्वभाव की शीतल ठंडक और सुगंध को नहीं त्यागता, न ही विषैला बनता है। संत सदा शीतल रहते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸੰਤ ਆਪਣੇ ਨੇਕ ਸੁਭਾਅ, ਦਇਆ ਤੇ ਸ਼ਾਂਤੀ ਨੂੰ ਕਦੇ ਨਹੀਂ ਤਿਆਗਦਾ, ਭਾਵੇਂ ਉਸਨੂੰ ਕ੍ਰੋੜਾਂ ਦੁਸ਼ਟ ਤੇ ਨਿੰਦਕ ਕਿਉਂ ਨਾ ਮਿਲ ਜਾਣ। ਜਿਵੇਂ ਚੰਦਨ ਦੇ ਰੁੱਖ ਤੇ ਜ਼ਹਿਰੀਲੇ ਸੱਪ ਲਿਪਟੇ ਰਹਿੰਦੇ ਹਨ, ਫਿਰ ਵੀ ਚੰਦਨ ਆਪਣੀ ਸ਼ੀਤਲਤਾ ਤੇ ਸੁਗੰਧ ਨਹੀਂ ਛੱਡਦਾ। ਸੰਤ ਸਦਾ ਸ਼ਾਂਤ ਰਹਿੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb depicts the unshakeable forgiveness and serene nature of a true saint: A genuine saint never abandons his spotless virtue, compassion, and divine serenity (Santaee), even if he encounters millions of malicious, deceitful, and hostile critics (Asant). Consider the fragrant Sandalwood tree (Chandan): though venomous serpents (Bhuvanga) wrap tightly around its trunk day and night, the sandalwood tree never surrenders its natural coolness and perfume, nor absorbs their poison. The saint remains ever cool.',
     },
     wordMeanings: {
       hi: [
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Sant purush ki aarasee, santon ki hi deh. Lakha jo chahe alakh ko, unhi me lakh leh.',
     bhavarth: {
-      hi: 'कबीर साहेब संतों की देह को निराकार परमात्मा का प्रत्यक्ष दर्पण बताते हैं: जो परब्रह्म परमात्मा अगम, अगोचर, इंद्रियातीत और अलख (जिसे आँखों से नहीं देखा जा सकता) है—उस अलख प्रभु का साक्षात दीदार कराने वाला स्वच्छ दर्पण (आरसी) सच्चे संतों का पावन शरीर और स्वरूप ही है। जो कोई भी उस अगोचर परमात्मा का दर्शन व साक्षात्कार करना चाहता है, वह पूर्ण संतों के घट में और उनकी वाणी व सान्निध्य में उस परमात्मा को प्रत्यक्ष देख ले।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜਿਸ ਅਲੱਖ ਤੇ ਅਦ੍ਰਿਸ਼ਟ ਪ੍ਰਭੂ ਨੂੰ ਅੱਖਾਂ ਨਾਲ ਨਹੀਂ ਵੇਖਿਆ ਜਾ ਸਕਦਾ, ਉਸਦਾ ਦੀਦਾਰ ਕਰਵਾਉਣ ਵਾਲਾ ਸ਼ੀਸ਼ਾ (ਆਰਸੀ) ਸੱਚੇ ਸੰਤਾਂ ਦਾ ਸਰੀਰ ਤੇ ਹਿਰਦਾ ਹੈ। ਜੇ ਕੋਈ ਉਸ ਅਲੱਖ ਪਰਮਾਤਮਾ ਨੂੰ ਵੇਖਣਾ ਚਾਹੁੰਦਾ ਹੈ ਤਾਂ ਉਹ ਸੰਤਾਂ ਦੇ ਅੰਦਰ ਉਸਦਾ ਦੀਦਾਰ ਕਰ ਲਵੇ।',
-      en: 'Kabir Saheb proclaims the living Saint as the pristine mirror reflecting the Invisible Divine: That Supreme Lord who is Unseen, Ineffable, and beyond sensory perception (Alakh)—His living, flawless mirror (Aarasee) is the sacred body and pure consciousness of the enlightened Saint. Whoever sincerely yearns to perceive and realize the Unseen God, let him behold and recognize that Supreme Radiance shining directly through the living presence of the Master!',
+      hi: 'सतगुरु कबीर साहेब संतों की देह को निराकार परमात्मा का प्रत्यक्ष दर्पण बताते हैं: जो परब्रह्म परमात्मा अगम, अगोचर, इंद्रियातीत और अलख (जिसे आँखों से नहीं देखा जा सकता) है—उस अलख प्रभु का साक्षात दीदार कराने वाला स्वच्छ दर्पण (आरसी) सच्चे संतों का पावन शरीर और स्वरूप ही है। जो कोई भी उस अगोचर परमात्मा का दर्शन व साक्षात्कार करना चाहता है, वह पूर्ण संतों के घट में और उनकी वाणी व सान्निध्य में उस परमात्मा को प्रत्यक्ष देख ले।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜਿਸ ਅਲੱਖ ਤੇ ਅਦ੍ਰਿਸ਼ਟ ਪ੍ਰਭੂ ਨੂੰ ਅੱਖਾਂ ਨਾਲ ਨਹੀਂ ਵੇਖਿਆ ਜਾ ਸਕਦਾ, ਉਸਦਾ ਦੀਦਾਰ ਕਰਵਾਉਣ ਵਾਲਾ ਸ਼ੀਸ਼ਾ (ਆਰਸੀ) ਸੱਚੇ ਸੰਤਾਂ ਦਾ ਸਰੀਰ ਤੇ ਹਿਰਦਾ ਹੈ। ਜੇ ਕੋਈ ਉਸ ਅਲੱਖ ਪਰਮਾਤਮਾ ਨੂੰ ਵੇਖਣਾ ਚਾਹੁੰਦਾ ਹੈ ਤਾਂ ਉਹ ਸੰਤਾਂ ਦੇ ਅੰਦਰ ਉਸਦਾ ਦੀਦਾਰ ਕਰ ਲਵੇ।',
+      en: 'Satguru Kabir Saheb proclaims the living Saint as the pristine mirror reflecting the Invisible Divine: That Supreme Lord who is Unseen, Ineffable, and beyond sensory perception (Alakh)—His living, flawless mirror (Aarasee) is the sacred body and pure consciousness of the enlightened Saint. Whoever sincerely yearns to perceive and realize the Unseen God, let him behold and recognize that Supreme Radiance shining directly through the living presence of the Master!',
     },
     wordMeanings: {
       hi: [
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satgur ham soo reejhi kari, ek kahma kar sang. Barasya baadal prem ka, bheenji gaya sab ang.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु की असीम कृपा और ज्ञान-दीक्षा के अलौकिक आनंद का अनुभव सुनाते हैं: जब मेरे परम दयालु सतगुरु मेरे समर्पण और निष्कपट भक्ति पर प्रसन्न (रीझि करि) हो गए, तो उन्होंने मुझे एकांत में प्रेमपूर्वक सत्यनाम का एक ऐसा गुप्त एवं अनमोल शब्द सुनाया। उस दिव्य शब्द को सुनते ही मेरे अंतःकरण में ईश्वरीय प्रेम का ऐसा मूसलाधार बादल बरसा कि मेरी आत्मा और शरीर का रोम-रोम, अंग-अंग उस अमृत रस में भीगकर परमानंद में डूब गया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜਦੋਂ ਸਤਿਗੁਰੂ ਜੀ ਮੇਰੇ ਤੇ ਪ੍ਰਸੰਨ ਹੋਏ ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਮੈਨੂੰ ਨਾਮ ਦਾ ਇੱਕ ਮਹਾਨ ਰਹੱਸ ਦੱਸਿਆ। ਉਸ ਰਹੱਸ ਨਾਲ ਪ੍ਰੇਮ ਦਾ ਐਸਾ ਬੱਦਲ ਵਰ੍ਹਿਆ ਕਿ ਮੇਰਾ ਅੰਗ-ਅੰਗ ਅਤੇ ਰੋਮ-ਰੋਮ ਪ੍ਰਭੂ ਦੇ ਪ੍ਰੇਮ-ਰਸ ਵਿੱਚ ਭਿੱਜ ਗਿਆ।',
-      en: 'Kabir Saheb sings of the sublime mystical ecstasy born of the Master’s grace: "When my gracious Satguru became deeply pleased with my humble surrender, He whispered to me in sacred intimacy the singular, esoteric Secret of the Divine Word (Ek Kahma). Instantly, a torrential cloud of divine love (Baadal Prem Ka) burst open in my inner sky, drenching every fiber, limb, and cell of my being (Bheenji Gaya Sab Ang) in the immortal nectar of supreme bliss!"',
+      hi: 'सतगुरु कबीर साहेब सतगुरु की असीम कृपा और ज्ञान-दीक्षा के अलौकिक आनंद का अनुभव सुनाते हैं: जब मेरे परम दयालु सतगुरु मेरे समर्पण और निष्कपट भक्ति पर प्रसन्न (रीझि करि) हो गए, तो उन्होंने मुझे एकांत में प्रेमपूर्वक सत्यनाम का एक ऐसा गुप्त एवं अनमोल शब्द सुनाया। उस दिव्य शब्द को सुनते ही मेरे अंतःकरण में ईश्वरीय प्रेम का ऐसा मूसलाधार बादल बरसा कि मेरी आत्मा और शरीर का रोम-रोम, अंग-अंग उस अमृत रस में भीगकर परमानंद में डूब गया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜਦੋਂ ਸਤਿਗੁਰੂ ਜੀ ਮੇਰੇ ਤੇ ਪ੍ਰਸੰਨ ਹੋਏ ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਮੈਨੂੰ ਨਾਮ ਦਾ ਇੱਕ ਮਹਾਨ ਰਹੱਸ ਦੱਸਿਆ। ਉਸ ਰਹੱਸ ਨਾਲ ਪ੍ਰੇਮ ਦਾ ਐਸਾ ਬੱਦਲ ਵਰ੍ਹਿਆ ਕਿ ਮੇਰਾ ਅੰਗ-ਅੰਗ ਅਤੇ ਰੋਮ-ਰੋਮ ਪ੍ਰਭੂ ਦੇ ਪ੍ਰੇਮ-ਰਸ ਵਿੱਚ ਭਿੱਜ ਗਿਆ।',
+      en: 'Satguru Kabir Saheb sings of the sublime mystical ecstasy born of the Master’s grace: "When my gracious Satguru became deeply pleased with my humble surrender, He whispered to me in sacred intimacy the singular, esoteric Secret of the Divine Word (Ek Kahma). Instantly, a torrential cloud of divine love (Baadal Prem Ka) burst open in my inner sky, drenching every fiber, limb, and cell of my being (Bheenji Gaya Sab Ang) in the immortal nectar of supreme bliss!"',
     },
     wordMeanings: {
       hi: [
@@ -353,9 +353,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru chale shikaar par, le kar teer-kamaan. Moorakh moorakh bach gaye, koi mar gaye sant sujaan.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु के ज्ञान-बाण के अद्भुत आध्यात्मिक शिकार का विलक्षण रहस्य बताते हैं: सतगुरु ज्ञान, वैराग्य और प्रेम रूपी तीर-कमान लेकर जीवों के अहंकार और अज्ञान का शिकार करने निकले हैं। जो संसारी मूर्ख और अहंकारी लोग थे, वे तो चालाकी करके बच निकले (अर्थात् संसार के भवसागर में भटकने के लिए रह गए); किंतु जो विवेकवान, ज्ञानी और सच्चे संत (संत सुजान) थे, वे सतगुरु के शब्द-बाण से अपना अहंकार मिटाकर "मर" गए (अर्थात् जीते-जी मरकर अमर हो गए)।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਜੀ ਗਿਆਨ ਤੇ ਸ਼ਬਦ ਦਾ ਤੀਰ-ਕਮਾਨ ਲੈ ਕੇ ਮਨ ਦੇ ਹੰਕਾਰ ਦਾ ਸ਼ਿਕਾਰ ਕਰਨ ਚੱਲੇ। ਮੂਰਖ ਲੋਕ ਬਚ ਕੇ ਦੁਨਿਆਵੀ ਭਟਕਣ ਚ ਰਹਿ ਗਏ, ਪਰ ਸੱਚੇ ਸਿਆਣੇ ਤੇ ਸੁਜਾਨ ਸੰਤ ਗੁਰੂ ਦੇ ਸ਼ਬਦ-ਤੀਰ ਨਾਲ ਹਉਮੈ ਮਿਟਾ ਕੇ ਜਿਊਂਦੇ ਜੀਅ ਮਰ ਕੇ ਅਮਰ ਹੋ ਗਏ।',
-      en: 'Kabir Saheb depicts the mystical hunt of the Satguru with profound paradox: The Satguru set forth on a divine hunt, bearing the bow and arrow of the Holy Word (Shabd). The worldly fools and stubborn ignoramuses cunningly dodged the arrow and "survived" (only to remain trapped in the grueling cycle of rebirth); but the wise disciples and noble saints (Sant Sujaan) took the arrow straight to the heart, dying to their egos (Jeevat Marna) and thereby attaining immortal life!',
+      hi: 'सतगुरु कबीर साहेब सतगुरु के ज्ञान-बाण के अद्भुत आध्यात्मिक शिकार का विलक्षण रहस्य बताते हैं: सतगुरु ज्ञान, वैराग्य और प्रेम रूपी तीर-कमान लेकर जीवों के अहंकार और अज्ञान का शिकार करने निकले हैं। जो संसारी मूर्ख और अहंकारी लोग थे, वे तो चालाकी करके बच निकले (अर्थात् संसार के भवसागर में भटकने के लिए रह गए); किंतु जो विवेकवान, ज्ञानी और सच्चे संत (संत सुजान) थे, वे सतगुरु के शब्द-बाण से अपना अहंकार मिटाकर "मर" गए (अर्थात् जीते-जी मरकर अमर हो गए)।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਜੀ ਗਿਆਨ ਤੇ ਸ਼ਬਦ ਦਾ ਤੀਰ-ਕਮਾਨ ਲੈ ਕੇ ਮਨ ਦੇ ਹੰਕਾਰ ਦਾ ਸ਼ਿਕਾਰ ਕਰਨ ਚੱਲੇ। ਮੂਰਖ ਲੋਕ ਬਚ ਕੇ ਦੁਨਿਆਵੀ ਭਟਕਣ ਚ ਰਹਿ ਗਏ, ਪਰ ਸੱਚੇ ਸਿਆਣੇ ਤੇ ਸੁਜਾਨ ਸੰਤ ਗੁਰੂ ਦੇ ਸ਼ਬਦ-ਤੀਰ ਨਾਲ ਹਉਮੈ ਮਿਟਾ ਕੇ ਜਿਊਂਦੇ ਜੀਅ ਮਰ ਕੇ ਅਮਰ ਹੋ ਗਏ।',
+      en: 'Satguru Kabir Saheb depicts the mystical hunt of the Satguru with profound paradox: The Satguru set forth on a divine hunt, bearing the bow and arrow of the Holy Word (Shabd). The worldly fools and stubborn ignoramuses cunningly dodged the arrow and "survived" (only to remain trapped in the grueling cycle of rebirth); but the wise disciples and noble saints (Sant Sujaan) took the arrow straight to the heart, dying to their egos (Jeevat Marna) and thereby attaining immortal life!',
     },
     wordMeanings: {
       hi: [
@@ -435,9 +435,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru kai sadkai karu, dil apni ka saanch. Kalijug ham sau ladi pada, muhkam mera baanch.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु पर सर्वस्व न्योछावर करने और उनकी अभेद्य रक्षा का वर्णन करते हैं: मैं अपने सतगुरु के पावन चरणों पर अपने अंतःकरण की संपूर्ण सच्चाई और निष्कपट हृदय को न्योछावर (सदकै) करता हूँ। इस घोर कलियुग के मायावी प्रपंचों, विकारों और वासनाओं ने मुझ पर भीषण आक्रमण कर दिया और मुझसे लड़ने आ धमका; किंतु मेरे सतगुरु ने मुझे ऐसा दृढ़, अभेद्य और मजबूत (मुहकम) नाम-कवच प्रदान किया कि मैं उस संकट से सुरक्षित बच निकला।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਤੇ ਆਪਣੇ ਦਿਲ ਦਾ ਸੱਚ ਤੇ ਸਾਰਾ ਆਪਾ ਕੁਰਬਾਨ ਕਰਦਾ ਹਾਂ। ਇਸ ਕਲਿਜੁਗ ਦੇ ਵਿਕਾਰਾਂ ਤੇ ਮਾਇਆ ਨੇ ਮੇਰੇ ਤੇ ਹਮਲਾ ਕਰ ਦਿੱਤਾ, ਪਰ ਮੇਰੇ ਸਤਿਗੁਰੂ ਨੇ ਮੈਨੂੰ ਅਜਿਹਾ ਮਜ਼ਬੂਤ (ਮੁਹਕਮ) ਨਾਮ-ਆਸਰਾ ਦਿੱਤਾ ਕਿ ਮੈਂ ਸੁਰੱਖਿਅਤ ਬਚ ਗਿਆ।',
-      en: 'Kabir Saheb declares total dedication and praises the Master’s impregnable protection: "I offer the spotless truth and total surrender of my heart as a sacrifice (Sadkai) at the holy feet of my Satguru! When the delusions, vices, and temptations of this dark age (Kalijug) waged war against my soul, my Satguru held me fast with such an unshakeable, mighty shield (Muhkam) of the Holy Name that I was miraculously delivered and preserved!"',
+      hi: 'सतगुरु कबीर साहेब सतगुरु पर सर्वस्व न्योछावर करने और उनकी अभेद्य रक्षा का वर्णन करते हैं: मैं अपने सतगुरु के पावन चरणों पर अपने अंतःकरण की संपूर्ण सच्चाई और निष्कपट हृदय को न्योछावर (सदकै) करता हूँ। इस घोर कलियुग के मायावी प्रपंचों, विकारों और वासनाओं ने मुझ पर भीषण आक्रमण कर दिया और मुझसे लड़ने आ धमका; किंतु मेरे सतगुरु ने मुझे ऐसा दृढ़, अभेद्य और मजबूत (मुहकम) नाम-कवच प्रदान किया कि मैं उस संकट से सुरक्षित बच निकला।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਆਪਣੇ ਸਤਿਗੁਰੂ ਤੇ ਆਪਣੇ ਦਿਲ ਦਾ ਸੱਚ ਤੇ ਸਾਰਾ ਆਪਾ ਕੁਰਬਾਨ ਕਰਦਾ ਹਾਂ। ਇਸ ਕਲਿਜੁਗ ਦੇ ਵਿਕਾਰਾਂ ਤੇ ਮਾਇਆ ਨੇ ਮੇਰੇ ਤੇ ਹਮਲਾ ਕਰ ਦਿੱਤਾ, ਪਰ ਮੇਰੇ ਸਤਿਗੁਰੂ ਨੇ ਮੈਨੂੰ ਅਜਿਹਾ ਮਜ਼ਬੂਤ (ਮੁਹਕਮ) ਨਾਮ-ਆਸਰਾ ਦਿੱਤਾ ਕਿ ਮੈਂ ਸੁਰੱਖਿਅਤ ਬਚ ਗਿਆ।',
+      en: 'Satguru Kabir Saheb proclaims total dedication and praises the Master’s impregnable protection: "I offer the spotless truth and total surrender of my heart as a sacrifice (Sadkai) at the holy feet of my Satguru! When the delusions, vices, and temptations of this dark age (Kalijug) waged war against my soul, my Satguru held me fast with such an unshakeable, mighty shield (Muhkam) of the Holy Name that I was miraculously delivered and preserved!"',
     },
     wordMeanings: {
       hi: [
@@ -520,9 +520,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru ki maane nahi, apni kahe banaay. Kahai Kabir kya keejiye, aur mata man maahi.',
     bhavarth: {
-      hi: 'कबीर साहेब मनमुखी (अपने मन की चलाने वाले) शिष्य की लाचारी और भूल पर प्रकाश डालते हैं: जो मनुष्य सतगुरु के सत्य वचनों और आज्ञाओं को तो स्वीकार नहीं करता और अपनी ही मनगढ़ंत बातें व तर्क बनाकर प्रस्तुत करता रहता है—कबीर कहते हैं कि ऐसे व्यक्ति का क्या किया जा सकता है, जिसके मन के भीतर ही संशय, सांसारिक स्वार्थ और कोई दूसरा ही मत या अहंकार समाया हुआ है? जब तक मन के भीतर का हठ नहीं मिटता, गुरु का उपदेश असर नहीं करता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਮਨੁੱਖ ਸਤਿਗੁਰੂ ਦੇ ਬਚਨ ਨਹੀਂ ਮੰਨਦਾ ਅਤੇ ਆਪਣੀਆਂ ਹੀ ਮਨਘੜਤ ਗੱਲਾਂ ਬਣਾਉਂਦਾ ਹੈ, ਉਸਦਾ ਕੀ ਇਲਾਜ ਹੋ ਸਕਦਾ ਹੈ ਜਿਸਦੇ ਮਨ ਵਿੱਚ ਕੋਈ ਹੋਰ ਹੀ ਸੰਸਾ ਤੇ ਸੁਆਰਥ ਭਰਿਆ ਹੋਇਆ ਹੈ। ਗੁਰੂ-ਹੁਕਮ ਮੰਨੇ ਬਿਨਾਂ ਕਲਿਆਣ ਅਸੰਭਵ ਹੈ।',
-      en: 'Kabir Saheb diagnoses the tragic plight of the self-willed mind (Manmukh): "He who refuses to obey the divine counsel of the Satguru, spinning instead his own clever fabrications and rationalizations—Kabir says, what possible remedy can be offered to one whose inner heart harbors hidden agendas, doubts, and conflicting loyalties (Aur Mata Man Maanhi)?" Unless self-opinionated obstinacy is dissolved, no spiritual teaching can take root.',
+      hi: 'सतगुरु कबीर साहेब मनमुखी (अपने मन की चलाने वाले) शिष्य की लाचारी और भूल पर प्रकाश डालते हैं: जो मनुष्य सतगुरु के सत्य वचनों और आज्ञाओं को तो स्वीकार नहीं करता और अपनी ही मनगढ़ंत बातें व तर्क बनाकर प्रस्तुत करता रहता है—सतगुरु कबीर साहेब फरमाते हैं कि ऐसे व्यक्ति का क्या किया जा सकता है, जिसके मन के भीतर ही संशय, सांसारिक स्वार्थ और कोई दूसरा ही मत या अहंकार समाया हुआ है? जब तक मन के भीतर का हठ नहीं मिटता, गुरु का उपदेश असर नहीं करता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਮਨੁੱਖ ਸਤਿਗੁਰੂ ਦੇ ਬਚਨ ਨਹੀਂ ਮੰਨਦਾ ਅਤੇ ਆਪਣੀਆਂ ਹੀ ਮਨਘੜਤ ਗੱਲਾਂ ਬਣਾਉਂਦਾ ਹੈ, ਉਸਦਾ ਕੀ ਇਲਾਜ ਹੋ ਸਕਦਾ ਹੈ ਜਿਸਦੇ ਮਨ ਵਿੱਚ ਕੋਈ ਹੋਰ ਹੀ ਸੰਸਾ ਤੇ ਸੁਆਰਥ ਭਰਿਆ ਹੋਇਆ ਹੈ। ਗੁਰੂ-ਹੁਕਮ ਮੰਨੇ ਬਿਨਾਂ ਕਲਿਆਣ ਅਸੰਭਵ ਹੈ।',
+      en: 'Satguru Kabir Saheb diagnoses the tragic plight of the self-willed mind (Manmukh): "He who refuses to obey the divine counsel of the Satguru, spinning instead his own clever fabrications and rationalizations—Satguru Kabir Saheb proclaims, what possible remedy can be offered to one whose inner heart harbors hidden agendas, doubts, and conflicting loyalties (Aur Mata Man Maanhi)?" Unless self-opinionated obstinacy is dissolved, no spiritual teaching can take root.',
     },
     wordMeanings: {
       hi: [
@@ -602,9 +602,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru ki mahima anant, anant kiya upgaar. Lochan anant ughaariya, anant dikhaavanhaar.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु की असीम महिमा और आध्यात्मिक उपकार का सर्वोत्कृष्ट साक्षात्कार व्यक्त करते हैं: मेरे सतगुरु की महिमा, करुणा और दिव्यता अनंत (सीमा-रहित) है, और उन्होंने मुझ अज्ञानी जीव पर अनंत उपकार किए हैं। उन्होंने मेरे अंतःकरण के बंद ज्ञान-चक्षु (लोचन अनँत) को सदा के लिए खोल दिया है, और मुझे उस असीम, सर्वव्यापी और अनंत परमात्मा (अनँत दिखावनहार) का साक्षात दर्शन करा दिया है। गुरु के उपकारों का कोई अंत नहीं है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਵਡਿਆਈ ਬੇਅੰਤ ਹੈ ਅਤੇ ਉਨ੍ਹਾਂ ਨੇ ਮੇਰੇ ਤੇ ਅਣਗਿਣਤ ਉਪਕਾਰ ਕੀਤੇ ਹਨ। ਉਨ੍ਹਾਂ ਨੇ ਮੇਰੇ ਅੰਦਰੂਨੀ ਗਿਆਨ ਦੇ ਨੇਤਰ (ਲੋਚਨ) ਖੋਲ੍ਹ ਦਿੱਤੇ ਹਨ ਅਤੇ ਮੈਨੂੰ ਉਸ ਬੇਅੰਤ ਤੇ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਾਖਿਆਤ ਦੀਦਾਰ ਕਰਵਾ ਦਿੱਤਾ ਹੈ।',
-      en: 'Kabir Saheb delivers the supreme declaration of the Master’s boundless enlightenment: "Infinite (Anant) is the glory and compassion of the Satguru, and infinite are the blessings He has bestowed upon my soul! He has unlocked my inner spiritual vision (Lochan Anant Ughaariya), opening the eye of wisdom to directly perceive and behold the Boundless, Omnipresent Supreme Reality (Anant Dikhaavanahaar)!"',
+      hi: 'सतगुरु कबीर साहेब सतगुरु की असीम महिमा और आध्यात्मिक उपकार का सर्वोत्कृष्ट साक्षात्कार व्यक्त करते हैं: मेरे सतगुरु की महिमा, करुणा और दिव्यता अनंत (सीमा-रहित) है, और उन्होंने मुझ अज्ञानी जीव पर अनंत उपकार किए हैं। उन्होंने मेरे अंतःकरण के बंद ज्ञान-चक्षु (लोचन अनँत) को सदा के लिए खोल दिया है, और मुझे उस असीम, सर्वव्यापी और अनंत परमात्मा (अनँत दिखावनहार) का साक्षात दर्शन करा दिया है। गुरु के उपकारों का कोई अंत नहीं है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਵਡਿਆਈ ਬੇਅੰਤ ਹੈ ਅਤੇ ਉਨ੍ਹਾਂ ਨੇ ਮੇਰੇ ਤੇ ਅਣਗਿਣਤ ਉਪਕਾਰ ਕੀਤੇ ਹਨ। ਉਨ੍ਹਾਂ ਨੇ ਮੇਰੇ ਅੰਦਰੂਨੀ ਗਿਆਨ ਦੇ ਨੇਤਰ (ਲੋਚਨ) ਖੋਲ੍ਹ ਦਿੱਤੇ ਹਨ ਅਤੇ ਮੈਨੂੰ ਉਸ ਬੇਅੰਤ ਤੇ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਾਖਿਆਤ ਦੀਦਾਰ ਕਰਵਾ ਦਿੱਤਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb delivers the supreme declaration of the Master’s boundless enlightenment: "Infinite (Anant) is the glory and compassion of the Satguru, and infinite are the blessings He has bestowed upon my soul! He has unlocked my inner spiritual vision (Lochan Anant Ughaariya), opening the eye of wisdom to directly perceive and behold the Boundless, Omnipresent Supreme Reality (Anant Dikhaavanahaar)!"',
     },
     wordMeanings: {
       hi: [
@@ -687,9 +687,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru mila to sab mile, na to mila na koy. Maat pita soot baandhava, yeh to ghar ghar hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु की अद्वितीय और सर्वोपरि महत्ता सिद्ध करते हैं: यदि जीवन में सच्चा, पूर्ण सतगुरु मिल गया तो समझो कि संसार और परमात्मा की समस्त निधियाँ, कल्याण और पूर्णता प्राप्त हो गई; और यदि सतगुरु नहीं मिला तो जीवन में कुछ भी सार्थक प्राप्त नहीं हुआ। इस संसार में माता, पिता, पुत्र (सूत) और भाई-बंधु (बान्धवा) के नश्वर नाते तो प्रत्येक घर-घर में और हर जन्म (पशु-पक्षी योनियों तक) में सहज मिल जाते हैं, किंतु आत्मा का उद्धार करने वाला सतगुरु केवल परम सौभाग्य से ही मिलता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਪੂਰਾ ਸਤਿਗੁਰੂ ਮਿਲ ਗਿਆ ਤਾਂ ਸਮਝੋ ਸਭ ਕੁਝ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ; ਜੇ ਗੁਰੂ ਨਾ ਮਿਲਿਆ ਤਾਂ ਜੀਵਨ ਵਿਅਰਥ ਗਿਆ। ਮਾਤਾ, ਪਿਤਾ, ਪੁੱਤਰ ਤੇ ਰਿਸ਼ਤੇਦਾਰ ਤਾਂ ਹਰ ਘਰ ਵਿੱਚ ਤੇ ਹਰ ਜੂਨ ਵਿੱਚ ਮਿਲ ਜਾਂਦੇ ਹਨ, ਪਰ ਮੁਕਤੀ ਦੇਣ ਵਾਲਾ ਸਤਿਗੁਰੂ ਵੱਡੇ ਭਾਗਾਂ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
-      en: 'Kabir Saheb illuminates the unique and irreplaceable supremacy of the True Master: "If you have attained the Satguru, you have attained everything of ultimate value in existence; if you have missed the Satguru, you have attained nothing of lasting worth. Transient worldly relatives—mother, father, sons (Soot), and kin (Baandhava)—are found in every single household and across every physical incarnation (even animal births); but the liberating Satguru is found only through supreme spiritual fortune!"',
+      hi: 'सतगुरु कबीर साहेब सतगुरु की अद्वितीय और सर्वोपरि महत्ता सिद्ध करते हैं: यदि जीवन में सच्चा, पूर्ण सतगुरु मिल गया तो समझो कि संसार और परमात्मा की समस्त निधियाँ, कल्याण और पूर्णता प्राप्त हो गई; और यदि सतगुरु नहीं मिला तो जीवन में कुछ भी सार्थक प्राप्त नहीं हुआ। इस संसार में माता, पिता, पुत्र (सूत) और भाई-बंधु (बान्धवा) के नश्वर नाते तो प्रत्येक घर-घर में और हर जन्म (पशु-पक्षी योनियों तक) में सहज मिल जाते हैं, किंतु आत्मा का उद्धार करने वाला सतगुरु केवल परम सौभाग्य से ही मिलता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਪੂਰਾ ਸਤਿਗੁਰੂ ਮਿਲ ਗਿਆ ਤਾਂ ਸਮਝੋ ਸਭ ਕੁਝ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ; ਜੇ ਗੁਰੂ ਨਾ ਮਿਲਿਆ ਤਾਂ ਜੀਵਨ ਵਿਅਰਥ ਗਿਆ। ਮਾਤਾ, ਪਿਤਾ, ਪੁੱਤਰ ਤੇ ਰਿਸ਼ਤੇਦਾਰ ਤਾਂ ਹਰ ਘਰ ਵਿੱਚ ਤੇ ਹਰ ਜੂਨ ਵਿੱਚ ਮਿਲ ਜਾਂਦੇ ਹਨ, ਪਰ ਮੁਕਤੀ ਦੇਣ ਵਾਲਾ ਸਤਿਗੁਰੂ ਵੱਡੇ ਭਾਗਾਂ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illuminates the unique and irreplaceable supremacy of the True Master: "If you have attained the Satguru, you have attained everything of ultimate value in existence; if you have missed the Satguru, you have attained nothing of lasting worth. Transient worldly relatives—mother, father, sons (Soot), and kin (Baandhava)—are found in every single household and across every physical incarnation (even animal births); but the liberating Satguru is found only through supreme spiritual fortune!"',
     },
     wordMeanings: {
       hi: [
@@ -769,9 +769,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru savaan na ko saga, sodhi saai na daati. Hariji savaan na ko hitu, harijan saai na jaati.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक सत्य के चार सर्वोच्च संबंधों की घोषणा करते हैं: १. सतगुरु के समान आत्मा का कोई सच्चा सगा-संबंधी नहीं है जो लोक और परलोक में साथ निभाए। २. आत्म-ज्ञान, विवेक और चेतना (सोधी) के समान संसार में कोई दूसरा महान दान (दाति) नहीं है। ३. परमात्मा (हरिजी) के समान जीवों का कोई सच्चा निस्वार्थ शुभचिंतक और हितैषी (हितू) नहीं है। ४. और ईश्वर के भक्तों व संतों (हरिजन) के समान कोई पवित्र और महान जाति/कुल नहीं है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਵਰਗਾ ਕੋਈ ਸੱਚਾ ਸਾਕ-ਸਬੰਧੀ ਨਹੀਂ, ਆਤਮ-ਗਿਆਨ (ਸੋਝੀ) ਵਰਗੀ ਕੋਈ ਦਾਤ ਨਹੀਂ, ਪਰਮਾਤਮਾ ਵਰਗਾ ਕੋਈ ਹਿਤੈਸ਼ੀ ਨਹੀਂ ਅਤੇ ਹਰੀ ਦੇ ਭਗਤਾਂ (ਸੰਤਾਂ) ਵਰਗੀ ਕੋਈ ਉੱਚੀ ਜਾਤ ਨਹੀਂ ਹੈ।',
-      en: 'Kabir Saheb pronounces the four supreme spiritual truths of existence: 1. There is no true kinsman (Saga) equal to the Satguru who guides the soul across both worlds. 2. There is no gift (Daati) in the universe equal to the gift of spiritual awakening and wisdom (Sodhee). 3. There is no sincere well-wisher (Hitoo) equal to the Supreme Lord (Harijee). 4. And there is no noble lineage or caste (Jaati) equal to the fellowship of God’s pure devotees (Harijan).',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक सत्य के चार सर्वोच्च संबंधों की घोषणा करते हैं: १. सतगुरु के समान आत्मा का कोई सच्चा सगा-संबंधी नहीं है जो लोक और परलोक में साथ निभाए। २. आत्म-ज्ञान, विवेक और चेतना (सोधी) के समान संसार में कोई दूसरा महान दान (दाति) नहीं है। ३. परमात्मा (हरिजी) के समान जीवों का कोई सच्चा निस्वार्थ शुभचिंतक और हितैषी (हितू) नहीं है। ४. और ईश्वर के भक्तों व संतों (हरिजन) के समान कोई पवित्र और महान जाति/कुल नहीं है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਵਰਗਾ ਕੋਈ ਸੱਚਾ ਸਾਕ-ਸਬੰਧੀ ਨਹੀਂ, ਆਤਮ-ਗਿਆਨ (ਸੋਝੀ) ਵਰਗੀ ਕੋਈ ਦਾਤ ਨਹੀਂ, ਪਰਮਾਤਮਾ ਵਰਗਾ ਕੋਈ ਹਿਤੈਸ਼ੀ ਨਹੀਂ ਅਤੇ ਹਰੀ ਦੇ ਭਗਤਾਂ (ਸੰਤਾਂ) ਵਰਗੀ ਕੋਈ ਉੱਚੀ ਜਾਤ ਨਹੀਂ ਹੈ।',
+      en: 'Satguru Kabir Saheb pronounces the four supreme spiritual truths of existence: 1. There is no true kinsman (Saga) equal to the Satguru who guides the soul across both worlds. 2. There is no gift (Daati) in the universe equal to the gift of spiritual awakening and wisdom (Sodhee). 3. There is no sincere well-wisher (Hitoo) equal to the Supreme Lord (Harijee). 4. And there is no noble lineage or caste (Jaati) equal to the fellowship of God’s pure devotees (Harijan).',
     },
     wordMeanings: {
       hi: [
@@ -860,9 +860,9 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     },
     transliteration: 'Satguru shabd kamaan le, baahan laage teer. Ek ju baaha preeti so, bheetar bindha shareer.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु के शब्द-बाण द्वारा अंतःकरण के रूपांतरण का अनुपम रहस्य समझाते हैं: सतगुरु ने अनाहत शब्द और ज्ञान का धनुष (शब्द कमान) हाथ में लिया और प्रेम व विवेक के बाण चलाने लगे। जब उन्होंने पूर्ण प्रेम और करुणा के साथ केवल एक ही सत्य-शब्द का बाण मुझ पर चलाया, तो वह सीधा मेरे अंतःकरण और संपूर्ण शरीर के भीतर जाकर बिंध गया। उस एक ही बाण ने संसार के सारे भ्रम, वासनाएं और विकार नष्ट कर दिए और आत्मा को परमात्मा में लीन कर दिया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਸ਼ਬਦ ਦਾ ਧਨੁਸ਼ ਲੈ ਕੇ ਗਿਆਨ ਦੇ ਤੀਰ ਚਲਾਏ। ਜਦੋਂ ਉਨ੍ਹਾਂ ਨੇ ਪੂਰੇ ਪ੍ਰੇਮ ਨਾਲ ਇੱਕੋ ਸ਼ਬਦ-ਤੀਰ ਮੇਰੇ ਹਿਰਦੇ ਤੇ ਮਾਰਿਆ, ਤਾਂ ਉਹ ਮੇਰੇ ਅੰਦਰ ਤੱਕ ਵਿੰਨ੍ਹ ਗਿਆ ਅਤੇ ਮੇਰੀ ਸਾਰੀ ਭਟਕਣ ਮਿਟ ਗਈ।',
-      en: 'Kabir Saheb unveils the mystical piercing of the soul by the Master’s Word: The Satguru grasped the bow of the Divine Word (Shabd Kamaan) and began discharging the arrows of wisdom. When with boundless love and compassion He shot just a single arrow of Truth (Ek Ju Baaha Preeti Son), it pierced deeply into the innermost core of my consciousness and body (Bheetar Bindha Shareer), instantly shattering all worldly illusions and merging the soul in Divine Union!',
+      hi: 'सतगुरु कबीर साहेब सतगुरु के शब्द-बाण द्वारा अंतःकरण के रूपांतरण का अनुपम रहस्य समझाते हैं: सतगुरु ने अनाहत शब्द और ज्ञान का धनुष (शब्द कमान) हाथ में लिया और प्रेम व विवेक के बाण चलाने लगे। जब उन्होंने पूर्ण प्रेम और करुणा के साथ केवल एक ही सत्य-शब्द का बाण मुझ पर चलाया, तो वह सीधा मेरे अंतःकरण और संपूर्ण शरीर के भीतर जाकर बिंध गया। उस एक ही बाण ने संसार के सारे भ्रम, वासनाएं और विकार नष्ट कर दिए और आत्मा को परमात्मा में लीन कर दिया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਸ਼ਬਦ ਦਾ ਧਨੁਸ਼ ਲੈ ਕੇ ਗਿਆਨ ਦੇ ਤੀਰ ਚਲਾਏ। ਜਦੋਂ ਉਨ੍ਹਾਂ ਨੇ ਪੂਰੇ ਪ੍ਰੇਮ ਨਾਲ ਇੱਕੋ ਸ਼ਬਦ-ਤੀਰ ਮੇਰੇ ਹਿਰਦੇ ਤੇ ਮਾਰਿਆ, ਤਾਂ ਉਹ ਮੇਰੇ ਅੰਦਰ ਤੱਕ ਵਿੰਨ੍ਹ ਗਿਆ ਅਤੇ ਮੇਰੀ ਸਾਰੀ ਭਟਕਣ ਮਿਟ ਗਈ।',
+      en: 'Satguru Kabir Saheb unveils the mystical piercing of the soul by the Master’s Word: The Satguru grasped the bow of the Divine Word (Shabd Kamaan) and began discharging the arrows of wisdom. When with boundless love and compassion He shot just a single arrow of Truth (Ek Ju Baaha Preeti Son), it pierced deeply into the innermost core of my consciousness and body (Bheetar Bindha Shareer), instantly shattering all worldly illusions and merging the soul in Divine Union!',
     },
     wordMeanings: {
       hi: [
@@ -936,18 +936,18 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     categoryTitle: {
       hi: 'सत्यनाम सुमिरन, जागृति व कल का संशय अंग',
       pb: 'ਸਤਯਨਾਮ ਸਿਮਰਨ, ਜਾਗ੍ਰਿਤੀ ਤੇ ਕੱਲ੍ਹ ਦਾ ਸੰਸਾ ਅੰਗ',
-      en: 'Meditate on Satnam Today, Who Knows Tomorrow? (Satynaam Ka Sumiran Kare Le)',
+      en: 'Meditate on Satyanaam Today, Who Knows Tomorrow? (Satynaam Ka Sumiran Kare Le)',
     },
     text: {
       hi: 'सत्यनाम का सुमिरन करे ले, कल जाने क्या होय ।\nजाग जाग नर निज पासुन में, काहे बिरथा सोय ॥',
       pb: 'ਸਤ੍ਯਨਾਮ ਕਾ ਸੁਮਿਰਨ ਕਰੇ ਲੇ, ਕਲ ਜਾਨੇ ਕ੍ਯਾ ਹੋਯ ।\nਜਾਗ ਜਾਗ ਨਰ ਨਿਜ ਪਾਸੁਨ ਮੇਂ, ਕਾਹੇ ਬਿਰਥਾ ਸੋਯ ॥',
       en: 'Satynaam ka sumiran kare le, kal jaane kya hoy |\nJaag jaag nar nij paasun mein, kaahe biratha soy ||',
     },
-    transliteration: 'Satnam ka sumiran kare le, kal jaane kya hoy. Jaag jaag nar nij paasun me, kaahe birtha soy.',
+    transliteration: 'Satyanaam ka sumiran kare le, kal jaane kya hoy. Jaag jaag nar nij paasun me, kaahe birtha soy.',
     bhavarth: {
-      hi: 'कबीर साहेब समय की अनिश्चितता और सत्यनाम सुमिरन की तात्कालिक अनिवार्यता पर जागृति का शंखनाद करते हैं: हे मनुष्य! आज और इसी क्षण सच्चे नाम (सत्यनाम) का स्मरण व सिमरन कर ले; क्योंकि कल क्या अप्रिय घटना घट जाए या कब यह श्वास रुक जाए, यह किसी को भी ज्ञात नहीं है। हे नर! मोह-माया की इस गहरी अज्ञान-निद्रा से जाग उठ और अपने आत्म-स्वरूप में स्थित हो; इस अमूल्य मानव जीवन को व्यर्थ के प्रमाद और नींद में क्यों नष्ट कर रहा है?',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਮਨੁੱਖ! ਅੱਜ ਹੀ ਸੱਚੇ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰ ਲੈ, ਕਿਸੇ ਨੂੰ ਨਹੀਂ ਪਤਾ ਕਿ ਕੱਲ੍ਹ ਕੀ ਹੋਣਾ ਹੈ ਜਾਂ ਕਦੋਂ ਸਵਾਸ ਮੁੱਕ ਜਾਣੇ ਹਨ। ਮੋਹ ਦੀ ਨੀਂਦ ਚੋਂ ਜਾਗ ਅਤੇ ਆਪਣੀ ਆਤਮਾ ਨੂੰ ਪਛਾਣ; ਇਸ ਕੀਮਤੀ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਵਿਅਰਥ ਕਿਉਂ ਗੁਆ ਰਿਹਾ ਹੈਂ?',
-      en: 'Kabir Saheb sounds an urgent wake-up call to heedless humanity: "Meditate upon the Holy True Name (Satnam) right now in this very breath, for who knows what tomorrow may bring or when the final breath may cease? Awaken, O mortal, awaken from the deep slumber of worldly delusion and realize your true indwelling soul! Why are you wasting this priceless human incarnation in empty, reckless slumber?"',
+      hi: 'सतगुरु कबीर साहेब समय की अनिश्चितता और सत्यनाम सुमिरन की तात्कालिक अनिवार्यता पर जागृति का शंखनाद करते हैं: हे मनुष्य! आज और इसी क्षण सच्चे नाम (सत्यनाम) का स्मरण व सिमरन कर ले; क्योंकि कल क्या अप्रिय घटना घट जाए या कब यह श्वास रुक जाए, यह किसी को भी ज्ञात नहीं है। हे नर! मोह-माया की इस गहरी अज्ञान-निद्रा से जाग उठ और अपने आत्म-स्वरूप में स्थित हो; इस अमूल्य मानव जीवन को व्यर्थ के प्रमाद और नींद में क्यों नष्ट कर रहा है?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਮਨੁੱਖ! ਅੱਜ ਹੀ ਸੱਚੇ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰ ਲੈ, ਕਿਸੇ ਨੂੰ ਨਹੀਂ ਪਤਾ ਕਿ ਕੱਲ੍ਹ ਕੀ ਹੋਣਾ ਹੈ ਜਾਂ ਕਦੋਂ ਸਵਾਸ ਮੁੱਕ ਜਾਣੇ ਹਨ। ਮੋਹ ਦੀ ਨੀਂਦ ਚੋਂ ਜਾਗ ਅਤੇ ਆਪਣੀ ਆਤਮਾ ਨੂੰ ਪਛਾਣ; ਇਸ ਕੀਮਤੀ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਵਿਅਰਥ ਕਿਉਂ ਗੁਆ ਰਿਹਾ ਹੈਂ?',
+      en: 'Satguru Kabir Saheb sounds an urgent wake-up call to heedless humanity: "Meditate upon the Holy True Name (Satyanaam) right now in this very breath, for who knows what tomorrow may bring or when the final breath may cease? Awaken, O mortal, awaken from the deep slumber of worldly delusion and realize your true indwelling soul! Why are you wasting this priceless human incarnation in empty, reckless slumber?"',
     },
     wordMeanings: {
       hi: [
@@ -977,12 +977,12 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
     practicalApplication: {
       hi: 'आज से ही, अभी से सत्यनाम के सुमिरन का नियम बनाएं; समय के क्षणभंगुर स्वभाव को समझकर प्रत्येक श्वास को सार्थक करें।',
       pb: 'ਅੱਜ ਹੀ ਨਾਮ ਜਪਣਾ ਸ਼ੁਰੂ ਕਰੋ।',
-      en: 'Do not delay devotion for another hour; anchor this very breath in the silent remembrance of Satnam.',
+      en: 'Do not delay devotion for another hour; anchor this very breath in the silent remembrance of Satyanaam.',
     },
     samarpanPrayer: {
       hi: 'हे जाग्रत सतगुरु! मुझे अज्ञान और प्रमाद की घोर निद्रा से जगाकर अपने सत्यनाम के नित्य सुमिरन में लीन कर दीजिए। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ ਜੀ! ਮੈਨੂੰ ਮੋਹ ਦੀ ਨੀਂਦ ਚੋਂ ਜਗਾ ਕੇ ਸਤਯਨਾਮ ਦੇ ਸਿਮਰਨ ਦੀ ਦਾਤ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
-      en: 'O Awakened Satguru! Shake my soul awake from the stupor of illusion and immerse my consciousness in the constant remembrance of Satnam. Saheb Bandagi Saheb!',
+      en: 'O Awakened Satguru! Shake my soul awake from the stupor of illusion and immerse my consciousness in the constant remembrance of Satyanaam. Saheb Bandagi Saheb!',
     },
     contextNote: {
       hi: 'यह साखी काल की अनिश्चितता और सत्यनाम के तात्कालिक सुमिरन की परम आवश्यकता की चेतावनी देती है।',
@@ -1000,7 +1000,7 @@ export const SAKHIS_BATCH_30: Sakhi[] = [
         options: {
           hi: ['सत्यनाम का सुमिरन करने और अज्ञान व व्यर्थ की नींद से जागने की (सत्यनाम का सुमिरन करे ले, जाग जाग नर)', 'व्यापार करने की', 'विदेश जाने की', 'आराम से सोने की'],
           pb: ['ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਨ ਤੇ ਮੋਹ ਦੀ ਨੀਂਦ ਚੋਂ ਜਾਗਣ ਦੀ', 'ਵਪਾਰ ਕਰਨ ਦੀ', 'ਵਿਦੇਸ਼ ਜਾਣ ਦੀ', 'ਸੌਣ ਦੀ'],
-          en: ['To meditate on Satnam immediately and awaken from the futile slumber of illusion (Satynaam ka sumiran kare le)', 'To do business', 'To travel abroad', 'To sleep longer'],
+          en: ['To meditate on Satyanaam immediately and awaken from the futile slumber of illusion (Satynaam ka sumiran kare le)', 'To do business', 'To travel abroad', 'To sleep longer'],
         },
         correctIndex: 0,
         explanation: {

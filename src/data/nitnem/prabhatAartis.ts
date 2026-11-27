@@ -45,7 +45,7 @@ export const PRABHAT_AARTI_1_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "सतगुरु कबीर साहेब की जय हो! वे अजर-अमर, अविनाशी परमात्मा हैं, जो सदा अपने सेवकों और जीवों के परम कल्याण हेतु तत्पर रहते हैं।",
-        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਜੈ ਹੋਵੇ! ਉਹ ਅਜਰ-ਅਮਰ ਪਰਮਾਤਮਾ ਹਨ, ਜੋ ਸਦਾ ਜੀਵਾਂ ਦੇ ਉਧਾਰ ਲਈ ਕਿਰਪਾਲੂ ਹਨ।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਜੈ ਹੋਵੇ! ਉਹ ਅਜਰ-ਅਮਰ ਪਰਮਾਤਮਾ ਹਨ, ਜੋ ਸਦਾ ਜੀਵਾਂ ਦੇ ਉਧਾਰ ਲਈ ਕਿਰਪਾਲੂ ਹਨ।",
         en: "Victory to Satguru Kabir! He is the undecaying, immortal Supreme Lord who eternally showers grace upon all souls."
       }
     },
@@ -68,7 +68,7 @@ export const PRABHAT_AARTI_1_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "सतगुरु कबीर चारों युगों (सत्य, त्रेता, द्वापर और कलि) में जीवों के उद्धारक और आध्यात्मिक मार्गदर्शक हैं। उनकी पावन जय-जयकार हो।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਚਾਰੇ ਯੁੱਗਾਂ ਦੇ ਮਹਾਨ ਮਾਰਗਦਰਸ਼ਕ ਅਤੇ ਮੁਕਤੀਦਾਤਾ ਹਨ। ਉਨ੍ਹਾਂ ਦੀ ਸਦਾ ਜੈ-ਜੈਕਾਰ ਹੋਵੇ।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚਾਰੇ ਯੁੱਗਾਂ ਦੇ ਮਹਾਨ ਮਾਰਗਦਰਸ਼ਕ ਅਤੇ ਮੁਕਤੀਦਾਤਾ ਹਨ। ਉਨ੍ਹਾਂ ਦੀ ਸਦਾ ਜੈ-ਜੈਕਾਰ ਹੋਵੇ।",
         en: "Guru Kabir is the divine spiritual master across all four cosmological eras. Endless salutations to His lotus feet."
       }
     },
@@ -91,7 +91,7 @@ export const PRABHAT_AARTI_1_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "सत्यनाम और सत सुकृत के धारक, वासनाओं को मिटाने वाले और क्लेशों से रहित त्रिभुवन पति साहेब कबीर संसार की पीड़ा हरने हेतु लहरतारा के तट पर शिशु रूप में प्रकट हुए।",
-        pb: "ਸਤਯਨਾਮ ਸਰੂਪ, ਕਲੇਸ਼ਾਂ ਨੂੰ ਨਾਸ ਕਰਨ ਵਾਲੇ ਕਬੀਰ ਸਾਹੇਬ ਸੰਸਾਰ ਦੇ ਦੁੱਖ ਦੂਰ ਕਰਨ ਲਈ ਬਾਲ ਰੂਪ ਧਾਰ ਕੇ ਪ੍ਰਗਟ ਹੋਏ।",
+        pb: "ਸਤਯਨਾਮ ਸਰੂਪ, ਕਲੇਸ਼ਾਂ ਨੂੰ ਨਾਸ ਕਰਨ ਵਾਲੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੰਸਾਰ ਦੇ ਦੁੱਖ ਦੂਰ ਕਰਨ ਲਈ ਬਾਲ ਰੂਪ ਧਾਰ ਕੇ ਪ੍ਰਗਟ ਹੋਏ।",
         en: "The Lord of three worlds, free from afflictions and embodiment of Truth, descended as a divine infant on the shores of Lahartara pond to dispel worldly suffering."
       }
     },
@@ -159,7 +159,7 @@ export const PRABHAT_AARTI_1_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "जो कोई श्रद्धालु कबीर साहेब की यह आरती गाता है, वह भक्ति और मुक्ति दोनों प्राप्त कर भवसागर के आवागमन से छूट जाता है।",
+        hi: "जो कोई श्रद्धालु सतगुरु कबीर साहेब की यह आरती गाता है, वह भक्ति और मुक्ति दोनों प्राप्त कर भवसागर के आवागमन से छूट जाता है।",
         pb: "ਜੋ ਇਸ ਆਰਤੀ ਨੂੰ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਕਰ ਜਨਮ-ਮਰਨ ਦੇ ਚੱਕਰ ਤੋਂ ਛੁੱਟ ਜਾਂਦਾ ਹੈ।",
         en: "Whoever sings this aarti with loving devotion receives the jewels of bhakti and mukti, escaping the round of worldly transmigration."
       }
@@ -330,7 +330,7 @@ export const PRABHAT_AARTI_2_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "साहेब कबीर और संतजनों की असीम कृपा से अंतःकरण में सत्य का परम प्रकाश जगमगा उठा है।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਅਤੇ ਸੰਤਾਂ ਦੀ ਕ੍ਰਿਪਾ ਨਾਲ ਹਿਰਦੇ ਵਿੱਚ ਸੱਚ ਦਾ ਪਰਮ ਪ੍ਰਕਾਸ਼ ਫੈਲ ਗਿਆ ਹੈ।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਤੇ ਸੰਤਾਂ ਦੀ ਕ੍ਰਿਪਾ ਨਾਲ ਹਿਰਦੇ ਵਿੱਚ ਸੱਚ ਦਾ ਪਰਮ ਪ੍ਰਕਾਸ਼ ਫੈਲ ਗਿਆ ਹੈ।",
         en: "By the boundless mercy of Saheb Kabir and holy saints, the supreme light of truth has dawned within."
       }
     },
@@ -355,9 +355,9 @@ export const PRABHAT_AARTI_2_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "जो भी मानव कबीर साहेब की इस पावन आरती का गान करता है, वह भक्ति और मुक्ति प्राप्त कर भवसागर से मुक्त हो जाता है। ।।साहेब बंदगी साहेब।।",
-        pb: "ਜੋ ਮਨੁੱਖ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਆਰਤੀ ਨੂੰ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪਾ ਕੇ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਉਤਰ ਜਾਂਦਾ ਹੈ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!",
-        en: "Whoever sings this sacred aarti of Kabir Saheb attains supreme devotion and liberation, never returning to worldly suffering. Saheb Bandagi Saheb!"
+        hi: "जो भी मानव सतगुरु कबीर साहेब की इस पावन आरती का गान करता है, वह भक्ति और मुक्ति प्राप्त कर भवसागर से मुक्त हो जाता है। ।।साहेब बंदगी साहेब।।",
+        pb: "ਜੋ ਮਨੁੱਖ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਆਰਤੀ ਨੂੰ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪਾ ਕੇ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਉਤਰ ਜਾਂਦਾ ਹੈ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!",
+        en: "Whoever sings this sacred aarti of Satguru Kabir Saheb attains supreme devotion and liberation, never returning to worldly suffering. Saheb Bandagi Saheb!"
       }
     }
   ]
@@ -430,7 +430,7 @@ export const PRABHAT_AARTI_3_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कुंद पुष्प और चंद्रमा के समान उज्ज्वल, संतों का हित करने वाले, शांत स्वरूप और श्वेत वस्त्र धारण करने वाले सद्गुरु की जय हो।",
+        hi: "कुंद पुष्प और चंद्रमा के समान उज्ज्वल, संतों का हित करने वाले, शांत स्वरूप और श्वेत वस्त्र धारण करने वाले सतगुरु की जय हो।",
         pb: "ਕੁੰਦ ਦੇ ਫੁੱਲ ਅਤੇ ਚੰਦਰਮਾ ਵਾਂਗ ਨਿਰਮਲ, ਸ਼ਾਂਤ ਸਰੂਪ ਅਤੇ ਚਿੱਟੇ ਬਸਤਰ ਧਾਰਨ ਕਰਨ ਵਾਲੇ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਜੈ ਹੋਵੇ।",
         en: "Pure as white jasmine and the radiant moon, benefactor of holy souls, serene in presence and robed in white, all glory to Gurudev."
       }
@@ -522,7 +522,7 @@ export const PRABHAT_AARTI_3_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "जो भी मानव कबीर साहेब की इस आरती का श्रद्धा से गान करता है, वह भक्ति और मुक्ति प्राप्त कर पुनः संसार के आवागमन में नहीं पड़ता।",
+        hi: "जो भी मानव सतगुरु कबीर साहेब की इस आरती का श्रद्धा से गान करता है, वह भक्ति और मुक्ति प्राप्त कर पुनः संसार के आवागमन में नहीं पड़ता।",
         pb: "ਜੋ ਮਨੁੱਖ ਇਸ ਆਰਤੀ ਨੂੰ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਅਤੇ ਮੁਕਤੀ ਪਾ ਕੇ ਜਨਮ-ਮਰਨ ਦੇ ਚੱਕਰ ਤੋਂ ਪਾਰ ਹੋ ਜਾਂਦਾ ਹੈ।",
         en: "Whosoever sings this aarti of Satya Kabir attains true devotion and ultimate freedom, never returning to the whirlpool of birth and death."
       }
@@ -548,7 +548,7 @@ export const PRABHAT_AARTI_3_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "पारख रूप दयालु सद्गुरु के चरणों में बारम्बार नमन। ।।साहेब बंदगी साहेब।।",
+        hi: "पारख रूप दयालु सतगुरु के चरणों में बारम्बार नमन। ।।साहेब बंदगी साहेब।।",
         pb: "ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਪ੍ਰਣਾਮ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!",
         en: "Prostrations at the feet of the discerning Master. Saheb Bandagi Saheb!"
       }
@@ -715,8 +715,8 @@ export const PRABHAT_AARTI_4_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब की इस पावन आरती का जो प्राणी गान करता है, वह भक्ति और मुक्ति प्राप्त कर भवसागर के चक्कर से मुक्त हो जाता है।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਆਰਤੀ ਗਾਉਣ ਵਾਲਾ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪਾ ਕੇ ਜਨਮ-ਮਰਨ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।",
+        hi: "सतगुरु कबीर साहेब की इस पावन आरती का जो प्राणी गान करता है, वह भक्ति और मुक्ति प्राप्त कर भवसागर के चक्कर से मुक्त हो जाता है।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਆਰਤੀ ਗਾਉਣ ਵਾਲਾ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪਾ ਕੇ ਜਨਮ-ਮਰਨ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।",
         en: "Whosoever recites the aarti of Satya Kabir attains true devotion and salvation, transcending worldly birth and death."
       }
     },

@@ -353,7 +353,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
         correctIndex: 0,
         explanation: {
           hi: 'सतगुरु कबीर साहेब स्पष्ट करते हैं कि मीठी, शीतल वाणी और निरहंकार भाव ही मनुष्य के अंतःकरण को शांति और प्रीतम की अनुभूति के योग्य बनाते हैं।',
-          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਿੱਠੀ, ਸ਼ੀਤਲ ਬੋਲੀ ਅਤੇ ਨਿਮਰਤਾ ਹੀ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਪ੍ਰਭੂ-ਮਿਲਾਪ ਦੇ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ।',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਿੱਠੀ, ਸ਼ੀਤਲ ਬੋਲੀ ਅਤੇ ਨਿਮਰਤਾ ਹੀ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਪ੍ਰਭੂ-ਮਿਲਾਪ ਦੇ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ।',
           en: 'Satguru Kabir Saheb teaches that cooling speech paired with freedom from ego prepares the heart for inner peace.'
         }
       },
@@ -565,8 +565,8 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Khoji hua shabd ka, dhanya sant jan soy. Kahein Kabir gahi shabd ko, kabahu na jay bigoy.',
     bhavarth: {
-      hi: 'जो साधक परम सत्य (सार-शब्द) का सच्चा अन्वेषक बनकर उसे अंतःकरण में धारण करता है, वह संत जन धन्य है। सतगुरु कबीर साहेब कहते हैं कि जो सत्य-शब्द को मजबूती से पकड़ लेता है, उसका अमूल्य जीवन कभी व्यर्थ नष्ट नहीं होता और वह भ्रम में नहीं भटकता।',
-      pb: 'ਜਿਹੜਾ ਸਾਧਕ ਪਰਮ ਸਤਿ (ਸਾਰ-ਸ਼ਬਦ) ਦਾ ਸੱਚਾ ਖੋਜੀ ਬਣ ਕੇ ਉਸ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹ ਸੰਤ ਧੰਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਤਯ-ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਅਮੋਲਕ ਜੀਵਨ ਕਦੇ ਭਟਕ ਕੇ ਵਿਅਰਥ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ।',
+      hi: 'जो साधक परम सत्य (सार-शब्द) का सच्चा अन्वेषक बनकर उसे अंतःकरण में धारण करता है, वह संत जन धन्य है। सतगुरु कबीर साहेब फरमाते हैं कि जो सत्य-शब्द को मजबूती से पकड़ लेता है, उसका अमूल्य जीवन कभी व्यर्थ नष्ट नहीं होता और वह भ्रम में नहीं भटकता।',
+      pb: 'ਜਿਹੜਾ ਸਾਧਕ ਪਰਮ ਸਤਿ (ਸਾਰ-ਸ਼ਬਦ) ਦਾ ਸੱਚਾ ਖੋਜੀ ਬਣ ਕੇ ਉਸ ਨੂੰ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਉਂਦਾ ਹੈ, ਉਹ ਸੰਤ ਧੰਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਤਯ-ਸ਼ਬਦ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਅਮੋਲਕ ਜੀਵਨ ਕਦੇ ਭਟਕ ਕੇ ਵਿਅਰਥ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ।',
       en: 'Blessed is that saintly seeker who investigates the Ultimate Truth (Saar-Shabd) and anchors it within. Satguru Kabir Saheb affirms that whoever firmly holds onto the living Word never goes astray nor is their precious human life wasted.'
     },
     wordMeanings: {
@@ -776,7 +776,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Soi shabd nij sar hai, jo guru diya batay. Balihari va gurun ki, sish biyog na jay.',
     bhavarth: {
-      hi: 'संसार में बहुत से शब्द हैं, परंतु जो सार शब्द हमें सद्गुरु के द्वारा प्राप्त होता है, वही सत्य है। उस गुरु की बलिहारी है, जिसकी दी हुई शिक्षा कभी व्यर्थ नहीं जाती।',
+      hi: 'संसार में बहुत से शब्द हैं, परंतु जो सार शब्द हमें सतगुरु के द्वारा प्राप्त होता है, वही सत्य है। उस गुरु की बलिहारी है, जिसकी दी हुई शिक्षा कभी व्यर्थ नहीं जाती।',
       pb: devanagariToGurmukhi('ਵਹੀ ਸ਼ਬਦ ਸਾਰ ਹੈ ਜੋ ਸਤਿਗੁਰੂ ਨੇ ਦੱਸਿਆ ਹੈ। ਉਸ ਗੁਰੂ ਤੋਂ ਬਲਿਹਾਰ ਹਾਂ ਜਿਸ ਦੀ ਸਿੱਖਿਆ ਕਦੇ ਵਿਅਰਥ ਨਹੀਂ ਜਾਂਦੀ।'),
       en: 'That alone is the true essence which the Satguru has revealed. Blessed is the Master whose sacred teachings never leave the soul.'
     },
@@ -822,11 +822,11 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
       en: 'Shabd Ko Ang - 13',
     },
     text: {
-      hi: 'सीखे सुनै विचार ले, ताहि शब्द सुख देय।\nबिना समझै शब्द गहै, कछु न लोहा लेय।।',
-      pb: devanagariToGurmukhi('सीखे सुनै विचार ले, ताहि शब्द सुख देय। बिना समझै शब्द गहै, कछु न लोहा लेय।।'),
-      en: 'Sikhe sunai vichar le, tahi shabd sukh dey. Bina samajhai shabd gahai, kachhu na loha ley..'
+      hi: 'सीखे सुनै विचार ले, ताहि शब्द सुख देय।\nबिना समझै शब्द गहै, कछु न लाहा लेय॥',
+      pb: devanagariToGurmukhi('सीखे सुनै विचार ले, ताहि शब्द सुख देय। बिना समझै शब्द गहै, कछु न लाहा लेय॥'),
+      en: 'Sikhe sunai vichar le, tahi shabd sukh dey. Bina samajhai shabd gahai, kachhu na laha ley..'
     },
-    transliteration: 'Sikhe sunai vichar le, tahi shabd sukh dey. Bina samajhai shabd gahai, kachhu na loha ley.',
+    transliteration: 'Sikhe sunai vichar le, tahi shabd sukh dey. Bina samajhai shabd gahai, kachhu na laha ley.',
     bhavarth: {
       hi: 'जो व्यक्ति सत्य के शब्दों को सुनता, सीखता और विचार करता है, उसके लिए शब्द सुखदायी होता है, परंतु जो बिना समझे रटता है, उसे कोई लाभ नहीं मिलता।',
       pb: devanagariToGurmukhi('ਜਿਹੜਾ ਵਿਅਕਤੀ ਸ਼ਬਦ ਨੂੰ ਸੁਣ ਕੇ ਵਿਚਾਰਦਾ ਹੈ, ਉਸ ਨੂੰ ਸੁਖ ਮਿਲਦਾ ਹੈ। ਬਿਨਾਂ ਸਮਝੇ ਰਟਣ ਨਾਲ ਕੋਈ ਲਾਭ ਨਹੀਂ ਹੁੰਦਾ।'),
@@ -876,13 +876,13 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     text: {
       hi: 'काल फिरै सिर ऊपरै, जीवहि नजरि न आय।\nकहैं कबीर गुरु शब्द गहि, जम से जीव बचाय।।',
       pb: devanagariToGurmukhi('काल फिरै सिर ऊपरै, जीवहि नजरि न आय। कहैं कबीर गुरु शब्द गहि, जम से जीव बचाय।।'),
-      en: 'Kal phirai sir uperai, jivi najari na ay. Kahein Kabir guru shabd gahi, jam se jiv bachay..'
+      en: 'Kal phirai sir ooparai, jeevahi najari na aay. Kahein Kabir guru shabd gahi, jam se jeev bachaay.'
     },
-    transliteration: 'Kal phirai sir uperai, jivi najari na ay. Kahein Kabir guru shabd gahi, jam se jiv bachay.',
+    transliteration: 'Kal phirai sir ooparai, jeevahi najari na aay. Kahein Kabir guru shabd gahi, jam se jeev bachaay.',
     bhavarth: {
-      hi: 'काल (मृत्यु) सिर के ऊपर मंडराता रहता है, परंतु अज्ञानी जीवों को दिखाई नहीं पड़ता। कबीरजी कहते हैं कि गुरु के शब्द-ज्ञान को पकड़कर जीव मृत्यु के भय और चक्र से बच जाता है।',
-      pb: devanagariToGurmukhi('ਮੌਤ ਸਿਰ ਉੱਤੇ ਫਿਰ ਰਹੀ ਹੈ ਪਰ ਜੀਵ ਨੂੰ ਦਿਖਾਈ ਨਹੀਂ ਦਿੰਦੀ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਦਾ ਸ਼ਬਦ ਫੜ ਕੇ ਜੀਵ ਕਾਲ ਤੋਂ ਬਚ ਜਾਂਦਾ ਹੈ।'),
-      en: 'Death hovers constantly overhead, yet ignorant souls do not see it. Kabir says: Clinging to the Guru’s Word saves the soul from the clutches of time and death.'
+      hi: 'काल (मृत्यु) सिर के ऊपर मंडराता रहता है, परंतु अज्ञानी जीवों को दिखाई नहीं पड़ता। सतगुरु कबीर साहेब फरमाते हैं कि गुरु के शब्द-ज्ञान को पकड़कर जीव मृत्यु के भय और चक्र से बच जाता है।',
+      pb: devanagariToGurmukhi('ਮੌਤ ਸਿਰ ਉੱਤੇ ਫਿਰ ਰਹੀ ਹੈ ਪਰ ਜੀਵ ਨੂੰ ਦਿਖਾਈ ਨਹੀਂ ਦਿੰਦੀ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਦਾ ਸ਼ਬਦ ਫੜ ਕੇ ਜੀਵ ਕਾਲ ਤੋਂ ਬਚ ਜਾਂਦਾ ਹੈ।'),
+      en: 'Death hovers constantly overhead, yet ignorant souls do not see it. Satguru Kabir Saheb proclaims: Clinging to the Guru’s Word saves the soul from the clutches of time and death.'
     },
     wordMeanings: {
       hi: [
@@ -1192,7 +1192,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Shabd pay surati rakhahi, so pahunchai darbar. Kahein Kabir tahan dekhiye, baitha purush hamar.',
     bhavarth: {
-      hi: 'सतगुरु से सच्चे शब्द को पाकर, जिसने अपनी चित्त-वृत्तियों को शांत कर लिया व सुरति को शब्द में रमा लिया, वही अंतर्मुखी होकर परमात्मा के दरबार में पहुंचता है। कबीरजी कहते हैं कि वहां पर हम सबके स्वामी सत्पुरुष के दर्शन होते हैं।',
+      hi: 'सतगुरु से सच्चे शब्द को पाकर, जिसने अपनी चित्त-वृत्तियों को शांत कर लिया व सुरति को शब्द में रमा लिया, वही अंतर्मुखी होकर परमात्मा के दरबार में पहुंचता है। सतगुरु कबीर साहेब फरमाते हैं कि वहां पर हम सबके स्वामी सत्पुरुष के दर्शन होते हैं।',
       pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਤੋਂ ਸੱਚਾ ਸ਼ਬਦ ਪਾ ਕੇ ਜਿਸ ਨੇ ਸੁਰਤ ਟਿਕਾ ਲਈ, ਉਹ ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਤੱਕ ਪਹੁੰਚ ਜਾਂਦਾ ਹੈ। ਉੱਥੇ ਸਤਿਪੁਰਸ਼ ਦੇ ਦਰਸ਼ਨ ਹੁੰਦੇ ਹਨ।'),
       en: 'Having received the true Word from the Master and anchoring consciousness therein, the seeker reaches the divine court and beholds the Supreme Lord.'
     },
@@ -1296,7 +1296,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Sant santoshi sarvada, sabdhin bhed vichar. Satguru ke partap te, sahaj seel matsar.',
     bhavarth: {
-      hi: 'सत्य के सार-शब्दों का अर्थ-रहस्य विचारकर, साधु-संत सदैव संतोषी भाव में रहते हैं। सद्गुरु की कृपा और आशीर्वाद से वे स्वाभाविक रूप से शील-मत को धारण किए रहते हैं।',
+      hi: 'सत्य के सार-शब्दों का अर्थ-रहस्य विचारकर, साधु-संत सदैव संतोषी भाव में रहते हैं। सतगुरु की कृपा और आशीर्वाद से वे स्वाभाविक रूप से शील-मत को धारण किए रहते हैं।',
       pb: devanagariToGurmukhi('ਸੰਤ ਹਮੇਸ਼ਾ ਸੰਤੋਖੀ ਰਹਿੰਦੇ ਹਨ ਕਿਉਂਕਿ ਉਹ ਸ਼ਬਦ ਦਾ ਭੇਦ ਜਾਣਦੇ ਹਨ। ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਉਨ੍ਹਾਂ ਦਾ ਸੁਭਾਅ ਸ਼ੀਲ ਹੁੰਦਾ ਹੈ।'),
       en: 'Contemplating the mystery of the Word, saints remain ever content. By the grace of the Satguru, they naturally embody virtuous character.'
     },
@@ -1452,7 +1452,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Harijan soi janiye, jivha kahain n mar. Aath pahar chitwan rahai, guru ka gyan vichar.',
     bhavarth: {
-      hi: 'परमात्मा-प्रेमी संतजन उसी को जानो जो अपनी जीभ से कभी किसी को मारने या कष्ट देने की बात नहीं कहता। वह तो आठों पहर सद्गुरु के ज्ञान-विचारों में ही ध्यान लगाए रहता है।',
+      hi: 'परमात्मा-प्रेमी संतजन उसी को जानो जो अपनी जीभ से कभी किसी को मारने या कष्ट देने की बात नहीं कहता। वह तो आठों पहर सतगुरु के ज्ञान-विचारों में ही ध्यान लगाए रहता है।',
       pb: devanagariToGurmukhi('ਅਸਲ ਹਰੀਜਨ ਉਹ ਹੈ ਜੋ ਕਦੇ ਕਿਸੇ ਨੂੰ ਮਾਰਨ ਜਾਂ ਦੁੱਖ ਦੇਣ ਦੀ ਗੱਲ ਨਹੀਂ ਕਰਦਾ। ਉਹ ਅੱਠੇ ਪਹਿਰ ਗੁਰੂ ਦੇ ਗਿਆਨ ਵਿੱਚ ਮਗਨ ਰਹਿੰਦਾ ਹੈ।'),
       en: 'Know a true devotee of God as one who never utters cruel words of harm. Day and night, their consciousness remains absorbed in the Guru’s wisdom.'
     },
@@ -2076,7 +2076,7 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Shabd guru ka shabd hai, kaya ka guru kay. Bhakti karai nit shabd की, satguru yon samujhay.',
     bhavarth: {
-      hi: 'सत्य शब्द ही असली गुरु का रूप है, जबकि शरीर का गुरु भौतिक शरीर है। सद्गुरु समझाते हैं कि नित्य प्रति उस अविनाशी शब्द की ही भक्ति करो, जिससे उद्धार हो सके।',
+      hi: 'सत्य शब्द ही असली गुरु का रूप है, जबकि शरीर का गुरु भौतिक शरीर है। सतगुरु समझाते हैं कि नित्य प्रति उस अविनाशी शब्द की ही भक्ति करो, जिससे उद्धार हो सके।',
       pb: devanagariToGurmukhi('ਸੱਚਾ ਸ਼ਬਦ ਹੀ ਗੁਰੂ ਹੈ। ਸਤਿਗੁਰੂ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਨਿੱਤ ਦਿਨ ਉਸੇ ਅਵਿਨਾਸ਼ੀ ਸ਼ਬਦ ਦੀ ਭਗਤੀ ਕਰੋ।'),
       en: 'The Word alone is the true Guru, while the physical body has a bodily teacher. The Satguru instructs us to engage daily in devotion to the eternal Word.'
     },
@@ -2128,9 +2128,9 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Shabd updes ju main kahun, ju koy manai sant. Kahein Kabir vichar ke, tahi milavoun kant.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जिस परम सत्य के गंभीर शब्द-ज्ञान का उपदेश मैं देता हूं, यदि उसे कोई संत-भक्त स्वीकार कर आचरण करे, तो मैं उसे उसके प्रियतम परमात्मा (कंत) से मिला देता हूं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਹੜਾ ਸੰਤ ਮੇਰੇ ਇਸ ਸ਼ਬਦ ਉਪਦੇਸ਼ ਨੂੰ ਮੰਨ ਕੇ ਆਚਰਣ ਕਰੇ, ਮੈਂ ਉਸ ਨੂੰ ਪਰਮਾਤਮਾ (ਕੰਤ) ਨਾਲ ਮਿਲਾ ਦਿੰਦਾ ਹਾਂ।'),
-      en: 'Kabir declares: Whichever sincere seeker accepts and lives by this profound Word-instruction, I shall unite them with their Supreme Beloved Lord.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जिस परम सत्य के गंभीर शब्द-ज्ञान का उपदेश मैं देता हूं, यदि उसे कोई संत-भक्त स्वीकार कर आचरण करे, तो मैं उसे उसके प्रियतम परमात्मा (कंत) से मिला देता हूं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਹੜਾ ਸੰਤ ਮੇਰੇ ਇਸ ਸ਼ਬਦ ਉਪਦੇਸ਼ ਨੂੰ ਮੰਨ ਕੇ ਆਚਰਣ ਕਰੇ, ਮੈਂ ਉਸ ਨੂੰ ਪਰਮਾਤਮਾ (ਕੰਤ) ਨਾਲ ਮਿਲਾ ਦਿੰਦਾ ਹਾਂ।'),
+      en: 'Satguru Kabir Saheb proclaims: Whichever sincere seeker accepts and lives by this profound Word-instruction, I shall unite them with their Supreme Beloved Lord.'
     },
     wordMeanings: {
       hi: [
@@ -2180,9 +2180,9 @@ export const SAKHIS_SHABD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bolai bol vichar ke, baithe thour sambhari. Kahein Kabir ta das ko, kabahu n avai hari.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो वाणी का महत्त्व जानता है, समयानुसार सोच-विचारकर बोलता है और सूझ-बूझ से संभलकर आचरण करता है, ऐसा दास-भक्त कभी किसी से नहीं हार सकता।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਹੜਾ ਵਿਅਕਤੀ ਸੋਚ-ਸਮਝ ਕੇ ਬੋਲਦਾ ਹੈ ਅਤੇ ਮਰਿਆਦਾ ਵਿੱਚ ਰਹਿੰਦਾ ਹੈ, ਉਹ ਕਦੇ ਹਾਰਦਾ ਨਹੀਂ।'),
-      en: 'Kabir says: One who speaks with careful reflection and maintains wise decorum in all places never experiences defeat in life.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो वाणी का महत्त्व जानता है, समयानुसार सोच-विचारकर बोलता है और सूझ-बूझ से संभलकर आचरण करता है, ऐसा दास-भक्त कभी किसी से नहीं हार सकता।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਹੜਾ ਵਿਅਕਤੀ ਸੋਚ-ਸਮਝ ਕੇ ਬੋਲਦਾ ਹੈ ਅਤੇ ਮਰਿਆਦਾ ਵਿੱਚ ਰਹਿੰਦਾ ਹੈ, ਉਹ ਕਦੇ ਹਾਰਦਾ ਨਹੀਂ।'),
+      en: 'Satguru Kabir Saheb proclaims: One who speaks with careful reflection and maintains wise decorum in all places never experiences defeat in life.'
     },
     wordMeanings: {
       hi: [

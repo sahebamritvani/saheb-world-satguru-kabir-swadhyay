@@ -19,9 +19,9 @@ export const SAKHIS_MOH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Asht siddhi nav niddhi laun, sabhee moh ki khaan. Tyaag moh ki vaasana, kahain Kabeer sujaan.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि संसार में जितनी अष्ट सिद्धियां तथा नौ निधियां हैं, वे सभी इस मोह का भंडार हैं। यह मोह बहुत जटिल है। इसका पूर्णतः त्याग करो, अर्थात भीतर तक गई इसकी सूक्ष्म वासना को भी नष्ट कर दो।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਵਿੱਚ ਅੱਠ ਸਿੱਧੀਆਂ ਅਤੇ ਨੌਂ ਨਿਧੀਆਂ ਸਭ ਮੋਹ ਦੀ ਖਾਣ ਹਨ। ਇਹ ਮੋਹ ਬਹੁਤ ਗੁੰਝਲਦਾਰ ਹੈ। ਇਸ ਦੀ ਸੂਖਮ ਵਾਸਨਾ ਦਾ ਵੀ ਅੰਦਰੋਂ ਮੁਕੰਮਲ ਤਿਆਗ ਕਰ ਦੇਵੋ।'),
-      en: 'Kabir declares that all eight supernatural powers (Ashta Siddhis) and nine cosmic treasures (Nava Nidhis) are mines of deep delusion and attachment (Moh). Uproot even the subtle latent desire (Vasana) for them to attain supreme liberation.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि संसार में जितनी अष्ट सिद्धियां तथा नौ निधियां हैं, वे सभी इस मोह का भंडार हैं। यह मोह बहुत जटिल है। इसका पूर्णतः त्याग करो, अर्थात भीतर तक गई इसकी सूक्ष्म वासना को भी नष्ट कर दो।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਵਿੱਚ ਅੱਠ ਸਿੱਧੀਆਂ ਅਤੇ ਨੌਂ ਨਿਧੀਆਂ ਸਭ ਮੋਹ ਦੀ ਖਾਣ ਹਨ। ਇਹ ਮੋਹ ਬਹੁਤ ਗੁੰਝਲਦਾਰ ਹੈ। ਇਸ ਦੀ ਸੂਖਮ ਵਾਸਨਾ ਦਾ ਵੀ ਅੰਦਰੋਂ ਮੁਕੰਮਲ ਤਿਆਗ ਕਰ ਦੇਵੋ।'),
+      en: 'Satguru Kabir Saheb proclaims that all eight supernatural powers (Ashta Siddhis) and nine cosmic treasures (Nava Nidhis) are mines of deep delusion and attachment (Moh). Uproot even the subtle latent desire (Vasana) for them to attain supreme liberation.'
     },
     wordMeanings: {
       hi: [
@@ -182,7 +182,7 @@ export const SAKHIS_MOH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Moh phand sab phandiya, koy na sake nivaar. Koi saadhu jan paarkhi, birla tatva vichaar.',
     bhavarth: {
-      hi: 'सद्गुरु के सत्संग-ज्ञान के बिना इस संसार के लोग मोह के फंदे में फंसे हुए हैं। कोई इससे मुक्ति नहीं प्राप्त कर पाता। तत्त्वदर्शी-पारखी (विवेकी) कोई संत ही इससे मुक्ति प्राप्त कर सकता है।',
+      hi: 'सतगुरु के सत्संग-ज्ञान के बिना इस संसार के लोग मोह के फंदे में फंसे हुए हैं। कोई इससे मुक्ति नहीं प्राप्त कर पाता। तत्त्वदर्शी-पारखी (विवेकी) कोई संत ही इससे मुक्ति प्राप्त कर सकता है।',
       pb: devanagariToGurmukhi('ਸਾਰੇ ਲੋਕ ਮੋਹ ਦੀ ਫਾਹੀ ਵਿੱਚ ਫਸੇ ਹੋਏ ਹਨ ਅਤੇ ਕੋਈ ਇਸ ਤੋਂ ਛੁੱਟ ਨਹੀਂ ਸਕਦਾ। ਕੋਈ ਵਿਰਲਾ ਪਾਰਖੀ ਸੰਤ ਹੀ ਤੱਤ-ਗਿਆਨ ਦੇ ਵਿਚਾਰ ਨਾਲ ਇਸ ਤੋਂ ਮੁਕਤ ਹੁੰਦਾ ਹੈ।'),
       en: 'All beings are snared in the tight noose of Moh (attachment), and none can untie it by worldly means. Only a rare discerning Saint (Parakhi Sadhu), steeped in the contemplation of essential Truth, transcends its trap.'
     },
@@ -464,14 +464,14 @@ export const SAKHIS_MOH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Moh nadi vikraal hai, koi na utre paar. Satguru kevat saath le, hans hoy jam naar.',
     bhavarth: {
-      hi: 'मोह की यह नदी बहुत भयंकर है, इससे पार उतरना बहुत ही कठिन है। कोई भी इससे पार नहीं उतर पाता। केवल सद्गुरु रूपी केवट को साथ लेकर, कोई हंस रूपी सेवक भक्त ही इससे पार उतर पाता है, अर्थात सद्गुरु के ज्ञानोपदेश की नौका में बैठकर ही इससे पार उतरना संभव है।',
+      hi: 'मोह की यह नदी बहुत भयंकर है, इससे पार उतरना बहुत ही कठिन है। कोई भी इससे पार नहीं उतर पाता। केवल सतगुरु रूपी केवट को साथ लेकर, कोई हंस रूपी सेवक भक्त ही इससे पार उतर पाता है, अर्थात सतगुरु के ज्ञानोपदेश की नौका में बैठकर ही इससे पार उतरना संभव है।',
       pb: devanagariToGurmukhi('ਮੋਹ ਦੀ ਨਦੀ ਬੜੀ ਭਿਆਨਕ ਹੈ, ਇਸ ਤੋਂ ਕੋਈ ਪਾਰ ਨਹੀਂ ਲੰਘ ਸਕਦਾ। ਸਿਰਫ਼ ਸਤਿਗੁਰੂ ਰੂਪੀ ਮਲਾਹ ਦਾ ਸਾਥ ਲੈ ਕੇ ਹੀ ਹੰਸ ਰੂਪੀ ਗੁਰਮੁਖ ਜਮਦੂਤਾਂ ਦੇ ਜਾਲ ਤੋਂ ਬਚ ਕੇ ਪਾਰ ਲੰਘਦਾ ਹੈ।'),
       en: 'The river of Moh is terrifying and violent; none can cross it through worldly efforts. Only a pure swan-like soul (Hans), taking the Satguru as their divine boatman (Kevat), crosses safely beyond the clutches of death.'
     },
     wordMeanings: {
       hi: [
         { word: 'विकराल (Vikraal)', meaning: 'अत्यंत भयंकर, विकट और अगाध' },
-        { word: 'सतगुरु केवट (Satguru kevat)', meaning: 'सद्गुरु रूपी निपुण नाविक / मल्लाह' },
+        { word: 'सतगुरु केवट (Satguru kevat)', meaning: 'सतगुरु रूपी निपुण नाविक / मल्लाह' },
         { word: 'हंस (Hans)', meaning: 'नीर-क्षीर विवेकी, निष्पाप मुक्त आत्मा' },
         { word: 'जम नार (Jam naar)', meaning: 'यमराज की यातनाओं व मृत्यु-पाश से मुक्ति' }
       ],

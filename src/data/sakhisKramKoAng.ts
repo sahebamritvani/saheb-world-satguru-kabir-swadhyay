@@ -77,7 +77,7 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaala munh karoon karam ka, aadar laavoon aag. Lobh badaace chhaandi ke, raanchon guru ke raag.',
     bhavarth: {
-      hi: 'सांसारिक मोह के कर्म का मुहं काला करके आदर-मान को भी आग लगा देनी चाहिए। व्यर्थ की लोभ-बड़ाई को छोड़कर, सद्गुरु के ज्ञानोपदेश का ही राग प्रेम से अलापना चाहिए। इसी से जीवन का कल्याण होगा।',
+      hi: 'सांसारिक मोह के कर्म का मुहं काला करके आदर-मान को भी आग लगा देनी चाहिए। व्यर्थ की लोभ-बड़ाई को छोड़कर, सतगुरु के ज्ञानोपदेश का ही राग प्रेम से अलापना चाहिए। इसी से जीवन का कल्याण होगा।',
       pb: 'ਸੰਸਾਰਿਕ ਮੋਹ ਦੇ ਕਰਮ ਦਾ ਮੂੰਹ ਕਾਲਾ ਕਰਕੇ ਆਦਰ-ਮਾਣ ਨੂੰ ਵੀ ਅੱਗ ਲਗਾ ਦੇਣੀ ਚਾਹੀਦੀ ਹੈ। ਫ਼ਜ਼ੂਲ ਦੇ ਲੋਭ ਤੇ ਵਡਿਆਈ ਨੂੰ ਛੱਡ ਕੇ ਸਤਿਗੁਰੂ ਦੇ ਉਪਦੇਸ਼ ਦੇ ਪ੍ਰੇਮ ਵਿੱਚ ਲੀਨ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।',
       en: 'Blacken the face of worldly desire and set fire to false pride and social prestige. Cast away greed and self-glorification, and tune your heart entirely to the holy teachings of the Guru.',
     },
@@ -109,7 +109,7 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
       en: 'Abandon the thirst for flattery and hollow fame; live a simple, humble life focused on self-realization.'
     },
     samarpanPrayer: {
-      hi: 'हे परम दयालु सद्गुरु देव! मुझे लोक-प्रतिष्ठा के जाल से बचाकर अपनी निर्मल भक्ति के रंग में रंग दीजिए। साहेब बंदगी साहेब!',
+      hi: 'हे परम दयालु सतगुरु देव! मुझे लोक-प्रतिष्ठा के जाल से बचाकर अपनी निर्मल भक्ति के रंग में रंग दीजिए। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਆਪਣੇ ਨਾਮ ਦੇ ਰੰਗ ਵਿੱਚ ਰੰਗੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Merciful Master! Deliver me from the snare of worldly status and dye my soul in Your pure devotion. Saheb Bandgi Saheb!'
     },
@@ -132,8 +132,8 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir sajade hee jada, jhootha moh apaar. Anek luhaare pachi muye, ujhadat naheen lagaar.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह अज्ञानी जीव मिथ्या विषय पदार्थों के मोह-रूपी लोह-बंधन में ऐसा जकड़ा हुआ है कि अनेक उपदेशक रूपी लोहार उपदेश देकर थक गए, परंतु माया-मोह की लोह-फांसी से मुक्ति नहीं मिली।',
-      pb: 'ਕਬੀਰ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਅਗਿਆਨੀ ਜੀਵ ਸੰਸਾਰਿਕ ਮੋਹ ਦੇ ਲੋਹੇ ਵਰਗੇ ਬੰਧਨਾਂ ਵਿੱਚ ਅਜਿਹਾ ਜਕੜਿਆ ਹੋਇਆ ਹੈ ਕਿ ਕਿੰਨੇ ਹੀ ਉਪਦੇਸ਼ਕ ਰੂਪੀ ਲੁਹਾਰ ਉਪਦੇਸ਼ ਦੇ-ਦੇ ਕੇ ਥੱਕ ਗਏ, ਪਰ ਇਹ ਬੰਧਨ ਨਹੀਂ ਟੁੱਟਿਆ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह अज्ञानी जीव मिथ्या विषय पदार्थों के मोह-रूपी लोह-बंधन में ऐसा जकड़ा हुआ है कि अनेक उपदेशक रूपी लोहार उपदेश देकर थक गए, परंतु माया-मोह की लोह-फांसी से मुक्ति नहीं मिली।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਅਗਿਆਨੀ ਜੀਵ ਸੰਸਾਰਿਕ ਮੋਹ ਦੇ ਲੋਹੇ ਵਰਗੇ ਬੰਧਨਾਂ ਵਿੱਚ ਅਜਿਹਾ ਜਕੜਿਆ ਹੋਇਆ ਹੈ ਕਿ ਕਿੰਨੇ ਹੀ ਉਪਦੇਸ਼ਕ ਰੂਪੀ ਲੁਹਾਰ ਉਪਦੇਸ਼ ਦੇ-ਦੇ ਕੇ ਥੱਕ ਗਏ, ਪਰ ਇਹ ਬੰਧਨ ਨਹੀਂ ਟੁੱਟਿਆ।',
       en: 'The ignorant soul is so heavily bound by the iron fetters of false attachment that many spiritual teachers (acting like blacksmiths) exhausted themselves giving advice, yet the stubborn cage of illusion remains unbroken.',
     },
     wordMeanings: {
@@ -358,9 +358,9 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir kamaace aapanee, kabahu na nishphal jaay. Saat samudr aada padai, milai agaadee aay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अपने किए हुए कर्मों की कमाई कभी भी व्यर्थ नहीं जाती। चाहे उसके सम्मुख सात समुद्र भी पड़ जाएं, फिर भी वह सम्मुख आकर मिलती है, इसलिए जीव को प्रयास करके सतगुरु के बताये नाम ज्ञान अनुसार आचरण करना चाहिए।',
-      pb: 'ਕਬੀਰ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਪਣੇ ਕੀਤੇ ਕਰਮਾਂ ਦਾ ਫਲ ਕਦੇ ਵਿਅਰਥ ਨਹੀਂ ਜਾਂਦਾ। ਚਾਹੇ ਵਿਚਕਾਰ ਸੱਤ ਸਮੁੰਦਰ ਵੀ ਆ ਜਾਣ, ਫਿਰ ਵੀ ਕਰਮਾਂ ਦਾ ਫਲ ਸਾਹਮਣੇ ਆ ਕੇ ਹੀ ਮਿਲਦਾ ਹੈ।',
-      en: 'Kabir declares that the harvest of one’s own actions (karma) can never be lost. Even if seven oceans lie in the way as barriers, it will travel to find you. Therefore, let the seeker strive to perform noble deeds in the light of truth.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अपने किए हुए कर्मों की कमाई कभी भी व्यर्थ नहीं जाती। चाहे उसके सम्मुख सात समुद्र भी पड़ जाएं, फिर भी वह सम्मुख आकर मिलती है, इसलिए जीव को प्रयास करके सतगुरु के बताये नाम ज्ञान अनुसार आचरण करना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਪਣੇ ਕੀਤੇ ਕਰਮਾਂ ਦਾ ਫਲ ਕਦੇ ਵਿਅਰਥ ਨਹੀਂ ਜਾਂਦਾ। ਚਾਹੇ ਵਿਚਕਾਰ ਸੱਤ ਸਮੁੰਦਰ ਵੀ ਆ ਜਾਣ, ਫਿਰ ਵੀ ਕਰਮਾਂ ਦਾ ਫਲ ਸਾਹਮਣੇ ਆ ਕੇ ਹੀ ਮਿਲਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims that the harvest of one’s own actions (karma) can never be lost. Even if seven oceans lie in the way as barriers, it will travel to find you. Therefore, let the seeker strive to perform noble deeds in the light of truth.',
     },
     wordMeanings: {
       hi: [
@@ -413,9 +413,9 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Paraarabdh pahile bana, peechhe bana sareer. Kabir achambha hai yahee, man nahin baandhe dheer.',
     bhavarth: {
-      hi: 'जिसे प्राणी को निश्चित रूप से भोगना ही पड़ता है, उस प्रारब्ध की रचना उसके अपने शरीर-निर्माण से पहले ही हुई है। कबीरजी कहते हैं कि यही आश्चर्य है कि यह सब जानकर भी मन का धैर्य नहीं बंधता, अर्थात वह कर्म फल से आशंकित रहता है।',
-      pb: 'ਪ੍ਰਾਰਬਧ (ਕਿਸਮਤ) ਪਹਿਲਾਂ ਬਣੀ ਹੈ ਅਤੇ ਸਰੀਰ ਬਾਅਦ ਵਿੱਚ ਬਣਿਆ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹੀ ਹੈਰਾਨੀ ਦੀ ਗੱਲ ਹੈ ਕਿ ਸਭ ਜਾਣਦੇ ਹੋਏ ਵੀ ਮਨ ਧੀਰਜ ਨਹੀਂ ਰੱਖਦਾ।',
-      en: 'Destiny (the blueprint of past actions) is created before the physical body is ever formed. Kabir says: The great wonder is that even knowing this, the anxious mind refuses to hold onto patience.',
+      hi: 'जिसे प्राणी को निश्चित रूप से भोगना ही पड़ता है, उस प्रारब्ध की रचना उसके अपने शरीर-निर्माण से पहले ही हुई है। सतगुरु कबीर साहेब फरमाते हैं कि यही आश्चर्य है कि यह सब जानकर भी मन का धैर्य नहीं बंधता, अर्थात वह कर्म फल से आशंकित रहता है।',
+      pb: 'ਪ੍ਰਾਰਬਧ (ਕਿਸਮਤ) ਪਹਿਲਾਂ ਬਣੀ ਹੈ ਅਤੇ ਸਰੀਰ ਬਾਅਦ ਵਿੱਚ ਬਣਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹੀ ਹੈਰਾਨੀ ਦੀ ਗੱਲ ਹੈ ਕਿ ਸਭ ਜਾਣਦੇ ਹੋਏ ਵੀ ਮਨ ਧੀਰਜ ਨਹੀਂ ਰੱਖਦਾ।',
+      en: 'Destiny (the blueprint of past actions) is created before the physical body is ever formed. Satguru Kabir Saheb proclaims: The great wonder is that even knowing this, the anxious mind refuses to hold onto patience.',
     },
     wordMeanings: {
       hi: [
@@ -500,7 +500,7 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
       en: 'Subdue greed and insatiable desires; embrace contentment and recognize the grace hidden in all circumstances.'
     },
     samarpanPrayer: {
-      hi: 'हे समर्थ सद्गुरुदेव! मुझे संतोष रूपी धन प्रदान करें ताकि मेरा मन सदा संशय रहित रहे। साहेब बंदगी साहेब!',
+      hi: 'हे समर्थ सतगुरुदेव! मुझे संतोष रूपी धन प्रदान करें ताकि मेरा मन सदा संशय रहित रहे। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੰਤੋਖ ਦੀ ਦਾਤ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Almighty Master! Bestow upon me the treasure of contentment, freeing my heart from doubt. Saheb Bandgi Saheb!'
     },
@@ -523,7 +523,7 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Likha mitai naheen karam ka, guru kar bhaj harinaam. Seedhe maarag nit chalai, daya dharam visaraam.',
     bhavarth: {
-      hi: 'कर्मानुसार जैसा अपना भाग्य बना है, वह मिट नहीं सकता, अतः इससे निश्चित रहना चाहिए। सदगुरु की शरण में जाकर, परमात्मा के नाम-ज्ञान का ध्यान-भजन कर, नित्य ही दया-धर्म के सन्मार्ग पर चलना चाहिए, इसी से जीवन में विश्राम प्राप्त होगा, अर्थात जीवन का कल्याण होगा।',
+      hi: 'कर्मानुसार जैसा अपना भाग्य बना है, वह मिट नहीं सकता, अतः इससे निश्चित रहना चाहिए। सतगुरु की शरण में जाकर, परमात्मा के नाम-ज्ञान का ध्यान-भजन कर, नित्य ही दया-धर्म के सन्मार्ग पर चलना चाहिए, इसी से जीवन में विश्राम प्राप्त होगा, अर्थात जीवन का कल्याण होगा।',
       pb: 'ਕਰਮਾਂ ਦਾ ਲਿਖਿਆ ਲੇਖ ਮਿਟ ਨਹੀਂ ਸਕਦਾ, ਇਸ ਲਈ ਚਿੰਤਾ ਛੱਡ ਕੇ ਗੁਰੂ ਧਾਰਨ ਕਰਕੇ ਨਾਮ ਜਪੋ। ਦਇਆ ਤੇ ਧਰਮ ਦੇ ਸਿੱਧੇ ਰਸਤੇ ਚੱਲੋ, ਇਸ ਨਾਲ ਹੀ ਆਤਮਿਕ ਸੁੱਖ ਮਿਲੇਗਾ।',
       en: 'The decree of karma cannot be erased; therefore, surrender to the Satguru and meditate upon the Holy Name. Walk steadfastly on the path of compassion and righteousness; therein lies the soul’s ultimate rest.',
     },
@@ -581,8 +581,8 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir chandan par jala, teetar baitha maanhi. Ham to daajhat pankh bin, tum daajat ho kaahi.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि चंदन के वृक्ष में आग लग गई। उस पर एक तीतर आकर बैठ गया, तब वृक्ष ने कहा कि हम तो इसलिए जलते हैं कि हमारे पास पंख नहीं हैं, परंतु तुम्हारे पास तो पंख हैं। तुम तो उड़ सकते हो, फिर भला यहां बैठे हुए क्यों जलते हो? अर्थात जीव माया मोह के वशीभूत होकर मुक्तिमार्ग से अनभिज्ञ होकर भवसागर के जंजाल में फंसा हुआ है।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਚੰਦਨ ਦੇ ਰੁੱਖ ਨੂੰ ਅੱਗ ਲੱਗ ਗਈ, ਉਸ \'ਤੇ ਇੱਕ ਤੀਤਰ ਬੈਠਾ ਸੀ। ਰੁੱਖ ਨੇ ਕਿਹਾ: ਮੈਂ ਤਾਂ ਬਿਨਾਂ ਖੰਭਾਂ ਦੇ ਹੋਣ ਕਰਕੇ ਸੜ ਰਿਹਾ ਹਾਂ, ਪਰ ਤੇਰੇ ਕੋਲ ਤਾਂ ਖੰਭ ਹਨ, ਤੂੰ ਕਿਉਂ ਇੱਥੇ ਬੈਠ ਕੇ ਸੜ ਰਿਹਾ ਹੈਂ? ਭਾਵ, ਜੀਵ ਕੋਲ ਵਿਵੇਕ ਹੁੰਦੇ ਹੋਏ ਵੀ ਮੋਹ ਵਿੱਚ ਫਸ ਕੇ ਸੜ ਰਿਹਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि चंदन के वृक्ष में आग लग गई। उस पर एक तीतर आकर बैठ गया, तब वृक्ष ने कहा कि हम तो इसलिए जलते हैं कि हमारे पास पंख नहीं हैं, परंतु तुम्हारे पास तो पंख हैं। तुम तो उड़ सकते हो, फिर भला यहां बैठे हुए क्यों जलते हो? अर्थात जीव माया मोह के वशीभूत होकर मुक्तिमार्ग से अनभिज्ञ होकर भवसागर के जंजाल में फंसा हुआ है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਚੰਦਨ ਦੇ ਰੁੱਖ ਨੂੰ ਅੱਗ ਲੱਗ ਗਈ, ਉਸ \'ਤੇ ਇੱਕ ਤੀਤਰ ਬੈਠਾ ਸੀ। ਰੁੱਖ ਨੇ ਕਿਹਾ: ਮੈਂ ਤਾਂ ਬਿਨਾਂ ਖੰਭਾਂ ਦੇ ਹੋਣ ਕਰਕੇ ਸੜ ਰਿਹਾ ਹਾਂ, ਪਰ ਤੇਰੇ ਕੋਲ ਤਾਂ ਖੰਭ ਹਨ, ਤੂੰ ਕਿਉਂ ਇੱਥੇ ਬੈਠ ਕੇ ਸੜ ਰਿਹਾ ਹੈਂ? ਭਾਵ, ਜੀਵ ਕੋਲ ਵਿਵੇਕ ਹੁੰਦੇ ਹੋਏ ਵੀ ਮੋਹ ਵਿੱਚ ਫਸ ਕੇ ਸੜ ਰਿਹਾ ਹੈ।',
       en: 'The sandalwood tree caught fire, and a partridge sat amidst the flames. The tree spoke: "I burn because I have no wings to fly; but you have wings and can soar away, so why do you sit here and burn?" Similarly, the human soul, blessed with discrimination, foolishly chooses to burn in the fire of worldly attachment.',
     },
     wordMeanings: {
@@ -637,7 +637,7 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Chahai akaas pataal ja, phodi jaahu brahmand. Kahain kabir mitihai naheen, deh dhare ka dand.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि चाहे आकाश-पाताल में चले जाओ, ब्रह्मांड फोड़कर ही क्यों न निकल जाओ, शरीर धारण करने का दंड तो अवश्य ही भोगना पड़ेगा। चाहे कोई उपाय करो, परंतु यह बिना भोगे मिट नहीं सकता।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि चाहे आकाश-पाताल में चले जाओ, ब्रह्मांड फोड़कर ही क्यों न निकल जाओ, शरीर धारण करने का दंड तो अवश्य ही भोगना पड़ेगा। चाहे कोई उपाय करो, परंतु यह बिना भोगे मिट नहीं सकता।',
       pb: 'ਚਾਹੇ ਆਕਾਸ਼ ਚਲੇ ਜਾਓ, ਚਾਹੇ ਪਾਤਾਲ, ਚਾਹੇ ਬ੍ਰਹਿਮੰਡ ਪਾੜ ਕੇ ਬਾਹਰ ਨਿਕਲ ਜਾਓ; ਸਰੀਰ ਧਾਰਨ ਕਰਨ ਦਾ ਲੇਖਾ (ਕਰਮ ਫਲ) ਤਾਂ ਭੁਗਤਣਾ ਹੀ ਪਵੇਗਾ। ਇਹ ਬਿਨਾਂ ਭੋਗੇ ਮਿਟ ਨਹੀਂ ਸਕਦਾ।',
       en: 'Even if you travel to the heavens or the netherworld, or break through the cosmic egg itself, the penalty of occupying a physical body must be paid. No physical escape is possible from the laws of karma.',
     },
@@ -838,7 +838,7 @@ export const SAKHIS_KRAM_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरुदेव! मेरे भीतर पुरुषार्थ और अथक सेवा-साधना का अखंड उत्साह जगाए रखें। साहेब बंदगी साहेब!',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਅੰਦਰ ਸੇਵਾ ਦਾ ਉਤਸ਼ਾਹ ਬਣਾਈ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਅੰਦਰ ਸੇਵਾ ਦਾ ਉਤਸ਼ਾਹ ਬਣਾਈ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Ignite in my soul an unquenchable zeal for active spiritual effort and noble work. Saheb Bandgi Saheb!'
     },
     quiz: []

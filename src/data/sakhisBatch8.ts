@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Nahaye dhoye kya hua, jo man mail na jaay. Meen sada jal mein rahe, dhoye baas na jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य तीर्थ-स्नान और दिखावटी शुद्धि पर तीखा कटाक्ष करते हुए कहते हैं कि नदियों और तीर्थों में बार-बार नहाने-धोने से क्या लाभ, यदि अंतःकरण का मैल (राग, द्वेष, कपट और वासना) दूर न हुआ हो? जैसे मछली (मीन) सदैव जल के भीतर ही निवास करती है, परंतु जल में रहने पर भी उसकी दुर्गंध (बास) कभी नहीं जाती; ठीक उसी प्रकार केवल बाहरी जल से शरीर धोने से अंतरात्मा पवित्र नहीं होती। वास्तविक शुद्धि तो ज्ञान और सत्यनाम के आंतरिक स्नान से होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਇਸ਼ਨਾਨਾਂ ਦਾ ਖੰਡਨ ਕਰਦੇ ਹੋਏ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤੀਰਥਾਂ ਉੱਤੇ ਨਹਾਉਣ ਦਾ ਕੀ ਲਾਭ ਜੇ ਮਨ ਦੀ ਮੈਲ (ਈਰਖਾ, ਦਵੈਤ, ਪਾਪ) ਦੂਰ ਨਾ ਹੋਵੇ? ਜਿਵੇਂ ਮੱਛੀ ਸਦਾ ਪਾਣੀ ਵਿੱਚ ਰਹਿੰਦੀ ਹੈ ਪਰ ਫਿਰ ਵੀ ਉਸ ਦੀ ਬੋਅ ਦੂਰ ਨਹੀਂ ਹੁੰਦੀ, ਓਵੇਂ ਹੀ ਬਾਹਰੀ ਪਾਣੀ ਨਾਲ ਮਨ ਪਵਿੱਤਰ ਨਹੀਂ ਹੁੰਦਾ।',
-      en: 'Kabir Saheb shatters the illusion of superficial ritualism: What is the worth of countless holy baths in pilgrimage waters if the deep-seated filth (greed, deceit, and ego) of the mind remains untouched? A fish lives continuously submerged in pure water, yet its pungent odor is never washed away; likewise, physical ablutions cannot cleanse the inner soul without the purifying waters of Truth and the Divine Name.',
+      hi: 'सतगुरु कबीर साहेब बाह्य तीर्थ-स्नान और दिखावटी शुद्धि पर तीखा कटाक्ष करते हुए कहते हैं कि नदियों और तीर्थों में बार-बार नहाने-धोने से क्या लाभ, यदि अंतःकरण का मैल (राग, द्वेष, कपट और वासना) दूर न हुआ हो? जैसे मछली (मीन) सदैव जल के भीतर ही निवास करती है, परंतु जल में रहने पर भी उसकी दुर्गंध (बास) कभी नहीं जाती; ठीक उसी प्रकार केवल बाहरी जल से शरीर धोने से अंतरात्मा पवित्र नहीं होती। वास्तविक शुद्धि तो ज्ञान और सत्यनाम के आंतरिक स्नान से होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਇਸ਼ਨਾਨਾਂ ਦਾ ਖੰਡਨ ਕਰਦੇ ਹੋਏ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤੀਰਥਾਂ ਉੱਤੇ ਨਹਾਉਣ ਦਾ ਕੀ ਲਾਭ ਜੇ ਮਨ ਦੀ ਮੈਲ (ਈਰਖਾ, ਦਵੈਤ, ਪਾਪ) ਦੂਰ ਨਾ ਹੋਵੇ? ਜਿਵੇਂ ਮੱਛੀ ਸਦਾ ਪਾਣੀ ਵਿੱਚ ਰਹਿੰਦੀ ਹੈ ਪਰ ਫਿਰ ਵੀ ਉਸ ਦੀ ਬੋਅ ਦੂਰ ਨਹੀਂ ਹੁੰਦੀ, ਓਵੇਂ ਹੀ ਬਾਹਰੀ ਪਾਣੀ ਨਾਲ ਮਨ ਪਵਿੱਤਰ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Satguru Kabir Saheb shatters the illusion of superficial ritualism: What is the worth of countless holy baths in pilgrimage waters if the deep-seated filth (greed, deceit, and ego) of the mind remains untouched? A fish lives continuously submerged in pure water, yet its pungent odor is never washed away; likewise, physical ablutions cannot cleanse the inner soul without the purifying waters of Truth and the Divine Name.',
     },
     wordMeanings: {
       hi: [
@@ -66,9 +66,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-1-1',
         question: {
-          hi: 'कबीर साहेब ने तीर्थ-स्नान के संदर्भ में मछली का उदाहरण क्यों दिया है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮੱਛੀ ਦੀ ਉਦਾਹਰਣ ਕਿਉਂ ਦਿੱਤੀ ਹੈ?',
-          en: 'Why does Kabir Saheb invoke the example of a fish regarding holy baths?',
+          hi: 'सतगुरु कबीर साहेब ने तीर्थ-स्नान के संदर्भ में मछली का उदाहरण क्यों दिया है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮੱਛੀ ਦੀ ਉਦਾਹਰਣ ਕਿਉਂ ਦਿੱਤੀ ਹੈ?',
+          en: 'Why does Satguru Kabir Saheb invoke the example of a fish regarding holy baths?',
         },
         options: {
           hi: ['क्योंकि मछली तैरना जानती है', 'यह समझाने के लिए कि जल में रहने पर भी जैसे मछली की गंध नहीं जाती, वैसे ही बिना ज्ञान के मन की मैल नहीं जाती', 'क्योंकि मछली सुंदर होती है', 'क्योंकि जल में मछलियां बहुत होती हैं'],
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Paanch pahar dhandha kiya, teen pahar gaya soy. Ek pahar bhi naam bin, mukti kaise hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब मानव जीवन के 24 घंटों (आठों पहर) के दुरुपयोग पर सचेत करते हुए कहते हैं कि दिन के पाँच पहर तूने केवल सांसारिक धंधों, व्यापार और धनोपार्जन की भागदौड़ में गंवा दिए, और रात के तीन पहर आलस्य की गहरी नींद में सोकर नष्ट कर दिए। यदि आठों पहर में से तूने एक पहर (या कुछ घड़ियाँ) भी परमात्मा के सत्यनाम के सुमिरन में नहीं लगाया, तो भला इस भवसागर से तेरी मुक्ति कैसे संभव होगी?',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦਿਨ ਦੇ ਪੰਜ ਪਹਿਰ ਤੂੰ ਦੁਨੀਆਵੀ ਕੰਮ-ਧੰਦਿਆਂ ਵਿੱਚ ਲੰਘਾ ਦਿੱਤੇ ਅਤੇ ਤਿੰਨ ਪਹਿਰ ਸੌਂ ਕੇ ਗੁਆ ਲਏ। ਜੇ ਅੱਠਾਂ ਪਹਿਰਾਂ ਵਿੱਚੋਂ ਇੱਕ ਪਹਿਰ ਵੀ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਵਿੱਚ ਨਹੀਂ ਜੁੜਿਆ, ਤਾਂ ਤੇਰਾ ਛੁਟਕਾਰਾ ਅਤੇ ਮੁਕਤੀ ਕਿਵੇਂ ਹੋਵੇਗੀ?',
-      en: 'Kabir Saheb awakens human consciousness to the tragedy of misspent time: Out of the eight watches (Pahars) of the day and night, you consumed five in feverish worldly toil and trade, and slept through the remaining three in dull slumber. If you did not consecrate even a single watch to the sacred remembrance of the Divine Name, how can you ever expect to attain spiritual liberation?',
+      hi: 'सतगुरु कबीर साहेब मानव जीवन के 24 घंटों (आठों पहर) के दुरुपयोग पर सचेत करते हुए कहते हैं कि दिन के पाँच पहर तूने केवल सांसारिक धंधों, व्यापार और धनोपार्जन की भागदौड़ में गंवा दिए, और रात के तीन पहर आलस्य की गहरी नींद में सोकर नष्ट कर दिए। यदि आठों पहर में से तूने एक पहर (या कुछ घड़ियाँ) भी परमात्मा के सत्यनाम के सुमिरन में नहीं लगाया, तो भला इस भवसागर से तेरी मुक्ति कैसे संभव होगी?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦਿਨ ਦੇ ਪੰਜ ਪਹਿਰ ਤੂੰ ਦੁਨੀਆਵੀ ਕੰਮ-ਧੰਦਿਆਂ ਵਿੱਚ ਲੰਘਾ ਦਿੱਤੇ ਅਤੇ ਤਿੰਨ ਪਹਿਰ ਸੌਂ ਕੇ ਗੁਆ ਲਏ। ਜੇ ਅੱਠਾਂ ਪਹਿਰਾਂ ਵਿੱਚੋਂ ਇੱਕ ਪਹਿਰ ਵੀ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਵਿੱਚ ਨਹੀਂ ਜੁੜਿਆ, ਤਾਂ ਤੇਰਾ ਛੁਟਕਾਰਾ ਅਤੇ ਮੁਕਤੀ ਕਿਵੇਂ ਹੋਵੇਗੀ?',
+      en: 'Satguru Kabir Saheb awakens human consciousness to the tragedy of misspent time: Out of the eight watches (Pahars) of the day and night, you consumed five in feverish worldly toil and trade, and slept through the remaining three in dull slumber. If you did not consecrate even a single watch to the sacred remembrance of the Divine Name, how can you ever expect to attain spiritual liberation?',
     },
     wordMeanings: {
       hi: [
@@ -150,9 +150,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार मनुष्य का पूरा जीवन किस प्रकार व्यर्थ बीत जाता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਕਿਵੇਂ ਵਿਅਰਥ ਲੰਘ ਰਿਹਾ ਹੈ?',
-          en: 'According to Kabir Saheb, how does mortal life slip away in vain?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार मनुष्य का पूरा जीवन किस प्रकार व्यर्थ बीत जाता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਕਿਵੇਂ ਵਿਅਰਥ ਲੰਘ ਰਿਹਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, how does mortal life slip away in vain?',
         },
         options: {
           hi: ['दान-पुण्य करने में', 'काम-धंधे और सोने में सारा समय निकल जाता है और नाम-सुमिरन नहीं होता', 'तीर्थ यात्राओं में', 'शास्त्र पढ़ने में'],
@@ -187,9 +187,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Patta bola vriksh se, suno vriksh banraay. Ab ke bichhde na mile, door padenge jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब वृक्ष से टूटकर गिरते हुए सूखे पत्ते के मार्मिक रूपक द्वारा संसार के समस्त संबंधों की क्षणभंगुरता और जीवन की नश्वरता को प्रकट करते हैं। पीला पड़ा पत्ता वृक्षराज से कहता है कि हे वनराज! अब शरद ऋतु में मेरा तुमसे वियोग हो रहा है; एक बार डाली से टूटने के बाद हम दोबारा कभी नहीं मिल सकेंगे, क्योंकि पवन के झोंके मुझे उड़ाकर बहुत दूर ले जाएंगे। इसी प्रकार देह त्यागने के उपरांत जीव अपने संबंधियों और इस संसार से सदा के लिए बिछड़ जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸੁੱਕੇ ਪੱਤੇ ਦੇ ਟੁੱਟਣ ਦਾ ਦ੍ਰਿਸ਼ਟਾਂਤ ਦੇ ਕੇ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਪੱਤਾ ਰੁੱਖ ਨੂੰ ਕਹਿੰਦਾ ਹੈ ਕਿ ਹੇ ਬਨਰਾਜ! ਹੁਣ ਸਾਡਾ ਵਿਛੋੜਾ ਹੋ ਰਿਹਾ ਹੈ, ਇੱਕ ਵਾਰ ਟੁੱਟਣ ਮਗਰੋਂ ਅਸੀਂ ਮੁੜ ਕਦੇ ਨਹੀਂ ਮਿਲਾਂਗੇ, ਹਵਾ ਸਾਨੂੰ ਕਿਤੇ ਦੂਰ ਲੈ ਜਾਵੇਗੀ। ਇਸੇ ਤਰ੍ਹਾਂ ਮੌਤ ਤੋਂ ਬਾਅਦ ਜੀਵ ਆਪਣੇ ਸੰਸਾਰੀ ਰਿਸ਼ਤਿਆਂ ਤੋਂ ਸਦਾ ਲਈ ਵਿਛੜ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb conveys the poignant reality of impermanence through the metaphor of a falling leaf: As autumn arrives, the dry leaf whispers to the mighty sovereign tree: "Listen, O King of the forest! Once severed from this branch, we shall never unite again; the winds of time shall scatter me far away." In the exact same manner, when the soul departs the body, all earthly ties and worldly positions dissolve forever.',
+      hi: 'सतगुरु कबीर साहेब वृक्ष से टूटकर गिरते हुए सूखे पत्ते के मार्मिक रूपक द्वारा संसार के समस्त संबंधों की क्षणभंगुरता और जीवन की नश्वरता को प्रकट करते हैं। पीला पड़ा पत्ता वृक्षराज से कहता है कि हे वनराज! अब शरद ऋतु में मेरा तुमसे वियोग हो रहा है; एक बार डाली से टूटने के बाद हम दोबारा कभी नहीं मिल सकेंगे, क्योंकि पवन के झोंके मुझे उड़ाकर बहुत दूर ले जाएंगे। इसी प्रकार देह त्यागने के उपरांत जीव अपने संबंधियों और इस संसार से सदा के लिए बिछड़ जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੁੱਕੇ ਪੱਤੇ ਦੇ ਟੁੱਟਣ ਦਾ ਦ੍ਰਿਸ਼ਟਾਂਤ ਦੇ ਕੇ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਪੱਤਾ ਰੁੱਖ ਨੂੰ ਕਹਿੰਦਾ ਹੈ ਕਿ ਹੇ ਬਨਰਾਜ! ਹੁਣ ਸਾਡਾ ਵਿਛੋੜਾ ਹੋ ਰਿਹਾ ਹੈ, ਇੱਕ ਵਾਰ ਟੁੱਟਣ ਮਗਰੋਂ ਅਸੀਂ ਮੁੜ ਕਦੇ ਨਹੀਂ ਮਿਲਾਂਗੇ, ਹਵਾ ਸਾਨੂੰ ਕਿਤੇ ਦੂਰ ਲੈ ਜਾਵੇਗੀ। ਇਸੇ ਤਰ੍ਹਾਂ ਮੌਤ ਤੋਂ ਬਾਅਦ ਜੀਵ ਆਪਣੇ ਸੰਸਾਰੀ ਰਿਸ਼ਤਿਆਂ ਤੋਂ ਸਦਾ ਲਈ ਵਿਛੜ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb conveys the poignant reality of impermanence through the metaphor of a falling leaf: As autumn arrives, the dry leaf whispers to the mighty sovereign tree: "Listen, O King of the forest! Once severed from this branch, we shall never unite again; the winds of time shall scatter me far away." In the exact same manner, when the soul departs the body, all earthly ties and worldly positions dissolve forever.',
     },
     wordMeanings: {
       hi: [
@@ -231,9 +231,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-3-1',
         question: {
-          hi: 'पत्ते और वृक्ष के संवाद में कबीर साहेब किस गूढ़ सत्य को प्रकट करते हैं?',
-          pb: 'ਪੱਤੇ ਅਤੇ ਰੁੱਖ ਦੀ ਗੱਲਬਾਤ ਰਾਹੀਂ ਕਬੀਰ ਸਾਹੇਬ ਕਿਹੜਾ ਸੱਚ ਪ੍ਰਗਟ ਕਰਦੇ ਹਨ?',
-          en: 'What profound truth does Kabir Saheb reveal through the dialogue between the leaf and the tree?',
+          hi: 'पत्ते और वृक्ष के संवाद में सतगुरु कबीर साहेब किस गूढ़ सत्य को प्रकट करते हैं?',
+          pb: 'ਪੱਤੇ ਅਤੇ ਰੁੱਖ ਦੀ ਗੱਲਬਾਤ ਰਾਹੀਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕਿਹੜਾ ਸੱਚ ਪ੍ਰਗਟ ਕਰਦੇ ਹਨ?',
+          en: 'What profound truth does Satguru Kabir Saheb reveal through the dialogue between the leaf and the tree?',
         },
         options: {
           hi: ['कि पेड़ बहुत छायादार होते हैं', 'संसार के सभी संबंध और यह शरीर नश्वर हैं, मृत्यु के बाद पुनर्मिलन संभव नहीं', 'पत्ते हरे होते हैं', 'पतझड़ में पत्ते गिरते हैं'],
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Maya chhaya ek si, birla jaane koy. Bhaagat ke peeche lage, sanmukh bhaage soy.',
     bhavarth: {
-      hi: 'कबीर साहेब माया की रहस्यमयी प्रकृति को अपनी ही परछाईं (छाया) के दृष्टांत से समझाते हैं कि माया और परछाईं दोनों का स्वभाव बिल्कुल एक जैसा है, जिसे कोई आत्मज्ञानी विरला ही समझ पाता है। यदि तू परछाईं को पकड़ने के लिए उसके पीछे-पीछे भागेगा, तो वह भी आगे-आगे भागती रहेगी और कभी हाथ नहीं आएगी। परंतु जब तू परछाईं से विमुख होकर सूर्य (परमात्मा) की ओर मुंह करके चलेगा, तो वही परछाईं तेरे पीछे-पीछे दौड़ेगी। इसी प्रकार माया के पीछे भागने से वह कभी तृप्त नहीं करती, पर प्रभु के सम्मुख होने पर सब सुख स्वयं पीछे आते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਅਤੇ ਪਰਛਾਵਾਂ ਇੱਕੋ ਜਿਹੇ ਹੁੰਦੇ ਹਨ। ਜੇ ਪਰਛਾਵੇਂ ਨੂੰ ਫੜਨ ਲਈ ਉਸ ਦੇ ਪਿੱਛੇ ਭੱਜੋਗੇ ਤਾਂ ਉਹ ਅੱਗੇ ਭੱਜੇਗਾ, ਪਰ ਜੇ ਸੂਰਜ ਵੱਲ ਮੂੰਹ ਕਰਕੇ ਤੁਰੋਗੇ ਤਾਂ ਪਰਛਾਵਾਂ ਤੁਹਾਡੇ ਪਿੱਛੇ ਆਵੇਗਾ। ਤਿਵੇਂ ਹੀ ਮਾਇਆ ਪਿੱਛੇ ਭੱਜਣ ਵਾਲਾ ਭਟਕਦਾ ਹੈ, ਪਰ ਪ੍ਰਭੂ ਵੱਲ ਮੂੰਹ ਕਰਨ ਵਾਲੇ ਦੇ ਪਿੱਛੇ ਸੁੱਖ ਆਪੇ ਆਉਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb unlocks the subtle paradox of worldly illusion using the metaphor of one\'s own shadow: Maya and a shadow possess the exact same elusive nature, understood by rare discerning souls. If you chase your shadow to catch it, it flees ahead of you endlessly and slips away. But the moment you turn around and walk facing the brilliant Sun (God), the very same shadow follows dutifully behind you.',
+      hi: 'सतगुरु कबीर साहेब माया की रहस्यमयी प्रकृति को अपनी ही परछाईं (छाया) के दृष्टांत से समझाते हैं कि माया और परछाईं दोनों का स्वभाव बिल्कुल एक जैसा है, जिसे कोई आत्मज्ञानी विरला ही समझ पाता है। यदि तू परछाईं को पकड़ने के लिए उसके पीछे-पीछे भागेगा, तो वह भी आगे-आगे भागती रहेगी और कभी हाथ नहीं आएगी। परंतु जब तू परछाईं से विमुख होकर सूर्य (परमात्मा) की ओर मुंह करके चलेगा, तो वही परछाईं तेरे पीछे-पीछे दौड़ेगी। इसी प्रकार माया के पीछे भागने से वह कभी तृप्त नहीं करती, पर प्रभु के सम्मुख होने पर सब सुख स्वयं पीछे आते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਅਤੇ ਪਰਛਾਵਾਂ ਇੱਕੋ ਜਿਹੇ ਹੁੰਦੇ ਹਨ। ਜੇ ਪਰਛਾਵੇਂ ਨੂੰ ਫੜਨ ਲਈ ਉਸ ਦੇ ਪਿੱਛੇ ਭੱਜੋਗੇ ਤਾਂ ਉਹ ਅੱਗੇ ਭੱਜੇਗਾ, ਪਰ ਜੇ ਸੂਰਜ ਵੱਲ ਮੂੰਹ ਕਰਕੇ ਤੁਰੋਗੇ ਤਾਂ ਪਰਛਾਵਾਂ ਤੁਹਾਡੇ ਪਿੱਛੇ ਆਵੇਗਾ। ਤਿਵੇਂ ਹੀ ਮਾਇਆ ਪਿੱਛੇ ਭੱਜਣ ਵਾਲਾ ਭਟਕਦਾ ਹੈ, ਪਰ ਪ੍ਰਭੂ ਵੱਲ ਮੂੰਹ ਕਰਨ ਵਾਲੇ ਦੇ ਪਿੱਛੇ ਸੁੱਖ ਆਪੇ ਆਉਂਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb unlocks the subtle paradox of worldly illusion using the metaphor of one\'s own shadow: Maya and a shadow possess the exact same elusive nature, understood by rare discerning souls. If you chase your shadow to catch it, it flees ahead of you endlessly and slips away. But the moment you turn around and walk facing the brilliant Sun (God), the very same shadow follows dutifully behind you.',
     },
     wordMeanings: {
       hi: [
@@ -314,9 +314,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-4-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार माया और परछाईं में क्या समानता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਾਇਆ ਅਤੇ ਪਰਛਾਵੇਂ ਵਿੱਚ ਕੀ ਸਾਂਝ ਹੈ?',
-          en: 'What similarity does Kabir Saheb highlight between Maya (Illusion) and a Shadow?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार माया और परछाईं में क्या समानता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਾਇਆ ਅਤੇ ਪਰਛਾਵੇਂ ਵਿੱਚ ਕੀ ਸਾਂਝ ਹੈ?',
+          en: 'What similarity does Satguru Kabir Saheb highlight between Maya (Illusion) and a Shadow?',
         },
         options: {
           hi: ['दोनों काले होते हैं', 'दोनों के पीछे भागो तो वे आगे भागते हैं, पर सूर्य (प्रभु) की ओर चलो तो वे पीछे आते हैं', 'दोनों ठंडे होते हैं', 'दोनों रात में दिखाई देते हैं'],
@@ -351,9 +351,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Ya duniya mein aa kar, chhandi de tu ainth. Lena ho so lee le, uthi jaat hai paith.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार को एक अस्थायी साप्ताहिक बाजार (पैठ/हाट) की उपमा देते हुए कहते हैं कि हे मनुष्य! इस संसार में जन्म लेकर तू अपनी व्यर्थ की अकड़, घमंड और अहंकार (ऐंठ) को त्याग दे। यह जीवन एक अल्पकालिक मेला या बाजार है; तुझे जो नाम-रूपी सच्चा सौदा और आत्म-कल्याण का धन लेना है, वह समय रहते शीघ्रता से ले ले। देखते ही देखते शाम हो जाएगी और यह बाजार उठ जाएगा (जीवन समाप्त हो जाएगा)।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਦੁਨੀਆ ਵਿੱਚ ਆ ਕੇ ਆਪਣੀ ਹਉਮੈ ਤੇ ਅਕੜ ਨੂੰ ਛੱਡ ਦੇ। ਇਹ ਜੀਵਨ ਇੱਕ ਮੰਡੀ (ਪੈਠ) ਵਰਗਾ ਹੈ ਜੋ ਥੋੜ੍ਹੇ ਚਿਰ ਲਈ ਲੱਗਦੀ ਹੈ। ਜੇ ਨਾਮ ਦਾ ਸੌਦਾ ਖਰੀਦਣਾ ਹੈ ਤਾਂ ਛੇਤੀ ਖਰੀਦ ਲੈ, ਕਿਉਂਕਿ ਵੇਲਾ ਬੀਤਦੇ ਹੀ ਇਹ ਮੰਡੀ ਉੱਠ ਜਾਣੀ ਹੈ (ਸਵਾਸ ਖਤਮ ਹੋ ਜਾਣੇ ਹਨ)।',
-      en: 'Kabir Saheb portrays human life as a bustling temporary marketplace (Paith/Haat): Having arrived in this mortal world, cast away your foolish arrogance, pride, and obstinacy. If you wish to purchase the eternal treasure of the Divine Name, do so without delay, for this transient market is already packing up and dusk is fast approaching.',
+      hi: 'सतगुरु कबीर साहेब संसार को एक अस्थायी साप्ताहिक बाजार (पैठ/हाट) की उपमा देते हुए कहते हैं कि हे मनुष्य! इस संसार में जन्म लेकर तू अपनी व्यर्थ की अकड़, घमंड और अहंकार (ऐंठ) को त्याग दे। यह जीवन एक अल्पकालिक मेला या बाजार है; तुझे जो नाम-रूपी सच्चा सौदा और आत्म-कल्याण का धन लेना है, वह समय रहते शीघ्रता से ले ले। देखते ही देखते शाम हो जाएगी और यह बाजार उठ जाएगा (जीवन समाप्त हो जाएगा)।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਦੁਨੀਆ ਵਿੱਚ ਆ ਕੇ ਆਪਣੀ ਹਉਮੈ ਤੇ ਅਕੜ ਨੂੰ ਛੱਡ ਦੇ। ਇਹ ਜੀਵਨ ਇੱਕ ਮੰਡੀ (ਪੈਠ) ਵਰਗਾ ਹੈ ਜੋ ਥੋੜ੍ਹੇ ਚਿਰ ਲਈ ਲੱਗਦੀ ਹੈ। ਜੇ ਨਾਮ ਦਾ ਸੌਦਾ ਖਰੀਦਣਾ ਹੈ ਤਾਂ ਛੇਤੀ ਖਰੀਦ ਲੈ, ਕਿਉਂਕਿ ਵੇਲਾ ਬੀਤਦੇ ਹੀ ਇਹ ਮੰਡੀ ਉੱਠ ਜਾਣੀ ਹੈ (ਸਵਾਸ ਖਤਮ ਹੋ ਜਾਣੇ ਹਨ)।',
+      en: 'Satguru Kabir Saheb portrays human life as a bustling temporary marketplace (Paith/Haat): Having arrived in this mortal world, cast away your foolish arrogance, pride, and obstinacy. If you wish to purchase the eternal treasure of the Divine Name, do so without delay, for this transient market is already packing up and dusk is fast approaching.',
     },
     wordMeanings: {
       hi: [
@@ -385,7 +385,7 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       en: 'Drop all haughty posturing today; embrace humility and invest your moments in spiritual wealth.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरु व्यापारी! इस संसार-हाट में मेरी बुद्धि से अहंकार की ऐंठ मिटाकर मुझे सत्यनाम का सच्चा सौदा प्रदान कीजिए। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरु व्यापारी! इस संसार-हाट में मेरी बुद्धि से अहंकार की ऐंठ मिटाकर मुझे सत्यनाम का सच्चा सौदा प्रदान कीजिए। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਹੰਕਾਰ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਆਪਣੇ ਨਾਮ ਦਾ ਸੱਚਾ ਵਪਾਰੀ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O True Merchant Satguru! Purge all foolish pride from my soul and bestow upon me the eternal currency of Your Name. Saheb Bandagi Saheb!',
     },
@@ -398,9 +398,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-5-1',
         question: {
-          hi: 'कबीर साहेब ने इस साखी में संसार की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਸ ਸਾਖੀ ਵਿੱਚ ਦੁਨੀਆ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'To what does Kabir Saheb compare mortal existence in this sakhi?',
+          hi: 'सतगुरु कबीर साहेब ने इस साखी में संसार की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਸ ਸਾਖੀ ਵਿੱਚ ਦੁਨੀਆ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'To what does Satguru Kabir Saheb compare mortal existence in this sakhi?',
         },
         options: {
           hi: ['सुंदर बगीचे से', 'उठ जाने वाले अस्थायी बाजार (पैठ/हाट) से', 'गहरे समुद्र से', 'ऊँचे महल से'],
@@ -435,9 +435,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Raat ganwayi soy ke, diwas ganwaya khaay. Heera janam amol tha, kodi badle jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब अत्यंत पीड़ा के साथ मानव की अज्ञानता पर खेद प्रकट करते हुए कहते हैं कि मनुष्य ने रात तो अचेत होकर सोने में गंवा दी और सारा दिन केवल खाने-पीने व इंद्रिय-भोगों में नष्ट कर दिया। यह मानव जन्म हीरे के समान अमूल्य था—जिसके द्वारा परमात्मा से एकाकार हुआ जा सकता था—परंतु अज्ञान के कारण मनुष्य इसे कौड़ियों (तुच्छ सांसारिक भोगों) के बदले व्यर्थ ही गंवा रहा है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਨੇ ਰਾਤ ਸੌਂ ਕੇ ਗੁਆ ਲਈ ਅਤੇ ਦਿਨ ਖਾਣ-ਪੀਣ ਦੇ ਭੋਗਾਂ ਵਿੱਚ ਬਰਬਾਦ ਕਰ ਦਿੱਤਾ। ਇਹ ਮਨੁੱਖਾ ਜਨਮ ਹੀਰੇ ਵਰਗਾ ਅਮੋਲਕ ਸੀ, ਪਰ ਅਗਿਆਨਤਾ ਕਾਰਨ ਇਹ ਕੌਡੀਆਂ ਦੇ ਭਾਅ (ਵਿਅਰਥ) ਚਲਾ ਗਿਆ।',
-      en: 'Kabir Saheb laments the tragic squandering of the soul\'s greatest opportunity: You slept through the darkness of night in unconscious slumber, and wasted the bright daylight in endless eating, drinking, and sensory indulgence. This human incarnation was a priceless diamond capable of realizing God; yet out of sheer ignorance, you are exchanging it for worthless cowrie shells of transient pleasures.',
+      hi: 'सतगुरु कबीर साहेब अत्यंत पीड़ा के साथ मानव की अज्ञानता पर खेद प्रकट करते हुए कहते हैं कि मनुष्य ने रात तो अचेत होकर सोने में गंवा दी और सारा दिन केवल खाने-पीने व इंद्रिय-भोगों में नष्ट कर दिया। यह मानव जन्म हीरे के समान अमूल्य था—जिसके द्वारा परमात्मा से एकाकार हुआ जा सकता था—परंतु अज्ञान के कारण मनुष्य इसे कौड़ियों (तुच्छ सांसारिक भोगों) के बदले व्यर्थ ही गंवा रहा है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਨੇ ਰਾਤ ਸੌਂ ਕੇ ਗੁਆ ਲਈ ਅਤੇ ਦਿਨ ਖਾਣ-ਪੀਣ ਦੇ ਭੋਗਾਂ ਵਿੱਚ ਬਰਬਾਦ ਕਰ ਦਿੱਤਾ। ਇਹ ਮਨੁੱਖਾ ਜਨਮ ਹੀਰੇ ਵਰਗਾ ਅਮੋਲਕ ਸੀ, ਪਰ ਅਗਿਆਨਤਾ ਕਾਰਨ ਇਹ ਕੌਡੀਆਂ ਦੇ ਭਾਅ (ਵਿਅਰਥ) ਚਲਾ ਗਿਆ।',
+      en: 'Satguru Kabir Saheb laments the tragic squandering of the soul\'s greatest opportunity: You slept through the darkness of night in unconscious slumber, and wasted the bright daylight in endless eating, drinking, and sensory indulgence. This human incarnation was a priceless diamond capable of realizing God; yet out of sheer ignorance, you are exchanging it for worthless cowrie shells of transient pleasures.',
     },
     wordMeanings: {
       hi: [
@@ -479,9 +479,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-6-1',
         question: {
-          hi: 'कबीर साहेब ने मनुष्य जन्म की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਨੁੱਖਾ ਜਨਮ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'To what does Kabir Saheb compare human birth in this famous verse?',
+          hi: 'सतगुरु कबीर साहेब ने मनुष्य जन्म की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਨੁੱਖਾ ਜਨਮ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'To what does Satguru Kabir Saheb compare human birth in this famous verse?',
         },
         options: {
           hi: ['सोने से', 'हीरे (अनमोल रत्न) से', 'चांदी से', 'मिट्टी से'],
@@ -516,9 +516,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Ram bulawa bhejiya, diya Kabira roy. Jo sukh saadhu sang mein, so baikunth na hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्संग और संतों की संगति के अलौकिक आनंद की सर्वोच्चता बताते हुए कहते हैं कि जब भगवान् ने मुझे अपने परमधाम (बैकुंठ/स्वर्ग) आने का बुलावा भेजा, तो मैं विरह और विवशता में रो पड़ा। क्योंकि जो अनिर्वचनीय आनंद, प्रेम और ज्ञान-चर्चा का सुख पृथ्वी पर संतों व साधुओं की संगति में मिलता है, वह तो स्वर्ग और बैकुंठ के कल्पित सुखों में भी प्राप्त नहीं हो सकता। सत्संग ही साक्षात् परमधाम है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸਤਸੰਗ ਦੀ ਮਹਿਮਾ ਗਾਉਂਦੇ ਹੋਏ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਦੋਂ ਪ੍ਰਭੂ ਨੇ ਮੈਨੂੰ ਬੈਕੁੰਠ (ਸਵਰਗ) ਬੁਲਾਉਣ ਦਾ ਸੁਨੇਹਾ ਭੇਜਿਆ ਤਾਂ ਮੈਂ ਰੋ ਪਿਆ। ਕਿਉਂਕਿ ਜੋ ਆਨੰਦ ਤੇ ਸ਼ਾਂਤੀ ਧਰਤੀ ਉੱਤੇ ਸਾਧੂਆਂ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਮਿਲਦੀ ਹੈ, ਉਹ ਸੁੱਖ ਬੈਕੁੰਠ ਵਿੱਚ ਵੀ ਨਹੀਂ ਮਿਲ ਸਕਦਾ।',
-      en: 'Kabir Saheb extols the unsurpassed ecstasy of holy fellowship: When the Supreme Lord sent His celestial summons calling me to Heaven (Baikunth), Kabir wept in bittersweet longing. For the immaculate bliss, love, and living wisdom experienced in the intimate company of Saints (Satsang) on earth cannot be matched even by all the celestial comforts of paradise.',
+      hi: 'सतगुरु कबीर साहेब सत्संग और संतों की संगति के अलौकिक आनंद की सर्वोच्चता बताते हुए कहते हैं कि जब भगवान् ने मुझे अपने परमधाम (बैकुंठ/स्वर्ग) आने का बुलावा भेजा, तो मैं विरह और विवशता में रो पड़ा। क्योंकि जो अनिर्वचनीय आनंद, प्रेम और ज्ञान-चर्चा का सुख पृथ्वी पर संतों व साधुओं की संगति में मिलता है, वह तो स्वर्ग और बैकुंठ के कल्पित सुखों में भी प्राप्त नहीं हो सकता। सत्संग ही साक्षात् परमधाम है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਤਸੰਗ ਦੀ ਮਹਿਮਾ ਗਾਉਂਦੇ ਹੋਏ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਦੋਂ ਪ੍ਰਭੂ ਨੇ ਮੈਨੂੰ ਬੈਕੁੰਠ (ਸਵਰਗ) ਬੁਲਾਉਣ ਦਾ ਸੁਨੇਹਾ ਭੇਜਿਆ ਤਾਂ ਮੈਂ ਰੋ ਪਿਆ। ਕਿਉਂਕਿ ਜੋ ਆਨੰਦ ਤੇ ਸ਼ਾਂਤੀ ਧਰਤੀ ਉੱਤੇ ਸਾਧੂਆਂ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਮਿਲਦੀ ਹੈ, ਉਹ ਸੁੱਖ ਬੈਕੁੰਠ ਵਿੱਚ ਵੀ ਨਹੀਂ ਮਿਲ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb extols the unsurpassed ecstasy of holy fellowship: When the Supreme Lord sent His celestial summons calling me to Heaven (Baikunth), Kabir wept in bittersweet longing. For the immaculate bliss, love, and living wisdom experienced in the intimate company of Saints (Satsang) on earth cannot be matched even by all the celestial comforts of paradise.',
     },
     wordMeanings: {
       hi: [
@@ -563,9 +563,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार बैकुंठ (स्वर्ग) में भी कौन सा सुख प्राप्त नहीं हो सकता?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਬੈਕੁੰਠ ਵਿੱਚ ਵੀ ਕਿਹੜਾ ਸੁੱਖ ਨਹੀਂ ਮਿਲਦਾ?',
-          en: 'According to Kabir Saheb, which supreme happiness is unattainable even in Heaven (Baikunth)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार बैकुंठ (स्वर्ग) में भी कौन सा सुख प्राप्त नहीं हो सकता?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਬੈਕੁੰਠ ਵਿੱਚ ਵੀ ਕਿਹੜਾ ਸੁੱਖ ਨਹੀਂ ਮਿਲਦਾ?',
+          en: 'According to Satguru Kabir Saheb, which supreme happiness is unattainable even in Heaven (Baikunth)?',
         },
         options: {
           hi: ['अमृत पीने का सुख', 'सच्चे साधु-संतों की संगति और सत्संग का अनिर्वचनीय सुख', 'सोने के महलों का सुख', 'अप्सराओं का नृत्य'],
@@ -600,9 +600,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Sangati so sukh upje, kusangati so dukh hoy. Kah Kabir tahan jaiye, saadhu sang jahan hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब संगति के प्रभाव का शाश्वत नियम बताते हुए कहते हैं कि सत्संगति (सच्चे संतों और भले लोगों का साथ) से जीवन में परम शांति, सुख और ज्ञान की उत्पत्ति होती है; जबकि कुसंगति (बुरे, लोभी व कामी लोगों का साथ) केवल क्लेश, पाप और अनंत दुःखों को जन्म देती है। इसलिए कबीर साहेब निर्देश देते हैं कि मनुष्य को सदा वहीं जाना चाहिए और वहीं समय बिताना चाहिए जहाँ सच्चे साधु-संतों की संगति और प्रभु-चर्चा हो रही हो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਚੰਗੀ ਸੰਗਤ ਨਾਲ ਸੁੱਖ ਤੇ ਸ਼ਾਂਤੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ, ਜਦਕਿ ਬੁਰੀ ਸੰਗਤ ਨਾਲ ਦੁੱਖ ਤੇ ਬਰਬਾਦੀ ਮਿਲਦੀ ਹੈ। ਇਸ ਲਈ ਉੱਥੇ ਹੀ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ ਜਿੱਥੇ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਤੇ ਰੱਬੀ ਵਿਚਾਰ ਹੋਵੇ।',
-      en: 'Kabir Saheb articulates the immutable spiritual law of association: From noble company (Satsang) springs serene joy, wisdom, and peace; whereas from toxic company (Kusangat) arises misery, ruin, and agony. Therefore, Kabir counsels: Direct your footsteps always toward that sacred sanctuary where the company of Saints and the Divine Word flourish.',
+      hi: 'सतगुरु कबीर साहेब संगति के प्रभाव का शाश्वत नियम बताते हुए कहते हैं कि सत्संगति (सच्चे संतों और भले लोगों का साथ) से जीवन में परम शांति, सुख और ज्ञान की उत्पत्ति होती है; जबकि कुसंगति (बुरे, लोभी व कामी लोगों का साथ) केवल क्लेश, पाप और अनंत दुःखों को जन्म देती है। इसलिए सतगुरु कबीर साहेब निर्देश देते हैं कि मनुष्य को सदा वहीं जाना चाहिए और वहीं समय बिताना चाहिए जहाँ सच्चे साधु-संतों की संगति और प्रभु-चर्चा हो रही हो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਚੰਗੀ ਸੰਗਤ ਨਾਲ ਸੁੱਖ ਤੇ ਸ਼ਾਂਤੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ, ਜਦਕਿ ਬੁਰੀ ਸੰਗਤ ਨਾਲ ਦੁੱਖ ਤੇ ਬਰਬਾਦੀ ਮਿਲਦੀ ਹੈ। ਇਸ ਲਈ ਉੱਥੇ ਹੀ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ ਜਿੱਥੇ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਤੇ ਰੱਬੀ ਵਿਚਾਰ ਹੋਵੇ।',
+      en: 'Satguru Kabir Saheb articulates the immutable spiritual law of association: From noble company (Satsang) springs serene joy, wisdom, and peace; whereas from toxic company (Kusangat) arises misery, ruin, and agony. Therefore, Kabir counsels: Direct your footsteps always toward that sacred sanctuary where the company of Saints and the Divine Word flourish.',
     },
     wordMeanings: {
       hi: [
@@ -644,9 +644,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-8-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार जीवन में सच्चा सुख और शांति किससे उत्पन्न होती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚਾ ਸੁੱਖ ਕਿਸ ਤੋਂ ਪੈਦਾ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what produces true peace and happiness in life?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जीवन में सच्चा सुख और शांति किससे उत्पन्न होती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚਾ ਸੁੱਖ ਕਿਸ ਤੋਂ ਪੈਦਾ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what produces true peace and happiness in life?',
         },
         options: {
           hi: ['कुसंगति करने से', 'सत्संगति और साधु-संग से', 'अहंकार करने से', 'अकेले घूमने से'],
@@ -681,9 +681,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Saheb teri sahibi, sab ghat rahi samaay. Jyon mehndi ke paat mein, laali raakhi na jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा की सर्वव्यापकता का अद्‌भुत रहस्य उजागर करते हुए कहते हैं कि हे मेरे साहेब (परमेश्वर)! आपका साम्राज्य, आपकी सत्ता और आपका चैतन्य स्वरूप प्रत्येक प्राणी के अंतःकरण (घट) में समाया हुआ है। ठीक वैसे ही जैसे मेहंदी के हरे पत्तों के भीतर लाल रंग गुप्त रूप से समाया रहता है, जिसे बाहर से कोई अलग करके छिपा नहीं सकता; जब पत्ते को घिसा और पीसा जाता है तो उसकी लालिमा प्रकट हो जाती है। उसी प्रकार साधना और प्रेम से हृदय के भीतर प्रभु का साक्षात्कार हो जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੀ ਸਰਬ-ਵਿਆਪਕਤਾ ਬਿਆਨ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਮਾਲਕ! ਤੁਹਾਡੀ ਸ਼ਕਤੀ ਤੇ ਵਾਸਾ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਸਮਾਇਆ ਹੋਇਆ ਹੈ। ਜਿਵੇਂ ਮਹਿੰਦੀ ਦੇ ਹਰੇ ਪੱਤਿਆਂ ਵਿੱਚ ਲਾਲ ਰੰਗ ਲੁਕਿਆ ਹੁੰਦਾ ਹੈ ਜੋ ਪੀਸਣ ਤੇ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਪ੍ਰਭੂ ਹਰ ਜੀਵ ਅੰਦਰ ਸਮਾਇਆ ਹੈ ਤੇ ਭਗਤੀ ਨਾਲ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the wonder of Divine Omnipresence: O my Supreme Master (Saheb)! Your sovereignty and luminous presence permeate every single heart (Ghat) in creation. Just as the vibrant crimson color lies latent and invisible within the green leaf of henna—impossible to separate yet revealing its radiant redness when ground with devotion—likewise, the Divine sits hidden within every soul, awaiting awakening through love.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा की सर्वव्यापकता का अद्‌भुत रहस्य उजागर करते हुए कहते हैं कि हे मेरे साहेब (परमेश्वर)! आपका साम्राज्य, आपकी सत्ता और आपका चैतन्य स्वरूप प्रत्येक प्राणी के अंतःकरण (घट) में समाया हुआ है। ठीक वैसे ही जैसे मेहंदी के हरे पत्तों के भीतर लाल रंग गुप्त रूप से समाया रहता है, जिसे बाहर से कोई अलग करके छिपा नहीं सकता; जब पत्ते को घिसा और पीसा जाता है तो उसकी लालिमा प्रकट हो जाती है। उसी प्रकार साधना और प्रेम से हृदय के भीतर प्रभु का साक्षात्कार हो जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੀ ਸਰਬ-ਵਿਆਪਕਤਾ ਬਿਆਨ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਮਾਲਕ! ਤੁਹਾਡੀ ਸ਼ਕਤੀ ਤੇ ਵਾਸਾ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਸਮਾਇਆ ਹੋਇਆ ਹੈ। ਜਿਵੇਂ ਮਹਿੰਦੀ ਦੇ ਹਰੇ ਪੱਤਿਆਂ ਵਿੱਚ ਲਾਲ ਰੰਗ ਲੁਕਿਆ ਹੁੰਦਾ ਹੈ ਜੋ ਪੀਸਣ ਤੇ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ, ਓਵੇਂ ਹੀ ਪ੍ਰਭੂ ਹਰ ਜੀਵ ਅੰਦਰ ਸਮਾਇਆ ਹੈ ਤੇ ਭਗਤੀ ਨਾਲ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the wonder of Divine Omnipresence: O my Supreme Master (Saheb)! Your sovereignty and luminous presence permeate every single heart (Ghat) in creation. Just as the vibrant crimson color lies latent and invisible within the green leaf of henna—impossible to separate yet revealing its radiant redness when ground with devotion—likewise, the Divine sits hidden within every soul, awaiting awakening through love.',
     },
     wordMeanings: {
       hi: [
@@ -728,9 +728,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-9-1',
         question: {
-          hi: 'कबीर साहेब ने घट-घट में समाए परमात्मा की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦੇ ਪ੍ਰਭੂ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'To what does Kabir Saheb compare the latent presence of God within every heart?',
+          hi: 'सतगुरु कबीर साहेब ने घट-घट में समाए परमात्मा की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦੇ ਪ੍ਰਭੂ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'To what does Satguru Kabir Saheb compare the latent presence of God within every heart?',
         },
         options: {
           hi: ['मिट्टी में दबे पत्थर से', 'मेहंदी के पत्तों में छिपी लाली से', 'आकाश में बादलों से', 'समुद्र में जहाज से'],
@@ -765,9 +765,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
     },
     transliteration: 'Saai aage saanch hai, saai saanch suhaay. Chaahe bole kes rakh, chaahe ghont mundaay.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति में सत्य और निष्कपटता की महत्ता स्थापित करते हुए कहते हैं कि परमात्मा (साईं) के सम्मुख केवल सत्य, निष्कपटता और हृदय की सच्चाई ही स्वीकार्य है; परमात्मा को केवल सत्य ही भाता है। मनुष्य चाहे बड़ी-बड़ी जटाएं और लंबे केश रख ले, अथवा सिर को बिल्कुल घोंटकर मुंडा ले—इन बाहरी वेशभूषाओं से परमात्मा का कोई सरोकार नहीं है। यदि हृदय में सत्य और प्रेम नहीं है, तो सारा बाह्य वेष निष्फल है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਸਿਰਫ ਸੱਚਾਈ ਤੇ ਪਵਿੱਤਰਤਾ ਦੀ ਕਦਰ ਹੈ, ਪ੍ਰਭੂ ਨੂੰ ਸੱਚ ਹੀ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਭਾਵੇਂ ਕੋਈ ਲੰਮੇ ਕੇਸ-ਜਟਾਵਾਂ ਰੱਖ ਲਵੇ ਜਾਂ ਸਿਰ ਮੁਨਵਾ ਲਵੇ—ਬਾਹਰੀ ਭੇਖ ਨਾਲ ਰੱਬ ਨਹੀਂ ਮਿਲਦਾ, ਸੱਚੇ ਦਿਲ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
-      en: 'Kabir Saheb proclaims the supremacy of inner truth over religious aesthetics: Before the Supreme Lord (Saaeen), only pure Truth and unfeigned sincerity prevail; the Lord delights solely in an honest heart. Whether one grows long ascetic matted hair (Kes) or shaves the head completely bald (Ghont Mundaay), external costumes mean nothing to God if the heart lacks pure Truth and authentic love.',
+      hi: 'सतगुरु कबीर साहेब भक्ति में सत्य और निष्कपटता की महत्ता स्थापित करते हुए कहते हैं कि परमात्मा (साईं) के सम्मुख केवल सत्य, निष्कपटता और हृदय की सच्चाई ही स्वीकार्य है; परमात्मा को केवल सत्य ही भाता है। मनुष्य चाहे बड़ी-बड़ी जटाएं और लंबे केश रख ले, अथवा सिर को बिल्कुल घोंटकर मुंडा ले—इन बाहरी वेशभूषाओं से परमात्मा का कोई सरोकार नहीं है। यदि हृदय में सत्य और प्रेम नहीं है, तो सारा बाह्य वेष निष्फल है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਸਿਰਫ ਸੱਚਾਈ ਤੇ ਪਵਿੱਤਰਤਾ ਦੀ ਕਦਰ ਹੈ, ਪ੍ਰਭੂ ਨੂੰ ਸੱਚ ਹੀ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਭਾਵੇਂ ਕੋਈ ਲੰਮੇ ਕੇਸ-ਜਟਾਵਾਂ ਰੱਖ ਲਵੇ ਜਾਂ ਸਿਰ ਮੁਨਵਾ ਲਵੇ—ਬਾਹਰੀ ਭੇਖ ਨਾਲ ਰੱਬ ਨਹੀਂ ਮਿਲਦਾ, ਸੱਚੇ ਦਿਲ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the supremacy of inner truth over religious aesthetics: Before the Supreme Lord (Saaeen), only pure Truth and unfeigned sincerity prevail; the Lord delights solely in an honest heart. Whether one grows long ascetic matted hair (Kes) or shaves the head completely bald (Ghont Mundaay), external costumes mean nothing to God if the heart lacks pure Truth and authentic love.',
     },
     wordMeanings: {
       hi: [
@@ -812,9 +812,9 @@ export const SAKHIS_BATCH_8: Sakhi[] = [
       {
         id: 'q-b8-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार परमात्मा के आगे क्या सुहाता (स्वीकार्य होता) है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰਭੂ ਨੂੰ ਕੀ ਪਸੰਦ ਆਉਂਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is pleasing and acceptable before the Lord?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार परमात्मा के आगे क्या सुहाता (स्वीकार्य होता) है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰਭੂ ਨੂੰ ਕੀ ਪਸੰਦ ਆਉਂਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is pleasing and acceptable before the Lord?',
         },
         options: {
           hi: ['लंबे केश रखना', 'हृदय की सच्चाई और निष्कपट भाव (साँच)', 'सिर मुंडवा लेना', 'सुंदर रेशमी वस्त्र'],

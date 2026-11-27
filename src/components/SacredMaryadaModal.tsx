@@ -69,7 +69,7 @@ export const SacredMaryadaModal: React.FC<SacredMaryadaModalProps> = ({
 
   const subtitle = {
     hi: 'सतगुरु कबीर साहेब की वाणी की सर्वोच्च पवित्रता बनाए रखने हेतु विनम्र प्रार्थना',
-    pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੀ ਪਵਿੱਤਰਤਾ ਬਣਾਈ ਰੱਖਣ ਲਈ ਬੇਨਤੀ',
+    pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦੀ ਪਵਿੱਤਰਤਾ ਬਣਾਈ ਰੱਖਣ ਲਈ ਬੇਨਤੀ',
     en: 'Devout reminders for maintaining utmost sanctity of the sacred words'
   }[language] || 'सतगुरु कबीर साहेब की वाणी की सर्वोच्च पवित्रता बनाए रखने हेतु विनम्र प्रार्थना';
 

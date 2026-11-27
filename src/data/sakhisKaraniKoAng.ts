@@ -71,9 +71,9 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir karanee aapanee, kabahun na nishphal jaay. Saat samudr aada padai, milai agaaoo aay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अपनी की हुई करनी का फल कभी भी निष्फल नहीं हो सकता। चाहे उसके रोक (आड़) में सात समुद्र ही क्यों न आ जाएं, परंतु उसका फल समय आने पर अवश्य ही प्राप्त होता है।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਆਪਣੀ ਕੀਤੀ ਹੋਈ ਕਰਨੀ ਦਾ ਫਲ ਕਦੇ ਵਿਅਰਥ ਨਹੀਂ ਜਾਂਦਾ। ਭਾਵੇਂ ਰੁਕਾਵਟ ਵਜੋਂ ਸੱਤ ਸਮੁੰਦਰ ਵੀ ਸਾਹਮਣੇ ਆ ਜਾਣ, ਪਰ ਕੀਤੇ ਦਾ ਫਲ ਸਮਾਂ ਆਉਣ ਤੇ ਅੱਗੇ ਆ ਕੇ ਜ਼ਰੂਰ ਮਿਲਦਾ ਹੈ।',
-      en: 'Kabir says that the fruit of one\'s own actions is never lost or wasted. Even if seven oceans stand as barriers in between, the results of your actions will inevitably come forward to meet you when the time is ripe.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अपनी की हुई करनी का फल कभी भी निष्फल नहीं हो सकता। चाहे उसके रोक (आड़) में सात समुद्र ही क्यों न आ जाएं, परंतु उसका फल समय आने पर अवश्य ही प्राप्त होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਪਣੀ ਕੀਤੀ ਹੋਈ ਕਰਨੀ ਦਾ ਫਲ ਕਦੇ ਵਿਅਰਥ ਨਹੀਂ ਜਾਂਦਾ। ਭਾਵੇਂ ਰੁਕਾਵਟ ਵਜੋਂ ਸੱਤ ਸਮੁੰਦਰ ਵੀ ਸਾਹਮਣੇ ਆ ਜਾਣ, ਪਰ ਕੀਤੇ ਦਾ ਫਲ ਸਮਾਂ ਆਉਣ ਤੇ ਅੱਗੇ ਆ ਕੇ ਜ਼ਰੂਰ ਮਿਲਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims that the fruit of one\'s own actions is never lost or wasted. Even if seven oceans stand as barriers in between, the results of your actions will inevitably come forward to meet you when the time is ripe.',
     },
     wordMeanings: {
       hi: [
@@ -101,7 +101,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे निष्काम भाव से निरंतर कर्तव्य पथ पर चलने का धैर्य प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'Hੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਨਿਸ਼ਕਾਮ ਸੇਵਾ ਦਾ ਬਲ ਬਖਸ਼ੋ। ਸਾਹेਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਨਿਸ਼ਕਾਮ ਸੇਵਾ ਦਾ ਬਲ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Give me the patience to perform my duty selflessly, trusting entirely in Your divine laws.'
     },
     quiz: []
@@ -211,7 +211,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे प्रभु! मुझे आलस्य रूपी दुर्गुण से बचाकर पुरुषार्थी व उत्साही साधक बनाएँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਉੱਦਮੀ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਉੱਦਮੀ ਬਣਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Deliver me from lethargy; inspire my soul with active enthusiasm and perseverance.'
     },
     quiz: []
@@ -266,7 +266,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरुदेव! मुझे इस भयंकर दोगलेपन से बचाकर परम प्रामाणिकता प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਕਥਨੀ-ਕਰਨੀ ਦੇ ਭੇਦ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਕਥਨੀ-ਕਰਨੀ ਦੇ ਭੇਦ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Deliver me from the disease of hypocrisy, and bless my life with absolute authenticity.'
     },
     quiz: []
@@ -321,7 +321,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे केवल बातें करने वाले वक्ता से बचाकर "रहनी" का सच्चा साधक बनाएँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਉੱਤਮ ਰਹਣੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਉੱਤਮ ਰਹਣੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Saheb! Release me from the trap of dry talk; make me a silent practitioner of noble living.'
     },
     quiz: []
@@ -395,7 +395,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jaisee karanee jaasu kee, taisee bhugate soy. Bin satguru kee bhakti ke, janam janam dukh hoy.',
     bhavarth: {
-      hi: 'जिसकी जैसी करनी होती है, उसको वैसा ही फल भुगतना पड़ता. है। सद्गुरु की सेवा-भक्ति के बिना तो जन्म-जन्मांतर तक दुःख भोगना पड़ता है, अतः गुरु-भक्ति करके पवित्र करनी का ज्ञान प्राप्त करना चाहिए।',
+      hi: 'जिसकी जैसी करनी होती है, उसको वैसा ही फल भुगतना पड़ता. है। सतगुरु की सेवा-भक्ति के बिना तो जन्म-जन्मांतर तक दुःख भोगना पड़ता है, अतः गुरु-भक्ति करके पवित्र करनी का ज्ञान प्राप्त करना चाहिए।',
       pb: 'ਜਿਸ ਵਰਗੇ ਕਿਸੇ ਦੇ ਕਰਮ ਹੁੰਦੇ ਹਨ, ਉਸਨੂੰ ਉਹੋ ਜਿਹਾ ਹੀ ਫਲ ਭੋਗਣਾ ਪੈਂਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਦੀ ਭਗਤੀ ਤੋਂ ਬਿਨਾਂ ਜਨਮ-ਜਨਮ ਤੱਕ ਦੁੱਖ ਭੋਗਣਾ ਪੈਂਦਾ ਹੈ।',
       en: 'As one sows, so shall they reap. Without the saving devotion and refuge of the Satguru, one continues to suffer from birth to birth; hence, seek holy shelter.',
     },
@@ -422,7 +422,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
       en: 'Am I seeking the protective shelter of the Satguru to transcend the painful cycle of cause and effect?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु की अनन्य सेवा-भक्ति स्वीकार करें, जिससे आपके पूर्व संचित पाप नष्ट हो सकें।',
+      hi: 'सतगुरु की अनन्य सेवा-भक्ति स्वीकार करें, जिससे आपके पूर्व संचित पाप नष्ट हो सकें।',
       pb: 'ਗੁਰੂ ਜੀ ਦੀ ਸ਼ਰਨ ਲੈ ਕੇ ਨਾਮ ਜਪੋ।',
       en: 'Adopt sincere devotion to the Satguru, which burns away accumulated karmic debts and purifies your actions.'
     },
@@ -483,7 +483,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरे भीतर की बड़बोलेपन की बीमारी मिटाकर मुझे ठोस आचरण का साधक बनाएँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੀ ਕਥਨੀ ਘਟਾ ਕੇ ਮੇਰੀ ਕਰਨੀ ਵਧਾ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੀ ਕਥਨੀ ਘਟਾ ਕੇ ਮੇਰੀ ਕਰਨੀ ਵਧਾ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Deliver me from boastful words; establish me in quiet, solid spiritual practice.'
     },
     quiz: []
@@ -505,7 +505,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir karanee kya karai, jo guru nahin sahaay. Jihi jihi daaree pagu dharai, son son ninvaninv jaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि बिना ज्ञान की करनी का कोई महत्त्व नहीं। जब तक सद्गुरु सहायक नहीं होते, तब तक करनी नहीं की जा सकती, अर्थात सद्गुरु के ज्ञानोपदेश से आचरण में सुधार आता है। सद्गुरु के ज्ञान के बिना तो जिज्ञासु साधक जहां-जहां अपना पांव रखता है, वहां की डाली झुक झुक जाती है (सभी प्रयास निष्फल हो जाते हैं)। विभ्रांत जीव को सही दिशा में सन्मार्ग पर ले जाने वाले सद्गुरु ही हैं। उन्हीं की सहायता से जीवन की सब भूलें व अपराध मिट जाते हैं, अतः जिज्ञासु जनों को सद्गुरु की शरण में जाकर ज्ञानोपदेश प्राप्त करना चाहिए।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि बिना ज्ञान की करनी का कोई महत्त्व नहीं। जब तक सतगुरु सहायक नहीं होते, तब तक करनी नहीं की जा सकती, अर्थात सतगुरु के ज्ञानोपदेश से आचरण में सुधार आता है। सतगुरु के ज्ञान के बिना तो जिज्ञासु साधक जहां-जहां अपना पांव रखता है, वहां की डाली झुक झुक जाती है (सभी प्रयास निष्फल हो जाते हैं)। विभ्रांत जीव को सही दिशा में सन्मार्ग पर ले जाने वाले सतगुरु ही हैं। उन्हीं की सहायता से जीवन की सब भूलें व अपराध मिट जाते हैं, अतः जिज्ञासु जनों को सतगुरु की शरण में जाकर ज्ञानोपदेश प्राप्त करना चाहिए।',
       pb: 'ਗੁਰੂ ਦੀ ਸਹਾਇਤਾ ਤੇ ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਕੀਤੀ ਕਰਨੀ ਵਿਅਰਥ ਹੈ। ਜਿਸ ਡਾਲੀ ਤੇ ਵੀ ਬਿਨਾਂ ਗੁਰੂ ਦੀ ਅਗਵਾਈ ਦੇ ਪੈਰ ਰੱਖੋਗੇ, ਉਹੀ ਡਾਲੀ ਲਿਫ਼ (ਝੁਕ) ਜਾਵੇਗੀ, ਭਾਵ ਸਾਰੇ ਯਤਨ ਅਸਫ਼ਲ ਰਹਿਣਗੇ।',
       en: 'What can personal action achieve without the guidance of the Guru? Whichever branch an unguided seeker steps on bends and breaks (all efforts fail). The Guru alone steers the soul in the right direction.',
     },
@@ -532,7 +532,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
       en: 'Am I foolishly attempting self-designed spiritual practices without surrendered obedience to the Guru?'
     },
     practicalApplication: {
-      hi: 'अपनी हठ बुद्धि को त्यागकर सद्गुरु के वचनों को ही अपनी करनी व साधना का आधार बनाएँ।',
+      hi: 'अपनी हठ बुद्धि को त्यागकर सतगुरु के वचनों को ही अपनी करनी व साधना का आधार बनाएँ।',
       pb: 'ਆਪਣੀ ਸਮਝ ਛੱਡ ਕੇ ਗੁਰੂ ਦੀ ਆਗਿਆ ਵਿੱਚ ਚੱਲੋ।',
       en: 'Cast off self-willed vanity; let the pure instructions of the Guru guide your path and action.'
     },
@@ -593,7 +593,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे अंतर्यामी साहेब! मेरे मन से समस्त छल-कपट मिटाकर मुझे सत्य व सरल आचरण प्रदान करें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੇ ਅੰਦਰੋਂ ਹਰ ਤਰ੍ਹਾਂ ਦੀ ਚਲਾਕੀ ਦੂਰ ਕਰੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੇ ਅੰਦਰੋਂ ਹਰ ਤਰ੍ਹਾਂ ਦੀ ਚਲਾਕੀ ਦੂਰ ਕਰੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O All-knowing Lord! Dissolve all pretense in me; grant me a clean, straightforward heart.'
     },
     quiz: []
@@ -670,7 +670,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maarag chalate jo girai, taako naahin dos. Kahain kabir baitha rahai, ta sheesh karade kos.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि सन्मार्ग पर चलते हुए जो गिर भी जाए, तो इसमें उसका कोई दोष नहीं। महादोष तो उसका है, जो खाली बैठा रहता है और चलने का नाम नहीं लेता। उसके सिर पर तो मार्ग के सब कोस कठिन ही पड़ते हैं, अर्थात जब तक वह नहीं चलेगा, तब तक पूरा कठिन मार्ग उसके ऊपर शेष बना रहेगा।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सन्मार्ग पर चलते हुए जो गिर भी जाए, तो इसमें उसका कोई दोष नहीं। महादोष तो उसका है, जो खाली बैठा रहता है और चलने का नाम नहीं लेता। उसके सिर पर तो मार्ग के सब कोस कठिन ही पड़ते हैं, अर्थात जब तक वह नहीं चलेगा, तब तक पूरा कठिन मार्ग उसके ऊपर शेष बना रहेगा।',
       pb: 'ਰਾਹ ਤੇ ਚੱਲਦਿਆਂ ਜੇ ਕੋਈ ਡਿੱਗ ਪਵੇ ਤਾਂ ਉਸਦਾ ਕੋਈ ਦੋਸ਼ ਨਹੀਂ। ਦੋਸ਼ ਤਾਂ ਉਸਦਾ ਹੈ ਜੋ ਬੈਠਾ ਹੀ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਚੱਲਦਾ ਹੀ ਨਹੀਂ। ਉਸ ਲਈ ਸਾਰਾ ਰਾਹ ਮੁਸ਼ਕਿਲ ਹੀ ਰਹਿੰਦਾ ਹੈ।',
       en: 'If one stumbles or falls while actively walking on the spiritual path, they are not to be blamed. The real failure belongs to the one who sits idle and refuses to walk; for them, the destination remains forever unreachable.',
     },
@@ -703,7 +703,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे दयालु साहेब! मुझे साधना पथ पर अडिगता व साहस प्रदान करें ताकि मैं कभी हताश न होऊँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੈਨੂੰ ਸਾਹਸ ਤੇ ਹਿੰਮਤ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੈਨੂੰ ਸਾਹਸ ਤੇ ਹਿੰਮਤ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Endow my soul with courage and resilience so that I never yield to despair or defeat.'
     },
     quiz: []
@@ -758,7 +758,7 @@ export const SAKHIS_KARANI_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे प्रभु! मेरे भीतर पुरुषार्थ व सेवा-साधना का अखंड उत्साह जगाए रखें। साहेब बंदगी साहेब!',
-      pb: 'ਹे ਸਾਹਿਬ! ਮੇਰੇ ਅੰਦਰ ਸੇਵਾ ਤੇ ਸਿਮਰਨ ਦਾ ਉਤਸ਼ਾਹ ਬਣਾਈ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹे ਸਾਹੇਬ! ਮੇਰੇ ਅੰਦਰ ਸੇਵਾ ਤੇ ਸਿਮਰਨ ਦਾ ਉਤਸ਼ਾਹ ਬਣਾਈ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Lord! Ignite in my soul a constant fire of spiritual enthusiasm and selfless industry.'
     },
     quiz: []

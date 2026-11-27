@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Tan bohat man kaag hai, laksh yojan ud jaay. Kabahu ke dharm agam dayi, kabahu gagan samaay.',
     bhavarth: {
-      hi: 'कबीर साहेब मन की असीम चंचलता का वर्णन करते हैं: यह शरीर समुद्र में तैरते हुए एक विशाल जहाज (बोहित) की तरह है और यह मन उस पर बैठा हुआ कौआ (काग) है। कौआ जहाज से उड़कर लाखों योजन (मीलों) दूर भटकता है, कभी अगाध जल में गोते लगाता है और कभी आकाश में उड़ जाता है, किंतु अंततः उसे जहाज (आत्मा/सतगुरु) पर ही लौटकर आना पड़ता है। जब तक मन टिकता नहीं, तब तक शांति नहीं मिलती।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਮਨ ਦੀ ਭਟਕਣਾ ਦੱਸਦੇ ਹਨ: ਇਹ ਸਰੀਰ ਇੱਕ ਜਹਾਜ਼ ਵਾਂਗ ਹੈ ਤੇ ਮਨ ਉਸ ਉੱਤੇ ਬੈਠਾ ਕਾਂ ਹੈ ਜੋ ਲੱਖਾਂ ਕੋਹਾਂ ਦੂਰ ਉੱਡਦਾ ਹੈ। ਕਦੇ ਡੂੰਘੇ ਪਾਣੀ ਚ ਜਾਂਦਾ ਹੈ ਤੇ ਕਦੇ ਆਕਾਸ਼ ਚ, ਪਰ ਅੰਤ ਜਹਾਜ਼ ਤੇ ਹੀ ਆਉਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates the extreme restlessness of the mind: This body is like a ship floating on the cosmic ocean, and the mind is like a crow perched upon it. The crow flies millions of miles into endless skies and dives into deep waters, yet finds no rest anywhere until it returns to the ship of the soul. The mind must surrender and settle in the inner Self to find true peace.',
+      hi: 'सतगुरु कबीर साहेब मन की असीम चंचलता का वर्णन करते हैं: यह शरीर समुद्र में तैरते हुए एक विशाल जहाज (बोहित) की तरह है और यह मन उस पर बैठा हुआ कौआ (काग) है। कौआ जहाज से उड़कर लाखों योजन (मीलों) दूर भटकता है, कभी अगाध जल में गोते लगाता है और कभी आकाश में उड़ जाता है, किंतु अंततः उसे जहाज (आत्मा/सतगुरु) पर ही लौटकर आना पड़ता है। जब तक मन टिकता नहीं, तब तक शांति नहीं मिलती।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮਨ ਦੀ ਭਟਕਣਾ ਦੱਸਦੇ ਹਨ: ਇਹ ਸਰੀਰ ਇੱਕ ਜਹਾਜ਼ ਵਾਂਗ ਹੈ ਤੇ ਮਨ ਉਸ ਉੱਤੇ ਬੈਠਾ ਕਾਂ ਹੈ ਜੋ ਲੱਖਾਂ ਕੋਹਾਂ ਦੂਰ ਉੱਡਦਾ ਹੈ। ਕਦੇ ਡੂੰਘੇ ਪਾਣੀ ਚ ਜਾਂਦਾ ਹੈ ਤੇ ਕਦੇ ਆਕਾਸ਼ ਚ, ਪਰ ਅੰਤ ਜਹਾਜ਼ ਤੇ ਹੀ ਆਉਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the extreme restlessness of the mind: This body is like a ship floating on the cosmic ocean, and the mind is like a crow perched upon it. The crow flies millions of miles into endless skies and dives into deep waters, yet finds no rest anywhere until it returns to the ship of the soul. The mind must surrender and settle in the inner Self to find true peace.',
     },
     wordMeanings: {
       hi: [
@@ -104,9 +104,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Tab lag taara jagmage, jab lag uge na soor. Tab lag jeev jag karmavash, jyo lag gyan na poor.',
     bhavarth: {
-      hi: 'कबीर साहेब ज्ञान के पूर्ण सूर्य का प्रभाव बताते हैं: आकाश में तारे केवल तभी तक टिमटिमाते हैं जब तक कि सूर्य का उदय नहीं होता। ठीक उसी प्रकार यह जीव संसार के शुभाशुभ कर्मों और माया के बंधनों के अधीन केवल तब तक रहता है, जब तक कि उसके भीतर पूर्ण आत्मज्ञान और तत्वबोध का सूर्य उदित नहीं हो जाता। पूर्ण ज्ञान होते ही सारे कर्म-बंधन विलीन हो जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤਾਰੇ ਸਿਰਫ ਉਦੋਂ ਤੱਕ ਚਮਕਦੇ ਹਨ ਜਦ ਤੱਕ ਸੂਰਜ ਨਹੀਂ ਚੜ੍ਹਦਾ। ਓਵੇਂ ਹੀ ਜੀਵ ਕਰਮਾਂ ਦੇ ਬੰਧਨਾਂ ਵਿੱਚ ਉਦੋਂ ਤੱਕ ਫਸਿਆ ਰਹਿੰਦਾ ਹੈ ਜਦ ਤੱਕ ਪੂਰਨ ਆਤਮ-ਗਿਆਨ ਦਾ ਸੂਰਜ ਪ੍ਰਗਟ ਨਹੀਂ ਹੁੰਦਾ।',
-      en: 'Kabir Saheb illustrates the power of complete spiritual illumination: Stars sparkle in the darkness only until the radiant Sun arises in the sky. In the exact same way, the individual soul remains bound by the rigid chains of karma and worldly illusion only until the complete Sun of Divine Wisdom dawns within the heart. Once true knowledge shines, all karmic bondage vanishes.',
+      hi: 'सतगुरु कबीर साहेब ज्ञान के पूर्ण सूर्य का प्रभाव बताते हैं: आकाश में तारे केवल तभी तक टिमटिमाते हैं जब तक कि सूर्य का उदय नहीं होता। ठीक उसी प्रकार यह जीव संसार के शुभाशुभ कर्मों और माया के बंधनों के अधीन केवल तब तक रहता है, जब तक कि उसके भीतर पूर्ण आत्मज्ञान और तत्वबोध का सूर्य उदित नहीं हो जाता। पूर्ण ज्ञान होते ही सारे कर्म-बंधन विलीन हो जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤਾਰੇ ਸਿਰਫ ਉਦੋਂ ਤੱਕ ਚਮਕਦੇ ਹਨ ਜਦ ਤੱਕ ਸੂਰਜ ਨਹੀਂ ਚੜ੍ਹਦਾ। ਓਵੇਂ ਹੀ ਜੀਵ ਕਰਮਾਂ ਦੇ ਬੰਧਨਾਂ ਵਿੱਚ ਉਦੋਂ ਤੱਕ ਫਸਿਆ ਰਹਿੰਦਾ ਹੈ ਜਦ ਤੱਕ ਪੂਰਨ ਆਤਮ-ਗਿਆਨ ਦਾ ਸੂਰਜ ਪ੍ਰਗਟ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Satguru Kabir Saheb illustrates the power of complete spiritual illumination: Stars sparkle in the darkness only until the radiant Sun arises in the sky. In the exact same way, the individual soul remains bound by the rigid chains of karma and worldly illusion only until the complete Sun of Divine Wisdom dawns within the heart. Once true knowledge shines, all karmic bondage vanishes.',
     },
     wordMeanings: {
       hi: [
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Taara mandal baithi ke, chaand badaai khaay. Uday bhaya jab surya ka, tab taara chhip jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब अल्पज्ञानी के झूठे घमंड और पूर्ण ज्ञान की महिमा का दृष्टांत देते हैं: तारों के बीच बैठकर चंद्रमा अपनी चमक और बड़प्पन का अहंकार करता है। किंतु जैसे ही तेजस्वी सूर्य का उदय होता है, चंद्रमा और तारे दोनों की चमक फीकी पड़ जाती है और वे छिप जाते हैं। इसी प्रकार अज्ञानियों के बीच थोड़ा ज्ञानी व्यक्ति स्वयं को बड़ा मानता है, किंतु पूर्ण ब्रह्मज्ञानी संत के समक्ष उसका सारा घमंड विलीन हो जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤਾਰਿਆਂ ਵਿਚਕਾਰ ਬੈਠ ਕੇ ਚੰਨ ਆਪਣੀ ਵਡਿਆਈ ਕਰਦਾ ਹੈ, ਪਰ ਜਦੋਂ ਸੂਰਜ ਚੜ੍ਹਦਾ ਹੈ ਤਾਂ ਸਭ ਛਿਪ ਜਾਂਦੇ ਹਨ। ਅਗਿਆਨੀਆਂ ਵਿੱਚ ਥੋੜ੍ਹਾ ਜਾਣਨ ਵਾਲਾ ਹੰਕਾਰ ਕਰਦਾ ਹੈ, ਪਰ ਪੂਰਨ ਸੰਤ ਅੱਗੇ ਉਸਦਾ ਹੰਕਾਰ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb warns against intellectual vanity: Sitting amidst the dim stars of night, the moon boasts of its brightness and grandeur. But as soon as the blazing Sun rises, both moon and stars disappear into insignificance. Similarly, a half-baked scholar boasts amongst the ignorant, but before a fully enlightened Satguru, all artificial pretensions instantly vanish.',
+      hi: 'सतगुरु कबीर साहेब अल्पज्ञानी के झूठे घमंड और पूर्ण ज्ञान की महिमा का दृष्टांत देते हैं: तारों के बीच बैठकर चंद्रमा अपनी चमक और बड़प्पन का अहंकार करता है। किंतु जैसे ही तेजस्वी सूर्य का उदय होता है, चंद्रमा और तारे दोनों की चमक फीकी पड़ जाती है और वे छिप जाते हैं। इसी प्रकार अज्ञानियों के बीच थोड़ा ज्ञानी व्यक्ति स्वयं को बड़ा मानता है, किंतु पूर्ण ब्रह्मज्ञानी संत के समक्ष उसका सारा घमंड विलीन हो जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤਾਰਿਆਂ ਵਿਚਕਾਰ ਬੈਠ ਕੇ ਚੰਨ ਆਪਣੀ ਵਡਿਆਈ ਕਰਦਾ ਹੈ, ਪਰ ਜਦੋਂ ਸੂਰਜ ਚੜ੍ਹਦਾ ਹੈ ਤਾਂ ਸਭ ਛਿਪ ਜਾਂਦੇ ਹਨ। ਅਗਿਆਨੀਆਂ ਵਿੱਚ ਥੋੜ੍ਹਾ ਜਾਣਨ ਵਾਲਾ ਹੰਕਾਰ ਕਰਦਾ ਹੈ, ਪਰ ਪੂਰਨ ਸੰਤ ਅੱਗੇ ਉਸਦਾ ਹੰਕਾਰ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb warns against intellectual vanity: Sitting amidst the dim stars of night, the moon boasts of its brightness and grandeur. But as soon as the blazing Sun rises, both moon and stars disappear into insignificance. Similarly, a half-baked scholar boasts amongst the ignorant, but before a fully enlightened Satguru, all artificial pretensions instantly vanish.',
     },
     wordMeanings: {
       hi: [
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Timir gaya ravi dekhte, kumati gayi guru gyan. Sumati gayi ati lobhate, bhakti gayi abhimaan.',
     bhavarth: {
-      hi: 'कबीर साहेब चार सार्वभौमिक सत्यों का सूत्र बताते हैं: जैसे सूर्य को देखते ही अंधकार (तिमिर) मिट जाता है, वैसे ही सतगुरु के ज्ञान से अज्ञान व दुर्बुद्धि (कुमति) नष्ट हो जाती है। किंतु अत्यधिक लोभ आने पर सदबुद्धि (सुमति) नष्ट हो जाती है, और अहंकार व घमंड आने पर सारी भक्ति नष्ट हो जाती है। अतः साधक को लोभ और अभिमान से सदा सावधान रहना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੂਰਜ ਦੇਖਣ ਨਾਲ ਹਨੇਰਾ ਮਿਟਦਾ ਹੈ, ਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ ਖੋਟੀ ਮੱਤ ਜਾਂਦੀ ਹੈ। ਪਰ ਬਹੁਤੇ ਲਾਲਚ ਨਾਲ ਚੰਗੀ ਮੱਤ ਨਸ਼ਟ ਹੁੰਦੀ ਹੈ, ਅਤੇ ਹੰਕਾਰ ਆਉਣ ਨਾਲ ਸਾਰੀ ਭਗਤੀ ਖਤਮ ਹੋ ਜਾਂਦੀ ਹੈ।',
-      en: 'Kabir Saheb states four profound spiritual axioms: Just as darkness vanishes at the sight of the sun, so does evil intellect (Kumati) disappear before the Master’s wisdom. Conversely, excessive greed destroys noble intellect (Sumati), and pride utterly obliterates devotion (Bhakti). Therefore, a seeker must relentlessly guard against greed and ego.',
+      hi: 'सतगुरु कबीर साहेब चार सार्वभौमिक सत्यों का सूत्र बताते हैं: जैसे सूर्य को देखते ही अंधकार (तिमिर) मिट जाता है, वैसे ही सतगुरु के ज्ञान से अज्ञान व दुर्बुद्धि (कुमति) नष्ट हो जाती है। किंतु अत्यधिक लोभ आने पर सदबुद्धि (सुमति) नष्ट हो जाती है, और अहंकार व घमंड आने पर सारी भक्ति नष्ट हो जाती है। अतः साधक को लोभ और अभिमान से सदा सावधान रहना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੂਰਜ ਦੇਖਣ ਨਾਲ ਹਨੇਰਾ ਮਿਟਦਾ ਹੈ, ਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ ਖੋਟੀ ਮੱਤ ਜਾਂਦੀ ਹੈ। ਪਰ ਬਹੁਤੇ ਲਾਲਚ ਨਾਲ ਚੰਗੀ ਮੱਤ ਨਸ਼ਟ ਹੁੰਦੀ ਹੈ, ਅਤੇ ਹੰਕਾਰ ਆਉਣ ਨਾਲ ਸਾਰੀ ਭਗਤੀ ਖਤਮ ਹੋ ਜਾਂਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims four profound spiritual axioms: Just as darkness vanishes at the sight of the sun, so does evil intellect (Kumati) disappear before the Master’s wisdom. Conversely, excessive greed destroys noble intellect (Sumati), and pride utterly obliterates devotion (Bhakti). Therefore, a seeker must relentlessly guard against greed and ego.',
     },
     wordMeanings: {
       hi: [
@@ -353,9 +353,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Teer tupak se jo lade, so to shoor na hoy. Maya taji bhakti kare, soor kahaave soy.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्ची वीरता की परिभाषा देते हैं: जो केवल बाण (तीर) और बंदूक (तुपक) लेकर सांसारिक युद्ध में लड़ता है, वह वास्तव में सच्चा शूरवीर नहीं है। सच्चा शूरवीर (सूरमा) तो वह है जो माया, वासना, लोभ और अहंकार को त्यागकर मन के विकारों से लड़ता है और अनन्य भाव से परमात्मा की भक्ति करता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਿਰਫ ਤੀਰਾਂ ਤੇ ਬੰਦੂਕਾਂ ਨਾਲ ਲੜਦਾ ਹੈ ਉਹ ਅਸਲ ਸੂਰਮਾ ਨਹੀਂ। ਅਸਲ ਸੂਰਬੀਰ ਉਹ ਹੈ ਜੋ ਮਾਇਆ ਤੇ ਵਿਕਾਰਾਂ ਨੂੰ ਤਿਆਗ ਕੇ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਕਰਦਾ ਹੈ।',
-      en: 'Kabir Saheb redefines genuine valor: One who fights on physical battlefields with arrows (Teer) and guns (Tupak) is not the true warrior. The supreme warrior (Soorma) is that heroic soul who conquers the inner battlefield by slaying worldly illusion (Maya), lust, and ego, steadfastly devoting their life to the Supreme Divine.',
+      hi: 'सतगुरु कबीर साहेब सच्ची वीरता की परिभाषा देते हैं: जो केवल बाण (तीर) और बंदूक (तुपक) लेकर सांसारिक युद्ध में लड़ता है, वह वास्तव में सच्चा शूरवीर नहीं है। सच्चा शूरवीर (सूरमा) तो वह है जो माया, वासना, लोभ और अहंकार को त्यागकर मन के विकारों से लड़ता है और अनन्य भाव से परमात्मा की भक्ति करता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਿਰਫ ਤੀਰਾਂ ਤੇ ਬੰਦੂਕਾਂ ਨਾਲ ਲੜਦਾ ਹੈ ਉਹ ਅਸਲ ਸੂਰਮਾ ਨਹੀਂ। ਅਸਲ ਸੂਰਬੀਰ ਉਹ ਹੈ ਜੋ ਮਾਇਆ ਤੇ ਵਿਕਾਰਾਂ ਨੂੰ ਤਿਆਗ ਕੇ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਕਰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb redefines genuine valor: One who fights on physical battlefields with arrows (Teer) and guns (Tupak) is not the true warrior. The supreme warrior (Soorma) is that heroic soul who conquers the inner battlefield by slaying worldly illusion (Maya), lust, and ego, steadfastly devoting their life to the Supreme Divine.',
     },
     wordMeanings: {
       hi: [
@@ -398,7 +398,7 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
       {
         id: 'q-b24-293',
         question: {
-          hi: 'साखी के अनुसार कबीर साहेब की दृष्टि में सच्चा शूरवीर कौन है?',
+          hi: 'साखी के अनुसार सतगुरु कबीर साहेब की दृष्टि में सच्चा शूरवीर कौन है?',
           pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਸੱਚਾ ਸੂਰਮਾ ਕੌਣ ਹੈ?',
           en: 'According to this Sakhi, who is recognized as the true warrior?',
         },
@@ -435,9 +435,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Teerath gaye te ek phal, sant mile phal chaar. Satguru mile anek phal, kahe Kabir vichaar.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक संगति और गुरु की महिमा का तुलनात्मक फल बताते हैं: तीर्थों पर जाने से केवल एक फल (शारीरिक पवित्रता या थोड़ा पुण्य) मिलता है; सच्चे संतों के दर्शन व संगति से चारों फल (धर्म, अर्थ, काम और मोक्ष) सिद्ध होते हैं; किंतु जब पूर्ण सतगुरु की प्राप्ति और कृपा हो जाती है, तो अनंत और अकथनीय फलों (आत्म-साक्षात्कार, अमरत्व व मुक्ति) की वर्षा होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤੀਰਥ ਯਾਤਰਾ ਨਾਲ ਇੱਕ ਫਲ ਮਿਲਦਾ ਹੈ, ਸੰਤਾਂ ਦੇ ਮਿਲਣ ਨਾਲ ਚਾਰ ਫਲ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ, ਪਰ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੇ ਮਿਲਣ ਨਾਲ ਅਨੇਕਾਂ (ਬੇਅੰਤ) ਰੂਹਾਨੀ ਫਲ ਤੇ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ।',
-      en: 'Kabir Saheb contrasts the rewards of spiritual practices: Visiting external holy shrines yields merely one reward (basic merit); meeting living saints bestows the four great boons of human life (virtue, purpose, fulfillment, and liberation); but meeting and surrendering to the True Master (Satguru) showers infinite, boundless spiritual fruits, crowning the soul with eternal realization.',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक संगति और गुरु की महिमा का तुलनात्मक फल बताते हैं: तीर्थों पर जाने से केवल एक फल (शारीरिक पवित्रता या थोड़ा पुण्य) मिलता है; सच्चे संतों के दर्शन व संगति से चारों फल (धर्म, अर्थ, काम और मोक्ष) सिद्ध होते हैं; किंतु जब पूर्ण सतगुरु की प्राप्ति और कृपा हो जाती है, तो अनंत और अकथनीय फलों (आत्म-साक्षात्कार, अमरत्व व मुक्ति) की वर्षा होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤੀਰਥ ਯਾਤਰਾ ਨਾਲ ਇੱਕ ਫਲ ਮਿਲਦਾ ਹੈ, ਸੰਤਾਂ ਦੇ ਮਿਲਣ ਨਾਲ ਚਾਰ ਫਲ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ, ਪਰ ਪੂਰੇ ਸਤਿਗੁਰੂ ਦੇ ਮਿਲਣ ਨਾਲ ਅਨੇਕਾਂ (ਬੇਅੰਤ) ਰੂਹਾਨੀ ਫਲ ਤੇ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb contrasts the rewards of spiritual practices: Visiting external holy shrines yields merely one reward (basic merit); meeting living saints bestows the four great boons of human life (virtue, purpose, fulfillment, and liberation); but meeting and surrendering to the True Master (Satguru) showers infinite, boundless spiritual fruits, crowning the soul with eternal realization.',
     },
     wordMeanings: {
       hi: [
@@ -517,9 +517,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Tu tu karta tu bhaya, mujhme rahi na hu. Baari pheri bali gayi, jit dekhu tit tu.',
     bhavarth: {
-      hi: 'कबीर साहेब अद्वैत और पूर्ण एकात्मता की सर्वोच्च पराकाष्ठा प्रकट करते हैं: हे प्रभु! निरंतर आपका ही नाम स्मरण और ध्यान करते-करते मैं स्वयं आपके ही स्वरूप में लीन हो गया, मेरे भीतर मेरा व्यक्तिगत अहंकार (हूँ / मैं-भाव) तनिक भी शेष नहीं रहा। मेरा जन्म-मरण का आवागमन और संसार का फेरा पूरी तरह भस्म हो गया; अब मैं जिधर भी दृष्टि डालता हूँ, मुझे केवल और केवल आप ही दिखाई देते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਪ੍ਰਭੂ! ਤੈਨੂੰ ਧਿਆਉਂਦਿਆਂ ਮੈਂ ਤੇਰਾ ਹੀ ਰੂਪ ਹੋ ਗਿਆ, ਮੇਰੇ ਅੰਦਰ ਹਉਮੈ (ਮੈਂ) ਨਹੀਂ ਰਹੀ। ਮੇਰਾ ਜਨਮ-ਮਰਨ ਦਾ ਗੇੜਾ ਮੁੱਕ ਗਿਆ, ਹੁਣ ਜਿੱਧਰ ਵੇਖਦਾ ਹਾਂ ਉੱਧਰ ਤੂੰ ਹੀ ਤੂੰ ਨਜ਼ਰ ਆਉਂਦਾ ਹੈਂ।',
-      en: 'Kabir Saheb gives voice to the sublime pinnacle of non-dual realization: "O Beloved Lord! By continually meditating upon You and crying ‘Thou, Thou’, my individual ego has dissolved completely—no sense of ‘I’ remains in me! The endless cycle of transmigration has been completely consumed in this holy fire; now, whichever direction I cast my eyes, I behold only You and You alone!"',
+      hi: 'सतगुरु कबीर साहेब अद्वैत और पूर्ण एकात्मता की सर्वोच्च पराकाष्ठा प्रकट करते हैं: हे प्रभु! निरंतर आपका ही नाम स्मरण और ध्यान करते-करते मैं स्वयं आपके ही स्वरूप में लीन हो गया, मेरे भीतर मेरा व्यक्तिगत अहंकार (हूँ / मैं-भाव) तनिक भी शेष नहीं रहा। मेरा जन्म-मरण का आवागमन और संसार का फेरा पूरी तरह भस्म हो गया; अब मैं जिधर भी दृष्टि डालता हूँ, मुझे केवल और केवल आप ही दिखाई देते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਪ੍ਰਭੂ! ਤੈਨੂੰ ਧਿਆਉਂਦਿਆਂ ਮੈਂ ਤੇਰਾ ਹੀ ਰੂਪ ਹੋ ਗਿਆ, ਮੇਰੇ ਅੰਦਰ ਹਉਮੈ (ਮੈਂ) ਨਹੀਂ ਰਹੀ। ਮੇਰਾ ਜਨਮ-ਮਰਨ ਦਾ ਗੇੜਾ ਮੁੱਕ ਗਿਆ, ਹੁਣ ਜਿੱਧਰ ਵੇਖਦਾ ਹਾਂ ਉੱਧਰ ਤੂੰ ਹੀ ਤੂੰ ਨਜ਼ਰ ਆਉਂਦਾ ਹੈਂ।',
+      en: 'Satguru Kabir Saheb gives voice to the sublime pinnacle of non-dual realization: "O Beloved Lord! By continually meditating upon You and crying ‘Thou, Thou’, my individual ego has dissolved completely—no sense of ‘I’ remains in me! The endless cycle of transmigration has been completely consumed in this holy fire; now, whichever direction I cast my eyes, I behold only You and You alone!"',
     },
     wordMeanings: {
       hi: [
@@ -557,7 +557,7 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
       en: 'O Omnipresent Beloved Satguru! Dissolve my finite ego into Your infinite ocean, that I may see only Your glory everywhere. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी भारतीय रहस्यवाद और कबीर साहेब के अद्वैत दर्शन की सर्वश्रेष्ठ और अत्यंत प्रिय साखियों में से एक है।',
+      hi: 'यह साखी भारतीय रहस्यवाद और सतगुरु कबीर साहेब के अद्वैत दर्शन की सर्वश्रेष्ठ और अत्यंत प्रिय साखियों में से एक है।',
       pb: 'ਇਹ ਸਾਖੀ ਅਦਵੈਤ ਭਗਤੀ ਦੀ ਸਭ ਤੋਂ ਉੱਚੀ ਅਵਸਥਾ ਦਾ ਬਿਆਨ ਹੈ।',
       en: 'This immortal verse is celebrated as one of the ultimate expressions of non-dual mystic union.',
     },
@@ -602,9 +602,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Te din gaye akaarathi, sangat bhayi na sant. Prem bina pashu jeevna, bhakti bina bhagwant.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवन के मूल्य का मर्म समझाते हैं: वे सभी दिन सर्वथा व्यर्थ और निष्फल (अकारथ) चले गए जिनमें संतों का सत्संग प्राप्त नहीं हुआ। जिस जीवन में परमात्मा और प्राणियों के प्रति निष्कपट प्रेम नहीं है, वह पशुवत जीवन के समान है; और सच्ची भक्ति के बिना जीव अपने परमपिता परमात्मा (भगवंत) से सदा वंचित ही रहता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਉਹ ਸਾਰੇ ਦਿਨ ਵਿਅਰਥ ਚਲੇ ਗਏ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਨਸੀਬ ਨਹੀਂ ਹੋਈ। ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਪਸ਼ੂਆਂ ਵਰਗਾ ਹੈ, ਅਤੇ ਭਗਤੀ ਤੋਂ ਬਿਨਾਂ ਪ੍ਰਭੂ ਦੀ ਪ੍ਰਾਪਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ।',
-      en: 'Kabir Saheb laments the days wasted in heedlessness: All those days are utterly lost and squandered in which holy fellowship (Satsang) with saintly souls was missing. A human life devoid of divine love is no different than the instinctive existence of a beast; and without sincere devotion, the soul remains forever estranged from the Supreme Lord.',
+      hi: 'सतगुरु कबीर साहेबवन के मूल्य का मर्म समझाते हैं: वे सभी दिन सर्वथा व्यर्थ और निष्फल (अकारथ) चले गए जिनमें संतों का सत्संग प्राप्त नहीं हुआ। जिस जीवन में परमात्मा और प्राणियों के प्रति निष्कपट प्रेम नहीं है, वह पशुवत जीवन के समान है; और सच्ची भक्ति के बिना जीव अपने परमपिता परमात्मा (भगवंत) से सदा वंचित ही रहता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਉਹ ਸਾਰੇ ਦਿਨ ਵਿਅਰਥ ਚਲੇ ਗਏ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਨਸੀਬ ਨਹੀਂ ਹੋਈ। ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਪਸ਼ੂਆਂ ਵਰਗਾ ਹੈ, ਅਤੇ ਭਗਤੀ ਤੋਂ ਬਿਨਾਂ ਪ੍ਰਭੂ ਦੀ ਪ੍ਰਾਪਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ।',
+      en: 'Satguru Kabir Saheb laments the days wasted in heedlessness: All those days are utterly lost and squandered in which holy fellowship (Satsang) with saintly souls was missing. A human life devoid of divine love is no different than the instinctive existence of a beast; and without sincere devotion, the soul remains forever estranged from the Supreme Lord.',
     },
     wordMeanings: {
       hi: [
@@ -684,9 +684,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Tera saanyi tujhme, jyo pahupan me baas. Kastoori ka hiran jyo, phir-phir dhoondhat ghaas.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा की अंतःस्थित उपस्थिति का अमर दृष्टांत देते हैं: तुम्हारा स्वामी (साँई) तुम्हारे अपने ही भीतर उसी प्रकार सूक्ष्म रूप से विद्यमान है, जैसे पुष्पों में उनकी सुगंध समाई रहती है। किंतु अज्ञानी मनुष्य की दशा कस्तूरी मृग (हिरन) जैसी है, जिसकी अपनी ही नाभि में अनमोल कस्तूरी महकती है, किंतु वह उसकी सुगंध को बाहर जंगल की घास में भटक-भटक कर खोजता फिरता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤੇਰਾ ਮਾਲਕ ਪ੍ਰਭੂ ਤੇਰੇ ਅੰਦਰ ਇੰਝ ਵੱਸਦਾ ਹੈ ਜਿਵੇਂ ਫੁੱਲਾਂ ਵਿੱਚ ਸੁਗੰਧ। ਪਰ ਮਨੁੱਖ ਕਸਤੂਰੀ ਵਾਲੇ ਹਿਰਨ ਵਾਂਗ ਹੈ ਜਿਸਦੀ ਨਾਭੀ ਚ ਕਸਤੂਰੀ ਹੁੰਦੀ ਹੈ ਪਰ ਉਹ ਉਸਦੀ ਖੁਸ਼ਬੂ ਬਾਹਰ ਘਾਹ ਵਿੱਚ ਭਾਲਦਾ ਫਿਰਦਾ ਹੈ।',
-      en: 'Kabir Saheb unveils the sublime mystery of divine immanence with an immortal metaphor: Your Supreme Master dwells intimately within you, just as fragrance permeates every petal of a flower. Yet human beings resemble the musk deer (Kastoori Mrig), which carries the divine perfume within its own navel, but wanders restlessly through forest grass searching outwardly for the aroma.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा की अंतःस्थित उपस्थिति का अमर दृष्टांत देते हैं: तुम्हारा स्वामी (साँई) तुम्हारे अपने ही भीतर उसी प्रकार सूक्ष्म रूप से विद्यमान है, जैसे पुष्पों में उनकी सुगंध समाई रहती है। किंतु अज्ञानी मनुष्य की दशा कस्तूरी मृग (हिरन) जैसी है, जिसकी अपनी ही नाभि में अनमोल कस्तूरी महकती है, किंतु वह उसकी सुगंध को बाहर जंगल की घास में भटक-भटक कर खोजता फिरता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਤੇਰਾ ਮਾਲਕ ਪ੍ਰਭੂ ਤੇਰੇ ਅੰਦਰ ਇੰਝ ਵੱਸਦਾ ਹੈ ਜਿਵੇਂ ਫੁੱਲਾਂ ਵਿੱਚ ਸੁਗੰਧ। ਪਰ ਮਨੁੱਖ ਕਸਤੂਰੀ ਵਾਲੇ ਹਿਰਨ ਵਾਂਗ ਹੈ ਜਿਸਦੀ ਨਾਭੀ ਚ ਕਸਤੂਰੀ ਹੁੰਦੀ ਹੈ ਪਰ ਉਹ ਉਸਦੀ ਖੁਸ਼ਬੂ ਬਾਹਰ ਘਾਹ ਵਿੱਚ ਭਾਲਦਾ ਫਿਰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb unveils the sublime mystery of divine immanence with an immortal metaphor: Your Supreme Master dwells intimately within you, just as fragrance permeates every petal of a flower. Yet human beings resemble the musk deer (Kastoori Mrig), which carries the divine perfume within its own navel, but wanders restlessly through forest grass searching outwardly for the aroma.',
     },
     wordMeanings: {
       hi: [
@@ -721,8 +721,8 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
       en: 'O Indwelling Beloved Satguru! Remove the veil of delusion from my awareness and reveal Your eternal presence within my soul. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की सर्वाधिक प्रसिद्ध और आत्म-साक्षात्कार की आधारशिला मानी जाने वाली साखी है।',
-      pb: 'ਇਹ ਸਾਖੀ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਸਭ ਤੋਂ ਮਸ਼ਹੂਰ ਸਾਖੀਆਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की सर्वाधिक प्रसिद्ध और आत्म-साक्षात्कार की आधारशिला मानी जाने वाली साखी है।',
+      pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਸਭ ਤੋਂ ਮਸ਼ਹੂਰ ਸਾਖੀਆਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ।',
       en: 'This timeless Sakhi is celebrated worldwide as the quintessence of the mystic path to Self-realization.',
     },
     quiz: [
@@ -766,9 +766,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Daya kaun par kijiye, ka par nirday hoy. Saanyi ke sab jeev hai, keeri kunjar doy.',
     bhavarth: {
-      hi: 'कबीर साहेब सार्वभौमिक अहिंसा, दया और समदृष्टि का उपदेश देते हैं: हम किस प्राणी पर दया करें और किसके प्रति निर्दयी व कठोर बनें? जब छोटी सी चींटी (कीरी) से लेकर विशाल हाथी (कुंजर) तक संसार के सभी जीव-जंतु एक ही परमपिता परमात्मा (साँई) की संतान हैं, तो सभी के प्रति समान दया और करुणा का भाव रखना ही सच्चा धर्म है। किसी भी जीव को सताना परमात्मा को सताना है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਕਿਸ ਤੇ ਦਇਆ ਕਰੀਏ ਤੇ ਕਿਸ ਤੇ ਬੇਰਹਿਮ ਹੋਈਏ? ਕੀੜੀ ਤੋਂ ਲੈ ਕੇ ਹਾਥੀ ਤੱਕ ਸਾਰੇ ਜੀਵ ਉਸ ਇੱਕੋ ਪ੍ਰਭੂ ਦੀ ਸਾਜਨਾ ਹਨ। ਇਸ ਲਈ ਸਭ ਜੀਵਾਂ ਤੇ ਦਇਆ ਤੇ ਪ੍ਰੇਮ ਰੱਖਣਾ ਹੀ ਅਸਲ ਧਰਮ ਹੈ।',
-      en: 'Kabir Saheb proclaims the gospel of universal compassion and divine equality: Upon whom should we bestow mercy, and toward whom could we ever dare be cruel? From the tiniest ant (Keeri) to the mighty elephant (Kunjar), every living being is the beloved creation of the one Supreme Lord. To harm any soul is to strike at God Himself; therefore, boundless compassion must embrace all creation.',
+      hi: 'सतगुरु कबीर साहेब सार्वभौमिक अहिंसा, दया और समदृष्टि का उपदेश देते हैं: हम किस प्राणी पर दया करें और किसके प्रति निर्दयी व कठोर बनें? जब छोटी सी चींटी (कीरी) से लेकर विशाल हाथी (कुंजर) तक संसार के सभी जीव-जंतु एक ही परमपिता परमात्मा (साँई) की संतान हैं, तो सभी के प्रति समान दया और करुणा का भाव रखना ही सच्चा धर्म है। किसी भी जीव को सताना परमात्मा को सताना है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਕਿਸ ਤੇ ਦਇਆ ਕਰੀਏ ਤੇ ਕਿਸ ਤੇ ਬੇਰਹਿਮ ਹੋਈਏ? ਕੀੜੀ ਤੋਂ ਲੈ ਕੇ ਹਾਥੀ ਤੱਕ ਸਾਰੇ ਜੀਵ ਉਸ ਇੱਕੋ ਪ੍ਰਭੂ ਦੀ ਸਾਜਨਾ ਹਨ। ਇਸ ਲਈ ਸਭ ਜੀਵਾਂ ਤੇ ਦਇਆ ਤੇ ਪ੍ਰੇਮ ਰੱਖਣਾ ਹੀ ਅਸਲ ਧਰਮ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the gospel of universal compassion and divine equality: Upon whom should we bestow mercy, and toward whom could we ever dare be cruel? From the tiniest ant (Keeri) to the mighty elephant (Kunjar), every living being is the beloved creation of the one Supreme Lord. To harm any soul is to strike at God Himself; therefore, boundless compassion must embrace all creation.',
     },
     wordMeanings: {
       hi: [
@@ -848,9 +848,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Das dwaare ka pinjra, taame panchhi ka kaun. Rahe ko achraj hai, gaye achambha kaun.',
     bhavarth: {
-      hi: 'कबीर साहेब मानव देह की नश्वरता और प्राणों के रहस्य पर गहरा विस्मय प्रकट करते हैं: यह मानव शरीर दस खुले द्वारों (दो आँखें, दो कान, दो नासिका छिद्र, एक मुख, दो मल-मूत्र द्वार और एक दशम द्वार) वाला एक खुला पिंजरा है; इसमें यह प्राण रूपी पंछी भला किसका सगा है? आश्चर्य तो इस बात का है कि इतने खुले द्वारों के होते हुए भी यह प्राण-पंछी इस शरीर में टिका हुआ है; जिस दिन यह उड़ जाएगा, उसमें कोई अचरज नहीं होगा। अतः इस नश्वर देह का अहंकार मत करो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਇਹ ਸਰੀਰ ਦਸ ਖੁੱਲ੍ਹੇ ਦਰਵਾਜ਼ਿਆਂ ਵਾਲਾ ਪਿੰਜਰਾ ਹੈ ਜਿਸ ਵਿੱਚ ਪ੍ਰਾਣ ਰੂਪੀ ਪੰਛੀ ਬੈਠਾ ਹੈ। ਹੈਰਾਨੀ ਤਾਂ ਇਸ ਗੱਲ ਦੀ ਹੈ ਕਿ ਉਹ ਅਜੇ ਤੱਕ ਅੰਦਰ ਟਿਕਿਆ ਹੈ, ਜਿਸ ਦਿਨ ਉਹ ਉੱਡ ਗਿਆ ਉਸ ਵਿੱਚ ਕੋਈ ਅਚੰਭਾ ਨਹੀਂ।',
-      en: 'Kabir Saheb expresses profound wonder at the precarious nature of life: This physical body is a cage equipped with ten open gates (eyes, ears, nostrils, mouth, lower apertures, and the crown aperture). In such an open cage, to whom does this fleeting bird of breath truly belong? The real miracle is that the bird remains inside this open cage for even a single moment; when it finally takes flight into the infinite, there is no surprise at all. Do not boast of this fragile frame.',
+      hi: 'सतगुरु कबीर साहेब मानव देह की नश्वरता और प्राणों के रहस्य पर गहरा विस्मय प्रकट करते हैं: यह मानव शरीर दस खुले द्वारों (दो आँखें, दो कान, दो नासिका छिद्र, एक मुख, दो मल-मूत्र द्वार और एक दशम द्वार) वाला एक खुला पिंजरा है; इसमें यह प्राण रूपी पंछी भला किसका सगा है? आश्चर्य तो इस बात का है कि इतने खुले द्वारों के होते हुए भी यह प्राण-पंछी इस शरीर में टिका हुआ है; जिस दिन यह उड़ जाएगा, उसमें कोई अचरज नहीं होगा। अतः इस नश्वर देह का अहंकार मत करो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਇਹ ਸਰੀਰ ਦਸ ਖੁੱਲ੍ਹੇ ਦਰਵਾਜ਼ਿਆਂ ਵਾਲਾ ਪਿੰਜਰਾ ਹੈ ਜਿਸ ਵਿੱਚ ਪ੍ਰਾਣ ਰੂਪੀ ਪੰਛੀ ਬੈਠਾ ਹੈ। ਹੈਰਾਨੀ ਤਾਂ ਇਸ ਗੱਲ ਦੀ ਹੈ ਕਿ ਉਹ ਅਜੇ ਤੱਕ ਅੰਦਰ ਟਿਕਿਆ ਹੈ, ਜਿਸ ਦਿਨ ਉਹ ਉੱਡ ਗਿਆ ਉਸ ਵਿੱਚ ਕੋਈ ਅਚੰਭਾ ਨਹੀਂ।',
+      en: 'Satguru Kabir Saheb expresses profound wonder at the precarious nature of life: This physical body is a cage equipped with ten open gates (eyes, ears, nostrils, mouth, lower apertures, and the crown aperture). In such an open cage, to whom does this fleeting bird of breath truly belong? The real miracle is that the bird remains inside this open cage for even a single moment; when it finally takes flight into the infinite, there is no surprise at all. Do not boast of this fragile frame.',
     },
     wordMeanings: {
       hi: [
@@ -885,7 +885,7 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
       en: 'O Lord of Life, Satguru! While this breath-bird abides in this ten-gated cage, may every single inhalation be consecrated to Your lotus feet. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी जीवन की अनिश्चितता और श्वासों के महत्व पर कबीर साहेब की अत्यंत मार्मिक चेतावनी है।',
+      hi: 'यह साखी जीवन की अनिश्चितता और श्वासों के महत्व पर सतगुरु कबीर साहेब की अत्यंत मार्मिक चेतावनी है।',
       pb: 'ਇਹ ਸਾਖੀ ਜੀਵਨ ਦੀ ਨਾਸ਼ਵਾਨਤਾ ਦੀ ਗੰਭੀਰ ਚੇਤਾਵਨੀ ਹੈ।',
       en: 'This verse is a piercing meditation on the sheer fragility of mortal existence.',
     },
@@ -930,9 +930,9 @@ export const SAKHIS_BATCH_24: Sakhi[] = [
     },
     transliteration: 'Daan diye dhan na ghate, nadi na ghate neer. Apni aankho dekh lo, yo kya kahe Kabir.',
     bhavarth: {
-      hi: 'कबीर साहेब परोपकार और दान का प्रत्यक्ष सत्य उजागर करते हैं: सत्पात्र को दान देने और परोपकार में लगाने से किसी का धन कभी कम नहीं होता, ठीक वैसे ही जैसे नदी से असंख्य लोग और पशु-पक्षी जल पीते हैं किंतु नदी का जल कभी घटता नहीं है। कबीर कहते हैं कि यह प्रत्यक्ष प्रमाण अपनी आँखों से देख लो, इसमें किसी संशय की कोई गुंजाइश नहीं है। दान से धन पवित्र और बढ़ता ही है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਨੇਕ ਕੰਮਾਂ ਵਿੱਚ ਦਾਨ ਦੇਣ ਨਾਲ ਧਨ ਕਦੇ ਨਹੀਂ ਘਟਦਾ, ਜਿਵੇਂ ਸਭ ਦੇ ਪਾਣੀ ਪੀਣ ਨਾਲ ਨਦੀ ਦਾ ਪਾਣੀ ਨਹੀਂ ਮੁੱਕਦਾ। ਇਹ ਸੱਚ ਆਪਣੀ ਅੱਖੀਂ ਵੇਖ ਲਵੋ।',
-      en: 'Kabir Saheb presents the irrefutable truth of selfless charity: Giving to the needy and contributing to noble spiritual causes never diminishes one’s wealth, just as countless travelers and creatures drinking from a flowing river never deplete its water. Kabir asks: "Witness this living reality with your own eyes—charity purifies wealth and attracts divine abundance."',
+      hi: 'सतगुरु कबीर साहेब परोपकार और दान का प्रत्यक्ष सत्य उजागर करते हैं: सत्पात्र को दान देने और परोपकार में लगाने से किसी का धन कभी कम नहीं होता, ठीक वैसे ही जैसे नदी से असंख्य लोग और पशु-पक्षी जल पीते हैं किंतु नदी का जल कभी घटता नहीं है। सतगुरु कबीर साहेब फरमाते हैं कि यह प्रत्यक्ष प्रमाण अपनी आँखों से देख लो, इसमें किसी संशय की कोई गुंजाइश नहीं है। दान से धन पवित्र और बढ़ता ही है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਨੇਕ ਕੰਮਾਂ ਵਿੱਚ ਦਾਨ ਦੇਣ ਨਾਲ ਧਨ ਕਦੇ ਨਹੀਂ ਘਟਦਾ, ਜਿਵੇਂ ਸਭ ਦੇ ਪਾਣੀ ਪੀਣ ਨਾਲ ਨਦੀ ਦਾ ਪਾਣੀ ਨਹੀਂ ਮੁੱਕਦਾ। ਇਹ ਸੱਚ ਆਪਣੀ ਅੱਖੀਂ ਵੇਖ ਲਵੋ।',
+      en: 'Satguru Kabir Saheb presents the irrefutable truth of selfless charity: Giving to the needy and contributing to noble spiritual causes never diminishes one’s wealth, just as countless travelers and creatures drinking from a flowing river never deplete its water. Kabir asks: "Witness this living reality with your own eyes—charity purifies wealth and attracts divine abundance."',
     },
     wordMeanings: {
       hi: [

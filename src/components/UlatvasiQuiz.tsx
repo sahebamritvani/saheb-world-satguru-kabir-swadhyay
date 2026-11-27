@@ -110,9 +110,9 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: 'कबीर साहेब बताते हैं कि जीव की कैसी भी परिस्थिति हो, आस-पास चाहे कितने भी बलवान शूरवीर खड़े हों, काल जब बीच महल से पकड़कर ले चलता है तो कोई कुछ नहीं कर सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਸ-ਪਾਸ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੂਰਮੇ ਖੜ੍ਹੇ ਹੋਣ, ਜਦੋਂ ਪਰਬਲ ਕਾਲ ਆਉਂਦਾ ਹੈ ਤਾਂ ਸਭ ਧਰੇ ਧਰਾਏ ਰਹਿ ਜਾਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb reveals that worldly power and guards are powerless when invincible Time extracts the embodied soul.'
+      hi: 'सतगुरु कबीर साहेब बताते हैं कि जीव की कैसी भी परिस्थिति हो, आस-पास चाहे कितने भी बलवान शूरवीर खड़े हों, काल जब बीच महल से पकड़कर ले चलता है तो कोई कुछ नहीं कर सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਆਸ-ਪਾਸ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੂਰਮੇ ਖੜ੍ਹੇ ਹੋਣ, ਜਦੋਂ ਪਰਬਲ ਕਾਲ ਆਉਂਦਾ ਹੈ ਤਾਂ ਸਭ ਧਰੇ ਧਰਾਏ ਰਹਿ ਜਾਂਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb reveals that worldly power and guards are powerless when invincible Time extracts the embodied soul.'
     }
   },
   {
@@ -302,7 +302,7 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: 'जीव अकेला है और यम तथा जरा दो प्रबल बैरी सम्मुख हैं। यदि किसी प्रकार मृत्यु से बच भी जाएं तो बुढ़ापा आकर शरीर को अशक्त कर देता है। सद्गुरु ही एकमात्र रक्षक हैं।',
+      hi: 'जीव अकेला है और यम तथा जरा दो प्रबल बैरी सम्मुख हैं। यदि किसी प्रकार मृत्यु से बच भी जाएं तो बुढ़ापा आकर शरीर को अशक्त कर देता है। सतगुरु ही एकमात्र रक्षक हैं।',
       pb: 'ਜੇ ਜਮ ਤੋਂ ਬਚੀਏ ਤਾਂ ਬੁਢਾਪਾ ਘੇਰ ਲੈਂਦਾ ਹੈ, ਇਹਨਾਂ ਦੋਹਾਂ ਵੈਰੀਆਂ ਤੋਂ ਸਿਰਫ ਸਤਿਗੁਰੂ ਦਾ ਆਸਰਾ ਹੀ ਬਚਾ ਸਕਦਾ ਹੈ।',
       en: 'Even if physical demise is delayed, decrepitude enervates the body; only the Master rescues the seeker.'
     }
@@ -350,8 +350,8 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: 'कबीर साहेब अचेत अज्ञानी जीव को जगाते हैं कि जब अंत में कब्र या श्मशान में ही समाना है, तो सांसारिक सुखों में बेखबर होकर सोने के बजाय सत्य की साधना में जागो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਦੇ ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚੋਂ ਜਾਗੋ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਲੱਗੋ।',
+      hi: 'सतगुरु कबीर साहेब अचेत अज्ञानी जीव को जगाते हैं कि जब अंत में कब्र या श्मशान में ही समाना है, तो सांसारिक सुखों में बेखबर होकर सोने के बजाय सत्य की साधना में जागो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਦੇ ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚੋਂ ਜਾਗੋ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਲੱਗੋ।',
       en: 'Knowing mortal impermanence, the seeker is urged to awaken from mundane sleep into devotional consciousness.'
     }
   },
@@ -372,8 +372,8 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     glossaryKey: 'सत्यनाम की नाव (Ark of Truth)',
     glossaryBadge: { hi: 'सत्यनाम की नाव', pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ', en: 'Ark of Satyanaam' },
     clue: {
-      hi: 'सत्यनाम की नाव पर आरूढ़ होकर कबीर साहेब ने काल को ही जीत लिया और निर्मल तट पर पहुंच गए।',
-      pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਵਿੱਚ ਸਵਾਰ ਹੋ ਕੇ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਾਲ ਨੂੰ ਜਿੱਤ ਲਿਆ ਤੇ ਪਾਰ ਉੱਤਰ ਗਏ।',
+      hi: 'सत्यनाम की नाव पर आरूढ़ होकर सतगुरु कबीर साहेब ने काल को ही जीत लिया और निर्मल तट पर पहुंच गए।',
+      pb: 'ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਵਿੱਚ ਸਵਾਰ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਾਲ ਨੂੰ ਜਿੱਤ ਲਿਆ ਤੇ ਪਾਰ ਉੱਤਰ ਗਏ।',
       en: 'Boarding the ark of Satyanaam, Kabir conquers Time itself and lands on the sacred shore.'
     },
     options: {
@@ -398,7 +398,7 @@ const KAAL_KO_ANG_RECALL_CHALLENGES: KaalRecallChallengeItem[] = [
     },
     correctIndex: 0,
     explanation: {
-      hi: 'काल संपूर्ण जगत का भक्षण करता है, किंतु समर्थ सद्गुरु के सत्यनाम का आश्रय लेने वाले संत काल के बंधन से मुक्त होकर अमर लोक (निर्मल तीर) को प्राप्त होते हैं।',
+      hi: 'काल संपूर्ण जगत का भक्षण करता है, किंतु समर्थ सतगुरु के सत्यनाम का आश्रय लेने वाले संत काल के बंधन से मुक्त होकर अमर लोक (निर्मल तीर) को प्राप्त होते हैं।',
       pb: 'ਕਾਲ ਸਾਰੇ ਜਗਤ ਨੂੰ ਖਾ ਜਾਂਦਾ ਹੈ ਪਰ ਸਤਯਨਾਮ ਦੀ ਬੇੜੀ ਰਾਹੀਂ ਸੰਤ ਕਾਲ ਦੇ ਪੰਜੇ ਵਿੱਚੋਂ ਨਿਕਲ ਕੇ ਮੁਕਤ ਹੋ ਜਾਂਦੇ ਹਨ।',
       en: 'While Kal consumes the mortal sphere, the seeker aboard the ship of Truth transcends death forever.'
     }
@@ -462,9 +462,9 @@ export function generate5SakhiQuestions(db: any[]): Sakhi5QuestionItem[] {
       },
       transliteration: sakhi.transliteration,
       promptQuestion: {
-        hi: 'कबीर साहेब की इस पावन साखी का मुख्य आध्यात्मिक भावार्थ क्या है?',
-        pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਇਸ ਪਾਵਨ ਸਾਖੀ ਦਾ ਮੁੱਖ ਆਤਮਿਕ ਭਾਵਾਰਥ ਕੀ ਹੈ?',
-        en: 'What is the core spiritual essence of this sacred Sakhi by Kabir Saheb?',
+        hi: 'सतगुरु कबीर साहेब की इस पावन साखी का मुख्य आध्यात्मिक भावार्थ क्या है?',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਸ ਪਾਵਨ ਸਾਖੀ ਦਾ ਮੁੱਖ ਆਤਮਿਕ ਭਾਵਾਰਥ ਕੀ ਹੈ?',
+        en: 'What is the core spiritual essence of this sacred Sakhi by Satguru Kabir Saheb?',
       },
       options: {
         hi: shuffledChoices.map(c => c.hi),
@@ -1109,7 +1109,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
   const tr = {
     title: language === 'hi' ? 'उलटबांसी स्वाध्याय' : language === 'pb' ? 'ਉਲਟਬਾਂਸੀ ਸਵਾਧਿਆਏ' : 'Ulatvasi Swadhyay',
     backBtn: language === 'hi' ? 'वापस जाएं' : language === 'pb' ? 'ਵਾਪਸ ਜਾਓ' : 'Back',
-    subtitle: language === 'hi' ? 'कबीर साहेब की गुप्त पहेलियों का 3D ज्ञान उद्घाटन' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਗੂੜ੍ਹ ਬੁਝਾਰਤਾਂ ਦਾ ਰਹੱਸ ਉਦਘਾਟਨ' : '3D Unveiling of Kabir’s Esoteric Paradoxes',
+    subtitle: language === 'hi' ? 'सतगुरु कबीर साहेब की गुप्त पहेलियों का 3D ज्ञान उद्घाटन' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਗੂੜ੍ਹ ਬੁਝਾਰਤਾਂ ਦਾ ਰਹੱਸ ਉਦਘਾਟਨ' : '3D Unveiling of Kabir’s Esoteric Paradoxes',
     tabSakhi5Q: language === 'hi' ? '🎯 ५-प्रश्न साखी क्विज' : language === 'pb' ? '🎯 ੫-ਪ੍ਰਸ਼ਨ ਸਾਖੀ ਕੁਇਜ਼' : '🎯 5-Question Sakhi Quiz',
     tabQuest: language === 'hi' ? 'रहस्य यात्रा' : language === 'pb' ? 'ਰਹੱਸ ਯਾਤਰਾ' : 'Paradox Quest',
     tabLibrary: language === 'hi' ? 'उलटबांसी संग्रह' : language === 'pb' ? 'ਉਲਟਬਾਂਸੀ ਸੰਗ੍ਰਹਿ' : 'Ulatvasi Library',
@@ -1129,7 +1129,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
     closeBtn: language === 'hi' ? 'प्रश्नोत्तरी बंद करें' : language === 'pb' ? 'ਪ੍ਰਸ਼ਨੋਤਰੀ ਬੰਦ ਕਰੋ' : 'Close Quiz',
     literalParadoxLabel: language === 'hi' ? 'बाह्य कौतूहल: ' : language === 'pb' ? 'ਬਾਹਰੀ ਕੌਤਕ: ' : 'External Paradox: ',
     bellSound: language === 'hi' ? 'घंटी ध्वनि' : language === 'pb' ? 'ਘੰਟੀ ਦੀ ਆਵਾਜ਼' : 'Bell Sound',
-    spiritualMeaningLabel: language === 'hi' ? 'कबीर साहेब का गूढ़ आध्यात्मिक भावार्थ' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਗੂੜ੍ਹ ਰੂਹਾਨੀ ਭਾਵਾਰਥ' : 'Esoteric Spiritual Meaning',
+    spiritualMeaningLabel: language === 'hi' ? 'सतगुरु कबीर साहेब का गूढ़ आध्यात्मिक भावार्थ' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਗੂੜ੍ਹ ਰੂਹਾਨੀ ਭਾਵਾਰਥ' : 'Esoteric Spiritual Meaning',
     practiceAgain: language === 'hi' ? 'पुनः अभ्यास करें' : language === 'pb' ? 'ਦੁਬਾਰਾ ਅਭਿਆਸ ਕਰੋ' : 'Practice Again',
     paradoxSolved: language === 'hi' ? 'सत्य रहस्य सिद्ध हुआ!' : language === 'pb' ? 'ਸੱਚ ਰਹੱਸ ਸਿੱਧ ਹੋਇਆ!' : 'True Paradox Decoded!',
     esotericWisdom: language === 'hi' ? 'गूढ़ ज्ञान बोध' : language === 'pb' ? 'ਗੂੜ੍ਹ ਗਿਆਨ ਬੋਧ' : 'Esoteric Wisdom Realization',
@@ -2295,7 +2295,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
               {language === 'hi' ? '250 उलटबांसी रहस्य मंजूषा' : language === 'pb' ? '250 ਉਲਟਬਾਂਸੀ ਰਹੱਸ ਮੰਜ਼ੂਸ਼ਾ' : '250 Ulatvasi Sacred Library'}
             </h3>
             <p className="text-xs sm:text-sm" style={{ color: theme.textSecondary }}>
-              {language === 'hi' ? 'कबीर साहेब की गुप्त अनुभूतियों का सम्पूर्ण प्रामाणिक संकलन' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਗੁਪਤ ਅਨੁਭੂਤੀਆਂ ਦਾ ਸੰਪੂਰਨ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ' : 'Complete authentic compilation of Saheb\'s esoteric revelations'}
+              {language === 'hi' ? 'सतगुरु कबीर साहेब की गुप्त अनुभूतियों का सम्पूर्ण प्रामाणिक संकलन' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਗੁਪਤ ਅਨੁਭੂਤੀਆਂ ਦਾ ਸੰਪੂਰਨ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ' : 'Complete authentic compilation of Saheb\'s esoteric revelations'}
             </p>
           </div>
 
@@ -2433,7 +2433,7 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
               {language === 'hi' ? 'साधना मंडल एवं ज्ञान सोपान' : language === 'pb' ? 'ਸਾਧਨਾ ਮੰਡਲ ਅਤੇ ਗਿਆਨ ਸੋਪਾਨ' : 'Sadhana Realms & Steps of Wisdom'}
             </h3>
             <p className="text-xs sm:text-sm" style={{ color: theme.textSecondary }}>
-              {language === 'hi' ? 'कबीर साहेब की उलटबांसियों के तीन आध्यात्मिक स्तर' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਦੇ ਤਿੰਨ ਰੂਹਾਨੀ ਪੱਧਰ' : 'Three spiritual levels of Kabir Saheb’s Ulatvasi paradoxes'}
+              {language === 'hi' ? 'सतगुरु कबीर साहेब की उलटबांसियों के तीन आध्यात्मिक स्तर' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਦੇ ਤਿੰਨ ਰੂਹਾਨੀ ਪੱਧਰ' : 'Three spiritual levels of Satguru Kabir Saheb’s Ulatvasi paradoxes'}
             </p>
           </div>
 
@@ -2596,10 +2596,10 @@ export const UlatvasiQuiz: React.FC<UlatvasiQuizProps> = ({
                 </h3>
                 <p className="text-xs sm:text-sm opacity-80 max-w-xl mx-auto leading-relaxed">
                   {language === 'pb'
-                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ \'ਕਾਲ ਕੋ ਅੰਗ\' ਦੇ ਪਾਵਨ ਦੋਹੇ ਪੜ੍ਹ ਕੇ ਗੂੜ੍ਹ ਸੰਧੁੱਕੜੀ ਸ਼ਬਦਾਰਥ ਅਤੇ ਆਤਮਿਕ ਬੋਧ ਨੂੰ ਦ੍ਰਿੜ੍ਹ ਕਰੋ।'
+                    ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ \'ਕਾਲ ਕੋ ਅੰਗ\' ਦੇ ਪਾਵਨ ਦੋਹੇ ਪੜ੍ਹ ਕੇ ਗੂੜ੍ਹ ਸੰਧੁੱਕੜੀ ਸ਼ਬਦਾਰਥ ਅਤੇ ਆਤਮਿਕ ਬੋਧ ਨੂੰ ਦ੍ਰਿੜ੍ਹ ਕਰੋ।'
                     : language === 'en'
                     ? 'Strengthen your spiritual retention by correlating authentic verses from Kaal Ko Ang with key concepts in the sacred lexicon.'
-                    : 'कबीर साहेब के \'काल को अंग\' के पावन दोहों का स्वाध्याय कर संधुक्कड़ी शब्दकोश के गूढ़ भावों को अंतर्मन में धारण करें।'}
+                    : 'सतगुरु कबीर साहेब के \'काल को अंग\' के पावन दोहों का स्वाध्याय कर संधुक्कड़ी शब्दकोश के गूढ़ भावों को अंतर्मन में धारण करें।'}
                 </p>
               </div>
 

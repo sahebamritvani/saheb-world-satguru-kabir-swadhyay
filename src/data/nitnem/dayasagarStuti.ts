@@ -202,8 +202,8 @@ export const DAYASAGAR_STUTI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "केवल करुणामयी कबीर साहेब ही सर्व-समर्थ एवं सुखदायी हैं, जो भयंकर यमराज के अहंकार का मर्दन करते हैं और दुखी जीवों के एकमात्र सहायक हैं।",
-        pb: "ਕੇਵਲ ਕਰੁਣਾਮਈ ਕਬੀਰ ਸਾਹੇਬ ਹੀ ਸਰਵ-ਸਮਰੱਥ ਅਤੇ ਸੁਖਦਾਈ ਹਨ, ਜੋ ਭਿਆਨਕ ਜਮਦੂਤਾਂ ਦਾ ਹੰਕਾਰ ਤੋੜਦੇ ਹਨ ਅਤੇ ਦੁਖੀ ਜੀਵਾਂ ਦੇ ਸਹਾਇਕ ਹਨ।",
+        hi: "केवल करुणामयी सतगुरु कबीर साहेब ही सर्व-समर्थ एवं सुखदायी हैं, जो भयंकर यमराज के अहंकार का मर्दन करते हैं और दुखी जीवों के एकमात्र सहायक हैं।",
+        pb: "ਕੇਵਲ ਕਰੁਣਾਮਈ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੀ ਸਰਵ-ਸਮਰੱਥ ਅਤੇ ਸੁਖਦਾਈ ਹਨ, ਜੋ ਭਿਆਨਕ ਜਮਦੂਤਾਂ ਦਾ ਹੰਕਾਰ ਤੋੜਦੇ ਹਨ ਅਤੇ ਦੁਖੀ ਜੀਵਾਂ ਦੇ ਸਹਾਇਕ ਹਨ।",
         en: "Merciful Kabir alone is all-capable and bestower of joy, shattering the dread of Death (Yamraj) and standing as the ultimate savior of suffering souls."
       }
     },
@@ -399,7 +399,7 @@ export const ADHIK_MAHIMA_SECTION: NitnemSection = {
       type: "stuti",
       lines: {
         hi: [
-          "धरमदास प्रकाश सद्गुरु, अकह कुण्ड नहाइये।",
+          "धरमदास प्रकाश सतगुरु, अकह कुण्ड नहाइये।",
           "सकल कल विष धोय निर्मल, बहुरि न भवजल आइये॥"
         ],
         pb: [
@@ -422,7 +422,7 @@ export const ADHIK_MAHIMA_SECTION: NitnemSection = {
       type: "stuti",
       lines: {
         hi: [
-          "साहेब कबीर प्रकाश सद्गुरु, भली सुमति दृढ़ाइये।",
+          "साहेब कबीर प्रकाश सतगुरु, भली सुमति दृढ़ाइये।",
           "सार में तत्व सार दरशे, सोई अकह कहाइये॥"
         ],
         pb: [
@@ -436,7 +436,7 @@ export const ADHIK_MAHIMA_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "परम प्रकाश रूप सतगुरु साहेब कबीर उत्तम सुबुद्धि को दृढ़ कराते हैं। जो सब सारों के भीतर परम तत्व (अविनाशी शब्द) का दर्शन कराता है, वही अकथनीय पद कहलाता है।",
-        pb: "ਸਤਿਗੁਰੂ ਸਾਹੇਬ ਕਬੀਰ ਜੀ ਉੱਤਮ ਮਤ ਦ੍ਰਿੜ੍ਹ ਕਰਵਾਉਂਦੇ ਹਨ। ਜੋ ਸਭ ਸਾਰਾਂ ਵਿੱਚੋਂ ਪਰਮ-ਤੱਤ ਦਾ ਦਰਸ਼ਨ ਕਰਵਾਉਂਦਾ ਹੈ, ਉਹੀ ਅਕੱਥ ਗਿਆਨ ਹੈ।",
+        pb: "ਸਤਿਗੁਰੂ ਸਾਹੇਬ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਉੱਤਮ ਮਤ ਦ੍ਰਿੜ੍ਹ ਕਰਵਾਉਂਦੇ ਹਨ। ਜੋ ਸਭ ਸਾਰਾਂ ਵਿੱਚੋਂ ਪਰਮ-ਤੱਤ ਦਾ ਦਰਸ਼ਨ ਕਰਵਾਉਂਦਾ ਹੈ, ਉਹੀ ਅਕੱਥ ਗਿਆਨ ਹੈ।",
         en: "Satguru Kabir Saheb fortifies pure spiritual intellect. That which reveals the Supreme Core within all truths is known as the Unutterable State."
       }
     },
@@ -458,9 +458,9 @@ export const ADHIK_MAHIMA_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब कहते हैं: हे धर्मदास! अज्ञान का पर्दा खोलकर देखो, पंचतत्वों के परे वह निःतत्व (गुणातीत, अनाम निजपद) है। जो उस निःतत्व का साक्षात दर्शन कर लेता है, उसका आवागमन (जन्म-मरण) सदा के लिए मिट जाता है।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ: ਹੇ ਧਰਮਦਾਸ! ਅਗਿਆਨ ਦਾ ਪਰਦਾ ਲਾਹ ਕੇ ਵੇਖੋ, ਤੱਤਾਂ ਤੋਂ ਪਰੇ ਉਹ ਨਿਰਲੇਪ ਨਿਜ-ਪਦ ਹੈ। ਜਿਸ ਨੂੰ ਉਸ ਨਿਜ-ਪਦ ਦੇ ਦਰਸ਼ਨ ਹੋ ਜਾਂਦੇ ਹਨ, ਉਸ ਦਾ ਆਵਾਗਵਨ ਮੁੱਕ ਜਾਂਦਾ ਹੈ।",
-        en: "Kabir Saheb declares: O Dharmadas, unveil the curtain of illusion and behold—beyond five elements lies the Immutable Transcendent Reality. Whoever beholds that Primordial State ends the cycle of rebirth forever."
+        hi: "सतगुरु कबीर साहेब फरमाते हैं: हे धर्मदास! अज्ञान का पर्दा खोलकर देखो, पंचतत्वों के परे वह निःतत्व (गुणातीत, अनाम निजपद) है। जो उस निःतत्व का साक्षात दर्शन कर लेता है, उसका आवागमन (जन्म-मरण) सदा के लिए मिट जाता है।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਧਰਮਦਾਸ! ਅਗਿਆਨ ਦਾ ਪਰਦਾ ਲਾਹ ਕੇ ਵੇਖੋ, ਤੱਤਾਂ ਤੋਂ ਪਰੇ ਉਹ ਨਿਰਲੇਪ ਨਿਜ-ਪਦ ਹੈ। ਜਿਸ ਨੂੰ ਉਸ ਨਿਜ-ਪਦ ਦੇ ਦਰਸ਼ਨ ਹੋ ਜਾਂਦੇ ਹਨ, ਉਸ ਦਾ ਆਵਾਗਵਨ ਮੁੱਕ ਜਾਂਦਾ ਹੈ।",
+        en: "Satguru Kabir Saheb proclaims: O Dharmadas, unveil the curtain of illusion and behold—beyond five elements lies the Immutable Transcendent Reality. Whoever beholds that Primordial State ends the cycle of rebirth forever."
       }
     }
   ]

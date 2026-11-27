@@ -338,7 +338,7 @@ export const POONAM_LAGHU_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "वास्तविक जागरण का लक्षण: साहेब कहते हैं कि जब सुरति सतगुरु में लीन हो और भजन करते समय मन इधर-उधर न भटके, वही वास्तविक 'जागरण' है। केवल शारीरिक रूप से जागकर निंदा, चुगली या व्यर्थ प्रलाप करना जागरण नहीं है। इस दिन संतों की सेवा करें, द्वार पर आए अतिथि को प्रेम से भोजन कराएं। झूठा भोजन (उच्छिष्ट) न करें और पराये घर में भोजन करने से बचें। इंद्रियों को वश में रखकर सत्यनाम का स्मरण करें, जिससे सर्वसिद्धियों की प्राप्ति होगी और मोक्ष का द्वार खुलेगा।",
+      hi: "वास्तविक जागरण का लक्षण: सतगुरु कबीर साहेब फरमाते हैं कि जब सुरति सतगुरु में लीन हो और भजन करते समय मन इधर-उधर न भटके, वही वास्तविक 'जागरण' है। केवल शारीरिक रूप से जागकर निंदा, चुगली या व्यर्थ प्रलाप करना जागरण नहीं है। इस दिन संतों की सेवा करें, द्वार पर आए अतिथि को प्रेम से भोजन कराएं। झूठा भोजन (उच्छिष्ट) न करें और पराये घर में भोजन करने से बचें। इंद्रियों को वश में रखकर सत्यनाम का स्मरण करें, जिससे सर्वसिद्धियों की प्राप्ति होगी और मोक्ष का द्वार खुलेगा।",
       pb: "ਅਸਲੀ ਜਾਗਰਨ ਦਾ ਲੱਛਣ: ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਸੁਰਤ ਗੁਰੂ ਚਰਨਾਂ ਵਿੱਚ ਲੀਨ ਹੋਵੇ ਅਤੇ ਭਜਨ ਕਰਦਿਆਂ ਮਨ ਇੱਧਰ-ਉੱਧਰ ਨਾ ਭਟਕੇ, ਉਹੀ ਸੱਚਾ 'ਜਾਗਰਨ' ਹੈ। ਕੇਵਲ ਸਰੀਰਕ ਤੌਰ 'ਤੇ ਜਾਗ ਕੇ ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਾ-ਚੁਗਲੀ ਕਰਨਾ ਜਾਗਰਨ ਨਹੀਂ ਹੈ। ਇਸ ਦਿਨ ਸੰਤਾਂ ਦੀ ਸੇਵਾ ਕਰੋ, ਦੁਆਰ 'ਤੇ ਆਏ ਅਤੀਤ (ਮੁਸਾਫ਼ਿਰ) ਨੂੰ ਭੋਜਨ ਕਰਾਓ। ਇੰਦਰੀਆਂ ਨੂੰ ਕਾਬੂ ਵਿੱਚ ਰੱਖੋ ਅਤੇ ਸੱਚ ਬੋਲੋ।",
       en: "The Characteristics of True Vigil: The Lord explains that when inner consciousness (Surati) is completely focused on the Master and the mind does not wander during meditation, that alone is a true 'Jaagran'. Staying awake physically while gossiping or telling lies is not spiritual vigil. On this day, serve holy saints and feed any traveler or seeker who arrives at your doorstep. Refrain from eating leftovers or dining at another's house. Keep your senses disciplined, speak only truth, and chant Satyanam."
     }
@@ -459,8 +459,8 @@ export const POONAM_LAGHU_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "सूतक कथा: कबीर साहेब समझाते हैं कि एक निर्धन परोपकारी वैश्य दम्पति ने गुरु दीक्षा लेकर पूनो व्रत की अखंड साधना शुरू की। एक पूनो के दिन जब पति व्यापार हेतु बाहर था, पत्नी ने एक सुंदर पुत्र को जन्म दिया। सखियों ने कहा कि प्रसव के कारण सूतक लगा है, अतः भोजन बनाकर शुद्धि होने पर ही व्रत करो। पतिव्रता पत्नी ने उत्तर दिया कि देह तो सदा से ही अशुद्ध चली आ रही है, परंतु सुमिरन करने वाले भक्त पर सूतक का कोई प्रभाव नहीं पड़ता। उसने निराहार सुमिरन किया। संध्या को पति के लौटने पर दोनों ने गुरुदेव का ध्यान किया जिससे स्वयं सतगुरु ने साक्षात प्रकट होकर उनकी दरिद्रता दूर कर दी और अंत में उन्हें सत्यलोक गमन कराया।",
-      pb: "ਸੂਤਕ ਕਥਾ: ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਇੱਕ ਗ਼ਰੀਬ ਪਰਉਪਕਾਰੀ ਵੈਸ਼ ਜੋੜੇ ਨੇ ਗੁਰੂ ਦੀਕਸ਼ਾ ਲੈ ਕੇ ਪੂਨੋ ਵਰਤ ਦੀ ਸਾਧਨਾ ਸ਼ੁਰੂ ਕੀਤੀ। ਇੱਕ ਦਿਨ ਪਤਨੀ ਨੇ ਪੁੱਤਰ ਨੂੰ ਜਨਮ ਦਿੱਤਾ। ਸਹੇਲੀਆਂ ਨੇ ਕਿਹਾ ਕਿ ਸੂਤਕ ਲੱਗਾ ਹੈ, ਇਸ ਲਈ ਵਰਤ ਨਾ ਰੱਖੋ। ਪਤਨੀ ਨੇ ਜਵਾਬ ਦਿੱਤਾ ਕਿ ਸਰੀਰ ਤਾਂ ਹਮੇਸ਼ਾ ਹੀ ਅਪਵਿੱਤਰ ਹੈ, ਪਰ ਨਾਮ ਜਪਣ ਵਾਲੇ ਭਗਤ ਨੂੰ ਕੋਈ ਸੂਤਕ ਨਹੀਂ ਲੱਗਦਾ। ਉਹਨਾਂ ਨੇ ਨਿਰਮਲ ਮਨ ਨਾਲ ਸਿਮਰਨ ਕੀਤਾ। ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਆਪ ਪ੍ਰਗਟ ਹੋ ਕੇ ਉਹਨਾਂ ਦੀ ਗ਼ਰੀਬੀ ਦੂਰ ਕੀਤੀ ਅਤੇ ਮੁਕਤੀ ਬਖ਼ਸ਼ੀ।",
+      hi: "सूतक कथा: सतगुरु कबीर साहेब समझाते हैं कि एक निर्धन परोपकारी वैश्य दम्पति ने गुरु दीक्षा लेकर पूनो व्रत की अखंड साधना शुरू की। एक पूनो के दिन जब पति व्यापार हेतु बाहर था, पत्नी ने एक सुंदर पुत्र को जन्म दिया। सखियों ने कहा कि प्रसव के कारण सूतक लगा है, अतः भोजन बनाकर शुद्धि होने पर ही व्रत करो। पतिव्रता पत्नी ने उत्तर दिया कि देह तो सदा से ही अशुद्ध चली आ रही है, परंतु सुमिरन करने वाले भक्त पर सूतक का कोई प्रभाव नहीं पड़ता। उसने निराहार सुमिरन किया। संध्या को पति के लौटने पर दोनों ने गुरुदेव का ध्यान किया जिससे स्वयं सतगुरु ने साक्षात प्रकट होकर उनकी दरिद्रता दूर कर दी और अंत में उन्हें सत्यलोक गमन कराया।",
+      pb: "ਸੂਤਕ ਕਥਾ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਇੱਕ ਗ਼ਰੀਬ ਪਰਉਪਕਾਰੀ ਵੈਸ਼ ਜੋੜੇ ਨੇ ਗੁਰੂ ਦੀਕਸ਼ਾ ਲੈ ਕੇ ਪੂਨੋ ਵਰਤ ਦੀ ਸਾਧਨਾ ਸ਼ੁਰੂ ਕੀਤੀ। ਇੱਕ ਦਿਨ ਪਤਨੀ ਨੇ ਪੁੱਤਰ ਨੂੰ ਜਨਮ ਦਿੱਤਾ। ਸਹੇਲੀਆਂ ਨੇ ਕਿਹਾ ਕਿ ਸੂਤਕ ਲੱਗਾ ਹੈ, ਇਸ ਲਈ ਵਰਤ ਨਾ ਰੱਖੋ। ਪਤਨੀ ਨੇ ਜਵਾਬ ਦਿੱਤਾ ਕਿ ਸਰੀਰ ਤਾਂ ਹਮੇਸ਼ਾ ਹੀ ਅਪਵਿੱਤਰ ਹੈ, ਪਰ ਨਾਮ ਜਪਣ ਵਾਲੇ ਭਗਤ ਨੂੰ ਕੋਈ ਸੂਤਕ ਨਹੀਂ ਲੱਗਦਾ। ਉਹਨਾਂ ਨੇ ਨਿਰਮਲ ਮਨ ਨਾਲ ਸਿਮਰਨ ਕੀਤਾ। ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਆਪ ਪ੍ਰਗਟ ਹੋ ਕੇ ਉਹਨਾਂ ਦੀ ਗ਼ਰੀਬੀ ਦੂਰ ਕੀਤੀ ਅਤੇ ਮੁਕਤੀ ਬਖ਼ਸ਼ੀ।",
       en: "The Legend of Sutak (Impurity): Lord Kabir narrates the story of a devout, humble merchant couple. On one Full Moon, while the husband was away, the wife gave birth to a son. Her friends insisted that due to childbirth, her household was ritually impure (Sutak) and she should break her fast. She wisely replied: 'The physical body is inherently transient and impure, but the divine remembrance of Satyanam is untainted by any physical state.' She fasted sincerely. On her husband's return, their loving devotion summoned the Satguru Himself, who removed all their poverty and granted them a place in Satlok."
     }
   },
@@ -610,9 +610,9 @@ export const POONAM_LAGHU_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "साधन सुमिरण का निष्कर्ष: कबीर साहेब कहते हैं कि सदा सर्वदा केवल उस अविनाशी सत्यपुरुष की ही आस रखो। सत्यनाम का निरंतर सुमिरन करो और हृदय में दृढ़ विश्वास बनाए रखो, जिससे तुम इस असह्य भवसागर को पार कर अमरलोक में परमेश्वर के पास पहुँच जाओगे।",
-      pb: "ਸਿਮਰਨ ਦਾ ਨਿਸ਼ਕਰਸ਼: ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਦਾ ਕੇਵਲ ਉਸ ਅਵਿਨਾਸ਼ੀ ਸਤਿਪੁਰਖ ਦੀ ਹੀ ਆਸ ਰੱਖੋ। ਸਤਯਨਾਮ ਦਾ ਨਿਰੰਤਰ ਜਾਪ ਕਰੋ ਅਤੇ ਦ੍ਰਿੜ੍ਹ ਭਰੋਸਾ ਰੱਖੋ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਇਸ ਭਵਜਲ ਨੂੰ ਪਾਰ ਕਰਕੇ ਸੱਚਖੰਡ ਵਿੱਚ ਪਰਮਾਤਮਾ ਦੇ ਕੋਲ ਪਹੁੰਚ ਜਾਓਗੇ।",
-      en: "Conclusion of Sadhan Sumiran: Kabir Saheb instructs Dharmadas to put all faith only in the Supreme Being. Continually remember Satyanam and preserve unwavering trust in your heart. This allows the soul to safely cross the ocean of worldly existence, entering the immortal presence of the Lord."
+      hi: "साधन सुमिरण का निष्कर्ष: सतगुरु कबीर साहेब फरमाते हैं कि सदा सर्वदा केवल उस अविनाशी सत्यपुरुष की ही आस रखो। सत्यनाम का निरंतर सुमिरन करो और हृदय में दृढ़ विश्वास बनाए रखो, जिससे तुम इस असह्य भवसागर को पार कर अमरलोक में परमेश्वर के पास पहुँच जाओगे।",
+      pb: "ਸਿਮਰਨ ਦਾ ਨਿਸ਼ਕਰਸ਼: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਦਾ ਕੇਵਲ ਉਸ ਅਵਿਨਾਸ਼ੀ ਸਤਿਪੁਰਖ ਦੀ ਹੀ ਆਸ ਰੱਖੋ। ਸਤਯਨਾਮ ਦਾ ਨਿਰੰਤਰ ਜਾਪ ਕਰੋ ਅਤੇ ਦ੍ਰਿੜ੍ਹ ਭਰੋਸਾ ਰੱਖੋ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਇਸ ਭਵਜਲ ਨੂੰ ਪਾਰ ਕਰਕੇ ਸੱਚਖੰਡ ਵਿੱਚ ਪਰਮਾਤਮਾ ਦੇ ਕੋਲ ਪਹੁੰਚ ਜਾਓਗੇ।",
+      en: "Conclusion of Sadhan Sumiran: Satguru Kabir Saheb instructs Dharmadas to put all faith only in the Supreme Being. Continually remember Satyanam and preserve unwavering trust in your heart. This allows the soul to safely cross the ocean of worldly existence, entering the immortal presence of the Lord."
     }
   },
   {
@@ -703,9 +703,9 @@ export const POONAM_LAGHU_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "महान पुण्य का फल: ६८ तीर्थों के दर्शन करने, अश्वमेध यज्ञ करने, करोड़ों कन्यादान तथा गोदान करने का पुण्य अकेले पूनम का व्रत करने से प्राप्त हो जाता है। कबीर साहेब कहते हैं कि जो भी एकाग्र मन से पूनम व्रत करता है, मैं उसे लोक-परलोक के समस्त सुख फल दान कर देता हूँ।",
-      pb: "ਮਹਾਨ ਪੁੰਨ ਦਾ ਫਲ: ਅਠਾਹਠ ਤੀਰਥਾਂ ਦੀ ਯਾਤਰਾ, ਅਸ਼ਵਮੇਧ ਯੱਗ, ਕਰੋੜਾਂ ਕੰਨਿਆਦਾਨ ਅਤੇ ਗੋਦਾਨ ਦਾ ਪੁੰਨ ਇਕੱਲੇ ਪੂਨਮ ਵਰਤ ਨਾਲ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਇਕਾਗਰ ਮਨ ਨਾਲ ਪੂਨਮ ਵਰਤ ਰੱਖਦਾ ਹੈ, ਮੈਂ ਉਸਨੂੰ ਸਾਰੇ ਫਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹਾਂ।",
-      en: "Fruits of Supreme Merits: The combined merit of bathing at sixty-eight holy rivers, performing the Ashvamedha sacrifice, and giving millions of cows or daughters in marriage is acquired through the Poonam fast. Kabir Saheb promises that whoever observes this vow with undivided focus receives the ultimate spiritual and temporal rewards."
+      hi: "महान पुण्य का फल: ६८ तीर्थों के दर्शन करने, अश्वमेध यज्ञ करने, करोड़ों कन्यादान तथा गोदान करने का पुण्य अकेले पूनम का व्रत करने से प्राप्त हो जाता है। सतगुरु कबीर साहेब फरमाते हैं कि जो भी एकाग्र मन से पूनम व्रत करता है, मैं उसे लोक-परलोक के समस्त सुख फल दान कर देता हूँ।",
+      pb: "ਮਹਾਨ ਪੁੰਨ ਦਾ ਫਲ: ਅਠਾਹਠ ਤੀਰਥਾਂ ਦੀ ਯਾਤਰਾ, ਅਸ਼ਵਮੇਧ ਯੱਗ, ਕਰੋੜਾਂ ਕੰਨਿਆਦਾਨ ਅਤੇ ਗੋਦਾਨ ਦਾ ਪੁੰਨ ਇਕੱਲੇ ਪੂਨਮ ਵਰਤ ਨਾਲ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਇਕਾਗਰ ਮਨ ਨਾਲ ਪੂਨਮ ਵਰਤ ਰੱਖਦਾ ਹੈ, ਮੈਂ ਉਸਨੂੰ ਸਾਰੇ ਫਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹਾਂ।",
+      en: "Fruits of Supreme Merits: The combined merit of bathing at sixty-eight holy rivers, performing the Ashvamedha sacrifice, and giving millions of cows or daughters in marriage is acquired through the Poonam fast. Satguru Kabir Saheb promises that whoever observes this vow with undivided focus receives the ultimate spiritual and temporal rewards."
     }
   },
   {
@@ -732,9 +732,9 @@ export const POONAM_LAGHU_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "सतगुरु का वरदान: कबीर साहेब कहते हैं कि एकाग्र सुमिरन करने वाले भक्त को मैं नव निधियाँ, मनवांछित उत्तम परिवार, सुख-समृद्धि, हाथी-घोड़े, अमूल्य रत्न पदार्थ और कल्याणकारी मंगल प्रदान करता हूँ। जो सुरति लगाकर सुमिरन करता है, उसके अनेक जन्मों के पाप नष्ट हो जाते हैं।",
-      pb: "ਸਤਿਗੁਰੂ ਦਾ ਵਰਦਾਨ: ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਕਾਗਰ ਸਿਮਰਨ ਕਰਨ ਵਾਲੇ ਭਗਤ ਨੂੰ ਮੈਂ ਨੌਂ ਨਿਧੀਆਂ, ਮਨਚਾਹਿਆ ਪਰਿਵਾਰ, ਸੁੱਖ-ਸਮ੍ਰਿੱਧੀ ਅਤੇ ਸਾਰੇ ਪਦารਥ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹਾਂ। ਜੋ ਸੁਰਤ ਲਗਾ ਕੇ ਨਾਮ ਜਪਦਾ ਹੈ, ਉਸਦੇ ਅਨੇਕਾਂ ਜਨਮਾਂ ਦੇ ਪਾਪ ਨਸ਼ਟ ਹੋ ਜਾਂਦੇ ਹਨ।",
-      en: "The Satguru's Sovereign Gift: Lord Kabir declares: To the devotee who meditates with perfect alignment, I grant the nine treasures, physical wealth, a blessed family, safety, and all-round auspiciousness. Practicing contemplation (Surati) dissolves the accumulated sins of countless lifetimes."
+      hi: "सतगुरु का वरदान: सतगुरु कबीर साहेब फरमाते हैं कि एकाग्र सुमिरन करने वाले भक्त को मैं नव निधियाँ, मनवांछित उत्तम परिवार, सुख-समृद्धि, हाथी-घोड़े, अमूल्य रत्न पदार्थ और कल्याणकारी मंगल प्रदान करता हूँ। जो सुरति लगाकर सुमिरन करता है, उसके अनेक जन्मों के पाप नष्ट हो जाते हैं।",
+      pb: "ਸਤਿਗੁਰੂ ਦਾ ਵਰਦਾਨ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਕਾਗਰ ਸਿਮਰਨ ਕਰਨ ਵਾਲੇ ਭਗਤ ਨੂੰ ਮੈਂ ਨੌਂ ਨਿਧੀਆਂ, ਮਨਚਾਹਿਆ ਪਰਿਵਾਰ, ਸੁੱਖ-ਸਮ੍ਰਿੱਧੀ ਅਤੇ ਸਾਰੇ ਪਦารਥ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹਾਂ। ਜੋ ਸੁਰਤ ਲਗਾ ਕੇ ਨਾਮ ਜਪਦਾ ਹੈ, ਉਸਦੇ ਅਨੇਕਾਂ ਜਨਮਾਂ ਦੇ ਪਾਪ ਨਸ਼ਟ ਹੋ ਜਾਂਦੇ ਹਨ।",
+      en: "The Satguru's Sovereign Gift: Lord Satguru Kabir Saheb proclaims: To the devotee who meditates with perfect alignment, I grant the nine treasures, physical wealth, a blessed family, safety, and all-round auspiciousness. Practicing contemplation (Surati) dissolves the accumulated sins of countless lifetimes."
     }
   },
   {

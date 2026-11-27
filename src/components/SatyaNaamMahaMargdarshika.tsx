@@ -206,9 +206,9 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-serif">
               {language === 'pb'
-                ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੇ ਅਨੁਰਾਗ ਸਾਗਰ ਵਿੱਚ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਸਮਝਾਇਆ ਹੈ ਕਿ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਨਿਕਲਣ ਲਈ ਜੀਵ ਨੂੰ ਨਾਮ ਦੀਆਂ ਤਿੰਨ ਅਵਸਥਾਵਾਂ (ਪ੍ਰਥਮ ਨਾਮ, ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਨਾਮ) ਵਿੱਚੋਂ ਗੁਜ਼ਰਨਾ ਪੈਂਦਾ ਹੈ:'
+                ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਅਨੁਰਾਗ ਸਾਗਰ ਵਿੱਚ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਸਮਝਾਇਆ ਹੈ ਕਿ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਨਿਕਲਣ ਲਈ ਜੀਵ ਨੂੰ ਨਾਮ ਦੀਆਂ ਤਿੰਨ ਅਵਸਥਾਵਾਂ (ਪ੍ਰਥਮ ਨਾਮ, ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਨਾਮ) ਵਿੱਚੋਂ ਗੁਜ਼ਰਨਾ ਪੈਂਦਾ ਹੈ:'
                 : language === 'en'
-                ? 'In Anurag Sagar, Kabir Saheb elucidated to Dharmadas Ji that the soul passes through distinct stages of Naam to cross beyond the 21 universes of Kal:'
+                ? 'In Anurag Sagar, Satguru Kabir Saheb elucidated to Dharmadas Ji that the soul passes through distinct stages of Naam to cross beyond the 21 universes of Kal:'
                 : 'सतगुरु कबीर साहेब ने अपने ग्रंथ \'अनुराग सागर\' में धर्मदास जी को समझाया है कि काल के जाल से निकलने के लिए जीव को नाम की तीन अवस्थाओं (प्रथम नाम, सत्यनाम, और सारनाम) से गुजरना पड़ता है:'}
             </p>
           </div>
@@ -270,7 +270,7 @@ export const SatyaNaamMahaMargdarshika: React.FC<SatyaNaamMahaMargdarshikaProps>
         </div>
       )}
 
-      {/* TAB 3: GURU NANAK DEV JI & KABIR SAHEB HISTORICAL DIALOGUE */}
+      {/* TAB 3: GURU NANAK DEV JI & Satguru Kabir Saheb HISTORICAL DIALOGUE */}
       {activeTab === 'dialogue' && (
         <div 
           style={{ backgroundColor: theme.cardBg, borderColor: theme.borderOrnament }}

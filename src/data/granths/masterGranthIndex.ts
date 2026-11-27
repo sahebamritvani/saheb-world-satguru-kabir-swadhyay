@@ -147,7 +147,7 @@ export const SAKHI_SANGRAH_READER_MASTER_GRANTH_STUB: MasterGranth = {
   },
   description: {
     hi: 'साखी संग्रह सतगुरु कबीर साहेब की वाणी का सर्वाधिक प्रामाणिक शोध संकलन है। इसमें ज्ञान, विवेक, गुरु-भक्ति, नीति और आत्म-साक्षात्कार के पदों का अद्भुत संगम है।',
-    pb: 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਤੇ ਪ੍ਰਮਾਣਿਕ ਗ੍ਰੰਥ ਹੈ।',
+    pb: 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਤੇ ਪ੍ਰਮਾਣਿਕ ਗ੍ਰੰਥ ਹੈ।',
     en: "Sakhi Sangrah is the premier spiritual anthology preserving the saint's verses, couplets, and songs across thematic Angs.",
   },
   chapters: SAKHI_SANGRAH_CHAPTER_STUBS,

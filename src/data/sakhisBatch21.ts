@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jaake jivha bandhan nahi, hriday me nahi saanch. Waake sang na laagiye, khaale watiya kaanch.',
     bhavarth: {
-      hi: 'कबीर साहेब कुसंगति से सावधान करते हैं: जिसकी जिह्वा पर कोई संयम या नियंत्रण नहीं है (जो अनर्गल और असत्य बोलता है) और जिसके हृदय में सच्चाई व निष्कपटता का लेश भी नहीं है, ऐसे व्यक्ति का कभी संग मत करो। उसकी संगति करना मानो काँच की गोलियाँ खाने के समान आत्मघाती और विनाशकारी है, जो भीतर चीरा लगाकर लहूलुहान कर देती हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸਦੀ ਜੀਭ ਤੇ ਕੋਈ ਕਾਬੂ ਨਹੀਂ ਅਤੇ ਜਿਸਦੇ ਦਿਲ ਵਿੱਚ ਸੱਚਾਈ ਨਹੀਂ, ਉਸਦਾ ਸਾਥ ਕਦੇ ਨਾ ਕਰੋ। ਉਸਦੀ ਸੰਗਤ ਕੱਚ ਦੀਆਂ ਗੋਲੀਆਂ ਖਾਣ ਵਰਗੀ ਹੈ ਜੋ ਅੰਦਰੋਂ ਵਿੰਨ੍ਹ ਦਿੰਦੀਆਂ ਹਨ।',
-      en: 'Kabir Saheb sternly warns against toxic company: Never associate with someone who possesses no control over their tongue (speaking recklessly and falsely) and whose heart is devoid of truth and integrity. Keeping such company is as perilous and self-destructive as swallowing sharp glass beads, which will lacerate your inner soul.',
+      hi: 'सतगुरु कबीर साहेब कुसंगति से सावधान करते हैं: जिसकी जिह्वा पर कोई संयम या नियंत्रण नहीं है (जो अनर्गल और असत्य बोलता है) और जिसके हृदय में सच्चाई व निष्कपटता का लेश भी नहीं है, ऐसे व्यक्ति का कभी संग मत करो। उसकी संगति करना मानो काँच की गोलियाँ खाने के समान आत्मघाती और विनाशकारी है, जो भीतर चीरा लगाकर लहूलुहान कर देती हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸਦੀ ਜੀਭ ਤੇ ਕੋਈ ਕਾਬੂ ਨਹੀਂ ਅਤੇ ਜਿਸਦੇ ਦਿਲ ਵਿੱਚ ਸੱਚਾਈ ਨਹੀਂ, ਉਸਦਾ ਸਾਥ ਕਦੇ ਨਾ ਕਰੋ। ਉਸਦੀ ਸੰਗਤ ਕੱਚ ਦੀਆਂ ਗੋਲੀਆਂ ਖਾਣ ਵਰਗੀ ਹੈ ਜੋ ਅੰਦਰੋਂ ਵਿੰਨ੍ਹ ਦਿੰਦੀਆਂ ਹਨ।',
+      en: 'Satguru Kabir Saheb sternly warns against toxic company: Never associate with someone who possesses no control over their tongue (speaking recklessly and falsely) and whose heart is devoid of truth and integrity. Keeping such company is as perilous and self-destructive as swallowing sharp glass beads, which will lacerate your inner soul.',
     },
     wordMeanings: {
       hi: [
@@ -101,9 +101,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jaake mukh maatha nahi, naahi roop kuroop. Puhup baas te paatla, aisa tattva anoop.',
     bhavarth: {
-      hi: 'कबीर साहेब परमपिता परमात्मा के परम पावन, निर्गुण और सूक्ष्म स्वरूप का दर्शन कराते हैं: उस परम तत्व का न कोई भौतिक मुख है, न माथा; न वह किसी सांसारिक सुंदर रूप में सीमित है और न ही कुरूप है। वह तो पुष्प (फूल) की अदृश्य सुगंध से भी कहीं अधिक सूक्ष्म और पावन है—ऐसा अनुपम और अद्वितीय वह परम चेतना तत्व है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪਰਮ ਤੱਤ ਨਿਰੰਕਾਰ ਦਾ ਸਰੂਪ ਬਿਆਨ ਕਰਦੇ ਹਨ: ਉਸਦਾ ਕੋਈ ਸਰੀਰਕ ਮੂੰਹ ਜਾਂ ਮੱਥਾ ਨਹੀਂ, ਨਾ ਰੂਪ ਨਾ ਕੁਰੂਪ। ਉਹ ਫੁੱਲ ਦੀ ਸੁਗੰਧ ਤੋਂ ਵੀ ਜ਼ਿਆਦਾ ਸੂਖਮ ਅਤੇ ਬੇਮਿਸਾਲ ਹੈ।',
-      en: 'Kabir Saheb unveils the sublime nature of the Supreme Divine: That transcendental Reality possesses no physical face or forehead, nor is It bound by concepts of beauty or ugliness. It is infinitely subtler, purer, and more pervasive than the delicate fragrance emanating from a blossoming flower—such is that peerless, incomparable Essence.',
+      hi: 'सतगुरु कबीर साहेब परमपिता परमात्मा के परम पावन, निर्गुण और सूक्ष्म स्वरूप का दर्शन कराते हैं: उस परम तत्व का न कोई भौतिक मुख है, न माथा; न वह किसी सांसारिक सुंदर रूप में सीमित है और न ही कुरूप है। वह तो पुष्प (फूल) की अदृश्य सुगंध से भी कहीं अधिक सूक्ष्म और पावन है—ऐसा अनुपम और अद्वितीय वह परम चेतना तत्व है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਮ ਤੱਤ ਨਿਰੰਕਾਰ ਦਾ ਸਰੂਪ ਬਿਆਨ ਕਰਦੇ ਹਨ: ਉਸਦਾ ਕੋਈ ਸਰੀਰਕ ਮੂੰਹ ਜਾਂ ਮੱਥਾ ਨਹੀਂ, ਨਾ ਰੂਪ ਨਾ ਕੁਰੂਪ। ਉਹ ਫੁੱਲ ਦੀ ਸੁਗੰਧ ਤੋਂ ਵੀ ਜ਼ਿਆਦਾ ਸੂਖਮ ਅਤੇ ਬੇਮਿਸਾਲ ਹੈ।',
+      en: 'Satguru Kabir Saheb unveils the sublime nature of the Supreme Divine: That transcendental Reality possesses no physical face or forehead, nor is It bound by concepts of beauty or ugliness. It is infinitely subtler, purer, and more pervasive than the delicate fragrance emanating from a blossoming flower—such is that peerless, incomparable Essence.',
     },
     wordMeanings: {
       hi: [
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jaap mare, ajaapa mare, anhad hu mari jaaye. Ram snehi na mare, kahe Kabir samjhaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब साधना की सीमाओं और परम अमरत्व का मर्म समझाते हैं: वाणी द्वारा किया जाने वाला "जाप" (वैखरी) भी शांत हो जाता है, श्वासों का "अजपा" भी देह छूटने पर विलीन हो जाता है, और यहाँ तक कि "अनहद नाद" की ध्वनि भी महाप्रलय में लय हो जाती है। किंतु जो आत्मा परमात्मा (सत्यनाम) से अनन्य निष्कपट प्रेम करती है (राम स्नेही), वह कभी नहीं मरती, वह सदा के लिए अमर हो जाती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੋਲ ਕੇ ਕੀਤਾ ਜਾਪ ਮੁੱਕ ਜਾਂਦਾ ਹੈ, ਸਵਾਸਾਂ ਦਾ ਅਜਪਾ ਵੀ ਸਰੀਰ ਨਾਲ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਅਨਹਦ ਨਾਦ ਵੀ ਲੀਨ ਹੋ ਜਾਂਦਾ ਹੈ। ਪਰ ਜੋ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਪ੍ਰੇਮੀ ਹੈ, ਉਹ ਕਦੇ ਨਹੀਂ ਮਰਦਾ, ਉਹ ਅਮਰ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb unveils the ultimate truth of spiritual practices: Outward vocal chanting (Jaap) comes to an end, the silent rhythmic breath recitation (Ajapa) ceases when the body expires, and even the cosmic unstruck sound (Anahad) dissolves at the dissolution of creation. But the genuine lover of the Divine (Ram Snehi), anchored in pure love, never perishes—they attain eternal, immortal life.',
+      hi: 'सतगुरु कबीर साहेब साधना की सीमाओं और परम अमरत्व का मर्म समझाते हैं: वाणी द्वारा किया जाने वाला "जाप" (वैखरी) भी शांत हो जाता है, श्वासों का "अजपा" भी देह छूटने पर विलीन हो जाता है, और यहाँ तक कि "अनहद नाद" की ध्वनि भी महाप्रलय में लय हो जाती है। किंतु जो आत्मा परमात्मा (सत्यनाम) से अनन्य निष्कपट प्रेम करती है (राम स्नेही), वह कभी नहीं मरती, वह सदा के लिए अमर हो जाती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੋਲ ਕੇ ਕੀਤਾ ਜਾਪ ਮੁੱਕ ਜਾਂਦਾ ਹੈ, ਸਵਾਸਾਂ ਦਾ ਅਜਪਾ ਵੀ ਸਰੀਰ ਨਾਲ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਅਨਹਦ ਨਾਦ ਵੀ ਲੀਨ ਹੋ ਜਾਂਦਾ ਹੈ। ਪਰ ਜੋ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਪ੍ਰੇਮੀ ਹੈ, ਉਹ ਕਦੇ ਨਹੀਂ ਮਰਦਾ, ਉਹ ਅਮਰ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb unveils the ultimate truth of spiritual practices: Outward vocal chanting (Jaap) comes to an end, the silent rhythmic breath recitation (Ajapa) ceases when the body expires, and even the cosmic unstruck sound (Anahad) dissolves at the dissolution of creation. But the genuine lover of the Divine (Ram Snehi), anchored in pure love, never perishes—they attain eternal, immortal life.',
     },
     wordMeanings: {
       hi: [
@@ -271,9 +271,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jab gun ko gaahak mile, tab gun laakh bikaayi. Jab gun ko gaahak nahi, tab kaudi badle jaayi.',
     bhavarth: {
-      hi: 'कबीर साहेब गुणों और ज्ञान की कद्र समझाते हैं: जब किसी गुण, सत्य या ज्ञान को समझने वाला सच्चा कद्रदान और पारखी (गाहक) मिलता है, तब उस गुण का मूल्य लाखों-करोड़ों गुना आँका जाता है। किंतु जहाँ गुणों की कद्र करने वाला कोई विवेकी न हो, वहाँ वह अनमोल ज्ञान भी कौड़ी के मोल (व्यर्थ) समझा जाता है। अतः अपनी पात्रता और परिवेश की पहचान आवश्यक है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਗੁਣਾਂ ਦੀ ਕਦਰ ਕਰਨ ਵਾਲਾ ਸੱਚਾ ਗਾਹਕ ਮਿਲੇ ਤਾਂ ਗੁਣ ਲੱਖਾਂ ਦਾ ਵਿਕਦਾ ਹੈ। ਪਰ ਜਿੱਥੇ ਕੋਈ ਕਦਰਦਾਨ ਨਾ ਹੋਵੇ, ਉੱਥੇ ਉਹ ਕੌਡੀਆਂ ਦੇ ਭਾਅ ਰੁਲ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb reflects on the appreciation of virtue and wisdom: When a discerning seeker and true connoisseur of virtue is found, the value of spiritual wisdom is treasured beyond millions. But when there is no worthy appreciator, that same priceless wisdom is treated as utterly worthless, discarded like broken shells.',
+      hi: 'सतगुरु कबीर साहेब गुणों और ज्ञान की कद्र समझाते हैं: जब किसी गुण, सत्य या ज्ञान को समझने वाला सच्चा कद्रदान और पारखी (गाहक) मिलता है, तब उस गुण का मूल्य लाखों-करोड़ों गुना आँका जाता है। किंतु जहाँ गुणों की कद्र करने वाला कोई विवेकी न हो, वहाँ वह अनमोल ज्ञान भी कौड़ी के मोल (व्यर्थ) समझा जाता है। अतः अपनी पात्रता और परिवेश की पहचान आवश्यक है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਗੁਣਾਂ ਦੀ ਕਦਰ ਕਰਨ ਵਾਲਾ ਸੱਚਾ ਗਾਹਕ ਮਿਲੇ ਤਾਂ ਗੁਣ ਲੱਖਾਂ ਦਾ ਵਿਕਦਾ ਹੈ। ਪਰ ਜਿੱਥੇ ਕੋਈ ਕਦਰਦਾਨ ਨਾ ਹੋਵੇ, ਉੱਥੇ ਉਹ ਕੌਡੀਆਂ ਦੇ ਭਾਅ ਰੁਲ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reflects on the appreciation of virtue and wisdom: When a discerning seeker and true connoisseur of virtue is found, the value of spiritual wisdom is treasured beyond millions. But when there is no worthy appreciator, that same priceless wisdom is treated as utterly worthless, discarded like broken shells.',
     },
     wordMeanings: {
       hi: [
@@ -353,9 +353,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jab lag naata jagat ka, tab lag bhakti na hoy. Naata tode Hari bhaje, bhagat kahaaven soy.',
     bhavarth: {
-      hi: 'कबीर साहेब अनन्य भक्ति की शर्त बताते हैं: जब तक मनुष्य का मन संसार के मोह, वासना और झूठे संबंधों की आसक्तियों में उलझा रहता है, तब तक वास्तविक भक्ति घटित नहीं हो सकती। जो मन से संसार की इन झूठी आसक्तियों के नाते को तोड़कर केवल एक परमात्मा के प्रेम में लीन होकर उनका भजन करता है, वही सच्चा भक्त कहलाने योग्य है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਤੱਕ ਸੰਸਾਰਕ ਮੋਹ-ਮਾਇਆ ਦੇ ਰਿਸ਼ਤੇ ਮਨ ਵਿੱਚ ਹਨ, ਤਦ ਤੱਕ ਸੱਚੀ ਭਗਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ। ਜੋ ਸੰਸਾਰਕ ਮੋਹ ਤੋੜ ਕੇ ਪ੍ਰਭੂ ਨੂੰ ਜਪਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਭਗਤ ਅਖਵਾਉਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb proclaims the law of authentic devotion: As long as the mind is enticed and bound by the illusory attachments of worldly relationships and cravings, true spiritual devotion cannot blossom. Only one who severs inner clinging to the world and worships the Supreme Divine with undivided love is worthy of being called a true devotee.',
+      hi: 'सतगुरु कबीर साहेब अनन्य भक्ति की शर्त बताते हैं: जब तक मनुष्य का मन संसार के मोह, वासना और झूठे संबंधों की आसक्तियों में उलझा रहता है, तब तक वास्तविक भक्ति घटित नहीं हो सकती। जो मन से संसार की इन झूठी आसक्तियों के नाते को तोड़कर केवल एक परमात्मा के प्रेम में लीन होकर उनका भजन करता है, वही सच्चा भक्त कहलाने योग्य है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਤੱਕ ਸੰਸਾਰਕ ਮੋਹ-ਮਾਇਆ ਦੇ ਰਿਸ਼ਤੇ ਮਨ ਵਿੱਚ ਹਨ, ਤਦ ਤੱਕ ਸੱਚੀ ਭਗਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ। ਜੋ ਸੰਸਾਰਕ ਮੋਹ ਤੋੜ ਕੇ ਪ੍ਰਭੂ ਨੂੰ ਜਪਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਭਗਤ ਅਖਵਾਉਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the law of authentic devotion: As long as the mind is enticed and bound by the illusory attachments of worldly relationships and cravings, true spiritual devotion cannot blossom. Only one who severs inner clinging to the world and worships the Supreme Divine with undivided love is worthy of being called a true devotee.',
     },
     wordMeanings: {
       hi: [
@@ -435,9 +435,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jab lagi bhagati sakam hai, tab lag nishphal sev. Kah Kabir wah kyon mile, nishkami taj dev.',
     bhavarth: {
-      hi: 'कबीर साहेब निष्काम भक्ति का महत्व बताते हैं: जब तक भक्ति में सांसारिक कामनाएं, फल की इच्छा, धन-पुत्र या स्वर्ग की लालसा (सकाम भाव) जुड़ी रहती है, तब तक की गई सारी सेवा और पूजा निष्फल व अधूरी है। कबीर कहते हैं कि वह परमेश्वर तब तक कैसे मिल सकता है जब तक साधक सभी कामनाओं को त्यागकर पूर्णतः निष्काम न हो जाए?',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਤੱਕ ਭਗਤੀ ਵਿੱਚ ਲਾਲਚ ਤੇ ਇੱਛਾਵਾਂ ਹਨ, ਤਦ ਤੱਕ ਸਾਰੀ ਸੇਵਾ ਵਿਅਰਥ ਹੈ। ਜਦੋਂ ਤੱਕ ਮਨੁੱਖ ਨਿਸ਼ਕਾਮ ਹੋ ਕੇ ਪ੍ਰਭੂ ਦੀ ਸ਼ਰਨ ਨਹੀਂ ਆਉਂਦਾ, ਪ੍ਰਭੂ ਮਿਲ ਨਹੀਂ ਸਕਦਾ।',
-      en: 'Kabir Saheb clarifies the nature of pure devotion: As long as worship is driven by selfish desires, worldly gain, or transactional bargaining (Sakaam), all service and prayer remain barren. Kabir asks: How can the Supreme Divine ever be attained unless the seeker completely abandons all personal cravings and surrenders in selfless purity (Nishkaam)?',
+      hi: 'सतगुरु कबीर साहेब निष्काम भक्ति का महत्व बताते हैं: जब तक भक्ति में सांसारिक कामनाएं, फल की इच्छा, धन-पुत्र या स्वर्ग की लालसा (सकाम भाव) जुड़ी रहती है, तब तक की गई सारी सेवा और पूजा निष्फल व अधूरी है। सतगुरु कबीर साहेब फरमाते हैं कि वह परमेश्वर तब तक कैसे मिल सकता है जब तक साधक सभी कामनाओं को त्यागकर पूर्णतः निष्काम न हो जाए?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਤੱਕ ਭਗਤੀ ਵਿੱਚ ਲਾਲਚ ਤੇ ਇੱਛਾਵਾਂ ਹਨ, ਤਦ ਤੱਕ ਸਾਰੀ ਸੇਵਾ ਵਿਅਰਥ ਹੈ। ਜਦੋਂ ਤੱਕ ਮਨੁੱਖ ਨਿਸ਼ਕਾਮ ਹੋ ਕੇ ਪ੍ਰਭੂ ਦੀ ਸ਼ਰਨ ਨਹੀਂ ਆਉਂਦਾ, ਪ੍ਰਭੂ ਮਿਲ ਨਹੀਂ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb clarifies the nature of pure devotion: As long as worship is driven by selfish desires, worldly gain, or transactional bargaining (Sakaam), all service and prayer remain barren. Kabir asks: How can the Supreme Divine ever be attained unless the seeker completely abandons all personal cravings and surrenders in selfless purity (Nishkaam)?',
     },
     wordMeanings: {
       hi: [
@@ -517,9 +517,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jab tu aaya jagat me, log hanse tu roy. Aisi karni na kari, paachhe hanse sab koy.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवन के आचरण और कर्मों की गंभीरता पर प्रकाश डालते हैं: जब तुम्हारा इस संसार में जन्म हुआ था, तब सभी परिजन प्रसन्नता से हँसे थे और तुम रो रहे थे। अब जीवन में ऐसे निकृष्ट और पापी कर्म मत करना कि जाते समय (मृत्यु के बाद) संसार तुम पर हँसे और तुम्हारी निंदा करे। बल्कि ऐसे पावन कर्म करो कि तुम हँसते हुए विदा हो और संसार तुम्हारे जाने पर रोए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਤੂੰ ਜੰਮਿਆ ਸੀ ਤਾਂ ਲੋਕ ਹੱਸੇ ਸਨ ਤੇ ਤੂੰ ਰੋਂਦਾ ਸੀ। ਹੁਣ ਅਜਿਹੇ ਮਾੜੇ ਕਰਮ ਨਾ ਕਰੀਂ ਕਿ ਤੇਰੇ ਮਰਨ ਪਿੱਛੋਂ ਸਭ ਤੇਰੇ ਤੇ ਹੱਸਣ। ਨੇਕ ਕਰਮ ਕਰਕੇ ਜੀਵਨ ਸਫਲ ਕਰ।',
-      en: 'Kabir Saheb reflects on the profound conduct of life: When you arrived into this world at birth, the world laughed with joy while you cried. Do not live so heedlessly in sin that when you depart, people laugh with relief and ridicule your wasted existence. Instead, live with such noble virtue that you leave smiling in divine peace while the world weeps for your absence.',
+      hi: 'सतगुरु कबीर साहेबवन के आचरण और कर्मों की गंभीरता पर प्रकाश डालते हैं: जब तुम्हारा इस संसार में जन्म हुआ था, तब सभी परिजन प्रसन्नता से हँसे थे और तुम रो रहे थे। अब जीवन में ऐसे निकृष्ट और पापी कर्म मत करना कि जाते समय (मृत्यु के बाद) संसार तुम पर हँसे और तुम्हारी निंदा करे। बल्कि ऐसे पावन कर्म करो कि तुम हँसते हुए विदा हो और संसार तुम्हारे जाने पर रोए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਤੂੰ ਜੰਮਿਆ ਸੀ ਤਾਂ ਲੋਕ ਹੱਸੇ ਸਨ ਤੇ ਤੂੰ ਰੋਂਦਾ ਸੀ। ਹੁਣ ਅਜਿਹੇ ਮਾੜੇ ਕਰਮ ਨਾ ਕਰੀਂ ਕਿ ਤੇਰੇ ਮਰਨ ਪਿੱਛੋਂ ਸਭ ਤੇਰੇ ਤੇ ਹੱਸਣ। ਨੇਕ ਕਰਮ ਕਰਕੇ ਜੀਵਨ ਸਫਲ ਕਰ।',
+      en: 'Satguru Kabir Saheb reflects on the profound conduct of life: When you arrived into this world at birth, the world laughed with joy while you cried. Do not live so heedlessly in sin that when you depart, people laugh with relief and ridicule your wasted existence. Instead, live with such noble virtue that you leave smiling in divine peace while the world weeps for your absence.',
     },
     wordMeanings: {
       hi: [
@@ -599,9 +599,9 @@ export const SAKHIS_BATCH_21: Sakhi[] = [
     },
     transliteration: 'Jaha aap taha aapda, jaha sanshay taha rog. Kah Kabir yeh kyo mite, chaaron baadhak rog.',
     bhavarth: {
-      hi: 'कबीर साहेब आंतरिक विकारों और आत्मिक रोगों का विश्लेषण करते हैं: जहाँ "आप" (अहंकार / मैं-भाव) होता है, वहाँ विपत्तियाँ और आपदाएँ स्वतः आ घेरती हैं; जहाँ मन में संशय और भ्रम होता है, वहाँ मानसिक व आत्मिक रोग उत्पन्न हो जाते हैं। काम, क्रोध, अहंकार और संशय जैसे ये चारों घातक रोग साधक के आध्यात्मिक मार्ग में सबसे बड़े बाधक हैं, जो केवल सतगुरु के ज्ञान से ही मिट सकते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿੱਥੇ ਹੰਕਾਰ (ਮੈਂ) ਹੈ ਉੱਥੇ ਮੁਸੀਬਤਾਂ ਹਨ, ਅਤੇ ਜਿੱਥੇ ਸ਼ੰਕਾ ਹੈ ਉੱਥੇ ਮਾਨਸਿਕ ਰੋਗ ਹਨ। ਇਹ ਚਾਰੇ ਵੱਡੇ ਵਿਕਾਰ ਰੂਹਾਨੀ ਮਾਰਗ ਵਿੱਚ ਰੁਕਾਵਟ ਬਣਦੇ ਹਨ।',
-      en: 'Kabir Saheb diagnoses the root causes of spiritual suffering: Wherever the ego ("I-ness") asserts itself, calamities and sorrow inevitably follow; wherever doubt and suspicion fester, psychological and spiritual diseases take root. Pride, doubt, desire, and wrath are four chronic obstacles that only the curative grace of the Satguru can dissolve.',
+      hi: 'सतगुरु कबीर साहेब आंतरिक विकारों और आत्मिक रोगों का विश्लेषण करते हैं: जहाँ "आप" (अहंकार / मैं-भाव) होता है, वहाँ विपत्तियाँ और आपदाएँ स्वतः आ घेरती हैं; जहाँ मन में संशय और भ्रम होता है, वहाँ मानसिक व आत्मिक रोग उत्पन्न हो जाते हैं। काम, क्रोध, अहंकार और संशय जैसे ये चारों घातक रोग साधक के आध्यात्मिक मार्ग में सबसे बड़े बाधक हैं, जो केवल सतगुरु के ज्ञान से ही मिट सकते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿੱਥੇ ਹੰਕਾਰ (ਮੈਂ) ਹੈ ਉੱਥੇ ਮੁਸੀਬਤਾਂ ਹਨ, ਅਤੇ ਜਿੱਥੇ ਸ਼ੰਕਾ ਹੈ ਉੱਥੇ ਮਾਨਸਿਕ ਰੋਗ ਹਨ। ਇਹ ਚਾਰੇ ਵੱਡੇ ਵਿਕਾਰ ਰੂਹਾਨੀ ਮਾਰਗ ਵਿੱਚ ਰੁਕਾਵਟ ਬਣਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb diagnoses the root causes of spiritual suffering: Wherever the ego ("I-ness") asserts itself, calamities and sorrow inevitably follow; wherever doubt and suspicion fester, psychological and spiritual diseases take root. Pride, doubt, desire, and wrath are four chronic obstacles that only the curative grace of the Satguru can dissolve.',
     },
     wordMeanings: {
       hi: [

@@ -74,12 +74,12 @@ const SAMPLE_VANIS = [
   {
     title: 'उलटबांसी रहस्य (Ulatbansi)',
     text: 'एक अचंभा देखा रे भाई, ठाढ़ा सिंह चरावे गाई। जल की मछली तरुवर ब्याई, पकड़ बिलाई मुर्गे खाई।।',
-    meaning: 'कबीर साहेब उलटबांसी में कहते हैं कि जब जीवात्मा (सिंह) संसार के विषयों (गाई) के वश में था, तब उलटी दशा थी; किन्तु गुरु कृपा से अंतर्मुखी होकर माया भ्रम नष्ट हो जाता है।'
+    meaning: 'सतगुरु कबीर साहेब उलटबांसी में कहते हैं कि जब जीवात्मा (सिंह) संसार के विषयों (गाई) के वश में था, तब उलटी दशा थी; किन्तु गुरु कृपा से अंतर्मुखी होकर माया भ्रम नष्ट हो जाता है।'
   },
   {
     title: 'गुरु महिमा साखी (Sakhi)',
     text: 'गुरु गोविन्द दोऊ खड़े, काके लागूं पाय । बलिहारी गुरु आपने, गोविन्द दियो बताय ॥',
-    meaning: 'सद्गुरु और ईश्वर दोनों समक्ष हैं, तो पहले गुरु के चरणों में नमन है जिन्होंने ईश्वर तक पहुँचने का मार्ग दर्शाया।'
+    meaning: 'सतगुरु और ईश्वर दोनों समक्ष हैं, तो पहले गुरु के चरणों में नमन है जिन्होंने ईश्वर तक पहुँचने का मार्ग दर्शाया।'
   },
   {
     title: 'कबीर सोता क्या करे...',
@@ -377,7 +377,7 @@ export const AutoCorrectTool: React.FC<AutoCorrectToolProps> = ({
                 rows={4}
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                placeholder="यहाँ कबीर साहेब की मूल वाणी या साखी दर्ज करें..."
+                placeholder="यहाँ सतगुरु कबीर साहेब की मूल वाणी या साखी दर्ज करें..."
                 style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
                 className="w-full px-4 py-3 rounded-xl border text-base font-serif font-bold outline-none focus:ring-2 focus:ring-amber-500 leading-relaxed"
               />

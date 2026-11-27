@@ -7,11 +7,11 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
     type: 'sakhi',
     lines: {
       hi: [
-        'साहिब के दरबार में, कमी काहु की नाहिं।',
+        'साहेब के दरबार में, कमी काहु की नाहिं।',
         'बन्दा मौज न पावहीं, चूक चाकरी माहिं।।'
       ],
       pb: [
-        devanagariToGurmukhi('साहिब के दरबार में, कमी काहु की नाहिं।'),
+        devanagariToGurmukhi('साहेब के दरबार में, कमी काहु की नाहिं।'),
         devanagariToGurmukhi('बन्दा मौज न पावहीं, चूक चाकरी माहिं।।')
       ],
       en: [
@@ -20,8 +20,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'सद्गुरु के दरबार में किसी भी वस्तु की कमी नहीं है, परंतु यदि सेवक को सुख-आनंद नहीं मिल पा रहा है, तो यह अवश्य ही उसके दुर्भाग्य की बात है। उसकी सेवा में, प्रेम में अथवा लगन में अवश्य ही कुछ कमी है। सेवक को ऐसा ही समझना चाहिए।',
-      pb: devanagariToGurmukhi('सद्गुरु के दरबार में किसी वस्तु की कमी नहीं है। यदि सेवक को आनंद नहीं मिल रहा, तो अवश्य ही उसकी सेवा व निष्ठा में कमी है।'),
+      hi: 'सतगुरु के दरबार में किसी भी वस्तु की कमी नहीं है, परंतु यदि सेवक को सुख-आनंद नहीं मिल पा रहा है, तो यह अवश्य ही उसके दुर्भाग्य की बात है। उसकी सेवा में, प्रेम में अथवा लगन में अवश्य ही कुछ कमी है। सेवक को ऐसा ही समझना चाहिए।',
+      pb: devanagariToGurmukhi('सतगुरु के दरबार में किसी वस्तु की कमी नहीं है। यदि सेवक को आनंद नहीं मिल रहा, तो अवश्य ही उसकी सेवा व निष्ठा में कमी है।'),
       en: 'In the Supreme Lord’s court, nothing is lacking. If the devotee fails to experience bliss, the fault lies in the shortcomings of their own service and devotion.'
     }
   },
@@ -43,8 +43,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'सद्गुरु के प्रेमी सेवकजन, शीलवान, देवता के समान, ज्ञानवान, संकल्पवान, उदार (दयालु) चित्त वाले, लज्जावान तथा बहुत ही निश्चल भाव के कोमल हृदय वाले होते हैं, अर्थात उनमें कठोरता या कटुता नहीं होती।',
-      pb: devanagariToGurmukhi('सद्गुरु के सच्चे सेवक शीलवान, उदार, ज्ञानवान, नम्र व निश्चल भाव के कोमल हृदय वाले होते हैं।'),
+      hi: 'सतगुरु के प्रेमी सेवकजन, शीलवान, देवता के समान, ज्ञानवान, संकल्पवान, उदार (दयालु) चित्त वाले, लज्जावान तथा बहुत ही निश्चल भाव के कोमल हृदय वाले होते हैं, अर्थात उनमें कठोरता या कटुता नहीं होती।',
+      pb: devanagariToGurmukhi('सतगुरु के सच्चे सेवक शीलवान, उदार, ज्ञानवान, नम्र व निश्चल भाव के कोमल हृदय वाले होते हैं।'),
       en: 'True servants of the Master are virtuous, wise, generous-hearted, modest, sincere, and filled with tender compassion.'
     }
   },
@@ -89,8 +89,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'वे विनम्र तथा दयावान, धर्म की ध्वजा के स्वरूप और धैर्य धारण करने वाले, साक्षात् प्रमाण हैं। संतोष भाव वाले, सबको सुख देने वाले और पवित्र बुद्धि वाले ही सद्गुरु के सच्चे सेवक होते हैं।',
-      pb: devanagariToGurmukhi('जो विनम्र, दयावान, धर्म-ध्वजा के प्रतीक, धैर्यवान, संतोषी और सुखदायी हैं, वही सद्गुरु के सच्चे सेवक हैं।'),
+      hi: 'वे विनम्र तथा दयावान, धर्म की ध्वजा के स्वरूप और धैर्य धारण करने वाले, साक्षात् प्रमाण हैं। संतोष भाव वाले, सबको सुख देने वाले और पवित्र बुद्धि वाले ही सतगुरु के सच्चे सेवक होते हैं।',
+      pb: devanagariToGurmukhi('जो विनम्र, दयावान, धर्म-ध्वजा के प्रतीक, धैर्यवान, संतोषी और सुखदायी हैं, वही सतगुरु के सच्चे सेवक हैं।'),
       en: 'Humple, merciful, flag-bearers of righteousness, patient, content, bestowers of joy, and wise—these are the true hallmarks of the Master’s devout servant.'
     }
   },
@@ -135,8 +135,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'सेवक और स्वामी दोनों का मत-सिद्धांत मिलकर एक होना चाहिए। चतुराई (चालाकी) करने से सद्गुरु स्वामी नहीं रीझते, बल्कि हार्दिक सेवा-भक्ति से ही प्रसन्न होते हैं, अतः सेवक को चाहिए कि गुरु के मतानुसार चलते हुए सहज भाव से सेवा करे।',
-      pb: devanagariToGurmukhi('सेवक और स्वामी का मत एक होना चाहिए। सद्गुरु चालाकी से नहीं, बल्कि मन के निष्कपट भाव और प्रेम से ही रीझते हैं।'),
+      hi: 'सेवक और स्वामी दोनों का मत-सिद्धांत मिलकर एक होना चाहिए। चतुराई (चालाकी) करने से सतगुरु स्वामी नहीं रीझते, बल्कि हार्दिक सेवा-भक्ति से ही प्रसन्न होते हैं, अतः सेवक को चाहिए कि गुरु के मतानुसार चलते हुए सहज भाव से सेवा करे।',
+      pb: devanagariToGurmukhi('सेवक और स्वामी का मत एक होना चाहिए। सतगुरु चालाकी से नहीं, बल्कि मन के निष्कपट भाव और प्रेम से ही रीझते हैं।'),
       en: 'The disciple’s mind must align seamlessly with the Master’s wisdom. The Master is never pleased by cleverness, but by sincere, innocent love of the heart.'
     }
   },
@@ -158,8 +158,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'जैसे सर्प मणि की ओर देखता रहता है, वैसे ही गुरुमुख सेवक को गुरु की ओर ही देखते रहना चाहिए, अर्थात गुरु-ज्ञान के अनुसार आचरण और ध्यान सतत-रूप से करते रहना चाहिए। कबीरजी कहते हैं कि यही गुरुमुख सेवक का लक्षण है।',
-      pb: devanagariToGurmukhi('जैसे सर्प मणि का ध्यान रखता है, वैसे ही गुरुमुख सेवक सदा गुरु-चिंतन में लीन रहता है। कबीरजी कहते हैं कि यही गुरुमुख का सच्चा लक्षण है।'),
+      hi: 'जैसे सर्प मणि की ओर देखता रहता है, वैसे ही गुरुमुख सेवक को गुरु की ओर ही देखते रहना चाहिए, अर्थात गुरु-ज्ञान के अनुसार आचरण और ध्यान सतत-रूप से करते रहना चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि यही गुरुमुख सेवक का लक्षण है।',
+      pb: devanagariToGurmukhi('जैसे सर्प मणि का ध्यान रखता है, वैसे ही गुरुमुख सेवक सदा गुरु-चिंतन में लीन रहता है। सतगुरु कबीर साहेब फरमाते हैं कि यही गुरुमुख का सच्चा लक्षण है।'),
       en: 'Just as a serpent keeps its gaze fixed on the priceless gem, the devout disciple remains continuously absorbed in contemplation of the Master.'
     }
   },
@@ -181,8 +181,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'जो किसी सांसारिकता को लेकर सेवा करता है और इस सेवा के बदले दिन-रात प्रभु से याचना करता है। कबीरजी कहते हैं कि वह लोभी-स्वार्थी है, वह सेवक नहीं है, वह तो अपनी सेवा के चार गुने दाम चाहता है।',
-      pb: devanagariToGurmukhi('जो किसी फल के लिए सेवा करता है और दिन-रात प्रभु से मांगता है, कबीरजी कहते हैं कि वह सेवक नहीं, लोभी व्यापारी है जो चार गुना दाम चाहता है।'),
+      hi: 'जो किसी सांसारिकता को लेकर सेवा करता है और इस सेवा के बदले दिन-रात प्रभु से याचना करता है। सतगुरु कबीर साहेब फरमाते हैं कि वह लोभी-स्वार्थी है, वह सेवक नहीं है, वह तो अपनी सेवा के चार गुने दाम चाहता है।',
+      pb: devanagariToGurmukhi('जो किसी फल के लिए सेवा करता है और दिन-रात प्रभु से मांगता है, सतगुरु कबीर साहेब फरमाते हैं कि वह सेवक नहीं, लोभी व्यापारी है जो चार गुना दाम चाहता है।'),
       en: 'One who serves for worldly gain and constantly bargains with God is no true servant; Kabir calls them a greedy trader seeking fourfold reward.'
     }
   },
@@ -204,9 +204,9 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यदि सद्गुरु से सच्चा प्रेम है, तो फिर क्या पास और क्या दूर, इससे कोई अंतर नहीं पड़ता, क्योंकि जिसका चित्त जिससे लगा रहता है, वह वहां पर सदा ही उपस्थित रहता है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि गुरु प्रेम में निकटता या दूरी का कोई अर्थ नहीं। जिसका चित्त जहाँ जुड़ा है, वह सदा वहीं उपस्थित है।'),
-      en: 'Kabir says in true love for the Master, physical distance matters not. Wherever the heart is tethered, there the Presence is eternally felt.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यदि सतगुरु से सच्चा प्रेम है, तो फिर क्या पास और क्या दूर, इससे कोई अंतर नहीं पड़ता, क्योंकि जिसका चित्त जिससे लगा रहता है, वह वहां पर सदा ही उपस्थित रहता है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि गुरु प्रेम में निकटता या दूरी का कोई अर्थ नहीं। जिसका चित्त जहाँ जुड़ा है, वह सदा वहीं उपस्थित है।'),
+      en: 'Satguru Kabir Saheb proclaims in true love for the Master, physical distance matters not. Wherever the heart is tethered, there the Presence is eternally felt.'
     }
   },
   {
@@ -250,9 +250,9 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो गुरु के सच्चे सेवक हैं, उन्हें गुरु की आज्ञा लेकर ही आना चाहिए और गुरु की आज्ञानुसार ही कहीं जाना चाहिए। ऐसे ही शिष्य-सेवक साधु-संतों के प्रिय होते हैं और वे सभी प्रकार से ज्ञानामृत पाते है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि जो गुरु की आज्ञा लेकर ही आता-जाता है, वह संतों का प्रिय बनकर ज्ञानामृत प्राप्त करता है।'),
-      en: 'Kabir says the devotee who acts solely with the Master’s consent becomes beloved to all saints and drinks the nectar of divine knowledge.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो गुरु के सच्चे सेवक हैं, उन्हें गुरु की आज्ञा लेकर ही आना चाहिए और गुरु की आज्ञानुसार ही कहीं जाना चाहिए। ऐसे ही शिष्य-सेवक साधु-संतों के प्रिय होते हैं और वे सभी प्रकार से ज्ञानामृत पाते है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि जो गुरु की आज्ञा लेकर ही आता-जाता है, वह संतों का प्रिय बनकर ज्ञानामृत प्राप्त करता है।'),
+      en: 'Satguru Kabir Saheb proclaims the devotee who acts solely with the Master’s consent becomes beloved to all saints and drinks the nectar of divine knowledge.'
     }
   },
   {
@@ -273,9 +273,9 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि सेवक उसी को कहा जाता है, जो सेवा करता है। बिना सेवा किए कोई सेवक नहीं हो सकता, अर्थात सेवक के जीवन में सेवा मूल मंत्र है। इसी सेवा-साधना से वह सेवक का सच्चा पद प्राप्त करता है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि सेवक वही है जो निरन्तर सेवा में रहे। बिना सेवा के कोई सेवक नहीं कहला सकता।'),
-      en: 'Kabir says only one who abides in selfless service is a true servant; without dedicated service, the title of servant cannot be earned.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सेवक उसी को कहा जाता है, जो सेवा करता है। बिना सेवा किए कोई सेवक नहीं हो सकता, अर्थात सेवक के जीवन में सेवा मूल मंत्र है। इसी सेवा-साधना से वह सेवक का सच्चा पद प्राप्त करता है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि सेवक वही है जो निरन्तर सेवा में रहे। बिना सेवा के कोई सेवक नहीं कहला सकता।'),
+      en: 'Satguru Kabir Saheb proclaims only one who abides in selfless service is a true servant; without dedicated service, the title of servant cannot be earned.'
     }
   },
   {
@@ -296,8 +296,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी समझाते हुए कहते हैं कि सद्गुरु के आदेश का उल्लंघन करके, अपने मन-मति से जो शिष्य सेवक कहीं जाता है, उसके लिए फिर सब जगह काल रूपी दुःख-ही-दुःख है, अर्थात उसे कहीं भी सुख-शांति नहीं मिल सकती।',
-      pb: devanagariToGurmukhi('कबीरजी समझाते हैं कि सद्गुरु के शब्द का उल्लंघन करके जो सेवक कहीं जाता है, उसे सर्वत्र दुखों का सामना करना पड़ता है।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सतगुरु के आदेश का उल्लंघन करके, अपने मन-मति से जो शिष्य सेवक कहीं जाता है, उसके लिए फिर सब जगह काल रूपी दुःख-ही-दुःख है, अर्थात उसे कहीं भी सुख-शांति नहीं मिल सकती।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब समझाते हैं कि सतगुरु के शब्द का उल्लंघन करके जो सेवक कहीं जाता है, उसे सर्वत्र दुखों का सामना करना पड़ता है।'),
       en: 'Kabir cautions that a disciple who transgresses the Satguru’s Holy Word encounters grief and bondage wherever they turn.'
     }
   },
@@ -319,8 +319,8 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'सद्गुरु के सेवक ज्ञान से पूर्ण होते हैं, परंतु अभिमानी नहीं होते और सबका हित करने वाले, सबसे मिल-जुलकर रहने वाले होते हैं। सदा ही सत्य का पालन करने वाले, परमार्थ-प्रेमी (परोपकारी) और सबका आदर-भाव करने वाले होते हैं।',
-      pb: devanagariToGurmukhi('सद्गुरु के सेवक ज्ञानी होकर भी अहंकार-रहित होते हैं, वे सत्यवादी, परोपकारी और सर्व-जन के प्रति आदर-युक्त रहते हैं।'),
+      hi: 'सतगुरु के सेवक ज्ञान से पूर्ण होते हैं, परंतु अभिमानी नहीं होते और सबका हित करने वाले, सबसे मिल-जुलकर रहने वाले होते हैं। सदा ही सत्य का पालन करने वाले, परमार्थ-प्रेमी (परोपकारी) और सबका आदर-भाव करने वाले होते हैं।',
+      pb: devanagariToGurmukhi('सतगुरु के सेवक ज्ञानी होकर भी अहंकार-रहित होते हैं, वे सत्यवादी, परोपकारी और सर्व-जन के प्रति आदर-युक्त रहते हैं।'),
       en: 'The Master’s true servant possesses wisdom without pride, wishing well to all, abiding in truth, altruism, and respectful humility.'
     }
   },
@@ -365,7 +365,7 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'ऊपर बताए गए इन सभी शुभ लक्षणों को अपने हृदय में धारण करो और सभी बुरे लक्षणों को त्याग दो। चारों तरफ से सावधान रहे कि कहीं से कोई दुर्गुण मन के भीतर न आ जाए। सदगुरु के श्री चरणों में एकाग्र होकर अपना ध्यान लगाए रहें। यह सब लक्षण सच्चे सेवक के हैं।',
+      hi: 'ऊपर बताए गए इन सभी शुभ लक्षणों को अपने हृदय में धारण करो और सभी बुरे लक्षणों को त्याग दो। चारों तरफ से सावधान रहे कि कहीं से कोई दुर्गुण मन के भीतर न आ जाए। सतगुरु के श्री चरणों में एकाग्र होकर अपना ध्यान लगाए रहें। यह सब लक्षण सच्चे सेवक के हैं।',
       pb: devanagariToGurmukhi('इन सभी शुभ लक्षणों को हृदय में धारण करें और दुर्गुणों को त्यागकर गुरु चरणों में एकाग्र चित्त से लगे रहें।'),
       en: 'Incorporate all these noble virtues into your heart, shed all vices, stay vigilant against delusion, and remain steadfastly focused at the Master’s feet.'
     }
@@ -388,9 +388,9 @@ export const SAKHI_SANGRAH_ANG_10_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि सच्चा गुरुमुख सेवक अपने सभी कार्यों को छोड़कर, गुरु की आज्ञानुसार ही चलता है। गुरुदेव की आज्ञा को शिरोधार्य कर, अविलंब उन्हें प्रणाम कर, कार्य को पूरा करना चाहिए।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि सच्चा गुरुमुख सब काम छोड़कर गुरु की आज्ञा पर चलता है और अविलंब गुरुदेव को प्रणाम कर आज्ञा शिरोधार्य करता है।'),
-      en: 'Kabir says the true disciple sets aside all personal tasks to honor the Master’s command instantly with reverent devotion.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सच्चा गुरुमुख सेवक अपने सभी कार्यों को छोड़कर, गुरु की आज्ञानुसार ही चलता है। गुरुदेव की आज्ञा को शिरोधार्य कर, अविलंब उन्हें प्रणाम कर, कार्य को पूरा करना चाहिए।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि सच्चा गुरुमुख सब काम छोड़कर गुरु की आज्ञा पर चलता है और अविलंब गुरुदेव को प्रणाम कर आज्ञा शिरोधार्य करता है।'),
+      en: 'Satguru Kabir Saheb proclaims the true disciple sets aside all personal tasks to honor the Master’s command instantly with reverent devotion.'
     }
   }
 ];

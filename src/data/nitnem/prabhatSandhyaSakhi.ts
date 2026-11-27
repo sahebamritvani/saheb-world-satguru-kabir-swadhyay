@@ -459,7 +459,7 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
       bhavarth: {
         hi: "हे करुणामय! मुझ पर दया करके मुझे सत्य और शुभ कर्म की सिद्धि दीजिए। हे प्रभु! मैं आपके चरणों की वंदना करता हूँ, मुझे केवल आपके सत्यनाम की ही एकमात्र आशा है।",
         pb: "ਹੇ ਦਇਆ ਦੇ ਸਾਗਰ! ਕ੍ਰਿਪਾ ਕਰਕੇ ਮੈਨੂੰ ਸੱਚਾ ਤੇ ਸ਼ੁਭ ਮਾਰਗ ਦਿਓ। ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਆਪ ਜੀ ਦੇ ਚਰਨਾਂ ਦੀ ਵੰਦਨਾ ਕਰਦਾ ਹਾਂ, ਮੈਨੂੰ ਕੇਵਲ ਸਤਯਨਾਮ ਦੀ ਆਸ ਹੈ।",
-        en: "O compassionate One, show mercy and grant the fulfillment of righteous purpose. I bow at Your feet, Lord, relying solely on the hope of Satnam."
+        en: "O compassionate One, show mercy and grant the fulfillment of righteous purpose. I bow at Your feet, Lord, relying solely on the hope of Satyanaam."
       }
     },
     {
@@ -480,8 +480,8 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "हे दयालु सत्य कबीर साहेब! आप परम दाता हैं और हम आपके द्वार के भिखारी हैं। हमें पारख ज्ञान देकर हमारी समस्त बाधाओं को हरिए और यम के जाल को मिटा दीजिए।",
-        pb: "ਹੇ ਦਿਆਲੂ ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਦਾਤਾ ਹੋ ਅਤੇ ਅਸੀਂ ਮੰਗਤੇ ਹਾਂ। ਸਾਨੂੰ ਪਰਖ-ਗਿਆਨ ਦੇ ਕੇ ਸਾਰੀਆਂ ਰੁਕਾਵਟਾਂ ਦੂਰ ਕਰੋ ਅਤੇ ਜਮਾਂ ਦਾ ਜਾਲ ਮਿਟਾ ਦਿਓ।",
+        hi: "हे दयालु सत्य सतगुरु कबीर साहेब! आप परम दाता हैं और हम आपके द्वार के भिखारी हैं। हमें पारख ज्ञान देकर हमारी समस्त बाधाओं को हरिए और यम के जाल को मिटा दीजिए।",
+        pb: "ਹੇ ਦਿਆਲੂ ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਦਾਤਾ ਹੋ ਅਤੇ ਅਸੀਂ ਮੰਗਤੇ ਹਾਂ। ਸਾਨੂੰ ਪਰਖ-ਗਿਆਨ ਦੇ ਕੇ ਸਾਰੀਆਂ ਰੁਕਾਵਟਾਂ ਦੂਰ ਕਰੋ ਅਤੇ ਜਮਾਂ ਦਾ ਜਾਲ ਮਿਟਾ ਦਿਓ।",
         en: "You are the Giver and we are the seekers, O merciful Sat Kabir! Bestow the power of discernment, remove all impediments, and annihilate the trap of Yamraj."
       }
     },
@@ -503,8 +503,8 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "मैं किसी योग्य नहीं हूँ, ज्ञान और ध्यान दोनों से सर्वथा हीन हूँ। हे सत्य कबीर साहेब! मुझ पर कृपा करके मुझे पारख बुद्धि और सत्य-ध्यान प्रदान कीजिए।",
-        pb: "ਮੈਂ ਕਿਸੇ ਕੰਮ ਦਾ ਨਹੀਂ ਹਾਂ, ਗਿਆਨ ਅਤੇ ਧਿਆਨ ਤੋਂ ਸੱਖਣਾ ਹਾਂ। ਹੇ ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ! ਮਿਹਰ ਕਰਕੇ ਮੈਨੂੰ ਪਰਖ ਦਾ ਧਿਆਨ ਬਖ਼ਸ਼ੋ।",
+        hi: "मैं किसी योग्य नहीं हूँ, ज्ञान और ध्यान दोनों से सर्वथा हीन हूँ। हे सत्य सतगुरु कबीर साहेब! मुझ पर कृपा करके मुझे पारख बुद्धि और सत्य-ध्यान प्रदान कीजिए।",
+        pb: "ਮੈਂ ਕਿਸੇ ਕੰਮ ਦਾ ਨਹੀਂ ਹਾਂ, ਗਿਆਨ ਅਤੇ ਧਿਆਨ ਤੋਂ ਸੱਖਣਾ ਹਾਂ। ਹੇ ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮਿਹਰ ਕਰਕੇ ਮੈਨੂੰ ਪਰਖ ਦਾ ਧਿਆਨ ਬਖ਼ਸ਼ੋ।",
         en: "I am of no merit, bereft of both wisdom and contemplative focus. O Sat Kabir, be merciful and grant me the meditative discernment of Truth."
       }
     },
@@ -526,8 +526,8 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "इस जगत में मेरा कौन है? यहाँ कोई भी रंचक मात्र भी आत्म-भेद नहीं जानता। हे सत्य कबीर साहेब! मेरे दुखों को दूर कीजिए ताकि मैं आत्मा की सच्ची सेवा व पहचान पा सकूँ।",
-        pb: "ਇਸ ਜਗਤ ਵਿੱਚ ਮੇਰਾ ਕੌਣ ਹੈ? ਕੋਈ ਵੀ ਸੱਚਾ ਭੇਦ ਨਹੀਂ ਜਾਣਦਾ। ਹੇ ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ! ਮੇਰੇ ਦੁੱਖਾਂ ਨੂੰ ਦੂਰ ਕਰੋ ਤਾਂ ਜੋ ਮੈਂ ਆਤਮ-ਸੇਵਾ ਵਿੱਚ ਲੱਗ ਸਕਾਂ।",
+        hi: "इस जगत में मेरा कौन है? यहाँ कोई भी रंचक मात्र भी आत्म-भेद नहीं जानता। हे सत्य सतगुरु कबीर साहेब! मेरे दुखों को दूर कीजिए ताकि मैं आत्मा की सच्ची सेवा व पहचान पा सकूँ।",
+        pb: "ਇਸ ਜਗਤ ਵਿੱਚ ਮੇਰਾ ਕੌਣ ਹੈ? ਕੋਈ ਵੀ ਸੱਚਾ ਭੇਦ ਨਹੀਂ ਜਾਣਦਾ। ਹੇ ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੇਰੇ ਦੁੱਖਾਂ ਨੂੰ ਦੂਰ ਕਰੋ ਤਾਂ ਜੋ ਮੈਂ ਆਤਮ-ਸੇਵਾ ਵਿੱਚ ਲੱਗ ਸਕਾਂ।",
         en: "Who belongs to me in this realm? None knows even an iota of the soul's mystery. O Sat Kabir, dispel my grief that I may engage in true self-realization."
       }
     },
@@ -549,8 +549,8 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "काल की मायावी झांई और तीनों तापों का भयानक जाल सर्वत्र फैला है। हे दयालु सत्य कबीर साहेब! कृपा करके मुझे इसका गुप्त भेद समझा दीजिए ताकि मैं इससे बच सकूँ।",
-        pb: "ਕਾਲ ਦਾ ਛਲਾਵਾ ਅਤੇ ਤਿੰਨਾਂ ਗੁਣਾਂ ਦਾ ਜਾਲ ਫੈਲਿਆ ਹੋਇਆ ਹੈ। ਹੇ ਦਿਆਲੂ ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਇਸਦਾ ਭੇਦ ਸਮਝਾ ਕੇ ਬਚਾ ਲਵੋ।",
+        hi: "काल की मायावी झांई और तीनों तापों का भयानक जाल सर्वत्र फैला है। हे दयालु सत्य सतगुरु कबीर साहेब! कृपा करके मुझे इसका गुप्त भेद समझा दीजिए ताकि मैं इससे बच सकूँ।",
+        pb: "ਕਾਲ ਦਾ ਛਲਾਵਾ ਅਤੇ ਤਿੰਨਾਂ ਗੁਣਾਂ ਦਾ ਜਾਲ ਫੈਲਿਆ ਹੋਇਆ ਹੈ। ਹੇ ਦਿਆਲੂ ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਇਸਦਾ ਭੇਦ ਸਮਝਾ ਕੇ ਬਚਾ ਲਵੋ।",
         en: "The deceptive shadow of Kaal and the threefold entrapments of illusion are all around. O merciful Sat Kabir, disclose their secret that I may remain awake."
       }
     },
@@ -572,8 +572,8 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "मैं सत्य कबीर साहेब का बालक हूँ, किंतु पारख ज्ञान के बिना अत्यंत निर्धन व असहाय हूँ। मेरे भटकने से आपकी ही हँसी होती है, अतः शीघ्र आकर मुझे संभाल लीजिए।",
-        pb: "ਮੈਂ ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਬਾਲਕ ਹਾਂ ਪਰ ਪਰਖ ਬਿਨਾਂ ਕੰਗਾਲ ਹਾਂ। ਮੇਰੀ ਕਮਜ਼ੋਰੀ ਨਾਲ ਆਪ ਜੀ ਦੀ ਹੀ ਨਿੰਦਾ ਹੁੰਦੀ ਹੈ, ਇਸ ਲਈ ਤੁਰੰਤ ਮੈਨੂੰ ਸੰਭਾਲ ਲਵੋ।",
+        hi: "मैं सत्य सतगुरु कबीर साहेब का बालक हूँ, किंतु पारख ज्ञान के बिना अत्यंत निर्धन व असहाय हूँ। मेरे भटकने से आपकी ही हँसी होती है, अतः शीघ्र आकर मुझे संभाल लीजिए।",
+        pb: "ਮੈਂ ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਬਾਲਕ ਹਾਂ ਪਰ ਪਰਖ ਬਿਨਾਂ ਕੰਗਾਲ ਹਾਂ। ਮੇਰੀ ਕਮਜ਼ੋਰੀ ਨਾਲ ਆਪ ਜੀ ਦੀ ਹੀ ਨਿੰਦਾ ਹੁੰਦੀ ਹੈ, ਇਸ ਲਈ ਤੁਰੰਤ ਮੈਨੂੰ ਸੰਭਾਲ ਲਵੋ।",
         en: "I am a child of Sat Kabir, yet without discerning wisdom I remain destitute. My wandering brings question upon the Master; come quickly and preserve me!"
       }
     },
@@ -582,7 +582,7 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
       type: "sakhi",
       lines: {
         hi: [
-          "हंसन नायक सद्गुरु, सत्यलोक जिहि बास।",
+          "हंसन नायक सतगुरु, सत्यलोक जिहि बास।",
           "जिनके शिशु को जगत में, काल देत है त्रास।।"
         ],
         pb: [
@@ -618,8 +618,8 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "पुत्र चाहे अवगुणों से भरा और अबोध बालक बुद्धि वाला हो, फिर भी पिता तो परम गुणवान और क्षमाशील होता है। हे महंत कबीर साहेब! मेरी रक्षा कीजिए ताकि पिता का नाम उज्ज्वल रहे।",
-        pb: "ਪੁੱਤਰ ਭਾਵੇਂ ਔਗੁਣਾਂ ਭਰਿਆ ਤੇ ਨਿਆਣਾ ਹੋਵੇ, ਪਰ ਪਿਤਾ ਸਦਾ ਗੁਣਵਾਨ ਹੁੰਦਾ ਹੈ। ਹੇ ਮਹੰਤ ਕਬੀਰ ਸਾਹੇਬ! ਮੇਰੀ ਸੁਣੋ ਤੇ ਪਿਤਾ ਦੀ ਲਾਜ ਰੱਖੋ।",
+        hi: "पुत्र चाहे अवगुणों से भरा और अबोध बालक बुद्धि वाला हो, फिर भी पिता तो परम गुणवान और क्षमाशील होता है। हे महंत सतगुरु कबीर साहेब! मेरी रक्षा कीजिए ताकि पिता का नाम उज्ज्वल रहे।",
+        pb: "ਪੁੱਤਰ ਭਾਵੇਂ ਔਗੁਣਾਂ ਭਰਿਆ ਤੇ ਨਿਆਣਾ ਹੋਵੇ, ਪਰ ਪਿਤਾ ਸਦਾ ਗੁਣਵਾਨ ਹੁੰਦਾ ਹੈ। ਹੇ ਮਹੰਤ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੇਰੀ ਸੁਣੋ ਤੇ ਪਿਤਾ ਦੀ ਲਾਜ ਰੱਖੋ।",
         en: "Though the child be filled with faults and childish foolishness, the Father remains magnanimous and virtuous. Hearken, O supreme Kabir, protect Your child!"
       }
     },
@@ -834,9 +834,9 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "आपके निज नाम (सत्यनाम) को बार-बार नमस्कार है, कृपालु कबीर साहेब को नमस्कार है। संतों की शरण में आने से समस्त पाप भस्म होकर राख हो जाते हैं।",
-        pb: "ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਵਾਰ-ਵਾਰ ਨਮਸਕਾਰ ਹੈ, ਦਿਆਲੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਉਣ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸਵਾਹ ਹੋ ਜਾਂਦੇ ਹਨ।",
-        en: "Repeated salutations to your Essential Name (Satyanaam) and salutations to the merciful Kabir Saheb. By seeking refuge in the Saints, all sins are completely incinerated and turned to dust."
+        hi: "आपके निज नाम (सत्यनाम) को बार-बार नमस्कार है, कृपालु सतगुरु कबीर साहेब को नमस्कार है। संतों की शरण में आने से समस्त पाप भस्म होकर राख हो जाते हैं।",
+        pb: "ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਵਾਰ-ਵਾਰ ਨਮਸਕਾਰ ਹੈ, ਦਿਆਲੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਉਣ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸਵਾਹ ਹੋ ਜਾਂਦੇ ਹਨ।",
+        en: "Repeated salutations to your Essential Name (Satyanaam) and salutations to the merciful Satguru Kabir Saheb. By seeking refuge in the Saints, all sins are completely incinerated and turned to dust."
       }
     },
     {
@@ -972,7 +972,7 @@ export const PRABHAT_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "प्रभात-सन्ध्या साखी का परम पावन पाठ यहाँ संपूर्ण होता है। यह पाठ नित्य प्रातः व सायं जीव को सद्गुरु की शरणागति और काल-जाल से मुक्ति प्रदान करता है।",
+        hi: "प्रभात-सन्ध्या साखी का परम पावन पाठ यहाँ संपूर्ण होता है। यह पाठ नित्य प्रातः व सायं जीव को सतगुरु की शरणागति और काल-जाल से मुक्ति प्रदान करता है।",
         pb: "ਪ੍ਰਭਾਤ-ਸੰਧਿਆ ਸਾਖੀ ਦਾ ਪਵਿੱਤਰ ਪਾਠ ਇੱਥੇ ਸੰਪੂਰਨ ਹੁੰਦਾ ਹੈ। ਇਹ ਬਾਣੀ ਸਦਾ ਗੁਰੂ-ਸ਼ਰਨ ਅਤੇ ਕਾਲ ਤੋਂ ਮੁਕਤੀ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ।",
         en: "Here concludes the sacred recitation of Prabhat Sandhya Sakhi, granting eternal refuge at the Master's feet and liberation from mortal traps."
       }

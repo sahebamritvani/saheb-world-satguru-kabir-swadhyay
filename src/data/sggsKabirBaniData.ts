@@ -125,9 +125,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਥਨ ਕਰਦੇ ਹਨ-ਕਿ ਮੇਰੀ (ਸਿਮਰਨੀ) ਮਾਲਾ ਏਹੀ ਹੈ ਕਿ ਮੇਰੀ ਜ਼ਬਾਨ ਤੇ ਹਰ ਸਮੇਂ ਰਾਮ ਦਾ ਨਾਮ ਰਹਿੰਦਾ ਹੈ। ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਵੀ ਜੁਗਾਂ ਦੇ ਆਦਿ ਤੋਂ ਜੋ ਸਾਰੇ ਭਗਤ ਹੋਏ ਹਨ, ਉਨ੍ਹਾਂ ਨੇ ਵੀ ਇਸ ਰਾਮ ਨਾਮ ਦੀ ਮਾਲਾ ਦੁਆਰਾ ਹੀ ਆਤਮ ਸੁਖ ਪ੍ਰਾਪਤ ਕੀਤਾ ਹੈ॥ ੧॥',
-      hi: 'कबीर जी कथन करते हैं- कि मेरी (सिमरनी) माला यही है कि मेरी जीभ पर हर समय प्रभु का पावन नाम रहता है। इससे पहले भी युगों के आदि से जो समस्त भक्त हुए हैं, उन्होंने भी इसी नाम-स्मरण की माला द्वारा ही आत्म-सुख प्राप्त किया है॥ १॥',
-      en: 'Kabir Ji proclaims: My rosary is that the Divine Name constantly abides upon my tongue. From the primordial dawn of the ages, all holy devotees have attained supreme spiritual tranquility and divine peace solely through this inner contemplation of the Divine Name. ||1||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕਿ ਮੇਰੀ (ਸਿਮਰਨੀ) ਮਾਲਾ ਏਹੀ ਹੈ ਕਿ ਮੇਰੀ ਜ਼ਬਾਨ ਤੇ ਹਰ ਸਮੇਂ ਰਾਮ ਦਾ ਨਾਮ ਰਹਿੰਦਾ ਹੈ। ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਵੀ ਜੁਗਾਂ ਦੇ ਆਦਿ ਤੋਂ ਜੋ ਸਾਰੇ ਭਗਤ ਹੋਏ ਹਨ, ਉਨ੍ਹਾਂ ਨੇ ਵੀ ਇਸ ਰਾਮ ਨਾਮ ਦੀ ਮਾਲਾ ਦੁਆਰਾ ਹੀ ਆਤਮ ਸੁਖ ਪ੍ਰਾਪਤ ਕੀਤਾ ਹੈ॥ ੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- कि मेरी (सिमरनी) माला यही है कि मेरी जीभ पर हर समय प्रभु का पावन नाम रहता है। इससे पहले भी युगों के आदि से जो समस्त भक्त हुए हैं, उन्होंने भी इसी नाम-स्मरण की माला द्वारा ही आत्म-सुख प्राप्त किया है॥ १॥',
+      en: 'Satguru Kabir Saheb proclaims: My rosary is that the Divine Name constantly abides upon my tongue. From the primordial dawn of the ages, all holy devotees have attained supreme spiritual tranquility and divine peace solely through this inner contemplation of the Divine Name. ||1||',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਮਣਕਿਆਂ ਦੀ ਮਾਲਾ ਫੇਰਨ ਦੀ ਥਾਂ ਜੀਭ ਅਤੇ ਅੰਦਰੂਨੀ ਸੁਰਤ ਨਾਲ ਹਰ ਸਵਾਸ ਵਿੱਚ ਸਤਯਨਾਮ ਦਾ ਨਿਰੰਤਰ ਸਿਮਰਨ ਹੀ ਸੱਚੀ ਸਿਮਰਨੀ ਹੈ।',
@@ -198,9 +198,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੇਰੀ ਇਸ ਜੁਲਾਹੇ ਦੀ ਜ਼ਾਤ ਨੂੰ ਨੀਵੀਂ ਸਮਝ ਕੇ ਹਰ ਕੋਈ ਹੱਸਦਾ ਹੈ, ਪਰ ਮੈਂ ਇਸ ਆਪਣੀ ਨੀਵੀਂ ਜ਼ਾਤ ਤੋਂ ਕੁਰਬਾਨ ਜਾਂਦਾ ਹਾਂ। ਜਿਸ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਜਪਿਆ ਹੈ॥੨॥',
-      hi: 'कबीर जी कहते हैं- मेरी इस जुलाहे की जाति को नीची समझकर हर कोई उपहास करता है, किंतु मैं अपनी इस जाति पर बलिहारी (कुर्बान) जाता हूँ, जिसने सृजनहार परमात्मा का नाम जपा है॥ २॥',
-      en: 'Kabir Ji says: Everyone laughs at my weaver caste, considering it humble and low. Yet I am a sacrifice to this very birth, because through it I have meditated upon the Divine Creator of all. ||2||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੀ ਇਸ ਜੁਲਾਹੇ ਦੀ ਜ਼ਾਤ ਨੂੰ ਨੀਵੀਂ ਸਮਝ ਕੇ ਹਰ ਕੋਈ ਹੱਸਦਾ ਹੈ, ਪਰ ਮੈਂ ਇਸ ਆਪਣੀ ਨੀਵੀਂ ਜ਼ਾਤ ਤੋਂ ਕੁਰਬਾਨ ਜਾਂਦਾ ਹਾਂ। ਜਿਸ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਜਪਿਆ ਹੈ॥੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मेरी इस जुलाहे की जाति को नीची समझकर हर कोई उपहास करता है, किंतु मैं अपनी इस जाति पर बलिहारी (कुर्बान) जाता हूँ, जिसने सृजनहार परमात्मा का नाम जपा है॥ २॥',
+      en: 'Satguru Kabir Saheb proclaims: Everyone laughs at my weaver caste, considering it humble and low. Yet I am a sacrifice to this very birth, because through it I have meditated upon the Divine Creator of all. ||2||',
     },
     chintan: {
       pb: 'ਕੋਈ ਵੀ ਕੁਲ ਜਾਂ ਜ਼ਾਤ ਨੀਵੀਂ ਜਾਂ ਉੱਚੀ ਨਹੀਂ ਹੁੰਦੀ। ਜਿਸ ਜੀਵ ਨੇ ਸਿਰਜਨਹਾਰ ਨੂੰ ਜਪ ਲਿਆ, ਉਸ ਦਾ ਜੀਵਨ ਸਰਵੋੱਚ ਅਤੇ ਧੰਨ ਹੋ ਗਿਆ।',
@@ -409,9 +409,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਅਜਿਹਾ ਕੋਈ (ਇਕ ਅੱਧ) ਵਿਰਲਾ ਹੀ ਹੁੰਦਾ ਹੈ, ਜਿਹੜਾ ਜਿਊਂਦਾ ਹੀ ਮੁਰਦੇ ਸਮਾਨ ਹੋਵੇ, ਉਹ ਦੁਖਾਂ ਸੁਖਾਂ ਵਿਚ ਅਡੋਲ ਰਹਿੰਦਾ ਹੈ। ਐਸਾ ਪੁਰਸ਼ ਨਿਰਭੈ ਹੋ ਕੇ ਪ੍ਰਮਾਤਮਾ ਦੇ ਗੁਣ ਗਾਉਂਦਾ ਹੈ ਅਤੇ ਜਿਧਰ ਵੇਖਦਾ ਹੈ ਉਧਰ ਹੀ ਉਸ ਨੂੰ (ਸੋਇ) ਪ੍ਰਮਾਤਮਾ ਹੀ ਨਜ਼ਰ ਆਉਂਦਾ ਹੈ॥ ੫॥',
-      hi: 'कबीर जी कहते हैं, ऐसा कोई विरला ही होता है, जो जीवित रहते हुए ही अहंकार से मुक्त होकर मृतवत हो जाए, वह सुख-दुःख में अडोल रहता है। ऐसा पुरुष निर्भय होकर परमात्मा के गुण गाता है और जिधर देखता है उधर वही परमात्मा दृष्टिगोचर होता है॥ ५॥',
-      en: 'Kabir Ji says: Rare is that extraordinary seeker who dies to ego while still alive, rising above worldly pain and pleasure. Fearlessly singing the praises of the Divine, wherever such a soul looks, they behold only the Eternal One. ||5||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਅਜਿਹਾ ਕੋਈ (ਇਕ ਅੱਧ) ਵਿਰਲਾ ਹੀ ਹੁੰਦਾ ਹੈ, ਜਿਹੜਾ ਜਿਊਂਦਾ ਹੀ ਮੁਰਦੇ ਸਮਾਨ ਹੋਵੇ, ਉਹ ਦੁਖਾਂ ਸੁਖਾਂ ਵਿਚ ਅਡੋਲ ਰਹਿੰਦਾ ਹੈ। ਐਸਾ ਪੁਰਸ਼ ਨਿਰਭੈ ਹੋ ਕੇ ਪ੍ਰਮਾਤਮਾ ਦੇ ਗੁਣ ਗਾਉਂਦਾ ਹੈ ਅਤੇ ਜਿਧਰ ਵੇਖਦਾ ਹੈ ਉਧਰ ਹੀ ਉਸ ਨੂੰ (ਸੋਇ) ਪ੍ਰਮਾਤਮਾ ਹੀ ਨਜ਼ਰ ਆਉਂਦਾ ਹੈ॥ ੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं, ऐसा कोई विरला ही होता है, जो जीवित रहते हुए ही अहंकार से मुक्त होकर मृतवत हो जाए, वह सुख-दुःख में अडोल रहता है। ऐसा पुरुष निर्भय होकर परमात्मा के गुण गाता है और जिधर देखता है उधर वही परमात्मा दृष्टिगोचर होता है॥ ५॥',
+      en: 'Satguru Kabir Saheb proclaims: Rare is that extraordinary seeker who dies to ego while still alive, rising above worldly pain and pleasure. Fearlessly singing the praises of the Divine, wherever such a soul looks, they behold only the Eternal One. ||5||',
     },
     chintan: {
       pb: 'ਹੰਕਾਰ ਨੂੰ ਮਿਟਾਉਣਾ ਹੀ ਜੀਵਤ ਮਰਨਾ ਹੈ। ਜਦੋਂ ਮੈਂ-ਭਾਵ ਮਿਟਦਾ ਹੈ, ਤਦ ਸਾਰੀ ਸ੍ਰਿਸ਼ਟੀ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਹੀ ਦਰਸ਼ਨ ਹੁੰਦਾ ਹੈ।',
@@ -482,9 +482,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਸ ਦਿਨ ਮੈਂ ਮੇਰੀ ਮਰ ਗਈ ਉਸ ਤੋਂ ਪਿੱਛੋਂ ਅਨੰਦ ਹੋ ਗਿਆ। ਮੈਨੂੰ ਆਪਣਾ ਮਾਲਕ ਮਿਲ ਗਿਆ ਅਤੇ ਮੇਰੇ ਸੰਗੀ (ਗਿਆਨ ਇੰਦਰੇ) ਪ੍ਰਮਾਤਮਾ ਦੇ ਭਜਨ ਸਿਮਰਨ ਵਿਚ ਲੱਗ ਗਏ॥ ੬॥',
-      hi: 'कबीर जी कहते हैं- जिस दिन मेरा "मैं-भाव" (अहंकार) समाप्त हो गया, उसके पश्चात् मेरे भीतर अखंड आनंद प्रकट हो गया। मुझे मेरा परमात्मा मिल गया और मेरी समस्त ज्ञानेंद्रियां प्रभु भजन में लीन हो गईं॥ ६॥',
-      en: 'Kabir Ji says: The day my ego died, supreme bliss pervaded within. I found my Master, and all my sensory companions became absorbed in Divine meditation. ||6||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਸ ਦਿਨ ਮੈਂ ਮੇਰੀ ਮਰ ਗਈ ਉਸ ਤੋਂ ਪਿੱਛੋਂ ਅਨੰਦ ਹੋ ਗਿਆ। ਮੈਨੂੰ ਆਪਣਾ ਮਾਲਕ ਮਿਲ ਗਿਆ ਅਤੇ ਮੇਰੇ ਸੰਗੀ (ਗਿਆਨ ਇੰਦਰੇ) ਪ੍ਰਮਾਤਮਾ ਦੇ ਭਜਨ ਸਿਮਰਨ ਵਿਚ ਲੱਗ ਗਏ॥ ੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जिस दिन मेरा "मैं-भाव" (अहंकार) समाप्त हो गया, उसके पश्चात् मेरे भीतर अखंड आनंद प्रकट हो गया। मुझे मेरा परमात्मा मिल गया और मेरी समस्त ज्ञानेंद्रियां प्रभु भजन में लीन हो गईं॥ ६॥',
+      en: 'Satguru Kabir Saheb proclaims: The day my ego died, supreme bliss pervaded within. I found my Master, and all my sensory companions became absorbed in Divine meditation. ||6||',
     },
     chintan: {
       pb: 'ਜਿੰਨਾ ਚਿਰ ਹਉਮੈ ਰਹਿੰਦੀ ਹੈ, ਓਨਾ ਚਿਰ ਪ੍ਰਭੂ ਦੂਰ ਲੱਗਦਾ ਹੈ। ਜਦੋਂ ਹੰਕਾਰ ਮਿਟਦਾ ਹੈ, ਅੰਦਰਲਾ ਅਨੰਦ ਜਾਗ ਪੈਂਦਾ ਹੈ।',
@@ -547,9 +547,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਸਭ ਤੋਂ ਬੁਰਾ ਹਾਂ, ਮੈਨੂੰ ਛੱਡ ਕੇ ਹੋਰ ਸਭ ਚੰਗੇ ਹਨ। ਜਿਸ ਨੇ ਅਜਿਹਾ ਕਰਕੇ ਸਮਝ ਲਿਆ ਹੈ, ਉਹੀ ਮੇਰਾ ਮਿੱਤਰ ਹੈ॥੭॥',
-      hi: 'कबीर जी कहते हैं- मैं संसार में सबसे बुरा हूँ, मुझे छोड़कर अन्य सभी जन अच्छे हैं। जिसने इस परम विनम्रता के मर्म को समझ लिया है, वही मेरा सच्चा मित्र है॥ ७॥',
-      en: 'Kabir Ji says: I am the worst of all; everyone else is noble and good. Whoever understands this profound humility is my true friend and spiritual companion. ||7||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਸਭ ਤੋਂ ਬੁਰਾ ਹਾਂ, ਮੈਨੂੰ ਛੱਡ ਕੇ ਹੋਰ ਸਭ ਚੰਗੇ ਹਨ। ਜਿਸ ਨੇ ਅਜਿਹਾ ਕਰਕੇ ਸਮਝ ਲਿਆ ਹੈ, ਉਹੀ ਮੇਰਾ ਮਿੱਤਰ ਹੈ॥੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मैं संसार में सबसे बुरा हूँ, मुझे छोड़कर अन्य सभी जन अच्छे हैं। जिसने इस परम विनम्रता के मर्म को समझ लिया है, वही मेरा सच्चा मित्र है॥ ७॥',
+      en: 'Satguru Kabir Saheb proclaims: I am the worst of all; everyone else is noble and good. Whoever understands this profound humility is my true friend and spiritual companion. ||7||',
     },
     chintan: {
       pb: 'ਦੂਜਿਆਂ ਦੇ ਔਗੁਣ ਵੇਖਣ ਦੀ ਬਜਾਏ ਆਪਣੇ ਮਨ ਦੇ ਨੁਕਸ ਦੇਖਣਾ ਅਤੇ ਪਰਮ ਨਿਮਰਤਾ ਵਿੱਚ ਰਹਿਣਾ ਹੀ ਭਗਤੀ ਦਾ ਅਸਲ ਮਾਰਗ ਹੈ।',
@@ -612,9 +612,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੇਰੇ ਪਾਸ ਮਾਇਆ ਕਈ ਪ੍ਰਕਾਰ ਦੇ ਭੇਸ ਕਰਕੇ ਆਈ। ਸਾਨੂੰ ਉਸ (ਖੇਖਣਹਾਰੀ) ਤੋਂ ਮੇਰੇ ਗੁਰੂ ਨੇ ਰੱਖ ਲਿਆ, ਤੇ ਉਹ ਨਮਸ਼ਕਾਰ ਕਰਕੇ ਚਲੀ ਗਈ॥੮॥',
-      hi: 'कबीर जी कहते हैं- मेरे पास माया अनेक प्रकार के छल-कपट व रूप धारण करके आई। किंतु मुझे मेरे पूर्ण गुरु ने उसकी मोहिनी से बचा लिया, और वह माया स्वयं नतमस्तक होकर चली गई॥ ८॥',
-      en: 'Kabir Ji says: Maya came to me in countless alluring disguises. But my Guru protected and preserved me, so that Maya herself bowed in reverence and departed. ||8||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੇ ਪਾਸ ਮਾਇਆ ਕਈ ਪ੍ਰਕਾਰ ਦੇ ਭੇਸ ਕਰਕੇ ਆਈ। ਸਾਨੂੰ ਉਸ (ਖੇਖਣਹਾਰੀ) ਤੋਂ ਮੇਰੇ ਗੁਰੂ ਨੇ ਰੱਖ ਲਿਆ, ਤੇ ਉਹ ਨਮਸ਼ਕਾਰ ਕਰਕੇ ਚਲੀ ਗਈ॥੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मेरे पास माया अनेक प्रकार के छल-कपट व रूप धारण करके आई। किंतु मुझे मेरे पूर्ण गुरु ने उसकी मोहिनी से बचा लिया, और वह माया स्वयं नतमस्तक होकर चली गई॥ ८॥',
+      en: 'Satguru Kabir Saheb proclaims: Maya came to me in countless alluring disguises. But my Guru protected and preserved me, so that Maya herself bowed in reverence and departed. ||8||',
     },
     chintan: {
       pb: 'ਮਾਇਆ ਦਾ ਪ੍ਰਭਾਵ ਬਹੁਤ ਡੂੰਘਾ ਤੇ ਬਹੁਰੂਪੀਆ ਹੈ। ਕੇਵਲ ਸੱਚੇ ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਅਤੇ ਗਿਆਨ ਹੀ ਜੀਵ ਨੂੰ ਮਾਇਆ ਦੇ ਜਾਲ ਤੋਂ ਬਚਾ ਸਕਦਾ ਹੈ।',
@@ -669,9 +669,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਉਹ ਵਸਤੂ (ਹਉਮੈ) ਨੂੰ ਮਾਰਨਾ ਚਾਹੀਦਾ ਹੈ, ਜਿਸ ਦੇ ਮਰਨ ਕਰਕੇ ਆਪਣੇ ਮਨ ਨੂੰ ਸੁਖ ਪ੍ਰਾਪਤ ਹੋਏ। ਫਿਰ ਸਭ ਕੋਈ ਚੰਗਾ ਚੰਗਾ ਕਰਕੇ ਆਖੇ ਅਤੇ ਇਸ ਦੇ ਮਰਨ ਨੂੰ ਬੁਰਾ ਕੋਈ ਨਾ ਆਖੇ ॥ ੯॥',
-      hi: 'कबीर जी कहते हैं- उस वस्तु (अहंकार) को मारना चाहिए, जिसके मरने से अपने मन को वास्तविक सुख प्राप्त होता है। फिर सभी उसे उत्तम कहते हैं और उसके मरने को कोई बुरा नहीं मानता॥ ९॥',
-      en: 'Kabir Ji says: Slay that ego whose death brings absolute peace. Everyone praises its annihilation, and no one regrets its demise. ||9||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਉਹ ਵਸਤੂ (ਹਉਮੈ) ਨੂੰ ਮਾਰਨਾ ਚਾਹੀਦਾ ਹੈ, ਜਿਸ ਦੇ ਮਰਨ ਕਰਕੇ ਆਪਣੇ ਮਨ ਨੂੰ ਸੁਖ ਪ੍ਰਾਪਤ ਹੋਏ। ਫਿਰ ਸਭ ਕੋਈ ਚੰਗਾ ਚੰਗਾ ਕਰਕੇ ਆਖੇ ਅਤੇ ਇਸ ਦੇ ਮਰਨ ਨੂੰ ਬੁਰਾ ਕੋਈ ਨਾ ਆਖੇ ॥ ੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- उस वस्तु (अहंकार) को मारना चाहिए, जिसके मरने से अपने मन को वास्तविक सुख प्राप्त होता है। फिर सभी उसे उत्तम कहते हैं और उसके मरने को कोई बुरा नहीं मानता॥ ९॥',
+      en: 'Satguru Kabir Saheb proclaims: Slay that ego whose death brings absolute peace. Everyone praises its annihilation, and no one regrets its demise. ||9||',
     },
     chintan: {
       pb: 'ਜੀਵ ਹੱਤਿਆ ਜਾਂ ਬਾਹਰੀ ਹਿੰਸਾ ਪਾਪ ਹੈ, ਪਰ ਆਪਣੇ ਅੰਦਰਲੀ ਹਉਮੈ ਅਤੇ ਕਾਮ-ਕ੍ਰੋਧ ਨੂੰ ਮਾਰਨਾ ਹੀ ਸਭ ਤੋਂ ਵੱਡਾ ਪੁੰਨ ਤੇ ਸੁਖ ਦਾ ਸਰੋਤ ਹੈ।',
@@ -734,9 +734,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਦ ਰਾਤਾਂ ਹਨ੍ਹੇਰੀਆਂ ਹੋਣ ਤਾਂ (ਕਾਰੇ ਜੰਤ) ਚੋਰ ਲੋਕ ਚੋਰੀ ਲਈ (ਉਭੇ) ਉੱਠ ਖੜੇ ਹੁੰਦੇ ਹਨ, ਅਤੇ ਹੱਥਾਂ ਵਿਚ ਫਾਹੀਆਂ ਲੈ ਕੇ ਉਠ ਦੌੜਦੇ ਹਨ, ਐਸੇ ਬੰਦਿਆਂ ਨੂੰ ਇਉਂ ਜਾਣੋ ਕਿ ਉਹ ਰੱਬ ਦੇ ਮਾਰੇ (ਤ੍ਰਿਸਕਾਰੇ) ਹੋਏ ਹਨ॥੧੦॥',
-      hi: 'कबीर जी कहते हैं- जब रातें घोर अंधियारी होती हैं तब दुष्ट व चोर लोग चोरी व कुकर्म के लिए उठ खड़े होते हैं और हाथों में फांसियां लेकर दौड़ते हैं; ऐसे लोगों को जानो कि वे प्रभु द्वारा ही आत्मिक रूप से विनष्ट व तिरस्कृत हैं॥ १०॥',
-      en: 'Kabir Ji says: When nights turn pitch dark, wicked souls rise with nooses to rob and plunder. Know them to be spiritually ruined and forsaken by Divine grace. ||10||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਦ ਰਾਤਾਂ ਹਨ੍ਹੇਰੀਆਂ ਹੋਣ ਤਾਂ (ਕਾਰੇ ਜੰਤ) ਚੋਰ ਲੋਕ ਚੋਰੀ ਲਈ (ਉਭੇ) ਉੱਠ ਖੜੇ ਹੁੰਦੇ ਹਨ, ਅਤੇ ਹੱਥਾਂ ਵਿਚ ਫਾਹੀਆਂ ਲੈ ਕੇ ਉਠ ਦੌੜਦੇ ਹਨ, ਐਸੇ ਬੰਦਿਆਂ ਨੂੰ ਇਉਂ ਜਾਣੋ ਕਿ ਉਹ ਰੱਬ ਦੇ ਮਾਰੇ (ਤ੍ਰਿਸਕਾਰੇ) ਹੋਏ ਹਨ॥੧੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जब रातें घोर अंधियारी होती हैं तब दुष्ट व चोर लोग चोरी व कुकर्म के लिए उठ खड़े होते हैं और हाथों में फांसियां लेकर दौड़ते हैं; ऐसे लोगों को जानो कि वे प्रभु द्वारा ही आत्मिक रूप से विनष्ट व तिरस्कृत हैं॥ १०॥',
+      en: 'Satguru Kabir Saheb proclaims: When nights turn pitch dark, wicked souls rise with nooses to rob and plunder. Know them to be spiritually ruined and forsaken by Divine grace. ||10||',
     },
     chintan: {
       pb: 'ਅਗਿਆਨਤਾ ਦੇ ਅੰਧਕਾਰ ਵਿੱਚ ਵਿਕਾਰਾਂ ਦੇ ਪਿੱਛੇ ਭੱਜਣ ਵਾਲੇ ਮਨੁੱਖ ਅਸਲ ਵਿੱਚ ਆਪਣੀ ਆਤਮਿਕ ਪੂੰਜੀ ਨੂੰ ਹੀ ਨਸ਼ਟ ਕਰ ਲੈਂਦੇ ਹਨ।',
@@ -799,9 +799,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਚੰਦਨ ਦਾ ਬਿੱਛ ਚੰਗਾ ਹੈ, ਜਿਹੜਾ ਛਿਛਰਿਆਂ ਨਾਲ ਵਲ੍ਹੇਟਿਆ ਹੋਇਆ ਹੁੰਦਾ ਹੈ। ਉਹ ਵੀ ਸੁਗੰਧੀ ਨਾਲ ਚੰਦਨ ਰੂਪ ਹੀ ਹੋ ਜਾਂਦਾ ਹੈ, ਜਿਹੜਾ ਚੰਦਨ ਦੇ ਪਾਸ ਵੱਸਦਾ ਹੈ॥੧੧॥',
-      hi: 'कबीर जी कहते हैं- चंदन का वृक्ष धन्य है, यद्यपि वह गंधहीन ढाक और पलाश के साधारण वृक्षों से घिरा रहता है, फिर भी जो वृक्ष चंदन के पास बसते हैं वे भी उसकी सुगंध से चंदन-रूपी सुवासित हो जाते हैं॥ ११॥',
-      en: 'Kabir Ji says: Blessed is the sandalwood tree surrounded by ordinary palash trees; for even those ordinary trees that abide near the sandalwood absorb its fragrance and become sandalwood themselves. ||11||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਚੰਦਨ ਦਾ ਬਿੱਛ ਚੰਗਾ ਹੈ, ਜਿਹੜਾ ਛਿਛਰਿਆਂ ਨਾਲ ਵਲ੍ਹੇਟਿਆ ਹੋਇਆ ਹੁੰਦਾ ਹੈ। ਉਹ ਵੀ ਸੁਗੰਧੀ ਨਾਲ ਚੰਦਨ ਰੂਪ ਹੀ ਹੋ ਜਾਂਦਾ ਹੈ, ਜਿਹੜਾ ਚੰਦਨ ਦੇ ਪਾਸ ਵੱਸਦਾ ਹੈ॥੧੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- चंदन का वृक्ष धन्य है, यद्यपि वह गंधहीन ढाक और पलाश के साधारण वृक्षों से घिरा रहता है, फिर भी जो वृक्ष चंदन के पास बसते हैं वे भी उसकी सुगंध से चंदन-रूपी सुवासित हो जाते हैं॥ ११॥',
+      en: 'Satguru Kabir Saheb proclaims: Blessed is the sandalwood tree surrounded by ordinary palash trees; for even those ordinary trees that abide near the sandalwood absorb its fragrance and become sandalwood themselves. ||11||',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ-ਸਤਿਗੁਰੂ ਦੀ ਸੰਗਤ ਦੀ ਅਜਿਹੀ ਮਹਿਮਾ ਹੈ ਕਿ ਨੀਚ ਤੇ ਸਾਧਾਰਨ ਜੀਵ ਵੀ ਸੰਗਤ ਦੇ ਪ੍ਰਭਾਵ ਨਾਲ ਪਰਮ ਪਵਿੱਤਰ ਤੇ ਗਿਆਨਵਾਨ ਹੋ ਜਾਂਦੇ ਹਨ।',
@@ -856,9 +856,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਵਾਂਸ ਆਪਣੀ ਵਡਿਆਈ (ਲੰਮਾ ਉੱਚਾ ਹੋਣ) ਵਿਚ ਹੀ (ਡੁੱਬ) ਰਹਿ ਗਿਆ ਹੈ, ਜਿਸ ਕਰਕੇ ਭਾਵੇਂ ਉਹ ਵੀ ਚੰਦਨ ਦੇ ਪਾਸ ਹੀ ਵੱਸਦਾ ਹੈ, ਪਰ ਉਸ ਵਿਚ ਸੁਗੰਧ ਨਹੀਂ ਹੁੰਦੀ। ਕਬੀਰ ਜੀ ਵਾਂਸ ਵਿਚ ਹਉਮੈਂ ਦਾ ਅਤੇ ਢਾਕ ਪਲਾਸ ਵਿਚ ਨਿੰਮ੍ਰਤਾ ਦਾ ਸੰਕੇਤ ਦੇਂਦੇ ਹਨ॥ ੧੨ ॥',
-      hi: 'कबीर जी कहते हैं- बांस अपने बड़प्पन (ऊंचे कद) के अहंकार में डूब गया, इस प्रकार कोई मत डूबो। वह चंदन के बिल्कुल निकट बसने पर भी अपनी अकड़ के कारण कभी सुवासित नहीं हो पाता। बांस अहंकार का और पलाश नम्रता का प्रतीक है॥ १२॥',
-      en: 'Kabir Ji says: The bamboo drowned in its own lofty pride; let no one drown like that! Though it dwells right next to the sandalwood, its hollow rigidity prevents it from absorbing any fragrance. ||12||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਵਾਂਸ ਆਪਣੀ ਵਡਿਆਈ (ਲੰਮਾ ਉੱਚਾ ਹੋਣ) ਵਿਚ ਹੀ (ਡੁੱਬ) ਰਹਿ ਗਿਆ ਹੈ, ਜਿਸ ਕਰਕੇ ਭਾਵੇਂ ਉਹ ਵੀ ਚੰਦਨ ਦੇ ਪਾਸ ਹੀ ਵੱਸਦਾ ਹੈ, ਪਰ ਉਸ ਵਿਚ ਸੁਗੰਧ ਨਹੀਂ ਹੁੰਦੀ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਵਾਂਸ ਵਿਚ ਹਉਮੈਂ ਦਾ ਅਤੇ ਢਾਕ ਪਲਾਸ ਵਿਚ ਨਿੰਮ੍ਰਤਾ ਦਾ ਸੰਕੇਤ ਦੇਂਦੇ ਹਨ॥ ੧੨ ॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- बांस अपने बड़प्पन (ऊंचे कद) के अहंकार में डूब गया, इस प्रकार कोई मत डूबो। वह चंदन के बिल्कुल निकट बसने पर भी अपनी अकड़ के कारण कभी सुवासित नहीं हो पाता। बांस अहंकार का और पलाश नम्रता का प्रतीक है॥ १२॥',
+      en: 'Satguru Kabir Saheb proclaims: The bamboo drowned in its own lofty pride; let no one drown like that! Though it dwells right next to the sandalwood, its hollow rigidity prevents it from absorbing any fragrance. ||12||',
     },
     chintan: {
       pb: 'ਵਿੱਦਿਆ, ਧਨ ਜਾਂ ਉੱਚੇ ਰੁਤਬੇ ਦਾ ਹੰਕਾਰ ਮਨੁੱਖ ਨੂੰ ਗੁਰੂ ਦੇ ਕੋਲ ਰਹਿੰਦਿਆਂ ਵੀ ਗਿਆਨ ਦੀ ਸੁਗੰਧ ਲੈਣ ਤੋਂ ਵਾਂਝਾ ਰੱਖਦਾ ਹੈ।',
@@ -921,9 +921,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਦੁਨੀਆਂ ਨੇ ਮਾਇਆ ਦੇ ਰਸਾਂ ਕਸਾਂ ਨਾਲ ਲੱਗ ਕੇ ਆਪਣਾ ਧਰਮ ਵੀ ਗਵਾ ਲਿਆ। ਪ੍ਰੰਤੂ ਦੁਨੀਆਂ ਫੇਰ ਵੀ ਨਾਲ ਨਾ ਚਲੀ। ਗਾਫਲ (ਭੁੱਲੜ) ਨੇ ਆਪਣੇ ਹੱਥੀਂ ਹੀ ਪੈਰਾਂ ਤੇ ਕੁਹਾੜਾ ਮਾਰ ਲਿਆ। ਪਰਮਾਤਮਾ ਦੇ ਸਿਮਰਨ ਨੂੰ ਛੱਡ ਕੇ ਸੰਸਾਰ ਦੇ ਧੰਧਿਆਂ ਵਿਚ ਜਨਮ ਬਤੀਤ ਕਰ ਦਿਤਾ॥ ੧੩ ॥',
-      hi: 'कबीर जी कहते हैं- संसार के क्षणभंगुर सुखों के पीछे लगकर मनुष्य ने अपनी आध्यात्मिक पूंजी (धर्म) भी खो दी, किंतु अंत समय में यह दुनिया साथ नहीं चली। इस बेपरवाह अज्ञानी ने अपने ही हाथों अपने पैरों पर कुल्हाड़ी मार ली॥ १३॥',
-      en: 'Kabir Ji says: For the sake of worldly pleasures, mortals forfeit their spiritual faith, yet this world accompanies no one after death. The heedless fool strikes an axe against their own feet with their own hands. ||13||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਦੁਨੀਆਂ ਨੇ ਮਾਇਆ ਦੇ ਰਸਾਂ ਕਸਾਂ ਨਾਲ ਲੱਗ ਕੇ ਆਪਣਾ ਧਰਮ ਵੀ ਗਵਾ ਲਿਆ। ਪ੍ਰੰਤੂ ਦੁਨੀਆਂ ਫੇਰ ਵੀ ਨਾਲ ਨਾ ਚਲੀ। ਗਾਫਲ (ਭੁੱਲੜ) ਨੇ ਆਪਣੇ ਹੱਥੀਂ ਹੀ ਪੈਰਾਂ ਤੇ ਕੁਹਾੜਾ ਮਾਰ ਲਿਆ। ਪਰਮਾਤਮਾ ਦੇ ਸਿਮਰਨ ਨੂੰ ਛੱਡ ਕੇ ਸੰਸਾਰ ਦੇ ਧੰਧਿਆਂ ਵਿਚ ਜਨਮ ਬਤੀਤ ਕਰ ਦਿਤਾ॥ ੧੩ ॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- संसार के क्षणभंगुर सुखों के पीछे लगकर मनुष्य ने अपनी आध्यात्मिक पूंजी (धर्म) भी खो दी, किंतु अंत समय में यह दुनिया साथ नहीं चली। इस बेपरवाह अज्ञानी ने अपने ही हाथों अपने पैरों पर कुल्हाड़ी मार ली॥ १३॥',
+      en: 'Satguru Kabir Saheb proclaims: For the sake of worldly pleasures, mortals forfeit their spiritual faith, yet this world accompanies no one after death. The heedless fool strikes an axe against their own feet with their own hands. ||13||',
     },
     chintan: {
       pb: 'ਸੰਸਾਰਕ ਸੁਖ ਨਾਸ਼ਵਾਨ ਹਨ। ਮਾਇਆ ਦੇ ਪਿੱਛੇ ਪੈ ਕੇ ਅਮੋਲਕ ਮਨੁੱਖਾ ਜਨਮ ਅਤੇ ਸਤਯਨਾਮ ਦੀ ਪੂੰਜੀ ਗੁਆ ਲੈਣਾ ਸਭ ਤੋਂ ਵੱਡੀ ਭੁੱਲ ਹੈ।',
@@ -994,9 +994,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿੱਥੇ ਜਿੱਥੇ ਮੈਂ ਫਿਰਿਆ ਹਾਂ ਉੱਥੇ ਉੱਥੇ ਹੀ ਥਾਂ ਥਾਂ ਤੇ ਤਮਾਸ਼ੇ ਹੀ ਵੇਖੇ ਹਨ ਪਰ ਇਕ ਰਾਮ ਦੇ ਪ੍ਰੇਮੀ ਤੋਂ ਬਿਨਾਂ ਮੇਰੇ ਭਾਣੇ ਉਹ ਥਾਂ ਸਭ ਉਜਾੜ ਹਨ। ਜਿਥੇ ਰਾਮ ਦਾ ਭਗਤੀ ਭਾਵ ਨਾਲ ਪ੍ਰੇਮੀ ਨਹੀਂ ਹੈ॥ ੧੪॥',
-      hi: 'कबीर जी कहते हैं- जहां-जहां मैं गया, वहां-वहां मैंने केवल सांसारिक कौतुक और तमाशे ही देखे; किंतु एक प्रभु-प्रेमी के बिना मेरे दृष्टिकोण से वे सब स्थान उजाड़ और वीरान हैं जहां प्रभु का पावन नाम नहीं॥ १४॥',
-      en: 'Kabir Ji says: Wherever I wandered, I saw only worldly spectacles and fleeting illusions; yet without the beloved Lord and holy devotees, all those bustling places are mere desolate wilderness to me. ||14||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿੱਥੇ ਜਿੱਥੇ ਮੈਂ ਫਿਰਿਆ ਹਾਂ ਉੱਥੇ ਉੱਥੇ ਹੀ ਥਾਂ ਥਾਂ ਤੇ ਤਮਾਸ਼ੇ ਹੀ ਵੇਖੇ ਹਨ ਪਰ ਇਕ ਰਾਮ ਦੇ ਪ੍ਰੇਮੀ ਤੋਂ ਬਿਨਾਂ ਮੇਰੇ ਭਾਣੇ ਉਹ ਥਾਂ ਸਭ ਉਜਾੜ ਹਨ। ਜਿਥੇ ਰਾਮ ਦਾ ਭਗਤੀ ਭਾਵ ਨਾਲ ਪ੍ਰੇਮੀ ਨਹੀਂ ਹੈ॥ ੧੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जहां-जहां मैं गया, वहां-वहां मैंने केवल सांसारिक कौतुक और तमाशे ही देखे; किंतु एक प्रभु-प्रेमी के बिना मेरे दृष्टिकोण से वे सब स्थान उजाड़ और वीरान हैं जहां प्रभु का पावन नाम नहीं॥ १४॥',
+      en: 'Satguru Kabir Saheb proclaims: Wherever I wandered, I saw only worldly spectacles and fleeting illusions; yet without the beloved Lord and holy devotees, all those bustling places are mere desolate wilderness to me. ||14||',
     },
     chintan: {
       pb: 'ਜਿਸ ਥਾਂ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਅਤੇ ਪ੍ਰੇਮ ਨਹੀਂ, ਉਹ ਮਹਿਲ ਵੀ ਉਜਾੜ ਸਮਾਨ ਹੈ। ਸੱਚੀ ਰੌਣਕ ਕੇਵਲ ਸਤਿਸੰਗ ਅਤੇ ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਵਿੱਚ ਹੈ।',
@@ -1067,9 +1067,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਦਾ ਕਥਨ ਹੈ ਕਿ -ਸੰਤਾਂ ਦੀ ਝੁੱਗੀ ਚੰਗੀ ਹੈ ਤੇ ਬੁਰੇ ਪੁਰਸ਼ ਦਾ ਪਿੰਡ ਵੀ ਭੱਠੀ ਸਮਾਨ ਹੈ। ਫਿਰ ਕਹਿੰਦੇ ਹਨ। ਕਿ ਉਸ ਰਾਜ ਮਹੱਲ ਨੂੰ ਅੱਗ ਲੱਗ ਜਾਵੇ ਜਿਸ ਵਿਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਨਹੀਂ ਲਿਆ ਜਾਂਦਾ ॥ ੧੫॥',
-      hi: 'कबीर जी कहते हैं- संतों की साधारण झोंपड़ी उत्तम है, जबकि दुष्टों का पूरा गांव जलती भट्ठी के समान त्याज्य है। आग लग जाए उन भव्य महलों को, जिनमें प्रभु का पावन नाम नहीं जपा जाता॥ १५॥',
-      en: 'Kabir Ji says: Blessed is the humble hut of the saints; the town of the wicked is like a blazing furnace. May those grand palaces burn to ashes where the Divine Name is never uttered! ||15||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਕਥਨ ਹੈ ਕਿ -ਸੰਤਾਂ ਦੀ ਝੁੱਗੀ ਚੰਗੀ ਹੈ ਤੇ ਬੁਰੇ ਪੁਰਸ਼ ਦਾ ਪਿੰਡ ਵੀ ਭੱਠੀ ਸਮਾਨ ਹੈ। ਫਿਰ ਕਹਿੰਦੇ ਹਨ। ਕਿ ਉਸ ਰਾਜ ਮਹੱਲ ਨੂੰ ਅੱਗ ਲੱਗ ਜਾਵੇ ਜਿਸ ਵਿਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਨਹੀਂ ਲਿਆ ਜਾਂਦਾ ॥ ੧੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- संतों की साधारण झोंपड़ी उत्तम है, जबकि दुष्टों का पूरा गांव जलती भट्ठी के समान त्याज्य है। आग लग जाए उन भव्य महलों को, जिनमें प्रभु का पावन नाम नहीं जपा जाता॥ १५॥',
+      en: 'Satguru Kabir Saheb proclaims: Blessed is the humble hut of the saints; the town of the wicked is like a blazing furnace. May those grand palaces burn to ashes where the Divine Name is never uttered! ||15||',
     },
     chintan: {
       pb: 'ਸਾਦਗੀ ਅਤੇ ਪ੍ਰਭੂ-ਭਗਤੀ ਵਾਲਾ ਛੋਟਾ ਘਰ ਵੀ ਸਵਰਗ ਹੈ, ਪਰ ਨਾਮ-ਹੀਣ ਸ਼ਾਨੋ-ਸ਼ੌਕਤ ਵਾਲੇ ਮਹਿਲ ਵੀ ਨਰਕ ਸਮਾਨ ਹਨ।',
@@ -1140,9 +1140,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਸੰਤ (ਭਲੇ ਪੁਰਸ਼) ਦੇ ਮਰਨ ਤੇ ਕਿਉਂ ਰੋਈਏ, ਜਿਹੜਾ ਆਪਣੇ ਘਰ ਜਾਂਦਾ ਹੈ। ਹਾਂ ! ਉਸ ਬੁਰੇ ਪੁਰਸ਼ ਵਿਚਾਰੇ ਨੂੰ ਰੋਵਣਾ ਕਰੋ ਜਿਹੜਾ ਹੱਟੀ ਹੱਟੀ ਵਿਕਦਾ (ਬੇਕਦਰਾ ਹੋਇਆ) ਜੂਨਾਂ ਵਿਚ ਭਟਕਦਾ ਫਿਰਦਾ ਹੈ॥ ੧੬॥',
-      hi: 'कबीर जी कहते हैं- संतों के भौतिक शरीर छोड़ने पर क्यों शोक करें, जो अपने सच्चे आत्मिक घर (सत्यलोक) लौट जाते हैं। रोना तो उस अभागे साकत (प्रभु-विमुख) पर चाहिए जो चौरासी लाख योनियों के हाट-बाज़ार में भटकता हुआ बार-बार जन्मता-मरता है॥ १६॥',
-      en: 'Kabir Ji says: Why mourn the departure of a saint who merely returns to their true eternal home? Weep instead for the wretched materialist, who is traded and reborn ceaselessly in the marketplace of reincarnation. ||16||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਸੰਤ (ਭਲੇ ਪੁਰਸ਼) ਦੇ ਮਰਨ ਤੇ ਕਿਉਂ ਰੋਈਏ, ਜਿਹੜਾ ਆਪਣੇ ਘਰ ਜਾਂਦਾ ਹੈ। ਹਾਂ ! ਉਸ ਬੁਰੇ ਪੁਰਸ਼ ਵਿਚਾਰੇ ਨੂੰ ਰੋਵਣਾ ਕਰੋ ਜਿਹੜਾ ਹੱਟੀ ਹੱਟੀ ਵਿਕਦਾ (ਬੇਕਦਰਾ ਹੋਇਆ) ਜੂਨਾਂ ਵਿਚ ਭਟਕਦਾ ਫਿਰਦਾ ਹੈ॥ ੧੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- संतों के भौतिक शरीर छोड़ने पर क्यों शोक करें, जो अपने सच्चे आत्मिक घर (सत्यलोक) लौट जाते हैं। रोना तो उस अभागे साकत (प्रभु-विमुख) पर चाहिए जो चौरासी लाख योनियों के हाट-बाज़ार में भटकता हुआ बार-बार जन्मता-मरता है॥ १६॥',
+      en: 'Satguru Kabir Saheb proclaims: Why mourn the departure of a saint who merely returns to their true eternal home? Weep instead for the wretched materialist, who is traded and reborn ceaselessly in the marketplace of reincarnation. ||16||',
     },
     chintan: {
       pb: 'ਸੰਤ ਮਹਾਪੁਰਸ਼ ਮੁਕਤ ਹੋ ਕੇ ਸੱਚਖੰਡ ਵਿੱਚ ਲੀਨ ਹੁੰਦੇ ਹਨ। ਪਰ ਨਾਮ-ਹੀਣ ਮਨੁੱਖ ਚੌਰਾਸੀ ਲੱਖ ਜੂਨਾਂ ਦੇ ਚੱਕਰਵਿਊਹ ਵਿੱਚ ਫਸ ਜਾਂਦਾ ਹੈ।',
@@ -1213,9 +1213,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਖੋਟਾ ਪੁਰਸ਼ ਐਸਾ ਹੈ ਜਿਸ ਤਰ੍ਹਾਂ ਕਿ ਥੋਮ ਦੀ ਖਾਣ (ਭੰਡਾਰ) ਜਿਸ ਨੂੰ ਭਾਵੇਂ ਨੁੱਕਰ ਵਿਚ ਬੈਠ ਕੇ ਖਾਵੀਏ, ਅੰਤ ਨੂੰ ਉਸਦੀ ਬੂ ਪਰਗਟ ਹੋ ਕੇ ਹੀ ਰਹਿੰਦੀ ਹੈ॥੧੭॥',
-      hi: 'कबीर जी कहते हैं- प्रभु-विमुख कपटी मनुष्य लहसुन के ढेर के समान है, जिसे चाहे किसी भी एकांत कोने में बैठकर खाया जाए, अंततः उसकी दुर्गंध प्रकट होकर ही रहती है॥ १७॥',
-      en: 'Kabir Ji says: The hypocritical faithless person is like a mine of garlic; even if eaten in a secluded corner, its pungent odor inevitably exposes itself in the end. ||17||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਖੋਟਾ ਪੁਰਸ਼ ਐਸਾ ਹੈ ਜਿਸ ਤਰ੍ਹਾਂ ਕਿ ਥੋਮ ਦੀ ਖਾਣ (ਭੰਡਾਰ) ਜਿਸ ਨੂੰ ਭਾਵੇਂ ਨੁੱਕਰ ਵਿਚ ਬੈਠ ਕੇ ਖਾਵੀਏ, ਅੰਤ ਨੂੰ ਉਸਦੀ ਬੂ ਪਰਗਟ ਹੋ ਕੇ ਹੀ ਰਹਿੰਦੀ ਹੈ॥੧੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- प्रभु-विमुख कपटी मनुष्य लहसुन के ढेर के समान है, जिसे चाहे किसी भी एकांत कोने में बैठकर खाया जाए, अंततः उसकी दुर्गंध प्रकट होकर ही रहती है॥ १७॥',
+      en: 'Satguru Kabir Saheb proclaims: The hypocritical faithless person is like a mine of garlic; even if eaten in a secluded corner, its pungent odor inevitably exposes itself in the end. ||17||',
     },
     chintan: {
       pb: 'ਖੋਟ ਅਤੇ ਪਾਪ ਕਦੇ ਛੁਪ ਨਹੀਂ ਸਕਦੇ। ਜਿਸ ਮਨ ਵਿੱਚ ਨਾਮ ਨਹੀਂ, ਉਸ ਦੇ ਔਗੁਣ ਅੰਤ ਨੂੰ ਪ੍ਰਗਟ ਹੋ ਕੇ ਹੀ ਰਹਿੰਦੇ ਹਨ।',
@@ -1286,9 +1286,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਾਇਆ ਮੱਟੀ ਹੈ, (ਦੁੱਧ ਰਿੜਕਣ ਵਾਲੀ) ਅਤੇ ਹਵਾ ਉਸ ਨੂੰ ਰਿੜਕਣ ਵਾਲੀ ਹੈ। ਉਸਦਾ ਮੱਖਣ (ਸ਼ੁਭ ਗੁਣ) ਸੰਤਾਂ ਨੇ ਖਾਧਾ ਹੈ ਅਤੇ ਸੰਸਾਰ ਉਸਦੀ ਲੱਸੀ ਮੰਦ-ਵਾਸ਼ਨਾਵਾਂ ਰੂਪ ਪੀਂਦਾ ਹੈ ॥੧੮॥',
-      hi: 'कबीर जी कहते हैं- यह माया मथने की मटकी है और प्राण-पवन उसे मथने वाला है। संतों ने साधना द्वारा उसका सारभूत मक्खन (सत्यनाम) ग्रहण किया है, जबकि अज्ञानी संसार केवल सारहीन छाछ (विषय-वासना) पीता रहता है॥ १८॥',
-      en: 'Kabir Ji says: Maya is the churning pot, and the vital breath is the churn. The saints have extracted and savored the pure butter of the Divine Name, while the worldly crowd drinks only the leftover buttermilk. ||18||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਾਇਆ ਮੱਟੀ ਹੈ, (ਦੁੱਧ ਰਿੜਕਣ ਵਾਲੀ) ਅਤੇ ਹਵਾ ਉਸ ਨੂੰ ਰਿੜਕਣ ਵਾਲੀ ਹੈ। ਉਸਦਾ ਮੱਖਣ (ਸ਼ੁਭ ਗੁਣ) ਸੰਤਾਂ ਨੇ ਖਾਧਾ ਹੈ ਅਤੇ ਸੰਸਾਰ ਉਸਦੀ ਲੱਸੀ ਮੰਦ-ਵਾਸ਼ਨਾਵਾਂ ਰੂਪ ਪੀਂਦਾ ਹੈ ॥੧੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यह माया मथने की मटकी है और प्राण-पवन उसे मथने वाला है। संतों ने साधना द्वारा उसका सारभूत मक्खन (सत्यनाम) ग्रहण किया है, जबकि अज्ञानी संसार केवल सारहीन छाछ (विषय-वासना) पीता रहता है॥ १८॥',
+      en: 'Satguru Kabir Saheb proclaims: Maya is the churning pot, and the vital breath is the churn. The saints have extracted and savored the pure butter of the Divine Name, while the worldly crowd drinks only the leftover buttermilk. ||18||',
     },
     chintan: {
       pb: 'ਸੰਸਾਰ ਦੇ ਵਿਸ਼ੇ-ਵਿਕਾਰ ਫੋਕਟ ਲੱਸੀ ਸਮਾਨ ਹਨ। ਸਤਿਗੁਰੂ ਦੇ ਸ਼ਬਦ ਦਾ ਮੰਥਨ ਕਰਕੇ ਸਤਯਨਾਮ ਰੂਪੀ ਅੰਮ੍ਰਿਤ ਮੱਖਣ ਪ੍ਰਾਪਤ ਕਰੋ।',
@@ -1351,9 +1351,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਾਇਆ (ਦੁਨੀਆਂ) ਇਕ ਮੱਟੀ ਹੈ ਅਤੇ ਪੌਣ ਸੁਆਸ ਰੂਪ ਬਰਫ ਵਾਂਗੂੰ ਠੰਢੀ ਵਗ ਰਹੀ ਹੈ। ਜਿਸ ਨੇ ਰਿੜਕਿਆ, (ਸੁਆਸ ਸੁਆਸ ਨਾਮ ਜਪਿਆ) ਉਸ ਨੇ ਨਾਮ ਰੂਪ (ਮੱਖਣ ਖਾਧਾ) ਅਤੇ ਹੋਰ ਸਾਰੇ ਰਿੜਕਣ ਵਾਲੇ ਰਿੜਕਦੇ ਹੀ ਰਹਿ ਗਏ॥ ੧੯॥',
-      hi: 'कबीर जी कहते हैं- यह शरीर-रूपी माया मटकी है और श्वास-पवन बर्फ के समान शीतल बह रही है। जिसने श्वास-श्वास में नाम का मंथन किया, उसने नाम-रूपी मक्खन का रसपान किया; शेष लोग केवल व्यर्थ मंथन में ही उलझे रह गए॥ १९॥',
-      en: 'Kabir Ji says: In this pot of existence, the breath flows like a cool current. Whoever churned it with the Divine Name savored the butter of liberation, while others merely toiled in vain. ||19||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਾਇਆ (ਦੁਨੀਆਂ) ਇਕ ਮੱਟੀ ਹੈ ਅਤੇ ਪੌਣ ਸੁਆਸ ਰੂਪ ਬਰਫ ਵਾਂਗੂੰ ਠੰਢੀ ਵਗ ਰਹੀ ਹੈ। ਜਿਸ ਨੇ ਰਿੜਕਿਆ, (ਸੁਆਸ ਸੁਆਸ ਨਾਮ ਜਪਿਆ) ਉਸ ਨੇ ਨਾਮ ਰੂਪ (ਮੱਖਣ ਖਾਧਾ) ਅਤੇ ਹੋਰ ਸਾਰੇ ਰਿੜਕਣ ਵਾਲੇ ਰਿੜਕਦੇ ਹੀ ਰਹਿ ਗਏ॥ ੧੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यह शरीर-रूपी माया मटकी है और श्वास-पवन बर्फ के समान शीतल बह रही है। जिसने श्वास-श्वास में नाम का मंथन किया, उसने नाम-रूपी मक्खन का रसपान किया; शेष लोग केवल व्यर्थ मंथन में ही उलझे रह गए॥ १९॥',
+      en: 'Satguru Kabir Saheb proclaims: In this pot of existence, the breath flows like a cool current. Whoever churned it with the Divine Name savored the butter of liberation, while others merely toiled in vain. ||19||',
     },
     chintan: {
       pb: 'ਸੁਆਸ-ਸੁਆਸ ਸਿਮਰਨ ਦੁਆਰਾ ਹੀ ਆਤਮਾ ਅੰਦਰਲਾ ਅੰਮ੍ਰਿਤ ਰਸ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ। ਬਾਹਰੀ ਵਿਖਾਵੇ ਵਾਲੇ ਰਿੜਕਦੇ ਹੀ ਰਹਿ ਜਾਂਦੇ ਹਨ।',
@@ -1424,9 +1424,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਦਾ ਕਥਨ ਹੈ- ਕਿ ਮਾਇਆ ਠੱਗਣੀ ਠੱਗ ਠੱਗ (ਲੁਟ) ਕੇ ਵਿਕਾਰਾਂ ਰੂਪ ਹੱਟੀਆਂ ਲਾਉਂਦੀ ਹੈ, ਤਰ੍ਹਾਂ ਤਰ੍ਹਾਂ ਦੇ ਰੂਪਾਂ ਵਿਚ ਪੁਰਸ਼ ਨੂੰ ਭਟਕਾਉਂਦੀ ਹੈ, ਪਰ ਇਕ ਕਬੀਰ ਨਹੀਂ ਠੱਗਿਆ ਜਾਂਦਾ ਜਿਸ ਨੇ ਬਾਰਾਂ ਟੋਟੇ ਕਰ ਦਿੱਤੀ ਹੈ, ਭਾਵ ਨਸ਼ਟ ਕਰ ਦਿੱਤੀ ਹੈ ਤੇ ਇਸਦਾ ਕੋਈ ਰੂਪ ਵੀ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ ॥੨੦॥',
-      hi: 'कबीर जी कहते हैं- यह माया बड़ी चालाक चोरनी है जो जीवों को लूट-लूट कर विकारों की दुकानें लगाती है और अनेक रूपों में भटकाती है। किंतु अकेला कबीर इस माया से नहीं ठगा गया, जिसने ज्ञान के बल पर इस माया के बारह टुकड़े कर इसे पूर्णतः पराजित कर दिया॥ २०॥',
-      en: 'Kabir Ji says: Maya is a cunning thief who plunders mortals and sets up shops of worldly desires. But Kabir was not robbed, for he smashed Maya into twelve pieces and conquered it through Divine Wisdom! ||20||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਕਥਨ ਹੈ- ਕਿ ਮਾਇਆ ਠੱਗਣੀ ਠੱਗ ਠੱਗ (ਲੁਟ) ਕੇ ਵਿਕਾਰਾਂ ਰੂਪ ਹੱਟੀਆਂ ਲਾਉਂਦੀ ਹੈ, ਤਰ੍ਹਾਂ ਤਰ੍ਹਾਂ ਦੇ ਰੂਪਾਂ ਵਿਚ ਪੁਰਸ਼ ਨੂੰ ਭਟਕਾਉਂਦੀ ਹੈ, ਪਰ ਇਕ ਕਬੀਰ ਨਹੀਂ ਠੱਗਿਆ ਜਾਂਦਾ ਜਿਸ ਨੇ ਬਾਰਾਂ ਟੋਟੇ ਕਰ ਦਿੱਤੀ ਹੈ, ਭਾਵ ਨਸ਼ਟ ਕਰ ਦਿੱਤੀ ਹੈ ਤੇ ਇਸਦਾ ਕੋਈ ਰੂਪ ਵੀ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ ॥੨੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यह माया बड़ी चालाक चोरनी है जो जीवों को लूट-लूट कर विकारों की दुकानें लगाती है और अनेक रूपों में भटकाती है। किंतु अकेला कबीर इस माया से नहीं ठगा गया, जिसने ज्ञान के बल पर इस माया के बारह टुकड़े कर इसे पूर्णतः पराजित कर दिया॥ २०॥',
+      en: 'Satguru Kabir Saheb proclaims: Maya is a cunning thief who plunders mortals and sets up shops of worldly desires. But Kabir was not robbed, for he smashed Maya into twelve pieces and conquered it through Divine Wisdom! ||20||',
     },
     chintan: {
       pb: 'ਮਾਇਆ ਸਾਰੇ ਸੰਸਾਰ ਨੂੰ ਭਰਮਾਉਂਦੀ ਹੈ। ਪਰ ਜਿਸ ਨੂੰ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦਾ ਸਾਰ ਸ਼ਬਦ ਪ੍ਰਾਪਤ ਹੋ ਜਾਵੇ, ਮਾਇਆ ਉਸ ਦਾ ਕੁਝ ਨਹੀਂ ਵਿਗਾੜ ਸਕਦੀ।',
@@ -1439,7 +1439,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       en: 'Stay vigilant against deceptive illusions and vanquish worldly desires with wisdom.',
     },
     samarpan: {
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹਿਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸ਼ਰਨ ਲੈ ਕੇ ਮਾਇਆ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤ ਹੋਵੋ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸ਼ਰਨ ਲੈ ਕੇ ਮਾਇਆ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤ ਹੋਵੋ।',
       hi: 'सतगुरु कबीर साहेब के चरणों की शरण लेकर माया के बंधनों से मुक्त हों।',
       en: 'Take refuge in Satguru Kabir Saheb to transcend all bonds of Maya.',
     },
@@ -1497,9 +1497,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੀਵ ਰੂਪ ਜੋਗੀ ਦੀ ਦੇਹ ਰੂਪ ਗੋਦੜੀ ਸੜ ਕੇ ਕੋਲਾ ਹੋ ਗਈ ਅਤੇ ਭਿੱਖਿਆ ਮੰਗਣ ਵਾਲਾ ਖਪਰਾ ਟੁੱਟ ਫੁੱਟ ਗਿਆ। ਜੀਵ ਰੂਪ ਜੋਗੀ ਵਿਚਾਰਾ ਵੀ ਖੇਡ ਸਮਾਪਤ ਕਰ ਗਿਆ ਤੇ ਪਿਛੇ ਉਸ ਦੀ ਆਸਣ-ਮੜੀ ਉਤੇ ਸੁਆਹ ਹੀ ਰਹਿ ਗਈ॥੪੮॥',
-      hi: 'कबीर जी कहते हैं- जीव-रूपी जोगी की देह-रूपी गुदड़ी जलकर कोयला हो गई और भिक्षा का पात्र फूट गया। वह बेचारा जोगी भी संसार की खेल खेल कर चला गया और पीछे उसके आसन पर केवल राख ही शेष रह गई॥ ४८॥',
-      en: 'Kabir Ji says: The soul-yogis patchwork cloak of flesh burns to coal, and the alms bowl shatters. The poor yogi finishes the worldly game, leaving behind only ashes on the seat. ||48||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੀਵ ਰੂਪ ਜੋਗੀ ਦੀ ਦੇਹ ਰੂਪ ਗੋਦੜੀ ਸੜ ਕੇ ਕੋਲਾ ਹੋ ਗਈ ਅਤੇ ਭਿੱਖਿਆ ਮੰਗਣ ਵਾਲਾ ਖਪਰਾ ਟੁੱਟ ਫੁੱਟ ਗਿਆ। ਜੀਵ ਰੂਪ ਜੋਗੀ ਵਿਚਾਰਾ ਵੀ ਖੇਡ ਸਮਾਪਤ ਕਰ ਗਿਆ ਤੇ ਪਿਛੇ ਉਸ ਦੀ ਆਸਣ-ਮੜੀ ਉਤੇ ਸੁਆਹ ਹੀ ਰਹਿ ਗਈ॥੪੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जीव-रूपी जोगी की देह-रूपी गुदड़ी जलकर कोयला हो गई और भिक्षा का पात्र फूट गया। वह बेचारा जोगी भी संसार की खेल खेल कर चला गया और पीछे उसके आसन पर केवल राख ही शेष रह गई॥ ४८॥',
+      en: 'Satguru Kabir Saheb proclaims: The soul-yogis patchwork cloak of flesh burns to coal, and the alms bowl shatters. The poor yogi finishes the worldly game, leaving behind only ashes on the seat. ||48||',
     },
     chintan: {
       pb: 'ਇਹ ਸਰੀਰ ਨਾਸ਼ਵਾਨ ਹੈ। ਅਹੰਕਾਰ ਅਤੇ ਬਾਹਰਲੇ ਭੇਖ ਸਦਾ ਨਹੀਂ ਰਹਿੰਦੇ, ਕੇਵਲ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਹੀ ਸੱਚਾ ਸਾਥੀ ਹੈ।',
@@ -1570,9 +1570,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਥੋੜੇ ਪਾਣੀ ਵਿਚ ਰਹਿਣ ਵਾਲੀ ਮੱਛੀ ਨੂੰ ਮਛੇਰਾ ਆਣ ਕੇ ਜਾਲ ਪਾ ਲੈਂਦਾ ਹੈ। ਹੇ ਜੀਵ! ਇਨ੍ਹਾਂ ਛੋਟੀਆਂ ਛਪੜੀਆਂ (ਦੇਵਤਿਆਂ ਆਦਿ ਦੇ ਆਸਰਿਆਂ) ਵਿਚ ਤੂੰ ਕਾਲ ਤੋਂ ਬਚ ਨਹੀਂ ਸਕਦੀ, ਇਸ ਲਈ ਤੂੰ ਅਥਾਹ ਸਮੁੰਦਰ (ਪਰਮਾਤਮਾ) ਦੀ ਭਾਲ ਕਰ ਤੇ ਉਸਦਾ ਆਸਰਾ ਲੈ॥ ੪੯॥',
-      hi: 'कबीर जी कहते हैं- थोड़े पानी में रहने वाली मछली पर मछुआरा जाल डाल देता है। हे जीव! इन छोटे तालाबों के आश्रय से तू काल के जाल से नहीं बच सकती, इसलिए तू अथाह समुद्र (परमात्मा) का आश्रय ग्रहण कर॥ ४९॥',
-      en: 'Kabir Ji says: The fisherman casts his net for the fish in shallow waters. O soul, you cannot escape Death in these shallow puddles; seek instead the shelter of the infinite Ocean. ||49||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਥੋੜੇ ਪਾਣੀ ਵਿਚ ਰਹਿਣ ਵਾਲੀ ਮੱਛੀ ਨੂੰ ਮਛੇਰਾ ਆਣ ਕੇ ਜਾਲ ਪਾ ਲੈਂਦਾ ਹੈ। ਹੇ ਜੀਵ! ਇਨ੍ਹਾਂ ਛੋਟੀਆਂ ਛਪੜੀਆਂ (ਦੇਵਤਿਆਂ ਆਦਿ ਦੇ ਆਸਰਿਆਂ) ਵਿਚ ਤੂੰ ਕਾਲ ਤੋਂ ਬਚ ਨਹੀਂ ਸਕਦੀ, ਇਸ ਲਈ ਤੂੰ ਅਥਾਹ ਸਮੁੰਦਰ (ਪਰਮਾਤਮਾ) ਦੀ ਭਾਲ ਕਰ ਤੇ ਉਸਦਾ ਆਸਰਾ ਲੈ॥ ੪੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- थोड़े पानी में रहने वाली मछली पर मछुआरा जाल डाल देता है। हे जीव! इन छोटे तालाबों के आश्रय से तू काल के जाल से नहीं बच सकती, इसलिए तू अथाह समुद्र (परमात्मा) का आश्रय ग्रहण कर॥ ४९॥',
+      en: 'Satguru Kabir Saheb proclaims: The fisherman casts his net for the fish in shallow waters. O soul, you cannot escape Death in these shallow puddles; seek instead the shelter of the infinite Ocean. ||49||',
     },
     chintan: {
       pb: 'ਸੰਸਾਰਕ ਦੇਵਤੇ ਜਾਂ ਛੋਟੇ ਆਸਰੇ ਕਾਲ ਦੇ ਫਾਹੇ ਤੋਂ ਨਹੀਂ ਬਚਾ ਸਕਦੇ। ਕੇਵਲ ਪੂਰਨ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਹੀ ਅਭੈਦਾਨ ਦਿੰਦਾ ਹੈ।',
@@ -1700,9 +1700,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਨ੍ਹਾਂ ਦਾ ਕੋਈ ਗੁਰੂ ਨਹੀਂ, ਉਹ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਰੁੜ੍ਹ ਜਾਂਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਨੂੰ ਪਾਰ ਲੰਘਾਉਣ ਵਾਲਾ ਕੋਈ ਮਲਾਹ ਨਹੀਂ ਹੁੰਦਾ। ਜਿਨ੍ਹਾਂ ਨੇ ਦੀਨਤਾ ਤੇ ਨਿਮ੍ਰਤਾ ਨੂੰ ਆਪਣਾ ਗਹਿਣਾ ਬਣਾ ਲਿਆ ਹੈ, ਉਹ ਪ੍ਰਭੂ ਦੇ ਭਾਣੇ ਨੂੰ ਮਿੱਠਾ ਕਰਕੇ ਮੰਨਦੇ ਹਨ ॥੫੧॥',
-      hi: 'कबीर जी कहते हैं- जिनका कोई गुरु नहीं, वे संसार-सागर में बह जाते हैं, उन्हें पार लगाने वाला कोई मल्लाह नहीं होता। जिन्होंने दीनता और नम्रता को अपना लिया है, वे परमात्मा के प्रत्येक भाणे (रजा) को मीठा मानकर स्वीकार करते हैं॥ ५१॥',
-      en: 'Kabir Ji says: The unguided drift and drown in the ocean of samsara without a savior. Those who embrace humility and surrender accept whatever the Lord ordains with sweet gratitude. ||51||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਨ੍ਹਾਂ ਦਾ ਕੋਈ ਗੁਰੂ ਨਹੀਂ, ਉਹ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਰੁੜ੍ਹ ਜਾਂਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਨੂੰ ਪਾਰ ਲੰਘਾਉਣ ਵਾਲਾ ਕੋਈ ਮਲਾਹ ਨਹੀਂ ਹੁੰਦਾ। ਜਿਨ੍ਹਾਂ ਨੇ ਦੀਨਤਾ ਤੇ ਨਿਮ੍ਰਤਾ ਨੂੰ ਆਪਣਾ ਗਹਿਣਾ ਬਣਾ ਲਿਆ ਹੈ, ਉਹ ਪ੍ਰਭੂ ਦੇ ਭਾਣੇ ਨੂੰ ਮਿੱਠਾ ਕਰਕੇ ਮੰਨਦੇ ਹਨ ॥੫੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जिनका कोई गुरु नहीं, वे संसार-सागर में बह जाते हैं, उन्हें पार लगाने वाला कोई मल्लाह नहीं होता। जिन्होंने दीनता और नम्रता को अपना लिया है, वे परमात्मा के प्रत्येक भाणे (रजा) को मीठा मानकर स्वीकार करते हैं॥ ५१॥',
+      en: 'Satguru Kabir Saheb proclaims: The unguided drift and drown in the ocean of samsara without a savior. Those who embrace humility and surrender accept whatever the Lord ordains with sweet gratitude. ||51||',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਬਿਨੁ ਗਿਆਨੁ ਨ ਉਪਜै। ਜੀਵਨ ਵਿੱਚ ਨਿਮ੍ਰਤਾ ਅਤੇ ਗੁਰੂ-ਸ਼ਰਨ ਹੀ ਸਭ ਤੋਂ ਵੱਡਾ ਬਲ ਹੈ।',
@@ -1773,9 +1773,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਭਗਤ (ਸੰਤ) ਦੀ ਕੁੱਤੀ ਵੀ ਚੰਗੀ ਹੈ ਅਤੇ ਰੱਬ ਤੋਂ ਬੇਮੁਖ ਦੀ ਮਾਂ ਵੀ ਬੁਰੀ ਹੈ, ਕਿਉਂਕਿ ਭਗਤ ਦੀ ਕੁੱਤੀ ਅੱਠੇ ਪਹਿਰ ਹਰੀ ਦਾ ਜੱਸ ਸੁਣਦੀ ਰਹਿੰਦੀ ਹੈ ਤੇ ਬੇਮੁਖ ਦੀ ਮਾਂ ਪਾਪ ਕਮਾਉਣ ਅਤੇ ਸੰਸਾਰਕ ਵਿਕਾਰਾਂ ਵਿੱਚ ਹੀ ਲੱਗੀ ਰਹਿੰਦੀ ਹੈ॥ ੫੨॥',
-      hi: 'कबीर जी कहते हैं- भक्त (संत) की कुतिया भी अच्छी है और परमात्मा से विमुख संसारी की माता भी बुरी है, क्योंकि भक्त की कुतिया निरंतर प्रभु का यश सुनती है और संसारी की माता पाप कर्मों को ही खरीदने (संचित करने) जाती है॥ ५२॥',
-      en: 'Kabir Ji says: Better is the dog of a saint than the mother of a godless materialist. The saint\'s dog constantly hears the praises of the Lord, while the materialist mother continually accumulates sins. ||52||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਭਗਤ (ਸੰਤ) ਦੀ ਕੁੱਤੀ ਵੀ ਚੰਗੀ ਹੈ ਅਤੇ ਰੱਬ ਤੋਂ ਬੇਮੁਖ ਦੀ ਮਾਂ ਵੀ ਬੁਰੀ ਹੈ, ਕਿਉਂਕਿ ਭਗਤ ਦੀ ਕੁੱਤੀ ਅੱਠੇ ਪਹਿਰ ਹਰੀ ਦਾ ਜੱਸ ਸੁਣਦੀ ਰਹਿੰਦੀ ਹੈ ਤੇ ਬੇਮੁਖ ਦੀ ਮਾਂ ਪਾਪ ਕਮਾਉਣ ਅਤੇ ਸੰਸਾਰਕ ਵਿਕਾਰਾਂ ਵਿੱਚ ਹੀ ਲੱਗੀ ਰਹਿੰਦੀ ਹੈ॥ ੫੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- भक्त (संत) की कुतिया भी अच्छी है और परमात्मा से विमुख संसारी की माता भी बुरी है, क्योंकि भक्त की कुतिया निरंतर प्रभु का यश सुनती है और संसारी की माता पाप कर्मों को ही खरीदने (संचित करने) जाती है॥ ५२॥',
+      en: 'Satguru Kabir Saheb proclaims: Better is the dog of a saint than the mother of a godless materialist. The saint\'s dog constantly hears the praises of the Lord, while the materialist mother continually accumulates sins. ||52||',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਰਹਿਣ ਵਾਲਾ ਪਸ਼ੂ ਵੀ ਉੱਚਾ ਹੈ, ਪਰ ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਵਿਅर्थ ਹੈ।',
@@ -1846,9 +1846,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਹ ਜੀਵ ਰੂਪੀ ਹਰਨ ਕਮਜ਼ੋਰ ਹੈ ਅਤੇ ਸੰਸਾਰ ਰੂਪੀ ਤਾਲ, ਵਿਸ਼ਿਆਂ ਰੂਪੀ ਪਦਾਰਥਾਂ ਦੇ ਪਾਣੀ ਨਾਲ ਹਰਿਆਵਲਾ ਲਹਿ ਲਹਿ ਕਰ ਰਿਹਾ ਹੈ। ਇਸ ਹਰਨ ਰੂਪੀ ਇੱਕਲੇ ਜੀਵ ਨੂੰ ਫੜਨ ਵਾਲੇ ਲੱਖਾਂ ਹੀ (ਸ਼ਿਕਾਰੀ) ਵਿਕਾਰ ਹਨ, ਫਿਰ ਇਹ ਵਿਚਾਰਾ ਜੀਵ ਕਾਲ ਤੋਂ ਕਿਵੇਂ ਬਚ ਸਕਦਾ ਹੈ? ॥੫੩॥',
-      hi: 'कबीर जी कहते हैं- यह जीव-रूपी हिरण कमजोर है और विषय-विकारों के जल से संसार-रूपी तालाब हरा-भरा हो रहा है। इस अकेले जीव को शिकार बनाने वाले लाखों शिकारी (विकार) घात लगाए बैठे हैं, ऐसे में यह जीव काल से कब तक बच सकता है?॥ ५३॥',
-      en: 'Kabir Ji says: The soul is a fragile deer, and the lake of Maya is lush with sensory temptations. With millions of hunters lying in wait, how can this single soul escape Death? ||53||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਜੀਵ ਰੂਪੀ ਹਰਨ ਕਮਜ਼ੋਰ ਹੈ ਅਤੇ ਸੰਸਾਰ ਰੂਪੀ ਤਾਲ, ਵਿਸ਼ਿਆਂ ਰੂਪੀ ਪਦਾਰਥਾਂ ਦੇ ਪਾਣੀ ਨਾਲ ਹਰਿਆਵਲਾ ਲਹਿ ਲਹਿ ਕਰ ਰਿਹਾ ਹੈ। ਇਸ ਹਰਨ ਰੂਪੀ ਇੱਕਲੇ ਜੀਵ ਨੂੰ ਫੜਨ ਵਾਲੇ ਲੱਖਾਂ ਹੀ (ਸ਼ਿਕਾਰੀ) ਵਿਕਾਰ ਹਨ, ਫਿਰ ਇਹ ਵਿਚਾਰਾ ਜੀਵ ਕਾਲ ਤੋਂ ਕਿਵੇਂ ਬਚ ਸਕਦਾ ਹੈ? ॥੫੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यह जीव-रूपी हिरण कमजोर है और विषय-विकारों के जल से संसार-रूपी तालाब हरा-भरा हो रहा है। इस अकेले जीव को शिकार बनाने वाले लाखों शिकारी (विकार) घात लगाए बैठे हैं, ऐसे में यह जीव काल से कब तक बच सकता है?॥ ५३॥',
+      en: 'Satguru Kabir Saheb proclaims: The soul is a fragile deer, and the lake of Maya is lush with sensory temptations. With millions of hunters lying in wait, how can this single soul escape Death? ||53||',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਭੋਗਾਂ ਅਤੇ ਵਿਸ਼ਿਆਂ ਦੇ ਜਾਲ ਵਿੱਚ ਫਸਿਆ ਮਨ ਕਮਜ਼ੋਰ ਹੋ ਜਾਂਦਾ ਹੈ। ਬਿਨਾਂ ਸਤਿਗੁਰੂ ਦੀ ਸੁਰੱਖਿਆ ਦੇ ਇਸ ਤੋਂ ਬਚਣਾ ਅਸੰਭਵ ਹੈ।',
@@ -1904,7 +1904,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       {
         word: 'ਰਮੇ ਕਬੀਰ / रमे कबीर',
         meaning: {
-          pb: 'ਕਬੀਰ ਜੀ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਦੇ ਹਨ',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਦੇ ਹਨ',
           hi: 'कबीर प्रभु का नाम स्मरण करते हैं',
           en: 'Kabir chants the Name of the Lord',
         },
@@ -1976,9 +1976,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਦੋਂ ਭਗਤੀ ਦੁਆਰਾ ਮੇਰਾ ਮਨ ਗੰਗਾ ਦੇ ਸਾਫ਼ ਪਾਣੀ ਵਾਂਗ ਬਿਲਕੁਲ ਪਵਿੱਤਰ ਹੋ ਗਿਆ, ਤਾਂ ਪ੍ਰਮਾਤਮਾ ਮੇਰੇ ਪਿੱਛੇ-ਪਿੱਛੇ ਇਹ ਕਹਿੰਦਾ ਫਿਰਦਾ ਹੈ ਕਿ \'ਕਬੀਰ! ਕਬੀਰ!\' (ਭਾਵ ਪ੍ਰਭੂ ਆਪਣੇ ਭਗਤ ਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹੈ) ॥੫੫॥',
-      hi: 'कबीर जी कहते हैं- जब भक्ति के प्रभाव से मेरा मन गंगा के जल की भांति पूरी तरह पवित्र हो गया, तब स्वयं परमात्मा मेरे पीछे-पीछे \'कबीर! कबीर!\' पुकारते हुए प्रेमवश फिरते हैं॥ ५५॥',
-      en: 'Kabir Ji says: When my mind became pure and immaculate like the waters of the Ganges through devotion, the Lord Himself follows behind me, calling out, "Kabir! Kabir!" (in loving grace). ||55||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਦੋਂ ਭਗਤੀ ਦੁਆਰਾ ਮੇਰਾ ਮਨ ਗੰਗਾ ਦੇ ਸਾਫ਼ ਪਾਣੀ ਵਾਂਗ ਬਿਲਕੁਲ ਪਵਿੱਤਰ ਹੋ ਗਿਆ, ਤਾਂ ਪ੍ਰਮਾਤਮਾ ਮੇਰੇ ਪਿੱਛੇ-ਪਿੱਛੇ ਇਹ ਕਹਿੰਦਾ ਫਿਰਦਾ ਹੈ ਕਿ \'ਕਬੀਰ! ਕਬੀਰ!\' (ਭਾਵ ਪ੍ਰਭੂ ਆਪਣੇ ਭਗਤ ਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹੈ) ॥੫੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जब भक्ति के प्रभाव से मेरा मन गंगा के जल की भांति पूरी तरह पवित्र हो गया, तब स्वयं परमात्मा मेरे पीछे-पीछे \'कबीर! कबीर!\' पुकारते हुए प्रेमवश फिरते हैं॥ ५५॥',
+      en: 'Satguru Kabir Saheb proclaims: When my mind became pure and immaculate like the waters of the Ganges through devotion, the Lord Himself follows behind me, calling out, "Kabir! Kabir!" (in loving grace). ||55||',
     },
     chintan: {
       pb: 'ਜਦੋਂ ਹਿਰਦਾ ਵਿਕਾਰਾਂ ਤੋਂ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਪਰਮਾਤਮਾ ਉਸ ਭਗਤ ਦਾ ਪ੍ਰੇਮੀ ਬਣ ਜਾਂਦਾ ਹੈ।',
@@ -2049,9 +2049,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹਲਦੀ ਪੀਲੇ ਰੰਗ ਦੀ ਅਤੇ ਚੂਨਾ ਚਿੱਟੇ ਰੰਗ ਦਾ ਹੁੰਦਾ ਹੈ। ਪਰਮਾਤਮਾ ਦਾ ਪ੍ਰੇਮੀ ਭਗਤ ਤਦ ਹੀ ਬਣ ਸਕਦਾ ਹੈ ਜੇ ਉਹ ਉੱਚੀ ਨੀਵੀਂ ਜ਼ਾਤ-ਪਾਤ ਦੇ ਦੋਵੇਂ ਵਿਤਕਰੇ ਛੱਡ ਦੇਵੇ। ਜਿਸ ਤਰ੍ਹਾਂ ਹਲਦੀ ਅਤੇ ਚੂਨਾ ਮਿਲ ਕੇ ਆਪਣਾ ਪੀਲਾ ਤੇ ਚਿੱਟਾ ਰੰਗ ਤਿਆਗ ਕੇ ਲਾਲ ਰੰਗ ਹੋ ਜਾਂਦੇ ਹਨ, ਇਵੇਂ ਹੀ ਭਗਤ ਸਭ ਭੇਦ ਮਿਟਾ ਦਿੰਦਾ ਹੈ॥ ੫੬॥',
-      hi: 'कबीर जी कहते हैं- हल्दी पीले रंग की और चूना सफेद रंग का होता है। परमेश्वर का प्रेमी तभी मिलता है जब वह ऊंच-नीच और जाति-पाति के दोनों भेद त्याग दे। जिस प्रकार हल्दी और चूना मिलने पर अपना पीला व सफेद रंग छोड़कर एक नया लाल रंग बना लेते हैं, वैसे ही सच्चा भक्त सभी भेदभाव मिटा देता है॥ ५६॥',
-      en: 'Kabir Ji says: Turmeric is yellow and lime is white. The devotee meets the Beloved Lord only by discarding all distinctions of high and low caste. Just as turmeric and lime blend together, losing their separate yellow and white colors to form a brilliant red, true devotees dissolve all divisions. ||56||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹਲਦੀ ਪੀਲੇ ਰੰਗ ਦੀ ਅਤੇ ਚੂਨਾ ਚਿੱਟੇ ਰੰਗ ਦਾ ਹੁੰਦਾ ਹੈ। ਪਰਮਾਤਮਾ ਦਾ ਪ੍ਰੇਮੀ ਭਗਤ ਤਦ ਹੀ ਬਣ ਸਕਦਾ ਹੈ ਜੇ ਉਹ ਉੱਚੀ ਨੀਵੀਂ ਜ਼ਾਤ-ਪਾਤ ਦੇ ਦੋਵੇਂ ਵਿਤਕਰੇ ਛੱਡ ਦੇਵੇ। ਜਿਸ ਤਰ੍ਹਾਂ ਹਲਦੀ ਅਤੇ ਚੂਨਾ ਮਿਲ ਕੇ ਆਪਣਾ ਪੀਲਾ ਤੇ ਚਿੱਟਾ ਰੰਗ ਤਿਆਗ ਕੇ ਲਾਲ ਰੰਗ ਹੋ ਜਾਂਦੇ ਹਨ, ਇਵੇਂ ਹੀ ਭਗਤ ਸਭ ਭੇਦ ਮਿਟਾ ਦਿੰਦਾ ਹੈ॥ ੫੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- हल्दी पीले रंग की और चूना सफेद रंग का होता है। परमेश्वर का प्रेमी तभी मिलता है जब वह ऊंच-नीच और जाति-पाति के दोनों भेद त्याग दे। जिस प्रकार हल्दी और चूना मिलने पर अपना पीला व सफेद रंग छोड़कर एक नया लाल रंग बना लेते हैं, वैसे ही सच्चा भक्त सभी भेदभाव मिटा देता है॥ ५६॥',
+      en: 'Satguru Kabir Saheb proclaims: Turmeric is yellow and lime is white. The devotee meets the Beloved Lord only by discarding all distinctions of high and low caste. Just as turmeric and lime blend together, losing their separate yellow and white colors to form a brilliant red, true devotees dissolve all divisions. ||56||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦੇ ਪ੍ਰੇਮ ਵਿੱਚ ਜਾਤ, ਪਾਤ, ਰੰਗ ਅਤੇ ਨਸਲ ਦਾ ਕੋਈ ਭੇਦ ਨਹੀਂ ਰਹਿੰਦਾ। ਸਾਰੇ ਪ੍ਰਭੂ ਦੀ ਸੰਤਾਨ ਹਨ।',
@@ -2195,9 +2195,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੁਕਤੀ ਦਾ ਦੁਆਰਾ ਬਹੁਤ ਭੀੜਾ ਹੈ, ਰਾਈ ਦੇ ਦਾਣੇ ਦੇ ਦਸਵੇਂ ਹਿੱਸੇ ਜਿੰਨਾ ਬਾਰੀਕ ਹੈ, ਪਰ ਮਨ ਹੰਕਾਰ ਕਰਕੇ ਮਸਤ ਹਾਥੀ ਵਾਂਗ ਵਿਸ਼ਾਲ ਹੋ ਰਿਹਾ ਹੈ। ਫਿਰ ਇਹ ਹਾਥੀ ਵਰਗਾ ਮਨ ਐਸੇ ਭੀੜੇ ਰਸਤੇ ਵਿੱਚੋਂ ਕਿਵੇਂ ਨਿਕਲ ਸਕਦਾ ਹੈ? ॥੫੮॥',
-      hi: 'कबीर जी कहते हैं- मुक्ति का द्वार अत्यंत संकरा है, राई के दाने के दसवें हिस्से जितना बारीक है, किंतु यह मन अहंकार के कारण मस्त हाथी के समान विशाल हो रहा है। भला यह हाथी-सा मन इतने तंग मार्ग से कैसे निकल सकता है?॥ ५८॥',
-      en: 'Kabir Ji says: The gateway of liberation is extremely narrow, like one-tenth of a mustard seed, but the mind is swollen with ego like an intoxicated elephant. How can it ever pass through such a narrow opening? ||58||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੁਕਤੀ ਦਾ ਦੁਆਰਾ ਬਹੁਤ ਭੀੜਾ ਹੈ, ਰਾਈ ਦੇ ਦਾਣੇ ਦੇ ਦਸਵੇਂ ਹਿੱਸੇ ਜਿੰਨਾ ਬਾਰੀਕ ਹੈ, ਪਰ ਮਨ ਹੰਕਾਰ ਕਰਕੇ ਮਸਤ ਹਾਥੀ ਵਾਂਗ ਵਿਸ਼ਾਲ ਹੋ ਰਿਹਾ ਹੈ। ਫਿਰ ਇਹ ਹਾਥੀ ਵਰਗਾ ਮਨ ਐਸੇ ਭੀੜੇ ਰਸਤੇ ਵਿੱਚੋਂ ਕਿਵੇਂ ਨਿਕਲ ਸਕਦਾ ਹੈ? ॥੫੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मुक्ति का द्वार अत्यंत संकरा है, राई के दाने के दसवें हिस्से जितना बारीक है, किंतु यह मन अहंकार के कारण मस्त हाथी के समान विशाल हो रहा है। भला यह हाथी-सा मन इतने तंग मार्ग से कैसे निकल सकता है?॥ ५८॥',
+      en: 'Satguru Kabir Saheb proclaims: The gateway of liberation is extremely narrow, like one-tenth of a mustard seed, but the mind is swollen with ego like an intoxicated elephant. How can it ever pass through such a narrow opening? ||58||',
     },
     chintan: {
       pb: 'ਹੰਕਾਰ ਨਾਲ ਭਰਿਆ ਮਨ ਮੁਕਤੀ ਦੇ ਦੁਆਰ ਤੋਂ ਨਹੀਂ ਲੰਘ ਸਕਦਾ। ਜਦ ਤੱਕ ਮਨ ਨਿਮ੍ਰ ਅਤੇ ਬਾਰੀਕ ਨਹੀਂ ਹੁੰਦਾ, ਮੁਕਤੀ ਅਸੰਭਵ ਹੈ।',
@@ -2276,9 +2276,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇ ਕੋਈ ਅਜਿਹਾ ਪੂਰਨ ਸਤਿਗੁਰੂ ਮਿਲ ਜਾਏ ਜੋ ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਆਪਣੀ ਬਖਸ਼ਿਸ਼ ਕਰ ਦੇਵੇ, ਤਾਂ (ਸੋਝੀ ਹੋਣ ਨਾਲ) ਮੁਕਤੀ ਦਾ ਭੀੜਾ ਦੁਆਰਾ ਵੀ ਖੁੱਲ੍ਹਾ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਜੀਵ ਸਹਜੇ ਹੀ ਉਸ ਵਿੱਚੋਂ ਆਉਣਾ-ਜਾਣਾ (ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਕਰਨਾ) ਕਰ ਲੈਂਦਾ ਹੈ॥ ੫੯॥',
-      hi: 'कबीर जी कहते हैं- यदि कोई ऐसा पूर्ण सतगुरु मिल जाए जो प्रसन्न होकर अपनी कृपा की बख्शिश कर दे, तो मुक्ति का संकरा द्वार भी खुला हो जाता है और जीव सहज ही उसमें से आ-जा (मोक्ष प्राप्त कर) सकता है॥ ५९॥',
-      en: 'Kabir Ji says: If one meets such a True Master who is graciously pleased to bestow His blessing, the narrow gate of liberation opens wide, and the soul effortlessly passes through in divine poise. ||59||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇ ਕੋਈ ਅਜਿਹਾ ਪੂਰਨ ਸਤਿਗੁਰੂ ਮਿਲ ਜਾਏ ਜੋ ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਆਪਣੀ ਬਖਸ਼ਿਸ਼ ਕਰ ਦੇਵੇ, ਤਾਂ (ਸੋਝੀ ਹੋਣ ਨਾਲ) ਮੁਕਤੀ ਦਾ ਭੀੜਾ ਦੁਆਰਾ ਵੀ ਖੁੱਲ੍ਹਾ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਜੀਵ ਸਹਜੇ ਹੀ ਉਸ ਵਿੱਚੋਂ ਆਉਣਾ-ਜਾਣਾ (ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਕਰਨਾ) ਕਰ ਲੈਂਦਾ ਹੈ॥ ੫੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यदि कोई ऐसा पूर्ण सतगुरु मिल जाए जो प्रसन्न होकर अपनी कृपा की बख्शिश कर दे, तो मुक्ति का संकरा द्वार भी खुला हो जाता है और जीव सहज ही उसमें से आ-जा (मोक्ष प्राप्त कर) सकता है॥ ५९॥',
+      en: 'Satguru Kabir Saheb proclaims: If one meets such a True Master who is graciously pleased to bestow His blessing, the narrow gate of liberation opens wide, and the soul effortlessly passes through in divine poise. ||59||',
     },
     chintan: {
       pb: 'ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਮਨ ਦਾ ਹੰਕਾਰ ਮਿਟ ਜਾਂਦਾ ਹੈ ਅਤੇ ਮੁਕਤੀ ਦਾ ਮਾਰਗ ਬਹੁਤ ਸੌਖਾ ਹੋ ਜਾਂਦਾ ਹੈ।',
@@ -2341,9 +2341,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਨਾ ਮੇਰੀ ਕੋਈ ਕੁੱਲੀ ਹੈ, ਨਾ ਛੱਪਰ ਹੈ, ਨਾ ਮੇਰਾ ਕੋਈ ਘਰ ਹੈ ਅਤੇ ਨਾ ਹੀ ਕੋਈ ਰਹਿਣ ਨੂੰ ਪਿੰਡ ਹੈ। ਮੈਂ ਤਾਂ ਆਪਣੇ ਆਪ ਨੂੰ ਇੰਨਾ ਮਿਟਾ ਚੁੱਕਾ ਹਾਂ ਕਿ ਜੇ ਕਿਤੇ ਪ੍ਰਮਾਤਮਾ ਪੁੱਛ ਲਵੇ ਕਿ \'ਤੂੰ ਕੌਣ ਹੈਂ?\' ਤਾਂ ਮੇਰੀ ਕੋਈ ਜ਼ਾਤ ਅਤੇ ਨਾਮ ਵੀ ਨਹੀਂ ਬਚਿਆ ਕਿ ਮੈਂ ਕੀ ਦੱਸਾਂ? ॥੬੦॥',
-      hi: 'कबीर जी कहते हैं- न मेरी कोई कुटिया है, न छप्पर है, न मेरा कोई घर है और न ही रहने का कोई गांव है। मैं इस हद तक मिट चुका हूँ कि यदि कहीं भगवान पूछ लें कि \'तू कौन है?\' तो मेरे पास बताने के लिए अपनी कोई जाति और नाम भी शेष नहीं है॥ ६०॥',
-      en: 'Kabir Ji says: I have no hut, no thatched roof, no home, and no village. I have so completely annihilated my ego that if the Lord asks, "Who are you?", I have neither caste nor name left to declare. ||60||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਨਾ ਮੇਰੀ ਕੋਈ ਕੁੱਲੀ ਹੈ, ਨਾ ਛੱਪਰ ਹੈ, ਨਾ ਮੇਰਾ ਕੋਈ ਘਰ ਹੈ ਅਤੇ ਨਾ ਹੀ ਕੋਈ ਰਹਿਣ ਨੂੰ ਪਿੰਡ ਹੈ। ਮੈਂ ਤਾਂ ਆਪਣੇ ਆਪ ਨੂੰ ਇੰਨਾ ਮਿਟਾ ਚੁੱਕਾ ਹਾਂ ਕਿ ਜੇ ਕਿਤੇ ਪ੍ਰਮਾਤਮਾ ਪੁੱਛ ਲਵੇ ਕਿ \'ਤੂੰ ਕੌਣ ਹੈਂ?\' ਤਾਂ ਮੇਰੀ ਕੋਈ ਜ਼ਾਤ ਅਤੇ ਨਾਮ ਵੀ ਨਹੀਂ ਬਚਿਆ ਕਿ ਮੈਂ ਕੀ ਦੱਸਾਂ? ॥੬੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- न मेरी कोई कुटिया है, न छप्पर है, न मेरा कोई घर है और न ही रहने का कोई गांव है। मैं इस हद तक मिट चुका हूँ कि यदि कहीं भगवान पूछ लें कि \'तू कौन है?\' तो मेरे पास बताने के लिए अपनी कोई जाति और नाम भी शेष नहीं है॥ ६०॥',
+      en: 'Satguru Kabir Saheb proclaims: I have no hut, no thatched roof, no home, and no village. I have so completely annihilated my ego that if the Lord asks, "Who are you?", I have neither caste nor name left to declare. ||60||',
     },
     chintan: {
       pb: 'ਜਦੋਂ ਤੱਕ ਮਨ ਵਿੱਚ \'ਮੈਂ\' ਅਤੇ \'ਮੇരാ\' ਦਾ ਹੰਕਾਰ ਹੈ, ਪ੍ਰਭੂ ਮਿਲਾਪ ਨਹੀਂ ਹੋ ਸਕਦਾ। ਅਹੰਕਾਰ ਦਾ ਅੰਤ ਹੀ ਮੁਕਤੀ ਹੈ।',
@@ -2406,9 +2406,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਨੂੰ ਤਾਂ (ਆਪਾ ਮਿਟਾ ਕੇ) ਮਰਨ ਦਾ ਚਾਅ ਹੈ, ਜੇ ਮਰਾਂ (ਅਹੰਕਾਰ ਤੋਂ ਮਰਾਂ) ਤਾਂ ਪ੍ਰਭੂ ਦੇ ਦੁਆਰ ਉੱਤੇ ਮਰਾਂ; ਕਿਤੇ ਪ੍ਰਭੂ ਇਹ ਨਾ ਪੁੱਛ ਲਵੇ ਕਿ \'ਇਹ ਕੌਣ ਹੈ ਜਿਹੜਾ ਸਾਡੇ ਬੂਹੇ ਉੱਤੇ (ਨਿਮ੍ਰ ਹੋ ਕੇ) ਪਿਆ ਹੈ?\' (ਭਾਵ ਪ੍ਰਭੂ ਆਪਣੇ ਦੁਆਰ ’ਤੇ ਡਿੱਗੇ ਪ੍ਰੇਮੀ ਨੂੰ ਅਪਣਾ ਲਵੇ)॥ ੬੧॥',
-      hi: 'कबीर जी कहते हैं- मुझे तो (अहम मिटाकर) मिटने का ही चाव है, यदि मरूं तो परमात्मा के द्वार पर ही मरूं; कहीं ऐसा न हो कि भगवान पूछ बैठें कि \'यह कौन है जो हमारे द्वार पर (दीन भाव से) पड़ा है?\' (अर्थात प्रभु अपने द्वार पर गिरे हुए प्रेमी को गले लगा लें)॥ ६१॥',
-      en: 'Kabir Ji says: I have an ardent longing to die (to my ego); if I die, I wish to die at the Lord\'s doorstep. Lest the Lord should ask, "Who is this lying prostrate at our door?" (and embrace me in His boundless grace). ||61||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਨੂੰ ਤਾਂ (ਆਪਾ ਮਿਟਾ ਕੇ) ਮਰਨ ਦਾ ਚਾਅ ਹੈ, ਜੇ ਮਰਾਂ (ਅਹੰਕਾਰ ਤੋਂ ਮਰਾਂ) ਤਾਂ ਪ੍ਰਭੂ ਦੇ ਦੁਆਰ ਉੱਤੇ ਮਰਾਂ; ਕਿਤੇ ਪ੍ਰਭੂ ਇਹ ਨਾ ਪੁੱਛ ਲਵੇ ਕਿ \'ਇਹ ਕੌਣ ਹੈ ਜਿਹੜਾ ਸਾਡੇ ਬੂਹੇ ਉੱਤੇ (ਨਿਮ੍ਰ ਹੋ ਕੇ) ਪਿਆ ਹੈ?\' (ਭਾਵ ਪ੍ਰਭੂ ਆਪਣੇ ਦੁਆਰ ’ਤੇ ਡਿੱਗੇ ਪ੍ਰੇਮੀ ਨੂੰ ਅਪਣਾ ਲਵੇ)॥ ੬੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मुझे तो (अहम मिटाकर) मिटने का ही चाव है, यदि मरूं तो परमात्मा के द्वार पर ही मरूं; कहीं ऐसा न हो कि भगवान पूछ बैठें कि \'यह कौन है जो हमारे द्वार पर (दीन भाव से) पड़ा है?\' (अर्थात प्रभु अपने द्वार पर गिरे हुए प्रेमी को गले लगा लें)॥ ६१॥',
+      en: 'Satguru Kabir Saheb proclaims: I have an ardent longing to die (to my ego); if I die, I wish to die at the Lord\'s doorstep. Lest the Lord should ask, "Who is this lying prostrate at our door?" (and embrace me in His boundless grace). ||61||',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਦੀ ਸਭ ਤੋਂ ਵੱਡੀ ਸਫਲਤਾ ਅਹੰਕਾਰ ਨੂੰ ਮਾਰ ਕੇ ਪ੍ਰਭੂ ਦੇ ਦਰ \'ਤੇ ਨਿਮ੍ਰ ਹੋ ਕੇ ਡਿੱਗਣਾ ਹੈ।',
@@ -2471,9 +2471,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਨਾ ਮੈਂ ਪਹਿਲਾਂ ਕੁਝ ਕੀਤਾ ਹੈ, ਨਾ ਅੱਗੇ ਕੁਝ ਕਰ ਸਕਾਂਗਾ ਅਤੇ ਨਾ ਹੀ ਮੇਰਾ ਇਹ ਸਰੀਰ ਕੁਝ ਕਰਨ ਦੇ ਸਮਰੱਥ ਹੈ। ਮੈਂ ਕੀ ਜਾਣਾਂ, ਜੋ ਕੁਝ ਵੀ ਹੋਇਆ ਹੈ ਪ੍ਰਭੂ ਨੇ ਹੀ ਕੀਤਾ ਹੈ, ਜਿਸਦੀ ਬਖਸ਼ਿਸ਼ ਨਾਲ ਕਬੀਰ (ਸੰਸਾਰ ਵਿੱਚ ਪ੍ਰਭੂ ਦੀ ਮਹਿਮਾ ਕਰਕੇ) ਪ੍ਰਸਿੱਧ ਹੋ ਗਿਆ ਹੈ॥ ੬੨॥',
-      hi: 'कबीर जी कहते हैं- न मैंने पहले कुछ किया है, न आगे कुछ कर सकूंगा और न ही मेरा यह शरीर कुछ कर सकता है। मैं क्या जानूं, जो कुछ भी हुआ है परमात्मा ने ही किया है, जिसकी कृपा से कबीर जग में प्रख्यात हो गया है॥ ६२॥',
-      en: 'Kabir Ji says: I have done nothing in the past, nor can I do anything in the future, nor can this body achieve anything of itself. What do I know? Everything is done by the Lord, through whose grace Kabir is renowned. ||62||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਨਾ ਮੈਂ ਪਹਿਲਾਂ ਕੁਝ ਕੀਤਾ ਹੈ, ਨਾ ਅੱਗੇ ਕੁਝ ਕਰ ਸਕਾਂਗਾ ਅਤੇ ਨਾ ਹੀ ਮੇਰਾ ਇਹ ਸਰੀਰ ਕੁਝ ਕਰਨ ਦੇ ਸਮਰੱਥ ਹੈ। ਮੈਂ ਕੀ ਜਾਣਾਂ, ਜੋ ਕੁਝ ਵੀ ਹੋਇਆ ਹੈ ਪ੍ਰਭੂ ਨੇ ਹੀ ਕੀਤਾ ਹੈ, ਜਿਸਦੀ ਬਖਸ਼ਿਸ਼ ਨਾਲ ਕਬੀਰ (ਸੰਸਾਰ ਵਿੱਚ ਪ੍ਰਭੂ ਦੀ ਮਹਿਮਾ ਕਰਕੇ) ਪ੍ਰਸਿੱਧ ਹੋ ਗਿਆ ਹੈ॥ ੬੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- न मैंने पहले कुछ किया है, न आगे कुछ कर सकूंगा और न ही मेरा यह शरीर कुछ कर सकता है। मैं क्या जानूं, जो कुछ भी हुआ है परमात्मा ने ही किया है, जिसकी कृपा से कबीर जग में प्रख्यात हो गया है॥ ६२॥',
+      en: 'Satguru Kabir Saheb proclaims: I have done nothing in the past, nor can I do anything in the future, nor can this body achieve anything of itself. What do I know? Everything is done by the Lord, through whose grace Kabir is renowned. ||62||',
     },
     chintan: {
       pb: 'ਕਰਤਾ ਪੁਰਖ ਪ੍ਰਭੂ ਹੀ ਸਭ ਕੁਝ ਕਰਨ ਵਾਲਾ ਹੈ। \'ਮੈਂ ਕਰਦਾ ਹਾਂ\' ਦਾ ਭਰਮ ਹੀ ਸਭ ਤੋਂ ਵੱਡਾ ਬੰਧਨ ਹੈ।',
@@ -2544,9 +2544,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੋ ਮਨੁੱਖ ਸੁਪਨੇ ਵਿੱਚ ਵੀ ਅਭੜਵਾਹੇ ਆਪਣੇ ਮੂੰਹੋਂ ਪ੍ਰਭੂ ਦਾ ਰਾਮ ਨਾਮ ਉਚਾਰਦਾ ਹੈ, ਮੈਂ ਚਾਹੁੰਦਾ ਹਾਂ ਕਿ ਉਸਦੇ ਪੈਰ ਦੀ ਜੁੱਤੀ ਮੇਰੇ ਸਰੀਰ ਦੀ ਖੱਲ (ਚੰਮ) ਦੀ ਬਣੀ ਹੋਵੇ॥ ੬੩॥',
-      hi: 'कबीर जी कहते हैं- जो मनुष्य स्वप्न में भी अचेत अवस्था में अपने मुख से भगवान का नाम जपता है, मेरी अभिलाषा है कि उसके पैरों की जूती मेरे शरीर के चर्म की बनी हो॥ ६३॥',
-      en: 'Kabir Ji says: One who chants the Name of the Lord even subconsciously in a dream—may the shoes on their feet be fashioned from the skin of my body. ||63||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੋ ਮਨੁੱਖ ਸੁਪਨੇ ਵਿੱਚ ਵੀ ਅਭੜਵਾਹੇ ਆਪਣੇ ਮੂੰਹੋਂ ਪ੍ਰਭੂ ਦਾ ਰਾਮ ਨਾਮ ਉਚਾਰਦਾ ਹੈ, ਮੈਂ ਚਾਹੁੰਦਾ ਹਾਂ ਕਿ ਉਸਦੇ ਪੈਰ ਦੀ ਜੁੱਤੀ ਮੇਰੇ ਸਰੀਰ ਦੀ ਖੱਲ (ਚੰਮ) ਦੀ ਬਣੀ ਹੋਵੇ॥ ੬੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जो मनुष्य स्वप्न में भी अचेत अवस्था में अपने मुख से भगवान का नाम जपता है, मेरी अभिलाषा है कि उसके पैरों की जूती मेरे शरीर के चर्म की बनी हो॥ ६३॥',
+      en: 'Satguru Kabir Saheb proclaims: One who chants the Name of the Lord even subconsciously in a dream—may the shoes on their feet be fashioned from the skin of my body. ||63||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਪ੍ਰੇਮੀਆਂ ਅਤੇ ਗੁਰਸਿੱਖਾਂ ਦੀ ਸੇਵਾ ਅਤੇ ਚਰਨ-ਧੂੜ ਪ੍ਰਾਪਤ ਕਰਨਾ ਸਭ ਤੋਂ ਵੱਡਾ ਭਾਗ ਹੈ।',
@@ -2617,9 +2617,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਅਸੀਂ ਮਿੱਟੀ ਦੇ ਪੁਤਲੇ ਹਾਂ ਅਤੇ ਨਾਂ \'ਮਨੁੱਖ\' ਰੱਖਿਆ ਹੋਇਆ ਹੈ। ਅਸੀਂ ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਚਾਰ ਦਿਨ ਦੇ ਪ੍ਰਾਹੁਣੇ ਹਾਂ, ਫਿਰ ਵੀ ਵੱਡੇ-ਵੱਡੇ ਥਾਂ ਘੇਰੀ ਬੈਠੇ ਹਾਂ (ਹੰਕਾਰ ਤੇ ਮੋਹ ਵਿੱਚ ਮਾਲਕੀ ਜਤਾਉਂਦੇ ਹਾਂ)॥ ੬੪॥',
-      hi: 'कबीर जी कहते हैं- हम मिट्टी के पुतले हैं और नाम \'मनुष्य\' रख लिया है। इस संसार में हम केवल चार दिन के मेहमान हैं, फिर भी बड़े-बड़े स्थान (अधिकार व संपत्ति) घेरे पड़े हैं॥ ६४॥',
-      en: 'Kabir Ji says: We are mere puppets of clay, bearing the name of human beings. We are temporary guests here for just a few days, yet we arrogantly hoard vast possessions and territory. ||64||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅਸੀਂ ਮਿੱਟੀ ਦੇ ਪੁਤਲੇ ਹਾਂ ਅਤੇ ਨਾਂ \'ਮਨੁੱਖ\' ਰੱਖਿਆ ਹੋਇਆ ਹੈ। ਅਸੀਂ ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਚਾਰ ਦਿਨ ਦੇ ਪ੍ਰਾਹੁਣੇ ਹਾਂ, ਫਿਰ ਵੀ ਵੱਡੇ-ਵੱਡੇ ਥਾਂ ਘੇਰੀ ਬੈਠੇ ਹਾਂ (ਹੰਕਾਰ ਤੇ ਮੋਹ ਵਿੱਚ ਮਾਲਕੀ ਜਤਾਉਂਦੇ ਹਾਂ)॥ ੬੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- हम मिट्टी के पुतले हैं और नाम \'मनुष्य\' रख लिया है। इस संसार में हम केवल चार दिन के मेहमान हैं, फिर भी बड़े-बड़े स्थान (अधिकार व संपत्ति) घेरे पड़े हैं॥ ६४॥',
+      en: 'Satguru Kabir Saheb proclaims: We are mere puppets of clay, bearing the name of human beings. We are temporary guests here for just a few days, yet we arrogantly hoard vast possessions and territory. ||64||',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਨਾਸ਼ਵਾਨ ਹੈ। ਸੰਸਾਰ ਵਿੱਚ ਮਾਲਕੀ ਦਾ ਅਹੰਕਾਰ ਕਰਨਾ ਮੂਰਖਤਾ ਹੈ।',
@@ -2690,9 +2690,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਆਪਣੇ ਆਪ ਨੂੰ ਮਹਿੰਦੀ ਵਾਂਗ ਪੀਹ ਪੀਹ ਕੇ (ਸਾਧਨਾ ਅਤੇ ਤਪੱਸਿਆ ਵਿੱਚ) ਘਾਲਣਾ ਘਾਲੀ ਹੈ, ਪਰ ਫਿਰ ਵੀ ਹੇ ਪ੍ਰਭੂ! ਤੂੰ ਮੇਰੀ ਸਾਰ ਨਹੀਂ ਲਈ ਅਤੇ ਨਾ ਹੀ ਮੇਰੀ ਪੀਸੀ ਹੋਈ ਮਹਿੰਦੀ ਨੂੰ ਕਦੀ ਆਪਣੇ ਚਰਨਾਂ ਨਾਲ ਲਾਇਆ॥ ੬੫॥',
-      hi: 'कबीर जी कहते हैं- मैंने अपने आपको मेहंदी की भांति पीस-पीस कर (साधना व तपस्या में) खपा दिया है, किंतु फिर भी हे प्रभु! तूने मेरी सुध नहीं ली और न ही मेरी पिसी हुई मेहंदी को कभी अपने चरणों में लगाया (मुझे अपने चरणों की शरण नहीं बख्शी)॥ ६५॥',
-      en: 'Kabir Ji says: I have ground myself down like henna leaves through rigorous devotion, yet O Lord, Thou hast not inquired after me, nor applied this crushed henna to Thy Lotus Feet. ||65||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਆਪਣੇ ਆਪ ਨੂੰ ਮਹਿੰਦੀ ਵਾਂਗ ਪੀਹ ਪੀਹ ਕੇ (ਸਾਧਨਾ ਅਤੇ ਤਪੱਸਿਆ ਵਿੱਚ) ਘਾਲਣਾ ਘਾਲੀ ਹੈ, ਪਰ ਫਿਰ ਵੀ ਹੇ ਪ੍ਰਭੂ! ਤੂੰ ਮੇਰੀ ਸਾਰ ਨਹੀਂ ਲਈ ਅਤੇ ਨਾ ਹੀ ਮੇਰੀ ਪੀਸੀ ਹੋਈ ਮਹਿੰਦੀ ਨੂੰ ਕਦੀ ਆਪਣੇ ਚਰਨਾਂ ਨਾਲ ਲਾਇਆ॥ ੬੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मैंने अपने आपको मेहंदी की भांति पीस-पीस कर (साधना व तपस्या में) खपा दिया है, किंतु फिर भी हे प्रभु! तूने मेरी सुध नहीं ली और न ही मेरी पिसी हुई मेहंदी को कभी अपने चरणों में लगाया (मुझे अपने चरणों की शरण नहीं बख्शी)॥ ६५॥',
+      en: 'Satguru Kabir Saheb proclaims: I have ground myself down like henna leaves through rigorous devotion, yet O Lord, Thou hast not inquired after me, nor applied this crushed henna to Thy Lotus Feet. ||65||',
     },
     chintan: {
       pb: 'ਭਗਤ ਦੀ ਅੰਤਿਮ ਤਾਂਘ ਕੇਵਲ ਪ੍ਰਭੂ ਦੇ ਚਰਨਾਂ ਦੀ ਛੁਹ ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਹੁੰਦੀ ਹੈ। ਇਹ ਆਪਾ-ਸਮਰਪਣ ਦੀ ਸਿਖਰ ਹੈ।',
@@ -2755,9 +2755,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਸ ਪ੍ਰਭੂ ਦੇ ਦੁਆਰੇ ਉੱਤੇ ਆਉਣ-ਜਾਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਪ੍ਰੇਮੀ ਨੂੰ ਕੋਈ ਰੋਕ-ਟੋਕ ਨਹੀਂ ਕਰਦਾ, ਸਗੋਂ ਸਭ ਦਾ ਖੁੱਲ੍ਹਾ ਸੁਆਗਤ ਹੁੰਦਾ ਹੈ,ੇ ਅਜਿਹੇ ਦਾਤਾਰ ਦੇ ਦਰ ਨੂੰ ਕੋਈ ਕਿਵੇਂ ਛੱਡ ਸਕਦਾ ਹੈ? ਅਰਥਾਤ ਕਦੀ ਨਹੀਂ ਛੱਡਣਾ ਚਾਹੀਦਾ॥ ੬੬॥',
-      hi: 'कबीर जी कहते हैं- जिस परमात्मा के द्वार पर आने-जाने वाले किसी भी प्रेमी को कोई रोक-टोक नहीं करता, बल्कि सबका स्वागत होता है, ऐसे महान दाता के द्वार को कोई कैसे छोड़ सकता है? अर्थात उसे कभी नहीं छोड़ना चाहिए॥ ६६॥',
-      en: 'Kabir Ji says: At whose heavenly doorway none are ever barred or turned away, how could anyone ever forsake such a gracious portal? Indeed, it should never be left. ||66||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਸ ਪ੍ਰਭੂ ਦੇ ਦੁਆਰੇ ਉੱਤੇ ਆਉਣ-ਜਾਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਪ੍ਰੇਮੀ ਨੂੰ ਕੋਈ ਰੋਕ-ਟੋਕ ਨਹੀਂ ਕਰਦਾ, ਸਗੋਂ ਸਭ ਦਾ ਖੁੱਲ੍ਹਾ ਸੁਆਗਤ ਹੁੰਦਾ ਹੈ,ੇ ਅਜਿਹੇ ਦਾਤਾਰ ਦੇ ਦਰ ਨੂੰ ਕੋਈ ਕਿਵੇਂ ਛੱਡ ਸਕਦਾ ਹੈ? ਅਰਥਾਤ ਕਦੀ ਨਹੀਂ ਛੱਡਣਾ ਚਾਹੀਦਾ॥ ੬੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जिस परमात्मा के द्वार पर आने-जाने वाले किसी भी प्रेमी को कोई रोक-टोक नहीं करता, बल्कि सबका स्वागत होता है, ऐसे महान दाता के द्वार को कोई कैसे छोड़ सकता है? अर्थात उसे कभी नहीं छोड़ना चाहिए॥ ६६॥',
+      en: 'Satguru Kabir Saheb proclaims: At whose heavenly doorway none are ever barred or turned away, how could anyone ever forsake such a gracious portal? Indeed, it should never be left. ||66||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦਾ ਦਰ ਸਭ ਲਈ ਖੁੱਲ੍ਹਾ ਹੈ। ਉੱਥੇ ਜਾਤ, ਪਾਤ ਜਾਂ ਪਾਪਾਂ ਦਾ ਕੋਈ ਬੰਧਨ ਨਹੀਂ, ਕੇਵਲ ਪ੍ਰੇਮ ਚਾਹੀਦਾ ਹੈ।',
@@ -2828,9 +2828,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਡੁੱਬ ਰਿਹਾ ਸੀ, ਪਰ ਸ਼ੁਭ ਗੁਣਾਂ ਅਤੇ ਪ੍ਰਭੂ-ਭਗਤੀ ਦੀ ਲਹਿਰ ਦੇ ਝਲਕਾਰੇ ਨਾਲ ਬਚ ਗਿਆ। ਜਦ ਮੈਂ ਵੇਖਿਆ ਕਿ ਇਹ ਸਰੀਰ-ਰूपी ਬੇੜਾ ਗਲਿਆ-ਸੜਿਆ (ਨਾਸ਼ਵਾਨ) ਹੈ, ਤਾਂ ਮੈਂ ਇਸ ਵਿੱਚੋਂ ਝੱਟਪਟ (ਮੋਹ ਛੱਡ ਕੇ) ਉਤਰ ਪਿਆ॥ ੬੭॥',
-      hi: 'कबीर जी कहते हैं- मैं संसार-सागर में डूब रहा था, किंतु शुभ गुणों व प्रभु-भक्ति की लहर के झटके से बच गया। जब मैंने देखा कि यह शरीर-रूपी नौका जीर्ण-शीर्ण (नश्वर) है, तो मैं उससे तुरंत (मोह त्यागकर) उतर पड़ा॥ ६७॥',
-      en: 'Kabir Ji says: I was drowning in the ocean of samsara, but was swiftly rescued by a wave of divine virtues. When I realized that this body-boat was dilapidated and decaying, I instantly stepped out of it (renouncing bodily attachment). ||67||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਡੁੱਬ ਰਿਹਾ ਸੀ, ਪਰ ਸ਼ੁਭ ਗੁਣਾਂ ਅਤੇ ਪ੍ਰਭੂ-ਭਗਤੀ ਦੀ ਲਹਿਰ ਦੇ ਝਲਕਾਰੇ ਨਾਲ ਬਚ ਗਿਆ। ਜਦ ਮੈਂ ਵੇਖਿਆ ਕਿ ਇਹ ਸਰੀਰ-ਰूपी ਬੇੜਾ ਗਲਿਆ-ਸੜਿਆ (ਨਾਸ਼ਵਾਨ) ਹੈ, ਤਾਂ ਮੈਂ ਇਸ ਵਿੱਚੋਂ ਝੱਟਪਟ (ਮੋਹ ਛੱਡ ਕੇ) ਉਤਰ ਪਿਆ॥ ੬੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मैं संसार-सागर में डूब रहा था, किंतु शुभ गुणों व प्रभु-भक्ति की लहर के झटके से बच गया। जब मैंने देखा कि यह शरीर-रूपी नौका जीर्ण-शीर्ण (नश्वर) है, तो मैं उससे तुरंत (मोह त्यागकर) उतर पड़ा॥ ६७॥',
+      en: 'Satguru Kabir Saheb proclaims: I was drowning in the ocean of samsara, but was swiftly rescued by a wave of divine virtues. When I realized that this body-boat was dilapidated and decaying, I instantly stepped out of it (renouncing bodily attachment). ||67||',
     },
     chintan: {
       pb: 'ਸਰੀਰ ਅਤੇ ਸੰਸਾਰ ਦਾ ਮੋਹ ਛੱਡ ਕੇ ਹੀ ਆਤਮਾ ਪਾਰ ਉਤਰਦੀ ਹੈ। ਗੁਣਾਂ ਦਾ ਆਸਰਾ ਹੀ ਸੱਚੀ ਕਿਸ਼ਤੀ ਹੈ।',
@@ -2893,9 +2893,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪਾਪੀ ਪੁਰਸ਼ ਨੂੰ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਚੰਗੀ ਨਹੀਂ ਲੱਗਦੀ ਅਤੇ ਨਾ ਹੀ ਹਰੀ ਦੀ ਪੂਜਾ ਉਸ ਨੂੰ ਸੁਖਾਂਦੀ ਹੈ। ਜਿਵੇਂ ਮੱਖੀ ਸੁਗੰਧ ਵਾਲੇ ਚੰਦਨ ਨੂੰ ਤਿਆਗ ਦਿੰਦੀ ਹੈ ਅਤੇ ਜਿੱਥੇ ਗੰਦਗੀ (ਦੁਰਗੰਧ) ਹੋਵੇ, ਉੱਥੇ ਹੀ ਜਾਂਦੀ ਹੈ॥ ੬੮॥',
-      hi: 'कबीर जी कहते हैं- पापी पुरुष को भगवान की भक्ति अच्छी नहीं लगती और न ही ईश्वर की पूजा उसे सुहाती है। जैसे मक्खी सुगंधित चंदन को छोड़ देती है और जहां गंदगी (दुर्गंध) हो, वहीं जाती है॥ ६८॥',
-      en: 'Kabir Ji says: The sinner finds no joy in devotion or worship of the Lord. Just as a fly shuns fragrant sandalwood and settles only upon filth, so does the vicious mind cling to vice. ||68||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪਾਪੀ ਪੁਰਸ਼ ਨੂੰ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਚੰਗੀ ਨਹੀਂ ਲੱਗਦੀ ਅਤੇ ਨਾ ਹੀ ਹਰੀ ਦੀ ਪੂਜਾ ਉਸ ਨੂੰ ਸੁਖਾਂਦੀ ਹੈ। ਜਿਵੇਂ ਮੱਖੀ ਸੁਗੰਧ ਵਾਲੇ ਚੰਦਨ ਨੂੰ ਤਿਆਗ ਦਿੰਦੀ ਹੈ ਅਤੇ ਜਿੱਥੇ ਗੰਦਗੀ (ਦੁਰਗੰਧ) ਹੋਵੇ, ਉੱਥੇ ਹੀ ਜਾਂਦੀ ਹੈ॥ ੬੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- पापी पुरुष को भगवान की भक्ति अच्छी नहीं लगती और न ही ईश्वर की पूजा उसे सुहाती है। जैसे मक्खी सुगंधित चंदन को छोड़ देती है और जहां गंदगी (दुर्गंध) हो, वहीं जाती है॥ ६८॥',
+      en: 'Satguru Kabir Saheb proclaims: The sinner finds no joy in devotion or worship of the Lord. Just as a fly shuns fragrant sandalwood and settles only upon filth, so does the vicious mind cling to vice. ||68||',
     },
     chintan: {
       pb: 'ਵਿਕਾਰੀ ਮਨ ਨੂੰ ਵਿਕਾਰ ਹੀ ਭਾਉਂਦੇ ਹਨ। ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਅਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਕੇਵਲ ਪਵਿੱਤਰ ਹਿਰਦੇ ਨੂੰ ਹੀ ਭਾਉਂਦਾ ਹੈ।',
@@ -2958,9 +2958,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਵੈਦ ਮਰ ਗਿਆ, ਰੋਗੀ ਵੀ ਮਰ ਗਿਆ ਅਤੇ ਸਾਰਾ ਸੰਸਾਰ ਵੀ (ਵਿਕਾਰਾਂ ਅਤੇ ਮੋਹ ਦੀ ਮੌਤੇ) ਮਰ ਗਿਆ, ਪਰ ਇੱਕ ਕਬੀਰ ਨਾ ਮਰਿਆ ਜਿਸ ਨੂੰ ਕੋਈ ਰੋਣ ਵਾਲਾ ਨਹੀਂ ਹੈ (ਭਾਵ ਜਿਸਦਾ ਕੋਈ ਸੰਸਾਰੀ ਮੋਹ ਨਹੀਂ, ਉਹ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਅਮਰ ਹੋ ਗਿਆ ਹੈ)॥ ੬੯॥',
-      hi: 'कबीर जी कहते हैं- वैद्य मर गया, रोगी भी मर गया और सारा संसार भी (मोह व विकारों के कारण) मर गया, किंतु एक कबीर नहीं मरा जिसका कोई रोने वाला नहीं है (अर्थात जो संसार के मोह-माया के बंधनों से मुक्त होकर अमर हो चुका है)॥ ६९॥',
-      en: 'Kabir Ji says: The physician dies, the patient dies, and the entire world dies (consumed by the death of worldly attachment). Only Kabir does not die, for he has no worldly mourners attached to him (having transcended all mortality through God-realization). ||69||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਵੈਦ ਮਰ ਗਿਆ, ਰੋਗੀ ਵੀ ਮਰ ਗਿਆ ਅਤੇ ਸਾਰਾ ਸੰਸਾਰ ਵੀ (ਵਿਕਾਰਾਂ ਅਤੇ ਮੋਹ ਦੀ ਮੌਤੇ) ਮਰ ਗਿਆ, ਪਰ ਇੱਕ ਕਬੀਰ ਨਾ ਮਰਿਆ ਜਿਸ ਨੂੰ ਕੋਈ ਰੋਣ ਵਾਲਾ ਨਹੀਂ ਹੈ (ਭਾਵ ਜਿਸਦਾ ਕੋਈ ਸੰਸਾਰੀ ਮੋਹ ਨਹੀਂ, ਉਹ ਪ੍ਰਭੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਅਮਰ ਹੋ ਗਿਆ ਹੈ)॥ ੬੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- वैद्य मर गया, रोगी भी मर गया और सारा संसार भी (मोह व विकारों के कारण) मर गया, किंतु एक कबीर नहीं मरा जिसका कोई रोने वाला नहीं है (अर्थात जो संसार के मोह-माया के बंधनों से मुक्त होकर अमर हो चुका है)॥ ६९॥',
+      en: 'Satguru Kabir Saheb proclaims: The physician dies, the patient dies, and the entire world dies (consumed by the death of worldly attachment). Only Kabir does not die, for he has no worldly mourners attached to him (having transcended all mortality through God-realization). ||69||',
     },
     chintan: {
       pb: 'ਸਾਰਾ ਸੰਸਾਰ ਮੋਹ-ਮਾਇਆ ਦੇ ਰੋਗ ਵਿੱਚ ਫਸ ਕੇ ਆਤਮਿਕ ਤੌਰ \'ਤੇ ਮਰ ਰਿਹਾ ਹੈ। ਕੇਵਲ ਨਾਮ ਸਿਮਰਨ ਵਾਲਾ ਭਗਤ ਅਮਰ ਹੁੰਦਾ ਹੈ।',
@@ -3088,9 +3088,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹੁਣ ਤਾਂ ਐਸੀ ਬਾਤ ਹੋ ਗਈ ਹੈ ਕਿ ਮੈਂ ਆਪਣੇ ਮਨ ਨੂੰ ਭਾਉਂਦੀ (ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਵਾਲੀ) ਗաղ ਕਰ ਲਈ ਹੈ। ਹੁਣ ਮੌਤ ਤੋਂ ਕੀ ਡਰਨਾ, ਜਦੋਂ ਮੈਂ ਪ੍ਰਭੂ-ਪ੍ਰੇਮ ਵਿੱਚ ਆਪਾ ਅਰਪਣ ਕਰਨ ਦਾ ਪ੍ਰਣ (ਸਿਧਉਰਾ) ਹੱਥ ਵਿੱਚ ਲੈ ਲਿਆ ਹੈ॥ ੭੧॥',
-      hi: 'कबीर जी कहते हैं- अब तो ऐसी स्थिति बन गई है कि मैंने अपने मन-भावन प्रभु-प्रेम का मार्ग चुन लिया है। अब मृत्यु से क्या डरना, जब मैंने प्रेम और समर्पण का नारियल (प्रण) अपने हाथ में ले लिया है॥ ७१॥',
-      en: 'Kabir Ji says: Now such a state has blossomed that my heart has found its supreme desire in the Lord. Why fear death when I have taken the pledge of absolute dedication in my hand? ||71||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹੁਣ ਤਾਂ ਐਸੀ ਬਾਤ ਹੋ ਗਈ ਹੈ ਕਿ ਮੈਂ ਆਪਣੇ ਮਨ ਨੂੰ ਭਾਉਂਦੀ (ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਵਾਲੀ) ਗաղ ਕਰ ਲਈ ਹੈ। ਹੁਣ ਮੌਤ ਤੋਂ ਕੀ ਡਰਨਾ, ਜਦੋਂ ਮੈਂ ਪ੍ਰਭੂ-ਪ੍ਰੇਮ ਵਿੱਚ ਆਪਾ ਅਰਪਣ ਕਰਨ ਦਾ ਪ੍ਰਣ (ਸਿਧਉਰਾ) ਹੱਥ ਵਿੱਚ ਲੈ ਲਿਆ ਹੈ॥ ੭੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- अब तो ऐसी स्थिति बन गई है कि मैंने अपने मन-भावन प्रभु-प्रेम का मार्ग चुन लिया है। अब मृत्यु से क्या डरना, जब मैंने प्रेम और समर्पण का नारियल (प्रण) अपने हाथ में ले लिया है॥ ७१॥',
+      en: 'Satguru Kabir Saheb proclaims: Now such a state has blossomed that my heart has found its supreme desire in the Lord. Why fear death when I have taken the pledge of absolute dedication in my hand? ||71||',
     },
     chintan: {
       pb: 'ਜਿਸ ਨੇ ਪ੍ਰਭੂ ਨਾਲ ਸੱਚਾ ਪ੍ਰੇਮ ਪਾ ਲਿਆ ਹੈ, ਉਸ ਦੇ ਹਿਰਦੇ ਵਿੱਚੋਂ ਮੌਤ ਦਾ ਡਰ ਸਦਾ ਲਈ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
@@ -3153,9 +3153,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਵੇਂ ਮਿੱਠਾ ਰਸ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਗੰਢਾਂ ਵਾਲਾ ਗੰਨਾ ਚੂਪੀਦਾ ਹੈ, ਇਸੇ ਤਰ੍ਹਾਂ ਆਤਮਿਕ ਗੁਣ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਭਾਵੇਂ ਕਿੰਨੀ ਵੀ ਮਿਹਨਤ (ਕਸ਼ਟ) ਕਰਨੀ ਪਵੇ, ਪਿੱਛੇ ਨਹੀਂ ਹਟਣਾ ਚਾਹੀਦਾ; ਕਿਉਂਕਿ ਔਗੁਣਾਂ ਨਾਲ ਭਰੇ ਮਨੁੱਖ ਨੂੰ ਸੰਸਾਰ ਵਿੱਚ ਕੋਈ ਵੀ ਚੰਗਾ ਨਹੀਂ ਆਖਦਾ॥ ੭੨॥',
-      hi: 'कबीर जी कहते हैं- जैसे मधुर रस प्राप्त करने के लिए गन्ने को चूसा जाता है, उसी प्रकार आत्मिक गुण प्राप्त करने के लिए चाहे कितनी भी कठिन साधना क्यों न करनी पड़े, अवश्य करनी चाहिए; क्योंकि अवगुणों से भरे मनुष्य को संसार में कोई भी अच्छा नहीं कहता॥ ७२॥',
-      en: 'Kabir Ji says: Just as sugarcane is sucked to extract its sweet juice, so must one strive with utmost diligence to attain spiritual virtues. For no one in the world praises a person filled with vices. ||72||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਮਿੱਠਾ ਰਸ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਗੰਢਾਂ ਵਾਲਾ ਗੰਨਾ ਚੂਪੀਦਾ ਹੈ, ਇਸੇ ਤਰ੍ਹਾਂ ਆਤਮਿਕ ਗੁਣ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਭਾਵੇਂ ਕਿੰਨੀ ਵੀ ਮਿਹਨਤ (ਕਸ਼ਟ) ਕਰਨੀ ਪਵੇ, ਪਿੱਛੇ ਨਹੀਂ ਹਟਣਾ ਚਾਹੀਦਾ; ਕਿਉਂਕਿ ਔਗੁਣਾਂ ਨਾਲ ਭਰੇ ਮਨੁੱਖ ਨੂੰ ਸੰਸਾਰ ਵਿੱਚ ਕੋਈ ਵੀ ਚੰਗਾ ਨਹੀਂ ਆਖਦਾ॥ ੭੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जैसे मधुर रस प्राप्त करने के लिए गन्ने को चूसा जाता है, उसी प्रकार आत्मिक गुण प्राप्त करने के लिए चाहे कितनी भी कठिन साधना क्यों न करनी पड़े, अवश्य करनी चाहिए; क्योंकि अवगुणों से भरे मनुष्य को संसार में कोई भी अच्छा नहीं कहता॥ ७२॥',
+      en: 'Satguru Kabir Saheb proclaims: Just as sugarcane is sucked to extract its sweet juice, so must one strive with utmost diligence to attain spiritual virtues. For no one in the world praises a person filled with vices. ||72||',
     },
     chintan: {
       pb: 'ਗੁਣਾਂ ਅਤੇ ਗਿਆਨ ਦੀ ਪ੍ਰਾਪਤੀ ਸਹਿਜੇ ਨਹੀਂ ਹੁੰਦੀ, ਇਸ ਲਈ ਦ੍ਰਿੜ੍ਹ ਯਤਨ ਦੀ ਲੋੜ ਹੈ।',
@@ -3218,9 +3218,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਹ ਦੇਹ ਰੂਪੀ ਗਾਗਰ ਜੋ ਸੁਆਸਾਂ ਦੇ ਪਾਣੀ ਨਾਲ ਭਰੀ ਹੋਈ ਹੈ, ਪਤਾ ਨਹੀਂ ਕੱਲ੍ਹ ਜਾਂ ਅੱਜ ਹੀ ਟੁੱਟ ਜਾਣੀ ਹੈ (ਸਰੀਰ ਨਾਸ਼ਵਾਨ ਹੈ)। ਜਿਹੜੇ ਮਨੁੱਖ ਆਪਣੇ ਗੁਰੂ ਨੂੰ ਯਾਦ ਨਹੀਂ ਕਰਦੇ, ਉਹ ਜੀਵਨ ਦੇ ਅਧਵਾਟੇ ਹੀ ਵਿਕਾਰਾਂ ਹੱਥੋਂ ਲੁੱਟੇ ਜਾਂਦੇ ਹਨ॥ ੭੩॥',
-      hi: 'कबीर जी कहते हैं- यह शरीर-रूपी गागर जो श्वासों के जल से भरी है, आज या कल फूट जाएगी (नश्वर है)। जो मनुष्य अपने गुरु का स्मरण नहीं करते, वे जीवन के अधबीच में ही विकारों द्वारा ठग लिए जाते हैं (जीवन व्यर्थ गंवा देते हैं)॥ ७३॥',
-      en: 'Kabir Ji says: This water-pot of the body filled with breath will break today or tomorrow. Those who do not remember their Guru are robbed midway by worldly vices. ||73||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਦੇਹ ਰੂਪੀ ਗਾਗਰ ਜੋ ਸੁਆਸਾਂ ਦੇ ਪਾਣੀ ਨਾਲ ਭਰੀ ਹੋਈ ਹੈ, ਪਤਾ ਨਹੀਂ ਕੱਲ੍ਹ ਜਾਂ ਅੱਜ ਹੀ ਟੁੱਟ ਜਾਣੀ ਹੈ (ਸਰੀਰ ਨਾਸ਼ਵਾਨ ਹੈ)। ਜਿਹੜੇ ਮਨੁੱਖ ਆਪਣੇ ਗੁਰੂ ਨੂੰ ਯਾਦ ਨਹੀਂ ਕਰਦੇ, ਉਹ ਜੀਵਨ ਦੇ ਅਧਵਾਟੇ ਹੀ ਵਿਕਾਰਾਂ ਹੱਥੋਂ ਲੁੱਟੇ ਜਾਂਦੇ ਹਨ॥ ੭੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यह शरीर-रूपी गागर जो श्वासों के जल से भरी है, आज या कल फूट जाएगी (नश्वर है)। जो मनुष्य अपने गुरु का स्मरण नहीं करते, वे जीवन के अधबीच में ही विकारों द्वारा ठग लिए जाते हैं (जीवन व्यर्थ गंवा देते हैं)॥ ७३॥',
+      en: 'Satguru Kabir Saheb proclaims: This water-pot of the body filled with breath will break today or tomorrow. Those who do not remember their Guru are robbed midway by worldly vices. ||73||',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਅਸਥਿਰ ਹੈ। ਮੌਤ ਦਾ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ, ਇਸ ਲਈ ਗੁਰੂ-ਸਿਮਰਨ ਵਿੱਚ ਦੇਰੀ ਨਾ ਕਰੋ।',
@@ -3291,9 +3291,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਪ੍ਰਮਾਤਮਾ ਦੇ ਦਰ ਦਾ ਵਫ਼ਾਦਾਰ ਕੁੱਤਾ ਹਾਂ, ਮੇਰਾ ਨਾਮ \'ਮੋਤੀ\' ਹੈ। ਮੇਰੇ ਗਲ ਵਿੱਚ ਮਾਲਕ (ਪ੍ਰਭੂ) ਨੇ ਹੁਕਮ ਦੀ ਰੱਸੀ ਪਾਈ ਹੋਈ ਹੈ, ਮਾਲਕ ਜਿਧਰ ਵੀ ਖਿੱਚਦਾ ਹੈ, ਮੈਂ ਉੱਧਰ ਹੀ ਜਾਂਦਾ ਹਾਂ॥ ੭੪॥',
-      hi: 'कबीर जी कहते हैं- मैं परमात्मा के द्वार का वफादार कुत्ता हूँ, मेरा नाम \'मोती\' है। मेरे गले में मालिक (प्रभु) ने आज्ञा की डोरी (रस्सी) डाली हुई है, मालिक जिधर भी खींचता है, मैं उधर ही जाता हूँ॥ ७४॥',
-      en: 'Kabir Ji says: I am the faithful dog of the Lord\'s threshold, and my name is "Moti" (Pearl). Around my neck is the leash of His divine will; wherever He pulls me, thither I go. ||74||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਪ੍ਰਮਾਤਮਾ ਦੇ ਦਰ ਦਾ ਵਫ਼ਾਦਾਰ ਕੁੱਤਾ ਹਾਂ, ਮੇਰਾ ਨਾਮ \'ਮੋਤੀ\' ਹੈ। ਮੇਰੇ ਗਲ ਵਿੱਚ ਮਾਲਕ (ਪ੍ਰਭੂ) ਨੇ ਹੁਕਮ ਦੀ ਰੱਸੀ ਪਾਈ ਹੋਈ ਹੈ, ਮਾਲਕ ਜਿਧਰ ਵੀ ਖਿੱਚਦਾ ਹੈ, ਮੈਂ ਉੱਧਰ ਹੀ ਜਾਂਦਾ ਹਾਂ॥ ੭੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मैं परमात्मा के द्वार का वफादार कुत्ता हूँ, मेरा नाम \'मोती\' है। मेरे गले में मालिक (प्रभु) ने आज्ञा की डोरी (रस्सी) डाली हुई है, मालिक जिधर भी खींचता है, मैं उधर ही जाता हूँ॥ ७४॥',
+      en: 'Satguru Kabir Saheb proclaims: I am the faithful dog of the Lord\'s threshold, and my name is "Moti" (Pearl). Around my neck is the leash of His divine will; wherever He pulls me, thither I go. ||74||',
     },
     chintan: {
       pb: 'ਭਗਤ ਆਪਣੇ ਮਾਲਕ (ਪ੍ਰਭੂ) ਦੀ ਰਜ਼ਾ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਰਾਜ਼ੀ ਰਹਿੰਦਾ ਹੈ। ਆਪਣੀ ਕੋਈ ਇੱਛਾ ਨਹੀਂ ਹੁੰਦੀ।',
@@ -3356,9 +3356,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਲੱਕੜੀ (ਤुलसी) ਦੀ ਮਾਲਾ ਹੱਥ ਵਿੱਚ ਫੜ ਕੇ ਸੰਸਾਰ ਨੂੰ ਕੀ ਦਿਖਾਉਂਦਾ ਹੈਂ? ਜੇ ਤੂੰ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਨੂੰ ਯਾਦ ਨਹੀਂ ਕਰਦਾ, ਤਾਂ ਇਸ ਮਾਲਾ ਨਾਲ ਕੀ ਲਾਭ ਹੋਵੇਗਾ? (ਬਾਹਰੀ ਦਿਖਾਵੇ ਦਾ ਕੋਈ ਮੁੱਲ ਨਹੀਂ)॥ ੭੫॥',
-      hi: 'कबीर जी कहते हैं- लकड़ी की माला हाथ में लेकर संसार को क्या दिखा रहा है? यदि तू अपने हृदय में भगवान का स्मरण नहीं करता, तो इस माला से क्या लाभ होगा? (बाहरी पाखंड व्यर्थ है)॥ ७५॥',
-      en: 'Kabir Ji says: Why display a wooden rosary to the world? If you do not remember the Lord within your heart, of what use is this rosary? (External pretense is worthless). ||75||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਲੱਕੜੀ (ਤुलसी) ਦੀ ਮਾਲਾ ਹੱਥ ਵਿੱਚ ਫੜ ਕੇ ਸੰਸਾਰ ਨੂੰ ਕੀ ਦਿਖਾਉਂਦਾ ਹੈਂ? ਜੇ ਤੂੰ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਨੂੰ ਯਾਦ ਨਹੀਂ ਕਰਦਾ, ਤਾਂ ਇਸ ਮਾਲਾ ਨਾਲ ਕੀ ਲਾਭ ਹੋਵੇਗਾ? (ਬਾਹਰੀ ਦਿਖਾਵੇ ਦਾ ਕੋਈ ਮੁੱਲ ਨਹੀਂ)॥ ੭੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- लकड़ी की माला हाथ में लेकर संसार को क्या दिखा रहा है? यदि तू अपने हृदय में भगवान का स्मरण नहीं करता, तो इस माला से क्या लाभ होगा? (बाहरी पाखंड व्यर्थ है)॥ ७५॥',
+      en: 'Satguru Kabir Saheb proclaims: Why display a wooden rosary to the world? If you do not remember the Lord within your heart, of what use is this rosary? (External pretense is worthless). ||75||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਭਗਤੀ ਹਿਰਦੇ ਦੀ ਸ਼ੁੱਧਤਾ ਨਾਲ ਹੈ, ਨਾ ਕਿ ਬਾਹਰੀ ਮਾਲਾ ਫੇਰਨ ਦੇ ਪਾਖੰਡ ਨਾਲ।',
@@ -3429,9 +3429,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਭੂ-ਵਿਛੋੜੇ ਦਾ ਸੱਪ ਮਨ ਵਿੱਚ ਵੱਸ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਉੱਤੇ ਕੋਈ ਮੰਤਰ ਅਸਰ ਨਹੀਂ ਕਰਦਾ। ਰਾਮ ਦੇ ਵਿਜੋਗ ਦਾ ਮਾਰਿਆ ਪ੍ਰੇਮੀ ਜੀਉਂਦਾ ਨਹੀਂ ਰਹਿ ਸਕਦਾ, ਜੇ ਜਿਉਂਦਾ ਰਹੇ ਤਾਂ ਉਹ ਪ੍ਰਭੂ ਦੇ ਪ੍ਰੇਮ ਵਿੱਚ ਪਾਗਲ (ਦੀਵਾਨਾ) ਹੋ ਜਾਂਦਾ ਹੈ॥ ੭੬॥',
-      hi: 'कबीर जी कहते हैं- प्रभु-वियोग रूपी सर्प मन में बस जाता है, जिस पर कोई मंत्र असर नहीं करता। भगवान के वियोग का मारा प्रेमी जीवित नहीं रह सकता, और यदि वह जीवित रहे भी तो वह प्रभु के प्रेम में दीवाना (पागल) हो जाता है॥ ७६॥',
-      en: 'Kabir Ji says: The serpent of longing for the Lord dwells in the mind, yielding to no earthly spell or antidote. The lover separated from the Lord cannot survive; if he survives, he is utterly intoxicated and maddened with divine love. ||76||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਭੂ-ਵਿਛੋੜੇ ਦਾ ਸੱਪ ਮਨ ਵਿੱਚ ਵੱਸ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਉੱਤੇ ਕੋਈ ਮੰਤਰ ਅਸਰ ਨਹੀਂ ਕਰਦਾ। ਰਾਮ ਦੇ ਵਿਜੋਗ ਦਾ ਮਾਰਿਆ ਪ੍ਰੇਮੀ ਜੀਉਂਦਾ ਨਹੀਂ ਰਹਿ ਸਕਦਾ, ਜੇ ਜਿਉਂਦਾ ਰਹੇ ਤਾਂ ਉਹ ਪ੍ਰਭੂ ਦੇ ਪ੍ਰੇਮ ਵਿੱਚ ਪਾਗਲ (ਦੀਵਾਨਾ) ਹੋ ਜਾਂਦਾ ਹੈ॥ ੭੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- प्रभु-वियोग रूपी सर्प मन में बस जाता है, जिस पर कोई मंत्र असर नहीं करता। भगवान के वियोग का मारा प्रेमी जीवित नहीं रह सकता, और यदि वह जीवित रहे भी तो वह प्रभु के प्रेम में दीवाना (पागल) हो जाता है॥ ७६॥',
+      en: 'Satguru Kabir Saheb proclaims: The serpent of longing for the Lord dwells in the mind, yielding to no earthly spell or antidote. The lover separated from the Lord cannot survive; if he survives, he is utterly intoxicated and maddened with divine love. ||76||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦੇ ਵਿਛੋੜੇ ਦੀ ਪੀੜ ਸਭ ਤੋਂ ਤੀਬਰ ਹੈ। ਜਦੋਂ ਇਹ ਲਗਦੀ ਹੈ ਤਾਂ ਸੰਸਾਰਕ ਸੁਖ ਫਿੱਕੇ ਪੈ ਜਾਂਦੇ ਹਨ।',
@@ -3567,9 +3567,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕਾਲ (ਜਮ) ਦਾ ਸੋਟਾ ਬਹੁਤ ਭਿਆਨਕ ਹੈ, ਉਹ ਸਹਾਰਿਆ ਨਹੀਂ ਜਾਂਦਾ। ਪਰ ਜਦੋਂ ਦਾ ਮੈਨੂੰ ਪ੍ਰਭੂ ਦਾ ਸੰਤ (ਸਾਧੂ) ਮਿਲਿਆ ਹੈ, ਉਸ ਨੇ ਮੈਨੂੰ ਆਪਣੇ ਪੱਲੇ ਨਾਲ ਲਾ ਲਿਆ ਹੈ (ਪ੍ਰਭੂ ਦੀ ਸ਼ਰਨ ਬਖਸ਼ੀ ਹੈ), ਜਿਸ ਨਾਲ ਮੈਂ ਕਾਲ ਦੇ ਡਰ ਤੋਂ ਬਚ ਗਿਆ ਹਾਂ॥ ੭੮॥',
-      hi: 'कबीर जी कहते हैं- काल (यम) का डंडा बहुत बुरा है, वह सहा नहीं जाता। परंतु जब से मुझे संत (साधु) मिला है, उसने मुझे अपने आंचल से लगा लिया है (प्रभु की शरण दी है), जिससे मैं काल के भय से मुक्त हो गया हूँ॥ ७८॥',
-      en: 'Kabir Ji says: The heavy staff of Death is cruel and unbearable. But since I met a holy Saint, he has taken me under the protective hem of his garment, saving me from all fear of mortality. ||78||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕਾਲ (ਜਮ) ਦਾ ਸੋਟਾ ਬਹੁਤ ਭਿਆਨਕ ਹੈ, ਉਹ ਸਹਾਰਿਆ ਨਹੀਂ ਜਾਂਦਾ। ਪਰ ਜਦੋਂ ਦਾ ਮੈਨੂੰ ਪ੍ਰਭੂ ਦਾ ਸੰਤ (ਸਾਧੂ) ਮਿਲਿਆ ਹੈ, ਉਸ ਨੇ ਮੈਨੂੰ ਆਪਣੇ ਪੱਲੇ ਨਾਲ ਲਾ ਲਿਆ ਹੈ (ਪ੍ਰਭੂ ਦੀ ਸ਼ਰਨ ਬਖਸ਼ੀ ਹੈ), ਜਿਸ ਨਾਲ ਮੈਂ ਕਾਲ ਦੇ ਡਰ ਤੋਂ ਬਚ ਗਿਆ ਹਾਂ॥ ੭੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- काल (यम) का डंडा बहुत बुरा है, वह सहा नहीं जाता। परंतु जब से मुझे संत (साधु) मिला है, उसने मुझे अपने आंचल से लगा लिया है (प्रभु की शरण दी है), जिससे मैं काल के भय से मुक्त हो गया हूँ॥ ७८॥',
+      en: 'Satguru Kabir Saheb proclaims: The heavy staff of Death is cruel and unbearable. But since I met a holy Saint, he has taken me under the protective hem of his garment, saving me from all fear of mortality. ||78||',
     },
     chintan: {
       pb: 'ਸਤਿਗੁਰੂ ਅਤੇ ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਹੀ ਜੀਵ ਨੂੰ ਮੌਤ ਅਤੇ ਕਾਲ ਦੇ ਡਰ ਤੋਂ ਮੁਕਤ ਕਰਦੀ ਹੈ।',
@@ -3632,9 +3632,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਵੈਦ (ਅਭਿਮਾਨੀ ਮਨੁੱਖ) ਆਖਦਾ ਹੈ ਕਿ ਮੈਂ ਬੜਾ ਸਿਆਣਾ ਹਾਂ ਅਤੇ ਸਭ ਰੋਗਾਂ ਦਾ ਇਲਾਜ ਮੇਰੇ ਵੱਸ ਵਿੱਚ ਹੈ, ਪਰ ਅਸਲ ਵਿੱਚ ਇਹ ਜੀਵਨ-ਰੂਪ ਵਸਤੂ ਤਾਂ ਗੋਪਾਲ (ਪ੍ਰਭੂ) ਦੀ ਦਿੱਤੀ ਹੋਈ ਹੈ, ਜਦੋਂ ਉਹ ਚਾਹੇ ਇਸ ਨੂੰ ਖੋਹ ਲੈਂਦਾ ਹੈ॥ ੭੯॥',
-      hi: 'कबीर जी कहते हैं- वैद्य (अहमकारी मनुष्य) कहता है कि मैं बहुत ज्ञानी हूँ और हर रोग का इलाज मेरे वश में है, किंतु वास्तव में यह जीवन-रूपी वस्तु तो गोपाल (परमात्मा) की दी हुई है, जब वह चाहे इसे वापस छीन लेता है॥ ७९॥',
-      en: 'Kabir Ji says: The arrogant physician boasts that he is wise and that cures lie in his hands. But in truth, this life belongs to the Lord Gopal; whenever He pleases, He snatches it away. ||79||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਵੈਦ (ਅਭਿਮਾਨੀ ਮਨੁੱਖ) ਆਖਦਾ ਹੈ ਕਿ ਮੈਂ ਬੜਾ ਸਿਆਣਾ ਹਾਂ ਅਤੇ ਸਭ ਰੋਗਾਂ ਦਾ ਇਲਾਜ ਮੇਰੇ ਵੱਸ ਵਿੱਚ ਹੈ, ਪਰ ਅਸਲ ਵਿੱਚ ਇਹ ਜੀਵਨ-ਰੂਪ ਵਸਤੂ ਤਾਂ ਗੋਪਾਲ (ਪ੍ਰਭੂ) ਦੀ ਦਿੱਤੀ ਹੋਈ ਹੈ, ਜਦੋਂ ਉਹ ਚਾਹੇ ਇਸ ਨੂੰ ਖੋਹ ਲੈਂਦਾ ਹੈ॥ ੭੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- वैद्य (अहमकारी मनुष्य) कहता है कि मैं बहुत ज्ञानी हूँ और हर रोग का इलाज मेरे वश में है, किंतु वास्तव में यह जीवन-रूपी वस्तु तो गोपाल (परमात्मा) की दी हुई है, जब वह चाहे इसे वापस छीन लेता है॥ ७९॥',
+      en: 'Satguru Kabir Saheb proclaims: The arrogant physician boasts that he is wise and that cures lie in his hands. But in truth, this life belongs to the Lord Gopal; whenever He pleases, He snatches it away. ||79||',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਅਤੇ ਮੌਤ ਕੇਵਲ ਪ੍ਰਮਾਤਮਾ ਦੇ ਹੱਥ ਵਿੱਚ ਹੈ। ਮਨੁੱਖ ਦਾ ਹੰਕਾਰ ਵਿਅਰਥ ਹੈ।',
@@ -3786,9 +3786,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇ ਮੈਂ ਸੱਤਾਂ ਸਮੁੰਦਰਾਂ ਦੇ ਪਾਣੀ ਦੀ ਸਿਆਹੀ ਬਣਾ ਲਵਾਂ, ਸਾਰੀ ਬਨਾਸਪਤੀ (ਜੰਗਲਾਂ) ਦੀਆਂ ਕਲਮਾਂ ਕਰ ਲਵਾਂ ਅਤੇ ਸਾਰੀ ਪ੍ਰਿਥਵੀ ਨੂੰ ਕਾਗਜ਼ ਬਣਾ ਲਵਾਂ, ਤਾਂ ਵੀ ਹਰੀ ਦਾ ਅੰਤਿਮ ਜੱਸ (ਮਹਿਮਾ) ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ॥ ੮੧॥',
-      hi: 'कबीर जी कहते हैं- यदि मैं सातों समुद्रों के जल की स्याही बना लूँ, समस्त वनों (वृक्षों) की कलमें बना लूँ और संपूर्ण पृथ्वी को कागज बना लूँ, तब भी हरि का अंतहीन यश (महिमा) लिखा नहीं जा सकता॥ ८१॥',
-      en: 'Kabir Ji says: If I were to turn all seven oceans into ink, fashion every tree in the forest into a quill, and use the entire earth as paper, still the infinite Glory of the Lord could never be fully written. ||81||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇ ਮੈਂ ਸੱਤਾਂ ਸਮੁੰਦਰਾਂ ਦੇ ਪਾਣੀ ਦੀ ਸਿਆਹੀ ਬਣਾ ਲਵਾਂ, ਸਾਰੀ ਬਨਾਸਪਤੀ (ਜੰਗਲਾਂ) ਦੀਆਂ ਕਲਮਾਂ ਕਰ ਲਵਾਂ ਅਤੇ ਸਾਰੀ ਪ੍ਰਿਥਵੀ ਨੂੰ ਕਾਗਜ਼ ਬਣਾ ਲਵਾਂ, ਤਾਂ ਵੀ ਹਰੀ ਦਾ ਅੰਤਿਮ ਜੱਸ (ਮਹਿਮਾ) ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ॥ ੮੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यदि मैं सातों समुद्रों के जल की स्याही बना लूँ, समस्त वनों (वृक्षों) की कलमें बना लूँ और संपूर्ण पृथ्वी को कागज बना लूँ, तब भी हरि का अंतहीन यश (महिमा) लिखा नहीं जा सकता॥ ८१॥',
+      en: 'Satguru Kabir Saheb proclaims: If I were to turn all seven oceans into ink, fashion every tree in the forest into a quill, and use the entire earth as paper, still the infinite Glory of the Lord could never be fully written. ||81||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦੀ ਮਹਿਮਾ ਅਤੇ ਗੁਣ ਅਪਾਰ ਹਨ। ਮਨੁੱਖੀ ਬੁੱਧੀ ਅਤੇ ਬਾਣੀ ਉਨ੍ਹਾਂ ਦਾ ਪਾਰਾਵਾਰ ਨਹੀਂ ਪਾ ਸਕਦੇ।',
@@ -3859,9 +3859,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੁਲਾਹੇ ਦੀ ਨੀਵੀਂ ਜਾਤ ਕੀ ਕਰ ਸਕਦੀ ਹੈ (ਕੋਈ ਨੁਕਸਾਨ ਨਹੀਂ ਕਰ ਸਕਦੀ), ਜਦੋਂ ਕਿ ਮੇਰੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਗੋਪਾਲ ਵੱਸਦਾ ਹੈ। ਹੇ ਭਾਈ! ਪ੍ਰਭੂ ਰਮਈਆ ਨੂੰ ਗਲ ਨਾਲ ਲਾਓ (ਪ੍ਰੇਮ ਕਰੋ), ਜਿਸ ਨਾਲ ਸਾਰੇ ਜੰਜਾਲ ਕੱਟੇ ਜਾਂਦੇ ਹਨ॥ ੮੨॥',
-      hi: 'कबीर जी कहते हैं- जुलाहे की नीची जाति क्या बिगाड़ सकती है, जब मेरे हृदय में भगवान गोपाल का वास है। हे भाई! उस सर्वव्यापक प्रभु को गले लगाओ (प्रेम करो), जिससे सारे सांसारिक जंजाल समाप्त हो जाते हैं॥ ८२॥',
-      en: 'Kabir Ji says: What can the weaver caste matter when God Gopal dwells within my heart? O brother, embrace the Lord closely in love, and all worldly bonds and traps are instantly dissolved. ||82||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੁਲਾਹੇ ਦੀ ਨੀਵੀਂ ਜਾਤ ਕੀ ਕਰ ਸਕਦੀ ਹੈ (ਕੋਈ ਨੁਕਸਾਨ ਨਹੀਂ ਕਰ ਸਕਦੀ), ਜਦੋਂ ਕਿ ਮੇਰੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਗੋਪਾਲ ਵੱਸਦਾ ਹੈ। ਹੇ ਭਾਈ! ਪ੍ਰਭੂ ਰਮਈਆ ਨੂੰ ਗਲ ਨਾਲ ਲਾਓ (ਪ੍ਰੇਮ ਕਰੋ), ਜਿਸ ਨਾਲ ਸਾਰੇ ਜੰਜਾਲ ਕੱਟੇ ਜਾਂਦੇ ਹਨ॥ ੮੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जुलाहे की नीची जाति क्या बिगाड़ सकती है, जब मेरे हृदय में भगवान गोपाल का वास है। हे भाई! उस सर्वव्यापक प्रभु को गले लगाओ (प्रेम करो), जिससे सारे सांसारिक जंजाल समाप्त हो जाते हैं॥ ८२॥',
+      en: 'Satguru Kabir Saheb proclaims: What can the weaver caste matter when God Gopal dwells within my heart? O brother, embrace the Lord closely in love, and all worldly bonds and traps are instantly dissolved. ||82||',
     },
     chintan: {
       pb: 'ਬ੍ਰਹਮ ਗਿਆਨ ਅਤੇ ਪ੍ਰਭੂ ਦੀ ਪ੍ਰਾਪਤੀ ਅੱਗੇ ਜਾਤ-ਪਾਤ ਦੇ ਸਾਰੇ ਬੰਧਨ ਅਰਥਹੀਣ ਹੋ ਜਾਂਦੇ ਹਨ।',
@@ -3924,9 +3924,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕੋਈ ਅਜਿਹਾ ਵਿਰਲਾ ਹੀ ਹੈ ਜਿਹੜਾ (ਦੇਹ ਦੇ ਮੋਹ ਰੂਪੀ) ਮੰਦਰ ਨੂੰ ਸਾੜ ਦੇਵੇ (ਮੋਹ ਤਿਆਗ ਦੇਵੇ) ਅਤੇ ਪੰਜਾਂ ਵਿਕਾਰ-ਰੂਪੀ ਲੜਕਿਆਂ ਨੂੰ ਮਾਰ ਕੇ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਲਿਵ ਜੋੜ ਲਵੇ॥ ੮੩॥',
-      hi: 'कबीर जी कहते हैं- कोई ऐसा विरला ही है जो (देह के मोह-रूपी) मंदिर को जला दे (मोह त्याग दे) और पांचों विकार-रूपी लड़कों को मारकर भगवान से अपनी लिव (सुरति) जोड़ ले॥ ८३॥',
-      en: 'Kabir Ji says: Rarely is there one who burns down the body-temple of attachment, slays the five unruly sons (vices), and fixes his consciousness in loving communion with the Lord. ||83||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕੋਈ ਅਜਿਹਾ ਵਿਰਲਾ ਹੀ ਹੈ ਜਿਹੜਾ (ਦੇਹ ਦੇ ਮੋਹ ਰੂਪੀ) ਮੰਦਰ ਨੂੰ ਸਾੜ ਦੇਵੇ (ਮੋਹ ਤਿਆਗ ਦੇਵੇ) ਅਤੇ ਪੰਜਾਂ ਵਿਕਾਰ-ਰੂਪੀ ਲੜਕਿਆਂ ਨੂੰ ਮਾਰ ਕੇ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਲਿਵ ਜੋੜ ਲਵੇ॥ ੮੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- कोई ऐसा विरला ही है जो (देह के मोह-रूपी) मंदिर को जला दे (मोह त्याग दे) और पांचों विकार-रूपी लड़कों को मारकर भगवान से अपनी लिव (सुरति) जोड़ ले॥ ८३॥',
+      en: 'Satguru Kabir Saheb proclaims: Rarely is there one who burns down the body-temple of attachment, slays the five unruly sons (vices), and fixes his consciousness in loving communion with the Lord. ||83||',
     },
     chintan: {
       pb: 'ਪੰਜਾਂ ਵਿਕਾਰਾਂ ਨੂੰ ਕਾਬੂ ਕੀਤੇ ਬਿਨਾਂ ਅਤੇ ਦੇਹ ਦਾ ਮੋਹ ਛੱਡੇ ਬਿਨਾਂ ਪ੍ਰਭੂ ਨਾਲ ਲਿਵ ਨਹੀਂ ਲੱਗ ਸਕਦੀ।',
@@ -3989,9 +3989,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕੋਈ ਅਜਿਹਾ ਵਿਰਲਾ ਹੀ ਹੈ ਜਿਹੜਾ ਇਸ ਸਰੀਰ ਦੇ ਮੋਹ ਨੂੰ (ਭਾਵ ਅਹੰਕਾਰ ਨੂੰ) ਸਾੜ ਦੇਵੇ। ਇਹ ਅੰ੍ਹੇ ਅਗਿਆਨੀ ਲੋਕ ਇਸ ਸੱਚ ਨੂੰ ਨਹੀਂ ਸਮਝਦੇ, ਭਾਵੇਂ ਕਬੀਰ ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਹੋਕਾ ਦੇ ਕੇ ਸਮਝਾ ਰਿਹਾ ਹੈ॥ ੮੪॥',
-      hi: 'कबीर जी कहते हैं- कोई ऐसा विरला ही है जो इस शरीर के मोह को जला दे। यह अंधे संसारी लोग इस सत्य को नहीं जानते, यद्यपि कबीर उच्च स्वर में पुकार-पुकार कर यह बात कह रहा है॥ ८४॥',
-      en: 'Kabir Ji says: Rarely is there one who incinerates attachment to this mortal frame. The blinded worldly people understand it not, though Kabir cries out aloud in proclamation. ||84||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕੋਈ ਅਜਿਹਾ ਵਿਰਲਾ ਹੀ ਹੈ ਜਿਹੜਾ ਇਸ ਸਰੀਰ ਦੇ ਮੋਹ ਨੂੰ (ਭਾਵ ਅਹੰਕਾਰ ਨੂੰ) ਸਾੜ ਦੇਵੇ। ਇਹ ਅੰ੍ਹੇ ਅਗਿਆਨੀ ਲੋਕ ਇਸ ਸੱਚ ਨੂੰ ਨਹੀਂ ਸਮਝਦੇ, ਭਾਵੇਂ ਕਬੀਰ ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਹੋਕਾ ਦੇ ਕੇ ਸਮਝਾ ਰਿਹਾ ਹੈ॥ ੮੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- कोई ऐसा विरला ही है जो इस शरीर के मोह को जला दे। यह अंधे संसारी लोग इस सत्य को नहीं जानते, यद्यपि कबीर उच्च स्वर में पुकार-पुकार कर यह बात कह रहा है॥ ८४॥',
+      en: 'Satguru Kabir Saheb proclaims: Rarely is there one who incinerates attachment to this mortal frame. The blinded worldly people understand it not, though Kabir cries out aloud in proclamation. ||84||',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਜੀਵ ਸਰੀਰ ਅਤੇ ਮਾਇਆ ਦੇ ਮੋਹ ਵਿੱਚ ਅੰ੍ਹੇ ਹੋਏ ਹਨ। ਉਹ ਸੱਚੇ ਗਿਆਨ ਨੂੰ ਨਹੀਂ ਪਛਾਣਦੇ।',
@@ -4062,9 +4062,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਵੇਂ ਸਤੀ ਹੋਣ ਵਾਲੀ ਇਸਤਰੀ ਚਿਖਾ ਉੱਤੇ ਚੜ੍ਹ ਕੇ ਆਖਦੀ ਹੈ-ਹੇ ਮਸਾਣਾਂ ਦੇ ਬੀਰ! ਸੁਣ, ਸਾਰਾ ਸੰਸਾਰ ਤੁਰ ਗਿਆ ਹੈ, ਆਖਿਰਕਾਰ ਮੈਂ ਤੇ ਤੁਸੀਂ ਸਾਰਿਆਂ ਨੇ ਇੱਥੇ ਹੀ (ਮਸਾਣਾਂ ਵਿੱਚ) ਆਉਣਾ ਹੈ॥ ੮੫॥',
-      hi: 'कबीर जी कहते हैं- जैसे सती होने वाली स्त्री चिता पर चढ़कर पुकारती है- हे श्मशान के वीर! सुन, सारा संसार यहाँ से चला गया है, अंततः हम और तुम सबको यहीं (श्मशान में) आना है॥ ८५॥',
-      en: 'Kabir Ji says: Just as the Sati mounting the funeral pyre proclaims: O spirit of the cremation ground, listen! The entire world has departed, and ultimately you and I must both end up here. ||85||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਸਤੀ ਹੋਣ ਵਾਲੀ ਇਸਤਰੀ ਚਿਖਾ ਉੱਤੇ ਚੜ੍ਹ ਕੇ ਆਖਦੀ ਹੈ-ਹੇ ਮਸਾਣਾਂ ਦੇ ਬੀਰ! ਸੁਣ, ਸਾਰਾ ਸੰਸਾਰ ਤੁਰ ਗਿਆ ਹੈ, ਆਖਿਰਕਾਰ ਮੈਂ ਤੇ ਤੁਸੀਂ ਸਾਰਿਆਂ ਨੇ ਇੱਥੇ ਹੀ (ਮਸਾਣਾਂ ਵਿੱਚ) ਆਉਣਾ ਹੈ॥ ੮੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जैसे सती होने वाली स्त्री चिता पर चढ़कर पुकारती है- हे श्मशान के वीर! सुन, सारा संसार यहाँ से चला गया है, अंततः हम और तुम सबको यहीं (श्मशान में) आना है॥ ८५॥',
+      en: 'Satguru Kabir Saheb proclaims: Just as the Sati mounting the funeral pyre proclaims: O spirit of the cremation ground, listen! The entire world has departed, and ultimately you and I must both end up here. ||85||',
     },
     chintan: {
       pb: 'ਮੌਤ ਅਟੱਲ ਸੱਚਾਈ ਹੈ। ਸੰਸਾਰ ਦੇ ਸਾਰੇ ਪ੍ਰਪੰਚ ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਹੀ ਸਭ ਤੋਂ ਵੱਡਾ ਕਰਤੱਵ ਹੈ।',
@@ -4192,9 +4192,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਸ ਪ੍ਰਭੂ ਨੂੰ ਮੈਂ ਬਾਹਰ ਥਾਵੀਂ ਲੱਭਦਾ ਸੀ, ਉਹੀ ਅਸਲ ਠਾਉਂ (ਆਪਣਾ ਆਪ) ਮੈਨੂੰ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ ਹੈ। ਜਿਸ ਨੂੰ ਪਹਿਲਾਂ ਤੂੰ ਆਪਣੇ ਨਾਲੋਂ ਵੱਖਰਾ (ਹੋਰ) ਸਮਝਦਾ ਸੀ, ਹੁਣ ਗਿਆਨ ਹੋਣ ’ਤੇ ਤੂੰ ਆਪ ਹੀ ਉਹ (ਪ੍ਰਭੂ-ਰੂਪ) ਹੋ ਗਿਆ ਹੈਂ॥ ੮੭॥',
-      hi: 'कबीर जी कहते हैं- जिस परमात्मा को मैं बाहर खोज रहा था, वही परम धाम मुझे भीतर मिल गया है। जिसे पहले तू अपने से भिन्न (दूसरा) कहता था, अब ज्ञान होने पर तू स्वयं वही (प्रभु-रूप) हो गया है॥ ८७॥',
-      en: 'Kabir Ji says: Whom I was searching for outside, that very Abode I have found within. He whom you once considered separate and other than yourself—upon realization, you have become He. ||87||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਸ ਪ੍ਰਭੂ ਨੂੰ ਮੈਂ ਬਾਹਰ ਥਾਵੀਂ ਲੱਭਦਾ ਸੀ, ਉਹੀ ਅਸਲ ਠਾਉਂ (ਆਪਣਾ ਆਪ) ਮੈਨੂੰ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ ਹੈ। ਜਿਸ ਨੂੰ ਪਹਿਲਾਂ ਤੂੰ ਆਪਣੇ ਨਾਲੋਂ ਵੱਖਰਾ (ਹੋਰ) ਸਮਝਦਾ ਸੀ, ਹੁਣ ਗਿਆਨ ਹੋਣ ’ਤੇ ਤੂੰ ਆਪ ਹੀ ਉਹ (ਪ੍ਰਭੂ-ਰੂਪ) ਹੋ ਗਿਆ ਹੈਂ॥ ੮੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जिस परमात्मा को मैं बाहर खोज रहा था, वही परम धाम मुझे भीतर मिल गया है। जिसे पहले तू अपने से भिन्न (दूसरा) कहता था, अब ज्ञान होने पर तू स्वयं वही (प्रभु-रूप) हो गया है॥ ८७॥',
+      en: 'Satguru Kabir Saheb proclaims: Whom I was searching for outside, that very Abode I have found within. He whom you once considered separate and other than yourself—upon realization, you have become He. ||87||',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਕੋਈ ਬਾਹਰ ਨਹੀਂ, ਸਾਡੇ ਆਪਣੇ ਅੰਤःਕਰਨ ਵਿੱਚ ਵੱਸਦਾ ਹੈ। ਆਤਮ-ਗਿਆਨ ਨਾਲ ਜੀਵ ਪ੍ਰਭੂ ਵਿੱਚ ਅਭੇਦ ਹੋ ਜਾਂਦਾ ਹੈ।',
@@ -4265,9 +4265,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕੁਸੰਗਤ ਦੀ ਮਾਰ ਬਹੁਤ ਭੈੜੀ ਹੁੰਦੀ ਹੈ। ਜਿਵੇਂ ਕੋਮਲ ਕੇਲੇ ਦੇ ਰੁੱਖ ਦੇ ਕੋਲ ਕੰਡਿਆਂ ਵਾਲੀ ਬੇਰੀ ਹੋਵੇ, ਹਵਾ ਨਾਲ ਬੇਰੀ ਹਿੱਲਦੀ ਹੈ ਅਤੇ ਉਸਦੇ ਕੰਡਿਆਂ ਨਾਲ ਨਾਲ ਵਾਲਾ ਕੋਮਲ ਕੇਲਾ ਚੀਰਿਆ ਜਾਂਦਾ ਹੈ; ਇਸੇ ਤਰ੍ਹਾਂ ਵਿਕਾਰੀ (ਸਾਕਤ) ਦੀ ਸੰਗਤ ਤੋਂ ਬਚੋ, ਉਸ ਵੱਲ ਨਾ ਦੇਖੋ॥ ੮੮॥',
-      hi: 'कबीर जी कहते हैं- कुसंगति की मार बहुत घातक होती है। जैसे कोमल केले के पेड़ के पास कांटेदार बेर की झाड़ी हो, हवा चलने पर बेर हिलती है और उसके कांटों से पास का कोमल केला छिल व चीर दिया जाता है; इसी प्रकार ससाकत (विकारी) की संगति से बचो, उसकी ओर भूलकर भी मत ताको॥ ८८॥',
-      en: 'Kabir Ji says: The blow of bad company is fatal. Just as a thorny bush standing near a tender banana tree is tossed by the wind, and its thorns tear the soft banana tree, so should you avoid the company of godless materialists. ||88||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕੁਸੰਗਤ ਦੀ ਮਾਰ ਬਹੁਤ ਭੈੜੀ ਹੁੰਦੀ ਹੈ। ਜਿਵੇਂ ਕੋਮਲ ਕੇਲੇ ਦੇ ਰੁੱਖ ਦੇ ਕੋਲ ਕੰਡਿਆਂ ਵਾਲੀ ਬੇਰੀ ਹੋਵੇ, ਹਵਾ ਨਾਲ ਬੇਰੀ ਹਿੱਲਦੀ ਹੈ ਅਤੇ ਉਸਦੇ ਕੰਡਿਆਂ ਨਾਲ ਨਾਲ ਵਾਲਾ ਕੋਮਲ ਕੇਲਾ ਚੀਰਿਆ ਜਾਂਦਾ ਹੈ; ਇਸੇ ਤਰ੍ਹਾਂ ਵਿਕਾਰੀ (ਸਾਕਤ) ਦੀ ਸੰਗਤ ਤੋਂ ਬਚੋ, ਉਸ ਵੱਲ ਨਾ ਦੇਖੋ॥ ੮੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- कुसंगति की मार बहुत घातक होती है। जैसे कोमल केले के पेड़ के पास कांटेदार बेर की झाड़ी हो, हवा चलने पर बेर हिलती है और उसके कांटों से पास का कोमल केला छिल व चीर दिया जाता है; इसी प्रकार ससाकत (विकारी) की संगति से बचो, उसकी ओर भूलकर भी मत ताको॥ ८८॥',
+      en: 'Satguru Kabir Saheb proclaims: The blow of bad company is fatal. Just as a thorny bush standing near a tender banana tree is tossed by the wind, and its thorns tear the soft banana tree, so should you avoid the company of godless materialists. ||88||',
     },
     chintan: {
       pb: 'ਵਿਕਾਰੀ ਅਤੇ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਵਿਅਰਥ ਗਵਾਉਣ ਵਾਲਿਆਂ ਦੀ ਸੰਗਤ ਸਾਧਕ ਦੇ ਗੁਣਾਂ ਨੂੰ ਨਸ਼ਟ ਕਰ ਦਿੰਦੀ ਹੈ।',
@@ -4330,9 +4330,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਿਆ ਦਾ ਪਰਾਇਆ ਭਾਰ ਮਨੁੱਖ ਆਪਣੇ ਸਿਰ ’ਤੇ ਚੜ੍ਹਾਉਂਦਾ ਜਾਂਦਾ ਹੈ ਅਤੇ ਇਸੇ ਤਰ੍ਹਾਂ ਸੰਸਾਰ ਦਾ ਪੈਂਡਾ ਤੈਅ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹੈ। ਤੂੰ ਆਪਣੇ ਮਾੜੇ ਕਰਮਾਂ ਦੇ ਭਾਰ ਤੋਂ ਨਹੀਂ ਡਰਦਾ, ਜਦੋਂ ਕਿ ਅੱਗੇ ਆਤਮਿਕ ਮਾਰਗ ਦਾ ਬਹੁਤ ਔਖਾ ਘਾਟ ਹੈ॥ ੮੯॥',
-      hi: 'कबीर जी कहते हैं- मनुष्य दूसरों की निंदा का पराया भार अपने सिर पर चढ़ाता जाता है और इसी प्रकार जीवन की यात्रा तय करना चाहता है। तू अपने ही दुष्कर्मों के भार से नहीं डर रहा, जबकि आगे आध्यात्मिक मार्ग की अत्यंत कठिन और विकट घाटी है॥ ८९॥',
-      en: 'Kabir Ji says: Man loads the heavy burden of others\' calumny and sins onto his own head, yet wishes to journey on. You fear not the weight of your own misdeeds, even though a steep and treacherous pass lies ahead. ||89||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਿਆ ਦਾ ਪਰਾਇਆ ਭਾਰ ਮਨੁੱਖ ਆਪਣੇ ਸਿਰ ’ਤੇ ਚੜ੍ਹਾਉਂਦਾ ਜਾਂਦਾ ਹੈ ਅਤੇ ਇਸੇ ਤਰ੍ਹਾਂ ਸੰਸਾਰ ਦਾ ਪੈਂਡਾ ਤੈਅ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹੈ। ਤੂੰ ਆਪਣੇ ਮਾੜੇ ਕਰਮਾਂ ਦੇ ਭਾਰ ਤੋਂ ਨਹੀਂ ਡਰਦਾ, ਜਦੋਂ ਕਿ ਅੱਗੇ ਆਤਮਿਕ ਮਾਰਗ ਦਾ ਬਹੁਤ ਔਖਾ ਘਾਟ ਹੈ॥ ੮੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- मनुष्य दूसरों की निंदा का पराया भार अपने सिर पर चढ़ाता जाता है और इसी प्रकार जीवन की यात्रा तय करना चाहता है। तू अपने ही दुष्कर्मों के भार से नहीं डर रहा, जबकि आगे आध्यात्मिक मार्ग की अत्यंत कठिन और विकट घाटी है॥ ८९॥',
+      en: 'Satguru Kabir Saheb proclaims: Man loads the heavy burden of others\' calumny and sins onto his own head, yet wishes to journey on. You fear not the weight of your own misdeeds, even though a steep and treacherous pass lies ahead. ||89||',
     },
     chintan: {
       pb: 'ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਿਆ ਅਤੇ ਚੁਗ਼ਲੀ ਕਰਨ ਨਾਲ ਆਪਣੇ ਕਰਮਾਂ ਦਾ ਭਾਰ ਹੋਰ ਭਾਰੀ ਹੋ ਜਾਂਦਾ ਹੈ। ਆਤਮਿਕ ਮਾਰਗ ਬਹੁਤ ਕਠਿਨ ਹੈ।',
@@ -4395,9 +4395,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੰਗਲ ਦੀ ਅੱਗ ਨਾਲ ਸੜੀ ਹੋਈ ਲੱਕੜ ਖੜ੍ਹੀ ਪੁਕਾਰ ਕਰਦੀ ਹੈ ਕਿ ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਕਿਤੇ ਫਿਰ ਤੋਂ ਲੁਹਾਰ ਦੇ ਵੱਸ ਨਾ ਪੈ ਜਾਵਾਂ, ਜਿਹੜਾ ਮੈਨੂੰ ਪਹਿਲਾਂ ਹੀ ਸੜੀ ਹੋਈ ਨੂੰ ਦੁਬਾਰਾ ਭੱਠੀ ਵਿੱਚ ਪਾ ਕੇ ਕੋਇਲੇ ਕਰਕੇ ਸਾੜ ਦੇਵੇ॥ ੯੦॥',
-      hi: 'कबीर जी कहते हैं- जंगल की आग से जली हुई लकड़ी खड़ी पुकार करती है कि हे प्रभु! मैं कहीं फिर से लोहार (काल) के वश में न पड़ जाऊँ, जो मुझे पहले से जली हुई को दोबारा भट्टी में डालकर कोयला करके जला दे॥ ९०॥',
-      en: 'Kabir Ji says: The log burnt in the forest fire cries out, pleading not to fall into the blacksmith\'s hands again, lest he thrust already burnt wood into the furnace to burn it to coal once more. ||90||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੰਗਲ ਦੀ ਅੱਗ ਨਾਲ ਸੜੀ ਹੋਈ ਲੱਕੜ ਖੜ੍ਹੀ ਪੁਕਾਰ ਕਰਦੀ ਹੈ ਕਿ ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਕਿਤੇ ਫਿਰ ਤੋਂ ਲੁਹਾਰ ਦੇ ਵੱਸ ਨਾ ਪੈ ਜਾਵਾਂ, ਜਿਹੜਾ ਮੈਨੂੰ ਪਹਿਲਾਂ ਹੀ ਸੜੀ ਹੋਈ ਨੂੰ ਦੁਬਾਰਾ ਭੱਠੀ ਵਿੱਚ ਪਾ ਕੇ ਕੋਇਲੇ ਕਰਕੇ ਸਾੜ ਦੇਵੇ॥ ੯੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जंगल की आग से जली हुई लकड़ी खड़ी पुकार करती है कि हे प्रभु! मैं कहीं फिर से लोहार (काल) के वश में न पड़ जाऊँ, जो मुझे पहले से जली हुई को दोबारा भट्टी में डालकर कोयला करके जला दे॥ ९०॥',
+      en: 'Satguru Kabir Saheb proclaims: The log burnt in the forest fire cries out, pleading not to fall into the blacksmith\'s hands again, lest he thrust already burnt wood into the furnace to burn it to coal once more. ||90||',
     },
     chintan: {
       pb: 'ਮਨੁੱਖ ਸੰਸਾਰ ਦੀ ਅੱਗ ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਬਹੁਤ ਸੜ ਚੁੱਕਾ ਹੈ। ਹੁਣ ਮਨੁੱਖਾ ਜਨਮ ਵਿੱਚ ਨਾਮ ਸਿਮਰਨ ਕਰਕੇ ਮੁਕਤੀ ਪਾਓ, ਨਾ ਕਿ ਫਿਰ ਤੋਂ ਜਨਮ-ਮਰਨ ਦੇ ਗੇੜ ਵਿੱਚ ਪਵੋ।',
@@ -4533,9 +4533,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸੰਸਾਰ ਨੂੰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਵੇਖ-ਵੇਖ ਕੇ ਢੂੰਡਿਆ ਹੈ, ਪਰ ਕਿਤੇ ਵੀ ਮਨ ਨੂੰ ਸ਼ਾਂਤੀ ਦਾ ਅਸਲ ਟਿਕਾਣਾ ਨਹੀਂ ਮਿਲਿਆ। ਜਿਨ੍ਹਾਂ ਨੇ ਹਰੀ ਦਾ ਨਾਮ ਨਹੀਂ ਚੇਤਿਆ, ਉਹ ਹੋਰ ਕਿੱਥੇ-ਕਿੱਥੇ ਭਟਕਦੇ ਫਿਰਦੇ ਹਨ? (ਅਸਲ ਸ਼ਾਂਤੀ ਕੇਵਲ ਨਾਮ ਵਿੱਚ ਹੈ)॥ ੯੨॥',
-      hi: 'कबीर जी कहते हैं- संसार को भली-भांति देख-देख कर ढूंढ लिया है, किंतु कहीं भी मन को शांति का वास्तविक ठिकाना नहीं मिला। जिन लोगों ने भगवान का नाम स्मरण नहीं किया, वे व्यर्थ ही अन्यत्र कहां-कहां भटक रहे हैं?॥ ९२॥',
-      en: 'Kabir Ji says: I have searched the entire world thoroughly, but found no true sanctuary of peace anywhere. Those who do not remember the Divine Name—where else are they pointlessly wandering? ||92||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸੰਸਾਰ ਨੂੰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਵੇਖ-ਵੇਖ ਕੇ ਢੂੰਡਿਆ ਹੈ, ਪਰ ਕਿਤੇ ਵੀ ਮਨ ਨੂੰ ਸ਼ਾਂਤੀ ਦਾ ਅਸਲ ਟਿਕਾਣਾ ਨਹੀਂ ਮਿਲਿਆ। ਜਿਨ੍ਹਾਂ ਨੇ ਹਰੀ ਦਾ ਨਾਮ ਨਹੀਂ ਚੇਤਿਆ, ਉਹ ਹੋਰ ਕਿੱਥੇ-ਕਿੱਥੇ ਭਟਕਦੇ ਫਿਰਦੇ ਹਨ? (ਅਸਲ ਸ਼ਾਂਤੀ ਕੇਵਲ ਨਾਮ ਵਿੱਚ ਹੈ)॥ ੯੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- संसार को भली-भांति देख-देख कर ढूंढ लिया है, किंतु कहीं भी मन को शांति का वास्तविक ठिकाना नहीं मिला। जिन लोगों ने भगवान का नाम स्मरण नहीं किया, वे व्यर्थ ही अन्यत्र कहां-कहां भटक रहे हैं?॥ ९२॥',
+      en: 'Satguru Kabir Saheb proclaims: I have searched the entire world thoroughly, but found no true sanctuary of peace anywhere. Those who do not remember the Divine Name—where else are they pointlessly wandering? ||92||',
     },
     chintan: {
       pb: 'ਦੁਨੀਆ ਦੇ ਪਦਾਰਥਾਂ ਅਤੇ ਭਰਮਾਂ ਵਿੱਚ ਸ਼ਾਂਤੀ ਨਹੀਂ ਮਿਲ ਸਕਦੀ। ਸੱਚੀ ਸ਼ਾਂਤੀ ਕੇਵਲ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਵਿੱਚ ਹੈ।',
@@ -4606,9 +4606,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸਾਧੂ (ਪੂਰਨ ਸੰਤ) ਦੀ ਸੰਗਤ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ, ਜੋ ਅੰਤ ਨੂੰ (ਜੀਵ ਦਾ) ਸਾਥ ਨਿਭਾਉਂਦੀ ਹੈ ਅਤੇ ਪਾਰ ਲੰਘਾਉਂਦੀ ਹੈ। ਪ੍ਰੰਤੂ ਪ੍ਰਭੂ ਤੋਂ ਟੁੱਟੇ ਹੋਏ ਸਾਕਤ ਦੀ ਸੰਗਤ ਕਦੀ ਨਾ ਕਰੋ, ਜਿਸ ਤੋਂ ਆਤਮਕ ਨਾਸ਼ ਹੁੰਦਾ ਹੈ॥ ੯੩॥',
-      hi: 'कबीर जी कहते हैं- साधु (पूर्ण संत) की संगति करनी चाहिए, जो अंत में (जीव का) साथ निभाती है और पार लगाती है। परंतु परमात्मा से विमुख साकत (विकारी) की संगति कभी न करें, जिससे आत्मिक विनाश होता है॥ ९३॥',
-      en: 'Kabir Ji says: Keep company with the holy Saints, for they alone sustain and carry you safely across to liberation at the end. Never keep company with the godless materialist, which leads only to spiritual destruction. ||93||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸਾਧੂ (ਪੂਰਨ ਸੰਤ) ਦੀ ਸੰਗਤ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ, ਜੋ ਅੰਤ ਨੂੰ (ਜੀਵ ਦਾ) ਸਾਥ ਨਿਭਾਉਂਦੀ ਹੈ ਅਤੇ ਪਾਰ ਲੰਘਾਉਂਦੀ ਹੈ। ਪ੍ਰੰਤੂ ਪ੍ਰਭੂ ਤੋਂ ਟੁੱਟੇ ਹੋਏ ਸਾਕਤ ਦੀ ਸੰਗਤ ਕਦੀ ਨਾ ਕਰੋ, ਜਿਸ ਤੋਂ ਆਤਮਕ ਨਾਸ਼ ਹੁੰਦਾ ਹੈ॥ ੯੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- साधु (पूर्ण संत) की संगति करनी चाहिए, जो अंत में (जीव का) साथ निभाती है और पार लगाती है। परंतु परमात्मा से विमुख साकत (विकारी) की संगति कभी न करें, जिससे आत्मिक विनाश होता है॥ ९३॥',
+      en: 'Satguru Kabir Saheb proclaims: Keep company with the holy Saints, for they alone sustain and carry you safely across to liberation at the end. Never keep company with the godless materialist, which leads only to spiritual destruction. ||93||',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਮੁਕਤੀ ਦਾ ਮਾਰਗ ਹੈ ਅਤੇ ਵਿਕਾਰੀਆਂ ਦੀ ਸੰਗਤ ਪਤਨ ਦਾ ਕਾਰਨ ਹੈ।',
@@ -4679,9 +4679,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਨ੍ਹਾਂ ਮਨੁੱਖਾਂ ਨੇ ਜਗਤ ਵਿੱਚ ਸੱਚੀ ਸੂਝ ਪ੍ਰਾਪਤ ਕਰਕੇ ਪ੍ਰਭੂ ਨੂੰ ਚੇਤਿਆ ਹੈ, ਉਹ ਜਗਤ ਵਿੱਚ ਨਿਰਲੇਪ ਰਹਿੰਦੇ ਹੋਏ ਵੀ ਪ੍ਰਭੂ ਵਿੱਚ ਸਮਾਏ ਰਹਿੰਦੇ ਹਨ। ਪਰ ਜਿਨ੍ਹਾਂ ਨੇ ਹਰੀ ਦਾ ਨਾਮ ਨਹੀਂ ਚੇਤਿਆ, ਉਹ ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਵਿਅਰਥ ਹੀ ਜੰਮ ਕੇ ਆਏ ਹਨ॥ ੯੪॥',
-      hi: 'कबीर जी कहते हैं- जिन मनुष्यों ने जगत में सच्ची सूझ-बूझ पाकर परमात्मा का स्मरण किया है, वे संसार में रहते हुए भी उससे निर्लेप रहकर प्रभु में लीन रहते हैं। किंतु जिन्होंने भगवान का नाम स्मरण नहीं किया, उनका संसार में जन्म लेना व्यर्थ और निष्फल गया है॥ ९४॥',
-      en: 'Kabir Ji says: Those who remember the Lord in this world with true discernment remain detached and absorbed in Him while living in the world. But those who do not remember the Divine Name are born in vain. ||94||',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਨ੍ਹਾਂ ਮਨੁੱਖਾਂ ਨੇ ਜਗਤ ਵਿੱਚ ਸੱਚੀ ਸੂਝ ਪ੍ਰਾਪਤ ਕਰਕੇ ਪ੍ਰਭੂ ਨੂੰ ਚੇਤਿਆ ਹੈ, ਉਹ ਜਗਤ ਵਿੱਚ ਨਿਰਲੇਪ ਰਹਿੰਦੇ ਹੋਏ ਵੀ ਪ੍ਰਭੂ ਵਿੱਚ ਸਮਾਏ ਰਹਿੰਦੇ ਹਨ। ਪਰ ਜਿਨ੍ਹਾਂ ਨੇ ਹਰੀ ਦਾ ਨਾਮ ਨਹੀਂ ਚੇਤਿਆ, ਉਹ ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਵਿਅਰਥ ਹੀ ਜੰਮ ਕੇ ਆਏ ਹਨ॥ ੯੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- जिन मनुष्यों ने जगत में सच्ची सूझ-बूझ पाकर परमात्मा का स्मरण किया है, वे संसार में रहते हुए भी उससे निर्लेप रहकर प्रभु में लीन रहते हैं। किंतु जिन्होंने भगवान का नाम स्मरण नहीं किया, उनका संसार में जन्म लेना व्यर्थ और निष्फल गया है॥ ९४॥',
+      en: 'Satguru Kabir Saheb proclaims: Those who remember the Lord in this world with true discernment remain detached and absorbed in Him while living in the world. But those who do not remember the Divine Name are born in vain. ||94||',
     },
     chintan: {
       pb: 'ਸੱਚਾ ਜੀਵਨ ਉਹ ਹੈ ਜੋ ਸੰਸਾਰ ਵਿੱਚ ਰਹਿੰਦਿਆਂ ਪ੍ਰਭੂ ਦੇ ਪ੍ਰੇਮ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਲੀਨ ਰਹੇ। ਨਾਮ ਬਿਨਾਂ ਜੀਵਨ ਵਿਅਰਥ ਹੈ।',
@@ -4752,9 +4752,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕੇਵਲ ਪ੍ਰਮਾਤਮਾ ਦੀ ਹੀ ਆਸ (ਭਰੋਸਾ) ਰੱਖਣੀ ਚਾਹੀਦੀ ਹੈ, ਬਾਕੀ ਸਾਰੀਆਂ ਦੁਨਿਆਵੀ ਆਸਾਂ ਨਿਰਾਸਤਾ ਵੱਲ ਲੈ ਜਾਂਦੀਆਂ ਹਨ। ਜਿਹੜੇ ਮਨੁੱਖ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਤੋਂ ਬੇਮੁਖ ਰਹਿੰਦੇ ਹਨ, ਉਹ ਮਾਨੋ ਆਤਮਿਕ ਨਰਕਾਂ ਵਿੱਚ ਪੈਂਦੇ ਹਨ।',
-      hi: 'कबीर जी कहते हैं- केवल परमात्मा की ही आशा (भरोसा) रखनी चाहिए, बाकी अन्य सभी कामनाएं निराशा देने वाली हैं। जो मनुष्य भगवान के नाम से विमुख रहते हैं, वे मानो आत्मिक नरकों में गिरते हैं।',
-      en: 'Kabir Ji says: Hope and reliance should be placed in the Lord alone; all other expectations lead to despair. Those who remain indifferent to the Divine Name fall into spiritual suffering and hell.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕੇਵਲ ਪ੍ਰਮਾਤਮਾ ਦੀ ਹੀ ਆਸ (ਭਰੋਸਾ) ਰੱਖਣੀ ਚਾਹੀਦੀ ਹੈ, ਬਾਕੀ ਸਾਰੀਆਂ ਦੁਨਿਆਵੀ ਆਸਾਂ ਨਿਰਾਸਤਾ ਵੱਲ ਲੈ ਜਾਂਦੀਆਂ ਹਨ। ਜਿਹੜੇ ਮਨੁੱਖ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਤੋਂ ਬੇਮੁਖ ਰਹਿੰਦੇ ਹਨ, ਉਹ ਮਾਨੋ ਆਤਮਿਕ ਨਰਕਾਂ ਵਿੱਚ ਪੈਂਦੇ ਹਨ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- केवल परमात्मा की ही आशा (भरोसा) रखनी चाहिए, बाकी अन्य सभी कामनाएं निराशा देने वाली हैं। जो मनुष्य भगवान के नाम से विमुख रहते हैं, वे मानो आत्मिक नरकों में गिरते हैं।',
+      en: 'Satguru Kabir Saheb proclaims: Hope and reliance should be placed in the Lord alone; all other expectations lead to despair. Those who remain indifferent to the Divine Name fall into spiritual suffering and hell.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦਾ ਆਸਰਾ ਹੀ ਸੱਚਾ ਅਤੇ ਸਥਾਈ ਹੈ। ਹੋਰ ਮਾਇਕ ਸਹਾਰੇ ਅਸਥਿਰ ਅਤੇ ਦੁਖਦਾਈ ਹਨ।',
@@ -4825,9 +4825,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਅਸੀਂ ਦੁਨਿਆਵੀ ਚੇਲੇ, ਸਾਕ-ਸੰਬੰਧੀ ਅਤੇ ਮਿੱਤਰ ਤਾਂ ਬਹੁਤ ਬਣਾ ਲਏ, ਪਰ ਪ੍ਰਭੂ ਨੂੰ ਆਪਣਾ ਮਿੱਤਰ ਨਾ ਬਣਾਇਆ। ਜਦ ਅਸੀਂ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਣ ਲਈ ਤੁਰੇ ਤਾਂ ਰਾਹ ਵਿੱਚ ਹੀ ਮਨ ਮਾਇਕ ਪਦਾਰਥਾਂ ਵਿੱਚ ਅਟਕ ਗਿਆ।',
-      hi: 'कबीर जी कहते हैं-हमने दुनियावी चेले, सगे-संबंधी और मित्र तो बहुत बना लिए, परंतु भगवान को अपना मित्र नहीं बनाया। जब हम प्रभु से मिलने के लिए चले थे, तब मार्ग में ही हमारा मन सांसारिक मोह में उलझ कर रह गया।',
-      en: 'Kabir Ji says: We made numerous worldly friends, disciples, and relatives, but never made the Divine our Friend. Setting out to meet the Lord, our mind got trapped midway in worldly distractions.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅਸੀਂ ਦੁਨਿਆਵੀ ਚੇਲੇ, ਸਾਕ-ਸੰਬੰਧੀ ਅਤੇ ਮਿੱਤਰ ਤਾਂ ਬਹੁਤ ਬਣਾ ਲਏ, ਪਰ ਪ੍ਰਭੂ ਨੂੰ ਆਪਣਾ ਮਿੱਤਰ ਨਾ ਬਣਾਇਆ। ਜਦ ਅਸੀਂ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਣ ਲਈ ਤੁਰੇ ਤਾਂ ਰਾਹ ਵਿੱਚ ਹੀ ਮਨ ਮਾਇਕ ਪਦਾਰਥਾਂ ਵਿੱਚ ਅਟਕ ਗਿਆ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हमने दुनियावी चेले, सगे-संबंधी और मित्र तो बहुत बना लिए, परंतु भगवान को अपना मित्र नहीं बनाया। जब हम प्रभु से मिलने के लिए चले थे, तब मार्ग में ही हमारा मन सांसारिक मोह में उलझ कर रह गया।',
+      en: 'Satguru Kabir Saheb proclaims: We made numerous worldly friends, disciples, and relatives, but never made the Divine our Friend. Setting out to meet the Lord, our mind got trapped midway in worldly distractions.',
     },
     chintan: {
       pb: 'ਦੁਨਿਆਵੀ ਰਿਸ਼ਤੇ ਅਸਥਿਰ ਹਨ। ਅਸਲ ਮਿੱਤਰ ਕੇਵਲ ਪਰਮਾਤਮਾ ਹੈ ਜੋ ਜਨਮ-ਜੰਮਾਂਤਰਾਂ ਦਾ ਸਾਥੀ ਹੈ।',
@@ -4898,9 +4898,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਨੁੱਖ ਦਾ ਵਿਚਾਰਾ ਯਤਨ ਕੀ ਕਰ ਸਕਦਾ ਹੈ ਜੇਕਰ ਪ੍ਰਮਾਤਮਾ ਆਪ ਸਹਾਇਤਾ ਨਾ ਕਰੇ? ਅਸੀਂ ਰੁੱਖ ਦੀ ਜਿਸ ਜਿਸ ਟਾਹਣੀ ਉੱਤੇ (ਚੜ੍ਹਨ ਲਈ) ਪੈਰ ਰੱਖਦੇ ਹਾਂ, ਉਹੀ ਟਾਹਣੀ ਟੁੱਟ ਜਾਂਦੀ ਹੈ (ਭਾਵ ਬਿਨਾਂ ਪ੍ਰਭੂ ਕਿਰਪਾ ਦੇ ਸਾਰੇ ਕਰਮ ਅਧੂਰੇ ਰਹਿ ਜਾਂਦੇ ਹਨ)।',
-      hi: 'कबीर जी कहते हैं-मनुष्य का बेचारा प्रयास क्या कर सकता है यदि परमात्मा स्वयं सहायता न करे? हम पेड़ की जिस-जिस टहनी पर पैर रखते हैं, वही टहनी टूट जाती है (अर्थात बिना प्रभु कृपा के सभी साधन विफल हो जाते हैं)।',
-      en: 'Kabir Ji says: What can helpless human effort accomplish if the Lord does not extend His grace? Whichever branch we step on breaks and snaps (without divine aid, all human strivings fail).',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਨੁੱਖ ਦਾ ਵਿਚਾਰਾ ਯਤਨ ਕੀ ਕਰ ਸਕਦਾ ਹੈ ਜੇਕਰ ਪ੍ਰਮਾਤਮਾ ਆਪ ਸਹਾਇਤਾ ਨਾ ਕਰੇ? ਅਸੀਂ ਰੁੱਖ ਦੀ ਜਿਸ ਜਿਸ ਟਾਹਣੀ ਉੱਤੇ (ਚੜ੍ਹਨ ਲਈ) ਪੈਰ ਰੱਖਦੇ ਹਾਂ, ਉਹੀ ਟਾਹਣੀ ਟੁੱਟ ਜਾਂਦੀ ਹੈ (ਭਾਵ ਬਿਨਾਂ ਪ੍ਰਭੂ ਕਿਰਪਾ ਦੇ ਸਾਰੇ ਕਰਮ ਅਧੂਰੇ ਰਹਿ ਜਾਂਦੇ ਹਨ)।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य का बेचारा प्रयास क्या कर सकता है यदि परमात्मा स्वयं सहायता न करे? हम पेड़ की जिस-जिस टहनी पर पैर रखते हैं, वही टहनी टूट जाती है (अर्थात बिना प्रभु कृपा के सभी साधन विफल हो जाते हैं)।',
+      en: 'Satguru Kabir Saheb proclaims: What can helpless human effort accomplish if the Lord does not extend His grace? Whichever branch we step on breaks and snaps (without divine aid, all human strivings fail).',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਦੀ ਹਰ ਸਫਲਤਾ ਪਿੱਛੇ ਅਕਾਲ ਪੁਰਖ ਦੀ ਬਖ਼ਸ਼ਿਸ਼ ਹੁੰਦੀ ਹੈ। ਅਹੰਕਾਰ ਤਿਆਗ ਕੇ ਪ੍ਰਭੂ ਦਾ ਆਸਰਾ ਲਵੋ।',
@@ -5052,9 +5052,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਭਾਵੇਂ ਮੈਨੂੰ ਰੁੱਖੀ-ਸੁੱਕੀ (ਭੂਸੀ) ਖਾਣੀ ਪਵੇ, ਮੈਂ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਹੀ ਰਹਾਂਗਾ। ਜੋ ਹੋਣਾ ਹੈ ਉਹ ਹੋਵੇਗਾ, ਪਰ ਮੈਂ ਕਦਾਚਿਤ ਵੀ ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਸਾਕਤ ਦੀ ਸੰਗਤ ਵਿੱਚ ਨਹੀਂ ਜਾਵਾਂਗਾ।',
-      hi: 'कबीर जी कहते हैं-चाहे मुझे रूखी-सूखी (अनाज का छिलका या सूखी रोटी) खानी पड़े, मैं संतों की संगति में ही रहूंगा। जो होना है वह होगा, किंतु मैं कदापि परमात्मा से विमुख साकत की संगति में नहीं जाऊंगा।',
-      en: 'Kabir Ji says: Even if I must eat dry husk, I will dwell in the holy company of saints. Whatever is destined will happen, but I will never keep company with the godless.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਭਾਵੇਂ ਮੈਨੂੰ ਰੁੱਖੀ-ਸੁੱਕੀ (ਭੂਸੀ) ਖਾਣੀ ਪਵੇ, ਮੈਂ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਹੀ ਰਹਾਂਗਾ। ਜੋ ਹੋਣਾ ਹੈ ਉਹ ਹੋਵੇਗਾ, ਪਰ ਮੈਂ ਕਦਾਚਿਤ ਵੀ ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਸਾਕਤ ਦੀ ਸੰਗਤ ਵਿੱਚ ਨਹੀਂ ਜਾਵਾਂਗਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-चाहे मुझे रूखी-सूखी (अनाज का छिलका या सूखी रोटी) खानी पड़े, मैं संतों की संगति में ही रहूंगा। जो होना है वह होगा, किंतु मैं कदापि परमात्मा से विमुख साकत की संगति में नहीं जाऊंगा।',
+      en: 'Satguru Kabir Saheb proclaims: Even if I must eat dry husk, I will dwell in the holy company of saints. Whatever is destined will happen, but I will never keep company with the godless.',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਆਤਮਿਕ ਬਲ ਦਿੰਦੀ ਹੈ ਜਦਕਿ ਵਿਕਾਰੀਆਂ ਦੀ ਸੰਗਤ ਪਤਨ ਦਾ ਕਾਰਨ ਬਣਦੀ ਹੈ।',
@@ -5125,9 +5125,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਕਰਨ ਨਾਲ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਪ੍ਰੇਮ ਦਿਨੋ-ਦਿਨ ਦੂਣਾ ਹੁੰਦਾ ਹੈ। ਪਰ ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਮਨੁੱਖ ਕਾਲੇ ਕੰਬਲ ਵਾਂਗ ਹੁੰਦਾ ਹੈ, ਜਿਸ ਨੂੰ ਕਿੰਨਾ ਵੀ ਧੋ ਲਈਏ ਉਹ ਕਦੇ ਚਿੱਟਾ (ਨਿਰਮਲ) ਨਹੀਂ ਹੁੰਦਾ।',
-      hi: 'कबीर जी कहते हैं-संतों की संगति करने से परमात्मा से प्रेम दिन-प्रतिदिन दोगुना होता है। किंतु परमात्मा से विमुख मनुष्य काले कंबल के समान होता है, जिसे कितना भी धोएं वह कभी सफेद (निर्मल) नहीं होता।',
-      en: 'Kabir Ji says: In the company of saints, love for the Divine doubles day by day. But the godless person is like a black blanket which, no matter how much it is washed, never becomes white.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਕਰਨ ਨਾਲ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਪ੍ਰੇਮ ਦਿਨੋ-ਦਿਨ ਦੂਣਾ ਹੁੰਦਾ ਹੈ। ਪਰ ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਮਨੁੱਖ ਕਾਲੇ ਕੰਬਲ ਵਾਂਗ ਹੁੰਦਾ ਹੈ, ਜਿਸ ਨੂੰ ਕਿੰਨਾ ਵੀ ਧੋ ਲਈਏ ਉਹ ਕਦੇ ਚਿੱਟਾ (ਨਿਰਮਲ) ਨਹੀਂ ਹੁੰਦਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-संतों की संगति करने से परमात्मा से प्रेम दिन-प्रतिदिन दोगुना होता है। किंतु परमात्मा से विमुख मनुष्य काले कंबल के समान होता है, जिसे कितना भी धोएं वह कभी सफेद (निर्मल) नहीं होता।',
+      en: 'Satguru Kabir Saheb proclaims: In the company of saints, love for the Divine doubles day by day. But the godless person is like a black blanket which, no matter how much it is washed, never becomes white.',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਮਨ ਨੂੰ ਨਿਰਮਲ ਕਰਦੀ ਹੈ ਜਦਕਿ ਹਠੀ ਮਨਮੁਖ ਆਪਣੇ ਸੁਭਾਅ ਤੋਂ ਬਾਜ਼ ਨਹੀਂ ਆਉਂਦਾ।',
@@ -5198,9 +5198,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇਕਰ ਤੂੰ ਆਪਣਾ ਮਨ ਨਹੀਂ ਮੁੰਨਿਆ (ਵਿਕਾਰਾਂ ਤੋਂ ਖ਼ਾਲੀ ਨਹੀਂ ਕੀਤਾ) ਤਾਂ ਸਿਰ ਦੇ ਵਾਲ ਕਿਉਂ ਮੁਨਾਏ ਹਨ? ਜੋ ਕੁਝ ਵੀ ਚੰਗਾ ਜਾਂ ਮੰਦਾ ਕਰਦਾ ਹੈ ਉਹ ਮਨ ਹੀ ਕਰਦਾ ਹੈ, ਸਿਰ ਮੁਨਾਉਣਾ ਤਾਂ ਵਿਅਰਥ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-यदि तूने अपना मन नहीं मुंडा (विकारों से मुक्त नहीं किया) तो सिर के बाल क्यों मुंडाए हैं? जो कुछ भी अच्छा या बुरा करता है वह मन ही करता है, सिर मुंडाना तो व्यर्थ है।',
-      en: 'Kabir Ji says: If you have not shaved your mind of vices, why shave the hair of your head? Whatever is done—good or bad—is done by the mind; shaving the head is utterly useless.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇਕਰ ਤੂੰ ਆਪਣਾ ਮਨ ਨਹੀਂ ਮੁੰਨਿਆ (ਵਿਕਾਰਾਂ ਤੋਂ ਖ਼ਾਲੀ ਨਹੀਂ ਕੀਤਾ) ਤਾਂ ਸਿਰ ਦੇ ਵਾਲ ਕਿਉਂ ਮੁਨਾਏ ਹਨ? ਜੋ ਕੁਝ ਵੀ ਚੰਗਾ ਜਾਂ ਮੰਦਾ ਕਰਦਾ ਹੈ ਉਹ ਮਨ ਹੀ ਕਰਦਾ ਹੈ, ਸਿਰ ਮੁਨਾਉਣਾ ਤਾਂ ਵਿਅਰਥ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि तूने अपना मन नहीं मुंडा (विकारों से मुक्त नहीं किया) तो सिर के बाल क्यों मुंडाए हैं? जो कुछ भी अच्छा या बुरा करता है वह मन ही करता है, सिर मुंडाना तो व्यर्थ है।',
+      en: 'Satguru Kabir Saheb proclaims: If you have not shaved your mind of vices, why shave the hair of your head? Whatever is done—good or bad—is done by the mind; shaving the head is utterly useless.',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਭੇਖ ਜਾਂ ਮੁਨੇ ਹੋਏ ਸਿਰ ਨਾਲੋਂ ਮਨ ਦੀ ਪਵਿੱਤਰਤਾ ਅਤੇ ਅੰਦਰੂਨੀ ਅਨੁਸ਼ਾਸਨ ਅਤਿ ਮਹੱਤਵਪੂਰਨ ਹੈ।',
@@ -5271,9 +5271,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਕਦੇ ਨਾ ਛੱਡੀਏ, ਭਾਵੇਂ ਸਰੀਰ ਅਤੇ ਧਨ ਸਭ ਕੁਝ ਨਸ਼ਟ ਹੋ ਜਾਵੇ ਤਾਂ ਵੀ ਭਾਵੇਂ ਹੋ ਜਾਵੇ। ਸਾਡਾ ਚਿੱਤ ਪ੍ਰਭੂ ਦੇ ਚਰਨ ਕਮਲਾਂ ਵਿੱਚ ਵਿੰਨ੍ਹਿਆ ਗਿਆ ਹੈ ਅਤੇ ਅਸੀਂ ਰਾਮ ਦੇ ਨਾਮ ਵਿੱਚ ਹੀ ਸਮਾਏ ਹੋਏ ਹਾਂ।',
-      hi: 'कबीर जी कहते हैं-परमात्मा का नाम कभी न छोड़ें, भले ही शरीर और धन सब कुछ नष्ट हो जाए। हमारा चित्त प्रभु के चरण कमलों में विंध गया है और हम राम के नाम में ही लीन हैं।',
-      en: 'Kabir Ji says: Never forsake the Lord, even if body and wealth perish. Our consciousness is pierced and bound to His lotus feet, and we remain absorbed in the Divine Name.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਕਦੇ ਨਾ ਛੱਡੀਏ, ਭਾਵੇਂ ਸਰੀਰ ਅਤੇ ਧਨ ਸਭ ਕੁਝ ਨਸ਼ਟ ਹੋ ਜਾਵੇ ਤਾਂ ਵੀ ਭਾਵੇਂ ਹੋ ਜਾਵੇ। ਸਾਡਾ ਚਿੱਤ ਪ੍ਰਭੂ ਦੇ ਚਰਨ ਕਮਲਾਂ ਵਿੱਚ ਵਿੰਨ੍ਹਿਆ ਗਿਆ ਹੈ ਅਤੇ ਅਸੀਂ ਰਾਮ ਦੇ ਨਾਮ ਵਿੱਚ ਹੀ ਸਮਾਏ ਹੋਏ ਹਾਂ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-परमात्मा का नाम कभी न छोड़ें, भले ही शरीर और धन सब कुछ नष्ट हो जाए। हमारा चित्त प्रभु के चरण कमलों में विंध गया है और हम राम के नाम में ही लीन हैं।',
+      en: 'Satguru Kabir Saheb proclaims: Never forsake the Lord, even if body and wealth perish. Our consciousness is pierced and bound to His lotus feet, and we remain absorbed in the Divine Name.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਅਤੇ ਪ੍ਰੇਮ ਸਭ ਤੋਂ ਉੱਚੀ ਪੂੰਜੀ ਹੈ ਜਿਸ ਲਈ ਸਭ ਕੁਝ ਕੁਰਬਾਨ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।',
@@ -5344,9 +5344,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਅਸੀਂ ਸਰੀਰ ਦਾ ਜਿਹੜਾ ਵਾਜਾ (ਸੰਕਲਪਾਂ-ਵਿਕਲਪਾਂ ਦਾ) ਵਜਾਉਂਦੇ ਸੀ, ਉਸ ਦੀਆਂ ਸਾਰੀਆਂ ਮੋਹ ਰੂਪੀ ਤਾਰਾਂ ਟੁੱਟ ਗਈਆਂ ਹਨ। ਹੁਣ ਵਿਚਾਰਾ ਵਾਜਾ ਕੀ ਕਰ ਸਕਦਾ ਹੈ ਜਦ ਇਸ ਨੂੰ ਵਜਾਉਣ ਵਾਲਾ (ਜੀਵ) ਹੀ ਚਲਾ ਗਿਆ ਹੈ?',
-      hi: 'कबीर जी कहते हैं-हमने शरीर का जो बाजा (संकल्प-विकल्पों का) बजाया था, उसकी मोह रूपी सभी तारें टूट चुकी हैं। अब बेचारा बाजा क्या करे जब इसे बजाने वाला (प्राण) ही चला गया है?',
-      en: 'Kabir Ji says: The strings of attachment on the musical instrument of our body have snapped. What can the helpless instrument do now that the Player has departed?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅਸੀਂ ਸਰੀਰ ਦਾ ਜਿਹੜਾ ਵਾਜਾ (ਸੰਕਲਪਾਂ-ਵਿਕਲਪਾਂ ਦਾ) ਵਜਾਉਂਦੇ ਸੀ, ਉਸ ਦੀਆਂ ਸਾਰੀਆਂ ਮੋਹ ਰੂਪੀ ਤਾਰਾਂ ਟੁੱਟ ਗਈਆਂ ਹਨ। ਹੁਣ ਵਿਚਾਰਾ ਵਾਜਾ ਕੀ ਕਰ ਸਕਦਾ ਹੈ ਜਦ ਇਸ ਨੂੰ ਵਜਾਉਣ ਵਾਲਾ (ਜੀਵ) ਹੀ ਚਲਾ ਗਿਆ ਹੈ?',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हमने शरीर का जो बाजा (संकल्प-विकल्पों का) बजाया था, उसकी मोह रूपी सभी तारें टूट चुकी हैं। अब बेचारा बाजा क्या करे जब इसे बजाने वाला (प्राण) ही चला गया है?',
+      en: 'Satguru Kabir Saheb proclaims: The strings of attachment on the musical instrument of our body have snapped. What can the helpless instrument do now that the Player has departed?',
     },
     chintan: {
       pb: 'ਇਹ ਸਰੀਰ ਨਾਸ਼ਵਾਨ ਹੈ। ਜਦ ਤੱਕ ਪ੍ਰਾਣ ਹਨ, ਪ੍ਰਭੂ ਭਗਤੀ ਕਰ ਲਉ।',
@@ -5417,9 +5417,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਉਸ ਗੁਰੂ ਦਾ ਸਿਰ ਮੁੰਨ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ (ਉਸ ਦਾ ਤ੍ਰਿਸਕਾਰ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ) ਜਿਸ ਪਾਸੋਂ ਮਨ ਦਾ ਭਰਮ ਨਵਿਰਤ ਨਹੀਂ ਹੁੰਦਾ। ਐਸੇ ਗੁਰੂ ਆਪ ਤਾਂ ਚਾਰੇ ਵੇਦਾਂ ਦੇ ਕਰਮਕਾਂਡ ਵਿੱਚ ਡੁੱਬੇ ਹੀ ਹਨ, ਨਾਲੇ ਆਪਣੇ ਚੇਲਿਆਂ ਨੂੰ ਵੀ ਰੋੜ੍ਹ ਕੇ ਲੈ ਜਾਂਦੇ ਹਨ।',
-      hi: 'कबीर जी कहते हैं-ऐसे गुरु का सिर मुंड देना चाहिए (उसका तिरस्कार करना चाहिए) जिससे मन का भ्रम दूर नहीं होता। ऐसे गुरु स्वयं तो चारों वेदों के कर्मकांड में डूबे ही हैं, साथ ही अपने चेलों को भी डुबो देते हैं।',
-      en: 'Kabir Ji says: Condemn that guru whose teachings do not dispel mental doubt. Such gurus themselves drown in ritualistic dogmas, and sweep their disciples away with them into spiritual ruin.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਉਸ ਗੁਰੂ ਦਾ ਸਿਰ ਮੁੰਨ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ (ਉਸ ਦਾ ਤ੍ਰਿਸਕਾਰ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ) ਜਿਸ ਪਾਸੋਂ ਮਨ ਦਾ ਭਰਮ ਨਵਿਰਤ ਨਹੀਂ ਹੁੰਦਾ। ਐਸੇ ਗੁਰੂ ਆਪ ਤਾਂ ਚਾਰੇ ਵੇਦਾਂ ਦੇ ਕਰਮਕਾਂਡ ਵਿੱਚ ਡੁੱਬੇ ਹੀ ਹਨ, ਨਾਲੇ ਆਪਣੇ ਚੇਲਿਆਂ ਨੂੰ ਵੀ ਰੋੜ੍ਹ ਕੇ ਲੈ ਜਾਂਦੇ ਹਨ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-ऐसे गुरु का सिर मुंड देना चाहिए (उसका तिरस्कार करना चाहिए) जिससे मन का भ्रम दूर नहीं होता। ऐसे गुरु स्वयं तो चारों वेदों के कर्मकांड में डूबे ही हैं, साथ ही अपने चेलों को भी डुबो देते हैं।',
+      en: 'Satguru Kabir Saheb proclaims: Condemn that guru whose teachings do not dispel mental doubt. Such gurus themselves drown in ritualistic dogmas, and sweep their disciples away with them into spiritual ruin.',
     },
     chintan: {
       pb: 'ਸੱਚਾ ਗੁਰੂ ਉਹ ਹੈ ਜੋ ਮਨ ਦਾ ਅੰਧਕਾਰ ਮਿਟਾ ਕੇ ਬ੍ਰਹਮ ਗਿਆਨ ਪ੍ਰਦਾਨ ਕਰੇ। ਕਰਮਕਾਂਡੀ ਪਾਖੰਡ ਤੋਂ ਬਚੋ।',
@@ -5490,9 +5490,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਜਿਤਨੇ ਵੀ ਪਾਪ ਕੀਤੇ ਸਨ ਅਤੇ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਲੁਕਾ ਕੇ ਰੱਖੇ ਸਨ, ਉਹ ਸਾਰੇ ਆਖਿਰਕਾਰ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦੇ ਹਨ, ਜਦ ਧਰਮਰਾਜ (ਕਰਮਾਂ ਦਾ ਨਿਆਂ) ਪੁੱਛਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-मनुष्य ने जितने भी पाप किए थे और अपने हृदय में छिपाकर रखे थे, वे सब अंततः प्रकट हो जाते हैं, जब धर्मराज (कर्मों का न्याय) पूछताछ करता है।',
-      en: 'Kabir Ji says: All sins that a person commits and tries to hide secretly within the heart are ultimately exposed when the divine Arbiter of karma calls for the accounting.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਜਿਤਨੇ ਵੀ ਪਾਪ ਕੀਤੇ ਸਨ ਅਤੇ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਲੁਕਾ ਕੇ ਰੱਖੇ ਸਨ, ਉਹ ਸਾਰੇ ਆਖਿਰਕਾਰ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦੇ ਹਨ, ਜਦ ਧਰਮਰਾਜ (ਕਰਮਾਂ ਦਾ ਨਿਆਂ) ਪੁੱਛਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य ने जितने भी पाप किए थे और अपने हृदय में छिपाकर रखे थे, वे सब अंततः प्रकट हो जाते हैं, जब धर्मराज (कर्मों का न्याय) पूछताछ करता है।',
+      en: 'Satguru Kabir Saheb proclaims: All sins that a person commits and tries to hide secretly within the heart are ultimately exposed when the divine Arbiter of karma calls for the accounting.',
     },
     chintan: {
       pb: 'ਕੋਈ ਵੀ ਕਰਮ ਲੁਕਿਆ ਨਹੀਂ ਰਹਿੰਦਾ। ਕਰਮਾਂ ਦਾ ਹਿਸਾਬ ਅਟੱਲ ਹੈ।',
@@ -5563,9 +5563,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਛੱਡ ਕੇ ਬਹੁਤ ਪਰਿਵਾਰ ਪਾਲਿਆ। ਪਰਿਵਾਰ ਦੇ ਧੰਧੇ ਕਰਦਿਆਂ-ਕਰਦਿਆਂ ਹੀ ਉਮਰ ਬੀਤ ਗਈ, ਅੰਤ ਨੂੰ ਨਾ ਕੋਈ ਭਾਈ ਰਿਹਾ ਤੇ ਨਾ ਕੋਈ ਸਾਕ-ਸੰਬੰਧੀ ਨਾਲ ਗਿਆ।',
-      hi: 'कबीर जी कहते हैं-मनुष्य ने भगवान का स्मरण छोड़कर बहुत परिवार पाला। परिवार के धंधे करते-करते ही आयु बीत गई, अंत में न कोई भाई रहा और न कोई सगा-संबंधी साथ गया।',
-      en: 'Kabir Ji says: Forsaking divine remembrance, a person nurtures a large family. Spending life busy in worldly chores, in the end neither brother nor relative goes along with the soul.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਛੱਡ ਕੇ ਬਹੁਤ ਪਰਿਵਾਰ ਪਾਲਿਆ। ਪਰਿਵਾਰ ਦੇ ਧੰਧੇ ਕਰਦਿਆਂ-ਕਰਦਿਆਂ ਹੀ ਉਮਰ ਬੀਤ ਗਈ, ਅੰਤ ਨੂੰ ਨਾ ਕੋਈ ਭਾਈ ਰਿਹਾ ਤੇ ਨਾ ਕੋਈ ਸਾਕ-ਸੰਬੰਧੀ ਨਾਲ ਗਿਆ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य ने भगवान का स्मरण छोड़कर बहुत परिवार पाला। परिवार के धंधे करते-करते ही आयु बीत गई, अंत में न कोई भाई रहा और न कोई सगा-संबंधी साथ गया।',
+      en: 'Satguru Kabir Saheb proclaims: Forsaking divine remembrance, a person nurtures a large family. Spending life busy in worldly chores, in the end neither brother nor relative goes along with the soul.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰਕ ਜ਼ਿੰਮੇਵਾਰੀਆਂ ਨਿਭਾਉਂਦੇ ਹੋਏ ਵੀ ਅਸਲ ਧਿਆਨ ਪ੍ਰਭੂ ਨਾਮ ਵਿੱਚ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।',
@@ -5782,9 +5782,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇ ਤੇਰੇ ਪਾਸ ਬਹੁਤ ਚਤੁਰਾਈ ਹੈ, ਤਾਂ ਹੇ ਭਾਈ! ਹਰੀ ਨੂੰ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਜਪ। ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰਨਾ ਸੂਲੀ ਉੱਤੇ ਖੇਡਣ (ਤਲਵਾਰ ਦੀ ਧਾਰ ’ਤੇ ਚੱਲਣ) ਦੇ ਬਰਾਬਰ ਹੈ; ਜੇ ਇਸ ਤੋਂ ਡਿੱਗ ਪਵੇਂ (ਨਾਮ ਭੁੱਲ ਜਾਏ) ਤਾਂ ਹੋਰ ਕੋਈ ਠਾਹਰ (ਆਸਰਾ) ਨਹੀਂ ਮਿਲਦੀ।',
-      hi: 'कबीर जी कहते हैं-यदि तेरे पास बहुत चतुराई है, तो हे भाई! भगवान का स्मरण अपने हृदय में कर। प्रभु का सिमरन करना सूली पर खेलने (तलवार की धार पर चलने) के समान है; यदि इससे गिर पड़े (नाम भूल जाए) तो कोई अन्य ठिकाना (आश्रय) नहीं मिलता।',
-      en: 'Kabir Ji says: If you possess true wisdom, chant the Lord\'s Name within your heart. Practicing divine devotion is like walking on the razor\'s edge; if you fall (forget the Lord), there is no other refuge.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇ ਤੇਰੇ ਪਾਸ ਬਹੁਤ ਚਤੁਰਾਈ ਹੈ, ਤਾਂ ਹੇ ਭਾਈ! ਹਰੀ ਨੂੰ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਜਪ। ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰਨਾ ਸੂਲੀ ਉੱਤੇ ਖੇਡਣ (ਤਲਵਾਰ ਦੀ ਧਾਰ ’ਤੇ ਚੱਲਣ) ਦੇ ਬਰਾਬਰ ਹੈ; ਜੇ ਇਸ ਤੋਂ ਡਿੱਗ ਪਵੇਂ (ਨਾਮ ਭੁੱਲ ਜਾਏ) ਤਾਂ ਹੋਰ ਕੋਈ ਠਾਹਰ (ਆਸਰਾ) ਨਹੀਂ ਮਿਲਦੀ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि तेरे पास बहुत चतुराई है, तो हे भाई! भगवान का स्मरण अपने हृदय में कर। प्रभु का सिमरन करना सूली पर खेलने (तलवार की धार पर चलने) के समान है; यदि इससे गिर पड़े (नाम भूल जाए) तो कोई अन्य ठिकाना (आश्रय) नहीं मिलता।',
+      en: 'Satguru Kabir Saheb proclaims: If you possess true wisdom, chant the Lord\'s Name within your heart. Practicing divine devotion is like walking on the razor\'s edge; if you fall (forget the Lord), there is no other refuge.',
     },
     chintan: {
       pb: 'ਨਾਮ ਸਿਮਰਨ ਲਈ ਪੂਰੀ ਸੁਚੇਤਤਾ, ਅਨੁਸ਼ਾਸਨ ਅਤੇ ਪ੍ਰੇਮ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।',
@@ -5855,9 +5855,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਉਹੀ ਮੂੰਹ ਧੰਨ ਹੈ (ਭਾਗਾਂ ਵਾਲਾ ਹੈ) ਜਿਸ ਮੂੰਹ ਨਾਲ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਉਚਾਰਿਆ ਜਾਂਦਾ ਹੈ। ਸਰੀਰ ਵਿਚਾਰੇ ਦੀ ਤਾਂ ਕੀ ਗੱਲ ਹੈ, ਜਿਸ ਨਗਰ ਵਿੱਚ ਰਾਮ ਦਾ ਨਾਮ ਲਿਆ ਜਾਂਦਾ ਹੈ, ਉਹ ਸਾਰਾ ਨਗਰ ਹੀ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-वही मुख धन्य (सौभाग्यशाली) है जिस मुख से भगवान का नाम उच्चारित किया जाता है। शरीर बेचारे की क्या बात है, जिस नगर में राम का नाम लिया जाता है, वह संपूर्ण नगर ही पवित्र हो जाता है।',
-      en: 'Kabir Ji says: Blessed is that mouth which utters the Divine Name. What to speak of the frail body alone—the entire town where the Lord\'s Name is chanted becomes sanctified.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਉਹੀ ਮੂੰਹ ਧੰਨ ਹੈ (ਭਾਗਾਂ ਵਾਲਾ ਹੈ) ਜਿਸ ਮੂੰਹ ਨਾਲ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਉਚਾਰਿਆ ਜਾਂਦਾ ਹੈ। ਸਰੀਰ ਵਿਚਾਰੇ ਦੀ ਤਾਂ ਕੀ ਗੱਲ ਹੈ, ਜਿਸ ਨਗਰ ਵਿੱਚ ਰਾਮ ਦਾ ਨਾਮ ਲਿਆ ਜਾਂਦਾ ਹੈ, ਉਹ ਸਾਰਾ ਨਗਰ ਹੀ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-वही मुख धन्य (सौभाग्यशाली) है जिस मुख से भगवान का नाम उच्चारित किया जाता है। शरीर बेचारे की क्या बात है, जिस नगर में राम का नाम लिया जाता है, वह संपूर्ण नगर ही पवित्र हो जाता है।',
+      en: 'Satguru Kabir Saheb proclaims: Blessed is that mouth which utters the Divine Name. What to speak of the frail body alone—the entire town where the Lord\'s Name is chanted becomes sanctified.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਉਚਾਰਨ ਨਾਲ ਆਪਾ ਪਵਿੱਤਰ ਹੁੰਦਾ ਹੈ ਅਤੇ ਆਲੇ-ਕੁਆਲੇ ਵਿੱਚ ਵੀ ਅਧਿਆਤਮਕ ਸ਼ਾਂਤੀ ਫੈਲਦੀ ਹੈ।',
@@ -5928,9 +5928,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਉਹੀ ਕੁਲ ਚੰਗੀ (ਸ੍ਰੇਸ਼ਠ) ਹੈ ਜਿਸ ਕੁਲ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਭਗਤ ਪੈਦਾ ਹੁੰਦਾ ਹੈ। ਜਿਸ ਕੁਲ ਵਿੱਚ ਪ੍ਰਭੂ ਦਾ ਭਗਤ ਪੈਦਾ ਨਹੀਂ ਹੁੰਦਾ, ਉਹ ਕੁਲ ਜੰਗਲੀ ਢੱਕ ਅਤੇ ਪਲਾਸ ਦੇ ਬੂਟਿਆਂ ਵਾਂਗ ਨਿਸਫਲ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-वही कुल अच्छा (श्रेष्ठ) है जिस कुल में भगवान का भक्त पैदा होता है। जिस कुल में प्रभु का भक्त पैदा नहीं होता, वह कुल जंगली ढाक और पलास के पौधों के समान निष्फल है।',
-      en: 'Kabir Ji says: That family is truly noble in which a devotee of God is born. A family that produces no devotee is as barren and fruitless as the wild Dhak and Palash trees.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਉਹੀ ਕੁਲ ਚੰਗੀ (ਸ੍ਰੇਸ਼ਠ) ਹੈ ਜਿਸ ਕੁਲ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਭਗਤ ਪੈਦਾ ਹੁੰਦਾ ਹੈ। ਜਿਸ ਕੁਲ ਵਿੱਚ ਪ੍ਰਭੂ ਦਾ ਭਗਤ ਪੈਦਾ ਨਹੀਂ ਹੁੰਦਾ, ਉਹ ਕੁਲ ਜੰਗਲੀ ਢੱਕ ਅਤੇ ਪਲਾਸ ਦੇ ਬੂਟਿਆਂ ਵਾਂਗ ਨਿਸਫਲ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-वही कुल अच्छा (श्रेष्ठ) है जिस कुल में भगवान का भक्त पैदा होता है। जिस कुल में प्रभु का भक्त पैदा नहीं होता, वह कुल जंगली ढाक और पलास के पौधों के समान निष्फल है।',
+      en: 'Satguru Kabir Saheb proclaims: That family is truly noble in which a devotee of God is born. A family that produces no devotee is as barren and fruitless as the wild Dhak and Palash trees.',
     },
     chintan: {
       pb: 'ਕੁਲ ਦਾ ਅਸਲ ਮਾਣ ਉੱਚੀ ਜਾਤ ਜਾਂ ਧਨ ਨਾਲ ਨਹੀਂ, ਬਲਕਿ ਪ੍ਰਭੂ ਭਗਤੀ ਨਾਲ ਹੈ।',
@@ -6001,9 +6001,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਘੋੜੇ, ਹਾਥੀ ਅਤੇ ਅਨੇਕਾਂ ਸਵਾਰੀਆਂ ਹੋਣ ਅਤੇ ਲੱਖਾਂ ਝੰਡੇ (ਰਾਜ-ਭਾਗ ਦੀ ਸ਼ਾਨ) ਝੂਲਦੇ ਹੋਣ, ਇਸ (ਦੁਨਿਆਵੀ ਰਾਜ-ਸੁਖ) ਨਾਲੋਂ ਭੀਖ ਮੰਗ ਕੇ ਗੁਜ਼ਾਰਾ ਕਰਨਾ ਵੀ ਚੰਗਾ ਹੈ ਜੇਕਰ ਦਿਨ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਕਰਦਿਆਂ ਬੀਤਣ।',
-      hi: 'कबीर जी कहते हैं-घोड़े, हाथी और अनेक सवारियां हों तथा लाखों झंडे (राज-पाट का वैभव) फहराते हों, इस (दुनियावी राज-सुख) की अपेक्षा भीख मांगकर गुजर-बसर करना भी श्रेष्ठ है यदि दिन परमात्मा का स्मरण करते हुए बीतें।',
-      en: 'Kabir Ji says: Even possessing horses, elephants, imperial carriages, and millions of flags of sovereignty—such royal power is far inferior to begging if those days are spent in divine remembrance.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਘੋੜੇ, ਹਾਥੀ ਅਤੇ ਅਨੇਕਾਂ ਸਵਾਰੀਆਂ ਹੋਣ ਅਤੇ ਲੱਖਾਂ ਝੰਡੇ (ਰਾਜ-ਭਾਗ ਦੀ ਸ਼ਾਨ) ਝੂਲਦੇ ਹੋਣ, ਇਸ (ਦੁਨਿਆਵੀ ਰਾਜ-ਸੁਖ) ਨਾਲੋਂ ਭੀਖ ਮੰਗ ਕੇ ਗੁਜ਼ਾਰਾ ਕਰਨਾ ਵੀ ਚੰਗਾ ਹੈ ਜੇਕਰ ਦਿਨ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਕਰਦਿਆਂ ਬੀਤਣ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-घोड़े, हाथी और अनेक सवारियां हों तथा लाखों झंडे (राज-पाट का वैभव) फहराते हों, इस (दुनियावी राज-सुख) की अपेक्षा भीख मांगकर गुजर-बसर करना भी श्रेष्ठ है यदि दिन परमात्मा का स्मरण करते हुए बीतें।',
+      en: 'Satguru Kabir Saheb proclaims: Even possessing horses, elephants, imperial carriages, and millions of flags of sovereignty—such royal power is far inferior to begging if those days are spent in divine remembrance.',
     },
     chintan: {
       pb: 'ਸਭ ਤੋਂ ਉੱਤਮ ਸੁਖ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਹੈ। ਰਾਜ-ਭਾਗ ਵੀ ਨਾਮ ਬਿਨਾਂ ਵਿਅਰਥ ਹੈ।',
@@ -6074,9 +6074,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਢੋਲਕੀ ਮੋਢੇ ਉੱਤੇ ਚੁੱਕ ਕੇ (ਢੰਡੋਰਾ ਪਿੱਟ ਕੇ) ਸਾਰਾ ਜਗਤ ਫਿਰ ਆਇਆ ਹਾਂ ਅਤੇ ਸਭ ਕੁਝ ਚੰਗੀ ਤਰ੍ਹਾਂ ਠੋਕ-ਵਜਾ ਕੇ ਵੇਖ ਲਿਆ ਹੈ; ਸੰਸਾਰ ਵਿੱਚ ਅਸਲ ਵਿੱਚ ਕੋਈ ਕਿਸੇ ਦਾ ਨਹੀਂ ਹੈ (ਸਭ ਮੋਹ ਦੇ ਨਾਤੇ ਹਨ)।',
-      hi: 'कबीर जी कहते हैं-मैं ढोलक कंधे पर उठाकर (ढिंढोरा पीटकर) संपूर्ण जगत घूम आया हूँ और सब कुछ भली-भांति ठोक-बजा कर देख लिया है; संसार में वास्तव में कोई किसी का नहीं है (सब मोह के नाते हैं)।',
-      en: 'Kabir Ji says: I have wandered across the entire world carrying a drum on my shoulder, thoroughly testing and examining everything; in truth, no one belongs to anyone else in worldly attachments.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਢੋਲਕੀ ਮੋਢੇ ਉੱਤੇ ਚੁੱਕ ਕੇ (ਢੰਡੋਰਾ ਪਿੱਟ ਕੇ) ਸਾਰਾ ਜਗਤ ਫਿਰ ਆਇਆ ਹਾਂ ਅਤੇ ਸਭ ਕੁਝ ਚੰਗੀ ਤਰ੍ਹਾਂ ਠੋਕ-ਵਜਾ ਕੇ ਵੇਖ ਲਿਆ ਹੈ; ਸੰਸਾਰ ਵਿੱਚ ਅਸਲ ਵਿੱਚ ਕੋਈ ਕਿਸੇ ਦਾ ਨਹੀਂ ਹੈ (ਸਭ ਮੋਹ ਦੇ ਨਾਤੇ ਹਨ)।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मैं ढोलक कंधे पर उठाकर (ढिंढोरा पीटकर) संपूर्ण जगत घूम आया हूँ और सब कुछ भली-भांति ठोक-बजा कर देख लिया है; संसार में वास्तव में कोई किसी का नहीं है (सब मोह के नाते हैं)।',
+      en: 'Satguru Kabir Saheb proclaims: I have wandered across the entire world carrying a drum on my shoulder, thoroughly testing and examining everything; in truth, no one belongs to anyone else in worldly attachments.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰਕ ਰਿਸ਼ਤੇ ਨਾਤੇ ਮੋਹ ਦੇ ਹਨ। ਅਸਲ ਸਾਥੀ ਕੇਵਲ ਪ੍ਰਮਾਤਮਾ ਹੈ।',
@@ -6365,8 +6365,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       {
         word: 'ਕਮਾਲੁ / कमालु',
         meaning: {
-          pb: 'ਕਬੀਰ ਜੀ ਦਾ ਪੁੱਤਰ (ਕਮਾਲ)',
-          hi: 'कबीर जी का पुत्र (कमाल)',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਪੁੱਤਰ (ਕਮਾਲ)',
+          hi: 'सतगुरु कबीर साहेब का पुत्र (कमाल)',
           en: 'Kamal, Kabir\'s son',
         },
       },
@@ -6380,9 +6380,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕਬੀਰ ਦਾ (ਆਤਮਿਕ) ਬੰਸ ਡੁੱਬ ਗਿਆ ਹੈ ਕਿਉਂਕਿ ਘਰ ਵਿੱਚ ਕਮਾਲ (ਪੁੱਤਰ) ਪੈਦਾ ਹੋਇਆ ਹੈ, ਜਿਸ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਛੱਡ ਕੇ (ਸੰਸਾਰਕ ਮੋਹ ਅਤੇ) ਮਾਇਆ ਦਾ ਮਾਲ ਘਰ ਵਿੱਚ ਲਿਆ ਕੇ ਜੋੜ ਲਿਆ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-कबीर का (आध्यात्मिक) वंश डूब गया है क्योंकि घर में कमाल (पुत्र) पैदा हुआ है, जिसने भगवान का स्मरण छोड़कर (सांसारिक मोह और) माया का धन घर में लाकर एकत्र कर लिया है।',
-      en: 'Kabir Ji says: My spiritual lineage is sinking because son Kamal has been born, who, forsaking divine remembrance, has brought home worldly wealth and materialistic attachment.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕਬੀਰ ਦਾ (ਆਤਮਿਕ) ਬੰਸ ਡੁੱਬ ਗਿਆ ਹੈ ਕਿਉਂਕਿ ਘਰ ਵਿੱਚ ਕਮਾਲ (ਪੁੱਤਰ) ਪੈਦਾ ਹੋਇਆ ਹੈ, ਜਿਸ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਛੱਡ ਕੇ (ਸੰਸਾਰਕ ਮੋਹ ਅਤੇ) ਮਾਇਆ ਦਾ ਮਾਲ ਘਰ ਵਿੱਚ ਲਿਆ ਕੇ ਜੋੜ ਲਿਆ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-कबीर का (आध्यात्मिक) वंश डूब गया है क्योंकि घर में कमाल (पुत्र) पैदा हुआ है, जिसने भगवान का स्मरण छोड़कर (सांसारिक मोह और) माया का धन घर में लाकर एकत्र कर लिया है।',
+      en: 'Satguru Kabir Saheb proclaims: My spiritual lineage is sinking because son Kamal has been born, who, forsaking divine remembrance, has brought home worldly wealth and materialistic attachment.',
     },
     chintan: {
       pb: 'ਮਾਇਆ ਦਾ ਮੋਹ ਅਤੇ ਸੰਸਾਰਕ ਧੰਧੇ ਪਰਿਵਾਰ ਨੂੰ ਅਧਿਆਤਮਕ ਮਾਰਗ ਤੋਂ ਭਟਕਾ ਦਿੰਦੇ ਹਨ।',
@@ -6453,9 +6453,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇਕਰ ਸੰਤਾਂ ਨੂੰ ਮਿਲਣ ਜਾਣਾ ਹੋਵੇ ਤਾਂ ਨਾਲ ਕਿਸੇ ਦੁਨਿਆਵੀ ਸਾਥੀ ਨੂੰ ਨਾ ਲਿਜਾਓ (ਇਕੱਲੇ, ਨਿਰਮਲ ਮਨ ਨਾਲ ਜਾਓ)। ਘਰੋਂ ਪੈਰ ਪੁੱਟ ਕੇ ਕਦੇ ਪਿੱਛੇ ਪੈਰ ਨਾ ਰੱਖੋ (ਵਾਪਸ ਨਾ ਮੁੜੋ), ਅੱਗੇ ਭਾਵੇਂ ਜੋ ਕੁਝ ਵੀ ਹੋਵੇ, ਸਹਾਰੋ।',
-      hi: 'कबीर जी कहते हैं-यदि संतों से मिलने जाना हो तो साथ किसी दुनियावी साथी को न ले जाएं (अकेले, निर्मल मन से जाएं)। घर से कदम बढ़ाकर कभी पीछे पैर न रखें (वापस न लौटें), आगे चाहे जो कुछ भी हो, उसका सामना करें।',
-      en: 'Kabir Ji says: When going to visit holy saints, take no worldly companion along. Step forward with resolute devotion and never turn back, come what may.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇਕਰ ਸੰਤਾਂ ਨੂੰ ਮਿਲਣ ਜਾਣਾ ਹੋਵੇ ਤਾਂ ਨਾਲ ਕਿਸੇ ਦੁਨਿਆਵੀ ਸਾਥੀ ਨੂੰ ਨਾ ਲਿਜਾਓ (ਇਕੱਲੇ, ਨਿਰਮਲ ਮਨ ਨਾਲ ਜਾਓ)। ਘਰੋਂ ਪੈਰ ਪੁੱਟ ਕੇ ਕਦੇ ਪਿੱਛੇ ਪੈਰ ਨਾ ਰੱਖੋ (ਵਾਪਸ ਨਾ ਮੁੜੋ), ਅੱਗੇ ਭਾਵੇਂ ਜੋ ਕੁਝ ਵੀ ਹੋਵੇ, ਸਹਾਰੋ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि संतों से मिलने जाना हो तो साथ किसी दुनियावी साथी को न ले जाएं (अकेले, निर्मल मन से जाएं)। घर से कदम बढ़ाकर कभी पीछे पैर न रखें (वापस न लौटें), आगे चाहे जो कुछ भी हो, उसका सामना करें।',
+      en: 'Satguru Kabir Saheb proclaims: When going to visit holy saints, take no worldly companion along. Step forward with resolute devotion and never turn back, come what may.',
     },
     chintan: {
       pb: 'ਪਰਮਾਤਮਾ ਅਤੇ ਸੰਤਾਂ ਦੀ ਪ੍ਰਾਪਤੀ ਲਈ ਦ੍ਰਿੜ੍ਹਤਾ ਅਤੇ ਇਕਾਗਰਤਾ ਅਤਿ ਜ਼ਰੂਰੀ ਹੈ।',
@@ -6599,9 +6599,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਦ ਹੰਸ (ਜੀਵਾਤਮਾ) ਸਰੀਰ ਛੱਡ ਕੇ ਉੱਡ ਜਾਂਦਾ ਹੈ ਅਤੇ ਸਰੀਰ ਨੂੰ ਮਿੱਟੀ ਵਿੱਚ ਦਬਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ (ਜਾਂ ਸਾੜ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ), ਤਾਂ ਵੀ ਮਨੁੱਖ ਇਸ਼ਾਰਿਆਂ ਨਾਲ ਸੰਬੰਧੀਆਂ ਨੂੰ ਘਰ ਦੀ ਸੰਭਾਲ ਸਮਝਾਉਂਦਾ ਹੈ। ਅੰਤ ਵੇਲੇ ਵੀ ਮਨੁੱਖ ਅੱਖਾਂ ਦੀ ਕੰਗਾਲਤਾ (ਲਾਲਚ) ਨਹੀਂ ਛੱਡਦਾ।',
-      hi: 'कबीर जी कहते हैं-जब हंस (जीवात्मा) शरीर छोड़कर उड़ जाता है और शरीर को मिट्टी में दबा दिया जाता है (या दाह-संस्कार कर दिया जाता है), तब भी मनुष्य संकेतों से संबंधियों को घर की संभाल समझाता है। अंत समय में भी मनुष्य आंखों की कंगालता (मोह-लोभ) नहीं छोड़ता।',
-      en: 'Kabir Ji says: When the soul-swan departs and the body is buried or cremated, even then the dying person signals instructions to relatives about worldly affairs. Even at the final moment, the eyes do not let go of greed and attachment.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਦ ਹੰਸ (ਜੀਵਾਤਮਾ) ਸਰੀਰ ਛੱਡ ਕੇ ਉੱਡ ਜਾਂਦਾ ਹੈ ਅਤੇ ਸਰੀਰ ਨੂੰ ਮਿੱਟੀ ਵਿੱਚ ਦਬਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ (ਜਾਂ ਸਾੜ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ), ਤਾਂ ਵੀ ਮਨੁੱਖ ਇਸ਼ਾਰਿਆਂ ਨਾਲ ਸੰਬੰਧੀਆਂ ਨੂੰ ਘਰ ਦੀ ਸੰਭਾਲ ਸਮਝਾਉਂਦਾ ਹੈ। ਅੰਤ ਵੇਲੇ ਵੀ ਮਨੁੱਖ ਅੱਖਾਂ ਦੀ ਕੰਗਾਲਤਾ (ਲਾਲਚ) ਨਹੀਂ ਛੱਡਦਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जब हंस (जीवात्मा) शरीर छोड़कर उड़ जाता है और शरीर को मिट्टी में दबा दिया जाता है (या दाह-संस्कार कर दिया जाता है), तब भी मनुष्य संकेतों से संबंधियों को घर की संभाल समझाता है। अंत समय में भी मनुष्य आंखों की कंगालता (मोह-लोभ) नहीं छोड़ता।',
+      en: 'Satguru Kabir Saheb proclaims: When the soul-swan departs and the body is buried or cremated, even then the dying person signals instructions to relatives about worldly affairs. Even at the final moment, the eyes do not let go of greed and attachment.',
     },
     chintan: {
       pb: 'ਮਾਇਆ ਦਾ ਮੋਹ ਮਰਦਮਸ਼ੁਮਾਰੀ ਤੱਕ ਨਾਲ ਨਹੀਂ ਛੁੱਟਦਾ। ਜੀਵਨ ਵਿੱਚ ਹੀ ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਕਮਾਓ।',
@@ -6672,9 +6672,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਬੇਨਤੀ ਕਰਦੇ ਹਨ-ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਆਪਣੀਆਂ ਅੱਖਾਂ ਨਾਲ ਤੈਨੂੰ ਹੀ ਵੇਖਦਾ ਰਹਾਂ, ਕੰਨਾਂ ਨਾਲ ਤੇਰਾ ਨਾਮ ਸੁਣਦਾ ਰਹਾਂ, ਬੈਠ ਕੇ ਜ਼ਬਾਨ ਨਾਲ ਤੇਰਾ ਨਾਮ ਉਚਾਰਦਾ ਰਹਾਂ ਅਤੇ ਤੇਰੇ ਚਰਨ ਕਮਲਾਂ ਨੂੰ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਈ ਰੱਖਾਂ।',
-      hi: 'कबीर जी प्रार्थना करते हैं-हे प्रभु! मैं अपनी आंखों से आपको ही देखता रहूं, कानों से आपका नाम सुनता रहूं, बैठकर जुबान से आपका नाम उच्चारित करता रहूं और आपके चरण कमलों को अपने हृदय में बसाए रखूं।',
-      en: 'Kabir Ji prays: O Lord, may my eyes ever behold You, my ears hear Your Name, my tongue utter Your praise, and my heart enshrine Your lotus feet as its permanent abode.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬੇਨਤੀ ਕਰਦੇ ਹਨ-ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਆਪਣੀਆਂ ਅੱਖਾਂ ਨਾਲ ਤੈਨੂੰ ਹੀ ਵੇਖਦਾ ਰਹਾਂ, ਕੰਨਾਂ ਨਾਲ ਤੇਰਾ ਨਾਮ ਸੁਣਦਾ ਰਹਾਂ, ਬੈਠ ਕੇ ਜ਼ਬਾਨ ਨਾਲ ਤੇਰਾ ਨਾਮ ਉਚਾਰਦਾ ਰਹਾਂ ਅਤੇ ਤੇਰੇ ਚਰਨ ਕਮਲਾਂ ਨੂੰ ਆਪਣੇ ਹਿਰਦੇ ਵਿੱਚ ਵਸਾਈ ਰੱਖਾਂ।',
+      hi: 'सतगुरु कबीर साहेब प्रार्थना करते हैं-हे प्रभु! मैं अपनी आंखों से आपको ही देखता रहूं, कानों से आपका नाम सुनता रहूं, बैठकर जुबान से आपका नाम उच्चारित करता रहूं और आपके चरण कमलों को अपने हृदय में बसाए रखूं।',
+      en: 'Satguru Kabir Saheb prays: O Lord, may my eyes ever behold You, my ears hear Your Name, my tongue utter Your praise, and my heart enshrine Your lotus feet as its permanent abode.',
     },
     chintan: {
       pb: 'ਭਗਤ ਦੀ ਅੰਤਿਮ ਇੱਛਾ ਕੇਵਲ ਪ੍ਰਭੂ ਦੇ ਦਰਸ਼ਨ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਦੀ ਹੁੰਦੀ ਹੈ।',
@@ -6745,9 +6745,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਮੈਂ ਸੁਰਗ ਅਤੇ ਨਰਕ (ਦੇ ਚੱਕਰਾਂ) ਤੋਂ ਬਚ ਗਿਆ ਹਾਂ। ਮੈਂ ਮੁੱਢ ਤੋਂ ਲੈ ਕੇ ਅੰਤ ਤੱਕ (ਸਦਾ ਹੀ) ਪ੍ਰਭੂ ਦੇ ਚਰਨ ਕਮਲਾਂ ਦੀ ਮੌਜ (ਅਨੰਦ) ਵਿੱਚ ਮਸਤ ਰਹਿੰਦਾ ਹਾਂ।',
-      hi: 'कबीर जी कहते हैं-सतगुरु की कृपा से मैं स्वर्ग और नरक (के चक्रों) से बच गया हूँ। मैं आदि से अंत तक (सदैव) प्रभु के चरण कमलों की मौज (आनंद) में मग्न रहता हूँ।',
-      en: 'Kabir Ji says: By the grace of the Satguru, I have transcended the illusions of heaven and hell. From beginning to end, I abide eternally in the blissful ecstasy of the Lord\'s lotus feet.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸਤਿਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਮੈਂ ਸੁਰਗ ਅਤੇ ਨਰਕ (ਦੇ ਚੱਕਰਾਂ) ਤੋਂ ਬਚ ਗਿਆ ਹਾਂ। ਮੈਂ ਮੁੱਢ ਤੋਂ ਲੈ ਕੇ ਅੰਤ ਤੱਕ (ਸਦਾ ਹੀ) ਪ੍ਰਭੂ ਦੇ ਚਰਨ ਕਮਲਾਂ ਦੀ ਮੌਜ (ਅਨੰਦ) ਵਿੱਚ ਮਸਤ ਰਹਿੰਦਾ ਹਾਂ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-सतगुरु की कृपा से मैं स्वर्ग और नरक (के चक्रों) से बच गया हूँ। मैं आदि से अंत तक (सदैव) प्रभु के चरण कमलों की मौज (आनंद) में मग्न रहता हूँ।',
+      en: 'Satguru Kabir Saheb proclaims: By the grace of the Satguru, I have transcended the illusions of heaven and hell. From beginning to end, I abide eternally in the blissful ecstasy of the Lord\'s lotus feet.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦਾ ਪ੍ਰੇਮ ਅਤੇ ਸਿਮਰਨ ਹੀ ਸਭ ਤੋਂ ਉੱਤਮ ਮੁਕਤੀ ਹੈ ਜੋ ਸੁਰਗ-ਨਰਕ ਤੋਂ ਪਾਰ ਕਰ ਦਿੰਦੀ ਹੈ।',
@@ -6818,9 +6818,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦੇ ਚਰਨ ਕਮਲਾਂ ਦੀ ਮੌਜ (ਅਨੰਦ) ਦਾ ਅੰਦਾਜ਼ਾ ਕਿਵੇਂ ਲਗਾਇਆ ਜਾ ਸਕਦਾ ਹੈ? ਇਸ ਨੂੰ ਬਚਨਾਂ ਨਾਲ ਕਹਿ ਕੇ ਬਿਆਨ ਕਰਨਾ ਸੋਭਦਾ ਨਹੀਂ (ਇਹ ਅਕਥਨੀਯ ਹੈ), ਇਹ ਤਾਂ ਖ਼ੁਦ ਅਨੁਭਵ ਕਰਨ ਨਾਲ ਹੀ ਪ੍ਰਮਾਣਿਕ ਹੁੰਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-प्रभु के चरण कमलों की मौज (आनंद) का अनुमान कैसे लगाया जा सकता है? इसे शब्दों में व्यक्त करना संभव नहीं (यह अकथनीय है), यह तो स्वयं अनुभव करने से ही प्रामाणिक होता है।',
-      en: 'Kabir Ji says: How can the supreme bliss of divine lotus feet be estimated or described? It transcends words; experiencing it firsthand within the soul is the only true proof.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦੇ ਚਰਨ ਕਮਲਾਂ ਦੀ ਮੌਜ (ਅਨੰਦ) ਦਾ ਅੰਦਾਜ਼ਾ ਕਿਵੇਂ ਲਗਾਇਆ ਜਾ ਸਕਦਾ ਹੈ? ਇਸ ਨੂੰ ਬਚਨਾਂ ਨਾਲ ਕਹਿ ਕੇ ਬਿਆਨ ਕਰਨਾ ਸੋਭਦਾ ਨਹੀਂ (ਇਹ ਅਕਥਨੀਯ ਹੈ), ਇਹ ਤਾਂ ਖ਼ੁਦ ਅਨੁਭਵ ਕਰਨ ਨਾਲ ਹੀ ਪ੍ਰਮਾਣਿਕ ਹੁੰਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-प्रभु के चरण कमलों की मौज (आनंद) का अनुमान कैसे लगाया जा सकता है? इसे शब्दों में व्यक्त करना संभव नहीं (यह अकथनीय है), यह तो स्वयं अनुभव करने से ही प्रामाणिक होता है।',
+      en: 'Satguru Kabir Saheb proclaims: How can the supreme bliss of divine lotus feet be estimated or described? It transcends words; experiencing it firsthand within the soul is the only true proof.',
     },
     chintan: {
       pb: 'ਅਧਿਆਤਮਕ ਅਨੰਦ ਅਨੁਭਵ ਦੀ ਚੀਜ਼ ਹੈ, ਸ਼ਬਦਾਂ ਦੀ ਸੀਮਾ ਤੋਂ ਪਰ੍ਹੇ ਹੈ।',
@@ -6891,9 +6891,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਸ (ਚਰਨ ਕਮਲਾਂ ਦੀ ਮੌਜ) ਨੂੰ ਵੇਖ ਕੇ ਮੈਂ ਕਿਸ ਨੂੰ ਜਾ ਕੇ ਦੱਸਾਂ? ਦੱਸਣ ਨਾਲ ਕੋਈ ਵਿਸ਼ਵਾਸ (ਪਤੀਆਰਾ) ਨਹੀਂ ਕਰਦਾ। ਇਸ ਲਈ ਪਰਮਾਤਮਾ ਜੈਸਾ ਹੈ, ਵੈਸਾ ਹੀ ਅਕਥ ਹੈ; ਮੈਂ ਤਾਂ ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਸਦਾ ਉਸ ਦੇ ਗੁਣ ਹੀ ਗਾਉਂਦਾ ਰਹਿੰਦਾ ਹਾਂ।',
-      hi: 'कबीर जी कहते हैं-इस (आनंद) को देखकर मैं किसको जाकर बताऊं? बताने से कोई विश्वास नहीं करता। इसलिए परमात्मा जैसा है, वैसा ही अकथ है; मैं तो प्रसन्न होकर सदा उसके गुण ही गाता रहता हूँ।',
-      en: 'Kabir Ji says: Having witnessed this supreme bliss, to whom can I describe it? No one would believe it. Therefore, God is just as He is—ineffable. I simply remain joyful, singing His endless praises.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਸ (ਚਰਨ ਕਮਲਾਂ ਦੀ ਮੌਜ) ਨੂੰ ਵੇਖ ਕੇ ਮੈਂ ਕਿਸ ਨੂੰ ਜਾ ਕੇ ਦੱਸਾਂ? ਦੱਸਣ ਨਾਲ ਕੋਈ ਵਿਸ਼ਵਾਸ (ਪਤੀਆਰਾ) ਨਹੀਂ ਕਰਦਾ। ਇਸ ਲਈ ਪਰਮਾਤਮਾ ਜੈਸਾ ਹੈ, ਵੈਸਾ ਹੀ ਅਕਥ ਹੈ; ਮੈਂ ਤਾਂ ਪ੍ਰਸੰਨ ਹੋ ਕੇ ਸਦਾ ਉਸ ਦੇ ਗੁਣ ਹੀ ਗਾਉਂਦਾ ਰਹਿੰਦਾ ਹਾਂ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-इस (आनंद) को देखकर मैं किसको जाकर बताऊं? बताने से कोई विश्वास नहीं करता। इसलिए परमात्मा जैसा है, वैसा ही अकथ है; मैं तो प्रसन्न होकर सदा उसके गुण ही गाता रहता हूँ।',
+      en: 'Satguru Kabir Saheb proclaims: Having witnessed this supreme bliss, to whom can I describe it? No one would believe it. Therefore, God is just as He is—ineffable. I simply remain joyful, singing His endless praises.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦੀ ਮਹਿਮਾ ਅਪਾਰ ਹੈ। ਉਸ ਨੂੰ ਬਚਨਾਂ ਵਿੱਚ ਬੰਨ੍ਹਣ ਦੀ ਬਜਾਏ ਉਸ ਦਾ ਸਿਮਰਨ ਕਰੋ।',
@@ -6964,9 +6964,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਵੇਂ ਕੂੰਜ (ਪੰਛੀ) ਚੋਗਾ ਵੀ ਚੁਗਦੀ ਹੈ ਅਤੇ ਨਾਲੇ ਆਪਣੇ ਬੱਚਿਆਂ ਨੂੰ ਯਾਦ ਰੱਖਦੀ ਹੈ, ਅਤੇ ਚੁਗਦਿਆਂ-ਚੁਗਦਿਆਂ ਫਿਰ ਬੱਚਿਆਂ ਦੀ ਯਾਦ ਵਿੱਚ ਤੜਫ਼ਦੀ ਹੈ; ਇਸੇ ਤਰ੍ਹਾਂ ਮਨੁੱਖ ਦਾ ਮਨ ਵੀ ਦੁਨਿਆਵੀ ਕਾਰ-ਵਿਹਾਰ ਕਰਦਿਆਂ ਮਾਇਆ ਦੀ ਮਮਤਾ ਵਿੱਚ ਜੁੜਿਆ ਰਹਿੰਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-जैसे कुंज (पक्षी) दाना भी चुगती है और साथ ही अपने बच्चों को याद रखती है, और चुगते-चुगते फिर बच्चों की याद में तड़पती है; इसी प्रकार मनुष्य का मन भी दुनियावी कार्य-व्यवहार करते हुए माया की ममता में जुड़ा रहता है।',
-      en: 'Kabir Ji says: Just as the crane forages for food while constantly remembering and worrying about her young chicks, in the same way, the worldly mind remains deeply entangled in possessive attachment and greed.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਕੂੰਜ (ਪੰਛੀ) ਚੋਗਾ ਵੀ ਚੁਗਦੀ ਹੈ ਅਤੇ ਨਾਲੇ ਆਪਣੇ ਬੱਚਿਆਂ ਨੂੰ ਯਾਦ ਰੱਖਦੀ ਹੈ, ਅਤੇ ਚੁਗਦਿਆਂ-ਚੁਗਦਿਆਂ ਫਿਰ ਬੱਚਿਆਂ ਦੀ ਯਾਦ ਵਿੱਚ ਤੜਫ਼ਦੀ ਹੈ; ਇਸੇ ਤਰ੍ਹਾਂ ਮਨੁੱਖ ਦਾ ਮਨ ਵੀ ਦੁਨਿਆਵੀ ਕਾਰ-ਵਿਹਾਰ ਕਰਦਿਆਂ ਮਾਇਆ ਦੀ ਮਮਤਾ ਵਿੱਚ ਜੁੜਿਆ ਰਹਿੰਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जैसे कुंज (पक्षी) दाना भी चुगती है और साथ ही अपने बच्चों को याद रखती है, और चुगते-चुगते फिर बच्चों की याद में तड़पती है; इसी प्रकार मनुष्य का मन भी दुनियावी कार्य-व्यवहार करते हुए माया की ममता में जुड़ा रहता है।',
+      en: 'Satguru Kabir Saheb proclaims: Just as the crane forages for food while constantly remembering and worrying about her young chicks, in the same way, the worldly mind remains deeply entangled in possessive attachment and greed.',
     },
     chintan: {
       pb: 'ਮਨੁੱਖੀ ਮਨ ਸੰਸਾਰਕ ਕਾਰਜਾਂ ਵਿੱਚ ਰੁਝਿਆ ਹੋਣ ਤੇ ਵੀ ਮਾਇਕ ਮੋਹ ਵਿੱਚ ਗ੍ਰਸਤ ਰਹਿੰਦਾ ਹੈ।',
@@ -7037,9 +7037,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਆਕਾਸ਼ ਵਿੱਚ ਘਣੇ ਬੱਦਲ ਛਾਏ ਹੋਏ ਹਨ ਅਤੇ ਮੀਂਹ ਵਰ੍ਹਨ ਨਾਲ ਸਾਰੇ ਸਰੋਵਰ ਤੇ ਤਲਾਅ ਭਰ ਗਏ ਹਨ, ਪਰ ਪਪੀਹਾ (ਆਪਣੀ ਖ਼ਾਸ ਬੂੰਦ ਲਈ) ਫਿਰ ਵੀ ਤਰਸਦਾ ਰਹਿੰਦਾ ਹੈ। (ਇਸੇ ਤਰ੍ਹਾਂ) ਜਿਹੜੇ ਮਨੁੱਖ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਛੱਡ ਕੇ ਮਾਇਆ ਪਿੱਛੇ ਤਰਸਦੇ ਫਿਰਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਦਾ ਕੀ ਹਾਲ ਹੋਵੇਗਾ?',
-      hi: 'कबीर जी कहते हैं-आकाश में घने बादल छाए हुए हैं और वर्षा होने से सभी सरोवर और तालाब भर गए हैं, किंतु पपीहा (अपनी विशेष बूंद के लिए) फिर भी तरसता रहता है। (इसी प्रकार) जो मनुष्य सर्वव्यापक परमात्मा को छोड़कर माया के पीछे तरसते फिरते हैं, उनका क्या हाल होगा?',
-      en: 'Kabir Ji says: Dark clouds fill the sky and rain fills all lakes and ponds to the brim, yet the plover still pines away parched (for its single drop). Similarly, what will become of those who turn away from the all-pervading God and endlessly chase after worldly illusions?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਆਕਾਸ਼ ਵਿੱਚ ਘਣੇ ਬੱਦਲ ਛਾਏ ਹੋਏ ਹਨ ਅਤੇ ਮੀਂਹ ਵਰ੍ਹਨ ਨਾਲ ਸਾਰੇ ਸਰੋਵਰ ਤੇ ਤਲਾਅ ਭਰ ਗਏ ਹਨ, ਪਰ ਪਪੀਹਾ (ਆਪਣੀ ਖ਼ਾਸ ਬੂੰਦ ਲਈ) ਫਿਰ ਵੀ ਤਰਸਦਾ ਰਹਿੰਦਾ ਹੈ। (ਇਸੇ ਤਰ੍ਹਾਂ) ਜਿਹੜੇ ਮਨੁੱਖ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਛੱਡ ਕੇ ਮਾਇਆ ਪਿੱਛੇ ਤਰਸਦੇ ਫਿਰਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਦਾ ਕੀ ਹਾਲ ਹੋਵੇਗਾ?',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-आकाश में घने बादल छाए हुए हैं और वर्षा होने से सभी सरोवर और तालाब भर गए हैं, किंतु पपीहा (अपनी विशेष बूंद के लिए) फिर भी तरसता रहता है। (इसी प्रकार) जो मनुष्य सर्वव्यापक परमात्मा को छोड़कर माया के पीछे तरसते फिरते हैं, उनका क्या हाल होगा?',
+      en: 'Satguru Kabir Saheb proclaims: Dark clouds fill the sky and rain fills all lakes and ponds to the brim, yet the plover still pines away parched (for its single drop). Similarly, what will become of those who turn away from the all-pervading God and endlessly chase after worldly illusions?',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ-ਰੂਪੀ ਅੰਮ੍ਰਿਤ ਸਾਹਮਣੇ ਹੋਣ ਦੇ ਬਾਵਜੂਦ ਮਾਇਕ ਤ੍ਰਿਸ਼ਨਾ ਵਿੱਚ ਭਟਕਣਾ ਸਭ ਤੋਂ ਵੱਡਾ ਦੁੱਖ ਹੈ।',
@@ -7110,9 +7110,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਵੇਂ ਚਕਵੀ (ਪੰਛੀ) ਰਾਤ ਨੂੰ (ਆਪਣੇ ਸਾਥੀ ਨਾਲੋਂ) ਵਿਛੜਦੀ ਹੈ ਪਰ ਸਵੇਰਸਾਰ ਆ ਕੇ ਮਿਲ ਜਾਂਦੀ ਹੈ; ਪਰ ਜਿਹੜੇ ਮਨੁੱਖ ਅਗਿਆਨਤਾ ਕਾਰਨ ਪਰਮਾਤਮਾ ਨਾਲੋਂ ਵਿਛੜੇ ਹਨ, ਉਹ ਨਾ ਦਿਨ ਨੂੰ ਮਿਲਦੇ ਹਨ ਅਤੇ ਨਾ ਰਾਤ ਨੂੰ (ਕਦੇ ਵੀ ਪ੍ਰਭੂ ਸਿਮਰਨ ਵਿੱਚ ਨਹੀਂ ਜੁੜਦੇ)।',
-      hi: 'कबीर जी कहते हैं-जैसे चकवी (पक्षी) रात को (अपने साथी से) बिछड़ती है किंतु प्रातःकाल आकर मिल जाती है; किंतु जो मनुष्य अज्ञानतावश परमात्मा से बिछड़े हैं, वे न दिन को मिलते हैं और न रात को (कभी भी प्रभु सिमरन से नहीं जुड़ते)।',
-      en: 'Kabir Ji says: Just as the chakvi bird separates from its mate at night but reunites at dawn, those souls estranged from God due to ignorance remain separated day and night, never uniting in divine remembrance.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਚਕਵੀ (ਪੰਛੀ) ਰਾਤ ਨੂੰ (ਆਪਣੇ ਸਾਥੀ ਨਾਲੋਂ) ਵਿਛੜਦੀ ਹੈ ਪਰ ਸਵੇਰਸਾਰ ਆ ਕੇ ਮਿਲ ਜਾਂਦੀ ਹੈ; ਪਰ ਜਿਹੜੇ ਮਨੁੱਖ ਅਗਿਆਨਤਾ ਕਾਰਨ ਪਰਮਾਤਮਾ ਨਾਲੋਂ ਵਿਛੜੇ ਹਨ, ਉਹ ਨਾ ਦਿਨ ਨੂੰ ਮਿਲਦੇ ਹਨ ਅਤੇ ਨਾ ਰਾਤ ਨੂੰ (ਕਦੇ ਵੀ ਪ੍ਰਭੂ ਸਿਮਰਨ ਵਿੱਚ ਨਹੀਂ ਜੁੜਦੇ)।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जैसे चकवी (पक्षी) रात को (अपने साथी से) बिछड़ती है किंतु प्रातःकाल आकर मिल जाती है; किंतु जो मनुष्य अज्ञानतावश परमात्मा से बिछड़े हैं, वे न दिन को मिलते हैं और न रात को (कभी भी प्रभु सिमरन से नहीं जुड़ते)।',
+      en: 'Satguru Kabir Saheb proclaims: Just as the chakvi bird separates from its mate at night but reunites at dawn, those souls estranged from God due to ignorance remain separated day and night, never uniting in divine remembrance.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਵਿਛੋੜਾ ਅਸਥਾਈ ਹੈ ਪਰ ਪ੍ਰਭੂ ਤੋਂ ਵਿਛੋੜਾ ਅਗਿਆਨਤਾ ਕਾਰਨ ਲੰबा ਅਤੇ ਘਾਤਕ ਹੁੰਦਾ ਹੈ।',
@@ -7183,9 +7183,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹੇ ਸੰਖ! ਸਮੁੰਦਰ ਤੋਂ ਵਿਛੜ ਕੇ ਤੂੰ ਸਮੁੰਦਰ ਦੇ ਅੰਦਰ ਹੀ ਰਹੁ (ਕਿਉਂ ਬਾਹਰ ਆਉਂਦਾ ਹੈਂ?) ਨਹੀਂ ਤਾਂ ਮੰਦਰ-ਮੰਦਰ ਵਿੱਚ ਸੂਰਜ ਚੜ੍ਹਦਿਆਂ ਹੀ ਲੋਕਾਂ ਦੇ ਹੱਥਾਂ ਵਿੱਚ ਪੈ ਕੇ ਤੂੰ ਧਾਹਾਂ ਮਾਰ ਕੇ ਰੋਵੇਂਗਾ (ਵਿਛੋੜੇ ਦਾ ਦੁੱਖ ਭੋਗੇਂਗਾ)।',
-      hi: 'कबीर जी कहते हैं-हे शंख! समुद्र से बिछड़कर तू समुद्र के भीतर ही रह (क्यों बाहर आता है?) अन्यथा मंदिर-मंदिर में सूर्योदय होते ही लोगों के हाथों में पड़कर तू विलाप करेगा और धाड़ें मारकर रोएगा।',
-      en: 'Kabir Ji says: O conch shell, separated from the ocean, remain deep within the waters! Otherwise, carried away into temples at sunrise, you will be blown and will wail bitterly in separation.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਸੰਖ! ਸਮੁੰਦਰ ਤੋਂ ਵਿਛੜ ਕੇ ਤੂੰ ਸਮੁੰਦਰ ਦੇ ਅੰਦਰ ਹੀ ਰਹੁ (ਕਿਉਂ ਬਾਹਰ ਆਉਂਦਾ ਹੈਂ?) ਨਹੀਂ ਤਾਂ ਮੰਦਰ-ਮੰਦਰ ਵਿੱਚ ਸੂਰਜ ਚੜ੍ਹਦਿਆਂ ਹੀ ਲੋਕਾਂ ਦੇ ਹੱਥਾਂ ਵਿੱਚ ਪੈ ਕੇ ਤੂੰ ਧਾਹਾਂ ਮਾਰ ਕੇ ਰੋਵੇਂਗਾ (ਵਿਛੋੜੇ ਦਾ ਦੁੱਖ ਭੋਗੇਂਗਾ)।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे शंख! समुद्र से बिछड़कर तू समुद्र के भीतर ही रह (क्यों बाहर आता है?) अन्यथा मंदिर-मंदिर में सूर्योदय होते ही लोगों के हाथों में पड़कर तू विलाप करेगा और धाड़ें मारकर रोएगा।',
+      en: 'Satguru Kabir Saheb proclaims: O conch shell, separated from the ocean, remain deep within the waters! Otherwise, carried away into temples at sunrise, you will be blown and will wail bitterly in separation.',
     },
     chintan: {
       pb: 'ਆਪਣੇ ਮੂਲ (ਪਰਮਾਤਮਾ) ਤੋਂ ਵਿਛੜਿਆ ਹੋਇਆ ਜੀਵ ਸੰਸਾਰ ਵਿੱਚ ਆ ਕੇ ਸਦਾ ਦੁੱਖ ਅਤੇ ਵਿਲਾਪ ਭੋਗਦਾ ਹੈ।',
@@ -7475,9 +7475,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸੰਤਾਂ (ਪੂਰਨ ਗੁਰਮੁਖਾਂ) ਦਾ ਰਸਤਾ ਨਹੀਂ ਛੱਡਣਾ ਚਾਹੀਦਾ, ਸਦਾ ਉਨ੍ਹਾਂ ਦੇ ਮਾਰਗ ਉੱਤੇ ਚੱਲਣਾ ਚਾਹੀਦਾ ਹੈ। ਉਨ੍ਹਾਂ ਦੇ ਦਰਸ਼ਨ ਕਰਦਿਆਂ ਸਾਰ ਹੀ ਮਨ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਮਿਲ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪੀਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-संतों (पूर्ण गुरमुखों) का मार्ग नहीं छोड़ना चाहिए, सदैव उनके पद-चिह्नों पर चलना चाहिए। उनके दर्शन मात्र से ही मन पवित्र हो जाता है और मिलकर भगवान का नाम जपते हैं।',
-      en: 'Kabir Ji says: Never abandon the path of the holy saints; ever walk in their footsteps. Merely by beholding them, the mind is purified, and together we chant the Divine Name.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸੰਤਾਂ (ਪੂਰਨ ਗੁਰਮੁਖਾਂ) ਦਾ ਰਸਤਾ ਨਹੀਂ ਛੱਡਣਾ ਚਾਹੀਦਾ, ਸਦਾ ਉਨ੍ਹਾਂ ਦੇ ਮਾਰਗ ਉੱਤੇ ਚੱਲਣਾ ਚਾਹੀਦਾ ਹੈ। ਉਨ੍ਹਾਂ ਦੇ ਦਰਸ਼ਨ ਕਰਦਿਆਂ ਸਾਰ ਹੀ ਮਨ ਪਵਿੱਤਰ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਮਿਲ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪੀਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-संतों (पूर्ण गुरमुखों) का मार्ग नहीं छोड़ना चाहिए, सदैव उनके पद-चिह्नों पर चलना चाहिए। उनके दर्शन मात्र से ही मन पवित्र हो जाता है और मिलकर भगवान का नाम जपते हैं।',
+      en: 'Satguru Kabir Saheb proclaims: Never abandon the path of the holy saints; ever walk in their footsteps. Merely by beholding them, the mind is purified, and together we chant the Divine Name.',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਅਤੇ ਉਨ੍ਹਾਂ ਦਾ ਦਰਸ਼ਨ ਆਤਮਾ ਨੂੰ ਮੈਲ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਪਵਿੱਤਰ ਬਣਾਉਂਦਾ ਹੈ।',
@@ -7548,9 +7548,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਮਨੁੱਖ (ਸਾਕਤ) ਦੀ ਕਦਾਚਿਤ ਸੰਗਤ ਨਾ ਕਰੋ, ਸਗੋਂ ਉਸ ਤੋਂ ਦੂਰ ਹੀ ਭੱਜ ਜਾਓ। ਜਿਵੇਂ ਕਾਲ਼ਖ ਨਾਲ ਭਰੇ ਭਾਂਡੇ ਨੂੰ ਛੂਹਣ ਨਾਲ ਕੁਝ ਨਾ ਕੁਝ ਕਾਲਾ ਦਾਗ ਲੱਗ ਹੀ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਕੁਸੰਗ ਦਾ ਪ੍ਰਭਾਵ ਪੈ ਹੀ ਜਾਂਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-परमात्मा से विमुख मनुष्य (साकत) की कदापि संगति न करें, अपितु उससे दूर ही भाग जाएं। जैसे कालिख से भरे बर्तन को छूने से थोड़ा-बहुत काला दाग लग ही जाता है, वैसे ही कुसंग का प्रभाव पड़ ही जाता है।',
-      en: 'Kabir Ji says: Never keep company with the godless materialist; flee far away from such bad company. Just as touching a soot-covered pot leaves a black stain on you, vicious company inevitably leaves its spiritual stain.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਭੂ ਤੋਂ ਵਿਮੁਖ ਮਨੁੱਖ (ਸਾਕਤ) ਦੀ ਕਦਾਚਿਤ ਸੰਗਤ ਨਾ ਕਰੋ, ਸਗੋਂ ਉਸ ਤੋਂ ਦੂਰ ਹੀ ਭੱਜ ਜਾਓ। ਜਿਵੇਂ ਕਾਲ਼ਖ ਨਾਲ ਭਰੇ ਭਾਂਡੇ ਨੂੰ ਛੂਹਣ ਨਾਲ ਕੁਝ ਨਾ ਕੁਝ ਕਾਲਾ ਦਾਗ ਲੱਗ ਹੀ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਕੁਸੰਗ ਦਾ ਪ੍ਰਭਾਵ ਪੈ ਹੀ ਜਾਂਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-परमात्मा से विमुख मनुष्य (साकत) की कदापि संगति न करें, अपितु उससे दूर ही भाग जाएं। जैसे कालिख से भरे बर्तन को छूने से थोड़ा-बहुत काला दाग लग ही जाता है, वैसे ही कुसंग का प्रभाव पड़ ही जाता है।',
+      en: 'Satguru Kabir Saheb proclaims: Never keep company with the godless materialist; flee far away from such bad company. Just as touching a soot-covered pot leaves a black stain on you, vicious company inevitably leaves its spiritual stain.',
     },
     chintan: {
       pb: 'ਕੁਸੰਗਤ ਦਾ ਪ੍ਰਭਾਵ ਅਵੱਸ਼ ਪੈਂਦਾ ਹੈ। ਪਵਿੱਤਰ ਰਹਿਣ ਲਈ ਕੁਸੰਗ ਤੋਂ ਸਦਾ ਬਚੋ।',
@@ -7621,9 +7621,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹੇ ਭਾਈ! ਤूं ਜਵਾਨੀ ਵੇਲੇ ਰਾਮ ਨੂੰ ਚੇਤਿਆ ਨਹੀਂ, ਤੇ ਬੁਢੇਪਾ ਆਣ ਕੇ ਪਹੁੰਚ ਗਿਆ ਹੈ। ਸਰੀਰ ਰੂਪੀ ਮੰਦਰ ਦੇ ਬੂਹੇ ਨੂੰ (ਬੁਢੇਪੇ ਦੀ) ਅੱਗ ਲੱਗ ਚੁੱਕੀ ਹੈ; ਹੁਣ ਘਰ ਵਿੱਚੋਂ ਕੀ ਕੱਢਿਆ ਜਾ ਸਕਦਾ ਹੈ? (ਭਾਵ ਬੁਢੇਪੇ ਵਿੱਚ ਸਿਮਰਨ ਕਰਨਾ ਔਖਾ ਹੋ ਜਾਂਦਾ ਹੈ)।',
-      hi: 'कबीर जी कहते हैं-हे भाई! तूने जवानी के समय भगवान का स्मरण नहीं किया, और बुढ़ापा आ पहुंचा है। शरीर रूपी घर के द्वार को (बुढ़ापे की) आग लग चुकी है; अब घर में से क्या निकाला जा सकता है? (अर्थात बुढ़ापे में भजन-सिमरन कठिन हो जाता है)।',
-      en: 'Kabir Ji says: O mortal, you did not remember God in youth, and now old age has arrived. Fire has broken out at the doorway of the body-temple (death is imminent); what can be salvaged from the burning house now?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਭਾਈ! ਤूं ਜਵਾਨੀ ਵੇਲੇ ਰਾਮ ਨੂੰ ਚੇਤਿਆ ਨਹੀਂ, ਤੇ ਬੁਢੇਪਾ ਆਣ ਕੇ ਪਹੁੰਚ ਗਿਆ ਹੈ। ਸਰੀਰ ਰੂਪੀ ਮੰਦਰ ਦੇ ਬੂਹੇ ਨੂੰ (ਬੁਢੇਪੇ ਦੀ) ਅੱਗ ਲੱਗ ਚੁੱਕੀ ਹੈ; ਹੁਣ ਘਰ ਵਿੱਚੋਂ ਕੀ ਕੱਢਿਆ ਜਾ ਸਕਦਾ ਹੈ? (ਭਾਵ ਬੁਢੇਪੇ ਵਿੱਚ ਸਿਮਰਨ ਕਰਨਾ ਔਖਾ ਹੋ ਜਾਂਦਾ ਹੈ)।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे भाई! तूने जवानी के समय भगवान का स्मरण नहीं किया, और बुढ़ापा आ पहुंचा है। शरीर रूपी घर के द्वार को (बुढ़ापे की) आग लग चुकी है; अब घर में से क्या निकाला जा सकता है? (अर्थात बुढ़ापे में भजन-सिमरन कठिन हो जाता है)।',
+      en: 'Satguru Kabir Saheb proclaims: O mortal, you did not remember God in youth, and now old age has arrived. Fire has broken out at the doorway of the body-temple (death is imminent); what can be salvaged from the burning house now?',
     },
     chintan: {
       pb: 'ਭਗਤੀ ਲਈ ਬੁਢੇਪੇ ਦਾ ਇੰਤਜ਼ਾਰ ਨਾ ਕਰੋ। ਜਵਾਨੀ ਅਤੇ ਜੀਵਨ ਦੇ ਹਰ ਸਾਹ ਵਿੱਚ ਪ੍ਰਭੂ ਸਿਮਰਨ ਕਰੋ।',
@@ -7694,9 +7694,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਉਹੀ ਕਾਰਨ ਹੁੰਦਾ ਹੈ, ਜਿਹੜਾ ਪ੍ਰਮਾਤਮਾ ਆਪ ਕਰੇ। ਉਸ ਪ੍ਰਮਾਤਮਾ ਤੋਂ ਬਿਨਾਂ ਹੋਰ ਦੂਸਰਾ ਕੋਈ ਨਹੀਂ, ਉਹੀ ਇਕ ਸਿਰਜਨਹਾਰ ਕਾਰਨ (ਸਬੱਬ) ਬਨਾਉਣ ਵਾਲਾ ਹੈ॥ ੧੩੩॥',
-      hi: 'कबीर जी कहते हैं-वही कारण घटित होता है, जो करतार स्वयं करता है। उस परमात्मा के बिना कोई दूसरा नहीं है, वही एकमात्र सृजनहार सर्व-कारण रचयिता है॥ १३३॥',
-      en: 'Kabir Ji says: Whatever happens is caused by the Creator alone. There is no other besides Him; the One Creator alone is the ultimate cause of all causes.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਉਹੀ ਕਾਰਨ ਹੁੰਦਾ ਹੈ, ਜਿਹੜਾ ਪ੍ਰਮਾਤਮਾ ਆਪ ਕਰੇ। ਉਸ ਪ੍ਰਮਾਤਮਾ ਤੋਂ ਬਿਨਾਂ ਹੋਰ ਦੂਸਰਾ ਕੋਈ ਨਹੀਂ, ਉਹੀ ਇਕ ਸਿਰਜਨਹਾਰ ਕਾਰਨ (ਸਬੱਬ) ਬਨਾਉਣ ਵਾਲਾ ਹੈ॥ ੧੩੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-वही कारण घटित होता है, जो करतार स्वयं करता है। उस परमात्मा के बिना कोई दूसरा नहीं है, वही एकमात्र सृजनहार सर्व-कारण रचयिता है॥ १३३॥',
+      en: 'Satguru Kabir Saheb proclaims: Whatever happens is caused by the Creator alone. There is no other besides Him; the One Creator alone is the ultimate cause of all causes.',
     },
     chintan: {
       pb: 'ਕਰਤਾ ਪੁਰਖ ਹੀ ਸਭ ਘਟਾਂ ਦਾ ਸੁਆਮੀ ਹੈ। ਹਰ ਘਟਨਾ ਵਿੱਚ ਪ੍ਰਭੂ ਦੀ ਰਜ਼ਾ ਪਛਾਣੋ।',
@@ -7767,9 +7767,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਅੰਬ ਦੇ ਬ੍ਰਿਛ ਨੂੰ ਫੁੱਲ ਫਲ ਲੱਗਣ ਲੱਗਦੇ ਹਨ ਅਤੇ ਫਿਰ ਉਹ ਪੱਕਣ ਲੱਗ ਪੈਂਦੇ ਹਨ। ਪੱਕ ਕੇ ਉਹੀ ਮਾਲਕ ਨੂੰ ਪਹੁੰਚਦੇ ਹਨ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਇਸ ਸਮੇਂ ਵਿਚ ਕੋਈ ਦਾਗ ਨਹੀਂ ਲੱਗਦਾ। ਜੈਸਾ ਕਿ ਤੋਤੇ ਅਤੇ ਗਾਲੜਾਂ ਆਦਿ ਦੇ ਟੁਕਣ ਨਾਲ ਅਤੇ ਹਨ੍ਹੇਰੀ ਆਦਿ ਨਾਲ ਹੇਠਾਂ ਡਿੱਗ ਕੇ ਅੰਬ ਦਾਗੀ ਹੋ ਜਾਂਦੇ ਹਨ, ਇਨ੍ਹਾਂ ਦਾਗੀ ਅੰਬਾਂ ਨੂੰ ਬਾਗ ਦਾ ਮਾਲੀ ਛਾਂਟ ਕੇ ਉਥੇ ਹੀ ਛੱਡ ਜਾਂਦਾ ਹੈ ਤੇ ਸਾਫ ਸੁਥਰਿਆਂ ਨੂੰ ਮਾਲਕ ਪਾਸ ਪਹੁੰਚਾ ਦੇਂਦਾ ਹੈ। ਇਸ ਤਰ੍ਹਾਂ ਹੀ ਜਦ ਮਨੁੱਖ ਦੇ ਮੰਦੇ ਕਰਮ ਉਸ ਨੂੰ ਦਾਗੀ ਕਰ ਦੇਂਦੇ ਹਨ, ਤਾਂ ਉਹ ਪ੍ਰਮਾਤਮਾ ਦੀ ਦਰਗਾਹ ਵਿਚ ਜਾਣ ਦੀ ਥਾਂ ਭਟਕਦਾ ਰਹਿੰਦਾ ਹੈ॥ ੧੩੪॥',
-      hi: 'कबीर जी कहते हैं-आम के वृक्ष पर फल लगते हैं और पकने लगते हैं। मालिक तक वही पहुंचते हैं जो बीच में किसी विकार या दाग के शिकार नहीं होते। जैसे दागदार आमों को माली छोड़ देता है और साफ़ फलों को मालिक को सौंपता है, वैसे ही कुकर्मों से दागी जीव परमात्मा की दरगाह में स्थान नहीं पाते।',
-      en: 'Kabir Ji says: Mango trees bear fruit, which ripen in due season. Only those fruits reach the Master that remain untainted along the way. Likewise, souls untainted by sin reach the Divine Lord, while stained souls fall away.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅੰਬ ਦੇ ਬ੍ਰਿਛ ਨੂੰ ਫੁੱਲ ਫਲ ਲੱਗਣ ਲੱਗਦੇ ਹਨ ਅਤੇ ਫਿਰ ਉਹ ਪੱਕਣ ਲੱਗ ਪੈਂਦੇ ਹਨ। ਪੱਕ ਕੇ ਉਹੀ ਮਾਲਕ ਨੂੰ ਪਹੁੰਚਦੇ ਹਨ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਇਸ ਸਮੇਂ ਵਿਚ ਕੋਈ ਦਾਗ ਨਹੀਂ ਲੱਗਦਾ। ਜੈਸਾ ਕਿ ਤੋਤੇ ਅਤੇ ਗਾਲੜਾਂ ਆਦਿ ਦੇ ਟੁਕਣ ਨਾਲ ਅਤੇ ਹਨ੍ਹੇਰੀ ਆਦਿ ਨਾਲ ਹੇਠਾਂ ਡਿੱਗ ਕੇ ਅੰਬ ਦਾਗੀ ਹੋ ਜਾਂਦੇ ਹਨ, ਇਨ੍ਹਾਂ ਦਾਗੀ ਅੰਬਾਂ ਨੂੰ ਬਾਗ ਦਾ ਮਾਲੀ ਛਾਂਟ ਕੇ ਉਥੇ ਹੀ ਛੱਡ ਜਾਂਦਾ ਹੈ ਤੇ ਸਾਫ ਸੁਥਰਿਆਂ ਨੂੰ ਮਾਲਕ ਪਾਸ ਪਹੁੰਚਾ ਦੇਂਦਾ ਹੈ। ਇਸ ਤਰ੍ਹਾਂ ਹੀ ਜਦ ਮਨੁੱਖ ਦੇ ਮੰਦੇ ਕਰਮ ਉਸ ਨੂੰ ਦਾਗੀ ਕਰ ਦੇਂਦੇ ਹਨ, ਤਾਂ ਉਹ ਪ੍ਰਮਾਤਮਾ ਦੀ ਦਰਗਾਹ ਵਿਚ ਜਾਣ ਦੀ ਥਾਂ ਭਟਕਦਾ ਰਹਿੰਦਾ ਹੈ॥ ੧੩੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-आम के वृक्ष पर फल लगते हैं और पकने लगते हैं। मालिक तक वही पहुंचते हैं जो बीच में किसी विकार या दाग के शिकार नहीं होते। जैसे दागदार आमों को माली छोड़ देता है और साफ़ फलों को मालिक को सौंपता है, वैसे ही कुकर्मों से दागी जीव परमात्मा की दरगाह में स्थान नहीं पाते।',
+      en: 'Satguru Kabir Saheb proclaims: Mango trees bear fruit, which ripen in due season. Only those fruits reach the Master that remain untainted along the way. Likewise, souls untainted by sin reach the Divine Lord, while stained souls fall away.',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਰੂਪੀ ਫਲ ਨੂੰ ਵਿਕਾਰਾਂ ਦੇ ਦਾਗ਼ਾਂ ਤੋਂ ਬਚਾ ਕੇ ਰੱਖਣਾ ਹੀ ਅਸਲ ਸਾਧਨਾ ਹੈ।',
@@ -7840,9 +7840,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਮੁੱਲ ਲੈ ਕੇ (ਪੱਥਰ ਦੀ ਮੂਰਤੀ) ਠਾਕੁਰ ਨੂੰ ਪੂਜਦੇ ਹਨ ਅਤੇ ਮਨ ਦੇ ਹੱਠ ਕਰਕੇ ਤੀਰਥ ਕਰਨ ਜਾਂਦੇ ਹਨ। ਇਕ ਦੂਜੇ ਨੂੰ ਵੇਖ ਕੇ ਸਾਂਗ ਬਣਾ ਕੇ ਇਹ ਭੁਲੇ ਹੋਏ ਲੋਕ ਭਟਕਦੇ ਹਨ॥ ੧੩੫॥',
-      hi: 'कबीर जी कहते हैं-लोग बाजार से खरीदकर पत्थर की मूर्ति पूजते हैं और हठपूर्वक तीर्थयात्रा करते हैं। दूसरों की देखा-देखी ढोंग रचकर ये भटके हुए लोग जीवन व्यर्थ गंवाते हैं॥ १३५॥',
-      en: 'Kabir Ji says: People buy stone idols to worship and go on pilgrimages out of stubborn pride. Blindly imitating others in empty rituals, these misguided souls wander in confusion.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਮੁੱਲ ਲੈ ਕੇ (ਪੱਥਰ ਦੀ ਮੂਰਤੀ) ਠਾਕੁਰ ਨੂੰ ਪੂਜਦੇ ਹਨ ਅਤੇ ਮਨ ਦੇ ਹੱਠ ਕਰਕੇ ਤੀਰਥ ਕਰਨ ਜਾਂਦੇ ਹਨ। ਇਕ ਦੂਜੇ ਨੂੰ ਵੇਖ ਕੇ ਸਾਂਗ ਬਣਾ ਕੇ ਇਹ ਭੁਲੇ ਹੋਏ ਲੋਕ ਭਟਕਦੇ ਹਨ॥ ੧੩੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-लोग बाजार से खरीदकर पत्थर की मूर्ति पूजते हैं और हठपूर्वक तीर्थयात्रा करते हैं। दूसरों की देखा-देखी ढोंग रचकर ये भटके हुए लोग जीवन व्यर्थ गंवाते हैं॥ १३५॥',
+      en: 'Satguru Kabir Saheb proclaims: People buy stone idols to worship and go on pilgrimages out of stubborn pride. Blindly imitating others in empty rituals, these misguided souls wander in confusion.',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਦਿਖਾਵੇ ਅਤੇ ਦੇਖਾ-ਦੇਖੀ ਧਰਮ ਕਮਾਉਣ ਨਾਲ ਆਤਮਿਕ ਸ਼ਾਂਤੀ ਨਹੀਂ ਮਿਲਦੀ।',
@@ -7913,9 +7913,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪੱਥਰ ਨੂੰ ਪ੍ਰਮੇਸ਼ਰ ਮੰਨਕੇ ਸਾਰਾ ਸੰਸਾਰ ਉਸ ਦੀ ਪੂਜਾ ਕਰਦਾ ਹੈ ਪਰ ਜਿਹੜਾ ਇਸ ਭਰਵਾਸੇ ਵਿਚ ਰਹੇਗਾ ਕਿ ਪੱਥਰ ਪੂਜਣ ਨਾਲ ਉਸ ਦੀ ਗਤੀ ਹੋ ਜਾਵੇਗੀ ਉਸ ਨੂੰ ਡੂੰਘੇ ਪਾਣੀ ਵਿਚ ਡੁਬਿਆ ਸਮਝੋ ॥ ੧੩੬ ॥',
-      hi: 'कबीर जी कहते हैं-संसार पत्थर को परमेश्वर मानकर पूजता है। जो इस भ्रम में रहता है कि पत्थर पूजने से कल्याण होगा, वह अज्ञान के गहरे काले जल में डूब जाता है॥ १३६॥',
-      en: 'Kabir Ji says: The whole world worships stone as God. Those who rely on this false hope drown in the deep black current of ignorance and spiritual loss.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪੱਥਰ ਨੂੰ ਪ੍ਰਮੇਸ਼ਰ ਮੰਨਕੇ ਸਾਰਾ ਸੰਸਾਰ ਉਸ ਦੀ ਪੂਜਾ ਕਰਦਾ ਹੈ ਪਰ ਜਿਹੜਾ ਇਸ ਭਰਵਾਸੇ ਵਿਚ ਰਹੇਗਾ ਕਿ ਪੱਥਰ ਪੂਜਣ ਨਾਲ ਉਸ ਦੀ ਗਤੀ ਹੋ ਜਾਵੇਗੀ ਉਸ ਨੂੰ ਡੂੰਘੇ ਪਾਣੀ ਵਿਚ ਡੁਬਿਆ ਸਮਝੋ ॥ ੧੩੬ ॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-संसार पत्थर को परमेश्वर मानकर पूजता है। जो इस भ्रम में रहता है कि पत्थर पूजने से कल्याण होगा, वह अज्ञान के गहरे काले जल में डूब जाता है॥ १३६॥',
+      en: 'Satguru Kabir Saheb proclaims: The whole world worships stone as God. Those who rely on this false hope drown in the deep black current of ignorance and spiritual loss.',
     },
     chintan: {
       pb: 'ਨਿਰਜੀਵ ਪੱਥਰ ਵਿੱਚ ਚੇਤਨ ਪ੍ਰਮਾਤਮਾ ਨਹੀਂ ਵੱਸਦਾ; ਜੀਵਿਤ ਸ਼ਬਦ ਵਿੱਚ ਹਰੀ ਨੂੰ ਖੋਜੋ।',
@@ -7986,9 +7986,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕਾਗਜ਼ (ਧਰਮ ਸ਼ਾਸਤਰਾਂ) ਦੀ ਓਬਰੀ (ਕੈਦਖਾਨੇ ਦੀ ਇੱਕ ਕੋਠੜੀ) ਹੈ। ਸਿਆਹੀ ਦੇ ਅੱਖਰ ਜੋ ਹਨ, ਇਹ ਤਖਤੇ ਲੱਗੇ ਹੋਏ ਹਨ। ਉਸ ਕਾਗਜ਼ਾਂ ਦੀ ਕੋਠੜੀ ਅਤੇ ਪੱਥਰ ਦੀਆਂ ਮੂਰਤੀਆਂ ਨੇ ਪ੍ਰਿਥਵੀ ਦੇ ਜੀਵਾਂ ਨੂੰ ਡੋਬ ਦਿੱਤਾ ਹੈ ਅਤੇ ਪੰਡਤਾਂ ਨੇ ਰਸਤਾ ਪਾੜ ਕੇ ਲੋਕਾਂ ਨੂੰ ਰਸਤੇ ਵਿੱਚ ਹੀ ਲੁੱਟ ਲਿਆ ਹੈ, ਅਰਥਾਤ ਸ਼ਾਸਤਰਾਂ ਦੇ ਲਿਖੇ ਕਰਮ ਕਾਂਡਾਂ ਵਿੱਚ ਲਾ ਕੇ ਦੱਛਣਾ ਲੈ ਕੇ ਅੱਗੇ ਪਹੁੰਚਣ ਹੀ ਨਹੀਂ ਦੇਂਦੇ॥ ੧੩੭॥',
-      hi: 'कबीर जी कहते हैं-शास्त्र कागज की कोठरी के समान हैं और स्याही के अक्षर उसके किवाड़ हैं। पत्थर की मूर्तियों ने संसार को डुबो दिया है और धर्मगुरुओं ने करमकाण्ड में उलझाकर सीधे मार्ग को लूट लिया है॥ १३७॥',
-      en: 'Kabir Ji says: Books are like a cell of paper, and ink letters are its wooden doors. Stone idols have drowned the world, and religious pundits plunder seekers along the way with outer rituals.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕਾਗਜ਼ (ਧਰਮ ਸ਼ਾਸਤਰਾਂ) ਦੀ ਓਬਰੀ (ਕੈਦਖਾਨੇ ਦੀ ਇੱਕ ਕੋਠੜੀ) ਹੈ। ਸਿਆਹੀ ਦੇ ਅੱਖਰ ਜੋ ਹਨ, ਇਹ ਤਖਤੇ ਲੱਗੇ ਹੋਏ ਹਨ। ਉਸ ਕਾਗਜ਼ਾਂ ਦੀ ਕੋਠੜੀ ਅਤੇ ਪੱਥਰ ਦੀਆਂ ਮੂਰਤੀਆਂ ਨੇ ਪ੍ਰਿਥਵੀ ਦੇ ਜੀਵਾਂ ਨੂੰ ਡੋਬ ਦਿੱਤਾ ਹੈ ਅਤੇ ਪੰਡਤਾਂ ਨੇ ਰਸਤਾ ਪਾੜ ਕੇ ਲੋਕਾਂ ਨੂੰ ਰਸਤੇ ਵਿੱਚ ਹੀ ਲੁੱਟ ਲਿਆ ਹੈ, ਅਰਥਾਤ ਸ਼ਾਸਤਰਾਂ ਦੇ ਲਿਖੇ ਕਰਮ ਕਾਂਡਾਂ ਵਿੱਚ ਲਾ ਕੇ ਦੱਛਣਾ ਲੈ ਕੇ ਅੱਗੇ ਪਹੁੰਚਣ ਹੀ ਨਹੀਂ ਦੇਂਦੇ॥ ੧੩੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-शास्त्र कागज की कोठरी के समान हैं और स्याही के अक्षर उसके किवाड़ हैं। पत्थर की मूर्तियों ने संसार को डुबो दिया है और धर्मगुरुओं ने करमकाण्ड में उलझाकर सीधे मार्ग को लूट लिया है॥ १३७॥',
+      en: 'Satguru Kabir Saheb proclaims: Books are like a cell of paper, and ink letters are its wooden doors. Stone idols have drowned the world, and religious pundits plunder seekers along the way with outer rituals.',
     },
     chintan: {
       pb: 'ਕੇਵਲ ਪੁਸਤਕੀ ਗਿਆਨ ਜਾਂ ਅੱਖਰੀ ਵਿੱਦਿਆ ਨਾਲ ਮੁਕਤੀ ਨਹੀਂ ਹੁੰਦੀ; ਨਾਮ ਦੀ ਪ੍ਰਾਪਤੀ ਅਨੁਭਵ ਨਾਲ ਹੁੰਦੀ ਹੈ।',
@@ -8060,8 +8060,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰਾ ! ਜੋ ਭਲਕੇ ਕਰਨਾ ਹੈ ਉਹ ਅੱਜ ਹੀ ਕਰ ਅਤੇ ਜੋ ਅੱਜ ਕਰਨਾ ਹੈ ਉਹ ਤਤ ਛਿਨ ਹੀ ਕਰ। ਫਿਰ ਪਿਛੋਂ ਕੁਝ ਨਹੀਂ ਹੋ ਸਕਦਾ ਜਦੋਂ ਸਿਰ ਉਤੇ ਮੌਤ ਆ ਜਾਂਦੀ ਹੈ॥੧੩੮॥',
-      hi: 'कबीर जी कहते हैं-जो कल करना है उसे आज ही कर ले, और जो आज करना है उसे तुरंत इसी क्षण कर ले। जब सिर पर काल आ पहुंचेगा, तब पीछे कुछ भी नहीं हो सकेगा॥ १३८॥',
-      en: 'Kabir Ji says: Do today what you planned to do tomorrow, and do right now what you planned for today. When death suddenly arrives at your head, nothing can be done afterward.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जो कल करना है उसे आज ही कर ले, और जो आज करना है उसे तुरंत इसी क्षण कर ले। जब सिर पर काल आ पहुंचेगा, तब पीछे कुछ भी नहीं हो सकेगा॥ १३८॥',
+      en: 'Satguru Kabir Saheb proclaims: Do today what you planned to do tomorrow, and do right now what you planned for today. When death suddenly arrives at your head, nothing can be done afterward.',
     },
     chintan: {
       pb: 'ਮਨੁੱਖੀ ਜਨਮ ਅਨਮੋਲ ਹੈ; ਸਿਮਰਨ ਅਤੇ ਸ਼ੁਭ ਕਾਰਜਾਂ ਲਈ ਸਮਾਂ ਨਾ ਗਵਾਓ।',
@@ -8132,9 +8132,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇੱਕ ਐਸਾ ਪੁਰਸ਼ ਵੇਖਿਆ ਹੈ ਜਿਸ ਤਰ੍ਹਾਂ ਦੀ ਧੋਤੀ ਹੋਈ ਲਾਖ ਹੁੰਦੀ ਹੈ, ਜੋ ਬਾਹਰੋਂ ਬੜੀ ਚਮਕਦੀ ਹੈ ਤੇ ਵਿਚੋਂ ਕਾਲੀ ਹੁੰਦੀ ਹੈ। ਐਸਾ ਪੁਰਸ਼ ਵੇਖਣ ਨੂੰ ਭਾਵੇਂ ਬਹੁਤ ਹੀ ਚਤੁਰ ਚਾਲਾਕ ਜਾਪਦਾ ਹੈ ਪਰ ਉਹ ਅੰਦਰੋਂ ਬੁਧੀ-ਹੀਨ ਤੇ ਅਪਵਿਤ੍ਰ ਹੁੰਦਾ ਹੈ, ਜੋ ਪ੍ਰਭੂ ਭਗਤੀ ਅਤੇ ਸਿਮਰਨ ਨਹੀਂ ਕਰਦਾ॥ ੧੩੯॥',
-      hi: 'कबीर जी कहते हैं-मैंने एक ऐसा जीव देखा जो धुली हुई लाख की भांति है, जो बाहर से चमकती है पर भीतर से काली होती है। वह देखने में चतुर और गुणवान लगता है, परंतु भीतर से मतिहीन और अपवित्र होता है॥ १३९॥',
-      en: 'Kabir Ji says: I have seen a creature like washed shellac—shiny on the outside, but pitch black within. He appears clever and full of talents, but inside he is foolish and unholy without devotion.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇੱਕ ਐਸਾ ਪੁਰਸ਼ ਵੇਖਿਆ ਹੈ ਜਿਸ ਤਰ੍ਹਾਂ ਦੀ ਧੋਤੀ ਹੋਈ ਲਾਖ ਹੁੰਦੀ ਹੈ, ਜੋ ਬਾਹਰੋਂ ਬੜੀ ਚਮਕਦੀ ਹੈ ਤੇ ਵਿਚੋਂ ਕਾਲੀ ਹੁੰਦੀ ਹੈ। ਐਸਾ ਪੁਰਸ਼ ਵੇਖਣ ਨੂੰ ਭਾਵੇਂ ਬਹੁਤ ਹੀ ਚਤੁਰ ਚਾਲਾਕ ਜਾਪਦਾ ਹੈ ਪਰ ਉਹ ਅੰਦਰੋਂ ਬੁਧੀ-ਹੀਨ ਤੇ ਅਪਵਿਤ੍ਰ ਹੁੰਦਾ ਹੈ, ਜੋ ਪ੍ਰਭੂ ਭਗਤੀ ਅਤੇ ਸਿਮਰਨ ਨਹੀਂ ਕਰਦਾ॥ ੧੩੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मैंने एक ऐसा जीव देखा जो धुली हुई लाख की भांति है, जो बाहर से चमकती है पर भीतर से काली होती है। वह देखने में चतुर और गुणवान लगता है, परंतु भीतर से मतिहीन और अपवित्र होता है॥ १३९॥',
+      en: 'Satguru Kabir Saheb proclaims: I have seen a creature like washed shellac—shiny on the outside, but pitch black within. He appears clever and full of talents, but inside he is foolish and unholy without devotion.',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਚਤੁਰਾਈ ਤੇ ਦਿਖਾਵਾ ਹਰਿ ਦਰਗਾਹ ਵਿੱਚ ਕੰਮ ਨਹੀਂ ਆਉਂਦਾ; ਹਿਰਦੇ ਦੀ ਪਵਿੱਤਰਤਾ ਹੀ ਪ੍ਰਭੂ ਨੂੰ ਭਾਉਂਦੀ ਹੈ।',
@@ -8205,9 +8205,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੇਰੀ ਬੁੱਧੀ ਦੀ ਜਮਰਾਜ ਭੀ ਨਿਰਾਦਰੀ ਨਹੀਂ ਕਰ ਸਕਦਾ। ਮੈਂ ਉਸ ਪਾਲਣਾ ਕਰਨ ਵਾਲੇ ਪ੍ਰਭੂ ਨੂੰ ਸਿਮਰਿਆ ਹੈ ਜਿਸ ਨੇ ਜਮ ਨੂੰ ਪੈਦਾ ਕੀਤਾ ਹੈ॥ ੧੪੦॥',
-      hi: 'कबीर जी कहते हैं-यमराज भी मेरी बुद्धि का तिरस्कार नहीं कर सकता, क्योंकि मैंने उस प्रतिपालक परमेश्वर का नाम जपा है जिसने इस यमदूत को भी उत्पन्न किया है॥ १४०॥',
-      en: 'Kabir Ji says: Even the Messenger of Death cannot disrespect my understanding, for I contemplate that Nourishing Lord who created the Messenger of Death Himself.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੀ ਬੁੱਧੀ ਦੀ ਜਮਰਾਜ ਭੀ ਨਿਰਾਦਰੀ ਨਹੀਂ ਕਰ ਸਕਦਾ। ਮੈਂ ਉਸ ਪਾਲਣਾ ਕਰਨ ਵਾਲੇ ਪ੍ਰਭੂ ਨੂੰ ਸਿਮਰਿਆ ਹੈ ਜਿਸ ਨੇ ਜਮ ਨੂੰ ਪੈਦਾ ਕੀਤਾ ਹੈ॥ ੧੪੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यमराज भी मेरी बुद्धि का तिरस्कार नहीं कर सकता, क्योंकि मैंने उस प्रतिपालक परमेश्वर का नाम जपा है जिसने इस यमदूत को भी उत्पन्न किया है॥ १४०॥',
+      en: 'Satguru Kabir Saheb proclaims: Even the Messenger of Death cannot disrespect my understanding, for I contemplate that Nourishing Lord who created the Messenger of Death Himself.',
     },
     chintan: {
       pb: 'ਹਰਿ ਨਾਮ ਦੇ ਸਿਮਰਨ ਨਾਲ ਮੌਤ ਦਾ ਡਰ ਸਦਾ ਲਈ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
@@ -8278,9 +8278,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਕਸਤੂਰੀ ਰੂਪ ਹੈ ਅਤੇ ਉਸ ਦੇ ਸਾਰੇ ਭਗਤ ਭੌਰਿਆਂ ਸਮਾਨ ਹਨ। ਜਿਵੇਂ ਜਿਵੇਂ ਦਾਸ, ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਕਰਦੇ ਹਨ, ਤਿਉ, ਤਿਉਂ ਉਹਨਾਂ ਦੇ ਮਨ ਵਿਚ ਪ੍ਰਭੂ ਦਾ ਨਿਵਾਸ ਹੁੰਦਾ ਜਾਂਦਾ ਹੈ॥ ੧੪੧॥',
-      hi: 'कबीर जी कहते हैं-भगवान कस्तूरी के समान सुगंधित हैं और सभी भक्त भौंरों की भांति हैं। जैसे-जैसे कबीर भक्ति में लीन होता है, वैसे-वैसे हृदय में राम का प्रकाश और निवास बढ़ता जाता है॥ १४१॥',
-      en: 'Kabir Ji says: God is like divine musk, and all His devotees are like honeybees drawn to Him. As Kabir engages in pure devotion, the presence of the Lord dwells ever deeper within his heart.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਕਸਤੂਰੀ ਰੂਪ ਹੈ ਅਤੇ ਉਸ ਦੇ ਸਾਰੇ ਭਗਤ ਭੌਰਿਆਂ ਸਮਾਨ ਹਨ। ਜਿਵੇਂ ਜਿਵੇਂ ਦਾਸ, ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਕਰਦੇ ਹਨ, ਤਿਉ, ਤਿਉਂ ਉਹਨਾਂ ਦੇ ਮਨ ਵਿਚ ਪ੍ਰਭੂ ਦਾ ਨਿਵਾਸ ਹੁੰਦਾ ਜਾਂਦਾ ਹੈ॥ ੧੪੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-भगवान कस्तूरी के समान सुगंधित हैं और सभी भक्त भौंरों की भांति हैं। जैसे-जैसे कबीर भक्ति में लीन होता है, वैसे-वैसे हृदय में राम का प्रकाश और निवास बढ़ता जाता है॥ १४१॥',
+      en: 'Satguru Kabir Saheb proclaims: God is like divine musk, and all His devotees are like honeybees drawn to Him. As Kabir engages in pure devotion, the presence of the Lord dwells ever deeper within his heart.',
     },
     chintan: {
       pb: 'ਭਗਤੀ ਨਾਲ ਆਤਮਾ ਪਵਿੱਤਰ ਹੁੰਦੀ ਹੈ ਅਤੇ ਪ੍ਰਭੂ ਦੀ ਅਲੌਕਿਕ ਸੁਗੰਧ ਨਾਲ ਮਹਿਕ ਉੱਠਦੀ ਹੈ।',
@@ -8351,9 +8351,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪੁਰਸ਼ ਆਪਣੇ ਪੁੱਤਰ ਇਸਤਰੀ ਆਦਿ ਕੁਟੰਬੀਆਂ ਦੇ ਘਮਸਾਣ ਵਿਚ ਪਿਆ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਪ੍ਰਮਾਤਮਾ ਦੇ ਭਜਨ ਸਿਮਰਨ ਦੀ ਯਾਦ ਲਾਂਭੇ (ਇਕ ਪਾਸੇ ਹੀ) ਰਹਿ ਜਾਂਦੀ ਹੈ। ਇਸ ਰੌਲੇ ਰੱਪੇ ਵਿਚ ਹੀ ਧਰਮਰਾਜ ਦੇ ਦੂਤ ਆ ਪਹੁੰਚਦੇ ਹਨ॥੧੪੨॥',
-      hi: 'कबीर जी कहते हैं-मनुष्य परिवार के मोह-जाल में उलझा रहता है और भगवान का स्मरण एक ओर छूट जाता है। इसी आपाधापी के बीच धर्मराज के दूत आ धमकते हैं और जीवन समाप्त हो जाता है॥ १४२॥',
-      en: 'Kabir Ji says: Entangled in the emotional turbulence of family ties, remembrance of the Lord is set aside. Right in the midst of this worldly turmoil, the messengers of Death arrive.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪੁਰਸ਼ ਆਪਣੇ ਪੁੱਤਰ ਇਸਤਰੀ ਆਦਿ ਕੁਟੰਬੀਆਂ ਦੇ ਘਮਸਾਣ ਵਿਚ ਪਿਆ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਪ੍ਰਮਾਤਮਾ ਦੇ ਭਜਨ ਸਿਮਰਨ ਦੀ ਯਾਦ ਲਾਂਭੇ (ਇਕ ਪਾਸੇ ਹੀ) ਰਹਿ ਜਾਂਦੀ ਹੈ। ਇਸ ਰੌਲੇ ਰੱਪੇ ਵਿਚ ਹੀ ਧਰਮਰਾਜ ਦੇ ਦੂਤ ਆ ਪਹੁੰਚਦੇ ਹਨ॥੧੪੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य परिवार के मोह-जाल में उलझा रहता है और भगवान का स्मरण एक ओर छूट जाता है। इसी आपाधापी के बीच धर्मराज के दूत आ धमकते हैं और जीवन समाप्त हो जाता है॥ १४२॥',
+      en: 'Satguru Kabir Saheb proclaims: Entangled in the emotional turbulence of family ties, remembrance of the Lord is set aside. Right in the midst of this worldly turmoil, the messengers of Death arrive.',
     },
     chintan: {
       pb: 'ਕੁਟੰਬੀ ਮੋਹ ਅਸਥਿਰ ਹੈ; ਕੇਵਲ ਰਾਮ ਨਾਮ ਹੀ ਅੰਤ ਵੇਲੇ ਦਾ ਸਾਥੀ ਹੈ।',
@@ -8425,8 +8425,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਵਾਹਿਗੁਰੂ ਵੱਲੋਂ ਬੇਮੁਖ (ਸਾਕਤ) ਪੁਰਸ਼ ਨਾਲੋਂ ਸੂਰ ਚੰਗਾ ਹੈ ਜਿਹੜਾ ਵਿਸ਼ਟਾ ਗੰਦਗੀ ਖਾ ਕੇ ਪਿੰਡ ਨੂੰ ਸਾਫ਼ ਰੱਖਦਾ ਹੈ। ਪਰ ਬੇਮੁਖ ਪੁਰਸ਼ ਜਦੋਂ ਮਰ ਜਾਂਦਾ ਹੈ ਤਾਂ ਕੋਈ ਵੀ ਉਸ ਦਾ ਨਾਮ ਨਹੀਂ ਲੈਂਦਾ, ਕਿਉਂਕਿ ਉਸ ਨੇ ਕੋਈ ਚੰਗਿਆਈ ਨਹੀਂ ਕੀਤੀ ਹੁੰਦੀ, ਸਗੋਂ ਦੁੱਖ ਦੇ ਕੇ ਗੰਦ ਹੀ ਖਿਲਾਰਿਆ ਹੁੰਦਾ ਹੈ॥ ੧੪੩॥',
-      hi: 'कबीर जी कहते हैं-भगवान से विमुख मनुष्य से सूअर भला है जो गंदगी खाकर गांव को स्वच्छ रखता है। परंतु वह विमुख साकत जब मर जाता है, तो कोई उसका नाम भी नहीं लेता क्योंकि उसने कोई भलाई नहीं की॥ १४३॥',
-      en: 'Kabir Ji says: A pig is better than a godless materialist, for at least it cleanses the village by eating garbage. But when that wretched materialist dies, no one remembers his name because he left no goodness behind.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-भगवान से विमुख मनुष्य से सूअर भला है जो गंदगी खाकर गांव को स्वच्छ रखता है। परंतु वह विमुख साकत जब मर जाता है, तो कोई उसका नाम भी नहीं लेता क्योंकि उसने कोई भलाई नहीं की॥ १४३॥',
+      en: 'Satguru Kabir Saheb proclaims: A pig is better than a godless materialist, for at least it cleanses the village by eating garbage. But when that wretched materialist dies, no one remembers his name because he left no goodness behind.',
     },
     chintan: {
       pb: 'ਸਿਮਰਨਹੀਣ ਜੀਵਨ ਨਿਰਅਰਥਕ ਹੈ; ਪਰਉਪਕਾਰ ਅਤੇ ਪ੍ਰਭੂ ਭਗਤੀ ਨਾਲ ਹੀ ਜਨਮ ਸਫਲ ਹੁੰਦਾ ਹੈ।',
@@ -8497,9 +8497,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕੌਡੀ ਕੌਡੀ ਇਕੱਠੀ ਕਰਕੇ ਲੱਖਾਂ ਤੇ ਕਰੋੜਾਂ ਜੋੜ ਲਏ। ਪਰ ਅੰਤ ਸਮੇਂ ਇਸ ਸੰਸਾਰ ਤੋਂ ਅੱਗੇ ਚੱਲਣ ਲੱਗੇ ਕੁਝ ਵੀ ਨਾ ਮਿਲਿਆ, ਏਥੋਂ ਤੱਕ ਕਿ ਲੱਕ ਨਾਲ ਬੱਧੀ ਹੋਈ ਉਸ ਦੀ ਲੰਗੋਟੀ ਵੀ ਤੋੜ (ਉਤਾਰ) ਲਈ॥ ੧੪੪॥',
-      hi: 'कबीर जी कहते हैं-कौड़ी-कौड़ी जोड़कर लाखों-करोड़ों का धन एकत्रित कर लिया। परंतु मृत्यु के समय साथ कुछ भी नहीं गया, यहाँ तक कि कमर पर बंधी लंगोटी भी छीन ली गई॥ १४४॥',
-      en: 'Kabir Ji says: Penny by penny, one hoards millions and billions. But at the time of departure, nothing goes with him—even the loincloth tied around his waist is stripped away.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕੌਡੀ ਕੌਡੀ ਇਕੱਠੀ ਕਰਕੇ ਲੱਖਾਂ ਤੇ ਕਰੋੜਾਂ ਜੋੜ ਲਏ। ਪਰ ਅੰਤ ਸਮੇਂ ਇਸ ਸੰਸਾਰ ਤੋਂ ਅੱਗੇ ਚੱਲਣ ਲੱਗੇ ਕੁਝ ਵੀ ਨਾ ਮਿਲਿਆ, ਏਥੋਂ ਤੱਕ ਕਿ ਲੱਕ ਨਾਲ ਬੱਧੀ ਹੋਈ ਉਸ ਦੀ ਲੰਗੋਟੀ ਵੀ ਤੋੜ (ਉਤਾਰ) ਲਈ॥ ੧੪੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-कौड़ी-कौड़ी जोड़कर लाखों-करोड़ों का धन एकत्रित कर लिया। परंतु मृत्यु के समय साथ कुछ भी नहीं गया, यहाँ तक कि कमर पर बंधी लंगोटी भी छीन ली गई॥ १४४॥',
+      en: 'Satguru Kabir Saheb proclaims: Penny by penny, one hoards millions and billions. But at the time of departure, nothing goes with him—even the loincloth tied around his waist is stripped away.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਧਨ-ਦੌਲਤ ਇੱਥੇ ਹੀ ਰਹਿ ਜਾਣੀ ਹੈ; ਕੇਵਲ ਰਾਮ ਨਾਮ ਦਾ ਧਨ ਹੀ ਅੰਤ ਵੇਲੇ ਨਾਲ ਜਾਂਦਾ ਹੈ।',
@@ -8578,9 +8578,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਵਿਸ਼ਨੂੰ ਦਾ ਭਗਤ ਹੋ ਗਿਆ ਤਾਂ ਕੀ ਹੋਇਆ, ਗਲ ਵਿਚ ਚਾਰ ਮਾਲਾ ਇਕੱਠੀਆਂ ਕਰਕੇ ਪਾ ਲਈਆਂ? ਬਾਹਰੋਂ ਤਾਂ ਉਹ ਬਾਰਾਂ ਵੰਨੀ ਦਾ ਸ਼ੁਧ ਸੋਨਾ ਜਾਪਦਾ ਹੈ, ਪਰ ਮਨ ਅੰਦਰ ਮੈਲ (ਲਾਖ/ਖੋਟ) ਭਰੀ ਹੋਈ ਹੁੰਦੀ ਹੈ, ਜੋ ਬੁਰੇ ਕਰਤੱਵਾਂ ਦਾ ਸੰਕੇਤ ਹੁੰਦੀ ਹੈ॥ ੧੪੫॥',
-      hi: 'कबीर जी कहते हैं-यदि कोई वैष्णव बन गया और गले में चार-चार मालाएं पहन लीं तो क्या हुआ? बाहर से तो वह शुद्ध कुंदन जैसा चमकता है, परंतु भीतर कबाड़ और विकार भरा होता है॥ १४५॥',
-      en: 'Kabir Ji says: What if one becomes a devout Vaishnavite and wears four rosaries around his neck? Externally he appears like pure gold, but internally he remains full of trash and spiritual impurity.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਵਿਸ਼ਨੂੰ ਦਾ ਭਗਤ ਹੋ ਗਿਆ ਤਾਂ ਕੀ ਹੋਇਆ, ਗਲ ਵਿਚ ਚਾਰ ਮਾਲਾ ਇਕੱਠੀਆਂ ਕਰਕੇ ਪਾ ਲਈਆਂ? ਬਾਹਰੋਂ ਤਾਂ ਉਹ ਬਾਰਾਂ ਵੰਨੀ ਦਾ ਸ਼ੁਧ ਸੋਨਾ ਜਾਪਦਾ ਹੈ, ਪਰ ਮਨ ਅੰਦਰ ਮੈਲ (ਲਾਖ/ਖੋਟ) ਭਰੀ ਹੋਈ ਹੁੰਦੀ ਹੈ, ਜੋ ਬੁਰੇ ਕਰਤੱਵਾਂ ਦਾ ਸੰਕੇਤ ਹੁੰਦੀ ਹੈ॥ ੧੪੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि कोई वैष्णव बन गया और गले में चार-चार मालाएं पहन लीं तो क्या हुआ? बाहर से तो वह शुद्ध कुंदन जैसा चमकता है, परंतु भीतर कबाड़ और विकार भरा होता है॥ १४५॥',
+      en: 'Satguru Kabir Saheb proclaims: What if one becomes a devout Vaishnavite and wears four rosaries around his neck? Externally he appears like pure gold, but internally he remains full of trash and spiritual impurity.',
     },
     chintan: {
       pb: 'ਧਰਮ ਕੇਵਲ ਬਾਹਰੀ ਪਹਿਰਾਵੇ ਜਾਂ ਮਾਲਾ ਦਾ ਨਾਂ ਨਹੀਂ, ਸਗੋਂ ਹਿਰਦੇ ਦੀ ਪਵਿੱਤਰਤਾ ਹੈ।',
@@ -8653,7 +8653,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ! ਤੂੰ ਰਸਤੇ ਦਾ ਰੋੜਾ ਹੋ ਰਹੋ, ਆਪਣੇ ਮਨ ਦਾ ਹੰਕਾਰ ਛਡ ਦੇਹ, ਕਿਉਂਕਿ ਜੇ ਕੋਈ ਅਜਿਹਾ ਦਾਸ ਹੋਵੇ, ਤਾਂ ਉਸ ਨੂੰ ਹੀ ਪ੍ਰਮਾਤਮਾ ਮਿਲਦਾ ਹੈ॥ ੧੪੬॥',
       hi: 'हे कबीर! तुम रास्ते का कंकड़ (रोड़ा) बन जाओ और अपने मन का अभिमान त्याग दो। जो कोई ऐसा विनम्र दास बनता है, उसी को भगवान मिलते हैं॥ १४६॥',
-      en: 'Kabir Ji says: Become a pebble on the path, discarding all pride of the mind. Only such a humble servant meets the Supreme Lord.',
+      en: 'Satguru Kabir Saheb proclaims: Become a pebble on the path, discarding all pride of the mind. Only such a humble servant meets the Supreme Lord.',
     },
     chintan: {
       pb: 'ਨਿਮਰਤਾ ਹੀ ਪ੍ਰਭੂ ਪ੍ਰਾਪਤੀ ਦਾ ਸੱਚਾ ਦੁਆਰ ਹੈ। ਹੰਕਾਰ ਦਾ ਤਿਆਗ ਅਵੱਸ਼ਕ ਹੈ।',
@@ -8716,9 +8716,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਜੇ ਰਸਤੇ ਦਾ ਰੋੜਾ ਹੋ ਗਿਆ ਤਾਂ ਕੀ ਹੋਇਆ, ਉਹ ਰਾਹੀ ਦੇ ਪੈਰਾਂ ਨੂੰ ਚੁਭੇਗਾ ਤੇ ਦੁਖ ਦੇਵੇਗਾ, ਪ੍ਰਮਾਤਮਾ ਦਾ ਦਾਸ ਅਜਿਹਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਜਿਸ ਤਰ੍ਹਾਂ ਪ੍ਰਿਥਵੀ ਉਤੇ ਮਿਟੀ ਹੁੰਦੀ ਹੈ॥ ੧੪੭॥',
-      hi: 'कबीर जी कहते हैं-यदि रास्ते का कंकड़ भी बन गए तो क्या हुआ? वह तो राहगीर के पैरों में चुभकर कष्ट देगा। परमात्मा का भक्त तो धरती की धूल की भांति अत्यंत नम्र होना चाहिए॥ १४७॥',
-      en: 'Kabir Ji says: What good is becoming a pebble if it still pricks and hurts the traveler\'s feet? Your devotee should be like the dust of the earth.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਜੇ ਰਸਤੇ ਦਾ ਰੋੜਾ ਹੋ ਗਿਆ ਤਾਂ ਕੀ ਹੋਇਆ, ਉਹ ਰਾਹੀ ਦੇ ਪੈਰਾਂ ਨੂੰ ਚੁਭੇਗਾ ਤੇ ਦੁਖ ਦੇਵੇਗਾ, ਪ੍ਰਮਾਤਮਾ ਦਾ ਦਾਸ ਅਜਿਹਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਜਿਸ ਤਰ੍ਹਾਂ ਪ੍ਰਿਥਵੀ ਉਤੇ ਮਿਟੀ ਹੁੰਦੀ ਹੈ॥ ੧੪੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि रास्ते का कंकड़ भी बन गए तो क्या हुआ? वह तो राहगीर के पैरों में चुभकर कष्ट देगा। परमात्मा का भक्त तो धरती की धूल की भांति अत्यंत नम्र होना चाहिए॥ १४७॥',
+      en: 'Satguru Kabir Saheb proclaims: What good is becoming a pebble if it still pricks and hurts the traveler\'s feet? Your devotee should be like the dust of the earth.',
     },
     chintan: {
       pb: 'ਕਿਸੇ ਨੂੰ ਦੁੱਖ ਦੇਣ ਵਾਲੀ ਨਿਮਰਤਾ ਅਸਲ ਨਿਮਰਤਾ ਨਹੀਂ; ਮਿੱਟੀ ਵਾਂਗ ਸਾਰਿਆਂ ਨੂੰ ਸਹਾਰਾ ਦਿਓ।',
@@ -8781,9 +8781,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਿੱਟੀ ਵੀ ਹੋ ਗਈ ਤਾਂ ਕੀ ਹੋਇਆ, ਜੋ ਉੱਡ ਉੱਡ ਕੇ ਸਰੀਰ ਦੇ ਅੰਗਾਂ ਨੂੰ ਲੱਗ ਕੇ ਮੈਲਾ ਕਰ ਦੇਂਦੀ ਹੈ। ਇਸ ਕਰਕੇ ਹਰੀ ਦਾ ਦਾਸ ਭਗਤ ਐਸਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜਿਸ ਤਰ੍ਹਾਂ ਪਾਣੀ ਹੈ ਜੋ ਸਾਰੇ ਅੰਗਾਂ ਨਾਲ ਮੇਲ ਰੱਖਦਾ ਹੈ॥ ੧੪੮॥',
-      hi: 'कबीर जी कहते हैं-धूल भी बन गए तो क्या हुआ, जो उड़-उड़कर राहगीर के अंगों पर लगकर मैला कर देती है। हरि का सेवक तो जल की भांति होना चाहिए जो सभी के अंगों को शीतल व स्वच्छ रखे॥ १४८॥',
-      en: 'Kabir Ji says: What good is becoming dust, if it flies up and soils the body of travelers? The servant of the Lord should be like water, pure and embracing all.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਿੱਟੀ ਵੀ ਹੋ ਗਈ ਤਾਂ ਕੀ ਹੋਇਆ, ਜੋ ਉੱਡ ਉੱਡ ਕੇ ਸਰੀਰ ਦੇ ਅੰਗਾਂ ਨੂੰ ਲੱਗ ਕੇ ਮੈਲਾ ਕਰ ਦੇਂਦੀ ਹੈ। ਇਸ ਕਰਕੇ ਹਰੀ ਦਾ ਦਾਸ ਭਗਤ ਐਸਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜਿਸ ਤਰ੍ਹਾਂ ਪਾਣੀ ਹੈ ਜੋ ਸਾਰੇ ਅੰਗਾਂ ਨਾਲ ਮੇਲ ਰੱਖਦਾ ਹੈ॥ ੧੪੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-धूल भी बन गए तो क्या हुआ, जो उड़-उड़कर राहगीर के अंगों पर लगकर मैला कर देती है। हरि का सेवक तो जल की भांति होना चाहिए जो सभी के अंगों को शीतल व स्वच्छ रखे॥ १४८॥',
+      en: 'Satguru Kabir Saheb proclaims: What good is becoming dust, if it flies up and soils the body of travelers? The servant of the Lord should be like water, pure and embracing all.',
     },
     chintan: {
       pb: 'ਹਰੀ ਦਾ ਭਗਤ ਪਾਣੀ ਵਾਂਗ ਪਵਿੱਤਰ ਅਤੇ ਨਿਰਮਲ ਸੁਭਾਅ ਵਾਲਾ ਹੁੰਦਾ ਹੈ।',
@@ -8846,9 +8846,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪਾਣੀ ਵਰਗਾ ਵੀ ਹੋ ਗਿਆ ਤਾਂ ਕੀ ਹੋਇਆ। ਪਾਣੀ ਠੰਢਾ ਤੇ ਤੱਤਾ ਹੋ ਜਾਂਦਾ ਹੈ। ਪ੍ਰਮਾਤਮਾ ਦਾ ਭਗਤ ਐਸਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਕਿ ਹਰੀ ਵਰਗਾ (ਉਸ ਦਾ ਰੂਪ) ਹੀ ਹੋ ਜਾਵੇ॥ ੧੪੯॥',
-      hi: 'कबीर जी कहते हैं-जल की भांति भी बन गए तो क्या हुआ? जल ठंडा और गरम (परिवर्तनशील) हो जाता है। हरि का जन तो स्वयं हरि रूप ही निष्काम व निर्विकार होना चाहिए॥ १४९॥',
-      en: 'Kabir Ji says: What good is becoming like water, if it changes temperature from cold to hot? The humble servant of the Lord should be like the Divine Lord Himself.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪਾਣੀ ਵਰਗਾ ਵੀ ਹੋ ਗਿਆ ਤਾਂ ਕੀ ਹੋਇਆ। ਪਾਣੀ ਠੰਢਾ ਤੇ ਤੱਤਾ ਹੋ ਜਾਂਦਾ ਹੈ। ਪ੍ਰਮਾਤਮਾ ਦਾ ਭਗਤ ਐਸਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਕਿ ਹਰੀ ਵਰਗਾ (ਉਸ ਦਾ ਰੂਪ) ਹੀ ਹੋ ਜਾਵੇ॥ ੧੪੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जल की भांति भी बन गए तो क्या हुआ? जल ठंडा और गरम (परिवर्तनशील) हो जाता है। हरि का जन तो स्वयं हरि रूप ही निष्काम व निर्विकार होना चाहिए॥ १४९॥',
+      en: 'Satguru Kabir Saheb proclaims: What good is becoming like water, if it changes temperature from cold to hot? The humble servant of the Lord should be like the Divine Lord Himself.',
     },
     chintan: {
       pb: 'ਹਰਿ ਭਗਤ ਸੁਖ-ਦੁੱਖ ਵਿੱਚ ਸਦਾ ਇੱਕਰਸ ਰਹਿੰਦਾ ਹੈ; ਉਹ ਪ੍ਰਭੂ ਦਾ ਸਾਖਿਆਤ ਰੂਪ ਹੋ ਜਾਂਦਾ ਹੈ।',
@@ -8919,9 +8919,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਉੱਚੇ ਮਹਿਲ ਮਾੜੀਆਂ, ਸੋਨਾ ਅਥਵਾ ਧਨ ਸੰਪਦਾ ਅਤੇ ਸੁੰਦਰ ਇਸਤਰੀ ਹੋਵੇ ਅਤੇ ਘਰ ਦੀ ਚੋਟੀ ਉਤੇ ਝੰਡਾ ਝੂਲਦਾ ਹੋਵੇ (ਪਰ ਜੇ ਇੱਥੇ ਪ੍ਰਭੂ ਗੁਣ ਨਾ ਗਾਏ ਜਾਣ) ਤਾਂ ਇਸ ਨਾਲੋਂ ਭਿਖਿਆ ਦੀ ਮੰਗੀ ਰੋਟੀ ਚੰਗੀ ਹੈ, ਜਿਸ ਨੂੰ ਖਾ ਕੇ ਪੁਰਸ਼ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿਚ ਬੈਠ ਕੇ ਪ੍ਰਭੂ ਦੇ ਗੁਣ ਗਾਉਂਦਾ ਹੈ॥ ੧੫੦॥',
-      hi: 'कबीर जी कहते हैं-ऊंचे महल, स्वर्ण, सुंदर स्त्री और भवन के शिखर पर फहराती ध्वजा का क्या लाभ, यदि प्रभु का नाम न हो? उससे तो संत-संगत में बैठकर मांगी हुई सूखी रोटी (मधूकरी) भली है, जिससे प्रभु का यश गाया जा सके॥ १५०॥',
-      en: 'Kabir Ji says: High mansions, gold, beautiful companions, and flags flying atop palaces are useless without devotion. Far better is dry begged bread eaten in holy company singing the praises of God.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਉੱਚੇ ਮਹਿਲ ਮਾੜੀਆਂ, ਸੋਨਾ ਅਥਵਾ ਧਨ ਸੰਪਦਾ ਅਤੇ ਸੁੰਦਰ ਇਸਤਰੀ ਹੋਵੇ ਅਤੇ ਘਰ ਦੀ ਚੋਟੀ ਉਤੇ ਝੰਡਾ ਝੂਲਦਾ ਹੋਵੇ (ਪਰ ਜੇ ਇੱਥੇ ਪ੍ਰਭੂ ਗੁਣ ਨਾ ਗਾਏ ਜਾਣ) ਤਾਂ ਇਸ ਨਾਲੋਂ ਭਿਖਿਆ ਦੀ ਮੰਗੀ ਰੋਟੀ ਚੰਗੀ ਹੈ, ਜਿਸ ਨੂੰ ਖਾ ਕੇ ਪੁਰਸ਼ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿਚ ਬੈਠ ਕੇ ਪ੍ਰਭੂ ਦੇ ਗੁਣ ਗਾਉਂਦਾ ਹੈ॥ ੧੫੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-ऊंचे महल, स्वर्ण, सुंदर स्त्री और भवन के शिखर पर फहराती ध्वजा का क्या लाभ, यदि प्रभु का नाम न हो? उससे तो संत-संगत में बैठकर मांगी हुई सूखी रोटी (मधूकरी) भली है, जिससे प्रभु का यश गाया जा सके॥ १५०॥',
+      en: 'Satguru Kabir Saheb proclaims: High mansions, gold, beautiful companions, and flags flying atop palaces are useless without devotion. Far better is dry begged bread eaten in holy company singing the praises of God.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਵੈਭਵ ਬਿਨਾਂ ਭਗਤੀ ਦੇ ਤੁੱਛ ਹੈ; ਸੰਤ ਸੰਗਤ ਵਿੱਚ ਸੁੱਕੀ ਰੋਟੀ ਵੀ ਅੰਮ੍ਰਿਤ ਸਮਾਨ ਹੈ।',
@@ -8993,8 +8993,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ! ਸ਼ਹਿਰ ਨਾਲੋਂ ਉਜਾੜ ਚੰਗੀ ਹੈ ਜਿਥੇ ਪ੍ਰਮਾਤਮਾ ਦੇ ਭਗਤ ਉਸ ਦੇ ਗੁਣ ਗਾਉਂਦੇ ਹਨ। ਪ੍ਰਮਾਤਮਾ ਦੇ ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਜਿਹੜਾ ਅਸਥਾਨ ਹੈ, ਉਹ ਮੇਰੇ ਵਿਚਾਰ ਵਿੱਚ ਜਮਾਂ ਦੀ ਪੁਰੀ ਨਰਕ ਸਮਾਨ ਹੈ॥ ੧੫੧॥',
-      hi: 'कबीर जी कहते हैं-भरे-पूरे शहर से तो वह उजड़ा जंगल भला जहाँ भगवान के भक्त प्रभु यश गाते हैं। राम के प्रेम से रहित स्थान मेरे विचार में यमपुरी (नर्क) के समान है॥ १५१॥',
-      en: 'Kabir Ji says: Better than a grand city is a wilderness where Lord\'s lovers sing His praise. Any place devoid of Divine love is like the Abode of Death to me.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-भरे-पूरे शहर से तो वह उजड़ा जंगल भला जहाँ भगवान के भक्त प्रभु यश गाते हैं। राम के प्रेम से रहित स्थान मेरे विचार में यमपुरी (नर्क) के समान है॥ १५१॥',
+      en: 'Satguru Kabir Saheb proclaims: Better than a grand city is a wilderness where Lord\'s lovers sing His praise. Any place devoid of Divine love is like the Abode of Death to me.',
     },
     chintan: {
       pb: 'ਅਸਲ ਉੱਤਮ ਅਸਥਾਨ ਉਹ ਹੈ ਜਿੱਥੇ ਹਰਿ ਨਾਮ ਦੀ ਚਰਚਾ ਹੁੰਦੀ ਹੈ; ਬਾਕੀ ਸਭ ਨਰਕ ਸਮਾਨ ਹੈ।',
@@ -9065,9 +9065,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਗੰਗਾ ਜਮਨਾ ਦੇ ਅੰਦਰ (ਇੜਾ ਪਿੰਗਲਾ ਸੁਖਮਨਾ ਦੀ ਸੰਧੀ) ਜਿੱਥੇ ਮਨ ਦੀ ਅਡੋਲ ਅਵਸਥਾ ਰਹਿੰਦੀ ਹੈ ਅਤੇ ਮਾਇਆ ਦੇ ਫੁਰਨੇ ਨਹੀਂ ਉੱਠਦੇ, ਉਸ (ਸਹਜ ਸੁੰਨ) ਘਾਟ ਉੱਤੇ ਕਬੀਰ ਜੀ ਨੇ ਨਿਵਾਸ ਕੀਤਾ ਹੈ, ਜਿਸ ਰਸਤੇ ਨੂੰ ਮੁਨੀ ਜਨ ਲੱਭਦੇ ਫਿਰਦੇ ਹਨ॥ ੧੫੨॥',
-      hi: 'कबीर जी कहते हैं-गंगा और यमुना के मध्य (इड़ा-पिंगला के परे सुषुम्ना-सहज शून्य तट पर) जहाँ शांत निर्विकल्प अवस्था है, वहाँ कबीर ने अपना आश्रम बनाया है, जिसे ऋषि-मुनि खोजते रहते हैं॥ १५२॥',
-      en: 'Kabir Ji says: Between Ganges and Yamuna, at the ghat of Sahaj Sunn (state of deep meditative equilibrium), Kabir has built his hut—the path that silent sages search for.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਗੰਗਾ ਜਮਨਾ ਦੇ ਅੰਦਰ (ਇੜਾ ਪਿੰਗਲਾ ਸੁਖਮਨਾ ਦੀ ਸੰਧੀ) ਜਿੱਥੇ ਮਨ ਦੀ ਅਡੋਲ ਅਵਸਥਾ ਰਹਿੰਦੀ ਹੈ ਅਤੇ ਮਾਇਆ ਦੇ ਫੁਰਨੇ ਨਹੀਂ ਉੱਠਦੇ, ਉਸ (ਸਹਜ ਸੁੰਨ) ਘਾਟ ਉੱਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਨਿਵਾਸ ਕੀਤਾ ਹੈ, ਜਿਸ ਰਸਤੇ ਨੂੰ ਮੁਨੀ ਜਨ ਲੱਭਦੇ ਫਿਰਦੇ ਹਨ॥ ੧੫੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-गंगा और यमुना के मध्य (इड़ा-पिंगला के परे सुषुम्ना-सहज शून्य तट पर) जहाँ शांत निर्विकल्प अवस्था है, वहाँ कबीर ने अपना आश्रम बनाया है, जिसे ऋषि-मुनि खोजते रहते हैं॥ १५२॥',
+      en: 'Satguru Kabir Saheb proclaims: Between Ganges and Yamuna, at the ghat of Sahaj Sunn (state of deep meditative equilibrium), Kabir has built his hut—the path that silent sages search for.',
     },
     chintan: {
       pb: 'ਅੰਤਰ ਆਤਮੇ ਵਿੱਚ ਸਹਜ ਸਮਾਧੀ ਪ੍ਰਾਪਤ ਕਰਨਾ ਹੀ ਯੋਗੀਆਂ ਅਤੇ ਭਗਤਾਂ ਦੀ ਉੱਚੀ ਅਵਸਥਾ ਹੈ।',
@@ -9138,9 +9138,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੈਸੀ ਕੋਮਲਤਾ ਤੇ ਨਵੀਨਤਾ ਨਵੇਂ ਉੱਗੇ ਬੂਟੇ ਵਿਚ ਹੁੰਦੀ ਹੈ, ਜੇ ਐਸੀ ਹੀ ਅੰਤ ਤੱਕ ਬਣੀ ਰਹੇ ਤਾਂ ਫਿਰ ਇੱਕ ਹੀਰਾ ਕੀ ਵਿਚਾਰਾ ਹੈ, ਉਸ ਨੂੰ ਕਰੋੜਾਂ ਰਤਨ ਵੀ ਨਹੀਂ ਪੁੱਜ ਸਕਦੇ, ਭਾਵ ਉਸ ਦੀ ਬਰਾਬਰੀ ਨਹੀਂ ਕਰ ਸਕਦੇ॥ ੧੫੩॥',
-      hi: 'कबीर जी कहते हैं-प्रारंभिक अवस्था में वृक्ष के अंकुर जैसी जो शुद्धता व भक्ति का भाव उपजता है, यदि अंत तक वैसा ही बना रहे, तो हीरा क्या चीज़ है, करोड़ों रत्न भी उसकी बराबरी नहीं कर सकते॥ १५३॥',
-      en: 'Kabir Ji says: If the initial innocence and devotion that sprouts at the beginning endures to the very end, then diamonds are nothing—even millions of jewels cannot match such purity.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੈਸੀ ਕੋਮਲਤਾ ਤੇ ਨਵੀਨਤਾ ਨਵੇਂ ਉੱਗੇ ਬੂਟੇ ਵਿਚ ਹੁੰਦੀ ਹੈ, ਜੇ ਐਸੀ ਹੀ ਅੰਤ ਤੱਕ ਬਣੀ ਰਹੇ ਤਾਂ ਫਿਰ ਇੱਕ ਹੀਰਾ ਕੀ ਵਿਚਾਰਾ ਹੈ, ਉਸ ਨੂੰ ਕਰੋੜਾਂ ਰਤਨ ਵੀ ਨਹੀਂ ਪੁੱਜ ਸਕਦੇ, ਭਾਵ ਉਸ ਦੀ ਬਰਾਬਰੀ ਨਹੀਂ ਕਰ ਸਕਦੇ॥ ੧੫੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-प्रारंभिक अवस्था में वृक्ष के अंकुर जैसी जो शुद्धता व भक्ति का भाव उपजता है, यदि अंत तक वैसा ही बना रहे, तो हीरा क्या चीज़ है, करोड़ों रत्न भी उसकी बराबरी नहीं कर सकते॥ १५३॥',
+      en: 'Satguru Kabir Saheb proclaims: If the initial innocence and devotion that sprouts at the beginning endures to the very end, then diamonds are nothing—even millions of jewels cannot match such purity.',
     },
     chintan: {
       pb: 'ਭਗਤੀ ਵਿੱਚ ਆਰੰਭ ਤੋਂ ਅੰਤ ਤੱਕ ਇੱਕਰਸ ਨਿਸ਼ਠਾ ਬਣਾਈ ਰੱਖਣਾ ਹੀ ਪਰਮ ਕਮਾਈ ਹੈ।',
@@ -9211,9 +9211,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਇੱਕ ਅਸਚਰਜ ਗੱਲ ਵੇਖੀ ਹੈ ਕਿ ਹੀਰਾ ਹੱਟੀ ਹੱਟੀ ਵਿਕ ਰਿਹਾ ਹੈ ਪਰ ਉਸ ਦੇ ਪਾਰਖੂ ਜੌਹਰੀ ਤੋਂ ਬਿਨਾਂ ਉਹ ਇੱਕ ਕੌਡੀ ਦੇ ਭਾਅ ਜਾ ਰਿਹਾ ਹੈ। ਇਹ ਮਨੁੱਖਾ ਜਨਮ ਇੱਕ ਹੀਰੇ ਦੇ ਸਮਾਨ ਅਮੋਲਕ ਹੈ। ਜਿਹੜੇ ਇਸ ਨੂੰ ਪ੍ਰਭੂ ਭਗਤੀ ਵਿੱਚ ਨਹੀਂ ਲਾਉਂਦੇ, ਉਹ ਮਾਇਆ ਦੇ ਵਿਹਾਰਾਂ ਵਿੱਚ ਇਸ ਨੂੰ ਅਜਾਈਂ ਗਵਾ ਲੈਂਦੇ ਹਨ॥ ੧੫੪॥',
-      hi: 'कबीर जी कहते हैं-मैंने एक आश्चर्य देखा कि अनमोल हीरा बाजार में बिक रहा है, परंतु पारखी जौहरी के बिना वह कौड़ी के मोल जा रहा है। यह मनुष्य जन्म भी अनमोल हीरा है, जिसे अज्ञानी कौड़ी के मोल व्यर्थ गंवा देते हैं॥ १५४॥',
-      en: 'Kabir Ji says: I saw a strange sight—a priceless diamond was being sold in the market, but lacking a knowledgeable jeweler, it was exchanged for a mere shell. So is human life squandered without devotion.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਇੱਕ ਅਸਚਰਜ ਗੱਲ ਵੇਖੀ ਹੈ ਕਿ ਹੀਰਾ ਹੱਟੀ ਹੱਟੀ ਵਿਕ ਰਿਹਾ ਹੈ ਪਰ ਉਸ ਦੇ ਪਾਰਖੂ ਜੌਹਰੀ ਤੋਂ ਬਿਨਾਂ ਉਹ ਇੱਕ ਕੌਡੀ ਦੇ ਭਾਅ ਜਾ ਰਿਹਾ ਹੈ। ਇਹ ਮਨੁੱਖਾ ਜਨਮ ਇੱਕ ਹੀਰੇ ਦੇ ਸਮਾਨ ਅਮੋਲਕ ਹੈ। ਜਿਹੜੇ ਇਸ ਨੂੰ ਪ੍ਰਭੂ ਭਗਤੀ ਵਿੱਚ ਨਹੀਂ ਲਾਉਂਦੇ, ਉਹ ਮਾਇਆ ਦੇ ਵਿਹਾਰਾਂ ਵਿੱਚ ਇਸ ਨੂੰ ਅਜਾਈਂ ਗਵਾ ਲੈਂਦੇ ਹਨ॥ ੧੫੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मैंने एक आश्चर्य देखा कि अनमोल हीरा बाजार में बिक रहा है, परंतु पारखी जौहरी के बिना वह कौड़ी के मोल जा रहा है। यह मनुष्य जन्म भी अनमोल हीरा है, जिसे अज्ञानी कौड़ी के मोल व्यर्थ गंवा देते हैं॥ १५४॥',
+      en: 'Satguru Kabir Saheb proclaims: I saw a strange sight—a priceless diamond was being sold in the market, but lacking a knowledgeable jeweler, it was exchanged for a mere shell. So is human life squandered without devotion.',
     },
     chintan: {
       pb: 'ਮਨੁੱਖੀ ਜੀਵਨ ਅਮੋਲਕ ਹੀਰਾ ਹੈ; ਇਸ ਦਾ ਮੁੱਲ ਕੇਵਲ ਪੂਰਾ ਗੁਰੂ ਜੌਹਰੀ ਹੀ ਜਾਣਦਾ ਹੈ।',
@@ -9284,9 +9284,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿੱਥੇ ਜਿਸ ਮਨੁੱਖ ਦੇ ਅੰਦਰ ਪ੍ਰਭੂ ਦੀ ਬਖਸ਼ਿਸ਼ ਦਾ ਗਿਆਨ ਹੋਵੇ ਉੱਥੇ ਧਰਮ ਹੁੰਦਾ ਹੈ, ਅਤੇ ਜਿੱਥੇ ਝੂਠ ਹੈ ਉੱਥੇ ਪਾਪ ਹੁੰਦਾ ਹੈ। ਫਿਰ ਜਿੱਥੇ ਲੋਭ ਲਾਲਚ ਹੋਵੇ ਉੱਥੇ ਅਧਿਆਤਮਿਕ ਮੌਤ (ਕਾਲ) ਹੁੰਦੀ ਹੈ ਅਤੇ ਜਿਸ ਹਿਰਦੇ ਵਿੱਚ ਖਿਮਾ ਤੇ ਦਇਆ ਹੋਵੇ ਉੱਥੇ ਪ੍ਰਮਾਤਮਾ ਆਪ ਵੱਸਦਾ ਹੈ॥ ੧੫੫॥',
-      hi: 'कबीर जी कहते हैं-जहाँ आत्म-ज्ञान है वहाँ धर्म है, जहाँ झूठ है वहाँ पाप है। जहाँ लोभ है वहाँ मृत्यु (काल) है और जहाँ क्षमा व दया है वहाँ स्वयं परमात्मा का निवास है॥ १५५॥',
-      en: 'Kabir Ji says: Where there is divine knowledge, there is righteousness; where there is falsehood, there is sin. Where there is greed, there is spiritual death; where there is forgiveness, God Himself abides.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿੱਥੇ ਜਿਸ ਮਨੁੱਖ ਦੇ ਅੰਦਰ ਪ੍ਰਭੂ ਦੀ ਬਖਸ਼ਿਸ਼ ਦਾ ਗਿਆਨ ਹੋਵੇ ਉੱਥੇ ਧਰਮ ਹੁੰਦਾ ਹੈ, ਅਤੇ ਜਿੱਥੇ ਝੂਠ ਹੈ ਉੱਥੇ ਪਾਪ ਹੁੰਦਾ ਹੈ। ਫਿਰ ਜਿੱਥੇ ਲੋਭ ਲਾਲਚ ਹੋਵੇ ਉੱਥੇ ਅਧਿਆਤਮਿਕ ਮੌਤ (ਕਾਲ) ਹੁੰਦੀ ਹੈ ਅਤੇ ਜਿਸ ਹਿਰਦੇ ਵਿੱਚ ਖਿਮਾ ਤੇ ਦਇਆ ਹੋਵੇ ਉੱਥੇ ਪ੍ਰਮਾਤਮਾ ਆਪ ਵੱਸਦਾ ਹੈ॥ ੧੫੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जहाँ आत्म-ज्ञान है वहाँ धर्म है, जहाँ झूठ है वहाँ पाप है। जहाँ लोभ है वहाँ मृत्यु (काल) है और जहाँ क्षमा व दया है वहाँ स्वयं परमात्मा का निवास है॥ १५५॥',
+      en: 'Satguru Kabir Saheb proclaims: Where there is divine knowledge, there is righteousness; where there is falsehood, there is sin. Where there is greed, there is spiritual death; where there is forgiveness, God Himself abides.',
     },
     chintan: {
       pb: 'ਖਿਮਾ ਅਤੇ ਦਇਆ ਹੀ ਪਰਮਾਤਮਾ ਦੇ ਨਿਵਾਸ ਦਾ ਸਾਖਿਆਤ ਅਸਥਾਨ ਹਨ।',
@@ -9350,8 +9350,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਮਾਇਆ ਤਿਆਗ ਦਿੱਤੀ ਤਾਂ ਕੀ ਹੋਇਆ, ਜੇਕਰ ਮਨ ਦਾ ਹੰਕਾਰ ਨਹੀਂ ਤਿਆਗਿਆ ਜਾਂਦਾ। ਕਿਉਂਕਿ ਵੱਡੇ ਮੁਨੀ ਤੇ ਰਿਸ਼ੀ ਇਸ ਹੰਕਾਰ ਵਿਚ ਹੀ ਨਸ਼ਟ ਹੋ ਜਾਂਦੇ ਹਨ ਅਤੇ ਇਹ ਹੰਕਾਰ ਹੀ ਸਭ ਪ੍ਰਾਣੀ ਮਾਤਰ ਨੂੰ ਖਾ ਜਾਂਦਾ ਹੈ॥ ੧੫੬॥',
-      hi: 'कबीर जी कहते हैं-यदि माया छोड़ भी दी तो क्या हुआ, यदि मन का अहंकार नहीं छूटा? बड़े-बड़े मुनि और ऋषि इस अहंकार के कारण नष्ट हो गए; अहंकार सभी जीवों को खा जाता है॥ १५६॥',
-      en: 'Kabir Ji says: What if one renounces wealth, if pride of the mind is not abandoned? Pride has destroyed even silent sages and great hermits; pride consumes everyone.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि माया छोड़ भी दी तो क्या हुआ, यदि मन का अहंकार नहीं छूटा? बड़े-बड़े मुनि और ऋषि इस अहंकार के कारण नष्ट हो गए; अहंकार सभी जीवों को खा जाता है॥ १५६॥',
+      en: 'Satguru Kabir Saheb proclaims: What if one renounces wealth, if pride of the mind is not abandoned? Pride has destroyed even silent sages and great hermits; pride consumes everyone.',
     },
     chintan: {
       pb: 'ਸਭ ਤੋਂ ਵੱਡਾ ਤਿਆਗ ਮਨ ਦੇ ਅਹੰਕਾਰ ਅਤੇ ਵਡਿਆਈ ਦੀ ਚਾਹ ਦਾ ਤਿਆਗ ਹੈ।',
@@ -9422,9 +9422,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਨੂੰ ਸੱਚਾ ਪੂਰਾ ਸਤਿਗੁਰੂ ਮਿਲਿਆ, ਉਸ ਨੇ ਮੈਨੂੰ ਇੱਕ ਰਾਮ ਉਪਦੇਸ਼ ਰੂਪੀ ਬਾਣ ਮਾਰਿਆ, ਜਿਸ ਦੇ ਲੱਗਣ ਸਾਰ ਹੀ ਮੈਂ ਧਰਤੀ ਨਾਲ ਮਿਲ ਗਿਆ (ਮੇਰੇ ਮਨ ਵਿੱਚ ਨਿਮਰਤਾ ਆ ਗਈ) ਅਤੇ ਮੇਰਾ ਹਿਰਦਾ ਗੁਰੂ ਪ੍ਰੇਮ ਨਾਲ ਵਿੰਨ੍ਹਿਆ ਗਿਆ॥ ੧੫੭॥',
-      hi: 'कबीर जी कहते हैं-मुझे सच्चे सतगुरु मिले, जिन्होंने उपदेश रूपी एक ऐसा बाण चलाया कि लगते ही मैं धरती पर आ गिरा (अहंकार मिट गया और नम्रता आ गई) और मेरा हृदय प्रभु-प्रेम में बिंध गया॥ १५७॥',
-      en: 'Kabir Ji says: I met the True Guru who struck me with a single arrow of the Word; the moment it struck, I fell humble to the ground, my heart pierced with Divine love.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਨੂੰ ਸੱਚਾ ਪੂਰਾ ਸਤਿਗੁਰੂ ਮਿਲਿਆ, ਉਸ ਨੇ ਮੈਨੂੰ ਇੱਕ ਰਾਮ ਉਪਦੇਸ਼ ਰੂਪੀ ਬਾਣ ਮਾਰਿਆ, ਜਿਸ ਦੇ ਲੱਗਣ ਸਾਰ ਹੀ ਮੈਂ ਧਰਤੀ ਨਾਲ ਮਿਲ ਗਿਆ (ਮੇਰੇ ਮਨ ਵਿੱਚ ਨਿਮਰਤਾ ਆ ਗਈ) ਅਤੇ ਮੇਰਾ ਹਿਰਦਾ ਗੁਰੂ ਪ੍ਰੇਮ ਨਾਲ ਵਿੰਨ੍ਹਿਆ ਗਿਆ॥ ੧੫੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मुझे सच्चे सतगुरु मिले, जिन्होंने उपदेश रूपी एक ऐसा बाण चलाया कि लगते ही मैं धरती पर आ गिरा (अहंकार मिट गया और नम्रता आ गई) और मेरा हृदय प्रभु-प्रेम में बिंध गया॥ १५७॥',
+      en: 'Satguru Kabir Saheb proclaims: I met the True Guru who struck me with a single arrow of the Word; the moment it struck, I fell humble to the ground, my heart pierced with Divine love.',
     },
     chintan: {
       pb: 'ਸਤਿਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਅਹੰਕਾਰ ਨੂੰ ਮੇਟ ਕੇ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਦਾ ਪ੍ਰਕਾਸ਼ ਕਰਦਾ ਹੈ।',
@@ -9487,9 +9487,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸੱਚਾ ਸਤਿਗੁਰੂ ਕੀ ਕਰ ਸਕਦਾ ਹੈ, ਜੇਕਰ ਚੇਲਿਆਂ (ਸਿੱਖਾਂ) ਵਿੱਚ ਹੀ ਊਣਤਾਈ ਹੋਵੇ। ਅਹੰਕਾਰ ਵਿੱਚ ਅੰਨ੍ਹੇ ਹੋਏ ਮਨੁੱਖ ਨੂੰ ਇੱਕ ਗੱਲ ਵੀ ਸਿੱਖਿਆ ਦੀ ਨਹੀਂ ਲੱਗਦੀ, ਜਿਵੇਂ ਵਾਂਸ ਵਿੱਚ ਫੂਕ ਮਾਰੀਏ ਤਾਂ ਉਹ ਆਰ-ਪਾਰ ਲੰਘ ਜਾਂਦੀ ਹੈ ਕਿਉਂਕਿ ਵਾਂਸ ਅੰਦਰੋਂ ਪੋਲਾ ਤੇ ਗੁਣਹੀਨ ਹੁੰਦਾ ਹੈ॥ ੧੫੮॥',
-      hi: 'कबीर जी कहते हैं-सच्चा सतगुरु क्या करे यदि शिष्यों में ही खोट हो? अहंकार में अंधे जीव को उपदेश की एक बात भी असर नहीं करती, जैसे बांस में फूँक मारने पर हवा आर-पार निकल जाती है॥ १५८॥',
-      en: 'Kabir Ji says: What can the True Guru do if the disciple is flawed? To one blinded by pride, not a single lesson hits home, just as blowing wind through hollow bamboo passes straight through.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸੱਚਾ ਸਤਿਗੁਰੂ ਕੀ ਕਰ ਸਕਦਾ ਹੈ, ਜੇਕਰ ਚੇਲਿਆਂ (ਸਿੱਖਾਂ) ਵਿੱਚ ਹੀ ਊਣਤਾਈ ਹੋਵੇ। ਅਹੰਕਾਰ ਵਿੱਚ ਅੰਨ੍ਹੇ ਹੋਏ ਮਨੁੱਖ ਨੂੰ ਇੱਕ ਗੱਲ ਵੀ ਸਿੱਖਿਆ ਦੀ ਨਹੀਂ ਲੱਗਦੀ, ਜਿਵੇਂ ਵਾਂਸ ਵਿੱਚ ਫੂਕ ਮਾਰੀਏ ਤਾਂ ਉਹ ਆਰ-ਪਾਰ ਲੰਘ ਜਾਂਦੀ ਹੈ ਕਿਉਂਕਿ ਵਾਂਸ ਅੰਦਰੋਂ ਪੋਲਾ ਤੇ ਗੁਣਹੀਨ ਹੁੰਦਾ ਹੈ॥ ੧੫੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-सच्चा सतगुरु क्या करे यदि शिष्यों में ही खोट हो? अहंकार में अंधे जीव को उपदेश की एक बात भी असर नहीं करती, जैसे बांस में फूँक मारने पर हवा आर-पार निकल जाती है॥ १५८॥',
+      en: 'Satguru Kabir Saheb proclaims: What can the True Guru do if the disciple is flawed? To one blinded by pride, not a single lesson hits home, just as blowing wind through hollow bamboo passes straight through.',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਤਾਂ ਹੀ ਅਸਰ ਕਰਦਾ ਹੈ ਜੇਕਰ ਸਿੱਖ ਦੇ ਮਨ ਵਿੱਚ ਨਿਮਰਤਾ ਤੇ ਗ੍ਰਹਿਣਸ਼ੀਲਤਾ ਹੋਵੇ।',
@@ -9560,9 +9560,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਘੋੜੇ ਹਾਥੀ, ਆਦਿ ਸਵਾਰੀ ਬੇਅੰਤ ਸਾਧਨਾ ਵਾਲੇ ਛੱਤ੍ਰਧਾਰੀ ਰਾਜੇ ਦੀ ਇਸਤ੍ਰੀ ਉਸ ਇਸਤ੍ਰੀ ਦੀ ਬਰਾਬਰੀ ਨਹੀਂ ਕਰ ਸਕਦੀ, ਜਿਹੜੀ ਪ੍ਰਭੂ ਭਗਤਾਂ ਦਾ ਪਾਣੀ ਭਰਨ ਵਾਲੀ ਹੈ॥ ੧੫੯॥',
-      hi: 'कबीर जी कहते हैं-हाथी, घोड़े और विशाल वैभव वाले राजा की रानी भी उस विनम्र दासी की बराबरी नहीं कर सकती, जो प्रभु-भक्तों के घर पानी भरती है॥ १५९॥',
-      en: 'Kabir Ji says: The queen of a king with vast armies, horses, and elephants cannot equal the humble water-carrier woman who serves the devotees of God.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਘੋੜੇ ਹਾਥੀ, ਆਦਿ ਸਵਾਰੀ ਬੇਅੰਤ ਸਾਧਨਾ ਵਾਲੇ ਛੱਤ੍ਰਧਾਰੀ ਰਾਜੇ ਦੀ ਇਸਤ੍ਰੀ ਉਸ ਇਸਤ੍ਰੀ ਦੀ ਬਰਾਬਰੀ ਨਹੀਂ ਕਰ ਸਕਦੀ, ਜਿਹੜੀ ਪ੍ਰਭੂ ਭਗਤਾਂ ਦਾ ਪਾਣੀ ਭਰਨ ਵਾਲੀ ਹੈ॥ ੧੫੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हाथी, घोड़े और विशाल वैभव वाले राजा की रानी भी उस विनम्र दासी की बराबरी नहीं कर सकती, जो प्रभु-भक्तों के घर पानी भरती है॥ १५९॥',
+      en: 'Satguru Kabir Saheb proclaims: The queen of a king with vast armies, horses, and elephants cannot equal the humble water-carrier woman who serves the devotees of God.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਰਾਜ-ਭੋਗ ਭਗਤਾਂ ਦੀ ਨਿਸ਼ਕਾਮ ਸੇਵਾ ਅੱਗੇ ਅਤਿ ਤੁੱਛ ਹਨ।',
@@ -9634,8 +9634,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਛਤਰਪਤੀ ਰਾਜੇ ਦੀ ਰਾਣੀ ਨੂੰ ਕਿਉਂ ਨਿੰਦਿਆ ਜਾਂਦਾ ਹੈ ਅਤੇ ਸੰਤ ਮਹਾਤਮਾ ਦੀ ਦਾਸੀ ਨੂੰ ਕਿਉਂ ਵਡਿਆਈ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ? ਇਸ ਦਾ ਕਾਰਨ ਇਹ ਹੈ ਕਿ ਰਾਜੇ ਦੀ ਰਾਣੀ ਆਪਣੀ ਕਾਮ ਪੂਰਤੀ ਵਾਸਤੇ ਆਪਣੇ ਸਿਰ ਦੀ (ਮਾਂਗ) ਚੀਰਨੀ ਨੂੰ ਸੰਧੂਰ ਆਦਿਕ ਲਾ ਕੇ ਸਵਾਰਦੀ ਰਹਿੰਦੀ ਹੈ ਅਤੇ ਸੰਤਾਂ ਦੀ ਦਾਸੀ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿਚ ਹਰੀ ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਦੀ ਹੈ॥ ੧੬੦॥',
-      hi: 'कबीर जी कहते हैं-राजा की रानी की निंदा और संत की दासी का सम्मान क्यों होता है? क्योंकि राजा की रानी वासना के लिए श्रृंगार करती है, जबकि संत की दासी प्रभु के नाम का स्मरण करती है॥ १६०॥',
-      en: 'Kabir Ji says: Why is the king’s queen criticized and the Lord’s servant woman honored? The queen adorns herself for sensual pleasure, while the humble servant woman meditates on the Divine Name.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-राजा की रानी की निंदा और संत की दासी का सम्मान क्यों होता है? क्योंकि राजा की रानी वासना के लिए श्रृंगार करती है, जबकि संत की दासी प्रभु के नाम का स्मरण करती है॥ १६०॥',
+      en: 'Satguru Kabir Saheb proclaims: Why is the king’s queen criticized and the Lord’s servant woman honored? The queen adorns herself for sensual pleasure, while the humble servant woman meditates on the Divine Name.',
     },
     chintan: {
       pb: 'ਉੱਤਮਤਾ ਬਾਹਰੀ ਸੁੰਦਰਤਾ ਜਾਂ ਪਦਵੀ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਨਾਮ ਸਿਮਰਨ ਦੇ ਸੁਭਾਅ ਵਿੱਚ ਹੈ।',
@@ -9706,9 +9706,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਥੰਮੀ ਰੂਪ ਗੁਰੂ ਦਾ ਸ਼ਬਦ ਮਿਲਿਆ, ਤਾਂ ਮਨ ਦੀ ਸਥਿਰਤਾ ਹੋ ਗਈ ਅਤੇ ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਧੀਰਜ, ਨਿਸਚਾ ਦ੍ਰਿੜ ਕਰ ਦਿਤਾ। ਫਿਰ ਇਸ ਮਨ ਦੀ ਸਥਿਰਤਾ ਵਿਚ ਸਤਿਸੰਗਤ ਦੇ ਸਰੋਵਰ ਕੋਲੋਂ ਹਰੀ ਨਾਮ ਦਾ ਅਮੋਲਕ ਹੀਰਾ ਖਰੀਦ ਲਿਆ ਹੈ॥ ੧੬੧॥',
-      hi: 'कबीर जी कहते हैं-सतगुरु के शब्द रूपी खंभे का सहारा मिला तो मन स्थिर हो गया और धीरज बंध गया। कबीर ने इस स्थिरता में मानसरोवर (सत्संग) के तट पर प्रभु नाम का अनमोल हीरा प्राप्त कर लिया है॥ १६१॥',
-      en: 'Kabir Ji says: Receiving the pillar of the Satguru\'s Word, my mind attained stability and steadfast peace. By the shore of the Mansarovar of holy satsang, Kabir has purchased the priceless diamond of God\'s Name.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਥੰਮੀ ਰੂਪ ਗੁਰੂ ਦਾ ਸ਼ਬਦ ਮਿਲਿਆ, ਤਾਂ ਮਨ ਦੀ ਸਥਿਰਤਾ ਹੋ ਗਈ ਅਤੇ ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਧੀਰਜ, ਨਿਸਚਾ ਦ੍ਰਿੜ ਕਰ ਦਿਤਾ। ਫਿਰ ਇਸ ਮਨ ਦੀ ਸਥਿਰਤਾ ਵਿਚ ਸਤਿਸੰਗਤ ਦੇ ਸਰੋਵਰ ਕੋਲੋਂ ਹਰੀ ਨਾਮ ਦਾ ਅਮੋਲਕ ਹੀਰਾ ਖਰੀਦ ਲਿਆ ਹੈ॥ ੧੬੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-सतगुरु के शब्द रूपी खंभे का सहारा मिला तो मन स्थिर हो गया और धीरज बंध गया। कबीर ने इस स्थिरता में मानसरोवर (सत्संग) के तट पर प्रभु नाम का अनमोल हीरा प्राप्त कर लिया है॥ १६१॥',
+      en: 'Satguru Kabir Saheb proclaims: Receiving the pillar of the Satguru\'s Word, my mind attained stability and steadfast peace. By the shore of the Mansarovar of holy satsang, Kabir has purchased the priceless diamond of God\'s Name.',
     },
     chintan: {
       pb: 'ਸਤਿਗੁਰੂ ਦਾ ਸ਼ਬਦ ਹੀ ਚੰਚਲ ਮਨ ਨੂੰ ਸਥਿਰਤਾ ਅਤੇ ਧੀਰਜ ਬਖ਼ਸ਼ਣ ਵਾਲਾ ਅਸਲ ਆਧਾਰ ਹੈ।',
@@ -9779,9 +9779,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਹੀਰਾ ਹੈ, ਪ੍ਰਭੂ ਭਗਤ ਉਸ ਦੇ ਨਾਮ ਹੀਰੇ ਦੇ ਖਰੀਦਾਰ ਹਨ, ਜਿਸ ਨੂੰ ਲੈ ਕੇ ਆਪਣੀ ਹਟੀਆ (ਹਿਰਦਿਆਂ) ਨੂੰ ਸਜਾਉਂਦੇ ਹਨ। ਜਦ ਇਸ ਦੀ ਪਰਖ ਕਰਨ ਵਾਲੇ ਮਿਲਦੇ ਹਨ, ਤਦੋਂ ਹੀ ਇਨ੍ਹਾਂ ਹੀਰਿਆਂ ਦੀ ਪਰਖ ਹੁੰਦੀ ਹੈ ਅਰਥਾਤ ਸਤਿਸੰਗਤ ਵਿਚ ਗਿਆਨ ਦੀ ਚਰਚਾ ਹੁੰਦੀ ਹੈ॥ ੧੬੨॥',
-      hi: 'कबीर जी कहते हैं-परमात्मा का नाम हीरा है और प्रभु-भक्त उस हीरे के जौहरी हैं, जो अपने हृदय रूपी हाट में उसे सजाते हैं। जब कोई विवेकशील पारखी मिलता है, तब इस हरि-नाम रूपी हीरे का अनमोल विनिमय होता है॥ १६२॥',
-      en: 'Kabir Ji says: The Lord’s Name is the priceless diamond, and His devotees are the jewelers who set up shop in their hearts. When wise evaluators meet, the trading of these divine diamonds takes place in holy congregation.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਹੀਰਾ ਹੈ, ਪ੍ਰਭੂ ਭਗਤ ਉਸ ਦੇ ਨਾਮ ਹੀਰੇ ਦੇ ਖਰੀਦਾਰ ਹਨ, ਜਿਸ ਨੂੰ ਲੈ ਕੇ ਆਪਣੀ ਹਟੀਆ (ਹਿਰਦਿਆਂ) ਨੂੰ ਸਜਾਉਂਦੇ ਹਨ। ਜਦ ਇਸ ਦੀ ਪਰਖ ਕਰਨ ਵਾਲੇ ਮਿਲਦੇ ਹਨ, ਤਦੋਂ ਹੀ ਇਨ੍ਹਾਂ ਹੀਰਿਆਂ ਦੀ ਪਰਖ ਹੁੰਦੀ ਹੈ ਅਰਥਾਤ ਸਤਿਸੰਗਤ ਵਿਚ ਗਿਆਨ ਦੀ ਚਰਚਾ ਹੁੰਦੀ ਹੈ॥ ੧੬੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-परमात्मा का नाम हीरा है और प्रभु-भक्त उस हीरे के जौहरी हैं, जो अपने हृदय रूपी हाट में उसे सजाते हैं। जब कोई विवेकशील पारखी मिलता है, तब इस हरि-नाम रूपी हीरे का अनमोल विनिमय होता है॥ १६२॥',
+      en: 'Satguru Kabir Saheb proclaims: The Lord’s Name is the priceless diamond, and His devotees are the jewelers who set up shop in their hearts. When wise evaluators meet, the trading of these divine diamonds takes place in holy congregation.',
     },
     chintan: {
       pb: 'ਸਤਿਸੰਗਤ ਵਿੱਚ ਗਿਆਨ ਦੀ ਚਰਚਾ ਨਾਲ ਪ੍ਰਭੂ ਨਾਮ ਹੀਰੇ ਦੀ ਕਦਰ ਤੇ ਅਨੁਭਵ ਦ੍ਰਿੜ੍ਹ ਹੁੰਦਾ ਹੈ।',
@@ -9853,8 +9853,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਜਿਸ ਤਰ੍ਹਾਂ ਕਿਸੇ ਕੰਮ ਪੈਣ ਤੇ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਯਾਦ ਕਰੀਦਾ ਹੈ, ਇਸ ਤਰਾਂ ਹੀ ਉਸ ਨੂੰ ਸਦਾ ਯਾਦ ਕਰੋ। ਤਦ ਤੁਸੀਂ ਅਮਰਾ ਪੁਰ (ਸੱਚਖੰਡ) ਵਿਚ ਨਿਵਾਸ ਕਰ ਲਵੋਗੇ ਅਤੇ ਤੁਹਾਡਾ ਗਿਆ ਹੋਇਆ ਸ਼ੁਭ ਗੁਣਾਂ ਦਾ ਧਨ ਪਦਾਰਥ, ਪ੍ਰਮਾਤਮਾ ਮੋੜ ਦੇਵੇਗਾ॥ ੧੬੩॥',
-      hi: 'कबीर जी कहते हैं-जैसे विपत्ति पड़ने पर ईश्वर का स्मरण करते हैं, वैसा नित्य स्मरण करें। तब आप अमरपुर (सचखंड) में निवास पाएंगे और ईश्वर आपका खोया हुआ आत्म-धन पुनः लौटा देगा॥ १६३॥',
-      en: 'Kabir Ji says: As you remember God in times of trouble, remember Him like that constantly every day! Then you shall abide in the Realm of Immortality, and God will restore all your lost spiritual virtues.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जैसे विपत्ति पड़ने पर ईश्वर का स्मरण करते हैं, वैसा नित्य स्मरण करें। तब आप अमरपुर (सचखंड) में निवास पाएंगे और ईश्वर आपका खोया हुआ आत्म-धन पुनः लौटा देगा॥ १६३॥',
+      en: 'Satguru Kabir Saheb proclaims: As you remember God in times of trouble, remember Him like that constantly every day! Then you shall abide in the Realm of Immortality, and God will restore all your lost spiritual virtues.',
     },
     chintan: {
       pb: 'ਨਿਰੰਤਰ ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਜੀਵ ਅਮਰ ਪਦਵੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ ਅਤੇ ਆਤਮਿਕ ਧਨ ਮੁੜ ਮਿਲ ਜਾਂਦਾ ਹੈ।',
@@ -9925,9 +9925,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸੇਵਾ ਕਰਨ ਵਾਸਤੇ ਦੋ ਹੀ ਚੰਗੇ ਹਨ, ਇਕ ਸੰਤ ਅਤੇ ਦੂਜਾ ਪ੍ਰਮਾਤਮਾ, ਕਿਉਂਕਿ ਪ੍ਰਮਾਤਮਾ ਮੁਕਤੀ ਦੇਣ ਵਾਲਾ ਹੈ ਤੇ ਸੰਤ ਉਸ ਮੁਕਤੀ ਦਾਤੇ ਦਾ ਨਾਮ ਜਪਾਉਂਦਾ ਹੈ॥ ੧੬੪॥',
-      hi: 'कबीर जी कहते हैं-सेवा के लिए दो ही श्रेष्ठ हैं: एक संत और दूसरा राम। राम मुक्ति प्रदान करने वाले दाता हैं और संत उस प्रभु-नाम का जाप करवाते हैं॥ १६४॥',
-      en: 'Kabir Ji says: For devotion and service, only two are worthy—the Saint and the Lord. The Lord is the Bestower of liberation, and the Saint inspires us to chant His Holy Name.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸੇਵਾ ਕਰਨ ਵਾਸਤੇ ਦੋ ਹੀ ਚੰਗੇ ਹਨ, ਇਕ ਸੰਤ ਅਤੇ ਦੂਜਾ ਪ੍ਰਮਾਤਮਾ, ਕਿਉਂਕਿ ਪ੍ਰਮਾਤਮਾ ਮੁਕਤੀ ਦੇਣ ਵਾਲਾ ਹੈ ਤੇ ਸੰਤ ਉਸ ਮੁਕਤੀ ਦਾਤੇ ਦਾ ਨਾਮ ਜਪਾਉਂਦਾ ਹੈ॥ ੧੬੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-सेवा के लिए दो ही श्रेष्ठ हैं: एक संत और दूसरा राम। राम मुक्ति प्रदान करने वाले दाता हैं और संत उस प्रभु-नाम का जाप करवाते हैं॥ १६४॥',
+      en: 'Satguru Kabir Saheb proclaims: For devotion and service, only two are worthy—the Saint and the Lord. The Lord is the Bestower of liberation, and the Saint inspires us to chant His Holy Name.',
     },
     chintan: {
       pb: 'ਸੰਤ ਸੇਵਾ ਨਾਲ ਨਾਮ ਦੀ ਪ੍ਰਾਪਤੀ ਹੁੰਦੀ ਹੈ ਅਤੇ ਰਾਮ ਸੇਵਾ ਨਾਲ ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਹੁੰਦੀ ਹੈ।',
@@ -9990,9 +9990,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਸ (ਕਰਮ ਕਾਂਡਾਂ ਦੇ) ਰਸਤੇ ਉਤੇ ਪੰਡਿਤ ਲੋਕ ਲੰਘ ਗਏ ਹਨ, ਉਨ੍ਹਾਂ ਦੇ ਪਿਛੇ ਵਹੀਰਾਂ ਤੁਰ ਪਈਆਂ ਹਨ। ਪ੍ਰਮਾਤਮਾ ਦੇ ਰਸਤੇ ਦੀ ਇਕ ਬੜੀ ਔਖੀ ਘਾਟੀ ਹੈ, ਜਿਸ ਉੱਤੇ ਕਬੀਰ ਚੜ੍ਹ ਰਿਹਾ ਹੈ॥ ੧੬੫॥',
-      hi: 'कबीर जी कहते हैं-जिस कर्मकांडी मार्ग पर पंडित गए, उनके पीछे अंधी भीड़ चल पड़ी। परंतु राम-भक्ति का मार्ग एक अत्यंत कठिन घाटी जैसा है, जिस पर कबीर दृढ़तापूर्वक चढ़ रहा है॥ १६५॥',
-      en: 'Kabir Ji says: The crowds blindly follow the karmic ritual path trodden by worldly scholars. But the path to the Lord is a steep, difficult pass, and Kabir is climbing that tough mountain of pure devotion.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਸ (ਕਰਮ ਕਾਂਡਾਂ ਦੇ) ਰਸਤੇ ਉਤੇ ਪੰਡਿਤ ਲੋਕ ਲੰਘ ਗਏ ਹਨ, ਉਨ੍ਹਾਂ ਦੇ ਪਿਛੇ ਵਹੀਰਾਂ ਤੁਰ ਪਈਆਂ ਹਨ। ਪ੍ਰਮਾਤਮਾ ਦੇ ਰਸਤੇ ਦੀ ਇਕ ਬੜੀ ਔਖੀ ਘਾਟੀ ਹੈ, ਜਿਸ ਉੱਤੇ ਕਬੀਰ ਚੜ੍ਹ ਰਿਹਾ ਹੈ॥ ੧੬੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जिस कर्मकांडी मार्ग पर पंडित गए, उनके पीछे अंधी भीड़ चल पड़ी। परंतु राम-भक्ति का मार्ग एक अत्यंत कठिन घाटी जैसा है, जिस पर कबीर दृढ़तापूर्वक चढ़ रहा है॥ १६५॥',
+      en: 'Satguru Kabir Saheb proclaims: The crowds blindly follow the karmic ritual path trodden by worldly scholars. But the path to the Lord is a steep, difficult pass, and Kabir is climbing that tough mountain of pure devotion.',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਕਰਮ-ਕਾਂਡਾਂ ਦੀ ਭੀੜ ਤੋਂ ਵੱਖ ਹੋ ਕੇ ਆਤਮਿਕ ਭਗਤੀ ਦੀ ਔਖੀ ਘਾਟੀ ਚੜ੍ਹਨਾ ਹੀ ਅਸਲ ਸਾਧਨਾ ਹੈ।',
@@ -10063,9 +10063,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਇਹ ਪੁਰਸ਼ ਦੁਨੀਆਂ ਦੇ ਫਿਕਰਾਂ (ਰਹੁ ਰੀਤਾਂ) ਵਿਚ ਹੀ ਮਰ ਜਾਂਦਾ ਹੈ ਅਤੇ ਆਪਣੀ ਕੁਲ ਦੀ ਰੀਤੀ ਨੂੰ ਅਪਣਾਉਂਦਾ ਹੈ ਕਿ ਲੋਕ ਕੀ ਆਖਣਗੇ? ਪਰ ਜਦ ਤੈਨੂੰ ਸ਼ਮਸ਼ਾਨ ਭੂਮੀ ਵਿਚ ਲਿਜਾ ਕੇ ਫੂਕ ਦੇਣਗੇ, ਉਦੋਂ ਕਿਸ ਦੀ ਕੁਲ ਨੂੰ ਸ਼ਰਮਸਾਰੀ ਹੋਵੇਗੀ?॥ ੧੬੬॥',
-      hi: 'कबीर जी कहते हैं-मनुष्य कुल-मर्यादा और लोक-लाज के चक्कर में पड़कर जीवन गंवा देता है। परंतु जब लोग शव को श्मशान में रख देंगे, तब किस कुल की प्रतिष्ठा बचेगी?॥ १६६॥',
-      en: 'Kabir Ji says: Man dies wasting his life in worldly anxieties and keeping up social family traditions. But when they carry his body and place it in the cremation ground, whose family pride will matter then?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਇਹ ਪੁਰਸ਼ ਦੁਨੀਆਂ ਦੇ ਫਿਕਰਾਂ (ਰਹੁ ਰੀਤਾਂ) ਵਿਚ ਹੀ ਮਰ ਜਾਂਦਾ ਹੈ ਅਤੇ ਆਪਣੀ ਕੁਲ ਦੀ ਰੀਤੀ ਨੂੰ ਅਪਣਾਉਂਦਾ ਹੈ ਕਿ ਲੋਕ ਕੀ ਆਖਣਗੇ? ਪਰ ਜਦ ਤੈਨੂੰ ਸ਼ਮਸ਼ਾਨ ਭੂਮੀ ਵਿਚ ਲਿਜਾ ਕੇ ਫੂਕ ਦੇਣਗੇ, ਉਦੋਂ ਕਿਸ ਦੀ ਕੁਲ ਨੂੰ ਸ਼ਰਮਸਾਰੀ ਹੋਵੇਗੀ?॥ ੧੬੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य कुल-मर्यादा और लोक-लाज के चक्कर में पड़कर जीवन गंवा देता है। परंतु जब लोग शव को श्मशान में रख देंगे, तब किस कुल की प्रतिष्ठा बचेगी?॥ १६६॥',
+      en: 'Satguru Kabir Saheb proclaims: Man dies wasting his life in worldly anxieties and keeping up social family traditions. But when they carry his body and place it in the cremation ground, whose family pride will matter then?',
     },
     chintan: {
       pb: 'ਲੋਕ-ਲਾਜ ਤੇ ਕੁਲ ਦੀ ਮਿਥਿਆ ਮਰਯਾਦਾ ਵਿੱਚ ਉਲਝ ਕੇ ਪ੍ਰਭੂ ਭਗਤੀ ਗੁਆ ਲੈਣਾ ਵੱਡੀ ਭੁੱਲ ਹੈ।',
@@ -10136,9 +10136,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੰਦਭਾਗੀ ਪੁਰਸ਼ ਬਹੁਤ ਲੋਕਾਂ ਦੀ ਲੋਕ ਲਾਜ ਵਿਚ ਹੀ ਡੁੱਬ ਜਾਏਂਗਾ। ਵੀਚਾਰ ਕਰ ਜੋ ਅਜ ਗੁਆਂਢੀ ਦੇ ਘਰ ਹੋਇਆ ਹੈ, ਉਸ ਨੂੰ ਤੂੰ ਆਪਣੇ ਉੱਤੇ ਵੀ ਵਾਪਰਿਆ ਜਾਣ। ਮੌਤ ਸਭ ਨੂੰ ਵਾਪਰਦੀ ਹੈ॥ ੧੬੭॥',
-      hi: 'कबीर जी कहते हैं-हे अभागे जीव! तू लोगों की देखा-देखी और लोक-लाज में डूब जाएगा। जो आज पड़ोसी के घर मृत्यु घटी है, उसे अपने साथ भी अवश्य होने वाला जान॥ १६७॥',
-      en: 'Kabir Ji says: O unfortunate soul, you will drown in the sea of worldly opinion! Recognize that what happened at your neighbor’s house today (death) will surely happen to you tomorrow.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੰਦਭਾਗੀ ਪੁਰਸ਼ ਬਹੁਤ ਲੋਕਾਂ ਦੀ ਲੋਕ ਲਾਜ ਵਿਚ ਹੀ ਡੁੱਬ ਜਾਏਂਗਾ। ਵੀਚਾਰ ਕਰ ਜੋ ਅਜ ਗੁਆਂਢੀ ਦੇ ਘਰ ਹੋਇਆ ਹੈ, ਉਸ ਨੂੰ ਤੂੰ ਆਪਣੇ ਉੱਤੇ ਵੀ ਵਾਪਰਿਆ ਜਾਣ। ਮੌਤ ਸਭ ਨੂੰ ਵਾਪਰਦੀ ਹੈ॥ ੧੬੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे अभागे जीव! तू लोगों की देखा-देखी और लोक-लाज में डूब जाएगा। जो आज पड़ोसी के घर मृत्यु घटी है, उसे अपने साथ भी अवश्य होने वाला जान॥ १६७॥',
+      en: 'Satguru Kabir Saheb proclaims: O unfortunate soul, you will drown in the sea of worldly opinion! Recognize that what happened at your neighbor’s house today (death) will surely happen to you tomorrow.',
     },
     chintan: {
       pb: 'ਗੁਆਂਢੀ ਦੀ ਮੌਤ ਵੇਖ ਕੇ ਆਪਣੇ ਅੰਤ ਸਮੇਂ ਦਾ ਚੇਤਾ ਕਰਨਾ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਲੱਗਣਾ ਚਾਹੀਦਾ ਹੈ।',
@@ -10209,9 +10209,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੰਗ ਕੇ ਭਿਛਿਆ ਦੀ ਲਈ ਹੋਈ ਰੋਟੀ ਚੰਗੀ ਹੈ, ਜਿਸ ਵਿਚ ਕਈ ਪ੍ਰਕਾਰ ਦਾ ਅਨਾਜ ਹੁੰਦਾ ਹੈ। ਫਿਰ ਰੋਟੀ ਮੰਗ ਕੇ ਖਾਣ ਵਾਲੇ ਦਾ ਕਿਸੇ ਚੀਜ਼ ਨਾਲ ਦਾਅਵਾ ਨਹੀਂ ਹੁੰਦਾ। ਉਸ ਵਾਸਤੇ ਬੜਾ ਵੱਡਾ ਦੇਸ਼ ਅਤੇ ਵੱਡਾ ਹਰੀ ਰਾਜ ਮੰਗਣ ਵਾਸਤੇ ਹੁੰਦਾ ਹੈ॥ ੧੬੮॥',
-      hi: 'कबीर जी कहते हैं-माधुकरी भिक्षा मांगकर खाना ही भला है, जिसमें विविध प्रकार का अन्न होता है। ऐसी भिक्षा लेने वाले का किसी संपत्ति पर दावा नहीं होता; उसके लिए प्रभु का विशाल साम्राज्य ही उसका घर है॥ १६८॥',
-      en: 'Kabir Ji says: Blessed is the simple alms-bread gathered freely, composed of varied grains. One who lives simply without claiming property has no attachment; for him, the entire world is God’s vast domain.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੰਗ ਕੇ ਭਿਛਿਆ ਦੀ ਲਈ ਹੋਈ ਰੋਟੀ ਚੰਗੀ ਹੈ, ਜਿਸ ਵਿਚ ਕਈ ਪ੍ਰਕਾਰ ਦਾ ਅਨਾਜ ਹੁੰਦਾ ਹੈ। ਫਿਰ ਰੋਟੀ ਮੰਗ ਕੇ ਖਾਣ ਵਾਲੇ ਦਾ ਕਿਸੇ ਚੀਜ਼ ਨਾਲ ਦਾਅਵਾ ਨਹੀਂ ਹੁੰਦਾ। ਉਸ ਵਾਸਤੇ ਬੜਾ ਵੱਡਾ ਦੇਸ਼ ਅਤੇ ਵੱਡਾ ਹਰੀ ਰਾਜ ਮੰਗਣ ਵਾਸਤੇ ਹੁੰਦਾ ਹੈ॥ ੧੬੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-माधुकरी भिक्षा मांगकर खाना ही भला है, जिसमें विविध प्रकार का अन्न होता है। ऐसी भिक्षा लेने वाले का किसी संपत्ति पर दावा नहीं होता; उसके लिए प्रभु का विशाल साम्राज्य ही उसका घर है॥ १६८॥',
+      en: 'Satguru Kabir Saheb proclaims: Blessed is the simple alms-bread gathered freely, composed of varied grains. One who lives simply without claiming property has no attachment; for him, the entire world is God’s vast domain.',
     },
     chintan: {
       pb: 'ਸੰਤੁਸ਼ਟਤਾ ਅਤੇ ਦਾਅਵਾ-ਰਹਿਤ ਜੀਵਨ ਨਾਲ ਮਨ ਵਿੱਚ ਸੱਚੀ ਆਜ਼ਾਦੀ ਤੇ ਨਿਰਭੈਤਾ ਆਉਂਦੀ ਹੈ।',
@@ -10282,9 +10282,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਲਕੀਅਤ ਦਾ ਦਾਅਵਾ ਕਰਨਾ ਤਥਾ ਮਲਕੀਅਤ ਬਨਾਉਣ ਨਾਲ ਅੰਦਰ ਈਰਖਾ ਦੀ ਅੱਗ ਅਥਵਾ ਹਉਮੈ ਨਾਲ ਸੜਨ ਪੈਦਾ ਹੁੰਦੀ ਹੈ। ਪਰੰਤੂ ਜਿਹੜਾ ਪੁਰਸ਼ ਕੋਈ ਮਲਕੀਅਤ ਨਹੀਂ ਬਣਾਉਂਦਾ ਉਸ ਨੂੰ ਕੋਈ ਚਿੰਤਾ ਨਹੀਂ ਹੁੰਦੀ ਤੇ ਉਹ ਇੰਦਰ ਰਾਜੇ ਨੂੰ ਵੀ ਕੰਗਾਲ ਹੀ ਸਮਝਦਾ ਹੈ॥ ੧੬੯॥',
-      hi: 'कबीर जी कहते हैं-संपत्ति के दावे से चिंताओं और ईर्ष्या की जलन होती है, परंतु दावा-रहित पुरुष निर्भय रहता है। जो जन दावा-रहित है, वह इंद्र जैसे राजा को भी अपने आगे दरिद्र समझता है॥ १६९॥',
-      en: 'Kabir Ji says: Claiming ownership causes burning envy and worry, but one without claims remains carefree. A person free from ownership regards even King Indra as poor.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਲਕੀਅਤ ਦਾ ਦਾਅਵਾ ਕਰਨਾ ਤਥਾ ਮਲਕੀਅਤ ਬਨਾਉਣ ਨਾਲ ਅੰਦਰ ਈਰਖਾ ਦੀ ਅੱਗ ਅਥਵਾ ਹਉਮੈ ਨਾਲ ਸੜਨ ਪੈਦਾ ਹੁੰਦੀ ਹੈ। ਪਰੰਤੂ ਜਿਹੜਾ ਪੁਰਸ਼ ਕੋਈ ਮਲਕੀਅਤ ਨਹੀਂ ਬਣਾਉਂਦਾ ਉਸ ਨੂੰ ਕੋਈ ਚਿੰਤਾ ਨਹੀਂ ਹੁੰਦੀ ਤੇ ਉਹ ਇੰਦਰ ਰਾਜੇ ਨੂੰ ਵੀ ਕੰਗਾਲ ਹੀ ਸਮਝਦਾ ਹੈ॥ ੧੬੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-संपत्ति के दावे से चिंताओं और ईर्ष्या की जलन होती है, परंतु दावा-रहित पुरुष निर्भय रहता है। जो जन दावा-रहित है, वह इंद्र जैसे राजा को भी अपने आगे दरिद्र समझता है॥ १६९॥',
+      en: 'Satguru Kabir Saheb proclaims: Claiming ownership causes burning envy and worry, but one without claims remains carefree. A person free from ownership regards even King Indra as poor.',
     },
     chintan: {
       pb: 'ਮਾਇਆ ਦਾ ਦਾਅਵਾ ਚਿੰਤਾ ਪੈਦਾ ਕਰਦਾ ਹੈ, ਜਦਕਿ ਨਿਰਮੋਹ ਆਤਮਾ ਸਾਰਿਆਂ ਤੋਂ ਵਡਿਆਈ ਪਾਉਂਦੀ ਹੈ।',
@@ -10355,9 +10355,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਕਿਨਾਰਿਆਂ ਤੱਕ ਮੂੰਹ ਤੱਕ ਨਕਾ ਨਕ ਸਰੋਵਰ ਭਰਿਆ ਹੋਇਆ ਹੈ, ਪਰ ਉਸਦੇ ਪਾਣੀ ਨੂੰ (ਅਭਾਗਾ) ਕੋਈ ਪੀ ਨਹੀਂ ਸਕਦਾ। ਹੇ ਕਬੀਰ ! ਵੱਡੇ ਭਾਗਾਂ ਕਰਕੇ ਤੂੰ ਇਸ ਪਾਣੀ ਨੂੰ ਪਾ ਲਿਆ ਹੈ ਤੇ ਹੁਣ ਤੂੰ ਬੁੱਕ ਭਰ ਭਰ ਕੇ ਪੀ, ਇਹ ਵਾਹਿਗੁਰੂ ਨਾਮ ਦਾ ਸਰੋਵਰ ਜਲ ਹੈ॥ ੧੭੦॥',
-      hi: 'कबीर जी कहते हैं-हरि-नाम का सरोवर लबालब भरा हुआ है, परंतु अभागे जीव उसका जल नहीं पी पाते। हे कबीर! बड़े भाग्य से तुझे यह अमूर्त नाम-जल मिला है, अब तू भर-भरकर इसे पियो॥ १७०॥',
-      en: 'Kabir Ji says: The ocean of God’s Name is brimming over its banks, yet the unfortunate cannot drink it. By great good fortune, O Kabir, you have found it—drink deeply of this Divine Nectar!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਕਿਨਾਰਿਆਂ ਤੱਕ ਮੂੰਹ ਤੱਕ ਨਕਾ ਨਕ ਸਰੋਵਰ ਭਰਿਆ ਹੋਇਆ ਹੈ, ਪਰ ਉਸਦੇ ਪਾਣੀ ਨੂੰ (ਅਭਾਗਾ) ਕੋਈ ਪੀ ਨਹੀਂ ਸਕਦਾ। ਹੇ ਕਬੀਰ ! ਵੱਡੇ ਭਾਗਾਂ ਕਰਕੇ ਤੂੰ ਇਸ ਪਾਣੀ ਨੂੰ ਪਾ ਲਿਆ ਹੈ ਤੇ ਹੁਣ ਤੂੰ ਬੁੱਕ ਭਰ ਭਰ ਕੇ ਪੀ, ਇਹ ਵਾਹਿਗੁਰੂ ਨਾਮ ਦਾ ਸਰੋਵਰ ਜਲ ਹੈ॥ ੧੭੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हरि-नाम का सरोवर लबालब भरा हुआ है, परंतु अभागे जीव उसका जल नहीं पी पाते। हे कबीर! बड़े भाग्य से तुझे यह अमूर्त नाम-जल मिला है, अब तू भर-भरकर इसे पियो॥ १७०॥',
+      en: 'Satguru Kabir Saheb proclaims: The ocean of God’s Name is brimming over its banks, yet the unfortunate cannot drink it. By great good fortune, O Kabir, you have found it—drink deeply of this Divine Nectar!',
     },
     chintan: {
       pb: 'ਨਾਮ ਅੰਮ੍ਰਿਤ ਦਾ ਸਰੋਵਰ ਸਦਾ ਭਰਪੂਰ ਹੈ, ਭਾਗਾਂ ਵਾਲੇ ਹੀ ਇਸ ਦੀ ਤ੍ਰਿਪਤੀ ਲੈਂਦੇ ਹਨ।',
@@ -10428,9 +10428,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਜਿਸ ਤਰ੍ਹਾਂ ਪਰਭਾਤ ਸਮੇਂ ਅਕਾਸ਼ ਦੇ ਤਾਰੇ ਖਿਸਕਦੇ ਜਾਂਦੇ ਹਨ, ਤਿਵੇਂ ਹੀ ਬੁਢਾਪੇ ਕਾਰਨ ਇਹ ਸਰੀਰ ਢਲਦਾ ਪਿਛੇ ਹਟਦਾ ਜਾਂਦਾ ਹੈ, ਪਰ ਇਹ ਦੋ ਰਾਮ ਨਾਮ ਦੇ ਅੱਖਰ (ਰ ਅਤੇ ਮ) ਨਹੀਂ ਮਿਟਦੇ, ਜਿਸ ਕਰਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਹੀ ਕਬੀਰ ਜੀ ਨੇ ਹਿਰਦੇ ਵਿਚ ਫੜ ਰਖਿਆ ਹੈ॥ ੧੭੧॥',
-      hi: 'कबीर जी कहते हैं-जैसे प्रभात काल में आकाश के तारे एक-एक कर गायब हो जाते हैं, वैसे ही यह शरीर ढल जाता है। परंतु राम नाम के दो अक्षर कभी नष्ट नहीं होते, कबीर ने उसी अविनाशी नाम को थाम रखा है॥ १७१॥',
-      en: 'Kabir Ji says: As the stars fade away at dawn, so does this human body wither away. But the two letters of RAM (God’s Name) never perish, and Kabir holds fast to that Eternal Name.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਜਿਸ ਤਰ੍ਹਾਂ ਪਰਭਾਤ ਸਮੇਂ ਅਕਾਸ਼ ਦੇ ਤਾਰੇ ਖਿਸਕਦੇ ਜਾਂਦੇ ਹਨ, ਤਿਵੇਂ ਹੀ ਬੁਢਾਪੇ ਕਾਰਨ ਇਹ ਸਰੀਰ ਢਲਦਾ ਪਿਛੇ ਹਟਦਾ ਜਾਂਦਾ ਹੈ, ਪਰ ਇਹ ਦੋ ਰਾਮ ਨਾਮ ਦੇ ਅੱਖਰ (ਰ ਅਤੇ ਮ) ਨਹੀਂ ਮਿਟਦੇ, ਜਿਸ ਕਰਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਹੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਹਿਰਦੇ ਵਿਚ ਫੜ ਰਖਿਆ ਹੈ॥ ੧੭੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जैसे प्रभात काल में आकाश के तारे एक-एक कर गायब हो जाते हैं, वैसे ही यह शरीर ढल जाता है। परंतु राम नाम के दो अक्षर कभी नष्ट नहीं होते, कबीर ने उसी अविनाशी नाम को थाम रखा है॥ १७१॥',
+      en: 'Satguru Kabir Saheb proclaims: As the stars fade away at dawn, so does this human body wither away. But the two letters of RAM (God’s Name) never perish, and Kabir holds fast to that Eternal Name.',
     },
     chintan: {
       pb: 'ਸਰੀਰ ਦੀ ਨਾਸ਼ਵੰਤਤਾ ਸਾਹਮਣੇ ਅਵਿਨਾਸ਼ੀ ਰਾਮ ਨਾਮ ਹੀ ਇੱਕੋ-ਇੱਕ ਸਦਾ ਥਿਰ ਆਧਾਰ ਹੈ।',
@@ -10501,9 +10501,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਹ ਜਗਤ ਰੂਪੀ ਕੋਠੀ ਲੱਕੜ ਦੀ ਹੈ, ਇਸ ਦੇ ਦਸਾਂ ਦਿਸ਼ਾਂ ਵਿਚ ਹੀ ਮੋਹ ਮਾਇਆ ਦੀ ਅੱਗ ਲੱਗੀ ਹੋਈ ਹੈ। ਇਸ ਅੱਗ ਵਿਚ ਆਪਣੇ ਆਪ ਨੂੰ ਸਿਆਣੇ ਸਮਝਣ ਵਾਲੇ ਪੰਡਿਤ ਸੜ ਮਰਦੇ ਹਨ ਅਤੇ ਇਸ ਮੋਹ ਮਾਇਆ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿਣ ਵਾਲੇ (ਜਿਨ੍ਹਾਂ ਨੂੰ ਲੋਕ ਮੂਰਖ ਸਮਝਦੇ ਹਨ) ਉਹ ਭੱਜ ਕੇ ਬਚ ਨਿਕਲਦੇ ਹਨ॥ ੧੭੨॥',
-      hi: 'कबीर जी कहते हैं-यह संसार लकड़ी का कोठा है, जिसमें दसों दिशाओं से तृष्णा की आग लगी है। अपने को चतुर मानने वाले पंडित विद्वान इसमें जल मरे, परंतु निष्काम-सरल भक्त (जिन्हें दुनिया मूर्ख कहती है) भागकर बच निकले॥ १७२॥',
-      en: 'Kabir Ji says: This world is a house of wood, set ablaze on all ten sides by the fire of desires. The self-wise scholars burn to death in it, while the innocent, detached souls (whom the world calls fools) escape in safety.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਜਗਤ ਰੂਪੀ ਕੋਠੀ ਲੱਕੜ ਦੀ ਹੈ, ਇਸ ਦੇ ਦਸਾਂ ਦਿਸ਼ਾਂ ਵਿਚ ਹੀ ਮੋਹ ਮਾਇਆ ਦੀ ਅੱਗ ਲੱਗੀ ਹੋਈ ਹੈ। ਇਸ ਅੱਗ ਵਿਚ ਆਪਣੇ ਆਪ ਨੂੰ ਸਿਆਣੇ ਸਮਝਣ ਵਾਲੇ ਪੰਡਿਤ ਸੜ ਮਰਦੇ ਹਨ ਅਤੇ ਇਸ ਮੋਹ ਮਾਇਆ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿਣ ਵਾਲੇ (ਜਿਨ੍ਹਾਂ ਨੂੰ ਲੋਕ ਮੂਰਖ ਸਮਝਦੇ ਹਨ) ਉਹ ਭੱਜ ਕੇ ਬਚ ਨਿਕਲਦੇ ਹਨ॥ ੧੭੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यह संसार लकड़ी का कोठा है, जिसमें दसों दिशाओं से तृष्णा की आग लगी है। अपने को चतुर मानने वाले पंडित विद्वान इसमें जल मरे, परंतु निष्काम-सरल भक्त (जिन्हें दुनिया मूर्ख कहती है) भागकर बच निकले॥ १७२॥',
+      en: 'Satguru Kabir Saheb proclaims: This world is a house of wood, set ablaze on all ten sides by the fire of desires. The self-wise scholars burn to death in it, while the innocent, detached souls (whom the world calls fools) escape in safety.',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਚਤੁਰਾਈ ਤੇ ਹਉਮੈ ਮਾਇਆ ਦੀ ਅੱਗ ਵਿੱਚ ਜਲਾਉਂਦੀ ਹੈ, ਜਦਕਿ ਨਿਰਮਲ ਭਗਤੀ ਬਚਾਉਂਦੀ ਹੈ।',
@@ -10575,8 +10575,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਭਰਮ ਨੂੰ ਦੂਰ ਕਰਕੇ, ਕਰਮ ਕਾਂਡਾਂ ਵਾਲੇ ਕਾਗਜ਼ਾਂ (ਗ੍ਰੰਥਾਂ) ਨੂੰ ਛਡ ਦੇਹ। ਤੂੰ ਕੇਵਲ ਬਵੰਜਾ ਅੱਖਰਾਂ ਦਾ ਸਾਰ ਵੀਚਾਰ ਕੇ ਕਿ ਇਨ੍ਹਾਂ ਵਿੱਚ ਕੀ ਉਪਦੇਸ਼ ਹੈ, ਪ੍ਰਮਾਤਮਾ ਦੇ ਚਰਨਾਂ ਵਿਚ ਆਪਣੇ ਮਨ ਨੂੰ ਜੋੜ॥ ੧੭੩॥',
-      hi: 'कबीर जी कहते हैं-संशय को दूर करो और कर्मकांडी शास्त्रों का पचड़ा छोड़ दो। बावन अक्षरों का सार विचारकर केवल हरि-चरणों में अपना चित्त लगाओ॥ १७३॥',
-      en: 'Kabir Ji says: Cast away all doubts and put aside academic debate over paper texts. Contemplate the true essence of all letters and fix your consciousness at the lotus feet of the Lord.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-संशय को दूर करो और कर्मकांडी शास्त्रों का पचड़ा छोड़ दो। बावन अक्षरों का सार विचारकर केवल हरि-चरणों में अपना चित्त लगाओ॥ १७३॥',
+      en: 'Satguru Kabir Saheb proclaims: Cast away all doubts and put aside academic debate over paper texts. Contemplate the true essence of all letters and fix your consciousness at the lotus feet of the Lord.',
     },
     chintan: {
       pb: 'ਕੇਵਲ ਪੋਥੀਆਂ ਪੜ੍ਹਨ ਨਾਲ ਨਹੀਂ, ਸਗੋਂ ਹਰਿ ਚਰਨਾਂ ਵਿੱਚ ਚਿੱਤ ਲਗਾਉਣ ਨਾਲ ਭਰਮ ਦੂਰ ਹੁੰਦਾ ਹੈ।',
@@ -10647,9 +10647,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਹਾਂ ਪੁਰਸ਼ ਸੰਤ ਆਪਣੇ ਸੰਤਪੁਣੇ (ਸ਼ੁਭ ਸੁਭਾਅ) ਨੂੰ ਨਹੀਂ ਛੱਡਦਾ, ਭਾਵੇਂ ਉਸਨੂੰ ਕ੍ਰੋੜਾਂ ਹੀ ਅਸੰਤ ਪੁਰਸ਼ ਮਿਲ ਜਾਣ। ਜਿਵੇਂ ਚੰਦਨ ਦਾ ਬਿੱਛ ਸੱਪਾਂ ਨਾਲ ਲਪੇਟਿਆ ਹੋਇਆ ਵੀ ਆਪਣੀ ਸੀਤਲਤਾ (ਠੰਢਕ) ਨਹੀਂ ਤਿਆਗਦਾ॥ ੧੭੪॥',
-      hi: 'कबीर जी कहते हैं-संत पुरुष कभी अपनी संतता और शांत स्वभाव नहीं त्यागते, चाहे उन्हें करोड़ों दुष्ट पुरुष मिल जाएं। जैसे चंदन का वृक्ष विषैले सांपों से घिरा रहकर भी अपनी शीतलता नहीं छोड़ता॥ १७४॥',
-      en: 'Kabir Ji says: A true Saint never abandons his peaceful saintly nature, even if he encounters millions of wicked people. Just as the sandalwood tree remains cool even when encircled by poisonous snakes.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਹਾਂ ਪੁਰਸ਼ ਸੰਤ ਆਪਣੇ ਸੰਤਪੁਣੇ (ਸ਼ੁਭ ਸੁਭਾਅ) ਨੂੰ ਨਹੀਂ ਛੱਡਦਾ, ਭਾਵੇਂ ਉਸਨੂੰ ਕ੍ਰੋੜਾਂ ਹੀ ਅਸੰਤ ਪੁਰਸ਼ ਮਿਲ ਜਾਣ। ਜਿਵੇਂ ਚੰਦਨ ਦਾ ਬਿੱਛ ਸੱਪਾਂ ਨਾਲ ਲਪੇਟਿਆ ਹੋਇਆ ਵੀ ਆਪਣੀ ਸੀਤਲਤਾ (ਠੰਢਕ) ਨਹੀਂ ਤਿਆਗਦਾ॥ ੧੭੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-संत पुरुष कभी अपनी संतता और शांत स्वभाव नहीं त्यागते, चाहे उन्हें करोड़ों दुष्ट पुरुष मिल जाएं। जैसे चंदन का वृक्ष विषैले सांपों से घिरा रहकर भी अपनी शीतलता नहीं छोड़ता॥ १७४॥',
+      en: 'Satguru Kabir Saheb proclaims: A true Saint never abandons his peaceful saintly nature, even if he encounters millions of wicked people. Just as the sandalwood tree remains cool even when encircled by poisonous snakes.',
     },
     chintan: {
       pb: 'ਸੱਚਾ ਸੰਤ ਬੁਰਿਆਈ ਦਾ ਬਦਲਾ ਬੁਰਿਆਈ ਨਾਲ ਨਹੀਂ ਦਿੰਦਾ, ਸਗੋਂ ਆਪਣੇ ਸ਼ਾਂਤ ਸੁਭਾਅ ਵਿੱਚ ਅਡੋਲ ਰਹਿੰਦਾ ਹੈ।',
@@ -10728,9 +10728,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮਨ ਸ਼ਾਂਤ ਹੋ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ ਬ੍ਰਹਮ ਗਿਆਨ ਨੂੰ ਪਾ ਲਿਆ ਹੈ। ਹੁਣ ਜਿਹੜੀ ਮਾਇਆ ਦੀ ਅਗਨੀ ਨੇ ਸੰਸਾਰ ਦੇ ਜੀਵਾਂ ਨੂੰ ਆਪਣੀ ਲਪੇਟ ਵਿਚ ਲੈ ਕੇ ਸਾੜ ਦਿਤਾ ਹੈ, ਉਹ ਅਗਨੀ ਦਾਸ ਲਈ ਪਾਣੀ ਸਮਾਨ ਠੰਡੀ ਠਾਰ ਹੋ ਗਈ ਹੈ॥ ੧੭੫॥',
-      hi: 'कबीर जी कहते हैं-ब्रह्मज्ञान प्राप्त होते ही मन शीतल हो गया। जिस तृष्णा-रूपी ज्वाला ने पूरे संसार को जला रखा है, वह ईश्वर के दास के लिए शीतल जल के समान शांत हो गई है॥ १७५॥',
-      en: 'Kabir Ji says: Receiving Divine Wisdom, my mind has become profoundly tranquil. The raging fire of worldly desire that consumes the world has become as cool as soothing water for God’s servant.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਨ ਸ਼ਾਂਤ ਹੋ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ ਬ੍ਰਹਮ ਗਿਆਨ ਨੂੰ ਪਾ ਲਿਆ ਹੈ। ਹੁਣ ਜਿਹੜੀ ਮਾਇਆ ਦੀ ਅਗਨੀ ਨੇ ਸੰਸਾਰ ਦੇ ਜੀਵਾਂ ਨੂੰ ਆਪਣੀ ਲਪੇਟ ਵਿਚ ਲੈ ਕੇ ਸਾੜ ਦਿਤਾ ਹੈ, ਉਹ ਅਗਨੀ ਦਾਸ ਲਈ ਪਾਣੀ ਸਮਾਨ ਠੰਡੀ ਠਾਰ ਹੋ ਗਈ ਹੈ॥ ੧੭੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-ब्रह्मज्ञान प्राप्त होते ही मन शीतल हो गया। जिस तृष्णा-रूपी ज्वाला ने पूरे संसार को जला रखा है, वह ईश्वर के दास के लिए शीतल जल के समान शांत हो गई है॥ १७५॥',
+      en: 'Satguru Kabir Saheb proclaims: Receiving Divine Wisdom, my mind has become profoundly tranquil. The raging fire of worldly desire that consumes the world has become as cool as soothing water for God’s servant.',
     },
     chintan: {
       pb: 'ਬ੍ਰਹਮ ਗਿਆਨ ਦੀ ਪ੍ਰਾਪਤੀ ਨਾਲ ਤ੍ਰਿਸ਼ਨਾ ਦੀ ਅੱਗ ਸ਼ਾਂਤ ਹੋ ਕੇ ਆਤਮਿਕ ਸੀਤਲਤਾ ਬਣ ਜਾਂਦੀ ਹੈ।',
@@ -10801,9 +10801,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਹ ਸ੍ਰਿਸ਼ਟੀ ਰਚਨਹਾਰ ਪ੍ਰਮਾਤਮਾ ਦੀ ਖੇਲ ਹੈ, ਇਸ ਖੇਲ ਨੂੰ (ਆਮ ਜੀਵ) ਕੋਈ ਨਹੀਂ ਜਾਣਦਾ। ਜਾਂ ਪ੍ਰਮਾਤਮਾ ਆਪ ਹੀ ਇਸ ਨੂੰ ਜਾਣਦਾ ਹੈ ਤੇ ਜਾਂ ਉਸਦੇ ਦਰਬਾਰ ਵਿਚ ਰਹਿਣ ਵਾਲਾ ਪ੍ਰੇਮ ਮਸਤ ਦਾਸ ਹੀ ਉਸ ਦੀ ਇਸ ਖੇਡ ਨੂੰ ਜਾਣ ਸਕਦਾ ਹੈ॥ ੧੭੬॥',
-      hi: 'कबीर जी कहते हैं-यह पूरी सृष्टि सिरजनहार की एक लीला-खेल है, जिसे साधारण कोई नहीं जान सकता। या तो स्वयं स्वामी प्रभु इसे जानता है, या फिर उसके प्रेम में मग्न हुआ अनन्य दास ही इसे समझ पाता है॥ १७६॥',
-      en: 'Kabir Ji says: This entire cosmos is the play of the Creator, and no ordinary person understands it. Either the Master Himself knows His play, or the devotee who is deeply intoxicated with His divine love understands it.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਸ੍ਰਿਸ਼ਟੀ ਰਚਨਹਾਰ ਪ੍ਰਮਾਤਮਾ ਦੀ ਖੇਲ ਹੈ, ਇਸ ਖੇਲ ਨੂੰ (ਆਮ ਜੀਵ) ਕੋਈ ਨਹੀਂ ਜਾਣਦਾ। ਜਾਂ ਪ੍ਰਮਾਤਮਾ ਆਪ ਹੀ ਇਸ ਨੂੰ ਜਾਣਦਾ ਹੈ ਤੇ ਜਾਂ ਉਸਦੇ ਦਰਬਾਰ ਵਿਚ ਰਹਿਣ ਵਾਲਾ ਪ੍ਰੇਮ ਮਸਤ ਦਾਸ ਹੀ ਉਸ ਦੀ ਇਸ ਖੇਡ ਨੂੰ ਜਾਣ ਸਕਦਾ ਹੈ॥ ੧੭੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यह पूरी सृष्टि सिरजनहार की एक लीला-खेल है, जिसे साधारण कोई नहीं जान सकता। या तो स्वयं स्वामी प्रभु इसे जानता है, या फिर उसके प्रेम में मग्न हुआ अनन्य दास ही इसे समझ पाता है॥ १७६॥',
+      en: 'Satguru Kabir Saheb proclaims: This entire cosmos is the play of the Creator, and no ordinary person understands it. Either the Master Himself knows His play, or the devotee who is deeply intoxicated with His divine love understands it.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦੀ ਕੁਦਰਤ ਤੇ ਖੇਡ ਅਗਾਧ ਹੈ, ਇਸ ਦੀ ਸਮਝ ਕੇਵਲ ਪ੍ਰੇਮ ਵਿੱਚ ਲੀਨ ਭਗਤ ਨੂੰ ਹੁੰਦੀ ਹੈ।',
@@ -10882,9 +10882,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਹ ਚੰਗੀ ਗੱਲ ਹੋਈ ਕਿ ਪ੍ਰਮਾਤਮਾ ਦਾ ਡਰ ਮਨ ਵਿਚ ਪੈ ਗਿਆ ਜਿਸ ਨਾਲ ਸੰਸਾਰ ਦੀ ਦਿਸ਼ਾ ਸਭ ਭੁਲ ਗਈ ਹੈ। ਜਿਸ ਤਰ੍ਹਾਂ ਗੜਾ ਗਰਮੀ ਨਾਲ ਢਲ ਕੇ ਪਾਣੀ ਰੂਪ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਪਹਾੜ ਦੀ ਆੜ/ਕੂਲ ਵਿਚ ਜਾ ਮਿਲਦਾ ਹੈ, ਇਸ ਤਰ੍ਹਾਂ ਹੀ ਪ੍ਰਮਾਤਮਾ ਦੇ ਭੈ ਕਰਕੇ ਆਪਾ ਭਾਵ ਮਿਟ ਕੇ ਪ੍ਰਮਾਤਮਾ ਨਾਮ ਦੀ ਕੂਲ ਵਿਚ ਮਿਲ ਜਾਂਦਾ ਹੈ॥ ੧੭੭॥',
-      hi: 'कबीर जी कहते हैं-यह बहुत भला हुआ कि मन में ईश्वर का भय उत्पन्न हो गया, जिससे संसार की दिशाएं और वासनाएं विस्मृत हो गईं। जैसे ओला पिघलकर पानी बन जाता है और नदी की धारा में मिल जाता है, वैसे ही अहंकार पिघलकर आत्मा हरि-नाम की धारा में लीन हो गई॥ १७७॥',
-      en: 'Kabir Ji says: It is a blessed thing that reverent fear of God entered my mind, making me forget all worldly pursuits! Just as a hailstone melts into water and flows into the river stream, my ego dissolved and merged into the Stream of Divine Name.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਚੰਗੀ ਗੱਲ ਹੋਈ ਕਿ ਪ੍ਰਮਾਤਮਾ ਦਾ ਡਰ ਮਨ ਵਿਚ ਪੈ ਗਿਆ ਜਿਸ ਨਾਲ ਸੰਸਾਰ ਦੀ ਦਿਸ਼ਾ ਸਭ ਭੁਲ ਗਈ ਹੈ। ਜਿਸ ਤਰ੍ਹਾਂ ਗੜਾ ਗਰਮੀ ਨਾਲ ਢਲ ਕੇ ਪਾਣੀ ਰੂਪ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਪਹਾੜ ਦੀ ਆੜ/ਕੂਲ ਵਿਚ ਜਾ ਮਿਲਦਾ ਹੈ, ਇਸ ਤਰ੍ਹਾਂ ਹੀ ਪ੍ਰਮਾਤਮਾ ਦੇ ਭੈ ਕਰਕੇ ਆਪਾ ਭਾਵ ਮਿਟ ਕੇ ਪ੍ਰਮਾਤਮਾ ਨਾਮ ਦੀ ਕੂਲ ਵਿਚ ਮਿਲ ਜਾਂਦਾ ਹੈ॥ ੧੭੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यह बहुत भला हुआ कि मन में ईश्वर का भय उत्पन्न हो गया, जिससे संसार की दिशाएं और वासनाएं विस्मृत हो गईं। जैसे ओला पिघलकर पानी बन जाता है और नदी की धारा में मिल जाता है, वैसे ही अहंकार पिघलकर आत्मा हरि-नाम की धारा में लीन हो गई॥ १७७॥',
+      en: 'Satguru Kabir Saheb proclaims: It is a blessed thing that reverent fear of God entered my mind, making me forget all worldly pursuits! Just as a hailstone melts into water and flows into the river stream, my ego dissolved and merged into the Stream of Divine Name.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦੇ ਭੈ ਨਾਲ ਹਉਮੈ ਦਾ ਅਹੰਕਾਰ ਪਿਘਲ ਜਾਂਦਾ ਹੈ ਅਤੇ ਆਤਮਾ ਪ੍ਰਭੂ ਨਾਲ ਇੱਕਮਿੱਕ ਹੋ ਜਾਂਦੀ ਹੈ।',
@@ -10963,9 +10963,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਨੇ ਪੰਜ ਤੱਤਾਂ ਦੀ ਮਿੱਟੀ ਦਾ ਮੇਲ ਕਰਕੇ ਇਹ ਸਰੀਰ ਦੀ ਨੱਗਰੀ ਬਣਾਈ ਹੈ। ਇਹ ਸਰੀਰ ਚਾਰ ਦਿਨ ਦਾ ਤਮਾਸ਼ਾ ਹੈ, ਖੇਡ ਹੈ, ਫਿਰ ਅੰਤ ਨੂੰ ਇਹ ਮਿੱਟੀ ਦੀ ਮਿੱਟੀ ਹੀ ਹੋ ਜਾਣਾ ਹੈ॥ ੧੭੮॥',
-      hi: 'कबीर जी कहते हैं-ईश्वर ने पांच तत्वों की धूल को एकत्र करके यह शरीर रूपी नगरी बनाई है। यह तो चार दिनों का खेल-तमाशा है; अंत में यह मिट्टी पुनः मिट्टी में मिल जानी है॥ १७८॥',
-      en: 'Kabir Ji says: Collecting the dust of five elements, God constructed this human body. It is a fleeting spectacle of four days, and ultimately, dust returns to dust.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਨੇ ਪੰਜ ਤੱਤਾਂ ਦੀ ਮਿੱਟੀ ਦਾ ਮੇਲ ਕਰਕੇ ਇਹ ਸਰੀਰ ਦੀ ਨੱਗਰੀ ਬਣਾਈ ਹੈ। ਇਹ ਸਰੀਰ ਚਾਰ ਦਿਨ ਦਾ ਤਮਾਸ਼ਾ ਹੈ, ਖੇਡ ਹੈ, ਫਿਰ ਅੰਤ ਨੂੰ ਇਹ ਮਿੱਟੀ ਦੀ ਮਿੱਟੀ ਹੀ ਹੋ ਜਾਣਾ ਹੈ॥ ੧੭੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-ईश्वर ने पांच तत्वों की धूल को एकत्र करके यह शरीर रूपी नगरी बनाई है। यह तो चार दिनों का खेल-तमाशा है; अंत में यह मिट्टी पुनः मिट्टी में मिल जानी है॥ १७८॥',
+      en: 'Satguru Kabir Saheb proclaims: Collecting the dust of five elements, God constructed this human body. It is a fleeting spectacle of four days, and ultimately, dust returns to dust.',
     },
     chintan: {
       pb: 'ਸਰੀਰ ਦੀ ਨਾਸ਼ਵੰਤਤਾ ਨੂੰ ਸਮਝ ਕੇ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਹੋਣਾ ਹੀ ਸੱਚੀ ਸਿਆਣਪ ਹੈ।',
@@ -11028,9 +11028,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸੂਰਜ ਚੰਦ ਦੇ ਚੜਨ ਵਾਂਗੂੰ ਇਹ ਦੇਹਾਂ ਉਪਜਦੀਆਂ ਹਨ ਅਤੇ ਦਿਨ ਰਾਤ ਦਾ ਸਮਾਂ ਬਤੀਤ ਕਰਕੇ ਛਿੱਪ ਜਾਂਦੀਆਂ ਹਨ। ਜੇਕਰ ਗੁਰੂ ਪ੍ਰਮਾਤਮਾ ਦਾ ਮਿਲਾਪ ਨਾ ਹੋਵੇ ਤਾਂ ਇਹ ਸਰੀਰ ਮੁੜ ਕੇ ਫਿਰ ਮਿੱਟੀ ਹੀ ਹੋ ਜਾਂਦੇ ਹਨ॥ ੧੭੯॥',
-      hi: 'कबीर जी कहते हैं-सूरज और चंद्रमा के उदित होने की भांति ये सभी देहें उत्पन्न होती और समय बिताकर अस्त हो जाती हैं। यदि गुरु और गोविंद का मिलाप न हो, तो यह शरीर पुनः मिट्टी में बदल कर व्यर्थ हो जाता है॥ १७९॥',
-      en: 'Kabir Ji says: Like the rising and setting of the sun and moon, all bodies appear and pass away with time. Without meeting the Guru and the Divine Lord, all human bodies turn back into dust uselessly.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸੂਰਜ ਚੰਦ ਦੇ ਚੜਨ ਵਾਂਗੂੰ ਇਹ ਦੇਹਾਂ ਉਪਜਦੀਆਂ ਹਨ ਅਤੇ ਦਿਨ ਰਾਤ ਦਾ ਸਮਾਂ ਬਤੀਤ ਕਰਕੇ ਛਿੱਪ ਜਾਂਦੀਆਂ ਹਨ। ਜੇਕਰ ਗੁਰੂ ਪ੍ਰਮਾਤਮਾ ਦਾ ਮਿਲਾਪ ਨਾ ਹੋਵੇ ਤਾਂ ਇਹ ਸਰੀਰ ਮੁੜ ਕੇ ਫਿਰ ਮਿੱਟੀ ਹੀ ਹੋ ਜਾਂਦੇ ਹਨ॥ ੧੭੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-सूरज और चंद्रमा के उदित होने की भांति ये सभी देहें उत्पन्न होती और समय बिताकर अस्त हो जाती हैं। यदि गुरु और गोविंद का मिलाप न हो, तो यह शरीर पुनः मिट्टी में बदल कर व्यर्थ हो जाता है॥ १७९॥',
+      en: 'Satguru Kabir Saheb proclaims: Like the rising and setting of the sun and moon, all bodies appear and pass away with time. Without meeting the Guru and the Divine Lord, all human bodies turn back into dust uselessly.',
     },
     chintan: {
       pb: 'ਮਾਨਵ ਦੇਹ ਦਾ ਮਨੋਰਥ ਕੇਵਲ ਸਮਾਂ ਬਿਤਾਉਣਾ ਨਹੀਂ, ਸਗੋਂ ਗੁਰੂ ਦੁਆਰਾ ਗੋਬਿੰਦ ਨੂੰ ਮਿਲਣਾ ਹੈ।',
@@ -11093,9 +11093,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਥੇ (ਹਿਰਦੇ ਵਿਚ) ਪ੍ਰਮਾਤਮਾ ਦਾ ਗਿਆਨ-ਅਨੁਭਵ ਹੋਵੇ ਉਥੇ ਕੋਈ ਭੈ/ਡਰ ਨਹੀਂ ਹੁੰਦਾ। ਪ੍ਰੰਤੂ ਜਿਥੇ ਡਰ ਹੋਵੇ ਉਥੇ ਪ੍ਰਮਾਤਮਾ ਪ੍ਰਗਟ ਨਹੀਂ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਇਹ ਗੱਲ ਮੈਂ ਵੀਚਾਰ ਕੇ ਆਖੀ ਹੈ, ਹੇ ਸੰਤ ਜਨੋਂ! ਤੁਸੀਂ ਇਸ ਨੂੰ ਮਨ ਲਾ ਕੇ ਸੁਣੋ॥ ੧੮੦॥',
-      hi: 'कबीर जी कहते हैं-जहां ईश्वर का प्रत्यक्ष आत्म-अनुभव है, वहां कोई भय नहीं रहता। परंतु जहां भय है, वहां हरि का ज्ञान नहीं। कबीर कहते हैं-हे संतों! मैंने विचार करके यह कहा है, इसे मन में धारण करो॥ १८०॥',
-      en: 'Kabir Ji says: Where there is Direct Divine Realization, there is no fear. But where fear resides, God’s presence is not experienced. Kabir says after deep contemplation: O Saints, listen and reflect upon this in your heart!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਥੇ (ਹਿਰਦੇ ਵਿਚ) ਪ੍ਰਮਾਤਮਾ ਦਾ ਗਿਆਨ-ਅਨੁਭਵ ਹੋਵੇ ਉਥੇ ਕੋਈ ਭੈ/ਡਰ ਨਹੀਂ ਹੁੰਦਾ। ਪ੍ਰੰਤੂ ਜਿਥੇ ਡਰ ਹੋਵੇ ਉਥੇ ਪ੍ਰਮਾਤਮਾ ਪ੍ਰਗਟ ਨਹੀਂ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਇਹ ਗੱਲ ਮੈਂ ਵੀਚਾਰ ਕੇ ਆਖੀ ਹੈ, ਹੇ ਸੰਤ ਜਨੋਂ! ਤੁਸੀਂ ਇਸ ਨੂੰ ਮਨ ਲਾ ਕੇ ਸੁਣੋ॥ ੧੮੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जहां ईश्वर का प्रत्यक्ष आत्म-अनुभव है, वहां कोई भय नहीं रहता। परंतु जहां भय है, वहां हरि का ज्ञान नहीं। सतगुरु कबीर साहेब फरमाते हैं-हे संतों! मैंने विचार करके यह कहा है, इसे मन में धारण करो॥ १८०॥',
+      en: 'Satguru Kabir Saheb proclaims: Where there is Direct Divine Realization, there is no fear. But where fear resides, God’s presence is not experienced. Satguru Kabir Saheb proclaims after deep contemplation: O Saints, listen and reflect upon this in your heart!',
     },
     chintan: {
       pb: 'ਬ੍ਰਹਮ ਗਿਆਨ ਦਾ ਅਨੁਭਵ ਜੀਵ ਨੂੰ ਪੂਰਨ ਨਿਰਭੈਤਾ ਬਖ਼ਸ਼ਦਾ ਹੈ ਅਤੇ ਭਰਮ ਮੁਕਤ ਕਰਦਾ ਹੈ।',
@@ -11167,8 +11167,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਕਬੀਰ ! ਜਿਨ੍ਹਾਂ ਨੇ ਪ੍ਰਮਾਤਮਾ ਦੇ ਰਸਤੇ ਨੂੰ ਕੁਝ ਵੀ ਨਹੀਂ ਜਾਣਿਆ, ਉਨ੍ਹਾਂ ਦੀ ਸੁਖ ਨਾਲ ਅਗਿਆਨਤਾ ਵਿੱਚ ਸੌਂ ਕੇ ਰਾਤ ਬੀਤਦੀ ਹੈ। ਪਰ ਮੈਂ ਜੋ ਇਹ ਗੱਲ ਸਮਝ ਲਈ ਹੈ ਕਿ ਪ੍ਰਭੂ ਮਿਲਾਪ ਤੋਂ ਬਿਨਾਂ ਇਹ ਦੇਹ ਅੰਤ ਨੂੰ ਮਿੱਟੀ ਹੋ ਜਾਣੀ ਹੈ, ਮੇਰੇ ਉੱਤੇ ਹਰੀ ਬਿਰਹਾ ਦੀ ਪੂਰੀ ਬਿਪਤਾ ਪੈ ਗਈ ਹੈ॥ ੧੮੧॥',
-      hi: 'कबीर जी कहते हैं-जिन्होंने ईश्वर-मार्ग को बिल्कुल नहीं समझा, वे अज्ञान की सुखद नींद में सोते रहते हैं। परंतु जब से मैंने इस परम सत्य को समझ लिया है कि हरि-भक्ति बिना जीवन व्यर्थ है, तब से मेरे हृदय में तड़प और चिंता छा गई है॥ १८१॥',
-      en: 'Kabir Ji says: Those who know nothing of the spiritual path sleep peacefully in ignorance. But since I realized the truth that without God\'s devotion life turns to dust, an intense spiritual pain and longing has taken over me.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जिन्होंने ईश्वर-मार्ग को बिल्कुल नहीं समझा, वे अज्ञान की सुखद नींद में सोते रहते हैं। परंतु जब से मैंने इस परम सत्य को समझ लिया है कि हरि-भक्ति बिना जीवन व्यर्थ है, तब से मेरे हृदय में तड़प और चिंता छा गई है॥ १८१॥',
+      en: 'Satguru Kabir Saheb proclaims: Those who know nothing of the spiritual path sleep peacefully in ignorance. But since I realized the truth that without God\'s devotion life turns to dust, an intense spiritual pain and longing has taken over me.',
     },
     chintan: {
       pb: 'ਆਤਮਿਕ ਜਾਗ੍ਰਿਤੀ ਨਾਲ ਜੀਵ ਅਗਿਆਨਤਾ ਦੀ ਨੀਂਦ ਤੋਂ ਜਾਗ ਕੇ ਹਰਿ ਬਿਰਹਾ ਦੀ ਤੜਪ ਅਨੁਭਵ ਕਰਦਾ ਹੈ।',
@@ -11239,9 +11239,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਦ ਕਿਸੇ ਨੂੰ ਬਾਹਰੀ ਮਾਰ ਪਵੇ ਤਾਂ ਉਹ ਬਹੁਤ ਵਾਵੇਲਾ ਕਰਦਾ ਹੈ, ਪਰ ਮੈਨੂੰ ਹਿਰਦੇ ਨੂੰ ਵਿੰਨ੍ਹ ਜਾਣ ਵਾਲੀ ਗੁਝੀ ਚੋਟ ਗੁਰ-ਸ਼ਬਦ ਦੀ ਲੱਗੀ ਹੈ, ਜਿਸ ਨਾਲ ਮੈਂ ਥਾਂ ਤੇ ਹੀ ਅਡੋਲ ਰਹਿ ਗਿਆ ਹਾਂ। ਪੁਕਾਰਣ ਜਾਂ ਹਿੱਲਣ ਜੋਗਾ ਨਹੀਂ ਰਿਹਾ॥ ੧੮੨॥',
-      hi: 'कबीर जी कहते हैं-शारीरिक चोट लगने पर मनुष्य बहुत चिल्लाता है। परंतु मुझे गुरु-शब्द की ऐसी गभीर मर्म-चोट लगी है कि कबीर वहीं स्तब्ध और शांत होकर रह गया है; अब पुकारने की गुंजाइश नहीं रही॥ १८२॥',
-      en: 'Kabir Ji says: Struck physically, a man cries out in loud pain. But I have been pierced by the profound, secret strike of the Guru’s Word in my heart, leaving me silent and spellbound in total stillness.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਦ ਕਿਸੇ ਨੂੰ ਬਾਹਰੀ ਮਾਰ ਪਵੇ ਤਾਂ ਉਹ ਬਹੁਤ ਵਾਵੇਲਾ ਕਰਦਾ ਹੈ, ਪਰ ਮੈਨੂੰ ਹਿਰਦੇ ਨੂੰ ਵਿੰਨ੍ਹ ਜਾਣ ਵਾਲੀ ਗੁਝੀ ਚੋਟ ਗੁਰ-ਸ਼ਬਦ ਦੀ ਲੱਗੀ ਹੈ, ਜਿਸ ਨਾਲ ਮੈਂ ਥਾਂ ਤੇ ਹੀ ਅਡੋਲ ਰਹਿ ਗਿਆ ਹਾਂ। ਪੁਕਾਰਣ ਜਾਂ ਹਿੱਲਣ ਜੋਗਾ ਨਹੀਂ ਰਿਹਾ॥ ੧੮੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-शारीरिक चोट लगने पर मनुष्य बहुत चिल्लाता है। परंतु मुझे गुरु-शब्द की ऐसी गभीर मर्म-चोट लगी है कि कबीर वहीं स्तब्ध और शांत होकर रह गया है; अब पुकारने की गुंजाइश नहीं रही॥ १८२॥',
+      en: 'Satguru Kabir Saheb proclaims: Struck physically, a man cries out in loud pain. But I have been pierced by the profound, secret strike of the Guru’s Word in my heart, leaving me silent and spellbound in total stillness.',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਸ਼ਬਦ ਦੀ ਗੁੱਝੀ ਚੋਟ ਮਨ ਦੀਆਂ ਸਾਰੀਆਂ ਚਲਚਲਾਹਟਾਂ ਮੁਕਾ ਕੇ ਸ਼ਾਂਤ ਤੇ ਅਡੋਲ ਕਰ ਦਿੰਦੀ ਹੈ।',
@@ -11312,9 +11312,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਬਰਛੇ ਦੀ ਸੱਟ ਸਹਾਰਨੀ ਸੌਖੀ ਹੈ, ਜਿਸ ਦੇ ਵੱਜਣ ਨਾਲ ਘੱਟੋ ਘਟ ਸਾਹ ਤਾਂ ਆ ਜਾਂਦੇ ਹਨ, ਪਰ ਜਿਹੜਾ ਗੁਰੂ-ਸ਼ਬਦ ਦੀ ਸੱਟ ਨੂੰ ਸਹਾਰ ਲਵੇ (ਮਨ ਮਾਰ ਲਵੇ), ਉਹ ਮੇਰਾ ਗੁਰੂ ਹੈ ਤੇ ਮੈਂ ਉਸ ਦਾ ਦਾਸ ਹਾਂ॥ ੧੮੩॥',
-      hi: 'कबीर जी कहते हैं-भाले की चोट सहना तो आसान है, क्योंकि उसमें सांस तो चलती रहती है। परंतु जो साधक गुरु-शब्द की मर्माहत चोट को सह लेता है (अहंकार मिटा देता है), वही मेरा गुरु है और मैं उसका दास हूं॥ १८३॥',
-      en: 'Kabir Ji says: The blow of a spear is easy to endure, for one can still breathe through it. But whoever can withstand the piercing strike of the Guru’s Word (killing his ego), he is my Guru, and I am his servant.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਬਰਛੇ ਦੀ ਸੱਟ ਸਹਾਰਨੀ ਸੌਖੀ ਹੈ, ਜਿਸ ਦੇ ਵੱਜਣ ਨਾਲ ਘੱਟੋ ਘਟ ਸਾਹ ਤਾਂ ਆ ਜਾਂਦੇ ਹਨ, ਪਰ ਜਿਹੜਾ ਗੁਰੂ-ਸ਼ਬਦ ਦੀ ਸੱਟ ਨੂੰ ਸਹਾਰ ਲਵੇ (ਮਨ ਮਾਰ ਲਵੇ), ਉਹ ਮੇਰਾ ਗੁਰੂ ਹੈ ਤੇ ਮੈਂ ਉਸ ਦਾ ਦਾਸ ਹਾਂ॥ ੧੮੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-भाले की चोट सहना तो आसान है, क्योंकि उसमें सांस तो चलती रहती है। परंतु जो साधक गुरु-शब्द की मर्माहत चोट को सह लेता है (अहंकार मिटा देता है), वही मेरा गुरु है और मैं उसका दास हूं॥ १८३॥',
+      en: 'Satguru Kabir Saheb proclaims: The blow of a spear is easy to endure, for one can still breathe through it. But whoever can withstand the piercing strike of the Guru’s Word (killing his ego), he is my Guru, and I am his servant.',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਸ਼ਬਦ ਦੀ ਚੋਟ ਨਾਲ ਹਉਮੈ ਨੂੰ ਮਾਰਨਾ ਹੀ ਸਭ ਤੋਂ ਵੱਡੀ ਤੇ ਸੂਖਮ ਸਾਧਨਾ ਹੈ।',
@@ -11385,9 +11385,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹੇ ਮੁਲਾਂ ! ਤੂੰ ਉੱਚੇ ਮੁਨਾਰੇ ਬਾਂਗ ਦੇਣ ਵਾਸਤੇ ਕਿਉਂ ਚੜ੍ਹਦਾ ਹੈਂ? ਮਾਲਕ ਬਾਂਗ ਸੁਣਨ ਵਾਲਾ ਬੋਲਾ ਨਹੀਂ ਹੈ। ਜਿਸ ਵਾਸਤੇ ਤੂੰ ਬਾਂਗ ਦੇਂਦਾ ਹੈਂ, ਉਸ ਪ੍ਰਭੂ ਨੂੰ ਤੂੰ ਆਪਣੇ ਅੰਦਰ ਹਿਰਦੇ ਵਿਚ ਹੀ ਵੇਖ ਤੇ ਪਛਾਣ॥ ੧੮੪॥',
-      hi: 'कबीर जी कहते हैं-हे मुल्ला! तू अज़ान देने के लिए ऊंची मीनार पर क्यों चढ़ता है? परमात्मा बहरा नहीं है। जिस रब को तू बाहर पुकार रहा है, उसे अपने हृदय के भीतर ही देख और पहचान॥ १८४॥',
-      en: 'Kabir Ji says: O Mullah, why do you climb the high minaret to shout your call? The Lord Master is not deaf! The One for whom you call out loud—behold Him residing right within your own heart.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਮੁਲਾਂ ! ਤੂੰ ਉੱਚੇ ਮੁਨਾਰੇ ਬਾਂਗ ਦੇਣ ਵਾਸਤੇ ਕਿਉਂ ਚੜ੍ਹਦਾ ਹੈਂ? ਮਾਲਕ ਬਾਂਗ ਸੁਣਨ ਵਾਲਾ ਬੋਲਾ ਨਹੀਂ ਹੈ। ਜਿਸ ਵਾਸਤੇ ਤੂੰ ਬਾਂਗ ਦੇਂਦਾ ਹੈਂ, ਉਸ ਪ੍ਰਭੂ ਨੂੰ ਤੂੰ ਆਪਣੇ ਅੰਦਰ ਹਿਰਦੇ ਵਿਚ ਹੀ ਵੇਖ ਤੇ ਪਛਾਣ॥ ੧੮੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे मुल्ला! तू अज़ान देने के लिए ऊंची मीनार पर क्यों चढ़ता है? परमात्मा बहरा नहीं है। जिस रब को तू बाहर पुकार रहा है, उसे अपने हृदय के भीतर ही देख और पहचान॥ १८४॥',
+      en: 'Satguru Kabir Saheb proclaims: O Mullah, why do you climb the high minaret to shout your call? The Lord Master is not deaf! The One for whom you call out loud—behold Him residing right within your own heart.',
     },
     chintan: {
       pb: 'ਪ੍ਰਮਾਤਮਾ ਬਾਹਰੀ ਸ਼ੋਰ-ਸ਼ਰਾਬੇ ਨਾਲ ਨਹੀਂ, ਸਗੋਂ ਹਿਰਦੇ ਦੀ ਅੰਤਰਮੁਖੀ ਨਿਮਰਤਾ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
@@ -11458,9 +11458,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਹੇ ਸ਼ੇਖ ! ਜੇਕਰ ਹਿਰਦੇ ਅੰਦਰ ਸਬਰ ਸੰਤੋਖ ਨਹੀਂ ਹੈ ਤਾਂ ਹੱਜ ਕਾਬੇ ਕਿਸ ਵਾਸਤੇ ਜਾਣਾ ਹੈ? ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਜਿਸ ਦਾ ਹਿਰਦਾ ਪਵਿੱਤਰ ਤੇ ਸ਼ਾਂਤ ਨਹੀਂ, ਉਸ ਨੂੰ ਰੱਬ ਕਿਥੇ ਮਿਲ ਸਕਦਾ ਹੈ? ਅਰਥਾਤ ਹਿਰਦੇ ਦੀ ਸ਼ੁੱਧੀ ਤੋਂ ਬਿਨਾਂ ਰੱਬ ਨਹੀਂ ਮਿਲਦਾ॥ ੧੮੫॥',
-      hi: 'कबीर जी कहते हैं-हे शेख! यदि हृदय में संतोष और सबूरी नहीं है, तो काबा का हज करने से क्या लाभ? जिसका दिल शुद्ध और कपट-रहित नहीं है, उसे ईश्वर की प्राप्ति कहां हो सकती है?॥ १८५॥',
-      en: 'Kabir Ji says: O Sheikh, if you are devoid of inner contentment and patience, what is the use of going on pilgrimage to Mecca? For one whose heart is not pure and whole, where can God be found?',
+      pb: 'ਹੇ ਸ਼ੇਖ ! ਜੇਕਰ ਹਿਰਦੇ ਅੰਦਰ ਸਬਰ ਸੰਤੋਖ ਨਹੀਂ ਹੈ ਤਾਂ ਹੱਜ ਕਾਬੇ ਕਿਸ ਵਾਸਤੇ ਜਾਣਾ ਹੈ? ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਜਿਸ ਦਾ ਹਿਰਦਾ ਪਵਿੱਤਰ ਤੇ ਸ਼ਾਂਤ ਨਹੀਂ, ਉਸ ਨੂੰ ਰੱਬ ਕਿਥੇ ਮਿਲ ਸਕਦਾ ਹੈ? ਅਰਥਾਤ ਹਿਰਦੇ ਦੀ ਸ਼ੁੱਧੀ ਤੋਂ ਬਿਨਾਂ ਰੱਬ ਨਹੀਂ ਮਿਲਦਾ॥ ੧੮੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे शेख! यदि हृदय में संतोष और सबूरी नहीं है, तो काबा का हज करने से क्या लाभ? जिसका दिल शुद्ध और कपट-रहित नहीं है, उसे ईश्वर की प्राप्ति कहां हो सकती है?॥ १८५॥',
+      en: 'Satguru Kabir Saheb proclaims: O Sheikh, if you are devoid of inner contentment and patience, what is the use of going on pilgrimage to Mecca? For one whose heart is not pure and whole, where can God be found?',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਧਾਰਮਿਕ ਯਾਤਰਾਵਾਂ ਨਾਲੋਂ ਹਿਰਦੇ ਦੀ ਸਫ਼ਾਈ, ਸਬਰ ਤੇ ਸੰਤੋਖ ਹੀ ਅਸਲ ਰੱਬੀ ਮਿਲਾਪ ਦਾ ਸਾਧਨ ਹੈ।',
@@ -11532,8 +11532,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਤੂੰ ਰੱਬ ਦੀ ਬੰਦਗੀ ਕਰ, ਜਿਸ ਦੇ ਸਿਮਰਨ ਕਰਕੇ ਦੁਖ ਦੂਰ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਹਿਰਦੇ ਅੰਦਰ ਹੀ ਪ੍ਰਮਾਤਮਾ ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਤ੍ਰਿਸ਼ਨਾ ਦੀ ਅੱਗ ਦਾ ਭਾਂਬੜ ਉਸ ਦਾ ਨਾਮ ਲੈਣ ਕਰਕੇ ਬੁਝ ਜਾਂਦਾ ਹੈ॥ ੧੮੬॥',
-      hi: 'कबीर जी कहते हैं-उस अल्लाह (ईश्वर) की भक्ति करो, जिसके स्मरण से सब दुःख दूर हो जाते हैं। हृदय के भीतर ही प्रभु प्रकट हो जाता है और उसके नाम से वासना की जलती आग बुझ जाती है॥ १८६॥',
-      en: 'Kabir Ji says: Worship and devote yourself to the Divine Lord, remembering Whom all sorrows depart! The Master manifests right within your heart, and through His Holy Name, the burning fire of desire is quenched.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-उस अल्लाह (ईश्वर) की भक्ति करो, जिसके स्मरण से सब दुःख दूर हो जाते हैं। हृदय के भीतर ही प्रभु प्रकट हो जाता है और उसके नाम से वासना की जलती आग बुझ जाती है॥ १८६॥',
+      en: 'Satguru Kabir Saheb proclaims: Worship and devote yourself to the Divine Lord, remembering Whom all sorrows depart! The Master manifests right within your heart, and through His Holy Name, the burning fire of desire is quenched.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਸਿਮਰਨ ਨਾਲ ਹਿਰਦੇ ਵਿੱਚ ਵਾਹਿਗੁਰੂ ਦਾ ਪ੍ਰਗਾਸ ਹੁੰਦਾ ਹੈ ਅਤੇ ਤ੍ਰਿਸ਼ਨਾ ਦੀ ਅੱਗ ਬੁਝਦੀ ਹੈ।',
@@ -11612,9 +11612,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜ਼ੋਰ-ਜ਼ਬਰਦਸਤੀ ਨਾਲ ਕਿਸੇ ਜੀਵ ਉੱਤੇ ਜ਼ੁਲਮ ਕਰਕੇ ਉਸ ਨੂੰ (ਹਲਾਲ) ਧਰਮ-ਅਨੁਕੂਲ ਜਾਇਜ਼ ਕਹਿੰਦਾ ਹੈਂ, ਪਰ ਜਦੋਂ ਪ੍ਰਭੂ ਦੀ ਦਰਗਾਹ ਵਿੱਚੋਂ ਇਸ ਦਾ ਹਿਸਾਬ ਮੰਗਿਆ ਜਾਵੇਗਾ, ਤਾਂ ਫਿਰ ਤੇਰਾ ਕੀ ਹਾਲ ਹੋਵੇਗਾ? ਜ਼ੁਲਮ ਦਾ ਲੇਖਾ ਦੇਣਾ ਹੀ ਪਵੇਗਾ॥ ੧੮੭॥',
-      hi: 'कबीर जी कहते हैं-जीवों पर ज़बरदस्ती और अत्याचार करके तू उसे धर्मानुकूल (हलाल) कहता है! परंतु जब ईश्वर के दरबार में कर्मों का हिसाब मांगा जाएगा, तब तेरी क्या दुर्दशा होगी?॥ १८७॥',
-      en: 'Kabir Ji says: Committing violence and cruelty against living beings, you call it lawful! When the Divine Court demands the account of your deeds, what terrible plight will befall you then?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜ਼ੋਰ-ਜ਼ਬਰਦਸਤੀ ਨਾਲ ਕਿਸੇ ਜੀਵ ਉੱਤੇ ਜ਼ੁਲਮ ਕਰਕੇ ਉਸ ਨੂੰ (ਹਲਾਲ) ਧਰਮ-ਅਨੁਕੂਲ ਜਾਇਜ਼ ਕਹਿੰਦਾ ਹੈਂ, ਪਰ ਜਦੋਂ ਪ੍ਰਭੂ ਦੀ ਦਰਗਾਹ ਵਿੱਚੋਂ ਇਸ ਦਾ ਹਿਸਾਬ ਮੰਗਿਆ ਜਾਵੇਗਾ, ਤਾਂ ਫਿਰ ਤੇਰਾ ਕੀ ਹਾਲ ਹੋਵੇਗਾ? ਜ਼ੁਲਮ ਦਾ ਲੇਖਾ ਦੇਣਾ ਹੀ ਪਵੇਗਾ॥ ੧੮੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जीवों पर ज़बरदस्ती और अत्याचार करके तू उसे धर्मानुकूल (हलाल) कहता है! परंतु जब ईश्वर के दरबार में कर्मों का हिसाब मांगा जाएगा, तब तेरी क्या दुर्दशा होगी?॥ १८७॥',
+      en: 'Satguru Kabir Saheb proclaims: Committing violence and cruelty against living beings, you call it lawful! When the Divine Court demands the account of your deeds, what terrible plight will befall you then?',
     },
     chintan: {
       pb: 'ਜੀਵਾਂ ਉੱਤੇ ਜ਼ੁਲਮ ਕਰਨਾ ਗੁਨਾਹ ਹੈ; ਦਰਗਾਹੀ ਲੇਖੇ ਵਿੱਚ ਹਰ ਜ਼ੁਲਮ ਦਾ ਹਿਸਾਬ ਦੇਣਾ ਪੈਂਦਾ ਹੈ।',
@@ -11693,9 +11693,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਖਿਚੜੀ (ਦਾਲ ਤੇ ਚੌਲ) ਦਾ ਭੋਜਨ ਬਹੁਤ ਚੰਗਾ ਹੈ, ਜਿਸ ਵਿਚ ਅੰਮ੍ਰਿਤ ਵਰਗਾ ਸੁਆਦਲਾ ਲੂਣ ਹੁੰਦਾ ਹੈ। ਮਾਸ ਨਾਲ ਰੋਟੀ ਖਾਣ ਵਾਸਤੇ ਦੂਸਰੇ ਜੀਵਾਂ ਨੂੰ ਮਾਰਨਾ ਅਤੇ ਫਿਰ ਇਸ ਦੀ ਸਜ਼ਾ ਵਜੋਂ ਆਪਣਾ ਗਲਾ ਕੌਣ ਕਟਵਾਏ? ਮਾਸ ਖਾ ਕੇ ਗੁਨਾਹਗਾਰ ਬਣਨਾ ਮੰਨਜ਼ੂਰ ਨਹੀਂ॥ ੧੮੮॥',
-      hi: 'कबीर जी कहते हैं-दाल-चावल की सात्विक खिचड़ी का भोजन बहुत उत्तम है, जिसमें स्वादिष्ट नमक मिला हो। मांस खाने के स्वाद के लिए किसी जीव की हत्या करना और परिणाम स्वरूप अपना गला कटवाना कौन बुद्धिमानी समझेगा?॥ १८८॥',
-      en: 'Kabir Ji says: Eating simple khichdi with delicious salt is most wholesome! For the temporary relish of meat, who would kill a creature and suffer having his own throat cut in spiritual retribution?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਖਿਚੜੀ (ਦਾਲ ਤੇ ਚੌਲ) ਦਾ ਭੋਜਨ ਬਹੁਤ ਚੰਗਾ ਹੈ, ਜਿਸ ਵਿਚ ਅੰਮ੍ਰਿਤ ਵਰਗਾ ਸੁਆਦਲਾ ਲੂਣ ਹੁੰਦਾ ਹੈ। ਮਾਸ ਨਾਲ ਰੋਟੀ ਖਾਣ ਵਾਸਤੇ ਦੂਸਰੇ ਜੀਵਾਂ ਨੂੰ ਮਾਰਨਾ ਅਤੇ ਫਿਰ ਇਸ ਦੀ ਸਜ਼ਾ ਵਜੋਂ ਆਪਣਾ ਗਲਾ ਕੌਣ ਕਟਵਾਏ? ਮਾਸ ਖਾ ਕੇ ਗੁਨਾਹਗਾਰ ਬਣਨਾ ਮੰਨਜ਼ੂਰ ਨਹੀਂ॥ ੧੮੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-दाल-चावल की सात्विक खिचड़ी का भोजन बहुत उत्तम है, जिसमें स्वादिष्ट नमक मिला हो। मांस खाने के स्वाद के लिए किसी जीव की हत्या करना और परिणाम स्वरूप अपना गला कटवाना कौन बुद्धिमानी समझेगा?॥ १८८॥',
+      en: 'Satguru Kabir Saheb proclaims: Eating simple khichdi with delicious salt is most wholesome! For the temporary relish of meat, who would kill a creature and suffer having his own throat cut in spiritual retribution?',
     },
     chintan: {
       pb: 'ਸਾਤਵਿਕ ਤੇ ਨਿਰਦੋਸ਼ ਭੋਜਨ ਮਨ ਵਿੱਚ ਸ਼ਾਂਤੀ ਲਿਆਉਂਦਾ ਹੈ, ਜਦਕਿ ਜੀਵ-ਹੱਤਿਆ ਦਰਗਾਹੀ ਦੰਡ ਲਿਆਉਂਦੀ ਹੈ।',
@@ -11774,9 +11774,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਤਦ ਹੀ ਹਿਰਦੇ ਨੂੰ ਲੱਗਾ ਜਾਣਨਾ ਚਾਹੀਦਾ ਹੈ, ਜਦੋਂ ਮੋਹ ਅਤੇ ਸਰੀਰ ਦੇ ਦੁਖ ਕਲੇਸ਼ ਮਿਟ ਜਾਣ। ਜਦੋਂ ਖੁਸ਼ੀ ਤੇ ਗਮੀ ਮਨ ਨੂੰ ਨਾ ਸਾੜ ਸਕਣ, ਤਦ ਪ੍ਰਮਾਤਮਾ ਉਸ ਹਿਰਦੇ ਵਿਚ ਆਪ ਹੀ ਆਪ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ॥ ੧੮੯॥',
-      hi: 'कबीर जी कहते हैं-गुरु का उपदेश फलित हुआ तब जानना चाहिए, जब मोह और देह के ताप मिट जाएं। जब हर्ष और शोक मन को न जला सकें, तब समझना चाहिए कि हरि उस हृदय में स्वयं विराजमान हैं॥ १८९॥',
-      en: 'Kabir Ji says: Know that the Guru’s teaching has taken true root when worldly attachment and bodily afflictions dissolve. When neither pleasure nor sorrow can burn your mind, then the Lord Himself abides within you!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਤਦ ਹੀ ਹਿਰਦੇ ਨੂੰ ਲੱਗਾ ਜਾਣਨਾ ਚਾਹੀਦਾ ਹੈ, ਜਦੋਂ ਮੋਹ ਅਤੇ ਸਰੀਰ ਦੇ ਦੁਖ ਕਲੇਸ਼ ਮਿਟ ਜਾਣ। ਜਦੋਂ ਖੁਸ਼ੀ ਤੇ ਗਮੀ ਮਨ ਨੂੰ ਨਾ ਸਾੜ ਸਕਣ, ਤਦ ਪ੍ਰਮਾਤਮਾ ਉਸ ਹਿਰਦੇ ਵਿਚ ਆਪ ਹੀ ਆਪ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ॥ ੧੮੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-गुरु का उपदेश फलित हुआ तब जानना चाहिए, जब मोह और देह के ताप मिट जाएं। जब हर्ष और शोक मन को न जला सकें, तब समझना चाहिए कि हरि उस हृदय में स्वयं विराजमान हैं॥ १८९॥',
+      en: 'Satguru Kabir Saheb proclaims: Know that the Guru’s teaching has taken true root when worldly attachment and bodily afflictions dissolve. When neither pleasure nor sorrow can burn your mind, then the Lord Himself abides within you!',
     },
     chintan: {
       pb: 'ਗੁਰਮਤਿ ਗਿਆਨ ਨਾਲ ਮਨ ਖੁਸ਼ੀ ਤੇ ਗਮੀ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਸਮ-ਦ੍ਰਿਸ਼ਟ ਅਤੇ ਅਡੋਲ ਹੋ ਜਾਂਦਾ ਹੈ।',
@@ -11839,9 +11839,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਰਾਮ ਕਹਿਣ ਵਿਚ ਫਰਕ (ਅੰਤਰਾ) ਹੈ ਉਸ ਵਿਚ ਇਕ ਸਮਝਣ ਯੋਗ ਗੱਲ ਹੈ। ਉਹੀ ਰਾਮ (ਜੋ ਸਰਬ ਵਿਆਪਕ ਨਿਰੰਕਾਰ ਹੈ) ਉਸ ਨੂੰ ਸਾਰੇ ਕਹਿੰਦੇ ਹਨ, ਤੇ ਉਹੀ ਰਾਮ ਜੋ (ਦਸਰਥ ਦਾ ਪੁੱਤਰ) ਹੈ, ਰਾਵਣ ਨਾਲ ਜੁੱਧ ਕਰਕੇ ਕੌਤਕ ਕਰਨ ਵਾਲਾ ਹੈ॥ ੧੯੦॥',
-      hi: 'कबीर जी कहते हैं-राम कहने में एक गहरा भेद और विचारणीय अंतर है। एक राम वह निरंकार प्रभु है जिसे सब भजते हैं, और एक राम वह लीलाधारी अवतारी राम है॥ १९०॥',
-      en: 'Kabir Ji says: There is a vital distinction in uttering the Name of RAM. One RAM is the Omnipresent Supreme Being, while the other is the historical Avatar performing earthly plays.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਰਾਮ ਕਹਿਣ ਵਿਚ ਫਰਕ (ਅੰਤਰਾ) ਹੈ ਉਸ ਵਿਚ ਇਕ ਸਮਝਣ ਯੋਗ ਗੱਲ ਹੈ। ਉਹੀ ਰਾਮ (ਜੋ ਸਰਬ ਵਿਆਪਕ ਨਿਰੰਕਾਰ ਹੈ) ਉਸ ਨੂੰ ਸਾਰੇ ਕਹਿੰਦੇ ਹਨ, ਤੇ ਉਹੀ ਰਾਮ ਜੋ (ਦਸਰਥ ਦਾ ਪੁੱਤਰ) ਹੈ, ਰਾਵਣ ਨਾਲ ਜੁੱਧ ਕਰਕੇ ਕੌਤਕ ਕਰਨ ਵਾਲਾ ਹੈ॥ ੧੯੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-राम कहने में एक गहरा भेद और विचारणीय अंतर है। एक राम वह निरंकार प्रभु है जिसे सब भजते हैं, और एक राम वह लीलाधारी अवतारी राम है॥ १९०॥',
+      en: 'Satguru Kabir Saheb proclaims: There is a vital distinction in uttering the Name of RAM. One RAM is the Omnipresent Supreme Being, while the other is the historical Avatar performing earthly plays.',
     },
     chintan: {
       pb: 'ਰਾਮ ਨਾਮ ਦੇ ਉੱਚਾਰਨ ਵਿੱਚ ਸਰਬ-ਵਿਆਪਕ ਨਿਰਗੁਣ ਪਰਮਾਤਮਾ ਦਾ ਗਿਆਨ-ਬਿਬੇਕ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ।',
@@ -11913,8 +11913,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਤੂੰ ਰਾਮ ਹੀ ਰਾਮ ਕਹੁ, ਸਦਾ ਹੀ ਰਾਮ ਦਾ ਸਿਮਰਨ ਕਰ, ਪਰ ਰਾਮ ਕਹਿਣ ਵਿਚ ਇਕ ਵੀਚਾਰ ਹੈ; ਇਕ ਰਾਮ (ਸਰਬ ਵਿਆਪਕ) ਉਹ ਹੈ ਜਿਹੜਾ ਅਨੇਕਾਂ ਜੀਵਾਂ ਵਿਚ ਸਮਾ ਰਿਹਾ ਹੈ। ਇਕ ਰਾਮ (ਦਸਰਥ ਦਾ ਪੁੱਤਰ) ਉਹ ਹੈ ਜਿਹੜਾ ਇੱਕ ਸਰੀਰ ਵਿਚ ਹੀ ਸਮਾਇਆ ਸੀ॥ ੧੯੧॥',
-      hi: 'कबीर जी कहते हैं-राम ही राम कहो, परंतु उच्चारण में विवेक रखो। एक राम वह है जो अनेकों जीवों में व्याप्त है, और एक राम वह है जो केवल एक देह में समाया था॥ १९१॥',
-      en: 'Kabir Ji says: Utter the Name of RAM, but chant with spiritual wisdom. One RAM pervades all creation, while the other was confined to a single physical form.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-राम ही राम कहो, परंतु उच्चारण में विवेक रखो। एक राम वह है जो अनेकों जीवों में व्याप्त है, और एक राम वह है जो केवल एक देह में समाया था॥ १९१॥',
+      en: 'Satguru Kabir Saheb proclaims: Utter the Name of RAM, but chant with spiritual wisdom. One RAM pervades all creation, while the other was confined to a single physical form.',
     },
     chintan: {
       pb: 'ਸਿਮਰਨ ਵੇਲੇ ਸੂਖਮ ਬਿਬੇਕ ਬੁੱਧੀ ਦੁਆਰਾ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਭੂ ਦੀ ਅਰਾਧਨਾ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।',
@@ -11985,9 +11985,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਜਿਸ ਘਰ ਵਿਚ ਸੰਤਾਂ ਦੀ ਸੇਵਾ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਪ੍ਰਮਾਤਮਾ ਦੀ ਭਗਤੀ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ, ਉਹ ਘਰ ਮਸਾਣਾਂ ਵਰਗੇ ਹਨ, ਉਨਾਂ ਘਰਾਂ ਵਿਚ ਭੂਤਨੇ ਵੱਸਦੇ ਹਨ॥ ੧੯੨॥',
-      hi: 'कबीर जी कहते हैं-जिस घर में संतों की सेवा और ईश्वर की भक्ति नहीं होती, वे घर श्मशान के समान हैं और उनमें भूत-प्रेत निवास करते हैं॥ १९२॥',
-      en: 'Kabir Ji says: The house where Saints are not served and God is not worshiped is like a desolate graveyard inhabited by ghosts.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਜਿਸ ਘਰ ਵਿਚ ਸੰਤਾਂ ਦੀ ਸੇਵਾ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਪ੍ਰਮਾਤਮਾ ਦੀ ਭਗਤੀ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ, ਉਹ ਘਰ ਮਸਾਣਾਂ ਵਰਗੇ ਹਨ, ਉਨਾਂ ਘਰਾਂ ਵਿਚ ਭੂਤਨੇ ਵੱਸਦੇ ਹਨ॥ ੧੯੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जिस घर में संतों की सेवा और ईश्वर की भक्ति नहीं होती, वे घर श्मशान के समान हैं और उनमें भूत-प्रेत निवास करते हैं॥ १९२॥',
+      en: 'Satguru Kabir Saheb proclaims: The house where Saints are not served and God is not worshiped is like a desolate graveyard inhabited by ghosts.',
     },
     chintan: {
       pb: 'ਸੰਤ ਸੇਵਾ ਤੇ ਪ੍ਰਭੂ ਭਗਤੀ ਹੀ ਘਰ ਨੂੰ ਪਵਿੱਤਰ ਮੰਦਰ ਬਣਾਉਂਦੀ ਹੈ।',
@@ -12066,9 +12066,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜਿਸ ਨੂੰ ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਆਪਣੇ ਸ਼ਬਦ ਦਾ ਬਾਣ ਮਾਰਿਆ, ਉਹ ਬੁਰੇ ਬੋਲਾਂ ਤੋਂ ਗੂੰਗਾ, ਪ੍ਰੇਮ ਵਿੱਚ ਬਾਵਰਾ, ਨਿੰਦਿਆ ਸੁਣਨ ਤੋਂ ਬੋਲਾ ਅਤੇ ਮਾੜੇ ਕਰਮਾਂ ਵੱਲ ਜਾਣ ਤੋਂ ਪਿੰਗਲਾ ਹੋ ਜਾਂਦਾ ਹੈ॥ ੧੯੩॥',
-      hi: 'कबीर जी कहते हैं-जिसे सतगुरु ने शब्द का बाण मारा है, वह निंदा के लिए मूक, बुराई सुनने में बहरा, और पाप-मार्ग पर चलने में पंगु हो जाता है॥ १९३॥',
-      en: 'Kabir Ji says: Struck by the arrow of the True Guru’s Word, a person becomes mute to harsh speech, deaf to slander, and lame to walk on evil paths.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਸ ਨੂੰ ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਆਪਣੇ ਸ਼ਬਦ ਦਾ ਬਾਣ ਮਾਰਿਆ, ਉਹ ਬੁਰੇ ਬੋਲਾਂ ਤੋਂ ਗੂੰਗਾ, ਪ੍ਰੇਮ ਵਿੱਚ ਬਾਵਰਾ, ਨਿੰਦਿਆ ਸੁਣਨ ਤੋਂ ਬੋਲਾ ਅਤੇ ਮਾੜੇ ਕਰਮਾਂ ਵੱਲ ਜਾਣ ਤੋਂ ਪਿੰਗਲਾ ਹੋ ਜਾਂਦਾ ਹੈ॥ ੧੯੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जिसे सतगुरु ने शब्द का बाण मारा है, वह निंदा के लिए मूक, बुराई सुनने में बहरा, और पाप-मार्ग पर चलने में पंगु हो जाता है॥ १९३॥',
+      en: 'Satguru Kabir Saheb proclaims: Struck by the arrow of the True Guru’s Word, a person becomes mute to harsh speech, deaf to slander, and lame to walk on evil paths.',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਸ਼ਬਦ ਦਾ ਬਾਣ ਜੀਵ ਦੀਆਂ ਇੰਦਰੀਆਂ ਨੂੰ ਵਿਕਾਰਾਂ ਵੱਲੋਂ ਹੋੜ ਕੇ ਪ੍ਰਭੂ ਭਗਤੀ ਵਿੱਚ ਲੀਨ ਕਰ ਦਿੰਦਾ ਹੈ।',
@@ -12139,9 +12139,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪੂਰੇ ਸੂਰਮੇ ਸਤਿਗੁਰੂ ਨੇ ਜਿਸ ਨੂੰ ਆਪਣੇ ਉਪਦੇਸ਼ ਦਾ ਇੱਕ ਬਾਣ ਮਾਰਿਆ, ਉਸ ਦੇ ਲੱਗਦਿਆਂ ਹੀ ਉਹ ਅਹੰਕਾਰ ਛੱਡ ਕੇ ਧਰਤੀ ਤੇ ਡਿੱਗ ਪਿਆ ਅਤੇ ਉਸ ਦੇ ਹਿਰਦੇ ਵਿਚ ਪ੍ਰੇਮ ਦਾ ਛੇਕ ਪੈ ਗਿਆ॥ ੧੯੪॥',
-      hi: 'कबीर जी कहते हैं-सूरवीर सतगुरु ने उपदेश का जो एक बाण चलाया, उसके लगते ही साधक का अहंकार मिट गया और उसका हृदय प्रभु-प्रेम से बिंध गया॥ १९४॥',
-      en: 'Kabir Ji says: The Heroic True Guru struck with a single arrow of instruction; the moment it struck, pride fell humble to the ground and the heart was pierced with Divine Love.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪੂਰੇ ਸੂਰਮੇ ਸਤਿਗੁਰੂ ਨੇ ਜਿਸ ਨੂੰ ਆਪਣੇ ਉਪਦੇਸ਼ ਦਾ ਇੱਕ ਬਾਣ ਮਾਰਿਆ, ਉਸ ਦੇ ਲੱਗਦਿਆਂ ਹੀ ਉਹ ਅਹੰਕਾਰ ਛੱਡ ਕੇ ਧਰਤੀ ਤੇ ਡਿੱਗ ਪਿਆ ਅਤੇ ਉਸ ਦੇ ਹਿਰਦੇ ਵਿਚ ਪ੍ਰੇਮ ਦਾ ਛੇਕ ਪੈ ਗਿਆ॥ ੧੯੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-सूरवीर सतगुरु ने उपदेश का जो एक बाण चलाया, उसके लगते ही साधक का अहंकार मिट गया और उसका हृदय प्रभु-प्रेम से बिंध गया॥ १९४॥',
+      en: 'Satguru Kabir Saheb proclaims: The Heroic True Guru struck with a single arrow of instruction; the moment it struck, pride fell humble to the ground and the heart was pierced with Divine Love.',
     },
     chintan: {
       pb: 'ਸੂਰਵੀਰ ਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਹਉਮੈ ਨੂੰ ਮਾਰ ਕੇ ਹਿਰਦੇ ਵਿੱਚ ਅਮਰ ਪ੍ਰੇਮ ਦਾ ਪ੍ਰਕਾਸ਼ ਕਰਦਾ ਹੈ।',
@@ -12212,9 +12212,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਅਕਾਸ਼ ਤੋਂ ਨਿਰਮਲ ਬੂੰਦ ਡਿੱਗ ਕੇ ਗੰਦੀ ਧਰਤੀ ਵਿੱਚ ਪੈ ਕੇ ਬੇਕਾਰ ਹੋ ਗਈ। ਸੰਗਤ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖੀ ਆਤਮਾ ਕੁਸੰਗਤ ਦੀ ਭੱਠੀ ਵਿੱਚ ਪੈ ਕੇ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦੀ ਹੈ ਤੇ ਜਨਮ ਬਿਰਥਾ ਜਾਂਦਾ ਹੈ॥ ੧੯੫॥',
-      hi: 'कबीर जी कहते हैं-जैसे आकाश की निर्मल बूंद दूषित भूमि पर गिरकर नष्ट हो जाती है, वैसे ही सत्संगत के बिना जीव-आत्मा कुसंगति की भट्टी में जलकर राख हो जाती है॥ १९५॥',
-      en: 'Kabir Ji says: Like a pure raindrop falling from the sky onto contaminated soil, a human soul without holy company falls into the furnace of bad association and turns to ashes.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅਕਾਸ਼ ਤੋਂ ਨਿਰਮਲ ਬੂੰਦ ਡਿੱਗ ਕੇ ਗੰਦੀ ਧਰਤੀ ਵਿੱਚ ਪੈ ਕੇ ਬੇਕਾਰ ਹੋ ਗਈ। ਸੰਗਤ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖੀ ਆਤਮਾ ਕੁਸੰਗਤ ਦੀ ਭੱਠੀ ਵਿੱਚ ਪੈ ਕੇ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦੀ ਹੈ ਤੇ ਜਨਮ ਬਿਰਥਾ ਜਾਂਦਾ ਹੈ॥ ੧੯੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जैसे आकाश की निर्मल बूंद दूषित भूमि पर गिरकर नष्ट हो जाती है, वैसे ही सत्संगत के बिना जीव-आत्मा कुसंगति की भट्टी में जलकर राख हो जाती है॥ १९५॥',
+      en: 'Satguru Kabir Saheb proclaims: Like a pure raindrop falling from the sky onto contaminated soil, a human soul without holy company falls into the furnace of bad association and turns to ashes.',
     },
     chintan: {
       pb: 'ਸਤਿਸੰਗਤ ਤੋਂ ਬਿਨਾਂ ਨਿਰਮਲ ਆਤਮਾ ਵੀ ਕੁਸੰਗਤ ਦੇ ਪ੍ਰਭੂ ਨਾਲ ਬਿਨਸ ਜਾਂਦੀ ਹੈ।',
@@ -12277,9 +12277,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਅਕਾਸ਼ ਤੋਂ ਡਿੱਗੀ ਸਾਫ਼ ਬੂੰਦ ਜਦੋਂ ਧਰਤੀ ਵਿੱਚ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਅਨੇਕਾਂ ਸਿਆਣੇ ਵੀ ਉਸ ਨੂੰ ਵੱਖ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਇਵੇਂ ਹੀ ਜਦੋਂ ਗੁਰੂ ਉਪਦੇਸ਼ ਸ਼ੁੱਧ ਹਿਰਦੇ ਵਿੱਚ ਸਮਾ ਜਾਵੇ, ਤਾਂ ਕੋਈ ਵੀ ਵਿਕਾਰ ਉਸ ਨੂੰ ਪ੍ਰਭੂ ਤੋਂ ਵੱਖ ਨਹੀਂ ਕਰ ਸਕਦਾ॥ ੧੯੬॥',
-      hi: 'कबीर जी कहते हैं-जब आकाश की निर्मल बूंद शुद्ध धरती में मिल जाती है, तो कोई उसे अलग नहीं कर सकता। वैसे ही जब गुरु-उपदेश पवित्र हृदय में रम जाता है, तो कोई विकार उसे प्रभु से अलग नहीं कर सकता॥ १९६॥',
-      en: 'Kabir Ji says: When a pure raindrop merges into the soil, even clever experts cannot separate it. Likewise, when the Guru’s wisdom absorbs into a clean heart, no worldly illusion can ever separate that soul from God.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅਕਾਸ਼ ਤੋਂ ਡਿੱਗੀ ਸਾਫ਼ ਬੂੰਦ ਜਦੋਂ ਧਰਤੀ ਵਿੱਚ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਅਨੇਕਾਂ ਸਿਆਣੇ ਵੀ ਉਸ ਨੂੰ ਵੱਖ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਇਵੇਂ ਹੀ ਜਦੋਂ ਗੁਰੂ ਉਪਦੇਸ਼ ਸ਼ੁੱਧ ਹਿਰਦੇ ਵਿੱਚ ਸਮਾ ਜਾਵੇ, ਤਾਂ ਕੋਈ ਵੀ ਵਿਕਾਰ ਉਸ ਨੂੰ ਪ੍ਰਭੂ ਤੋਂ ਵੱਖ ਨਹੀਂ ਕਰ ਸਕਦਾ॥ ੧੯੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जब आकाश की निर्मल बूंद शुद्ध धरती में मिल जाती है, तो कोई उसे अलग नहीं कर सकता। वैसे ही जब गुरु-उपदेश पवित्र हृदय में रम जाता है, तो कोई विकार उसे प्रभु से अलग नहीं कर सकता॥ १९६॥',
+      en: 'Satguru Kabir Saheb proclaims: When a pure raindrop merges into the soil, even clever experts cannot separate it. Likewise, when the Guru’s wisdom absorbs into a clean heart, no worldly illusion can ever separate that soul from God.',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਦੇ ਉਪਦੇਸ਼ ਨਾਲ ਇੱਕਮਿੱਕ ਹੋਈ ਆਤਮਾ ਨੂੰ ਕੋਈ ਵੀ ਸੰਸਾਰਿਕ ਵਿਕਾਰ ਡੋਲਾ ਨਹੀਂ ਸਕਦਾ।',
@@ -12342,9 +12342,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇੱਕ ਵਾਰ ਮੈਂ ਕਾਬੇ ਦਾ ਹੱਜ ਕਰਨ ਜਾ ਰਿਹਾ ਸੀ, ਅੱਗੇ ਰਾਹ ਵਿੱਚ ਹੀ ਖੁਦਾ ਮਿਲ ਪਿਆ। ਪ੍ਰਭੂ ਮੇਰੇ ਨਾਲ ਪ੍ਰੇਮ ਵਿੱਚ ਲੜ ਪਿਆ ਕਿ ਤੈਨੂੰ ਕਿਸ ਨੇ ਕਿਹਾ ਹੈ ਕਿ ਮੈਂ ਕੇਵਲ ਕਾਬੇ ਵਿੱਚ ਹਾਂ, ਜਦਕਿ ਮੈਂ ਸਾਰੀ ਧਰਤੀ ਵਿੱਚ ਸਰਬ-ਵਿਆਪਕ ਹਾਂ!॥ ੧੯੭॥',
-      hi: 'कबीर जी कहते हैं-मैं काबा का हज करने जा रहा था, मार्ग में ही ईश्वर मिल गए। प्रभु ने मुझसे कहा कि तुझे किसने कहा कि मैं केवल काबा में हूं? मैं तो सर्वत्र व्याप्त हूं!॥ १९७॥',
-      en: 'Kabir Ji says: I was going on pilgrimage to Mecca, but I met God along the way! The Lord lovingly challenged me: "Who told you I am confined to a building, when I pervade the entire universe?"',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇੱਕ ਵਾਰ ਮੈਂ ਕਾਬੇ ਦਾ ਹੱਜ ਕਰਨ ਜਾ ਰਿਹਾ ਸੀ, ਅੱਗੇ ਰਾਹ ਵਿੱਚ ਹੀ ਖੁਦਾ ਮਿਲ ਪਿਆ। ਪ੍ਰਭੂ ਮੇਰੇ ਨਾਲ ਪ੍ਰੇਮ ਵਿੱਚ ਲੜ ਪਿਆ ਕਿ ਤੈਨੂੰ ਕਿਸ ਨੇ ਕਿਹਾ ਹੈ ਕਿ ਮੈਂ ਕੇਵਲ ਕਾਬੇ ਵਿੱਚ ਹਾਂ, ਜਦਕਿ ਮੈਂ ਸਾਰੀ ਧਰਤੀ ਵਿੱਚ ਸਰਬ-ਵਿਆਪਕ ਹਾਂ!॥ ੧੯੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मैं काबा का हज करने जा रहा था, मार्ग में ही ईश्वर मिल गए। प्रभु ने मुझसे कहा कि तुझे किसने कहा कि मैं केवल काबा में हूं? मैं तो सर्वत्र व्याप्त हूं!॥ १९७॥',
+      en: 'Satguru Kabir Saheb proclaims: I was going on pilgrimage to Mecca, but I met God along the way! The Lord lovingly challenged me: "Who told you I am confined to a building, when I pervade the entire universe?"',
     },
     chintan: {
       pb: 'ਪਰਮਾਤਮਾ ਕੇਵਲ ਇੱਕ ਖਾਸ ਇਮਾਰਤ ਜਾਂ ਧਰਤੀ ਤੇ ਨਹੀਂ, ਸਗੋਂ ਸਾਰੀ ਕਾਇਨਾਤ ਵਿੱਚ ਹਾਜ਼ਰ-ਨਾਜ਼ਰ ਹੈ।',
@@ -12415,9 +12415,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਮੈਂ ਕਈ ਵਾਰ ਕਾਬੇ ਹੱਜ ਕਰਨ ਗਿਆ ਹਾਂ, ਪਰ ਹੇ ਮਾਲਕ! ਮੇਰੇ ਵਿੱਚ ਕੀ ਗੁਨਾਹ ਹੈ ਕਿ ਤੂੰ ਬਾਹਰੀ ਯਾਤਰਾਵਾਂ ਨਾਲ ਮੂੰਹੋਂ ਨਹੀਂ ਬੋਲਦਾ? ਭਾਵ ਬਾਹਰੀ ਤੀਰਥ ਯਾਤਰਾ ਨਾਲ ਪ੍ਰਭੂ ਪ੍ਰਾਪਤੀ ਨਹੀਂ ਹੁੰਦੀ॥ ੧੯੮॥',
-      hi: 'कबीर जी कहते हैं-मैं कई बार काबा हज करने गया, पर हे प्रभु! मुझमें क्या खोट है कि तू बाहरी यात्राओं से प्रसन्न होकर बात नहीं करता? अर्थात् केवल बाहरी तीर्थों से ईश्वर नहीं मिलते॥ १९८॥',
-      en: 'Kabir Ji says: I went on pilgrimage to Mecca time and again, yet O Lord, why do You not speak to me through physical visits? External pilgrimages alone cannot reveal the Divine.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੈਂ ਕਈ ਵਾਰ ਕਾਬੇ ਹੱਜ ਕਰਨ ਗਿਆ ਹਾਂ, ਪਰ ਹੇ ਮਾਲਕ! ਮੇਰੇ ਵਿੱਚ ਕੀ ਗੁਨਾਹ ਹੈ ਕਿ ਤੂੰ ਬਾਹਰੀ ਯਾਤਰਾਵਾਂ ਨਾਲ ਮੂੰਹੋਂ ਨਹੀਂ ਬੋਲਦਾ? ਭਾਵ ਬਾਹਰੀ ਤੀਰਥ ਯਾਤਰਾ ਨਾਲ ਪ੍ਰਭੂ ਪ੍ਰਾਪਤੀ ਨਹੀਂ ਹੁੰਦੀ॥ ੧੯੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मैं कई बार काबा हज करने गया, पर हे प्रभु! मुझमें क्या खोट है कि तू बाहरी यात्राओं से प्रसन्न होकर बात नहीं करता? अर्थात् केवल बाहरी तीर्थों से ईश्वर नहीं मिलते॥ १९८॥',
+      en: 'Satguru Kabir Saheb proclaims: I went on pilgrimage to Mecca time and again, yet O Lord, why do You not speak to me through physical visits? External pilgrimages alone cannot reveal the Divine.',
     },
     chintan: {
       pb: 'ਬਾਹਰੀ ਤੀਰਥ ਯਾਤਰਾਵਾਂ ਨਾਲ ਪ੍ਰਭੂ ਪ੍ਰਸੰਨ ਨਹੀਂ ਹੁੰਦਾ, ਸਗੋਂ ਅੰਤਰਮੁਖੀ ਹਿਰਦੇ ਦੀ ਪ੍ਰੀਤ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
@@ -12480,9 +12480,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੋ ਲੋਕ ਜੀਵਾਂ ਨੂੰ ਜ਼ੋਰ-ਜ਼ਬਰਦਸਤੀ ਨਾਲ ਮਾਰਦੇ ਹਨ ਅਤੇ ਉਸ ਨੂੰ ਹਲਾਲ (ਜਾਇਜ਼) ਕਹਿੰਦੇ ਹਨ, ਪਰ ਜਦੋਂ ਪਰਮਾਤਮਾ ਉਨ੍ਹਾਂ ਦਾ ਲੇਖਾ ਕੱਢੇਗਾ, ਉਦੋਂ ਉਨ੍ਹਾਂ ਦਾ ਕੀ ਹਾਲ ਹੋਵੇਗਾ?॥ ੧੯੯॥',
-      hi: 'कबीर जी कहते हैं-जो लोग जीवों को बलपूर्वक मारते हैं और उसे धर्मानुकूल (हलाल) कहते हैं, जब परमात्मा उनके कर्मों का लेखा निकालेगा, तब उनका क्या हाल होगा?॥ १९९॥',
-      en: 'Kabir Ji says: Those who forcefully slaughter living beings and call it lawful—what terrible fate awaits them when the Almighty opens their record of deeds?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੋ ਲੋਕ ਜੀਵਾਂ ਨੂੰ ਜ਼ੋਰ-ਜ਼ਬਰਦਸਤੀ ਨਾਲ ਮਾਰਦੇ ਹਨ ਅਤੇ ਉਸ ਨੂੰ ਹਲਾਲ (ਜਾਇਜ਼) ਕਹਿੰਦੇ ਹਨ, ਪਰ ਜਦੋਂ ਪਰਮਾਤਮਾ ਉਨ੍ਹਾਂ ਦਾ ਲੇਖਾ ਕੱਢੇਗਾ, ਉਦੋਂ ਉਨ੍ਹਾਂ ਦਾ ਕੀ ਹਾਲ ਹੋਵੇਗਾ?॥ ੧੯੯॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जो लोग जीवों को बलपूर्वक मारते हैं और उसे धर्मानुकूल (हलाल) कहते हैं, जब परमात्मा उनके कर्मों का लेखा निकालेगा, तब उनका क्या हाल होगा?॥ १९९॥',
+      en: 'Satguru Kabir Saheb proclaims: Those who forcefully slaughter living beings and call it lawful—what terrible fate awaits them when the Almighty opens their record of deeds?',
     },
     chintan: {
       pb: 'ਜੀਵ-ਹੱਤਿਆ ਕਰਕੇ ਉਸ ਨੂੰ ਧਰਮ ਦਾ ਨਾਂ ਦੇਣਾ ਘੋਰ ਅਗਿਆਨਤਾ ਤੇ ਪਾਪ ਹੈ।',
@@ -12546,8 +12546,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਜੋ ਧੱਕਾ ਕਰਨਾ ਹੈ ਉਹ ਜ਼ੁਲਮ-ਪਾਪ ਹੈ, ਇਸ ਦਾ ਜਵਾਬ ਪਰਮਾਤਮਾ ਮੰਗੇਗਾ। ਜਦ ਦਰਗਾਹ ਵਿਚ ਹਿਸਾਬ ਨਿਕਲੇਗਾ ਤਾਂ ਜ਼ੁਲਮ ਕਰਨ ਵਾਲਾ ਪੁਰਸ਼ ਮੂੰਹੋਂ-ਮੂੰਹ ਮਾਰ ਖਾਏਗਾ॥ ੨੦੦॥',
-      hi: 'कबीर जी कहते हैं-दूसरों पर ज़बरदस्ती करना घोर अत्याचार है, जिसका हिसाब ईश्वर स्वयं मांगेगा। जब परमात्मा के दरबार में कर्मों का लेखा निकलेगा, तब अत्याचारी मुंह पर मार खाएगा॥ २००॥',
-      en: 'Kabir Ji says: Oppression and coercion are terrible sins for which God Himself demands an answer. When the account is settled in the Divine Court, the oppressor suffers striking blows upon his face.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-दूसरों पर ज़बरदस्ती करना घोर अत्याचार है, जिसका हिसाब ईश्वर स्वयं मांगेगा। जब परमात्मा के दरबार में कर्मों का लेखा निकलेगा, तब अत्याचारी मुंह पर मार खाएगा॥ २००॥',
+      en: 'Satguru Kabir Saheb proclaims: Oppression and coercion are terrible sins for which God Himself demands an answer. When the account is settled in the Divine Court, the oppressor suffers striking blows upon his face.',
     },
     chintan: {
       pb: 'ਜ਼ੁਲਮ ਤੇ ਅਨਿਆਏ ਦਾ ਫਲ ਦਰਗਾਹ ਵਿੱਚ ਮਾਰ ਤੇ ਅਪਮਾਨ ਦੇ ਰੂਪ ਵਿੱਚ ਮਿਲਦਾ ਹੈ।',
@@ -12610,9 +12610,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇਕਰ ਮਨੁੱਖ ਦਾ ਹਿਰਦਾ ਪਵਿੱਤਰ ਹੋਵੇ, ਤਾਂ ਉਸ ਨੂੰ ਲੇਖਾ ਦੇਣਾ ਸੁਖਾਲਾ ਹੁੰਦਾ ਹੈ ਅਤੇ ਉਸ ਸੱਚੇ ਦਰਬਾਰ ਵਿਚ ਉਸ ਦਾ ਕੋਈ ਪੱਲਾ ਨਹੀਂ ਫੜਦਾ (ਉਸ ਨੂੰ ਕੋਈ ਰੋਕ-ਟੋਕ ਨਹੀਂ ਹੁੰਦੀ)॥ ੨੦੧॥',
-      hi: 'कबीर जी कहते हैं-यदि मनुष्य का हृदय निष्कपट और पवित्र है, तो ईश्वर को कर्मों का लेखा देना अत्यंत सरल है। उस सच्चे दरबार में कोई उसका आंचल नहीं पकड़ सकता॥ २०१॥',
-      en: 'Kabir Ji says: Settling accounts is smooth and easy when the heart is pure! In that True Court of Judgment, no one detains or questions such a righteous soul.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇਕਰ ਮਨੁੱਖ ਦਾ ਹਿਰਦਾ ਪਵਿੱਤਰ ਹੋਵੇ, ਤਾਂ ਉਸ ਨੂੰ ਲੇਖਾ ਦੇਣਾ ਸੁਖਾਲਾ ਹੁੰਦਾ ਹੈ ਅਤੇ ਉਸ ਸੱਚੇ ਦਰਬਾਰ ਵਿਚ ਉਸ ਦਾ ਕੋਈ ਪੱਲਾ ਨਹੀਂ ਫੜਦਾ (ਉਸ ਨੂੰ ਕੋਈ ਰੋਕ-ਟੋਕ ਨਹੀਂ ਹੁੰਦੀ)॥ ੨੦੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यदि मनुष्य का हृदय निष्कपट और पवित्र है, तो ईश्वर को कर्मों का लेखा देना अत्यंत सरल है। उस सच्चे दरबार में कोई उसका आंचल नहीं पकड़ सकता॥ २०१॥',
+      en: 'Satguru Kabir Saheb proclaims: Settling accounts is smooth and easy when the heart is pure! In that True Court of Judgment, no one detains or questions such a righteous soul.',
     },
     chintan: {
       pb: 'ਹਿਰਦੇ ਦੀ ਪਵਿੱਤਰਤਾ ਤੇ ਸੱਚਾਈ ਜੀਵ ਨੂੰ ਦਰਗਾਹੀ ਦੰਡ ਤੋਂ ਪੂਰਨ ਮੁਕਤ ਕਰਦੀ ਹੈ।',
@@ -12683,9 +12683,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਧਰਤੀ ਅਤੇ ਅਕਾਸ਼ (ਸਾਰੀ ਸ੍ਰਿਸ਼ਟੀ) ਵਿਚ ਹੇ ਦਵੈਤ/ਮਾਇਆ! ਤੂੰ ਬੜੀ ਬਲਵਾਨ ਹੈਂ। ਛੇ ਧਾਰਮਿਕ ਭੇਖਾਂ ਵਾਲੇ ਅਤੇ ਚੌਰਾਸੀ ਸਿੱਧ ਵੀ ਇਸ ਸੰਸੈ ਵਿਚ ਪਏ ਹੋਏ ਹਨ ਕਿ ਤੈਥੋਂ ਕਿਸ ਤਰ੍ਹਾਂ ਬਚਿਆ ਜਾਵੇ॥ ੨੦੨॥',
-      hi: 'कबीर जी कहते हैं-धरती और आकाश के बीच हे द्वैत (माया)! तू अत्यंत बलवती है। छह दर्शनों के विद्वान और चौरासी सिद्ध भी इस संशय में पड़े हैं कि तुझसे कैसे बचा जाए॥ २०२॥',
-      en: 'Kabir Ji says: O Duality (Illusion), between earth and sky, you reign exceedingly powerful! Scholars of the six philosophical schools and the 84 accomplished Siddhas all fall into doubt before you.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਧਰਤੀ ਅਤੇ ਅਕਾਸ਼ (ਸਾਰੀ ਸ੍ਰਿਸ਼ਟੀ) ਵਿਚ ਹੇ ਦਵੈਤ/ਮਾਇਆ! ਤੂੰ ਬੜੀ ਬਲਵਾਨ ਹੈਂ। ਛੇ ਧਾਰਮਿਕ ਭੇਖਾਂ ਵਾਲੇ ਅਤੇ ਚੌਰਾਸੀ ਸਿੱਧ ਵੀ ਇਸ ਸੰਸੈ ਵਿਚ ਪਏ ਹੋਏ ਹਨ ਕਿ ਤੈਥੋਂ ਕਿਸ ਤਰ੍ਹਾਂ ਬਚਿਆ ਜਾਵੇ॥ ੨੦੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-धरती और आकाश के बीच हे द्वैत (माया)! तू अत्यंत बलवती है। छह दर्शनों के विद्वान और चौरासी सिद्ध भी इस संशय में पड़े हैं कि तुझसे कैसे बचा जाए॥ २०२॥',
+      en: 'Satguru Kabir Saheb proclaims: O Duality (Illusion), between earth and sky, you reign exceedingly powerful! Scholars of the six philosophical schools and the 84 accomplished Siddhas all fall into doubt before you.',
     },
     chintan: {
       pb: 'ਦਵੈਤ ਭਾਵ ਦੀ ਮਾਇਆ ਅਤਿ ਬਲਵਾਨ ਹੈ, ਇਸ ਤੋਂ ਬਚਣ ਦਾ ਇੱਕੋ ਇੱਕ ਰਸਤਾ ਗੁਰੂ ਦਾ ਉਪਦੇਸ਼ ਹੈ।',
@@ -12756,9 +12756,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹੇ ਪ੍ਰਭੂ ! ਮੇਰੇ ਵਿਚ ਮੇਰਾ (ਤਨ, ਮਨ ਅਥਵਾ ਧਨ) ਕੁਝ ਨਹੀਂ ਹੈ, ਜੋ ਕੁਝ ਵੀ ਹੈ ਉਹ ਸਭ ਤੇਰਾ ਹੀ ਦਿੱਤਾ ਹੋਇਆ ਹੈ। ਤੇਰੀ ਦਿੱਤੀ ਵਸਤੂ ਤੈਨੂੰ ਹੀ ਸੌਂਪਣ ਲੱਗਿਆਂ ਮੇਰਾ ਕੀ ਲੱਗਦਾ ਹੈ? (ਕੁਝ ਵੀ ਨਹੀਂ!)॥ ੨੦੩॥',
-      hi: 'कबीर जी कहते हैं-हे प्रभु! मुझमें मेरा अपना कुछ भी नहीं है, जो कुछ भी है वह सब आपका ही है। आपका दिया हुआ आपको ही सौंपते हुए मेरा क्या जाता है?॥ २०३॥',
-      en: 'Kabir Ji says: O Lord, nothing in me belongs to me; whatever exists is entirely Yours. Surrendering Yours back to You, what does it cost me?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਪ੍ਰਭੂ ! ਮੇਰੇ ਵਿਚ ਮੇਰਾ (ਤਨ, ਮਨ ਅਥਵਾ ਧਨ) ਕੁਝ ਨਹੀਂ ਹੈ, ਜੋ ਕੁਝ ਵੀ ਹੈ ਉਹ ਸਭ ਤੇਰਾ ਹੀ ਦਿੱਤਾ ਹੋਇਆ ਹੈ। ਤੇਰੀ ਦਿੱਤੀ ਵਸਤੂ ਤੈਨੂੰ ਹੀ ਸੌਂਪਣ ਲੱਗਿਆਂ ਮੇਰਾ ਕੀ ਲੱਗਦਾ ਹੈ? (ਕੁਝ ਵੀ ਨਹੀਂ!)॥ ੨੦੩॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे प्रभु! मुझमें मेरा अपना कुछ भी नहीं है, जो कुछ भी है वह सब आपका ही है। आपका दिया हुआ आपको ही सौंपते हुए मेरा क्या जाता है?॥ २०३॥',
+      en: 'Satguru Kabir Saheb proclaims: O Lord, nothing in me belongs to me; whatever exists is entirely Yours. Surrendering Yours back to You, what does it cost me?',
     },
     chintan: {
       pb: 'ਜੀਵ ਦਾ ਤਨ, ਮਨ, ਧਨ ਸਭ ਪ੍ਰਭੂ ਦੀ ਬਖ਼ਸ਼ਿਸ਼ ਹੈ; ਮੈਂ-ਮੇਰੀ ਤਿਆਗ ਕੇ ਨਿਸ਼ਕਾਮ ਹੋਣਾ ਹੀ ਸਰਵੋਤਮ ਸਮਰਪਣ ਹੈ।',
@@ -12829,9 +12829,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ, ਹੇ ਪ੍ਰਮਾਤਮਾ! ਮੈਂ ਤੂੰ ਤੂੰ (ਤੇਰਾ ਸਿਮਰਨ) ਕਰਦਾ ਤੇਰਾ ਰੂਪ ਹੀ ਹੋ ਗਿਆ ਹਾਂ, ਹੁਣ ਮੇਰੇ ਵਿਚ ਮੇਰਾ ਆਪਾ (ਮੈਂ) ਨਹੀਂ ਰਿਹਾ। ਜਦ ਮੇਰਾ ਆਪਣੇ-ਪਰਾਏ ਵਾਲਾ ਦੈਤ ਭਾਵ ਮਿਟ ਗਿਆ, ਤਾਂ ਫਿਰ ਜਿਥੇ ਵੀ ਵੇਖਦਾ ਹਾਂ, ਉਥੇ ਤੂੰ ਹੀ ਤੂੰ ਹੈਂ॥ ੨੦੪॥',
-      hi: 'कबीर जी कहते हैं-हे ईश्वर! आपका निरंतर "तू-तू" स्मरण करते हुए मैं आपका ही रूप हो गया हूं, अब मेरे भीतर "मैं" का अस्तित्व नहीं रहा। जब अपना और पराया का भेद मिट गया, तो जहां देखता हूं वहां तू ही तू दिखाई देता है॥ २०४॥',
-      en: 'Kabir Ji says: O Lord, repeating "You, You", I have merged into You, and no "I" remains within me! When the distinction between self and other dissolved, wherever I look, I see only You.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ, ਹੇ ਪ੍ਰਮਾਤਮਾ! ਮੈਂ ਤੂੰ ਤੂੰ (ਤੇਰਾ ਸਿਮਰਨ) ਕਰਦਾ ਤੇਰਾ ਰੂਪ ਹੀ ਹੋ ਗਿਆ ਹਾਂ, ਹੁਣ ਮੇਰੇ ਵਿਚ ਮੇਰਾ ਆਪਾ (ਮੈਂ) ਨਹੀਂ ਰਿਹਾ। ਜਦ ਮੇਰਾ ਆਪਣੇ-ਪਰਾਏ ਵਾਲਾ ਦੈਤ ਭਾਵ ਮਿਟ ਗਿਆ, ਤਾਂ ਫਿਰ ਜਿਥੇ ਵੀ ਵੇਖਦਾ ਹਾਂ, ਉਥੇ ਤੂੰ ਹੀ ਤੂੰ ਹੈਂ॥ ੨੦੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे ईश्वर! आपका निरंतर "तू-तू" स्मरण करते हुए मैं आपका ही रूप हो गया हूं, अब मेरे भीतर "मैं" का अस्तित्व नहीं रहा। जब अपना और पराया का भेद मिट गया, तो जहां देखता हूं वहां तू ही तू दिखाई देता है॥ २०४॥',
+      en: 'Satguru Kabir Saheb proclaims: O Lord, repeating "You, You", I have merged into You, and no "I" remains within me! When the distinction between self and other dissolved, wherever I look, I see only You.',
     },
     chintan: {
       pb: 'ਨਿਰੰਤਰ ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਹਉਮੈ ਮਿਟ ਜਾਂਦੀ ਹੈ ਅਤੇ ਸਾਰੇ ਸੰਸਾਰ ਵਿੱਚ ਵਾਹਿਗੁਰੂ ਦੀ ਜੋਤਿ ਪ੍ਰਗਟ ਹੁੰਦੀ ਹੈ।',
@@ -12902,9 +12902,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਬੁਰੇ ਕੰਮਾਂ ਨੂੰ ਕਰਨ ਵਾਸਤੇ ਸੋਚਦੇ ਰਹਿੰਦੇ ਹਨ ਅਤੇ ਝੂਠੇ ਪਦਾਰਥਾਂ ਦੀ ਪ੍ਰਾਪਤੀ ਦਾ ਹੰਕਾਰ ਕਰਦੇ ਹਨ। ਇਸ ਤਰ੍ਹਾਂ ਕੋਈ ਮਨੋਰਥ ਵੀ ਪੂਰਾ ਨਾ ਹੋਇਆ, ਨਾ ਪ੍ਰਮਾਤਮਾ ਮਿਲਿਆ ਨਾ ਝੂਠੇ ਪਦਾਰਥ, ਅਤੇ ਅੰਤ ਨਿਰਾਸ਼ ਹੋ ਕੇ ਸੰਸਾਰ ਤੋਂ ਤੁਰ ਪਏ॥ ੨੦੫॥',
-      hi: 'कबीर जी कहते हैं-मनुष्य जीवन भर विकारों की योजनाएं बनाता है और झूठी संपत्ति पर गर्व करता है। परंतु कोई मनोरथ पूरा नहीं होता और अंत में निराश होकर हाथ मलते हुए चला जाता है॥ २०५॥',
-      en: 'Kabir Ji says: Man spends his life planning evil deeds and boasting of false possessions. Not a single true goal is achieved, and at last he departs from this world empty-handed and disappointed.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਬੁਰੇ ਕੰਮਾਂ ਨੂੰ ਕਰਨ ਵਾਸਤੇ ਸੋਚਦੇ ਰਹਿੰਦੇ ਹਨ ਅਤੇ ਝੂਠੇ ਪਦਾਰਥਾਂ ਦੀ ਪ੍ਰਾਪਤੀ ਦਾ ਹੰਕਾਰ ਕਰਦੇ ਹਨ। ਇਸ ਤਰ੍ਹਾਂ ਕੋਈ ਮਨੋਰਥ ਵੀ ਪੂਰਾ ਨਾ ਹੋਇਆ, ਨਾ ਪ੍ਰਮਾਤਮਾ ਮਿਲਿਆ ਨਾ ਝੂਠੇ ਪਦਾਰਥ, ਅਤੇ ਅੰਤ ਨਿਰਾਸ਼ ਹੋ ਕੇ ਸੰਸਾਰ ਤੋਂ ਤੁਰ ਪਏ॥ ੨੦੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य जीवन भर विकारों की योजनाएं बनाता है और झूठी संपत्ति पर गर्व करता है। परंतु कोई मनोरथ पूरा नहीं होता और अंत में निराश होकर हाथ मलते हुए चला जाता है॥ २०५॥',
+      en: 'Satguru Kabir Saheb proclaims: Man spends his life planning evil deeds and boasting of false possessions. Not a single true goal is achieved, and at last he departs from this world empty-handed and disappointed.',
     },
     chintan: {
       pb: 'ਵਿਕਾਰਾਂ ਦੀ ਚਿੰਤਾ ਤੇ ਝੂਠੀ ਮਾਇਆ ਦਾ ਗੁਮਾਨ ਆਤਮਾ ਨੂੰ ਕੇਵਲ ਨਿਰਾਸ਼ਾ ਹੀ ਦਿੰਦਾ ਹੈ।',
@@ -12968,8 +12968,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਜਿਹੜਾ ਪੁਰਸ਼ ਹਰੀ ਦਾ ਸਿਮਰਨ ਕਰਦਾ ਹੈ, ਉਹੀ ਸੰਸਾਰ ਵਿਚ ਸੁਖੀ ਹੈ। ਜਿਸ ਨੂੰ ਪ੍ਰਮਾਤਮਾ ਸਿਰਜਨਹਾਰ ਆਪ ਰੱਖਦਾ ਹੈ, ਉਹ ਏਧਰ ਓਧਰ ਕਿਤੇ ਨਹੀਂ ਭਟਕਦਾ, ਉਹ ਆਪਣੇ ਨਿਸਚੇ ਉੱਤੇ ਦ੍ਰਿੜ੍ਹ ਰਹਿੰਦਾ ਹੈ॥ ੨੦੬॥',
-      hi: 'कबीर जी कहते हैं-जो मनुष्य हरि का स्मरण करता है, वही इस संसार में सच्चा सुखी है। जिसे सृजनहार प्रभु स्वयं रक्षा प्रदान करते हैं, वह कभी किसी दिशा में नहीं भटकता॥ २०६॥',
-      en: 'Kabir Ji says: Whoever meditates on the Lord is truly happy in this world! Protected by the Creator, he never wavers or wanders anywhere.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जो मनुष्य हरि का स्मरण करता है, वही इस संसार में सच्चा सुखी है। जिसे सृजनहार प्रभु स्वयं रक्षा प्रदान करते हैं, वह कभी किसी दिशा में नहीं भटकता॥ २०६॥',
+      en: 'Satguru Kabir Saheb proclaims: Whoever meditates on the Lord is truly happy in this world! Protected by the Creator, he never wavers or wanders anywhere.',
     },
     chintan: {
       pb: 'ਹਰਿ-ਸਿਮਰਨ ਹੀ ਜੀਵ ਨੂੰ ਸੱਚਾ ਸੁਖ, ਅਡੋਲਤਾ ਅਤੇ ਪ੍ਰਭੂ ਰੱਖਿਆ ਬਖ਼ਸ਼ਦਾ ਹੈ।',
@@ -13033,8 +13033,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਹੇ ਕਬੀਰ ! ਬੁਰਿਆਈਆਂ ਦੀ ਘਾਣੀ ਵਿੱਚ ਪੀੜੇ ਜਾ ਰਹਿਆਂ ਨੂੰ ਸਾਨੂੰ ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਕੱਢ ਕੇ ਛੁਡਾ ਲਿਆ ਹੈ। ਪਿਛਲੇ ਜਨਮਾਂ ਦੀ ਸ਼ਰਧਾ-ਪ੍ਰੀਤ, ਜੋ ਹਿਰਦੇ ਵਿਚ ਸੀ, ਉਹ ਹੁਣ ਪ੍ਰਗਟ ਆ ਹੋਈ ਹੈ॥ ੨੦੭॥',
-      hi: 'कबीर जी कहते हैं-विकारों के कोल्हू में पिसे जा रहे हमको सतगुरु ने कृपा करके बचा लिया। पूर्व जन्मों की भक्ति-श्रद्धा जो हृदय में सोई थी, वह अब प्रकट हो गई है॥ २०७॥',
-      en: 'Kabir Ji says: As I was being crushed in the oil-press of vices, the True Guru saved me! The devotional destiny and faith accumulated from past lives has now manifested.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-विकारों के कोल्हू में पिसे जा रहे हमको सतगुरु ने कृपा करके बचा लिया। पूर्व जन्मों की भक्ति-श्रद्धा जो हृदय में सोई थी, वह अब प्रकट हो गई है॥ २०७॥',
+      en: 'Satguru Kabir Saheb proclaims: As I was being crushed in the oil-press of vices, the True Guru saved me! The devotional destiny and faith accumulated from past lives has now manifested.',
     },
     chintan: {
       pb: 'ਗੁਰੂ ਦੀ ਮੇਹਰ ਨਾਲ ਜੀਵ ਪਾਪਾਂ ਦੀ ਘਾਣੀ ਤੋਂ ਬਚਦਾ ਹੈ ਅਤੇ ਪੂਰਬਲੇ ਭਾਗ ਜਾਗ ਪੈਂਦੇ ਹਨ।',
@@ -13105,9 +13105,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਟਾਲ-ਮਟੋਲ ਕਰਦਿਆਂ ਉਮਰ ਦਾ ਸਮਾਂ ਬੀਤ ਗਿਆ ਅਤੇ ਵਿਕਾਰਾਂ ਦੇ ਪਾਪਾਂ ਦਾ ਲੇਖਾ-ਬਿਆਜ ਵਧਦਾ ਚਲਾ ਗਿਆ। ਨਾ ਹਰੀ ਦਾ ਸਿਮਰਨ ਕੀਤਾ, ਨਾ ਪਾਪਾਂ ਦਾ ਖਾਤਾ ਮਿਟਿਆ, ਅਤੇ ਅੰਤ ਮੌਤ ਆ ਪਹੁੰਚੀ!॥ ੨੦੮॥',
-      hi: 'कबीर जी कहते हैं-टालमटोल करते हुए जीवन बीत गया और पापों का ऋण/ब्याज बढ़ता चला गया। न तो हरि का भजन किया, न पापों का खाता कटा, और अंत में काल आ पहुंचा!॥ २०८॥',
-      en: 'Kabir Ji says: Procrastinating day by day, life slipped away while the compounding interest of sins kept growing. Neither was God worshiped, nor was the karmic debt cleared, and Death arrived at the door!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਟਾਲ-ਮਟੋਲ ਕਰਦਿਆਂ ਉਮਰ ਦਾ ਸਮਾਂ ਬੀਤ ਗਿਆ ਅਤੇ ਵਿਕਾਰਾਂ ਦੇ ਪਾਪਾਂ ਦਾ ਲੇਖਾ-ਬਿਆਜ ਵਧਦਾ ਚਲਾ ਗਿਆ। ਨਾ ਹਰੀ ਦਾ ਸਿਮਰਨ ਕੀਤਾ, ਨਾ ਪਾਪਾਂ ਦਾ ਖਾਤਾ ਮਿਟਿਆ, ਅਤੇ ਅੰਤ ਮੌਤ ਆ ਪਹੁੰਚੀ!॥ ੨੦੮॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-टालमटोल करते हुए जीवन बीत गया और पापों का ऋण/ब्याज बढ़ता चला गया। न तो हरि का भजन किया, न पापों का खाता कटा, और अंत में काल आ पहुंचा!॥ २०८॥',
+      en: 'Satguru Kabir Saheb proclaims: Procrastinating day by day, life slipped away while the compounding interest of sins kept growing. Neither was God worshiped, nor was the karmic debt cleared, and Death arrived at the door!',
     },
     chintan: {
       pb: 'ਸਿਮਰਨ ਵਿੱਚ ਦੇਰੀ ਕਰਨ ਨਾਲ ਪਾਪਾਂ ਦਾ ਭਾਰ ਵਧਦਾ ਹੈ; ਮੌਤ ਤੋਂ ਪਹਿਲਾਂ ਪ੍ਰਭੂ ਨਾਲ ਸਾਂਝ ਪਾਉਣੀ ਜ਼ਰੂਰੀ ਹੈ।',
@@ -13190,7 +13190,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਮਨ ਭੌਂਕਣ ਵਾਲੇ ਕੁੱਤੇ ਸਮਾਨ ਹੈ, ਜਿਹੜਾ ਝੂਠੇ ਵਿਕਾਰਾਂ (ਮੁਰਦਾਰ ਪਦਾਰਥਾਂ) ਪਿੱਛੇ ਦੌੜਦਾ ਫਿਰਦਾ ਹੈ। ਪਰ ਪ੍ਰਭੂ ਦੀ ਮਿਹਰ ਨਾਲ ਜਦੋਂ ਸਤਿਗੁਰੂ ਜੀ ਮਿਲੇ, ਤਾਂ ਉਨ੍ਹਾਂ ਨੇ ਹਉਮੈ ਅਤੇ ਝੂਠੀਆਂ ਵਾਸਨਾਵਾਂ ਤੋਂ ਛੁਡਾ ਲਿਆ।॥ ੨੦੯॥',
-      hi: 'गुरु अर्जन देव जी फरमाते हैं-यह मन भौंकने वाले कुत्ते के समान है, जो झूठे विकारों (मुर्दार पदार्थों) के पीछे दौड़ता रहता है। परंतु प्रभु कृपा से जब सतगुरु मिले, तो उन्होंने अहंकार और वासनाओं से मुक्त करा दिया।॥ २०९॥',
+      hi: 'गुरु अर्जन देव जी सतगुरु कबीर साहेब फरमाते हैं-यह मन भौंकने वाले कुत्ते के समान है, जो झूठे विकारों (मुर्दार पदार्थों) के पीछे दौड़ता रहता है। परंतु प्रभु कृपा से जब सतगुरु मिले, तो उन्होंने अहंकार और वासनाओं से मुक्त करा दिया।॥ २०९॥',
       en: 'Guru Arjan Dev Ji teaches: This mind is like a barking dog, running after false worldly corpses. But through divine grace, when the True Guru was found, He liberated me from ego and futile pursuits.',
     },
     chintan: {
@@ -13274,7 +13274,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਧਰਤੀ ਸਾਧੂ-ਸੰਤਾਂ ਦੀ ਸੰਗਤ-ਧਰਮਸਾਲ ਹੈ, ਪਰ ਇਸ ਉੱਤੇ ਮੰਦਕਰਮੀ ਲੋਕ ਕਬਜ਼ਾ ਕਰ ਕੇ ਬੈਠ ਜਾਂਦੇ ਹਨ। ਧਰਤੀ ਉਨ੍ਹਾਂ ਦਾ ਭਾਰ ਸਹਿਣ ਨਹੀਂ ਕਰਦੀ, ਸਗੋਂ ਉਨ੍ਹਾਂ ਨੂੰ ਆਪਣੇ ਹੇਠਾਂ ਧਸਾ ਕੇ (ਨਾਸ਼ ਕਰਕੇ) ਛੱਡਦੀ ਹੈ।॥ ੨੧੦॥',
-      hi: 'गुरु अर्जन देव जी फरमाते हैं-यह धरती साधु-संतों की धर्मशाल है, परंतु इस पर दुराचारी लोग अधिकार जमा लेते हैं। धरती उनका भार सहन नहीं करती, बल्कि उन्हें विनाश की गर्त में धकेल देती है।॥ २१०॥',
+      hi: 'गुरु अर्जन देव जी सतगुरु कबीर साहेब फरमाते हैं-यह धरती साधु-संतों की धर्मशाल है, परंतु इस पर दुराचारी लोग अधिकार जमा लेते हैं। धरती उनका भार सहन नहीं करती, बल्कि उन्हें विनाश की गर्त में धकेल देती है।॥ २१०॥',
       en: 'Guru Arjan Dev Ji teaches: This earth is the sanctuary of Saints, yet thieves and evildoers try to encroach upon it. Earth bears no burden for the wicked; it ultimately swallows and destroys them.',
     },
     chintan: {
@@ -13358,7 +13358,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਚੌਲਾਂ ਦਾ ਦਾਣਾ ਕੱਢਣ ਲਈ ਛਿੱਲੜ ਉੱਤੇ ਵੀ ਮੋਹਲੇ ਦੀ ਸੱਟ ਪੈਂਦੀ ਹੈ, ਤਿਵੇਂ ਹੀ ਜੋ ਲੋਕ ਖੋਟੇ ਵਿਕਾਰੀਆਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਬੈਠਦੇ ਹਨ, ਧਰਮਰਾਜ ਉਨ੍ਹਾਂ ਕੋਲੋਂ ਵੀ ਲੇਖਾ ਮੰਗਦਾ ਹੈ ਅਤੇ ਸਜ਼ਾ ਦਿੰਦਾ ਹੈ।॥ ੨੧੧॥',
-      hi: 'गुरु अर्जन देव जी फरमाते हैं-जैसे चावल निकालने के लिए छिलके पर भी मूसल की मार पड़ती है, वैसे ही जो लोग बुरों की संगति में बैठते हैं, धर्मराज उनसे भी पापों का हिसाब मांगता है और दंड देता है।॥ २११॥',
+      hi: 'गुरु अर्जन देव जी सतगुरु कबीर साहेब फरमाते हैं-जैसे चावल निकालने के लिए छिलके पर भी मूसल की मार पड़ती है, वैसे ही जो लोग बुरों की संगति में बैठते हैं, धर्मराज उनसे भी पापों का हिसाब मांगता है और दंड देता है।॥ २११॥',
       en: 'Guru Arjan Dev Ji teaches: Just as the husk gets pounded by the pestle to extract the rice grain, so do those who associate with evil companions face judgment and punishment from the Righteous Judge.',
     },
     chintan: {
@@ -13587,9 +13587,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਕਬੀਰ ਜੀ ਦੇ ਹਵਾਲੇ ਨਾਲ ਫਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਕਬੀਰ! ਸੰਸਾਰ ਵਿੱਚ ਸਾਡਾ ਕੋਈ ਸਥਾਈ ਸਾਥੀ ਨਹੀਂ ਅਤੇ ਨਾ ਅਸੀਂ ਕਿਸੇ ਦੇ ਹਾਂ। ਜਿਸ ਪਰਮਾਤਮਾ ਨੇ ਇਹ ਸ੍ਰਿਸ਼ਟੀ ਰਚੀ ਹੈ, ਅਸੀਂ ਉਸੇ ਦੀ ਯਾਦ ਵਿੱਚ ਲੀਨ ਰਹਿੰਦੇ ਹਾਂ।॥ ੨੧੪॥',
-      hi: 'गुरु अर्जन देव जी कबीर जी के हवाले से फरमाते हैं-हे कबीर! संसार में हमारा कोई नहीं है और न हम किसी के हैं। जिस प्रभु ने यह रचना रची है, हम उसी की भक्ति में लीन रहते हैं।॥ २१४॥',
-      en: 'Guru Arjan Dev Ji teaches through Kabir Ji: O Kabir, no one in this world belongs to us, nor do we belong to anyone. We remain forever absorbed in the Creator who fashioned this universe.',
+      pb: 'ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਹਵਾਲੇ ਨਾਲ ਫਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਕਬੀਰ! ਸੰਸਾਰ ਵਿੱਚ ਸਾਡਾ ਕੋਈ ਸਥਾਈ ਸਾਥੀ ਨਹੀਂ ਅਤੇ ਨਾ ਅਸੀਂ ਕਿਸੇ ਦੇ ਹਾਂ। ਜਿਸ ਪਰਮਾਤਮਾ ਨੇ ਇਹ ਸ੍ਰਿਸ਼ਟੀ ਰਚੀ ਹੈ, ਅਸੀਂ ਉਸੇ ਦੀ ਯਾਦ ਵਿੱਚ ਲੀਨ ਰਹਿੰਦੇ ਹਾਂ।॥ ੨੧੪॥',
+      hi: 'गुरु अर्जन देव जी सतगुरु कबीर साहेब के हवाले से सतगुरु कबीर साहेब फरमाते हैं-हे कबीर! संसार में हमारा कोई नहीं है और न हम किसी के हैं। जिस प्रभु ने यह रचना रची है, हम उसी की भक्ति में लीन रहते हैं।॥ २१४॥',
+      en: 'Guru Arjan Dev Ji teaches through Satguru Kabir Saheb: O Kabir, no one in this world belongs to us, nor do we belong to anyone. We remain forever absorbed in the Creator who fashioned this universe.',
     },
     chintan: {
       pb: 'ਸੰਸਾਰੀ ਰਿਸ਼ਤੇ ਨਾਸ਼ਵੰਤ ਹਨ; ਕੇਵਲ ਕਰਤਾਰ ਨਾਲ ਹੀ ਸਦੀਵੀ ਸਾਂਝ ਹੈ।',
@@ -13668,9 +13668,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਆਟਾ ਚਿੱਕੜ ਵਿੱਚ ਡਿੱਗ ਪਵੇ ਤਾਂ ਬੇਅਰਥ ਚਲਾ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਉਮਰ ਦੇ ਸੁਆਸ ਧੰਧਿਆਂ ਵਿੱਚ ਵਿਅਰਥ ਚਲੇ ਜਾਂਦੇ ਹਨ। ਪਰ ਜੀਵਨ ਚੱਕੀ ਪੀਂਹਦਿਆਂ ਜੋ ਸੁਆਸ ਹਰੀ-ਸਿਮਰਨ ਵਿੱਚ ਲਗਾਏ, ਉਹੀ ਅੰਤ ਸਮੇਂ ਨਾਲ ਨਿਭਦੇ ਹਨ।॥ ੨੧੫॥',
-      hi: 'कबीर जी कहते हैं-जैसे आटा कीचड़ में गिर जाए तो व्यर्थ हो जाता है, वैसे ही श्वास सांसारिक प्रपंचों में नष्ट हो जाते हैं। परंतु जीवन-चक्की चलाते हुए जो श्वास प्रभु-सुमिरन में लगाए, वही अंत में साथ निभाते हैं।॥ २१५॥',
-      en: 'Kabir Ji says: Like flour dropped into the mud, life’s breaths wasted in worldly mire are lost forever. Only the breaths spent in divine remembrance while grinding the mill of life shall abide with you in the end.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜਿਵੇਂ ਆਟਾ ਚਿੱਕੜ ਵਿੱਚ ਡਿੱਗ ਪਵੇ ਤਾਂ ਬੇਅਰਥ ਚਲਾ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਉਮਰ ਦੇ ਸੁਆਸ ਧੰਧਿਆਂ ਵਿੱਚ ਵਿਅਰਥ ਚਲੇ ਜਾਂਦੇ ਹਨ। ਪਰ ਜੀਵਨ ਚੱਕੀ ਪੀਂਹਦਿਆਂ ਜੋ ਸੁਆਸ ਹਰੀ-ਸਿਮਰਨ ਵਿੱਚ ਲਗਾਏ, ਉਹੀ ਅੰਤ ਸਮੇਂ ਨਾਲ ਨਿਭਦੇ ਹਨ।॥ ੨੧੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-जैसे आटा कीचड़ में गिर जाए तो व्यर्थ हो जाता है, वैसे ही श्वास सांसारिक प्रपंचों में नष्ट हो जाते हैं। परंतु जीवन-चक्की चलाते हुए जो श्वास प्रभु-सुमिरन में लगाए, वही अंत में साथ निभाते हैं।॥ २१५॥',
+      en: 'Satguru Kabir Saheb proclaims: Like flour dropped into the mud, life’s breaths wasted in worldly mire are lost forever. Only the breaths spent in divine remembrance while grinding the mill of life shall abide with you in the end.',
     },
     chintan: {
       pb: 'ਸੁਆਸ-ਸੁਆਸ ਸਿਮਰਨ ਹੀ ਅਸਲ ਕਮਾਈ ਹੈ ਜੋ ਪਰਲੋਕ ਵਿੱਚ ਨਾਲ ਜਾਂਦੀ ਹੈ।',
@@ -13749,9 +13749,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਮਨ ਸਭ ਜਾਣਦਾ ਹੋਇਆ ਵੀ ਜਾਣ-ਬੁੱਝ ਕੇ ਪਾਪ-ਵਿਕਾਰ ਕਰਦਾ ਹੈ। ਅਜਿਹੇ ਮਨੁੱਖ ਦੇ ਹੱਥ ਵਿੱਚ ਦੀਵਾ (ਗਿਆਨ) ਹੋਣ ਦਾ ਕੀ ਲਾਭ, ਜੋ ਦੀਵਾ ਹੁੰਦਿਆਂ ਵੀ ਖੂਹ ਵਿੱਚ ਡਿੱਗ ਪਵੇ? ਅਰਥਾਤ ਜਾਣਕਾਰੀ ਦੇ ਹੁੰਦਿਆਂ ਬੁਰਾਈ ਕਰਨਾ ਹੋਰ ਵੀ ਗੰਭੀਰ ਭੁੱਲ ਹੈ।॥ ੨੧੬॥',
-      hi: 'कबीर जी कहते हैं-मन सब जानते हुए भी जान-बूझकर पाप-विकार करता है। ऐसे मनुष्य के हाथ में दीपक (ज्ञान) होने का क्या लाभ, जो दीपक होते हुए भी कुएं में गिर पड़े? अर्थात ज्ञान होते हुए भी बुराई करना और भी गंभीर अपराध है।॥ २१६॥',
-      en: 'Kabir Ji says: The mind knows full well right from wrong, yet deliberately commits sin. What good is holding a lamp in hand if one still falls into a deep well? Knowing the truth yet choosing vice brings no wisdom.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਨ ਸਭ ਜਾਣਦਾ ਹੋਇਆ ਵੀ ਜਾਣ-ਬੁੱਝ ਕੇ ਪਾਪ-ਵਿਕਾਰ ਕਰਦਾ ਹੈ। ਅਜਿਹੇ ਮਨੁੱਖ ਦੇ ਹੱਥ ਵਿੱਚ ਦੀਵਾ (ਗਿਆਨ) ਹੋਣ ਦਾ ਕੀ ਲਾਭ, ਜੋ ਦੀਵਾ ਹੁੰਦਿਆਂ ਵੀ ਖੂਹ ਵਿੱਚ ਡਿੱਗ ਪਵੇ? ਅਰਥਾਤ ਜਾਣਕਾਰੀ ਦੇ ਹੁੰਦਿਆਂ ਬੁਰਾਈ ਕਰਨਾ ਹੋਰ ਵੀ ਗੰਭੀਰ ਭੁੱਲ ਹੈ।॥ ੨੧੬॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मन सब जानते हुए भी जान-बूझकर पाप-विकार करता है। ऐसे मनुष्य के हाथ में दीपक (ज्ञान) होने का क्या लाभ, जो दीपक होते हुए भी कुएं में गिर पड़े? अर्थात ज्ञान होते हुए भी बुराई करना और भी गंभीर अपराध है।॥ २१६॥',
+      en: 'Satguru Kabir Saheb proclaims: The mind knows full well right from wrong, yet deliberately commits sin. What good is holding a lamp in hand if one still falls into a deep well? Knowing the truth yet choosing vice brings no wisdom.',
     },
     chintan: {
       pb: 'ਕੇਵਲ ਅਕਾਦਮਿਕ ਗਿਆਨ ਕਾਫ਼ੀ ਨਹੀਂ; ਗਿਆਨ ਅਨੁਸਾਰ ਆਚਰਣ ਅਤੇ ਮਨ ਦਾ ਸੁਧਾਰ ਜ਼ਰੂਰੀ ਹੈ।',
@@ -13830,9 +13830,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੀ ਪ੍ਰੀਤ ਸਰਬ-ਗਿਆਨੀ ਪ੍ਰਭੂ ਨਾਲ ਲੱਗੀ ਹੋਈ ਹੈ, ਪਰ ਅਣਜਾਣ ਲੋਕ ਮੈਨੂੰ ਰੋਕਦੇ ਹਨ। ਭਲਾ ਉਸ ਪ੍ਰਭੂ ਨਾਲੋਂ ਪ੍ਰੀਤ ਤੋੜਨੀ ਕਿਸ ਤਰ੍ਹਾਂ ਸੰਭਵ ਹੈ, ਜਿਸ ਨੇ ਇਹ ਜਿੰਦ ਅਤੇ ਪ੍ਰਾਣ ਬਖ਼ਸ਼ੇ ਹਨ?॥ ੨੧੭॥',
-      hi: 'कबीर जी कहते हैं-मेरी प्रीति सर्वज्ञ प्रभु से लगी हुई है, परंतु अज्ञानी लोग मुझे रोकते हैं। भला उस प्रभु से प्रीति तोड़ना कैसे संभव है, जिसने यह जीवन और प्राण दिए हैं?॥ २१७॥',
-      en: 'Kabir Ji says: My love is pledged to the All-Knowing Lord, yet ignorant people try to dissuade me. How could I ever break my bond with Him who gave me my very soul and breath of life?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੀ ਪ੍ਰੀਤ ਸਰਬ-ਗਿਆਨੀ ਪ੍ਰਭੂ ਨਾਲ ਲੱਗੀ ਹੋਈ ਹੈ, ਪਰ ਅਣਜਾਣ ਲੋਕ ਮੈਨੂੰ ਰੋਕਦੇ ਹਨ। ਭਲਾ ਉਸ ਪ੍ਰਭੂ ਨਾਲੋਂ ਪ੍ਰੀਤ ਤੋੜਨੀ ਕਿਸ ਤਰ੍ਹਾਂ ਸੰਭਵ ਹੈ, ਜਿਸ ਨੇ ਇਹ ਜਿੰਦ ਅਤੇ ਪ੍ਰਾਣ ਬਖ਼ਸ਼ੇ ਹਨ?॥ ੨੧੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मेरी प्रीति सर्वज्ञ प्रभु से लगी हुई है, परंतु अज्ञानी लोग मुझे रोकते हैं। भला उस प्रभु से प्रीति तोड़ना कैसे संभव है, जिसने यह जीवन और प्राण दिए हैं?॥ २१७॥',
+      en: 'Satguru Kabir Saheb proclaims: My love is pledged to the All-Knowing Lord, yet ignorant people try to dissuade me. How could I ever break my bond with Him who gave me my very soul and breath of life?',
     },
     chintan: {
       pb: 'ਸੰਸਾਰ ਦੇ ਤਾਹਨਿਆਂ ਜਾਂ ਹੋੜਾਂ ਤੋਂ ਬਿਨਾਂ ਘਾਬਰੇ ਸੱਚੇ ਪ੍ਰਭੂ ਨਾਲ ਅਟੁੱਟ ਪ੍ਰੀਤੀ ਬਣਾਈ ਰੱਖਣੀ ਚਾਹੀਦੀ ਹੈ।',
@@ -13911,9 +13911,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਮਹਿਲਾਂ ਮਾੜੀਆਂ ਨਾਲ ਪ੍ਰੇਮ ਕਰਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਸਵਾਰ ਸਵਾਰ ਕੇ ਕਿਉਂ ਖੱਪ ਰਹੇ ਹੋ? ਅੰਤ ਤਾਂ ਤੇਰੇ ਸਰੀਰ ਦੇ ਕਾਰਜ ਲਈ ਸਾਢੇ ਤਿੰਨ ਹੱਥ (ਜਾਂ ਬਹੁਤ ਬਹੁਤ ਪੌਣੇ ਚਾਰ ਹੱਥ) ਥਾਂ ਹੀ ਕੰਮ ਆਉਣੀ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-महलों और मकानों से अत्यधिक मोह करके उन्हें संवारने में अपनी जीवन-लीला क्यों व्यर्थ कर रहे हो? अंत में इस नश्वर देह के लिए केवल साढ़े तीन या अधिकतम पौने चार हाथ भूमि ही काम आएगी।',
-      en: 'Kabir Ji says: Why waste your life in attachment to building and decorating grand houses? Ultimately, your physical body only requires three and a half cubits (or at most three and three-quarters cubits) of land for its final resting place.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਹਿਲਾਂ ਮਾੜੀਆਂ ਨਾਲ ਪ੍ਰੇਮ ਕਰਕੇ ਉਨ੍ਹਾਂ ਨੂੰ ਸਵਾਰ ਸਵਾਰ ਕੇ ਕਿਉਂ ਖੱਪ ਰਹੇ ਹੋ? ਅੰਤ ਤਾਂ ਤੇਰੇ ਸਰੀਰ ਦੇ ਕਾਰਜ ਲਈ ਸਾਢੇ ਤਿੰਨ ਹੱਥ (ਜਾਂ ਬਹੁਤ ਬਹੁਤ ਪੌਣੇ ਚਾਰ ਹੱਥ) ਥਾਂ ਹੀ ਕੰਮ ਆਉਣੀ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-महलों और मकानों से अत्यधिक मोह करके उन्हें संवारने में अपनी जीवन-लीला क्यों व्यर्थ कर रहे हो? अंत में इस नश्वर देह के लिए केवल साढ़े तीन या अधिकतम पौने चार हाथ भूमि ही काम आएगी।',
+      en: 'Satguru Kabir Saheb proclaims: Why waste your life in attachment to building and decorating grand houses? Ultimately, your physical body only requires three and a half cubits (or at most three and three-quarters cubits) of land for its final resting place.',
     },
     chintan: {
       pb: 'ਭੌਤਿਕ ਘਰਾਂ ਦੀ ਸਜਾਵਟ ਨਾਲੋਂ ਆਤਮਿਕ ਘਰ ਨੂੰ ਸੰਵਾਰਨ ਦੀ ਲੋੜ ਹੈ।',
@@ -13976,9 +13976,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੇ ਸੋਚਣ-ਚਿਤਵਣ ਨਾਲ ਕੁਝ ਨਹੀਂ ਹੁੰਦਾ, ਕਿਉਂਕਿ ਪਰਮਾਤਮਾ ਉਹ ਨਹੀਂ ਕਰਦਾ ਜੋ ਮੈਂ ਸੋਚਦਾ ਹਾਂ। ਪ੍ਰਭੂ ਆਪਣੀ ਮਰਜ਼ੀ ਅਨੁਸਾਰ ਉਹ ਕਾਰਜ ਕਰਦਾ ਹੈ ਜੋ ਮੇਰੇ ਚਿੱਤ-ਚੇਤੇ ਵਿੱਚ ਵੀ ਨਹੀਂ ਹੁੰਦਾ।',
-      hi: 'कबीर जी कहते हैं-मनुष्य के अपने सोचने-विचारने से कुछ नहीं होता। परमात्मा वह नहीं करता जो हम चाहते हैं, बल्कि वह अपनी इच्छा से वह सब घटित कर देता है जो हमारे चित्त की कल्पना में भी नहीं होता।',
-      en: 'Kabir Ji says: My own planning accomplishes nothing, for the Lord does not act according to human expectations. The Divine executes His own supreme will, doing things that have never even crossed my mind.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮੇਰੇ ਸੋਚਣ-ਚਿਤਵਣ ਨਾਲ ਕੁਝ ਨਹੀਂ ਹੁੰਦਾ, ਕਿਉਂਕਿ ਪਰਮਾਤਮਾ ਉਹ ਨਹੀਂ ਕਰਦਾ ਜੋ ਮੈਂ ਸੋਚਦਾ ਹਾਂ। ਪ੍ਰਭੂ ਆਪਣੀ ਮਰਜ਼ੀ ਅਨੁਸਾਰ ਉਹ ਕਾਰਜ ਕਰਦਾ ਹੈ ਜੋ ਮੇਰੇ ਚਿੱਤ-ਚੇਤੇ ਵਿੱਚ ਵੀ ਨਹੀਂ ਹੁੰਦਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य के अपने सोचने-विचारने से कुछ नहीं होता। परमात्मा वह नहीं करता जो हम चाहते हैं, बल्कि वह अपनी इच्छा से वह सब घटित कर देता है जो हमारे चित्त की कल्पना में भी नहीं होता।',
+      en: 'Satguru Kabir Saheb proclaims: My own planning accomplishes nothing, for the Lord does not act according to human expectations. The Divine executes His own supreme will, doing things that have never even crossed my mind.',
     },
     chintan: {
       pb: 'ਮਨੁੱਖੀ ਅਹੰਕਾਰ ਅਤੇ ਆਪਣੀ ਬੁੱਧੀ ਦੇ ਭਰੋਸੇ ਨੂੰ ਤਿਆਗ ਕੇ ਪ੍ਰਭੂ ਦੀ ਰਜ਼ਾ ਵਿੱਚ ਰਹਿਣਾ ਸਿੱਖੋ।',
@@ -14045,7 +14045,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਤੀਜੇ ਪਾਤਸ਼ਾਹ ਸ੍ਰੀ ਗੁਰੂ ਅਮਰਦਾਸ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਜੀਵਾਂ ਦੇ ਮਨ ਵਿੱਚ ਚਿੰਤਾ ਵੀ ਪ੍ਰਭੂ ਆਪ ਹੀ ਪੈਦਾ ਕਰਦਾ ਹੈ ਅਤੇ ਚਿੰਤਾ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਸ਼ਾਂਤੀ ਵੀ ਉਹ ਆਪ ਹੀ ਬਖ਼ਸ਼ਦਾ ਹੈ। ਹੇ ਨਾਨਕ! ਉਸੇ ਇੱਕ ਪਰਮਾਤਮਾ ਦੀ ਸਿਫ਼ਤ-ਸਲਾਹ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ ਜੋ ਸਾਰੇ ਜੀਵਾਂ ਦੀ ਸੰਭਾਲ ਤੇ ਪਾਲਣਾ ਕਰਦਾ ਹੈ।',
-      hi: 'तृतीय गुरु श्री गुरु अमरदास जी फरमाते हैं-परमात्मा स्वयं ही जीवों के भीतर चिंतन-चिंता उत्पन्न करता है और वही उन्हें चिंता-मुक्त परम शांति प्रदान करता है। हे नानक! हमें उसी एक प्रभु की स्तुति करनी चाहिए जो सृष्टि के समस्त जीवों की सार-संभाल करता है।',
+      hi: 'तृतीय गुरु श्री गुरु अमरदास जी सतगुरु कबीर साहेब फरमाते हैं-परमात्मा स्वयं ही जीवों के भीतर चिंतन-चिंता उत्पन्न करता है और वही उन्हें चिंता-मुक्त परम शांति प्रदान करता है। हे नानक! हमें उसी एक प्रभु की स्तुति करनी चाहिए जो सृष्टि के समस्त जीवों की सार-संभाल करता है।',
       en: 'Third Guru, Guru Amar Das Ji, reflects: The Lord Himself causes worry/concern to arise in the mind, and He Himself bestows worry-free peace. O Nanak, praise that Lord alone who sustains and takes care of all creation.',
     },
     chintan: {
@@ -14113,7 +14113,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     ],
     bhavarth: {
       pb: 'ਪੰਜਵੇਂ ਪਾਤਸ਼ਾਹ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਜੀਵਨ ਵਿੱਚ ਪਰਮਾਤਮਾ ਦਾ ਸਿਮਰਨ ਨਹੀਂ ਕੀਤਾ ਅਤੇ ਸਦਾ ਲਾਲਚ ਦੇ ਅਧੀਨ ਭਟਕਦਾ ਰਿਹਾ। ਪਾਪ ਕਰਦਿਆਂ-ਕਰਦਿਆਂ ਹੀ ਉਹ ਮੌਤ ਦੇ ਮੂੰਹ ਵਿੱਚ ਜਾ ਪਿਆ ਅਤੇ ਇੱਕ ਛਿਨ ਵਿੱਚ ਹੀ ਉਸ ਦੀ ਕੀਮਤੀ ਉਮਰ ਸਮਾਪਤ ਹੋ ਗਈ।',
-      hi: 'पंचम गुरु श्री गुरु अर्जुन देव जी फरमाते हैं-मनुष्य ने जीवन भर राम का नाम स्मरण नहीं किया और केवल तृष्णा व लोभ में भटकता रहा। पाप-कर्म करते हुए ही उसकी मृत्यु हो गई और क्षण भर में ही उसकी अनमोल सांसारिक आयु समाप्त हो गई।',
+      hi: 'पंचम गुरु श्री गुरु अर्जुन देव जी सतगुरु कबीर साहेब फरमाते हैं-मनुष्य ने जीवन भर राम का नाम स्मरण नहीं किया और केवल तृष्णा व लोभ में भटकता रहा। पाप-कर्म करते हुए ही उसकी मृत्यु हो गई और क्षण भर में ही उसकी अनमोल सांसारिक आयु समाप्त हो गई।',
       en: 'Fifth Guru, Guru Arjan Dev Ji, reflects: The mortal did not contemplate the Lord and wandered around in greed. Committing sins, he died, and in an instant, his life span was exhausted.',
     },
     chintan: {
@@ -14177,9 +14177,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਸਰੀਰ ਕੱਚੀ ਮਿੱਟੀ ਦੀ ਮਟਕੀ ਦੀ ਤਰ੍ਹਾਂ ਹੈ, ਜੋ ਬੇਹੱਦ ਨਾਜ਼ੁਕ ਹੈ। ਜੇਕਰ ਇਸ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਸਫਲ ਕਰਨਾ ਹੈ (ਸਾਬਤ ਰੱਖਣਾ ਹੈ), ਤਾਂ ਰਾਮ ਦਾ ਭਜਨ ਕਰ, ਨਹੀਂ ਤਾਂ ਇਹ ਨਿਰਸੰਦੇਹ ਨਾਸ ਹੋ ਜਾਵੇਗਾ।',
-      hi: 'कबीर जी कहते हैं-यह मानव शरीर मिट्टी की एक कच्ची कुल्हड़ (मटकी) की तरह है, जो अत्यंत क्षणभंगुर है। यदि तुम इस जीवन को सफल व अमर (साबुत) रखना चाहते हो, तो राम का सुमिरन करो, अन्यथा यह नष्ट हो जाएगा।',
-      en: 'Kabir Ji says: This body is like a fragile container of unbaked clay, highly perishable. If you wish to preserve its true essence and make it successful, contemplate the Lord; otherwise, it will collapse and break.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਸਰੀਰ ਕੱਚੀ ਮਿੱਟੀ ਦੀ ਮਟਕੀ ਦੀ ਤਰ੍ਹਾਂ ਹੈ, ਜੋ ਬੇਹੱਦ ਨਾਜ਼ੁਕ ਹੈ। ਜੇਕਰ ਇਸ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਸਫਲ ਕਰਨਾ ਹੈ (ਸਾਬਤ ਰੱਖਣਾ ਹੈ), ਤਾਂ ਰਾਮ ਦਾ ਭਜਨ ਕਰ, ਨਹੀਂ ਤਾਂ ਇਹ ਨਿਰਸੰਦੇਹ ਨਾਸ ਹੋ ਜਾਵੇਗਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यह मानव शरीर मिट्टी की एक कच्ची कुल्हड़ (मटकी) की तरह है, जो अत्यंत क्षणभंगुर है। यदि तुम इस जीवन को सफल व अमर (साबुत) रखना चाहते हो, तो राम का सुमिरन करो, अन्यथा यह नष्ट हो जाएगा।',
+      en: 'Satguru Kabir Saheb proclaims: This body is like a fragile container of unbaked clay, highly perishable. If you wish to preserve its true essence and make it successful, contemplate the Lord; otherwise, it will collapse and break.',
     },
     chintan: {
       pb: 'ਸਰੀਰਕ ਸੁੰਦਰਤਾ ਅਤੇ ਤਾਕਤ ਦਾ ਅਹੰਕਾਰ ਝੂਠਾ ਹੈ, ਕਿਉਂਕਿ ਇਹ ਕੱਚੀ ਮਿੱਟੀ ਵਾਂਗ ਢਹਿ ਜਾਣ ਵਾਲਾ ਹੈ।',
@@ -14242,9 +14242,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਸਾਨੂੰ ਹਮੇਸ਼ਾ ਸੁਆਸ-ਸੁਆਸ ਕੇਸ਼ਵ (ਪ੍ਰਮਾਤਮਾ) ਦਾ ਨਾਮ ਜਪਦੇ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਕਦੇ ਵੀ ਬੇ-ਖ਼ਬਰ ਹੋ ਕੇ (ਮੋਹ-ਮਾਇਆ ਦੀ ਨੀਂਦ ਵਿੱਚ) ਨਹੀਂ ਸੌਣਾ ਚਾਹੀਦਾ। ਦਿਨ-ਰਾਤ ਨਿਰੰਤਰ ਪੁਕਾਰਨ ਨਾਲ, ਪਰਮੇਸ਼ੁਰ ਕਦੇ ਨਾ ਕਦੇ ਸਾਡੀ ਬੇਨਤੀ ਜ਼ਰੂਰ ਸੁਣ ਲਵੇਗਾ।',
-      hi: 'कबीर जी कहते हैं-निरंतर कूटते रहें, अज्ञानता की नींद में न सोएं। दिन-रात निरंतर पुकारने से कभी न कभी दयालु परमात्मा आपकी करुण पुकार अवश्य ही सुन लेंगे।',
-      en: 'Kabir Ji says: Continually call upon the Lord (Keshav); do not slumber in deep spiritual ignorance and heedlessness. By crying out to Him day and night, the compassionate Lord will eventually hear your prayer.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸਾਨੂੰ ਹਮੇਸ਼ਾ ਸੁਆਸ-ਸੁਆਸ ਕੇਸ਼ਵ (ਪ੍ਰਮਾਤਮਾ) ਦਾ ਨਾਮ ਜਪਦੇ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਕਦੇ ਵੀ ਬੇ-ਖ਼ਬਰ ਹੋ ਕੇ (ਮੋਹ-ਮਾਇਆ ਦੀ ਨੀਂਦ ਵਿੱਚ) ਨਹੀਂ ਸੌਣਾ ਚਾਹੀਦਾ। ਦਿਨ-ਰਾਤ ਨਿਰੰਤਰ ਪੁਕਾਰਨ ਨਾਲ, ਪਰਮੇਸ਼ੁਰ ਕਦੇ ਨਾ ਕਦੇ ਸਾਡੀ ਬੇਨਤੀ ਜ਼ਰੂਰ ਸੁਣ ਲਵੇਗਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-निरंतर कूटते रहें, अज्ञानता की नींद में न सोएं। दिन-रात निरंतर पुकारने से कभी न कभी दयालु परमात्मा आपकी करुण पुकार अवश्य ही सुन लेंगे।',
+      en: 'Satguru Kabir Saheb proclaims: Continually call upon the Lord (Keshav); do not slumber in deep spiritual ignorance and heedlessness. By crying out to Him day and night, the compassionate Lord will eventually hear your prayer.',
     },
     chintan: {
       pb: 'ਨਿਰੰਤਰ ਅਭਿਆਸ ਅਤੇ ਅਣਥੱਕ ਅਰਦਾਸ ਹੀ ਪਰਮਾਤਮਾ ਨਾਲ ਮਿਲਾਪ ਦਾ ਮਾਰਗ ਪ੍ਰਸ਼ਸਤ ਕਰਦੀ ਹੈ।',
@@ -14323,9 +14323,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਸਰੀਰ ਕਾਮ-ਵਾਸਨਾਵਾਂ ਨਾਲ ਭਰਿਆ ਇੱਕ ਸੰਘਣਾ ਕੇਲਿਆਂ ਦਾ ਜੰਗਲ ਹੈ, ਜਿਸ ਵਿੱਚ ਮਨ ਇੱਕ ਮਸਤ ਹਾਥੀ ਬਣਿਆ ਹੋਇਆ ਹੈ। ਗੁਰੂ ਦਾ ਗਿਆਨ ਰੂਪੀ ਅੰਕੁਸ਼ ਇੱਕ ਅਨਮੋਲ ਰਤਨ ਹੈ ਅਤੇ ਇਸ ਅੰਕੁਸ਼ ਰਾਹੀਂ ਮਨ ਨੂੰ ਕਾਬੂ ਕਰਨ ਵਾਲਾ ਕੋਈ ਵਿਰਲਾ ਹੀ ਸੰਤ ਹੁੰਦਾ ਹੈ।',
-      hi: 'कबीर जी कहते हैं-यह मानव शरीर वासनाओं का घना कजली वन है, और इसमें मन एक उन्मत्त, मस्त हाथी के समान भटक रहा है। गुरुदेव का दिव्य ज्ञान रूपी अंकुश ही वह रत्न है जो इस मदमस्त मन को नियंत्रित कर सकता है, और इस अंकुश को चलाने वाला महावत कोई विरला संत ही होता है।',
-      en: 'Kabir Ji says: This body is like a dense jungle of impulses, and the mind is like an untamed, intoxicated elephant roaming within it. The jewel of divine wisdom is the goad (ankush) to restrain it, and rare is the saintly driver who knows how to apply it.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਹ ਸਰੀਰ ਕਾਮ-ਵਾਸਨਾਵਾਂ ਨਾਲ ਭਰਿਆ ਇੱਕ ਸੰਘਣਾ ਕੇਲਿਆਂ ਦਾ ਜੰਗਲ ਹੈ, ਜਿਸ ਵਿੱਚ ਮਨ ਇੱਕ ਮਸਤ ਹਾਥੀ ਬਣਿਆ ਹੋਇਆ ਹੈ। ਗੁਰੂ ਦਾ ਗਿਆਨ ਰੂਪੀ ਅੰਕੁਸ਼ ਇੱਕ ਅਨਮੋਲ ਰਤਨ ਹੈ ਅਤੇ ਇਸ ਅੰਕੁਸ਼ ਰਾਹੀਂ ਮਨ ਨੂੰ ਕਾਬੂ ਕਰਨ ਵਾਲਾ ਕੋਈ ਵਿਰਲਾ ਹੀ ਸੰਤ ਹੁੰਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-यह मानव शरीर वासनाओं का घना कजली वन है, और इसमें मन एक उन्मत्त, मस्त हाथी के समान भटक रहा है। गुरुदेव का दिव्य ज्ञान रूपी अंकुश ही वह रत्न है जो इस मदमस्त मन को नियंत्रित कर सकता है, और इस अंकुश को चलाने वाला महावत कोई विरला संत ही होता है।',
+      en: 'Satguru Kabir Saheb proclaims: This body is like a dense jungle of impulses, and the mind is like an untamed, intoxicated elephant roaming within it. The jewel of divine wisdom is the goad (ankush) to restrain it, and rare is the saintly driver who knows how to apply it.',
     },
     chintan: {
       pb: 'ਮਨ ਦੀ ਮਸਤੀ ਅਤੇ ਵਿਸ਼ੇ-ਵਿਕਾਰਾਂ ਦੀ ਭਟਕਣਾ ਨੂੰ ਕੇਵਲ ਗੁਰਮਤਿ ਗਿਆਨ ਰਾਹੀਂ ਹੀ ਕਾਬੂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।',
@@ -14339,7 +14339,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     },
     samarpan: {
       pb: 'ਆਪਣੇ ਮਨ ਦੀ ਚਾਲ ਅਤੇ ਬੁੱਧੀ ਨੂੰ ਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰੋ।',
-      hi: 'अपने मन के अहंकार और उसकी दिशा को सद्गुरु के चरणों में अर्पित करें।',
+      hi: 'अपने मन के अहंकार और उसकी दिशा को सतगुरु के चरणों में अर्पित करें।',
       en: 'Surrender the reins and direction of your mind completely to the guidance of the Enlightener.',
     },
     sggsReference: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ, ਅੰਗ ੧੩੭੬ (Salok Bhagat Kabir Jio Ke)',
@@ -14388,9 +14388,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਇੱਕ ਬੇਸ਼ਕੀਮਤੀ ਰਤਨ ਹੈ, ਆਪਣੇ ਮੁੱਖ ਨੂੰ ਇਸ ਰਤਨ ਦੀ ਗੁੱਥੀ (ਥੈਲੀ) ਬਣਾ ਕੇ ਰੱਖੋ। ਇਸ ਗਿਆਨ ਦੀ ਥੈਲੀ ਨੂੰ ਕੇਵਲ ਉਸ ਪਾਰਖੂ (ਗਿਆਨੀ ਜਗਿਆਸੂ) ਸਾਹਮਣੇ ਹੀ ਖੋਲ੍ਹੋ ਜੋ ਇਸ ਦੀ ਕਦਰ ਕਰਦਾ ਹੋਵੇ; ਕੋਈ ਸੱਚਾ ਗਾਹਕ ਮਿਲੇਗਾ ਜੋ ਆਪਣਾ ਤਨ-ਮਨ ਵਾਰ ਕੇ ਇਸ ਨੂੰ ਮਹਿੰਗੇ ਮੁੱਲ ਖਰੀਦ ਲਵੇਗਾ।',
-      hi: 'कबीर जी कहते हैं-राम का नाम एक बहुमूल्य रत्न है, अपने मुख को इस रत्न को सहेजने वाली कोथली (थैली) बना लें। इस थैली को केवल किसी सच्चे पारखी (ज्ञानी) के समक्ष ही खोलें; कोई ऐसा खोजी ग्राहक अवश्य मिलेगा, जो अपना सर्वस्व अर्पण कर इसे अत्यधिक मूल्य पर सहर्ष ग्रहण कर लेगा।',
-      en: 'Kabir Ji says: The Lord\'s Name is an invaluable jewel; make your mouth the secure pouch to keep it. Open this spiritual pouch only before a true evaluator of truth; eventually, a devoted buyer will arrive and purchase it at a premium price.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਇੱਕ ਬੇਸ਼ਕੀਮਤੀ ਰਤਨ ਹੈ, ਆਪਣੇ ਮੁੱਖ ਨੂੰ ਇਸ ਰਤਨ ਦੀ ਗੁੱਥੀ (ਥੈਲੀ) ਬਣਾ ਕੇ ਰੱਖੋ। ਇਸ ਗਿਆਨ ਦੀ ਥੈਲੀ ਨੂੰ ਕੇਵਲ ਉਸ ਪਾਰਖੂ (ਗਿਆਨੀ ਜਗਿਆਸੂ) ਸਾਹਮਣੇ ਹੀ ਖੋਲ੍ਹੋ ਜੋ ਇਸ ਦੀ ਕਦਰ ਕਰਦਾ ਹੋਵੇ; ਕੋਈ ਸੱਚਾ ਗਾਹਕ ਮਿਲੇਗਾ ਜੋ ਆਪਣਾ ਤਨ-ਮਨ ਵਾਰ ਕੇ ਇਸ ਨੂੰ ਮਹਿੰਗੇ ਮੁੱਲ ਖਰੀਦ ਲਵੇਗਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-राम का नाम एक बहुमूल्य रत्न है, अपने मुख को इस रत्न को सहेजने वाली कोथली (थैली) बना लें। इस थैली को केवल किसी सच्चे पारखी (ज्ञानी) के समक्ष ही खोलें; कोई ऐसा खोजी ग्राहक अवश्य मिलेगा, जो अपना सर्वस्व अर्पण कर इसे अत्यधिक मूल्य पर सहर्ष ग्रहण कर लेगा।',
+      en: 'Satguru Kabir Saheb proclaims: The Lord\'s Name is an invaluable jewel; make your mouth the secure pouch to keep it. Open this spiritual pouch only before a true evaluator of truth; eventually, a devoted buyer will arrive and purchase it at a premium price.',
     },
     chintan: {
       pb: 'ਅਧਿਆਤਮਿਕ ਰਹੱਸ ਅਤੇ ਨਾਮ ਦੀ ਚਰਚਾ ਕੇਵਲ ਯੋਗ ਅਤੇ ਸੱਚੇ ਜਗਿਆਸੂਆਂ ਨਾਲ ਹੀ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।',
@@ -14453,9 +14453,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਸਾਰੀ ਉਮਰ ਰਾਮ ਦੇ ਨਾਮ ਦੀ ਮਹਿਮਾ ਨੂੰ ਨਹੀਂ ਸਮਝਿਆ ਅਤੇ ਕੇਵਲ ਆਪਣੇ ਵੱਡੇ ਪਰਿਵਾਰ ਦੀ ਪਾਲਣਾ ਕਰਨ ਵਿੱਚ ਹੀ ਲੱਗਾ ਰਿਹਾ। ਉਹ ਸੰਸਾਰ ਦੇ ਧੰਦਿਆਂ ਵਿੱਚ ਹੀ ਖਪ ਕੇ ਮਰ ਗਿਆ, ਪਰ ਉਸਦੇ ਮੁੱਖ ਤੋਂ ਕਦੇ ਵੀ ਰਾਮ ਨਾਮ ਦੀ ਪੁਕਾਰ ਨਹੀਂ ਨਿਕਲੀ।',
-      hi: 'कबीर जी कहते हैं-मनुष्य ने जीवन भर राम-नाम के सच्चे महत्व को नहीं जाना, केवल अपने बड़े परिवार (कुनबे) को पालने में ही व्यस्त रहा। वह संसार के प्रपंचों और धंधों में ही समाप्त हो गया, पर उसके कंठ से कभी प्रभु-स्मरण की पुकार नहीं गूंजी।',
-      en: 'Kabir Ji says: The mortal never recognized the true value of the Lord\'s Name, and remained occupied only in feeding his large family. He died entangled in mundane chores, and his mouth never uttered the call of devotion.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਮਨੁੱਖ ਨੇ ਸਾਰੀ ਉਮਰ ਰਾਮ ਦੇ ਨਾਮ ਦੀ ਮਹਿਮਾ ਨੂੰ ਨਹੀਂ ਸਮਝਿਆ ਅਤੇ ਕੇਵਲ ਆਪਣੇ ਵੱਡੇ ਪਰਿਵਾਰ ਦੀ ਪਾਲਣਾ ਕਰਨ ਵਿੱਚ ਹੀ ਲੱਗਾ ਰਿਹਾ। ਉਹ ਸੰਸਾਰ ਦੇ ਧੰਦਿਆਂ ਵਿੱਚ ਹੀ ਖਪ ਕੇ ਮਰ ਗਿਆ, ਪਰ ਉਸਦੇ ਮੁੱਖ ਤੋਂ ਕਦੇ ਵੀ ਰਾਮ ਨਾਮ ਦੀ ਪੁਕਾਰ ਨਹੀਂ ਨਿਕਲੀ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मनुष्य ने जीवन भर राम-नाम के सच्चे महत्व को नहीं जाना, केवल अपने बड़े परिवार (कुनबे) को पालने में ही व्यस्त रहा। वह संसार के प्रपंचों और धंधों में ही समाप्त हो गया, पर उसके कंठ से कभी प्रभु-स्मरण की पुकार नहीं गूंजी।',
+      en: 'Satguru Kabir Saheb proclaims: The mortal never recognized the true value of the Lord\'s Name, and remained occupied only in feeding his large family. He died entangled in mundane chores, and his mouth never uttered the call of devotion.',
     },
     chintan: {
       pb: 'ਕੇਵਲ ਪਰਿਵਾਰਕ ਮੋਹ ਅਤੇ ਸੰਸਾਰਿਕ ਜੰਜਾਲਾਂ ਵਿੱਚ ਫਸ ਕੇ ਜੀਵਨ ਬਤੀਤ ਕਰਨਾ ਅੰਤ ਵਿੱਚ ਬਹੁਤ ਵੱਡੀ ਹਾਰ ਹੈ।',
@@ -14518,9 +14518,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਅੱਖਾਂ ਝਮਕਣ ਦੇ ਸਮੇਂ ਵਿੱਚ ਹੀ ਮਨੁੱਖ ਦਾ ਕੀਮਤੀ ਜੀਵਨ ਪਲ-ਪਲ ਕਰਕੇ ਬੀਤਦਾ ਜਾ ਰਿਹਾ ਹੈ। ਪਰ ਫਿਰ ਵੀ ਉਸਦਾ ਮਨ ਸੰਸਾਰ ਦੇ ਜੰਜਾਲਾਂ ਨੂੰ ਨਹੀਂ ਤਿਆਗਦਾ, ਅਤੇ ਅੰਤ ਨੂੰ ਮੌਤ ਦੇ ਜਮਦੂਤਾਂ ਨੇ ਆ ਕੇ ਉਸਦੇ ਦਰਵਾਜ਼ੇ ਤੇ ਕੂਚ ਦਾ ਨਗਾਰਾ ਵਜਾ ਦਿੱਤਾ।',
-      hi: 'कबीर जी कहते हैं-आँखों के पलक झपकने की अल्प अवधि की तरह मानव जीवन का अमूल्य समय पल-पल बीतता जा रहा है। पर विडंबना यह है कि मन फिर भी सांसारिक प्रपंचों को नहीं छोड़ता, और अंततः यमराज ने आकर मृत्यु का डंका (नगाड़ा) बजा ही दिया।',
-      en: 'Kabir Ji says: In the mere blinking of an eye, the precious moments of life slip away, yet the mind refuses to abandon worldly entanglements. At last, the Messenger of Death arrives and beats his drum, signaling departure.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਅੱਖਾਂ ਝਮਕਣ ਦੇ ਸਮੇਂ ਵਿੱਚ ਹੀ ਮਨੁੱਖ ਦਾ ਕੀਮਤੀ ਜੀਵਨ ਪਲ-ਪਲ ਕਰਕੇ ਬੀਤਦਾ ਜਾ ਰਿਹਾ ਹੈ। ਪਰ ਫਿਰ ਵੀ ਉਸਦਾ ਮਨ ਸੰਸਾਰ ਦੇ ਜੰਜਾਲਾਂ ਨੂੰ ਨਹੀਂ ਤਿਆਗਦਾ, ਅਤੇ ਅੰਤ ਨੂੰ ਮੌਤ ਦੇ ਜਮਦੂਤਾਂ ਨੇ ਆ ਕੇ ਉਸਦੇ ਦਰਵਾਜ਼ੇ ਤੇ ਕੂਚ ਦਾ ਨਗਾਰਾ ਵਜਾ ਦਿੱਤਾ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-आँखों के पलक झपकने की अल्प अवधि की तरह मानव जीवन का अमूल्य समय पल-पल बीतता जा रहा है। पर विडंबना यह है कि मन फिर भी सांसारिक प्रपंचों को नहीं छोड़ता, और अंततः यमराज ने आकर मृत्यु का डंका (नगाड़ा) बजा ही दिया।',
+      en: 'Satguru Kabir Saheb proclaims: In the mere blinking of an eye, the precious moments of life slip away, yet the mind refuses to abandon worldly entanglements. At last, the Messenger of Death arrives and beats his drum, signaling departure.',
     },
     chintan: {
       pb: 'ਸਮਾਂ ਬਹੁਤ ਤੇਜ਼ੀ ਨਾਲ ਨਿਕਲ ਰਿਹਾ ਹੈ, ਅੱਜ ਦੇ ਕਾਰਜ ਨੂੰ ਕੱਲ੍ਹ ਤੇ ਟਾਲਣਾ ਬੇਅਕੂਫੀ ਹੈ।',
@@ -14583,9 +14583,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਪਰਮਾਤਮਾ ਨਾਮ-ਸਰੂਪ ਇੱਕ ਵਿਸ਼ਾਲ ਰੁੱਖ ਹੈ ਅਤੇ ਸੰਸਾਰ ਤੋਂ ਉਦਾਸੀ (ਵੈਰਾਗ) ਉਸਦਾ ਮਿੱਠਾ ਫਲ ਹੈ। ਸਾਧੂ ਜਨ ਉਸ ਰੁੱਖ ਦੀ ਸ਼ੀਤਲ ਛਾਂ ਦੀ ਤਰ੍ਹਾਂ ਹਨ, ਜਿਨ੍ਹਾਂ ਨੇ ਸੰਸਾਰ ਦੇ ਵਿਅਰਥ ਝਗੜੇ ਅਤੇ ਵਾਦ-ਵਿਵਾਦ ਤਿਆਗ ਦਿੱਤੇ ਹਨ।',
-      hi: 'कबीर जी कहते हैं-परमात्मा एक विशाल कल्पवृक्ष के समान है और सांसारिक आसक्तियों से मुक्ति (वैराग्य) उसका दिव्य फल है। ऐसे शीतल वृक्ष की सुखद छाया संत पुरुष हैं, जिन्होंने संसार के व्यर्थ वाद-विवाद, वैर-विरोध और प्रपंचों को पूर्णतः त्याग दिया है।',
-      en: 'Kabir Ji says: The Lord is like a grand, wish-fulfilling tree, and detached devotion (Vairagya) is its sweet fruit. Holy saints are like the cool shade of this tree, having completely abandoned useless disputes and conflicts.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪਰਮਾਤਮਾ ਨਾਮ-ਸਰੂਪ ਇੱਕ ਵਿਸ਼ਾਲ ਰੁੱਖ ਹੈ ਅਤੇ ਸੰਸਾਰ ਤੋਂ ਉਦਾਸੀ (ਵੈਰਾਗ) ਉਸਦਾ ਮਿੱਠਾ ਫਲ ਹੈ। ਸਾਧੂ ਜਨ ਉਸ ਰੁੱਖ ਦੀ ਸ਼ੀਤਲ ਛਾਂ ਦੀ ਤਰ੍ਹਾਂ ਹਨ, ਜਿਨ੍ਹਾਂ ਨੇ ਸੰਸਾਰ ਦੇ ਵਿਅਰਥ ਝਗੜੇ ਅਤੇ ਵਾਦ-ਵਿਵਾਦ ਤਿਆਗ ਦਿੱਤੇ ਹਨ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-परमात्मा एक विशाल कल्पवृक्ष के समान है और सांसारिक आसक्तियों से मुक्ति (वैराग्य) उसका दिव्य फल है। ऐसे शीतल वृक्ष की सुखद छाया संत पुरुष हैं, जिन्होंने संसार के व्यर्थ वाद-विवाद, वैर-विरोध और प्रपंचों को पूर्णतः त्याग दिया है।',
+      en: 'Satguru Kabir Saheb proclaims: The Lord is like a grand, wish-fulfilling tree, and detached devotion (Vairagya) is its sweet fruit. Holy saints are like the cool shade of this tree, having completely abandoned useless disputes and conflicts.',
     },
     chintan: {
       pb: 'ਵਿਅਰਥ ਦੇ ਵਾਦ-ਵਿਵਾਦ ਤੋਂ ਦੂਰ ਰਹਿ ਕੇ ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ-ਰੁੱਖ ਦੀ ਸ਼ਰਨ ਲੈਣੀ ਹੀ ਪਰਮ ਸੁੱਖ ਹੈ।',
@@ -14648,9 +14648,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ-ਜੀਵਨ ਵਿੱਚ ਨਾਮ-ਸਿਮਰਨ ਰੂਪੀ ਅਜਿਹਾ ਬੀਜ ਬੀਜੋ, ਜੋ ਬਾਰਾਂ ਮਹੀਨੇ (ਹਰ ਸਮੇਂ) ਫਲਦਾ ਰਹੇ। ਇਸ ਭਗਤੀ ਦੇ ਰੁੱਖ ਦੀ ਛਾਂ ਅਤਿ ਸ਼ੀਤਲ ਹੋਵੇਗੀ, ਫਲ ਬੇਹੱਦ ਸੰਘਣਾ ਹੋਵੇਗਾ, ਅਤੇ ਜੀਵ-ਆਤਮਾ ਰੂਪੀ ਪੰਛੀ ਇਸ ਉੱਤੇ ਬੈਠ ਕੇ ਪਰਮ ਆਨੰਦਮਈ ਕਲੋਲ (ਕੇਲ) ਕਰਨਗੇ।',
-      hi: 'कबीर जी कहते हैं-मानव जीवन में राम-सुमिरन का ऐसा दिव्य बीज बोएं, जो बारहों महीने (सदा) भक्ति रस से फलित होता रहे। जिसकी शरण रूपी छाया अत्यंत शीतल होगी, जिसका आध्यात्मिक फल सघन होगा और जीव-आत्मा रूपी पक्षी इस पर बैठकर सदा परमानंद की क्रीड़ा करेंगे।',
-      en: 'Kabir Ji says: Sow such a seed of devotion which remains eternally fruitful all twelve months. It offers deep, comforting shade and dense, spiritual fruit, where the birds of souls play in absolute joy and bliss.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੀਵਨ ਵਿੱਚ ਨਾਮ-ਸਿਮਰਨ ਰੂਪੀ ਅਜਿਹਾ ਬੀਜ ਬੀਜੋ, ਜੋ ਬਾਰਾਂ ਮਹੀਨੇ (ਹਰ ਸਮੇਂ) ਫਲਦਾ ਰਹੇ। ਇਸ ਭਗਤੀ ਦੇ ਰੁੱਖ ਦੀ ਛਾਂ ਅਤਿ ਸ਼ੀਤਲ ਹੋਵੇਗੀ, ਫਲ ਬੇਹੱਦ ਸੰਘਣਾ ਹੋਵੇਗਾ, ਅਤੇ ਜੀਵ-ਆਤਮਾ ਰੂਪੀ ਪੰਛੀ ਇਸ ਉੱਤੇ ਬੈਠ ਕੇ ਪਰਮ ਆਨੰਦਮਈ ਕਲੋਲ (ਕੇਲ) ਕਰਨਗੇ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मानव जीवन में राम-सुमिरन का ऐसा दिव्य बीज बोएं, जो बारहों महीने (सदा) भक्ति रस से फलित होता रहे। जिसकी शरण रूपी छाया अत्यंत शीतल होगी, जिसका आध्यात्मिक फल सघन होगा और जीव-आत्मा रूपी पक्षी इस पर बैठकर सदा परमानंद की क्रीड़ा करेंगे।',
+      en: 'Satguru Kabir Saheb proclaims: Sow such a seed of devotion which remains eternally fruitful all twelve months. It offers deep, comforting shade and dense, spiritual fruit, where the birds of souls play in absolute joy and bliss.',
     },
     chintan: {
       pb: 'ਨਾਮ-ਸਿਮਰਨ ਦਾ ਫਲ ਅਨਾਦੀ ਹੈ, ਜੋ ਮਨੁੱਖ ਨੂੰ ਹਰ ਰੁੱਤ ਅਤੇ ਸਥਿਤੀ ਵਿੱਚ ਅਨੰਦ ਦਿੰਦਾ ਹੈ।',
@@ -14713,9 +14713,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਦਾਤਾ ਰੂਪ ਇਕ ਬਿੱਛ ਹੈ, ਜਿਸ ਨੂੰ ਦਇਆ ਦੇ ਫਲ ਲੱਗਦੇ ਹਨ, ਐਸੇ ਦਇਆਵਾਨ ਉਪਕਾਰ ਕਰਨ ਵਾਲੇ ਪੁਰਸ਼ ਸਦਾ (ਜੀਵੰਤ) ਜੀਉਂਦੇ ਹਨ। ਪੰਛੀ, ਸਾਧੂ ਜਨ, ਹੋਰ ਹੋਰ ਦੇਸਾਂ ਨੂੰ ਚਲੇ ਜਾਂਦੇ ਹਨ ਅਤੇ ਉਸ ਬਿੱਛ ਨੂੰ ਅਸੀਸਾਂ ਦੇ ਜਾਂਦੇ ਹਨ ਕਿ ਹੇ ਸੁਖਦਾਈ ਬਿੱਛ! ਸਦਾ ਹੀ ਫਲਦਾ ਫੁਲਦਾ ਰਹੇ॥ ੨੩੦॥',
-      hi: 'कबीर जी कहते हैं-दाता रूप एक वृक्ष है, जिसे दया के फल लगते हैं, ऐसे दयावान परोपकारी पुरुष सदा जीवित रहते हैं। पक्षी (साधु जन) अन्य देशों को चले जाते हैं और उस वृक्ष को अशीष देते हैं कि हे सुखदाई वृक्ष! तू सदा फलदार बना रहे॥ २३०॥',
-      en: 'Kabir Ji says: The generous giver is like a wish-fulfilling tree that bears the sweet fruit of compassion; such altruistic souls live forever. The birds (holy seekers) migrate to various directions feeding on its fruits, blessing the tree to remain eternally fruitful.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਦਾਤਾ ਰੂਪ ਇਕ ਬਿੱਛ ਹੈ, ਜਿਸ ਨੂੰ ਦਇਆ ਦੇ ਫਲ ਲੱਗਦੇ ਹਨ, ਐਸੇ ਦਇਆਵਾਨ ਉਪਕਾਰ ਕਰਨ ਵਾਲੇ ਪੁਰਸ਼ ਸਦਾ (ਜੀਵੰਤ) ਜੀਉਂਦੇ ਹਨ। ਪੰਛੀ, ਸਾਧੂ ਜਨ, ਹੋਰ ਹੋਰ ਦੇਸਾਂ ਨੂੰ ਚਲੇ ਜਾਂਦੇ ਹਨ ਅਤੇ ਉਸ ਬਿੱਛ ਨੂੰ ਅਸੀਸਾਂ ਦੇ ਜਾਂਦੇ ਹਨ ਕਿ ਹੇ ਸੁਖਦਾਈ ਬਿੱਛ! ਸਦਾ ਹੀ ਫਲਦਾ ਫੁਲਦਾ ਰਹੇ॥ ੨੩੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-दाता रूप एक वृक्ष है, जिसे दया के फल लगते हैं, ऐसे दयावान परोपकारी पुरुष सदा जीवित रहते हैं। पक्षी (साधु जन) अन्य देशों को चले जाते हैं और उस वृक्ष को अशीष देते हैं कि हे सुखदाई वृक्ष! तू सदा फलदार बना रहे॥ २३०॥',
+      en: 'Satguru Kabir Saheb proclaims: The generous giver is like a wish-fulfilling tree that bears the sweet fruit of compassion; such altruistic souls live forever. The birds (holy seekers) migrate to various directions feeding on its fruits, blessing the tree to remain eternally fruitful.',
     },
     chintan: {
       pb: 'ਦਇਆ ਅਤੇ ਪਰਉਪਕਾਰ ਹੀ ਮਨੁੱਖ ਨੂੰ ਸਦਾ ਲਈ ਜੀਉਂਦਾ ਰੱਖਦੇ ਹਨ।',
@@ -14778,9 +14778,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਸਾਧ ਸੰਗਤ ਦੀ ਉਸ ਮਨੁੱਖ ਨੂੰ ਪ੍ਰਾਪਤੀ ਹੁੰਦੀ ਹੈ, ਜਿਸ ਦੇ (ਲਿਲਾਟ) ਮੱਥੇ ਤੇ ਲੇਖ ਲਿਖਿਆ ਹੋਵੇ ਚੰਗੇ ਭਾਗ ਹੋਣ। ਸਾਧ ਦੀ ਸੰਗਤ ਤੋਂ ਮੁਕਤੀ ਪਦ ਪਾਈਦਾ ਹੈ, ਫਿਰ (ਅਵਘਟ ਘਾਟ) ਔਖੀਆਂ ਘਾਟੀਆਂ ਸੰਸਾਰ ਦੇ ਝੰਜਟ ਉਸ ਨੂੰ (ਚੰਗੇ ਰਸਤੇ ਚਲਣ ਵਿਚ) ਰੋਕ ਨਹੀਂ ਪਾਉਂਦੇ॥ ੨੩੧॥',
-      hi: 'कबीर जी कहते हैं-साधु संगत उसी मनुष्य ਨੂੰ प्राप्त होती है, जिसके मस्तक पर उत्तम भाग्य का लेख लिखा हो। संतों की संगति से मुक्ति रूपी पदार्थ प्राप्त होता है और संसार की कठिन मार्ग रूपी बाधाएँ उसे रोक नहीं पाती हैं॥ २३१॥',
-      en: 'Kabir Ji says: The association of holy saints is obtained only through fortunate destiny written on one\'s forehead. From the saints, the gift of liberation is attained, and no difficult obstacles of life can hinder one\'s spiritual journey.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਸਾਧ ਸੰਗਤ ਦੀ ਉਸ ਮਨੁੱਖ ਨੂੰ ਪ੍ਰਾਪਤੀ ਹੁੰਦੀ ਹੈ, ਜਿਸ ਦੇ (ਲਿਲਾਟ) ਮੱਥੇ ਤੇ ਲੇਖ ਲਿਖਿਆ ਹੋਵੇ ਚੰਗੇ ਭਾਗ ਹੋਣ। ਸਾਧ ਦੀ ਸੰਗਤ ਤੋਂ ਮੁਕਤੀ ਪਦ ਪਾਈਦਾ ਹੈ, ਫਿਰ (ਅਵਘਟ ਘਾਟ) ਔਖੀਆਂ ਘਾਟੀਆਂ ਸੰਸਾਰ ਦੇ ਝੰਜਟ ਉਸ ਨੂੰ (ਚੰਗੇ ਰਸਤੇ ਚਲਣ ਵਿਚ) ਰੋਕ ਨਹੀਂ ਪਾਉਂਦੇ॥ ੨੩੧॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-साधु संगत उसी मनुष्य ਨੂੰ प्राप्त होती है, जिसके मस्तक पर उत्तम भाग्य का लेख लिखा हो। संतों की संगति से मुक्ति रूपी पदार्थ प्राप्त होता है और संसार की कठिन मार्ग रूपी बाधाएँ उसे रोक नहीं पाती हैं॥ २३१॥',
+      en: 'Satguru Kabir Saheb proclaims: The association of holy saints is obtained only through fortunate destiny written on one\'s forehead. From the saints, the gift of liberation is attained, and no difficult obstacles of life can hinder one\'s spiritual journey.',
     },
     chintan: {
       pb: 'ਸੰਗਤ ਹੀ ਜੀਵਨ ਨੂੰ ਮੁਕਤੀ ਦੇ ਰਾਹ ਵੱਲ ਲੈ ਜਾਂਦੀ ਹੈ।',
@@ -14843,9 +14843,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਇਕ ਘੜੀ ਅੱਧੀ ਘੜੀ ਅਤੇ ਅੱਧੀ ਤੋਂ ਵੀ ਅੱਧੀ। ਜਿਤਨਾ ਸਮਾਂ ਵੀ ਪ੍ਰਭੂ ਦੇ ਭਗਤਾਂ ਨਾਲ ਗਿਆਨ ਚਰਚਾ ਤਥਾ ਸੰਗਤ ਕੀਤੀ ਜਾਵੇ, ਉਹੀ ਲਾਭ ਹੈ॥ ੨੩੨॥',
-      hi: 'कबीर जी कहते हैं-एक घड़ी, आधी घड़ी, या आधी से भी आधा समय। जितना समय भी ईश्वर के भक्तों के साथ सत्संग और आध्यात्मिक चर्चा में व्यतीत हो, वही सच्चा लाभ है॥ २३२॥',
-      en: 'Kabir Ji says: Whether for a single hour, half an hour, or even half of that; any time spent in holy discourse and spiritual dialogue with the devotees of the Lord is a pure, eternal benefit.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਇਕ ਘੜੀ ਅੱਧੀ ਘੜੀ ਅਤੇ ਅੱਧੀ ਤੋਂ ਵੀ ਅੱਧੀ। ਜਿਤਨਾ ਸਮਾਂ ਵੀ ਪ੍ਰਭੂ ਦੇ ਭਗਤਾਂ ਨਾਲ ਗਿਆਨ ਚਰਚਾ ਤਥਾ ਸੰਗਤ ਕੀਤੀ ਜਾਵੇ, ਉਹੀ ਲਾਭ ਹੈ॥ ੨੩੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-एक घड़ी, आधी घड़ी, या आधी से भी आधा समय। जितना समय भी ईश्वर के भक्तों के साथ सत्संग और आध्यात्मिक चर्चा में व्यतीत हो, वही सच्चा लाभ है॥ २३२॥',
+      en: 'Satguru Kabir Saheb proclaims: Whether for a single hour, half an hour, or even half of that; any time spent in holy discourse and spiritual dialogue with the devotees of the Lord is a pure, eternal benefit.',
     },
     chintan: {
       pb: 'ਸੰਤਾਂ ਨਾਲ ਗੁਜ਼ਾਰਿਆ ਇੱਕ ਪਲ ਵੀ ਵਿਅਰਥ ਨਹੀਂ ਜਾਂਦਾ।',
@@ -14908,9 +14908,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਭੰਗ (ਸੁਖਾ) ਪੀਣਾ, ਮੱਛੀ ਮਾਸ ਖਾਣਾ (ਸੁਰਾ) ਸ਼ਰਾਬ ਪੀਣਾ, ਪਾਨ ਖਾਣਾ, ਜਿਹੜਾ ਜਿਹੜਾ ਪੁਰਸ਼ ਵੀ ਕਰਦਾ ਹੈ, ਉਸ ਦੇ ਤੀਰਥ ਇਸ਼ਨਾਨ, ਵਰਤ ਰੱਖਣ ਅਤੇ ਹੋਰ ਚੰਗੇ ਨਿਯਮ ਕੀਤੇ ਹੋਏ (ਤੇ) ਉਹ ਸਾਰੇ ਹੀ (ਰਸਾਤਲਿ) ਗਰਕ ਨਿਸਫਲ ਜਾਂਦੇ ਹਨ। ਇਨ੍ਹਾਂ ਬੁਰੀਆਂ ਚੀਜ਼ਾਂ ਦੇ ਵਰਤਨ ਵਾਲੇ ਦੇ ਕੀਤੇ ਹੋਏ ਕਰਮ, ਧਰਮ ਸਾਰੇ ਹੀ ਬੇਅਰਥ ਜਾਂਦੇ ਹਨ।॥ ੨੩੩ ॥',
-      hi: 'कबीर जी कहते हैं-भांग का नशा करना, मछली (मांसाहार) खाना, शराब पीना और तंबाकू/पान आदि का सेवन जो भी प्राणी करते हैं, उनके द्वारा किए गए तीर्थ, व्रत और नियम आदि सब नष्ट हो जाते हैं और वे रसातल (गर्त) में चले जाते हैं॥ २३३॥',
-      en: 'Kabir Ji says: Whosoever consumes intoxicants, eats meat, drinks liquor or indulges in harmful habits — all their ritual baths, fasts and disciplined practices are completely wasted and ruined in the abyss of spiritual failure.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਭੰਗ (ਸੁਖਾ) ਪੀਣਾ, ਮੱਛੀ ਮਾਸ ਖਾਣਾ (ਸੁਰਾ) ਸ਼ਰਾਬ ਪੀਣਾ, ਪਾਨ ਖਾਣਾ, ਜਿਹੜਾ ਜਿਹੜਾ ਪੁਰਸ਼ ਵੀ ਕਰਦਾ ਹੈ, ਉਸ ਦੇ ਤੀਰਥ ਇਸ਼ਨਾਨ, ਵਰਤ ਰੱਖਣ ਅਤੇ ਹੋਰ ਚੰਗੇ ਨਿਯਮ ਕੀਤੇ ਹੋਏ (ਤੇ) ਉਹ ਸਾਰੇ ਹੀ (ਰਸਾਤਲਿ) ਗਰਕ ਨਿਸਫਲ ਜਾਂਦੇ ਹਨ। ਇਨ੍ਹਾਂ ਬੁਰੀਆਂ ਚੀਜ਼ਾਂ ਦੇ ਵਰਤਨ ਵਾਲੇ ਦੇ ਕੀਤੇ ਹੋਏ ਕਰਮ, ਧਰਮ ਸਾਰੇ ਹੀ ਬੇਅਰਥ ਜਾਂਦੇ ਹਨ।॥ ੨੩੩ ॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-भांग का नशा करना, मछली (मांसाहार) खाना, शराब पीना और तंबाकू/पान आदि का सेवन जो भी प्राणी करते हैं, उनके द्वारा किए गए तीर्थ, व्रत और नियम आदि सब नष्ट हो जाते हैं और वे रसातल (गर्त) में चले जाते हैं॥ २३३॥',
+      en: 'Satguru Kabir Saheb proclaims: Whosoever consumes intoxicants, eats meat, drinks liquor or indulges in harmful habits — all their ritual baths, fasts and disciplined practices are completely wasted and ruined in the abyss of spiritual failure.',
     },
     chintan: {
       pb: 'ਨਸ਼ੇ ਅਤੇ ਮਾਸਾਹਾਰ ਵਰਗੇ ਵਿਕਾਰ ਮਨੁੱਖੀ ਆਤਮਾ ਦੀ ਉੱਨਤੀ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਸ਼ਟ ਕਰ ਦਿੰਦੇ ਹਨ।',
@@ -14973,9 +14973,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਆਪਣੇ ਸੱਜਣ ਨੂੰ ਹਿਰਦੇ ਵਿਚ ਲੈ ਕੇ (ਸੰਸਾਰ ਵਲੋਂ) ਅੱਖਾਂ ਨੀਂਵੀਆਂ ਕਰ ਰਖੀਆਂ ਹਨ, ਫਿਰ ਉਸ ਪਿਆਰੇ ਸੱਜਣ (ਪ੍ਰਭੂ) ਨਾਲ ਮੈਂ ਸਾਰੇ (ਰਸ) ਅਨੰਦ ਮਾਣਦੀ ਹਾਂ ਅਤੇ ਹੋਰ ਕਿਸੇ ਨੂੰ ਇਸ ਦਾ ਭੇਤ ਨਹੀਂ ਦਸਦੀ॥ ੨੪॥',
-      hi: 'कबीर जी कहते हैं-मैं अपने प्रिय सखा प्रभु को अपने हृदय में बसाकर संसारी प्रलोभनों से अपनी आँखों को नीचा रखती हूँ। मैं अपने प्रिय प्रभु के साथ सभी प्रकार के आत्मिक सुखों का आनंद लेती हूँ पर इसका भेद किसी अन्य को नहीं बताती॥ २४४॥',
-      en: 'Kabir Ji says: Having enshrined my Beloved Friend within my heart, I keep my eyes lowered to the world. I enjoy all the sweet nectar of spiritual union with Him, keeping this divine secret entirely to myself.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਆਪਣੇ ਸੱਜਣ ਨੂੰ ਹਿਰਦੇ ਵਿਚ ਲੈ ਕੇ (ਸੰਸਾਰ ਵਲੋਂ) ਅੱਖਾਂ ਨੀਂਵੀਆਂ ਕਰ ਰਖੀਆਂ ਹਨ, ਫਿਰ ਉਸ ਪਿਆਰੇ ਸੱਜਣ (ਪ੍ਰਭੂ) ਨਾਲ ਮੈਂ ਸਾਰੇ (ਰਸ) ਅਨੰਦ ਮਾਣਦੀ ਹਾਂ ਅਤੇ ਹੋਰ ਕਿਸੇ ਨੂੰ ਇਸ ਦਾ ਭੇਤ ਨਹੀਂ ਦਸਦੀ॥ ੨੪॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-मैं अपने प्रिय सखा प्रभु को अपने हृदय में बसाकर संसारी प्रलोभनों से अपनी आँखों को नीचा रखती हूँ। मैं अपने प्रिय प्रभु के साथ सभी प्रकार के आत्मिक सुखों का आनंद लेती हूँ पर इसका भेद किसी अन्य को नहीं बताती॥ २४४॥',
+      en: 'Satguru Kabir Saheb proclaims: Having enshrined my Beloved Friend within my heart, I keep my eyes lowered to the world. I enjoy all the sweet nectar of spiritual union with Him, keeping this divine secret entirely to myself.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਦਾ ਪਿਆਰ ਅੰਦਰੂਨੀ ਹੈ, ਜੋ ਬਾਹਰ ਵਿਖਾਵੇ ਤੋਂ ਪਰੇ ਹੁੰਦਾ ਹੈ।',
@@ -15038,9 +15038,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਹੇ ਪਤੀ ਪ੍ਰਮਾਤਮਾ! ਅੱਠ ਪਹਿਰ ਤੇ ਚੌਹਠ ਘੜੀਆਂ ਮੇਰਾ ਮਨ ਤੈਨੂੰ ਹੀ ਵੇਖਦਾ (ਦਰਸ਼ਨ ਕਰਦਾ) ਰਹੇ, ਮੈਂ ਅੱਖਾਂ ਨੀਵੀਆਂ ਕਿਉਂ ਕਰਾਂ, ਜਦੋਂ ਮੈਂ ਸਭ ਸਰੀਰਾਂ ਵਿਚ ਤੈਨੂੰ ਪਤੀ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਹੀ ਵੇਖਦਾ ਹਾਂ॥ ੨੩੫॥',
-      hi: 'कबीर जी कहते हैं-हे प्रियतम परमात्मा! आठ पहर और चौंसठ घड़ियाँ (अर्थात संपूर्ण दिन-रात) मेरी जीवात्मा तुझे ही निहारती रहे। अब मैं अपनी आँखों को क्यों झुकाऊँ, क्योंकि मुझे तो प्रत्येक घट (शरीर) में मेरा प्रियतम प्रभु ही दिखाई दे रहा है॥ २३५॥',
-      en: 'Kabir Ji says: O my beloved Lord, my soul gazes upon You all eight watches and sixty-four hours of the day. Why should I lower my eyes to anything else when I see my Beloved residing in every single heart?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਹੇ ਪਤੀ ਪ੍ਰਮਾਤਮਾ! ਅੱਠ ਪਹਿਰ ਤੇ ਚੌਹਠ ਘੜੀਆਂ ਮੇਰਾ ਮਨ ਤੈਨੂੰ ਹੀ ਵੇਖਦਾ (ਦਰਸ਼ਨ ਕਰਦਾ) ਰਹੇ, ਮੈਂ ਅੱਖਾਂ ਨੀਵੀਆਂ ਕਿਉਂ ਕਰਾਂ, ਜਦੋਂ ਮੈਂ ਸਭ ਸਰੀਰਾਂ ਵਿਚ ਤੈਨੂੰ ਪਤੀ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਹੀ ਵੇਖਦਾ ਹਾਂ॥ ੨੩੫॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं-हे प्रियतम परमात्मा! आठ पहर और चौंसठ घड़ियाँ (अर्थात संपूर्ण दिन-रात) मेरी जीवात्मा तुझे ही निहारती रहे। अब मैं अपनी आँखों को क्यों झुकाऊँ, क्योंकि मुझे तो प्रत्येक घट (शरीर) में मेरा प्रियतम प्रभु ही दिखाई दे रहा है॥ २३५॥',
+      en: 'Satguru Kabir Saheb proclaims: O my beloved Lord, my soul gazes upon You all eight watches and sixty-four hours of the day. Why should I lower my eyes to anything else when I see my Beloved residing in every single heart?',
     },
     chintan: {
       pb: 'ਹਰ ਜੀਵ ਵਿਚ ਪਰਮਾਤਮਾ ਦਾ ਰੂਪ ਦੇਖਣਾ ਹੀ ਸਭ ਤੋਂ ਵੱਡੀ ਗਿਆਨ ਅਵਸਥਾ ਹੈ।',
@@ -15167,9 +15167,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਬ੍ਰਾਹਮਣ ਜਗਤ ਦੇ ਜੀਵਾਂ ਦਾ ਗੁਰੂ ਹੈ ਪਰ ਭਗਤਾਂ ਦਾ ਗੁਰੂ ਨਹੀਂ, ਕਿਉਂਕਿ ਇਹ ਆਪ ਚਾਰ ਵੇਦਾਂ ਦੇ ਕਰਮ ਕਾਂਡ ਦੀ ਉਲਝਣ ਵਿਚ ਖੱਪ ਖੱਪ ਕੇ ਮਰ ਜਾਂਦਾ ਹੈ। (ਇਸ ਨੇ ਹੋਰ ਲੋਕਾਂ ਦਾ ਭਲਾ ਕੀ ਕਰਨਾ ਹੈ)॥ ੨੩੭॥',
-      hi: 'कबीर जी कहते हैं- ब्राह्मण जगत के साधारण मनुष्यों का गुरु तो हो सकता है, परंतु वह प्रभु के अनन्य भक्तों का गुरु नहीं हो सकता। क्योंकि वह तो स्वयं चारों वेदों के कर्मकांडों की उलझनों में ही उलझकर खप मरता है (अर्थात वह वास्तविक ब्रह्म-ज्ञान से वंचित रह जाता है)॥ २३७॥',
-      en: 'Kabir says: The Brahmin may be a teacher to the worldly people, but he is not a teacher to the true devotees of God. He has wasted his life becoming entangled in the complex rituals of the four Vedas, failing to find the simple path of Divine Love.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਬ੍ਰਾਹਮਣ ਜਗਤ ਦੇ ਜੀਵਾਂ ਦਾ ਗੁਰੂ ਹੈ ਪਰ ਭਗਤਾਂ ਦਾ ਗੁਰੂ ਨਹੀਂ, ਕਿਉਂਕਿ ਇਹ ਆਪ ਚਾਰ ਵੇਦਾਂ ਦੇ ਕਰਮ ਕਾਂਡ ਦੀ ਉਲਝਣ ਵਿਚ ਖੱਪ ਖੱਪ ਕੇ ਮਰ ਜਾਂਦਾ ਹੈ। (ਇਸ ਨੇ ਹੋਰ ਲੋਕਾਂ ਦਾ ਭਲਾ ਕੀ ਕਰਨਾ ਹੈ)॥ ੨੩੭॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- ब्राह्मण जगत के साधारण मनुष्यों का गुरु तो हो सकता है, परंतु वह प्रभु के अनन्य भक्तों का गुरु नहीं हो सकता। क्योंकि वह तो स्वयं चारों वेदों के कर्मकांडों की उलझनों में ही उलझकर खप मरता है (अर्थात वह वास्तविक ब्रह्म-ज्ञान से वंचित रह जाता है)॥ २३७॥',
+      en: 'Satguru Kabir Saheb proclaims: The Brahmin may be a teacher to the worldly people, but he is not a teacher to the true devotees of God. He has wasted his life becoming entangled in the complex rituals of the four Vedas, failing to find the simple path of Divine Love.',
     },
     chintan: {
       pb: 'ਕੇਵਲ ਪੁਸਤਕੀ ਗਿਆਨ ਜਾਂ ਕਰਮ ਕਾਂਡ ਮੁਕਤੀ ਨਹੀਂ ਦਿੰਦੇ, ਸਗੋਂ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਹੀ ਮੁੱਖ ਹੈ।',
@@ -15231,9 +15231,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਰੂਪ ਖੰਡ ਹੈ ਜੋ ਰੇਤ ਵਿਚ ਖਿੰਡਰੀ ਹੋਈ ਹੈ ਅਤੇ ਇਹ ਹਾਥੀ ਪਾਸੋਂ ਚੁਣੀ ਨਹੀਂ ਜਾਂਦੀ। ਗੁਰੂ ਜੀ ਨੇ ਚੰਗੀ ਗੱਲ ਸਮਝਾ ਦਿਤੀ ਹੈ ਕਿ ਪੁਰਸ਼ ਇਸ ਖੰਡ ਨੂੰ ਕੀੜੀ ਬਣ ਕੇ ਖਾ ਸਕਦਾ ਹੈ॥ ੨੩੮॥ ਭਾਵ-ਇਹ ਹਾਥੀ ਹਉਮੈ ਦਾ ਪ੍ਰਤੀਕ ਹੈ ਅਤੇ ਕੀੜੀ ਨਿੰਮ੍ਰਤਾ ਦਾ ਸੂਚਕ ਹੈ।',
-      hi: 'कबीर जी कहते हैं- परमात्मा का नाम चीनी (खांड) के समान है जो संसार रूपी रेत में बिखरी हुई है। इसे अहंकार रूपी हाथी अपनी सूंड़ से नहीं चुन सकता। कबीर जी कहते हैं कि मेरे गुरु ने मुझे बहुत अच्छी बात समझाई है कि मनुष्य केवल नम्रता रूपी चींटी बनकर ही इस नाम-अमृत को प्राप्त कर सकता है॥ २३८॥',
-      en: 'Kabir says: The Lord is like sugar scattered in the sand. The elephant of pride cannot pick it up. Kabir says, my Guru has given me this beautiful understanding: become an ant of humility, and then you can gather and taste this Divine Sweetness.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਰੂਪ ਖੰਡ ਹੈ ਜੋ ਰੇਤ ਵਿਚ ਖਿੰਡਰੀ ਹੋਈ ਹੈ ਅਤੇ ਇਹ ਹਾਥੀ ਪਾਸੋਂ ਚੁਣੀ ਨਹੀਂ ਜਾਂਦੀ। ਗੁਰੂ ਜੀ ਨੇ ਚੰਗੀ ਗੱਲ ਸਮਝਾ ਦਿਤੀ ਹੈ ਕਿ ਪੁਰਸ਼ ਇਸ ਖੰਡ ਨੂੰ ਕੀੜੀ ਬਣ ਕੇ ਖਾ ਸਕਦਾ ਹੈ॥ ੨੩੮॥ ਭਾਵ-ਇਹ ਹਾਥੀ ਹਉਮੈ ਦਾ ਪ੍ਰਤੀਕ ਹੈ ਅਤੇ ਕੀੜੀ ਨਿੰਮ੍ਰਤਾ ਦਾ ਸੂਚਕ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- परमात्मा का नाम चीनी (खांड) के समान है जो संसार रूपी रेत में बिखरी हुई है। इसे अहंकार रूपी हाथी अपनी सूंड़ से नहीं चुन सकता। सतगुरु कबीर साहेब फरमाते हैं कि मेरे गुरु ने मुझे बहुत अच्छी बात समझाई है कि मनुष्य केवल नम्रता रूपी चींटी बनकर ही इस नाम-अमृत को प्राप्त कर सकता है॥ २३८॥',
+      en: 'Satguru Kabir Saheb proclaims: The Lord is like sugar scattered in the sand. The elephant of pride cannot pick it up. Satguru Kabir Saheb proclaims, my Guru has given me this beautiful understanding: become an ant of humility, and then you can gather and taste this Divine Sweetness.',
     },
     chintan: {
       pb: 'ਹਉਮੈ ਨਾਲ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪ੍ਰਾਪਤੀ ਅਸੰਭਵ ਹੈ, ਕੇਵਲ ਨਿਮ੍ਰਤਾ ਹੀ ਰਸਤਾ ਹੈ।',
@@ -15295,9 +15295,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੋ ਤੈਨੂੰ ਪਿਆਰੇ ਪ੍ਰਭੂ ਦੇ ਮਿਲਣ ਦੀ ਸ਼ਰਧਾ ਹੈ ਤਾਂ ਆਪਣਾ ਸਿਰ ਕੱਟ ਕੇ (ਗੋਇ) ਗੇਂਦ ਬਣਾ ਲੈ ਅਤੇ ਇਸ ਗੇਂਦ ਨਾਲ ਖੇਡਦਾ ਖੇਡਦਾ (ਹਾਲ ਕਰਿ) ਮਸਤੀ ਵਿਚ ਰੰਗਿਆ ਜਾਹ, ਫਿਰ ਜੋ ਕੁਝ ਹੋਵੇ ਸੋ ਹੋਵੇ (ਤੂੰ ਦੁਨੀਆਂ ਵਲੋਂ ਬੇਪ੍ਰਵਾਹ ਹੋ ਕੇ ਭਗਤੀ ਕਰ)॥ ੨੩੯॥ ਭਾਵ-ਸਿਰ ਕੱਟਣ ਦਾ ਮਤਲਬ ਹਉਮੈ ਦਾ ਤਿਆਗ ਹੈ।',
-      hi: 'कबीर जी कहते हैं- यदि तुझे उस प्रियतम परमात्मा के प्रेम की प्यास है, तो अपने अहंकार रूपी सिर को काटकर गेंद बना ले। फिर इस प्रेम के खेल को खेलते-खेलते मग्न हो जा (हाल कर), फिर जो कुछ भी परिणाम हो, उसकी चिंता मत कर॥ २३९॥',
-      en: 'Kabir says: If you long for the path of Divine Love, then sever your head (ego) and turn it into a ball. Play this game of love with total abandon; whatever happens next, let it be.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੋ ਤੈਨੂੰ ਪਿਆਰੇ ਪ੍ਰਭੂ ਦੇ ਮਿਲਣ ਦੀ ਸ਼ਰਧਾ ਹੈ ਤਾਂ ਆਪਣਾ ਸਿਰ ਕੱਟ ਕੇ (ਗੋਇ) ਗੇਂਦ ਬਣਾ ਲੈ ਅਤੇ ਇਸ ਗੇਂਦ ਨਾਲ ਖੇਡਦਾ ਖੇਡਦਾ (ਹਾਲ ਕਰਿ) ਮਸਤੀ ਵਿਚ ਰੰਗਿਆ ਜਾਹ, ਫਿਰ ਜੋ ਕੁਝ ਹੋਵੇ ਸੋ ਹੋਵੇ (ਤੂੰ ਦੁਨੀਆਂ ਵਲੋਂ ਬੇਪ੍ਰਵਾਹ ਹੋ ਕੇ ਭਗਤੀ ਕਰ)॥ ੨੩੯॥ ਭਾਵ-ਸਿਰ ਕੱਟਣ ਦਾ ਮਤਲਬ ਹਉਮੈ ਦਾ ਤਿਆਗ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यदि तुझे उस प्रियतम परमात्मा के प्रेम की प्यास है, तो अपने अहंकार रूपी सिर को काटकर गेंद बना ले। फिर इस प्रेम के खेल को खेलते-खेलते मग्न हो जा (हाल कर), फिर जो कुछ भी परिणाम हो, उसकी चिंता मत कर॥ २३९॥',
+      en: 'Satguru Kabir Saheb proclaims: If you long for the path of Divine Love, then sever your head (ego) and turn it into a ball. Play this game of love with total abandon; whatever happens next, let it be.',
     },
     chintan: {
       pb: 'ਪ੍ਰਭੂ ਪ੍ਰੇਮ ਦਾ ਮਾਰਗ ਪੂਰਨ ਆਤਮ-ਸਮਰਪਣ ਅਤੇ ਹਉਮੈ ਦੇ ਤਿਆਗ ਦਾ ਮਾਰਗ ਹੈ।',
@@ -15367,9 +15367,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇ ਤੈਨੂੰ ਆਪਣੇ ਪਿਆਰੇ ਨੂੰ ਮਿਲਣ ਦੀ ਸ਼ਰਧਾ ਹੈ ਤਾਂ (ਪਾਕੇ) ਪੱਕੇ ਗੁਰੂ ਨਾਲ ਖੇਡ, ਕਿਉਂਕਿ ਕੱਚੇ ਗੁਰੂ ਤੋਂ ਨਾ ਲੋਕ ਦਾ ਸੁਖ ਅਤੇ ਨਾ ਪ੍ਰਲੋਕ ਦਾ ਸੁਖ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ, ਜਿਸ ਤਰ੍ਹਾਂ ਕੱਚੀ ਸਰੋਂ ਨੂੰ ਪੀੜਨ ਕਰਕੇ ਉਸ ਤੋਂ ਨਾ ਤੇਲ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ ਨਾ ਹੀ ਖਲ ਪ੍ਰਾਪਤ ਹੁੰਦੀ ਹੈ॥ ੨੪੦॥',
-      hi: 'कबीर जी कहते हैं- यदि तुझे अपने प्रियतम प्रभु से मिलने की श्रद्धा और चाह है तो पक्के (पूर्ण) गुरु के साथ प्रेम का खेल खेल। क्योंकि कच्चे गुरु से न लोक का सुख मिलता है और न परलोक का, जिस प्रकार कच्ची सरसों को पेरने से न तेल निकलता है और न ही खली बनती है॥ २४०॥',
-      en: 'Kabir Ji says: If you long for the love of the Divine Beloved, then play with a perfected Guru. Seeking a false or immature teacher yields neither the bliss of this world nor the next — just as crushing unripe mustard seeds yields neither oil nor oil-cake.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇ ਤੈਨੂੰ ਆਪਣੇ ਪਿਆਰੇ ਨੂੰ ਮਿਲਣ ਦੀ ਸ਼ਰਧਾ ਹੈ ਤਾਂ (ਪਾਕੇ) ਪੱਕੇ ਗੁਰੂ ਨਾਲ ਖੇਡ, ਕਿਉਂਕਿ ਕੱਚੇ ਗੁਰੂ ਤੋਂ ਨਾ ਲੋਕ ਦਾ ਸੁਖ ਅਤੇ ਨਾ ਪ੍ਰਲੋਕ ਦਾ ਸੁਖ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ, ਜਿਸ ਤਰ੍ਹਾਂ ਕੱਚੀ ਸਰੋਂ ਨੂੰ ਪੀੜਨ ਕਰਕੇ ਉਸ ਤੋਂ ਨਾ ਤੇਲ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ ਨਾ ਹੀ ਖਲ ਪ੍ਰਾਪਤ ਹੁੰਦੀ ਹੈ॥ ੨੪੦॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यदि तुझे अपने प्रियतम प्रभु से मिलने की श्रद्धा और चाह है तो पक्के (पूर्ण) गुरु के साथ प्रेम का खेल खेल। क्योंकि कच्चे गुरु से न लोक का सुख मिलता है और न परलोक का, जिस प्रकार कच्ची सरसों को पेरने से न तेल निकलता है और न ही खली बनती है॥ २४०॥',
+      en: 'Satguru Kabir Saheb proclaims: If you long for the love of the Divine Beloved, then play with a perfected Guru. Seeking a false or immature teacher yields neither the bliss of this world nor the next — just as crushing unripe mustard seeds yields neither oil nor oil-cake.',
     },
     chintan: {
       pb: 'ਸੱਚੇ ਅਤੇ ਪੂਰਨ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਲੈਣਾ ਹੀ ਅਧਿਆਤਮਿਕ ਸਫਲਤਾ ਦਾ ਮੂਲ ਹੈ।',
@@ -15378,7 +15378,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     },
     acharana: {
       pb: 'ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਉਪਦੇਸ਼ਾਂ ਤੇ ਚੱਲੋ ਅਤੇ ਕੱਚੇ ਪਖੰਡਾਂ ਤੋਂ ਬਚੋ।',
-      hi: 'पूर्ण सद्गुरु के उपदेशों पर चलें और पाखंड से दूर रहें।',
+      hi: 'पूर्ण सतगुरु के उपदेशों पर चलें और पाखंड से दूर रहें।',
       en: 'Follow the teachings of the True Master and beware of superficial illusions.',
     },
     samarpan: {
@@ -15431,9 +15431,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਇਸ ਸਲੋਕ ਵਿਚ ਕਬੀਰ ਜੀ ਨੇ ਭਗਤ ਨਾਮਦੇਵ ਜੀ ਦਾ ਵੀਚਾਰ ਪ੍ਰਗਟ ਕੀਤਾ ਹੈ- ਨਾਮਦੇਵ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੋ ਲੋਕ (ਅੰਧ ਗਤਿ) ਅੰਨ੍ਹਿਆਂ ਵਾਂਗੂੰ ਡੋਲਦੇ ਭਟਕਦੇ ਫਿਰਦੇ ਹਨ ਅਤੇ ਸੰਤਾਂ ਨੂੰ ਨਹੀਂ ਪਛਾਣਦੇ ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਗ੍ਰਹਿਣ ਨਹੀਂ ਕਰਦੇ। ਉਹ (ਭਗਤਹੁ) ਭਗਤਾਂ ਦੀ ਸੰਗਤ ਤੋਂ ਬਿਨਾਂ ਭਗਵਾਨ ਨੂੰ ਕਿਸ ਤਰ੍ਹਾਂ ਪਾ ਸਕਦੇ ਹਨ ? ਅਰਥਾਤ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪ੍ਰਾਪਤੀ ਵਾਸਤੇ ਉਸ ਦੇ ਸੰਤਾਂ ਭਗਤਾਂ ਦੀ ਸੰਗਤ ਕਰਨੀ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ॥੨੪੧॥',
-      hi: 'इस श्लोक में कबीर जी ने भगत नामदेव जी के विचार को प्रकट किया है- नामदेव जी कहते हैं- जो लोग अंधों की भाँति भटकते फिरते हैं और सच्चे संतों को नहीं पहचानते, वे भक्तों की संगति के बिना भगवान को कैसे पा सकते हैं? अर्थात परमात्मा की प्राप्ति के लिए संतों-भक्तों का सान्निध्य अनिवार्य है॥ २४१॥',
-      en: 'In this Salok, Bhagat Namdev Ji\'s insight is recorded alongside Kabir Ji: Those who wander blindly without recognizing the saints can never find the Lord. How can God ever be attained without the association of His beloved devotees?',
+      pb: 'ਇਸ ਸਲੋਕ ਵਿਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਭਗਤ ਨਾਮਦੇਵ ਜੀ ਦਾ ਵੀਚਾਰ ਪ੍ਰਗਟ ਕੀਤਾ ਹੈ- ਨਾਮਦੇਵ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੋ ਲੋਕ (ਅੰਧ ਗਤਿ) ਅੰਨ੍ਹਿਆਂ ਵਾਂਗੂੰ ਡੋਲਦੇ ਭਟਕਦੇ ਫਿਰਦੇ ਹਨ ਅਤੇ ਸੰਤਾਂ ਨੂੰ ਨਹੀਂ ਪਛਾਣਦੇ ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਗ੍ਰਹਿਣ ਨਹੀਂ ਕਰਦੇ। ਉਹ (ਭਗਤਹੁ) ਭਗਤਾਂ ਦੀ ਸੰਗਤ ਤੋਂ ਬਿਨਾਂ ਭਗਵਾਨ ਨੂੰ ਕਿਸ ਤਰ੍ਹਾਂ ਪਾ ਸਕਦੇ ਹਨ ? ਅਰਥਾਤ ਪ੍ਰਮਾਤਮਾ ਦੀ ਪ੍ਰਾਪਤੀ ਵਾਸਤੇ ਉਸ ਦੇ ਸੰਤਾਂ ਭਗਤਾਂ ਦੀ ਸੰਗਤ ਕਰਨੀ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ॥੨੪੧॥',
+      hi: 'इस श्लोक में सतगुरु कबीर साहेब ने भगत नामदेव जी के विचार को प्रकट किया है- नामदेव जी कहते हैं- जो लोग अंधों की भाँति भटकते फिरते हैं और सच्चे संतों को नहीं पहचानते, वे भक्तों की संगति के बिना भगवान को कैसे पा सकते हैं? अर्थात परमात्मा की प्राप्ति के लिए संतों-भक्तों का सान्निध्य अनिवार्य है॥ २४१॥',
+      en: 'In this Salok, Bhagat Namdev Ji\'s insight is recorded alongside Satguru Kabir Saheb: Those who wander blindly without recognizing the saints can never find the Lord. How can God ever be attained without the association of His beloved devotees?',
     },
     chintan: {
       pb: 'ਸਾਧ-ਸੰਗਤ ਤੋਂ ਬਿਨਾਂ ਅੰਨ੍ਹੀ ਭਟਕਣਾ ਕਦੇ ਖਤਮ ਨਹੀਂ ਹੋ ਸਕਦੀ।',
@@ -15495,8 +15495,8 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਭਗਤ ਰਵਿਦਾਸ ਜੀ ਨੇ ਸੱਚ ਕਿਹਾ ਕਿ ਪ੍ਰਮਾਤਮਾ ਦੇ ਨਾਮ ਰੂਪ ਹੀਰੇ ਨੂੰ ਛੱਡ ਕੇ ਜੋ ਲੋਕ ਦੂਸਰੇ ਦੀ ਆਸ ਰੱਖ ਕੇ ਆਤਮਿਕ ਸੁਖ ਚਾਹੁੰਦੇ ਹਨ, ਉਹ ਅਵੱਸ਼ ਹੀ ਨਰਕਾਂ ਨੂੰ ਜਾਣਗੇ॥ ੨੪੨॥',
-      hi: 'कबीर जी कहते हैं- भगत रविदास जी ने सत्य कहा है कि परमात्मा के नाम रूपी अमूल्य हीरे को त्यागकर जो लोग अन्य सांसारिक प्रपंचों की आशा रखते हैं, वे नरक में ही पड़ते हैं॥ २४२॥',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਭਗਤ ਰਵਿਦਾਸ ਜੀ ਨੇ ਸੱਚ ਕਿਹਾ ਕਿ ਪ੍ਰਮਾਤਮਾ ਦੇ ਨਾਮ ਰੂਪ ਹੀਰੇ ਨੂੰ ਛੱਡ ਕੇ ਜੋ ਲੋਕ ਦੂਸਰੇ ਦੀ ਆਸ ਰੱਖ ਕੇ ਆਤਮਿਕ ਸੁਖ ਚਾਹੁੰਦੇ ਹਨ, ਉਹ ਅਵੱਸ਼ ਹੀ ਨਰਕਾਂ ਨੂੰ ਜਾਣਗੇ॥ ੨੪੨॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- भगत रविदास जी ने सत्य कहा है कि परमात्मा के नाम रूपी अमूल्य हीरे को त्यागकर जो लोग अन्य सांसारिक प्रपंचों की आशा रखते हैं, वे नरक में ही पड़ते हैं॥ २४२॥',
       en: 'Bhagat Ravidas Ji speaks the absolute truth: Those who forsake the precious diamond of the Lord\'s Name and place their hopes in other worldly things shall surely fall into hell.',
     },
     chintan: {
@@ -15570,9 +15570,9 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
       },
     ],
     bhavarth: {
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ-ਜੇ ਤੂੰ (ਗ੍ਰਿਹ) ਘਰ ਗ੍ਰਹਿਸਤ ਕਰਨਾ ਹੈ ਤਾਂ ਧਰਮ ਕਰ, ਪਰ ਜੇ ਧਰਮ ਨਹੀਂ ਕਰ ਸਕਦਾ ਤਾਂ (ਬੈਰਾਗੁ) ਤਿਆਗ ਧਾਰਨ ਕਰ ਲੈ (ਭਾਵ ਤਿਆਗੀ ਹੋ ਜਾਹ) ਪਰ ਜੇਕਰ ਕੋਈ ਤਿਆਗੀ ਹੋ ਕੇ ਫਿਰ ਗ੍ਰਹਿਸਤ ਦੇ ਧੰਧੇ ਹੀ ਕਰਦਾ ਹੈ ਤਾਂ ਉਸ ਦੇ ਬੜੇ ਖੋਟੇ ਭਾਗ ਹਨ॥ ੨੪੩॥ ਸਮਾਪਤ॥',
-      hi: 'कबीर जी कहते हैं- यदि गृहस्थ जीवन जीना है तो धर्म और मर्यादा के साथ जीओ, नहीं तो पूर्ण वैराग्य धारण करो। परंतु यदि कोई वैरागी बनकर भी संसार के मोह-बंधनों में बंधता है, तो उससे बड़ा अभागा और कोई नहीं है॥ २४३॥ समाप्त॥',
-      en: 'Kabir Ji concludes: If you choose the household life, then practice righteousness and virtue; otherwise, adopt true renunciation. But if a renouncer entangles himself again in worldly attachments, great indeed is his misfortune. (Concluded).',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ-ਜੇ ਤੂੰ (ਗ੍ਰਿਹ) ਘਰ ਗ੍ਰਹਿਸਤ ਕਰਨਾ ਹੈ ਤਾਂ ਧਰਮ ਕਰ, ਪਰ ਜੇ ਧਰਮ ਨਹੀਂ ਕਰ ਸਕਦਾ ਤਾਂ (ਬੈਰਾਗੁ) ਤਿਆਗ ਧਾਰਨ ਕਰ ਲੈ (ਭਾਵ ਤਿਆਗੀ ਹੋ ਜਾਹ) ਪਰ ਜੇਕਰ ਕੋਈ ਤਿਆਗੀ ਹੋ ਕੇ ਫਿਰ ਗ੍ਰਹਿਸਤ ਦੇ ਧੰਧੇ ਹੀ ਕਰਦਾ ਹੈ ਤਾਂ ਉਸ ਦੇ ਬੜੇ ਖੋਟੇ ਭਾਗ ਹਨ॥ ੨੪੩॥ ਸਮਾਪਤ॥',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं- यदि गृहस्थ जीवन जीना है तो धर्म और मर्यादा के साथ जीओ, नहीं तो पूर्ण वैराग्य धारण करो। परंतु यदि कोई वैरागी बनकर भी संसार के मोह-बंधनों में बंधता है, तो उससे बड़ा अभागा और कोई नहीं है॥ २४३॥ समाप्त॥',
+      en: 'Satguru Kabir Saheb concludes: If you choose the household life, then practice righteousness and virtue; otherwise, adopt true renunciation. But if a renouncer entangles himself again in worldly attachments, great indeed is his misfortune. (Concluded).',
     },
     chintan: {
       pb: 'ਜੀਵਨ ਵਿਚ ਜੋ ਵੀ ਮਾਰਗ ਚੁਣੋ, ਉਸ ਉੱਤੇ ਪੂਰੀ ਇਮਾਨਦਾਰੀ ਅਤੇ ਧਰਮ ਨਾਲ ਚੱਲੋ।',
@@ -15586,7 +15586,7 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     },
     samarpan: {
       pb: 'ਆਪਣੇ ਸਮੁੱਚੇ ਜੀਵਨ ਦੇ ਧਰਮ ਨੂੰ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿਚ ਅਰਪਣ ਕਰੋ।',
-      hi: 'अपने संपूर्ण जीवन के आचरण को सद्गुरु के चरणों में समर्पित करें।',
+      hi: 'अपने संपूर्ण जीवन के आचरण को सतगुरु के चरणों में समर्पित करें।',
       en: 'Surrender your entire conduct and moral duty at the feet of the Satguru.',
     },
     sggsReference: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ, ਅੰਗ ੧੩੭੭ (Salok Bhagat Kabir Jio Ke - ਸਮਾਪਤ)',

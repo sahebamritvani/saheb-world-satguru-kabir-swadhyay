@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Kabira loha ek hai, gadhne mein hai pher. Tahi ka bakhtar bane, tahi ki shamsher.',
     bhavarth: {
-      hi: 'कबीर साहेब लोहे और लुहार के शिल्प का सुंदर दृष्टांत देते हुए समझाते हैं कि मूल रूप से लोहा एक ही धातु है, परंतु उसे किस सांचे और रूप में गढ़ा जाता है, सारा भेद इसी बात का है। उसी एक लोहे से रक्षा करने वाला कवच (बख्तर) बनता है, और उसी लोहे से संहार करने वाली तलवार (शमशेर) बन जाती है। ठीक इसी प्रकार प्रत्येक मनुष्य की आत्मा एक समान है; सत्संग और सद्विचार से वह रक्षक व संत बन जाता है, जबकि कुसंग व दुर्विचार से घातक बन जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋਹਾ ਇੱਕੋ ਧਾਤ ਹੈ, ਪਰ ਉਸ ਨੂੰ ਘੜਨ ਵਿੱਚ ਫਰਕ ਹੁੰਦਾ ਹੈ। ਉਸੇ ਲੋਹੇ ਨਾਲ ਜਾਨ ਬਚਾਉਣ ਵਾਲੀ ਸੰਜੋਅ (ਬਖਤਰ) ਬਣਦੀ ਹੈ ਅਤੇ ਉਸੇ ਨਾਲ ਜਾਨ ਲੈਣ ਵਾਲੀ ਤਲਵਾਰ ਬਣਦੀ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਸੰਗਤ ਤੇ ਸੰਸਕਾਰਾਂ ਨਾਲ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਬਣਦਾ ਜਾਂ ਵਿਗੜਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates the profound power of shaping and association: Raw iron is fundamentally one identical substance, yet all difference lies in how it is forged. From the very same iron, protective armor (Bakhtar) is fashioned, and from it a lethal sword (Shamsher) is crafted. Similarly, human consciousness is inherently pure; molded by holy company (Satsang) it becomes a sanctuary of peace, whereas shaped by negative company it becomes destructive.',
+      hi: 'सतगुरु कबीर साहेब लोहे और लुहार के शिल्प का सुंदर दृष्टांत देते हुए समझाते हैं कि मूल रूप से लोहा एक ही धातु है, परंतु उसे किस सांचे और रूप में गढ़ा जाता है, सारा भेद इसी बात का है। उसी एक लोहे से रक्षा करने वाला कवच (बख्तर) बनता है, और उसी लोहे से संहार करने वाली तलवार (शमशेर) बन जाती है। ठीक इसी प्रकार प्रत्येक मनुष्य की आत्मा एक समान है; सत्संग और सद्विचार से वह रक्षक व संत बन जाता है, जबकि कुसंग व दुर्विचार से घातक बन जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋਹਾ ਇੱਕੋ ਧਾਤ ਹੈ, ਪਰ ਉਸ ਨੂੰ ਘੜਨ ਵਿੱਚ ਫਰਕ ਹੁੰਦਾ ਹੈ। ਉਸੇ ਲੋਹੇ ਨਾਲ ਜਾਨ ਬਚਾਉਣ ਵਾਲੀ ਸੰਜੋਅ (ਬਖਤਰ) ਬਣਦੀ ਹੈ ਅਤੇ ਉਸੇ ਨਾਲ ਜਾਨ ਲੈਣ ਵਾਲੀ ਤਲਵਾਰ ਬਣਦੀ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਸੰਗਤ ਤੇ ਸੰਸਕਾਰਾਂ ਨਾਲ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਬਣਦਾ ਜਾਂ ਵਿਗੜਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the profound power of shaping and association: Raw iron is fundamentally one identical substance, yet all difference lies in how it is forged. From the very same iron, protective armor (Bakhtar) is fashioned, and from it a lethal sword (Shamsher) is crafted. Similarly, human consciousness is inherently pure; molded by holy company (Satsang) it becomes a sanctuary of peace, whereas shaped by negative company it becomes destructive.',
     },
     wordMeanings: {
       hi: [
@@ -53,7 +53,7 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       en: 'Use your speech and actions today to comfort, protect, and heal others rather than criticize.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरु शिल्पकार! मेरी मति को अपने ज्ञान के सांचे में ढालकर दया और शील का पावन कवच बना दीजिए। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरु शिल्पकार! मेरी मति को अपने ज्ञान के सांचे में ढालकर दया और शील का पावन कवच बना दीजिए। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਜੀਵਨ ਨੂੰ ਨੇਕੀ ਅਤੇ ਦਇਆ ਦੇ ਰੰਗ ਵਿੱਚ ਢਾਲ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Master Craftsman Satguru! Forge my restless mind in the fire of Your Wisdom into a shield of peace and compassion. Saheb Bandagi Saheb!',
     },
@@ -66,9 +66,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार एक ही लोहे से कवच और तलवार बनने का क्या तात्पर्य है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਇਕੋ ਲੋਹੇ ਤੋਂ ਬਖਤਰ ਤੇ ਤਲਵਾਰ ਬਣਨ ਦਾ ਕੀ ਭਾਵ ਹੈ?',
-          en: 'What is the deeper meaning behind one iron becoming armor and sword according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार एक ही लोहे से कवच और तलवार बनने का क्या तात्पर्य है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਇਕੋ ਲੋਹੇ ਤੋਂ ਬਖਤਰ ਤੇ ਤਲਵਾਰ ਬਣਨ ਦਾ ਕੀ ਭਾਵ ਹੈ?',
+          en: 'What is the deeper meaning behind one iron becoming armor and sword according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['लोहा बहुत कीमती है', 'संस्कार और संगति ही मनुष्य को रक्षक या संहारक बनाते हैं', 'युद्ध करना आवश्यक है', 'लोहे के बर्तन अच्छे होते हैं'],
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Kabira sota kya kare, jaago japo muraar.\nEk din hai sovana, lambe paaw pasaar.',
     bhavarth: {
-      hi: 'कबीर साहेब अज्ञान और मोह की निद्रा में सोए हुए जीव को झकझोरते हुए कहते हैं कि हे मानव! तू इस संसार में प्रमाद और आलस्य की नींद में क्यों पड़ा हुआ है? जाग और अपने परमपिता परमात्मा (मुरार) के नाम का स्मरण कर। एक दिन जब काल (मृत्यु) आएगा, तब तो सदा के लिए हाथ-पैर फैलाकर श्मशान में चिर-निद्रा में सोना ही है। जब तक यह अमूल्य जीवन और श्वास शेष हैं, प्रभु-भक्ति में जागो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚ ਸੁੱਤੇ ਇਨਸਾਨ ਨੂੰ ਜਗਾਉਂਦੇ ਹੋਏ ਕਹਿੰਦੇ ਹਨ ਕਿ ਹੇ ਮਨੁੱਖ! ਤੂੰ ਅਗਿਆਨਤਾ ਵਿੱਚ ਕਿਉਂ ਸੁੱਤਾ ਪਿਆ ਹੈਂ? ਉੱਠ ਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪ। ਇੱਕ ਦਿਨ ਮੌਤ ਆਉਣ ਤੇ ਸਦਾ ਲਈ ਲੰਮੇ ਪੈ ਕੇ ਸੌਣਾ ਹੀ ਪੈਣਾ ਹੈ, ਇਸ ਲਈ ਜਿਊਂਦੇ ਜੀਅ ਜਾਗ ਪਓ।',
-      en: 'Kabir Saheb awakens the soul from the slumber of delusion: O mortal, why do you linger in the indolence of ignorance and spiritual sleep? Awaken, rise, and meditate upon the Supreme Lord (Muraar). A fateful day will inevitably arrive when you shall sleep eternally with limbs stretched out in death. While life and breath endure, awaken to Divine contemplation.',
+      hi: 'सतगुरु कबीर साहेब अज्ञान और मोह की निद्रा में सोए हुए जीव को झकझोरते हुए कहते हैं कि हे मानव! तू इस संसार में प्रमाद और आलस्य की नींद में क्यों पड़ा हुआ है? जाग और अपने परमपिता परमात्मा (मुरार) के नाम का स्मरण कर। एक दिन जब काल (मृत्यु) आएगा, तब तो सदा के लिए हाथ-पैर फैलाकर श्मशान में चिर-निद्रा में सोना ही है। जब तक यह अमूल्य जीवन और श्वास शेष हैं, प्रभु-भक्ति में जागो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚ ਸੁੱਤੇ ਇਨਸਾਨ ਨੂੰ ਜਗਾਉਂਦੇ ਹੋਏ ਕਹਿੰਦੇ ਹਨ ਕਿ ਹੇ ਮਨੁੱਖ! ਤੂੰ ਅਗਿਆਨਤਾ ਵਿੱਚ ਕਿਉਂ ਸੁੱਤਾ ਪਿਆ ਹੈਂ? ਉੱਠ ਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪ। ਇੱਕ ਦਿਨ ਮੌਤ ਆਉਣ ਤੇ ਸਦਾ ਲਈ ਲੰਮੇ ਪੈ ਕੇ ਸੌਣਾ ਹੀ ਪੈਣਾ ਹੈ, ਇਸ ਲਈ ਜਿਊਂਦੇ ਜੀਅ ਜਾਗ ਪਓ।',
+      en: 'Satguru Kabir Saheb awakens the soul from the slumber of delusion: O mortal, why do you linger in the indolence of ignorance and spiritual sleep? Awaken, rise, and meditate upon the Supreme Lord (Muraar). A fateful day will inevitably arrive when you shall sleep eternally with limbs stretched out in death. While life and breath endure, awaken to Divine contemplation.',
     },
     wordMeanings: {
       hi: [
@@ -148,8 +148,8 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार "लंबे पाँव पसार कर सोना" किसका प्रतीक है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਲੰਬੇ ਪਾਂਵ ਪਸਾਰ" ਕੇ ਸੌਣਾ ਕਿਸ ਦਾ ਪ੍ਰਤੀਕ ਹੈ?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार "लंबे पाँव पसार कर सोना" किसका प्रतीक है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਲੰਬੇ ਪਾਂਵ ਪਸਾਰ" ਕੇ ਸੌਣਾ ਕਿਸ ਦਾ ਪ੍ਰਤੀਕ ਹੈ?',
           en: 'What does "sleeping with outstretched legs" symbolize in this sakhi?',
         },
         options: {
@@ -185,9 +185,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Kabira aap thagaiye, aur na thagiye koy. Aap thage sukh hot hai, aur thage dukh hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवन में परम शांति और निष्कपटता का मार्ग बताते हुए कहते हैं कि यदि कभी आवश्यकता पड़े तो स्वयं भले ही ठगे चले जाना, परंतु अपने स्वार्थ के लिए किसी अन्य प्राणी को कभी मत ठगना। जब मनुष्य स्वयं भोला बनकर किसी के छल का शिकार हो जाता है तो उसके मन पर कोई पाप या पश्चाताप का बोझ नहीं रहता और उसे आंतरिक शांति (सुख) मिलती है; परंतु जब वह किसी दूसरे को छल-कपट से ठगता है, तो पाप, अशांति और भविष्य के भयानक कष्ट (दुःख) का भागीदार बनता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭਾਵੇਂ ਆਪ ਠੱਗੇ ਜਾਓ ਪਰ ਕਿਸੇ ਦੂਜੇ ਨੂੰ ਕਦੇ ਨਾ ਠੱਗੋ। ਆਪ ਠੱਗੇ ਜਾਣ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਰਹਿੰਦਾ ਹੈ ਤੇ ਕੋਈ ਪਾਪ ਨਹੀਂ ਲੱਗਦਾ, ਪਰ ਕਿਸੇ ਨੂੰ ਠੱਗਣ ਨਾਲ ਮਨ ਵਿੱਚ ਬੇਚੈਨੀ ਤੇ ਦੁੱਖ ਪੈਦਾ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the sublime secret of inner peace: If fate decrees, allow yourself to be cheated, but never deceitfully swindle another. When you are wronged or cheated, your conscience remains spotless and serene, free of guilt; but when you trick or exploit another, you harvest the agony of guilt, karmic retribution, and deep inner turmoil.',
+      hi: 'सतगुरु कबीर साहेबवन में परम शांति और निष्कपटता का मार्ग बताते हुए कहते हैं कि यदि कभी आवश्यकता पड़े तो स्वयं भले ही ठगे चले जाना, परंतु अपने स्वार्थ के लिए किसी अन्य प्राणी को कभी मत ठगना। जब मनुष्य स्वयं भोला बनकर किसी के छल का शिकार हो जाता है तो उसके मन पर कोई पाप या पश्चाताप का बोझ नहीं रहता और उसे आंतरिक शांति (सुख) मिलती है; परंतु जब वह किसी दूसरे को छल-कपट से ठगता है, तो पाप, अशांति और भविष्य के भयानक कष्ट (दुःख) का भागीदार बनता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭਾਵੇਂ ਆਪ ਠੱਗੇ ਜਾਓ ਪਰ ਕਿਸੇ ਦੂਜੇ ਨੂੰ ਕਦੇ ਨਾ ਠੱਗੋ। ਆਪ ਠੱਗੇ ਜਾਣ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਰਹਿੰਦਾ ਹੈ ਤੇ ਕੋਈ ਪਾਪ ਨਹੀਂ ਲੱਗਦਾ, ਪਰ ਕਿਸੇ ਨੂੰ ਠੱਗਣ ਨਾਲ ਮਨ ਵਿੱਚ ਬੇਚੈਨੀ ਤੇ ਦੁੱਖ ਪੈਦਾ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the sublime secret of inner peace: If fate decrees, allow yourself to be cheated, but never deceitfully swindle another. When you are wronged or cheated, your conscience remains spotless and serene, free of guilt; but when you trick or exploit another, you harvest the agony of guilt, karmic retribution, and deep inner turmoil.',
     },
     wordMeanings: {
       hi: [
@@ -231,9 +231,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-3-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार स्वयं ठगे जाने पर सुख और दूसरों को ठगने पर दुःख क्यों होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਦੂਜਿਆਂ ਨੂੰ ਠੱਗਣ ਨਾਲ ਦੁੱਖ ਕਿਉਂ ਹੁੰਦਾ ਹੈ?',
-          en: 'Why does cheating others cause misery while being cheated yields peace, according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार स्वयं ठगे जाने पर सुख और दूसरों को ठगने पर दुःख क्यों होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਦੂਜਿਆਂ ਨੂੰ ਠੱਗਣ ਨਾਲ ਦੁੱਖ ਕਿਉਂ ਹੁੰਦਾ ਹੈ?',
+          en: 'Why does cheating others cause misery while being cheated yields peace, according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['क्योंकि पैसा सब कुछ है', 'क्योंकि छल करने से अंतरात्मा कलुषित होती है और पाप का फल भोगना पड़ता है', 'क्योंकि कानून पकड़ लेता है', 'क्योंकि लोग निंदा करते हैं'],
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Gaari hi se upje, kalah kasht aur bheech. Haari chale so saadhu hai, laagi chale to neech.',
     bhavarth: {
-      hi: 'कबीर साहेब वाणी के संयम और विवाद-निवारण का उपदेश देते हुए कहते हैं कि गाली और कटु वचनों के आदान-प्रदान से ही झगड़ा, कलह, शारीरिक-मानसिक कष्ट और मनमुटाव (भीच/दूरी) पैदा होता है। जो मनुष्य विवाद में हठ छोड़कर स्वयं हार मानकर आगे बढ़ जाता है, वही सच्चा संत और साधु-हृदय है; परंतु जो बात को पकड़कर खींचता है और बदला लेने पर अड़ा रहता है, वह नीच बुद्धि वाला अधम है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗਾਲ੍ਹਾਂ ਤੇ ਕੌੜੇ ਬੋਲਾਂ ਤੋਂ ਹੀ ਲੜਾਈ-ਝਗੜਾ, ਕਸ਼ਟ ਅਤੇ ਦਿਲਾਂ ਵਿੱਚ ਦੂਰੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ। ਜੋ ਝਗੜੇ ਵਿੱਚ ਹਾਰ ਮੰਨ ਕੇ ਚੁੱਪ ਕਰਕੇ ਲੰਘ ਜਾਂਦਾ ਹੈ ਉਹ ਸਾਧੂ ਹੈ, ਪਰ ਜੋ ਗੱਲ ਨੂੰ ਵਧਾ ਕੇ ਬਦਲਾ ਲੈਂਦਾ ਹੈ ਉਹ ਨੀਚ ਹੈ।',
-      en: 'Kabir Saheb teaches the golden virtue of non-retaliation: From abusive language and harsh words spring discord, bitter misery, and emotional estrangement (Bheech). One who gracefully concedes, steps back, and walks away in peaceful silence is a true Saint; but one who escalates the quarrel with vengeful pride is of lowly character.',
+      hi: 'सतगुरु कबीर साहेब वाणी के संयम और विवाद-निवारण का उपदेश देते हुए कहते हैं कि गाली और कटु वचनों के आदान-प्रदान से ही झगड़ा, कलह, शारीरिक-मानसिक कष्ट और मनमुटाव (भीच/दूरी) पैदा होता है। जो मनुष्य विवाद में हठ छोड़कर स्वयं हार मानकर आगे बढ़ जाता है, वही सच्चा संत और साधु-हृदय है; परंतु जो बात को पकड़कर खींचता है और बदला लेने पर अड़ा रहता है, वह नीच बुद्धि वाला अधम है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗਾਲ੍ਹਾਂ ਤੇ ਕੌੜੇ ਬੋਲਾਂ ਤੋਂ ਹੀ ਲੜਾਈ-ਝਗੜਾ, ਕਸ਼ਟ ਅਤੇ ਦਿਲਾਂ ਵਿੱਚ ਦੂਰੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ। ਜੋ ਝਗੜੇ ਵਿੱਚ ਹਾਰ ਮੰਨ ਕੇ ਚੁੱਪ ਕਰਕੇ ਲੰਘ ਜਾਂਦਾ ਹੈ ਉਹ ਸਾਧੂ ਹੈ, ਪਰ ਜੋ ਗੱਲ ਨੂੰ ਵਧਾ ਕੇ ਬਦਲਾ ਲੈਂਦਾ ਹੈ ਉਹ ਨੀਚ ਹੈ।',
+      en: 'Satguru Kabir Saheb teaches the golden virtue of non-retaliation: From abusive language and harsh words spring discord, bitter misery, and emotional estrangement (Bheech). One who gracefully concedes, steps back, and walks away in peaceful silence is a true Saint; but one who escalates the quarrel with vengeful pride is of lowly character.',
     },
     wordMeanings: {
       hi: [
@@ -315,9 +315,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-4-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार झगड़े में कौन मनुष्य सच्चा "साधु" कहलाता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਝਗੜੇ ਵਿੱਚ ਕੌਣ ਸੱਚਾ ਸਾਧੂ ਹੈ?',
-          en: 'According to Kabir Saheb, who is recognized as a true Saint during a dispute?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार झगड़े में कौन मनुष्य सच्चा "साधु" कहलाता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਝਗੜੇ ਵਿੱਚ ਕੌਣ ਸੱਚਾ ਸਾਧੂ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is recognized as a true Saint during a dispute?',
         },
         options: {
           hi: ['जो जोर-जोर से चिल्लाए', 'जो अहंकार त्यागकर हार मानकर चुपचाप निकल जाए', 'जो सबको गाली दे', 'जो लाठी चलाए'],
@@ -352,9 +352,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Jaa pal darshan saadhu ka, taa pal ki balihari. Ram naam rasna base, leeje janam sudhari.',
     bhavarth: {
-      hi: 'कबीर साहेब संत दर्शन और नाम-सुमिरन की महिमा गाते हुए कहते हैं कि जिस क्षण सच्चे साधु और आत्मज्ञानी संत का दर्शन प्राप्त हो, वह क्षण परम धन्य और न्योछावर करने योग्य (बलिहारी) है। उस पावन संगति में यदि जिह्वा पर परमात्मा के सत्यनाम का वास हो जाए, तो मनुष्य को अपने इस दुर्लभ मानव जन्म का उद्धार कर इसे सुधार लेना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਘੜੀ ਸੱਚੇ ਸੰਤਾਂ ਦੇ ਦਰਸ਼ਨ ਹੋਣ, ਉਹ ਸਮਾਂ ਬਲਿਹਾਰ ਜਾਣ ਯੋਗ ਹੈ। ਜਦੋਂ ਜੀਭ ਉੱਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਵੱਸ ਜਾਵੇ ਤਾਂ ਇਸ ਦੁਰਲੱਭ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਸਫਲ ਕਰ ਲੈਣਾ ਚਾਹੀਦਾ ਹੈ।',
-      en: 'Kabir Saheb celebrates the auspicious grace of holy fellowship: Sublime and worthy of total adoration is that precious moment when one receives the blessed vision (Darshan) of a true Saint. When the sacred Divine Name comes to dwell sweetly upon the tongue in their company, seize that golden opportunity to redeem and elevate this mortal human birth.',
+      hi: 'सतगुरु कबीर साहेब संत दर्शन और नाम-सुमिरन की महिमा गाते हुए कहते हैं कि जिस क्षण सच्चे साधु और आत्मज्ञानी संत का दर्शन प्राप्त हो, वह क्षण परम धन्य और न्योछावर करने योग्य (बलिहारी) है। उस पावन संगति में यदि जिह्वा पर परमात्मा के सत्यनाम का वास हो जाए, तो मनुष्य को अपने इस दुर्लभ मानव जन्म का उद्धार कर इसे सुधार लेना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਘੜੀ ਸੱਚੇ ਸੰਤਾਂ ਦੇ ਦਰਸ਼ਨ ਹੋਣ, ਉਹ ਸਮਾਂ ਬਲਿਹਾਰ ਜਾਣ ਯੋਗ ਹੈ। ਜਦੋਂ ਜੀਭ ਉੱਤੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਵੱਸ ਜਾਵੇ ਤਾਂ ਇਸ ਦੁਰਲੱਭ ਮਨੁੱਖਾ ਜਨਮ ਨੂੰ ਸਫਲ ਕਰ ਲੈਣਾ ਚਾਹੀਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb celebrates the auspicious grace of holy fellowship: Sublime and worthy of total adoration is that precious moment when one receives the blessed vision (Darshan) of a true Saint. When the sacred Divine Name comes to dwell sweetly upon the tongue in their company, seize that golden opportunity to redeem and elevate this mortal human birth.',
     },
     wordMeanings: {
       hi: [
@@ -397,9 +397,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-5-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किस क्षण को बलिहारी (परम धन्य) कहा गया है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਹੜਾ ਪਲ ਬਲਿਹਾਰ ਜਾਣ ਯੋਗ ਹੈ?',
-          en: 'Which auspicious moment is described as most sacred and praised by Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किस क्षण को बलिहारी (परम धन्य) कहा गया है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਹੜਾ ਪਲ ਬਲਿਹਾਰ ਜਾਣ ਯੋਗ ਹੈ?',
+          en: 'Which auspicious moment is described as most sacred and praised by Satguru Kabir Saheb?',
         },
         options: {
           hi: ['जब बहुत धन मिले', 'जब सच्चे साधु/संत का दर्शन प्राप्त हो', 'जब कोई उत्सव हो', 'जब राजपद प्राप्त हो'],
@@ -434,9 +434,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Jo toku kanta buve, tahi boy tu phool. Toku phool ke phool hain, vaanku hai tirshool.',
     bhavarth: {
-      hi: 'कबीर साहेब परम दया और अहिंसा का अमर संदेश देते हुए कहते हैं कि जो मनुष्य तुम्हारे मार्ग में कांटे बोता है (अर्थात् तुम्हारे साथ बुराई, षड्यंत्र या अपमान करता है), तुम उसके प्रति भी प्रेम और भलाई के फूल ही बोओ। तुम्हारी इस भलाई के फलस्वरूप तुम्हें पग-पग पर सुगंधित पुष्प (सुख, शांति व दैवीय कृपा) ही प्राप्त होंगे; जबकि कांटे बोने वाले दुष्ट को अपने ही कर्मों के फलस्वरुप त्रिशूल जैसी असह्य वेदना और विनाश का सामना करना पड़ेगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਤੇਰੇ ਰਾਹ ਵਿੱਚ ਕੰਡੇ ਬੀਜੇ (ਤੇਰਾ ਬੁਰਾ ਕਰੇ), ਤੂੰ ਉਸ ਦੇ ਰਾਹ ਵਿੱਚ ਵੀ ਫੁੱਲ ਬੀਜ (ਭਲਾਈ ਕਰ)। ਤੈਨੂੰ ਆਪਣੀ ਨੇਕੀ ਦੇ ਬਦਲੇ ਫੁੱਲ ਹੀ ਮਿਲਣਗੇ, ਪਰ ਬੁਰਾ ਕਰਨ ਵਾਲੇ ਨੂੰ ਉਸ ਦੇ ਕੰਡੇ ਤ੍ਰਿਸ਼ੂਲ ਬਣ ਕੇ ਚੁੱਭਣਗੇ।',
-      en: 'Kabir Saheb delivers a timeless lesson in unconditional benevolence: If someone sows thorns along your path (inflicting harm, insult, or betrayal), respond by sowing sweet flowers in theirs. For your gentleness, you shall reap an abundance of blossoms (peace, honor, and grace); whereas the wrongdoer shall find their own planted thorns transformed into piercing tridents of karmic misery.',
+      hi: 'सतगुरु कबीर साहेब परम दया और अहिंसा का अमर संदेश देते हुए कहते हैं कि जो मनुष्य तुम्हारे मार्ग में कांटे बोता है (अर्थात् तुम्हारे साथ बुराई, षड्यंत्र या अपमान करता है), तुम उसके प्रति भी प्रेम और भलाई के फूल ही बोओ। तुम्हारी इस भलाई के फलस्वरूप तुम्हें पग-पग पर सुगंधित पुष्प (सुख, शांति व दैवीय कृपा) ही प्राप्त होंगे; जबकि कांटे बोने वाले दुष्ट को अपने ही कर्मों के फलस्वरुप त्रिशूल जैसी असह्य वेदना और विनाश का सामना करना पड़ेगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਤੇਰੇ ਰਾਹ ਵਿੱਚ ਕੰਡੇ ਬੀਜੇ (ਤੇਰਾ ਬੁਰਾ ਕਰੇ), ਤੂੰ ਉਸ ਦੇ ਰਾਹ ਵਿੱਚ ਵੀ ਫੁੱਲ ਬੀਜ (ਭਲਾਈ ਕਰ)। ਤੈਨੂੰ ਆਪਣੀ ਨੇਕੀ ਦੇ ਬਦਲੇ ਫੁੱਲ ਹੀ ਮਿਲਣਗੇ, ਪਰ ਬੁਰਾ ਕਰਨ ਵਾਲੇ ਨੂੰ ਉਸ ਦੇ ਕੰਡੇ ਤ੍ਰਿਸ਼ੂਲ ਬਣ ਕੇ ਚੁੱਭਣਗੇ।',
+      en: 'Satguru Kabir Saheb delivers a timeless lesson in unconditional benevolence: If someone sows thorns along your path (inflicting harm, insult, or betrayal), respond by sowing sweet flowers in theirs. For your gentleness, you shall reap an abundance of blossoms (peace, honor, and grace); whereas the wrongdoer shall find their own planted thorns transformed into piercing tridents of karmic misery.',
     },
     wordMeanings: {
       hi: [
@@ -479,9 +479,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-6-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार बुराई करने वाले के साथ कैसा व्यवहार करना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਬੁਰਾ ਕਰਨ ਵਾਲੇ ਨਾਲ ਕਿਹੋ ਜਿਹਾ ਸਲੂਕ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, how should we treat someone who harms us?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार बुराई करने वाले के साथ कैसा व्यवहार करना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਬੁਰਾ ਕਰਨ ਵਾਲੇ ਨਾਲ ਕਿਹੋ ਜਿਹਾ ਸਲੂਕ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, how should we treat someone who harms us?',
         },
         options: {
           hi: ['उसे और बड़ा नुकसान पहुंचाना चाहिए', 'उसके लिए भी भलाई और प्रेम के फूल बोने चाहिए', 'उसे कोर्ट में खींचना चाहिए', 'उससे घृणा करनी चाहिए'],
@@ -516,9 +516,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Jo tu chaahe mukti ko, chhod de sabki aas. Mukt hi jaisa ho rahe, sab kuchh tere paas.',
     bhavarth: {
-      hi: 'कबीर साहेब परम मोक्ष का मर्म समझाते हुए कहते हैं कि हे साधक! यदि तू जन्म-मरण के बंधनों और दुःखों से वास्तविक मुक्ति चाहता है, तो संसार के प्राणियों और नश्वर वस्तुओं से अपेक्षाएं (आस) रखना छोड़ दे। जब तू किसी पर निर्भर न रहकर अंतर से स्वयं को पहले से ही मुक्त मानकर विचरने लगेगा, तो तुझे अनुभव होगा कि परमात्मा का संपूर्ण आनंद और अखंड संपदा तेरे ही भीतर मौजूद है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਤੂੰ ਸੱਚੀ ਮੁਕਤੀ ਚਾਹੁੰਦਾ ਹੈਂ ਤਾਂ ਸੰਸਾਰ ਦੀਆਂ ਝੂਠੀਆਂ ਉਮੀਦਾਂ ਤੇ ਆਸਾਂ ਛੱਡ ਦੇ। ਜਦੋਂ ਤੂੰ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਵਿਚਰੇਂਗਾ, ਤਾਂ ਤੈਨੂੰ ਪਤਾ ਲੱਗੇਗਾ ਕਿ ਸਾਰਾ ਆਤਮਿਕ ਖ਼ਜ਼ਾਨਾ ਤੇਰੇ ਆਪਣੇ ਅੰਦਰ ਹੀ ਮੌਜੂਦ ਹੈ।',
-      en: 'Kabir Saheb reveals the essence of self-liberation: If you truly desire supreme freedom from bondage and pain, renounce all anxious expectations (Aas) from mortal beings and worldly objects. Live right now with the inner detachment of a liberated soul; you will realize that all the divine wealth and serenity of the cosmos already reside within you.',
+      hi: 'सतगुरु कबीर साहेब परम मोक्ष का मर्म समझाते हुए कहते हैं कि हे साधक! यदि तू जन्म-मरण के बंधनों और दुःखों से वास्तविक मुक्ति चाहता है, तो संसार के प्राणियों और नश्वर वस्तुओं से अपेक्षाएं (आस) रखना छोड़ दे। जब तू किसी पर निर्भर न रहकर अंतर से स्वयं को पहले से ही मुक्त मानकर विचरने लगेगा, तो तुझे अनुभव होगा कि परमात्मा का संपूर्ण आनंद और अखंड संपदा तेरे ही भीतर मौजूद है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਤੂੰ ਸੱਚੀ ਮੁਕਤੀ ਚਾਹੁੰਦਾ ਹੈਂ ਤਾਂ ਸੰਸਾਰ ਦੀਆਂ ਝੂਠੀਆਂ ਉਮੀਦਾਂ ਤੇ ਆਸਾਂ ਛੱਡ ਦੇ। ਜਦੋਂ ਤੂੰ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਵਿਚਰੇਂਗਾ, ਤਾਂ ਤੈਨੂੰ ਪਤਾ ਲੱਗੇਗਾ ਕਿ ਸਾਰਾ ਆਤਮਿਕ ਖ਼ਜ਼ਾਨਾ ਤੇਰੇ ਆਪਣੇ ਅੰਦਰ ਹੀ ਮੌਜੂਦ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the essence of self-liberation: If you truly desire supreme freedom from bondage and pain, renounce all anxious expectations (Aas) from mortal beings and worldly objects. Live right now with the inner detachment of a liberated soul; you will realize that all the divine wealth and serenity of the cosmos already reside within you.',
     },
     wordMeanings: {
       hi: [
@@ -560,9 +560,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्ची मुक्ति पाने के लिए सबसे पहले क्या छोड़ना पड़ता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮੁਕਤੀ ਪਾਉਣ ਲਈ ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਛੱਡਣਾ ਪੈਂਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what must be relinquished first to attain true liberation?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्ची मुक्ति पाने के लिए सबसे पहले क्या छोड़ना पड़ता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮੁਕਤੀ ਪਾਉਣ ਲਈ ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਛੱਡਣਾ ਪੈਂਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what must be relinquished first to attain true liberation?',
         },
         options: {
           hi: ['घर-बार और परिवार', 'संसार और लोगों से झूठी आशाएं व अपेक्षाएं', 'भोजन-पानी', 'वस्त्र और आभूषण'],
@@ -597,9 +597,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Te din gaye akaarthi, sangat bhai na sant. Prem bina pashu jeevan, bhakti bina bhagwant.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवन के व्यतीत होने का लेखा-जोखा प्रस्तुत करते हुए कहते हैं कि मनुष्य जीवन के वे सारे दिन व्यर्थ (अकार्थी) नष्ट हो गए, जिनमें किसी सच्चे संत या सत्संग की संगति प्राप्त नहीं हुई। जिस जीवन में हृदय का निर्मल प्रेम नहीं है, वह केवल पशु के समान खाना-पीना और सोना मात्र है; और जिस मनुष्य के भीतर सच्ची भक्ति नहीं है, वह भगवान् (परमात्मा) के सामीप्य व कृपा से सर्वथा वंचित रह जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹ ਸਾਰੇ ਦਿਨ ਵਿਅਰਥ ਚਲੇ ਗਏ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਨਹੀਂ ਹੋਈ। ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਪਸ਼ੂਆਂ ਵਰਗਾ ਹੈ ਅਤੇ ਭਗਤੀ ਤੋਂ ਬਿਨਾਂ ਪ੍ਰਭੂ ਦੀ ਪ੍ਰਾਪਤੀ ਅਸੰਭਵ ਹੈ।',
-      en: 'Kabir Saheb grieves over wasted mortal days: Entirely squandered and barren are those days wherein no fellowship with enlightened saints occurred. A life devoid of genuine compassion and divine love is no better than that of an animal; and without humble devotion, the Supreme Lord can never be realized.',
+      hi: 'सतगुरु कबीर साहेबवन के व्यतीत होने का लेखा-जोखा प्रस्तुत करते हुए कहते हैं कि मनुष्य जीवन के वे सारे दिन व्यर्थ (अकार्थी) नष्ट हो गए, जिनमें किसी सच्चे संत या सत्संग की संगति प्राप्त नहीं हुई। जिस जीवन में हृदय का निर्मल प्रेम नहीं है, वह केवल पशु के समान खाना-पीना और सोना मात्र है; और जिस मनुष्य के भीतर सच्ची भक्ति नहीं है, वह भगवान् (परमात्मा) के सामीप्य व कृपा से सर्वथा वंचित रह जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹ ਸਾਰੇ ਦਿਨ ਵਿਅਰਥ ਚਲੇ ਗਏ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਨਹੀਂ ਹੋਈ। ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਪਸ਼ੂਆਂ ਵਰਗਾ ਹੈ ਅਤੇ ਭਗਤੀ ਤੋਂ ਬਿਨਾਂ ਪ੍ਰਭੂ ਦੀ ਪ੍ਰਾਪਤੀ ਅਸੰਭਵ ਹੈ।',
+      en: 'Satguru Kabir Saheb grieves over wasted mortal days: Entirely squandered and barren are those days wherein no fellowship with enlightened saints occurred. A life devoid of genuine compassion and divine love is no better than that of an animal; and without humble devotion, the Supreme Lord can never be realized.',
     },
     wordMeanings: {
       hi: [
@@ -644,9 +644,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-8-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार प्रेम के बिना मनुष्य का जीवन किसके समान है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਕਿਸ ਵਰਗਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is human life without love comparable to?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार प्रेम के बिना मनुष्य का जीवन किसके समान है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖ ਦਾ ਜੀਵਨ ਕਿਸ ਵਰਗਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is human life without love comparable to?',
         },
         options: {
           hi: ['देवताओं के समान', 'पशु (जानवर) के समान', 'राजा के समान', 'विद्वान के समान'],
@@ -681,16 +681,16 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Teer tupak se jo lade, so to shoor na hoy. Maya taji bhakti kare, soor kahave soy.',
     bhavarth: {
-      hi: 'कबीर साहेब वीरता की आध्यात्मिक परिभाषा देते हुए कहते हैं कि जो रणभूमि में केवल तीर, धनुष या बंदूक (तुपक) से शत्रुओं से लड़ता है, वह वास्तव में सच्चा शूरवीर नहीं है; क्योंकि सांसारिक युद्ध तो नश्वर देहों का विनाश मात्र है। सच्चा शूरवीर (सूरमा) वही है जो माया, विषय-वासना और अहंकार के दुर्जेय राक्षसों को त्यागकर अनन्य भाव से परमात्मा की भक्ति करता है और अपने मन पर विजय प्राप्त करता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਤੀਰਾਂ ਤੇ ਬੰਦੂਕਾਂ ਨਾਲ ਲੜਦਾ ਹੈ ਉਹ ਅਸਲ ਸੂਰਮਾ ਨਹੀਂ ਹੈ। ਸੱਚਾ ਸੂਰਬੀਰ ਉਹ ਹੈ ਜੋ ਮਾਇਆ ਤੇ ਵਿਕਾਰਾਂ ਨੂੰ ਤਿਆਗ ਕੇ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਕਰਦਾ ਹੈ ਅਤੇ ਆਪਣੇ ਮਨ ਨੂੰ ਜਿੱਤਦਾ ਹੈ।',
-      en: 'Kabir Saheb redefines genuine valor: One who merely fights on the battlefield with arrows and firearms (Tupak) is not the ultimate hero, for mortal combat touches only the physical body. The true warrior (Shoor) of the cosmos is one who renounces the intoxicating illusions of Maya and lust, conquering their own mind through unwavering devotion.',
+      hi: 'सतगुरु कबीर साहेब वीरता की आध्यात्मिक परिभाषा देते हुए कहते हैं कि जो रणभूमि में केवल तीर, धनुष या बंदूक (तुपक) से शत्रुओं से लड़ता है, वह वास्तव में सच्चा शूरवीर नहीं है; क्योंकि सांसारिक युद्ध तो नश्वर देहों का विनाश मात्र है। सच्चा शूरवीर (सूरमा) वही है जो माया, विषय-वासना और अहंकार के दुर्जेय राक्षसों को त्यागकर अनन्य भाव से परमात्मा की भक्ति करता है और अपने मन पर विजय प्राप्त करता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਤੀਰਾਂ ਤੇ ਬੰਦੂਕਾਂ ਨਾਲ ਲੜਦਾ ਹੈ ਉਹ ਅਸਲ ਸੂਰਮਾ ਨਹੀਂ ਹੈ। ਸੱਚਾ ਸੂਰਬੀਰ ਉਹ ਹੈ ਜੋ ਮਾਇਆ ਤੇ ਵਿਕਾਰਾਂ ਨੂੰ ਤਿਆਗ ਕੇ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਕਰਦਾ ਹੈ ਅਤੇ ਆਪਣੇ ਮਨ ਨੂੰ ਜਿੱਤਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb redefines genuine valor: One who merely fights on the battlefield with arrows and firearms (Tupak) is not the ultimate hero, for mortal combat touches only the physical body. The true warrior (Shoor) of the cosmos is one who renounces the intoxicating illusions of Maya and lust, conquering their own mind through unwavering devotion.',
     },
     wordMeanings: {
       hi: [
         { word: 'तीर तुपक (Teer Tupak)', meaning: 'धनुष-बाण और तोप/बंदूक, भौतिक अस्त्र-शस्त्र' },
         { word: 'शूर / सूर (Shoor / Soor)', meaning: 'सच्चा वीर, अपराजेय योद्धा' },
         { word: 'माया तजि (Maaya Taji)', meaning: 'सांसारिक आकर्षणों व वासनाओं का त्याग कर' },
-        { word: 'भक्ति करे (Bhakti Kare)', meaning: 'सत्यनाम और सद्गुरु के प्रेम में लीन होना' },
+        { word: 'भक्ति करे (Bhakti Kare)', meaning: 'सत्यनाम और सतगुरु के प्रेम में लीन होना' },
       ],
       pb: [
         { word: 'ਤੁਪਕ (Tupak)', meaning: 'ਬੰਦੂਕ/ਤੋਪ' },
@@ -728,9 +728,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-9-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्चा शूरवीर कौन है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲ ਸੂਰਮਾ ਕੌਣ ਹੈ?',
-          en: 'According to Kabir Saheb, who is the true warrior?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्चा शूरवीर कौन है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲ ਸੂਰਮਾ ਕੌਣ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is the true warrior?',
         },
         options: {
           hi: ['जो तीर-बंदूक से लोगों को मारे', 'जो माया को त्यागकर परमात्मा की सच्ची भक्ति करे', 'जो बहुत संपत्ति जीते', 'जो कुश्ती में पहलवान हो'],
@@ -765,9 +765,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
     },
     transliteration: 'Tan ko jogi sab kare, man ko birla koy. Sahji sab nidhi paiye, jo man jogi hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य वेशभूषा के योग की व्यर्थता बताते हुए कहते हैं कि शरीर पर भस्म मलना, गेरुए वस्त्र पहनना और जटाएं बढ़ाना तो संसार में बहुत लोग कर लेते हैं; परंतु अपने चंचल मन को सांसारिक वासनाओं से विरक्त कर "सच्चा जोगी" बनाने वाला कोई विरला ही साधक होता है। जिस दिन मनुष्य का मन वासनाओं से मुक्त होकर योगी बन जाता है, उस दिन बिना किसी कठिन हठयोग के, सहज ही परमात्मा की समस्त आत्मिक निधियां (परम सुख व शांति) प्राप्त हो जाती हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਰੀਰ ਉੱਤੇ ਭਗਵੇਂ ਕੱਪੜੇ ਪਾ ਕੇ ਬਾਹਰੀ ਜੋਗੀ ਤਾਂ ਸਾਰੇ ਬਣ ਜਾਂਦੇ ਹਨ, ਪਰ ਮਨ ਨੂੰ ਵਿਕਾਰਾਂ ਤੋਂ ਮੋੜਨ ਵਾਲਾ ਕੋਈ ਵਿਰਲਾ ਹੀ ਹੁੰਦਾ ਹੈ। ਜੇ ਮਨ ਸੱਚਾ ਜੋਗੀ ਬਣ ਜਾਵੇ ਤਾਂ ਸਹਿਜੇ ਹੀ ਸਾਰੇ ਆਤਮਿਕ ਖ਼ਜ਼ਾਨੇ ਮਿਲ ਜਾਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb unveils the true essence of spiritual renunciation: Anyone can easily disguise the physical body in ascetic ochre robes and smeared ashes, but rare indeed is the seeker who transforms their turbulent mind into a true Yogi. When the mind itself becomes detached and turned inward, all the sublime treasures (Nidhi) of spiritual bliss and divine union are attained effortlessly.',
+      hi: 'सतगुरु कबीर साहेब बाह्य वेशभूषा के योग की व्यर्थता बताते हुए कहते हैं कि शरीर पर भस्म मलना, गेरुए वस्त्र पहनना और जटाएं बढ़ाना तो संसार में बहुत लोग कर लेते हैं; परंतु अपने चंचल मन को सांसारिक वासनाओं से विरक्त कर "सच्चा जोगी" बनाने वाला कोई विरला ही साधक होता है। जिस दिन मनुष्य का मन वासनाओं से मुक्त होकर योगी बन जाता है, उस दिन बिना किसी कठिन हठयोग के, सहज ही परमात्मा की समस्त आत्मिक निधियां (परम सुख व शांति) प्राप्त हो जाती हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਰੀਰ ਉੱਤੇ ਭਗਵੇਂ ਕੱਪੜੇ ਪਾ ਕੇ ਬਾਹਰੀ ਜੋਗੀ ਤਾਂ ਸਾਰੇ ਬਣ ਜਾਂਦੇ ਹਨ, ਪਰ ਮਨ ਨੂੰ ਵਿਕਾਰਾਂ ਤੋਂ ਮੋੜਨ ਵਾਲਾ ਕੋਈ ਵਿਰਲਾ ਹੀ ਹੁੰਦਾ ਹੈ। ਜੇ ਮਨ ਸੱਚਾ ਜੋਗੀ ਬਣ ਜਾਵੇ ਤਾਂ ਸਹਿਜੇ ਹੀ ਸਾਰੇ ਆਤਮਿਕ ਖ਼ਜ਼ਾਨੇ ਮਿਲ ਜਾਂਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb unveils the true essence of spiritual renunciation: Anyone can easily disguise the physical body in ascetic ochre robes and smeared ashes, but rare indeed is the seeker who transforms their turbulent mind into a true Yogi. When the mind itself becomes detached and turned inward, all the sublime treasures (Nidhi) of spiritual bliss and divine union are attained effortlessly.',
     },
     wordMeanings: {
       hi: [
@@ -812,9 +812,9 @@ export const SAKHIS_BATCH_7: Sakhi[] = [
       {
         id: 'q-b7-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार समस्त आत्मिक निधियां (खजाने) कब सहज ही प्राप्त हो जाती हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਰੇ ਆਤਮਿਕ ਖ਼ਜ਼ਾਨੇ ਕਦੋਂ ਮਿਲਦੇ ਹਨ?',
-          en: 'According to Kabir Saheb, when are all spiritual treasures effortlessly attained?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार समस्त आत्मिक निधियां (खजाने) कब सहज ही प्राप्त हो जाती हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਰੇ ਆਤਮਿਕ ਖ਼ਜ਼ਾਨੇ ਕਦੋਂ ਮਿਲਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, when are all spiritual treasures effortlessly attained?',
         },
         options: {
           hi: ['जब शरीर पर भस्म मली जाए', 'जब मन स्वयं सच्चा जोगी (विरक्त) बन जाए', 'जब जंगल में चले जाएं', 'जब बहुत उपवास रखें'],

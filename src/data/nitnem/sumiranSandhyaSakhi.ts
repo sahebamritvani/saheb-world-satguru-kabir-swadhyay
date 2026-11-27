@@ -15,8 +15,8 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
     en: "Sumiran Sandhya Sakhi"
   },
   subtitle: {
-    hi: "।। सत्यनाम ।। कबीर साहेब रचित सांयकालीन ५१ पावन नाम-सुमिरन एवं शरणागति साखियाँ",
-    pb: "॥ ਸਤਯਨਾਮ ॥ ਕਬੀਰ ਸਾਹੇਬ ਰਚਿਤ ਸੰਧਿਆ ਵੇਲੇ ਦੀਆਂ ੫੧ ਪਵਿੱਤਰ ਸਿਮਰਨ ਸਾਖੀਆਂ",
+    hi: "।। सत्यनाम ।। सतगुरु कबीर साहेब रचित सांयकालीन ५१ पावन नाम-सुमिरन एवं शरणागति साखियाँ",
+    pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਰਚਿਤ ਸੰਧਿਆ ਵੇਲੇ ਦੀਆਂ ੫੧ ਪਵਿੱਤਰ ਸਿਮਰਨ ਸਾਖੀਆਂ",
     en: "51 Sacred Meditative Witness Couplets by Satguru Kabir Saheb for Evening Contemplation"
   },
   iconName: "Moon",
@@ -41,9 +41,9 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब कहते हैं कि सतगुरु को कोटि-कोटि प्रणाम व बंदगी करनी चाहिए। जैसे भृंगी कीड़ा साधारण कीट को अपने ध्यान से अपने ही समान बना लेता है, वैसे ही सतगुरु शिष्य को अपने समान ब्रह्मज्ञानी बना देते हैं।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਨੂੰ ਕਰੋੜਾਂ ਪ੍ਰਣਾਮ ਕਰਨੇ ਚਾਹੀਦੇ ਹਨ। ਜਿਵੇਂ ਭ੍ਰਿੰਗੀ ਕੀੜਾ ਸਾਧਾਰਨ ਕੀੜੇ ਨੂੰ ਆਪਣੇ ਵਰਗਾ ਬਣਾ ਲੈਂਦਾ ਹੈ, ਤਿਵੇਂ ਗੁਰੂ ਸਿੱਖ ਨੂੰ ਆਪਣੇ ਸਮਾਨ ਬਣਾ ਦਿੰਦੇ ਹਨ।",
-        en: "Kabir Saheb says offer millions of salutations to the True Master. Just as the wasp transforms a worm into its own likeness, the Satguru transforms the disciple into Divine oneness."
+        hi: "सतगुरु कबीर साहेब फरमाते हैं कि सतगुरु को कोटि-कोटि प्रणाम व बंदगी करनी चाहिए। जैसे भृंगी कीड़ा साधारण कीट को अपने ध्यान से अपने ही समान बना लेता है, वैसे ही सतगुरु शिष्य को अपने समान ब्रह्मज्ञानी बना देते हैं।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਨੂੰ ਕਰੋੜਾਂ ਪ੍ਰਣਾਮ ਕਰਨੇ ਚਾਹੀਦੇ ਹਨ। ਜਿਵੇਂ ਭ੍ਰਿੰਗੀ ਕੀੜਾ ਸਾਧਾਰਨ ਕੀੜੇ ਨੂੰ ਆਪਣੇ ਵਰਗਾ ਬਣਾ ਲੈਂਦਾ ਹੈ, ਤਿਵੇਂ ਗੁਰੂ ਸਿੱਖ ਨੂੰ ਆਪਣੇ ਸਮਾਨ ਬਣਾ ਦਿੰਦੇ ਹਨ।",
+        en: "Satguru Kabir Saheb proclaims offer millions of salutations to the True Master. Just as the wasp transforms a worm into its own likeness, the Satguru transforms the disciple into Divine oneness."
       }
     },
     {
@@ -202,9 +202,9 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब कहते हैं कि यदि पूर्ण सतगुरु मिल जाएँ, तो इसमें तनिक भी संदेह नहीं कि वे शिष्य की बाँह पकड़कर उसकी लाज रखते हुए उसे अमरलोक (सत्यलोक) पहुँचा देते हैं।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੇਕਰ ਪੂਰਾ ਗੁਰੂ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਉਹ ਸਿੱਖ ਦੀ ਬਾਂਹ ਫੜ ਕੇ ਉਸਨੂੰ ਸੱਚਖੰਡ ਪਹੁੰਚਾ ਦਿੰਦਾ ਹੈ।",
-        en: "Kabir says if a Perfect Master is found, have no doubt He will grasp your hand and honourably convey you to the Eternal Realm."
+        hi: "सतगुरु कबीर साहेब फरमाते हैं कि यदि पूर्ण सतगुरु मिल जाएँ, तो इसमें तनिक भी संदेह नहीं कि वे शिष्य की बाँह पकड़कर उसकी लाज रखते हुए उसे अमरलोक (सत्यलोक) पहुँचा देते हैं।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਪੂਰਾ ਗੁਰੂ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਉਹ ਸਿੱਖ ਦੀ ਬਾਂਹ ਫੜ ਕੇ ਉਸਨੂੰ ਸੱਚਖੰਡ ਪਹੁੰਚਾ ਦਿੰਦਾ ਹੈ।",
+        en: "Satguru Kabir Saheb proclaims if a Perfect Master is found, have no doubt He will grasp your hand and honourably convey you to the Eternal Realm."
       }
     },
     {
@@ -248,7 +248,7 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "प्रत्येक श्वास के साथ सतनाम का सुमिरन करो, एक भी श्वास व्यर्थ मत गँवाओ। क्या पता अगला श्वास फिर आए या न आए!",
+        hi: "प्रत्येक श्वास के साथ सत्यनाम का सुमिरन करो, एक भी श्वास व्यर्थ मत गँवाओ। क्या पता अगला श्वास फिर आए या न आए!",
         pb: "ਹਰ ਇੱਕ ਸਾਹ ਨਾਲ ਨਾਮ ਜਪੋ, ਕੋਈ ਸਾਹ ਅਜਾਈਂ ਨਾ ਗਵਾਓ। ਕੀ ਪਤਾ ਅਗਲਾ ਸਾਹ ਆਵੇ ਜਾਂ ਨਾ ਆਵੇ!",
         en: "Repeat the Holy Name with every single breath; do not waste a breath in vain. Who knows whether the next breath will return or not?"
       }
@@ -340,8 +340,8 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "हे सतगुरु! मुझ पर कृपा दृष्टि कीजिए और अमरापुरी का अविनाशी शब्द-उपदेश प्रदान कीजिए। कबीर साहेब का शीतल शब्द पाकर हंस-आत्मा परमानंद में मग्न हो जाती है।",
-        pb: "ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ 'ਤੇ ਮਿਹਰ ਕਰੋ ਅਤੇ ਅਮਰਲੋਕ ਦਾ ਸ਼ਬਦ ਬਖ਼ਸ਼ੋ। ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਠੰਢੇ ਸ਼ਬਦ ਨੂੰ ਪਾ ਕੇ ਆਤਮਾ ਆਨੰਦਿਤ ਹੁੰਦੀ ਹੈ।",
+        hi: "हे सतगुरु! मुझ पर कृपा दृष्टि कीजिए और अमरापुरी का अविनाशी शब्द-उपदेश प्रदान कीजिए। सतगुरु कबीर साहेब का शीतल शब्द पाकर हंस-आत्मा परमानंद में मग्न हो जाती है।",
+        pb: "ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ 'ਤੇ ਮਿਹਰ ਕਰੋ ਅਤੇ ਅਮਰਲੋਕ ਦਾ ਸ਼ਬਦ ਬਖ਼ਸ਼ੋ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਠੰਢੇ ਸ਼ਬਦ ਨੂੰ ਪਾ ਕੇ ਆਤਮਾ ਆਨੰਦਿਤ ਹੁੰਦੀ ਹੈ।",
         en: "O Satguru, shower Your grace and grant me the celestial Word of the Immortal Realm. Receiving Kabir's soothing Word, the soul rejoices in supreme bliss."
       }
     },
@@ -386,9 +386,9 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "संसार-समुद्र में काग (विषयी जीव) तो बहुत हैं, किंतु हमारा हंस (सत्य का साधक) कोई-कोई ही है। कबीर साहेब धर्मदास जी से कहते हैं कि ऐसे हंसों को नाव में बैठाकर पार उतार दो।",
-        pb: "ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਕਾਂ ਤਾਂ ਬਹੁਤ ਹਨ ਪਰ ਹੰਸ ਕੋਈ-ਕੋਈ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹਨਾਂ ਹੰਸਾਂ ਨੂੰ ਪਾਰ ਲੰਘਾਓ।",
-        en: "In this worldly sea there are many crows (sensualists), but my pure swans are rare. Kabir says to Dharmadas: ferry these pure souls across to the shore."
+        hi: "संसार-समुद्र में काग (विषयी जीव) तो बहुत हैं, किंतु हमारा हंस (सत्य का साधक) कोई-कोई ही है। सतगुरु कबीर साहेब धर्मदास जी से कहते हैं कि ऐसे हंसों को नाव में बैठाकर पार उतार दो।",
+        pb: "ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਕਾਂ ਤਾਂ ਬਹੁਤ ਹਨ ਪਰ ਹੰਸ ਕੋਈ-ਕੋਈ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹਨਾਂ ਹੰਸਾਂ ਨੂੰ ਪਾਰ ਲੰਘਾਓ।",
+        en: "In this worldly sea there are many crows (sensualists), but my pure swans are rare. Satguru Kabir Saheb proclaims to Dharmadas: ferry these pure souls across to the shore."
       }
     },
     {
@@ -410,8 +410,8 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "साहेब कबीर उस अविनाशी परम पुरुष की पावन आरती गाते हैं। देव, मनुष्य और मुनि सभी प्रयत्न करते हैं, परंतु कोई विरला ही लक्ष्य तक पहुँच पाता है।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਉਸ ਅਵਿਨਾਸ਼ੀ ਪ੍ਰਭੂ ਦੀ ਆਰਤੀ ਗਾਉਂਦੇ ਹਨ। ਦੇਵਤੇ, ਮਨੁੱਖ ਅਤੇ ਮੁਨੀ ਸਭ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਨ, ਪਰ ਕੋਈ ਵਿਰਲਾ ਹੀ ਪਾਰ ਲੰਘਦਾ ਹੈ।",
-        en: "Kabir Saheb sings the Aarti of the Immortal Lord. Among gods, humans, and sages, only a rare soul strikes the target of Truth."
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਉਸ ਅਵਿਨਾਸ਼ੀ ਪ੍ਰਭੂ ਦੀ ਆਰਤੀ ਗਾਉਂਦੇ ਹਨ। ਦੇਵਤੇ, ਮਨੁੱਖ ਅਤੇ ਮੁਨੀ ਸਭ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਨ, ਪਰ ਕੋਈ ਵਿਰਲਾ ਹੀ ਪਾਰ ਲੰਘਦਾ ਹੈ।",
+        en: "Satguru Kabir Saheb sings the Aarti of the Immortal Lord. Among gods, humans, and sages, only a rare soul strikes the target of Truth."
       }
     },
     {
@@ -455,7 +455,7 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "रात की बिछुड़ी चकवी तो प्रातःकाल फिर अपने प्रिय से मिल जाती है, किंतु जो जीव सतनाम से बिछुड़ जाता है, वह न दिन में सुख पाता है और न रात में।",
+        hi: "रात की बिछुड़ी चकवी तो प्रातःकाल फिर अपने प्रिय से मिल जाती है, किंतु जो जीव सत्यनाम से बिछुड़ जाता है, वह न दिन में सुख पाता है और न रात में।",
         pb: "ਰਾਤ ਦੀ ਵਿਛੜੀ ਚਕਵੀ ਤਾਂ ਸਵੇਰੇ ਮਿਲ ਜਾਂਦੀ ਹੈ, ਪਰ ਜੋ ਜੀਵ ਨਾਮ ਤੋਂ ਵਿਛੜ ਜਾਂਦਾ ਹੈ, ਉਹ ਦਿਨ-ਰਾਤ ਭਟਕਦਾ ਰਹਿੰਦਾ ਹੈ।",
         en: "The Chakwi separated by night reunites at dawn. But the soul separated from the Holy Name finds no peace by day or night."
       }
@@ -478,9 +478,9 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब कहते हैं: मैं अपने वचन से विचलित नहीं होता, मेरा शब्द सर्वसमर्थ है। जो जीव शब्द-रूपी रथ पर सवार होगा, उसे मैं निश्चित ही सत्यलोक पहुँचा दूँगा।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ: ਮੈਂ ਆਪਣੇ ਵਚਨ ਤੋਂ ਨਹੀਂ ਹਿੱਲਦਾ, ਮੇਰਾ ਸ਼ਬਦ ਸਮਰੱਥ ਹੈ। ਜੋ ਸ਼ਬਦ ਦੇ ਰਥ 'ਤੇ ਚੜ੍ਹੇਗਾ, ਉਸਨੂੰ ਸੱਚਖੰਡ ਪਹੁੰਚਾਵਾਂਗਾ।",
-        en: "Kabir says: I waver not from my promise; my Word is all-powerful. Whosoever ascends the chariot of the Holy Word shall I deliver to Satlok."
+        hi: "सतगुरु कबीर साहेब फरमाते हैं: मैं अपने वचन से विचलित नहीं होता, मेरा शब्द सर्वसमर्थ है। जो जीव शब्द-रूपी रथ पर सवार होगा, उसे मैं निश्चित ही सत्यलोक पहुँचा दूँगा।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਮੈਂ ਆਪਣੇ ਵਚਨ ਤੋਂ ਨਹੀਂ ਹਿੱਲਦਾ, ਮੇਰਾ ਸ਼ਬਦ ਸਮਰੱਥ ਹੈ। ਜੋ ਸ਼ਬਦ ਦੇ ਰਥ 'ਤੇ ਚੜ੍ਹੇਗਾ, ਉਸਨੂੰ ਸੱਚਖੰਡ ਪਹੁੰਚਾਵਾਂਗਾ।",
+        en: "Satguru Kabir Saheb proclaims: I waver not from my promise; my Word is all-powerful. Whosoever ascends the chariot of the Holy Word shall I deliver to Satlok."
       }
     },
     {
@@ -501,8 +501,8 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "पृथ्वी पर धर्मदास जी यति और सती की मर्यादा के प्रतीक हैं। अविनाशी कबीर साहेब तो सदा स्थिर पुरुष हैं, जबकि संसार के सारे भेष और आडंबर चलायमान हैं।",
-        pb: "ਧਰਤੀ 'ਤੇ ਧਰਮਦਾਸ ਜੀ ਧਰਮ ਦੇ ਪ੍ਰਤੀਕ ਹਨ। ਕਬੀਰ ਸਾਹੇਬ ਸਦਾ ਅਟੱਲ ਪੁਰਖ ਹਨ, ਬਾਕੀ ਸਾਰੇ ਭੇਖ ਨਾਸ਼ਵਾਨ ਹਨ।",
+        hi: "पृथ्वी पर धर्मदास जी यति और सती की मर्यादा के प्रतीक हैं। अविनाशी सतगुरु कबीर साहेब तो सदा स्थिर पुरुष हैं, जबकि संसार के सारे भेष और आडंबर चलायमान हैं।",
+        pb: "ਧਰਤੀ 'ਤੇ ਧਰਮਦਾਸ ਜੀ ਧਰਮ ਦੇ ਪ੍ਰਤੀਕ ਹਨ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਦਾ ਅਟੱਲ ਪੁਰਖ ਹਨ, ਬਾਕੀ ਸਾਰੇ ਭੇਖ ਨਾਸ਼ਵਾਨ ਹਨ।",
         en: "On earth Dharmadas embodies righteous virtue. The Eternal Kabir is the immutable Lord, while all outward appearances and garbs pass away."
       }
     },
@@ -547,8 +547,8 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "हे कबीर साहेब! केवल आप ही निर्विकार और निर्भय हैं, बाकी समस्त सृष्टि भय के अधीन है। सब पर आपकी ही सर्वोपरि सत्ता है, आपके ऊपर कोई दूसरा साहेब नहीं है।",
-        pb: "ਹੇ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਹੀ ਨਿਰੰਕਾਰ ਤੇ ਨਿਰਭੈ ਹੋ, ਬਾਕੀ ਸਭ ਡਰ ਵਿੱਚ ਹਨ। ਸਾਰੇ ਜਗਤ 'ਤੇ ਆਪ ਦੀ ਹਕੂਮਤ ਹੈ, ਆਪ ਤੋਂ ਉੱਪਰ ਕੋਈ ਨਹੀਂ।",
+        hi: "हे सतगुरु कबीर साहेब! केवल आप ही निर्विकार और निर्भय हैं, बाकी समस्त सृष्टि भय के अधीन है। सब पर आपकी ही सर्वोपरि सत्ता है, आपके ऊपर कोई दूसरा साहेब नहीं है।",
+        pb: "ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਹੀ ਨਿਰੰਕਾਰ ਤੇ ਨਿਰਭੈ ਹੋ, ਬਾਕੀ ਸਭ ਡਰ ਵਿੱਚ ਹਨ। ਸਾਰੇ ਜਗਤ 'ਤੇ ਆਪ ਦੀ ਹਕੂਮਤ ਹੈ, ਆਪ ਤੋਂ ਉੱਪਰ ਕੋਈ ਨਹੀਂ।",
         en: "O Kabir, You alone are changeless and fearless, while all creation dwells in fear. Sovereign is Your dominion over all; no Master exists above You."
       }
     },
@@ -570,8 +570,8 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "आप भवसागर के दुखों का नाश करने वाले, दूसरों के कष्ट हरने वाले और आत्मा को अमर करने वाले हैं। हे अदली कबीर साहेब! आप ही आदि और युगादि से न्यायकारी परमात्मा हैं।",
-        pb: "ਆਪ ਭਵ-ਬੰਧਨ ਕੱਟਣ ਵਾਲੇ, ਦੁੱਖ ਹਰਨ ਵਾਲੇ ਅਤੇ ਅਮਰ ਕਰਨ ਵਾਲੇ ਹੋ। ਹੇ ਨਿਆਂਕਾਰੀ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਹੀ ਆਦਿ-ਜੁਗਾਦਿ ਤੋਂ ਪਰਮੇਸ਼ੁਰ ਹੋ।",
+        hi: "आप भवसागर के दुखों का नाश करने वाले, दूसरों के कष्ट हरने वाले और आत्मा को अमर करने वाले हैं। हे अदली सतगुरु कबीर साहेब! आप ही आदि और युगादि से न्यायकारी परमात्मा हैं।",
+        pb: "ਆਪ ਭਵ-ਬੰਧਨ ਕੱਟਣ ਵਾਲੇ, ਦੁੱਖ ਹਰਨ ਵਾਲੇ ਅਤੇ ਅਮਰ ਕਰਨ ਵਾਲੇ ਹੋ। ਹੇ ਨਿਆਂਕਾਰੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਹੀ ਆਦਿ-ਜੁਗਾਦਿ ਤੋਂ ਪਰਮੇਸ਼ੁਰ ਹੋ।",
         en: "Destroyer of birth and death, remover of suffering, bestower of immortality! From the primeval ages You are the supreme, just Ruler, Kabir."
       }
     },
@@ -616,9 +616,9 @@ export const SUMIRAN_SANDHYA_SAKHI_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब विचार करके कहते हैं कि दया, नम्रता, भक्ति, समदृष्टि, शील-संतोष और परोपकार—ये ही सच्चे साधु व भक्त के मुख्य लक्षण हैं।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ: ਦਇਆ, ਨਿਮਰਤਾ, ਬੰਦਗੀ, ਸਮਤਾ, ਸੁਭਾਅ ਅਤੇ ਪਰਉਪਕਾਰ—ਇਹ ਹੀ ਸੱਚੇ ਸਾਧੂ ਦੇ ਲੱਛਣ ਹਨ।",
-        en: "Kabir declares after deep reflection: Compassion, humility, worship, equanimity, good conduct, and benevolence—these are the true marks of a Saint."
+        hi: " विचार करके सतगुरु कबीर साहेब फरमाते हैं कि दया, नम्रता, भक्ति, समदृष्टि, शील-संतोष और परोपकार—ये ही सच्चे साधु व भक्त के मुख्य लक्षण हैं।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਦਇਆ, ਨਿਮਰਤਾ, ਬੰਦਗੀ, ਸਮਤਾ, ਸੁਭਾਅ ਅਤੇ ਪਰਉਪਕਾਰ—ਇਹ ਹੀ ਸੱਚੇ ਸਾਧੂ ਦੇ ਲੱਛਣ ਹਨ।",
+        en: "Satguru Kabir Saheb proclaims after deep reflection: Compassion, humility, worship, equanimity, good conduct, and benevolence—these are the true marks of a Saint."
       }
     },
     {

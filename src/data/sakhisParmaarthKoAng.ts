@@ -19,8 +19,8 @@ export const SAKHIS_PARMAARTH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Aap swaarathi medini, bhakti swaarathi daas. Kabeer jan parmaarthi, daari tan kee aas.',
     bhavarth: {
-      hi: 'जिस प्रकार पृथ्वी स्वार्थवश स्वतः सबको अपनी ओर आकर्षित कर खींच लेती है, उसी प्रकार भक्ति के वेश में दास-भक्त सबको अपनी ओर झुकाने का प्रयास करते हैं। कबीरजी कहते हैं कि परमार्थी पुरुष अपने तन की भी आशा, दूसरों का कल्याण करने के कारण त्याग देते हैं।',
-      pb: devanagariToGurmukhi('ਜਿਵੇਂ ਧਰਤੀ ਸਭ ਨੂੰ ਆਪਣੇ ਵੱਲ ਖਿੱਚਦੀ ਹੈ, ਤਿਵੇਂ ਹੀ ਭਗਤੀ ਦੇ ਭੇਖ ਵਿੱਚ ਵੀ ਕਈ ਸਵਾਰਥ ਸਾਧਦੇ ਹਨ। ਪਰ ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸੱਚਾ ਪਰਮਾਰਥੀ ਜਨ ਦੂਜਿਆਂ ਦੇ ਕਲਿਆਣ ਲਈ ਆਪਣੀ ਦੇਹ ਦੀ ਆਸ ਵੀ ਤਿਆਗ ਦਿੰਦਾ ਹੈ।'),
+      hi: 'जिस प्रकार पृथ्वी स्वार्थवश स्वतः सबको अपनी ओर आकर्षित कर खींच लेती है, उसी प्रकार भक्ति के वेश में दास-भक्त सबको अपनी ओर झुकाने का प्रयास करते हैं। सतगुरु कबीर साहेब फरमाते हैं कि परमार्थी पुरुष अपने तन की भी आशा, दूसरों का कल्याण करने के कारण त्याग देते हैं।',
+      pb: devanagariToGurmukhi('ਜਿਵੇਂ ਧਰਤੀ ਸਭ ਨੂੰ ਆਪਣੇ ਵੱਲ ਖਿੱਚਦੀ ਹੈ, ਤਿਵੇਂ ਹੀ ਭਗਤੀ ਦੇ ਭੇਖ ਵਿੱਚ ਵੀ ਕਈ ਸਵਾਰਥ ਸਾਧਦੇ ਹਨ। ਪਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਪਰਮਾਰਥੀ ਜਨ ਦੂਜਿਆਂ ਦੇ ਕਲਿਆਣ ਲਈ ਆਪਣੀ ਦੇਹ ਦੀ ਆਸ ਵੀ ਤਿਆਗ ਦਿੰਦਾ ਹੈ।'),
       en: 'Just as the earth naturally pulls everything toward itself, many seekers pursue devotion with hidden self-interest. Kabir proclaims that the genuine altruistic sage renounces even attachment to their own physical body for the spiritual liberation of others.'
     },
     wordMeanings: {
@@ -77,8 +77,8 @@ export const SAKHIS_PARMAARTH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Preet reet sab arth kee, parmaarath kee naahin. Kahain kabeer parmaarthee, birla koyi kali maahin.',
     bhavarth: {
-      hi: 'इस जगत में जितनी भी प्रीत की रीत हैं, सब धन से, स्वार्थ से जुड़ी हुई हैं। परमार्थ से उनका कोई संबंध नहीं है। कबीरजी कहते हैं कि आज के इस कलि-काल (भौतिक युग) में विरला ही कोई परमार्थी पुरुष होगा, जो स्वार्थ और माया-मोह के बंधन में न फंसा हुआ हो।',
-      pb: devanagariToGurmukhi('ਜਗਤ ਵਿੱਚ ਸਾਰਾ ਪਿਆਰ-ਪ੍ਰੇਮ ਧਨ ਅਤੇ ਮਤਲਬ ਦਾ ਹੈ, ਪਰਮਾਰਥ ਦਾ ਨਹੀਂ। ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਕਲਜੁਗ ਵਿੱਚ ਕੋਈ ਵਿਰਲਾ ਹੀ ਨਿਰਸਵਾਰਥ ਪਰਉਪਕਾਰੀ ਮਨੁੱਖ ਹੈ।'),
+      hi: 'इस जगत में जितनी भी प्रीत की रीत हैं, सब धन से, स्वार्थ से जुड़ी हुई हैं। परमार्थ से उनका कोई संबंध नहीं है। सतगुरु कबीर साहेब फरमाते हैं कि आज के इस कलि-काल (भौतिक युग) में विरला ही कोई परमार्थी पुरुष होगा, जो स्वार्थ और माया-मोह के बंधन में न फंसा हुआ हो।',
+      pb: devanagariToGurmukhi('ਜਗਤ ਵਿੱਚ ਸਾਰਾ ਪਿਆਰ-ਪ੍ਰੇਮ ਧਨ ਅਤੇ ਮਤਲਬ ਦਾ ਹੈ, ਪਰਮਾਰਥ ਦਾ ਨਹੀਂ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਕਲਜੁਗ ਵਿੱਚ ਕੋਈ ਵਿਰਲਾ ਹੀ ਨਿਰਸਵਾਰਥ ਪਰਉਪਕਾਰੀ ਮਨੁੱਖ ਹੈ।'),
       en: 'All worldly conventions of love and friendship are anchored in material gain (arth) and selfishness, not in selfless truth. Kabir observes that in this iron age (Kali Yuga), exceedingly rare is the truly altruistic soul who remains untainted by worldly self-interest.'
     },
     wordMeanings: {
@@ -193,8 +193,8 @@ export const SAKHIS_PARMAARTH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Sukh ke sangee swaarathi, dukh mein rahte door. Kahain kabeer parmaarthee, dukh sukh sada hazoor.',
     bhavarth: {
-      hi: 'संसार के सभी स्वार्थी लोग केवल सुख में ही साथ रहते हैं और दुःख के समय साथ छोड़ जाते हैं। कबीरजी कहते हैं कि परमार्थी पुरुष ही केवल सच्चे सहयोगी तथा सद्भाव वाले हैं, जो सुख-दुःख दोनों में सदैव साथ रहते हैं।',
-      pb: devanagariToGurmukhi('ਸਵਾਰਥੀ ਲੋਕ ਸਿਰਫ਼ ਸੁੱਖ ਵੇਲੇ ਸਾਥੀ ਬਣਦੇ ਹਨ ਅਤੇ ਦੁੱਖ ਵੇਲੇ ਦੂਰ ਨੱਠ ਜਾਂਦੇ ਹਨ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸੱਚੇ ਪਰਉਪਕਾਰੀ ਸੰਤ ਸੁੱਖ ਅਤੇ ਦੁੱਖ ਦੋਵਾਂ ਵਿੱਚ ਸਦਾ ਨਾਲ ਖਲੋਂਦੇ ਹਨ।'),
+      hi: 'संसार के सभी स्वार्थी लोग केवल सुख में ही साथ रहते हैं और दुःख के समय साथ छोड़ जाते हैं। सतगुरु कबीर साहेब फरमाते हैं कि परमार्थी पुरुष ही केवल सच्चे सहयोगी तथा सद्भाव वाले हैं, जो सुख-दुःख दोनों में सदैव साथ रहते हैं।',
+      pb: devanagariToGurmukhi('ਸਵਾਰਥੀ ਲੋਕ ਸਿਰਫ਼ ਸੁੱਖ ਵੇਲੇ ਸਾਥੀ ਬਣਦੇ ਹਨ ਅਤੇ ਦੁੱਖ ਵੇਲੇ ਦੂਰ ਨੱਠ ਜਾਂਦੇ ਹਨ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੇ ਪਰਉਪਕਾਰੀ ਸੰਤ ਸੁੱਖ ਅਤੇ ਦੁੱਖ ਦੋਵਾਂ ਵਿੱਚ ਸਦਾ ਨਾਲ ਖਲੋਂਦੇ ਹਨ।'),
       en: 'Opportunistic people stand by you only during sunny days of pleasure and prosperity, fleeing when hardship arrives. Kabir reveals that the altruistic saints alone are true companions, remaining present and supportive through both joy and sorrow alike.'
     },
     wordMeanings: {
@@ -359,9 +359,9 @@ export const SAKHIS_PARMAARTH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maroon par maangoo naheen, apne tan ke kaaj. Parmaarath ke kaarnai, mohi na aavai laaj.',
     bhavarth: {
-      hi: 'जीव को प्रेरणा देने के लिए साहेब कहते हैं कि अपने तन अथवा जीवन निर्वाह के लिए मैं चाहे मर जाऊं, परंतु कभी भी किसी से कुछ नहीं मांगूंगा, लेकिन परमार्थ के कारण मांगने में मुझे किसी भी प्रकार की लाज नहीं आती। किसी भी रूप में मुझे न तो कोई भय है, न संदेह और न ही कोई लज्जा है, अर्थात जिस किसी उपाय से परमार्थ हो सकता है, वह मैं अवश्य ही करूंगा।',
+      hi: 'जीव को प्रेरणा देने के लिए सतगुरु कबीर साहेब फरमाते हैं कि अपने तन अथवा जीवन निर्वाह के लिए मैं चाहे मर जाऊं, परंतु कभी भी किसी से कुछ नहीं मांगूंगा, लेकिन परमार्थ के कारण मांगने में मुझे किसी भी प्रकार की लाज नहीं आती। किसी भी रूप में मुझे न तो कोई भय है, न संदेह और न ही कोई लज्जा है, अर्थात जिस किसी उपाय से परमार्थ हो सकता है, वह मैं अवश्य ही करूंगा।',
       pb: devanagariToGurmukhi('ਆਪਣੀ ਦੇਹ ਜਾਂ ਨਿੱਜੀ ਲੋੜਾਂ ਲਈ ਮੈਂ ਮਰ ਜਾਵਾਂਗਾ ਪਰ ਕਦੀ ਕਿਸੇ ਅੱਗੇ ਹੱਥ ਨਹੀਂ ਫੈਲਾਵਾਂਗਾ; ਪਰ ਦੂਜਿਆਂ ਦੇ ਭਲੇ (ਪਰਮਾਰਥ) ਲਈ ਮੰਗਣ ਵਿੱਚ ਮੈਨੂੰ ਕੋਈ ਸ਼ਰਮ ਜਾਂ ਝਿਜਕ ਨਹੀਂ ਆਉਂਦੀ।'),
-      en: 'Kabir declares: for my own bodily sustenance, I would rather perish than beg from anyone; yet for the noble cause of Parmaarth (universal welfare), I feel not the slightest shame or hesitation in seeking resources for the good of all.'
+      en: 'Satguru Kabir Saheb proclaims: for my own bodily sustenance, I would rather perish than beg from anyone; yet for the noble cause of Parmaarth (universal welfare), I feel not the slightest shame or hesitation in seeking resources for the good of all.'
     },
     wordMeanings: {
       hi: [
@@ -414,8 +414,8 @@ export const SAKHIS_PARMAARTH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Dhan rahai na joban rahai, rahai na gaanv na thaanv. Kabeer jag mein jas rahai, karide kisee ka kaam.',
     bhavarth: {
-      hi: 'अंत काल में हमारे पास न तो धन रहेगा और न ही यह यौवन और न ही अपना ये गांव रहेगा और न अपने रहने का स्थान, अर्थात हमारे पास कुछ भी नहीं होगा। कबीरजी कहते हैं कि इस जगत में केवल शुभ-कर्म रूपी यश रहेगा, अतः सदैव परमार्थ के सत्कर्मों में रत रहना चाहिए।',
-      pb: devanagariToGurmukhi('ਅੰਤ ਵੇਲੇ ਨਾ ਧਨ ਰਹਿਣਾ ਹੈ, ਨਾ ਜਵਾਨੀ, ਨਾ ਇਹ ਪਿੰਡ ਅਤੇ ਨਾ ਕੋਈ ਟਿਕਾਣਾ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਵਿੱਚ ਸਿਰਫ਼ ਪਰਉਪਕਾਰ ਦਾ ਨੇਕ ਜੱਸ (ਕੀਰਤੀ) ਹੀ ਰਹਿੰਦਾ ਹੈ, ਇਸ ਲਈ ਕਿਸੇ ਲੋੜਵੰਦ ਦਾ ਕੰਮ ਸੰਵਾਰ ਦਿਓ।'),
+      hi: 'अंत काल में हमारे पास न तो धन रहेगा और न ही यह यौवन और न ही अपना ये गांव रहेगा और न अपने रहने का स्थान, अर्थात हमारे पास कुछ भी नहीं होगा। सतगुरु कबीर साहेब फरमाते हैं कि इस जगत में केवल शुभ-कर्म रूपी यश रहेगा, अतः सदैव परमार्थ के सत्कर्मों में रत रहना चाहिए।',
+      pb: devanagariToGurmukhi('ਅੰਤ ਵੇਲੇ ਨਾ ਧਨ ਰਹਿਣਾ ਹੈ, ਨਾ ਜਵਾਨੀ, ਨਾ ਇਹ ਪਿੰਡ ਅਤੇ ਨਾ ਕੋਈ ਟਿਕਾਣਾ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਵਿੱਚ ਸਿਰਫ਼ ਪਰਉਪਕਾਰ ਦਾ ਨੇਕ ਜੱਸ (ਕੀਰਤੀ) ਹੀ ਰਹਿੰਦਾ ਹੈ, ਇਸ ਲਈ ਕਿਸੇ ਲੋੜਵੰਦ ਦਾ ਕੰਮ ਸੰਵਾਰ ਦਿਓ।'),
       en: 'At the end of life, neither wealth nor youth will remain, nor your native village, nor your earthly dwelling. Kabir proclaims: only the noble fragrance of good deeds and selfless service (Jas) endures in this world—therefore do good and serve someone in need.'
     },
     wordMeanings: {

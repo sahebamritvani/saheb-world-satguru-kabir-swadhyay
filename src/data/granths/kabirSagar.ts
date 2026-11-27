@@ -60,7 +60,7 @@ export const KABIR_SAGAR_GRANTH: MasterGranth = {
   },
   "subtitle": {
     "hi": "सत्यलोक, सृष्टि रचना, हंस उद्धार एवं सनातन आत्मज्ञान का ४२ बोधों वाला महासागर",
-    "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ੪੨ ਬੋਧਾਂ ਦਾ ਮਹਾਸਾਗਰ",
+    "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ੪੨ ਬੋਧਾਂ ਦਾ ਮਹਾਸਾਗਰ",
     "en": "The Grand Ocean of 42 Divine Bodhs (Volumes) of Wisdom & Creation"
   },
   "category": "mool-granth",

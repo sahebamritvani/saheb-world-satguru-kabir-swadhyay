@@ -53,7 +53,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     },
     transliteration: 'Sadho aisa hi guru keejai, ghat ke pat jo kholai; Anal achaitanya parakh deyi, amrit bani bolai.',
     bhavarth: {
-      hi: 'सच्चे सद्गुरु वही हैं जो बाहरी आडंबर से हटाकर हृदय के अज्ञान के कपाट खोल दें और सुरति को अमर सत्यनाम से जोड़ दें।',
+      hi: 'सच्चे सतगुरु वही हैं जो बाहरी आडंबर से हटाकर हृदय के अज्ञान के कपाट खोल दें और सुरति को अमर सत्यनाम से जोड़ दें।',
       pb: 'ਸੱਚੇ ਸਤਿਗੁਰੂ ਉਹੀ ਹਨ ਜੋ ਬਾਹਰੀ ਆਡੰਬਰ ਤੋਂ ਹਟਾ ਕੇ ਹਿਰਦੇ ਦੇ ਅਗਿਆਨ ਦੇ ਕਪਾਟ ਖੋਲ੍ਹ ਦਿੰਦੇ ਹਨ ਤੇ ਸੁਰਤ ਨੂੰ ਅਮਰ ਸਤਯਨਾਮ ਨਾਲ ਜੋੜਦੇ ਹਨ।',
       en: 'True Satguru is the one who removes outer delusion, unlocks the heart’s inner door, and unites awareness with eternal Satyanaam.',
     },
@@ -229,7 +229,7 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
   {
     id: 'amar-sutra-10',
     number: 10,
-    grantha: 'कबीर अमर सूत्र • सद्गुरु विश्वास',
+    grantha: 'कबीर अमर सूत्र • सतगुरु विश्वास',
     categoryTitle: {
       hi: 'धीरज एवं परिपक्वता सूत्र',
       pb: 'ਧੀਰਜ ਅਤੇ ਪਰਿਪੱਕਤਾ ਸੂਤਰ',

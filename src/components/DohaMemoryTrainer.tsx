@@ -85,7 +85,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         ],
         correctOptionId: 1,
         spiritualContext: {
-          hi: 'सद्गुरु कबीर साहेब चेतावनी देते हैं कि बाहरी महल-अटारी और दिखावा चाहे कितना भी सुंदर हो, बिना सतगुरु के नाम-ज्ञान के जीव को भवसागर में काल की मार सहनी पड़ती है।',
+          hi: 'सतगुरु कबीर साहेब चेतावनी देते हैं कि बाहरी महल-अटारी और दिखावा चाहे कितना भी सुंदर हो, बिना सतगुरु के नाम-ज्ञान के जीव को भवसागर में काल की मार सहनी पड़ती है।',
           pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਬਾਹਰੀ ਮਹਿਲ ਭਾਵੇਂ ਕਿੰਨੇ ਵੀ ਸੁੰਦਰ ਹੋਣ, ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
           en: 'Satguru Kabir cautions that exterior worldly splendor is futile without the inner awakening of Satguru’s true Nam.'
         }
@@ -101,7 +101,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         missingLine: {
           hi: 'कहै कबीर गुरु ज्ञान तें, एक आध उभरन्त ॥',
           pb: 'ਕਹੈ ਕਬੀਰ ਗੁਰੂ ਗਿਆਨ ਤੇਂ, ਇਕ ਆਧ ਉਭਰੰਤ ॥',
-          en: 'Kabir says by Guru’s grace, rare souls manage to escape.'
+          en: 'Satguru Kabir Saheb proclaims by Guru’s grace, rare souls manage to escape.'
         },
         options: [
           {
@@ -109,7 +109,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
             text: {
               hi: 'कहै कबीर गुरु ज्ञान तें, एक आध उभरन्त ॥',
               pb: 'ਕਹੈ ਕਬੀਰ ਗੁਰੂ ਗਿਆਨ ਤੇਂ, ਇਕ ਆਧ ਉਭਰੰਤ ॥',
-              en: 'Kabir says by Guru’s grace, rare souls manage to escape.'
+              en: 'Satguru Kabir Saheb proclaims by Guru’s grace, rare souls manage to escape.'
             }
           },
           {
@@ -131,7 +131,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
         ],
         correctOptionId: 1,
         spiritualContext: {
-          hi: 'संसार रूपी दीपक पर मोह-माया के कारण जीव पतंगे की तरह जल मरते हैं। केवल सद्गुरु के पावन ज्ञान से ही कोई विरला साधक बच पाता है।',
+          hi: 'संसार रूपी दीपक पर मोह-माया के कारण जीव पतंगे की तरह जल मरते हैं। केवल सतगुरु के पावन ज्ञान से ही कोई विरला साधक बच पाता है।',
           pb: 'ਸੰਸਾਰੀ ਮੋਹ-ਮਾਇਆ ਵਿੱਚ ਫਸ ਕੇ ਜੀਵ ਨਸ਼ਟ ਹੋ ਜਾਂਦੇ ਹਨ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ ਹੀ ਬਚਾਅ ਸੰਭਵ ਹੈ।',
           en: 'Entangled in worldly attachments, souls burn in illusion. Only through Satguru’s wisdom is deliverance attained.'
         }
@@ -444,7 +444,7 @@ export const DohaMemoryTrainer: React.FC<DohaMemoryTrainerProps> = ({
               </h3>
               <p className="text-xs sm:text-sm font-serif opacity-80">
                 {language === 'pb'
-                  ? `ਤੁਸੀਂ ${trainerVerses.length} ਵਿੱਚੋਂ ${score} ਦੋਹੇ ਆਪਣੀ ਯਾਦਦਾਸ਼ਤ ਨਾਲ ਪੂਰੇ ਕੀਤੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚ ਸਦਾ ਅਮਰ ਰਹੇ।`
+                  ? `ਤੁਸੀਂ ${trainerVerses.length} ਵਿੱਚੋਂ ${score} ਦੋਹੇ ਆਪਣੀ ਯਾਦਦਾਸ਼ਤ ਨਾਲ ਪੂਰੇ ਕੀਤੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚ ਸਦਾ ਅਮਰ ਰਹੇ।`
                   : language === 'en'
                   ? `You recalled ${score} out of ${trainerVerses.length} sacred couplets from memory. May Satguru Kabir Saheb's eternal Vani shine within your heart.`
                   : `आपने ${trainerVerses.length} में से ${score} दोहे अपनी स्मृति से पूर्ण किए। सतगुरु कबीर साहेब की वाणी आपके हृदय में सदा अमर रहे।`}

@@ -914,7 +914,7 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
             </h3>
             <p className="text-xs sm:text-sm font-serif opacity-80" style={{ color: theme.textSecondary }}>
               {language === 'pb'
-                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀਆਂ ਸਾਖੀਆਂ ਦੇ ਆਧਾਰ ਤੇ ਰੋਜ਼ਾਨਾ ਆਤਮ-ਮੰਥਨ, ੩-ਵਾਰ ਸ਼ੁਕਰਾਨਾ ਤੇ ਸੰਕਲਪ ਦਰਜ ਕਰੋ।'
+                ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਸਾਖੀਆਂ ਦੇ ਆਧਾਰ ਤੇ ਰੋਜ਼ਾਨਾ ਆਤਮ-ਮੰਥਨ, ੩-ਵਾਰ ਸ਼ੁਕਰਾਨਾ ਤੇ ਸੰਕਲਪ ਦਰਜ ਕਰੋ।'
                 : language === 'en'
                 ? 'Record daily self-contemplation, 3-point gratitude log with blooming flowers, and sadhana resolutions.'
                 : 'सतगुरु कबीर साहेब की साखियों पर आधारित नित्य आत्म-मंथन, त्रिविध कृतज्ञता दैनिकी व साधना संकल्प दर्ज करें।'}

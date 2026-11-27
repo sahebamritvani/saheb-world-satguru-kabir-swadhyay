@@ -229,7 +229,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
       createdLabel: 'निर्मित कार्ड:',
       downloadedToast: 'पावन वाणी कार्ड सफलतापूर्वक डाउनलोड हो गया!',
       sharedToast: 'कार्ड साझा किया गया!',
-      defaultCourtesy: 'सौजन्य: साहेब वर्ल्ड साधक परिवार',
+      defaultCourtesy: 'सौजन्य: साहेब वर्ल्ड (Saheb World)',
     },
     pb: {
       title: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ',
@@ -239,7 +239,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
       customPlaceholder: 'ਆਪਣਾ ਦੋਹਾ, ਸਾਖੀ ਜਾਂ ਪਾਵਨ ਸੰਦੇਸ਼ ਇੱਥੇ ਲਿਖੋ...',
       yourName: '੨. ਤੁਹਾਡਾ ਨਾਮ (ਕਾਰਡ ਦੇ ਹੇਠਾਂ ਦਿਖੇਗਾ)',
       namePlaceholder: 'ਜਿਵੇਂ: ਗੁਰਮੁਖ ਸਿੰਘ / ਤੁਹਾਡਾ ਨਾਮ',
-      courtesyPrefix: 'ਸੌਜਨ੍ਯ:',
+      courtesyPrefix: 'ਸੌਜਨਯ:',
       chooseTheme: '੩. ਅਧਿਆਤਮਕ ਥੀਮ ਚੁਣੋ',
       livePreview: 'ਕਾਰਡ ਝਲਕ (Live Preview)',
       downloadBtn: 'ਕਾਰਡ ਡਾਊਨਲੋਡ ਕਰੋ (PNG)',
@@ -249,7 +249,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
       createdLabel: 'ਬਣਾਏ ਗਏ ਕਾਰਡ:',
       downloadedToast: 'ਪਾਵਨ ਬਾਣੀ ਕਾਰਡ ਸਫਲਤਾਪੂਰਵਕ ਡਾਊਨਲੋਡ ਹੋ ਗਿਆ!',
       sharedToast: 'ਕਾਰਡ ਸਾਂਝਾ ਕੀਤਾ ਗਿਆ!',
-      defaultCourtesy: 'ਸੌਜਨ੍ਯ: ਸਾਹੇਬ ਵਰਲਡ ਸਾਧਕ ਪਰਿਵਾਰ',
+      defaultCourtesy: 'ਸੌਜਨਯ: ਸਾਹੇਬ ਵਰਲਡ (Saheb World)',
     },
     en: {
       title: 'Kabir Vani Greeting Card Maker',
@@ -269,7 +269,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
       createdLabel: 'Cards Created:',
       downloadedToast: 'Sacred greeting card downloaded successfully!',
       sharedToast: 'Card shared!',
-      defaultCourtesy: 'Courtesy: Saheb World Seeker Family',
+      defaultCourtesy: 'Courtesy: Saheb World',
     },
   }[language];
 
@@ -371,7 +371,7 @@ export const KabirVaniCardMaker: React.FC<KabirVaniCardMakerProps> = ({
     ctx.fillText(courtesyLine, size / 2, size - 188);
 
     // Clean Unified Closing Salutation (No duplicate branding!)
-    const closingSalutation = SACRED_SHARE_TEMPLATE.footer[language].split('\n')[1];
+    const closingSalutation = SACRED_SHARE_TEMPLATE.footer[language].split('\n')[1] || '।। साहेब बंदगी साहेब ।। 🙏';
     ctx.fillStyle = activeTheme.mutedColor;
     ctx.font = 'bold 30px Georgia, "Noto Sans Devanagari", "Noto Sans Gurmukhi", serif';
     ctx.fillText(

@@ -79,9 +79,9 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Time as the relentless hunter waiting in ambush for the soul.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੁਢਾਪਾ ਕੁੱਤੇ ਦੀ ਨਿਆਈਂ ਅਤੇ ਜਵਾਨੀ ਖ਼ਰਗੋਸ਼ ਦੀ ਨਿਆਈਂ ਹੈ। ਕਾਲ ਰੂਪੀ ਸ਼ਿਕਾਰੀ ਨੇ ਇਸ ਜੀਵ ਰੂਪੀ ਝੌਂਪੜੀ ਨੂੰ ਦੋਹਾਂ ਵੈਰੀਆਂ ਵਿਚਕਾਰ ਘੇਰ ਰੱਖਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਬਿਨਾਂ ਇਸ ਤੋਂ ਕੋਈ ਨਹੀਂ ਬਚ ਸਕਦਾ।',
-      hi: 'कबीर साहेब के अनुसार वृद्धावस्था कुत्ते की भांति और युवावस्था खरगोश की भांति है। काल रूपी शिकारी ने यौवन पर बुढ़ापे को शिकार हेतु छोड़ा है। दोनों शत्रुओं के बीच मनुष्य की झोंपड़ी है, अतः सतगुरु के सत्यनाम बिना रक्षा असंभव है।',
-      en: 'In Kabir Saheb\'s mystical warning, old age is like a hound and youth like a rabbit, with Kal the hunter pursuing the fragile body. Only refuge in the Satguru and Satyanaam bestows deliverance.'
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬੁਢਾਪਾ ਕੁੱਤੇ ਦੀ ਨਿਆਈਂ ਅਤੇ ਜਵਾਨੀ ਖ਼ਰਗੋਸ਼ ਦੀ ਨਿਆਈਂ ਹੈ। ਕਾਲ ਰੂਪੀ ਸ਼ਿਕਾਰੀ ਨੇ ਇਸ ਜੀਵ ਰੂਪੀ ਝੌਂਪੜੀ ਨੂੰ ਦੋਹਾਂ ਵੈਰੀਆਂ ਵਿਚਕਾਰ ਘੇਰ ਰੱਖਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਬਿਨਾਂ ਇਸ ਤੋਂ ਕੋਈ ਨਹੀਂ ਬਚ ਸਕਦਾ।',
+      hi: 'सतगुरु कबीर साहेब के अनुसार वृद्धावस्था कुत्ते की भांति और युवावस्था खरगोश की भांति है। काल रूपी शिकारी ने यौवन पर बुढ़ापे को शिकार हेतु छोड़ा है। दोनों शत्रुओं के बीच मनुष्य की झोंपड़ी है, अतः सतगुरु के सत्यनाम बिना रक्षा असंभव है।',
+      en: 'In Satguru Kabir Saheb\'s mystical warning, old age is like a hound and youth like a rabbit, with Kal the hunter pursuing the fragile body. Only refuge in the Satguru and Satyanaam bestows deliverance.'
     },
     exampleSakhi: {
       text: 'जरा कुत्ता जोबन ससा, काल अहेरी नित्त।\nदो बैरी बिच झोंपड़ा, कुशल कहां सो मित्त।।',
@@ -128,7 +128,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਕਾਲ ਦਾ ਪ੍ਰਥਮ ਦੂਤ ਜੋ ਦੇਹ ਦੇ ਬਲ, ਤੇਜ ਅਤੇ ਇੰਦਰੀਆਂ ਨੂੰ ਹੌਲੀ-ਹੌਲੀ ਹਰ ਲੈਂਦਾ ਹੈ। ਜੀਵ ਜਦ ਤੱਕ ਬੁਢਾਪੇ ਦੀ ਲਾਚਾਰੀ ਵਿੱਚ ਨਹੀਂ ਘਿਰਦਾ, ਤਦ ਤੱਕ ਸਤਿਗੁਰੂ ਦੇ ਸਿਮਰਨ ਵਿੱਚ ਲੱਗ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ।',
-      hi: 'काल का वह अग्रदूत जो शरीर की शक्ति, रूप और इंद्रियों को क्षीण कर देता है। कबीर साहेब चेतावनी देते हैं कि मृत्यु और जरा के दोहरे संकट से पहले ही सत्यनाम का अवलंब ले लें।',
+      hi: 'काल का वह अग्रदूत जो शरीर की शक्ति, रूप और इंद्रियों को क्षीण कर देता है। सतगुरु कबीर साहेब चेतावनी देते हैं कि मृत्यु और जरा के दोहरे संकट से पहले ही सत्यनाम का अवलंब ले लें।',
       en: 'The herald of Kal that gradually robs the physical vessel of vitality; urging the seeker to awaken to Truth before bodily decrepitude strikes.'
     },
     exampleSakhi: {
@@ -188,19 +188,19 @@ const GLOSSARY_DB: KoshaEntry[] = [
     id: 'samrath-satguru',
     term: {
       pb: 'ਸਮਰਥ ਸਤਿਗੁਰੂ',
-      hi: 'समरथ सद्गुरु',
+      hi: 'समरथ सतगुरु',
       en: 'Samrath Satguru (All-Powerful Master)'
     },
     category: 'satguru',
     associatedAng: 'jeevat-mritak-ko-ang',
     literalMeaning: {
       pb: 'ਸਰਬ-ਸ਼ਕਤੀਮਾਨ, ਰੱਖਿਅਕ ਸੱਚੇ ਗੁਰੂ।',
-      hi: 'सर्व-समर्थ, रक्षक व उद्धारक सद्गुरु।',
+      hi: 'सर्व-समर्थ, रक्षक व उद्धारक सतगुरु।',
       en: 'The all-powerful, compassionate True Master.'
     },
     mysticalMeaning: {
       pb: 'ਜੋ ਜੀਵ ਸੰਸਾਰਿਕ ਤ੍ਰਿਸ਼ਨਾਵਾਂ ਦਾ ਤਿਆਗ ਕਰਕੇ ਜਿਉਂਦੇ-ਜੀਅ ਮਰਿਆ ਹੋ ਕੇ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਹੁੰਦਾ ਹੈ, ਉਸਦਾ ਰੱਖਿਅਕ ਆਪ ਸਮਰਥ ਸਤਿਗੁਰੂ ਬਣਦਾ ਹੈ ਅਤੇ ਉਸਨੂੰ ਕੋਈ ਦੁੱਖ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦਾ।',
-      hi: 'संसार की वासनाओं का त्याग कर जो शिष्य जीवित-मृतक की निष्कामता में सद्गुरु के समर्पित हो जाता है, समर्थ सद्गुरु स्वयं उसकी रक्षा कर काल के भय से मुक्त करते हैं।',
+      hi: 'संसार की वासनाओं का त्याग कर जो शिष्य जीवित-मृतक की निष्कामता में सतगुरु के समर्पित हो जाता है, समर्थ सतगुरु स्वयं उसकी रक्षा कर काल के भय से मुक्त करते हैं।',
       en: 'The Supreme Spiritual Master who personally guards and liberates the disciple who has relinquished mundane cravings and ego.'
     },
     exampleSakhi: {
@@ -248,7 +248,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਮਨੁੱਖ ਦਾ ਸਰੀਰ ਕੱਚਾ ਹੈ ਅਤੇ ਮਨ ਚੰਚਲ ਹੈ, ਪਰ ਉਹ ਸਦਾ ਰਹਿਣ ਵਾਲੇ ਪੱਕੇ ਕੰਮਾਂ ਦੀਆਂ ਯੋਜਨਾਵਾਂ ਬਣਾਉਂਦਾ ਹੈ। ਜਿਵੇਂ-ਜਿਵੇਂ ਮਨੁੱਖ ਬੇਪਰਵਾਹ ਹੋ ਕੇ ਘੁੰਮਦਾ ਹੈ, ਕਾਲ ਉਸਦੀ ਅਗਿਆਨਤਾ \'ਤੇ ਹੱਸਦਾ ਹੈ।',
-      hi: 'नाशवान कच्ची देह और चंचल मन के बावजूद मनुष्य संसार में अमरता के भ्रम में अहंकार करता है, जिस पर काल हंसता है। सद्गुरु इस भ्रम को तोड़कर शाश्वत सत्य से जोड़ते हैं।',
+      hi: 'नाशवान कच्ची देह और चंचल मन के बावजूद मनुष्य संसार में अमरता के भ्रम में अहंकार करता है, जिस पर काल हंसता है। सतगुरु इस भ्रम को तोड़कर शाश्वत सत्य से जोड़ते हैं।',
       en: 'The illusion of permanence: mortals harbor endless worldly attachments within a brittle clay body while Kal smiles at their heedlessness.'
     },
     exampleSakhi: {
@@ -272,7 +272,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਕਾਲ ਰੂਪੀ ਵਢਣਹਾਰ ਨੂੰ ਆਉਂਦਾ ਵੇਖ ਕੇ ਰੁੱਖ ਰੋਂਦਾ ਹੈ ਕਿ ਮੈਨੂੰ ਤਾਂ ਕੱਟਿਆ ਜਾਣਾ ਹੀ ਹੈ, ਪਰ ਮੇਰੇ ਆਸਰੇ ਬੈਠੇ ਪੰਛੀਆਂ (ਪਰਿਵਾਰ) ਦਾ ਕੀ ਹੋਵੇਗਾ? ਇਹ ਸੰਸਾਰੀ ਜੀਵ ਦੇ ਪਰਿਵਾਰਕ ਮੋਹ ਦਾ ਚਿੱਤਰਣ ਹੈ।',
-      hi: 'काल रूपी बढ़ई को देखकर शरीर रूपी वृक्ष अपनों के मोह में विलाप करता है। कबीर साहेब मोह-बंधन को त्यागकर सर्व-समर्थ परमात्मा पर पूर्ण विश्वास की सीख देते हैं।',
+      hi: 'काल रूपी बढ़ई को देखकर शरीर रूपी वृक्ष अपनों के मोह में विलाप करता है। सतगुरु कबीर साहेब मोह-बंधन को त्यागकर सर्व-समर्थ परमात्मा पर पूर्ण विश्वास की सीख देते हैं।',
       en: 'The soul facing death laments for its dependents like the felled tree weeping for nesting birds, highlighting the tragedy of earthly attachment.'
     },
     exampleSakhi: {
@@ -319,8 +319,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Kinship or friendship forged purely out of self-interest.'
     },
     mysticalMeaning: {
-      pb: 'ਸੰਸਾਰ ਵਿੱਚ ਸਭ ਰਿਸ਼ਤੇ ਸਵਾਰਥ ਦੀ ਨੀਂਹ \'ਤੇ ਟਿਕੇ ਹਨ। ਪਰ ਜੋ ਮਨੁੱਖ ਬਿਨਾਂ ਕਿਸੇ ਸਵਾਰਥ ਦੇ ਸਭ ਦਾ ਆਦਰ-ਸਤਿਕਾਰ ਕਰਦਾ ਹੈ, ਉਹ ਹੀ ਸੱਚਾ ਬਿਬੇਕੀ ਤੇ ਸੁਜਾਨ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਨਿਸ਼ਕਾਮ ਪ੍ਰੇਮ ਦੀ ਪ੍ਰੇਰਣਾ ਦਿੰਦੇ ਹਨ।',
-      hi: 'संसार में अधिकांश संबंध स्वार्थ की पूर्ति पर आधारित हैं। कबीर साहेब कहते हैं कि जो बिना किसी स्वार्थ या लाभ की चाह के सभी का यथोचित आदर-सत्कार करता है, वही सच्चा चतुर व सुजान साधक है।',
+      pb: 'ਸੰਸਾਰ ਵਿੱਚ ਸਭ ਰਿਸ਼ਤੇ ਸਵਾਰਥ ਦੀ ਨੀਂਹ \'ਤੇ ਟਿਕੇ ਹਨ। ਪਰ ਜੋ ਮਨੁੱਖ ਬਿਨਾਂ ਕਿਸੇ ਸਵਾਰਥ ਦੇ ਸਭ ਦਾ ਆਦਰ-ਸਤਿਕਾਰ ਕਰਦਾ ਹੈ, ਉਹ ਹੀ ਸੱਚਾ ਬਿਬੇਕੀ ਤੇ ਸੁਜਾਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਸ਼ਕਾਮ ਪ੍ਰੇਮ ਦੀ ਪ੍ਰੇਰਣਾ ਦਿੰਦੇ ਹਨ।',
+      hi: 'संसार में अधिकांश संबंध स्वार्थ की पूर्ति पर आधारित हैं। सतगुरु कबीर साहेब फरमाते हैं कि जो बिना किसी स्वार्थ या लाभ की चाह के सभी का यथोचित आदर-सत्कार करता है, वही सच्चा चतुर व सुजान साधक है।',
       en: 'The universal reality of transactional worldly ties: true spiritual wisdom shines in the seeker who honors all beings unconditionally without self-serving motives.'
     },
     exampleSakhi: {
@@ -392,7 +392,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਜਿਸ ਨਾਲ ਸਭ ਦਾ ਭਲਾ ਹੋਵੇ ਉਹ ਪਰਮਾਰਥ ਸੱਚਾ ਰਤਨ ਹੈ, ਇਸ ਤੋਂ ਕਦੇ ਮੂੰਹ ਨਾ ਮੋੜੋ। ਸਵਾਰਥ ਸੇਂਬਲ ਦੇ ਫੁੱਲ ਵਾਂਗ ਧੋਖਾ ਦੇਣ ਵਾਲਾ ਹੈ, ਪਰ ਪਰਮਾਰਥ ਆਤਮਿਕ ਮੁਕਤੀ ਦਾ ਅਸਲ ਮਾਰਗ ਹੈ।',
-      hi: 'कबीर साहेब कहते हैं कि परमार्थ को पक्का रत्न समझकर कभी इससे विमुख न हों। स्वार्थ सेमल के फल-हीन और गंध-हीन फूल की भांति मिथ्या आकर्षण है, जबकि परमार्थ आत्म-कल्याण का शाश्वत साधन है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि परमार्थ को पक्का रत्न समझकर कभी इससे विमुख न हों। स्वार्थ सेमल के फल-हीन और गंध-हीन फूल की भांति मिथ्या आकर्षण है, जबकि परमार्थ आत्म-कल्याण का शाश्वत साधन है।',
       en: 'Regard altruism as a pure diamond from which one must never turn away. Selfishness is hollow like the silk-cotton flower, while selfless benevolence leads to divine realization.'
     },
     exampleSakhi: {
@@ -463,8 +463,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The petulant, wayward jester mind resisting discipline.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਬੜਾ ਮਸਖ਼ਰਾ ਹੈ; ਜੇ ਇਸਨੂੰ ਸੱਚੇ ਰਾਹ \'ਤੇ ਲਾਈਏ ਤਾਂ ਇਹ ਰੁੱਸ ਜਾਂਦਾ ਹੈ। ਜਿੱਥੇ ਪ੍ਰਭੂ ਮਿਲਦੇ ਹਨ, ਓਧਰ ਕਦਮ ਨਹੀਂ ਚੁੱਕਦਾ। ਇਸਨੂੰ ਗਿਆਨ ਤੇ ਨਾਮ ਦੇ ਅੰਕੁਸ਼ ਨਾਲ ਹੀ ਸਾਧਿਆ ਜਾ ਸਕਦਾ ਹੈ।',
-      hi: 'कबीरजी कहते हैं कि यह मन मसखरे के समान चंचल है; समझाने पर रूठता है और जिस मार्ग पर प्रभु मिलते हैं, उधर एक कदम भी नहीं चलता। इसे केवल सतगुरु के विवेक-अंकुश से ही सन्मार्ग पर लगाया जा सकता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਨ ਬੜਾ ਮਸਖ਼ਰਾ ਹੈ; ਜੇ ਇਸਨੂੰ ਸੱਚੇ ਰਾਹ \'ਤੇ ਲਾਈਏ ਤਾਂ ਇਹ ਰੁੱਸ ਜਾਂਦਾ ਹੈ। ਜਿੱਥੇ ਪ੍ਰਭੂ ਮਿਲਦੇ ਹਨ, ਓਧਰ ਕਦਮ ਨਹੀਂ ਚੁੱਕਦਾ। ਇਸਨੂੰ ਗਿਆਨ ਤੇ ਨਾਮ ਦੇ ਅੰਕੁਸ਼ ਨਾਲ ਹੀ ਸਾਧਿਆ ਜਾ ਸਕਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह मन मसखरे के समान चंचल है; समझाने पर रूठता है और जिस मार्ग पर प्रभु मिलते हैं, उधर एक कदम भी नहीं चलता। इसे केवल सतगुरु के विवेक-अंकुश से ही सन्मार्ग पर लगाया जा सकता है।',
       en: 'The mind acts like a willful jester: rebuke it and it sulks, refuse to tread where God resides. Only the Master’s goad of wisdom can tame it.'
     },
     exampleSakhi: {
@@ -512,7 +512,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਮਨ ਇੱਕ ਅਜਿਹਾ ਅਦ੍ਰਿਸ਼ਟ ਹਿਰਨ ਹੈ ਜੋ ਬਿਨਾਂ ਸਿਰ ਦਾ ਹੋਣ ਕਰਕੇ ਪਕੜ ਵਿੱਚ ਨਹੀਂ ਆਉਂਦਾ ਅਤੇ ਵਿਸ਼ੇ-ਵਿਕਾਰਾਂ ਵੱਲ ਦੌੜਦਾ ਹੈ। ਇਸਨੂੰ ਗੁਰੂ ਦੇ ਗਿਆਨ ਦੀ ਰੱਸੀ ਨਾਲ ਬੰਨ੍ਹ ਕੇ ਸਤਯਨਾਮ ਦੇ ਤੱਤ ਵਿੱਚ ਜੋੜਨਾ ਚਾਹੀਦਾ ਹੈ।',
-      hi: 'मन रूपी मृग निराकार और अदृश्य है, जो चारों दिशाओं में वासनाओं की ओर भागता है। इसे केवल सद्गुरु के ज्ञान-उपदेश की डोरी से बांधकर अविनाशी आत्म-तत्त्व में स्थिर किया जा सकता है।',
+      hi: 'मन रूपी मृग निराकार और अदृश्य है, जो चारों दिशाओं में वासनाओं की ओर भागता है। इसे केवल सतगुरु के ज्ञान-उपदेश की डोरी से बांधकर अविनाशी आत्म-तत्त्व में स्थिर किया जा सकता है।',
       en: 'The mind is an elusive, headless deer running into sensory pastures. Tether it firmly with the cord of the Guru’s wisdom to the Supreme Truth.'
     },
     exampleSakhi: {
@@ -560,7 +560,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਮਾਇਆ ਬਲਦੀ ਲਾਟ ਵਰਗੀ ਹੈ ਜਿਸਦੇ ਮੋਹ ਵਿੱਚ ਅਗਿਆਨੀ ਮਨੁੱਖ ਪਤੰਗੇ ਵਾਂਗ ਭਟਕ-ਭਟਕ ਕੇ ਸੜ ਮਰਦਾ ਹੈ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਦੇ ਬ੍ਰਹਮ-ਗਿਆਨ ਨਾਲ ਹੀ ਕੋਈ ਵਿਰਲਾ ਸਾਧਕ ਇਸ ਭਿਆਨਕ ਮੋਹ-ਅੱਗ ਤੋਂ ਬਚ ਕੇ ਮੁਕਤ ਹੁੰਦਾ ਹੈ।',
-      hi: 'माया जलते दीपक की लौ के समान आकर्षक किंतु भस्मकारी है। अज्ञानी मनुष्य पतंगे की तरह बार-बार उसी में जलकर नष्ट होते हैं। केवल सद्गुरु के विवेक-ज्ञान से ही साधक इस मोह से उद्धार पाता है।',
+      hi: 'माया जलते दीपक की लौ के समान आकर्षक किंतु भस्मकारी है। अज्ञानी मनुष्य पतंगे की तरह बार-बार उसी में जलकर नष्ट होते हैं। केवल सतगुरु के विवेक-ज्ञान से ही साधक इस मोह से उद्धार पाता है।',
       en: 'Maya is a scorching lamp flame and worldly mortals are like infatuated moths plunging to their destruction. Only the light of the Satguru’s wisdom saves the soul from this fatal attraction.'
     },
     exampleSakhi: {
@@ -607,8 +607,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'A venomous serpent that strikes and devours the very one who feeds it.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਮਾਇਆ ਨੂੰ ਇੱਕ ਜ਼ਹਿਰੀਲੀ ਸੱਪਣੀ ਆਖਦੇ ਹਨ ਜੋ ਮੋਹ ਕਰਨ ਵਾਲੇ ਜੀਵਾਂ ਦੀ ਚੇਤਨਾ ਨੂੰ ਹੀ ਡੱਸ ਕੇ ਮਾਰ ਦਿੰਦੀ ਹੈ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਰੂਪੀ ਸਮਰੱਥ ਗਾਰੁੜੀ (ਸਪੇਰਾ) ਹੀ ਇਸਨੂੰ ਗਿਆਨ ਦੇ ਪਟਾਰੇ ਵਿੱਚ ਬੰਨ੍ਹ ਸਕਦਾ ਹੈ।',
-      hi: 'माया अत्यंत विषैली सर्पिणी है जो अपने पोषक अज्ञानी जीवों को ही डस लेती है। केवल समर्थ सद्गुरु रूपी गारुड़ी (विष-निवारक) ही अपने दिव्य ज्ञान-मंत्र से इसे वश में कर पिटारे में बंद कर सकते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮਾਇਆ ਨੂੰ ਇੱਕ ਜ਼ਹਿਰੀਲੀ ਸੱਪਣੀ ਆਖਦੇ ਹਨ ਜੋ ਮੋਹ ਕਰਨ ਵਾਲੇ ਜੀਵਾਂ ਦੀ ਚੇਤਨਾ ਨੂੰ ਹੀ ਡੱਸ ਕੇ ਮਾਰ ਦਿੰਦੀ ਹੈ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਰੂਪੀ ਸਮਰੱਥ ਗਾਰੁੜੀ (ਸਪੇਰਾ) ਹੀ ਇਸਨੂੰ ਗਿਆਨ ਦੇ ਪਟਾਰੇ ਵਿੱਚ ਬੰਨ੍ਹ ਸਕਦਾ ਹੈ।',
+      hi: 'माया अत्यंत विषैली सर्पिणी है जो अपने पोषक अज्ञानी जीवों को ही डस लेती है। केवल समर्थ सतगुरु रूपी गारुड़ी (विष-निवारक) ही अपने दिव्य ज्ञान-मंत्र से इसे वश में कर पिटारे में बंद कर सकते हैं।',
       en: 'Maya is a deadly serpent devouring those who foster her attachments. Only the Satguru—the sovereign snake-charmer—neutralizes her poison and locks her inside the basket of divine wisdom.'
     },
     exampleSakhi: {
@@ -631,8 +631,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The enchantress sitting in the worldly marketplace with a noose of desires.'
     },
     mysticalMeaning: {
-      pb: 'ਮਾਇਆ ਸੰਸਾਰਕ ਹੱਟ \'ਤੇ ਭੋਗ-ਵਿਲਾਸਾਂ ਦਾ ਜਾਲ ਵਿਛਾ ਕੇ ਬੈਠੀ ਹੈ ਜਿਸ ਵਿੱਚ ਸਾਰਾ ਸੰਸਾਰ ਫਸ ਗਿਆ। ਪਰ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਗਿਆਨ ਦੀ ਕਿਰਪਾਨ ਨਾਲ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਸ ਫਾਹੀ ਨੂੰ ਕੱਟ ਕੇ ਅਮਰ ਪਦ ਪਾਇਆ।',
-      hi: 'संसार रूपी बाजार में माया अपनी भोग-सामग्री का जाल फैलाए बैठी है। अज्ञानी जन इसके फंदे में फंस जाते हैं, किंतु सद्गुरु के ज्ञानोपदेश से विवेकवान साधक इस बंधन को काटकर मुक्त हो जाता है।',
+      pb: 'ਮਾਇਆ ਸੰਸਾਰਕ ਹੱਟ \'ਤੇ ਭੋਗ-ਵਿਲਾਸਾਂ ਦਾ ਜਾਲ ਵਿਛਾ ਕੇ ਬੈਠੀ ਹੈ ਜਿਸ ਵਿੱਚ ਸਾਰਾ ਸੰਸਾਰ ਫਸ ਗਿਆ। ਪਰ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਗਿਆਨ ਦੀ ਕਿਰਪਾਨ ਨਾਲ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਇਸ ਫਾਹੀ ਨੂੰ ਕੱਟ ਕੇ ਅਮਰ ਪਦ ਪਾਇਆ।',
+      hi: 'संसार रूपी बाजार में माया अपनी भोग-सामग्री का जाल फैलाए बैठी है। अज्ञानी जन इसके फंदे में फंस जाते हैं, किंतु सतगुरु के ज्ञानोपदेश से विवेकवान साधक इस बंधन को काटकर मुक्त हो जाता है।',
       en: 'Sitting in the bazaar of worldly life, Maya sets snares of sensory temptation. The heedless world gets caught, but the seeker armed with the Master’s wisdom severs the trap and walks free.'
     },
     exampleSakhi: {
@@ -655,8 +655,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The deep reservoir of attachments, including supernatural powers and earthly treasures.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਵੀ ਮੋਹ ਦੀ ਖਾਣ ਹਨ। ਜਦ ਤੱਕ ਅੰਦਰਲੀ ਸੂਖਮ ਵਾਸਨਾ ਨੂੰ ਨਹੀਂ ਤਿਆਗਿਆ ਜਾਂਦਾ, ਤਦ ਤੱਕ ਸੱਚੀ ਆਤਮ-ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
-      hi: 'कबीर साहेब सावधान करते हैं कि अलौकिक सिद्धियां भी मोह की खान हैं। जब तक अंतःकरण से सूक्ष्म वासना का भी क्षय नहीं होता, तब तक सच्चा आत्म-कल्याण असंभव है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਵੀ ਮੋਹ ਦੀ ਖਾਣ ਹਨ। ਜਦ ਤੱਕ ਅੰਦਰਲੀ ਸੂਖਮ ਵਾਸਨਾ ਨੂੰ ਨਹੀਂ ਤਿਆਗਿਆ ਜਾਂਦਾ, ਤਦ ਤੱਕ ਸੱਚੀ ਆਤਮ-ਮੁਕਤੀ ਸੰਭਵ ਨਹੀਂ।',
+      hi: 'सतगुरु कबीर साहेब सावधान करते हैं कि अलौकिक सिद्धियां भी मोह की खान हैं। जब तक अंतःकरण से सूक्ष्म वासना का भी क्षय नहीं होता, तब तक सच्चा आत्म-कल्याण असंभव है।',
       en: 'Kabir warns that even subtle psychic powers and material riches are mere mines of delusion. Total surrender requires extinguishing the very roots of latent desire (Vasana).'
     },
     exampleSakhi: {
@@ -728,7 +728,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਮੋਹ ਦੀ ਨਦੀ ਅਤਿਅੰਤ ਵਿਕਰਾਲ ਹੈ। ਇਸ ਤੋਂ ਇਕੱਲਿਆਂ ਪਾਰ ਲੰਘਣਾ ਅਸੰਭਵ ਹੈ। ਜਦੋਂ ਜੀਵ ਸਤਿਗੁਰੂ ਨੂੰ ਆਪਣਾ ਕੇਵਟ ਬਣਾ ਲੈਂਦਾ ਹੈ, ਤਦ ਹੰਸ ਬਣ ਕੇ ਜਮ ਦੇ ਫੰਦੇ ਤੋਂ ਪਾਰ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      hi: 'मोह की नदी अत्यंत भयावह है जिससे कोई स्वयं पार नहीं हो सकता। केवल सद्गुरु रूपी केवट का आश्रय लेकर हंस रूपी विवेकवान भक्त ही मृत्यु और आवागमन से पार उतर पाता है।',
+      hi: 'मोह की नदी अत्यंत भयावह है जिससे कोई स्वयं पार नहीं हो सकता। केवल सतगुरु रूपी केवट का आश्रय लेकर हंस रूपी विवेकवान भक्त ही मृत्यु और आवागमन से पार उतर पाता है।',
       en: 'The river of attachment is too stormy to cross alone. With Satguru as the master boatman, the discriminating swan-soul sails across the jaws of death into liberation.'
     },
     exampleSakhi: {
@@ -751,7 +751,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The brave spiritual warrior who dissolves lust, wrath, greed, and ancestral pride.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵਿਕਾਰਾਂ ਵਿੱਚ ਫਸੇ ਮਨੁੱਖਾਂ ਤੋਂ ਭਗਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ। ਭਗਤੀ ਕੇਵਲ ਉਹੀ ਸੂਰਮਾ ਕਰਦਾ ਹੈ ਜੋ ਅੰਦਰੂਨੀ ਕਾਮ-ਕ੍ਰੋਧ ਅਤੇ ਬਾਹਰੀ ਜਾਤ-ਪਾਤ ਦੇ ਹੰਕਾਰ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਮਿਟਾ ਦੇਵੇ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵਿਕਾਰਾਂ ਵਿੱਚ ਫਸੇ ਮਨੁੱਖਾਂ ਤੋਂ ਭਗਤੀ ਨਹੀਂ ਹੋ ਸਕਦੀ। ਭਗਤੀ ਕੇਵਲ ਉਹੀ ਸੂਰਮਾ ਕਰਦਾ ਹੈ ਜੋ ਅੰਦਰੂਨੀ ਕਾਮ-ਕ੍ਰੋਧ ਅਤੇ ਬਾਹਰੀ ਜਾਤ-ਪਾਤ ਦੇ ਹੰਕਾਰ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਮਿਟਾ ਦੇਵੇ।',
       hi: 'कामी, क्रोधी और लालची व्यक्ति भक्ति नहीं कर सकते। भक्ति वही शूरवीर कर सकता है जो आत्म-संयम साधकर कुल, वर्ण और जाति के मिथ्या अभिमान को तिलांजलि दे दे।',
       en: 'True devotion cannot take root in minds obsessed with lust, wrath, or wealth. It demands a spiritual hero who slays internal passions and discards all social and caste arrogance.'
     },
@@ -800,7 +800,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
     },
     mysticalMeaning: {
       pb: 'ਕਾਮ ਦੇ ਕਹਿਰ ਅੱਗੇ ਵੱਡੇ-ਵੱਡੇ ਰਿਸ਼ੀ-ਮੁਨੀ ਵੀ ਢਹਿ-ਢੇਰੀ ਹੋ ਗਏ। ਇਸ ਤੋਂ ਸਿਰਫ਼ ਉਹੀ ਵਿਰਲਾ ਭਗਤ ਬਚਦਾ ਹੈ ਜਿਸਨੂੰ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਦਾ ਅਮੋਲਕ ਸਹਾਰਾ ਪ੍ਰਾਪਤ ਹੋਵੇ।',
-      hi: 'काम-वासना के विनाशकारी आक्रमण से सामान्य जन ही नहीं, ऋषि-मुनि भी व्याकुल हो जाते हैं। इससे केवल वही भक्त बच पाता है जिसे सद्गुरु के सत्यनाम का अमोघ कवच प्राप्त हो।',
+      hi: 'काम-वासना के विनाशकारी आक्रमण से सामान्य जन ही नहीं, ऋषि-मुनि भी व्याकुल हो जाते हैं। इससे केवल वही भक्त बच पाता है जिसे सतगुरु के सत्यनाम का अमोघ कवच प्राप्त हो।',
       en: 'Before the furious onslaught of carnal passion, even celebrated sages stumble. Only a rare devotee anchored in the Satguru’s Holy Name remains untouchable and victorious.'
     },
     exampleSakhi: {
@@ -823,7 +823,7 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Anger appears singular, but behind it follows an unbroken train of millions of sins.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕ੍ਰੋਧ ਨਾਲ ਰਾਗ, ਦ੍ਵੇਸ਼, ਹੰਕਾਰ ਅਤੇ ਈਰਖਾ ਦੇ ਸਾਰੇ ਪਾਪ ਉਪਜਦੇ ਹਨ। ਅਹੰਕਾਰ ਦੇ ਆਉਂਦੇ ਹੀ ਮਨੁੱਖ ਦੀ ਸਾਰੀ ਪੁੰਨ-ਕਮਾਈ ਸੁਆਹ ਹੋ ਜਾਂਦੀ ਹੈ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕ੍ਰੋਧ ਨਾਲ ਰਾਗ, ਦ੍ਵੇਸ਼, ਹੰਕਾਰ ਅਤੇ ਈਰਖਾ ਦੇ ਸਾਰੇ ਪਾਪ ਉਪਜਦੇ ਹਨ। ਅਹੰਕਾਰ ਦੇ ਆਉਂਦੇ ਹੀ ਮਨੁੱਖ ਦੀ ਸਾਰੀ ਪੁੰਨ-ਕਮਾਈ ਸੁਆਹ ਹੋ ਜਾਂਦੀ ਹੈ।',
       hi: 'क्रोध राग, द्वेष, ईर्ष्या और अहंकार की जननी है। जैसे ही मन में अहंकार और क्रोध का प्रवेश होता है, मनुष्य के जीवन भर के पुण्य-कर्म जलकर भस्म हो जाते हैं।',
       en: 'Anger gives birth to malice, envy, pride, and illusion. The moment anger and pride enter the heart, a lifetime of accumulated spiritual merit is turned to ashes.'
     },
@@ -1054,9 +1054,9 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'A secret chart or cipher that reveals hidden buried treasure.'
     },
     mysticalMeaning: {
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ ਦਾ ਮੁੱਖ ਗ੍ਰੰਥ, ਜੋ ਮਨੁੱਖੀ ਆਤਮਾ ਨੂੰ ਕਾਲ-ਮਾਇਆ ਦੇ ਜਾਲ ਵਿੱਚੋਂ ਕੱਢ ਕੇ ਅੰਦਰਲੇ ਅਮਰ ਆਤਮ-ਖਜ਼ਾਨੇ ਦਾ ਸੱਚਾ ਭੇਤ ਦੱਸਦਾ ਹੈ।',
-      hi: 'कबीर साहेब की प्रमाणिक मूल वाणी का पवित्र ग्रंथ जो संसार रूपी भूलभुलैया में छिपे हुए आत्म-धन का मार्ग प्रकाशित करता है।',
-      en: 'The foundational holy scripture of Kabir Saheb that discloses the encrypted spiritual treasure of liberation and inner realization.'
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ ਦਾ ਮੁੱਖ ਗ੍ਰੰਥ, ਜੋ ਮਨੁੱਖੀ ਆਤਮਾ ਨੂੰ ਕਾਲ-ਮਾਇਆ ਦੇ ਜਾਲ ਵਿੱਚੋਂ ਕੱਢ ਕੇ ਅੰਦਰਲੇ ਅਮਰ ਆਤਮ-ਖਜ਼ਾਨੇ ਦਾ ਸੱਚਾ ਭੇਤ ਦੱਸਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब की प्रमाणिक मूल वाणी का पवित्र ग्रंथ जो संसार रूपी भूलभुलैया में छिपे हुए आत्म-धन का मार्ग प्रकाशित करता है।',
+      en: 'The foundational holy scripture of Satguru Kabir Saheb that discloses the encrypted spiritual treasure of liberation and inner realization.'
     },
     exampleSakhi: {
       text: 'ਬੀਜਕ ਬਿਤ ਬਤਾਵਈ, ਜੋ ਧਨ ਗੁਪਤਾ ਹੋਇ । ਸਬਦ ਬਤਾਵੈ ਜੀਵ ਕੋ, ਬੂਝੈ ਬਿਰਲਾ ਕੋਇ ॥',
@@ -1100,8 +1100,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Time, cosmic ruler of the three perishable realms.'
     },
     mysticalMeaning: {
-      pb: 'ਤਿੰਨਾਂ ਲੋਕਾਂ ਦਾ ਨਿਆਮਕ ਜੋ ਜੀਵਾਂ ਨੂੰ ਕਰਮਾਂ ਦੇ ਜਾਲ ਅਤੇ ਆਵਾਗਵਨ (ਜਨਮ-ਮਰਨ) ਵਿੱਚ ਉਲਝਾਈ ਰੱਖਦਾ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਜੀਵ ਨੂੰ ਇਸ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਸਤਿਲੋਕ (ਅਮਰ ਲੋਕ) ਜਾਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦੇ ਹਨ।',
-      hi: 'ब्रह्मांड का वह नियम जो जीवों को कर्म-बंधन और पुनर्जन्म के चक्र में बांधे रखता है। कबीर साहेब इस काल-जाल से परे अमर सत्यलोक जाने का मार्ग बताते हैं।',
+      pb: 'ਤਿੰਨਾਂ ਲੋਕਾਂ ਦਾ ਨਿਆਮਕ ਜੋ ਜੀਵਾਂ ਨੂੰ ਕਰਮਾਂ ਦੇ ਜਾਲ ਅਤੇ ਆਵਾਗਵਨ (ਜਨਮ-ਮਰਨ) ਵਿੱਚ ਉਲਝਾਈ ਰੱਖਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬਵ ਨੂੰ ਇਸ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਸਤਿਲੋਕ (ਅਮਰ ਲੋਕ) ਜਾਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦੇ ਹਨ।',
+      hi: 'ब्रह्मांड का वह नियम जो जीवों को कर्म-बंधन और पुनर्जन्म के चक्र में बांधे रखता है। सतगुरु कबीर साहेब इस काल-जाल से परे अमर सत्यलोक जाने का मार्ग बताते हैं।',
       en: 'The cosmic entity of time and karma that binds embodied souls within the mortal cycle until liberated by the True Word.'
     },
     exampleSakhi: {
@@ -1123,8 +1123,8 @@ const GLOSSARY_DB: KoshaEntry[] = [
       en: 'Inverted, paradoxical mystical verse designed to shatter ordinary conceptual logic.'
     },
     mysticalMeaning: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਰਹੱਸਮਈ ਸ਼ੈਲੀ (ਜਿਵੇਂ: "ਇਕ ਅਚੰਭਾ ਦੇਖਿਆ ਰੇ ਭਾਈ, ਠਾਢਾ ਸਿੰਘ ਚਰਾਵੈ ਗਾਈ") ਜਿਸਦਾ ਬਾਹਰੀ ਅਰਥ ਅਸੰਭਵ ਲੱਗਦਾ ਹੈ, ਪਰ ਅੰਦਰੂਨੀ ਅਧਿਆਤਮਿਕ ਅਰਥ ਵਿੱਚ ਮਨ, ਆਤਮਾ ਅਤੇ ਇੰਦਰੀਆਂ ਦੇ ਉਲਟਣ ਦਾ ਗੂੜ੍ਹ ਭੇਤ ਹੁੰਦਾ ਹੈ।',
-      hi: 'कबीर साहेब की वह गूढ़ शैली जिसका शाब्दिक अर्थ असंभव प्रतीत होता है, किंतु आध्यात्मिक दृष्टि से वह मन को विषयों से उलटकर अंतर्मुखी करने का रहस्य समझाती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਰਹੱਸਮਈ ਸ਼ੈਲੀ (ਜਿਵੇਂ: "ਇਕ ਅਚੰਭਾ ਦੇਖਿਆ ਰੇ ਭਾਈ, ਠਾਢਾ ਸਿੰਘ ਚਰਾਵੈ ਗਾਈ") ਜਿਸਦਾ ਬਾਹਰੀ ਅਰਥ ਅਸੰਭਵ ਲੱਗਦਾ ਹੈ, ਪਰ ਅੰਦਰੂਨੀ ਅਧਿਆਤਮਿਕ ਅਰਥ ਵਿੱਚ ਮਨ, ਆਤਮਾ ਅਤੇ ਇੰਦਰੀਆਂ ਦੇ ਉਲਟਣ ਦਾ ਗੂੜ੍ਹ ਭੇਤ ਹੁੰਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब की वह गूढ़ शैली जिसका शाब्दिक अर्थ असंभव प्रतीत होता है, किंतु आध्यात्मिक दृष्टि से वह मन को विषयों से उलटकर अंतर्मुखी करने का रहस्य समझाती है।',
       en: 'Mystical paradoxical allegories (e.g. "A tree rooted in the sky") that shock linear logic to awaken the inward eye toward spiritual reversal.'
     },
     exampleSakhi: {

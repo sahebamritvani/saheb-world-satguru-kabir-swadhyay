@@ -132,7 +132,7 @@ export const SAKHIS_SWAARATH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maayaa koo maayaa mile, kar kar lambe haath. Nisprehee nirdhaar ko, gaahak deenaanaath.',
     bhavarth: {
-      hi: 'मायापति-से-मायापति अर्थात स्वार्थी-से-स्वार्थी, हाथ लंबे कर-करके आपस में मिलते हैं और दिखावटी प्रेम करते हैं, परंतु जो निष्कामी तथा परमार्थी आधारहीन पुरुष हैं, उन्हें चाहने वाला और अपनाने वाला दीन व विनम्र जनों का सद्गुरु-स्वामी (परमात्मा) ही है।',
+      hi: 'मायापति-से-मायापति अर्थात स्वार्थी-से-स्वार्थी, हाथ लंबे कर-करके आपस में मिलते हैं और दिखावटी प्रेम करते हैं, परंतु जो निष्कामी तथा परमार्थी आधारहीन पुरुष हैं, उन्हें चाहने वाला और अपनाने वाला दीन व विनम्र जनों का सतगुरु-स्वामी (परमात्मा) ही है।',
       pb: devanagariToGurmukhi('ਮਾਇਆਧਾਰੀ ਮਾਇਆਧਾਰੀ ਨੂੰ ਲੰਮੀਆਂ ਬਾਹਵਾਂ ਕਰਕੇ ਜੱਫੀਆਂ ਪਾ ਕੇ ਮਿਲਦੇ ਹਨ, ਪਰ ਜਿਸਦਾ ਕੋਈ ਦੁਨਿਆਵੀ ਆਸਰਾ ਨਹੀਂ ਅਤੇ ਜੋ ਨਿਸ਼ਕਾਮ ਹੈ, ਉਸਦਾ ਸੱਚਾ ਰਾਖਾ ਤੇ ਕਦਰਦਾਨ ਪ੍ਰਭੂ ਦੀਨਾਨਾਥ ਆਪ ਹੈ।'),
       en: 'Worldly wealth-chasers greet other wealthy opportunists with outstretched arms and showy embrace. But for the selfless, unattached seeker who has no earthly prop, the Supreme Lord of the Humble (Deenanath) is Himself the eternal patron.'
     },

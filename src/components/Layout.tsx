@@ -1671,10 +1671,10 @@ export const Layout: React.FC<LayoutProps> = ({
                   className="text-[10.5px] sm:text-xs font-bold font-serif tracking-normal sm:tracking-wider opacity-90 hover:opacity-100 transition drop-shadow-2xs inline-block whitespace-nowrap"
                 >
                   {language === 'pb' 
-                    ? '✨ ਸਤਯ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ • ਅਖੰਡ ਸਿਮਰਨ • ਅਮਰ ਲੋਕ ਧਾਮ 🕊️'
+                    ? '✨ ਸਤਯ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ • ਅਖੰਡ ਸਿਮਰਨ • ਅਮਰ ਲੋਕ ਧਾਮ 🕊️'
                     : language === 'en'
-                    ? '✨ Sat Kabir Saheb Sukhdayi • Eternal Satyanaam Remembrance • Amar Lok 🕊️'
-                    : '✨ सत्य कबीर साहेब सुखदाई • अखंड सुमिरन • अमर लोक धाम 🕊️'}
+                    ? '✨ Sat Satguru Kabir Saheb Sukhdayi • Eternal Satyanaam Remembrance • Amar Lok 🕊️'
+                    : '✨ सत्य सतगुरु कबीर साहेब सुखदाई • अखंड सुमिरन • अमर लोक धाम 🕊️'}
                 </span>
               </div>
             </div>

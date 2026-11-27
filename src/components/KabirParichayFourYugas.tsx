@@ -88,9 +88,9 @@ const FOUR_YUGAS_DATA: YugaData[] = [
       en: 'Life Introduction (Steek)',
     },
     manifestationName: {
-      hi: 'भक्त शिरोमणि कबीर साहेब',
-      pb: 'ਭਗਤ ਸ਼ਿਰੋਮਣੀ ਕਬੀਰ ਸਾਹੇਬ',
-      en: 'Bhagat Shiromani Kabir Saheb',
+      hi: 'भक्त शिरोमणि सतगुरु कबीर साहेब',
+      pb: 'ਭਗਤ ਸ਼ਿਰੋਮਣੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ',
+      en: 'Bhagat Shiromani Satguru Kabir Saheb',
     },
     yearsSpan: {
       hi: 'संवत् १४५५ — संवत् १५७५',
@@ -100,46 +100,46 @@ const FOUR_YUGAS_DATA: YugaData[] = [
     avatarColor: 'from-blue-600 to-indigo-800',
     accentBadge: 'bg-blue-500/20 text-blue-800 border-blue-500/40',
     appearanceSummary: {
-      hi: 'कबीर जी भारत के प्रसिद्ध भक्तों में से एक हुए हैं। आपका जन्म संवत १४५५ को बनारस में हुआ। नीरू-नीमा जुलाहे द्वारा पालन हुआ। रामानंद जी से गुरु-दीक्षा ली। आपकी वाणी कबीर बीजक और श्री गुरु ग्रंथ साहिब में संकलित है।',
-      pb: 'ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਜਨਮ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਵਿਚ ਹੋਇਆ। ਨੀਰੂ-ਨੀਮਾ ਜੁਲਾਹੇ ਨੇ ਆਪ ਜੀ ਨੂੰ ਪਾਲਿਆ। ਸਵਾਮੀ ਰਾਮਾਨੰਦ ਜੀ ਤੋਂ ਦੀਖਿਆ ਲਈ। ਆਪ ਜੀ ਦੀ ਬਾਣੀ ਕਬੀਰ ਬੀਜਕ ਤੇ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿਚ ਦਰਜ ਹੈ।',
-      en: 'Kabir Ji was one of India\'s most renowned devotees. Born in 1398 CE in Banaras, he was raised by Neeru and Neema. He received initiation from Ramanand Ji. His divine words are preserved in Kabir Bijak and Sri Guru Granth Sahib.',
+      hi: 'सतगुरु कबीर साहेब भारत के प्रसिद्ध संतों एवं भक्तों में से एक हुए हैं। आपका प्राकट्य संवत १४५५ को बनारस में हुआ। नीरू-नीमा जुलाहे द्वारा पालन हुआ। रामानंद जी से गुरु-लीला हुई। आपकी वाणी कबीर बीजक और श्री गुरु ग्रंथ साहिब में संकलित है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਸੰਤਾਂ ਤੇ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਵਿਚ ਹੋਇਆ। ਨੀਰੂ-ਨੀਮਾ ਜੁਲਾਹੇ ਨੇ ਆਪ ਜੀ ਨੂੰ ਪਾਲਿਆ। ਸਵਾਮੀ ਰਾਮਾਨੰਦ ਜੀ ਨਾਲ ਗੁਰੂ-ਲੀਲ੍ਹਾ ਹੋਈ। ਆਪ ਜੀ ਦੀ ਬਾਣੀ ਕਬੀਰ ਬੀਜਕ ਤੇ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿਚ ਦਰਜ ਹੈ।',
+      en: 'Satguru Kabir Saheb is one of India\'s most revered spiritual masters. Manifesting in 1398 CE in Banaras, he was raised by Neeru and Neema. His divine words are preserved in Kabir Bijak and Sri Guru Granth Sahib.',
     },
     fullBiography: {
       hi: [
-        'कबीर जी भारत के प्रसिद्ध भक्तों में से एक हुए हैं। आपका जन्म एक विधवा ब्राह्मणी के गर्भ से ज्येष्ठ सुदी १५ संवत १४५५ को बनारस में हुआ। इनकी माता ने इस नवजात बालक को बनारस के पास एक लहरतारा तालाब (नहर) के पास रख दिया। वहां से इस नवजात बालक को नीरू नामक जुलाहे ने उठा लिया और अपने घर ले आया। नीरू की पत्नी (नीमा) ने इसे अपने पुत्र के समान ही देख-भाल कर पाला।',
-        'उपरांत समय के अनुसार इनका मुस्लिम मत के अनुसार कबीर नाम रखा गया और इस्लाम की शिक्षा दी गई। पर कबीर जी का स्वाभाविक ही झुकाव हिंदू मत की ओर था। जब जवान हुए तो इनका विवाह लोई नाम की स्त्री से हुआ। जिससे इनके घर एक पुत्र ने जन्म लिया, जिसका नाम कमाल रखा गया।',
-        'कबीर जी ने उस समय के बनारस में प्रसिद्ध भक्त रामानंद जी से गुरु-दीक्षा और राम नाम का उपदेश लिया और वैष्णव मत ग्रहण किया। उस समय काशी विद्वानों का केंद्र होने के कारण कबीर जी को सभी मत-मतांतरों के नियम जानने और विद्वानों के साथ चर्चा करने का अच्छा समय मिल गया। जिसके कारण वे चतुर हो गए और फिर पूर्ण ज्ञानियों की संगत करके आप ब्रह्मज्ञानी की पदवी तक पहुँच गए और अपने अनेक साथियों को ज्ञान मार्ग दिखाया।',
-        'बादशाह सिकंदर लोदी जब संवत १५४७ में बनारस आया तो कबीर जी को ईर्ष्यालु मुसलमानों ने बहुत कष्ट पहुँचाया। जिसका कुछ वर्णन कबीर जी ने अपने इस शब्द द्वारा किया है- "भुजा बांधि भिला करि डारिओ" (राग गोंड कबीर जी)।',
-        'कबीर जी ने अपने अंतिम दिन मगहर (जिला गोरखपुर) में बिताए। वहीं आपका देहांत संवत १५७५ में हुआ।',
-        'कबीर जी की वाणी का संग्रह इनके शिष्यों ने किया, इस संग्रह पोथी का नाम \'कबीर बीजक\' है, जिसे इनके एक धर्मदास चेले ने संवत १५२१ में लिखा था और रियासत रीवा में रखा हुआ है।',
-        'कबीर जी की बहुत सारी वाणी शब्दों और श्लोकों में श्री गुरु ग्रंथ साहिब में दर्ज है, जिनकी कुल गिनती ५३४ है। इस पुस्तक में केवल आपके २४३ श्लोकों का ही सरल भाषा में टीका पाठकों को भेंट है। ये श्लोक श्री गुरु ग्रंथ साहिब जी के पन्ना १३६४ से आरंभ होते हैं।'
+        'सतगुरु कबीर साहेब भारत के प्रसिद्ध संतों एवं भक्तों में से एक हुए हैं। आपका प्राकट्य संवत १४५५ को बनारस में ज्येष्ठ सुदी १५ को हुआ। बनारस के पास लहरतारा तालाब में कमल पुष्प से नीरू नामक जुलाहे ने नवजात बालक को उठा लिया और अपने घर ले आया। नीरू की पत्नी (नीमा) ने इसे अपने पुत्र के समान ही देख-भाल कर पाला।',
+        'उपरांत समय के अनुसार इनका नाम कबीर रखा गया। जब जवान हुए तो इनका विवाह लोई नाम की स्त्री से हुआ। जिससे इनके घर एक पुत्र ने जन्म लिया, जिसका नाम कमाल रखा गया।',
+        'सतगुरु कबीर साहेब ने उस समय के बनारस में प्रसिद्ध भक्त रामानंद जी से गुरु-दीक्षा की लीला की और राम नाम का उपदेश प्रकट किया। उस समय काशी विद्वानों का केंद्र होने के कारण सतगुरु कबीर साहेब ने सभी मत-मतांतरों के पाखंड का खंडन कर सत्यनाम का ज्ञान मार्ग दिखाया।',
+        'बादशाह सिकंदर लोदी जब संवत १५४७ में बनारस आया तो सतगुरु कबीर साहेब को ईर्ष्यालु विरोधियों ने बहुत कष्ट पहुँचाया। जिसका कुछ वर्णन आपने अपने इस शब्द द्वारा किया है- "भुजा बांधि भिला करि डारिओ" (राग गोंड कबीर जी)।',
+        'सतगुरु कबीर साहेब ने अपने अंतिम दिन मगहर (जिला गोरखपुर) में बिताए। वहीं आपका निर्वाण संवत १५७५ में हुआ।',
+        'सतगुरु कबीर साहेब की वाणी का संग्रह इनके शिष्यों ने किया, इस संग्रह पोथी का नाम \'कबीर बीजक\' है, जिसे इनके शिष्य धनी धर्मदास साहेब ने संवत १५२१ में लिखा था और रियासत रीवा में रखा हुआ है।',
+        'सतगुरु कबीर साहेब की बहुत सारी वाणी शब्दों और श्लोकों में श्री गुरु ग्रंथ साहिब में दर्ज है, जिनकी कुल गिनती ५३४ है। ये श्लोक श्री गुरु ग्रंथ साहिब जी के पन्ना १३६४ से आरंभ होते हैं।'
       ],
       pb: [
-        'ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਜਨਮ ਇਕ ਵਿਧਵਾ ਬ੍ਰਾਹਮਣੀ ਦੇ ਉਦਰ ਤੋਂ ਜੇਠ ਸੁਦੀ ੧੫ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਵਿਚ ਹੋਇਆ। ਇਨ੍ਹਾਂ ਦੀ ਮਾਤਾ ਨੇ ਇਸ ਨਵੇਂ ਜਨਮੇ ਬਾਲਕ ਨੂੰ ਬਨਾਰਸ ਲਾਗੇ ਇਕ ਨਹਿਰ ਪਾਸ ਰੱਖ ਦਿੱਤਾ। ਉਥੋਂ ਇਸ ਨਵ-ਜੰਮੇ ਬਾਲਕ ਨੂੰ ਇਕ ਨੀਰੂ ਜੁਲਾਹੇ ਨੇ ਚੁੱਕ ਕੇ ਆਪਣੇ ਘਰ ਲੈ ਆਂਦਾ। ਨੀਰੂ ਦੀ ਇਸਤ੍ਰੀ ਨੇ ਇਸ ਨੂੰ ਆਪਣੇ ਪੁੱਤਰ ਸਮਾਨ ਹੀ ਦੇਖ ਭਾਲ ਕਰ ਕੇ ਪਾਲਿਆ।',
-        'ਉਪਰੰਤ ਸਮੇਂ ਅਨੁਸਾਰ ਇਸ ਦਾ ਮੁਸਲਮਾਨੀ ਮੱਤ ਅਨੁਸਾਰ ਕਬੀਰ ਨਾਮ ਰਖਿਆ ਗਿਆ ਅਤੇ ਇਸਲਾਮ ਦੀ ਸਿਖਿਆ ਦਿੱਤੀ ਗਈ। ਪਰ ਕਬੀਰ ਜੀ ਦਾ ਸੁਭਾਵਕ ਹੀ ਝੁਕਾਉ ਹਿੰਦੂ ਮੱਤ ਵਲ ਸੀ। ਜਦ ਜਵਾਨ ਹੋਏ ਤਾਂ ਇਹਨਾਂ ਦਾ ਵਿਆਹ ਲੋਈ ਨਾਮ ਦੀ ਇਸਤ੍ਰੀ ਨਾਲ ਹੋਇਆ। ਜਿਸ ਤੋਂ ਇਹਨਾਂ ਦੇ ਘਰ ਇਕ ਪੁੱਤਰ ਨੇ ਜਨਮ ਲਿਆ, ਜਿਸ ਦਾ ਨਾਮ ਕਮਾਲਾ ਰਖਿਆ ਗਿਆ।',
-        'ਕਬੀਰ ਜੀ ਨੇ ਉਸ ਸਮੇਂ ਦੇ ਬਨਾਰਸ ਵਿਚ ਪ੍ਰਸਿੱਧ ਭਗਤ ਰਾਮਾ ਨੰਦ ਜੀ ਤੋਂ ਗੁਰ-ਦੀਖਿਆ ਰਾਮ ਨਾਮ ਦਾ ਉਪਦੇਸ਼ ਲਿਆ ਅਤੇ ਵੈਸ਼ਨੋ ਮੱਤ ਗ੍ਰਹਿਣ ਕੀਤਾ। ਉਸ ਸਮੇਂ ਕਾਂਸ਼ੀ ਵਿਦਵਾਨਾਂ ਦਾ ਕੇਂਦਰ ਹੋਣ ਕਰਕੇ ਕਬੀਰ ਜੀ ਨੂੰ ਸਾਰੇ ਮਤ ਮਤਾਂਤਰਾਂ ਦੇ ਨਿਯਮ ਜਾਨਣ ਦਾ ਅਤੇ ਵਿਦਵਾਨਾਂ ਨਾਲ ਚਰਚਾ ਕਰਨ ਦਾ ਚੰਗਾ ਸਮਾਂ ਮਿਲ ਗਿਆ। ਜਿਸ ਕਰਕੇ ਚਤੁਰ ਹੋ ਗਏ ਅਤੇ ਫਿਰ ਪੂਰਨ ਗਿਆਨੀਆਂ ਦੀ ਸੰਗਤ ਕਰਕੇ ਆਪ ਜੀ ਬ੍ਰਹਮ ਗਿਆਨੀ ਦੀ ਪਦਵੀ ਨੂੰ ਪਹੁੰਚ ਗਏ ਅਤੇ ਆਪਣੇ ਅਨੇਕਾਂ ਸੰਗੀਆਂ ਨੂੰ ਗਿਆਨ ਮਾਰਗ ਦਰਸਾਇਆ।',
-        'ਬਾਦਸ਼ਾਹ ਸਿਕੰਦਰ ਲੋਧੀ ਜਦ ਸੰਮਤ ੧੫੪੭ ਵਿਚ ਬਨਾਰਸ ਆਇਆ ਤਾਂ ਕਬੀਰ ਜੀ ਨੂੰ ਈਰਖਾਵਾਦੀ ਮੁਸਲਮਾਨਾਂ ਬਹੁਤ ਕਸ਼ਟ ਪਹੁੰਚਾਇਆ। ਜਿਸ ਦਾ ਕੁਝ ਵਰਣਨ ਕਬੀਰ ਜੀ ਨੇ ਆਪਣੇ ਇਸ ਸ਼ਬਦ ਦੁਆਰਾ ਕੀਤਾ ਹੈ- ਭੁਜਾ ਬਾਂਧਿ ਭਿਲਾ ਕਰਿ ਡਾਰਿਓ॥ (ਰਾਗ ਗੋਂਡ ਕਬੀਰ ਜੀ)',
-        'ਕਬੀਰ ਜੀ ਨੇ ਆਪਣੇ ਅੰਤਲੇ ਦਿਨ ਮਗਹਰ ਜ਼ਿਲਾ ਗੋਰਖ ਪੁਰ ਜਾ ਬਤੀਤ ਕੀਤੇ। ਉਥੇ ਹੀ ਆਪ ਜੀ ਦਾ ਦੇਹਾਂਤ ਸੰਮਤ ੧੫੭੫ ਵਿਚ ਹੋਇਆ।',
-        'ਕਬੀਰ ਜੀ ਦੀ ਬਾਣੀ ਦਾ ਸੰਗ੍ਰਹਿ ਇਹਨਾਂ ਦੇ ਚੇਲਿਆਂ ਨੇ ਕੀਤਾ, ਇਸ ਸੰਗ੍ਰਹਿ ਪੋਥੀ ਦਾ ਨਾਮ \'ਕਬੀਰ ਬੀਜਕ\' ਹੈ, ਜੋ ਇਸ ਦੇ ਇਕ ਧਰਮ ਦਾਸ ਚੇਲੇ ਨੇ ਸੰਮਤ ੧੫੨੧ ਵਿਚ ਲਿਖਿਆ ਸੀ ਅਤੇ ਰਿਆਸਤ ਰੀਵਾ ਵਿਚ ਰਖਿਆ ਹੋਇਆ ਹੈ।',
-        'ਕਬੀਰ ਜੀ ਦੀ ਬਹੁਤ ਸਾਰੀ ਬਾਣੀ ਸ਼ਬਦਾਂ ਤੇ ਸਲੋਕਾਂ ਵਿਚ ਉਚਾਰਨ ਕੀਤੀ ਹੋਈ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿਚ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀ ਕੁਲ ਗਿਣਤੀ ੫੩੪ ਹੈ। ਇਸ ਪੁਸਤਕ ਵਿਚ ਕੇਵਲ ਆਪ ਜੀ ਦੇ ੨੪੩ ਸਲੋਕਾਂ ਦਾ ਹੀ ਸੁਖੈਨ ਭਾਸ਼ਾ ਵਿਚ ਟੀਕਾ ਪਾਠਕਾਂ ਦੀ ਭੇਟ ਹੈ। ਇਹ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਪੰਨਾ ੧੩੬੪ ਤੋਂ ਆਰੰਭ ਹੁੰਦੇ ਹਨ।'
+        'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਸੰਤਾਂ ਤੇ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ। ਆਪ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਜੇਠ ਸੁਦੀ ੧੫ ਸੰਮਤ ੧੪੫੫ ਨੂੰ ਬਨਾਰਸ ਵਿਚ ਹੋਇਆ। ਲਹਰਤਾਰਾ ਤਲਾਬ ਪਾਸੋਂ ਇਕ ਨੀਰੂ ਜੁਲਾਹੇ ਨੇ ਨਵ-ਜੰਮੇ ਬਾਲਕ ਨੂੰ ਚੁੱਕ ਕੇ ਆਪਣੇ ਘਰ ਲੈ ਆਂਦਾ। ਨੀਰੂ ਦੀ ਇਸਤ੍ਰੀ (ਨੀਮਾ) ਨੇ ਇਸ ਨੂੰ ਆਪਣੇ ਪੁੱਤਰ ਸਮਾਨ ਹੀ ਦੇਖ ਭਾਲ ਕਰ ਕੇ ਪਾਲਿਆ।',
+        'ਉਪਰੰਤ ਸਮੇਂ ਅਨੁਸਾਰ ਆਪ ਜੀ ਦਾ ਕਬੀਰ ਨਾਮ ਰਖਿਆ ਗਿਆ। ਜਦ ਜਵਾਨ ਹੋਏ ਤਾਂ ਇਹਨਾਂ ਦਾ ਵਿਆਹ ਲੋਈ ਨਾਮ ਦੀ ਇਸਤ੍ਰੀ ਨਾਲ ਹੋਇਆ। ਜਿਸ ਤੋਂ ਇਹਨਾਂ ਦੇ ਘਰ ਇਕ ਪੁੱਤਰ ਹੋਇਆ, ਜਿਸ ਦਾ ਨਾਮ ਕਮਾਲ ਰਖਿਆ ਗਿਆ।',
+        'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਉਸ ਸਮੇਂ ਦੇ ਬਨਾਰਸ ਵਿਚ ਪ੍ਰਸਿੱਧ ਭਗਤ ਰਾਮਾਨੰਦ ਜੀ ਨਾਲ ਗੁਰੂ-ਦੀਖਿਆ ਦੀ ਲੀਲ੍ਹਾ ਰਚੀ। ਉਸ ਸਮੇਂ ਕਾਂਸ਼ੀ ਵਿਦਵਾਨਾਂ ਦਾ ਕੇਂਦਰ ਹੋਣ ਕਰਕੇ ਆਪ ਜੀ ਨੇ ਸਾਰੇ ਮਤ ਮਤਾਂਤਰਾਂ ਦੇ ਪਾਖੰਡ ਦਾ ਖੰਡਨ ਕਰ ਕੇ ਸਤਯਨਾਮ ਦਾ ਸੱਚਾ ਗਿਆਨ ਮਾਰਗ ਦਰਸਾਇਆ।',
+        'ਬਾਦਸ਼ਾਹ ਸਿਕੰਦਰ ਲੋਧੀ ਜਦ ਸੰਮਤ ੧੫੪੭ ਵਿਚ ਬਨਾਰਸ ਆਇਆ ਤਾਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਈਰਖਾਵਾਦੀਆਂ ਨੇ ਬਹੁਤ ਕਸ਼ਟ ਪਹੁੰਚਾਇਆ। ਜਿਸ ਦਾ ਕੁਝ ਵਰਣਨ ਆਪ ਜੀ ਨੇ ਆਪਣੇ ਇਸ ਸ਼ਬਦ ਦੁਆਰਾ ਕੀਤਾ ਹੈ- ਭੁਜਾ ਬਾਂਧਿ ਭਿਲਾ ਕਰਿ ਡਾਰਿਓ॥ (ਰਾਗ ਗੋਂਡ ਕਬੀਰ ਜੀ)',
+        'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੇ ਅੰਤਲੇ ਦਿਨ ਮਗਹਰ ਜ਼ਿਲਾ ਗੋਰਖ ਪੁਰ ਜਾ ਬਤੀਤ ਕੀਤੇ। ਉਥੇ ਹੀ ਆਪ ਜੀ ਦਾ ਨਿਰਵਾਣ ਸੰਮਤ ੧੫੭੫ ਵਿਚ ਹੋਇਆ।',
+        'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦਾ ਸੰਗ੍ਰਹਿ ਇਹਨਾਂ ਦੇ ਚੇਲਿਆਂ ਨੇ ਕੀਤਾ, ਇਸ ਸੰਗ੍ਰਹਿ ਪੋਥੀ ਦਾ ਨਾਮ \'ਕਬੀਰ ਬੀਜਕ\' ਹੈ, ਜੋ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਨੇ ਸੰਮਤ ੧੫੨੧ ਵਿਚ ਲਿਖਿਆ ਸੀ ਅਤੇ ਰਿਆਸਤ ਰੀਵਾ ਵਿਚ ਰਖਿਆ ਹੋਇਆ ਹੈ।',
+        'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਹੁਤ ਸਾਰੀ ਬਾਣੀ ਸ਼ਬਦਾਂ ਤੇ ਸਲੋਕਾਂ ਵਿਚ ਉਚਾਰਨ ਕੀਤੀ ਹੋਈ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਵਿਚ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀ ਕੁਲ ਗਿਣਤੀ ੫੩੪ ਹੈ। ਇਹ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਪੰਨਾ ੧੩੬੪ ਤੋਂ ਆਰੰਭ ਹੁੰਦੇ ਹਨ।'
       ],
       en: [
-        'Kabir Ji was one of the most famous devotees of India. He was born from the womb of a widow Brahmani on Jyeshtha Sudi 15, Samvat 1455 in Banaras. His mother left the newborn baby near a pond (Lahartara) close to Banaras. From there, a weaver named Neeru picked up the newborn and brought him home. Neeru\'s wife (Neema) raised him with the same care as her own son.',
-        'Subsequently, according to the custom of the time, he was named Kabir in accordance with the Muslim faith and was given Islamic education. However, Kabir Ji naturally leaned towards the Hindu faith. When he grew up, he was married to a woman named Loi. From this marriage, a son was born in their house, who was named Kamal.',
-        'Kabir Ji received Guru-Diksha (initiation) and the teaching of the Name of Ram from the famous devotee Ramanand Ji of Banaras at that time and adopted the Vaishnav path. Since Kashi was a center of scholars at that time, Kabir Ji got a good opportunity to learn the rules of all faiths and engage in discussions with scholars. Consequently, he became very wise, and through the company of perfect sages, he attained the status of a Brahm-Gyani (God-realized soul) and showed the path of knowledge to many of his companions.',
-        'When Emperor Sikandar Lodi came to Banaras in Samvat 1547, jealous Muslims caused Kabir Ji a lot of suffering. Kabir Ji described some of this in his hymn: "Bhujā bāndhi bhilā kari dārio" (Raag Gond Kabir Ji).',
-        'Kabir Ji spent his final days in Maghar, district Gorakhpur. He passed away there in Samvat 1575.',
-        'The collection of Kabir Ji\'s words (Bani) was made by his disciples. The name of this collection is \'Kabir Bijak\', which was written by one of his disciples, Dharmadas, in Samvat 1521 and is kept in the state of Rewa.',
-        'A lot of Kabir Ji\'s Bani is recorded in the form of hymns (Shabads) and couplets (Saloks) in Sri Guru Granth Sahib, totaling 534 entries. In this book, a simplified commentary of 243 of his Saloks is presented to the readers. These Saloks begin from page 1364 of Sri Guru Granth Sahib.'
+        'Satguru Kabir Saheb is one of the most renowned spiritual masters of India. He manifested on Jyeshtha Sudi 15, Samvat 1455 in Banaras near the Lahartara pond. A weaver named Neeru picked up the newborn and brought him home, where Neeru\'s wife (Neema) raised him with loving care.',
+        'Subsequently, he was named Kabir. When he grew up, he was married to Mata Loi, and a son named Kamal was raised in their household.',
+        'Satguru Kabir Saheb enacted the sacred Guru-Diksha leela with the renowned devotee Swami Ramanand Ji of Banaras. Since Kashi was a center of scholars at that time, Satguru Kabir Saheb engaged with scholars of all sects and revealed the supreme path of Satyanaam.',
+        'When Emperor Sikandar Lodi came to Banaras in Samvat 1547, jealous opponents caused great suffering. Satguru Kabir Saheb described this episode in his hymn: "Bhujā bāndhi bhilā kari dārio" (Raag Gond Satguru Kabir Saheb).',
+        'Satguru Kabir Saheb spent his final days in Maghar, district Gorakhpur, and departed from the mortal world there in Samvat 1575.',
+        'The collection of Satguru Kabir Saheb\'s words (Bani) is known as \'Kabir Bijak\', compiled by his foremost disciple Dhani Dharmadas Saheb in Samvat 1521 and preserved in Rewa.',
+        'A vast portion of Satguru Kabir Saheb\'s Bani is recorded as Shabads and Saloks in Sri Guru Granth Sahib, totaling 534 entries, with Saloks beginning on page 1364.'
       ]
     },
     keyEpisodes: [],
     scripturalEvidence: {
-      verse: 'ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ।',
+      verse: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਸੰਤਾਂ ਤੇ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ।',
       meaning: {
-        hi: 'कबीर जी भारत के प्रसिद्ध भक्तों में से एक हुए हैं।',
-        pb: 'ਕਬੀਰ ਜੀ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ।',
-        en: 'Kabir Ji was one of the most famous devotees of India.',
+        hi: 'सतगुरु कबीर साहेब भारत के प्रसिद्ध संतों एवं भक्तों में से एक हुए हैं।',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਭਾਰਤ ਦੇ ਪ੍ਰਸਿੱਧ ਸੰਤਾਂ ਤੇ ਭਗਤਾਂ ਵਿਚੋਂ ਇਕ ਹੋਏ ਹਨ।',
+        en: 'Satguru Kabir Saheb is one of the most revered spiritual masters of India.',
       },
       source: 'ਜੀਵਨ ਪਰਿਚੈ (ਸਟੀਕ)',
     },
@@ -287,7 +287,7 @@ const FOUR_YUGAS_DATA: YugaData[] = [
     scripturalEvidence: {
       verse: 'त्रेता में मुनीन्द्र कहाई, नल-नील को सिद्धि कराई।',
       meaning: {
-        hi: 'त्रेतायुग में कबीर साहेब "मुनीन्द्र" कहलाए और उन्होंने नल-नील को समुद्र पर पत्थर तैराने की सिद्धि प्रदान की।',
+        hi: 'त्रेतायुग में सतगुरु कबीर साहेब "मुनीन्द्र" कहलाए और उन्होंने नल-नील को समुद्र पर पत्थर तैराने की सिद्धि प्रदान की।',
         pb: 'ਤ੍ਰੇਤਾ ਵਿੱਚ ਸਤਿਗੁਰੂ ਮੁਨੀਂਦਰ ਬਣੇ ਅਤੇ ਨਲ-ਨੀਲ ਨੂੰ ਸਿੱਧੀ ਬਖ਼ਸ਼ੀ।',
         en: 'In Treta Yuga, Kabir was known as Munindra, empowering Nal and Neel to conquer the ocean.',
       },
@@ -411,9 +411,9 @@ const FOUR_YUGAS_DATA: YugaData[] = [
           en: 'On Jyeshtha Purnima at dawn, a beam of transcendent light descended from the heavens onto a lotus petal at Lahartara Lake, taking the form of an infant child.',
         },
         significance: {
-          hi: 'कबीर साहेब का जन्म किसी गर्भ से नहीं, अपितु प्रत्यक्ष सत्यलोक से अवतरण था।',
+          hi: 'सतगुरु कबीर साहेब का जन्म किसी गर्भ से नहीं, अपितु प्रत्यक्ष सत्यलोक से अवतरण था।',
           pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਗਰਭ ਜੂਨ ਤੋਂ ਰਹਿਤ, ਸਿੱਧੇ ਅਮਰਲੋਕ ਤੋਂ ਆਏ।',
-          en: 'Demonstrates that Kabir Saheb was beyond womb-birth, descending directly from the absolute.',
+          en: 'Demonstrates that Satguru Kabir Saheb was beyond womb-birth, descending directly from the absolute.',
         },
       },
       {
@@ -423,7 +423,7 @@ const FOUR_YUGAS_DATA: YugaData[] = [
           en: 'Upholding Guru Maryada with Swami Ramanand',
         },
         detail: {
-          hi: 'ब्रह्म मुहूर्त में पंचगंगा घाट की सीढ़ियों पर बालक कबीर लेट गए। स्वामी रामानंद जी का चरण स्पर्श होते ही उनके मुख से "राम-राम" निकला, जिसे कबीर साहेब ने लोक-मर्यादा हेतु गुरु-मंत्र स्वीकार किया।',
+          hi: 'ब्रह्म मुहूर्त में पंचगंगा घाट की सीढ़ियों पर बालक कबीर लेट गए। स्वामी रामानंद जी का चरण स्पर्श होते ही उनके मुख से "राम-राम" निकला, जिसे सतगुरु कबीर साहेब ने लोक-मर्यादा हेतु गुरु-मंत्र स्वीकार किया।',
           pb: 'ਪੰਚਗੰਗਾ ਘਾਟ \'ਤੇ ਸਵਾਮੀ ਰਾਮਾਨੰਦ ਜੀ ਦਾ ਚਰਨ ਲੱਗਣ \'ਤੇ "ਰਾਮ" ਸ਼ਬਦ ਨਿਕਲਿਆ, ਜਿਸਨੂੰ ਲੋਕ-ਸਿੱਖਿਆ ਲਈ ਗੁਰੂ-ਮੰਤਰ ਮੰਨਿਆ।',
           en: 'At Panchganga Ghat, Swami Ramanand accidentally stepped upon young Kabir in the pre-dawn darkness and uttered "Ram Ram", which Kabir adopted as the formal Guru mantra to teach worldly humility.',
         },
@@ -440,7 +440,7 @@ const FOUR_YUGAS_DATA: YugaData[] = [
           en: 'Confrontations with Sultan Sikandar Lodi',
         },
         detail: {
-          hi: 'सुल्तान सिकंदर लोदी ने कबीर साहेब पर जंजीरों में बांधकर गंगा में डुबोने, उन्मत्त हाथी के आगे फेंकने और दहकती आग में झोंकने के ५२ घोर कष्ट दिए, परंतु सतगुरु हर बार सकुशल प्रकट हुए। अंत में सुल्तान नतमस्तक हुआ।',
+          hi: 'सुल्तान सिकंदर लोदी ने सतगुरु कबीर साहेब पर जंजीरों में बांधकर गंगा में डुबोने, उन्मत्त हाथी के आगे फेंकने और दहकती आग में झोंकने के ५२ घोर कष्ट दिए, परंतु सतगुरु हर बार सकुशल प्रकट हुए। अंत में सुल्तान नतमस्तक हुआ।',
           pb: 'ਸਿਕੰਦਰ ਲੋਦੀ ਨੇ ਗੰਗਾ ਵਿੱਚ ਡੋਬਿਆ, ਮਸਤ ਹਾਥੀ ਸਾਹਮਣੇ ਸੁੱਟਿਆ, ਪਰ ਸਤਿਗੁਰੂ ਦਾ ਵਾਲ ਵੀ ਵਿੰਗਾ ਨਾ ਹੋਇਆ ਤੇ ਬਾਦਸ਼ਾਹ ਚਰਨੀਂ ਪਿਆ।',
           en: 'Sultan Sikandar Lodi subjected Kabir to 52 severe trials—chains in the Ganges, a maddened elephant, and blazing fires—yet Kabir emerged unharmed every time, ultimately humbling the emperor.',
         },
@@ -457,7 +457,7 @@ const FOUR_YUGAS_DATA: YugaData[] = [
           en: 'Mahaprayana at Maghar — Transformation into Flowers',
         },
         detail: {
-          hi: 'उस समय यह भ्रम था कि मगहर में मरने से गधा और काशी में मरने से स्वर्ग मिलता है। इस अंधविश्वास को तोड़ने कबीर साहेब मगहर पधारे। संवत् १५७५ में जब चादर हटाई गई, तो देह के स्थान पर सुगंधित पुष्प मिले जिन्हें हिंदू-मुस्लिम शिष्यों ने आपस में बांट लिया।',
+          hi: 'उस समय यह भ्रम था कि मगहर में मरने से गधा और काशी में मरने से स्वर्ग मिलता है। इस अंधविश्वास को तोड़ने सतगुरु कबीर साहेब मगहर पधारे। संवत् १५७५ में जब चादर हटाई गई, तो देह के स्थान पर सुगंधित पुष्प मिले जिन्हें हिंदू-मुस्लिम शिष्यों ने आपस में बांट लिया।',
           pb: 'ਅੰਧਵਿਸ਼ਵਾਸ ਤੋੜਨ ਲਈ ਮਗਹਰ ਗਏ। ਚਾਦਰ ਚੁੱਕਣ \'ਤੇ ਸਿਰਫ਼ ਖ਼ੁਸ਼ਬੂਦਾਰ ਫੁੱਲ ਮਿਲੇ ਜੋ ਹਿੰਦੂ-ਮੁਸਲਿਮ ਦੋਹਾਂ ਨੇ ਆਪਸ ਵਿੱਚ ਵੰਡੇ।',
           en: 'To shatter the myth that dying in Maghar leads to hell while Kashi guarantees heaven, Kabir walked to Maghar in his 120th year. When followers lifted his shroud, only fragrant flowers remained, equally divided between Hindus and Muslims.',
         },

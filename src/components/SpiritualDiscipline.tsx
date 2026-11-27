@@ -248,8 +248,8 @@ const DISCIPLINE_ITEMS: DisciplineItem[] = [
       en: '8. Daily Sacred Reading'
     },
     subtitle: {
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਘੱਟੋ-ਘੱਟ ਇਕ ਸਾਖੀ ਜਾਂ ਸ਼ਬਦ ਦਾ ਅਰਥ ਸਮੇਤ ਪਾਠ ਕਰਨਾ।',
-      hi: 'कबीर साहेब की कम से कम एक साखी या पद का अर्थ सहित पठन।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਘੱਟੋ-ਘੱਟ ਇਕ ਸਾਖੀ ਜਾਂ ਸ਼ਬਦ ਦਾ ਅਰਥ ਸਮੇਤ ਪਾਠ ਕਰਨਾ।',
+      hi: 'सतगुरु कबीर साहेब की कम से कम एक साखी या पद का अर्थ सहित पठन।',
       en: 'Reading at least one sacred Sakhi or verse daily with reflection.'
     },
     category: 'daily',
@@ -358,7 +358,7 @@ export const SpiritualDiscipline: React.FC<SpiritualDisciplineProps> = ({
         sacredHaptics.successVibration();
         onOpenBlessing(
           language === 'pb' ? 'ਪੂਰਨ ਨੇਮ ਪਾਲਣ ਦੀ ਵਧਾਈ!' : language === 'en' ? 'Congratulations on Complete Discipline!' : 'पूर्ण नेम पालन की बधाई!',
-          language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਕਿਰਪਾ ਨਾਲ ਅੱਜ ਆਪ ਜੀ ਦੇ ਸਾਰੇ ਨੇਮ ਪੂਰੇ ਹੋਏ।' : language === 'en' ? 'By the grace of Satguru Kabir Saheb, all your spiritual vows are fulfilled today.' : 'सतगुरु कबीर साहेब की कृपा से आज आपके सभी नियम संपन्न हुए।'
+          language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਨਾਲ ਅੱਜ ਆਪ ਜੀ ਦੇ ਸਾਰੇ ਨੇਮ ਪੂਰੇ ਹੋਏ।' : language === 'en' ? 'By the grace of Satguru Kabir Saheb, all your spiritual vows are fulfilled today.' : 'सतगुरु कबीर साहेब की कृपा से आज आपके सभी नियम संपन्न हुए।'
         );
       }
     }

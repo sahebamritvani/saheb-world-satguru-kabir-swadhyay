@@ -19,14 +19,14 @@ export const SACRED_SHARE_TEMPLATE = {
     en: '🌹 || Satyanaam || 🌹',
   },
   attribution: {
-    hi: '— सद्गुरु कबीर साहेब',
+    hi: '— सतगुरु कबीर साहेब',
     pb: '— ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ',
     en: '— Satguru Kabir Saheb',
   },
   footer: {
-    hi: 'सौजन्यः साहेब वर्ल्ड साधक परिवार (Saheb World)\n।। साहेब बंदगी साहेब ।। 🙏',
-    pb: 'ਸੌਜੰਨਿਆ: ਸਾਹੇਬ ਵਰਲਡ ਸਾਧਕ ਪਰਿਵਾਰ (Saheb World)\n।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏',
-    en: 'Courtesy: Saheb World Sadhak Parivar\n|| Saheb Bandagi Saheb || 🙏',
+    hi: 'सौजन्य: साहेब वर्ल्ड (Saheb World)\n।। साहेब बंदगी साहेब ।। 🙏',
+    pb: 'ਸੌਜੰਨਿਆ: ਸਾਹੇਬ ਵਰਲਡ (Saheb World)\n।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏',
+    en: 'Courtesy: Saheb World (Saheb World)\n|| Saheb Bandagi Saheb || 🙏',
   },
 } as const;
 

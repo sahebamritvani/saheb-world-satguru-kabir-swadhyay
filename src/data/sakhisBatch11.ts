@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Kabir Hari sab ko bhaje, Hari ko bhaje na koyi. Jab lag aas shareer ki, tab lag daas na hoyi.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्ची भक्ति और निष्काम दासत्व की कसौटी बताते हुए कहते हैं कि परमात्मा तो अपनी अहैतुकी कृपा से प्रत्येक जीव का पालन-पोषण और निरंतर ध्यान (सुमिरन/भजन) रखते हैं, परंतु संसारी मनुष्य उस सर्वसमर्थ परमात्मा का सच्चा भजन नहीं करता। जब तक मनुष्य के मन में अपनी नश्वर देह, शारीरिक सुखों और वासनाओं की आस और ममता बनी रहती है, तब तक वह परमात्मा का सच्चा, निष्काम और समर्पित दास (सेवक) कदापि नहीं बन सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਮਾਤਮਾ ਤਾਂ ਸਭ ਦੀ ਸੰਭਾਲ ਕਰਦਾ ਹੈ, ਪਰ ਮਨੁੱਖ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਸਿਮਰਨ ਨਹੀਂ ਕਰਦਾ। ਜਦ ਤੱਕ ਸਰੀਰ ਦੇ ਸੁੱਖਾਂ ਅਤੇ ਮੋਹ ਦੀ ਆਸ ਬਣੀ ਰਹਿੰਦੀ ਹੈ, ਤਦ ਤੱਕ ਜੀਵ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਦਾਸ ਨਹੀਂ ਬਣ ਸਕਦਾ।',
-      en: 'Kabir Saheb defines the pure criterion of divine servitude: The Supreme Lord, in His boundless compassion, sustains and cares for every single creature; yet scarcely does any mortal truly worship and remember the Lord. So long as a person clings to the desires and pampering of this mortal physical body, they cannot become a genuine, surrendered servant (Daas) of the Divine.',
+      hi: 'सतगुरु कबीर साहेब सच्ची भक्ति और निष्काम दासत्व की कसौटी बताते हुए कहते हैं कि परमात्मा तो अपनी अहैतुकी कृपा से प्रत्येक जीव का पालन-पोषण और निरंतर ध्यान (सुमिरन/भजन) रखते हैं, परंतु संसारी मनुष्य उस सर्वसमर्थ परमात्मा का सच्चा भजन नहीं करता। जब तक मनुष्य के मन में अपनी नश्वर देह, शारीरिक सुखों और वासनाओं की आस और ममता बनी रहती है, तब तक वह परमात्मा का सच्चा, निष्काम और समर्पित दास (सेवक) कदापि नहीं बन सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਮਾਤਮਾ ਤਾਂ ਸਭ ਦੀ ਸੰਭਾਲ ਕਰਦਾ ਹੈ, ਪਰ ਮਨੁੱਖ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਸਿਮਰਨ ਨਹੀਂ ਕਰਦਾ। ਜਦ ਤੱਕ ਸਰੀਰ ਦੇ ਸੁੱਖਾਂ ਅਤੇ ਮੋਹ ਦੀ ਆਸ ਬਣੀ ਰਹਿੰਦੀ ਹੈ, ਤਦ ਤੱਕ ਜੀਵ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਦਾਸ ਨਹੀਂ ਬਣ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb defines the pure criterion of divine servitude: The Supreme Lord, in His boundless compassion, sustains and cares for every single creature; yet scarcely does any mortal truly worship and remember the Lord. So long as a person clings to the desires and pampering of this mortal physical body, they cannot become a genuine, surrendered servant (Daas) of the Divine.',
     },
     wordMeanings: {
       hi: [
@@ -65,9 +65,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
       {
         id: 'q-b11-1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार मनुष्य कब तक परमात्मा का सच्चा दास नहीं बन सकता?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਕਦੋਂ ਤੱਕ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਦਾਸ ਨਹੀਂ ਬਣ ਸਕਦਾ?',
-          en: 'According to Kabir Saheb, until when can a person not become a true servant of the Divine?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार मनुष्य कब तक परमात्मा का सच्चा दास नहीं बन सकता?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਕਦੋਂ ਤੱਕ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਦਾਸ ਨਹੀਂ ਬਣ ਸਕਦਾ?',
+          en: 'According to Satguru Kabir Saheb, until when can a person not become a true servant of the Divine?',
         },
         options: {
           hi: ['जब तक वह तीर्थ नहीं जाता', 'जब तक उसके मन में शरीर और इसके सुखों की आसक्ति (देह-मोह) बनी रहती है', 'जब तक वह किताबें नहीं पढ़ता', 'जब तक वह बूढ़ा नहीं होता'],
@@ -102,9 +102,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Kya mukh lai binti karu, laaj aavat hai mohi. Tum dekhat augun karu, kaise bhaavu tohi.',
     bhavarth: {
-      hi: 'कबीर साहेब अत्यंत भावपूर्ण दैन्यता और आत्म-निरीक्षण का आदर्श प्रस्तुत करते हुए कहते हैं कि हे सर्वांतर्यामी प्रभु! मैं किस मुख से आपके सामने विनती या प्रार्थना करूँ? मुझे अपने कर्मों पर भारी लज्जा और संकोच आ रहा है। आप तो सर्वद्रष्टा हैं, आपकी पावन दृष्टि के सम्मुख रहते हुए भी मैं निरंतर भूलें और अवगुण करता रहता हूँ; ऐसी अपवित्र स्थिति में मैं आपको कैसे प्रिय लग सकता हूँ? यह साखी साधक को अपने दोषों को स्वीकार कर प्रभु के समक्ष पूर्ण पश्चाताप और शुद्धि की प्रेरणा देती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪਰਮ ਦੀਨਤਾ ਨਾਲ ਅਰਦਾਸ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਅੰਤਰਜਾਮੀ ਪ੍ਰਭੂ! ਮੈਂ ਕਿਸ ਮੂੰਹ ਨਾਲ ਤੁਹਾਡੇ ਅੱਗੇ ਬੇਨਤੀ ਕਰਾਂ, ਮੈਨੂੰ ਸ਼ਰਮ ਆਉਂਦੀ ਹੈ। ਤੁਸੀਂ ਸਭ ਕੁਝ ਦੇਖ ਰਹੇ ਹੋ, ਫਿਰ ਵੀ ਮੈਂ ਔਗੁਣ ਕਰਦਾ ਹਾਂ; ਮੈਂ ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਚੰਗਾ ਲੱਗ ਸਕਦਾ ਹਾਂ?',
-      en: 'Kabir Saheb articulates the profound humility and remorse of sincere self-inspection: With what face can I come before You to plead my prayer, O Lord? Shame and sorrow overwhelm my heart. Even while living under Your all-seeing, omniscient gaze, I repeatedly commit faults and yield to weaknesses; how then can I ever be pleasing to Your spotless purity? Purify me through Your mercy.',
+      hi: 'सतगुरु कबीर साहेब अत्यंत भावपूर्ण दैन्यता और आत्म-निरीक्षण का आदर्श प्रस्तुत करते हुए कहते हैं कि हे सर्वांतर्यामी प्रभु! मैं किस मुख से आपके सामने विनती या प्रार्थना करूँ? मुझे अपने कर्मों पर भारी लज्जा और संकोच आ रहा है। आप तो सर्वद्रष्टा हैं, आपकी पावन दृष्टि के सम्मुख रहते हुए भी मैं निरंतर भूलें और अवगुण करता रहता हूँ; ऐसी अपवित्र स्थिति में मैं आपको कैसे प्रिय लग सकता हूँ? यह साखी साधक को अपने दोषों को स्वीकार कर प्रभु के समक्ष पूर्ण पश्चाताप और शुद्धि की प्रेरणा देती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਮ ਦੀਨਤਾ ਨਾਲ ਅਰਦਾਸ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਅੰਤਰਜਾਮੀ ਪ੍ਰਭੂ! ਮੈਂ ਕਿਸ ਮੂੰਹ ਨਾਲ ਤੁਹਾਡੇ ਅੱਗੇ ਬੇਨਤੀ ਕਰਾਂ, ਮੈਨੂੰ ਸ਼ਰਮ ਆਉਂਦੀ ਹੈ। ਤੁਸੀਂ ਸਭ ਕੁਝ ਦੇਖ ਰਹੇ ਹੋ, ਫਿਰ ਵੀ ਮੈਂ ਔਗੁਣ ਕਰਦਾ ਹਾਂ; ਮੈਂ ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਚੰਗਾ ਲੱਗ ਸਕਦਾ ਹਾਂ?',
+      en: 'Satguru Kabir Saheb articulates the profound humility and remorse of sincere self-inspection: With what face can I come before You to plead my prayer, O Lord? Shame and sorrow overwhelm my heart. Even while living under Your all-seeing, omniscient gaze, I repeatedly commit faults and yield to weaknesses; how then can I ever be pleasing to Your spotless purity? Purify me through Your mercy.',
     },
     wordMeanings: {
       hi: [
@@ -149,9 +149,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
       {
         id: 'q-b11-2-1',
         question: {
-          hi: 'कबीर साहेब को विनती करते समय संकोच और लज्जा क्यों आती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਅਰਦਾਸ ਕਰਦੇ ਸਮੇਂ ਸੰਕੋਚ ਕਿਉਂ ਹੁੰਦਾ ਹੈ?',
-          en: 'Why does Kabir Saheb feel deep humility and shame when offering prayers?',
+          hi: 'सतगुरु कबीर साहेब को विनती करते समय संकोच और लज्जा क्यों आती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਅਰਦਾਸ ਕਰਦੇ ਸਮੇਂ ਸੰਕੋਚ ਕਿਉਂ ਹੁੰਦਾ ਹੈ?',
+          en: 'Why does Satguru Kabir Saheb feel deep humility and shame when offering prayers?',
         },
         options: {
           hi: ['क्योंकि उनके पास धन नहीं है', 'क्योंकि सर्वद्रष्टा प्रभु के सामने रहते हुए भी मनुष्य अवगुण करता है', 'क्योंकि वे बोलना नहीं जानते', 'क्योंकि वे डरते हैं'],
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Sab kaahu ka lijiye, saacha shabd nihaar. Pachhpaat na kijiye, kahe Kabir vichaar.',
     bhavarth: {
-      hi: 'कबीर साहेब निष्पक्ष दृष्टि और सत्य के सार्वभौमिक स्वभाव का उपदेश देते हुए कहते हैं कि जो भी व्यक्ति सत्य, कल्याणकारी और प्रमाणिक बात कहे, उसे बिना किसी पूर्वाग्रह के हृदय से स्वीकार करना चाहिए। व्यक्ति की जाति, धर्म, पद, संप्रदाय या वेशभूषा देखकर पक्षपात (पच्छपात) नहीं करना चाहिए। कबीर साहेब का यह विचार है कि सत्य जहाँ से भी मिले, उसका आदर करें और असत्य का त्याग करें।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਵੀ ਸੱਚੀ ਤੇ ਨੇਕ ਗੱਲ ਕਹੇ, ਉਸ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ। ਕਿਸੇ ਦੀ ਜਾਤ, ਧਰਮ ਜਾਂ ਭੇਖ ਵੇਖ ਕੇ ਪੱਖਪਾਤ ਨਾ ਕਰੋ। ਸੱਚ ਜਿੱਥੋਂ ਵੀ ਮਿਲੇ ਉਸ ਨੂੰ ਅਪਣਾਉਣਾ ਹੀ ਸੱਚਾ ਵਿਵੇਕ ਹੈ।',
-      en: 'Kabir Saheb champions universal impartiality and open-minded wisdom: Receive truth wherever it arises, looking purely at the authenticity of the message (Saancha Shabd). Never indulge in sectarian prejudice (Pachhpaat) based on caste, creed, title, or outward attire. Discern the core substance of Truth and embrace it with an unclouded mind.',
+      hi: 'सतगुरु कबीर साहेब निष्पक्ष दृष्टि और सत्य के सार्वभौमिक स्वभाव का उपदेश देते हुए कहते हैं कि जो भी व्यक्ति सत्य, कल्याणकारी और प्रमाणिक बात कहे, उसे बिना किसी पूर्वाग्रह के हृदय से स्वीकार करना चाहिए। व्यक्ति की जाति, धर्म, पद, संप्रदाय या वेशभूषा देखकर पक्षपात (पच्छपात) नहीं करना चाहिए। सतगुरु कबीर साहेब का यह विचार है कि सत्य जहाँ से भी मिले, उसका आदर करें और असत्य का त्याग करें।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਵੀ ਸੱਚੀ ਤੇ ਨੇਕ ਗੱਲ ਕਹੇ, ਉਸ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ। ਕਿਸੇ ਦੀ ਜਾਤ, ਧਰਮ ਜਾਂ ਭੇਖ ਵੇਖ ਕੇ ਪੱਖਪਾਤ ਨਾ ਕਰੋ। ਸੱਚ ਜਿੱਥੋਂ ਵੀ ਮਿਲੇ ਉਸ ਨੂੰ ਅਪਣਾਉਣਾ ਹੀ ਸੱਚਾ ਵਿਵੇਕ ਹੈ।',
+      en: 'Satguru Kabir Saheb champions universal impartiality and open-minded wisdom: Receive truth wherever it arises, looking purely at the authenticity of the message (Saancha Shabd). Never indulge in sectarian prejudice (Pachhpaat) based on caste, creed, title, or outward attire. Discern the core substance of Truth and embrace it with an unclouded mind.',
     },
     wordMeanings: {
       hi: [
@@ -230,9 +230,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
       {
         id: 'q-b11-3-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किसी की बात को ग्रहण करते समय क्या देखना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸੇ ਦੀ ਗੱਲ ਸੁਣਦੇ ਸਮੇਂ ਕੀ ਵੇਖਣਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what should one look for when evaluating words or teachings?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किसी की बात को ग्रहण करते समय क्या देखना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸੇ ਦੀ ਗੱਲ ਸੁਣਦੇ ਸਮੇਂ ਕੀ ਵੇਖਣਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what should one look for when evaluating words or teachings?',
         },
         options: {
           hi: ['वक्ता की धन-दौलत', 'सत्य और विवेकपूर्ण शब्द (साँचा शब्द)', 'उसकी वेशभूषा', 'उसकी जाति'],
@@ -267,9 +267,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Kumati keech chela bhara, guru gyan jal hoy. Janam janam ka morcha, pal mein daare dhoy.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु के ज्ञान की अद्भुत शुद्धि-शक्ति का वर्णन करते हुए कहते हैं कि शिष्य अज्ञान, कुबुद्धि और विकारों रूपी कीचड़ (कीच) से बुरी तरह लिप्त व मैला हो रहा था, परंतु सतगुरु साक्षात् निर्मल ज्ञान के शीतल व पावन जल के समान हैं। जिस शिष्य के अंतःकरण पर जन्म-जन्मांतरों के पापों, वासनाओं और संस्कारों का गहरा मोर्चा (जंग/मैल) जमा हुआ था, सतगुरु ने अपने एक ही ज्ञान-उपदेश से उस सारे जंग को क्षण भर (पल) में धोकर निर्मल कर दिया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਚੇਲਾ ਖੋਟੀ ਮੱਤ ਅਤੇ ਵਿਕਾਰਾਂ ਦੇ ਚਿੱਕੜ ਨਾਲ ਭਰਿਆ ਹੋਇਆ ਸੀ, ਪਰ ਸਤਿਗੁਰੂ ਗਿਆਨ ਦਾ ਪਵਿੱਤਰ ਜਲ ਹਨ। ਜਨਮਾਂ-ਜਨਮਾਂ ਦਾ ਜੰਗਾਲ ਤੇ ਪਾਪਾਂ ਦਾ ਮੈਲ ਗੁਰੂ ਨੇ ਇੱਕ ਪਲ ਵਿੱਚ ਗਿਆਨ ਦੇ ਜਲ ਨਾਲ ਧੋ ਦਿੱਤਾ।',
-      en: 'Kabir Saheb extols the purifying power of the Master\'s wisdom: The disciple was thoroughly soaked in the filthy sludge (Keech) of ignorance, negative conditioning, and worldly vices. But the Satguru is the pristine, living water of Divine Wisdom. The stubborn rust (Morcha) of sins and karmic impressions accumulated across countless lifetimes was instantly washed clean in a single moment by the Master\'s grace.',
+      hi: 'सतगुरु कबीर साहेब गुरु के ज्ञान की अद्भुत शुद्धि-शक्ति का वर्णन करते हुए कहते हैं कि शिष्य अज्ञान, कुबुद्धि और विकारों रूपी कीचड़ (कीच) से बुरी तरह लिप्त व मैला हो रहा था, परंतु सतगुरु साक्षात् निर्मल ज्ञान के शीतल व पावन जल के समान हैं। जिस शिष्य के अंतःकरण पर जन्म-जन्मांतरों के पापों, वासनाओं और संस्कारों का गहरा मोर्चा (जंग/मैल) जमा हुआ था, सतगुरु ने अपने एक ही ज्ञान-उपदेश से उस सारे जंग को क्षण भर (पल) में धोकर निर्मल कर दिया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਚੇਲਾ ਖੋਟੀ ਮੱਤ ਅਤੇ ਵਿਕਾਰਾਂ ਦੇ ਚਿੱਕੜ ਨਾਲ ਭਰਿਆ ਹੋਇਆ ਸੀ, ਪਰ ਸਤਿਗੁਰੂ ਗਿਆਨ ਦਾ ਪਵਿੱਤਰ ਜਲ ਹਨ। ਜਨਮਾਂ-ਜਨਮਾਂ ਦਾ ਜੰਗਾਲ ਤੇ ਪਾਪਾਂ ਦਾ ਮੈਲ ਗੁਰੂ ਨੇ ਇੱਕ ਪਲ ਵਿੱਚ ਗਿਆਨ ਦੇ ਜਲ ਨਾਲ ਧੋ ਦਿੱਤਾ।',
+      en: 'Satguru Kabir Saheb extols the purifying power of the Master\'s wisdom: The disciple was thoroughly soaked in the filthy sludge (Keech) of ignorance, negative conditioning, and worldly vices. But the Satguru is the pristine, living water of Divine Wisdom. The stubborn rust (Morcha) of sins and karmic impressions accumulated across countless lifetimes was instantly washed clean in a single moment by the Master\'s grace.',
     },
     wordMeanings: {
       hi: [
@@ -350,9 +350,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Guru samaan daata nahi, yaachak shishya samaan. Teen lok ki sampada, so guru deenhi daan.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु की असीम उदारता और दानशीलता की महिमा गाते हुए कहते हैं कि इस संपूर्ण सृष्टि में सतगुरु के समान कोई दूसरा महान दाता (देने वाला) नहीं है, और विनम्र व निष्कपट शिष्य के समान कोई सच्चा याचक (प्रार्थी) नहीं है। सतगुरु ने अपने कृपा-पात्र शिष्य को उस आत्म-ज्ञान और सत्यनाम की अमर निधि प्रदान कर दी है, जो तीनों लोकों (स्वर्ग, पृथ्वी, पाताल) की समस्त संपदा से भी कहीं अधिक श्रेष्ठ और अनमोल है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਵਿੱਚ ਸਤਿਗੁਰੂ ਵਰਗਾ ਕੋਈ ਵੱਡਾ ਦਾਤਾ ਨਹੀਂ ਅਤੇ ਨਿਮਰ ਸਿੱਖ ਵਰਗਾ ਕੋਈ ਯਾਚਕ ਨਹੀਂ। ਸਤਿਗੁਰੂ ਨੇ ਆਪਣੇ ਸਿੱਖ ਨੂੰ ਉਹ ਆਤਮਿਕ ਗਿਆਨ ਤੇ ਨਾਮ ਦਾ ਦਾਨ ਦਿੱਤਾ ਹੈ ਜੋ ਤਿੰਨਾਂ ਲੋਕਾਂ ਦੀ ਸਾਰੀ ਦੌਲਤ ਨਾਲੋਂ ਕਿਤੇ ਵੱਡਾ ਹੈ।',
-      en: 'Kabir Saheb celebrates the supreme benevolence of the Satguru: In all existence, there is no giver equal to the Satguru, nor any humble recipient equal to a sincere, thirsting disciple. For the Master bestows upon the seeker that peerless treasure of Self-knowledge and the Divine Name, which infinitely surpasses the combined wealth of all the three cosmic realms.',
+      hi: 'सतगुरु कबीर साहेब गुरु की असीम उदारता और दानशीलता की महिमा गाते हुए कहते हैं कि इस संपूर्ण सृष्टि में सतगुरु के समान कोई दूसरा महान दाता (देने वाला) नहीं है, और विनम्र व निष्कपट शिष्य के समान कोई सच्चा याचक (प्रार्थी) नहीं है। सतगुरु ने अपने कृपा-पात्र शिष्य को उस आत्म-ज्ञान और सत्यनाम की अमर निधि प्रदान कर दी है, जो तीनों लोकों (स्वर्ग, पृथ्वी, पाताल) की समस्त संपदा से भी कहीं अधिक श्रेष्ठ और अनमोल है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਵਿੱਚ ਸਤਿਗੁਰੂ ਵਰਗਾ ਕੋਈ ਵੱਡਾ ਦਾਤਾ ਨਹੀਂ ਅਤੇ ਨਿਮਰ ਸਿੱਖ ਵਰਗਾ ਕੋਈ ਯਾਚਕ ਨਹੀਂ। ਸਤਿਗੁਰੂ ਨੇ ਆਪਣੇ ਸਿੱਖ ਨੂੰ ਉਹ ਆਤਮਿਕ ਗਿਆਨ ਤੇ ਨਾਮ ਦਾ ਦਾਨ ਦਿੱਤਾ ਹੈ ਜੋ ਤਿੰਨਾਂ ਲੋਕਾਂ ਦੀ ਸਾਰੀ ਦੌਲਤ ਨਾਲੋਂ ਕਿਤੇ ਵੱਡਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb celebrates the supreme benevolence of the Satguru: In all existence, there is no giver equal to the Satguru, nor any humble recipient equal to a sincere, thirsting disciple. For the Master bestows upon the seeker that peerless treasure of Self-knowledge and the Divine Name, which infinitely surpasses the combined wealth of all the three cosmic realms.',
     },
     wordMeanings: {
       hi: [
@@ -434,9 +434,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Guru ko sir raakhiye, chaliye aagya maahi. Kahe Kabir ta daas ko, teen lok bhay naahi.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु-आज्ञा के पालन की अमोघ शक्ति का प्रतिपादन करते हुए कहते हैं कि सतगुरु को सदैव अपने सिर पर (सर्वोच्च सम्मान और छत्रछाया के रूप में) धारण करके रखें, और उनके द्वारा दिए गए दिशा-निर्देशों व आज्ञाओं के भीतर ही अपना आचरण चलाएं। कबीर साहेब कहते हैं कि जो सेवक गुरु की आज्ञा में दृढ़ता से चलता है, उसे तीनों लोकों (पृथ्वी, आकाश, पाताल) में काल, माया या किसी भी विपत्ति का रत्ती भर भी भय नहीं रहता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਨੂੰ ਸਦਾ ਸਿਰ ਉੱਤੇ ਧਾਰਨ ਕਰੋ ਅਤੇ ਉਹਨਾਂ ਦੀ ਆਗਿਆ ਵਿੱਚ ਜੀਵਨ ਬਤੀਤ ਕਰੋ। ਅਜਿਹੇ ਗੁਰਮੁਖ ਸੇਵਕ ਨੂੰ ਤਿੰਨਾਂ ਲੋਕਾਂ ਵਿੱਚ ਕਿਸੇ ਵੀ ਮੁਸੀਬਤ ਜਾਂ ਮੌਤ ਦਾ ਕੋਈ ਡਰ ਨਹੀਂ ਰਹਿੰਦਾ।',
-      en: 'Kabir Saheb declares the invincible protection of living under the Master\'s will: Keep the Satguru reverently upon your head (as your supreme refuge and canopy) and walk strictly within the boundaries of His holy commands. Kabir proclaims that for such a devoted servant, not a shred of fear exists across all three worlds—neither from time, illusion, nor mortal adversity.',
+      hi: 'सतगुरु कबीर साहेब गुरु-आज्ञा के पालन की अमोघ शक्ति का प्रतिपादन करते हुए कहते हैं कि सतगुरु को सदैव अपने सिर पर (सर्वोच्च सम्मान और छत्रछाया के रूप में) धारण करके रखें, और उनके द्वारा दिए गए दिशा-निर्देशों व आज्ञाओं के भीतर ही अपना आचरण चलाएं। सतगुरु कबीर साहेब फरमाते हैं कि जो सेवक गुरु की आज्ञा में दृढ़ता से चलता है, उसे तीनों लोकों (पृथ्वी, आकाश, पाताल) में काल, माया या किसी भी विपत्ति का रत्ती भर भी भय नहीं रहता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਨੂੰ ਸਦਾ ਸਿਰ ਉੱਤੇ ਧਾਰਨ ਕਰੋ ਅਤੇ ਉਹਨਾਂ ਦੀ ਆਗਿਆ ਵਿੱਚ ਜੀਵਨ ਬਤੀਤ ਕਰੋ। ਅਜਿਹੇ ਗੁਰਮੁਖ ਸੇਵਕ ਨੂੰ ਤਿੰਨਾਂ ਲੋਕਾਂ ਵਿੱਚ ਕਿਸੇ ਵੀ ਮੁਸੀਬਤ ਜਾਂ ਮੌਤ ਦਾ ਕੋਈ ਡਰ ਨਹੀਂ ਰਹਿੰਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims the invincible protection of living under the Master\'s will: Keep the Satguru reverently upon your head (as your supreme refuge and canopy) and walk strictly within the boundaries of His holy commands. Kabir proclaims that for such a devoted servant, not a shred of fear exists across all three worlds—neither from time, illusion, nor mortal adversity.',
     },
     wordMeanings: {
       hi: [
@@ -480,9 +480,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
       {
         id: 'q-b11-6-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किस सेवक को तीनों लोकों में कोई भय नहीं रहता?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਸੇਵਕ ਨੂੰ ਤਿੰਨਾਂ ਲੋਕਾਂ ਵਿੱਚ ਕੋਈ ਡਰ ਨਹੀਂ ਰਹਿੰਦਾ?',
-          en: 'According to Kabir Saheb, which servant experiences zero fear across all three worlds?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किस सेवक को तीनों लोकों में कोई भय नहीं रहता?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਸੇਵਕ ਨੂੰ ਤਿੰਨਾਂ ਲੋਕਾਂ ਵਿੱਚ ਕੋਈ ਡਰ ਨਹੀਂ ਰਹਿੰਦਾ?',
+          en: 'According to Satguru Kabir Saheb, which servant experiences zero fear across all three worlds?',
         },
         options: {
           hi: ['जो बहुत शक्तिशाली पहलवान है', 'जो गुरु को सिर पर रखकर उनकी आज्ञा में चलता है', 'जो हथियार रखता है', 'जो महलों में रहता है'],
@@ -517,9 +517,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Guru moorati gati chandrama, sevak nain chakor. Aath pahar nirakhata rahe, Guru moorati ki or.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु-ध्यान की अनन्य एकाग्रता का वर्णन करते हुए कहते हैं कि सतगुरु का पावन स्वरूप पूर्णिमा के शीतल और अमृतमयी चंद्रमा के समान है, और समर्पित सेवक के दोनों नेत्र चकोर पक्षी के समान हैं। जैसे चकोर पक्षी बिना पलक झपकाए निरंतर चंद्रमा को एकटक निहारता रहता है, वैसे ही सच्चा शिष्य आठों पहर (दिन-रात चौबीसों घंटे) अपने अंतःकरण में सतगुरु की पावन मूर्ति और ज्ञान-स्वरूप का प्रेमपूर्वक निरंतर दर्शन करता रहता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਦਾ ਰੂਪ ਚੰਦਰਮਾ ਵਾਂਗ ਸ਼ਾਂਤ ਤੇ ਪਵਿੱਤਰ ਹੈ ਅਤੇ ਸੇਵਕ ਦੀਆਂ ਅੱਖਾਂ ਚਕੋਰ ਪੰਛੀ ਵਾਂਗ ਹਨ। ਜਿਵੇਂ ਚਕੋਰ ਚੰਨ ਨੂੰ ਇਕਟਕ ਵੇਖਦਾ ਹੈ, ਤਿਵੇਂ ਸੱਚਾ ਸਿੱਖ ਅੱਠੇ ਪਹਿਰ ਆਪਣੇ ਗੁਰੂ ਦੇ ਰੂਪ ਦਾ ਧਿਆਨ ਧਰਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates the seamless unbroken absorption of meditating on the Master: The sacred presence of the Satguru is like the luminous, cooling full Moon, and the eyes of the devoted servant are like the legendary Chakor bird. Just as the Chakor gazes unblinkingly at the beloved Moon, the sincere disciple remains continually absorbed—through all eight watches of the day and night—in the radiant presence and teachings of the Master.',
+      hi: 'सतगुरु कबीर साहेब गुरु-ध्यान की अनन्य एकाग्रता का वर्णन करते हुए कहते हैं कि सतगुरु का पावन स्वरूप पूर्णिमा के शीतल और अमृतमयी चंद्रमा के समान है, और समर्पित सेवक के दोनों नेत्र चकोर पक्षी के समान हैं। जैसे चकोर पक्षी बिना पलक झपकाए निरंतर चंद्रमा को एकटक निहारता रहता है, वैसे ही सच्चा शिष्य आठों पहर (दिन-रात चौबीसों घंटे) अपने अंतःकरण में सतगुरु की पावन मूर्ति और ज्ञान-स्वरूप का प्रेमपूर्वक निरंतर दर्शन करता रहता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਦਾ ਰੂਪ ਚੰਦਰਮਾ ਵਾਂਗ ਸ਼ਾਂਤ ਤੇ ਪਵਿੱਤਰ ਹੈ ਅਤੇ ਸੇਵਕ ਦੀਆਂ ਅੱਖਾਂ ਚਕੋਰ ਪੰਛੀ ਵਾਂਗ ਹਨ। ਜਿਵੇਂ ਚਕੋਰ ਚੰਨ ਨੂੰ ਇਕਟਕ ਵੇਖਦਾ ਹੈ, ਤਿਵੇਂ ਸੱਚਾ ਸਿੱਖ ਅੱਠੇ ਪਹਿਰ ਆਪਣੇ ਗੁਰੂ ਦੇ ਰੂਪ ਦਾ ਧਿਆਨ ਧਰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the seamless unbroken absorption of meditating on the Master: The sacred presence of the Satguru is like the luminous, cooling full Moon, and the eyes of the devoted servant are like the legendary Chakor bird. Just as the Chakor gazes unblinkingly at the beloved Moon, the sincere disciple remains continually absorbed—through all eight watches of the day and night—in the radiant presence and teachings of the Master.',
     },
     wordMeanings: {
       hi: [
@@ -600,9 +600,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Guru so preeti nibahiye, jehi tat nibhe sant. Prem bina dhig door hai, prem nikat Guru kant.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु-प्रेम की निरंतरता और आंतरिक समीपता का मर्म समझाते हुए कहते हैं कि सतगुरु से ऐसी अविचल प्रीति निभानी चाहिए जैसी पूर्ण संत तत्वतः निभाते हैं। यदि हृदय में सच्चा प्रेम नहीं है तो शारीरिक रूप से पास बैठा शिष्य भी धिक्कार-योग्य और मीलों दूर है; परंतु यदि हृदय में अनन्य और निष्कपट प्रेम है, तो हजारों कोस दूर रहने पर भी परम प्रिय गुरु-कंत (स्वामी) हृदय के अत्यंत निकट और साथ ही उपस्थित रहते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਨਾਲ ਅਜਿਹਾ ਸੱਚਾ ਪਿਆਰ ਨਿਭਾਓ ਜਿਵੇਂ ਸੱਚੇ ਸੰਤ ਨਿਭਾਉਂਦੇ ਹਨ। ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਕੋਲ ਬੈਠਾ ਵੀ ਬਹੁਤ ਦੂਰ ਹੈ, ਪਰ ਸੱਚੇ ਪ੍ਰੇਮ ਨਾਲ ਗੁਰੂ ਸਦਾ ਹਿਰਦੇ ਦੇ ਅੰਗ-ਸੰਗ ਵੱਸਦਾ ਹੈ।',
-      en: 'Kabir Saheb illuminates the spiritual physics of love for the Master: Sustain your love for the Satguru with the steadfast integrity demonstrated by true Saints. Without genuine love, even one sitting physically beside the Master remains light-years away in cursed estrangement; but with pure, heartfelt love, the Beloved Master-Sovereign is eternally present right within one\'s own heart.',
+      hi: 'सतगुरु कबीर साहेब गुरु-प्रेम की निरंतरता और आंतरिक समीपता का मर्म समझाते हुए कहते हैं कि सतगुरु से ऐसी अविचल प्रीति निभानी चाहिए जैसी पूर्ण संत तत्वतः निभाते हैं। यदि हृदय में सच्चा प्रेम नहीं है तो शारीरिक रूप से पास बैठा शिष्य भी धिक्कार-योग्य और मीलों दूर है; परंतु यदि हृदय में अनन्य और निष्कपट प्रेम है, तो हजारों कोस दूर रहने पर भी परम प्रिय गुरु-कंत (स्वामी) हृदय के अत्यंत निकट और साथ ही उपस्थित रहते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਨਾਲ ਅਜਿਹਾ ਸੱਚਾ ਪਿਆਰ ਨਿਭਾਓ ਜਿਵੇਂ ਸੱਚੇ ਸੰਤ ਨਿਭਾਉਂਦੇ ਹਨ। ਪ੍ਰੇਮ ਤੋਂ ਬਿਨਾਂ ਕੋਲ ਬੈਠਾ ਵੀ ਬਹੁਤ ਦੂਰ ਹੈ, ਪਰ ਸੱਚੇ ਪ੍ਰੇਮ ਨਾਲ ਗੁਰੂ ਸਦਾ ਹਿਰਦੇ ਦੇ ਅੰਗ-ਸੰਗ ਵੱਸਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illuminates the spiritual physics of love for the Master: Sustain your love for the Satguru with the steadfast integrity demonstrated by true Saints. Without genuine love, even one sitting physically beside the Master remains light-years away in cursed estrangement; but with pure, heartfelt love, the Beloved Master-Sovereign is eternally present right within one\'s own heart.',
     },
     wordMeanings: {
       hi: [
@@ -647,9 +647,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
       {
         id: 'q-b11-8-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार गुरु के सबसे निकट कौन होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਦੇ ਸਭ ਤੋਂ ਨੇੜੇ ਕੌਣ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who is truly closest to the Master?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार गुरु के सबसे निकट कौन होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਦੇ ਸਭ ਤੋਂ ਨੇੜੇ ਕੌਣ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is truly closest to the Master?',
         },
         options: {
           hi: ['जो केवल पास में बैठता है', 'जिसके हृदय में गुरु के प्रति सच्चा और निष्कपट प्रेम है', 'जो बहुत अमीर है', 'जो बातें बनाता है'],
@@ -684,9 +684,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Guru bin gyan na upje, Guru bin mile na moksh. Guru bin lakhe na satya ko, Guru bin mite na dosh.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक मार्ग में सतगुरु की अपरिहार्यता और महिमा का दो-टूक वर्णन करते हुए कहते हैं कि सतगुरु के बिना कभी सच्चा आत्म-ज्ञान उत्पन्न नहीं हो सकता, और न ही बिना गुरु के भवसागर से मोक्ष की प्राप्ति हो सकती है। सतगुरु के मार्गदर्शन के बिना जीव कभी परम सत्य (सत्यनाम) का साक्षात्कार नहीं कर सकता, और न ही उसके जन्म-जन्मांतरों के संचित पाप, विकार और दोष मिट सकते हैं। गुरु ही ज्ञान, मुक्ति, सत्य और शुद्धि के मूल आधार हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਨਾ ਸੱਚਾ ਗਿਆਨ ਪੈਦਾ ਹੁੰਦਾ ਹੈ ਤੇ ਨਾ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ। ਗੁਰੂ ਬਿਨਾਂ ਸੱਚ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਨਾ ਹੀ ਮਨ ਦੇ ਪਾਪ ਤੇ ਔਗੁਣ ਦੂਰ ਹੁੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb states the absolute indispensability of the Satguru on the spiritual journey: Without the Master, true transcendental Wisdom never dawns, nor can liberation (Moksha) from the worldly cycle ever be attained. Without the Master, one can never perceive the Ultimate Truth, nor can the deep-seated flaws and karmic debts of lifetimes ever be erased.',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक मार्ग में सतगुरु की अपरिहार्यता और महिमा का दो-टूक वर्णन करते हुए कहते हैं कि सतगुरु के बिना कभी सच्चा आत्म-ज्ञान उत्पन्न नहीं हो सकता, और न ही बिना गुरु के भवसागर से मोक्ष की प्राप्ति हो सकती है। सतगुरु के मार्गदर्शन के बिना जीव कभी परम सत्य (सत्यनाम) का साक्षात्कार नहीं कर सकता, और न ही उसके जन्म-जन्मांतरों के संचित पाप, विकार और दोष मिट सकते हैं। गुरु ही ज्ञान, मुक्ति, सत्य और शुद्धि के मूल आधार हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਨਾ ਸੱਚਾ ਗਿਆਨ ਪੈਦਾ ਹੁੰਦਾ ਹੈ ਤੇ ਨਾ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ। ਗੁਰੂ ਬਿਨਾਂ ਸੱਚ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ ਅਤੇ ਨਾ ਹੀ ਮਨ ਦੇ ਪਾਪ ਤੇ ਔਗੁਣ ਦੂਰ ਹੁੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb proclaims the absolute indispensability of the Satguru on the spiritual journey: Without the Master, true transcendental Wisdom never dawns, nor can liberation (Moksha) from the worldly cycle ever be attained. Without the Master, one can never perceive the Ultimate Truth, nor can the deep-seated flaws and karmic debts of lifetimes ever be erased.',
     },
     wordMeanings: {
       hi: [
@@ -729,9 +729,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
       {
         id: 'q-b11-9-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सतगुरु के बिना किसकी प्राप्ति असंभव है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਕੀ ਪ੍ਰਾਪਤ ਨਹੀਂ ਹੋ ਸਕਦਾ?',
-          en: 'According to Kabir Saheb, what cannot be attained without the Satguru?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सतगुरु के बिना किसकी प्राप्ति असंभव है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਕੀ ਪ੍ਰਾਪਤ ਨਹੀਂ ਹੋ ਸਕਦਾ?',
+          en: 'According to Satguru Kabir Saheb, what cannot be attained without the Satguru?',
         },
         options: {
           hi: ['सांसारिक वाहन', 'सच्चा ज्ञान, मोक्ष, सत्य का साक्षात्कार और दोषों का निवारण', 'भोजन', 'मकान'],
@@ -766,9 +766,9 @@ export const SAKHIS_BATCH_11: Sakhi[] = [
     },
     transliteration: 'Guru moorti aage khadi, duniya bhed kachhu naahi. Unhi ko pranaam kari, sakal timir miti jaahi.',
     bhavarth: {
-      hi: 'कबीर साहेब साक्षात गुरु-दर्शन के दिव्य प्रभाव का वर्णन करते हुए कहते हैं कि जब साक्षात् सतगुरु का पावन स्वरूप तुम्हारे सम्मुख उपस्थित है, तो फिर इस संसार के व्यर्थ के भेदों, मत-मतांतरों और संशयों में उलझने की कोई आवश्यकता नहीं है। उन पूर्ण सतगुरु के चरणों में पूर्ण श्रद्धा और समर्पण से शीश झुकाकर प्रणाम करो; उनकी पावन कृपा मात्र से तुम्हारे अंतःकरण का समस्त अज्ञान रूपी अंधकार (सकल तिमिर) तत्क्षण नष्ट हो जाएगा और ज्ञान का सूर्य उदित हो जाएगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਸਤਿਗੁਰੂ ਦਾ ਪਵਿੱਤਰ ਰੂਪ ਸਾਹਮਣੇ ਹੈ, ਤਾਂ ਦੁਨੀਆ ਦੇ ਭਰਮਾਂ ਤੇ ਭੇਦਾਂ ਦੀ ਕੋਈ ਲੋੜ ਨਹੀਂ। ਉਹਨਾਂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਪ੍ਰਣਾਮ ਕਰੋ, ਮਨ ਦਾ ਸਾਰਾ ਅਗਿਆਨਤਾ ਦਾ ਹਨੇਰਾ ਇੱਕ ਪਲ ਵਿੱਚ ਦੂਰ ਹੋ ਜਾਵੇਗਾ।',
-      en: 'Kabir Saheb unveils the transcendent potency of the Master\'s presence: When the holy form of the Satguru stands before you, look no further into the confusing disputes and divisions of the world. Bow down and offer your total surrender at the Master\'s feet; by that single act of reverent submission, all the thick darkness (Sakal Timir) of cosmic ignorance vanishes into blazing light.',
+      hi: 'सतगुरु कबीर साहेब साक्षात गुरु-दर्शन के दिव्य प्रभाव का वर्णन करते हुए कहते हैं कि जब साक्षात् सतगुरु का पावन स्वरूप तुम्हारे सम्मुख उपस्थित है, तो फिर इस संसार के व्यर्थ के भेदों, मत-मतांतरों और संशयों में उलझने की कोई आवश्यकता नहीं है। उन पूर्ण सतगुरु के चरणों में पूर्ण श्रद्धा और समर्पण से शीश झुकाकर प्रणाम करो; उनकी पावन कृपा मात्र से तुम्हारे अंतःकरण का समस्त अज्ञान रूपी अंधकार (सकल तिमिर) तत्क्षण नष्ट हो जाएगा और ज्ञान का सूर्य उदित हो जाएगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਸਤਿਗੁਰੂ ਦਾ ਪਵਿੱਤਰ ਰੂਪ ਸਾਹਮਣੇ ਹੈ, ਤਾਂ ਦੁਨੀਆ ਦੇ ਭਰਮਾਂ ਤੇ ਭੇਦਾਂ ਦੀ ਕੋਈ ਲੋੜ ਨਹੀਂ। ਉਹਨਾਂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਪ੍ਰਣਾਮ ਕਰੋ, ਮਨ ਦਾ ਸਾਰਾ ਅਗਿਆਨਤਾ ਦਾ ਹਨੇਰਾ ਇੱਕ ਪਲ ਵਿੱਚ ਦੂਰ ਹੋ ਜਾਵੇਗਾ।',
+      en: 'Satguru Kabir Saheb unveils the transcendent potency of the Master\'s presence: When the holy form of the Satguru stands before you, look no further into the confusing disputes and divisions of the world. Bow down and offer your total surrender at the Master\'s feet; by that single act of reverent submission, all the thick darkness (Sakal Timir) of cosmic ignorance vanishes into blazing light.',
     },
     wordMeanings: {
       hi: [

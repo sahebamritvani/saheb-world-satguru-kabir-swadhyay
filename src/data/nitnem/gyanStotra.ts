@@ -87,9 +87,9 @@ export const GYAN_STOTRA_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "कबीर साहेब फ़रमाते हैं कि हम परम विनम्र फ़कीर/दरवेश हैं, जो समस्त घट-घट में व्याप्त हैं। हमारा लेखा-जोखा सर्व-कल्याण और अमरता का है, हमने अपने वास्तविक स्वरूप को 'अविनाशी शब्द' के रूप में देखा और अनुभव किया है।",
-        pb: "ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸੀਂ ਨਿਮਰ ਦਰਵੇਸ਼ ਹਾਂ, ਜੋ ਸਾਰਿਆਂ ਵਿੱਚ ਵਿਆਪਕ ਹਾਂ। ਸਾਡਾ ਲੇਖਾ-ਜੋਖਾ ਸਭ ਦੀ ਖੈਰ-ਸਲਾਮਤੀ ਦਾ ਹੈ, ਅਸੀਂ ਆਪਣੇ ਆਪ ਨੂੰ ਸ਼ਬਦ-ਸਵਰੂਪ ਵਿੱਚ ਵੇਖਿਆ ਹੈ।",
-        en: "Kabir Saheb declares: I am the humble Darvesh (saint) pervading all creation. My reckoning is universal well-being and eternal peace, for I have beheld the Supreme Self as the Divine Word (Shabad)."
+        hi: "सतगुरु कबीर साहेब फ़रमाते हैं कि हम परम विनम्र फ़कीर/दरवेश हैं, जो समस्त घट-घट में व्याप्त हैं। हमारा लेखा-जोखा सर्व-कल्याण और अमरता का है, हमने अपने वास्तविक स्वरूप को 'अविनाशी शब्द' के रूप में देखा और अनुभव किया है।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸੀਂ ਨਿਮਰ ਦਰਵੇਸ਼ ਹਾਂ, ਜੋ ਸਾਰਿਆਂ ਵਿੱਚ ਵਿਆਪਕ ਹਾਂ। ਸਾਡਾ ਲੇਖਾ-ਜੋਖਾ ਸਭ ਦੀ ਖੈਰ-ਸਲਾਮਤੀ ਦਾ ਹੈ, ਅਸੀਂ ਆਪਣੇ ਆਪ ਨੂੰ ਸ਼ਬਦ-ਸਵਰੂਪ ਵਿੱਚ ਵੇਖਿਆ ਹੈ।",
+        en: "Satguru Kabir Saheb proclaims: I am the humble Darvesh (saint) pervading all creation. My reckoning is universal well-being and eternal peace, for I have beheld the Supreme Self as the Divine Word (Shabad)."
       }
     },
     {
@@ -110,8 +110,8 @@ export const GYAN_STOTRA_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "साहेब कहते हैं कि हम देह एवं मायावी प्रपंचों से परे परम फ़कीर हैं। हम किसी सांसारिक राह या मायावी रीति के मोहताज़ नहीं हैं; हमारा आचरण और सहज अवस्था लौकिक बंधनों से परे है।",
-        pb: "ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਅਸੀਂ ਦੇਹ ਅਤੇ ਅਹੰਕਾਰ ਤੋਂ ਪਰੇ ਪਰਮ ਫਕੀਰ ਹਾਂ। ਅਸੀਂ ਕਿਸੇ ਸੰਸਾਰੀ ਚਾਲ ਜਾਂ ਰੀਤ ਦੇ ਗੁਲਾਮ ਨਹੀਂ ਹਾਂ; ਸਾਡੀ ਅਵਸਥਾ ਅਦੁੱਤੀ ਹੈ।",
+        hi: "सतगुरु कबीर साहेब फरमाते हैं कि हम देह एवं मायावी प्रपंचों से परे परम फ़कीर हैं। हम किसी सांसारिक राह या मायावी रीति के मोहताज़ नहीं हैं; हमारा आचरण और सहज अवस्था लौकिक बंधनों से परे है।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸੀਂ ਦੇਹ ਅਤੇ ਅਹੰਕਾਰ ਤੋਂ ਪਰੇ ਪਰਮ ਫਕੀਰ ਹਾਂ। ਅਸੀਂ ਕਿਸੇ ਸੰਸਾਰੀ ਚਾਲ ਜਾਂ ਰੀਤ ਦੇ ਗੁਲਾਮ ਨਹੀਂ ਹਾਂ; ਸਾਡੀ ਅਵਸਥਾ ਅਦੁੱਤੀ ਹੈ।",
         en: "I move beyond physical forms and worldly attachments as the ultimate detached Fakir. With whom can I be compared, and whose worldly path should I walk? My state is transcendent and free from worldly customs."
       }
     },
@@ -157,7 +157,7 @@ export const GYAN_STOTRA_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "हम समस्त सृष्टि में निरंतर एकरस व्याप्त हैं, हमारा स्वरूप अत्यंत गहरा एवं गंभीर है। सृष्टिकर्ता (खालिक) ही सृष्टि (खलक) में व्याप्त है और सृष्टि सृष्टिकर्ता में स्थित है; ऐसा सतगुरु कबीर साहेब ज्ञान उपदेश देते हैं।",
-        pb: "ਅਸੀਂ ਸਾਰੀ ਸ੍ਰਿਸ਼ਟੀ ਵਿੱਚ ਨਿਰੰਤਰ ਸਮਾਏ ਹੋਏ ਹਾਂ, ਸਾਡੀ ਗੰਭੀਰਤਾ ਅਥਾਹ ਹੈ। ਸਿਰਜਣਹਾਰ ਸ੍ਰਿਸ਼ਟੀ ਵਿੱਚ ਹੈ ਅਤੇ ਸ੍ਰਿਸ਼ਟੀ ਸਿਰਜਣਹਾਰ ਵਿੱਚ; ਇਹੋ ਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਬਚਨ ਹੈ।",
+        pb: "ਅਸੀਂ ਸਾਰੀ ਸ੍ਰਿਸ਼ਟੀ ਵਿੱਚ ਨਿਰੰਤਰ ਸਮਾਏ ਹੋਏ ਹਾਂ, ਸਾਡੀ ਗੰਭੀਰਤਾ ਅਥਾਹ ਹੈ। ਸਿਰਜਣਹਾਰ ਸ੍ਰਿਸ਼ਟੀ ਵਿੱਚ ਹੈ ਅਤੇ ਸ੍ਰਿਸ਼ਟੀ ਸਿਰਜਣਹਾਰ ਵਿੱਚ; ਇਹੋ ਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਬਚਨ ਹੈ।",
         en: "I pervade endlessly throughout creation, profoundly deep and limitless. The Creator is in creation, and creation resides within the Creator—thus declares Master Kabir."
       }
     },
@@ -180,7 +180,7 @@ export const GYAN_STOTRA_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "सत्यनाम का सुमिरन और आत्म-आरती करने से अंतःकरण एवं शरीर पूर्ण निर्मल हो जाता है। स्वामी धर्मदास जी भवसागर से पार होकर अमर लोक (सत्यलोक) पधारे, जहाँ उन्हें सतगुरु कबीर साहेब बांह पकड़कर अपने शरण में मिले।",
-        pb: "ਸਤਯਨਾਮ ਦੀ ਆਰਤੀ ਨਾਲ ਸਰੀਰ ਅਤੇ ਮਨ ਨਿਰਮਲ ਹੋ ਗਏ। ਸੁਆਮੀ ਧਰਮਦਾਸ ਜੀ ਸੰਸਾਰ ਤੋਂ ਪਾਰ ਅਮਰ ਲੋਕ ਗਏ, ਜਿੱਥੇ ਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਬਾਂਹ ਫੜ ਕੇ ਮਿਲੇ।",
+        pb: "ਸਤਯਨਾਮ ਦੀ ਆਰਤੀ ਨਾਲ ਸਰੀਰ ਅਤੇ ਮਨ ਨਿਰਮਲ ਹੋ ਗਏ। ਸੁਆਮੀ ਧਰਮਦਾਸ ਜੀ ਸੰਸਾਰ ਤੋਂ ਪਾਰ ਅਮਰ ਲੋਕ ਗਏ, ਜਿੱਥੇ ਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਂਹ ਫੜ ਕੇ ਮਿਲੇ।",
         en: "By performing the internal Aarti of Satynaam, the body and mind become pristine. Swami Dharmadas ji reached the Eternal Realm (Satlok), where Satguru Kabir welcomed him by holding his arm."
       }
     },
@@ -295,8 +295,8 @@ export const GYAN_STOTRA_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "सतगुरु कबीर साहेब ने स्वामी धर्मदास जी को भेंट करके मोक्ष का प्रामाणिक परवाना (सत्यज्ञान की दीक्षा) प्रदान किया। प्रारंभ से अंत तक यही विनती व उपदेश है कि जीव इस सत्यलोक/अमरलोक के पथ को पहचान कर अपना कल्याण करे।",
-        pb: "ਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਮਿਲ ਕੇ ਮੁਕਤੀ ਦਾ ਪਰਵਾਨਾ ਦਿੱਤਾ। ਆਦਿ ਤੋਂ ਅੰਤ ਤੱਕ ਇਹੋ ਬੇਨਤੀ ਹੈ ਕਿ ਜੀਵ ਇਸ ਸੱਚਖੰਡ ਦੇ ਮਾਰਗ ਨੂੰ ਪਛਾਣੇ।",
-        en: "Kabir Saheb met Swami Dharmadas and granted him the certified mandate of eternal liberation. From beginning to end, this is the humble plea: let every soul recognize and awaken to this Eternal Abode."
+        pb: "ਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਮਿਲ ਕੇ ਮੁਕਤੀ ਦਾ ਪਰਵਾਨਾ ਦਿੱਤਾ। ਆਦਿ ਤੋਂ ਅੰਤ ਤੱਕ ਇਹੋ ਬੇਨਤੀ ਹੈ ਕਿ ਜੀਵ ਇਸ ਸੱਚਖੰਡ ਦੇ ਮਾਰਗ ਨੂੰ ਪਛਾਣੇ।",
+        en: "Satguru Kabir Saheb met Swami Dharmadas and granted him the certified mandate of eternal liberation. From beginning to end, this is the humble plea: let every soul recognize and awaken to this Eternal Abode."
       }
     }
   ]

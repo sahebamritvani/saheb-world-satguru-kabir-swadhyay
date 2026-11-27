@@ -959,7 +959,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     setQuizAnswers({});
     setQuizSubmitted({});
     setQuizCurrentIdx(0);
-    const currentQuestions = elevenStepData.step5_quiz.questions.slice(0, 5);
+    const currentQuestions = elevenStepData.step5_quiz.questions.slice(0, 3);
     const reshuffled = await shuffleQuizViaBackend(currentQuestions, language);
     setAiQuizOverride(reshuffled);
     setQuizAttempt((prev) => prev + 1);
@@ -1476,7 +1476,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
     onOpenBlessing(
       language === 'pb' ? 'ਰੋਜ਼ਾਨਾ ਪਾਠ ਟੀਚਾ ਪੂਰਨ!' : language === 'hi' ? 'दैनिक पाठ लक्ष्य पूर्ण!' : 'Daily Reading Goal Completed!',
       language === 'pb' 
-        ? `ਆਪ ਜੀ ਨੇ ਅੱਜ ਦਾ ${dailyGoal} ਮਿੰਟ ਦਾ ਸਵੈ-ਅਧਿਐਨ ਲਕਸ਼ ਸਫ਼ਲਤਾਪੂਰਵਕ ਪੂਰਾ ਕਰ ਲਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਕਿਰਪਾ ਆਪ ਜੀ ਉੱਤੇ ਸਦਾ ਬਣੀ ਰਹੇ!`
+        ? `ਆਪ ਜੀ ਨੇ ਅੱਜ ਦਾ ${dailyGoal} ਮਿੰਟ ਦਾ ਸਵੈ-ਅਧਿਐਨ ਲਕਸ਼ ਸਫ਼ਲਤਾਪੂਰਵਕ ਪੂਰਾ ਕਰ ਲਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਰਪਾ ਆਪ ਜੀ ਉੱਤੇ ਸਦਾ ਬਣੀ ਰਹੇ!`
         : language === 'hi'
         ? `आपने आज का ${dailyGoal} मिनट का स्वाध्याय लक्ष्य सफलतापूर्वक पूर्ण कर लिया है। सतगुरु कबीर साहेब की पावन छत्रछाया आप पर सदा बनी रहे!`
         : `You have successfully completed your daily ${dailyGoal}-minute Swadhyay goal. May Satguru Kabir Saheb's grace guide you always!`
@@ -3319,25 +3319,6 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                       </span>
                     </button>
 
-                    {/* Moolvani Visibility Toggle Switch */}
-                    <button
-                      type="button"
-                      onClick={handleToggleMoolvani}
-                      style={{ backgroundColor: showMoolvani ? rc.accentLight : rc.cardBg, color: rc.maroon }}
-                      className="px-2.5 py-1 rounded-lg text-[0.625rem] font-bold cursor-pointer transition flex items-center gap-1.5 border border-amber-500/20 hover:border-amber-500"
-                      title={showMoolvani ? 'मूलवाणी छिपाएं' : 'मूलवाणी दिखाएं'}
-                    >
-                      <Scroll className="w-3 h-3 text-amber-600" />
-                      <span>
-                        {showMoolvani
-                          ? (language === 'pb' ? 'ਮੂਲ ਬਾਣੀ' : language === 'en' ? 'Moolvani' : 'मूलवाणी')
-                          : (language === 'pb' ? 'ਮੂਲ ਬਾਣੀ ਛੁਪੀ' : language === 'en' ? 'Moolvani Off' : 'मूलवाणी बंद')}
-                      </span>
-                      <span className={`inline-flex h-3.5 w-6 shrink-0 items-center rounded-full p-0.5 transition-colors duration-200 ${showMoolvani ? 'bg-amber-600' : 'bg-stone-300 dark:bg-stone-600'}`}>
-                        <span className={`h-2.5 w-2.5 rounded-full bg-white shadow-xs transition-transform duration-200 ${showMoolvani ? 'translate-x-2.5' : 'translate-x-0'}`} />
-                      </span>
-                    </button>
-
                     {/* Satsang Visibility Toggle */}
                     <button
                       type="button"
@@ -3367,42 +3348,7 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
 
                 {unlockedSatsang && (
                   <div className="space-y-4 pt-1">
-                    {/* VISUALLY SEPARATED MOOLVANI BLOCK WITH PARCHMENT STYLING AND FADE-IN */}
-                    <AnimatePresence mode="wait">
-                      {showMoolvani ? (
-                        <motion.div
-                          key={`step4-moolvani-on-${sakhi.number}-${language}`}
-                          initial={{ opacity: 0, y: 8, scale: 0.99 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -8, scale: 0.99 }}
-                          transition={{ duration: 0.35, ease: 'easeOut' }}
-                          className="relative p-5 sm:p-6 rounded-2xl border-2 bg-gradient-to-br from-[#fbf6e9] via-[#f7ebd4] to-[#f2dfbf] dark:from-[#2c241c] dark:via-[#221b14] dark:to-[#1a140f] border-[#d6ba8d]/80 dark:border-[#735732]/80 space-y-2 text-center shadow-md shadow-amber-900/5 ring-1 ring-inset ring-[#e8d2a7]/30"
-                        >
-                          <div className="flex items-center justify-center gap-2">
-                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[0.625rem] font-serif font-black bg-amber-600/15 text-amber-950 dark:text-amber-200 border border-amber-600/30 uppercase tracking-widest">
-                              <Scroll className="w-3 h-3 text-amber-700 dark:text-amber-400" />
-                              <span>{language === 'pb' ? 'ਮੂਲ ਬਾਣੀ (ਪਵਿੱਤਰ ਪਾਠ)' : language === 'en' ? 'Original Moolvani' : 'मूलवाणी (पावन गुरु-पाठ)'}</span>
-                            </span>
-                          </div>
-                          <div style={activeFontStyle} className={`${activeFontClass} font-black text-lg sm:text-xl text-[#38200b] dark:text-[#f7e7ce] leading-relaxed`}>
-                            {renderInteractiveCouplet(sakhi.text[language] || sakhi.text.hi)}
-                          </div>
-                        </motion.div>
-                      ) : (
-                        <motion.div
-                          key={`step4-moolvani-off-${sakhi.number}-${language}`}
-                          initial={{ opacity: 0, y: 8, scale: 0.99 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -8, scale: 0.99 }}
-                          transition={{ duration: 0.35, ease: 'easeOut' }}
-                          className="py-3 px-3 text-center text-xs text-stone-500 italic border border-dashed border-amber-500/20 rounded-xl bg-amber-500/5 font-serif"
-                        >
-                          {language === 'pb' ? '।। ਮੂਲ ਬਾਣੀ ਛੁਪਾਈ ਗਈ ਹੈ ।।' : language === 'en' ? '|| Moolvani Text Hidden ||' : '।। मूलवाणी छिपा दी गई है ।।'}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* VISUALLY SEPARATED HINDI EXPLANATION / BHAVARTH BLOCK WITH FADE-IN */}
+                    {/* VISUALLY SEPARATED EXPLANATION / BHAVARTH BLOCK WITH FADE-IN */}
                     <AnimatePresence mode="wait">
                       {showBhavarth ? (
                         <motion.div
@@ -3494,38 +3440,40 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                   )}
                 </div>
 
-                <div className="space-y-4 pt-1">
-                  <div className="flex items-center justify-between text-xs font-bold px-1" style={{ color: rc.textSecondary }}>
-                    <span>{language === 'pb' ? `ਪ੍ਰਸ਼ਨ ${quizCurrentIdx + 1} / 5` : language === 'en' ? `Question ${quizCurrentIdx + 1} of 5` : `प्रश्न ${quizCurrentIdx + 1} / 5`}</span>
-                    <div className="flex gap-1">
-                      {elevenStepData.step5_quiz.questions.slice(0, 5).map((_, qDotIdx) => (
-                        <button
-                          key={qDotIdx}
-                          onClick={() => setQuizCurrentIdx(qDotIdx)}
-                          className={`w-6 h-2 rounded-full transition cursor-pointer ${
-                            quizCurrentIdx === qDotIdx ? 'bg-amber-600 scale-105' : 'bg-amber-500/20 hover:bg-amber-500/40'
-                          }`}
-                          title={`Question ${qDotIdx + 1}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
+                {(() => {
+                  const qList = elevenStepData.step5_quiz.questions.slice(0, 3);
+                  const totalQ = Math.max(1, qList.length);
+                  const safeIdx = Math.min(quizCurrentIdx, totalQ - 1);
+                  const rawQ = qList[safeIdx] || qList[0];
+                  const q = normalizeElevenStepQuizQuestion(rawQ, language, safeIdx);
+                  const selectedOptIdx = quizAnswers[safeIdx];
+                  const isSubmitted = quizSubmitted[safeIdx];
+                  const optionsList = q.options;
+                  const optionLabels = ['A', 'B', 'C', 'D'];
+                  const correctIdx = optionsList.findIndex((o) => o.isCorrect);
+                  const correctOpt = correctIdx >= 0 ? optionsList[correctIdx] : optionsList[0];
 
-                  {(() => {
-                    const qList = elevenStepData.step5_quiz.questions.slice(0, 5);
-                    const rawQ = qList[quizCurrentIdx] || qList[0];
-                    const q = normalizeElevenStepQuizQuestion(rawQ, language, quizCurrentIdx);
-                    const selectedOptIdx = quizAnswers[quizCurrentIdx];
-                    const isSubmitted = quizSubmitted[quizCurrentIdx];
-                    const optionsList = q.options;
-                    const optionLabels = ['A', 'B', 'C', 'D'];
-                    const correctIdx = optionsList.findIndex((o) => o.isCorrect);
-                    const correctOpt = correctIdx >= 0 ? optionsList[correctIdx] : optionsList[0];
+                  return (
+                    <div className="space-y-4 pt-1">
+                      <div className="flex items-center justify-between text-xs font-bold px-1" style={{ color: rc.textSecondary }}>
+                        <span>{language === 'pb' ? `ਪ੍ਰਸ਼ਨ ${safeIdx + 1} / ${totalQ}` : language === 'en' ? `Question ${safeIdx + 1} of ${totalQ}` : `प्रश्न ${safeIdx + 1} / ${totalQ}`}</span>
+                        <div className="flex gap-1">
+                          {qList.map((_, qDotIdx) => (
+                            <button
+                              key={qDotIdx}
+                              onClick={() => setQuizCurrentIdx(qDotIdx)}
+                              className={`w-6 h-2 rounded-full transition cursor-pointer ${
+                                safeIdx === qDotIdx ? 'bg-amber-600 scale-105' : 'bg-amber-500/20 hover:bg-amber-500/40'
+                              }`}
+                              title={`Question ${qDotIdx + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
 
-                    return (
                       <div className="space-y-4 bg-white/70 dark:bg-zinc-800/70 p-5 rounded-2xl border border-amber-500/20 shadow-xs">
                         <p className={`text-sm font-bold ${activeFontClass} leading-relaxed`} style={{ ...activeFontStyle, color: rc.text }}>
-                          {quizCurrentIdx + 1}. {q.questionText || q.question}
+                          {safeIdx + 1}. {q.questionText || q.question}
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -3551,8 +3499,8 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                                 disabled={isSubmitted}
                                 onClick={() => {
                                   sacredHaptics.lightTap();
-                                  setQuizAnswers({ ...quizAnswers, [quizCurrentIdx]: oIdx });
-                                  setQuizSubmitted({ ...quizSubmitted, [quizCurrentIdx]: true });
+                                  setQuizAnswers({ ...quizAnswers, [safeIdx]: oIdx });
+                                  setQuizSubmitted({ ...quizSubmitted, [safeIdx]: true });
                                 }}
                                 className="p-3 rounded-xl border text-xs text-left transition flex items-start gap-2.5 cursor-pointer hover:shadow-xs"
                                 style={btnStyle}
@@ -3579,49 +3527,27 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           return (
                             <div
                               style={activeFontStyle}
-                              className={`p-3.5 rounded-xl text-xs ${activeFontClass} space-y-2 animate-fadeIn ${
+                              className={`p-3 rounded-xl text-xs ${activeFontClass} animate-fadeIn leading-relaxed ${
                                 selectedOpt?.isCorrect
                                   ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
                                   : 'bg-rose-500/10 border border-rose-500/30 text-rose-900 dark:text-rose-200'
                               }`}
                             >
-                              <p className="font-bold flex items-center gap-1.5 text-xs sm:text-sm">
-                                {selectedOpt?.isCorrect
-                                  ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ!' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
-                                  : (language === 'pb' ? '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ' : language === 'en' ? '✗ Incorrect Option' : '✗ यह विकल्प सही नहीं है')}
-                              </p>
-
                               {selectedOpt?.isCorrect ? (
-                                <p className="leading-relaxed opacity-95">
+                                <p>
                                   <strong className="font-black">
-                                    {language === 'pb' ? 'ਸਹੀ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Correct Answer Analysis: ' : 'सही उत्तर का विश्लेषण: '}
+                                    {language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ! ' : language === 'en' ? '✓ Correct! ' : '✓ सही उत्तर! '}
                                   </strong>
-                                  {cleanSelectedFeedback}
+                                  {cleanCorrectExplanation || cleanSelectedFeedback}
                                 </p>
                               ) : (
-                                <div className="space-y-2">
-                                  <p className="leading-relaxed opacity-95">
-                                    <strong className="font-black">
-                                      {language === 'pb' ? 'ਗ਼ਲਤ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Why This Option Is Incorrect: ' : 'गलत उत्तर का विश्लेषण: '}
-                                    </strong>
-                                    {cleanSelectedFeedback}
-                                  </p>
-                                  {correctOpt && (
-                                    <div className="p-2.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-950 dark:text-emerald-100 space-y-1">
-                                      <p className="font-black">
-                                        ✓ {language === 'pb' ? 'ਸਹੀ ਉੱਤਰ' : language === 'en' ? 'Correct Answer' : 'सही उत्तर'} ({optionLabels[correctIdx >= 0 ? correctIdx : 0]}): {correctOpt.text}
-                                      </p>
-                                      {cleanCorrectExplanation && cleanCorrectExplanation !== cleanSelectedFeedback && (
-                                        <p className="opacity-95 leading-relaxed">
-                                          <strong className="font-bold">
-                                            {language === 'pb' ? 'ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Explanation: ' : 'विश्लेषण: '}
-                                          </strong>
-                                          {cleanCorrectExplanation}
-                                        </p>
-                                      )}
-                                    </div>
-                                  )}
-                                </div>
+                                <p>
+                                  <strong className="font-black">
+                                    {language === 'pb' ? '✗ ਸਹੀ ਉੱਤਰ' : language === 'en' ? '✗ Correct Answer' : '✗ सही उत्तर'} ({optionLabels[correctIdx >= 0 ? correctIdx : 0]}):{' '}
+                                  </strong>
+                                  <span className="font-semibold">{correctOpt?.text}</span>
+                                  {cleanCorrectExplanation ? ` — ${cleanCorrectExplanation}` : ''}
+                                </p>
                               )}
                             </div>
                           );
@@ -3630,26 +3556,26 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                         <div className="flex items-center justify-between pt-2">
                           <button
                             type="button"
-                            disabled={quizCurrentIdx === 0}
+                            disabled={safeIdx === 0}
                             onClick={() => { sacredHaptics.lightTap(); setQuizCurrentIdx((prev) => Math.max(0, prev - 1)); }}
                             className="px-3 py-1.5 rounded-xl border text-xs font-bold disabled:opacity-40 cursor-pointer"
                             style={{ borderColor: rc.border, backgroundColor: rc.bg, color: rc.maroon }}
                           >
                             ← {language === 'pb' ? 'ਪਿਛਲਾ' : language === 'en' ? 'Previous' : 'पिछला'}
                           </button>
-                          
+
                           <span className="text-[0.6875rem] font-bold" style={{ color: rc.textSecondary }}>
                             {language === 'pb'
-                              ? `ਸਵਾਲ ${quizCurrentIdx + 1} / 5`
+                              ? `ਸਵਾਲ ${safeIdx + 1} / ${totalQ}`
                               : language === 'en'
-                              ? `Q ${quizCurrentIdx + 1} of 5`
-                              : `प्रश्न ${quizCurrentIdx + 1} / 5`}
+                              ? `Q ${safeIdx + 1} of ${totalQ}`
+                              : `प्रश्न ${safeIdx + 1} / ${totalQ}`}
                           </span>
 
                           <button
                             type="button"
-                            disabled={quizCurrentIdx >= 4}
-                            onClick={() => { sacredHaptics.lightTap(); setQuizCurrentIdx((prev) => Math.min(4, prev + 1)); }}
+                            disabled={safeIdx >= totalQ - 1}
+                            onClick={() => { sacredHaptics.lightTap(); setQuizCurrentIdx((prev) => Math.min(totalQ - 1, prev + 1)); }}
                             className="px-3 py-1.5 rounded-xl border text-xs font-bold disabled:opacity-40 cursor-pointer"
                             style={{ borderColor: rc.border, backgroundColor: rc.accentLight, color: rc.maroon }}
                           >
@@ -3657,9 +3583,9 @@ export const SwadhyayReader: React.FC<SwadhyayReaderProps> = ({
                           </button>
                         </div>
                       </div>
-                    );
-                  })()}
-                </div>
+                    </div>
+                  );
+                })()}
                 {renderUnlockNextButton(5)}
               </div>
             )}

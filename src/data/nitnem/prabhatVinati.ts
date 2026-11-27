@@ -161,9 +161,9 @@ export const PRABHAT_VINATI_2_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "आपके निज नाम (सत्यनाम) को बार-बार नमस्कार है, कृपालु कबीर साहेब को नमस्कार है। संतों की शरण में आने से समस्त पाप भस्म होकर राख हो जाते हैं।",
-        pb: "ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਵਾਰ-ਵਾਰ ਨਮਸਕਾਰ ਹੈ, ਦਿਆਲੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਉਣ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸਵਾਹ ਹੋ ਜਾਂਦੇ ਹਨ।",
-        en: "Repeated salutations to your Essential Name (Satyanaam) and salutations to the merciful Kabir Saheb. By seeking refuge in the Saints, all sins are completely incinerated and turned to dust."
+        hi: "आपके निज नाम (सत्यनाम) को बार-बार नमस्कार है, कृपालु सतगुरु कबीर साहेब को नमस्कार है। संतों की शरण में आने से समस्त पाप भस्म होकर राख हो जाते हैं।",
+        pb: "ਆਪ ਜੀ ਦੇ ਨਿਜ ਨਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਵਾਰ-ਵਾਰ ਨਮਸਕਾਰ ਹੈ, ਦਿਆਲੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਨਮਸਕਾਰ ਹੈ। ਸੰਤਾਂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਆਉਣ ਨਾਲ ਸਾਰੇ ਪਾਪ ਸੜ ਕੇ ਸਵਾਹ ਹੋ ਜਾਂਦੇ ਹਨ।",
+        en: "Repeated salutations to your Essential Name (Satyanaam) and salutations to the merciful Satguru Kabir Saheb. By seeking refuge in the Saints, all sins are completely incinerated and turned to dust."
       }
     },
     {

@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Kabir ek na jaanya, to bahu jaanya kya hoyi. Ek te sab hot hai, sab te ek na hoyi.',
     bhavarth: {
-      hi: 'कबीर साहेब अद्वैत और मूल तत्व की अनिवार्यता समझाते हुए कहते हैं कि यदि मनुष्य ने उस एक मूल परमात्मा (सत्यनाम) को नहीं जाना, तो संसार के अनेक शास्त्रों और विद्याओं को जान लेने से क्या लाभ? जैसे वृक्ष की एक मुख्य जड़ को सींचने से तना, शाखाएं, पत्ते और फल सब स्वतः पोषित हो जाते हैं, वैसे ही उस एक परमात्मा को जान लेने से सब कुछ जान लिया जाता है; परंतु केवल शाखाओं और पत्तों (अनेक संसारिक विद्याओं) को सींचने से मूल जड़ कभी तृप्त नहीं होती।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਇੱਕ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਨਾ ਪਛਾਣਿਆ, ਤਾਂ ਦੁਨੀਆ ਦੀਆਂ ਬਹੁਤੀਆਂ ਕਿਤਾਬਾਂ ਪੜ੍ਹਨ ਦਾ ਕੀ ਲਾਭ? ਇੱਕ ਰੁੱਖ ਦੀ ਜੜ੍ਹ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਸਾਰਾ ਰੁੱਖ ਹਰਾ-ਭਰਾ ਹੋ ਜਾਂਦਾ ਹੈ, ਪਰ ਟਾਹਣੀਆਂ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਜੜ੍ਹ ਨਹੀਂ ਪਲਦੀ।',
-      en: 'Kabir Saheb teaches the profound wisdom of the One Supreme Origin: If you have not realized that One Root Principle (the Divine Self), what is the use of amassing extensive worldly learning? By watering the single root of a tree, all trunk, branches, leaves, and fruits flourish effortlessly; but watering the leaves can never nourish the hidden root. Knowing the One unlocks everything.',
+      hi: 'सतगुरु कबीर साहेब अद्वैत और मूल तत्व की अनिवार्यता समझाते हुए कहते हैं कि यदि मनुष्य ने उस एक मूल परमात्मा (सत्यनाम) को नहीं जाना, तो संसार के अनेक शास्त्रों और विद्याओं को जान लेने से क्या लाभ? जैसे वृक्ष की एक मुख्य जड़ को सींचने से तना, शाखाएं, पत्ते और फल सब स्वतः पोषित हो जाते हैं, वैसे ही उस एक परमात्मा को जान लेने से सब कुछ जान लिया जाता है; परंतु केवल शाखाओं और पत्तों (अनेक संसारिक विद्याओं) को सींचने से मूल जड़ कभी तृप्त नहीं होती।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਇੱਕ ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਨਾ ਪਛਾਣਿਆ, ਤਾਂ ਦੁਨੀਆ ਦੀਆਂ ਬਹੁਤੀਆਂ ਕਿਤਾਬਾਂ ਪੜ੍ਹਨ ਦਾ ਕੀ ਲਾਭ? ਇੱਕ ਰੁੱਖ ਦੀ ਜੜ੍ਹ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਸਾਰਾ ਰੁੱਖ ਹਰਾ-ਭਰਾ ਹੋ ਜਾਂਦਾ ਹੈ, ਪਰ ਟਾਹਣੀਆਂ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਜੜ੍ਹ ਨਹੀਂ ਪਲਦੀ।',
+      en: 'Satguru Kabir Saheb teaches the profound wisdom of the One Supreme Origin: If you have not realized that One Root Principle (the Divine Self), what is the use of amassing extensive worldly learning? By watering the single root of a tree, all trunk, branches, leaves, and fruits flourish effortlessly; but watering the leaves can never nourish the hidden root. Knowing the One unlocks everything.',
     },
     wordMeanings: {
       hi: [
@@ -65,9 +65,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार उस "एक" को जान लेने से क्या होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਉਸ "ਇੱਕ" ਨੂੰ ਜਾਣਨ ਨਾਲ ਕੀ ਹੁੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what happens when the "One" is realized?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार उस "एक" को जान लेने से क्या होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਉਸ "ਇੱਕ" ਨੂੰ ਜਾਣਨ ਨਾਲ ਕੀ ਹੁੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what happens when the "One" is realized?',
         },
         options: {
           hi: ['सब कुछ स्वतः जान लिया जाता है और जीवन तृप्त हो जाता है', 'मनुष्य अहंकारी हो जाता है', 'सब कुछ नष्ट हो जाता है', 'याददाश्त चली जाती है'],
@@ -102,9 +102,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Pativrata maili bhali, gale kaanch ko pot. Sab sakhiyaan mein yon dipe, jyon ravi sasi ko jyot.',
     bhavarth: {
-      hi: 'कबीर साहेब अनन्य पतिव्रता भक्ति की उपमा देते हुए कहते हैं कि जो स्त्री अपने पति के प्रति पूर्ण निष्ठावान और समर्पित है, वह भले ही साधारण या मैले वस्त्रों में हो और उसके गले में सोने के हार के स्थान पर कांच के दानों की माला (पोत) ही क्यों न हो, वह अपनी सखियों के बीच सूर्य और चंद्रमा की दिव्य ज्योति के समान चमकती और सम्मानित होती है। इसी प्रकार जो भक्त बिना किसी सांसारिक आडंबर के अपने प्रभु से निष्कपट प्रेम करता है, वही परमात्मा के दरबार में सूर्य-चंद्रमा जैसा तेजस्वी व प्रिय है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪਤੀਵ੍ਰਤਾ ਇਸਤਰੀ ਆਪਣੇ ਪਤੀ ਨਾਲ ਸੱਚਾ ਪਿਆਰ ਕਰਦੀ ਹੈ, ਭਾਵੇਂ ਉਹ ਸਾਦੇ ਕੱਪੜਿਆਂ ਵਿੱਚ ਹੋਵੇ ਤੇ ਗਲ ਵਿੱਚ ਕੱਚ ਦੇ ਮਣਕੇ ਹੋਣ, ਉਹ ਸਾਰੀਆਂ ਸਖੀਆਂ ਵਿੱਚ ਸੂਰਜ ਤੇ ਚੰਨ ਵਾਂਗ ਚਮਕਦੀ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਨਿਸ਼ਕਪਟ ਭਗਤ ਸਭ ਤੋਂ ਉੱਤਮ ਹੈ।',
-      en: 'Kabir Saheb illustrates the sublime beauty of faithful devotion: A devoted wife faithful to her beloved, even if dressed in humble, worn garments with only a simple glass-bead necklace (Pot) around her neck, shines among all her companions as radiant as the Sun and Moon. Likewise, a soul anchored in spotless fidelity and love for the Divine Lord shines with celestial glory regardless of outer poverty.',
+      hi: 'सतगुरु कबीर साहेब अनन्य पतिव्रता भक्ति की उपमा देते हुए कहते हैं कि जो स्त्री अपने पति के प्रति पूर्ण निष्ठावान और समर्पित है, वह भले ही साधारण या मैले वस्त्रों में हो और उसके गले में सोने के हार के स्थान पर कांच के दानों की माला (पोत) ही क्यों न हो, वह अपनी सखियों के बीच सूर्य और चंद्रमा की दिव्य ज्योति के समान चमकती और सम्मानित होती है। इसी प्रकार जो भक्त बिना किसी सांसारिक आडंबर के अपने प्रभु से निष्कपट प्रेम करता है, वही परमात्मा के दरबार में सूर्य-चंद्रमा जैसा तेजस्वी व प्रिय है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪਤੀਵ੍ਰਤਾ ਇਸਤਰੀ ਆਪਣੇ ਪਤੀ ਨਾਲ ਸੱਚਾ ਪਿਆਰ ਕਰਦੀ ਹੈ, ਭਾਵੇਂ ਉਹ ਸਾਦੇ ਕੱਪੜਿਆਂ ਵਿੱਚ ਹੋਵੇ ਤੇ ਗਲ ਵਿੱਚ ਕੱਚ ਦੇ ਮਣਕੇ ਹੋਣ, ਉਹ ਸਾਰੀਆਂ ਸਖੀਆਂ ਵਿੱਚ ਸੂਰਜ ਤੇ ਚੰਨ ਵਾਂਗ ਚਮਕਦੀ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਨਿਸ਼ਕਪਟ ਭਗਤ ਸਭ ਤੋਂ ਉੱਤਮ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the sublime beauty of faithful devotion: A devoted wife faithful to her beloved, even if dressed in humble, worn garments with only a simple glass-bead necklace (Pot) around her neck, shines among all her companions as radiant as the Sun and Moon. Likewise, a soul anchored in spotless fidelity and love for the Divine Lord shines with celestial glory regardless of outer poverty.',
     },
     wordMeanings: {
       hi: [
@@ -150,9 +150,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार पतिव्रता स्त्री सादे और मैले वस्त्रों में भी किस प्रकार चमकती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪਤੀਵ੍ਰਤਾ ਸਾਦੇ ਕੱਪੜਿਆਂ ਵਿੱਚ ਵੀ ਕਿਵੇਂ ਚਮਕਦੀ ਹੈ?',
-          en: 'How does a devoted soul shine even in humble garments according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार पतिव्रता स्त्री सादे और मैले वस्त्रों में भी किस प्रकार चमकती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪਤੀਵ੍ਰਤਾ ਸਾਦੇ ਕੱਪੜਿਆਂ ਵਿੱਚ ਵੀ ਕਿਵੇਂ ਚਮਕਦੀ ਹੈ?',
+          en: 'How does a devoted soul shine even in humble garments according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['सोने के आभूषणों के समान', 'सूर्य और चंद्रमा के पावन दिव्य प्रकाश के समान', 'बिजली के बल्ब की तरह', 'तारों की तरह'],
@@ -187,9 +187,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Bhakti bigaadi kaamiya, indri kare sawaadi. Heera khoya haath thai, janam gwaya baadi.',
     bhavarth: {
-      hi: 'कबीर साहेब काम-वासना और इंद्रिय लोलुपता के विनाशकारी परिणाम पर सचेत करते हुए कहते हैं कि कामी और विषयासक्त मनुष्य ने अपनी वासनाओं के कारण पावन भक्ति को बिगाड़ दिया और अपनी इंद्रियों को केवल तुच्छ स्वादों व भोगों में लगा दिया। परिणामतः उसने अपने हाथ में आया हुआ मोक्ष और आत्म-कल्याण रूपी अनमोल हीरा खो दिया और इस दुर्लभ मानव जन्म को व्यर्थ (बादी) ही नष्ट कर दिया।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਾਮੀ ਮਨੁੱਖ ਨੇ ਵਿਸ਼ੇ-ਵਿਕਾਰਾਂ ਵਿੱਚ ਪੈ ਕੇ ਸੱਚੀ ਭਗਤੀ ਨੂੰ ਵਿਗਾੜ ਲਿਆ ਅਤੇ ਇੰਦਰੀਆਂ ਦੇ ਸਵਾਦਾਂ ਪਿੱਛੇ ਲੱਗ ਗਿਆ। ਉਸ ਨੇ ਹੱਥ ਆਇਆ ਹੀਰੇ ਵਰਗਾ ਜਨਮ ਗੁਆ ਦਿੱਤਾ ਅਤੇ ਆਪਣਾ ਜੀਵਨ ਵਿਅਰਥ ਬਰਬਾਦ ਕਰ ਲਿਆ।',
-      en: 'Kabir Saheb warns against the ruinous trap of sensory obsession: The lustful and sensual person has corrupted the pure stream of devotion by pursuing petty sensory appetites and transient pleasures. In doing so, they let slip the priceless diamond of human liberation right out of their hands, squandering this precious incarnation in utter futility.',
+      hi: 'सतगुरु कबीर साहेब काम-वासना और इंद्रिय लोलुपता के विनाशकारी परिणाम पर सचेत करते हुए कहते हैं कि कामी और विषयासक्त मनुष्य ने अपनी वासनाओं के कारण पावन भक्ति को बिगाड़ दिया और अपनी इंद्रियों को केवल तुच्छ स्वादों व भोगों में लगा दिया। परिणामतः उसने अपने हाथ में आया हुआ मोक्ष और आत्म-कल्याण रूपी अनमोल हीरा खो दिया और इस दुर्लभ मानव जन्म को व्यर्थ (बादी) ही नष्ट कर दिया।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਾਮੀ ਮਨੁੱਖ ਨੇ ਵਿਸ਼ੇ-ਵਿਕਾਰਾਂ ਵਿੱਚ ਪੈ ਕੇ ਸੱਚੀ ਭਗਤੀ ਨੂੰ ਵਿਗਾੜ ਲਿਆ ਅਤੇ ਇੰਦਰੀਆਂ ਦੇ ਸਵਾਦਾਂ ਪਿੱਛੇ ਲੱਗ ਗਿਆ। ਉਸ ਨੇ ਹੱਥ ਆਇਆ ਹੀਰੇ ਵਰਗਾ ਜਨਮ ਗੁਆ ਦਿੱਤਾ ਅਤੇ ਆਪਣਾ ਜੀਵਨ ਵਿਅਰਥ ਬਰਬਾਦ ਕਰ ਲਿਆ।',
+      en: 'Satguru Kabir Saheb warns against the ruinous trap of sensory obsession: The lustful and sensual person has corrupted the pure stream of devotion by pursuing petty sensory appetites and transient pleasures. In doing so, they let slip the priceless diamond of human liberation right out of their hands, squandering this precious incarnation in utter futility.',
     },
     wordMeanings: {
       hi: [
@@ -234,9 +234,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-3-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार भक्ति को किसने बिगाड़ दिया?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤੀ ਨੂੰ ਕਿਸ ਨੇ ਖਰਾਬ ਕੀਤਾ?',
-          en: 'According to Kabir Saheb, what corrupts true devotion?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार भक्ति को किसने बिगाड़ दिया?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤੀ ਨੂੰ ਕਿਸ ਨੇ ਖਰਾਬ ਕੀਤਾ?',
+          en: 'According to Satguru Kabir Saheb, what corrupts true devotion?',
         },
         options: {
           hi: ['सत्संग ने', 'काम-वासना और इंद्रिय-लोलुपता ने', 'संतों के वचनों ने', 'अध्ययन ने'],
@@ -271,9 +271,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Parnari rata phire, chori bidhita khaahi. Diwas chaari sarsa rahi, anti samula jaahi.',
     bhavarth: {
-      hi: 'कबीर साहेब अनैतिक आचरण और परस्त्री-आसक्ति के भयंकर दुष्परिणाम की चेतावनी देते हुए कहते हैं कि जो मनुष्य पराई स्त्री के मोह में अंधा होकर भटकता है और चोरी व छल-कपट से धन अर्जित कर भोग करता है, उसे चार दिन का क्षणिक सुख (सरसा) भले ही प्रतीत हो, परंतु अंत में उसका मान-सम्मान, कुल, स्वास्थ्य, धन और आत्मा सब कुछ मूल सहित (समूला) सर्वथा नष्ट हो जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜੋ ਮਨੁੱਖ ਪਰਾਈ ਇਸਤਰੀ ਦੇ ਮੋਹ ਵਿੱਚ ਭਟਕਦਾ ਹੈ ਅਤੇ ਚੋਰੀ-ਠੱਗੀ ਦੀ ਕਮਾਈ ਖਾਂਦਾ ਹੈ, ਉਸ ਨੂੰ ਚਾਰ ਦਿਨ ਦਾ ਝੂਠਾ ਆਨੰਦ ਤਾਂ ਮਿਲ ਸਕਦਾ ਹੈ, ਪਰ ਅੰਤ ਵਿੱਚ ਉਸ ਦਾ ਸਭ ਕੁਝ ਜੜ੍ਹੋਂ-ਮੁੱਢੋਂ ਬਰਬਾਦ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb sounds a stern moral alarm against ethical degradation: One who roams intoxicated with desire for another\'s spouse and consumes the tainted fruits of theft and deceit may experience a fleeting thrill for a few fleeting days. But inevitably, in the end, their honor, peace, wealth, and soul are obliterated down to the very root (Samoola).',
+      hi: 'सतगुरु कबीर साहेब अनैतिक आचरण और परस्त्री-आसक्ति के भयंकर दुष्परिणाम की चेतावनी देते हुए कहते हैं कि जो मनुष्य पराई स्त्री के मोह में अंधा होकर भटकता है और चोरी व छल-कपट से धन अर्जित कर भोग करता है, उसे चार दिन का क्षणिक सुख (सरसा) भले ही प्रतीत हो, परंतु अंत में उसका मान-सम्मान, कुल, स्वास्थ्य, धन और आत्मा सब कुछ मूल सहित (समूला) सर्वथा नष्ट हो जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜੋ ਮਨੁੱਖ ਪਰਾਈ ਇਸਤਰੀ ਦੇ ਮੋਹ ਵਿੱਚ ਭਟਕਦਾ ਹੈ ਅਤੇ ਚੋਰੀ-ਠੱਗੀ ਦੀ ਕਮਾਈ ਖਾਂਦਾ ਹੈ, ਉਸ ਨੂੰ ਚਾਰ ਦਿਨ ਦਾ ਝੂਠਾ ਆਨੰਦ ਤਾਂ ਮਿਲ ਸਕਦਾ ਹੈ, ਪਰ ਅੰਤ ਵਿੱਚ ਉਸ ਦਾ ਸਭ ਕੁਝ ਜੜ੍ਹੋਂ-ਮੁੱਢੋਂ ਬਰਬਾਦ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb sounds a stern moral alarm against ethical degradation: One who roams intoxicated with desire for another\'s spouse and consumes the tainted fruits of theft and deceit may experience a fleeting thrill for a few fleeting days. But inevitably, in the end, their honor, peace, wealth, and soul are obliterated down to the very root (Samoola).',
     },
     wordMeanings: {
       hi: [
@@ -318,9 +318,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-4-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार चोरी और कुकर्म करने वाले का अंत कैसा होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਚੋਰੀ ਤੇ ਬੁਰਾਈ ਕਰਨ ਵਾਲੇ ਦਾ ਅੰਤ ਕੀ ਹੁੰਦਾ ਹੈ?',
-          en: 'What is the ultimate fate of one engaged in theft and immoral lust according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार चोरी और कुकर्म करने वाले का अंत कैसा होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਚੋਰੀ ਤੇ ਬੁਰਾਈ ਕਰਨ ਵਾਲੇ ਦਾ ਅੰਤ ਕੀ ਹੁੰਦਾ ਹੈ?',
+          en: 'What is the ultimate fate of one engaged in theft and immoral lust according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['वह सदा सुखी रहता है', 'अंत में उसका सब कुछ जड़-मूल सहित नष्ट हो जाता है', 'वह बड़ा राजा बनता है', 'वह स्वर्ग जाता है'],
@@ -355,9 +355,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Kabir kali khoti bhai, muniyar mili na koy. Lalach lobhi maskara, tinku aadar hoyi.',
     bhavarth: {
-      hi: 'कबीर साहेब कलियुग के नैतिक पतन और समाज की विकृत मानसिकता का यथार्थ चित्रण करते हुए कहते हैं कि यह कलिकाल अत्यंत खोटा (भ्रष्ट) हो गया है, जहाँ सच्चे मुनि, आत्मज्ञानी, त्यागी और सत्यवादी संतों को कोई नहीं पूछता और न ही उनका आदर होता है। इसके विपरीत जो धूर्त, लोभी, चापलूस, स्वार्थी और मसखरे (मजाकिया व बहुरूपिये) हैं, समाज में उन्हीं को मान-सम्मान और आदर दिया जा रहा है। ऐसे अंधे युग में साधक को विवेकपूर्वक सत्य को पहचानना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਲਿਯੁਗ ਦਾ ਸਮਾਂ ਖੋਟਾ ਹੋ ਗਿਆ ਹੈ, ਜਿੱਥੇ ਸੱਚੇ ਤਿਆਗੀ ਤੇ ਸੰਤਾਂ ਦੀ ਕੋਈ ਕਦਰ ਨਹੀਂ ਕਰਦਾ। ਪਰ ਜੋ ਲਾਲਚੀ, ਧੋਖੇਬਾਜ਼ ਤੇ ਚਾਪਲੂਸ ਹਨ, ਸਮਾਜ ਵਿੱਚ ਉਹਨਾਂ ਦਾ ਹੀ ਆਦਰ-ਮਾਣ ਹੋ ਰਿਹਾ ਹੈ।',
-      en: 'Kabir Saheb lays bare the moral inversion of the Dark Age (Kali Yuga): This age has grown spiritually degraded; true sages, pure ascetics (Muniyar), and lovers of Truth find neither recognition nor honor. Conversely, the greedy, the cunning flatterers, and the superficial entertainers (Maskara) are showered with worldly praise and prestige. In such times, hold fast to inner discernment.',
+      hi: 'सतगुरु कबीर साहेब कलियुग के नैतिक पतन और समाज की विकृत मानसिकता का यथार्थ चित्रण करते हुए कहते हैं कि यह कलिकाल अत्यंत खोटा (भ्रष्ट) हो गया है, जहाँ सच्चे मुनि, आत्मज्ञानी, त्यागी और सत्यवादी संतों को कोई नहीं पूछता और न ही उनका आदर होता है। इसके विपरीत जो धूर्त, लोभी, चापलूस, स्वार्थी और मसखरे (मजाकिया व बहुरूपिये) हैं, समाज में उन्हीं को मान-सम्मान और आदर दिया जा रहा है। ऐसे अंधे युग में साधक को विवेकपूर्वक सत्य को पहचानना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਲਿਯੁਗ ਦਾ ਸਮਾਂ ਖੋਟਾ ਹੋ ਗਿਆ ਹੈ, ਜਿੱਥੇ ਸੱਚੇ ਤਿਆਗੀ ਤੇ ਸੰਤਾਂ ਦੀ ਕੋਈ ਕਦਰ ਨਹੀਂ ਕਰਦਾ। ਪਰ ਜੋ ਲਾਲਚੀ, ਧੋਖੇਬਾਜ਼ ਤੇ ਚਾਪਲੂਸ ਹਨ, ਸਮਾਜ ਵਿੱਚ ਉਹਨਾਂ ਦਾ ਹੀ ਆਦਰ-ਮਾਣ ਹੋ ਰਿਹਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb lays bare the moral inversion of the Dark Age (Kali Yuga): This age has grown spiritually degraded; true sages, pure ascetics (Muniyar), and lovers of Truth find neither recognition nor honor. Conversely, the greedy, the cunning flatterers, and the superficial entertainers (Maskara) are showered with worldly praise and prestige. In such times, hold fast to inner discernment.',
     },
     wordMeanings: {
       hi: [
@@ -401,9 +401,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-5-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार कलियुग में किसका आदर होने लगा है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਲਿਯੁਗ ਵਿੱਚ ਕਿਸ ਦੀ ਕਦਰ ਹੋ ਰਹੀ ਹੈ?',
-          en: 'According to Kabir Saheb, who receives hypocritical praise in the Dark Age?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार कलियुग में किसका आदर होने लगा है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਲਿਯੁਗ ਵਿੱਚ ਕਿਸ ਦੀ ਕਦਰ ਹੋ ਰਹੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who receives hypocritical praise in the Dark Age?',
         },
         options: {
           hi: ['सच्चे मुनियों और संतों का', 'लोभी, लालची और चापलूस/मसखरों का', 'केवल पक्षियों का', 'बच्चों का'],
@@ -438,9 +438,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Kabir maya mohini, jaisi meethi khand. Satguru ki kripa bhai, nahi tou karti bhand.',
     bhavarth: {
-      hi: 'कबीर साहेब माया के मीठे जाल और सतगुरु की रक्षा की महिमा गाते हुए कहते हैं कि यह संसार की माया अत्यंत मोहिनी (मन को लुभाने वाली) है, जो शक्कर (मीठी खांड) के समान स्वादिष्ट और आकर्षक प्रतीत होती है। इस मोहक आकर्षण में पड़कर जीव का पतन निश्चित था; परंतु मुझ पर मेरे पूर्ण सतगुरु की असीम कृपा हो गई, जिसने मुझे ज्ञान का नेत्र दे दिया। यदि सतगुरु की कृपा न होती, तो यह माया मुझे नचा-नचा कर संसार में हास्यास्पद और पतित (भांड/विदूषक) बना देती।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਮਨਮੋਹਣੀ ਹੈ ਜੋ ਖੰਡ ਵਾਂਗ ਮਿੱਠੀ ਲੱਗਦੀ ਹੈ। ਇਹ ਤਾਂ ਸਤਿਗੁਰੂ ਦੀ ਵੱਡੀ ਕਿਰਪਾ ਹੋ ਗਈ ਜਿਸ ਨੇ ਬਚਾ ਲਿਆ, ਨਹੀਂ ਤਾਂ ਇਹ ਮਾਇਆ ਮੈਨੂੰ ਨਚਾ-ਨਚਾ ਕੇ ਭੰਡ (ਤਮਾਸ਼ਾ) ਬਣਾ ਦਿੰਦੀ।',
-      en: 'Kabir Saheb unveils the deceptive sweetness of worldly illusion and the salvific power of the Master: Maya is an enchantress, tasting as irresistibly sweet as refined sugar (Khaand). It was certain to ensnare and degrade me; but by the sovereign Grace of my Satguru, I was awakened in time. Had the Master not intervened, this illusion would have turned me into a humiliated, dancing puppet (Bhaand).',
+      hi: 'सतगुरु कबीर साहेब माया के मीठे जाल और सतगुरु की रक्षा की महिमा गाते हुए कहते हैं कि यह संसार की माया अत्यंत मोहिनी (मन को लुभाने वाली) है, जो शक्कर (मीठी खांड) के समान स्वादिष्ट और आकर्षक प्रतीत होती है। इस मोहक आकर्षण में पड़कर जीव का पतन निश्चित था; परंतु मुझ पर मेरे पूर्ण सतगुरु की असीम कृपा हो गई, जिसने मुझे ज्ञान का नेत्र दे दिया। यदि सतगुरु की कृपा न होती, तो यह माया मुझे नचा-नचा कर संसार में हास्यास्पद और पतित (भांड/विदूषक) बना देती।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਮਨਮੋਹਣੀ ਹੈ ਜੋ ਖੰਡ ਵਾਂਗ ਮਿੱਠੀ ਲੱਗਦੀ ਹੈ। ਇਹ ਤਾਂ ਸਤਿਗੁਰੂ ਦੀ ਵੱਡੀ ਕਿਰਪਾ ਹੋ ਗਈ ਜਿਸ ਨੇ ਬਚਾ ਲਿਆ, ਨਹੀਂ ਤਾਂ ਇਹ ਮਾਇਆ ਮੈਨੂੰ ਨਚਾ-ਨਚਾ ਕੇ ਭੰਡ (ਤਮਾਸ਼ਾ) ਬਣਾ ਦਿੰਦੀ।',
+      en: 'Satguru Kabir Saheb unveils the deceptive sweetness of worldly illusion and the salvific power of the Master: Maya is an enchantress, tasting as irresistibly sweet as refined sugar (Khaand). It was certain to ensnare and degrade me; but by the sovereign Grace of my Satguru, I was awakened in time. Had the Master not intervened, this illusion would have turned me into a humiliated, dancing puppet (Bhaand).',
     },
     wordMeanings: {
       hi: [
@@ -483,9 +483,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-6-1',
         question: {
-          hi: 'कबीर साहेब को माया के सम्मोहन और तमाशा बनने से किसने बचाया?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਮਾਇਆ ਦੇ ਜਾਲ ਤੋਂ ਕਿਸ ਨੇ ਬਚਾਇਆ?',
-          en: 'Who rescued Kabir Saheb from becoming a dancing puppet of Maya?',
+          hi: 'सतगुरु कबीर साहेब को माया के सम्मोहन और तमाशा बनने से किसने बचाया?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਮਾਇਆ ਦੇ ਜਾਲ ਤੋਂ ਕਿਸ ਨੇ ਬਚਾਇਆ?',
+          en: 'Who rescued Satguru Kabir Saheb from becoming a dancing puppet of Maya?',
         },
         options: {
           hi: ['अथाह धन-दौलत ने', 'सतगुरु की असीम कृपा और ज्ञान ने', 'उनकी चतुराई ने', 'मित्रों ने'],
@@ -520,9 +520,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Mere sangi doyi jana, ek vaishnav ek Ram. Vo hai daata mukti ka, vo sumirave naam.',
     bhavarth: {
-      hi: 'कबीर साहेब अपने वास्तविक और परम हितैषी संगियों की घोषणा करते हुए कहते हैं कि इस नश्वर संसार में मेरे केवल दो ही सच्चे साथी हैं—एक तो परमात्मा (राम/सत्यपुरुष) और दूसरा प्रभु का अनन्य भक्त (वैष्णव/सच्चा संत)। इनमें से राम तो समस्त जीवों को भवसागर से परम मुक्ति देने वाले दयालु दाता हैं, और वह सच्चा संत मुझे निरंतर परमात्मा के उस पावन सत्यनाम का सुमिरन व अभ्यास कराता है। इन दोनों के अतिरिक्त संसार का कोई संबंध सच्चा नहीं है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੇਰੇ ਸਿਰਫ ਦੋ ਹੀ ਸੱਚੇ ਸਾਥੀ ਹਨ—ਇੱਕ ਪ੍ਰਮਾਤਮਾ (ਰਾਮ) ਅਤੇ ਦੂਜਾ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਸੰਤ (ਵੈਸ਼ਨਵ)। ਪ੍ਰਭੂ ਮੁਕਤੀ ਦੇਣ ਵਾਲਾ ਦਾਤਾ ਹੈ ਅਤੇ ਸੰਤ ਉਸ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਾਉਣ ਵਾਲਾ ਪਰਉਪਕਾਰੀ ਹੈ।',
-      en: 'Kabir Saheb reveals his only two genuine soul companions in this cosmos: In all existence, I cherish merely two true friends—one is the Supreme Lord (Ram) and the other is the enlightened Saint (the true Vaishnav/devotee). For the Lord is the sovereign Bestower of eternal liberation, while the Holy Saint lovingly inspires and anchors me in the ceaseless remembrance of the Sacred Name.',
+      hi: 'सतगुरु कबीर साहेब अपने वास्तविक और परम हितैषी संगियों की घोषणा करते हुए कहते हैं कि इस नश्वर संसार में मेरे केवल दो ही सच्चे साथी हैं—एक तो परमात्मा (राम/सत्यपुरुष) और दूसरा प्रभु का अनन्य भक्त (वैष्णव/सच्चा संत)। इनमें से राम तो समस्त जीवों को भवसागर से परम मुक्ति देने वाले दयालु दाता हैं, और वह सच्चा संत मुझे निरंतर परमात्मा के उस पावन सत्यनाम का सुमिरन व अभ्यास कराता है। इन दोनों के अतिरिक्त संसार का कोई संबंध सच्चा नहीं है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੇਰੇ ਸਿਰਫ ਦੋ ਹੀ ਸੱਚੇ ਸਾਥੀ ਹਨ—ਇੱਕ ਪ੍ਰਮਾਤਮਾ (ਰਾਮ) ਅਤੇ ਦੂਜਾ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਸੰਤ (ਵੈਸ਼ਨਵ)। ਪ੍ਰਭੂ ਮੁਕਤੀ ਦੇਣ ਵਾਲਾ ਦਾਤਾ ਹੈ ਅਤੇ ਸੰਤ ਉਸ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਾਉਣ ਵਾਲਾ ਪਰਉਪਕਾਰੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals his only two genuine soul companions in this cosmos: In all existence, I cherish merely two true friends—one is the Supreme Lord (Ram) and the other is the enlightened Saint (the true Vaishnav/devotee). For the Lord is the sovereign Bestower of eternal liberation, while the Holy Saint lovingly inspires and anchors me in the ceaseless remembrance of the Sacred Name.',
     },
     wordMeanings: {
       hi: [
@@ -566,9 +566,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार उनके दो सच्चे साथी कौन हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਉਹਨਾਂ ਦੇ ਦੋ ਸੱਚੇ ਸਾਥੀ ਕੌਣ ਹਨ?',
-          en: 'According to Kabir Saheb, who are his two true eternal companions?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार उनके दो सच्चे साथी कौन हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਉਹਨਾਂ ਦੇ ਦੋ ਸੱਚੇ ਸਾਥੀ ਕੌਣ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, who are his two true eternal companions?',
         },
         options: {
           hi: ['धन और संपत्ति', 'एक राम (परमात्मा) और दूसरा वैष्णव (सच्चा संत)', 'राजा और मंत्री', 'शरीर और मन'],
@@ -603,9 +603,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Sant na baandhe gaanthadi, pet samaata leyi. Saai su sanmukh rahe, jahan maange tahan deyi.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे संत के निर्लोभी और निष्परिग्रही स्वभाव का वर्णन करते हुए कहते हैं कि सच्चा साधु कभी भविष्य के लिए धन या वस्तुओं की गांठ (संग्रह) नहीं बांधता; वह केवल उतना ही सात्विक आहार स्वीकार करता है जितने से उसका पेट भर सके। वह प्रतिक्षण अपने परमात्मा (साईं) के सम्मुख निष्कपट भाव से समर्पित रहता है, और ईश्वर की कृपा ऐसी होती है कि जहाँ भी आवश्यकता होती है, प्रभु स्वयं उसकी प्रत्येक जरूरत को पूर्ण कर देते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸੰਤ ਮਾਇਆ ਦੀਆਂ ਗੰਢਾਂ (ਜਮ੍ਹਾਂ-ਖੋਰੀ) ਨਹੀਂ ਬੰਨ੍ਹਦਾ, ਬਸ ਓਨਾ ਹੀ ਲੈਂਦਾ ਹੈ ਜਿੰਨਾ ਪੇਟ ਲਈ ਜ਼ਰੂਰੀ ਹੈ। ਉਹ ਸਦਾ ਪ੍ਰਭੂ ਦੇ ਸਨਮੁੱਖ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਪ੍ਰਭੂ ਉਸ ਦੀ ਹਰ ਲੋੜ ਆਪੇ ਪੂਰੀ ਕਰਦਾ ਹੈ।',
-      en: 'Kabir Saheb portrays the supreme trust and non-possessiveness of a true Saint: A genuine Saint never hoards bundles (Gaanthadi) of wealth for tomorrow; they accept only that modest nourishment which fills the stomach for today. Living face to face in pure alignment with the Divine Lord (Saaeen), wherever and whenever a real need arises, Divine Providence provides instantly.',
+      hi: 'सतगुरु कबीर साहेब सच्चे संत के निर्लोभी और निष्परिग्रही स्वभाव का वर्णन करते हुए कहते हैं कि सच्चा साधु कभी भविष्य के लिए धन या वस्तुओं की गांठ (संग्रह) नहीं बांधता; वह केवल उतना ही सात्विक आहार स्वीकार करता है जितने से उसका पेट भर सके। वह प्रतिक्षण अपने परमात्मा (साईं) के सम्मुख निष्कपट भाव से समर्पित रहता है, और ईश्वर की कृपा ऐसी होती है कि जहाँ भी आवश्यकता होती है, प्रभु स्वयं उसकी प्रत्येक जरूरत को पूर्ण कर देते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸੰਤ ਮਾਇਆ ਦੀਆਂ ਗੰਢਾਂ (ਜਮ੍ਹਾਂ-ਖੋਰੀ) ਨਹੀਂ ਬੰਨ੍ਹਦਾ, ਬਸ ਓਨਾ ਹੀ ਲੈਂਦਾ ਹੈ ਜਿੰਨਾ ਪੇਟ ਲਈ ਜ਼ਰੂਰੀ ਹੈ। ਉਹ ਸਦਾ ਪ੍ਰਭੂ ਦੇ ਸਨਮੁੱਖ ਰਹਿੰਦਾ ਹੈ ਅਤੇ ਪ੍ਰਭੂ ਉਸ ਦੀ ਹਰ ਲੋੜ ਆਪੇ ਪੂਰੀ ਕਰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb portrays the supreme trust and non-possessiveness of a true Saint: A genuine Saint never hoards bundles (Gaanthadi) of wealth for tomorrow; they accept only that modest nourishment which fills the stomach for today. Living face to face in pure alignment with the Divine Lord (Saaeen), wherever and whenever a real need arises, Divine Providence provides instantly.',
     },
     wordMeanings: {
       hi: [
@@ -649,9 +649,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-8-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्चे संत का स्वभाव कैसा होता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੇ ਸੰਤ ਦਾ ਸੁਭਾਅ ਕਿਹੋ ਜਿਹਾ ਹੁੰਦਾ ਹੈ?',
-          en: 'What is the characteristic disposition of a true Saint according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्चे संत का स्वभाव कैसा होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੇ ਸੰਤ ਦਾ ਸੁਭਾਅ ਕਿਹੋ ਜਿਹਾ ਹੁੰਦਾ ਹੈ?',
+          en: 'What is the characteristic disposition of a true Saint according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['बहुत सा धन जमा करने वाला', 'निर्लोभी, जो संग्रह नहीं करता और केवल पेट भरने जितना लेकर प्रभु भरोसे रहता है', 'दूसरों से छीनने वाला', 'व्यापार में लिप्त रहने वाला'],
@@ -686,9 +686,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Jis marne se jag dare, so mere aanand. Kab marihu kab dekhihu, pooran parmaanand.',
     bhavarth: {
-      hi: 'कबीर साहेब मृत्यु के भय से सर्वथा मुक्त होकर जीवन्मुक्त अवस्था का महा-रहस्य उद्घाटित करते हैं कि जिस मृत्यु के नाम मात्र से सारा संसार थर-थर कांपता और भयभीत होता है, वही मृत्यु मेरे लिए परम उल्लास और आनंद का महोत्सव है। मैं तो उस क्षण की प्रतीक्षा कर रहा हूँ कि कब मेरी यह नश्वर देह और अहंता का पर्दा हटेगा और कब मैं अपने पूर्ण सच्चिदानंद परमात्मा (पूरण परमानंद) का साक्षात दर्शन कर उनमें सदा के लिए विलीन हो जाऊँगा!',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਮੌਤ ਤੋਂ ਸਾਰਾ ਸੰਸਾਰ ਡਰਦਾ ਹੈ, ਉਹ ਮੇਰੇ ਲਈ ਪਰਮ ਆਨੰਦ ਦਾ ਸਰੋਤ ਹੈ। ਮੈਂ ਤਾਂ ਉਸ ਘੜੀ ਦੀ ਉਡੀਕ ਵਿੱਚ ਹਾਂ ਕਿ ਕਦੋਂ ਇਸ ਸਰੀਰ ਦਾ ਪਰਦਾ ਹਟੇਗਾ ਤੇ ਕਦੋਂ ਮੈਂ ਆਪਣੇ ਪੂਰਨ ਪਰਮਾਤਮਾ ਦੇ ਦਰਸ਼ਨ ਕਰਾਂਗਾ!',
-      en: 'Kabir Saheb unveils the triumphant fearlessness of the enlightened soul: That very death before whose mere name the whole world trembles in terror is, for me, a festival of supreme ecstasy! I yearn for that sacred threshold: When shall this mortal frame dissolve, when shall this final veil fall, so that I may behold and merge forever into the Perfect, Supreme Divine Bliss (Pooran Parmanand)!',
+      hi: 'सतगुरु कबीर साहेब मृत्यु के भय से सर्वथा मुक्त होकर जीवन्मुक्त अवस्था का महा-रहस्य उद्घाटित करते हैं कि जिस मृत्यु के नाम मात्र से सारा संसार थर-थर कांपता और भयभीत होता है, वही मृत्यु मेरे लिए परम उल्लास और आनंद का महोत्सव है। मैं तो उस क्षण की प्रतीक्षा कर रहा हूँ कि कब मेरी यह नश्वर देह और अहंता का पर्दा हटेगा और कब मैं अपने पूर्ण सच्चिदानंद परमात्मा (पूरण परमानंद) का साक्षात दर्शन कर उनमें सदा के लिए विलीन हो जाऊँगा!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਮੌਤ ਤੋਂ ਸਾਰਾ ਸੰਸਾਰ ਡਰਦਾ ਹੈ, ਉਹ ਮੇਰੇ ਲਈ ਪਰਮ ਆਨੰਦ ਦਾ ਸਰੋਤ ਹੈ। ਮੈਂ ਤਾਂ ਉਸ ਘੜੀ ਦੀ ਉਡੀਕ ਵਿੱਚ ਹਾਂ ਕਿ ਕਦੋਂ ਇਸ ਸਰੀਰ ਦਾ ਪਰਦਾ ਹਟੇਗਾ ਤੇ ਕਦੋਂ ਮੈਂ ਆਪਣੇ ਪੂਰਨ ਪਰਮਾਤਮਾ ਦੇ ਦਰਸ਼ਨ ਕਰਾਂਗਾ!',
+      en: 'Satguru Kabir Saheb unveils the triumphant fearlessness of the enlightened soul: That very death before whose mere name the whole world trembles in terror is, for me, a festival of supreme ecstasy! I yearn for that sacred threshold: When shall this mortal frame dissolve, when shall this final veil fall, so that I may behold and merge forever into the Perfect, Supreme Divine Bliss (Pooran Parmanand)!',
     },
     wordMeanings: {
       hi: [
@@ -730,9 +730,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-9-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार जिस मृत्यु से संसार डरता है, वह संत के लिए क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜਿਸ ਮੌਤ ਤੋਂ ਦੁਨੀਆ ਡਰਦੀ ਹੈ, ਉਹ ਸੰਤ ਲਈ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is death to an enlightened Saint while the world trembles before it?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जिस मृत्यु से संसार डरता है, वह संत के लिए क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜਿਸ ਮੌਤ ਤੋਂ ਦੁਨੀਆ ਡਰਦੀ ਹੈ, ਉਹ ਸੰਤ ਲਈ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is death to an enlightened Saint while the world trembles before it?',
         },
         options: {
           hi: ['बड़ा भारी कष्ट', 'परमात्मा से मिलन का परम आनंद', 'एक सजा', 'अंधकार'],
@@ -767,9 +767,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
     },
     transliteration: 'Kabir ghoda prem ka, chetani chadhi aswaar. Gyan khadag gahi kaal sir, bhali machayi maar.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक युद्ध और काल पर विजय का उद्घोष करते हुए कहते हैं कि साधक ने ईश्वर-प्रेम रूपी तीव्रगामी घोड़े को साधा है, जिस पर जाग्रत चेतना (सुरति) स्वयं शूरवीर सवार बनकर आरूढ़ हो गई है। हाथ में सतगुरु द्वारा प्रदत्त "ज्ञान की तीक्ष्ण तलवार" (खड्ग) थामकर उसने काल (मृत्यु, भय और अज्ञान) के मस्तक पर ऐसा भीषण प्रहार किया है कि जन्म-मरण का समस्त भय और बंधन सदा के लिए नष्ट हो गया है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਧਕ ਨੇ ਪ੍ਰੇਮ ਦਾ ਘੋੜਾ ਬਣਾਇਆ ਤੇ ਉਸ ਉੱਤੇ ਜਾਗਦੀ ਹੋਈ ਸੁਰਤ (ਚੇਤਨਾ) ਸਵਾਰ ਹੋ ਗਈ। ਹੱਥ ਵਿੱਚ ਗੁਰੂ ਦੇ ਗਿਆਨ ਦੀ ਤਲਵਾਰ ਫੜ ਕੇ ਕਾਲ (ਮੌਤ ਤੇ ਅਗਿਆਨ) ਦੇ ਸਿਰ ਉੱਤੇ ਅਜਿਹੀ ਸੱਟ ਮਾਰੀ ਕਿ ਸਾਰੇ ਬੰਧਨ ਕੱਟੇ ਗਏ।',
-      en: 'Kabir Saheb proclaims the ultimate spiritual victory over mortality: The seeker mounts the swift steed of Divine Love, with awakened Consciousness (Chetani) seated firmly as the master rider. Brandishing the razor-sharp sword of Spiritual Wisdom (Gyan Khadag), the warrior strikes a fatal blow upon the head of Kaal (death, fear, and illusion), shattering all chains of transmigration forever.',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक युद्ध और काल पर विजय का उद्घोष करते हुए कहते हैं कि साधक ने ईश्वर-प्रेम रूपी तीव्रगामी घोड़े को साधा है, जिस पर जाग्रत चेतना (सुरति) स्वयं शूरवीर सवार बनकर आरूढ़ हो गई है। हाथ में सतगुरु द्वारा प्रदत्त "ज्ञान की तीक्ष्ण तलवार" (खड्ग) थामकर उसने काल (मृत्यु, भय और अज्ञान) के मस्तक पर ऐसा भीषण प्रहार किया है कि जन्म-मरण का समस्त भय और बंधन सदा के लिए नष्ट हो गया है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਧਕ ਨੇ ਪ੍ਰੇਮ ਦਾ ਘੋੜਾ ਬਣਾਇਆ ਤੇ ਉਸ ਉੱਤੇ ਜਾਗਦੀ ਹੋਈ ਸੁਰਤ (ਚੇਤਨਾ) ਸਵਾਰ ਹੋ ਗਈ। ਹੱਥ ਵਿੱਚ ਗੁਰੂ ਦੇ ਗਿਆਨ ਦੀ ਤਲਵਾਰ ਫੜ ਕੇ ਕਾਲ (ਮੌਤ ਤੇ ਅਗਿਆਨ) ਦੇ ਸਿਰ ਉੱਤੇ ਅਜਿਹੀ ਸੱਟ ਮਾਰੀ ਕਿ ਸਾਰੇ ਬੰਧਨ ਕੱਟੇ ਗਏ।',
+      en: 'Satguru Kabir Saheb proclaims the ultimate spiritual victory over mortality: The seeker mounts the swift steed of Divine Love, with awakened Consciousness (Chetani) seated firmly as the master rider. Brandishing the razor-sharp sword of Spiritual Wisdom (Gyan Khadag), the warrior strikes a fatal blow upon the head of Kaal (death, fear, and illusion), shattering all chains of transmigration forever.',
     },
     wordMeanings: {
       hi: [
@@ -814,9 +814,9 @@ export const SAKHIS_BATCH_10: Sakhi[] = [
       {
         id: 'q-b10-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार काल पर विजय पाने के लिए किस तलवार (खड्ग) का प्रयोग किया जाता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਾਲ ਉੱਤੇ ਜਿੱਤ ਪਾਉਣ ਲਈ ਕਿਹੜੀ ਤਲਵਾਰ ਵਰਤੀ ਜਾਂਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, which sword is wielded to conquer Kaal (Death/Time)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार काल पर विजय पाने के लिए किस तलवार (खड्ग) का प्रयोग किया जाता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਾਲ ਉੱਤੇ ਜਿੱਤ ਪਾਉਣ ਲਈ ਕਿਹੜੀ ਤਲਵਾਰ ਵਰਤੀ ਜਾਂਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, which sword is wielded to conquer Kaal (Death/Time)?',
         },
         options: {
           hi: ['लोहे की तलवार', 'सतगुरु द्वारा प्रदत्त ज्ञान की तलवार (ज्ञान खड्ग)', 'लकड़ी की तलवार', 'कांच की तलवार'],

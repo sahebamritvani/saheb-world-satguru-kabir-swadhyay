@@ -77,8 +77,8 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir paahan pooji ke, hon chahat bhav paar. Bheeji paani bhedai nadee, boode jin sir bhaar.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि पत्थर पूजकर जो संसार-सागर से पार होना चाहते हैं, ऐसे लोग संसार-नदी में प्रविष्ट होते ही अज्ञान-रूपी पानी व विषय वासनाओं से भीगकर, सिर पर रखे कर्मों व मन की कल्पना की गठरी के भारी होते-होते डूब मरते हैं।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪੱਥਰ ਪੂਜ ਕੇ ਜੋ ਸੰਸਾਰ ਸਾਗਰ ਤੋਂ ਪਾਰ ਹੋਣਾ ਚਾਹੁੰਦੇ ਹਨ, ਉਹ ਜੀਵ ਸੰਸਾਰ ਰੂਪੀ ਨਦੀ ਵਿੱਚ ਵੜਦਿਆਂ ਹੀ ਅਗਿਆਨਤਾ ਤੇ ਵਿਸ਼ੇ-ਵਾਸਨਾਵਾਂ ਦੇ ਭਾਰ ਨਾਲ ਡੁੱਬ ਜਾਂਦੇ ਹਨ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि पत्थर पूजकर जो संसार-सागर से पार होना चाहते हैं, ऐसे लोग संसार-नदी में प्रविष्ट होते ही अज्ञान-रूपी पानी व विषय वासनाओं से भीगकर, सिर पर रखे कर्मों व मन की कल्पना की गठरी के भारी होते-होते डूब मरते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪੱਥਰ ਪੂਜ ਕੇ ਜੋ ਸੰਸਾਰ ਸਾਗਰ ਤੋਂ ਪਾਰ ਹੋਣਾ ਚਾਹੁੰਦੇ ਹਨ, ਉਹ ਜੀਵ ਸੰਸਾਰ ਰੂਪੀ ਨਦੀ ਵਿੱਚ ਵੜਦਿਆਂ ਹੀ ਅਗਿਆਨਤਾ ਤੇ ਵਿਸ਼ੇ-ਵਾਸਨਾਵਾਂ ਦੇ ਭਾਰ ਨਾਲ ਡੁੱਬ ਜਾਂਦੇ ਹਨ।',
       en: 'Kabir reveals: Those who seek to cross the ocean of life by worshipping stone idols will sink. Drenched in the water of spiritual ignorance and carrying the heavy load of worldly desires and mental concepts on their heads, they go down in the midstream.',
     },
     wordMeanings: {
@@ -104,7 +104,7 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
       en: 'Have I burdened my own mind with vanity and material desires, dragging my soul down in the current of worldly existence?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के उपदेशों द्वारा अपने मन के बोझ को हल्का करें; वासनाओं का त्याग कर बिल्कुल सरल बनें।',
+      hi: 'सतगुरु के उपदेशों द्वारा अपने मन के बोझ को हल्का करें; वासनाओं का त्याग कर बिल्कुल सरल बनें।',
       pb: 'ਮਨ ਦਾ ਭਾਰ ਹਲਕਾ ਕਰਕੇ ਨਾਮ ਸਿਮਰਨ ਕਰੋ।',
       en: 'Lighten your mental baggage through the Guru’s teachings; abandon vanity and simplify your life.'
     },
@@ -332,7 +332,7 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
       en: 'Observe the impulses of anger and ego objectively; step back from conflict and contemplate in stillness.'
     },
     samarpanPrayer: {
-      hi: 'हे विवेक के सागर सद्गुरु! मेरे भीतर के अज्ञान रूपी शेर को शांत कर मुझे सत्य की गहराइयों का बोध कराएँ। साहेब बंदगी साहेब!',
+      hi: 'हे विवेक के सागर सतगुरु! मेरे भीतर के अज्ञान रूपी शेर को शांत कर मुझे सत्य की गहराइयों का बोध कराएँ। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਆਪਣੇ ਅਸਲ ਆਪੇ ਦੀ ਪਛਾਣ ਕਰਵਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Master of wisdom! Silence the raging lion of my ego; let me see reality clearly without distortions. Saheb Bandgi Saheb!'
     },
@@ -382,7 +382,7 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
       en: 'Am I running to distant pilgrimage sites or stone structures to find the Divine, who resides closer than my own breath?'
     },
     practicalApplication: {
-      hi: 'बाहरी खोज को समेटकर प्रतिदिन ध्यान-सुमिरन द्वारा अपने अंतःकरण को शुद्ध करें और हृदय-मंदिर में ही कबीर साहेब का दर्शन करें।',
+      hi: 'बाहरी खोज को समेटकर प्रतिदिन ध्यान-सुमिरन द्वारा अपने अंतःकरण को शुद्ध करें और हृदय-मंदिर में ही सतगुरु कबीर साहेब का दर्शन करें।',
       pb: 'ਮਨ ਦੇ ਅੰਦਰ ਝਾਤੀ ਮਾਰੋ ਅਤੇ ਭਗਤੀ ਕਰੋ।',
       en: 'Redirect your search inward; cleanse your own heart-temple through daily meditation and silent contemplation.'
     },
@@ -468,9 +468,9 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir saaligaraam ka, mohin bharosa naahin. Kaal kahar kee chot mein, binasi jaay chhin maahin.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि पत्थर के शालिग्राम से कल्याण-प्राप्ति का बिल्कुल भी भरोसा नहीं है, क्योंकि वह तो काल की कठिन चोट से क्षण भर में नष्ट-भ्रष्ट हो जाएगा।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪੱਥਰ ਦੇ ਸਾਲੀਗ੍ਰਾਮ \'ਤੇ ਮੈਨੂੰ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ, ਕਿਉਂਕਿ ਕਾਲ ਦੀ ਇੱਕ ਸੱਟ ਨਾਲ ਉਹ ਪਲ ਭਰ ਵਿੱਚ ਟੁੱਟ ਕੇ ਨਸ਼ਟ ਹੋ ਜਾਵੇਗਾ।',
-      en: 'Kabir declares: I place no reliance on the stone Shali-gram for my salvation. If struck by the relentless hammer of Time, it will shatter into pieces in a single fraction of a second.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि पत्थर के शालिग्राम से कल्याण-प्राप्ति का बिल्कुल भी भरोसा नहीं है, क्योंकि वह तो काल की कठिन चोट से क्षण भर में नष्ट-भ्रष्ट हो जाएगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪੱਥਰ ਦੇ ਸਾਲੀਗ੍ਰਾਮ \'ਤੇ ਮੈਨੂੰ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ, ਕਿਉਂਕਿ ਕਾਲ ਦੀ ਇੱਕ ਸੱਟ ਨਾਲ ਉਹ ਪਲ ਭਰ ਵਿੱਚ ਟੁੱਟ ਕੇ ਨਸ਼ਟ ਹੋ ਜਾਵੇਗਾ।',
+      en: 'Satguru Kabir Saheb proclaims: I place no reliance on the stone Shali-gram for my salvation. If struck by the relentless hammer of Time, it will shatter into pieces in a single fraction of a second.',
     },
     wordMeanings: {
       hi: [
@@ -614,7 +614,7 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे लोक कल्याणकारी सतगुरु साहेब! मुझे दिखावे की निरर्थक पूजा से मुक्त कर जीवों की निष्काम सेवा का वरदान दें। साहेब बंदगी साहेब!',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਦਿਖਾਵੇ ਦੀ ਪੂਜਾ ਤੋਂ ਬਚਾ ਕੇ ਸੇਵਾ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਦਿਖਾਵੇ ਦੀ ਪੂਜਾ ਤੋਂ ਬਚਾ ਕੇ ਸੇਵਾ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Benevolent Master! Save me from hollow displays of worship; inspire me to serve Your creation with a pure heart. Saheb Bandgi Saheb!'
     },
     quiz: []
@@ -718,7 +718,7 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
       en: 'Am I focusing entirely on washing the physical body, while leaving the mind soiled with thoughts of pride and deceit?'
     },
     practicalApplication: {
-      hi: 'केवल बाहरी शरीर के शुद्धिकरण में ही न उलझें; प्रतिदिन सद्गुरु के वचनों के जल से मन को धोकर निर्मल करें।',
+      hi: 'केवल बाहरी शरीर के शुद्धिकरण में ही न उलझें; प्रतिदिन सतगुरु के वचनों के जल से मन को धोकर निर्मल करें।',
       pb: 'ਸਰੀਰ ਦੀ ਬਜਾਏ ਮਨ ਨੂੰ ਸਾਫ਼ ਕਰੋ।',
       en: 'Do not satisfy yourself with external cleanliness alone; wash your heart daily in the river of the Guru’s wisdom.'
     },
@@ -878,7 +878,7 @@ export const SAKHIS_BHRAM_VIDHVANS_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा ज्ञान केवल धार्मिक ग्रंथों को रटने और बहस करने तक ही सीमित है, या मैंने अंतःकरण में कबीर साहेब के शब्द को महसूस किया है?',
+      hi: 'क्या मेरा ज्ञान केवल धार्मिक ग्रंथों को रटने और बहस करने तक ही सीमित है, या मैंने अंतःकरण में सतगुरु कबीर साहेब के शब्द को महसूस किया है?',
       pb: 'ਕੀ ਮੇਰੀ ਪੜ੍ਹਾਈ ਸਿਰਫ਼ ਬਹਿਸ ਕਰਨ ਲਈ ਹੈ?',
       en: 'Is my spiritual knowledge merely an academic exercise of quotes and debates, or have I experienced the quiet transformation of the soul?'
     },

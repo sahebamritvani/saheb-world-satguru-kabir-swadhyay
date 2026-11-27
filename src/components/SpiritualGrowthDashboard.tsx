@@ -529,7 +529,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   {language === 'hi' ? 'पावन १०-चरणीय स्वाध्याय प्रगति' : language === 'pb' ? 'ਪਾਵਨ ੧੦-ਪੜਾਅ ਸਵਾਧਿਆਏ ਪ੍ਰਗਤੀ' : '10-Step Swadhyay Growth'}
                 </h3>
                 <p className="text-xs opacity-70 font-serif" style={{ color: theme.textSecondary }}>
-                  {language === 'hi' ? 'कबीर साहेब की वाणी के १० पावन सोपानों का गहन पठन एवं आत्मसात' : language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੇ ੧੦ ਪਾਵਨ ਪੜਾਵਾਂ ਦਾ ਡੂੰਘਾ ਅਧਿਐਨ' : 'Deep contemplation across 10 sacred steps'}
+                  {language === 'hi' ? 'सतगुरु कबीर साहेब की वाणी के १० पावन सोपानों का गहन पठन एवं आत्मसात' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦੇ ੧੦ ਪਾਵਨ ਪੜਾਵਾਂ ਦਾ ਡੂੰਘਾ ਅਧਿਐਨ' : 'Deep contemplation across 10 sacred steps'}
                 </p>
               </div>
 
@@ -773,9 +773,9 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
             {/* Prompt Suggestion */}
             <p className="text-xs italic font-serif text-amber-800 dark:text-amber-300 bg-amber-500/10 p-2.5 rounded-xl border border-amber-500/20">
               💡 {language === 'hi'
-                ? 'आज कबीर साहेब की किस साखी अथवा स्वाध्याय पद ने आपके हृदय को स्पर्श किया? अपने संकल्प दर्ज करें।'
+                ? 'आज सतगुरु कबीर साहेब की किस साखी अथवा स्वाध्याय पद ने आपके हृदय को स्पर्श किया? अपने संकल्प दर्ज करें।'
                 : language === 'pb'
-                ? 'ਅੱਜ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਸ ਸਾਖੀ ਜਾਂ ਸਵਾਧਿਆਏ ਨੇ ਤੁਹਾਡੇ ਹਿਰਦੇ ਨੂੰ ਛੂਹਿਆ? ਆਪਣੇ ਸੰਕਲਪ ਦਰਜ ਕਰੋ।'
+                ? 'ਅੱਜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਕਿਸ ਸਾਖੀ ਜਾਂ ਸਵਾਧਿਆਏ ਨੇ ਤੁਹਾਡੇ ਹਿਰਦੇ ਨੂੰ ਛੂਹਿਆ? ਆਪਣੇ ਸੰਕਲਪ ਦਰਜ ਕਰੋ।'
                 : 'What spiritual lesson touched your heart during today\'s Swadhyay?'}
             </p>
 
@@ -1117,7 +1117,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
                   </h5>
                   <p className="text-[11px] opacity-70 px-4 max-w-sm font-serif">
                     {netKarmaScore >= 12 
-                      ? (language === 'hi' ? 'आपका मन कबीर साहेब के ज्ञान प्रकाश से पूर्ण प्रकाशित है। वासनाएं पराजित हुई हैं।' : language === 'pb' ? 'ਤੁਹਾਡਾ ਮਨ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਗਿਆਨ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਹੈ।' : 'Your mind is lit by Kabir Saheb\'s divine guidance. Desires are conquered.') 
+                      ? (language === 'hi' ? 'आपका मन सतगुरु कबीर साहेब के ज्ञान प्रकाश से पूर्ण प्रकाशित है। वासनाएं पराजित हुई हैं।' : language === 'pb' ? 'ਤੁਹਾਡਾ ਮਨ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਗਿਆਨ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਰੌਸ਼ਨ ਹੈ।' : 'Your mind is lit by Satguru Kabir Saheb\'s divine guidance. Desires are conquered.') 
                       : netKarmaScore >= 0 
                       ? (language === 'hi' ? 'संतुलित मार्ग। सत्संग मनन व सुमिरन द्वारा चित्त को और निर्मल करें।' : language === 'pb' ? 'ਸੰਤੁਲਿਤ ਮਾਰਗ। ਸਤਿਸੰਗ ਤੇ ਸਿਮਰਨ ਨਾਲ ਮਨ ਨੂੰ ਹੋਰ ਨਿਰਮਲ ਕਰੋ।' : 'A balanced path. Contemplation and chants will purify the consciousness further.') 
                       : (language === 'hi' ? 'क्रोध, मोह अथवा अहंकार विकार उग्र हैं। कबीर उपदेश श्रवण कर चित्त शांत करें।' : language === 'pb' ? 'ਕ੍ਰੋਧ, ਮੋਹ ਜਾਂ ਹੰਕਾਰ ਵਧੇ ਹੋਏ ਹਨ। ਬਾਣੀ ਸਿਮਰਨ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਕਰੋ।' : 'Vices are slightly elevated. Contemplate on couplets to soothe the mind.')}
@@ -1418,7 +1418,7 @@ export const SpiritualGrowthDashboard: React.FC<SpiritualGrowthDashboardProps> =
               {
                 title: language === 'pb' ? 'ਮੰਗਲਾਚਰਣ ਸਾਧਕ' : language === 'en' ? 'Invocation Seeker' : 'मंगलाचरण साधक',
                 level: 'Level 1',
-                desc: language === 'pb' ? 'ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪਹਿਲੀ ਸਾਖੀ ਤੇ ਮੰਗਲਾਚਰਣ ਪਾਠ' : language === 'en' ? 'First couplet study and sacred invocation' : 'कबीर साहेब की प्रथम साखी व मंगलाचरण पाठ',
+                desc: language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪਹਿਲੀ ਸਾਖੀ ਤੇ ਮੰਗਲਾਚਰਣ ਪਾਠ' : language === 'en' ? 'First couplet study and sacred invocation' : 'सतगुरु कबीर साहेब की प्रथम साखी व मंगलाचरण पाठ',
                 unlocked: stats.maxUnlockedStep >= 1,
                 icon: '🙏',
               },

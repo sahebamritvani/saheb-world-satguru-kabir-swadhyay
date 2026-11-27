@@ -321,7 +321,7 @@ export const ULATVASI_BATCH_141_TO_150: UlatvasiQuestion[] = [
     realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
     title: { hi: '147. सुई की नोक पर पूरा संसार नाचे', pb: '147. ਸੂਈ ਦੀ ਨੋਕ ਤੇ ਪੂਰਾ ਸੰਸਾਰ ਨੱਚੇ', en: '147. Universe Dancing on Tip of Needle' },
     verse: {
-      hi: '"सुई की नोक पर नाचै संसारा, राई में ब्रह्मांड समाया। कहै कबीर सुनो भाई संतो, यह साहिब की माया॥"',
+      hi: '"सुई की नोक पर नाचै संसारा, राई में ब्रह्मांड समाया। कहै कबीर सुनो भाई संतो, यह साहेब की माया॥"',
       pb: '"ਸੂਈ ਕੀ ਨੋਕ ਪਰ ਨਾਚੈ ਸੰਸਾਰਾ, ਰਾਈ ਮੇਂ ਬ੍ਰਹ੍ਮਾਂਡ ਸਮਾਯਾ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਾਹੇਬ ਕੀ ਮਾਯਾ॥"',
       en: '"On the needle tip dances the universe, inside a mustard seed cosmos is contained. Says Kabir listen saints, this is the illusion of the Lord."'
     },
@@ -457,7 +457,7 @@ export const ULATVASI_BATCH_141_TO_150: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'परम समाधि एवं अमृतरस का पान', pb: 'ਸਮਾਧੀ ਅਤੇ ਅੰਮ੍ਰਿਤ ਰਸ', en: 'Immortal State via Silent Absorption in Divine Ambrosia' },
       deepMeaning: {
-        hi: 'कबीर साहेब परम समाधि की बात कर रहे हैं। जब आत्मा परमात्मा से एकाकार होती है, तो उस अमृतरस को चखने के लिए भौतिक मुँह या जीभ की आवश्यकता नहीं होती। आत्मा स्वतः बिना बोले अजपा-जाप द्वारा गुणगान करती है और अमर पद पाती है।',
+        hi: 'सतगुरु कबीर साहेब परम समाधि की बात कर रहे हैं। जब आत्मा परमात्मा से एकाकार होती है, तो उस अमृतरस को चखने के लिए भौतिक मुँह या जीभ की आवश्यकता नहीं होती। आत्मा स्वतः बिना बोले अजपा-जाप द्वारा गुणगान करती है और अमर पद पाती है।',
         pb: 'ਸਮਾਧੀ ਵਿੱਚ ਆਤਮਾ ਬਿਨਾਂ ਬੋਲੇ ਅਜਪਾ-ਜਾਪ ਕਰਦੀ ਹੈ ਅਤੇ ਅੰਮ੍ਰਿਤ ਪੀ ਕੇ ਅਮਰ ਹੋ ਜਾਂਦੀ ਹੈ।',
         en: 'In supreme meditative union, tasting divine nectar requires no physical lips or tongue. The soul spontaneously engages in silent Ajapa Japa, attaining immortality.'
       },

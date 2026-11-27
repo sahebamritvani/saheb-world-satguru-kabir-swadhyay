@@ -131,23 +131,36 @@ export function ensureSatguruKabirSaheb(text: string): string {
   if (!text) return '';
   let res = text;
 
-  // Hindi: Ensure "सतगुरु कबीर साहेब"
+  // Hindi: Ensure "सतगुरु कबीर साहेब" & "फरमाते हैं"
   res = res
+    .replace(/सद्गुरु\s+कबीर\s+साहेब/g, 'सतगुरु कबीर साहेब')
+    .replace(/सद्गुरु(?!\s+लाजा|\s+तन्नमामि)/g, 'सतगुरु')
+    .replace(/सदगुरु/g, 'सतगुरु')
+    .replace(/(?:(?:सतगुरु|सद्गुरु)\s+)?(?<!भगत\s+|गोंड\s+|सलोक\s+)कबीर\s*जी(?![\u0900-\u097F])/g, 'सतगुरु कबीर साहेब')
     .replace(/(?<!सतगुरु\s+|सद्गुरु\s+|बंदीछोड़\s+)कबीर साहेब/g, 'सतगुरु कबीर साहेब')
     .replace(/(?<!सतगुरु\s+|सद्गुरु\s+|बंदीछोड़\s+)कबीरदास/g, 'सतगुरु कबीर साहेब')
     .replace(/(?<!सतगुरु\s+|सद्गुरु\s+|बंदीछोड़\s+)कबीर दास/g, 'सतगुरु कबीर साहेब')
-    .replace(/(?<!सतगुरु\s+|सद्गुरु\s+|बंदीछोड़\s+)संत कबीर/g, 'सतगुरु कबीर साहेब');
+    .replace(/(?<!सतगुरु\s+|सद्गुरु\s+|बंदीछोड़\s+)संत कबीर/g, 'सतगुरु कबीर साहेब')
+    .replace(/(सतगुरु कबीर साहेब|कबीर साहेब|सतगुरु साहेब)\s*(?:कहते हैं|कथन करते हैं)/g, '$1 फरमाते हैं');
 
-  // Punjabi: Ensure "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ"
+  // Punjabi: Ensure "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ" & "ਫ਼ਰਮਾਉਂਦੇ ਹਨ"
   res = res
+    .replace(/ਸਦਗੁਰੂ\s+ਕਬੀਰ\s+ਸਾਹੇਬ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ')
+    .replace(/ਸਦਗੁਰੂ/g, 'ਸਤਿਗੁਰੂ')
+    .replace(/(?:(?:ਸਤਿਗੁਰੂ|ਸਦਗੁਰੂ)\s+)?(?<!ਭਗਤ\s+|ਗੋਂਡ\s+|ਸਲੋਕ\s+)ਕਬੀਰ\s*ਜੀ(?![\u0A00-\u0A7F])/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ')
     .replace(/(?<!ਸਤਿਗੁਰੂ\s+|ਬੰਦੀਛੋੜ\s+|ਸਤਿਗੁਰ\s+)ਕਬੀਰ ਸਾਹੇਬ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ')
-    .replace(/(?<!ਸਤਿਗੁਰੂ\s+|ਬੰਦੀਛੋੜ\s+|ਸਤਿਗੁਰ\s+)ਸੰਤ ਕਬੀਰ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ');
+    .replace(/(?<!ਸਤਿਗੁਰੂ\s+|ਬੰਦੀਛੋੜ\s+|ਸਤਿਗੁਰ\s+)ਸੰਤ ਕਬੀਰ/g, 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ')
+    .replace(/(ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ|ਕਬੀਰ ਸਾਹੇਬ|ਸਤਿਗੁਰੂ ਸਾਹੇਬ)(?:\s+ਜੀ)?\s*(?:ਕਹਿੰਦੇ ਹਨ|ਆਖਦੇ ਹਨ|ਫਰਮਾਉਂਦੇ ਹਨ)/g, '$1 ਫ਼ਰਮਾਉਂਦੇ ਹਨ');
 
-  // English: Ensure "Satguru Kabir Saheb"
+  // English: Ensure "Satguru Kabir Saheb" & "proclaims"
   res = res
+    .replace(/Sadguru\s+Kabir\s+Saheb/gi, 'Satguru Kabir Saheb')
+    .replace(/\bSadguru\b(?!\s+Tannamaami|\s+Sannidham)/gi, 'Satguru')
+    .replace(/(?:(?:Satguru|Sadguru)\s+)?(?<!Bhagat\s+|Bhakt\s+)\bKabir\s*Ji(?!(?:o|u|ta))\b/gi, 'Satguru Kabir Saheb')
     .replace(/(?<!Satguru\s+|Bandichhor\s+|Sadguru\s+|Saint\s+)Kabir Saheb/gi, 'Satguru Kabir Saheb')
     .replace(/(?<!Satguru\s+|Bandichhor\s+|Sadguru\s+|Saint\s+)Kabir Sahib/gi, 'Satguru Kabir Saheb')
-    .replace(/(?<!Satguru\s+|Bandichhor\s+|Sadguru\s+|Saint\s+)Sant Kabir/gi, 'Satguru Kabir Saheb');
+    .replace(/(?<!Satguru\s+|Bandichhor\s+|Sadguru\s+|Saint\s+)Sant Kabir/gi, 'Satguru Kabir Saheb')
+    .replace(/(Satguru Kabir Saheb|Kabir Saheb)\s+(?:says|states)\b/gi, 'Satguru Kabir Saheb proclaims');
 
   return res;
 }
@@ -189,10 +202,11 @@ export function autoCorrectSacredText(rawText: string): string {
     .replace(/िा/g, 'ा')
     .replace(/बन्दगी/g, 'बंदगी')
     .replace(/सतनाम|सत्नाम/g, 'सत्यनाम')
-    .replace(/ਸਤਿਨਾਮ|ਸਤਨਾਮ/g, 'ਸਤਯਨਾਮ')
+    .replace(/ਸਤਨਾਮ/g, 'ਸਤਯਨਾਮ')
     .replace(/\b(Satyaanaam|Satnaam|Satnam)\b/gi, 'Satyanaam')
-    .replace(/(?<!ਗੁਰੂ\s+ਗ੍ਰੰਥ\s+|ਜਪੁਜੀ\s+|ਸੁਖਮਨੀ\s+)ਸਾਹਿਬ/g, 'ਸਾਹੇਬ')
-    .replace(/(?<!Guru\s+Granth\s+|Japuji\s+|Sukhmani\s+)\bSahib\b/gi, 'Saheb')
+    .replace(/(?<!गुरु\s+ग्रंथ\s+|जपुजी\s+|सुखमनी\s+|आनंद\s+|रहस\s+)साहिब/g, 'साहेब')
+    .replace(/(?<!ਗੁਰੂ\s+ਗ੍ਰੰਥ\s+|ਜਪੁਜੀ\s+|ਸੁਖਮਨੀ\s+|ਅਨੰਦ\s+|ਰਹਰਾਸਿ\s+)ਸਾਹਿਬ/g, 'ਸਾਹੇਬ')
+    .replace(/(?<!Guru\s+Granth\s+|Japuji\s+|Sukhmani\s+|Anand\s+|Rehras\s+)\bSahib\b/gi, 'Saheb')
     .replace(/\s+/g, ' ')
     .trim();
 

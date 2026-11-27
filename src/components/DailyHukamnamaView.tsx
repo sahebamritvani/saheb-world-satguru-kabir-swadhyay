@@ -293,7 +293,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
 
           <p className="text-xs sm:text-sm text-amber-100/90 font-serif max-w-2xl leading-relaxed">
             {isPb 
-              ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਪਾਵਨ ਫ਼ੁਰਮਾਨ, ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਰਹੱਸ ਅਤੇ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਅਨੁਸ਼ਾਸਨ।'
+              ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਪਾਵਨ ਫ਼ੁਰਮਾਨ, ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਰਹੱਸ ਅਤੇ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਅਨੁਸ਼ਾਸਨ।'
               : isEn 
               ? 'Sacred command from Sri Guru Granth Sahib Ji with deep mystical essence and practical daily life discipline guidance.'
               : 'श्री गुरु ग्रंथ साहिब जी में दर्ज सतगुरु कबीर साहेब का पावन हुकमनामा, गहन आध्यात्मिक रहस्य एवं दैनिक जीवन में आचरण का अनुशासन।'}
@@ -315,7 +315,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
               : isPb
               ? 'ਸਲੋਕ ਕਬੀਰ ਜੀਉ ਕੇ'
               : isEn
-              ? 'Salok Kabir Ji Ke'
+              ? 'Salok Satguru Kabir Saheb Ke'
               : 'सलोक कबीर जीउ के'}
           </span>
         </div>
@@ -633,7 +633,7 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
             <p style={{ color: theme.textPrimary }} className="text-xs leading-relaxed font-serif">
               {isPb ? (
                 <>
-                  <strong>ਸਾਧਕ ਆਚਾਰ ਸੰਹਿਤਾ:</strong> ਜਦੋਂ ਅਸੀਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਬਚਨਾਂ ਨੂੰ ਕੇਵਲ ਪੜ੍ਹਦੇ ਹੀ ਨਹੀਂ, ਸਗੋਂ ਆਪਣੇ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਢਾਲਦੇ ਹਾਂ, ਤਾਂ ਜੀਵਨ ਦੇ ਸਾਰੇ ਤਾਪ ਅਤੇ ਭਰਮ ਮਿਟ ਜਾਂਦੇ ਹਨ।
+                  <strong>ਸਾਧਕ ਆਚਾਰ ਸੰਹਿਤਾ:</strong> ਜਦੋਂ ਅਸੀਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਬਚਨਾਂ ਨੂੰ ਕੇਵਲ ਪੜ੍ਹਦੇ ਹੀ ਨਹੀਂ, ਸਗੋਂ ਆਪਣੇ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਢਾਲਦੇ ਹਾਂ, ਤਾਂ ਜੀਵਨ ਦੇ ਸਾਰੇ ਤਾਪ ਅਤੇ ਭਰਮ ਮਿਟ ਜਾਂਦੇ ਹਨ।
                 </>
               ) : isEn ? (
                 <>

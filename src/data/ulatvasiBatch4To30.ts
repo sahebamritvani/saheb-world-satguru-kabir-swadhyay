@@ -78,8 +78,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: naav vich ndiyaa doobee jaay: naav hmaaraa shreer (yaa guru kaa jnyaan) hai aur ndiyaa yh snsaaree vaasnaaon kaa saagr hai | jb saadhk antrmukhee hotaa hai, to pooraa snsaar (ndee) uske aatmjnyaan (naav) men hee smaakr vileen ho jaataa hai | ndee laagee aagi: jb vairaagy roopee aag lgtee hai, to vaasnaaon kee ndee sookh jaatee hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -167,8 +167,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: bherain chdh़e su doobe: bheraa kaa arth yhaan baahree krmkaand, paakhnd, aur andhvishvaason ke shaare se hai | jo inke shaare bhvsaagr paar krnaa chaahte hain, ve beech men hee doob jaate hain | niraadhaar bhye paarn: niraadhaar kaa arth hai jinhonne sb baahree shaare chhod़kr kevl us niraakaar, alkh prmaatmaa kaa aashry liyaa, ve snsaar se paar ho ge |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -256,8 +256,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: saand़ biyaanee: saand yhaan mn kaa prteek hai | jb mn saadhnaa men leen hokr antrmukhee hotaa hai, to usse jnyaan kaa jnm (biyaanaa) hotaa hai | gaay bhee baanjh: gaay hmaaree chnchl indriyaan hain | jnyaan hone pr indriyaan shaant (baanjh) ho jaatee hain, yaanee ve nee vaasnaaon ko jnm nheen deteen | siyaar sinh son joojhai: siyaar saadhaarn snsaaree jeev hai aur sinh kaal (mrityu) yaa maayaa hai | jb jeev ko naam-simrn kee shkti miltee hai, to vh kaal se bhee tkraa jaataa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -345,8 +345,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: ggn mndil men kuaan: shsraar chkr kee baat hai | jb dhyaan us oonche mukaam pr phunchtaa hai, to vhaan se divy aannd kaa amrit tpktaa hai | jo guru kee shrn men saadhnaa krtaa hai, vh ise peetaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -434,8 +434,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: truvr (ped़) saakshaat prmaatmaa hai jiskaa koee ek bhautik aadhaar (jd़) nheen hai | asht ggn shreer ke bheetr ke asht chkron kee or snket krtaa hai jhaan prm aannd kee anubhooti hotee hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -466,8 +466,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
       "en": "\"paahn pooje hri milen, to main poojoon phaar | yaate to chaakee bhlee, pees khaay snsaar ||\""
     },
     "literalParadox": {
-      "hi": "कबीर साहेब बाहरी मूर्तिपूजा पर करारी चोट कर रहे हैं।",
-      "pb": "ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਮੂਰ੍ਤਿਪੂਜਾ ਪਰ ਕਰਾਰੀ ਚोਟ ਕਰ ਰਹੇ ਹैਂ ।",
+      "hi": "सतगुरु कबीर साहेब बाहरी मूर्तिपूजा पर करारी चोट कर रहे हैं।",
+      "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਮੂਰ੍ਤਿਪੂਜਾ ਪਰ ਕਰਾਰੀ ਚोਟ ਕਰ ਰਹੇ ਹैਂ ।",
       "en": "Spiritual Insight: kbeer saaheb baahree moortipoojaa pr kraaree chot kr rhe hain "
     },
     "clueHint": {
@@ -518,13 +518,13 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "पाहन पूजे हरि मिलें, तो मैं पूजूं पहार"
       },
       "deepMeaning": {
-        "hi": "कबीर साहेब बाहरी मूर्तिपूजा पर करारी चोट कर रहे हैं। परमात्मा किसी निर्जीव पत्थर में नहीं, बल्कि हर जीवित मनुष्य के भीतर वास करता है। कर्म ऐसा होना चाहिए जिससे संसार का भला हो, न कि सिर्फ दिखावे का पाखंड।",
-        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਮੂਰ੍ਤਿਪੂਜਾ ਪਰ ਕਰਾਰੀ ਚोਟ ਕਰ ਰਹੇ ਹैਂ । ਪਰਮਾਤ੍ਮਾ ਕਿਸੀ ਨਿਰ੍ਜੀਵ ਪਤ੍ਥਰ ਮੇਂ ਨਹੀਂ, ਬਲ੍ਕਿ ਹਰ ਜੀਵਿਤ ਮਨੁਸ਼੍ਯ ਕੇ ਭੀਤਰ ਵਾਸ ਕਰਤਾ ਹै । ਕਰ੍ਮ ਐਸਾ ਹोਨਾ ਚਾਹਿਏ ਜਿਸਸੇ ਸਂਸਾਰ ਕਾ ਭਲਾ ਹो, ਨ ਕਿ ਸਿਰ੍ਫ ਦਿਖਾਵੇ ਕਾ ਪਾਖਂਡ ।",
+        "hi": "सतगुरु कबीर साहेब बाहरी मूर्तिपूजा पर करारी चोट कर रहे हैं। परमात्मा किसी निर्जीव पत्थर में नहीं, बल्कि हर जीवित मनुष्य के भीतर वास करता है। कर्म ऐसा होना चाहिए जिससे संसार का भला हो, न कि सिर्फ दिखावे का पाखंड।",
+        "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਹਰੀ ਮੂਰ੍ਤਿਪੂਜਾ ਪਰ ਕਰਾਰੀ ਚोਟ ਕਰ ਰਹੇ ਹैਂ । ਪਰਮਾਤ੍ਮਾ ਕਿਸੀ ਨਿਰ੍ਜੀਵ ਪਤ੍ਥਰ ਮੇਂ ਨਹੀਂ, ਬਲ੍ਕਿ ਹਰ ਜੀਵਿਤ ਮਨੁਸ਼੍ਯ ਕੇ ਭੀਤਰ ਵਾਸ ਕਰਤਾ ਹै । ਕਰ੍ਮ ਐਸਾ ਹोਨਾ ਚਾਹਿਏ ਜਿਸਸੇ ਸਂਸਾਰ ਕਾ ਭਲਾ ਹो, ਨ ਕਿ ਸਿਰ੍ਫ ਦਿਖਾਵੇ ਕਾ ਪਾਖਂਡ ।",
         "en": "Spiritual Insight: kbeer saaheb baahree moortipoojaa pr kraaree chot kr rhe hain | prmaatmaa kisee nirjeev ptthr men nheen, blki hr jeevit mnushy ke bheetr vaas krtaa hai | krm aisaa honaa chaahie jisse snsaar kaa bhlaa ho, n ki sirph dikhaave kaa paakhnd |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -612,8 +612,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: syaar sinh ko khaay: 'sinh' ahnkaar aur krodh kaa prteek hai, aur 'siyaar' vinmrtaa yaa vivek kaa | jb saadhk ke bheetr saatvik gun jaagte hain, to vh apne prchnd ahnkaar (sinh) ko smaapt kr detaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -701,8 +701,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: aatmaa kaa prmaatmaa se jud़naa | is aantrik jud़aav ke lie kisee baahree saadhn (suee-dhaagaa) kee aavshyktaa nheen hotee | jb hridy men eeshvr ke prti schchee lgn lgtee hai, to aatmaa svth hee us prmaatmaa se ekaakaar ho jaatee hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -790,8 +790,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: baant chle te loote: 'seedhaa maarg' snsaar kaa paarnprik maarg hai jise kaam, krodh aur lobh loot lete hain | ooght chle su ngri phoonte: 'ooght' antrmukhee saadhnaa kaa vh kthin maarg hai jo duniyaa kee nj़ron men ultaa hai | is maarg pr chlne vaalaa saadhk moksh phunch jaataa hai | jevd़ee maayaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -879,8 +879,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: jb tk mnushy baahree shor aur prshnsaa ko suntaa rhegaa, tb tk vh anhd naad nheen sun paaegaa | baahree duniyaa ke lie bhraa aur andhaa hokr hee antrmukhee huaa jaa sktaa hai, jisse jnyaan chkshu khulte hain |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -968,8 +968,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: baaraat mnushy kee ichchhaaen aur vaasnaaen hain | bhaat (bhojn) bhkti aur jnyaan kaa prteek hai | jb jnyaan jaagrt hotaa hai, to vh mnushy kee sbhee snsaaree ichchhaaon (baaraat) ko apne bheetr smaahit kr letaa hai aur surti sushumnaa men prvesh kr jaatee hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1057,8 +1057,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: choohaa (moos) mn ke bheetr kee sookshm sjgtaa hai | jb saadhk sjg hotaa hai, to vh bd़ee se bd़ee trishnaa (cheel) ko bhgaa detaa hai | atynt vinmrtaa men jb anhd naad goonjtaa hai, kbeer aatm-vibhor hokr naach uthte hain |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1146,8 +1146,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: kuaan hridy hai | paanch pnihaaree paanch jnyaanendriyaan hain aur nau naaree shreer ke nau dvaar | jb aatmjnyaan hotaa hai, to moh-maayaa kaa kuaan toot jaataa hai aur indriyaan shaant ho jaatee hain |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1235,8 +1235,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: gaay yhaan aatmaa yaa srl sty hai jo sookshm hai | athaarh haath kee poonchh jtil krmkaand aur puraan hain | mool sty srl hai, lekin insaanon ne uske peechhe krmkaandon kee lnbee poonchh jod़ dee hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1319,13 +1319,13 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "पाप करे ते हरि मिले, पाप करे ते चैन"
       },
       "deepMeaning": {
-        "hi": "यहाँ 'पाप' का अर्थ है 'पा-प' यानी 'पाना' + 'पद' (परम पद)। जो साधक उस परम पद को प्राप्त कर लेता है, उसे ही हरि मिलते हैं। कबीर साहेब संसारी पाप की नहीं, बल्कि परम पद को पाने की बात कर रहे हैं।",
-        "pb": "ਯਹਾਁ 'ਪਾਪ' ਕਾ ਅਰ੍ਥ ਹै 'ਪਾ-ਪ' ਯਾਨੀ 'ਪਾਨਾ' + 'ਪਦ' (ਪਰਮ ਪਦ) । ਜो ਸਾਧਕ ਉਸ ਪਰਮ ਪਦ ਕो ਪ੍ਰਾਪ੍ਤ ਕਰ ਲੇਤਾ ਹै, ਉਸੇ ਹੀ ਹਰਿ ਮਿਲਤੇ ਹैਂ । ਕਬੀਰ ਸਾਹੇਬ ਸਂਸਾਰੀ ਪਾਪ ਕੀ ਨਹੀਂ, ਬਲ੍ਕਿ ਪਰਮ ਪਦ ਕो ਪਾਨੇ ਕੀ ਬਾਤ ਕਰ ਰਹੇ ਹैਂ ।",
+        "hi": "यहाँ 'पाप' का अर्थ है 'पा-प' यानी 'पाना' + 'पद' (परम पद)। जो साधक उस परम पद को प्राप्त कर लेता है, उसे ही हरि मिलते हैं। सतगुरु कबीर साहेब संसारी पाप की नहीं, बल्कि परम पद को पाने की बात कर रहे हैं।",
+        "pb": "ਯਹਾਁ 'ਪਾਪ' ਕਾ ਅਰ੍ਥ ਹै 'ਪਾ-ਪ' ਯਾਨੀ 'ਪਾਨਾ' + 'ਪਦ' (ਪਰਮ ਪਦ) । ਜो ਸਾਧਕ ਉਸ ਪਰਮ ਪਦ ਕो ਪ੍ਰਾਪ੍ਤ ਕਰ ਲੇਤਾ ਹै, ਉਸੇ ਹੀ ਹਰਿ ਮਿਲਤੇ ਹैਂ । ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਂਸਾਰੀ ਪਾਪ ਕੀ ਨਹੀਂ, ਬਲ੍ਕਿ ਪਰਮ ਪਦ ਕो ਪਾਨੇ ਕੀ ਬਾਤ ਕਰ ਰਹੇ ਹैਂ ।",
         "en": "Spiritual Insight: yhaan 'paap' kaa arth hai 'paa-p' yaanee 'paanaa' + 'pd' (prm pd) | jo saadhk us prm pd ko praapt kr letaa hai, use hee hri milte hain | kbeer saaheb snsaaree paap kee nheen, blki prm pd ko paane kee baat kr rhe hain |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1413,8 +1413,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: daadur (mendhk) mnushy kee kmjor chetnaa hai aur saanp maayaa | raam-naam ke aashry se kmjor jeev bhee maayaa roopee srp ko nigl jaataa hai | eeshvr kaa sookshm naam paapon ke phaad़ ko pl bhr men nsht kr detaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1502,8 +1502,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: nirgun-niraakaar prmaatmaa kaa svroop | vh srvvyaapee chetnaa hai jise bhautik angon kee aavshyktaa nheen hai | vh binaa pairon ke bhee hr jgh maujood hai aur binaa kaanon ke bhee bhkt kee pukaar suntaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1591,8 +1591,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: oorjaa kaa kendr (moolaadhaar) neeche paataal men hai | saadhnaa se yh oorjaa oopr shsraar (ggn) kee or bdh़ne lgtee hai | yh aatmjnyaan kaa vriksh hai jismen koee maayaavee vikaar (pttaa) nheen hotaa |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1680,8 +1680,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: cheetaa chnchl mn aur vaasnaa hai | mrig saadhk kee srl aatmaa | bhkti men leen aatmaa us khoonkhaar mn ko vsh men kr letee hai | ssaa (vinmrtaa) ke aage baaj (ahnkaar) ghutne tek detaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1769,8 +1769,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: smudr aur ndiyaan snsaaree moh-maayaa hain | jb jnyaan kee agni jltee hai, to saaree vaasnaaen jlkr bhsm ho jaatee hain | jeev roopee mchhlee snsaar ke paanee ko chhod़kr dhyaan ke oonche vriksh (shsraar) pr chdh़ jaatee hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1858,8 +1858,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: jb ahnkaar mrtaa hai (murdaa), to vaastvik divy aatmaa jaagrt hokr khd़ee ho jaatee hai | snsaaree mithyaa ahnkaar (jeevtaa) bhaag jaataa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -1947,8 +1947,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: kptee saadhu (bgulaa) kevl baahree sphaaee dikhaate hain | schche snt (hns) kevl prmaatmaa ke naam roopee motee grhn krte hain | snsaaree log (kaue) jhoothe maan-smmaan kee maalaa men khush rhte hain |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -2036,8 +2036,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: ght (shreer/hridy) ke bheetr hee schchidaannd saagr (prmaatmaa) smaayaa huaa hai | jb pinglaa aur id़aa naad़ee kaa sntuln sushumnaa men hotaa hai, to saadhk prm aannd kee avsthaa men phunch jaataa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -2125,8 +2125,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: billee maayaa hai, moos jeev | vivek kee shkti se jeev maayaa ko vsh men kr letaa hai | tb chnchl mn (kuttaa) bebs hokr shaant ho jaataa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -2214,8 +2214,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: jb dhyaan dshm dvaar pr tiktaa hai, to vhaan binaa kisee baahree bhautik saadhn ke bhee aatmjnyaan kaa prm prkaash dikhaaee detaa hai | vhee schchaa snt hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -2303,8 +2303,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: mn aur buddhi shreer ke phredaar the, jinhen vikaaron ko rokne ke lie diyaa gyaa thaa | lekin jb mn khud hee vikaaron ke vsh men hokr aatmik shaanti lootne lge, to sndook khud hee ughd़ jaataa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {
@@ -2392,8 +2392,8 @@ export const ULATVASI_BATCH_4_TO_30: UlatvasiQuestion[] = [
         "en": "Spiritual Insight: murgee (vinmr saadhk) prchnd ahnkaar (baaj) ko nsht kr detee hai | jb saadhk baahree duniyaa ke lie andhaa hokr antrmukhee hotaa hai, tbhee vh prmaatmaa kaa saakshaatkaar krtaa hai |"
       },
       "kabirPhilosophy": {
-        "hi": "कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
-        "pb": "ਕਬੀਰ ਸਾਹਿਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
+        "hi": "सतगुरु कबीर साहेब की उलटबांसियां मन को सांसारिक वासनाओं से उलटकर आत्मा में स्थित करने की संजीवनी हैं।",
+        "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦੀਆਂ ਉਲਟਬਾਂਸੀਆਂ ਮਨ ਨੂੰ ਆਤਮਾ ਨਾਲ ਜੋੜਨ ਦਾ ਮਾਰਗ ਹਨ।",
         "en": "Kabir uses paradoxes to reverse outer sensory attachments into inner soul realization."
       },
       "parakhiInsight": {

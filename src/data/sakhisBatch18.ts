@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Daas kahaavan kathin hai, mai daasan ka daas. Ab to aisa hoye rahu, jyo paanv tale ki ghaas.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्ची निरभिमानता की पराकाष्ठा बताते हैं: परमात्मा का सच्चा दास कहलाना अत्यंत कठिन है, क्योंकि इसमें अहंकार को पूरी तरह गलाना पड़ता है। कबीर कहते हैं कि मैं तो भक्तों और दासों के दासों का भी दास हूँ। अब तो मेरी स्थिति ऐसी विनम्र हो गई है जैसे पैरों के नीचे दबने वाली दूब (घास), जिसे चाहे कितना भी रौंदा जाए, वह कभी किसी के प्रति क्रोध या शिकायत नहीं करती।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਦਾਸ ਬਣਨਾ ਬਹੁਤ ਔਖਾ ਹੈ। ਮੈਂ ਤਾਂ ਦਾਸਾਂ ਦੇ ਦਾਸਾਂ ਦਾ ਵੀ ਦਾਸ ਹਾਂ। ਹੁਣ ਮੇਰੀ ਹਾਲਤ ਪੈਰਾਂ ਹੇਠਲੀ ਘਾਹ ਵਰਗੀ ਹੋ ਗਈ ਹੈ, ਜੋ ਲਤਾੜੇ ਜਾਣ ਤੇ ਵੀ ਸ਼ਾਂਤ ਰਹਿੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb reveals the pinnacle of absolute humility: To truly be called a servant of the Divine is exceedingly arduous, for it requires the complete annihilation of the ego. Kabir says, "I am the humble servant of the servants of God. Now I abide like the grass beneath travelers’ feet, remaining utterly peaceful, forgiving, and resilient without complaint."',
+      hi: 'सतगुरु कबीर साहेब सच्ची निरभिमानता की पराकाष्ठा बताते हैं: परमात्मा का सच्चा दास कहलाना अत्यंत कठिन है, क्योंकि इसमें अहंकार को पूरी तरह गलाना पड़ता है। सतगुरु कबीर साहेब फरमाते हैं कि मैं तो भक्तों और दासों के दासों का भी दास हूँ। अब तो मेरी स्थिति ऐसी विनम्र हो गई है जैसे पैरों के नीचे दबने वाली दूब (घास), जिसे चाहे कितना भी रौंदा जाए, वह कभी किसी के प्रति क्रोध या शिकायत नहीं करती।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦਾ ਸੱਚਾ ਦਾਸ ਬਣਨਾ ਬਹੁਤ ਔਖਾ ਹੈ। ਮੈਂ ਤਾਂ ਦਾਸਾਂ ਦੇ ਦਾਸਾਂ ਦਾ ਵੀ ਦਾਸ ਹਾਂ। ਹੁਣ ਮੇਰੀ ਹਾਲਤ ਪੈਰਾਂ ਹੇਠਲੀ ਘਾਹ ਵਰਗੀ ਹੋ ਗਈ ਹੈ, ਜੋ ਲਤਾੜੇ ਜਾਣ ਤੇ ਵੀ ਸ਼ਾਂਤ ਰਹਿੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the pinnacle of absolute humility: To truly be called a servant of the Divine is exceedingly arduous, for it requires the complete annihilation of the ego. Satguru Kabir Saheb proclaims, "I am the humble servant of the servants of God. Now I abide like the grass beneath travelers’ feet, remaining utterly peaceful, forgiving, and resilient without complaint."',
     },
     wordMeanings: {
       hi: [
@@ -56,7 +56,7 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
       en: 'O Satguru! Shatter every trace of pride in my heart and make me the humble dust of Your holy feet. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की निरभिमानता और दास्य-भाव की पराकाष्ठा को दर्शाने वाली अमूल्य धरोहर है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की निरभिमानता और दास्य-भाव की पराकाष्ठा को दर्शाने वाली अमूल्य धरोहर है।',
       pb: 'ਇਹ ਸਾਖੀ ਨਿਮਰਤਾ ਅਤੇ ਸਹਿਣਸ਼ੀਲਤਾ ਦਾ ਉੱਤਮ ਉਦਾਹਰਣ ਹੈ।',
       en: 'This verse is a timeless masterpiece illustrating the absolute depth of spiritual humility.',
     },
@@ -64,9 +64,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
       {
         id: 'q-b18-231',
         question: {
-          hi: 'कबीर साहेब ने अपनी विनम्रता की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੀ ਨਿਮਰਤਾ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'What did Kabir Saheb compare his supreme humility to?',
+          hi: 'सतगुरु कबीर साहेब ने अपनी विनम्रता की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਆਪਣੀ ਨਿਮਰਤਾ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'What did Satguru Kabir Saheb compare his supreme humility to?',
         },
         options: {
           hi: ['पैरों तले दबने वाली घास से', 'ऊंचे पर्वत से', 'लोहे से', 'सोने के मुकुट से'],
@@ -101,9 +101,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Daya kaun par keejiye, ka par nirday hoy. Saayi ke sab jeev hai, keeri kunjar doy.',
     bhavarth: {
-      hi: 'कबीर साहेब सर्व-प्राणी समभाव और अहिंसा का उपदेश देते हैं: हम किस पर दया करें और किसके प्रति निर्दयी व कठोर बनें? क्योंकि एक छोटी सी चींटी (कीरी) से लेकर विशालकाय हाथी (कुंजर) तक संसार के समस्त जीव उस एक ही परमात्मा की संताने हैं और सबमें वही एक चेतना वास कर रही है। अतः प्रत्येक जीव के प्रति असीम करुणा व प्रेम रखें।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸੀਂ ਕਿਸ ਉੱਤੇ ਦਇਆ ਕਰੀਏ ਤੇ ਕਿਸ ਨਾਲ ਬੇਰਹਿਮੀ? ਇੱਕ ਨਿੱਕੀ ਜਿਹੀ ਕੀੜੀ ਤੋਂ ਲੈ ਕੇ ਵੱਡੇ ਹਾਥੀ ਤੱਕ ਸਾਰੇ ਜੀਵ ਉਸ ਇੱਕ ਪਰਮਾਤਮਾ ਦੇ ਹੀ ਬਣਾਏ ਹੋਏ ਹਨ। ਇਸ ਲਈ ਸਭ ਜੀਵਾਂ ਤੇ ਦਇਆ ਕਰੋ।',
-      en: 'Kabir Saheb preaches universal compassion and non-violence: Upon whom shall we show selective mercy, and toward whom could we ever be cruel? From the tiniest ant (Keeri) to the mighty elephant (Kunjar), every living creature belongs to the same Supreme Creator, animated by the same divine spark. Therefore, practice unconditional kindness toward all life.',
+      hi: 'सतगुरु कबीर साहेब सर्व-प्राणी समभाव और अहिंसा का उपदेश देते हैं: हम किस पर दया करें और किसके प्रति निर्दयी व कठोर बनें? क्योंकि एक छोटी सी चींटी (कीरी) से लेकर विशालकाय हाथी (कुंजर) तक संसार के समस्त जीव उस एक ही परमात्मा की संताने हैं और सबमें वही एक चेतना वास कर रही है। अतः प्रत्येक जीव के प्रति असीम करुणा व प्रेम रखें।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸੀਂ ਕਿਸ ਉੱਤੇ ਦਇਆ ਕਰੀਏ ਤੇ ਕਿਸ ਨਾਲ ਬੇਰਹਿਮੀ? ਇੱਕ ਨਿੱਕੀ ਜਿਹੀ ਕੀੜੀ ਤੋਂ ਲੈ ਕੇ ਵੱਡੇ ਹਾਥੀ ਤੱਕ ਸਾਰੇ ਜੀਵ ਉਸ ਇੱਕ ਪਰਮਾਤਮਾ ਦੇ ਹੀ ਬਣਾਏ ਹੋਏ ਹਨ। ਇਸ ਲਈ ਸਭ ਜੀਵਾਂ ਤੇ ਦਇਆ ਕਰੋ।',
+      en: 'Satguru Kabir Saheb preaches universal compassion and non-violence: Upon whom shall we show selective mercy, and toward whom could we ever be cruel? From the tiniest ant (Keeri) to the mighty elephant (Kunjar), every living creature belongs to the same Supreme Creator, animated by the same divine spark. Therefore, practice unconditional kindness toward all life.',
     },
     wordMeanings: {
       hi: [
@@ -140,7 +140,7 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
       en: 'O Ocean of Mercy Satguru! Fill my heart with unconditional kindness and universal love for all creation. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की जीव-दया और अहिंसा की आधारशिला है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की जीव-दया और अहिंसा की आधारशिला है।',
       pb: 'ਇਹ ਸਾਖੀ ਜੀਵ-ਦਇਆ ਅਤੇ ਅਹਿੰਸਾ ਦਾ ਮਹਾਨ ਸੰਦੇਸ਼ ਹੈ।',
       en: 'This verse is a cornerstone of Kabir’s teaching on universal compassion and reverence for all life.',
     },
@@ -185,9 +185,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Deepak deeya tel bhari, baati dayee aghatt. Poora kiya bisaahana, bahuri na aanvo hatt.',
     bhavarth: {
-      hi: 'कबीर साहेब मोक्ष और गुरु-कृपा की पूर्णता का वर्णन करते हैं: सतगुरु ने प्रेम रूपी तेल से भरकर ज्ञान का ऐसा पावन दीपक मुझे दिया, जिसमें सत्यनाम रूपी कभी न घटने वाली (अघट्ट) अखंड बाती लगा दी। इस दिव्य प्रकाश में मैंने संसार के सारे कर्म-लेखा और आध्यात्मिक खरीदारी (बिसाहना) पूरी कर ली, अब मुझे दोबारा इस संसार रूपी हाट (जन्म-मरण के बाजार) में नहीं आना पड़ेगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਨੇ ਪ੍ਰੇਮ ਦਾ ਤੇਲ ਭਰ ਕੇ ਅਤੇ ਕਦੇ ਨਾ ਮੁੱਕਣ ਵਾਲੀ ਨਾਮ ਦੀ ਬੱਤੀ ਲਾ ਕੇ ਗਿਆਨ ਦਾ ਦੀਵਾ ਜਗਾ ਦਿੱਤਾ। ਇਸ ਚਾਨਣ ਵਿੱਚ ਮੈਂ ਭਗਤੀ ਦੀ ਖਰੀਦਦਾਰੀ ਪੂਰੀ ਕਰ ਲਈ ਹੈ, ਹੁਣ ਮੈਨੂੰ ਮੁੜ ਕੇ ਇਸ ਸੰਸਾਰ ਦੇ ਬਾਜ਼ਾਰ (ਜਨਮ-ਮਰਨ) ਵਿੱਚ ਨਹੀਂ ਆਉਣਾ ਪਵੇਗਾ।',
-      en: 'Kabir Saheb celebrates the attainment of eternal liberation through the Master: The Satguru gifted me the lamp of divine wisdom filled with the oil of love, fitted with the inexhaustible wick of the True Name. In this blazing radiance, I have completed all spiritual transactions and settled the karmic account—never again shall I return to the worldly marketplace of rebirth.',
+      hi: 'सतगुरु कबीर साहेब मोक्ष और गुरु-कृपा की पूर्णता का वर्णन करते हैं: सतगुरु ने प्रेम रूपी तेल से भरकर ज्ञान का ऐसा पावन दीपक मुझे दिया, जिसमें सत्यनाम रूपी कभी न घटने वाली (अघट्ट) अखंड बाती लगा दी। इस दिव्य प्रकाश में मैंने संसार के सारे कर्म-लेखा और आध्यात्मिक खरीदारी (बिसाहना) पूरी कर ली, अब मुझे दोबारा इस संसार रूपी हाट (जन्म-मरण के बाजार) में नहीं आना पड़ेगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਤਿਗੁਰੂ ਨੇ ਪ੍ਰੇਮ ਦਾ ਤੇਲ ਭਰ ਕੇ ਅਤੇ ਕਦੇ ਨਾ ਮੁੱਕਣ ਵਾਲੀ ਨਾਮ ਦੀ ਬੱਤੀ ਲਾ ਕੇ ਗਿਆਨ ਦਾ ਦੀਵਾ ਜਗਾ ਦਿੱਤਾ। ਇਸ ਚਾਨਣ ਵਿੱਚ ਮੈਂ ਭਗਤੀ ਦੀ ਖਰੀਦਦਾਰੀ ਪੂਰੀ ਕਰ ਲਈ ਹੈ, ਹੁਣ ਮੈਨੂੰ ਮੁੜ ਕੇ ਇਸ ਸੰਸਾਰ ਦੇ ਬਾਜ਼ਾਰ (ਜਨਮ-ਮਰਨ) ਵਿੱਚ ਨਹੀਂ ਆਉਣਾ ਪਵੇਗਾ।',
+      en: 'Satguru Kabir Saheb celebrates the attainment of eternal liberation through the Master: The Satguru gifted me the lamp of divine wisdom filled with the oil of love, fitted with the inexhaustible wick of the True Name. In this blazing radiance, I have completed all spiritual transactions and settled the karmic account—never again shall I return to the worldly marketplace of rebirth.',
     },
     wordMeanings: {
       hi: [
@@ -267,9 +267,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Aaya tha kis kaam ko, tu soya chaadar taan. Soorat sambhaal ye gaafil, apna aap pehchaan.',
     bhavarth: {
-      hi: 'कबीर साहेब अज्ञानी व लापरवाह जीव को जगाते हुए कहते हैं: अरे गाफिल (बेखबर) इंसान! तू संसार में किस महान उद्देश्य (आत्म-कल्याण व प्रभु-प्राप्ति) के लिए आया था, और यहाँ आकर मोह-माया की चादर तानकर प्रमाद की गहरी नींद में सो गया? अपनी सुरति (चेतना) को संभाल, इस अज्ञान से जाग और अपने वास्तविक अमर आत्म-स्वरूप को पहचान!',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਹੇ ਬੇਖਬਰ ਜੀਵ! ਤੂੰ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਣ ਆਇਆ ਸੀ ਪਰ ਇੱਥੇ ਮਾਇਆ ਦੀ ਚਾਦਰ ਤਾਣ ਕੇ ਸੌਂ ਗਿਆ ਹੈਂ। ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਸੰਭਾਲ ਅਤੇ ਆਪਣੇ ਅਸਲ ਆਤਮਿਕ ਰੂਪ ਨੂੰ ਪਛਾਣ।',
-      en: 'Kabir Saheb sounds a piercing awakening call: O heedless mortal! For what supreme purpose (divine realization) did you take birth in this world, and how have you fallen fast asleep beneath the blanket of worldly illusion? Gather your scattered consciousness, awaken from this stupor, and realize your true immortal Soul!',
+      hi: 'सतगुरु कबीर साहेब अज्ञानी व लापरवाह जीव को जगाते हुए कहते हैं: अरे गाफिल (बेखबर) इंसान! तू संसार में किस महान उद्देश्य (आत्म-कल्याण व प्रभु-प्राप्ति) के लिए आया था, और यहाँ आकर मोह-माया की चादर तानकर प्रमाद की गहरी नींद में सो गया? अपनी सुरति (चेतना) को संभाल, इस अज्ञान से जाग और अपने वास्तविक अमर आत्म-स्वरूप को पहचान!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਹੇ ਬੇਖਬਰ ਜੀਵ! ਤੂੰ ਪ੍ਰਭੂ ਨੂੰ ਮਿਲਣ ਆਇਆ ਸੀ ਪਰ ਇੱਥੇ ਮਾਇਆ ਦੀ ਚਾਦਰ ਤਾਣ ਕੇ ਸੌਂ ਗਿਆ ਹੈਂ। ਆਪਣੀ ਸੁਰਤ ਨੂੰ ਸੰਭਾਲ ਅਤੇ ਆਪਣੇ ਅਸਲ ਆਤਮਿਕ ਰੂਪ ਨੂੰ ਪਛਾਣ।',
+      en: 'Satguru Kabir Saheb sounds a piercing awakening call: O heedless mortal! For what supreme purpose (divine realization) did you take birth in this world, and how have you fallen fast asleep beneath the blanket of worldly illusion? Gather your scattered consciousness, awaken from this stupor, and realize your true immortal Soul!',
     },
     wordMeanings: {
       hi: [
@@ -314,9 +314,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
       {
         id: 'q-b18-234',
         question: {
-          hi: 'कबीर साहेब "गाफील" मनुष्य को क्या करने का आदेश देते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਬੇਖਬਰ ਜੀਵ ਨੂੰ ਕੀ ਕਰਨ ਦਾ ਹੁਕਮ ਦਿੰਦੇ ਹਨ?',
-          en: 'What does Kabir Saheb command the heedless person to do?',
+          hi: 'सतगुरु कबीर साहेब "गाफील" मनुष्य को क्या करने का आदेश देते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬੇਖਬਰ ਜੀਵ ਨੂੰ ਕੀ ਕਰਨ ਦਾ ਹੁਕਮ ਦਿੰਦੇ ਹਨ?',
+          en: 'What does Satguru Kabir Saheb command the heedless person to do?',
         },
         options: {
           hi: ['सुरति संभालकर अपने आत्म-स्वरूप को पहचानना', 'और ज्यादा सोना', 'धन कमाना', 'संसार में घूमना'],
@@ -351,9 +351,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Deetha hai to kas kahu, kahu to ko patiyaay. Hari jaisa taisa rahe, tu harshi harshi gun gaay.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा के प्रत्यक्ष दर्शन की अनिर्वचनीयता का वर्णन करते हैं: यदि मैंने उस परम तत्व को देख भी लिया है, तो उसे शब्दों में कैसे कहूँ? क्योंकि वह वाणी की सीमा से परे है। और यदि कहूँ भी, तो इस अज्ञानी संसार में कौन विश्वास करेगा? परमात्मा जैसा अलौकिक व अनुपम है, वैसा ही बना रहे; तू तो केवल आनंदित होकर (हर्षित होकर) प्रेमपूर्वक उसके पावन गुणों का गान कर।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਮੈਂ ਪ੍ਰਭੂ ਦਾ ਦੀਦਾਰ ਕਰ ਵੀ ਲਿਆ ਹੈ ਤਾਂ ਉਸਨੂੰ ਸ਼ਬਦਾਂ ਵਿੱਚ ਕਿਵੇਂ ਦੱਸਾਂ? ਅਤੇ ਜੇ ਦੱਸਾਂ ਵੀ ਤਾਂ ਕੌਣ ਯਕੀਨ ਕਰੇਗਾ? ਪ੍ਰਭੂ ਅਪਰੰਪਾਰ ਹੈ, ਤੂੰ ਤਾਂ ਸਿਰਫ ਖੁਸ਼ ਹੋ ਕੇ ਉਸਦੇ ਗੁਣ ਗਾ।',
-      en: 'Kabir Saheb describes the inexpressible nature of direct spiritual realization: If I have beheld the Supreme Divine, how can I describe it in words? And even if I attempt to speak, who in this skeptical world will comprehend or believe? Let the Divine remain as boundless as It is—rejoice with overflowing bliss and lovingly sing of Your Lord.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा के प्रत्यक्ष दर्शन की अनिर्वचनीयता का वर्णन करते हैं: यदि मैंने उस परम तत्व को देख भी लिया है, तो उसे शब्दों में कैसे कहूँ? क्योंकि वह वाणी की सीमा से परे है। और यदि कहूँ भी, तो इस अज्ञानी संसार में कौन विश्वास करेगा? परमात्मा जैसा अलौकिक व अनुपम है, वैसा ही बना रहे; तू तो केवल आनंदित होकर (हर्षित होकर) प्रेमपूर्वक उसके पावन गुणों का गान कर।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਮੈਂ ਪ੍ਰਭੂ ਦਾ ਦੀਦਾਰ ਕਰ ਵੀ ਲਿਆ ਹੈ ਤਾਂ ਉਸਨੂੰ ਸ਼ਬਦਾਂ ਵਿੱਚ ਕਿਵੇਂ ਦੱਸਾਂ? ਅਤੇ ਜੇ ਦੱਸਾਂ ਵੀ ਤਾਂ ਕੌਣ ਯਕੀਨ ਕਰੇਗਾ? ਪ੍ਰਭੂ ਅਪਰੰਪਾਰ ਹੈ, ਤੂੰ ਤਾਂ ਸਿਰਫ ਖੁਸ਼ ਹੋ ਕੇ ਉਸਦੇ ਗੁਣ ਗਾ।',
+      en: 'Satguru Kabir Saheb describes the inexpressible nature of direct spiritual realization: If I have beheld the Supreme Divine, how can I describe it in words? And even if I attempt to speak, who in this skeptical world will comprehend or believe? Let the Divine remain as boundless as It is—rejoice with overflowing bliss and lovingly sing of Your Lord.',
     },
     wordMeanings: {
       hi: [
@@ -435,9 +435,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Dil ka marham na mila, jo mila so garzi. Kah kabeer aasmaan phata, kyo-kar seeve darzi.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार के स्वार्थी स्वभाव और अंतःकरण के सच्चे वैद (सतगुरु) की महत्ता बताते हैं: मुझे आत्मा के अंतर्मन का सच्चा मर्म जानने वाला और घावों पर मरहम लगाने वाला निस्वार्थ प्रेमी नहीं मिला, जो भी मिला वह केवल अपने स्वार्थ (गर्ज) से ही जुड़ा था। जब आकाश ही फट जाए, तो कोई साधारण दर्जी उसे कैसे सी सकता है? अर्थात् जब आत्मा का विराट संकट हो, तो केवल पूर्ण सतगुरु ही उसका उद्धार कर सकते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਨੂੰ ਦਿਲ ਦਾ ਸੱਚਾ ਦਰਦੀ ਤੇ ਮਰਹਮ ਲਾਉਣ ਵਾਲਾ ਨਹੀਂ ਮਿਲਿਆ, ਜੋ ਵੀ ਮਿਲਿਆ ਉਹ ਆਪਣੇ ਮਤਲਬ ਲਈ ਮਿਲਿਆ। ਜੇ ਅਸਮਾਨ ਹੀ ਪਾਟ ਜਾਵੇ ਤਾਂ ਦਰਜ਼ੀ ਕਿਵੇਂ ਸੀਵੇਗਾ? ਭਾਵ ਆਤਮਾ ਦਾ ਕਲਿਆਣ ਸਿਰਫ ਪੂਰਾ ਸਤਿਗੁਰੂ ਹੀ ਕਰ ਸਕਦਾ ਹੈ।',
-      en: 'Kabir Saheb observes the transactional nature of the worldly realm: I found no true selfless physician to heal the deep ache of my soul; whoever came was bound by selfish motives (Garzi). If the sky itself were to tear open, how could an ordinary tailor stitch it? Likewise, only a fully enlightened Satguru can mend the vast existential rupture of the soul.',
+      hi: 'सतगुरु कबीर साहेब संसार के स्वार्थी स्वभाव और अंतःकरण के सच्चे वैद (सतगुरु) की महत्ता बताते हैं: मुझे आत्मा के अंतर्मन का सच्चा मर्म जानने वाला और घावों पर मरहम लगाने वाला निस्वार्थ प्रेमी नहीं मिला, जो भी मिला वह केवल अपने स्वार्थ (गर्ज) से ही जुड़ा था। जब आकाश ही फट जाए, तो कोई साधारण दर्जी उसे कैसे सी सकता है? अर्थात् जब आत्मा का विराट संकट हो, तो केवल पूर्ण सतगुरु ही उसका उद्धार कर सकते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਨੂੰ ਦਿਲ ਦਾ ਸੱਚਾ ਦਰਦੀ ਤੇ ਮਰਹਮ ਲਾਉਣ ਵਾਲਾ ਨਹੀਂ ਮਿਲਿਆ, ਜੋ ਵੀ ਮਿਲਿਆ ਉਹ ਆਪਣੇ ਮਤਲਬ ਲਈ ਮਿਲਿਆ। ਜੇ ਅਸਮਾਨ ਹੀ ਪਾਟ ਜਾਵੇ ਤਾਂ ਦਰਜ਼ੀ ਕਿਵੇਂ ਸੀਵੇਗਾ? ਭਾਵ ਆਤਮਾ ਦਾ ਕਲਿਆਣ ਸਿਰਫ ਪੂਰਾ ਸਤਿਗੁਰੂ ਹੀ ਕਰ ਸਕਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb observes the transactional nature of the worldly realm: I found no true selfless physician to heal the deep ache of my soul; whoever came was bound by selfish motives (Garzi). If the sky itself were to tear open, how could an ordinary tailor stitch it? Likewise, only a fully enlightened Satguru can mend the vast existential rupture of the soul.',
     },
     wordMeanings: {
       hi: [
@@ -474,7 +474,7 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
       en: 'O Supreme Healer Satguru! You alone possess the soothing balm for my soul’s wounds; heal me with Your love. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी सांसारिक स्वार्थ का अनावरण कर केवल सद्गुरु को ही आत्मा का वास्तविक रक्षक सिद्ध करती है।',
+      hi: 'यह साखी सांसारिक स्वार्थ का अनावरण कर केवल सतगुरु को ही आत्मा का वास्तविक रक्षक सिद्ध करती है।',
       pb: 'ਇਹ ਸਾਖੀ ਸਤਿਗੁਰੂ ਦੀ ਅਨਮੋਲ ਸ਼ਰਨ ਦੀ ਮਹਿਮਾ ਦੱਸਦੀ ਹੈ।',
       en: 'This verse contrasts the self-interest of worldly mortals with the infinite, healing grace of the Satguru.',
     },
@@ -519,9 +519,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Dukh lene jaavai nahi, aavai aacha booch. Sukh ka pehra hoyga, dukh karega kooch.',
     bhavarth: {
-      hi: 'कबीर साहेब कर्म-विधान और समय के चक्र को समझाते हैं: कोई भी मनुष्य जानबूझकर दुःख मांगने या लेने नहीं जाता, वह तो प्रारब्ध और कर्मों के प्रभाव से अचानक (आचा-बूच) आ धमकता है। परंतु साधक को धीरज रखना चाहिए; जैसे रात के बाद सवेरा होता है, वैसे ही जब प्रभु-कृपा से सुख व शांति का पहरा होगा, तो सारा दुःख स्वतः कूच (प्रस्थान) कर जाएगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕੋਈ ਜਾਣਬੁੱਝ ਕੇ ਦੁੱਖ ਨਹੀਂ ਲੈਂਦਾ, ਦੁੱਖ ਤਾਂ ਕਰਮਾਂ ਅਨੁਸਾਰ ਅਚਾਨਕ ਆ ਜਾਂਦਾ ਹੈ। ਪਰ ਧੀਰਜ ਰੱਖੋ, ਜਦੋਂ ਪ੍ਰਭੂ ਕਿਰਪਾ ਨਾਲ ਸੁੱਖ ਦਾ ਸਮਾਂ ਆਵੇਗਾ ਤਾਂ ਦੁੱਖ ਆਪਣੇ ਆਪ ਦੂਰ ਹੋ ਜਾਵੇਗਾ।',
-      en: 'Kabir Saheb explains the cosmic rhythm of karma and time: No one seeks out sorrow willingly; adversity arrives suddenly and uninvited due to past karma. Yet, the spiritual seeker must hold unshakeable patience: Just as dawn follows night, when the divine watch of joy and grace arrives, sorrow will swiftly pack its bags and depart.',
+      hi: 'सतगुरु कबीर साहेब कर्म-विधान और समय के चक्र को समझाते हैं: कोई भी मनुष्य जानबूझकर दुःख मांगने या लेने नहीं जाता, वह तो प्रारब्ध और कर्मों के प्रभाव से अचानक (आचा-बूच) आ धमकता है। परंतु साधक को धीरज रखना चाहिए; जैसे रात के बाद सवेरा होता है, वैसे ही जब प्रभु-कृपा से सुख व शांति का पहरा होगा, तो सारा दुःख स्वतः कूच (प्रस्थान) कर जाएगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕੋਈ ਜਾਣਬੁੱਝ ਕੇ ਦੁੱਖ ਨਹੀਂ ਲੈਂਦਾ, ਦੁੱਖ ਤਾਂ ਕਰਮਾਂ ਅਨੁਸਾਰ ਅਚਾਨਕ ਆ ਜਾਂਦਾ ਹੈ। ਪਰ ਧੀਰਜ ਰੱਖੋ, ਜਦੋਂ ਪ੍ਰਭੂ ਕਿਰਪਾ ਨਾਲ ਸੁੱਖ ਦਾ ਸਮਾਂ ਆਵੇਗਾ ਤਾਂ ਦੁੱਖ ਆਪਣੇ ਆਪ ਦੂਰ ਹੋ ਜਾਵੇਗਾ।',
+      en: 'Satguru Kabir Saheb explains the cosmic rhythm of karma and time: No one seeks out sorrow willingly; adversity arrives suddenly and uninvited due to past karma. Yet, the spiritual seeker must hold unshakeable patience: Just as dawn follows night, when the divine watch of joy and grace arrives, sorrow will swiftly pack its bags and depart.',
     },
     wordMeanings: {
       hi: [
@@ -601,9 +601,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Duniya ke dhokhe mua, chal kutumb ki kaani. Tab kul ki kya laaj hai, jab le dhara pasaani.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार के मिथ्या बंधनों पर कड़ा प्रहार करते हैं: यह जीव दुनिया के धोखे और परिवार-कुटुंब की झूठी लोक-लाज (कानि) में पड़कर अपना अमूल्य जीवन गंवा देता है और मृत्यु को प्राप्त हो जाता है। जब अंत समय में यह शरीर श्मशान की भूमि पर लिटा दिया जाता है (धरा पसानि), तब उस कुल, वंश और परिवार की प्रतिष्ठा किसी काम नहीं आती। केवल प्रभु-भक्ति ही साथ जाती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਪਰਿਵਾਰ ਦੀ ਝੂਠੀ ਇੱਜ਼ਤ ਅਤੇ ਲੋਕ-ਲਾਜ ਦੇ ਚੱਕਰ ਵਿੱਚ ਫਸ ਕੇ ਆਪਣਾ ਜੀਵਨ ਬਰਬਾਦ ਕਰ ਲੈਂਦਾ ਹੈ। ਪਰ ਜਦੋਂ ਮੌਤ ਤੋਂ ਬਾਅਦ ਸਰੀਰ ਨੂੰ ਮੜ੍ਹੀਆਂ ਵਿੱਚ ਲੰਮਾ ਪਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਉਸ ਕੁਲ ਦੀ ਕੋਈ ਲਾਜ ਕੰਮ ਨਹੀਂ ਆਉਂਦੀ।',
-      en: 'Kabir Saheb shatters the illusion of worldly reputation: The soul wastes its priceless life entangled in worldly deceptions and the social expectations (Kaani) of family and clan. But when the lifeless body is laid flat upon the burning ground (Dhara Pasaani), of what use is that family prestige or worldly pride? Only the soul’s devotion endures.',
+      hi: 'सतगुरु कबीर साहेब संसार के मिथ्या बंधनों पर कड़ा प्रहार करते हैं: यह जीव दुनिया के धोखे और परिवार-कुटुंब की झूठी लोक-लाज (कानि) में पड़कर अपना अमूल्य जीवन गंवा देता है और मृत्यु को प्राप्त हो जाता है। जब अंत समय में यह शरीर श्मशान की भूमि पर लिटा दिया जाता है (धरा पसानि), तब उस कुल, वंश और परिवार की प्रतिष्ठा किसी काम नहीं आती। केवल प्रभु-भक्ति ही साथ जाती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਪਰਿਵਾਰ ਦੀ ਝੂਠੀ ਇੱਜ਼ਤ ਅਤੇ ਲੋਕ-ਲਾਜ ਦੇ ਚੱਕਰ ਵਿੱਚ ਫਸ ਕੇ ਆਪਣਾ ਜੀਵਨ ਬਰਬਾਦ ਕਰ ਲੈਂਦਾ ਹੈ। ਪਰ ਜਦੋਂ ਮੌਤ ਤੋਂ ਬਾਅਦ ਸਰੀਰ ਨੂੰ ਮੜ੍ਹੀਆਂ ਵਿੱਚ ਲੰਮਾ ਪਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਉਸ ਕੁਲ ਦੀ ਕੋਈ ਲਾਜ ਕੰਮ ਨਹੀਂ ਆਉਂਦੀ।',
+      en: 'Satguru Kabir Saheb shatters the illusion of worldly reputation: The soul wastes its priceless life entangled in worldly deceptions and the social expectations (Kaani) of family and clan. But when the lifeless body is laid flat upon the burning ground (Dhara Pasaani), of what use is that family prestige or worldly pride? Only the soul’s devotion endures.',
     },
     wordMeanings: {
       hi: [
@@ -683,9 +683,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Durbal ko na sataaiye, ja ki moti haay. Bina jeev ki shvaas se, loh bhasam ho jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब निर्बलों पर अत्याचार न करने की गंभीर चेतावनी देते हैं: किसी भी असहाय, गरीब और कमजोर (दुर्बल) व्यक्ति को कभी नहीं सताना चाहिए, क्योंकि उसके हृदय से निकली हुई आह (हाय) अत्यंत विनाशकारी होती है। देखो, लोहार की धौंकनी जो केवल निर्जीव (मरे हुए पशु के) चर्म से बनी होती है, उसकी श्वास (हवा) से भी कठोर लोहा जलकर भस्म हो जाता है; तो फिर जीवित दुखी इंसान की आह क्या अनर्थ नहीं कर सकती!',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕਿਸੇ ਗਰੀਬ ਅਤੇ ਕਮਜ਼ੋਰ ਨੂੰ ਕਦੇ ਨਾ ਤੰਗ ਕਰੋ, ਕਿਉਂਕਿ ਉਸਦੀ ਹਾਹ ਬਹੁਤ ਭਾਰੀ ਹੁੰਦੀ ਹੈ। ਜਿਵੇਂ ਲੁਹਾਰ ਦੀ ਮਰੀ ਹੋਈ ਖੱਲ ਦੀ ਧੌਂਕਣੀ ਦੀ ਹਵਾ ਨਾਲ ਪੱਕਾ ਲੋਹਾ ਵੀ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਮਜ਼ਲੂਮ ਦੀ ਹਾਹ ਜ਼ਾਲਮ ਦਾ ਸਰਵਨਾਸ਼ ਕਰ ਦਿੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb issues a profound warning against oppressing the weak: Never torment the fragile, the poor, or the helpless, for their silent sigh of pain carries immense, devastating force. Behold: the blacksmith’s bellows made merely from the lifeless hide of a dead animal breathes air so fierce that it incinerates solid iron into ash—what destruction, then, might the sorrowful cry of a living oppressed soul unleash!',
+      hi: 'सतगुरु कबीर साहेब निर्बलों पर अत्याचार न करने की गंभीर चेतावनी देते हैं: किसी भी असहाय, गरीब और कमजोर (दुर्बल) व्यक्ति को कभी नहीं सताना चाहिए, क्योंकि उसके हृदय से निकली हुई आह (हाय) अत्यंत विनाशकारी होती है। देखो, लोहार की धौंकनी जो केवल निर्जीव (मरे हुए पशु के) चर्म से बनी होती है, उसकी श्वास (हवा) से भी कठोर लोहा जलकर भस्म हो जाता है; तो फिर जीवित दुखी इंसान की आह क्या अनर्थ नहीं कर सकती!',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਕਿਸੇ ਗਰੀਬ ਅਤੇ ਕਮਜ਼ੋਰ ਨੂੰ ਕਦੇ ਨਾ ਤੰਗ ਕਰੋ, ਕਿਉਂਕਿ ਉਸਦੀ ਹਾਹ ਬਹੁਤ ਭਾਰੀ ਹੁੰਦੀ ਹੈ। ਜਿਵੇਂ ਲੁਹਾਰ ਦੀ ਮਰੀ ਹੋਈ ਖੱਲ ਦੀ ਧੌਂਕਣੀ ਦੀ ਹਵਾ ਨਾਲ ਪੱਕਾ ਲੋਹਾ ਵੀ ਸੜ ਕੇ ਸੁਆਹ ਹੋ ਜਾਂਦਾ ਹੈ, ਤਿਵੇਂ ਮਜ਼ਲੂਮ ਦੀ ਹਾਹ ਜ਼ਾਲਮ ਦਾ ਸਰਵਨਾਸ਼ ਕਰ ਦਿੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb issues a profound warning against oppressing the weak: Never torment the fragile, the poor, or the helpless, for their silent sigh of pain carries immense, devastating force. Behold: the blacksmith’s bellows made merely from the lifeless hide of a dead animal breathes air so fierce that it incinerates solid iron into ash—what destruction, then, might the sorrowful cry of a living oppressed soul unleash!',
     },
     wordMeanings: {
       hi: [
@@ -767,9 +767,9 @@ export const SAKHIS_BATCH_18: Sakhi[] = [
     },
     transliteration: 'Ek boond se sab kiya, nar naari ka kaam. So tu antar khoji le, sakal vyaapak raam.',
     bhavarth: {
-      hi: 'कबीर साहेब सृष्टि के मूल स्रोत और ईश्वर की सर्वव्यापकता का ज्ञान देते हैं: उस एक ही परम शक्ति ने एक ही बूंद (मूल तत्व) से समस्त नर और नारी की सुंदर रचना की है। सबमें वही एक जीवन-तत्व प्रवाहित हो रहा है। अरे जीव! तू उस सर्वव्यापी परमात्मा (राम) को बाहर मंदिरों या जंगलों में मत ढूंढ, उसे अपने ही अंतःकरण में खोज ले, वह तेरे भीतर ही विराजमान है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਸ ਇੱਕੋ ਪ੍ਰਭੂ ਨੇ ਇੱਕੋ ਬੂੰਦ (ਤੱਤ) ਤੋਂ ਸਾਰੇ ਨਰ-ਨਾਰੀ ਦੀ ਰਚਨਾ ਕੀਤੀ ਹੈ। ਉਸ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਭੂ ਨੂੰ ਬਾਹਰ ਲੱਭਣ ਦੀ ਬਜਾਏ ਆਪਣੇ ਅੰਦਰ ਹੀ ਖੋਜੋ, ਉਹ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the singular origin of all life and the omnipresence of the Divine: From a single cosmic drop, the Creator fashioned the entire diversity of men and women. That all-pervading Divine Reality (Ram) is not hidden in external shrines; search deep within your own inner heart, for It dwells as your very life-breath.',
+      hi: 'सतगुरु कबीर साहेब सृष्टि के मूल स्रोत और ईश्वर की सर्वव्यापकता का ज्ञान देते हैं: उस एक ही परम शक्ति ने एक ही बूंद (मूल तत्व) से समस्त नर और नारी की सुंदर रचना की है। सबमें वही एक जीवन-तत्व प्रवाहित हो रहा है। अरे जीव! तू उस सर्वव्यापी परमात्मा (राम) को बाहर मंदिरों या जंगलों में मत ढूंढ, उसे अपने ही अंतःकरण में खोज ले, वह तेरे भीतर ही विराजमान है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਸ ਇੱਕੋ ਪ੍ਰਭੂ ਨੇ ਇੱਕੋ ਬੂੰਦ (ਤੱਤ) ਤੋਂ ਸਾਰੇ ਨਰ-ਨਾਰੀ ਦੀ ਰਚਨਾ ਕੀਤੀ ਹੈ। ਉਸ ਸਰਬ-ਵਿਆਪਕ ਪ੍ਰਭੂ ਨੂੰ ਬਾਹਰ ਲੱਭਣ ਦੀ ਬਜਾਏ ਆਪਣੇ ਅੰਦਰ ਹੀ ਖੋਜੋ, ਉਹ ਤੁਹਾਡੇ ਹਿਰਦੇ ਵਿੱਚ ਵੱਸਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the singular origin of all life and the omnipresence of the Divine: From a single cosmic drop, the Creator fashioned the entire diversity of men and women. That all-pervading Divine Reality (Ram) is not hidden in external shrines; search deep within your own inner heart, for It dwells as your very life-breath.',
     },
     wordMeanings: {
       hi: [

@@ -387,7 +387,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     title: { hi: 'सतगुरु कबीर दिव्य दर्शन', pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਦਿਵਯ ਦਰਸ਼ਨ', en: 'Satguru Divine Darshan' },
     description: {
       hi: 'सतगुरु कबीर साहेब का अलौकिक ध्यान कक्ष, स्तुति व पावन आरती दर्शन।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਦਿਵਯ ਧਿਆਨ ਕਮਰਾ, ਉਸਤਤ ਤੇ ਦਰਸ਼ਨ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਦਿਵਯ ਧਿਆਨ ਕਮਰਾ, ਉਸਤਤ ਤੇ ਦਰਸ਼ਨ।',
       en: 'Sacred Darshan sanctuary with devotional contemplation & chants.',
     },
     actionLabel: { hi: 'दर्शन करें', pb: 'ਦਰਸ਼ਨ ਕਰੋ', en: 'Open Darshan' },
@@ -824,7 +824,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     title: { hi: 'शब्द-अमृत कोश (संधुक्कड़ी)', pb: 'ਸ਼ਬਦ-ਅੰਮ੍ਰਿਤ ਕੋਸ਼', en: 'Shabd-Amrit Kosha' },
     description: {
       hi: 'सतगुरु कबीर साहेब की वाणी के गूढ़ संधुक्कड़ी व यौगिक शब्दों का कोश।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਬਾਣੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਦਾ ਕੋਸ਼।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਦੇ ਗੂੜ੍ਹ ਸ਼ਬਦਾਂ ਦਾ ਕੋਸ਼।',
       en: 'Authoritative lexicon of archaic Sandhukkari & yogic terms.',
     },
     actionLabel: { hi: 'शब्दकोश खोलें', pb: 'ਸ਼ਬਦਕੋਸ਼ ਖੋਲ੍ਹੋ', en: 'Open Kosha' },
@@ -925,7 +925,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     kicker: { hi: 'ज्ञान परीक्षा', pb: 'ਗਿਆਨ ਪ੍ਰੀਖਿਆ', en: 'Spiritual Quiz' },
     title: { hi: 'कबीर ज्ञान प्रश्नोत्तरी', pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ', en: 'Kabir Gyan Quiz' },
     description: {
-      hi: 'सद्गुरु कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व प्रमाण-पत्र पाएं।',
+      hi: 'सतगुरु कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व प्रमाण-पत्र पाएं।',
       pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਦਿਓ ਤੇ ਸਰਟੀਫਿਕੇਟ ਪਾਓ।',
       en: 'Test your knowledge across 6 questions and download your certificate.',
     },
@@ -942,7 +942,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     kicker: { hi: '४२ पीढ़ियाँ', pb: '੪੨ ਪੀੜ੍ਹੀਆਂ', en: '42 Generations' },
     title: { hi: 'वंश बयालीस की पावन महिमा', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ', en: 'Glory of Vansh Bayalis' },
     description: {
-      hi: 'सद्गुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
+      hi: 'सतगुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
       pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਵਰਦਾਨ, ਧਨੀ ਧਰਮਦਾਸ ਤੇ ਅਟੱਲ ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦਾ ਰਹੱਸ।',
       en: 'Explore the 4-part guide on the eternal 42-generation lineage and divine promise.',
     },

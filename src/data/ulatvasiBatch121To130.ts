@@ -92,7 +92,7 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'सहस्रार सरोवर व स्वयं-प्रकाशित आत्म-ज्योति', pb: 'ਸਹਸ੍ਰਾਰ ਦਾ ਅੰਮ੍ਰਿਤ ਅਤੇ ਆਤਮ-ਜੋਤ', en: 'Sahasrara Nectar Lake & Self-Luminous Soul' },
       deepMeaning: {
-        hi: 'कबीर साहेब मस्तिष्क के शीर्ष पर स्थित सहस्रार चक्र की बात कर रहे हैं। इस भीतरी आकाश में अमृतरस का सरोवर है जहाँ चेतना का सहस्रदल कमल खिलता है। वहाँ किसी भौतिक सूर्य की नहीं, बल्कि आत्मा की स्वयं-प्रकाशित ज्योति जगमगाती है।',
+        hi: 'सतगुरु कबीर साहेब मस्तिष्क के शीर्ष पर स्थित सहस्रार चक्र की बात कर रहे हैं। इस भीतरी आकाश में अमृतरस का सरोवर है जहाँ चेतना का सहस्रदल कमल खिलता है। वहाँ किसी भौतिक सूर्य की नहीं, बल्कि आत्मा की स्वयं-प्रकाशित ज्योति जगमगाती है।',
         pb: 'ਸਹਸ੍ਰਾਰ ਵਿੱਚ ਅੰਮ੍ਰਿਤ ਸਰੋਵਰ ਹੈ ਜਿੱਥੇ ਆਤਮਾ ਦਾ ਆਪੇ ਚਮਕਦਾ ਚਾਨਣ ਫੈਲਦਾ ਹੈ।',
         en: 'At the Sahasrara Crown Chakra lies the Inner Nectar Lake where the Lotus of Consciousness unfolds in uncreated Light.'
       },
@@ -201,7 +201,7 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
         en: 'The "Dead" is the Saint dead to ego (Jivanmukta), who alone can guide humanity to freedom, while egoistic "Living" men wander blind.'
       },
       kabirPhilosophy: {
-        hi: 'अहंकार-शून्यता ही सद्गुरु व संत होने की सच्ची पहचान है।',
+        hi: 'अहंकार-शून्यता ही सतगुरु व संत होने की सच्ची पहचान है।',
         pb: 'ਹੰਕਾਰ-ਰਹਿਤ ਹੋਣਾ ਹੀ ਸੰਤ ਦੀ ਪਛਾਣ ਹੈ।',
         en: 'Complete ego-lessness defines the true guiding Satguru.'
       },
@@ -248,7 +248,7 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'दशम द्वार में दिव्य ज्योति व अनहद गर्जन', pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਅਨਹਦ ਨਾਦ', en: 'Flashing Wisdom & Thundering Naad in Tenth Gate' },
       deepMeaning: {
-        hi: 'कबीर साहेब शरीर के भीतर के दशम द्वार का अनुभव बता रहे हैं। जब ध्यान भौतिक संसार से ऊपर उठता है, तो भीतरी आकाश में बिना किसी बादल के आत्मज्ञान की बिजली चमकती है और अनहद नाद गूँजता है जिससे सब दुःख (अवशाद) मिट जाते हैं।',
+        hi: 'सतगुरु कबीर साहेब शरीर के भीतर के दशम द्वार का अनुभव बता रहे हैं। जब ध्यान भौतिक संसार से ऊपर उठता है, तो भीतरी आकाश में बिना किसी बादल के आत्मज्ञान की बिजली चमकती है और अनहद नाद गूँजता है जिससे सब दुःख (अवशाद) मिट जाते हैं।',
         pb: 'ਦਸਮ ਦੁਆਰ ਦੇ ਅੰਦਰ ਆਤਮ-ਜੋਤ ਚਮਕਦੀ ਹੈ ਅਤੇ ਅਨਹਦ ਨਾਦ ਗਰਜਦਾ ਹੈ ਜਿਸ ਨਾਲ ਸਾਰੇ ਦੁੱਖ ਮਿਟਦੇ ਹਨ।',
         en: 'In the Tenth Gate inner sky, uncreated Wisdom Lightning flashes and Divine Naad thunders, dispelling all sorrow.'
       },
@@ -352,7 +352,7 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'सुरति द्वारा सूक्ष्म ब्रह्मांडीय यात्रा', pb: 'ਸੁਰਤਿ ਦੁਆਰਾ ਆਤਮਿਕ ਯਾਤਰਾ', en: 'Cosmic Travel of Consciousness via Surati' },
       deepMeaning: {
-        hi: 'कबीर साहेब मानव चेतना (सुरति) की बात कर रहे हैं। सुरति को आने-जाने के लिए भौतिक पैरों की आवश्यकता नहीं। जब साधक ध्यान में बैठता है, तो उसकी सुरति पल भर में देह-बंधन पार कर सूक्ष्म लोकों व ब्रह्मांड की यात्रा (नाप) कर लेती है।',
+        hi: 'सतगुरु कबीर साहेब मानव चेतना (सुरति) की बात कर रहे हैं। सुरति को आने-जाने के लिए भौतिक पैरों की आवश्यकता नहीं। जब साधक ध्यान में बैठता है, तो उसकी सुरति पल भर में देह-बंधन पार कर सूक्ष्म लोकों व ब्रह्मांड की यात्रा (नाप) कर लेती है।',
         pb: 'ਸੁਰਤਿ ਨੂੰ ਚੱਲਣ ਲਈ ਪੈਰਾਂ ਦੀ ਲੋੜ ਨਹੀਂ। ਧਿਆਨ ਵਿੱਚ ਸੁਰਤਿ ਪੂਰੇ ਬ੍ਰਹਮੰਡ ਵਿੱਚ ਪਹੁੰਚ ਜਾਂਦੀ ਹੈ।',
         en: 'Consciousness (Surati) needs no physical legs. In meditation, awareness transcends bodily boundaries to measure the subtle cosmos.'
       },
@@ -372,8 +372,8 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
     realmTitle: { hi: 'कौतूहल (Curiosity)', pb: '<ctrl42><ctrl42>ਕੌਤਕ (Curiosity)', en: 'Curiosity' },
     title: { hi: '128. चींटी ने हाथी को निगल लिया', pb: '128. ਕੀੜੀ ਨੇ ਹਾਥੀ ਨੂੰ ਨਿਗਲਿਆ', en: '128. Ant Swallowing the Elephant' },
     verse: {
-      hi: '"चींटी के मुख में हस्ती समाना, राई में पर्वत ओट। कहै कबीर सुनो भाई संतो, यह सद्गुरु की चोट॥"',
-      pb: '"ਚੀਂਟੀ ਕੇ ਮੁਖ ਵਿੱਚ ਹਸਤੀ ਸਮਾਨਾ, ਰਾਈ ਵਿੱਚ ਪਰਵਤ ਓਟ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਦਗੁਰੂ ਕੀ ਚੋਟ॥"',
+      hi: '"चींटी के मुख में हस्ती समाना, राई में पर्वत ओट। कहै कबीर सुनो भाई संतो, यह सतगुरु की चोट॥"',
+      pb: '"ਚੀਂਟੀ ਕੇ ਮੁਖ ਵਿੱਚ ਹਸਤੀ ਸਮਾਨਾ, ਰਾਈ ਵਿੱਚ ਪਰਵਤ ਓਟ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਤਿਗੁਰੂ ਕੀ ਚੋਟ॥"',
       en: '"Inside the ant\'s mouth a giant elephant fits, mountain hides behind a mustard seed. Says Kabir listen saints, this is Satguru\'s wisdom blow."'
     },
     literalParadox: {
@@ -382,13 +382,13 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
       en: 'Inside a tiny ant\'s mouth a giant elephant resides, and a mountain hides behind a mustard seed.'
     },
     clueHint: {
-      hi: 'चींटी = साधक की नम्र आत्मा; हाथी/पहाड़ = मनुष्य का विशाल अहंकार; सद्गुरु चोट = ज्ञान का बाण।',
+      hi: 'चींटी = साधक की नम्र आत्मा; हाथी/पहाड़ = मनुष्य का विशाल अहंकार; सतगुरु चोट = ज्ञान का बाण।',
       pb: 'ਕੀੜੀ ਨਿਮਰ ਆਤਮਾ ਹੈ, ਹਾਥੀ ਹੰਕਾਰ ਹੈ।',
       en: 'Ant = Humble Soul; Elephant/Mountain = Massive Ego; Satguru blow = Arrow of Wisdom.'
     },
     symbols: [
       { symbol: 'चींटी मुख हस्ती (Ant Swallowing Elephant)', meaning: { hi: 'साधक की सूक्ष्म नम्रता के आगे विशाल अहंकार का विलीन हो जाना', pb: 'ਨਿਮਰਤਾ ਅੱਗੇ ਅਹੰਕਾਰ ਦਾ ਮਿਟਣਾ', en: 'Massive Ego dissolving before the subtle humility of the Soul' } },
-      { symbol: 'सद्गुरु की चोट (Satguru\'s Wisdom Blow)', meaning: { hi: 'सद्गुरु के ज्ञान-शब्द की ऐसी चोट जिससे अहंकार का नाश हो', pb: 'ਗੁਰੂ ਦੇ ਗਿਆਨ ਬਾਨ', en: 'Satguru\'s piercing arrow of wisdom shattering pride' } }
+      { symbol: 'सतगुरु की चोट (Satguru\'s Wisdom Blow)', meaning: { hi: 'सतगुरु के ज्ञान-शब्द की ऐसी चोट जिससे अहंकार का नाश हो', pb: 'ਗੁਰੂ ਦੇ ਗਿਆਨ ਬਾਨ', en: 'Satguru\'s piercing arrow of wisdom shattering pride' } }
     ],
     question: {
       hi: '"चींटी के मुख में हाथी समाने" का क्या अर्थ है?',
@@ -396,20 +396,20 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
       en: 'What does "Ant swallowing the Elephant" signify?'
     },
     options: {
-      hi: ['सद्गुरु ज्ञान की चोट से साधक की सूक्ष्म नम्रता (चींटी) के आगे विशाल अहंकार (हाथी) का मिटना', 'चींटी का खेल', 'सर्कस', 'जंगल कहानी'],
+      hi: ['सतगुरु ज्ञान की चोट से साधक की सूक्ष्म नम्रता (चींटी) के आगे विशाल अहंकार (हाथी) का मिटना', 'चींटी का खेल', 'सर्कस', 'जंगल कहानी'],
       pb: ['ਗੁਰੂ ਗਿਆਨ ਨਾਲ ਨਿਮਰਤਾ ਅੱਗੇ ਅਹੰਕਾਰ ਦਾ ਮਿਟਣਾ', 'ਕੀੜੀ', 'ਸਰਕਸ', 'ਕਹਾਣੀ'],
       en: ['Satguru\'s wisdom strike dissolving colossal Ego (Elephant) before Soul\'s humility (Ant)', 'Ant play', 'Circus', 'Forest story']
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सद्गुरु ज्ञान चोट से अहंकार नाश', pb: 'ਗੁਰੂ ਗਿਆਨ ਨਾਲ ਅਹੰਕਾਰ ਦਾ ਨਾਸ਼', en: 'Shattering of Colossal Ego via Satguru\'s Wisdom Blow' },
+      headline: { hi: 'सतगुरु ज्ञान चोट से अहंकार नाश', pb: 'ਗੁਰੂ ਗਿਆਨ ਨਾਲ ਅਹੰਕਾਰ ਦਾ ਨਾਸ਼', en: 'Shattering of Colossal Ego via Satguru\'s Wisdom Blow' },
       deepMeaning: {
-        hi: 'चींटी साधक की अत्यंत नम्र आत्मा है और हाथी/पहाड़ विशाल अहंकार है। जब सद्गुरु के ज्ञान-शब्द का बाण (चोट) हृदय पर लगता है, तो साधक इतना नम्र (चींटी जैसा सूक्ष्म) हो जाता है कि उसका अहंकार उस नम्रता में विलीन हो जाता है।',
+        hi: 'चींटी साधक की अत्यंत नम्र आत्मा है और हाथी/पहाड़ विशाल अहंकार है। जब सतगुरु के ज्ञान-शब्द का बाण (चोट) हृदय पर लगता है, तो साधक इतना नम्र (चींटी जैसा सूक्ष्म) हो जाता है कि उसका अहंकार उस नम्रता में विलीन हो जाता है।',
         pb: 'ਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ ਸਾਧਕ ਨਿਮਰ ਹੁੰਦਾ ਹੈ ਅਤੇ ਉਸਦਾ ਹੰਕਾਰ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
         en: 'Pierced by Satguru\'s arrow of wisdom, the Seeker becomes infinitely humble (Ant), causing colossal Ego (Elephant) to collapse and dissolve.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु के शब्द की चोट ही अहंकार रूपी हाथी का अंत करती है।',
+        hi: 'सतगुरु के शब्द की चोट ही अहंकार रूपी हाथी का अंत करती है।',
         pb: 'ਗੁਰੂ ਸ਼ਬਦ ਨਾਲ ਅਹੰਕਾਰ ਮਿਟਦਾ ਹੈ।',
         en: 'Satguru\'s divine Word shatters the most massive ego.'
       },
@@ -476,7 +476,7 @@ export const ULATVASI_BATCH_121_TO_130: UlatvasiQuestion[] = [
     realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
     title: { hi: '130. समुद्र का पानी घड़े के भीतर डूब गया', pb: '130. ਸਮੁੰਦਰ ਘੜੇ ਅੰਦਰ ਸਮਾਇਆ', en: '130. Ocean Merging Inside the Earthen Pot' },
     verse: {
-      hi: '"सागर घट के भीतर डूबा, बुझ गई जनम की प्यास। कहै कबीर सुनो भाई संतो, सोई साहिब का दास॥"',
+      hi: '"सागर घट के भीतर डूबा, बुझ गई जनम की प्यास। कहै कबीर सुनो भाई संतो, सोई साहेब का दास॥"',
       pb: '"ਸਾਗਰ ਘਟ ਕੇ ਭੀਤਰ ਡੂਬਾ, ਬੁਝ ਗਈ ਜਨਮ ਕੀ ਪਿਆਸ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਸੋਈ ਸਾਹੇਬ ਕਾ ਦਾਸ॥"',
       en: '"Infinite ocean dissolved inside the small earthen pot, extinguishing births of spiritual thirst. Says Kabir listen saints, he alone is Saheb\'s true servant."'
     },

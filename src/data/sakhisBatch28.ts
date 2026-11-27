@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Ram rasayan prem ras, peevat adhik rasaal. Kabir peevat durlabh hai, maange sees kalaal.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति और प्रेम रस के परमानंद का रहस्य बताते हैं: प्रभु के नाम का पावन रसायन (राम रसायन) और प्रेम का रस पीने में संसार के सभी रसों से बढ़कर अत्यंत आनंदमयी और रसीला (रसाल) है। किंतु इस दिव्य रस को पीना अत्यंत दुर्लभ और कठिन है, क्योंकि इस प्रेम-मदिरालय का स्वामी (कलाल / सतगुरु) इस रस के बदले साधक से उसके अहंकार रूपी सिर (शीश) का पूर्ण समर्पण और बलिदान मांगता है। जो अपना अहंकार मिटाता है, वही यह अमृत पी पाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਅਤੇ ਪ੍ਰੇਮ ਦਾ ਰਸ ਪੀਣ ਵਿੱਚ ਬਹੁਤ ਆਨੰਦਦਾਇਕ ਹੈ। ਪਰ ਇਸਨੂੰ ਪੀਣਾ ਬਹੁਤ ਦੁਰਲੱਭ ਹੈ ਕਿਉਂਕਿ ਨਾਮ-ਰਸ ਪਿਲਾਉਣ ਵਾਲਾ ਸਤਿਗੁਰੂ (ਕਲਾਲ) ਹਉਮੈ ਰੂਪੀ ਸੀਸ ਦਾ ਸਮਰਪਣ ਮੰਗਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the ecstasy and the supreme price of divine love: The elixir of the Divine Name (Ram Rasayan) and the nectar of devotion are exquisitely sweet, juicy, and intoxicating beyond all earthly pleasures. Yet drinking this celestial wine is profoundly rare and difficult, for the Master of the divine tavern (Kalaal / the Satguru) demands nothing less than the seeker’s head (Sees)—the complete sacrifice and surrender of the ego. Only one who slays the ego tastes this immortal nectar.',
+      hi: 'सतगुरु कबीर साहेब भक्ति और प्रेम रस के परमानंद का रहस्य बताते हैं: प्रभु के नाम का पावन रसायन (राम रसायन) और प्रेम का रस पीने में संसार के सभी रसों से बढ़कर अत्यंत आनंदमयी और रसीला (रसाल) है। किंतु इस दिव्य रस को पीना अत्यंत दुर्लभ और कठिन है, क्योंकि इस प्रेम-मदिरालय का स्वामी (कलाल / सतगुरु) इस रस के बदले साधक से उसके अहंकार रूपी सिर (शीश) का पूर्ण समर्पण और बलिदान मांगता है। जो अपना अहंकार मिटाता है, वही यह अमृत पी पाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਅਤੇ ਪ੍ਰੇਮ ਦਾ ਰਸ ਪੀਣ ਵਿੱਚ ਬਹੁਤ ਆਨੰਦਦਾਇਕ ਹੈ। ਪਰ ਇਸਨੂੰ ਪੀਣਾ ਬਹੁਤ ਦੁਰਲੱਭ ਹੈ ਕਿਉਂਕਿ ਨਾਮ-ਰਸ ਪਿਲਾਉਣ ਵਾਲਾ ਸਤਿਗੁਰੂ (ਕਲਾਲ) ਹਉਮੈ ਰੂਪੀ ਸੀਸ ਦਾ ਸਮਰਪਣ ਮੰਗਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the ecstasy and the supreme price of divine love: The elixir of the Divine Name (Ram Rasayan) and the nectar of devotion are exquisitely sweet, juicy, and intoxicating beyond all earthly pleasures. Yet drinking this celestial wine is profoundly rare and difficult, for the Master of the divine tavern (Kalaal / the Satguru) demands nothing less than the seeker’s head (Sees)—the complete sacrifice and surrender of the ego. Only one who slays the ego tastes this immortal nectar.',
     },
     wordMeanings: {
       hi: [
@@ -104,9 +104,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Ram-Rahim ek hai, naam dharaaya doy. Kahe Kabir do naam suni, bharam parau mati koy.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा की अखंड एकता और धार्मिक सद्भाव का अमर संदेश देते हैं: वह सर्वव्यापी परमपिता परमात्मा वास्तव में एक ही और अद्वितीय है, किंतु मनुष्यों ने भाषा और संप्रदायों के आधार पर उसके "राम" और "रहीम" जैसे अलग-अलग नाम रख दिए हैं। कबीर कहते हैं कि इन दो भिन्न नामों को सुनकर कोई भी अज्ञान और भ्रम में मत पड़ो; घट-घट में विराजने वाली चेतना और सत्य एक ही है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਰਾਮ ਅਤੇ ਰਹੀਮ ਇੱਕੋ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਹਨ, ਉਸ ਇੱਕ ਕਰਤਾਰ ਦੇ ਦੋ ਨਾਮ ਰੱਖ ਲਏ ਗਏ ਹਨ। ਦੋ ਨਾਮ ਸੁਣ ਕੇ ਕਿਸੇ ਨੂੰ ਵਹਿਮ-ਭਰਮ ਵਿੱਚ ਨਹੀਂ ਪੈਣਾ ਚਾਹੀਦਾ; ਰੱਬ ਇੱਕੋ ਹੈ।',
-      en: 'Kabir Saheb proclaims the fundamental unity of God and cosmic brotherhood: The Supreme Divine Reality is singular and indivisible, though humanity has given that one Truth different names like "Ram" and "Rahim" according to languages and cultures. Kabir declares: Hearing these different names, let no one fall into the delusion of religious discord or division; the one Light shines within every heart.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा की अखंड एकता और धार्मिक सद्भाव का अमर संदेश देते हैं: वह सर्वव्यापी परमपिता परमात्मा वास्तव में एक ही और अद्वितीय है, किंतु मनुष्यों ने भाषा और संप्रदायों के आधार पर उसके "राम" और "रहीम" जैसे अलग-अलग नाम रख दिए हैं। सतगुरु कबीर साहेब फरमाते हैं कि इन दो भिन्न नामों को सुनकर कोई भी अज्ञान और भ्रम में मत पड़ो; घट-घट में विराजने वाली चेतना और सत्य एक ही है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਰਾਮ ਅਤੇ ਰਹੀਮ ਇੱਕੋ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਹਨ, ਉਸ ਇੱਕ ਕਰਤਾਰ ਦੇ ਦੋ ਨਾਮ ਰੱਖ ਲਏ ਗਏ ਹਨ। ਦੋ ਨਾਮ ਸੁਣ ਕੇ ਕਿਸੇ ਨੂੰ ਵਹਿਮ-ਭਰਮ ਵਿੱਚ ਨਹੀਂ ਪੈਣਾ ਚਾਹੀਦਾ; ਰੱਬ ਇੱਕੋ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the fundamental unity of God and cosmic brotherhood: The Supreme Divine Reality is singular and indivisible, though humanity has given that one Truth different names like "Ram" and "Rahim" according to languages and cultures. Satguru Kabir Saheb proclaims: Hearing these different names, let no one fall into the delusion of religious discord or division; the one Light shines within every heart.',
     },
     wordMeanings: {
       hi: [
@@ -138,7 +138,7 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
       en: 'O Omnipresent Satguru! Eradicate all sectarian bias from my consciousness and grant me the vision of the One in all. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब के सर्वधर्म-समभाव और अद्वैत ईश्वरीय एकता का अमर उद्घोष है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब के सर्वधर्म-समभाव और अद्वैत ईश्वरीय एकता का अमर उद्घोष है।',
       pb: 'ਇਹ ਸਾਖੀ ਧਾਰਮਿਕ ਏਕਤਾ ਤੇ ਸਾਂਝੀਵਾਲਤਾ ਦਾ ਮਹਾਨ ਸੁਨੇਹਾ ਹੈ।',
       en: 'This verse is a world-renowned manifesto of interfaith unity and the singular reality of God.',
     },
@@ -146,9 +146,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
       {
         id: 'q-b28-338',
         question: {
-          hi: 'साखी के अनुसार "राम" और "रहीम" के विषय में कबीर साहेब का क्या सिद्धांत है?',
-          pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਰਾਮ ਤੇ ਰਹੀਮ ਬਾਰੇ ਕਬੀਰ ਜੀ ਦਾ ਕੀ ਸਿਧਾਂਤ ਹੈ?',
-          en: 'According to this Sakhi, what is Kabir Saheb’s teaching regarding Ram and Rahim?',
+          hi: 'साखी के अनुसार "राम" और "रहीम" के विषय में सतगुरु कबीर साहेब का क्या सिद्धांत है?',
+          pb: 'ਸਾਖੀ ਅਨੁਸਾਰ ਰਾਮ ਤੇ ਰਹੀਮ ਬਾਰੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਕੀ ਸਿਧਾਂਤ ਹੈ?',
+          en: 'According to this Sakhi, what is Satguru Kabir Saheb’s teaching regarding Ram and Rahim?',
         },
         options: {
           hi: ['परमात्मा वास्तव में एक ही है, केवल नाम दो रखे गए हैं, अतः किसी को भ्रम में नहीं पड़ना चाहिए', 'वे दो अलग-अलग शक्तियां हैं', 'वे एक-दूसरे के विरोधी हैं', 'वे केवल इतिहास के पात्र हैं'],
@@ -183,9 +183,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Riddhi siddhi maango nahi, maango tum pai yeh. Nisi din darshan saadhu ko, prabhu Kabir kahu deh.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा के सम्मुख अपनी एकमात्र परम प्रार्थना रखते हैं: हे मेरे प्रभु! मैं आपसे सांसारिक वैभव, धन-दौलत, चमत्कारी शक्तियाँ और ऋद्धियाँ-सिद्धियाँ कभी नहीं माँगता; मैं तो आपके चरणों में केवल यही एक वरदान माँगता हूँ कि मुझे रात-दिन सच्चे संतों, साधुओं और ज्ञानियों का पावन दर्शन व सत्संग प्राप्त होता रहे। संतों की संगति में ही आत्मा का परम कल्याण है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਤੁਹਾਡੇ ਕੋਲੋਂ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਜਾਂ ਦੁਨਿਆਵੀ ਦੌਲਤ ਨਹੀਂ ਮੰਗਦਾ। ਮੈਂ ਤਾਂ ਸਿਰਫ ਇਹੀ ਮੰਗਦਾ ਹਾਂ ਕਿ ਮੈਨੂੰ ਦਿਨ-ਰਾਤ ਸੱਚੇ ਸੰਤਾਂ ਦਾ ਦਰਸ਼ਨ ਤੇ ਸਤਿਸੰਗ ਨਸੀਬ ਹੋਵੇ।',
-      en: 'Kabir Saheb presents the purest spiritual petition to the Divine: "O Lord! I ask of You no worldly riches, no occult powers, no miracles, nor psychic accomplishments (Riddhi-Siddhi). My sole prayer before Your throne is this: Grant me night and day the blessed sight (Darshan) and holy company of enlightened Saints! In holy association alone resides the supreme salvation of the soul."',
+      hi: 'सतगुरु कबीर साहेब परमात्मा के सम्मुख अपनी एकमात्र परम प्रार्थना रखते हैं: हे मेरे प्रभु! मैं आपसे सांसारिक वैभव, धन-दौलत, चमत्कारी शक्तियाँ और ऋद्धियाँ-सिद्धियाँ कभी नहीं माँगता; मैं तो आपके चरणों में केवल यही एक वरदान माँगता हूँ कि मुझे रात-दिन सच्चे संतों, साधुओं और ज्ञानियों का पावन दर्शन व सत्संग प्राप्त होता रहे। संतों की संगति में ही आत्मा का परम कल्याण है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੇ ਪ੍ਰਭੂ! ਮੈਂ ਤੁਹਾਡੇ ਕੋਲੋਂ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਜਾਂ ਦੁਨਿਆਵੀ ਦੌਲਤ ਨਹੀਂ ਮੰਗਦਾ। ਮੈਂ ਤਾਂ ਸਿਰਫ ਇਹੀ ਮੰਗਦਾ ਹਾਂ ਕਿ ਮੈਨੂੰ ਦਿਨ-ਰਾਤ ਸੱਚੇ ਸੰਤਾਂ ਦਾ ਦਰਸ਼ਨ ਤੇ ਸਤਿਸੰਗ ਨਸੀਬ ਹੋਵੇ।',
+      en: 'Satguru Kabir Saheb presents the purest spiritual petition to the Divine: "O Lord! I ask of You no worldly riches, no occult powers, no miracles, nor psychic accomplishments (Riddhi-Siddhi). My sole prayer before Your throne is this: Grant me night and day the blessed sight (Darshan) and holy company of enlightened Saints! In holy association alone resides the supreme salvation of the soul."',
     },
     wordMeanings: {
       hi: [
@@ -228,9 +228,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
       {
         id: 'q-b28-339',
         question: {
-          hi: 'साखी में कबीर साहेब प्रभु से ऋद्धि-सिद्धि त्यागकर क्या माँगते हैं?',
-          pb: 'ਸਾਖੀ ਵਿੱਚ ਕਬੀਰ ਜੀ ਪ੍ਰਭੂ ਤੋਂ ਕੀ ਮੰਗਦੇ ਹਨ?',
-          en: 'In this Sakhi, what does Kabir Saheb ask of God instead of occult powers (Riddhi-Siddhi)?',
+          hi: 'साखी में सतगुरु कबीर साहेब प्रभु से ऋद्धि-सिद्धि त्यागकर क्या माँगते हैं?',
+          pb: 'ਸਾਖੀ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਤੋਂ ਕੀ ਮੰਗਦੇ ਹਨ?',
+          en: 'In this Sakhi, what does Satguru Kabir Saheb ask of God instead of occult powers (Riddhi-Siddhi)?',
         },
         options: {
           hi: ['दिन-रात सच्चे साधु और संतों का पावन दर्शन व सत्संग (निसि दिन दरशन साधु को)', 'सोने का महल', 'स्वर्ग का राजा बनना', 'दीर्घायु'],
@@ -265,9 +265,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Rukha sukha khaai ke, thanda paani pee. Dekh parayi chupadi, mat lalchaao jee.',
     bhavarth: {
-      hi: 'कबीर साहेब परम संतोष और सादगी का अमर उपदेश देते हैं: अपनी ईमानदारी और धर्म की कमाई से जो भी रूखा-सूखा भोजन प्राप्त हो, उसे प्रसन्नतापूर्वक खाओ और परमात्मा का शुकराना करते हुए शीतल जल पियो। दूसरों की घी से चुपड़ी हुई चिकनी रोटी या उनके ऐश्वर्य को देखकर अपने मन में कभी ईर्ष्या, लालच या तृष्णा मत जगाओ। संतोष ही सबसे बड़ा धन है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਹੱਕ-ਹਲਾਲ ਦੀ ਕਮਾਈ ਨਾਲ ਜੋ ਰੁੱਖਾ-ਸੁੱਖਾ ਮਿਲੇ ਉਸਨੂੰ ਸ਼ੁਕਰਾਨੇ ਨਾਲ ਖਾ ਕੇ ਠੰਢਾ ਪਾਣੀ ਪੀ ਲਵੋ। ਦੂਜਿਆਂ ਦੀ ਚੋਪੜੀ (ਅਮੀਰੀ) ਵੇਖ ਕੇ ਆਪਣੇ ਮਨ ਵਿੱਚ ਲਾਲਚ ਨਾ ਲਿਆਓ। ਸੰਤੋਖ ਹੀ ਸਭ ਤੋਂ ਵੱਡੀ ਦੌਲਤ ਹੈ।',
-      en: 'Kabir Saheb gives the golden counsel of contentment and simple living: Eat with deep gratitude whatever plain, dry bread (Rookha Sookha) your honest labor provides, and drink cool water with a peaceful heart. Never let your mind be enticed or troubled by the buttered breads and lavish luxuries of others. Contentment (Santokh) is the greatest treasure in the universe.',
+      hi: 'सतगुरु कबीर साहेब परम संतोष और सादगी का अमर उपदेश देते हैं: अपनी ईमानदारी और धर्म की कमाई से जो भी रूखा-सूखा भोजन प्राप्त हो, उसे प्रसन्नतापूर्वक खाओ और परमात्मा का शुकराना करते हुए शीतल जल पियो। दूसरों की घी से चुपड़ी हुई चिकनी रोटी या उनके ऐश्वर्य को देखकर अपने मन में कभी ईर्ष्या, लालच या तृष्णा मत जगाओ। संतोष ही सबसे बड़ा धन है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਹੱਕ-ਹਲਾਲ ਦੀ ਕਮਾਈ ਨਾਲ ਜੋ ਰੁੱਖਾ-ਸੁੱਖਾ ਮਿਲੇ ਉਸਨੂੰ ਸ਼ੁਕਰਾਨੇ ਨਾਲ ਖਾ ਕੇ ਠੰਢਾ ਪਾਣੀ ਪੀ ਲਵੋ। ਦੂਜਿਆਂ ਦੀ ਚੋਪੜੀ (ਅਮੀਰੀ) ਵੇਖ ਕੇ ਆਪਣੇ ਮਨ ਵਿੱਚ ਲਾਲਚ ਨਾ ਲਿਆਓ। ਸੰਤੋਖ ਹੀ ਸਭ ਤੋਂ ਵੱਡੀ ਦੌਲਤ ਹੈ।',
+      en: 'Satguru Kabir Saheb gives the golden counsel of contentment and simple living: Eat with deep gratitude whatever plain, dry bread (Rookha Sookha) your honest labor provides, and drink cool water with a peaceful heart. Never let your mind be enticed or troubled by the buttered breads and lavish luxuries of others. Contentment (Santokh) is the greatest treasure in the universe.',
     },
     wordMeanings: {
       hi: [
@@ -302,7 +302,7 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
       en: 'O Bestower of Contentment, Satguru! Shield my heart from greed and envy, blessing me with the sacred wealth of contentment. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब के संतोष, ईमानदारी और सादगी के सिद्धांत की अत्यंत लोकप्रिय साखी है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब के संतोष, ईमानदारी और सादगी के सिद्धांत की अत्यंत लोकप्रिय साखी है।',
       pb: 'ਇਹ ਸਾਖੀ ਸੰਤੋਖ ਤੇ ਸਾਦਗੀ ਦੀ ਪ੍ਰਸਿੱਧ ਸਿੱਖਿਆ ਹੈ।',
       en: 'This world-famous verse is celebrated as the ultimate anthem of contentment and honest simplicity.',
     },
@@ -347,9 +347,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Saanjh pade din beetbai, chakwi deenhi roy. Chal chakwa va desh ko, jaha rain nahi hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब चकवा-चकवी के विरह के माध्यम से जीवात्मा की अमर देश के लिए पुकार व्यक्त करते हैं: जैसे ही संध्या (साँझ) हुई और दिन बीता, रात के वियोग के भय से चकवी रोने लगी और अपने साथी चकवे से बोली—"हे चकवा! इस नश्वर संसार को छोड़कर अब उस अमर देश (सत्यलोक/परमपद) को चलो, जहाँ कभी अज्ञान व वियोग की काली रात (रैन) नहीं होती और जहाँ सदा ज्ञान का अखंड प्रकाश रहता है।"',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੰਝ ਪੈਣ ਤੇ ਵਿਛੋੜੇ ਦੇ ਡਰੋਂ ਚਕਵੀ ਰੋ ਕੇ ਚਕਵੇ ਨੂੰ ਕਹਿੰਦੀ ਹੈ—ਚੱਲ ਚਕਵੇ ਉਸ ਸੱਚਖੰਡ ਦੇਸ਼ ਚੱਲੀਏ ਜਿੱਥੇ ਕਦੇ ਵਿਛੋੜੇ ਦੀ ਰਾਤ ਨਹੀਂ ਹੁੰਦੀ, ਜਿੱਥੇ ਸਦਾ ਪ੍ਰਭੂ ਦਾ ਪ੍ਰਕਾਸ਼ ਰਹਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb uses the folklore of the separated Chakwa-Chakwi birds to voice the soul’s cry for the Eternal Realm: As evening descends and the day closes, the female Chakwi weeps at the impending agony of night’s separation and pleads to her companion: "Arise, O Chakwa! Let us fly away from this realm of shadows to that Immortal Land (Satlok) where the darkness of night never falls—where eternal light and unbroken union reign forever!"',
+      hi: 'सतगुरु कबीर साहेब चकवा-चकवी के विरह के माध्यम से जीवात्मा की अमर देश के लिए पुकार व्यक्त करते हैं: जैसे ही संध्या (साँझ) हुई और दिन बीता, रात के वियोग के भय से चकवी रोने लगी और अपने साथी चकवे से बोली—"हे चकवा! इस नश्वर संसार को छोड़कर अब उस अमर देश (सत्यलोक/परमपद) को चलो, जहाँ कभी अज्ञान व वियोग की काली रात (रैन) नहीं होती और जहाँ सदा ज्ञान का अखंड प्रकाश रहता है।"',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੰਝ ਪੈਣ ਤੇ ਵਿਛੋੜੇ ਦੇ ਡਰੋਂ ਚਕਵੀ ਰੋ ਕੇ ਚਕਵੇ ਨੂੰ ਕਹਿੰਦੀ ਹੈ—ਚੱਲ ਚਕਵੇ ਉਸ ਸੱਚਖੰਡ ਦੇਸ਼ ਚੱਲੀਏ ਜਿੱਥੇ ਕਦੇ ਵਿਛੋੜੇ ਦੀ ਰਾਤ ਨਹੀਂ ਹੁੰਦੀ, ਜਿੱਥੇ ਸਦਾ ਪ੍ਰਭੂ ਦਾ ਪ੍ਰਕਾਸ਼ ਰਹਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb uses the folklore of the separated Chakwa-Chakwi birds to voice the soul’s cry for the Eternal Realm: As evening descends and the day closes, the female Chakwi weeps at the impending agony of night’s separation and pleads to her companion: "Arise, O Chakwa! Let us fly away from this realm of shadows to that Immortal Land (Satlok) where the darkness of night never falls—where eternal light and unbroken union reign forever!"',
     },
     wordMeanings: {
       hi: [
@@ -429,9 +429,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Sab aaye is ek me, daal-paat phal-phool. Kabira peechha kya raha, gah pakadi jab mool.',
     bhavarth: {
-      hi: 'कबीर साहेब एकेश्वरवाद और मूल तत्व को पकड़ने का अचूक रहस्य समझाते हैं: जैसे वृक्ष की एक मुख्य जड़ (मूल) को सींचने और पकड़ने से उसकी शाखाएं (डाल), पत्ते (पात), फल और फूल सभी स्वतः तृप्त और पोषित हो जाते हैं—वैसे ही एकमात्र परमपिता परमात्मा / सतगुरु की शरण ग्रहण करने से संसार के समस्त देवी-देवता, ज्ञान और सिद्धियाँ स्वतः प्राप्त हो जाती हैं। कबीर कहते हैं कि जब हमने मूल को दृढ़ता से पकड़ लिया, तो फिर पीछे कुछ भी पाना शेष नहीं रह जाता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜਿਵੇਂ ਰੁੱਖ ਦੀ ਜੜ੍ਹ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਸਾਰੀਆਂ ਟਾਹਣੀਆਂ, ਪੱਤੇ, ਫਲ ਤੇ ਫੁੱਲ ਹਰੇ-ਭਰੇ ਹੋ ਜਾਂਦੇ ਹਨ, ਓਵੇਂ ਹੀ ਇੱਕ ਪਰਮਾਤਮਾ ਦੇ ਲੜ ਲੱਗਣ ਨਾਲ ਸਭ ਕੁਝ ਪ੍ਰਾਪਤ ਹੋ ਜਾਂਦਾ ਹੈ। ਜਦੋਂ ਜੜ੍ਹ ਫੜ ਲਈ ਤਾਂ ਪਿੱਛੇ ਕੁਝ ਬਾਕੀ ਨਹੀਂ ਰਹਿੰਦਾ।',
-      en: 'Kabir Saheb unveils the ultimate secret of non-dual devotion through the arboreal metaphor: When you water and grasp the single primary Root (Mool) of a tree, all its branches (Daal), leaves (Paat), fruits (Phal), and flowers (Phool) are nourished simultaneously. Likewise, by surrendering completely to the One Supreme Divine Reality, all gods, virtues, and spiritual boons are automatically attained. Kabir says: "Once you firmly grasp the Root of roots, what lack or longing could possibly remain behind?"',
+      hi: 'सतगुरु कबीर साहेब एकेश्वरवाद और मूल तत्व को पकड़ने का अचूक रहस्य समझाते हैं: जैसे वृक्ष की एक मुख्य जड़ (मूल) को सींचने और पकड़ने से उसकी शाखाएं (डाल), पत्ते (पात), फल और फूल सभी स्वतः तृप्त और पोषित हो जाते हैं—वैसे ही एकमात्र परमपिता परमात्मा / सतगुरु की शरण ग्रहण करने से संसार के समस्त देवी-देवता, ज्ञान और सिद्धियाँ स्वतः प्राप्त हो जाती हैं। सतगुरु कबीर साहेब फरमाते हैं कि जब हमने मूल को दृढ़ता से पकड़ लिया, तो फिर पीछे कुछ भी पाना शेष नहीं रह जाता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜਿਵੇਂ ਰੁੱਖ ਦੀ ਜੜ੍ਹ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਸਾਰੀਆਂ ਟਾਹਣੀਆਂ, ਪੱਤੇ, ਫਲ ਤੇ ਫੁੱਲ ਹਰੇ-ਭਰੇ ਹੋ ਜਾਂਦੇ ਹਨ, ਓਵੇਂ ਹੀ ਇੱਕ ਪਰਮਾਤਮਾ ਦੇ ਲੜ ਲੱਗਣ ਨਾਲ ਸਭ ਕੁਝ ਪ੍ਰਾਪਤ ਹੋ ਜਾਂਦਾ ਹੈ। ਜਦੋਂ ਜੜ੍ਹ ਫੜ ਲਈ ਤਾਂ ਪਿੱਛੇ ਕੁਝ ਬਾਕੀ ਨਹੀਂ ਰਹਿੰਦਾ।',
+      en: 'Satguru Kabir Saheb unveils the ultimate secret of non-dual devotion through the arboreal metaphor: When you water and grasp the single primary Root (Mool) of a tree, all its branches (Daal), leaves (Paat), fruits (Phal), and flowers (Phool) are nourished simultaneously. Likewise, by surrendering completely to the One Supreme Divine Reality, all gods, virtues, and spiritual boons are automatically attained. Satguru Kabir Saheb proclaims: "Once you firmly grasp the Root of roots, what lack or longing could possibly remain behind?"',
     },
     wordMeanings: {
       hi: [
@@ -511,9 +511,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Sab dharti kaagad karu, lekhni sab banraay. Saat samudra ki masi karu, gurugun likha na jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब सतगुरु के उपकारों और उनकी असीम महिमा का सर्वोत्कृष्ट वर्णन करते हैं: यदि मैं इस पूरी पृथ्वी (धरती) को कागज बना लूँ, संसार के समस्त वनों और वृक्षों की लकड़ियों को कलम (लेखनी) बना लूँ, और सातों समुद्रों के अथाह जल को स्याही (मसि) बना लूँ—तो भी सतगुरु के अनंत गुणों, कृपा और उपकारों का वर्णन लिखना असंभव है। गुरु की महिमा असीम और अनिर्वचनीय है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਮੈਂ ਸਾਰੀ ਧਰਤੀ ਨੂੰ ਕਾਗਜ਼ ਬਣਾ ਲਵਾਂ, ਸਾਰੇ ਜੰਗਲਾਂ ਨੂੰ ਕਲਮਾਂ ਬਣਾ ਲਵਾਂ ਅਤੇ ਸੱਤਾਂ ਸਮੁੰਦਰਾਂ ਦੇ ਪਾਣੀ ਦੀ ਸਿਆਹੀ ਬਣਾ ਲਵਾਂ, ਤਾਂ ਵੀ ਸਤਿਗੁਰੂ ਦੇ ਬੇਅੰਤ ਗੁਣਾਂ ਤੇ ਉਪਕਾਰਾਂ ਨੂੰ ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਗੁਰੂ ਦੀ ਮਹਿਮਾ ਅਪਰੰਪਾਰ ਹੈ।',
-      en: 'Kabir Saheb gives voice to the ultimate paean of gratitude to the Satguru: "Even if I turned the entire vast Earth into parchment paper, shaped all the forests and trees of the world into writing pens, and converted the fathomless waters of all the seven oceans into black ink—still, the infinite virtues, compassion, and liberating grace of the Satguru could never be fully written!" The Master’s glory is boundless, beyond all human expression.',
+      hi: 'सतगुरु कबीर साहेब सतगुरु के उपकारों और उनकी असीम महिमा का सर्वोत्कृष्ट वर्णन करते हैं: यदि मैं इस पूरी पृथ्वी (धरती) को कागज बना लूँ, संसार के समस्त वनों और वृक्षों की लकड़ियों को कलम (लेखनी) बना लूँ, और सातों समुद्रों के अथाह जल को स्याही (मसि) बना लूँ—तो भी सतगुरु के अनंत गुणों, कृपा और उपकारों का वर्णन लिखना असंभव है। गुरु की महिमा असीम और अनिर्वचनीय है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਮੈਂ ਸਾਰੀ ਧਰਤੀ ਨੂੰ ਕਾਗਜ਼ ਬਣਾ ਲਵਾਂ, ਸਾਰੇ ਜੰਗਲਾਂ ਨੂੰ ਕਲਮਾਂ ਬਣਾ ਲਵਾਂ ਅਤੇ ਸੱਤਾਂ ਸਮੁੰਦਰਾਂ ਦੇ ਪਾਣੀ ਦੀ ਸਿਆਹੀ ਬਣਾ ਲਵਾਂ, ਤਾਂ ਵੀ ਸਤਿਗੁਰੂ ਦੇ ਬੇਅੰਤ ਗੁਣਾਂ ਤੇ ਉਪਕਾਰਾਂ ਨੂੰ ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਗੁਰੂ ਦੀ ਮਹਿਮਾ ਅਪਰੰਪਾਰ ਹੈ।',
+      en: 'Satguru Kabir Saheb gives voice to the ultimate paean of gratitude to the Satguru: "Even if I turned the entire vast Earth into parchment paper, shaped all the forests and trees of the world into writing pens, and converted the fathomless waters of all the seven oceans into black ink—still, the infinite virtues, compassion, and liberating grace of the Satguru could never be fully written!" The Master’s glory is boundless, beyond all human expression.',
     },
     wordMeanings: {
       hi: [
@@ -596,9 +596,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Sab hi bhoomi banaarasi, sab neer ganga toy. Gyaani aatam ram hai, jo nirmal ghat hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब आंतरिक पवित्रता और आत्मज्ञान की दिव्यता प्रकट करते हैं: जिस मनुष्य का अंतःकरण (घट) काम, क्रोध, लोभ और अहंकार से मुक्त होकर पूर्णतः पवित्र और निर्मल हो जाता है—उसके लिए प्रत्येक भूमि काशी/बनारस के समान पवित्र तीर्थ बन जाती है और प्रत्येक जल गंगाजल के समान पावन (तोय) हो जाता है। ऐसे आत्मज्ञानी संत के लिए उसकी अपनी अंतरात्मा ही साक्षात परमेश्वर (आतम राम) का पावन मंदिर है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜਿਸਦਾ ਹਿਰਦਾ ਪਵਿੱਤਰ ਤੇ ਨਿਰਮਲ ਹੋ ਗਿਆ ਹੈ, ਉਸਦੇ ਲਈ ਸਾਰੀ ਧਰਤੀ ਕਾਸ਼ੀ ਬਨਾਰਸ ਵਰਗੀ ਪਵਿੱਤਰ ਹੈ ਅਤੇ ਹਰ ਪਾਣੀ ਗੰਗਾ ਜਲ ਹੈ। ਉਸ ਗਿਆਨੀ ਦੇ ਅੰਦਰ ਹੀ ਸਾਖਿਆਤ ਪ੍ਰਮਾਤਮਾ (ਆਤਮ ਰਾਮ) ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the supreme secret of inner purity and omnipresent sanctity: For that enlightened soul whose heart (Ghat) is washed clean of lust, anger, greed, and ego, every piece of ground becomes as sacred as holy Varanasi (Banaarasee), and every drop of water becomes pure like the celestial Ganges (Ganga Toy). For such a wise knower of Truth, the pure indwelling Soul itself is recognized as the living Supreme Lord (Aatam Ram).',
+      hi: 'सतगुरु कबीर साहेब आंतरिक पवित्रता और आत्मज्ञान की दिव्यता प्रकट करते हैं: जिस मनुष्य का अंतःकरण (घट) काम, क्रोध, लोभ और अहंकार से मुक्त होकर पूर्णतः पवित्र और निर्मल हो जाता है—उसके लिए प्रत्येक भूमि काशी/बनारस के समान पवित्र तीर्थ बन जाती है और प्रत्येक जल गंगाजल के समान पावन (तोय) हो जाता है। ऐसे आत्मज्ञानी संत के लिए उसकी अपनी अंतरात्मा ही साक्षात परमेश्वर (आतम राम) का पावन मंदिर है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜਿਸਦਾ ਹਿਰਦਾ ਪਵਿੱਤਰ ਤੇ ਨਿਰਮਲ ਹੋ ਗਿਆ ਹੈ, ਉਸਦੇ ਲਈ ਸਾਰੀ ਧਰਤੀ ਕਾਸ਼ੀ ਬਨਾਰਸ ਵਰਗੀ ਪਵਿੱਤਰ ਹੈ ਅਤੇ ਹਰ ਪਾਣੀ ਗੰਗਾ ਜਲ ਹੈ। ਉਸ ਗਿਆਨੀ ਦੇ ਅੰਦਰ ਹੀ ਸਾਖਿਆਤ ਪ੍ਰਮਾਤਮਾ (ਆਤਮ ਰਾਮ) ਪ੍ਰਗਟ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the supreme secret of inner purity and omnipresent sanctity: For that enlightened soul whose heart (Ghat) is washed clean of lust, anger, greed, and ego, every piece of ground becomes as sacred as holy Varanasi (Banaarasee), and every drop of water becomes pure like the celestial Ganges (Ganga Toy). For such a wise knower of Truth, the pure indwelling Soul itself is recognized as the living Supreme Lord (Aatam Ram).',
     },
     wordMeanings: {
       hi: [
@@ -681,9 +681,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Sabte laghutaai bhali, laghuta te sab hoy. Jause dooj ka chandrama, sheesh nave sab koy.',
     bhavarth: {
-      hi: 'कबीर साहेब विनम्रता और छोटेपन (लघुता) की अतुलनीय शक्ति बताते हैं: संसार में सबसे छोटा और विनम्र (लघु) बनकर रहना ही सर्वोत्तम है, क्योंकि नम्रता से ही सारे कार्य सिद्ध होते हैं और परमात्मा की कृपा मिलती है। देखो, दूज का चंद्रमा आकार में अत्यंत छोटा और बारीक होता है, फिर भी सारा संसार उसके सम्मुख नतमस्तक होकर हाथ जोड़कर शीश झुकाता है। जो झुकता है, वही जगत में पूजनीय बनता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਭ ਤੋਂ ਨਿਮਾਣਾ ਤੇ ਛੋਟਾ ਬਣ ਕੇ ਰਹਿਣਾ ਹੀ ਸਭ ਤੋਂ ਚੰਗਾ ਹੈ, ਨਿਮਰਤਾ ਨਾਲ ਸਭ ਕੁਝ ਹਾਸਲ ਹੁੰਦਾ ਹੈ। ਜਿਵੇਂ ਦੂਜ ਦਾ ਚੰਨ ਬਹੁਤ ਛੋਟਾ ਹੁੰਦਾ ਹੈ ਪਰ ਸਾਰਾ ਸੰਸਾਰ ਉਸ ਅੱਗੇ ਸਿਰ ਝੁਕਾਉਂਦਾ ਹੈ। ਨਿਮਰਤਾ ਹੀ ਸਭ ਤੋਂ ਵੱਡੀ ਵਡਿਆਈ ਹੈ।',
-      en: 'Kabir Saheb illustrates the sublime triumph of humility: To remain small, modest, and humble (Laghuta) is the highest virtue in existence, for through humility all spiritual and worldly achievements are fulfilled. Consider the delicate crescent moon of the second day (Dooj Ka Chandrama): though it appears tiny and slender in the sky, the entire world bows its head in reverence before its gentle light. He who bends in humility is exalted by the universe.',
+      hi: 'सतगुरु कबीर साहेब विनम्रता और छोटेपन (लघुता) की अतुलनीय शक्ति बताते हैं: संसार में सबसे छोटा और विनम्र (लघु) बनकर रहना ही सर्वोत्तम है, क्योंकि नम्रता से ही सारे कार्य सिद्ध होते हैं और परमात्मा की कृपा मिलती है। देखो, दूज का चंद्रमा आकार में अत्यंत छोटा और बारीक होता है, फिर भी सारा संसार उसके सम्मुख नतमस्तक होकर हाथ जोड़कर शीश झुकाता है। जो झुकता है, वही जगत में पूजनीय बनता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਭ ਤੋਂ ਨਿਮਾਣਾ ਤੇ ਛੋਟਾ ਬਣ ਕੇ ਰਹਿਣਾ ਹੀ ਸਭ ਤੋਂ ਚੰਗਾ ਹੈ, ਨਿਮਰਤਾ ਨਾਲ ਸਭ ਕੁਝ ਹਾਸਲ ਹੁੰਦਾ ਹੈ। ਜਿਵੇਂ ਦੂਜ ਦਾ ਚੰਨ ਬਹੁਤ ਛੋਟਾ ਹੁੰਦਾ ਹੈ ਪਰ ਸਾਰਾ ਸੰਸਾਰ ਉਸ ਅੱਗੇ ਸਿਰ ਝੁਕਾਉਂਦਾ ਹੈ। ਨਿਮਰਤਾ ਹੀ ਸਭ ਤੋਂ ਵੱਡੀ ਵਡਿਆਈ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates the sublime triumph of humility: To remain small, modest, and humble (Laghuta) is the highest virtue in existence, for through humility all spiritual and worldly achievements are fulfilled. Consider the delicate crescent moon of the second day (Dooj Ka Chandrama): though it appears tiny and slender in the sky, the entire world bows its head in reverence before its gentle light. He who bends in humility is exalted by the universe.',
     },
     wordMeanings: {
       hi: [
@@ -763,9 +763,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Saadhu aisa chaahiye, jaisa soop subhaay. Saar-saar ko gahi rahe, thoth dei udaay.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे साधु और विवेकवान साधक के स्वभाव का आदर्श लक्षण बताते हैं: साधु या ज्ञानी व्यक्ति का स्वभाव अनाज फटकने वाले सूप (सूपड़ा) के समान होना चाहिए। जैसे सूप अनाज के भारी और पुष्ट सार-तत्व (सार-सार) को अपने भीतर सहेज कर रख लेता है और व्यर्थ के हल्के भूसे और कचरे (थोथ) को हवा में उड़ा देता है—वैसे ही साधक को संसार के समस्त सद्गुणों और सत्य को ग्रहण करना चाहिए और बुराइयों, दोषों व व्यर्थ की बातों को भुला देना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸਾਧੂ ਦਾ ਸੁਭਾਅ ਛੱਜ (ਸੂਪ) ਵਰਗਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਅਨਾਜ ਦੇ ਚੰਗੇ ਦਾਣਿਆਂ (ਸਾਰ) ਨੂੰ ਰੱਖ ਲੈਂਦਾ ਹੈ ਅਤੇ ਫੋਕ (ਕੂੜਾ/ਤੂੜੀ) ਨੂੰ ਉਡਾ ਕੇ ਬਾਹਰ ਕੱਢ ਦਿੰਦਾ ਹੈ। ਗਿਆਨੀ ਕੇਵਲ ਗੁਣ ਗ੍ਰਹਿਣ ਕਰਦਾ ਹੈ ਤੇ ਦੋਸ਼ ਛੱਡ ਦਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb defines the golden standard of spiritual discernment and saintly character: A true saint or seeker should possess the discerning nature of a winnowing basket / sieve (Soop). Just as the winnowing basket retains the heavy, wholesome grains of wheat (Saar) within itself and tosses away the hollow, worthless chaff (Thoth) into the wind, so must a wise soul absorb all virtues and divine Truth while discarding the petty flaws, gossip, and trivia of the world.',
+      hi: 'सतगुरु कबीर साहेब सच्चे साधु और विवेकवान साधक के स्वभाव का आदर्श लक्षण बताते हैं: साधु या ज्ञानी व्यक्ति का स्वभाव अनाज फटकने वाले सूप (सूपड़ा) के समान होना चाहिए। जैसे सूप अनाज के भारी और पुष्ट सार-तत्व (सार-सार) को अपने भीतर सहेज कर रख लेता है और व्यर्थ के हल्के भूसे और कचरे (थोथ) को हवा में उड़ा देता है—वैसे ही साधक को संसार के समस्त सद्गुणों और सत्य को ग्रहण करना चाहिए और बुराइयों, दोषों व व्यर्थ की बातों को भुला देना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸਾਧੂ ਦਾ ਸੁਭਾਅ ਛੱਜ (ਸੂਪ) ਵਰਗਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਅਨਾਜ ਦੇ ਚੰਗੇ ਦਾਣਿਆਂ (ਸਾਰ) ਨੂੰ ਰੱਖ ਲੈਂਦਾ ਹੈ ਅਤੇ ਫੋਕ (ਕੂੜਾ/ਤੂੜੀ) ਨੂੰ ਉਡਾ ਕੇ ਬਾਹਰ ਕੱਢ ਦਿੰਦਾ ਹੈ। ਗਿਆਨੀ ਕੇਵਲ ਗੁਣ ਗ੍ਰਹਿਣ ਕਰਦਾ ਹੈ ਤੇ ਦੋਸ਼ ਛੱਡ ਦਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb defines the golden standard of spiritual discernment and saintly character: A true saint or seeker should possess the discerning nature of a winnowing basket / sieve (Soop). Just as the winnowing basket retains the heavy, wholesome grains of wheat (Saar) within itself and tosses away the hollow, worthless chaff (Thoth) into the wind, so must a wise soul absorb all virtues and divine Truth while discarding the petty flaws, gossip, and trivia of the world.',
     },
     wordMeanings: {
       hi: [
@@ -800,7 +800,7 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
       en: 'O Discriminating Satguru! Bestow upon my heart the winnowing wisdom to cherish divine truth and blow away all trivial illusions. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी विवेक और सारग्राहिता की सर्वश्रेष्ठ साखी है जो कबीर साहेब के व्यावहारिक दर्शन की पहचान है।',
+      hi: 'यह साखी विवेक और सारग्राहिता की सर्वश्रेष्ठ साखी है जो सतगुरु कबीर साहेब के व्यावहारिक दर्शन की पहचान है।',
       pb: 'ਇਹ ਸਾਖੀ ਵਿਵੇਕ ਅਤੇ ਚੰਗੇ ਗੁਣ ਗ੍ਰਹਿਣ ਕਰਨ ਦੀ ਸਭ ਤੋਂ ਪ੍ਰਸਿੱਧ ਸਾਖੀ ਹੈ।',
       en: 'This immortal verse is celebrated worldwide as the consummate metaphor for spiritual discernment and character.',
     },
@@ -845,9 +845,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Saadhu bhookha bhaav ka, dhan ka bhookha naahi. Dhan ka bhookha jo phire, so to saadhu naahi.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे संत और पाखंडी वेशधारी के बीच का अचूक अंतर बताते हैं: सच्चा साधु केवल भक्त के निष्कपट प्रेम, श्रद्धा और आंतरिक भाव (भाव का भूखा) का आकांक्षी होता है, उसे सांसारिक धन, संपत्ति या भेंट-पूजा की रंचक भी भूख नहीं होती। जो व्यक्ति धन-दौलत, संपदा और चढ़ावे की भूख में संसार में मारा-मारा भटकता फिरता है, वह बाह्य वेश चाहे जो भी बना ले, वास्तव में कभी सच्चा साधु हो ही नहीं सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ ਸਿਰਫ ਪ੍ਰੇਮ, ਸ਼ਰਧਾ ਤੇ ਸੱਚੀ ਭਾਵਨਾ ਦਾ ਭੁੱਖਾ ਹੁੰਦਾ ਹੈ, ਉਸਨੂੰ ਧਨ-ਦੌਲਤ ਦਾ ਕੋਈ ਲਾਲਚ ਨਹੀਂ ਹੁੰਦਾ। ਜੋ ਧਨ ਦੇ ਲਾਲਚ ਵਿੱਚ ਭਟਕਦਾ ਫਿਰੇ ਉਹ ਸਾਧੂ ਅਖਵਾਉਣ ਦੇ ਲਾਇਕ ਨਹੀਂ ਹੈ।',
-      en: 'Kabir Saheb provides the definitive litmus test of saintliness: A genuine saint hungers solely for pure love, devotion, and heartfelt sincerity (Bhaav Ka Bhookha); he harbors not the slightest greed for worldly wealth or monetary offerings. Anyone who roams around craving money, donations, and material accumulation is no true saint at all, regardless of the holy robes or ascetic attire he wears.',
+      hi: 'सतगुरु कबीर साहेब सच्चे संत और पाखंडी वेशधारी के बीच का अचूक अंतर बताते हैं: सच्चा साधु केवल भक्त के निष्कपट प्रेम, श्रद्धा और आंतरिक भाव (भाव का भूखा) का आकांक्षी होता है, उसे सांसारिक धन, संपत्ति या भेंट-पूजा की रंचक भी भूख नहीं होती। जो व्यक्ति धन-दौलत, संपदा और चढ़ावे की भूख में संसार में मारा-मारा भटकता फिरता है, वह बाह्य वेश चाहे जो भी बना ले, वास्तव में कभी सच्चा साधु हो ही नहीं सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਸੱਚਾ ਸਾਧੂ ਸਿਰਫ ਪ੍ਰੇਮ, ਸ਼ਰਧਾ ਤੇ ਸੱਚੀ ਭਾਵਨਾ ਦਾ ਭੁੱਖਾ ਹੁੰਦਾ ਹੈ, ਉਸਨੂੰ ਧਨ-ਦੌਲਤ ਦਾ ਕੋਈ ਲਾਲਚ ਨਹੀਂ ਹੁੰਦਾ। ਜੋ ਧਨ ਦੇ ਲਾਲਚ ਵਿੱਚ ਭਟਕਦਾ ਫਿਰੇ ਉਹ ਸਾਧੂ ਅਖਵਾਉਣ ਦੇ ਲਾਇਕ ਨਹੀਂ ਹੈ।',
+      en: 'Satguru Kabir Saheb provides the definitive litmus test of saintliness: A genuine saint hungers solely for pure love, devotion, and heartfelt sincerity (Bhaav Ka Bhookha); he harbors not the slightest greed for worldly wealth or monetary offerings. Anyone who roams around craving money, donations, and material accumulation is no true saint at all, regardless of the holy robes or ascetic attire he wears.',
     },
     wordMeanings: {
       hi: [
@@ -927,9 +927,9 @@ export const SAKHIS_BATCH_28: Sakhi[] = [
     },
     transliteration: 'Saadhu chaal jo chaalai, saadhu kahaave soy. Bin saadhan to sudhi nahi, saadhu kahaan te hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब आचरण और साधना की अनिवार्यता सिद्ध करते हैं: जो वास्तव में साधु जैसा पवित्र, निष्कपट, सत्यवादी और त्यागी आचरण (चाल) जीता है, वही वास्तव में सच्चा साधु कहलाने का अधिकारी है। जिसने अपने मन और इंद्रियों को साधना (साधन) द्वारा वश में नहीं किया, उसे तो अपनी ही आत्म-चेतना की सुधि (होश) नहीं है; फिर वह भला साधु कैसे हो सकता है? साधुता वेश में नहीं, संयम और साधना में है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਸਾਧੂਆਂ ਵਰਗਾ ਪਵਿੱਤਰ ਆਚਰਣ ਤੇ ਨੇਕ ਚਾਲ ਚੱਲਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਸਾਧੂ ਹੈ। ਜਿਸਨੇ ਮਨ ਨੂੰ ਸਾਧਿਆ ਹੀ ਨਹੀਂ ਤੇ ਜਿਸਨੂੰ ਆਤਮਿਕ ਸੋਝੀ ਨਹੀਂ, ਉਹ ਸਾਧੂ ਕਿਵੇਂ ਹੋ ਸਕਦਾ ਹੈ? ਸਾਧੂਪੁਣਾ ਆਚਰਣ ਵਿੱਚ ਹੈ।',
-      en: 'Kabir Saheb establishes that saintliness is defined by living conduct and rigorous discipline: One who genuinely walks the righteous, spotless, and humble path of saintly conduct (Saadhu Chaal) alone deserves the sacred title of a Saint (Saadhu). He who has never disciplined (Saadhan) his senses and mind lacks even basic spiritual self-awareness; how could such a person ever be called a saint? True saintliness is not outward cloth, but inner self-mastery.',
+      hi: 'सतगुरु कबीर साहेब आचरण और साधना की अनिवार्यता सिद्ध करते हैं: जो वास्तव में साधु जैसा पवित्र, निष्कपट, सत्यवादी और त्यागी आचरण (चाल) जीता है, वही वास्तव में सच्चा साधु कहलाने का अधिकारी है। जिसने अपने मन और इंद्रियों को साधना (साधन) द्वारा वश में नहीं किया, उसे तो अपनी ही आत्म-चेतना की सुधि (होश) नहीं है; फिर वह भला साधु कैसे हो सकता है? साधुता वेश में नहीं, संयम और साधना में है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੋ ਸਾਧੂਆਂ ਵਰਗਾ ਪਵਿੱਤਰ ਆਚਰਣ ਤੇ ਨੇਕ ਚਾਲ ਚੱਲਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਸਾਧੂ ਹੈ। ਜਿਸਨੇ ਮਨ ਨੂੰ ਸਾਧਿਆ ਹੀ ਨਹੀਂ ਤੇ ਜਿਸਨੂੰ ਆਤਮਿਕ ਸੋਝੀ ਨਹੀਂ, ਉਹ ਸਾਧੂ ਕਿਵੇਂ ਹੋ ਸਕਦਾ ਹੈ? ਸਾਧੂਪੁਣਾ ਆਚਰਣ ਵਿੱਚ ਹੈ।',
+      en: 'Satguru Kabir Saheb establishes that saintliness is defined by living conduct and rigorous discipline: One who genuinely walks the righteous, spotless, and humble path of saintly conduct (Saadhu Chaal) alone deserves the sacred title of a Saint (Saadhu). He who has never disciplined (Saadhan) his senses and mind lacks even basic spiritual self-awareness; how could such a person ever be called a saint? True saintliness is not outward cloth, but inner self-mastery.',
     },
     wordMeanings: {
       hi: [

@@ -83,17 +83,17 @@ export const SATYA_NAAM_COMPARISON_TABLE: ComparisonRow[] = [
 export const GURU_NANAK_KABIR_DIALOGUE = {
   title: {
     hi: 'गुरु नानक देव जी और सतगुरु कबीर साहेब का ऐतिहासिक संवाद',
-    pb: 'ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਅਤੇ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਇਤਿਹਾਸਕ ਸੰਵਾਦ',
+    pb: 'ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਅਤੇ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਇਤਿਹਾਸਕ ਸੰਵਾਦ',
     en: 'Historical Dialogue Between Guru Nanak Dev Ji & Satguru Kabir Saheb'
   },
   meetingBackground: {
     hi: 'सिख धर्म के पवित्र इतिहास, पुरातन जन्मसाखियों एवं संत मत की प्रामाणिक परंपरा के अनुसार, गुरु नानक देव जी की भेंट सतगुरु कबीर साहेब से हुई थी, जिन्हें नानक जी ने अपनी वाणियों में \'जिंदा पीर\', \'जिंदा महात्मा\' अथवा \'सत्यपुरुष रूप\' के रूप में नमन किया है। जब गुरु नानक देव जी सुल्तानपुर लोधी में काली वेईं नदी में तीन दिनों तक अंतर्ध्यान (अलौकिक ध्यान) में रहे, तब उनका पावन साक्षात्कार सतगुरु कबीर साहेब (सत्यपुरुष रूप) से हुआ था।',
-    pb: 'ਸਿੱਖ ਧਰਮ ਦੇ ਪਵਿੱਤਰ ਇਤਿਹਾਸ, ਪੁਰਾਤਨ ਜਨਮਸਾਖੀਆਂ ਅਤੇ ਸੰਤ ਮਤ ਦੀ ਪ੍ਰਮਾਣਿਕ ਪਰੰਪਰਾ ਅਨੁਸਾਰ, ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਦੀ ਭੇਟ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਾਲ ਹੋਈ ਸੀ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਨਾਨਕ ਜੀ ਨੇ ਆਪਣੀਆਂ ਬਾਣੀਆਂ ਵਿੱਚ \'ਜ਼ਿੰਦਾ ਪੀਰ\', \'ਜ਼ਿੰਦਾ ਮਹਾਤਮਾ\' ਜਾਂ \'ਸਤਯਪੁਰਸ਼ ਰੂਪ\' ਵਜੋਂ ਨਮਨ ਕੀਤਾ ਹੈ। ਜਦੋਂ ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਸੁਲਤਾਨਪੁਰ ਲੋਧੀ ਵਿਖੇ ਵੇਈਂ ਨਦੀ ਵਿੱਚ ਤਿੰਨ ਦਿਨਾਂ ਲਈ ਅੰਤਰਧਿਆਨ ਰਹੇ, ਤਦ ਉਨ੍ਹਾਂ ਦਾ ਪਾਵਨ ਮਿਲਾਪ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨਾਲ ਹੋਇਆ ਸੀ।',
-    en: 'According to sacred Sikh history, ancient Janamsakhis, and Sant Mat traditions, Guru Nanak Dev Ji met Satguru Kabir Saheb, whom Guru Nanak revered as the \'Zinda Pir\' (Living Immortal Master / Manifestation of Satyapurush). When Guru Nanak Dev Ji remained immersed for three days in the Kali Bein river at Sultanpur Lodhi, he had this divine spiritual communion with Kabir Saheb.'
+    pb: 'ਸਿੱਖ ਧਰਮ ਦੇ ਪਵਿੱਤਰ ਇਤਿਹਾਸ, ਪੁਰਾਤਨ ਜਨਮਸਾਖੀਆਂ ਅਤੇ ਸੰਤ ਮਤ ਦੀ ਪ੍ਰਮਾਣਿਕ ਪਰੰਪਰਾ ਅਨੁਸਾਰ, ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਦੀ ਭੇਟ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਾਲ ਹੋਈ ਸੀ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਨਾਨਕ ਜੀ ਨੇ ਆਪਣੀਆਂ ਬਾਣੀਆਂ ਵਿੱਚ \'ਜ਼ਿੰਦਾ ਪੀਰ\', \'ਜ਼ਿੰਦਾ ਮਹਾਤਮਾ\' ਜਾਂ \'ਸਤਯਪੁਰਸ਼ ਰੂਪ\' ਵਜੋਂ ਨਮਨ ਕੀਤਾ ਹੈ। ਜਦੋਂ ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਸੁਲਤਾਨਪੁਰ ਲੋਧੀ ਵਿਖੇ ਵੇਈਂ ਨਦੀ ਵਿੱਚ ਤਿੰਨ ਦਿਨਾਂ ਲਈ ਅੰਤਰਧਿਆਨ ਰਹੇ, ਤਦ ਉਨ੍ਹਾਂ ਦਾ ਪਾਵਨ ਮਿਲਾਪ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਾਲ ਹੋਇਆ ਸੀ।',
+    en: 'According to sacred Sikh history, ancient Janamsakhis, and Sant Mat traditions, Guru Nanak Dev Ji met Satguru Kabir Saheb, whom Guru Nanak revered as the \'Zinda Pir\' (Living Immortal Master / Manifestation of Satyapurush). When Guru Nanak Dev Ji remained immersed for three days in the Kali Bein river at Sultanpur Lodhi, he had this divine spiritual communion with Satguru Kabir Saheb.'
   },
   satyaNaamMahima: {
     hi: 'गुरु नानक देव जी ने सतगुरु कबीर साहेब से प्राप्त उस गुप्त सत्यनाम की महिमा को स्वीकार करते हुए अपनी पावन \'जपुजी साहिब\' की प्रथम पंक्ति (मूलमंत्र) में उद्घोष किया: "ੴ ਸਤਿਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ॥" अर्थात् वह परमात्मा एक है, जिसका वास्तविक नाम \'सत्यनाम\' (ਸਤਿਨਾਮੁ) है और वह पूर्ण सतगुरु की कृपा (ਗੁਰ ਪ੍ਰਸਾਦਿ) से ही प्राप्त होता है।',
-    pb: 'ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਨੇ ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੋਂ ਪ੍ਰਾਪਤ ਉਸ ਗੁਪਤ ਸਤਯਨਾਮ ਦੀ ਮਹਿਮਾ ਨੂੰ ਸਵੀਕਾਰ ਕਰਦਿਆਂ \'ਜਪੁਜੀ ਸਾਹਿਬ\' ਦੀ ਪਹਿਲੀ ਤੁਕ (ਮੂਲਮੰਤਰ) ਵਿੱਚ ਫੁਰਮਾਇਆ: "ੴ ਸਤਿਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ॥" ਭਾਵ ਉਹ ਅਕਾਲ ਪੁਰਖ ਇੱਕ ਹੈ, ਜਿਸਦਾ ਅਸਲ ਨਾਮ \'ਸਤਯਨਾਮ\' ਹੈ ਅਤੇ ਉਹ ਪੂਰਨ ਗੁਰੂ ਦੀ ਕ੍ਰਿਪਾ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
+    pb: 'ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਨੇ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੋਂ ਪ੍ਰਾਪਤ ਉਸ ਗੁਪਤ ਸਤਯਨਾਮ ਦੀ ਮਹਿਮਾ ਨੂੰ ਸਵੀਕਾਰ ਕਰਦਿਆਂ \'ਜਪੁਜੀ ਸਾਹਿਬ\' ਦੀ ਪਹਿਲੀ ਤੁਕ (ਮੂਲਮੰਤਰ) ਵਿੱਚ ਫੁਰਮਾਇਆ: "ੴ ਸਤਿਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ॥" ਭਾਵ ਉਹ ਅਕਾਲ ਪੁਰਖ ਇੱਕ ਹੈ, ਜਿਸਦਾ ਅਸਲ ਨਾਮ \'ਸਤਯਨਾਮ\' ਹੈ ਅਤੇ ਉਹ ਪੂਰਨ ਗੁਰੂ ਦੀ ਕ੍ਰਿਪਾ ਨਾਲ ਮਿਲਦਾ ਹੈ।',
     en: 'Guru Nanak Dev Ji honored the glory of the secret Satyanaam received from Satguru Kabir Saheb by opening the holy Japji Sahib (Mool Mantar) with: "Ik Oankar Satyanaam Karta Purakh Nirbhau Nirvair Akal Moorat Ajuni Saibhan Gur Prasad" — The One Supreme Reality whose true eternal Name is Satyanaam, attained solely through the Grace of the True Guru.'
   },
   trilokiVsSachkhand: {
@@ -107,16 +107,16 @@ export const GURU_NANAK_KABIR_DIALOGUE = {
       devanagari: 'कबीर को करता (सृष्टि कर्ता) जान कर, नानक देव जी ने शीश नवाया॥',
       meaning: {
         hi: 'गुरु नानक देव जी ने सतगुरु कबीर साहेब को साक्षात् सृष्टि-कर्ता सत्यपुरुष जानकर आदरपूर्वक शीश नवाया।',
-        pb: 'ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਨੇ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਨੂੰ ਸ੍ਰਿਸ਼ਟੀ ਦੇ ਕਰਤਾ ਸਤਯਪੁਰਸ਼ ਜਾਣ ਕੇ ਸਤਿਕਾਰ ਸਹਿਤ ਸੀਸ ਝੁਕਾਇਆ।',
-        en: 'Beholding Kabir Saheb as the divine Creator (Satyapurush), Guru Nanak bowed in profound reverence.'
+        pb: 'ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਨੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਸ੍ਰਿਸ਼ਟੀ ਦੇ ਕਰਤਾ ਸਤਯਪੁਰਸ਼ ਜਾਣ ਕੇ ਸਤਿਕਾਰ ਸਹਿਤ ਸੀਸ ਝੁਕਾਇਆ।',
+        en: 'Beholding Satguru Kabir Saheb as the divine Creator (Satyapurush), Guru Nanak bowed in profound reverence.'
       }
     },
     {
       gurmukhi: 'ਫਾਹੀ ਕਾਤੀ ਮਿਟ ਗਈ, ਜਬ ਕਬੀਰ ਮਿਲੇ ਕਬੀਰ ॥',
       devanagari: 'फाही काती मिट गई, जब कबीर मिले कबीर॥',
       meaning: {
-        hi: 'कबीर साहेब रूपी पूर्ण परमात्मा के सान्निध्य से काल की जन्म-मरण की फांसी सदा के लिए कट गई।',
-        pb: 'ਕਬੀਰ ਸਾਹੇਬ ਰੂਪੀ ਪੂਰਨ ਪ੍ਰਭੂ ਦੇ ਮਿਲਣ ਨਾਲ ਕਾਲ ਦੀ ਜਨਮ-ਮਰਨ ਦੀ ਫਾਹੀ ਸਦਾ ਲਈ ਕੱਟੀ ਗਈ।',
+        hi: 'सतगुरु कबीर साहेब रूपी पूर्ण परमात्मा के सान्निध्य से काल की जन्म-मरण की फांसी सदा के लिए कट गई।',
+        pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਰੂਪੀ ਪੂਰਨ ਪ੍ਰਭੂ ਦੇ ਮਿਲਣ ਨਾਲ ਕਾਲ ਦੀ ਜਨਮ-ਮਰਨ ਦੀ ਫਾਹੀ ਸਦਾ ਲਈ ਕੱਟੀ ਗਈ।',
         en: 'The eternal noose of death and Kal was severed forever when Kabir met the Supreme Kabir.'
       }
     }
@@ -135,8 +135,8 @@ export const SATYA_NAAM_DATA = {
     en: 'Satyanaam & Saar Shabd: The Secret Path to Supreme Liberation'
   },
   coreIntroduction: {
-    hi: 'सतगुरु कबीर साहेब की वाणी और संत मत के गूढ़ दर्शन के अनुसार, \'सत्यनाम\' (या सत्यनाम) केवल मुख से बोला जाने वाला कोई साधारण मंत्र या सांसारिक शब्द नहीं है, बल्कि यह जीव की मुक्ति का वह गुप्त और वास्तविक \'सार शब्द\' (Original Sound Current) है जो आत्मा को काल के जाल से छुड़ाकर सतलोक (अमरलोक) ले जाता है। कबीर साहेब की विचारधारा और \'कबीर सागर\' (सूक्ष्म वेद) के अनुसार सत्यनाम मंत्र का वास्तविक रहस्य और महत्व चार प्रमुख आधारों पर प्रतिष्ठित है।',
-    pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਅਤੇ ਸੰਤ ਮਤ ਦੇ ਗੂੜ੍ਹ ਦਰਸ਼ਨ ਅਨੁਸਾਰ, \'ਸਤਯਨਾਮ\' ਕੇਵਲ ਮੁੱਖ ਤੋਂ ਬੋਲਿਆ ਜਾਣ ਵਾਲਾ ਕੋਈ ਸਾਧਾਰਨ ਮੰਤਰ ਜਾਂ ਸੰਸਾਰਕ ਸ਼ਬਦ ਨਹੀਂ ਹੈ, ਸਗੋਂ ਇਹ ਜੀਵ ਦੀ ਮੁਕਤੀ ਦਾ ਉਹ ਗੁਪਤ ਅਤੇ ਅਸਲੀ \'ਸਾਰ ਸ਼ਬਦ\' (Original Sound Current) ਹੈ ਜੋ ਆਤਮਾ ਨੂੰ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਛੁਡਾ ਕੇ ਸਤਲੋਕ (ਅਮਰਲੋਕ) ਲੈ ਜਾਂਦਾ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਵਿਚਾਰਧਾਰਾ ਅਤੇ \'ਕਬੀਰ ਸਾਗਰ\' (ਸੂਖਮ ਵੇਦ) ਅਨੁਸਾਰ ਸਤਯਨਾਮ ਦਾ ਅਸਲ ਰਹਿਸ ਚਾਰ ਮੁੱਖ ਥੰਮ੍ਹਾਂ \'ਤੇ ਆਧਾਰਿਤ ਹੈ।',
+    hi: 'सतगुरु कबीर साहेब की वाणी और संत मत के गूढ़ दर्शन के अनुसार, \'सत्यनाम\' (या सत्यनाम) केवल मुख से बोला जाने वाला कोई साधारण मंत्र या सांसारिक शब्द नहीं है, बल्कि यह जीव की मुक्ति का वह गुप्त और वास्तविक \'सार शब्द\' (Original Sound Current) है जो आत्मा को काल के जाल से छुड़ाकर सतलोक (अमरलोक) ले जाता है। सतगुरु कबीर साहेब की विचारधारा और \'कबीर सागर\' (सूक्ष्म वेद) के अनुसार सत्यनाम मंत्र का वास्तविक रहस्य और महत्व चार प्रमुख आधारों पर प्रतिष्ठित है।',
+    pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਬਾਣੀ ਅਤੇ ਸੰਤ ਮਤ ਦੇ ਗੂੜ੍ਹ ਦਰਸ਼ਨ ਅਨੁਸਾਰ, \'ਸਤਯਨਾਮ\' ਕੇਵਲ ਮੁੱਖ ਤੋਂ ਬੋਲਿਆ ਜਾਣ ਵਾਲਾ ਕੋਈ ਸਾਧਾਰਨ ਮੰਤਰ ਜਾਂ ਸੰਸਾਰਕ ਸ਼ਬਦ ਨਹੀਂ ਹੈ, ਸਗੋਂ ਇਹ ਜੀਵ ਦੀ ਮੁਕਤੀ ਦਾ ਉਹ ਗੁਪਤ ਅਤੇ ਅਸਲੀ \'ਸਾਰ ਸ਼ਬਦ\' (Original Sound Current) ਹੈ ਜੋ ਆਤਮਾ ਨੂੰ ਕਾਲ ਦੇ ਜਾਲ ਤੋਂ ਛੁਡਾ ਕੇ ਸਤਲੋਕ (ਅਮਰਲੋਕ) ਲੈ ਜਾਂਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਵਿਚਾਰਧਾਰਾ ਅਤੇ \'ਕਬੀਰ ਸਾਗਰ\' (ਸੂਖਮ ਵੇਦ) ਅਨੁਸਾਰ ਸਤਯਨਾਮ ਦਾ ਅਸਲ ਰਹਿਸ ਚਾਰ ਮੁੱਖ ਥੰਮ੍ਹਾਂ \'ਤੇ ਆਧਾਰਿਤ ਹੈ।',
     en: 'According to Satguru Kabir Saheb\'s divine vani and the esoteric philosophy of Sant Mat, \'Satyanaam\' is not an ordinary spoken word or worldly mantra, but the secret and authentic \'Original Sound Current\' that frees the soul from the trap of Kal and leads it to Satyaloka (Amarlok).'
   },
   sections: [
@@ -149,9 +149,9 @@ export const SATYA_NAAM_DATA = {
         en: '1. Core Meaning of Satyanaam (Two-Letter Secret Mantra)' 
       },
       content: {
-        hi: 'साधारण भाषा में लोग \'सत्यनाम-सत्यनाम\' का जाप केवल मुख से करते हैं, लेकिन कबीर साहेब के गुप्त ज्ञान के अनुसार, सत्यनाम एक सांकेतिक और दो अक्षरों का दिव्य मंत्र है, जो केवल एक पूर्ण तत्वदर्शी संत (सतगुरु) द्वारा ही प्राप्त होता है।\n\nकबीर साहेब कहते हैं:\n"कहैं कबीर अक्षर द्वौ भाख। होगा खसम तो लेगा राख॥"\n"दूसर बनिज नहीं कछु बाखर, राम नाम दोउ तत आखर॥"\n\nदोहे का सरल अर्थ:\nसतगुरु कबीर साहेब जी कहते हैं कि उस परमेश्वर (मालिक) के \'दो अक्षरों\' के गुप्त वास्तविक नाम का सुमिरन कर। यदि तुझे सत्यनाम देने वाला पूर्ण सतगुरु मिल गया और तेरी भक्ति सच्ची रही, तो वह मालिक (खसम) अंत समय में काल के चक्र या संकटों से तेरी रक्षा (राख) कर लेगा। इस संसार रूपी बाज़ार में राम नाम के इन दो अक्षरों के तत्व (सार) के अलावा अन्य कोई भी व्यापार या सौदा सच्चा नहीं है।\n\n(नोट: यह पवित्र वाणी कबीर ग्रंथावली और श्री गुरु ग्रंथ साहिब के पृष्ठ 329 पर भी मिलती है)',
-        pb: 'ਸਾਧਾਰਨ ਭਾਸ਼ਾ ਵਿੱਚ ਲੋਕ \'ਸਤਯਨਾਮ-ਸਤਯਨਾਮ\' ਦਾ ਜਾਪ ਕੇਵਲ ਮੂੰਹੋਂ ਕਰਦੇ ਹਨ, ਪਰ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਗੁਪਤ ਗਿਆਨ ਅਨੁਸਾਰ, ਸਤਯਨਾਮ ਇੱਕ ਸਾਂਕੇਤਿਕ ਅਤੇ ਦੋ ਅੱਖਰਾਂ ਦਾ ਬ੍ਰਹਮ ਮੰਤਰ ਹੈ, ਜੋ ਕੇਵਲ ਇੱਕ ਪੂਰਨ ਤੱਤਦਰਸ਼ੀ ਸੰਤ (ਸਤਿਗੁਰੂ) ਦੁਆਰਾ ਹੀ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ।\n\nਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ:\n"ਕਹੈਂ ਕਬੀਰ ਅਛਰ ਦ੍ਵੌ ਭਾਖ। ਹੋਗਾ ਖਸਮ ਤੋ ਲੇਗਾ ਰਾਖ॥"\n"ਦੂਸਰ ਬਨਿਜ ਨਹੀਂ ਕਛੁ ਬਾਖਰ, ਰਾਮ ਨਾਮ ਦੋਉ ਤਤ ਆਖਰ॥"\n\nਅਰਥ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਸ ਪ੍ਰਭੂ ਦੇ ਦੋ ਅੱਖਰਾਂ ਦੇ ਗੁਪਤ ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰ। ਜੇ ਪੂਰਨ ਸਤਿਗੁਰੂ ਮਿਲ ਗਿਆ ਅਤੇ ਭਗਤੀ ਸੱਚੀ ਰਹੀ, ਤਾਂ ਉਹ ਮਾਲਕ ਅੰਤ ਵੇਲੇ ਕਾਲ ਤੋਂ ਰੱਖਿਆ ਕਰੇਗਾ। ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਰਾਮ ਨਾਮ ਦੇ ਇਨ੍ਹਾਂ ਦੋ ਅੱਖਰਾਂ ਦੇ ਤੱਤ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਹੋਰ ਸੌਦਾ ਸੱਚਾ ਨਹੀਂ ਹੈ।\n(ਨੋਟ: ਇਹ ਪਵਿੱਤਰ ਬਾਣੀ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਅੰਗ ੩੨੯ ਉੱਤੇ ਵੀ ਸੁਭਾਇਮਾਨ ਹੈ)',
-        en: 'People conventionally chant \'Satyanaam\' with the tongue, but according to Kabir Saheb, Satyanaam is an esoteric two-syllable divine name bestowed only by a True Living Master (Tattvadarshi Satguru).\n\nKabir Saheb declares:\n"Kahai Kabir akshar dwau bhaakh, hoga khasam to lega raakh."\n"Doosar banij nahi kachu baakhar, ram naam dou tat aakhar."\n\nMeaning: Meditate upon the two-lettered secret essence of the Divine Lord. If you have found a true Satguru and your devotion is sincere, that Lord will shield you from Kal at the final hour. In this marketplace of the world, there is no real merchandise except the two-letter essence of the True Name.\n(Note: This sacred verse is affirmed in Kabir Granthavali and Sri Guru Granth Sahib Ang 329).'
+        hi: 'साधारण भाषा में लोग \'सत्यनाम-सत्यनाम\' का जाप केवल मुख से करते हैं, लेकिन सतगुरु कबीर साहेब के गुप्त ज्ञान के अनुसार, सत्यनाम एक सांकेतिक और दो अक्षरों का दिव्य मंत्र है, जो केवल एक पूर्ण तत्वदर्शी संत (सतगुरु) द्वारा ही प्राप्त होता है।\n\n सतगुरु कबीर साहेब फरमाते हैं:\n"कहैं कबीर अक्षर द्वौ भाख। होगा खसम तो लेगा राख॥"\n"दूसर बनिज नहीं कछु बाखर, राम नाम दोउ तत आखर॥"\n\nदोहे का सरल अर्थ:\nसतगुरु  फरमाते हैं कि उस परमेश्वर (मालिक) के \'दो अक्षरों\' के गुप्त वास्तविक नाम का सुमिरन कर। यदि तुझे सत्यनाम देने वाला पूर्ण सतगुरु मिल गया और तेरी भक्ति सच्ची रही, तो वह मालिक (खसम) अंत समय में काल के चक्र या संकटों से तेरी रक्षा (राख) कर लेगा। इस संसार रूपी बाज़ार में राम नाम के इन दो अक्षरों के तत्व (सार) के अलावा अन्य कोई भी व्यापार या सौदा सच्चा नहीं है।\n\n(नोट: यह पवित्र वाणी कबीर ग्रंथावली और श्री गुरु ग्रंथ साहिब के पृष्ठ 329 पर भी मिलती है)',
+        pb: 'ਸਾਧਾਰਨ ਭਾਸ਼ਾ ਵਿੱਚ ਲੋਕ \'ਸਤਯਨਾਮ-ਸਤਯਨਾਮ\' ਦਾ ਜਾਪ ਕੇਵਲ ਮੂੰਹੋਂ ਕਰਦੇ ਹਨ, ਪਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਗੁਪਤ ਗਿਆਨ ਅਨੁਸਾਰ, ਸਤਯਨਾਮ ਇੱਕ ਸਾਂਕੇਤਿਕ ਅਤੇ ਦੋ ਅੱਖਰਾਂ ਦਾ ਬ੍ਰਹਮ ਮੰਤਰ ਹੈ, ਜੋ ਕੇਵਲ ਇੱਕ ਪੂਰਨ ਤੱਤਦਰਸ਼ੀ ਸੰਤ (ਸਤਿਗੁਰੂ) ਦੁਆਰਾ ਹੀ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ।\n\n ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ:\n"ਕਹੈਂ ਕਬੀਰ ਅਛਰ ਦ੍ਵੌ ਭਾਖ। ਹੋਗਾ ਖਸਮ ਤੋ ਲੇਗਾ ਰਾਖ॥"\n"ਦੂਸਰ ਬਨਿਜ ਨਹੀਂ ਕਛੁ ਬਾਖਰ, ਰਾਮ ਨਾਮ ਦੋਉ ਤਤ ਆਖਰ॥"\n\nਅਰਥ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਸ ਪ੍ਰਭੂ ਦੇ ਦੋ ਅੱਖਰਾਂ ਦੇ ਗੁਪਤ ਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰ। ਜੇ ਪੂਰਨ ਸਤਿਗੁਰੂ ਮਿਲ ਗਿਆ ਅਤੇ ਭਗਤੀ ਸੱਚੀ ਰਹੀ, ਤਾਂ ਉਹ ਮਾਲਕ ਅੰਤ ਵੇਲੇ ਕਾਲ ਤੋਂ ਰੱਖਿਆ ਕਰੇਗਾ। ਇਸ ਸੰਸਾਰ ਵਿੱਚ ਰਾਮ ਨਾਮ ਦੇ ਇਨ੍ਹਾਂ ਦੋ ਅੱਖਰਾਂ ਦੇ ਤੱਤ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਹੋਰ ਸੌਦਾ ਸੱਚਾ ਨਹੀਂ ਹੈ।\n(ਨੋਟ: ਇਹ ਪਵਿੱਤਰ ਬਾਣੀ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਅੰਗ ੩੨੯ ਉੱਤੇ ਵੀ ਸੁਭਾਇਮਾਨ ਹੈ)',
+        en: 'People conventionally chant \'Satyanaam\' with the tongue, but according to Satguru Kabir Saheb, Satyanaam is an esoteric two-syllable divine name bestowed only by a True Living Master (Tattvadarshi Satguru).\n\nSatguru Kabir Saheb proclaims:\n"Kahai Kabir akshar dwau bhaakh, hoga khasam to lega raakh."\n"Doosar banij nahi kachu baakhar, ram naam dou tat aakhar."\n\nMeaning: Meditate upon the two-lettered secret essence of the Divine Lord. If you have found a true Satguru and your devotion is sincere, that Lord will shield you from Kal at the final hour. In this marketplace of the world, there is no real merchandise except the two-letter essence of the True Name.\n(Note: This sacred verse is affirmed in Kabir Granthavali and Sri Guru Granth Sahib Ang 329).'
       },
       dohas: [
         {
@@ -162,7 +162,7 @@ export const SATYA_NAAM_DATA = {
         {
           couplet: 'दूसर बनिज नहीं कछु बाखर,\nराम नाम दोउ तत आखर॥',
           coupletPb: 'ਦੂਸਰ ਬਨਿਜ ਨਹੀਂ ਕਛੁ ਬਾਖਰ,\nਰਾਮ ਨਾਮ ਦੋਉ ਤਤ ਆਖਰ॥',
-          reference: 'राग गौड़ी कबीर जी, अंग ३२९'
+          reference: 'राग गौड़ी सतगुरु कबीर साहेब, अंग ३२९'
         }
       ]
     },
@@ -183,7 +183,7 @@ export const SATYA_NAAM_DATA = {
         {
           couplet: 'सोहं शब्द पर प्रीत अखंड, घर को जीत अनुभव प्रचंड।\nतन में खबर करो भाई, जामे नाम की रोशनाई॥',
           coupletPb: 'ਸੋਹੰ ਸ਼ਬਦ ਪਰ ਪ੍ਰੀਤ ਅਖੰਡ, ਘਰ ਕੋ ਜੀਤ ਅਨੁਭਵ ਪ੍ਰਚੰਡ।\nਤਨ ਮੇਂ ਖਬਰ ਕਰੋ ਭਾਈ, ਜਾਮੇ ਨਾਮ ਕੀ ਰੋਸ਼ਨਾਈ॥',
-          reference: 'कबीर साहेब साखी'
+          reference: 'सतगुरु कबीर साहेब साखी'
         }
       ]
     },
@@ -198,7 +198,7 @@ export const SATYA_NAAM_DATA = {
       content: {
         hi: 'सतगुरु कबीर साहेब के दर्शन के अनुसार, यह पूरा संसार \'ब्रह्म-काल\' का एक जाल है, जहाँ जीव अपने कर्मों के कारण बार-बार जन्म लेता और मरता है। साधारण देवी-देवताओं की पूजा या केवल \'ओम\' (Om) का जाप करने से जीव केवल स्वर्ग या त्रिलोकी के ऊंचे लोकों तक जा सकता है, लेकिन पूर्ण मोक्ष नहीं पा सकता।\n\n• जब सतगुरु से सत्यनाम (और इसके बाद की उच्च अवस्था सारनाम/सारशब्द) प्राप्त होती है, तभी आत्मा काल के 21 ब्रह्मांडों को पार करके अपने वास्तविक घर \'सतलोक\' (सच्चिदानंद घन अमरलोक) पहुँच पाती है।',
         pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਦਰਸ਼ਨ ਅਨੁਸਾਰ, ਇਹ ਸਾਰਾ ਸੰਸਾਰ \'ਬ੍ਰਹਮ-ਕਾਲ\' ਦਾ ਇੱਕ ਜਾਲ ਹੈ, ਜਿੱਥੇ ਜੀਵ ਆਪਣੇ ਕਰਮਾਂ ਕਾਰਨ ਵਾਰ-ਵਾਰ ਜੰਮਦਾ ਤੇ ਮਰਦਾ ਹੈ। ਸਾਧਾਰਨ ਦੇਵੀ-ਦੇਵਤਿਆਂ ਦੀ ਪੂਜਾ ਜਾਂ ਕੇਵਲ \'ੴ / ਓਮ\' ਦਾ ਜਾਪ ਕਰਨ ਨਾਲ ਜੀਵ ਸਵਰਗ ਜਾਂ ਤ੍ਰਿਲੋਕੀ ਤੱਕ ਹੀ ਜਾ ਸਕਦਾ ਹੈ, ਪਰ ਪੂਰਨ ਮੋਖ ਨਹੀਂ ਪਾ ਸਕਦਾ।\n\n• ਜਦੋਂ ਸਤਿਗੁਰੂ ਤੋਂ ਸਤਯਨਾਮ (ਅਤੇ ਇਸ ਤੋਂ ਅਗਲੀ ਉੱਚ ਅਵਸਥਾ ਸਾਰਨਾਮ/ਸਾਰਸ਼ਬਦ) ਪ੍ਰਾਪਤ ਹੁੰਦੀ ਹੈ, ਤਦ ਹੀ ਆਤਮਾ ਕਾਲ ਦੇ ੨੧ ਬ੍ਰਹਿਮੰਡਾਂ ਨੂੰ ਪਾਰ ਕਰਕੇ ਆਪਣੇ ਸੱਚੇ ਘਰ \'ਸਤਲੋਕ\' ਪਹੁੰਚਦੀ ਹੈ।',
-        en: 'In Kabir Saheb\'s cosmology, this creation is enveloped within the web of Brahm-Kal, subjecting souls to perpetual transmigration. Worship of deities or chanting \'Om\' can only elevate one up to the heavenly realms within the Three Worlds.\n\n• Only through Satyanaam and the subsequent higher Saar Shabd can the soul pierce through the 21 universes of Kal and attain its eternal abode in Satyaloka.'
+        en: 'In Satguru Kabir Saheb\'s cosmology, this creation is enveloped within the web of Brahm-Kal, subjecting souls to perpetual transmigration. Worship of deities or chanting \'Om\' can only elevate one up to the heavenly realms within the Three Worlds.\n\n• Only through Satyanaam and the subsequent higher Saar Shabd can the soul pierce through the 21 universes of Kal and attain its eternal abode in Satyaloka.'
       }
     },
     {

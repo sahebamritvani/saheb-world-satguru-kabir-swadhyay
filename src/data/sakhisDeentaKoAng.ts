@@ -72,7 +72,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Deen gareebee bandagee, saadhun son aadheen. Taake sang main yaun rahoon, jyaun paanee sang meen.',
     bhavarth: {
-      hi: 'जिसमें दीनता (विनम्रता), गरीबी और सेवा-समर्पण की भावना होती है और जो साधु-संतों की शरण में रहने का अभिलाषी होता है, उसके साथ मैं इस प्रकार रहता हूं, जैसे पानी के साथ मछली रहती है, अर्थात मछली और पानी के संग की भांति ही सेवक और सद्गुरु का साथ होता है।',
+      hi: 'जिसमें दीनता (विनम्रता), गरीबी और सेवा-समर्पण की भावना होती है और जो साधु-संतों की शरण में रहने का अभिलाषी होता है, उसके साथ मैं इस प्रकार रहता हूं, जैसे पानी के साथ मछली रहती है, अर्थात मछली और पानी के संग की भांति ही सेवक और सतगुरु का साथ होता है।',
       pb: 'ਜਿਸ ਮਨੁੱਖ ਵਿੱਚ ਨਿਮਰਤਾ, ਸਾਦਗੀ ਤੇ ਸੇਵਾ-ਸਮਰਪਣ ਦੀ ਭਾਵਨਾ ਹੁੰਦੀ ਹੈ ਅਤੇ ਜੋ ਸੰਤਾਂ ਦੀ ਸੰਗਤ ਵਿੱਚ ਰਹਿਣਾ ਲੋਚਦਾ ਹੈ, ਉਸਦੇ ਨਾਲ ਮੈਂ ਇੰਝ ਰਹਿੰਦਾ ਹਾਂ ਜਿਵੇਂ ਪਾਣੀ ਦੇ ਨਾਲ ਮੱਛੀ ਰਹਿੰਦੀ ਹੈ।',
       en: 'I reside close to the seeker who harbors humility, simplicity, and selfless devotion, and who yearns for the holy company of saints—just as a fish cannot exist without water. Such is the union of the true disciple and Satguru.',
     },
@@ -94,7 +94,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा मन सद्गुरु की शिक्षाओं के प्रति पानी और मछली जैसा अनन्य प्रेम रखता है?',
+      hi: 'क्या मेरा मन सतगुरु की शिक्षाओं के प्रति पानी और मछली जैसा अनन्य प्रेम रखता है?',
       pb: 'ਕੀ ਮੇਰੀ ਪ੍ਰੀਤ ਗੁਰੂ ਸ਼ਬਦ ਨਾਲ ਪਾਣੀ ਤੇ ਮੱਛੀ ਵਰਗੀ ਪੱਕੀ ਹੈ?',
       en: 'Does my mind hold an absolute, life-sustaining attachment to the Guru\'s teachings, like a fish to water?',
     },
@@ -104,7 +104,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       en: 'Always maintain a humble demeanor in the company of the holy, and listen to the spiritual discourse without pride.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे ऐसी अनन्य भक्ति दें कि मेरा चित्त सदा आपके वचनों के जल में मीन की भांति मग्न रहे। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे ऐसी अनन्य भक्ति दें कि मेरा चित्त सदा आपके वचनों के जल में मीन की भांति मग्न रहे। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਪਰਮ ਦਿਆਲੂ ਗੁਰੂਦੇਵ! ਮੈਨੂੰ ਅਜਿਹਾ ਪਿਆਰ ਬਖਸ਼ੋ ਕਿ ਮੇਰਾ ਮਨ ਸਦਾ ਤੁਹਾਡੀ ਬੰਦਗੀ ਵਿੱਚ ਲੀਨ ਰਹੇ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Grant me such unconditional devotion that my heart remains deeply immersed in the waters of your sacred words, like a fish. Saheb Bandagi Saheb!',
     },
@@ -160,7 +160,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरुदेव! मुझे अभिमान की लहरों से बचाकर अपनी पावन विनम्रता की नौका में शरण दें। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਗੁਰੂਦੇਵ! ਮੈਨੂੰ ਹੰਕਾਰ ਦੀਆਂ ਲਹਿਰਾਂ ਤੋਂ ਬਚਾ ਕੇ ਆਪਣੀ ਸ਼ਰਨ ਵਿੱਚ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹेਬ!',
+      pb: 'ਹੇ ਗੁਰੂਦੇਵ! ਮੈਨੂੰ ਹੰਕਾਰ ਦੀਆਂ ਲਹਿਰਾਂ ਤੋਂ ਬਚਾ ਕੇ ਆਪਣੀ ਸ਼ਰਨ ਵਿੱਚ ਰੱਖੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Rescue me from the turbulent waves of pride and seat me safely in your boat of pure humility. Saheb Bandagi Saheb!',
     },
     quiz: []
@@ -182,9 +182,9 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer sabate ham bure, hamate bhal sab koy. Jin aisa kari boojhiya, meet hamaara soy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि इस संसार में हम तो सबसे बुरे हैं, और हमसे सब कोई अच्छे हैं। जिसने विनम्रतापूर्वक ऐसा करके समझा, वही हमारा मित्र है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि इस संसार में हम तो सबसे बुरे हैं, और हमसे सब कोई अच्छे हैं। जिसने विनम्रतापूर्वक ऐसा करके समझा, वही हमारा मित्र है।',
       pb: 'ਕਬੀर ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅਸੀਂ ਤਾਂ ਸਭ ਤੋਂ ਬੁਰੇ ਹਾਂ ਅਤੇ ਸਾਡੇ ਤੋਂ ਬਿਨਾਂ ਬਾਕੀ ਸਾਰੇ ਚੰਗੇ ਹਨ। ਜਿਸ ਕਿਸੇ ਨੇ ਵੀ ਅਜਿਹੀ ਹਲੀਮੀ ਧਾਰਨ ਕਰਕੇ ਗੱਲ ਨੂੰ ਸਮਝਿਆ ਹੈ, ਉਹੀ ਸਾਡਾ ਸੱਚਾ ਮਿੱਤਰ ਹੈ।',
-      en: 'Kabir says: I am the worst of all, and everyone else is better than me. He who understands this with genuine, profound humility is indeed my closest friend and kin.',
+      en: 'Satguru Kabir Saheb proclaims: I am the worst of all, and everyone else is better than me. He who understands this with genuine, profound humility is indeed my closest friend and kin.',
     },
     wordMeanings: {
       hi: [
@@ -204,7 +204,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं दूसरों के दोष खोजने में लगा रहता हूँ, या कबीर साहेब की भांति अपनी कमियों को स्वीकार कर विनम्र बनता हूँ?',
+      hi: 'क्या मैं दूसरों के दोष खोजने में लगा रहता हूँ, या सतगुरु कबीर साहेब की भांति अपनी कमियों को स्वीकार कर विनम्र बनता हूँ?',
       pb: 'ਕੀ ਮੈਂ ਦੂਜਿਆਂ ਦੀਆਂ ਕਮੀਆਂ ਲੱਭਦਾ ਹਾਂ, ਜਾਂ ਆਪਣੇ ਅੰਦਰ ਝਾਤੀ ਮਾਰ ਕੇ ਨਿਮਰ ਬਣਦਾ ਹਾਂ?',
       en: 'Do I continuously hunt for faults in others, or do I constructively acknowledge my own flaws and practice humility?',
     },
@@ -214,7 +214,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       en: 'Instead of finding faults in others, focus on their good qualities and maintain a lifelong learner\'s attitude.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे दूसरों की आलोचना के विष से बचाकर आत्म-निरीक्षण और अपार विनम्रता की दृष्टि दें। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे दूसरों की आलोचना के विष से बचाकर आत्म-निरीक्षण और अपार विनम्रता की दृष्टि दें। साहेब बंदगी साहेब!',
       pb: 'ਹေ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਾ ਤੋਂ ਬਚਾ ਕੇ ਆਪਾ ਸੁਧਾਰਨ ਦੀ ਸੋਝੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Save me from the poison of slandering others, and bless me with the sight of self-correction and sweet humility. Saheb Bandagi Saheb!',
     },
@@ -237,9 +237,9 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer navai so aapako, par ko navai na koy. Ghaali taraajoo toliye, navai so bhaaree hoy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो झुककर विनम्रता धारण करता है, वह दूसरों के लिए नहीं, वरन् अपने लिए ही शुभ और महान कर्म करता है, जिस प्रकार तराजू में कोई वस्तु रखकर तौलने से, वह जिस ओर झुक जाएगी, वही भाग भारी कहलाएगा, अर्थात वही प्रशंसनीय होगा',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੋ ਕੋਈ ਝੁਕ ਕੇ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰਦਾ ਹੈ, ਉਹ ਆਪਣੇ ਸੁਧਾਰ ਲਈ ਹੀ ਅਜਿਹਾ ਕਰਦਾ ਹੈ। ਜਿਵੇਂ ਤਰਾਜ਼ੂ ਵਿੱਚ ਜੋ ਪਾਸਾ ਝੁਕਦਾ ਹੈ, ਉਹੀ ਭਾਰੀ ਤੇ ਮੁੱਲਵਾਨ ਹੁੰਦਾ ਹੈ।',
-      en: 'Kabir says: He who bows and embraces humility performs a noble act for his own elevation, not for others. Just as in a balance scale, the side that bows down with weight is recognized as precious and heavier, so is the humble person esteemed.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो झुककर विनम्रता धारण करता है, वह दूसरों के लिए नहीं, वरन् अपने लिए ही शुभ और महान कर्म करता है, जिस प्रकार तराजू में कोई वस्तु रखकर तौलने से, वह जिस ओर झुक जाएगी, वही भाग भारी कहलाएगा, अर्थात वही प्रशंसनीय होगा',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਕੋਈ ਝੁਕ ਕੇ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰਦਾ ਹੈ, ਉਹ ਆਪਣੇ ਸੁਧਾਰ ਲਈ ਹੀ ਅਜਿਹਾ ਕਰਦਾ ਹੈ। ਜਿਵੇਂ ਤਰਾਜ਼ੂ ਵਿੱਚ ਜੋ ਪਾਸਾ ਝੁਕਦਾ ਹੈ, ਉਹੀ ਭਾਰੀ ਤੇ ਮੁੱਲਵਾਨ ਹੁੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims: He who bows and embraces humility performs a noble act for his own elevation, not for others. Just as in a balance scale, the side that bows down with weight is recognized as precious and heavier, so is the humble person esteemed.',
     },
     wordMeanings: {
       hi: [
@@ -402,7 +402,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Ik baanee so deenata, sab kachu guru darabaar. Yahee bhent guru dev kee, santan kiyo vichaar.',
     bhavarth: {
-      hi: 'जो व्यक्ति अपने जीवन में एक बार दीनता के सभी सद्गुण धारण कर लेता है, फिर उसके लिए सद्गुरु के दरबार में सब कुछ पूर्ण है। संतों ने यह विचार व्यक्त किया है कि दीनता ही गुरुदेव के लिए सर्वोत्तम भेंट है।',
+      hi: 'जो व्यक्ति अपने जीवन में एक बार दीनता के सभी सद्गुण धारण कर लेता है, फिर उसके लिए सतगुरु के दरबार में सब कुछ पूर्ण है। संतों ने यह विचार व्यक्त किया है कि दीनता ही गुरुदेव के लिए सर्वोत्तम भेंट है।',
       pb: 'ਜੋ ਮਨੁੱਖ ਆਪਣੇ ਜੀਵਨ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਿਮਰਤਾ ਧਾਰਨ ਕਰ ਲੈਂਦਾ ਹੈ, ਉਸ ਲਈ ਗੁਰੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਕੋਈ ਕਮੀ ਨਹੀਂ ਰਹਿੰਦੀ। ਸੰਤਾਂ ਦਾ ਇਹ ਨਿਰਣਾ ਹੈ ਕਿ ਹਲੀਮੀ ਹੀ ਗੁਰੂਦੇਵ ਲਈ ਸਭ ਤੋਂ ਪਵਿੱਤਰ ਭੇਟ ਹੈ।',
       en: 'He who adopts the ultimate virtues of humility has nothing left to seek; everything is fulfilled for him in the Guru\'s court. Saints have reflected that sweet humility is the finest offering one can present to the divine Master.',
     },
@@ -429,12 +429,12 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       en: 'Am I looking to present material gifts to please the divine Master, or am I ready to offer my ego on the altar of pure humility?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु की शरण में जब भी जाएं, अपने ज्ञान, पद और प्रतिष्ठा के घमंड को बाहर छोड़कर पूर्ण शून्य भाव से जाएं।',
+      hi: 'सतगुरु की शरण में जब भी जाएं, अपने ज्ञान, पद और प्रतिष्ठा के घमंड को बाहर छोड़कर पूर्ण शून्य भाव से जाएं।',
       pb: 'ਗੁਰੂ ਦਰਬਾਰ ਵਿੱਚ ਜਦੋਂ ਵੀ ਜਾਓ, ਆਪਣੇ ਰੁਤਬੇ ਤੇ ਅਮੀਰੀ ਦਾ ਹੰਕਾਰ ਬਾਹਰ ਛੱਡ ਕੇ ਜਾਓ।',
       en: 'Whenever you approach the Satguru, leave behind the pride of your knowledge, position, and status outside.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मेरे पास समर्पित करने के लिए कुछ भी नहीं है। मैं अपने अहंकार को आपके चरणों में अर्पित कर दीनता की भेंट चढ़ाता हूँ। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मेरे पास समर्पित करने के लिए कुछ भी नहीं है। मैं अपने अहंकार को आपके चरणों में अर्पित कर दीनता की भेंट चढ़ाता हूँ। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਂ ਆਪਣਾ ਹੰਕਾਰ ਤੁਹਾਡੇ ਚਰਨਾਂ ਵਿੱਚ ਅਰਪਣ ਕਰਕੇ ਨਿਮਰ ਹੋਣ ਦੀ ਯਾਚਨਾ ਕਰਦਾ ਹਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! I have no material wealth to offer. I lay down my pride at your feet and present the humble gift of my ego-less self. Saheb Bandagi Saheb!',
     },
@@ -560,13 +560,13 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       en: 'Deenta Ko Ang - 11',
     },
     text: {
-      hi: 'मिसरी बिखरी रेत में, हस्ती चुनी न जाय।\nकीड़ी ह्वै करि सब चुनै, तब साहिब कूं पाय।।',
-      pb: 'ਮਿਸਰੀ ਬਿਖਰੀ ਰੇਤ ਮੇਂ, ਹਸਤੀ ਚੁਨੀ ਨ ਜਾਇ।\nਕੀੜੀ ਹ੍ਵੈ ਕਰਿ ਸਬ ਚੁਨੈ, ਤਬ ਸਾਹਿਬ ਕੂੰ ਪਾਇ।।',
+      hi: 'मिसरी बिखरी रेत में, हस्ती चुनी न जाय।\nकीड़ी ह्वै करि सब चुनै, तब साहेब कूं पाय।।',
+      pb: 'ਮਿਸਰੀ ਬਿਖਰੀ ਰੇਤ ਮੇਂ, ਹਸਤੀ ਚੁਨੀ ਨ ਜਾਇ।\nਕੀੜੀ ਹ੍ਵੈ ਕਰਿ ਸਬ ਚੁਨੈ, ਤਬ ਸਾਹੇਬ ਕੂੰ ਪਾਇ।।',
       en: 'Misaree bikharee ret mein, hastee chunee na jaay. Keedee hvai kari sab chunai, tab saahib koon paay..',
     },
     transliteration: 'Misaree bikharee ret mein, hastee chunee na jaay. Keedee hvai kari sab chunai, tab saahib koon paay.',
     bhavarth: {
-      hi: 'जैसे रेत-मिट्टी में मिसरी बिखर जाती है, परंतु हाथी के विशालकाय होने पर भी उससे वह चुनी नहीं जा सकती, लेकिन चींटी के छोटा होने पर भी वह उसे चुन लेती है। इसी प्रकार कोई भी स्वयं को अभिमान-वश बड़ा बनाकर नहीं, विनम्र-भाव से छोटा बनकर ही सद्गुरु (परमात्मा) के दर्शन प्राप्त कर सकता है।',
+      hi: 'जैसे रेत-मिट्टी में मिसरी बिखर जाती है, परंतु हाथी के विशालकाय होने पर भी उससे वह चुनी नहीं जा सकती, लेकिन चींटी के छोटा होने पर भी वह उसे चुन लेती है। इसी प्रकार कोई भी स्वयं को अभिमान-वश बड़ा बनाकर नहीं, विनम्र-भाव से छोटा बनकर ही सतगुरु (परमात्मा) के दर्शन प्राप्त कर सकता है।',
       pb: 'ਜਿਵੇਂ ਰੇਤ ਵਿੱਚ ਖਿੰਡੀ ਹੋਈ ਮਿਸਰੀ ਨੂੰ ਹਾਥੀ ਆਪਣਾ ਵੱਡਾ ਸਰੀਰ ਹੋਣ ਦੇ ਹੰਕਾਰ ਕਾਰਨ ਚੁਣ ਨਹੀਂ ਸਕਦਾ, ਪਰ ਇੱਕ ਨਿੱਕੀ ਚੀਂਟੀ ਉਸਨੂੰ ਆਸਾਨੀ ਨਾਲ ਚੁਣ ਲੈਂਦੀ ਹੈ। ਇਸੇ ਤਰ੍ਹਾਂ ਅਭਿਮਾਨੀ ਪ੍ਰਭੂ ਨੂੰ ਨਹੀਂ ਪਾ ਸਕਦਾ, ਕੇਵਲ ਨਿਮਰ ਸੇਵਕ ਹੀ ਉਸਦੇ ਦਰਸ਼ਨ ਪਾਉਂਦਾ ਹੈ।',
       en: 'Just as sugar crystals scattered in the sand cannot be picked up by a giant elephant despite its size, a tiny ant gathers them with ease. Similarly, one cannot realize the Supreme Divine by becoming "great" with pride; only by becoming small and humble can the Lord be found.',
     },
@@ -598,7 +598,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       en: 'Discard the vanity of greatness and display; live a simple, accessible, and service-oriented life.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरुदेव! मुझे हस्ती का अहंकार न देकर अपनी भक्ति की मिसरी चुनने के लिए चींटी जैसी कोमल दीनता दें। साहेब बंदगी साहेब!',
+      hi: 'हे सतगुरुदेव! मुझे हस्ती का अहंकार न देकर अपनी भक्ति की मिसरी चुनने के लिए चींटी जैसी कोमल दीनता दें। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਪਰਮ ਗੁਰੂਦੇਵ! ਮੈਨੂੰ ਹੰਕਾਰ ਤੋਂ ਬਚਾ ਕੇ ਚੀਂਟੀ ਵਰਗੀ ਹਲੀਮੀ ਬਖਸ਼ੋ ਤਾਂ ਜੋ ਮੈਂ ਨਾਮ ਰਸ ਚੁਣ ਸਕਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru! Protect me from the elephant\'s pride; grant me the ant\'s gentle modesty to gather the sweet crystals of your devotion. Saheb Bandagi Saheb!',
     },
@@ -621,9 +621,9 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Deen gareebee bandagee, sabason aadar bhaav. Kahain kabeer soee bada, jaamein bada subhaav.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि बड़ा वही है, जिसका स्वभाव अच्छा होता है। बडा स्वभाव उसी का होता है जिसमें विनम्रता, विनय, निराभिमान, सेवा भाव तथा सबके प्रति प्रेम-आदर आदि सदगुण होते हैं। जाति-वर्ण-कुल, धन-दौलत आदि से कोई बड़ा नहीं होता।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਵੱਡਾ ਉਹੀ ਹੈ ਜਿਸ ਦਾ ਸੁਭਾਅ ਚੰਗਾ ਹੁੰਦਾ ਹੈ। ਚੰਗਾ ਸੁਭਾਅ ਨਿਮਰਤਾ, ਸੇਵਾ ਭਾਵਨਾ ਅਤੇ ਸਾਰਿਆਂ ਲਈ ਸਤਿਕਾਰ ਰੱਖਣ ਨਾਲ ਹੀ ਬਣਦਾ ਹੈ। ਦੌਲਤ ਜਾਂ ਜਾਤੀ ਨਾਲ ਕੋਈ ਵੱਡਾ ਨਹੀਂ ਹੁੰਦਾ।',
-      en: 'Kabir says: True greatness belongs to him who possesses an elevated and noble character. True nobility shines through humility, sweet words, lack of pride, and unconditional respect for all. No one becomes great by birth, class, or riches.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि बड़ा वही है, जिसका स्वभाव अच्छा होता है। बडा स्वभाव उसी का होता है जिसमें विनम्रता, विनय, निराभिमान, सेवा भाव तथा सबके प्रति प्रेम-आदर आदि सदगुण होते हैं। जाति-वर्ण-कुल, धन-दौलत आदि से कोई बड़ा नहीं होता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵੱਡਾ ਉਹੀ ਹੈ ਜਿਸ ਦਾ ਸੁਭਾਅ ਚੰਗਾ ਹੁੰਦਾ ਹੈ। ਚੰਗਾ ਸੁਭਾਅ ਨਿਮਰਤਾ, ਸੇਵਾ ਭਾਵਨਾ ਅਤੇ ਸਾਰਿਆਂ ਲਈ ਸਤਿਕਾਰ ਰੱਖਣ ਨਾਲ ਹੀ ਬਣਦਾ ਹੈ। ਦੌਲਤ ਜਾਂ ਜਾਤੀ ਨਾਲ ਕੋਈ ਵੱਡਾ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims: True greatness belongs to him who possesses an elevated and noble character. True nobility shines through humility, sweet words, lack of pride, and unconditional respect for all. No one becomes great by birth, class, or riches.',
     },
     wordMeanings: {
       hi: [
@@ -705,7 +705,7 @@ export const SAKHIS_DEENTA_KO_ANG: Sakhi[] = [
       en: 'Eradicate the notions of "I, me, and mine" from your daily life, maintaining a posture of selfless love.',
     },
     samarpanPrayer: {
-      hi: 'हे प्रियतम सद्गुरुदेव! मेरे आपा (अहंकार) को पूरी तरह मिटा दें जिससे मैं आपके अनंत प्रेम रस में समा जाऊँ। साहेब बंदगी साहेब!',
+      hi: 'हे प्रियतम सतगुरुदेव! मेरे आपा (अहंकार) को पूरी तरह मिटा दें जिससे मैं आपके अनंत प्रेम रस में समा जाऊँ। साहेब बंदगी साहेब!',
       pb: 'ਹੇ ਪਿਆਰੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਅੰਦਰੋਂ ਹੰਕਾਰ ਮਾਰ ਕੇ ਮੈਨੂੰ ਆਪਣੇ ਪ੍ਰੇਮ ਰੰਗ ਵਿੱਚ ਰੰਗ ਦਿਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O beloved Satguru! Dissolve my ego completely so that I may merge into the infinite sweetness of your divine Love. Saheb Bandagi Saheb!',
     },

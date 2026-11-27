@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਅੰਦਰੂਨੀ ਧਿਆਨ ਹੀ ਸੱਚੀ ਸਮਾਧੀ ਹੈ।',
         en: 'Immersion in the inner heart-space is true devotional Samadhi.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਅੰਤਰਦ੍ਰਿਸ਼ਟੀ ਨਾਲ ਪਰਮ ਪਦ ਮਿਲਦਾ ਹੈ।',
         en: 'Inward vision and detachment from gossip grant liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਭੂ ਦੀ ਰਜ਼ਾ ਵਿੱਚ ਰਹਿਣਾ ਹੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Surrendering personal doership to Divine Will is true liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ ਹੀ ਕਾਲ ਤੋਂ ਮੁਕਤ ਕਰਦਾ ਹੈ।',
         en: 'Refuge in Supreme Naam liberates from the claws of Mind and Time.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -231,7 +231,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
       en: 'Seed = Divine Word/Naam; Without soil = Independent of material rituals; Fruit = Liberation.'
     },
     symbols: [
-      { symbol: 'बिनु धरनी बीज (Soil-less Seed)', meaning: { hi: 'सद्गुरु का गुप्त शब्द नाम-तत्व', pb: 'ਗੁਰੂ ਦਾ ਨਾਮ ਬੀਜ', en: 'Satguru\'s secret Naam seed' } },
+      { symbol: 'बिनु धरनी बीज (Soil-less Seed)', meaning: { hi: 'सतगुरु का गुप्त शब्द नाम-तत्व', pb: 'ਗੁਰੂ ਦਾ ਨਾਮ ਬੀਜ', en: 'Satguru\'s secret Naam seed' } },
       { symbol: 'फल पाया (Attaining Fruit)', meaning: { hi: 'आत्मज्ञान, अमरता व परम मोक्ष', pb: 'ਆਤਮ ਗਿਆਨ ਅਤੇ ਮੁਕਤੀ', en: 'Self-Realization and Supreme Liberation' } }
     ],
     question: {
@@ -240,7 +240,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
       en: 'What does "Seed germinating without soil" reveal?'
     },
     options: {
-      hi: ['बिना भौतिक कर्मकाण्ड के हृदय में सद्गुरु के नाम-शब्द का स्वतः अंकुरित होना', 'खेती', 'बीज बोना', 'पौधा'],
+      hi: ['बिना भौतिक कर्मकाण्ड के हृदय में सतगुरु के नाम-शब्द का स्वतः अंकुरित होना', 'खेती', 'बीज बोना', 'पौधा'],
       pb: ['ਗੁਰੂ ਦੇ ਨਾਮ ਦਾ ਹਿਰਦੇ ਵਿੱਚ ਪ੍ਰਗਟ ਹੋਣਾ', 'ਖੇਤੀ', 'ਬੀਜ', 'ਪੌਦਾ'],
       en: ['Spontaneous sprouting of Satguru\'s Naam seed inside the pure heart without material rituals', 'Farming', 'Sowing seeds', 'Plant']
     },
@@ -248,16 +248,16 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'हृदय में शब्द-नाम का स्वतः अंकुरण', pb: 'ਹਿਰਦੇ ਵਿੱਚ ਨਾਮ ਦਾ ਪ੍ਰਗਟ ਹੋਣਾ', en: 'Spontaneous Sprouting of Divine Naam in the Heart' },
       deepMeaning: {
-        hi: 'यह बीज परमात्मा का "शब्द" या "नाम-तत्व" है। इसे उगाने हेतु बाहरी मिट्टी या कर्मकाण्ड की जरूरत नहीं। जब सद्गुरु साधक के निष्पाप हृदय में नाम का बीज बोते हैं, तो वह स्वतः अंकुरित होकर मोक्ष फल देता है।',
+        hi: 'यह बीज परमात्मा का "शब्द" या "नाम-तत्व" है। इसे उगाने हेतु बाहरी मिट्टी या कर्मकाण्ड की जरूरत नहीं। जब सतगुरु साधक के निष्पाप हृदय में नाम का बीज बोते हैं, तो वह स्वतः अंकुरित होकर मोक्ष फल देता है।',
         pb: 'ਸਤਿਗੁਰੂ ਜਦੋਂ ਨਾਮ ਬੀਜ ਹਿਰਦੇ ਵਿੱਚ ਬੀਜਦੇ ਹਨ, ਤਾਂ ਉਹ ਆਪਣੇ ਆਪ ਪ੍ਰਗਟ ਹੋ ਕੇ ਮੁਕਤੀ ਦਾ ਫਲ ਦਿੰਦਾ ਹੈ।',
         en: 'Satguru plants the divine Naam seed in the pure heart, where it spontaneously sprouts without material rituals, yielding liberation.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु का शब्द-नाम ही मोक्ष देने वाला अमर बीज है।',
+        hi: 'सतगुरु का शब्द-नाम ही मोक्ष देने वाला अमर बीज है।',
         pb: 'ਗੁਰੂ ਦਾ ਨਾਮ ਹੀ ਮੁਕਤੀ ਦਾ ਅਮਰ ਬੀਜ ਹੈ।',
         en: 'Satguru\'s Divine Word is the eternal seed of salvation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ ਸਿਮਰਨ ਨਾਲ ਹੀ ਵਾਸਨਾ ਤੋਂ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ।',
         en: 'Renunciation of desire and Naam remembrance liberate from the trap.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
         pb: 'ਕੁੰਡਲਿਨੀ ਜਾਗ੍ਰਿਤੀ ਨਾਲ ਮੌਤ ਦਾ ਡਰ ਮਿਟਦਾ ਹੈ।',
         en: 'Kundalini awakening overcomes fear of Death forever.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -406,14 +406,14 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
       deepMeaning: {
         hi: 'जब साधक जीभ व मुँह बंद करके मौन होता है, तो उसकी अंतरात्मा परमात्मा के आदि नाम (सत्यनाम शब्द) का स्वतः उच्चारण करती है जो समस्त वेदों का मूल है। इस साधना में संसारी मन की नहीं, बल्कि शुद्ध आत्म-चेतना की आवश्यकता होती है।',
         pb: 'ਮੌਨ ਹੋਣ ਤੇ ਆਤਮਾ ਆਪਣੇ ਆਪ ਪ੍ਰਮਾਤਮਾ ਦੇ ਸਤਯਨਾਮ ਸ਼ਬਦ ਦਾ ਜਾਪ ਕਰਦੀ ਹੈ ਜੋ ਸਭ ਗਿਆਨ ਦਾ ਮੂਲ ਹੈ।',
-        en: 'Closing physical mouth in silent meditation, Pure Soul Consciousness resonates the Original Word (Satnam) underlying all scriptures.'
+        en: 'Closing physical mouth in silent meditation, Pure Soul Consciousness resonates the Original Word (Satyanaam) underlying all scriptures.'
       },
       kabirPhilosophy: {
         hi: 'परा-वाणी अनहद शब्द ही वास्तविक आत्म-विद्या है।',
         pb: 'ਅਨਹਦ ਸ਼ਬਦ ਹੀ ਸੱਚੀ ਆਤਮ-ਵਿਦਿਆ ਹੈ।',
         en: 'Unstruck Inner Word is the supreme spiritual knowledge.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -443,7 +443,7 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
       { symbol: 'सागर पास न जाई (Ignoring Ocean)', meaning: { hi: 'सामने परमात्मा होते हुए भी संसारी तुच्छ सुखों में भटकना', pb: 'ਪ੍ਰਮਾਤਮਾ ਨੂੰ ਛੱਡ ਕੇ ਬਾਹਰ ਭਟਕਣਾ', en: 'Ignoring the Divine Ocean to wander after trivial pleasures' } }
     ],
     question: {
-      hi: '"नदी का प्यासा भटकना" कबीर साहेब का किस पर कटाक्ष है?',
+      hi: '"नदी का प्यासा भटकना" सतगुरु कबीर साहेब का किस पर कटाक्ष है?',
       pb: '"ਨਦੀ ਦਾ ਪਿਆਸੀ ਭਟਕਣਾ" ਕਿਸ ਤੇ ਕਟਾਖਸ਼ ਹੈ?',
       en: 'What does "Thirsty river wandering" satirize?'
     },
@@ -476,8 +476,8 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
     realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
     title: { hi: '90. चूहे ने लोहे की जंजीर तोड़ी', pb: '90. ਚੂਹੇ ਨੇ ਲੋਹੇ ਦੀ ਸੰਗਲੀ ਤੋੜੀ', en: '90. Mouse Breaking Massive Iron Chain' },
     verse: {
-      hi: '"मूस ने लोहे की सांकल तोड़ी, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह सद्गुरु का ग्यान॥"',
-      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਸਾਂਕਲ ਤੋੜੀ, ਹਸਤੀ ਖੜ੍ਹਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਦਗੁਰੂ ਕਾ ਗਿਆਨ॥"',
+      hi: '"मूस ने लोहे की सांकल तोड़ी, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह सतगुरु का ग्यान॥"',
+      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਸਾਂਕਲ ਤੋੜੀ, ਹਸਤੀ ਖੜ੍ਹਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਤਿਗੁਰੂ ਕਾ ਗਿਆਨ॥"',
       en: '"Mouse broke open the heavy iron chain, the colossal elephant stands astonished. Says Kabir listen saints, this is Satguru\'s wisdom."'
     },
     literalParadox: {
@@ -486,13 +486,13 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
       en: 'A tiny mouse snapped a heavy iron chain, leaving the giant elephant amazed.'
     },
     clueHint: {
-      hi: 'लोहे की सांकल = कड़े कर्म बंधन; हस्ती/हाथी = संसारी अहंकार; मूस (चूहा) = गुरु द्वारा प्रदत्त सूक्ष्म सतनाम शब्द।',
+      hi: 'लोहे की सांकल = कड़े कर्म बंधन; हस्ती/हाथी = संसारी अहंकार; मूस (चूहा) = गुरु द्वारा प्रदत्त सूक्ष्म सत्यनाम शब्द।',
       pb: 'ਲੋਹੇ ਦੀ ਸੰਗਲੀ ਕਰਮ ਬੰਧਨ ਹੈ, ਹਾਥੀ ਅਹੰਕਾਰ ਹੈ, ਚੂਹਾ ਸਤਯਨਾਮ ਹੈ।',
-      en: 'Iron chain = Rigid karmic bonds; Elephant = Ego believing bonds unbreakable; Mouse = Satnam.'
+      en: 'Iron chain = Rigid karmic bonds; Elephant = Ego believing bonds unbreakable; Mouse = Satyanaam.'
     },
     symbols: [
       { symbol: 'लोहे की सांकल (Iron Chain)', meaning: { hi: 'जन्म-जन्मांतर के कड़े कर्म बंधन व प्रारब्ध', pb: 'ਜਨਮਾਂ-ਜਨਮਾਂ ਦੇ ਕਰਮ ਬੰਧਨ', en: 'Rigid karmic chains of many births' } },
-      { symbol: 'मूस तोड़ी सांकल (Mouse Snapping Chain)', meaning: { hi: 'सद्गुरु के सूक्ष्म सतनाम द्वारा कर्म-बंधनों का पल भर में कटना', pb: 'ਸਤਿਗੁਰੂ ਦੇ ਨਾਮ ਨਾਲ ਕਰਮਾਂ ਦਾ ਕੱਟਣਾ', en: 'Satguru\'s subtle Naam snapping karmic chains instantly' } }
+      { symbol: 'मूस तोड़ी सांकल (Mouse Snapping Chain)', meaning: { hi: 'सतगुरु के सूक्ष्म सत्यनाम द्वारा कर्म-बंधनों का पल भर में कटना', pb: 'ਸਤਿਗੁਰੂ ਦੇ ਨਾਮ ਨਾਲ ਕਰਮਾਂ ਦਾ ਕੱਟਣਾ', en: 'Satguru\'s subtle Naam snapping karmic chains instantly' } }
     ],
     question: {
       hi: '"चूहे द्वारा लोहे की सांकल तोड़ने" का आध्यात्मिक भेद क्या है?',
@@ -500,24 +500,24 @@ export const ULATVASI_BATCH_81_TO_90: UlatvasiQuestion[] = [
       en: 'What is the secret of "Mouse breaking iron chain"?'
     },
     options: {
-      hi: ['सद्गुरु के सूक्ष्म राम-नाम द्वारा कड़े कर्म बंधनों का निष्प्रभावी होकर कटना', 'हाथी का सर्कस', 'जंजीर टूटना', 'लोहार'],
+      hi: ['सतगुरु के सूक्ष्म राम-नाम द्वारा कड़े कर्म बंधनों का निष्प्रभावी होकर कटना', 'हाथी का सर्कस', 'जंजीर टूटना', 'लोहार'],
       pb: ['ਗੁਰੂ ਦੇ ਸਤਯਨਾਮ ਨਾਲ ਕਰਮ ਬੰਧਨਾਂ ਦਾ ਕੱਟਣਾ', 'ਹਾਥੀ', 'ਸੰਗਲੀ', 'ਲੋਹਾਰ'],
       en: ['Satguru\'s subtle Naam breaking rigid karmic chains instantly', 'Elephant circus', 'Broken chain', 'Blacksmith']
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'गुरु-ज्ञान व सतनाम से कर्म-मुक्ति', pb: 'ਗੁਰੂ ਗਿਆਨ ਨਾਲ ਕਰਮ ਮੁਕਤੀ', en: 'Freedom from Karmic Chains via Satguru\'s Wisdom' },
+      headline: { hi: 'गुरु-ज्ञान व सत्यनाम से कर्म-मुक्ति', pb: 'ਗੁਰੂ ਗਿਆਨ ਨਾਲ ਕਰਮ ਮੁਕਤੀ', en: 'Freedom from Karmic Chains via Satguru\'s Wisdom' },
       deepMeaning: {
-        hi: 'लोहे की सांकल कड़े कर्म बंधन हैं। अहंकार (हाथी) सोचता है इनसे छूटना असंभव है। परंतु मूस (सद्गुरु द्वारा प्रदत्त सूक्ष्म राम-नाम) जब जाग्रत होता है, तो वह लोहे जैसे कड़े कर्म बंधनों को पल भर में काटकर जीव को जीवनमुक्त कर देता है।',
+        hi: 'लोहे की सांकल कड़े कर्म बंधन हैं। अहंकार (हाथी) सोचता है इनसे छूटना असंभव है। परंतु मूस (सतगुरु द्वारा प्रदत्त सूक्ष्म राम-नाम) जब जाग्रत होता है, तो वह लोहे जैसे कड़े कर्म बंधनों को पल भर में काटकर जीव को जीवनमुक्त कर देता है।',
         pb: 'ਕਰਮਾਂ ਦੀ ਸੰਗਲੀ ਬਹੁਤ ਮਜ਼ਬੂਤ ਹੈ, ਪਰ ਗੁਰੂ ਦਾ ਸਤਯਨਾਮ ਉਸਨੂੰ ਇੱਕ ਪਲ ਵਿੱਚ ਤੋੜ ਕੇ ਮੁਕਤ ਕਰਦਾ ਹੈ।',
         en: 'The ego believes karmic chains are unbreakable. But Satguru\'s subtle Naam snaps heavy karmic bonds instantly, liberating the Soul.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु का सत्यनाम ही कर्म-पाश काटने का अमोघ अस्त्र है।',
+        hi: 'सतगुरु का सत्यनाम ही कर्म-पाश काटने का अमोघ अस्त्र है।',
         pb: 'ਸਤਿਗੁਰੂ ਦਾ ਨਾਮ ਹੀ ਕਰਮ ਕੱਟਣ ਦਾ ਰਾਹ ਹੈ।',
         en: 'Satguru\'s Naam is the supreme sword severing karmic ties.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

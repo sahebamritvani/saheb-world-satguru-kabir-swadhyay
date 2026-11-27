@@ -1040,7 +1040,7 @@ export const BIJAK_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
     verse: {
       hi: 'कबीर सुमिरन सार है, और सकल जंजाल।\nआदि अंत सब सोधिया, दूजा देख्या काल॥',
       pb: 'ਕਬੀਰ ਸਿਮਰਨ ਸਾਰ ਹੈ, ਔਰ ਸਕਲ ਜੰਜਾਲ।\nਆਦਿ ਅੰਤ ਸਭ ਸੋਧਿਆ, ਦੂਜਾ ਦੇਖਿਆ ਕਾਲ॥',
-      en: 'Kabir declares: Remembrance of the True Name is the sole essence; all else is transient entanglement.\nSearching from beginning to end, everything apart from Naam belongs to passing time.'
+      en: 'Satguru Kabir Saheb proclaims: Remembrance of the True Name is the sole essence; all else is transient entanglement.\nSearching from beginning to end, everything apart from Naam belongs to passing time.'
     },
     bhavarth: {
       hi: 'समस्त ग्रंथों और जीवन अनुभवों का निचोड़ यही है कि एकमात्र सत्यनाम का सुमिरन ही सार है; शेष संसारिक प्रपंच समय के अधीन नष्ट हो जाने वाले जंजाल हैं।',
@@ -2193,8 +2193,8 @@ export const KABIR_SAGAR_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
       en: 'None in creation is a greater well-wisher than the True Guru, who severs countless snares of illusion;\nHolding the soul gently by the arm beyond all realms, He carries the awakened Hans to Amarlok.'
     },
     bhavarth: {
-      hi: 'धनी धर्मदास जी से संवाद में कबीर साहेब बताते हैं कि जीव के अनंत जन्मों का भ्रम केवल पूर्ण सतगुरु के सार-शब्द और कृपा से ही कटता है।',
-      pb: 'ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨਾਲ ਸੰਵਾਦ ਵਿੱਚ ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੀਵ ਦੇ ਭਰਮ ਕੇਵਲ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਸਾਰ-ਸ਼ਬਦ ਨਾਲ ਹੀ ਕੱਟੇ ਜਾਂਦੇ ਹਨ।',
+      hi: 'धनी धर्मदास जी से संवाद में सतगुरु कबीर साहेब बताते हैं कि जीव के अनंत जन्मों का भ्रम केवल पूर्ण सतगुरु के सार-शब्द और कृपा से ही कटता है।',
+      pb: 'ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨਾਲ ਸੰਵਾਦ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੀਵ ਦੇ ਭਰਮ ਕੇਵਲ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਸਾਰ-ਸ਼ਬਦ ਨਾਲ ਹੀ ਕੱਟੇ ਜਾਂਦੇ ਹਨ।',
       en: 'Only the Satguru’s living Sar-Shabd severs age-old delusion and escorts the soul homeward.'
     },
     themeEssence: {
@@ -2376,8 +2376,8 @@ export const KABIR_SAGAR_CROSS_REF_VAULT: CuratedCrossRefEntry[] = [
       en: 'When compassion for all living beings dwells within and fairness guides every day,\nThat seeker becomes deeply dear to Saheb and surely realizes living Truth.'
     },
     bhavarth: {
-      hi: 'हर प्राणी के प्रति दया, अहिंसा और समभाव रखना ही कबीर साहेब को सर्वाधिक प्रिय आचरण है; बिना करुणा के कोई भी साधना पूर्ण नहीं होती।',
-      pb: 'ਹਰ ਜੀਵ ਪ੍ਰਤੀ ਦਇਆ, ਅਹਿੰਸਾ ਅਤੇ ਸਮਭਾਵ ਰੱਖਣਾ ਹੀ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਸਭ ਤੋਂ ਪਿਆਰਾ ਆਚਰਨ ਹੈ।',
+      hi: 'हर प्राणी के प्रति दया, अहिंसा और समभाव रखना ही सतगुरु कबीर साहेब को सर्वाधिक प्रिय आचरण है; बिना करुणा के कोई भी साधना पूर्ण नहीं होती।',
+      pb: 'ਹਰ ਜੀਵ ਪ੍ਰਤੀ ਦਇਆ, ਅਹਿੰਸਾ ਅਤੇ ਸਮਭਾਵ ਰੱਖਣਾ ਹੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਸਭ ਤੋਂ ਪਿਆਰਾ ਆਚਰਨ ਹੈ।',
       en: 'Active compassion and non-violence toward all beings form the heartbeat of authentic Kabir Panth practice.'
     },
     themeEssence: {

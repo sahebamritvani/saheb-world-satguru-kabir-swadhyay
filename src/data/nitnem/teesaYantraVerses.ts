@@ -22,8 +22,8 @@ export const TEESA_YANTRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "मंगलाचरण: कबीर साहेब के परम पावन तीसा यंत्र (तीस उत्कृष्ट उपदेशों) का पाठ श्रद्धापूर्वक प्रारंभ किया जा रहा है।",
-      pb: "ਮੰਗਲਾਚਰਣ: ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਰਮ ਪਵਿੱਤਰ ਤੀਸਾ ਯੰਤਰ (ਤੀਹ ਉੱਤਮ ਉਪਦੇਸ਼ਾਂ) ਦਾ ਪਾਠ ਸ਼ਰਧਾਪੂਰਵਕ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।",
+      hi: "मंगलाचरण: सतगुरु कबीर साहेब के परम पावन तीसा यंत्र (तीस उत्कृष्ट उपदेशों) का पाठ श्रद्धापूर्वक प्रारंभ किया जा रहा है।",
+      pb: "ਮੰਗਲਾਚਰਣ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਰਮ ਪਵਿੱਤਰ ਤੀਸਾ ਯੰਤਰ (ਤੀਹ ਉੱਤਮ ਉਪਦੇਸ਼ਾਂ) ਦਾ ਪਾਠ ਸ਼ਰਧਾਪੂਰਵਕ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।",
       en: "Auspicious Invocation: Devoutly commencing the recitation of the Teesa Yantra, the thirty sacred spiritual and moral pillars of wisdom."
     },
     marmNote: {
@@ -73,7 +73,7 @@ export const TEESA_YANTRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "केवल सद्गुरु की आराधना और सेवा कीजिये, क्योंकि उनकी पूजा में ब्रह्मांड की सभी पूजाएं स्वतः समाहित हैं। जैसे वृक्ष की जड़ (मूल) को सींचने से उसकी शाखाएं और पत्ते अपने आप हरे-भरे हो जाते हैं, वैसे ही गुरु की सेवा से सब देव प्रसन्न हो जाते हैं।",
+      hi: "केवल सतगुरु की आराधना और सेवा कीजिये, क्योंकि उनकी पूजा में ब्रह्मांड की सभी पूजाएं स्वतः समाहित हैं। जैसे वृक्ष की जड़ (मूल) को सींचने से उसकी शाखाएं और पत्ते अपने आप हरे-भरे हो जाते हैं, वैसे ही गुरु की सेवा से सब देव प्रसन्न हो जाते हैं।",
       pb: "ਕੇਵਲ ਸਤਿਗੁਰੂ ਦੀ ਸੇਵਾ ਕਰੋ, ਕਿਉਂਕਿ ਉਨ੍ਹਾਂ ਦੀ ਪੂਜਾ ਵਿੱਚ ਸਾਰੀਆਂ ਪੂਜਾਵਾਂ ਸਮਾ ਜਾਂਦੀਆਂ ਹਨ। ਜਿਵੇਂ ਰੁੱਖ ਦੀ ਜੜ੍ਹ ਨੂੰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਟਹਿਣੀਆਂ ਤੇ ਪੱਤੇ ਆਪਣੇ ਆਪ ਹਰੇ ਹੋ ਜਾਂਦੇ ਹਨ, ਉਵੇਂ ਹੀ ਗੁਰੂ ਦੀ ਸੇਵਾ ਨਾਲ ਸਭ ਪ੍ਰਸੰਨ ਹੁੰਦੇ ਹਨ।",
       en: "Worship only the Satguru, for in His worship all other devotions are naturally contained. Just as watering the roots of a tree automatically nourishes its branches and leaves, serving the Guru elevates all aspects of life."
     }
@@ -96,7 +96,7 @@ export const TEESA_YANTRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "सद्गुरु जो विचार और भेद बताते हैं, उसके माध्यम से अनादि शब्द (सत्यनाम) के द्वार को परखो। अपनी विवेक रूपी आँखें खोलकर देखो कि उस अविनाशी शब्द की प्राप्ति के बिना कल्याण का अन्य कोई मार्ग नहीं है।",
+      hi: "सतगुरु जो विचार और भेद बताते हैं, उसके माध्यम से अनादि शब्द (सत्यनाम) के द्वार को परखो। अपनी विवेक रूपी आँखें खोलकर देखो कि उस अविनाशी शब्द की प्राप्ति के बिना कल्याण का अन्य कोई मार्ग नहीं है।",
       pb: "ਸਤਿਗੁਰੂ ਜੋ ਭੇਦ ਦੱਸਦੇ ਹਨ, ਉਸ ਰਾਹੀਂ ਸ਼ਬਦ ਦੇ ਦੁਆਰ ਨੂੰ ਪਛਾਣੋ। ਆਪਣੀਆਂ ਅੱਖਾਂ ਖੋਲ੍ਹ ਕੇ ਵੇਖੋ ਕਿ ਉਸ ਸੱਚੇ ਸ਼ਬਦ ਤੋਂ ਬਿਨਾਂ ਕੁਝ ਵੀ ਪ੍ਰਾਪਤ ਨਹੀਂ ਹੋਣਾ।",
       en: "Discern the gateway of the Word (Shabda) as taught by the Guru. Open your inner eyes and see that without the realization of the sacred Sound Current, absolute liberation cannot be found."
     }
@@ -372,7 +372,7 @@ export const TEESA_YANTRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "सद्गुरु के चरणों का ध्यान करने से ही परम सुख की प्राप्ति होती है और चंचल मन रूपी मोर स्थिर हो जाता है। तब साधक को प्रत्येक जीव और कण-कण में केवल एक ही परम सत्य चैतन्य सत्ता के दर्शन होते हैं।",
+      hi: "सतगुरु के चरणों का ध्यान करने से ही परम सुख की प्राप्ति होती है और चंचल मन रूपी मोर स्थिर हो जाता है। तब साधक को प्रत्येक जीव और कण-कण में केवल एक ही परम सत्य चैतन्य सत्ता के दर्शन होते हैं।",
       pb: "ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਦਾ ਧਿਆਨ ਧਰਨ ਨਾਲ ਹੀ ਸੁਖ ਮਿਲਦਾ ਹੈ ਅਤੇ ਚੰਚਲ ਮਨ ਸ਼ਾਂਤ ਹੋ ਜਾਂਦਾ ਹੈ। ਤਦ ਭਗਤ ਨੂੰ ਹਰ ਜੀਵ ਵਿੱਚ ਉਸੇ ਇੱਕ ਪਰਮਾਤਮਾ ਦੇ ਦਰਸ਼ਨ ਹੁੰਦੇ ਹਨ।",
       en: "Supreme joy is found through absorption in the Guru's form, which stabilizes the restless, dancing peacock of the mind. Then, one beholds the singular Divine Consciousness in everyone."
     }
@@ -510,7 +510,7 @@ export const TEESA_YANTRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "कामना और तृष्णा रूपी नागिन (सांपिनी) को मार डालो, जिसने इस संपूर्ण संसार को डस रखा है। इस विषैली नागिन के डंक की एकमात्र अचूक औषधि 'संतोष' है, सद्गुरु के इस परम गुप्त मंत्र पर विचार करो।",
+      hi: "कामना और तृष्णा रूपी नागिन (सांपिनी) को मार डालो, जिसने इस संपूर्ण संसार को डस रखा है। इस विषैली नागिन के डंक की एकमात्र अचूक औषधि 'संतोष' है, सतगुरु के इस परम गुप्त मंत्र पर विचार करो।",
       pb: "ਲਾਲਸਾ ਰੂਪੀ ਸਰਪਣੀ ਨੂੰ ਮਾਰ ਦਿਓ, ਜਿਸਨੇ ਸਾਰੇ ਸੰਸਾਰ ਨੂੰ ਡੱਸਿਆ ਹੋਇਆ ਹੈ। ਇਸ ਜ਼ਹਿਰੀਲੀ ਸਰਪਣੀ ਦੇ ਡੰਗ ਦੀ ਇੱਕੋ-ਇੱਕ ਦਵਾਈ 'ਸੰਤੋਖ' ਹੈ, ਸਤਿਗੁਰੂ ਦੇ ਇਸ ਗੁਪਤ ਮੰਤਰ 'ਤੇ ਵਿਚਾਰ ਕਰੋ।",
       en: "Slay the serpent of worldly expectations and desires, which has bitten the entire world. The only effective antidote for its venom is deep contentment (Santosh); ponder this Guru-mantra."
     }
@@ -740,9 +740,9 @@ export const TEESA_YANTRA_VERSES: NitnemVersePair[] = [
       ]
     },
     bhavarth: {
-      hi: "वंदना: मैं आप सभी के अंतःकरण में विराजमान परम गुरु कबीर साहेब को नमन करता हूँ। साहेब बंदगी साहेब।",
-      pb: "ਵੰਦਨਾ: ਮੈਂ ਤੁਹਾਡੇ ਸਾਰਿਆਂ ਦੇ ਹਿਰਦੇ ਵਿਚ ਵਸਦੇ ਪਰਮਾਤਮਾ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਪ੍ਰਣਾਮ ਕਰਦਾ ਹਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।",
-      en: "Vandana: I offer my humblest salutations to the Supreme Divine Spirit of Kabir Saheb residing in the sanctuary of every heart. Saheb Bandagi Saheb."
+      hi: "वंदना: मैं आप सभी के अंतःकरण में विराजमान परम गुरु सतगुरु कबीर साहेब को नमन करता हूँ। साहेब बंदगी साहेब।",
+      pb: "ਵੰਦਨਾ: ਮੈਂ ਤੁਹਾਡੇ ਸਾਰਿਆਂ ਦੇ ਹਿਰਦੇ ਵਿਚ ਵਸਦੇ ਪਰਮਾਤਮਾ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੂੰ ਪ੍ਰਣਾਮ ਕਰਦਾ ਹਾਂ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ।",
+      en: "Vandana: I offer my humblest salutations to the Supreme Divine Spirit of Satguru Kabir Saheb residing in the sanctuary of every heart. Saheb Bandagi Saheb."
     }
   }
 ];

@@ -61,7 +61,7 @@ export const SANDHYA_AARAMBH_VANDANA_SECTION: NitnemSection = {
           "अजर अचिन्त साहेब,",
           "पुरुष मुनिन्द्र साहेब,",
           "करुणामय साहेब,",
-          "कबीर साहेब,",
+          "सतगुरु कबीर साहेब,",
           "सुरतियोग संतायन साहेब,",
           "धनी धर्मदास साहेब,",
           "वचन वंश चूरामणि नाम साहेब,",
@@ -91,7 +91,7 @@ export const SANDHYA_AARAMBH_VANDANA_SECTION: NitnemSection = {
           "ਅਜਰ ਅਚਿੰਤ ਸਾਹੇਬ, ",
           "ਪੁਰੁਸ਼ ਮੁਨਿੰਦ੍ਰ ਸਾਹੇਬ, ",
           "ਕਰੁਣਾਮਯ ਸਾਹੇਬ, ",
-          "ਕਬੀਰ ਸਾਹੇਬ, ",
+          "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ, ",
           "ਸੁਰਤਿਯੋਗ ਸੰਤਾਯਨ ਸਾਹੇਬ, ",
           "ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ, ",
           "ਵਚਨ ਵੰਸ਼ ਚੂਰਾਮਣਿ ਨਾਮ ਸਾਹੇਬ, ",
@@ -121,7 +121,7 @@ export const SANDHYA_AARAMBH_VANDANA_SECTION: NitnemSection = {
           "Ajar Achint Saheb, ",
           "Purush Munindra Saheb, ",
           "Karunamay Saheb, ",
-          "Kabir Saheb, ",
+          "Satguru Kabir Saheb, ",
           "Suratiyog Santayan Saheb, ",
           "Dhani Dharamdas Saheb, ",
           "Vachan Vansh Churamani Nam Saheb, ",
@@ -582,9 +582,9 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "कबीर साहेब फरमाते हैं कि शरीर और प्राणों की आशक्ति को छोड़कर जो निर्भय होकर सतगुरु के गुणों का गान करता है और ऐसी अनन्य लौ लगाता है, उसे सतगुरु सहज ही प्राप्त हो जाते हैं।",
-          "pb": "ਕਬੀਰ ਸਾਹੇਬ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸ਼ਰੀਰ ਦੀ ਆਸ਼ਾ ਛੱਡ ਕੇ ਨਿਰਭੈ ਹੋ ਕੇ ਗੁਰੂ ਗੁਣ ਗਾਉਣ ਨਾਲ ਸਤਿਗੁਰੂ ਸਹਿਜੇ ਹੀ ਮਿਲ ਜਾਂਦੇ ਹਨ।",
-          "en": "Kabir Saheb says, casting aside bodily attachment, fearlessly singing divine praises and kindling such pure devotion easily brings the Satguru."
+          "hi": "सतगुरु कबीर साहेब फरमाते हैं कि शरीर और प्राणों की आशक्ति को छोड़कर जो निर्भय होकर सतगुरु के गुणों का गान करता है और ऐसी अनन्य लौ लगाता है, उसे सतगुरु सहज ही प्राप्त हो जाते हैं।",
+          "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸ਼ਰੀਰ ਦੀ ਆਸ਼ਾ ਛੱਡ ਕੇ ਨਿਰਭੈ ਹੋ ਕੇ ਗੁਰੂ ਗੁਣ ਗਾਉਣ ਨਾਲ ਸਤਿਗੁਰੂ ਸਹਿਜੇ ਹੀ ਮਿਲ ਜਾਂਦੇ ਹਨ।",
+          "en": "Satguru Kabir Saheb proclaims, casting aside bodily attachment, fearlessly singing divine praises and kindling such pure devotion easily brings the Satguru."
         }
       },
       {
@@ -750,9 +750,9 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "कबीर साहेब समझाते हैं कि यह शरीर, माया, रिश्तेदार और स्त्री-पुरुष सब झूठे (नश्वर) हैं। इस झूठे संसार के प्रपंच पर कौन भरोसा करे? केवल नाम ही सत्य है।",
-          "pb": "ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਕਾਇਆ, ਮਾਇਆ ਅਤੇ ਸਾਰੇ ਰਿਸ਼ਤੇ ਝੂਠੇ ਹਨ। ਇਸ ਨਾਸ਼ਵਾਨ ਸੰਸਾਰ 'ਤੇ ਵਿਸ਼ਵਾਸ ਨਾ ਕਰੋ।",
-          "en": "Kabir Saheb explains that body, illusion, and relations are all fleeting. Why place trust in this ephemeral world? Only the divine Name is real."
+          "hi": "सतगुरु कबीर साहेब समझाते हैं कि यह शरीर, माया, रिश्तेदार और स्त्री-पुरुष सब झूठे (नश्वर) हैं। इस झूठे संसार के प्रपंच पर कौन भरोसा करे? केवल नाम ही सत्य है।",
+          "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਕਾਇਆ, ਮਾਇਆ ਅਤੇ ਸਾਰੇ ਰਿਸ਼ਤੇ ਝੂਠੇ ਹਨ। ਇਸ ਨਾਸ਼ਵਾਨ ਸੰਸਾਰ 'ਤੇ ਵਿਸ਼ਵਾਸ ਨਾ ਕਰੋ।",
+          "en": "Satguru Kabir Saheb explains that body, illusion, and relations are all fleeting. Why place trust in this ephemeral world? Only the divine Name is real."
         }
       },
       {
@@ -1086,9 +1086,9 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "परमात्मा आकाश को बाँधकर पाताल में भेज सकते हैं और शेषनाग को स्वर्ग पर राज्याति कर सकते हैं। कबीर साहेब कहते हैं कि वे परम राम ही असली राजा हैं, जो भी करते हैं वही शोभा देता है।",
-          "pb": "ਪ੍ਰਭੂ ਆਕਾਸ਼ ਨੂੰ ਬੰਨ੍ਹ ਕੇ ਪਾਤਾਲ ਭੇਜ ਸਕਦਾ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਹੀ ਅਸਲ ਰਾਜਾ ਹੈ, ਜੋ ਵੀ ਕਰੇ ਉਹੀ ਸੋਭਦਾ ਹੈ।",
-          "en": "He can bind the sky and send it to the nether regions, or place Sheshnaga upon heavenly thrones. Kabir says the Supreme Lord is sovereign; whatever He does is perfect."
+          "hi": "परमात्मा आकाश को बाँधकर पाताल में भेज सकते हैं और शेषनाग को स्वर्ग पर राज्याति कर सकते हैं। सतगुरु कबीर साहेब फरमाते हैं कि वे परम राम ही असली राजा हैं, जो भी करते हैं वही शोभा देता है।",
+          "pb": "ਪ੍ਰਭੂ ਆਕਾਸ਼ ਨੂੰ ਬੰਨ੍ਹ ਕੇ ਪਾਤਾਲ ਭੇਜ ਸਕਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹੀ ਅਸਲ ਰਾਜਾ ਹੈ, ਜੋ ਵੀ ਕਰੇ ਉਹੀ ਸੋਭਦਾ ਹੈ।",
+          "en": "He can bind the sky and send it to the nether regions, or place Sheshnaga upon heavenly thrones. Satguru Kabir Saheb proclaims the Supreme Lord is sovereign; whatever He does is perfect."
         }
       },
       {
@@ -1300,8 +1300,8 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "कबीर साहेब समझाते हैं कि हरि नाम के बिना सब कुछ खाली (व्यर्थ) है। केवल सतगुरु के दास के अंग-संग पावन नाम की ध्वजा फहराती है।",
-          "pb": "ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਨਾਮ ਬਿਨਾਂ ਸਭ ਖਾਲੀ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਦਾਸ ਉੱਤੇ ਨਾਮ ਦੀ ਧ੍ਵਜਾ ਫਹਰਦੀ ਹੈ।",
+          "hi": "सतगुरु कबीर साहेब समझाते हैं कि हरि नाम के बिना सब कुछ खाली (व्यर्थ) है। केवल सतगुरु के दास के अंग-संग पावन नाम की ध्वजा फहराती है।",
+          "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਨਾਮ ਬਿਨਾਂ ਸਭ ਖਾਲੀ ਹੈ। ਸਤਿਗੁਰੂ ਦੇ ਦਾਸ ਉੱਤੇ ਨਾਮ ਦੀ ਧ੍ਵਜਾ ਫਹਰਦੀ ਹੈ।",
           "en": "Kabir explains that without the Name all is empty. The banner of the Divine Name proudly waves over the true servant of the Satguru."
         }
       }
@@ -1358,9 +1358,9 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "गुरु के ध्यान को ही जीवन का सार मानकर, समस्त मानसिक विकारों को त्याग कर बार-बार प्रभु नाम का भजन करो और परम सत्यनाम से प्रीति करो। अमर शरीर के स्वामी, सत्यस्वरूप गुरु कबीर साहेब की जय-जयकार है।",
+          "hi": "गुरु के ध्यान को ही जीवन का सार मानकर, समस्त मानसिक विकारों को त्याग कर बार-बार प्रभु नाम का भजन करो और परम सत्यनाम से प्रीति करो। अमर शरीर के स्वामी, सत्यस्वरूप गुरु सतगुरु कबीर साहेब की जय-जयकार है।",
           "pb": "ਗੁਰੂ ਦਾ ਧਿਆਨ ਹੀ ਜੀਵਨ ਦਾ ਸਾਰ ਹੈ, ਸਾਰੇ ਵਿਕਾਰ ਛੱਡ ਕੇ ਸਤਯਨਾਮ ਨਾਲ ਪ੍ਰੀਤ ਕਰੋ। ਅਮਰ ਸਰੀਰ ਦੇ ਮਾਲਕ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਜੈ-ਜੈਕਾਰ ਹੈ।",
-          "en": "Meditate repeatedly on the Master as the essence of life, relinquishing all flaws, and attach your soul to the Supreme Satnaam. Victory to Satguru Kabir, the Master of the Immortal Form."
+          "en": "Meditate repeatedly on the Master as the essence of life, relinquishing all flaws, and attach your soul to the Supreme Satyanaam. Victory to Satguru Kabir, the Master of the Immortal Form."
         }
       },
       {
@@ -1542,7 +1542,7 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "तभी अंतर्यामी ज्ञानी गुरु कबीर साहेब ने उनके मंतव्य को जानकर आकाशवाणी (अद्धरी बानी) की: 'तुम चादर का पर्दा हटाकर देखो, वहाँ कोई मृत शरीर नहीं है, तुम व्यर्थ ही युद्ध की स्थिति बना रहे हो!'",
+          "hi": "तभी अंतर्यामी ज्ञानी गुरु सतगुरु कबीर साहेब ने उनके मंतव्य को जानकर आकाशवाणी (अद्धरी बानी) की: 'तुम चादर का पर्दा हटाकर देखो, वहाँ कोई मृत शरीर नहीं है, तुम व्यर्थ ही युद्ध की स्थिति बना रहे हो!'",
           "pb": "ਤਦ ਅੰਤਰਜਾਮੀ ਗੁਰੂ ਨੇ ਆਕਾਸ਼ਵਾਣੀ ਕੀਤੀ: 'ਪਰਦਾ ਚੁੱਕ ਕੇ ਵੇਖੋ, ਉੱਥੇ ਕੋਈ ਮੁਰਦਾ ਨਹੀਂ ਹੈ, ਤੁਸੀਂ ਫਜ਼ੂਲ ਲੜਾਈ ਕਰ ਰਹੇ ਹੋ!'",
           "en": "Thereupon the Omniscient Master uttered a voice from the heavens: 'Lift the cloth cover! There is no corpse within; why wage this futile war?'"
         }
@@ -1683,7 +1683,7 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
         },
         "bhavarth": {
           "hi": "आपके मस्तक पर अखंड दिव्य तिलक सुशोभित है, और आपका मुख-मंडल परम सत्य, कल्याणकारी व अत्यंत गंभीर है। आपका ज्ञान अत्यंत प्रचंड है जिसने पाखंड और अंधविश्वासों का खंडन किया है, आप परम शांति व सुमति से मंडित साहेब कबीर हैं।",
-          "pb": "ਆਪ ਜੀ ਦੇ ਮੱਥੇ 'ਤੇ ਤਿਲਕ ਸੋਹੰਦਾ ਹੈ ਅਤੇ ਮੁਖ 'ਤੇ ਸੱਚੀ ਗੰਭੀਰਤਾ ਹੈ। ਪ੍ਰਚੰਡ ਗਿਆਨ ਨਾਲ ਆਪ ਨੇ ਪਾਖੰਡਾਂ ਦਾ ਖੰਡਨ ਕੀਤਾ, ਆਪ ਸੁੰਦਰ ਸੁਮੱਤ ਨਾਲ ਸਜੇ ਕਬੀਰ ਸਾਹੇਬ ਹੋ।",
+          "pb": "ਆਪ ਜੀ ਦੇ ਮੱਥੇ 'ਤੇ ਤਿਲਕ ਸੋਹੰਦਾ ਹੈ ਅਤੇ ਮੁਖ 'ਤੇ ਸੱਚੀ ਗੰਭੀਰਤਾ ਹੈ। ਪ੍ਰਚੰਡ ਗਿਆਨ ਨਾਲ ਆਪ ਨੇ ਪਾਖੰਡਾਂ ਦਾ ਖੰਡਨ ਕੀਤਾ, ਆਪ ਸੁੰਦਰ ਸੁਮੱਤ ਨਾਲ ਸਜੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੋ।",
           "en": "An unbroken divine mark adorns Your forehead, and Your countenance is profoundly solemn and benevolent. With blazing spiritual wisdom, You destroyed external dogmatic hypocrisy."
         }
       },
@@ -1705,8 +1705,8 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "आपका वेष अत्यंत सुंदर व अलौकिक है, गले में नाम-स्मरण की माला सुशोभित है। आपके हृदय में प्रेम का प्रकाश और कृपा का गहरा सागर है। आप दीनों पर दया करने वाले, सेवकों के प्रतिपालक और सर्वदा कृपालु कबीर साहेब हैं।",
-          "pb": "ਆਪ ਜੀ ਦਾ ਸੁੰਦਰ ਸਰੂਪ ਹੈ, ਗਲੇ ਵਿੱਚ ਸਿਮਰਨ ਦੀ ਮਾਲਾ ਹੈ ਤੇ ਪ੍ਰੇਮ ਦਾ ਚਾਨਣ ਹੈ। ਆਪ ਗਰੀਬਾਂ ਦੇ ਰੱਖਵਾਲੇ ਅਤੇ ਸਦਾ ਦਿਆਲੂ ਕਬੀਰ ਸਾਹੇਬ ਹੋ।",
+          "hi": "आपका वेष अत्यंत सुंदर व अलौकिक है, गले में नाम-स्मरण की माला सुशोभित है। आपके हृदय में प्रेम का प्रकाश और कृपा का गहरा सागर है। आप दीनों पर दया करने वाले, सेवकों के प्रतिपालक और सर्वदा कृपालु सतगुरु कबीर साहेब हैं।",
+          "pb": "ਆਪ ਜੀ ਦਾ ਸੁੰਦਰ ਸਰੂਪ ਹੈ, ਗਲੇ ਵਿੱਚ ਸਿਮਰਨ ਦੀ ਮਾਲਾ ਹੈ ਤੇ ਪ੍ਰੇਮ ਦਾ ਚਾਨਣ ਹੈ। ਆਪ ਗਰੀਬਾਂ ਦੇ ਰੱਖਵਾਲੇ ਅਤੇ ਸਦਾ ਦਿਆਲੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੋ।",
           "en": "Wearing a beautiful, elegant attire with a rosary of remembrance, You shine with the light of pure love and a deep ocean of grace. Protector of the humble, You are ever-compassionate."
         }
       },
@@ -1728,8 +1728,8 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "आप भक्तों के संकटों को टालने वाले, कष्टों का निवारण करने वाले और कठोर यमराज के भय का नाश करने वाले हैं। आप अज्ञान से हंस-आत्माओं को उबारने वाले, जीवों का निस्तार करने वाले और संसार के भ्रमों को मिटाने वाले कबीर साहेब हैं।",
-          "pb": "ਆਪ ਸੰਕਟਾਂ ਤੇ ਕਸ਼ਟਾਂ ਨੂੰ ਦੂਰ ਕਰਨ ਵਾਲੇ, ਜਮਾਂ ਦੇ ਡਰ ਨੂੰ ਨਾਸ ਕਰਨ ਵਾਲੇ ਅਤੇ ਜੀਵਾਂ ਨੂੰ ਭਰਮਾਂ ਤੋਂ ਮੁਕਤ ਕਰਨ ਵਾਲੇ ਕਬੀਰ ਸਾਹੇਬ ਹੋ।",
+          "hi": "आप भक्तों के संकटों को टालने वाले, कष्टों का निवारण करने वाले और कठोर यमराज के भय का नाश करने वाले हैं। आप अज्ञान से हंस-आत्माओं को उबारने वाले, जीवों का निस्तार करने वाले और संसार के भ्रमों को मिटाने वाले सतगुरु कबीर साहेब हैं।",
+          "pb": "ਆਪ ਸੰਕਟਾਂ ਤੇ ਕਸ਼ਟਾਂ ਨੂੰ ਦੂਰ ਕਰਨ ਵਾਲੇ, ਜਮਾਂ ਦੇ ਡਰ ਨੂੰ ਨਾਸ ਕਰਨ ਵਾਲੇ ਅਤੇ ਜੀਵਾਂ ਨੂੰ ਭਰਮਾਂ ਤੋਂ ਮੁਕਤ ਕਰਨ ਵਾਲੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੋ।",
           "en": "Dispeller of adversities and sufferings, You shatter the authority of the god of death. You rescue pure souls, liberate living beings, and erase all delusions."
         }
       },
@@ -1751,7 +1751,7 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "सतयुग, त्रेता और द्वापर युग बीत गए, आप सदा काल से परे अनादि रूप में रमन करते हुए जीवों के कष्टों को दूर करते आ रहे हैं। कलयुग में भी आपने सबको अपने सत्य ज्ञान से जीतकर जीवों का कल्याण किया, आप परम पवित्र कबीर साहेब हैं।",
+          "hi": "सतयुग, त्रेता और द्वापर युग बीत गए, आप सदा काल से परे अनादि रूप में रमन करते हुए जीवों के कष्टों को दूर करते आ रहे हैं। कलयुग में भी आपने सबको अपने सत्य ज्ञान से जीतकर जीवों का कल्याण किया, आप परम पवित्र सतगुरु कबीर साहेब हैं।",
           "pb": "ਸਾਰੇ ਜੁਗਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਰਿਹਾ। ਕਲਯੁਗ ਵਿੱਚ ਵੀ ਆਪ ਨੇ ਸਤਯਨਾਮ ਦੇ ਬਲ ਨਾਲ ਸਭ ਜੀਵਾਂ ਦਾ ਉੱਧਾਰ ਕੀਤਾ, ਆਪ ਪਰਮ ਪਵਿੱਤਰ ਕਬੀਰ ਹੋ।",
           "en": "Across Satya, Treta, and Dwapar Yugas, You moved eternally to relieve pain; in Kaliyuga as well, You conquered hearts with Truth, O most holy Lord Kabir."
         }
@@ -1820,8 +1820,8 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "कबीर साहेब का यह पावन अष्टक कष्टों को टालने वाला, संसार रूपी भवजल के दुखों को नष्ट करने वाला और मन को स्थिर करने वाला है। दास धर्मदास नित्य इसका अभ्यास/स्मरण करते हैं और इस प्रकार कबीर साहेब की कृपा प्राप्त करते हैं।",
-          "pb": "ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਇਹ ਅਸ਼ਟਕ ਕਸ਼ਟਾਂ ਨੂੰ ਦੂਰ ਕਰਦਾ ਹੈ ਤੇ ਮਨ ਨੂੰ ਸਥਿਰ ਕਰਦਾ ਹੈ। ਦਾਸ ਧਰਮਦਾਸ ਨਿੱਤ ਇਸ ਦਾ ਪਾਠ ਕਰ ਕੇ ਪ੍ਰਭੂ ਕ੍ਰਿਪਾ ਪਾਉਂਦਾ ਹੈ।",
+          "hi": "सतगुरु कबीर साहेब का यह पावन अष्टक कष्टों को टालने वाला, संसार रूपी भवजल के दुखों को नष्ट करने वाला और मन को स्थिर करने वाला है। दास धर्मदास नित्य इसका अभ्यास/स्मरण करते हैं और इस प्रकार सतगुरु कबीर साहेब की कृपा प्राप्त करते हैं।",
+          "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਇਹ ਅਸ਼ਟਕ ਕਸ਼ਟਾਂ ਨੂੰ ਦੂਰ ਕਰਦਾ ਹੈ ਤੇ ਮਨ ਨੂੰ ਸਥਿਰ ਕਰਦਾ ਹੈ। ਦਾਸ ਧਰਮਦਾਸ ਨਿੱਤ ਇਸ ਦਾ ਪਾਠ ਕਰ ਕੇ ਪ੍ਰਭੂ ਕ੍ਰਿਪਾ ਪਾਉਂਦਾ ਹੈ।",
           "en": "This Kabir Ashtak dispels all distress, dissolves the illusions of the worldly ocean, and centers the mind. Servant Dharmdas meditates on it daily, attaining union with Lord Kabir."
         }
       }
@@ -2098,8 +2098,8 @@ export const SANDHYA_PATH_SECTIONS: NitnemSection[] = [
           ]
         },
         "bhavarth": {
-          "hi": "हे सर्वसमर्थ, दीनों पर दया करने वाले परम उदार कबीर साहेब! आप मुझे क्यों विस्मृत कर रहे हैं? आप आनंदस्वरूप, चिंताओं से परे परमेश्वर हैं, जो मोह और माया के बंधनों से सर्वथा परे हैं।",
-          "pb": "ਹੇ ਸਰਬ-ਸਮਰਥ, ਉਦਾਰ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਮੈਨੂੰ ਕਿਉਂ ਵਿਸਾਰਦੇ ਹੋ? ਆਪ ਆਨੰਦ ਸਰੂਪ ਪਰਮੇਸ਼ੁਰ ਹੋ, ਜੋ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਬਹੁਤ ਪਰੇ ਹੋ।",
+          "hi": "हे सर्वसमर्थ, दीनों पर दया करने वाले परम उदार सतगुरु कबीर साहेब! आप मुझे क्यों विस्मृत कर रहे हैं? आप आनंदस्वरूप, चिंताओं से परे परमेश्वर हैं, जो मोह और माया के बंधनों से सर्वथा परे हैं।",
+          "pb": "ਹੇ ਸਰਬ-ਸਮਰਥ, ਉਦਾਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਆਪ ਮੈਨੂੰ ਕਿਉਂ ਵਿਸਾਰਦੇ ਹੋ? ਆਪ ਆਨੰਦ ਸਰੂਪ ਪਰਮੇਸ਼ੁਰ ਹੋ, ਜੋ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਬਹੁਤ ਪਰੇ ਹੋ।",
           "en": "O all-powerful, merciful, and generous Kabir! Why do You forget me? You are the embodiment of bliss, beyond anxiety, and untouched by illusion."
         }
       },

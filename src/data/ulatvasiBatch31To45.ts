@@ -40,16 +40,16 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'यत् पिण्डे तत् ब्रह्माण्डे', pb: 'ਜੋ ਪਿੰਡ ਵਿੱਚ ਸੋ ਬ੍ਰਹਮੰਡ ਵਿੱਚ', en: 'As in Microcosm, so in Macrocosm' },
       deepMeaning: {
-        hi: 'कबीर साहेब समझाते हैं कि जिसे हम ब्रह्मांड कहते हैं, वह सब इस मानव शरीर के भीतर ही मौजूद है। अनंत चेतना का जल और ध्यान के दिव्य प्रकाश इसी शरीर में छिपे हैं।',
-        pb: 'ਕਬੀਰ ਸਾਹਿਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਬ੍ਰਹਮੰਡ ਵਿੱਚ ਹੈ ਉਹ ਸਭ ਸਰੀਰ ਵਿੱਚ ਹੀ ਮੌਜੂਦ ਹੈ।',
-        en: 'Kabir Saheb explains that whatever exists in the universe is present right within the human body.'
+        hi: 'सतगुरु कबीर साहेब समझाते हैं कि जिसे हम ब्रह्मांड कहते हैं, वह सब इस मानव शरीर के भीतर ही मौजूद है। अनंत चेतना का जल और ध्यान के दिव्य प्रकाश इसी शरीर में छिपे हैं।',
+        pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਬ੍ਰਹਮੰਡ ਵਿੱਚ ਹੈ ਉਹ ਸਭ ਸਰੀਰ ਵਿੱਚ ਹੀ ਮੌਜੂਦ ਹੈ।',
+        en: 'Satguru Kabir Saheb explains that whatever exists in the universe is present right within the human body.'
       },
       kabirPhilosophy: {
         hi: 'बाहर भटकने की कोई आवश्यकता नहीं है, भीतरी खोजी बनें।',
         pb: 'ਬਾਹਰ ਭਾਲਣ ਦੀ ਲੋੜ ਨਹੀਂ, ਅੰਦਰ ਖੋਜ ਕਰੋ।',
         en: 'No need to search outside; seek the Truth within.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -77,7 +77,7 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
     symbols: [
       { symbol: 'हरिण (Deer)', meaning: { hi: 'जाग्रत आत्मा / भक्ति', pb: 'ਜਾਗਦੀ ਆਤਮਾ', en: 'Awakened Soul / Devotion' } },
       { symbol: 'सिंह (Lion)', meaning: { hi: 'अहंकार / क्रोध', pb: 'ਹੰਕਾਰ / ਕ੍ਰੋਧ', en: 'Ego / Anger' } },
-      { symbol: 'बधिक (Hunter)', meaning: { hi: 'सद्गुरु / शरण', pb: 'ਸਤਿਗੁਰੂ', en: 'Satguru / Refuge' } }
+      { symbol: 'बधिक (Hunter)', meaning: { hi: 'सतगुरु / शरण', pb: 'ਸਤਿਗੁਰੂ', en: 'Satguru / Refuge' } }
     ],
     question: {
       hi: 'यहाँ "सिंह का बधिक के पास जाना" किसका प्रतीक है?',
@@ -93,7 +93,7 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'अहंकार का गुरु चरणों में विसर्जन', pb: 'ਹੰਕਾਰ ਦਾ ਗੁਰੂ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਣ', en: 'Surrender of Ego at Satguru\'s Feet' },
       deepMeaning: {
-        hi: 'हिरण (कोमल आत्मा) जाग्रत होकर पूरे संसार को भक्ति से जीत लेती है। शेर (मनुष्य का प्रचंड अहंकार) सद्गुरु (बधिक) की शरण में आकर स्वतः नष्ट हो जाता है।',
+        hi: 'हिरण (कोमल आत्मा) जाग्रत होकर पूरे संसार को भक्ति से जीत लेती है। शेर (मनुष्य का प्रचंड अहंकार) सतगुरु (बधिक) की शरण में आकर स्वतः नष्ट हो जाता है।',
         pb: 'ਆਤਮਾ ਭਗਤੀ ਨਾਲ ਸੰਸਾਰ ਨੂੰ ਜਿੱਤਦੀ ਹੈ ਅਤੇ ਹੰਕਾਰ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਵਿੱਚ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
         en: 'The gentle soul wins the world through devotion, while fierce ego surrenders at Satguru\'s feet.'
       },
@@ -102,7 +102,7 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
         pb: 'ਗੁਰੂ ਕਿਰਪਾ ਨਾਲ ਹੰਕਾਰ ਦਾ ਨਾਸ਼ ਹੁੰਦਾ ਹੈ।',
         en: 'Destruction of ego by Guru\'s grace leads to liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -155,7 +155,7 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
         pb: 'ਅੰਤਰਮੁਖੀ ਧਿਆਨ ਨਾਲ ਮਨ ਵਸ਼ ਵਿੱਚ ਆਉਂਦਾ ਹੈ।',
         en: 'Inward meditation is the key to mastering the restless mind.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -208,7 +208,7 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
         pb: 'ਅਨਹਦ ਨਾਦ ਆਤਮਾ ਨੂੰ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਜੋੜਦਾ ਹੈ।',
         en: 'Unstruck sound unites soul with Supreme Consciousness.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -251,16 +251,16 @@ export const ULATVASI_BATCH_31_TO_45: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'ज्ञानबल से माया का पलायन', pb: 'ਗਿਆਨ ਨਾਲ ਮਾਇਆ ਦਾ ਡਰ', en: 'Flight of Maya before Divine Wisdom' },
       deepMeaning: {
-        hi: 'सामान्य संसार में माया (बिल्ली) जीव (चूहे) को डराती है। परंतु जब जीव को सतनाम का सत्यज्ञान होता है, तो वह इतना बलशाली हो जाता है कि माया स्वयं उससे डरकर भाग जाती है।',
+        hi: 'सामान्य संसार में माया (बिल्ली) जीव (चूहे) को डराती है। परंतु जब जीव को सत्यनाम का सत्यज्ञान होता है, तो वह इतना बलशाली हो जाता है कि माया स्वयं उससे डरकर भाग जाती है।',
         pb: 'ਗਿਆਨ ਮਿਲਣ ਤੇ ਆਤਮਾ ਬਲਵਾਨ ਹੋ ਜਾਂਦੀ ਹੈ ਅਤੇ ਮਾਇਆ ਉਸ ਤੋਂ ਡਰ ਕੇ ਭੱਜਦੀ ਹੈ।',
-        en: 'In worldly life Maya terrorizes Jiva, but upon awakening to Satnam, Maya flees from the empowered Soul.'
+        en: 'In worldly life Maya terrorizes Jiva, but upon awakening to Satyanaam, Maya flees from the empowered Soul.'
       },
       kabirPhilosophy: {
         hi: 'सत्यनाम का ज्ञान ही माया के भय से सदा के लिए मुक्त करता है।',
         pb: 'ਸਤਯਨਾਮ ਗਿਆਨ ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਕਰਦਾ ਹੈ।',
-        en: 'Wisdom of Satnam grants permanent immunity from illusion.'
+        en: 'Wisdom of Satyanaam grants permanent immunity from illusion.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

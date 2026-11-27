@@ -58,10 +58,11 @@ export interface Discourse5StepData {
 
 // Sant Bhasha Vocabulary Dictionary
 const SANT_BHASHA_DICT: Record<string, { hi: string; pb: string; en: string }> = {
-  'कबीर': { hi: 'सतगुरु कबीर साहेब जी (परम चेतना)', pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ', en: 'Satguru Kabir Saheb (Supreme Consciousness)' },
+  'कबीर': { hi: 'सतगुरु कबीर साहेब (परम चेतना)', pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ', en: 'Satguru Kabir Saheb (Supreme Consciousness)' },
+  'साहेब': { hi: 'परमेश्वर, सर्वोपरि स्वामी', pb: 'ਪਰਮੇਸ਼ਵਰ, ਮਾਲਕ', en: 'The Supreme Master' },
   'साहिब': { hi: 'परमेश्वर, सर्वोपरि स्वामी', pb: 'ਪਰਮੇਸ਼ਵਰ, ਮਾਲਕ', en: 'The Supreme Master' },
   'सत्यनाम': { hi: 'सतगुरु का अमर एवं अनादि निज नाम', pb: 'ਸਤਿਗੁਰੂ ਦਾ ਅਮਰ ਨਿਜ ਨਾਮ', en: 'The Eternal Uncreated True Name' },
-  'सतनाम': { hi: 'अविनाशी निज नाम शबद', pb: 'ਅਵਿਨਾਸ਼ੀ ਨਾਮ', en: 'The Imperishable True Vibration' },
+  'सतनाम': { hi: 'अविनाशी सत्यनाम शबद', pb: 'ਅਵਿਨਾਸ਼ੀ ਸਤਯਨਾਮ', en: 'The Imperishable True Vibration' },
   'सबद': { hi: 'अनाहत शबद ब्रह्म, गुरु उपदेश', pb: 'ਅਨਾਹਤ ਸ਼ਬਦ, ਗੁਰੂ ਉਪਦੇਸ਼', en: 'Unstruck Divine Sound Vibration' },
   'शब्द': { hi: 'अंतरिक्ष में गूंजता परम शबद', pb: 'ਅੰਦਰੂਨੀ ਸ਼ਬਦ ਧੁਨ', en: 'Inner Sacred Sound' },
   'सुरति': { hi: 'आत्मा की ध्यान-वृत्ति, सजग चेतना', pb: 'ਆਤਮਾ ਦੀ ਧਿਆਨ-ਵ੍ਰਿਤੀ', en: 'Soul’s Focused Attention / Awareness' },

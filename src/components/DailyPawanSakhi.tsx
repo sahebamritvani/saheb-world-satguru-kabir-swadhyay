@@ -44,7 +44,6 @@ import {
   Crown,
   Flower2,
   Edit3,
-  Quote,
   Save,
   CheckCircle2,
   ShieldAlert,
@@ -149,11 +148,8 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [copiedToast, setCopiedToast] = useState(false);
   const [bookmarkedToast, setBookmarkedToast] = useState(false);
-  const [showQuickNote, setShowQuickNote] = useState(false);
-  const [reflectionText, setReflectionText] = useState('');
   const [showCardModal, setShowCardModal] = useState(false);
-  const [showBhavarth, setShowBhavarth] = useState(false);
-  const [showContemplation, setShowContemplation] = useState(false);
+  const [showBhavarth, setShowBhavarth] = useState(true);
   const [sakhisList, setSakhisList] = useState<Sakhi[]>(STARTER_SAKHIS);
 
   useEffect(() => {
@@ -182,7 +178,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   }, [sakhi.number, lang]);
 
   // --- DAINIK CHINTAN (SAKHI-ALIGNED DAILY REFLECTION) STATE ---
-  const [showKalChintan, setShowKalChintan] = useState(false);
+  const [showKalChintan, setShowKalChintan] = useState(true);
   const [kalReflectionText, setKalReflectionText] = useState('');
   const [kalSavedToast, setKalSavedToast] = useState(false);
   const [showPastKalNotes, setShowPastKalNotes] = useState(false);
@@ -837,15 +833,6 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  const handleSaveReflection = () => {
-    if (!reflectionText.trim()) return;
-    onSaveToDiary(reflectionText.trim());
-    setReflectionText('');
-    setShowQuickNote(false);
-    setBookmarkedToast(true);
-    setTimeout(() => setBookmarkedToast(false), 3000);
-  };
-
   // Filtered sakhis for the category selector modal
   const categorySakhis = useMemo(() => {
     if (selectedCategoryFilter === 'all') return sakhisList.slice(0, 30);
@@ -1436,86 +1423,8 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             )}
           </div>
 
-          {/* Contemplation Prompt (Open Flow) */}
-          <div className="py-2 px-1 sm:px-2 space-y-1 overflow-hidden break-words border-l-2 border-amber-700/35 pl-3">
-            <div className="flex items-center justify-between gap-2">
-              <span style={{ color: theme.sacredMaroon }} className="text-xs font-bold uppercase tracking-wider block">
-                {t.contemplationPromptTitle}
-              </span>
-              <button
-                onClick={() => setShowContemplation(!showContemplation)}
-                className="text-xs font-semibold cursor-pointer shrink-0"
-                style={{ color: theme.sacredMaroon }}
-              >
-                {showContemplation ? (language === 'hi' ? 'छिपाएं' : language === 'pb' ? 'ਲੁਕਾਓ' : 'Hide') : (language === 'hi' ? 'दिखाएं' : language === 'pb' ? 'ਦਿਖਾਓ' : 'Show')}
-              </button>
-            </div>
-            {showContemplation && (
-              <p style={{ color: theme.textPrimary }} className={`text-xs sm:text-sm ${activeFontClass} italic font-semibold leading-relaxed animate-fadeIn break-words`}>
-                "{sakhi.contemplation[language] || sakhi.contemplation.hi}"
-              </p>
-            )}
-          </div>
-
-          {/* Quick reflection input */}
-          {showQuickNote ? (
-            <div
-              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
-              className="p-4 rounded-xl border space-y-3 animate-fadeIn"
-            >
-              <label style={{ color: theme.textSecondary }} className="text-xs font-semibold block">
-                {t.addReflectionPrompt}
-              </label>
-              <textarea
-                value={reflectionText}
-                onChange={(e) => setReflectionText(e.target.value)}
-                placeholder={t.reflectionPlaceholder}
-                style={{
-                  backgroundColor: theme.cardBg,
-                  borderColor: theme.cardBorder,
-                  color: theme.textPrimary,
-                }}
-                className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 resize-none h-24"
-              />
-              <div className="flex items-center gap-2">
-                <button
-                  id="save-daily-reflection-btn"
-                  onClick={handleSaveReflection}
-                  disabled={!reflectionText.trim()}
-                  style={{
-                    backgroundColor: theme.buttonPrimaryBg,
-                    color: theme.buttonPrimaryText,
-                  }}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold disabled:opacity-40 cursor-pointer"
-                >
-                  {t.saveReflectionBtn}
-                </button>
-                <button
-                  id="cancel-daily-reflection-btn"
-                  onClick={() => setShowQuickNote(false)}
-                  style={{ color: theme.textMuted }}
-                  className="px-3 py-2 text-xs font-medium cursor-pointer"
-                >
-                  {t.cancelBtn}
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="flex justify-end">
-              <button
-                id="open-quick-reflection-btn"
-                onClick={() => setShowQuickNote(true)}
-                style={{ color: theme.accentGold }}
-                className="text-xs font-semibold flex items-center gap-1.5 hover:underline cursor-pointer"
-              >
-                <Bookmark className="w-3.5 h-3.5" />
-                <span>{t.addDiaryEntryBtn}</span>
-              </button>
-            </div>
-          )}
-
           {/* ========================================================================= */}
-          {/* DAINIK CHINTAN CARD: SHOW/HIDE (देखें / छुपाएं) SAKHI REFLECTION         */}
+          {/* DAINIK CHINTAN CARD: SINGLE FOCUSED REFLECTION & DIARY INPUT              */}
           {/* ========================================================================= */}
           <div 
             id="dainik-chintan-kal-trigger-section"
@@ -1599,59 +1508,44 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   transition={{ duration: 0.22 }}
                   className="overflow-hidden space-y-3.5 pt-1"
                 >
-                  {/* Dynamic Sakhi-Aligned Prompt Banner */}
-                  <div className="text-xs sm:text-sm font-serif leading-relaxed text-stone-700 dark:text-stone-300 space-y-2">
-                    <p className="font-semibold text-stone-800 dark:text-stone-100">
-                      {activeContemplationPrompt}
-                    </p>
-                    {activePracticalStep && (
-                      <p className="text-xs sm:text-[0.8125rem] text-amber-900 dark:text-amber-300 flex items-start gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-                        <span>
-                          <strong className="font-bold">
-                            {language === 'pb' ? 'ਵਿਵਹਾਰਕ ਅਭਿਆਸ:' : language === 'en' ? 'Daily Practice:' : 'व्यावहारिक अभ्यास:'}
-                          </strong>{' '}
-                          {activePracticalStep}
-                        </span>
-                      </p>
-                    )}
-                  </div>
-                  {/* Active Daily Sakhi Source Anchor */}
-                  <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-2">
-                    <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <div className="flex items-center gap-1.5">
-                        <Quote className="w-4 h-4 text-amber-600 shrink-0" />
-                        <span className="font-bold text-amber-800 dark:text-amber-300 text-[0.625rem] uppercase font-mono tracking-wider">
-                          {language === 'pb'
-                            ? `ਪਾਵਨ ਮੂਲ ਵਾਣੀ · ਸਾਖੀ #${sakhi.number} (${activeThemeTitle})`
-                            : language === 'en'
-                            ? `Sacred Source Couplet · Sakhi #${sakhi.number} (${activeThemeTitle})`
-                            : `पावन मूल वाणी · साखी #${sakhi.number} (${activeThemeTitle})`}
-                        </span>
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={() => {
-                          sacredHaptics.lightTap();
-                          const prefix = kalReflectionText ? `${kalReflectionText}\n\n` : '';
-                          setKalReflectionText(`${prefix}[साखी #${sakhi.number} · ${activeThemeTitle}]: `);
-                        }}
-                        className="px-2.5 py-0.5 rounded-lg text-[0.625rem] font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 dark:text-amber-200 border border-amber-500/30 transition cursor-pointer shrink-0"
+                  {/* Single Focused Self-Reflection Question & Practical Spiritual Practice */}
+                  <div className="space-y-3 font-serif">
+                    <div className="p-3.5 rounded-2xl bg-white/75 dark:bg-stone-900/55 border border-amber-500/25 space-y-1.5">
+                      <span
+                        style={{ color: theme.sacredMaroon }}
+                        className="text-[0.6875rem] font-black uppercase tracking-wider block"
                       >
-                        {language === 'pb' ? `+ ਸਾਖੀ #${sakhi.number} ਹਵਾਲਾ` : language === 'en' ? `+ Cite Sakhi #${sakhi.number}` : `+ साखी #${sakhi.number} सन्दर्भ जोड़ें`}
-                      </button>
-                    </div>
-
-                    <div className="text-xs sm:text-sm font-serif italic font-bold text-amber-950 dark:text-amber-100 pl-5 whitespace-pre-line">
-                      "{formatCoupletString(sakhi.text?.[language] || sakhi.text?.hi)}"
-                    </div>
-
-                    {(sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi) && (
-                      <p className="text-[0.6875rem] sm:text-xs font-serif text-stone-600 dark:text-stone-300 pl-5 leading-relaxed">
-                        {sakhi.bhavarth?.[language] || sakhi.bhavarth?.hi}
+                        {language === 'pb'
+                          ? 'ਅੱਜ ਦਾ ਆਤਮ-ਚਿੰਤਨ ਪ੍ਰਸ਼ਨ'
+                          : language === 'en'
+                          ? "Today's Self-Reflection Question"
+                          : 'आज का आत्म-चिंतन प्रश्न'}
+                      </span>
+                      <p className="text-xs sm:text-sm font-semibold text-stone-800 dark:text-stone-100 leading-relaxed italic">
+                        "{activeContemplationPrompt}"
                       </p>
-                    )}
+                    </div>
+
+                    <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-start gap-2">
+                      <Sparkles className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                      <div className="space-y-0.5 min-w-0">
+                        <span className="text-[0.6875rem] font-black uppercase tracking-wider text-amber-900 dark:text-amber-300 block">
+                          {language === 'pb'
+                            ? 'ਦੈਨਿਕ ਆਚਰਣ ਸੂਤਰ'
+                            : language === 'en'
+                            ? 'Practical Spiritual Practice'
+                            : 'दैनिक आचरण सूत्र'}
+                        </span>
+                        <p className="text-xs sm:text-[0.8125rem] text-stone-800 dark:text-stone-200 leading-relaxed">
+                          {activePracticalStep ||
+                            (language === 'pb'
+                              ? `ਅੱਜ '${activeThemeTitle}' ਦੇ ਭਾਵ ਅਨੁਸਾਰ ਮਿੱਠੀ ਬਾਣੀ ਤੇ ਸਤਯਨਾਮ ਸਿਮਰਨ ਦਾ ਅਭਿਆਸ ਕਰੋ।`
+                              : language === 'en'
+                              ? `Practice calm mindfulness and inner Satyanaam remembrance aligned with '${activeThemeTitle}' today.`
+                              : `आज '${activeThemeTitle}' के भाव के अनुरूप शांत वाणी व सत्यनाम स्मरण को दैनिक आचरण में उतारें।`)}
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Dynamic Sakhi Thought Starters Chips */}
@@ -1995,8 +1889,8 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               kicker: { hi: 'ज्ञान परीक्षा', pb: 'ਗਿਆਨ ਪ੍ਰੀਖਿਆ', en: 'Spiritual Quiz' },
               title: { hi: 'कबीर ज्ञान प्रश्नोत्तरी', pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ', en: 'Kabir Gyan Quiz' },
               desc: {
-                hi: 'कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व अपना प्रमाण-पत्र पाएं।',
-                pb: 'ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਦਿਓ ਤੇ ਸਰਟੀਫਿਕੇਟ ਪਾਓ।',
+                hi: 'सतगुरु कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व अपना प्रमाण-पत्र पाएं।',
+                pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਦਿਓ ਤੇ ਸਰਟੀਫਿਕੇਟ ਪਾਓ।',
                 en: 'Test your knowledge across 6 questions and download your appreciation certificate.',
               },
               action: { hi: 'प्रश्नोत्तरी खेलें', pb: 'ਪ੍ਰਸ਼ਨੋਤਰੀ ਖੇਡੋ', en: 'Start Quiz' },
@@ -2009,7 +1903,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               kicker: { hi: '४२ पीढ़ियाँ', pb: '੪੨ ਪੀੜ੍ਹੀਆਂ', en: '42 Generations' },
               title: { hi: 'वंश बयालीस की पावन महिमा', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ', en: 'Glory of Vansh Bayalis' },
               desc: {
-                hi: 'सद्गुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
+                hi: 'सतगुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
                 pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਵਰਦਾਨ, ਧਨੀ ਧਰਮਦਾਸ ਤੇ ਅਟੱਲ ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦਾ ਰਹੱਸ।',
                 en: 'Explore the 4-part guide on the eternal 42-generation lineage and divine promise.',
               },
@@ -2100,7 +1994,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
               </div>
               <p className="text-xs mt-0.5 leading-relaxed" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਸਮੁੱਚੇ ੫੮ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, ਕੁਇਜ਼ ਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾ'
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਸਮੁੱਚੇ ੫੮ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, ਕੁਇਜ਼ ਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾ'
                   : language === 'en'
                   ? 'All 58 Satguru Kabir Saheb Holy Granths, Nitnem, Sadhana, Card Maker, Sankalp Tracker, Quiz & Guides'
                   : 'सतगुरु कबीर साहेब के समस्त ५८ पावन ग्रन्थ, नितनेम, साधना, कार्ड मेकर, संकल्प, क्विज़ व मार्गदर्शिका'}

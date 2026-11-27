@@ -11,7 +11,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kabir darshan saadhu ka, bade bhaag darshaay.', 'Jo hovai soolee saja, kaante ee tari jaay.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि साधु का दर्शन बड़े ही सौभाग्य से प्राप्त होता है। उस समय अगर सूली पर टांगने की सजा भी मिले, तो वह भी एक छोटे से कांटे की चुभन का आभास मात्र देकर टल जाती है, अर्थात साधु दर्शनों से बड़े-से-बड़ा संकट भी टल जाता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि साधु का दर्शन बड़े ही सौभाग्य से प्राप्त होता है। उस समय अगर सूली पर टांगने की सजा भी मिले, तो वह भी एक छोटे से कांटे की चुभन का आभास मात्र देकर टल जाती है, अर्थात साधु दर्शनों से बड़े-से-बड़ा संकट भी टल जाता है।',
       pb: devanagariToGurmukhi('साधु का दर्शन बड़े सौभाग्य से मिलता है। इससे सूली की सजा भी एक कांटे की चुभन बनकर टल जाती है।'),
       en: 'Beholding a saint is a rare good fortune. By their grace, even a severe punishment like impalement is reduced to a minor thorn prick.'
     }
@@ -25,7 +25,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kabir soee din bhala, ja din saadhu milaay.', 'Ank bhare bhari bhetiye, paap shareera jaay.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि वही दिन अच्छा होता है जिस दिन साधु मिल जाए, भले ही वह कोई भी दिन हो। संकोच त्यागकर उनसे भरपूर भक्ति-भाव से मिलना चाहिए तथा उनकी सेवा-पूजा करनी चाहिए। ऐसा करने से तन-मन के पाप (दोष) दूर हो जाते हैं।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि वही दिन अच्छा होता है जिस दिन साधु मिल जाए, भले ही वह कोई भी दिन हो। संकोच त्यागकर उनसे भरपूर भक्ति-भाव से मिलना चाहिए तथा उनकी सेवा-पूजा करनी चाहिए। ऐसा करने से तन-मन के पाप (दोष) दूर हो जाते हैं।',
       pb: devanagariToGurmukhi('वही दिन श्रेष्ठ है जिस दिन साधु का मिलन हो। भक्ति-भाव से मिलने से शरीर व मन के पाप नष्ट होते हैं।'),
       en: 'Blessed is the day when one meets a true saint. Meeting them with pure love and devotion cleanses all bodily and mental sins.'
     }
@@ -67,7 +67,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kabir darshan saadhu ke, karat na keejai kaani.', 'Jyon udyam se lakshmee, aalas man se haani.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि साधु के दर्शन करने में कोई भी बहाना नहीं बनाना चाहिए। अपने अभिमान को त्यागकर अविलंब साधु के दर्शन करने जाना चाहिए। जिस प्रकार परिश्रम से लक्ष्मी (दौलत) मिलती है और मन में आलस लाने से हानि होती है, ठीक उसी प्रकार साधु-दर्शन से लाभ प्राप्त होता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि साधु के दर्शन करने में कोई भी बहाना नहीं बनाना चाहिए। अपने अभिमान को त्यागकर अविलंब साधु के दर्शन करने जाना चाहिए। जिस प्रकार परिश्रम से लक्ष्मी (दौलत) मिलती है और मन में आलस लाने से हानि होती है, ठीक उसी प्रकार साधु-दर्शन से लाभ प्राप्त होता है।',
       pb: devanagariToGurmukhi('साधु के दर्शन में कोई बहाना न बनाएं। जैसे परिश्रम से धन मिलता है और आलस्य से हानि होती है, वैसे ही साधु दर्शन से आत्म-लाभ होता है।'),
       en: 'Never hesitate or make excuses to seek the sight of a saint. Just as effort brings wealth and laziness brings loss, seeking saints yields immense spiritual treasure.'
     }
@@ -81,7 +81,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Saadhu darash ko jaaiye, jeta dhariye paanv.', 'Dag dag pai asamadh jag, kahain kabir samujhaay.']
     },
     bhavarth: {
-      hi: 'कबीरजी समझाकर कहते हैं कि साधु दर्शन के लिए चले जाइए, ऐसे में जितने भी कदम आगे धरते जाओगे, उनका पुण्य-लाभ अश्वमेध यज्ञ के फल के बराबर मिलेगा, अर्थात साधु-दर्शनों के लिए लगन के साथ जितने भी कदम उठते जाएंगे, वे उतने ही आनंद प्रदान करने वाले होंगे।',
+      hi: 'सतगुरु कबीर साहेब समझाकर कहते हैं कि साधु दर्शन के लिए चले जाइए, ऐसे में जितने भी कदम आगे धरते जाओगे, उनका पुण्य-लाभ अश्वमेध यज्ञ के फल के बराबर मिलेगा, अर्थात साधु-दर्शनों के लिए लगन के साथ जितने भी कदम उठते जाएंगे, वे उतने ही आनंद प्रदान करने वाले होंगे।',
       pb: devanagariToGurmukhi('साधु दर्शन के लिए जितने कदम चलते हैं, हर कदम पर अश्वमेध यज्ञ का पुण्य-लाभ मिलता है।'),
       en: 'With every step you take towards visiting a saint, you earn the merit equal to performing sacred Ashvamedha rituals.'
     }
@@ -109,7 +109,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kaee baar nahin kar sake, doy bakht kari ley.', 'Kabir saadhu darash te, kaal daga nahin dey.']
     },
     bhavarth: {
-      hi: 'कुछ लोगों के पास इतना समय नहीं होता कि वे साधु-दर्शन दिन में कई-कई वार कर सकें। यदि वे कई बार न कर सकें, तो दो बार ही कर लें। कबीरजी कहते हैं कि साधु के दर्शन से तो इस जीव को काल भी धोखा नहीं दे सकता, अर्थात मृत्यु के रूप में जो अज्ञान-संताप आदि सताते हैं, वे सब नष्ट हो जाते हैं।',
+      hi: 'कुछ लोगों के पास इतना समय नहीं होता कि वे साधु-दर्शन दिन में कई-कई वार कर सकें। यदि वे कई बार न कर सकें, तो दो बार ही कर लें। सतगुरु कबीर साहेब फरमाते हैं कि साधु के दर्शन से तो इस जीव को काल भी धोखा नहीं दे सकता, अर्थात मृत्यु के रूप में जो अज्ञान-संताप आदि सताते हैं, वे सब नष्ट हो जाते हैं।',
       pb: devanagariToGurmukhi('यदि दिन में कई बार दर्शन न हो सकें तो दो बार करें। साधु के दर्शन से काल भी भयभीत होकर दूर रहता है।'),
       en: 'If you cannot visit a saint many times, visit them at least twice a day. By doing so, even time and death cannot deceive your soul.'
     }
@@ -123,7 +123,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Doy bakhat nahin kari sake, din mein karu ik baar.', 'Kabir saadhu darash te, utare bhaujal paar.']
     },
     bhavarth: {
-      hi: 'संसार में बहुत से ऐसे भी सज्जन हैं, जो दो समय भी साधु-दर्शन नहीं कर पाते। ऐसे में वे दिन में एक बार ही दर्शन करें। कबीरजी कहते हैं कि साधु-दर्शन से यह जीव भव-सागर से पार हो जाता है। जीवन का परम उद्देश्य यानी सांसारिक दुःखों से छूटने के लिए एकमात्र उपाय साधु-दर्शन ही है।',
+      hi: 'संसार में बहुत से ऐसे भी सज्जन हैं, जो दो समय भी साधु-दर्शन नहीं कर पाते। ऐसे में वे दिन में एक बार ही दर्शन करें। सतगुरु कबीर साहेब फरमाते हैं कि साधु-दर्शन से यह जीव भव-सागर से पार हो जाता है। जीवन का परम उद्देश्य यानी सांसारिक दुःखों से छूटने के लिए एकमात्र उपाय साधु-दर्शन ही है।',
       pb: devanagariToGurmukhi('यदि दो समय संभव न हो तो दिन में एक बार दर्शन करें। साधु दर्शन से जीव भवसागर से तर जाता है।'),
       en: 'If twice a day is impossible, visit a saint at least once daily. Seeing a holy saint enables one to cross the treacherous worldly ocean.'
     }
@@ -137,7 +137,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Ek dina nahin kari sake, dooje din kar leh.', 'Kabir saadhu darash te, paavai uttam deh.']
     },
     bhavarth: {
-      hi: 'यदि दिन में एक बार भी साधु का दर्शन न किया जा सके तो दूसरे दिन दर्शन अवश्य करना चाहिए। कबीरजी कहते हैं कि साधु-दर्शन से उत्तम तन-मन की प्राप्ति होती है, जिससे जिज्ञासु जनों को भक्ति-साधना करने में सरलता होती है।',
+      hi: 'यदि दिन में एक बार भी साधु का दर्शन न किया जा सके तो दूसरे दिन दर्शन अवश्य करना चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि साधु-दर्शन से उत्तम तन-मन की प्राप्ति होती है, जिससे जिज्ञासु जनों को भक्ति-साधना करने में सरलता होती है।',
       pb: devanagariToGurmukhi('यदि प्रतिदिन न हो सके तो दूसरे दिन दर्शन करें। साधु दर्शन से उत्तम शरीर व मन प्राप्त होता है।'),
       en: 'If daily visits are not feasible, meet a saint every second day. The sight of a holy man grants a pure body and clear mind for spiritual practice.'
     }
@@ -151,7 +151,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Dooje din nahin kari sake, teeje din karu jaay.', 'Kabir saadhu darash te, moksh mukti phal paay.']
     },
     bhavarth: {
-      hi: 'अगर दूसरे दिन भी साधु के दर्शन न हो सके, तो तीसरे दिन जाकर अवश्य ही दर्शन करने चाहिए। कबीरजी साधु-दर्शन का महत्त्व समझाते हुए कहते हैं। कि इससे जीव को सभी बंधनों से मुक्ति मिल जाती है और मोक्ष यानी सुख-शांति के फल की प्राप्ति होती है।',
+      hi: 'अगर दूसरे दिन भी साधु के दर्शन न हो सके, तो तीसरे दिन जाकर अवश्य ही दर्शन करने चाहिए। सतगुरु कबीर साहेब साधु-दर्शन का महत्त्व समझाते हुए कहते हैं। कि इससे जीव को सभी बंधनों से मुक्ति मिल जाती है और मोक्ष यानी सुख-शांति के फल की प्राप्ति होती है।',
       pb: devanagariToGurmukhi('यदि दूसरे दिन भी न हो सके तो तीसरे दिन दर्शन करें। साधु दर्शन से मोक्ष व मुक्ति फल मिलता है।'),
       en: 'If second-day visits fail, go on the third day. Seeing saints releases the seeker from worldly entanglements and bestows liberation.'
     }
@@ -165,7 +165,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Teeje chauthe nahin kare, baar-baar karu jaay.', 'Yaamein vilamb na keejiye, kahain kabir samujhaay.']
     },
     bhavarth: {
-      hi: 'यदि तीसरे और चौथे दिन भी साधु के दर्शन करना संभव न हो तो उसके लिए प्रयत्न करो और बार-बार प्रयत्न करो। कबीरजी समझाते हुए कहते हैं कि साधु का दर्शन करने में तनिक भी देर न लगाओ, क्योंकि साधु-दर्शन का फल जीव के लिए कल्याणकारी होता है।',
+      hi: 'यदि तीसरे और चौथे दिन भी साधु के दर्शन करना संभव न हो तो उसके लिए प्रयत्न करो और बार-बार प्रयत्न करो। सतगुरु कबीर साहेब फरमाते हैं कि साधु का दर्शन करने में तनिक भी देर न लगाओ, क्योंकि साधु-दर्शन का फल जीव के लिए कल्याणकारी होता है।',
       pb: devanagariToGurmukhi('तीसरे चौथे दिन न कर सकें तो बार-बार प्रयास करके दर्शन करें। इसमें तनिक भी विलंब न करें।'),
       en: 'Even if several days pass, strive repeatedly to behold a saint. Do not delay, for their holy sight is the ultimate blessing for the soul.'
     }
@@ -179,7 +179,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Baar-baar nahin kari sake, paakh-paakh kari ley.', 'Kahain kabir so bhakt jan, janam suphal kari ley.']
     },
     bhavarth: {
-      hi: 'यदि सप्ताह में भी दर्शन नहीं कर सकते, तो पंद्रह दिन में ही कर लेने चाहिए। कबीरजी कहते हैं कि ऐसे भक्त जन्म को सफल कर लेते हैं, परंतु जिन्हें साधु-दर्शन में आलस या अन्य व्यस्तताएं घेरे रहती हैं, उनका जीवन ही निष्फल है।',
+      hi: 'यदि सप्ताह में भी दर्शन नहीं कर सकते, तो पंद्रह दिन में ही कर लेने चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि ऐसे भक्त जन्म को सफल कर लेते हैं, परंतु जिन्हें साधु-दर्शन में आलस या अन्य व्यस्तताएं घेरे रहती हैं, उनका जीवन ही निष्फल है।',
       pb: devanagariToGurmukhi('यदि बार-बार न हो सके तो हर १५ दिन (पखवाड़े) में दर्शन करें। ऐसे भक्त अपना जन्म सफल करते हैं।'),
       en: 'If frequent visits are impossible, visit every fortnight. Devotees who do so make their human birth fruitful.'
     }
@@ -193,7 +193,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Paakh paakh nahin kari sakai, maas maas karu jaay.', 'Yaamein der na laaiye, kahain kabir samujhaay.']
     },
     bhavarth: {
-      hi: 'यदि पंद्रह दिन में भी साधु-दर्शन नहीं कर सकते, तो महीने-महीने ही करो। कबीरजी समझाते हुए कहते हैं कि इसमें देर नहीं लगानी चाहिए, जो समय बीत जाएगा, वह व्यर्थ मूल्यहीन ही जाएगा, अर्थात अवसर को खोना नहीं चाहिए, साधु-दर्शन अवश्य ही करने चाहिए।',
+      hi: 'यदि पंद्रह दिन में भी साधु-दर्शन नहीं कर सकते, तो महीने-महीने ही करो। सतगुरु कबीर साहेब फरमाते हैं कि इसमें देर नहीं लगानी चाहिए, जो समय बीत जाएगा, वह व्यर्थ मूल्यहीन ही जाएगा, अर्थात अवसर को खोना नहीं चाहिए, साधु-दर्शन अवश्य ही करने चाहिए।',
       pb: devanagariToGurmukhi('यदि १५ दिन में भी संभव न हो तो महीने में एक बार अवश्य जाएं। इसमें कोई देर न करें।'),
       en: 'If fortnightly visits cannot happen, go at least once a month. Do not lose precious time without seeing holy saints.'
     }
@@ -207,7 +207,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Maas-maas nahin kari sakai, chhathe maas alabatt.', 'Yaamein dheel na keejiye, kahain kabir avigatt.']
     },
     bhavarth: {
-      hi: 'यदि महीने-महीने भी साधु दर्शन नहीं कर सकते, तो छठे महीने अवश्य ही करने चाहिए। अविनाशी-ज्ञानदाता सद्गुरु कबीरजी बार-बार सभी को सचेत करते हुए कहते हैं कि इसमें ढील न करो, अर्थात यदि कहीं भी कोई दुर्बलता बाधक हो, तो उसे तुरंत दूर करो।',
+      hi: 'यदि महीने-महीने भी साधु दर्शन नहीं कर सकते, तो छठे महीने अवश्य ही करने चाहिए। अविनाशी-ज्ञानदाता सतगुरु कबीर साहेब बार-बार सभी को सचेत करते हुए कहते हैं कि इसमें ढील न करो, अर्थात यदि कहीं भी कोई दुर्बलता बाधक हो, तो उसे तुरंत दूर करो।',
       pb: devanagariToGurmukhi('यदि महीने में भी न हो सके तो छह महीने में अवश्य जाएं। इसमें तनिक भी ढील न बरतें।'),
       en: 'If monthly visits fail due to circumstances, visit at least every six months. Do not slacken in seeking holy fellowship.'
     }
@@ -221,7 +221,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Chhathe maas nahin kari sakai, baras dina kari ley.', 'Kahain kabir so bhaktajan, jamahin chunaoetee dey.']
     },
     bhavarth: {
-      hi: 'बहुत से कारण समस्याओं के रूप में ऐसे सामने आ जाते हैं कि श्रद्धावान छह महीने में भी साधु के दर्शन नहीं कर पाते। ऐसे में वे वर्ष-भर में अवश्य ही दर्शन करें। कबीरजी कहते हैं कि ऐसे जिज्ञासु भक्त लोग भी मृत्यु का सामना कर लेते हैं, अर्थात विषय-वासनाओं जैसी अपनी सभी बुराइयों को दूर करके, अपने जीवन का कल्याण कर लेते हैं।',
+      hi: 'बहुत से कारण समस्याओं के रूप में ऐसे सामने आ जाते हैं कि श्रद्धावान छह महीने में भी साधु के दर्शन नहीं कर पाते। ऐसे में वे वर्ष-भर में अवश्य ही दर्शन करें। सतगुरु कबीर साहेब फरमाते हैं कि ऐसे जिज्ञासु भक्त लोग भी मृत्यु का सामना कर लेते हैं, अर्थात विषय-वासनाओं जैसी अपनी सभी बुराइयों को दूर करके, अपने जीवन का कल्याण कर लेते हैं।',
       pb: devanagariToGurmukhi('यदि छह महीने में भी न हो तो वर्ष में एक बार अवश्य दर्शन करें। ऐसे भक्त यमराज (काल) को चुनौती देते हैं।'),
       en: 'If six months pass without a visit, go at least once a year. Such seekers overcome all vices and challenge death itself.'
     }
@@ -235,7 +235,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Baras baras nahin kari sakai, taako laage dosh.', 'Kahain kabir va jeev so, kabahu na paavai mosh.']
     },
     bhavarth: {
-      hi: 'यदि एक-एक बरस में भी साधु-दर्शन नहीं कर सकते, तो फिर दोष (पाप) अवश्य ही लगेगा। कबीरजी कहते हैं कि ऐसे जीव के लिए फिर कोई उपाय नहीं है। उसे फिर कभी भी मोक्ष की प्राप्ति नहीं हो सकती। वह सदैव ही जन्म-मरण के दुखों में विचरता रहेगा।',
+      hi: 'यदि एक-एक बरस में भी साधु-दर्शन नहीं कर सकते, तो फिर दोष (पाप) अवश्य ही लगेगा। सतगुरु कबीर साहेब फरमाते हैं कि ऐसे जीव के लिए फिर कोई उपाय नहीं है। उसे फिर कभी भी मोक्ष की प्राप्ति नहीं हो सकती। वह सदैव ही जन्म-मरण के दुखों में विचरता रहेगा।',
       pb: devanagariToGurmukhi('यदि एक वर्ष में भी साधु का दर्शन न करे तो उसे दोष लगता है। ऐसा जीव कभी मोक्ष नहीं पाता।'),
       en: 'If even a year passes without seeking saintly company, spiritual defect incurs. Such a soul remains bound to the wheel of births.'
     }
@@ -277,7 +277,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['In atakaaya na ruke, saadhu darash ko jaay.', 'Kabir soee sant jan, moksh mukti phal paay.']
     },
     bhavarth: {
-      hi: 'सांसारिक माया-मोह में डूबकर भटकना नहीं चाहिए। साधु-दर्शन के लिए इन सभी बाधाओं को पार करके जाना चाहिए। कबीरजी कहते हैं कि वही सच्चे संत-जन हैं और उन्हें मोक्ष यानी मुक्ति का फल अवश्य मिलेगा, अर्थात वह संसार के आवागमन के चक्र से मुक्त हो जाएंगे।',
+      hi: 'सांसारिक माया-मोह में डूबकर भटकना नहीं चाहिए। साधु-दर्शन के लिए इन सभी बाधाओं को पार करके जाना चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि वही सच्चे संत-जन हैं और उन्हें मोक्ष यानी मुक्ति का फल अवश्य मिलेगा, अर्थात वह संसार के आवागमन के चक्र से मुक्त हो जाएंगे।',
       pb: devanagariToGurmukhi('जो इन रुकावटों के बाद भी साधु दर्शन को जाता है, वही सच्चा संत-जन है और मोक्ष प्राप्त करता है।'),
       en: 'One who overcomes all family and worldly hurdles to visit saints achieves liberation and true peace.'
     }
@@ -347,7 +347,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Daya gareebee bandagee, samata sheel subhaav.', 'Ye te lakshan saadhu ke, kahain kabir sadbhaav.']
     },
     bhavarth: {
-      hi: 'गुरु कबीरजी सद्भावपूर्वक कहते हैं कि दया, विनम्रता, सेवा, समता, शील एवं सत्य भाव ये सब संतों के लक्षण हैं। इन्हीं सद्गुणों से संत सबको सुखदायी होते हैं, जिससे वे सर्वत्र पूजनीय होते हैं।',
+      hi: 'गुरु सतगुरु कबीर साहेब सद्भावपूर्वक कहते हैं कि दया, विनम्रता, सेवा, समता, शील एवं सत्य भाव ये सब संतों के लक्षण हैं। इन्हीं सद्गुणों से संत सबको सुखदायी होते हैं, जिससे वे सर्वत्र पूजनीय होते हैं।',
       pb: devanagariToGurmukhi('दया, गरीबी (नम्रता), भक्ति, समता व शील स्वभाव - ये साधु के लक्षण हैं।'),
       en: 'Compassion, humility, devotion, equanimity, and pure nature are the hallmarks of a true saint.'
     }
@@ -473,8 +473,8 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kabir sheetal jal nahin, him na sheetal hoy.', 'Kabir sheetal sant jan, ram sanehee soy.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि उस प्रकार का तो जल भी शीतल नहीं होता और बर्फ भी वैसा शीतल नहीं होता। जिस प्रकार का संतों का स्वाभाविक-जीवन शांत और शीतल होता है, क्योंकि वे परमात्मा के प्रेमी होते हैं, अतः वे स्वतः ही शीतल और निर्मल हो जाते हैं।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि जल व बर्फ भी उतने शीतल नहीं जितने प्रभु-प्रेमी संत शीतल होते हैं।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि उस प्रकार का तो जल भी शीतल नहीं होता और बर्फ भी वैसा शीतल नहीं होता। जिस प्रकार का संतों का स्वाभाविक-जीवन शांत और शीतल होता है, क्योंकि वे परमात्मा के प्रेमी होते हैं, अतः वे स्वतः ही शीतल और निर्मल हो जाते हैं।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि जल व बर्फ भी उतने शीतल नहीं जितने प्रभु-प्रेमी संत शीतल होते हैं।'),
       en: 'Neither cold water nor ice can equal the serene, comforting coolness of a saint devoted to God.'
     }
   },
@@ -501,7 +501,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kabir laung, ilaayachee, daatun maatee paani.', 'Kahain kabir santan ko, det na keejai kaani.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जिज्ञासु जनो! तुम लौंग, इलायची, दातुन, मिट्टी तथा पानी संतों को दो। संतों की सेवा में इन वस्तुओं को देने में आना-कानी अथवा लज्जा मत करो, अर्थात समयानुसार आवश्यक सामग्री से संतों को प्रसन्न रखो ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जिज्ञासु जनो! तुम लौंग, इलायची, दातुन, मिट्टी तथा पानी संतों को दो। संतों की सेवा में इन वस्तुओं को देने में आना-कानी अथवा लज्जा मत करो, अर्थात समयानुसार आवश्यक सामग्री से संतों को प्रसन्न रखो ।',
       pb: devanagariToGurmukhi('संतों को लौंग, इलायची, दातुन व जल देने में कभी संकोच न करें। उनकी सेवा करें।'),
       en: 'Never hesitate to serve saints with simple essentials like water, herbs, and devotion.'
     }
@@ -529,8 +529,8 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kanchan deeya karan ne, draupadee deeya cheer.', 'Jo deeya so paaiya, aise kahain kabir.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि दिया हुआ दान कभी व्यर्थ नहीं जाता, बल्कि साधु को जो जैसा दान करता है, वैसा ही उसका फल भी उसे प्राप्त होता है। जिस प्रकार कुंती के पुत्र कर्ण ने स्वर्ण दान दिया और द्रोपदी ने चीर का दान दिया (समय आने पर द्रोपदी को अनंत चीर की प्राप्ति हुई, जिससे उसकी लाज की रक्षा हो सकी), अतः समयानुसार सुपात्र (साधु) को दान अवश्य देना चाहिए।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि दान कभी व्यर्थ नहीं जाता, जैसे कर्ण ने स्वर्ण व द्रौपदी ने चीर दान किया।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि दिया हुआ दान कभी व्यर्थ नहीं जाता, बल्कि साधु को जो जैसा दान करता है, वैसा ही उसका फल भी उसे प्राप्त होता है। जिस प्रकार कुंती के पुत्र कर्ण ने स्वर्ण दान दिया और द्रोपदी ने चीर का दान दिया (समय आने पर द्रोपदी को अनंत चीर की प्राप्ति हुई, जिससे उसकी लाज की रक्षा हो सकी), अतः समयानुसार सुपात्र (साधु) को दान अवश्य देना चाहिए।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि दान कभी व्यर्थ नहीं जाता, जैसे कर्ण ने स्वर्ण व द्रौपदी ने चीर दान किया।'),
       en: 'Charity offered to worthy saints returns manifold; as Karna gave gold and Draupadi offered cloth, whatever is offered with devotion is received back in times of need.'
     }
   },
@@ -543,7 +543,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Tooka maahee took dey, cheer maahi so cheer.', 'Saadhu det na sakuchiye, yon kathi kahahin kabir.']
     },
     bhavarth: {
-      hi: 'यदि पूरी रोटी नहीं है, तो रोटी के टुकड़े में से टुकड़ा और अपने कपड़े में से कपड़ा फाड़कर साधु-संतों को देना चाहिए। कबीरजी इस बात को सोच-विचारकर समझाते हुए कहते हैं कि संतों को देने में कभी भी संकोच नहीं करना चाहिए, अर्थात उन्हें मुक्त-रूप से अपने भाग में से निकालकर देना चाहिए।',
+      hi: 'यदि पूरी रोटी नहीं है, तो रोटी के टुकड़े में से टुकड़ा और अपने कपड़े में से कपड़ा फाड़कर साधु-संतों को देना चाहिए। सतगुरु कबीर साहेब इस बात को सोच-विचारकर समझाते हुए कहते हैं कि संतों को देने में कभी भी संकोच नहीं करना चाहिए, अर्थात उन्हें मुक्त-रूप से अपने भाग में से निकालकर देना चाहिए।',
       pb: devanagariToGurmukhi('अपने भोजन व वस्त्र में से थोड़ा भाग भी संतों को देने में संकोच न करें।'),
       en: 'Share whatever little food or clothing you possess with holy saints without hesitation.'
     }
@@ -557,7 +557,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Suniye paar jo paaiya, chhaajan bhojan aani.', 'Kahain kabir santan ko, det na keejai kaani.']
     },
     bhavarth: {
-      hi: 'यदि भव-सागर से पार उतरना चाहते हो, तो साधु-संतों को भोजन और वस्त्र देने में कोई आना-कानी मत करो। कबीरजी कहते हैं कि अपने अहंकार को त्यागकर, सहज-भाव से संतों को जो समय पर सुलभ हो, दो, अर्थात स्वयं को समर्पित कर समयानुसार संतों की सेवा करो।',
+      hi: 'यदि भव-सागर से पार उतरना चाहते हो, तो साधु-संतों को भोजन और वस्त्र देने में कोई आना-कानी मत करो। सतगुरु कबीर साहेब फरमाते हैं कि अपने अहंकार को त्यागकर, सहज-भाव से संतों को जो समय पर सुलभ हो, दो, अर्थात स्वयं को समर्पित कर समयानुसार संतों की सेवा करो।',
       pb: devanagariToGurmukhi('यदि भवसागर से तरना है तो संतों को वस्त्र व भोजन देने में कतराएं नहीं।'),
       en: 'If you desire liberation, serve saints cheerfully with shelter and nourishment without pride.'
     }
@@ -669,7 +669,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Khaalee saadhu na bida karu, sun leejai sab koy.', 'Kahain kabir kachhu bhent dharu, jo tere ghar hoy.']
     },
     bhavarth: {
-      hi: 'सभी इस बात को ध्यान से सुनें कि साधु को कभी भी खाली हाथ विदा नहीं करना चाहिए। कबीरजी कहते हैं कि कुछ-न-कुछ भेंट उन्हें अवश्य ही देनी चाहिए, जो भी तुम्हारे घर में हो, अर्थात संकोच करने की कोई आवश्यकता नहीं, वहीं भक्ति भाव से दो।',
+      hi: 'सभी इस बात को ध्यान से सुनें कि साधु को कभी भी खाली हाथ विदा नहीं करना चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि कुछ-न-कुछ भेंट उन्हें अवश्य ही देनी चाहिए, जो भी तुम्हारे घर में हो, अर्थात संकोच करने की कोई आवश्यकता नहीं, वहीं भक्ति भाव से दो।',
       pb: devanagariToGurmukhi('साधु को कभी खाली हाथ विदा न करें। घर में जो भी हो, भक्ति-भाव से अर्पित करें।'),
       en: 'Never bid farewell to a visiting saint empty-handed. Offer whatever simple offerings you have with love.'
     }
@@ -683,7 +683,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Saadhu chalat ro deejiye, keejai ati sanmaan.', 'Kahain kabir kachhu bhent dharu, apane bitt anumaan.']
     },
     bhavarth: {
-      hi: 'साधु जब चलने लगें तो आंखों से प्रेम के आंसू निकलने चाहिए, अर्थात प्रेमाश्रुओं से उस समय उनका अत्यधिक सम्मान करना चाहिए। कबीरजी कहते हैं कि अपनी श्रद्धा तथा सामर्थ्य के अनुसार उन्हें कुछ धन भी भेंटस्वरूप देना चाहिए।',
+      hi: 'साधु जब चलने लगें तो आंखों से प्रेम के आंसू निकलने चाहिए, अर्थात प्रेमाश्रुओं से उस समय उनका अत्यधिक सम्मान करना चाहिए। सतगुरु कबीर साहेब फरमाते हैं कि अपनी श्रद्धा तथा सामर्थ्य के अनुसार उन्हें कुछ धन भी भेंटस्वरूप देना चाहिए।',
       pb: devanagariToGurmukhi('साधु के प्रस्थान समय प्रेम से विदा करें और अपनी सामर्थ्य अनुसार भेंट अर्पित करें।'),
       en: 'When a saint departs, bid them farewell with tears of devotion in your eyes and offer gifts according to your capacity.'
     }
@@ -781,7 +781,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Sukh devai dukh ko harai, door karai aparaadh.', 'Kahain kabir vah kab milai, param snehee saadh.']
     },
     bhavarth: {
-      hi: 'जो दूसरों को सुख देते हैं, उनके दु:ख का हरण कर लेते हैं तथा दूसरों के दुर्गुण-अपराधों को दूर कर देते हैं। कबीरजी कहते हैं कि ऐसे परम प्रेमी साधु-संत दुर्लभ हैं।',
+      hi: 'जो दूसरों को सुख देते हैं, उनके दु:ख का हरण कर लेते हैं तथा दूसरों के दुर्गुण-अपराधों को दूर कर देते हैं। सतगुरु कबीर साहेब फरमाते हैं कि ऐसे परम प्रेमी साधु-संत दुर्लभ हैं।',
       pb: devanagariToGurmukhi('जो सुख देते हैं, दुख हरते हैं और अपराधों को दूर करते हैं, ऐसे परम स्नेही साधु दुर्लभ हैं।'),
       en: 'How blessed is the encounter with a loving saint who bestows joy, removes suffering, and forgives all shortcomings.'
     }
@@ -879,8 +879,8 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Aasha taji maaya tajai, moh tajai aru maan.', 'Harash shok ninda tajai, kahain kabir sant jaan.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि संत उन्हीं को जानो जिन्होंने आशा, माया, मोह, मान-अपमान, हर्ष-शोक और निंदा का पूर्ण रूप से त्याग कर दिया हो।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि संत वही है जो आशा, माया, मोह, मान, हर्ष, शोक व निंदा का त्याग कर दे।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि संत उन्हीं को जानो जिन्होंने आशा, माया, मोह, मान-अपमान, हर्ष-शोक और निंदा का पूर्ण रूप से त्याग कर दिया हो।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि संत वही है जो आशा, माया, मोह, मान, हर्ष, शोक व निंदा का त्याग कर दे।'),
       en: 'Know him as a saint who renounces worldly expectations, pride, attachment, praise, slander, joy, and sorrow.'
     }
   },
@@ -1131,7 +1131,7 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Nirberee nihkaamata, svaamee setee neh.', 'Vishaya so nyaara rahe, saadhun ka mat yeh.']
     },
     bhavarth: {
-      hi: 'निर्वैर भाव, निष्कामता, सद्गुरु स्वामी से अनन्य प्रेम और पांचों विषयों से दूरी - यही साधुओं का सर्वोपरि मत है।',
+      hi: 'निर्वैर भाव, निष्कामता, सतगुरु स्वामी से अनन्य प्रेम और पांचों विषयों से दूरी - यही साधुओं का सर्वोपरि मत है।',
       pb: devanagariToGurmukhi('निर्वैरता, निष्कामता, प्रभु से प्रेम और विषयों से दूरी ही साधु का धर्म है।'),
       en: 'Freedom from enmity, desirelessness, devotion to Master, and detachment from sensual pleasures form the saint’s doctrine.'
     }
@@ -1369,9 +1369,9 @@ export const SAKHI_SANGRAH_ANG_6_VERSES: GranthVerse[] = [
       en: ['Kabir hamaara koi nahin, ham kaahoo ke naahin.', 'Paarai pahoonchee naav jyon, milike bichhuree jaahin.']
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि इस संसार में हमारा कोई नहीं है और हम किसी के नहीं हैं, जैसे नाव पार लगने पर यात्री बिछुड़ जाते हैं।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि संसार में हमारा कोई नहीं, जैसे नदी पार करने पर नाव के यात्री बिछुड़ जाते हैं।'),
-      en: 'Kabir says none belongs to us in this world; like passengers stepping off a boat at the shore, all separate in the end.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि इस संसार में हमारा कोई नहीं है और हम किसी के नहीं हैं, जैसे नाव पार लगने पर यात्री बिछुड़ जाते हैं।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि संसार में हमारा कोई नहीं, जैसे नदी पार करने पर नाव के यात्री बिछुड़ जाते हैं।'),
+      en: 'Satguru Kabir Saheb proclaims none belongs to us in this world; like passengers stepping off a boat at the shore, all separate in the end.'
     }
   },
   {

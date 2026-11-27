@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Mool dhyan Guru roop hai, mool pooja Guru paav. Mool naam Guru vachan hai, mool satya satbhaav.',
     bhavarth: {
-      hi: 'कबीर साहेब समस्त आध्यात्मिक साधनाओं के मूल केंद्र और सार-तत्व का अनावरण करते हुए कहते हैं कि ध्यान का सर्वोच्च मूल स्वरूप सतगुरु का पावन रूप है; समस्त पूजा-अर्चना का परम मूल सतगुरु के पावन चरण (शरण और विनम्रता) हैं; समस्त मंत्रों और नामों का मूल सतगुरु द्वारा दिया गया पावन उपदेश और शब्द (वचन) है; और इस जगत में समस्त धर्मों का परम मूल सतगुरु के प्रति सच्चा, निष्कपट और शुद्ध आत्मिक भाव (सतभाव) है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਰੇ ਧਿਆਨਾਂ ਦੀ ਜੜ੍ਹ ਗੁਰੂ ਦਾ ਰੂਪ ਹੈ, ਸਾਰੀਆਂ ਪੂਜਾਵਾਂ ਦਾ ਮੂਲ ਗੁਰੂ ਦੇ ਪਵਿੱਤਰ ਚਰਨ ਹਨ। ਸਭ ਤੋਂ ਵੱਡਾ ਨਾਮ ਗੁਰੂ ਦਾ ਪਵਿੱਤਰ ਬਚਨ ਹੈ ਅਤੇ ਸਭ ਤੋਂ ਵੱਡਾ ਸੱਚ ਸ਼ੁੱਧ ਅਤੇ ਨਿਸ਼ਕਪਟ ਭਾਵਨਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the four essential pillars of the spiritual life: The primal root of all Meditation is contemplation upon the Master\'s sacred form; the foundation of all Worship is humble surrender at the Master\'s feet; the supreme Name and mantra is obedience to the Master\'s holy word; and the ultimate Truth of existence is living in pure, sincere, and unblemished spiritual feeling (Satbhaav).',
+      hi: 'सतगुरु कबीर साहेब समस्त आध्यात्मिक साधनाओं के मूल केंद्र और सार-तत्व का अनावरण करते हुए कहते हैं कि ध्यान का सर्वोच्च मूल स्वरूप सतगुरु का पावन रूप है; समस्त पूजा-अर्चना का परम मूल सतगुरु के पावन चरण (शरण और विनम्रता) हैं; समस्त मंत्रों और नामों का मूल सतगुरु द्वारा दिया गया पावन उपदेश और शब्द (वचन) है; और इस जगत में समस्त धर्मों का परम मूल सतगुरु के प्रति सच्चा, निष्कपट और शुद्ध आत्मिक भाव (सतभाव) है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਰੇ ਧਿਆਨਾਂ ਦੀ ਜੜ੍ਹ ਗੁਰੂ ਦਾ ਰੂਪ ਹੈ, ਸਾਰੀਆਂ ਪੂਜਾਵਾਂ ਦਾ ਮੂਲ ਗੁਰੂ ਦੇ ਪਵਿੱਤਰ ਚਰਨ ਹਨ। ਸਭ ਤੋਂ ਵੱਡਾ ਨਾਮ ਗੁਰੂ ਦਾ ਪਵਿੱਤਰ ਬਚਨ ਹੈ ਅਤੇ ਸਭ ਤੋਂ ਵੱਡਾ ਸੱਚ ਸ਼ੁੱਧ ਅਤੇ ਨਿਸ਼ਕਪਟ ਭਾਵਨਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the four essential pillars of the spiritual life: The primal root of all Meditation is contemplation upon the Master\'s sacred form; the foundation of all Worship is humble surrender at the Master\'s feet; the supreme Name and mantra is obedience to the Master\'s holy word; and the ultimate Truth of existence is living in pure, sincere, and unblemished spiritual feeling (Satbhaav).',
     },
     wordMeanings: {
       hi: [
@@ -66,9 +66,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सभी नामों का मूल क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਰੇ ਨਾਮਾਂ ਦਾ ਮੂਲ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the ultimate root of all sacred Names?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सभी नामों का मूल क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਰੇ ਨਾਮਾਂ ਦਾ ਮੂਲ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the ultimate root of all sacred Names?',
         },
         options: {
           hi: ['कागज पर लिखे शब्द', 'सतगुरु का पावन वचन और उपदेश (गुरू वचन)', 'सांसारिक डिग्रियां', 'पुस्तकों की सूची'],
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Sadhu shabd samudra hai, jaame ratna bharaay. Mand bhaag mutthi bhare, kankar haath lagaaye.',
     bhavarth: {
-      hi: 'कबीर साहेब संतों के पावन वचनों की अगाध महिमा और अभागे मनुष्यों की नासमझी का वर्णन करते हुए कहते हैं कि सच्चे संतों के वचन (शब्द) उस अथाह समुद्र के समान हैं जो आध्यात्मिक ज्ञान, मुक्ति और परमानंद के अनमोल रत्नों से लबालब भरा हुआ है। परंतु जो दुर्भाग्यशाली (मंद भाग) और विवेकहीन मनुष्य हैं, वे उस रत्न-सागर में डुबकी लगाकर भी किनारे के तुच्छ कंकड़-पत्थर (सांसारिक वाद-विवाद व दोष-दृष्टि) ही अपनी मुट्ठी में बटोर कर घर ले आते हैं और सच्चे मोतियों से वंचित रह जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਤਾਂ ਦੇ ਬਚਨ ਰੂਹਾਨੀ ਰਤਨਾਂ ਨਾਲ ਭਰੇ ਸਮੁੰਦਰ ਵਾਂਗ ਹਨ। ਪਰ ਮੰਦਭਾਗਾ ਮਨੁੱਖ ਉਸ ਅੰਮ੍ਰਿਤ ਸਾਗਰ ਵਿੱਚੋਂ ਵੀ ਰਤਨ ਛੱਡ ਕੇ ਕੰਕਰ-ਪੱਥਰ (ਨੁਕਤਾਚੀਨੀ ਤੇ ਵਿਕਾਰ) ਹੀ ਚੁਗਦਾ ਹੈ।',
-      en: 'Kabir Saheb contrasts the boundless ocean of holy wisdom with the tragic blindness of the undiscerning: The teachings and words of realized Saints are like a vast ocean brimming with priceless spiritual jewels of truth and liberation. Yet the unfortunate and spiritually shallow person reaches in and grasps merely the worthless gravel and pebbles (petty arguments and fault-finding) on the shore, missing the pearls of divine wisdom.',
+      hi: 'सतगुरु कबीर साहेब संतों के पावन वचनों की अगाध महिमा और अभागे मनुष्यों की नासमझी का वर्णन करते हुए कहते हैं कि सच्चे संतों के वचन (शब्द) उस अथाह समुद्र के समान हैं जो आध्यात्मिक ज्ञान, मुक्ति और परमानंद के अनमोल रत्नों से लबालब भरा हुआ है। परंतु जो दुर्भाग्यशाली (मंद भाग) और विवेकहीन मनुष्य हैं, वे उस रत्न-सागर में डुबकी लगाकर भी किनारे के तुच्छ कंकड़-पत्थर (सांसारिक वाद-विवाद व दोष-दृष्टि) ही अपनी मुट्ठी में बटोर कर घर ले आते हैं और सच्चे मोतियों से वंचित रह जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਤਾਂ ਦੇ ਬਚਨ ਰੂਹਾਨੀ ਰਤਨਾਂ ਨਾਲ ਭਰੇ ਸਮੁੰਦਰ ਵਾਂਗ ਹਨ। ਪਰ ਮੰਦਭਾਗਾ ਮਨੁੱਖ ਉਸ ਅੰਮ੍ਰਿਤ ਸਾਗਰ ਵਿੱਚੋਂ ਵੀ ਰਤਨ ਛੱਡ ਕੇ ਕੰਕਰ-ਪੱਥਰ (ਨੁਕਤਾਚੀਨੀ ਤੇ ਵਿਕਾਰ) ਹੀ ਚੁਗਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb contrasts the boundless ocean of holy wisdom with the tragic blindness of the undiscerning: The teachings and words of realized Saints are like a vast ocean brimming with priceless spiritual jewels of truth and liberation. Yet the unfortunate and spiritually shallow person reaches in and grasps merely the worthless gravel and pebbles (petty arguments and fault-finding) on the shore, missing the pearls of divine wisdom.',
     },
     wordMeanings: {
       hi: [
@@ -149,9 +149,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार साधु का शब्द किसके समान है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਧੂ ਦਾ ਸ਼ਬਦ ਕਿਸ ਦੇ ਸਮਾਨ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the word of a Saint comparable to?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार साधु का शब्द किसके समान है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਧੂ ਦਾ ਸ਼ਬਦ ਕਿਸ ਦੇ ਸਮਾਨ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the word of a Saint comparable to?',
         },
         options: {
           hi: ['सूखे कुएं के समान', 'रत्नों से भरे हुए अगाध समुद्र के समान (शब्द समुद्र)', 'कीचड़ के समान', 'रेगिस्तान के समान'],
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Poot piyaro pita ku, gohani laago dhaai. Lobh mithai haathi de, apan gayo bhulaayi.',
     bhavarth: {
-      hi: 'कबीर साहेब जीव और परमात्मा के संबंध में माया के छलावे का दृष्टांत देते हुए कहते हैं कि जैसे कोई नन्हा बालक अपने पिता से अत्यंत प्रेम करता है और उनके पीछे-पीछे दौड़ता है; परंतु पिता जब उसके हाथ में मिठाई का टुकड़ा थमा देते हैं, तो बालक मिठाई के स्वाद में ऐसा मग्न हो जाता है कि वह अपने पिता को ही भूल जाता है। इसी प्रकार परमात्मा ने जीव को संसार के भोग-पदार्थ (लोभ मिठाई) दे दिए, और अज्ञानी जीव उन सांसारिक भोगों में ऐसा फंसा कि अपने परमपिता परमात्मा को ही भूल बैठा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਬੱਚਾ ਪਿਤਾ ਦੇ ਪਿੱਛੇ ਦੌੜਦਾ ਹੈ, ਪਰ ਪਿਤਾ ਦੇ ਹੱਥੋਂ ਮਿਠਾਈ ਮਿਲਦਿਆਂ ਹੀ ਮਿਠਾਈ ਦੇ ਸਵਾਦ ਵਿੱਚ ਪਿਤਾ ਨੂੰ ਹੀ ਭੁੱਲ ਜਾਂਦਾ ਹੈ। ਤਿਵੇਂ ਜੀਵ ਸੰਸਾਰਕ ਸੁੱਖਾਂ ਵਿੱਚ ਫਸ ਕੇ ਪਰਮਾਤਮਾ ਨੂੰ ਭੁਲਾ ਬੈਠਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates how the soul gets entrapped by the gifts of the Creator, forgetting the Giver: Like a beloved child running eagerly behind its father, until the father places a sweet candy in the child\'s hand; enchanted by the taste of the sweet, the child completely forgets the father. Similarly, humanity received worldly pleasures and sensory treats from God, and becoming intoxicated with the sweets, entirely forgot the Divine Father.',
+      hi: 'सतगुरु कबीर साहेबव और परमात्मा के संबंध में माया के छलावे का दृष्टांत देते हुए कहते हैं कि जैसे कोई नन्हा बालक अपने पिता से अत्यंत प्रेम करता है और उनके पीछे-पीछे दौड़ता है; परंतु पिता जब उसके हाथ में मिठाई का टुकड़ा थमा देते हैं, तो बालक मिठाई के स्वाद में ऐसा मग्न हो जाता है कि वह अपने पिता को ही भूल जाता है। इसी प्रकार परमात्मा ने जीव को संसार के भोग-पदार्थ (लोभ मिठाई) दे दिए, और अज्ञानी जीव उन सांसारिक भोगों में ऐसा फंसा कि अपने परमपिता परमात्मा को ही भूल बैठा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਬੱਚਾ ਪਿਤਾ ਦੇ ਪਿੱਛੇ ਦੌੜਦਾ ਹੈ, ਪਰ ਪਿਤਾ ਦੇ ਹੱਥੋਂ ਮਿਠਾਈ ਮਿਲਦਿਆਂ ਹੀ ਮਿਠਾਈ ਦੇ ਸਵਾਦ ਵਿੱਚ ਪਿਤਾ ਨੂੰ ਹੀ ਭੁੱਲ ਜਾਂਦਾ ਹੈ। ਤਿਵੇਂ ਜੀਵ ਸੰਸਾਰਕ ਸੁੱਖਾਂ ਵਿੱਚ ਫਸ ਕੇ ਪਰਮਾਤਮਾ ਨੂੰ ਭੁਲਾ ਬੈਠਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb illustrates how the soul gets entrapped by the gifts of the Creator, forgetting the Giver: Like a beloved child running eagerly behind its father, until the father places a sweet candy in the child\'s hand; enchanted by the taste of the sweet, the child completely forgets the father. Similarly, humanity received worldly pleasures and sensory treats from God, and becoming intoxicated with the sweets, entirely forgot the Divine Father.',
     },
     wordMeanings: {
       hi: [
@@ -267,9 +267,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Ja kaarani main dhoondhti, sanmukh miliya aayi. Dhan maili peev oojla, laagi na saku paayi.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवात्मा और परमात्मा के साक्षात्कार के समय उत्पन्न होने वाली आत्म-लज्जा और विह्वलता का मार्मिक वर्णन करते हुए कहते हैं कि जिस परम प्रियतम परमात्मा को मैं युगों-युगों से बाहर तीर्थों और वनों में खोज रही थी, वे कृपा करके साक्षात मेरे सम्मुख आकर प्रकट हो गए। परंतु जब मैंने अपने स्वरूप को देखा, तो ज्ञात हुआ कि यह जीवात्मा (स्त्री/धन) तो विकारों, वासनाओं और पापों से अत्यंत मैली है, जबकि मेरे प्रियतम (पीव/परमात्मा) परम पावन और निष्कलंक उज्ज्वल हैं! अपनी इस अपवित्रता के कारण मैं उनके पावन चरणों को छूने में भी लज्जा और संकोच अनुभव कर रही हूँ।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਪ੍ਰੀਤਮ ਪ੍ਰਭੂ ਨੂੰ ਮੈਂ ਲੱਭ ਰਹੀ ਸੀ, ਉਹ ਤਾਂ ਮੇਰੇ ਸਾਹਮਣੇ ਆ ਕੇ ਮਿਲ ਪਿਆ। ਪਰ ਮੈਂ (ਜੀਵ-ਇਸਤਰੀ) ਵਿਕਾਰਾਂ ਨਾਲ ਮੈਲੀ ਹਾਂ ਤੇ ਮੇਰਾ ਪ੍ਰੀਤਮ ਬਿਲਕੁਲ ਨਿਰਮਲ ਤੇ ਚਿੱਟਾ ਹੈ; ਸ਼ਰਮ ਦੇ ਮਾਰੇ ਮੈਂ ਉਸ ਦੇ ਚਰਨਾਂ ਨੂੰ ਵੀ ਛੂਹ ਨਹੀਂ ਸਕਦੀ।',
-      en: 'Kabir Saheb captures the poignant overwhelming reverence when the soul meets the Divine: The Beloved Lord whom I had sought for eons across the world came unbidden and stood right before me. But looking at myself, I realized that I (the bride/soul) am soiled with vices, worldly grime, and ego, whereas my Beloved Lord (Peev) is absolute, blinding, pristine purity! Overwhelmed by my inner unworthiness, I hesitate in reverent shame even to touch His holy feet.',
+      hi: 'सतगुरु कबीर साहेबवात्मा और परमात्मा के साक्षात्कार के समय उत्पन्न होने वाली आत्म-लज्जा और विह्वलता का मार्मिक वर्णन करते हुए कहते हैं कि जिस परम प्रियतम परमात्मा को मैं युगों-युगों से बाहर तीर्थों और वनों में खोज रही थी, वे कृपा करके साक्षात मेरे सम्मुख आकर प्रकट हो गए। परंतु जब मैंने अपने स्वरूप को देखा, तो ज्ञात हुआ कि यह जीवात्मा (स्त्री/धन) तो विकारों, वासनाओं और पापों से अत्यंत मैली है, जबकि मेरे प्रियतम (पीव/परमात्मा) परम पावन और निष्कलंक उज्ज्वल हैं! अपनी इस अपवित्रता के कारण मैं उनके पावन चरणों को छूने में भी लज्जा और संकोच अनुभव कर रही हूँ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਪ੍ਰੀਤਮ ਪ੍ਰਭੂ ਨੂੰ ਮੈਂ ਲੱਭ ਰਹੀ ਸੀ, ਉਹ ਤਾਂ ਮੇਰੇ ਸਾਹਮਣੇ ਆ ਕੇ ਮਿਲ ਪਿਆ। ਪਰ ਮੈਂ (ਜੀਵ-ਇਸਤਰੀ) ਵਿਕਾਰਾਂ ਨਾਲ ਮੈਲੀ ਹਾਂ ਤੇ ਮੇਰਾ ਪ੍ਰੀਤਮ ਬਿਲਕੁਲ ਨਿਰਮਲ ਤੇ ਚਿੱਟਾ ਹੈ; ਸ਼ਰਮ ਦੇ ਮਾਰੇ ਮੈਂ ਉਸ ਦੇ ਚਰਨਾਂ ਨੂੰ ਵੀ ਛੂਹ ਨਹੀਂ ਸਕਦੀ।',
+      en: 'Satguru Kabir Saheb captures the poignant overwhelming reverence when the soul meets the Divine: The Beloved Lord whom I had sought for eons across the world came unbidden and stood right before me. But looking at myself, I realized that I (the bride/soul) am soiled with vices, worldly grime, and ego, whereas my Beloved Lord (Peev) is absolute, blinding, pristine purity! Overwhelmed by my inner unworthiness, I hesitate in reverent shame even to touch His holy feet.',
     },
     wordMeanings: {
       hi: [
@@ -354,9 +354,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Bhaari kahu to bahu daru, halka kahu to jhooth. Main ka jaanu Ram ku, nainu kabhu na deeth.',
     bhavarth: {
-      hi: 'कबीर साहेब परमात्मा के अनिर्वचनीय और असीम स्वरूप की विवशता व्यक्त करते हुए कहते हैं कि यदि मैं उस परमात्मा को बहुत "भारी" (विशाल या सीमित पदार्थ) कहता हूँ तो अपनी अज्ञानता पर डर लगता है; और यदि उसे "हलका" (सामान्य या तुच्छ) कहता हूँ तो यह सरासर झूठ और अपराध होगा। चर्म-चक्षुओं से तो उस निराकार ब्रह्म को कभी देखा नहीं जा सकता, फिर भला मैं बुद्धि और वाणी से उस असीम राम के यथार्थ स्वरूप का वर्णन कैसे कर सकता हूँ? वह समस्त शब्दों और सीमाओं से परे है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਪ੍ਰਭੂ ਨੂੰ ਭਾਰੀ ਕਹਾਂ ਤਾਂ ਡਰ ਲੱਗਦਾ ਹੈ ਤੇ ਜੇ ਹਲਕਾ ਕਹਾਂ ਤਾਂ ਝੂਠ ਹੈ। ਮੈਂ ਉਸ ਅਗਮ ਪ੍ਰਭੂ ਨੂੰ ਕਿਵੇਂ ਬਿਆਨ ਕਰਾਂ ਜਿਸ ਨੂੰ ਅੱਖਾਂ ਨਾਲ ਕਿਸੇ ਹੱਦ ਵਿੱਚ ਨਹੀਂ ਵੇਖਿਆ ਜਾ ਸਕਦਾ। ਉਹ ਸਭ ਸੀਮਾਵਾਂ ਤੋਂ ਪਰੇ ਹੈ।',
-      en: 'Kabir Saheb expresses the ineffable transcendence of the Supreme Divine: If I call Him "heavy" (solid, physical, or huge), I tremble at my presumption; if I call Him "light" (slight or trivial), it is an outright falsehood. How can I possibly define the Infinite Lord (Ram) with human words when mortal eyes can never encompass the Formless Reality? God transcends all human definitions.',
+      hi: 'सतगुरु कबीर साहेब परमात्मा के अनिर्वचनीय और असीम स्वरूप की विवशता व्यक्त करते हुए कहते हैं कि यदि मैं उस परमात्मा को बहुत "भारी" (विशाल या सीमित पदार्थ) कहता हूँ तो अपनी अज्ञानता पर डर लगता है; और यदि उसे "हलका" (सामान्य या तुच्छ) कहता हूँ तो यह सरासर झूठ और अपराध होगा। चर्म-चक्षुओं से तो उस निराकार ब्रह्म को कभी देखा नहीं जा सकता, फिर भला मैं बुद्धि और वाणी से उस असीम राम के यथार्थ स्वरूप का वर्णन कैसे कर सकता हूँ? वह समस्त शब्दों और सीमाओं से परे है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਪ੍ਰਭੂ ਨੂੰ ਭਾਰੀ ਕਹਾਂ ਤਾਂ ਡਰ ਲੱਗਦਾ ਹੈ ਤੇ ਜੇ ਹਲਕਾ ਕਹਾਂ ਤਾਂ ਝੂਠ ਹੈ। ਮੈਂ ਉਸ ਅਗਮ ਪ੍ਰਭੂ ਨੂੰ ਕਿਵੇਂ ਬਿਆਨ ਕਰਾਂ ਜਿਸ ਨੂੰ ਅੱਖਾਂ ਨਾਲ ਕਿਸੇ ਹੱਦ ਵਿੱਚ ਨਹੀਂ ਵੇਖਿਆ ਜਾ ਸਕਦਾ। ਉਹ ਸਭ ਸੀਮਾਵਾਂ ਤੋਂ ਪਰੇ ਹੈ।',
+      en: 'Satguru Kabir Saheb expresses the ineffable transcendence of the Supreme Divine: If I call Him "heavy" (solid, physical, or huge), I tremble at my presumption; if I call Him "light" (slight or trivial), it is an outright falsehood. How can I possibly define the Infinite Lord (Ram) with human words when mortal eyes can never encompass the Formless Reality? God transcends all human definitions.',
     },
     wordMeanings: {
       hi: [
@@ -398,9 +398,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-5-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार परमात्मा का स्वरूप कैसा है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਰੂਪ ਕਿਹੋ ਜਿਹਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the nature of the Supreme Divine?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार परमात्मा का स्वरूप कैसा है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਸਰੂਪ ਕਿਹੋ ਜਿਹਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the nature of the Supreme Divine?',
         },
         options: {
           hi: ['वह शब्दों, भार और भौतिक सीमाओं से परे अनिर्वचनीय है', 'वह केवल लोहे का है', 'वह एक छोटा सा पत्थर है', 'वह केवल एक रंग का है'],
@@ -435,9 +435,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Deetha hai to kas kahu, kahya na ko patiyaay. Hari jaisa hai taisa raho, tu harshi-harshi gun gaay.',
     bhavarth: {
-      hi: 'कबीर साहेब आत्म-साक्षात्कार के अवर्णनीय आनंद का रहस्य बताते हुए कहते हैं कि यदि मैंने अपनी जाग्रत सुरति से उस परमात्मा का साक्षात दर्शन (दीठा) कर भी लिया है, तो मैं वाणी से उसका वर्णन कैसे करूँ? क्योंकि यदि मैं उसका यथार्थ वर्णन करूँगा भी, तो कोई संसारी व्यक्ति उस पर विश्वास (पतियाय) नहीं करेगा (जैसे गूंगे का गुड़)। अतः हे साधक! परमात्मा जैसा भी अगम, अपार और अद्भुत है, उसे वैसा ही रहने दो; तुम केवल आनंदित और प्रफुल्लित (हरषि-हरषि) होकर उसके पावन गुणों और नाम का निरंतर गायन व सुमिरन करते रहो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਮੈਂ ਪ੍ਰਭੂ ਨੂੰ ਅੰਦਰ ਦੇਖ ਵੀ ਲਿਆ ਹੈ ਤਾਂ ਸ਼ਬਦਾਂ ਵਿੱਚ ਕਿਵੇਂ ਦੱਸਾਂ, ਕੋਈ ਯਕੀਨ ਨਹੀਂ ਕਰੇਗਾ। ਪ੍ਰਭੂ ਜਿਹੋ ਜਿਹਾ ਬੇਅੰਤ ਹੈ ਉਸ ਨੂੰ ਉਹੋ ਜਿਹਾ ਰਹਿਣ ਦਿਓ, ਤੂੰ ਬਸ ਖੁਸ਼ ਹੋ ਕੇ ਉਸ ਦਾ ਸਿਮਰਨ ਤੇ ਗੁਣਗਾਨ ਕਰ।',
-      en: 'Kabir Saheb conveys the incommunicable wonder of divine vision: Even if I have directly beheld (Deetha) the Supreme Lord with awakened inner consciousness, how can my tongue articulate it? For if I attempt to describe it, no worldly mind will believe (Patiyaay) the impossible wonder (like a mute tasting sugar). Therefore, O seeker! Let the Lord remain just as transcendent and boundless as He is; simply immerse yourself in boundless joy (Harshi-harshi), singing and remembering His holy glory.',
+      hi: 'सतगुरु कबीर साहेब आत्म-साक्षात्कार के अवर्णनीय आनंद का रहस्य बताते हुए कहते हैं कि यदि मैंने अपनी जाग्रत सुरति से उस परमात्मा का साक्षात दर्शन (दीठा) कर भी लिया है, तो मैं वाणी से उसका वर्णन कैसे करूँ? क्योंकि यदि मैं उसका यथार्थ वर्णन करूँगा भी, तो कोई संसारी व्यक्ति उस पर विश्वास (पतियाय) नहीं करेगा (जैसे गूंगे का गुड़)। अतः हे साधक! परमात्मा जैसा भी अगम, अपार और अद्भुत है, उसे वैसा ही रहने दो; तुम केवल आनंदित और प्रफुल्लित (हरषि-हरषि) होकर उसके पावन गुणों और नाम का निरंतर गायन व सुमिरन करते रहो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਮੈਂ ਪ੍ਰਭੂ ਨੂੰ ਅੰਦਰ ਦੇਖ ਵੀ ਲਿਆ ਹੈ ਤਾਂ ਸ਼ਬਦਾਂ ਵਿੱਚ ਕਿਵੇਂ ਦੱਸਾਂ, ਕੋਈ ਯਕੀਨ ਨਹੀਂ ਕਰੇਗਾ। ਪ੍ਰਭੂ ਜਿਹੋ ਜਿਹਾ ਬੇਅੰਤ ਹੈ ਉਸ ਨੂੰ ਉਹੋ ਜਿਹਾ ਰਹਿਣ ਦਿਓ, ਤੂੰ ਬਸ ਖੁਸ਼ ਹੋ ਕੇ ਉਸ ਦਾ ਸਿਮਰਨ ਤੇ ਗੁਣਗਾਨ ਕਰ।',
+      en: 'Satguru Kabir Saheb conveys the incommunicable wonder of divine vision: Even if I have directly beheld (Deetha) the Supreme Lord with awakened inner consciousness, how can my tongue articulate it? For if I attempt to describe it, no worldly mind will believe (Patiyaay) the impossible wonder (like a mute tasting sugar). Therefore, O seeker! Let the Lord remain just as transcendent and boundless as He is; simply immerse yourself in boundless joy (Harshi-harshi), singing and remembering His holy glory.',
     },
     wordMeanings: {
       hi: [
@@ -482,9 +482,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-6-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार परमात्मा का साक्षात अनुभव होने पर साधक को क्या करना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰਭੂ ਦਾ ਅਨੁਭਵ ਹੋਣ ਤੇ ਸਾਧਕ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what should a devotee do upon experiencing the Divine?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार परमात्मा का साक्षात अनुभव होने पर साधक को क्या करना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪ੍ਰਭੂ ਦਾ ਅਨੁਭਵ ਹੋਣ ਤੇ ਸਾਧਕ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what should a devotee do upon experiencing the Divine?',
         },
         options: {
           hi: ['सबसे बहस करनी चाहिए', 'हर्षित होकर (आनंदपूर्वक) प्रभु के पावन गुणों और नाम का निरंतर गायन करना चाहिए', 'चुपचाप सो जाना चाहिए', 'दुकान खोलनी चाहिए'],
@@ -519,9 +519,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Pahunchenge tab kahenge, umdenge us thaayi. Ajhu beda samandar mein, boli bigooche kaayi.',
     bhavarth: {
-      hi: 'कबीर साहेब समय से पहले बड़ी-बड़ी डींगें हांकने और अधकचरे ज्ञान का प्रदर्शन करने वाले साधकों को सावधान करते हुए कहते हैं कि जब हम वास्तव में भवसागर पार करके उस परम पद (मुक्ति के धाम) पर पहुँच जाएंगे, तब वहाँ पहुंचकर अपनी अनुभूति का वर्णन करेंगे और वहीं परम आनंद में उमड़ेंगे। अभी तो हमारी जीवन रूपी नाव भवसागर के अथाह और तूफानी समंदर के बीच में डोल रही है; ऐसे में पहले से ही व्यर्थ की बातें बनाकर और सिद्ध होने का दावा करके अपनी वाणी को क्यों कलंकित और नष्ट (बिगूचै) कर रहे हो?',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਅਸੀਂ ਸੱਚਮੁੱਚ ਪਰਮ ਪਦ ਉੱਤੇ ਪਹੁੰਚ ਜਾਵਾਂਗੇ, ਤਦ ਉਸ ਥਾਂ ਪਹੁੰਚ ਕੇ ਹੀ ਅਸਲ ਆਨੰਦ ਬਿਆਨ ਕਰਾਂਗੇ। ਅਜੇ ਤਾਂ ਸਾਡੀ ਬੇੜੀ ਸੰਸਾਰ ਸਮੁੰਦਰ ਦੇ ਵਿਚਕਾਰ ਹੈ, ਫਿਰ ਅਗਾਊਂ ਫੋਕੇ ਦਾਅਵੇ ਕਰਕੇ ਆਪਣੀ ਬੋਲੀ ਨੂੰ ਕਿਉਂ ਵਿਗਾੜਦੇ ਹੋ?',
-      en: 'Kabir Saheb admonishes spiritual pretenders who boast prematurely before reaching perfection: When we actually arrive at the supreme shore of liberation, only then will we speak of that realm and overflow with ecstasy there. Right now, our fragile boat is still navigating the turbulent waves in the middle of the deep ocean; why then spoil and disgrace your speech (Bigooche) with premature claims and empty boasts?',
+      hi: 'सतगुरु कबीर साहेब समय से पहले बड़ी-बड़ी डींगें हांकने और अधकचरे ज्ञान का प्रदर्शन करने वाले साधकों को सावधान करते हुए कहते हैं कि जब हम वास्तव में भवसागर पार करके उस परम पद (मुक्ति के धाम) पर पहुँच जाएंगे, तब वहाँ पहुंचकर अपनी अनुभूति का वर्णन करेंगे और वहीं परम आनंद में उमड़ेंगे। अभी तो हमारी जीवन रूपी नाव भवसागर के अथाह और तूफानी समंदर के बीच में डोल रही है; ऐसे में पहले से ही व्यर्थ की बातें बनाकर और सिद्ध होने का दावा करके अपनी वाणी को क्यों कलंकित और नष्ट (बिगूचै) कर रहे हो?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਅਸੀਂ ਸੱਚਮੁੱਚ ਪਰਮ ਪਦ ਉੱਤੇ ਪਹੁੰਚ ਜਾਵਾਂਗੇ, ਤਦ ਉਸ ਥਾਂ ਪਹੁੰਚ ਕੇ ਹੀ ਅਸਲ ਆਨੰਦ ਬਿਆਨ ਕਰਾਂਗੇ। ਅਜੇ ਤਾਂ ਸਾਡੀ ਬੇੜੀ ਸੰਸਾਰ ਸਮੁੰਦਰ ਦੇ ਵਿਚਕਾਰ ਹੈ, ਫਿਰ ਅਗਾਊਂ ਫੋਕੇ ਦਾਅਵੇ ਕਰਕੇ ਆਪਣੀ ਬੋਲੀ ਨੂੰ ਕਿਉਂ ਵਿਗਾੜਦੇ ਹੋ?',
+      en: 'Satguru Kabir Saheb admonishes spiritual pretenders who boast prematurely before reaching perfection: When we actually arrive at the supreme shore of liberation, only then will we speak of that realm and overflow with ecstasy there. Right now, our fragile boat is still navigating the turbulent waves in the middle of the deep ocean; why then spoil and disgrace your speech (Bigooche) with premature claims and empty boasts?',
     },
     wordMeanings: {
       hi: [
@@ -567,9 +567,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार साधक को अपनी आध्यात्मिक सिद्धि का दावा कब करना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਧਕ ਨੂੰ ਸਿੱਧੀ ਦਾ ਦਾਅਵਾ ਕਦੋਂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, when should a seeker speak of ultimate attainment?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार साधक को अपनी आध्यात्मिक सिद्धि का दावा कब करना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਧਕ ਨੂੰ ਸਿੱਧੀ ਦਾ ਦਾਅਵਾ ਕਦੋਂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, when should a seeker speak of ultimate attainment?',
         },
         options: {
           hi: ['साधना शुरू करते ही', 'जब वास्तव में भवसागर पार करके परम पद (मुक्ति) पर पहुँच जाएं', 'किताबें पढ़ते ही', 'सपनों में'],
@@ -604,9 +604,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Mera mujhme kuchh nahi, jo kuchh hai so tor. Tera tujhko saumpta, kya laagai hai mor.',
     bhavarth: {
-      hi: 'कबीर साहेब पूर्ण शरणागति और निष्काम समर्पण का सर्वोच्च शिखर प्रस्तुत करते हुए कहते हैं कि हे परमात्मा! इस देह, प्राण, मन, बुद्धि, धन और चेतना में मेरा अपना कुछ भी नहीं है; जो कुछ भी यहाँ विद्यमान है, वह सब आपका ही दिया हुआ आपका पावन स्वरूप है। जब सब कुछ आपका ही है, तो आपके दिए हुए इस जीवन और सर्वस्व को आपके ही श्रीचरणों में पुनः समर्पित करते हुए मेरा क्या खर्च होता है या मेरा क्या नुकसान होता है? यह साखी अहंकार के सर्वथा विसर्जन का महामंत्र है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪੂਰਨ ਸਮਰਪਣ ਦਾ ਉਪਦੇਸ਼ ਦਿੰਦੇ ਹਨ ਕਿ ਹੇ ਪ੍ਰਭੂ! ਮੇਰੇ ਅੰਦਰ ਮੇਰਾ ਆਪਣਾ ਕੁਝ ਵੀ ਨਹੀਂ ਹੈ, ਜੋ ਕੁਝ ਵੀ ਹੈ ਉਹ ਸਭ ਤੁਹਾਡਾ ਹੀ ਹੈ। ਤੁਹਾਡੀ ਦਿੱਤੀ ਹੋਈ ਚੀਜ਼ ਤੁਹਾਨੂੰ ਹੀ ਅਰਪਣ ਕਰਦਿਆਂ ਮੇਰਾ ਕੀ ਜਾਂਦਾ ਹੈ?',
-      en: 'Kabir Saheb voices the absolute zenith of non-possessive surrender: O Supreme Lord! Within this body, breath, mind, intellect, and soul, nothing whatsoever belongs to "me"; whatever exists here is entirely Thine. Since everything is already Yours, when I surrender all back unto Your holy feet, what cost is it to me, or what do I lose? This is the ultimate dissolution of personal ego.',
+      hi: 'सतगुरु कबीर साहेब पूर्ण शरणागति और निष्काम समर्पण का सर्वोच्च शिखर प्रस्तुत करते हुए कहते हैं कि हे परमात्मा! इस देह, प्राण, मन, बुद्धि, धन और चेतना में मेरा अपना कुछ भी नहीं है; जो कुछ भी यहाँ विद्यमान है, वह सब आपका ही दिया हुआ आपका पावन स्वरूप है। जब सब कुछ आपका ही है, तो आपके दिए हुए इस जीवन और सर्वस्व को आपके ही श्रीचरणों में पुनः समर्पित करते हुए मेरा क्या खर्च होता है या मेरा क्या नुकसान होता है? यह साखी अहंकार के सर्वथा विसर्जन का महामंत्र है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪੂਰਨ ਸਮਰਪਣ ਦਾ ਉਪਦੇਸ਼ ਦਿੰਦੇ ਹਨ ਕਿ ਹੇ ਪ੍ਰਭੂ! ਮੇਰੇ ਅੰਦਰ ਮੇਰਾ ਆਪਣਾ ਕੁਝ ਵੀ ਨਹੀਂ ਹੈ, ਜੋ ਕੁਝ ਵੀ ਹੈ ਉਹ ਸਭ ਤੁਹਾਡਾ ਹੀ ਹੈ। ਤੁਹਾਡੀ ਦਿੱਤੀ ਹੋਈ ਚੀਜ਼ ਤੁਹਾਨੂੰ ਹੀ ਅਰਪਣ ਕਰਦਿਆਂ ਮੇਰਾ ਕੀ ਜਾਂਦਾ ਹੈ?',
+      en: 'Satguru Kabir Saheb voices the absolute zenith of non-possessive surrender: O Supreme Lord! Within this body, breath, mind, intellect, and soul, nothing whatsoever belongs to "me"; whatever exists here is entirely Thine. Since everything is already Yours, when I surrender all back unto Your holy feet, what cost is it to me, or what do I lose? This is the ultimate dissolution of personal ego.',
     },
     wordMeanings: {
       hi: [
@@ -651,9 +651,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-8-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार मनुष्य का अपना क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦਾ ਆਪਣਾ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what truly belongs to mortal man?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार मनुष्य का अपना क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਮਨੁੱਖ ਦਾ ਆਪਣਾ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what truly belongs to mortal man?',
         },
         options: {
           hi: ['बहुत सी जमीन और घर', 'कुछ भी नहीं, जो कुछ है वह सब परमात्मा का ही दिया हुआ है', 'केवल उसका शरीर', 'उसका बैंक खाता'],
@@ -688,9 +688,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Jablag bhakti sakamata, tablag nirphal sev. Kahe Kabir ve kyu mile, nihkami nij dev.',
     bhavarth: {
-      hi: 'कबीर साहेब निष्काम भक्ति के स्वर्णिम नियम का प्रतिपादन करते हुए कहते हैं कि जब तक मनुष्य की भक्ति और पूजा में सांसारिक कामनाएं, स्वार्थ, लाभ और फल पाने की इच्छा (सकामता) जुड़ी रहती है, तब तक उसकी समस्त सेवा और साधना सर्वथा निष्फल (व्यर्थ) रहती है। कबीर साहेब प्रश्न करते हैं कि वह परमेश्वर जो स्वयं सर्वथा निष्काम (निहकामी) और निर्लेप है, वह किसी सकाम और लोभी मनुष्य को कैसे प्राप्त हो सकता है? परमात्मा से एकाकार होने के लिए स्वयं को भी निष्काम बनाना होगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਤੱਕ ਭਗਤੀ ਵਿੱਚ ਦੁਨੀਆਵੀ ਲਾਲਚ ਤੇ ਮੰਗਾਂ ਹਨ, ਤਦ ਤੱਕ ਸਾਰੀ ਸੇਵਾ ਨਿਸਫਲ ਹੈ। ਉਹ ਨਿਰਲੇਪ ਤੇ ਨਿਸ਼ਕਾਮ ਪ੍ਰਭੂ ਕਿਸੇ ਲਾਲਚੀ ਮਨੁੱਖ ਨੂੰ ਕਿਵੇਂ ਮਿਲ ਸਕਦਾ ਹੈ?',
-      en: 'Kabir Saheb lays down the golden law of pure, unconditioned devotion: As long as devotion is driven by selfish desires, transactional expectations, and worldly bargaining (Sakamata), all service and worship remain entirely fruitless. Kabir asks: How can the Supreme Inner Lord (Nij Dev), who is eternally desireless (Nihkami) and unattached, ever unite with a self-seeking and greedy heart? To know the Desireless, one must become desireless.',
+      hi: 'सतगुरु कबीर साहेब निष्काम भक्ति के स्वर्णिम नियम का प्रतिपादन करते हुए कहते हैं कि जब तक मनुष्य की भक्ति और पूजा में सांसारिक कामनाएं, स्वार्थ, लाभ और फल पाने की इच्छा (सकामता) जुड़ी रहती है, तब तक उसकी समस्त सेवा और साधना सर्वथा निष्फल (व्यर्थ) रहती है। सतगुरु कबीर साहेब प्रश्न करते हैं कि वह परमेश्वर जो स्वयं सर्वथा निष्काम (निहकामी) और निर्लेप है, वह किसी सकाम और लोभी मनुष्य को कैसे प्राप्त हो सकता है? परमात्मा से एकाकार होने के लिए स्वयं को भी निष्काम बनाना होगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਤੱਕ ਭਗਤੀ ਵਿੱਚ ਦੁਨੀਆਵੀ ਲਾਲਚ ਤੇ ਮੰਗਾਂ ਹਨ, ਤਦ ਤੱਕ ਸਾਰੀ ਸੇਵਾ ਨਿਸਫਲ ਹੈ। ਉਹ ਨਿਰਲੇਪ ਤੇ ਨਿਸ਼ਕਾਮ ਪ੍ਰਭੂ ਕਿਸੇ ਲਾਲਚੀ ਮਨੁੱਖ ਨੂੰ ਕਿਵੇਂ ਮਿਲ ਸਕਦਾ ਹੈ?',
+      en: 'Satguru Kabir Saheb lays down the golden law of pure, unconditioned devotion: As long as devotion is driven by selfish desires, transactional expectations, and worldly bargaining (Sakamata), all service and worship remain entirely fruitless. Kabir asks: How can the Supreme Inner Lord (Nij Dev), who is eternally desireless (Nihkami) and unattached, ever unite with a self-seeking and greedy heart? To know the Desireless, one must become desireless.',
     },
     wordMeanings: {
       hi: [
@@ -736,9 +736,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-9-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार भक्ति कब तक निष्फल (व्यर्थ) रहती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤੀ ਕਦੋਂ ਤੱਕ ਨਿਸਫਲ ਰਹਿੰਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, until when does devotion remain fruitless?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार भक्ति कब तक निष्फल (व्यर्थ) रहती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤੀ ਕਦੋਂ ਤੱਕ ਨਿਸਫਲ ਰਹਿੰਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, until when does devotion remain fruitless?',
         },
         options: {
           hi: ['जब तक धूप न निकले', 'जब तक उसमें सांसारिक फल और स्वार्थ की कामना (सकामता) बनी रहती है', 'जब तक मंदिर न जाएं', 'जब तक फूल न चढ़ाएं'],
@@ -773,9 +773,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
     },
     transliteration: 'Kabir kalijug aayi kari, keeye bahut jo meet. Jin dil bandhya ek su, te sukh sove nicheent.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार के स्वार्थी संबंधों की हकीकत और एकनिष्ठ भक्ति की असीम शांति का बोध कराते हुए कहते हैं कि इस कलियुग में आकर मनुष्य ने सांसारिक स्वार्थ के अनेक मित्र और संबंधी बना लिए; परंतु वे सब संकट के समय साथ छोड़ देते हैं और केवल चिंता व दुख ही देते हैं। इसके विपरीत जिन विरले साधकों ने अपना हृदय केवल उस एक परमात्मा (सत्यनाम) के साथ जोड़ लिया है, वे ही इस संसार में समस्त चिंताओं और भयों से मुक्त होकर परम शांति में निश्चिंत (निचींत) सुख की नींद सोते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਲਿਯੁਗ ਵਿੱਚ ਲੋਕਾਂ ਨੇ ਬਹੁਤ ਸਾਰੇ ਦੁਨੀਆਵੀ ਮਿੱਤਰ ਬਣਾ ਲਏ ਜੋ ਸਿਰਫ ਸੁਆਰਥੀ ਹਨ। ਪਰ ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣਾ ਦਿਲ ਸਿਰਫ ਇੱਕ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਜੋੜਿਆ ਹੈ, ਉਹ ਸਾਰੀਆਂ ਚਿੰਤਾਵਾਂ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਬੇਫ਼ਿਕਰ ਤੇ ਸੁਖੀ ਰਹਿੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb unveils the peace of tying one\'s heart to the One: In this Dark Age (Kali Yuga), people collect countless worldly acquaintances and fickle friends; yet these relationships bring only anxiety, disappointment, and sorrow. But those blessed souls who have tethered their hearts solely to the One Supreme Lord sleep in blissful tranquility, entirely carefree (Nicheent), untroubled by the storms of the world.',
+      hi: 'सतगुरु कबीर साहेब संसार के स्वार्थी संबंधों की हकीकत और एकनिष्ठ भक्ति की असीम शांति का बोध कराते हुए कहते हैं कि इस कलियुग में आकर मनुष्य ने सांसारिक स्वार्थ के अनेक मित्र और संबंधी बना लिए; परंतु वे सब संकट के समय साथ छोड़ देते हैं और केवल चिंता व दुख ही देते हैं। इसके विपरीत जिन विरले साधकों ने अपना हृदय केवल उस एक परमात्मा (सत्यनाम) के साथ जोड़ लिया है, वे ही इस संसार में समस्त चिंताओं और भयों से मुक्त होकर परम शांति में निश्चिंत (निचींत) सुख की नींद सोते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਲਿਯੁਗ ਵਿੱਚ ਲੋਕਾਂ ਨੇ ਬਹੁਤ ਸਾਰੇ ਦੁਨੀਆਵੀ ਮਿੱਤਰ ਬਣਾ ਲਏ ਜੋ ਸਿਰਫ ਸੁਆਰਥੀ ਹਨ। ਪਰ ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣਾ ਦਿਲ ਸਿਰਫ ਇੱਕ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਜੋੜਿਆ ਹੈ, ਉਹ ਸਾਰੀਆਂ ਚਿੰਤਾਵਾਂ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਬੇਫ਼ਿਕਰ ਤੇ ਸੁਖੀ ਰਹਿੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb unveils the peace of tying one\'s heart to the One: In this Dark Age (Kali Yuga), people collect countless worldly acquaintances and fickle friends; yet these relationships bring only anxiety, disappointment, and sorrow. But those blessed souls who have tethered their hearts solely to the One Supreme Lord sleep in blissful tranquility, entirely carefree (Nicheent), untroubled by the storms of the world.',
     },
     wordMeanings: {
       hi: [
@@ -819,9 +819,9 @@ export const SAKHIS_BATCH_12: Sakhi[] = [
       {
         id: 'q-b12-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार कौन लोग संसार में निश्चिंत होकर सुख की नींद सोते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਹੜੇ ਲੋਕ ਬੇਫ਼ਿਕਰ ਹੋ ਕੇ ਸੁੱਖ ਦੀ ਨੀਂਦ ਸੌਂਦੇ ਹਨ?',
-          en: 'According to Kabir Saheb, who rests in carefree, blissful tranquility?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार कौन लोग संसार में निश्चिंत होकर सुख की नींद सोते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਹੜੇ ਲੋਕ ਬੇਫ਼ਿਕਰ ਹੋ ਕੇ ਸੁੱਖ ਦੀ ਨੀਂਦ ਸੌਂਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, who rests in carefree, blissful tranquility?',
         },
         options: {
           hi: ['जिन्होंने बहुत सारा कर्ज ले रखा है', 'जिन्होंने अपना दिल केवल एक परमात्मा (सत्यनाम) से बांध लिया है', 'जिन्होंने सैकड़ों मित्र बनाए हैं', 'जो बहुत तेज दौड़ते हैं'],

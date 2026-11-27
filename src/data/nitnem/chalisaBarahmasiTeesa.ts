@@ -19,7 +19,7 @@ export const CHALISA_BARAHMASI_TEESA_SECTIONS: NitnemSection[] = [
       "en": "Vandana"
     },
     "subtitle": {
-      "hi": "सद्गुरु पद वंदना एवं धर्मदास-उग्रनाम आचार्य स्मरण",
+      "hi": "सतगुरु पद वंदना एवं धर्मदास-उग्रनाम आचार्य स्मरण",
       "pb": "ਸਤਿਗੁਰੂ ਪਦ ਵੰਦਨਾ ਅਤੇ ਧਰਮਦਾਸ-ਉਗ੍ਰਨਾਮ ਆਚਾਰਯ ਸਿਮਰਨ",
       "en": "Opening Salutation to Satguru Kabir & Dharmadas Ji"
     },
@@ -44,7 +44,7 @@ export const CHALISA_BARAHMASI_TEESA_SECTIONS: NitnemSection[] = [
     },
     "subtitle": {
       "hi": "४० चौपाइयों में सतगुरु कबीर साहेब की संपूर्ण स्तुति एवं संकट हरण",
-      "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਚਾਲੀਸਾ",
+      "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਚਾਲੀਸਾ",
       "en": "Forty Hymns in Glory and Protection of Satguru Kabir"
     },
     "iconName": "Sparkles",

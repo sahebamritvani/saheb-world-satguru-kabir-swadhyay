@@ -103,7 +103,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Both Guru and disciple must sincerely fulfill their roles.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरु! मुझे मर्यादा में रहने और अपनी शिक्षाओं को अपनाने की शक्ति दें।',
+      hi: 'हे सतगुरु! मुझे मर्यादा में रहने और अपनी शिक्षाओं को अपनाने की शक्ति दें।',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਮਰਯਾਦਾ ਵਿੱਚ ਰਹਿਣ ਦੀ ਸ਼ਕਤੀ ਦਿਓ।',
       en: 'O Satguru! Grant me the strength to respect boundaries and learn with humility.',
     },
@@ -147,9 +147,9 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     transliteration: 'Kehta hoon kahi jaat hoon, deta hoon hela. Guru ki karni Guru jaane, chela ki chela.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि गुरु अपनी करनी भुगतेगा और चेला अपनी। कोई एक-दूसरे के कर्मफल का भागीदार नहीं बन सकता।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਆਪਣੀ ਕਰਨੀ ਭੋਗੇਗਾ ਅਤੇ ਚੇਲਾ ਆਪਣੀ। ਕੋਈ ਦੂਜੇ ਦੇ ਕਰਮ ਦਾ ਫਲ ਨਹੀਂ ਲੈ ਸਕਦਾ।',
-      en: 'Kabir Saheb declares that both Guru and disciple will reap the fruits of their own actions. No one else is responsible for your karma.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि गुरु अपनी करनी भुगतेगा और चेला अपनी। कोई एक-दूसरे के कर्मफल का भागीदार नहीं बन सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਆਪਣੀ ਕਰਨੀ ਭੋਗੇਗਾ ਅਤੇ ਚੇਲਾ ਆਪਣੀ। ਕੋਈ ਦੂਜੇ ਦੇ ਕਰਮ ਦਾ ਫਲ ਨਹੀਂ ਲੈ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims that both Guru and disciple will reap the fruits of their own actions. No one else is responsible for your karma.',
     },
     wordMeanings: {
       hi: [{ word: 'हेला', meaning: 'पुकार या चेतावनी' }],
@@ -295,7 +295,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Purify your heart and mind from vices before seeking true wisdom.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरु! मेरे अंतःकरण को निर्मल करें ताकि आपका ज्ञान मेरे भीतर ठहर सके।',
+      hi: 'हे सतगुरु! मेरे अंतःकरण को निर्मल करें ताकि आपका ज्ञान मेरे भीतर ठहर सके।',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਮਨ ਨੂੰ ਸਾਫ਼ ਕਰੋ ਤਾਂ ਜੋ ਆਪ ਜੀ ਦਾ ਗਿਆਨ ਮੇਰੇ ਅੰਦਰ ਟਿਕ ਸਕੇ।',
       en: 'O Satguru! Cleanse my inner self so that Your divine wisdom can illuminate my heart.',
     },
@@ -303,9 +303,9 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       {
         id: 'q-b39-509',
         question: {
-          hi: 'कबीर साहेब ने मैली चादर (मैली गजी) किसे कहा है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮੈਲੀ ਚਾਦਰ ਕਿਸਨੂੰ ਕਿਹਾ ਹੈ?',
-          en: 'What does Kabir Saheb compare to a dirty cloth (Maili Gaji)?',
+          hi: 'सतगुरु कबीर साहेब ने मैली चादर (मैली गजी) किसे कहा है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮੈਲੀ ਚਾਦਰ ਕਿਸਨੂੰ ਕਿਹਾ ਹੈ?',
+          en: 'What does Satguru Kabir Saheb compare to a dirty cloth (Maili Gaji)?',
         },
         options: {
           hi: ['अशुद्ध और विकारी मन को', 'फटे हुए कपड़ों को', 'संसार को', 'कठिन परिश्रम को'],
@@ -367,9 +367,9 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       {
         id: 'q-b39-510',
         question: {
-          hi: 'कबीर साहेब के अनुसार गुरु की प्राप्ति के लिए क्या देना भी सस्ता सौदा है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਨੂੰ ਪਾਉਣ ਲਈ ਕੀ ਦੇਣਾ ਵੀ ਸਸਤਾ ਸੌਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what is a cheap offering to make for attaining a true Guru?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार गुरु की प्राप्ति के लिए क्या देना भी सस्ता सौदा है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਗੁਰੂ ਨੂੰ ਪਾਉਣ ਲਈ ਕੀ ਦੇਣਾ ਵੀ ਸਸਤਾ ਸੌਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is a cheap offering to make for attaining a true Guru?',
         },
         options: {
           hi: ['शीश (अहंकार) अर्पण करना', 'धन-दौलत देना', 'केवल मीठी बातें करना', 'बाहरी पूजा करना'],
@@ -551,7 +551,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Start practicing the truth immediately upon learning it.',
     },
     samarpanPrayer: {
-      hi: 'हे सद्गुरु! मुझे अपनी भूलों को सुधारने और आपके बताए मार्ग पर चलने की शक्ति दें।',
+      hi: 'हे सतगुरु! मुझे अपनी भूलों को सुधारने और आपके बताए मार्ग पर चलने की शक्ति दें।',
       pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਆਪ ਜੀ ਦੇ ਦੱਸੇ ਰਸਤੇ ਤੇ ਚੱਲਣ ਦੀ ਬੁੱਧੀ ਬਖਸ਼ੋ।',
       en: 'O Satguru! Grant me the strength to correct my mistakes and walk on Your path.',
     },
@@ -595,22 +595,22 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     transliteration: 'Bhedi leeya saath kari, deenha vastu lakhaay. Koti janam ka panth tha, pal mein pahuncha jaay.',
     bhavarth: {
-      hi: 'जब अनुभवी भेदी (सद्गुरु) का साथ मिल जाता है, तो वे सत्य वस्तु (परमात्मा) का साक्षात्कार करा देते हैं। जिससे करोड़ों जन्मों का कठिन रास्ता पल-भर में तय हो जाता है।',
+      hi: 'जब अनुभवी भेदी (सतगुरु) का साथ मिल जाता है, तो वे सत्य वस्तु (परमात्मा) का साक्षात्कार करा देते हैं। जिससे करोड़ों जन्मों का कठिन रास्ता पल-भर में तय हो जाता है।',
       pb: 'ਜਦੋਂ ਭੇਤੀ (ਗਿਆਨੀ ਸਤਿਗੁਰੂ) ਦਾ ਸਾਥ ਮਿਲ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਉਹ ਸੱਚੀ ਵਸਤੂ (ਆਤਮਾ) ਦਿਖਾ ਦਿੰਦੇ ਹਨ। ਕਰੋੜਾਂ ਜਨਮਾਂ ਦਾ ਰਸਤਾ ਪਲ ਵਿੱਚ ਤੈਅ ਹੋ ਜਾਂਦਾ ਹੈ।',
       en: 'When one takes along the Knower of Secrets (the Satguru), the Master reveals the true divine Treasure. The journey of millions of births is accomplished in a single moment.',
     },
     wordMeanings: {
-      hi: [{ word: 'भेदी', meaning: 'रहस्य जानने वाला अनुभवी सद्गुरु' }],
+      hi: [{ word: 'भेदी', meaning: 'रहस्य जानने वाला अनुभवी सतगुरु' }],
       pb: [{ word: 'ਭੇਦੀ', meaning: 'ਭੇਤੀ, ਰਹੱਸ ਜਾਣਨ ਵਾਲਾ ਗੁਰੂ' }],
       en: [{ word: 'Bhedi', meaning: 'The Knower of inner secrets / experienced guide' }],
     },
     contemplation: {
-      hi: 'क्या मैं आत्म-साक्षात्कार के लिए अनुभवी सद्गुरु की युक्ति को समझ पाया हूँ?',
+      hi: 'क्या मैं आत्म-साक्षात्कार के लिए अनुभवी सतगुरु की युक्ति को समझ पाया हूँ?',
       pb: 'ਕੀ ਮੈਂ ਆਤਮ-ਗਿਆਨ ਲਈ ਸਤਿਗੁਰੂ ਦੀ ਜੁਗਤੀ ਨੂੰ ਸਮਝਿਆ ਹੈ?',
       en: 'Have I truly understood the divine method of self-realization shared by the Master?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु महाराज के वचनों को अपनाकर आत्म-साक्षात्कार का मार्ग सुगम बनाएं।',
+      hi: 'सतगुरु महाराज के वचनों को अपनाकर आत्म-साक्षात्कार का मार्ग सुगम बनाएं।',
       pb: 'ਸਤਿਗੁਰੂ ਦੇ ਬਚਨਾਂ ਨੂੰ ਅਪਣਾ ਕੇ ਆਪਣਾ ਜੀਵਨ ਸਫਲ ਕਰੋ।',
       en: 'Follow the practical spiritual guidelines of the Satguru to attain peace.',
     },
@@ -634,7 +634,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'भेदी सद्गुरु अपनी सरल ज्ञान-युक्ति से क्षण-भर में ही जीव का परम कल्याण कर देते हैं।',
+          hi: 'भेदी सतगुरु अपनी सरल ज्ञान-युक्ति से क्षण-भर में ही जीव का परम कल्याण कर देते हैं।',
           pb: 'ਭੇਤੀ ਗੁਰੂ ਆਪਣੀ ਗਿਆਨ ਦੀ ਜੁਗਤੀ ਨਾਲ ਪਲ ਵਿੱਚ ਕਲਿਆਣ ਕਰ ਦਿੰਦੇ ਹਨ।',
           en: 'The wise Satguru liberates the soul instantly through direct self-realization.',
         },
@@ -687,9 +687,9 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       {
         id: 'q-b39-515',
         question: {
-          hi: 'लोभी गुरु और लालची शिष्य की तुलना कबीर साहेब ने किससे की है?',
-          pb: 'ਲੋਭੀ ਗੁਰੂ ਅਤੇ ਲਾਲਚੀ ਚੇਲੇ ਦੀ ਤੁਲਨਾ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'With what does Kabir Saheb compare a greedy master and a desire-filled disciple?',
+          hi: 'लोभी गुरु और लालची शिष्य की तुलना सतगुरु कबीर साहेब ने किससे की है?',
+          pb: 'ਲੋਭੀ ਗੁਰੂ ਅਤੇ ਲਾਲਚੀ ਚੇਲੇ ਦੀ ਤੁਲਨਾ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'With what does Satguru Kabir Saheb compare a greedy master and a desire-filled disciple?',
         },
         options: {
           hi: ['लोहे की मजबूत नाव से', 'पत्थर की नाव पर चढ़ने वालों से', 'तीर्थ यात्रियों से', 'विद्वानों से'],
@@ -738,7 +738,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Has the flame of the divine Name been lit inside my heart by the Master?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु के प्रति नित्य कृतज्ञता व्यक्त करें और नाम सिमरन में मन लगाएं।',
+      hi: 'सतगुरु के प्रति नित्य कृतज्ञता व्यक्त करें और नाम सिमरन में मन लगाएं।',
       pb: 'ਸਤਿਗੁਰੂ ਦਾ ਨਿਤ ਸ਼ੁਕਰਾਨਾ ਕਰੋ ਅਤੇ ਨਾਮ ਸਿਮਰਨ ਵਿੱਚ ਚਿੱਤ ਲਗਾਓ।',
       en: 'Express daily gratitude to the Master and focus on meditation.',
     },
@@ -807,8 +807,8 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Never blindly follow any teacher without testing their spiritual maturity.',
     },
     samarpanPrayer: {
-      hi: 'हे परम विवेकी सद्गुरु! मुझे भ्रम के इस अंधकूप से बचाएं और शाश्वत प्रकाश में रखें।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਭਰਮ ਦੇ ਖੂਹ ਤੋਂ ਬਚਾਓ।',
+      hi: 'हे परम विवेकी सतगुरु! मुझे भ्रम के इस अंधकूप से बचाएं और शाश्वत प्रकाश में रखें।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਭਰਮ ਦੇ ਖੂਹ ਤੋਂ ਬਚਾਓ।',
       en: 'O Discriminating Satguru! Guard me against the well of delusion and guide me toward absolute truth.',
     },
     quiz: [
@@ -935,17 +935,17 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Seek only the guide who leads you directly to inner awakening and the divine Word.',
     },
     samarpanPrayer: {
-      hi: 'हे सच्चे सद्गुरु! मुझे अपनी पावन शरण दें और उस सार-शब्द के भेद से अवगत कराएं।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੱਚੇ ਸ਼ਬਦ ਦਾ ਗਿਆਨ ਬਖਸ਼ੋ।',
+      hi: 'हे सच्चे सतगुरु! मुझे अपनी पावन शरण दें और उस सार-शब्द के भेद से अवगत कराएं।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੱਚੇ ਸ਼ਬਦ ਦਾ ਗਿਆਨ ਬਖਸ਼ੋ।',
       en: 'O True Satguru! Keep me in Your shelter and illuminate my soul with the eternal Word.',
     },
     quiz: [
       {
         id: 'q-b39-519',
         question: {
-          hi: 'कबीर साहेब के अनुसार किस गुरु की नित्य वंदना करनी चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਗੁਰੂ ਦੀ ਨਿਤ ਵੰਦਨਾ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, which Master should be praised daily?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किस गुरु की नित्य वंदना करनी चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਗੁਰੂ ਦੀ ਨਿਤ ਵੰਦਨਾ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, which Master should be praised daily?',
         },
         options: {
           hi: ['जो सार-शब्द का गुप्त भेद बताए', 'जो केवल धन मांगे', 'जो बाहरी भेष की शिक्षा दे', 'जो प्रसिद्ध हो'],
@@ -1000,7 +1000,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे परम प्रकाशक सतगुरु! मुझे असत्य का त्याग करने और सत्य को सहर्ष स्वीकार करने का साहस दें।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੱਚੇ ਮਾਰਗ ਤੇ ਚੱਲਣ ਦਾ ਹੌਸਲਾ ਬਖਸ਼ੋ।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੱਚੇ ਮਾਰਗ ਤੇ ਚੱਲਣ ਦਾ ਹੌਸਲਾ ਬਖਸ਼ੋ।',
       en: 'O Enlightening Master! Grant me the courage to abandon untruth and embrace Yours faithfully.',
     },
     quiz: [
@@ -1058,13 +1058,13 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Does my mind still wander in superstitious doubts and religious confusion?',
     },
     practicalApplication: {
-      hi: 'भ्रम दूर करने वाले और यथार्थ ज्ञान देने वाले सद्गुरु की संगति करें।',
+      hi: 'भ्रम दूर करने वाले और यथार्थ ज्ञान देने वाले सतगुरु की संगति करें।',
       pb: 'ਭਰਮ ਮਿਟਾਉਣ ਵਾਲੇ ਸੱਚੇ ਗੁਰੂ ਦੀ ਸੰਗਤ ਕਰੋ।',
       en: 'Dwell in the company of a Master who cuts through doubts and brings clarity.',
     },
     samarpanPrayer: {
-      hi: 'हे परम शांत सद्गुरु! मेरे हृदय की सभी भ्रांतियों और संदेहों को अपने पावन ज्ञान से शांत करें।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਮਨ ਦੀਆਂ ਸ਼ੰਕਾਵਾਂ ਦੂਰ ਕਰੋ।',
+      hi: 'हे परम शांत सतगुरु! मेरे हृदय की सभी भ्रांतियों और संदेहों को अपने पावन ज्ञान से शांत करें।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੇਰੇ ਮਨ ਦੀਆਂ ਸ਼ੰਕਾਵਾਂ ਦੂਰ ਕਰੋ।',
       en: 'O Serene Master! Dissolve all doubts and confusions in my heart with Your pure wisdom.',
     },
     quiz: [
@@ -1082,7 +1082,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'सच्चे सद्गुरु की संगति से हृदय के सारे संशय और भ्रम तुरंत समाप्त हो जाते हैं।',
+          hi: 'सच्चे सतगुरु की संगति से हृदय के सारे संशय और भ्रम तुरंत समाप्त हो जाते हैं।',
           pb: 'ਸੱਚੇ ਗੁਰੂ ਦੀ ਸੰਗਤ ਨਾਲ ਸਾਰੇ ਭਰਮ ਮਿਟ ਜਾਂਦੇ ਹਨ।',
           en: 'At the feet of a true Master, all spiritual doubts and illusions evaporate.',
         },
@@ -1107,7 +1107,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     transliteration: 'Sanche Guru ke paksh mein, man ko de thehraay. Chanchal se nishchal bhaya, nahin aavai nahin jaay.',
     bhavarth: {
-      hi: 'सच्चे सद्गुरु के उपदेशों में अपने मन को स्थिर कर दो। मन की चंचलता दूर होकर वह शांत हो जाएगा, जिससे जीव जन्म-मरण के चक्र से मुक्त हो जाता है।',
+      hi: 'सच्चे सतगुरु के उपदेशों में अपने मन को स्थिर कर दो। मन की चंचलता दूर होकर वह शांत हो जाएगा, जिससे जीव जन्म-मरण के चक्र से मुक्त हो जाता है।',
       pb: 'ਸੱਚੇ ਗੁਰੂ ਦੀਆਂ ਸਿੱਖਿਆਵਾਂ ਵਿੱਚ ਆਪਣੇ ਮਨ ਨੂੰ ਟਿਕਾਓ। ਮਨ ਦੀ ਚੰਚਲਤਾ ਦੂਰ ਹੋ ਕੇ ਉਹ ਸ਼ਾਂਤ ਹੋ ਜਾਵੇਗਾ, ਜਿਸ ਨਾਲ ਮੁਕਤੀ ਮਿਲਦੀ ਹੈ।',
       en: 'Stabilize your mind in the teachings of the true Master. The restless mind will become still and peaceful, liberating you from the cycles of birth and death.',
     },
@@ -1192,7 +1192,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे अंतर्यामी सतगुरु! मुझे काल के फंदे और अज्ञानता से बचाकर अपने दिव्य प्रकाश में रखें।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਅਗਿਆਨਤਾ ਤੋਂ ਬਚਾਓ।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਅਗਿਆਨਤਾ ਤੋਂ ਬਚਾਓ।',
       en: 'O Omniscient Satguru! Save me from the trap of ignorance and keep me in Your divine light.',
     },
     quiz: [
@@ -1235,7 +1235,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     transliteration: 'Poora Satguru na mila, suni adhoori seekh. Swaang yati ka pahin ke, ghar-ghar maangi bheekh.',
     bhavarth: {
-      hi: 'जिन्हें पूर्ण सद्गुरु नहीं मिले, उन्होंने इधर-उधर से अधूरी शिक्षा ग्रहण की। वे साधु का वेश धारण करके केवल भीख मांगते फिरते हैं, उनका कल्याण नहीं होता।',
+      hi: 'जिन्हें पूर्ण सतगुरु नहीं मिले, उन्होंने इधर-उधर से अधूरी शिक्षा ग्रहण की। वे साधु का वेश धारण करके केवल भीख मांगते फिरते हैं, उनका कल्याण नहीं होता।',
       pb: 'ਜਿਨ੍ਹਾਂ ਨੂੰ ਪੂਰੇ ਗੁਰੂ ਨਹੀਂ ਮਿਲੇ, ਉਹਨਾਂ ਨੇ ਅਧੂਰੀ ਸਿੱਖਿਆ ਲਈ ਅਤੇ ਸਾਧੂ ਦਾ ਭੇਖ ਬਣਾ ਕੇ ਘਰ-ਘਰ ਭੀਖ ਮੰਗਦੇ ਫਿਰਦੇ ਹਨ, ਉਹਨਾਂ ਦਾ ਕਲਿਆਣ ਨਹੀਂ ਹੁੰਦਾ।',
       en: 'Those who failed to find a perfect Satguru only gathered incomplete teachings. Wearing the garb of an ascetic, they wander from door to door begging; they never attain salvation.',
     },
@@ -1255,15 +1255,15 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Avoid incomplete, shallow teachings and seek genuine self-realization.',
     },
     samarpanPrayer: {
-      hi: 'हे पूर्ण सद्गुरु! मुझे अधूरी सीख से बचाएं और अपने यथार्थ ब्रह्म-ज्ञान की पूर्णता प्रदान करें।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਅਧੂਰੇ ਗਿਆਨ ਤੋਂ ਬਚਾ ਕੇ ਸੱਚੀ ਸੋਝੀ ਬਖਸ਼ੋ।',
+      hi: 'हे पूर्ण सतगुरु! मुझे अधूरी सीख से बचाएं और अपने यथार्थ ब्रह्म-ज्ञान की पूर्णता प्रदान करें।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਅਧੂਰੇ ਗਿਆਨ ਤੋਂ ਬਚਾ ਕੇ ਸੱਚੀ ਸੋਝੀ ਬਖਸ਼ੋ।',
       en: 'O Perfect Satguru! Shield me from incomplete dogmas and bless me with absolute self-knowledge.',
     },
     quiz: [
       {
         id: 'q-b39-524',
         question: {
-          hi: 'पूरा सद्गुरु न मिलने पर लोग क्या करने लगते हैं?',
+          hi: 'पूरा सतगुरु न मिलने पर लोग क्या करने लगते हैं?',
           pb: 'ਪੂਰਾ ਸਤਿਗੁਰੂ ਨਾ ਮਿਲਣ ਤੇ ਲੋਕ ਕੀ ਕਰਨ ਲੱਗਦੇ ਹਨ?',
           en: 'What do people do when they fail to find a perfect Satguru?',
         },
@@ -1281,7 +1281,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       },
     ],
   },
-  // 525. सद्गुरु ऐसा कीजिए (गुरु पारख को अंग - 21)
+  // 525. सतगुरु ऐसा कीजिए (गुरु पारख को अंग - 21)
   {
     id: 'sakhi-batch39-525',
     number: 525,
@@ -1293,13 +1293,13 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Discerning the True Master (Guru Parakh Ko Ang)',
     },
     text: {
-      hi: 'सद्गुरु ऐसा कीजिए, लोभ मोह भ्रम नाहिं । \nदरिया सो न्यारा रहे, दीसे दरिया माहिं ।।',
-      pb: 'ਸਦਗੁਰੂ ਐਸਾ ਕੀਜੀਏ, ਲੋਭ ਮੋਹ ਭ੍ਰਮ ਨਾਹਿਂ ।\nਦਰਿਯਾ ਸੋ ਨ੍ਯਾਰਾ ਰਹੇ, ਦੀਸੇ ਦਰਿਯਾ ਮਾਹਿ ॥',
-      en: 'Sadguru aisa keejiye, lobh moh bhram naahin |\nDariya so nyaara rahe, deese dariya maahin ||',
+      hi: 'सतगुरु ऐसा कीजिए, लोभ मोह भ्रम नाहिं । \nदरिया सो न्यारा रहे, दीसे दरिया माहिं ।।',
+      pb: 'ਸਤਿਗੁਰੂ ਐਸਾ ਕੀਜੀਏ, ਲੋਭ ਮੋਹ ਭ੍ਰਮ ਨਾਹਿਂ ।\nਦਰਿਯਾ ਸੋ ਨ੍ਯਾਰਾ ਰਹੇ, ਦੀਸੇ ਦਰਿਯਾ ਮਾਹਿ ॥',
+      en: 'Satguru aisa keejiye, lobh moh bhram naahin |\nDariya so nyaara rahe, deese dariya maahin ||',
     },
-    transliteration: 'Sadguru aisa keejiye, lobh moh bhram naahin. Dariya so nyaara rahe, deese dariya maahin.',
+    transliteration: 'Satguru aisa keejiye, lobh moh bhram naahin. Dariya so nyaara rahe, deese dariya maahin.',
     bhavarth: {
-      hi: 'सद्गुरु ऐसा होना चाहिए जिसके भीतर लोभ, मोह और भ्रम न हो। वह इस संसार-रूपी सागर में रहते हुए भी उसकी बुराइयों और वासनाओं से अलिप्त रहता है।',
+      hi: 'सतगुरु ऐसा होना चाहिए जिसके भीतर लोभ, मोह और भ्रम न हो। वह इस संसार-रूपी सागर में रहते हुए भी उसकी बुराइयों और वासनाओं से अलिप्त रहता है।',
       pb: 'ਸਤਿਗੁਰੂ ਅਜਿਹਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜਿਸ ਵਿੱਚ ਲੋਭ, ਮੋਹ ਤੇ ਭਰਮ ਨਾ ਹੋਵੇ। ਉਹ ਸੰਸਾਰ ਵਿੱਚ ਰਹਿੰਦਾ ਹੋਇਆ ਵੀ ਇਸਦੀਆਂ ਬੁਰਾਈਆਂ ਤੋਂ ਅਲੱਗ ਰਹਿੰਦਾ ਹੈ।',
       en: 'Make such a Satguru who is completely free from greed, attachment, and doubt. Though appearing in this world, he remains entirely untouched by its impurities.',
     },
@@ -1319,8 +1319,8 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Abandon worldly attachment and greed to live a simple, selfless life.',
     },
     samarpanPrayer: {
-      hi: 'हे मायातीत सद्गुरु! मुझे इस संसार में रहते हुए भी इसके विकारों से निर्लेप रहने की शक्ति दें।',
-      pb: 'Hੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੰਸਾਰ ਦੇ ਵਿਕਾਰਾਂ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿਣ ਦੀ ਸ਼ਕਤੀ ਬਖਸ਼ੋ।',
+      hi: 'हे मायातीत सतगुरु! मुझे इस संसार में रहते हुए भी इसके विकारों से निर्लेप रहने की शक्ति दें।',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਸੰਸਾਰ ਦੇ ਵਿਕਾਰਾਂ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿਣ ਦੀ ਸ਼ਕਤੀ ਬਖਸ਼ੋ।',
       en: 'O Detached Satguru! Grant me the power to remain untouched by worldly impurities.',
     },
     quiz: [
@@ -1338,7 +1338,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
         },
         correctIndex: 0,
         explanation: {
-          hi: 'दरिया यहाँ संसार का प्रतीक है। जैसे कमल कीचड़ में रहकर भी साफ रहता है, वैसे ही सद्गुरु संसार में रहकर भी निर्लिप्त रहते हैं।',
+          hi: 'दरिया यहाँ संसार का प्रतीक है। जैसे कमल कीचड़ में रहकर भी साफ रहता है, वैसे ही सतगुरु संसार में रहकर भी निर्लिप्त रहते हैं।',
           pb: 'ਦਰਿਆ ਇੱਥੇ ਸੰਸਾਰ ਦਾ ਪ੍ਰਤੀਕ ਹੈ।',
           en: 'The river represents the ocean of material worldliness.',
         },
@@ -1363,7 +1363,7 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
     },
     transliteration: 'Bandhe ko bandha mila, shootai kaun upaay. Kar seva nirbandh ki, pal mein let chhudaay.',
     bhavarth: {
-      hi: 'जो स्वयं पहले से ही माया-मोह के बंधनों में बंधा हुआ है, उससे दूसरा बंधा हुआ जीव कैसे छूट सकता है? अतः उस निरबंध (मुक्त) सद्गुरु की सेवा करो, जो पल-भर में ही अपनी युक्ति से छुड़ा दें।',
+      hi: 'जो स्वयं पहले से ही माया-मोह के बंधनों में बंधा हुआ है, उससे दूसरा बंधा हुआ जीव कैसे छूट सकता है? अतः उस निरबंध (मुक्त) सतगुरु की सेवा करो, जो पल-भर में ही अपनी युक्ति से छुड़ा दें।',
       pb: 'ਜੋ ਖੁਦ ਮਾਇਆ ਦੇ ਬੰਧਨਾਂ ਵਿੱਚ ਬੱਝਾ ਹੋਇਆ ਹੈ, ਉਹ ਦੂਜੇ ਬੱਝੇ ਹੋਏ ਨੂੰ ਕਿਵੇਂ ਮੁਕਤ ਕਰ ਸਕਦਾ ਹੈ? ਉਸ ਮੁਕਤ (ਨਿਰਬੰਧ) ਸਤਿਗੁਰੂ ਦੀ ਸੇਵਾ ਕਰੋ ਜੋ ਪਲ ਵਿੱਚ ਛੁਡਾ ਦੇਣ।',
       en: 'If a bound soul meets another bound soul, by what means can they be freed? Serve the Untethered One (the liberated Master), who can liberate you instantly through his wisdom.',
     },
@@ -1378,13 +1378,13 @@ export const SAKHIS_BATCH_39: Sakhi[] = [
       en: 'Is the guide I follow fully liberated from the chains of worldly attachment?',
     },
     practicalApplication: {
-      hi: 'बंधन युक्त पाखंडियों को छोड़कर पूर्ण मुक्त और निष्काम सद्गुरु की शरण लें।',
+      hi: 'बंधन युक्त पाखंडियों को छोड़कर पूर्ण मुक्त और निष्काम सतगुरु की शरण लें।',
       pb: 'ਬੰਧਨਾਂ ਵਿੱਚ ਫਸੇ ਪਾਖੰਡੀਆਂ ਨੂੰ ਛੱਡ ਕੇ ਪੂਰਨ ਮੁਕਤ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਲਵੋ।',
       en: 'Do not follow bound souls; seek the guidance of a fully liberated Master.',
     },
     samarpanPrayer: {
-      hi: 'हे निरबंध परम मुक्त सद्गुरु! मुझे मेरे सांसारिक और जन्म-मरण के बंधनों से पल-भर में मुक्त कर दें।',
-      pb: 'Hੇ ਬੰਧਨ ਮੁਕਤ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਵੀ ਮਾਇਆ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤ ਕਰੋ।',
+      hi: 'हे निरबंध परम मुक्त सतगुरु! मुझे मेरे सांसारिक और जन्म-मरण के बंधनों से पल-भर में मुक्त कर दें।',
+      pb: 'ਹੇ ਬੰਧਨ ਮੁਕਤ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਵੀ ਮਾਇਆ ਦੇ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤ ਕਰੋ।',
       en: 'O Liberated Master! Free me from the chains of worldliness and rebirth instantly.',
     },
     quiz: [

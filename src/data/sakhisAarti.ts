@@ -17,8 +17,8 @@ export const SAKHIS_AARTI: Sakhi[] = [
       en: '|| Satyanaam ||\nGlory, glory to the True Kabir; Guru, glory to the True Kabir. |\nYou are ageless and immortal, O Saheb; ageless and immortal. |\nThe spiritual guide of all four ages; Guru, glory to the True Kabir.',
     },
     bhavarth: {
-      hi: 'सत्य कबीर साहेब की जय हो, गुरुदेव की जय हो। हे साहेब! आप अजर (वृद्धावस्था रहित) और अमर हैं। आप ही चारों युगों (सत्युग, त्रेता, द्वापर, कलियुग) के परम गुरु और मार्गदर्शक हैं।',
-      pb: 'ਸਤਯ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਜੈ ਹੋਵੇ, ਗੁਰੂਦੇਵ ਦੀ ਜੈ ਹੋਵੇ। ਹੇ ਸਾਹੇਬ! ਆਪ ਅਜਰ ਅਤੇ ਅਮਰ ਹੋ। ਆਪ ਹੀ ਚਾਰੋਂ ਜੁੱਗਾਂ ਦੇ ਪਰਮ ਗੁਰੂ ਅਤੇ ਰਹਿਬਰ ਹੋ।',
+      hi: 'सत्य सतगुरु कबीर साहेब की जय हो, गुरुदेव की जय हो। हे साहेब! आप अजर (वृद्धावस्था रहित) और अमर हैं। आप ही चारों युगों (सत्युग, त्रेता, द्वापर, कलियुग) के परम गुरु और मार्गदर्शक हैं।',
+      pb: 'ਸਤਯ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਜੈ ਹੋਵੇ, ਗੁਰੂਦੇਵ ਦੀ ਜੈ ਹੋਵੇ। ਹੇ ਸਾਹੇਬ! ਆਪ ਅਜਰ ਅਤੇ ਅਮਰ ਹੋ। ਆਪ ਹੀ ਚਾਰੋਂ ਜੁੱਗਾਂ ਦੇ ਪਰਮ ਗੁਰੂ ਅਤੇ ਰਹਿਬਰ ਹੋ।',
       en: 'Victory to the True Kabir, glory to the Divine Master. O Lord! You are ageless and immortal. You have been the supreme spiritual guide throughout all four cosmic ages.',
     },
     wordMeanings: {
@@ -63,8 +63,8 @@ export const SAKHIS_AARTI: Sakhi[] = [
       en: 'The True Name and True Deeds; focused on Truth, destroyer of desires. |\nFree from suffering, dweller of the Abode of Truth, Lord of the three worlds. |\nVictory to Kabir, the destroyer of worldly pain, who took a human form as a divine child at the lakeside.',
     },
     bhavarth: {
-      hi: 'आपका नाम सत्य है और आपके कर्म भी सत्य हैं। आप कामनाओं का नाश करने वाले और कष्टों से रहित हैं। आप तीनों लोकों के स्वामी और सत्यधाम के वासी हैं। उन कबीर साहेब की जय हो, जिन्होंने संसार के दुखों को मिटाने के लिए लहरतारा तालाब के किनारे एक शिशु के रूप में अवतार लिया।',
-      pb: 'ਆਪ ਜੀ ਦਾ ਨਾਮ ਸੱਚ ਹੈ ਅਤੇ ਕਰਮ ਵੀ ਸੱਚ ਹਨ। ਆਪ ਕਾਮਨਾਵਾਂ ਨੂੰ ਖਤਮ ਕਰਨ ਵਾਲੇ ਅਤੇ ਤਿੰਨਾਂ ਲੋਕਾਂ ਦੇ ਮਾਲਕ ਹੋ। ਉਹਨਾਂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਜੈ ਹੋਵੇ, ਜਿਨ੍ਹਾਂ ਨੇ ਸੰਸਾਰ ਦੇ ਦੁੱਖ ਦੂਰ ਕਰਨ ਲਈ ਇੱਕ ਬਾਲਕ ਦੇ ਰੂਪ ਵਿੱਚ ਅਵਤਾਰ ਲਿਆ।',
+      hi: 'आपका नाम सत्य है और आपके कर्म भी सत्य हैं। आप कामनाओं का नाश करने वाले और कष्टों से रहित हैं। आप तीनों लोकों के स्वामी और सत्यधाम के वासी हैं। उन सतगुरु कबीर साहेब की जय हो, जिन्होंने संसार के दुखों को मिटाने के लिए लहरतारा तालाब के किनारे एक शिशु के रूप में अवतार लिया।',
+      pb: 'ਆਪ ਜੀ ਦਾ ਨਾਮ ਸੱਚ ਹੈ ਅਤੇ ਕਰਮ ਵੀ ਸੱਚ ਹਨ। ਆਪ ਕਾਮਨਾਵਾਂ ਨੂੰ ਖਤਮ ਕਰਨ ਵਾਲੇ ਅਤੇ ਤਿੰਨਾਂ ਲੋਕਾਂ ਦੇ ਮਾਲਕ ਹੋ। ਉਹਨਾਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਜੈ ਹੋਵੇ, ਜਿਨ੍ਹਾਂ ਨੇ ਸੰਸਾਰ ਦੇ ਦੁੱਖ ਦੂਰ ਕਰਨ ਲਈ ਇੱਕ ਬਾਲਕ ਦੇ ਰੂਪ ਵਿੱਚ ਅਵਤਾਰ ਲਿਆ।',
       en: 'Your Name is Truth and your deeds are righteous. You destroy worldly desires and are free from all afflictions. You are the Lord of the three worlds and the resident of the Eternal Abode. Glory to Kabir, who assumed a human form as a divine infant at the lakeside to alleviate worldly suffering.',
     },
     wordMeanings: {
@@ -162,7 +162,7 @@ export const SAKHIS_AARTI: Sakhi[] = [
     },
     bhavarth: {
       hi: 'जीवों (हंसों) का उद्धार करने के लिए आप शरीर धारण कर प्रकट हुए। आप पारख (विवेक) स्वरूप, स्थिर और विकारों से रहित हैं। साहेब कबीर की यह आरती अनगिनत पापों को हरने वाली है। धर्मदास जी ऐसे मंगलकारी प्रभु पर स्वयं को न्योछावर करते हैं।',
-      pb: 'ਜੀਵਾਂ ਦੇ ਉੱਧਾਰ ਲਈ ਆਪ ਜੀ ਨੇ ਸਰੀਰ ਧਾਰਨ ਕੀਤਾ। ਆਪ ਜੀ ਗਿਆਨ ਸਰੂਪ ਅਤੇ ਵਿਕਾਰਾਂ ਤੋਂ ਰਹਿਤ ਹੋ। ਸਾਹੇਬ ਕਬੀਰ ਜੀ ਦੀ ਇਹ ਆਰਤੀ ਪਾਪਾਂ ਨੂੰ ਦੂਰ ਕਰਨ ਵਾਲੀ ਹੈ। ਧਰਮਦਾਸ ਜੀ ਅਜਿਹੇ ਪ੍ਰਭੂ ਤੋਂ ਕੁਰਬਾਨ ਜਾਂਦੇ ਹਨ।',
+      pb: 'ਜੀਵਾਂ ਦੇ ਉੱਧਾਰ ਲਈ ਆਪ ਜੀ ਨੇ ਸਰੀਰ ਧਾਰਨ ਕੀਤਾ। ਆਪ ਜੀ ਗਿਆਨ ਸਰੂਪ ਅਤੇ ਵਿਕਾਰਾਂ ਤੋਂ ਰਹਿਤ ਹੋ। ਸਾਹੇਬ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਇਹ ਆਰਤੀ ਪਾਪਾਂ ਨੂੰ ਦੂਰ ਕਰਨ ਵਾਲੀ ਹੈ। ਧਰਮਦਾਸ ਜੀ ਅਜਿਹੇ ਪ੍ਰਭੂ ਤੋਂ ਕੁਰਬਾਨ ਜਾਂਦੇ ਹਨ।',
       en: 'You manifested in a physical form specifically to liberate the souls. You are the embodiment of pure discernment, unchanging and beyond all defects. This Aarti of Saheb Kabir erases countless sins. Dharmadas offers himself in total surrender to this auspicious and joy-giving Lord.',
     },
     wordMeanings: {
@@ -211,7 +211,7 @@ export const SAKHIS_AARTI: Sakhi[] = [
     },
     bhavarth: {
       hi: 'जो कोई भी साहेब कबीर की इस पावन आरती को गाता है, वह सच्ची भक्ति और मुक्ति का अधिकारी बन जाता है और उसे पुनर्जन्म के चक्र में नहीं आना पड़ता। चारों युगों के गुरु सत्य कबीर की सदा जय हो।',
-      pb: 'ਜਿਹੜਾ ਵੀ ਸਾਹੇਬ ਕਬੀਰ ਜੀ ਦੀ ਆਰਤੀ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਅਤੇ ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ ਅਤੇ ਜਨਮ-ਮਰਨ ਦੇ ਚੱਕਰ ਤੋਂ ਛੁੱਟ ਜਾਂਦਾ ਹੈ।',
+      pb: 'ਜਿਹੜਾ ਵੀ ਸਾਹੇਬ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਆਰਤੀ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਅਤੇ ਮੁਕਤੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ ਅਤੇ ਜਨਮ-ਮਰਨ ਦੇ ਚੱਕਰ ਤੋਂ ਛੁੱਟ ਜਾਂਦਾ ਹੈ।',
       en: 'Whoever recites this sacred Aarti of Saheb Kabir attains the precious gifts of true devotion and final liberation, and is freed from the cycle of rebirth. Eternal victory to Satguru Kabir, the guide of all eras.',
     },
     wordMeanings: {
@@ -483,7 +483,7 @@ export const SAKHIS_AARTI: Sakhi[] = [
     },
     bhavarth: {
       hi: 'जो कोई भी सत्य कबीर की इस आरती का गायन करता है, उसे भक्ति और मुक्ति रूपी अनमोल संपदा प्राप्त होती है और वह जन्म-मरण के संसार चक्र से मुक्त हो जाता है।',
-      pb: 'ਜਿਹੜਾ ਵੀ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਆਰਤੀ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪਾ ਲੈਂਦਾ ਹੈ।',
+      pb: 'ਜਿਹੜਾ ਵੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਆਰਤੀ ਗਾਉਂਦਾ ਹੈ, ਉਹ ਭਗਤੀ ਤੇ ਮੁਕਤੀ ਪਾ ਲੈਂਦਾ ਹੈ।',
       en: 'Anyone who recites this Aarti of the True Kabir is blessed with the priceless treasures of devotion and final liberation, eventually transcending the cycle of birth and death.',
     },
     wordMeanings: {

@@ -30,7 +30,7 @@ export const BIJAK_GRANTH: MasterGranth = {
   },
   "subtitle": {
     "hi": "सतगुरु कबीर साहेब की प्रामाणिक एवं मूल विचारधारा का ग्रंथ",
-    "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ",
+    "pb": "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪ੍ਰਮਾਣਿਕ ਬਾਣੀ",
     "en": "The Authoritative Compilation of Satguru Kabir's Core Philosophy"
   },
   "category": "mool-granth",
@@ -44,8 +44,8 @@ export const BIJAK_GRANTH: MasterGranth = {
     "en": "30 Hours Study"
   },
   "description": {
-    "hi": "बीजक कबीर साहेब की सबसे प्रामाणिक रचना मानी जाती है। इसमें रमैनी, सबद और साखी के माध्यम से पाखण्ड खंडन, आत्मज्ञान और सत्य मार्ग का निरूपण है। इसमें कुल ६२४ पृष्ठों का सारगर्भित ज्ञान समाहित है।",
-    "pb": "ਬੀਜਕ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਸਭ ਤੋਂ ਪ੍ਰਮਾਣਿਕ ਰਚਨਾ ਹੈ।",
+    "hi": "बीजक सतगुरु कबीर साहेब की सबसे प्रामाणिक रचना मानी जाती है। इसमें रमैनी, सबद और साखी के माध्यम से पाखण्ड खंडन, आत्मज्ञान और सत्य मार्ग का निरूपण है। इसमें कुल ६२४ पृष्ठों का सारगर्भित ज्ञान समाहित है।",
+    "pb": "ਬੀਜਕ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਸਭ ਤੋਂ ਪ੍ਰਮਾਣਿਕ ਰਚਨਾ ਹੈ।",
     "en": "Bijak is widely regarded as the most authoritative record of Kabir's teachings, containing Ramaini, Shabad, and Sakhi aimed at dispelling illusions and revealing the Absolute Truth."
   },
   "chapters": BIJAK_SECTIONS.map((sec, idx) => ({

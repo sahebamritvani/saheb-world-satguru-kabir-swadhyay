@@ -343,7 +343,7 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
 
         <p style={{ color: theme.textSecondary }} className="text-xs sm:text-sm max-w-md mx-auto font-serif opacity-80">
           {language === 'pb' 
-            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਅਨੁਸਾਰ ਨਿਹਿ-ਅਕਸ਼ਰ ਸਤਯਨਾਮ ਅਤੇ ਅਨਾਹਤ ਨਾਦ ਦੀ ਸਾਧਨਾ' 
+            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਅਨੁਸਾਰ ਨਿਹਿ-ਅਕਸ਼ਰ ਸਤਯਨਾਮ ਅਤੇ ਅਨਾਹਤ ਨਾਦ ਦੀ ਸਾਧਨਾ' 
             : language === 'en' 
             ? 'Deep Anhad Contemplation on Nih-Akshar Satyanaam as taught by Satguru Kabir Saheb' 
             : 'सतगुरु कबीर साहेब के वचनानुसार निह-अक्षर सत्यनाम एवं अनहद नाद की पावन साधना'}
@@ -515,7 +515,7 @@ export const MeditationTimer: React.FC<MeditationTimerProps> = ({ language, onOp
         </h4>
         <p className="text-xs sm:text-sm font-serif leading-relaxed text-amber-950/80 dark:text-amber-100/80">
           {language === 'pb'
-            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਅਨੁਸਾਰ ‘ਨਿਹਿ-ਅਕਸ਼ਰ’ ਉਹ ਪਰਮ ਅਵਿਨਾਸ਼ੀ ਸਤਯਨਾਮ ਹੈ ਜੋ ਅੱਖਰਾਂ ਅਤੇ ਨਾਸ਼ਵਾਨ ਧੁਨੀਆਂ ਤੋਂ ਪਰ੍ਹੇ ਹੈ। ਧਿਆਨ ਸਮੇਂ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਇਸ ਅਨਾਹਤ ਨਾਦ ਵਿੱਚ ਸੁਰਤ ਜੋੜਨ ਨਾਲ ਆਤਮਾ ਸੱਚਖੰਡ ਦੀ ਪ੍ਰਾਪਤੀ ਕਰਦੀ ਹੈ।'
+            ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ‘ਨਿਹਿ-ਅਕਸ਼ਰ’ ਉਹ ਪਰਮ ਅਵਿਨਾਸ਼ੀ ਸਤਯਨਾਮ ਹੈ ਜੋ ਅੱਖਰਾਂ ਅਤੇ ਨਾਸ਼ਵਾਨ ਧੁਨੀਆਂ ਤੋਂ ਪਰ੍ਹੇ ਹੈ। ਧਿਆਨ ਸਮੇਂ ਮਨ ਨੂੰ ਸ਼ਾਂਤ ਕਰਕੇ ਇਸ ਅਨਾਹਤ ਨਾਦ ਵਿੱਚ ਸੁਰਤ ਜੋੜਨ ਨਾਲ ਆਤਮਾ ਸੱਚਖੰਡ ਦੀ ਪ੍ਰਾਪਤੀ ਕਰਦੀ ਹੈ।'
             : language === 'en'
             ? 'According to Satguru Kabir Saheb, \'Nih-Akshar\' is the Supreme Eternal Satyanaam that transcends written letters and temporal sounds. Merging inner attention into this uncreated Anahat resonance leads the soul to supreme liberation.'
             : 'सतगुरु कबीर साहेब के अनुसार ‘निह-अक्षर’ वह परम अविनाशी सत्यनाम है जो वर्णमाला और नश्वर ध्वनियों से परे है। ध्यान काल में चित्त को शांत कर इसी अनहद नाद और निह-अक्षर सत्यनाम में सुरति को लीन करने से आत्मा काल के जाल से मुक्त होती है।'}

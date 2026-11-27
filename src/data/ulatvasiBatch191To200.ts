@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਸਵਾਸਾਂ ਦੇ ਸਥਿਰ ਹੋਣ ਤੇ ਹੀ ਅਨਹਦ ਨਾਦ ਸੁਣਦਾ ਹੈ।',
         en: 'Quietening of physical breath reveals the eternal Unstruck Sound.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਸੂਝ ਨਾਲ ਵਿਕਾਰ ਮਿਟਦੇ ਹਨ।',
         en: 'Spiritual alertness safely cages the venomous snake of desire.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -144,7 +144,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'इंद्रियातीत आत्मानंद एवं अनहद श्रवण', pb: 'ਇੰਦਰੀਆਂ ਤੋਂ ਪਰੇ ਆਤਮ-ਆਨੰਦ', en: 'Transcendental Tasting of Bliss & Hearing Sound' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ इंद्रियों से परे आत्मा के मूल स्वरूप का वर्णन कर रहे हैं। ईश्वर की साधना में जब साधक का मन अंतर्मुखी होता है, तो उसे आत्मानंद का रस चखने के लिए भौतिक जीभ की और भगवान की भीतरी आवाज़ सुनने के लिए कानों की ज़रूरत नहीं पड़ती।',
+        hi: 'सतगुरु कबीर साहेब यहाँ इंद्रियों से परे आत्मा के मूल स्वरूप का वर्णन कर रहे हैं। ईश्वर की साधना में जब साधक का मन अंतर्मुखी होता है, तो उसे आत्मानंद का रस चखने के लिए भौतिक जीभ की और भगवान की भीतरी आवाज़ सुनने के लिए कानों की ज़रूरत नहीं पड़ती।',
         pb: 'ਅੰਤਰਮੁਖੀ ਧਿਆਨ ਵਿੱਚ ਆਤਮਾ ਬਿਨਾਂ ਜੀਭ ਅਤੇ ਕੰਨਾਂ ਦੇ ਹੀ ਆਤਮ-ਆਨੰਦ ਮਾਣਦੀ ਹੈ।',
         en: 'Spiritual experience transcends physical organs. Introspective contemplation allows the soul to taste divine bliss without tongue and hear Unstruck Sound without ears.'
       },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਇੰਦਰੀਆਂ ਤੋਂ ਮੁਕਤੀ ਹੀ ਆਤਮ-ਗਿਆਨ ਹੈ।',
         en: 'Independence from physical sense organs is true spiritual liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਪ੍ਰਗਟ ਹੁੰਦੇ ਹੀ ਬੁੱਧੀ ਦਾ ਹੰਕਾਰ ਮਿਟਦਾ ਹੈ।',
         en: 'Upon spiritual awakening, analytical intellect surrenders to Supreme Realization.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਸ਼ਕਤੀ ਦਾ ਉੱਪਰ ਉੱਠਣਾ ਹੀ ਯੋਗ-ਸਾਧਨਾ ਹੈ।',
         en: 'Drawing energy from root chakra to crown center is true spiritual agriculture.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -300,16 +300,16 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'पाखंडी गुरुओं एवं अज्ञानता पर व्यंग्य', pb: 'ਪਾਖੰਡੀ ਗੁਰੂਆਂ ਤੇ ਕਬੀਰ ਦਾ ਵਿਅੰਗ', en: 'Critique of Hypocritical False Spiritual Guides' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ संसार की अज्ञानता पर व्यंग्य कर रहे हैं। बगुला पाखंडी संसारी गुरुओं का प्रतीक है और हंस सच्ची सरल जीवात्मा का। जब तक जीव को पारखी ज्ञान नहीं मिलता, वह संसारी पाखंडियों (बगुलों) को ही अपना मार्गदर्शक मानकर उनके पीछे भटकता रहता है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ संसार की अज्ञानता पर व्यंग्य कर रहे हैं। बगुला पाखंडी संसारी गुरुओं का प्रतीक है और हंस सच्ची सरल जीवात्मा का। जब तक जीव को पारखी ज्ञान नहीं मिलता, वह संसारी पाखंडियों (बगुलों) को ही अपना मार्गदर्शक मानकर उनके पीछे भटकता रहता है।',
         pb: 'ਜਦੋਂ ਤੱਕ ਮਨੁੱਖ ਨੂੰ ਸੱਚਾ ਗਿਆਨ ਨਹੀਂ ਮਿਲਦਾ, ਉਹ ਪਾਖੰਡੀਆਂ ਦੇ ਪਿੱਛੇ ਭਟਕਦਾ ਰਹਿੰਦਾ ਹੈ।',
         en: 'The heron symbolizes hypocritical false guides; the swan is the innocent soul. Without true spiritual discernment, gullible seekers follow pretenders into illusion.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु की पारखी दृष्टि के बिना जीव बगुले रूपी पाखंडियों के जाल में फँसा रहता है।',
+        hi: 'सतगुरु की पारखी दृष्टि के बिना जीव बगुले रूपी पाखंडियों के जाल में फँसा रहता है।',
         pb: 'ਸਚੇ ਗੁਰੂ ਤੋਂ ਬਿਨਾਂ ਭਟਕਣਾ ਮਿਲਦੀ ਹੈ।',
         en: 'Without Satguru true discernment, innocent souls are misled by pretenders.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਕਰਮ-ਬੰਧਨ ਮਿਟਦੇ ਹਨ।',
         en: 'Unceasing Holy Name meditation dissolves even the firmest karmic destinies.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਹੰਕਾਰ ਗਿਰਦੇ ਹੀ ਗਿਆਨ ਖਿੜਦਾ ਹੈ।',
         en: 'When pride falls, the flower of divine consciousness blossoms.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -456,7 +456,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'परा-वाणी एवं अनहद नाम का ज्ञान', pb: 'ਪਰਾ-ਵਾਣੀ ਅਤੇ ਅੰਦਰੂਨੀ ਸ਼ਬਦ', en: 'Transcendental Vani and Inner Unstruck Word' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ परा-वाणी और अनहद शब्द की बात कर रहे हैं। जब साधक बाहरी जीभ और मुँह को बंद करके मौन होता है, तो अंतरात्मा परमात्मा के उस आदि नाम का उच्चारण स्वतः करने लगती है जो वेदों का भी मूल है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ परा-वाणी और अनहद शब्द की बात कर रहे हैं। जब साधक बाहरी जीभ और मुँह को बंद करके मौन होता है, तो अंतरात्मा परमात्मा के उस आदि नाम का उच्चारण स्वतः करने लगती है जो वेदों का भी मूल है।',
         pb: 'ਮੌਨ ਹੋ ਕੇ ਮਨੁੱਖ ਦੇ ਅੰਦਰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਆਪਣੇ-ਆਪ ਗੂੰਜਣ ਲੱਗਦਾ ਹੈ।',
         en: 'True wisdom is uttered without fleshly tongue through the inner Unstruck Word. Silent consciousness realizes the source of all sacred scriptures.'
       },
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਸੱਚਾ ਗਿਆਨ ਅੰਦਰੂਨੀ ਸ਼ਬਦ ਵਿੱਚ ਹੈ।',
         en: 'True Veda is not on paper, but in the inner reverberating Word.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_191_TO_200: UlatvasiQuestion[] = [
         pb: 'ਆਨੰਦ ਅੰਦਰ ਹੈ, ਬਾਹਰ ਭਟਕਣਾ ਵਿਅਰਥ ਹੈ।',
         en: 'Bliss resides within; searching in outer world is supreme tragedy.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

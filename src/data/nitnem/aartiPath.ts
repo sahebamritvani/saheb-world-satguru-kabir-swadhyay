@@ -15,9 +15,9 @@ export const AARTI_PATH_SECTION: NitnemSection = {
     en: "Evening Sumiran Aarti & Four Canonical Aartis"
   },
   subtitle: {
-    hi: "।। सत्यनाम ।। सतगुरु कबीर साहेब, सतनाम एवं गुरुदेव की चारों पावन आरती व वंदना",
+    hi: "।। सत्यनाम ।। सतगुरु कबीर साहेब, सत्यनाम एवं गुरुदेव की चारों पावन आरती व वंदना",
     pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ, ਸਤਯਨਾਮ ਅਤੇ ਗੁਰੂਦੇਵ ਦੀਆਂ ਚਾਰੋਂ ਪਵਿੱਤਰ ਆਰਤੀਆਂ",
-    en: "The Four Sacred Aartis of Satguru Kabir Saheb, Satnam and Gurudev"
+    en: "The Four Sacred Aartis of Satguru Kabir Saheb, Satyanaam and Gurudev"
   },
   iconName: "Sparkles",
   estimatedMinutes: 8,

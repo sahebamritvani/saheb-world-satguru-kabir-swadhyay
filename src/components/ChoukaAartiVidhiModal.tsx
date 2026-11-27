@@ -37,13 +37,13 @@ const CHOUKA_SECTIONS = {
       { step: `प्रथम चरण: स्थान की शुद्धि व लिपाई`, desc: `पवित्र स्थल की सफाई करके शुद्ध जल व गंगाजल से छिड़काव करें। पावन भूमि को शुद्ध मिट्टी या गोबर से लीपकर आसन स्थापित करें।` },
       { step: `द्वितीय चरण: चौका का रेखांकन (आकृतियाँ)`, desc: `शुद्ध आटे या चावल के चूर्ण से सुंदर चौका रेखांकन करें। चौका के चारों कोनों पर स्वस्तिक, ॐ व कमल की पंखुड़ियाँ बनाएँ।` },
       { step: `तृतीय चरण: श्रीफल, पान व कसैली स्थापना`, desc: `चौका के केंद्र में श्रीफल (नारियल), नौ पान के पत्ते, नौ सुपारियाँ और पावन नैवेद्य श्रद्धापूर्वक अर्पित करें।` },
-      { step: `चतुर्थ चरण: दीप प्रज्वलन व आरती गान`, desc: `कपूर व शुद्ध घृत (घी) का दीपक प्रज्वलित कर कबीर साहेब की आरती, मंगलाचरण और अमर वाणी का सस्वर पाठ करें।` },
+      { step: `चतुर्थ चरण: दीप प्रज्वलन व आरती गान`, desc: `कपूर व शुद्ध घृत (घी) का दीपक प्रज्वलित कर सतगुरु कबीर साहेब की आरती, मंगलाचरण और अमर वाणी का सस्वर पाठ करें।` },
       { step: `पंचम चरण: प्रसाद वितरण व बंदगी`, desc: `आरती पूर्ण होने पर सत्यनाम का सुमिरन करते हुए भक्तों में प्रसाद वितरित करें और साहेब बंदगी साहेब कहें।` }
     ]
   },
   pb: {
     title: `ਚੌਕਾ-ਆਰਤੀ: ਪਾਵਨ ਵਿਧੀ ਅਤੇ ਸਾਤਵਿਕ ਨਿਯਮ`,
-    subtitle: `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਅਤੇ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਦੁਆਰਾ ਚਲਾਏ ਗਏ 'ਸਾਤਵਿਕ ਯੱਗ' ਦਾ ਰੂਹਾਨੀ ਪਰਿਚਯ।`,
+    subtitle: `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਤੇ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਦੁਆਰਾ ਚਲਾਏ ਗਏ 'ਸਾਤਵਿਕ ਯੱਗ' ਦਾ ਰੂਹਾਨੀ ਪਰਿਚਯ।`,
     introTitle: `੧. ਚੌਕਾ-ਆਰਤੀ ਦਾ ਰੂਹਾਨੀ ਮਹੱਤਵ`,
     introDesc: `ਕਬੀਰ ਪੰਥ ਵਿੱਚ ਚੌਕਾ-ਆਰਤੀ ਨੂੰ 'ਸਾਤਵਿਕ ਯੱਗ' ਕਿਹਾ ਗਿਆ ਹੈ। ਇਹ ਅਨੁਸ਼ਠਾਨ ਜੀਵ ਦੇ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਨੂੰ ਕੱਟ ਕੇ ਸਤਿਲੋਕ ਦਾ ਦੁਆਰ ਖੋਲ੍ਹਦਾ ਹੈ। ਇਹ ਸਤਿਗੁਰੂ ਪ੍ਰਤੀ ਅਨੰਤ ਸ਼ਰਧਾ ਅਤੇ ਸਤਯਨਾਮ ਦੇ ਸਿਮਰਨ ਦਾ ਸਾਧਨ ਹੈ।`,
     materialsTitle: `੨. ਲੋੜੀਂਦੀ ਪਵਿੱਤਰ ਸਮੱਗਰੀ ਸੂਚੀ`,
@@ -67,7 +67,7 @@ const CHOUKA_SECTIONS = {
       { step: `ਪਹਿਲਾ ਪੜਾਅ: ਸਥਾਨ ਦੀ ਸ਼ੁੱਧੀ`, desc: `ਪਵਿੱਤਰ ਸਥਾਨ ਦੀ ਸਫ਼ਾਈ ਕਰਕੇ ਸ਼ੁੱਧ ਜਲ ਤੇ ਗੰਗਾਜਲ ਦਾ ਛਿੜਕਾਅ ਕਰੋ।` },
       { step: `ਦੂਜਾ ਪੜਾਅ: ਚੌਕਾ ਦਾ ਰੇਖਾਂਕਣ`, desc: `ਸ਼ੁੱਧ ਆਟੇ ਜਾਂ ਚੌਲਾਂ ਦੇ ਚੂਰਨ ਨਾਲ ਚੌਕਾ ਬਣਾਓ ਅਤੇ ਚਾਰਾਂ ਕੋਨਿਆਂ ਤੇ ਸਵਸਤਿਕ ਬਣਾਓ।` },
       { step: `ਤੀਜਾ ਪੜਾਅ: ਨਾਰੀਅਲ, ਪਾਨ ਤੇ ਸੁਪਾਰੀ ਸਥਾਪਨਾ`, desc: `ਚੌਕਾ ਦੇ ਮੱਧ ਵਿੱਚ ਸ਼੍ਰੀਫਲ, ਨੌਂ ਪਾਨ ਦੇ ਪੱਤੇ ਅਤੇ ਸੁਪਾਰੀਆਂ ਭੇਟ ਕਰੋ।` },
-      { step: `ਚੌਥਾ ਪੜਾਅ: ਦੀਪ ਪ੍ਰਜਵਲਵਣ ਤੇ ਆਰਤੀ ਗਾਨ`, desc: `ਕਪੂਰ ਤੇ ਸ਼ੁੱਧ ਘਿਓ ਦਾ ਦੀਲਾ ਜਗਾ ਕੇ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਆਰਤੀ ਅਤੇ ਮੰਗਲਾਚਰਣ ਕਰੋ।` },
+      { step: `ਚੌਥਾ ਪੜਾਅ: ਦੀਪ ਪ੍ਰਜਵਲਵਣ ਤੇ ਆਰਤੀ ਗਾਨ`, desc: `ਕਪੂਰ ਤੇ ਸ਼ੁੱਧ ਘਿਓ ਦਾ ਦੀਲਾ ਜਗਾ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਆਰਤੀ ਅਤੇ ਮੰਗਲਾਚਰਣ ਕਰੋ।` },
       { step: `ਪੰਜਵਾਂ ਪੜਾਅ: ਪ੍ਰਸ਼ਾਦ ਵੰਡਣਾ ਤੇ ਬੰਦਗੀ`, desc: `ਆਰਤੀ ਸੰਪੂਰਨ ਹੋਣ ਤੇ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਦਿਆਂ ਪ੍ਰਸ਼ਾਦ ਵੰਡੋ ਅਤੇ ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ਕહો।` }
     ]
   },
@@ -97,7 +97,7 @@ const CHOUKA_SECTIONS = {
       { step: `Step 1: Purification of Place`, desc: `Clean the sacred space thoroughly and sprinkle Gangajal. Prepare the sacred sanctum floor cleanly.` },
       { step: `Step 2: Floor Design & Rangoli (Chouka)`, desc: `Draw the sacred Chouka using pure flour or rice powder. Draw Swastika and lotus petals at the four corners.` },
       { step: `Step 3: Offering Coconut, Betel & Supari`, desc: `Place the Shrifal (coconut), 9 betel leaves, 9 areca nuts, and offerings at the center of the Chouka.` },
-      { step: `Step 4: Lighting Lamp & Aarti Recitation`, desc: `Light the camphor and pure ghee lamp, reciting the Aarti of Kabir Saheb and Manglacharan.` },
+      { step: `Step 4: Lighting Lamp & Aarti Recitation`, desc: `Light the camphor and pure ghee lamp, reciting the Aarti of Satguru Kabir Saheb and Manglacharan.` },
       { step: `Step 5: Prasad Distribution & Bandagi`, desc: `After completion of Aarti, distribute sacred coconut prasad while chanting Satyanaam and saying Saheb Bandagi Saheb.` }
     ]
   }
@@ -111,8 +111,8 @@ const PANTHIC_QA_LIST = [
       en: `Q1: What is the spiritual significance of Chouka Aarti in Kabir Panth?`
     },
     a: {
-      hi: `चौका आरती सतगुरु कबीर साहेब जी द्वारा स्थापित परम पावन अनुष्ठान है। यह जीव के चौरासी के चक्र को काट कर सत्यलोक और आत्म-कल्याण का द्वार खोलता है।`,
-      pb: `ਚੌਕਾ ਆਰਤੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੁਆਰਾ ਸਥਾਪਿਤ ਪਰਮ ਪਵਿੱਤਰ ਅਨੁਸ਼ਠਾਨ ਹੈ ਜੋ ਜੀਵ ਦੇ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਨੂੰ ਕੱਟ ਕੇ ਸਤਿਲੋਕ ਦਾ ਦੁਆਰ ਖੋਲ੍ਹਦਾ ਹੈ।`,
+      hi: `चौका आरती सतगुरु कबीर साहेब द्वारा स्थापित परम पावन अनुष्ठान है। यह जीव के चौरासी के चक्र को काट कर सत्यलोक और आत्म-कल्याण का द्वार खोलता है।`,
+      pb: `ਚੌਕਾ ਆਰਤੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੁਆਰਾ ਸਥਾਪਿਤ ਪਰਮ ਪਵਿੱਤਰ ਅਨੁਸ਼ਠਾਨ ਹੈ ਜੋ ਜੀਵ ਦੇ ਚੌਰਾਸੀ ਦੇ ਗੇੜ ਨੂੰ ਕੱਟ ਕੇ ਸਤਿਲੋਕ ਦਾ ਦੁਆਰ ਖੋਲ੍ਹਦਾ ਹੈ।`,
       en: `Chouka Aarti is the supreme sacred ritual established by Satguru Kabir Saheb. It dissolves past karmas and grants direct refuge in Satyaloka.`
     }
   },
@@ -147,7 +147,7 @@ const PANTHIC_QA_LIST = [
       en: `Q4: What is the supreme importance of Kabir Dharamnagar Damakheda Dham?`
     },
     a: {
-      hi: `दामाखेड़ा धाम धनी धर्मदास साहेब जी की वंश बयालीस आचार्यों की मूल पवित्र गद्दी है। यहाँ कबीर साहेब की मूल मर्यादा, चौका आरती एवं अखंड ज्योति की अविरल धारा प्रवाहित है।`,
+      hi: `दामाखेड़ा धाम धनी धर्मदास साहेब जी की वंश बयालीस आचार्यों की मूल पवित्र गद्दी है। यहाँ सतगुरु कबीर साहेब की मूल मर्यादा, चौका आरती एवं अखंड ज्योति की अविरल धारा प्रवाहित है।`,
       pb: `ਦਾਮਾਖੇੜਾ ਧਾਮ ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਦੀ ਵੰਸ਼ ਬਿਆਲੀਸ ਆਚਾਰੀਆ ਜੀ ਦੀ ਮੁੱਖ ਗੱਦੀ ਹੈ ਜਿੱਥੇ ਅਮਰ ਸੰਦੇਸ਼ ਤੇ ਚੌਕਾ ਆਰਤੀ ਦੀ ਅਖੰਡ ਧਾਰਾ ਹੈ।`,
       en: `Damakheda Dham is the sacred supreme seat of Dhani Dharmdas Saheb Vansh 42 Acharyas, preserving authentic Kabir Panth traditions and eternal light.`
     }
@@ -181,8 +181,8 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '16px',
-          zIndex: 120,
+          padding: '48px 14px',
+          zIndex: 100,
         }}
         className="fixed inset-0 bg-black/85 backdrop-blur-md"
         onClick={onClose}
@@ -191,8 +191,16 @@ export const ChoukaAartiVidhiModal: React.FC<ChoukaAartiVidhiModalProps> = ({ is
           initial={{ opacity: 0, scale: 0.94, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 12 }}
-          style={{ maxHeight: '82vh' }}
-          className="relative w-full max-w-3xl rounded-3xl border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
+          style={{
+            width: '100%',
+            maxWidth: '480px',
+            maxHeight: 'calc(100dvh - 104px)',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+            borderRadius: '16px',
+          }}
+          className="relative border-2 border-amber-400 dark:border-amber-700 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}

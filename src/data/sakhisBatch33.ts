@@ -19,8 +19,8 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Guru kijai jani ke, pani pijai chhani. Bina bichare guru kare, parai chaurasi khani.',
     bhavarth: {
-      hi: 'सद्गुरु कबीरजी शिष्य को सचेत करते हुए कहते हैं कि जिस प्रकार गंदगी को दूर करने के लिए, छानकर शुद्ध पानी पीना चाहिए। उसी प्रकार अच्छी तरह जान-समझकर, कथनी-करनी की जांच-परख करके ही गुरु बनाना चाहिए। बिना सोचे-विचार जो गुरु बना लेता है, वह फिर संसार-रूपी चौरासी (आवागमन) में जा पड़ता है, अर्थात बिना विचारे बनाया गुरु यदि स्वयं ही अज्ञानी, छली-प्रपंची हो, तो वह उस शिष्य को ज्ञानोपदेश देकर उसका उद्धार कैसे कर सकता है ?',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਜੀ ਚੇਲੇ ਨੂੰ ਸੁਚੇਤ ਕਰਦੇ ਹੋਏ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਸ ਤਰ੍ਹਾਂ ਗੰਦਗੀ ਨੂੰ ਦੂਰ ਕਰਨ ਲਈ ਪਾਣੀ ਨੂੰ ਛਾਣ ਕੇ ਪੀਣਾ ਚਾਹੀਦਾ ਹੈ, ਉਸੇ ਤਰ੍ਹਾਂ ਚੰਗੀ ਤਰ੍ਹਾਂ ਪਰਖ ਕੇ ਹੀ ਗੁਰੂ ਬਣਾਉਣਾ ਚਾਹੀਦਾ ਹੈ। ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਗੁਰੂ ਬਣਾਉਣ ਵਾਲਾ ਜਨਮ-ਮਰਨ ਦੇ ਗੇੜ ਵਿੱਚ ਫਸ ਜਾਂਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब शिष्य को सचेत करते हुए कहते हैं कि जिस प्रकार गंदगी को दूर करने के लिए, छानकर शुद्ध पानी पीना चाहिए। उसी प्रकार अच्छी तरह जान-समझकर, कथनी-करनी की जांच-परख करके ही गुरु बनाना चाहिए। बिना सोचे-विचार जो गुरु बना लेता है, वह फिर संसार-रूपी चौरासी (आवागमन) में जा पड़ता है, अर्थात बिना विचारे बनाया गुरु यदि स्वयं ही अज्ञानी, छली-प्रपंची हो, तो वह उस शिष्य को ज्ञानोपदेश देकर उसका उद्धार कैसे कर सकता है ?',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਲੇ ਨੂੰ ਸੁਚੇਤ ਕਰਦੇ ਹੋਏ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਸ ਤਰ੍ਹਾਂ ਗੰਦਗੀ ਨੂੰ ਦੂਰ ਕਰਨ ਲਈ ਪਾਣੀ ਨੂੰ ਛਾਣ ਕੇ ਪੀਣਾ ਚਾਹੀਦਾ ਹੈ, ਉਸੇ ਤਰ੍ਹਾਂ ਚੰਗੀ ਤਰ੍ਹਾਂ ਪਰਖ ਕੇ ਹੀ ਗੁਰੂ ਬਣਾਉਣਾ ਚਾਹੀਦਾ ਹੈ। ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਗੁਰੂ ਬਣਾਉਣ ਵਾਲਾ ਜਨਮ-ਮਰਨ ਦੇ ਗੇੜ ਵਿੱਚ ਫਸ ਜਾਂਦਾ ਹੈ।',
       en: 'Satguru Kabir Saheb advises that just as one should filter water before drinking to remove impurities, one must carefully examine and understand a Master’s character and wisdom before accepting them. One who accepts a Guru without reflection may fall back into the cycle of 8.4 million births (reincarnation). If the Master is ignorant or deceitful, how can they liberate the disciple?',
     },
     wordMeanings: {
@@ -253,7 +253,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Swami sevak hoy ke, man hi mein mili jay. Chaturaai reejhai nahin, rahie man ke many.',
     bhavarth: {
-      hi: 'सद्गुरु और सचरित्र शिष्य को स्वामी और सेवक की भांति हृदय-से-हृदय और मन-से-मन मिलाकर रहना चाहिए। चतुराई से एक-दूसरे को प्रसन्न नहीं करना चाहिए, क्योंकि यह स्थिति दोनों के लिए ही दुःखदायी होगी, अतः दोनों को एक-दूसरे के मन व विचारों के साथ जुड़कर रहना चाहिए।',
+      hi: 'सतगुरु और सचरित्र शिष्य को स्वामी और सेवक की भांति हृदय-से-हृदय और मन-से-मन मिलाकर रहना चाहिए। चतुराई से एक-दूसरे को प्रसन्न नहीं करना चाहिए, क्योंकि यह स्थिति दोनों के लिए ही दुःखदायी होगी, अतः दोनों को एक-दूसरे के मन व विचारों के साथ जुड़कर रहना चाहिए।',
       pb: 'ਗੁਰੂ ਤੇ ਚੇਲੇ ਨੂੰ ਮਾਲਕ ਤੇ ਸੇਵਕ ਵਾਂਗ ਦਿਲ ਨਾਲ ਦਿਲ ਮਿਲਾ ਕੇ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ। ਚਲਾਕੀਆਂ ਨਾਲ ਕੋਈ ਖੁਸ਼ ਨਹੀਂ ਹੁੰਦਾ, ਇਸ ਲਈ ਸੱਚਾਈ ਨਾਲ ਜੁੜੇ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ।',
       en: 'The Satguru and the sincere disciple should live like a Master and a servant, merged heart-to-heart and mind-to-mind. One should not try to please the other through cleverness or superficial tricks, as this leads to suffering for both. Instead, they should remain united in their inner thoughts and true spirit.',
     },
@@ -279,7 +279,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       en: 'Do I resort to cleverness to impress my Master, or is my connection from the depths of the heart?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु आपकी चालाकी नहीं, आपकी सरलता देखते हैं। दिखावे की भक्ति के बजाय अपने मन को गुरु के वचनों में लय करें।',
+      hi: 'सतगुरु आपकी चालाकी नहीं, आपकी सरलता देखते हैं। दिखावे की भक्ति के बजाय अपने मन को गुरु के वचनों में लय करें।',
       pb: 'ਚਲਾਕੀਆਂ ਛੱਡ ਕੇ ਸਰਲ ਬਣੋ।',
       en: 'The Satguru looks for your simplicity, not your cunning. Instead of showy devotion, merge your mind into the Master’s words.',
     },
@@ -303,7 +303,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'सद्गुरु बाह्य चतुराई से नहीं, अपितु हृदय की सरलता और सच्चे भाव से प्रसन्न होते हैं।',
+          hi: 'सतगुरु बाह्य चतुराई से नहीं, अपितु हृदय की सरलता और सच्चे भाव से प्रसन्न होते हैं।',
           pb: 'ਗੁਰੂ ਚਲਾਕੀ ਤੋਂ ਖੁਸ਼ ਨਹੀਂ ਹੁੰਦੇ।',
           en: 'The Satguru is not pleased by outward cleverness but by simplicity of heart and true devotion.',
         },
@@ -329,7 +329,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Jin dhoondha tin paaiyaan, gahirai paani paith. Main bapura budne dara, raha kinaare baith.',
     bhavarth: {
-      hi: 'जिन्हें पानी में डूबने का भय है, वे समुद्र में मोती पाने के लिए छलांग नहीं लगा पाते, परंतु जिन्हें मोती पाने की लगन है, वे निर्भीक होकर छलांग लगाते हैं और सद्गुरु के ज्ञान रूपी रत्न को पा जाते हैं। मैं ऐसा ही बावला-सा डरा हुआ किनारे बैठा रहा और कुछ भी नहीं पा सका। सद्गुरु और उनके ज्ञान को पाने के लिए, अपने आपको पूरा दांव पर लगाना पड़ता है।',
+      hi: 'जिन्हें पानी में डूबने का भय है, वे समुद्र में मोती पाने के लिए छलांग नहीं लगा पाते, परंतु जिन्हें मोती पाने की लगन है, वे निर्भीक होकर छलांग लगाते हैं और सतगुरु के ज्ञान रूपी रत्न को पा जाते हैं। मैं ऐसा ही बावला-सा डरा हुआ किनारे बैठा रहा और कुछ भी नहीं पा सका। सतगुरु और उनके ज्ञान को पाने के लिए, अपने आपको पूरा दांव पर लगाना पड़ता है।',
       pb: 'ਜਿਨ੍ਹਾਂ ਨੇ ਡੂੰਘੇ ਪਾਣੀ ਵਿੱਚ ਉਤਰ ਕੇ ਖੋਜ ਕੀਤੀ, ਉਨ੍ਹਾਂ ਨੇ ਮੋਤੀ ਪਾ ਲਏ। ਪਰ ਮੈਂ ਡੁੱਬਣ ਤੋਂ ਡਰਦਾ ਕਿਨਾਰੇ ਤੇ ਬੈਠਾ ਰਿਹਾ ਤੇ ਕੁਝ ਨਾ ਪਾ ਸਕਿਆ। ਰੱਬ ਨੂੰ ਪਾਉਣ ਲਈ ਹਿੰਮਤ ਚਾਹੀਦੀ ਹੈ।',
       en: 'Those who fear drowning can never dive deep to find pearls. But those with a burning desire for truth dive fearlessly and find the jewels of the Satguru’s wisdom. I remained foolishly afraid and sat on the shore, gaining nothing. To find the Satguru and His knowledge, one must be willing to risk everything, including the ego.',
     },
@@ -407,7 +407,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Aisa koi na mila, ham ko de upadesh. Bhavsaagar mein doobte, kar gahi kadhe kesh.',
     bhavarth: {
-      hi: 'इस संसार में हमें ऐसा कोई नहीं मिला, जो भूले-भटकों को सदुपदेश दे, अर्थात जो ज्ञानोपदेश से हमारे मोह-अज्ञान को दूर कर सके और इस भव-सागर में हम डूबते हुओं को जो केश पकड़कर बचा सके। इस प्रकार जीवों पर दया करने वाले सद्गुरु बहुत ही कम मिलते हैं।',
+      hi: 'इस संसार में हमें ऐसा कोई नहीं मिला, जो भूले-भटकों को सदुपदेश दे, अर्थात जो ज्ञानोपदेश से हमारे मोह-अज्ञान को दूर कर सके और इस भव-सागर में हम डूबते हुओं को जो केश पकड़कर बचा सके। इस प्रकार जीवों पर दया करने वाले सतगुरु बहुत ही कम मिलते हैं।',
       pb: 'ਇਸ ਦੁਨੀਆਂ ਵਿੱਚ ਸਾਨੂੰ ਕੋਈ ਅਜਿਹਾ ਨਹੀਂ ਮਿਲਿਆ ਜੋ ਸਾਨੂੰ ਸਹੀ ਰਸਤਾ ਦਿਖਾਵੇ ਅਤੇ ਇਸ ਸੰਸਾਰ ਸਾਗਰ ਵਿੱਚ ਡੁੱਬਦਿਆਂ ਨੂੰ ਬਚਾ ਲਵੇ। ਸੱਚੇ ਗੁਰੂ ਬਹੁਤ ਮੁਸ਼ਕਿਲ ਨਾਲ ਮਿਲਦੇ ਹਨ।',
       en: 'In this world, I have found no one who can give truly liberating advice to those who are lost—one who can dispel our ignorance through wisdom and pull us out of this ocean of existence by our very hair as we drown. Such compassionate Masters are extremely rare.',
     },
@@ -435,7 +435,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       en: 'Do I realize the importance of a true guide who can pull me out of the mire of ignorance?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु की खोज व्याकुलता से करें। जब शिष्य तैयार होता है, तो गुरु स्वयं उसे ढूंढ लेते हैं और संकट से उबारते हैं।',
+      hi: 'सतगुरु की खोज व्याकुलता से करें। जब शिष्य तैयार होता है, तो गुरु स्वयं उसे ढूंढ लेते हैं और संकट से उबारते हैं।',
       pb: 'ਸੱਚੇ ਗੁਰੂ ਦੀ ਭਾਲ ਕਰੋ।',
       en: 'Seek a true Master with intense longing. When the disciple is ready, the Guru finds them and rescues them from crisis.',
     },
@@ -453,7 +453,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
           en: 'Who can rescue one drowning in the ocean of existence?',
         },
         options: {
-          hi: ['धन-दौलत', 'सच्चा ज्ञान देने वाला सद्गुरु', 'सांसारिक मित्र', 'केवल तर्क-वितर्क'],
+          hi: ['धन-दौलत', 'सच्चा ज्ञान देने वाला सतगुरु', 'सांसारिक मित्र', 'केवल तर्क-वितर्क'],
           pb: ['ਪੈਸਾ', 'ਸੱਚਾ ਗੁਰੂ', 'ਦੋਸਤ', 'ਬਹਿਸ'],
           en: ['Wealth', 'A true Satguru who grants wisdom', 'Worldly friends', 'Mere intellectual debate'],
         },
@@ -485,7 +485,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Jaisa dhoondhat mein phiroon, taisa mila na koy. Tatveta tirangun rahit, nirgun son rat hoy.',
     bhavarth: {
-      hi: 'इस संसार में जैसा सद्गुरु मैं ढूंढ़ता फिर रहा हूं, वैसा मुझे अभी तक कोई नहीं मिला। तत्त्ववेत्ता, आत्म ज्ञानी, तीनों गुणों (सत-रज-तम) से रहित अर्थात गुणातीत एवं निर्गुण-प्रेमी साधक महापुरुष मुझे नहीं मिला, जो मुझे दिव्य ज्ञान प्रदान कर मेरे मन के अज्ञान रूपी अंधकार को नष्ट कर सके।',
+      hi: 'इस संसार में जैसा सतगुरु मैं ढूंढ़ता फिर रहा हूं, वैसा मुझे अभी तक कोई नहीं मिला। तत्त्ववेत्ता, आत्म ज्ञानी, तीनों गुणों (सत-रज-तम) से रहित अर्थात गुणातीत एवं निर्गुण-प्रेमी साधक महापुरुष मुझे नहीं मिला, जो मुझे दिव्य ज्ञान प्रदान कर मेरे मन के अज्ञान रूपी अंधकार को नष्ट कर सके।',
       pb: 'ਮੈਂ ਜਿਸ ਤਰ੍ਹਾਂ ਦੇ ਸੱਚੇ ਗੁਰੂ ਦੀ ਭਾਲ ਕਰ ਰਿਹਾ ਹਾਂ, ਉਹ ਅਜੇ ਤੱਕ ਨਹੀਂ ਮਿਲਿਆ। ਅਜਿਹਾ ਗੁਰੂ ਜੋ ਤੱਤ ਗਿਆਨੀ ਹੋਵੇ ਤੇ ਮਾਇਆ ਦੇ ਤਿੰਨਾਂ ਗੁਣਾਂ ਤੋਂ ਉੱਪਰ ਹੋਵੇ।',
       en: 'In this world, I have not yet found the kind of Satguru I am searching for—one who is a knower of the Essence (Tatveta), enlightened, free from the three gunas (Sattva, Rajas, Tamas), and deeply immersed in the Formless Divine (Nirgun). I seek a great soul who can grant me divine wisdom and destroy the darkness of ignorance in my mind.',
     },
@@ -527,9 +527,9 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       {
         id: 'q-b33-400',
         question: {
-          hi: 'कबीर साहेब किस प्रकार के गुरु की खोज में हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਕਿਸ ਤਰ੍ਹਾਂ ਦੇ ਗੁਰੂ ਦੀ ਭਾਲ ਵਿੱਚ ਹਨ?',
-          en: 'What kind of Guru is Kabir Saheb searching for?',
+          hi: 'सतगुरु कबीर साहेब किस प्रकार के गुरु की खोज में हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕਿਸ ਤਰ੍ਹਾਂ ਦੇ ਗੁਰੂ ਦੀ ਭਾਲ ਵਿੱਚ ਹਨ?',
+          en: 'What kind of Guru is Satguru Kabir Saheb searching for?',
         },
         options: {
           hi: ['जो बहुत विद्वान हो', 'जो तीन गुणों से रहित तत्ववेत्ता हो', 'जो बहुत समृद्ध हो', 'जो तीर्थों पर रहता हो'],
@@ -564,9 +564,9 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Shishya poojai guru aapna, guru pooje sab saadh. Kahain kabir guru sheesh ko, mat hai agam agadh.',
     bhavarth: {
-      hi: 'शिष्य अपने गुरु की श्रद्धापूर्वक वंदना करता है और गुरु स्नेह सहित सभी साधुओं की वंदना करते हैं। कबीरजी कहते है कि गुरु-शिष्य का संबंध इतना गहन और गंभीर है कि सर्व-साधारण की समझ में नहीं आ सकता। दोनों ही अपने अपने कर्तव्य पर आरुढ़ हैं।',
-      pb: 'ਚੇਲਾ ਆਪਣੇ ਗੁਰੂ ਦੀ ਪੂਜਾ ਕਰਦਾ ਹੈ ਤੇ ਗੁਰੂ ਸਾਰੇ ਸਾਧੂਆਂ ਦਾ ਸਤਿਕਾਰ ਕਰਦਾ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਤੇ ਚੇਲੇ ਦਾ ਰਿਸ਼ਤਾ ਬਹੁਤ ਡੂੰਘਾ ਹੈ ਜੋ ਹਰ ਕਿਸੇ ਦੀ ਸਮਝ ਵਿੱਚ ਨਹੀਂ ਆ ਸਕਦਾ।',
-      en: 'The disciple worships their Guru with devotion, and the Guru, in turn, honors all holy beings with love. Kabir Saheb says that the relationship between a Master and a disciple is so profound and mysterious that it is beyond common understanding. Both are steadfast in their respective duties.',
+      hi: 'शिष्य अपने गुरु की श्रद्धापूर्वक वंदना करता है और गुरु स्नेह सहित सभी साधुओं की वंदना करते हैं। सतगुरु कबीर साहेब कहते है कि गुरु-शिष्य का संबंध इतना गहन और गंभीर है कि सर्व-साधारण की समझ में नहीं आ सकता। दोनों ही अपने अपने कर्तव्य पर आरुढ़ हैं।',
+      pb: 'ਚੇਲਾ ਆਪਣੇ ਗੁਰੂ ਦੀ ਪੂਜਾ ਕਰਦਾ ਹੈ ਤੇ ਗੁਰੂ ਸਾਰੇ ਸਾਧੂਆਂ ਦਾ ਸਤਿਕਾਰ ਕਰਦਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਤੇ ਚੇਲੇ ਦਾ ਰਿਸ਼ਤਾ ਬਹੁਤ ਡੂੰਘਾ ਹੈ ਜੋ ਹਰ ਕਿਸੇ ਦੀ ਸਮਝ ਵਿੱਚ ਨਹੀਂ ਆ ਸਕਦਾ।',
+      en: 'The disciple worships their Guru with devotion, and the Guru, in turn, honors all holy beings with love. Satguru Kabir Saheb proclaims that the relationship between a Master and a disciple is so profound and mysterious that it is beyond common understanding. Both are steadfast in their respective duties.',
     },
     wordMeanings: {
       hi: [
@@ -694,9 +694,9 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'कबीर साहेब कहते हैं कि आत्मज्ञानी और शांत पुरुषों की संख्या बहुत ही कम है।',
+          hi: 'सतगुरु कबीर साहेब फरमाते हैं कि आत्मज्ञानी और शांत पुरुषों की संख्या बहुत ही कम है।',
           pb: 'ਸੱਚੇ ਇਨਸਾਨ ਘੱਟ ਮਿਲਦੇ ਹਨ।',
-          en: 'Kabir Saheb says that enlightened and peaceful souls are very few in number.',
+          en: 'Satguru Kabir Saheb proclaims that enlightened and peaceful souls are very few in number.',
         },
       },
     ],
@@ -746,7 +746,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       en: 'Am I sensitive toward others, or do I also cause more pain when hearing someone’s sorrow?',
     },
     practicalApplication: {
-      hi: 'संसार में अपनी गोपनीयता बनाए रखें। केवल अपने सद्गुरु के समक्ष ही अपने हृदय को खोलें, क्योंकि वे ही आपके कष्टों का सही समाधान कर सकते हैं।',
+      hi: 'संसार में अपनी गोपनीयता बनाए रखें। केवल अपने सतगुरु के समक्ष ही अपने हृदय को खोलें, क्योंकि वे ही आपके कष्टों का सही समाधान कर सकते हैं।',
       pb: 'ਆਪਣੀਆਂ ਗੱਲਾਂ ਸਿਰਫ ਗੁਰੂ ਨਾਲ ਸਾਂਝੀਆਂ ਕਰੋ।',
       en: 'Maintain your privacy in the world. Open your heart only before your Satguru, for only He can provide the true solution to your suffering.',
     },
@@ -790,13 +790,13 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       en: 'Discernment of Guru and Disciple (Guru Shishya Hera)',
     },
     text: {
-      hi: 'हिरदे ज्ञान न उपजै, मन परतीत न होय ।\nताको सदगुरु कहा करे, घनघसि कुल्हर न होय ॥',
+      hi: 'हिरदे ज्ञान न उपजै, मन परतीत न होय ।\nताको सतगुरु कहा करे, घनघसि कुल्हर न होय ॥',
       pb: 'ਹਿਰਦੇ ਗਿਆਨ ਨ ਉਪਜੈ, ਮਨ ਪਰਤੀਤ ਨ ਹੋਯ ।\nਤਾਕੋ ਸਦਗੁਰੁ ਕਹਾ ਕਰੇ, ਘਨਘਸਿ ਕੁਲ੍ਹਰ ਨ ਹੋਯ ॥',
-      en: 'Hirade gyan na upajai, man parteet na hoy |\nTaako sadguru kaha kare, ghanghasi kulhar na hoy ||',
+      en: 'Hirade gyan na upajai, man parteet na hoy |\nTaako Satguru kaha kare, ghanghasi kulhar na hoy ||',
     },
-    transliteration: 'Hirade gyan na upajai, man parteet na hoy. Taako sadguru kaha kare, ghanghasi kulhar na hoy.',
+    transliteration: 'Hirade gyan na upajai, man parteet na hoy. Taako Satguru kaha kare, ghanghasi kulhar na hoy.',
     bhavarth: {
-      hi: 'जिसके हृदय में ज्ञान ही उत्पन्न नहीं होता और मन में श्रद्धा तथा विश्वास भी नहीं है, ऐसे अज्ञानी लगनरहित व्यक्ति के लिए सद्गुरु भी क्या करें? अर्थात उसके लिए कोई उपाय नहीं है, जैसे घन को घिसकर भला कहीं कुल्हाड़ी भी बनती है।',
+      hi: 'जिसके हृदय में ज्ञान ही उत्पन्न नहीं होता और मन में श्रद्धा तथा विश्वास भी नहीं है, ऐसे अज्ञानी लगनरहित व्यक्ति के लिए सतगुरु भी क्या करें? अर्थात उसके लिए कोई उपाय नहीं है, जैसे घन को घिसकर भला कहीं कुल्हाड़ी भी बनती है।',
       pb: 'ਜਿਸਦੇ ਦਿਲ ਵਿੱਚ ਗਿਆਨ ਪੈਦਾ ਨਹੀਂ ਹੁੰਦਾ ਤੇ ਨਾ ਹੀ ਗੁਰੂ ਤੇ ਭਰੋਸਾ ਹੈ, ਅਜਿਹੇ ਇਨਸਾਨ ਲਈ ਗੁਰੂ ਵੀ ਕੁਝ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਜਿਵੇਂ ਹਥੌੜੇ (ਘਣ) ਨੂੰ ਘਿਸਾ ਕੇ ਕੁਲ੍ਹਾੜੀ ਨਹੀਂ ਬਣਾਈ ਜਾ ਸਕਦੀ।',
       en: 'For an ignorant person who lacks spiritual longing, in whose heart wisdom does not arise, and who has no faith or trust, even a Satguru can do nothing. There is no remedy for such a state—just as you cannot make an axe by grinding a heavy iron sledgehammer (ghana).',
     },
@@ -838,8 +838,8 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       {
         id: 'q-b33-404',
         question: {
-          hi: 'सद्गुरु भी किसके लिए कुछ नहीं कर पाते?',
-          pb: 'ਸਦਗੁਰੂ ਵੀ ਕਿਸਦੇ ਲਈ ਕੁਝ ਨਹੀਂ ਕਰ ਸਕਦੇ?',
+          hi: 'सतगुरु भी किसके लिए कुछ नहीं कर पाते?',
+          pb: 'ਸਤਿਗੁਰੂ ਵੀ ਕਿਸਦੇ ਲਈ ਕੁਝ ਨਹੀਂ ਕਰ ਸਕਦੇ?',
           en: 'For whom can even a Satguru do nothing?',
         },
         options: {
@@ -875,7 +875,7 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
     },
     transliteration: 'Sarbas sees chadhaiye, tan krit seva saar. Bhookh pyaas sahe taadana, guru ke surati nihaar.',
     bhavarth: {
-      hi: 'सद्गुरु के श्री चरणों में सर्वस्व समर्पण कर, शीश तक भेंट करने से नहीं हिचकना चाहिए। भूखा-प्यासा रहते हुए और उनकी ताड़ना सहते हुए उनके श्रीमुख को निहारते रहना चाहिए। सद्गुरु की ताड़ना भी जिज्ञासु शिष्य के सुधार के लिए ही होती है।',
+      hi: 'सतगुरु के श्री चरणों में सर्वस्व समर्पण कर, शीश तक भेंट करने से नहीं हिचकना चाहिए। भूखा-प्यासा रहते हुए और उनकी ताड़ना सहते हुए उनके श्रीमुख को निहारते रहना चाहिए। सतगुरु की ताड़ना भी जिज्ञासु शिष्य के सुधार के लिए ही होती है।',
       pb: 'ਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪਣਾ ਸਭ ਕੁਝ ਤੇ ਸਿਰ ਵੀ ਕੁਰਬਾਨ ਕਰ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ। ਭੁੱਖ, ਪਿਆਸ ਤੇ ਗੁਰੂ ਦੀਆਂ ਝਿੜਕਾਂ (ਤਾੜਨਾ) ਨੂੰ ਸਹਿ ਕੇ ਵੀ ਗੁਰੂ ਨਾਲ ਜੁੜੇ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ, ਕਿਉਂਕਿ ਉਨ੍ਹਾਂ ਦੀ ਤਾੜਨਾ ਵਿੱਚ ਵੀ ਸਾਡਾ ਭਲਾ ਹੈ।',
       en: 'One should not hesitate to surrender everything, even one’s head (life/ego), at the holy feet of the Satguru. One should endure hunger, thirst, and even the Master’s rebukes while remaining focused on His divine presence. Remember, the Satguru’s discipline is only for the improvement and growth of the seeking disciple.',
     },
@@ -918,8 +918,8 @@ export const SAKHIS_BATCH_33: Sakhi[] = [
       {
         id: 'q-b33-405',
         question: {
-          hi: 'सद्गुरु की ताड़ना (डांट) का क्या उद्देश्य होता है?',
-          pb: 'ਸਦਗੁਰੂ ਦੀ ਤਾੜਨਾ ਦਾ ਕੀ ਮਕਸਦ ਹੁੰਦਾ ਹੈ?',
+          hi: 'सतगुरु की ताड़ना (डांट) का क्या उद्देश्य होता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਦੀ ਤਾੜਨਾ ਦਾ ਕੀ ਮਕਸਦ ਹੁੰਦਾ ਹੈ?',
           en: 'What is the purpose of the Satguru’s discipline (rebuke)?',
         },
         options: {

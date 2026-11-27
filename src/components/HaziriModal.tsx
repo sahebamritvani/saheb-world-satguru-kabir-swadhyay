@@ -40,7 +40,7 @@ export const HaziriModal: React.FC<HaziriModalProps> = ({
   const handleShare = () => {
     sacredHaptics.lightTap();
     const shareText = language === 'pb'
-      ? `🙏 ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ! ਅੱਜ ਦੀ ਸਾਧਨਾ ਹਾਜ਼ਰੀ ਦਰਜ ਹੋ ਗਈ ਹੈ।\n🔥 ਅਖੰਡ ਸ੍ਰੀਕ: ${haziriState.currentStreak} ਦਿਨ\n📅 ਤਾਰੀਖ: ${todayFormatted}\nਬੰਦੀਛੋੜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕੀ ਜੈ!`
+      ? `🙏 ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ! ਅੱਜ ਦੀ ਸਾਧਨਾ ਹਾਜ਼ਰੀ ਦਰਜ ਹੋ ਗਈ ਹੈ।\n🔥 ਅਖੰਡ ਸ੍ਰੀਕ: ${haziriState.currentStreak} ਦਿਨ\n📅 ਤਾਰੀਖ: ${todayFormatted}\nਬੰਦੀਛੋੜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕੀ ਜੈ!`
       : language === 'en'
       ? `🙏 Saheb Bandagi Saheb! Today's Sadhana Check-in completed.\n🔥 Streak: ${haziriState.currentStreak} Days\n📅 Date: ${todayFormatted}\nGlory to Satguru Kabir Saheb!`
       : `🙏 साहेब बंदगी साहेब! आज की पावन साधना हाजिरी सफलतापूर्वक दर्ज हो गई है।\n🔥 अखंड स्ट्रीक: ${haziriState.currentStreak} दिन\n📅 दिनांक: ${todayFormatted}\nजय बन्दीछोड़ सतगुरु कबीर साहेब!`;
@@ -62,34 +62,44 @@ export const HaziriModal: React.FC<HaziriModalProps> = ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '16px',
-        zIndex: 120,
+        padding: '48px 14px',
+        zIndex: 100,
       }}
       className="fixed inset-0 bg-black/85 backdrop-blur-md animate-fadeIn"
       onClick={onClose}
     >
       <div
         style={{
-          maxHeight: '82vh',
-          overflowY: 'auto',
+          width: '100%',
+          maxWidth: '480px',
+          maxHeight: 'calc(100dvh - 104px)',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
         }}
-        className="relative w-full max-w-md rounded-3xl shadow-2xl border-2 border-amber-500/60 bg-gradient-to-b from-amber-950 via-neutral-900 to-neutral-950 text-white px-4 py-3.5 sm:p-5 text-center overscroll-contain"
+        className="relative rounded-3xl shadow-2xl border-2 border-amber-500/60 bg-gradient-to-b from-amber-950 via-neutral-900 to-neutral-950 text-white text-center"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <button
-          type="button"
-          onClick={() => {
-            sacredHaptics.lightTap();
-            onClose();
-          }}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-amber-500/30 flex items-center justify-center text-amber-200 transition cursor-pointer z-10"
-          aria-label="Close"
-        >
-          <X className="w-4 h-4" />
-        </button>
+        {/* Top Pinned Header with Close button */}
+        <div className="p-3 border-b border-amber-500/20 flex items-center justify-between shrink-0 relative bg-black/20">
+          <span className="text-xs font-serif font-bold text-amber-300">
+            {language === 'pb' ? 'ਨਿਤਨੇਮ ਹਾਜ਼िरी' : language === 'en' ? 'Daily Attendance' : 'नित्य साधना हाज़िरी'}
+          </span>
+          <button
+            type="button"
+            onClick={() => {
+              sacredHaptics.lightTap();
+              onClose();
+            }}
+            className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-amber-500/30 flex items-center justify-center text-amber-200 transition cursor-pointer"
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
 
-        <div className="space-y-2.5 sm:space-y-3">
+        {/* Scrollable Middle Content */}
+        <div className="overflow-y-auto flex-1 p-4 sm:p-5 space-y-2.5 sm:space-y-3">
           {/* Sacred Icon with Compact Top Spacing */}
           <div className="relative mx-auto w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 p-0.5 shadow-xl flex items-center justify-center">
             <div className="w-full h-full rounded-full bg-neutral-950 flex items-center justify-center">
@@ -113,7 +123,7 @@ export const HaziriModal: React.FC<HaziriModalProps> = ({
             <p className="text-[11px] sm:text-xs text-amber-200/80 font-serif leading-snug">
               {isTodayMarked
                 ? (language === 'pb'
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਤੁਹਾਡਾ ਨਿੱਤ ਨਿਯਮ ਸਵੀਕਾਰ ਹੋਇਆ।'
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਤੁਹਾਡਾ ਨਿੱਤ ਨਿਯਮ ਸਵੀਕਾਰ ਹੋਇਆ।'
                   : language === 'en'
                   ? 'Your daily spiritual contemplation has been recorded in the presence of Satguru Kabir Saheb.'
                   : 'सतगुरु कबीर साहेब के पावन चरणों में आपका नित्य स्वाध्याय व सिमरन नियम स्वीकार हुआ।')
@@ -162,49 +172,50 @@ export const HaziriModal: React.FC<HaziriModalProps> = ({
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col gap-2 pt-0.5">
-            {!isTodayMarked && onMarkNitnemHaziri && (
-              <button
-                type="button"
-                onClick={() => {
-                  sacredHaptics.petalShower();
-                  onMarkNitnemHaziri();
-                }}
-                className="w-full py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition active:scale-95 cursor-pointer"
-              >
-                <CheckCircle2 className="w-4 h-4 text-emerald-100 shrink-0" />
-                <span>
-                  {language === 'pb'
-                    ? 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ ✓'
-                    : language === 'en'
-                    ? 'Mark Today\'s Nitnem Haziri ✓'
-                    : 'आज की हाज़िरी दर्ज करें (Mark Attendance) ✓'}
-                </span>
-              </button>
-            )}
-            <div className="flex flex-row gap-2">
-              <button
-                type="button"
-                onClick={() => {
-                  sacredHaptics.petalShower();
-                  onTriggerFlowerShower();
-                }}
-                className="flex-1 py-2.5 px-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-serif font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-lg transition active:scale-95 cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 text-amber-200 animate-spin-slow shrink-0" />
-                <span>{language === 'pb' ? 'ਫੁੱਲ ਵਰਖਾ ਕਰੋ' : language === 'en' ? 'Flower Shower' : 'पुष्प वर्षा करें'}</span>
-              </button>
+        </div>
 
-              <button
-                type="button"
-                onClick={handleShare}
-                className="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-amber-400/40 text-amber-200 font-serif font-bold text-xs flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer shrink-0"
-              >
-                <Share2 className="w-3.5 h-3.5 shrink-0" />
-                <span>{language === 'pb' ? 'ਸਾਂਝਾ ਕਰੋ' : language === 'en' ? 'Share' : 'साझा करें'}</span>
-              </button>
-            </div>
+        {/* Pinned Footer Action Buttons */}
+        <div className="p-4 border-t border-amber-500/20 bg-neutral-950/90 flex flex-col gap-2 shrink-0">
+          {!isTodayMarked && onMarkNitnemHaziri && (
+            <button
+              type="button"
+              onClick={() => {
+                sacredHaptics.petalShower();
+                onMarkNitnemHaziri();
+              }}
+              className="w-full py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition active:scale-95 cursor-pointer"
+            >
+              <CheckCircle2 className="w-4 h-4 text-emerald-100 shrink-0" />
+              <span>
+                {language === 'pb'
+                  ? 'ਅੱਜ ਦੀ ਨਿਤਨੇਮ ਹਾਜ਼ਰੀ ਦਰਜ ਕਰੋ ✓'
+                  : language === 'en'
+                  ? 'Mark Today\'s Nitnem Haziri ✓'
+                  : 'आज की हाज़िरी दर्ज करें (Mark Attendance) ✓'}
+              </span>
+            </button>
+          )}
+          <div className="flex flex-row gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                sacredHaptics.petalShower();
+                onTriggerFlowerShower();
+              }}
+              className="flex-1 py-2.5 px-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-serif font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-lg transition active:scale-95 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-amber-200 animate-spin-slow shrink-0" />
+              <span>{language === 'pb' ? 'ਫੁੱਲ ਵਰਖਾ ਕਰੋ' : language === 'en' ? 'Flower Shower' : 'पुष्प वर्षा करें'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleShare}
+              className="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-amber-400/40 text-amber-200 font-serif font-bold text-xs flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer shrink-0"
+            >
+              <Share2 className="w-3.5 h-3.5 shrink-0" />
+              <span>{language === 'pb' ? 'ਸਾਂਝਾ ਕਰੋ' : language === 'en' ? 'Share' : 'साझा करें'}</span>
+            </button>
           </div>
         </div>
       </div>

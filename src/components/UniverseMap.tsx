@@ -62,7 +62,7 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
       en: 'The Ultimate Timeless Apex of All Creation & Existence',
     },
     nature: {
-      hi: 'जहाँ न कोई नाम है, न रूप, न रेखा, न द्वैत। यह सकल चेतना का मूल उद्गम स्थल है। परम पिता अनामी पुरुष (सतपुरुष कबीर साहेब का सर्वोच्च अनादि स्वरूप) यहाँ अखण्ड सच्चिदानंद में विराजमान हैं।',
+      hi: 'जहाँ न कोई नाम है, न रूप, न रेखा, न द्वैत। यह सकल चेतना का मूल उद्गम स्थल है। परम पिता अनामी पुरुष (सतपुरुष सतगुरु कबीर साहेब का सर्वोच्च अनादि स्वरूप) यहाँ अखण्ड सच्चिदानंद में विराजमान हैं।',
       pb: 'ਜਿੱਥੇ ਨਾ ਨਾਮ ਹੈ ਨਾ ਰੂਪ, ਸਿਰਫ਼ ਅਖੰਡ ਨਿਰਮਲ ਚੇਤਨਾ ਅਤੇ ਅਕਹ ਸੁੱਖ ਦਾ ਮਹਾਂ-ਸਾਗਰ ਹੈ।',
       en: 'Beyond name, form, attribute, or duality. The boundless ocean of unconditioned light and silence.',
     },
@@ -92,23 +92,23 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
     stageNumber: 2,
     realmType: 'satyaloka',
     title: {
-      hi: 'सत्यलोक / सचखंड (सतपुरुष कबीर साहेब धाम)',
-      pb: 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ (ਸਤਿਪੁਰੁਸ਼ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)',
-      en: 'Satlok / Satyaloka (Sachkhand - Satpurush Kabir Saheb)',
+      hi: 'सत्यलोक / सचखंड (सतपुरुष सतगुरु कबीर साहेब धाम)',
+      pb: 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ (ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)',
+      en: 'Satlok / Satyaloka (Sachkhand - Satpurush Satguru Kabir Saheb)',
     },
     region: {
       hi: 'अमरलोक का मुख्य शाश्वत धाम — जहाँ एक-एक हंस का तेज करोड़ों सूर्यों से अधिक है',
       pb: 'ਅਮਰਲੋਕ ਦਾ ਮੁੱਖ ਪ੍ਰਵੇਸ਼ ਧਾਮ — ਜਿੱਥੇ ਹੰਸ ਦਾ ਤੇਜ ਕ੍ਰੋੜਾਂ ਸੂਰਜਾਂ ਤੋਂ ਵੱਧ ਹੈ',
-      en: 'The Eternal Abode of Satpurush Kabir Saheb',
+      en: 'The Eternal Abode of Satpurush Satguru Kabir Saheb',
     },
     nature: {
-      hi: 'जहाँ न जन्म है, न मृत्यु, न काल, न माया, न कर्म। चारों ओर अमृत के मानसरोवर, कल्पवृक्ष और प्रेम का साम्राज्य है। सतपुरुष कबीर साहेब साक्षात विराजमान हैं।',
-      pb: 'ਜਿੱਥੇ ਨਾ ਮੌਤ ਹੈ, ਨਾ ਮਾਇਆ, ਨਾ ਕਾਲ। ਸਤਿਪੁਰੁਸ਼ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਬਿਰਾਜਮਾਨ ਹਨ।',
+      hi: 'जहाँ न जन्म है, न मृत्यु, न काल, न माया, न कर्म। चारों ओर अमृत के मानसरोवर, कल्पवृक्ष और प्रेम का साम्राज्य है। सतपुरुष सतगुरु कबीर साहेब साक्षात विराजमान हैं।',
+      pb: 'ਜਿੱਥੇ ਨਾ ਮੌਤ ਹੈ, ਨਾ ਮਾਇਆ, ਨਾ ਕਾਲ। ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਬਿਰਾਜਮਾਨ ਹਨ।',
       en: 'Free from birth, death, decay, and karma. Filled with wishing trees and lakes of nectar.',
     },
     kabirSagarVerse: {
-      hi: 'कोटिन रवि जाके तेज प्रकाशा, हंसा करहिं अमृत का पासा। सत्य कबीर साहेब सुखदाई, अमर लोक में ज्योत जगाई॥',
-      pb: 'ਕੋਟਿਨ ਰਵਿ ਜਾਕੇ ਤੇਜ ਪ੍ਰਕਾਸ਼ਾ, ਹੰਸਾ ਕਰਹਿਂ ਅੰਮ੍ਰਿਤ ਕਾ ਪਾਸਾ। ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ, ਅਮਰ ਲੋਕ ਮੇਂ ਜਯੋਤ ਜਗਾਈ॥',
+      hi: 'कोटिन रवि जाके तेज प्रकाशा, हंसा करहिं अमृत का पासा। सत्य सतगुरु कबीर साहेब सुखदाई, अमर लोक में ज्योत जगाई॥',
+      pb: 'ਕੋਟਿਨ ਰਵਿ ਜਾਕੇ ਤੇਜ ਪ੍ਰਕਾਸ਼ਾ, ਹੰਸਾ ਕਰਹਿਂ ਅੰਮ੍ਰਿਤ ਕਾ ਪਾਸਾ। ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ, ਅਮਰ ਲੋਕ ਮੇਂ ਜਯੋਤ ਜਗਾਈ॥',
       en: 'Millions of suns are surpassed by its radiance; the Hansas dwell in nectar.',
     },
     soulExperience: {
@@ -187,8 +187,8 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
       en: 'The sacred abode of Agam Purush, traversed exclusively through Sar Shabad.',
     },
     kabirSagarVerse: {
-      hi: 'अगम देश की अजब कहानी, जो जाने सोई पहचाने। कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
-      pb: 'ਅਗਮ ਦੇਸ਼ ਕੀ ਅਜਬ ਕਹਾਨੀ, ਜੋ ਜਾਨੇ ਸੋਈ ਪਹਿਚਾਨੇ। ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥',
+      hi: 'अगम देश की अजब कहानी, जो जाने सोई पहचाने। सतगुरु कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
+      pb: 'ਅਗਮ ਦੇਸ਼ ਕੀ ਅਜਬ ਕਹਾਨੀ, ਜੋ ਜਾਨੇ ਸੋਈ ਪਹਿਚਾਨੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥',
       en: 'Wondrous is the realm of Agam; Kabir reveals this mystery and removes all suffering.',
     },
     soulExperience: {

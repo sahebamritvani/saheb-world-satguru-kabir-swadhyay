@@ -84,7 +84,7 @@ export const DailySadhanaQuizModal: React.FC<DailySadhanaQuizModalProps> = ({
   const [savedToDiary, setSavedToDiary] = useState<boolean>(false);
   const [shuffleSeed, setShuffleSeed] = useState<number>(0);
 
-  // Generate 5 randomized, verse-specific Sadhana questions tailored to the active Sakhi
+  // Generate 2-3 randomized, verse-specific Sadhana questions tailored to the active Sakhi
   const quizQuestions: QuestionItem[] = useMemo(() => {
     const generated = buildFiveDimensionQuiz(sakhi, language);
     return generated.map((q) => {

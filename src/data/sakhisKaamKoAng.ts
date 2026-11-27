@@ -73,7 +73,7 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Sahkaami deepak dasa, seekhe tel nivaas. Kabeer heera sant jan, sahjai sada prakaash.',
     bhavarth: {
-      hi: 'काम-वासना के वशीभूत होकर विषयों का कुसंग करने वाले मनुष्य की दशा इस प्रकार के जलते हुए दीपक के समान हो जाती है, जो अपने आधारभूत तेल को भी चूस लेता है, जिससे वह आलोकित होता है। कबीरजी कहते हैं कि संत जन हीरे के समान होते हैं, जिनका सदा ही निज स्वाभाविक प्रकाश होता है, अतः वे अपने ज्ञान-प्रकाश से जिज्ञासु जनों के हृदय को प्रकाशित करते हैं।',
+      hi: 'काम-वासना के वशीभूत होकर विषयों का कुसंग करने वाले मनुष्य की दशा इस प्रकार के जलते हुए दीपक के समान हो जाती है, जो अपने आधारभूत तेल को भी चूस लेता है, जिससे वह आलोकित होता है। सतगुरु कबीर साहेब फरमाते हैं कि संत जन हीरे के समान होते हैं, जिनका सदा ही निज स्वाभाविक प्रकाश होता है, अतः वे अपने ज्ञान-प्रकाश से जिज्ञासु जनों के हृदय को प्रकाशित करते हैं।',
       pb: devanagariToGurmukhi('ਕਾਮੀ ਪੁਰਸ਼ ਦੀ ਹਾਲਤ ਦੀਵੇ ਵਰਗੀ ਹੈ ਜੋ ਚਾਨਣ ਦੇਣ ਵਾਲੇ ਆਪਣੇ ਹੀ ਤੇਲ ਨੂੰ ਸੁਕਾ ਲੈਂਦਾ ਹੈ। ਪਰ ਸੰਤ ਜਨ ਹੀਰੇ ਵਰਗੇ ਹਨ ਜੋ ਸਹਿਜ ਸੁਭਾਅ ਸਦਾ ਆਤਮਿਕ ਗਿਆਨ ਦਾ ਚਾਨਣ ਵੰਡਦੇ ਹਨ।'),
       en: 'The condition of a lustful person is like a flickering oil lamp that consumes its own vital fuel to stay lit. But holy Saints are like self-luminous diamonds, radiating pure, effortless spiritual light eternally without depletion.'
     },
@@ -127,7 +127,7 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaam krodh mad lobh ki, jab lag ghat mein khaan. Kabeer moorakh pandita, donon ek samaan.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि काम, क्रोध, लोभ, मद एवं मोह आदि दुर्गुणों से, जब तक हृदय भरा हुआ है, तब तक मूर्ख और पंडित दोनों एक समान हैं, अर्थात जिसने भक्ति-ज्ञान से इन दुर्गुणों को अपने हृदय से दूर कर दिया, वही पंडित है और जिसने इसका त्याग नहीं किया, वह मूर्ख है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि काम, क्रोध, लोभ, मद एवं मोह आदि दुर्गुणों से, जब तक हृदय भरा हुआ है, तब तक मूर्ख और पंडित दोनों एक समान हैं, अर्थात जिसने भक्ति-ज्ञान से इन दुर्गुणों को अपने हृदय से दूर कर दिया, वही पंडित है और जिसने इसका त्याग नहीं किया, वह मूर्ख है।',
       pb: devanagariToGurmukhi('ਜਦੋਂ ਤੱਕ ਹਿਰਦੇ ਵਿੱਚ ਕਾਮ, ਕ੍ਰੋਧ, ਹੰਕਾਰ ਅਤੇ ਲੋਭ ਦੀ ਖਾਣ ਭਰੀ ਹੋਈ ਹੈ, ਤਦ ਤੱਕ ਮੂਰਖ ਅਤੇ ਪੰਡਿਤ ਦੋਵੇਂ ਬਰਾਬਰ ਹਨ। ਜੋ ਵਿਕਾਰਾਂ ਨੂੰ ਮਿਟਾਉਂਦਾ ਹੈ ਉਹੀ ਅਸਲੀ ਪੰਡਿਤ ਹੈ।'),
       en: 'As long as the vessel of the heart is a mine of lust, wrath, pride, and greed, the illiterate fool and the learned scholar stand on the exact same plane. Only one who purifies the heart through spiritual wisdom is truly learned.'
     },
@@ -452,7 +452,7 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaam kahar aswaar hai, sabko maarai dhaay. Koi ek harijan oobra, jaake naam sahaay.',
     bhavarth: {
-      hi: 'यह काम-वासना रूपी प्रबल राक्षस सबके सिर पर सवार है और सबको दौड़-दौड़कर, भरमाकर मार रहा है। इससे तो सद्गुरु का कोई प्रिय-भक्त ही बच पाता है, जिसे सद्गुरु के नाम-ज्ञान का सहारा प्राप्त हो, अर्थात जिसने श्रद्धा-भाव से भक्ति-साधना की हो।',
+      hi: 'यह काम-वासना रूपी प्रबल राक्षस सबके सिर पर सवार है और सबको दौड़-दौड़कर, भरमाकर मार रहा है। इससे तो सतगुरु का कोई प्रिय-भक्त ही बच पाता है, जिसे सतगुरु के नाम-ज्ञान का सहारा प्राप्त हो, अर्थात जिसने श्रद्धा-भाव से भक्ति-साधना की हो।',
       pb: devanagariToGurmukhi('ਕਾਮ ਦਾ ਕਹਿਰ ਸਭ ਉੱਤੇ ਸਵਾਰ ਹੈ ਅਤੇ ਇਹ ਸਭ ਨੂੰ ਦੌੜ-ਦੌੜ ਕੇ ਮਾਰ ਰਿਹਾ ਹੈ। ਇਸ ਤੋਂ ਸਿਰਫ਼ ਉਹੀ ਸੱਚਾ ਭਗਤ ਬਚਦਾ ਹੈ ਜਿਸਦਾ ਸਹਾਰਾ ਸਤਿਗੁਰੂ ਦਾ ਨਾਮ ਹੈ।'),
       en: 'Lust rides furiously like a wrathful horseman, hunting down and destroying mortals everywhere. Only a rare devotee of the Divine escapes its wrath—one who is anchored in the impenetrable fortress of the Satguru’s Holy Name.'
     },
@@ -476,7 +476,7 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरे पास काम के भयंकर आक्रमण से बचने के लिए सद्गुरु के नाम का सच्चा कवच है?',
+      hi: 'क्या मेरे पास काम के भयंकर आक्रमण से बचने के लिए सतगुरु के नाम का सच्चा कवच है?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰੇ ਕੋਲ ਕਾਮ ਦੇ ਹਮਲੇ ਤੋਂ ਬਚਣ ਲਈ ਨਾਮ ਦਾ ਸਹਾਰਾ ਹੈ?'),
       en: 'Do I possess the invincible shield of the Satguru’s Holy Name to withstand the fierce assault of lust?'
     },
@@ -509,9 +509,9 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bhag bhogai bhag oopjai, bhagte bachai na koy. Kahain Kabeer bhagte bachai, bhakt kahaavai soy.',
     bhavarth: {
-      hi: 'जिस प्रकार काम-वासना को भोगा जाता है, उसी प्रकार फिर काम-वासना द्वारा जन्म धारण करना पड़ता है। इस विषय-भोग के जन्म-मरण से कोई बच नहीं पाता। कबीरजी कहते हैं कि जो विषय-वासना से बचता है, वही श्रेष्ठ परम भक्त कहलाता है।',
-      pb: devanagariToGurmukhi('ਜਿਵੇਂ ਕਾਮ-ਵਾਸਨਾ ਭੋਗੀ ਜਾਂਦੀ ਹੈ, ਉਸੇ ਤਰ੍ਹਾਂ ਫਿਰ ਜਨਮ-ਮਰਨ ਦੇ ਚੱਕਰ ਵਿੱਚ ਪੈਣਾ ਪੈਂਦਾ ਹੈ। ਇਸ ਤੋਂ ਕੋਈ ਬਚ ਨਹੀਂ ਸਕਦਾ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੋ ਇਸ ਵਾਸਨਾ ਤੋਂ ਬਚ ਜਾਵੇ, ਉਹੀ ਅਸਲੀ ਭਗਤ ਹੈ।'),
-      en: 'Indulging in carnal desires perpetuates the endless wheel of rebirth through the womb. None can escape the cycle of transmigration through sensory indulgence. Kabir declares that only one who transcends carnal passion is truly worthy of being called a true devotee (Bhakt).'
+      hi: 'जिस प्रकार काम-वासना को भोगा जाता है, उसी प्रकार फिर काम-वासना द्वारा जन्म धारण करना पड़ता है। इस विषय-भोग के जन्म-मरण से कोई बच नहीं पाता। सतगुरु कबीर साहेब फरमाते हैं कि जो विषय-वासना से बचता है, वही श्रेष्ठ परम भक्त कहलाता है।',
+      pb: devanagariToGurmukhi('ਜਿਵੇਂ ਕਾਮ-ਵਾਸਨਾ ਭੋਗੀ ਜਾਂਦੀ ਹੈ, ਉਸੇ ਤਰ੍ਹਾਂ ਫਿਰ ਜਨਮ-ਮਰਨ ਦੇ ਚੱਕਰ ਵਿੱਚ ਪੈਣਾ ਪੈਂਦਾ ਹੈ। ਇਸ ਤੋਂ ਕੋਈ ਬਚ ਨਹੀਂ ਸਕਦਾ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਇਸ ਵਾਸਨਾ ਤੋਂ ਬਚ ਜਾਵੇ, ਉਹੀ ਅਸਲੀ ਭਗਤ ਹੈ।'),
+      en: 'Indulging in carnal desires perpetuates the endless wheel of rebirth through the womb. None can escape the cycle of transmigration through sensory indulgence. Satguru Kabir Saheb proclaims that only one who transcends carnal passion is truly worthy of being called a true devotee (Bhakt).'
     },
     wordMeanings: {
       hi: [
@@ -564,7 +564,7 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jahan kaam tahan naam nahin, tahan naam nahin kaam. Donon kabahu na milai, ravi rajni ik thaam.',
     bhavarth: {
-      hi: 'जहां काम का वास है अथवा काम की कल्पना है, वहां सद्गुरु का नाम-ज्ञान नहीं हो सकता और जहां सदगुरु-स्वामी का नाम-ज्ञान नहीं, वहीं पर काम का वास है। जिस प्रकार सूर्य और रात्रि एक स्थान पर नहीं रह सकते, उसी प्रकार ये दोनों भी एक साथ नहीं रह सकते।',
+      hi: 'जहां काम का वास है अथवा काम की कल्पना है, वहां सतगुरु का नाम-ज्ञान नहीं हो सकता और जहां सतगुरु-स्वामी का नाम-ज्ञान नहीं, वहीं पर काम का वास है। जिस प्रकार सूर्य और रात्रि एक स्थान पर नहीं रह सकते, उसी प्रकार ये दोनों भी एक साथ नहीं रह सकते।',
       pb: devanagariToGurmukhi('ਜਿੱਥੇ ਕਾਮ-ਵਾਸਨਾ ਹੈ ਉੱਥੇ ਸਤਿਗੁਰੂ ਦਾ ਨਾਮ ਨਹੀਂ ਹੋ ਸਕਦਾ ਅਤੇ ਜਿੱਥੇ ਨਾਮ ਹੈ ਉੱਥੇ ਕਾਮ ਨਹੀਂ ਰਹਿ ਸਕਦਾ। ਜਿਵੇਂ ਸੂਰਜ ਅਤੇ ਰਾਤ ਕਦੇ ਇੱਕ ਥਾਂ ਇਕੱਠੇ ਨਹੀਂ ਹੋ ਸਕਦੇ, ਇਵੇਂ ਇਹ ਦੋਵੇਂ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ।'),
       en: 'Where lust resides, the divine Holy Name cannot dwell; and where the Holy Name shines, lust ceases to exist. Just as the blazing sun and pitch-black night can never coexist in the same place, so too can passion and sacred devotion never share the same heart.'
     },
@@ -836,15 +836,15 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaami ka guru kaamini, lobhi ka guru daam. Kabeer ka guru sant hai, santan ka guru Raam.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि काम-वासना में डूबा व्यक्ति कुमार्गी होता है। उसके ऊपर प्रतिक्षण विषयासक्ति छाई रहती है, अतः उसका सब कुछ उसकी भोग्या कामिनी ही होती है। लोभी व्यक्ति प्रतिक्षण धन में ही ध्यान लगाए रहता है, अतः उसका स्वामी धन-संपत्ति (माया) ही है। सामान्य जनों को सदुपदेश यानी ज्ञान प्रदान करने वाले संत ही उनके गुरु हैं तथा भक्ति-ज्ञान से पूर्ण संतों का सद्गुरु अंतर्यामी अविनाशी परमात्मा है, जिसमें वे सदा स्थिर रहते हैं।',
-      pb: devanagariToGurmukhi('ਕਾਮੀ ਦਾ ਗੁਰੂ ਕਾਮਣੀ (ਇਸਤਰੀ/ਭੋਗ) ਹੈ, ਲੋਭੀ ਦਾ ਗੁਰੂ ਧਨ-ਦੌਲਤ ਹੈ। ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਾਡਾ ਗੁਰੂ ਪੂਰਾ ਸੰਤ ਹੈ ਅਤੇ ਸੰਤਾਂ ਦਾ ਗੁਰੂ ਅਕਾਲ ਪੁਰਖ ਪ੍ਰਮਾਤਮਾ ਹੈ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि काम-वासना में डूबा व्यक्ति कुमार्गी होता है। उसके ऊपर प्रतिक्षण विषयासक्ति छाई रहती है, अतः उसका सब कुछ उसकी भोग्या कामिनी ही होती है। लोभी व्यक्ति प्रतिक्षण धन में ही ध्यान लगाए रहता है, अतः उसका स्वामी धन-संपत्ति (माया) ही है। सामान्य जनों को सदुपदेश यानी ज्ञान प्रदान करने वाले संत ही उनके गुरु हैं तथा भक्ति-ज्ञान से पूर्ण संतों का सतगुरु अंतर्यामी अविनाशी परमात्मा है, जिसमें वे सदा स्थिर रहते हैं।',
+      pb: devanagariToGurmukhi('ਕਾਮੀ ਦਾ ਗੁਰੂ ਕਾਮਣੀ (ਇਸਤਰੀ/ਭੋਗ) ਹੈ, ਲੋਭੀ ਦਾ ਗੁਰੂ ਧਨ-ਦੌਲਤ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਡਾ ਗੁਰੂ ਪੂਰਾ ਸੰਤ ਹੈ ਅਤੇ ਸੰਤਾਂ ਦਾ ਗੁਰੂ ਅਕਾਲ ਪੁਰਖ ਪ੍ਰਮਾਤਮਾ ਹੈ।'),
       en: 'For the lustful, their guiding master is carnal infatuation; for the greedy, their deity is money. But Kabir proclaims: my master is the enlightened Saint, and the supreme Master of the Saints is the eternal, omnipresent Lord (Raam).'
     },
     wordMeanings: {
       hi: [
         { word: 'कामिनी (Kaaminee)', meaning: 'काम-वासना का विषय, भोग्या स्त्री / आकर्षण' },
         { word: 'दाम (Daam)', meaning: 'धन, दौलत, रुपया-पैसा' },
-        { word: 'कबीर का गुरु सन्त (Kabeer kaa guru sant)', meaning: 'कबीर के गुरु आत्म-ज्ञानी सत्य-सद्गुरु हैं' },
+        { word: 'कबीर का गुरु सन्त (Kabeer kaa guru sant)', meaning: 'कबीर के गुरु आत्म-ज्ञानी सत्य-सतगुरु हैं' },
         { word: 'संतन का गुरु राम (Santan kaa guru Raam)', meaning: 'संतों के आराध्य अंतर्यामी पूर्ण ब्रह्म परमात्मा हैं' }
       ],
       pb: [
@@ -860,7 +860,7 @@ export const SAKHIS_KAAM_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'मेरा वास्तविक गुरु कौन है—काम, धन या फिर सत्य-सद्गुरु?',
+      hi: 'मेरा वास्तविक गुरु कौन है—काम, धन या फिर सत्य-सतगुरु?',
       pb: devanagariToGurmukhi('ਮੇਰਾ ਅਸਲੀ ਗੁਰੂ ਕੌਣ ਹੈ—ਕਾਮ, ਧਨ ਜਾਂ ਪੂਰਾ ਸਤਿਗੁਰੂ?'),
       en: 'Who truly governs my mind—carnal passion, wealth, or the enlightened True Master?'
     },

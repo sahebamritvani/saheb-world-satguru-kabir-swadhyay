@@ -40,7 +40,7 @@ export const ULATVASI_BATCH_111_TO_120: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'दशम द्वार में आत्म-ज्योति दर्शन', pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਜੋਤ ਦਰਸ਼ਨ', en: 'Vision of Divine Light in the Tenth Gate' },
       deepMeaning: {
-        hi: 'कबीर साहेब शरीर के भीतर के शून्य महल (दशम द्वार) की बात कर रहे हैं। इस आंतरिक महल को टिकने के लिए भौतिक मिट्टी-पत्थर की आवश्यकता नहीं। जब ध्यान यहाँ ठहरता है, तो आत्मा का अखंड प्रकाश दिखता है और सब दुख मिट जाते हैं।',
+        hi: 'सतगुरु कबीर साहेब शरीर के भीतर के शून्य महल (दशम द्वार) की बात कर रहे हैं। इस आंतरिक महल को टिकने के लिए भौतिक मिट्टी-पत्थर की आवश्यकता नहीं। जब ध्यान यहाँ ठहरता है, तो आत्मा का अखंड प्रकाश दिखता है और सब दुख मिट जाते हैं।',
         pb: 'ਦਸਮ ਦੁਆਰ ਦੇ ਸੁੰਨ ਮਹਿਲ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦੀ ਜੋਤ ਚਮਕਦੀ ਹੈ ਜਿਸ ਨਾਲ ਸਾਰੇ ਦੁੱਖ ਮਿਟਦੇ ਹਨ।',
         en: 'The Tenth Gate Palace requires no material pillars; abiding in this realm reveals the uncreated Light that dispels all suffering.'
       },
@@ -164,7 +164,7 @@ export const ULATVASI_BATCH_111_TO_120: UlatvasiQuestion[] = [
     realmTitle: { hi: 'कौतूहल (Curiosity)', pb: '<ctrl42>ਕੌਤਕ (Curiosity)', en: 'Curiosity' },
     title: { hi: '114. बछड़े ने शेर को डराया', pb: '114. ਵੱਛੇ ਨੇ ਸ਼ੇਰ ਨੂੰ ਡਰਾਇਆ', en: '114. Calf Frightening the Lion' },
     verse: {
-      hi: '"बछरू की एक हूक सुनि, सिंह भागि गयो दूर। कहै कबीर सुनो भाई संतो, साहिब मिला हजूर॥"',
+      hi: '"बछरू की एक हूक सुनि, सिंह भागि गयो दूर। कहै कबीर सुनो भाई संतो, साहेब मिला हजूर॥"',
       pb: '"ਬਛਰੂ ਕੀ ਇਕ ਹੂਕ ਸੁਨਿ, ਸਿੰਘ ਭਾਗਿ ਗਯੋ ਦੂਰ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਸਾਹੇਬ ਮਿਲਾ ਹਜੂਰ॥"',
       en: '"Hearing just one cry of the tender calf, fierce lion ran far away. Says Kabir listen saints, Saheb is met right in front."'
     },
@@ -411,7 +411,7 @@ export const ULATVASI_BATCH_111_TO_120: UlatvasiQuestion[] = [
       kabirPhilosophy: {
         hi: 'सत्यनाम का ज्ञान ही माया को साधक की अनुचरी बनाता है।',
         pb: 'ਨਾਮ ਨਾਲ ਮਾਇਆ ਦਾਸੀ ਬਣਦੀ ਹੈ।',
-        en: 'Satnam realization turns Maya into a humble helper.'
+        en: 'Satyanaam realization turns Maya into a humble helper.'
       },
       parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
@@ -456,7 +456,7 @@ export const ULATVASI_BATCH_111_TO_120: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'आत्मा व निराकार परमात्मा का महा-मिलन', pb: 'ਆਤਮਾ ਦਾ ਨਿਰਾਕਾਰ ਨਾਲ ਮਿਲਣ', en: 'Mystic Dissolution of Soul into Formless Divine' },
       deepMeaning: {
-        hi: 'कबीर साहेब आत्मा का परमात्मा से होने वाले महा-मिलन (मोक्ष) की बात कर रहे हैं। सांसारिक विवाह में देह दूल्हा-दुल्हन होते हैं, परंतु परमात्मा निराकार है, इसलिए वहाँ कोई भौतिक दूल्हा नहीं। आत्मा विलीन होती है तो अंतर में अनहद मंगल गान गूँजता है।',
+        hi: 'सतगुरु कबीर साहेब आत्मा का परमात्मा से होने वाले महा-मिलन (मोक्ष) की बात कर रहे हैं। सांसारिक विवाह में देह दूल्हा-दुल्हन होते हैं, परंतु परमात्मा निराकार है, इसलिए वहाँ कोई भौतिक दूल्हा नहीं। आत्मा विलीन होती है तो अंतर में अनहद मंगल गान गूँजता है।',
         pb: 'ਪ੍ਰਮਾਤਮਾ ਨਿਰਾਕਾਰ ਹੈ। ਆਤਮਾ ਜਦੋਂ ਉਸ ਵਿੱਚ ਸਮਾਉਂਦੀ ਹੈ, ਤਾਂ ਅੰਦਰ ਅਨਹਦ ਮੰਗਲ ਗੀਤ ਗੂੰਜਦੇ ਹਨ।',
         en: 'Worldly weddings require physical bodies, but Liberation is the Soul merging into Formless Divine, celebrated by inner Unstruck Hymns.'
       },

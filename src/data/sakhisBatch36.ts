@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_36: Sakhi[] = [
     },
     transliteration: 'Kabir soee din bhala, ja din saadhu milaay. Ank bhare bhari bhetiye, paap shareera jaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि वही दिन अच्छा होता है जिस दिन साधु मिल जाए, भले ही वह कोई भी दिन हो। संकोच त्यागकर उनसे भरपूर भक्ति-भाव से मिलना चाहिए। ऐसा करने से तन-मन के पाप (दोष) दूर हो जाते हैं।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਹੀ ਦਿਨ ਸਭ ਤੋਂ ਚੰਗਾ ਹੈ ਜਿਸ ਦਿਨ ਕੋਈ ਸੰਤ ਮਿਲ ਜਾਵੇ। ਪੂਰੀ ਸ਼ਰਧਾ ਨਾਲ ਉਨ੍ਹਾਂ ਨੂੰ ਮਿਲੋ, ਇਸ ਨਾਲ ਸਰੀਰ ਦੇ ਸਾਰੇ ਪਾਪ ਧੋਤੇ ਜਾਂਦੇ ਹਨ।',
-      en: 'Kabir Saheb says that the day one meets a saint is the only truly good day. One should meet them with full devotion and without hesitation. By doing so, the sins and defects of the body and mind are removed.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि वही दिन अच्छा होता है जिस दिन साधु मिल जाए, भले ही वह कोई भी दिन हो। संकोच त्यागकर उनसे भरपूर भक्ति-भाव से मिलना चाहिए। ऐसा करने से तन-मन के पाप (दोष) दूर हो जाते हैं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਹੀ ਦਿਨ ਸਭ ਤੋਂ ਚੰਗਾ ਹੈ ਜਿਸ ਦਿਨ ਕੋਈ ਸੰਤ ਮਿਲ ਜਾਵੇ। ਪੂਰੀ ਸ਼ਰਧਾ ਨਾਲ ਉਨ੍ਹਾਂ ਨੂੰ ਮਿਲੋ, ਇਸ ਨਾਲ ਸਰੀਰ ਦੇ ਸਾਰੇ ਪਾਪ ਧੋਤੇ ਜਾਂਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb proclaims that the day one meets a saint is the only truly good day. One should meet them with full devotion and without hesitation. By doing so, the sins and defects of the body and mind are removed.',
     },
     wordMeanings: {
       hi: [
@@ -63,7 +63,7 @@ export const SAKHIS_BATCH_36: Sakhi[] = [
         id: 'q-b36-453',
         question: {
           hi: 'कबीर के अनुसार सबसे अच्छा दिन कौन सा है?',
-          pb: 'ਕਬੀਰ ਜੀ ਮੁਤਾਬਕ ਸਭ ਤੋਂ ਚੰਗਾ ਦਿਨ ਕਿਹੜਾ ਹੈ?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮੁਤਾਬਕ ਸਭ ਤੋਂ ਚੰਗਾ ਦਿਨ ਕਿਹੜਾ ਹੈ?',
           en: 'According to Kabir, which is the best day?',
         },
         options: {

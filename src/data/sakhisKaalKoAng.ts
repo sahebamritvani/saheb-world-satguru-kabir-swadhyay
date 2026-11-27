@@ -343,15 +343,15 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Chaaki chali gupaal ki, sab jag peesa jhaar. Ruda shabd Kabir ka, daara paat ughaar.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि काल और माया की चक्की निरंतर चल रही है जिसने सारे संसार को पीस डाला है। परंतु सद्गुरु का सच्चा शब्द-ज्ञान एक ऐसा ठोस रोड़ा (पत्थर) है जो चक्की में पिसता नहीं, बल्कि चक्की के दोनों पाटों को ही उखाड़ फेंकता है। सद्गुरु का शब्द काल से सर्वथा मुक्त है।',
-      pb: devanagariToGurmukhi('ਕਾਲ-ਮਾਇਆ ਦੀ ਚੱਕੀ ਨੇ ਸਾਰਾ ਜਗਤ ਪੀਸ ਦਿੱਤਾ ਹੈ। ਪਰ ਕਬੀਰ ਸਾਹਿਬ ਦਾ ਸੱਚਾ ਸ਼ਬਦ ਅਜਿਹਾ ਪੱਕਾ ਰੋੜਾ ਹੈ ਜਿਸਨੇ ਚੱਕੀ ਦੇ ਪੁੜ ਹੀ ਉਖਾੜ ਦਿੱਤੇ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि काल और माया की चक्की निरंतर चल रही है जिसने सारे संसार को पीस डाला है। परंतु सतगुरु का सच्चा शब्द-ज्ञान एक ऐसा ठोस रोड़ा (पत्थर) है जो चक्की में पिसता नहीं, बल्कि चक्की के दोनों पाटों को ही उखाड़ फेंकता है। सतगुरु का शब्द काल से सर्वथा मुक्त है।',
+      pb: devanagariToGurmukhi('ਕਾਲ-ਮਾਇਆ ਦੀ ਚੱਕੀ ਨੇ ਸਾਰਾ ਜਗਤ ਪੀਸ ਦਿੱਤਾ ਹੈ। ਪਰ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਸੱਚਾ ਸ਼ਬਦ ਅਜਿਹਾ ਪੱਕਾ ਰੋੜਾ ਹੈ ਜਿਸਨੇ ਚੱਕੀ ਦੇ ਪੁੜ ਹੀ ਉਖਾੜ ਦਿੱਤੇ।'),
       en: 'The grinder of time and illusion spins ceaselessly, crushing the whole world into dust. But the solid stone of Kabir’s True Word cannot be crushed—it unhinges the very millstones of Kal.'
     },
     wordMeanings: {
       hi: [
         { word: 'चाकी (Chaaki)', meaning: 'काल और माया रूपी चक्की' },
         { word: 'पीसा झार (Peesa jhaar)', meaning: 'सबको पीसकर नष्ट कर देना' },
-        { word: 'रुड़ा शब्द (Ruda shabd)', meaning: 'सद्गुरु का ठोस, अविनाशी निर्णय-शब्द' },
+        { word: 'रुड़ा शब्द (Ruda shabd)', meaning: 'सतगुरु का ठोस, अविनाशी निर्णय-शब्द' },
         { word: 'पाट उघार (Paat ughaar)', meaning: 'चक्की के पाटों को उखाड़ देना / काल चक्र को तोड़ना' }
       ],
       pb: [
@@ -365,12 +365,12 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैंने काल की चक्की से बचने के लिए सद्गुरु के अविनाशी शब्द की ओट ली है?',
+      hi: 'क्या मैंने काल की चक्की से बचने के लिए सतगुरु के अविनाशी शब्द की ओट ली है?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਕਾਲ ਦੀ ਚੱਕੀ ਤੋਂ ਬਚਣ ਲਈ ਸਤਿਗੁਰੂ ਦੇ ਸ਼ਬਦ ਦੀ ਓਟ ਲਈ ਹੈ?'),
       en: 'Have I anchored myself in the unbreakable Word to escape the crushing mill of time?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के सार शब्द का निरंतर ध्यान कर जन्म-मरण के भय को समाप्त करें।',
+      hi: 'सतगुरु के सार शब्द का निरंतर ध्यान कर जन्म-मरण के भय को समाप्त करें।',
       pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਦੇ ਸਾਰ ਸ਼ਬਦ ਦਾ ਨਿਰੰਤਰ ਧਿਆਨ ਧਰੋ।'),
       en: 'Meditate steadfastly upon the liberating Word to dissolve the terror of mortality.'
     },
@@ -450,9 +450,9 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaal phirai sir oopare, haathon dhari kamaan. Kahain Kabir gahu naam ko, chhod sakal abhimaan.',
     bhavarth: {
-      hi: 'अपने हाथों में धनुष-बाण लिए काल हर समय तुम्हारे सिर पर मंडरा रहा है, वह कभी भी प्रहार कर सकता है। कबीरजी कहते हैं कि समस्त अहंकार और झूठी ममता को त्यागकर केवल सतगुरु के अविनाशी सत्यनाम को दृढ़ता से पकड़ लो।',
-      pb: devanagariToGurmukhi('ਕਾਲ ਹੱਥ ਵਿੱਚ ਕਮਾਣ ਫੜ ਕੇ ਸਿਰ ਉੱਤੇ ਮੰਡਰਾ ਰਿਹਾ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸਾਰਾ ਹੰਕਾਰ ਛੱਡ ਕੇ ਨਾਮ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜ ਲਵੋ।'),
-      en: 'Kal hovers over your head with bow drawn, ready to strike at any second. Kabir says: discard all worldly pride and seize the Master’s sacred Name with total devotion.'
+      hi: 'अपने हाथों में धनुष-बाण लिए काल हर समय तुम्हारे सिर पर मंडरा रहा है, वह कभी भी प्रहार कर सकता है। सतगुरु कबीर साहेब फरमाते हैं कि समस्त अहंकार और झूठी ममता को त्यागकर केवल सतगुरु के अविनाशी सत्यनाम को दृढ़ता से पकड़ लो।',
+      pb: devanagariToGurmukhi('ਕਾਲ ਹੱਥ ਵਿੱਚ ਕਮਾਣ ਫੜ ਕੇ ਸਿਰ ਉੱਤੇ ਮੰਡਰਾ ਰਿਹਾ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਰਾ ਹੰਕਾਰ ਛੱਡ ਕੇ ਨਾਮ ਨੂੰ ਦ੍ਰਿੜ੍ਹਤਾ ਨਾਲ ਫੜ ਲਵੋ।'),
+      en: 'Kal hovers over your head with bow drawn, ready to strike at any second. Satguru Kabir Saheb proclaims: discard all worldly pride and seize the Master’s sacred Name with total devotion.'
     },
     wordMeanings: {
       hi: [
@@ -554,9 +554,9 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir tuk tuk chonghta, pal pal gayi vihaay. Jiv janjaale padi raha, diya damaama aay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह जीव टुकुर-टुकुर देखता रहा, सोच-विचार और भ्रम में पड़ा रहा और पल-पल करके सारी आयु यूं ही व्यर्थ बीत गई। यह जीव संसार के जंजाल में ही उलझा रह गया, तभी काल ने आकर प्रस्थान का नगाड़ा बजा दिया।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह जीव टुकुर-टुकुर देखता रहा, सोच-विचार और भ्रम में पड़ा रहा और पल-पल करके सारी आयु यूं ही व्यर्थ बीत गई। यह जीव संसार के जंजाल में ही उलझा रह गया, तभी काल ने आकर प्रस्थान का नगाड़ा बजा दिया।',
       pb: devanagariToGurmukhi('ਜੀਵ ਇੱਧਰ-ਓਧਰ ਵੇਖਦਾ ਰਿਹਾ ਅਤੇ ਪਲ-ਪਲ ਕਰਕੇ ਸਾਰੀ ਉਮਰ ਬੀਤ ਗਈ। ਜੀਵ ਦੁਨਿਆਵੀ ਜੰਜਾਲਾਂ ਵਿੱਚ ਹੀ ਰਿਹਾ ਕਿ ਕਾਲ ਨੇ ਕੂਚ ਦਾ ਨਗਾਰਾ ਵਜਾ ਦਿੱਤਾ।'),
-      en: 'Kabir says: gazing vacantly and hesitating in indecision, moments slipped away into a wasted life. The soul remained tangled in worldly snares until Kal sounded the final drum of departure.'
+      en: 'Satguru Kabir Saheb proclaims: gazing vacantly and hesitating in indecision, moments slipped away into a wasted life. The soul remained tangled in worldly snares until Kal sounded the final drum of departure.'
     },
     wordMeanings: {
       hi: [
@@ -608,8 +608,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaal jeev ko graasai, bahut kahyau samujhaay. Kahain Kabir main kya karoon, koi nahin patiyaay.',
     bhavarth: {
-      hi: 'सद्गुरु कबीरजी कहते हैं कि मैंने लोगों को बहुत प्रकार से समझाया कि यह शरीर काल का ग्रास है और इससे कोई बच नहीं सकता। परंतु मैं क्या करूं, इस सत्य पर कोई विश्वास नहीं करता और सब मोह-माया में अंधे बने रहते हैं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੈਂ ਬਹੁਤ ਸਮਝਾਇਆ ਕਿ ਕਾਲ ਜੀਵ ਨੂੰ ਨਿਗਲ ਰਿਹਾ ਹੈ, ਪਰ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ ਕਰਦਾ, ਸਭ ਮੋਹ ਵਿੱਚ ਅੰਨ੍ਹੇ ਹੋਏ ਬੈਠੇ ਹਨ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि मैंने लोगों को बहुत प्रकार से समझाया कि यह शरीर काल का ग्रास है और इससे कोई बच नहीं सकता। परंतु मैं क्या करूं, इस सत्य पर कोई विश्वास नहीं करता और सब मोह-माया में अंधे बने रहते हैं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਬਹੁਤ ਸਮਝਾਇਆ ਕਿ ਕਾਲ ਜੀਵ ਨੂੰ ਨਿਗਲ ਰਿਹਾ ਹੈ, ਪਰ ਕੋਈ ਭਰੋਸਾ ਨਹੀਂ ਕਰਦਾ, ਸਭ ਮੋਹ ਵਿੱਚ ਅੰਨ੍ਹੇ ਹੋਏ ਬੈਠੇ ਹਨ।'),
       en: 'Kabir laments: I have warned again and again that Kal is devouring life relentlessly, yet none heed my words or put faith in the Truth. They wander blindly in illusion.'
     },
     wordMeanings: {
@@ -627,7 +627,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं सद्गुरु के सत्य वचनों पर पूर्ण विश्वास करके अपने आचरण में उतार रहा हूं?',
+      hi: 'क्या मैं सतगुरु के सत्य वचनों पर पूर्ण विश्वास करके अपने आचरण में उतार रहा हूं?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਸਤਿਗੁਰੂ ਦੇ ਬਚਨਾਂ ਤੇ ਪੂਰਨ ਵਿਸ਼ਵਾਸ ਕਰਕੇ ਜੀਵਨ ਸੁਧਾਰ ਰਿਹਾ ਹਾਂ?'),
       en: 'Do I genuinely believe the Master’s urgent warnings and transform my life accordingly?'
     },
@@ -926,7 +926,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Khuli khelo sansaar mein, baandhi na sakkai koy. Ghaat jagaati kya karai, sir par pot na hoy.',
     bhavarth: {
-      hi: 'सद्गुरु के ज्ञान द्वारा मोह-माया से मुक्त होकर इस संसार में निडर और निष्काम विचरण करो, तुम्हें कोई नहीं बांध सकता। नदी के घाट पर कर (टैक्स) वसूलने वाला भी क्या करेगा, जब तुम्हारे सिर पर वासनाओं की कोई गठरी ही नहीं होगी।',
+      hi: 'सतगुरु के ज्ञान द्वारा मोह-माया से मुक्त होकर इस संसार में निडर और निष्काम विचरण करो, तुम्हें कोई नहीं बांध सकता। नदी के घाट पर कर (टैक्स) वसूलने वाला भी क्या करेगा, जब तुम्हारे सिर पर वासनाओं की कोई गठरी ही नहीं होगी।',
       pb: devanagariToGurmukhi('ਗਿਆਨ ਨਾਲ ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਸੰਸਾਰ ਵਿੱਚ ਨਿਡਰ ਚੱਲੋ। ਜਦੋਂ ਸਿਰ ਤੇ ਵਾਸਨਾਵਾਂ ਦੀ ਪੰਡ ਹੀ ਨਹੀਂ, ਤਾਂ ਮਸੂਲੀਆ (ਜਮਰਾਜ) ਕੀ ਕਰੇਗਾ?'),
       en: 'Walk fearlessly in this world through the Master’s wisdom, and none can bind you. What can the toll-collector of death tax when you carry no bundle of worldly desires upon your head?'
     },
@@ -980,8 +980,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Chalti chaaki dekhi ke, diya Kabira roy. Do paatan bich aay ke, saabut gaya na koy.',
     bhavarth: {
-      hi: 'संसार में माया और काल रूपी चक्की के दो पाट—आकाश और पृथ्वी, सुख और दुःख, जन्म और मरण—को निरंतर चलते देखकर कबीरजी द्रवित हो उठे। इस चक्की के दो पाटों के बीच में पड़कर कोई भी जीव साबुत (अखंड) नहीं बच पाया, सब पिस गए। केवल कीली (सतगुरु के केंद्र) से जुड़ा जीव ही बचता है।',
-      pb: devanagariToGurmukhi('ਚੱਲਦੀ ਚੱਕੀ ਵੇਖ ਕੇ ਕਬੀਰ ਜੀ ਰੋ ਪਏ ਕਿ ਦੋ ਪੁੜਾਂ ਦੇ ਵਿਚਕਾਰ ਆ ਕੇ ਕੋਈ ਵੀ ਸਾਬਤ ਨਹੀਂ ਬਚਿਆ। ਕੇਵਲ ਕਿੱਲੀ ਨਾਲ ਜੁੜਿਆ ਦਾਣਾ ਹੀ ਬਚਦਾ ਹੈ।'),
+      hi: 'संसार में माया और काल रूपी चक्की के दो पाट—आकाश और पृथ्वी, सुख और दुःख, जन्म और मरण—को निरंतर चलते देखकर सतगुरु कबीर साहेब द्रवित हो उठे। इस चक्की के दो पाटों के बीच में पड़कर कोई भी जीव साबुत (अखंड) नहीं बच पाया, सब पिस गए। केवल कीली (सतगुरु के केंद्र) से जुड़ा जीव ही बचता है।',
+      pb: devanagariToGurmukhi('ਚੱਲਦੀ ਚੱਕੀ ਵੇਖ ਕੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਰੋ ਪਏ ਕਿ ਦੋ ਪੁੜਾਂ ਦੇ ਵਿਚਕਾਰ ਆ ਕੇ ਕੋਈ ਵੀ ਸਾਬਤ ਨਹੀਂ ਬਚਿਆ। ਕੇਵਲ ਕਿੱਲੀ ਨਾਲ ਜੁੜਿਆ ਦਾਣਾ ਹੀ ਬਚਦਾ ਹੈ।'),
       en: 'Witnessing the revolving mill of earth and sky, birth and death, Kabir wept in compassion. Caught between these two grinding stones, none emerges whole—except the grain that clings to the central pivot of the Satguru.'
     },
     wordMeanings: {
@@ -1006,7 +1006,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'Is my spiritual attention anchored to the Master’s central pivot to escape destruction?'
     },
     practicalApplication: {
-      hi: 'द्वंद्वों (सुख-दुःख) से अप्रभावित रहकर केवल सद्गुरु के सत्य नाम में लीन रहें।',
+      hi: 'द्वंद्वों (सुख-दुःख) से अप्रभावित रहकर केवल सतगुरु के सत्य नाम में लीन रहें।',
       pb: devanagariToGurmukhi('ਸੁੱਖ-ਦੁੱਖ ਤੋਂ ਨਿਰਲੇਪ ਰਹਿ ਕੇ ਨਾਮ ਵਿੱਚ ਜੁੜੋ।'),
       en: 'Stay equanimous amidst pleasure and pain by holding firmly to the center.'
     },
@@ -1267,7 +1267,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'Does the inner serpent of skepticism and doubt burn away my peace and spiritual trust?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के सत्संग और निर्णय-ज्ञान से अपने समस्त संशयों को समूल नष्ट करें।',
+      hi: 'सतगुरु के सत्संग और निर्णय-ज्ञान से अपने समस्त संशयों को समूल नष्ट करें।',
       pb: devanagariToGurmukhi('ਸਤਿਸੰਗ ਰਾਹੀਂ ਆਪਣੇ ਸਾਰੇ ਭਰਮਾਂ ਨੂੰ ਦੂਰ ਕਰੋ।'),
       en: 'Eradicate all doubts through the decisive wisdom of the Satguru’s satsang.'
     },
@@ -1295,8 +1295,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir gaaphil kyaun phirai, kya sota ghanghor. Tere siraane jam khada, jyoon andhiyaare chor.',
     bhavarth: {
-      hi: 'कबीरजी चेतावनी देते हैं कि हे अज्ञानी जीव! तू इतना लापरवाह होकर क्यों घूम रहा है और मोह की घनघोर नींद में क्यों सो रहा है? क्या तुझे ज्ञात नहीं कि तेरे सिरहाने पर यमराज (काल) चुपचाप ऐसे घात लगाकर खड़ा है, जैसे अंधेरे में चोर।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਹੇ ਗਾਫਿਲ ਜੀਵ! ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚ ਕਿਉਂ ਸੁੱਤਾ ਹੈਂ? ਤੇਰੇ ਸਿਰਹਾਣੇ ਕਾਲ ਇੰਝ ਖੜ੍ਹਾ ਹੈ ਜਿਵੇਂ ਹਨੇਰੇ ਵਿੱਚ ਚੋਰ।'),
+      hi: 'सतगुरु कबीर साहेब चेतावनी देते हैं कि हे अज्ञानी जीव! तू इतना लापरवाह होकर क्यों घूम रहा है और मोह की घनघोर नींद में क्यों सो रहा है? क्या तुझे ज्ञात नहीं कि तेरे सिरहाने पर यमराज (काल) चुपचाप ऐसे घात लगाकर खड़ा है, जैसे अंधेरे में चोर।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਗਾਫਿਲ ਜੀਵ! ਮੋਹ ਦੀ ਨੀਂਦ ਵਿੱਚ ਕਿਉਂ ਸੁੱਤਾ ਹੈਂ? ਤੇਰੇ ਸਿਰਹਾਣੇ ਕਾਲ ਇੰਝ ਖੜ੍ਹਾ ਹੈ ਜਿਵੇਂ ਹਨੇਰੇ ਵਿੱਚ ਚੋਰ।'),
       en: 'Kabir cries out: O negligent soul, why do you wander so heedlessly, slumbering deeply in delusion? Do you not see that death stands silently by your pillow, like a thief waiting in the dark?'
     },
     wordMeanings: {
@@ -1411,7 +1411,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       hi: [
         { word: 'बिरिया बीती (Biriya beetee)', meaning: 'समय व्यतीत हो गया' },
         { word: 'केस पलटि (Kes palati)', meaning: 'बाल सफेद हो जाना / वृद्धावस्था' },
-        { word: 'छूटन की ठौर (Chhootan kee thaur)', meaning: 'भवबंधन से मुक्ति का ठिकाना / सद्गुरु शरण' }
+        { word: 'छूटन की ठौर (Chhootan kee thaur)', meaning: 'भवबंधन से मुक्ति का ठिकाना / सतगुरु शरण' }
       ],
       pb: [
         { word: 'ਬਿਰਿਆ ਬੀਤੀ (Biriya beetee)', meaning: 'ਸਮਾਂ ਬੀਤ ਗਿਆ' },
@@ -1678,8 +1678,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer mandir aapne, nit uthi karta aal. Marhat dekhee darpta, chaude deeya daal.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो अपने मंदिर (सुंदर भवनों) में नित्य उठकर आनंद विहार व विलास किया करते थे और श्मशान को देखकर डरते थे, उन्हें भी उस निर्दयी काल ने चौड़े मैदान में लाकर डाल दिया है, अतः यह सब देखकर यहां बचने की कोई आशा करना व्यर्थ है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਆਪਣੇ ਮਹਿਲਾਂ ਵਿੱਚ ਰੰਗ-ਰਲੀਆਂ ਮਨਾਉਂਦੇ ਸਨ ਅਤੇ ਸ਼ਮਸ਼ਾਨ ਵੇਖ ਕੇ ਡਰਦੇ ਸਨ, ਕਾਲ ਨੇ ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਮੈਦਾਨ ਵਿੱਚ ਸੁਟ ਦਿੱਤਾ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो अपने मंदिर (सुंदर भवनों) में नित्य उठकर आनंद विहार व विलास किया करते थे और श्मशान को देखकर डरते थे, उन्हें भी उस निर्दयी काल ने चौड़े मैदान में लाकर डाल दिया है, अतः यह सब देखकर यहां बचने की कोई आशा करना व्यर्थ है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਆਪਣੇ ਮਹਿਲਾਂ ਵਿੱਚ ਰੰਗ-ਰਲੀਆਂ ਮਨਾਉਂਦੇ ਸਨ ਅਤੇ ਸ਼ਮਸ਼ਾਨ ਵੇਖ ਕੇ ਡਰਦੇ ਸਨ, ਕਾਲ ਨੇ ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਮੈਦਾਨ ਵਿੱਚ ਸੁਟ ਦਿੱਤਾ।'),
       en: 'Kabir observes that those who reveled daily within luxurious mansions and recoiled in fear at the sight of the cremation ground were eventually dragged by Kal into the open barren ground. Escaping it by material fortresses is impossible.'
     },
     wordMeanings: {
@@ -1736,8 +1736,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Nishchay kaal garaas ho, bahut kaha samujhay. Kahain kabeer main ka kahoon, dekhat na patiyay.',
     bhavarth: {
-      hi: 'इसमें तनिक भी संदेह नहीं है, निश्चय ही यह सारा जगत काल का ग्रास हो जाएगा, यह मैंने बहुत अच्छे प्रकार से समझाकर कह दिया है। कबीरजी कहते हैं कि अब मैं इससे अधिक और क्या कहूं। लोगों को मरते हुए देखकर भी दूसरों को विश्वास नहीं होता।',
-      pb: devanagariToGurmukhi('ਇਹ ਨਿਸ਼ਚੈ ਹੀ ਹੈ ਕਿ ਸਭ ਕਾਲ ਦਾ ਗ੍ਰਾਸ ਬਣਨਗੇ, ਮੈਂ ਬਹੁਤ ਸਮਝਾਇਆ ਹੈ। ਪਰ ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਲੋਕ ਅੱਖੀਂ ਵੇਖ ਕੇ ਵੀ ਵਿਸ਼ਵਾਸ ਨਹੀਂ ਕਰਦੇ।'),
+      hi: 'इसमें तनिक भी संदेह नहीं है, निश्चय ही यह सारा जगत काल का ग्रास हो जाएगा, यह मैंने बहुत अच्छे प्रकार से समझाकर कह दिया है। सतगुरु कबीर साहेब फरमाते हैं कि अब मैं इससे अधिक और क्या कहूं। लोगों को मरते हुए देखकर भी दूसरों को विश्वास नहीं होता।',
+      pb: devanagariToGurmukhi('ਇਹ ਨਿਸ਼ਚੈ ਹੀ ਹੈ ਕਿ ਸਭ ਕਾਲ ਦਾ ਗ੍ਰਾਸ ਬਣਨਗੇ, ਮੈਂ ਬਹੁਤ ਸਮਝਾਇਆ ਹੈ। ਪਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋਕ ਅੱਖੀਂ ਵੇਖ ਕੇ ਵੀ ਵਿਸ਼ਵਾਸ ਨਹੀਂ ਕਰਦੇ।'),
       en: 'Undoubtedly all the world will be devoured as the morsel of Kal; I have explained this in countless ways. What more can I say, laments Kabir, when people see death with their own eyes yet refuse to awaken and believe?'
     },
     wordMeanings: {
@@ -1791,7 +1791,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jaari baari missee karai, missee karihai chhaar. Kahain kabeer koila karai, phir de de autaar.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि काल और उसके अधीन अज्ञान शांत जीवन को जलाकर भस्म कर देता है, कोयला बना देता है और उसे भी फिर राख बना देता है। इस प्रकार तन-मन को पूर्णतया नष्ट करके वह जीव को बार-बार जन्म-मरण के चक्कर में डालता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि काल और उसके अधीन अज्ञान शांत जीवन को जलाकर भस्म कर देता है, कोयला बना देता है और उसे भी फिर राख बना देता है। इस प्रकार तन-मन को पूर्णतया नष्ट करके वह जीव को बार-बार जन्म-मरण के चक्कर में डालता है।',
       pb: devanagariToGurmukhi('ਕਾਲ ਜੀਵ ਨੂੰ ਸਾੜ ਕੇ ਸੁਆਹ ਕਰ ਦਿੰਦਾ ਹੈ, ਕੋਲੇ ਵਾਂਗੂ ਬਾਲ ਕੇ ਮੁੜ ਜਨਮ-ਮਰਨ ਦੇ ਗੇੜ ਵਿੱਚ ਧੱਕ ਦਿੰਦਾ ਹੈ।'),
       en: 'Kabir warns that Kal burns and reduces mortal existence to cinders, and from cinders to fine ash; having turned the being into coal, it repeatedly hurls the soul into repeated transmigratory incarnations.'
     },
@@ -1821,7 +1821,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'Do I yearn to be emancipated from this unending grinder of birth, dissolution, and rebirth?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के तत्व-ज्ञान का अमृत पीकर जन्म-मरण के अंतहीन ताप से अपनी आत्मा को शीतल करें।',
+      hi: 'सतगुरु के तत्व-ज्ञान का अमृत पीकर जन्म-मरण के अंतहीन ताप से अपनी आत्मा को शीतल करें।',
       pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ ਜਨਮ-ਮਰਨ ਦੀ ਅੱਗ ਨੂੰ ਸ਼ਾਂਤ ਕਰੋ।'),
       en: 'Quench the blazing fire of cyclic rebirth through the cool nectar of the Guru’s wisdom.'
     },
@@ -1849,14 +1849,14 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Ghaat jagaatee dharamraay, gurumukh le pahichaan. Chhaap bina guru naam ke, saakat raha nidaan.',
     bhavarth: {
-      hi: 'हर जीव को घाट का चुंगी-कर धर्मराज को चुकाना पड़ता है। ऐसे में धर्मराज सदगुरु के प्रिय जनों को पहचान लेते हैं, परंतु जो सद्गुरु के नाम-ज्ञान के चिन्ह से रहित हैं, उन्हें अंत में यम के हाथों अवश्य ही पड़ना होता है।',
+      hi: 'हर जीव को घाट का चुंगी-कर धर्मराज को चुकाना पड़ता है। ऐसे में धर्मराज सतगुरु के प्रिय जनों को पहचान लेते हैं, परंतु जो सतगुरु के नाम-ज्ञान के चिन्ह से रहित हैं, उन्हें अंत में यम के हाथों अवश्य ही पड़ना होता है।',
       pb: devanagariToGurmukhi('ਪਰਲੋਕ ਦੇ ਘਾਟ \'ਤੇ ਧਰਮਰਾਜ ਮਹਿਸੂਲੀਆ (ਚੂੰਗੀ ਲੈਣ ਵਾਲਾ) ਹੈ। ਉਹ ਗੁਰਮੁਖਾਂ ਨੂੰ ਪਛਾਣ ਕੇ ਲੰਘਾ ਦਿੰਦਾ ਹੈ, ਪਰ ਗੁਰੂ ਦੇ ਨਾਮ ਦੀ ਛਾਪ ਬਿਨਾਂ ਮਨਮੁਖ ਅਟਕ ਜਾਂਦਾ ਹੈ।'),
       en: 'At the cosmic crossing wharf, Dharamrai sits as the toll collector. He instantly recognizes the Gurumukh seekers stamped with the Satguru’s seal; but devoid of the True Name’s imprint, the worldly man is detained and penalized.'
     },
     wordMeanings: {
       hi: [
         { word: 'घाट जगाती (Ghaat jagaatee)', meaning: 'घाट पर चुंगी या टैक्स वसूलने वाला अधिकारी' },
-        { word: 'गुरुमुख (Gurumukh)', meaning: 'सद्गुरु के वचनों पर चलने वाले सच्चे साधक' },
+        { word: 'गुरुमुख (Gurumukh)', meaning: 'सतगुरु के वचनों पर चलने वाले सच्चे साधक' },
         { word: 'छाप (Chhaap)', meaning: 'सत्यनाम की आध्यात्मिक मोहर / पहचान' },
         { word: 'साकट (Saakat)', meaning: 'मायावी / गुरु-विमुख जीव' }
       ],
@@ -1874,12 +1874,12 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरे अंतःकरण पर सद्गुरु के पावन नाम की छाप अंकित है, जो मुझे भवसागर पार करा सके?',
+      hi: 'क्या मेरे अंतःकरण पर सतगुरु के पावन नाम की छाप अंकित है, जो मुझे भवसागर पार करा सके?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰੇ ਹਿਰਦੇ \'ਤੇ ਗੁਰੂ ਦੇ ਨਾਮ ਦੀ ਛਾਪ ਹੈ ਜੋ ਮੈਨੂੰ ਮੁਕਤੀ ਦਿਵਾ ਸਕੇ?'),
       en: 'Does my consciousness bear the authentic seal of the Guru’s Word to pass the cosmic toll?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु से दीक्षा व उपदेश लेकर अपने जीवन को सत्यनाम के अनुशासन में ढालें।',
+      hi: 'सतगुरु से दीक्षा व उपदेश लेकर अपने जीवन को सत्यनाम के अनुशासन में ढालें।',
       pb: devanagariToGurmukhi('ਗੁਰੂ ਦੇ ਹੁਕਮ ਵਿੱਚ ਚੱਲ ਕੇ ਆਪਣੇ ਜੀਵਨ ਨੂੰ ਸਫਲ ਕਰੋ।'),
       en: 'Align your life with the Satguru’s instructions so the seal of devotion shines within.'
     },
@@ -1934,7 +1934,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'As long as the subtle seed of worldly craving survives, will I be repeatedly reborn?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के ब्रह्म-ज्ञान की अग्नि में वासनाओं के बीज को दग्ध कर दें ताकि पुनर्जन्म का अंकुर न फूटे।',
+      hi: 'सतगुरु के ब्रह्म-ज्ञान की अग्नि में वासनाओं के बीज को दग्ध कर दें ताकि पुनर्जन्म का अंकुर न फूटे।',
       pb: devanagariToGurmukhi('ਗਿਆਨ ਦੀ ਅਗਨੀ ਵਿੱਚ ਵਾਸਨਾਵਾਂ ਦੇ ਬੀਜ ਨੂੰ ਸਾੜ ਦਿਓ।'),
       en: 'Roast the seeds of craving in the fire of spiritual realization so they can never sprout again.'
     },
@@ -2020,7 +2020,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Sansai kaal shareer mein, jaari ker sab dhoor. Kaal se baanchai daas jan, jin pai dyaal hazoor.',
     bhavarth: {
-      hi: 'संशय (अज्ञान) रूपी काल शरीर में रहकर, जीवन को अशांत, पीड़ित तथा सब कुछ जलाकर धूल कर देता है। इस अज्ञानरूपी काल से केवल वही दास-भक्त-जन बचते हैं, जिनके ऊपर सद्गुरु की विशेष दया-दृष्टि होती है, अर्थात जिन्होंने सद्गुरु की सेवा-सत्संगति से ज्ञानोपदेश प्राप्त किया है, वही इस संशय (काल) से बच पाता है।',
+      hi: 'संशय (अज्ञान) रूपी काल शरीर में रहकर, जीवन को अशांत, पीड़ित तथा सब कुछ जलाकर धूल कर देता है। इस अज्ञानरूपी काल से केवल वही दास-भक्त-जन बचते हैं, जिनके ऊपर सतगुरु की विशेष दया-दृष्टि होती है, अर्थात जिन्होंने सतगुरु की सेवा-सत्संगति से ज्ञानोपदेश प्राप्त किया है, वही इस संशय (काल) से बच पाता है।',
       pb: devanagariToGurmukhi('ਸੰਦੇਹ ਤੇ ਅਗਿਆਨ ਰੂਪੀ ਕਾਲ ਸਰੀਰ ਵਿੱਚ ਰਹਿ ਕੇ ਸਭ ਕੁਝ ਸਾੜ ਕੇ ਸੁਆਹ ਕਰ ਦਿੰਦਾ ਹੈ। ਕਾਲ ਤੋਂ ਸਿਰਫ਼ ਉਹੀ ਸੇਵਕ ਬਚਦੇ ਹਨ ਜਿਨ੍ਹਾਂ ਉੱਤੇ ਸਤਿਗੁਰੂ ਦਿਆਲ ਹੁੰਦੇ ਹਨ।'),
       en: 'The Kal of doubt and skepticism dwells within the bodily vessel, burning all peace to ashes. Only those humble servants escape its scourge upon whom the living Satguru showers His direct compassionate grace.'
     },
@@ -2029,7 +2029,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
         { word: 'संसै काल (Sansai kaal)', meaning: 'संशय और अज्ञान रूपी आंतरिक काल' },
         { word: 'जारि केर सब धूर (Jaari ker sab dhoor)', meaning: 'जलाकर सब खाक कर देना' },
         { word: 'बांचै (Baanchai)', meaning: 'बचते हैं / सुरक्षित रहते हैं' },
-        { word: 'द्याल हजूर (Dyaal hazoor)', meaning: 'साक्षात सद्गुरु की दया दृष्टि' }
+        { word: 'द्याल हजूर (Dyaal hazoor)', meaning: 'साक्षात सतगुरु की दया दृष्टि' }
       ],
       pb: [
         { word: 'ਸੰਸੈ ਕਾਲ (Sansai kaal)', meaning: 'ਸ਼ੰਕੇ ਦਾ ਕਾਲ' },
@@ -2050,7 +2050,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'Is the internal Kal of cynicism and doubt reducing my spiritual peace to ashes?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु की शरण और सत्संग में जाकर मन के समस्त संशयों का निवारण करें।',
+      hi: 'सतगुरु की शरण और सत्संग में जाकर मन के समस्त संशयों का निवारण करें।',
       pb: devanagariToGurmukhi('ਸਤਿਸੰਗ ਨਾਲ ਜੁੜ ਕੇ ਸ਼ੰਕੇ ਦੂਰ ਕਰੋ।'),
       en: 'Surrender all intellectual doubts at the Satguru’s feet; anchor in unwavering faith.'
     },
@@ -2078,8 +2078,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer jeevan kuchh naheen, khin khaara khin meeth. Kaalhi alhaja maariya, aaj masaana deeth.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह जीवन भी क्या है, इसमें कुछ भी तो विशेष नहीं है। यहां सब कुछ खट्टा और कुछ मीठा-सा है (दुःख थोड़ा खट्टा और क्षणिक सुख मीठा-सा)। जिन्होंने कल रण-क्षेत्र में बड़े-बड़े वीर शत्रुओं को मार गिराया था, वे भी आज नहीं रहे। उन्हें आज श्मशान में जाकर पड़ा हुआ देख लो, अर्थात यहां सब कुछ सार-हीन है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਜੀਵਨ ਕੁਝ ਨਹੀਂ, ਪਲ ਵਿੱਚ ਖੱਟਾ ਤੇ ਪਲ ਵਿੱਚ ਮਿੱਠਾ ਹੈ। ਜਿਸ ਨੇ ਕੱਲ੍ਹ ਵੱਡੇ ਸੂਰਮਿਆਂ ਨੂੰ ਮਾਰਿਆ ਸੀ, ਅੱਜ ਉਹ ਆਪ ਮਸਾਣਾਂ ਵਿੱਚ ਸੜ ਰਿਹਾ ਹੈ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह जीवन भी क्या है, इसमें कुछ भी तो विशेष नहीं है। यहां सब कुछ खट्टा और कुछ मीठा-सा है (दुःख थोड़ा खट्टा और क्षणिक सुख मीठा-सा)। जिन्होंने कल रण-क्षेत्र में बड़े-बड़े वीर शत्रुओं को मार गिराया था, वे भी आज नहीं रहे। उन्हें आज श्मशान में जाकर पड़ा हुआ देख लो, अर्थात यहां सब कुछ सार-हीन है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਜੀਵਨ ਕੁਝ ਨਹੀਂ, ਪਲ ਵਿੱਚ ਖੱਟਾ ਤੇ ਪਲ ਵਿੱਚ ਮਿੱਠਾ ਹੈ। ਜਿਸ ਨੇ ਕੱਲ੍ਹ ਵੱਡੇ ਸੂਰਮਿਆਂ ਨੂੰ ਮਾਰਿਆ ਸੀ, ਅੱਜ ਉਹ ਆਪ ਮਸਾਣਾਂ ਵਿੱਚ ਸੜ ਰਿਹਾ ਹੈ।'),
       en: 'Kabir reflects: mortal life is trifling—one moment bitter sorrow, the next momentary sweetness. He who yesterday struck down fierce warriors in battle is seen today stretched lifeless in the cremation grounds. All worldly victory is hollow.'
     },
     wordMeanings: {
@@ -2133,8 +2133,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer pagra door hai, aay pahuchee saanjh. Jan jan ko mat raakhtan, veshya rahi gayee baanjh.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अभी तो जीवन-कल्याण की सफलता का लक्ष्य बहुत दूर है और शाम (वृद्धावस्था) आ पहुंची है। जिस प्रकार वेश्या के अनेक प्रेमी होने पर भी वह बांझ (पुत्रहीन) रह जाती है, उसी प्रकार जन-जन की मत-धारणाओं के मोह में पड़कर कल्याण साधन से रहित रह गया।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੰਜ਼ਿਲ ਅਜੇ ਦੂਰ ਹੈ ਅਤੇ ਸ਼ਾਮ (ਬੁਢਾਪਾ) ਆ ਪਹੁੰਚੀ ਹੈ। ਜਿਵੇਂ ਹਰ ਇੱਕ ਦਾ ਮਨ ਰੱਖਣ ਵਾਲੀ ਵੇਸ਼ਵਾ ਔਲਾਦਹੀਣ ਰਹਿ ਜਾਂਦੀ ਹੈ, ਤਿਵੇਂ ਹਰ ਸੰਸਾਰੀ ਦਾ ਮੋਹ ਰੱਖਦਿਆਂ ਜੀਵ ਭਗਤੀ ਤੋਂ ਖਾਲੀ ਰਹਿ ਗਿਆ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अभी तो जीवन-कल्याण की सफलता का लक्ष्य बहुत दूर है और शाम (वृद्धावस्था) आ पहुंची है। जिस प्रकार वेश्या के अनेक प्रेमी होने पर भी वह बांझ (पुत्रहीन) रह जाती है, उसी प्रकार जन-जन की मत-धारणाओं के मोह में पड़कर कल्याण साधन से रहित रह गया।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੰਜ਼ਿਲ ਅਜੇ ਦੂਰ ਹੈ ਅਤੇ ਸ਼ਾਮ (ਬੁਢਾਪਾ) ਆ ਪਹੁੰਚੀ ਹੈ। ਜਿਵੇਂ ਹਰ ਇੱਕ ਦਾ ਮਨ ਰੱਖਣ ਵਾਲੀ ਵੇਸ਼ਵਾ ਔਲਾਦਹੀਣ ਰਹਿ ਜਾਂਦੀ ਹੈ, ਤਿਵੇਂ ਹਰ ਸੰਸਾਰੀ ਦਾ ਮੋਹ ਰੱਖਦਿਆਂ ਜੀਵ ਭਗਤੀ ਤੋਂ ਖਾਲੀ ਰਹਿ ਗਿਆ।'),
       en: 'Kabir warns: the destination of liberation is still distant, and the twilight of old age has fallen. Just as a courtesan pleasing myriad suitors ends up barren, the person pleasing everyone’s opinion ends up destitute of spiritual realization.'
     },
     wordMeanings: {
@@ -2163,7 +2163,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'Have I squandered my life catering to social expectations, arriving empty-handed at life’s twilight?'
     },
     practicalApplication: {
-      hi: 'लोक-लाज और जन-जन के मत-आग्रहों को छोड़कर एकनिष्ठ होकर सद्गुरु के सत्य-ज्ञान की साधना करें।',
+      hi: 'लोक-लाज और जन-जन के मत-आग्रहों को छोड़कर एकनिष्ठ होकर सतगुरु के सत्य-ज्ञान की साधना करें।',
       pb: devanagariToGurmukhi('ਲੋਕ-ਦਿਖਾਵਾ ਛੱਡ ਕੇ ਇੱਕ ਸਤਿਗੁਰੂ ਦੇ ਨਾਮ ਵਿੱਚ ਜੁੜੋ।'),
       en: 'Renounce empty social vanity; dedicate undivided focus to authentic self-realization.'
     },
@@ -2191,7 +2191,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaal hamare sang hai, kas jeevan kee aas. Das din naam sambhaar le, jab lag pinjar saans.',
     bhavarth: {
-      hi: 'जब काल हमारे साथ लगा हुआ है, तो फिर कैसे जीवन की आशा करें। यह तो मिथ्या-मोह है। जब तक इस शरीर रूपी पिंजरे में श्वास है, तब तक ही अवसर है। जब तक काल तेरे शरीर से श्वास को खींच ले, उससे पूर्व ही तू सद्गुरु के नाम-ज्ञान का सुमिरन कर ले। सद्गुरु की कृपा से तेरे जीवन का कल्याण होगा।',
+      hi: 'जब काल हमारे साथ लगा हुआ है, तो फिर कैसे जीवन की आशा करें। यह तो मिथ्या-मोह है। जब तक इस शरीर रूपी पिंजरे में श्वास है, तब तक ही अवसर है। जब तक काल तेरे शरीर से श्वास को खींच ले, उससे पूर्व ही तू सतगुरु के नाम-ज्ञान का सुमिरन कर ले। सतगुरु की कृपा से तेरे जीवन का कल्याण होगा।',
       pb: devanagariToGurmukhi('ਜਦੋਂ ਕਾਲ ਸਾਡੇ ਨਾਲ ਲੱਗਾ ਹੋਇਆ ਹੈ, ਤਾਂ ਜੀਵਨ ਦੀ ਝੂਠੀ ਆਸ ਕਿਉਂ? ਜਦੋਂ ਤੱਕ ਇਸ ਦੇਹ ਰੂਪੀ ਪਿੰਜਰੇ ਵਿੱਚ ਸਾਹ ਹਨ, ਕੁਝ ਦਿਨ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਸੰਭਾਲ ਲੈ।'),
       en: 'When Kal is our constant companion, why cling to false hopes of bodily longevity? While breath still lingers in this mortal cage, gather the jewel of the True Name before time expires.'
     },
@@ -2419,9 +2419,9 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer sab sukh ram hai, aurahi dukh kee raasi. Sur nar muni aru asur sur, pade kaal kee faansi.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह सारा संसार अनेक दुःखों का भंडार है। यहां पर परम सुख-शांति केवल अविनाशी परमात्मा के सुमिरन-भजन में ही है, अन्यथा कहीं नहीं। सभी देवता, मनुष्य, मुनि और राक्षस आदि जो भी हुए हैं, वे अपना कर्मफल भोगते हुए काल के फंदे में ही फंसे हैं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸੁਖ ਸਿਰਫ਼ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਵਿੱਚ ਹੈ, ਬਾਕੀ ਸਭ ਦੁੱਖਾਂ ਦੀ ਰਾਸ ਹੈ। ਦੇਵਤੇ, ਮਨੁੱਖ, ਮੁਨੀ ਤੇ ਦੈਂਤ ਸਭ ਕਾਲ ਦੀ ਫਾਹੀ ਵਿੱਚ ਫਸੇ ਹੋਏ ਹਨ।'),
-      en: 'Kabir declares: all true bliss resides in the Divine Name alone; everything else is a heap of sorrow. Demigods, mortals, sages, and demons alike remain entangled in the inescapable noose of Kal.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह सारा संसार अनेक दुःखों का भंडार है। यहां पर परम सुख-शांति केवल अविनाशी परमात्मा के सुमिरन-भजन में ही है, अन्यथा कहीं नहीं। सभी देवता, मनुष्य, मुनि और राक्षस आदि जो भी हुए हैं, वे अपना कर्मफल भोगते हुए काल के फंदे में ही फंसे हैं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸੁਖ ਸਿਰਫ਼ ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਵਿੱਚ ਹੈ, ਬਾਕੀ ਸਭ ਦੁੱਖਾਂ ਦੀ ਰਾਸ ਹੈ। ਦੇਵਤੇ, ਮਨੁੱਖ, ਮੁਨੀ ਤੇ ਦੈਂਤ ਸਭ ਕਾਲ ਦੀ ਫਾਹੀ ਵਿੱਚ ਫਸੇ ਹੋਏ ਹਨ।'),
+      en: 'Satguru Kabir Saheb proclaims: all true bliss resides in the Divine Name alone; everything else is a heap of sorrow. Demigods, mortals, sages, and demons alike remain entangled in the inescapable noose of Kal.'
     },
     wordMeanings: {
       hi: [
@@ -2532,8 +2532,8 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer pagra door hai, beech padee hai raat. Na jaane kya hoyga, ooganta parbhaat.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अभी तुम्हारे लक्ष्य की सफलता (जीवन के कल्याण) का मार्ग बहुत ही दूर है और अभी अज्ञान मोह की अंधेरी रात भी बीच में ही पड़ी हुई है, परंतु काल का क्या भरोसा, न जाने कब क्या होगा? अतः प्रभात का सूर्य यानी ज्ञान का सूर्य उदय होने तक सावधान रहना चाहिए।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੰਜ਼ਿਲ ਅਜੇ ਦੂਰ ਹੈ ਅਤੇ ਵਿਚਕਾਰ ਅਗਿਆਨਤਾ ਦੀ ਕਾਲੀ ਰਾਤ ਪਈ ਹੋਈ ਹੈ। ਸਵੇਰਾ ਹੋਣ \'ਤੇ ਕੀ ਬੀਤੇਗੀ, ਕੋਈ ਨਹੀਂ ਜਾਣਦਾ, ਇਸ ਲਈ ਜਾਗਦੇ ਰਹੋ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अभी तुम्हारे लक्ष्य की सफलता (जीवन के कल्याण) का मार्ग बहुत ही दूर है और अभी अज्ञान मोह की अंधेरी रात भी बीच में ही पड़ी हुई है, परंतु काल का क्या भरोसा, न जाने कब क्या होगा? अतः प्रभात का सूर्य यानी ज्ञान का सूर्य उदय होने तक सावधान रहना चाहिए।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੰਜ਼ਿਲ ਅਜੇ ਦੂਰ ਹੈ ਅਤੇ ਵਿਚਕਾਰ ਅਗਿਆਨਤਾ ਦੀ ਕਾਲੀ ਰਾਤ ਪਈ ਹੋਈ ਹੈ। ਸਵੇਰਾ ਹੋਣ \'ਤੇ ਕੀ ਬੀਤੇਗੀ, ਕੋਈ ਨਹੀਂ ਜਾਣਦਾ, ਇਸ ਲਈ ਜਾਗਦੇ ਰਹੋ।'),
       en: 'Kabir warns: the pilgrim goal is far away and a dark night of ignorance lies between. Who knows what fate shall strike before the dawn breaks? Therefore stay spiritually alert and vigilant.'
     },
     wordMeanings: {
@@ -2587,7 +2587,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jinke naam nishaan hai, tin atkaavai kaun. Purush khajana paaiya, miti gaya aawa gaun.',
     bhavarth: {
-      hi: 'जिनके जीवन में सदगुरु के नाम-ज्ञान का ध्वज फहराता है, भला उन्हें कौन कहां रोक सकता है? अर्थात वे मुक्त हैं और उनका पथ भी खुला हुआ है। वे तो परम पुरुष परमात्मा के ज्ञान रूपी धन-भंडार को पाकर जन्म-मरण के बंधन से छूट जाते हैं अर्थात मोक्ष को प्राप्त कर लेते हैं।',
+      hi: 'जिनके जीवन में सतगुरु के नाम-ज्ञान का ध्वज फहराता है, भला उन्हें कौन कहां रोक सकता है? अर्थात वे मुक्त हैं और उनका पथ भी खुला हुआ है। वे तो परम पुरुष परमात्मा के ज्ञान रूपी धन-भंडार को पाकर जन्म-मरण के बंधन से छूट जाते हैं अर्थात मोक्ष को प्राप्त कर लेते हैं।',
       pb: devanagariToGurmukhi('ਜਿਨ੍ਹਾਂ ਕੋਲ ਸਤਿਗੁਰੂ ਦੇ ਸੱਚੇ ਨਾਮ ਦਾ ਨਿਸ਼ਾਨ (ਝੰਡਾ/ਮੋਹਰ) ਹੈ, ਉਨ੍ਹਾਂ ਨੂੰ ਕਾਲ ਕਿਵੇਂ ਰੋਕ ਸਕਦਾ ਹੈ? ਉਨ੍ਹਾਂ ਨੇ ਪੂਰਨ ਪ੍ਰਭੂ ਦਾ ਅਮੁੱਲ ਖਜ਼ਾਨਾ ਪਾ ਲਿਆ ਹੈ ਅਤੇ ਉਨ੍ਹਾਂ ਦਾ ਜਨਮ-ਮਰਨ ਮਿਟ ਗਿਆ ਹੈ।'),
       en: 'Those who fly the sacred banner of the Satguru’s holy Name—who can possibly obstruct them? Having attained the supreme treasury of the Supreme Purusha, their cycles of coming and going are annihilated forever.'
     },
@@ -2617,7 +2617,7 @@ export const SAKHIS_KAAL_KO_ANG: Sakhi[] = [
       en: 'Do I hold the sacred banner of the True Word to pass through the realms of Kal untouched?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु द्वारा प्रदत्त नाम-सुमिरन को ही अपना एकमात्र धन और सुरक्षा-कवच बनाएं।',
+      hi: 'सतगुरु द्वारा प्रदत्त नाम-सुमिरन को ही अपना एकमात्र धन और सुरक्षा-कवच बनाएं।',
       pb: devanagariToGurmukhi('ਸਤਯਨਾਮ ਨੂੰ ਹੀ ਆਪਣਾ ਅਸਲੀ ਧਨ ਬਣਾਓ।'),
       en: 'Rely solely on the wealth of the holy Name as your invincible passport to freedom.'
     },

@@ -43,9 +43,9 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि साधु की सत्संगति कभी भी निष्फल नहीं जाती। उसका कुछ-न-कुछ अच्छा प्रभाव अवश्य ही पड़ता है। इसमें ऐसा रहस्य है कि यदि बीज भूनकर भी बोएं, तो भी खेती खूब फलती-फूलती है, अर्थात जगत में असम्भव दिखने वाले कार्य भी संतों की संगत से सहज ही पुरे हो जाते है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि साधु की सत्संगति कभी निष्फल नहीं जाती। असम्भव दिखने वाले कार्य भी संतों की संगत से सहज ही पूर्ण हो जाते हैं।'),
-      en: 'Kabir says the fellowship of saints never goes in vain. Even seemingly impossible feats blossom abundantly through the transcendent grace of holy association.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि साधु की सत्संगति कभी भी निष्फल नहीं जाती। उसका कुछ-न-कुछ अच्छा प्रभाव अवश्य ही पड़ता है। इसमें ऐसा रहस्य है कि यदि बीज भूनकर भी बोएं, तो भी खेती खूब फलती-फूलती है, अर्थात जगत में असम्भव दिखने वाले कार्य भी संतों की संगत से सहज ही पुरे हो जाते है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि साधु की सत्संगति कभी निष्फल नहीं जाती। असम्भव दिखने वाले कार्य भी संतों की संगत से सहज ही पूर्ण हो जाते हैं।'),
+      en: 'Satguru Kabir Saheb proclaims the fellowship of saints never goes in vain. Even seemingly impossible feats blossom abundantly through the transcendent grace of holy association.'
     }
   },
   {
@@ -66,8 +66,8 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि कभी भी कुसंगति नहीं करनी चाहिए। जिस प्रकार पत्थर पर बैठकर नदी पार नहीं कर सकते, वैसे ही कुसंगति से भला नहीं हो सकता । स्वाति नक्षत्र की बूंद केले पर पड़ने से कपूर, सीपी में पड़ने से मोती और सर्प के मुख में पड़ने से विष हो जाती है, अर्थात संगति के अनुसार बूंद परिवर्तित हो जाती है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि कभी कुसंगति न करें। जैसे स्वाति नक्षत्र की बूंद सीपी में मोती और सर्प मुख में विष बन जाती है, वैसे ही संगति के अनुसार फल मिलता है।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि कभी भी कुसंगति नहीं करनी चाहिए। जिस प्रकार पत्थर पर बैठकर नदी पार नहीं कर सकते, वैसे ही कुसंगति से भला नहीं हो सकता । स्वाति नक्षत्र की बूंद केले पर पड़ने से कपूर, सीपी में पड़ने से मोती और सर्प के मुख में पड़ने से विष हो जाती है, अर्थात संगति के अनुसार बूंद परिवर्तित हो जाती है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि कभी कुसंगति न करें। जैसे स्वाति नक्षत्र की बूंद सीपी में मोती और सर्प मुख में विष बन जाती है, वैसे ही संगति के अनुसार फल मिलता है।'),
       en: 'Kabir cautions never to indulge in bad company. Just as a single raindrop turns into camphor on plantain, pearl in an oyster, and venom in a snake’s mouth, association dictates one’s transformation.'
     }
   },
@@ -89,9 +89,9 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो सद्गुरु के देश में बसता है, उनके सदुपदेश एवं ज्ञान-प्रवचन के अनुसार रहता है, उस अनुभव को वही जानता है। वह कौए से हंस बन जाता है और उसकी जाति-वर्ण-कुल सब उत्तम हो जाते हैं, अर्थात वह दुर्गुणों से मुक्ति पाकर सद्गुण संपन्न हो जाता है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि जो सद्गुरु के उपदेश में निवास करता है, वह कौए से हंस बन जाता है और दुर्गुणों से मुक्त होकर परम पद पाता है।'),
-      en: 'Kabir says one who dwells in the Satguru’s realm of wisdom transforms from a crow into a divine swan, transcending all worldly pride of caste and lineage into supreme purity.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो सतगुरु के देश में बसता है, उनके सदुपदेश एवं ज्ञान-प्रवचन के अनुसार रहता है, उस अनुभव को वही जानता है। वह कौए से हंस बन जाता है और उसकी जाति-वर्ण-कुल सब उत्तम हो जाते हैं, अर्थात वह दुर्गुणों से मुक्ति पाकर सद्गुण संपन्न हो जाता है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि जो सतगुरु के उपदेश में निवास करता है, वह कौए से हंस बन जाता है और दुर्गुणों से मुक्त होकर परम पद पाता है।'),
+      en: 'Satguru Kabir Saheb proclaims one who dwells in the Satguru’s realm of wisdom transforms from a crow into a divine swan, transcending all worldly pride of caste and lineage into supreme purity.'
     }
   },
   {
@@ -112,7 +112,7 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जो कोई साधु की संगत करता है, वही उसके -महत्व को जानता है। जैसे चंदन-वृक्ष के पास वाले वृक्ष भी चंदन की भांति गंध वाले हो जाते हैं, परंतु बांस का पेड़ चंदन नहीं होता, क्योंकि वह बीच में से पोला और ऊपर से कठोर होता है। इसी प्रकार जो अभिमानी लोग हैं, वे सत्संगत से भी नहीं सुधरते।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो कोई साधु की संगत करता है, वही उसके -महत्व को जानता है। जैसे चंदन-वृक्ष के पास वाले वृक्ष भी चंदन की भांति गंध वाले हो जाते हैं, परंतु बांस का पेड़ चंदन नहीं होता, क्योंकि वह बीच में से पोला और ऊपर से कठोर होता है। इसी प्रकार जो अभिमानी लोग हैं, वे सत्संगत से भी नहीं सुधरते।',
       pb: devanagariToGurmukhi('साधु की संगत से समीपस्थ वृक्ष चंदन बन जाते हैं, परंतु खोखला और कठोर बांस चंदन नहीं बनता। इसी प्रकार अभिमानी मनुष्य सत्संगत से भी वंचित रह जाते हैं।'),
       en: 'Sandalwood imparts its fragrance to neighboring trees, yet the hollow, rigid bamboo never absorbs sandalwood’s aroma. Likewise, arrogant egoists remain uninfluenced by holy fellowship.'
     }
@@ -227,9 +227,9 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि चाहे एक घड़ी हो, चाहे आधी घड़ी हो और चाहे आधी में से भी आधी, अर्थात चौथाई घड़ी ही हो, साधु-संतों की सत्संगत अवश्य ही करनी चाहिए। इससे करोड़ों-करोड़ों-अनजाने अपराध भी नष्ट हो जाते हैं।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि चाहे एक घड़ी हो, आधी घड़ी हो या चौथाई घड़ी, साधुओं की सत्संगत अवश्य करें; इससे करोड़ों अपराध नष्ट हो जाते हैं।'),
-      en: 'Kabir says even a single hour, half an hour, or a fraction of a moment spent in the company of holy saints dissolves millions of spiritual offenses.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि चाहे एक घड़ी हो, चाहे आधी घड़ी हो और चाहे आधी में से भी आधी, अर्थात चौथाई घड़ी ही हो, साधु-संतों की सत्संगत अवश्य ही करनी चाहिए। इससे करोड़ों-करोड़ों-अनजाने अपराध भी नष्ट हो जाते हैं।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि चाहे एक घड़ी हो, आधी घड़ी हो या चौथाई घड़ी, साधुओं की सत्संगत अवश्य करें; इससे करोड़ों अपराध नष्ट हो जाते हैं।'),
+      en: 'Satguru Kabir Saheb proclaims even a single hour, half an hour, or a fraction of a moment spent in the company of holy saints dissolves millions of spiritual offenses.'
     }
   },
   {
@@ -319,9 +319,9 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि मन के सभी कलह, क्लेश और कल्पनाएं सत्संगति से दूर हो जाते हैं, समाप्त हो जाते हैं। ऐसे में दुःख भी उससे भागा-भागा फिरता है और अंत में वह संतों की सत्संगति के सुख-सागर में समा जाता है।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि मन के सभी कलह व क्लेश सत्संगति से मिट जाते हैं। दुःख भाग खड़ा होता है और चित्त परम सुख में समा जाता है।'),
-      en: 'Kabir says all conflicts and anxieties vanish in Satsang. Sorrow flees away, and the soul rests submerged in the ocean of divine joy.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि मन के सभी कलह, क्लेश और कल्पनाएं सत्संगति से दूर हो जाते हैं, समाप्त हो जाते हैं। ऐसे में दुःख भी उससे भागा-भागा फिरता है और अंत में वह संतों की सत्संगति के सुख-सागर में समा जाता है।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि मन के सभी कलह व क्लेश सत्संगति से मिट जाते हैं। दुःख भाग खड़ा होता है और चित्त परम सुख में समा जाता है।'),
+      en: 'Satguru Kabir Saheb proclaims all conflicts and anxieties vanish in Satsang. Sorrow flees away, and the soul rests submerged in the ocean of divine joy.'
     }
   },
   {
@@ -411,8 +411,8 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि नित्य-प्रति साधु-संतों की सत्संगति में जाना चाहिए, जिसका विलक्षण प्रभाव जीवन पर पड़ता है। इससे दुर्बुद्धि दूर हो जाती है और संत-महात्मा सद्बुद्धि देते हैं, अर्थात जो भी अनुचित व अशुद्ध कर्म अज्ञान अवस्था में जीव के द्वारा होते हैं, वे सब उनके सदुपदेश से ठीक हो जाते हैं।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि प्रतिदिन साधु-संतों की संगति करें। इससे दुर्बुद्धि दूर बह जाती है और सद्बुद्धि प्राप्त होती है।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि नित्य-प्रति साधु-संतों की सत्संगति में जाना चाहिए, जिसका विलक्षण प्रभाव जीवन पर पड़ता है। इससे दुर्बुद्धि दूर हो जाती है और संत-महात्मा सद्बुद्धि देते हैं, अर्थात जो भी अनुचित व अशुद्ध कर्म अज्ञान अवस्था में जीव के द्वारा होते हैं, वे सब उनके सदुपदेश से ठीक हो जाते हैं।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि प्रतिदिन साधु-संतों की संगति करें। इससे दुर्बुद्धि दूर बह जाती है और सद्बुद्धि प्राप्त होती है।'),
       en: 'Kabir advises attending holy Satsang daily. Holy company washes away evil inclinations and imparts divine discrimination and wisdom.'
     }
   },
@@ -434,9 +434,9 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि साधुओं की संगत में जाने पर यदि अच्छा भोजन न मिले, मात्र जौ की भूसी ही मिले, तो उसे भी प्रेम से ग्रहण कर लेना चाहिए, परंतु यदि निगुरे के संग जाने से खीर-खांड स्वादिष्ट मिष्टान्न आदि का भोजन मिले, तो भी उसके संग न जाओ, क्योंकि कुसंगति का प्रभाव आपके ऊपर पड़ेगा।',
-      pb: devanagariToGurmukhi('कबीरजी कहते हैं कि साधुओं की संगत में केवल जौ की भूसी मिले तो भी प्रसन्न रहें, परंतु निगुरे के संग में खीर-खांड भी मिले तो न जाएँ।'),
-      en: 'Kabir says prefer eating plain coarse husk in the company of saints over eating rich delicacies in the toxic company of the ungodly.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि साधुओं की संगत में जाने पर यदि अच्छा भोजन न मिले, मात्र जौ की भूसी ही मिले, तो उसे भी प्रेम से ग्रहण कर लेना चाहिए, परंतु यदि निगुरे के संग जाने से खीर-खांड स्वादिष्ट मिष्टान्न आदि का भोजन मिले, तो भी उसके संग न जाओ, क्योंकि कुसंगति का प्रभाव आपके ऊपर पड़ेगा।',
+      pb: devanagariToGurmukhi('सतगुरु कबीर साहेब फरमाते हैं कि साधुओं की संगत में केवल जौ की भूसी मिले तो भी प्रसन्न रहें, परंतु निगुरे के संग में खीर-खांड भी मिले तो न जाएँ।'),
+      en: 'Satguru Kabir Saheb proclaims prefer eating plain coarse husk in the company of saints over eating rich delicacies in the toxic company of the ungodly.'
     }
   },
   {
@@ -457,7 +457,7 @@ export const SAKHI_SANGRAH_ANG_9_VERSES: GranthVerse[] = [
       ]
     },
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि साधु की संगति, इत्र बेचने वाले उस गंधी के समान है, जो हमें चाहे इत्र न दे, परंतु उसके पास जाने से सुगंध अवश्य मिलती है। इसी प्रकार साधु की संगति में जाने से चाहे वे कुछ न बोलें, कुछ खाने को न दें, तो भी उनकी सत्संगति के वातावरण का लाभ अवश्य ही होता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि साधु की संगति, इत्र बेचने वाले उस गंधी के समान है, जो हमें चाहे इत्र न दे, परंतु उसके पास जाने से सुगंध अवश्य मिलती है। इसी प्रकार साधु की संगति में जाने से चाहे वे कुछ न बोलें, कुछ खाने को न दें, तो भी उनकी सत्संगति के वातावरण का लाभ अवश्य ही होता है।',
       pb: devanagariToGurmukhi('साधु की संगति इत्र विक्रेता की दुकान के समान है; चाहे वह इत्र न भी दे, तो भी सुवास स्वतः ही प्राप्त हो जाती है।'),
       en: 'Kabir compares saintly company to a perfumer’s shop: even if the perfumer gives nothing, the atmosphere itself fills one with fragrance.'
     }

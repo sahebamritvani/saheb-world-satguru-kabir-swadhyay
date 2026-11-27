@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਸੰਸਾਰ ਵਿੱਚ ਨਿਰਲੇਪ ਰਹਿਣਾ ਹੀ ਸੱਚਾ ਯੋਗ ਹੈ।',
         en: 'To live in the world without being affected by its desires is true inner navigation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਿਕ ਸੁੱਖ ਅੰਦਰੂਨੀ ਹੈ, ਬਾਹਰੀ ਸਾਧਨਾਂ ਤੇ ਨਿਰਭਰ ਨਹੀਂ।',
         en: 'True bliss is not contingent upon external tools; it is the intrinsic nature of the Spirit.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਅੰਦਰ ਦੇਖਣਾ ਹੀ ਸੱਚਾ ਦੇਖਣਾ ਹੈ।',
         en: 'True sight begins when external sensory organs turn inward.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -164,8 +164,8 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '224. मछली चढ़ी आकाश पर', pb: '224. ਮੱਛੀ ਆਕਾਸ਼ ਚੜ੍ਹ ਗਈ', en: '224. Fish Soaring into the Sky' },
     verse: {
-      hi: '"जल की मछली अकासे चढ़ी, गगन मंडल महँ बास। कहै कबीर सुनो भाई संतो, यह सद्गुरु का पास॥"',
-      pb: '"ਜਲ ਕੀ ਮੱਛਲੀ ਅਕਾਸੇ ਚੜ੍ਹੀ, ਗਗਨ ਮੰਡਲ ਮਹੰ ਬਾਸ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਯਹ ਸਦਗੁਰੂ ਕਾ ਪਾਸ॥"',
+      hi: '"जल की मछली अकासे चढ़ी, गगन मंडल महँ बास। कहै कबीर सुनो भाई संतो, यह सतगुरु का पास॥"',
+      pb: '"ਜਲ ਕੀ ਮੱਛਲੀ ਅਕਾਸੇ ਚੜ੍ਹੀ, ਗਗਨ ਮੰਡਲ ਮਹੰ ਬਾਸ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਯਹ ਸਤਿਗੁਰੂ ਕਾ ਪਾਸ॥"',
       en: '"The water fish climbed into the sky, taking abode in the celestial realm. Says Kabir, listen O saints, this is the proximity of the True Guru."'
     },
     literalParadox: {
@@ -174,13 +174,13 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
       en: 'A fish that cannot survive without water flew out of the lake into the high sky and made its permanent home there.'
     },
     clueHint: {
-      hi: 'मछली = संसारी मन/जीव; जल = विषय-वासना; अकास/गगन = सहस्रार चक्र; सद्गुरु पास = गुरु-कृपा।',
+      hi: 'मछली = संसारी मन/जीव; जल = विषय-वासना; अकास/गगन = सहस्रार चक्र; सतगुरु पास = गुरु-कृपा।',
       pb: 'ਮੱਛੀ ਮਨ ਹੈ, ਜਲ ਵਾਸਨਾ ਹੈ, ਆਕਾਸ਼ ਦਸਮ ਦੁਆਰ ਹੈ।',
       en: 'Fish = Mind/Individual soul; Water = Worldly pleasures; Sky = Crown Chakra; Guru proximity = Grace.'
     },
     symbols: [
       { symbol: 'जल की मछली (Water Fish)', meaning: { hi: 'संसार रूपी जल और विषय-भोगों में डूबा रहने वाला चंचल जीव मन', pb: 'ਸੰਸਾਰੀ ਭੋਗਾਂ ਵਿੱਚ ਲੀਨ ਮਨ', en: 'Individual mind accustomed to swimming in the waters of sensory attachments' } },
-      { symbol: 'गगन मंडल बास (Sky Dweller)', meaning: { hi: 'सद्गुरु के ज्ञान से सुरति का ऊपर उठकर सहस्रार (गगन) में स्थायी निवास करना', pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਟਿਕਣਾ', en: 'Ascension of soul consciousness into Crown Chakra through spiritual grace' } }
+      { symbol: 'गगन मंडल बास (Sky Dweller)', meaning: { hi: 'सतगुरु के ज्ञान से सुरति का ऊपर उठकर सहस्रार (गगन) में स्थायी निवास करना', pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਟਿਕਣਾ', en: 'Ascension of soul consciousness into Crown Chakra through spiritual grace' } }
     ],
     question: {
       hi: '"मछली का जल छोड़कर आकाश में निवास करने" का योगिक अर्थ क्या है?',
@@ -188,7 +188,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
       en: 'What is the yogic secret of "The fish leaving water to inhabit the celestial sky"?'
     },
     options: {
-      hi: ['विषय-जल में डूबे संसारी मन का सद्गुरु-कृपा से ऊर्ध्वगामी होकर सहस्रार चक्र (गगन) में लीन होना', 'उड़न मछली', 'पानी का सूखना', 'पक्षी का शिकार'],
+      hi: ['विषय-जल में डूबे संसारी मन का सतगुरु-कृपा से ऊर्ध्वगामी होकर सहस्रार चक्र (गगन) में लीन होना', 'उड़न मछली', 'पानी का सूखना', 'पक्षी का शिकार'],
       pb: ['ਮਨ ਦਾ ਸੰਸਾਰੀ ਵਾਸਨਾਵਾਂ ਤੋਂ ਉੱਪਰ ਉੱਠ ਕੇ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਲੀਨ ਹੋਣਾ', 'ਉੱਡਣ ਵਾਲੀ ਮੱਛੀ', 'ਪਾਣੀ ਸੁੱਕਣਾ', 'ਸ਼ਿਕਾਰ'],
       en: ['Mind bound to sensory waters transcending upward through Guru grace into Crown Chakra absorption', 'Flying fish species', 'Drying water body', 'Bird catching fish']
     },
@@ -196,16 +196,16 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'सुरति-उर्ध्वगमन एवं सहस्रार स्थिति', pb: 'ਸੁਰਤ ਦਾ ਉੱਪਰ ਉੱਠਣਾ', en: 'Ascension of Mind to Celestial Heights' },
       deepMeaning: {
-        hi: 'मछली संसारी जीव का प्रतीक है, जो हमेशा विषय-वासनाओं रूपी जल में डूबती रहती है। जब सद्गुरु का ज्ञान प्राप्त होता है, तो वही जीव चेतना (मछली) सांसारिक जल से बाहर निकलकर ऊर्ध्वगामी होती है और गगन मंडल (सहस्रार) में पहुंचकर ब्रह्मरंध्र में विश्राम पाती है।',
+        hi: 'मछली संसारी जीव का प्रतीक है, जो हमेशा विषय-वासनाओं रूपी जल में डूबती रहती है। जब सतगुरु का ज्ञान प्राप्त होता है, तो वही जीव चेतना (मछली) सांसारिक जल से बाहर निकलकर ऊर्ध्वगामी होती है और गगन मंडल (सहस्रार) में पहुंचकर ब्रह्मरंध्र में विश्राम पाती है।',
         pb: 'ਸੰਸਾਰੀ ਮਨ ਗੁਰੂ ਦੀ ਸਿੱਖਿਆ ਨਾਲ ਵਾਸਨਾਵਾਂ ਛੱਡ ਕੇ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਲੀਨ ਹੋ ਜਾਂਦਾ ਹੈ।',
         en: 'The fish represents the soul traditionally dependent on sensory waters. Under the influence of True Guru wisdom, the soul consciousness ascends vertically into the Crown Chakra, abiding in divine awareness.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु का सानिध्य सांसारिक मन को सहस्रार के आकाश में उड़ा देता है।',
+        hi: 'सतगुरु का सानिध्य सांसारिक मन को सहस्रार के आकाश में उड़ा देता है।',
         pb: 'ਗੁਰੂ ਦੀ ਮਿਹਰ ਨਾਲ ਮਨ ਉੱਚੀ ਅਵਸਥਾ ਪਾਉਂਦਾ ਹੈ।',
         en: 'Guru grace elevates the mind bound by earthly desires to the realm of pure consciousness.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਗਿਆਨ ਚੁੱਪੀ ਦਾ ਵਿਸ਼ਾ ਹੈ।',
         en: 'Self-knowledge belongs to silence; where sensory speech ceases, the soul hears.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'अखंड स्वयं-प्रकाशित दिव्य ज्योति', pb: 'ਅਖੰਡ ਆਤਮ-ਜੋਤਿ', en: 'Self-Luminous Uncreated Divine Illumination' },
       deepMeaning: {
-        hi: 'भौतिक दीपक को जलने के लिए मिट्टी, तेल और बत्ती की आवश्यकता होती है। परंतु साधक जब दशम द्वार (सहस्रार) में पहुँचता है, तो वहाँ परमात्मा की स्वयं-प्रकाशित ज्योति जगमगाती है, जिसे जलने के लिए किसी सांसारिक सामग्री की आवश्यकता नहीं। वहीं कबीर साहेब का मन सदा लीन रहता है।',
+        hi: 'भौतिक दीपक को जलने के लिए मिट्टी, तेल और बत्ती की आवश्यकता होती है। परंतु साधक जब दशम द्वार (सहस्रार) में पहुँचता है, तो वहाँ परमात्मा की स्वयं-प्रकाशित ज्योति जगमगाती है, जिसे जलने के लिए किसी सांसारिक सामग्री की आवश्यकता नहीं। वहीं सतगुरु कबीर साहेब का मन सदा लीन रहता है।',
         pb: 'ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਅਖੰਡ ਪ੍ਰਕਾਸ਼ ਹੈ, ਜਿਸ ਲਈ ਕਿਸੇ ਤੇਲ ਜਾਂ ਬਾਤੀ ਦੀ ਲੋੜ ਨਹੀਂ।',
         en: 'Physical lamps require clay, oil, and wicks. But when a seeker arrives at the Tenth Door, the uncreated self-luminous Light of Supreme Consciousness blazes eternally without any fuel. Kabir fixes his mind in that sacred realm.'
       },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਮਾਤਮਾ ਦਾ ਪ੍ਰਕਾਸ਼ ਅਵਿਨਾਸ਼ੀ ਅਤੇ ਆਪਣਾ ਆਪ ਹੈ।',
         en: 'The Divine Light is self-born and imperishable, the very nature of the Soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਨਿਮਰਤਾ ਵਿੱਚ ਹੰਕਾਰ ਨੂੰ ਮਿਟਾਉਣ ਦੀ ਤਾਕਤ ਹੈ।',
         en: 'Humility and pure devotion hold the supreme power to dismantle colossal arrogance.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -404,7 +404,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'जीवते जी मरना एवं अमर पद प्राप्ति', pb: 'ਜਿਉਂਦੇ ਜੀ ਮਰਨਾ ਅਤੇ ਅਮਰਤਾ', en: 'Dying While Alive to Attain Immortality' },
       deepMeaning: {
-        hi: '\'जीवता मुआ\' कबीर साहेब का परम सिद्धांत है। जो व्यक्ति जीवित रहते हुए संसार के मोह, काम, क्रोध और देहाध्यास के प्रति मर जाता है, वही वास्तव में आत्मा में जागकर अमर पद प्राप्त करता है। और जो केवल शरीर के स्तर पर जी रहा है, वह जीते जी मृत समान है।',
+        hi: '\'जीवता मुआ\' सतगुरु कबीर साहेब का परम सिद्धांत है। जो व्यक्ति जीवित रहते हुए संसार के मोह, काम, क्रोध और देहाध्यास के प्रति मर जाता है, वही वास्तव में आत्मा में जागकर अमर पद प्राप्त करता है। और जो केवल शरीर के स्तर पर जी रहा है, वह जीते जी मृत समान है।',
         pb: 'ਸੰਸਾਰੀ ਮੋਹ ਤੋਂ ਮਰ ਕੇ ਆਤਮਾ ਵਿੱਚ ਜਾਗਣਾ ਹੀ ਅਮਰ ਪਦ ਪਾਉਣਾ ਹੈ। ਜੋ ਕੇਵਲ ਦੇਹ ਵਿੱਚ ਜੀ ਰਿਹਾ ਹੈ ਉਹ ਮੁਰਦਾ ਹੈ।',
         en: '"Dying while alive" is Kabir\'s core principle. One who dies to bodily identification, greed, and ego while inhabiting the physical frame awakens into imperishable Spirit. Conversely, one consumed purely by sensory life is spiritually dead.'
       },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਨਾਲ ਮੋਹ ਕੱਟਣਾ ਹੀ ਅਮਰਤਾ ਹੈ।',
         en: 'Cutting off attachments with the sword of wisdom yields true eternal life.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -424,8 +424,8 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '229. सूखी झाड़ी में फल-फूल', pb: '229. ਸੁੱਕੀ ਝਾੜੀ ਵਿੱਚ ਫੁੱਲ-ਫਲ', en: '229. Dry Bush Blooming Out of Season' },
     verse: {
-      hi: '"सूखी झाड़ी फूलिए, बिनु ऋतु फले रसाल। कहै कबीर सोई समझे, जो सद्गुरु का बाल॥"',
-      pb: '"ਸੂਖੀ ਝਾੜੀ ਫੂਲਿਏ, ਬਿਨੁ ਰਿਤੁ ਫਲੇ ਰਸਾਲ। ਕਹੈ ਕਬੀਰ ਸੋਈ ਸਮਝੇ, ਜੋ ਸਦਗੁਰੂ ਕਾ ਬਾਲ॥"',
+      hi: '"सूखी झाड़ी फूलिए, बिनु ऋतु फले रसाल। कहै कबीर सोई समझे, जो सतगुरु का बाल॥"',
+      pb: '"ਸੂਖੀ ਝਾੜੀ ਫੂਲਿਏ, ਬਿਨੁ ਰਿਤੁ ਫਲੇ ਰਸਾਲ। ਕਹੈ ਕਬੀਰ ਸੋਈ ਸਮਝੇ, ਜੋ ਸਤਿਗੁਰੂ ਕਾ ਬਾਲ॥"',
       en: '"A dry thorn bush blossomed, bearing sweet juicy fruit out of season. Says Kabir, he alone comprehends who is a child of the True Guru."'
     },
     literalParadox: {
@@ -440,7 +440,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     },
     symbols: [
       { symbol: 'सूखी झाड़ी (Dry Thorny Bush)', meaning: { hi: 'ज्ञानहीन, नीरस और काँटों (विकारों) से भरा मनुष्य का हृदय', pb: 'ਗਿਆਨਹੀਣ ਅਤੇ ਵਿਕਾਰਾਂ ਨਾਲ ਭਰਿਆ ਹਿਰਦਾ', en: 'Arid, uninspired heart filled with thorny vices and worldly care' } },
-      { symbol: 'बिनु ऋतु फले रसाल (Juicy Fruit Out of Season)', meaning: { hi: 'सद्गुरु की ज्ञान वर्षा से नीरस हृदय का खिलना और आत्मानंद के रस से लदभद होना', pb: 'ਗੁਰੂ-ਗਿਆਨ ਨਾਲ ਆਤਮਿਕ ਰਸ ਪ੍ਰਾਪਤ ਹੋਣਾ', en: 'Spontaneous blossoming of divine joy and wisdom in a transformed heart through Guru Grace' } }
+      { symbol: 'बिनु ऋतु फले रसाल (Juicy Fruit Out of Season)', meaning: { hi: 'सतगुरु की ज्ञान वर्षा से नीरस हृदय का खिलना और आत्मानंद के रस से लदभद होना', pb: 'ਗੁਰੂ-ਗਿਆਨ ਨਾਲ ਆਤਮਿਕ ਰਸ ਪ੍ਰਾਪਤ ਹੋਣਾ', en: 'Spontaneous blossoming of divine joy and wisdom in a transformed heart through Guru Grace' } }
     ],
     question: {
       hi: '"सूखी झाड़ी में बिना ऋतु के फूल-फल आने" का आध्यात्मिक संदेश क्या है?',
@@ -448,7 +448,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
       en: 'What is the spiritual teaching of "Dry thorny bush blooming with juicy fruit out of season"?'
     },
     options: {
-      hi: ['सद्गुरु के ज्ञान से नीरस व विकारी हृदय भी रूपांतरित होकर आत्मानंद के अलौकिक रस से भर जाता है', 'मौसम की खराबी', 'खाद का असर', 'कृत्रिम फूल'],
+      hi: ['सतगुरु के ज्ञान से नीरस व विकारी हृदय भी रूपांतरित होकर आत्मानंद के अलौकिक रस से भर जाता है', 'मौसम की खराबी', 'खाद का असर', 'कृत्रिम फूल'],
       pb: ['ਗੁਰੂ ਦੀ ਮਿਹਰ ਨਾਲ ਨੀਰਸ ਹਿਰਦਾ ਵੀ ਆਤਮ-ਆਨੰਦ ਨਾਲ ਭਰ ਜਾਂਦਾ ਹੈ', 'ਮੌਸਮ', 'ਖਾਦ', 'ਨਕਲੀ ਫੁੱਲ'],
       en: ['Through True Guru wisdom, even a dry and sinful heart is transformed, drenching in divine soul ecstasy', 'Unseasonal weather shift', 'Effect of fertilizer', 'Artificial flowers']
     },
@@ -456,7 +456,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'शुष्क हृदय का ज्ञान-रूपांतरण', pb: 'ਨੀਰਸ ਹਿਰਦੇ ਦਾ ਬਦਲਾਅ', en: 'Transformation of an Arid Heart into Bliss' },
       deepMeaning: {
-        hi: '\'सूखी झाड़ी\' वह अज्ञानी मनुष्य है जिसका जीवन भक्ति-रस से विहीन और विकारों से काँटेदार बना हुआ था। जब उस पर सद्गुरु के ज्ञान का मेघ बरसता है, तो वही शुष्क झाड़ी खिल उठती है और बिना किसी बाहरी ऋतु (साधन) के उसमें आत्मानंद का मीठा फल (रसाल) लग जाता है।',
+        hi: '\'सूखी झाड़ी\' वह अज्ञानी मनुष्य है जिसका जीवन भक्ति-रस से विहीन और विकारों से काँटेदार बना हुआ था। जब उस पर सतगुरु के ज्ञान का मेघ बरसता है, तो वही शुष्क झाड़ी खिल उठती है और बिना किसी बाहरी ऋतु (साधन) के उसमें आत्मानंद का मीठा फल (रसाल) लग जाता है।',
         pb: 'ਅਗਿਆਨੀ ਅਤੇ ਨੀਰਸ ਹਿਰਦਾ ਜਦੋਂ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਆਉਂਦਾ ਹੈ, ਤਾਂ ਉਹ ਆਤਮ-ਰਸ ਨਾਲ ਖਿੜ ਉੱਠਦਾ ਹੈ।',
         en: 'The "dry bush" is a worldly person devoid of devotion, full of thorny flaws. When touched by the shower of True Guru wisdom, that arid heart transforms into a lush garden of bliss, producing divine fruit regardless of external season.'
       },
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਗੁਰੂ ਦੀ ਕ੍ਰਿਪਾ ਨੀਰਸ ਮਨੁੱਖ ਨੂੰ ਵੀ ਸੰਤ ਬਣਾ ਦਿੰਦੀ ਹੈ।',
         en: 'Guru grace turns impossibility into reality, converting a dry sinner into a blossoming saint.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_221_TO_230: UlatvasiQuestion[] = [
         pb: 'ਸਹਿਜ ਪ੍ਰੇਮ ਹੀ ਸੱਚੀ ਸਮਾਧੀ ਹੈ।',
         en: 'Unbroken loving remembrance is Sahaja Samadhi, free from forced effort or mechanical bounds.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

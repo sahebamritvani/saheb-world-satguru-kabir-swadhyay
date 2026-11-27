@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Lakdi kahe luhar ki, tu mati jaare mohi. Ek din aisa hoyga, main jaraungi tohi.',
     bhavarth: {
-      hi: 'कबीर साहेब भट्ठी में जलती हुई लकड़ी के रूपक से काल-चक्र और मृत्यु की अटल सच्चाई का बोध कराते हुए कहते हैं कि जलती हुई लकड़ी लुहार से कह रही है: हे लुहार! तू अपने स्वार्थ और लोहे को तपाने के लिए आज मुझे मत जला। याद रख, एक दिन काल का ऐसा चक्र अवश्य आएगा जब तेरी मृत्यु होने पर श्मशान की चिता में मैं ही तुझे अपने भीतर भस्म करूँगी। इसलिए संसार में किसी को सताने और अपनी नश्वर शक्ति का अहंकार करने से बचो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭੱਠੀ ਵਿੱਚ ਬਲਦੀ ਲੱਕੜੀ ਲੁਹਾਰ ਨੂੰ ਕਹਿੰਦੀ ਹੈ ਕਿ ਹੇ ਲੁਹਾਰ! ਅੱਜ ਤੂੰ ਮੈਨੂੰ ਆਪਣੇ ਸੁਆਰਥ ਲਈ ਨਾ ਸਾੜ। ਇੱਕ ਦਿਨ ਅਜਿਹਾ ਆਵੇਗਾ ਜਦੋਂ ਮੌਤ ਆਉਣ ਤੇ ਮੈਂ ਹੀ ਚਿਖਾ ਬਣ ਕੇ ਤੈਨੂੰ ਸਾੜਾਂਗੀ। ਕਿਸੇ ਉੱਤੇ ਜ਼ੁਲਮ ਨਾ ਕਰੋ।',
-      en: 'Kabir Saheb reveals the inexorable cycle of mortality through the voice of burning wood: The firewood speaks to the blacksmith: "O blacksmith, do not burn me heedlessly today for your passing profit. Remember, a day will inevitably dawn when your body dies, and I, as the funeral pyre, shall reduce you to ashes." Turn away from cruelty and mortal pride.',
+      hi: 'सतगुरु कबीर साहेब भट्ठी में जलती हुई लकड़ी के रूपक से काल-चक्र और मृत्यु की अटल सच्चाई का बोध कराते हुए कहते हैं कि जलती हुई लकड़ी लुहार से कह रही है: हे लुहार! तू अपने स्वार्थ और लोहे को तपाने के लिए आज मुझे मत जला। याद रख, एक दिन काल का ऐसा चक्र अवश्य आएगा जब तेरी मृत्यु होने पर श्मशान की चिता में मैं ही तुझे अपने भीतर भस्म करूँगी। इसलिए संसार में किसी को सताने और अपनी नश्वर शक्ति का अहंकार करने से बचो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭੱਠੀ ਵਿੱਚ ਬਲਦੀ ਲੱਕੜੀ ਲੁਹਾਰ ਨੂੰ ਕਹਿੰਦੀ ਹੈ ਕਿ ਹੇ ਲੁਹਾਰ! ਅੱਜ ਤੂੰ ਮੈਨੂੰ ਆਪਣੇ ਸੁਆਰਥ ਲਈ ਨਾ ਸਾੜ। ਇੱਕ ਦਿਨ ਅਜਿਹਾ ਆਵੇਗਾ ਜਦੋਂ ਮੌਤ ਆਉਣ ਤੇ ਮੈਂ ਹੀ ਚਿਖਾ ਬਣ ਕੇ ਤੈਨੂੰ ਸਾੜਾਂਗੀ। ਕਿਸੇ ਉੱਤੇ ਜ਼ੁਲਮ ਨਾ ਕਰੋ।',
+      en: 'Satguru Kabir Saheb reveals the inexorable cycle of mortality through the voice of burning wood: The firewood speaks to the blacksmith: "O blacksmith, do not burn me heedlessly today for your passing profit. Remember, a day will inevitably dawn when your body dies, and I, as the funeral pyre, shall reduce you to ashes." Turn away from cruelty and mortal pride.',
     },
     wordMeanings: {
       hi: [
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Gyan ratan ka jatan kar, mati ka sansaar. Aay Kabir phir gaya, pheeka hai sansaar.',
     bhavarth: {
-      hi: 'कबीर साहेब आत्म-साधना का उपदेश देते हुए कहते हैं कि हे मानव! तू केवल गुरु से प्राप्त "ज्ञान रूपी अमूल्य रत्न" को संभालने और सहेजने का जतन कर; क्योंकि यह समस्त संसार तो मिट्टी के समान नश्वर और क्षणभंगुर है। कबीर साहेब कहते हैं कि मैं इस संसार में आया, इसकी समस्त भोग-विलास और मायावी चमक-दमक को परखा और अंततः इससे विरक्त होकर लौट गया, क्योंकि ईश्वर-प्रेम के बिना यह पूरा संसार सर्वथा सारहीन व फीका है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਦੇ ਬਖਸ਼ੇ ਗਿਆਨ ਰੂਪੀ ਰਤਨ ਨੂੰ ਸੰਭਾਲਣ ਦਾ ਜਤਨ ਕਰ, ਕਿਉਂਕਿ ਇਹ ਸਾਰਾ ਸੰਸਾਰ ਮਿੱਟੀ ਵਰਗਾ ਨਾਸ਼ਵਾਨ ਹੈ। ਕਬੀਰ ਸਾਹੇਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੈਂ ਸੰਸਾਰ ਨੂੰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਪਰਖ ਲਿਆ ਹੈ, ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਬਿਨਾਂ ਇਹ ਬਿਲਕੁਲ ਫਿੱਕਾ ਤੇ ਬੇਸਵਾਦ ਹੈ।',
-      en: 'Kabir Saheb instructs on true spiritual wealth: Guard and cultivate with utmost care the precious jewel of Spiritual Wisdom (Gyan Ratan), for this worldly realm is nothing but fragile clay. Kabir declares: I entered this world, thoroughly examined all its sensory promises, and turned away detached, for without Divine Truth, this entire existence is utterly bland and flavorless.',
+      hi: 'सतगुरु कबीर साहेब आत्म-साधना का उपदेश देते हुए कहते हैं कि हे मानव! तू केवल गुरु से प्राप्त "ज्ञान रूपी अमूल्य रत्न" को संभालने और सहेजने का जतन कर; क्योंकि यह समस्त संसार तो मिट्टी के समान नश्वर और क्षणभंगुर है। सतगुरु कबीर साहेब फरमाते हैं कि मैं इस संसार में आया, इसकी समस्त भोग-विलास और मायावी चमक-दमक को परखा और अंततः इससे विरक्त होकर लौट गया, क्योंकि ईश्वर-प्रेम के बिना यह पूरा संसार सर्वथा सारहीन व फीका है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਦੇ ਬਖਸ਼ੇ ਗਿਆਨ ਰੂਪੀ ਰਤਨ ਨੂੰ ਸੰਭਾਲਣ ਦਾ ਜਤਨ ਕਰ, ਕਿਉਂਕਿ ਇਹ ਸਾਰਾ ਸੰਸਾਰ ਮਿੱਟੀ ਵਰਗਾ ਨਾਸ਼ਵਾਨ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਸੰਸਾਰ ਨੂੰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਪਰਖ ਲਿਆ ਹੈ, ਪ੍ਰਭੂ ਦੇ ਨਾਮ ਬਿਨਾਂ ਇਹ ਬਿਲਕੁਲ ਫਿੱਕਾ ਤੇ ਬੇਸਵਾਦ ਹੈ।',
+      en: 'Satguru Kabir Saheb instructs on true spiritual wealth: Guard and cultivate with utmost care the precious jewel of Spiritual Wisdom (Gyan Ratan), for this worldly realm is nothing but fragile clay. Satguru Kabir Saheb proclaims: I entered this world, thoroughly examined all its sensory promises, and turned away detached, for without Divine Truth, this entire existence is utterly bland and flavorless.',
     },
     wordMeanings: {
       hi: [
@@ -149,9 +149,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार किस वस्तु को सहेजने और यत्न करने की आवश्यकता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਚੀਜ਼ ਦਾ ਜਤਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, what must we preserve and cultivate with diligence?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार किस वस्तु को सहेजने और यत्न करने की आवश्यकता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਿਸ ਚੀਜ਼ ਦਾ ਜਤਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what must we preserve and cultivate with diligence?',
         },
         options: {
           hi: ['सोने-चांदी का', 'गुरु द्वारा दिए गए ज्ञान रूपी रत्न का', 'जमीन-जायदाद का', 'महलों का'],
@@ -186,9 +186,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Riddhi siddhi maangu nahi, maangu tum pai yeh. Nishidin darshan saadhu ko, Prabhu Kabir kahu deh.',
     bhavarth: {
-      hi: 'कबीर साहेब अनन्य और निष्काम प्रार्थना का आदर्श प्रस्तुत करते हुए परमात्मा से कहते हैं कि हे प्रभु! मुझे सांसारिक रिद्धियां-सिद्धियां, चमत्कारी शक्तियां अथवा धन-वैभव की कोई चाह नहीं है। मैं आपसे केवल यही एक वरदान मांगता हूँ कि मुझे रात-दिन (निशिदिन) सच्चे संतों और आत्मज्ञानियों का पावन दर्शन व सत्संग प्राप्त होता रहे। हे प्रभु! जब तक इस देह में प्राण हैं, मुझे सदा संतों के सान्निध्य में ही रखिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਅੱਗੇ ਨਿਸ਼ਕਾਮ ਅਰਦਾਸ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਮਾਲਕ! ਮੈਨੂੰ ਕੋਈ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਜਾਂ ਦੁਨੀਆਵੀ ਤਾਕਤਾਂ ਨਹੀਂ ਚਾਹੀਦੀਆਂ। ਮੈਂ ਸਿਰਫ ਇਹ ਮੰਗਦਾ ਹਾਂ ਕਿ ਮੈਨੂੰ ਦਿਨ-ਰਾਤ ਸਾਧੂਆਂ-ਸੰਤਾਂ ਦਾ ਦਰਸ਼ਨ ਤੇ ਸੰਗਤ ਮਿਲਦੀ ਰਹੇ।',
-      en: 'Kabir Saheb models the pinnacle of selfless prayer: O Lord! I seek neither occult powers (Siddhis), worldly riches (Riddhi), nor miraculous acclaim. From You, I beg only this single blessing: that day and night (Nishidin), I may be graced with the holy sight and fellowship of true Saints. As long as breath remains in this vessel, keep me in the sanctuary of the Holy.',
+      hi: 'सतगुरु कबीर साहेब अनन्य और निष्काम प्रार्थना का आदर्श प्रस्तुत करते हुए परमात्मा से कहते हैं कि हे प्रभु! मुझे सांसारिक रिद्धियां-सिद्धियां, चमत्कारी शक्तियां अथवा धन-वैभव की कोई चाह नहीं है। मैं आपसे केवल यही एक वरदान मांगता हूँ कि मुझे रात-दिन (निशिदिन) सच्चे संतों और आत्मज्ञानियों का पावन दर्शन व सत्संग प्राप्त होता रहे। हे प्रभु! जब तक इस देह में प्राण हैं, मुझे सदा संतों के सान्निध्य में ही रखिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਅੱਗੇ ਨਿਸ਼ਕਾਮ ਅਰਦਾਸ ਕਰਦੇ ਹਨ ਕਿ ਹੇ ਮਾਲਕ! ਮੈਨੂੰ ਕੋਈ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਜਾਂ ਦੁਨੀਆਵੀ ਤਾਕਤਾਂ ਨਹੀਂ ਚਾਹੀਦੀਆਂ। ਮੈਂ ਸਿਰਫ ਇਹ ਮੰਗਦਾ ਹਾਂ ਕਿ ਮੈਨੂੰ ਦਿਨ-ਰਾਤ ਸਾਧੂਆਂ-ਸੰਤਾਂ ਦਾ ਦਰਸ਼ਨ ਤੇ ਸੰਗਤ ਮਿਲਦੀ ਰਹੇ।',
+      en: 'Satguru Kabir Saheb models the pinnacle of selfless prayer: O Lord! I seek neither occult powers (Siddhis), worldly riches (Riddhi), nor miraculous acclaim. From You, I beg only this single blessing: that day and night (Nishidin), I may be graced with the holy sight and fellowship of true Saints. As long as breath remains in this vessel, keep me in the sanctuary of the Holy.',
     },
     wordMeanings: {
       hi: [
@@ -230,9 +230,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-3-1',
         question: {
-          hi: 'कबीर साहेब ईश्वर से रिद्धि-सिद्धि के स्थान पर क्या मांगते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਦੀ ਥਾਂ ਪ੍ਰਭੂ ਕੋਲੋਂ ਕੀ ਮੰਗਦੇ ਹਨ?',
-          en: 'What does Kabir Saheb request from the Lord instead of occult powers and riches?',
+          hi: 'सतगुरु कबीर साहेब ईश्वर से रिद्धि-सिद्धि के स्थान पर क्या मांगते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਰਿੱਧੀਆਂ-ਸਿੱਧੀਆਂ ਦੀ ਥਾਂ ਪ੍ਰਭੂ ਕੋਲੋਂ ਕੀ ਮੰਗਦੇ ਹਨ?',
+          en: 'What does Satguru Kabir Saheb request from the Lord instead of occult powers and riches?',
         },
         options: {
           hi: ['अथाह सोना-चांदी', 'निशिदिन (दिन-रात) सच्चे साधु-संतों का दर्शन व संगति', 'राजपद', 'लंबी आयु'],
@@ -267,9 +267,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Na guru milya na sikh bhaya, lalach khelya daav. Dunyu boode dhaar mein, chadhi paathar ki naav.',
     bhavarth: {
-      hi: 'कबीर साहेब पाखंडी गुरुओं और लोभी शिष्यों के खोखले संबंध पर गहरा प्रहार करते हुए कहते हैं कि न तो गुरु को सच्चा गुरुत्व प्राप्त था और न ही शिष्य के भीतर सच्ची शिष्यता और समर्पण था; दोनों के बीच केवल सांसारिक स्वार्थ और लोभ का दांव-पेंच चल रहा था (गुरु को धन-प्रतिष्ठा का लोभ था और शिष्य को चमत्कारों का)। ऐसे लोभी गुरु और शिष्य दोनों भवसागर की गहरी मझधार में डूब गए, मानो वे पत्थर की नाव पर सवार होकर नदी पार करने चले थे।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਨਾ ਤਾਂ ਗੁਰੂ ਅਸਲ ਗੁਰੂ ਸੀ ਤੇ ਨਾ ਚੇਲਾ ਸੱਚਾ ਚੇਲਾ ਸੀ, ਦੋਵੇਂ ਲਾਲਚ ਦੀ ਖੇਡ ਖੇਡ ਰਹੇ ਸਨ। ਉਹ ਦੋਵੇਂ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਇੰਝ ਡੁੱਬ ਗਏ ਜਿਵੇਂ ਕੋਈ ਪੱਥਰ ਦੀ ਬੇੜੀ ਉੱਤੇ ਚੜ੍ਹ ਕੇ ਨਦੀ ਪਾਰ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੇ।',
-      en: 'Kabir Saheb delivers a piercing critique of transactional spirituality: The master was not a true enlightened Guru, nor was the disciple a sincere seeker; between them, greed merely played a deceptive game of mutual exploitation. Both ended up drowning in the turbulent current of worldly illusion, as foolish as passengers boarding a boat made of heavy stone.',
+      hi: 'सतगुरु कबीर साहेब पाखंडी गुरुओं और लोभी शिष्यों के खोखले संबंध पर गहरा प्रहार करते हुए कहते हैं कि न तो गुरु को सच्चा गुरुत्व प्राप्त था और न ही शिष्य के भीतर सच्ची शिष्यता और समर्पण था; दोनों के बीच केवल सांसारिक स्वार्थ और लोभ का दांव-पेंच चल रहा था (गुरु को धन-प्रतिष्ठा का लोभ था और शिष्य को चमत्कारों का)। ऐसे लोभी गुरु और शिष्य दोनों भवसागर की गहरी मझधार में डूब गए, मानो वे पत्थर की नाव पर सवार होकर नदी पार करने चले थे।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਨਾ ਤਾਂ ਗੁਰੂ ਅਸਲ ਗੁਰੂ ਸੀ ਤੇ ਨਾ ਚੇਲਾ ਸੱਚਾ ਚੇਲਾ ਸੀ, ਦੋਵੇਂ ਲਾਲਚ ਦੀ ਖੇਡ ਖੇਡ ਰਹੇ ਸਨ। ਉਹ ਦੋਵੇਂ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਇੰਝ ਡੁੱਬ ਗਏ ਜਿਵੇਂ ਕੋਈ ਪੱਥਰ ਦੀ ਬੇੜੀ ਉੱਤੇ ਚੜ੍ਹ ਕੇ ਨਦੀ ਪਾਰ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੇ।',
+      en: 'Satguru Kabir Saheb delivers a piercing critique of transactional spirituality: The master was not a true enlightened Guru, nor was the disciple a sincere seeker; between them, greed merely played a deceptive game of mutual exploitation. Both ended up drowning in the turbulent current of worldly illusion, as foolish as passengers boarding a boat made of heavy stone.',
     },
     wordMeanings: {
       hi: [
@@ -349,9 +349,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Kabir satgur na milya, rahi adhoori seesh. Swaang jati ka pahri kar, ghari ghari maange bheekh.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य साधु-वेष धारण करने वाले भिक्षुकों की दुर्दशा पर कहते हैं कि जिसे जीवन में पूर्ण तत्वदर्शी सतगुरु नहीं मिले, उसकी आध्यात्मिक शिक्षा और समझ सदा अधूरी ही रह गई। आत्म-ज्ञान के अभाव में उसने केवल यति (संन्यासी) का बाह्य चोला और भेष पहन लिया और घर-घर जाकर अन्न व धन की भिक्षा मांगने में ही जीवन गंवा दिया। बिना सतगुरु की कृपा के आंतरिक तृप्ति नहीं मिलती, केवल बाह्य स्वांग रह जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਨੂੰ ਸੱਚਾ ਸਤਿਗੁਰੂ ਨਹੀਂ ਮਿਲਿਆ, ਉਸ ਦੀ ਸਿੱਖਿਆ ਅਧੂਰੀ ਰਹਿ ਗਈ। ਉਸ ਨੇ ਸਾਧੂਆਂ ਦਾ ਬਾਹਰੀ ਭੇਖ ਤਾਂ ਧਾਰ ਲਿਆ ਪਰ ਗਿਆਨ ਨਾ ਹੋਣ ਕਰਕੇ ਘਰ-ਘਰ ਜਾ ਕੇ ਭਿੱਖਿਆ ਹੀ ਮੰਗਦਾ ਰਿਹਾ।',
-      en: 'Kabir Saheb observes the plight of unguided ascetics: One who never met an authentic enlightened Satguru remains forever incomplete in spiritual realization. Lacking inner awakening, such a person merely dons the theatrical costume (Swaang) of a renounced hermit, wandering from door to door begging for worldly crumbs. Outward robes without a Master yield only spiritual poverty.',
+      hi: 'सतगुरु कबीर साहेब बाह्य साधु-वेष धारण करने वाले भिक्षुकों की दुर्दशा पर कहते हैं कि जिसे जीवन में पूर्ण तत्वदर्शी सतगुरु नहीं मिले, उसकी आध्यात्मिक शिक्षा और समझ सदा अधूरी ही रह गई। आत्म-ज्ञान के अभाव में उसने केवल यति (संन्यासी) का बाह्य चोला और भेष पहन लिया और घर-घर जाकर अन्न व धन की भिक्षा मांगने में ही जीवन गंवा दिया। बिना सतगुरु की कृपा के आंतरिक तृप्ति नहीं मिलती, केवल बाह्य स्वांग रह जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਨੂੰ ਸੱਚਾ ਸਤਿਗੁਰੂ ਨਹੀਂ ਮਿਲਿਆ, ਉਸ ਦੀ ਸਿੱਖਿਆ ਅਧੂਰੀ ਰਹਿ ਗਈ। ਉਸ ਨੇ ਸਾਧੂਆਂ ਦਾ ਬਾਹਰੀ ਭੇਖ ਤਾਂ ਧਾਰ ਲਿਆ ਪਰ ਗਿਆਨ ਨਾ ਹੋਣ ਕਰਕੇ ਘਰ-ਘਰ ਜਾ ਕੇ ਭਿੱਖਿਆ ਹੀ ਮੰਗਦਾ ਰਿਹਾ।',
+      en: 'Satguru Kabir Saheb observes the plight of unguided ascetics: One who never met an authentic enlightened Satguru remains forever incomplete in spiritual realization. Lacking inner awakening, such a person merely dons the theatrical costume (Swaang) of a renounced hermit, wandering from door to door begging for worldly crumbs. Outward robes without a Master yield only spiritual poverty.',
     },
     wordMeanings: {
       hi: [
@@ -431,9 +431,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Yeh tan vish ki belri, guru amrit ki khaan. Sees diye jo guru mile, to bhi sasta jaan.',
     bhavarth: {
-      hi: 'कबीर साहेब गुरु-कृपा के अतुलनीय मूल्य को स्थापित करते हुए कहते हैं कि यह मानव शरीर वास्तव में विकारों, वासनाओं और नश्वरता रूपी विष की लता (बेल) है, जबकि सतगुरु साक्षात् अमरत्व और दिव्य ज्ञान के अमृत की अक्षय खान हैं। यदि अपना सिर (अहंकार और गर्व) काटकर भी सतगुरु का पावन सान्निध्य व कृपा प्राप्त हो जाए, तो भी इस आध्यात्मिक व्यापार को अत्यंत सस्ता और सुलभ ही समझना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਸਰੀਰ ਵਿਕਾਰਾਂ ਤੇ ਜ਼ਹਿਰ ਦੀ ਵੇਲ ਹੈ, ਜਦਕਿ ਸਤਿਗੁਰੂ ਅੰਮ੍ਰਿਤ ਦਾ ਅਮੁੱਕ ਖ਼ਜ਼ਾਨਾ ਹਨ। ਜੇ ਆਪਣਾ ਸਿਰ (ਹਉਮੈ ਅਤੇ ਹੰਕਾਰ) ਵਾਰ ਕੇ ਵੀ ਸੱਚਾ ਗੁਰੂ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਵੀ ਇਹ ਸੌਦਾ ਬਹੁਤ ਸਸਤਾ ਜਾਣੋ।',
-      en: 'Kabir Saheb unveils the priceless worth of the Satguru: This physical body is a creeping vine laden with the poison of sensory desires, while the Satguru is an inexhaustible mine of divine nectar and immortality. If one must surrender one\'s head (ego and intellectual pride) to attain the Grace of the Master, consider it an extraordinarily inexpensive and blessed bargain.',
+      hi: 'सतगुरु कबीर साहेब गुरु-कृपा के अतुलनीय मूल्य को स्थापित करते हुए कहते हैं कि यह मानव शरीर वास्तव में विकारों, वासनाओं और नश्वरता रूपी विष की लता (बेल) है, जबकि सतगुरु साक्षात् अमरत्व और दिव्य ज्ञान के अमृत की अक्षय खान हैं। यदि अपना सिर (अहंकार और गर्व) काटकर भी सतगुरु का पावन सान्निध्य व कृपा प्राप्त हो जाए, तो भी इस आध्यात्मिक व्यापार को अत्यंत सस्ता और सुलभ ही समझना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਸਰੀਰ ਵਿਕਾਰਾਂ ਤੇ ਜ਼ਹਿਰ ਦੀ ਵੇਲ ਹੈ, ਜਦਕਿ ਸਤਿਗੁਰੂ ਅੰਮ੍ਰਿਤ ਦਾ ਅਮੁੱਕ ਖ਼ਜ਼ਾਨਾ ਹਨ। ਜੇ ਆਪਣਾ ਸਿਰ (ਹਉਮੈ ਅਤੇ ਹੰਕਾਰ) ਵਾਰ ਕੇ ਵੀ ਸੱਚਾ ਗੁਰੂ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਵੀ ਇਹ ਸੌਦਾ ਬਹੁਤ ਸਸਤਾ ਜਾਣੋ।',
+      en: 'Satguru Kabir Saheb unveils the priceless worth of the Satguru: This physical body is a creeping vine laden with the poison of sensory desires, while the Satguru is an inexhaustible mine of divine nectar and immortality. If one must surrender one\'s head (ego and intellectual pride) to attain the Grace of the Master, consider it an extraordinarily inexpensive and blessed bargain.',
     },
     wordMeanings: {
       hi: [
@@ -478,9 +478,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-6-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार "सीस देने" का आध्यात्मिक अर्थ क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਸੀਸ ਦੇਣ" ਦਾ ਰੂਹਾਨੀ ਅਰਥ ਕੀ ਹੈ?',
-          en: 'What is the true spiritual meaning of "giving one\'s head" according to Kabir Saheb?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार "सीस देने" का आध्यात्मिक अर्थ क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ "ਸੀਸ ਦੇਣ" ਦਾ ਰੂਹਾਨੀ ਅਰਥ ਕੀ ਹੈ?',
+          en: 'What is the true spiritual meaning of "giving one\'s head" according to Satguru Kabir Saheb?',
         },
         options: {
           hi: ['शारीरिक आत्महत्या करना', 'अहंकार, गर्व और स्वार्थ का पूर्ण समर्पण करना', 'सिर पर बोझ उठाना', 'बाल कटवाना'],
@@ -515,9 +515,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Ram piyara chhandi kari, kare aan ka jaap. Besya kera poot jyun, kahe kaun su baap.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति में अनन्य एकनिष्ठता का महत्व समझाते हुए कहते हैं कि जो मनुष्य अपने परम प्रिय आत्म-स्वरूप राम (सत्यनाम) को छोड़कर अन्य देवी-देवताओं, पाखंडों या भ्रमों के जाप में भटकता रहता है, उसकी स्थिति उस वेश्या के पुत्र जैसी हो जाती है जो यह निश्चित नहीं कर पाता कि उसका वास्तविक पिता कौन है। ईश्वर एक है; अतः अपनी आस्था को अनेक स्थानों पर भटकाने के स्थान पर केवल एक सच्चिदानंद परमात्मा में ही अनन्य भाव से लगाना चाहिए।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪਿਆਰੇ ਪ੍ਰਭੂ ਰਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਛੱਡ ਕੇ ਹੋਰ-ਹੋਰ ਭਰਮਾਂ ਵਿੱਚ ਭਟਕਦਾ ਹੈ, ਉਸ ਦੀ ਹਾਲਤ ਵੇਸਵਾ ਦੇ ਪੁੱਤਰ ਵਰਗੀ ਹੋ ਜਾਂਦੀ ਹੈ ਜਿਸ ਨੂੰ ਆਪਣੇ ਅਸਲ ਪਿਤਾ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ। ਇੱਕ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਹੀ ਲਿਵ ਜੋੜੋ।',
-      en: 'Kabir Saheb emphasizes single-pointed, undivided devotion: One who abandons the beloved Supreme Lord (Ram / Satyanaam) to run after multiple fragmented deities and superstitions resembles the tragic child of a prostitute who knows not whom to call father. The Truth is One; anchor your heart unwaveringly in the One Eternal Supreme Being.',
+      hi: 'सतगुरु कबीर साहेब भक्ति में अनन्य एकनिष्ठता का महत्व समझाते हुए कहते हैं कि जो मनुष्य अपने परम प्रिय आत्म-स्वरूप राम (सत्यनाम) को छोड़कर अन्य देवी-देवताओं, पाखंडों या भ्रमों के जाप में भटकता रहता है, उसकी स्थिति उस वेश्या के पुत्र जैसी हो जाती है जो यह निश्चित नहीं कर पाता कि उसका वास्तविक पिता कौन है। ईश्वर एक है; अतः अपनी आस्था को अनेक स्थानों पर भटकाने के स्थान पर केवल एक सच्चिदानंद परमात्मा में ही अनन्य भाव से लगाना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪਿਆਰੇ ਪ੍ਰਭੂ ਰਾਮ (ਸਤਯਨਾਮ) ਨੂੰ ਛੱਡ ਕੇ ਹੋਰ-ਹੋਰ ਭਰਮਾਂ ਵਿੱਚ ਭਟਕਦਾ ਹੈ, ਉਸ ਦੀ ਹਾਲਤ ਵੇਸਵਾ ਦੇ ਪੁੱਤਰ ਵਰਗੀ ਹੋ ਜਾਂਦੀ ਹੈ ਜਿਸ ਨੂੰ ਆਪਣੇ ਅਸਲ ਪਿਤਾ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ। ਇੱਕ ਪ੍ਰਮਾਤਮਾ ਨਾਲ ਹੀ ਲਿਵ ਜੋੜੋ।',
+      en: 'Satguru Kabir Saheb emphasizes single-pointed, undivided devotion: One who abandons the beloved Supreme Lord (Ram / Satyanaam) to run after multiple fragmented deities and superstitions resembles the tragic child of a prostitute who knows not whom to call father. The Truth is One; anchor your heart unwaveringly in the One Eternal Supreme Being.',
     },
     wordMeanings: {
       hi: [
@@ -559,9 +559,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-7-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार भक्ति में किस गुण की प्रधानता होनी चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤੀ ਵਿੱਚ ਕਿਸ ਗੁਣ ਦਾ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ?',
-          en: 'According to Kabir Saheb, which quality is essential in true devotion?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार भक्ति में किस गुण की प्रधानता होनी चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਭਗਤੀ ਵਿੱਚ ਕਿਸ ਗੁਣ ਦਾ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, which quality is essential in true devotion?',
         },
         options: {
           hi: ['स्थान-स्थान पर भटकना', 'एक परमात्मा (सत्यनाम) के प्रति अनन्य एकनिष्ठता', 'केवल धन खर्च करना', 'अनेक मतों का आडंबर'],
@@ -596,9 +596,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Jo ro-un to bal ghate, hansu to Ram risaay. Manhi maahi bisoorna, jyun ghun kaathi khaay.',
     bhavarth: {
-      hi: 'कबीर साहेब प्रभु-मिलन के विरह की अत्यंत मार्मिक आंतरिक अवस्था का वर्णन करते हुए कहते हैं कि यदि मैं विरह की पीड़ा में प्रकट होकर रोता हूँ तो मेरा शारीरिक व आत्मिक बल क्षीण होता है; और यदि संसार के साथ मिलकर हँसता-खेलता हूँ तो मेरे प्रियतम राम अप्रसन्न (रिसाइ) होते हैं कि मुझे उनकी विरह-व्यथा की चिंता नहीं। अतः इस विरह को मन ही मन चुपचाप सहना पड़ता है, ठीक वैसे ही जैसे घुन (कीड़ा) अंदर ही अंदर लकड़ी को चुपचाप खाकर खोखला कर देता है। यह मौन विरह ही साधक के अहंकार को समाप्त करता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੇ ਬਿਰਹਾ ਦਾ ਹਾਲ ਬਿਆਨ ਕਰਦੇ ਹਨ ਕਿ ਜੇ ਮੈਂ ਰੋਂਦਾ ਹਾਂ ਤਾਂ ਮੇਰਾ ਬਲ ਘਟਦਾ ਹੈ, ਜੇ ਹੱਸਦਾ ਹਾਂ ਤਾਂ ਪ੍ਰਭੂ ਨਾਰਾਜ਼ ਹੁੰਦਾ ਹੈ। ਇਸ ਲਈ ਮਨ ਦੇ ਅੰਦਰ ਹੀ ਉਸ ਬਿਰਹਾ ਨੂੰ ਸਹਿਣਾ ਪੈਂਦਾ ਹੈ, ਜਿਵੇਂ ਘੁਣ ਲੱਕੜੀ ਨੂੰ ਅੰਦਰੋਂ-ਅੰਦਰੀ ਖਾ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb describes the profound, secret agony of Divine Longing: If I weep openly in separation, my mortal strength ebbs away; yet if I laugh casually with the world, my Beloved Lord feels slighted by my heedlessness. Thus, like a woodworm silently devouring timber from within without a sound, the sacred flame of longing consumes my heart in silent contemplation until the ego is wholly dissolved.',
+      hi: 'सतगुरु कबीर साहेब प्रभु-मिलन के विरह की अत्यंत मार्मिक आंतरिक अवस्था का वर्णन करते हुए कहते हैं कि यदि मैं विरह की पीड़ा में प्रकट होकर रोता हूँ तो मेरा शारीरिक व आत्मिक बल क्षीण होता है; और यदि संसार के साथ मिलकर हँसता-खेलता हूँ तो मेरे प्रियतम राम अप्रसन्न (रिसाइ) होते हैं कि मुझे उनकी विरह-व्यथा की चिंता नहीं। अतः इस विरह को मन ही मन चुपचाप सहना पड़ता है, ठीक वैसे ही जैसे घुन (कीड़ा) अंदर ही अंदर लकड़ी को चुपचाप खाकर खोखला कर देता है। यह मौन विरह ही साधक के अहंकार को समाप्त करता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਭੂ ਦੇ ਬਿਰਹਾ ਦਾ ਹਾਲ ਬਿਆਨ ਕਰਦੇ ਹਨ ਕਿ ਜੇ ਮੈਂ ਰੋਂਦਾ ਹਾਂ ਤਾਂ ਮੇਰਾ ਬਲ ਘਟਦਾ ਹੈ, ਜੇ ਹੱਸਦਾ ਹਾਂ ਤਾਂ ਪ੍ਰਭੂ ਨਾਰਾਜ਼ ਹੁੰਦਾ ਹੈ। ਇਸ ਲਈ ਮਨ ਦੇ ਅੰਦਰ ਹੀ ਉਸ ਬਿਰਹਾ ਨੂੰ ਸਹਿਣਾ ਪੈਂਦਾ ਹੈ, ਜਿਵੇਂ ਘੁਣ ਲੱਕੜੀ ਨੂੰ ਅੰਦਰੋਂ-ਅੰਦਰੀ ਖਾ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb describes the profound, secret agony of Divine Longing: If I weep openly in separation, my mortal strength ebbs away; yet if I laugh casually with the world, my Beloved Lord feels slighted by my heedlessness. Thus, like a woodworm silently devouring timber from within without a sound, the sacred flame of longing consumes my heart in silent contemplation until the ego is wholly dissolved.',
     },
     wordMeanings: {
       hi: [
@@ -643,9 +643,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-8-1',
         question: {
-          hi: 'कबीर साहेब ने विरह की आंतरिक तड़प की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਬਿਰਹਾ ਦੀ ਅੰਦਰੂਨੀ ਵੇਦਨਾ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'To what does Kabir Saheb compare the silent inner longing for God?',
+          hi: 'सतगुरु कबीर साहेब ने विरह की आंतरिक तड़प की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਬਿਰਹਾ ਦੀ ਅੰਦਰੂਨੀ ਵੇਦਨਾ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'To what does Satguru Kabir Saheb compare the silent inner longing for God?',
         },
         options: {
           hi: ['तेज तूफान से', 'लकड़ी को अंदर ही अंदर खाने वाले घुन से', 'बहती नदी से', 'उड़ते पक्षी से'],
@@ -680,9 +680,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Sukhiya sab sansaar hai, khaave aru sove. Dukhiya daas Kabir hai, jaage aru rove.',
     bhavarth: {
-      hi: 'कबीर साहेब सांसारिक जीवों के प्रमाद और अपनी आध्यात्मिक जागृति की व्यथा व्यक्त करते हुए कहते हैं कि यह समस्त सांसारिक समाज अपने अज्ञान में बड़ा "सुखी" बना बैठा है—वे केवल दिन में खाते हैं और रात को बेखबर होकर सोते हैं, उन्हें काल और मृत्यु का कोई भान नहीं। परंतु परमात्मा का यह दास कबीर बड़ा "दुखी" (व्यथित) है; क्योंकि वह काल-चक्र की इस विभीषिका और जीवों की दुर्दशा को देखकर रात-दिन जाग रहा है और उनके उद्धार की चिंता में रो रहा है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਰਾ ਸੰਸਾਰ ਅਗਿਆਨਤਾ ਵਿੱਚ ਸੁਖੀ ਹੈ, ਬਸ ਖਾਂਦਾ ਹੈ ਤੇ ਸੌਂਦਾ ਹੈ। ਪਰ ਕਬੀਰ ਦਾਸ ਦੁਖੀ ਹੈ ਜੋ ਜਾਗਦਾ ਹੈ ਤੇ ਜੀਵਾਂ ਦੀ ਦੁਰਦਸ਼ਾ ਦੇਖ ਕੇ ਰੋਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb contrasts worldly complacency with spiritual wakefulness: The entire ignorant world considers itself blissfully happy—they merely eat, indulge, and sleep in heedless stupor. But this humble servant Kabir is in deep anguish; for Kabir is wide awake, beholding the looming jaws of mortality and weeping in compassion for humanity\'s spiritual blindness.',
+      hi: 'सतगुरु कबीर साहेब सांसारिक जीवों के प्रमाद और अपनी आध्यात्मिक जागृति की व्यथा व्यक्त करते हुए कहते हैं कि यह समस्त सांसारिक समाज अपने अज्ञान में बड़ा "सुखी" बना बैठा है—वे केवल दिन में खाते हैं और रात को बेखबर होकर सोते हैं, उन्हें काल और मृत्यु का कोई भान नहीं। परंतु परमात्मा का यह दास कबीर बड़ा "दुखी" (व्यथित) है; क्योंकि वह काल-चक्र की इस विभीषिका और जीवों की दुर्दशा को देखकर रात-दिन जाग रहा है और उनके उद्धार की चिंता में रो रहा है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਰਾ ਸੰਸਾਰ ਅਗਿਆਨਤਾ ਵਿੱਚ ਸੁਖੀ ਹੈ, ਬਸ ਖਾਂਦਾ ਹੈ ਤੇ ਸੌਂਦਾ ਹੈ। ਪਰ ਕਬੀਰ ਦਾਸ ਦੁਖੀ ਹੈ ਜੋ ਜਾਗਦਾ ਹੈ ਤੇ ਜੀਵਾਂ ਦੀ ਦੁਰਦਸ਼ਾ ਦੇਖ ਕੇ ਰੋਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb contrasts worldly complacency with spiritual wakefulness: The entire ignorant world considers itself blissfully happy—they merely eat, indulge, and sleep in heedless stupor. But this humble servant Kabir is in deep anguish; for Kabir is wide awake, beholding the looming jaws of mortality and weeping in compassion for humanity\'s spiritual blindness.',
     },
     wordMeanings: {
       hi: [
@@ -726,9 +726,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-9-1',
         question: {
-          hi: 'कबीर साहेब क्यों जागते और रोते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਕਿਉਂ ਜਾਗਦੇ ਅਤੇ ਰੋਂਦੇ ਹਨ?',
-          en: 'Why does Kabir Saheb remain awake and weep?',
+          hi: 'सतगुरु कबीर साहेब क्यों जागते और रोते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕਿਉਂ ਜਾਗਦੇ ਅਤੇ ਰੋਂਦੇ ਹਨ?',
+          en: 'Why does Satguru Kabir Saheb remain awake and weep?',
         },
         options: {
           hi: ['उन्हें नींद नहीं आती थी', 'वे संसार के अज्ञान और काल-चक्र में जीवों की दुर्दशा को देखकर करुणा से द्रवित हैं', 'उन्हें भूख लगी थी', 'वे किसी व्यापारिक घाटे में थे'],
@@ -763,9 +763,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
     },
     transliteration: 'Parbat parbat main phirya, nain gawaye royi. So booti paau nahi, jaate jeevni hoyi.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य तीर्थों, वनों और पर्वतों पर ईश्वर की खोज की व्यर्थता बताते हुए कहते हैं कि मैं शांति और अमरत्व की खोज में एक पर्वत से दूसरे पर्वत पर भटकता रहा, और विरह में रो-रो कर मैंने अपने नेत्र भी थका दिए। किंतु मुझे बाहर जंगलों और पहाड़ों में वह "संजीवनी बूटी" (आत्म-ज्ञान व सत्यनाम का रस) कहीं नहीं मिली, जिससे मेरी आत्मा को वास्तविक अमर जीवन (जीवनी) प्राप्त हो सकता। अंततः जब सतगुरु मिले तो ज्ञात हुआ कि वह अमृत-बूटी बाहर नहीं, अपने ही हृदय के भीतर विद्यमान है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਸੱਚ ਦੀ ਭਾਲ ਵਿੱਚ ਪਹਾੜਾਂ-ਜੰਗਲਾਂ ਵਿੱਚ ਭਟਕਦਾ ਰਿਹਾ ਤੇ ਰੋ-ਰੋ ਕੇ ਅੱਖਾਂ ਗੁਆ ਲਈਆਂ, ਪਰ ਉਹ ਅਮਰ ਕਰਨ ਵਾਲੀ ਬੂਟੀ (ਨਾਮ) ਬਾਹਰ ਕਿਤੇ ਨਾ ਮਿਲੀ। ਆਖ਼ਰ ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਸਮਝ ਆਈ ਕਿ ਉਹ ਖ਼ਜ਼ਾਨਾ ਤਾਂ ਅੰਦਰ ਹੀ ਹੈ।',
-      en: 'Kabir Saheb depicts the futility of searching externally across mountains and wilderness: I wandered endlessly from peak to peak, weeping until my eyes were exhausted with strain, searching for the life-giving herbal elixir (Sanjeevani Booti) that could grant true eternal life. But I never found it in the outer wilderness; until the Satguru revealed that the immortalizing herb of the Divine Name grows solely within one\'s own heart.',
+      hi: 'सतगुरु कबीर साहेब बाह्य तीर्थों, वनों और पर्वतों पर ईश्वर की खोज की व्यर्थता बताते हुए कहते हैं कि मैं शांति और अमरत्व की खोज में एक पर्वत से दूसरे पर्वत पर भटकता रहा, और विरह में रो-रो कर मैंने अपने नेत्र भी थका दिए। किंतु मुझे बाहर जंगलों और पहाड़ों में वह "संजीवनी बूटी" (आत्म-ज्ञान व सत्यनाम का रस) कहीं नहीं मिली, जिससे मेरी आत्मा को वास्तविक अमर जीवन (जीवनी) प्राप्त हो सकता। अंततः जब सतगुरु मिले तो ज्ञात हुआ कि वह अमृत-बूटी बाहर नहीं, अपने ही हृदय के भीतर विद्यमान है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੈਂ ਸੱਚ ਦੀ ਭਾਲ ਵਿੱਚ ਪਹਾੜਾਂ-ਜੰਗਲਾਂ ਵਿੱਚ ਭਟਕਦਾ ਰਿਹਾ ਤੇ ਰੋ-ਰੋ ਕੇ ਅੱਖਾਂ ਗੁਆ ਲਈਆਂ, ਪਰ ਉਹ ਅਮਰ ਕਰਨ ਵਾਲੀ ਬੂਟੀ (ਨਾਮ) ਬਾਹਰ ਕਿਤੇ ਨਾ ਮਿਲੀ। ਆਖ਼ਰ ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਸਮਝ ਆਈ ਕਿ ਉਹ ਖ਼ਜ਼ਾਨਾ ਤਾਂ ਅੰਦਰ ਹੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb depicts the futility of searching externally across mountains and wilderness: I wandered endlessly from peak to peak, weeping until my eyes were exhausted with strain, searching for the life-giving herbal elixir (Sanjeevani Booti) that could grant true eternal life. But I never found it in the outer wilderness; until the Satguru revealed that the immortalizing herb of the Divine Name grows solely within one\'s own heart.',
     },
     wordMeanings: {
       hi: [
@@ -810,9 +810,9 @@ export const SAKHIS_BATCH_9: Sakhi[] = [
       {
         id: 'q-b9-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार जीवन को अमर करने वाली वास्तविक "बूटी" कहाँ प्राप्त होती है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਮਰ ਕਰਨ ਵਾਲੀ "ਬੂਟੀ" ਕਿੱਥੇ ਮਿਲਦੀ ਹੈ?',
-          en: 'According to Kabir Saheb, where is the true immortalizing elixir ("Booti") actually found?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जीवन को अमर करने वाली वास्तविक "बूटी" कहाँ प्राप्त होती है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਮਰ ਕਰਨ ਵਾਲੀ "ਬੂਟੀ" ਕਿੱਥੇ ਮਿਲਦੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, where is the true immortalizing elixir ("Booti") actually found?',
         },
         options: {
           hi: ['हिमालय के घने जंगलों में', 'सतगुरु की कृपा से अपने ही अंतःकरण के भीतर', 'दुकानों पर', 'गुफाओं में'],

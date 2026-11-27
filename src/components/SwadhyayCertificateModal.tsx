@@ -363,12 +363,19 @@ export const SwadhyayCertificateModal: React.FC<SwadhyayCertificateModalProps> =
               {/* Official Saheb World Emblem (Satguru Kabir Saheb Portrait) */}
               <div className="flex justify-center py-1">
                 {!swaroopImgError ? (
-                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-[#6B1D1D] via-[#D97706] to-amber-400 shadow-lg ring-4 ring-amber-500/20">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                  <div
+                    style={{ borderRadius: '50%', overflow: 'hidden' }}
+                    className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-[#6B1D1D] via-[#D97706] to-amber-400 shadow-lg ring-4 ring-amber-500/20"
+                  >
+                    <div
+                      style={{ borderRadius: '50%', overflow: 'hidden' }}
+                      className="w-full h-full rounded-full overflow-hidden bg-white"
+                    >
                       <img
                         src={logoSrc}
                         alt="Satguru Kabir Saheb Logo"
                         crossOrigin="anonymous"
+                        style={{ borderRadius: '50%', overflow: 'hidden' }}
                         onError={() => {
                           if (logoSrc !== '/icon.png') {
                             setLogoSrc('/icon.png');
@@ -381,7 +388,10 @@ export const SwadhyayCertificateModal: React.FC<SwadhyayCertificateModalProps> =
                     </div>
                   </div>
                 ) : (
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#6B1D1D] to-[#D97706] text-white flex items-center justify-center shadow-lg border-2 border-amber-300">
+                  <div
+                    style={{ borderRadius: '50%', overflow: 'hidden' }}
+                    className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#6B1D1D] to-[#D97706] text-white flex items-center justify-center shadow-lg border-2 border-amber-300"
+                  >
                     <Award className="w-11 h-11" />
                   </div>
                 )}

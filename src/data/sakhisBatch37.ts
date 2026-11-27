@@ -175,9 +175,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
     },
     transliteration: 'Yeh kaliyug aayo abai, saadhu na maanai koy. Kaamee krodhee masakhara, tinakee pooja hoy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अब ऐसा कलियुग आ गया है जहाँ सत्य और सात्विकता की मान्यता कम हो गई है। लोग सच्चे संतों को नहीं पहचानते। इसके विपरीत, जो कामी, क्रोधी और केवल मनोरंजन (मसखरा) करने वाले पाखंडी लोग हैं, समाज उनकी सेवा-पूजा में लगा हुआ है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अब ऐसा कलियुग आ गया है जहाँ सत्य और सात्विकता की मान्यता कम हो गई है। लोग सच्चे संतों को नहीं पहचानते। इसके विपरीत, जो कामी, क्रोधी और केवल मनोरंजन (मसखरा) करने वाले पाखंडी लोग हैं, समाज उनकी सेवा-पूजा में लगा हुआ है।',
       pb: 'ਇਹ ਅਜਿਹਾ ਸਮਾਂ (ਕਲਯੁਗ) ਆ ਗਿਆ ਹੈ ਕਿ ਕੋਈ ਸੱਚੇ ਸੰਤਾਂ ਨੂੰ ਨਹੀਂ ਮੰਨਦਾ। ਲੋਕ ਕਾਮੀ, ਕ੍ਰੋਧੀ ਤੇ ਮਜ਼ਾਕੀਆ ਢੋਂਗੀਆਂ ਦੀ ਪੂਜਾ ਕਰ ਰਹੇ ਹਨ।',
-      en: 'Kabir Saheb says that such a dark age (Kaliyug) has arrived where truth and purity have lost their recognition. No one acknowledges true saints. Instead, the society is busy worshipping hypocrites who are lustful, angry, and mere entertainers (masakhara).',
+      en: 'Satguru Kabir Saheb proclaims that such a dark age (Kaliyug) has arrived where truth and purity have lost their recognition. No one acknowledges true saints. Instead, the society is busy worshipping hypocrites who are lustful, angry, and mere entertainers (masakhara).',
     },
     wordMeanings: {
       hi: [
@@ -292,9 +292,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
       {
         id: 'q-b37-481',
         question: {
-          hi: 'कबीर साहेब के अनुसार जीवन को "तारने" (मुक्त करने) वाला कौन है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕੌਣ ਮੁਕਤੀ ਦਿੰਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who is the one that "liberates" (taarsee) the life?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जीवन को "तारने" (मुक्त करने) वाला कौन है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕੌਣ ਮੁਕਤੀ ਦਿੰਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is the one that "liberates" (taarsee) the life?',
         },
         options: {
           hi: ['केवल धन', 'केवल पुस्तकें', 'साधु (संत)', 'केवल समय'],
@@ -407,9 +407,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
     },
     transliteration: 'Sukh devai dukh ko harai, door karai apraadth. Kahain kabir vah kab milai, param snehee saadh.',
     bhavarth: {
-      hi: 'जो दूसरों को सुख प्रदान करते हैं, उनके दुःख हर लेते हैं और उनके अपराधों (दुर्गुणों) को दूर कर देते हैं—कबीरजी पूछते हैं कि ऐसे परम स्नेही और दयावान साधु कब मिलेंगे? अर्थात ऐसे पूर्ण संत बहुत ही दुर्लभ हैं और बड़े सौभाग्य से मिलते हैं।',
+      hi: 'जो दूसरों को सुख प्रदान करते हैं, उनके दुःख हर लेते हैं और उनके अपराधों (दुर्गुणों) को दूर कर देते हैं—सतगुरु कबीर साहेब पूछते हैं कि ऐसे परम स्नेही और दयावान साधु कब मिलेंगे? अर्थात ऐसे पूर्ण संत बहुत ही दुर्लभ हैं और बड़े सौभाग्य से मिलते हैं।',
       pb: 'ਜਿਹੜੇ ਸੁੱਖ ਦਿੰਦੇ ਹਨ, ਦੁੱਖ ਦੂਰ ਕਰਦੇ ਹਨ ਤੇ ਗੁਨਾਹ ਮਾਫ਼ ਕਰਦੇ ਹਨ - ਅਜਿਹੇ ਪਿਆਰੇ ਸੰਤ ਕਦੋਂ ਮਿਲਣਗੇ? ਅਜਿਹੇ ਸੰਤ ਬਹੁਤ ਮੁਸ਼ਕਿਲ ਨਾਲ ਮਿਲਦੇ ਹਨ।',
-      en: 'One who bestows happiness, removes sorrow, and eliminates vices (offenses) in others—Kabir Saheb asks, when will such a deeply loving and compassionate saint be met? Such perfect saints are extremely rare and are found only through great fortune.',
+      en: 'One who bestows happiness, removes sorrow, and eliminates vices (offenses) in others—Satguru Kabir Saheb asks, when will such a deeply loving and compassionate saint be met? Such perfect saints are extremely rare and are found only through great fortune.',
     },
     wordMeanings: {
       hi: [
@@ -837,9 +837,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
       {
         id: 'q-b37-488',
         question: {
-          hi: 'कबीर साहेब के अनुसार सबसे ऊँचा कौन है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਭ ਤੋਂ ਉੱਚਾ ਕੌਣ ਹੈ?',
-          en: 'According to Kabir Saheb, who is the highest?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सबसे ऊँचा कौन है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਭ ਤੋਂ ਉੱਚਾ ਕੌਣ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is the highest?',
         },
         options: {
           hi: ['करोड़ों पंडित', 'ऊँचे कुल वाले लोग', 'सच्चा भक्त (चाहे किसी भी जाति का हो)', 'अमीर व्यापारी'],
@@ -952,9 +952,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
     },
     transliteration: 'Aasha taji maaya tajai, moh tajai aru maan. Harash shok ninda tajai, kahain kabir sant jaan.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि वास्तविक संत केवल वही है जिसने सभी सांसारिक आशाओं, माया, मोह और मान-अपमान के अहंकार का त्याग कर दिया हो। जो न तो खुशी में अति-उत्साहित होता है, न दुःख में व्याकुल, और जो दूसरों की निंदा या ईर्ष्या से सर्वथा मुक्त हो गया हो।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸੰਤ ਉਹੀ ਹੈ ਜਿਸਨੇ ਉਮੀਦਾਂ, ਮਾਇਆ, ਮੋਹ ਤੇ ਹੰਕਾਰ ਛੱਡ ਦਿੱਤਾ ਹੋਵੇ। ਜਿਹੜਾ ਖੁਸ਼ੀ-ਗ਼ਮੀ ਤੇ ਨਿੰਦਾ ਤੋਂ ਦੂਰ ਰਹਿੰਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਸੰਤ ਹੈ।',
-      en: 'Kabir Saheb says that a true saint is only one who has abandoned all worldly expectations, illusion (Maya), attachment (Moh), and the ego of honor/pride. One who is neither over-excited in joy nor distressed in grief, and who has become completely free from criticizing others or feeling jealousy.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि वास्तविक संत केवल वही है जिसने सभी सांसारिक आशाओं, माया, मोह और मान-अपमान के अहंकार का त्याग कर दिया हो। जो न तो खुशी में अति-उत्साहित होता है, न दुःख में व्याकुल, और जो दूसरों की निंदा या ईर्ष्या से सर्वथा मुक्त हो गया हो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਸੰਤ ਉਹੀ ਹੈ ਜਿਸਨੇ ਉਮੀਦਾਂ, ਮਾਇਆ, ਮੋਹ ਤੇ ਹੰਕਾਰ ਛੱਡ ਦਿੱਤਾ ਹੋਵੇ। ਜਿਹੜਾ ਖੁਸ਼ੀ-ਗ਼ਮੀ ਤੇ ਨਿੰਦਾ ਤੋਂ ਦੂਰ ਰਹਿੰਦਾ ਹੈ, ਉਹੀ ਅਸਲ ਸੰਤ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims that a true saint is only one who has abandoned all worldly expectations, illusion (Maya), attachment (Moh), and the ego of honor/pride. One who is neither over-excited in joy nor distressed in grief, and who has become completely free from criticizing others or feeling jealousy.',
     },
     wordMeanings: {
       hi: [
@@ -993,9 +993,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
       {
         id: 'q-b37-490',
         question: {
-          hi: 'कबीर साहेब के अनुसार असली संत कौन है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲੀ ਸੰਤ ਕੌਣ ਹੈ?',
-          en: 'According to Kabir Saheb, who is a real saint?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार असली संत कौन है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲੀ ਸੰਤ ਕੌਣ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is a real saint?',
         },
         options: {
           hi: ['जो बहुत पढ़ा-लिखा हो', 'जिसने आशा, माया, मोह और मान का त्याग किया हो', 'जिसके पास बहुत चेले हों', 'जो बहुत अमीर हो'],
@@ -1148,9 +1148,9 @@ export const SAKHIS_BATCH_37: Sakhi[] = [
       {
         id: 'q-b37-492',
         question: {
-          hi: 'कबीर साहेब किसे "साधु" कहने से मना करते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਕਿਸਨੂੰ ਸਾਧੂ ਕਹਿਣ ਤੋਂ ਮਨ੍ਹਾ ਕਰਦੇ ਹਨ?',
-          en: 'Whom does Kabir Saheb forbid to be called a "saint"?',
+          hi: 'सतगुरु कबीर साहेब किसे "साधु" कहने से मना करते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕਿਸਨੂੰ ਸਾਧੂ ਕਹਿਣ ਤੋਂ ਮਨ੍ਹਾ ਕਰਦੇ ਹਨ?',
+          en: 'Whom does Satguru Kabir Saheb forbid to be called a "saint"?',
         },
         options: {
           hi: ['जो गरीब हो', 'जो पाखंड (डिंभ) और दिखावा करता हो', 'जो मौन रहता हो', 'जो जंगल में रहता हो'],

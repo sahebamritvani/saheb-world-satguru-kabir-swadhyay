@@ -25,8 +25,10 @@ export const ShabadShareModal: React.FC<ShabadShareModalProps> = ({
 
   if (!isOpen || !verse) return null;
 
-  const lines = verse.lines[language] || verse.lines.hi || [];
-  const bhavarth = verse.bhavarth ? (verse.bhavarth[language] || verse.bhavarth.hi) : '';
+  const langKey = language as keyof typeof verse.lines;
+  const lines = verse.lines[langKey] || verse.lines.hi || [];
+  const bhavarthObj = verse.bhavarth as Record<string, string> | undefined;
+  const bhavarth = bhavarthObj ? (bhavarthObj[language] || bhavarthObj.hi) : '';
 
   const handleCopyCard = async () => {
     const text = `🪷 ${sectionTitle} 🪷\n\n${lines.join('\n')}\n\n${bhavarth ? `भावार्थ:\n${bhavarth}\n\n` : ''}।। साहेब बंदगी साहेब ।।\n(SahebWorld - Satguru Kabir Saheb App)`;
@@ -53,107 +55,103 @@ export const ShabadShareModal: React.FC<ShabadShareModalProps> = ({
   };
 
   const handleWebShare = async () => {
-    const text = `🪷 ${sectionTitle} 🪷\n\n${lines.join('\n')}\n\n${bhavarth ? `भावार्थ:\n${bhavarth}\n\n` : ''}।। साहेब बंदगी साहेब ।।`;
+    const text = `🪷 ${sectionTitle} 🪷\n\n${lines.join('\n')}\n\n${bhavarth ? `भावार्थ:\n${bhavarth}\n\n` : ''}।। साहेब बंदगी साहेब ।।\n(SahebWorld - Satguru Kabir Saheb App)`;
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Satguru Kabir Saheb Vani',
+          title: sectionTitle,
           text: text,
         });
+        return;
       } catch {}
-    } else {
-      handleCopyCard();
     }
+    handleCopyCard();
   };
 
-  const themeStyles = {
-    amber: 'bg-gradient-to-br from-amber-50 via-yellow-100/70 to-amber-200 text-amber-950 border-amber-400',
-    emerald: 'bg-gradient-to-br from-emerald-900 via-emerald-950 to-zinc-950 text-emerald-100 border-emerald-600',
-    maroon: 'bg-gradient-to-br from-[#4A1515] via-[#2E0B0B] to-black text-amber-100 border-amber-600/70',
-    midnight: 'bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 border-zinc-700'
+  const themeClasses = {
+    amber: 'bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-950 text-amber-950 dark:text-amber-100 border-amber-300 dark:border-amber-700/50',
+    emerald: 'bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-100 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-950 text-emerald-950 dark:text-emerald-100 border-emerald-300 dark:border-emerald-700/50',
+    maroon: 'bg-gradient-to-br from-rose-50 via-red-50 to-rose-100 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-950 text-rose-950 dark:text-rose-100 border-rose-300 dark:border-rose-700/50',
+    midnight: 'bg-gradient-to-br from-slate-900 via-zinc-900 to-zinc-950 text-slate-100 border-slate-700',
   }[cardTheme];
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[250] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-[48px_14px] bg-black/70 backdrop-blur-sm">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 15 }}
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 15 }}
-          className="relative w-full max-w-lg rounded-3xl border-2 shadow-2xl overflow-hidden flex flex-col bg-white dark:bg-zinc-900"
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          className="w-full max-w-[480px] max-h-[calc(100dvh-104px)] flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 shadow-2xl border border-amber-500/30"
+          style={{ maxWidth: '480px' }}
         >
-          {/* Header */}
-          <div className="p-4 border-b border-amber-200/50 dark:border-zinc-800 bg-amber-50 dark:bg-zinc-950 flex items-center justify-between">
+          {/* Modal Header */}
+          <div className="p-4 border-b border-gray-100 dark:border-zinc-800 bg-amber-50/50 dark:bg-zinc-900 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2">
-              <span className="text-xl">🪷</span>
-              <h3 className="text-base font-black font-serif text-amber-950 dark:text-amber-200">
-                {language === 'pb' ? 'ਸ਼ਬਦ / ਪੰਕਤੀ ਸਾਂਝੀ ਕਰੋ' : language === 'en' ? 'Share Sacred Shabad Card' : 'सुंदर शबद / पंक्ति शेयर कार्ड'}
+              <Sparkles className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+              <h3 className="font-serif font-bold text-sm sm:text-base text-amber-900 dark:text-amber-200">
+                {language === 'pb' ? 'ਸ਼ਬਦ / ਸਾਖੀ ਸਾਂਝੀ ਕਰੋ' : language === 'en' ? 'Share Sacred Verse' : 'पावन वाणी / श्लोक साझा करें'}
               </h3>
             </div>
             <button
               type="button"
               onClick={onClose}
-              className="p-2 rounded-xl bg-black/5 hover:bg-black/10 dark:hover:bg-white/10 text-gray-500 hover:text-gray-800 dark:text-gray-300 transition cursor-pointer"
+              className="p-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800 text-gray-500 transition cursor-pointer"
+              aria-label="Close"
             >
               <X size={18} />
             </button>
           </div>
 
-          {/* Theme Picker */}
-          <div className="px-4 py-2.5 bg-gray-50 dark:bg-zinc-900 border-b border-gray-100 dark:border-zinc-800 flex items-center justify-between gap-2">
-            <span className="text-xs font-serif opacity-75 font-bold">
-              {language === 'pb' ? 'ਕਾਰਡ ਥੀਮ:' : language === 'en' ? 'Card Theme:' : 'कार्ड थीम चुने:'}
-            </span>
-            <div className="flex items-center gap-1.5">
-              {(['amber', 'emerald', 'maroon', 'midnight'] as const).map(t => (
-                <button
-                  key={t}
-                  type="button"
-                  onClick={() => setCardTheme(t)}
-                  className={`w-6 h-6 rounded-full border-2 transition cursor-pointer ${
-                    cardTheme === t ? 'scale-110 ring-2 ring-amber-500' : 'opacity-70 hover:opacity-100'
-                  } ${
-                    t === 'amber' ? 'bg-amber-200' : t === 'emerald' ? 'bg-emerald-800' : t === 'maroon' ? 'bg-[#5A1212]' : 'bg-zinc-900'
-                  }`}
-                  title={t}
-                />
-              ))}
-            </div>
+          {/* Theme Selector Bar */}
+          <div className="px-4 py-2 bg-amber-100/40 dark:bg-zinc-950 border-b border-amber-200/50 dark:border-zinc-800 flex items-center justify-center gap-2 shrink-0">
+            <span className="text-xs font-serif text-amber-900 dark:text-amber-300 font-bold mr-1">थीम:</span>
+            {(['amber', 'emerald', 'maroon', 'midnight'] as const).map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setCardTheme(t)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-serif font-bold capitalize transition border ${
+                  cardTheme === t
+                    ? 'bg-amber-600 text-white border-amber-700 shadow-sm'
+                    : 'bg-white dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 border-gray-300 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-700'
+                }`}
+              >
+                {t === 'amber' ? 'स्वर्ण' : t === 'emerald' ? 'हरित' : t === 'maroon' ? 'मारून' : 'रात्रि'}
+              </button>
+            ))}
           </div>
 
-          {/* Shareable Graphic Card Preview */}
-          <div className="p-4 sm:p-6">
-            <div className={`p-6 sm:p-8 rounded-3xl border-2 shadow-xl relative overflow-hidden flex flex-col items-center text-center ${themeStyles}`}>
-              {/* Decorative Corner Watermarks */}
-              <div className="absolute top-2 left-3 opacity-20 text-xs font-mono">🪷 SATYANAAM</div>
-              <div className="absolute bottom-2 right-3 opacity-20 text-xs font-mono">KABIR SAHEB</div>
+          {/* Scrollable Card Preview Body */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5">
+            <div className={`p-5 rounded-2xl border-2 shadow-lg transition-all ${themeClasses} max-h-[42vh] overflow-y-auto`}>
+              <div className="text-center font-serif font-bold text-xs uppercase tracking-widest opacity-80 mb-2">
+                🌹 ।। सत्यनाम ।। 🌹
+              </div>
+              <div className="text-center font-serif font-bold text-sm sm:text-base text-amber-800 dark:text-amber-300 mb-4 border-b border-current/20 pb-2">
+                {sectionTitle}
+              </div>
 
-              <span className="text-xs font-serif font-bold uppercase tracking-widest opacity-80 mb-2">
-                🪷 {sectionTitle} 🪷
-              </span>
-
-              <div className="w-16 h-0.5 bg-amber-500/50 my-2 rounded-full" />
-
-              <div className="space-y-2 my-4 font-serif font-black text-base sm:text-lg leading-relaxed">
-                {lines.map((l, i) => (
-                  <p key={i}>{l}</p>
+              <div className="space-y-2 text-center font-serif text-sm sm:text-base leading-relaxed mb-4">
+                {lines.map((l: string, i: number) => (
+                  <p key={i} className="font-semibold">{l}</p>
                 ))}
               </div>
 
               {bhavarth && (
-                <p className="text-xs sm:text-sm font-serif italic opacity-90 max-w-md mx-auto mt-2 pt-3 border-t border-current/20">
-                  "{bhavarth}"
-                </p>
+                <div className="mt-3 pt-3 border-t border-current/20 text-xs sm:text-sm font-sans opacity-90">
+                  <span className="font-bold underline">भावार्थ / सार:</span> {bhavarth}
+                </div>
               )}
 
-              <div className="mt-6 pt-3 border-t border-current/20 flex items-center justify-center gap-2 text-xs font-serif font-bold opacity-90">
-                <span>{SACRED_BRANDING.footer[language]}</span>
+              <div className="mt-4 pt-3 border-t border-current/20 text-center font-serif text-xs font-bold tracking-wider opacity-90">
+                {SACRED_BRANDING.footer[language]}
               </div>
             </div>
           </div>
 
           {/* Footer Actions */}
-          <div className="p-4 border-t border-gray-100 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-950 flex items-center justify-between gap-3">
+          <div className="p-4 border-t border-gray-100 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-950 flex items-center justify-between gap-3 shrink-0">
             <button
               type="button"
               onClick={handleCopyCard}

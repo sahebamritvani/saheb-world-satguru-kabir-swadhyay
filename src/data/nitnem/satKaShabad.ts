@@ -458,9 +458,9 @@ export const SAT_KA_SHABAD_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "जब तक इस शरीर रूपी पिंजरे में श्वास चल रहे हैं, तब तक चित्त में इस चेतावनी व सतगुरु-स्मरण को धारण करो। सोऽहं का अजपा जाप जपो, जहाँ स्वयं कबीर साहेब प्रत्यक्ष विराजमान हैं।",
-        pb: "ਜਿੰਨਾ ਚਿਰ ਸਰੀਰ ਵਿੱਚ ਸੁਆਸ ਹਨ, ਮਨ ਵਿੱਚ ਸਤਿਗੁਰੂ ਦਾ ਸਿਮਰਨ ਰੱਖੋ। 'ਸੋऽਹੰ' ਦਾ ਅਜਪਾ ਜਾਪ ਜਪੋ ਜਿੱਥੇ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਵਿਰਾਜਮਾਨ ਹਨ।",
-        en: "As long as breath animates this bodily cage, cherish this awakening in your heart. Engage in the unutterable 'Soham' meditation, where Kabir Saheb Himself resides."
+        hi: "जब तक इस शरीर रूपी पिंजरे में श्वास चल रहे हैं, तब तक चित्त में इस चेतावनी व सतगुरु-स्मरण को धारण करो। सोऽहं का अजपा जाप जपो, जहाँ स्वयं सतगुरु कबीर साहेब प्रत्यक्ष विराजमान हैं।",
+        pb: "ਜਿੰਨਾ ਚਿਰ ਸਰੀਰ ਵਿੱਚ ਸੁਆਸ ਹਨ, ਮਨ ਵਿੱਚ ਸਤਿਗੁਰੂ ਦਾ ਸਿਮਰਨ ਰੱਖੋ। 'ਸੋऽਹੰ' ਦਾ ਅਜਪਾ ਜਾਪ ਜਪੋ ਜਿੱਥੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਵਿਰਾਜਮਾਨ ਹਨ।",
+        en: "As long as breath animates this bodily cage, cherish this awakening in your heart. Engage in the unutterable 'Soham' meditation, where Satguru Kabir Saheb Himself resides."
       }
     },
     {
@@ -576,8 +576,8 @@ export const SAT_KA_SHABAD_SECTION: NitnemSection = {
         ]
       },
       bhavarth: {
-        hi: "सत्य कबीर साहेब का मार्ग अत्यंत गहरा, गंभीर और जाग्रत स्वरूप है। उनका अजर-अमर 'सोऽहं सत्यनाम' कभी विनष्ट नहीं होता; वही परम सत्य कबीर साहेब हैं।",
-        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਦਾ ਮਾਰਗ ਅਤਿ ਗੰਭੀਰ ਅਤੇ ਜਾਗਰੂਕ ਹੈ। ਉਨ੍ਹਾਂ ਦਾ ਅਮਰ ਨਾਮ ਕਦੇ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ, ਉਹੀ 'ਸੋऽਹੰ' ਸੱਚੇ ਕਬੀਰ ਸਾਹੇਬ ਹਨ।",
+        hi: "सत्य सतगुरु कबीर साहेब का मार्ग अत्यंत गहरा, गंभीर और जाग्रत स्वरूप है। उनका अजर-अमर 'सोऽहं सत्यनाम' कभी विनष्ट नहीं होता; वही परम सत्य सतगुरु कबीर साहेब हैं।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਦਾ ਮਾਰਗ ਅਤਿ ਗੰਭੀਰ ਅਤੇ ਜਾਗਰੂਕ ਹੈ। ਉਨ੍ਹਾਂ ਦਾ ਅਮਰ ਨਾਮ ਕਦੇ ਨਸ਼ਟ ਨਹੀਂ ਹੁੰਦਾ, ਉਹੀ 'ਸੋऽਹੰ' ਸੱਚੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹਨ।",
         en: "Profound and wakeful is the Path of Eternal Truth. The immortal Name never decays—truly, Soham is Satya Kabir!"
       }
     }

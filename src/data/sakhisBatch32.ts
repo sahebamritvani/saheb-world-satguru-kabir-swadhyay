@@ -20,7 +20,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Gurava to sasta bhaya, paisa ker pachaas. Ram naam dhan bechi ke, shishya karan ki aas.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब पाखंडी और लालची गुरुओं के प्रति सावधान करते हुए कहते हैं कि आज के समय में धन के लोभी गुरु अत्यंत सुलभ और सस्ते हो गए हैं। ऐसे दिखावटी गुरु कौड़ियों के भाव (पचासों की संख्या में) यहाँ-वहां घूम रहे हैं। वे परमात्मा के पावन "राम नाम" रूपी अमूल्य धन को व्यापार बना लेते हैं और उसे बेचकर केवल अधिक-से-अधिक शिष्य बनाने और धन बटोरने की लालसा रखते हैं। ऐसे स्वार्थी लोग गुरु पद की गरिमा पर कलंक हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅੱਜ ਕੱਲ੍ਹ ਲਾਲਚੀ ਗੁਰੂ ਬਹੁਤ ਸਸਤੇ ਤੇ ਆਮ ਹੋ ਗਏ ਹਨ। ਉਹ ਪੈਸੇ ਦੇ ਲਾਲਚ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਵੇਚਦੇ ਹਨ ਅਤੇ ਵੱਧ ਤੋਂ ਵੱਧ ਚੇਲੇ ਬਣਾਉਣ ਦੀ ਤਮੰਨਾ ਰੱਖਦੇ ਹਨ। ਅਜਿਹੇ ਪਾਖੰਡੀਆਂ ਤੋਂ ਬਚਣਾ ਚਾਹੀਦਾ ਹੈ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅੱਜ ਕੱਲ੍ਹ ਲਾਲਚੀ ਗੁਰੂ ਬਹੁਤ ਸਸਤੇ ਤੇ ਆਮ ਹੋ ਗਏ ਹਨ। ਉਹ ਪੈਸੇ ਦੇ ਲਾਲਚ ਵਿੱਚ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਵੇਚਦੇ ਹਨ ਅਤੇ ਵੱਧ ਤੋਂ ਵੱਧ ਚੇਲੇ ਬਣਾਉਣ ਦੀ ਤਮੰਨਾ ਰੱਖਦੇ ਹਨ। ਅਜਿਹੇ ਪਾਖੰਡੀਆਂ ਤੋਂ ਬਚਣਾ ਚਾਹੀਦਾ ਹੈ।',
       en: 'Satguru Kabir Saheb warns seekers about greedy and false masters who have made spirituality a business. In modern times, such self-proclaimed gurus are "cheap" and found in abundance (by the dozens). They attempt to "sell" the priceless wealth of the Divine Name just to increase their following and accumulate worldly wealth. Such deceivers are a stain on the sacred seat of a Guru.',
     },
     wordMeanings: {
@@ -101,7 +101,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Guru naam hai gamya ka, sheesh seekh le soy. Binu pad binu marjaad nar, guru sheesh nahin koy.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब गुरु और शिष्य की वास्तविक परिभाषा और मर्यादा स्पष्ट करते हैं। वे कहते हैं कि "गुरु" केवल एक पदवी नहीं, बल्कि उस सामर्थ्य का नाम है जो सत्य तक "गम्यता" (पहुँच) करा दे। इसी प्रकार "शिष्य" वही है जो गुरु से वास्तविक शिक्षा (बोध) ग्रहण करे। यदि गुरु में सत्य का बोध नहीं और शिष्य में सीखने की ललक नहीं, तो बिना मर्यादा और योग्यता के वे न गुरु हैं और न शिष्य, वे केवल साधारण संसारी मनुष्य मात्र हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਉਹ ਹੈ ਜੋ ਸੱਚ ਤੱਕ ਪਹੁੰਚ ਕਰਾਵੇ ਅਤੇ ਚੇਲਾ ਉਹ ਹੈ ਜੋ ਸਿੱਖਿਆ ਲਵੇ। ਮਰਯਾਦਾ ਤੇ ਗੁਣਾਂ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਗੁਰੂ ਜਾਂ ਚੇਲਾ ਨਹੀਂ ਹੁੰਦਾ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ ਉਹ ਹੈ ਜੋ ਸੱਚ ਤੱਕ ਪਹੁੰਚ ਕਰਾਵੇ ਅਤੇ ਚੇਲਾ ਉਹ ਹੈ ਜੋ ਸਿੱਖਿਆ ਲਵੇ। ਮਰਯਾਦਾ ਤੇ ਗੁਣਾਂ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਗੁਰੂ ਜਾਂ ਚੇਲਾ ਨਹੀਂ ਹੁੰਦਾ।',
       en: 'Satguru Kabir Saheb defines the true essence of the Master-Disciple relationship. He states that "Guru" is the title for one who provides "access" (Gamya) to the Ultimate Truth. Similarly, a "disciple" (Shishya) is one who truly "learns" and internalizes the teachings. Without adhering to the sacred duties and dignity of their respective positions, they are neither Master nor Disciple, but merely ordinary people.',
     },
     wordMeanings: {
@@ -182,8 +182,8 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Kahta hu kahi jaat hu, deta hu hela. Guru ki karni guru jaane, chela ki chela.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब अत्यंत स्पष्टता और अधिकार के साथ पुकारकर (हेला देकर) कहते हैं कि प्रत्येक जीव अपने कर्मों के लिए स्वयं उत्तरदायी है। गुरु अपने द्वारा किए गए कर्मों का फल स्वयं भोगेंगे और शिष्य अपने कर्मों का। कोई भी दूसरे के दोषों या पुण्यों का भार नहीं उठा सकता। इसलिए, दूसरे की नकल करने या दूसरों पर दोषारोपण करने के बजाय, व्यक्ति को स्वयं के "अमल" (आचरण) पर ध्यान देना चाहिए।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਹੋਕਾ ਦੇ ਕੇ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਆਪਣੀ ਕਰਨੀ ਦਾ ਫਲ ਭੋਗੇਗਾ ਤੇ ਚੇਲਾ ਆਪਣੀ। ਹਰ ਕੋਈ ਆਪਣੇ ਕਰਮਾਂ ਲਈ ਆਪ ਜ਼ਿੰਮੇਵਾਰ ਹੈ।',
-      en: 'Satguru Kabir Saheb declares with great emphasis (giving a loud call) that every individual is personally responsible for their actions. The Master will face the consequences of their deeds, and the disciple will face theirs. No one can inherit or offset the karma of another. Therefore, one must focus on their own character and actions rather than mimicking or blaming others.',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੋਕਾ ਦੇ ਕੇ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ ਆਪਣੀ ਕਰਨੀ ਦਾ ਫਲ ਭੋਗੇਗਾ ਤੇ ਚੇਲਾ ਆਪਣੀ। ਹਰ ਕੋਈ ਆਪਣੇ ਕਰਮਾਂ ਲਈ ਆਪ ਜ਼ਿੰਮੇਵਾਰ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims with great emphasis (giving a loud call) that every individual is personally responsible for their actions. The Master will face the consequences of their deeds, and the disciple will face theirs. No one can inherit or offset the karma of another. Therefore, one must focus on their own character and actions rather than mimicking or blaming others.',
     },
     wordMeanings: {
       hi: [
@@ -261,7 +261,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Guru kiya hai deh ka, satguru cheenha naahi. Bhavsagar ke jaal me, phir phir gota khaahi.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब उन लोगों को चेताते हैं जो केवल बाहरी शरीर, वेश, जाति या विद्या को देखकर गुरु धारण करते हैं। वे कहते हैं कि जिन्होंने केवल नश्वर "देह" को ही गुरु माना है और उस देह के भीतर छिपे अविनाशी "सतगुरु" (आत्म-तत्व या शब्द-तत्व) को नहीं पहचाना, वे वास्तव में गुरु की महिमा से अनभिज्ञ हैं। ऐसे लोग इस संसार-रूपी समुद्र के मोह-माया के जाल में फंसकर बार-बार जन्म-मरण के गोते खाते रहते हैं और कभी पार नहीं उतर पाते।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਨ੍ਹਾਂ ਨੇ ਸਿਰਫ਼ ਸਰੀਰ ਨੂੰ ਗੁਰੂ ਮੰਨਿਆ ਹੈ ਅਤੇ ਸ਼ਬਦ-ਗੁਰੂ ਦੀ ਪਛਾਣ ਨਹੀਂ ਕੀਤੀ, ਉਹ ਇਸ ਸੰਸਾਰ ਦੇ ਜਾਲ ਵਿੱਚ ਫਸ ਕੇ ਵਾਰ-ਵਾਰ ਜਨਮ ਲੈਂਦੇ ਤੇ ਮਰਦੇ ਰਹਿੰਦੇ ਹਨ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਨ੍ਹਾਂ ਨੇ ਸਿਰਫ਼ ਸਰੀਰ ਨੂੰ ਗੁਰੂ ਮੰਨਿਆ ਹੈ ਅਤੇ ਸ਼ਬਦ-ਗੁਰੂ ਦੀ ਪਛਾਣ ਨਹੀਂ ਕੀਤੀ, ਉਹ ਇਸ ਸੰਸਾਰ ਦੇ ਜਾਲ ਵਿੱਚ ਫਸ ਕੇ ਵਾਰ-ਵਾਰ ਜਨਮ ਲੈਂਦੇ ਤੇ ਮਰਦੇ ਰਹਿੰਦੇ ਹਨ।',
       en: 'Satguru Kabir Saheb warns against mistaking the physical body or outward credentials for the spiritual Master. He states that those who follow a "body" (Deh) as a Guru but fail to recognize the eternal "Satguru" (the Divine Principle or Word-Element) within, remain ignorant of true liberation. Such souls remain trapped in the complex net of this worldly ocean, repeatedly plunging into the cycle of birth and death without ever reaching the shore of freedom.',
     },
     wordMeanings: {
@@ -341,7 +341,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Guru bichaara kya kare, shabd na laaga ang. Kahain kabeer maili gaji, kaise laage rang.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब यहाँ शिष्य की पात्रता और तैयारी पर जोर देते हैं। वे कहते हैं कि उस स्थिति में समर्थ गुरु भी क्या कर सकते हैं, जब शिष्य का हृदय ही विकारों से भरा हो और उस पर गुरु के उपदेश (शब्द) का कोई प्रभाव ही न पड़े? जैसे बहुत अधिक मैली चादर (गजी) पर कोई भी सुंदर रंग नहीं चढ़ सकता, वैसे ही दूषित मन वाले शिष्य पर ज्ञान का रंग नहीं चढ़ता। गुरु के ज्ञान का लाभ लेने के लिए शिष्य का मन निर्मल और सुपात्र होना आवश्यक है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਚੇਲਾ ਹੀ ਤਿਆਰ ਨਾ ਹੋਵੇ ਤਾਂ ਗੁਰੂ ਕੀ ਕਰੇ? ਜੇ ਕੱਪੜਾ ਬਹੁਤ ਮੈਲਾ ਹੋਵੇ ਤਾਂ ਉਸਤੇ ਰੰਗ ਨਹੀਂ ਚੜ੍ਹਦਾ, ਉਸੇ ਤਰ੍ਹਾਂ ਮੈਲੇ ਮਨ ਵਾਲੇ ਤੇ ਗਿਆਨ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਚੇਲਾ ਹੀ ਤਿਆਰ ਨਾ ਹੋਵੇ ਤਾਂ ਗੁਰੂ ਕੀ ਕਰੇ? ਜੇ ਕੱਪੜਾ ਬਹੁਤ ਮੈਲਾ ਹੋਵੇ ਤਾਂ ਉਸਤੇ ਰੰਗ ਨਹੀਂ ਚੜ੍ਹਦਾ, ਉਸੇ ਤਰ੍ਹਾਂ ਮੈਲੇ ਮਨ ਵਾਲੇ ਤੇ ਗਿਆਨ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ।',
       en: 'Satguru Kabir Saheb emphasizes the readiness and worthiness of the disciple. He asks what even a powerful Master can do if the disciple’s heart is closed and the sacred "Word" (Shabd) finds no resonance in them. Just as a piece of cloth (Gaji) that is extremely filthy cannot be dyed with a beautiful color, a mind clouded by worldly desires and ego cannot absorb the light of spiritual wisdom. For guidance to work, the seeker must first purify their intent.',
     },
     wordMeanings: {
@@ -419,8 +419,8 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     },
     transliteration: 'Yeh tan vish ki belri, guru amrit ki khaan. Sees diye jo guru mile, to bhi sasta jaan.',
     bhavarth: {
-      hi: 'सतगुरु कबीर साहेब गुरु की महिमा को अद्वितीय बताते हुए कहते हैं कि यह मानव शरीर तो सांसारिक विषयों, वासनाओं और विकारों रूपी "विष की बेल" (विषैली लता) के समान है। इसके विपरीत, सतगुरु साक्षात "अमृत की खान" हैं जो अपनी दया से जीव को अमर कर देते हैं। यदि अपना शीश (अहंकार और देह-अभिमान) न्योछावर करने पर भी सच्चे सद्गुरु की प्राप्ति हो जाए, तो इसे भी बहुत सस्ता सौदा समझना चाहिए, क्योंकि गुरु के बिना मोक्ष असंभव है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਸਰੀਰ ਜ਼ਹਿਰ ਦੀ ਵੇਲ ਹੈ ਅਤੇ ਗੁਰੂ ਅੰਮ੍ਰਿਤ ਦੀ ਖਾਨ ਹਨ। ਜੇ ਸਿਰ ਦੇ ਕੇ ਵੀ ਗੁਰੂ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਵੀ ਇਹ ਸਸਤਾ ਸੌਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब गुरु की महिमा को अद्वितीय बताते हुए कहते हैं कि यह मानव शरीर तो सांसारिक विषयों, वासनाओं और विकारों रूपी "विष की बेल" (विषैली लता) के समान है। इसके विपरीत, सतगुरु साक्षात "अमृत की खान" हैं जो अपनी दया से जीव को अमर कर देते हैं। यदि अपना शीश (अहंकार और देह-अभिमान) न्योछावर करने पर भी सच्चे सतगुरु की प्राप्ति हो जाए, तो इसे भी बहुत सस्ता सौदा समझना चाहिए, क्योंकि गुरु के बिना मोक्ष असंभव है।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਸਰੀਰ ਜ਼ਹਿਰ ਦੀ ਵੇਲ ਹੈ ਅਤੇ ਗੁਰੂ ਅੰਮ੍ਰਿਤ ਦੀ ਖਾਨ ਹਨ। ਜੇ ਸਿਰ ਦੇ ਕੇ ਵੀ ਗੁਰੂ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਵੀ ਇਹ ਸਸਤਾ ਸੌਦਾ ਹੈ।',
       en: 'Satguru Kabir Saheb highlights the infinite value of a true Master. He compares the human body to a "poisonous vine" (Vish ki Belari) filled with worldly attachments and vices. In contrast, the Guru is an "ocean of nectar" (Amrit ki Khaan) who bestows immortality and peace. Even if one has to sacrifice their head (symbolizing ego and self-identity) to obtain such a Master, it should be considered a bargain, for the Guru’s grace is the only key to liberation.',
     },
     wordMeanings: {
@@ -499,7 +499,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Gu andhiyaari jaaniye, ru kahiye parakaas. Mite agyaan tam gyaan te, guru naam hai taas.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब "गुरु" शब्द की गूढ़ आध्यात्मिक व्याख्या करते हैं। वे कहते हैं कि "गु" का अर्थ है—अंधकार (अज्ञान), और "रु" का अर्थ है—प्रकाश (ज्ञान)। वह तत्व या सामर्थ्य जो शिष्य के हृदय से अज्ञान रूपी घोर अंधकार को मिटाकर ज्ञान का दिव्य प्रकाश भर दे, वास्तव में वही "गुरु" कहलाने का अधिकारी है। गुरु केवल शरीर नहीं, वह वह परम प्रकाश है जो जीव को सत्य से मिलाता है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਗੁਰੂ ਸ਼ਬਦ ਦਾ ਅਰਥ ਸਮਝਾਉਂਦੇ ਹਨ: \'ਗੁ\' ਦਾ ਮਤਲਬ ਹੈ ਹਨੇਰਾ (ਅਗਿਆਨ) ਅਤੇ \'ਰੁ\' ਦਾ ਮਤਲਬ ਹੈ ਚਾਨਣ (ਗਿਆਨ)। ਜੋ ਅਗਿਆਨਤਾ ਦੇ ਹਨੇਰੇ ਨੂੰ ਦੂਰ ਕਰੇ, ਉਹੀ ਸੱਚਾ ਗੁਰੂ ਹੈ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗੁਰੂ ਸ਼ਬਦ ਦਾ ਅਰਥ ਸਮਝਾਉਂਦੇ ਹਨ: \'ਗੁ\' ਦਾ ਮਤਲਬ ਹੈ ਹਨੇਰਾ (ਅਗਿਆਨ) ਅਤੇ \'ਰੁ\' ਦਾ ਮਤਲਬ ਹੈ ਚਾਨਣ (ਗਿਆਨ)। ਜੋ ਅਗਿਆਨਤਾ ਦੇ ਹਨੇਰੇ ਨੂੰ ਦੂਰ ਕਰੇ, ਉਹੀ ਸੱਚਾ ਗੁਰੂ ਹੈ।',
       en: 'Satguru Kabir Saheb provides a profound etymological explanation of the word "Guru." He explains that "Gu" signifies darkness or spiritual ignorance (Agyaan), while "Ru" represents light or spiritual knowledge (Gyaan). Therefore, the entity or power that dispels the dense darkness of ignorance from a seeker’s heart and replaces it with the divine light of wisdom is truly worthy of the title "Guru." A Master is not just a person, but the transformative Light of Truth.',
     },
     wordMeanings: {
@@ -578,7 +578,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Kabir beda saar ka, oopar laada saar. Paapi ka paapi guru, yon booda sansaar.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब अज्ञानी और पाखंडी गुरुओं की संगति के विनाशकारी परिणाम को एक रूपक से समझाते हैं। वे कहते हैं कि यदि लोहे की नाव (बेड़ा सार का) हो और उस पर लोहे का ही बोझ लाद दिया जाए, तो वह नाव कभी नहीं तैर सकती, वह तुरंत डूब जाएगी। इसी प्रकार, यदि शिष्य स्वयं विकारों में डूबा हुआ पापी हो और उसे गुरु भी वैसा ही अज्ञानी या पापी मिल जाए, तो कल्याण की कोई आशा नहीं रहती। ऐसे गुरु-शिष्य इस संसार के मोह-सागर में डूबकर अपना जीवन नष्ट कर लेते हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੇ ਲੋਹੇ ਦੀ ਬੇੜੀ ਤੇ ਲੋਹਾ ਹੀ ਲੱਦ ਦਿੱਤਾ ਜਾਵੇ, ਤਾਂ ਉਹ ਡੁੱਬ ਜਾਵੇਗੀ। ਉਸੇ ਤਰ੍ਹਾਂ ਜੇ ਗੁਰੂ ਤੇ ਚੇਲਾ ਦੋਵੇਂ ਹੀ ਪਾਪੀ ਤੇ ਅਗਿਆਨੀ ਹੋਣ, ਤਾਂ ਉਹ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਡੁੱਬ ਜਾਂਦੇ ਹਨ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਲੋਹੇ ਦੀ ਬੇੜੀ ਤੇ ਲੋਹਾ ਹੀ ਲੱਦ ਦਿੱਤਾ ਜਾਵੇ, ਤਾਂ ਉਹ ਡੁੱਬ ਜਾਵੇਗੀ। ਉਸੇ ਤਰ੍ਹਾਂ ਜੇ ਗੁਰੂ ਤੇ ਚੇਲਾ ਦੋਵੇਂ ਹੀ ਪਾਪੀ ਤੇ ਅਗਿਆਨੀ ਹੋਣ, ਤਾਂ ਉਹ ਸੰਸਾਰ ਸਮੁੰਦਰ ਵਿੱਚ ਡੁੱਬ ਜਾਂਦੇ ਹਨ।',
       en: 'Satguru Kabir Saheb explains the disastrous consequences of following an ignorant or fraudulent master through a powerful metaphor. He says that if a boat is made of heavy iron (Saar) and is further loaded with iron weight, it is bound to sink immediately. Similarly, if a seeker is already burdened by vices and follows a master who is equally ignorant or sinful, there is no hope for salvation. Such pairings sink into the ocean of worldly delusion, wasting the precious gift of human life.',
     },
     wordMeanings: {
@@ -606,7 +606,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
       en: 'Have I tested the integrity and wisdom of a guide before following them, or am I blindly boarding a heavy boat destined to sink?',
     },
     practicalApplication: {
-      hi: 'सद्गुरु की परख उनके त्याग, ज्ञान और निष्कामता से करें। केवल वही गुरु संसार से पार लगा सकता है जो स्वयं विकारों के बोझ से मुक्त हो।',
+      hi: 'सतगुरु की परख उनके त्याग, ज्ञान और निष्कामता से करें। केवल वही गुरु संसार से पार लगा सकता है जो स्वयं विकारों के बोझ से मुक्त हो।',
       pb: 'ਸੱਚੇ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਲਵੋ।',
       en: 'Judge a Master by their renunciation, wisdom, and selflessness. Only one who is free from the burden of vices can help others cross the worldly ocean.',
     },
@@ -657,7 +657,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Jaaneeta boojha nahi, boojhi kiya nahi gaun. Andhe ko andha mila, raah batave kaun.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब मनुष्य की लापरवाही और अज्ञानता पर कटाक्ष करते हुए कहते हैं कि बहुत से लोग जानते हुए भी सत्य को समझना नहीं चाहते, और यदि थोड़ा-बहुत समझ भी लिया तो उस पर "गौन" (आचरण या अमल) नहीं करते। ऐसे में जब एक अज्ञानी (अंधा) व्यक्ति दूसरे अज्ञानी (अंधे) व्यक्ति से मार्ग पूछता है या उसे गुरु मान लेता है, तो भला उसे सही रास्ता कौन दिखा सकता है? दोनों ही गड्ढे में गिरते हैं। आध्यात्मिक पथ के लिए जाग्रत और अनुभवी गुरु की आवश्यकता है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਨਸਾਨ ਜਾਣਦੇ ਹੋਏ ਵੀ ਨਹੀਂ ਸਮਝਦਾ, ਤੇ ਸਮਝ ਕੇ ਵੀ ਅਮਲ ਨਹੀਂ ਕਰਦਾ। ਜਦੋਂ ਇੱਕ ਅੰਨ੍ਹੇ ਨੂੰ ਦੂਜਾ ਅੰਨ੍ਹਾ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਸਹੀ ਰਸਤਾ ਕੌਣ ਦੱਸੇਗਾ?',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਨਸਾਨ ਜਾਣਦੇ ਹੋਏ ਵੀ ਨਹੀਂ ਸਮਝਦਾ, ਤੇ ਸਮਝ ਕੇ ਵੀ ਅਮਲ ਨਹੀਂ ਕਰਦਾ। ਜਦੋਂ ਇੱਕ ਅੰਨ੍ਹੇ ਨੂੰ ਦੂਜਾ ਅੰਨ੍ਹਾ ਮਿਲ ਜਾਵੇ, ਤਾਂ ਸਹੀ ਰਸਤਾ ਕੌਣ ਦੱਸੇਗਾ?',
       en: 'Satguru Kabir Saheb critiques human negligence and spiritual blindness. He observes that many people know the truth yet refuse to understand it, and even if they gain some understanding, they fail to act upon it (Gaun). In such a state, when one ignorant person (blind) seeks guidance from another equally ignorant person, who is there to show the correct path? Both end up falling. A conscious and experienced guide is indispensable for the spiritual journey.',
     },
     wordMeanings: {
@@ -737,7 +737,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Bhedi liya saath kari, deenha vastu lakhay. Koti janam ka panth tha, pal me pahuncha jaay.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब एक "भेदी" (परम ज्ञानी/अनुभवी गुरु) की महत्ता बताते हैं। वे कहते हैं कि जब मैंने उस सत्य के भेदी को अपना साथ बना लिया (उनकी शरण ले ली), तो उन्होंने मुझे वह गुप्त "वस्तु" (आत्म-साक्षात्कार/परमात्मा) दिखा दी जो कहीं बाहर नहीं, भीतर ही थी। वह रास्ता जो अज्ञानता के कारण करोड़ों जन्मों से तय नहीं हो पा रहा था, समर्थ गुरु की कृपा और युक्ति से पल भर में ही पार हो गया। गुरु असंभव को भी सुगम बना देते हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮੈਨੂੰ ਸੱਚ ਦਾ ਭੇਤ ਜਾਣਨ ਵਾਲਾ ਗੁਰੂ ਮਿਲਿਆ, ਤਾਂ ਉਹਨਾਂ ਨੇ ਮੈਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਦਰਸ਼ਨ ਕਰਾ ਦਿੱਤਾ। ਜੋ ਰਸਤਾ ਕਰੋੜਾਂ ਜਨਮਾਂ ਤੋਂ ਤੈਅ ਨਹੀਂ ਸੀ ਹੋ ਰਿਹਾ, ਉਹ ਇੱਕ ਪਲ ਵਿੱਚ ਪਾਰ ਹੋ ਗਿਆ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮੈਨੂੰ ਸੱਚ ਦਾ ਭੇਤ ਜਾਣਨ ਵਾਲਾ ਗੁਰੂ ਮਿਲਿਆ, ਤਾਂ ਉਹਨਾਂ ਨੇ ਮੈਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਦਰਸ਼ਨ ਕਰਾ ਦਿੱਤਾ। ਜੋ ਰਸਤਾ ਕਰੋੜਾਂ ਜਨਮਾਂ ਤੋਂ ਤੈਅ ਨਹੀਂ ਸੀ ਹੋ ਰਿਹਾ, ਉਹ ਇੱਕ ਪਲ ਵਿੱਚ ਪਾਰ ਹੋ ਗਿਆ।',
       en: 'Satguru Kabir Saheb extols the importance of an enlightened Master who holds the "secret" (Bhedi). He states that once he took refuge with such a guide, the Master revealed the hidden "Treasure" (God-realization) within. The spiritual journey that seemed impossible and spanned millions of births (Koti Janam) due to ignorance was completed in a mere instant through the Master’s grace and technique. A true Guru makes the impossible accessible.',
     },
     wordMeanings: {
@@ -816,7 +816,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Guru lobhi shish laalchi, donon khele daanv. Donon boode baapure, chadhi paathar ki naanv.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब स्वार्थी गुरु-शिष्य संबंधों के भयानक परिणाम की चेतावनी देते हैं। वे कहते हैं कि यदि गुरु धन का लोभी हो और शिष्य भी किसी सांसारिक लालच (सिद्धि, प्रतिष्ठा आदि) के लिए गुरु के पास गया हो, तो ऐसे दोनों लोग केवल स्वार्थ का "दांव" खेल रहे होते हैं। उनका यह संबंध ठीक वैसा ही है जैसे कोई पत्थर की नाव पर चढ़कर समुद्र पार करना चाहे। पत्थर की नाव का डूबना निश्चित है, वैसे ही लोभी गुरु और लालची शिष्य दोनों भवसागर में डूबकर अपना आध्यात्मिक सर्वस्व खो देते हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੇ ਗੁਰੂ ਲੋਭੀ ਹੋਵੇ ਤੇ ਚੇਲਾ ਲਾਲਚੀ, ਤਾਂ ਉਹਨਾਂ ਦਾ ਰਿਸ਼ਤਾ ਪੱਥਰ ਦੀ ਬੇੜੀ ਵਰਗਾ ਹੈ। ਉਹ ਦੋਵੇਂ ਸੰਸਾਰ ਦੇ ਜਾਲ ਵਿੱਚ ਡੁੱਬ ਜਾਂਦੇ ਹਨ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਗੁਰੂ ਲੋਭੀ ਹੋਵੇ ਤੇ ਚੇਲਾ ਲਾਲਚੀ, ਤਾਂ ਉਹਨਾਂ ਦਾ ਰਿਸ਼ਤਾ ਪੱਥਰ ਦੀ ਬੇੜੀ ਵਰਗਾ ਹੈ। ਉਹ ਦੋਵੇਂ ਸੰਸਾਰ ਦੇ ਜਾਲ ਵਿੱਚ ਡੁੱਬ ਜਾਂਦੇ ਹਨ।',
       en: 'Satguru Kabir Saheb warns of the perilous outcome when the Master-Disciple relationship is built on greed. He states that if a Guru is greedy for wealth and the disciple is greedy for worldly gains or powers, they are merely playing a game of self-interest. Such a relationship is compared to boarding a boat made of stone (Paathar ki Naanv). Just as a stone boat is guaranteed to sink, both the greedy teacher and the covetous seeker will inevitably perish in the ocean of worldly existence, losing any hope of salvation.',
     },
     wordMeanings: {
@@ -896,7 +896,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'So guru nisadin bandiye, jaaso paaya raam. Naam bina ghat andh hai, jyo deepak bin dhaam.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब उस गुरु की वंदना करने का उपदेश देते हैं जिनसे वास्तविक परमात्मा (राम) और सत्यनाम का बोध प्राप्त हुआ हो। वे कहते हैं कि ऐसे समर्थ गुरु की रात-दिन सेवा और वंदना करनी चाहिए। क्योंकि बिना परमात्मा के पावन "नाम" (शब्द-ज्ञान) के, यह हृदय (घट) उसी प्रकार अंधकारमय रहता है, जैसे बिना दीपक के सारा घर (धाम) अंधेरे में डूबा रहता है। गुरु ही वह दीपक हैं जो हृदय को प्रकाशित करते हैं।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਸ ਗੁਰੂ ਦੀ ਦਿਨ-ਰਾਤ ਬੰਦਗੀ ਕਰੋ ਜਿਸ ਤੋਂ ਪ੍ਰਮਾਤਮਾ ਮਿਲਿਆ ਹੋਵੇ। ਨਾਮ ਤੋਂ ਬਿਨਾਂ ਮਨ ਉਵੇਂ ਹੀ ਹਨੇਰਾ ਹੈ ਜਿਵੇਂ ਦੀਵੇ ਤੋਂ ਬਿਨਾਂ ਘਰ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਸ ਗੁਰੂ ਦੀ ਦਿਨ-ਰਾਤ ਬੰਦਗੀ ਕਰੋ ਜਿਸ ਤੋਂ ਪ੍ਰਮਾਤਮਾ ਮਿਲਿਆ ਹੋਵੇ। ਨਾਮ ਤੋਂ ਬਿਨਾਂ ਮਨ ਉਵੇਂ ਹੀ ਹਨੇਰਾ ਹੈ ਜਿਵੇਂ ਦੀਵੇ ਤੋਂ ਬਿਨਾਂ ਘਰ।',
       en: 'Satguru Kabir Saheb advises seekers to revere the Master who has granted them the realization of the Divine (Raam) and the Holy Name (Satyanaam). He states that such a powerful guide should be honored day and night (Nisadin). Without the sacred vibration and knowledge of the "Name," the human heart (Ghat) remains pitch-black, much like a house (Dhaam) that is shrouded in darkness without a lamp (Deepak). The Guru is the lamp that illuminates the soul.',
     },
     wordMeanings: {
@@ -976,7 +976,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Aage andha koop me, dooja liya bulaay. Donon doobe baapure, nikse kaun upaay.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब अज्ञानी गुरु के पीछे चलने की निरर्थकता को एक भयावह दृश्य के माध्यम से स्पष्ट करते हैं। वे कहते हैं कि यदि मार्ग दिखाने वाला स्वयं अंधा (अज्ञानी) हो और वह कुएँ (भ्रम का गड्ढा) में गिर पड़ा हो, और फिर वह अपने पीछे आने वाले शिष्य को भी पुकारकर अपने पास बुला ले, तो क्या परिणाम होगा? दोनों ही उस कुएँ में डूब मरेंगे। फिर उन्हें बाहर निकालने का कोई रास्ता नहीं बचता। अज्ञानी गुरु के साथ शिष्य का पतन भी निश्चित है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜੇ ਰਸਤਾ ਦਿਖਾਉਣ ਵਾਲਾ ਹੀ ਅੰਨ੍ਹਾ ਹੋਵੇ ਤੇ ਖੂਹ ਵਿੱਚ ਡਿੱਗ ਜਾਵੇ, ਤੇ ਫਿਰ ਚੇਲੇ ਨੂੰ ਵੀ ਉੱਥੇ ਬੁਲਾ ਲਵੇ, ਤਾਂ ਦੋਵੇਂ ਡੁੱਬ ਜਾਣਗੇ। ਉਹਨਾਂ ਨੂੰ ਕੌਣ ਬਚਾਏਗਾ?',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇ ਰਸਤਾ ਦਿਖਾਉਣ ਵਾਲਾ ਹੀ ਅੰਨ੍ਹਾ ਹੋਵੇ ਤੇ ਖੂਹ ਵਿੱਚ ਡਿੱਗ ਜਾਵੇ, ਤੇ ਫਿਰ ਚੇਲੇ ਨੂੰ ਵੀ ਉੱਥੇ ਬੁਲਾ ਲਵੇ, ਤਾਂ ਦੋਵੇਂ ਡੁੱਬ ਜਾਣਗੇ। ਉਹਨਾਂ ਨੂੰ ਕੌਣ ਬਚਾਏਗਾ?',
       en: 'Satguru Kabir Saheb illustrates the futility of following an ignorant guide with a stark image. He says that if the leader (the Guru) is himself blind (spiritually ignorant) and falls into a deep well (Koop - the pit of delusion), and then calls out to the disciple to join him, what will be the result? Both will drown in that well. Once fallen, there is no way for them to escape. The downfall of a disciple is certain when following a master who lacks spiritual sight.',
     },
     wordMeanings: {
@@ -1056,7 +1056,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Ja guru ko to gam nahi, paahan diya bataay. Shish shodhe bin seiya, paar na pahuncha jaay.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब पत्थर-पूजा और अज्ञानी गुरुओं पर प्रहार करते हुए कहते हैं कि जिस गुरु को स्वयं सत्य-मार्ग की कोई "गम" (बोध या पहुँच) नहीं है, उसने शिष्य को पत्थर पूजने (मूर्ति पूजा या जड़ पदार्थों की आराधना) की शिक्षा दे दी। और भटकते हुए शिष्य ने भी बिना "शोधे" (परखे या विचार किये) उस गुरु की सेवा स्वीकार कर ली। ऐसी अंधभक्ति से जीव कभी भी इस संसार सागर से पार नहीं पहुँच सकता, अर्थात वह सत्य को कभी नहीं पा सकता।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਸ ਗੁਰੂ ਨੂੰ ਖ਼ੁਦ ਸੱਚ ਦੀ ਸੋਝੀ ਨਹੀਂ, ਉਹ ਚੇਲੇ ਨੂੰ ਪੱਥਰ ਪੂਜਣਾ ਦੱਸ ਦਿੰਦਾ ਹੈ। ਜੇ ਚੇਲਾ ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਉਸਨੂੰ ਮੰਨ ਲਵੇ, ਤਾਂ ਉਹ ਕਦੇ ਮੁਕਤ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਗੁਰੂ ਨੂੰ ਖ਼ੁਦ ਸੱਚ ਦੀ ਸੋਝੀ ਨਹੀਂ, ਉਹ ਚੇਲੇ ਨੂੰ ਪੱਥਰ ਪੂਜਣਾ ਦੱਸ ਦਿੰਦਾ ਹੈ। ਜੇ ਚੇਲਾ ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਉਸਨੂੰ ਮੰਨ ਲਵੇ, ਤਾਂ ਉਹ ਕਦੇ ਮੁਕਤ ਨਹੀਂ ਹੋ ਸਕਦਾ।',
       en: 'Satguru Kabir Saheb critiques idol worship and the lack of discernment in teachers. He states that a Guru who himself lacks the "Gam" (awareness or access to Truth) directs his disciple toward worshipping stones (idols or material objects). The confused disciple, without "Shodhe" (scrutinizing or reflecting), blindly follows this guidance. Through such mindless devotion, the soul can never cross the ocean of worldly existence or reach the Ultimate Truth.',
     },
     wordMeanings: {
@@ -1136,7 +1136,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Guru guru me bhed hai, guru guru me bhaav. Soi guru nit bandiye, shabd bataave daav.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब गुरुओं की भिन्नता स्पष्ट करते हुए कहते हैं कि संसार में गुरु तो बहुत हैं, पर प्रत्येक गुरु के ज्ञान के स्तर और उनके भाव (मनोदशा/निष्ठा) में बहुत अंतर (भेद) होता है। कोई केवल किताबी ज्ञान देता है, तो कोई केवल बाहरी क्रियाएं। परंतु वास्तव में निरंतर वंदना और सेवा उसी गुरु की करनी चाहिए जो "शब्द का दांव" (परमात्मा से मिलने की वास्तविक युक्ति/मर्म) बता सके। वही सच्चा सतगुरु है जो जीव को शब्द-तत्व से जोड़ दे।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਗੁਰੂ-ਗੁਰੂ ਵਿੱਚ ਬਹੁਤ ਫਰਕ ਹੁੰਦਾ ਹੈ। ਸਿਰਫ਼ ਉਸ ਗੁਰੂ ਦੀ ਸੇਵਾ ਕਰੋ ਜੋ ਸੱਚੇ ਸ਼ਬਦ ਦੀ ਜੁਗਤ (ਭੇਤ) ਦੱਸ ਸਕੇ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਗੁਰੂ-ਗੁਰੂ ਵਿੱਚ ਬਹੁਤ ਫਰਕ ਹੁੰਦਾ ਹੈ। ਸਿਰਫ਼ ਉਸ ਗੁਰੂ ਦੀ ਸੇਵਾ ਕਰੋ ਜੋ ਸੱਚੇ ਸ਼ਬਦ ਦੀ ਜੁਗਤ (ਭੇਤ) ਦੱਸ ਸਕੇ।',
       en: 'Satguru Kabir Saheb clarifies the distinctions among various teachers. He says that while many claim the title of "Guru," there is a great difference (Bhed) in their level of realization and their intent (Bhaav). Some provide only intellectual knowledge, while others focus on rituals. However, one should continuously revere and serve only that Guru who can reveal the "secret of the Word" (Shabd ka Daav)—the actual technique to unite the soul with the Divine. Only he is the true Satguru.',
     },
     wordMeanings: {
@@ -1216,7 +1216,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Jhoothe guru ke paksh ko, tajat na keeje baar. Dwaar na paave shabd ka, bhatke baarambaar.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब अज्ञानी और झूठे गुरुओं को त्यागने का कड़ा निर्देश देते हैं। वे कहते हैं कि यदि यह स्पष्ट हो जाए कि गुरु झूठा (अज्ञानी या भ्रष्ट) है, तो उसके पक्ष या मत को छोड़ने में एक पल की भी देरी (बार) नहीं करनी चाहिए। क्योंकि ऐसे गुरु की संगति में रहकर जीव कभी "शब्द के द्वार" (सत्य का प्रवेश मार्ग) को नहीं पा सकता, और वह जन्म-मरण के चक्र में बार-बार भटकता ही रहेगा। झूठे गुरु का मोह मोक्ष में सबसे बड़ी बाधा है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਝੂਠੇ ਗੁਰੂ ਦਾ ਸਾਥ ਛੱਡਣ ਵਿੱਚ ਦੇਰ ਨਾ ਕਰੋ। ਉਸਦੇ ਨਾਲ ਰਹਿ ਕੇ ਸ਼ਬਦ ਦਾ ਰਸਤਾ ਨਹੀਂ ਮਿਲੇਗਾ ਤੇ ਤੁਸੀਂ ਜਨਮ-ਮਰਨ ਵਿੱਚ ਭਟਕਦੇ ਰਹੋਗੇ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਝੂਠੇ ਗੁਰੂ ਦਾ ਸਾਥ ਛੱਡਣ ਵਿੱਚ ਦੇਰ ਨਾ ਕਰੋ। ਉਸਦੇ ਨਾਲ ਰਹਿ ਕੇ ਸ਼ਬਦ ਦਾ ਰਸਤਾ ਨਹੀਂ ਮਿਲੇਗਾ ਤੇ ਤੁਸੀਂ ਜਨਮ-ਮਰਨ ਵਿੱਚ ਭਟਕਦੇ ਰਹੋਗੇ।',
       en: 'Satguru Kabir Saheb gives a stern instruction to abandon ignorant and false teachers. He states that once it becomes clear that a teacher is false (ignorant or corrupt), one should not delay (Baar) even for a second in leaving their camp or doctrine. In the company of such a guide, the soul will never find the "Gateway of the Word" (the entrance to Truth) and will continue to wander repeatedly in the cycle of birth and death. Attachment to a false master is the greatest obstacle to liberation.',
     },
     wordMeanings: {
@@ -1296,7 +1296,7 @@ export const SAKHIS_BATCH_32: Sakhi[] = [
     transliteration: 'Ja guru te bhram na mite, bhraanti na jinki jaay. So guru jhootha jaaniye, tyaagat der na laay.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब गुरु की वास्तविक कसौटी बताते हैं। वे कहते हैं कि जिस गुरु की शरण में जाने के बाद भी आपके मन का "भ्रम" (संदेह) दूर न हो और हृदय की "भ्रांति" (भटकाव) समाप्त न हो, तो समझ लीजिये कि वह गुरु सच्चा नहीं है। ऐसे गुरु को झूठा या अधूरा जानकार समझना चाहिए और उसे छोड़ने में जरा भी देर नहीं करनी चाहिए। गुरु वही है जिसके पास जाते ही सारे संशय स्वतः शांत हो जाएँ।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਿਸ ਗੁਰੂ ਕੋਲ ਜਾ ਕੇ ਤੁਹਾਡਾ ਸ਼ੱਕ (ਭਰਮ) ਦੂਰ ਨਾ ਹੋਵੇ, ਉਹ ਗੁਰੂ ਝੂਠਾ ਹੈ। ਅਜਿਹੇ ਗੁਰੂ ਨੂੰ ਛੱਡਣ ਵਿੱਚ ਦੇਰ ਨਾ ਕਰੋ।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸ ਗੁਰੂ ਕੋਲ ਜਾ ਕੇ ਤੁਹਾਡਾ ਸ਼ੱਕ (ਭਰਮ) ਦੂਰ ਨਾ ਹੋਵੇ, ਉਹ ਗੁਰੂ ਝੂਠਾ ਹੈ। ਅਜਿਹੇ ਗੁਰੂ ਨੂੰ ਛੱਡਣ ਵਿੱਚ ਦੇਰ ਨਾ ਕਰੋ।',
       en: 'Satguru Kabir Saheb provides the ultimate test for a Guru. He says that if, after taking refuge with a teacher, your inner "Bhram" (delusion/doubt) is not dispelled and your "Bhraanti" (confusion) remains, then that teacher is not a true Master. Such a Guru should be recognized as false or incomplete, and one should not hesitate to abandon them. A true Master is one whose very presence and wisdom naturally dissolve all spiritual doubts.',
     },
     wordMeanings: {

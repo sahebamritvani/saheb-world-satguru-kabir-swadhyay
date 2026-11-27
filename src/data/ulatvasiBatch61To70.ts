@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਮਾਤਮਾ ਹਰ ਹਿਰਦੇ ਵਿੱਚ ਹੈ।',
         en: 'God dwells within every heart and body.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਾ ਦਾ ਅਸਲੀ ਘਰ ਨਿਰਾਕਾਰ ਹੈ।',
         en: 'The true home of the Soul is the Formless Absolute Realm.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਗਿਆਨ ਨਾਲ ਮਾਇਆ ਦਾਸੀ ਬਣਦੀ ਹੈ।',
         en: 'Through realization, Maya becomes the servant of the Soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਮਾਨ-ਸਨਮਾਨ ਦਾ ਅਹੰਕਾਰ ਭਗਤੀ ਦਾ ਨਾਸ਼ ਕਰਦਾ ਹੈ।',
         en: 'Craving honor and praise destroys true devotion.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਸਾਵਧਾਨੀ ਨਾਲ ਵਿਕਾਰ ਦੂਰ ਰਹਿੰਦੇ ਹਨ।',
         en: 'Continuous witness awareness safeguards spiritual earnings.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'अहंकार मरण व मन का वशीकरण', pb: 'ਹੰਕਾਰ ਦਾ ਨਾਸ਼, ਮਨ ਤੇ ਵਸ਼', en: 'Subjugation of Mind through Death of Ego' },
       deepMeaning: {
-        hi: 'अहंकार-रहित साधक (मुआ) चंचल वासनायुक्त मन (जीवित) को भक्ति के रस्से से बांधकर सद्गुरु के ज्ञान दरबार (अदालत) में समर्पित कर देता है, जिससे सारा भ्रम मिट जाता है।',
+        hi: 'अहंकार-रहित साधक (मुआ) चंचल वासनायुक्त मन (जीवित) को भक्ति के रस्से से बांधकर सतगुरु के ज्ञान दरबार (अदालत) में समर्पित कर देता है, जिससे सारा भ्रम मिट जाता है।',
         pb: 'ਹੰਕਾਰ-ਰਹਿਤ ਸਾਧਕ ਮਨ ਨੂੰ ਨਾਮ ਨਾਲ ਬੰਨ੍ਹ ਕੇ ਗੁਰੂ ਚਰਨਾਂ ਵਿੱਚ ਸਮਰਪਿਤ ਕਰਦਾ ਹੈ।',
         en: 'The ego-dead Seeker ties down the restless mind and presents it before Satguru\'s tribunal of Wisdom.'
       },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਅਹੰਕਾਰ ਮਿਟਾਉਣ ਨਾਲ ਮਨ ਵਸ਼ ਵਿੱਚ ਆਉਂਦਾ ਹੈ।',
         en: 'Death of ego enables total mastery over the restless mind.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਨਿਮਰਤਾ ਨਾਲ ਅਹੰਕਾਰ ਮਿਟਦਾ ਹੈ।',
         en: 'Humble prayer dissolves colossal inner pride.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -372,8 +372,8 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
     realmTitle: { hi: 'शून्य-समाधि (Absolute)', pb: 'ਸੁੰਨ-ਸਮਾਧੀ (Absolute)', en: 'Absolute' },
     title: { hi: '68. बिना सूर्य-चंद्रमा का उजाला', pb: '68. ਬਿਨਾਂ ਸੂਰਜ-ਚੰਦ ਦਾ ਚਾਨਣ', en: '68. Illumination Without Sun or Moon' },
     verse: {
-      hi: '"उहाँ न चंदा न सूर उगा है, फिर भी होत उजियारा। कहै कबीर सोई घर मेरा, जहाँ साहिब का दरबारा॥"',
-      pb: '"ਉਹਾਂ ਨ ਚੰਦਾ ਨ ਸੂਰ ਉਗਾ ਹੈ, ਫਿਰ ਭੀ ਹੋਤ ਉਜਿਆਰਾ। ਕਹੈ ਕਬੀਰ ਸੋਈ ਘਰ ਮੇਰਾ, ਜਹਾਂ ਸਾਹਿਬ ਕਾ ਦਰਬਾਰਾ॥"',
+      hi: '"उहाँ न चंदा न सूर उगा है, फिर भी होत उजियारा। कहै कबीर सोई घर मेरा, जहाँ साहेब का दरबारा॥"',
+      pb: '"ਉਹਾਂ ਨ ਚੰਦਾ ਨ ਸੂਰ ਉਗਾ ਹੈ, ਫਿਰ ਭੀ ਹੋਤ ਉਜਿਆਰਾ। ਕਹੈ ਕਬੀਰ ਸੋਈ ਘਰ ਮੇਰਾ, ਜਹਾਂ ਸਾਹੇਬ ਕਾ ਦਰਬਾਰਾ॥"',
       en: '"Neither moon nor sun rises there, yet wondrous light shines everywhere. Says Kabir that is my home, where Saheb\'s court resides."'
     },
     literalParadox: {
@@ -388,11 +388,11 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
     },
     symbols: [
       { symbol: 'न चंदा न सूर (No Sun or Moon)', meaning: { hi: 'भौतिक जगत के प्रकाश से परे अलौकिक स्थिति', pb: 'ਭੌਤਿਕ ਚਾਨਣ ਤੋਂ ਪਰੇ', en: 'Beyond physical celestial luminaries' } },
-      { symbol: 'साहिब का दरबारा (Saheb\'s Court)', meaning: { hi: 'परमधाम / आत्मा का निज स्वरूप', pb: 'ਸਾਹਿਬ ਦਾ ਦਰਬਾਰ / ਨਿਜ ਘਰ', en: 'Supreme Abode / Original Home of Soul' } }
+      { symbol: 'साहेब का दरबारा (Saheb\'s Court)', meaning: { hi: 'परमधाम / आत्मा का निज स्वरूप', pb: 'ਸਾਹੇਬ ਦਾ ਦਰਬਾਰ / ਨਿਜ ਘਰ', en: 'Supreme Abode / Original Home of Soul' } }
     ],
     question: {
-      hi: '"जहाँ साहिब का दरबारा" का क्या भेद है?',
-      pb: '"ਜਹਾਂ ਸਾਹਿਬ ਕਾ ਦਰਬਾਰਾ" ਦਾ ਕੀ ਅਰਥ ਹੈ?',
+      hi: '"जहाँ साहेब का दरबारा" का क्या भेद है?',
+      pb: '"ਜਹਾਂ ਸਾਹੇਬ ਕਾ ਦਰਬਾਰਾ" ਦਾ ਕੀ ਅਰਥ ਹੈ?',
       en: 'What is "Saheb\'s Court"?'
     },
     options: {
@@ -404,7 +404,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'स्वयं-प्रकाशित परमधाम निज घर', pb: 'ਆਤਮਾ ਦਾ ਅਸਲੀ ਨਿਜ ਘਰ', en: 'Self-Luminous Supreme Abode' },
       deepMeaning: {
-        hi: 'कबीर साहेब सहस्रार व परमधाम की बात कर रहे हैं जहाँ भौतिक सूर्य-चंद्रमा की आवश्यकता नहीं होती। वहाँ परमात्मा का अपना स्वरूप ही स्वयं-प्रकाशित है, और वही आत्मा का सच्चा निज घर है।',
+        hi: 'सतगुरु कबीर साहेब सहस्रार व परमधाम की बात कर रहे हैं जहाँ भौतिक सूर्य-चंद्रमा की आवश्यकता नहीं होती। वहाँ परमात्मा का अपना स्वरूप ही स्वयं-प्रकाशित है, और वही आत्मा का सच्चा निज घर है।',
         pb: 'ਸਹਸ੍ਰਾਰ ਅਤੇ ਆਤਮਾ ਦਾ ਅਸਲੀ ਘਰ ਆਪ ਹੀ ਚਾਨਣ ਰੂਪ ਹੈ।',
         en: 'The Supreme Abode needs no sunlight or moonlight; it is illumined by the self-existent Light of Consciousness.'
       },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਪਰਮਧਾਮ ਹੀ ਆਤਮਾ ਦਾ ਅਮਰ ਘਰ ਹੈ।',
         en: 'The Supreme Abode is the eternal home of the Soul.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਅੰਤਰਮੁਖੀ ਹੋਣਾ ਹੀ ਪਾਰ ਉਤਾਰਾ ਹੈ।',
         en: 'Inward withdrawal of senses liberates from the worldly ocean.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_61_TO_70: UlatvasiQuestion[] = [
         pb: 'ਆਤਮਿਕ ਆਨੰਦ ਬਾਹਰੀ ਚੀਜ਼ਾਂ ਤੇ ਨਿਰਭਰ ਨਹੀਂ।',
         en: 'Divine joy needs no material tools or external rituals.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

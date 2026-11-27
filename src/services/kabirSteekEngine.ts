@@ -35,9 +35,9 @@ export const NITNEM_STEEK_DATA: Record<string, Partial<VerseSteekCommentary>> = 
   // Morning Mangalacharan & Vandana
   'prabhat-mangalacharan': {
     contextAndSatire: {
-      hi: 'कबीर साहेब का यह मंगलाचरण बाह्य आडंबरों और पाखंडों पर गहरा कटाक्ष है। साहेब स्पष्ट करते हैं कि ईश्वर किसी तीर्थ, पत्थर या मूर्ति में नहीं, बल्कि जीवात्मा के भीतर ही सत्यनाम के रूप में विद्यमान है।',
-      pb: "ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਇਹ ਮੰਗਲਾਚਰਨ ਬਾਹਰੀ ਕਰਮ-ਕਾਂਡਾਂ 'ਤੇ ਚੋਟ ਕਰਦਾ ਹੈ। ਪ੍ਰਭੂ ਬਾਹਰੀ ਤੀਰਥਾਂ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਜੀਵ ਦੇ ਅੰਦਰ ਹੀ ਵਸਦਾ ਹੈ।",
-      en: 'Kabir Saheb opens with a piercing critique of external rituals and empty dogmas. True Divinity dwells not in outward pilgrimages or idols, but within the soul as the True Name.'
+      hi: 'सतगुरु कबीर साहेब का यह मंगलाचरण बाह्य आडंबरों और पाखंडों पर गहरा कटाक्ष है। सतगुरु कबीर साहेब फरमाते हैं कि ईश्वर किसी तीर्थ, पत्थर या मूर्ति में नहीं, बल्कि जीवात्मा के भीतर ही सत्यनाम के रूप में विद्यमान है।',
+      pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਇਹ ਮੰਗਲਾਚਰਨ ਬਾਹਰੀ ਕਰਮ-ਕਾਂਡਾਂ 'ਤੇ ਚੋਟ ਕਰਦਾ ਹੈ। ਪ੍ਰਭੂ ਬਾਹਰੀ ਤੀਰਥਾਂ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਜੀਵ ਦੇ ਅੰਦਰ ਹੀ ਵਸਦਾ ਹੈ।",
+      en: 'Satguru Kabir Saheb opens with a piercing critique of external rituals and empty dogmas. True Divinity dwells not in outward pilgrimages or idols, but within the soul as the True Name.'
     },
     esotericSecret: {
       hi: 'मंगलाचरण का वास्तविक अर्थ है अंतरात्मा में सत्यपुरुष के "अनहद शब्द" का जागरण। जब साधक का मन संसार से हटकर सतगुरु के चरणों में लीन होता है, तभी वास्तविक मंगल की प्राप्ति होती है।',
@@ -54,7 +54,7 @@ export const NITNEM_STEEK_DATA: Record<string, Partial<VerseSteekCommentary>> = 
     contextAndSatire: {
       hi: 'यहाँ साहेब मिथ्या गुरुओं (जो केवल वेशभूषा और धन के लोभी हैं) की पोल खोलते हुए सच्चे पूर्ण सतगुरु की महिमा बताते हैं, जो भवसागर से पार उतारने का सामर्थ्य रखते हैं।',
       pb: 'ਇੱਥੇ ਸਾਹੇਬ ਝੂਠੇ ਭੇਖੀ ਗੁਰੂਆਂ ਦਾ ਖੰਡਨ ਕਰਦੇ ਹੋਏ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੀ ਮਹਿਮਾ ਪ੍ਰਗਟ ਕਰਦੇ ਹਨ।',
-      en: 'Kabir Saheb dismantles pretender gurus who trade in outer garb and wealth, revealing the glory of the True Enlightened Master who liberates the soul.'
+      en: 'Satguru Kabir Saheb dismantles pretender gurus who trade in outer garb and wealth, revealing the glory of the True Enlightened Master who liberates the soul.'
     },
     esotericSecret: {
       hi: 'सतगुरु कोई हाड़-मांस का शरीर नहीं, बल्कि वह साक्षात "शब्द स्वरूप" हैं। उनका ध्यान करने से जीवात्मा काल-जाल और चौरासी के चक्रव्यूह से मुक्त हो जाती है।',
@@ -69,7 +69,7 @@ export const NITNEM_STEEK_DATA: Record<string, Partial<VerseSteekCommentary>> = 
   },
   'sandhya-aarti': {
     contextAndSatire: {
-      hi: 'थाल में दीपक सजाकर की जाने वाली भौतिक आरती पर कबीर साहेब का व्यंग्य: सारा ब्रह्मांड जब निरंतर परमात्मा की आरती उतार रहा है, तो मनुष्य पीतल के दीपक से किसे प्रकाशित करेगा?',
+      hi: 'थाल में दीपक सजाकर की जाने वाली भौतिक आरती पर सतगुरु कबीर साहेब फरमाते हैं: सारा ब्रह्मांड जब निरंतर परमात्मा की आरती उतार रहा है, तो मनुष्य पीतल के दीपक से किसे प्रकाशित करेगा?',
       pb: 'ਬਾਹਰੀ ਦੀਵਿਆਂ ਵਾਲੀ ਆਰਤੀ ਦਾ ਖੰਡਨ: ਸਮੁੱਚੀ ਕਾਇਨਾਤ ਜਿਸ ਪ੍ਰਭੂ ਦੀ ਆਰਤੀ ਕਰ ਰਹੀ ਹੈ, ਉਸਨੂੰ ਦੀਵੇ ਦੀ ਕੀ ਲੋੜ?',
       en: 'Satirical insight on outer plate-and-lamp rituals: When the entire cosmos performs eternal Aarti with celestial suns, what can a mortal lamp illumine?'
     },
@@ -119,11 +119,11 @@ export function getVerseSteekCommentary(
   // Fallback / dynamic esoteric commentary based on verse themes & Kabir philosophy
   const defaultContextAndSatire = {
     hi: customSteek.contextAndSatire?.hi || 
-      `कबीर साहेब की यह वाणी साधक को संसार के नश्वर प्रपंच, माया के मोह और झूठे पाखंडों से सावधान करती है। साहेब दो टूक सत्य कहते हैं कि बिना आत्म-पहचान और सतगुरु के ज्ञान के मनुष्य जीवन व्यर्थ बीत जाता है।`,
+      `सतगुरु कबीर साहेब की यह वाणी साधक को संसार के नश्वर प्रपंच, माया के मोह और झूठे पाखंडों से सावधान करती है। सतगुरु कबीर साहेब दो टूक सत्य फरमाते हैं कि बिना आत्म-पहचान और सतगुरु के ज्ञान के मनुष्य जीवन व्यर्थ बीत जाता है।`,
     pb: customSteek.contextAndSatire?.pb ||
-      `ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦਾ ਇਹ ਬਚਨ ਸੰਸਾਰ ਦੀ ਮਾਇਆ ਅਤੇ ਝੂਠੇ ਮੋਹ ਤੋਂ ਜਾਗਰੂਕ ਕਰਦਾ ਹੈ। ਆਤਮ-ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖਾ ਜੀਵਨ ਅਧੂਰਾ ਹੈ।`,
+      `ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਇਹ ਬਚਨ ਸੰਸਾਰ ਦੀ ਮਾਇਆ ਅਤੇ ਝੂਠੇ ਮੋਹ ਤੋਂ ਜਾਗਰੂਕ ਕਰਦਾ ਹੈ। ਆਤਮ-ਗਿਆਨ ਤੋਂ ਬਿਨਾਂ ਮਨੁੱਖਾ ਜੀਵਨ ਅਧੂਰਾ ਹੈ।`,
     en: customSteek.contextAndSatire?.en ||
-      `Kabir Saheb cuts through worldly illusions, religious hypocrisy, and the attachment to the transient body, awakening the soul to its eternal truth.`
+      `Satguru Kabir Saheb proclaims truth beyond worldly illusions, religious hypocrisy, and attachment to the transient body, awakening the soul to its eternal truth.`
   };
 
   const defaultEsotericSecret = {
@@ -144,8 +144,8 @@ export function getVerseSteekCommentary(
       `Practical Sadhana: Do not merely chant the words; imbibe their essence into your consciousness and maintain remembrance (Surati) throughout daily tasks.`
   };
 
-  // English translation derivation
-  const englishTranslation = verse.bhavarth?.en || 
+  // English translation derivation (Strictly bound to admin englishTranslation / translationEn or English bhavarth/lines; never falls back to Hindi)
+  const englishTranslation = verse.englishTranslation || (verse as any).translationEn || verse.bhavarth?.en || 
     (verse.lines.en ? verse.lines.en.join(' ') : 'Sacred divine verse of Satguru Kabir Saheb revealing the path of Truth and inner liberation.');
 
   return {

@@ -595,8 +595,8 @@ export const AARTI_BHAVARTH_MAP: Record<AartiSection, Array<{ lines: { hi: strin
       },
       bhavarth: {
         hi: "अपना तन, मन और धन सब कुछ गुरु चरणों में समर्पित कर चित्त को उनकी शरण में लगा दिया है। दया के अगाध सागर साहेब कबीर कृपा कर इस जीवन को चौरासी के बंधन से मुक्त कर सफल बना देते हैं।",
-        pb: "ਤਨ-ਮਨ-ਧਨ ਅਰਪਣ ਕਰਕੇ ਗੁਰੂ-ਸ਼ਰਨ ਲਈ ਹੈ। ਦਇਆ ਦੇ ਸਾਗਰ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਜੀਵਨ ਸਫਲ ਕਰ ਦਿੱਤਾ ਹੈ।",
-        en: "Surrendering body, mind, and wealth at the Master's feet, the mind finds eternal refuge. Kabir Saheb, the infinite ocean of mercy, frees the soul from rebirth and blesses life with ultimate liberation."
+        pb: "ਤਨ-ਮਨ-ਧਨ ਅਰਪਣ ਕਰਕੇ ਗੁਰੂ-ਸ਼ਰਨ ਲਈ ਹੈ। ਦਇਆ ਦੇ ਸਾਗਰ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਜੀਵਨ ਸਫਲ ਕਰ ਦਿੱਤਾ ਹੈ।",
+        en: "Surrendering body, mind, and wealth at the Master's feet, the mind finds eternal refuge. Satguru Kabir Saheb, the infinite ocean of mercy, frees the soul from rebirth and blesses life with ultimate liberation."
       }
     }
   ]
@@ -907,7 +907,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
     if (onOpenBlessing) {
       onOpenBlessing(
         language === 'pb' ? 'ਪਵਿੱਤਰ ਆਰਤੀ ਸੁਰੱਖਿਅਤ ਹੋ ਗਈ' : language === 'en' ? 'Sacred Aarti Saved' : 'पावन आरती सुरक्षित हुई',
-        language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦੀ ਭੇਟਾ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your devotion be accepted at the lotus feet of Satguru Kabir Saheb.' : 'सतगुरु कबीर साहेब के चरणों में आपकी यह पावन अर्चना स्वीकार हो।'
+        language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦੀ ਭੇਟਾ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your devotion be accepted at the lotus feet of Satguru Kabir Saheb.' : 'सतगुरु कबीर साहेब के चरणों में आपकी यह पावन अर्चना स्वीकार हो।'
       );
     }
   };
@@ -932,7 +932,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
     if (onOpenBlessing) {
       onOpenBlessing(
         language === 'pb' ? 'ਮੂਲ ਪਾਠ ਮੁੜ ਸਥਾਪਿਤ' : language === 'en' ? 'Authentic Text Restored' : 'मूल पावन पाठ पुनर्स्थापित',
-        language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪ੍ਰਮਾਣਿਕ ਆਰਤੀ ਬਹਾਲ ਹੋ ਗਈ ਹੈ।' : language === 'en' ? 'Authentic Aarti verses of Satguru Kabir Saheb have been restored.' : 'सतगुरु कबीर साहेब की प्रामाणिक आरती बहाल कर दी गई है।'
+        language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪ੍ਰਮਾਣਿਕ ਆਰਤੀ ਬਹਾਲ ਹੋ ਗਈ ਹੈ।' : language === 'en' ? 'Authentic Aarti verses of Satguru Kabir Saheb have been restored.' : 'सतगुरु कबीर साहेब की प्रामाणिक आरती बहाल कर दी गई है।'
       );
     }
   };
@@ -1456,7 +1456,7 @@ export const AartiSanctuary: React.FC<AartiSanctuaryProps> = ({
                 sacredHaptics.successVibration();
                 onOpenBlessing(
                   language === 'pb' ? 'ਆਰਤੀ ਅਰਚਨਾ ਸੰਪੰਨ' : language === 'en' ? 'Aarti Complete' : 'आरती अर्चना संपन्न',
-                  language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦੀ ਆਰਤੀ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your holy Aarti prayer be accepted at the lotus feet of Satguru Kabir Saheb.' : 'सतगुरु कबीर साहेब के चरणों में आपकी यह पावन आरती वंदना स्वीकार हो।'
+                  language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਆਪ ਜੀ ਦੀ ਆਰਤੀ ਪ੍ਰਵਾਨ ਹੋਵੇ।' : language === 'en' ? 'May your holy Aarti prayer be accepted at the lotus feet of Satguru Kabir Saheb.' : 'सतगुरु कबीर साहेब के चरणों में आपकी यह पावन आरती वंदना स्वीकार हो।'
                 );
               }}
               style={{ backgroundColor: theme.stepActiveBg, color: theme.sacredMaroon }}

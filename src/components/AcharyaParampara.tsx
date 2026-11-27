@@ -20,8 +20,8 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
       closing: '।। साहेब बंदगी साहेब ।।'
     },
     pb: {
-      title: 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਪਾਵਨ ਵੰਸ਼ਾਵਲੀ',
-      subtitle: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੀ ਅਟੱਲ 'ਵੰਸ਼ ਬਿਆਲੀ' ਗੁਰੂ ਪਰੰਪਰਾ ਦਾ ਪਾਵਨ ਪਰਿਚੈ। ਇਹ ਪਵਿੱਤਰ ਵੰਸ਼ਾਵਲੀ ਅਨਾਦਿ ਕਾਲ ਤੋਂ ਚੱਲੀ ਆ ਰਹੀ ਸਤਯਨਾਮ ਦੀ ਅਮਰ ਜੋਤ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਪਰੰਪਰਾ ਨੂੰ ਸੰਸਾਰ ਵਿੱਚ ਪ੍ਰਜਵਲਿਤ ਰੱਖਦੀ ਹੈ।",
+      title: 'ਆਚਾਰੀਆ ਪਰੰਪਰਾ ਇਤਿਹਾਸ: ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਪਾਵਨ ਵੰਸ਼ਾਵਲੀ',
+      subtitle: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਅਟੱਲ 'ਵੰਸ਼ ਬਿਆਲੀ' ਗੁਰੂ ਪਰੰਪਰਾ ਦਾ ਪਾਵਨ ਪਰਿਚੈ। ਇਹ ਪਵਿੱਤਰ ਵੰਸ਼ਾਵਲੀ ਅਨਾਦਿ ਕਾਲ ਤੋਂ ਚੱਲੀ ਆ ਰਹੀ ਸਤਯਨਾਮ ਦੀ ਅਮਰ ਜੋਤ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਪਰੰਪਰਾ ਨੂੰ ਸੰਸਾਰ ਵਿੱਚ ਪ੍ਰਜਵਲਿਤ ਰੱਖਦੀ ਹੈ।",
       back: 'ਵਾਪਸ ਜਾਓ',
       closing: '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।'
     },
@@ -52,9 +52,9 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
         en: "First Gaddi-Pati & Foundation of Vansh Bayalis"
       },
       desc: {
-        hi: "सतगुरु कबीर साहेब जी के प्रमुख शिष्य, वंश बयालीस परंपरा के आदि गद्दीपति तथा पावन ग्रंथ 'कबीर सागर' के प्रमुख संवाददाता व संग्रहकर्ता। आपने बांधवगढ़ (मध्य प्रदेश) से सत्य भक्ति, सात्विक जीवन और चौका-आरती परंपरा का प्रथम प्रसार किया।",
-        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਦੇ ਪ੍ਰਮੁੱਖ ਸ਼ਿਸ਼, ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦੇ ਆਦਿ ਗੱਦੀਪਤੀ ਅਤੇ ਪਾਵਨ ਗ੍ਰੰਥ 'ਕਬੀਰ ਸਾਗਰ' ਦੇ ਪ੍ਰਮੁੱਖ ਸੰਵਾਦਦਾਤਾ ਤੇ ਸੰਗ੍ਰਹਿਕਰਤਾ। ਆਪ ਜੀ ਨੇ ਬਾਂਧਵਗੜ੍ਹ (ਮੱਧ ਪ੍ਰਦੇਸ਼) ਤੋਂ ਸੱਚੀ ਭਗਤੀ, ਸਾਤਵਿਕ ਜੀਵਨ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਪਰੰਪਰਾ ਦਾ ਪਹਿਲਾ ਪ੍ਰਸਾਰ ਕੀਤਾ।",
-        en: "Principal disciple of Satguru Kabir Saheb Ji, Adi Gaddipati of Vansh Bayalis, and principal interlocutor and compiler of 'Kabir Sagar'. He initiated the spread of true devotion, pure living, and the Chauka-Aarti tradition from Bandhavgarh (Madhya Pradesh)."
+        hi: "सतगुरु कबीर साहेब के मुख्य शिष्य, वंश बयालीस परंपरा के आदि गद्दीपति तथा पावन ग्रंथ 'कबीर सागर' के प्रमुख संवाददाता व संग्रहकर्ता। आपने बांधवगढ़ (मध्य प्रदेश) से सत्य भक्ति, सात्विक जीवन और चौका-आरती परंपरा का प्रथम प्रसार किया।",
+        pb: "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਮੁੱਖ ਸ਼ਿਸ਼, ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦੇ ਆਦਿ ਗੱਦੀਪਤੀ ਅਤੇ ਪਾਵਨ ਗ੍ਰੰਥ 'ਕਬੀਰ ਸਾਗਰ' ਦੇ ਪ੍ਰਮੁੱਖ ਸੰਵਾਦਦਾਤਾ ਤੇ ਸੰਗ੍ਰਹਿਕਰਤਾ। ਆਪ ਜੀ ਨੇ ਬਾਂਧਵਗੜ੍ਹ (ਮੱਧ ਪ੍ਰਦੇਸ਼) ਤੋਂ ਸੱਚੀ ਭਗਤੀ, ਸਾਤਵਿਕ ਜੀਵਨ ਅਤੇ ਚੌਕਾ-ਆਰਤੀ ਪਰੰਪਰਾ ਦਾ ਪਹਿਲਾ ਪ੍ਰਸਾਰ ਕੀਤਾ।",
+        en: "Chief disciple of Satguru Kabir Saheb Ji, Adi Gaddipati of Vansh Bayalis, and principal interlocutor and compiler of 'Kabir Sagar'. He initiated the spread of true devotion, pure living, and the Chouka-Aarti tradition from Bandhavgarh (Madhya Pradesh)."
       }
     },
     {
@@ -70,9 +70,9 @@ export const AcharyaParampara: React.FC<AcharyaParamparaProps> = ({
         en: "First Vanshacharya (Bandhavgarh Gaddi)"
       },
       desc: {
-        hi: "धनी धर्मदास साहेब जी और माता आमिनी देवी के सुपुत्र। कबीर साहेब के आशीर्वाद से उत्पन्न प्रथम वंशाचार्य, जिन्होंने बांधवगढ़ में पंथ की पावन ध्वजा फहराई और धर्म का विस्तार किया।",
-        pb: "ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਅਤੇ ਮਾਤਾ ਆਮਿਨੀ ਦੇਵੀ ਦੇ ਸਪੁੱਤਰ। ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਆਸ਼ੀਰਵਾਦ ਨਾਲ ਪ੍ਰਗਟ ਹੋਏ ਪਹਿਲੇ ਵੰਸ਼ਾਚਾਰੀਆ, ਜਿਨ੍ਹਾਂ ਨੇ ਬਾਂਧਵਗੜ੍ਹ ਵਿਖੇ ਪੰਥ ਦਾ ਪਾਵਨ ਝੰਡਾ ਲਹਿਰਾਇਆ।",
-        en: "Son of Dhani Dharmdas Saheb Ji and Mata Amini Devi. Born with the blessings of Kabir Saheb, he established the sacred seat at Bandhavgarh and hoisted the flag of Kabir Panth."
+        hi: "धनी धर्मदास साहेब जी और माता आमिनी देवी के सुपुत्र। सतगुरु कबीर साहेब के आशीर्वाद से उत्पन्न प्रथम वंशाचार्य, जिन्होंने बांधवगढ़ में पंथ की पावन ध्वजा फहराई और धर्म का विस्तार किया।",
+        pb: "ਧਨੀ ਧਰਮਦਾਸ ਸਾਹੇਬ ਜੀ ਅਤੇ ਮਾਤਾ ਆਮਿਨੀ ਦੇਵੀ ਦੇ ਸਪੁੱਤਰ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਆਸ਼ੀਰਵਾਦ ਨਾਲ ਪ੍ਰਗਟ ਹੋਏ ਪਹਿਲੇ ਵੰਸ਼ਾਚਾਰੀਆ, ਜਿਨ੍ਹਾਂ ਨੇ ਬਾਂਧਵਗੜ੍ਹ ਵਿਖੇ ਪੰਥ ਦਾ ਪਾਵਨ ਝੰਡਾ ਲਹਿਰਾਇਆ।",
+        en: "Son of Dhani Dharmdas Saheb Ji and Mata Amini Devi. Born with the blessings of Satguru Kabir Saheb, he established the sacred seat at Bandhavgarh and hoisted the flag of Kabir Panth."
       }
     },
     {

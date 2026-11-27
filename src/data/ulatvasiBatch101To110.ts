@@ -99,7 +99,7 @@ export const ULATVASI_BATCH_101_TO_110: UlatvasiQuestion[] = [
       kabirPhilosophy: {
         hi: 'सत्यनाम का रंग ही समस्त विकारों पर विजय दिलाने वाला है।',
         pb: 'ਨਾਮ ਨਾਲ ਹੀ ਵਿਕਾਰਾਂ ਤੇ ਜਿੱਤ ਹੁੰਦੀ ਹੈ।',
-        en: 'The divine drenching of Satnam conquers all vices.'
+        en: 'The divine drenching of Satyanaam conquers all vices.'
       },
       parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
@@ -476,7 +476,7 @@ export const ULATVASI_BATCH_101_TO_110: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Yogic' },
     title: { hi: '110. बिना पैरों के पहाड़ चढ़ना', pb: '110. ਬਿਨਾਂ ਪੈਰਾਂ ਦੇ ਪਹਾੜ ਚੜ੍ਹਨਾ', en: '110. Ascending Mountain Without Feet' },
     verse: {
-      hi: '"बिनु पग पर्वत चढ़ि गया, बिना पंख अकास। कहै कबीर सुनो भाई संतो, सोई साहिब का दास॥"',
+      hi: '"बिनु पग पर्वत चढ़ि गया, बिना पंख अकास। कहै कबीर सुनो भाई संतो, सोई साहेब का दास॥"',
       pb: '"ਬਿਨੁ ਪਗ ਪਰਵਤ ਚੜ੍ਹਿ ਗਯਾ, ਬਿਨਾ ਪੰਖ ਅਕਾਸ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਸੋਈ ਸਾਹੇਬ ਕਾ ਦਾਸ॥"',
       en: '"Climbed the high mountain without feet, flew into sky without wings. Says Kabir listen saints, he alone is Saheb\'s true servant."'
     },
@@ -506,14 +506,14 @@ export const ULATVASI_BATCH_101_TO_110: UlatvasiQuestion[] = [
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सहस्रार शिखर आरोहण व साहिब दासत्व', pb: 'ਸਹਸ੍ਰਾਰ ਸ਼ਿਖਰ ਤੇ ਪਹੁੰਚਣਾ', en: 'Ascent to Sahasrara Peak & True Divine Servitude' },
+      headline: { hi: 'सहस्रार शिखर आरोहण व साहेब दासत्व', pb: 'ਸਹਸ੍ਰਾਰ ਸ਼ਿਖਰ ਤੇ ਪਹੁੰਚਣਾ', en: 'Ascent to Sahasrara Peak & True Divine Servitude' },
       deepMeaning: {
         hi: 'पर्वत चढ़ना रीढ़ की हड्डी के चक्रों को पार करते हुए मस्तिष्क के शून्य शिखर (सहस्रार) तक पहुँचना है। साधक की सुरति बिना पैरों या पंखों के केवल ध्यान की एकाग्रता व गुरु-कृपा से इस ऊँचे धाम में पहुँच जाती है।',
         pb: 'ਸੁਰਤਿ ਧਿਆਨ ਨਾਲ ਸਹਸ੍ਰਾਰ ਸ਼ਿਖਰ ਤੇ ਪਹੁੰਚਦੀ ਹੈ। ਅਜਿਹਾ ਸਾਧਕ ਹੀ ਸੱਚਾ ਸੇਵਕ ਹੈ।',
         en: 'Ascending the spiritual spine into Sahasrara sky without feet or wings, the Seeker becomes Saheb\'s true servant.'
       },
       kabirPhilosophy: {
-        hi: 'सहस्रार शिखर पहुँचना ही साहिब की सच्ची भक्ति का प्रमाण है।',
+        hi: 'सहस्रार शिखर पहुँचना ही साहेब की सच्ची भक्ति का प्रमाण है।',
         pb: 'ਸਹਸ੍ਰਾਰ ਤੇ ਪਹੁੰਚਣਾ ਹੀ ਸੱਚੀ ਭਗਤੀ ਹੈ।',
         en: 'Reaching Sahasrara peak is the hallmark of true devotion.'
       },

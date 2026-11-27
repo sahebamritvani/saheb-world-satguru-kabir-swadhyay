@@ -208,7 +208,7 @@ export const SandhukkariGlossaryModal: React.FC<SandhukkariGlossaryModalProps> =
             className="p-3.5 border-t text-center shrink-0 flex items-center justify-between px-5"
           >
             <span className="text-[11px] opacity-70 italic font-serif">
-              {language === 'pb' ? '।। ਸਤਯਨਾਮ ਸ਼੍ਰੀ ਕਬੀਰ ਸਾਹੇਬ ।।' : language === 'en' ? '।। Satyanaam Sri Kabir Saheb ।।' : '।। सत्यनाम श्री कबीर साहेब ।।'}
+              {language === 'pb' ? '।। ਸਤਯਨਾਮ ਸ਼੍ਰੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ।।' : language === 'en' ? '।। Satyanaam Sri Satguru Kabir Saheb ।।' : '।। सत्यनाम श्री कबीर साहेब ।।'}
             </span>
             <button
               type="button"

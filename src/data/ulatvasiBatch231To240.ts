@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਮਨ ਦੀ ਚੰਚਲਤਾ ਨੂੰ ਸੁਰਤਿ ਹੀ ਸ਼ਾਂਤ ਕਰ ਸਕਦੀ ਹੈ।',
         en: 'The scattering of mind can only be subdued by the razor-sharp focus of inner consciousness.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਸੁਰਤ ਦਾ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਟਿਕਣਾ ਹੀ ਅਸਲੀ ਘਰ ਪਾਉਣਾ ਹੈ।',
         en: 'Merging the lower bodily energy into the crown chakra is the gateway to the supreme home.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -144,7 +144,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'अमृत रस पान एवं तृष्णा निवृत्ति', pb: 'ਅੰਮ੍ਰਿਤ ਰਸ ਅਤੇ ਵਾਸਨਾ ਨਾਸ', en: 'Drinking Esoteric Nectar to Extinguish Worldly Cravings' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ मस्तिष्क के भीतर स्थित भँवर गुफा (अमृत कुंड) की बात कर रहे हैं। जब ध्यान की गहरी अवस्था में चेतना वहाँ पहुँचती है, तो आत्मा को उस भीतरी ब्रह्मानंद के रस का पान करने के लिए इस भौतिक मुँह की जरूरत नहीं होती। आत्मा स्वतः ही उस दिव्य रस को सोख लेती है, जिससे जन्म-जन्मांतर की प्यास शांत हो जाती है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ मस्तिष्क के भीतर स्थित भँवर गुफा (अमृत कुंड) की बात कर रहे हैं। जब ध्यान की गहरी अवस्था में चेतना वहाँ पहुँचती है, तो आत्मा को उस भीतरी ब्रह्मानंद के रस का पान करने के लिए इस भौतिक मुँह की जरूरत नहीं होती। आत्मा स्वतः ही उस दिव्य रस को सोख लेती है, जिससे जन्म-जन्मांतर की प्यास शांत हो जाती है।',
         pb: 'ਮਨੁੱਖ ਦੇ ਅੰਦਰ ਦਸਮ ਦੁਆਰ ਵਿੱਚ ਅੰਮ੍ਰਿਤ ਦਾ ਕੁੰਡ ਹੈ। ਧਿਆਨ ਵਿੱਚ ਆਤਮਾ ਬਿਨਾਂ ਮੂੰਹ ਦੇ ਇਸ ਰਸ ਨੂੰ ਪੀਂਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਸੰਸਾਰੀ ਇੱਛਾਵਾਂ ਖਤਮ ਹੋ ਜਾਂਦੀਆਂ ਹਨ।',
         en: 'Kabir refers to the subtle celestial reservoir of nectar in the deep brain spaces (Bhanwar Gupha). When consciousness arrives there during deep meditation, the soul requires no physical mouth to swallow this divine ecstasy; it absorbs it directly, quenching lifetimes of worldly thirst.'
       },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਅੰਦਰੂਨੀ ਰਾਮ-ਰਸ ਮਿਲਣ ਤੇ ਦੁਨਿਆਵੀ ਭੋਗ ਫਿੱਕੇ ਪੈ ਜਾਂਦੇ ਹਨ।',
         en: 'Once dyed in the inner nectar of the Divine Name, all sensory pleasures turn dull.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -179,7 +179,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
       en: 'Dead = Ego-less liberated saint; Living = Worldly man boasting of life; Blind = Ignorant.'
     },
     symbols: [
-      { symbol: 'मुआ राह बतावे (Dead Showing Path)', meaning: { hi: 'जीते-जी अहंकार व इच्छाओं को मारने वाले जीवन्मुक्त सद्गुरु का मुक्ति का मार्ग दिखाना', pb: 'ਜੀਵਨਮੁਕਤ ਗੁਰੂ ਦਾ ਰਸਤਾ ਦਿਖਾਉਣਾ', en: 'An ego-less liberated master guiding souls after having died to sensory desires' } },
+      { symbol: 'मुआ राह बतावे (Dead Showing Path)', meaning: { hi: 'जीते-जी अहंकार व इच्छाओं को मारने वाले जीवन्मुक्त सतगुरु का मुक्ति का मार्ग दिखाना', pb: 'ਜੀਵਨਮੁਕਤ ਗੁਰੂ ਦਾ ਰਸਤਾ ਦਿਖਾਉਣਾ', en: 'An ego-less liberated master guiding souls after having died to sensory desires' } },
       { symbol: 'जीवता भटके (Living Wandering Blind)', meaning: { hi: 'संसार में जीवित होने का दंभ भरने वाले अज्ञानी मनुष्यों का मोह-माया में भटकना', pb: 'ਅਗਿਆਨੀ ਮਨੁੱਖਾਂ ਦਾ ਭਟਕਣਾ', en: 'Worldly people boasting of being alive wandering lost in illusions of attachment' } }
     ],
     question: {
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਜਿਉਂਦੇ ਜੀ ਮਰਨਾ ਹੀ ਸੱਚੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Dying while alive (spiritual ego-death) is the primary key to breaking cosmic bondage.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਸੰਸਾਰ ਦੀ ਅੱਗ ਤੋਂ ਬਚਣ ਲਈ ਹਰੀ-ਨਾਮ ਦੇ ਜਲ ਵਿੱਚ ਡੁੱਬਣਾ ਜ਼ਰੂਰੀ ਹੈ।',
         en: 'The sole remedy to escape the forest fire of worldly cravings is to submerge oneself in divine love.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਨਿਮਰਤਾ ਅੱਗੇ ਮਨ ਦਾ ਹੰਕਾਰ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ।',
         en: 'Worldly aggression of the mind naturally dissolves before profound humility and devotion.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -330,7 +330,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
       en: 'A pitcher has been molded without a single grain of clay, and baked to solid perfection without any fire or kiln.'
     },
     clueHint: {
-      hi: 'घट = आत्मज्ञान/परिपक्व अंतःकरण; बिनु माटी = बिना पंचभौतिक साधन (सद्गुरु शब्द); बिना अग्नि = सहज समाधि तपन।',
+      hi: 'घट = आत्मज्ञान/परिपक्व अंतःकरण; बिनु माटी = बिना पंचभौतिक साधन (सतगुरु शब्द); बिना अग्नि = सहज समाधि तपन।',
       pb: 'ਘੜਾ ਅੰਤਰਕਰਨ ਹੈ, ਬਿਨਾਂ ਮਿੱਟੀ ਗੁਰੂ-ਸ਼ਬਦ ਹੈ, ਬਿਨਾਂ ਅੱਗ ਸਹਿਜ ਸਮਾਧੀ ਹੈ।',
       en: 'Pitcher = Pure inner consciousness; Clayless = Formed by Guru Word; Without fire = Baked in effortless absorption.'
     },
@@ -357,11 +357,11 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         en: 'The pitcher (Ghat) symbolizes the seeker\'s inner consciousness or spiritual maturity. Unlike material vessels, this inner container is formed without physical clay, shaped instead by the Guru\'s Word. It is baked to perfection not in physical flames, but in the internal heat of effortless meditation.'
       },
       kabirPhilosophy: {
-        hi: 'सद्गुरु का शब्द ही अनुपम कुम्हार है जो जीव के अंतःकरण को दिव्य घट बना देता है।',
-        pb: 'ਸਦਗੁਰੂ ਦਾ ਸ਼ਬਦ ਹੀ ਮਨੁੱਖ ਨੂੰ ਸੱਚਾ ਘੜਾ ਬਣਾਉਂਦਾ ਹੈ।',
+        hi: 'सतगुरु का शब्द ही अनुपम कुम्हार है जो जीव के अंतःकरण को दिव्य घट बना देता है।',
+        pb: 'ਸਤਿਗੁਰੂ ਦਾ ਸ਼ਬਦ ਹੀ ਮਨੁੱਖ ਨੂੰ ਸੱਚਾ ਘੜਾ ਬਣਾਉਂਦਾ ਹੈ।',
         en: 'The Word of the True Guru is the supreme potter that shapes the human vessel into a divine receptacle.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -404,7 +404,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'चेतना उर्ध्वगमन एवं ब्रह्मांड भ्रमण', pb: 'ਸੁਰਤਿ ਦੀ ਬ੍ਰਹਮੰਡ ਯਾਤਰਾ', en: 'Consciousness Transcending Physical Space' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ मानव चेतना या सुरति की बात कर रहे हैं। हमारी चेतना को कहीं भी आने-जाने के लिए भौतिक पैरों की जरूरत नहीं होती। जब साधक ध्यान में बैठता है, तो उसकी सुरति पल भर में शरीर के बंधनों को पार करके सूक्ष्म लोकों और पूरे ब्रह्मांड की यात्रा (नाप) कर लेती है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ मानव चेतना या सुरति की बात कर रहे हैं। हमारी चेतना को कहीं भी आने-जाने के लिए भौतिक पैरों की जरूरत नहीं होती। जब साधक ध्यान में बैठता है, तो उसकी सुरति पल भर में शरीर के बंधनों को पार करके सूक्ष्म लोकों और पूरे ब्रह्मांड की यात्रा (नाप) कर लेती है।',
         pb: 'ਬਿਨਾਂ ਪੈਰਾਂ ਦਾ ਯਾਤਰੀ ਸਾਡੀ ਸੁਰਤਿ (ਚੇਤਨਾ) ਹੈ। ਚੇਤਨਾ ਨੂੰ ਕਿਤੇ ਜਾਣ ਲਈ ਸ਼ਰੀਰਕ ਪੈਰਾਂ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ। ਧਿਆਨ ਵਿਚ ਬੈਠਦਿਆਂ ਹੀ ਸੁਰਤਿ ਬ੍ਰਹਮੰਡ ਦੀ ਸੈਰ ਕਰ ਲੈਂਦੀ ਹੈ।',
         en: 'Kabir refers to the human spiritual focus (Surati). Consciousness requires no physical limbs for travel. When seated in meditation, the seeker\'s focused awareness transcends bodily limits instantly, exploring higher cosmic dimensions and spanning the inner universe.'
       },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਆਪਣੀ ਅੰਦਰੂਨੀ ਸ਼ਕਤੀ ਨੂੰ ਪਛਾਣਨ ਨਾਲ ਹੀ ਪਾਖੰਡ ਦੂਰ ਹੁੰਦੇ ਹਨ।',
         en: 'Hypocrisy and external dogmas crumble the moment one experiences the boundless nature of the inner Spirit.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਪ੍ਰਭੂ ਦਾ ਮਾਰਗ ਸੂਈ ਦੇ ਨਾਕੇ ਵਰਗਾ ਬਾਰੀਕ ਹੈ।',
         en: 'The spiritual path is narrower than a needle point; only perfectly unified consciousness can navigate it.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -492,7 +492,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
     },
     symbols: [
       { symbol: 'अँधियारा घर (Dark Chamber)', meaning: { hi: 'अज्ञानता, भ्रम और मोह-माया से अंधकारमय बना मनुष्य का अंतःकरण', pb: 'ਅਗਿਆਨ ਨਾਲ ਭਰਿਆ ਹਿਰਦਾ', en: 'The human heart shrouded in ignorance, doubts, and worldly attachments' } },
-      { symbol: 'सूरज ऊग्या (Sun Arising)', meaning: { hi: 'सद्गुरु की कृपा से भीतर आत्मज्ञान और दिव्य ज्योति का जाग्रत होना', pb: 'ਆਤਮ-ਗਿਆਨ ਦਾ ਪ੍ਰਕਾਸ਼ ਹੋਣਾ', en: 'The dawning of spiritual wisdom and uncreated light within the consciousness' } }
+      { symbol: 'सूरज ऊग्या (Sun Arising)', meaning: { hi: 'सतगुरु की कृपा से भीतर आत्मज्ञान और दिव्य ज्योति का जाग्रत होना', pb: 'ਆਤਮ-ਗਿਆਨ ਦਾ ਪ੍ਰਕਾਸ਼ ਹੋਣਾ', en: 'The dawning of spiritual wisdom and uncreated light within the consciousness' } }
     ],
     question: {
       hi: '"अंधेरे घर के भीतर साक्षात करोड़ों सूर्यों के समान तेज वाला सूर्य उगने" का क्या रहस्य है?',
@@ -500,7 +500,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
       en: 'What is the secret of "The sun equal to millions of suns arising inside a dark chamber"?'
     },
     options: {
-      hi: ['सद्गुरु कृपा से अज्ञानता से भरे हृदय में आत्मज्ञान का साक्षात दिव्य प्रकाश उदित होना', 'बिजली का शार्ट सर्किट', 'आसमान का सूरज नीचे आना', 'घर में आग लगना'],
+      hi: ['सतगुरु कृपा से अज्ञानता से भरे हृदय में आत्मज्ञान का साक्षात दिव्य प्रकाश उदित होना', 'बिजली का शार्ट सर्किट', 'आसमान का सूरज नीचे आना', 'घर में आग लगना'],
       pb: ['ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਅਗਿਆਨ ਹਿਰਦੇ ਵਿਚ ਆਤਮ-ਗਿਆਨ ਦੀ ਜੋਤ ਜਗਣਾ', 'ਬਿਜਲੀ', 'ਆਕਾਸ਼ ਦਾ ਸੂਰਜ', 'ਅੱਗ'],
       en: ['The dawning of supreme divine light of self-realization inside an ignorant heart via Guru grace', 'Electrical short circuit', 'Atmospheric sun descending into room', 'Accidental house fire']
     },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_231_TO_240: UlatvasiQuestion[] = [
         pb: 'ਅੰਦਰੂਨੀ ਹਨ੍ਹੇਰਾ ਆਤਮ-ਗਿਆਨ ਦੇ ਪ੍ਰਕਾਸ਼ ਨਾਲ ਹੀ ਦੂਰ ਹੁੰਦਾ ਹੈ।',
         en: 'The inner darkness of ignorance is dispelled not by intellectual talk, but by the dawning sun of direct spiritual realization.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

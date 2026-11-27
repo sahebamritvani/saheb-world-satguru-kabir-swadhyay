@@ -19,8 +19,8 @@ export const SAKHIS_MAD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Deep koo jhola pawan hai, nar ko jhola naari. Gyaanee jhola garav hai, kahain kabeer pukaari.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि दीपक को बुझाने वाली तेज पवन है और पुरुष को वासना के रंग में डुबोकर पतन की ओर अग्रसर करने वाली स्त्री है। पुरुष और स्त्री दोनों विषयगामी होने से एक-दूसरे को पतित करते हैं। ज्ञानी मनुष्य का सब ओर से विनाश करने वाला यह अहंकार ही है।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਦੀਵੇ ਨੂੰ ਬੁਝਾਉਣ ਵਾਲਾ ਤੇਜ਼ ਝੱਖੜ ਪਵਨ ਹੈ, ਪਰ ਗਿਆਨੀ ਪੁਰਸ਼ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਵਿਨਾਸ਼ ਕਰਨ ਵਾਲਾ ਉਸ ਦਾ ਆਪਣਾ ਹੰਕਾਰ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि दीपक को बुझाने वाली तेज पवन है और पुरुष को वासना के रंग में डुबोकर पतन की ओर अग्रसर करने वाली स्त्री है। पुरुष और स्त्री दोनों विषयगामी होने से एक-दूसरे को पतित करते हैं। ज्ञानी मनुष्य का सब ओर से विनाश करने वाला यह अहंकार ही है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਦੀਵੇ ਨੂੰ ਬੁਝਾਉਣ ਵਾਲਾ ਤੇਜ਼ ਝੱਖੜ ਪਵਨ ਹੈ, ਪਰ ਗਿਆਨੀ ਪੁਰਸ਼ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਵਿਨਾਸ਼ ਕਰਨ ਵਾਲਾ ਉਸ ਦਾ ਆਪਣਾ ਹੰਕਾਰ ਹੈ।',
       en: 'A gust of wind extinguishes a lamp; sensual indulgence leads mortals to downfall. Kabir proclaims that for a learned scholar or spiritual seeker, it is pride and arrogance that causes utter destruction.',
     },
     wordMeanings: {
@@ -103,7 +103,7 @@ export const SAKHIS_MAD_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरे अहंकार रूपी भार को हर कर मुझे हल्का व निष्काम बना दें।',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੇ ਹੰਕਾਰ ਨੂੰ ਨਸ਼ਟ ਕਰੋ।',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੇ ਹੰਕਾਰ ਨੂੰ ਨਸ਼ਟ ਕਰੋ।',
       en: 'O Lord! Unburden my soul from pride and make me light and selfless.'
     },
     quiz: []
@@ -179,8 +179,8 @@ export const SAKHIS_MAD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Mad abhimaan na keejiye, kahain kabeer samujhay. Ja sir ahan ju sancharai, pade chauraasee jay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि इस मद-अहंकार को अपने पास न ठहरने दो। इसका भली-भांति त्याग कर दो। जिसके सिर (मस्तिष्क) में इस अहंकार का प्रवेश हो जाता है, वह अपनी सुध-बुध खोकर इस संसार रुपी चौरासी के चक्कर में जा पड़ता है।',
-      pb: 'ਕਬੀਰ ਜੀ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਹੰਕਾਰ ਨਾ ਕਰੋ। ਜਿਸ ਦੇ ਸਿਰ ਵਿੱਚ ਹੰਕਾਰ ਸਮਾ ਜਾਂਦਾ ਹੈ, ਉਹ ਆਪਣੀ ਸੋਝੀ ਗੁਆ ਕੇ ਚੌਰਾਸੀ ਲੱਖ ਜੂਨਾਂ ਦੇ ਗੇੜ ਵਿੱਚ ਪੈ ਜਾਂਦਾ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि इस मद-अहंकार को अपने पास न ठहरने दो। इसका भली-भांति त्याग कर दो। जिसके सिर (मस्तिष्क) में इस अहंकार का प्रवेश हो जाता है, वह अपनी सुध-बुध खोकर इस संसार रुपी चौरासी के चक्कर में जा पड़ता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਮਝਾਉਂਦੇ ਹਨ ਕਿ ਹੰਕਾਰ ਨਾ ਕਰੋ। ਜਿਸ ਦੇ ਸਿਰ ਵਿੱਚ ਹੰਕਾਰ ਸਮਾ ਜਾਂਦਾ ਹੈ, ਉਹ ਆਪਣੀ ਸੋਝੀ ਗੁਆ ਕੇ ਚੌਰਾਸੀ ਲੱਖ ਜੂਨਾਂ ਦੇ ਗੇੜ ਵਿੱਚ ਪੈ ਜਾਂਦਾ ਹੈ।',
       en: 'Kabir counselingly teaches: Do not entertain pride or conceit. Whoever allows arrogance to possess his mind loses all self-awareness and falls into the endless wheel of 8.4 million reincarnations.'
     },
     wordMeanings: {
@@ -231,8 +231,8 @@ export const SAKHIS_MAD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer garav na keejiye, rank na hanseeye koy. Ajhoon naav samudr mein, na jaanon kya hoy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि अपने तन, धन, बल एवं जाति-कुल का किसी भी प्रकार से अंहकार न करो और जो लोग दुःखी-दीन, हीन-जन हैं, उनकी हंसी न उड़ाओ। अभी तो तुम्हारी जीवन-नौका संसार के समुद्र के बीच में पड़ी हुई है, न जाने कब क्या हो जाए। न जाने कब कौन-सा संकट या तूफान आ जाए। और यह पार लगे या न लगे।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਕਦੇ ਵੀ ਆਪਣੇ ਧਨ, ਬਲ ਜਾਂ ਕੁੱਲ ਦਾ ਹੰਕਾਰ ਨਾ ਕਰੋ ਅਤੇ ਨਾ ਹੀ ਕਿਸੇ ਗਰੀਬ ਦਾ ਮਜ਼ਾਕ ਉਡਾਓ। ਅਜੇ ਤੁਹਾਡੀ ਜੀਵਨ-ਬੇੜੀ ਸੰਸਾਰ ਦੇ ਸਮੁੰਦਰ ਵਿੱਚ ਹੈ, ਪਤਾ ਨਹੀਂ ਕਦੋਂ ਕੇਹੜਾ ਤੂਫ਼ਾਨ ਆ ਜਾਵੇ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अपने तन, धन, बल एवं जाति-कुल का किसी भी प्रकार से अंहकार न करो और जो लोग दुःखी-दीन, हीन-जन हैं, उनकी हंसी न उड़ाओ। अभी तो तुम्हारी जीवन-नौका संसार के समुद्र के बीच में पड़ी हुई है, न जाने कब क्या हो जाए। न जाने कब कौन-सा संकट या तूफान आ जाए। और यह पार लगे या न लगे।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਦੇ ਵੀ ਆਪਣੇ ਧਨ, ਬਲ ਜਾਂ ਕੁੱਲ ਦਾ ਹੰਕਾਰ ਨਾ ਕਰੋ ਅਤੇ ਨਾ ਹੀ ਕਿਸੇ ਗਰੀਬ ਦਾ ਮਜ਼ਾਕ ਉਡਾਓ। ਅਜੇ ਤੁਹਾਡੀ ਜੀਵਨ-ਬੇੜੀ ਸੰਸਾਰ ਦੇ ਸਮੁੰਦਰ ਵਿੱਚ ਹੈ, ਪਤਾ ਨਹੀਂ ਕਦੋਂ ਕੇਹੜਾ ਤੂਫ਼ਾਨ ਆ ਜਾਵੇ।',
       en: 'Kabir warns: Never boast of your wealth, body, status, or lineage, nor laugh at the poor and helpless. Your life-boat is still navigating the stormy sea of existence—who knows what unexpected storm may strike next?'
     },
     wordMeanings: {
@@ -263,7 +263,7 @@ export const SAKHIS_MAD_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरी जीवन-नौका को संसार-सागर के तूफानों से बचाकर किनारे लगाएं।',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੀ ਜੀਵਨ-ਬੇੜੀ ਨੂੰ ਪਾਰ ਲਗਾਓ।',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੀ ਜੀਵਨ-ਬੇੜੀ ਨੂੰ ਪਾਰ ਲਗਾਓ।',
       en: 'O Lord! Steer my life-boat safely across the turbulent ocean of worldliness.'
     },
     quiz: []
@@ -285,8 +285,8 @@ export const SAKHIS_MAD_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jahaan aapa tahaan aapda, jahaan sansai tahaan sog. Kahain kabeer kaise mitai, chaaron deeragh rog.',
     bhavarth: {
-      hi: 'जहां पर \'मैं\' का अहंकार होता है, वहां नाना प्रकार की विपत्तियां आती है। और जहां संशय (अज्ञान) होता है वहां महान शोक उत्पन्न होते हैं। कबीरजी कहते हैं कि सोचो और विचार करो। ये चारों कष्टदायी रोग \'मैं\', विपत्ति, अज्ञान और शोक कैसे मिटेंगे? इनसे कैसे छुटकारा होगा।',
-      pb: 'ਜਿੱਥੇ ਹੰਕਾਰ (ਮੈਂ) ਹੈ, ਉੱਥੇ ਮੁਸੀਬਤਾਂ ਹਨ; ਜਿੱਥੇ ਭਰਮ-ਸੰਦੇਹ ਹੈ, ਉੱਥੇ ਸੋਗ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਨ੍ਹਾਂ ਚਾਰਾਂ ਵੱਡੇ ਰੋਗਾਂ (ਹੰਕਾਰ, ਆਪਦਾ, ਸੰਦੇਹ ਤੇ ਸੋਗ) ਦਾ ਨਾਸ ਕੇਵਲ ਸਤਯਨਾਮ ਸਿਮਰਨ ਨਾਲ ਹੀ ਹੋ ਸਕਦਾ ਹੈ।',
+      hi: 'जहां पर \'मैं\' का अहंकार होता है, वहां नाना प्रकार की विपत्तियां आती है। और जहां संशय (अज्ञान) होता है वहां महान शोक उत्पन्न होते हैं। सतगुरु कबीर साहेब फरमाते हैं कि सोचो और विचार करो। ये चारों कष्टदायी रोग \'मैं\', विपत्ति, अज्ञान और शोक कैसे मिटेंगे? इनसे कैसे छुटकारा होगा।',
+      pb: 'ਜਿੱਥੇ ਹੰਕਾਰ (ਮੈਂ) ਹੈ, ਉੱਥੇ ਮੁਸੀਬਤਾਂ ਹਨ; ਜਿੱਥੇ ਭਰਮ-ਸੰਦੇਹ ਹੈ, ਉੱਥੇ ਸੋਗ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਨ੍ਹਾਂ ਚਾਰਾਂ ਵੱਡੇ ਰੋਗਾਂ (ਹੰਕਾਰ, ਆਪਦਾ, ਸੰਦੇਹ ਤੇ ਸੋਗ) ਦਾ ਨਾਸ ਕੇਵਲ ਸਤਯਨਾਮ ਸਿਮਰਨ ਨਾਲ ਹੀ ਹੋ ਸਕਦਾ ਹੈ।',
       en: 'Where self-centered ego exists, adversity strikes; where doubt lingers, grief follows. Kabir poses the profound question: How can these four deep-rooted chronic diseases—Ego, Adversity, Doubt, and Sorrow—be cured except through Satguru\'s wisdom?'
     },
     wordMeanings: {

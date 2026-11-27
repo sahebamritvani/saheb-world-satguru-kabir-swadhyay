@@ -180,8 +180,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya jaat hai, suno shabd nij mor. Sukhiyon ke ghar saadh jan, soomon ke ghar chor.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जाती हुई माया सबको अपना यह संदेश देती है कि सब लोग ध्यान से मेरे वचनों को सुनो। उदार हृदय के सुखी सज्जनों के पास साधु-संत आते हैं। ऐसे में उनका सेवा-सत्कार मुझसे (माया से) ही होता है और उसका सुखद परिणाम उन्हें मिलता है, परंतु कंजूसों के घर में तो यदा-कदा चोर घुस आते हैं। उनके द्वारा मैं चुरा ली जाती हूं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਾਂਦੀ ਹੋਈ ਮਾਇਆ ਕਹਿੰਦੀ ਹੈ ਕਿ ਮੇਰਾ ਬਚਨ ਸੁਣੋ: ਉਦਾਰ ਦਿਲ ਵਾਲਿਆਂ ਦੇ ਘਰ ਸੰਤ-ਸਾਧ ਆਉਂਦੇ ਹਨ ਜਿੱਥੇ ਮੈਂ ਸੇਵਾ ਵਿੱਚ ਲੱਗ ਕੇ ਸੁੱਖ ਦਿੰਦੀ ਹਾਂ, ਪਰ ਕੰਜੂਸਾਂ ਦੇ ਘਰ ਚੋਰ ਆ ਕੇ ਮੈਨੂੰ ਲੁੱਟ ਲੈ ਜਾਂਦੇ ਹਨ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जाती हुई माया सबको अपना यह संदेश देती है कि सब लोग ध्यान से मेरे वचनों को सुनो। उदार हृदय के सुखी सज्जनों के पास साधु-संत आते हैं। ऐसे में उनका सेवा-सत्कार मुझसे (माया से) ही होता है और उसका सुखद परिणाम उन्हें मिलता है, परंतु कंजूसों के घर में तो यदा-कदा चोर घुस आते हैं। उनके द्वारा मैं चुरा ली जाती हूं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਾਂਦੀ ਹੋਈ ਮਾਇਆ ਕਹਿੰਦੀ ਹੈ ਕਿ ਮੇਰਾ ਬਚਨ ਸੁਣੋ: ਉਦਾਰ ਦਿਲ ਵਾਲਿਆਂ ਦੇ ਘਰ ਸੰਤ-ਸਾਧ ਆਉਂਦੇ ਹਨ ਜਿੱਥੇ ਮੈਂ ਸੇਵਾ ਵਿੱਚ ਲੱਗ ਕੇ ਸੁੱਖ ਦਿੰਦੀ ਹਾਂ, ਪਰ ਕੰਜੂਸਾਂ ਦੇ ਘਰ ਚੋਰ ਆ ਕੇ ਮੈਨੂੰ ਲੁੱਟ ਲੈ ਜਾਂਦੇ ਹਨ।'),
       en: 'Kabir reveals the parting proclamation of fleeting wealth: "Generous souls invite saints to their homes where I am honored in sacred service, but into the dens of misers break thieves who plunder me away without benefit."'
     },
     wordMeanings: {
@@ -233,8 +233,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya paapini, lobh bhulaya log. Poori kinhun na bhogiya, iska yahi bijog.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह माया पापिनी है। इसने लोगों के मन पर लोभ का परदा डालकर अपने वशीभूत कर रखा है। यह ऐसी विचित्र है कि इसका कोई पूर्णतया उपभोग नहीं कर पाया, अर्थात इसे जितना भोगा, वह सब अधूरा ही रहा और यही इसका वियोग है। माया के अनंत भोग को संपूर्णतः न भोग पाने पर अतृप्त जीव, इसके वियोग का दुःख पाता है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਪਾਪਣ ਹੈ ਜਿਸਨੇ ਲੋਭ ਪਾ ਕੇ ਲੋਕਾਂ ਨੂੰ ਭੁਲੇਖੇ ਵਿੱਚ ਪਾਇਆ ਹੈ। ਕੋਈ ਵੀ ਇਸਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਹੀਂ ਭੋਗ ਸਕਿਆ; ਅਧੂਰੀ ਤ੍ਰਿਪਤੀ ਅਤੇ ਵਿਛੋੜੇ ਦਾ ਦੁੱਖ ਹੀ ਇਸਦਾ ਅੰਤ ਹੈ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह माया पापिनी है। इसने लोगों के मन पर लोभ का परदा डालकर अपने वशीभूत कर रखा है। यह ऐसी विचित्र है कि इसका कोई पूर्णतया उपभोग नहीं कर पाया, अर्थात इसे जितना भोगा, वह सब अधूरा ही रहा और यही इसका वियोग है। माया के अनंत भोग को संपूर्णतः न भोग पाने पर अतृप्त जीव, इसके वियोग का दुःख पाता है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਪਾਪਣ ਹੈ ਜਿਸਨੇ ਲੋਭ ਪਾ ਕੇ ਲੋਕਾਂ ਨੂੰ ਭੁਲੇਖੇ ਵਿੱਚ ਪਾਇਆ ਹੈ। ਕੋਈ ਵੀ ਇਸਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਹੀਂ ਭੋਗ ਸਕਿਆ; ਅਧੂਰੀ ਤ੍ਰਿਪਤੀ ਅਤੇ ਵਿਛੋੜੇ ਦਾ ਦੁੱਖ ਹੀ ਇਸਦਾ ਅੰਤ ਹੈ।'),
       en: 'Kabir warns that Maya is a cunning enchantress that ensnares mortals in the trap of greed. No one in cosmic history has ever enjoyed her pleasures to total fulfillment; leaving every craving unquenched, she ultimately abandons the soul in bitter sorrow.'
     },
     wordMeanings: {
@@ -287,15 +287,15 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya paapini, phand le baithi haat. Sab jag to phandai pada, gaya Kabeera kaat.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह माया तो बहुत भयंकर पापिन है। यह अपनी सुंदर विषय-भोग सामग्री को संसार रूपी बाजार में सजाए, सबको अपने जाल में फंसाने के लिए तैयार बैठी है। सत्संग से विमुख संसार के अज्ञानी जन तो इसके मोह-जाल में फंस गए, परंतु जिसने सद्गुरु के सुधामय ज्ञानोपदेश को ग्रहण किया, वह इसके बंधन को काटकर विमुक्त हो गया।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਪਾਪਣ ਸੰਸਾਰ ਰੂਪੀ ਹੱਟ \'ਤੇ ਮੋਹ ਦੀ ਫਾਹੀ ਲੈ ਕੇ ਬੈਠੀ ਹੈ। ਸਾਰਾ ਜਗਤ ਇਸਦੇ ਜਾਲ ਵਿੱਚ ਫਸ ਗਿਆ, ਪਰ ਕਬੀਰ (ਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ) ਇਸ ਫਾਹੀ ਨੂੰ ਕੱਟ ਕੇ ਪਾਰ ਲੰਘ ਗਿਆ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह माया तो बहुत भयंकर पापिन है। यह अपनी सुंदर विषय-भोग सामग्री को संसार रूपी बाजार में सजाए, सबको अपने जाल में फंसाने के लिए तैयार बैठी है। सत्संग से विमुख संसार के अज्ञानी जन तो इसके मोह-जाल में फंस गए, परंतु जिसने सतगुरु के सुधामय ज्ञानोपदेश को ग्रहण किया, वह इसके बंधन को काटकर विमुक्त हो गया।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਪਾਪਣ ਸੰਸਾਰ ਰੂਪੀ ਹੱਟ \'ਤੇ ਮੋਹ ਦੀ ਫਾਹੀ ਲੈ ਕੇ ਬੈਠੀ ਹੈ। ਸਾਰਾ ਜਗਤ ਇਸਦੇ ਜਾਲ ਵਿੱਚ ਫਸ ਗਿਆ, ਪਰ ਕਬੀਰ (ਗੁਰੂ ਦੇ ਗਿਆਨ ਨਾਲ) ਇਸ ਫਾਹੀ ਨੂੰ ਕੱਟ ਕੇ ਪਾਰ ਲੰਘ ਗਿਆ।'),
       en: 'Kabir warns that this treacherous Maya sits in the global bazaar with a noose of desires ready to ensnare everyone. The heedless world got trapped in her net, but Kabir, armed with the sword of the Satguru’s wisdom, severed the cords and walked away free.'
     },
     wordMeanings: {
       hi: [
         { word: 'फंद ले बैठी हाट (Phand le baithee haat)', meaning: 'संसार के बाजार में प्रलोभनों का फंदा फैलाए बैठी है' },
         { word: 'सब जग तो फंदै पड़ा (Sab jag to phandai padaa)', meaning: 'अज्ञानी संसार उसके प्रलोभनों में जकड़ा गया' },
-        { word: 'गया कबीरा काट (Gayaa Kabeeraa kaat)', meaning: 'सद्गुरु के ज्ञान से मोह-बंधन को काटकर मुक्त हो जाना' }
+        { word: 'गया कबीरा काट (Gayaa Kabeeraa kaat)', meaning: 'सतगुरु के ज्ञान से मोह-बंधन को काटकर मुक्त हो जाना' }
       ],
       pb: [
         { word: 'ਫੰਦ', meaning: 'ਫਾਹੀ / ਜਾਲ' },
@@ -444,7 +444,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maya sam nahin mohini, man samaan nahin chor. Harijan sam nahin paarakhi, koyi na deese or.',
     bhavarth: {
-      hi: 'इस संसार में माया के समान कोई मोहने वाला नहीं है और मन के समान कोई चोर नहीं है। सद्गुरु के प्रियवर ज्ञान-उपदेशी तथा भक्ति-साधना करने वाले सेवक जनों के समान कोई पारखी (ज्ञानी) नहीं। इस प्रकार का ऐसा कोई और नहीं दिखाई देता।',
+      hi: 'इस संसार में माया के समान कोई मोहने वाला नहीं है और मन के समान कोई चोर नहीं है। सतगुरु के प्रियवर ज्ञान-उपदेशी तथा भक्ति-साधना करने वाले सेवक जनों के समान कोई पारखी (ज्ञानी) नहीं। इस प्रकार का ऐसा कोई और नहीं दिखाई देता।',
       pb: devanagariToGurmukhi('ਸੰਸਾਰ ਵਿੱਚ ਮਾਇਆ ਵਰਗੀ ਕੋਈ ਮੋਹਣੀ ਨਹੀਂ ਅਤੇ ਮਨ ਵਰਗਾ ਕੋਈ ਚੋਰ ਨਹੀਂ। ਪਰ ਪ੍ਰਭੂ ਦੇ ਸੱਚੇ ਭਗਤ (ਹਰਿਜਨ) ਵਰਗਾ ਕੋਈ ਗਿਆਨੀ-ਪਾਰਖੀ ਨਹੀਂ ਦਿਸਦਾ ਜੋ ਇਸ ਭੇਤ ਨੂੰ ਸਮਝ ਸਕੇ।'),
       en: 'There is no enchantress as bewitching as Maya, and no thief as cunning as the mind. Likewise, there is no master-evaluator (Parakhi) as discerning as the true devotee of the Lord, who alone unmasks their deception.'
     },
@@ -470,7 +470,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       en: 'Do I possess the discerning gaze of a saint to pierce through the illusions of Maya and the mind?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु की पारखी दृष्टि को अपनाएं; मन की हर चाल और माया के सम्मोहन को विवेक से परखें।',
+      hi: 'सतगुरु की पारखी दृष्टि को अपनाएं; मन की हर चाल और माया के सम्मोहन को विवेक से परखें।',
       pb: devanagariToGurmukhi('ਗੁਰੂ ਦੀ ਪਾਰਖੀ ਨਜ਼ਰ ਨਾਲ ਮਨ ਦੀਆਂ ਚਾਲਾਂ ਨੂੰ ਸਮਝੋ।'),
       en: 'Adopt the discriminating vision of the Master to discern truth from illusion.'
     },
@@ -498,7 +498,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maya jugave kaun gun, ant na aavai kaaj. Soyi naam jogaavahu, bhaye parmaarth saaj.',
     bhavarth: {
-      hi: 'इस माया का लोभवश संग्रह करने से कोई गुण-लाभ नहीं। यह अंत काल में किसी काम नहीं आती। इससे तो यही अच्छा है कि सद्गुरु के सदुपदेश तथा नाम-ज्ञान की साधना का संग्रह करें। इससे लोक-परलोक के लिए परमार्थी सुंदर सत्कर्म होंगे, जो सदैव सुखप्रद होंगे।',
+      hi: 'इस माया का लोभवश संग्रह करने से कोई गुण-लाभ नहीं। यह अंत काल में किसी काम नहीं आती। इससे तो यही अच्छा है कि सतगुरु के सदुपदेश तथा नाम-ज्ञान की साधना का संग्रह करें। इससे लोक-परलोक के लिए परमार्थी सुंदर सत्कर्म होंगे, जो सदैव सुखप्रद होंगे।',
       pb: devanagariToGurmukhi('ਮਾਇਆ ਨੂੰ ਜੋੜ-ਜੋੜ ਕੇ ਰੱਖਣ ਦਾ ਕੀ ਲਾਭ ਹੈ, ਜਦੋਂ ਇਹ ਅੰਤ ਵੇਲੇ ਕਿਸੇ ਕੰਮ ਨਹੀਂ ਆਉਣੀ? ਇਸ ਨਾਲੋਂ ਪ੍ਰਭੂ ਦੇ ਸਤਯਨਾਮ ਦੀ ਕਮਾਈ ਕਰੋ, ਜੋ ਪਰਮਾਰਥ ਦਾ ਸੱਚਾ ਸਾਧਨ ਹੈ।'),
       en: 'What virtue is there in accumulating hoards of material wealth when not a penny accompanies you at death? Instead, gather the enduring wealth of the holy Name, which serves as the supreme provision for spiritual liberation.'
     },
@@ -553,9 +553,9 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer ya sansaar ki, jhoothi maya moh. Jihi ghar jita badhavana, tihi ghar teta doh.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि इस संसार के लोगों का यह माया-मोह झूठा है। सुख-वैभव रूपी यह माया जिस घर में जितनी अधिक होती है, इसकी प्रसन्नता जितनी अधिक होती है, वहां उतनी ही विपत्ति भी आती है। उस घर में आपसी वैर भाव तथा दुःख अधिक होते हैं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਸ ਸੰਸਾਰ ਦਾ ਮਾਇਆ-ਮੋਹ ਝੂਠਾ ਹੈ। ਜਿਸ ਘਰ ਵਿੱਚ ਜਿੰਨੀ ਮਾਇਆ ਅਤੇ ਵਧਾਈਆਂ ਦਾ ਦਿਖਾਵਾ ਹੁੰਦਾ ਹੈ, ਓਥੇ ਓਨਾ ਹੀ ਈਰਖਾ, ਕਲੇਸ਼ ਅਤੇ ਦੁੱਖ (ਦੋਹ) ਵੱਧ ਹੁੰਦਾ ਹੈ।'),
-      en: 'Kabir declares that the attachments of this world are utterly illusory. In whichever household material wealth and ostentatious celebrations abound, equally deep strife, anxiety, jealousy, and misery inevitably arise.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि इस संसार के लोगों का यह माया-मोह झूठा है। सुख-वैभव रूपी यह माया जिस घर में जितनी अधिक होती है, इसकी प्रसन्नता जितनी अधिक होती है, वहां उतनी ही विपत्ति भी आती है। उस घर में आपसी वैर भाव तथा दुःख अधिक होते हैं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਸ ਸੰਸਾਰ ਦਾ ਮਾਇਆ-ਮੋਹ ਝੂਠਾ ਹੈ। ਜਿਸ ਘਰ ਵਿੱਚ ਜਿੰਨੀ ਮਾਇਆ ਅਤੇ ਵਧਾਈਆਂ ਦਾ ਦਿਖਾਵਾ ਹੁੰਦਾ ਹੈ, ਓਥੇ ਓਨਾ ਹੀ ਈਰਖਾ, ਕਲੇਸ਼ ਅਤੇ ਦੁੱਖ (ਦੋਹ) ਵੱਧ ਹੁੰਦਾ ਹੈ।'),
+      en: 'Satguru Kabir Saheb proclaims that the attachments of this world are utterly illusory. In whichever household material wealth and ostentatious celebrations abound, equally deep strife, anxiety, jealousy, and misery inevitably arise.'
     },
     wordMeanings: {
       hi: [
@@ -658,13 +658,13 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Aandhi aayi prem ki, dhahi bharam ki bheet. Maya taati udi gayi, lagi naam son preet.',
     bhavarth: {
-      hi: 'जब सद्गुरु के पावन प्रेम की आंधी आई, तो अज्ञान रूपी भ्रम की दीवार गिर गई और उस पर रखी माया-मोह की टाट उड़ गई, अर्थात माया-मोह का नाश हो गया और सद्गुरु के अविनाशी नाम-ज्ञान से प्रीत हो गई।',
+      hi: 'जब सतगुरु के पावन प्रेम की आंधी आई, तो अज्ञान रूपी भ्रम की दीवार गिर गई और उस पर रखी माया-मोह की टाट उड़ गई, अर्थात माया-मोह का नाश हो गया और सतगुरु के अविनाशी नाम-ज्ञान से प्रीत हो गई।',
       pb: devanagariToGurmukhi('ਜਦੋਂ ਸਤਿਗੁਰੂ ਦੇ ਪ੍ਰੇਮ ਦੀ ਹਨੇਰੀ ਆਈ ਤਾਂ ਭਰਮਾਂ ਦੀ ਕੰਧ ਢਹਿ ਪਈ ਅਤੇ ਮਾਇਆ ਦੀ ਛੱਪਰੀ (ਟਾਟੀ) ਉੱਡ ਗਈ। ਮਨ ਦੀ ਸੱਚੀ ਪ੍ਰੀਤ ਪ੍ਰਭੂ ਦੇ ਸਤਯਨਾਮ ਨਾਲ ਲੱਗ ਗਈ।'),
       en: 'When the tempest of divine love surged from the Satguru, the brittle wall of delusion collapsed, and the thatched screen of Maya was blown away forever. Now the soul is illuminated, bound in eternal love with the holy Name.'
     },
     wordMeanings: {
       hi: [
-        { word: 'आंधी आई प्रेम की (Aandhee aayee prem kee)', meaning: 'सद्गुरु की अनन्य कृपा व दिव्य प्रेम का प्रचंड वेग' },
+        { word: 'आंधी आई प्रेम की (Aandhee aayee prem kee)', meaning: 'सतगुरु की अनन्य कृपा व दिव्य प्रेम का प्रचंड वेग' },
         { word: 'भरम की भीत (Bharam kee bheet)', meaning: 'अज्ञान और द्वैत की दीवार ढह जाना' },
         { word: 'माया टाटी उड़ि गई (Maayaa taatee udi gayee)', meaning: 'माया का कच्चा आवरण छिन्न-भिन्न हो जाना' }
       ],
@@ -679,7 +679,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरे भीतर सद्गुरु के पावन प्रेम की वह आंधी उठी है जिसने माया और भ्रम के आवरण को उड़ा दिया हो?',
+      hi: 'क्या मेरे भीतर सतगुरु के पावन प्रेम की वह आंधी उठी है जिसने माया और भ्रम के आवरण को उड़ा दिया हो?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰੇ ਅੰਦਰ ਗੁਰੂ ਪ੍ਰੇਮ ਨਾਲ ਮਾਇਆ ਦਾ ਪਰਦਾ ਉੱਡ ਗਿਆ ਹੈ?'),
       en: 'Has the gale of divine love demolished the walls of doubt and blown away the veil of illusion?'
     },
@@ -981,7 +981,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Oonchi daali prem ki, Harijan baitha khaay. Neeche baithi baaghini, gir pade tihi khaay.',
     bhavarth: {
-      hi: 'पावन प्रेम रूपी वृक्ष की ऊंची डाल पर बैठा सद्गुरु का कोई प्रिय सेवक-भक्त सुख-शांति रूपी मधुर फल का स्वाद ले रहा है। उस वृक्ष के नीचे महा भयंकर माया रूपी सिंहनी बैठी हुई है। यदि वह गुरु-भक्ति से तनिक भी चूक कर नीचे गिर पड़ा, तो सिंहनी उसे दबोचकर खा जाएगी, अर्थात भक्ति-साधना में माया से सदैव सतर्क रहना चाहिए।',
+      hi: 'पावन प्रेम रूपी वृक्ष की ऊंची डाल पर बैठा सतगुरु का कोई प्रिय सेवक-भक्त सुख-शांति रूपी मधुर फल का स्वाद ले रहा है। उस वृक्ष के नीचे महा भयंकर माया रूपी सिंहनी बैठी हुई है। यदि वह गुरु-भक्ति से तनिक भी चूक कर नीचे गिर पड़ा, तो सिंहनी उसे दबोचकर खा जाएगी, अर्थात भक्ति-साधना में माया से सदैव सतर्क रहना चाहिए।',
       pb: devanagariToGurmukhi('ਪ੍ਰੇਮ-ਰੁੱਖ ਦੀ ਉੱਚੀ ਡਾਲ \'ਤੇ ਬੈਠਾ ਭਗਤ ਨਾਮ-ਰਸ ਮਾਣ ਰਿਹਾ ਹੈ। ਪਰ ਹੇਠਾਂ ਮਾਇਆ ਰੂਪੀ ਸ਼ੇਰਨੀ (ਬਾਘਿਨੀ) ਤਾੜ ਲਾਈ ਬੈਠੀ ਹੈ; ਜੇਕਰ ਸਾਧਕ ਤਿਲਕ ਕੇ ਡਿੱਗਿਆ ਤਾਂ ਝੱਟ ਦਬੋਚ ਲਵੇਗੀ। ਸਦਾ ਸੁਚੇਤ ਰਹੋ।'),
       en: 'Perched high upon the branch of divine love, the devotee tastes the sweet fruit of inner peace. Yet crouching below sits the ferocious tigress of Maya: should the seeker slip from vigilance and fall, she will instantly devour him.'
     },
@@ -1096,7 +1096,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
         { word: 'माया दीपक (Maayaa deepak)', meaning: 'दीपक की आकर्षक किंतु भस्म करने वाली लौ' },
         { word: 'नर पतंग (Nar patang)', meaning: 'मोहित होकर जल मरने वाला अज्ञानी जीव रूपी कीट' },
         { word: 'भ्रमि भ्रमि माहिं परन्त (Bhrami bhrami maahin parant)', meaning: 'भ्रम में बार-बार उसी ज्वाला में कूदना' },
-        { word: 'उबरे साधु सन्त (Ubare saadhu sant)', meaning: 'सद्गुरु के ज्ञान से बच निकलना व मुक्त होना' }
+        { word: 'उबरे साधु सन्त (Ubare saadhu sant)', meaning: 'सतगुरु के ज्ञान से बच निकलना व मुक्त होना' }
       ],
       pb: [
         { word: 'ਪਤੰਗ', meaning: 'ਦੀਵੇ \'ਤੇ ਸੜਨ ਵਾਲਾ ਕੀੜਾ' },
@@ -1355,15 +1355,15 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya saampini, janta hi ko khaay. Aisa mila na gaarudi, pakadi pitaare baany.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह माया बहुत ही विषैली सर्पिणी है। यह स्वजनों को ही खा जाती है। माया से पले जीव माया के ही बंधन में पड़ जाते हैं। कोई इसका विष झाड़ने वाला नहीं मिला, जो इसे पकड़कर ज्ञान रूपी पिटारे में बंद कर सके।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਇੱਕ ਜ਼ਹਿਰੀਲੀ ਸੱਪਣੀ (ਸਾਂਪਣੀ) ਹੈ ਜੋ ਆਪਣੇ ਪਾਲਣਹਾਰਾਂ ਨੂੰ ਹੀ ਡੱਸ ਕੇ ਖਾ ਜਾਂਦੀ ਹੈ। ਕੋਈ ਅਜਿਹਾ ਸਮਰੱਥ ਗਾਰੁੜੀ (ਮੰਤਰ-ਗਿਆਨੀ) ਨਾ ਮਿਲਿਆ ਜੋ ਇਸਨੂੰ ਫੜ ਕੇ ਗਿਆਨ ਦੇ ਪਟਾਰੇ ਵਿੱਚ ਬੰਦ ਕਰ ਦੇਵੇ।'),
-      en: 'Kabir declares that Maya is a deadly venomous serpent (Saampini) that devours the very ones who nurture her. Rarely is found a sovereign snake-charmer (Garudi)—an enlightened master—who captures this serpent and locks her safely inside the basket of divine wisdom.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह माया बहुत ही विषैली सर्पिणी है। यह स्वजनों को ही खा जाती है। माया से पले जीव माया के ही बंधन में पड़ जाते हैं। कोई इसका विष झाड़ने वाला नहीं मिला, जो इसे पकड़कर ज्ञान रूपी पिटारे में बंद कर सके।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਇੱਕ ਜ਼ਹਿਰੀਲੀ ਸੱਪਣੀ (ਸਾਂਪਣੀ) ਹੈ ਜੋ ਆਪਣੇ ਪਾਲਣਹਾਰਾਂ ਨੂੰ ਹੀ ਡੱਸ ਕੇ ਖਾ ਜਾਂਦੀ ਹੈ। ਕੋਈ ਅਜਿਹਾ ਸਮਰੱਥ ਗਾਰੁੜੀ (ਮੰਤਰ-ਗਿਆਨੀ) ਨਾ ਮਿਲਿਆ ਜੋ ਇਸਨੂੰ ਫੜ ਕੇ ਗਿਆਨ ਦੇ ਪਟਾਰੇ ਵਿੱਚ ਬੰਦ ਕਰ ਦੇਵੇ।'),
+      en: 'Satguru Kabir Saheb proclaims that Maya is a deadly venomous serpent (Saampini) that devours the very ones who nurture her. Rarely is found a sovereign snake-charmer (Garudi)—an enlightened master—who captures this serpent and locks her safely inside the basket of divine wisdom.'
     },
     wordMeanings: {
       hi: [
         { word: 'माया सांपिनी (Maayaa saampinee)', meaning: 'विषैली सर्पिणी रूपी घातक माया' },
         { word: 'जनता ही को खाय (Jantaa hee ko khaay)', meaning: 'अपने पालने वाले मोहग्रस्त जीवों को ही नष्ट कर देती है' },
-        { word: 'गारुड़ी (Gaarudee)', meaning: 'सर्प-विष का निवारक, ज्ञानी सद्गुरु' },
+        { word: 'गारुड़ी (Gaarudee)', meaning: 'सर्प-विष का निवारक, ज्ञानी सतगुरु' },
         { word: 'पकड़ि पिटारे बांय (Pakadi pitaare baany)', meaning: 'पकड़कर ज्ञान-विवेक के पिटारे में बंद कर देना' }
       ],
       pb: [
@@ -1389,7 +1389,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       en: 'Take refuge in the Satguru, the supreme snake-charmer, to neutralize the venom of worldly illusion.'
     },
     samarpanPrayer: {
-      hi: 'हे समर्थ सद्गुरु गारुड़ी! इस विषैली माया-सर्पिणी से मेरी रक्षा कीजिए और इसे अपने ज्ञान के पिटारे में वश में कर मुझे निर्भय कीजिए। साहेब बंदगी साहेब!',
+      hi: 'हे समर्थ सतगुरु गारुड़ी! इस विषैली माया-सर्पिणी से मेरी रक्षा कीजिए और इसे अपने ज्ञान के पिटारे में वश में कर मुझे निर्भय कीजिए। साहेब बंदगी साहेब!',
       pb: devanagariToGurmukhi('ਹੇ ਸਤਿਗੁਰੂ ਗਾਰੁੜੀ! ਮੈਨੂੰ ਮਾਇਆ-ਸੱਪਣੀ ਦੇ ਜ਼ਹਿਰ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!'),
       en: 'O sovereign Satguru, divine Charmer! Protect me from the venomous strike of Maya and charm this mind with Your sacred Word.'
     },
@@ -1486,12 +1486,12 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं अपने बुद्धि-बल से माया को जीतने का भ्रम पाले हूँ, या सद्गुरु की शरण में हूँ?',
+      hi: 'क्या मैं अपने बुद्धि-बल से माया को जीतने का भ्रम पाले हूँ, या सतगुरु की शरण में हूँ?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਗੁਰੂ ਦੀ ਸ਼ਰਨ ਤੋਂ ਬਿਨਾਂ ਮਾਇਆ ਨੂੰ ਜਿੱਤਣ ਦੀ ਭੁੱਲ ਕਰ ਰਿਹਾ ਹਾਂ?'),
       en: 'Do I mistakenly rely on intellectual pride to defeat Maya instead of seeking the Master’s grace?'
     },
     practicalApplication: {
-      hi: 'माया के सम्मोहन को पहचानें; केवल सद्गुरु के नाम-सिमरन और कृपा से ही इस पर विजय संभव है।',
+      hi: 'माया के सम्मोहन को पहचानें; केवल सतगुरु के नाम-सिमरन और कृपा से ही इस पर विजय संभव है।',
       pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਦੇ ਨਾਮ ਨਾਲ ਮਾਇਆ ਦੇ ਮੋਹ ਨੂੰ ਜਿੱਤੋ।'),
       en: 'Acknowledge the insurmountable power of illusion and seek refuge in the Satguru’s holy Word.'
     },
@@ -1527,7 +1527,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       hi: [
         { word: 'ठगनी भई (Thaganee bhayee)', meaning: 'माया का कपटी और धोखेबाज स्वरूप' },
         { word: 'जा ठग ने ठगनी ठगी (Jaa thag ne thaganee thagee)', meaning: 'जिस आत्मज्ञानी संत ने माया के प्रपंच को वशीभूत कर लिया' },
-        { word: 'ता ठग को आदेस (Taa thag ko aades)', meaning: 'उस समर्थ सद्गुरु को मेरा नमन व प्रणाम' }
+        { word: 'ता ठग को आदेस (Taa thag ko aades)', meaning: 'उस समर्थ सतगुरु को मेरा नमन व प्रणाम' }
       ],
       pb: [
         { word: 'ਠਗਣੀ', meaning: 'ਠੱਗੀ ਮਾਰਨ ਵਾਲੀ' },
@@ -1540,7 +1540,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं माया द्वारा ठगा जा रहा हूँ या सद्गुरु के ज्ञान से माया को जीतने वाले संतों का संग कर रहा हूँ?',
+      hi: 'क्या मैं माया द्वारा ठगा जा रहा हूँ या सतगुरु के ज्ञान से माया को जीतने वाले संतों का संग कर रहा हूँ?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਮਾਇਆ ਹੱਥੋਂ ਠੱਗਿਆ ਜਾ ਰਿਹਾ ਹਾਂ?'),
       en: 'Am I being fleeced by worldly illusions or seeking the company of the Master who conquered Maya?'
     },
@@ -1550,7 +1550,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       en: 'Follow the guidance of the enlightened Master who mastered and disarmed worldly illusion.'
     },
     samarpanPrayer: {
-      hi: 'हे समर्थ सद्गुरु! इस माया-ठगनी को जीतने वाले आप ही हैं; मुझे अपनी शरण में लेकर इस ठगी से बचा लीजिए। साहेब बंदगी साहेब!',
+      hi: 'हे समर्थ सतगुरु! इस माया-ठगनी को जीतने वाले आप ही हैं; मुझे अपनी शरण में लेकर इस ठगी से बचा लीजिए। साहेब बंदगी साहेब!',
       pb: devanagariToGurmukhi('ਹੇ ਸਤਿਗੁਰੂ! ਮੈਨੂੰ ਮਾਇਆ ਠਗਣੀ ਤੋਂ ਬਚਾਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!'),
       en: 'O Satguru, supreme Master! Unto You I bow, for You alone have conquered and subdued this cosmic swindler.'
     },
@@ -1785,8 +1785,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya mohini, maangi milai na haath. Mana utaari jooth karu, laagi dolai saath.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह माया सबका मन मोहने वाली है और मांगने से किसी के हाथ नहीं लगती, परंतु जो इसे झूठा समझकर मन से उतार फेंकता है, यह उसके पीछे-पीछे लगी रहती है, अर्थात मांगने पर भागती है और त्यागने पर उसके पास चली आती है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਮੰਗਣ \'ਤੇ ਹੱਥ ਨਹੀਂ ਆਉਂਦੀ, ਪਰ ਜਦੋਂ ਮਨੁੱਖ ਇਸਨੂੰ ਝੂਠੀ ਜਾਣ ਕੇ ਮਨੋਂ ਤਿਆਗ ਦਿੰਦਾ ਹੈ, ਤਾਂ ਇਹ ਦਾਸੀ ਬਣ ਕੇ ਪਿੱਛੇ-ਪਿੱਛੇ ਤੁਰੀ ਫਿਰਦੀ ਹੈ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह माया सबका मन मोहने वाली है और मांगने से किसी के हाथ नहीं लगती, परंतु जो इसे झूठा समझकर मन से उतार फेंकता है, यह उसके पीछे-पीछे लगी रहती है, अर्थात मांगने पर भागती है और त्यागने पर उसके पास चली आती है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮਾਇਆ ਮੰਗਣ \'ਤੇ ਹੱਥ ਨਹੀਂ ਆਉਂਦੀ, ਪਰ ਜਦੋਂ ਮਨੁੱਖ ਇਸਨੂੰ ਝੂਠੀ ਜਾਣ ਕੇ ਮਨੋਂ ਤਿਆਗ ਦਿੰਦਾ ਹੈ, ਤਾਂ ਇਹ ਦਾਸੀ ਬਣ ਕੇ ਪਿੱਛੇ-ਪਿੱਛੇ ਤੁਰੀ ਫਿਰਦੀ ਹੈ।'),
       en: 'Kabir observes that this seductive Maya slips away when desperately begged for; yet the moment an enlightened soul discards her as worthless refuse from the heart, she obediently follows at their heels.'
     },
     wordMeanings: {
@@ -1839,8 +1839,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya besawa, donoon ki ik jaat. Aanvat ko aadar karain, jaat na boojhain baat.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि माया और वेश्या दोनों एक ही प्रजाति की हैं, अर्थात दोनों का गुण-धर्म एक समान है। ये दोनों पहले तो लुभाकर लोगों का बहुत मान-सम्मान करती हैं, परंतु जाते समय उनसे बात भी नहीं करतीं।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਅਤੇ ਵੇਸਵਾ ਦੋਵਾਂ ਦਾ ਸੁਭਾਅ ਇੱਕੋ ਜਿਹਾ ਹੈ। ਆਉਂਦਿਆਂ ਤਾਂ ਬੜਾ ਆਦਰ-ਸਤਿਕਾਰ ਅਤੇ ਮੋਹ ਵਿਖਾਉਂਦੀਆਂ ਹਨ, ਪਰ ਜਾਂਦਿਆਂ ਮੂੰਹ ਵੀ ਨਹੀਂ ਲਾਉਂਦੀਆਂ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि माया और वेश्या दोनों एक ही प्रजाति की हैं, अर्थात दोनों का गुण-धर्म एक समान है। ये दोनों पहले तो लुभाकर लोगों का बहुत मान-सम्मान करती हैं, परंतु जाते समय उनसे बात भी नहीं करतीं।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਅਤੇ ਵੇਸਵਾ ਦੋਵਾਂ ਦਾ ਸੁਭਾਅ ਇੱਕੋ ਜਿਹਾ ਹੈ। ਆਉਂਦਿਆਂ ਤਾਂ ਬੜਾ ਆਦਰ-ਸਤਿਕਾਰ ਅਤੇ ਮੋਹ ਵਿਖਾਉਂਦੀਆਂ ਹਨ, ਪਰ ਜਾਂਦਿਆਂ ਮੂੰਹ ਵੀ ਨਹੀਂ ਲਾਉਂਦੀਆਂ।'),
       en: 'Kabir observes that Maya and a courtesan share identical characteristics: while approaching, they shower flattering attention and seductive welcome, but upon departing, they cast you aside coldly without speaking a word.'
     },
     wordMeanings: {
@@ -1886,14 +1886,14 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       en: 'Maya Ko Ang - 36',
     },
     text: {
-      hi: 'कबीर माया मोहिनी, जैसी मीठी खांड।\nसद्गुरु की किरपा भई, नातर करती भांड।।',
-      pb: devanagariToGurmukhi('कबीर माया मोहिनी, जैसी मीठी खांड। सद्गुरु की किरपा भई, नातर करती भांड।।'),
-      en: 'Kabeer maayaa mohinee, jaisee meethee khaand. Sadguru kee kirpaa bhayee, naatar kartee bhaand..'
+      hi: 'कबीर माया मोहिनी, जैसी मीठी खांड।\nसतगुरु की किरपा भई, नातर करती भांड।।',
+      pb: devanagariToGurmukhi('कबीर माया मोहिनी, जैसी मीठी खांड। सतगुरु की किरपा भई, नातर करती भांड।।'),
+      en: 'Kabeer maayaa mohinee, jaisee meethee khaand. Satguru kee kirpaa bhayee, naatar kartee bhaand..'
     },
-    transliteration: 'Kabeer maya mohini, jaisi meethi khaand. Sadguru ki kirpa bhayi, naatar karati bhaand.',
+    transliteration: 'Kabeer maya mohini, jaisi meethi khaand. Satguru ki kirpa bhayi, naatar karati bhaand.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि माया मन को मोहने वाली है। जैसे मीठी खांड का मधुर स्वाद होता है, वैसे ही इसका भोग बहुत प्यारा लगता है। वह तो सद्गुरु की कृपा से हम बच गए, नहीं तो इसके चक्कर में अपने धर्म-कर्म को भूलकर भांड़ जैसे रह जाते।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਮਿੱਠੀ ਖੰਡ ਵਾਂਗ ਮਨਮੋਹਣੀ ਹੈ ਜੋ ਸ਼ੁਰੂ ਵਿੱਚ ਬੜੀ ਸਵਾਦ ਲੱਗਦੀ ਹੈ। ਇਹ ਤਾਂ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਮਿਹਰ ਹੋਈ ਕਿ ਅਸੀਂ ਬਚ ਗਏ, ਨਹੀਂ ਤਾਂ ਇਹ ਸਾਨੂੰ ਨਚਾ ਕੇ ਭੰਡ (ਮਸਖ਼ਰਾ) ਬਣਾ ਛੱਡਦੀ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि माया मन को मोहने वाली है। जैसे मीठी खांड का मधुर स्वाद होता है, वैसे ही इसका भोग बहुत प्यारा लगता है। वह तो सतगुरु की कृपा से हम बच गए, नहीं तो इसके चक्कर में अपने धर्म-कर्म को भूलकर भांड़ जैसे रह जाते।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਮਿੱਠੀ ਖੰਡ ਵਾਂਗ ਮਨਮੋਹਣੀ ਹੈ ਜੋ ਸ਼ੁਰੂ ਵਿੱਚ ਬੜੀ ਸਵਾਦ ਲੱਗਦੀ ਹੈ। ਇਹ ਤਾਂ ਸਤਿਗੁਰੂ ਜੀ ਦੀ ਮਿਹਰ ਹੋਈ ਕਿ ਅਸੀਂ ਬਚ ਗਏ, ਨਹੀਂ ਤਾਂ ਇਹ ਸਾਨੂੰ ਨਚਾ ਕੇ ਭੰਡ (ਮਸਖ਼ਰਾ) ਬਣਾ ਛੱਡਦੀ।'),
       en: 'Kabir warns that Maya is enticing like sweet sugar candy, tasting delicious in the beginning. Were it not for the saving grace of the Satguru, she would have turned us into degraded buffoons (Bhaand), dancing shamefully to her tunes.'
     },
     wordMeanings: {
@@ -1911,7 +1911,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं सद्गुरु की कृपा को पहचानकर माया के मीठे प्रलोभनों से बच रहा हूँ?',
+      hi: 'क्या मैं सतगुरु की कृपा को पहचानकर माया के मीठे प्रलोभनों से बच रहा हूँ?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਗੁਰੂ ਦੀ ਕਿਰਪਾ ਨਾਲ ਮਾਇਆ ਦੇ ਮਿੱਠੇ ਜਾਲ ਤੋਂ ਬਚਿਆ ਹਾਂ?'),
       en: 'Am I relying on the Satguru’s protective grace to see through sweet sensory temptations?'
     },
@@ -1997,8 +1997,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya mohini, sab jag chhaala chhaani. Koi ek saadhu oobara, todi kul ki kaani.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह माया मोहिनी है। सारे जगत को अपनी कामनाओं में फंसाकर लोभ रूपी कोल्हू में पीसती है, अर्थात इससे बचना बहुत ही कठिन है। इससे तो कोई विरला साधु-संत ही बच पाता है, जिसने अपनी कुल-मर्यादा तथा अभिमान को बिसार दिया हो।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਇਹ ਮੋਹਿਨੀ ਮਾਇਆ ਸਾਰੇ ਸੰਸਾਰ ਨੂੰ ਆਪਣੇ ਛਲ ਵਿੱਚ ਪੀਸ ਰਹੀ ਹੈ। ਕੇਵਲ ਕੋਈ ਵਿਰਲਾ ਸਾਧੂ ਹੀ ਇਸਤੋਂ ਬਚਿਆ ਹੈ, ਜਿਸਨੇ ਕੁਲ ਦਾ ਹੰਕਾਰ ਅਤੇ ਸੰਸਾਰੀ ਲੋਕ-ਲਾਜ ਤੋੜ ਕੇ ਸੱਚ ਅਪਣਾਇਆ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह माया मोहिनी है। सारे जगत को अपनी कामनाओं में फंसाकर लोभ रूपी कोल्हू में पीसती है, अर्थात इससे बचना बहुत ही कठिन है। इससे तो कोई विरला साधु-संत ही बच पाता है, जिसने अपनी कुल-मर्यादा तथा अभिमान को बिसार दिया हो।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਮੋਹਿਨੀ ਮਾਇਆ ਸਾਰੇ ਸੰਸਾਰ ਨੂੰ ਆਪਣੇ ਛਲ ਵਿੱਚ ਪੀਸ ਰਹੀ ਹੈ। ਕੇਵਲ ਕੋਈ ਵਿਰਲਾ ਸਾਧੂ ਹੀ ਇਸਤੋਂ ਬਚਿਆ ਹੈ, ਜਿਸਨੇ ਕੁਲ ਦਾ ਹੰਕਾਰ ਅਤੇ ਸੰਸਾਰੀ ਲੋਕ-ਲਾਜ ਤੋੜ ਕੇ ਸੱਚ ਅਪਣਾਇਆ।'),
       en: 'Kabir warns that enchanting Maya sifts and crushes the whole world in her sieve of desire. Only a rare saint escapes unharmed—one who has completely shattered the shackles of social pride, lineage vanity, and worldly convention.'
     },
     wordMeanings: {
@@ -2050,8 +2050,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya daakini, sab kaahu ko khaay. Daant upaaroon paapini, santo niyarai jaay.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि माया महा-भयंकर डाकिनी है, जो खोज-खोजकर सबका भक्षण कर जाती है, परंतु यदि यह विरक्त साधु-संतों के निकट चली जाए, तो मैं इस महा-पापिनी के दांत उखाड़ लूंगा।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਇੱਕ ਭਿਆਨਕ ਡੈਣ (ਡਾਕਿਨੀ) ਹੈ ਜੋ ਹਰ ਕਿਸੇ ਨੂੰ ਖਾ ਜਾਂਦੀ ਹੈ। ਪਰ ਜੇ ਇਹ ਪੂਰੇ ਸੰਤਾਂ ਦੇ ਨੇੜੇ ਜਾਵੇ, ਤਾਂ ਮੈਂ (ਗਿਆਨ ਦੀ ਸ਼ਕਤੀ ਨਾਲ) ਇਸ ਪਾਪਣ ਦੇ ਦੰਦ ਹੀ ਉਖਾੜ ਦਿਆਂਗਾ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि माया महा-भयंकर डाकिनी है, जो खोज-खोजकर सबका भक्षण कर जाती है, परंतु यदि यह विरक्त साधु-संतों के निकट चली जाए, तो मैं इस महा-पापिनी के दांत उखाड़ लूंगा।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਇੱਕ ਭਿਆਨਕ ਡੈਣ (ਡਾਕਿਨੀ) ਹੈ ਜੋ ਹਰ ਕਿਸੇ ਨੂੰ ਖਾ ਜਾਂਦੀ ਹੈ। ਪਰ ਜੇ ਇਹ ਪੂਰੇ ਸੰਤਾਂ ਦੇ ਨੇੜੇ ਜਾਵੇ, ਤਾਂ ਮੈਂ (ਗਿਆਨ ਦੀ ਸ਼ਕਤੀ ਨਾਲ) ਇਸ ਪਾਪਣ ਦੇ ਦੰਦ ਹੀ ਉਖਾੜ ਦਿਆਂਗਾ।'),
       en: 'Kabir warns that Maya is a ravenous witch (Dakini) devouring everyone across the worlds. But should this sinister enchantress dare approach true saints, I shall tear out her poisonous fangs with the power of divine wisdom.'
     },
     wordMeanings: {
@@ -2103,14 +2103,14 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bhoole the sansaar mein, maya ke sang aay. Satguru raah bataiya, pheri milai tihi jaay.',
     bhavarth: {
-      hi: 'हम तो इस माया-मोहिनी के कुसंग में फंसकर, इस संसार में सब कुछ विस्मृत कर चुके थे। सत्य-असत्य और उचित-अनुचित का हमें कोई ज्ञान नहीं रह गया था। सद्गुरु ने दया करके हमें सन्मार्ग बताया, फिर हम सतगुरु के परमात्म रूप से परिचित हुए।',
+      hi: 'हम तो इस माया-मोहिनी के कुसंग में फंसकर, इस संसार में सब कुछ विस्मृत कर चुके थे। सत्य-असत्य और उचित-अनुचित का हमें कोई ज्ञान नहीं रह गया था। सतगुरु ने दया करके हमें सन्मार्ग बताया, फिर हम सतगुरु के परमात्म रूप से परिचित हुए।',
       pb: devanagariToGurmukhi('ਅਸੀਂ ਮਾਇਆ ਦੇ ਧੋਖੇ ਵਿੱਚ ਆ ਕੇ ਸੰਸਾਰ ਵਿੱਚ ਭਟਕ ਕੇ ਸਭ ਕੁਝ ਭੁੱਲ ਚੁੱਕੇ ਸਾਂ। ਸਤਿਗੁਰੂ ਜੀ ਨੇ ਮਿਹਰ ਕਰਕੇ ਸੱਚਾ ਰਾਹ ਦੱਸਿਆ ਅਤੇ ਅਸੀਂ ਮੁੜ ਆਪਣੇ ਅਸਲ ਪ੍ਰਭੂ ਨਾਲ ਜਾ ਮਿਲੇ।'),
       en: 'Entangled in the company of Maya, we had completely lost our way in the worldly maze, blind to truth and falsehood. The compassionate Satguru illuminated the true path, guiding our souls back into reunion with the Supreme Divine.'
     },
     wordMeanings: {
       hi: [
         { word: 'भूले थे संसार में (Bhoole the sansaar mein)', meaning: 'माया के प्रभाव से आत्म-स्वरूप को भूलकर भटक रहे थे' },
-        { word: 'सतगुरु राह बताइया (Satguru raah bataaiyaa)', meaning: 'सद्गुरु ने कृपा कर सत्य भक्ति का मार्ग दिखाया' },
+        { word: 'सतगुरु राह बताइया (Satguru raah bataaiyaa)', meaning: 'सतगुरु ने कृपा कर सत्य भक्ति का मार्ग दिखाया' },
         { word: 'फेरि मिलै तिहि जाय (Pheri milai tihi jaay)', meaning: 'पुनः अपने मूल परमात्म-स्वरूप में लीन हो गए' }
       ],
       pb: [
@@ -2123,12 +2123,12 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मैं सद्गुरु द्वारा दिखाए गए सन्मार्ग पर चलकर अपने मूल परमात्म-स्वरूप की ओर बढ़ रहा हूँ?',
+      hi: 'क्या मैं सतगुरु द्वारा दिखाए गए सन्मार्ग पर चलकर अपने मूल परमात्म-स्वरूप की ओर बढ़ रहा हूँ?',
       pb: devanagariToGurmukhi('ਕੀ ਮੈਂ ਗੁਰੂ ਦੇ ਦੱਸੇ ਸੱਚੇ ਰਾਹ \'ਤੇ ਤੁਰ ਰਿਹਾ ਹਾਂ?'),
       en: 'Am I faithfully walking the luminous path revealed by the Satguru toward divine reunion?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के प्रति कृतज्ञ रहें; उनके बताए ज्ञान-मार्ग पर दृढ़ता और निष्ठा से प्रतिदिन आगे बढ़ें।',
+      hi: 'सतगुरु के प्रति कृतज्ञ रहें; उनके बताए ज्ञान-मार्ग पर दृढ़ता और निष्ठा से प्रतिदिन आगे बढ़ें।',
       pb: devanagariToGurmukhi('ਗੁਰੂ ਦੇ ਦਰਸਾਏ ਰਾਹ \'ਤੇ ਨਿਰੰਤਰ ਚੱਲੋ।'),
       en: 'Walk steadfastly upon the Master’s path, guided by daily remembrance and devotion.'
     },
@@ -2264,9 +2264,9 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya mohini, mohai jaan sujaan. Bhaagai hoo chhoote nahin, bhari bhari maarai baan.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि माया विचित्र प्रकार की मोहिनी है। इसने अच्छे-बुरे, ज्ञानी-अनपढ़ यानी सभी को किसी-न-किसी प्रकार से अपने मोह में जकड़ रखा है। लोभ रूपी बाणों को यह इस प्रकार खींच-तानकर मारती है कि भागने पर भी इससे कोई बच नहीं पाता।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਅਜਿਹੀ ਮੋਹਿਨੀ ਹੈ ਜੋ ਵੱਡੇ-ਵੱਡੇ ਵਿਦਵਾਨਾਂ ਤੇ ਸਿਆਣਿਆਂ ਨੂੰ ਵੀ ਮੋਹ ਲੈਂਦੀ ਹੈ। ਇਹ ਵਾਸਨਾਵਾਂ ਦੇ ਅਜਿਹੇ ਤਿੱਖੇ ਤੀਰ ਖਿੱਚ-ਖਿੱਚ ਕੇ ਮਾਰਦੀ ਹੈ ਕਿ ਭੱਜਣ \'ਤੇ ਵੀ ਕੋਈ ਇਸਤੋਂ ਬਚ ਨਹੀਂ ਪਾਉਂਦਾ।'),
-      en: 'Kabir declares that Maya is an irresistible enchantress capable of bewitching even scholars and intellectuals (Jaan Sujaan). Drawing her bow to the fullest, she unleashes volleys of desire-arrows so penetrating that fleeing mortals cannot escape.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि माया विचित्र प्रकार की मोहिनी है। इसने अच्छे-बुरे, ज्ञानी-अनपढ़ यानी सभी को किसी-न-किसी प्रकार से अपने मोह में जकड़ रखा है। लोभ रूपी बाणों को यह इस प्रकार खींच-तानकर मारती है कि भागने पर भी इससे कोई बच नहीं पाता।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਅਜਿਹੀ ਮੋਹਿਨੀ ਹੈ ਜੋ ਵੱਡੇ-ਵੱਡੇ ਵਿਦਵਾਨਾਂ ਤੇ ਸਿਆਣਿਆਂ ਨੂੰ ਵੀ ਮੋਹ ਲੈਂਦੀ ਹੈ। ਇਹ ਵਾਸਨਾਵਾਂ ਦੇ ਅਜਿਹੇ ਤਿੱਖੇ ਤੀਰ ਖਿੱਚ-ਖਿੱਚ ਕੇ ਮਾਰਦੀ ਹੈ ਕਿ ਭੱਜਣ \'ਤੇ ਵੀ ਕੋਈ ਇਸਤੋਂ ਬਚ ਨਹੀਂ ਪਾਉਂਦਾ।'),
+      en: 'Satguru Kabir Saheb proclaims that Maya is an irresistible enchantress capable of bewitching even scholars and intellectuals (Jaan Sujaan). Drawing her bow to the fullest, she unleashes volleys of desire-arrows so penetrating that fleeing mortals cannot escape.'
     },
     wordMeanings: {
       hi: [
@@ -2288,7 +2288,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       en: 'Can mere intellectual cleverness shield me from Maya’s arrows without the Master’s protective grace?'
     },
     practicalApplication: {
-      hi: 'बौद्धिक अहंकार छोड़ें; सद्गुरु के नाम और ज्ञान को ढाल बनाकर माया के बाणों से अपनी रक्षा करें।',
+      hi: 'बौद्धिक अहंकार छोड़ें; सतगुरु के नाम और ज्ञान को ढाल बनाकर माया के बाणों से अपनी रक्षा करें।',
       pb: devanagariToGurmukhi('ਗੁਰੂ ਦੇ ਗਿਆਨ ਨੂੰ ਢਾਲ ਬਣਾਓ।'),
       en: 'Take shelter behind the shield of the Satguru’s holy Word against the arrows of passion.'
     },
@@ -2316,15 +2316,15 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jinko Saan-i rang diya, kabahun na hoy kurang. Din-din baani aagri, chadhe savaaya rang.',
     bhavarth: {
-      hi: 'जिनको सद्गुरु ने अपने पवित्र प्रेम (निर्मल ज्ञान) के रंग में रंग दिया, वे कभी भी रंगहीन - मैले (गुणहीन व अज्ञानी) नहीं हो सकते, क्योंकि प्रतिदिन उनके आगे गुरु की ज्ञान-वाणी होती है। इस प्रकार उन पर दिन-प्रतिदिन और भी अधिक प्रेम-भक्ति (ज्ञान प्राप्ति) का रंग चढ़ता जाता है।',
+      hi: 'जिनको सतगुरु ने अपने पवित्र प्रेम (निर्मल ज्ञान) के रंग में रंग दिया, वे कभी भी रंगहीन - मैले (गुणहीन व अज्ञानी) नहीं हो सकते, क्योंकि प्रतिदिन उनके आगे गुरु की ज्ञान-वाणी होती है। इस प्रकार उन पर दिन-प्रतिदिन और भी अधिक प्रेम-भक्ति (ज्ञान प्राप्ति) का रंग चढ़ता जाता है।',
       pb: devanagariToGurmukhi('ਜਿਨ੍ਹਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਨੇ ਆਪਣੇ ਨਾਮ-ਪ੍ਰੇਮ ਦੇ ਸੱਚੇ ਰੰਗ ਵਿੱਚ ਰੰਗ ਦਿੱਤਾ, ਉਹ ਕਦੇ ਫਿੱਕੇ ਜਾਂ ਬਦਰੰਗ (ਕੁਰੰਗ) ਨਹੀਂ ਹੁੰਦੇ। ਗੁਰਬਾਣੀ ਦੇ ਵਿਚਾਰ ਨਾਲ ਉਹਨਾਂ \'ਤੇ ਦਿਨ-ਬ-ਦਿਨ ਸਵਾਇਆ (ਡੂੰਘਾ) ਰੰਗ ਚੜ੍ਹਦਾ ਜਾਂਦਾ ਹੈ।'),
       en: 'Those dyed in the fast, divine color of the Satguru’s love can never be discolored or fade into worldly grime. Guided daily by the Master’s illuminated Word, the brilliance of their spiritual devotion grows richer and brighter day by day.'
     },
     wordMeanings: {
       hi: [
-        { word: 'सांई रंग दिया (Saan-ee rang diyaa)', meaning: 'सद्गुरु परमात्मा ने अपने प्रेम-रंग में रंग दिया' },
+        { word: 'सांई रंग दिया (Saan-ee rang diyaa)', meaning: 'सतगुरु परमात्मा ने अपने प्रेम-रंग में रंग दिया' },
         { word: 'कबहुं न होय कुरंग (Kabahun na hoy kurang)', meaning: 'कभी भी फीका, मैला या बदरंग नहीं होता' },
-        { word: 'बानी आगरी (Baanee aagree)', meaning: 'सद्गुरु की पावन ज्ञान-वाणी निरंतर आगे रहती है' },
+        { word: 'बानी आगरी (Baanee aagree)', meaning: 'सतगुरु की पावन ज्ञान-वाणी निरंतर आगे रहती है' },
         { word: 'चढ़े सवाया रंग (Chadhe savaayaa rang)', meaning: 'भक्ति और प्रेम का रंग दिन-प्रतिदिन और गहरा होता जाता है' }
       ],
       pb: [
@@ -2338,7 +2338,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा मन सद्गुरु के पावन प्रेम-रंग में ऐसा रंगा है जो संसार की किसी भी माया से फीका नहीं पड़ता?',
+      hi: 'क्या मेरा मन सतगुरु के पावन प्रेम-रंग में ऐसा रंगा है जो संसार की किसी भी माया से फीका नहीं पड़ता?',
       pb: devanagariToGurmukhi('ਕੀ ਮੇਰੇ \'ਤੇ ਗੁਰੂ ਦੇ ਨਾਮ ਦਾ ਪੱਕਾ ਰੰਗ ਚੜ੍ਹਿਆ ਹੈ?'),
       en: 'Is my heart saturated in the permanent dye of the Master’s love, immune to worldly fading?'
     },
@@ -2450,7 +2450,7 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
       en: 'Am I looking for cooling peace beneath the scorching, three-branched tree of illusion?'
     },
     practicalApplication: {
-      hi: 'माया-वृक्ष की छाया छोड़ें; सद्गुरु के नाम रूपी कल्पवृक्ष की शीतल छत्रछाया में आश्रय लें।',
+      hi: 'माया-वृक्ष की छाया छोड़ें; सतगुरु के नाम रूपी कल्पवृक्ष की शीतल छत्रछाया में आश्रय लें।',
       pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਦੇ ਨਾਮ ਦੀ ਸ਼ੀਤਲ ਛਾਂ ਵਿੱਚ ਆਓ।'),
       en: 'Abandon the burning shade of Maya to rest beneath the cooling arbor of the holy Name.'
     },
@@ -2478,8 +2478,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maya muyi na man mua, mari mari gaya shareer. Aasha trishna na muyi, yaun kathi kahain Kabeer.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि न तो माया-मोह मरा, न ही मन मरा तथा आशा-तृष्णा की भी मृत्यु नहीं हुई, बस केवल यह शरीर ही बार-बार मरता रहा। शरीर के बार-बार जन्म-मरण से सूक्ष्म रूप में उपस्थित माया, मन, आशा, तृष्णा भी इसके साथ रहे। इस प्रकार जीवन का उद्धार कैसे संभव हो सकता है?',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਨਾ ਮਾਇਆ ਮਰੀ, ਨਾ ਮਨ ਮਰਿਆ ਅਤੇ ਨਾ ਹੀ ਆਸ਼ਾ-ਤ੍ਰਿਸ਼ਨਾ ਮਰੀ; ਸਿਰਫ਼ ਇਹ ਸਰੀਰ ਹੀ ਵਾਰ-ਵਾਰ ਮਰਦਾ ਰਿਹਾ। ਜਦ ਤੱਕ ਤ੍ਰਿਸ਼ਨਾ ਨਹੀਂ ਮਰਦੀ, ਜਨਮ-ਮਰਨ ਦਾ ਗੇੜ ਕਿਵੇਂ ਮੁੱਕੇਗਾ?'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि न तो माया-मोह मरा, न ही मन मरा तथा आशा-तृष्णा की भी मृत्यु नहीं हुई, बस केवल यह शरीर ही बार-बार मरता रहा। शरीर के बार-बार जन्म-मरण से सूक्ष्म रूप में उपस्थित माया, मन, आशा, तृष्णा भी इसके साथ रहे। इस प्रकार जीवन का उद्धार कैसे संभव हो सकता है?',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਨਾ ਮਾਇਆ ਮਰੀ, ਨਾ ਮਨ ਮਰਿਆ ਅਤੇ ਨਾ ਹੀ ਆਸ਼ਾ-ਤ੍ਰਿਸ਼ਨਾ ਮਰੀ; ਸਿਰਫ਼ ਇਹ ਸਰੀਰ ਹੀ ਵਾਰ-ਵਾਰ ਮਰਦਾ ਰਿਹਾ। ਜਦ ਤੱਕ ਤ੍ਰਿਸ਼ਨਾ ਨਹੀਂ ਮਰਦੀ, ਜਨਮ-ਮਰਨ ਦਾ ਗੇੜ ਕਿਵੇਂ ਮੁੱਕੇਗਾ?'),
       en: 'Kabir proclaims: Neither did Maya die, nor did the restless mind die, nor did insatiable craving perish—only the physical body died over and over through countless rebirths. Unless desires are slain through wisdom, cyclic transmigration never ends.'
     },
     wordMeanings: {
@@ -2532,9 +2532,9 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Maya mari man maariya, raakhya amar shareer. Aasha trishna maari ke, thir hain rahain Kabeer.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जब माया-मोह पूरी तरह नष्ट हो जाता है, तो मन स्वयं ही शांत हो जाता है, और सभी आशा-तृष्णा भी समाप्त हो जाती है। परिणामस्वरूप स्थिर पद की प्राप्ति होती है, अर्थात सहजस्वरूप की स्थिति बनती है। इस प्रकार इस शरीर के जीवित रहते हुए भी अमरत्व की प्राप्ति हो सकती है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਦੋਂ ਗਿਆਨ ਨਾਲ ਮਾਇਆ ਤੇ ਮਨ ਨੂੰ ਸਾਧ ਲਿਆ ਅਤੇ ਆਸ਼ਾ-ਤ੍ਰਿਸ਼ਨਾ ਨੂੰ ਮਿਟਾ ਦਿੱਤਾ, ਤਾਂ ਸੁਰਤਿ ਸਹਿਜ ਅਵਸਥਾ ਵਿੱਚ ਸਥਿਰ ਹੋ ਗਈ ਅਤੇ ਜਿਊਂਦੇ-ਜੀਅ ਅਮਰ ਪਦ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ।'),
-      en: 'Kabir declares: By vanquishing Maya, the turbulent mind was subdued; by slaying desire and craving, consciousness became permanently established in unshakeable stillness, attaining the immortal state of liberation while still in this living vessel.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब माया-मोह पूरी तरह नष्ट हो जाता है, तो मन स्वयं ही शांत हो जाता है, और सभी आशा-तृष्णा भी समाप्त हो जाती है। परिणामस्वरूप स्थिर पद की प्राप्ति होती है, अर्थात सहजस्वरूप की स्थिति बनती है। इस प्रकार इस शरीर के जीवित रहते हुए भी अमरत्व की प्राप्ति हो सकती है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਗਿਆਨ ਨਾਲ ਮਾਇਆ ਤੇ ਮਨ ਨੂੰ ਸਾਧ ਲਿਆ ਅਤੇ ਆਸ਼ਾ-ਤ੍ਰਿਸ਼ਨਾ ਨੂੰ ਮਿਟਾ ਦਿੱਤਾ, ਤਾਂ ਸੁਰਤਿ ਸਹਿਜ ਅਵਸਥਾ ਵਿੱਚ ਸਥਿਰ ਹੋ ਗਈ ਅਤੇ ਜਿਊਂਦੇ-ਜੀਅ ਅਮਰ ਪਦ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ।'),
+      en: 'Satguru Kabir Saheb proclaims: By vanquishing Maya, the turbulent mind was subdued; by slaying desire and craving, consciousness became permanently established in unshakeable stillness, attaining the immortal state of liberation while still in this living vessel.'
     },
     wordMeanings: {
       hi: [
@@ -2639,9 +2639,9 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya mohini, bhayi andhiyaari loy. Jo soye so musi gaye, rahe vastu ko roy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि माया-मोहिनी गहन-अंधेरी रात्रि के समान सबके ऊपर छाई हुई है। जो इसके मोह के वशीभूत होकर मस्त निद्रा में सो गए, समझो वे मन के विकार (काम, क्रोध, लोभादि) रूपी डाकुओं द्वारा लूट लिए गए और जो वास्तविक अनमोल वस्तु सत्य-ज्ञान है, उससे वंचित होकर रोते ही रह गए।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮੋਹਿਨੀ ਮਾਇਆ ਘੁੱਪ ਹਨੇਰੀ ਰਾਤ ਬਣ ਕੇ ਛਾਈ ਹੋਈ ਹੈ। ਜੋ ਇਸ ਅਗਿਆਨਤਾ ਦੀ ਨੀਂਦ ਵਿੱਚ ਸੁੱਤੇ ਰਹੇ, ਉਹ ਵਿਕਾਰਾਂ ਹੱਥੋਂ ਲੁੱਟੇ ਗਏ ਅਤੇ ਨਾਮ ਰੂਪੀ ਅਸਲ ਵਸਤੂ ਗੁਆ ਕੇ ਰੋਂਦੇ ਹੀ ਰਹਿ ਗਏ।'),
-      en: 'Kabir declares that enchanting Maya blankets the world like a pitch-black night. Those who slumber heedlessly in the sleep of ignorance are plundered by the bandits of passion, waking only to weep over the loss of their priceless spiritual treasure.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि माया-मोहिनी गहन-अंधेरी रात्रि के समान सबके ऊपर छाई हुई है। जो इसके मोह के वशीभूत होकर मस्त निद्रा में सो गए, समझो वे मन के विकार (काम, क्रोध, लोभादि) रूपी डाकुओं द्वारा लूट लिए गए और जो वास्तविक अनमोल वस्तु सत्य-ज्ञान है, उससे वंचित होकर रोते ही रह गए।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮੋਹਿਨੀ ਮਾਇਆ ਘੁੱਪ ਹਨੇਰੀ ਰਾਤ ਬਣ ਕੇ ਛਾਈ ਹੋਈ ਹੈ। ਜੋ ਇਸ ਅਗਿਆਨਤਾ ਦੀ ਨੀਂਦ ਵਿੱਚ ਸੁੱਤੇ ਰਹੇ, ਉਹ ਵਿਕਾਰਾਂ ਹੱਥੋਂ ਲੁੱਟੇ ਗਏ ਅਤੇ ਨਾਮ ਰੂਪੀ ਅਸਲ ਵਸਤੂ ਗੁਆ ਕੇ ਰੋਂਦੇ ਹੀ ਰਹਿ ਗਏ।'),
+      en: 'Satguru Kabir Saheb proclaims that enchanting Maya blankets the world like a pitch-black night. Those who slumber heedlessly in the sleep of ignorance are plundered by the bandits of passion, waking only to weep over the loss of their priceless spiritual treasure.'
     },
     wordMeanings: {
       hi: [
@@ -2693,8 +2693,8 @@ export const SAKHIS_MAYA_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabeer maya rookhadi, do phal ki daataar. Khaavat kharchat mukti bhay, sanchat narak duvaar.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि माया रूपी यह वृक्ष दो फलों (परम सुख और चरम दुःख) को देने वाला है, जो इसे संतोषपूर्वक खाते हैं तथा सेवा-दान, परोपकार आदि पुण्य कर्मों में खर्च भी करते हैं, उन्हें परम सुख मिलता है, लेकिन जो लोग लोभवश इसका संचय करते हैं, उन्हें चरम दुःख रूपी नरक के द्वार में गिरना पड़ता है।',
-      pb: devanagariToGurmukhi('ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਮਾਇਆ ਰੂਪੀ ਰੁੱਖੜੀ ਦੋ ਤਰ੍ਹਾਂ ਦੇ ਫਲ ਦਿੰਦੀ ਹੈ: ਜੋ ਇਸਨੂੰ ਸੰਤੋਖ ਨਾਲ ਖਾਂਦੇ ਅਤੇ ਪਰਉਪਕਾਰ-ਸੇਵਾ ਵਿੱਚ ਖਰਚਦੇ ਹਨ ਉਹ ਮੁਕਤੀ ਪਾਉਂਦੇ ਹਨ, ਪਰ ਜੋ ਲੋਭ ਵਿੱਚ ਇਸਨੂੰ ਜੋੜਦੇ ਹਨ ਉਹ ਨਰਕਾਂ ਦੇ ਦੁਆਰ \'ਤੇ ਡਿੱਗਦੇ ਹਨ।'),
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि माया रूपी यह वृक्ष दो फलों (परम सुख और चरम दुःख) को देने वाला है, जो इसे संतोषपूर्वक खाते हैं तथा सेवा-दान, परोपकार आदि पुण्य कर्मों में खर्च भी करते हैं, उन्हें परम सुख मिलता है, लेकिन जो लोग लोभवश इसका संचय करते हैं, उन्हें चरम दुःख रूपी नरक के द्वार में गिरना पड़ता है।',
+      pb: devanagariToGurmukhi('ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਾਇਆ ਰੂਪੀ ਰੁੱਖੜੀ ਦੋ ਤਰ੍ਹਾਂ ਦੇ ਫਲ ਦਿੰਦੀ ਹੈ: ਜੋ ਇਸਨੂੰ ਸੰਤੋਖ ਨਾਲ ਖਾਂਦੇ ਅਤੇ ਪਰਉਪਕਾਰ-ਸੇਵਾ ਵਿੱਚ ਖਰਚਦੇ ਹਨ ਉਹ ਮੁਕਤੀ ਪਾਉਂਦੇ ਹਨ, ਪਰ ਜੋ ਲੋਭ ਵਿੱਚ ਇਸਨੂੰ ਜੋੜਦੇ ਹਨ ਉਹ ਨਰਕਾਂ ਦੇ ਦੁਆਰ \'ਤੇ ਡਿੱਗਦੇ ਹਨ।'),
       en: 'Kabir reveals that the tree of Maya yields two distinct fruits: those who partake of it with contentment and generously spend it in righteous charity and selfless service attain spiritual liberation; but those who hoard it in insatiable greed march straight to the gates of hell.'
     },
     wordMeanings: {

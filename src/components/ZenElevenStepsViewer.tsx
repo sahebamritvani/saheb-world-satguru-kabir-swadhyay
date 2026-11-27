@@ -101,7 +101,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
   };
 
   const currentQuestions = elevenStepData.step5_quiz.questions
-    .slice(0, 5)
+    .slice(0, 3)
     .map((q, idx) => normalizeElevenStepQuizQuestion(q, language, idx));
   const currentQ = currentQuestions[quizIdx] || currentQuestions[0];
   const selectedAnswer = quizSelected[quizIdx];
@@ -542,38 +542,28 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
                 return (
                   <div
                     style={activeFontStyle}
-                    className={`p-3.5 rounded-xl border text-xs ${activeFontClass} leading-relaxed space-y-2 ${
+                    className={`p-3 rounded-xl border text-xs ${activeFontClass} leading-relaxed ${
                       chosenOpt?.isCorrect
                         ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
                         : 'bg-rose-500/10 border-rose-500/30 text-rose-900 dark:text-rose-200'
                     }`}
                   >
-                    <p className="font-bold flex items-center gap-1.5 text-xs sm:text-sm">
-                      {chosenOpt?.isCorrect
-                        ? (language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ!' : language === 'en' ? '✓ Correct Answer!' : '✓ सही उत्तर!')
-                        : (language === 'pb' ? '✗ ਇਹ ਵਿਕਲਪ ਸਹੀ ਨਹੀਂ ਹੈ' : language === 'en' ? '✗ Incorrect Option' : '✗ यह विकल्प सही नहीं है')}
-                    </p>
-                    <p className="opacity-95 leading-relaxed">
-                      <strong>
-                        {chosenOpt?.isCorrect
-                          ? (language === 'pb' ? 'ਸਹੀ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Why this is correct: ' : 'सही उत्तर का विश्लेषण: ')
-                          : (language === 'pb' ? 'ਗਲਤ ਉੱਤਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Why this choice is incorrect: ' : 'गलत उत्तर का विश्लेषण: ')}
-                      </strong>
-                      {cleanSelectedFeedback}
-                    </p>
-                    {!chosenOpt?.isCorrect && correctOpt && (
-                      <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200 space-y-1">
-                        <p className="font-bold">
-                          ✓ {language === 'pb' ? 'ਸਹੀ ਉੱਤਰ' : language === 'en' ? 'Correct Answer' : 'सही उत्तर'}{' '}
-                          ({String.fromCharCode(65 + correctIdx)}): {correctOpt.text}
-                        </p>
-                        {cleanCorrectFeedback && (
-                          <p className="opacity-95 leading-relaxed">
-                            <strong>{language === 'pb' ? 'ਵਿਸ਼ਲੇਸ਼ਣ: ' : language === 'en' ? 'Explanation: ' : 'विश्लेषण: '}</strong>
-                            {cleanCorrectFeedback}
-                          </p>
-                        )}
-                      </div>
+                    {chosenOpt?.isCorrect ? (
+                      <p>
+                        <strong>
+                          {language === 'pb' ? '✓ ਸਹੀ ਉੱਤਰ! ' : language === 'en' ? '✓ Correct! ' : '✓ सही उत्तर! '}
+                        </strong>
+                        {cleanCorrectFeedback || cleanSelectedFeedback}
+                      </p>
+                    ) : (
+                      <p>
+                        <strong>
+                          {language === 'pb' ? '✗ ਸਹੀ ਉੱਤਰ' : language === 'en' ? '✗ Correct Answer' : '✗ सही उत्तर'}{' '}
+                          ({String.fromCharCode(65 + (correctIdx >= 0 ? correctIdx : 0))}):{' '}
+                        </strong>
+                        <span className="font-semibold">{correctOpt?.text}</span>
+                        {cleanCorrectFeedback ? ` — ${cleanCorrectFeedback}` : ''}
+                      </p>
                     )}
                   </div>
                 );
@@ -798,13 +788,6 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
             </div>
 
             <div className="space-y-3">
-              <blockquote
-                style={{ borderColor: rc.accent, ...activeFontStyle }}
-                className={`p-4 rounded-2xl bg-amber-500/10 border-l-4 text-sm sm:text-base ${activeFontClass} italic text-stone-800 dark:text-stone-200`}
-              >
-                "{sakhi.contemplation[language]}"
-              </blockquote>
-
               <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-2">
                 <div className="text-xs font-bold text-amber-900 dark:text-amber-200">
                   {language === 'pb' ? 'ਆਤਮ-ਨਿਰੀਖਣ ਪ੍ਰਸ਼ਨ:' : language === 'en' ? 'Self-Inquiry Questions:' : 'आत्म-निरीक्षण प्रश्न:'}

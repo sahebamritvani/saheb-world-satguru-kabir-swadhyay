@@ -49,7 +49,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਹੰਕਾਰ ਦੇ ਅੰਤ ਨਾਲ ਹੀ ਆਤਮਾ ਜਾਗਦੀ ਹੈ।',
         en: 'Only upon total rest of ego does the spirit awaken.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -101,7 +101,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ-ਸਾਧਨਾ ਨਾਲ ਹੀ ਪਰਮ ਪਦ ਮਿਲਦਾ ਹੈ।',
         en: 'Inner heat of meditation alone matures spiritual wisdom.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -153,7 +153,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਆਨੰਦ ਅੰਦਰ ਹੈ, ਬਾਹਰ ਭਟਕਣਾ ਮਾਇਆ ਹੈ।',
         en: 'Residing in the Ocean of God while wandering thirsty outside is Maya ultimate irony.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -205,7 +205,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਸਰੀਰ ਪ੍ਰਮਾਤਮਾ ਦੀ ਅਦਭੁਤ ਚਾਦਰ ਹੈ।',
         en: 'The human body is a miraculous divine garment woven by God.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -216,8 +216,8 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '165. बिना पैरों के पहाड़ चढ़ना', pb: '165. ਬਿਨਾਂ ਪੈਰਾਂ ਦੇ ਪਹਾੜ ਚੜ੍ਹਨਾ', en: '165. Climbing Mountain Without Feet' },
     verse: {
-      hi: '"बिनु पग पर्वत चढ़ि गया, बिना पंख अकास। कहै कबीर सुनो भाई संतो, सोई साहिब का दास॥"',
-      pb: '"ਬਿਨੁ ਪਗ ਪਰਵਤ ਚੜ੍ਹਿ ਗਯਾ, ਬਿਨਾ ਪੰਖ ਅਕਾਸ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਸੋਈ ਸਾਹਿਬ ਕਾ ਦਾਸ॥"',
+      hi: '"बिनु पग पर्वत चढ़ि गया, बिना पंख अकास। कहै कबीर सुनो भाई संतो, सोई साहेब का दास॥"',
+      pb: '"ਬਿਨੁ ਪਗ ਪਰਵਤ ਚੜ੍ਹਿ ਗਯਾ, ਬਿਨਾ ਪੰਖ ਅਕਾਸ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਸੋਈ ਸਾਹੇਬ ਕਾ ਦਾਸ॥"',
       en: '"Climbed the mountain without feet, flew in sky without wings. Says Kabir listen saints, he alone is servant of the Lord."'
     },
     literalParadox: {
@@ -257,7 +257,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਧਿਆਨ ਨਾਲ ਆਤਮਾ ਉੱਚੀ ਅਵਸਥਾ ਤੇ ਪਹੁੰਚਦੀ ਹੈ।',
         en: 'Inward meditation enables the spirit to soar into divine height.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -300,7 +300,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'मौन समाधि एवं परा-वाणी का अनुभव', pb: 'ਮੌਨ ਸਮਾਧੀ ਅਤੇ ਅੰਦਰੂਨੀ ਸ਼ਬਦ', en: 'Silent Ajapa Japa and Resounding Para Vani' },
       deepMeaning: {
-        hi: "कबीर साहेब यहाँ 'अजपा-जाप' और 'परा-वाणी' की बात कर रहे हैं। जब साधक बाहरी जीभ और मुँह को पूरी तरह बंद करके मौन में उतर जाता है, तब उसकी अंतरात्मा में परमात्मा के नाम का जप स्वतः होने लगता है। इसे किसी भौतिक कंठ की ज़रूरत नहीं होती।",
+        hi: "सतगुरु कबीर साहेब यहाँ 'अजपा-जाप' और 'परा-वाणी' की बात कर रहे हैं। जब साधक बाहरी जीभ और मुँह को पूरी तरह बंद करके मौन में उतर जाता है, तब उसकी अंतरात्मा में परमात्मा के नाम का जप स्वतः होने लगता है। इसे किसी भौतिक कंठ की ज़रूरत नहीं होती।",
         pb: 'ਮੌਨ ਹੋ ਕੇ ਸਾਧਕ ਦੇ ਅੰਦਰ ਨਾਮ-ਸਿਮਰਨ ਆਪਣੇ-ਆਪ ਚੱਲਦਾ ਹੈ ਜਿਸ ਲਈ ਜੀਭ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ।',
         en: 'In silent meditation, the inner spirit chants the unceasing Name automatically (Ajapa Japa), uttering divine truth beyond physical vocal organs.'
       },
@@ -309,7 +309,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਮੌਨ ਹੋਣ ਤੇ ਹੀ ਅੰਦਰੂਨੀ ਸ਼ਬਦ ਸੁਣਾਈ ਦਿੰਦਾ ਹੈ।',
         en: 'Silence of tongue unlocks the reverberation of inner Unstruck Word.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -361,7 +361,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਸ਼ਕਤੀ ਦਾ ਆਤਮਾ ਨਾਲ ਮਿਲਾਪ ਹੀ ਮੁਕਤੀ ਹੈ।',
         en: 'Union of root chakra energy with crown consciousness grants liberation.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -413,7 +413,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਅੰਤਰਮੁਖੀ ਧਿਆਨ ਨਾਲ ਮਨ ਸ਼ਾਂਤ ਹੁੰਦਾ ਹੈ।',
         en: 'Releasing the arrow of inward consciousness anchors the mind in peace.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -424,8 +424,8 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '169. मुर्गे ने काल को भगाया', pb: '169. ਮੁਰਗੇ ਨੇ ਕਾਲ ਨੂੰ ਭਗਾਇਆ', en: '169. Rooster Chased Away Time / Death' },
     verse: {
-      hi: '"मुर्गे की एक बांग सुनि, काल भागि गयो दूर। कहै कबीर सुनो हो संतो, साहिब मिला हजूर॥"',
-      pb: '"ਮੁਰਗੇ ਕੀ ਏਕ ਬਾਂਗ ਸੁਨਿ, ਕਾਲ ਭਾਗਿ ਗਯੋ ਦੂਰ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਹੋ ਸੰਤੋ, ਸਾਹਿਬ ਮਿਲਾ ਹਜੂਰ॥"',
+      hi: '"मुर्गे की एक बांग सुनि, काल भागि गयो दूर। कहै कबीर सुनो हो संतो, साहेब मिला हजूर॥"',
+      pb: '"ਮੁਰਗੇ ਕੀ ਏਕ ਬਾਂਗ ਸੁਨਿ, ਕਾਲ ਭਾਗਿ ਗਯੋ ਦੂਰ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਹੋ ਸੰਤੋ, ਸਾਹੇਬ ਮਿਲਾ ਹਜੂਰ॥"',
       en: '"Hearing a single crow of the rooster, Time/Death fled far away. Says Kabir listen saints, the Lord was realized face to face."'
     },
     literalParadox: {
@@ -465,7 +465,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਕਾਲ ਦਾ ਭੈਅ ਮਿਟਦਾ ਹੈ।',
         en: 'The call of Holy Name liberates the soul from the grip of time.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   },
@@ -517,7 +517,7 @@ export const ULATVASI_BATCH_161_TO_170: UlatvasiQuestion[] = [
         pb: 'ਆਤਮ-ਅੰਮ੍ਰਿਤ ਨਾਲ ਹੀ ਸਦਾ ਲਈ ਤ੍ਰਿਪਤੀ ਮਿਲਦੀ ਹੈ।',
         en: 'Inner ambrosia tapped by soul consciousness satisfies human spirit forever.'
       },
-      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹਿਬ।', en: 'Satyanaam Saheb.' }
+      parakhiInsight: { hi: 'सत्यनाम साहेब।', pb: 'ਸਤਯਨਾਮ ਸਾਹੇਬ।', en: 'Satyanaam Saheb.' }
     },
     wisdomPoints: 20
   }

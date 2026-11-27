@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Bura jo dekhan main chala, bura na miliya koy. Jo dil khoja aapna, mujhse bura na koy.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जब मैं इस संसार में दूसरों की बुराई और दोष खोजने निकला, तो मुझे कोई भी बुरा नहीं मिला। परंतु जब मैंने अंतर्मुखी होकर अपने ही मन व हृदय की पड़ताल की, तो पाया कि मुझसे अधिक दोष और विकार किसी अन्य में नहीं हैं। जब मनुष्य स्वयं के अवगुण देख लेता है, तो दूसरों पर उंगली उठाने का भाव समाप्त हो जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮੈਂ ਦੁਨੀਆ ਵਿੱਚ ਬੁਰਾਈਆਂ ਲੱਭਣ ਨਿਕਲਿਆ ਤਾਂ ਮੈਨੂੰ ਕੋਈ ਬੁਰਾ ਨਾ ਮਿਲਿਆ। ਪਰ ਜਦੋਂ ਮੈਂ ਆਪਣੇ ਹੀ ਮਨ ਦੀ ਪੜਚੋਲ ਕੀਤੀ ਤਾਂ ਪਤਾ ਲੱਗਾ ਕਿ ਮੇਰੇ ਤੋਂ ਵੱਧ ਕਮੀਆਂ ਕਿਸੇ ਹੋਰ ਵਿੱਚ ਨਹੀਂ ਹਨ।',
-      en: 'Kabir Saheb reveals: When I set out to search for wickedness in the world, I found none outside. But when I turned inward and examined my own heart, I realized there was no one more flawed than myself.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब मैं इस संसार में दूसरों की बुराई और दोष खोजने निकला, तो मुझे कोई भी बुरा नहीं मिला। परंतु जब मैंने अंतर्मुखी होकर अपने ही मन व हृदय की पड़ताल की, तो पाया कि मुझसे अधिक दोष और विकार किसी अन्य में नहीं हैं। जब मनुष्य स्वयं के अवगुण देख लेता है, तो दूसरों पर उंगली उठाने का भाव समाप्त हो जाता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮੈਂ ਦੁਨੀਆ ਵਿੱਚ ਬੁਰਾਈਆਂ ਲੱਭਣ ਨਿਕਲਿਆ ਤਾਂ ਮੈਨੂੰ ਕੋਈ ਬੁਰਾ ਨਾ ਮਿਲਿਆ। ਪਰ ਜਦੋਂ ਮੈਂ ਆਪਣੇ ਹੀ ਮਨ ਦੀ ਪੜਚੋਲ ਕੀਤੀ ਤਾਂ ਪਤਾ ਲੱਗਾ ਕਿ ਮੇਰੇ ਤੋਂ ਵੱਧ ਕਮੀਆਂ ਕਿਸੇ ਹੋਰ ਵਿੱਚ ਨਹੀਂ ਹਨ।',
+      en: 'Satguru Kabir Saheb reveals: When I set out to search for wickedness in the world, I found none outside. But when I turned inward and examined my own heart, I realized there was no one more flawed than myself.',
     },
     wordMeanings: {
       hi: [
@@ -58,7 +58,7 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरु कबीर साहेब! मुझे अहंकार से मुक्त कर अंतर्दृष्टि प्रदान करें, ताकि मैं सदा स्वयं के विकारों को दूर कर पावन बन सकूँ। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਮੈਨੂੰ ਹਉਮੈ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਆਪਣੀ ਪੜਚੋਲ ਕਰਨ ਦੀ ਸੋਝੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਹਉਮੈ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਆਪਣੀ ਪੜਚੋਲ ਕਰਨ ਦੀ ਸੋਝੀ ਬਖਸ਼ੋ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru Kabir Saheb! Grant me pure self-awareness so I may overcome my own flaws and abide in humble love. Saheb Bandagi Saheb!',
     },
     contextNote: {
@@ -70,9 +70,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-1-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार जब उन्होंने अपने मन में झांका, तो उन्होंने क्या पाया?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜਦੋਂ ਉਹਨਾਂ ਨੇ ਆਪਣੇ ਮਨ ਵਿੱਚ ਝਾਕਿਆ ਤਾਂ ਕੀ ਪਾਇਆ?',
-          en: 'According to Kabir Saheb, what did he find when he searched his own heart?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जब उन्होंने अपने मन में झांका, तो उन्होंने क्या पाया?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜਦੋਂ ਉਹਨਾਂ ਨੇ ਆਪਣੇ ਮਨ ਵਿੱਚ ਝਾਕਿਆ ਤਾਂ ਕੀ ਪਾਇਆ?',
+          en: 'According to Satguru Kabir Saheb, what did he find when he searched his own heart?',
         },
         options: {
           hi: ['संसार बहुत बुरा है', 'मुझसे बुरा कोई नहीं', 'सभी लोग पापी हैं', 'मैं सबसे श्रेष्ठ हूँ'],
@@ -81,7 +81,7 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'कबीर साहेब आत्म-निरीक्षण की पराकाष्ठा सिखाते हैं कि जब हम अपने भीतर देखते हैं तो अपने ही विकार सबसे बड़े दिखाई देते हैं।',
+          hi: 'सतगुरु कबीर साहेब आत्म-निरीक्षण की पराकाष्ठा सिखाते हैं कि जब हम अपने भीतर देखते हैं तो अपने ही विकार सबसे बड़े दिखाई देते हैं।',
           pb: 'ਸੱਚੀ ਸਾਧਨਾ ਆਪਣੇ ਔਗੁਣਾਂ ਦੀ ਪਛਾਣ ਕਰਨ ਨਾਲ ਸ਼ੁਰੂ ਹੁੰਦੀ ਹੈ।',
           en: 'True spiritual inquiry begins when we realize our own shortcomings rather than blaming the world.',
         },
@@ -100,7 +100,7 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
         },
         correctIndex: 1,
         explanation: {
-          hi: 'परनिंदा छोड़कर अपने हृदय को निर्मल करना ही कबीर साहेब का पावन उपदेश है।',
+          hi: 'परनिंदा छोड़कर अपने हृदय को निर्मल करना ही सतगुरु कबीर साहेब का पावन उपदेश है।',
           pb: 'ਦੂਜਿਆਂ ਦੀ ਨਿੰਦਾ ਛੱਡ ਕੇ ਆਪਣੇ ਮਨ ਨੂੰ ਸ਼ੁੱਧ ਕਰਨਾ ਹੀ ਪਰਮ ਧਰਮ ਹੈ।',
           en: 'Abandoning fault-finding in others and cleansing one’s own heart is the true spiritual essence.',
         },
@@ -126,9 +126,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Pothi padhi padhi jag mua, pandit bhaya na koy. Dhai aakhar prem ka, padhe so pandit hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि संसार में बड़ी-बड़ी पुस्तकें, शास्त्र और ग्रंथ पढ़कर लाखों लोग जीवन बिताकर चले गए, परंतु केवल किताबी ज्ञान से कोई सच्चा ज्ञानी या पंडित नहीं बन सका। जो मनुष्य परमात्मा और समस्त जीवों के प्रति निस्वार्थ प्रेम और भक्ति का मर्म समझ लेता है, वही वास्तव में सच्चा ब्रह्मज्ञानी है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵੱਡੀਆਂ-ਵੱਡੀਆਂ ਪੋਥੀਆਂ ਪੜ੍ਹ ਕੇ ਦੁਨੀਆ ਚਲੀ ਗਈ ਪਰ ਕੋਈ ਸੱਚਾ ਵਿਦਵਾਨ ਨਾ ਬਣ ਸਕਿਆ। ਜਿਸ ਨੇ ਪ੍ਰੇਮ ਦੇ ਅਸਲ ਤੱਤ ਨੂੰ ਸਮਝ ਲਿਆ, ਓਹੀ ਸੱਚਾ ਗਿਆਨੀ ਹੈ।',
-      en: 'Kabir Saheb proclaims: Generations have passed away reading endless volumes of scriptures, yet none became truly wise through bookish intellect alone. The one who truly realizes and lives the divine love of the Divine is the genuine knower of Truth.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि संसार में बड़ी-बड़ी पुस्तकें, शास्त्र और ग्रंथ पढ़कर लाखों लोग जीवन बिताकर चले गए, परंतु केवल किताबी ज्ञान से कोई सच्चा ज्ञानी या पंडित नहीं बन सका। जो मनुष्य परमात्मा और समस्त जीवों के प्रति निस्वार्थ प्रेम और भक्ति का मर्म समझ लेता है, वही वास्तव में सच्चा ब्रह्मज्ञानी है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਵੱਡੀਆਂ-ਵੱਡੀਆਂ ਪੋਥੀਆਂ ਪੜ੍ਹ ਕੇ ਦੁਨੀਆ ਚਲੀ ਗਈ ਪਰ ਕੋਈ ਸੱਚਾ ਵਿਦਵਾਨ ਨਾ ਬਣ ਸਕਿਆ। ਜਿਸ ਨੇ ਪ੍ਰੇਮ ਦੇ ਅਸਲ ਤੱਤ ਨੂੰ ਸਮਝ ਲਿਆ, ਓਹੀ ਸੱਚਾ ਗਿਆਨੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims: Generations have passed away reading endless volumes of scriptures, yet none became truly wise through bookish intellect alone. The one who truly realizes and lives the divine love of the Divine is the genuine knower of Truth.',
     },
     wordMeanings: {
       hi: [
@@ -172,9 +172,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-2-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्चा पंडित या ज्ञानी कौन बनता है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚਾ ਪੰਡਿਤ ਕੌਣ ਬਣਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, who truly becomes a wise scholar (Pandit)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्चा पंडित या ज्ञानी कौन बनता है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚਾ ਪੰਡਿਤ ਕੌਣ ਬਣਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who truly becomes a wise scholar (Pandit)?',
         },
         options: {
           hi: ['हजारों पुस्तकें रटने वाला', 'जो प्रेम का वास्तविक मर्म पढ़ ले', 'बड़ा भाषण देने वाला', 'कठिन तप करने वाला'],
@@ -293,9 +293,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Tinka kabahu na nindiye, jo pawan tar hoy. Kabahu udi aankhin pade, to peer ghaneri hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि पैरों के नीचे पड़े छोटे से तिनके को भी कभी तुच्छ समझकर उसका तिरस्कार मत करो। यदि वही छोटा सा तिनका हवा के झोंके से उड़कर आंख में पड़ जाए, तो असहनीय और भारी पीड़ा पहुंचाता है। इसी प्रकार समाज के किसी भी छोटे या निर्बल व्यक्ति का कभी अपमान न करें।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪੈਰਾਂ ਹੇਠ ਰੁਲਦੇ ਨਿੱਕੇ ਜਿਹੇ ਤਿਣਕੇ ਨੂੰ ਵੀ ਮਾੜਾ ਨਾ ਸਮਝੋ। ਜੇਕਰ ਉਹ ਉੱਡ ਕੇ ਅੱਖ ਵਿੱਚ ਪੈ ਜਾਵੇ ਤਾਂ ਬਹੁਤ ਦਰਦ ਹੁੰਦਾ ਹੈ। ਕਦੇ ਕਿਸੇ ਕਮਜ਼ੋਰ ਦਾ ਅਪਮਾਨ ਨਾ ਕਰੋ।',
-      en: 'Kabir Saheb cautions: Never despise or trample even a tiny blade of grass beneath your feet. For if the wind carries it into your eye, it causes intense pain. Likewise, never underestimate or mistreat the humble and vulnerable.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि पैरों के नीचे पड़े छोटे से तिनके को भी कभी तुच्छ समझकर उसका तिरस्कार मत करो। यदि वही छोटा सा तिनका हवा के झोंके से उड़कर आंख में पड़ जाए, तो असहनीय और भारी पीड़ा पहुंचाता है। इसी प्रकार समाज के किसी भी छोटे या निर्बल व्यक्ति का कभी अपमान न करें।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪੈਰਾਂ ਹੇਠ ਰੁਲਦੇ ਨਿੱਕੇ ਜਿਹੇ ਤਿਣਕੇ ਨੂੰ ਵੀ ਮਾੜਾ ਨਾ ਸਮਝੋ। ਜੇਕਰ ਉਹ ਉੱਡ ਕੇ ਅੱਖ ਵਿੱਚ ਪੈ ਜਾਵੇ ਤਾਂ ਬਹੁਤ ਦਰਦ ਹੁੰਦਾ ਹੈ। ਕਦੇ ਕਿਸੇ ਕਮਜ਼ੋਰ ਦਾ ਅਪਮਾਨ ਨਾ ਕਰੋ।',
+      en: 'Satguru Kabir Saheb cautions: Never despise or trample even a tiny blade of grass beneath your feet. For if the wind carries it into your eye, it causes intense pain. Likewise, never underestimate or mistreat the humble and vulnerable.',
     },
     wordMeanings: {
       hi: [
@@ -376,9 +376,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Dheere dheere re mana, dheere sab kuch hoy. Mali sinche sau ghada, ritu aaye phal hoy.',
     bhavarth: {
-      hi: 'कबीर साहेब अपने मन को समझाते हुए कहते हैं कि हे मन! धीरज रख, संसार में प्रत्येक कार्य अपने निश्चित समय और क्रम से ही पूर्ण होता है। यदि कोई माली उतावला होकर एक ही दिन में पेड़ की जड़ों में सौ घड़े पानी भी डाल दे, तब भी फल तभी लगेगा जब उसकी अनुकूल ऋतु (मौसम) आएगी। साधना में भी निरंतरता और धैर्य आवश्यक है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਮਨ ਨੂੰ ਧੀਰਜ ਰੱਖਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦੇ ਹਨ। ਮਾਲੀ ਭਾਵੇਂ ਸੌ ਘੜੇ ਪਾਣੀ ਪਾ ਦੇਵੇ ਪਰ ਫਲ ਰੁੱਤ ਆਉਣ ਤੇ ਹੀ ਲੱਗਦਾ ਹੈ। ਸਾਧਨਾ ਵਿੱਚ ਵੀ ਸਬਰ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ।',
-      en: 'Kabir Saheb counsels the restless mind: Be patient, O mind! Everything matures in its own divine rhythm. Even if a gardener pours a hundred pots of water at once, the tree bears fruit only when the proper season arrives.',
+      hi: 'सतगुरु कबीर साहेब अपने मन को समझाते हुए कहते हैं कि हे मन! धीरज रख, संसार में प्रत्येक कार्य अपने निश्चित समय और क्रम से ही पूर्ण होता है। यदि कोई माली उतावला होकर एक ही दिन में पेड़ की जड़ों में सौ घड़े पानी भी डाल दे, तब भी फल तभी लगेगा जब उसकी अनुकूल ऋतु (मौसम) आएगी। साधना में भी निरंतरता और धैर्य आवश्यक है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮਨ ਨੂੰ ਧੀਰਜ ਰੱਖਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦੇ ਹਨ। ਮਾਲੀ ਭਾਵੇਂ ਸੌ ਘੜੇ ਪਾਣੀ ਪਾ ਦੇਵੇ ਪਰ ਫਲ ਰੁੱਤ ਆਉਣ ਤੇ ਹੀ ਲੱਗਦਾ ਹੈ। ਸਾਧਨਾ ਵਿੱਚ ਵੀ ਸਬਰ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb counsels the restless mind: Be patient, O mind! Everything matures in its own divine rhythm. Even if a gardener pours a hundred pots of water at once, the tree bears fruit only when the proper season arrives.',
     },
     wordMeanings: {
       hi: [
@@ -458,9 +458,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Mala p彆rat jug bhaya, phira na man ka pher. Kar ka manka daar de, man ka manka pher.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि हाथ में माला के मनके घुमाते-घुमाते युगों बीत गए, परंतु मन का भटकाव और चंचलता दूर नहीं हुई। बाह्य दिखावे की लकड़ी या मोतियों की माला फेरना छोड़कर, अपने अंतःकरण के विचारों और मन की वृत्तियों को ईश्वर के सत्यनाम में फेरो और शुद्ध करो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੱਥ ਵਿੱਚ ਮਾਲਾ ਫੇਰਦਿਆਂ ਉਮਰ ਬੀਤ ਗਈ ਪਰ ਮਨ ਦੀ ਭਟਕਣਾ ਦੂਰ ਨਾ ਹੋਈ। ਹੱਥ ਦੀ ਮਾਲਾ ਛੱਡ ਕੇ ਮਨ ਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦੇ ਨਾਮ ਵਿੱਚ ਜੋੜੋ।',
-      en: 'Kabir Saheb states: Ages have passed turning external beads in the hand, yet the restless wanderings of the mind remained unchanged. Drop the wooden beads of the hand; rotate the sacred inner bead of conscious awareness.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि हाथ में माला के मनके घुमाते-घुमाते युगों बीत गए, परंतु मन का भटकाव और चंचलता दूर नहीं हुई। बाह्य दिखावे की लकड़ी या मोतियों की माला फेरना छोड़कर, अपने अंतःकरण के विचारों और मन की वृत्तियों को ईश्वर के सत्यनाम में फेरो और शुद्ध करो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੱਥ ਵਿੱਚ ਮਾਲਾ ਫੇਰਦਿਆਂ ਉਮਰ ਬੀਤ ਗਈ ਪਰ ਮਨ ਦੀ ਭਟਕਣਾ ਦੂਰ ਨਾ ਹੋਈ। ਹੱਥ ਦੀ ਮਾਲਾ ਛੱਡ ਕੇ ਮਨ ਨੂੰ ਪ੍ਰਮਾਤਮਾ ਦੇ ਨਾਮ ਵਿੱਚ ਜੋੜੋ।',
+      en: 'Satguru Kabir Saheb proclaims: Ages have passed turning external beads in the hand, yet the restless wanderings of the mind remained unchanged. Drop the wooden beads of the hand; rotate the sacred inner bead of conscious awareness.',
     },
     wordMeanings: {
       hi: [
@@ -503,9 +503,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-6-1',
         question: {
-          hi: 'कबीर साहेब हाथ की माला की जगह किस माला को फेरने की सलाह देते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਹੱਥ ਦੀ ਮਾਲਾ ਦੀ ਥਾਂ ਕਿਸ ਮਾਲਾ ਨੂੰ ਫੇਰਨ ਦੀ ਸਲਾਹ ਦਿੰਦੇ ਹਨ?',
-          en: 'Instead of the beads in the hand, which rosary does Kabir Saheb advise us to turn?',
+          hi: 'सतगुरु कबीर साहेब हाथ की माला की जगह किस माला को फेरने की सलाह देते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਹੱਥ ਦੀ ਮਾਲਾ ਦੀ ਥਾਂ ਕਿਸ ਮਾਲਾ ਨੂੰ ਫੇਰਨ ਦੀ ਸਲਾਹ ਦਿੰਦੇ ਹਨ?',
+          en: 'Instead of the beads in the hand, which rosary does Satguru Kabir Saheb advise us to turn?',
         },
         options: {
           hi: ['सोने की माला', 'मन का मनका (अंतःकरण की वृत्तियां)', 'फूलों की माला', 'रुद्राक्ष की माला'],
@@ -540,9 +540,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Jati na poocho sadhu ki, pooch lijiye gyan. Mol karo tarwar ka, pada rahan do myan.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि किसी संत, साधु या ज्ञानी पुरुष की जाति, कुल या सामाजिक पृष्ठभूमि मत पूछो, केवल उनके दिव्य ज्ञान और शिक्षाओं को ग्रहण करो। युद्ध में तलवार की धार और प्रभाव का महत्व होता है, उसकी म्यान (खोल) कितनी भी सुंदर क्यों न हो, उसका कोई मोल नहीं।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਿਸੇ ਭਗਤ ਜਾਂ ਸਾਧੂ ਦੀ ਜਾਤ ਨਾ ਪੁੱਛੋ, ਸਗੋਂ ਉਸਦੇ ਗਿਆਨ ਨੂੰ ਸਮਝੋ। ਅਸਲ ਮੁੱਲ ਤਲਵਾਰ ਦਾ ਹੁੰਦਾ ਹੈ, ਮਿਆਨ ਦਾ ਨਹੀਂ।',
-      en: 'Kabir Saheb urges: Inquire not into the caste or lineage of a sage; inquire into their spiritual wisdom. Value the sharp steel of the sword, regardless of the scabbard that encases it.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि किसी संत, साधु या ज्ञानी पुरुष की जाति, कुल या सामाजिक पृष्ठभूमि मत पूछो, केवल उनके दिव्य ज्ञान और शिक्षाओं को ग्रहण करो। युद्ध में तलवार की धार और प्रभाव का महत्व होता है, उसकी म्यान (खोल) कितनी भी सुंदर क्यों न हो, उसका कोई मोल नहीं।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਕਿਸੇ ਭਗਤ ਜਾਂ ਸਾਧੂ ਦੀ ਜਾਤ ਨਾ ਪੁੱਛੋ, ਸਗੋਂ ਉਸਦੇ ਗਿਆਨ ਨੂੰ ਸਮਝੋ। ਅਸਲ ਮੁੱਲ ਤਲਵਾਰ ਦਾ ਹੁੰਦਾ ਹੈ, ਮਿਆਨ ਦਾ ਨਹੀਂ।',
+      en: 'Satguru Kabir Saheb urges: Inquire not into the caste or lineage of a sage; inquire into their spiritual wisdom. Value the sharp steel of the sword, regardless of the scabbard that encases it.',
     },
     wordMeanings: {
       hi: [
@@ -622,9 +622,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Dos paraye dekhi kari, chala hasant hasant. Apne yaad na aavayi, jinka aadi na ant.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि यह अज्ञानी मनुष्य दूसरों के दोषों और गलतियों को देखकर हंसता हुआ और उनका उपहास उड़ाता हुआ चलता है। परंतु उसे अपने स्वयं के अगणित दोषों और विकारों की याद नहीं आती, जिनका न कोई आदि है और न कोई अंत।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह अज्ञानी मनुष्य दूसरों के दोषों और गलतियों को देखकर हंसता हुआ और उनका उपहास उड़ाता हुआ चलता है। परंतु उसे अपने स्वयं के अगणित दोषों और विकारों की याद नहीं आती, जिनका न कोई आदि है और न कोई अंत।',
       pb: 'ਮਨੁੱਖ ਦੂਜਿਆਂ ਦੀਆਂ ਕਮੀਆਂ ਵੇਖ ਕੇ ਹੱਸਦਾ ਹੈ, ਪਰ ਉਸਨੂੰ ਆਪਣੇ ਉਹ ਔਗੁਣ ਯਾਦ ਨਹੀਂ ਆਉਂਦੇ ਜਿਨ੍ਹਾਂ ਦਾ ਕੋਈ ਅੰਤ ਹੀ ਨਹੀਂ ਹੈ।',
-      en: 'Kabir Saheb observes: People walk along laughing and mocking the faults of others, utterly oblivious to their own countless flaws, which have neither beginning nor end.',
+      en: 'Satguru Kabir Saheb observes: People walk along laughing and mocking the faults of others, utterly oblivious to their own countless flaws, which have neither beginning nor end.',
     },
     wordMeanings: {
       hi: [
@@ -704,9 +704,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Jin khoja tin payiya, gahre pani paith. Main bapura budan dara, raha kinare baith.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जिन्होंने सत्य की खोज में गहरे पानी (साधना के अगाध सागर) में गोता लगाया, उन्होंने अनमोल मोती (आत्म-साक्षात्कार) प्राप्त कर लिया। परंतु जो बेचारे डूबने के भय से किनारे पर ही बैठे रह गए, वे ज्ञान और मुक्ति के अमूल्य आनंद से वंचित रह गए।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जिन्होंने सत्य की खोज में गहरे पानी (साधना के अगाध सागर) में गोता लगाया, उन्होंने अनमोल मोती (आत्म-साक्षात्कार) प्राप्त कर लिया। परंतु जो बेचारे डूबने के भय से किनारे पर ही बैठे रह गए, वे ज्ञान और मुक्ति के अमूल्य आनंद से वंचित रह गए।',
       pb: 'ਜਿਨ੍ਹਾਂ ਨੇ ਡੂੰਘੇ ਪਾਣੀ ਵਿੱਚ ਉੱਤਰ ਕੇ ਭਾਲ ਕੀਤੀ, ਉਹਨਾਂ ਨੇ ਮੋਤੀ ਪਾ ਲਏ। ਪਰ ਜੋ ਡੁੱਬਣ ਦੇ ਡਰੋਂ ਕੰਢੇ ਤੇ ਹੀ ਬੈਠੇ ਰਹੇ, ਉਹ ਖਾਲੀ ਹੱਥ ਰਹਿ ਗਏ।',
-      en: 'Kabir Saheb declares: Those who dove courageously into the deep waters found precious pearls. But the timid one who feared drowning sat idly on the shore and gained nothing.',
+      en: 'Satguru Kabir Saheb proclaims: Those who dove courageously into the deep waters found precious pearls. But the timid one who feared drowning sat idly on the shore and gained nothing.',
     },
     wordMeanings: {
       hi: [
@@ -785,9 +785,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Boli ek anmol hai, jo koi bole jaani. Hiye taraju tauli ke, tab mukh bahar aani.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि वाणी एक अमूल्य रत्न है, बशर्ते मनुष्य इसका सदुपयोग करना जाने। बोलने से पूर्व प्रत्येक शब्द को अपने हृदय के तराजू (विवेक और प्रेम) पर भली-भांति तोलना चाहिए, फिर मुख से बाहर निकालना चाहिए, ताकि किसी को पीड़ा न पहुंचे।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि वाणी एक अमूल्य रत्न है, बशर्ते मनुष्य इसका सदुपयोग करना जाने। बोलने से पूर्व प्रत्येक शब्द को अपने हृदय के तराजू (विवेक और प्रेम) पर भली-भांति तोलना चाहिए, फिर मुख से बाहर निकालना चाहिए, ताकि किसी को पीड़ा न पहुंचे।',
       pb: 'ਮਿੱਠੇ ਬੋਲ ਅਨਮੋਲ ਰਤਨ ਹਨ। ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੇ ਹਿਰਦੇ ਦੀ ਤੱਕੜੀ ਤੇ ਤੋਲ ਕੇ ਹੀ ਸ਼ਬਦ ਮੂੰਹੋਂ ਕੱਢਣੇ ਚਾਹੀਦੇ ਹਨ ਤਾਂ ਜੋ ਕਿਸੇ ਦਾ ਦਿਲ ਨਾ ਦੁਖੇ।',
-      en: 'Kabir Saheb teaches: Speech is an invaluable jewel if one knows how to speak with awareness. Weigh every word carefully on the scale of your heart before letting it emerge from your lips.',
+      en: 'Satguru Kabir Saheb teaches: Speech is an invaluable jewel if one knows how to speak with awareness. Weigh every word carefully on the scale of your heart before letting it emerge from your lips.',
     },
     wordMeanings: {
       hi: [
@@ -829,9 +829,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-10-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार मुख से शब्द निकालने से पहले उसे कहाँ तोलना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਸ਼ਬਦ ਕਿੱਥੇ ਤੋਲਣਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, where should a word be weighed before being spoken?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार मुख से शब्द निकालने से पहले उसे कहाँ तोलना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਸ਼ਬਦ ਕਿੱਥੇ ਤੋਲਣਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, where should a word be weighed before being spoken?',
         },
         options: {
           hi: ['हाथ में', 'हृदय (हिये) के तराजू में', 'दुकान की तराजू में', 'किताबों में'],
@@ -866,9 +866,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Ati ka bhala na bolna, ati ki bhali na chup. Ati ka bhala na barsana, ati ki bhali na dhoop.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जीवन में किसी भी वस्तु की अति (अत्यधिकता) ठीक नहीं होती। न तो बहुत अधिक बोलना अच्छा है, और न ही सर्वथा चुप बैठना। जैसे बहुत अधिक वर्षा होने से बाढ़ आ जाती है और अत्यधिक कड़ी धूप से सब सूख जाता है, वैसे ही जीवन में संतुलन ही श्रेयस्कर है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जीवन में किसी भी वस्तु की अति (अत्यधिकता) ठीक नहीं होती। न तो बहुत अधिक बोलना अच्छा है, और न ही सर्वथा चुप बैठना। जैसे बहुत अधिक वर्षा होने से बाढ़ आ जाती है और अत्यधिक कड़ी धूप से सब सूख जाता है, वैसे ही जीवन में संतुलन ही श्रेयस्कर है।',
       pb: 'ਕਿਸੇ ਵੀ ਚੀਜ਼ ਦੀ ਅੱਤ ਚੰਗੀ ਨਹੀਂ ਹੁੰਦੀ। ਨਾ ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੋਲਣਾ ਚੰਗਾ ਹੈ ਅਤੇ ਨਾ ਹੀ ਹੱਦੋਂ ਵੱਧ ਚੁੱਪ। ਜਿਵੇਂ ਬਹੁਤੀ ਵਰਖਾ ਅਤੇ ਬਹੁਤੀ ਧੁੱਪ ਦੋਵੇਂ ਨੁਕਸਾਨਦੇਹ ਹਨ।',
-      en: 'Kabir Saheb teaches: Excess in anything is harmful. Too much speaking is bad, and excessive silence is also unwise. Just as torrential rain causes floods and extreme scorching sun withers life, moderation is the key to living.',
+      en: 'Satguru Kabir Saheb teaches: Excess in anything is harmful. Too much speaking is bad, and excessive silence is also unwise. Just as torrential rain causes floods and extreme scorching sun withers life, moderation is the key to living.',
     },
     wordMeanings: {
       hi: [
@@ -946,9 +946,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Nindak niyare rakhiye, aangan kuti chhavay. Bin pani, sabun bina, nirmal kare subhay.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जो हमारी निंदा या आलोचना करता है, उससे द्वेष करने के बजाय उसे अपने समीप ही रखना चाहिए। वह तो बिना साबुन और बिना पानी के हमारी कमियों को उजागर कर हमारे स्वभाव व आचरण को दर्पण की तरह स्वच्छ और निर्मल बना देता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਾਡੀ ਨਿੰਦਾ ਜਾਂ ਨੁਕਸ ਕੱਢਦਾ ਹੈ, ਉਸਨੂੰ ਆਪਣੇ ਨੇੜੇ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ। ਉਹ ਬਿਨਾਂ ਸਾਬਣ ਤੇ ਪਾਣੀ ਦੇ ਸਾਡੇ ਸੁਭਾਅ ਨੂੰ ਸ਼ੁੱਧ ਕਰ ਦਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb counsels: Keep your critic close to you, as if sheltering them in your courtyard. For without soap and water, their critique cleanses your nature and refines your character.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जो हमारी निंदा या आलोचना करता है, उससे द्वेष करने के बजाय उसे अपने समीप ही रखना चाहिए। वह तो बिना साबुन और बिना पानी के हमारी कमियों को उजागर कर हमारे स्वभाव व आचरण को दर्पण की तरह स्वच्छ और निर्मल बना देता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਸਾਡੀ ਨਿੰਦਾ ਜਾਂ ਨੁਕਸ ਕੱਢਦਾ ਹੈ, ਉਸਨੂੰ ਆਪਣੇ ਨੇੜੇ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ। ਉਹ ਬਿਨਾਂ ਸਾਬਣ ਤੇ ਪਾਣੀ ਦੇ ਸਾਡੇ ਸੁਭਾਅ ਨੂੰ ਸ਼ੁੱਧ ਕਰ ਦਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb counsels: Keep your critic close to you, as if sheltering them in your courtyard. For without soap and water, their critique cleanses your nature and refines your character.',
     },
     wordMeanings: {
       hi: [
@@ -1028,9 +1028,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Durlabh manush janam hai, deh na barambar. Taruwar jyon patta jhade, bahuri na lage daar.',
     bhavarth: {
-      hi: 'कबीर साहेब चेताते हैं कि यह मानव जीवन अत्यंत दुर्लभ और अमूल्य है। यह शरीर बार-बार प्राप्त नहीं होता। जिस प्रकार वृक्ष से एक बार पत्ता टूटकर गिर जाए तो वह दोबारा उस डाल पर नहीं लग सकता, उसी प्रकार यह अमूल्य अवसर बीत जाने पर पुनः हाथ नहीं आता। अतः सत्यनाम का सुमिरन कर उद्धार कर लो।',
+      hi: 'सतगुरु कबीर साहेब चेताते हैं कि यह मानव जीवन अत्यंत दुर्लभ और अमूल्य है। यह शरीर बार-बार प्राप्त नहीं होता। जिस प्रकार वृक्ष से एक बार पत्ता टूटकर गिर जाए तो वह दोबारा उस डाल पर नहीं लग सकता, उसी प्रकार यह अमूल्य अवसर बीत जाने पर पुनः हाथ नहीं आता। अतः सत्यनाम का सुमिरन कर उद्धार कर लो।',
       pb: 'ਮਨੁੱਖਾ ਜਨਮ ਬਹੁਤ ਕੀਮਤੀ ਹੈ ਅਤੇ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਦਾ। ਜਿਵੇਂ ਰੁੱਖ ਤੋਂ ਪੱਤਾ ਝੜ ਜਾਵੇ ਤਾਂ ਮੁੜ ਡਾਲੀ ਤੇ ਨਹੀਂ ਲੱਗਦਾ, ਓਵੇਂ ਹੀ ਇਹ ਜੀਵਨ ਵੀ ਲੰਘ ਜਾਂਦਾ ਹੈ। ਨਾਮ ਜਪ ਕੇ ਸਫਲ ਕਰੋ।',
-      en: 'Kabir Saheb warns: Precious and rare is this human birth; this vessel is not granted again and again. Just as a fallen leaf cannot reattach to the branch, lost moments of this life cannot be retrieved. Devote it to Truth.',
+      en: 'Satguru Kabir Saheb warns: Precious and rare is this human birth; this vessel is not granted again and again. Just as a fallen leaf cannot reattach to the branch, lost moments of this life cannot be retrieved. Devote it to Truth.',
     },
     wordMeanings: {
       hi: [
@@ -1075,9 +1075,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-13-1',
         question: {
-          hi: 'कबीर साहेब ने मानव शरीर के छूटने की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਨੁੱਖੀ ਦੇਹ ਦੇ ਛੁੱਟਣ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'Kabir Saheb compares the departure of the human body to what?',
+          hi: 'सतगुरु कबीर साहेब ने मानव शरीर के छूटने की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਨੁੱਖੀ ਦੇਹ ਦੇ ਛੁੱਟਣ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'Satguru Kabir Saheb compares the departure of the human body to what?',
         },
         options: {
           hi: ['नदी में बहती नाव से', 'वृक्ष से गिरे हुए पत्ते से', 'आकाश के बादल से', 'घर के दीपक से'],
@@ -1112,9 +1112,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Kabira khada bazaar mein, mange sabki khair. Na kahu se dosti, na kahu se bair.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि मैं इस संसार रूपी बाज़ार (भीड़भाड़ और मायावी जगत) के बीच खड़ा होकर सभी जीवों के कल्याण और कुशलता की प्रार्थना करता हूँ। मेरी न किसी से कोई निजी स्वार्थ की आसक्ति (दोस्ती) है और न ही किसी से कोई द्वेष या शत्रुता (बैर)। संत का चित्त सबके लिए निष्पक्ष और समदर्शी होता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਰੂਪੀ ਬਾਜ਼ਾਰ ਵਿੱਚ ਖੜ੍ਹੇ ਹੋ ਕੇ ਮੈਂ ਸਭ ਦਾ ਭਲਾ ਮੰਗਦਾ ਹਾਂ। ਮੇਰੀ ਨਾ ਕਿਸੇ ਨਾਲ ਨਿੱਜੀ ਮੋਹ-ਮਮਤਾ ਹੈ ਅਤੇ ਨਾ ਹੀ ਕਿਸੇ ਨਾਲ ਕੋਈ ਵੈਰ-ਵਿਰੋਧ।',
-      en: 'Kabir Saheb states: Standing in the bustling marketplace of the world, I pray for the well-being of all. Attached to none in personal craving, harboring hostility toward none in hatred; abiding in pure, universal goodwill.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि मैं इस संसार रूपी बाज़ार (भीड़भाड़ और मायावी जगत) के बीच खड़ा होकर सभी जीवों के कल्याण और कुशलता की प्रार्थना करता हूँ। मेरी न किसी से कोई निजी स्वार्थ की आसक्ति (दोस्ती) है और न ही किसी से कोई द्वेष या शत्रुता (बैर)। संत का चित्त सबके लिए निष्पक्ष और समदर्शी होता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੰਸਾਰ ਰੂਪੀ ਬਾਜ਼ਾਰ ਵਿੱਚ ਖੜ੍ਹੇ ਹੋ ਕੇ ਮੈਂ ਸਭ ਦਾ ਭਲਾ ਮੰਗਦਾ ਹਾਂ। ਮੇਰੀ ਨਾ ਕਿਸੇ ਨਾਲ ਨਿੱਜੀ ਮੋਹ-ਮਮਤਾ ਹੈ ਅਤੇ ਨਾ ਹੀ ਕਿਸੇ ਨਾਲ ਕੋਈ ਵੈਰ-ਵਿਰੋਧ।',
+      en: 'Satguru Kabir Saheb proclaims: Standing in the bustling marketplace of the world, I pray for the well-being of all. Attached to none in personal craving, harboring hostility toward none in hatred; abiding in pure, universal goodwill.',
     },
     wordMeanings: {
       hi: [
@@ -1157,9 +1157,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-14-1',
         question: {
-          hi: 'कबीर साहेब बाज़ार में खड़े होकर किसके लिए खैर (भलाई) मांगते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਬਾਜ਼ਾਰ ਵਿੱਚ ਖੜ੍ਹ ਕੇ ਕਿਸਦੀ ਖੈਰ ਮੰਗਦੇ ਹਨ?',
-          en: 'Standing in the marketplace, for whom does Kabir Saheb pray for well-being?',
+          hi: 'सतगुरु कबीर साहेब बाज़ार में खड़े होकर किसके लिए खैर (भलाई) मांगते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਬਾਜ਼ਾਰ ਵਿੱਚ ਖੜ੍ਹ ਕੇ ਕਿਸਦੀ ਖੈਰ ਮੰਗਦੇ ਹਨ?',
+          en: 'Standing in the marketplace, for whom does Satguru Kabir Saheb pray for well-being?',
         },
         options: {
           hi: ['केवल अपने मित्रों के लिए', 'सबकी (समस्त संसार के जीवों की)', 'केवल अपने परिवार के लिए', 'केवल धनवानों के लिए'],
@@ -1194,9 +1194,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Hindu kahe mohi Ram piyara, Turk kahe Rehmana. Aapas mein dou ladi ladi muye, maram na kou jana.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि हिन्दू कहते हैं कि मुझे राम प्रिय हैं और मुस्लिम कहते हैं कि मुझे रहमान प्यारा है। इसी नाम और संप्रदाय के बाह्य भेद पर दोनों आपस में लड़-लड़कर नष्ट हो गए, परंतु परमात्मा के उस वास्तविक सत्य मर्म को किसी ने नहीं जाना जो घट-घट में एक ही परम चेतना के रूप में व्याप्त है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਨਾਵਾਂ ਅਤੇ ਧਰਮਾਂ ਦੇ ਭੇਦਭਾਵ ਤੇ ਲੋਕ ਲੜ-ਮਰਦੇ ਹਨ, ਪਰ ਪ੍ਰਮਾਤਮਾ ਦੇ ਅਸਲ ਭੇਤ ਨੂੰ ਕੋਈ ਨਹੀਂ ਸਮਝਦਾ ਜੋ ਸਭ ਵਿੱਚ ਇਕੋ ਜਿਹਾ ਵਸਿਆ ਹੈ।',
-      en: 'Kabir Saheb reveals: The Hindu claims love for Ram, the Muslim proclaims devotion to Rehman. Bound by dogmatic identities, they argue and perish, yet neither grasps the underlying mystical Truth that the Divine is One in all hearts.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि हिन्दू कहते हैं कि मुझे राम प्रिय हैं और मुस्लिम कहते हैं कि मुझे रहमान प्यारा है। इसी नाम और संप्रदाय के बाह्य भेद पर दोनों आपस में लड़-लड़कर नष्ट हो गए, परंतु परमात्मा के उस वास्तविक सत्य मर्म को किसी ने नहीं जाना जो घट-घट में एक ही परम चेतना के रूप में व्याप्त है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਨਾਵਾਂ ਅਤੇ ਧਰਮਾਂ ਦੇ ਭੇਦਭਾਵ ਤੇ ਲੋਕ ਲੜ-ਮਰਦੇ ਹਨ, ਪਰ ਪ੍ਰਮਾਤਮਾ ਦੇ ਅਸਲ ਭੇਤ ਨੂੰ ਕੋਈ ਨਹੀਂ ਸਮਝਦਾ ਜੋ ਸਭ ਵਿੱਚ ਇਕੋ ਜਿਹਾ ਵਸਿਆ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals: The Hindu claims love for Ram, the Muslim proclaims devotion to Rehman. Bound by dogmatic identities, they argue and perish, yet neither grasps the underlying mystical Truth that the Divine is One in all hearts.',
     },
     wordMeanings: {
       hi: [
@@ -1237,9 +1237,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-15-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार लोग किसके कारण आपस में लड़ते हैं?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਲੋਕ ਕਿਸ ਕਾਰਨ ਆਪਸ ਵਿੱਚ ਲੜਦੇ ਹਨ?',
-          en: 'According to Kabir Saheb, what causes people to fight?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार लोग किसके कारण आपस में लड़ते हैं?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਲੋਕ ਕਿਸ ਕਾਰਨ ਆਪਸ ਵਿੱਚ ਲੜਦੇ ਹਨ?',
+          en: 'According to Satguru Kabir Saheb, what causes people to fight?',
         },
         options: {
           hi: ['सत्य को जानकर', 'बाह्य नामों और संप्रदायों के अज्ञान के कारण', 'प्रेम के कारण', 'ज्ञान के कारण'],
@@ -1274,9 +1274,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Kahat sunat sab din gaye, urjhi na surjhya man. Kahi Kabir chetya nahi, ajahu so pehla din.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि केवल बातें करते और प्रवचन सुनते-सुनते पूरा जीवन बीत गया, परंतु यह मन सांसारिक उलझनों में ही फंसा रहा, कभी सुलझ न सका। मनुष्य ने कभी अंतरात्मा में जागकर आत्म-चिंतन नहीं किया; आज भी उसकी चेतना उसी अज्ञान के पहले दिन की तरह सोई हुई है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि केवल बातें करते और प्रवचन सुनते-सुनते पूरा जीवन बीत गया, परंतु यह मन सांसारिक उलझनों में ही फंसा रहा, कभी सुलझ न सका। मनुष्य ने कभी अंतरात्मा में जागकर आत्म-चिंतन नहीं किया; आज भी उसकी चेतना उसी अज्ञान के पहले दिन की तरह सोई हुई है।',
       pb: 'ਸੁਣਦੇ-ਕਹਿੰਦੇ ਸਾਰੀ ਉਮਰ ਨਿਕਲ ਗਈ ਪਰ ਮਨ ਦੀਆਂ ਉਲਝਣਾਂ ਨਾ ਸੁਲਝੀਆਂ। ਜੇਕਰ ਹੁਣ ਵੀ ਨਾ ਜਾਗਿਆ ਤਾਂ ਹਾਲਤ ਪਹਿਲੇ ਦਿਨ ਵਰਗੀ ਹੀ ਰਹੇਗੀ।',
-      en: 'Kabir Saheb laments: Days and years passed merely talking and listening to spiritual discourse, yet the mind remained entangled and unresolved. You never truly awakened from within; even today, your awareness remains as dormant as on day one.',
+      en: 'Satguru Kabir Saheb laments: Days and years passed merely talking and listening to spiritual discourse, yet the mind remained entangled and unresolved. You never truly awakened from within; even today, your awareness remains as dormant as on day one.',
     },
     wordMeanings: {
       hi: [
@@ -1320,9 +1320,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-16-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार जीवन कैसे बीत गया पर क्या नहीं सुलझा?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਰੀ ਉਮਰ ਲੰਘ ਗਈ ਪਰ ਕੀ ਨਹੀਂ ਸੁਲਝਿਆ?',
-          en: 'According to Kabir Saheb, what remained unresolved despite a lifetime of talk?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जीवन कैसे बीत गया पर क्या नहीं सुलझा?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸਾਰੀ ਉਮਰ ਲੰਘ ਗਈ ਪਰ ਕੀ ਨਹੀਂ ਸੁਲਝਿਆ?',
+          en: 'According to Satguru Kabir Saheb, what remained unresolved despite a lifetime of talk?',
         },
         options: {
           hi: ['संसार की संपत्ति', 'मन की उलझन (उरझि न सुरझ्या मन)', 'घर का काम', 'व्यापार'],
@@ -1357,9 +1357,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Kabir lahari samand ki, moti bikhre aayi. Bagula bhed na janayi, hansa chuni chuni khayi.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जब समुद्र की लहरें उठती हैं, तो किनारे पर अनमोल मोती बिखर जाते हैं। परंतु बगुला (अज्ञानी जीव) मोतियों के मूल्य और भेद को नहीं पहचानता और केवल मछलियों के पीछे भागता है, जबकि हंस (विवेकशील साधक) चुन-चुनकर केवल उन अमूल्य मोतियों को ही ग्रहण करता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब समुद्र की लहरें उठती हैं, तो किनारे पर अनमोल मोती बिखर जाते हैं। परंतु बगुला (अज्ञानी जीव) मोतियों के मूल्य और भेद को नहीं पहचानता और केवल मछलियों के पीछे भागता है, जबकि हंस (विवेकशील साधक) चुन-चुनकर केवल उन अमूल्य मोतियों को ही ग्रहण करता है।',
       pb: 'ਸਮੁੰਦਰ ਦੀਆਂ ਲਹਿਰਾਂ ਮੋਤੀ ਲੈ ਕੇ ਆਉਂਦੀਆਂ ਹਨ। ਬਗਲਾ ਮੋਤੀਆਂ ਦੀ ਕਦਰ ਨਹੀਂ ਜਾਣਦਾ, ਪਰ ਹੰਸ ਚੁਣ-ਚੁਣ ਕੇ ਮੋਤੀ ਖਾਂਦਾ ਹੈ। ਗਿਆਨੀ ਹੀ ਸੱਚ ਦੀ ਕਦਰ ਜਾਣਦਾ ਹੈ।',
-      en: 'Kabir Saheb illustrates: When ocean waves break upon the shore, precious pearls are scattered abroad. The crane, blind to their worth, seeks only fish; while the noble swan selectively gathers the precious pearls of Truth.',
+      en: 'Satguru Kabir Saheb illustrates: When ocean waves break upon the shore, precious pearls are scattered abroad. The crane, blind to their worth, seeks only fish; while the noble swan selectively gathers the precious pearls of Truth.',
     },
     wordMeanings: {
       hi: [
@@ -1439,9 +1439,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Jab gun ko gahak mile, tab gun lakh bikayi. Jab gun ko gahak nahi, tab kaudi badle jayi.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि जब सद्गुण और ज्ञान को पहचानने वाला सच्चा पारखी (ग्राहक) मिल जाता है, तब उस गुण का मूल्य लाखों में आंका जाता है। परंतु जहां गुणों का कोई कद्रदान नहीं होता, वहां उत्तम से उत्तम ज्ञान भी कौड़ियों के भाव व्यर्थ चला जाता है। अतः ज्ञान उन्हीं को दें जो उसकी कद्र करें।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब सद्गुण और ज्ञान को पहचानने वाला सच्चा पारखी (ग्राहक) मिल जाता है, तब उस गुण का मूल्य लाखों में आंका जाता है। परंतु जहां गुणों का कोई कद्रदान नहीं होता, वहां उत्तम से उत्तम ज्ञान भी कौड़ियों के भाव व्यर्थ चला जाता है। अतः ज्ञान उन्हीं को दें जो उसकी कद्र करें।',
       pb: 'ਜਦੋਂ ਗੁਣਾਂ ਦੀ ਕਦਰ ਕਰਨ ਵਾਲਾ ਮਿਲਦਾ ਹੈ ਤਾਂ ਗੁਣ ਲੱਖਾਂ ਵਿੱਚ ਵਿਕਦਾ ਹੈ। ਪਰ ਜਿੱਥੇ ਕਦਰ ਨਾ ਹੋਵੇ, ਉੱਥੇ ਹੀਰੇ ਵੀ ਕੌਡੀਆਂ ਦੇ ਭਾਅ ਰੁਲਦੇ ਹਨ। ਸਤਿਸੰਗੀਆਂ ਨਾਲ ਹੀ ਗਿਆਨ ਦੀ ਸਾਂਝ ਪਾਓ।',
-      en: 'Kabir Saheb teaches: When virtues and wisdom find a true connoisseur, their worth is valued in millions. But where there is no appreciative understanding, even the greatest jewel of wisdom is dismissed as worthless chaff.',
+      en: 'Satguru Kabir Saheb teaches: When virtues and wisdom find a true connoisseur, their worth is valued in millions. But where there is no appreciative understanding, even the greatest jewel of wisdom is dismissed as worthless chaff.',
     },
     wordMeanings: {
       hi: [
@@ -1520,9 +1520,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Kabir kaha garbiyo, kaal gahe kar kes. Na jane kahan marisi, kai ghar kai pardes.',
     bhavarth: {
-      hi: 'कबीर साहेब चेतावनी देते हुए कहते हैं कि हे मानव! तू किस बात का झूठा घमंड करता है? मृत्यु (काल) ने अपने हाथों में तेरे केश पकड़ रखे हैं। कोई नहीं जानता कि वह तुझे कब और कहाँ समाप्त कर देगा — अपने घर में अथवा किसी परदेस में। अतः अभिमान त्यागकर हर क्षण सत्यनाम का सिमरन कर।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਮਨੁੱਖ! ਤੂੰ ਕਾਹਦਾ ਹੰਕਾਰ ਕਰਦਾ ਹੈਂ? ਮੌਤ ਨੇ ਤੈਨੂੰ ਵਾਲਾਂ ਤੋਂ ਫੜਿਆ ਹੋਇਆ ਹੈ। ਪਤਾ ਨਹੀਂ ਕਦੋਂ ਤੇ ਕਿੱਥੇ ਜੀਵਨ ਦਾ ਅੰਤ ਹੋ ਜਾਵੇ। ਇਸ ਲਈ ਹਉਮੈ ਛੱਡ ਕੇ ਨਾਮ ਜਪੋ।',
-      en: 'Kabir Saheb cautions: Why do you indulge in hollow pride, O mortal? Death holds you firmly by the hair. None knows when or where it will strike — whether at home or in a foreign land. Renounce your ego and remember the Eternal.',
+      hi: 'सतगुरु कबीर साहेब चेतावनी देते हुए कहते हैं कि हे मानव! तू किस बात का झूठा घमंड करता है? मृत्यु (काल) ने अपने हाथों में तेरे केश पकड़ रखे हैं। कोई नहीं जानता कि वह तुझे कब और कहाँ समाप्त कर देगा — अपने घर में अथवा किसी परदेस में। अतः अभिमान त्यागकर हर क्षण सत्यनाम का सिमरन कर।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਮਨੁੱਖ! ਤੂੰ ਕਾਹਦਾ ਹੰਕਾਰ ਕਰਦਾ ਹੈਂ? ਮੌਤ ਨੇ ਤੈਨੂੰ ਵਾਲਾਂ ਤੋਂ ਫੜਿਆ ਹੋਇਆ ਹੈ। ਪਤਾ ਨਹੀਂ ਕਦੋਂ ਤੇ ਕਿੱਥੇ ਜੀਵਨ ਦਾ ਅੰਤ ਹੋ ਜਾਵੇ। ਇਸ ਲਈ ਹਉਮੈ ਛੱਡ ਕੇ ਨਾਮ ਜਪੋ।',
+      en: 'Satguru Kabir Saheb cautions: Why do you indulge in hollow pride, O mortal? Death holds you firmly by the hair. None knows when or where it will strike — whether at home or in a foreign land. Renounce your ego and remember the Eternal.',
     },
     wordMeanings: {
       hi: [
@@ -1568,9 +1568,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-19-1',
         question: {
-          hi: 'कबीर साहेब के अनुसार काल ने मनुष्य को कहाँ से पकड़ रखा है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਾਲ ਨੇ ਮਨੁੱਖ ਨੂੰ ਕਿੱਥੋਂ ਫੜਿਆ ਹੋਇਆ ਹੈ?',
-          en: 'According to Kabir Saheb, where does Death (Kaal) hold the mortal?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार काल ने मनुष्य को कहाँ से पकड़ रखा है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਕਾਲ ਨੇ ਮਨੁੱਖ ਨੂੰ ਕਿੱਥੋਂ ਫੜਿਆ ਹੋਇਆ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, where does Death (Kaal) hold the mortal?',
         },
         options: {
           hi: ['पैरों से', 'हाथों से बाल (केस) पकड़ रखे हैं', 'कपड़ों से', 'गले से'],
@@ -1605,9 +1605,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     transliteration: 'Pani kera budbuda, as manus ki jaat. Ek dina chhip jayega, jyon tara parbhat.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि यह मानव शरीर पानी के बुलबुले के समान अत्यंत क्षणभंगुर और नश्वर है। जिस प्रकार प्रातःकाल होते ही आकाश के तारे सूर्य के प्रकाश में विलीन हो जाते हैं, उसी प्रकार एक दिन यह नश्वर देह भी इस संसार से ओझल हो जाएगी। अतः क्षणभंगुर देह के मोह में न पड़कर शाश्वत आत्म-तत्व को जानो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖੀ ਦੇਹ ਪਾਣੀ ਦੇ ਬੁਲਬੁਲੇ ਵਾਂਗ ਨਾਸ਼ਵਾਨ ਹੈ। ਜਿਵੇਂ ਸਵੇਰ ਹੁੰਦਿਆਂ ਤਾਰੇ ਅਲੋਪ ਹੋ ਜਾਂਦੇ ਹਨ, ਓਵੇਂ ਹੀ ਇਹ ਸਰੀਰ ਵੀ ਇੱਕ ਦਿਨ ਚਲਾ ਜਾਵੇਗਾ। ਸੱਚੇ ਨਾਮ ਨਾਲ ਜੁੜੋ।',
-      en: 'Kabir Saheb reveals: The human body is as fragile as a water bubble on the river. Just as morning stars vanish into the rising dawn, so too will this mortal frame dissolve one day. Realize the immortal Soul within.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह मानव शरीर पानी के बुलबुले के समान अत्यंत क्षणभंगुर और नश्वर है। जिस प्रकार प्रातःकाल होते ही आकाश के तारे सूर्य के प्रकाश में विलीन हो जाते हैं, उसी प्रकार एक दिन यह नश्वर देह भी इस संसार से ओझल हो जाएगी। अतः क्षणभंगुर देह के मोह में न पड़कर शाश्वत आत्म-तत्व को जानो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖੀ ਦੇਹ ਪਾਣੀ ਦੇ ਬੁਲਬੁਲੇ ਵਾਂਗ ਨਾਸ਼ਵਾਨ ਹੈ। ਜਿਵੇਂ ਸਵੇਰ ਹੁੰਦਿਆਂ ਤਾਰੇ ਅਲੋਪ ਹੋ ਜਾਂਦੇ ਹਨ, ਓਵੇਂ ਹੀ ਇਹ ਸਰੀਰ ਵੀ ਇੱਕ ਦਿਨ ਚਲਾ ਜਾਵੇਗਾ। ਸੱਚੇ ਨਾਮ ਨਾਲ ਜੁੜੋ।',
+      en: 'Satguru Kabir Saheb reveals: The human body is as fragile as a water bubble on the river. Just as morning stars vanish into the rising dawn, so too will this mortal frame dissolve one day. Realize the immortal Soul within.',
     },
     wordMeanings: {
       hi: [
@@ -1637,7 +1637,7 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे सतगुरु कबीर साहेब! इस नश्वर संसार के मोह से मुझे मुक्त कीजिए और अपने पावन सत्यनाम में समाहित कर लीजिए। साहेब बंदगी साहेब!',
-      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ! ਮੈਨੂੰ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਆਪਣੇ ਸੱਚੇ ਨਾਮ ਵਿੱਚ ਸਮਾ ਲਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
+      pb: 'ਹੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ! ਮੈਨੂੰ ਮੋਹ-ਮਾਇਆ ਤੋਂ ਮੁਕਤ ਕਰਕੇ ਆਪਣੇ ਸੱਚੇ ਨਾਮ ਵਿੱਚ ਸਮਾ ਲਓ। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ!',
       en: 'O Satguru Kabir Saheb! Liberate me from attachment to this transient world, merging my consciousness in eternal Satyanaam. Saheb Bandagi Saheb!',
     },
     contextNote: {
@@ -1649,9 +1649,9 @@ export const SAKHIS_BATCH_1: Sakhi[] = [
       {
         id: 'q-b1-20-1',
         question: {
-          hi: 'कबीर साहेब ने मनुष्य के शरीर की तुलना किससे की है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਨੁੱਖ ਦੇ ਸ਼ਰੀਰ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
-          en: 'To what does Kabir Saheb compare the physical human body?',
+          hi: 'सतगुरु कबीर साहेब ने मनुष्य के शरीर की तुलना किससे की है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨੇ ਮਨੁੱਖ ਦੇ ਸ਼ਰੀਰ ਦੀ ਤੁਲਨਾ ਕਿਸ ਨਾਲ ਕੀਤੀ ਹੈ?',
+          en: 'To what does Satguru Kabir Saheb compare the physical human body?',
         },
         options: {
           hi: ['लोहे के खंभे से', 'पानी के बुलबुले (बुदबुदा) से', 'पत्थर की चट्टान से', 'स्वर्ण के पात्र से'],

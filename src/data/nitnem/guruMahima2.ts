@@ -15,7 +15,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
     en: "The Glory of the Master (Part 2)"
   },
   subtitle: {
-    hi: "।। सत्यनाम ।। सद्गुरु लक्षण, गुरु-सेवा विधि एवं महिमा फल",
+    hi: "।। सत्यनाम ।। सतगुरु लक्षण, गुरु-सेवा विधि एवं महिमा फल",
     pb: "॥ ਸਤਯਨਾਮ ॥ ਸਤਿਗੁਰੂ ਲੱਛਣ, ਗੁਰੂ-ਸੇਵਾ ਵਿਧੀ ਅਤੇ ਮਹਿਮਾ ਫਲ",
     en: "Divine Characteristics of Satguru, Methods of Devotion and Spiritual Merit"
   },
@@ -32,7 +32,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Bando charan saroj guru, mud mangal aagaar |", "Jehi sevat nar hot hai, bhavasagar ke paar ||"]
       },
       bhavarth: {
-        hi: "आनंद और मंगल के धाम सद्गुरु के चरण-कमलों की मैं वंदना करता हूँ, जिनकी सेवा से जीव इस संसार-सागर से सहज ही पार हो जाता है।",
+        hi: "आनंद और मंगल के धाम सतगुरु के चरण-कमलों की मैं वंदना करता हूँ, जिनकी सेवा से जीव इस संसार-सागर से सहज ही पार हो जाता है।",
         pb: "ਅਨੰਦ ਅਤੇ ਮੰਗਲ ਦੇ ਸਰੋਤ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨ-ਕਮਲਾਂ ਦੀ ਵੰਦਨਾ ਕਰਦਾ ਹਾਂ, ਜਿਨ੍ਹਾਂ ਦੀ ਸੇਵਾ ਨਾਲ ਜੀਵ ਭਵਸਾਗਰ ਤੋਂ ਪਾਰ ਉਤਰ ਜਾਂਦਾ ਹੈ।",
         en: "I bow to the lotus feet of the Master, the abode of bliss and auspiciousness, by whose divine service one crosses the ocean of worldly existence."
       }
@@ -116,7 +116,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Nigamaagam rahasya ke gyaata | Nisprih hit anushasan daata ||", "Daya, kshama, santosh sanyukta | Param vichaarvaan bhav mukta ||"]
       },
       bhavarth: {
-        hi: "सच्चे सद्गुरु वे हैं जो वेदों-शास्त्रों के गूढ़ रहस्य के ज्ञाता, निष्काम, जीवों के परम हितैषी, दया, क्षमा, संतोष से परिपूर्ण और स्वयं संसार से मुक्त हों।",
+        hi: "सच्चे सतगुरु वे हैं जो वेदों-शास्त्रों के गूढ़ रहस्य के ज्ञाता, निष्काम, जीवों के परम हितैषी, दया, क्षमा, संतोष से परिपूर्ण और स्वयं संसार से मुक्त हों।",
         pb: "ਸੱਚੇ ਗੁਰੂ ਸ਼ਾਸਤਰਾਂ ਦੇ ਭੇਦੀ, ਨਿਸ਼ਕਾਮ, ਦਿਆਲੂ, ਸੰਤੋਖੀ ਅਤੇ ਸੰਸਾਰ ਬੰਧਨਾਂ ਤੋਂ ਮੁਕਤ ਹੁੰਦੇ ਹਨ।",
         en: "The true Master is the knower of profound scriptural mysteries, desireless, disciplined, filled with compassion, forgiveness, contentment, and liberated."
       }
@@ -158,7 +158,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Jinke swapnehu krodh ur, kabahu na hot pravesh |", "Madhur vachan kahi preetiyut, det sabahin updesh ||"]
       },
       bhavarth: {
-        hi: "जिनके हृदय में स्वप्न में भी कभी क्रोध प्रवेश नहीं करता, और जो सदा प्रेमपूर्वक मधुर वचनों से सबको सत्य का उपदेश देते हैं, वे ही सच्चे सद्गुरु हैं।",
+        hi: "जिनके हृदय में स्वप्न में भी कभी क्रोध प्रवेश नहीं करता, और जो सदा प्रेमपूर्वक मधुर वचनों से सबको सत्य का उपदेश देते हैं, वे ही सच्चे सतगुरु हैं।",
         pb: "ਜਿਨ੍ਹਾਂ ਦੇ ਮਨ ਵਿਚ ਸੁਪਨੇ ਵਿਚ ਵੀ ਕ੍ਰੋਧ ਨਹੀਂ ਆਉਂਦਾ ਅਤੇ ਜੋ ਪਿਆਰ ਨਾਲ ਮਿੱਠੇ ਬਚਨਾਂ ਰਾਹੀਂ ਉਪਦੇਸ਼ ਦਿੰਦੇ ਹਨ।",
         en: "In whose heart anger never enters even in dreams, and who impart divine wisdom to all through sweet and loving speech."
       }
@@ -200,7 +200,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Tehi guru ki sharnaagati leeje | Tan, man, dhan sab arpan keeje ||", "Asan basan vaahan aru bhooshan | Sut daara nij parichaarak gan ||"]
       },
       bhavarth: {
-        hi: "ऐसे सद्गुरु की शरणागति लेकर अपना तन, मन और धन सब कुछ उन्हें समर्पित कर देना चाहिए। भोजन, वस्त्र, वाहन, आभूषण और परिवार सहित सर्वस्व गुरु-चरणों में अर्पित भाव से रखे।",
+        hi: "ऐसे सतगुरु की शरणागति लेकर अपना तन, मन और धन सब कुछ उन्हें समर्पित कर देना चाहिए। भोजन, वस्त्र, वाहन, आभूषण और परिवार सहित सर्वस्व गुरु-चरणों में अर्पित भाव से रखे।",
         pb: "ਅਜਿਹੇ ਸਤਿਗੁਰੂ ਦੀ ਸ਼ਰਨ ਲੈ ਕੇ ਤਨ, ਮਨ, ਧਨ ਸਭ ਕੁਝ ਅਰਪਣ ਕਰ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ।",
         en: "Take complete refuge in such a Master, surrendering body, mind, and wealth—viewing all belongings and family as consecrated in His grace."
       }
@@ -536,7 +536,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Jo guru ko taji aurahi dhyaave | Hoye daridree ati dukh paave ||", "Bin darshan nahin guru ke rahiye | Yeh dridh niyam hriday mein gahiye ||"]
       },
       bhavarth: {
-        hi: "जो सद्गुरु को त्यागकर दूसरों का ध्यान करता है, वह दरिद्र और दुखी होता है। गुरु के दर्शन के बिना न रहें—यह दृढ़ संकल्प अपने हृदय में धारण करना चाहिए।",
+        hi: "जो सतगुरु को त्यागकर दूसरों का ध्यान करता है, वह दरिद्र और दुखी होता है। गुरु के दर्शन के बिना न रहें—यह दृढ़ संकल्प अपने हृदय में धारण करना चाहिए।",
         pb: "ਗੁਰੂ ਨੂੰ ਛੱਡ ਕੇ ਹੋਰਨਾਂ ਦਾ ਧਿਆਨ ਕਰਨ ਵਾਲਾ ਦੁਖੀ ਹੁੰਦਾ ਹੈ। ਗੁਰੂ ਦੇ ਦਰਸ਼ਨ ਦਾ ਪੱਕਾ ਨੇਮ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ।",
         en: "Forsaking the Master to run after others brings grief and poverty. Cherish a steadfast resolve never to abide without the Master's holy vision."
       }
@@ -578,7 +578,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Namra bhaav ati preetiyut, charan kamal shir naay |", "Jo satguru aagya kare, leeje sheesh chadhaay ||"]
       },
       bhavarth: {
-        hi: "परम प्रेम और विनम्रता से गुरु के चरण-कमलों में सिर झुकाए, और सद्गुरु जो भी आज्ञा दें, उसे सहर्ष अपने मस्तक पर स्वीकार करे।",
+        hi: "परम प्रेम और विनम्रता से गुरु के चरण-कमलों में सिर झुकाए, और सतगुरु जो भी आज्ञा दें, उसे सहर्ष अपने मस्तक पर स्वीकार करे।",
         pb: "ਪਿਆਰ ਅਤੇ ਨਿਮਰਤਾ ਨਾਲ ਗੁਰੂ ਚਰਨਾਂ ਵਿਚ ਸੀਸ ਝੁਕਾਓ ਅਤੇ ਸਤਿਗੁਰੂ ਦਾ ਹੁਕਮ ਸਿਰ ਮੱਥੇ ਪ੍ਰਵਾਨ ਕਰੋ।",
         en: "With deep humility and love, bow your head to the lotus feet; whatever command the Master gives, accept it with complete reverence."
       }
@@ -676,7 +676,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Guru ki mahima amit hai, kahi na sake shruti shesh |", "Jinki kripa kataaksh se, rankahu hot naresh ||"]
       },
       bhavarth: {
-        hi: "सद्गुरु की महिमा असीम है, जिसे वेद और शेषनाग भी पूरी तरह नहीं कह सकते; जिनकी मात्र एक कृपादृष्टि से रंक भी राजा बन जाता है।",
+        hi: "सतगुरु की महिमा असीम है, जिसे वेद और शेषनाग भी पूरी तरह नहीं कह सकते; जिनकी मात्र एक कृपादृष्टि से रंक भी राजा बन जाता है।",
         pb: "ਗੁਰੂ ਦੀ ਮਹਿਮਾ ਅਪਾਰ ਹੈ ਜਿਸਨੂੰ ਵੇਦ ਵੀ ਨਹੀਂ ਕਹਿ ਸਕਦੇ; ਜਿਨ੍ਹਾਂ ਦੀ ਇਕ ਕਿਰਪਾ-ਦ੍ਰਿਸ਼ਟੀ ਨਾਲ ਕੰਗਾਲ ਵੀ ਰਾਜਾ ਬਣ ਜਾਂਦਾ ਹੈ।",
         en: "The Master's glory is limitless, beyond the description of Vedas and Sheshanaga; by His mere glance of grace, a pauper turns into a king."
       }
@@ -690,7 +690,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["As prabhaav hai doosar ke hima | Jas kachhu hai satguru ki mahima ||", "Sarva siddhiprad ati vardayak | Dukh sankat mein param sahaayak ||"]
       },
       bhavarth: {
-        hi: "सद्गुरु की महिमा जैसा अलौकिक प्रभाव अन्य किसी का नहीं है। यह समस्त सिद्धियों को देने वाली, वरदायक और संकट के समय परम सहायक है।",
+        hi: "सतगुरु की महिमा जैसा अलौकिक प्रभाव अन्य किसी का नहीं है। यह समस्त सिद्धियों को देने वाली, वरदायक और संकट के समय परम सहायक है।",
         pb: "ਸਤਿਗੁਰੂ ਦੀ ਮਹਿਮਾ ਸਾਰੀਆਂ ਸਿੱਧੀਆਂ ਦੇਣ ਵਾਲੀ ਅਤੇ ਦੁੱਖਾਂ-ਕਲੇਸ਼ਾਂ ਵਿਚ ਸਭ ਤੋਂ ਵੱਡੀ ਸਹਾਇਕ ਹੈ।",
         en: "No influence equals the sublime glory of the Satguru. It confers all spiritual accomplishments and stands as supreme help in times of distress."
       }
@@ -774,7 +774,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
         en: ["Bhakti prabhaav mitee sakal, Dharmdaas ki peer |", "Koti janam ke punya se, Satguru mile Kabir ||"]
       },
       bhavarth: {
-        hi: "गुरु-भक्ति के प्रभाव से धनी धर्मदास जी के जन्म-जन्मांतरों के सारे कष्ट मिट गए; करोड़ों जन्मों के संचित पुण्यों के फलस्वरूप उन्हें सद्गुरु कबीर साहेब की प्राप्ति हुई।",
+        hi: "गुरु-भक्ति के प्रभाव से धनी धर्मदास जी के जन्म-जन्मांतरों के सारे कष्ट मिट गए; करोड़ों जन्मों के संचित पुण्यों के फलस्वरूप उन्हें सतगुरु कबीर साहेब की प्राप्ति हुई।",
         pb: "ਗੁਰੂ ਭਗਤੀ ਨਾਲ ਧਰਮਦਾਸ ਜੀ ਦੇ ਸਾਰੇ ਦੁੱਖ ਮਿਟ ਗਏ; ਕਰੋੜਾਂ ਜਨਮਾਂ ਦੇ ਪੁੰਨਾਂ ਨਾਲ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਮਿਲੇ।",
         en: "Through the grace of devotion, all sorrows of Dharamdas were dissolved; by the accumulated virtues of millions of lifetimes, Satguru Kabir was attained."
       }
@@ -789,7 +789,7 @@ export const GURU_MAHIMA_2_SECTION: NitnemSection = {
       },
       bhavarth: {
         hi: "श्री गुरु महिमा का द्वितीय भाग यहाँ संपूर्ण होता है। ।। साहेब बंदगी साहेब।।",
-        pb: "ਸ਼੍ਰੀ ਗੁਰੂ ਮਹਿਮਾ ਦਾ ਦੂਜਾ ਭਾਗ ਇੱਥੇ ਸੰਪੂਰਨ ਹੁੰਦਾ ਹੈ। ।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।।",
+        pb: "ਸ਼੍ਰੀ ਗੁਰੂ ਮਹਿਮਾ ਦਾ ਦੂਜਾ ਭਾਗ ਇੱਥੇ ਸੰਪੂਰਨ ਹੁੰਦਾ ਹੈ। ।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।।",
         en: "Sri Guru Mahima (Part 2) concludes here in sacred completeness. || Saheb Bandgi Saheb ||"
       }
     }

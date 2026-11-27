@@ -352,7 +352,7 @@ export const ULATVASI_BATCH_131_TO_140: UlatvasiQuestion[] = [
     mysticalUnveiling: {
       headline: { hi: 'परा-वाणी एवं अनहद नाम का ज्ञान', pb: 'ਪਰਾ-ਵਾਣੀ ਅਤੇ ਅੰਦਰੂਨੀ ਸ਼ਬਦ', en: 'Transcendental Vani and Inner Unstruck Word' },
       deepMeaning: {
-        hi: 'कबीर साहेब यहाँ परा-वाणी और अनहद शब्द की बात कर रहे हैं। जब साधक बाहरी जीभ और मुँह को बंद करके मौन होता है, तो अंतरात्मा परमात्मा के उस आदि नाम का उच्चारण स्वतः करने लगती है जो वेदों का भी मूल है।',
+        hi: 'सतगुरु कबीर साहेब यहाँ परा-वाणी और अनहद शब्द की बात कर रहे हैं। जब साधक बाहरी जीभ और मुँह को बंद करके मौन होता है, तो अंतरात्मा परमात्मा के उस आदि नाम का उच्चारण स्वतः करने लगती है जो वेदों का भी मूल है।',
         pb: 'ਮੌਨ ਹੋ ਕੇ ਮਨੁੱਖ ਦੇ ਅੰਦਰ ਪ੍ਰਮਾਤਮਾ ਦਾ ਨਾਮ ਆਪਣੇ-ਆਪ ਗੂੰਜਣ ਲੱਗਦਾ ਹੈ।',
         en: 'True wisdom is uttered without fleshly tongue through the inner Unstruck Word. Silent consciousness realizes the source of all sacred scriptures.'
       },
@@ -424,8 +424,8 @@ export const ULATVASI_BATCH_131_TO_140: UlatvasiQuestion[] = [
     realmTitle: { hi: 'अंतर्योग (Yogic)', pb: 'ਅੰਤਰਯੋਗ (Yogic)', en: 'Inner Yogic' },
     title: { hi: '139. चूहे ने लोहे की जंजीर तोड़ी', pb: '139. ਚੂਹੇ ਨੇ ਲੋਹੇ ਦੀ ਜ਼ੰਜੀਰ ਤੋੜੀ', en: '139. Mouse Broke the Iron Chain' },
     verse: {
-      hi: '"मूस ने लोहे की सांकल तोड़ी, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह सद्गुरु का ग्यान॥"',
-      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਸਾਂਕਲ ਤੋੜੀ, ਹਸਤੀ ਖੜਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਦਗੁਰੂ ਕਾ ਗ੍ਯਾਨ॥"',
+      hi: '"मूस ने लोहे की सांकल तोड़ी, हस्ती खड़ा हैरान। कहै कबीर सुनो भाई संतो, यह सतगुरु का ग्यान॥"',
+      pb: '"ਮੂਸ ਨੇ ਲੋਹੇ ਕੀ ਸਾਂਕਲ ਤੋੜੀ, ਹਸਤੀ ਖੜਾ ਹੈਰਾਨ। ਕਹੈ ਕਬੀਰ ਸੁਨੋ ਭਾਈ ਸੰਤੋ, ਇਹ ਸਤਿਗੁਰੂ ਕਾ ਗ੍ਯਾਨ॥"',
       en: '"Mouse broke the iron chain, elephant stood bewildered. Says Kabir listen saints, this is the wisdom of True Master."'
     },
     literalParadox: {
@@ -486,12 +486,12 @@ export const ULATVASI_BATCH_131_TO_140: UlatvasiQuestion[] = [
       en: 'A washerman was seen without any river ghat, washing clothes without soap, cleansing all filth of body and mind.'
     },
     clueHint: {
-      hi: 'धोबी = सद्गुरु; घाट = बाहरी कर्मकांड; साबुन बिन = नाम-स्मरण व ज्ञान उपदेश; मैल = मन के विकार।',
-      pb: 'ਧੋਬੀ ਸਦਗੁਰੂ ਹੈ, ਸਾਬਣ ਨਾਮ-ਸਿਮਰਨ ਹੈ।',
+      hi: 'धोबी = सतगुरु; घाट = बाहरी कर्मकांड; साबुन बिन = नाम-स्मरण व ज्ञान उपदेश; मैल = मन के विकार।',
+      pb: 'ਧੋਬੀ ਸਤਿਗੁਰੂ ਹੈ, ਸਾਬਣ ਨਾਮ-ਸਿਮਰਨ ਹੈ।',
       en: 'Washerman = True Master (Satguru); Soapless = Naam Simran & Divine Knowledge; Filth = Mental Vices.'
     },
     symbols: [
-      { symbol: 'घाट बिना का धोबी (Washerman Without Ghat)', meaning: { hi: 'सद्गुरु जो बाहरी तीर्थ-घाटों के बिना अंतःकरण की शुद्धि करते हैं', pb: 'ਸਦਗੁਰੂ ਜੋ ਅੰਦਰੂਨੀ ਸਫਾਈ ਕਰਦੇ ਹਨ', en: 'Satguru purifying the inner heart without outer rituals' } },
+      { symbol: 'घाट बिना का धोबी (Washerman Without Ghat)', meaning: { hi: 'सतगुरु जो बाहरी तीर्थ-घाटों के बिना अंतःकरण की शुद्धि करते हैं', pb: 'ਸਤਿਗੁਰੂ ਜੋ ਅੰਦਰੂਨੀ ਸਫਾਈ ਕਰਦੇ ਹਨ', en: 'Satguru purifying the inner heart without outer rituals' } },
       { symbol: 'साबुन बिन धोवे (Washing Without Soap)', meaning: { hi: 'ज्ञानोपदेश और सत्यनाम सिमरन से जन्मों के पाप-विकार धोना', pb: 'ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਪਾਪ ਧੋਣਾ', en: 'Cleansing age-old karmic filth through spiritual contemplation' } }
     ],
     question: {
@@ -500,20 +500,20 @@ export const ULATVASI_BATCH_131_TO_140: UlatvasiQuestion[] = [
       en: 'What does "Washerman cleansing without water or soap" symbolize?'
     },
     options: {
-      hi: ['सद्गुरु द्वारा ज्ञान और नाम-सिमरन से साधक के मन के पाप-विकार धोना', 'लॉन्ड्री सर्विस', 'नदी का घाट', 'साबुन बेचना'],
-      pb: ['ਸਦਗੁਰੂ ਦੁਆਰਾ ਨਾਮ ਨਾਲ ਮਨ ਦੀ ਸਫਾਈ', 'ਲੌਂਡਰੀ', 'ਨਦੀ', 'ਸਾਬਣ'],
+      hi: ['सतगुरु द्वारा ज्ञान और नाम-सिमरन से साधक के मन के पाप-विकार धोना', 'लॉन्ड्री सर्विस', 'नदी का घाट', 'साबुन बेचना'],
+      pb: ['ਸਤਿਗੁਰੂ ਦੁਆਰਾ ਨਾਮ ਨਾਲ ਮਨ ਦੀ ਸਫਾਈ', 'ਲੌਂਡਰੀ', 'ਨਦੀ', 'ਸਾਬਣ'],
       en: ['Satguru purifying seeker\'s mind and soul via Divine Word and Knowledge', 'Laundry service', 'River bank', 'Selling soap']
     },
     correctIndex: 0,
     mysticalUnveiling: {
-      headline: { hi: 'सद्गुरु द्वारा अंतःकरण का प्रक्षालन', pb: 'ਸਦਗੁਰੂ ਦੁਆਰਾ ਮਨ ਦੀ ਪਵਿੱਤਰਤਾ', en: 'Inner Purification of Heart by Satguru' },
+      headline: { hi: 'सतगुरु द्वारा अंतःकरण का प्रक्षालन', pb: 'ਸਤਿਗੁਰੂ ਦੁਆਰਾ ਮਨ ਦੀ ਪਵਿੱਤਰਤਾ', en: 'Inner Purification of Heart by Satguru' },
       deepMeaning: {
-        hi: 'यहाँ धोबी सद्गुरु हैं और घाट संसारी कर्मकांड। सतगुरु किसी बाहरी नदी या साबुन का उपयोग नहीं करते, बल्कि अपने ज्ञान-उपदेश और सत्यनाम के सिमरन से साधक के अंतःकरण पर जमे विकारों को पूरी तरह धोकर निर्मल कर देते हैं।',
-        pb: 'ਸਦਗੁਰੂ ਆਪਣੇ ਗਿਆਨ ਅਤੇ ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਮਨੁੱਖ ਦੇ ਮਨ ਦੇ ਵਿਕਾਰ ਧੋ ਦਿੰਦੇ ਹਨ।',
+        hi: 'यहाँ धोबी सतगुरु हैं और घाट संसारी कर्मकांड। सतगुरु किसी बाहरी नदी या साबुन का उपयोग नहीं करते, बल्कि अपने ज्ञान-उपदेश और सत्यनाम के सिमरन से साधक के अंतःकरण पर जमे विकारों को पूरी तरह धोकर निर्मल कर देते हैं।',
+        pb: 'ਸਤਿਗੁਰੂ ਆਪਣੇ ਗਿਆਨ ਅਤੇ ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਮਨੁੱਖ ਦੇ ਮਨ ਦੇ ਵਿਕਾਰ ਧੋ ਦਿੰਦੇ ਹਨ।',
         en: 'The washerman is Satguru; outer ghats are religious rituals. Without physical water or soap, Satguru cleanses age-old mental filth via the Holy Word.'
       },
       kabirPhilosophy: {
-        hi: 'मन की मैल जल-साबुन से नहीं, सतनाम के सिमरन से धुलती है।',
+        hi: 'मन की मैल जल-साबुन से नहीं, सत्यनाम के सिमरन से धुलती है।',
         pb: 'ਮਨ ਦੀ ਸਫਾਈ ਨਾਮ-ਸਿਮਰਨ ਨਾਲ ਹੁੰਦੀ ਹੈ।',
         en: 'Filth of the mind is washed not by water, but by meditation on Holy Name.'
       },

@@ -67,12 +67,12 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
       en: 'O seeker, sublime is the natural state of Sahaj Samadhi;\nEver since it awakened by Satguru’s grace, it deepens day by day.\nWherever I walk is holy circumambulation; whatever I do is sacred service.\nWhen I sleep, it is prostration in surrender; I worship no lesser gods or deities.\nWhatever I speak is the Holy Name; whatever I hear is remembrance; eating and drinking is worship.\nHome and forest wilderness I behold as one, eliminating all illusions of duality.\nI close not my eyes, nor shut my ears; I inflict no torment on the body.\nWith wide-open eyes and joy in my heart, I behold and adore the Divine in all.\nMy consciousness is attuned to the unbroken Word (Shabd); all worldly craving is shed.\nRising or sitting, this communion never breaks; such an eternal unshakeable absorption is struck!\nSays Satguru Kabir, this transcendent Unmani state I have openly sung;\nBeyond all joys and sorrows lies the Supreme Abode, and in that Realm my soul is merged.\n  O seeker, sublime is the natural state of Sahaj Samadhi.'
     },
     coreTeaching: {
-      hi: 'सतगुरु कबीर साहेब जी फरमाते हैं कि सच्ची समाधि शरीर को कष्ट देने या आँख-कान बंद करने में नहीं, बल्कि संसार में रहते हुए हर कर्म को सतगुरु की सेवा और हर पल को साक्षात पूजा बना लेने में है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੀ ਸਮਾਧੀ ਸਰੀਰ ਨੂੰ ਕਸ਼ਟ ਦੇਣ ਵਿਚ ਨਹੀਂ, ਸਗੋਂ ਹਰ ਕੰਮ ਨੂੰ ਸਤਿਗੁਰੂ ਦੀ ਸੇਵਾ ਅਤੇ ਹਰ ਪਲ ਨੂੰ ਪੂਜਾ ਬਣਾ ਲੈਣ ਵਿਚ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सच्ची समाधि शरीर को कष्ट देने या आँख-कान बंद करने में नहीं, बल्कि संसार में रहते हुए हर कर्म को सतगुरु की सेवा और हर पल को साक्षात पूजा बना लेने में है।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚੀ ਸਮਾਧੀ ਸਰੀਰ ਨੂੰ ਕਸ਼ਟ ਦੇਣ ਵਿਚ ਨਹੀਂ, ਸਗੋਂ ਹਰ ਕੰਮ ਨੂੰ ਸਤਿਗੁਰੂ ਦੀ ਸੇਵਾ ਅਤੇ ਹਰ ਪਲ ਨੂੰ ਪੂਜਾ ਬਣਾ ਲੈਣ ਵਿਚ ਹੈ।',
       en: 'Satguru Kabir Saheb reveals that true Samadhi is not in punishing the physical body or fleeing the world, but in transforming every action into divine service and living continuously in God-consciousness.'
     },
     contemplationEssence: {
-      hi: 'सतगुरु कबीर साहेब कहते हैं कि जब सुरति अखंड शब्द (सत्यनाम) से जुड़ जाती है, तो चलना परिक्रमा, बोलना नाम-जप, सोना दंडवत और खाना-पीना साक्षात पूजा बन जाता है। द्वैत का भाव मिट जाता है और साधक खुले नेत्रों से हर घट में प्रियतम साहेब का दीदार करते हुए सुख-दुःख से परे परमपद (उन्मनी अवस्था) में सदा के लिए लीन हो जाता है।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जब सुरति अखंड शब्द (सत्यनाम) से जुड़ जाती है, तो चलना परिक्रमा, बोलना नाम-जप, सोना दंडवत और खाना-पीना साक्षात पूजा बन जाता है। द्वैत का भाव मिट जाता है और साधक खुले नेत्रों से हर घट में प्रियतम साहेब का दीदार करते हुए सुख-दुःख से परे परमपद (उन्मनी अवस्था) में सदा के लिए लीन हो जाता है।',
       pb: 'ਜਦੋਂ ਸੁਰਤ ਸ਼ਬਦ ਨਾਲ ਜੁੜ ਜਾਂਦੀ ਹੈ, ਤੁਰਨਾ ਪਰਿਕਰਮਾ, ਬੋਲਣਾ ਸਿਮਰਨ ਅਤੇ ਖਾਣਾ ਪੀਣਾ ਪੂਜਾ ਬਣ ਜਾਂਦਾ ਹੈ। ਖੁੱਲ੍ਹੀਆਂ ਅੱਖਾਂ ਨਾਲ ਹਰ ਥਾਂ ਸਤਿਗੁਰੂ ਦਾ ਦੀਦਾਰ ਹੁੰਦਾ ਹੈ।',
       en: 'Satguru Kabir Saheb teaches that when inner consciousness unites with the eternal Shabd (Word), walking becomes pilgrimage, speech becomes hymn, sleep becomes surrender, and eating becomes holy communion. Duality vanishes, and with open eyes one beholds the Beloved in all, resting forever in the Supreme Unmani State.'
     },
@@ -267,7 +267,7 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
     sadhanaSankalp: {
       hi: 'आज किसी की भी निंदा या व्यर्थ चर्चा में भाग नहीं लूँगा। जहां भी असार बातचीत होगी, मौन रहकर सत्यनाम स्मरण करूँगा।',
       pb: 'ਅੱਜ ਕਿਸੇ ਦੀ ਨਿੰਦਾ ਵਿਚ ਹਿੱਸਾ ਨਹੀਂ ਲਵਾਂਗਾ। ਮੌਨ ਰਹਿ ਕੇ ਸਤਯਨਾਮ ਦਾ ਜਾਪ ਕਰਾਂਗਾ।',
-      en: 'Today I will refrain from gossip and criticism. In idle environments, I will maintain inner silence and remember Satnaam.'
+      en: 'Today I will refrain from gossip and criticism. In idle environments, I will maintain inner silence and remember Satyanaam.'
     },
     meditationGuide: {
       hi: 'हृदय में विवेक का श्वेत दीप प्रज्वलित महसूस करें। सांस भरते समय "सत्य व सार" को अंदर लें, सांस छोड़ते समय "व्यर्थ व असत्य" को विसर्जित करें।',
@@ -308,7 +308,7 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
       hi: [
         'क्या मेरा ज्ञान मुझे विनम्र बना रहा है या मेरे अंदर बौद्धिक अहंकार उत्पन्न कर रहा है?',
         'आज मैंने किसी से बात करते समय कितनी करुणा, मिठास और प्रेम का अनुभव किया?',
-        'सद्गुरु के प्रति मेरा समर्पण कितना सच्चा और निःस्वार्थ है?'
+        'सतगुरु के प्रति मेरा समर्पण कितना सच्चा और निःस्वार्थ है?'
       ],
       pb: [
         'ਕੀ ਮੇਰਾ ਗਿਆਨ ਮੈਨੂੰ ਨਿਮਰ ਬਣਾ ਰਿਹਾ ਹੈ ਜਾਂ ਹਉਮੈ ਪੈਦਾ ਕਰ ਰਿਹਾ ਹੈ?',
@@ -354,7 +354,7 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
     coreTeaching: {
       hi: 'बाहरी माला घुमाने से मन एकाग्र नहीं होता; मन के अंतर्मन को सत्यनाम और सत्य विचार में रमाना ही सच्ची भक्ति है।',
       pb: 'ਬਾਹਰੀ ਮਾਲਾ ਨਾਲ ਮਨ ਨਹੀਂ ਰੁਕਦਾ; ਮਨ ਦੇ ਅੰਦਰ ਸਤਯਨਾਮ ਦਾ ਸਿਮਰਨ ਕਰਨਾ ਹੀ ਸੱਚੀ ਭਗਤੀ ਹੈ।',
-      en: 'Mere mechanical counting of beads cannot still the mind; anchoring inner attention in the living Word (Satnaam) is true devotion.'
+      en: 'Mere mechanical counting of beads cannot still the mind; anchoring inner attention in the living Word (Satyanaam) is true devotion.'
     },
     contemplationEssence: {
       hi: 'हाथ माला फेर रहा हो और मन दुकान, घर या चिंताओं में भटक रहा हो तो वह केवल पाखंड है। जब श्वास-श्वास में नाम का तार जुड़ जाए और हर सांस में साहेब की उपस्थिति का स्मरण हो, वही "मन का मनका" फेरना है।',
@@ -375,13 +375,13 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
       en: [
         'During prayer or meditation, where does my mind actually wander?',
         'Is my spiritual practice an external ritual, or a deep inner transformation?',
-        'How often today did I practice conscious breathing with Satnaam remembrance?'
+        'How often today did I practice conscious breathing with Satyanaam remembrance?'
       ]
     },
     sadhanaSankalp: {
       hi: 'आज कार्य करते समय भी हर १० मिनट में ३ गहरी सांसें लूँगा और मन ही मन "सत्यनाम साहेब" दोहराऊँगा।',
       pb: 'ਅੱਜ ਕੰਮ ਕਰਦੇ ਸਮੇਂ ਹਰ ੧੦ ਮਿੰਟ ਬਾਅਦ "ਸਤਯਨਾਮ ਸਾਹੇਬ" ਦਾ ਅੰਦਰੂਨੀ ਜਾਪ ਕਰਾਂਗਾ।',
-      en: 'Today, amidst daily duties, I will pause every 10 minutes for 3 conscious breaths, mentally echoing "Satnaam Saheb".'
+      en: 'Today, amidst daily duties, I will pause every 10 minutes for 3 conscious breaths, mentally echoing "Satyanaam Saheb".'
     },
     meditationGuide: {
       hi: 'श्वास लेते समय मन में "सत्य" और छोड़ते समय "नाम" का मौन जप करें। मन के भटकते ही धीरे से श्वास पर वापस लौट आएं।',
@@ -409,14 +409,14 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
       en: 'The divine clouds thunder in the inner sky, O seeker!\nFrom all four directions, the nectarous rain of grace descends.\nFrom the Formless Realm a divine resonance arises, the unstruck melody resounds;\nSays Satguru Kabir, listen O seekers, behold the Sovereign of the Eternal Realm!'
     },
     coreTeaching: {
-      hi: 'सतगुरु कबीर साहेब जी फरमाते हैं कि अपने अंतराकाश में अनहद नाद और सत्यनाम की अखंड धुन को सुनें। यह दिव्य नाद मन को समस्त सांसारिक वासनाओं से मुक्त कर अमरलोक से जोड़ देता है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਫਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅੰਦਰਲੇ ਆਕਾਸ਼ ਵਿਚ ਅਨਹਦ ਨਾਦ ਸੁਣੋ। ਇਹ ਪਾਵਨ ਧੁਨ ਮਨ ਨੂੰ ਵਿਕਾਰਾਂ ਤੋਂ ਮੁਕਤ ਕਰਦੀ ਹੈ।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि अपने अंतराकाश में अनहद नाद और सत्यनाम की अखंड धुन को सुनें। यह दिव्य नाद मन को समस्त सांसारिक वासनाओं से मुक्त कर अमरलोक से जोड़ देता है।',
+      pb: 'ਸਤਿਗੁਰੂ  ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਅੰਦਰਲੇ ਆਕਾਸ਼ ਵਿਚ ਅਨਹਦ ਨਾਦ ਸੁਣੋ। ਇਹ ਪਾਵਨ ਧੁਨ ਮਨ ਨੂੰ ਵਿਕਾਰਾਂ ਤੋਂ ਮੁਕਤ ਕਰਦੀ ਹੈ।',
       en: 'Satguru Kabir Saheb teaches us to listen to the ceaseless unstruck resonance (Anahat Naad) within the inner firmament, which frees the soul from worldly bondage.'
     },
     contemplationEssence: {
       hi: 'जब साधक अपने कान, आँख और मन को बाहरी प्रपंचों से समेटकर अंतर्मुख होता है, तो त्रिकुटी के पार अखंड नाद की गूंज सुनाई देती है। यह सत्यनाम का जीवंत स्पंदन है जो आत्मा को परमानंद में सराबोर कर देता है।',
       pb: 'ਜਦੋਂ ਧਿਆਨ ਅੰਦਰ ਟਿਕਦਾ ਹੈ, ਅਨਹਦ ਨਾਦ ਸੁਣਾਈ ਦਿੰਦਾ ਹੈ ਜੋ ਆਤਮਾ ਨੂੰ ਪਰਮਾਨੰਦ ਨਾਲ ਭਰ ਦਿੰਦਾ ਹੈ।',
-      en: 'When attention is withdrawn from external senses into inner stillness, the celestial vibration of Satnaam resounds, bathing the soul in boundless divine ecstasy.'
+      en: 'When attention is withdrawn from external senses into inner stillness, the celestial vibration of Satyanaam resounds, bathing the soul in boundless divine ecstasy.'
     },
     inquiryQuestions: {
       hi: [
@@ -431,14 +431,14 @@ export const DAINIK_CHINTAN_LIST: ChintanSeed[] = [
       ],
       en: [
         'Do I remain lost in outer noise, or do I pause to tune into inner silence?',
-        'How deeply does my consciousness absorb into the sacred vibration of Satnaam?',
+        'How deeply does my consciousness absorb into the sacred vibration of Satyanaam?',
         'Have I tasted the serene bliss of the celestial inner resonance?'
       ]
     },
     sadhanaSankalp: {
       hi: 'आज मैं १५ मिनट दोनों कान बंद करके अपने अंतर्मन में गूंज रहे सूक्ष्म सत्यनाम नाद को सुनने का अभ्यास करूँगा।',
       pb: 'ਅੱਜ ਮੈਂ ੧੫ ਮਿੰਟ ਅੰਦਰਲੇ ਸੂਖਮ ਨਾਦ ਨੂੰ ਸੁਣਨ ਦਾ ਅਭਿਆਸ ਕਰਾਂਗਾ।',
-      en: 'Today I will dedicate 15 minutes of silent meditation to gently listen to the subtle inner resonance of Satnaam.'
+      en: 'Today I will dedicate 15 minutes of silent meditation to gently listen to the subtle inner resonance of Satyanaam.'
     },
     meditationGuide: {
       hi: 'शांत बैठें। रीढ़ सीधी रखें। कानों के भीतर आ रहे अत्यंत सूक्ष्म, मधुर नाद (झिंगुर, वीणा या घंटी जैसी ध्वनि) पर सुरति को एकाग्र करें।',

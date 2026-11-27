@@ -706,9 +706,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Sat hi main sat batai, roti mein te tuk. Kahein Kabir ta das ko, kabahun na aavai chuk.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जिसका हृदय इतना उदार है कि वह सत्तू-आटे में से आटा और रोटी में से टुकड़ा भी बांटकर दूसरों को देता है, ऐसे दास-भक्त से कभी भी कोई भूल नहीं होती।',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਉਦਾਰ ਮਨ ਨਾਲ ਰੋਟੀ ਦਾ ਟੁਕੜਾ ਵੀ ਵੰਡ ਕੇ ਛਕਦਾ ਹੈ, ਉਸ ਭਗਤ ਤੋਂ ਕਦੇ ਭੁੱਲ ਨਹੀਂ ਹੁੰਦੀ।',
-      en: 'Kabir says the devotee whose heart is so generous that they share even a morsel of their bread with others never goes astray.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जिसका हृदय इतना उदार है कि वह सत्तू-आटे में से आटा और रोटी में से टुकड़ा भी बांटकर दूसरों को देता है, ऐसे दास-भक्त से कभी भी कोई भूल नहीं होती।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਉਦਾਰ ਮਨ ਨਾਲ ਰੋਟੀ ਦਾ ਟੁਕੜਾ ਵੀ ਵੰਡ ਕੇ ਛਕਦਾ ਹੈ, ਉਸ ਭਗਤ ਤੋਂ ਕਦੇ ਭੁੱਲ ਨਹੀਂ ਹੁੰਦੀ।',
+      en: 'Satguru Kabir Saheb proclaims the devotee whose heart is so generous that they share even a morsel of their bread with others never goes astray.'
     },
     wordMeanings: {
       hi: [
@@ -758,7 +758,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Nam bhajo man basi karo, yahi bat hai tant. Kahe ko padhi pachi maro, kotin gyan granth.',
     bhavarth: {
-      hi: 'यह एक ठोस एवं परम सत्य है कि अपने मन को वश में करके, सद्गुरु के नाम का सुमिरन तथा ध्यान-भजन करो। करोड़ों ज्ञान-ग्रंथ किसलिए पढ़-पढ़कर मरते जा रहे हो, अर्थात इन सभी में यही सार-ज्ञान है।',
+      hi: 'यह एक ठोस एवं परम सत्य है कि अपने मन को वश में करके, सतगुरु के नाम का सुमिरन तथा ध्यान-भजन करो। करोड़ों ज्ञान-ग्रंथ किसलिए पढ़-पढ़कर मरते जा रहे हो, अर्थात इन सभी में यही सार-ज्ञान है।',
       pb: 'ਮਨ ਨੂੰ ਵੱਸ ਵਿੱਚ ਕਰਕੇ ਨਾਮ ਭਜਨ ਕਰੋ, ਇਹੀ ਅਸਲ ਸਾਰ ਹੈ। ਕਰੋੜਾਂ ਗਿਆਨ ਗ੍ਰੰਥ ਪੜ੍ਹ ਕੇ ਮਰਨ ਦੀ ਲੋੜ ਨਹੀਂ, ਸਾਰਾ ਨਚੋੜ ਇਹੀ ਹੈ।',
       en: 'Subdue the mind and remember the holy Name; this is the absolute essence. Why wear yourself out reading millions of books without inner realization?'
     },
@@ -862,7 +862,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Tin tap mein tap hain, taka anant upay. Tap aatam mahabali, sant bina nahin jay.',
     bhavarth: {
-      hi: 'इस जगत के तीन तापों दैविक, दैहिक और भौतिक में भी बहुत से ताप हैं। इनमें शारीरिक तापों की व्याधियों से बचने के अनेक उपाय हैं, परंतु सबसे विकट महाप्रचंड ताप परमात्मा से बिछुड़ी आत्मा का है, जो संत-सद्गुरु के सत्संग के बिना नहीं जाता।',
+      hi: 'इस जगत के तीन तापों दैविक, दैहिक और भौतिक में भी बहुत से ताप हैं। इनमें शारीरिक तापों की व्याधियों से बचने के अनेक उपाय हैं, परंतु सबसे विकट महाप्रचंड ताप परमात्मा से बिछुड़ी आत्मा का है, जो संत-सतगुरु के सत्संग के बिना नहीं जाता।',
       pb: 'ਤਿੰਨ ਤਾਪਾਂ (ਦੈਵਿਕ, ਦੈਹਿਕ, ਭੌਤਿਕ) ਦੇ ਅਨੇਕ ਉਪਾਅ ਹਨ, ਪਰ ਆਤਮਾ ਦਾ ਵਿਛੋੜਾ ਰੂਪੀ ਮਹਾਂ ਤਾਪ ਬਿਨਾਂ ਸੰਤਾਂ ਦੇ ਦੂਰ ਨਹੀਂ ਹੁੰਦਾ।',
       en: 'There are innumerable remedies for the three worldly afflictions, but the supreme affliction of soul separation from God is cured only through the grace of an enlightened Satguru.'
     },
@@ -914,7 +914,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Bande tu kar bandagi, to pavai didar. Aosar manush janam ka, bahuri na barambar.',
     bhavarth: {
-      hi: 'हे सद्गुरु के दास-भक्त! तू सद्गुरु की सेवा-पूजा कर। विनम्र भाव से उनकी बंदगी कर, तभी तुझे परमात्म-दर्शन प्राप्त होगा। मनुष्य जीवन का यह अवसर बहुत ही दुर्लभ है और बार-बार नहीं मिलता।',
+      hi: 'हे सतगुरु के दास-भक्त! तू सतगुरु की सेवा-पूजा कर। विनम्र भाव से उनकी बंदगी कर, तभी तुझे परमात्म-दर्शन प्राप्त होगा। मनुष्य जीवन का यह अवसर बहुत ही दुर्लभ है और बार-बार नहीं मिलता।',
       pb: 'ਹੇ ਬੰਦੇ! ਤੂੰ ਬੰਦਗੀ ਕਰ ਤਾਂ ਪ੍ਰਭੂ ਦੇ ਦੀਦਾਰ ਹੋਣਗੇ। ਮਨੁੱਖਾ ਜਨਮ ਦਾ ਇਹ ਮੌਕਾ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਦਾ।',
       en: 'O mortal, engage in devotion so that you may attain divine vision. This human birth opportunity is extremely rare and does not happen again and again.'
     },
@@ -1177,9 +1177,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir aap thagaiye, aur na thagiye koy. Aap thage sukh oopjai, aur thage dukh hoy.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि इस संसार में अपने आपको ठगा दो। अपनी हानि हो जाए, कोई बात नहीं, परंतु आप दूसरों को न ठगें। अपने आपको ठगाया हुआ कल आपको सुख देगा, लेकिन दूसरों को ठगने से हानि होगी।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि इस संसार में अपने आपको ठगा दो। अपनी हानि हो जाए, कोई बात नहीं, परंतु आप दूसरों को न ठगें। अपने आपको ठगाया हुआ कल आपको सुख देगा, लेकिन दूसरों को ठगने से हानि होगी।',
       pb: 'ਆਪਣਾ ਨੁਕਸਾਨ ਕਰਵਾ ਲਓ ਪਰ ਕਿਸੇ ਹੋਰ ਨੂੰ ਨਾ ਠੱਗੋ। ਆਪਣੇ ਠਗੇ ਜਾਣ ਨਾਲ ਸੁਖ ਮਿਲਦਾ ਹੈ ਤੇ ਦੂਜਿਆਂ ਨੂੰ ਠੱਗਣ ਨਾਲ ਦੁੱਖ।',
-      en: 'Kabir says, let yourself be cheated rather than cheat anyone else. Being deceived brings inner peace, whereas cheating others brings eventual suffering.'
+      en: 'Satguru Kabir Saheb proclaims, let yourself be cheated rather than cheat anyone else. Being deceived brings inner peace, whereas cheating others brings eventual suffering.'
     },
     wordMeanings: {
       hi: [
@@ -1229,7 +1229,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Banjare ke bail jyun, bharmi firyo chahun des. Khand ladi bhus khat hain, bin satguru updes.',
     bhavarth: {
-      hi: 'जिस प्रकार बंजारे के बैल अपनी पीठ पर खांड-शक्कर लादे और भूसा खाते हुए, चारों दिशाओं के देशों में भरमते-फिरते हैं, उसी प्रकार सच्चे सद्गुरु के ज्ञान-उपदेश के बिना अज्ञानी लोग विषय-प्रपंचों के बोझ तले भटकते हैं।',
+      hi: 'जिस प्रकार बंजारे के बैल अपनी पीठ पर खांड-शक्कर लादे और भूसा खाते हुए, चारों दिशाओं के देशों में भरमते-फिरते हैं, उसी प्रकार सच्चे सतगुरु के ज्ञान-उपदेश के बिना अज्ञानी लोग विषय-प्रपंचों के बोझ तले भटकते हैं।',
       pb: 'ਜਿਵੇਂ ਬਣਜਾਰੇ ਦੇ ਬੈਲ ਪਿੱਠ ਉੱਤੇ ਖੰਡ ਲੱਦ ਕੇ ਆਪ ਤੂੜੀ ਖਾਂਦੇ ਹਨ, ਇਵੇਂ ਹੀ ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਮਨੁੱਖ ਭਟਕਦਾ ਹੈ।',
       en: 'Like a trader’s bull carrying sugar on its back while eating mere chaff, ignorant mortals wander carrying worldly burdens without Satguru’s true wisdom.'
     },
@@ -1256,7 +1256,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
       en: 'Am I carrying external burdens while missing life’s true nectar?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के पावन ज्ञान को अपने आचरण में उतारें।',
+      hi: 'सतगुरु के पावन ज्ञान को अपने आचरण में उतारें।',
       pb: 'ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਨੂੰ ਆਪਣੇ ਜੀਵਨ ਵਿੱਚ ਅਪਣਾਓ।',
       en: 'Embody the Master’s teachings in your daily walk.'
     },
@@ -1336,8 +1336,8 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Man abhiman na kijiye, kahein Kabir pukar. Jo sir sadhu na namai, to sir kati utar.',
     bhavarth: {
-      hi: 'कबीरजी समझाते हुए कहते हैं कि मान-अभिमान मत करो, क्योंकि यह जीवन-कल्याण में बाधक है। यदि तुम्हारा सिर साधु-संतों और सतगुरु के आगे विनम्रता से नहीं झुकता, तो उस अहंकारयुक्त सिर का कोई मूल्य नहीं है।',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਪੁਕਾਰ ਕੇ ਆਖਦੇ ਹਨ ਕਿ ਮਾਨ-ਅਭਿਮਾਨ ਨਾ ਕਰੋ। ਜਿਹੜਾ ਸਿਰ ਸੰਤਾਂ ਅੱਗੇ ਨਹੀਂ ਨਿਉਂਦਾ, ਉਸ ਦਾ ਕੀ ਲਾਭ?',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि मान-अभिमान मत करो, क्योंकि यह जीवन-कल्याण में बाधक है। यदि तुम्हारा सिर साधु-संतों और सतगुरु के आगे विनम्रता से नहीं झुकता, तो उस अहंकारयुक्त सिर का कोई मूल्य नहीं है।',
+      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਪੁਕਾਰ ਕੇ ਆਖਦੇ ਹਨ ਕਿ ਮਾਨ-ਅਭਿਮਾਨ ਨਾ ਕਰੋ। ਜਿਹੜਾ ਸਿਰ ਸੰਤਾਂ ਅੱਗੇ ਨਹੀਂ ਨਿਉਂਦਾ, ਉਸ ਦਾ ਕੀ ਲਾਭ?',
       en: 'Kabir proclaims aloud: Do not harbor pride and vanity. If your head does not bow in humility before enlightened saints, such an arrogant head is worthless.'
     },
     wordMeanings: {
@@ -1388,9 +1388,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Padi padi ke patthar bhaye, likhi likhi bhaye ju eent. Kabir antar prem ka, lagi nek na chhint.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि संसार के बहुत-से लोग पढ़-पढ़कर पत्थर के समान और लिख-लिखकर ईंट की तरह कठोर हो जाते हैं। उनके अंतर में प्रेम की तनिक भी छींट नहीं लगी होती, इसलिए वे सरल सरस हृदय के सच्चे मनुष्य नहीं बन पाते।',
-      pb: 'ਕਬੀਰ ਸਾਹਿਬ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪੜ੍ਹ-ਪੜ੍ਹ ਕੇ ਲੋਕ ਪੱਥਰ ਅਤੇ ਲਿਖ-ਲਿਖ ਕੇ ਈਂਟ ਵਾਂਗ ਕਠੋਰ ਹੋ ਜਾਂਦੇ ਹਨ। ਉਨ੍ਹਾਂ ਦੇ ਅੰਦਰ ਪ੍ਰੇਮ ਦਾ ਇੱਕ ਤੁਪਕਾ ਵੀ ਨਹੀਂ ਹੁੰਦਾ।',
-      en: 'Kabir says many people become hard as stone by reading and dry as brick by writing, without a single drop of divine love touching their inner core.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि संसार के बहुत-से लोग पढ़-पढ़कर पत्थर के समान और लिख-लिखकर ईंट की तरह कठोर हो जाते हैं। उनके अंतर में प्रेम की तनिक भी छींट नहीं लगी होती, इसलिए वे सरल सरस हृदय के सच्चे मनुष्य नहीं बन पाते।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪੜ੍ਹ-ਪੜ੍ਹ ਕੇ ਲੋਕ ਪੱਥਰ ਅਤੇ ਲਿਖ-ਲਿਖ ਕੇ ਈਂਟ ਵਾਂਗ ਕਠੋਰ ਹੋ ਜਾਂਦੇ ਹਨ। ਉਨ੍ਹਾਂ ਦੇ ਅੰਦਰ ਪ੍ਰੇਮ ਦਾ ਇੱਕ ਤੁਪਕਾ ਵੀ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims many people become hard as stone by reading and dry as brick by writing, without a single drop of divine love touching their inner core.'
     },
     wordMeanings: {
       hi: [
@@ -1440,7 +1440,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jihi jivri te jag bandha, tu jani bandhai Kabir. Jasi ata laun jyun, son saman sharir.',
     bhavarth: {
-      hi: 'जिज्ञासु भक्त को समझाते हुए कबीरजी कहते हैं कि जिस मोह तथा भ्रम की रस्सी से संसार के अज्ञानी जीव बंधे हुए हैं, उसमें तू मत बंध। जैसे नमक के बिना आटा स्वादहीन रह जाता है, वैसे ही स्वर्ण समान तुम्हारा यह शरीर बिना सत्संग-भजन के व्यर्थ जा रहा है।',
+      hi: 'जिज्ञासु भक्त को समझाते हुए सतगुरु कबीर साहेब फरमाते हैं कि जिस मोह तथा भ्रम की रस्सी से संसार के अज्ञानी जीव बंधे हुए हैं, उसमें तू मत बंध। जैसे नमक के बिना आटा स्वादहीन रह जाता है, वैसे ही स्वर्ण समान तुम्हारा यह शरीर बिना सत्संग-भजन के व्यर्थ जा रहा है।',
       pb: 'ਜਿਸ ਮੋਹ ਦੀ ਰੱਸੀ ਨਾਲ ਜਗਤ ਬੱਝਾ ਹੈ, ਤੂੰ ਉਸ ਵਿੱਚ ਨਾ ਬੱਝ। ਜਿਵੇਂ ਲੂਣ ਬਿਨਾਂ ਆਟਾ ਵਿਅर्थ ਹੈ, ਇਵੇਂ ਹੀ ਭਜਨ ਬਿਨਾਂ ਸਰੀਰ ਵਿਅਰਥ ਹੈ।',
       en: 'Do not be bound by the rope of illusion that binds the world. Without devotion, this golden human body is as tasteless as flour without salt.'
     },
@@ -1492,7 +1492,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Chaturai kya kijiye, jo nahin shabd samay. Kotik gun suva padhe, ant bilai khay.',
     bhavarth: {
-      hi: 'जब सद्गुरु के ज्ञान-उपदेश के निर्णय-शब्द भी हृदय में नहीं समाए तो इस प्रवचन का भला क्या लाभ? जिस प्रकार करोड़ों गुणों की बातें तोता रटता रहता है, परंतु अवसर आने पर उसे बिल्ली खा जाती है। इसी प्रकार सद्गुरु के शब्द सुनते हुए भी अज्ञानी जन यूं ही मर जाते हैं।',
+      hi: 'जब सतगुरु के ज्ञान-उपदेश के निर्णय-शब्द भी हृदय में नहीं समाए तो इस प्रवचन का भला क्या लाभ? जिस प्रकार करोड़ों गुणों की बातें तोता रटता रहता है, परंतु अवसर आने पर उसे बिल्ली खा जाती है। इसी प्रकार सतगुरु के शब्द सुनते हुए भी अज्ञानी जन यूं ही मर जाते हैं।',
       pb: 'ਜੇ ਸਤਿਗੁਰੂ ਦਾ ਗਿਆਨ-ਸ਼ਬਦ ਹਿਰਦੇ ਵਿੱਚ ਨਾ ਵੱਸਿਆ, ਤਾਂ ਚਤੁਰਾਈ ਕਿਸ ਕੰਮ? ਜਿਵੇਂ ਤੋਤਾ ਸਭ ਕੁਝ ਰਟ ਲੈਂਦਾ ਹੈ ਪਰ ਬਿੱਲੀ ਉਸ ਨੂੰ ਖਾ ਜਾਂਦੀ ਹੈ।',
       en: 'What use is cleverness if the Master’s sacred word does not dwell within? Like a parrot repeating words until a cat catches it, mere rote learning saves no one.'
     },
@@ -1596,7 +1596,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kaya son karaj kare, sakal kaj ki reet. Karma bharm sab met ke, ram naam son preet.',
     bhavarth: {
-      hi: 'इस शरीर से अपने सभी कर्तव्यों का पालन करो। उनको उनके रीति-नियम के अनुसार ही पूर्ण करो। अपने मन से कर्मों के भ्रम को मिटाकर, अर्थात आसक्ति का त्याग करके सद्गुरु के बताए हुए अविनाशी राम के नाम-ज्ञान से प्रेम करो।',
+      hi: 'इस शरीर से अपने सभी कर्तव्यों का पालन करो। उनको उनके रीति-नियम के अनुसार ही पूर्ण करो। अपने मन से कर्मों के भ्रम को मिटाकर, अर्थात आसक्ति का त्याग करके सतगुरु के बताए हुए अविनाशी राम के नाम-ज्ञान से प्रेम करो।',
       pb: 'ਸਰੀਰ ਨਾਲ ਆਪਣੇ ਸਾਰੇ ਕਰਤੱਵ ਨਿਭਾਓ, ਪਰ ਕਰਮ-ਕਾਂਡਾਂ ਦੇ ਭਰਮ ਛੱਡ ਕੇ ਸੱਚੇ ਰਾਮ-ਨਾਮ ਨਾਲ ਪ੍ਰੀਤ ਪਾਓ।',
       en: 'Fulfill all your bodily duties according to rightful norms, but casting aside ritualistic delusions, anchor your love firmly in the divine Name.'
     },
@@ -1856,9 +1856,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Katha kiratan karan ki, jake nisdin reet. Kahein Kabir ta das son, nishchai kije preet.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि सद्गुरु परमात्मा की कथा-कीर्तन करने-कराने की जहां पर दिन-रात रीति हो, अर्थात जिसके यहां इसका प्रचलन हो, ऐसे दास-भक्तों से अवश्य ही प्रेम करना चाहिए। उनसे मधुर व्यवहार करने से भक्ति-ज्ञान की महिमा सुनने को मिलेगी।',
-      pb: 'ਜਿਨ੍ਹਾਂ ਦੇ ਘਰ ਦਿਨ-ਰਾਤ ਸਤਿਗੁਰੂ ਦੀ ਕਥਾ-ਕੀਤਨ ਦੀ ਰੀਤ ਹੈ, ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਨ੍ਹਾਂ ਸੰਤਾਂ ਨਾਲ ਪ੍ਰੇਮ ਕਰੋ।',
-      en: 'Where the discourse and kirtan of the Satguru’s path are cherished day and night, Kabir says: unconditionally love such devoted souls.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सतगुरु परमात्मा की कथा-कीर्तन करने-कराने की जहां पर दिन-रात रीति हो, अर्थात जिसके यहां इसका प्रचलन हो, ऐसे दास-भक्तों से अवश्य ही प्रेम करना चाहिए। उनसे मधुर व्यवहार करने से भक्ति-ज्ञान की महिमा सुनने को मिलेगी।',
+      pb: 'ਜਿਨ੍ਹਾਂ ਦੇ ਘਰ ਦਿਨ-ਰਾਤ ਸਤਿਗੁਰੂ ਦੀ ਕਥਾ-ਕੀਤਨ ਦੀ ਰੀਤ ਹੈ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਨ੍ਹਾਂ ਸੰਤਾਂ ਨਾਲ ਪ੍ਰੇਮ ਕਰੋ।',
+      en: 'Where the discourse and kirtan of the Satguru’s path are cherished day and night, Satguru Kabir Saheb proclaims: unconditionally love such devoted souls.'
     },
     wordMeanings: {
       hi: [
@@ -1908,7 +1908,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir yeh tan jat hai, sako to rakhu bahor. Khali hatho bah gaye, jinke lakh karor.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि यह शरीर क्षण-क्षण में बीता जा रहा है। सावधान हो जाओ और इसके रहते जीवन-कल्याण का उपाय कर लो। इस संसार में जिनके पास लाखों-करोड़ों की संपत्ति थी, वह भी यहां से मृत्यु के प्रवाह में खाली हाथ बह गए।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि यह शरीर क्षण-क्षण में बीता जा रहा है। सावधान हो जाओ और इसके रहते जीवन-कल्याण का उपाय कर लो। इस संसार में जिनके पास लाखों-करोड़ों की संपत्ति थी, वह भी यहां से मृत्यु के प्रवाह में खाली हाथ बह गए।',
       pb: 'ਇਹ ਸਰੀਰ ਜਾ ਰਿਹਾ ਹੈ, ਜੇ ਸੰਭਾਲ ਸਕਦੇ ਹੋ ਸੰਭਾਲ ਲਓ। ਲੱਖਾਂ-ਕਰੋੜਾਂ ਵਾਲੇ ਵੀ ਇੱਥੋਂ ਖਾਲੀ ਹੱਥ ਤੁਰ ਗਏ।',
       en: 'Kabir warns: This body is slipping away; hold it back with devotion if you can. Those possessing millions departed empty-handed in the river of death.'
     },
@@ -1960,7 +1960,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Ya duniya do roj ki, mat kar yaso het. Guru charnan chit laiye, jo puran sukh det.',
     bhavarth: {
-      hi: 'यह दुनिया दो दिन (थोड़े समय) की है। इससे मोह के नाते-रिश्ते मत बनाओ, क्योंकि ये सब बिछुड़ जाएंगे। यदि तुम अपना भला चाहते हो तो सद्गुरु के श्री चरणों में अपने चित्त को लगाओ, जो परम सुख और शांति देने वाला है।',
+      hi: 'यह दुनिया दो दिन (थोड़े समय) की है। इससे मोह के नाते-रिश्ते मत बनाओ, क्योंकि ये सब बिछुड़ जाएंगे। यदि तुम अपना भला चाहते हो तो सतगुरु के श्री चरणों में अपने चित्त को लगाओ, जो परम सुख और शांति देने वाला है।',
       pb: 'ਇਹ ਦੁਨੀਆ ਦੋ ਦਿਨ ਦੀ ਹੈ, ਇਸ ਨਾਲ ਮੋਹ ਨਾ ਪਾਓ। ਆਪਣਾ ਚਿੱਤ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਲਾਓ जो ਪੂਰਨ ਸੁਖ ਦਿੰਦਾ ਹੈ।',
       en: 'This world lasts only for two days; do not tie your heart in deep attachment to it. Fix your consciousness at the Master’s feet, which bestow supreme peace.'
     },
@@ -1979,12 +1979,12 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
       ]
     },
     contemplation: {
-      hi: 'क्या मेरा अटूट प्रेम संसार से है या सद्गुरु के चरणों से?',
+      hi: 'क्या मेरा अटूट प्रेम संसार से है या सतगुरु के चरणों से?',
       pb: 'ਕੀ ਮੇرا ਪਿਆਰ ਸੰਸਾਰ ਨਾਲ ਹੈ ਜਾਂ ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਨਾਲ?',
       en: 'Where does my ultimate allegiance lie—in the fleeting world or the Eternal?'
     },
     practicalApplication: {
-      hi: 'संसार को केवल कर्तव्य भाव से देखें और मन सद्गुरु में रखें।',
+      hi: 'संसार को केवल कर्तव्य भाव से देखें और मन सतगुरु में रखें।',
       pb: 'ਸੰਸਾਰ ਵਿੱਚ ਕਰਤੱਵ ਨਿਭਾਓ, ਮਨ ਗੁਰੂ ਚਰਨਾਂ ਵਿੱਚ ਰੱਖੋ।',
       en: 'Fulfill worldly duties while keeping your heart anchored in the Guru.'
     },
@@ -2012,7 +2012,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir tahan na jaiye, jahan jo kul ko het. Sadhupano janai nahi, naam baap ko let.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि वहां पर मत जाओ, जहां अपने पूर्व के कुल-परिवार का संबंध हो, क्योंकि वहां के लोग आपकी साधुता और मान-मर्यादा को नहीं जान सकते। वह अपने सम्बंधियों के अनुसार ही पिता का नाम लेकर पुकारेंगे तथा वैसा ही व्यवहार करेंगे।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि वहां पर मत जाओ, जहां अपने पूर्व के कुल-परिवार का संबंध हो, क्योंकि वहां के लोग आपकी साधुता और मान-मर्यादा को नहीं जान सकते। वह अपने सम्बंधियों के अनुसार ही पिता का नाम लेकर पुकारेंगे तथा वैसा ही व्यवहार करेंगे।',
       pb: 'ਉੱਥੇ ਨਾ ਜਾਓ ਜਿੱਥੇ ਕੇਵਲ ਕੁਲ-ਪਰਿਵਾਰ ਦਾ ਮੋਹ ਹੋਵੇ, ਜੋ ਤੁਹਾਡੀ ਸਾਧੂਤਾ ਨੂੰ ਨਾ ਜਾਣ ਕੇ ਸਗੋਂ ਸੰਸਾਰੀ ਰਿਸ਼ਤੇ ਯਾਦ ਕਰਵਾਉਣ।',
       en: 'Kabir advises: Do not frequent places bound merely by familial attachments where people fail to recognize your spiritual dignity and pull you into worldly trivialities.'
     },
@@ -2064,7 +2064,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kabir sangi sadhu ka, dal aaya bharpur. Indrin ko tab bandhiya, ya tan kiya ghur.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि संतों के साथी, अर्थात उनके सद्गुण सत्य-दया, क्षमा-समता, त्याग-विवेक तथा वैराग आदि का समूह जब हृदय में आया, तो संतों ने सब इंद्रियों को अपने वश में करके शरीर की व्याधियों को समाप्त कर दिया, अर्थात तन-मन को वश में कर लिया।',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि संतों के साथी, अर्थात उनके सद्गुण सत्य-दया, क्षमा-समता, त्याग-विवेक तथा वैराग आदि का समूह जब हृदय में आया, तो संतों ने सब इंद्रियों को अपने वश में करके शरीर की व्याधियों को समाप्त कर दिया, अर्थात तन-मन को वश में कर लिया।',
       pb: 'ਜਦੋਂ ਹਿਰਦੇ ਵਿੱਚ ਸੰਤਾਂ ਦੇ ਗੁਣਾਂ ਦਾ ਦਲ ਆ ਗਿਆ, ਤਾਂ ਇੰਦਰੀਆਂ ਵੱਸ ਵਿੱਚ ਹੋ ਗਈਆਂ ਅਤੇ ਸਰੀਰ ਦੇ ਵਿਕਾਰ ਮਿਟ ਗਏ।',
       en: 'When the noble virtues and companions of saintliness filled the heart, all restless senses were subdued and physical maladies of ego were conquered.'
     },
@@ -2116,9 +2116,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Dharm kiye dhan na ghatai, nadi na ghattai neer. Apni aankho dekhi le, yon kathi kahahin Kabir.',
     bhavarth: {
-      hi: 'परोपकार आदि पुण्य कर्म करना ही धर्म है। इनको करने से उसी प्रकार कभी धन नहीं घटता, जिस प्रकार नदी के बहते रहने से पानी नहीं घटता। कबीरजी कहते हैं कि इसके प्रमाण के लिए धर्म-कर्म करके अपनी आंखों से देख लो।',
-      pb: 'ਧਰਮ ਅਤੇ ਦਾਨ ਕਰਨ ਨਾਲ ਧਨ ਕਦੇ ਨਹੀਂ ਘਟਦਾ, ਜਿਵੇਂ ਵਹਿੰਦੀ ਨਦੀ ਦਾ ਪਾਣੀ ਨਹੀਂ ਘਟਦਾ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਪਰਖ ਕੇ ਦੇਖ ਲਓ।',
-      en: 'Charity and virtuous deeds never diminish one’s wealth, just as a flowing river’s water never runs dry. Kabir declares: Test this truth with your own eyes.'
+      hi: 'परोपकार आदि पुण्य कर्म करना ही धर्म है। इनको करने से उसी प्रकार कभी धन नहीं घटता, जिस प्रकार नदी के बहते रहने से पानी नहीं घटता। सतगुरु कबीर साहेब फरमाते हैं कि इसके प्रमाण के लिए धर्म-कर्म करके अपनी आंखों से देख लो।',
+      pb: 'ਧਰਮ ਅਤੇ ਦਾਨ ਕਰਨ ਨਾਲ ਧਨ ਕਦੇ ਨਹੀਂ ਘਟਦਾ, ਜਿਵੇਂ ਵਹਿੰਦੀ ਨਦੀ ਦਾ ਪਾਣੀ ਨਹੀਂ ਘਟਦਾ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਰਖ ਕੇ ਦੇਖ ਲਓ।',
+      en: 'Charity and virtuous deeds never diminish one’s wealth, just as a flowing river’s water never runs dry. Satguru Kabir Saheb proclaims: Test this truth with your own eyes.'
     },
     wordMeanings: {
       hi: [
@@ -2168,9 +2168,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kahein Kabir dey tu, jab lag teri deh. Deh kheh ho jayigi, kaun kahega deh.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि तू दान कर। जब तक तेरा यह शरीर सुयोग्य है, तू दान-पुण्य करता रह। जब यह शरीर धूल-मिट्टी में मिल जाएगा, तुझसे कौन दान करने के लिए कहेगा? अर्थात ऐसा विचार कर सदा ही सामर्थ्य के अनुसार दान-पुण्य करते रहना चाहिए।',
-      pb: 'ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਜਦ ਤੱਕ ਸਰੀਰ ਹੈ, ਦਾਨ-ਪੁੰਨ ਕਰ ਲਓ। ਮਿੱਟੀ ਵਿੱਚ ਮਿਲਣ ਤੋਂ ਬਾਅਦ ਕੋਈ ਕੁਝ ਨਹੀਂ ਕਹੇਗਾ।',
-      en: 'Kabir says: Give in charity as long as you possess this living body. Once this body turns to dust, who will ask or give?'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि तू दान कर। जब तक तेरा यह शरीर सुयोग्य है, तू दान-पुण्य करता रह। जब यह शरीर धूल-मिट्टी में मिल जाएगा, तुझसे कौन दान करने के लिए कहेगा? अर्थात ऐसा विचार कर सदा ही सामर्थ्य के अनुसार दान-पुण्य करते रहना चाहिए।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦ ਤੱਕ ਸਰੀਰ ਹੈ, ਦਾਨ-ਪੁੰਨ ਕਰ ਲਓ। ਮਿੱਟੀ ਵਿੱਚ ਮਿਲਣ ਤੋਂ ਬਾਅਦ ਕੋਈ ਕੁਝ ਨਹੀਂ ਕਹੇਗਾ।',
+      en: 'Satguru Kabir Saheb proclaims: Give in charity as long as you possess this living body. Once this body turns to dust, who will ask or give?'
     },
     wordMeanings: {
       hi: [
@@ -2324,7 +2324,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Jin guru jesa janiya, tinko tesa labh. Ose pyas na bhagasi, jab lagi dhasai na aabh.',
     bhavarth: {
-      hi: 'जिनको जैसा गुरु मिला, उनको वैसा ही लाभ प्राप्त हुआ, अर्थात उन्हें वैसा ही ज्ञान का अनुभव-लाभ मिला। जिस प्रकार ओस के चाटने भर से प्यास कभी नहीं बुझती और प्यास बुझाने के लिए जलपान करना आवश्यक है, इसी प्रकार सत्य-ज्ञान के लिए सद्गुरु के उपदेश आवश्यक हैं।',
+      hi: 'जिनको जैसा गुरु मिला, उनको वैसा ही लाभ प्राप्त हुआ, अर्थात उन्हें वैसा ही ज्ञान का अनुभव-लाभ मिला। जिस प्रकार ओस के चाटने भर से प्यास कभी नहीं बुझती और प्यास बुझाने के लिए जलपान करना आवश्यक है, इसी प्रकार सत्य-ज्ञान के लिए सतगुरु के उपदेश आवश्यक हैं।',
       pb: 'ਜਿੰਨਾ ਗੁਰੂ ਨੂੰ ਜਿਵੇਂ ਜਾਣਿਆ, ਤਿਵੇਂ ਲਾਭ ਮਿਲਿਆ। ਜਿਵੇਂ ਤ੍ਰੇਲ ਚੱਟਣ ਨਾਲ ਪਿਆਸ ਨਹੀਂ ਬੁੱਝਦੀ, ਤਿਵੇਂ ਸਤਿਗੁਰੂ ਬਿਨਾਂ ਤ੍ਰਿਪਤੀ ਨਹੀਂ ਹੁੰਦੀ।',
       en: 'As one perceives the Guru, so is the spiritual gain received. Just as licking morning dew does not quench thirst, superficial efforts cannot satisfy the soul.'
     },
@@ -2348,7 +2348,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
       en: 'Am I earnestly seeking the complete living truth from the Master?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के वचनों को गहराई से समझकर अपने जीवन में उतारें।',
+      hi: 'सतगुरु के वचनों को गहराई से समझकर अपने जीवन में उतारें।',
       pb: 'ਸਤਿਗੁਰੂ ਦੇ ਬਚਨਾਂ ਨੂੰ ਗਹਿਰਾਈ ਨਾਲ ਅਪਣਾਓ।',
       en: 'Immerse yourself deeply in the true teachings of the Master.'
     },
@@ -2376,9 +2376,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Isht mile aru man mile, mile sakal ras reet. Kahein Kabir tahan jaiye, yeh santan ki preet.',
     bhavarth: {
-      hi: 'कबीरजी कहते हैं कि जहां पर अपना इष्ट धर्म व मन मिलता हो, अर्थात जहां सेवा-उपासना, भक्ति-साधना और सत्संग-भजन का नियम-व्यवहार तथा सभी रीति-रिवाज समान रूप से प्राप्त होते हों, वहां अवश्य ही जाना चाहिए, ऐसे स्थानों पर जाना ही संतों को प्रिय है।',
-      pb: 'ਜਿੱਥੇ ਇਸ਼ਟ, ਮਨ ਅਤੇ ਭਗਤੀ ਦੀ ਰੀਤ ਮਿਲਦੀ ਹੋਵੇ, ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉੱਥੇ ਜ਼ਰੂਰ ਜਾਓ, ਇਹੀ ਸੰਤਾਂ ਦਾ ਪ੍ਰੇਮ ਹੈ।',
-      en: 'Where your spiritual ideal is honored, minds unite, and the path of devotion is practiced, Kabir says: Go there, for that is the true love of saints.'
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि जहां पर अपना इष्ट धर्म व मन मिलता हो, अर्थात जहां सेवा-उपासना, भक्ति-साधना और सत्संग-भजन का नियम-व्यवहार तथा सभी रीति-रिवाज समान रूप से प्राप्त होते हों, वहां अवश्य ही जाना चाहिए, ऐसे स्थानों पर जाना ही संतों को प्रिय है।',
+      pb: 'ਜਿੱਥੇ ਇਸ਼ਟ, ਮਨ ਅਤੇ ਭਗਤੀ ਦੀ ਰੀਤ ਮਿਲਦੀ ਹੋਵੇ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉੱਥੇ ਜ਼ਰੂਰ ਜਾਓ, ਇਹੀ ਸੰਤਾਂ ਦਾ ਪ੍ਰੇਮ ਹੈ।',
+      en: 'Where your spiritual ideal is honored, minds unite, and the path of devotion is practiced, Satguru Kabir Saheb proclaims: Go there, for that is the true love of saints.'
     },
     wordMeanings: {
       hi: [
@@ -2480,7 +2480,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Ram naam sumiran karai, satguru pad nij dhyan. Aatam puja jive daya, lahai so mukti aman.',
     bhavarth: {
-      hi: 'जो सद्गुरु के श्री चरणों का श्रद्धापूर्वक सुमिरन करता है, उनके ज्ञानोपदेश के अनुसार अंतर्यामी अविनाशी राम के नाम-ज्ञान का भजन करता है, सभी जीवों से जिसका दया-प्रेम का मधुर संबंध होता है, वह अवश्य ही मोक्ष पद को प्राप्त करता है।',
+      hi: 'जो सतगुरु के श्री चरणों का श्रद्धापूर्वक सुमिरन करता है, उनके ज्ञानोपदेश के अनुसार अंतर्यामी अविनाशी राम के नाम-ज्ञान का भजन करता है, सभी जीवों से जिसका दया-प्रेम का मधुर संबंध होता है, वह अवश्य ही मोक्ष पद को प्राप्त करता है।',
       pb: 'ਜੋ ਰਾਮ-ਨਾਮ ਦਾ ਸਿਮਰਨ, ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਦਾ ਧਿਆਨ ਅਤੇ ਸਭ ਜੀਵਾਂ ਉੱਤੇ ਦਯਾ ਕਰਦਾ ਹੈ, ਉਹ ਨਿਸ਼ਚੇ ਹੀ ਮੁਕਤੀ ਪਾਉਂਦਾ ਹੈ।',
       en: 'One who remembers the divine Name, meditates on the Master’s lotus feet, honors the soul within, and shows universal compassion attains absolute liberation.'
     },
@@ -2688,9 +2688,9 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Awat gari ek hai, ultat hoy anek. Kahein Kabir nahi ultiye, wahi ek ki ek.',
     bhavarth: {
-      hi: 'जब कोई किसी को गाली देता है, तो आते हुए गाली एक होती है, परंतु उसके प्रत्युत्तर में जब दूसरा भी गाली देता है, तो वह एक की अनेक हो जाती है। कबीरजी कहते हैं कि आती हुई उस गाली को मत उलटो, अर्थात उसे शांत-संयम भाव से सहन कर जाओ। फिर वह एक की एक ही रहेगी।',
-      pb: 'ਆਉਂਦੀ ਹੋਈ ਗਾਲੀ ਇੱਕ ਹੁੰਦੀ ਹੈ, ਜੇ ਮੋੜੋ ਤਾਂ ਅਨੇਕ ਹੋ ਜਾਂਦੀ ਹੈ। ਕਬੀਰ ਜੀ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਸ ਨੂੰ ਨਾ ਮੋੜੋ, ਉਹ ਉੱਥੇ ਹੀ ਖ਼त्म ਹੋ ਜਾਵੇਗੀ।',
-      en: 'An insult coming toward you is only one, but if you retort, it multiplies into many. Kabir says: Do not return it, and it remains just one and dies away.'
+      hi: 'जब कोई किसी को गाली देता है, तो आते हुए गाली एक होती है, परंतु उसके प्रत्युत्तर में जब दूसरा भी गाली देता है, तो वह एक की अनेक हो जाती है। सतगुरु कबीर साहेब फरमाते हैं कि आती हुई उस गाली को मत उलटो, अर्थात उसे शांत-संयम भाव से सहन कर जाओ। फिर वह एक की एक ही रहेगी।',
+      pb: 'ਆਉਂਦੀ ਹੋਈ ਗਾਲੀ ਇੱਕ ਹੁੰਦੀ ਹੈ, ਜੇ ਮੋੜੋ ਤਾਂ ਅਨੇਕ ਹੋ ਜਾਂਦੀ ਹੈ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਉਸ ਨੂੰ ਨਾ ਮੋੜੋ, ਉਹ ਉੱਥੇ ਹੀ ਖ਼त्म ਹੋ ਜਾਵੇਗੀ।',
+      en: 'An insult coming toward you is only one, but if you retort, it multiplies into many. Satguru Kabir Saheb proclaims: Do not return it, and it remains just one and dies away.'
     },
     wordMeanings: {
       hi: [
@@ -2734,13 +2734,13 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
       en: 'Updesh Ko Ang - 53',
     },
     text: {
-      hi: 'काम क्रोध तृष्णा तजै, तजै मान अपमान।\nसद्गुरु दाया जाहि पर, जम सिर मरदे मान।।',
+      hi: 'काम क्रोध तृष्णा तजै, तजै मान अपमान।\nसतगुरु दाया जाहि पर, जम सिर मरदे मान।।',
       pb: 'ਕਾਮ ਕ੍ਰੋਧ ਤ੍ਰਿਸ਼ਨਾ ਤਜੈ, ਤਜੈ ਮਾਨ ਅਪਮਾਨ।\nਸਤਿਗੁਰੂ ਦਇਆ ਜਾਹਿ ਪਰ, ਜਮ ਸਿਰ ਮਰਦੇ ਮਾਨ।।',
       en: 'Kam krodh trishna tajai, tajai man apman. Satguru daya jahi par, jam sir mardey maan..'
     },
     transliteration: 'Kam krodh trishna tajai, tajai man apman. Satguru daya jahi par, jam sir mardey maan.',
     bhavarth: {
-      hi: 'जो सद्गुरु की सेवा-भक्ति करते हुए उनके ज्ञानोपदेश के मार्ग पर चल पड़ते हैं, वे सेवक-भक्त सद्गुरु के कृपा-पात्र बन जाते हैं। इस प्रकार के भक्तों पर जब सद्गुरु की कृपा हो जाती है, तो वे काम-वासना, क्रोधाग्नि तथा मोह-तृष्णा को त्यागकर, मान-अपमान से रहित हो जाते हैं, अर्थात वे मृत्यु तक को भी जीतने में समर्थ हो जाते हैं।',
+      hi: 'जो सतगुरु की सेवा-भक्ति करते हुए उनके ज्ञानोपदेश के मार्ग पर चल पड़ते हैं, वे सेवक-भक्त सतगुरु के कृपा-पात्र बन जाते हैं। इस प्रकार के भक्तों पर जब सतगुरु की कृपा हो जाती है, तो वे काम-वासना, क्रोधाग्नि तथा मोह-तृष्णा को त्यागकर, मान-अपमान से रहित हो जाते हैं, अर्थात वे मृत्यु तक को भी जीतने में समर्थ हो जाते हैं।',
       pb: 'ਜਿਨ੍ਹਾਂ ਉੱਤੇ ਸਤਿਗੁਰੂ ਦੀ ਦਯਾ ਹੁੰਦੀ ਹੈ, ਉਹ ਕਾਮ, ਕ੍ਰੋਧ, ਤ੍ਰਿਸ਼ਨਾ ਅਤੇ ਮਾਨ-ਅਪਮਾਨ ਤਿਆਗ ਦਿੰਦੇ ਹਨ ਅਤੇ ਮੌਤ ਨੂੰ ਵੀ ਜਿੱਤ ਲੈਂਦੇ ਹਨ।',
       en: 'Upon whom the Satguru bestows grace, they transcend lust, anger, craving, and pride-shame, thereby conquering death and illusion entirely.'
     },
@@ -2764,7 +2764,7 @@ export const SAKHIS_UPDESH_KO_ANG: Sakhi[] = [
       en: 'Have I overcome inner afflictions through the grace of the Master?'
     },
     practicalApplication: {
-      hi: 'सद्गुरु के पावन चरणों में पूर्ण समर्पण कर सभी विकारों से मुक्त हों।',
+      hi: 'सतगुरु के पावन चरणों में पूर्ण समर्पण कर सभी विकारों से मुक्त हों।',
       pb: 'ਸਤਿਗੁਰੂ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਪੂਰਨ ਸਮਰਪਣ ਕਰੋ।',
       en: 'Surrender completely at the Master’s feet to transcend all illusions.'
     },

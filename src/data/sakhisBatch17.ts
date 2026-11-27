@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Chaah miti, chinta miti manva beparvaah. Jisko kuchh nahi chahiye vah shehanshaah.',
     bhavarth: {
-      hi: 'कबीर साहेब परम संतोष का रहस्य प्रकट करते हैं: जब मन की सांसारिक इच्छाएं (चाह) समाप्त हो जाती हैं, तो उसके साथ ही सारी चिंताएं भी स्वतः मिट जाती हैं और मन पूर्ण रूप से निर्भय व बेपरवाह हो जाता है। जिस इंसान को संसार से कुछ भी चाहने की तृष्णा नहीं रहती, वास्तव में वही इस सृष्टि का सबसे बड़ा शहंशाह (सम्राट) है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮਨ ਵਿੱਚੋਂ ਲਾਲਸਾ ਤੇ ਇੱਛਾਵਾਂ ਮਿਟ ਜਾਂਦੀਆਂ ਹਨ, ਤਾਂ ਸਾਰੀਆਂ ਚਿੰਤਾਵਾਂ ਦੂਰ ਹੋ ਜਾਂਦੀਆਂ ਹਨ ਅਤੇ ਮਨ ਬੇਪਰਵਾਹ ਹੋ ਜਾਂਦਾ ਹੈ। ਜਿਸਨੂੰ ਸੰਸਾਰ ਤੋਂ ਕੁਝ ਨਹੀਂ ਚਾਹੀਦਾ, ਉਹ ਹੀ ਅਸਲ ਵਿੱਚ ਦੁਨੀਆ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਬਾਦਸ਼ਾਹ ਹੈ।',
-      en: 'Kabir Saheb unveils the sublime mystery of true liberation: When desire vanishes, anxieties dissolve alongside it, leaving the soul in serene, unburdened bliss. The one who desires nothing from the material world is truly the supreme sovereign of all existence.',
+      hi: 'सतगुरु कबीर साहेब परम संतोष का रहस्य प्रकट करते हैं: जब मन की सांसारिक इच्छाएं (चाह) समाप्त हो जाती हैं, तो उसके साथ ही सारी चिंताएं भी स्वतः मिट जाती हैं और मन पूर्ण रूप से निर्भय व बेपरवाह हो जाता है। जिस इंसान को संसार से कुछ भी चाहने की तृष्णा नहीं रहती, वास्तव में वही इस सृष्टि का सबसे बड़ा शहंशाह (सम्राट) है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਦੋਂ ਮਨ ਵਿੱਚੋਂ ਲਾਲਸਾ ਤੇ ਇੱਛਾਵਾਂ ਮਿਟ ਜਾਂਦੀਆਂ ਹਨ, ਤਾਂ ਸਾਰੀਆਂ ਚਿੰਤਾਵਾਂ ਦੂਰ ਹੋ ਜਾਂਦੀਆਂ ਹਨ ਅਤੇ ਮਨ ਬੇਪਰਵਾਹ ਹੋ ਜਾਂਦਾ ਹੈ। ਜਿਸਨੂੰ ਸੰਸਾਰ ਤੋਂ ਕੁਝ ਨਹੀਂ ਚਾਹੀਦਾ, ਉਹ ਹੀ ਅਸਲ ਵਿੱਚ ਦੁਨੀਆ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਬਾਦਸ਼ਾਹ ਹੈ।',
+      en: 'Satguru Kabir Saheb unveils the sublime mystery of true liberation: When desire vanishes, anxieties dissolve alongside it, leaving the soul in serene, unburdened bliss. The one who desires nothing from the material world is truly the supreme sovereign of all existence.',
     },
     wordMeanings: {
       hi: [
@@ -58,17 +58,17 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
       en: 'O Supreme Sovereign Satguru! Extinguish all desires from my soul and crown me with divine contentment. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की सर्वाधिक प्रसिद्ध और वैराग्य-संतोष का शिखर प्रतिपादित करने वाली वाणी है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की सर्वाधिक प्रसिद्ध और वैराग्य-संतोष का शिखर प्रतिपादित करने वाली वाणी है।',
       pb: 'ਇਹ ਸਾਖੀ ਸੰਤੋਖ ਅਤੇ ਨਿਰਇੱਛਤ ਅਵਸਥਾ ਦੀ ਸਭ ਤੋਂ ਪ੍ਰਸਿੱਧ ਬਾਣੀ ਹੈ।',
-      en: 'This is one of the most famous verses of Kabir Saheb, celebrating the sovereignty of spiritual desirelessness.',
+      en: 'This is one of the most famous verses of Satguru Kabir Saheb, celebrating the sovereignty of spiritual desirelessness.',
     },
     quiz: [
       {
         id: 'q-b17-221',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्चा शहंशाह (बादशाह) कौन है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲ ਸ਼ਹਿਨਸ਼ਾਹ ਕੌਣ ਹੈ?',
-          en: 'According to Kabir Saheb, who is the true emperor (Shehanshah)?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्चा शहंशाह (बादशाह) कौन है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਅਸਲ ਸ਼ਹਿਨਸ਼ਾਹ ਕੌਣ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, who is the true emperor (Shehanshah)?',
         },
         options: {
           hi: ['जिसे संसार से कुछ भी नहीं चाहिए (तृष्णा-रहित)', 'जिसके पास विशाल सेना हो', 'जिसके पास बहुत खजाना हो', 'जो दूसरों पर हुक्म चलाए'],
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Chalti chakki dekhkar diya kabeera roy. Dui paatan ke beech mein saaboot bacha na koy.',
     bhavarth: {
-      hi: 'कबीर साहेब संसार के नश्वर काल-चक्र को देखकर वैराग्यपूर्वक कहते हैं: जन्म और मरण रूपी दो पाटों के बीच चलती हुई संसार रूपी चक्की को देखकर कबीर के नेत्र सजल हो उठे कि इसमें पिसकर कोई भी जीव साबुत (अमर) नहीं बच पा रहा है। (परंतु जो दाना चक्की की केंद्रीय धुरी/कील यानी सतगुरु के नाम से लगा रहता है, वह पिसने से बच जाता है)।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਜੀ ਸੰਸਾਰ ਦੇ ਕਾਲ-ਚੱਕਰ ਨੂੰ ਵੇਖ ਕੇ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਨਮ ਅਤੇ ਮਰਨ ਰੂਪੀ ਦੋ ਪੁੜਾਂ ਵਿਚਕਾਰ ਚੱਲਦੀ ਚੱਕੀ ਵਿੱਚ ਕੋਈ ਵੀ ਜੀਵ ਸਾਬਤ ਨਹੀਂ ਬਚਦਾ। ਪਰ ਜੋ ਜੀਵ ਗੁਰੂ ਦੀ ਕਿੱਲੀ ਨਾਲ ਜੁੜਿਆ ਰਹਿੰਦਾ ਹੈ, ਉਹ ਕਾਲ ਤੋਂ ਬਚ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Saheb reflects on the relentless grinding of time: Watching the spinning millstone of existence (the dual forces of birth and death, earth and sky), Kabir wept, seeing that no grain escapes whole. Yet, the wisdom reveals that whichever grain clings firmly to the central axle (the True Master’s Name) remains untouched and unbroken.',
+      hi: 'सतगुरु कबीर साहेब संसार के नश्वर काल-चक्र को देखकर वैराग्यपूर्वक कहते हैं: जन्म और मरण रूपी दो पाटों के बीच चलती हुई संसार रूपी चक्की को देखकर कबीर के नेत्र सजल हो उठे कि इसमें पिसकर कोई भी जीव साबुत (अमर) नहीं बच पा रहा है। (परंतु जो दाना चक्की की केंद्रीय धुरी/कील यानी सतगुरु के नाम से लगा रहता है, वह पिसने से बच जाता है)।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੰਸਾਰ ਦੇ ਕਾਲ-ਚੱਕਰ ਨੂੰ ਵੇਖ ਕੇ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਨਮ ਅਤੇ ਮਰਨ ਰੂਪੀ ਦੋ ਪੁੜਾਂ ਵਿਚਕਾਰ ਚੱਲਦੀ ਚੱਕੀ ਵਿੱਚ ਕੋਈ ਵੀ ਜੀਵ ਸਾਬਤ ਨਹੀਂ ਬਚਦਾ। ਪਰ ਜੋ ਜੀਵ ਗੁਰੂ ਦੀ ਕਿੱਲੀ ਨਾਲ ਜੁੜਿਆ ਰਹਿੰਦਾ ਹੈ, ਉਹ ਕਾਲ ਤੋਂ ਬਚ ਜਾਂਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reflects on the relentless grinding of time: Watching the spinning millstone of existence (the dual forces of birth and death, earth and sky), Kabir wept, seeing that no grain escapes whole. Yet, the wisdom reveals that whichever grain clings firmly to the central axle (the True Master’s Name) remains untouched and unbroken.',
     },
     wordMeanings: {
       hi: [
@@ -184,9 +184,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Chandan jaisa saadhu hai, sarpahi sam sansaar. Vaake ang lapta rahe, man me naahi vikaar.',
     bhavarth: {
-      hi: 'कबीर साहेब संत के अडिग और निर्विकार स्वभाव की तुलना चंदन के वृक्ष से करते हैं: जैसे चंदन के शीतल वृक्ष पर विषैले सर्प लिपटे रहते हैं, फिर भी चंदन अपनी शीतलता और सुगंध नहीं छोड़ता और न ही उस पर विष का कोई असर होता है; उसी प्रकार संसार के कुटिल और विकारी लोग संतों के संपर्क में आते हैं, परंतु संतों के मन में लेशमात्र भी विकार उत्पन्न नहीं होता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਧੂ ਦਾ ਸੁਭਾਅ ਚੰਦਨ ਦੇ ਰੁੱਖ ਵਰਗਾ ਹੁੰਦਾ ਹੈ ਅਤੇ ਸੰਸਾਰ ਸੱਪਾਂ ਵਰਗਾ ਹੈ। ਭਾਵੇਂ ਸੱਪ ਚੰਦਨ ਨਾਲ ਲਿਪਟੇ ਰਹਿਣ, ਪਰ ਚੰਦਨ ਆਪਣੀ ਸ਼ਾਂਤੀ ਤੇ ਸੁਗੰਧ ਨਹੀਂ ਛੱਡਦਾ। ਇਸੇ ਤਰ੍ਹਾਂ ਸੰਤ ਵਿਕਾਰਾਂ ਵਿੱਚ ਰਹਿ ਕੇ ਵੀ ਪਵਿੱਤਰ ਰਹਿੰਦੇ ਹਨ।',
-      en: 'Kabir Saheb compares the immaculate nature of a saint to the sandalwood tree: Although venomous serpents wrap themselves tightly around the fragrant sandalwood tree, the sandalwood never absorbs their poison, retaining its cooling sweetness. Similarly, pure saints remain untouched by the negativity of the worldly environment.',
+      hi: 'सतगुरु कबीर साहेब संत के अडिग और निर्विकार स्वभाव की तुलना चंदन के वृक्ष से करते हैं: जैसे चंदन के शीतल वृक्ष पर विषैले सर्प लिपटे रहते हैं, फिर भी चंदन अपनी शीतलता और सुगंध नहीं छोड़ता और न ही उस पर विष का कोई असर होता है; उसी प्रकार संसार के कुटिल और विकारी लोग संतों के संपर्क में आते हैं, परंतु संतों के मन में लेशमात्र भी विकार उत्पन्न नहीं होता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਾਧੂ ਦਾ ਸੁਭਾਅ ਚੰਦਨ ਦੇ ਰੁੱਖ ਵਰਗਾ ਹੁੰਦਾ ਹੈ ਅਤੇ ਸੰਸਾਰ ਸੱਪਾਂ ਵਰਗਾ ਹੈ। ਭਾਵੇਂ ਸੱਪ ਚੰਦਨ ਨਾਲ ਲਿਪਟੇ ਰਹਿਣ, ਪਰ ਚੰਦਨ ਆਪਣੀ ਸ਼ਾਂਤੀ ਤੇ ਸੁਗੰਧ ਨਹੀਂ ਛੱਡਦਾ। ਇਸੇ ਤਰ੍ਹਾਂ ਸੰਤ ਵਿਕਾਰਾਂ ਵਿੱਚ ਰਹਿ ਕੇ ਵੀ ਪਵਿੱਤਰ ਰਹਿੰਦੇ ਹਨ।',
+      en: 'Satguru Kabir Saheb compares the immaculate nature of a saint to the sandalwood tree: Although venomous serpents wrap themselves tightly around the fragrant sandalwood tree, the sandalwood never absorbs their poison, retaining its cooling sweetness. Similarly, pure saints remain untouched by the negativity of the worldly environment.',
     },
     wordMeanings: {
       hi: [
@@ -266,9 +266,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Charcha karo to chauhte, gyaan karo to doy. Dhyaan dharo tab ekla, aur na dooja koy.',
     bhavarth: {
-      hi: 'कबीर साहेब आध्यात्मिक साधना की विभिन्न अवस्थाओं की सुंदर मर्यादा समझाते हैं: यदि सामान्य सामाजिक या धर्म-चर्चा करनी हो तो वह चौराहे (चौहटे) पर सबके साथ खुले मन से हो सकती है। यदि गूढ़ ज्ञान का विमर्श करना हो तो केवल दो मुमुक्षु (गुरु और योग्य शिष्य) बैठकर करें। परंतु जब परमात्मा का ध्यान धरना हो, तो साधक को बिल्कुल एकांत (एकला) होना चाहिए जहां कोई दूसरा न हो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਸਾਧਨਾ ਦੀ ਮਰਿਆਦਾ ਦੱਸਦੇ ਹਨ ਕਿ ਆਮ ਚਰਚਾ ਸਭ ਨਾਲ ਕਰੋ, ਗੂੜ੍ਹ ਗਿਆਨ ਦੀ ਗੱਲ ਦੋ ਜਣੇ (ਗੁਰੂ ਤੇ ਸ਼ਿਸ਼) ਬੈਠ ਕੇ ਕਰਨ, ਪਰ ਜਦੋਂ ਧਿਆਨ ਧਰਨਾ ਹੋਵੇ ਤਾਂ ਬਿਲਕੁਲ ਇਕਾਂਤ ਵਿੱਚ ਇੱਕਲੇ ਹੋ ਜਾਓ।',
-      en: 'Kabir Saheb provides the golden rules of spiritual practice: General religious discussions may be held openly in public gatherings. Deep philosophical inquiry should be conducted between two sincere souls (the Master and receptive disciple). But when meditating upon the Divine, sit in absolute solitude, where no second thought or person exists.',
+      hi: 'सतगुरु कबीर साहेब आध्यात्मिक साधना की विभिन्न अवस्थाओं की सुंदर मर्यादा समझाते हैं: यदि सामान्य सामाजिक या धर्म-चर्चा करनी हो तो वह चौराहे (चौहटे) पर सबके साथ खुले मन से हो सकती है। यदि गूढ़ ज्ञान का विमर्श करना हो तो केवल दो मुमुक्षु (गुरु और योग्य शिष्य) बैठकर करें। परंतु जब परमात्मा का ध्यान धरना हो, तो साधक को बिल्कुल एकांत (एकला) होना चाहिए जहां कोई दूसरा न हो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸਾਧਨਾ ਦੀ ਮਰਿਆਦਾ ਦੱਸਦੇ ਹਨ ਕਿ ਆਮ ਚਰਚਾ ਸਭ ਨਾਲ ਕਰੋ, ਗੂੜ੍ਹ ਗਿਆਨ ਦੀ ਗੱਲ ਦੋ ਜਣੇ (ਗੁਰੂ ਤੇ ਸ਼ਿਸ਼) ਬੈਠ ਕੇ ਕਰਨ, ਪਰ ਜਦੋਂ ਧਿਆਨ ਧਰਨਾ ਹੋਵੇ ਤਾਂ ਬਿਲਕੁਲ ਇਕਾਂਤ ਵਿੱਚ ਇੱਕਲੇ ਹੋ ਜਾਓ।',
+      en: 'Satguru Kabir Saheb provides the golden rules of spiritual practice: General religious discussions may be held openly in public gatherings. Deep philosophical inquiry should be conducted between two sincere souls (the Master and receptive disciple). But when meditating upon the Divine, sit in absolute solitude, where no second thought or person exists.',
     },
     wordMeanings: {
       hi: [
@@ -311,9 +311,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
       {
         id: 'q-b17-224',
         question: {
-          hi: 'कबीर साहेब के अनुसार परमात्मा का ध्यान धरते समय साधक को किस स्थिति में होना चाहिए?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਧਿਆਨ ਲਗਾਉਂਦੇ ਸਮੇਂ ਕਿਵੇਂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?',
-          en: 'According to Kabir Saheb, how should a seeker be situated during meditation?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार परमात्मा का ध्यान धरते समय साधक को किस स्थिति में होना चाहिए?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਧਿਆਨ ਲਗਾਉਂਦੇ ਸਮੇਂ ਕਿਵੇਂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, how should a seeker be situated during meditation?',
         },
         options: {
           hi: ['पूर्ण एकांत में अकेले (एकला)', 'भीड़-भाड़ में', 'बाजार में', 'मित्रों के साथ बातें करते हुए'],
@@ -348,9 +348,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Cheenti chaaval le chali, beech mein mil gayi daal. Kahain kabeer do-oo na mile, ek le dooji daal.',
     bhavarth: {
-      hi: 'कबीर साहेब एकनिष्ठ साधना और लोभ-त्याग का व्यावहारिक दृष्टांत देते हैं: एक नन्ही चींटी मुंह में चावल का दाना दबाए जा रही थी कि रास्ते में उसे दाल का दाना भी मिल गया। अब वह दोनों को एक साथ नहीं उठा सकती। कबीर साहेब कहते हैं कि दो नावों की सवारी संभव नहीं है; यदि दाल चाहिए तो चावल छोड़ना होगा। इसी प्रकार परमात्मा और सांसारिक विषय-भोग दोनों एक साथ नहीं मिल सकते, एक को छोड़ना ही होगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇੱਕ ਨਿੱਕੀ ਕੀੜੀ ਮੂੰਹ ਵਿੱਚ ਚੌਲ ਦਾ ਦਾਣਾ ਲੈ ਕੇ ਜਾ ਰਹੀ ਸੀ, ਰਸਤੇ ਵਿੱਚ ਦਾਲ ਦਾ ਦਾਣਾ ਮਿਲ ਗਿਆ। ਉਹ ਦੋਵਾਂ ਨੂੰ ਇਕੱਠਿਆਂ ਨਹੀਂ ਚੁੱਕ ਸਕਦੀ। ਇਸੇ ਤਰ੍ਹਾਂ ਪ੍ਰਭੂ ਭਗਤੀ ਅਤੇ ਸੰਸਾਰਕ ਭੋਗ ਦੋਵੇਂ ਇਕੱਠੇ ਨਹੀਂ ਮਿਲ ਸਕਦੇ, ਇੱਕ ਨੂੰ ਛੱਡਣਾ ਹੀ ਪਵੇਗਾ।',
-      en: 'Kabir Saheb uses the charming imagery of an ant to teach single-minded devotion: A tiny ant carrying a grain of rice comes across a grain of pulse on its path. Its small jaws cannot grasp both simultaneously. Kabir says you cannot possess both; you must drop one to carry the other. Likewise, one cannot pursue spiritual liberation while clinging tightly to worldly greed.',
+      hi: 'सतगुरु कबीर साहेब एकनिष्ठ साधना और लोभ-त्याग का व्यावहारिक दृष्टांत देते हैं: एक नन्ही चींटी मुंह में चावल का दाना दबाए जा रही थी कि रास्ते में उसे दाल का दाना भी मिल गया। अब वह दोनों को एक साथ नहीं उठा सकती। सतगुरु कबीर साहेब फरमाते हैं कि दो नावों की सवारी संभव नहीं है; यदि दाल चाहिए तो चावल छोड़ना होगा। इसी प्रकार परमात्मा और सांसारिक विषय-भोग दोनों एक साथ नहीं मिल सकते, एक को छोड़ना ही होगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇੱਕ ਨਿੱਕੀ ਕੀੜੀ ਮੂੰਹ ਵਿੱਚ ਚੌਲ ਦਾ ਦਾਣਾ ਲੈ ਕੇ ਜਾ ਰਹੀ ਸੀ, ਰਸਤੇ ਵਿੱਚ ਦਾਲ ਦਾ ਦਾਣਾ ਮਿਲ ਗਿਆ। ਉਹ ਦੋਵਾਂ ਨੂੰ ਇਕੱਠਿਆਂ ਨਹੀਂ ਚੁੱਕ ਸਕਦੀ। ਇਸੇ ਤਰ੍ਹਾਂ ਪ੍ਰਭੂ ਭਗਤੀ ਅਤੇ ਸੰਸਾਰਕ ਭੋਗ ਦੋਵੇਂ ਇਕੱਠੇ ਨਹੀਂ ਮਿਲ ਸਕਦੇ, ਇੱਕ ਨੂੰ ਛੱਡਣਾ ਹੀ ਪਵੇਗਾ।',
+      en: 'Satguru Kabir Saheb uses the charming imagery of an ant to teach single-minded devotion: A tiny ant carrying a grain of rice comes across a grain of pulse on its path. Its small jaws cannot grasp both simultaneously. Satguru Kabir Saheb proclaims you cannot possess both; you must drop one to carry the other. Likewise, one cannot pursue spiritual liberation while clinging tightly to worldly greed.',
     },
     wordMeanings: {
       hi: [
@@ -393,9 +393,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
       {
         id: 'q-b17-225',
         question: {
-          hi: 'चींटी के दृष्टांत से कबीर साहेब क्या संदेश देते हैं?',
-          pb: 'ਕੀੜੀ ਦੇ ਦ੍ਰਿਸ਼ਟਾਂਤ ਤੋਂ ਕਬੀਰ ਸਾਹੇਬ ਕੀ ਸੰਦੇਸ਼ ਦਿੰਦੇ ਹਨ?',
-          en: 'What message does Kabir Saheb convey through the metaphor of the ant?',
+          hi: 'चींटी के दृष्टांत से सतगुरु कबीर साहेब क्या संदेश देते हैं?',
+          pb: 'ਕੀੜੀ ਦੇ ਦ੍ਰਿਸ਼ਟਾਂਤ ਤੋਂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਕੀ ਸੰਦੇਸ਼ ਦਿੰਦੇ ਹਨ?',
+          en: 'What message does Satguru Kabir Saheb convey through the metaphor of the ant?',
         },
         options: {
           hi: ['परमात्मा और सांसारिक भोग दोनों एक साथ नहीं मिल सकते (एकनिष्ठता जरूरी है)', 'चींटी बहुत मेहनती होती है', 'चावल और दाल अच्छी होती है', 'ज्यादा संग्रह करना चाहिए'],
@@ -430,9 +430,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Chheer roop satyanaam, neer roop vyavahaar. Hans roop koyi saadhu hai, sat ka chhaananhaar.',
     bhavarth: {
-      hi: 'कबीर साहेब सत्य और संसार के व्यवहार का भेद बताते हैं: परमात्मा का "सत्यनाम" अमृतमय दूध (क्षीर) के समान पौष्टिक और सारभूत है, जबकि संसार का सारा लेन-देन व व्यवहार केवल पानी (नीर) के समान निःसार है। कोई विरला हंस रूपी विवेकशील संत ही होता है, जो दूध और पानी को अलग-अलग छानकर केवल सत्य रूपी दूध को ग्रहण करता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਨਾਮ ਦੁੱਧ ਵਰਗਾ ਪਵਿੱਤਰ ਹੈ ਅਤੇ ਸੰਸਾਰਕ ਵਿਹਾਰ ਪਾਣੀ ਵਰਗਾ ਫਿੱਕਾ ਹੈ। ਕੋਈ ਵਿਰਲਾ ਹੰਸ ਵਰਗਾ ਗਿਆਨੀ ਸਾਧੂ ਹੀ ਹੁੰਦਾ ਹੈ ਜੋ ਪਾਣੀ ਨੂੰ ਛੱਡ ਕੇ ਸਿਰਫ ਸੱਚ ਦੇ ਦੁੱਧ ਨੂੰ ਗ੍ਰਹਿਣ ਕਰਦਾ ਹੈ।',
-      en: 'Kabir Saheb reveals the discernment of Truth: The True Name (Satnam) is like nourishing pure milk, while worldly interactions and illusions are like tasteless water. Only a rare, swan-like enlightened soul possesses the spiritual discernment to separate water from milk and drink only the pure essence of Truth.',
+      hi: 'सतगुरु कबीर साहेब सत्य और संसार के व्यवहार का भेद बताते हैं: परमात्मा का "सत्यनाम" अमृतमय दूध (क्षीर) के समान पौष्टिक और सारभूत है, जबकि संसार का सारा लेन-देन व व्यवहार केवल पानी (नीर) के समान निःसार है। कोई विरला हंस रूपी विवेकशील संत ही होता है, जो दूध और पानी को अलग-अलग छानकर केवल सत्य रूपी दूध को ग्रहण करता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸੱਚਾ ਨਾਮ ਦੁੱਧ ਵਰਗਾ ਪਵਿੱਤਰ ਹੈ ਅਤੇ ਸੰਸਾਰਕ ਵਿਹਾਰ ਪਾਣੀ ਵਰਗਾ ਫਿੱਕਾ ਹੈ। ਕੋਈ ਵਿਰਲਾ ਹੰਸ ਵਰਗਾ ਗਿਆਨੀ ਸਾਧੂ ਹੀ ਹੁੰਦਾ ਹੈ ਜੋ ਪਾਣੀ ਨੂੰ ਛੱਡ ਕੇ ਸਿਰਫ ਸੱਚ ਦੇ ਦੁੱਧ ਨੂੰ ਗ੍ਰਹਿਣ ਕਰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals the discernment of Truth: The True Name (Satyanaam) is like nourishing pure milk, while worldly interactions and illusions are like tasteless water. Only a rare, swan-like enlightened soul possesses the spiritual discernment to separate water from milk and drink only the pure essence of Truth.',
     },
     wordMeanings: {
       hi: [
@@ -488,7 +488,7 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
         explanation: {
           hi: 'सत्यनाम ही दूध के समान सारभूत तत्व है जिसे हंस रूपी साधु ग्रहण करता है।',
           pb: 'ਸੱਚਾ ਨਾਮ ਹੀ ਅਸਲ ਤੱਤ ਹੈ।',
-          en: 'Satnam is the pure distilled milk that the wise seeker extracts from existence.',
+          en: 'Satyanaam is the pure distilled milk that the wise seeker extracts from existence.',
         },
       },
     ],
@@ -512,9 +512,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Chhin hi chadhe chhin hi utre, so to prem na hoy. Aghat prem pinjre base, prem kahaave soy.',
     bhavarth: {
-      hi: 'कबीर साहेब सच्चे आध्यात्मिक प्रेम की कसौटी बताते हैं: जो प्रेम एक क्षण में बढ़ता है और अगले ही क्षण घट या उतर जाता है, वह वास्तविक प्रेम नहीं बल्कि केवल क्षणिक भावुकता है। सच्चा प्रेम तो वह "अघट" (कभी न घटने वाला) अखंड प्रवाह है, जो हृदय रूपी पिंजरे (घट) में सदा एक-रस होकर बसता है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪ੍ਰੇਮ ਪਲ ਵਿੱਚ ਚੜ੍ਹ ਜਾਵੇ ਤੇ ਪਲ ਵਿੱਚ ਉਤਰ ਜਾਵੇ, ਉਹ ਅਸਲ ਪ੍ਰੇਮ ਨਹੀਂ ਹੈ। ਸੱਚਾ ਪ੍ਰੇਮ ਉਹ ਹੈ ਜੋ ਕਦੇ ਨਹੀਂ ਘਟਦਾ ਅਤੇ ਹਿਰਦੇ ਵਿੱਚ ਹਮੇਸ਼ਾ ਇੱਕ-ਰਸ ਕਾਇਮ ਰਹਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb defines the supreme hallmark of true divine love: That which flares up one moment and fades the next is not love, but mere fleeting emotion. True divine love is constant, inexhaustible, and unwavering, abiding as a permanent, unchanging flame within the temple of the heart.',
+      hi: 'सतगुरु कबीर साहेब सच्चे आध्यात्मिक प्रेम की कसौटी बताते हैं: जो प्रेम एक क्षण में बढ़ता है और अगले ही क्षण घट या उतर जाता है, वह वास्तविक प्रेम नहीं बल्कि केवल क्षणिक भावुकता है। सच्चा प्रेम तो वह "अघट" (कभी न घटने वाला) अखंड प्रवाह है, जो हृदय रूपी पिंजरे (घट) में सदा एक-रस होकर बसता है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੋ ਪ੍ਰੇਮ ਪਲ ਵਿੱਚ ਚੜ੍ਹ ਜਾਵੇ ਤੇ ਪਲ ਵਿੱਚ ਉਤਰ ਜਾਵੇ, ਉਹ ਅਸਲ ਪ੍ਰੇਮ ਨਹੀਂ ਹੈ। ਸੱਚਾ ਪ੍ਰੇਮ ਉਹ ਹੈ ਜੋ ਕਦੇ ਨਹੀਂ ਘਟਦਾ ਅਤੇ ਹਿਰਦੇ ਵਿੱਚ ਹਮੇਸ਼ਾ ਇੱਕ-ਰਸ ਕਾਇਮ ਰਹਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb defines the supreme hallmark of true divine love: That which flares up one moment and fades the next is not love, but mere fleeting emotion. True divine love is constant, inexhaustible, and unwavering, abiding as a permanent, unchanging flame within the temple of the heart.',
     },
     wordMeanings: {
       hi: [
@@ -557,9 +557,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
       {
         id: 'q-b17-227',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्चे प्रेम का मुख्य लक्षण क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੇ ਪ੍ਰੇਮ ਦੀ ਨਿਸ਼ਾਨੀ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the primary characteristic of true divine love?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्चे प्रेम का मुख्य लक्षण क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੇ ਪ੍ਰੇਮ ਦੀ ਨਿਸ਼ਾਨੀ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the primary characteristic of true divine love?',
         },
         options: {
           hi: ['अघट होना (सदा एक-रस और अखंड रहना)', 'बार-बार बदलना', 'गुस्सा करना', 'दिखावा करना'],
@@ -594,9 +594,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Daan diye dhan na ghate, nadi na ghate neer. Apni aankho dekh lo, yo kya kahe kabeer.',
     bhavarth: {
-      hi: 'कबीर साहेब परोपकार और उदारता की महिमा प्रत्यक्ष दृष्टांत से सिद्ध करते हैं: जैसे निरंतर बहती हुई नदी से लाखों लोग जल पीते हैं और भरते हैं, फिर भी नदी का जल कभी घटता नहीं है; ठीक उसी प्रकार जरूरतमंदों को निष्काम भाव से दान और सहायता देने से मनुष्य का धन कभी कम नहीं होता, बल्कि बढ़ता ही है। इसे अपनी आँखों से संसार में प्रत्यक्ष देख लो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋੜਵੰਦਾਂ ਨੂੰ ਦਾਨ ਦੇਣ ਨਾਲ ਧਨ ਕਦੇ ਨਹੀਂ ਘਟਦਾ, ਜਿਵੇਂ ਲੱਖਾਂ ਲੋਕਾਂ ਦੇ ਪਾਣੀ ਪੀਣ ਨਾਲ ਵੀ ਨਦੀ ਦਾ ਜਲ ਕਦੇ ਘੱਟ ਨਹੀਂ ਹੁੰਦਾ। ਇਹ ਗੱਲ ਤੁਸੀਂ ਆਪਣੀਆਂ ਅੱਖਾਂ ਨਾਲ ਪ੍ਰਤੱਖ ਵੇਖ ਸਕਦੇ ਹੋ।',
-      en: 'Kabir Saheb illustrates the cosmic law of charity through a visible natural truth: Just as millions of beings drink from a flowing river without ever depleting its abundant waters, giving generously to the needy never diminishes one’s wealth. Observe this universal principle with your own eyes.',
+      hi: 'सतगुरु कबीर साहेब परोपकार और उदारता की महिमा प्रत्यक्ष दृष्टांत से सिद्ध करते हैं: जैसे निरंतर बहती हुई नदी से लाखों लोग जल पीते हैं और भरते हैं, फिर भी नदी का जल कभी घटता नहीं है; ठीक उसी प्रकार जरूरतमंदों को निष्काम भाव से दान और सहायता देने से मनुष्य का धन कभी कम नहीं होता, बल्कि बढ़ता ही है। इसे अपनी आँखों से संसार में प्रत्यक्ष देख लो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋੜਵੰਦਾਂ ਨੂੰ ਦਾਨ ਦੇਣ ਨਾਲ ਧਨ ਕਦੇ ਨਹੀਂ ਘਟਦਾ, ਜਿਵੇਂ ਲੱਖਾਂ ਲੋਕਾਂ ਦੇ ਪਾਣੀ ਪੀਣ ਨਾਲ ਵੀ ਨਦੀ ਦਾ ਜਲ ਕਦੇ ਘੱਟ ਨਹੀਂ ਹੁੰਦਾ। ਇਹ ਗੱਲ ਤੁਸੀਂ ਆਪਣੀਆਂ ਅੱਖਾਂ ਨਾਲ ਪ੍ਰਤੱਖ ਵੇਖ ਸਕਦੇ ਹੋ।',
+      en: 'Satguru Kabir Saheb illustrates the cosmic law of charity through a visible natural truth: Just as millions of beings drink from a flowing river without ever depleting its abundant waters, giving generously to the needy never diminishes one’s wealth. Observe this universal principle with your own eyes.',
     },
     wordMeanings: {
       hi: [
@@ -676,9 +676,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Daasaatan hirday nahi, naam dharaave daas. Paani ke peeye bina, kaise mite piyaas.',
     bhavarth: {
-      hi: 'कबीर साहेब विनम्रता के दिखावे की व्यर्थता बताते हैं: जिसके हृदय में सच्ची दीनता, विनम्रता और सेवा-भाव (दासातन) नहीं है, परंतु केवल नाम के आगे "दास" जोड़ लेता है, वह आत्म-कल्याण नहीं पा सकता। जैसे केवल "पानी-पानी" रटने से प्यास नहीं बुझती, वास्तव में पानी पीने से ही तृप्ति होती है; वैसे ही आंतरिक समर्पण के बिना केवल नाम का दास बनना व्यर्थ है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸਦੇ ਦਿਲ ਵਿੱਚ ਨਿਮਰਤਾ ਤੇ ਸੇਵਾ ਭਾਵ ਨਹੀਂ, ਪਰ ਨਾਮ ਦੇ ਅੱਗੇ "ਦਾਸ" ਲਿਖਵਾ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਕੋਈ ਲਾਭ ਨਹੀਂ। ਜਿਵੇਂ ਪਾਣੀ ਪੀਤੇ ਬਿਨਾਂ ਪਿਆਸ ਨਹੀਂ ਬੁੱਝਦੀ, ਤਿਵੇਂ ਹਿਰਦੇ ਦੀ ਨਿਮਰਤਾ ਬਿਨਾਂ ਮੁਕਤੀ ਨਹੀਂ ਮਿਲਦੀ।',
-      en: 'Kabir Saheb exposes the hypocrisy of empty spiritual titles: If the heart is devoid of authentic humility, service, and meekness (Daasatan), merely adopting the title "Daas" (servant) is utterly futile. Just as repeating the word "water" without drinking it cannot quench thirst, spiritual fulfillment comes only from genuine inner surrender.',
+      hi: 'सतगुरु कबीर साहेब विनम्रता के दिखावे की व्यर्थता बताते हैं: जिसके हृदय में सच्ची दीनता, विनम्रता और सेवा-भाव (दासातन) नहीं है, परंतु केवल नाम के आगे "दास" जोड़ लेता है, वह आत्म-कल्याण नहीं पा सकता। जैसे केवल "पानी-पानी" रटने से प्यास नहीं बुझती, वास्तव में पानी पीने से ही तृप्ति होती है; वैसे ही आंतरिक समर्पण के बिना केवल नाम का दास बनना व्यर्थ है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜਿਸਦੇ ਦਿਲ ਵਿੱਚ ਨਿਮਰਤਾ ਤੇ ਸੇਵਾ ਭਾਵ ਨਹੀਂ, ਪਰ ਨਾਮ ਦੇ ਅੱਗੇ "ਦਾਸ" ਲਿਖਵਾ ਲੈਂਦਾ ਹੈ, ਉਸਦਾ ਕੋਈ ਲਾਭ ਨਹੀਂ। ਜਿਵੇਂ ਪਾਣੀ ਪੀਤੇ ਬਿਨਾਂ ਪਿਆਸ ਨਹੀਂ ਬੁੱਝਦੀ, ਤਿਵੇਂ ਹਿਰਦੇ ਦੀ ਨਿਮਰਤਾ ਬਿਨਾਂ ਮੁਕਤੀ ਨਹੀਂ ਮਿਲਦੀ।',
+      en: 'Satguru Kabir Saheb exposes the hypocrisy of empty spiritual titles: If the heart is devoid of authentic humility, service, and meekness (Daasatan), merely adopting the title "Daas" (servant) is utterly futile. Just as repeating the word "water" without drinking it cannot quench thirst, spiritual fulfillment comes only from genuine inner surrender.',
     },
     wordMeanings: {
       hi: [
@@ -720,9 +720,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
       {
         id: 'q-b17-229',
         question: {
-          hi: 'कबीर साहेब के अनुसार प्यास बुझाने के लिए क्या आवश्यक है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪਿਆਸ ਬੁਝਾਉਣ ਲਈ ਕੀ ਜ਼ਰੂਰੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is necessary to quench thirst?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार प्यास बुझाने के लिए क्या आवश्यक है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਪਿਆਸ ਬੁਝਾਉਣ ਲਈ ਕੀ ਜ਼ਰੂਰੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is necessary to quench thirst?',
         },
         options: {
           hi: ['वास्तव में पानी को पीना (हृदय में दास्य भाव धारण करना)', 'केवल पानी का नाम जपना', 'पानी को देखना', 'पानी के बारे में बहस करना'],
@@ -757,9 +757,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
     },
     transliteration: 'Das dvaare ka pinjra, taame panchhi ka kaun. Rahe ko achraj hai, gaye achambha kaun.',
     bhavarth: {
-      hi: 'कबीर साहेब शरीर की नश्वरता और प्राणों के रहस्य पर विस्मय प्रकट करते हैं: यह मानव शरीर दस खुले दरवाजों (नौ इंद्रिय छिद्र और दसवां द्वार) वाला एक खुला पिंजरा है, जिसमें यह जीवात्मा रूपी पंछी वास कर रहा है। आश्चर्य तो इस बात का है कि इतने खुले द्वारों वाले पिंजरे में यह प्राण-पंछी अब तक कैसे टिका हुआ है! यदि यह एक दिन उड़ जाए, तो इसमें कोई आश्चर्य की बात नहीं है। अतः जीवन रहते प्रभु का सुमिरन कर लो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਸਰੀਰ ਦਸ ਖੁੱਲ੍ਹੇ ਦਰਵਾਜ਼ਿਆਂ ਵਾਲਾ ਪਿੰਜਰਾ ਹੈ, ਜਿਸ ਵਿੱਚ ਜੀਵ ਰੂਪੀ ਪੰਛੀ ਰਹਿੰਦਾ ਹੈ। ਹੈਰਾਨੀ ਇਸ ਗੱਲ ਦੀ ਹੈ ਕਿ ਉਹ ਇੰਨੇ ਖੁੱਲ੍ਹੇ ਦਰਵਾਜ਼ਿਆਂ ਵਿੱਚ ਵੀ ਕਿਵੇਂ ਟਿਕਿਆ ਹੋਇਆ ਹੈ! ਜੇਕਰ ਉਹ ਉੱਡ ਜਾਵੇ ਤਾਂ ਇਸ ਵਿੱਚ ਕੋਈ ਅਚੰਭਾ ਨਹੀਂ। ਇਸ ਲਈ ਸਮਾਂ ਰਹਿੰਦੇ ਨਾਮ ਜਪੋ।',
-      en: 'Kabir Saheb marvels at the fragile mystery of human life: This physical body is a cage with ten wide-open gates, housing the captive bird of the breath/soul. The true wonder is how this bird remains safely inside such an open cage for even a single day! When it takes flight, it is no surprise at all. Therefore, wake up and meditate while life remains.',
+      hi: 'सतगुरु कबीर साहेब शरीर की नश्वरता और प्राणों के रहस्य पर विस्मय प्रकट करते हैं: यह मानव शरीर दस खुले दरवाजों (नौ इंद्रिय छिद्र और दसवां द्वार) वाला एक खुला पिंजरा है, जिसमें यह जीवात्मा रूपी पंछी वास कर रहा है। आश्चर्य तो इस बात का है कि इतने खुले द्वारों वाले पिंजरे में यह प्राण-पंछी अब तक कैसे टिका हुआ है! यदि यह एक दिन उड़ जाए, तो इसमें कोई आश्चर्य की बात नहीं है। अतः जीवन रहते प्रभु का सुमिरन कर लो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਇਹ ਸਰੀਰ ਦਸ ਖੁੱਲ੍ਹੇ ਦਰਵਾਜ਼ਿਆਂ ਵਾਲਾ ਪਿੰਜਰਾ ਹੈ, ਜਿਸ ਵਿੱਚ ਜੀਵ ਰੂਪੀ ਪੰਛੀ ਰਹਿੰਦਾ ਹੈ। ਹੈਰਾਨੀ ਇਸ ਗੱਲ ਦੀ ਹੈ ਕਿ ਉਹ ਇੰਨੇ ਖੁੱਲ੍ਹੇ ਦਰਵਾਜ਼ਿਆਂ ਵਿੱਚ ਵੀ ਕਿਵੇਂ ਟਿਕਿਆ ਹੋਇਆ ਹੈ! ਜੇਕਰ ਉਹ ਉੱਡ ਜਾਵੇ ਤਾਂ ਇਸ ਵਿੱਚ ਕੋਈ ਅਚੰਭਾ ਨਹੀਂ। ਇਸ ਲਈ ਸਮਾਂ ਰਹਿੰਦੇ ਨਾਮ ਜਪੋ।',
+      en: 'Satguru Kabir Saheb marvels at the fragile mystery of human life: This physical body is a cage with ten wide-open gates, housing the captive bird of the breath/soul. The true wonder is how this bird remains safely inside such an open cage for even a single day! When it takes flight, it is no surprise at all. Therefore, wake up and meditate while life remains.',
     },
     wordMeanings: {
       hi: [
@@ -802,9 +802,9 @@ export const SAKHIS_BATCH_17: Sakhi[] = [
       {
         id: 'q-b17-230',
         question: {
-          hi: 'कबीर साहेब के अनुसार दस द्वारों वाले शरीर में सबसे बड़ा आश्चर्य क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਦਸ ਦਰਵਾਜ਼ਿਆਂ ਵਾਲੇ ਸਰੀਰ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਡੀ ਹੈਰਾਨੀ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the greatest wonder regarding the ten-gated body?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार दस द्वारों वाले शरीर में सबसे बड़ा आश्चर्य क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਦਸ ਦਰਵਾਜ਼ਿਆਂ ਵਾਲੇ ਸਰੀਰ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਡੀ ਹੈਰਾਨੀ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the greatest wonder regarding the ten-gated body?',
         },
         options: {
           hi: ['प्राण-पंछी का अब तक इसके अंदर टिके रहना', 'शरीर का सुंदर दिखना', 'कपड़े पहनना', 'भोजन करना'],

@@ -19,7 +19,7 @@ export const SAKHIS_KATHANI_KO_ANG: Sakhi[] = [
     transliteration: 'Kathani meethi khaand si, karani vish ki loy. Kathani taji karani karai, vish te amrit hoy.',
     bhavarth: {
       hi: 'सतगुरु कबीर साहेब समझाते हैं: केवल बातें बनाना (कथनी) तो खांड (शक्कर) के समान मीठी लगती है, परंतु उसके विपरीत हमारा आचरण यदि दूषित हो तो वह विष की ज्वाला के समान विनाशकारी है। जो कोरी कथनी को त्यागकर पवित्र आचरण (करनी) करता है, उसका जीवन विष से बदलकर अमृतमय हो जाता है।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਗੱਲਾਂ ਕਰਨੀਆਂ ਤਾਂ ਖੰਡ ਵਰਗੀਆਂ ਮਿੱਠੀਆਂ ਲੱਗਦੀਆਂ ਹਨ, ਪਰ ਅਮਲ ਜੇਕਰ ਖਰਾਬ ਹੋਵੇ ਤਾਂ ਉਹ ਜ਼ਹਿਰ ਵਰਗਾ ਹੈ। ਜੋ ਗੱਲਾਂ ਛੱਡ ਕੇ ਨੇਕ ਅਮਲ ਕਰਦਾ ਹੈ, ਉਸ ਦਾ ਜੀਵਨ ਅੰਮ੍ਰਿਤ ਬਣ ਜਾਂਦਾ ਹੈ।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਗੱਲਾਂ ਕਰਨੀਆਂ ਤਾਂ ਖੰਡ ਵਰਗੀਆਂ ਮਿੱਠੀਆਂ ਲੱਗਦੀਆਂ ਹਨ, ਪਰ ਅਮਲ ਜੇਕਰ ਖਰਾਬ ਹੋਵੇ ਤਾਂ ਉਹ ਜ਼ਹਿਰ ਵਰਗਾ ਹੈ। ਜੋ ਗੱਲਾਂ ਛੱਡ ਕੇ ਨੇਕ ਅਮਲ ਕਰਦਾ ਹੈ, ਉਸ ਦਾ ਜੀਵਨ ਅੰਮ੍ਰਿਤ ਬਣ ਜਾਂਦਾ ਹੈ।',
       en: 'Satguru Kabir Saheb teaches: Merely talking is as sweet as sugar, but practicing the opposite is deadly as poison. One who renounces empty words and lives righteous deeds transforms poison into divine nectar.',
     },
     wordMeanings: {
@@ -62,9 +62,9 @@ export const SAKHIS_KATHANI_KO_ANG: Sakhi[] = [
     },
     transliteration: 'Kathai sunai so kya karai, jo man naahi dheer. Kaagad ki naav chadh, kaise utarai teer.',
     bhavarth: {
-      hi: 'सतगुरु कबीर साहेब कहते हैं: यदि मन में सत्य और धैर्य नहीं है, तो केवल उपदेश सुनने या सुनाने से क्या लाभ? जैसे कागज की नाव पर बैठकर कोई नदी पार नहीं कर सकता, वैसे ही कोरी बातों से भवसागर पार नहीं हुआ जा सकता।',
-      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਮਨ ਵਿੱਚ ਧੀਰਜ ਤੇ ਸੱਚ ਨਾ ਹੋਵੇ, ਤਾਂ ਗੱਲਾਂ ਸੁਣਨ-ਸੁਣਾਉਣ ਦਾ ਕੋਈ ਲਾਭ ਨਹੀਂ। ਕਾਗਜ਼ ਦੀ ਬੇੜੀ ਤੇ ਚੜ੍ਹ ਕੇ ਕੋਈ ਦਰਿਆ ਪਾਰ ਨਹੀਂ ਕਰ ਸਕਦਾ।',
-      en: 'Satguru Kabir Saheb says: What avails preaching and listening if the mind lacks patience and sincerity? Just as one cannot cross a river in a paper boat, empty words cannot steer the soul across the ocean of delusion.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं: यदि मन में सत्य और धैर्य नहीं है, तो केवल उपदेश सुनने या सुनाने से क्या लाभ? जैसे कागज की नाव पर बैठकर कोई नदी पार नहीं कर सकता, वैसे ही कोरी बातों से भवसागर पार नहीं हुआ जा सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ: ਜੇਕਰ ਮਨ ਵਿੱਚ ਧੀਰਜ ਤੇ ਸੱਚ ਨਾ ਹੋਵੇ, ਤਾਂ ਗੱਲਾਂ ਸੁਣਨ-ਸੁਣਾਉਣ ਦਾ ਕੋਈ ਲਾਭ ਨਹੀਂ। ਕਾਗਜ਼ ਦੀ ਬੇੜੀ ਤੇ ਚੜ੍ਹ ਕੇ ਕੋਈ ਦਰਿਆ ਪਾਰ ਨਹੀਂ ਕਰ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb proclaims: What avails preaching and listening if the mind lacks patience and sincerity? Just as one cannot cross a river in a paper boat, empty words cannot steer the soul across the ocean of delusion.',
     },
     wordMeanings: {
       hi: [

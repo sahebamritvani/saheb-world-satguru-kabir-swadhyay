@@ -341,19 +341,18 @@ CRITICAL STRICTNESS RULES (MUST FOLLOW):
    - Extract 4 to 6 key archaic/difficult words directly from the given Sakhi.
    - Provide accurate meanings in Hindi, Punjabi (Gurmukhi), and English. The English (EN) field MUST contain the real English translation (e.g., "Forest / Trees"), NOT just Roman transliteration.
 
-4. 5-DIMENSION RANDOMIZED QUIZ (Step 5):
-   - Generate 5 deeply thoughtful, verse-specific MCQs covering these 5 dimensions:
-     1. Core Practical Message (केंद्रीय जीवन संदेश)
-     2. Symbolic / Inner Meaning of key verse words (आध्यात्मिक एवं प्रतीकात्मक अर्थ)
-     3. Real-Life Application Scenario (दैनिक व्यवहार एवं अनुशासन)
-     4. Cause & Spiritual Effect (कारण और परिणाम)
-     5. Deeper Kabir Panth Tattva Gyan Philosophy (तत्व ज्ञान एवं आत्म-बोध)
-   - Each question MUST have 4 realistic, grammatically parallel, unique options (NEVER generic filler like "केवल बाहरी दिखावा और भ्रम" or "क्षणिक भौतिक सुख-भोग"), plus a clear 'explanation' ("सही उत्तर की व्याख्या").
+4. SAKHI-SPECIFIC 2 TO 3 QUESTION QUIZ (Step 5):
+   - Generate 3 crisp, deeply Sakhi-specific MCQs derived strictly from THIS Sakhi's exact verses, archaic keywords (शब्दार्थ), Ang theme, and Bhavarth:
+     1. Core Spiritual Message / Metaphor of this specific Sakhi
+     2. Exact Meaning of a key archaic word or symbol from this Sakhi
+     3. Practical Daily Application of this specific Sakhi
+   - Each question MUST have 4 realistic, grammatically parallel, unique options (NEVER generic filler or identical options across Sakhis), plus a concise 1-line 'explanation'.
 
 5. KEY LEARNINGS, CONTEMPLATION & YOGA (Steps 7, 9, 10, 11):
-   - Step 7 (Key Learnings): Provide exactly 4 practical daily-life takeaways derived strictly from the current Sakhi (without repeating the literal translation verbatim).
-   - Step 9 (Contemplation): Frame exactly 3 self-reflection questions based directly on the moral of the current Sakhi.
-   - Step 10 (Meditation/Yoga) & Step 11 (Blessing): Tailor the guided meditation visualization (3 sequential stages) and the final guru blessing specifically to the theme of the current Sakhi.
+   - Connect EVERY step directly to the Sakhi's specific Ang / Chapter (provided in the Sakhi input as Ang / Category) and core spiritual theme (e.g., for 'शब्द को अंग', emphasize anchoring consciousness/Surat in the eternal 'Satyanaam' Shabd rather than generic statements).
+   - Step 7 (Key Learnings): Provide exactly 4 practical daily-life takeaways derived strictly from the current Sakhi and its Ang (without repeating the literal translation verbatim).
+   - Step 9 (Contemplation): Frame exactly 3 self-reflection questions based directly on the moral and Ang of the current Sakhi.
+   - Step 10 (Meditation/Yoga) & Step 11 (Blessing): Tailor the guided meditation visualization (3 sequential stages) and the final guru blessing specifically to the Ang and theme of the current Sakhi.
 
 6. COMPLETION CERTIFICATE DATA & FORMATTING (Upon Step 11 Completion):
    - Top Centre Header MUST strictly be: "🌹।।सत्यनाम।।🌹"
@@ -362,9 +361,15 @@ CRITICAL STRICTNESS RULES (MUST FOLLOW):
    - Include a 1-line theme-based blessing below the Sakhi and brand the footer line as "Saheb World App • पावन स्वाध्याय मंच".
    - Bottom Centre Footer MUST strictly be: "।।साहेब बंदगी साहेब।।🙏"
 
-TONE & STYLE:
-- Keep the tone devotional, respectful ("Satguru Kabir Saheb", "Pawan Vani"), simple, and grammatically pure.
-- Always spell "साहेब" (not "साहिब") in Hindi/Punjabi text unless quoting the canonical scripture title "Sri Guru Granth Sahib Ji" / "श्री गुरु ग्रंथ साहिब जी" / "ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ".`;
+TONE & STRICT RESPECTFUL TERMINOLOGY RULES:
+- Keep the tone deeply devotional, respectful, and grammatically pure.
+- NEVER use casual phrasing like "कबीरजी", "कबीर जी", "कबीरजी कहते हैं", or "कहते हैं".
+- Always use respectful Sant Mat phrasing: "सतगुरु कबीर साहेब फरमाते हैं" (Hindi), "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ" (Punjabi), and "Satguru Kabir Saheb proclaims" (English).
+- Enforce exact spellings everywhere:
+  * Hindi: "सतगुरु" (not "सद्गुरु"), "सत्यनाम" (not "सतनाम"), "साहेब" (not "साहिब").
+  * Punjabi: "ਸਤਿਗੁਰੂ", "ਸਤਯਨਾਮ", "ਸਾਹੇਬ".
+  * English: "Satguru", "Satyanaam", "Saheb".
+  (Exception: canonical Sikh scripture titles like "Sri Guru Granth Sahib Ji" / "श्री गुरु ग्रंथ साहिब जी" / "ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ").`;
 
   app.post('/api/swadhyay-eleven-steps', async (req, res) => {
     const {
@@ -401,10 +406,11 @@ TONE & STYLE:
         : 'Hindi (Devanagari script)';
 
     const userPrompt = `Generate the complete dynamic 11-step Swadhyay and Certificate metadata for the following Sakhi in ${langLabel}.
-Notice Rule 1: Make Step 4 (Why Kabir Saheb gave this teaching + everyday Drishtant example + mind insight) and Step 6 (inner yogic symbolism of exact verse terms) completely distinct from Step 1's literal meaning.
+Notice Rule 1: Make Step 4 (Why Satguru Kabir Saheb gave this teaching + everyday Drishtant example + mind insight) and Step 6 (inner yogic symbolism of exact verse terms) completely distinct from Step 1's literal meaning, and anchor them specifically in the Ang/Category "${categoryTitle || 'Sakhi Sangrah'}".
 Notice Rule 3: For step3_wordMeanings, ALWAYS provide accurate hi (Hindi), pb (Punjabi Gurmukhi), and en (real English translation, NOT transliteration) for EVERY extracted word regardless of the active display language.
 Notice Rule 2: Provide EXACTLY 4 parallel Sakhis/Vanis in step8_crossReferences—one each from Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji), Kabir Bijak, Kabir Granthavali, and Kabir Sagar, explaining THAT parallel Vani's meaning and its direct connection to THIS main Sakhi.
-Notice Rule 4: Generate 5 distinct, specific MCQs in step5_quiz covering Core Message, Symbolic Meaning, Real-Life Scenario, Cause & Effect, and Tattva Gyan, with 4 realistic unique options each.
+Notice Rule 4: Generate 3 crisp, deeply Sakhi-specific MCQs in step5_quiz (1. Core spiritual message/metaphor of this verse, 2. Exact meaning of a key word/symbol from step3_wordMeanings, 3. Practical daily application), with 4 realistic unique options each and a concise 1-line explanation.
+Notice Rule 5: Connect Steps 2, 7, 9, 10, and 11 directly to "${categoryTitle || 'Sakhi Sangrah'}" and use ONLY respectful Sant Mat attribution ("सतगुरु कबीर साहेब फरमाते हैं" / "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ" / "Satguru Kabir Saheb proclaims") with exact spellings ("सत्यनाम", "साहेब", "सतगुरु").
 Notice Rule 6: Populate certificateData strictly per formatting rules with topHeader="🌹।।सत्यनाम।।🌹", bottomFooter="।।साहेब बंदगी साहेब।।🙏", footerBrand="Saheb World App • पावन स्वाध्याय मंच", highlightMoolSakhi="${verse.replace(/"/g, '\\"')}", seekerName="${String(seekerName || 'श्रद्धालु साधक').replace(/"/g, '\\"')}", and a concise 1-line theme-based blessing in the active language.
 
 SAKHI INPUT:
@@ -588,8 +594,8 @@ ${verse}
 
       const parsed = JSON.parse(rawText.trim());
 
-      // Enforce Rule 4: Shuffle BOTH question order and A/B/C/D options on the backend every request
-      const rawQuestions = Array.isArray(parsed.step5_quiz) ? parsed.step5_quiz.slice(0, 5) : [];
+      // Enforce Rule 4: Shuffle BOTH question order and A/B/C/D options on the backend every request (2-3 crisp questions)
+      const rawQuestions = Array.isArray(parsed.step5_quiz) ? parsed.step5_quiz.slice(0, 3) : [];
       const shuffledQuiz = shuffleQuizQuestionsAndOptions(rawQuestions);
 
       // Enforce Rule 6 sacred formatting constants
@@ -623,7 +629,7 @@ ${verse}
     if (!Array.isArray(questions) || questions.length === 0) {
       return res.status(400).json({ error: 'Questions array is required.' });
     }
-    const shuffled = shuffleQuizQuestionsAndOptions(questions.slice(0, 5));
+    const shuffled = shuffleQuizQuestionsAndOptions(questions.slice(0, 3));
     return res.json({ questions: shuffled });
   });
 

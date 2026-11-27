@@ -19,9 +19,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bande tu kar bandagi, to paave didaar. Avasar maanush janam ka bahuri na baarambaar.',
     bhavarth: {
-      hi: 'कबीर साहेब मानव मात्र को झकझोरते हुए कहते हैं कि हे मनुष्य! तू सच्चे मन से परमात्मा की बंदगी (भक्ति व सुमिरन) कर, तभी तुझे उस परम प्रभु का दीदार (साक्षात्कार) होगा। यह दुर्लभ मानव जन्म बार-बार नहीं मिलता; यह चौरासी लाख योनियों के बाद मिला वह पावन अवसर है जिसमें मुक्ति संभव है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਬੰਦੇ! ਤੂੰ ਪ੍ਰਭੂ ਦੀ ਬੰਦਗੀ ਕਰ ਤਾਂ ਜੋ ਤੈਨੂੰ ਪਰਮਾਤਮਾ ਦੇ ਦਰਸ਼ਨ ਹੋ ਸਕਣ। ਇਹ ਮਨੁੱਖਾ ਜਨਮ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਦਾ, ਇਸ ਲਈ ਇਸ ਸੁਨਹਿਰੀ ਮੌਕੇ ਨੂੰ ਵਿਅਰਥ ਨਾ ਗਵਾਓ।',
-      en: 'Kabir Saheb awakens every soul: O human! Engage in sincere devotion and surrender unto the Supreme Lord so that you may attain divine realization. This precious opportunity of human birth does not come again and again; it is the rare portal to eternal liberation.',
+      hi: 'सतगुरु कबीर साहेब मानव मात्र को झकझोरते हुए कहते हैं कि हे मनुष्य! तू सच्चे मन से परमात्मा की बंदगी (भक्ति व सुमिरन) कर, तभी तुझे उस परम प्रभु का दीदार (साक्षात्कार) होगा। यह दुर्लभ मानव जन्म बार-बार नहीं मिलता; यह चौरासी लाख योनियों के बाद मिला वह पावन अवसर है जिसमें मुक्ति संभव है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਹੇ ਬੰਦੇ! ਤੂੰ ਪ੍ਰਭੂ ਦੀ ਬੰਦਗੀ ਕਰ ਤਾਂ ਜੋ ਤੈਨੂੰ ਪਰਮਾਤਮਾ ਦੇ ਦਰਸ਼ਨ ਹੋ ਸਕਣ। ਇਹ ਮਨੁੱਖਾ ਜਨਮ ਵਾਰ-ਵਾਰ ਨਹੀਂ ਮਿਲਦਾ, ਇਸ ਲਈ ਇਸ ਸੁਨਹਿਰੀ ਮੌਕੇ ਨੂੰ ਵਿਅਰਥ ਨਾ ਗਵਾਓ।',
+      en: 'Satguru Kabir Saheb awakens every soul: O human! Engage in sincere devotion and surrender unto the Supreme Lord so that you may attain divine realization. This precious opportunity of human birth does not come again and again; it is the rare portal to eternal liberation.',
     },
     wordMeanings: {
       hi: [
@@ -103,9 +103,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhaj deena kahu aur hi, tan saadhun ke sang. Kahain kabeer kaari gajee, kaise laage rang.',
     bhavarth: {
-      hi: 'कबीर साहेब बाह्य संगति और आंतरिक भटकाव का पर्दाफाश करते हैं: यदि शरीर तो साधु-संतों की संगति में बैठा है, लेकिन मन संसार के विषयों और चिंताओं में भटक रहा है, तो भक्ति का रंग कैसे चढ़ेगा? जैसे काली मोटी चादर (कारी गजी) पर कोई दूसरा सुंदर रंग नहीं चढ़ता, वैसे ही मलिन और भटके हुए मन पर सत्संग का असर नहीं होता जब तक मन समर्पित न हो।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਸਰੀਰ ਤਾਂ ਸਾਧੂਆਂ ਦੇ ਕੋਲ ਬੈਠਾ ਹੈ ਪਰ ਮਨ ਕਿਤੇ ਹੋਰ ਭਟਕ ਰਿਹਾ ਹੈ, ਤਾਂ ਭਗਤੀ ਦਾ ਰੰਗ ਨਹੀਂ ਚੜ੍ਹ ਸਕਦਾ। ਜਿਵੇਂ ਕਾਲੇ ਕੱਪੜੇ ਤੇ ਕੋਈ ਹੋਰ ਰੰਗ ਨਹੀਂ ਚੜ੍ਹਦਾ, ਤਿਵੇਂ ਭਟਕੇ ਮਨ ਉੱਤੇ ਸਤਿਸੰਗ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ।',
-      en: 'Kabir Saheb exposes hypocritical divided attention: If the physical body sits in holy company while the mind wanders in worldly desires, how can the divine color of devotion ever dye the heart? Just as a pitch-black coarse cloth cannot be dyed with bright colors, a distracted mind receives no spiritual benefit.',
+      hi: 'सतगुरु कबीर साहेब बाह्य संगति और आंतरिक भटकाव का पर्दाफाश करते हैं: यदि शरीर तो साधु-संतों की संगति में बैठा है, लेकिन मन संसार के विषयों और चिंताओं में भटक रहा है, तो भक्ति का रंग कैसे चढ़ेगा? जैसे काली मोटी चादर (कारी गजी) पर कोई दूसरा सुंदर रंग नहीं चढ़ता, वैसे ही मलिन और भटके हुए मन पर सत्संग का असर नहीं होता जब तक मन समर्पित न हो।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਜੇਕਰ ਸਰੀਰ ਤਾਂ ਸਾਧੂਆਂ ਦੇ ਕੋਲ ਬੈਠਾ ਹੈ ਪਰ ਮਨ ਕਿਤੇ ਹੋਰ ਭਟਕ ਰਿਹਾ ਹੈ, ਤਾਂ ਭਗਤੀ ਦਾ ਰੰਗ ਨਹੀਂ ਚੜ੍ਹ ਸਕਦਾ। ਜਿਵੇਂ ਕਾਲੇ ਕੱਪੜੇ ਤੇ ਕੋਈ ਹੋਰ ਰੰਗ ਨਹੀਂ ਚੜ੍ਹਦਾ, ਤਿਵੇਂ ਭਟਕੇ ਮਨ ਉੱਤੇ ਸਤਿਸੰਗ ਦਾ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ।',
+      en: 'Satguru Kabir Saheb exposes hypocritical divided attention: If the physical body sits in holy company while the mind wanders in worldly desires, how can the divine color of devotion ever dye the heart? Just as a pitch-black coarse cloth cannot be dyed with bright colors, a distracted mind receives no spiritual benefit.',
     },
     wordMeanings: {
       hi: [
@@ -184,9 +184,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhakti beej hai prem ka, pargat prithvi maahi. Kahain kabeer boya ghana, nipje ko-oo ek thaahi.',
     bhavarth: {
-      hi: 'कबीर साहेब कहते हैं कि सच्ची भक्ति का मूल बीज निश्छल प्रेम है, जो इस संसार में प्रकट होता है। यद्यपि उपदेश और धर्म के बीज बहुत जगह बहुत अधिक बोए जाते हैं, परंतु सच्चा प्रेम और निष्काम भक्ति किसी विरले ही उर्वर हृदय में अंकुरित होकर फलीभूत होती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭਗਤੀ ਦਾ ਅਸਲ ਬੀਜ ਪ੍ਰੇਮ ਹੈ। ਭਾਵੇਂ ਉਪਦੇਸ਼ ਬਹੁਤ ਥਾਵਾਂ ਤੇ ਦਿੱਤੇ ਜਾਂਦੇ ਹਨ, ਪਰ ਸੱਚੀ ਭਗਤੀ ਕਿਸੇ ਵਿਰਲੇ ਸ਼ਰਧਾਵਾਨ ਹਿਰਦੇ ਵਿੱਚ ਹੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ।',
-      en: 'Kabir Saheb reveals that the seed of authentic devotion is pure, unadulterated divine love. Though seeds of sermons are sown abundantly across the world, genuine devotion blossoms only in the rare soil of a truly receptive and selfless heart.',
+      hi: 'सतगुरु कबीर साहेब फरमाते हैं कि सच्ची भक्ति का मूल बीज निश्छल प्रेम है, जो इस संसार में प्रकट होता है। यद्यपि उपदेश और धर्म के बीज बहुत जगह बहुत अधिक बोए जाते हैं, परंतु सच्चा प्रेम और निष्काम भक्ति किसी विरले ही उर्वर हृदय में अंकुरित होकर फलीभूत होती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭਗਤੀ ਦਾ ਅਸਲ ਬੀਜ ਪ੍ਰੇਮ ਹੈ। ਭਾਵੇਂ ਉਪਦੇਸ਼ ਬਹੁਤ ਥਾਵਾਂ ਤੇ ਦਿੱਤੇ ਜਾਂਦੇ ਹਨ, ਪਰ ਸੱਚੀ ਭਗਤੀ ਕਿਸੇ ਵਿਰਲੇ ਸ਼ਰਧਾਵਾਨ ਹਿਰਦੇ ਵਿੱਚ ਹੀ ਪੈਦਾ ਹੁੰਦੀ ਹੈ।',
+      en: 'Satguru Kabir Saheb reveals that the seed of authentic devotion is pure, unadulterated divine love. Though seeds of sermons are sown abundantly across the world, genuine devotion blossoms only in the rare soil of a truly receptive and selfless heart.',
     },
     wordMeanings: {
       hi: [
@@ -231,9 +231,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
       {
         id: 'q-b16-213',
         question: {
-          hi: 'कबीर साहेब के अनुसार सच्ची भक्ति का मूल बीज क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੀ ਭਗਤੀ ਦਾ ਮੂਲ ਬੀਜ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the root seed of true devotion?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार सच्ची भक्ति का मूल बीज क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਸੱਚੀ ਭਗਤੀ ਦਾ ਮੂਲ ਬੀਜ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the root seed of true devotion?',
         },
         options: {
           hi: ['परम प्रेम', 'धन-संपत्ति', 'हठयोग', 'वाद-विवाद'],
@@ -268,9 +268,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhakti bhajan hari naam hai, dooja dukh apaar. Mansa vaacha karmana, kabeer sumiran saar.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति का परम सार स्पष्ट करते हैं: ईश्वर का सच्चा भजन और भक्ति केवल "सत्यनाम" का सुमिरन ही है, इसके अतिरिक्त संसार का प्रत्येक प्रपंच केवल अपार दुःख का कारण है। अतः मनुष्य को मन (विचार), वचन (वाणी) और कर्म (आचरण) तीनों से निरंतर परमात्मा के नाम का सुमिरन करना चाहिए, यही जीवन का सार है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਜਪਣਾ ਹੀ ਅਸਲ ਭਗਤੀ ਹੈ, ਬਾਕੀ ਸਭ ਦੁੱਖਾਂ ਦਾ ਕਾਰਨ ਹੈ। ਮਨ, ਬਚਨ ਅਤੇ ਕਰਮ ਨਾਲ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰਨਾ ਹੀ ਜੀਵਨ ਦਾ ਸਾਰਥਕ ਤੱਤ ਹੈ।',
-      en: 'Kabir Saheb proclaims the ultimate essence of devotion: Holy remembrance of the True Name is the sole supreme refuge; everything else in the universe is endless sorrow. Therefore, through thought (mind), speech (words), and action (deeds), remember the Divine ceaselessly—this is the distilled truth of life.',
+      hi: 'सतगुरु कबीर साहेब भक्ति का परम सार स्पष्ट करते हैं: ईश्वर का सच्चा भजन और भक्ति केवल "सत्यनाम" का सुमिरन ही है, इसके अतिरिक्त संसार का प्रत्येक प्रपंच केवल अपार दुःख का कारण है। अतः मनुष्य को मन (विचार), वचन (वाणी) और कर्म (आचरण) तीनों से निरंतर परमात्मा के नाम का सुमिरन करना चाहिए, यही जीवन का सार है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਜਪਣਾ ਹੀ ਅਸਲ ਭਗਤੀ ਹੈ, ਬਾਕੀ ਸਭ ਦੁੱਖਾਂ ਦਾ ਕਾਰਨ ਹੈ। ਮਨ, ਬਚਨ ਅਤੇ ਕਰਮ ਨਾਲ ਪ੍ਰਭੂ ਦਾ ਸਿਮਰਨ ਕਰਨਾ ਹੀ ਜੀਵਨ ਦਾ ਸਾਰਥਕ ਤੱਤ ਹੈ।',
+      en: 'Satguru Kabir Saheb proclaims the ultimate essence of devotion: Holy remembrance of the True Name is the sole supreme refuge; everything else in the universe is endless sorrow. Therefore, through thought (mind), speech (words), and action (deeds), remember the Divine ceaselessly—this is the distilled truth of life.',
     },
     wordMeanings: {
       hi: [
@@ -285,7 +285,7 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
         { word: 'ਸੁਮਿਰਨ ਸਾਰ', meaning: 'ਸਿਮਰਨ ਹੀ ਸਾਰ ਹੈ' },
       ],
       en: [
-        { word: 'Hari Naam', meaning: 'The Divine Name / Satnam' },
+        { word: 'Hari Naam', meaning: 'The Divine Name / Satyanaam' },
         { word: 'Dooja Duhkh Apaar', meaning: 'All else is boundless affliction' },
         { word: 'Mansa Vaacha Karmana', meaning: 'In thoughts, words, and deeds' },
         { word: 'Sumiran Saar', meaning: 'Remembrance is the supreme essence' },
@@ -307,7 +307,7 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
       en: 'O Satguru! Unify my thoughts, words, and actions in the single pure stream of Your eternal Name. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब की अत्यंत लोकप्रिय व मूलभूत शिक्षाओं में से एक है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब की अत्यंत लोकप्रिय व मूलभूत शिक्षाओं में से एक है।',
       pb: 'ਇਹ ਸਾਖੀ ਨਾਮ ਸਿਮਰਨ ਦੀ ਸਰਵਉੱਚਤਾ ਨੂੰ ਦਰਸਾਉਂਦੀ ਹੈ।',
       en: 'This is one of the foundational verses establishing remembrance as the highest spiritual discipline.',
     },
@@ -315,9 +315,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
       {
         id: 'q-b16-214',
         question: {
-          hi: 'कबीर साहेब के अनुसार जीवन का सर्वोत्तम सार क्या है?',
-          pb: 'ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜੀਵਨ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਸਾਰ ਕੀ ਹੈ?',
-          en: 'According to Kabir Saheb, what is the supreme essence of life?',
+          hi: 'सतगुरु कबीर साहेब के अनुसार जीवन का सर्वोत्तम सार क्या है?',
+          pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਨੁਸਾਰ ਜੀਵਨ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਸਾਰ ਕੀ ਹੈ?',
+          en: 'According to Satguru Kabir Saheb, what is the supreme essence of life?',
         },
         options: {
           hi: ['मन, वचन और कर्म से प्रभु का सुमिरन', 'संसार का विस्तार', 'वाद-विवाद', 'मान-सम्मान'],
@@ -352,9 +352,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhakti gend chaugaan ki, bhaave koyi le jaay. Kah kabeer kuchh bhed naahi, kahaan rank kahaan raay.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति की सार्वभौमिकता और समानता का उद्घोष करते हैं: परमात्मा की भक्ति चौगान (मैदान) में रखी उस गेंद की तरह है, जिसे जो चाहे अपने प्रेम और पुरुषार्थ से ले जा सकता है। इसमें कोई भेद-भाव या पक्षपात नहीं है; चाहे कोई निर्धन रंक हो या बड़ा राजा (राय), जो भी हृदय से झुकता है, भक्ति उसी की हो जाती है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਖੁੱਲ੍ਹੇ ਮੈਦਾਨ ਵਿੱਚ ਪਈ ਗੇਂਦ ਵਾਂਗ ਹੈ, ਜਿਸਨੂੰ ਕੋਈ ਵੀ ਪ੍ਰੇਮ ਨਾਲ ਹਾਸਲ ਕਰ ਸਕਦਾ ਹੈ। ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਕੋਈ ਵਿਤਕਰਾ ਨਹੀਂ, ਚਾਹੇ ਕੋਈ ਗਰੀਬ ਕੰਗਾਲ ਹੋਵੇ ਜਾਂ ਵੱਡਾ ਰਾਜਾ।',
-      en: 'Kabir Saheb proclaims the boundless equality of divine grace: Devotion is like a ball lying open in the playing field—anyone with sincere love and dedication may claim it. There is no discrimination of caste, status, or wealth; in the court of Truth, emperor and pauper stand equal.',
+      hi: 'सतगुरु कबीर साहेब भक्ति की सार्वभौमिकता और समानता का उद्घोष करते हैं: परमात्मा की भक्ति चौगान (मैदान) में रखी उस गेंद की तरह है, जिसे जो चाहे अपने प्रेम और पुरुषार्थ से ले जा सकता है। इसमें कोई भेद-भाव या पक्षपात नहीं है; चाहे कोई निर्धन रंक हो या बड़ा राजा (राय), जो भी हृदय से झुकता है, भक्ति उसी की हो जाती है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਪ੍ਰਭੂ ਦੀ ਭਗਤੀ ਖੁੱਲ੍ਹੇ ਮੈਦਾਨ ਵਿੱਚ ਪਈ ਗੇਂਦ ਵਾਂਗ ਹੈ, ਜਿਸਨੂੰ ਕੋਈ ਵੀ ਪ੍ਰੇਮ ਨਾਲ ਹਾਸਲ ਕਰ ਸਕਦਾ ਹੈ। ਪ੍ਰਭੂ ਦੇ ਦਰਬਾਰ ਵਿੱਚ ਕੋਈ ਵਿਤਕਰਾ ਨਹੀਂ, ਚਾਹੇ ਕੋਈ ਗਰੀਬ ਕੰਗਾਲ ਹੋਵੇ ਜਾਂ ਵੱਡਾ ਰਾਜਾ।',
+      en: 'Satguru Kabir Saheb proclaims the boundless equality of divine grace: Devotion is like a ball lying open in the playing field—anyone with sincere love and dedication may claim it. There is no discrimination of caste, status, or wealth; in the court of Truth, emperor and pauper stand equal.',
     },
     wordMeanings: {
       hi: [
@@ -391,7 +391,7 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
       en: 'O All-Encompassing Satguru! Dissolve all illusions of hierarchy from my mind and root me in universal equality. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी कबीर साहेब के समतावादी और जाति-भेद रहित आध्यात्मिक दर्शन की परिचायक है।',
+      hi: 'यह साखी सतगुरु कबीर साहेब के समतावादी और जाति-भेद रहित आध्यात्मिक दर्शन की परिचायक है।',
       pb: 'ਇਹ ਸਾਖੀ ਬਰਾਬਰੀ ਅਤੇ ਸਮਾਨਤਾ ਦਾ ਸੰਦੇਸ਼ ਦਿੰਦੀ ਹੈ।',
       en: 'This verse is a cornerstone of Kabir’s egalitarian vision, affirming equal access to spiritual enlightenment.',
     },
@@ -436,9 +436,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhakti mahal bahu oonch hai, door hi se darshaay. Jo koyi jan bhakti kare, shobha barnee na jaay.',
     bhavarth: {
-      hi: 'कबीर साहेब भक्ति की गरिमा और ऊंचाई का गुणगान करते हैं: भक्ति रूपी महल अत्यंत ऊंचा और भव्य है, जो दूर से ही अपनी अलौकिक आभा से दिखाई पड़ता है। जो भी भाग्यशाली साधक अहंकार त्यागकर सच्ची भक्ति करता है, उसके आत्मिक तेज और आध्यात्मिक आनंद की शोभा का वाणी से वर्णन नहीं किया जा सकता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭਗਤੀ ਦਾ ਮਹਿਲ ਬਹੁਤ ਉੱਚਾ ਅਤੇ ਸ਼ਾਨਦਾਰ ਹੈ। ਜੋ ਜੀਵ ਇਸ ਸੱਚੀ ਭਗਤੀ ਨੂੰ ਧਾਰਨ ਕਰਦਾ ਹੈ, ਉਸਦੀ ਮਹਿਮਾ ਅਤੇ ਆਤਮਿਕ ਸ਼ੋਭਾ ਦਾ ਬਿਆਨ ਸ਼ਬਦਾਂ ਵਿੱਚ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।',
-      en: 'Kabir Saheb extols the sublime dignity of devotion: The palace of true devotion stands supremely exalted and luminous, visible from afar. The divine radiance, spiritual beauty, and boundless peace attained by the sincere devotee transcends all verbal description.',
+      hi: 'सतगुरु कबीर साहेब भक्ति की गरिमा और ऊंचाई का गुणगान करते हैं: भक्ति रूपी महल अत्यंत ऊंचा और भव्य है, जो दूर से ही अपनी अलौकिक आभा से दिखाई पड़ता है। जो भी भाग्यशाली साधक अहंकार त्यागकर सच्ची भक्ति करता है, उसके आत्मिक तेज और आध्यात्मिक आनंद की शोभा का वाणी से वर्णन नहीं किया जा सकता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਭਗਤੀ ਦਾ ਮਹਿਲ ਬਹੁਤ ਉੱਚਾ ਅਤੇ ਸ਼ਾਨਦਾਰ ਹੈ। ਜੋ ਜੀਵ ਇਸ ਸੱਚੀ ਭਗਤੀ ਨੂੰ ਧਾਰਨ ਕਰਦਾ ਹੈ, ਉਸਦੀ ਮਹਿਮਾ ਅਤੇ ਆਤਮਿਕ ਸ਼ੋਭਾ ਦਾ ਬਿਆਨ ਸ਼ਬਦਾਂ ਵਿੱਚ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।',
+      en: 'Satguru Kabir Saheb extols the sublime dignity of devotion: The palace of true devotion stands supremely exalted and luminous, visible from afar. The divine radiance, spiritual beauty, and boundless peace attained by the sincere devotee transcends all verbal description.',
     },
     wordMeanings: {
       hi: [
@@ -518,9 +518,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhesh dekh na pujiye, poochh leejiye gyaan. Bina kasauti hont naahi, kanchan ki pehchaan.',
     bhavarth: {
-      hi: 'कबीर साहेब बाहरी दिखावे का खंडन करते हुए समझाते हैं कि केवल गेरुए वस्त्र, तिलक या बाह्य भेष देखकर किसी को पूज्य न मानें; पहले उसके आत्म-ज्ञान और विवेक को परखें। जैसे बिना कसौटी पर घिसे असली सोने (कंचन) की शुद्धता की पहचान नहीं हो सकती, वैसे ही बिना ज्ञान और आचरण के साधुत्व की पहचान नहीं होती।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਿਰਫ ਬਾਹਰੀ ਭੇਖ ਵੇਖ ਕੇ ਕਿਸੇ ਦੀ ਪੂਜਾ ਨਾ ਕਰੋ, ਸਗੋਂ ਉਸਦੇ ਗਿਆਨ ਦੀ ਪਰਖ ਕਰੋ। ਜਿਵੇਂ ਕਸਵੱਟੀ ਤੋਂ ਬਿਨਾਂ ਅਸਲੀ ਸੋਨੇ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ, ਤਿਵੇਂ ਬਿਨਾਂ ਗਿਆਨ ਦੇ ਸਾਧੂ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੋ ਸਕਦੀ।',
-      en: 'Kabir Saheb admonishes us not to revere anyone based merely on external ascetic robes or sectarian markings. Inquire into their true wisdom and spiritual depth: Just as genuine gold cannot be authenticated without testing it on a touchstone, true saintliness is recognized only through wisdom and righteous conduct.',
+      hi: 'सतगुरु कबीर साहेब बाहरी दिखावे का खंडन करते हुए समझाते हैं कि केवल गेरुए वस्त्र, तिलक या बाह्य भेष देखकर किसी को पूज्य न मानें; पहले उसके आत्म-ज्ञान और विवेक को परखें। जैसे बिना कसौटी पर घिसे असली सोने (कंचन) की शुद्धता की पहचान नहीं हो सकती, वैसे ही बिना ज्ञान और आचरण के साधुत्व की पहचान नहीं होती।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਸਿਰਫ ਬਾਹਰੀ ਭੇਖ ਵੇਖ ਕੇ ਕਿਸੇ ਦੀ ਪੂਜਾ ਨਾ ਕਰੋ, ਸਗੋਂ ਉਸਦੇ ਗਿਆਨ ਦੀ ਪਰਖ ਕਰੋ। ਜਿਵੇਂ ਕਸਵੱਟੀ ਤੋਂ ਬਿਨਾਂ ਅਸਲੀ ਸੋਨੇ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੁੰਦੀ, ਤਿਵੇਂ ਬਿਨਾਂ ਗਿਆਨ ਦੇ ਸਾਧੂ ਦੀ ਪਛਾਣ ਨਹੀਂ ਹੋ ਸਕਦੀ।',
+      en: 'Satguru Kabir Saheb admonishes us not to revere anyone based merely on external ascetic robes or sectarian markings. Inquire into their true wisdom and spiritual depth: Just as genuine gold cannot be authenticated without testing it on a touchstone, true saintliness is recognized only through wisdom and righteous conduct.',
     },
     wordMeanings: {
       hi: [
@@ -557,7 +557,7 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
       en: 'O Satguru! Bestow upon me the touchstone of discernment to distinguish truth from outer pretense. Saheb Bandagi Saheb!',
     },
     contextNote: {
-      hi: 'यह साखी विवेकशीलता और गुरु की वास्तविक पहचान के संबंध में कबीर साहेब की क्रांतिकारी शिक्षा है।',
+      hi: 'यह साखी विवेकशीलता और गुरु की वास्तविक पहचान के संबंध में सतगुरु कबीर साहेब की क्रांतिकारी शिक्षा है।',
       pb: 'ਇਹ ਸਾਖੀ ਵਿਵੇਕ ਅਤੇ ਸੱਚੇ ਗੁਰੂ ਦੀ ਪਛਾਣ ਦੀ ਸਿੱਖਿਆ ਦਿੰਦੀ ਹੈ।',
       en: 'This verse is a landmark teaching urging spiritual seekers to test truth with discernment.',
     },
@@ -602,9 +602,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bhookha-bhookha kya kare, kya sunaave log. Bhaanda ghad nij mukh diya, soyi pooran jog.',
     bhavarth: {
-      hi: 'कबीर साहेब संतोष और ईश्वर पर अडिग विश्वास की प्रेरणा देते हैं: अरे जीव! तू संसार के आगे "मैं भूखा हूँ, दुखी हूँ" का रोना क्यों रोता है? जिस परमात्मा ने यह शरीर रूपी घड़ा (भांडा) गढ़ा है और इसमें मुख बनाया है, वही उसकी क्षुधा मिटाने का प्रबंध भी करता है। उस प्रभु पर भरोसा रखकर तृष्णा-रहित होना ही पूर्ण योग है।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋਕਾਂ ਅੱਗੇ ਭੁੱਖ ਅਤੇ ਤੰਗੀ ਦਾ ਰੋਣਾ ਕਿਉਂ ਰੋਂਦੇ ਹੋ? ਜਿਸ ਦਾਤਾਰ ਨੇ ਸਰੀਰ ਰੂਪੀ ਭਾਂਡਾ ਬਣਾ ਕੇ ਮੂੰਹ ਦਿੱਤਾ ਹੈ, ਉਹ ਰੋਜ਼ੀ-ਰੋਟੀ ਦਾ ਪ੍ਰਬੰਧ ਵੀ ਕਰਦਾ ਹੈ। ਉਸ ਉੱਤੇ ਭਰੋਸਾ ਰੱਖਣਾ ਹੀ ਪੂਰਨ ਜੋਗ ਹੈ।',
-      en: 'Kabir Saheb inspires deep trust in divine providence: Why lament your hunger and lack before worldly people? The Supreme Creator who fashioned the vessel of this body and opened a mouth upon it has already provided sustenance for it. Cultivating unwavering contentment and faith in the Divine is the complete yoga.',
+      hi: 'सतगुरु कबीर साहेब संतोष और ईश्वर पर अडिग विश्वास की प्रेरणा देते हैं: अरे जीव! तू संसार के आगे "मैं भूखा हूँ, दुखी हूँ" का रोना क्यों रोता है? जिस परमात्मा ने यह शरीर रूपी घड़ा (भांडा) गढ़ा है और इसमें मुख बनाया है, वही उसकी क्षुधा मिटाने का प्रबंध भी करता है। उस प्रभु पर भरोसा रखकर तृष्णा-रहित होना ही पूर्ण योग है।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਲੋਕਾਂ ਅੱਗੇ ਭੁੱਖ ਅਤੇ ਤੰਗੀ ਦਾ ਰੋਣਾ ਕਿਉਂ ਰੋਂਦੇ ਹੋ? ਜਿਸ ਦਾਤਾਰ ਨੇ ਸਰੀਰ ਰੂਪੀ ਭਾਂਡਾ ਬਣਾ ਕੇ ਮੂੰਹ ਦਿੱਤਾ ਹੈ, ਉਹ ਰੋਜ਼ੀ-ਰੋਟੀ ਦਾ ਪ੍ਰਬੰਧ ਵੀ ਕਰਦਾ ਹੈ। ਉਸ ਉੱਤੇ ਭਰੋਸਾ ਰੱਖਣਾ ਹੀ ਪੂਰਨ ਜੋਗ ਹੈ।',
+      en: 'Satguru Kabir Saheb inspires deep trust in divine providence: Why lament your hunger and lack before worldly people? The Supreme Creator who fashioned the vessel of this body and opened a mouth upon it has already provided sustenance for it. Cultivating unwavering contentment and faith in the Divine is the complete yoga.',
     },
     wordMeanings: {
       hi: [
@@ -683,9 +683,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bin rakhvaare baahira, chidiyon khaaya khet. Ardha pardha oobre, cheti sake to chet.',
     bhavarth: {
-      hi: 'कबीर साहेब जीवन के समय को व्यर्थ गंवाने पर सचेत करते हैं: जैसे बिना रखवाले के खेत की फसल को पक्षी चुग जाते हैं, वैसे ही बिना विवेक व सुमिरन के इस जीवन की अमूल्य श्वासों को विषय-वासनाओं रूपी चिड़ियों ने खा लिया है। अब भी जितना आधा-अधूरा जीवन बचा हुआ है, उसे ईश्वर-भक्ति में लगाकर चेत जा, नहीं तो पूरा खेत लुट जाएगा।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਰਾਖੇ ਤੋਂ ਬਿਨਾਂ ਖੇਤ ਨੂੰ ਪੰਛੀ ਖਾ ਜਾਂਦੇ ਹਨ, ਤਿਵੇਂ ਹੀ ਲਾਪਰਵਾਹੀ ਕਾਰਨ ਉਮਰ ਦੇ ਸਵਾਸ ਵਿਕਾਰਾਂ ਨੇ ਬਰਬਾਦ ਕਰ ਦਿੱਤੇ ਹਨ। ਜਿੰਨੀ ਵੀ ਬਾਕੀ ਜ਼ਿੰਦਗੀ ਬਚੀ ਹੈ, ਉਸਨੂੰ ਸੰਭਾਲ ਕੇ ਹੁਣੇ ਹੀ ਪ੍ਰਭੂ ਭਗਤੀ ਵਿੱਚ ਲਾਓ।',
-      en: 'Kabir Saheb sounds an urgent alarm: Just as an unguarded field is devoured by birds, so has a large portion of this precious life been consumed by worldly distractions and indolence. Even now, whatever remaining breath is left, awaken to spiritual consciousness before the entire harvest of life is lost forever.',
+      hi: 'सतगुरु कबीर साहेबवन के समय को व्यर्थ गंवाने पर सचेत करते हैं: जैसे बिना रखवाले के खेत की फसल को पक्षी चुग जाते हैं, वैसे ही बिना विवेक व सुमिरन के इस जीवन की अमूल्य श्वासों को विषय-वासनाओं रूपी चिड़ियों ने खा लिया है। अब भी जितना आधा-अधूरा जीवन बचा हुआ है, उसे ईश्वर-भक्ति में लगाकर चेत जा, नहीं तो पूरा खेत लुट जाएगा।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਚੇਤਾਵਨੀ ਦਿੰਦੇ ਹਨ ਕਿ ਜਿਵੇਂ ਰਾਖੇ ਤੋਂ ਬਿਨਾਂ ਖੇਤ ਨੂੰ ਪੰਛੀ ਖਾ ਜਾਂਦੇ ਹਨ, ਤਿਵੇਂ ਹੀ ਲਾਪਰਵਾਹੀ ਕਾਰਨ ਉਮਰ ਦੇ ਸਵਾਸ ਵਿਕਾਰਾਂ ਨੇ ਬਰਬਾਦ ਕਰ ਦਿੱਤੇ ਹਨ। ਜਿੰਨੀ ਵੀ ਬਾਕੀ ਜ਼ਿੰਦਗੀ ਬਚੀ ਹੈ, ਉਸਨੂੰ ਸੰਭਾਲ ਕੇ ਹੁਣੇ ਹੀ ਪ੍ਰਭੂ ਭਗਤੀ ਵਿੱਚ ਲਾਓ।',
+      en: 'Satguru Kabir Saheb sounds an urgent alarm: Just as an unguarded field is devoured by birds, so has a large portion of this precious life been consumed by worldly distractions and indolence. Even now, whatever remaining breath is left, awaken to spiritual consciousness before the entire harvest of life is lost forever.',
     },
     wordMeanings: {
       hi: [
@@ -767,9 +767,9 @@ export const SAKHIS_BATCH_16: Sakhi[] = [
     },
     transliteration: 'Bugli neer bitaaliya, saayar chadhya kalank. Aur pakheru pee gaye, hans na bauve chanch.',
     bhavarth: {
-      hi: 'कबीर साहेब विवेकशील साधु (हंस) और संसारी जीवों (अन्य पक्षियों) का अंतर बताते हैं: बगुले (अशुद्ध वृत्ति वाले) ने मानसरोवर के निर्मल जल को गंदा व कलंकित कर दिया। साधारण पक्षी तो उस गंदे जल को पी गए, परंतु विवेकशील राजहंस ने उसमें अपनी चोंच तक नहीं डुबोई। इसी तरह सच्चा संत कभी विकारों और मलिन संगति को स्वीकार नहीं करता।',
-      pb: 'ਕਬੀਰ ਸਾਹੇਬ ਫੁਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬਗਲੇ ਨੇ ਸਰੋਵਰ ਦਾ ਜਲ ਮੈਲਾ ਕਰ ਦਿੱਤਾ। ਹੋਰ ਪੰਛੀਆਂ ਨੇ ਉਹ ਗੰਦਾ ਪਾਣੀ ਪੀ ਲਿਆ, ਪਰ ਵਿਵੇਕੀ ਹੰਸ ਨੇ ਆਪਣੀ ਚੁੰਝ ਵੀ ਨਹੀਂ ਲਾਈ। ਇਸੇ ਤਰ੍ਹਾਂ ਸੱਚਾ ਭਗਤ ਵਿਕਾਰਾਂ ਵਾਲੀ ਸੰਗਤ ਤੋਂ ਦੂਰ ਰਹਿੰਦਾ ਹੈ।',
-      en: 'Kabir Saheb depicts the supreme discrimination of an enlightened seeker (the swan): A heron sullied the pure lake water. While ordinary birds unthinkingly drank that contaminated water, the royal swan refused even to dip its beak into impurity. Similarly, an authentic devotee never compromises with worldly vice or toxic association.',
+      hi: 'सतगुरु कबीर साहेब विवेकशील साधु (हंस) और संसारी जीवों (अन्य पक्षियों) का अंतर बताते हैं: बगुले (अशुद्ध वृत्ति वाले) ने मानसरोवर के निर्मल जल को गंदा व कलंकित कर दिया। साधारण पक्षी तो उस गंदे जल को पी गए, परंतु विवेकशील राजहंस ने उसमें अपनी चोंच तक नहीं डुबोई। इसी तरह सच्चा संत कभी विकारों और मलिन संगति को स्वीकार नहीं करता।',
+      pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ ਕਿ ਬਗਲੇ ਨੇ ਸਰੋਵਰ ਦਾ ਜਲ ਮੈਲਾ ਕਰ ਦਿੱਤਾ। ਹੋਰ ਪੰਛੀਆਂ ਨੇ ਉਹ ਗੰਦਾ ਪਾਣੀ ਪੀ ਲਿਆ, ਪਰ ਵਿਵੇਕੀ ਹੰਸ ਨੇ ਆਪਣੀ ਚੁੰਝ ਵੀ ਨਹੀਂ ਲਾਈ। ਇਸੇ ਤਰ੍ਹਾਂ ਸੱਚਾ ਭਗਤ ਵਿਕਾਰਾਂ ਵਾਲੀ ਸੰਗਤ ਤੋਂ ਦੂਰ ਰਹਿੰਦਾ ਹੈ।',
+      en: 'Satguru Kabir Saheb depicts the supreme discrimination of an enlightened seeker (the swan): A heron sullied the pure lake water. While ordinary birds unthinkingly drank that contaminated water, the royal swan refused even to dip its beak into impurity. Similarly, an authentic devotee never compromises with worldly vice or toxic association.',
     },
     wordMeanings: {
       hi: [

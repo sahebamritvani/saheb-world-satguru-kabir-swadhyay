@@ -107,7 +107,7 @@ export const SAKHIS_KRODH_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मेरी रसना को मिठास और संयम प्रदान करें ताकि किसी का दिल न दुखे।',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੀ ਰਸਨਾ ਨੂੰ ਮਿਠਾਸ ਬਖਸ਼ੋ।',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੀ ਰਸਨਾ ਨੂੰ ਮਿਠਾਸ ਬਖਸ਼ੋ।',
       en: 'O Lord! Sweeten my tongue with restraint and purity so that my words bring healing, not harm.'
     },
     quiz: []
@@ -270,7 +270,7 @@ export const SAKHIS_KRODH_KO_ANG: Sakhi[] = [
     },
     samarpanPrayer: {
       hi: 'हे साहेब! मुझे मन के द्वार पर विवेक का अखंड प्रहरी बनाएं ताकि कोई विकार भीतर न आ सके।',
-      pb: 'ਹੇ ਸਾਹਿਬ! ਮੇਰੇ ਮਨ ਨੂੰ ਗਿਆਨ ਦੀ ਜਾਗ੍ਰਿਤੀ ਬਖਸ਼ੋ।',
+      pb: 'ਹੇ ਸਾਹੇਬ! ਮੇਰੇ ਮਨ ਨੂੰ ਗਿਆਨ ਦੀ ਜਾਗ੍ਰਿਤੀ ਬਖਸ਼ੋ।',
       en: 'O Lord! Establish unwavering mindfulness at the gates of my consciousness so no vice may enter.'
     },
     quiz: []
