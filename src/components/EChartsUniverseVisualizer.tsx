@@ -65,6 +65,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
   onSelectNode
 }) => {
   const chartRef = useRef<any>(null);
+  const chartWrapperRef = useRef<HTMLDivElement | null>(null);
   const { theme, isDarkMode } = useAppTheme();
   const { language, setLanguage } = useLanguage();
 
@@ -119,20 +120,15 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
   // Quick Teaching Tags for search filter
   const searchTags = useMemo(() => [
     { label: language === 'pb' ? 'ਅਨਾਮੀ ਲੋਕ (ਸਰਵਉੱਚ)' : language === 'en' ? 'Anami Lok (Apex)' : 'अनामी लोक (सर्वोच्च)', query: 'Anami' },
-    { label: language === 'pb' ? 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ' : language === 'en' ? 'Satlok' : 'सत्यलोक / सचखंड', query: 'Satlok' },
-    { label: language === 'pb' ? 'ਅਲਖ ਤੇ ਅਗਮ ਲੋਕ' : language === 'en' ? 'Alakh & Agam' : 'अलख व अगम लोक', query: 'Alakh' },
+    { label: language === 'pb' ? 'ਅਗਮ ਤੇ ਅਲਖ ਲੋਕ' : language === 'en' ? 'Agam & Alakh' : 'अगम व अलख लोक', query: 'Agam' },
+    { label: language === 'pb' ? 'ਸਤਯਲੋਕ (ਅਮਰਲੋਕ)' : language === 'en' ? 'Satyalok (Amarlok)' : 'सत्यलोक (अमरलोक)', query: 'Satlok' },
+    { label: language === 'pb' ? 'ਭੰਵਰ ਗੁਫ਼ਾ ਤੇ ਮਹਾਸੁੰਨ' : language === 'en' ? 'Bhanwar & Mahasunna' : 'भंवर गुफा व महासुन्न', query: 'Mansarovar' },
     { label: language === 'pb' ? '੨੧ ਬ੍ਰਹਿਮੰਡ (ਕਾਲ)' : language === 'en' ? '21 Brahmands' : '२१ ब्रह्मांड (काल)', query: 'Brahmand' },
-    { label: language === 'pb' ? 'ਮਾਨਸਰੋਵਰ ਤੇ ਮਹਾਂ-ਸੁੰਨ' : language === 'en' ? 'Mansarovar Void' : 'मानसरोवर व महा-सुन्न', query: 'Mansarovar' },
     { label: language === 'pb' ? 'ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼' : language === 'en' ? 'Kabir Sagar Teachings' : 'कबीर सागर उपदेश', query: 'Kabir Sagar' },
   ], [language]);
 
-  // HIERARCHY DATA ORDER (AS REQUESTED):
-  // 1. ANAMI LOK (ABSOLUTE TOP / ਸਰਵਉੱਚ ਸ਼ਿਖਰ / सबसे ऊपर)
-  // 2. SATLOK / SATYALOKA (ਅਮਰਲੋਕ ਸਤਿਪੁਰੁਸ਼ ਧਾਮ)
-  // 3. ALAKH LOK (ਅਲਖ ਲੋਕ)
-  // 4. AGAM LOK (ਅਗਮ ਲੋਕ)
-  // 5. INTERMEDIATE REALMS (Bhanwar Gupha, Maha Sunna, Trikuti)
-  // 6. 21 BRAHMANDS OF KAAL NIRANJAN (Nether, Mortal, Astral, Causal)
+  // AUTHENTIC KABIR SAGAR COSMIC HIERARCHY:
+  // अनामी लोक (अकह लोक) → अगम लोक → अलख लोक → सत्यलोक (अमरलोक) → भंवर गुफा → महासुन्न → पारब्रह्म (सुन्न) → त्रिकुटी → २१ ब्रह्मांड
   const sunburstData = useMemo<SunburstNode[]>(() => {
     const isPb = language === 'pb';
     const isEn = language === 'en';
@@ -230,58 +226,58 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
     });
 
     // 1. ANAMI LOK (ABSOLUTE TOP ROOT)
-    const anamiTitle = isPb ? 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਧਾਮ — ਸਰਵਉੱਚ ਸ਼ਿਖਰ / ਸਭ ਤੋਂ ਉੱਪਰ)' : isEn ? 'Anami Lok (The Supreme Nameless Pinnacle - Absolute Top)' : 'अनामी लोक (अकथ धाम — सर्वोच्च शिखर / सबसे ऊपर)';
+    const anamiTitle = isPb ? 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ — ਸਰਵਉੱਚ ਸ਼ਿਖਰ)' : isEn ? 'Anami Lok (Akah Lok - Absolute Top)' : 'अनामी लोक (अकह लोक — सर्वोच्च शिखर)';
     const anamiDesc = isPb
       ? 'ਸਮੂਹ ਸ੍ਰਿਸ਼ਟੀ, ਸਾਰੇ ਲੋਕਾਂ ਅਤੇ ਸਮੁੱਚੀ ਚੇਤਨਾ ਦਾ ਸਰਵਉੱਚ ਅਨਾਦਿ ਸ਼ਿਖਰ। ਜਿੱਥੇ ਨਾ ਨਾਮ ਹੈ ਨਾ ਰੂਪ, ਸਿਰਫ਼ ਅਖੰਡ ਨਿਰਮਲ ਚੇਤਨਾ ਅਤੇ ਅਕਹ ਸੁੱਖ ਦਾ ਮਹਾਂ-ਸਾਗਰ ਹੈ।'
       : isEn
       ? 'The absolute top timeless pinnacle of all realms and creation beyond name and form; the infinite ocean of supreme unconditioned radiant consciousness.'
-      : 'समस्त ब्रह्मांडों, समस्त लोकों एवं सकल चेतना का सर्वोच्च अनादि शिखर (सबसे ऊपर)। जहाँ न कोई नाम है न रूप, केवल अखंड सच्चिदानंद का अनंत महासागर है।';
-    const anamiRealm = isPb ? 'ਸਰਵਉੱਚ ਅਨਾਦਿ ਸ਼ਿਖਰ (ਸਭ ਤੋਂ ਉੱਪਰ)' : isEn ? 'Supreme Timeless Apex (Absolute Top)' : 'सर्वोच्च अनादि शिखर (सर्वोपरि सबसे ऊपर)';
-    const anamiKeywords = 'anami purush lok supreme apex akah dham kabeer sagar highest';
+      : 'समस्त ब्रह्मांडों, समस्त लोकों एवं सकल चेतना का सर्वोच्च अनादि शिखर। जहाँ न कोई नाम है न रूप, केवल अखंड सच्चिदानंद का अनंत महासागर है।';
+    const anamiRealm = isPb ? 'ਸਰਵਉੱਚ ਅਨਾਦਿ ਸ਼ਿਖਰ (ਸਭ ਤੋਂ ਉੱਪਰ)' : isEn ? 'Supreme Timeless Apex (Absolute Top)' : 'सर्वोच्च अनादि शिखर (सबसे ऊपर)';
+    const anamiKeywords = 'anami purush lok supreme apex akah dham kabir sagar highest';
     const anamiMatched = matchesSearch(anamiTitle, anamiDesc, anamiRealm, anamiKeywords);
 
-    // 2. SATLOK / SATYALOKA (Next under Anami)
-    const satlokTitle = isPb ? 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ (ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)' : isEn ? 'Satlok / Satyaloka (Sachkhand - Satpurush Satguru Kabir Saheb)' : 'सत्यलोक / सचखंड (सतपुरुष सतगुरु कबीर साहेब धाम)';
+    // 2. SATYALOK (AMARLOK / SACHKHAND)
+    const satlokTitle = isPb ? 'ਸਤਯਲੋਕ (ਅਮਰਲੋਕ / ਸੱਚਖੰਡ — ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)' : isEn ? 'Satyalok (Amarlok / Sachkhand - Satguru Kabir Saheb)' : 'सत्यलोक (अमरलोक / सचखंड — सतगुरु कबीर साहेब धाम)';
     const satlokDesc = isPb
       ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਨਿੱਜ ਧਾਮ ਜਿੱਥੇ ਇੱਕ-ਇੱਕ ਹੰਸ ਦਾ ਤੇਜ ਕ੍ਰੋੜਾਂ ਸੂਰਜਾਂ ਤੋਂ ਵੀ ਅਧਿਕ ਹੁੰਦਾ ਹੈ। ਅੰਮ੍ਰਿਤ ਦੇ ਮਾਨਸਰੋਵਰ ਅਤੇ ਅਮਰ ਕਲਪਵ੍ਰਿਕਸ਼ ਹਨ।'
       : isEn
       ? 'The eternal heart of Amarlok where Satguru Kabir Saheb resides. Every soul shines brighter than millions of suns.'
       : 'सतगुरु कबीर साहेब का निज शाश्वत धाम जहाँ एक-एक हंस का तेज करोड़ों सूर्यों से अधिक देदीप्यमान होता है। यहाँ अमृत के मानसरोवर व कल्पवृक्ष हैं।';
-    const satlokRealm = isPb ? 'ਅਮਰਲੋਕ ਦਾ ਮੁੱਖ ਪ੍ਰਵੇਸ਼ ਧਾਮ' : isEn ? 'Heart of Amarlok' : 'अमरलोक का मुख्य दिव्य धाम';
-    const satlokKeywords = 'satlok satyaloka sachkhand satpurush Satguru Kabir Saheb hans amrit mansarovar';
+    const satlokRealm = isPb ? 'ਅਮਰਲੋਕ (ਸਤਿਪੁਰੁਸ਼ ਧਾਮ)' : isEn ? 'Amarlok (Abode of Satpurush)' : 'अमरलोक (सतपुरुष धाम)';
+    const satlokKeywords = 'satlok satyaloka amarlok sachkhand satpurush satguru kabir saheb hans amrit mansarovar';
     const satlokMatched = matchesSearch(satlokTitle, satlokDesc, satlokRealm, satlokKeywords);
 
-    // 3. ALAKH LOK (Next)
+    // 3. ALAKH LOK
     const alakhTitle = isPb ? 'ਅਲਖ ਲੋਕ (ਅਲਖ ਪੁਰਸ਼ ਮੰਡਲ)' : isEn ? 'Alakh Lok (Incomprehensible Plane)' : 'अलख लोक (अलख पुरुष मंडल)';
     const alakhDesc = isPb
       ? 'ਜੋ ਲਿਖਿਆ ਜਾਂ ਬੋਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ; ਬੁੱਧੀ ਤੋਂ ਪਰੇ ਅਲਖ ਪੁਰਸ਼ ਦਾ ਦਿਵਯ ਮੰਡਲ।'
       : isEn
       ? 'Beyond verbal articulation and intellectual concepts; the pristine plane of Alakh Purush.'
       : 'जो मन-बुद्धि की सीमा से परे है; अलख पुरुष का अनिर्वचनीय दिव्य आध्यात्मिक मंडल।';
-    const alakhRealm = isPb ? 'ਸੂਖਮ ਅਲੌਕਿਕ ਅਵਸਥਾ' : isEn ? 'Transcendent Void' : 'सूक्ष्म अलौकिक स्थिति';
+    const alakhRealm = isPb ? 'ਸੂਖਮ ਅਲੌਕਿਕ ਅਵਸਥਾ' : isEn ? 'Transcendent Plane' : 'सूक्ष्म अलौकिक मंडल';
     const alakhKeywords = 'alakh purush lok transcendent';
     const alakhMatched = matchesSearch(alakhTitle, alakhDesc, alakhRealm, alakhKeywords);
 
-    // 4. AGAM LOK (Next)
+    // 4. AGAM LOK
     const agamTitle = isPb ? 'ਅਗਮ ਲੋਕ (ਅਗਮ ਪੁਰਸ਼ ਧਾਮ)' : isEn ? 'Agam Lok (Inaccessible Realm)' : 'अगम लोक (अगम पुरुष धाम)';
     const agamDesc = isPb
       ? 'ਅਗਮ ਪੁਰਸ਼ ਦਾ ਸਥਾਨ ਜਿੱਥੇ ਕੇਵਲ ਪੂਰਨ ਸਤਿਗੁਰੂ ਦੇ ਸਾਰ ਸ਼ਬਦ ਦੀ ਡੋਰ ਨਾਲ ਹੀ ਪਹੁੰਚਿਆ ਜਾ ਸਕਦਾ ਹੈ।'
       : isEn
-      ? 'The domain reached exclusively via the unbroken cord of the Master\'s Sar Shabad.'
-      : 'अगम पुरुष का पावन धाम जहाँ केवल सार शब्द की डोर द्वारा ही गमन संभव है।';
+      ? 'The domain reached exclusively via the unbroken cord of the Satguru\'s Sar Shabad.'
+      : 'अगम पुरुष का पावन धाम जहाँ केवल सतगुरु के सार शब्द की डोर द्वारा ही गमन संभव है।';
     const agamRealm = isPb ? 'ਪਰਮ ਗੂੜ੍ਹ ਖੇਤਰ' : isEn ? 'Unfathomable Pinnacle' : 'परम अगम्य क्षेत्र';
     const agamKeywords = 'agam purush lok sar shabad';
     const agamMatched = matchesSearch(agamTitle, agamDesc, agamRealm, agamKeywords);
 
-    // 5. INTERMEDIARY VOID (Bhanwar Gupha, Maha Sunna, Trikuti)
-    const interTitle = isPb ? 'ਮੱਧ ਲੋਕ ਤੇ ਪਾਰਬ੍ਰਹਮ ਦੁਆਰ' : isEn ? 'Intermediate & Parabrahm Portals' : 'मध्य लोक व पारब्रह्म द्वार';
+    // 5. INTERMEDIARY & PARABRAHM PORTALS (Bhanwar Gupha, Mahasunna, Parabrahm Sunn, Trikuti)
+    const interTitle = isPb ? 'ਭੰਵਰ ਗੁਫ਼ਾ, ਮਹਾਸੁੰਨ, ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ) ਤੇ ਤ੍ਰਿਕੁਟੀ' : isEn ? 'Bhanwar Gupha, Mahasunna, Parabrahm (Sunn) & Trikuti' : 'भंवर गुफा, महासुन्न, पारब्रह्म (सुन्न) व त्रिकुटी';
     const interDesc = isPb
       ? 'ਕਾਲ ਦੇ ੨੧ ਬ੍ਰਹਿਮੰਡਾਂ ਤੋਂ ਪਾਰ ਅਤੇ ਅਮਰਲੋਕ ਦੇ ਦੁਆਰ ਦੇ ਵਿਚਕਾਰ ਦਾ ਅੰਤਰਿਕਸ਼ ਖੇਤਰ।'
       : isEn
       ? 'The cosmic threshold between the 21 material universes and the eternal domain of Amarlok.'
       : 'काल के २१ ब्रह्मांडों के पार एवं अमरलोक के प्रवेश द्वार के मध्य का पावन क्षेत्र।';
-    const interRealm = isPb ? 'ਪਾਰਬ੍ਰਹਮ ਦੁਆਰ' : isEn ? 'Gate of Parabrahm' : 'पारब्रह्म द्वार';
-    const interKeywords = 'bhanwar gupha maha sunna trikuti soham';
+    const interRealm = isPb ? 'ਪਾਰਬ੍ਰਹਮ ਤੇ ਮੱਧ ਦੁਆਰ' : isEn ? 'Parabrahm & Intermediate Gateways' : 'पारब्रह्म व मध्य द्वार';
+    const interKeywords = 'bhanwar gupha maha sunna mahasunna parabrahm sunn trikuti soham mansarovar';
     const interMatched = matchesSearch(interTitle, interDesc, interRealm, interKeywords);
 
     // 6. KAAL-LOK (21 Brahmands)
@@ -335,20 +331,20 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
           searchKeywords: anamiKeywords,
         },
         children: [
-          // 1. SATLOK / SATYALOKA (Under Anami)
+          // 1. AGAM, ALAKH & SATYALOK (Authentic Kabir Sagar Descent)
           {
-            name: isPb ? 'ਸਤਯਲੋਕ (ਸੱਚਖੰਡ)' : isEn ? 'Satlok (Sachkhand)' : 'सत्यलोक (सचखंड)',
+            name: isPb ? 'ਅਗਮ • ਅਲਖ • ਸਤਯਲੋਕ' : isEn ? 'Agam • Alakh • Satyalok' : 'अगम • अलख • सत्यलोक',
             itemStyle: {
               color: '#f59e0b', // Radiant sacred gold
               borderColor: '#ffffff',
               borderWidth: satlokMatched && query ? 3 : 2,
               shadowBlur: 15,
               shadowColor: 'rgba(245, 158, 11, 0.7)',
-              opacity: query && !satlokMatched ? 0.35 : 1,
+              opacity: query && !satlokMatched && !agamMatched && !alakhMatched ? 0.35 : 1,
             },
             label: {
               color: '#78350f',
-              fontSize: isFullscreen ? 11 : 9.5,
+              fontSize: isFullscreen ? 10.5 : 9,
               fontWeight: 'bold',
               overflow: 'truncate',
             },
@@ -360,7 +356,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               granthTeaching: isPb
                 ? 'ਕਬੀਰ ਸਾਗਰ: ਕੋਟਿਨ ਰਵਿ ਜਾਕੇ ਤੇਜ ਪ੍ਰਕਾਸ਼ਾ, ਹੰਸਾ ਕਰਹਿਂ ਅੰਮ੍ਰਿਤ ਕਾ ਪਾਸਾ। ਸਤਿ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ, ਅਮਰ ਲੋਕ ਮੇਂ ਜਯੋਤ ਜਗਾਈ॥'
                 : isEn
-                ? 'Kabir Sagar: The eternal realm where souls dwell in nectar, illuminated by Satguru Kabir.'
+                ? 'Kabir Sagar: The eternal realm where souls dwell in nectar, illuminated by Satguru Kabir Saheb.'
                 : 'कबीर सागर: कोटिन रवि जाके तेज प्रकाशा, हंसा करहिं अमृत का पासा। सत्य कबीर साहेब सुखदाई, अमर लोक में ज्योत जगाई॥',
               stateOfSoul: isPb ? 'ਹੰਸ ਰੂਪ ਵਿਚ ਅਮਰ ਤੇ ਅਬਿਨਾਸ਼ੀ' : isEn ? 'Immortal Hansa in pure bliss' : 'हंस रूप में अमर व अविनाशी',
               verse: isPb
@@ -371,7 +367,37 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               searchKeywords: satlokKeywords,
             },
             children: [
-              // 2. ALAKH LOK (Under Satlok)
+              // 2. AGAM LOK
+              {
+                name: isPb ? 'ਅਗਮ ਲੋਕ' : isEn ? 'Agam Lok' : 'अगम लोक',
+                value: 6,
+                itemStyle: { 
+                  color: '#d97706',
+                  borderWidth: agamMatched && query ? 2.5 : 1.5,
+                  opacity: query && !agamMatched ? 0.3 : 1
+                },
+                label: { color: '#ffffff', fontSize: isFullscreen ? 10 : 8.5, fontWeight: 'bold', overflow: 'truncate' },
+                tooltipInfo: {
+                  title: agamTitle,
+                  realm: agamRealm,
+                  category: isPb ? 'ਅਮਰਲੋਕ ਮੰਡਲ' : isEn ? 'Amarlok Sphere' : 'अमरलोक मंडल',
+                  desc: agamDesc,
+                  granthTeaching: isPb
+                    ? 'ਕਬੀਰ ਸਾਗਰ: ਅਗਮ ਦੇਸ਼ ਕੀ ਅਜਬ ਕਹਾਨੀ, ਜੋ ਜਾਨੇ ਸੋਈ ਪਹਿਚਾਨੇ। ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥'
+                    : isEn
+                    ? 'Kabir Sagar: Inaccessible realm attained via the true Sar Shabad.'
+                    : 'कबीर सागर: अगम देश की अजब कहानी, जो जाने सोई पहचाने। कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
+                  stateOfSoul: isPb ? 'ਅਗਮ ਅਵਸਥਾ ਵਿੱਚ ਲੀਨ' : isEn ? 'Merged in Agam essence' : 'अगम अवस्था में लीन',
+                  verse: isPb
+                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ,\nਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥'
+                    : isEn
+                    ? 'Satguru Kabir Saheb revealed the Unfathomable Realm,\nEnding all suffering of birth and rebirth.'
+                    : 'कबीर साहेब अगम लखाया,\nआवागमन का कष्ट मिटाया॥',
+                  searchKeywords: agamKeywords,
+                },
+              },
+
+              // 3. ALAKH LOK
               {
                 name: isPb ? 'ਅਲਖ ਲੋਕ' : isEn ? 'Alakh Lok' : 'अलख लोक',
                 value: 6,
@@ -401,41 +427,41 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                 },
               },
 
-              // 3. AGAM LOK (Under Satlok)
+              // 4. SATYALOK (AMARLOK)
               {
-                name: isPb ? 'ਅਗਮ ਲੋਕ' : isEn ? 'Agam Lok' : 'अगम लोक',
-                value: 6,
+                name: isPb ? 'ਸਤਯਲੋਕ (ਅਮਰਲੋਕ)' : isEn ? 'Satyalok (Amarlok)' : 'सत्यलोक (अमरलोक)',
+                value: 8,
                 itemStyle: { 
-                  color: '#d97706',
-                  borderWidth: agamMatched && query ? 2.5 : 1.5,
-                  opacity: query && !agamMatched ? 0.3 : 1
+                  color: '#b45309',
+                  borderWidth: satlokMatched && query ? 2.5 : 1.5,
+                  opacity: query && !satlokMatched ? 0.3 : 1
                 },
                 label: { color: '#ffffff', fontSize: isFullscreen ? 10 : 8.5, fontWeight: 'bold', overflow: 'truncate' },
                 tooltipInfo: {
-                  title: agamTitle,
-                  realm: agamRealm,
-                  category: isPb ? 'ਅਮਰਲੋਕ ਮੰਡਲ' : isEn ? 'Amarlok Sphere' : 'अमरलोक मंडल',
-                  desc: agamDesc,
+                  title: satlokTitle,
+                  realm: satlokRealm,
+                  category: isPb ? 'ਸ਼ਾਸ਼ਵਤ ਅਮਰ ਮੰਡਲ' : isEn ? 'Eternal Abode of Satguru Kabir Saheb' : 'शाश्वत अमर मंडल',
+                  desc: satlokDesc,
                   granthTeaching: isPb
-                    ? 'ਕਬੀਰ ਸਾਗਰ: ਅਗਮ ਦੇਸ਼ ਕੀ ਅਜਬ ਕਹਾਨੀ, ਜੋ ਜਾਨੇ ਸੋਈ ਪਹਿਚਾਨੇ। ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥'
+                    ? 'ਕਬੀਰ ਸਾਗਰ (ਅਨੁਰਾਗ ਸਾਗਰ): ਸਤਯਲੋਕ ਵਿੱਚ ਕਾਲ ਦਾ ਕੋਈ ਦਾਖ਼ਲਾ ਨਹੀਂ; ਇੱਥੇ ਹੰਸ ਸਦਾ ਅਮਰ ਰਹਿੰਦੇ ਹਨ।'
                     : isEn
-                    ? 'Kabir Sagar: Inaccessible realm attained via the true Sar Shabad.'
-                    : 'कबीर सागर: अगम देश की अजब कहानी, जो जाने सोई पहचाने। कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
-                  stateOfSoul: isPb ? 'ਅਗਮ ਅਵਸਥਾ ਵਿੱਚ ਲੀਨ' : isEn ? 'Merged in Agam essence' : 'अगम अवस्था में लीन',
+                    ? 'Kabir Sagar (Anurag Sagar): Kaal cannot enter Satyalok; souls live eternally immortal here.'
+                    : 'कबीर सागर (अनुराग सागर): सत्यलोक में काल का कोई प्रवेश नहीं; यहाँ हंस सदैव अमर रहते हैं।',
+                  stateOfSoul: isPb ? 'ਹੰਸ ਰੂਪ ਵਿਚ ਅਮਰ ਤੇ ਅਬਿਨਾਸ਼ੀ' : isEn ? 'Immortal Hansa in pure bliss' : 'हंस रूप में अमर व अविनाशी',
                   verse: isPb
-                    ? 'ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ,\nਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥'
+                    ? 'ਅਮਰ ਲੋਕ ਸੋਈ ਹੰਸਾ ਜਾਈ,\nਜਾਕੋ ਸਤਿਗੁਰੂ ਦੇਹਿ ਲਖਾਈ॥'
                     : isEn
-                    ? 'Satguru Kabir Saheb revealed the Unfathomable Realm,\nEnding all suffering of birth and rebirth.'
-                    : 'कबीर साहेब अगम लखाया,\nआवागमन का कष्ट मिटाया॥',
-                  searchKeywords: agamKeywords,
+                    ? 'To the Immortal World only that pure soul arrives,\nTo whom the True Satguru reveals the path.'
+                    : 'अमर लोक सोई हंसा जाई,\nजाको सतगुरु देहि लखाई॥',
+                  searchKeywords: satlokKeywords,
                 },
               },
             ],
           },
 
-          // 4. INTERMEDIATE REALMS & PORTALS
+          // 5. INTERMEDIATE REALMS & PARABRAHM PORTALS
           {
-            name: isPb ? 'ਮੱਧ ਲੋਕ ਤੇ ਪਾਰਬ੍ਰਹਮ' : isEn ? 'Intermediate Planes' : 'मध्य लोक व पारब्रह्म',
+            name: isPb ? 'ਭੰਵਰ • ਮਹਾਸੁੰਨ • ਪਾਰਬ੍ਰਹਮ' : isEn ? 'Intermediate & Parabrahm' : 'भंवर • महासुन्न • पारब्रह्म',
             itemStyle: {
               color: '#6366f1',
               borderColor: '#ffffff',
@@ -484,25 +510,47 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
                 },
               },
               {
-                name: isPb ? 'ਮਹਾਂ-ਸੁੰਨ' : isEn ? 'Maha Sunna' : 'महा-सुन्न',
+                name: isPb ? 'ਮਹਾਸੁੰਨ' : isEn ? 'Mahasunna' : 'महासुन्न',
                 value: 4,
                 itemStyle: { color: '#4f46e5' },
                 label: { color: '#ffffff', fontSize: isFullscreen ? 9 : 7.5, overflow: 'truncate' },
                 tooltipInfo: {
-                  title: isPb ? 'ਮਹਾਂ-ਸੁੰਨ (ਅਥਾਹ ਖਲਾਅ)' : isEn ? 'Maha Sunna (The Great Void)' : 'महा-सुन्न (अगाध महा-शून्य)',
+                  title: isPb ? 'ਮਹਾਸੁੰਨ (ਅਥਾਹ ਖਲਾਅ)' : isEn ? 'Mahasunna (The Great Void)' : 'महासुन्न (अगाध महा-शून्य)',
                   realm: isPb ? '੧੬ ਸ਼ੰਖ ਯੋਜਨ ਘਾਟੀ' : isEn ? '16 Shankh Yojanas' : '१६ शंख योजन घाटी',
                   category: isPb ? 'ਸੂਖਮ ਮੰਡਲ' : isEn ? 'Subtle Sphere' : 'सूक्ष्म मंडल',
                   desc: isPb
                     ? '੧੬ ਸ਼ੰਖ ਯੋਜਨ ਦਾ ਗੰਭੀਰ ਖਲਾਅ ਜਿੱਥੇ ਸਿਰਫ਼ ਸਤਿਗੁਰੂ ਦੇ ਸਤਯਨਾਮ ਦਾ ਪ੍ਰਕਾਸ਼ ਹੀ ਪਾਰ ਲੰਘਾਉਂਦਾ ਹੈ।'
                     : isEn
-                    ? 'The 16 Shankh Yojanas void where only the light of the Master\'s Name guides the soul.'
+                    ? 'The 16 Shankh Yojanas void where only the light of the Satguru\'s Satyanaam guides the soul.'
                     : '१६ शंख योजन का अगाध महा-शून्य जहाँ केवल सतगुरु के सत्यनाम का प्रकाश ही पार ले जाता है।',
                   verse: isPb
                     ? 'ਮਹਾਸ਼ੁੰਨ ਕੀ ਘਾਟੀ ਭਾਰੀ,\nਗੁਰੂ ਬਿਨੁ ਪਾਰ ਨ ਪਾਵੇ ਕੋਈ॥'
                     : isEn
-                    ? 'Vast is the valley of Maha-Sunna Void;\nWithout the Satguru, none can cross over.'
+                    ? 'Vast is the valley of Mahasunna Void;\nWithout the Satguru, none can cross over.'
                     : 'महाशून्य की घाटी भारी,\nगुरु बिनु पार न पावै कोई॥',
-                  searchKeywords: 'maha sunna great void 16 shankh yojanas',
+                  searchKeywords: 'maha sunna mahasunna great void 16 shankh yojanas',
+                },
+              },
+              {
+                name: isPb ? 'ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ)' : isEn ? 'Parabrahm (Sunn)' : 'पारब्रह्म (सुन्न)',
+                value: 4,
+                itemStyle: { color: '#0284c7' },
+                label: { color: '#ffffff', fontSize: isFullscreen ? 9 : 7.5, overflow: 'truncate' },
+                tooltipInfo: {
+                  title: isPb ? 'ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ / ਅਕਸ਼ਰ ਪੁਰਸ਼ ਧਾਮ)' : isEn ? 'Parabrahm (Sunn / Akshar Purush Plane)' : 'पारब्रह्म (सुन्न / अक्षर पुरुष धाम)',
+                  realm: isPb ? 'ਮਾਨਸਰੋਵਰ ਤੇ ਸੁੰਨ ਮੰਡਲ' : isEn ? 'Mansarovar & Sunn Sphere' : 'मानसरोवर व सुन्न मंडल',
+                  category: isPb ? 'ਸੂਖਮ ਮੰਡਲ' : isEn ? 'Subtle Sphere' : 'सूक्ष्म मंडल',
+                  desc: isPb
+                    ? 'ਮਾਨਸਰੋਵਰ ਦੇ ਅਮ੍ਰਿਤ ਸਰੋਵਰ ਵਿੱਚ ਇਸ਼ਨਾਨ ਕਰਕੇ ਹੰਸ ਆਤਮਾ ਸੂਖਮ ਤੇ ਕਾਰਣ ਸਰੀਰਾਂ ਤੋਂ ਮੁਕਤ ਹੋ ਕੇ ਨਿਰਮਲ ਬਣਦੀ ਹੈ।'
+                    : isEn
+                    ? 'In Parabrahm (Sunn), the soul bathes in the Mansarovar nectar pool, shedding all subtle karmic coverings.'
+                    : 'यहाँ मानसरोवर के अमृत कुंड में स्नान कर जीवात्मा समस्त सूक्ष्म व कारण आवरणों से मुक्त होकर निर्मल हंस बन जाती है।',
+                  verse: isPb
+                    ? 'ਮਾਨਸਰੋਵਰ ਨ੍ਹਾਏ ਕੇ, ਹੰਸਾ ਭਏ ਸਚੇਤ।\nਪਾਪ-ਪੁੰਨ ਸਬ ਦੂਰ ਭਏ, ਨਿਰਮਲ ਭਯੋ ਨਿਕੇਤ॥'
+                    : isEn
+                    ? 'Bathing in Mansarovar, the Hansa awakens;\nAll karmic stains dissolve and the abode turns pure.'
+                    : 'मानसरोवर न्हाय के, हंसा भये सचेत।\nपाप-पुण्य सब दूर भये, निरमल भयो निकेत॥',
+                  searchKeywords: 'parabrahm sunn akshar purush mansarovar',
                 },
               },
               {
@@ -570,7 +618,27 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
     ];
   }, [language, isDarkMode, isFullscreen, searchQuery]);
 
-  // ECharts Sunburst Chart Option
+  // Keep ECharts centered & crisp on container resize
+  useEffect(() => {
+    const el = chartWrapperRef.current;
+    if (!el) return;
+    const resizeChart = () => {
+      try {
+        chartRef.current?.getEchartsInstance()?.resize();
+      } catch {
+        // Ignore resize error before mount
+      }
+    };
+    const ro = new ResizeObserver(resizeChart);
+    ro.observe(el);
+    const tId = window.setTimeout(resizeChart, 80);
+    return () => {
+      ro.disconnect();
+      window.clearTimeout(tId);
+    };
+  }, [chartMode, isFullscreen, language]);
+
+  // ECharts Sunburst Chart Option — centered cleanly inside container with safety margin so top half never clips
   const sunburstOption = useMemo<EChartsOption>(() => {
     return {
       backgroundColor: 'transparent',
@@ -581,8 +649,8 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
         {
           type: 'sunburst',
           data: sunburstData,
-          nodeClick: false, // Prevents stuck zoom; click triggers full details bottom drawer
-          radius: isFullscreen ? ['14%', '84%'] : ['12%', '86%'],
+          nodeClick: false, // Click immediately opens detailed Kabir Sagar Upadesh modal
+          radius: isFullscreen ? ['10%', '78%'] : ['8%', '76%'],
           center: ['50%', '50%'],
           sort: undefined,
           emphasis: {
@@ -596,11 +664,11 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
             {},
             {
               r0: '0%',
-              r: '22%',
+              r: '20%',
               itemStyle: { borderWidth: 2 },
               label: {
                 rotate: 0,
-                fontSize: isFullscreen ? 11 : 9,
+                fontSize: isFullscreen ? 10.5 : 8.5,
                 fontWeight: 'bold',
                 color: '#ffffff',
                 overflow: 'truncate',
@@ -608,19 +676,19 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               },
             },
             {
-              r0: '22%',
-              r: '44%',
+              r0: '20%',
+              r: '42%',
               label: {
                 rotate: 'tangential',
-                fontSize: isFullscreen ? 10 : 8.5,
+                fontSize: isFullscreen ? 9.5 : 8,
                 fontWeight: 'bold',
                 overflow: 'truncate',
                 ellipsis: '...',
               },
             },
             {
-              r0: '44%',
-              r: '66%',
+              r0: '42%',
+              r: '60%',
               label: {
                 rotate: 'radial',
                 fontSize: isFullscreen ? 9 : 7.5,
@@ -630,8 +698,8 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               },
             },
             {
-              r0: '66%',
-              r: '88%',
+              r0: '60%',
+              r: '78%',
               label: {
                 rotate: 'radial',
                 fontSize: isFullscreen ? 8.5 : 7,
@@ -655,14 +723,15 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
     const isEn = language === 'en';
 
     const nodes = [
-      { id: '0', name: isPb ? 'ਅਨਾਮੀ ਲੋਕ (ਸਭ ਤੋਂ ਉੱਪਰ)' : isEn ? 'Anami Lok (Top)' : 'अनामी लोक (सर्वोच्च)', symbolSize: isFullscreen ? 48 : 36, itemStyle: { color: '#991b1b' }, category: 0 },
-      { id: '1', name: isPb ? 'ਸਤਯਲੋਕ (ਸੱਚਖੰਡ)' : isEn ? 'Satlok (Sachkhand)' : 'सत्यलोक (सचखंड)', symbolSize: isFullscreen ? 38 : 28, itemStyle: { color: '#f59e0b' }, category: 1 },
-      { id: '2', name: isPb ? 'ਅਲਖ ਲੋਕ' : isEn ? 'Alakh Lok' : 'अलख लोक', symbolSize: isFullscreen ? 28 : 22, itemStyle: { color: '#ea580c' }, category: 1 },
-      { id: '3', name: isPb ? 'ਅਗਮ ਲੋਕ' : isEn ? 'Agam Lok' : 'अगम लोक', symbolSize: isFullscreen ? 28 : 22, itemStyle: { color: '#d97706' }, category: 1 },
+      { id: '0', name: isPb ? 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ)' : isEn ? 'Anami Lok (Akah)' : 'अनामी लोक (अकह)', symbolSize: isFullscreen ? 46 : 34, itemStyle: { color: '#991b1b' }, category: 0 },
+      { id: '1', name: isPb ? 'ਅਗਮ ਲੋਕ' : isEn ? 'Agam Lok' : 'अगम लोक', symbolSize: isFullscreen ? 32 : 24, itemStyle: { color: '#d97706' }, category: 1 },
+      { id: '2', name: isPb ? 'ਅਲਖ ਲੋਕ' : isEn ? 'Alakh Lok' : 'अलख लोक', symbolSize: isFullscreen ? 32 : 24, itemStyle: { color: '#ea580c' }, category: 1 },
+      { id: '3', name: isPb ? 'ਸਤਯਲੋਕ (ਅਮਰਲੋਕ)' : isEn ? 'Satyalok (Amarlok)' : 'सत्यलोक (अमरलोक)', symbolSize: isFullscreen ? 38 : 28, itemStyle: { color: '#f59e0b' }, category: 1 },
       { id: '4', name: isPb ? 'ਭੰਵਰ ਗੁਫ਼ਾ' : isEn ? 'Bhanwar Gupha' : 'भंवर गुफा', symbolSize: isFullscreen ? 22 : 17, itemStyle: { color: '#8b5cf6' }, category: 2 },
-      { id: '5', name: isPb ? 'ਮਹਾਂ-ਸੁੰਨ' : isEn ? 'Maha-Sunn' : 'महा-सुन्न', symbolSize: isFullscreen ? 22 : 17, itemStyle: { color: '#6366f1' }, category: 2 },
-      { id: '6', name: isPb ? 'ਤ੍ਰਿਕੁਟੀ' : isEn ? 'Trikuti' : 'त्रिकुटी', symbolSize: isFullscreen ? 22 : 17, itemStyle: { color: '#3b82f6' }, category: 2 },
-      { id: '7', name: isPb ? 'ਕਾਲ ਨਿਰੰਜਨ' : isEn ? 'Kaal Niranjan' : 'काल निरंजन', symbolSize: isFullscreen ? 34 : 26, itemStyle: { color: '#dc2626' }, category: 3 },
+      { id: '5', name: isPb ? 'ਮਹਾਸੁੰਨ' : isEn ? 'Mahasunna' : 'महासुन्न', symbolSize: isFullscreen ? 22 : 17, itemStyle: { color: '#6366f1' }, category: 2 },
+      { id: '6', name: isPb ? 'ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ)' : isEn ? 'Parabrahm (Sunn)' : 'पारब्रह्म (सुन्न)', symbolSize: isFullscreen ? 22 : 17, itemStyle: { color: '#0284c7' }, category: 2 },
+      { id: '7', name: isPb ? 'ਤ੍ਰਿਕੁਟੀ' : isEn ? 'Trikuti' : 'त्रिकुटी', symbolSize: isFullscreen ? 22 : 17, itemStyle: { color: '#3b82f6' }, category: 2 },
+      { id: '8', name: isPb ? 'ਕਾਲ (੨੧ ਬ੍ਰਹਿਮੰਡ)' : isEn ? 'Kaal (21 Brahmands)' : 'काल (२१ ब्रह्मांड)', symbolSize: isFullscreen ? 32 : 24, itemStyle: { color: '#dc2626' }, category: 3 },
       ...Array.from({ length: 21 }, (_, i) => ({
         id: `b_${i + 1}`,
         name: isPb ? `ਬ੍ਰਹਿਮੰਡ ${i + 1}` : isEn ? `Univ ${i + 1}` : `ब्रह्मांड ${i + 1}`,
@@ -673,15 +742,16 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
     ];
 
     const links = [
-      { source: '0', target: '1' }, // Anami -> Satlok
-      { source: '1', target: '2' }, // Satlok -> Alakh
-      { source: '1', target: '3' }, // Satlok -> Agam
-      { source: '0', target: '4' }, // Anami -> Bhanwar Gupha
-      { source: '4', target: '5' }, // Bhanwar Gupha -> Maha Sunna
-      { source: '5', target: '6' }, // Maha Sunna -> Trikuti
-      { source: '6', target: '7' }, // Trikuti -> Kaal Niranjan
+      { source: '0', target: '1' }, // Anami -> Agam
+      { source: '1', target: '2' }, // Agam -> Alakh
+      { source: '2', target: '3' }, // Alakh -> Satyalok
+      { source: '3', target: '4' }, // Satyalok -> Bhanwar Gupha
+      { source: '4', target: '5' }, // Bhanwar Gupha -> Mahasunna
+      { source: '5', target: '6' }, // Mahasunna -> Parabrahm (Sunn)
+      { source: '6', target: '7' }, // Parabrahm -> Trikuti
+      { source: '7', target: '8' }, // Trikuti -> 21 Brahmands
       ...Array.from({ length: 21 }, (_, i) => ({
-        source: '7',
+        source: '8',
         target: `b_${i + 1}`,
       })),
     ];
@@ -777,32 +847,53 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
     };
   }, [sunburstData, isFullscreen, isDarkMode]);
 
-  // Handle Chart Node Click
+  // Handle Chart Node Click (supports Sunburst segments, Network nodes, and Tree nodes)
+  const findNodeByName = useCallback((nodes: SunburstNode[], targetName: string): SunburstNode | null => {
+    const cleanTarget = targetName.trim().toLowerCase();
+    for (const node of nodes) {
+      const nodeClean = node.name.trim().toLowerCase();
+      if (nodeClean === cleanTarget || nodeClean.includes(cleanTarget) || cleanTarget.includes(nodeClean)) {
+        if (node.tooltipInfo) return node;
+      }
+      if (node.children) {
+        const res = findNodeByName(node.children, targetName);
+        if (res) return res;
+      }
+    }
+    return null;
+  }, []);
+
   const onChartClick = useCallback((params: any) => {
     sacredHaptics.lightTap();
-    const data = params.data as SunburstNode;
+    const data = params?.data as SunburstNode | undefined;
     if (data?.tooltipInfo) {
       setSelectedNodeInfo(data.tooltipInfo);
       if (onSelectNode) onSelectNode(data.tooltipInfo);
-    } else {
-      const name = params.name;
-      const findNode = (nodes: SunburstNode[]): SunburstNode | null => {
-        for (const node of nodes) {
-          if (node.name === name && node.tooltipInfo) return node;
-          if (node.children) {
-            const res = findNode(node.children);
-            if (res) return res;
+      return;
+    }
+    // Check treePathInfo for Sunburst fallback
+    if (Array.isArray(params?.treePathInfo) && params.treePathInfo.length > 0) {
+      for (let i = params.treePathInfo.length - 1; i >= 0; i--) {
+        const segName = params.treePathInfo[i]?.name;
+        if (segName) {
+          const match = findNodeByName(sunburstData, segName);
+          if (match?.tooltipInfo) {
+            setSelectedNodeInfo(match.tooltipInfo);
+            if (onSelectNode) onSelectNode(match.tooltipInfo);
+            return;
           }
         }
-        return null;
-      };
-      const match = findNode(sunburstData);
+      }
+    }
+    const name = params?.name;
+    if (name) {
+      const match = findNodeByName(sunburstData, name);
       if (match?.tooltipInfo) {
         setSelectedNodeInfo(match.tooltipInfo);
         if (onSelectNode) onSelectNode(match.tooltipInfo);
       }
     }
-  }, [sunburstData, onSelectNode]);
+  }, [sunburstData, onSelectNode, findNodeByName]);
 
   // Guaranteed 100% Comprehensive Reset Handler
   const resetView = useCallback(() => {
@@ -963,7 +1054,7 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               }`}
             >
               <Sun size={11} />
-              <span className="text-[10px] sm:text-xs">{language === 'pb' ? 'ਸਨਬਰਸਟ' : language === 'en' ? 'Sunburst' : 'सनबर्स्ट'}</span>
+              <span className="text-[10px] sm:text-xs">{language === 'pb' ? 'ਬ੍ਰਹਿਮੰਡ ਚੱਕਰ' : language === 'en' ? 'Brahmand Chakra' : 'ब्रह्मांड चक्र'}</span>
             </button>
 
             <button
@@ -1001,21 +1092,35 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
         </div>
       </div>
 
-      {/* Main Visualizer Area */}
+      {/* Main Visualizer Area — centered cleanly with pointer-events enabled and zero top clipping */}
       <div 
         style={{ backgroundColor: isFullscreen ? '#0c0a09' : theme.cardBg }}
-        className={`relative overflow-hidden transition-all duration-300 backdrop-blur-md ${
+        className={`relative z-20 pointer-events-auto transition-all duration-300 ${
           isFullscreen 
-            ? 'flex-1 w-full h-full min-h-0 flex items-center justify-center p-1 sm:p-2' 
-            : 'rounded-3xl p-2 sm:p-4 border-2 shadow-sm'
+            ? 'flex-1 w-full h-full min-h-0 flex items-center justify-center p-2 sm:p-4 overflow-hidden' 
+            : 'rounded-3xl p-2 sm:p-4 border-2 shadow-sm overflow-visible'
         }`}
       >
-        <div className={`w-full ${isFullscreen ? 'h-full' : 'h-[420px] sm:h-[540px]'}`}>
+        <div
+          ref={chartWrapperRef}
+          className={`relative z-20 w-full flex items-center justify-center pointer-events-auto touch-manipulation ${
+            isFullscreen ? 'h-full' : 'h-[360px] xs:h-[400px] sm:h-[480px]'
+          }`}
+        >
           <ReactECharts
             key={`echarts_${chartKey}_${chartMode}_${language}_${isFullscreen}_${searchQuery}`}
             ref={chartRef}
             option={currentOption}
             style={{ width: '100%', height: '100%' }}
+            onChartReady={(instance: any) => {
+              window.setTimeout(() => {
+                try {
+                  instance?.resize();
+                } catch {
+                  // Safe resize guard
+                }
+              }, 50);
+            }}
             onEvents={{
               click: onChartClick,
             }}
@@ -1029,15 +1134,15 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-700 inline-block" />
-                <span>{language === 'pb' ? 'ਅਨਾਮੀ ਲੋਕ (ਸਭ ਤੋਂ ਉੱਪਰ)' : language === 'en' ? 'Anami Lok (Supreme)' : 'अनामी लोक (सबसे ऊपर)'}</span>
+                <span>{language === 'pb' ? 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ)' : language === 'en' ? 'Anami Lok (Akah)' : 'अनामी लोक (अकह)'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
-                <span>{language === 'pb' ? 'ਸਤਯਲੋਕ (ਸੱਚਖੰਡ)' : language === 'en' ? 'Satyalok (Sachkhand)' : 'सत्यलोक (सचखंड)'}</span>
+                <span>{language === 'pb' ? 'ਅਗਮ • ਅਲਖ • ਸਤਯਲੋਕ' : language === 'en' ? 'Agam • Alakh • Satyalok' : 'अगम • अलख • सत्यलोक'}</span>
               </span>
               <span className="flex items-center gap-1">
-                <span className="w-2.5 h-2.5 rounded-full bg-orange-600 inline-block" />
-                <span>{language === 'pb' ? 'ਅਲਖ ਤੇ ਅਗਮ ਲੋਕ' : language === 'en' ? 'Alakh & Agam Loks' : 'अलख व अगम लोक'}</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block" />
+                <span>{language === 'pb' ? 'ਭੰਵਰ • ਮਹਾਸੁੰਨ • ਪਾਰਬ੍ਰਹਮ' : language === 'en' ? 'Bhanwar • Mahasunna • Parabrahm' : 'भंवर • महासुन्न • पारब्रह्म'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-2.5 h-2.5 rounded-full bg-stone-600 inline-block" />
@@ -1045,64 +1150,105 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
               </span>
             </div>
             <span className="text-[10px] italic text-amber-700 dark:text-amber-300 font-bold">
-              💡 {language === 'pb' ? 'ਕਿਸੇ ਵੀ ਮੰਡਲ \'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਪੂਰਾ ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼ ਵੇਖੋ' : language === 'en' ? 'Tap any realm to explore the full Kabir Sagar teaching' : 'किसी भी मंडल पर क्लिक करके पूरा कबीर सागर उपदेश देखें'}
+              💡 {language === 'pb' ? 'ਕਿਸੇ ਵੀ ਮੰਡਲ \'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਪੂਰਾ ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼ ਵੇਖੋ' : language === 'en' ? 'Tap any segment to open the Kabir Sagar Upadesh panel' : 'किसी भी मंडल पर टैप करके कबीर सागर उपदेश देखें'}
             </span>
           </div>
         )}
+      </div>
 
-        {/* Selected Node Details Drawer / Floating Bottom Sheet */}
-        {selectedNodeInfo && (
-          <div className={`p-3.5 sm:p-5 rounded-3xl bg-stone-900/95 text-amber-100 border-2 border-amber-500/40 shadow-2xl space-y-2 animate-fadeIn font-serif backdrop-blur-md overflow-hidden break-words ${
-            isFullscreen 
-              ? 'absolute bottom-2 left-2 right-2 max-w-xl mx-auto z-40 max-h-[48vh] overflow-y-auto' 
-              : 'mt-2.5'
-          }`}>
-            <div className="flex items-center justify-between gap-2 border-b pb-1.5 border-amber-500/30 flex-wrap">
-              <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-hidden">
+      {/* Centered Modal for Kabir Sagar Upadesh Panel (Always unobstructed & visible on tap) */}
+      {selectedNodeInfo && (
+        <div
+          onClick={() => setSelectedNodeInfo(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 250,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '48px 14px',
+          }}
+          className="bg-black/65 backdrop-blur-xs pointer-events-auto"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: '100%',
+              maxWidth: '480px',
+              maxHeight: 'calc(100dvh - 104px)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+              borderRadius: '16px',
+            }}
+            className="bg-stone-900 text-amber-100 border-2 border-amber-500/60 shadow-2xl font-serif"
+          >
+            {/* Pinned Header */}
+            <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-amber-500/30 bg-stone-950/90 shrink-0">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
                 <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-                <h5 className="font-serif font-black text-xs sm:text-sm text-amber-200 truncate">
+                <h5 className="font-serif font-black text-xs sm:text-sm text-amber-200 leading-snug break-words">
                   {selectedNodeInfo.title}
                 </h5>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                  {selectedNodeInfo.realm}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setSelectedNodeInfo(null)}
-                  className="p-1 rounded-full hover:bg-white/10 text-stone-400 hover:text-white transition cursor-pointer"
-                  title="Close Details"
-                >
-                  <X size={14} />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedNodeInfo(null)}
+                className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-amber-200 transition cursor-pointer shrink-0"
+                aria-label="Close Upadesh"
+              >
+                <X size={16} />
+              </button>
             </div>
 
-            <p className="text-[11px] sm:text-xs text-stone-200 leading-relaxed break-words">
-              {selectedNodeInfo.desc}
-            </p>
-
-            {selectedNodeInfo.granthTeaching && (
-              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/25 text-[10px] sm:text-[11px] font-sans text-amber-200/90 break-words leading-relaxed">
-                📖 <strong>{language === 'pb' ? 'ਗ੍ਰੰਥ ਉਪਦੇਸ਼:' : language === 'en' ? 'Granth Teaching:' : 'ग्रंथ उपदेश:'}</strong> {selectedNodeInfo.granthTeaching}
+            {/* Scrollable Body */}
+            <div className="p-4 space-y-3 overflow-y-auto flex-1 break-words">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  {selectedNodeInfo.realm}
+                </span>
+                <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-stone-200 border border-white/15">
+                  {selectedNodeInfo.category}
+                </span>
               </div>
-            )}
 
-            {selectedNodeInfo.stateOfSoul && (
-              <div className="text-[10px] sm:text-[11px] text-amber-300/90 font-medium break-words">
-                <strong>{language === 'pb' ? 'ਆਤਮਾ ਦੀ ਸਥਿਤੀ:' : language === 'en' ? 'State of Soul:' : 'जीवात्मा की स्थिति:'}</strong> {selectedNodeInfo.stateOfSoul}
-              </div>
-            )}
+              <p className="text-xs sm:text-sm text-stone-100 leading-relaxed font-sans">
+                {selectedNodeInfo.desc}
+              </p>
 
-            {selectedNodeInfo.verse && (
-              <div className="p-2 rounded-xl bg-amber-500/15 border border-amber-500/30 text-[10px] sm:text-[11px] italic font-bold text-amber-200 break-words leading-relaxed">
-                📜 {selectedNodeInfo.verse}
-              </div>
-            )}
+              {selectedNodeInfo.granthTeaching && (
+                <div className="p-3 rounded-xl bg-amber-500/15 border border-amber-500/30 text-xs font-sans text-amber-100 leading-relaxed">
+                  📖 <strong>{language === 'pb' ? 'ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼:' : language === 'en' ? 'Kabir Sagar Upadesh:' : 'कबीर सागर उपदेश:'}</strong> {selectedNodeInfo.granthTeaching}
+                </div>
+              )}
+
+              {selectedNodeInfo.stateOfSoul && (
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-amber-300 font-medium">
+                  <strong>{language === 'pb' ? 'ਆਤਮਾ ਦੀ ਸਥਿਤੀ:' : language === 'en' ? 'State of Soul:' : 'जीवात्मा की स्थिति:'}</strong> {selectedNodeInfo.stateOfSoul}
+                </div>
+              )}
+
+              {selectedNodeInfo.verse && (
+                <div className="p-3 rounded-xl bg-amber-500/15 border-l-4 border-amber-400 text-xs italic font-bold text-amber-100 leading-relaxed whitespace-pre-line">
+                  📜 "{selectedNodeInfo.verse}"
+                </div>
+              )}
+            </div>
+
+            {/* Pinned Footer */}
+            <div className="px-4 py-2.5 border-t border-amber-500/25 bg-stone-950/90 flex justify-end shrink-0">
+              <button
+                type="button"
+                onClick={() => setSelectedNodeInfo(null)}
+                className="px-4 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs cursor-pointer transition"
+              >
+                {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें'}
+              </button>
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

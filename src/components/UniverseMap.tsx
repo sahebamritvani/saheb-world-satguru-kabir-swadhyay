@@ -1,5 +1,4 @@
-import React, { useState, useRef, useMemo, Suspense, lazy } from 'react';
-import { AnhadNaadVisualizer } from './AnhadNaadVisualizer';
+import React, { useState, useRef, useMemo, useEffect, Suspense, lazy } from 'react';
 import { SacredLoader } from './SacredLoader';
 
 const EChartsUniverseVisualizer = lazy(() =>
@@ -45,20 +44,21 @@ export interface UniverseAscentStage {
   granthTeaching: { hi: string; pb: string; en: string };
 }
 
-// SACRED COSMIC HIERARCHY: ANAMI LOK (ABSOLUTE TOP) ➔ SATLOK ➔ ALAKH LOK ➔ AGAM LOK ➔ INTERMEDIATE ➔ 21 BRAHMANDS
+// SACRED KABIR SAGAR COSMIC HIERARCHY:
+// अनामी लोक (अकह लोक) → अगम लोक → अलख लोक → सत्यलोक (अमरलोक) → भंवर गुफा → महासुन्न → पारब्रह्म (सुन्न) → त्रिकुटी → २१ ब्रह्मांड
 export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
   {
     id: 'stage-anami',
     stageNumber: 1,
     realmType: 'anamilok',
     title: {
-      hi: 'अनामी लोक (अकह धाम — सर्वोच्च शिखर / सबसे ऊपर)',
-      pb: 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਧਾਮ — ਸਰਵਉੱਚ ਸ਼ਿਖਰ / ਸਭ ਤੋਂ ਉੱਪਰ)',
-      en: 'Anami Lok (The Supreme Nameless Pinnacle / Absolute Top)',
+      hi: 'अनामी लोक (अकह लोक — सर्वोच्च शिखर)',
+      pb: 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ — ਸਰਵਉੱਚ ਸ਼ਿਖਰ)',
+      en: 'Anami Lok (Akah Lok — Absolute Top)',
     },
     region: {
-      hi: 'समस्त ब्रह्मांडों, अमरलोक और संपूर्ण अस्तित्व का सर्वोपरि अनादि शिखर (सबसे ऊपर)',
-      pb: 'ਸਮੂਹ ਸ੍ਰਿਸ਼ਟੀ ਅਤੇ ਸਾਰੇ ਲੋਕਾਂ ਦਾ ਸਰਵਉੱਚ ਅਨਾਦਿ ਸ਼ਿਖਰ (ਸਭ ਤੋਂ ਉੱਪਰ)',
+      hi: 'समस्त ब्रह्मांडों, अमरलोक और संपूर्ण अस्तित्व का सर्वोपरि अनादि शिखर',
+      pb: 'ਸਮੂਹ ਸ੍ਰਿਸ਼ਟੀ ਅਤੇ ਸਾਰੇ ਲੋਕਾਂ ਦਾ ਸਰਵਉੱਚ ਅਨਾਦਿ ਸ਼ਿਖਰ',
       en: 'The Ultimate Timeless Apex of All Creation & Existence',
     },
     nature: {
@@ -88,43 +88,43 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
     },
   },
   {
-    id: 'stage-satlok',
+    id: 'stage-agam',
     stageNumber: 2,
     realmType: 'satyaloka',
     title: {
-      hi: 'सत्यलोक / सचखंड (सतपुरुष सतगुरु कबीर साहेब धाम)',
-      pb: 'ਸਤਯਲੋਕ / ਸੱਚਖੰਡ (ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)',
-      en: 'Satlok / Satyaloka (Sachkhand - Satpurush Satguru Kabir Saheb)',
+      hi: 'अगम लोक (अगम पुरुष धाम)',
+      pb: 'ਅਗਮ ਲੋਕ (ਅਗਮ ਪੁਰਸ਼ ਧਾਮ)',
+      en: 'Agam Lok (Inaccessible Realm)',
     },
     region: {
-      hi: 'अमरलोक का मुख्य शाश्वत धाम — जहाँ एक-एक हंस का तेज करोड़ों सूर्यों से अधिक है',
-      pb: 'ਅਮਰਲੋਕ ਦਾ ਮੁੱਖ ਪ੍ਰਵੇਸ਼ ਧਾਮ — ਜਿੱਥੇ ਹੰਸ ਦਾ ਤੇਜ ਕ੍ਰੋੜਾਂ ਸੂਰਜਾਂ ਤੋਂ ਵੱਧ ਹੈ',
-      en: 'The Eternal Abode of Satpurush Satguru Kabir Saheb',
+      hi: 'अनामी लोक के ठीक नीचे परम अगम्य आध्यात्मिक क्षेत्र जहाँ केवल सार शब्द की डोर पहुँचती है',
+      pb: 'ਅਨਾਮੀ ਲੋਕ ਤੋਂ ਹੇਠਾਂ ਪਰਮ ਗੂੜ੍ਹ ਖੇਤਰ ਜਿੱਥੇ ਸਾਰ ਸ਼ਬਦ ਦੀ ਡੋਰ ਪਹੁੰਚਦੀ ਹੈ',
+      en: 'The Inaccessible Pinnacle Reached via Sar Shabad',
     },
     nature: {
-      hi: 'जहाँ न जन्म है, न मृत्यु, न काल, न माया, न कर्म। चारों ओर अमृत के मानसरोवर, कल्पवृक्ष और प्रेम का साम्राज्य है। सतपुरुष सतगुरु कबीर साहेब साक्षात विराजमान हैं।',
-      pb: 'ਜਿੱਥੇ ਨਾ ਮੌਤ ਹੈ, ਨਾ ਮਾਇਆ, ਨਾ ਕਾਲ। ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਬਿਰਾਜਮਾਨ ਹਨ।',
-      en: 'Free from birth, death, decay, and karma. Filled with wishing trees and lakes of nectar.',
+      hi: 'अगम पुरुष का पावन धाम जहाँ केवल सतगुरु के सार शब्द की डोर द्वारा ही गमन संभव है। यहाँ की महिमा बुद्धि की कल्पना से भी परे है।',
+      pb: 'ਅਗਮ ਪੁਰਸ਼ ਦਾ ਸਥਾਨ ਜਿੱਥੇ ਕੇਵਲ ਸਤਿਗੁਰੂ ਦੇ ਸਾਰ ਸ਼ਬਦ ਦੀ ਡੋਰ ਨਾਲ ਹੀ ਪਹੁੰਚਿਆ ਜਾ ਸਕਦਾ ਹੈ।',
+      en: 'The sacred abode of Agam Purush, traversed exclusively through the Satguru\'s Sar Shabad.',
     },
     kabirSagarVerse: {
-      hi: 'कोटिन रवि जाके तेज प्रकाशा, हंसा करहिं अमृत का पासा। सत्य सतगुरु कबीर साहेब सुखदाई, अमर लोक में ज्योत जगाई॥',
-      pb: 'ਕੋਟਿਨ ਰਵਿ ਜਾਕੇ ਤੇਜ ਪ੍ਰਕਾਸ਼ਾ, ਹੰਸਾ ਕਰਹਿਂ ਅੰਮ੍ਰਿਤ ਕਾ ਪਾਸਾ। ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ, ਅਮਰ ਲੋਕ ਮੇਂ ਜਯੋਤ ਜਗਾਈ॥',
-      en: 'Millions of suns are surpassed by its radiance; the Hansas dwell in nectar.',
+      hi: 'अगम देश की अजब कहानी, जो जाने सोई पहचाने। सतगुरु कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
+      pb: 'ਅਗਮ ਦੇਸ਼ ਕੀ ਅਜਬ ਕਹਾਨੀ, ਜੋ ਜਾਨੇ ਸੋਈ ਪਹਿਚਾਨੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥',
+      en: 'Wondrous is the realm of Agam; Satguru Kabir Saheb reveals this mystery and removes all suffering.',
     },
     soulExperience: {
-      hi: 'हंस सतपुरुष के चरणों में मिलकर तद्रूप हो जाता है। "कबीर हम ही हैं, हम ही कबीर।"',
-      pb: 'ਹੰਸ ਸਤਿਪੁਰੁਸ਼ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਲੀਨ ਹੋ ਕੇ ਇੱਕਮਿਕ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'The soul merges into the Supreme Father in absolute unity.',
+      hi: 'हंस अगम अवस्था में तल्लीन होकर पूर्ण रूप से वासना-मुक्त और शांत हो जाता है।',
+      pb: 'ਹੰਸ ਅਗਮ ਅਵਸਥਾ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸ਼ਾਂਤ ਤੇ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'The soul enters deep transcendental communion, completely free of any residual impression.',
     },
     unlockedWith: {
-      hi: 'सत्यनाम का अखंड सुमिरन एवं सतगुरु की परम कृपा।',
-      pb: 'ਸਤਯਨਾਮ ਦਾ ਅਖੰਡ ਸਿਮਰਨ ਤੇ ਗੁਰੂ ਕ੍ਰਿਪਾ।',
-      en: 'The eternal anchor of Satyanaam and unconditional grace of Satguru Kabir.',
+      hi: 'सार शब्द की अखंड डोर पर आरोहण।',
+      pb: 'ਸਾਰ ਸ਼ਬਦ ਦੀ ਅਖੰਡ ਡੋਰ \'ਤੇ ਆਰੋਹਣ।',
+      en: 'Ascension along the unbroken current of the Satguru\'s Sar Shabad.',
     },
     granthTeaching: {
-      hi: 'कबीर सागर (अनुराग सागर): सत्यलोक में काल का कोई प्रवेश नहीं; यहाँ हंस सदैव अमर रहते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਗਰ (ਅਨੁਰਾਗ ਸਾਗਰ): ਸਤਯਲੋਕ ਵਿੱਚ ਕਾਲ ਦਾ ਕੋਈ ਦਾਖ਼ਲਾ ਨਹੀਂ।',
-      en: 'Kabir Sagar: In Satlok, Kaal has no power; souls dwell eternally immortal.',
+      hi: 'कबीर सागर (ज्ञान सागर): अगम लोक में सुरति ठहरते ही जन्म-मरण का बीज दग्ध हो जाता है।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ: ਅਗਮ ਲੋਕ ਵਿੱਚ ਸੁਰਤਿ ਟਿਕਣ ਨਾਲ ਜਨਮ-ਮਰਨ ਮੁੱਕ ਜਾਂਦਾ ਹੈ।',
+      en: 'Kabir Sagar: As the attention rests in Agam Lok, the seeds of transmigration are destroyed.',
     },
   },
   {
@@ -137,8 +137,8 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
       en: 'Alakh Lok (Incomprehensible Plane)',
     },
     region: {
-      hi: 'सत्यलोक के साथ जुड़ा अनिर्वचनीय दिव्य आध्यात्मिक मंडल',
-      pb: 'ਸਤਯਲੋਕ ਨਾਲ ਜੁੜਿਆ ਅਲੌਕਿਕ ਆਧਿਆਤਮਿਕ ਮੰਡਲ',
+      hi: 'अगम लोक और सत्यलोक के मध्य स्थित अनिर्वचनीय दिव्य आध्यात्मिक मंडल',
+      pb: 'ਅਗਮ ਲੋਕ ਤੇ ਸਤਯਲੋਕ ਦੇ ਵਿਚਕਾਰ ਅਲੌਕਿਕ ਆਧਿਆਤਮਿਕ ਮੰਡਲ',
       en: 'The Transcendent Spiritual Plane of Alakh Purush',
     },
     nature: {
@@ -168,43 +168,43 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
     },
   },
   {
-    id: 'stage-agam',
+    id: 'stage-satlok',
     stageNumber: 4,
     realmType: 'satyaloka',
     title: {
-      hi: 'अगम लोक (अगम पुरुष धाम)',
-      pb: 'ਅਗਮ ਲੋਕ (ਅਗਮ ਪੁਰਸ਼ ਧਾਮ)',
-      en: 'Agam Lok (Inaccessible Realm)',
+      hi: 'सत्यलोक / अमरलोक (सचखंड — सतपुरुष सतगुरु कबीर साहेब धाम)',
+      pb: 'ਸਤਯਲੋਕ / ਅਮਰਲੋਕ (ਸੱਚਖੰਡ — ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਧਾਮ)',
+      en: 'Satyalok / Amarlok (Sachkhand — Satguru Kabir Saheb)',
     },
     region: {
-      hi: 'परम अगम्य आध्यात्मिक क्षेत्र जहाँ केवल सार शब्द की डोर पहुँचती है',
-      pb: 'ਪਰਮ ਗੂੜ੍ਹ ਖੇਤਰ ਜਿੱਥੇ ਸਾਰ ਸ਼ਬਦ ਦੀ ਡੋਰ ਪਹੁੰਚਦੀ ਹੈ',
-      en: 'The Inaccessible Pinnacle Reached via Sar Shabad',
+      hi: 'अमरलोक का मुख्य शाश्वत धाम — जहाँ एक-एक हंस का तेज करोड़ों सूर्यों से अधिक है',
+      pb: 'ਅਮਰਲੋਕ ਦਾ ਮੁੱਖ ਪ੍ਰਵੇਸ਼ ਧਾਮ — ਜਿੱਥੇ ਹੰਸ ਦਾ ਤੇਜ ਕ੍ਰੋੜਾਂ ਸੂਰਜਾਂ ਤੋਂ ਵੱਧ ਹੈ',
+      en: 'The Eternal Abode of Satpurush Satguru Kabir Saheb',
     },
     nature: {
-      hi: 'अगम पुरुष का पावन धाम जहाँ केवल सार शब्द की डोर द्वारा ही गमन संभव है। यहाँ की महिमा बुद्धि की कल्पना से भी परे है।',
-      pb: 'ਅਗਮ ਪੁਰਸ਼ ਦਾ ਸਥਾਨ ਜਿੱਥੇ ਕੇਵਲ ਸਾਰ ਸ਼ਬਦ ਦੀ ਡੋਰ ਨਾਲ ਹੀ ਪਹੁੰਚਿਆ ਜਾ ਸਕਦਾ ਹੈ।',
-      en: 'The sacred abode of Agam Purush, traversed exclusively through Sar Shabad.',
+      hi: 'जहाँ न जन्म है, न मृत्यु, न काल, न माया, न कर्म। चारों ओर अमृत के मानसरोवर, कल्पवृक्ष और प्रेम का साम्राज्य है। सतपुरुष सतगुरु कबीर साहेब साक्षात विराजमान हैं।',
+      pb: 'ਜਿੱਥੇ ਨਾ ਮੌਤ ਹੈ, ਨਾ ਮਾਇਆ, ਨਾ ਕਾਲ। ਸਤਿਪੁਰੁਸ਼ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਆਪ ਬਿਰਾਜਮਾਨ ਹਨ।',
+      en: 'Free from birth, death, decay, and karma. Filled with wishing trees and lakes of nectar.',
     },
     kabirSagarVerse: {
-      hi: 'अगम देश की अजब कहानी, जो जाने सोई पहचाने। सतगुरु कबीर साहेब अगम लखाया, आवागमन का कष्ट मिटाया॥',
-      pb: 'ਅਗਮ ਦੇਸ਼ ਕੀ ਅਜਬ ਕਹਾਨੀ, ਜੋ ਜਾਨੇ ਸੋਈ ਪਹਿਚਾਨੇ। ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਅਗਮ ਲਖਾਯਾ, ਆਵਾਗਮਨ ਕਾ ਕਸ਼ਟ ਮਿਟਾਯਾ॥',
-      en: 'Wondrous is the realm of Agam; Kabir reveals this mystery and removes all suffering.',
+      hi: 'कोटिन रवि जाके तेज प्रकाशा, हंसा करहिं अमृत का पासा। सत्य सतगुरु कबीर साहेब सुखदाई, अमर लोक में ज्योत जगाई॥',
+      pb: 'ਕੋਟਿਨ ਰਵਿ ਜਾਕੇ ਤੇਜ ਪ੍ਰਕਾਸ਼ਾ, ਹੰਸਾ ਕਰਹਿਂ ਅੰਮ੍ਰਿਤ ਕਾ ਪਾਸਾ। ਸਤਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸੁਖਦਾਈ, ਅਮਰ ਲੋਕ ਮੇਂ ਜਯੋਤ ਜਗਾਈ॥',
+      en: 'Millions of suns are surpassed by its radiance; the Hansas dwell in nectar.',
     },
     soulExperience: {
-      hi: 'हंस अगम अवस्था में तल्लीन होकर पूर्ण रूप से वासना-मुक्त और शांत हो जाता है।',
-      pb: 'ਹੰਸ ਅਗਮ ਅਵਸਥਾ ਵਿੱਚ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸ਼ਾਂਤ ਤੇ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ।',
-      en: 'The soul enters deep transcendental communion, completely free of any residual impression.',
+      hi: 'हंस सतपुरुष के चरणों में मिलकर तद्रूप हो जाता है। "कबीर हम ही हैं, हम ही कबीर।"',
+      pb: 'ਹੰਸ ਸਤਿਪੁਰੁਸ਼ ਦੇ ਚਰਨਾਂ ਵਿੱਚ ਲੀਨ ਹੋ ਕੇ ਇੱਕਮਿਕ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'The soul merges into the Supreme Father in absolute unity.',
     },
     unlockedWith: {
-      hi: 'सार शब्द की अखंड डोर पर आरोहण।',
-      pb: 'ਸਾਰ ਸ਼ਬਦ ਦੀ ਅਖੰਡ ਡੋਰ \'ਤੇ ਆਰੋਹਣ।',
-      en: 'Ascension along the unbroken current of the Master’s Sar Shabad.',
+      hi: 'सत्यनाम का अखंड सुमिरन एवं सतगुरु की परम कृपा।',
+      pb: 'ਸਤਯਨਾਮ ਦਾ ਅਖੰਡ ਸਿਮਰਨ ਤੇ ਗੁਰੂ ਕ੍ਰਿਪਾ।',
+      en: 'The eternal anchor of Satyanaam and unconditional grace of Satguru Kabir Saheb.',
     },
     granthTeaching: {
-      hi: 'कबीर सागर (ज्ञान सागर): अगम लोक में सुरति ठहरते ही जन्म-मरण का बीज दग्ध हो जाता है।',
-      pb: 'ਕਬੀਰ ਸਾਗਰ: ਅਗਮ ਲੋਕ ਵਿੱਚ ਸੁਰਤਿ ਟਿਕਣ ਨਾਲ ਜਨਮ-ਮਰਨ ਮੁੱਕ ਜਾਂਦਾ ਹੈ।',
-      en: 'Kabir Sagar: As the attention rests in Agam Lok, the seeds of transmigration are destroyed.',
+      hi: 'कबीर सागर (अनुराग सागर): सत्यलोक में काल का कोई प्रवेश नहीं; यहाँ हंस सदैव अमर रहते हैं।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ (ਅਨੁਰਾਗ ਸਾਗਰ): ਸਤਯਲੋਕ ਵਿੱਚ ਕਾਲ ਦਾ ਕੋਈ ਦਾਖ਼ਲਾ ਨਹੀਂ।',
+      en: 'Kabir Sagar: In Satyalok, Kaal has no power; souls dwell eternally immortal.',
     },
   },
   {
@@ -212,14 +212,14 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
     stageNumber: 5,
     realmType: 'transition',
     title: {
-      hi: 'भंवर गुफा एवं सोहं लोक (मुरली नाद)',
-      pb: 'ਭੰਵਰ ਗੁਫ਼ਾ ਤੇ ਸੋਹੰ ਲੋਕ (ਮੁਰਲੀ ਨਾਦ)',
-      en: 'Bhanwar Gupha & Soham Realm (Flute Melody)',
+      hi: 'भंवर गुफा (सोहं लोक — मुरली नाद)',
+      pb: 'ਭੰਵਰ ਗੁਫ਼ਾ (ਸੋਹੰ ਲੋਕ — ਮੁਰਲੀ ਨਾਦ)',
+      en: 'Bhanwar Gupha (Soham Realm — Flute Melody)',
     },
     region: {
       hi: 'अमरलोक का प्रवेश द्वार — दिव्य मुरली नाद क्षेत्र',
       pb: 'ਅਮਰਲੋਕ ਦਾ ਮੁੱਖ ਦੁਆਰ — ਮੁਰਲੀ ਨਾਦ ਖੇਤਰ',
-      en: 'Entry Portal to Satyaloka — Celestial Flute Zone',
+      en: 'Entry Portal to Amarlok — Celestial Flute Zone',
     },
     nature: {
       hi: 'यहाँ निरंतर अमृतमयी मुरली की धुन गूंजती है। हंस आत्माएं यहाँ तृप्त होकर परम आनंद में झूमती हैं।',
@@ -252,44 +252,84 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
     stageNumber: 6,
     realmType: 'transition',
     title: {
-      hi: 'महा-सुन्न (Maha Sunna) एवं मानसरोवर',
-      pb: 'ਮਹਾਂ-ਸੁੰਨ (Maha Sunna) ਤੇ ਮਾਨਸਰੋਵਰ',
-      en: 'The Great Void (Maha Sunna) & Mansarovar',
+      hi: 'महासुन्न (१६ शंख योजन का महाशून्य)',
+      pb: 'ਮਹਾਸੁੰਨ (੧੬ ਸ਼ੰਖ ਯੋਜਨ ਦਾ ਮਹਾ-ਸ਼ੁੰਨ)',
+      en: 'Mahasunna (The Great Celestial Void)',
     },
     region: {
-      hi: 'सोलह शंख योजन का अगाध अंधकार व पारब्रह्म का पावन क्षेत्र',
-      pb: '੧੬ ਸ਼ੰਖ ਯੋਜਨ ਦਾ ਗੰਭੀਰ ਖਲਾਅ ਤੇ ਪਾਰਬ੍ਰਹਮ ਖੇਤਰ',
-      en: '16 Shankh Yojanas Void & Parabrahm Cleansing',
+      hi: 'सोलह शंख योजन का अगाध महाशून्य जिसे केवल सतगुरु का सत्यनाम पार कराता है',
+      pb: '੧੬ ਸ਼ੰਖ ਯੋਜਨ ਦਾ ਗੰਭੀਰ ਖਲਾਅ ਜੋ ਕੇਵਲ ਸਤਿਗੁਰੂ ਦੇ ਸਤਯਨਾਮ ਨਾਲ ਪਾਰ ਹੁੰਦਾ ਹੈ',
+      en: '16 Shankh Yojanas Void Crossed via Satyanaam',
     },
     nature: {
-      hi: 'यहाँ न सूर्य है, न चंद्रमा। मानसरोवर में स्नान कर आत्मा समस्त सूक्ष्म शरीरों को त्यागकर निर्मल हंस बन जाती है। सतगुरु का सत्यनाम ही इसे पार कराता है।',
-      pb: 'ਇੱਥੇ ਨਾ ਸੂਰਜ ਹੈ ਨਾ ਚੰਦ। ਮਾਨਸਰੋਵਰ ਵਿੱਚ ਇਸ਼ਨਾਨ ਕਰਕੇ ਆਤਮਾ ਨਿਰਮਲ ਹੰਸ ਬਣਦੀ ਹੈ।',
-      en: 'The soul sheds causal sheaths in Mansarovar, guided solely by the Master\'s Name.',
+      hi: 'यहाँ न सूर्य है, न चंद्रमा। चारों ओर अगाध नीरवता और शून्य है। सतगुरु का पावन सत्यनाम ही साधक का हाथ पकड़कर इस महाशून्य को पार कराता है।',
+      pb: 'ਇੱਥੇ ਨਾ ਸੂਰਜ ਹੈ ਨਾ ਚੰਦ। ਕੇਵਲ ਸਤਿਗੁਰੂ ਦਾ ਸਤਯਨਾਮ ਹੀ ਇਸ ਮਹਾ-ਸ਼ੁੰਨ ਤੋਂ ਪਾਰ ਲੰਘਾਉਂਦਾ ਹੈ।',
+      en: 'Where neither sun nor moon shines; crossed solely by holding the Satguru\'s Satyanaam.',
     },
     kabirSagarVerse: {
-      hi: 'मानसरोवर न्हाय के, हंसा भये सचेत। महाशून्य की घाटी भारी, गुरु बिनु पार न पावै कोई॥',
-      pb: 'ਮਾਨਸਰੋਵਰ ਨ੍ਹਾਏ ਕੇ, ਹੰਸਾ ਭਏ ਸਚੇਤ। ਮਹਾਸ਼ੁੰਨ ਕੀ ਘਾਟੀ ਭਾਰੀ, ਗੁਰੂ ਬਿਨੁ ਪਾਰ ਨ ਪਾਵੇ ਕੋਈ॥',
-      en: 'By bathing in Mansarovar the Hansa awakens; the vast void is crossed only with the Satguru.',
+      hi: 'महाशून्य की घाटी भारी, गुरु बिनु पार न पावै कोई। सत्यनाम की नौका भारी, हंस पार उतरे सुखकारी॥',
+      pb: 'ਮਹਾਸ਼ੁੰਨ ਕੀ ਘਾਟੀ ਭਾਰੀ, ਗੁਰੂ ਬਿਨੁ ਪਾਰ ਨ ਪਾਵੇ ਕੋਈ। ਸਤਯਨਾਮ ਕੀ ਨੌਕਾ ਭਾਰੀ, ਹੰਸ ਪਾਰ ਉਤਰੇ ਸੁਖਕਾਰੀ॥',
+      en: 'Vast is the valley of Mahasunna; only the boat of Satyanaam carries the soul across.',
     },
     soulExperience: {
       hi: 'सतगुरु हंस का हाथ पकड़कर इस महाशून्य को पलक झपकते ही पार करा देते हैं।',
       pb: 'ਸਤਿਗੁਰੂ ਹੰਸ ਦੀ ਬਾਂਹ ਫੜ ਕੇ ਇਸ ਘਾਟੀ ਨੂੰ ਪਾਰ ਕਰਵਾਉਂਦੇ ਹਨ।',
-      en: 'The living master holds the soul\'s hand, carrying it across the vast void in an instant.',
+      en: 'The living Satguru holds the soul\'s hand, carrying it across the vast void in an instant.',
     },
     unlockedWith: {
-      hi: 'सतगुरु के प्रति अनन्य प्रेम व पूर्ण समर्पण।',
-      pb: 'ਸਤਿਗੁਰੂ ਪ੍ਰਤੀ ਪੂਰਨ ਸਮਰਪਣ।',
-      en: 'Total surrender and unconditional love for the Supreme Master.',
+      hi: 'सतगुरु के प्रति अनन्य प्रेम व सत्यनाम सुमिरन।',
+      pb: 'ਸਤਿਗੁਰੂ ਪ੍ਰਤੀ ਪੂਰਨ ਸਮਰਪਣ ਤੇ ਸਤਯਨਾਮ ਸਿਮਰਨ।',
+      en: 'Total surrender and Satyanaam contemplation through the Satguru.',
     },
     granthTeaching: {
-      hi: 'कबीर सागर (हंस प्रबोध): मानसरोवर में स्नान करते ही करोड़ों जन्मों के सूक्ष्म मैल धुल जाते हैं।',
-      pb: 'ਕਬੀਰ ਸਾਗਰ: ਮਾਨਸਰੋਵਰ ਵਿੱਚ ਆਤਮਾ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਿਰਮਲ ਹੋ ਜਾਂਦੀ ਹੈ।',
-      en: 'Kabir Sagar: Mansarovar purifies the soul of all subtle and causal karmas.',
+      hi: 'कबीर सागर (हंस प्रबोध): बिना पूर्ण सतगुरु और सत्यनाम के महासुन्न को पार करना असंभव है।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ: ਪੂਰਨ ਸਤਿਗੁਰੂ ਤੇ ਸਤਯਨਾਮ ਤੋਂ ਬਿਨਾਂ ਮਹਾਸੁੰਨ ਪਾਰ ਕਰਨਾ ਅਸੰਭਵ ਹੈ।',
+      en: 'Kabir Sagar: Without the Complete Satguru and Satyanaam, crossing Mahasunna is impossible.',
+    },
+  },
+  {
+    id: 'stage-parabrahm',
+    stageNumber: 7,
+    realmType: 'transition',
+    title: {
+      hi: 'पारब्रह्म (सुन्न एवं मानसरोवर)',
+      pb: 'ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ ਤੇ ਮਾਨਸਰੋਵਰ)',
+      en: 'Parabrahm (Sunn & Mansarovar)',
+    },
+    region: {
+      hi: 'अक्षर पुरुष का सुन्न मंडल व पवित्र मानसरोवर स्नान क्षेत्र',
+      pb: 'ਅਕਸ਼ਰ ਪੁਰਸ਼ ਦਾ ਸੁੰਨ ਮੰਡਲ ਤੇ ਪਵਿੱਤਰ ਮਾਨਸਰੋਵਰ ਇਸ਼ਨਾਨ ਖੇਤਰ',
+      en: 'Sunn Plane of Akshar Purush & Sacred Mansarovar Pool',
+    },
+    nature: {
+      hi: 'त्रिकुटी से ऊपर पारब्रह्म (सुन्न) मंडल स्थित है। यहाँ मानसरोवर के अमृत कुंड में स्नान कर जीवात्मा समस्त सूक्ष्म और कारण आवरणों को त्यागकर निर्मल हंस बन जाती है।',
+      pb: 'ਤ੍ਰਿਕੁਟੀ ਤੋਂ ਉੱਪਰ ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ) ਮੰਡਲ ਹੈ। ਇੱਥੇ ਮਾਨਸਰੋਵਰ ਵਿੱਚ ਇਸ਼ਨਾਨ ਕਰਕੇ ਆਤਮਾ ਨਿਰਮਲ ਹੰਸ ਬਣਦੀ ਹੈ।',
+      en: 'Above Trikuti lies Parabrahm (Sunn), where bathing in Mansarovar cleanses causal sheaths and transforms the soul into a pure Hansa.',
+    },
+    kabirSagarVerse: {
+      hi: 'मानसरोवर न्हाय के, हंसा भये सचेत। पाप-पुण्य सब दूर भये, निरमल भयो निकेत॥',
+      pb: 'ਮਾਨਸਰੋਵਰ ਨ੍ਹਾਏ ਕੇ, ਹੰਸਾ ਭਏ ਸਚੇਤ। ਪਾਪ-ਪੁੰਨ ਸਬ ਦੂਰ ਭਏ, ਨਿਰਮਲ ਭਯੋ ਨਿਕੇਤ॥',
+      en: 'By bathing in Mansarovar the Hansa awakens; all karmic stains wash away.',
+    },
+    soulExperience: {
+      hi: 'करोड़ों जन्मों के सूक्ष्म संस्कार धुल जाते हैं और हंस का स्वरूप सौ सूर्यों के समान चमक उठता है।',
+      pb: 'ਕਰੋੜਾਂ ਜਨਮਾਂ ਦੇ ਸੂਖਮ ਮੈਲ ਧੁਲ ਜਾਂਦੇ ਹਨ ਅਤੇ ਹੰਸ ਨਿਰਮਲ ਹੋ ਜਾਂਦਾ ਹੈ।',
+      en: 'All subtle karmic impressions wash away and the soul radiates crystal purity.',
+    },
+    unlockedWith: {
+      hi: 'त्रिकुटी के पार सुरति को सुन्न में स्थिर करना।',
+      pb: 'ਤ੍ਰਿਕੁਟੀ ਤੋਂ ਪਾਰ ਸੁਰਤਿ ਨੂੰ ਸੁੰਨ ਵਿੱਚ ਟਿਕਾਉਣਾ।',
+      en: 'Anchoring inner Surat in Sunn beyond Trikuti.',
+    },
+    granthTeaching: {
+      hi: 'कबीर सागर: मानसरोवर में स्नान करते ही सूक्ष्म व कारण देह का मैल समाप्त होकर हंस आगे बढ़ता है।',
+      pb: 'ਕਬੀਰ ਸਾਗਰ: ਮਾਨਸਰੋਵਰ ਵਿੱਚ ਇਸ਼ਨਾਨ ਨਾਲ ਆਤਮਾ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਿਰਮਲ ਹੋ ਜਾਂਦੀ ਹੈ।',
+      en: 'Kabir Sagar: Mansarovar purifies the soul of all subtle and causal coverings.',
     },
   },
   {
     id: 'stage-trikuti',
-    stageNumber: 7,
+    stageNumber: 8,
     realmType: 'transition',
     title: {
       hi: 'त्रिकुटी (ब्रह्म लोक / ओंकार धाम)',
@@ -329,7 +369,7 @@ export const SACRED_UNIVERSE_STAGES: UniverseAscentStage[] = [
   },
   {
     id: 'stage-brahmands',
-    stageNumber: 8,
+    stageNumber: 9,
     realmType: 'kaal',
     title: {
       hi: 'काल के २१ ब्रह्मांड (स्वर्ग, मृत्युलोक, पाताल)',
@@ -386,10 +426,26 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
   const [expandedId, setExpandedId] = useState<number | null>(1); // Anami Lok expanded by default
   const [playingFreq, setPlayingFreq] = useState<number | null>(null);
   const [journeyActive, setJourneyActive] = useState(false);
-  
+  const [stageDetailModalOpen, setStageDetailModalOpen] = useState(false);
+  const [activeSubtleLevelModal, setActiveSubtleLevelModal] = useState<(typeof levels)[number] | null>(null);
+
   const audioCtxRef = useRef<AudioContext | null>(null);
   const oscillatorRef = useRef<OscillatorNode | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (oscillatorRef.current) {
+        try {
+          oscillatorRef.current.stop();
+          oscillatorRef.current.disconnect();
+        } catch {
+          // Ignore unmount cleanup error
+        }
+        oscillatorRef.current = null;
+      }
+    };
+  }, []);
 
   const stopFrequency = () => {
     if (oscillatorRef.current) {
@@ -528,14 +584,14 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
   };
 
   return (
-    <div className="space-y-4 sm:space-y-6 pb-16 select-none max-w-5xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
+    <div className="space-y-4 sm:space-y-6 pb-16 max-w-5xl mx-auto px-3 sm:px-6 py-2 sm:py-4 relative z-10 pointer-events-auto">
       {/* Top Banner */}
       <div 
         style={{ 
           background: 'linear-gradient(135deg, #6B1800 0%, #8B2500 55%, #9A3412 100%)',
           borderColor: theme.accentGold 
         }}
-        className="rounded-3xl p-4 sm:p-6 text-white shadow-xl relative overflow-hidden border-2 mb-4 backdrop-blur-md"
+        className="rounded-3xl p-4 sm:p-6 text-white shadow-xl relative overflow-hidden border-2 mb-4"
       >
         <div className="absolute -right-10 -bottom-10 text-9xl opacity-10 pointer-events-none">✨</div>
         
@@ -546,7 +602,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                 {t.kabirSagarBrahmandDarshan}
               </span>
               <span className="px-2 py-0.5 rounded-full bg-red-600/80 text-[10px] font-bold border border-red-300 font-serif">
-                {language === 'pb' ? '੧. ਅਨਾਮੀ ਲੋਕ (ਸਰਵਉੱਚ)' : language === 'en' ? '1. Anami Lok (Absolute Top)' : '१. अनामी लोक (सर्वोच्च शिखर)'}
+                {language === 'pb' ? '੧. ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ)' : language === 'en' ? '1. Anami Lok (Akah Lok)' : '१. अनामी लोक (अकह लोक)'}
               </span>
             </div>
             <h2 className="text-lg sm:text-2xl font-black font-serif truncate">
@@ -572,22 +628,22 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
       {/* Header Section */}
       <div className="text-center space-y-2">
         <h1 
-          className="text-xl sm:text-3xl font-black font-serif tracking-tight leading-tight px-1"
+          className="text-base sm:text-xl md:text-2xl font-black font-serif tracking-tight leading-snug px-1"
           style={{ color: theme.sacredMaroon }}
         >
           {language === 'pb' 
-            ? 'ਬ੍ਰਹਿਮੰਡ ਦਰਸ਼ਨ: ਅਨਾਮੀ ਲੋਕ (ਸਭ ਤੋਂ ਉੱਪਰ) ➔ ਸਤਯਲੋਕ ➔ ਅਲਖ ➔ ਅਗਮ ➔ ੨੧ ਬ੍ਰਹਿਮੰਡ' 
+            ? 'ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ) → ਅਗਮ ਲੋਕ → ਅਲਖ ਲੋਕ → ਸਤਯਲੋਕ (ਅਮਰਲੋਕ) → ਭੰਵਰ ਗੁਫ਼ਾ → ਮਹਾਸੁੰਨ → ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ) → ਤ੍ਰਿਕੁਟੀ → ੨੧ ਬ੍ਰਹਿਮੰਡ' 
             : language === 'en' 
-            ? 'Cosmic Hierarchy: Anami Lok (Top) ➔ Satlok ➔ Alakh ➔ Agam ➔ 21 Brahmands' 
-            : 'ब्रह्मांड दर्शन: अनामी लोक (सबसे ऊपर) ➔ सत्यलोक ➔ अलख ➔ अगम ➔ २१ ब्रह्मांड'}
+            ? 'Anami Lok (Akah Lok) → Agam Lok → Alakh Lok → Satyalok (Amarlok) → Bhanwar Gupha → Mahasunna → Parabrahm (Sunn) → Trikuti → 21 Brahmands' 
+            : 'अनामी लोक (अकह लोक) → अगम लोक → अलख लोक → सत्यलोक (अमरलोक) → भंवर गुफा → महासुन्न → पारब्रह्म (सुन्न) → त्रिकुटी → २१ ब्रह्मांड'}
         </h1>
         
         <p className="text-xs sm:text-sm max-w-3xl mx-auto text-gray-600 dark:text-gray-400 font-serif leading-relaxed px-2">
           {language === 'pb'
-            ? 'ਕਬੀਰ ਸਾਗਰ ਅਨੁਸਾਰ: ਸਭ ਤੋਂ ਉੱਪਰ ਅਨਾਮੀ ਲੋਕ, ਫਿਰ ਸਤਯਲੋਕ, ਅਲਖ ਲੋਕ, ਅਗਮ ਲੋਕ, ਮਾਨਸਰੋਵਰ ਤੇ ਕਾਲ ਦੇ ੨੧ ਬ੍ਰਹਿਮੰਡਾਂ ਦਾ ਪ੍ਰਮਾਣਿਕ ਚਿਤਰਣ।'
+            ? 'ਕਬੀਰ ਸਾਗਰ ਅਨੁਸਾਰ ਪਾਵਨ ਸ੍ਰਿਸ਼ਟੀ ਕ੍ਰਮ: ਸਭ ਤੋਂ ਉੱਪਰ ਅਨਾਮੀ ਲੋਕ (ਅਕਹ ਲੋਕ), ਉਸ ਤੋਂ ਬਾਅਦ ਅਗਮ, ਅਲਖ, ਸਤਯਲੋਕ (ਅਮਰਲੋਕ), ਭੰਵਰ ਗੁਫ਼ਾ, ਮਹਾਸੁੰਨ, ਪਾਰਬ੍ਰਹਮ (ਸੁੰਨ), ਤ੍ਰਿਕੁਟੀ ਅਤੇ ਕਾਲ ਦੇ ੨੧ ਬ੍ਰਹਿਮੰਡ।'
             : language === 'en'
-            ? 'Based on Kabir Sagar: Anami Lok placed at the absolute top, followed by Satlok, Alakh Lok, Agam Lok, and the 21 Brahmands.'
-            : 'कबीर सागर अनुसार: सबसे ऊपर अनामी लोक, उसके उपरांत सत्यलोक, अलख लोक, अगम लोक, भंवर गुफा, महा-सुन्न एवं काल के २१ ब्रह्मांडों का प्रामाणिक क्रम।'}
+            ? 'Authentic Kabir Sagar order: Anami Lok (Akah Lok) at the supreme apex, followed by Agam Lok, Alakh Lok, Satyalok (Amarlok), Bhanwar Gupha, Mahasunna, Parabrahm (Sunn), Trikuti, and the 21 Brahmands of Kaal.'
+            : 'कबीर सागर अनुसार पावन सृष्टि क्रम: सर्वोच्च शिखर अनामी लोक (अकह लोक), उसके उपरांत अगम लोक, अलख लोक, सत्यलोक (अमरलोक), भंवर गुफा, महासुन्न, पारब्रह्म (सुन्न), त्रिकुटी एवं काल के २१ ब्रह्मांड।'}
         </p>
 
         {/* Global Search Filter Input for Teachings & Granth Sections */}
@@ -634,7 +690,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
               className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold font-serif transition-all cursor-pointer flex items-center gap-1.5"
             >
               <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 shrink-0" />
-              <span className="whitespace-nowrap">{language === 'pb' ? 'ਈ-ਚਾਰਟਸ ਸਨਬਰਸਟ' : language === 'en' ? 'ECharts Sunburst' : 'ई-चार्ट्स सनबर्स्ट'}</span>
+              <span className="whitespace-nowrap">{language === 'pb' ? 'ਬ੍ਰਹਿਮੰਡ ਚੱਕਰ ਦਰਸ਼ਨ' : language === 'en' ? 'Brahmand Chakra Darshan' : 'ब्रह्मांड चक्र दर्शन'}</span>
             </button>
 
             <button
@@ -672,20 +728,52 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
         </div>
       </div>
 
-      {/* TAB 1: Apache ECharts Sunburst Chart Visualizer with Search Filter */}
+      {/* Subtle Active Naad Indicator (Shown ONLY when a Naad frequency is actively playing) */}
+      {(playingFreq !== null || journeyActive) && (
+        <div
+          style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
+          className="flex items-center justify-between gap-2 px-3.5 py-2 rounded-2xl border shadow-xs text-xs font-serif"
+        >
+          <div className="flex items-center gap-2 min-w-0">
+            <Volume2 className="w-4 h-4 text-amber-600 shrink-0" />
+            <span className="truncate font-bold" style={{ color: theme.sacredMaroon }}>
+              {language === 'pb'
+                ? `ਅਨਹਦ ਨਾਦ ਧੁਨੀ ਚਾਲੂ: ${levels.find(l => l.id === playingFreq)?.frequency || ''}`
+                : language === 'en'
+                ? `Active Naad Frequency: ${levels.find(l => l.id === playingFreq)?.frequency || ''}`
+                : `सक्रिय नाद ध्वनि: ${levels.find(l => l.id === playingFreq)?.frequency || ''}`}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setJourneyActive(false);
+              stopFrequency();
+            }}
+            className="px-2.5 py-1 rounded-lg bg-rose-600 text-white text-[11px] font-bold cursor-pointer shrink-0 hover:bg-rose-700"
+          >
+            {language === 'pb' ? 'ਰੋਕੋ' : language === 'en' ? 'Stop' : 'रोकें'}
+          </button>
+        </div>
+      )}
+
+      {/* TAB 1: Brahmand Chakra Darshan (Sunburst, Network & Tree Visualizer) */}
       {activeViewTab === 'visualizer' && (
-        <div className="space-y-4 sm:space-y-6">
+        <div className="space-y-4 sm:space-y-6 relative z-20 pointer-events-auto">
           <div 
             style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
-            className="p-3 sm:p-5 rounded-3xl border-2 space-y-4 shadow-sm backdrop-blur-md"
+            className="p-3 sm:p-5 rounded-3xl border-2 space-y-4 shadow-sm relative z-20 pointer-events-auto"
           >
             <Suspense fallback={<SacredLoader language={language} compact />}>
               <EChartsUniverseVisualizer
                 externalSearchQuery={searchFilter}
                 onSelectNode={(node) => {
+                  const titleLower = node.title.toLowerCase();
                   const match = SACRED_UNIVERSE_STAGES.find(s => 
-                    node.title.toLowerCase().includes(s.title.hi.toLowerCase()) ||
-                    s.title.hi.toLowerCase().includes(node.title.toLowerCase())
+                    titleLower.includes(s.title.hi.toLowerCase()) ||
+                    s.title.hi.toLowerCase().includes(titleLower) ||
+                    titleLower.includes(s.title.pb.toLowerCase()) ||
+                    titleLower.includes(s.title.en.toLowerCase())
                   );
                   if (match) {
                     setSelectedStageId(match.id);
@@ -693,8 +781,6 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                 }}
               />
             </Suspense>
-
-            <AnhadNaadVisualizer isActive={true} />
           </div>
         </div>
       )}
@@ -733,18 +819,20 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                   else if (isTransition) badgeColor = 'bg-indigo-500/10 text-indigo-800 dark:text-indigo-300 border-indigo-500/20';
 
                   return (
-                    <div
+                    <button
+                      type="button"
                       key={stg.id}
                       onClick={() => {
                         sacredHaptics.lightTap();
                         setSelectedStageId(stg.id);
+                        setStageDetailModalOpen(true);
                       }}
                       style={{
                         backgroundColor: isSelected ? theme.stepActiveBg : theme.cardBg,
                         borderColor: isSelected ? (isAnami ? '#dc2626' : theme.accentGold) : theme.cardBorder,
                       }}
-                      className={`p-3 sm:p-3.5 rounded-2xl border-2 transition-all cursor-pointer shadow-2xs flex items-center justify-between gap-2.5 overflow-hidden ${
-                        isSelected ? 'ring-2 ring-amber-500/40 scale-[1.01] shadow-md' : 'hover:scale-[1.005] opacity-90 hover:opacity-100'
+                      className={`relative z-10 pointer-events-auto touch-manipulation w-full text-left p-3 sm:p-3.5 rounded-2xl border-2 transition-all cursor-pointer shadow-2xs flex items-center justify-between gap-2.5 overflow-hidden ${
+                        isSelected ? 'ring-2 ring-amber-500/40 shadow-md' : 'opacity-95 hover:opacity-100'
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">
@@ -778,12 +866,12 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                         {isAnami
                           ? (language === 'pb' ? '👑 ਸਰਵਉੱਚ ਸ਼ਿਖਰ' : language === 'en' ? '👑 Absolute Top' : '👑 सर्वोच्च शिखर')
                           : isSatyaloka 
-                          ? (language === 'pb' ? 'ਅਮਰਲੋਕ' : language === 'en' ? 'Amar Lok' : 'अमरलोक') 
+                          ? (language === 'pb' ? 'ਅਮਰਲੋਕ' : language === 'en' ? 'Amarlok' : 'अमरलोक') 
                           : isTransition 
                           ? (language === 'pb' ? 'ਪਾਰਬ੍ਰਹਮ' : language === 'en' ? 'Parabrahm' : 'पारब्रह्म') 
                           : (language === 'pb' ? '੨੧ ਬ੍ਰਹਿਮੰਡ' : language === 'en' ? '21 Brahmands' : '२१ ब्रह्मांड')}
                       </span>
-                    </div>
+                    </button>
                   );
                 })}
               </div>
@@ -910,7 +998,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
             )}
           </div>
 
-          <div className="max-w-4xl mx-auto px-1 sm:px-2 relative space-y-3 sm:space-y-4">
+          <div className="max-w-4xl mx-auto px-1 sm:px-2 relative z-20 pointer-events-auto space-y-3 sm:space-y-4">
             {levels.map((level) => {
               const isExpanded = expandedId === level.id;
               const isPlaying = playingFreq === level.id;
@@ -921,14 +1009,28 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
               return (
                 <div
                   key={level.id}
+                  role="button"
+                  tabIndex={0}
                   style={{ 
                     backgroundColor: theme.cardBg, 
                     borderColor: isExpanded ? (isAnami ? '#dc2626' : theme.accentGold) : theme.cardBorder,
                   }}
-                  className={`p-3.5 sm:p-5 rounded-2xl border-2 transition-all cursor-pointer shadow-sm overflow-hidden break-words ${
+                  className={`relative z-20 pointer-events-auto touch-manipulation p-3.5 sm:p-5 rounded-2xl border-2 transition-all cursor-pointer shadow-sm overflow-hidden break-words ${
                     isExpanded ? 'ring-2 ring-amber-500/40 shadow-md' : 'hover:border-amber-500/50'
                   }`}
-                  onClick={() => setExpandedId(isExpanded ? null : level.id)}
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setExpandedId(level.id);
+                    setActiveSubtleLevelModal(level);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      sacredHaptics.lightTap();
+                      setExpandedId(level.id);
+                      setActiveSubtleLevelModal(level);
+                    }
+                  }}
                 >
                   <div className="flex items-center justify-between gap-2.5 sm:gap-4 flex-wrap sm:flex-nowrap">
                     <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 overflow-hidden">
@@ -942,11 +1044,11 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                           </h3>
                           {isAnami ? (
                             <span className="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-black uppercase tracking-tighter bg-red-600 text-white">
-                              👑 सर्वोच्च शिखर
+                              👑 {language === 'pb' ? 'ਸਰਵਉੱਚ ਸ਼ਿਖਰ' : language === 'en' ? 'Supreme Apex' : 'सर्वोच्च शिखर'}
                             </span>
                           ) : isSpiritualRealm ? (
                             <span className="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-bold uppercase tracking-tighter bg-amber-100 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200 border border-amber-300">
-                              Amar Lok
+                              {language === 'pb' ? 'ਅਮਰਲੋਕ' : language === 'en' ? 'Amarlok' : 'अमरलोक'}
                             </span>
                           ) : null}
                         </div>
@@ -958,7 +1060,7 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                               e.stopPropagation();
                               playFrequency(level.frequency, level.id);
                             }}
-                            className="flex items-center gap-1 hover:underline cursor-pointer shrink-0"
+                            className="relative z-30 pointer-events-auto flex items-center gap-1 hover:underline cursor-pointer shrink-0 px-1.5 py-0.5 rounded-md bg-amber-500/10"
                           >
                             {isPlaying ? <VolumeX className="w-3.5 h-3.5 text-rose-500" /> : <Volume2 className="w-3.5 h-3.5" />}
                             <span className={isPlaying ? 'text-rose-500' : ''}>{level.frequency}</span>
@@ -972,31 +1074,242 @@ export const UniverseMap: React.FC<UniverseMapProps> = ({ language, onClose }) =
                     </div>
                   </div>
 
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-3 mt-3 border-t space-y-2.5 overflow-hidden break-words" style={{ borderColor: theme.cardBorder }}>
-                          <p className="text-xs sm:text-sm leading-relaxed break-words" style={{ color: theme.textSecondary }}>
-                            {level.description}
-                          </p>
+                  {isExpanded && (
+                    <div className="pt-3 mt-3 border-t space-y-2.5 overflow-hidden break-words" style={{ borderColor: theme.cardBorder }}>
+                      <p className="text-xs sm:text-sm leading-relaxed break-words" style={{ color: theme.textSecondary }}>
+                        {level.description}
+                      </p>
 
-                          {level.vani && (
-                            <div className="p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-500 font-serif italic text-xs font-bold break-words leading-relaxed">
-                              "{level.vani}"
-                            </div>
-                          )}
+                      {level.vani && (
+                        <div className="p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-500 font-serif italic text-xs font-bold break-words leading-relaxed">
+                          "{level.vani}"
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      )}
+                    </div>
+                  )}
                 </div>
               );
             })}
+          </div>
+        </div>
+      )}
+
+      {/* Centered Modal: Tab 2 Kabir Sagar Upadesh Detail Panel */}
+      {stageDetailModalOpen && (
+        <div
+          onClick={() => setStageDetailModalOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 110,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '48px 14px',
+          }}
+          className="bg-black/60 backdrop-blur-xs pointer-events-auto"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: '100%',
+              maxWidth: '480px',
+              maxHeight: 'calc(100dvh - 104px)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+              borderRadius: '16px',
+              backgroundColor: theme.cardBg,
+              borderColor: currentStage.realmType === 'anamilok' ? '#dc2626' : theme.accentGold,
+            }}
+            className="border-2 shadow-2xl font-serif"
+          >
+            {/* Pinned Header */}
+            <div className="flex items-center justify-between gap-2 px-4 py-3 border-b shrink-0" style={{ borderColor: theme.cardBorder, backgroundColor: theme.stepActiveBg }}>
+              <div className="min-w-0 flex-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300 block">
+                  {language === 'pb' ? `ਪੜਾਅ ${currentStage.stageNumber}` : language === 'en' ? `Realm ${currentStage.stageNumber}` : `पड़ाव ${currentStage.stageNumber}`}
+                </span>
+                <h3 style={{ color: theme.sacredMaroon }} className="text-sm sm:text-base font-black leading-snug break-words">
+                  {currentStage.title[language]}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setStageDetailModalOpen(false)}
+                className="p-1.5 rounded-full bg-black/10 dark:bg-white/10 hover:opacity-80 cursor-pointer shrink-0"
+                aria-label="Close modal"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            {/* Scrollable Body */}
+            <div className="p-4 space-y-3 overflow-y-auto flex-1 break-words">
+              <p className="text-xs text-amber-700 dark:text-amber-400 font-medium">
+                📍 {currentStage.region[language]}
+              </p>
+
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  {t.realmNature}
+                </span>
+                <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-sans">
+                  {currentStage.nature[language]}
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }} className="p-3 rounded-2xl border space-y-1">
+                <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
+                  <BookOpen className="w-3.5 h-3.5 text-amber-600" />
+                  <span>{language === 'pb' ? 'ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼:' : language === 'en' ? 'Kabir Sagar Upadesh:' : 'कबीर सागर उपदेश:'}</span>
+                </div>
+                <p className="text-xs leading-snug font-medium text-amber-950 dark:text-amber-100">
+                  {currentStage.granthTeaching[language]}
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }} className="p-3 rounded-2xl border space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                  {t.soulInternalState}
+                </span>
+                <p className="text-xs leading-snug">{currentStage.soulExperience[language]}</p>
+              </div>
+
+              <div style={{ borderColor: theme.accentGold }} className="p-3 rounded-2xl border-l-4 bg-amber-500/10 space-y-1">
+                <span className="text-[10px] font-bold text-amber-800 dark:text-amber-300 block">
+                  {t.kabirSagarProof}
+                </span>
+                <p className="italic font-black text-xs text-amber-950 dark:text-amber-100 leading-relaxed">
+                  "{currentStage.kabirSagarVerse[language]}"
+                </p>
+              </div>
+
+              <div className="text-xs flex items-center justify-between gap-2 flex-wrap pt-1">
+                <span className="text-gray-500 dark:text-gray-400">{t.liberationKey}</span>
+                <span className="font-bold text-emerald-700 dark:text-emerald-400">✓ {currentStage.unlockedWith[language]}</span>
+              </div>
+            </div>
+
+            {/* Pinned Footer */}
+            <div className="px-4 py-2.5 border-t flex justify-end shrink-0" style={{ borderColor: theme.cardBorder, backgroundColor: theme.stepActiveBg }}>
+              <button
+                type="button"
+                onClick={() => setStageDetailModalOpen(false)}
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="px-4 py-1.5 rounded-xl font-bold text-xs cursor-pointer"
+              >
+                {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Centered Modal: Tab 3 Subtle Lok Kabir Sagar Upadesh Panel */}
+      {activeSubtleLevelModal && (
+        <div
+          onClick={() => setActiveSubtleLevelModal(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 110,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '48px 14px',
+          }}
+          className="bg-black/60 backdrop-blur-xs pointer-events-auto"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: '100%',
+              maxWidth: '480px',
+              maxHeight: 'calc(100dvh - 104px)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+              borderRadius: '16px',
+              backgroundColor: theme.cardBg,
+              borderColor: theme.accentGold,
+            }}
+            className="border-2 shadow-2xl font-serif"
+          >
+            {/* Pinned Header */}
+            <div className="flex items-center justify-between gap-2 px-4 py-3 border-b shrink-0" style={{ borderColor: theme.cardBorder, backgroundColor: theme.stepActiveBg }}>
+              <div className="flex items-center gap-2 min-w-0 flex-1">
+                <span className="w-7 h-7 rounded-full flex items-center justify-center font-black text-xs text-white bg-amber-600 shrink-0">
+                  {activeSubtleLevelModal.id}
+                </span>
+                <h3 style={{ color: theme.sacredMaroon }} className="text-sm sm:text-base font-black leading-snug break-words">
+                  {activeSubtleLevelModal.title}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveSubtleLevelModal(null)}
+                className="p-1.5 rounded-full bg-black/10 dark:bg-white/10 hover:opacity-80 cursor-pointer shrink-0"
+                aria-label="Close Upadesh"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            {/* Scrollable Body */}
+            <div className="p-4 space-y-3 overflow-y-auto flex-1 break-words">
+              <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/25 text-xs">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 block mb-0.5">
+                  {t.entityLabel}
+                </span>
+                <span className="font-bold" style={{ color: theme.textPrimary }}>{activeSubtleLevelModal.entity}</span>
+              </div>
+
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  {language === 'pb' ? 'ਕਬੀਰ ਸਾਗਰ ਉਪਦੇਸ਼:' : language === 'en' ? 'Kabir Sagar Upadesh:' : 'कबीर सागर उपदेश:'}
+                </span>
+                <p className="text-xs sm:text-sm leading-relaxed font-sans" style={{ color: theme.textSecondary }}>
+                  {activeSubtleLevelModal.description}
+                </p>
+              </div>
+
+              {activeSubtleLevelModal.vani && (
+                <div className="p-3 rounded-xl bg-amber-500/10 border-l-4 border-amber-500 space-y-1">
+                  <span className="text-[10px] font-bold text-amber-800 dark:text-amber-300 block">
+                    {t.vaniLabel}
+                  </span>
+                  <p className="italic font-bold text-xs leading-relaxed" style={{ color: theme.textPrimary }}>
+                    {activeSubtleLevelModal.vani}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Pinned Footer */}
+            <div className="px-4 py-2.5 border-t flex items-center justify-between gap-2 shrink-0" style={{ borderColor: theme.cardBorder, backgroundColor: theme.stepActiveBg }}>
+              <button
+                type="button"
+                onClick={() => playFrequency(activeSubtleLevelModal.frequency, activeSubtleLevelModal.id)}
+                className="px-3 py-1.5 rounded-xl border border-amber-500/40 bg-amber-500/15 text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                style={{ color: theme.sacredMaroon }}
+              >
+                {playingFreq === activeSubtleLevelModal.id ? <VolumeX className="w-3.5 h-3.5 text-rose-600" /> : <Volume2 className="w-3.5 h-3.5" />}
+                <span>
+                  {playingFreq === activeSubtleLevelModal.id
+                    ? (language === 'pb' ? 'ਨਾਦ ਰੋਕੋ' : language === 'en' ? 'Stop Naad' : 'नाद रोकें')
+                    : `${t.listenFrequencyBtn} (${activeSubtleLevelModal.frequency})`}
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveSubtleLevelModal(null)}
+                style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+                className="px-4 py-1.5 rounded-xl font-bold text-xs cursor-pointer"
+              >
+                {language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें'}
+              </button>
+            </div>
           </div>
         </div>
       )}
