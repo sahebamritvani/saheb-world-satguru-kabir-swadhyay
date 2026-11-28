@@ -46,6 +46,10 @@ import {
 import { satyanaamAudio } from '../services/audioDhun';
 import { generateUniqueUlatvasiAnalysis } from '../services/ulatvasiEssenceEngine';
 import { getAppUrlSync } from '../utils/url';
+import {
+  ADMIN_SLOTS_UPDATED_EVENT,
+  getInjectedGranthChapters,
+} from '../services/adminSlotInjectorStore';
 
 interface UlatvasiLibraryProps {
   language: Language;
@@ -124,6 +128,17 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
   const [ulatvasiList, setUlatvasiList] = useState<UlatvasiQuestion[]>(ULATVASI_CORE_QUESTIONS);
   const [isLoadingUlatvasis, setIsLoadingUlatvasis] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [adminSlotsVersion, setAdminSlotsVersion] = useState<number>(0);
+
+  useEffect(() => {
+    const handleAdminSlotsUpdated = () => {
+      setAdminSlotsVersion((v) => v + 1);
+    };
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
+    return () => {
+      window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleAdminSlotsUpdated);
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -147,8 +162,90 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
     };
   }, []);
 
+  const mergedUlatvasiList = useMemo(() => {
+    const injectedChapters = getInjectedGranthChapters('slot-6-ulatbaasi');
+    if (!injectedChapters || injectedChapters.length === 0) {
+      return ulatvasiList;
+    }
+
+    const injectedQuestions: UlatvasiQuestion[] = [];
+    let counter = 1;
+    for (const ch of injectedChapters) {
+      for (const v of ch.verses || []) {
+        const hiVerse = (v.lines?.hi || []).join('\n');
+        const pbVerse = (v.lines?.pb || []).join('\n') || hiVerse;
+        const enVerse = (v.lines?.en || []).join('\n') || hiVerse;
+        const hiBhav = v.bhavarth?.hi || ch.description?.hi || 'सत्यनाम एवं आत्म-ज्ञान का गूढ़ रहस्य।';
+        const pbBhav = v.bhavarth?.pb || ch.description?.pb || hiBhav;
+        const enBhav = v.bhavarth?.en || ch.description?.en || 'Esoteric spiritual revelation of Satyanaam.';
+        const hiTitle = (v.lines?.hi?.[0] || ch.title?.hi || `इंजेक्टेड उलटबांसी #${counter}`).slice(0, 64);
+        const pbTitle = (v.lines?.pb?.[0] || ch.title?.pb || hiTitle).slice(0, 64);
+        const enTitle = (v.lines?.en?.[0] || ch.title?.en || `Injected Ulatbaasi #${counter}`).slice(0, 64);
+
+        injectedQuestions.push({
+          id: v.id ? String(v.id) : `slot6-${ch.id}-${counter}`,
+          number: counter,
+          realm: 'kautuhal',
+          realmTitle: {
+            hi: ch.title?.hi || 'प्रशासक संकलन (स्लॉट #6)',
+            pb: ch.title?.pb || 'ਐਡਮਿਨ ਸੰਗ੍ਰਹਿ (ਸਲੌਟ #6)',
+            en: ch.title?.en || 'Admin Collection (Slot #6)',
+          },
+          title: {
+            hi: `${counter}. ${hiTitle}`,
+            pb: `${counter}. ${pbTitle}`,
+            en: `${counter}. ${enTitle}`,
+          },
+          verse: { hi: hiVerse, pb: pbVerse, en: enVerse },
+          literalParadox: { hi: hiBhav, pb: pbBhav, en: enBhav },
+          clueHint: {
+            hi: v.contemplation?.hi || hiBhav,
+            pb: v.contemplation?.pb || pbBhav,
+            en: v.contemplation?.en || enBhav,
+          },
+          symbols: [],
+          question: {
+            hi: 'इस पावन उलटबांसी पद का मुख्य आध्यात्मिक मर्म क्या है?',
+            pb: 'ਇਸ ਪਾਵਨ ਉਲਟਬਾਂਸੀ ਪਦ ਦਾ ਮੁੱਖ ਅਧਿਆਤਮਕ ਮਰਮ ਕੀ ਹੈ?',
+            en: 'What is the core spiritual essence of this Ulatbaasi verse?',
+          },
+          options: {
+            hi: [hiBhav, 'बाहरी भौतिक अर्थ', 'सांसारिक कल्पना', 'केवल शाब्दिक वर्णन'],
+            pb: [pbBhav, 'ਬਾਹਰੀ ਭੌਤਿਕ ਅਰਥ', 'ਸੰਸਾਰਕ ਕਲਪਨਾ', 'ਕੇਵਲ ਸ਼ਬਦੀ ਵਰਣਨ'],
+            en: [enBhav, 'Literal outer meaning', 'Worldly imagination', 'Mere poetic figure'],
+          },
+          correctIndex: 0,
+          mysticalUnveiling: {
+            headline: {
+              hi: ch.title?.hi || 'गूढ़ आध्यात्मिक बोध',
+              pb: ch.title?.pb || 'ਗੂੜ੍ਹ ਅਧਿਆਤਮਕ ਬੋਧ',
+              en: ch.title?.en || 'Esoteric Spiritual Insight',
+            },
+            deepMeaning: { hi: hiBhav, pb: pbBhav, en: enBhav },
+            kabirPhilosophy: {
+              hi: v.practicalApplication?.hi || 'सतगुरु के शब्द और सत्यनाम के अभ्यास से भ्रम मिटता है।',
+              pb: v.practicalApplication?.pb || 'ਸਤਿਗੁਰੂ ਦੇ ਸ਼ਬਦ ਅਤੇ ਸਤਯਨਾਮ ਦੇ ਅਭਿਆਸ ਨਾਲ ਭਰਮ ਮਿਟਦਾ ਹੈ।',
+              en: v.practicalApplication?.en || 'Illusion dissolves through the Satguru’s Shabd and Satyanaam.',
+            },
+            parakhiInsight: {
+              hi: v.samarpanPrayer?.hi || 'साहेब बंदगी — अंतर्मुखी साधना का पावन सूत्र।',
+              pb: v.samarpanPrayer?.pb || 'ਸਾਹੇਬ ਬੰਦਗੀ — ਅੰਤਰਮੁਖੀ ਸਾਧਨਾ ਦਾ ਪਾਵਨ ਸੂਤਰ।',
+              en: v.samarpanPrayer?.en || 'Saheb Bandagi — sacred key to inward contemplation.',
+            },
+          },
+          wisdomPoints: 100,
+        });
+        counter += 1;
+      }
+    }
+
+    if (injectedQuestions.length === 0) return ulatvasiList;
+    const injectedIds = new Set(injectedQuestions.map((q) => q.id));
+    return [...injectedQuestions, ...ulatvasiList.filter((q) => !injectedIds.has(q.id))];
+  }, [ulatvasiList, adminSlotsVersion]);
+
   const filteredItems = useMemo(() => {
-    return ulatvasiList.filter(item => {
+    return mergedUlatvasiList.filter(item => {
       const titleText = item.title[currentLang] || item.title.hi || '';
       const verseText = item.verse[currentLang] || item.verse.hi || '';
       const matchesSearch = 
@@ -160,7 +257,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
       
       return matchesSearch && matchesRealm && matchesBookmark;
     });
-  }, [ulatvasiList, searchQuery, selectedRealm, currentLang, showOnlyBookmarks, bookmarkedIds]);
+  }, [mergedUlatvasiList, searchQuery, selectedRealm, currentLang, showOnlyBookmarks, bookmarkedIds]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -273,7 +370,7 @@ export const UlatvasiLibrary: React.FC<UlatvasiLibraryProps> = ({
                   style={{ color: theme.accentGold }}
                   className="text-xs sm:text-sm font-black font-serif tracking-normal"
                 >
-                  {currentLang === 'pb' ? '।। ਸਤ੍ਯਨਾਮ ।।' : currentLang === 'en' ? '।। Satyanaam ।।' : '।। सत्यनाम ।।'}
+                  {currentLang === 'pb' ? '।। ਸਤਯਨਾਮ ।।' : currentLang === 'en' ? '।। Satyanaam ।।' : '।। सत्यनाम ।।'}
                 </span>
                 <span aria-hidden="true" style={{ color: theme.textSecondary }}>·</span>
                 <span className="text-xs font-bold font-serif" style={{ color: theme.textSecondary }}>

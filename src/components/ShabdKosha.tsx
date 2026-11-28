@@ -204,7 +204,7 @@ export const GLOSSARY_DB: KoshaEntry[] = [
       en: 'The Supreme Spiritual Master who personally guards and liberates the disciple who has relinquished mundane cravings and ego.'
     },
     exampleSakhi: {
-      text: 'जीवत मिरतक होय रहै, तजै खलक की आस।\nरच्छक समरथ सद्गुरु, मति दुख पावै दास।।',
+      text: 'जीवत मिरतक होय रहै, तजै खलक की आस।\nरच्छक समरथ सतगुरु, मति दुख पावै दास।।',
       source: 'साखी संग्रह · जीवत मृतक को अंग - ४'
     }
   },

@@ -64,13 +64,13 @@ export const ShareAppModal: React.FC<ShareAppModalProps> = ({
         : '🌹 ।। सत्यनाम ।। 🌹',
     appTitle:
       language === 'pb'
-        ? 'ਸਾਹਿਬ ਵਰਲਡ (Saheb World)'
+        ? 'ਸਾਹੇਬ ਵਰਲਡ (Saheb World)'
         : language === 'en'
         ? 'Saheb World'
         : 'साहेब वर्ल्ड (Saheb World)',
     appSubtitle:
       language === 'pb'
-        ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸ੍ਵਾਧਿਆਇ ਅਤੇ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹਿਬ'
+        ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਸ੍ਵਾਧਿਆਇ ਅਤੇ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ'
         : language === 'en'
         ? 'Satguru Kabir Saheb Swadhyay & Nitnem Gutka Saheb'
         : 'सतगुरु कबीर साहेब स्वाध्याय एवं नितनेम गुटका साहेब',
@@ -82,7 +82,7 @@ export const ShareAppModal: React.FC<ShareAppModalProps> = ({
         : 'किसी भी मोबाइल कैमरे से तुरंत स्कैन करें',
     bandagiFooter:
       language === 'pb'
-        ? '।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।। 🙏'
+        ? '।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏'
         : language === 'en'
         ? '|| Saheb Bandagi Saheb || 🙏'
         : '।। साहेब बंदगी साहेब ।। 🙏',
@@ -127,7 +127,7 @@ export const ShareAppModal: React.FC<ShareAppModalProps> = ({
   // Pre-formatted share invite text
   const shareMessageText =
     language === 'pb'
-      ? `${t.headerGreeting}\n\n*${t.appTitle}*\n${t.appSubtitle}\n\nਪਾਵਨ ਕਬੀਰ ਬਾਣੀ, ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ, ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹਿਬ ਅਤੇ ਕਬੀਰ ਬੀਜਕ ਦਾ ਸੰਪੂਰਣ ਆਧਿਆਤਮਿਕ ਮੰਚ।\n\n📲 ਹੁਣੇ ਪਧਾਰੋ ਅਤੇ ਸ੍ਵਾਧਿਆਇ ਕਰੋ:\n${APP_URL}\n\nਸੌਜਨਯ: ਸਾਹਿਬ ਵਰਲਡ (Saheb World)\n${t.bandagiFooter}`
+      ? `${t.headerGreeting}\n\n*${t.appTitle}*\n${t.appSubtitle}\n\nਪਾਵਨ ਕਬੀਰ ਬਾਣੀ, ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ, ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ ਅਤੇ ਕਬੀਰ ਬੀਜਕ ਦਾ ਸੰਪੂਰਣ ਆਧਿਆਤਮਿਕ ਮੰਚ।\n\n📲 ਹੁਣੇ ਪਧਾਰੋ ਅਤੇ ਸ੍ਵਾਧਿਆਇ ਕਰੋ:\n${APP_URL}\n\nਸੌਜਨਯ: ਸਾਹੇਬ ਵਰਲਡ (Saheb World)\n${t.bandagiFooter}`
       : language === 'en'
       ? `${t.headerGreeting}\n\n*${t.appTitle}*\n${t.appSubtitle}\n\nSacred Kabir Vani, Daily Hukamnama, Nitnem Gutka Saheb, and Kabir Bijak sanctuary.\n\n📲 Visit & Immerse in Swadhyay:\n${APP_URL}\n\nCourtesy: Saheb World\n${t.bandagiFooter}`
       : `${t.headerGreeting}\n\n*${t.appTitle}*\n${t.appSubtitle}\n\nपावन कबीर वाणी, दैनिक हुकमनामा, नितनेम गुटका साहेब एवं कबीर बीजक का सम्पूर्ण आध्यात्मिक मंच।\n\n📲 अभी पधारें एवं स्वाध्याय करें:\n${APP_URL}\n\nसौजन्य: साहेब वर्ल्ड (Saheb World)\n${t.bandagiFooter}`;
@@ -327,7 +327,7 @@ export const ShareAppModal: React.FC<ShareAppModalProps> = ({
       // 8. Footer Line 1: Courtesy
       const footerL1 =
         language === 'pb'
-          ? 'ਸੌਜਨਯ: ਸਾਹਿਬ ਵਰਲਡ (Saheb World)'
+          ? 'ਸੌਜਨਯ: ਸਾਹੇਬ ਵਰਲਡ (Saheb World)'
           : language === 'en'
           ? 'Courtesy: Saheb World'
           : 'सौजन्य: साहेब वर्ल्ड (Saheb World)';

@@ -189,7 +189,11 @@ export const SggsKabirBaniEngine: React.FC<SggsKabirBaniEngineProps> = ({ onBack
 
     setCurrentPlayingId(verse.id);
     setIsPlayingAudio(true);
-    speechReciter.speak(chunks.join(' । '), language, () => {
+    const spoken = chunks
+      .map((c) => (c || '').replace(/([।॥])\s*[।॥]/g, '$1').trim())
+      .join(' ')
+      .replace(/([।॥])\s*[।॥]/g, '$1');
+    speechReciter.speak(spoken, language, () => {
       setIsPlayingAudio(false);
       setCurrentPlayingId(null);
     });

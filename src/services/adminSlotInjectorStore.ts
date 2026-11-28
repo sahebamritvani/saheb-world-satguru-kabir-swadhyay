@@ -1812,6 +1812,30 @@ function extractLocalizedLines(raw: Record<string, unknown>): { hi: string[]; pb
   };
 }
 
+function extractExplicitEnglishMeaning(obj: Record<string, unknown>): string {
+  const candidates = [
+    obj.englishTranslation,
+    obj.translationEn,
+    obj.englishBhavarth,
+    obj.englishArth,
+    obj.englishMeaning,
+    obj.translation,
+    obj.arth,
+  ];
+  for (const val of candidates) {
+    if (typeof val === 'string' && val.trim()) {
+      return val.trim();
+    }
+    if (val && typeof val === 'object' && !Array.isArray(val)) {
+      const nested = (val as Record<string, unknown>).en ?? (val as Record<string, unknown>).english;
+      if (typeof nested === 'string' && nested.trim()) {
+        return nested.trim();
+      }
+    }
+  }
+  return '';
+}
+
 function normalizeRawVerseToGranthVerse(item: unknown, idx: number): GranthVerse | null {
   if (typeof item === 'string') {
     const lines = toStringLines(item);
@@ -1831,16 +1855,32 @@ function normalizeRawVerseToGranthVerse(item: unknown, idx: number): GranthVerse
   const obj = item as Record<string, unknown>;
   const lines = extractLocalizedLines(obj);
   const bhavarthSource = obj.bhavarth ?? obj.context ?? obj.meaning ?? obj.saralBhavarth ?? obj.explanation ?? obj.description;
-  const bhavarth = bhavarthSource ? toLocalizedText(bhavarthSource) : undefined;
+  const explicitEnglish = extractExplicitEnglishMeaning(obj);
 
-  if (lines.hi.length === 0 && !bhavarth?.hi) return null;
+  let bhavarth = bhavarthSource ? toLocalizedText(bhavarthSource) : undefined;
+  if (explicitEnglish) {
+    if (bhavarth) {
+      bhavarth = {
+        ...bhavarth,
+        en: explicitEnglish,
+      };
+    } else {
+      bhavarth = {
+        hi: explicitEnglish,
+        pb: explicitEnglish,
+        en: explicitEnglish,
+      };
+    }
+  }
+
+  if (lines.hi.length === 0 && !bhavarth?.hi && !explicitEnglish) return null;
   const finalLines =
     lines.hi.length > 0
       ? lines
       : {
-          hi: [bhavarth?.hi || ''],
-          pb: [bhavarth?.pb || ''],
-          en: [bhavarth?.en || ''],
+          hi: [bhavarth?.hi || explicitEnglish || ''],
+          pb: [bhavarth?.pb || explicitEnglish || ''],
+          en: [bhavarth?.en || explicitEnglish || ''],
         };
 
   const validTypes = [
@@ -1849,11 +1889,16 @@ function normalizeRawVerseToGranthVerse(item: unknown, idx: number): GranthVerse
   ];
   const rawType = typeof obj.type === 'string' && validTypes.includes(obj.type) ? (obj.type as GranthVerse['type']) : 'pada';
 
+  const resolvedEnglish =
+    explicitEnglish ||
+    (bhavarth?.en && bhavarth.en.trim() && bhavarth.en.trim() !== bhavarth.hi.trim() ? bhavarth.en.trim() : '');
+
   return {
     id: (obj.id as string | number) ?? `injected-v-${idx + 1}`,
     type: rawType,
     lines: finalLines,
     bhavarth,
+    ...(resolvedEnglish ? { englishTranslation: resolvedEnglish } : {}),
     saralBhavarth: obj.saralBhavarth ? toLocalizedText(obj.saralBhavarth) : bhavarth,
     deepInsight: obj.deepInsight ? toLocalizedText(obj.deepInsight) : undefined,
     contemplation: obj.contemplation ? toLocalizedText(obj.contemplation) : undefined,
@@ -2108,18 +2153,25 @@ function applySlotToNitnemSections(
   const unmatchedChapters: Array<{ ch: GranthChapter; idx: number }> = [];
 
   injectedChapters.forEach((ch, idx) => {
-    const mappedVerses: NitnemVersePair[] = ch.verses.map((v, vIdx) => ({
-      id: v.id || `${slotId}-inj-${idx}-${vIdx}`,
-      type: (v.type === 'katha' ? 'pada' : v.type) as NitnemVersePair['type'],
-      lines: {
-        hi: v.lines.hi,
-        pb: v.lines.pb,
-        en: v.lines.en,
-      },
-      shabdarth: v.shabdarth,
-      bhavarth: v.bhavarth,
-      spiritualEssence: v.spiritualEssence || v.deepInsight,
-    }));
+    const mappedVerses: NitnemVersePair[] = ch.verses.map((v, vIdx) => {
+      const explicitEn =
+        v.englishTranslation ||
+        v.translationEn ||
+        (v.bhavarth?.en && v.bhavarth.en.trim() !== (v.bhavarth.hi || '').trim() ? v.bhavarth.en.trim() : '');
+      return {
+        id: v.id || `${slotId}-inj-${idx}-${vIdx}`,
+        type: (v.type === 'katha' ? 'pada' : v.type) as NitnemVersePair['type'],
+        lines: {
+          hi: v.lines.hi,
+          pb: v.lines.pb,
+          en: v.lines.en,
+        },
+        shabdarth: v.shabdarth,
+        bhavarth: v.bhavarth,
+        ...(explicitEn ? { englishTranslation: explicitEn } : {}),
+        spiritualEssence: v.spiritualEssence || v.deepInsight,
+      };
+    });
 
     let targetIdx = updated.findIndex(
       (s) =>
@@ -2163,18 +2215,25 @@ function applySlotToNitnemSections(
 
   if (unmatchedChapters.length > 0) {
     unmatchedChapters.forEach(({ ch, idx }) => {
-      const mappedVerses: NitnemVersePair[] = ch.verses.map((v, vIdx) => ({
-        id: v.id || `${slotId}-extra-${idx}-${vIdx}`,
-        type: (v.type === 'katha' ? 'pada' : v.type) as NitnemVersePair['type'],
-        lines: {
-          hi: v.lines.hi,
-          pb: v.lines.pb,
-          en: v.lines.en,
-        },
-        shabdarth: v.shabdarth,
-        bhavarth: v.bhavarth,
-        spiritualEssence: v.spiritualEssence || v.deepInsight,
-      }));
+      const mappedVerses: NitnemVersePair[] = ch.verses.map((v, vIdx) => {
+        const explicitEn =
+          v.englishTranslation ||
+          v.translationEn ||
+          (v.bhavarth?.en && v.bhavarth.en.trim() !== (v.bhavarth.hi || '').trim() ? v.bhavarth.en.trim() : '');
+        return {
+          id: v.id || `${slotId}-extra-${idx}-${vIdx}`,
+          type: (v.type === 'katha' ? 'pada' : v.type) as NitnemVersePair['type'],
+          lines: {
+            hi: v.lines.hi,
+            pb: v.lines.pb,
+            en: v.lines.en,
+          },
+          shabdarth: v.shabdarth,
+          bhavarth: v.bhavarth,
+          ...(explicitEn ? { englishTranslation: explicitEn } : {}),
+          spiritualEssence: v.spiritualEssence || v.deepInsight,
+        };
+      });
       const inferred = inferNitnemCategory(ch, idx);
       updated.push({
         id: ch.id || `${slotId}-injected-${idx + 1}`,

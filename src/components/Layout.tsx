@@ -48,6 +48,7 @@ import {
   ShieldCheck,
   Lock,
   TrendingUp,
+  ShieldAlert,
   SpellCheck,
   QrCode,
   Copy,
@@ -920,37 +921,47 @@ export const Layout: React.FC<LayoutProps> = ({
     }));
   };
 
+  interface SidebarSectionItem {
+    keyId: string;
+    slotNumber?: number;
+    view: AppView;
+    granthSlug?: string;
+    modalEvent?: 'sahebworld_open_kar_nainon_deedar' | 'sahebworld_open_santo_shabdai_shabd';
+    label: {
+      hi: string;
+      pb: string;
+      en: string;
+    };
+    icon: React.ComponentType<{ className?: string }>;
+    badge?: {
+      hi: string;
+      pb: string;
+      en: string;
+    };
+    isDhunSpecial?: boolean;
+  }
+
   interface SidebarSection {
     id: string;
-    numberPrefix: string;
+    numberPrefix: {
+      hi: string;
+      pb: string;
+      en: string;
+    };
     title: {
       hi: string;
       pb: string;
       en: string;
     };
     icon: React.ComponentType<{ className?: string }>;
-    items: Array<{
-      view: AppView;
-      label: {
-        hi: string;
-        pb: string;
-        en: string;
-      };
-      icon: React.ComponentType<{ className?: string }>;
-      badge?: {
-        hi: string;
-        pb: string;
-        en: string;
-      };
-      isDhunSpecial?: boolean;
-    }>;
+    items: SidebarSectionItem[];
   }
 
   const sidebarSections: SidebarSection[] = [
-    // १. पावन ग्रन्थालय एवं नित्य पाठ
+    // १. पावन ग्रन्थालय एवं नित्य पाठ (Pinned + Slot #1 – #22)
     {
       id: 'section-granths-nitnem',
-      numberPrefix: '१.',
+      numberPrefix: { hi: '१.', pb: '੧.', en: '1.' },
       title: {
         hi: 'पावन ग्रन्थालय एवं नित्य पाठ',
         pb: 'ਪਾਵਨ ਗ੍ਰੰਥਾਵਲੀ ਤੇ ਨਿਤਨੇਮ ਪਾਠ',
@@ -959,6 +970,7 @@ export const Layout: React.FC<LayoutProps> = ({
       icon: BookOpen,
       items: [
         {
+          keyId: 'pinned-mool-siddhant',
           view: 'mool-siddhant' as AppView,
           label: {
             hi: 'मूल सिद्धांत (एक सत्यनाम से सब सधै)',
@@ -969,65 +981,8 @@ export const Layout: React.FC<LayoutProps> = ({
           badge: { hi: 'अटल मूल', pb: 'ਅਟੱਲ ਮੂਲ', en: 'Core' },
         },
         {
-          view: 'divine-darshan' as AppView,
-          label: {
-            hi: 'सतगुरु कबीर साहेब दिव्य पावन दर्शन',
-            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਿਵਯ ਪਾਵਨ ਦਰਸ਼ਨ',
-            en: 'Satguru Kabir Saheb Divine Sacred Darshan',
-          },
-          icon: Sparkles,
-          badge: { hi: 'पावन दर्शन', pb: 'ਪਾਵਨ ਦਰਸ਼ਨ', en: 'Darshan' },
-        },
-        {
-          view: 'grantha',
-          label: {
-            hi: 'समग्र ग्रन्थालय (बीजक, कबीर सागर, साखी)',
-            pb: 'ਸਮੁੱਚੀ ਗ੍ਰੰਥਾਵਲੀ (ਬੀਜਕ, ਕਬੀਰ ਸਾਗਰ, ਸਾਖੀ)',
-            en: 'Sacred Granths (Bijak, Kabir Sagar)',
-          },
-          icon: Library,
-          badge: { hi: 'सर्व ग्रन्थ', pb: 'ਸਾਰੇ ਗ੍ਰੰਥ', en: 'All' },
-        },
-        {
-          view: 'aarti-sanctuary',
-          label: {
-            hi: 'अलौकिक संध्या आरती एवं प्रभात गान',
-            pb: 'ਅਲੌਕਿਕ ਸੰਧਿਆ ਆਰਤੀ ਤੇ ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ',
-            en: 'Evening Aarti & Morning Chants',
-          },
-          icon: Flame,
-        },
-        {
-          view: 'akhand-path',
-          label: {
-            hi: 'अखंड साखी पाठ (अविराम श्रवण)',
-            pb: 'ਅਖੰਡ ਸਾਖੀ ਪਾਠ (ਨਿਰੰਤਰ ਸ਼੍ਰਵਣ)',
-            en: 'Akhand Sakhi Path',
-          },
-          icon: BookOpen,
-          badge: { hi: 'अखंड पाठ', pb: 'ਅਖੰਡ ਪਾਠ', en: 'Akhand' },
-        },
-        {
-          view: 'satya-naam' as AppView,
-          label: {
-            hi: 'सत्यनाम एवं सारशब्द',
-            pb: 'ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਸ਼ਬਦ',
-            en: 'Satyanaam & Saar Shabd',
-          },
-          icon: Atom,
-          badge: { hi: 'परम मोक्ष', pb: 'ਪਰਮ ਮੋਕਸ਼', en: 'Moksha' },
-        },
-        {
-          view: 'aatma-bhushan' as AppView,
-          label: {
-            hi: 'आत्मा के १६ भूषण',
-            pb: 'ਆਤਮਾ ਦੇ ੧੬ ਭੂਸ਼ਣ',
-            en: '16 Attributes of Soul',
-          },
-          icon: Sparkles,
-          badge: { hi: 'आत्मा श्रृंगार', pb: 'ਆਤਮਾ ਸ਼ਿੰਗਾਰ', en: 'Virtues' },
-        },
-        {
+          keyId: 'slot-1-nitnem',
+          slotNumber: 1,
           view: 'nitnem-gutka' as AppView,
           label: {
             hi: 'नितनेम गुटका साहेब (नित्य पाठ)',
@@ -1035,9 +990,81 @@ export const Layout: React.FC<LayoutProps> = ({
             en: 'Nitnem Gutka Saheb (Daily Prayers)',
           },
           icon: BookOpen,
-          badge: { hi: 'नितनेम', pb: 'ਨਿਤਨੇਮ', en: 'Nitnem' },
         },
         {
+          keyId: 'slot-2-sakhi',
+          slotNumber: 2,
+          view: 'grantha',
+          granthSlug: 'sakhi-sangrah',
+          label: {
+            hi: 'साखी संग्रह ग्रन्थ (३७ अंग)',
+            pb: 'ਸਾਖੀ ਸੰਗ੍ਰਹਿ ਗ੍ਰੰਥ (੩੭ ਅੰਗ)',
+            en: 'Sakhi Sangrah (37 Angs)',
+          },
+          icon: BookMarked,
+        },
+        {
+          keyId: 'slot-3-bijak',
+          slotNumber: 3,
+          view: 'grantha',
+          granthSlug: 'bijak',
+          label: {
+            hi: 'श्री कबीर बीजक ग्रन्थ',
+            pb: 'ਸ਼੍ਰੀ ਕਬੀਰ ਬੀਜਕ ਗ੍ਰੰਥ',
+            en: 'Sri Kabir Bijak Granth',
+          },
+          icon: Scroll,
+        },
+        {
+          keyId: 'slot-4-granthavali',
+          slotNumber: 4,
+          view: 'grantha',
+          granthSlug: 'granthavali',
+          label: {
+            hi: 'कबीर ग्रंथावली',
+            pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ',
+            en: 'Kabir Granthavali',
+          },
+          icon: Library,
+        },
+        {
+          keyId: 'slot-5-kabir-sagar',
+          slotNumber: 5,
+          view: 'grantha',
+          granthSlug: 'kabir-sagar',
+          label: {
+            hi: 'कबीर सागर संग्रह',
+            pb: 'ਕਬੀਰ ਸਾਗਰ ਸੰਗ੍ਰਹਿ',
+            en: 'Kabir Sagar',
+          },
+          icon: Compass,
+        },
+        {
+          keyId: 'slot-6-ulatbaasi',
+          slotNumber: 6,
+          view: 'ulatvasi-library' as AppView,
+          label: {
+            hi: 'सतगुरु कबीर उलटबांसी (२५० पद)',
+            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਉਲਟਬਾਂਸੀ (੨੫੦ ਪਦ)',
+            en: 'Satguru Kabir Ulatbaasi (250 Verses)',
+          },
+          icon: Sparkles,
+        },
+        {
+          keyId: 'slot-7-shabdawali',
+          slotNumber: 7,
+          view: 'grantha',
+          granthSlug: 'shabdawali',
+          label: {
+            hi: 'शब्दावली ग्रंथ',
+            pb: 'ਸ਼ਬਦਾਵਲੀ ਗ੍ਰੰਥ',
+            en: 'Shabdawali Granth',
+          },
+          icon: Music,
+        },
+        {
+          keyId: 'slot-8-sggs',
+          slotNumber: 8,
           view: 'sggs-kabir-bani' as AppView,
           label: {
             hi: 'श्री गुरु ग्रंथ साहिब एवं सतगुरु कबीर साहेब वाणी',
@@ -1045,39 +1072,56 @@ export const Layout: React.FC<LayoutProps> = ({
             en: 'Sri Guru Granth Sahib & Satguru Kabir Saheb Bani',
           },
           icon: Sparkles,
-          badge: { hi: 'SGGS वाणी', pb: 'ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ', en: 'SGGS' },
         },
         {
-          view: 'hukamnama' as AppView,
+          keyId: 'slot-9-kar-nainon',
+          slotNumber: 9,
+          view: 'nitnem-gutka' as AppView,
+          modalEvent: 'sahebworld_open_kar_nainon_deedar',
           label: {
-            hi: 'पावन दैनिक हुकमनामा (12 AM स्वतः परिवर्तन)',
-            pb: 'ਪਾਵਨ ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ (ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ)',
-            en: 'Daily Hukamnama (Guru Granth Sahib)',
+            hi: 'कर नैनों दीदार (३२ कड़ियाँ)',
+            pb: 'ਕਰ ਨੈਨੋਂ ਦੀਦਾਰ (੩੨ ਕੜੀਆਂ)',
+            en: 'Kar Nainon Deedar (32 Verses)',
           },
-          icon: Scroll,
-          badge: { hi: 'हुकमनामा', pb: 'ਹੁਕਮਨਾਮਾ', en: 'Hukamnama' },
+          icon: BookOpen,
         },
         {
-          view: 'nature-wallpaper' as AppView,
+          keyId: 'slot-10-santo-shabdai',
+          slotNumber: 10,
+          view: 'nitnem-gutka' as AppView,
+          modalEvent: 'sahebworld_open_santo_shabdai_shabd',
           label: {
-            hi: 'कुदरत वॉलपेपर जनरेटर',
-            pb: 'ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਜਨਰੇਟਰ',
-            en: 'Nature Wallpaper Engine',
+            hi: 'संतो शबदई शबद बखाना',
+            pb: 'ਸੰਤੋ ਸ਼ਬਦਈ ਸ਼ਬਦ ਬਖਾਨਾ',
+            en: 'Santo Shabdai Shabd',
           },
-          icon: ImageIcon,
-          badge: { hi: 'वॉलपेपर', pb: 'ਵਾਲਪੇਪਰ', en: 'HD' },
+          icon: Atom,
         },
         {
-          view: 'vani-card-maker' as AppView,
+          keyId: 'slot-11-satyanaam-sutra',
+          slotNumber: 11,
+          view: 'satya-naam' as AppView,
           label: {
-            hi: 'कबीर वाणी कार्ड मेकर',
-            pb: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ',
-            en: 'Kabir Vani Card Maker',
+            hi: 'सत्यनाम एवं सारशब्द',
+            pb: 'ਸਤਯਨਾਮ ਅਤੇ ਸਾਰਸ਼ਬਦ',
+            en: 'Satyanaam & Saar Shabd',
           },
-          icon: Sparkles,
-          badge: { hi: 'कार्ड स्टूडियो', pb: 'ਕਾਰਡ ਸਟੂਡੀਓ', en: 'Studio' },
+          icon: Atom,
         },
         {
+          keyId: 'slot-12-master-granth',
+          slotNumber: 12,
+          view: 'grantha',
+          label: {
+            hi: 'समग्र ग्रन्थालय (बीजक, कबीर सागर, साखी)',
+            pb: 'ਸਮੁੱਚੀ ਗ੍ਰੰਥਾਵਲੀ (ਬੀਜਕ, ਕਬੀਰ ਸਾਗਰ, ਸਾਖੀ)',
+            en: 'Sacred Granths (Bijak, Kabir Sagar)',
+          },
+          icon: Library,
+        },
+        {
+          keyId: 'slot-13-daily-sakhi',
+          slotNumber: 13,
           view: 'daily',
           label: {
             hi: 'दैनिक पावन साखी (आज का अमृत वचन)',
@@ -1087,6 +1131,63 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: Sun,
         },
         {
+          keyId: 'slot-14-divine-darshan',
+          slotNumber: 14,
+          view: 'divine-darshan' as AppView,
+          label: {
+            hi: 'सतगुरु कबीर साहेब दिव्य पावन दर्शन',
+            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਿਵਯ ਪਾਵਨ ਦਰਸ਼ਨ',
+            en: 'Satguru Kabir Saheb Divine Sacred Darshan',
+          },
+          icon: Sparkles,
+        },
+        {
+          keyId: 'slot-15-akhand-path',
+          slotNumber: 15,
+          view: 'akhand-path',
+          label: {
+            hi: 'अखंड साखी पाठ (अविराम श्रवण)',
+            pb: 'ਅਖੰਡ ਸਾਖੀ ਪਾਠ (ਨਿਰੰਤਰ ਸ਼੍ਰਵਣ)',
+            en: 'Akhand Sakhi Path',
+          },
+          icon: Scroll,
+        },
+        {
+          keyId: 'slot-16-aarti-sanctuary',
+          slotNumber: 16,
+          view: 'aarti-sanctuary',
+          label: {
+            hi: 'अलौकिक संध्या आरती एवं प्रभात गान',
+            pb: 'ਅਲੌਕਿਕ ਸੰਧਿਆ ਆਰਤੀ ਤੇ ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ',
+            en: 'Evening Aarti & Morning Chants',
+          },
+          icon: Flame,
+        },
+        {
+          keyId: 'slot-17-aatma-bhushan',
+          slotNumber: 17,
+          view: 'aatma-bhushan' as AppView,
+          label: {
+            hi: 'आत्मा के १६ भूषण व ज्ञान-चक्र',
+            pb: 'ਆਤਮਾ ਦੇ ੧੬ ਭੂਸ਼ਣ ਤੇ ਗਿਆਨ-ਚੱਕਰ',
+            en: '16 Attributes of Soul & Gyan-Chakra',
+          },
+          icon: Sparkles,
+        },
+        {
+          keyId: 'slot-18-hukamnama',
+          slotNumber: 18,
+          view: 'hukamnama' as AppView,
+          label: {
+            hi: 'पावन दैनिक हुकमनामा साहेब',
+            pb: 'ਪਾਵਨ ਦੈਨਿਕ ਹੁਕਮਨਾਮਾ ਸਾਹੇਬ',
+            en: 'Daily Hukamnama (Guru Granth Sahib)',
+          },
+          icon: Scroll,
+        },
+        {
+          keyId: 'slot-19-das-sutra',
+          slotNumber: 19,
           view: 'das-sutra' as AppView,
           label: {
             hi: 'सतगुरु कबीर साहेब के १० पावन सूत्र',
@@ -1094,24 +1195,47 @@ export const Layout: React.FC<LayoutProps> = ({
             en: 'Satguru Kabir Saheb 10 Sacred Sutras',
           },
           icon: Scroll,
-          badge: { hi: '१० सूत्र', pb: '੧੦ ਸੂਤਰ', en: '10 Sutras' },
         },
         {
+          keyId: 'slot-20-dainik-chintan',
+          slotNumber: 20,
           view: 'dainik-chintan',
           label: {
             hi: 'दैनिक चिंतन एवं मनन',
             pb: 'ਦੈਨਿਕ ਚਿੰਤਨ ਤੇ ਮਨਨ',
             en: 'Daily Contemplation',
           },
-          icon: Compass,
+          icon: Feather,
+        },
+        {
+          keyId: 'slot-21-damakheda-index',
+          slotNumber: 21,
+          view: 'damakheda-index' as AppView,
+          label: {
+            hi: 'दामाखेड़ा ग्रन्थ-सूची व क्रम',
+            pb: 'ਦਾਮਾਖੇੜਾ ਗ੍ਰੰਥ-ਸੂਚੀ ਤੇ ਕ੍ਰਮ',
+            en: 'Damakheda Granth Index',
+          },
+          icon: BookMarked,
+        },
+        {
+          keyId: 'slot-22-bhajan-repository',
+          slotNumber: 22,
+          view: 'bhajan-repository' as AppView,
+          label: {
+            hi: 'दामाखेड़ा भजन व शबद संग्रह',
+            pb: 'ਦਾਮਾਖੇੜਾ ਭਜਨ ਤੇ ਸ਼ਬਦ ਸੰਗ੍ਰਹਿ',
+            en: 'Damakheda Bhajan Repository',
+          },
+          icon: Music,
         },
       ],
     },
 
-    // २. साधना, सिमरन एवं पावन धुन
+    // २. साधना, सिमरन एवं पावन धुन (Slot #23 – #32, #56, #59)
     {
       id: 'section-sadhana-simran-dhun',
-      numberPrefix: '२.',
+      numberPrefix: { hi: '२.', pb: '੨.', en: '2.' },
       title: {
         hi: 'साधना, सिमरन एवं पावन धुन',
         pb: 'ਸਾਧਨਾ, ਸਿਮਰਨ ਤੇ ਪਾਵਨ ਧੁਨ',
@@ -1120,6 +1244,8 @@ export const Layout: React.FC<LayoutProps> = ({
       icon: Volume2,
       items: [
         {
+          keyId: 'slot-23-dhun',
+          slotNumber: 23,
           view: 'dhun',
           label: {
             hi: 'सत्यनाम पावन धुन',
@@ -1128,9 +1254,10 @@ export const Layout: React.FC<LayoutProps> = ({
           },
           icon: Volume2,
           isDhunSpecial: true,
-          badge: { hi: 'पावन धुन', pb: 'ਪਾਵਨ ਧੁਨ', en: 'Dhun' },
         },
         {
+          keyId: 'slot-24-mantra-tracker',
+          slotNumber: 24,
           view: 'mantra-tracker',
           label: {
             hi: 'नाम-सिमरन आवर्तन (जप माला काउंटर)',
@@ -1140,6 +1267,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: RotateCcw,
         },
         {
+          keyId: 'slot-25-meditation-timer',
+          slotNumber: 25,
           view: 'meditation-timer',
           label: {
             hi: 'सुमिरन टाइमर एवं आत्म-ध्यान',
@@ -1149,6 +1278,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: Timer,
         },
         {
+          keyId: 'slot-26-spiritual-discipline',
+          slotNumber: 26,
           view: 'spiritual-discipline',
           label: {
             hi: 'पंचामृत नेम एवं साधना ट्रैकर',
@@ -1158,16 +1289,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: ShieldCheck,
         },
         {
-          view: 'satvik-sankalp' as AppView,
-          label: {
-            hi: 'नशामुक्ति एवं सात्विक संकल्प ट्रैकर',
-            pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ',
-            en: 'De-addiction & Satvik Sankalp',
-          },
-          icon: ShieldCheck,
-          badge: { hi: 'संकल्प', pb: 'ਸੰਕਲਪ', en: 'Vows' },
-        },
-        {
+          keyId: 'slot-27-growth-dashboard',
+          slotNumber: 27,
           view: 'growth-dashboard',
           label: {
             hi: 'आध्यात्मिक स्वाध्याय एवं साधना डैशबोर्ड',
@@ -1175,18 +1298,21 @@ export const Layout: React.FC<LayoutProps> = ({
             en: 'Spiritual Growth Dashboard',
           },
           icon: TrendingUp,
-          badge: { hi: 'प्रगति', pb: 'ਪ੍ਰਗਤੀ', en: 'Growth' },
         },
         {
+          keyId: 'slot-28-sadhana-goals',
+          slotNumber: 28,
           view: 'sadhana-goals',
           label: {
             hi: 'दैनिक साधना लक्ष्य एवं संकल्प',
-            pb: 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ',
+            pb: 'ਰੋਜ਼ਾਨਾ ਸਾਧਨਾ ਟੀਚੇ ਤੇ ਸੰਕਲਪ',
             en: 'Daily Sadhana Goals Tracker',
           },
           icon: Target,
         },
         {
+          keyId: 'slot-29-divine-guidance',
+          slotNumber: 29,
           view: 'divine-guidance',
           label: {
             hi: 'सतगुरु दिव्य आदेश एवं मार्गदर्शन',
@@ -1196,6 +1322,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: Compass,
         },
         {
+          keyId: 'slot-30-community-board',
+          slotNumber: 30,
           view: 'community-board',
           label: {
             hi: 'साधना मंच (सत्संग संवाद)',
@@ -1204,30 +1332,111 @@ export const Layout: React.FC<LayoutProps> = ({
           },
           icon: MessageSquare,
         },
+        {
+          keyId: 'slot-31-audio-library',
+          slotNumber: 31,
+          view: 'audio-library',
+          label: {
+            hi: 'अमर वाणी ऑडियो लाइब्रेरी',
+            pb: 'ਅਮਰ ਬਾਣੀ ਆਡੀਓ ਲਾਇਬ੍ਰੇਰੀ',
+            en: 'Amar Vani Audio Library',
+          },
+          icon: Music2,
+        },
+        {
+          keyId: 'slot-32-satsang-video',
+          slotNumber: 32,
+          view: 'satsang-video',
+          label: {
+            hi: 'पावन सत्संग वीडियो संग्रह',
+            pb: 'ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ ਸੰਗ੍ਰਹਿ',
+            en: 'Satsang Video Discourses',
+          },
+          icon: Play,
+        },
+        {
+          keyId: 'slot-56-satvik-sankalp',
+          slotNumber: 56,
+          view: 'satvik-sankalp' as AppView,
+          label: {
+            hi: 'नशामुक्ति एवं सात्विक संकल्प ट्रैकर',
+            pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ',
+            en: 'De-addiction & Satvik Sankalp',
+          },
+          icon: ShieldCheck,
+        },
+        {
+          keyId: 'slot-59-satyanaam-panacea',
+          slotNumber: 59,
+          view: 'satyanaam-panacea' as AppView,
+          label: {
+            hi: 'सत्यनाम महा-औषधि',
+            pb: 'ਸਤਯਨਾਮ ਮਹਾ-ਔਸ਼ਧੀ',
+            en: 'Satyanaam Panacea',
+          },
+          icon: Sparkles,
+        },
       ],
     },
 
-    // ३. ज्ञान, बोध एवं जीवन चरित्र
+    // ३. ज्ञान, बोध एवं जीवन चरित्र (Slot #33 – #42, #57, #58)
     {
       id: 'section-gyan-bodh-charitra-quiz',
-      numberPrefix: '३.',
+      numberPrefix: { hi: '३.', pb: '੩.', en: '3.' },
       title: {
-        hi: '३. ज्ञान, बोध एवं जीवन चरित्र',
-        pb: '੩. ਗਿਆਨ, ਬੋਧ ਤੇ ਜੀਵਨ ਚਰਿੱਤਰ',
-        en: '3. Wisdom & Life Journey',
+        hi: 'ज्ञान, बोध एवं जीवन चरित्र',
+        pb: 'ਗਿਆਨ, ਬੋਧ ਤੇ ਜੀਵਨ ਚਰਿੱਤਰ',
+        en: 'Wisdom & Life Journey',
       },
       icon: Trophy,
       items: [
         {
-          view: 'life-journey',
+          keyId: 'slot-33-swadhyay',
+          slotNumber: 33,
+          view: 'swadhyay',
           label: {
-            hi: 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं',
-            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ',
-            en: 'Satguru Kabir Biography & Four Yugas',
+            hi: 'सतगुरु साखी स्वाध्याय एवं प्रश्नोत्तरी पद्धति',
+            pb: 'ਸਤਿਗੁਰੂ ਸਾਖੀ ਸਵਾਧਿਆਏ ਤੇ ਪ੍ਰਸ਼ਨਾਵਲੀ',
+            en: 'Sakhi Swadhyay & Spiritual Quiz',
           },
-          icon: Crown,
+          icon: BookOpen,
         },
         {
+          keyId: 'slot-34-ulatvasi-quiz',
+          slotNumber: 34,
+          view: 'ulatvasi-quiz' as AppView,
+          label: {
+            hi: 'उलटबांसी 3D पहेली प्रश्नोत्तरी',
+            pb: 'ਉਲਟਬਾਂਸੀ 3D ਬੁਝਾਰਤ ਕੁਇਜ਼',
+            en: 'Ulatbaasi 3D Quiz',
+          },
+          icon: Sparkles,
+        },
+        {
+          keyId: 'slot-35-doha-memory',
+          slotNumber: 35,
+          view: 'doha-memory' as AppView,
+          label: {
+            hi: 'दोहा स्मृति ट्रेनर (चेतावनी वाणी)',
+            pb: 'ਦੋਹਾ ਮੈਮੋਰੀ ਟ੍ਰੇਨਰ',
+            en: 'Doha Memory Trainer',
+          },
+          icon: Bookmark,
+        },
+        {
+          keyId: 'slot-36-chetavani-saarang',
+          slotNumber: 36,
+          view: 'chetavani-saarang' as AppView,
+          label: {
+            hi: 'चेतावनी सारंग दोहे',
+            pb: 'ਚੇਤਾਵਨੀ ਸਾਰੰਗ ਦੋਹੇ',
+            en: 'Chetawani Saarang',
+          },
+          icon: ShieldAlert,
+        },
+        {
+          keyId: 'slot-37-shabd-kosha',
+          slotNumber: 37,
           view: 'shabd-kosha',
           label: {
             hi: 'सतगुरु कबीर शब्द-अमृत कोश (शब्दावली)',
@@ -1237,34 +1446,74 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: BookMarked,
         },
         {
-          view: 'swadhyay',
+          keyId: 'slot-38-life-journey',
+          slotNumber: 38,
+          view: 'life-journey',
           label: {
-            hi: 'सतगुरु साखी स्वाध्याय एवं प्रश्नोत्तरी पद्धति',
-            pb: 'ਸਤਿਗੁਰੂ ਸਾਖੀ ਸਵਾਧਿਆਏ ਤੇ ਪ੍ਰਸ਼ਨਾਵਲੀ',
-            en: 'Sakhi Swadhyay & Spiritual Quiz',
+            hi: 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं',
+            pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ',
+            en: 'Satguru Kabir Biography & Four Yugas',
           },
-          icon: Feather,
+          icon: Crown,
         },
         {
-          view: 'doha-memory' as AppView,
+          keyId: 'slot-39-sacred-leelas',
+          slotNumber: 39,
+          view: 'sacred-leelas' as AppView,
           label: {
-            hi: 'दोहा स्मृति ट्रेनर (चेतावनी बाणी)',
-            pb: 'ਦੋਹਾ ਮੈਮੋਰੀ ਟ੍ਰੇਨਰ',
-            en: 'Doha Memory Trainer',
+            hi: 'सतगुरु अमर लीलाएं व कथाएं',
+            pb: 'ਸਤਿਗੁਰੂ ਅਮਰ ਲੀਲ੍ਹਾਵਾਂ ਤੇ ਕਥਾਵਾਂ',
+            en: 'Sacred Leelas & Episodes',
           },
-          icon: Bookmark,
-          badge: { hi: 'स्मृति अभ्यास', pb: 'ਯਾਦਦਾਸ਼ਤ', en: 'Trainer' },
+          icon: Crown,
         },
         {
+          keyId: 'slot-40-acharya-parampara',
+          slotNumber: 40,
           view: 'acharya-parampara' as AppView,
           label: {
             hi: 'आचार्य परंपरा इतिहास (पावन वंशावली)',
             pb: 'ਆਚਾਰਯ ਪਰੰਪਰਾ ਇਤਿਹਾਸ',
             en: 'Acharya Parampara History',
           },
-          icon: ShieldCheck,
+          icon: History,
         },
         {
+          keyId: 'slot-41-discourse-engine',
+          slotNumber: 41,
+          view: 'discourse-engine' as AppView,
+          label: {
+            hi: '५-चरणीय पावन प्रवचन इंजन',
+            pb: '੫-ਚਰਣੀ ਪਾਵਨ ਪ੍ਰਵਚਨ ਇੰਜਣ',
+            en: '5-Step Discourse Engine',
+          },
+          icon: Feather,
+        },
+        {
+          keyId: 'slot-42-prashnottari',
+          slotNumber: 42,
+          view: 'nitnem-gutka' as AppView,
+          label: {
+            hi: 'पंथिक प्रश्नोत्तरी (चौका-आरती विधि)',
+            pb: 'ਪੰਥਕ ਪ੍ਰਸ਼ਨੋਤਰੀ (ਚੌਕਾ-ਆਰਤੀ ਵਿਧੀ)',
+            en: 'Panthic Prashnottari (Chouka Vidhi)',
+          },
+          icon: HelpCircle,
+        },
+        {
+          keyId: 'slot-57-kabir-gyan-quiz',
+          slotNumber: 57,
+          view: 'kabir-gyan-quiz' as AppView,
+          label: {
+            hi: 'कबीर ज्ञान प्रश्नोत्तरी (प्रमाण-पत्र)',
+            pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ',
+            en: 'Kabir Gyan Spiritual Quiz',
+          },
+          icon: Trophy,
+        },
+        {
+          keyId: 'slot-58-vansh-bayalis',
+          slotNumber: 58,
           view: 'vansh-bayalis' as AppView,
           label: {
             hi: 'वंश बयालीस की पावन महिमा',
@@ -1273,40 +1522,23 @@ export const Layout: React.FC<LayoutProps> = ({
           },
           icon: Crown,
         },
-        {
-          view: 'kabir-gyan-quiz' as AppView,
-          label: {
-            hi: 'कबीर ज्ञान प्रश्नोत्तरी (प्रमाण-पत्र)',
-            pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ',
-            en: 'Kabir Gyan Spiritual Quiz',
-          },
-          icon: Trophy,
-          badge: { hi: 'क्विज़', pb: 'ਕੁਇਜ਼', en: 'Quiz' },
-        },
-        {
-          view: 'satsang-video',
-          label: {
-            hi: 'पावन सत्संग वीडियो',
-            pb: 'ਪਾਵਨ ਸਤਿਸੰਗ ਵੀਡੀਓ',
-            en: 'Satsang Video Discourses',
-          },
-          icon: Play,
-        },
       ],
     },
 
-    // ४. आध्यात्मिक अन्वेषण एवं जंत्री
+    // ४. आध्यात्मिक अन्वेषण एवं जंत्री (Slot #43 – #50, #55)
     {
       id: 'section-exploration-jantri-tools',
-      numberPrefix: '४.',
+      numberPrefix: { hi: '४.', pb: '੪.', en: '4.' },
       title: {
-        hi: '४. आध्यात्मिक अन्वेषण एवं जंत्री',
-        pb: '੪. ਰੂਹਾਨੀ ਖੋਜ ਤੇ ਜੰਤਰੀ',
-        en: '4. Exploration & Calendar',
+        hi: 'आध्यात्मिक अन्वेषण एवं जंत्री',
+        pb: 'ਰੂਹਾਨੀ ਖੋਜ ਤੇ ਜੰਤਰੀ',
+        en: 'Exploration & Calendar',
       },
       icon: Compass,
       items: [
         {
+          keyId: 'slot-43-jantri',
+          slotNumber: 43,
           view: 'jantri',
           label: {
             hi: 'साहेब जंत्री (आध्यात्मिक कैलेंडर)',
@@ -1316,6 +1548,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: CalendarDays,
         },
         {
+          keyId: 'slot-44-sacred-ashrams',
+          slotNumber: 44,
           view: 'sacred-ashrams',
           label: {
             hi: 'सतगुरु पावन आश्रम व तीर्थ स्थान',
@@ -1325,6 +1559,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: MapPin,
         },
         {
+          keyId: 'slot-45-universe-map',
+          slotNumber: 45,
           view: 'universe-map',
           label: {
             hi: 'ब्रह्मांड दर्शन (सृष्टि व लोक रचना)',
@@ -1334,6 +1570,8 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: Atom,
         },
         {
+          keyId: 'slot-46-deep-search',
+          slotNumber: 46,
           view: 'deep-search',
           label: {
             hi: 'गहन वाणी एवं शब्द खोज',
@@ -1343,22 +1581,59 @@ export const Layout: React.FC<LayoutProps> = ({
           icon: Search,
         },
         {
+          keyId: 'slot-47-diary',
+          slotNumber: 47,
           view: 'diary',
           label: {
-            hi: 'आत्म-चिंतन डायरी',
-            pb: 'ਆਤਮ-ਚਿੰਤਨ ਡਾਇਰੀ',
+            hi: 'आत्म-चिंतन निजी डायरी',
+            pb: 'ਆਤਮ-ਚਿੰਤਨ ਨਿੱਜੀ ਡਾਇਰੀ',
             en: 'Spiritual Contemplation Diary',
           },
           icon: Bookmark,
         },
         {
-          view: 'audio-library',
+          keyId: 'slot-48-nature-wallpaper',
+          slotNumber: 48,
+          view: 'nature-wallpaper' as AppView,
           label: {
-            hi: 'पावन ऑडियो लाइब्रेरी (भजनामृत)',
-            pb: 'ਪਾਵਨ ਆਡੀਓ ਲਾਇਬ੍ਰੇਰੀ (ਭਜਨਾਮ੍ਰਿਤ)',
-            en: 'Sacred Audio Library',
-            },
-          icon: Music2,
+            hi: 'कुदरत वॉलपेपर जनरेटर',
+            pb: 'ਕੁਦਰਤ ਵਾਲਪੇਪਰ ਜਨਰੇਟਰ',
+            en: 'Nature Wallpaper Engine',
+          },
+          icon: ImageIcon,
+        },
+        {
+          keyId: 'slot-49-auto-correct',
+          slotNumber: 49,
+          view: 'auto-correct' as AppView,
+          label: {
+            hi: 'पावन वाणी ऑटो-करेक्ट उपकरण',
+            pb: 'ਪਾਵਨ ਬਾਣੀ ਆਟੋ-ਕਰੈਕਟ ਉਪਕਰਣ',
+            en: 'Sacred Text Auto-Correct Tool',
+          },
+          icon: SpellCheck,
+        },
+        {
+          keyId: 'slot-50-health-diagnostic',
+          slotNumber: 50,
+          view: 'health-diagnostic' as AppView,
+          label: {
+            hi: 'ऐप सेहत व ऑफ़लाइन निदान',
+            pb: 'ਐਪ ਸਿਹਤ ਤੇ ਆਫ਼ਲਾਈਨ ਨਿਦਾਨ',
+            en: 'App Health & Offline Diagnostics',
+          },
+          icon: Activity,
+        },
+        {
+          keyId: 'slot-55-vani-card-maker',
+          slotNumber: 55,
+          view: 'vani-card-maker' as AppView,
+          label: {
+            hi: 'कबीर वाणी कार्ड मेकर',
+            pb: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ',
+            en: 'Kabir Vani Card Maker',
+          },
+          icon: ImageIcon,
         },
       ],
     },
@@ -1538,7 +1813,7 @@ export const Layout: React.FC<LayoutProps> = ({
                 backgroundColor: isAppCopied ? '#DCFCE7' : '#B45309',
               }}
               className="h-7 sm:h-8 px-2.5 sm:px-3 rounded-lg border flex items-center gap-1.5 hover:opacity-95 transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95 shrink-0 whitespace-nowrap"
-              title={language === 'pb' ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ (Share App)' : language === 'en' ? 'Share App' : '📤 ऐप शेयर करें (Share App)'}
+              title={language === 'pb' ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ' : language === 'en' ? 'Share App' : 'ऐप शेयर करें'}
               aria-label="Share App"
             >
               {isAppCopied ? (
@@ -2369,9 +2644,13 @@ export const Layout: React.FC<LayoutProps> = ({
               </div>
 
               {/* Sidebar Nav Items */}
-              <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3 custom-scrollbar">
+              <div
+                lang={language === 'pb' ? 'pa' : language}
+                data-lang={language}
+                className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3 custom-scrollbar"
+              >
 
-                {/* Sidebar Language Selection Control (भाषा चयन / ਭਾਸ਼ਾ ਚੋਣ / Select Language) */}
+                {/* Sidebar Language Selection Control */}
                 <div 
                   className="p-3 rounded-2xl border flex flex-col gap-2 mb-2 shadow-2xs select-none"
                   style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
@@ -2379,7 +2658,7 @@ export const Layout: React.FC<LayoutProps> = ({
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black font-serif flex items-center gap-1.5" style={{ color: theme.sacredMaroon }}>
                       <Languages className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                      <span>{language === 'pb' ? 'ਭਾਸ਼ਾ ਚੁਣੋ (Language)' : language === 'en' ? 'Select Language' : 'भाषा चयन (Language)'}</span>
+                      <span>{language === 'pb' ? 'ਭਾਸ਼ਾ ਚੁਣੋ' : language === 'en' ? 'Select Language' : 'भाषा चयन'}</span>
                     </span>
                   </div>
                   <div 
@@ -2430,10 +2709,10 @@ export const Layout: React.FC<LayoutProps> = ({
                     <span aria-hidden="true">📤</span>
                     <span>
                       {language === 'pb'
-                        ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ (Share App)'
+                        ? 'ਐਪ ਸ਼ੇਅਰ ਕਰੋ'
                         : language === 'en'
                         ? 'Share Saheb World App'
-                        : 'ऐप शेयर करें (Share App)'}
+                        : 'ऐप शेयर करें'}
                     </span>
                   </button>
                   <a
@@ -2582,15 +2861,15 @@ export const Layout: React.FC<LayoutProps> = ({
                           className="w-full px-3 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group"
                         >
                           <div className="flex items-center gap-2 text-left min-w-0">
-                            <span className="font-serif font-black text-amber-800 dark:text-amber-300 text-xs shrink-0">
-                              {section.numberPrefix}
+                            <span className="font-serif font-black text-amber-800 dark:text-amber-300 text-xs shrink-0 leading-relaxed">
+                              {section.numberPrefix[language] || section.numberPrefix.hi}
                             </span>
-                            <span className="font-serif font-black text-xs sm:text-[0.8125rem] leading-tight truncate">
+                            <span className="font-serif font-black text-xs sm:text-[0.8125rem] leading-relaxed py-0.5 break-words">
                               {section.title[language] || section.title.hi}
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5 shrink-0">
-                            <span className="text-[0.625rem] px-1.5 py-0.5 rounded-md font-bold bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200">
+                            <span className="text-[0.625rem] px-1.5 py-0.5 rounded-md font-bold bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200 tabular-nums">
                               {section.items.length}
                             </span>
                             {isCollapsed ? (
@@ -2605,13 +2884,36 @@ export const Layout: React.FC<LayoutProps> = ({
                         {!isCollapsed && (
                           <div className="space-y-1 pt-1">
                             {section.items.map((item) => {
-                              const isActive = currentView === item.view;
+                              const isActive =
+                                currentView === item.view &&
+                                !item.granthSlug &&
+                                !item.modalEvent &&
+                                item.keyId !== 'slot-42-prashnottari';
                               const Icon = item.icon;
+
+                              const activateSidebarItem = () => {
+                                sacredHaptics.lightTap();
+                                if (item.modalEvent) {
+                                  setIsSidebarOpen(false);
+                                  window.dispatchEvent(new CustomEvent(item.modalEvent));
+                                  return;
+                                }
+                                if (item.granthSlug) {
+                                  setIsSidebarOpen(false);
+                                  window.dispatchEvent(
+                                    new CustomEvent('sahebworld_open_granth', {
+                                      detail: { granthSlug: item.granthSlug },
+                                    })
+                                  );
+                                  return;
+                                }
+                                handleNavClick(item.view);
+                              };
 
                               if (item.isDhunSpecial) {
                                 return (
                                   <div
-                                    key={item.view}
+                                    key={item.keyId}
                                     style={{
                                       backgroundColor: isActive ? theme.stepActiveBg : isDhunPlaying ? 'rgba(245, 158, 11, 0.14)' : theme.cardBg,
                                       borderColor: isActive ? theme.accentGold : isDhunPlaying ? '#F59E0B' : theme.cardBorder,
@@ -2622,7 +2924,7 @@ export const Layout: React.FC<LayoutProps> = ({
                                   >
                                     <button
                                       type="button"
-                                      onClick={() => handleNavClick('dhun')}
+                                      onClick={activateSidebarItem}
                                       className="flex items-center gap-2.5 flex-1 text-left cursor-pointer select-none group min-w-0"
                                       title="सत्यनाम पावन धुन कक्ष खोलें"
                                     >
@@ -2635,16 +2937,28 @@ export const Layout: React.FC<LayoutProps> = ({
                                       >
                                         <Volume2 className={`w-4 h-4 ${isDhunPlaying ? 'animate-pulse' : ''}`} />
                                       </div>
-                                      <div className="flex flex-col min-w-0">
-                                        <div className="flex items-center gap-1.5">
+                                      <div className="flex flex-col min-w-0 flex-1">
+                                        <div className="flex items-center gap-1.5 flex-wrap">
                                           <span 
                                             style={{ color: theme.sacredMaroon }}
-                                            className="text-xs sm:text-[0.8125rem] font-black font-serif truncate"
+                                            className="text-xs sm:text-[0.8125rem] font-black font-serif leading-snug py-0.5"
                                           >
                                             {item.label[language] || item.label.hi}
                                           </span>
+                                          {item.slotNumber && (
+                                            <span
+                                              className="text-[0.5625rem] font-mono font-bold px-1.5 py-0.5 rounded-md border shrink-0 tabular-nums"
+                                              style={{
+                                                backgroundColor: 'rgba(180, 83, 9, 0.08)',
+                                                borderColor: 'rgba(217, 119, 6, 0.3)',
+                                                color: theme.sacredMaroon,
+                                              }}
+                                            >
+                                              Slot #{item.slotNumber}
+                                            </span>
+                                          )}
                                         </div>
-                                        <span className="text-[9.5px] text-amber-800/80 dark:text-amber-300/80 font-medium truncate">
+                                        <span className="text-[9.5px] text-amber-800/80 dark:text-amber-300/80 font-medium leading-snug">
                                           {isDhunPlaying 
                                             ? (language === 'pb' ? '● ਧੁਨ ਚਾਲੂ ਹੈ (Playing)' : language === 'en' ? '● Dhun is Playing' : '● पावन धुन सक्रिय है')
                                             : (language === 'pb' ? 'ਅਖੰਡ ਸਤਯਨਾਮ ਧੁਨ' : language === 'en' ? 'Continuous Resonance' : 'अखंड सत्यनाम नाद')}
@@ -2689,30 +3003,42 @@ export const Layout: React.FC<LayoutProps> = ({
 
                               return (
                                 <button
-                                  key={item.view}
+                                  key={item.keyId}
                                   type="button"
-                                  onClick={() => handleNavClick(item.view)}
+                                  onClick={activateSidebarItem}
                                   style={{
                                     backgroundColor: isActive ? theme.stepActiveBg : 'transparent',
                                     borderColor: isActive ? theme.accentGold : 'transparent',
                                     color: isActive ? theme.sacredMaroon : theme.textPrimary
                                   }}
-                                  className={`w-full px-3 py-2 rounded-xl flex items-center gap-2.5 transition-all border text-left cursor-pointer group ${
+                                  className={`w-full px-3 py-2 rounded-xl flex items-center gap-2 transition-all border text-left cursor-pointer group ${
                                     isActive ? 'font-bold shadow-2xs' : 'border-transparent hover:bg-black/5 dark:hover:bg-white/5'
                                   }`}
                                 >
                                   <div className={`p-1.5 rounded-lg shrink-0 transition-transform group-hover:scale-105 ${isActive ? 'bg-white/80 dark:bg-zinc-800 shadow-inner' : 'bg-black/5 dark:bg-white/5'}`}>
                                     <Icon className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
                                   </div>
-                                  <span className="text-xs sm:text-[12.5px] font-serif leading-tight flex-1">
+                                  <span className="text-xs sm:text-[12.5px] font-serif leading-snug py-0.5 flex-1 break-words">
                                     {item.label[language] || item.label.hi}
                                   </span>
-                                  {item.badge && (
+                                  {item.slotNumber && (
+                                    <span
+                                      className="text-[0.5625rem] font-mono font-bold px-1.5 py-0.5 rounded-md border shrink-0 tabular-nums"
+                                      style={{
+                                        backgroundColor: isActive ? 'rgba(217, 119, 6, 0.16)' : 'rgba(180, 83, 9, 0.08)',
+                                        borderColor: 'rgba(217, 119, 6, 0.28)',
+                                        color: theme.sacredMaroon,
+                                      }}
+                                    >
+                                      Slot #{item.slotNumber}
+                                    </span>
+                                  )}
+                                  {!item.slotNumber && item.badge && (
                                     <span className="text-[0.5625rem] px-1.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200 font-bold shrink-0">
                                       {item.badge[language] || item.badge.hi}
                                     </span>
                                   )}
-                                  {isActive && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />}
+                                  {isActive && <div className="ml-0.5 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />}
                                 </button>
                               );
                             })}
@@ -2722,18 +3048,20 @@ export const Layout: React.FC<LayoutProps> = ({
                     );
                   })}
 
-                  {/* ५. उपयोगकर्ता मार्गदर्शिका एवं ऐप नीतियां (Collapsible Drawer Category) */}
+                  {/* ५. मार्गदर्शिका, परिचय एवं नीतियां (Collapsible Drawer Category: Slot #51 – #54) */}
                   {(() => {
                     const infoSectionId = 'section-guide-about-policies';
                     const isInfoCollapsed = collapsedSections[infoSectionId];
                     const infoItems: Array<{
                       id: string;
+                      slotNumber: number;
                       section: AboutDisclaimerSection;
                       icon: React.ComponentType<{ className?: string }>;
                       label: { hi: string; pb: string; en: string };
                     }> = [
                       {
                         id: 'sidebar-user-guide-btn',
+                        slotNumber: 51,
                         section: 'guide',
                         icon: BookOpen,
                         label: {
@@ -2744,6 +3072,7 @@ export const Layout: React.FC<LayoutProps> = ({
                       },
                       {
                         id: 'sidebar-about-us-btn',
+                        slotNumber: 52,
                         section: 'about',
                         icon: Info,
                         label: {
@@ -2754,6 +3083,7 @@ export const Layout: React.FC<LayoutProps> = ({
                       },
                       {
                         id: 'sidebar-disclaimer-btn',
+                        slotNumber: 53,
                         section: 'disclaimer',
                         icon: ShieldCheck,
                         label: {
@@ -2764,6 +3094,7 @@ export const Layout: React.FC<LayoutProps> = ({
                       },
                       {
                         id: 'sidebar-privacy-policy-btn',
+                        slotNumber: 54,
                         section: 'privacy',
                         icon: Lock,
                         label: {
@@ -2796,10 +3127,10 @@ export const Layout: React.FC<LayoutProps> = ({
                           className="w-full px-3 py-2 rounded-xl border flex items-center justify-between gap-2 shadow-2xs cursor-pointer select-none transition-all hover:brightness-95 group"
                         >
                           <div className="flex items-center gap-2 text-left min-w-0">
-                            <span className="font-serif font-black text-amber-800 dark:text-amber-300 text-xs shrink-0">
+                            <span className="font-serif font-black text-amber-800 dark:text-amber-300 text-xs shrink-0 leading-relaxed">
                               {language === 'pb' ? '੫.' : language === 'en' ? '5.' : '५.'}
                             </span>
-                            <span className="font-serif font-black text-xs sm:text-[0.8125rem] leading-tight truncate">
+                            <span className="font-serif font-black text-xs sm:text-[0.8125rem] leading-relaxed py-0.5 break-words">
                               {language === 'pb'
                                 ? 'ਮਾਰਗਦਰਸ਼ਿਕਾ, ਜਾਣ-ਪਛਾਣ ਤੇ ਨੀਤੀਆਂ'
                                 : language === 'en'
@@ -2808,7 +3139,7 @@ export const Layout: React.FC<LayoutProps> = ({
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5 shrink-0">
-                            <span className="text-[0.625rem] px-1.5 py-0.5 rounded-md font-bold bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200">
+                            <span className="text-[0.625rem] px-1.5 py-0.5 rounded-md font-bold bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-200 tabular-nums">
                               {infoItems.length}
                             </span>
                             {isInfoCollapsed ? (
@@ -2834,13 +3165,23 @@ export const Layout: React.FC<LayoutProps> = ({
                                     setAboutModalSection(item.section);
                                   }}
                                   style={{ color: theme.textPrimary }}
-                                  className="w-full px-3 py-2 rounded-xl flex items-center gap-2.5 transition-all border border-transparent text-left cursor-pointer group hover:bg-black/5 dark:hover:bg-white/5"
+                                  className="w-full px-3 py-2 rounded-xl flex items-center gap-2 transition-all border border-transparent text-left cursor-pointer group hover:bg-black/5 dark:hover:bg-white/5"
                                 >
                                   <div className="p-1.5 rounded-lg shrink-0 transition-transform group-hover:scale-105 bg-black/5 dark:bg-white/5">
                                     <Icon className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
                                   </div>
-                                  <span className="text-xs sm:text-[12.5px] font-serif leading-tight flex-1">
+                                  <span className="text-xs sm:text-[12.5px] font-serif leading-snug py-0.5 flex-1 break-words">
                                     {item.label[language] || item.label.hi}
+                                  </span>
+                                  <span
+                                    className="text-[0.5625rem] font-mono font-bold px-1.5 py-0.5 rounded-md border shrink-0 tabular-nums"
+                                    style={{
+                                      backgroundColor: 'rgba(180, 83, 9, 0.08)',
+                                      borderColor: 'rgba(217, 119, 6, 0.28)',
+                                      color: theme.sacredMaroon,
+                                    }}
+                                  >
+                                    Slot #{item.slotNumber}
                                   </span>
                                 </button>
                               );

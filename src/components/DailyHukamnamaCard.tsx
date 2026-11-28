@@ -87,6 +87,9 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
     ? verse.bhavarth?.en 
     : verse.bhavarth?.hi;
 
+  const sanitizeSacredLine = (line: string): string =>
+    (line || '').replace(/([।॥])\s*[।॥]/g, '$1').trim();
+
   const handleToggleAudio = () => {
     sacredHaptics.lightTap();
     if (isPlayingAudio) {
@@ -96,7 +99,8 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
       try {
         satyanaamAudio.ringSacredBell();
       } catch {}
-      const textToSpeak = moolLines.join(' । ') + ' । ' + (bhavarthText || '');
+      const joinedLines = moolLines.map(sanitizeSacredLine).join(' ').replace(/([।॥])\s*[।॥]/g, '$1');
+      const textToSpeak = `${joinedLines} ${bhavarthText || ''}`.trim();
       speechReciter.speak(
         textToSpeak,
         language,
@@ -245,24 +249,35 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
           style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
           className="p-4 rounded-2xl border shadow-inner"
         >
-          <div className="space-y-1.5 text-center">
-            {moolLines.map((line: string, idx: number) => (
+          {/* Original Gurmukhi always preserved cleanly at the top */}
+          <div className="space-y-1 text-center">
+            {verse.moolGurmukhi.map((line: string, idx: number) => (
               <p
                 key={idx}
                 style={{ color: theme.sacredMaroon }}
                 className="font-serif font-black text-base sm:text-xl leading-relaxed tracking-normal"
               >
-                {line}
+                {sanitizeSacredLine(line)}
               </p>
             ))}
           </div>
 
-          {/* Secondary script if Devanagari or Gurmukhi is primary */}
-          {language !== 'pb' && verse.moolGurmukhi && (
-            <div className="mt-2.5 pt-2 border-t text-center" style={{ borderColor: theme.cardBorder }}>
-              <p style={{ color: theme.textSecondary }} className="text-xs font-serif italic">
-                {verse.moolGurmukhi.slice(0, 2).join(' । ')}
-              </p>
+          {/* Active Language Script Sync (Devanagari for Hindi / Roman for English) */}
+          {language !== 'pb' && (
+            <div className="mt-3 pt-2.5 border-t text-center space-y-1" style={{ borderColor: theme.cardBorder }}>
+              {(isEn && verse.moolRoman?.length ? verse.moolRoman : verse.moolDevanagari).map(
+                (line: string, idx: number) => (
+                  <p
+                    key={idx}
+                    style={{ color: theme.textPrimary }}
+                    className={`font-serif font-bold ${
+                      isEn ? 'text-xs sm:text-sm italic opacity-90' : 'text-sm sm:text-lg'
+                    } leading-relaxed`}
+                  >
+                    {sanitizeSacredLine(line)}
+                  </p>
+                )
+              )}
             </div>
           )}
         </div>
@@ -271,7 +286,7 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
         <div className="space-y-1">
           <span style={{ color: theme.accentGold }} className="text-[11px] font-bold flex items-center gap-1">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>{isPb ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ (Spiritual Essence):' : isEn ? 'Deep Spiritual Meaning:' : 'गहन आध्यात्मिक भावार्थ:'}</span>
+            <span>{isPb ? 'ਗਹਿਰਾ ਅਧਿਆਤਮਿਕ ਭਾਵਾਰਥ:' : isEn ? 'Deep Spiritual Meaning:' : 'गहन आध्यात्मिक भावार्थ:'}</span>
           </span>
           <p
             style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder, color: theme.textPrimary }}
@@ -366,8 +381,9 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
           )}
         </div>
 
-        {/* Full View Button */}
+        {/* Full View Interactive Action Button */}
         <button
+          id="open-full-hukamnama-salok-btn"
           type="button"
           onClick={() => {
             sacredHaptics.lightTap();
@@ -376,11 +392,17 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
           style={{
             backgroundColor: theme.buttonPrimaryBg,
             color: theme.buttonPrimaryText,
+            borderColor: theme.accentGold,
           }}
-          className="flex-1 sm:flex-initial py-2.5 px-4 rounded-xl font-bold text-xs sm:text-sm shadow-md hover:opacity-90 transition flex items-center justify-center gap-1.5 cursor-pointer"
+          className="flex-1 sm:flex-initial py-2.5 px-4 rounded-xl border-2 font-serif font-black text-xs sm:text-sm shadow-md hover:scale-[1.02] active:scale-95 transition flex items-center justify-center gap-1.5 cursor-pointer"
         >
-          <span>{isPb ? 'ਪੂਰਨ ਹੁਕਮਨਾਮਾ ਤੇ ਜੀਵਨ ਅਨੁਸ਼ਾਸਨ' : isEn ? 'Explore Full Sanctuary & Discipline' : 'पूर्ण हुकमनामा व दैनिक जीवन अनुशासन'}</span>
-          <ChevronRight className="w-4 h-4" />
+          <span>
+            {isPb
+              ? 'ਸੰਪੂਰਨ ਸਲੋਕ ਅਤੇ ਜੀਵਨ ਅਨੁਸ਼ਾਸਨ ਖੋਲ੍ਹੋ →'
+              : isEn
+              ? 'Open Full Salok & Daily Discipline →'
+              : 'संपूर्ण सलोक एवं जीवन अनुशासन खोलें →'}
+          </span>
         </button>
       </div>
     </div>

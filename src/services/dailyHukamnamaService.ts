@@ -8,7 +8,7 @@
 import { SggsKabirVerse, FALLBACK_HUKAMNAMA_VERSE } from '../data/sggsKabirMetadata';
 import { Language } from '../types';
 
-const HUKAMNAMA_CACHE_KEY_PREFIX = 'sahebworld_daily_hukamnama_v1_';
+const HUKAMNAMA_CACHE_KEY_PREFIX = 'sahebworld_daily_hukamnama_v2_';
 
 function gcd(a: number, b: number): number {
   let x = Math.abs(a);
@@ -94,7 +94,11 @@ export async function getDailyHukamnamaAsync(date: Date = new Date()): Promise<S
       // Remove older day caches cleanly so localStorage stays lean
       for (let i = localStorage.length - 1; i >= 0; i--) {
         const k = localStorage.key(i);
-        if (k && k.startsWith(HUKAMNAMA_CACHE_KEY_PREFIX)) {
+        if (
+          k &&
+          (k.startsWith(HUKAMNAMA_CACHE_KEY_PREFIX) ||
+            k.startsWith('sahebworld_daily_hukamnama_v1_'))
+        ) {
           localStorage.removeItem(k);
         }
       }

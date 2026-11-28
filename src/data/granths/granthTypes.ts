@@ -48,6 +48,8 @@ export interface GranthVerse {
   practicalApplication?: LocalizedText;
   samarpanPrayer?: LocalizedText;
   spiritualEssence?: LocalizedText;
+  englishTranslation?: string;
+  translationEn?: string;
 }
 
 export interface GranthChapter {

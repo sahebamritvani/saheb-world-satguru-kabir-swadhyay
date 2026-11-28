@@ -103,7 +103,13 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
         : isEn && verse.moolRoman?.length
         ? verse.moolRoman
         : verse.moolDevanagari;
-      const textToSpeak = primaryLines.join(' । ') + ' । ' + (bhavarthText || '');
+      const textToSpeak =
+        primaryLines
+          .map((l) => (l || '').replace(/([।॥])\s*[।॥]/g, '$1').trim())
+          .join(' ')
+          .replace(/([।॥])\s*[।॥]/g, '$1') +
+        ' ' +
+        (bhavarthText || '');
       speechReciter.speak(
         textToSpeak,
         language,
@@ -316,10 +322,10 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
             {verse.raag
               ? `${isPb ? 'ਰਾਗ' : isEn ? 'Raag' : 'राग'} ${verse.raag}`
               : isPb
-              ? 'ਸਲੋਕ ਕਬੀਰ ਜੀਉ ਕੇ'
+              ? 'ਸਲੋਕ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਜੀ'
               : isEn
               ? 'Salok Satguru Kabir Saheb Ke'
-              : 'सलोक कबीर जीउ के'}
+              : 'सलोक सतगुरु कबीर साहेब जी'}
           </span>
         </div>
 

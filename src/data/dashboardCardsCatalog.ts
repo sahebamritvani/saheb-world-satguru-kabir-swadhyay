@@ -711,7 +711,11 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     slotNumber: 56,
     categoryId: 2,
     kicker: { hi: 'साधना संकल्प', pb: 'ਸਾਧਨਾ ਸੰਕਲਪ', en: 'Satvik Vows' },
-    title: { hi: 'नशामुक्ति व सात्विक संकल्प', pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ', en: 'De-addiction & Sankalp' },
+    title: {
+      hi: 'सात्विक संकल्प ट्रैकर (नशामुक्ति)',
+      pb: 'ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ (ਨਸ਼ਾਮੁਕਤੀ)',
+      en: 'Satvik Sankalp Tracker (Clean Living)',
+    },
     description: {
       hi: 'दैनिक हाज़िरी, दिन गणना, मील के पत्थर बैज व प्रेरक साखियों से संकल्प निभाएं।',
       pb: 'ਰੋਜ਼ਾਨਾ ਹਾਜ਼ਰੀ, ਦਿਨਾਂ ਦੀ ਗਿਣਤੀ, ਮੀਲ ਪੱਥਰ ਬੈਜ ਤੇ ਪ੍ਰੇਰਕ ਸਾਖੀਆਂ ਨਾਲ ਸੰਕਲਪ ਨਿਭਾਓ।',
@@ -735,7 +739,7 @@ export const ALL_DASHBOARD_CARDS: DashboardFeatureCard[] = [
     },
     description: {
       hi: 'श्वेत दिव्य प्रकाश व 3 पावन प्रमाणों के साथ भव-व्याधि और मोह-भ्रम का निवारण।',
-      pb: 'ਸ਼੍ਵੇਤ ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਤੇ 3 ਪਾਵਨ ਪ੍ਰਮਾਣਾਂ ਨਾਲ ਭਵ-ਵ්‍යාਧੀ ਤੇ ਮੋਹ-ਭ੍ਰम ਦਾ ਨਿਵਾਰਨ।',
+      pb: 'ਸ਼੍ਵੇਤ ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਤੇ 3 ਪਾਵਨ ਪ੍ਰਮਾਣਾਂ ਨਾਲ ਭਵ-ਵਿਆਧੀ ਤੇ ਮੋਹ-ਭਰਮ ਦਾ ਨਿਵਾਰਨ।',
       en: 'Experience the pure white divine light panacea and canonical verses dissolving all ailments.',
     },
     actionLabel: { hi: 'दिव्य प्रकाश अनुभव करें', pb: 'ਦਿਵਯ ਪ੍ਰਕਾਸ਼ ਅਨੁਭਵ ਕਰੋ', en: 'Experience Light' },

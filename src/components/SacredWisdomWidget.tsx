@@ -29,18 +29,23 @@ interface SacredWisdomWidgetProps {
 interface CuratedAmritSutra {
   id: string;
   number: number;
-  grantha: string;
+  grantha: Record<Language, string>;
   categoryTitle: Record<Language, string>;
   text: Record<Language, string>;
   transliteration: string;
   bhavarth: Record<Language, string>;
+  takeaway: Record<Language, string>;
 }
 
 const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
   {
     id: 'amar-sutra-1',
     number: 1,
-    grantha: 'कबीर अमर सूत्र • बीजक सार',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • बीजक सार',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਬੀਜਕ ਸਾਰ',
+      en: 'Kabir Amar Sutra • Bijak Essence',
+    },
     categoryTitle: {
       hi: 'विवेक एवं आत्म-ज्ञान सूत्र',
       pb: 'ਬਿਬੇਕ ਅਤੇ ਆਤਮ-ਗਿਆਨ ਸੂਤਰ',
@@ -57,11 +62,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਸੱਚੇ ਸਤਿਗੁਰੂ ਉਹੀ ਹਨ ਜੋ ਬਾਹਰੀ ਆਡੰਬਰ ਤੋਂ ਹਟਾ ਕੇ ਹਿਰਦੇ ਦੇ ਅਗਿਆਨ ਦੇ ਕਪਾਟ ਖੋਲ੍ਹ ਦਿੰਦੇ ਹਨ ਤੇ ਸੁਰਤ ਨੂੰ ਅਮਰ ਸਤਯਨਾਮ ਨਾਲ ਜੋੜਦੇ ਹਨ।',
       en: 'True Satguru is the one who removes outer delusion, unlocks the heart’s inner door, and unites awareness with eternal Satyanaam.',
     },
+    takeaway: {
+      hi: 'सच्चे सतगुरु की शरण ही भीतर के अज्ञान का पर्दा हटाकर अमर सत्यनाम का बोध कराती है।',
+      pb: 'ਸੱਚੇ ਸਤਿਗੁਰੂ ਦੀ ਸ਼ਰਨ ਹੀ ਅੰਦਰਲੇ ਅਗਿਆਨ ਦਾ ਪਰਦਾ ਹਟਾ ਕੇ ਅਮਰ ਸਤਯਨਾਮ ਦਾ ਬੋਧ ਕਰਾਉਂਦੀ ਹੈ।',
+      en: 'Seek an enlightened Satguru who awakens inner truth rather than outer ritual.',
+    },
   },
   {
     id: 'amar-sutra-2',
     number: 2,
-    grantha: 'कबीर अमर सूत्र • वाणी संयम',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • वाणी संयम',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਬਾਣੀ ਸੰਜਮ',
+      en: 'Kabir Amar Sutra • Mindful Speech',
+    },
     categoryTitle: {
       hi: 'मधुर वाणी एवं समता सूत्र',
       pb: 'ਮਧੁਰ ਬਾਣੀ ਅਤੇ ਸਮਤਾ ਸੂਤਰ',
@@ -78,32 +92,50 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਹਉਮੈ ਛੱਡ ਕੇ ਨਿਮਰ ਤੇ ਪ੍ਰੇਮ ਭਰੇ ਬਚਨ ਬੋਲਣ ਨਾਲ ਸੁਣਨ ਵਾਲੇ ਨੂੰ ਸ਼ਾਂਤੀ ਮਿਲਦੀ ਹੈ ਅਤੇ ਆਪਣਾ ਮਨ ਵੀ ਨਿਰਮਲ ਹੁੰਦਾ ਹੈ।',
       en: 'Relinquishing pride and speaking gently soothes the hearts of others while purifying your own inner being.',
     },
+    takeaway: {
+      hi: 'अहंकार-रहित मधुर वाणी दूसरों को सुख देती है और स्वयं के मन को भी शांत रखती है।',
+      pb: 'ਹਉਮੈ-ਰਹਿਤ ਮਿੱਠੀ ਬਾਣੀ ਦੂਜਿਆਂ ਨੂੰ ਸੁੱਖ ਦਿੰਦੀ ਹੈ ਤੇ ਆਪਣੇ ਮਨ ਨੂੰ ਵੀ ਸ਼ਾਂਤ ਰੱਖਦੀ ਹੈ।',
+      en: 'Humble, gentle speech heals the listener and keeps your own heart serene.',
+    },
   },
   {
     id: 'amar-sutra-3',
     number: 3,
-    grantha: 'कबीर अमर सूत्र • संतोष धन',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • संतोष धन',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਸੰਤੋਖ ਧਨ',
+      en: 'Kabir Amar Sutra • Wealth of Contentment',
+    },
     categoryTitle: {
       hi: 'संतोष एवं तृष्णा विसर्जन',
       pb: 'ਸੰਤੋਖ ਅਤੇ ਤ੍ਰਿਸ਼ਨਾ ਤਿਆਗ',
       en: 'Contentment & Freedom from Craving',
     },
     text: {
-      hi: 'गो धन गज धन बाजि धन, और रतन धन खान।\nजब आवै संतोष धन, सब धन धूरि समान॥',
-      pb: 'ਗੋ ਧਨ ਗਜ ਧਨ ਬਾਜਿ ਧਨ, ਔਰ ਰਤਨ ਧਨ ਖਾਨ।\nਜਬ ਆਵੈ ਸੰਤੋਖ ਧਨ, ਸਬ ਧਨ ਧੂਰਿ ਸਮਾਨ॥',
+      hi: 'गोधन गजधन बाजिधन, और रतन धन खान।\nजब आवै संतोष धन, सब धन धूरि समान॥',
+      pb: 'ਗੋਧਨ ਗਜਧਨ ਬਾਜਿਧਨ, ਔਰ ਰਤਨ ਧਨ ਖਾਨ।\nਜਬ ਆਵੈ ਸੰਤੋਖ ਧਨ, ਸਬ ਧਨ ਧੂਰਿ ਸਮਾਨ॥',
       en: 'Though one possess herds, elephants, steeds, and mines of gems—\nwhen the wealth of contentment dawns, all else seems dust.',
     },
-    transliteration: 'Go dhan gaj dhan baaji dhan, aur ratan dhan khaan; Jab aawai santosh dhan, sab dhan dhoori samaan.',
+    transliteration: 'Godhan gajdhan baajidhan, aur ratan dhan khaan; Jab aawai santosh dhan, sab dhan dhoori samaan.',
     bhavarth: {
       hi: 'संसार के समस्त वैभव भीतर की शांति नहीं खरीद सकते। हृदय में संतोष रूपी धन आते ही सारी तृष्णा शांत हो जाती है।',
       pb: 'ਦੁਨੀਆ ਦੇ ਸਾਰੇ ਖ਼ਜ਼ਾਨੇ ਮਨ ਦੀ ਸ਼ਾਂਤੀ ਨਹੀਂ ਖਰੀਦ ਸਕਦੇ। ਹਿਰਦੇ ਵਿੱਚ ਸੰਤੋਖ ਧਨ ਆਉਂਦੇ ਹੀ ਸਾਰੀ ਤ੍ਰਿਸ਼ਨਾ ਮਿਟ ਜਾਂਦੀ ਹੈ।',
       en: 'Worldly riches cannot purchase inner peace; once contentment awakens within, endless cravings vanish like dust.',
     },
+    takeaway: {
+      hi: 'सच्चा सुख बाहरी धन-संपदा में नहीं, बल्कि संतोष और शांत चित्त में निहित है।',
+      pb: 'ਅਸਲ ਸੁੱਖ ਬਾਹਰੀ ਧਨ-ਦੌਲਤ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਸੰਤੋਖ ਅਤੇ ਸ਼ਾਂਤ ਮਨ ਵਿੱਚ ਵੱਸਦਾ ਹੈ।',
+      en: 'True abundance is born of inner contentment, not endless worldly accumulation.',
+    },
   },
   {
     id: 'amar-sutra-4',
     number: 4,
-    grantha: 'कबीर अमर सूत्र • पारखी विवेक',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • पारखी विवेक',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਪਾਰਖੀ ਬਿਬੇਕ',
+      en: 'Kabir Amar Sutra • True Discernment',
+    },
     categoryTitle: {
       hi: 'सार-असार विवेक सूत्र',
       pb: 'ਸਾਰ-ਅਸਾਰ ਬਿਬੇਕ ਸੂਤਰ',
@@ -120,11 +152,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਬਿਬੇਕੀ ਸਾਧਕ ਹਮੇਸ਼ਾ ਸੱਚ, ਗੁਣ ਅਤੇ ਸਤਿਸੰਗ ਦਾ ਸਾਰ ਗ੍ਰਹਿਣ ਕਰਦਾ ਹੈ ਅਤੇ ਵਿਅਰਥ ਝਗੜੇ ਤੇ ਭਰਮ ਛੱਡ ਦਿੰਦਾ ਹੈ।',
       en: 'A wise aspirant absorbs essential truth and virtues while discarding idle gossip, vanity, and illusion.',
     },
+    takeaway: {
+      hi: 'जीवन में सदैव सार तत्व और सद्गुण अपनाएं तथा व्यर्थ निंदा व आडंबर को त्याग दें।',
+      pb: 'ਜੀਵਨ ਵਿੱਚ ਹਮੇਸ਼ਾ ਸਾਰ ਤੱਤ ਤੇ ਸਦਗੁਣ ਅਪਣਾਓ ਅਤੇ ਵਿਅਰਥ ਨਿੰਦਾ ਤੇ ਭਰਮ ਛੱਡ ਦਿਓ।',
+      en: 'Hold onto timeless truth and virtue, and let go of shallow distractions.',
+    },
   },
   {
     id: 'amar-sutra-5',
     number: 5,
-    grantha: 'कबीर अमर सूत्र • अंतर्दर्शन',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • अंतर्दर्शन',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਅੰਤਰਦਰਸ਼ਨ',
+      en: 'Kabir Amar Sutra • Inner Vision',
+    },
     categoryTitle: {
       hi: 'निज-घट दर्शन सूत्र',
       pb: 'ਨਿਜ-ਘਟ ਦਰਸ਼ਨ ਸੂਤਰ',
@@ -141,11 +182,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਪਰਮਾਤਮਾ ਕਿਸੇ ਦੂਰ ਥਾਂ ਨਹੀਂ, ਸਗੋਂ ਹਰ ਪ੍ਰਾਣੀ ਦੇ ਸੁਆਸਾਂ ਵਿੱਚ ਵੱਸਦੇ ਹਨ। ਸੱਚੀ ਖੋਜ ਬਾਹਰ ਭਟਕਣ ਵਿੱਚ ਨਹੀਂ, ਅੰਤਰਮੁਖੀ ਹੋਣ ਵਿੱਚ ਹੈ।',
       en: 'The Supreme Lord is not confined to distant shrines; realization blooms through sincere inward awareness and devotion.',
     },
+    takeaway: {
+      hi: 'परमात्मा को बाहर भटककर नहीं, बल्कि अपने ही निर्मल हृदय व श्वासों में अनुभव करें।',
+      pb: 'ਪਰਮਾਤਮਾ ਨੂੰ ਬਾਹਰ ਭਟਕ ਕੇ ਨਹੀਂ, ਸਗੋਂ ਆਪਣੇ ਨਿਰਮਲ ਹਿਰਦੇ ਤੇ ਸੁਆਸਾਂ ਵਿੱਚ ਅਨੁਭਵ ਕਰੋ।',
+      en: 'Stop searching outside—the Divine presence abides within your own breath and heart.',
+    },
   },
   {
     id: 'amar-sutra-6',
     number: 6,
-    grantha: 'कबीर अमर सूत्र • अहंकार विसर्जन',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • अहंकार विसर्जन',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਹਉਮੈ ਤਿਆਗ',
+      en: 'Kabir Amar Sutra • Dissolving Ego',
+    },
     categoryTitle: {
       hi: 'नम्रता एवं समर्पण सूत्र',
       pb: 'ਨਿਮਰਤਾ ਅਤੇ ਸਮਰਪਣ ਸੂਤਰ',
@@ -162,11 +212,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਹਉਮੈ ਤੇ ਪਰਮਾਤਮਾ ਇਕੱਠੇ ਨਹੀਂ ਰਹਿ ਸਕਦੇ। ਜਿਵੇਂ ਹੀ ਗੁਰੂ ਗਿਆਨ ਦਾ ਦੀਵਾ ਹਿਰਦੇ ਵਿੱਚ ਜਗਦਾ ਹੈ, "ਮੈਂ-ਪਣ" ਦਾ ਹਨੇਰਾ ਮਿਟ ਜਾਂਦਾ ਹੈ।',
       en: 'Ego and Divine realization cannot coexist; when the inner lamp of Satguru’s wisdom lights up, all darkness dissolves.',
     },
+    takeaway: {
+      hi: 'जहाँ "मैं" (अहंकार) विदा होता है, वहीं सतगुरु के ज्ञान का प्रकाश प्रकट होता है।',
+      pb: 'ਜਿੱਥੇ "ਮੈਂ" (ਹਉਮੈ) ਮਿਟਦੀ ਹੈ, ਉੱਥੇ ਹੀ ਸਤਿਗੁਰੂ ਦੇ ਗਿਆਨ ਦਾ ਪ੍ਰਕਾਸ਼ ਪ੍ਰਗਟ ਹੁੰਦਾ ਹੈ।',
+      en: 'The moment ego dissolves, the inner light of Divine presence shines forth.',
+    },
   },
   {
     id: 'amar-sutra-7',
     number: 7,
-    grantha: 'कबीर अमर सूत्र • काल जागरूकता',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • काल जागरूकता',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਕਾਲ ਚੇਤਨਾ',
+      en: 'Kabir Amar Sutra • Value of Time',
+    },
     categoryTitle: {
       hi: 'तत्काल सत्कर्म सूत्र',
       pb: 'ਤਤਕਾਲ ਸਤਕਰਮ ਸੂਤਰ',
@@ -183,11 +242,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਭਗਤੀ, ਸੇਵਾ ਤੇ ਚੰਗੇ ਕੰਮ ਕਦੇ ਕੱਲ੍ਹ ਤੇ ਨਾ ਟਾਲੋ। ਸੁਆਸਾਂ ਦਾ ਭਰੋਸਾ ਨਹੀਂ, ਇਸ ਲਈ ਹਰ ਪਲ ਸਤਯਨਾਮ ਤੇ ਸਤਕਰਮ ਵਿੱਚ ਸਾਰਥਕ ਕਰੋ।',
       en: 'Never postpone devotion, kindness, or noble duties; breathe awareness into the present moment before time slips away.',
     },
+    takeaway: {
+      hi: 'सत्यनाम स्मरण और शुभ कर्म को कल पर न टालें—सच्ची साधना इसी वर्तमान क्षण में है।',
+      pb: 'ਸਤਯਨਾਮ ਸਿਮਰਨ ਤੇ ਸ਼ੁਭ ਕਰਮ ਨੂੰ ਕੱਲ੍ਹ ਤੇ ਨਾ ਟਾਲੋ—ਸੱਚੀ ਸਾਧਨਾ ਇਸੇ ਵਰਤਮਾਨ ਪਲ ਵਿੱਚ ਹੈ।',
+      en: 'Do not postpone devotion or kindness to tomorrow—act rightly right now.',
+    },
   },
   {
     id: 'amar-sutra-8',
     number: 8,
-    grantha: 'कबीर अमर सूत्र • प्रेम तत्व',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • प्रेम तत्व',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਪ੍ਰੇਮ ਤੱਤ',
+      en: 'Kabir Amar Sutra • Essence of Love',
+    },
     categoryTitle: {
       hi: 'निर्मल प्रेम एवं करुणा',
       pb: 'ਨਿਰਮਲ ਪ੍ਰੇਮ ਅਤੇ ਦਇਆ',
@@ -204,11 +272,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਕੇਵਲ ਕਿਤਾਬੀ ਗਿਆਨ ਨਾਲ ਪ੍ਰਭੂ ਨਹੀਂ ਮਿਲਦੇ। ਸਾਰੇ ਜੀਵਾਂ ਪ੍ਰਤੀ ਨਿਰਛਲ ਪ੍ਰੇਮ, ਦਇਆ ਤੇ ਸਮਰਪਣ ਹੀ ਅਸਲ ਗਿਆਨ ਹੈ।',
       en: 'Bookish intellect alone cannot realize Truth; sincere love, compassion, and humility reveal supreme wisdom.',
     },
+    takeaway: {
+      hi: 'कोरे पांडित्य से बढ़कर प्राणी-मात्र के प्रति निष्कपट प्रेम और करुणा ही सच्ची विद्वत्ता है।',
+      pb: 'ਕੋਰੇ ਕਿਤਾਬੀ ਗਿਆਨ ਨਾਲੋਂ ਸਭ ਜੀਵਾਂ ਪ੍ਰਤੀ ਨਿਰਛਲ ਪ੍ਰੇਮ ਤੇ ਦਇਆ ਹੀ ਅਸਲ ਸਿਆਣਪ ਹੈ।',
+      en: 'Selfless love and compassion outweigh dry scholarly learning.',
+    },
   },
   {
     id: 'amar-sutra-9',
     number: 9,
-    grantha: 'कबीर अमर सूत्र • साधु रक्षा',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • आत्म-निरीक्षण',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਆਤਮ-ਨਿਰੀਖਣ',
+      en: 'Kabir Amar Sutra • Self-Reflection',
+    },
     categoryTitle: {
       hi: 'निंदा व दोष-दृष्टि त्याग',
       pb: 'ਨਿੰਦਾ ਅਤੇ ਦੋਸ਼-ਦ੍ਰਿਸ਼ਟੀ ਤਿਆਗ',
@@ -225,11 +302,20 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
       pb: 'ਦੂਜਿਆਂ ਦੇ ਔਗੁਣ ਲੱਭਣ ਦੀ ਬਜਾਏ ਆਪਣੇ ਮਨ ਦੀ ਪੜਚੋਲ ਕਰਨਾ ਅਧਿਆਤਮਕ ਤਰੱਕੀ ਦੀ ਪਹਿਲੀ ਪੌੜੀ ਹੈ।',
       en: 'Examining one’s own heart instead of judging others is the authentic doorway to spiritual transformation.',
     },
+    takeaway: {
+      hi: 'दूसरों के दोष गिनने की बजाय अपने मन का शुद्धिकरण करना ही सच्ची साधना है।',
+      pb: 'ਦੂਜਿਆਂ ਦੀਆਂ ਕਮੀਆਂ ਲੱਭਣ ਦੀ ਬਜਾਏ ਆਪਣੇ ਮਨ ਨੂੰ ਸੁਧਾਰਨਾ ਹੀ ਸੱਚੀ ਸਾਧਨਾ ਹੈ।',
+      en: 'True growth begins when we stop judging others and refine our own heart.',
+    },
   },
   {
     id: 'amar-sutra-10',
     number: 10,
-    grantha: 'कबीर अमर सूत्र • सतगुरु विश्वास',
+    grantha: {
+      hi: 'कबीर अमर सूत्र • सतगुरु विश्वास',
+      pb: 'ਕਬੀਰ ਅਮਰ ਸੂਤਰ • ਸਤਿਗੁਰੂ ਵਿਸ਼ਵਾਸ',
+      en: 'Kabir Amar Sutra • Faith in Satguru',
+    },
     categoryTitle: {
       hi: 'धीरज एवं परिपक्वता सूत्र',
       pb: 'ਧੀਰਜ ਅਤੇ ਪਰਿਪੱਕਤਾ ਸੂਤਰ',
@@ -242,9 +328,14 @@ const CURATED_AMRIT_SUTRAS: CuratedAmritSutra[] = [
     },
     transliteration: 'Dheere dheere re mana, dheere sab kuch hoy; Maali seenche sau ghada, ritu aaye phal hoy.',
     bhavarth: {
-      hi: 'साधना और जीवन में उतावलापन नहीं, धैर्य व निरंतर अभ्यास आवश्यक है। समय और प्रभु-कृपा आने पर फल अवश्य प्राप्त होता है।',
-      pb: 'ਸਾਧਨਾ ਤੇ ਜੀਵਨ ਵਿੱਚ ਕਾਹਲੀ ਨਹੀਂ, ਸਬਰ ਤੇ ਲਗਾਤਾਰ ਅਭਿਆਸ ਲੋੜੀਂਦਾ ਹੈ। ਸਮਾਂ ਆਉਣ ਤੇ ਫ਼ਲ ਜ਼ਰੂਰ ਮਿਲਦਾ ਹੈ।',
-      en: 'Spiritual growth requires steady practice and patience rather than haste; grace matures every sincere effort in season.',
+      hi: 'साधना और जीवन में उतावलापन नहीं, धैर्य व निरंतर अभ्यास आवश्यक है। समय और सतगुरु-कृपा आने पर फल अवश्य प्राप्त होता है।',
+      pb: 'ਸਾਧਨਾ ਤੇ ਜੀਵਨ ਵਿੱਚ ਕਾਹਲੀ ਨਹੀਂ, ਸਬਰ ਤੇ ਲਗਾਤਾਰ ਅਭਿਆਸ ਲੋੜੀਂਦਾ ਹੈ। ਸਮਾਂ ਅਤੇ ਸਤਿਗੁਰੂ-ਕਿਰਪਾ ਆਉਣ ਤੇ ਫ਼ਲ ਜ਼ਰੂਰ ਮਿਲਦਾ ਹੈ।',
+      en: 'Spiritual growth requires steady practice and patience rather than haste; Satguru’s grace matures every sincere effort in season.',
+    },
+    takeaway: {
+      hi: 'उतावलापन छोड़कर धैर्य व निरंतर साधना रखें—उचित समय पर सतगुरु-कृपा अवश्य फलती है।',
+      pb: 'ਕਾਹਲੀ ਛੱਡ ਕੇ ਸਬਰ ਤੇ ਨਿਰੰਤਰ ਸਾਧਨਾ ਰੱਖੋ—ਸਹੀ ਸਮੇਂ ਤੇ ਸਤਿਗੁਰੂ-ਕਿਰਪਾ ਜ਼ਰੂਰ ਫਲਦੀ ਹੈ।',
+      en: 'Steady patience and consistent practice always bear fruit in due season.',
     },
   },
 ];
@@ -299,11 +390,12 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
       return {
         id: s.id,
         number: s.number,
-        grantha: s.grantha,
+        grantha: s.grantha[language] || s.grantha.hi,
         categoryLabel: s.categoryTitle[language] || s.categoryTitle.hi,
         verse: s.text[language] || s.text.hi,
         transliteration: s.transliteration,
         bhavarth: s.bhavarth[language] || s.bhavarth.hi,
+        takeaway: s.takeaway[language] || s.takeaway.hi,
         isSutra: true,
         rawSakhi: undefined as Sakhi | undefined,
       };
@@ -316,6 +408,7 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
       verse: currentSakhi.text[language] || currentSakhi.text.hi,
       transliteration: currentSakhi.transliteration,
       bhavarth: currentSakhi.bhavarth[language] || currentSakhi.bhavarth.hi,
+      takeaway: '',
       isSutra: false,
       rawSakhi: currentSakhi,
     };
@@ -344,13 +437,27 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
   const getFormattedVerseText = () => {
     const header = SACRED_BRANDING.header[language];
     const footer = SACRED_BRANDING.footer[language];
-    const tag = activeEntry.isSutra ? `अमर सूत्र #${activeEntry.number}` : `साखी #${activeEntry.number}`;
+    const tag = activeEntry.isSutra
+      ? language === 'pb'
+        ? `ਅਮਰ ਸੂਤਰ #${activeEntry.number}`
+        : language === 'en'
+        ? `Amar Sutra #${activeEntry.number}`
+        : `अमर सूत्र #${activeEntry.number}`
+      : language === 'pb'
+      ? `ਸਾਖੀ #${activeEntry.number}`
+      : language === 'en'
+      ? `Sakhi #${activeEntry.number}`
+      : `साखी #${activeEntry.number}`;
+    const meaningLabel = language === 'pb' ? 'ਭਾਵਾਰਥ:' : language === 'en' ? 'Meaning:' : 'भावार्थ:';
+    const takeawayLabel = language === 'pb' ? 'ਸੂਤਰ ਸਾਰ:' : language === 'en' ? 'Takeaway:' : 'सूत्र सार:';
+    const takeawayBlock = activeEntry.takeaway ? `\n✨ ${takeawayLabel} ${activeEntry.takeaway}\n` : '';
 
     return (
       `।। ${header} ।।\n\n` +
       `📜 ${tag} (${activeEntry.categoryLabel})\n\n` +
       `"${activeEntry.verse}"\n\n` +
-      `💡 भावार्थ: ${activeEntry.bhavarth}\n\n` +
+      `💡 ${meaningLabel} ${activeEntry.bhavarth}\n` +
+      `${takeawayBlock}\n` +
       `।। ${footer} ।।\n` +
       `📱 Saheb World App`
     );
@@ -630,18 +737,23 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
           style={{ backgroundColor: theme.bgSecondary, borderColor: theme.borderOrnament }}
           className="rounded-2xl border p-4 sm:p-6 space-y-3.5 text-center relative"
         >
-          <span
-            style={{ color: theme.accentGold }}
-            className="text-[11px] uppercase tracking-widest font-black block font-serif"
-          >
-            {language === 'pb' ? '।। ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਚਨਾਮ੍ਰਿਤ ।।' : language === 'en' ? '।। Satguru Kabir Sacred Word ।।' : '।। सतगुरु कबीर वचनामृत ।।'}
-          </span>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span
+              style={{ color: theme.accentGold }}
+              className="text-[11px] uppercase tracking-widest font-black font-serif"
+            >
+              {language === 'pb' ? '।। ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਚਨਾਮ੍ਰਿਤ ।।' : language === 'en' ? '।। Satguru Kabir Sacred Word ।।' : '।। सतगुरु कबीर वचनामृत ।।'}
+            </span>
+            <span className="text-[11px] font-bold font-serif px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/25">
+              {activeEntry.categoryLabel}
+            </span>
+          </div>
 
           <p
             style={{ color: theme.sacredMaroon }}
             className="font-serif font-black text-base sm:text-xl md:text-2xl leading-relaxed whitespace-pre-line tracking-wide"
           >
-            {formatCoupletString(activeEntry.verse)}
+            {language === 'en' ? activeEntry.verse : formatCoupletString(activeEntry.verse, language)}
           </p>
 
           {activeEntry.transliteration && (
@@ -652,8 +764,21 @@ export const SacredWisdomWidget: React.FC<SacredWisdomWidgetProps> = ({
 
           <div
             style={{ borderColor: theme.cardBorder }}
-            className="pt-3 mt-3 border-t text-left"
+            className="pt-3 mt-3 border-t text-left space-y-2.5"
           >
+            {activeEntry.takeaway && (
+              <div
+                style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
+                className="px-3.5 py-2.5 rounded-xl border flex items-start gap-2"
+              >
+                <span className="text-xs font-black text-amber-700 dark:text-amber-300 shrink-0 mt-0.5">
+                  {language === 'pb' ? '✨ ਸੂਤਰ ਸਾਰ:' : language === 'en' ? '✨ Takeaway:' : '✨ सूत्र सार:'}
+                </span>
+                <p className="text-xs sm:text-sm font-bold leading-snug font-serif" style={{ color: theme.sacredMaroon }}>
+                  {activeEntry.takeaway}
+                </p>
+              </div>
+            )}
             <div className="flex items-start gap-2">
               <span className="text-xs font-black text-amber-600 shrink-0 mt-0.5">
                 {language === 'pb' ? 'ਭਾਵਾਰਥ:' : language === 'en' ? 'Meaning:' : 'भावार्थ:'}

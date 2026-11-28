@@ -977,21 +977,31 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                 className="font-serif font-black text-base sm:text-lg md:text-xl transition-colors leading-tight"
               >
                 {language === 'pb'
-                  ? 'ਮੂਲ ਸਿਧਾਂਤ: ਇੱਕ ਸਤਯਨਾਮ ਤੋਂ ਸਭ ਸਧੈ (Core Principle)'
+                  ? 'ਮੂਲ ਸਿਧਾਂਤ: ਇੱਕ ਸਤਯਨਾਮ ਤੋਂ ਸਭ ਸਧੈ'
                   : language === 'en'
                   ? 'Core Principle: Master the One Satyanaam'
-                  : 'मूल सिद्धांत: एक सत्यनाम से सब सधै (Core Principle)'}
+                  : 'मूल सिद्धांत: एक सत्यनाम से सब सधै'}
               </h3>
               <p
-                style={{ color: theme.textSecondary }}
-                className="text-xs sm:text-sm font-serif font-bold mt-1 leading-relaxed opacity-90 whitespace-pre-line"
+                style={{ color: theme.textPrimary }}
+                className="text-xs sm:text-sm font-serif font-bold mt-1.5 leading-relaxed whitespace-pre-line"
               >
                 {language === 'pb'
-                  ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ।\nਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥\n(ਊਰਧਵ ਮੂਲ ਰੁੱਖ, ਚਾਰੇ ਯੁਗ ਤੇ ੯ ਪ੍ਰਮਾਣਿਕ ਦੋਹੇ)'
+                  ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ।\nਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥'
                   : language === 'en'
-                  ? 'Master the One Satyanaam, and everything in life falls into place;\nKabir says, without this One Root, the entire life goes in vain.\n(Inverted Tree, 4 Yugas & 9 Dohas)'
-                  : 'सत्यनाम को साध ले, सब कुछ सधता जाय।\nकहैं कबीर इस मूल बिन, सारा जीवन जाय॥\n(ऊर्ध्व मूल वृक्ष, चारों युग एवं ९ प्रमाणिक दोहे)'}
+                  ? 'Master the One Satyanaam, and everything in life falls into place;\nKabir says, without this One Root, the entire life goes in vain.'
+                  : 'सत्यनाम को साध ले, सब कुछ सधता जाय।\nकहैं कबीर इस मूल बिन, सारा जीवन जाय॥'}
               </p>
+              <span
+                style={{ color: theme.textSecondary }}
+                className="inline-block text-[11px] sm:text-xs font-serif font-bold mt-1.5 opacity-85"
+              >
+                {language === 'pb'
+                  ? '• ਊਰਧਵ ਮੂਲ ਰੁੱਖ, ਚਾਰੇ ਯੁਗ ਤੇ ੯ ਪ੍ਰਮਾਣਿਕ ਦੋਹੇ'
+                  : language === 'en'
+                  ? '• Inverted Cosmic Tree, 4 Yugas & 9 Canonical Dohas'
+                  : '• ऊर्ध्व मूल वृक्ष, चारों युग एवं ९ प्रमाणिक दोहे'}
+              </span>
             </div>
           </div>
 
@@ -1926,155 +1936,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* INTERACTIVE SADHANA & PANTH STUDIO (4 INTERACTIVE MODULES)                */}
-      {/* ========================================================================= */}
-      <section
-        id="interactive-sadhana-studio"
-        style={{
-          backgroundColor: theme.cardBg,
-          borderColor: theme.cardBorder,
-          color: theme.textPrimary,
-        }}
-        className="rounded-3xl border shadow-xl p-4 sm:p-6 space-y-4 animate-fadeIn transition-all"
-      >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
-          <div className="flex items-center gap-3">
-            <div
-              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold, color: theme.sacredMaroon }}
-              className="w-10 h-10 rounded-2xl border flex items-center justify-center shadow-2xs shrink-0"
-            >
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="text-base sm:text-lg font-black font-serif tracking-tight" style={{ color: theme.sacredMaroon }}>
-                {language === 'pb'
-                  ? 'ਨਵੀਨ ਸਾਧਨਾ ਤੇ ਕਬੀਰ ਗਿਆਨ ਸਟੂਡੀਓ'
-                  : language === 'en'
-                  ? 'Interactive Sadhana & Panth Studio'
-                  : 'नवीन साधना एवं कबीर ज्ञान केंद्र'}
-              </h3>
-              <p className="text-xs leading-relaxed" style={{ color: theme.textSecondary }}>
-                {language === 'pb'
-                  ? 'ਕਾਰਡ ਮੇਕਰ, ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ, ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ ਅਤੇ ਵੰਸ਼ ਬਿਆਲੀਸ ਮਹਿਮਾ'
-                  : language === 'en'
-                  ? 'Greeting Card Maker, Satvik Sankalp Tracker, Kabir Gyan Quiz & Vansh Bayalis Guide'
-                  : 'कबीर वाणी कार्ड मेकर, सात्विक संकल्प ट्रैकर, कबीर ज्ञान प्रश्नोत्तरी व वंश बयालीस महिमा'}
-              </p>
-            </div>
-          </div>
-          <span
-            className="text-xs font-bold font-serif tabular-nums self-start sm:self-center opacity-80"
-            style={{ color: theme.sacredMaroon }}
-          >
-            {language === 'pb' ? '੪ ਇੰਟਰਐਕਟਿਵ ਮਾਡਿਊਲ' : language === 'en' ? '4 Interactive Modules' : '४ इंटरैक्टिव केंद्र'}
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-          {[
-            {
-              view: 'vani-card-maker' as AppView,
-              kicker: { hi: 'कार्ड स्टूडियो', pb: 'ਕਾਰਡ ਸਟੂਡੀਓ', en: 'Card Studio' },
-              title: { hi: 'कबीर वाणी कार्ड मेकर', pb: 'ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ', en: 'Kabir Vani Card Maker' },
-              desc: {
-                hi: 'सुंदर आध्यात्मिक थीम व अपने नाम के साथ पावन संदेश कार्ड डाउनलोड एवं शेयर करें।',
-                pb: 'ਸੁੰਦਰ ਰੂਹਾਨੀ ਥੀਮ ਤੇ ਆਪਣੇ ਨਾਮ ਨਾਲ ਪਾਵਨ ਸੰਦੇਸ਼ ਕਾਰਡ ਡਾਊਨਲੋਡ ਅਤੇ ਸਾਂਝਾ ਕਰੋ।',
-                en: 'Design & export spiritual greeting cards with themes and your courtesy name.',
-              },
-              action: { hi: 'कार्ड बनाएं', pb: 'ਕਾਰਡ ਬਣਾਓ', en: 'Create Card' },
-              accentClass: 'text-amber-700 dark:text-amber-300',
-              hoverBorderClass: 'hover:border-amber-500/70',
-              icon: <ImageIcon className="w-5 h-5 shrink-0 text-amber-600 dark:text-amber-400" />,
-            },
-            {
-              view: 'satvik-sankalp' as AppView,
-              kicker: { hi: 'साधना संकल्प', pb: 'ਸਾਧਨਾ ਸੰਕਲਪ', en: 'Satvik Vows' },
-              title: { hi: 'नशामुक्ति व सात्विक संकल्प', pb: 'ਨਸ਼ਾਮੁਕਤੀ ਤੇ ਸਾਤਵਿਕ ਸੰਕਲਪ', en: 'De-addiction & Sankalp' },
-              desc: {
-                hi: 'दैनिक हाज़िरी, दिन गणना, मील के पत्थर बैज व प्रेरक साखियों से संकल्प निभाएं।',
-                pb: 'ਰੋਜ਼ਾਨਾ ਹਾਜ਼ਰੀ, ਦਿਨਾਂ ਦੀ ਗਿਣਤੀ, ਮੀਲ ਪੱਥਰ ਬੈਜ ਤੇ ਪ੍ਰੇਰਕ ਸਾਖੀਆਂ ਨਾਲ ਸੰਕਲਪ ਨਿਭਾਓ।',
-                en: 'Track clean living streaks, daily check-ins, and unlock milestone badges offline.',
-              },
-              action: { hi: 'संकल्प ट्रैकर', pb: 'ਸੰਕਲਪ ਟਰੈਕਰ', en: 'Open Tracker' },
-              accentClass: 'text-emerald-700 dark:text-emerald-300',
-              hoverBorderClass: 'hover:border-emerald-500/70',
-              icon: <ShieldCheck className="w-5 h-5 shrink-0 text-emerald-600 dark:text-emerald-400" />,
-            },
-            {
-              view: 'kabir-gyan-quiz' as AppView,
-              kicker: { hi: 'ज्ञान परीक्षा', pb: 'ਗਿਆਨ ਪ੍ਰੀਖਿਆ', en: 'Spiritual Quiz' },
-              title: { hi: 'कबीर ज्ञान प्रश्नोत्तरी', pb: 'ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ', en: 'Kabir Gyan Quiz' },
-              desc: {
-                hi: 'सतगुरु कबीर साहेब व वंश परंपरा पर ६ प्रश्नों की परीक्षा दें व अपना प्रमाण-पत्र पाएं।',
-                pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਤੇ ਵੰਸ਼ ਪਰੰਪਰਾ ਉੱਤੇ ੬ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਪ੍ਰੀਖਿਆ ਦਿਓ ਤੇ ਸਰਟੀਫਿਕੇਟ ਪਾਓ।',
-                en: 'Test your knowledge across 6 questions and download your appreciation certificate.',
-              },
-              action: { hi: 'प्रश्नोत्तरी खेलें', pb: 'ਪ੍ਰਸ਼ਨੋਤਰੀ ਖੇਡੋ', en: 'Start Quiz' },
-              accentClass: 'text-rose-700 dark:text-rose-300',
-              hoverBorderClass: 'hover:border-rose-500/70',
-              icon: <Trophy className="w-5 h-5 shrink-0 text-rose-600 dark:text-rose-400" />,
-            },
-            {
-              view: 'vansh-bayalis' as AppView,
-              kicker: { hi: '४२ पीढ़ियाँ', pb: '੪੨ ਪੀੜ੍ਹੀਆਂ', en: '42 Generations' },
-              title: { hi: 'वंश बयालीस की पावन महिमा', pb: 'ਵੰਸ਼ ਬਿਆਲੀਸ ਦੀ ਪਾਵਨ ਮਹਿਮਾ', en: 'Glory of Vansh Bayalis' },
-              desc: {
-                hi: 'सतगुरु कबीर साहेब के वरदान, धनी धर्मदास व अटल वंश बयालीस परंपरा का रहस्य।',
-                pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਵਰਦਾਨ, ਧਨੀ ਧਰਮਦਾਸ ਤੇ ਅਟੱਲ ਵੰਸ਼ ਬਿਆਲੀਸ ਪਰੰਪਰਾ ਦਾ ਰਹੱਸ।',
-                en: 'Explore the 4-part guide on the eternal 42-generation lineage and divine promise.',
-              },
-              action: { hi: 'महिमा पढ़ें', pb: 'ਮਹਿਮਾ ਪੜ੍ਹੋ', en: 'Read Guide' },
-              accentClass: 'text-orange-700 dark:text-orange-300',
-              hoverBorderClass: 'hover:border-orange-500/70',
-              icon: <Crown className="w-5 h-5 shrink-0 text-orange-600 dark:text-orange-400" />,
-            },
-          ].map((mod, idx) => (
-            <button
-              key={mod.view}
-              id={`studio-card-${mod.view}`}
-              type="button"
-              onClick={() => {
-                sacredHaptics.mediumTap();
-                if (onNavigateView) onNavigateView(mod.view);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              style={{ backgroundColor: theme.bgSecondary, borderColor: theme.cardBorder }}
-              className={`min-h-[44px] p-4 rounded-2xl border ${mod.hoverBorderClass} transition-all duration-200 hover:scale-[1.015] active:scale-[0.985] cursor-pointer flex flex-col justify-between h-full group text-left shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500`}
-            >
-              <div className="space-y-2 w-full">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5 text-[11px] font-bold font-serif min-w-0 truncate">
-                    <span className="font-mono tabular-nums opacity-70" style={{ color: theme.textSecondary }}>
-                      0{idx + 1}
-                    </span>
-                    <span aria-hidden="true" className="opacity-40">·</span>
-                    <span className={`truncate ${mod.accentClass}`}>{mod.kicker[language] || mod.kicker.hi}</span>
-                  </div>
-                  <div className="transition-transform group-hover:scale-110">{mod.icon}</div>
-                </div>
-                <div>
-                  <h4 className="font-serif font-black text-base leading-snug tracking-tight" style={{ color: theme.sacredMaroon }}>
-                    {mod.title[language] || mod.title.hi}
-                  </h4>
-                  <p className="text-xs opacity-85 mt-1 line-clamp-2 font-serif leading-relaxed" style={{ color: theme.textSecondary }}>
-                    {mod.desc[language] || mod.desc.hi}
-                  </p>
-                </div>
-              </div>
-              <div
-                style={{ borderColor: theme.cardBorder }}
-                className="mt-3 pt-2.5 border-t w-full flex items-center justify-between text-[11.5px] font-bold"
-              >
-                <span className={`font-serif ${mod.accentClass}`}>{mod.action[language] || mod.action.hi}</span>
-                <ChevronRight size={14} className={`${mod.accentClass} group-hover:translate-x-1 transition-transform shrink-0`} />
-              </div>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SAHEB WORLD SACRED FEATURES & MASTER GRANTHALAYA DIRECTORY (ALL 54 CARDS) */}
+      {/* SAHEB WORLD SACRED FEATURES & MASTER GRANTHALAYA DIRECTORY                */}
       {/* ========================================================================= */}
       <section 
         id="saheb-world-features-directory"
@@ -2100,20 +1962,19 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                   {language === 'pb' ? 'ਸਾਹੇਬ ਵਰਲਡ ਸਮੁੱਚੇ ਪਾਵਨ ਫੀਚਰਸ ਤੇ ਗ੍ਰੰਥਾਵਲੀ' : language === 'en' ? 'Saheb World Sacred Granths & Features' : 'साहेब वर्ल्ड समग्र ग्रन्थालय एवं समस्त फीचर्स'}
                 </h3>
                 <span className="text-xs font-bold font-serif tabular-nums opacity-80" style={{ color: theme.sacredMaroon }}>
-                  · {ALL_DASHBOARD_CARDS.length}{' '}
                   {language === 'pb'
-                    ? 'ਕਾਰਡ (੫੪ + ੪ ਨਵੇਂ)'
+                    ? '· ੫੮ ਪਾਵਨ ਗ੍ਰੰਥ ਅਤੇ ਸਾਧਨਾ ਸਾਧਨ (ਸੰਪੂਰਨ ਸੰਗ੍ਰਹਿ)'
                     : language === 'en'
-                    ? 'Cards (54 + 4 New)'
-                    : 'कार्ड्स (५४ + ४ नए)'}
+                    ? '· 58 Sacred Granths & Sadhana Tools (Complete Library)'
+                    : '· ५८ पावन ग्रन्थ एवं साधना साधन (संपूर्ण संग्रह)'}
                 </span>
               </div>
               <p className="text-xs mt-0.5 leading-relaxed" style={{ color: theme.textSecondary }}>
                 {language === 'pb'
-                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਸਮੁੱਚੇ ੫੮ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, ਕੁਇਜ਼ ਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾ'
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ, ਕਬੀਰ ਬਾਣੀ ਕਾਰਡ ਮੇਕਰ, ਸਾਤਵਿਕ ਸੰਕਲਪ ਟਰੈਕਰ, ਕਬੀਰ ਗਿਆਨ ਪ੍ਰਸ਼ਨੋਤਰੀ ਤੇ ਵੰਸ਼ ਬਿਆਲੀਸ ਮਹਿਮਾ'
                   : language === 'en'
-                  ? 'All 58 Satguru Kabir Saheb Holy Granths, Nitnem, Sadhana, Card Maker, Sankalp Tracker, Quiz & Guides'
-                  : 'सतगुरु कबीर साहेब के समस्त ५८ पावन ग्रन्थ, नितनेम, साधना, कार्ड मेकर, संकल्प, क्विज़ व मार्गदर्शिका'}
+                  ? 'Satguru Kabir Saheb Holy Granths, Nitnem, Sadhana, Kabir Vani Card Maker, Satvik Sankalp Tracker, Kabir Gyan Quiz & Vansh Bayalis'
+                  : 'सतगुरु कबीर साहेब के पावन ग्रन्थ, नितनेम, साधना, कबीर वाणी कार्ड मेकर, सात्विक संकल्प ट्रैकर, कबीर ज्ञान प्रश्नोत्तरी व वंश बयालीस महिमा'}
               </p>
             </div>
           </div>
@@ -2211,10 +2072,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
             </div>
             <p className="text-xs max-w-md mx-auto" style={{ color: theme.textSecondary }}>
               {language === 'pb'
-                ? 'ਫੀਚਰਸ ਸੈਕਸ਼ਨ ਸਮੇਟਿਆ ਹੋਇਆ ਹੈ। ਸਮੁੱਚੇ ੫੮ ਕਾਰਡ (੫੪ + ੪ ਨਵੇਂ), ਗ੍ਰੰਥਾਵਲੀ, ਨਿਤਨੇਮ ਤੇ ਸਾਧਨਾ ਸਾਧਨ ਦੇਖਣ ਲਈ ਬਟਨ ਦਬਾਓ।'
+                ? 'ਫੀਚਰਸ ਸੈਕਸ਼ਨ ਸਮੇਟਿਆ ਹੋਇਆ ਹੈ। ਸਮੁੱਚੇ ਪਾਵਨ ਗ੍ਰੰਥ, ਨਿਤਨੇਮ, ਸਾਧਨਾ ਸਾਧਨ ਤੇ ਗਿਆਨ ਕੇਂਦਰ ਦੇਖਣ ਲਈ ਹੇਠਾਂ ਕਲਿੱਕ ਕਰੋ।'
                 : language === 'en'
-                ? 'Features section is minimized. Tap below to browse all 58 scriptures, sadhana tools, new modules & guides.'
-                : 'फीचर्स सेक्शन अभी समेटा गया है। समस्त ५८ कार्ड्स (५४ + ४ नए), ग्रन्थालय, नित्य पाठ व साधना टूल्स देखने हेतु नीचे क्लिक करें।'}
+                ? 'Features section is minimized. Tap below to browse all sacred scriptures, sadhana tools & wisdom guides.'
+                : 'फीचर्स सेक्शन अभी समेटा गया है। समस्त पावन ग्रन्थ, नित्य पाठ, साधना टूल्स व ज्ञान केंद्र देखने हेतु नीचे क्लिक करें।'}
             </p>
             <button
               type="button"
@@ -2234,7 +2095,7 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           </div>
         ) : (
           <div className="space-y-5">
-            {/* Search & Category Filter Toolbar across All 58 Cards */}
+            {/* Search & Category Filter Toolbar */}
             <div className="space-y-3">
               <div className="flex flex-col sm:flex-row gap-2.5 items-stretch sm:items-center justify-between">
                 <div className="relative flex-1">
@@ -2249,10 +2110,10 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                     onChange={(e) => setDashboardCardSearch(e.target.value)}
                     placeholder={
                       language === 'pb'
-                        ? '੫੮ ਕਾਰਡਾਂ ਵਿੱਚੋਂ ਖੋਜੋ (ਜਿਵੇਂ: ਬੀਜਕ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, #55)...'
+                        ? 'ਪਾਵਨ ਗ੍ਰੰਥਾਂ ਤੇ ਸਾਧਨਾ ਕਾਰਡਾਂ ਵਿੱਚੋਂ ਖੋਜੋ (ਜਿਵੇਂ: ਬੀਜਕ, ਕਾਰਡ ਮੇਕਰ, ਸੰਕਲਪ, #55)...'
                         : language === 'en'
-                        ? 'Search all 58 cards (e.g., Bijak, Card Maker, Sankalp, #55)...'
-                        : 'समस्त ५८ कार्ड्स में खोजें (जैसे: बीजक, कार्ड मेकर, संकल्प, #55)...'
+                        ? 'Search all scriptures & sadhana cards (e.g., Bijak, Card Maker, Sankalp, #55)...'
+                        : 'समस्त पावन ग्रन्थों व साधना कार्ड्स में खोजें (जैसे: बीजक, कार्ड मेकर, संकल्प, #55)...'
                     }
                     style={{
                       backgroundColor: theme.bgSecondary,
@@ -2455,15 +2316,25 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
                                       : 'मूल सिद्धांत: एक सत्यनाम से सब सधै'}
                                   </h5>
                                   <p
-                                    className="text-xs opacity-85 mt-1 line-clamp-2 font-serif leading-relaxed"
+                                    className="text-xs font-serif font-semibold leading-relaxed whitespace-pre-line mt-1.5"
+                                    style={{ color: theme.textPrimary }}
+                                  >
+                                    {language === 'pb'
+                                      ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ।\nਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥'
+                                      : language === 'en'
+                                      ? 'Master the One Satyanaam, and everything in life falls into place;\nKabir says, without this One Root, the entire life goes in vain.'
+                                      : 'सत्यनाम को साध ले, सब कुछ सधता जाय।\nकहैं कबीर इस मूल बिन, सारा जीवन जाय॥'}
+                                  </p>
+                                  <span
+                                    className="inline-block text-[11px] font-serif font-bold mt-1.5 opacity-85"
                                     style={{ color: theme.textSecondary }}
                                   >
                                     {language === 'pb'
-                                      ? 'ਸਤਯਨਾਮ ਨੂੰ ਸਾਧ ਲੈ, ਸਭ ਕੁਝ ਸਧਦਾ ਜਾਇ। ਕਹੈਂ ਕਬੀਰ ਇਸ ਮੂਲ ਬਿਨ, ਸਾਰਾ ਜੀਵਨ ਜਾਇ॥ ਊਰਧਵ ਮੂਲ ਰੁੱਖ ਤੇ ਚਾਰੇ ਯੁਗ।'
+                                      ? '• ਊਰਧਵ ਮੂਲ ਰੁੱਖ ਤੇ ਚਾਰੇ ਯੁਗ'
                                       : language === 'en'
-                                      ? 'Master the One Satyanaam, and everything falls into place. Inverted Cosmic Tree & 4 Yugas timeless wisdom.'
-                                      : 'सत्यनाम को साध ले, सब कुछ सधता जाय। कहैं कबीर इस मूल बिन, सारा जीवन जाय॥ ऊर्ध्व मूल वृक्ष व चारों युग।'}
-                                  </p>
+                                      ? '• Inverted Cosmic Tree & 4 Yugas'
+                                      : '• ऊर्ध्व मूल वृक्ष व चारों युग'}
+                                  </span>
                                 </div>
                               </div>
 

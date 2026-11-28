@@ -139,11 +139,59 @@ function parseJsonToEasyItems(raw: string): EasyHindiItem[] {
       .map((item, idx) => {
         const title = extractTitleString(item.title ?? item.name ?? item.heading, idx);
         const lines = extractLinesArray(item);
-        const bhavarth = typeof item.bhavarth === 'string' ? item.bhavarth : typeof item.meaning === 'string' ? item.meaning : '';
-        const englishTranslation = typeof item.englishTranslation === 'string' ? item.englishTranslation : typeof item.translation === 'string' ? item.translation : '';
+        const bhavarthObj =
+          item.bhavarth && typeof item.bhavarth === 'object' && !Array.isArray(item.bhavarth)
+            ? (item.bhavarth as Record<string, unknown>)
+            : null;
+        const bhavarth =
+          typeof item.bhavarth === 'string'
+            ? item.bhavarth
+            : bhavarthObj && typeof bhavarthObj.hi === 'string'
+            ? bhavarthObj.hi
+            : typeof item.meaning === 'string'
+            ? item.meaning
+            : typeof item.context === 'string'
+            ? item.context
+            : '';
+        const englishTranslation =
+          typeof item.englishTranslation === 'string'
+            ? item.englishTranslation
+            : typeof item.translationEn === 'string'
+            ? item.translationEn
+            : typeof item.translation === 'string'
+            ? item.translation
+            : typeof item.englishArth === 'string'
+            ? item.englishArth
+            : typeof item.englishBhavarth === 'string'
+            ? item.englishBhavarth
+            : typeof item.englishMeaning === 'string'
+            ? item.englishMeaning
+            : typeof item.arth === 'string'
+            ? item.arth
+            : bhavarthObj && typeof bhavarthObj.en === 'string' && bhavarthObj.en.trim() !== bhavarth.trim()
+            ? bhavarthObj.en
+            : '';
         const extra: Record<string, unknown> = {};
         for (const [k, v] of Object.entries(item)) {
-          if (!['id', 'title', 'lines', 'content', 'moolVani', 'bhavarth', 'meaning', 'englishTranslation', 'translation'].includes(k)) {
+          if (
+            ![
+              'id',
+              'title',
+              'lines',
+              'content',
+              'moolVani',
+              'bhavarth',
+              'meaning',
+              'context',
+              'englishTranslation',
+              'translationEn',
+              'translation',
+              'englishArth',
+              'englishBhavarth',
+              'englishMeaning',
+              'arth',
+            ].includes(k)
+          ) {
             extra[k] = v;
           }
         }
@@ -274,11 +322,26 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
           const nitnemSecs = await loadAllNitnemSections();
           if (!cancelled) {
             setBuiltinItems(
-              nitnemSecs.map((sec) => ({
-                id: sec.id,
-                title: sec.title.hi,
-                lines: sec.verses.flatMap((v) => v.lines.hi),
-              }))
+              nitnemSecs.map((sec) => {
+                const combinedBhavarth = sec.verses.map((v) => v.bhavarth?.hi?.trim()).filter(Boolean).join('\n\n');
+                const combinedEnglish = sec.verses
+                  .map((v) => {
+                    const directEn = v.englishTranslation?.trim() || v.translationEn?.trim();
+                    if (directEn) return directEn;
+                    const en = v.bhavarth?.en?.trim() || '';
+                    const hi = v.bhavarth?.hi?.trim() || '';
+                    return en && en !== hi ? en : '';
+                  })
+                  .filter(Boolean)
+                  .join('\n\n');
+                return {
+                  id: sec.id,
+                  title: sec.title.hi,
+                  lines: sec.verses.flatMap((v) => v.lines.hi),
+                  ...(combinedBhavarth ? { bhavarth: combinedBhavarth } : {}),
+                  ...(combinedEnglish ? { englishTranslation: combinedEnglish } : {}),
+                };
+              })
             );
           }
           return;
@@ -287,11 +350,26 @@ export const AdminDataInjector: React.FC<AdminDataInjectorProps> = ({
           const granth = await loadMasterGranth(selectedSlotMeta.targetSlug);
           if (!cancelled) {
             setBuiltinItems(
-              granth.chapters.map((ch) => ({
-                id: ch.id,
-                title: ch.title.hi,
-                lines: ch.verses.flatMap((v) => v.lines.hi),
-              }))
+              granth.chapters.map((ch) => {
+                const combinedBhavarth = ch.verses.map((v) => v.bhavarth?.hi?.trim()).filter(Boolean).join('\n\n');
+                const combinedEnglish = ch.verses
+                  .map((v) => {
+                    const directEn = v.englishTranslation?.trim() || v.translationEn?.trim();
+                    if (directEn) return directEn;
+                    const en = v.bhavarth?.en?.trim() || '';
+                    const hi = v.bhavarth?.hi?.trim() || '';
+                    return en && en !== hi ? en : '';
+                  })
+                  .filter(Boolean)
+                  .join('\n\n');
+                return {
+                  id: ch.id,
+                  title: ch.title.hi,
+                  lines: ch.verses.flatMap((v) => v.lines.hi),
+                  ...(combinedBhavarth ? { bhavarth: combinedBhavarth } : {}),
+                  ...(combinedEnglish ? { englishTranslation: combinedEnglish } : {}),
+                };
+              })
             );
           }
           return;

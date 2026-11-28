@@ -36,6 +36,7 @@ import {
   X,
   ChevronsUp,
   ChevronsDown,
+  GripHorizontal,
   Settings,
   ArrowLeft,
   Palette,
@@ -534,6 +535,94 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
 
   // Sikhworld Style View Mode: Selection Grid vs Actual Reader
   const [viewMode, setViewMode] = useState<'selection' | 'reading'>('selection');
+
+  // Moveable Floating Scroll Up / Scroll Down Bar (Persisted in localStorage)
+  const SCROLL_BAR_POS_KEY = 'sahebworld_nitnem_scroll_bar_pos';
+  const [scrollBarPos, setScrollBarPos] = useState<{ x: number; y: number } | null>(() => {
+    try {
+      const saved = localStorage.getItem(SCROLL_BAR_POS_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (typeof parsed?.x === 'number' && typeof parsed?.y === 'number') {
+          return { x: parsed.x, y: parsed.y };
+        }
+      }
+    } catch {}
+    return null;
+  });
+  const [isDraggingScrollBar, setIsDraggingScrollBar] = useState<boolean>(false);
+  const scrollBarRef = useRef<HTMLElement | null>(null);
+  const scrollBarDidDragRef = useRef<boolean>(false);
+
+  const clampScrollBarCoords = useCallback((x: number, y: number) => {
+    if (typeof window === 'undefined') return { x, y };
+    const barWidth = scrollBarRef.current?.offsetWidth || 44;
+    const barHeight = scrollBarRef.current?.offsetHeight || 112;
+    const margin = 8;
+    const maxX = Math.max(margin, window.innerWidth - barWidth - margin);
+    const maxY = Math.max(margin, window.innerHeight - barHeight - margin);
+    return {
+      x: Math.min(maxX, Math.max(margin, x)),
+      y: Math.min(maxY, Math.max(margin, y)),
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!scrollBarPos) return;
+    const handleResize = () => {
+      setScrollBarPos((prev) => (prev ? clampScrollBarCoords(prev.x, prev.y) : null));
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [scrollBarPos, clampScrollBarCoords]);
+
+  const handleScrollBarPointerDown = (e: React.PointerEvent<HTMLElement>) => {
+    if (e.button !== 0 && e.pointerType === 'mouse') return;
+    const el = scrollBarRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const startClientX = e.clientX;
+    const startClientY = e.clientY;
+    const startLeft = rect.left;
+    const startTop = rect.top;
+    scrollBarDidDragRef.current = false;
+
+    const handlePointerMove = (moveEvent: PointerEvent) => {
+      const dx = moveEvent.clientX - startClientX;
+      const dy = moveEvent.clientY - startClientY;
+      if (!scrollBarDidDragRef.current && Math.hypot(dx, dy) > 6) {
+        scrollBarDidDragRef.current = true;
+        setIsDraggingScrollBar(true);
+      }
+      if (scrollBarDidDragRef.current) {
+        const next = clampScrollBarCoords(startLeft + dx, startTop + dy);
+        setScrollBarPos(next);
+      }
+    };
+
+    const handlePointerUp = (upEvent: PointerEvent) => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+      window.removeEventListener('pointercancel', handlePointerUp);
+      setIsDraggingScrollBar(false);
+      if (scrollBarDidDragRef.current) {
+        const dx = upEvent.clientX - startClientX;
+        const dy = upEvent.clientY - startClientY;
+        const finalPos = clampScrollBarCoords(startLeft + dx, startTop + dy);
+        setScrollBarPos(finalPos);
+        try {
+          localStorage.setItem(SCROLL_BAR_POS_KEY, JSON.stringify(finalPos));
+        } catch {}
+        window.setTimeout(() => {
+          scrollBarDidDragRef.current = false;
+        }, 60);
+      }
+    };
+
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    window.addEventListener('pointerup', handlePointerUp);
+    window.addEventListener('pointercancel', handlePointerUp);
+  };
 
   // Auto-Advance / Auto-Scroll & Pure Vani (Sirf Vani Auto-Path)
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(false);
@@ -2215,10 +2304,10 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         pb: verse.lines.pb,
         en: verse.lines.en,
       },
-      bhavarth: verse.bhavarth ? {
-        hi: verse.bhavarth.hi,
-        pb: verse.bhavarth.pb,
-        en: verse.bhavarth.en,
+      bhavarth: (verse.bhavarth || verse.englishTranslation || verse.translationEn) ? {
+        hi: verse.bhavarth?.hi || '',
+        pb: verse.bhavarth?.pb || verse.bhavarth?.hi || '',
+        en: verse.englishTranslation || verse.translationEn || verse.bhavarth?.en || verse.bhavarth?.hi || '',
       } : undefined
     }));
   }, [versesList, currentSection, language]);
@@ -2296,7 +2385,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
             {viewMode === 'selection' && (
               <p className="hidden md:block text-[0.6875rem] opacity-90 font-serif mt-0.5 truncate">
                 {language === 'pb' 
-                  ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
+                  ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿੱਤ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ ਅਤੇ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ' 
                   : language === 'en' 
                   ? 'Satguru Kabir Saheb Daily Prayers, Praises, Aarti & Sacred Texts' 
                   : 'सतगुरु कबीर साहेब नित्य पाठ, अस्तुति, आरती एवं ग्रन्थ संग्रह'}
@@ -2412,7 +2501,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       {language === 'pb' ? 'ਗ੍ਰੰਥ ਪਰਿਚਯ ਅਤੇ ਨਿੱਤ ਪਾਠ ਮਹੱਤਵ' : language === 'en' ? 'Scripture Overview & Daily Path Importance' : 'ग्रंथ परिचय एवं नित्य पाठ महत्व'}
                     </h3>
                     <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
-                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ ਦਾ ਰੂਹਾਨੀ ਸਰੂਪ' : language === 'en' ? 'Spiritual essence of Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब का पावन परिचय'}
+                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ ਦਾ ਰੂਹਾਨੀ ਸਰੂਪ' : language === 'en' ? 'Spiritual essence of Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब का पावन परिचय'}
                     </p>
                   </div>
                 </div>
@@ -2624,22 +2713,22 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                     📖
                   </div>
                   <div>
-                    <h2 className="font-serif font-black text-lg sm:text-2xl text-white leading-tight">
+                    <h2 className="font-serif font-black text-base sm:text-2xl text-white leading-tight">
                       {language === 'pb' ? 'ਪਾਵਨ ਨਿਤਨੇਮ ਅਨੁਕ੍ਰਮਣਿਕਾ ਤੇ ਸੂਚੀ' : language === 'en' ? 'Sacred Nitnem Index & Chapters' : 'पावन नितनेम अनुक्रमणिका व सूची'}
                     </h2>
                     <p className="text-xs text-amber-100 font-serif">
-                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
+                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ (੭ ਭਾਗ)' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb (7 Sacred Sections)' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब (७ पावन खंड)'}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
                   {/* Collapse / Expand All Button */}
                   {!isIndexSectionCollapsed && (
                     <button
                       type="button"
                       onClick={toggleAllIndexSections}
-                      className="min-h-[44px] px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white border border-white/30 text-xs font-bold font-serif transition cursor-pointer shadow-2xs flex items-center gap-1.5 whitespace-nowrap"
+                      className="min-h-[40px] sm:min-h-[44px] px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white border border-white/30 text-xs font-bold font-serif transition cursor-pointer shadow-2xs flex items-center gap-1.5 whitespace-nowrap"
                       title={language === 'pb' ? 'ਸਾਰੇ ਅਧਿਆਇ ਖੋਲ੍ਹੋ/ਸਮੇਟੋ' : language === 'en' ? 'Toggle All Chapters' : 'सभी अध्याय खोलें/समेटें'}
                     >
                       <span>
@@ -2657,18 +2746,22 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                       sacredHaptics.lightTap();
                       setIsIndexSectionCollapsed(!isIndexSectionCollapsed);
                     }}
-                    className="min-h-[44px] px-3.5 py-1.5 rounded-xl bg-white text-[#7C1D00] border border-white font-bold text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap"
-                    title={isIndexSectionCollapsed ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਖੋਲ੍ਹੋ (Open Index)' : 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ (Close Index)'}
+                    className="min-h-[40px] sm:min-h-[44px] px-3.5 py-1.5 rounded-xl bg-white text-[#7C1D00] border border-white font-bold font-serif text-xs flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95 transition cursor-pointer whitespace-nowrap"
+                    title={
+                      isIndexSectionCollapsed
+                        ? (language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Show Index' : 'अनुक्रमणिका खोलें')
+                        : (language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Hide Index' : 'अनुक्रमणिका बंद करें')
+                    }
                   >
                     {isIndexSectionCollapsed ? (
                       <>
-                        <ChevronDown className="w-4 h-4 text-[#8B2500] animate-bounce" />
+                        <ChevronDown className="w-4 h-4 text-[#8B2500] animate-bounce shrink-0" />
                         <span>{language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਖੋਲ੍ਹੋ' : language === 'en' ? 'Show Index' : 'अनुक्रमणिका खोलें'}</span>
                       </>
                     ) : (
                       <>
-                        <ChevronUp className="w-4 h-4 text-[#8B2500]" />
-                        <span>{language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close Index' : 'अनुक्रमणिका बंद करें'}</span>
+                        <ChevronUp className="w-4 h-4 text-[#8B2500] shrink-0" />
+                        <span>{language === 'pb' ? 'ਅਨੁਕ੍ਰਮਣਿਕਾ ਬੰਦ ਕਰੋ' : language === 'en' ? 'Hide Index' : 'अनुक्रमणिका बंद करें'}</span>
                       </>
                     )}
                   </button>
@@ -3532,7 +3625,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                           // Santhiya Mode: word-by-word pronunciation reciter
                           const words = line.split(/(\s+)/);
                           return (
-                            <span className="break-words [overflow-wrap:anywhere] break-all max-w-full inline-block">
+                            <span className="break-words [overflow-wrap:break-word] max-w-full inline-block">
                               {words.map((word, wIdx) => {
                                 if (!word.trim()) return <span key={wIdx}>{word}</span>;
                                 const isSpeakingThisWord = santhiyaActiveWord === word.replace(/[।,!?;:'"॥()]/g, '').trim();
@@ -3562,7 +3655,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                         // Normal Mode: Sandhukkari Glossary Tap-to-Mean
                         const tokens = tokenizeVerseLine(line, langCode);
                         return (
-                          <span className="break-words [overflow-wrap:anywhere] break-all max-w-full inline-block">
+                          <span className="break-words [overflow-wrap:break-word] max-w-full inline-block">
                             {tokens.map((tok, tIdx) => {
                               const isVisraamWord = isVisraamHighlightEnabled && ['कहै', 'कबीर', 'सुन', 'मन', 'भाई', 'साहेब', 'सतगुरु', 'नाम', 'ज्ञान', 'जीव', 'काल', 'माया', 'सुनि'].some(p => tok.text.includes(p));
 
@@ -3693,14 +3786,18 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           </div>
                                           <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} sacred-meaning-typography ${getLineHeightClass(lineHeight)} text-sm sm:text-base ${currentThemeStyle.textColor}`}>
                                             <SmartGlossaryText 
-                                              text={verse.bhavarth[language] || verse.bhavarth.hi}
+                                              text={
+                                                language === 'en'
+                                                  ? (verse.englishTranslation || verse.translationEn || verse.bhavarth.en || verse.bhavarth.hi)
+                                                  : (verse.bhavarth[language] || verse.bhavarth.hi)
+                                              }
                                               language={language}
                                             />
                                           </div>
-                                          {verse.bhavarth.en && language !== 'en' && (
+                                          {(verse.englishTranslation || (verse.bhavarth.en && verse.bhavarth.en !== verse.bhavarth.hi)) && language !== 'en' && (
                                             <div className="mt-2 pt-1.5 border-t border-amber-400/20 text-xs text-stone-600 dark:text-amber-200/80 italic font-serif">
                                               <span className="font-bold not-italic block text-[0.625rem] uppercase font-mono text-amber-800 dark:text-amber-300">English Meaning:</span>
-                                              "{verse.bhavarth.en}"
+                                              "{verse.englishTranslation || verse.bhavarth.en}"
                                             </div>
                                           )}
                                         </div>
@@ -3767,7 +3864,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                 </span>
                               </div>
                             ) : (
-                              <div className="flex items-center justify-between gap-[6px] mb-4 pb-3 border-b border-black/5 dark:border-white/5">
+                              <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-black/5 dark:border-white/5">
                               <div className="flex items-center gap-1.5 flex-wrap flex-1 min-w-0">
                                 {(() => {
                                   const verseLabel = getVerseTypeLabel(verse.type || 'doha', verse.id, language);
@@ -3798,7 +3895,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                               </div>
 
                               {/* Right Action Icons */}
-                              <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                              <div className="flex items-center gap-0.5 sm:gap-1.5 shrink-0 ml-auto">
                                 {/* Pin to Top Focus button */}
                                 <button
                                   type="button"
@@ -3952,14 +4049,14 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                 </button>
 
                                 {isVerseBhavarthVisible(verse.id) && (
-                                  <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 p-1 rounded-xl">
+                                  <div className="flex flex-wrap items-center gap-1 bg-black/5 dark:bg-white/5 p-1 rounded-xl max-w-full w-full sm:w-auto">
                                     <button
                                       type="button"
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         setVerseTab(verse.id, 'bhavarth');
                                       }}
-                                      className={`px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition cursor-pointer ${
+                                      className={`flex-1 sm:flex-initial px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-serif font-bold transition cursor-pointer whitespace-nowrap ${
                                         activeTab === 'bhavarth'
                                           ? 'bg-white dark:bg-zinc-800 text-amber-700 dark:text-amber-300 shadow-xs'
                                           : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
@@ -3973,7 +4070,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         e.stopPropagation();
                                         setVerseTab(verse.id, 'steek');
                                       }}
-                                      className={`px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition cursor-pointer ${
+                                      className={`flex-1 sm:flex-initial px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-serif font-bold transition cursor-pointer whitespace-nowrap ${
                                         activeTab === 'steek'
                                           ? 'bg-white dark:bg-zinc-800 text-amber-700 dark:text-amber-300 shadow-xs'
                                           : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
@@ -3987,7 +4084,7 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                         e.stopPropagation();
                                         setVerseTab(verse.id, 'shabdarth');
                                       }}
-                                      className={`px-2.5 py-1 rounded-lg text-xs font-serif font-bold transition cursor-pointer ${
+                                      className={`flex-1 sm:flex-initial px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-serif font-bold transition cursor-pointer whitespace-nowrap ${
                                         activeTab === 'shabdarth'
                                           ? 'bg-white dark:bg-zinc-800 text-amber-700 dark:text-amber-300 shadow-xs'
                                           : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
@@ -4031,7 +4128,11 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           </div>
                                           <div className={`${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed text-xs sm:text-sm`}>
                                             <SmartGlossaryText 
-                                              text={verse.bhavarth?.[language] || verse.bhavarth?.hi || 'सतगुरु कबीर साहेब की यह पावन वाणी जीवात्मा को सत्य का दर्शन कराती है।'}
+                                              text={
+                                                language === 'en'
+                                                  ? (verse.englishTranslation || verse.translationEn || verse.bhavarth?.en || verse.bhavarth?.hi || 'Satguru Kabir Saheb reveals the immortal path of Satyanaam and inner awakening.')
+                                                  : (verse.bhavarth?.[language] || verse.bhavarth?.hi || 'सतगुरु कबीर साहेब की यह पावन वाणी जीवात्मा को सत्य का दर्शन कराती है।')
+                                              }
                                               language={language}
                                             />
                                           </div>
@@ -4042,8 +4143,8 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
                                           <span className="font-bold text-[0.6875rem] uppercase tracking-wider text-blue-800 dark:text-blue-300 block mb-1 font-mono">
                                             🌐 English Translation (English Arth)
                                           </span>
-                                          <p className={`italic ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed`}>
-                                            "{steekData.englishTranslation}"
+                                          <p className={`italic ${fontFamily === 'sans' ? 'font-saral font-sans' : 'font-granth font-serif'} leading-relaxed whitespace-pre-line`}>
+                                            "{verse.englishTranslation?.trim() || verse.translationEn?.trim() || steekData.englishTranslation}"
                                           </p>
                                         </div>
                                       </div>
@@ -4339,29 +4440,76 @@ export const NitnemGutkaReader: React.FC<NitnemGutkaReaderProps> = ({
         <div className="h-16" />
       </div>
 
-      {/* 🧭 Compact Floating Scroll Navigation Pill (Lower Bottom-Right Corner) */}
+      {/* 🧭 Moveable Floating Scroll Navigation Pill (Drag Anywhere on Screen) */}
       {viewMode === 'reading' && !isPureVaniMode && (
         <aside
+          ref={scrollBarRef}
           aria-label="Scroll Navigation"
-          className="fixed right-2 sm:right-4 bottom-16 sm:bottom-[4.25rem] z-30 flex flex-col items-center gap-1 p-0.5 sm:p-1 rounded-full bg-[#8B2500]/90 dark:bg-stone-900/90 text-white backdrop-blur-md border border-white/25 shadow-lg select-none"
+          onPointerDown={handleScrollBarPointerDown}
+          style={
+            scrollBarPos
+              ? {
+                  left: `${scrollBarPos.x}px`,
+                  top: `${scrollBarPos.y}px`,
+                  right: 'auto',
+                  bottom: 'auto',
+                }
+              : undefined
+          }
+          className={`fixed z-30 flex flex-col items-center gap-1 p-1 rounded-full bg-[#8B2500]/92 dark:bg-stone-900/92 text-white backdrop-blur-md border border-amber-300/40 shadow-xl select-none touch-none transition-shadow ${
+            scrollBarPos ? '' : 'right-2 sm:right-4 bottom-16 sm:bottom-[4.25rem]'
+          } ${isDraggingScrollBar ? 'scale-105 ring-2 ring-amber-300/80 cursor-grabbing shadow-2xl' : 'cursor-grab'}`}
+          title={
+            language === 'pb'
+              ? 'ਖਿੱਚ ਕੇ ਸਕ੍ਰੀਨ ਉੱਤੇ ਕਿਤੇ ਵੀ ਰੱਖੋ'
+              : language === 'en'
+              ? 'Drag to move anywhere'
+              : 'खींचकर स्क्रीन पर कहीं भी रखें'
+          }
         >
+          <div
+            className="w-8 h-4 rounded-full flex items-center justify-center text-amber-200/90 hover:text-white cursor-grab active:cursor-grabbing"
+            aria-hidden="true"
+            onDoubleClick={() => {
+              setScrollBarPos(null);
+              try {
+                localStorage.removeItem(SCROLL_BAR_POS_KEY);
+              } catch {}
+            }}
+          >
+            <GripHorizontal size={13} />
+          </div>
           <button
             type="button"
-            onClick={scrollToContainerTop}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 active:scale-95 transition cursor-pointer"
+            onClick={(e) => {
+              if (scrollBarDidDragRef.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+              }
+              scrollToContainerTop();
+            }}
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 active:scale-95 transition cursor-pointer"
             title={language === 'pb' ? 'ਸਭ ਤੋਂ ਉੱਪਰ ਜਾਓ (Top)' : language === 'en' ? 'Scroll to Top' : 'सबसे ऊपर जाएं (Top)'}
             aria-label="Scroll to Top"
           >
-            <ChevronsUp size={14} />
+            <ChevronsUp size={15} />
           </button>
           <button
             type="button"
-            onClick={scrollToContainerBottom}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 active:scale-95 transition cursor-pointer"
+            onClick={(e) => {
+              if (scrollBarDidDragRef.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+              }
+              scrollToContainerBottom();
+            }}
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 active:scale-95 transition cursor-pointer"
             title={language === 'pb' ? 'ਸਭ ਤੋਂ ਹੇਠਾਂ ਜਾਓ (Bottom)' : language === 'en' ? 'Scroll to Bottom' : 'सबसे नीचे जाएं (Bottom)'}
             aria-label="Scroll to Bottom"
           >
-            <ChevronsDown size={14} />
+            <ChevronsDown size={15} />
           </button>
         </aside>
       )}

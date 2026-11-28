@@ -105,7 +105,7 @@ export const FALLBACK_HUKAMNAMA_VERSE: SggsKabirVerse = {
     },
   ],
   bhavarth: {
-    pb: 'ਹੇ ਕਬੀਰ! ਮੇਰੀ ਅਸਲ ਮਾਲਾ ਮੇਰੀ ਜੀਭ ਉੱਤੇ ਵਸਦਾ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਹੈ। ਆਦਿ ਜੁਗਾਦਿ ਤੋਂ ਸਾਰੇ ਭਗਤਾਂ ਨੂੰ ਇਸੇ ਨਾਮ ਤੋਂ ਪਰਮ ਸੁੱਖ ਤੇ ਵਿਸ਼ਰਾਮ ਮਿਲਦਾ ਹੈ।',
+    pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ- ਹੇ ਕਬੀਰ! ਮੇਰੀ ਅਸਲ ਮਾਲਾ ਮੇਰੀ ਜੀਭ ਉੱਤੇ ਵਸਦਾ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਹੈ। ਆਦਿ ਜੁਗਾਦਿ ਤੋਂ ਸਾਰੇ ਭਗਤਾਂ ਨੂੰ ਇਸੇ ਨਾਮ ਤੋਂ ਪਰਮ ਸੁੱਖ ਤੇ ਵਿਸ਼ਰਾਮ ਮਿਲਦਾ ਹੈ।',
     hi: 'सतगुरु कबीर साहेब फरमाते हैं कि मेरी सच्ची सुमिरनी मेरी जिह्वा पर निरंतर प्रभु नाम का जप है। आदि-अनादि से समस्त भक्तों को इसी सत्यनाम से परम सुख और शांति प्राप्त होती है।',
     en: 'Satguru Kabir Saheb proclaims: My true rosary is the Name of the Lord dwelling upon my tongue. From the beginning of time, all devotees find eternal peace and rest therein.',
   },

@@ -205,7 +205,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       detail: {
         hi: 'सत्ययुग में सतगुरु कबीर साहेब "सत्सुकृत" नाम से अवतरित हुए। राजा सुकृत को अमर ज्ञान दिया और बताया कि संसार की उत्पत्ति से पूर्व भी केवल एक सत्यपुरुष और सत्यनाम ही अविनाशी था।',
-        pb: 'ਸਤਿਯੁਗ ਵਿੱਚ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ "ਸਤਸੁਕ੍ਰਿਤ" ਨਾਮ ਨਾਲ ਪ੍ਰਗਟ ਹੋਏ। ਰਾਜਾ ਸੁਕ੍ਰਿਤ ਨੂੰ ਅਮਰ ਗਿਆਨ ਦਿੱਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦੀ ਸ਼ਾਸ਼ਵਤ ਮਹਿਮਾ ਦਰਸਾਈ।',
+        pb: 'ਸਤਿਯੁਗ ਵਿੱਚ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ "ਸਤਸੁਕ੍ਰਿਤ" ਨਾਮ ਨਾਲ ਪ੍ਰਗਟ ਹੋਏ। ਰਾਜਾ ਸੁਕ੍ਰਿਤ ਨੂੰ ਅਮਰ ਗਿਆਨ ਦਿੱਤਾ ਅਤੇ ਸਤਯਨਾਮ ਦੀ ਸ਼ਾਸ਼ਵਤ ਮਹਿਮਾ ਦਰਸਾਈ।',
         en: 'In Satyuga, Satguru Kabir manifested as "Satsukrit", awakening King Sukrit to the immortal truth that before cosmos emerged, the One Satyanaam alone is eternal.',
       },
       badge: { hi: 'युग १', pb: 'ਯੁਗ ੧', en: 'Yuga 1' },
@@ -277,7 +277,7 @@ export const MoolSiddhantModule: React.FC<MoolSiddhantModuleProps> = ({
       },
       detail: {
         hi: 'कलियुग में काशी के लहरतारा सरोवर में नीर-क्षीर कमल पर साक्षात "सतगुरु कबीर साहेब" प्रकट हुए। धनी धर्मदास जी को वंश बयालीस का वरदान और संसार को सत्यनाम से मोक्ष का अटल मार्ग दिया।',
-        pb: 'ਕਲਿਯੁਗ ਵਿੱਚ ਕਾਸ਼ੀ ਦੇ ਲਹਰਤਾਰਾ ਸਰੋਵਰ \'ਤੇ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਗਟ ਹੋਏ। ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਵੰਸ਼ ਬਤਾਲੀ ਦਾ ਵਰਦਾਨ ਅਤੇ ਸਤਯਨਾਮ ਰਾਹੀਂ ਮੁਕਤੀ ਦਾ ਮਾਰਗ ਦਿੱਤਾ।',
+        pb: 'ਕਲਿਯੁਗ ਵਿੱਚ ਕਾਸ਼ੀ ਦੇ ਲਹਰਤਾਰਾ ਸਰੋਵਰ \'ਤੇ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪ੍ਰਗਟ ਹੋਏ। ਧਨੀ ਧਰਮਦਾਸ ਜੀ ਨੂੰ ਵੰਸ਼ ਬਤਾਲੀ ਦਾ ਵਰਦਾਨ ਅਤੇ ਸਤਯਨਾਮ ਰਾਹੀਂ ਮੁਕਤੀ ਦਾ ਮਾਰਗ ਦਿੱਤਾ।',
         en: 'In Kaliyuga, manifested directly as "Satguru Kabir Saheb" upon the Lahartara lake in Kashi, gifting the Vansh Bayalis promise to Dhani Dharmadas and eternal salvation to humanity.',
       },
       badge: { hi: 'युग ४', pb: 'ਯੁਗ ੪', en: 'Yuga 4' },

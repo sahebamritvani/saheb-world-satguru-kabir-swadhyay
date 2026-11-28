@@ -102,7 +102,7 @@ export class OfflineScriptureCacheService {
         isCached: true,
         totalVersesCached: 2500,
         nitnemSectionsCount: 0,
-        granthsCount: 5,
+        granthsCount: 6,
         sakhisCount: 1009,
         cachedChaptersCount: this.lruEntries.length,
         timestamp: Date.now(),
@@ -260,6 +260,7 @@ export class OfflineScriptureCacheService {
           const parsed = JSON.parse(saved);
           return {
             ...parsed,
+            granthsCount: Math.max(6, parsed.granthsCount || 6),
             cachedChaptersCount: this.lruEntries.length,
             storageUsageEstimateKb: Math.max(1, Math.round(cachedBytes / 1024)),
           };
@@ -271,7 +272,7 @@ export class OfflineScriptureCacheService {
       isCached: true,
       totalVersesCached: 2500,
       nitnemSectionsCount: 0,
-      granthsCount: 5,
+      granthsCount: 6,
       sakhisCount: 1009,
       cachedChaptersCount: this.lruEntries.length,
       timestamp: Date.now(),

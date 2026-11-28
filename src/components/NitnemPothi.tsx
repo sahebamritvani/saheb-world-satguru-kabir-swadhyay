@@ -91,7 +91,7 @@ function sectionToAngs(section: NitnemSection): NitnemAngData[] {
     bhavarth: {
       hi: v.bhavarth?.hi || '',
       pb: v.bhavarth?.pb || v.bhavarth?.hi || '',
-      en: v.bhavarth?.en || v.bhavarth?.hi || '',
+      en: v.englishTranslation || v.translationEn || v.bhavarth?.en || v.bhavarth?.hi || '',
     },
   }));
 }

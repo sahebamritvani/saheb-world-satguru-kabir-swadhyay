@@ -144,9 +144,25 @@ export function getVerseSteekCommentary(
       `Practical Sadhana: Do not merely chant the words; imbibe their essence into your consciousness and maintain remembrance (Surati) throughout daily tasks.`
   };
 
-  // English translation derivation (Strictly bound to admin englishTranslation / translationEn or English bhavarth/lines; never falls back to Hindi)
-  const englishTranslation = verse.englishTranslation || (verse as any).translationEn || verse.bhavarth?.en || 
-    (verse.lines.en ? verse.lines.en.join(' ') : 'Sacred divine verse of Satguru Kabir Saheb revealing the path of Truth and inner liberation.');
+  const bhavarthEn = verse.bhavarth?.en?.trim() || '';
+  const bhavarthHi = verse.bhavarth?.hi?.trim() || '';
+  const hasDistinctEnglishBhavarth =
+    Boolean(bhavarthEn) &&
+    (bhavarthEn !== bhavarthHi || !/[\u0900-\u097F\u0A00-\u0A7F]/.test(bhavarthEn));
+
+  const englishLinesText = verse.lines.en ? verse.lines.en.join(' ').trim() : '';
+  const hindiLinesText = verse.lines.hi ? verse.lines.hi.join(' ').trim() : '';
+  const hasDistinctEnglishLines =
+    Boolean(englishLinesText) &&
+    (englishLinesText !== hindiLinesText || !/[\u0900-\u097F\u0A00-\u0A7F]/.test(englishLinesText));
+
+  // English translation derivation (Strictly bound to admin englishTranslation / translationEn or distinct English bhavarth/lines; never falls back to raw Hindi)
+  const englishTranslation =
+    verse.englishTranslation?.trim() ||
+    verse.translationEn?.trim() ||
+    (hasDistinctEnglishBhavarth ? bhavarthEn : '') ||
+    (hasDistinctEnglishLines ? englishLinesText : '') ||
+    'Sacred divine verse of Satguru Kabir Saheb revealing the path of Truth and inner liberation.';
 
   return {
     contextAndSatire: defaultContextAndSatire,

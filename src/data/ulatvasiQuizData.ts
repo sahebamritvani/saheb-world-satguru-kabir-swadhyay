@@ -259,18 +259,38 @@ export async function loadUlatvasiBatch(batchIndex: number): Promise<UlatvasiQue
   }
   const loader = BATCH_LOADERS[batchIndex];
   if (!loader) return [];
-  const data = await loader();
-  loadedBatchesMap.set(batchIndex, data);
-  return data;
+
+  const cacheKey = `ulatvasi:batch-${batchIndex}`;
+  try {
+    const data = await loader();
+    loadedBatchesMap.set(batchIndex, data);
+    offlineScriptureCache
+      .cacheOpenedChapter(cacheKey, data, `Ulatvasi Batch ${batchIndex}`)
+      .catch(() => {});
+    return data;
+  } catch (err) {
+    console.warn(`Offline fallback triggered for Ulatvasi batch ${batchIndex}:`, err);
+    const cached = await offlineScriptureCache.getCachedChapter<UlatvasiQuestion[]>(cacheKey);
+    if (Array.isArray(cached) && cached.length > 0) {
+      loadedBatchesMap.set(batchIndex, cached);
+      return cached;
+    }
+    return [];
+  }
 }
 
 export async function loadAllUlatvasiDatabase(): Promise<UlatvasiQuestion[]> {
   if (!allUlatvasiPromise) {
     allUlatvasiPromise = (async () => {
-      const batches = await Promise.all(BATCH_LOADERS.map((_, i) => loadUlatvasiBatch(i)));
-      const full = [...ULATVASI_CORE_QUESTIONS, ...batches.flat()];
+      const results = await Promise.allSettled(
+        BATCH_LOADERS.map((_, i) => loadUlatvasiBatch(i))
+      );
+      const batchLists = results.map((res) =>
+        res.status === 'fulfilled' ? res.value : []
+      );
+      const full = [...ULATVASI_CORE_QUESTIONS, ...batchLists.flat()];
       offlineScriptureCache
-        .cacheOpenedChapter('ulatvasi:core-batch-0', batches[0] || [], 'Ulatvasi Initial Batch')
+        .cacheOpenedChapter('ulatvasi:core-batch-0', batchLists[0] || [], 'Ulatvasi Initial Batch')
         .catch(() => {});
       return full;
     })();

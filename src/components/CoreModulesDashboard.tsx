@@ -89,14 +89,14 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
         en: 'Granth Library Vaults',
       },
       subtitle: {
-        hi: 'कबीर सागर, बीजक, उलटबांसी, शब्दावली एवं ग्रंथावली',
-        pb: 'ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਉਲਟਬਾਂਸੀ, ਸ਼ਬਦਾਵਲੀ ਤੇ ਗ੍ਰੰਥਾਵਲੀ',
-        en: 'Kabir Sagar, Beejak, Ulatvasi, Shabdawali & Granthavali',
+        hi: 'कबीर सागर, बीजक, उलटबांसी, शब्दावली, ग्रंथावली एवं साखी संग्रह',
+        pb: 'ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਉਲਟਬਾਂਸੀ, ਸ਼ਬਦਾਵਲੀ, ਗ੍ਰੰਥਾਵਲੀ ਤੇ ਸਾਖੀ ਸੰਗ੍ਰਹਿ',
+        en: 'Kabir Sagar, Beejak, Ulatvasi, Shabdawali, Granthavali & Sakhi Sangrah',
       },
       badge: {
-        hi: '५ मुख्य ग्रन्थ',
-        pb: '੫ ਮੁੱਖ ਗ੍ਰੰਥ',
-        en: '5 Holy Scriptures',
+        hi: '६ मुख्य ग्रन्थ',
+        pb: '੬ ਮੁੱਖ ਗ੍ਰੰਥ',
+        en: '6 Holy Scriptures',
       },
       gradient: 'from-amber-600 to-orange-700',
       activeColor: '#D97706',
@@ -169,7 +169,7 @@ export const CoreModulesDashboard: React.FC<CoreModulesDashboardProps> = ({
       icon: MapPin,
       title: {
         hi: 'सतगुरु स्थान व पावन धाम',
-        pb: 'ਸਤਗੁਰੂ ਸਥਾਨ ਤੇ ਪਾਵਨ ਧਾਮ',
+        pb: 'ਸਤਿਗੁਰੂ ਸਥਾਨ ਤੇ ਪਾਵਨ ਧਾਮ',
         en: 'Sacred Ashrams & Locations',
       },
       subtitle: {

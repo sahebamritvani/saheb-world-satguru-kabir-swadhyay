@@ -3,6 +3,10 @@ import { Sakhi } from '../../types';
 import { enrichVerseWith5Steps } from '../../utils/verseEnricher';
 import { devanagariToGurmukhi } from '../../services/transliteration';
 import { offlineScriptureCache } from '../../services/offlineScriptureCache';
+import { KABIR_SAGAR_GRANTH } from './kabirSagar';
+import { BIJAK_GRANTH } from './bijakGranth';
+import { SHABDAWALI_GRANTH } from './shabdawali';
+import { GRANTHAVALI_GRANTH } from './granthavaliGranth';
 import {
   ADMIN_SLOTS_UPDATED_EVENT,
   getInjectedGranthChapters,
@@ -122,7 +126,7 @@ export const SAKHI_SANGRAH_READER_MASTER_GRANTH_STUB: MasterGranth = {
   slug: 'sakhi-sangrah',
   title: {
     hi: 'सतगुरु कबीर साखी संग्रह',
-    pb: 'ਸਤਗੁਰੂ ਕਬੀਰ ਸਾਖੀ ਸੰਗ੍ਰਹਿ',
+    pb: 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਖੀ ਸੰਗ੍ਰਹਿ',
     en: 'Satguru Kabir Sakhi Sangrah',
   },
   shortTitle: {
@@ -279,20 +283,20 @@ export const MASTER_GRANTH_CATALOG: MasterGranth[] = [
     },
     shortTitle: { hi: 'कबीर ग्रंथावली', pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ', en: 'Kabir Granthavali' },
     subtitle: {
-      hi: 'साखी, पद एवं रमैनी प्रकरण (स्लॉट #4)',
-      pb: 'ਸਾਖੀ, ਪਦ ਤੇ ਰਮੈਣੀ ਪ੍ਰਕਰਣ (ਸਲੌਟ #4)',
-      en: 'Sakhis, Padas & Ramaini Sections (Slot #4)',
+      hi: 'साखी, पद एवं रमैनी प्रकरण — ५ पावन अंग संग्रह (स्लॉट #4)',
+      pb: 'ਸਾਖੀ, ਪਦ ਤੇ ਰਮੈਣੀ ਪ੍ਰਕਰਣ — ੫ ਪਾਵਨ ਅੰਗ ਸੰਗ੍ਰਹਿ (ਸਲੌਟ #4)',
+      en: 'Sakhis, Padas & Ramaini — 5 Sacred Chapters (Slot #4)',
     },
     category: 'mool-granth',
     iconName: 'Scroll',
     bannerColor: 'from-amber-700 to-stone-800',
     accentColor: 'text-amber-700',
     totalChapters: 0,
-    estimatedHours: { hi: 'स्लॉट आधारित', pb: 'ਸਲੌਟ ਆਧਾਰਿਤ', en: 'Slot-Ready' },
+    estimatedHours: { hi: '१५ घण्टे (५ अंग)', pb: '੧੫ ਘੰਟੇ (੫ ਅੰਗ)', en: '15 Hours (5 Angs)' },
     description: {
-      hi: 'कबीर ग्रंथावली हेतु आरक्षित ग्रन्थ स्लॉट — प्रशासक डेटा इंजेक्टर द्वारा स्थानीय JSON लोड करें।',
-      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ ਲਈ ਰਾਖਵਾਂ ਗ੍ਰੰਥ ਸਲੌਟ — ਐਡਮਿਨ ਇੰਜੈਕਟਰ ਰਾਹੀਂ ਡੇਟਾ ਲੋਡ ਕਰੋ।',
-      en: 'Dedicated Granth vault for Kabir Granthavali — load local JSON via Admin Data Injector.',
+      hi: 'कबीर ग्रंथावली के ५ पावन अंग (गुरुदेव, सुमिरन, सांच, प्रेम-दया एवं बचन-विवेक) एवं प्रशासक डेटा इंजेक्टर स्लॉट #4।',
+      pb: 'ਕਬੀਰ ਗ੍ਰੰਥਾਵਲੀ ਦੇ ੫ ਪਾਵਨ ਅੰਗ ਅਤੇ ਐਡਮਿਨ ਡੇਟਾ ਇੰਜੈਕਟਰ ਸਲੌਟ #4।',
+      en: '5 sacred chapters of Kabir Granthavali plus Admin Data Injector Slot #4 support.',
     },
     chapters: [],
   },
@@ -326,44 +330,49 @@ async function loadRawAngVerses(angId: string): Promise<GranthVerse[]> {
   }
 
   let raw: GranthVerse[] = [];
-  switch (angId) {
-    case 'ang-1': raw = (await import('./sakhiSangrahAng1')).SAKHI_SANGRAH_ANG_1_VERSES; break;
-    case 'ang-2': raw = (await import('./sakhiSangrahAng2')).SAKHI_SANGRAH_ANG_2_VERSES; break;
-    case 'ang-3': raw = (await import('./sakhiSangrahAng3')).SAKHI_SANGRAH_ANG_3_VERSES; break;
-    case 'ang-4': raw = (await import('./sakhiSangrahAng4')).SAKHI_SANGRAH_ANG_4_VERSES; break;
-    case 'ang-5': raw = (await import('./sakhiSangrahAng5')).SAKHI_SANGRAH_ANG_5_VERSES; break;
-    case 'ang-6': raw = (await import('./sakhiSangrahAng6')).SAKHI_SANGRAH_ANG_6_VERSES; break;
-    case 'ang-7': raw = (await import('./sakhiSangrahAng7')).SAKHI_SANGRAH_ANG_7_VERSES; break;
-    case 'ang-8': raw = (await import('./sakhiSangrahAng8')).SAKHI_SANGRAH_ANG_8_VERSES; break;
-    case 'ang-9': raw = (await import('./sakhiSangrahAng9')).SAKHI_SANGRAH_ANG_9_VERSES; break;
-    case 'ang-10': raw = (await import('./sakhiSangrahAng10')).SAKHI_SANGRAH_ANG_10_VERSES; break;
-    case 'ang-11': raw = (await import('./sakhiSangrahAng11')).SAKHI_SANGRAH_ANG_11_VERSES; break;
-    case 'ang-12': raw = (await import('./sakhiSangrahAng12')).SAKHI_SANGRAH_ANG_12_VERSES; break;
-    case 'ang-13': raw = (await import('./sakhiSangrahAng13')).SAKHI_SANGRAH_ANG_13_VERSES; break;
-    case 'ang-14': raw = (await import('./sakhiSangrahAng14')).SAKHI_SANGRAH_ANG_14_VERSES; break;
-    case 'ang-15': raw = (await import('./sakhiSangrahAng15')).SAKHI_SANGRAH_ANG_15_VERSES; break;
-    case 'ang-16': raw = (await import('../sakhisUpdeshKoAng')).SAKHIS_UPDESH_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-17': raw = (await import('../sakhisShabdKoAng')).SAKHIS_SHABD_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-18': raw = (await import('../sakhisJeevatMritakKoAng')).SAKHIS_JEEVAT_MRITAK_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-19': raw = (await import('../sakhisKaalKoAng')).SAKHIS_KAAL_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-20': raw = (await import('../sakhisSwaarathKoAng')).SAKHIS_SWAARATH_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-21': raw = (await import('../sakhisParmaarthKoAng')).SAKHIS_PARMAARTH_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-22': raw = (await import('../sakhisManKoAng')).SAKHIS_MAN_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-23': raw = (await import('../sakhisMayaKoAng')).SAKHIS_MAYA_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-24': raw = (await import('../sakhisMohKoAng')).SAKHIS_MOH_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-25': raw = (await import('../sakhisKaamKoAng')).SAKHIS_KAAM_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-26': raw = (await import('../sakhisKrodhKoAng')).SAKHIS_KRODH_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-27': raw = (await import('../sakhisLobhKoAng')).SAKHIS_LOBH_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-28': raw = (await import('../sakhisMadKoAng')).SAKHIS_MAD_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-29': raw = (await import('../sakhisMaanKoAng')).SAKHIS_MAAN_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-30': raw = (await import('../sakhisNindaKoAng')).SAKHIS_NINDA_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-31': raw = (await import('../sakhisKathaniKoAng')).SAKHIS_KATHANI_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-32': raw = (await import('../sakhisKaraniKoAng')).SAKHIS_KARANI_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-33': raw = (await import('../sakhisKramKoAng')).SAKHIS_KRAM_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-34': raw = (await import('../sakhisBhramVidhvansKoAng')).SAKHIS_BHRAM_VIDHVANS_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-35': raw = (await import('../sakhisDayaKoAng')).SAKHIS_DAYA_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-36': raw = (await import('../sakhisDeentaKoAng')).SAKHIS_DEENTA_KO_ANG.map(sakhiToGranthVerse); break;
-    case 'ang-37': raw = (await import('../sakhisSaanchKoAng')).SAKHIS_SAANCH_KO_ANG.map(sakhiToGranthVerse); break;
+  try {
+    switch (angId) {
+      case 'ang-1': raw = (await import('./sakhiSangrahAng1')).SAKHI_SANGRAH_ANG_1_VERSES; break;
+      case 'ang-2': raw = (await import('./sakhiSangrahAng2')).SAKHI_SANGRAH_ANG_2_VERSES; break;
+      case 'ang-3': raw = (await import('./sakhiSangrahAng3')).SAKHI_SANGRAH_ANG_3_VERSES; break;
+      case 'ang-4': raw = (await import('./sakhiSangrahAng4')).SAKHI_SANGRAH_ANG_4_VERSES; break;
+      case 'ang-5': raw = (await import('./sakhiSangrahAng5')).SAKHI_SANGRAH_ANG_5_VERSES; break;
+      case 'ang-6': raw = (await import('./sakhiSangrahAng6')).SAKHI_SANGRAH_ANG_6_VERSES; break;
+      case 'ang-7': raw = (await import('./sakhiSangrahAng7')).SAKHI_SANGRAH_ANG_7_VERSES; break;
+      case 'ang-8': raw = (await import('./sakhiSangrahAng8')).SAKHI_SANGRAH_ANG_8_VERSES; break;
+      case 'ang-9': raw = (await import('./sakhiSangrahAng9')).SAKHI_SANGRAH_ANG_9_VERSES; break;
+      case 'ang-10': raw = (await import('./sakhiSangrahAng10')).SAKHI_SANGRAH_ANG_10_VERSES; break;
+      case 'ang-11': raw = (await import('./sakhiSangrahAng11')).SAKHI_SANGRAH_ANG_11_VERSES; break;
+      case 'ang-12': raw = (await import('./sakhiSangrahAng12')).SAKHI_SANGRAH_ANG_12_VERSES; break;
+      case 'ang-13': raw = (await import('./sakhiSangrahAng13')).SAKHI_SANGRAH_ANG_13_VERSES; break;
+      case 'ang-14': raw = (await import('./sakhiSangrahAng14')).SAKHI_SANGRAH_ANG_14_VERSES; break;
+      case 'ang-15': raw = (await import('./sakhiSangrahAng15')).SAKHI_SANGRAH_ANG_15_VERSES; break;
+      case 'ang-16': raw = (await import('../sakhisUpdeshKoAng')).SAKHIS_UPDESH_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-17': raw = (await import('../sakhisShabdKoAng')).SAKHIS_SHABD_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-18': raw = (await import('../sakhisJeevatMritakKoAng')).SAKHIS_JEEVAT_MRITAK_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-19': raw = (await import('../sakhisKaalKoAng')).SAKHIS_KAAL_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-20': raw = (await import('../sakhisSwaarathKoAng')).SAKHIS_SWAARATH_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-21': raw = (await import('../sakhisParmaarthKoAng')).SAKHIS_PARMAARTH_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-22': raw = (await import('../sakhisManKoAng')).SAKHIS_MAN_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-23': raw = (await import('../sakhisMayaKoAng')).SAKHIS_MAYA_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-24': raw = (await import('../sakhisMohKoAng')).SAKHIS_MOH_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-25': raw = (await import('../sakhisKaamKoAng')).SAKHIS_KAAM_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-26': raw = (await import('../sakhisKrodhKoAng')).SAKHIS_KRODH_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-27': raw = (await import('../sakhisLobhKoAng')).SAKHIS_LOBH_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-28': raw = (await import('../sakhisMadKoAng')).SAKHIS_MAD_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-29': raw = (await import('../sakhisMaanKoAng')).SAKHIS_MAAN_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-30': raw = (await import('../sakhisNindaKoAng')).SAKHIS_NINDA_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-31': raw = (await import('../sakhisKathaniKoAng')).SAKHIS_KATHANI_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-32': raw = (await import('../sakhisKaraniKoAng')).SAKHIS_KARANI_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-33': raw = (await import('../sakhisKramKoAng')).SAKHIS_KRAM_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-34': raw = (await import('../sakhisBhramVidhvansKoAng')).SAKHIS_BHRAM_VIDHVANS_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-35': raw = (await import('../sakhisDayaKoAng')).SAKHIS_DAYA_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-36': raw = (await import('../sakhisDeentaKoAng')).SAKHIS_DEENTA_KO_ANG.map(sakhiToGranthVerse); break;
+      case 'ang-37': raw = (await import('../sakhisSaanchKoAng')).SAKHIS_SAANCH_KO_ANG.map(sakhiToGranthVerse); break;
+    }
+  } catch (err) {
+    console.warn(`Offline fallback triggered for ${angId}:`, err);
+    return [];
   }
 
   const angMeta = SAKHI_SANGRAH_ANG_METADATA.find((a) => a.id === angId);
@@ -379,7 +388,7 @@ async function loadRawAngVerses(angId: string): Promise<GranthVerse[]> {
 }
 
 /**
- * Dynamically imports a MasterGranth bundle only when the user opens that Granth.
+ * Loads a MasterGranth bundle reliably (statically bundled for core scriptures + offline cache fallback).
  */
 export async function loadMasterGranth(slug: string): Promise<MasterGranth> {
   if (granthMemoryCache.has(slug)) {
@@ -389,21 +398,35 @@ export async function loadMasterGranth(slug: string): Promise<MasterGranth> {
   let granth: MasterGranth;
   switch (slug) {
     case 'kabir-sagar':
-      granth = (await import('./kabirSagar')).KABIR_SAGAR_GRANTH;
+      granth = KABIR_SAGAR_GRANTH;
       break;
     case 'bijak':
-      granth = (await import('./bijakGranth')).BIJAK_GRANTH;
+      granth = BIJAK_GRANTH;
       break;
-    case 'ulatbaasi':
-      granth = (await import('./ulatbaasi')).ULATBAASI_GRANTH;
+    case 'ulatbaasi': {
+      const cachedUlat = await offlineScriptureCache.getCachedChapter<MasterGranth>('granth:ulatbaasi:full');
+      if (cachedUlat && cachedUlat.chapters && cachedUlat.chapters.length > 0) {
+        granth = cachedUlat;
+      } else {
+        try {
+          granth = (await import('./ulatbaasi')).ULATBAASI_GRANTH;
+          offlineScriptureCache
+            .cacheOpenedChapter('granth:ulatbaasi:full', granth, granth.title.hi)
+            .catch(() => {});
+        } catch (err) {
+          console.warn('Offline fallback triggered for ulatbaasi granth:', err);
+          granth =
+            MASTER_GRANTH_CATALOG.find((g) => g.slug === 'ulatbaasi') ||
+            GRANTHAVALI_GRANTH;
+        }
+      }
       break;
+    }
     case 'shabdawali':
-      granth = (await import('./shabdawali')).SHABDAWALI_GRANTH;
+      granth = SHABDAWALI_GRANTH;
       break;
     case 'granthavali':
-      granth =
-        MASTER_GRANTH_CATALOG.find((g) => g.slug === 'granthavali') ||
-        SAKHI_SANGRAH_READER_MASTER_GRANTH_STUB;
+      granth = GRANTHAVALI_GRANTH;
       break;
     case 'sakhi-sangrah':
     default: {

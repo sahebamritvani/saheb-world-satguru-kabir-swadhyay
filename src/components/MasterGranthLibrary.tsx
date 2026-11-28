@@ -1077,7 +1077,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 ? '੬ ਮੁੱਖ ਪ੍ਰਮਾਣਿਕ ਧਰਮ ਗ੍ਰੰਥ, ਸੰਧਿਆ ਆਰਤੀ, ਨਿਤਨੇਮ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ ਸਮੇਤ ਸਮੁੱਚਾ ਅਧਿਆਤਮਿਕ ਸੰਗ੍ਰਹਿ।'
                 : language === 'en'
                 ? '6 Authentic Holy Scriptures, Sandhya Aarti, Nitnem, Satguru Kabir Saheb Biography & Four Yugas Leelas, and all sacred features.'
-                : '६ मुख्य प्रामाणिक धर्मग्रन्थ, संध्या आरती, नित्यनेम, सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं सहित सम्पूर्ण आध्यात्मिक साधना संग्रह।'}
+                : '६ मुख्य प्रामाणिक धर्मग्रन्थ, संध्या आरती, नितनेम, सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं सहित सम्पूर्ण आध्यात्मिक साधना संग्रह।'}
             </p>
           </div>
           <div className="flex items-center gap-2 shrink-0">
@@ -1099,22 +1099,22 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             <div className="space-y-1">
               <h2 className="text-xl sm:text-2xl font-black font-serif flex items-center gap-2" style={{ color: theme.sacredMaroon }}>
                 <Library className="w-6 h-6 text-amber-600 shrink-0" />
-                <span>{language === 'pb' ? 'ਪਾਵਨ ਗ੍ਰੰਥਾਵਲੀ ਕੋਸ਼ (ਮੁੱਖ ੫ ਗ੍ਰੰਥ)' : language === 'en' ? 'Spacious Granth Library Vaults (5 Holy Scriptures)' : 'पावन समग्र ग्रन्थालय (५ मुख्य धर्मग्रंथ)'}</span>
+                <span>{language === 'pb' ? 'ਪਾਵਨ ਗ੍ਰੰਥਾਵਲੀ ਕੋਸ਼ (ਮੁੱਖ ੬ ਗ੍ਰੰਥ)' : language === 'en' ? 'Spacious Granth Library Vaults (6 Holy Scriptures)' : 'पावन समग्र ग्रन्थालय (६ मुख्य धर्मग्रंथ)'}</span>
               </h2>
               <p className="text-xs font-serif opacity-80">
                 {language === 'pb'
-                  ? 'ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਉਲਟਬਾਂਸੀ, ਸ਼ਬਦਾਵਲੀ ਤੇ ਗ੍ਰੰਥਾਵਲੀ ਦਾ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ।'
+                  ? 'ਕਬੀਰ ਸਾਗਰ, ਬੀਜਕ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਉਲਟਬਾਂਸੀ, ਸ਼ਬਦਾਵਲੀ, ਗ੍ਰੰਥਾਵਲੀ ਤੇ ਸਾਖੀ ਸੰਗ੍ਰਹਿ ਦਾ ਪ੍ਰਮਾਣਿਕ ਸੰਗ੍ਰਹਿ।'
                   : language === 'en'
-                  ? 'Authentic digital vaults for Kabir Sagar, Beejak, Satguru Kabir Ulatbaasi, Shabdawali, and Granthavali.'
-                  : 'कबीर सागर, बीजक, सतगुरु कबीर उलटबांसी, शब्दावली एवं ग्रंथावली का प्रामाणिक संकलन।'}
+                  ? 'Authentic digital vaults for Kabir Sagar, Beejak, Satguru Kabir Ulatbaasi, Shabdawali, Granthavali, and Sakhi Sangrah.'
+                  : 'कबीर सागर, बीजक, सतगुरु कबीर उलटबांसी, शब्दावली, ग्रंथावली एवं साखी संग्रह का प्रामाणिक संकलन।'}
               </p>
             </div>
             <div className="text-xs font-bold font-mono px-3 py-1 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 shrink-0 self-start sm:self-auto">
               {language === 'pb'
-                ? `੫ ਮੁੱਖ ਗ੍ਰੰਥ • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ ਅੰਗ/ਅਧਿਆਇ`
+                ? `੬ ਮੁੱਖ ਗ੍ਰੰਥ • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ ਅੰਗ/ਅਧਿਆਇ`
                 : language === 'en'
-                ? `5 Main Granths • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ Angs/Chapters`
-                : `५ मुख्य ग्रन्थ • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ अंग/अध्याय`}
+                ? `6 Main Granths • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ Angs/Chapters`
+                : `६ मुख्य ग्रन्थ • ${MASTER_GRANTH_CATALOG.reduce((acc, g) => acc + (g.chapters.length || g.totalChapters || 0), 0)}+ अंग/अध्याय`}
             </div>
           </div>
 
@@ -1134,9 +1134,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                   case 'shabdawali':
                     return { text: language === 'pb' ? 'ਰਾਗ ਤੇ ਸ਼ਬਦ' : language === 'en' ? 'Ragas & Chants' : 'राग व पद वाणी', color: 'bg-rose-500/20 text-rose-800 border-rose-500/40' };
                   case 'granthavali':
-                    return { text: language === 'pb' ? '੩੭ ਅੰਗ ਸੰਗ੍ਰਹਿ' : language === 'en' ? '37 Wisdom Angs' : '३७ अंग संग्रह', color: 'bg-indigo-500/20 text-indigo-800 border-indigo-500/40' };
+                    return { text: language === 'pb' ? 'ਸਾਖੀ ਤੇ ਪਦ ਕੋਸ਼' : language === 'en' ? 'Sakhis & Padas' : 'साखी व पद कोष', color: 'bg-indigo-500/20 text-indigo-800 border-indigo-500/40' };
+                  case 'sakhi-sangrah':
+                    return { text: language === 'pb' ? '੩੭ ਅੰਗ ਸੰਗ੍ਰਹਿ' : language === 'en' ? '37 Wisdom Angs' : '३७ अंग संग्रह', color: 'bg-amber-500/20 text-amber-800 border-amber-500/40' };
                   case 'nitnem-gutka':
-                    return { text: language === 'pb' ? 'ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? 'Daily Liturgy' : 'नित्य नियम पाठ', color: 'bg-orange-500/20 text-orange-800 border-orange-500/40' };
+                    return { text: language === 'pb' ? 'ਨਿਤਨੇਮ ਪਾਠ' : language === 'en' ? 'Daily Liturgy' : 'नितनेम पाठ', color: 'bg-orange-500/20 text-orange-800 border-orange-500/40' };
                   default:
                     return { text: language === 'pb' ? 'ਪਵਿੱਤਰ ਗ੍ਰੰਥ' : language === 'en' ? 'Holy Granth' : 'पवित्र ग्रन्थ', color: 'bg-amber-500/20 text-amber-800 border-amber-500/40' };
                 }
@@ -1346,7 +1348,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between gap-2">
                     <span className="px-2.5 py-0.5 rounded-full text-[0.625rem] sm:text-[0.6875rem] font-black border font-serif bg-amber-500/20 text-amber-800 border-amber-500/40">
-                      {language === 'pb' ? 'ਨਿਤਨੇਮ ਅਰਚਨਾ' : language === 'en' ? 'Daily Liturgy' : 'नित्यनेम अर्चना'}
+                      {language === 'pb' ? 'ਨਿਤਨੇਮ ਅਰਚਨਾ' : language === 'en' ? 'Daily Liturgy' : 'नितनेम अर्चना'}
                     </span>
                     <Flame className="w-5 h-5 text-amber-600 group-hover:scale-110 transition-transform" />
                   </div>
@@ -1360,7 +1362,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     </h4>
                     <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed">
                       {language === 'pb'
-                        ? '੪ ਪਾਵਨ ਆਰਤੀਆਂ (ਜੈ ਜੈ ਸਤ੍ਯ ਕਬੀਰ, ਗ਼ਰੀਬ ਨਿਵਾਜ਼, ਸ਼੍ਰੀ ਗੁਰੂਦੇਵ, ਸਤ੍ਯਨਾਮ ਕੀਜੈ), ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ ਤੇ ਆਰਤੀ ਗਾਨ ਆਡੀਓ।'
+                        ? '੪ ਪਾਵਨ ਆਰਤੀਆਂ (ਜੈ ਜੈ ਸਤਯ ਕਬੀਰ, ਗ਼ਰੀਬ ਨਿਵਾਜ਼, ਸ਼੍ਰੀ ਗੁਰੂਦੇਵ, ਸਤਯਨਾਮ ਕੀਜੈ), ਪ੍ਰਭਾਤ ਮੰਗਲ ਗਾਨ ਤੇ ਆਰਤੀ ਗਾਨ ਆਡੀਓ।'
                         : language === 'en'
                         ? '4 authentic Aartis (Jai Jai Satya Kabir, Gareeb Niwaj, Shri Gurudev, Satyanaam Keejai), Prabhat Gaan & audio recitation.'
                         : '४ पावन आरतियां (जय जय सत्य कबीर, गरीब निवाज, श्री गुरुदेव, सत्यनाम कीजै), प्रभात मंगल गान एवं आरती गान ऑडियो।'}
@@ -1556,7 +1558,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       style={{ color: theme.sacredMaroon }}
                       className="text-base sm:text-lg font-black font-serif tracking-wide group-hover:text-amber-800 transition"
                     >
-                      {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ' : language === 'en' ? 'Satguru Kabir Saheb Biography & 4 Yugas Leelas' : 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं'}
+                      {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਰਿਚਯ ਤੇ ਚਾਰੇ ਜੁੱਗ ਲੀਲਾਵਾਂ' : language === 'en' ? 'Satguru Kabir Saheb Biography & 4 Yugas Leelas' : 'सतगुरु कबीर साहेब परिचय एवं चारों युग लीलाएं'}
                     </h4>
                     <p className="text-[0.6875rem] sm:text-xs opacity-80 mt-1 line-clamp-2 font-serif leading-relaxed">
                       {language === 'pb'
@@ -2443,7 +2445,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                     {language === 'pb' ? 'ਉੱਨਤ ਪਠਨ ਸਾਧਨ' : language === 'en' ? 'Advanced Reading Suite' : 'उन्नत पठन साधन'}
                   </h3>
                   <p className="text-[0.6875rem] opacity-75 font-serif truncate">
-                    {language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : language === 'en' ? 'Satguru Kabir Saheb Granthavali Study Controls' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
+                    {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਗ੍ਰੰਥਾਵਲੀ ਅਧਿਐਨ ਕੰਟਰੋਲ' : language === 'en' ? 'Satguru Kabir Saheb Granthavali Study Controls' : 'सतगुरु कबीर साहेब ग्रन्थावली समग्र स्वाध्याय नियंत्रण'}
                   </p>
                 </div>
               </div>
@@ -2772,7 +2774,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                           {language === 'pb' ? 'ਟੈਕਸਟ ਟੂ ਸਪੀਚ (TTS)' : language === 'en' ? 'Text-to-Speech Audio (TTS)' : 'पाठ वाणी वाचन (TTS)'}
                         </h4>
                         <p className="text-[0.6875rem] opacity-75 font-serif">
-                          {language === 'pb' ? 'ਸਤਗੁਰੂ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਉਚਾਰਨ ਸ਼੍ਰਵਣ ਕਰੋ' : language === 'en' ? 'Listen to clear audio recitation of Satguru Kabir Bani' : 'सतगुरु कबीर साहेब पावन वाणी का वाचन श्रवण करें'}
+                          {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਬਾਣੀ ਦਾ ਸ਼ੁੱਧ ਉਚਾਰਨ ਸ਼੍ਰਵਣ ਕਰੋ' : language === 'en' ? 'Listen to clear audio recitation of Satguru Kabir Bani' : 'सतगुरु कबीर साहेब पावन वाणी का वाचन श्रवण करें'}
                         </p>
                       </div>
                     </div>
@@ -2887,11 +2889,11 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-[#7C1D00] via-[#8B2500] to-[#9A3412] text-white space-y-2 shadow-md">
                   <div className="flex items-center gap-2 font-serif font-black text-sm sm:text-base">
                     <span>🌹</span>
-                    <span>{language === 'pb' ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
+                    <span>{language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਨੇਮ ਗੁਟਕਾ ਸਾਹੇਬ' : language === 'en' ? 'Satguru Kabir Saheb Nitnem Gutka Saheb' : 'सतगुरु कबीर साहेब नितनेम गुटका साहेब'}</span>
                   </div>
                   <p className="text-xs text-amber-100 leading-relaxed font-serif">
                     {language === 'pb'
-                      ? 'ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਯ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ, ਚਾਲੀਸਾ ਤੇ ਸੰਪੂਰਨ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ।'
+                      ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਨਿਤਯ ਪਾਠ, ਅਸਤੁਤੀ, ਆਰਤੀ, ਚਾਲੀਸਾ ਤੇ ਸੰਪੂਰਨ ਗ੍ਰੰਥ ਸੰਗ੍ਰਹਿ।'
                       : language === 'en'
                       ? 'Daily liturgy, Astuti prayers, Aarti, Chalisa & complete Granth collection.'
                       : 'सतगुरु कबीर साहेब नित्य पाठ, अस्तुति, आरती, चालीसा एवं समग्र पावन ग्रन्थ संग्रह।'}
@@ -2952,7 +2954,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
                       fontSize === 'normal' ? 'text-sm sm:text-base' :
                       fontSize === 'large' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'
                     }`}>
-                      {language === 'pb' ? '॥ ਸਤਗੁਰੂ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਅਮਰ ਬਾਣੀ ॥' : language === 'en' ? '|| Satguru Kabir Saheb Sacred Eternal Bani ||' : '॥ सतगुरु कबीर साहेब पावन अमर वाणी ॥'}
+                      {language === 'pb' ? '॥ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਅਮਰ ਬਾਣੀ ॥' : language === 'en' ? '|| Satguru Kabir Saheb Sacred Eternal Bani ||' : '॥ सतगुरु कबीर साहेब पावन अमर वाणी ॥'}
                     </p>
                   </div>
                 </div>
@@ -3431,7 +3433,7 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
 
                     <div className="pt-4 border-t border-amber-500/20 flex items-center justify-between text-xs font-serif">
                       <span className="text-amber-700 font-bold">
-                        {language === 'pb' ? 'ਸਤਗੁਰੂ ਕਬੀਰ ਬਾਣੀ' : language === 'en' ? 'Satguru Kabir Bani' : 'सतगुरु कबीर वाणी'}
+                        {language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਬਾਣੀ' : language === 'en' ? 'Satguru Kabir Bani' : 'सतगुरु कबीर वाणी'}
                       </span>
                       <span className="opacity-70">
                         {language === 'pb' ? 'ਸਤਯਲੋਕ ਪ੍ਰਕਾਸ਼ਨ' : language === 'en' ? 'Satyalok Publication' : 'सत्यलोक प्रकाशन'}
@@ -4068,8 +4070,16 @@ export const MasterGranthLibrary: React.FC<MasterGranthLibraryProps> = ({
             <BookOpen className="w-8 h-8 mx-auto text-amber-600 opacity-60" />
             <p className="text-sm font-serif font-medium">
               {searchQuery.trim()
-                ? 'खोज के अनुसार कोई पद्य नहीं मिला।'
-                : 'कोई पद्य उपलब्ध नहीं है।'}
+                ? (language === 'pb'
+                    ? 'ਖੋਜ ਦੇ ਅਨੁਸਾਰ ਕੋਈ ਪਦ ਨਹੀਂ ਮਿਲਿਆ।'
+                    : language === 'en'
+                    ? 'No verses matched your search.'
+                    : 'खोज के अनुसार कोई पद्य नहीं मिला।')
+                : (language === 'pb'
+                    ? 'ਕੋਈ ਪਦ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।'
+                    : language === 'en'
+                    ? 'No verses available.'
+                    : 'कोई पद्य उपलब्ध नहीं है।')}
             </p>
           </div>
         ) : (
