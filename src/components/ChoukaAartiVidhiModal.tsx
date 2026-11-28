@@ -10,7 +10,7 @@ interface ChoukaAartiVidhiModalProps {
   language: Language;
 }
 
-const CHOUKA_SECTIONS = {
+export const CHOUKA_SECTIONS = {
   hi: {
     title: `चौका-आरती: पावन विधि एवं सात्विक नियम`,
     subtitle: `सतगुरु कबीर साहेब एवं धनी धर्मदास साहेब द्वारा प्रवर्तित 'सात्विक यज्ञ' का आध्यात्मिक परिचय।`,
@@ -103,7 +103,7 @@ const CHOUKA_SECTIONS = {
   }
 };
 
-const PANTHIC_QA_LIST = [
+export const PANTHIC_QA_LIST = [
   {
     q: {
       hi: `प्रश्न १: चौका आरती का कबीर पंथ में क्या सर्वोपरि आध्यात्मिक महत्व है?`,

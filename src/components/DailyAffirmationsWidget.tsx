@@ -61,13 +61,28 @@ export const DailyAffirmationsWidget: React.FC<DailyAffirmationsWidgetProps> = (
     const text = currentAffirmation.text[language] || currentAffirmation.text.hi;
     const explanation = currentAffirmation.explanation?.[language] || currentAffirmation.explanation?.hi || '';
     const header = SACRED_BRANDING.header[language];
-    
+    const category = currentAffirmation.category || (language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਉਪਦੇਸ਼' : language === 'en' ? 'Satguru Kabir Teachings' : 'सतगुरु कबीर उपदेश');
+    const label = language === 'pb' ? 'ਦੈਨਿਕ ਪਾਵਨ ਸੰਕਲਪ' : language === 'en' ? 'Daily Sacred Affirmation' : 'दैनिक पावन संकल्प';
+    const bhavarthLabel = language === 'pb' ? 'ਭਾਵਾਰਥ:' : language === 'en' ? 'Essence:' : 'भावार्थ:';
+    const courtesy =
+      language === 'pb'
+        ? 'ਸੌਜਨਯ: ਸਾਹਿਬ ਵਰਲਡ (Saheb World)'
+        : language === 'en'
+        ? 'Courtesy: Saheb World'
+        : 'सौजन्य: साहेब वर्ल्ड (Saheb World)';
+    const footer =
+      language === 'pb'
+        ? '।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।। 🙏'
+        : language === 'en'
+        ? '|| Saheb Bandagi Saheb || 🙏'
+        : '।। साहेब बंदगी साहेब ।। 🙏';
+
     return `${header}\n\n` +
-      `✨ दैनिक पावन संकल्प (Daily Sacred Affirmation)\n` +
+      `✨ ${label} • ${category}\n` +
       `"${text}"\n\n` +
-      (explanation ? `🌿 भावार्थ: ${explanation}\n\n` : '') +
-      `।। सत्यनाम साहेब ।।\n` +
-      `📱 Saheb World App`;
+      (explanation ? `🌿 ${bhavarthLabel} ${explanation}\n\n` : '') +
+      `${courtesy}\n` +
+      `${footer}`;
   };
 
   const handleCopy = async () => {

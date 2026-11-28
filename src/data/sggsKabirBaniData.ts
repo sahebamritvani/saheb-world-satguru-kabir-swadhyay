@@ -15517,31 +15517,28 @@ export const SGGS_KABIR_VERSES_COLLECTION: SggsKabirVerse[] = [
     sggsReference: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ, ਅੰਗ ੧੩੭੭ (Salok Bhagat Kabir Jio Ke / Ravidas Ji)',
   },
   // ---------------------------------------------------------
-  // SALOK 243 (Ang 1377) - Bhagat Kabir Ji (Concluding Salok / ਸਮਾਪਤ)
+  // SALOK 243 (Ang 1377) - Bhagat Kabir Ji
   // ---------------------------------------------------------
   {
     id: 'sggs-salok-243',
     category: 'salok',
     ang: 1377,
     title: {
-      pb: 'ਸਲੋਕ ੨੪੩: ਕਬੀਰ ਜਉ ਗ੍ਰਿਹੁ ਕਰਹਿ ਤ ਧਰਮੁ ਕਰੁ ਨਾਹੀ ਤ ਕਰੁ ਬੈਰਾਗੁ (ਸਮਾਪਤ)',
-      hi: 'सलोक २४३: कबीर जउ ग्रिहु करहि त धरमु करु नाही त करु बैरागु (समाप्त)',
-      en: 'Salok 243: Concluding Salok - Practise righteousness in household or embrace true renunciation.',
+      pb: 'ਸਲੋਕ ੨੪੩: ਕਬੀਰ ਜਉ ਗ੍ਰਿਹੁ ਕਰਹਿ ਤ ਧਰਮੁ ਕਰੁ ਨਾਹੀ ਤ ਕਰੁ ਬੈਰਾਗੁ',
+      hi: 'सलोक २४३: कबीर जउ ग्रिहु करहि त धरमु करु नाही त करु बैरागु',
+      en: 'Salok 243: Practise righteousness in household or embrace true renunciation.',
     },
     moolGurmukhi: [
       'ਕਬੀਰ ਜਉ ਗ੍ਰਿਹੁ ਕਰਹਿ ਤ ਧਰਮੁ ਕਰੁ ਨਾਹੀ ਤ ਕਰੁ ਬੈਰਾਗੁ ॥',
       'ਬੈਰਾਗੀ ਬੰਧਨੁ ਕਰੈ ਤਾ ਕੋ ਬਡੋ ਅਭਾਗੁ ॥੨੪੩॥',
-      '॥ ਸਲੋਕ ਭਗਤ ਕਬੀਰ ਜੀਉ ਕੇ ਸਮਾਪਤ ॥',
     ],
     moolDevanagari: [
       'कबीर जउ ग्रिहु करहि त धरमु करु नाही त करु बैरागु ॥',
       'बैरागी बंधनु करै ता को बडो अभागु ॥२४३॥',
-      '॥ सलोक भगत कबीर जीउ के समाप्त ॥',
     ],
     moolRoman: [
       'Kabeer jau grihu karahi ta dharamu karu naahee ta karu bairaagu ||',
       'Bairaagee bandhanu karai taa ko bado abhaagu ||243||',
-      '|| Salok Bhagat Kabir Jio Ke Samaapat ||',
     ],
     shabdarth: [
       {

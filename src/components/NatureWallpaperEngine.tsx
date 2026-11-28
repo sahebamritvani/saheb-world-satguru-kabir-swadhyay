@@ -30,11 +30,16 @@ import { useLanguage } from '../context/LanguageContext';
 import { sacredHaptics } from '../services/haptics';
 import banyanGhatWallpaper from '../assets/images/clean_banyan_ghat_nature_1794927914606.jpg';
 import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
+import kabirChauraKashiWallpaper from '../assets/images/kabir_chaura_kashi_dham_1795824432847.jpg';
+import lahartaraPondWallpaper from '../assets/images/lahartara_lotus_pond_dham_1795824433502.jpg';
+import bandhavgarhHillWallpaper from '../assets/images/bandhavgarh_kabir_hill_dham_1795824434607.jpg';
+import jagannathPuriMathWallpaper from '../assets/images/jagannath_puri_math_dham_1795824434844.jpg';
+import damakhedaDarshanWallpaper from '../assets/images/damakheda_darshan_sthal_dham_1795824435749.jpg';
 import sahebEmblemWallpaper from '../assets/images/saheb_world_emblem_wallpaper_1794954938340.jpg';
 import lightFloralWallpaper from '../assets/images/light_floral_geometric_wallpaper_1794955840163.jpg';
 import lightLotusWallpaper from '../assets/images/light_lotus_blossom_wallpaper_1794956964295.jpg';
 
-const magharAuthenticWallpaper = '/assets/aistudio/clean_maghar_dham_nature_1794955298410_2cef22f0.jpg';
+const magharAuthenticWallpaper = magharDhamWallpaper;
 
 interface NatureWallpaperEngineProps {
   language: Language;
@@ -221,6 +226,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           : activeLang === 'en'
           ? 'Sacred Mool Peeth of Kashi'
           : 'मूल प्राकट्य एवं साधना पीठ',
+      imgSrc: kabirChauraKashiWallpaper,
       accent: '#FBBF24',
     },
     {
@@ -237,6 +243,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           : activeLang === 'en'
           ? 'Lotus Flower & Divine Incarnation'
           : 'नीरू-नीमा व कमल पुष्प प्राकट्य',
+      imgSrc: lahartaraPondWallpaper,
       accent: '#38BDF8',
     },
     {
@@ -253,6 +260,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           : activeLang === 'en'
           ? 'Sacred Tapobhoomi & Forest'
           : 'पावन गुफा एवं तपोभूमि',
+      imgSrc: bandhavgarhHillWallpaper,
       accent: '#34D399',
     },
     {
@@ -269,6 +277,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           : activeLang === 'en'
           ? 'Historic Ocean Shore Math'
           : 'समुद्र तट व ऐतिहासिक मठ',
+      imgSrc: jagannathPuriMathWallpaper,
       accent: '#FDE047',
     },
     {
@@ -285,6 +294,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           : activeLang === 'en'
           ? 'Kabir Panth Guru Gaddi'
           : 'कबीर पंथ गुरु गद्दी एवं दर्शन',
+      imgSrc: damakhedaDarshanWallpaper,
       accent: '#F97316',
     },
     {
@@ -625,9 +635,17 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
     let bhavarthText = '';
     let categoryBadge = '';
 
+    const cleanColophonText = (txt: string) => {
+      return txt
+        .replace(/॥\s*(?:ਸਲੋਕ|सलोक|Salok)\s*(?:ਭਗਤ|भगत|Bhagat)\s*(?:ਕਬੀਰ|कबीर|Kabir)\s*(?:ਜੀਉ|जीउ|Jio)\s*(?:ਕੇ|के|Ke)\s*(?:ਸਮਾਪਤ|समाप्त|Samaapat)\s*॥/gi, '')
+        .replace(/\(ਸਮਾਪਤ\)|\(समाप्त\)/gi, '')
+        .trim();
+    };
+
     if (textMode === 'sakhi') {
-      const [l1, l2] = formatCoupletIntoTwoLines(currentSakhi.text[activeLang] || currentSakhi.text.hi, activeLang);
-      verseText = [l1, l2].filter(Boolean).join('\n');
+      const rawSakhiText = currentSakhi.text[activeLang] || currentSakhi.text.hi;
+      const [l1, l2] = formatCoupletIntoTwoLines(rawSakhiText, activeLang);
+      verseText = cleanColophonText([l1, l2].filter(Boolean).join('\n'));
       bhavarthText = ensureSatguruKabirSaheb(currentSakhi.bhavarth[activeLang] || currentSakhi.bhavarth.hi);
       const sakhiLabel = activeLang === 'pb' ? 'ਸਾਖੀ' : activeLang === 'en' ? 'Sakhi' : 'साखी';
       categoryBadge = `${sakhiLabel} #${currentSakhi.number} • ${currentSakhi.grantha}`;
@@ -640,13 +658,15 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           : currentSalok.moolDevanagari;
       const joined = lines.join('\n');
       const [l1, l2] = formatCoupletIntoTwoLines(joined, activeLang);
-      verseText = (l1 && l2) ? `${l1}\n${l2}` : lines.join('\n');
+      const formatted = (l1 && l2) ? `${l1}\n${l2}` : lines.join('\n');
+      verseText = cleanColophonText(formatted);
       bhavarthText = currentSalok.bhavarth[activeLang] || currentSalok.bhavarth.hi;
       const angLabel = activeLang === 'pb' ? 'ਅੰਗ' : activeLang === 'en' ? 'Ang' : 'अंग';
       categoryBadge = `${currentSalok.title[activeLang] || currentSalok.title.hi} • ${angLabel} ${currentSalok.ang}`;
     } else {
       const [l1, l2] = formatCoupletIntoTwoLines(customText.trim(), activeLang);
-      verseText = (l1 && l2) ? `${l1}\n${l2}` : customText.trim();
+      const formatted = (l1 && l2) ? `${l1}\n${l2}` : customText.trim();
+      verseText = cleanColophonText(formatted);
       bhavarthText = customBhavarth.trim();
       categoryBadge =
         customTitle.trim() ||
@@ -726,7 +746,7 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
     ctx.shadowBlur = 0; // Reset shadow
 
-    // 7. GLASSMORPHIC BHAVARTH CARD BOX (LOWER HALF - 100% Dynamic Auto-Height)
+    // 7. GLASSMORPHIC BHAVARTH CARD BOX (LOWER HALF - 100% Dynamic Auto-Fit, Zero Clipping)
     if (bhavarthText) {
       currentY += 18;
       const boxW = width - 150;
@@ -740,37 +760,44 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
           ? 'Essence:'
           : 'भावार्थ:';
 
-      // Word wrap bhavarth lines based on box inner width
-      ctx.font = `${bhavarthFontSize}px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif`;
-      const bWords = bhavarthText.split(/\s+/).filter(Boolean);
-      let bLine = '';
-      const bLines: string[] = [];
-      bWords.forEach((bw) => {
-        const testLine = bLine ? `${bLine} ${bw}` : bw;
-        if (ctx.measureText(testLine).width > boxW - 56) {
-          if (bLine) bLines.push(bLine);
-          bLine = bw;
-        } else {
-          bLine = testLine;
-        }
-      });
-      if (bLine) bLines.push(bLine);
-
-      const bLineHeight = bhavarthFontSize * 1.54;
+      const footerLimit = height * 0.865;
+      const maxAllowedBoxH = Math.max(140, footerLimit - currentY);
       const titleHeight = 44;
       const topPadding = 20;
       const bottomPadding = 20;
-      const textBlockHeight = bLines.length * bLineHeight;
 
-      // 100% Dynamic auto-height
-      const dynamicBoxH = Math.max(120, topPadding + titleHeight + textBlockHeight + bottomPadding);
-      const footerLimit = height * 0.865;
+      const bWords = bhavarthText.split(/\s+/).filter(Boolean);
+      let curBhavarthFontSize = bhavarthFontSize;
+      let bLines: string[] = [];
+      let bLineHeight = curBhavarthFontSize * 1.54;
 
-      let boxY = currentY;
-      if (boxY + dynamicBoxH > footerLimit) {
-        boxY = Math.max(currentY, footerLimit - dynamicBoxH);
+      // Auto-fit loop: dynamically scale down font size so 100% of the Bhavarth text fits safely without clipping
+      while (curBhavarthFontSize >= 14) {
+        ctx.font = `${curBhavarthFontSize}px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif`;
+        bLines = [];
+        let curLine = '';
+        for (const bw of bWords) {
+          const testLine = curLine ? `${curLine} ${bw}` : bw;
+          if (ctx.measureText(testLine).width > boxW - 56) {
+            if (curLine) bLines.push(curLine);
+            curLine = bw;
+          } else {
+            curLine = testLine;
+          }
+        }
+        if (curLine) bLines.push(curLine);
+
+        bLineHeight = curBhavarthFontSize * 1.54;
+        const totalContentH = topPadding + titleHeight + (bLines.length * bLineHeight) + bottomPadding;
+        if (totalContentH <= maxAllowedBoxH || curBhavarthFontSize <= 14) {
+          break;
+        }
+        curBhavarthFontSize -= 1;
       }
-      const finalBoxH = Math.min(dynamicBoxH, footerLimit - boxY);
+
+      const dynamicBoxH = topPadding + titleHeight + (bLines.length * bLineHeight) + bottomPadding;
+      const finalBoxH = Math.min(maxAllowedBoxH, Math.max(120, dynamicBoxH));
+      const boxY = currentY;
 
       // Dark Glass Card Background
       ctx.fillStyle = `rgba(12, 10, 8, ${glassCardOpacity})`;
@@ -800,26 +827,38 @@ export const NatureWallpaperEngine: React.FC<NatureWallpaperEngineProps> = ({
 
       // Bhavarth Lines
       ctx.fillStyle = '#FEF08A';
-      ctx.font = `${bhavarthFontSize}px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif`;
+      ctx.font = `${curBhavarthFontSize}px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif`;
 
-      let bY = boxY + topPadding + titleHeight + (bhavarthFontSize * 0.7);
+      let bY = boxY + topPadding + titleHeight + (curBhavarthFontSize * 0.7);
       bLines.forEach((bl) => {
-        if (bY + bLineHeight <= boxY + finalBoxH + 4) {
-          ctx.fillText(bl.trim(), width / 2, bY);
-          bY += bLineHeight;
-        }
+        ctx.fillText(bl.trim(), width / 2, bY);
+        bY += bLineHeight;
       });
     }
 
-    // 8. FOOTER BRANDING (Clean unified footer, zero duplicate branding)
+    // 8. FOOTER BRANDING (Clean unified localized footer strictly based on activeLang)
+    const footerL1 =
+      activeLang === 'pb'
+        ? 'ਸੌਜਨਯ: ਸਾਹਿਬ ਵਰਲਡ (Saheb World)'
+        : activeLang === 'en'
+        ? 'Courtesy: Saheb World'
+        : 'सौजन्य: साहेब वर्ल्ड (Saheb World)';
+
+    const footerL2 =
+      activeLang === 'pb'
+        ? '।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।। 🙏'
+        : activeLang === 'en'
+        ? '|| Saheb Bandagi Saheb || 🙏'
+        : '।। साहेब बंदगी साहेब ।। 🙏';
+
     ctx.textAlign = 'center';
     ctx.fillStyle = accentColor;
-    ctx.font = 'bold 22px "Noto Sans Devanagari", sans-serif';
-    ctx.fillText('सौजन्य: साहेब वर्ल्ड (Saheb World)', width / 2, height * 0.89);
+    ctx.font = 'bold 22px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif';
+    ctx.fillText(footerL1, width / 2, height * 0.89);
 
-    ctx.font = 'bold 26px "Noto Serif Devanagari", "Gurmukhi MN", Georgia, serif';
+    ctx.font = 'bold 26px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif';
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillText('।। साहेब बंदगी साहेब ।। 🙏', width / 2, height * 0.935);
+    ctx.fillText(footerL2, width / 2, height * 0.935);
 
     // Save canvas as Blob URL for immediate preview
     canvas.toBlob(

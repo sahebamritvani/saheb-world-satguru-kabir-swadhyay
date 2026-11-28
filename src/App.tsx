@@ -41,7 +41,7 @@ const AatmaBhushanModule = lazy(() => import('./components/AatmaBhushanModule').
 const KabirParichayFourYugas = lazy(() => import('./components/KabirParichayFourYugas').then(m => ({ default: m.KabirParichayFourYugas })));
 const DeepSearch = lazy(() => import('./components/DeepSearch').then(m => ({ default: m.DeepSearch })));
 const MeditationTimer = lazy(() => import('./components/MeditationTimer').then(m => ({ default: m.MeditationTimer })));
-const CommunityBoard = lazy(() => import('./components/CommunityBoard').then(m => ({ default: m.CommunityBoard })));
+import { CommunityBoard } from './components/CommunityBoard';
 const AppHealthDiagnostic = lazy(() => import('./components/AppHealthDiagnostic').then(m => ({ default: m.AppHealthDiagnostic })));
 const SatyanaamDhunPlayer = lazy(() => import('./components/SatyanaamDhunPlayer').then(m => ({ default: m.SatyanaamDhunPlayer })));
 const SatyaNaamMahaMargdarshika = lazy(() => import('./components/SatyaNaamMahaMargdarshika').then(m => ({ default: m.SatyaNaamMahaMargdarshika })));
@@ -49,7 +49,7 @@ const SacredAshrams = lazy(() => import('./components/SacredAshrams').then(m => 
 const AutoCorrectTool = lazy(() => import('./components/AutoCorrectTool').then(m => ({ default: m.AutoCorrectTool })));
 const UlatvasiQuiz = lazy(() => import('./components/UlatvasiQuiz').then(m => ({ default: m.UlatvasiQuiz })));
 const UlatvasiLibrary = lazy(() => import('./components/UlatvasiLibrary').then(m => ({ default: m.UlatvasiLibrary })));
-const DainikChintan = lazy(() => import('./components/DainikChintan').then(m => ({ default: m.DainikChintan })));
+import { DainikChintan } from './components/DainikChintan';
 const GuruJiDasSutraView = lazy(() => import('./components/GuruJiDasSutraView').then(m => ({ default: m.GuruJiDasSutraView })));
 const DiscourseEngine = lazy(() => import('./components/DiscourseEngine').then(m => ({ default: m.DiscourseEngine })));
 const DivineGuidance = lazy(() => import('./components/DivineGuidance').then(m => ({ default: m.DivineGuidance })));
@@ -513,13 +513,23 @@ function MainApp() {
       setSettingsInitialTab('reading');
       setIsSettingsOpen(true);
     };
+    const handleOpenSakhiFromAssistant = (e: Event) => {
+      const detail = (e as CustomEvent<{ sakhi?: Sakhi }>).detail;
+      if (detail?.sakhi) {
+        setActiveSakhi(detail.sakhi);
+        setCurrentView('swadhyay');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
     window.addEventListener('sahebworld_open_settings', handleOpenSettings);
     window.addEventListener('sahebworld_open_accessibility', handleOpenAccessibility);
     window.addEventListener('sahebworld_open_advanced_reading_suite', handleOpenReadingSuite);
+    window.addEventListener('sahebworld_open_sakhi_swadhyay', handleOpenSakhiFromAssistant);
     return () => {
       window.removeEventListener('sahebworld_open_settings', handleOpenSettings);
       window.removeEventListener('sahebworld_open_accessibility', handleOpenAccessibility);
       window.removeEventListener('sahebworld_open_advanced_reading_suite', handleOpenReadingSuite);
+      window.removeEventListener('sahebworld_open_sakhi_swadhyay', handleOpenSakhiFromAssistant);
     };
   }, []);
 
@@ -593,6 +603,7 @@ function MainApp() {
         setIsSettingsOpen(true);
       }}
       onOpenBlessing={() => handleOpenBlessing()}
+      onOpenSakhiSwadhyay={(sakhi) => handleStartSwadhyay(sakhi)}
       isDhunPlaying={isDhunPlaying}
       onToggleDhun={handleToggleDhun}
     >
@@ -809,7 +820,7 @@ function MainApp() {
             setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          onOpenBlessing={(title, msg) => handleOpenBlessing(title || '१० सूत्र संकल्प', msg || 'सत साहेब!')}
+          onOpenBlessing={(title, msg) => handleOpenBlessing(title || '१० सूत्र संकल्प', msg || 'सत्यनाम साहेब!')}
         />
       )}
 
@@ -818,7 +829,7 @@ function MainApp() {
         <DainikChintan
           language={language}
           onChangeLanguage={setLanguage}
-          onOpenBlessing={(title, msg) => handleOpenBlessing(title || 'चिंतन समर्पण', msg || 'सत साहेब!')}
+          onOpenBlessing={(title, msg) => handleOpenBlessing(title || 'चिंतन समर्पण', msg || 'सत्यनाम साहेब!')}
           onClose={() => {
             setCurrentView('daily');
             window.scrollTo({ top: 0, behavior: 'smooth' });

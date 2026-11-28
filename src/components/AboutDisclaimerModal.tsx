@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, BookOpen, ShieldCheck, Sparkles, Languages, Lock, HelpCircle } from 'lucide-react';
+import { X, BookOpen, ShieldCheck, Sparkles, Languages, Lock, HelpCircle, Mail, Copy, Check } from 'lucide-react';
 import { useAppTheme } from '../theme/ThemeContext';
 import { Language, SACRED_BRANDING } from '../types';
 import { UserGuideView } from './UserGuideView';
@@ -39,7 +39,7 @@ const MODAL_CONTENT = {
     disclaimerPara1: 'इस ऐप में दी गई सभी जानकारियाँ, जैसे सतगुरु कबीर साहेब का जीवन परिचय, चारों युगों के अवतारों की कथाएँ, उलटबांसियाँ और दोहे, विभिन्न कबीर पंथी पवित्र ग्रंथों (जैसे बीजक, कबीर सागर, अनुराग सागर) और ऐतिहासिक मान्यताओं पर आधारित हैं।',
     disclaimerPara2: 'इस ऐप का मुख्य उद्देश्य केवल सतगुरु कबीर साहेब के विचारों का वैचारिक व आध्यात्मिक प्रचार-प्रसार करना और शिक्षा प्रदान करना है। हमारा इरादा किसी भी धर्म, संप्रदाय, जाति या समुदाय की भावनाओं को ठेस पहुँचाना नहीं है।',
     warningLabel: 'विशेष ध्यान दें:',
-    warningText: 'ऐप में दिए गए यौगिक, चक्र साधना और ब्रह्मांड एवं अमरलोक दर्शन (Universe Map) के विवरण केवल सांकेतिक और दार्शनिक अर्थ समझाने के लिए हैं। किसी भी प्रकार की ध्यान या योग साधना को केवल एक योग्य और प्रामाणिक मार्गदर्शक या सच्चे गुरु की देखरेख में ही किया जाना चाहिए।',
+    warningText: 'ऐप में दिए गए यौगिक, चक्र साधना और ब्रह्मांड एवं अमरलोक दर्शन के विवरण केवल सांकेतिक और दार्शनिक अर्थ समझाने के लिए हैं। किसी भी प्रकार की ध्यान या योग साधना को केवल एक योग्य और प्रामाणिक मार्गदर्शक या सच्चे गुरु की देखरेख में ही किया जाना चाहिए।',
 
     privacyTitle: 'गोपनीयता नीति (Privacy Policy) — Saheb World App',
     privacyUpdated: 'अंतिम अद्यतन (Last Updated): नवंबर 2026',
@@ -75,7 +75,8 @@ const MODAL_CONTENT = {
     ],
     privacyContactHeading: '५. संपर्क करें (Contact Us)',
     privacyContactText: 'यदि इस गोपनीयता नीति या ऐप से संबंधित आपका कोई प्रश्न या सुझाव है, तो आप हमें इस ईमेल पर संपर्क कर सकते हैं:',
-    privacyEmailLabel: 'ईमेल:'
+    privacyEmailLabel: 'ईमेल / Support Email:',
+    privacyEmailValue: 'sahebworld.swadhyay@gmail.com'
   },
   pb: {
     aboutTitle: 'ਸਾਡੇ ਬਾਰੇ (About Us)',
@@ -87,7 +88,7 @@ const MODAL_CONTENT = {
     disclaimerPara1: 'ਇਸ ਐਪ ਵਿੱਚ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸਾਰੀਆਂ ਜਾਣਕਾਰੀਆਂ, ਜਿਵੇਂ ਕਿ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਜੀਵਨ ਪਰਿਚਯ, ਚਾਰਾਂ ਯੁੱਗਾਂ ਦੇ ਅਵਤਾਰਾਂ ਦੀਆਂ ਕਹਾਣੀਆਂ, ਉਲਟਬਾਂਸੀਆਂ ਅਤੇ ਦੋਹੇ, ਵੱਖ-ਵੱਖ ਕਬੀਰ ਪੰਥੀ ਪਵਿੱਤਰ ਗ੍ਰੰਥਾਂ (ਜਿਵੇਂ ਬੀਜਕ, ਕਬੀਰ ਸਾਗਰ, ਅਨੁਰਾਗ ਸਾਗਰ) ਅਤੇ ਇਤਿਹਾਸਕ ਮਾਨਤਾਵਾਂ ਤੇ ਅਧਾਰਿਤ ਹਨ।',
     disclaimerPara2: 'ਇਸ ਐਪ ਦਾ ਮੁੱਖ ਉਦੇਸ਼ ਸਿਰਫ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਵਿਚਾਰਾਂ ਦਾ ਪ੍ਰਚਾਰ-ਪ੍ਰਸਾਰ ਕਰਨਾ ਅਤੇ ਸਿੱਖਿਆ ਪ੍ਰਦਾਨ ਕਰਨਾ ਹੈ। ਸਾਡਾ ਇਰਾਦਾ ਕਿਸੇ ਵੀ ਧਰਮ, ਸੰਪਰਦਾਇ, ਜਾਤ ਜਾਂ ਭਾਈਚਾਰੇ ਦੀਆਂ ਭਾਵਨਾਵਾਂ ਨੂੰ ਠੇਸ ਪਹੁੰਚਾਉਣਾ ਨਹੀਂ ਹੈ।',
     warningLabel: 'ਵਿਸ਼ੇਸ਼ ਧਿਆਨ ਦਿਓ:',
-    warningText: 'ਐਪ ਵਿੱਚ ਦਿੱਤੇ ਗਏ ਯੋਗਿਕ, ਚੱਕਰ ਸਾਧਨਾ ਅਤੇ ਬ੍ਰਹਮੰਡ ਤੇ ਅਮਰਲੋਕ ਦਰਸ਼ਨ (Universe Map) ਦੇ ਵੇਰਵੇ ਸਿਰਫ ਸੰਕੇਤਕ ਅਤੇ ਦਾਰਸ਼ਨਿਕ ਅਰਥ ਸਮਝਾਉਣ ਲਈ ਹਨ। ਕਿਸੇ ਵੀ ਕਿਸਮ ਦੀ ਮੈਡੀਟੇਸ਼ਨ ਜਾਂ ਯੋਗ ਸਾਧਨਾ ਨੂੰ ਕੇਵਲ ਇੱਕ ਯੋਗ ਅਤੇ ਪ੍ਰਮਾਣਿਕ ਮਾਰਗਦਰਸ਼ਕ ਜਾਂ ਸੱਚੇ ਗੁਰੂ ਦੀ ਨਿਗਰਾਨੀ ਹੇਠ ਹੀ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ।',
+    warningText: 'ਐਪ ਵਿੱਚ ਦਿੱਤੇ ਗਏ ਯੋਗਿਕ, ਚੱਕਰ ਸਾਧਨਾ ਅਤੇ ਬ੍ਰਹਮੰਡ ਤੇ ਅਮਰਲੋਕ ਦਰਸ਼ਨ ਦੇ ਵੇਰਵੇ ਸਿਰਫ ਸੰਕੇਤਕ ਅਤੇ ਦਾਰਸ਼ਨਿਕ ਅਰਥ ਸਮਝਾਉਣ ਲਈ ਹਨ। ਕਿਸੇ ਵੀ ਕਿਸਮ ਦੀ ਮੈਡੀਟੇਸ਼ਨ ਜਾਂ ਯੋਗ ਸਾਧਨਾ ਨੂੰ ਕੇਵਲ ਇੱਕ ਯੋਗ ਅਤੇ ਪ੍ਰਮਾਣਿਕ ਮਾਰਗਦਰਸ਼ਕ ਜਾਂ ਸੱਚੇ ਗੁਰੂ ਦੀ ਨਿਗਰਾਨੀ ਹੇਠ ਹੀ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ।',
 
     privacyTitle: 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ (Privacy Policy) — Saheb World App',
     privacyUpdated: 'ਆਖਰੀ ਅੱਪਡੇਟ (Last Updated): ਨਵੰਬਰ 2026',
@@ -123,7 +124,8 @@ const MODAL_CONTENT = {
     ],
     privacyContactHeading: '੫. ਸੰਪਰਕ ਕਰੋ (Contact Us)',
     privacyContactText: 'ਜੇਕਰ ਇਸ ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਜਾਂ ਐਪ ਬਾਰੇ ਤੁਹਾਡਾ ਕੋਈ ਸਵਾਲ ਜਾਂ ਸੁਝਾਅ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਸਾਨੂੰ ਇਸ ਈਮੇਲ \'ਤੇ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹੋ:',
-    privacyEmailLabel: 'ਈਮੇਲ:'
+    privacyEmailLabel: 'ਈਮੇਲ ਸਹਾਇਤਾ:',
+    privacyEmailValue: 'sahebworld.swadhyay@gmail.com'
   },
   en: {
     aboutTitle: 'About Us',
@@ -135,7 +137,7 @@ const MODAL_CONTENT = {
     disclaimerPara1: 'All information provided in this app, including the life biography of Satguru Kabir Saheb, stories of His manifestations across the four eras, paradoxes, and sakhis, is based on various sacred Kabir Panth scriptures (such as Bijak, Kabir Sagar, Anurag Sagar) and historical traditions.',
     disclaimerPara2: 'The primary objective of this app is to share the educational and spiritual ideas of Satguru Kabir Saheb. We do not intend to hurt the sentiments of any religion, sect, caste, or community.',
     warningLabel: 'Important Notice:',
-    warningText: 'The descriptions of Yogic techniques, Chakra meditation, and cosmology/Universe Map are purely symbolic and philosophic. Any meditation or spiritual practice should only be performed under the guidance of a qualified master or true guru.',
+    warningText: 'The descriptions of Yogic techniques, Chakra meditation, and cosmology/Amarlok Darshan are purely symbolic and philosophic. Any meditation or spiritual practice should only be performed under the guidance of a qualified master or true guru.',
 
     privacyTitle: 'Privacy Policy — Saheb World App',
     privacyUpdated: 'Last Updated: November 2026',
@@ -171,7 +173,8 @@ const MODAL_CONTENT = {
     ],
     privacyContactHeading: '5. Contact Us',
     privacyContactText: 'If you have any questions or suggestions regarding this Privacy Policy or the app, you can contact us at:',
-    privacyEmailLabel: 'Email:'
+    privacyEmailLabel: 'Support Email:',
+    privacyEmailValue: 'sahebworld.swadhyay@gmail.com'
   }
 };
 
@@ -185,6 +188,23 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
   const { theme } = useAppTheme();
   const [currentTab, setCurrentTab] = useState<AboutDisclaimerSection>(section);
   const [slotRefreshTick, setSlotRefreshTick] = useState(0);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = (email: string) => {
+    sacredHaptics.lightTap();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = email;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2200);
+  };
 
   useEffect(() => {
     setCurrentTab(section);
@@ -401,7 +421,7 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
 
                 <div
                   style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold }}
-                  className="p-3.5 sm:p-4 rounded-xl border space-y-2"
+                  className="p-3.5 sm:p-4 rounded-xl border space-y-2.5"
                 >
                   <h3 className="text-sm sm:text-base font-bold font-serif" style={{ color: theme.sacredMaroon }}>
                     {content.privacyContactHeading}
@@ -409,6 +429,48 @@ export const AboutDisclaimerModal: React.FC<AboutDisclaimerModalProps> = ({
                   <p className="text-xs sm:text-sm leading-relaxed opacity-95 font-serif">
                     {content.privacyContactText}
                   </p>
+
+                  {/* Clean readable support contact box for Google Play Store compliance */}
+                  <div
+                    style={{ backgroundColor: theme.cardBg, borderColor: theme.accentGold }}
+                    className="mt-2.5 p-3 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs"
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <span className="p-2 rounded-lg bg-amber-600 text-white shrink-0 shadow-2xs">
+                        <Mail className="w-4 h-4" />
+                      </span>
+                      <div className="min-w-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wider block opacity-75 font-sans" style={{ color: theme.textSecondary }}>
+                          {content.privacyEmailLabel || 'ईमेल / Support Email:'}
+                        </span>
+                        <a
+                          href="mailto:sahebworld.swadhyay@gmail.com"
+                          className="font-mono font-bold text-xs sm:text-sm hover:underline select-all truncate block"
+                          style={{ color: theme.sacredMaroon }}
+                        >
+                          sahebworld.swadhyay@gmail.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => handleCopyEmail('sahebworld.swadhyay@gmail.com')}
+                      style={{
+                        backgroundColor: theme.bgSecondary,
+                        borderColor: theme.cardBorder,
+                        color: theme.textPrimary,
+                      }}
+                      className="px-3 py-1.5 rounded-lg border text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs self-start sm:self-auto shrink-0 hover:bg-black/5 dark:hover:bg-white/5 active:scale-95"
+                    >
+                      {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-amber-600" />}
+                      <span>
+                        {copiedEmail
+                          ? (language === 'pb' ? 'ਕਾਪੀ ਹੋਇਆ!' : language === 'en' ? 'Copied!' : 'कॉपी हुआ!')
+                          : (language === 'pb' ? 'ਈਮੇਲ ਕਾਪੀ ਕਰੋ' : language === 'en' ? 'Copy Email' : 'ईमेल कॉपी करें')}
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -69,13 +69,15 @@ import { OPEN_ADMIN_INJECTOR_EVENT } from '../services/adminSlotInjectorStore';
 import { isAdminAuthenticated } from '../services/adminAuth';
 import { motion, AnimatePresence } from 'motion/react';
 import { QRCodeSVG } from 'qrcode.react';
-import { Language, AppView, SACRED_BRANDING } from '../types';
+import { Language, AppView, SACRED_BRANDING, Sakhi } from '../types';
 import { translations } from '../data/translations';
 import { AboutDisclaimerModal, AboutDisclaimerSection } from './AboutDisclaimerModal';
 import { KarNainonDeedarModal } from './KarNainonDeedarModal';
 import { SantoShabdaiShabdModal } from './SantoShabdaiShabdModal';
 import { LanguageDiagnostics } from './LanguageDiagnostics';
 import { AdminLoginModal } from './AdminLoginModal';
+import { ShareAppModal } from './ShareAppModal';
+import { SahebAssistantModal } from './SahebAssistantModal';
 
 import { sacredHaptics } from '../services/haptics';
 import { 
@@ -106,6 +108,7 @@ interface LayoutProps {
   onSelectLanguage: (lang: Language) => void;
   onOpenSettings: () => void;
   onOpenBlessing: () => void;
+  onOpenSakhiSwadhyay?: (sakhi: Sakhi) => void;
   isDhunPlaying: boolean;
   onToggleDhun: () => void;
   children: React.ReactNode;
@@ -118,6 +121,7 @@ export const Layout: React.FC<LayoutProps> = ({
   onSelectLanguage,
   onOpenSettings,
   onOpenBlessing,
+  onOpenSakhiSwadhyay,
   isDhunPlaying,
   onToggleDhun,
   children,
@@ -136,7 +140,17 @@ export const Layout: React.FC<LayoutProps> = ({
   });
   const [isAdmin, setIsAdmin] = useState<boolean>(() => isAdminAuthenticated());
   const [showAdminLoginModal, setShowAdminLoginModal] = useState(false);
+  const [showSahebAssistantModal, setShowSahebAssistantModal] = useState(false);
   const brandTapTimestampsRef = useRef<number[]>([]);
+
+  useEffect(() => {
+    const handleOpenAssistant = () => {
+      sacredHaptics.lightTap();
+      setShowSahebAssistantModal(true);
+    };
+    window.addEventListener('sahebworld_open_saheb_assistant', handleOpenAssistant);
+    return () => window.removeEventListener('sahebworld_open_saheb_assistant', handleOpenAssistant);
+  }, []);
 
   useEffect(() => {
     try {
@@ -414,6 +428,7 @@ export const Layout: React.FC<LayoutProps> = ({
   });
   const [showKarNainonDeedarModal, setShowKarNainonDeedarModal] = useState(false);
   const [showSantoShabdaiShabdModal, setShowSantoShabdaiShabdModal] = useState(false);
+  const [showShareAppModal, setShowShareAppModal] = useState(false);
   const [showLanguageDiagnostics, setShowLanguageDiagnostics] = useState(false);
   const [isAppInstalled, setIsAppInstalled] = useState(false);
   const [isAppCopied, setIsAppCopied] = useState(false);
@@ -462,24 +477,9 @@ export const Layout: React.FC<LayoutProps> = ({
 
   const [shareFallbackBanner, setShareFallbackBanner] = useState<{ whatsappUrl: string } | null>(null);
 
-  const handleShareApp = async () => {
+  const handleShareApp = () => {
     sacredHaptics.lightTap();
-    try {
-      const res = await shareAppUniversally(language);
-      if (res.method === 'clipboard') {
-        setIsAppCopied(true);
-        setShareFallbackBanner({ whatsappUrl: res.whatsappUrl });
-        setTimeout(() => setIsAppCopied(false), 3000);
-        setTimeout(() => setShareFallbackBanner(null), 8000);
-      }
-    } catch (err) {
-      console.warn('Share app notice:', err);
-      const fallbackWa = getWhatsAppShareUrl(language);
-      setIsAppCopied(true);
-      setShareFallbackBanner({ whatsappUrl: fallbackWa });
-      setTimeout(() => setIsAppCopied(false), 3000);
-      setTimeout(() => setShareFallbackBanner(null), 8000);
-    }
+    setShowShareAppModal(true);
   };
 
   // Bar 2 Moveable Drag & Scroll State
@@ -739,6 +739,10 @@ export const Layout: React.FC<LayoutProps> = ({
         setShowSantoShabdaiShabdModal(false);
         return true;
       }
+      if (showShareAppModal) {
+        setShowShareAppModal(false);
+        return true;
+      }
       if (showLanguageDiagnostics) {
         setShowLanguageDiagnostics(false);
         return true;
@@ -762,6 +766,7 @@ export const Layout: React.FC<LayoutProps> = ({
     aboutModalSection,
     showKarNainonDeedarModal,
     showSantoShabdaiShabdModal,
+    showShareAppModal,
     showLanguageDiagnostics,
     showRateModal,
     isSidebarOpen,
@@ -1971,6 +1976,38 @@ export const Layout: React.FC<LayoutProps> = ({
                 </span>
               </button>
 
+              {/* 3b. Quick 100% Offline Saheb Assistant Trigger */}
+              <button
+                type="button"
+                id="header-open-saheb-assistant-btn"
+                onClick={() => {
+                  if (bar3MovedDistance > 8) return;
+                  sacredHaptics.lightTap();
+                  setShowSahebAssistantModal(true);
+                }}
+                style={{
+                  backgroundColor: '#7C1D00',
+                  borderColor: theme.accentGold,
+                  color: '#FFFBEB',
+                }}
+                className="h-7 px-2.5 rounded-md border text-[0.65rem] sm:text-[0.6875rem] font-bold flex items-center justify-center gap-1 transition cursor-pointer hover:scale-[1.03] shadow-2xs shrink-0 whitespace-nowrap"
+                title={
+                  language === 'pb'
+                    ? 'ਸਾਹੇਬ ਸਵਾਧਿਆਏ ਸਹਾਇਕ (100% ਆਫ਼ਲਾਈਨ)'
+                    : language === 'en'
+                    ? 'Saheb Swadhyay Assistant (100% Offline)'
+                    : 'साहेब स्वाध्याय सहायक (100% ऑफ़लाइन)'
+                }
+              >
+                <span className="font-serif font-bold whitespace-nowrap">
+                  {language === 'pb'
+                    ? '🪷 ਸਾਹੇਬ ਸਹਾਇਕ'
+                    : language === 'en'
+                    ? '🪷 Saheb Assistant'
+                    : '🪷 साहेब सहायक'}
+                </span>
+              </button>
+
               {/* 4. Divine Blessing & Flower Shower Trigger */}
               <button
                 type="button"
@@ -3063,6 +3100,37 @@ export const Layout: React.FC<LayoutProps> = ({
         </aside>
       )}
 
+      {/* 🪷 Floating Quick-Access 100% Offline Saheb Assistant Button */}
+      <button
+        id="floating-saheb-assistant-btn"
+        type="button"
+        onClick={() => {
+          sacredHaptics.lightTap();
+          setShowSahebAssistantModal(true);
+        }}
+        style={{
+          backgroundColor: '#7C1D00',
+          borderColor: '#F59E0B',
+          color: '#FFFBEB',
+        }}
+        className="fixed bottom-11 sm:bottom-12 left-3 sm:left-5 z-[44] px-3.5 py-2 rounded-full border-2 shadow-xl font-serif font-black text-xs sm:text-sm flex items-center gap-1.5 transition-transform hover:scale-105 active:scale-95 cursor-pointer print:hidden"
+        title={
+          language === 'pb'
+            ? 'ਸਾਹੇਬ ਸਵਾਧਿਆਏ ਸਹਾਇਕ ਖੋਲ੍ਹੋ (100% ਆਫ਼ਲਾਈਨ)'
+            : language === 'en'
+            ? 'Open Saheb Swadhyay Assistant (100% Offline)'
+            : 'साहेब स्वाध्याय सहायक खोलें (100% ऑफ़लाइन)'
+        }
+      >
+        <span>
+          {language === 'pb'
+            ? '🪷 ਸਾਹੇਬ ਸਹਾਇਕ'
+            : language === 'en'
+            ? '🪷 Saheb Assistant'
+            : '🪷 साहेब सहायक'}
+        </span>
+      </button>
+
       {/* PWA App Install Guidance Modal */}
       <AnimatePresence>
         {showInstallModal && (
@@ -3556,6 +3624,22 @@ export const Layout: React.FC<LayoutProps> = ({
           onClose={() => setShowSantoShabdaiShabdModal(false)}
         />
       )}
+
+      {/* Share App & Paavan QR Code Modal */}
+      <ShareAppModal
+        isOpen={showShareAppModal}
+        onClose={() => setShowShareAppModal(false)}
+        language={language}
+      />
+
+      {/* 100% Offline Saheb Swadhyay Assistant Modal */}
+      <SahebAssistantModal
+        isOpen={showSahebAssistantModal}
+        onClose={() => setShowSahebAssistantModal(false)}
+        language={language}
+        onOpenSakhiSwadhyay={onOpenSakhiSwadhyay}
+        onNavigateView={handleNavClick}
+      />
 
       {/* RATE SAHEB WORLD MODAL */}
       <AnimatePresence>

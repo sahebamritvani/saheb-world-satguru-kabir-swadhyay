@@ -368,24 +368,36 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                     {t.themeStyleLabel || 'थीम शैली:'}
                   </label>
                   <div className="grid grid-cols-2 gap-1.5">
-                    {themesList.map((th) => (
-                      <button
-                        key={th.id}
-                        type="button"
-                        onClick={() => {
-                          setCardDesign(th.id as any);
-                          setGeneratedCard(null);
-                        }}
-                        style={{ backgroundColor: th.bg, color: th.text }}
-                        className={`p-1.5 rounded-xl border text-center transition cursor-pointer text-[10px] font-bold shadow-xs ${
-                          cardDesign === th.id
-                            ? 'border-amber-600 ring-2 ring-amber-500/50 scale-[1.02]'
-                            : 'border-black/15 dark:border-white/15 hover:opacity-90'
-                        }`}
-                      >
-                        {th.label}
-                      </button>
-                    ))}
+                    {themesList.map((th) => {
+                      const thObj = CARD_THEMES[th.id];
+                      const hasImage = Boolean(thObj?.imageSrc);
+                      return (
+                        <button
+                          key={th.id}
+                          type="button"
+                          onClick={() => {
+                            setCardDesign(th.id as any);
+                            setGeneratedCard(null);
+                          }}
+                          style={{
+                            backgroundColor: th.bg,
+                            backgroundImage: hasImage
+                              ? `linear-gradient(rgba(10, 8, 5, 0.45), rgba(10, 8, 5, 0.65)), url(${thObj?.imageSrc})`
+                              : undefined,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            color: hasImage ? '#FFFDF0' : th.text,
+                          }}
+                          className={`p-1.5 rounded-xl border text-center transition cursor-pointer text-[10px] font-bold shadow-xs relative overflow-hidden ${
+                            cardDesign === th.id
+                              ? 'border-amber-500 ring-2 ring-amber-500/70 scale-[1.02]'
+                              : 'border-black/15 dark:border-white/15 hover:opacity-95'
+                          }`}
+                        >
+                          <span className={hasImage ? 'drop-shadow-md' : ''}>{th.label}</span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -449,8 +461,13 @@ export const QuoteCardModal: React.FC<QuoteCardModalProps> = ({
                   className="p-4 sm:p-6 rounded-2xl border text-center relative overflow-hidden transition-all duration-300 shadow-md flex flex-col justify-start gap-3"
                   style={{
                     backgroundColor: currentTheme.bg,
+                    backgroundImage: currentTheme.imageSrc
+                      ? `linear-gradient(rgba(12, 8, 5, 0.62), rgba(12, 8, 5, 0.72)), url(${currentTheme.imageSrc})`
+                      : undefined,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                     borderColor: currentTheme.accent,
-                    color: currentTheme.text,
+                    color: currentTheme.imageSrc ? '#FFFFFF' : currentTheme.text,
                   }}
                 >
                   {/* Header preview */}

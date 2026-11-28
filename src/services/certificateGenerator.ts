@@ -300,10 +300,10 @@ export function getCertificateTitle(language: Language): string {
 
 export function getCertificateFooterBrand(language: Language): string {
   return language === 'pb'
-    ? 'Saheb World App • ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਮੰਚ'
+    ? 'ਸਾਹੇਬ ਵਰਲਡ • ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਮੰਚ'
     : language === 'en'
-    ? 'Saheb World App • Sacred Swadhyay Sanctuary'
-    : 'Saheb World App • पावन स्वाध्याय मंच';
+    ? 'Saheb World • Sacred Swadhyay Sanctuary'
+    : 'साहेब वर्ल्ड • पावन स्वाध्याय मंच';
 }
 
 const SWAROOP_IMAGE_PATHS = ['/Saheb_World_icon.jpg', '/icon.png'];

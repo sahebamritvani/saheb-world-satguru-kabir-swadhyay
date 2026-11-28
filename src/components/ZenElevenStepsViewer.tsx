@@ -101,7 +101,7 @@ export const ZenElevenStepsViewer: React.FC<ZenElevenStepsViewerProps> = ({
   };
 
   const currentQuestions = elevenStepData.step5_quiz.questions
-    .slice(0, 3)
+    .slice(0, 5)
     .map((q, idx) => normalizeElevenStepQuizQuestion(q, language, idx));
   const currentQ = currentQuestions[quizIdx] || currentQuestions[0];
   const selectedAnswer = quizSelected[quizIdx];

@@ -758,51 +758,107 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
 
   const handleExportDiary = () => {
     sacredHaptics.lightTap();
-    if (entries.length === 0 && gratitudeLogs.length === 0) {
+
+    // Also collect any Dainik Chintan daily reflections & Sankalps stored locally
+    let chintanLogs: Array<{
+      id?: string;
+      chintanTitle?: string;
+      verse?: string;
+      reflectionText?: string;
+      answers?: Record<number, string>;
+      sankalpAccepted?: boolean;
+      dateStr?: string;
+      timestamp?: number;
+    }> = [];
+    try {
+      const rawChintan = localStorage.getItem('sahebworld_dainik_chintan_journal');
+      if (rawChintan) {
+        const parsed = JSON.parse(rawChintan);
+        if (Array.isArray(parsed)) chintanLogs = parsed;
+      }
+    } catch {
+      chintanLogs = [];
+    }
+
+    if (entries.length === 0 && gratitudeLogs.length === 0 && chintanLogs.length === 0) {
       showToast(
-        language === 'pb' 
-          ? 'ਜਰਨਲ ਵਿੱਚ ਅਜੇ ਕੋਈ ਪ੍ਰਵਿਸ਼ਟੀ ਨਹੀਂ ਹੈ।' 
-          : language === 'en' 
-          ? 'No journal entries available to export.' 
-          : 'जर्नल में अभी कोई प्रविष्टि नहीं है।',
+        language === 'pb'
+          ? 'ਜਰਨਲ ਵਿੱਚ ਅਜੇ ਕੋਈ ਪ੍ਰਵਿਸ਼ਟੀ ਨਹੀਂ ਹੈ।'
+          : language === 'en'
+          ? 'No journal entries available to export.'
+          : 'डायरी में अभी कोई प्रविष्टि सहेजी नहीं गई है।',
         'info'
       );
       return;
     }
 
-    const formatted = entries
-      .map((e, idx) => {
-        const moodObj = SPIRITUAL_MOODS.find(m => m.id === e.mood);
-        return `[प्रविष्टि #${idx + 1}]\n` +
-          `• दिनांक: ${new Date(e.date).toLocaleString(language === 'hi' ? 'hi-IN' : language === 'pb' ? 'pa-IN' : 'en-US', { dateStyle: 'full', timeStyle: 'short' })}\n` +
-          `${moodObj ? `• आंतरिक भाव: ${moodObj.icon} ${moodObj.label[language] || moodObj.label.hi}\n` : ''}` +
-          `${e.sakhiNumber ? `• साखी संदर्भ: #${e.sakhiNumber}\n` : ''}` +
-          `• श्रेणी: ${e.categoryTag || t.defaultCategory}\n` +
-          `• आत्म-चिंतन:\n${e.notes}\n` +
-          `${e.gratitude ? `• कृतज्ञता: ${e.gratitude}\n` : ''}` +
-          `${e.resolution ? `• संकल्प: ${e.resolution}\n` : ''}`;
-      })
-      .join('\n------------------------------------------------------------\n\n');
+    const formatted =
+      entries.length > 0
+        ? entries
+            .map((e, idx) => {
+              const moodObj = SPIRITUAL_MOODS.find(m => m.id === e.mood);
+              return (
+                `[प्रविष्टि #${idx + 1}]\n` +
+                `• दिनांक: ${new Date(e.date).toLocaleString(language === 'hi' ? 'hi-IN' : language === 'pb' ? 'pa-IN' : 'en-US', { dateStyle: 'full', timeStyle: 'short' })}\n` +
+                `${moodObj ? `• आंतरिक भाव: ${moodObj.icon} ${moodObj.label[language] || moodObj.label.hi}\n` : ''}` +
+                `${e.sakhiNumber ? `• साखी संदर्भ: #${e.sakhiNumber}\n` : ''}` +
+                `• श्रेणी: ${e.categoryTag || t.defaultCategory}\n` +
+                `• आत्म-चिंतन:\n${e.notes}\n` +
+                `${e.gratitude ? `• कृतज्ञता: ${e.gratitude}\n` : ''}` +
+                `${e.resolution ? `• दैनिक संकल्प: ${e.resolution}\n` : ''}`
+              );
+            })
+            .join('\n------------------------------------------------------------\n\n')
+        : '— अभी कोई व्यक्तिगत चिंतन नोट दर्ज नहीं है —';
 
-    const formattedGratitude = gratitudeLogs
-      .map((g, idx) => {
-        return `[त्रिविध शुकराना #${idx + 1} - ${new Date(g.date).toLocaleDateString()}]\n` +
-          `1. सतगुरु कृपा: ${g.items[0]}\n` +
-          `2. श्वास व स्वास्थ्य: ${g.items[1]}\n` +
-          `3. सत्संग व सद्विचार: ${g.items[2]}\n`;
-      })
-      .join('\n------------------------------------------------------------\n\n');
+    const formattedGratitude =
+      gratitudeLogs.length > 0
+        ? gratitudeLogs
+            .map((g, idx) => {
+              return (
+                `[त्रिविध कृतज्ञता #${idx + 1} - ${new Date(g.date).toLocaleDateString()}]\n` +
+                `1. सतगुरु कृपा: ${g.items[0]}\n` +
+                `2. श्वास व स्वास्थ्य: ${g.items[1]}\n` +
+                `3. सत्संग व सद्विचार: ${g.items[2]}\n`
+              );
+            })
+            .join('\n------------------------------------------------------------\n\n')
+        : '— अभी कोई कृतज्ञता लॉग दर्ज नहीं है —';
 
-    const fullExport = `\uFEFF============================================================\n` +
+    const formattedChintan =
+      chintanLogs.length > 0
+        ? chintanLogs
+            .map((c, idx) => {
+              const answerLines = c.answers
+                ? Object.entries(c.answers)
+                    .filter(([, val]) => Boolean(val && val.trim()))
+                    .map(([k, val]) => `  - विचार ${Number(k) + 1}: ${val}`)
+                    .join('\n')
+                : '';
+              return (
+                `[दैनिक मनन व संकल्प #${idx + 1}${c.dateStr ? ` - ${c.dateStr}` : ''}]\n` +
+                `${c.chintanTitle ? `• विषय: ${c.chintanTitle}\n` : ''}` +
+                `${c.verse ? `• वाणी: ${c.verse}\n` : ''}` +
+                `${c.sankalpAccepted ? `• दैनिक संकल्प: ✓ सात्विक संकल्प स्वीकृत (सतगुरु शरण व सत्यनाम सुमिरन)\n` : ''}` +
+                `${c.reflectionText ? `• मनन नोट:\n${c.reflectionText}\n` : ''}` +
+                `${answerLines ? `• प्रश्नोत्तर चिंतन:\n${answerLines}\n` : ''}`
+              );
+            })
+            .join('\n------------------------------------------------------------\n\n')
+        : '';
+
+    const fullExport =
+      `\uFEFF============================================================\n` +
       `               ।। ${SACRED_BRANDING.header[language]} ।।\n` +
-      `      ${t.appTitle} — ${language === 'pb' ? 'ਆਤਮਿਕ ਜਰਨਲ ਤੇ ਸ਼ੁਕਰਾਨਾ' : language === 'en' ? 'Spiritual Journal & Gratitude Log' : 'आध्यात्मिक साधना जर्नल एवं कृतज्ञता'}\n` +
+      `      ${t.appTitle} — ${language === 'pb' ? 'ਨਿੱਜੀ ਸਵਾਧਿਆਏ ਡਾਇਰੀ ਤੇ ਸੰਕਲਪ' : language === 'en' ? 'Personal Swadhyay Diary & Daily Sankalps' : 'निजी स्वाध्याय डायरी, आत्म-चिंतन एवं संकल्प'}\n` +
       `      निर्यात तिथि: ${new Date().toLocaleDateString(language === 'hi' ? 'hi-IN' : language === 'pb' ? 'pa-IN' : 'en-US', { dateStyle: 'full' })}\n` +
-      `      कुल प्रविष्टियां: ${entries.length} | कृतज्ञता लॉग्स: ${gratitudeLogs.length}\n` +
+      `      निजी प्रविष्टियां: ${entries.length} | कृतज्ञता लॉग्स: ${gratitudeLogs.length} | दैनिक मनन: ${chintanLogs.length}\n` +
       `============================================================\n\n` +
-      `--- [ १. आत्म-चिंतन नोट्स ] ---\n\n` +
+      `--- [ १. निजी स्वाध्याय चिंतन एवं दैनिक संकल्प ] ---\n\n` +
       `${formatted}\n\n` +
       `--- [ २. त्रिविध कृतज्ञता दैनिकी ] ---\n\n` +
       `${formattedGratitude}\n\n` +
+      `${formattedChintan ? `--- [ ३. दैनिक मनन व सात्विक संकल्प संग्रह ] ---\n\n${formattedChintan}\n\n` : ''}` +
       `============================================================\n` +
       `               ।। ${SACRED_BRANDING.footer[language]} ।।\n` +
       `============================================================\n`;
@@ -811,16 +867,16 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `SahebWorld_Spiritual_Journal_Backup_${new Date().toISOString().slice(0, 10)}.txt`;
+    a.download = `SahebWorld_Swadhyay_Diary_${new Date().toISOString().slice(0, 10)}.txt`;
     a.click();
     URL.revokeObjectURL(url);
 
     showToast(
       language === 'pb'
-        ? `✓ ਆਤਮਿਕ ਜਰਨਲ ਤੇ ਸ਼ੁਕਰਾਨਾ ਬੈਕਅੱਪ ਟੈਕਸਟ ਫਾਈਲ ਡਾਊਨਲੋਡ ਹੋ ਗਈ!`
+        ? `✓ ਨਿੱਜੀ ਸਵਾਧਿਆਏ ਡਾਇਰੀ ਤੇ ਸੰਕਲਪ (.txt) ਡਾਊਨਲੋਡ ਹੋ ਗਈ!`
         : language === 'en'
-        ? `✓ Spiritual Journal & Gratitude backup exported!`
-        : `✓ आध्यात्मिक जर्नल व कृतज्ञता बैकअप फ़ाइल डाउनलोड हो गई!`,
+        ? `✓ Personal Swadhyay Diary & Sankalps (.txt) downloaded!`
+        : `✓ निजी स्वाध्याय डायरी एवं संकल्प (.txt) सफलतापूर्वक सहेजे गए!`,
       'success'
     );
   };
@@ -925,16 +981,21 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
             <button
               id="export-diary-btn"
               onClick={handleExportDiary}
-              title="Export Notes as Text"
+              title={language === 'pb' ? 'ਡਾਇਰੀ ਸਾਂਭੋ (Download Notes)' : language === 'en' ? 'Save Diary (Download Notes)' : 'डायरी सहेजें (Download Notes)'}
               style={{
                 backgroundColor: theme.bgSecondary,
                 borderColor: theme.cardBorder,
                 color: theme.textPrimary,
               }}
-              className="px-3 py-2 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition hover:opacity-90 cursor-pointer shadow-2xs"
+              className="px-3 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition hover:opacity-90 cursor-pointer shadow-2xs"
             >
-              <Download className="w-4 h-4 text-amber-600" />
-              <span className="hidden sm:inline">Text</span>
+              <span>
+                {language === 'pb'
+                  ? '📥 ਡਾਇਰੀ ਸਾਂਭੋ (Download Notes)'
+                  : language === 'en'
+                  ? '📥 Save Diary (Download Notes)'
+                  : '📥 डायरी सहेजें (Download Notes)'}
+              </span>
             </button>
 
             <button
@@ -1389,26 +1450,48 @@ export const SpiritualDiary: React.FC<SpiritualDiaryProps> = ({
         {activeSection === 'journal' && (
           <div className="space-y-6 animate-fadeIn">
             {/* Action Bar */}
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
               <span style={{ color: theme.sacredMaroon }} className="text-xs sm:text-sm font-black uppercase tracking-wider block font-serif">
-                {language === 'pb' ? 'ਆਤਮ-ਚਿੰਤਨ ਤੇ ਸਤਿਸੰਗ ਨੋਟਸ' : language === 'en' ? 'Contemplation Notes' : 'आत्म-चिंतन एवं सत्संग विचार'}
+                {language === 'pb' ? 'ਨਿੱਜੀ ਸਵਾਧਿਆਏ ਡਾਇਰੀ ਤੇ ਸਤਿਸੰਗ ਨੋਟਸ' : language === 'en' ? 'Personal Swadhyay Diary & Notes' : 'निजी स्वाध्याय डायरी एवं आत्म-चिंतन'}
               </span>
 
-              <button
-                id="open-add-diary-btn"
-                onClick={() => {
-                  sacredHaptics.lightTap();
-                  setIsAdding(!isAdding);
-                }}
-                style={{
-                  backgroundColor: theme.buttonPrimaryBg,
-                  color: theme.buttonPrimaryText,
-                }}
-                className="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition shadow-md hover:scale-105 active:scale-95 cursor-pointer"
-              >
-                {isAdding ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                <span>{isAdding ? (language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें') : (language === 'pb' ? 'ਨਵੀਂ ਪ੍ਰਵਿਸ਼ਟੀ' : language === 'en' ? 'New Journal Entry' : 'नया चिंतन लिखें')}</span>
-              </button>
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  id="journal-export-notes-btn"
+                  type="button"
+                  onClick={handleExportDiary}
+                  style={{
+                    backgroundColor: theme.bgSecondary,
+                    borderColor: theme.accentGold,
+                    color: theme.sacredMaroon,
+                  }}
+                  className="px-3 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition shadow-xs hover:scale-[1.02] active:scale-95 cursor-pointer"
+                >
+                  <span>
+                    {language === 'pb'
+                      ? '📥 ਡਾਇਰੀ ਸਾਂਭੋ (Download Notes)'
+                      : language === 'en'
+                      ? '📥 Save Diary (Download Notes)'
+                      : '📥 डायरी सहेजें (Download Notes)'}
+                  </span>
+                </button>
+
+                <button
+                  id="open-add-diary-btn"
+                  onClick={() => {
+                    sacredHaptics.lightTap();
+                    setIsAdding(!isAdding);
+                  }}
+                  style={{
+                    backgroundColor: theme.buttonPrimaryBg,
+                    color: theme.buttonPrimaryText,
+                  }}
+                  className="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  {isAdding ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  <span>{isAdding ? (language === 'pb' ? 'ਬੰਦ ਕਰੋ' : language === 'en' ? 'Close' : 'बंद करें') : (language === 'pb' ? 'ਨਵੀਂ ਪ੍ਰਵਿਸ਼ਟੀ' : language === 'en' ? 'New Journal Entry' : 'नया चिंतन लिखें')}</span>
+                </button>
+              </div>
             </div>
 
             {/* Add Entry Form Card */}

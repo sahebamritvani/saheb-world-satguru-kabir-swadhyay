@@ -533,6 +533,7 @@ export const ADMIN_GRANTH_SLOTS: AdminGranthSlotDefinition[] = [
     },
     targetSlug: 'dainik-chintan',
     targetViews: ['dainik-chintan'],
+    nativeReaderHandled: true,
     description: {
       hi: 'अंतर्मुखी विचार, आत्म-मंथन प्रश्न एवं चिंतन संदेश',
       pb: 'ਅੰਤਰਮੁਖੀ ਵਿਚਾਰ, ਆਤਮ-ਮੰਥਨ ਪ੍ਰਸ਼ਨ ਅਤੇ ਚਿੰਤਨ ਸੰਦੇਸ਼',
@@ -717,6 +718,7 @@ export const ADMIN_GRANTH_SLOTS: AdminGranthSlotDefinition[] = [
     },
     targetSlug: 'community-board',
     targetViews: ['community-board'],
+    nativeReaderHandled: true,
     description: {
       hi: 'सत्संग सूचनाएँ, संत अनुभव व सामुदायिक विचार संवाद',
       pb: 'ਸਤਿਸੰਗ ਸੂਚਨਾਵਾਂ, ਸੰਤ ਅਨੁਭਵ ਤੇ ਵਿਚਾਰ ਸੰਵਾਦ',

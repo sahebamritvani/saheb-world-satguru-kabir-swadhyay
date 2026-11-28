@@ -25,8 +25,8 @@ export const SACRED_SHARE_TEMPLATE = {
   },
   footer: {
     hi: 'सौजन्य: साहेब वर्ल्ड (Saheb World)\n।। साहेब बंदगी साहेब ।। 🙏',
-    pb: 'ਸੌਜੰਨਿਆ: ਸਾਹੇਬ ਵਰਲਡ (Saheb World)\n।। ਸਾਹੇਬ ਬੰਦਗੀ ਸਾਹੇਬ ।। 🙏',
-    en: 'Courtesy: Saheb World (Saheb World)\n|| Saheb Bandagi Saheb || 🙏',
+    pb: 'ਸੌਜਨਯ: ਸਾਹਿਬ ਵਰਲਡ (Saheb World)\n।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।। 🙏',
+    en: 'Courtesy: Saheb World\n|| Saheb Bandagi Saheb || 🙏',
   },
 } as const;
 

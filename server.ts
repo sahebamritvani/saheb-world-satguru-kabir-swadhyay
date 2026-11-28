@@ -411,7 +411,7 @@ Notice Rule 3: For step3_wordMeanings, ALWAYS provide accurate hi (Hindi), pb (P
 Notice Rule 2: Provide EXACTLY 4 parallel Sakhis/Vanis in step8_crossReferences—one each from Sri Guru Granth Sahib Ji (Salok Bhagat Kabir Ji), Kabir Bijak, Kabir Granthavali, and Kabir Sagar, explaining THAT parallel Vani's meaning and its direct connection to THIS main Sakhi.
 Notice Rule 4: Generate 3 crisp, deeply Sakhi-specific MCQs in step5_quiz (1. Core spiritual message/metaphor of this verse, 2. Exact meaning of a key word/symbol from step3_wordMeanings, 3. Practical daily application), with 4 realistic unique options each and a concise 1-line explanation.
 Notice Rule 5: Connect Steps 2, 7, 9, 10, and 11 directly to "${categoryTitle || 'Sakhi Sangrah'}" and use ONLY respectful Sant Mat attribution ("सतगुरु कबीर साहेब फरमाते हैं" / "ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਫ਼ਰਮਾਉਂਦੇ ਹਨ" / "Satguru Kabir Saheb proclaims") with exact spellings ("सत्यनाम", "साहेब", "सतगुरु").
-Notice Rule 6: Populate certificateData strictly per formatting rules with topHeader="🌹।।सत्यनाम।।🌹", bottomFooter="।।साहेब बंदगी साहेब।।🙏", footerBrand="Saheb World App • पावन स्वाध्याय मंच", highlightMoolSakhi="${verse.replace(/"/g, '\\"')}", seekerName="${String(seekerName || 'श्रद्धालु साधक').replace(/"/g, '\\"')}", and a concise 1-line theme-based blessing in the active language.
+Notice Rule 6: Populate certificateData strictly per formatting rules with topHeader="🌹।।सत्यनाम।।🌹", bottomFooter="।।साहेब बंदगी साहेब।।🙏", footerBrand="साहेब वर्ल्ड • पावन स्वाध्याय मंच", highlightMoolSakhi="${verse.replace(/"/g, '\\"')}", seekerName="${String(seekerName || 'श्रद्धालु साधक').replace(/"/g, '\\"')}", and a concise 1-line theme-based blessing in the active language.
 
 SAKHI INPUT:
 - Mode: ${isDailySakhi ? 'Daily Sakhi' : `Sakhi #${sakhiNumber || 1}`}
@@ -606,7 +606,7 @@ ${verse}
           ...(parsed.certificateData || {}),
           topHeader: '🌹।।सत्यनाम।।🌹',
           highlightMoolSakhi: verse.trim(),
-          footerBrand: 'Saheb World App • पावन स्वाध्याय मंच',
+          footerBrand: 'साहेब वर्ल्ड • पावन स्वाध्याय मंच',
           bottomFooter: '।।साहेब बंदगी साहेब।।🙏',
         },
       };

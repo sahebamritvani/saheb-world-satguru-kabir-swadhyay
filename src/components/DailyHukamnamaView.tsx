@@ -290,6 +290,9 @@ export const DailyHukamnamaView: React.FC<DailyHukamnamaViewProps> = ({
           <h1 className="text-2xl sm:text-4xl font-serif font-black tracking-wide text-amber-50">
             {isPb ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਬਾਣੀ ਹੁਕਮਨਾਮਾ' : isEn ? 'Satguru Kabir Saheb Sacred Vani Hukamnama' : 'सतगुरु कबीर साहेब पावन वाणी हुकमनामा'}
           </h1>
+          <p className="text-xs sm:text-sm font-serif font-bold text-amber-200">
+            {isPb ? 'ਸਤਿਗੁਰੂ ਬੰਦੀਛੋੜ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਅੱਜ ਦਾ ਫ਼ੁਰਮਾਨ' : isEn ? "Today's Sacred Decree of Satguru Bandichhor Kabir Saheb" : 'सतगुरु बंदीछोड़ कबीर साहेब का आज का फरमान'}
+          </p>
 
           <p className="text-xs sm:text-sm text-amber-100/90 font-serif max-w-2xl leading-relaxed">
             {isPb 

@@ -178,7 +178,24 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
   }, [sakhi.number, lang]);
 
   // --- DAINIK CHINTAN (SAKHI-ALIGNED DAILY REFLECTION) STATE ---
-  const [showKalChintan, setShowKalChintan] = useState(true);
+  const [showKalChintan, setShowKalChintan] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('sahebworld_show_kal_chintan');
+        if (saved !== null) return JSON.parse(saved);
+      } catch {}
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('sahebworld_show_kal_chintan', JSON.stringify(showKalChintan));
+      } catch {}
+    }
+  }, [showKalChintan]);
+
   const [kalReflectionText, setKalReflectionText] = useState('');
   const [kalSavedToast, setKalSavedToast] = useState(false);
   const [showPastKalNotes, setShowPastKalNotes] = useState(false);
@@ -1808,6 +1825,105 @@ export const DailyPawanSakhi: React.FC<DailyPawanSakhiProps> = ({
           onOpenDiaryWithVerse={onOpenDiaryWithVerse}
         />
       </div>
+
+      {/* ========================================================================= */}
+      {/* 5. हमारे बारे में (ABOUT US) SUMMARY SECTION                             */}
+      {/* ========================================================================= */}
+      <section
+        id="home-about-us-section"
+        style={{
+          backgroundColor: theme.cardBg,
+          borderColor: theme.cardBorder,
+          color: theme.textPrimary,
+        }}
+        className="rounded-3xl border shadow-xl p-5 sm:p-7 space-y-4 animate-fadeIn transition-all relative overflow-hidden"
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3.5" style={{ borderColor: theme.cardBorder }}>
+          <div className="flex items-center gap-3">
+            <div
+              style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.accentGold, color: theme.sacredMaroon }}
+              className="w-10 h-10 rounded-2xl border flex items-center justify-center shadow-2xs shrink-0"
+            >
+              <Info className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-black font-serif tracking-tight" style={{ color: theme.sacredMaroon }}>
+                {language === 'pb' ? 'ਸਾਡੇ ਬਾਰੇ (About Us)' : language === 'en' ? 'About Us' : 'हमारे बारे में (About Us)'}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: theme.textSecondary }}>
+                {language === 'pb'
+                  ? 'ਸੰਤ ਸ਼ਿਰੋਮਣੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸ੍ਵਾਧਿਆਇ ਮਿਸ਼ਨ'
+                  : language === 'en'
+                  ? 'Sant Shiromani Satguru Kabir Saheb Sacred Swadhyay Mission'
+                  : 'संत शिरोमणि सतगुरु कबीर साहेब पावन स्वाध्याय मिशन'}
+              </p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              sacredHaptics.lightTap();
+              window.dispatchEvent(new CustomEvent('sahebworld_open_about_modal', { detail: { section: 'about' } }));
+            }}
+            style={{ backgroundColor: theme.buttonPrimaryBg, color: theme.buttonPrimaryText }}
+            className="px-4 py-2 rounded-xl text-xs font-bold font-serif hover:scale-105 active:scale-95 transition cursor-pointer shadow-sm self-start sm:self-auto shrink-0 flex items-center gap-1.5"
+          >
+            <span>{language === 'pb' ? 'ਪੂਰਾ ਵੇਰਵਾ ਪੜ੍ਹੋ' : language === 'en' ? 'Read Full Details' : 'पूरा विवरण पढ़ें'}</span>
+            <ChevronRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <p className="text-xs sm:text-sm font-serif leading-relaxed opacity-90" style={{ color: theme.textPrimary }}>
+          {language === 'pb'
+            ? 'ਇਹ ਐਪ ਸੰਤ ਸ਼ਿਰੋਮਣੀ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਸਦੀਵੀ ਗਿਆਨ, ਉਨ੍ਹਾਂ ਦੇ ਜੀਵਨ ਪਰਿਚਯ, ਕ੍ਰਾਂਤੀਕਾਰੀ ਵਿਚਾਰਾਂ, ਸਾਖੀਆਂ, ਸਬਦ, ਰਮੈਣੀ ਅਤੇ ਉਨ੍ਹਾਂ ਦੀਆਂ ਰਹੱਸਮਈ ਉਲਟਬਾਂਸੀਆਂ ਨੂੰ ਆਧੁਨਿਕ ਤਕਨੀਕ ਰਾਹੀਂ ਘਰ-ਘਰ ਪਹੁੰਚਾਉਣ ਦਾ ਇੱਕ ਨਿਸ਼ਕਾਮ ਤੇ ਪਵਿੱਤਰ ਉਪਰਾਲਾ ਹੈ। ਸਮਾਜ ਵਿੱਚੋਂ ਅੰਧਵਿਸ਼ਵਾਸ ਤੇ ਪਾਖੰਡ ਮਿਟਾ ਕੇ ਆਤਮ-ਗਿਆਨ ਤੇ ਭਾਈਚਾਰੇ ਦਾ ਮਾਰਗ ਪੱਧਰਾ ਕਰਨਾ ਹੀ ਇਸ ਦਾ ਪਰਮ ਉਦੇਸ਼ ਹੈ।'
+            : language === 'en'
+            ? 'This app is a dedicated spiritual initiative to share the eternal wisdom, life biography, revolutionary teachings, Sakhis, Shabads, Ramainis, and mystical paradoxes of Sant Shiromani Satguru Kabir Saheb through modern technology for seekers worldwide.'
+            : 'यह ऐप संत शिरोमणि सतगुरु कबीर साहेब के शाश्वत ज्ञान, उनके जीवन परिचय, क्रांतिकारी विचारों, साखियों, सबद, रमैनी और उनकी रहस्यमयी उलटबांसियों को आधुनिक तकनीक के माध्यम से जन-जन तक पहुँचाने का एक निष्काम व पावन प्रयास है। समाज से अंधविश्वास व पाखंड को मिटाकर आत्मज्ञान, समता और आपसी भाईचारे का मार्ग प्रशस्त करना ही इसका परम उद्देश्य है।'}
+        </p>
+
+        {/* Quick Links Navigation Pills */}
+        <div className="flex flex-wrap items-center gap-2 pt-1 border-t" style={{ borderColor: theme.cardBorder }}>
+          <button
+            type="button"
+            onClick={() => {
+              sacredHaptics.lightTap();
+              window.dispatchEvent(new CustomEvent('sahebworld_open_about_modal', { detail: { section: 'guide' } }));
+            }}
+            style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder, color: theme.sacredMaroon }}
+            className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer flex items-center gap-1.5"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-amber-600" />
+            <span>{language === 'pb' ? 'ਮਾਰਗਦਰਸ਼ਿਕਾ' : language === 'en' ? 'User Guide' : 'उपयोग मार्गदर्शिका'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              sacredHaptics.lightTap();
+              window.dispatchEvent(new CustomEvent('sahebworld_open_about_modal', { detail: { section: 'disclaimer' } }));
+            }}
+            style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder, color: theme.sacredMaroon }}
+            className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer flex items-center gap-1.5"
+          >
+            <ShieldCheck className="w-3.5 h-3.5 text-amber-600" />
+            <span>{language === 'pb' ? 'ਅਸਵੀਕਾਰਤਾ' : language === 'en' ? 'Disclaimer' : 'अस्वीकरण'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              sacredHaptics.lightTap();
+              window.dispatchEvent(new CustomEvent('sahebworld_open_about_modal', { detail: { section: 'privacy' } }));
+            }}
+            style={{ backgroundColor: theme.stepActiveBg, borderColor: theme.cardBorder, color: theme.sacredMaroon }}
+            className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer flex items-center gap-1.5"
+          >
+            <Lock className="w-3.5 h-3.5 text-amber-600" />
+            <span>{language === 'pb' ? 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ' : language === 'en' ? 'Privacy Policy' : 'गोपनीयता नीति'}</span>
+          </button>
+        </div>
+      </section>
 
       {/* ========================================================================= */}
       {/* INTERACTIVE SADHANA & PANTH STUDIO (4 INTERACTIVE MODULES)                */}

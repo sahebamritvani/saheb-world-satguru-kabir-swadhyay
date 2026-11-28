@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Sparkles,
   BookOpen,
@@ -7,40 +7,35 @@ import {
   CheckCircle2,
   Share2,
   Volume2,
-  Calendar,
   Layers,
   Heart,
   ChevronRight,
-  ChevronLeft,
   Flame,
   Save,
   Trash2,
-  Clock,
   Play,
   Pause,
   RotateCcw,
   Check,
-  Compass,
-  ArrowRight,
   Feather,
   Download,
-  Copy
+  ShieldCheck
 } from 'lucide-react';
 import { Language, SACRED_BRANDING } from '../types';
 import { 
   DAINIK_CHINTAN_LIST, 
   ChintanSeed, 
-  getTodayChintan, 
-  getChintanByCategory 
+  getTodayChintan
 } from '../data/dainikChintanData';
-import { 
-  TEN_SATYA_VACHAN_SUTRAS, 
-  DAS_SUTRAS_METADATA 
-} from '../data/dasSutraData';
 import { GuruJiDasSutraView } from './GuruJiDasSutraView';
 import { satyanaamAudio } from '../services/audioDhun';
 import { useAppTheme } from '../theme/ThemeContext';
 import { UnifiedDohaCard } from './UnifiedDohaCard';
+import {
+  ADMIN_SLOTS_UPDATED_EVENT,
+  getInjectedGranthChapters,
+  hydrateAdminSlotsFromIndexedDB,
+} from '../services/adminSlotInjectorStore';
 
 interface DainikChintanProps {
   language: Language;
@@ -63,8 +58,88 @@ interface ChintanJournalEntry {
   timestamp: number;
 }
 
+interface ChintanDraftData {
+  inquiryAnswers: { [qIdx: number]: string };
+  reflectionText: string;
+  isSankalpDone: boolean;
+}
+
 const STORAGE_JOURNAL_KEY = 'sahebworld_dainik_chintan_journal';
 const STORAGE_STREAK_KEY = 'sahebworld_chintan_streak_data';
+const STORAGE_DRAFTS_KEY = 'sahebworld_dainik_chintan_drafts';
+
+function buildInjectedChintanSeeds(): ChintanSeed[] {
+  const chapters = getInjectedGranthChapters('slot-20-dainik-chintan');
+  if (!chapters || chapters.length === 0) return [];
+
+  const seeds: ChintanSeed[] = [];
+  let seq = 1;
+
+  chapters.forEach((ch, cIdx) => {
+    ch.verses.forEach((v, vIdx) => {
+      const idxNum = seq++;
+      const verseHi = v.lines.hi.join('\n') || ch.description.hi || ch.title.hi;
+      const versePb = v.lines.pb.join('\n') || ch.description.pb || ch.title.pb;
+      const verseEn = v.lines.en.join('\n') || ch.description.en || ch.title.en;
+
+      const coreHi = v.bhavarth?.hi || v.saralBhavarth?.hi || ch.description.hi || verseHi;
+      const corePb = v.bhavarth?.pb || v.saralBhavarth?.pb || ch.description.pb || versePb;
+      const coreEn = v.bhavarth?.en || v.saralBhavarth?.en || ch.description.en || verseEn;
+
+      const essenceHi = v.contemplation?.hi || v.deepInsight?.hi || coreHi;
+      const essencePb = v.contemplation?.pb || v.deepInsight?.pb || corePb;
+      const essenceEn = v.contemplation?.en || v.deepInsight?.en || coreEn;
+
+      const sankalpHi = v.practicalApplication?.hi || v.samarpanPrayer?.hi || 'हम आज सतगुरु कबीर साहेब के सत्यनाम सुमिरन और सात्विक हंस-वृत्ति का पालन करेंगे।';
+      const sankalpPb = v.practicalApplication?.pb || v.samarpanPrayer?.pb || 'ਅਸੀਂ ਅੱਜ ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੇ ਸਤਯਨਾਮ ਸਿਮਰਨ ਅਤੇ ਸਾਤਵਿਕ ਹੰਸ-ਵ੍ਰਿੱਤੀ ਦਾ ਪਾਲਣ ਕਰਾਂਗੇ।';
+      const sankalpEn = v.practicalApplication?.en || v.samarpanPrayer?.en || 'Today we resolve to practice Satyanaam remembrance and pure conduct inspired by Satguru Kabir Saheb.';
+
+      seeds.push({
+        id: `injected-chintan-${ch.id || cIdx}-${vIdx}`,
+        dayNumber: 100 + idxNum,
+        category: 'sahaj-samadhi',
+        categoryTitle: {
+          hi: 'विशेष संकलित मनन (Slot #20)',
+          pb: 'ਵਿਸ਼ੇਸ਼ ਸੰਕਲਿਤ ਮਨਨ (Slot #20)',
+          en: 'Custom Contemplation (Slot #20)',
+        },
+        title: {
+          hi: ch.title.hi || `पावन मनन #${idxNum}`,
+          pb: ch.title.pb || `ਪਾਵਨ ਮਨਨ #${idxNum}`,
+          en: ch.title.en || `Sacred Contemplation #${idxNum}`,
+        },
+        verse: { hi: verseHi, pb: versePb, en: verseEn },
+        coreTeaching: { hi: coreHi, pb: corePb, en: coreEn },
+        contemplationEssence: { hi: essenceHi, pb: essencePb, en: essenceEn },
+        inquiryQuestions: {
+          hi: [
+            'इस पावन वाणी का आज के दैनिक आचरण में क्या मुख्य संदेश है?',
+            'मन के किन विकारों या भ्रमों को छोड़कर हमें सहज सत्यनाम की ओर बढ़ना चाहिए?',
+            'आज के दिन हम इस उपदेश को अपने व्यवहार में कैसे उतार सकते हैं?',
+          ],
+          pb: [
+            'ਇਸ ਪਾਵਨ ਬਾਣੀ ਦਾ ਅੱਜ ਦੇ ਰੋਜ਼ਾਨਾ ਆਚਰਣ ਵਿੱਚ ਕੀ ਮੁੱਖ ਸੰਦੇਸ਼ ਹੈ?',
+            'ਮਨ ਦੇ ਕਿਹੜੇ ਵਿਕਾਰਾਂ ਨੂੰ ਛੱਡ ਕੇ ਸਾਨੂੰ ਸਹਿਜ ਸਤਯਨਾਮ ਵੱਲ ਵਧਣਾ ਚਾਹੀਦਾ ਹੈ?',
+            'ਅੱਜ ਅਸੀਂ ਇਸ ਉਪਦੇਸ਼ ਨੂੰ ਆਪਣੇ ਵਿਵਹਾਰ ਵਿੱਚ ਕਿਵੇਂ ਅਪਣਾ ਸਕਦੇ ਹਾਂ?',
+          ],
+          en: [
+            'What is the core message of this sacred verse for our daily conduct?',
+            'Which inner illusions or restlessness should we let go of to abide in Satyanaam?',
+            'How can we put this teaching into gentle practice today?',
+          ],
+        },
+        sadhanaSankalp: { hi: sankalpHi, pb: sankalpPb, en: sankalpEn },
+        meditationGuide: {
+          hi: 'शांत भाव से बैठकर श्वास-प्रश्वास में सत्यनाम सुमिरन के साथ इस वाणी का मनन करें।',
+          pb: 'ਸ਼ਾਂਤ ਭਾਵ ਨਾਲ ਬੈਠ ਕੇ ਹਰ ਸੁਆਸ ਵਿੱਚ ਸਤਯਨਾਮ ਸਿਮਰਨ ਨਾਲ ਇਸ ਬਾਣੀ ਦਾ ਮਨਨ ਕਰੋ।',
+          en: 'Sit quietly and reflect on this sacred teaching with steady Satyanaam awareness in every breath.',
+        },
+      });
+    });
+  });
+
+  return seeds;
+}
 
 export const DainikChintan: React.FC<DainikChintanProps> = ({
   language,
@@ -77,41 +152,22 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
   // Active Tab
   const [activeTab, setActiveTab] = useState<'today' | 'timer' | 'journal' | 'wheel' | 'das-sutra'>(initialTab);
 
+  // Admin Injected Slot #20 Chintan Seeds
+  const [injectedChintanList, setInjectedChintanList] = useState<ChintanSeed[]>(() => buildInjectedChintanSeeds());
+
   // Today's Chintan vs Selected Chintan
-  const [selectedChintan, setSelectedChintan] = useState<ChintanSeed>(getTodayChintan());
-  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('all');
+  const [selectedChintan, setSelectedChintan] = useState<ChintanSeed>(() => getTodayChintan());
 
   // Interactive Answers & Journal State
   const [inquiryAnswers, setInquiryAnswers] = useState<{ [qIdx: number]: string }>({});
   const [reflectionText, setReflectionText] = useState('');
   const [isSankalpDone, setIsSankalpDone] = useState(false);
   const [isSavedRecently, setIsSavedRecently] = useState(false);
+  const [shareToast, setShareToast] = useState<string | null>(null);
   const [journalEntries, setJournalEntries] = useState<ChintanJournalEntry[]>([]);
 
   // Streak & Metrics
   const [streakCount, setStreakCount] = useState(1);
-  const [totalReflectionsDone, setTotalReflectionsDone] = useState(0);
-  const [isSutrasCopied, setIsSutrasCopied] = useState(false);
-
-  const handleCopy10Sutras = () => {
-    const lines = [
-      DAS_SUTRAS_METADATA.headerBadge[language],
-      '',
-      DAS_SUTRAS_METADATA.title[language],
-      DAS_SUTRAS_METADATA.subtitle[language],
-      '',
-      ...TEN_SATYA_VACHAN_SUTRAS.map(
-        (s) =>
-          `${s.num}. ${s.sutra[language]}\n   ${DAS_SUTRAS_METADATA.bhavarthLabel[language]} ${s.bhavarth[language]}\n   ${DAS_SUTRAS_METADATA.lifeMessageLabel[language]} ${s.lifeMessage[language]}`
-      ),
-      '',
-      DAS_SUTRAS_METADATA.salutation[language],
-    ].join('\n');
-
-    navigator.clipboard.writeText(lines);
-    setIsSutrasCopied(true);
-    setTimeout(() => setIsSutrasCopied(false), 2500);
-  };
 
   // Meditation / Contemplation Timer State
   const [timerDuration, setTimerDuration] = useState<number>(300); // 5 mins default (300 sec)
@@ -119,14 +175,38 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [timerStage, setTimerStage] = useState<'idle' | 'inhale' | 'exhale'>('idle');
 
+  const syncInjectedChintan = useCallback(() => {
+    const seeds = buildInjectedChintanSeeds();
+    setInjectedChintanList(seeds);
+  }, []);
+
+  // Hydrate Admin Slot #20 from IndexedDB + Listen for Updates
+  useEffect(() => {
+    hydrateAdminSlotsFromIndexedDB()
+      .then(() => {
+        syncInjectedChintan();
+      })
+      .catch(() => {});
+
+    const handleSlotUpdate = (e: Event) => {
+      const detail = (e as CustomEvent<{ slotId?: string }>).detail;
+      if (!detail?.slotId || detail.slotId === 'all' || detail.slotId === 'slot-20-dainik-chintan') {
+        syncInjectedChintan();
+      }
+    };
+    window.addEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSlotUpdate);
+    return () => window.removeEventListener(ADMIN_SLOTS_UPDATED_EVENT, handleSlotUpdate);
+  }, [syncInjectedChintan]);
+
   // Load Saved Journal & Streak on Mount
   useEffect(() => {
     try {
       const savedJournal = localStorage.getItem(STORAGE_JOURNAL_KEY);
       if (savedJournal) {
         const parsed: ChintanJournalEntry[] = JSON.parse(savedJournal);
-        setJournalEntries(parsed);
-        setTotalReflectionsDone(parsed.length);
+        if (Array.isArray(parsed)) {
+          setJournalEntries(parsed);
+        }
       }
 
       const savedStreak = localStorage.getItem(STORAGE_STREAK_KEY);
@@ -137,11 +217,48 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
     } catch {}
   }, []);
 
+  // Restore draft inputs whenever selectedChintan changes
+  useEffect(() => {
+    try {
+      const rawDrafts = localStorage.getItem(STORAGE_DRAFTS_KEY);
+      if (rawDrafts) {
+        const allDrafts: Record<string, ChintanDraftData> = JSON.parse(rawDrafts);
+        const draft = allDrafts[selectedChintan.id];
+        if (draft) {
+          setInquiryAnswers(draft.inquiryAnswers || {});
+          setReflectionText(draft.reflectionText || '');
+          setIsSankalpDone(Boolean(draft.isSankalpDone));
+          return;
+        }
+      }
+    } catch {}
+    setInquiryAnswers({});
+    setReflectionText('');
+    setIsSankalpDone(false);
+  }, [selectedChintan.id]);
+
+  // Persist draft edits immediately to localStorage for 100% offline safety
+  const persistDraft = useCallback(
+    (nextAnswers: { [qIdx: number]: string }, nextText: string, nextSankalp: boolean) => {
+      try {
+        const rawDrafts = localStorage.getItem(STORAGE_DRAFTS_KEY);
+        const allDrafts: Record<string, ChintanDraftData> = rawDrafts ? JSON.parse(rawDrafts) : {};
+        allDrafts[selectedChintan.id] = {
+          inquiryAnswers: nextAnswers,
+          reflectionText: nextText,
+          isSankalpDone: nextSankalp,
+        };
+        localStorage.setItem(STORAGE_DRAFTS_KEY, JSON.stringify(allDrafts));
+      } catch {}
+    },
+    [selectedChintan.id]
+  );
+
   // Timer Tick
   useEffect(() => {
-    let interval: any = null;
+    let interval: number | undefined;
     if (isTimerRunning && timeRemaining > 0) {
-      interval = setInterval(() => {
+      interval = window.setInterval(() => {
         setTimeRemaining((prev) => {
           if (prev <= 1) {
             setIsTimerRunning(false);
@@ -154,8 +271,8 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
                 language === 'pb'
                   ? 'ਤੁਸੀਂ ਅੱਜ ਦਾ ਸ਼ਾਂਤ ਚਿੰਤਨ ਅਤੇ ਧਿਆਨ ਪੂਰਾ ਕਰ ਲਿਆ ਹੈ। ਸਤਿਗੁਰੂ ਕ੍ਰਿਪਾ!'
                   : language === 'en'
-                  ? 'You have completed today’s silent contemplation.'
-                  : 'आपने आज का शांत चिंतन व ध्यान पूर्ण किया। सत साहेब!'
+                  ? 'You have completed today’s silent contemplation. Satyanaam Saheb!'
+                  : 'आपने आज का शांत चिंतन व ध्यान पूर्ण किया। सत्यनाम साहेब!'
               );
             }
             return 0;
@@ -173,7 +290,11 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
     } else if (timeRemaining === 0) {
       setIsTimerRunning(false);
     }
-    return () => clearInterval(interval);
+    return () => {
+      if (interval !== undefined) {
+        window.clearInterval(interval);
+      }
+    };
   }, [isTimerRunning, timeRemaining, timerDuration, language, onOpenBlessing]);
 
   const handleStartTimer = (seconds: number) => {
@@ -217,7 +338,6 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
 
     const updated = [newEntry, ...journalEntries];
     setJournalEntries(updated);
-    setTotalReflectionsDone(updated.length);
 
     try {
       localStorage.setItem(STORAGE_JOURNAL_KEY, JSON.stringify(updated));
@@ -303,7 +423,7 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  const handleShareChintan = () => {
+  const handleShareChintan = async () => {
     const top = SACRED_BRANDING.header[language];
     const bottom = SACRED_BRANDING.footer[language];
 
@@ -316,22 +436,32 @@ export const DainikChintan: React.FC<DainikChintanProps> = ({
 📜 *${language === 'hi' ? 'सतगुरु कबीर साहेब की अमर वाणी:' : language === 'pb' ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਦੀ ਅਮਰ ਬਾਣੀ:' : 'Satguru Kabir Saheb Eternal Wisdom:'}*
 ${selectedChintan.verse[language]}
 
-💡 *चिंतन मर्म:*
+💡 *${language === 'pb' ? 'ਚਿੰਤਨ ਮਰਮ:' : language === 'en' ? 'Contemplation Essence:' : 'चिंतन मर्म:'}*
 ${selectedChintan.contemplationEssence[language]}
 
-✨ *आज का साधना संकल्प:*
+✨ *${language === 'pb' ? 'ਅੱਜ ਦਾ ਸਾਧਨਾ ਸੰਕਲਪ:' : language === 'en' ? "Today's Resolve:" : 'आज का साधना संकल्प:'}*
 "${selectedChintan.sadhanaSankalp[language]}"
 
 ${bottom}`;
 
-    if (navigator.share) {
-      navigator.share({
-        title: selectedChintan.title[language],
-        text: shareText,
-      }).catch(() => {});
-    } else {
-      navigator.clipboard.writeText(shareText);
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: selectedChintan.title[language],
+          text: shareText,
+        });
+        setShareToast(language === 'pb' ? '✓ ਚਿੰਤਨ ਸਾਂਝਾ ਕੀਤਾ ਗਿਆ' : language === 'en' ? '✓ Contemplation shared' : '✓ चिंतन साझा किया गया');
+      } else {
+        await navigator.clipboard.writeText(shareText);
+        setShareToast(language === 'pb' ? '✓ ਚਿੰਤਨ ਕਾਪੀ ਹੋਇਆ' : language === 'en' ? '✓ Copied to clipboard' : '✓ चिंतन कॉपी हो गया');
+      }
+    } catch {
+      try {
+        await navigator.clipboard.writeText(shareText);
+        setShareToast(language === 'pb' ? '✓ ਚਿੰਤਨ ਕਾਪੀ ਹੋਇਆ' : language === 'en' ? '✓ Copied to clipboard' : '✓ चिंतन कॉपी हो गया');
+      } catch {}
     }
+    setTimeout(() => setShareToast(null), 2600);
   };
 
   // Trilingual labels
@@ -398,7 +528,21 @@ ${bottom}`;
           </div>
 
           {/* Quick Metrics & Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            {/* Offline Ready Badge */}
+            <div
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold shadow-xs"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+              <span>
+                {language === 'pb'
+                  ? '੧੦੦% ਆਫ਼ਲਾਈਨ ਡਾਇਰੀ'
+                  : language === 'en'
+                  ? '100% Offline Ready'
+                  : '१००% ऑफ़लाइन सुरक्षित'}
+              </span>
+            </div>
+
             {/* Contemplation Streak */}
             <div
               style={{
@@ -429,6 +573,12 @@ ${bottom}`;
             </button>
           </div>
         </div>
+
+        {shareToast && (
+          <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold text-center">
+            {shareToast}
+          </div>
+        )}
 
         {/* Tab Navigation Controls */}
         <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-2xl border bg-black/5 dark:bg-white/5" style={{ borderColor: theme.cardBorder }}>
@@ -502,6 +652,54 @@ ${bottom}`;
       {/* TAB 1: TODAY'S CONTEMPLATION & INQUIRY */}
       {activeTab === 'today' && (
         <div className="p-4 sm:p-6 space-y-6">
+          {/* Admin-Injected Custom Contemplations Selector (Slot #20) */}
+          {injectedChintanList.length > 0 && (
+            <div
+              style={{
+                backgroundColor: 'rgba(245, 158, 11, 0.08)',
+                borderColor: 'rgba(217, 119, 6, 0.35)',
+              }}
+              className="p-3.5 rounded-2xl border space-y-2"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-xs font-extrabold text-amber-800 dark:text-amber-300 font-serif">
+                  {language === 'pb'
+                    ? `✨ ਵਿਸ਼ੇਸ਼ ਸੰਕਲਿਤ ਮਨਨ (${injectedChintanList.length})`
+                    : language === 'en'
+                    ? `✨ Custom Contemplations (${injectedChintanList.length})`
+                    : `✨ विशेष संकलित मनन (${injectedChintanList.length})`}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedChintan(getTodayChintan())}
+                  className="text-[11px] font-bold underline text-amber-700 dark:text-amber-300 cursor-pointer"
+                >
+                  {language === 'pb' ? 'ਅੱਜ ਦਾ ਮਨਨ' : language === 'en' ? "Today's Default" : 'आज का मूल चिंतन'}
+                </button>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {injectedChintanList.map((seed) => {
+                  const isActive = selectedChintan.id === seed.id;
+                  return (
+                    <button
+                      key={seed.id}
+                      type="button"
+                      onClick={() => setSelectedChintan(seed)}
+                      style={{
+                        backgroundColor: isActive ? theme.buttonPrimaryBg : theme.cardBg,
+                        color: isActive ? theme.buttonPrimaryText : theme.textPrimary,
+                        borderColor: isActive ? theme.buttonPrimaryBg : theme.cardBorder,
+                      }}
+                      className="px-3 py-1.5 rounded-xl border text-xs font-bold font-serif transition cursor-pointer shadow-2xs"
+                    >
+                      {seed.title[language]}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* Main Contemplation Banner */}
           <div
             style={{
@@ -588,9 +786,11 @@ ${bottom}`;
                     type="text"
                     placeholder={language === 'pb' ? 'ਤੁਹਾਡਾ ਉੱਤਰ / ਅੰਤਰਦ੍ਰਿਸ਼ਟੀ...' : language === 'en' ? 'Your inner reflection / answer...' : 'आपका उत्तर / अंतर्दृष्टि...'}
                     value={inquiryAnswers[idx] || ''}
-                    onChange={(e) =>
-                      setInquiryAnswers({ ...inquiryAnswers, [idx]: e.target.value })
-                    }
+                    onChange={(e) => {
+                      const nextAnswers = { ...inquiryAnswers, [idx]: e.target.value };
+                      setInquiryAnswers(nextAnswers);
+                      persistDraft(nextAnswers, reflectionText, isSankalpDone);
+                    }}
                     className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm bg-white dark:bg-stone-900 focus:outline-none focus:border-amber-500 transition"
                     style={{ borderColor: theme.cardBorder }}
                   />
@@ -616,7 +816,11 @@ ${bottom}`;
               </div>
               <button
                 type="button"
-                onClick={() => setIsSankalpDone(!isSankalpDone)}
+                onClick={() => {
+                  const nextSankalp = !isSankalpDone;
+                  setIsSankalpDone(nextSankalp);
+                  persistDraft(inquiryAnswers, reflectionText, nextSankalp);
+                }}
                 className={`px-3 py-1 rounded-xl text-xs font-black flex items-center gap-1.5 transition cursor-pointer ${
                   isSankalpDone ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-stone-950'
                 }`}
@@ -647,7 +851,11 @@ ${bottom}`;
             <textarea
               rows={3}
               value={reflectionText}
-              onChange={(e) => setReflectionText(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value;
+                setReflectionText(val);
+                persistDraft(inquiryAnswers, val, isSankalpDone);
+              }}
               placeholder={tr.notesPlaceholder}
               className="w-full p-4 rounded-2xl border text-sm bg-white dark:bg-stone-900 focus:outline-none focus:border-amber-500 transition leading-relaxed"
               style={{ borderColor: theme.cardBorder }}
@@ -686,7 +894,7 @@ ${bottom}`;
         <div className="p-4 sm:p-6 space-y-6 text-center">
           <div className="space-y-1">
             <h3 className="text-xl sm:text-2xl font-black font-serif" style={{ color: theme.sacredMaroon }}>
-              शांत चिंतन व ध्यान साधना
+              {language === 'pb' ? 'ਸ਼ਾਂਤ ਚਿੰਤਨ ਤੇ ਧਿਆਨ ਸਾਧਨਾ' : language === 'en' ? 'Silent Contemplation & Meditation' : 'शांत चिंतन व ध्यान साधना'}
             </h3>
             <p className="text-xs sm:text-sm" style={{ color: theme.textSecondary }}>
               {selectedChintan.meditationGuide[language]}
@@ -715,9 +923,9 @@ ${bottom}`;
               <div className="mt-2 text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
                 {isTimerRunning
                   ? timerStage === 'inhale'
-                    ? 'श्वास अंदर लें • "सत्य"'
-                    : 'श्वास छोड़ें • "नाम"'
-                  : 'शांत बैठें'}
+                    ? (language === 'pb' ? 'ਸੁਆਸ ਅੰਦਰ ਲਓ • "ਸਤਯ"' : language === 'en' ? 'Inhale • "Satya"' : 'श्वास अंदर लें • "सत्य"')
+                    : (language === 'pb' ? 'ਸੁਆਸ ਛੱਡੋ • "ਨਾਮ"' : language === 'en' ? 'Exhale • "Naam"' : 'श्वास छोड़ें • "नाम"')
+                  : (language === 'pb' ? 'ਸ਼ਾਂਤ ਬੈਠੋ' : language === 'en' ? 'Sit Quietly' : 'शांत बैठें')}
               </div>
 
               <div className="text-xs opacity-70 mt-1">
@@ -867,14 +1075,18 @@ ${bottom}`;
             >
               <div className="text-4xl">📖</div>
               <p className="text-sm font-semibold" style={{ color: theme.textSecondary }}>
-                अभी तक कोई चिंतन डायरी प्रविष्टि नहीं लिखी गई है। आज का चिंतन पढ़कर अपने भाव दर्ज करें।
+                {language === 'pb'
+                  ? 'ਅਜੇ ਤੱਕ ਕੋਈ ਚਿੰਤਨ ਡਾਇਰੀ ਇੰਦਰਾਜ ਨਹੀਂ ਲਿਖਿਆ ਗਿਆ। ਅੱਜ ਦਾ ਚਿੰਤਨ ਪੜ੍ਹ ਕੇ ਆਪਣੇ ਵਿਚਾਰ ਸੰਭਾਲੋ।'
+                  : language === 'en'
+                  ? 'No contemplation journal entries yet. Read today’s contemplation and save your inner reflections offline.'
+                  : 'अभी तक कोई चिंतन डायरी प्रविष्टि नहीं लिखी गई है। आज का चिंतन पढ़कर अपने भाव दर्ज करें।'}
               </p>
               <button
                 type="button"
                 onClick={() => setActiveTab('today')}
                 className="px-4 py-2 rounded-xl bg-amber-500 text-stone-950 text-xs font-bold shadow-md cursor-pointer"
               >
-                आज का चिंतन शुरू करें
+                {language === 'pb' ? 'ਅੱਜ ਦਾ ਚਿੰਤਨ ਸ਼ੁਰੂ ਕਰੋ' : language === 'en' ? 'Start Today’s Contemplation' : 'आज का चिंतन शुरू करें'}
               </button>
             </div>
           ) : (
@@ -958,9 +1170,9 @@ ${bottom}`;
             </p>
           </div>
 
-          {/* Categorized Themes Grid */}
+          {/* Categorized Themes Grid (Includes Custom Admin Slot #20 Seeds + 30-Day Wheel) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {DAINIK_CHINTAN_LIST.map((seed) => {
+            {[...injectedChintanList, ...DAINIK_CHINTAN_LIST].map((seed) => {
               const isCurrent = seed.id === selectedChintan.id;
 
               return (

@@ -193,6 +193,9 @@ export const DailyHukamnamaCard: React.FC<DailyHukamnamaCardProps> = ({
                 {isPb ? '12:00 AM ਸਵੈ-ਪਰਿਵਰਤਨ' : isEn ? 'Auto-updates 12:00 AM' : '12:00 AM स्वतः परिवर्तन'}
               </span>
             </div>
+            <p className="text-[11px] font-serif text-amber-950/80 dark:text-amber-200/80 font-bold">
+              {isPb ? 'ਸਤਿਗੁਰੂ ਬੰਦੀਛੋੜ ਕਬੀਰ ਸਾਹੇਬ ਦਾ ਅੱਜ ਦਾ ਫ਼ੁਰਮਾਨ' : isEn ? "Today's Sacred Decree of Satguru Bandichhor Kabir Saheb" : 'सतगुरु बंदीछोड़ कबीर साहेब का आज का फरमान'}
+            </p>
             <p style={{ color: theme.textSecondary }} className="text-xs font-serif">
               {isPb ? 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ' : isEn ? 'Sri Guru Granth Sahib Ji' : 'श्री गुरु ग्रंथ साहिब जी'} •{' '}
               {isPb ? 'ਅੰਗ' : isEn ? 'Ang' : 'अंग'} {verse.ang} {verse.raag ? `(${verse.raag})` : ''}

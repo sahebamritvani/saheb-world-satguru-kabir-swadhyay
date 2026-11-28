@@ -38,7 +38,7 @@ interface ShabdKoshaProps {
   onOpenBlessing?: (title?: string, msg?: string) => void;
 }
 
-interface KoshaEntry {
+export interface KoshaEntry {
   id: string;
   term: {
     pb: string;
@@ -63,7 +63,7 @@ interface KoshaEntry {
   associatedAng?: 'kaal-ko-ang' | 'jeevat-mritak-ko-ang' | 'swaarath-ko-ang' | 'parmaarth-ko-ang' | 'man-ko-ang' | 'maya-ko-ang' | 'moh-ko-ang' | 'kaam-ko-ang' | 'krodh-ko-ang' | 'lobh-ko-ang';
 }
 
-const GLOSSARY_DB: KoshaEntry[] = [
+export const GLOSSARY_DB: KoshaEntry[] = [
   {
     id: 'kaal-aheri',
     term: {

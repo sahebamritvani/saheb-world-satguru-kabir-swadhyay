@@ -1,6 +1,12 @@
 import { Sakhi, Language, SACRED_BRANDING } from '../types';
 import { formatCoupletIntoTwoLines, formatCoupletString } from '../utils/textSanitizer';
 import { SACRED_SHARE_TEMPLATE } from './shareTemplate';
+import magharDhamWallpaper from '../assets/images/clean_maghar_dham_nature_1794927914335.jpg';
+import kabirChauraKashiWallpaper from '../assets/images/kabir_chaura_kashi_dham_1795824432847.jpg';
+import lahartaraPondWallpaper from '../assets/images/lahartara_lotus_pond_dham_1795824433502.jpg';
+import bandhavgarhHillWallpaper from '../assets/images/bandhavgarh_kabir_hill_dham_1795824434607.jpg';
+import jagannathPuriMathWallpaper from '../assets/images/jagannath_puri_math_dham_1795824434844.jpg';
+import damakhedaDarshanWallpaper from '../assets/images/damakheda_darshan_sthal_dham_1795824435749.jpg';
 
 export interface GeneratedCardResult {
   blob: Blob;
@@ -18,6 +24,7 @@ export interface CardThemeItem {
   text: string;
   secondary?: string;
   accent?: string;
+  imageSrc?: string;
 }
 
 export const CARD_THEMES: Record<string, CardThemeItem> = {
@@ -38,6 +45,7 @@ export const CARD_THEMES: Record<string, CardThemeItem> = {
     text: '#FEF3C7',
     secondary: '#FCD34D',
     accent: '#F59E0B',
+    imageSrc: magharDhamWallpaper,
   },
   // 3. कबीर चौरा धाम, काशी (Kabir Chaura Math, Kashi)
   kabir_chaura_kashi: {
@@ -47,6 +55,7 @@ export const CARD_THEMES: Record<string, CardThemeItem> = {
     text: '#FEF08A',
     secondary: '#FDE047',
     accent: '#FBBF24',
+    imageSrc: kabirChauraKashiWallpaper,
   },
   // 4. लहरतारा पावन सरोवर (Lahartara Sacred Lotus Pond)
   lahartara_pond: {
@@ -56,6 +65,7 @@ export const CARD_THEMES: Record<string, CardThemeItem> = {
     text: '#E0F2FE',
     secondary: '#7DD3FC',
     accent: '#38BDF8',
+    imageSrc: lahartaraPondWallpaper,
   },
   // 5. बांधवगढ़ पावन स्थल (Bandhavgarh Sacred Hill & Forest)
   bandhavgarh_forest: {
@@ -65,6 +75,7 @@ export const CARD_THEMES: Record<string, CardThemeItem> = {
     text: '#DCFCE7',
     secondary: '#86EFAC',
     accent: '#10B981',
+    imageSrc: bandhavgarhHillWallpaper,
   },
   // 6. जगन्नाथ पुरी कबीर मठ (Jagannath Puri Kabir Chaura Math)
   jagannath_puri_math: {
@@ -74,6 +85,7 @@ export const CARD_THEMES: Record<string, CardThemeItem> = {
     text: '#FEF9C3',
     secondary: '#FDE047',
     accent: '#EAB308',
+    imageSrc: jagannathPuriMathWallpaper,
   },
   // 7. दामाखेड़ा दर्शन स्थल (Damakheda Paavan Darshan Sthal)
   damakheda_darshan: {
@@ -83,6 +95,7 @@ export const CARD_THEMES: Record<string, CardThemeItem> = {
     text: '#FFEDD5',
     secondary: '#FDBA74',
     accent: '#F97316',
+    imageSrc: damakhedaDarshanWallpaper,
   },
 
   // Backward-compatible aliases
@@ -170,21 +183,59 @@ export async function generateQuoteCardCanvas(options: {
 
   const themeItem = CARD_THEMES[design] || CARD_THEMES.royal_bhojpatra || Object.values(CARD_THEMES)[0];
 
-  // 1. Draw background
-  ctx.fillStyle = themeItem.bg;
-  ctx.fillRect(0, 0, width, height);
+  // 1. Draw background (Image asset if available, else solid color + gradient)
+  let imageRendered = false;
+  if (themeItem.imageSrc) {
+    try {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      await new Promise<void>((resolve) => {
+        img.onload = () => resolve();
+        img.onerror = () => resolve();
+        img.src = themeItem.imageSrc!;
+      });
+      if (img.complete && img.naturalWidth > 0) {
+        imageRendered = true;
+        const imgRatio = img.naturalWidth / img.naturalHeight;
+        const canvasRatio = width / height;
+        let dw = width;
+        let dh = height;
+        let dx = 0;
+        let dy = 0;
+        if (imgRatio > canvasRatio) {
+          dh = height;
+          dw = height * imgRatio;
+          dx = (width - dw) / 2;
+        } else {
+          dw = width;
+          dh = width / imgRatio;
+          dy = (height - dh) / 2;
+        }
+        ctx.drawImage(img, dx, dy, dw, dh);
 
-  // 2. Gradient Overlay for subtle depth
-  const grad = ctx.createLinearGradient(0, 0, 0, height);
-  if (design === 'royal_bhojpatra') {
-    grad.addColorStop(0, 'rgba(255, 255, 255, 0.40)');
-    grad.addColorStop(1, 'rgba(245, 230, 195, 0.25)');
-  } else {
-    grad.addColorStop(0, 'rgba(255, 255, 255, 0.08)');
-    grad.addColorStop(1, 'rgba(0, 0, 0, 0.35)');
+        // Rich dark scrim overlay for high text contrast
+        ctx.fillStyle = 'rgba(12, 8, 5, 0.58)';
+        ctx.fillRect(0, 0, width, height);
+      }
+    } catch {}
   }
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, width, height);
+
+  if (!imageRendered) {
+    ctx.fillStyle = themeItem.bg;
+    ctx.fillRect(0, 0, width, height);
+
+    // 2. Gradient Overlay for subtle depth
+    const grad = ctx.createLinearGradient(0, 0, 0, height);
+    if (design === 'royal_bhojpatra') {
+      grad.addColorStop(0, 'rgba(255, 255, 255, 0.40)');
+      grad.addColorStop(1, 'rgba(245, 230, 195, 0.25)');
+    } else {
+      grad.addColorStop(0, 'rgba(255, 255, 255, 0.08)');
+      grad.addColorStop(1, 'rgba(0, 0, 0, 0.35)');
+    }
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+  }
 
   // 3. Subtle background watermark (opacity: 0.10)
   const sunGrad = ctx.createRadialGradient(width / 2, height * 0.45, 20, width / 2, height * 0.45, 320);
@@ -212,7 +263,7 @@ export async function generateQuoteCardCanvas(options: {
   ctx.fillText(SACRED_SHARE_TEMPLATE.header[language] || SACRED_BRANDING.header[language], width / 2, headerY);
 
   ctx.font = 'bold 22px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif';
-  ctx.fillStyle = themeItem.text;
+  ctx.fillStyle = imageRendered ? '#FEF3C7' : themeItem.text;
   ctx.fillText(
     language === 'pb'
       ? 'ਸਤਿਗੁਰੂ ਕਬੀਰ ਸਾਹੇਬ ਪਾਵਨ ਸਾਖੀ'
@@ -223,9 +274,12 @@ export async function generateQuoteCardCanvas(options: {
     headerY + 44
   );
 
-  // 6. Main Verse Text (Strictly 2 lines ending with double danda ॥ with horizontal auto-fit)
-  const rawText = customText || sakhi.text[language] || sakhi.text.hi;
-  const [l1, l2] = formatCoupletIntoTwoLines(rawText, language);
+  // 6. Main Verse Text (Strictly 2 lines ending with double danda ॥ with horizontal auto-fit & colophon removal)
+  const cleanVerseSource = (customText || sakhi.text[language] || sakhi.text.hi)
+    .replace(/॥\s*(?:ਸਲੋਕ|सलोक|Salok)\s*(?:ਭਗਤ|भगत|Bhagat)\s*(?:ਕਬੀਰ|कबीर|Kabir)\s*(?:ਜੀਉ|जीउ|Jio)\s*(?:ਕੇ|के|Ke)\s*(?:ਸਮਾਪਤ|समाप्त|Samaapat)\s*॥/gi, '')
+    .replace(/\(ਸਮਾਪਤ\)|\(समाप्त\)/gi, '')
+    .trim();
+  const [l1, l2] = formatCoupletIntoTwoLines(cleanVerseSource, language);
   const rawLines = [l1, l2].filter(Boolean);
 
   const maxVerseWidth = width - 140;
@@ -234,13 +288,13 @@ export async function generateQuoteCardCanvas(options: {
   // Auto-fit check
   ctx.font = `bold italic ${verseFontSize}px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif`;
   for (const line of rawLines) {
-    while (ctx.measureText(line).width > maxVerseWidth && verseFontSize > 26) {
-      verseFontSize -= 2;
+    while (ctx.measureText(line).width > maxVerseWidth && verseFontSize > 24) {
+      verseFontSize -= 1;
       ctx.font = `bold italic ${verseFontSize}px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif`;
     }
   }
 
-  ctx.fillStyle = themeItem.text;
+  ctx.fillStyle = imageRendered ? '#FFFFFF' : themeItem.text;
   const verseLineHeight = verseFontSize * 1.5;
   let currentY = ratio === '9:16' ? height * 0.28 : height * 0.29;
 
@@ -256,23 +310,26 @@ export async function generateQuoteCardCanvas(options: {
   ctx.fillText(attributionText, width / 2, currentY + 12);
   currentY += 46;
 
-  // 8. Auto-Height Dynamic Bhavarth Box (never spills outside box)
+  // 8. Auto-Height Dynamic Bhavarth Box (100% visible, never spills or clips)
   const bhavarth = sakhi.bhavarth[language] || sakhi.bhavarth.hi;
   if (bhavarth) {
     const boxW = width - 140;
     const boxX = 70;
+    const footerLimit = height * 0.85;
+    const maxAllowedBoxH = Math.max(140, footerLimit - currentY - 24);
+    const titlePadding = 52;
+    const bottomPadding = 24;
+
+    const words = bhavarth.split(/\s+/).filter(Boolean);
     let bFontSize = ratio === '9:16' ? 26 : 22;
-
-    ctx.font = `italic ${bFontSize}px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif`;
-
-    // Wrap bhavarth text
-    const words = bhavarth.split(/\s+/);
     let bLines: string[] = [];
-    let curLine = '';
+    let bLineHeight = bFontSize * 1.55;
 
-    const wrapWords = () => {
+    // Dynamic auto-fit loop so all words fit without any clipping
+    while (bFontSize >= 14) {
+      ctx.font = `italic ${bFontSize}px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif`;
       bLines = [];
-      curLine = '';
+      let curLine = '';
       for (let n = 0; n < words.length; n++) {
         const testLine = curLine ? `${curLine} ${words[n]}` : words[n];
         if (ctx.measureText(testLine).width > boxW - 50) {
@@ -283,28 +340,24 @@ export async function generateQuoteCardCanvas(options: {
         }
       }
       if (curLine) bLines.push(curLine);
-    };
 
-    wrapWords();
-
-    // Auto-fit line count
-    const maxAllowedLines = ratio === '9:16' ? 9 : 4;
-    while (bLines.length > maxAllowedLines && bFontSize > 18) {
-      bFontSize -= 2;
-      ctx.font = `italic ${bFontSize}px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif`;
-      wrapWords();
+      bLineHeight = bFontSize * 1.55;
+      const neededH = titlePadding + (bLines.length * bLineHeight) + bottomPadding;
+      if (neededH <= maxAllowedBoxH || bFontSize <= 14) {
+        break;
+      }
+      bFontSize -= 1;
     }
 
-    const bLineHeight = bFontSize * 1.55;
-    const titlePadding = 52;
-    const bottomPadding = 24;
-    const dynamicBoxH = titlePadding + bLines.length * bLineHeight + bottomPadding;
-
-    const maxBoxY = height * 0.85 - dynamicBoxH;
-    const boxY = Math.min(maxBoxY, Math.max(currentY + 24, ratio === '9:16' ? height * 0.48 : height * 0.52));
+    const dynamicBoxH = Math.min(maxAllowedBoxH, titlePadding + bLines.length * bLineHeight + bottomPadding);
+    const boxY = Math.min(footerLimit - dynamicBoxH, Math.max(currentY + 20, ratio === '9:16' ? height * 0.48 : height * 0.52));
 
     // Draw Golden/Translucent Box
-    ctx.fillStyle = design === 'royal_bhojpatra' ? 'rgba(255, 253, 247, 0.92)' : 'rgba(12, 10, 8, 0.75)';
+    ctx.fillStyle = imageRendered
+      ? 'rgba(12, 10, 8, 0.82)'
+      : design === 'royal_bhojpatra'
+      ? 'rgba(255, 253, 247, 0.92)'
+      : 'rgba(12, 10, 8, 0.75)';
     ctx.strokeStyle = themeItem.accent || '#D97706';
     ctx.lineWidth = 2;
 
@@ -325,30 +378,38 @@ export async function generateQuoteCardCanvas(options: {
     ctx.font = 'bold 22px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif';
     ctx.fillText(`।। ${bhavarthLabel} ।।`, width / 2, boxY + 36);
 
-    // Render wrapped lines safely inside box
+    // Render wrapped lines safely inside box without dropping any line
     ctx.font = `italic ${bFontSize}px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif`;
-    ctx.fillStyle = themeItem.text;
+    ctx.fillStyle = imageRendered ? '#FEF08A' : themeItem.text;
     let bY = boxY + titlePadding + 14;
 
-    bLines.slice(0, maxAllowedLines).forEach((bl) => {
+    bLines.forEach((bl) => {
       ctx.fillText(bl.trim(), width / 2, bY);
       bY += bLineHeight;
     });
   }
 
-  // 9. Clean Unified Footer:
-  // "सौजन्य: साहेब वर्ल्ड (Saheb World)"
-  // "।। साहेब बंदगी साहेब ।। 🙏"
-  const footerLines = SACRED_SHARE_TEMPLATE.footer[language].split('\n');
-  const footerL1 = footerLines[0] || 'सौजन्य: साहेब वर्ल्ड (Saheb World)';
-  const footerL2 = footerLines[1] || '।। साहेब बंदगी साहेब ।। 🙏';
+  // 9. Clean Unified Localized Footer:
+  const footerL1 =
+    language === 'pb'
+      ? 'ਸੌਜਨਯ: ਸਾਹਿਬ ਵਰਲਡ (Saheb World)'
+      : language === 'en'
+      ? 'Courtesy: Saheb World'
+      : 'सौजन्य: साहेब वर्ल्ड (Saheb World)';
+
+  const footerL2 =
+    language === 'pb'
+      ? '।। ਸਾਹਿਬ ਬੰਦਗੀ ਸਾਹਿਬ ।। 🙏'
+      : language === 'en'
+      ? '|| Saheb Bandagi Saheb || 🙏'
+      : '।। साहेब बंदगी साहेब ।। 🙏';
 
   ctx.fillStyle = themeItem.accent || '#D97706';
   ctx.font = 'bold 22px "Noto Sans Devanagari", "Noto Sans Gurmukhi", sans-serif';
   ctx.fillText(footerL1, width / 2, height - (ratio === '9:16' ? 96 : 82));
 
   ctx.font = 'bold 28px "Noto Serif Devanagari", "Noto Serif Gurmukhi", Georgia, serif';
-  ctx.fillStyle = themeItem.text;
+  ctx.fillStyle = imageRendered ? '#FFFFFF' : themeItem.text;
   ctx.fillText(footerL2, width / 2, height - (ratio === '9:16' ? 52 : 44));
 
   return new Promise<GeneratedCardResult>((resolve, reject) => {

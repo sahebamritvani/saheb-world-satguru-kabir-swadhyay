@@ -1,4 +1,5 @@
 import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import ReactECharts from 'echarts-for-react';
 import type { EChartsOption } from 'echarts';
 import { useAppTheme } from '../theme/ThemeContext';
@@ -922,8 +923,8 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
 
   const currentOption = chartMode === 'sunburst' ? sunburstOption : chartMode === 'network' ? networkOption : treeOption;
 
-  return (
-    <div className={`w-full ${isFullscreen ? 'fixed inset-0 z-[200] bg-stone-950 flex flex-col h-screen w-screen overflow-hidden' : 'space-y-3'}`}>
+  const content = (
+    <div className={`w-full ${isFullscreen ? 'fixed inset-0 z-[220] bg-stone-950 flex flex-col h-[100dvh] w-[100vw] overflow-hidden' : 'space-y-3'}`}>
       {/* Toast Confirmation for Reset */}
       {resetToast && (
         <div className="fixed top-12 left-1/2 -translate-x-1/2 z-[260] px-4 py-1.5 rounded-full bg-amber-500 text-stone-950 text-xs font-bold font-serif shadow-xl flex items-center gap-1.5 animate-fadeIn">
@@ -1251,4 +1252,8 @@ export const EChartsUniverseVisualizer: React.FC<EChartsUniverseVisualizerProps>
       )}
     </div>
   );
+
+  return isFullscreen && typeof document !== 'undefined'
+    ? createPortal(content, document.body)
+    : content;
 };
